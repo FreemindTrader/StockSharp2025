@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Reflection</id>
+    <version>1.0.109</version>
+    <title>Ecng.Reflection</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Reflection</tags>
+    <repository commit="c3f0ecb862d18177bf0cf2d462ac26db87ad4ba4" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Lokad.ILPack" version="0.1.7" />
+        <dependency id="System.Reflection.Emit" version="4.7.0" />
+        <dependency id="Ecng.Collections" version="1.0.108" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="FreemindTrader.WorldClockView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:local="clr-namespace:FreemindTrader"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="1024"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="0.1*" />
+            </Grid.ColumnDefinitions>
+            <local:NewYorkTimeView
+                Grid.Row="1"
+                Grid.Column="1"
+                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
+            <local:LondonTimeView
+                Grid.Row="1"
+                Grid.Column="3"
+                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
+            <local:HongKongTimeView
+                Grid.Row="1"
+                Grid.Column="5"
+                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
+        </Grid>
+    </Grid>
+</UserControl>

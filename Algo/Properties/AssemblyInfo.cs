@@ -29,3 +29,6 @@ using System.Runtime.InteropServices;
 #if DEBUG
 [assembly: InternalsVisibleTo("StockSharp.Tests")]
 #endif
+
+// Tony Lam
+[assembly: InternalsVisibleTo("StockSharp.AlgoEx")]

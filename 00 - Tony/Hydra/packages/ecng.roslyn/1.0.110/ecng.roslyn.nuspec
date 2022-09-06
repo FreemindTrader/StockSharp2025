@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Roslyn</id>
+    <version>1.0.110</version>
+    <title>Ecng.Roslyn</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Roslyn</tags>
+    <repository commit="af18c08cb21ada8c3241217ee218568f6a7160f6" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Microsoft.CodeAnalysis.CSharp" version="3.11.0" />
+        <dependency id="Microsoft.CodeAnalysis.VisualBasic" version="3.11.0" />
+        <dependency id="Ecng.Collections" version="1.0.110" />
+        <dependency id="Ecng.Compilation" version="1.0.7" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

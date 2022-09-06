@@ -1,0 +1,9 @@
+<dx:SimpleButton x:Class="StockSharp.Studio.Controls.OptionDeskButton"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                 xmlns:xaml="http://schemas.stocksharp.com/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 ToolTip="{x:Static loc:LocalizedStrings.OptionDesk}">
+  <Image Width="16" Source="{xaml:ThemedIcons Key=Table}"/>
+</dx:SimpleButton>

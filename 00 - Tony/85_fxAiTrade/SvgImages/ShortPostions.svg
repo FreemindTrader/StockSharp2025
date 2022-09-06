@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.Red{fill:#2D86BA;}
+	.White{fill:#FFFFFF;}
+</style>
+<g>
+	<path id="Red_1_" class="Red" d="M150.8,14.4C76,14.4,15.4,75,15.4,149.8c0,74.8,60.6,135.4,135.4,135.4
+		c74.8,0,135.4-60.6,135.4-135.4C286.2,75,225.5,14.4,150.8,14.4z M150.8,266.1c-64.2,0-116.3-52.1-116.3-116.3
+		c0-64.2,52.1-116.3,116.3-116.3C215,33.5,267,85.6,267,149.8C267,214,215,266.1,150.8,266.1z"/>
+	<path id="Red" class="Red" d="M255.5,149.8c0,57.9-46.9,104.7-104.8,104.7S46,207.7,46,149.8S92.9,45.1,150.8,45.1
+		S255.5,91.9,255.5,149.8z"/>
+	<polygon id="White" class="White" points="173.3,183.4 173.3,184.1 172.9,184.1 150.5,222.7 128.3,184.1 128.2,184.1 128.2,183.9 
+		103.4,140.6 128.2,140.6 128.2,76.9 173.3,76.9 173.3,140.7 198.1,140.7 	"/>
+</g>
+</svg>

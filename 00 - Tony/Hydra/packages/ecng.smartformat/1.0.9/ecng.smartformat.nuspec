@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.SmartFormat</id>
+    <version>1.0.9</version>
+    <title>Ecng.SmartFormat</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes>SmartSettings. DoubleBrace</releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng SmartFormat</tags>
+    <repository commit="951883d3dfa2e911e3806a2b41f4839332b2753c" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Microsoft.SourceLink.GitHub" version="1.0.0" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" />
+        <dependency id="System.ValueTuple" version="4.5.0" />
+        <dependency id="System.Text.Json" version="4.7.2" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

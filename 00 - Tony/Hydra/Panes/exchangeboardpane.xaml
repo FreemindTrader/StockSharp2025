@@ -1,0 +1,8 @@
+<studio:BaseStudioControl x:Class="StockSharp.Hydra.Panes.ExchangeBoardPane"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:xaml="http://schemas.stocksharp.com/xaml"
+                          xmlns:studio="clr-namespace:StockSharp.Studio.Controls;assembly=StockSharp.Studio.Controls"
+                          xaml:Doc.Url="4caa035e-a420-4193-92a5-d667a4d65ee1.htm">
+  <xaml:ExchangeBoardsPanel x:Name="Panel"/>
+</studio:BaseStudioControl>

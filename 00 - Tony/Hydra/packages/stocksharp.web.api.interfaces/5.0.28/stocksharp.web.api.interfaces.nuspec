@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Web.Api.Interfaces</id>
+    <version>5.0.28</version>
+    <title>StockSharp.Web.Api.Interfaces</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>StockSharp WebApi</description>
+    <releaseNotes>LikeCompares moved to Ecng.ComponentModel.
+IProductService. GetIdByUrlPartAsync throw if not found.</releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Web Api Interfaces</tags>
+    <repository commit="a14ade3ae9efb9f3acd494519ad0608e8dc509f3" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Ecng.IO" version="1.0.107" />
+        <dependency id="Ecng.Net" version="1.0.159" />
+        <dependency id="Ecng.Backup" version="1.0.116" />
+        <dependency id="StockSharp.Web.DomainModel" version="5.0.25" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

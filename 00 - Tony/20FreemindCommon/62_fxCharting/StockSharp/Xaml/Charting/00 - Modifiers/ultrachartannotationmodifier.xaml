@@ -1,0 +1,59 @@
+﻿<charting:fxAnnotationCreationModifier
+    x:Class="fx.Charting.ultrachartannotationmodifier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+    xmlns:charting="clr-namespace:fx.Charting"
+    charting:fxAnnotationCreationModifier.XAxisId="X"
+    charting:fxAnnotationCreationModifier.YAxisId="Y"
+    s:ChartModifierBase.ReceiveHandledEvents="true"
+    AnnotationCreated="fxAnnotationCreationModifier_AnnotationCreated">
+    <FrameworkElement.Resources>
+        <Style x:Key="TextAnnotationStyle" TargetType="{x:Type s:TextAnnotation}">
+            <Setter Property="Control.Background" Value="#22B22020" />
+            <Setter Property="Control.BorderThickness" Value="0" />
+            <Setter Property="Control.Foreground" Value="#FF666666" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+        <Style x:Key="BoxAnnotationStyle" TargetType="{x:Type s:BoxAnnotation}">
+            <Setter Property="Control.BorderBrush" Value="#FF279B27" />
+            <Setter Property="Control.Background" Value="#551964FF" />
+            <Setter Property="Control.BorderThickness" Value="1" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+        <Style x:Key="AxisMarkerAnnotationStyle" TargetType="{x:Type s:AxisMarkerAnnotation}">
+            <Setter Property="Control.Background" Value="#FFFF6600" />
+            <Setter Property="Control.FontSize" Value="11" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+            <Setter Property="Control.Foreground" Value="#FFEEEEEE" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+        <Style x:Key="HorizontalLineAnnotationStyle" TargetType="{x:Type s:HorizontalLineAnnotation}">
+            <Setter Property="s:LineAnnotationBase.Stroke" Value="#FFFF6600" />
+            <Setter Property="s:LineAnnotationBase.StrokeThickness" Value="2" />
+            <Setter Property="s:LineAnnotationWithLabelsBase.ShowLabel" Value="true" />
+            <Setter Property="s:LineAnnotationWithLabelsBase.LabelPlacement" Value="Axis" />
+            <Setter Property="s:HorizontalLineAnnotation.HorizontalAlignment" Value="Stretch" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+        <Style x:Key="VerticalLineAnnotationStyle" TargetType="{x:Type s:VerticalLineAnnotation}">
+            <Setter Property="s:LineAnnotationBase.Stroke" Value="#FFFF6600" />
+            <Setter Property="s:LineAnnotationBase.StrokeThickness" Value="2" />
+            <Setter Property="s:LineAnnotationWithLabelsBase.ShowLabel" Value="true" />
+            <Setter Property="s:LineAnnotationWithLabelsBase.LabelPlacement" Value="Axis" />
+            <Setter Property="s:VerticalLineAnnotation.VerticalAlignment" Value="Stretch" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+        <Style x:Key="LineAnnotationStyle" TargetType="{x:Type s:LineAnnotation}">
+            <Setter Property="s:LineAnnotationBase.Stroke" Value="#FF279B27" />
+            <Setter Property="s:LineAnnotationBase.StrokeThickness" Value="2" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+        <Style x:Key="LineArrowAnnotationStyle" TargetType="{x:Type s:LineArrowAnnotation}">
+            <Setter Property="s:LineAnnotationBase.Stroke" Value="#FF279B27" />
+            <Setter Property="s:LineAnnotationBase.StrokeThickness" Value="2" />
+            <Setter Property="s:AnnotationBase.XAxisId" Value="X" />
+        </Style>
+
+    </FrameworkElement.Resources>
+</charting:fxAnnotationCreationModifier>

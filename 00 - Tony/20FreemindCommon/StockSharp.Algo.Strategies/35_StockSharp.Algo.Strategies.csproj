@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Algo.Strategies</RootNamespace>
+        <AssemblyName>StockSharp.Algo.Strategies</AssemblyName>
+        <PackageId>StockSharp.Algo.Strategies</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{BDADEE74-F768-41C0-8DB4-3EC45604FC7C}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.210</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="fx.Collections" Version="5.0.210" />
+        <PackageReference Include="fx.Messages" Version="5.0.205" />
+        <PackageReference Include="StockSharp.Algo" Version="5.0.210" />
+        <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.210" />
+        <PackageReference Include="StockSharp.Localization" Version="5.0.210" />
+        <PackageReference Include="StockSharp.Logging" Version="5.0.210" />
+        <PackageReference Include="StockSharp.Messages" Version="5.0.210" />
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    </ItemGroup>
+</Project>
+

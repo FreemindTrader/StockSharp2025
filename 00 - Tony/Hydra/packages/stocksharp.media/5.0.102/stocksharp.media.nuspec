@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Media</id>
+    <version>5.0.102</version>
+    <title>StockSharp.Media</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Trading and algorithmic trading platform (stock markets, forex, bitcoins and options). .NET API for InteractiveBrokers, GainCapital, OANDA, FIX/FAST, Binance etc. More info on web site https://stocksharp.com/products/api/</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Media Trading Finance Algotrading Forex Bitcoin Cryptocurrencies Stock Exchange Derivatives Options</tags>
+    <repository type="GitHub" url="https://github.com/StockSharp/StockSharp" commit="4e1d29d324712afaf070ab2cbe1a050998a63907" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="StockSharp.Localization" version="5.0.126" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

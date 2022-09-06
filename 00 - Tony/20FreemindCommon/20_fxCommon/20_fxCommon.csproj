@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>fx.Common</RootNamespace>
+        <AssemblyName>fx.Common</AssemblyName>
+        <PackageId>fx.Common</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{923BB776-BFA6-4E3B-840A-D98E46B67F2E}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.210</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="fx.Collections" Version="5.0.210" />
+        <PackageReference Include="fx.Definitions" Version="5.0.210" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.210" />
+        <PackageReference Include="Nager.Date" Version="1.200.0" />
+    </ItemGroup>
+    
+</Project>

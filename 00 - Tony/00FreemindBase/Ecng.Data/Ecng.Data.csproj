@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
+    <PropertyGroup>
+        <RootNamespace>Ecng.Data</RootNamespace>
+        <AssemblyName>Ecng.Data</AssemblyName>
+        <PackageId>Ecng.Data</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{499A4776-E2C8-43F1-A841-4FB4C77F7BD9}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>netstandard2.0</TargetFramework>        
+    </PropertyGroup>
+
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.212</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ecng.Collections" Version="1.0.111" />
+      <PackageReference Include="Ecng.Common" Version="1.0.108" />
+      <PackageReference Include="Ecng.ComponentModel" Version="1.0.136" />
+      <PackageReference Include="Ecng.Serialization" Version="1.0.121" />
+      <PackageReference Include="linq2db" Version="3.5.1" />
+    </ItemGroup>       
+</Project>
+

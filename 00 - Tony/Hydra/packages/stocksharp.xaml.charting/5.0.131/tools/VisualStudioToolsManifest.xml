@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileList>
+	<File Reference="StockSharp.Xaml.Charting.dll">
+		<ToolboxItems VSCategory="StockSharp controls" BlendCategory="StockSharp controls">
+			<Item Type="StockSharp.Xaml.Charting.BubbleChart" />
+			<Item Type="StockSharp.Xaml.Charting.Chart" />
+			<Item Type="StockSharp.Xaml.Charting.ChartPanel" />
+			<Item Type="StockSharp.Xaml.Charting.EquityCurveChart" />
+			<Item Type="StockSharp.Xaml.Charting.HeatmapChart" />
+			<Item Type="StockSharp.Xaml.Charting.HistogramChart" />
+			<Item Type="StockSharp.Xaml.Charting.OptionPositionChart" />
+			<Item Type="StockSharp.Xaml.Charting.OptionVolatilitySmileChart" />
+		</ToolboxItems>
+	</File>
+</FileList>

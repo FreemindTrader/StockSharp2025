@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Localization</id>
+    <version>5.0.126</version>
+    <title>StockSharp.Localization</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Trading and algorithmic trading platform (stock markets, forex, bitcoins and options). .NET API for InteractiveBrokers, GainCapital, OANDA, FIX/FAST, Binance etc. More info on web site https://stocksharp.com/products/api/</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Localization Trading Finance Algotrading Forex Bitcoin Cryptocurrencies Stock Exchange Derivatives Options</tags>
+    <repository type="GitHub" url="https://github.com/StockSharp/StockSharp" commit="99e939853e01d921f37664892a4947475b9b20fd" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Ecng.ComponentModel" version="1.0.125" />
+        <dependency id="Ecng.Configuration" version="1.0.100" />
+        <dependency id="Ecng.Localization" version="1.0.105" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

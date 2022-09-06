@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>fx.TimePeriod</name>
+    </assembly>
+    <members>
+        <member name="T:fx.TimePeriod.HashTool">
+            <summary>
+            Some hash utility methods for use in the implementation of value types
+            and collections.
+            </summary>
+        </member>
+    </members>
+</doc>

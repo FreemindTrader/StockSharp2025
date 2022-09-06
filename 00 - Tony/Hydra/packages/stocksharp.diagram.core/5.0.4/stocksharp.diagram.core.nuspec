@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Diagram.Core</id>
+    <version>5.0.4</version>
+    <title>StockSharp.Diagram.Core</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Trading and algorithmic trading platform (stock markets, forex, bitcoins and options). .NET API for InteractiveBrokers, GainCapital, OANDA, FIX/FAST, Binance etc. More info on web site https://stocksharp.com/products/api/</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Diagram Core Trading Finance Algotrading Forex Bitcoin Cryptocurrencies Stock Exchange Derivatives Options</tags>
+    <repository type="GitHub" url="https://github.com/StockSharp/StockSharp" commit="cd20d758d9fd387d2855f4f298c61c7db8a1b2ba" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="StockSharp.Alerts.Interfaces" version="5.0.4" />
+        <dependency id="StockSharp.Algo" version="5.0.129" />
+        <dependency id="StockSharp.Charting.Interfaces" version="5.0.4" />
+        <dependency id="StockSharp.Algo.Strategies" version="5.0.121" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

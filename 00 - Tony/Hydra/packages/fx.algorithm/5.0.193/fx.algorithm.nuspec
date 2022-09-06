@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>fx.Algorithm</id>
+    <version>5.0.193</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="49e75b2cc28c20c7f1d6afbbc0553d53d63ef1ae" />
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="EntityFramework" version="6.4.4" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Xaml" version="5.0.130" exclude="Build,Analyzers" />
+        <dependency id="fx.AlgoEx" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.Bars" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.Collections" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.Common" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.CommonWnd" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.Database" version="5.0.132" exclude="Build,Analyzers" />
+        <dependency id="fx.Definitions" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.DefintionsWnd" version="5.0.131" exclude="Build,Analyzers" />
+        <dependency id="fx.TALib" version="5.0.131" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

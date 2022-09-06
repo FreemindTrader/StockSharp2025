@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Hydra.Core</RootNamespace>
+        <AssemblyName>StockSharp.Hydra.Core</AssemblyName>
+        <PackageId>StockSharp.Hydra.Core</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{FF95AF91-D737-4A6A-8D4C-AE1430B1D469}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.206</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="StockSharp.Server.Fix" Version="5.0.105" />
+    </ItemGroup>    
+</Project>
+

@@ -1,28 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\common_target_standard.props" />
-  <PropertyGroup>
-    <IsPackable>false</IsPackable>
-    <IsRoslynComponent>true</IsRoslynComponent>
-  </PropertyGroup>
+    <Import Project="..\common_target_standard.props" />
+    <Import Project="..\Diectory.Build.props" />
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+        <IsRoslynComponent>true</IsRoslynComponent>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="$(MicrosoftCodeAnalysisCSharpVer)" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="$(MicrosoftCodeAnalysisAnalyzersVer)" PrivateAssets="all" />
-	  
-    <PackageReference Include="System.Text.Json" Version="6.0.5" GeneratePathProperty="true" PrivateAssets="all" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="6.0.0" GeneratePathProperty="true" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" GeneratePathProperty="true" PrivateAssets="all" />
-  </ItemGroup>
-	
-  <PropertyGroup>
-    <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
-  </PropertyGroup>
-
-  <Target Name="GetDependencyTargetPaths">
     <ItemGroup>
-      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Json)\lib\netstandard2.0\System.Text.Json.dll" IncludeRuntimeDependency="false" />
-      <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Encodings_Web)\lib\netstandard2.0\System.Text.Encodings.Web.dll" IncludeRuntimeDependency="false" />
-      <TargetPathWithTargetPlatformMoniker Include="$(PKGMicrosoft_Bcl_AsyncInterfaces)\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll" IncludeRuntimeDependency="false" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="$(MicrosoftCodeAnalysisCSharpVer)" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="$(MicrosoftCodeAnalysisAnalyzersVer)" PrivateAssets="all" />
+
+        <PackageReference Include="System.Text.Json" Version="6.0.5" GeneratePathProperty="true" PrivateAssets="all" />
+        <PackageReference Include="System.Text.Encodings.Web" Version="6.0.0" GeneratePathProperty="true" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" GeneratePathProperty="true" PrivateAssets="all" />
     </ItemGroup>
-  </Target>
+
+    <PropertyGroup>
+        <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+    </PropertyGroup>
+
+    <Target Name="GetDependencyTargetPaths">
+        <ItemGroup>
+            <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Json)\lib\netstandard2.0\System.Text.Json.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PKGSystem_Text_Encodings_Web)\lib\netstandard2.0\System.Text.Encodings.Web.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PKGMicrosoft_Bcl_AsyncInterfaces)\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll" IncludeRuntimeDependency="false" />
+        </ItemGroup>
+    </Target>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RootNamespace>StockSharp.Localization.Generator</RootNamespace>
+        <AssemblyName>StockSharp.Localization.Generator</AssemblyName>
+        <PackageId>StockSharp.Localization.Generator</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.212</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
 </Project>

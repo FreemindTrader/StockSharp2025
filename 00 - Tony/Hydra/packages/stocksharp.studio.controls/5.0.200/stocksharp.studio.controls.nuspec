@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Studio.Controls</id>
+    <version>5.0.200</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="84f27136a0cfac961da46b8744b14d10058e76df" />
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="Stocksharp.Studio.Core" version="5.0.195" exclude="Build,Analyzers" />
+        <dependency id="Ecng.Roslyn" version="1.0.110" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Alerts" version="5.0.126" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Charting.Interfaces" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Configuration" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Localization" version="5.0.195" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Xaml.Charting" version="5.0.131" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

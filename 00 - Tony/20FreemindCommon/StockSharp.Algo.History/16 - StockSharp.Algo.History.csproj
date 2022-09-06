@@ -1,0 +1,17 @@
+﻿<Reference Include="Ecng.Collections" />
+    <Reference Include="Ecng.Common" />
+    <Reference Include="Ecng.ComponentModel" />
+    <Reference Include="Ecng.Serialization" />
+    <Reference Include="StockSharp.Algo" />
+    <Reference Include="StockSharp.BusinessEntities" />
+    <Reference Include="StockSharp.Hydra.Core" />
+    <Reference Include="StockSharp.Localization" />
+    <Reference Include="StockSharp.Logging" />
+    <Reference Include="StockSharp.Messages" />
+    <Reference Include="StockSharp.Xaml" />
+    <Reference Include="System.ComponentModel.Annotations" />
+    <Reference Include="System.ComponentModel.Primitives" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Net.Primitives" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices" />
