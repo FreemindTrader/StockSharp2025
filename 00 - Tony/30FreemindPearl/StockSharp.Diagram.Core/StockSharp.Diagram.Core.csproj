@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Diagram.Core</RootNamespace>
+        <AssemblyName>StockSharp.Diagram.Core</AssemblyName>
+        <PackageId>StockSharp.Diagram.Core</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{51A0E54A-E813-440E-B6AE-969A16EBC00E}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.192</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="translation.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Ecng.ComponentModel" Version="1.0.126" />
+        <PackageReference Include="Ecng.Common" Version="1.0.101" />
+        <PackageReference Include="Ecng.Localization" Version="1.0.106" />
+        <PackageReference Include="StockSharp.Alerts.Interfaces" Version="5.0.192" />
+        <PackageReference Include="StockSharp.Algo" Version="5.0.192" />
+        <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.192" />
+        <PackageReference Include="StockSharp.Configuration" Version="5.0.192" />
+        <PackageReference Include="StockSharp.Localization" Version="5.0.192" />
+    </ItemGroup>
+</Project>
+

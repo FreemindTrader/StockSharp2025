@@ -1,0 +1,84 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSProjectName>$([System.String]::Copy('StockSharp.$(MSBuildProjectName)').Replace('GitHub',''))</SSProjectName>
+
+    <RootNamespace>$(SSProjectName)</RootNamespace>
+    <AssemblyName>$(SSProjectName)</AssemblyName>
+
+    <ProductVersion>9.0.30729</ProductVersion>
+    <!--<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>-->
+    <EcngVer>1.0.*</EcngVer>
+    <LangVersion>default</LangVersion>
+    <SampleHistoryDataVersion>1.*</SampleHistoryDataVersion>
+    <StockSharpVer>5.*</StockSharpVer>
+
+    <xNetVer>5.2.10</xNetVer>
+    <MathNumVer>4.15.0</MathNumVer>
+    <ProtobufVer>3.0.101</ProtobufVer>
+    <HtmlAgilityPackVer>1.11.37</HtmlAgilityPackVer>
+    <JwtVer>8.4.2</JwtVer>
+    <FluentFtpVer>35.0.5</FluentFtpVer>
+    <CSharpVer>4.7.0</CSharpVer>
+    <SignalRVer>2.4.2</SignalRVer>
+    <NuGetApiVer>5.11.0</NuGetApiVer>
+    <MsTestVer>2.2.7</MsTestVer>
+    <MsTestSdkVer>17.0.0</MsTestSdkVer>
+    
+    <!-- do not update until task is resolved: https://stocksharp.myjetbrains.com/youtrack/issue/ISLR-10 -->
+    <PubnubPCLVer>5.0.1</PubnubPCLVer>
+    
+    <MicrosoftDataSqlClientVer>3.0.1</MicrosoftDataSqlClientVer>
+    <MicrosoftDataSqliteVer>5.0.11</MicrosoftDataSqliteVer>
+    <AsyncLinqVer>5.0.0</AsyncLinqVer>
+    <MsBclAsyncInterfacesVer>5.0.0</MsBclAsyncInterfacesVer>
+    <TaskExtensionsVer>4.5.4</TaskExtensionsVer>
+    <SysChannelsVer>6.0.0</SysChannelsVer>
+    <SysPipelinesVer>6.0.0</SysPipelinesVer>
+    <SysMemoryVer>4.5.4</SysMemoryVer>
+    <SBEVer>1.23.1.1</SBEVer>
+
+    <RepoGitHubPath>$(MSBuildThisFileDirectory)</RepoGitHubPath>
+    <RepoAppsPath>$(RepoGitHubPath)..\StockSharpApps\</RepoAppsPath>
+    <RepoWebPath>$(RepoGitHubPath)..\Web\</RepoWebPath>
+    <ConnectorsStubPath>$(RepoAppsPath)ConnectorsStub\</ConnectorsStubPath>
+    <ConnectorsGitHubPath>$(RepoGitHubPath)Samples\Connectors\</ConnectorsGitHubPath>
+    <ConnectorsAppsPath>$(RepoAppsPath)Connectors\</ConnectorsAppsPath>
+  </PropertyGroup>
+  
+  <!-- workaround for https://github.com/dotnet/wpf/issues/5711 -->
+  <PropertyGroup Condition="$(_TargetAssemblyProjectName) != ''">
+    <SSProjectName>$([System.String]::Copy('StockSharp.$(_TargetAssemblyProjectName)').Replace('GitHub',''))</SSProjectName>
+    <AssemblyName>$(SSProjectName)</AssemblyName>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <!-- TODO this needs to be removed when connectors fixed to NO_LICENSE constant -->
+    <DefineConstants>$(DefineConstants);INCLUDE_LICENSE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- reverse defaults from "C:\Program Files\dotnet\sdk\5.0.102\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.GenerateAssemblyInfo.targets"  -->
+    <GenerateAssemblyCompanyAttribute Condition="'$(GenerateAssemblyCompanyAttribute)' == ''">false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyConfigurationAttribute Condition="'$(GenerateAssemblyConfigurationAttribute)' == ''">false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCopyrightAttribute Condition="'$(GenerateAssemblyCopyrightAttribute)' == ''">false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyDescriptionAttribute Condition="'$(GenerateAssemblyDescriptionAttribute)' == ''">false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyFileVersionAttribute Condition="'$(GenerateAssemblyFileVersionAttribute)' == ''">false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute Condition="'$(GenerateAssemblyInformationalVersionAttribute)' == ''">false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyProductAttribute Condition="'$(GenerateAssemblyProductAttribute)' == ''">false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyTitleAttribute Condition="'$(GenerateAssemblyTitleAttribute)' == ''">false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyVersionAttribute Condition="'$(GenerateAssemblyVersionAttribute)' == ''">false</GenerateAssemblyVersionAttribute>
+    <GenerateRepositoryUrlAttribute Condition="'$(GenerateRepositoryUrlAttribute)' == '' and !('$(TargetFrameworkIdentifier)' == '.NETFramework' and $([MSBuild]::VersionLessThan($(TargetFrameworkVersion), 4.5)))">false</GenerateRepositoryUrlAttribute>
+    <GenerateNeutralResourcesLanguageAttribute Condition="'$(GenerateNeutralResourcesLanguageAttribute)' == ''">false</GenerateNeutralResourcesLanguageAttribute>
+    <GenerateAssemblyMetadataAttributes Condition="'$(GenerateAssemblyMetadataAttributes)' == ''">false</GenerateAssemblyMetadataAttributes>
+    <IncludeSourceRevisionInInformationalVersion Condition="'$(IncludeSourceRevisionInInformationalVersion)' == ''">false</IncludeSourceRevisionInInformationalVersion>
+    <GenerateInternalsVisibleToAttributes Condition="'$(GenerateInternalsVisibleToAttributes)' == ''">false</GenerateInternalsVisibleToAttributes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(RepoGitHubPath)IsExternalInit.cs" Link="Properties\IsExternalInit.cs" />
+  </ItemGroup>
+</Project>

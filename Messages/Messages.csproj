@@ -15,4 +15,17 @@
     <Compile Remove="IAsyncMessageAdapter.cs" />
   </ItemGroup>
 
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RootNamespace>StockSharp.Messages</RootNamespace>
+        <AssemblyName>StockSharp.Messages</AssemblyName>
+        <PackageId>StockSharp.Messages</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.212</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
 </Project>

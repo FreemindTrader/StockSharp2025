@@ -1,0 +1,193 @@
+<ResourceDictionary
+    xmlns:SC="http://schemas.abtsoftware.co.uk/scichart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:apc="clr-namespace:SciChart.Charting.Common.AttachedProperties"
+    
+    xmlns:databinding="clr-namespace:SciChart.Charting.Common.Databinding"
+    xmlns:labelProviders="clr-namespace:SciChart.Charting.Visuals.Axes.LabelProviders"
+    xmlns:me="clr-namespace:SciChart.Charting.Common.MarkupExtensions"
+    xmlns:r="clr-namespace:SciChart.Charting.Visuals.RenderableSeries" >
+
+    <SC:StringFormatConverter x:Key="StringFormatConverter" />
+
+    <SC:InverseOrientationConverter x:Key="InverseOrientationConverter" />
+
+    <SC:CollapseIfNullOrEmptyStringConverter x:Key="CollapseIfNullOrEmptyStringConverter" />
+
+    <SC:OrientationToAxisLabelRotationConverter x:Key="OrientationToAxisLabelRotationConverter" />
+
+    <SC:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+
+    <SC:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <SC:IComparableToObjectConverter x:Key="IComparableToObject" />
+
+    <SC:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+
+    <SC:DoubleToThicknessConverter x:Key="DoubleToThicknessConverter" />
+
+    <SC:ThicknessToDoubleConverter x:Key="ThicknessToDoubleConverter" />
+
+    <SC:AxisMarkerBorderThicknessConverter x:Key="AxisMarkerBorderThicknessConverter" />
+
+    <SC:BandSeriesInfoToYValueConverter x:Key="BandSeriesInfoToYValueConverter" />
+
+    <SC:DataTemplateToObjectConverter x:Key="DataTemplateToObjectConverter" />
+
+    <SC:AxisAlignmentToHorizontalAlignmentConverter x:Key="AxisAlignmentToHorizontalAlignmentConverter" />
+
+    <SC:AxisAlignmentToVerticalAlignmentConverter x:Key="AxisAlignmentToVerticalAlignmentConverter" />
+
+    <SC:AxisAlignmentToAxisOrientationConverter x:Key="AxisAlignmentToAxisOrientationConverter" />
+
+    <SC:HorisontalOrientationVisibilityConverter x:Key="HorisontalOrientationVisibilityConverter" />
+
+    <SC:VerticalOrientationVisibilityConverter x:Key="VerticalOrientationVisibilityConverter" />
+
+    <SC:BooleanToDefaultAxisAlignmentConverter x:Key="BooleanToDefaultAxisAlignmentConverter" />
+
+    <SC:AxisAlignmentToVeticalAnchorPointConverter x:Key="AxisAlignmentToVeticalAnchorPointConverter" />
+
+    <SC:AxisAlignmentToHorizontalAnchorPointConverter x:Key="AxisAlignmentToHorizontalAnchorPointConverter" />
+
+    <SC:AxisAlignmentToFlowDirectionConverter x:Key="AxisAlignmentToFlowDirectionConverter" />
+
+    <SC:ValueMultiplicatorConverter x:Key="ValueMultiplicatorConverter" />
+
+    <SC:ValueToTopMarginConverter x:Key="ValueToTopMarginConverter" />
+
+    <SC:AxisAlignmentToVisibilityConverter x:Key="LeftPointerAlignmentToVisibilityConverter" IsLeftPointer="true" />
+
+    <SC:AxisAlignmentToVisibilityConverter x:Key="RightPointerAlignmentToVisibilityConverter" IsLeftPointer="false" />
+
+    <SC:BooleanToRotationTransformConverter x:Key="BooleanToRotationTransformConverter" />
+
+    <SC:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+
+    <SC:DoubleArrayToDoubleCollectionConverter x:Key="DoubleArrayToDoubleCollectionConverter" />
+
+    <SC:DoubleToThumbMarginConverter x:Key="DoubleToThumbMarginConverter" />
+
+    <SC:OrientationToVisibilityConverter x:Key="OrientationToVisibilityConverter" />
+
+    <SC:BooleanToOrientationConverter x:Key="BooleanToOrientationConverter" />
+
+    <SC:AxisAlignmentToTransformOriginConverter x:Key="AxisAlignmentToTransformOriginConverter" />
+
+    <SC:DoubleToNegativeDoubleConverter x:Key="DoubleToNegativeDoubleConverter" />
+
+    <SC:GrayscaleColorBrushConverter x:Key="GrayscaleColorBrushConverter" />
+
+    <SC:IsLastPointInViewportToOpacityConverter x:Key="IsLastPointInViewportToOpacityConverter" />
+
+    <SC:LegendPlacementToGridPositionConverter x:Key="LegendPlacementToGridPositionConverter" />
+
+    <SC:LegendPlacement3DToGridPositionConverter x:Key="LegendPlacement3DToGridPositionConverter" />
+
+    <SC:TernaryLegendPlacementToGridPositionConverter x:Key="TernaryLegendPlacementToGridPositionConverter" />
+
+    <SC:RadarLegendPlacementToGridPositionConverter x:Key="RadarLegendPlacementToGridPositionConverter" />
+
+    <SC:TempConverter x:Key="TempConverter" />
+
+    <SC:InvertedBrushConverter x:Key="InvertedBrushConverter" />
+
+    <SC:CursorTooltipBackgroundConverter x:Key="SeriesDataToFirstSeriesColorMultiConverter" />
+
+    <SC:ZoomStateToVisibilityConverter x:Key="ZoomStateToVisibilityConverter" />
+
+    <SC:BooleanToSelectionMode x:Key="BooleanToSelectionMode" />
+
+    <SC:PriorityBindingConverter x:Key="PriorityBindingConverter" />
+
+    <DropShadowEffect
+        x:Key="ScrollbarResizeEffect"
+        Color="Black"
+        BlurRadius="5"
+        Direction="-45"
+        Opacity="0.5"
+        ShadowDepth="2" />
+
+    <DropShadowEffect
+        x:Key="EllipseShadowEffect"
+        Color="Black"
+        BlurRadius="10"
+        Direction="-45"
+        ShadowDepth="4" />
+
+    <DropShadowEffect
+        x:Key="TooltipDropShadowEffect"
+        
+        BlurRadius="5"
+        Direction="-45"
+        ShadowDepth="10" />
+
+    <SC:EffectConverter x:Key="EffectConverter" />
+
+    <Style x:Key="HintDataItemsCursorStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextBlock.Foreground" Value="Black" />
+        <Setter Property="TextBlock.FontFamily" Value="Arial" />
+        <Setter Property="TextBlock.FontSize" Value="12" />
+    </Style>
+
+    <Style x:Key="HintDataItemsStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="SC:RelativeSourceBinding.AncestorType" Value="r:TemplatableControl" />
+        <Setter Property="TextBlock.Foreground" Value="{Binding Path=(SC:RelativeSourceBinding.Ancestor).Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="TextBlock.FontWeight" Value="{Binding Path=(SC:RelativeSourceBinding.Ancestor).FontWeight, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="TextBlock.FontFamily" Value="{Binding Path=(SC:RelativeSourceBinding.Ancestor).FontFamily, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="TextBlock.FontSize" Value="{Binding Path=(SC:RelativeSourceBinding.Ancestor).FontSize, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="FrameworkElement.Margin" Value="{Binding Path=(SC:RelativeSourceBinding.Ancestor).Margin, RelativeSource={RelativeSource Self}}" />
+    </Style>
+
+    <Style x:Key="TooltipBorderStyleBase" TargetType="{x:Type Border}">
+        <Setter Property="Border.BorderThickness" Value="2" />
+        <Setter Property="FrameworkElement.Margin" Value="0,0,10,10" />
+        <Setter Property="Border.Padding" Value="5" />
+        <Setter Property="UIElement.Opacity" Value="0.9" />
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Value="True" Binding="{Binding Path=(me:EffectManager.EnableDropShadows)}" />
+                    <Condition Value="True" Binding="{Binding IsVisible, RelativeSource={RelativeSource Self}}" />
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="UIElement.Effect" Value="{StaticResource TooltipDropShadowEffect}" />
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="AxisLabelBorderStyle"
+        BasedOn="{StaticResource TooltipBorderStyleBase}"
+        TargetType="{x:Type Border}">
+        <Setter Property="Border.Padding" Value="5,0" />
+        <Setter Property="Border.BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="BaseTooltipLabelStyle" TargetType="{x:Type SC:TemplatableControl}">
+        <Setter Property="Control.FontWeight" Value="Bold" />
+        <Setter Property="Control.FontFamily" Value="Arial" />
+        <Setter Property="Control.FontSize" Value="13" />
+        <Setter Property="FrameworkElement.Margin" Value="0,2" />
+        <Setter Property="Control.Foreground">
+            <Setter.Value>
+                <SC:ThemeBinding DefaultPath="CursorLabelForeground">
+                    <SC:ThemeBinding.BindingsCollection>
+                        <SC:BindingInfo Binding="{Binding Path=Background, Converter={StaticResource InvertedBrushConverter}, RelativeSource={RelativeSource Self}}" />
+                    </SC:ThemeBinding.BindingsCollection>
+                </SC:ThemeBinding>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="DefaultTitleTemplate">
+        <TextBlock
+            Margin="{Binding Margin, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=labelProviders:AxisTitle}}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="{Binding}" />
+    </DataTemplate>
+
+</ResourceDictionary>

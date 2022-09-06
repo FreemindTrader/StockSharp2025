@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileList>
+  <File Reference="StockSharp.Xaml.dll">
+    <ToolboxItems VSCategory="StockSharp controls" BlendCategory="StockSharp controls">
+      <Item Type="StockSharp.Xaml.AdvertisePanel" />
+      <Item Type="StockSharp.Xaml.BuySellGrid" />
+      <Item Type="StockSharp.Xaml.BuySellPanel" />
+      <Item Type="StockSharp.Xaml.CandleMessageGrid" />
+      <Item Type="StockSharp.Xaml.CommissionPanel" />
+      <Item Type="StockSharp.Xaml.DataSourcePanel" />
+      <Item Type="StockSharp.Xaml.DriveComboBox" />
+      <Item Type="StockSharp.Xaml.ExchangeBoardComboBox" />
+      <Item Type="StockSharp.Xaml.ExchangeBoardsPanel" />
+      <Item Type="StockSharp.Xaml.ExchangeComboBox" />
+      <Item Type="StockSharp.Xaml.ExchangesPanel" />
+      <Item Type="StockSharp.Xaml.ExecutionGrid" />
+      <Item Type="StockSharp.Xaml.ExtendedInfoStorageComboBox" />
+      <Item Type="StockSharp.Xaml.ImportDataMappingButton" />
+      <Item Type="StockSharp.Xaml.ImportSettingsPanel" />
+      <Item Type="StockSharp.Xaml.Level1FieldsComboBox" />
+      <Item Type="StockSharp.Xaml.Level1Grid" />
+      <Item Type="StockSharp.Xaml.LicensePanel" />
+      <Item Type="StockSharp.Xaml.LogControl" />
+      <Item Type="StockSharp.Xaml.MarketDataGrid" />
+      <Item Type="StockSharp.Xaml.MarketDepthControl" />
+      <Item Type="StockSharp.Xaml.MarketRuleGrid" />
+      <Item Type="StockSharp.Xaml.Monitor" />
+      <Item Type="StockSharp.Xaml.MyTradeGrid" />
+      <Item Type="StockSharp.Xaml.NewsGrid" />
+      <Item Type="StockSharp.Xaml.NewsMessageGrid" />
+      <Item Type="StockSharp.Xaml.NewsMessagePanel" />
+      <Item Type="StockSharp.Xaml.NewsPanel" />
+      <Item Type="StockSharp.Xaml.OptionDesk" />
+      <Item Type="StockSharp.Xaml.OrderGrid" />
+      <Item Type="StockSharp.Xaml.OrderLogGrid" />
+      <Item Type="StockSharp.Xaml.PermissionCredentialsPanel" />
+      <Item Type="StockSharp.Xaml.PortfolioComboBox" />
+      <Item Type="StockSharp.Xaml.PortfolioGrid" />
+      <Item Type="StockSharp.Xaml.PortfolioPicker" />
+      <Item Type="StockSharp.Xaml.PositionChangeGrid" />
+      <Item Type="StockSharp.Xaml.PositionChangeTypesComboBox" />
+      <Item Type="StockSharp.Xaml.QuickOrderPanel" />
+      <Item Type="StockSharp.Xaml.RiskPanel" />
+      <Item Type="StockSharp.Xaml.SecurityGrid" />
+      <Item Type="StockSharp.Xaml.SecurityIdTextBox" />
+      <Item Type="StockSharp.Xaml.SecurityJumpsEditor" />
+      <Item Type="StockSharp.Xaml.SecurityLookupPanel" />
+      <Item Type="StockSharp.Xaml.SecurityMappingPanel" />
+      <Item Type="StockSharp.Xaml.SecurityPicker" />
+      <Item Type="StockSharp.Xaml.SecurityTypeComboBox" />
+      <Item Type="StockSharp.Xaml.StatisticParameterGrid" />
+      <Item Type="StockSharp.Xaml.StorageFormatComboBox" />
+      <Item Type="StockSharp.Xaml.StorageSettingsPanel" />
+      <Item Type="StockSharp.Xaml.StrategiesDashboard" />
+      <Item Type="StockSharp.Xaml.StrategiesStatisticsPanel" />
+      <Item Type="StockSharp.Xaml.SubscriptionPanel" />
+      <Item Type="StockSharp.Xaml.TradeGrid" />
+      <Item Type="StockSharp.Xaml.UnitEditor" />
+      <Item Type="StockSharp.Xaml.PropertyGrid.CandleSettingsEditor" />
+      <Item Type="StockSharp.Xaml.PropertyGrid.PortfolioEditor" />
+      <Item Type="StockSharp.Xaml.PropertyGrid.PropertyGridEx" />
+      <Item Type="StockSharp.Xaml.PropertyGrid.SecurityEditor" />
+      <Item Type="StockSharp.Xaml.PropertyGrid.WorkingTimeControl" />
+      <Item Type="StockSharp.Xaml.GridControl.BaseGridControl" />
+    </ToolboxItems>
+  </File>
+</FileList>

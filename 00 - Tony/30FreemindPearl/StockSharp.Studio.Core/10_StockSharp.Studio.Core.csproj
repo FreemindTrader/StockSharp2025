@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>Stocksharp.Studio.Core</RootNamespace>
+        <AssemblyName>Stocksharp.Studio.Core</AssemblyName>
+        <PackageId>Stocksharp.Studio.Core</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{2CAFE858-3A40-46DF-AA80-9AB8B8F22A6E}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.210</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="fx.Charting" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Algo" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Configuration" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Diagram.Core" Version="5.0.8" />
+      <PackageReference Include="StockSharp.Studio.Community" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.210" />
+    </ItemGroup>
+    
+</Project>
+

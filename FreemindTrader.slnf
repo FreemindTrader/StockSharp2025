@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "path": "StockSharp.sln",
+    "projects": [
+      "..\\..\\20FreemindCommon\\00_fxAlgoEx\\00_fxAlgoEx.csproj",
+      "..\\..\\20FreemindCommon\\62_fxCharting\\62_fxCharting.csproj",
+      "00 - Temp\\54_fxAlgorithm\\54_fxAlgorithm.csproj",
+      "00 - Temp\\85_fxAiTrade\\85_fxAiTrade.csproj",
+      "00 - Temp\\Adapters\\00_FXCM\\00_Fxcm.csproj",
+      "00 - Temp\\FreemindTrader\\35FreemindTrader.csproj",
+      "00 - Temp\\StockSharp.Studio.Controls\\10_StockSharp.Studio.Controls.csproj",
+      "00 - Temp\\StockSharp.Studio.Core\\10_StockSharp.Studio.Core.csproj",
+      "33_fxMessages\\33_fxMessages.csproj",
+      "BusinessEntities\\BusinessEntities.csproj",
+      "Configuration\\Configuration.csproj",
+      "Localization\\Localization.csproj",
+      "Logging\\Logging.csproj",
+      "Messages\\Messages.csproj"
+    ]
+  }
+}

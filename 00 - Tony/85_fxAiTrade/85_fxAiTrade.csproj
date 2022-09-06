@@ -1,0 +1,508 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <ProjectGuid>{A7934EB3-1783-4612-90AC-1AE729458091}</ProjectGuid>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>fx.AITrade</PackageId>
+        <Version>5.0.210</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+    <PropertyGroup>
+        <RootNamespace>fx.AITrade</RootNamespace>
+        <AssemblyName>fx.AITrade</AssemblyName>
+        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <ProductVersion>9.0.30729</ProductVersion>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <EcngVer>1.0.28</EcngVer>
+        <LangVersion>8.0</LangVersion>
+        <StockSharpVer>5.*</StockSharpVer>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+    <ItemGroup>
+        <SourceRoot Include="../" />
+    </ItemGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugType>full</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>full</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0-windows|AnyCPU'">
+        <NoWarn>1701;1702;CA1416</NoWarn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0-windows|AnyCPU'">
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove="Images\0.png" />
+        <None Remove="Images\13.png" />
+        <None Remove="Images\144.png" />
+        <None Remove="Images\21.png" />
+        <None Remove="Images\34.png" />
+        <None Remove="Images\5.png" />
+        <None Remove="Images\55.png" />
+        <None Remove="Images\8.png" />
+        <None Remove="Images\89.png" />
+        <None Remove="Images\Adr.png" />
+        <None Remove="Images\AUDCAD.png" />
+        <None Remove="Images\AUDCHF.png" />
+        <None Remove="Images\AUDJPY.png" />
+        <None Remove="Images\AUDNZD.png" />
+        <None Remove="Images\AUDUSD.png" />
+        <None Remove="Images\AUS200.png" />
+        <None Remove="Images\Bond.png" />
+        <None Remove="Images\BTCUSD.png" />
+        <None Remove="Images\BUND.png" />
+        <None Remove="Images\CADCHF.png" />
+        <None Remove="Images\CADJPY.png" />
+        <None Remove="Images\Cfd.png" />
+        <None Remove="Images\CHFJPY.png" />
+        <None Remove="Images\CHN50.png" />
+        <None Remove="Images\Commodity.png" />
+        <None Remove="Images\COPPER.png" />
+        <None Remove="Images\CryptoCurrency.png" />
+        <None Remove="Images\Currency.png" />
+        <None Remove="Images\Cycle.png" />
+        <None Remove="Images\ESP35.png" />
+        <None Remove="Images\EURAUD.png" />
+        <None Remove="Images\EURCAD.png" />
+        <None Remove="Images\EURCHF.png" />
+        <None Remove="Images\EURCZK.png" />
+        <None Remove="Images\EURGBP.png" />
+        <None Remove="Images\EURJPY.png" />
+        <None Remove="Images\EURNOK.png" />
+        <None Remove="Images\EURNZD.png" />
+        <None Remove="Images\EURSEK.png" />
+        <None Remove="Images\EURTRY.png" />
+        <None Remove="Images\EURUSD.png" />
+        <None Remove="Images\EUSTX50.png" />
+        <None Remove="Images\FRA40.png" />
+        <None Remove="Images\GBPAUD.png" />
+        <None Remove="Images\GBPCAD.png" />
+        <None Remove="Images\GBPCHF.png" />
+        <None Remove="Images\GBPJPY.png" />
+        <None Remove="Images\GBPNZD.png" />
+        <None Remove="Images\GBPUSD.png" />
+        <None Remove="Images\GER30.png" />
+        <None Remove="Images\GrandSupercycle.png" />
+        <None Remove="Images\HKG33.png" />
+        <None Remove="Images\Index.png" />
+        <None Remove="Images\Intermediate.png" />
+        <None Remove="Images\ITA40.png" />
+        <None Remove="Images\JPN225.png" />
+        <None Remove="Images\Micro.png" />
+        <None Remove="Images\Miniscule.png" />
+        <None Remove="Images\Minor.png" />
+        <None Remove="Images\Minuette.png" />
+        <None Remove="Images\Minute.png" />
+        <None Remove="Images\NAS100.png" />
+        <None Remove="Images\NGAS.png" />
+        <None Remove="Images\NZDCAD.png" />
+        <None Remove="Images\NZDCHF.png" />
+        <None Remove="Images\NZDUSD.png" />
+        <None Remove="Images\Option.png" />
+        <None Remove="Images\Primary.png" />
+        <None Remove="Images\SPX500.png" />
+        <None Remove="Images\Stock.png" />
+        <None Remove="Images\SubIntermediate.png" />
+        <None Remove="Images\Submicro.png" />
+        <None Remove="Images\SubMinor.png" />
+        <None Remove="Images\Subminuette.png" />
+        <None Remove="Images\SubMinute.png" />
+        <None Remove="Images\SUI30.png" />
+        <None Remove="Images\Supercycle.png" />
+        <None Remove="Images\TradeControl\100.png" />
+        <None Remove="Images\TradeControl\20.png" />
+        <None Remove="Images\TradeControl\200.png" />
+        <None Remove="Images\TradeControl\40.png" />
+        <None Remove="Images\TradeControl\500.png" />
+        <None Remove="Images\TradeControl\60.png" />
+        <None Remove="Images\TradeControl\80.png" />
+        <None Remove="Images\TradeControl\AgentPhoto.png" />
+        <None Remove="Images\TradeControl\AppIcon.ico" />
+        <None Remove="Images\TradeControl\AppIcon.svg" />
+        <None Remove="Images\TradeControl\Back.png" />
+        <None Remove="Images\TradeControl\BitCoin.png" />
+        <None Remove="Images\TradeControl\Calc.png" />
+        <None Remove="Images\TradeControl\DollarIndex.png" />
+        <None Remove="Images\TradeControl\DowJones.png" />
+        <None Remove="Images\TradeControl\Euro.png" />
+        <None Remove="Images\TradeControl\EURUSD.jpg" />
+        <None Remove="Images\TradeControl\EURUSD.png" />
+        <None Remove="Images\TradeControl\gold.png" />
+        <None Remove="Images\TradeControl\Gold3.png" />
+        <None Remove="Images\TradeControl\Home.jpg" />
+        <None Remove="Images\TradeControl\HomeLayout.jpg" />
+        <None Remove="Images\TradeControl\HomePhoto.jpg" />
+        <None Remove="Images\TradeControl\nasdaq.png" />
+        <None Remove="Images\TradeControl\Next.png" />
+        <None Remove="Images\TradeControl\NGas.png" />
+        <None Remove="Images\TradeControl\Oil.png" />
+        <None Remove="Images\TradeControl\Pound.png" />
+        <None Remove="Images\TradeControl\Prev.png" />
+        <None Remove="Images\TradeControl\Rates.png" />
+        <None Remove="Images\TradeControl\Research.png" />
+        <None Remove="Images\TradeControl\SecurityPhoto.jpg" />
+        <None Remove="Images\TradeControl\Silver.png" />
+        <None Remove="Images\TradeControl\SPX.png" />
+        <None Remove="Images\TradeControl\Statistics.png" />
+        <None Remove="Images\TradeControl\System.png" />
+        <None Remove="Images\TradeControl\UnderConstruction.png" />
+        <None Remove="Images\TradeControl\UserManagment.png" />
+        <None Remove="Images\TradeControl\ZillowLogo.png" />
+        <None Remove="Images\TRYJPY.png" />
+        <None Remove="Images\UK100.png" />
+        <None Remove="Images\UKOIL.png" />
+        <None Remove="Images\US2000.png" />
+        <None Remove="Images\US30.png" />
+        <None Remove="Images\USDCAD.png" />
+        <None Remove="Images\USDCHF.png" />
+        <None Remove="Images\USDCNH.png" />
+        <None Remove="Images\USDCZK.png" />
+        <None Remove="Images\USDHKD.png" />
+        <None Remove="Images\USDJPY.png" />
+        <None Remove="Images\USDMXN.png" />
+        <None Remove="Images\USDNOK.png" />
+        <None Remove="Images\USDOLLAR.png" />
+        <None Remove="Images\USDSEK.png" />
+        <None Remove="Images\USDTRY.png" />
+        <None Remove="Images\USDZAR.png" />
+        <None Remove="Images\USOIL.png" />
+        <None Remove="Images\XAGUSD.png" />
+        <None Remove="Images\XAUUSD.png" />
+        <None Remove="Images\XPDUSD.png" />
+        <None Remove="Images\XPTUSD.png" />
+        <None Remove="Images\ZARJPY.png" />
+        <None Remove="SplashScreen\FreeMindPleaseWait125.png" />
+        <None Remove="SplashScreen\FreeMindPleaseWait150.png" />
+        <None Remove="SplashScreen\FreeMindPleaseWait180.png" />
+        <None Remove="SplashScreen\FreeMindPleaseWait200.png" />
+        <None Remove="SvgImages\A.svg" />
+        <None Remove="SvgImages\analytics.svg" />
+        <None Remove="SvgImages\B.svg" />
+        <None Remove="SvgImages\bar_chart.svg" />
+        <None Remove="SvgImages\Branch.svg" />
+        <None Remove="SvgImages\BreakEven.svg" />
+        <None Remove="SvgImages\broken.svg" />
+        <None Remove="SvgImages\broken2.svg" />
+        <None Remove="SvgImages\C.svg" />
+        <None Remove="SvgImages\Cancel.svg" />
+        <None Remove="SvgImages\CloseAll.svg" />
+        <None Remove="SvgImages\CustomFilter.svg" />
+        <None Remove="SvgImages\Delete.svg" />
+        <None Remove="SvgImages\diamond.svg" />
+        <None Remove="SvgImages\dollar.svg" />
+        <None Remove="SvgImages\Edit.svg" />
+        <None Remove="SvgImages\EFA.svg" />
+        <None Remove="SvgImages\EFB.svg" />
+        <None Remove="SvgImages\EFC.svg" />
+        <None Remove="SvgImages\escape.svg" />
+        <None Remove="SvgImages\FibLines.svg" />
+        <None Remove="SvgImages\FibLucasGann.svg" />
+        <None Remove="SvgImages\FilterWave.svg" />
+        <None Remove="SvgImages\Five.svg" />
+        <None Remove="SvgImages\Four.svg" />
+        <None Remove="SvgImages\fxtrader3.svg" />
+        <None Remove="SvgImages\GotoBars.svg" />
+        <None Remove="SvgImages\HedgeAll.svg" />
+        <None Remove="SvgImages\HedgeLosing.svg" />
+        <None Remove="SvgImages\HedgeWinning.svg" />
+        <None Remove="SvgImages\HHLL.svg" />
+        <None Remove="SvgImages\HighLow3.svg" />
+        <None Remove="SvgImages\LongPosition.svg" />
+        <None Remove="SvgImages\loss.svg" />
+        <None Remove="SvgImages\MailMerge.svg" />
+        <None Remove="SvgImages\MapView.svg" />
+        <None Remove="SvgImages\medal.svg" />
+        <None Remove="SvgImages\Meeting.svg" />
+        <None Remove="SvgImages\mouse-with-scroll-wheel.svg" />
+        <None Remove="SvgImages\MouseRight.svg" />
+        <None Remove="SvgImages\net.svg" />
+        <None Remove="SvgImages\New.svg" />
+        <None Remove="SvgImages\NewIndicator.svg" />
+        <None Remove="SvgImages\Note.svg" />
+        <None Remove="SvgImages\One.svg" />
+        <None Remove="SvgImages\OrderList.svg" />
+        <None Remove="SvgImages\PivotPoints.svg" />
+        <None Remove="SvgImages\PivotPoints.svg.2021_06_06_02_39_06.0.svg" />
+        <None Remove="SvgImages\PivotTable.svg" />
+        <None Remove="SvgImages\Print.svg" />
+        <None Remove="SvgImages\RecalcIndicator.svg" />
+        <None Remove="SvgImages\ReloadDatabar.svg" />
+        <None Remove="SvgImages\Reports.svg" />
+        <None Remove="SvgImages\SalesMap.svg" />
+        <None Remove="SvgImages\Save.svg" />
+        <None Remove="SvgImages\Settings.svg" />
+        <None Remove="SvgImages\ShortPostions.svg" />
+        <None Remove="SvgImages\ShowDivg.svg" />
+        <None Remove="SvgImages\ShowGann.svg" />
+        <None Remove="SvgImages\ShowHew.svg" />
+        <None Remove="SvgImages\SortAZ.svg" />
+        <None Remove="SvgImages\SortZA.svg" />
+        <None Remove="SvgImages\SyncWave.svg" />
+        <None Remove="SvgImages\TakeProfit.svg" />
+        <None Remove="SvgImages\Task.svg" />
+        <None Remove="SvgImages\Three.svg" />
+        <None Remove="SvgImages\TrailingStop3.svg" />
+        <None Remove="SvgImages\TriA.svg" />
+        <None Remove="SvgImages\TriB.svg" />
+        <None Remove="SvgImages\TriC.svg" />
+        <None Remove="SvgImages\TriD.svg" />
+        <None Remove="SvgImages\TriE.svg" />
+        <None Remove="SvgImages\Two.svg" />
+        <None Remove="SvgImages\up.svg" />
+        <None Remove="SvgImages\W.svg" />
+        <None Remove="SvgImages\WaveAnalytics.svg" />
+        <None Remove="SvgImages\X.svg" />
+        <None Remove="SvgImages\Y.svg" />
+        <None Remove="SvgImages\Z.svg" />
+        <None Remove="SvgImages\ZoomIn.svg" />
+        <None Remove="SvgImages\ZoomOut.svg" />
+        <None Remove="TradeStation\fxtrader3.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\.editorconfig" Link=".editorconfig" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
+      <PackageReference Include="fx.Disruptor" Version="5.0.210" />
+      <PackageReference Include="fx.Strategies" Version="5.0.210" />
+      <PackageReference Include="StockSharp.Xaml" Version="5.0.132" />
+      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\30FreemindPearl\StockSharp.Studio.Controls\10_StockSharp.Studio.Controls.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="SciChart.Charting">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Include="Images\0.png" />
+        <Resource Include="Images\13.png" />
+        <Resource Include="Images\144.png" />
+        <Resource Include="Images\21.png" />
+        <Resource Include="Images\34.png" />
+        <Resource Include="Images\5.png" />
+        <Resource Include="Images\55.png" />
+        <Resource Include="Images\8.png" />
+        <Resource Include="Images\89.png" />
+        <Resource Include="Images\Adr.png" />
+        <Resource Include="Images\AUDCAD.png" />
+        <Resource Include="Images\AUDCHF.png" />
+        <Resource Include="Images\AUDJPY.png" />
+        <Resource Include="Images\AUDNZD.png" />
+        <Resource Include="Images\AUDUSD.png" />
+        <Resource Include="Images\AUS200.png" />
+        <Resource Include="Images\Bond.png" />
+        <Resource Include="Images\BTCUSD.png" />
+        <Resource Include="Images\BUND.png" />
+        <Resource Include="Images\CADCHF.png" />
+        <Resource Include="Images\CADJPY.png" />
+        <Resource Include="Images\Cfd.png" />
+        <Resource Include="Images\CHFJPY.png" />
+        <Resource Include="Images\CHN50.png" />
+        <Resource Include="Images\Commodity.png" />
+        <Resource Include="Images\COPPER.png" />
+        <Resource Include="Images\CryptoCurrency.png" />
+        <Resource Include="Images\Currency.png" />
+        <Resource Include="Images\Cycle.png" />
+        <Resource Include="Images\ESP35.png" />
+        <Resource Include="Images\EURAUD.png" />
+        <Resource Include="Images\EURCAD.png" />
+        <Resource Include="Images\EURCHF.png" />
+        <Resource Include="Images\EURCZK.png" />
+        <Resource Include="Images\EURGBP.png" />
+        <Resource Include="Images\EURJPY.png" />
+        <Resource Include="Images\EURNOK.png" />
+        <Resource Include="Images\EURNZD.png" />
+        <Resource Include="Images\EURSEK.png" />
+        <Resource Include="Images\EURTRY.png" />
+        <Resource Include="Images\EURUSD.png" />
+        <Resource Include="Images\EUSTX50.png" />
+        <Resource Include="Images\FRA40.png" />
+        <Resource Include="Images\GBPAUD.png" />
+        <Resource Include="Images\GBPCAD.png" />
+        <Resource Include="Images\GBPCHF.png" />
+        <Resource Include="Images\GBPJPY.png" />
+        <Resource Include="Images\GBPNZD.png" />
+        <Resource Include="Images\GBPUSD.png" />
+        <Resource Include="Images\GER30.png" />
+        <Resource Include="Images\GrandSupercycle.png" />
+        <Resource Include="Images\HKG33.png" />
+        <Resource Include="Images\Index.png" />
+        <Resource Include="Images\Intermediate.png" />
+        <Resource Include="Images\ITA40.png" />
+        <Resource Include="Images\JPN225.png" />
+        <Resource Include="Images\Micro.png" />
+        <Resource Include="Images\Miniscule.png" />
+        <Resource Include="Images\Minor.png" />
+        <Resource Include="Images\Minuette.png" />
+        <Resource Include="Images\Minute.png" />
+        <Resource Include="Images\NAS100.png" />
+        <Resource Include="Images\NGAS.png" />
+        <Resource Include="Images\NZDCAD.png" />
+        <Resource Include="Images\NZDCHF.png" />
+        <Resource Include="Images\NZDUSD.png" />
+        <Resource Include="Images\Option.png" />
+        <Resource Include="Images\Primary.png" />
+        <Resource Include="Images\SPX500.png" />
+        <Resource Include="Images\Stock.png" />
+        <Resource Include="Images\SubIntermediate.png" />
+        <Resource Include="Images\Submicro.png" />
+        <Resource Include="Images\SubMinor.png" />
+        <Resource Include="Images\Subminuette.png" />
+        <Resource Include="Images\SubMinute.png" />
+        <Resource Include="Images\SUI30.png" />
+        <Resource Include="Images\Supercycle.png" />
+        <Resource Include="Images\TradeControl\100.png" />
+        <Resource Include="Images\TradeControl\20.png" />
+        <Resource Include="Images\TradeControl\200.png" />
+        <Resource Include="Images\TradeControl\40.png" />
+        <Resource Include="Images\TradeControl\500.png" />
+        <Resource Include="Images\TradeControl\60.png" />
+        <Resource Include="Images\TradeControl\80.png" />
+        <Resource Include="Images\TradeControl\AgentPhoto.png" />
+        <Resource Include="Images\TradeControl\AppIcon.ico" />
+        <Resource Include="Images\TradeControl\AppIcon.svg" />
+        <Resource Include="Images\TradeControl\Back.png" />
+        <Resource Include="Images\TradeControl\BitCoin.png" />
+        <Resource Include="Images\TradeControl\Calc.png" />
+        <Resource Include="Images\TradeControl\DollarIndex.png" />
+        <Resource Include="Images\TradeControl\DowJones.png" />
+        <Resource Include="Images\TradeControl\Euro.png" />
+        <Resource Include="Images\TradeControl\EURUSD.jpg" />
+        <Resource Include="Images\TradeControl\EURUSD.png" />
+        <Resource Include="Images\TradeControl\gold.png" />
+        <Resource Include="Images\TradeControl\Gold3.png" />
+        <Resource Include="Images\TradeControl\Home.jpg" />
+        <Resource Include="Images\TradeControl\HomeLayout.jpg" />
+        <Resource Include="Images\TradeControl\HomePhoto.jpg" />
+        <Resource Include="Images\TradeControl\nasdaq.png" />
+        <Resource Include="Images\TradeControl\Next.png" />
+        <Resource Include="Images\TradeControl\NGas.png" />
+        <Resource Include="Images\TradeControl\Oil.png" />
+        <Resource Include="Images\TradeControl\Pound.png" />
+        <Resource Include="Images\TradeControl\Prev.png" />
+        <Resource Include="Images\TradeControl\Rates.png" />
+        <Resource Include="Images\TradeControl\Research.png" />
+        <Resource Include="Images\TradeControl\SecurityPhoto.jpg" />
+        <Resource Include="Images\TradeControl\Silver.png" />
+        <Resource Include="Images\TradeControl\SPX.png" />
+        <Resource Include="Images\TradeControl\Statistics.png" />
+        <Resource Include="Images\TradeControl\System.png" />
+        <Resource Include="Images\TradeControl\UnderConstruction.png" />
+        <Resource Include="Images\TradeControl\UserManagment.png" />
+        <Resource Include="Images\TradeControl\ZillowLogo.png" />
+        <Resource Include="Images\TRYJPY.png" />
+        <Resource Include="Images\UK100.png" />
+        <Resource Include="Images\UKOIL.png" />
+        <Resource Include="Images\US2000.png" />
+        <Resource Include="Images\US30.png" />
+        <Resource Include="Images\USDCAD.png" />
+        <Resource Include="Images\USDCHF.png" />
+        <Resource Include="Images\USDCNH.png" />
+        <Resource Include="Images\USDCZK.png" />
+        <Resource Include="Images\USDHKD.png" />
+        <Resource Include="Images\USDJPY.png" />
+        <Resource Include="Images\USDMXN.png" />
+        <Resource Include="Images\USDNOK.png" />
+        <Resource Include="Images\USDOLLAR.png" />
+        <Resource Include="Images\USDSEK.png" />
+        <Resource Include="Images\USDTRY.png" />
+        <Resource Include="Images\USDZAR.png" />
+        <Resource Include="Images\USOIL.png" />
+        <Resource Include="Images\XAGUSD.png" />
+        <Resource Include="Images\XAUUSD.png" />
+        <Resource Include="Images\XPDUSD.png" />
+        <Resource Include="Images\XPTUSD.png" />
+        <Resource Include="Images\ZARJPY.png" />
+        <Resource Include="SplashScreen\FreeMindPleaseWait125.png" />
+        <Resource Include="SplashScreen\FreeMindPleaseWait150.png" />
+        <Resource Include="SplashScreen\FreeMindPleaseWait180.png" />
+        <Resource Include="SplashScreen\FreeMindPleaseWait200.png" />
+        <Resource Include="SvgImages\A.svg" />
+        <Resource Include="SvgImages\analytics.svg" />
+        <Resource Include="SvgImages\B.svg" />
+        <Resource Include="SvgImages\bar_chart.svg" />
+        <Resource Include="SvgImages\Branch.svg" />
+        <Resource Include="SvgImages\BreakEven.svg" />
+        <Resource Include="SvgImages\broken2.svg" />
+        <Resource Include="SvgImages\C.svg" />
+        <Resource Include="SvgImages\Cancel.svg" />
+        <Resource Include="SvgImages\CloseAll.svg" />
+        <Resource Include="SvgImages\CustomFilter.svg" />
+        <Resource Include="SvgImages\Delete.svg" />
+        <Resource Include="SvgImages\diamond.svg" />
+        <Resource Include="SvgImages\dollar.svg" />
+        <Resource Include="SvgImages\Edit.svg" />
+        <Resource Include="SvgImages\EFA.svg" />
+        <Resource Include="SvgImages\EFB.svg" />
+        <Resource Include="SvgImages\EFC.svg" />
+        <Resource Include="SvgImages\escape.svg" />
+        <Resource Include="SvgImages\FibLines.svg" />
+        <Resource Include="SvgImages\FibLucasGann.svg" />
+        <Resource Include="SvgImages\FilterWave.svg" />
+        <Resource Include="SvgImages\Five.svg" />
+        <Resource Include="SvgImages\Four.svg" />
+        <Resource Include="SvgImages\fxtrader3.svg" />
+        <Resource Include="SvgImages\GotoBars.svg" />
+        <Resource Include="SvgImages\HedgeAll.svg" />
+        <Resource Include="SvgImages\HedgeLosing.svg" />
+        <Resource Include="SvgImages\HedgeWinning.svg" />
+        <Resource Include="SvgImages\HHLL.svg" />
+        <Resource Include="SvgImages\HighLow3.svg" />
+        <Resource Include="SvgImages\LongPosition.svg" />
+        <Resource Include="SvgImages\loss.svg" />
+        <Resource Include="SvgImages\MailMerge.svg" />
+        <Resource Include="SvgImages\MapView.svg" />
+        <Resource Include="SvgImages\medal.svg" />
+        <Resource Include="SvgImages\Meeting.svg" />
+        <Resource Include="SvgImages\mouse-with-scroll-wheel.svg" />
+        <Resource Include="SvgImages\MouseRight.svg" />
+        <Resource Include="SvgImages\net.svg" />
+        <Resource Include="SvgImages\New.svg" />
+        <Resource Include="SvgImages\NewIndicator.svg" />
+        <Resource Include="SvgImages\Note.svg" />
+        <Resource Include="SvgImages\One.svg" />
+        <Resource Include="SvgImages\OrderList.svg" />
+        <Resource Include="SvgImages\PivotPoints.svg" />
+        <Resource Include="SvgImages\PivotTable.svg" />
+        <Resource Include="SvgImages\Print.svg" />
+        <Resource Include="SvgImages\RecalcIndicator.svg" />
+        <Resource Include="SvgImages\ReloadDatabar.svg" />
+        <Resource Include="SvgImages\Reports.svg" />
+        <Resource Include="SvgImages\SalesMap.svg" />
+        <Resource Include="SvgImages\Save.svg" />
+        <Resource Include="SvgImages\Settings.svg" />
+        <Resource Include="SvgImages\ShortPostions.svg" />
+        <Resource Include="SvgImages\ShowDivg.svg" />
+        <Resource Include="SvgImages\ShowGann.svg" />
+        <Resource Include="SvgImages\ShowHew.svg" />
+        <Resource Include="SvgImages\SortAZ.svg" />
+        <Resource Include="SvgImages\SortZA.svg" />
+        <Resource Include="SvgImages\SyncWave.svg" />
+        <Resource Include="SvgImages\TakeProfit.svg" />
+        <Resource Include="SvgImages\Task.svg" />
+        <Resource Include="SvgImages\Three.svg" />
+        <Resource Include="SvgImages\TrailingStop3.svg" />
+        <Resource Include="SvgImages\TriA.svg" />
+        <Resource Include="SvgImages\TriB.svg" />
+        <Resource Include="SvgImages\TriC.svg" />
+        <Resource Include="SvgImages\TriD.svg" />
+        <Resource Include="SvgImages\TriE.svg" />
+        <Resource Include="SvgImages\Two.svg" />
+        <Resource Include="SvgImages\up.svg" />
+        <Resource Include="SvgImages\W.svg" />
+        <Resource Include="SvgImages\WaveAnalytics.svg" />
+        <Resource Include="SvgImages\X.svg" />
+        <Resource Include="SvgImages\Y.svg" />
+        <Resource Include="SvgImages\Z.svg" />
+        <Resource Include="SvgImages\ZoomIn.svg" />
+        <Resource Include="SvgImages\ZoomOut.svg" />
+        <Resource Include="TradeStation\fxtrader3.svg" />
+    </ItemGroup>
+
+</Project>

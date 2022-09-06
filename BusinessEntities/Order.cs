@@ -680,5 +680,15 @@ namespace StockSharp.BusinessEntities
 
 			return str;
 		}
+		/* -------------------------------------------------------------------------------------------------------------------------------------------
+		* 
+		*  Tony 00: What type of Position to Close 
+		* 
+		* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+		/// <summary>
+		/// What type of Position to Close
+		/// </summary>
+		public ClosePositionsType? ClosePositionType { get; set; }
 	}
 }

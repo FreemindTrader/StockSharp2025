@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Collections</id>
+    <version>1.0.106</version>
+    <title>Ecng.Collections</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes>Removed obsolete AllowUnsafeBlocks</releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Collections</tags>
+    <repository commit="c68b097dfd1e0176fac12dbbdea78eb091ad054b" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="MoreLinq" version="3.3.2" />
+        <dependency id="Ecng.Common" version="1.0.103" />
+        <dependency id="Ecng.PowerCollections" version="1.0.36" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

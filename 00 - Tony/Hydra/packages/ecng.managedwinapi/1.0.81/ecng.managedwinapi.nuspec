@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.ManagedWinapi</id>
+    <version>1.0.81</version>
+    <title>Ecng.ManagedWinapi</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng ManagedWinapi</tags>
+    <repository commit="bc7d88ba7d67e38078a3c1310bda0675c691a3d2" />
+    <dependencies>
+      <group targetFramework="net5.0-windows">
+        <dependency id="Microsoft.Windows.Compatibility" version="5.0.2" />
+        <dependency id="Ecng.Interop" version="1.0.125" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

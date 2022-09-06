@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSharp.Installer.IPC</name>
+    </assembly>
+    <members>
+        <member name="T:StockSharp.Installer.IPC.IInstallerChannelHandler">
+            <summary>
+            Interface to be implemented to handle installer messages.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.IInstallerChannelHandler.GetInstallerResponseAsync(StockSharp.Installer.IPC.InstallerMessage,System.Threading.CancellationToken)">
+            <summary>
+            Handle incoming message and return response.
+            </summary>
+            <param name="request">Request message.</param>
+            <param name="token">Cancellation token.</param>
+            <returns>Task that represents response message on completion.</returns>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.InstallerChannel">
+            <summary>
+            Message channel between applications and installer.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.#ctor(System.Int64,StockSharp.Installer.IPC.IInstallerChannelHandler,StockSharp.Logging.ILogSource)">
+            <summary>
+            Create instance.
+            </summary>
+            <param name="channelId">This product.</param>
+            <param name="handler">Incoming message handler.</param>
+            <param name="parent"></param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.DisposeManaged">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.GetResponse(StockSharp.Installer.IPC.InstallerMessage,System.Int64)">
+            <summary>
+            Send message and get respons synchronously.
+            </summary>
+            <param name="message"></param>
+            <param name="toProductId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.SendResponse(StockSharp.Installer.IPC.InstallerMessage,StockSharp.Installer.IPC.InstallerMessage)">
+            <summary>
+            Send response for particular request.
+            </summary>
+            <param name="requestMessage"></param>
+            <param name="response"></param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.GetResponseAsync(StockSharp.Installer.IPC.InstallerMessage,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Send message and get response asynchonously.
+            </summary>
+            <param name="message"></param>
+            <param name="toProductId"></param>
+            <param name="token"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.SendResponseAsync(StockSharp.Installer.IPC.InstallerMessage,StockSharp.Installer.IPC.InstallerMessage,System.Threading.CancellationToken)">
+            <summary>
+            Send response asynchronously.
+            </summary>
+            <param name="requestMessage"></param>
+            <param name="response"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.InstallerChannel.ConnectionException">
+            <summary>
+            Connection cannot be established.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerChannel.ConnectionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create instance.
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.IpcHelper">
+            <summary>
+            Installer IPC helper.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Installer.IPC.IpcHelper.ProductIdInstallerConsole">
+            <summary>
+            Special channel id for Installer.Console
+            </summary>
+        </member>
+        <member name="F:StockSharp.Installer.IPC.IpcHelper.InstallerUITitle">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.IpcHelper.VerifyIsOk(StockSharp.Installer.IPC.InstallerMessage,System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.InstallerMessage">
+            <summary>
+            Base installer message.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerMessage.#ctor">
+            <summary>
+            Create instance.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.InstallerMessage.From">
+            <summary>
+            Product id of message senders product.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerMessage.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerMessage.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.InstallerMessage.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgClose">
+            <summary>
+            Message from installer to application to ask it to close before update.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgOk">
+            <summary>
+            Confirmation message.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgError">
+            <summary>
+            Response which means that there was error during message handling on server side.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgError.ErrorMessage">
+            <summary>
+            Error message.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgError.IsCancellation">
+            <summary>
+            Is cancellation.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgError.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgError.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgError.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgCheckUpdates">
+            <summary>
+            Message from application to installer to check for updates and send back updates info.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgUpdatesInfo">
+            <summary>
+            Message from installer to application which contains updates information.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgUpdatesInfo.Update">
+            <summary>
+            Package update info.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgUpdatesInfo.Update.PackageId">
+            <summary>
+            Package id.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgUpdatesInfo.Update.CurrentVersion">
+            <summary>
+            Current version.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgUpdatesInfo.Update.AvailableVersion">
+            <summary>
+            Available version.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgUpdatesInfo.Update.ToString">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgUpdatesInfo.Product">
+            <summary>
+            Product id.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgUpdatesInfo.Updates">
+            <summary>
+            Available updates.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgUpdatesInfo.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgUpdatesInfo.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgUpdatesInfo.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgShowAvailableDesignerSchemes">
+            <summary>
+            Message from Designer to show available designer schemes.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Installer.IPC.MsgPublishDesigherScheme">
+            <summary>
+            Message from Designer to installer to publish a scheme.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgPublishDesigherScheme.Name">
+            <summary>
+            Name.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgPublishDesigherScheme.Description">
+            <summary>
+            Description.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgPublishDesigherScheme.DocUrl">
+            <summary>
+            Doc url.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Installer.IPC.MsgPublishDesigherScheme.SchemePath">
+            <summary>
+            Scheme path in the filesystem.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgPublishDesigherScheme.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgPublishDesigherScheme.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="ss">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Installer.IPC.MsgPublishDesigherScheme.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+    </members>
+</doc>

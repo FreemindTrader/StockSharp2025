@@ -1,0 +1,281 @@
+<studio:BaseStudioControl x:Class="StockSharp.Hydra.Panes.TaskPane"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:panes="clr-namespace:StockSharp.Hydra.Panes"
+                          xmlns:converters="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+                          xmlns:sx="http://schemas.stocksharp.com/xaml"
+                          xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                          xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                          xmlns:studio="clr-namespace:StockSharp.Studio.Controls;assembly=StockSharp.Studio.Controls"
+                          xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                          xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                          xmlns:core="clr-namespace:StockSharp.Hydra.Core;assembly=StockSharp.Hydra.Core"
+                          xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+                          xmlns:controls="clr-namespace:StockSharp.Hydra.Controls"
+                          xmlns:helpers="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal"
+                          xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                          Loaded="TaskPane_OnLoaded" sx:Doc.Url="47ebc084-6b07-4b69-8f96-ea190110111f.htm">
+    <FrameworkElement.Resources>
+        <converters:EnumDisplayNameConverter x:Key="EnumDisplayNameConverter"/>
+        <panes:HydraSeriesToStringConverter x:Key="SeriesToStringConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" FalseValue="Hidden"/>
+        <dxe:HighlighterAppearance x:Key="HighlighterAppearance"/>
+        <DataTemplate x:Key="HighlightTemplate">
+            <TextBlock x:Name="PART_Editor"
+                 helpers:TextBlockService.HighlightedTextAppearance="{StaticResource HighlighterAppearance}"
+                 helpers:TextBlockService.EnableTextHighlighting="True"
+                 helpers:TextBlockService.HighlightedTextCriteria="Contains" Text="{Binding RowData.Row.Name}"
+                 helpers:TextBlockService.HighlightedText="{Binding View.SearchString}"/>
+        </DataTemplate>
+        <DataTemplate x:Key="SimpleTemplate">
+            <TextBlock x:Name="PART_Editor" Text="{Binding RowData.Row.Name}"/>
+        </DataTemplate>
+        <panes:NameColumnTemplateSelector x:Key="NameColumnTemplateSelector" SimpleTemplate="{StaticResource SimpleTemplate}"
+                                      HighlightTemplate="{StaticResource HighlightTemplate}"/>
+    </FrameworkElement.Resources>
+    <UIElement.CommandBindings>
+        <CommandBinding Executed="OpenDirectoryCommand_Executed" CanExecute="OpenDirectoryCommand_CanExecute"
+                    Command="{x:Static panes:TaskPane.OpenDirectoryCommand}"/>
+        <CommandBinding Executed="OpenDataCommand_Executed" CanExecute="OpenDataCommand_CanExecute"
+                    Command="{x:Static panes:TaskPane.OpenDataCommand}"/>
+        <CommandBinding Executed="ExpandCollapseCommand_Executed" CanExecute="ExpandCollapseCommand_CanExecute"
+                    Command="{x:Static panes:TaskPane.ExpandCollapseCommand}"/>
+        <CommandBinding Executed="EnableTaskCommand_Executed" CanExecute="EnableTaskCommand_CanExecute"
+                    Command="{x:Static panes:TaskPane.EnableTaskCommand}"/>
+    </UIElement.CommandBindings>
+    <dxdo:DockLayoutManager x:Name="DockSite" Margin="5">
+        <dxdo:LayoutGroup Orientation="Horizontal">
+            <dxdo:LayoutPanel Caption="{x:Static loc:LocalizedStrings.Securities}" AllowClose="False" ItemWidth="4*">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <sx:BaseGridControl ItemDoubleClick="SecuritiesCtrl_ItemDoubleClick"
+                              SelectionChanged="SecuritiesCtrl_OnSelectionChanged" FilterChanged="SecuritiesCtrl_OnFilterChanged"
+                              x:Name="SecuritiesCtrl" SelectionMode="Row" Grid.Row="0">
+                        <dxg:GridControl.View>
+                            <dxg:TreeListView CustomNodeFilter="TreeListView_OnCustomNodeFilter"
+                                CustomColumnSort="TreeListView_OnCustomColumnSort"
+                                CellValueChanged="TreeListView_OnCellValueChanged" ShowingEditor="TreeListView_OnShowingEditor"
+                                Name="TreeListView" AutoWidth="True" ShowIndicator="False" KeyFieldName="Id"
+                                ParentFieldName="ParentId" ExpandNodesOnFiltering="True" FilterRowDelay="0"
+                                AllowPerPixelScrolling="True" FilterMode="Extended" ShowSearchPanelCloseButton="False"
+                                ShowSearchPanelMode="Always" SearchDelay="0"
+                                ExpandStateBinding="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </dxg:GridControl.View>
+                        <dxg:GridControl.Columns>
+                            <dxg:GridColumn Width="30" ReadOnly="True">
+                                <dxg:ColumnBase.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Width="16" ToolTip="{Binding Path=RowData.Row.InvalidTooltip}"
+                           Source="{sx:ThemedIcons Key=Warning}"
+                           Visibility="{Binding Path=RowData.Row.IsInvalid, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                    </DataTemplate>
+                                </dxg:ColumnBase.CellTemplate>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="NameColumn" Width="150" Header="{x:Static loc:LocalizedStrings.Id}" FieldName="Name"
+                              CellTemplateSelector="{StaticResource NameColumnTemplateSelector}" SortMode="Custom"
+                              SortOrder="Ascending" SortIndex="0"/>
+                            <dxg:GridColumn x:Name="BeginDateColumn" Width="60" AllowEditing="True"
+                              Header="{x:Static loc:LocalizedStrings.Str343}" FieldName="BeginDate">
+                                <dxg:ColumnBase.EditSettings>
+                                    <dxe:DateEditSettings Mask="d" MaskUseAsDisplayFormat="True"/>
+                                </dxg:ColumnBase.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn x:Name="EndDateColumn" Width="60" AllowEditing="True" Header="{x:Static loc:LocalizedStrings.Str345}"
+                              FieldName="EndDate">
+                                <dxg:ColumnBase.EditSettings>
+                                    <dxe:DateEditSettings Mask="d" MaskUseAsDisplayFormat="True"/>
+                                </dxg:ColumnBase.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn Width="50" Header="{x:Static loc:LocalizedStrings.Str330}" Visible="False" ReadOnly="True"
+                              FieldName="TaskSecurity.Security.VolumeStep" Binding="{Binding TaskSecurity.Security.VolumeStep}">
+                                <dxg:ColumnBase.EditSettings>
+                                    <dxe:TextEditSettings HorizontalContentAlignment="Right"/>
+                                </dxg:ColumnBase.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn Width="60" Header="{x:Static loc:LocalizedStrings.PriceStep}" Visible="False" ReadOnly="True"
+                              FieldName="TaskSecurity.Security.PriceStep" Binding="{Binding TaskSecurity.Security.PriceStep}">
+                                <dxg:ColumnBase.EditSettings>
+                                    <dxe:TextEditSettings HorizontalContentAlignment="Right"/>
+                                </dxg:ColumnBase.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn Width="70" Header="{x:Static loc:LocalizedStrings.Count}" ReadOnly="True" FieldName="Info.Count"
+                              Binding="{Binding Info.Count}">
+                                <dxg:ColumnBase.EditSettings>
+                                    <dxe:TextEditSettings HorizontalContentAlignment="Right"/>
+                                </dxg:ColumnBase.EditSettings>
+                            </dxg:GridColumn>
+                            <dxg:GridColumn Width="70" Header="{x:Static loc:LocalizedStrings.Str748}" Visible="False" ReadOnly="True"
+                              FieldName="CandlesBuildFrom"
+                              Binding="{Binding CandlesBuildFrom, Converter={StaticResource EnumDisplayNameConverter}}"/>
+                            <dxg:GridColumn Width="70" Header="{x:Static loc:LocalizedStrings.Str1660}" Visible="False" ReadOnly="True"
+                              FieldName="MaxDepth" Binding="{Binding MaxDepth}"/>
+                            <dxg:GridColumn Width="140" Header="{x:Static loc:LocalizedStrings.Str2331}" ReadOnly="True"
+                              FieldName="Info.LastTime" Binding="{Binding Info.LastTime}"/>
+                        </dxg:GridControl.Columns>
+                    </sx:BaseGridControl>
+                    <Grid x:Name="ControlPanel" Row="2" IsEnabled="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <dxlc:GroupBox Grid.Column="0" dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.Common}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="5"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Grid.Column="0" VerticalContentAlignment="Center"
+                            Command="{x:Static panes:TaskPane.EnableTaskCommand}" Style="{StaticResource CheckBoxStyle}"
+                            IsChecked="{Binding Path=(core:IHydraTask.IsEnabled)}"/>
+                                    <TextBlock Grid.Column="2" VerticalAlignment="Center">
+                    <FrameworkElement.Style>
+                      <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="TextBlock.Text" Value="{x:Static loc:LocalizedStrings.Enabled}"/>
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding Path=(core:IHydraTask.IsEnabled)}" Value="False">
+                            <Setter Property="TextBlock.Text" Value="{x:Static loc:LocalizedStrings.Str2558}"/>
+                            <Setter Property="TextBlock.Foreground" Value="Red"/>
+                            <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </FrameworkElement.Style>
+                                    </TextBlock>
+                                </Grid>
+                                <dx:SimpleButton Grid.Row="2" ToolTip="{x:Static loc:LocalizedStrings.Str2916}" VerticalAlignment="Center"
+                                 Command="{x:Static panes:TaskPane.OpenDirectoryCommand}">
+                                    <Image Width="16" Source="{sx:ThemedIcons Key=Open}"/>
+                                </dx:SimpleButton>
+                            </Grid>
+                        </dxlc:GroupBox>
+                        <dxlc:GroupBox Grid.Column="2" dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.Securities}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <dx:SimpleButton Click="AddSecurities_OnClick" x:Name="AddSecurity" Grid.Column="0" Grid.Row="0"
+                                 ToolTip="{x:Static loc:LocalizedStrings.XamlStr138}">
+                                    <Image Width="16" Source="{sx:ThemedIcons Key=Add}"/>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Click="RemoveSecurities_OnClick" x:Name="RemoveSecurities" Grid.Column="2" Grid.Row="0"
+                                 ToolTip="{x:Static loc:LocalizedStrings.XamlStr789}" IsEnabled="False">
+                                    <Image Width="16" Source="{sx:ThemedIcons Key=Remove2}"/>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Click="EditSecurities_OnClick" x:Name="EditSecurities" Grid.Column="4" Grid.Row="0"
+                                 ToolTip="{x:Static loc:LocalizedStrings.XamlStr608}" IsEnabled="False">
+                                    <Image Width="16" Source="{sx:ThemedIcons Key=Edit}"/>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton Click="AddAllSecurity_OnClick" x:Name="AddAllSecurity" Grid.Column="0" Grid.ColumnSpan="5"
+                                 Grid.Row="2" Content="ALL@" IsEnabled="False"/>
+                            </Grid>
+                        </dxlc:GroupBox>
+                        <dxlc:GroupBox Grid.Column="4" dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.DataTypes}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel x:Name="CandlesPanel" Grid.Row="0" Orientation="Horizontal" FlowDirection="LeftToRight"
+                            IsEnabled="False">
+                                    <dx:SimpleButton Click="Candles_OnClick" MouseEnter="Candles_OnMouseEnter" x:Name="CandlesButton"
+                                   Content="{x:Static loc:LocalizedStrings.Candles}" IsEnabled="False" VerticalContentAlignment="Center"
+                                   Style="{StaticResource CandleStyle}"/>
+                                    <TextBlock VerticalAlignment="Center" Margin="5,0,0,0">
+                    <Run Text="{x:Static loc:LocalizedStrings.XamlStr193}"/>
+                    :
+                                    </TextBlock>
+                                    <ex:ComboBoxEditEx EditValueChanged="CandlesBuildFrom_OnEditValueChanged" x:Name="CandlesBuildFrom" Margin="5,0,0,0"
+                                     Width="100" VerticalContentAlignment="Center" IsNullable="True"/>
+                                    <CheckBox Click="CheckBoxVolProfileClick" x:Name="VolProfileCb" Margin="30,0,0,0"
+                            Content="{x:Static loc:LocalizedStrings.VolumeProfile}" VerticalContentAlignment="Center"
+                            IsEnabled="False" Style="{StaticResource CheckBoxStyle}"/>
+                                    <Popup x:Name="TimeFramesPopup" StaysOpen="False" PopupAnimation="Scroll" AllowsTransparency="True"
+                         PlacementTarget="{Binding ElementName=CandlesButton}">
+                                        <Border BorderBrush="Black" BorderThickness="2" Background="White">
+                                            <ListBox Name="TimeFrames" BorderThickness="0" Margin="5">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal" Margin="2">
+                                                            <panes:DataTypeCheckBox Checked="OnSelectTimeFrame" Unchecked="OnSelectTimeFrame" VerticalAlignment="Center"
+                                                      Style="{StaticResource CheckBoxStyle}" IsChecked="{Binding IsSelected}"
+                                                      IsThreeState="{Binding IsThreeState}" DataType="{Binding Value}"/>
+                                                            <TextBlock VerticalAlignment="Center" Margin="5,0,0,0"
+                                         Text="{Binding Value, Converter={StaticResource SeriesToStringConverter}}"/>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ListBox>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                                <StackPanel x:Name="DepthsPanel" Grid.Row="1" Orientation="Horizontal" FlowDirection="LeftToRight"
+                            IsEnabled="False" Margin="0,5">
+                                    <CheckBox Click="CheckBoxClick" x:Name="Depths" Content="{x:Static loc:LocalizedStrings.MarketDepths}"
+                            VerticalContentAlignment="Center" IsEnabled="False" Style="{StaticResource CheckBoxStyle}"/>
+                                    <ex:ComboBoxEditEx EditValueChanged="MaxDepthCb_OnEditValueChanged" x:Name="MaxDepthCb" Margin="5,0,0,0" Width="75"
+                                     VerticalContentAlignment="Center" IsNullable="True"
+                                     ToolTip="{x:Static loc:LocalizedStrings.MaxDepthOfBook}"/>
+                                </StackPanel>
+                                <WrapPanel Grid.Row="2" Orientation="Horizontal" FlowDirection="LeftToRight">
+                                    <CheckBox Click="CheckBoxClick" x:Name="Ticks" Content="{x:Static loc:LocalizedStrings.Ticks}"
+                            VerticalContentAlignment="Center" IsEnabled="False" Style="{StaticResource CheckBoxStyle}"/>
+                                    <CheckBox Click="CheckBoxClick" x:Name="Level1" Margin="5,0,0,0"
+                            Content="{x:Static loc:LocalizedStrings.Level1}" VerticalContentAlignment="Center" IsEnabled="False"
+                            Style="{StaticResource CheckBoxStyle}"/>
+                                    <CheckBox Click="CheckBoxClick" x:Name="OrderLog" Margin="5,0,0,0"
+                            Content="{x:Static loc:LocalizedStrings.OrderLog}" VerticalContentAlignment="Center"
+                            IsEnabled="False" Style="{StaticResource CheckBoxStyle}"/>
+                                    <CheckBox Click="CheckBoxClick" x:Name="News" Margin="5,0,0,0" Content="{x:Static loc:LocalizedStrings.News}"
+                            VerticalContentAlignment="Center" IsEnabled="False" Style="{StaticResource CheckBoxStyle}"/>
+                                    <CheckBox Click="CheckBoxClick" x:Name="Transactions" Margin="5,0,0,0"
+                            Content="{x:Static loc:LocalizedStrings.Transactions}" VerticalContentAlignment="Center"
+                            IsEnabled="False" Style="{StaticResource CheckBoxStyle}"/>
+                                    <CheckBox Click="CheckBoxClick" x:Name="Positions" Margin="5,0,0,0"
+                            Content="{x:Static loc:LocalizedStrings.Str972}" VerticalContentAlignment="Center" IsEnabled="False"
+                            Style="{StaticResource CheckBoxStyle}"/>
+                                    <dxe:DateEdit EditValueChanged="BeginDate_OnEditValueChanged" x:Name="BeginDate" Margin="10,0,0,0" Width="80"
+                                ToolTip="{x:Static loc:LocalizedStrings.Str343}"/>
+                                    <dxe:DateEdit EditValueChanged="EndDate_OnEditValueChanged" x:Name="EndDate" Margin="5,0,0,0" Width="80"
+                                ToolTip="{x:Static loc:LocalizedStrings.Str345}"/>
+                                </WrapPanel>
+                            </Grid>
+                        </dxlc:GroupBox>
+                    </Grid>
+                </Grid>
+            </dxdo:LayoutPanel>
+            <dxdo:LayoutPanel Caption="{x:Static loc:LocalizedStrings.Str1507}" AllowClose="False" ItemWidth="1*">
+                <controls:TaskSettingsPanel x:Name="SettingsPanel" Changed="SettingsPanel_OnChanged"/>
+            </dxdo:LayoutPanel>
+        </dxdo:LayoutGroup>
+    </dxdo:DockLayoutManager>
+</studio:BaseStudioControl>

@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Algo.History</RootNamespace>
+        <AssemblyName>StockSharp.Algo.History</AssemblyName>
+        <PackageId>StockSharp.Algo.History</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{C2398529-AE6B-44C8-B4B3-BF8CFB8C6BF1}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.205</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="dotnetdbf" Version="6.0.0.3" />
+      <PackageReference Include="Ecng.Web" Version="1.0.42" />
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
+      <PackageReference Include="StockSharp.Community" Version="5.0.108" />
+      <PackageReference Include="System.Net.FtpClient" Version="5.0.206" />
+      <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Algo\Algo.csproj" />
+      <ProjectReference Include="..\..\BusinessEntities\BusinessEntities.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="XigniteCodeGen">
+        <HintPath>..\..\..\..\00FreemindBase\00 - Reference\XigniteCodeGen.dll</HintPath>
+      </Reference>
+      <Reference Include="xNet">
+        <HintPath>..\..\..\..\00FreemindBase\00 - Reference\xNet.dll</HintPath>
+      </Reference>
+    </ItemGroup>    
+</Project>
+

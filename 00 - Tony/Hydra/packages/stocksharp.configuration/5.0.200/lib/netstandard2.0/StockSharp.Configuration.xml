@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSharp.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:StockSharp.Configuration.CandleElement">
+            <summary>
+            Represents the custom candle.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.CandleElement.Type">
+            <summary>
+            Custom candle.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Configuration.CandleElementCollection">
+            <summary>
+            Represents the custom candles section in a configuration file.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.CandleElementCollection.CreateNewElement">
+            <summary>
+            When overridden in a derived class, creates a new <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </summary>
+            <returns>
+            A newly created <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+        </member>
+        <member name="M:StockSharp.Configuration.CandleElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for.</param>
+        </member>
+        <member name="T:StockSharp.Configuration.DiagramElement">
+            <summary>
+            Represents the custom diagram element.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.DiagramElement.Type">
+            <summary>
+            Custom diagram element.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Configuration.DiagramElementCollection">
+            <summary>
+            Represents the custom diagram elements section in a configuration file.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.DiagramElementCollection.CreateNewElement">
+            <summary>
+            When overridden in a derived class, creates a new <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </summary>
+            <returns>
+            A newly created <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+        </member>
+        <member name="M:StockSharp.Configuration.DiagramElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for.</param>
+        </member>
+        <member name="T:StockSharp.Configuration.Extensions">
+            <summary>
+            Extension class.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.Extensions.RootSection">
+            <summary>
+            Instance of the root section <see cref="T:StockSharp.Configuration.StockSharpSection"/>.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Extensions.GetProductId">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:StockSharp.Configuration.IndicatorElement">
+            <summary>
+            Represents the custom indicator.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.IndicatorElement.Type">
+            <summary>
+            Custom indicator.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.IndicatorElement.Painter">
+            <summary>
+            Custom indicator painter.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Configuration.IndicatorElementCollection">
+            <summary>
+            Represents the custom indicators section in a configuration file.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.IndicatorElementCollection.CreateNewElement">
+            <summary>
+            When overridden in a derived class, creates a new <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </summary>
+            <returns>
+            A newly created <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+        </member>
+        <member name="M:StockSharp.Configuration.IndicatorElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Gets the element key for a specified configuration element when overridden in a derived class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Object"/> that acts as the key for the specified <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+            <param name="element">The <see cref="T:System.Configuration.ConfigurationElement"/> to return the key for </param>
+        </member>
+        <member name="T:StockSharp.Configuration.InMemoryMessageAdapterProvider">
+            <summary>
+            In memory configuration message adapter's provider.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.InMemoryMessageAdapterProvider.#ctor(System.Collections.Generic.IEnumerable{StockSharp.Messages.IMessageAdapter})">
+            <summary>
+            Initialize <see cref="T:StockSharp.Configuration.InMemoryMessageAdapterProvider"/>.
+            </summary>
+            <param name="currentAdapters">All currently available adapters.</param>
+        </member>
+        <member name="P:StockSharp.Configuration.InMemoryMessageAdapterProvider.CurrentAdapters">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Configuration.InMemoryMessageAdapterProvider.PossibleAdapters">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Configuration.InMemoryMessageAdapterProvider.GetAdapters">
+            <summary>
+            Get all available adapters.
+            </summary>
+            <returns>All available adapters.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.InMemoryMessageAdapterProvider.CreateStockSharpAdapters(Ecng.Common.IdGenerator,System.String,System.Security.SecureString)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Configuration.InMemoryMessageAdapterProvider.CreateTransportAdapter(Ecng.Common.IdGenerator)">
+            <inheritdoc />
+        </member>
+        <member name="T:StockSharp.Configuration.InvariantCultureSerializer">
+            <summary>
+            Invariant culture <see cref="T:Ecng.Serialization.ISerializer"/>.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.InvariantCultureSerializer.SerializeInvariant(Ecng.Serialization.SettingsStorage,System.String)">
+            <summary>
+            Serialize the specified storage into file.
+            </summary>
+            <param name="settings"><see cref="T:Ecng.Serialization.SettingsStorage"/></param>
+            <param name="fileName">File name.</param>
+        </member>
+        <member name="M:StockSharp.Configuration.InvariantCultureSerializer.SerializeInvariant(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Serialize the specified storage into byte array.
+            </summary>
+            <param name="settings"><see cref="T:Ecng.Serialization.SettingsStorage"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Configuration.InvariantCultureSerializer.DeserializeInvariant(System.String)">
+            <summary>
+            Deserialize storage from the specified file.
+            </summary>
+            <param name="fileName">File name.</param>
+            <returns><see cref="T:Ecng.Serialization.SettingsStorage"/></returns>
+        </member>
+        <member name="M:StockSharp.Configuration.InvariantCultureSerializer.DeserializeInvariant(System.Byte[])">
+            <summary>
+            Deserialize storage from the specified byte array.
+            </summary>
+            <param name="data">Data.</param>
+            <returns><see cref="T:Ecng.Serialization.SettingsStorage"/></returns>
+        </member>
+        <member name="T:StockSharp.Configuration.Paths">
+            <summary>
+            System paths.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetHistoryDataPath(System.String)">
+            <summary>
+            Get history data path.
+            </summary>
+            <param name="startDir">Directory.</param>
+            <returns>History data path.</returns>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.AppName">
+            <summary>
+            App title.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.Paths.AppName2">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.Paths.AppNameWithVersion">
+            <summary>
+            App title with version.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.CompanyPath">
+            <summary>
+            The path to directory with all applications.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.AppDataPath">
+            <summary>
+            The path to the settings directory.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.PlatformConfigurationFile">
+            <summary>
+            The path to the configuration file of platform definition.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.ProxyConfigurationFile">
+            <summary>
+            The path to the configuration file of proxy settings.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.SecurityNativeIdDir">
+            <summary>
+            The path to the directory with native security identifiers.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.SecurityMappingDir">
+            <summary>
+            The path to the directory with securities id mapping.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.SecurityExtendedInfo">
+            <summary>
+            The path to the directory with securities extended info.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.StorageDir">
+            <summary>
+            The path to the directory with market data.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.SnapshotsDir">
+            <summary>
+            The path to the directory with snapshots of market data.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.InstallerDir">
+            <summary>
+            The path to the installer directory.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.InstallerInstallationsConfigPath">
+            <summary>
+            The path to the installer directory.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.Paths.Domain">
+            <summary>
+            Web site domain.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetWebSiteUrl">
+            <summary>
+            Get website url.
+            </summary>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetUserUrl(System.Int64)">
+            <summary>
+            Get user url.
+            </summary>
+            <param name="userId">Identifier.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetStoreLink(System.Object)">
+            <summary>
+            Get store url.
+            </summary>
+            <param name="productId">Identifier.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetProductLink(System.Object)">
+            <summary>
+            Get products url.
+            </summary>
+            <param name="productId">Identifier.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetTopicLink(System.Int64)">
+            <summary>
+            Get topic url.
+            </summary>
+            <param name="topicId">Identifier.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetMessageLink(System.Int64)">
+            <summary>
+            Get message url.
+            </summary>
+            <param name="messageId">Identifier.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetFileLink(System.Object)">
+            <summary>
+            Get file url.
+            </summary>
+            <param name="fileId">File ID.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetDocUrl(System.String)">
+            <summary>
+            To create localized url.
+            </summary>
+            <param name="docUrl">Help topic.</param>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetOpenAccountUrl">
+            <summary>
+            Get open account url.
+            </summary>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetSignUpUrl">
+            <summary>
+            Get sign up url.
+            </summary>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetForgotUrl">
+            <summary>
+            Get forgot password url.
+            </summary>
+            <returns>Localized url.</returns>
+        </member>
+        <member name="P:StockSharp.Configuration.Paths.InstalledVersion">
+            <summary>
+            Installed version of the product.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetInstalledVersion(System.String)">
+            <summary>
+            Get currently installed version of the product.
+            </summary>
+            <param name="productInstallPath">File system path to product installation.</param>
+            <returns>Installed version of the product.</returns>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.HistoryDataPath">
+            <summary>
+            Sample history data.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.StartIsRunning">
+            <summary>
+            Check if an instance of the application already started.
+            </summary>
+            <returns>Check result.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.StartIsRunning(System.String)">
+            <summary>
+            Check if an instance of the application already started.
+            </summary>
+            <returns>Check result.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.StopIsRunning">
+            <summary>
+            Release all resources allocated by <see cref="M:StockSharp.Configuration.Paths.StartIsRunning"/>.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.DefaultSettingsExt">
+            <summary>
+            Default extension for settings file.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.LegacySettingsExt">
+            <summary>
+            Legacy extension for settings file.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Configuration.Paths.BackupExt">
+            <summary>
+            Backup extension for settings file.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.EnumerateConfigs(System.String,System.String)">
+            <summary>
+            Returns an files with <see cref="F:StockSharp.Configuration.Paths.DefaultSettingsExt"/> and <see cref="F:StockSharp.Configuration.Paths.LegacySettingsExt"/> extensions.
+            </summary>
+            <param name="path">The relative or absolute path to the directory to search.</param>
+            <param name="filter">The search string to match against the names of files in path.</param>
+            <returns>Files.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.MakeLegacy(System.String)">
+            <summary>
+            Make the specified <paramref name="filePath"/> with <see cref="F:StockSharp.Configuration.Paths.LegacySettingsExt"/> extension.
+            </summary>
+            <param name="filePath">File path.</param>
+            <returns>File path.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.MakeBackup(System.String)">
+            <summary>
+            Make the specified <paramref name="filePath"/> with <see cref="F:StockSharp.Configuration.Paths.BackupExt"/> extension.
+            </summary>
+            <param name="filePath">File path.</param>
+            <returns>File path.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.MoveToBackup(System.String,System.String)">
+            <summary>
+            Rename the specified file with <see cref="F:StockSharp.Configuration.Paths.BackupExt"/> extension.
+            </summary>
+            <param name="filePath">File path.</param>
+            <param name="backupFilePath">Backup file path.</param>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.CreateSerializer``1">
+            <summary>
+            Create serializer.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <returns>Serializer.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.CreateSerializer(System.Type)">
+            <summary>
+            Create serializer.
+            </summary>
+            <param name="type">Value type.</param>
+            <returns>Serializer.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.Serialize``1(``0,System.String)">
+            <summary>
+            Serialize value into the specified file.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="value">Value.</param>
+            <param name="filePath">File path.</param>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.Serialize``1(``0)">
+            <summary>
+            Serialize value into byte array.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="value">Value.</param>
+            <returns>Serialized data.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.DeserializeWithMigration``1(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.Paths.LegacySerializer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.Deserialize``1(System.String)">
+            <summary>
+            Deserialize value from the specified file.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="filePath">File path.</param>
+            <returns>Value.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.Deserialize``1(System.Byte[])">
+            <summary>
+            Deserialize value from the serialized data.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="data">Serialized data.</param>
+            <returns>Value.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.GetFileName(System.Guid)">
+            <summary>
+            Get file name for the specified id.
+            </summary>
+            <param name="id">Identifier.</param>
+            <returns>File name.</returns>
+        </member>
+        <member name="M:StockSharp.Configuration.Paths.IsConfigExists(System.String)">
+            <summary>
+            Determines the specified config file exists.
+            </summary>
+            <param name="configFile">Config file.</param>
+            <returns>Check result.</returns>
+        </member>
+        <member name="T:StockSharp.Configuration.ProductIdAttribute">
+            <summary>
+            Product id attribute.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.ProductIdAttribute.ProductId">
+            <summary>
+            Product id.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Configuration.ProductIdAttribute.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Configuration.ProductIdAttribute"/>.
+            </summary>
+            <param name="productId"><see cref="P:StockSharp.Configuration.ProductIdAttribute.ProductId"/></param>
+        </member>
+        <member name="T:StockSharp.Configuration.StockSharpSection">
+            <summary>
+            Represents the root StockSharp section in a configuration file.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.StockSharpSection.CustomCandles">
+            <summary>
+            Custom candles.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.StockSharpSection.CustomIndicators">
+            <summary>
+            Custom indicators.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Configuration.StockSharpSection.CustomDiagramElements">
+            <summary>
+            Custom diagram elements.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+    </members>
+</doc>

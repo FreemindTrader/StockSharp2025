@@ -1,0 +1,29 @@
+<dx:ThemedWindow x:Class="StockSharp.Hydra.Windows.SelectDataTypesWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                 xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                 xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                 Title="{x:Static loc:LocalizedStrings.SelectDataTypes}" ResizeMode="NoResize" ShowInTaskbar="False"
+                 SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="100"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MinHeight="150"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dxe:ListBoxEdit x:Name="DataTypesCtrl" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" SelectedIndexChanged="DataTypesCtrl_OnSelectedIndexChanged">
+            <dxe:ListBoxEdit.StyleSettings>
+                <dxe:CheckedListBoxEditStyleSettings/>
+            </dxe:ListBoxEdit.StyleSettings>
+        </dxe:ListBoxEdit>
+        <dx:SimpleButton x:Name="OkBtn" Grid.Column="2" Grid.Row="2" Content="{x:Static loc:LocalizedStrings.OK}"
+                     IsDefault="True" ex:XamlHelper.DialogResult="True" IsEnabled="False" Width="75"/>
+    </Grid>
+</dx:ThemedWindow>

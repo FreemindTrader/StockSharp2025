@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Web.Api.Client</id>
+    <version>5.0.29</version>
+    <title>StockSharp.Web.Api.Client</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>StockSharp WebApi</description>
+    <releaseNotes>ApiClientDataQuery
+IBaseService removed.
+Nuget updated.
+BaseApiClient. Formats Enum as long for get requests.
+Api.Http removed from Web_Nuget.sln</releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Web Api Client</tags>
+    <repository commit="9b833607872c7e08e3d111e8b064996427823e40" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Ecng.Linq" version="1.0.2" />
+        <dependency id="StockSharp.Web.Api.Interfaces" version="5.0.28" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

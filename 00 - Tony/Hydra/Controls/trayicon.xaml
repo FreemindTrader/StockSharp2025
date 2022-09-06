@@ -1,0 +1,24 @@
+<UserControl x:Class="StockSharp.Hydra.Controls.TrayIcon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+             xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+             xmlns:xaml="http://schemas.stocksharp.com/xaml">
+  <FrameworkElement.Resources>
+    <dxb:PopupMenu x:Key="TrayMenu">
+      <dxb:PopupMenu.Items>
+        <dxb:BarButtonItem ItemClick="ShowHideMainWindow" Content="{x:Static loc:LocalizedStrings.Str1479}"
+                           Glyph="{xaml:ThemedIcons Key=Open}"/>
+        <dxb:BarItemSeparator/>
+        <dxb:BarButtonItem ItemClick="StartStopClick" Content="{x:Static loc:LocalizedStrings.Str2421}"
+                           Glyph="{xaml:ThemedIcons Key=Start}"/>
+        <dxb:BarButtonItem ItemClick="LogsClick" Content="{x:Static loc:LocalizedStrings.Str3237}"
+                           Glyph="{xaml:ThemedIcons Key=Logs}"/>
+        <dxb:BarItemSeparator/>
+        <dxb:BarButtonItem ItemClick="MenuExitClick" Content="{x:Static loc:LocalizedStrings.Exit}"
+                           Glyph="{xaml:ThemedIcons Key=Exit}"/>
+      </dxb:PopupMenu.Items>
+    </dxb:PopupMenu>
+  </FrameworkElement.Resources>
+  <Grid/>
+</UserControl>

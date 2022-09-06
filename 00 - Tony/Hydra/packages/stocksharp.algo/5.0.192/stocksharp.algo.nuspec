@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Algo</id>
+    <version>5.0.192</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="4911a11a5c197a7289f509bd0a5bc5df1a3f3e8b" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="fx.Messages" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.BusinessEntities" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Configuration" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="Ecng.Compilation" version="1.0.5" exclude="Build,Analyzers" />
+        <dependency id="Ecng.IO" version="1.0.103" exclude="Build,Analyzers" />
+        <dependency id="Ecng.Interop" version="1.0.127" exclude="Build,Analyzers" />
+        <dependency id="Ecng.Net" version="1.0.156" exclude="Build,Analyzers" />
+        <dependency id="Ecng.StringSearch" version="1.0.62" exclude="Build,Analyzers" />
+        <dependency id="MathNet.Numerics" version="4.15.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="fx.Base" version="5.0.192" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

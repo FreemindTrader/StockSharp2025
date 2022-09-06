@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="FreemindTrader.DailyRangeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:VM="clr-namespace:FreemindTrader"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:local="clr-namespace:FreemindTrader"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="200"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <local:DailyRangeViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <lc:GroupBox
+            Height="200"
+            lc:DockLayoutControl.Dock="Top"
+            Header="Daily Range">
+            <lc:LayoutGroup Header="Daily Range">
+                <lc:LayoutControl Width="120" Orientation="Horizontal">
+                    <lc:LayoutItem
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Label="Today"
+                        LabelPosition="Top">
+                        <TextBlock FontSize="50"><Run Text="{Binding TaManager.TodayRange, Mode=OneWay}" /></TextBlock>
+                    </lc:LayoutItem>
+                </lc:LayoutControl>
+                <lc:LayoutControl Orientation="Horizontal">
+                    <lc:LayoutItem
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Label="Average"
+                        LabelPosition="Top">
+                        <TextBlock FontSize="50"><Run Text="{Binding TaManager.AverageDailyRange, Mode=OneWay}" /></TextBlock>
+                    </lc:LayoutItem>
+                </lc:LayoutControl>
+            </lc:LayoutGroup>
+        </lc:GroupBox>
+    </Grid>
+</UserControl>

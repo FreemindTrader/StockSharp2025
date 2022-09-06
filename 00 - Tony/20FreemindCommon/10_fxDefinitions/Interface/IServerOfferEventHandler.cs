@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace fx.Definitions
+{
+    public interface IServerOfferEventHandler
+    {
+        void OnOfferUpdatedEvent( object sender, ItemEventArgs<IOffer> offer );
+    }
+}

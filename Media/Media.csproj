@@ -17,4 +17,16 @@
     <None Remove="*.gif" />
     <None Remove="*.png" />
   </ItemGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RootNamespace>StockSharp.Media</RootNamespace>
+        <AssemblyName>StockSharp.Media</AssemblyName>
+        <PackageId>StockSharp.Media</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.212</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
 </Project>

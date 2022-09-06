@@ -1,0 +1,7 @@
+<controls:BaseStudioControl x:Class="StockSharp.Studio.Controls.RiskPanel"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:sx="http://schemas.stocksharp.com/xaml"
+                            xmlns:controls="clr-namespace:StockSharp.Studio.Controls">
+  <sx:RiskPanel LayoutChanged="RiskPanelCtrl_OnLayoutChanged" x:Name="RiskPanelCtrl"/>
+</controls:BaseStudioControl>

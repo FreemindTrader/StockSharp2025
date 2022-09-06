@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Backup</id>
+    <version>1.0.115</version>
+    <title>Ecng.Backup</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Backup</tags>
+    <repository commit="5fb57e46f1b7aaa897c22e9ccb6a6ce0a58c4898" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="AWSSDK.S3" version="3.7.3.24" />
+        <dependency id="AWSSDK.SQS" version="3.7.1.34" />
+        <dependency id="AWSSDK.SimpleNotificationService" version="3.7.2.62" />
+        <dependency id="AWSSDK.Glacier" version="3.7.0.91" />
+        <dependency id="Ecng.Serialization" version="1.0.114" />
+        <dependency id="Ecng.YandexDisk" version="1.0.35" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

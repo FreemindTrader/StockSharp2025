@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Hydra</RootNamespace>
+        <AssemblyName>Hydra</AssemblyName>        
+        <PackageId>StockSharp.Hydra</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.205</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <OutputType>WinExe</OutputType>
+        <ApplicationIcon>Properties\FreemindServer.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Properties\stocksharp_data.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Properties\FreemindServer.ico" />
+      <Resource Include="Properties\stocksharp_data.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="linq2db" Version="3.5.1" />
+      <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.95" />
+      <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.211" />
+      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+      <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\30FreemindPearl\StockSharp.Hydra.Core\20_StockSharp.Hydra.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="ActiproSoftware.Shared.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Shared.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="ActiproSoftware.SyntaxEditor.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.SyntaxEditor.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="ActiproSoftware.Text.Addons.DotNet.Roslyn.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Addons.DotNet.Roslyn.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="ActiproSoftware.Text.Addons.DotNet.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Addons.DotNet.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="ActiproSoftware.Text.LLParser.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.LLParser.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="ActiproSoftware.Text.Wpf">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Wpf.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Data.Desktop.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Data.Desktop.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Data.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\Standard\DevExpress.Data.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.Core.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Core.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.Dialogs.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Dialogs.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.Docking.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Docking.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.Grid.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Grid.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.Grid.v21.1.Core">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Grid.v21.1.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.NavBar.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.NavBar.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.PropertyGrid.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.PropertyGrid.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="DevExpress.Xpf.Ribbon.v21.1">
+        <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Ribbon.v21.1.dll</HintPath>
+      </Reference>
+      <Reference Include="StockSharp.Xaml">
+        <HintPath>lib\StockSharp.Xaml.dll</HintPath>
+      </Reference>
+      <Reference Include="StockSharp.Xaml.Charting">
+        <HintPath>lib\StockSharp.Xaml.Charting.dll</HintPath>
+      </Reference>
+      <Reference Include="StockSharp.Xaml.CodeEditor">
+        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\StockSharp.Xaml.CodeEditor.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+    
+
+</Project>
+

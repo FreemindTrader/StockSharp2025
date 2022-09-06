@@ -1,0 +1,52 @@
+﻿<UserControl  
+    x:Class="FreemindAITrade.View.PortfolioPickerView"
+    xmlns:sx="http://schemas.stocksharp.com/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+    xmlns:VM="clr-namespace:FreemindAITrade.ViewModels"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+    Loaded="{DXEvent '@c.OnLoaded(@args)'}"
+>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="Counter" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"
+               Text="{x:Static loc:LocalizedStrings.XamlStr431}"/>
+        <TextBox x:Name="PortfolioFilterCtrl" Grid.Column="2" Grid.Row="0"/>
+        <sx:BaseGridControl x:Name="PortfoliosCtrl" ItemsSource="{Binding PortfolioDataSource.Portfolios}"
+                            SelectedItem="{Binding SelectedPortfolio}"      
+                            CurrentItem="{Binding LastClickedPortfolio}"      
+                            ItemDoubleClick="{DXEvent '@c.OnDoubleClick(@args)'}"
+                            SelectedItemChanged="{DXEvent '@c.OnSelectedItemChanged(@args)'}"                                
+                            LayoutChanged="{DXEvent '@c.OnLayoutChanged(@args)'}" Grid.Column="0" Grid.Row="2"
+                                Grid.ColumnSpan="3">
+            <dxg:GridControl.View>
+                <dxg:TableView AllowEditing="False" AllowColumnFiltering="True" ShowTotalSummary="False" ShowGroupPanel="False"
+                        NavigationStyle="Row" ShowIndicator="False"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.TotalSummary>
+                <dxg:GridSummaryItem SummaryType="Count" DisplayFormat="({0:N0})" Alignment="Left"/>
+            </dxg:GridControl.TotalSummary>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Name}" Width="150" FieldName="PortfolioName"/>
+                <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.XamlStr342}" Width="120" FieldName="BeginValue"/>
+                <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.XamlStr740}" Width="120" FieldName="CurrentValue"/>
+                <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Str255}" Width="100" FieldName="BlockedValue"/>
+                <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.ClientCode}" Visible="False" Width="50"
+                         FieldName="ClientCode"/>
+                <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Board}" Visible="False" Width="50"
+                         FieldName="Board.Code"/>
+            </dxg:GridControl.Columns>
+        </sx:BaseGridControl>
+    </Grid>
+</UserControl>

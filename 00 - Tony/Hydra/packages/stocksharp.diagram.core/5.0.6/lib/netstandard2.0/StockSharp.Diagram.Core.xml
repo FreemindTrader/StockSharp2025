@@ -1,0 +1,4680 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>StockSharp.Diagram.Core</name>
+  </assembly>
+  <members>
+    <member name="T:StockSharp.Diagram.CompositionDiagramElement">
+      <summary>
+            Composite element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Parameters">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.#ctor(StockSharp.Diagram.ICompositionModel)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />.
+            </summary>
+      <param name="model">
+        <see cref="T:StockSharp.Diagram.ICompositionModel" />
+      </param>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Model">
+      <summary>
+        <see cref="T:StockSharp.Diagram.ICompositionModel" />
+      </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.ConnectedToSockets(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Other sockets if this one is connected.
+            </summary>
+      <param name="socket">
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </param>
+      <returns>Connected sockets.</returns>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Category">
+      <summary>
+            The name of the group which includes a diagram element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Description">
+      <summary>
+            The diagram element description.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.SchemaVersion">
+      <summary>
+            Schema version.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.DocUrl">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.SetTypeId(System.Guid)">
+      <summary>
+        <see cref="P:StockSharp.Diagram.CompositionDiagramElement.TypeId" />
+      </summary>
+      <param name="typeId">
+        <see cref="P:StockSharp.Diagram.CompositionDiagramElement.TypeId" />
+      </param>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Elements">
+      <summary>
+        <see cref="P:StockSharp.Diagram.ICompositionModel.Elements" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Type">
+      <summary>
+            Scheme type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.HasErrors">
+      <summary>
+        <see cref="P:StockSharp.Diagram.ICompositionModel.HasErrors" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.IsLoaded">
+      <summary>
+            Is composite diagram element loaded.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Revision">
+      <summary>
+            The content revision.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.IsModifiable">
+      <summary>
+        <see cref="P:StockSharp.Diagram.ICompositionModel.Modifiable" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.IsUndoRedoing">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.HasUndoManager">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.Strategy">
+      <summary>
+            The strategy to which the element is attached.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionDiagramElement.ElementAdded">
+      <summary>
+            Child element added.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionDiagramElement.ElementRemoved">
+      <summary>
+            Child element removed.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionDiagramElement.StrategyChanged">
+      <summary>
+            Raised when strategy changed.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionDiagramElement.Changed">
+      <summary>
+            The composite element diagram change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.SuspendUndoManager">
+      <summary>
+            Suspend undo/redo manager for <see cref="P:StockSharp.Diagram.CompositionDiagramElement.Model" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.ResumeUndoManager">
+      <summary>
+            Resume undo/redo manager for <see cref="P:StockSharp.Diagram.CompositionDiagramElement.Model" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.RaiseParameterValueChanged(System.String)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnInit">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnUnInit">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnReseted">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionDiagramElement.NeedFlush">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.Flush">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.RaiseElementAdded(StockSharp.Diagram.DiagramElement)">
+      <summary>
+            Invoke <see cref="E:StockSharp.Diagram.CompositionDiagramElement.ElementAdded" />.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.RaiseElementRemoved(StockSharp.Diagram.DiagramElement)">
+      <summary>
+            Invoke <see cref="E:StockSharp.Diagram.CompositionDiagramElement.ElementRemoved" />.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.RaiseChanged">
+      <summary>
+            Invoke <see cref="E:StockSharp.Diagram.CompositionDiagramElement.Changed" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.RaiseStrategyChanged">
+      <summary>
+            Invoke  <see cref="E:StockSharp.Diagram.CompositionDiagramElement.StrategyChanged" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.CreateSocketInstance(StockSharp.Diagram.DiagramSocketDirection,System.String)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnSocketConnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.OnSocketDisconnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.CanUndo">
+      <summary>
+            This predicate is true when one can call <see cref="M:StockSharp.Diagram.CompositionDiagramElement.Undo" />.
+            </summary>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.Undo">
+      <summary>
+            Restore the state of some models to before the current state.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.CanRedo">
+      <summary>
+            This predicate is true when one can call <see cref="M:StockSharp.Diagram.CompositionDiagramElement.Redo" />.
+            </summary>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.Redo">
+      <summary>
+            Restore the state of some models to after the current state.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.FindPortfolios">
+      <summary>
+            Find all portfolios in elements.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.UpdateTypeId(System.Nullable{System.Guid})">
+      <summary>
+            Update <see cref="P:StockSharp.Diagram.DiagramElement.TypeId" /> for composition elements.
+            </summary>
+      <param name="id">New value for <see cref="P:StockSharp.Diagram.DiagramElement.TypeId" />. Can be <see langword="null" />.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionDiagramElement.Clone(System.Boolean)">
+      <summary>
+            Create a copy of <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />.
+            </summary>
+      <param name="cloneSockets">To create copies of connections.</param>
+      <returns>Copy.</returns>
+    </member>
+    <member name="T:StockSharp.Diagram.CompositionHelper">
+      <summary>
+            Helpers.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.GetDiagramElements">
+      <summary>
+            Get all diagram elements.
+            </summary>
+      <returns>All diagram elements.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.IsBrowsable(StockSharp.Diagram.SchemeTypes)">
+      <summary>
+            Determine the specified type is browsable.
+            </summary>
+      <param name="type">Scheme type.</param>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.ContinueAndWaitOnNext(StockSharp.Diagram.DebuggerSyncObject)">
+      <summary>
+            To continue and stop at the next element.
+            </summary>
+      <param name="syncObject">
+        <see cref="T:StockSharp.Diagram.DebuggerSyncObject" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.IsEditable(StockSharp.Diagram.DiagramSocketType)">
+      <summary>
+      </summary>
+      <param name="type">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.FindById(System.Collections.Generic.IEnumerable{StockSharp.Diagram.DiagramSocket},System.String)">
+      <summary>
+      </summary>
+      <param name="sockets">
+      </param>
+      <param name="id">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.ConvertToIIndicatorValue(StockSharp.Algo.Indicators.IIndicator,System.Object)">
+      <summary>
+            Convert input value to <see cref="T:StockSharp.Algo.Indicators.IIndicatorValue" />.
+            </summary>
+      <param name="indicator">Indicator.</param>
+      <param name="inputValue">Input value.</param>
+      <returns>
+        <see cref="T:StockSharp.Algo.Indicators.IIndicatorValue" />.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.GetFromSocket``2(StockSharp.Diagram.ICompositionModelLink,StockSharp.Diagram.ICompositionModelBehavior{``0,``1})">
+      <summary>
+            Get From socket for the specified link.
+            </summary>
+      <param name="link">
+        <see cref="T:StockSharp.Diagram.ICompositionModelLink" />
+      </param>
+      <param name="behavior">
+        <see cref="T:StockSharp.Diagram.ICompositionModelBehavior`2" />
+      </param>
+      <returns>
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionHelper.GetToSocket``2(StockSharp.Diagram.ICompositionModelLink,StockSharp.Diagram.ICompositionModelBehavior{``0,``1})">
+      <summary>
+            Get To socket for the specified link.
+            </summary>
+      <param name="link">
+        <see cref="T:StockSharp.Diagram.ICompositionModelLink" />
+      </param>
+      <param name="behavior">
+        <see cref="T:StockSharp.Diagram.ICompositionModelBehavior`2" />
+      </param>
+      <returns>
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </returns>
+    </member>
+    <member name="T:StockSharp.Diagram.DebuggerSyncObject">
+      <summary>
+            The synchronization object for the composite elements debugger.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DebuggerSyncObject.GuiWrapper">
+      <summary>
+            Gui wrapper for property binding.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DebuggerSyncObject.CurrentElement">
+      <summary>
+            The current element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DebuggerSyncObject.CurrentSocket">
+      <summary>
+            The current socket.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DebuggerSyncObject.CurrentError">
+      <summary>
+            The current error.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DebuggerSyncObject.#ctor(StockSharp.Diagram.CompositionDiagramElement,System.Func{StockSharp.Diagram.DiagramSocket,System.Boolean,System.Boolean},System.Action{StockSharp.Diagram.DebuggerSyncObject},System.Action{StockSharp.Diagram.DebuggerSyncObject})">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DebuggerSyncObject" />.
+            </summary>
+      <param name="rootElement">The root diagram element.</param>
+      <param name="isBreak">The handler that returns a stop flag for the socket.</param>
+      <param name="breakAction">The action with the element at stop.</param>
+      <param name="errorAction">The action with the element at error.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DebuggerSyncObject.DisposeManaged">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DebuggerSyncObject.IsWaitingOnInput">
+      <summary>
+        <see langword="true" />, if the debugger is stopped at the entry of the diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DebuggerSyncObject.IsWaitingOnOutput">
+      <summary>
+        <see langword="true" />, if the debugger is stopped at the exit of the diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DebuggerSyncObject.TryWait(StockSharp.Diagram.DiagramSocket,System.Boolean)">
+      <summary>
+            Try wait on socket.
+            </summary>
+      <param name="socket">
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </param>
+      <param name="isOnInput">Is wait on input.</param>
+      <returns>Operation result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DebuggerSyncObject.TryWaitOnError(StockSharp.Diagram.DiagramElement,System.Exception)">
+      <summary>
+            Try wait on error.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </param>
+      <param name="error">Error.</param>
+      <returns>Operation result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DebuggerSyncObject.SetWaitOnNext">
+      <summary>
+            To set the flag for waiting at the entry of the next diagram element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DebuggerSyncObject.Continue">
+      <summary>
+            Continue.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramConstants">
+      <summary>
+            Constants.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramConstants.ElementDataName">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramDebugger`1">
+      <summary>
+            The debugger of the diagram composite element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.Breakpoints">
+      <summary>
+            Breakpoints (sockets, on which the data transmission will be stopped).
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.IsWaitingOnInput">
+      <summary>
+        <see langword="true" />, if the debugger is stopped at the entry of the diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.IsWaitingOnOutput">
+      <summary>
+        <see langword="true" />, if the debugger is stopped at the exit of the diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.IsWaiting">
+      <summary>
+        <see langword="true" />, if the debugger is stopped at the entry or exit of the diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.CanStepInto">
+      <summary>
+        <see langword="true" />, if it is possible to go inside of the current diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.CanStepOut">
+      <summary>
+        <see langword="true" />, if it is possible to go outside from the current diagram element. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.IsWaitingOnError">
+      <summary>
+        <see langword="true" />, if the debugger is stopped at the error. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.IsEnabled">
+      <summary>
+        <see langword="true" />, if the debugger is used. Otherwise, <see langword="false" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramDebugger`1.Composition">
+      <summary>
+            Composite element.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramDebugger`1.CompositionChanged">
+      <summary>
+            The diagram composite element change event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramDebugger`1.Break">
+      <summary>
+            The event of the stop at the breakpoint.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramDebugger`1.Error">
+      <summary>
+            The event of the stop at the error.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.#ctor(`0,System.Func{`0,System.Func{StockSharp.Diagram.DiagramSocket,System.Boolean,System.Boolean},System.Action{StockSharp.Diagram.DebuggerSyncObject},System.Action{StockSharp.Diagram.DebuggerSyncObject},StockSharp.Diagram.DebuggerSyncObject})">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramDebugger`1" />.
+            </summary>
+      <param name="composition">Composite element.</param>
+      <param name="createSyncObject">Creator.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.AddBreak(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            To add a breakpoint in the socket.
+            </summary>
+      <param name="socket">Socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.RemoveBreak(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            To remove the breakpoint from the socket.
+            </summary>
+      <param name="socket">Socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.RemoveAllBreaks">
+      <summary>
+            Remove all breakpoints from the scheme.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.IsBreak(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Whether the socket is the breakpoint.
+            </summary>
+      <param name="socket">Socket.</param>
+      <returns>
+        <see langword="true" />, if the socket is the breakpoint, otherwise, <see langword="false" />.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.HasBreaks">
+      <summary>
+            Whether the scheme contains the breakpoints.
+            </summary>
+      <returns>
+        <see langword="true" />, if the socket is the breakpoint, otherwise, <see langword="false" />.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.StepNext">
+      <summary>
+            To go to the next element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.StepInto(`0)">
+      <summary>
+            To go inside the diagram composite element.
+            </summary>
+      <param name="composition">Composite element.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.StepOut(`0)">
+      <summary>
+            To exit from the diagram composite element.
+            </summary>
+      <param name="composition">Composite element.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.Continue">
+      <summary>
+            Continue.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.Load(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Load settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramDebugger`1.Save(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Save settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramElement">
+      <summary>
+            The diagram element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GenerateSocketId(System.String)">
+      <summary>
+            Generate socket identifier.
+            </summary>
+      <param name="suffix">Suffix.</param>
+      <returns>Identifier.</returns>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.TypeId">
+      <summary>
+            The unique identifier of the diagram element type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.InputSockets">
+      <summary>
+            Incoming connections.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.OutputSockets">
+      <summary>
+            Outgoing connections.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.ParentComposition">
+      <summary>
+            Parent composition this element belongs to.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.IsUndoRedoing">
+      <summary>
+            Whether undo/redo operation is in progress.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.HasUndoManager">
+      <summary>
+            Check if undo manager is defined
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.DocUrl">
+      <summary>
+            Help url.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Parameters">
+      <summary>
+            Diagram element settings.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Category">
+      <summary>
+            The name of the group which includes a diagram element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.CanAutoName">
+      <summary>
+            Use auto naming.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Name">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Description">
+      <summary>
+            The diagram element description.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.LogLevel">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.ShowParameters">
+      <summary>
+            Show element parameters in higher order elements.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.ShowSockets">
+      <summary>
+            Show element sockets in higher order elements.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.ProcessNullValues">
+      <summary>
+            Process null values.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.IconName">
+      <summary>
+            Icon resource name.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Strategy">
+      <summary>
+            The strategy to which the element is attached.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Connector">
+      <summary>
+            Connector.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.DebuggerSyncObject">
+      <summary>
+            The synchronization object for the debugger.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.ProcessOutput">
+      <summary>
+            New data occurring event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.SocketAdded">
+      <summary>
+            The diagram element connection added event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.SocketRemoved">
+      <summary>
+            The diagram element connection removed event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.SocketChanged">
+      <summary>
+            The diagram element connection changed event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.StartedUndoableOperation">
+      <summary>
+            Started undoable operation.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.CommittedUndoableOperation">
+      <summary>
+            Committed undoable operation.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.SetElementName(System.String)">
+      <summary>
+            Set element name.
+            </summary>
+      <param name="name">Name.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.AddParam``1(System.String,``0)">
+      <summary>
+            To add a parameter.
+            </summary>
+      <typeparam name="T">Parameter type.</typeparam>
+      <param name="name">Name.</param>
+      <param name="value">Value.</param>
+      <returns>Parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.AddParam(StockSharp.Diagram.IDiagramElementParam)">
+      <summary>
+            To add a parameter.
+            </summary>
+      <param name="param">Parameter.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RemoveParam(StockSharp.Diagram.IDiagramElementParam)">
+      <summary>
+            To remove a parameter.
+            </summary>
+      <param name="param">Parameter.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.CreateSocketInstance(StockSharp.Diagram.DiagramSocketDirection,System.String)">
+      <summary>
+            Create new socket instance.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GetOrAddInput(System.String,System.String,StockSharp.Diagram.DiagramSocketType,System.Boolean@,System.Action{StockSharp.Diagram.DiagramSocketValue},System.Int32,System.Int32,System.Boolean,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get existing incoming connection. isDynamic is true by default.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="isNew">True if this is a new socket.</param>
+      <param name="process">The action is called at the processing of the new incoming value for socket.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="allowConvertToNumeric">Allow converting to numeric for input values.</param>
+      <param name="isDynamic">Socket will be saved with the element. Default is true for sockets with explicit id.</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GetOrAddInput(StockSharp.Diagram.StaticSocketIds,System.String,StockSharp.Diagram.DiagramSocketType,System.Boolean@,System.Action{StockSharp.Diagram.DiagramSocketValue},System.Int32,System.Int32,System.Boolean,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get existing incoming connection. isDynamic is false by default.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="isNew">True if this is a new socket.</param>
+      <param name="process">The action is called at the processing of the new incoming value for socket.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="allowConvertToNumeric">Allow converting to numeric for input values.</param>
+      <param name="isDynamic">Socket will be saved with the element. Default is true for sockets with explicit id.</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GetOrAddOutput(StockSharp.Diagram.StaticSocketIds,System.String,StockSharp.Diagram.DiagramSocketType,System.Boolean@,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get an outgoing connection. <paramref name="isDynamic" /> is true by default.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="isNew">True if this is a new socket.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="isDynamic">Dynamic sockets are removed during <see cref="M:StockSharp.Diagram.DiagramElement.Load(Ecng.Serialization.SettingsStorage)" />.</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GetOrAddOutput(System.String,System.String,StockSharp.Diagram.DiagramSocketType,System.Boolean@,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get an outgoing connection.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="isNew">True if this is a new socket.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="isDynamic">Dynamic sockets are removed during <see cref="M:StockSharp.Diagram.DiagramElement.Load(Ecng.Serialization.SettingsStorage)" />.</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.AddInput(StockSharp.Diagram.StaticSocketIds,System.String,StockSharp.Diagram.DiagramSocketType,System.Action{StockSharp.Diagram.DiagramSocketValue},System.Int32,System.Int32,System.Boolean,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get existing incoming connection. isDynamic is false by default.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="process">The action is called at the processing of the new incoming value for socket.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="allowConvertToNumeric">Allow converting to numeric for input values.</param>
+      <param name="isDynamic">Socket will be saved with the element. Default is true for sockets with explicit id.</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.AddInput(System.String,System.String,StockSharp.Diagram.DiagramSocketType,System.Action{StockSharp.Diagram.DiagramSocketValue},System.Int32,System.Int32,System.Boolean,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get existing incoming connection. isDynamic is true by default.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="process">The action is called at the processing of the new incoming value for socket.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="allowConvertToNumeric">Allow converting to numeric for input values.</param>
+      <param name="isDynamic">Socket will be saved with the element. Default is true for sockets with explicit id.</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.AddOutput(StockSharp.Diagram.StaticSocketIds,System.String,StockSharp.Diagram.DiagramSocketType,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get an outgoing connection.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="isDynamic">Dynamic sockets are removed during Load().</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.AddOutput(System.String,System.String,StockSharp.Diagram.DiagramSocketType,System.Int32,System.Int32,System.Nullable{System.Boolean})">
+      <summary>
+            To add or get an outgoing connection.
+            </summary>
+      <param name="id">The connection identifier.</param>
+      <param name="name">The connection name.</param>
+      <param name="type">Connection type.</param>
+      <param name="linkableMax">The maximum number of connections.</param>
+      <param name="index">Index in sockets list.</param>
+      <param name="isDynamic">Dynamic sockets are removed during Load().</param>
+      <returns>Connection.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RemoveSocket(System.String)">
+      <summary>
+            To remove a socket by id.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RemoveSocket(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            To remove a connection.
+            </summary>
+      <param name="socket">Connection.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RemoveSockets(System.Boolean)">
+      <summary>
+            To remove all incoming and outgoing connections.
+            </summary>
+      <param name="raiseSocketRemoved">Raise <see cref="E:StockSharp.Diagram.DiagramElement.SocketRemoved" /> event.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RemoveSockets(System.Func{StockSharp.Diagram.DiagramSocket,System.Boolean},System.Boolean)">
+      <summary>
+            To remove multiple sockets.
+            </summary>
+      <param name="predicate">
+      </param>
+      <param name="raiseSocketRemoved">Raise <see cref="E:StockSharp.Diagram.DiagramElement.SocketRemoved" /> event.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnSocketConnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            The method is called at subscription to the processing of diagram element output values.
+            </summary>
+      <param name="socket">The diagram element socket.</param>
+      <param name="source">The source diagram element socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnSocketDisconnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            The method is called at unsubscription from the processing of diagram element output values.
+            </summary>
+      <param name="socket">The diagram element socket.</param>
+      <param name="source">The source diagram element socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseSocketChanged(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.SocketChanged" />.
+            </summary>
+      <param name="socket">Socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseProcessOutput(StockSharp.Diagram.DiagramSocket,System.DateTimeOffset,System.Object,StockSharp.Diagram.DiagramSocketValue,StockSharp.Algo.Subscription)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.ProcessOutput" />.
+            </summary>
+      <param name="outputSocket">Output socket.</param>
+      <param name="time">Time.</param>
+      <param name="value">Value.</param>
+      <param name="source">Source value.</param>
+      <param name="subscription">Subscription.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseProcessOutput(StockSharp.Diagram.DiagramSocket,System.Object)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.ProcessOutput" />.
+            </summary>
+      <param name="outputSocket">Output socket.</param>
+      <param name="value">Value.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseProcessOutput(StockSharp.Diagram.DiagramSocket,System.Object,StockSharp.Algo.Subscription)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.ProcessOutput" />.
+            </summary>
+      <param name="outputSocket">Output socket.</param>
+      <param name="value">Value.</param>
+      <param name="subscription">Subscription.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseProcessOutput(StockSharp.Diagram.DiagramSocket,System.Object,StockSharp.Diagram.DiagramSocketValue,StockSharp.Algo.Subscription)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.ProcessOutput" />.
+            </summary>
+      <param name="outputSocket">Output socket.</param>
+      <param name="value">Value.</param>
+      <param name="source">Source value.</param>
+      <param name="subscription">Subscription.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseProcessOutput(System.DateTimeOffset,System.Object,StockSharp.Diagram.DiagramSocketValue,StockSharp.Algo.Subscription)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.ProcessOutput" />.
+            </summary>
+      <param name="time">Time.</param>
+      <param name="value">Value.</param>
+      <param name="source">Source value.</param>
+      <param name="subscription">Subscription.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseProcessOutput(System.Object,StockSharp.Diagram.DiagramSocketValue,StockSharp.Algo.Subscription)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Diagram.DiagramElement.ProcessOutput" />.
+            </summary>
+      <param name="value">Value.</param>
+      <param name="source">Source value.</param>
+      <param name="subscription">Subscription.</param>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.NeedFlush">
+      <summary>
+            Is need flush state (-1 means No).
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.ProcessingLevel">
+      <summary>
+            Element processing level. How many times Process() is reentered.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Flush">
+      <summary>
+            Flush non trigger (root) elements.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Init(StockSharp.Logging.ILogSource)">
+      <summary>
+            To initialize the element.
+            </summary>
+      <param name="parent">Parent composition or strategy.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.UnInit">
+      <summary>
+            The deinitialization of the element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnInit">
+      <summary>
+            The method is called at initialization of the diagram element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnUnInit">
+      <summary>
+            The method is called at deinitialization of the diagram element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Process(StockSharp.Diagram.DiagramSocketValue)">
+      <summary>
+            To handle the incoming value.
+            </summary>
+      <param name="value">Value.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GetNumConnections(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Get connection count.
+            </summary>
+      <param name="socket">Socket.</param>
+      <returns>Count.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.GetConnectedSourceSockets(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Get connected source sockets.
+            </summary>
+      <param name="targetInputSocket">
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <summary>
+            The method is called at the processing of the new incoming values.
+            </summary>
+      <param name="time">Time.</param>
+      <param name="values">Values.</param>
+      <param name="source">Source value.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Start">
+      <summary>
+            To start the diagram element algorithm.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnStart">
+      <summary>
+            The method is called at the start of the diagram element algorithm.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Stop">
+      <summary>
+            To stop the diagram element algorithm.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnStop">
+      <summary>
+            The method is called at the stop of the diagram element algorithm.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Reset">
+      <summary>
+            To reinitialize the diagram element state.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.OnReseted">
+      <summary>
+            The method is called at re-initialisation of the diagram element state.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.ClearSocketValues">
+      <summary>
+            Clear socket values.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.PropertyChanging">
+      <summary>
+            The diagram element properties value changing event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaisePropertyChanging(System.String)">
+      <summary>
+            To call the <see cref="E:StockSharp.Diagram.DiagramElement.PropertyChanging" /> event.
+            </summary>
+      <param name="propertyName">Property name.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaisePropertyChanging(System.Object,System.ComponentModel.PropertyChangingEventArgs)">
+      <summary>
+            To call the <see cref="E:StockSharp.Diagram.DiagramElement.PropertyChanging" /> event.
+            </summary>
+      <param name="sender">Sender.</param>
+      <param name="args">Arguments.</param>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.PropertyChanged">
+      <summary>
+            The diagram element properties value change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaisePropertyChanged(System.String)">
+      <summary>
+            To call the <see cref="E:StockSharp.Diagram.DiagramElement.PropertyChanged" /> event.
+            </summary>
+      <param name="propertyName">Property name.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaisePropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+      <summary>
+            To call the <see cref="E:StockSharp.Diagram.DiagramElement.PropertyChanged" /> event.
+            </summary>
+      <param name="sender">Sender.</param>
+      <param name="args">Arguments.</param>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.ParameterValueChanged">
+      <summary>
+            The diagram element parameter value change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaiseParameterValueChanged(System.String)">
+      <summary>
+            To call the <see cref="E:StockSharp.Diagram.DiagramElement.ParameterValueChanged" /> event.
+            </summary>
+      <param name="parameterName">Parameter name.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Clone(System.Boolean)">
+      <summary>
+            Create a copy of <see cref="T:StockSharp.Diagram.DiagramElement" />.
+            </summary>
+      <param name="cloneSockets">To create copies of connections.</param>
+      <returns>Copy.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElement.PropertiesChanged">
+      <summary>
+            The available properties change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.RaisePropertiesChanged">
+      <summary>
+            To call the <see cref="E:StockSharp.Diagram.DiagramElement.PropertiesChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElement.SaveUndoState(System.Object)">
+      <summary>
+            Save state to enable undo.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElement.Dispatcher">
+      <summary>
+        <see cref="T:Ecng.ComponentModel.IDispatcher" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramElementParam`1">
+      <summary>
+            The diagram element parameter.
+            </summary>
+      <typeparam name="T">Value type.</typeparam>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElementParam`1.ValueChanging">
+      <summary>
+            The parameter value change start event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramElementParam`1.ValueChanged">
+      <summary>
+            The parameter value change event.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.Name">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.DisplayName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.Description">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.Category">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.Type">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.CanChangeValue">
+      <summary>
+            Can change value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.Attributes">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.Value">
+      <summary>
+            The parameter value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.IsDefault">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.IsParam">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.IgnoreOnSave">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParam`1.SetValueWithIgnoreOnSave(System.Object)">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.NotifyOnChanged">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.SaveHandler">
+      <summary>
+            The parameter value saving handler.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramElementParam`1.LoadHandler">
+      <summary>
+            The parameter value loading handler.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParam`1.Load(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Load settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParam`1.Save(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Save settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParam`1.ToString">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramElementParameters">
+      <summary>
+            Current values of diagram element parameters.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParameters.#ctor(StockSharp.Diagram.DiagramElement)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramElementParameters" />.
+            </summary>
+      <param name="element">The diagram element.</param>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramElementParamHelper">
+      <summary>
+            Extension class for <see cref="T:StockSharp.Diagram.IDiagramElementParam" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetExpandable``1(``0)">
+      <summary>
+            To set the <see cref="T:System.ComponentModel.ExpandableObjectConverter" /> attribute for the diagram element parameter.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetEditor``1(``0,System.Attribute)">
+      <summary>
+            To add the attribute <see cref="T:System.Attribute" /> for the diagram element parameter.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="editor">Attribute.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetDisplay``1(``0,System.String,System.String,System.String,System.Int32)">
+      <summary>
+            To set the <see cref="T:System.ComponentModel.DataAnnotations.DisplayAttribute" /> attribute for the diagram element parameter.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="groupName">The category of the diagram element parameter.</param>
+      <param name="displayName">The display name.</param>
+      <param name="description">The description of the diagram element parameter.</param>
+      <param name="order">The property order.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetReadOnly``1(``0,System.Boolean)">
+      <summary>
+            To set the <see cref="T:System.ComponentModel.ReadOnlyAttribute" /> attribute for the diagram element parameter.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="readOnly">Read-only.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetBrowsable``1(``0,System.Boolean)">
+      <summary>
+            To set the <see cref="T:System.ComponentModel.BrowsableAttribute" /> attribute for the diagram element parameter.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="browsable">Visible parameter.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetOnValueChangingHandler``1(StockSharp.Diagram.DiagramElementParam{``0},System.Action{``0,``0})">
+      <summary>
+            To set the handler at the start of the value change for the diagram element parameter.
+            </summary>
+      <typeparam name="TValue">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="handler">The handler.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetOnValueChangedHandler``1(StockSharp.Diagram.DiagramElementParam{``0},System.Action{``0})">
+      <summary>
+            To set the handler to the value change for the diagram element parameter.
+            </summary>
+      <typeparam name="TValue">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="handler">The handler of the diagram element value change.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetSaveLoadHandlers``1(StockSharp.Diagram.DiagramElementParam{``0},System.Func{``0,Ecng.Serialization.SettingsStorage},System.Func{Ecng.Serialization.SettingsStorage,``0})">
+      <summary>
+            To set the handler of saving/loading for the diagram element parameter.
+            </summary>
+      <typeparam name="TValue">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="save">The handler for the parameter saving.</param>
+      <param name="load">The handler for the parameter loading.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetIsParam``1(``0)">
+      <summary>
+            To modify <see cref="P:StockSharp.Diagram.IDiagramElementParam.IsParam" />.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.RemoveAttribute``2(``0)">
+      <summary>
+            To remove the attribute for the diagram element parameter.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <typeparam name="TAttribute">The attribute type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramElementParamHelper.SetNotifyOnChange``1(``0,System.Boolean)">
+      <summary>
+            To modify <see cref="P:StockSharp.Diagram.IDiagramElementParam.NotifyOnChanged" />.
+            </summary>
+      <typeparam name="TParam">The diagram element parameter type.</typeparam>
+      <param name="param">The diagram element parameter.</param>
+      <param name="value">Value.</param>
+      <returns>The diagram element parameter.</returns>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramSocket">
+      <summary>
+            Connection.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.GuiWrapper">
+      <summary>
+            Gui wrapper for property binding.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Id">
+      <summary>
+            The connection identifier.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Name">
+      <summary>
+            The connection name.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Type">
+      <summary>
+            Connection type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Directon">
+      <summary>
+            The connection direction.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.IsDynamic">
+      <summary>
+            Dynamic sockets are removed during Load().
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.LinkableMaximum">
+      <summary>
+            The maximum number of connections.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Value">
+      <summary>
+            The current value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Parent">
+      <summary>
+            The socket parent element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.IsSelected">
+      <summary>
+            Is socket selected.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.IsBreak">
+      <summary>
+            Is socket has break.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.IsBreakActive">
+      <summary>
+            Is socket break active.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.AvailableTypes">
+      <summary>
+            Available input data types.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.Action">
+      <summary>
+            Socket action.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramSocket.Connected">
+      <summary>
+            The event of the socket connection with another one.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramSocket.Disconnected">
+      <summary>
+            The socket disconnection event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.#ctor(StockSharp.Diagram.DiagramSocketDirection,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramSocket" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.DisposeManaged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.InitializeCopy(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+      </summary>
+      <param name="original">
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.CanConnect(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            To check the ability to make a connection.
+            </summary>
+      <param name="to">Connection.</param>
+      <returns>The test result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.CanConnectFrom(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            To check the ability to make a connection.
+            </summary>
+      <param name="from">Connection.</param>
+      <returns>The test result.</returns>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.IsInput">
+      <summary>
+            Is input.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocket.IsOutput">
+      <summary>
+            Is output.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.Connect(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Invoke <see cref="E:StockSharp.Diagram.DiagramSocket.Connected" /> event.
+            </summary>
+      <param name="other">
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.Disconnect(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Invoke <see cref="E:StockSharp.Diagram.DiagramSocket.Connected" /> event.
+            </summary>
+      <param name="other">
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </param>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramSocket.PropertyChanged">
+      <summary>
+            The connection properties value change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.OnPropertyChanged(System.String)">
+      <summary>
+            To call the connection property value change event.
+            </summary>
+      <param name="propertyName">Property name.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocket.ToString">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramSocketBreakpoint">
+      <summary>
+        <see cref="T:StockSharp.Diagram.DiagramSocket" /> breakpoint.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketBreakpoint.Socket">
+      <summary>
+            Diagram socket.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketBreakpoint.#ctor(StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Initialize <see cref="T:StockSharp.Diagram.DiagramSocketBreakpoint" />.
+            </summary>
+      <param name="socket">Diagram socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketBreakpoint.NeedBreak">
+      <summary>
+            Whether need to break on socket.
+            </summary>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketBreakpoint.OnNeedBreak(System.Object)">
+      <summary>
+            Whether need to break on socket.
+            </summary>
+      <param name="value">Current value.</param>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketBreakpoint.Load(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Load settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketBreakpoint.Save(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Save settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramSocketDirection">
+      <summary>
+            Directions of connections.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketDirection.In">
+      <summary>
+            Incoming.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketDirection.Out">
+      <summary>
+            Outgoing.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramSocketType">
+      <summary>
+            Connection type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketType.Name">
+      <summary>
+            The name of the connection type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketType.Type">
+      <summary>
+            Connection type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketType.Color">
+      <summary>
+            The connection color.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramSocketType" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.#ctor(System.Type,System.String,System.Drawing.Color)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramSocketType" />.
+            </summary>
+      <param name="type">Data type.</param>
+      <param name="name">The name of the connection type.</param>
+      <param name="color">The connection color.</param>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketType.AllTypes">
+      <summary>
+            All available connection types for elements.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.RegisterType``1(System.String,System.Drawing.Color)">
+      <summary>
+            To register the connection type.
+            </summary>
+      <typeparam name="T">Data type.</typeparam>
+      <param name="name">The name of the connection type.</param>
+      <param name="color">The connection color.</param>
+      <returns>Connection type.</returns>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramSocketType.PropertyChanged">
+      <summary>
+            The connection properties value change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.OnPropertyChanged(System.String)">
+      <summary>
+            To call the connection property value change event.
+            </summary>
+      <param name="propertyName">Property name.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.Clone">
+      <summary>
+            Create a copy of <see cref="T:StockSharp.Diagram.DiagramSocketType" />.
+            </summary>
+      <returns>Copy.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.OnEquals(StockSharp.Diagram.DiagramSocketType)">
+      <summary>
+            Compare <see cref="T:StockSharp.Diagram.DiagramSocketType" /> on the equivalence.
+            </summary>
+      <param name="other">Another value with which to compare.</param>
+      <returns>
+        <see langword="true" />, if the specified object is equal to the current object, otherwise, <see langword="false" />.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.Load(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Load settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.Save(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Save settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.ToString">
+      <inheritdoc />
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Any">
+      <summary>
+            Unknown data type.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Security">
+      <summary>
+            Security.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.MarketDepth">
+      <summary>
+            Market depth.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Quote">
+      <summary>
+            Quote.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Candle">
+      <summary>
+            Candle.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.IndicatorValue">
+      <summary>
+            Indicator value.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Order">
+      <summary>
+            Order.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.OrderFail">
+      <summary>
+            Order fail.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.MyTrade">
+      <summary>
+            Own trade.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Bool">
+      <summary>
+            Flag.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Unit">
+      <summary>
+            Numeric value.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Comparable">
+      <summary>
+            Comparable values.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Portfolio">
+      <summary>
+            Portfolio.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Options">
+      <summary>
+            Options.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Side">
+      <summary>
+            Side.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.CandleStates">
+      <summary>
+            Candle state.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Trade">
+      <summary>
+            Trade.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Strategy">
+      <summary>
+            Strategy.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Connector">
+      <summary>
+            Connector.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Date">
+      <summary>
+            Strategy.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Time">
+      <summary>
+            Connector.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.Position">
+      <summary>
+            Position.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketType.OrderState">
+      <summary>
+            Order state.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketType.GetSocketType(System.Type)">
+      <summary>
+            Get <see cref="T:StockSharp.Diagram.DiagramSocketType" /> for <see cref="T:System.Type" />.
+            </summary>
+      <param name="parameterType">Type.</param>
+      <returns>Diagram socket type.</returns>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramSocketValue">
+      <summary>
+            The value for the connection.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketValue.Sender">
+      <summary>
+            The element sender of the value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketValue.Socket">
+      <summary>
+            Connection.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketValue.Time">
+      <summary>
+            Time.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketValue.Subscription">
+      <summary>
+            Subscription.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramSocketValue.Value">
+      <summary>
+            Value.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketValue.#ctor(StockSharp.Diagram.DiagramSocket,System.DateTimeOffset,System.Object,StockSharp.Diagram.DiagramSocket,StockSharp.Algo.Subscription)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramSocketValue" />.
+            </summary>
+      <param name="socket">Connection.</param>
+      <param name="time">Time.</param>
+      <param name="value">Value.</param>
+      <param name="sender">The element sender of the value.</param>
+      <param name="subscription">Subscription.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketValue.GetValue``1">
+      <summary>
+            To get the value for the connection.
+            </summary>
+      <typeparam name="T">Value type.</typeparam>
+      <returns>Value.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramSocketValue.ToString">
+      <inheritdoc />
+    </member>
+    <member name="F:StockSharp.Diagram.DiagramSocketValue.Stack">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DiagramStrategy">
+      <summary>
+            The strategy whose algorithm is presented in the form of a diagram.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramStrategy.Composition">
+      <summary>
+            The strategy diagram.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramStrategy.UseStrategyParameterValues">
+      <summary>
+            Use strategy parameters values for composition properties.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramStrategy.RiskRules">
+      <summary>
+            The risk rules.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DiagramStrategy.OverflowLimit">
+      <summary>
+            Max allowed elements per iteration to prevent stack overflow.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramStrategy.CompositionChanged">
+      <summary>
+            The strategy diagram change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.DiagramStrategy" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.OnStarted">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.OnStopped">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.Flush">
+      <summary>
+            Flush non trigger (root) elements.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.OnReseted">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.Clone">
+      <summary>
+            Create a copy of <see cref="T:StockSharp.Diagram.DiagramStrategy" />.
+            </summary>
+      <returns>Copy.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.NeedShowProperty(System.ComponentModel.PropertyDescriptor)">
+      <summary>
+            It returns <see langword="true" />, if the property is to be displayed in the settings.
+            </summary>
+      <param name="propertyDescriptor">The property description.</param>
+      <returns>
+        <see langword="true" />, if necessary to show the property, otherwise <see langword="false" />.</returns>
+    </member>
+    <member name="E:StockSharp.Diagram.DiagramStrategy.PropertiesChanged">
+      <summary>
+            The available properties change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.DiagramStrategy.RaisePropertiesChanged">
+      <summary>
+            To call the available properties change event.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.AlertDiagramElement">
+      <summary>
+            Notification element (sound, window etc.) for specific market events.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.AlertDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.AlertDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.AlertDiagramElement.Type">
+      <summary>
+            Alert type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.AlertDiagramElement.Caption">
+      <summary>
+            Signal header.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.AlertDiagramElement.Message">
+      <summary>
+            Alert text.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.AlertDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.AlertDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.BaseStrategyDiagramElement">
+      <summary>
+            The element which is using strategy, based on S#.API.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.Painter">
+      <summary>
+            The renderer type for indicator extended drawing.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.Instance">
+      <summary>
+            The instance.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.ShowStrategySocket">
+      <summary>
+            Show strategy socket.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.BaseStrategyDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.OnReseted">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.RemoveExternalSockets">
+      <summary>
+            Remove external sockets.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.BaseStrategyDiagramElement.IsTypeCompatible(System.Type)">
+      <summary>
+            Is type compatible.
+            </summary>
+      <param name="type">Type.</param>
+      <returns>Check result.</returns>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.DiagramExternalAttribute">
+      <summary>
+            Attribute, applied to methods or parameters, to create input socket.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.IndicatorPainterAttribute">
+      <summary>
+            Attribute, applied to class, to create renderer type for indicator extended drawing.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorPainterAttribute.Painter">
+      <summary>
+            The renderer type for indicator extended drawing.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.IndicatorPainterAttribute.#ctor(System.Type)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.IndicatorPainterAttribute" />.
+            </summary>
+      <param name="painter">The renderer type for indicator extended drawing.</param>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.CandleSourceDiagramElement">
+      <summary>
+            Candles source element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.Series">
+      <summary>
+            Candles series.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.IsFinishedOnly">
+      <summary>
+            Send only formed candles.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.IsCalcVolumeProfile">
+      <summary>
+            To perform the calculation <see cref="P:StockSharp.Algo.Candles.Candle.PriceLevels" />. By default, it is disabled.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.IsRegularTradingHours">
+      <summary>
+            Use only the regular trading hours for which data will be requested.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.AllowBuildFromSmallerTimeFrame">
+      <summary>
+            Allow build candles from smaller timeframe.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.BuildCandlesMode">
+      <summary>
+            Build mode.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.BuildCandlesFrom">
+      <summary>
+            Which market-data type is used as a source value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.BuildCandlesField">
+      <summary>
+            Extra info for the <see cref="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.BuildCandlesFrom" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.CandleSourceDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.CandleSourceDiagramElement" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CandleSourceDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.CandleSourceDiagramElement.OnCreateSubscription">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.ChartDiagramElement">
+      <summary>
+            Chart panel element (candles display area, indicators, orders and trades).
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ChartDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ChartDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ChartDiagramElement.ShowNonFormedIndicators">
+      <summary>
+            Show non formed indicators values.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ChartDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.ChartDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.CheckWorkingTimeDiagramElement">
+      <summary>
+            Working time verification element for a specified security.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CheckWorkingTimeDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.CheckWorkingTimeDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.CheckWorkingTimeDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.CheckWorkingTimeDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.ComparisonDiagramElement">
+      <summary>
+            Two values comparison element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ComparisonDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ComparisonDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ComparisonDiagramElement.LeftValue">
+      <summary>
+            Left operand.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ComparisonDiagramElement.Operator">
+      <summary>
+            Operator.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ComparisonDiagramElement.RightValue">
+      <summary>
+            Right operand.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ComparisonDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.ComparisonDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ComparisonDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ComparisonDiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.IndexerDiagramElement">
+      <summary>
+            The element of collection or dictionary.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndexerDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndexerDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndexerDiagramElement.Index">
+      <summary>
+            Index.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.IndexerDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.IndexerDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.IndicatorDiagramElement">
+      <summary>
+            Indicator element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorDiagramElement.Type">
+      <summary>
+            Indicator type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorDiagramElement.Indicator">
+      <summary>
+            The indicator parameters.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorDiagramElement.IsFinal">
+      <summary>
+            Send only final values.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.IndicatorDiagramElement.IsFormed">
+      <summary>
+            Send values only when the indicator is formed.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.IndicatorDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.IndicatorDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.IndicatorDiagramElement.OnReseted">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.IndicatorDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.Level1DiagramElement">
+      <summary>
+            The Level1 element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.Level1DiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.Level1DiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.Level1DiagramElement.ValueType">
+      <summary>
+            Level1 field.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.Level1DiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.Level1DiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.Level1DiagramElement.OnCreateSubscription">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.LogicalConditionDiagramElement">
+      <summary>
+            Logical condition element.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Condition">
+      <summary>
+            The logical condition type.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Condition.And">
+      <summary>
+            AND.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Condition.Or">
+      <summary>
+            OR.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Condition.Xor">
+      <summary>
+            Exclusive OR.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Condition.Not">
+      <summary>
+            NOT.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Operator">
+      <summary>
+            Operator.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.LogicalConditionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.LogicalConditionDiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.LogicOneParamFunctionDiagramElement">
+      <summary>
+            Logical function with one argument element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.LogicOneParamFunctionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.LogicOneParamFunctionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.LogicOneParamFunctionDiagramElement.Function">
+      <summary>
+            Logical function with one argument element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.LogicOneParamFunctionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.LogicOneParamFunctionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.MarketDepthDiagramElement">
+      <summary>
+            Security market depth changes receiving element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MarketDepthDiagramElement.#ctor">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MarketDepthDiagramElement.OnCreateSubscription">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.MarketDepthGroupedDiagramElement">
+      <summary>
+            Grouped market depth element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthGroupedDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthGroupedDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthGroupedDiagramElement.PriceRange">
+      <summary>
+            Price range.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MarketDepthGroupedDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.MarketDepthGroupedDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.MarketDepthImpliedVolatilityDiagramElement">
+      <summary>
+            Implied volatility market depth element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthImpliedVolatilityDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthImpliedVolatilityDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MarketDepthImpliedVolatilityDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.MarketDepthImpliedVolatilityDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.MarketDepthSparsedDiagramElement">
+      <summary>
+            Sparsed market depth element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthSparsedDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthSparsedDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MarketDepthSparsedDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.MarketDepthSparsedDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.MarketDepthTruncateDiagramElement">
+      <summary>
+            Truncate market depth element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthTruncateDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthTruncateDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MarketDepthTruncateDiagramElement.MaxDepth">
+      <summary>
+            Max depth.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MarketDepthTruncateDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.MarketDepthTruncateDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement">
+      <summary>
+            Formula with one argument element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement.Function">
+      <summary>
+            Formula with one argument element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OneParamFunctionDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement">
+      <summary>
+            Formula with two arguments element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement.Function">
+      <summary>
+            Function.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TwoParamFunctionDiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.MathDiagramElement">
+      <summary>
+            Formula with two arguments element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MathDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MathDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.MathDiagramElement.Expression">
+      <summary>
+            Expression.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MathDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.MathDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MathDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.MathDiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.BlackScholesGreeks">
+      <summary>
+            Black-Scholes "greeks".
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.BlackScholesGreeks.Delta">
+      <summary>
+            Delta.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.BlackScholesGreeks.Gamma">
+      <summary>
+            Gamma.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.BlackScholesGreeks.Vega">
+      <summary>
+            Vega.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.BlackScholesGreeks.Theta">
+      <summary>
+            Theta.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.BlackScholesGreeks.Rho">
+      <summary>
+            Rho.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement">
+      <summary>
+            The Black-Scholes "Greeks" evaluation element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement.UseBlackModel">
+      <summary>
+            To use the model <see cref="T:StockSharp.Algo.Derivatives.Black" /> instead of <see cref="T:StockSharp.Algo.Derivatives.IBlackScholes" /> model. The default is off.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement.ValueType">
+      <summary>
+            Value type.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OptionsBlackScholesDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement">
+      <summary>
+            Options hedging diagram element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement.HedgeType">
+      <summary>
+            Hedge type.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsHedgeDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OptionsQuotingTypes">
+      <summary>
+            Options quoting types.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.OptionsQuotingTypes.Volalitity">
+      <summary>
+            Option volatility quoting.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.Elements.OptionsQuotingTypes.TheorPrice">
+      <summary>
+            Option theoretical price quoting.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement">
+      <summary>
+            Options quoting diagram element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.QuotingType">
+      <summary>
+            Quoting type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.QuotingSide">
+      <summary>
+            Quoting direction.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.Min">
+      <summary>
+            Min.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.Max">
+      <summary>
+            Max.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsQuotingDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement">
+      <summary>
+            Filtering derivatives by underlying asset diagram element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.OptionType">
+      <summary>
+            Option type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.ExpirationDate">
+      <summary>
+            Expiration date.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.LeftOffset">
+      <summary>
+            Left offset.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.RightOffset">
+      <summary>
+            Right offset.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OptionsStrikesDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OrderBaseDiagramElement">
+      <summary>
+            Order base element.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderBaseDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderBaseDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderBaseDiagramElement.CanProcess(System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue})">
+      <summary>
+            Can process order action.
+            </summary>
+      <param name="values">Values.</param>
+      <returns>Check result.</returns>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OrderCancelElement">
+      <summary>
+            Order cancelling element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderCancelElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderCancelElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderCancelElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderCancelElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderCancelElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OrderMassCancelElement">
+      <summary>
+            Order mass cancelling element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderMassCancelElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderMassCancelElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderMassCancelElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderMassCancelElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderMassCancelElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderMassCancelElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderMassCancelElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OrderRegisterDiagramElement">
+      <summary>
+            Order registering element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.Direction">
+      <summary>
+            Direction.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.IsMarket">
+      <summary>
+            Market order type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.ZeroAsMarket">
+      <summary>
+            Zero price makes market order.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.ClientCode">
+      <summary>
+            Client code assigned by the broker.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.BrokerCode">
+      <summary>
+            Broker firm code.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.ShrinkPrice">
+      <summary>
+            Shrink order price.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.IsManual">
+      <summary>
+            Is order manual.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.IsMargin">
+      <summary>
+            Is margin enabled.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.IsMarketMaker">
+      <summary>
+            Is the order of market-maker.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.TimeInForce">
+      <summary>
+            Limit order time in force.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.ExpiryDate">
+      <summary>
+            Order expiry time. The default is <see langword="null" />, which mean (GTC).
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.Slippage">
+      <summary>
+            Slippage in trade price.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderRegisterDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderRegisterDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OrderReplaceElement">
+      <summary>
+            Order replacing element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderReplaceElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderReplaceElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderReplaceElement.ShrinkPrice">
+      <summary>
+            Shrink order price.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderReplaceElement.ZeroAsMarket">
+      <summary>
+            Zero price makes market order.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderReplaceElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderReplaceElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderReplaceElement.OnProcess(System.DateTimeOffset,System.Collections.Generic.IDictionary{StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocketValue},StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.OrderTradesDiagramElement">
+      <summary>
+            Trades per order element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderTradesDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.OrderTradesDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.OrderTradesDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderTradesDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.PartDiagramElement">
+      <summary>
+            Composite value of a complex object receiving element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PartDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PartDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PartDiagramElement.Property">
+      <summary>
+            Property.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PartDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.PartDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PartDiagramElement.TypeChanged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PartDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PartDiagramElement.OnProcess(StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.PassThroughDiagramElement">
+      <summary>
+            Combined values element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PassThroughDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PassThroughDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PassThroughDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.PassThroughDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PassThroughDiagramElement.TypeChanged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PassThroughDiagramElement.OnProcess(StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.PositionDiagramElement">
+      <summary>
+            Position element (for security and money) for the specified portfolio.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PositionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PositionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PositionDiagramElement.IsMoney">
+      <summary>
+            Money position.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PositionDiagramElement.ShowPosition">
+      <summary>
+            Show position socket.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PositionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.PositionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PositionDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PositionDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PositionDiagramElement.OnSubscribe(StockSharp.Algo.Strategies.Strategy,StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PositionDiagramElement.OnUnSubscribe(StockSharp.Algo.Strategies.Strategy,StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PositionDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.PreviousValueDiagramElement">
+      <summary>
+            Previous value receiving element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PreviousValueDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PreviousValueDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.PreviousValueDiagramElement.Shift">
+      <summary>
+            Shift.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PreviousValueDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.PreviousValueDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PreviousValueDiagramElement.TypeChanged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PreviousValueDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.PreviousValueDiagramElement.OnProcess(StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.ProtectPositionDiagramElement">
+      <summary>
+            Open position protection element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.TakeValue">
+      <summary>
+            The protective level for the take profit. The default level is 0, which means the disabled.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.StopValue">
+      <summary>
+            The protective level for the stop loss. The default level is 0, which means the disabled.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.WaitAllTrades">
+      <summary>
+            Stop strategy only after getting all trades by registered orders.
+            </summary>
+      <remarks>
+            It is disabled by default.
+            </remarks>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.UseMarketOrders">
+      <summary>
+            Whether to use market orders.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.IsTrailingTakeProfit">
+      <summary>
+            Whether to use a trailing technique for <see cref="T:StockSharp.Algo.Strategies.Protective.TakeProfitStrategy" />. The default is off.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.TakeProfitTimeOut">
+      <summary>
+            Time limit for <see cref="T:StockSharp.Algo.Strategies.Protective.TakeProfitStrategy" />. If protection has not worked by this time, the position will be closed on the market. The default is off.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.IsTrailingStopLoss">
+      <summary>
+            Whether to use a trailing technique for <see cref="T:StockSharp.Algo.Strategies.Protective.StopLossStrategy" />. The default is off.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.StopLossTimeOut">
+      <summary>
+            Time limit for <see cref="T:StockSharp.Algo.Strategies.Protective.StopLossStrategy" />. If protection has not worked by this time, the position will be closed on the market. The default is off.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.ProtectPositionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.ProtectPositionDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.SecurityIndexDiagramElement">
+      <summary>
+            Security index based on <see cref="T:StockSharp.Algo.Expressions.ExpressionIndexSecurity" /> diagram element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.Index">
+      <summary>
+            Index.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.IgnoreErrors">
+      <summary>
+            Ignore calculation errors.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.CalculateExtended">
+      <summary>
+            Calculate extended information.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.SecurityIndexDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.SecurityIndexDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.StrategyDiagramElement">
+      <summary>
+            The element which is using compiled strategy, based on S#.API.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyDiagramElement.FileName">
+      <summary>
+            Path to assembly, where strategy executable code is.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyDiagramElement.Types">
+      <summary>
+            Available types.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.StrategyDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.StrategyInputDiagramElement">
+      <summary>
+            The diagram element which supports subscription to strategy.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyInputDiagramElement.ShowStrategySocket">
+      <summary>
+            Show strategy socket.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyInputDiagramElement.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.StrategyInputDiagramElement" />.
+            </summary>
+      <param name="groupName">The category of the diagram element parameter.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyInputDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyInputDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyInputDiagramElement.OnSubscribe(StockSharp.Algo.Strategies.Strategy,StockSharp.Diagram.DiagramSocketValue)">
+      <summary>
+            The method is called at the subscribing to strategy.
+            </summary>
+      <param name="strategy">Strategy.</param>
+      <param name="source">Source value.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyInputDiagramElement.OnUnSubscribe(StockSharp.Algo.Strategies.Strategy,StockSharp.Diagram.DiagramSocketValue)">
+      <summary>
+            The method is called at the unsubscribing to market data.
+            </summary>
+      <param name="strategy">Strategy.</param>
+      <param name="source">Source value.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyInputDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.StrategyPnLDiagramElement">
+      <summary>
+            Position element (for security and money) for the specified portfolio.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyPnLDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyPnLDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyPnLDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.PositionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyPnLDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyPnLDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.StrategyTradesDiagramElement">
+      <summary>
+            Strategy trades element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyTradesDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.StrategyTradesDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyTradesDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.OrderTradesDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyTradesDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyTradesDiagramElement.OnSubscribe(StockSharp.Algo.Strategies.Strategy,StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.StrategyTradesDiagramElement.OnUnSubscribe(StockSharp.Algo.Strategies.Strategy,StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.SubscriptionDiagramElement">
+      <summary>
+            The diagram element which supports subscription to market data.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SubscriptionDiagramElement.IsManuallySubscription">
+      <summary>
+            Market order type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.SubscriptionDiagramElement.Security">
+      <summary>
+            Security.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.SubscriptionDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.SubscriptionDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.SubscriptionDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.SubscriptionDiagramElement.OnCreateSubscription">
+      <summary>
+            The method is called at the subscribing to market data.
+            </summary>
+      <returns>Subscription.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.SubscriptionDiagramElement.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.TradeAllowedDiagramElement">
+      <summary>
+            Is trade allowed verification element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TradeAllowedDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TradeAllowedDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TradeAllowedDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.TradeAllowedDiagramElement" />.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.TradesDiagramElement">
+      <summary>
+            Security new trades receiving element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TradesDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TradesDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TradesDiagramElement.#ctor">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TradesDiagramElement.OnCreateSubscription">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.TypedDiagramElement`1">
+      <summary>
+            The diagram element with the changeable data type.
+            </summary>
+      <typeparam name="T">Type of element.</typeparam>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.TypedDiagramElement`1.Type">
+      <summary>
+            Data type.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.TypedDiagramElement`1" />.
+            </summary>
+      <param name="typeParamCategory">The category of the diagram element parameter.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.SetTypes(System.Collections.Generic.IEnumerable{StockSharp.Diagram.DiagramSocketType})">
+      <summary>
+            To set available data types.
+            </summary>
+      <param name="types">Data type.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.TypeChanged">
+      <summary>
+            The method is called when the data type is changed.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.OnInputSocketConnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            The method is called when the input socket is connected.
+            </summary>
+      <param name="socket">The diagram element socket.</param>
+      <param name="source">The source diagram element socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.OnInputSocketDisconnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            The method is called when the input socket is disconnected.
+            </summary>
+      <param name="socket">The diagram element socket.</param>
+      <param name="source">The source diagram element socket.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.OnProcess(StockSharp.Diagram.DiagramSocketValue)">
+      <summary>
+            The method is called at the processing of the new incoming value.
+            </summary>
+      <param name="value">The processed value.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.TypedDiagramElement`1.UpdateOutputSocketType">
+      <summary>
+            To change the output socket type.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.Elements.VariableDiagramElement">
+      <summary>
+            Value storage element.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.VariableDiagramElement.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.VariableDiagramElement.IconName">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.VariableDiagramElement.Value">
+      <summary>
+            The variable value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.VariableDiagramElement.InputAsTrigger">
+      <summary>
+            Raise output value when input updated.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.Elements.VariableDiagramElement" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.TypeChanged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.OnInputSocketConnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.OnInputSocketDisconnected(StockSharp.Diagram.DiagramSocket,StockSharp.Diagram.DiagramSocket)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.OnReseted">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.OnStart">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.OnStop">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.OnProcess(StockSharp.Diagram.DiagramSocketValue)">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.Elements.VariableDiagramElement.NeedFlush">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.Elements.VariableDiagramElement.Flush">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.ICompositionModel">
+      <summary>
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" /> model.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModel.Behavior">
+      <summary>
+        <see cref="T:StockSharp.Diagram.ICompositionModelBehavior`2" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModel.HasErrors">
+      <summary>
+            To check the composite element for errors in diagram.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModel.Modifiable">
+      <summary>
+            Is it possible to edit a composite element diagram.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModel.UndoManager">
+      <summary>
+        <see cref="T:StockSharp.Diagram.IUndoManager" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModel.IsUndoManagerSuspended">
+      <summary>
+            Undo manager is suspended if this property is set to true.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModel.Elements">
+      <summary>
+            Child elements.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModel.AddElement(StockSharp.Diagram.DiagramElement,System.Drawing.PointF)">
+      <summary>
+            Add element.
+            </summary>
+      <param name="element">The diagram element.</param>
+      <param name="location">Element position.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModel.GetConnectedSocketsFor(StockSharp.Diagram.DiagramElement,StockSharp.Diagram.DiagramSocket)">
+      <summary>
+            Get connected sockets.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </param>
+      <param name="socket">
+        <see cref="T:StockSharp.Diagram.DiagramSocket" />
+      </param>
+      <returns>Connected sockets.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModel.GetDisconnectedSockets">
+      <summary>
+            Get disconnected sockets.
+            </summary>
+      <returns>Disconnected sockets.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModel.GetElementKey(StockSharp.Diagram.DiagramElement)">
+      <summary>
+            Get element unique key.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </param>
+      <returns>Key.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModel.FindElementByKey(System.String)">
+      <summary>
+            Find element by unique key.
+            </summary>
+      <param name="key">Key.</param>
+      <returns>
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </returns>
+    </member>
+    <member name="E:StockSharp.Diagram.ICompositionModel.ModelChanged">
+      <summary>
+            Changed event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.ICompositionModel.ElementAdded">
+      <summary>
+            Child element added event.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Diagram.ICompositionModel.ElementRemoved">
+      <summary>
+            Child element removed event.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.CompositionModel`2">
+      <summary>
+            Default implementation of <see cref="T:StockSharp.Diagram.ICompositionModel" />.
+            </summary>
+      <typeparam name="TNode">Node type.</typeparam>
+      <typeparam name="TLink">Link type.</typeparam>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionModel`2.#ctor(StockSharp.Diagram.ICompositionModelBehavior{`0,`1})">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.CompositionModel`2" />.
+            </summary>
+      <param name="behavior">
+        <see cref="T:StockSharp.Diagram.ICompositionModelBehavior`2" />
+      </param>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionModel`2.Modifiable">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionModel`2.UndoManager">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionModel`2.IsUndoManagerSuspended">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionModel`2.ModelChanged">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionModel`2.ElementAdded">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Diagram.CompositionModel`2.ElementRemoved">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionModel`2.Nodes">
+      <summary>
+            Nodes.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionModel`2.Links">
+      <summary>
+            Links.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionModel`2.Elements">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionModel`2.AddNode(`0)">
+      <summary>
+            Add node.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionModel`2.RemoveNode(`0)">
+      <summary>
+            Remove node.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionModel`2.RemoveLink(`0,System.String,`0,System.String)">
+      <summary>
+            Remove link.
+            </summary>
+      <param name="from">From node.</param>
+      <param name="fromPort">
+        <see cref="P:StockSharp.Diagram.ICompositionModelLink.FromPort" />
+      </param>
+      <param name="to">To node.</param>
+      <param name="toPort">
+        <see cref="P:StockSharp.Diagram.ICompositionModelLink.ToPort" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionModel`2.ExecuteTransaction(System.String,System.Action{StockSharp.Diagram.CompositionModel{`0,`1}})">
+      <summary>
+            Execute the specified action in transaction scope.
+            </summary>
+      <param name="name">Transaction name.</param>
+      <param name="action">Action.</param>
+    </member>
+    <member name="T:StockSharp.Diagram.ICompositionModelBehavior`2">
+      <summary>
+        <see cref="T:StockSharp.Diagram.ICompositionModel" /> behavior.
+            </summary>
+      <typeparam name="TNode">Node type.</typeparam>
+      <typeparam name="TLink">Link type.</typeparam>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelBehavior`2.Parent">
+      <summary>
+            Parent.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelBehavior`2.UndoManager">
+      <summary>
+        <see cref="T:StockSharp.Diagram.IUndoManager" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelBehavior`2.IsUndoManagerSuspended">
+      <summary>
+            Undo manager is suspended if this property is set to true.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelBehavior`2.Modifiable">
+      <summary>
+            Is it possible to edit a composite element diagram.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelBehavior`2.Nodes">
+      <summary>
+            Nodes.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelBehavior`2.Links">
+      <summary>
+            Links.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.FindNodeByKey(System.String)">
+      <summary>
+            Find node by key.
+            </summary>
+      <param name="key">Key.</param>
+      <returns>
+        <typeparamref name="TNode" />
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.AddNode(`0)">
+      <summary>
+            Add node.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RemoveNode(`0)">
+      <summary>
+            Remove node.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.AddLink(`1)">
+      <summary>
+            Add link.
+            </summary>
+      <param name="link">
+        <typeparamref name="TLink" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RemoveLink(`1)">
+      <summary>
+            Remove link.
+            </summary>
+      <param name="link">
+        <typeparamref name="TLink" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.AddLink(`0,System.String,`0,System.String)">
+      <summary>
+            Add link.
+            </summary>
+      <param name="from">From node.</param>
+      <param name="fromPort">
+        <see cref="P:StockSharp.Diagram.ICompositionModelLink.FromPort" />
+      </param>
+      <param name="to">To node.</param>
+      <param name="toPort">
+        <see cref="P:StockSharp.Diagram.ICompositionModelLink.ToPort" />
+      </param>
+      <returns>
+        <typeparamref name="TLink" />
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RemoveLink(`0,System.String,`0,System.String)">
+      <summary>
+            Remove link.
+            </summary>
+      <param name="from">From node.</param>
+      <param name="fromPort">
+        <see cref="P:StockSharp.Diagram.ICompositionModelLink.FromPort" />
+      </param>
+      <param name="to">To node.</param>
+      <param name="toPort">
+        <see cref="P:StockSharp.Diagram.ICompositionModelLink.ToPort" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.GetLinksForNode(`0)">
+      <summary>
+            Get all links for the specified node.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+      <returns>Links.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.StartTransaction(System.String)">
+      <summary>
+            Start transaction.
+            </summary>
+      <param name="name">Operation name.</param>
+      <returns>Operation result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.CommitTransaction(System.String)">
+      <summary>
+            Commit transaction.
+            </summary>
+      <param name="name">Operation name.</param>
+      <returns>Operation result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RollbackTransaction">
+      <summary>
+            Rollback transaction.
+            </summary>
+      <returns>Operation result.</returns>
+    </member>
+    <member name="E:StockSharp.Diagram.ICompositionModelBehavior`2.BehaviorChanged">
+      <summary>
+            Changed event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RaiseSocketAdded(`0)">
+      <summary>
+            Raise socket added event.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RaiseLinksRemoved(`0)">
+      <summary>
+            Raise links removed event.
+            </summary>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionModelBehavior`2.RaiseCommited(System.String,`0,StockSharp.Diagram.IUndoableEdit)">
+      <summary>
+            Raise commited event.
+            </summary>
+      <param name="name">Opeation name.</param>
+      <param name="node">
+        <typeparamref name="TNode" />
+      </param>
+      <param name="op">
+        <see cref="T:StockSharp.Diagram.IUndoableEdit" />
+      </param>
+    </member>
+    <member name="T:StockSharp.Diagram.DummyCompositionModelBehavior">
+      <summary>
+            Dummy implementation of <see cref="T:StockSharp.Diagram.ICompositionModelBehavior`2" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelBehavior.Parent">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelBehavior.UndoManager">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelBehavior.IsUndoManagerSuspended">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelBehavior.Modifiable">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelBehavior.Nodes">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelBehavior.Links">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Diagram.DummyCompositionModelBehavior.BehaviorChanged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.FindNodeByKey(System.String)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.GetLinksForNode(StockSharp.Diagram.DummyCompositionModelNode)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RaiseCommited(System.String,StockSharp.Diagram.DummyCompositionModelNode,StockSharp.Diagram.IUndoableEdit)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RaiseLinksRemoved(StockSharp.Diagram.DummyCompositionModelNode)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RaiseSocketAdded(StockSharp.Diagram.DummyCompositionModelNode)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.AddLink(StockSharp.Diagram.DummyCompositionModelLink)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RemoveLink(StockSharp.Diagram.DummyCompositionModelLink)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.AddLink(StockSharp.Diagram.DummyCompositionModelNode,System.String,StockSharp.Diagram.DummyCompositionModelNode,System.String)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RemoveLink(StockSharp.Diagram.DummyCompositionModelNode,System.String,StockSharp.Diagram.DummyCompositionModelNode,System.String)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.AddNode(StockSharp.Diagram.DummyCompositionModelNode)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RemoveNode(StockSharp.Diagram.DummyCompositionModelNode)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.StartTransaction(System.String)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.RollbackTransaction">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelBehavior.CommitTransaction(System.String)">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.ICompositionModelLink">
+      <summary>
+            Link.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelLink.IsReconnecting">
+      <summary>
+            Is reconnecting.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelLink.IsConnected">
+      <summary>
+            Is connected.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelLink.From">
+      <summary>
+            From node key.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelLink.To">
+      <summary>
+            To node key.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelLink.ToPort">
+      <summary>
+            To socket key.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelLink.FromPort">
+      <summary>
+            From socket key.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DummyCompositionModelLink">
+      <summary>
+            Dummy implementation of <see cref="T:StockSharp.Diagram.ICompositionModelLink" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelLink.From">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelLink.To">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelLink.ToPort">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelLink.FromPort">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelLink.ToString">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.ICompositionModelNode">
+      <summary>
+            Node.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelNode.Key">
+      <summary>
+            Key.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelNode.Element">
+      <summary>
+        <see cref="T:StockSharp.Diagram.DiagramElement" />
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelNode.Location">
+      <summary>
+            Location.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelNode.TypeId">
+      <summary>
+            Type id.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelNode.Figure">
+      <summary>
+            Figure id.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionModelNode.Text">
+      <summary>
+            Custom text.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.DummyCompositionModelNode">
+      <summary>
+            Dummy implementation of <see cref="T:StockSharp.Diagram.ICompositionModelNode" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelNode.Key">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelNode.Element">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelNode.Location">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelNode.TypeId">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelNode.Figure">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Diagram.DummyCompositionModelNode.Text">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.DummyCompositionModelNode.ToString">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.ICompositionRegistry">
+      <summary>
+            The storage of composite elements.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.ICompositionRegistry.DiagramElements">
+      <summary>
+            List of elements.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.Serialize(StockSharp.Diagram.CompositionDiagramElement,System.Nullable{StockSharp.Diagram.SchemeTypes},System.Security.SecureString)">
+      <summary>
+            To serialize the composite element.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </param>
+      <param name="schemeType">Scheme type.</param>
+      <param name="password">Password.</param>
+      <returns>Settings storage.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.Deserialize(StockSharp.Diagram.CompositionDiagramElement,Ecng.Serialization.SettingsStorage,System.Func{System.Security.SecureString})">
+      <summary>
+            To deserialize the composite element.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </param>
+      <param name="storage">Settings storage.</param>
+      <param name="getPassword">Get password handler.</param>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.Deserialize(Ecng.Serialization.SettingsStorage,System.Func{System.Security.SecureString})">
+      <summary>
+            To deserialize the composite element.
+            </summary>
+      <param name="storage">Settings storage.</param>
+      <param name="getPassword">Get password handler.</param>
+      <returns>
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.SerializeToBytes(StockSharp.Diagram.CompositionDiagramElement,System.Nullable{StockSharp.Diagram.SchemeTypes},System.Security.SecureString)">
+      <summary>
+            To serialize the composite element.
+            </summary>
+      <param name="element">
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </param>
+      <param name="schemeType">
+        <see cref="T:StockSharp.Diagram.SchemeTypes" />
+      </param>
+      <param name="password">Password.</param>
+      <returns>Byte array.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.Deserialize(System.Byte[],System.Func{System.Security.SecureString})">
+      <summary>
+            To deserialize the composite element.
+            </summary>
+      <param name="data">Byte array.</param>
+      <param name="getPassword">Get password handler.</param>
+      <returns>
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.CreateErrorStubComposition(System.String,System.Exception)">
+      <summary>
+            Create error stub <see cref="T:StockSharp.Diagram.CompositionDiagramElement" /> instance.
+            </summary>
+      <param name="fileName">File name from where loading was failed.</param>
+      <param name="error">Error.</param>
+      <returns>
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.ICompositionRegistry.CreateComposition">
+      <summary>
+            Create <see cref="T:StockSharp.Diagram.CompositionDiagramElement" /> instance.
+            </summary>
+      <returns>
+        <see cref="T:StockSharp.Diagram.CompositionDiagramElement" />
+      </returns>
+    </member>
+    <member name="T:StockSharp.Diagram.CompositionRegistry`2">
+      <summary>
+            Default <see cref="T:StockSharp.Diagram.ICompositionRegistry" /> implementation.
+            </summary>
+      <typeparam name="TNode">Node type.</typeparam>
+      <typeparam name="TLink">Link type.</typeparam>
+    </member>
+    <member name="P:StockSharp.Diagram.CompositionRegistry`2.DiagramElements">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionRegistry`2.#ctor(System.Func{StockSharp.Diagram.ICompositionModelBehavior{`0,`1}})">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.CompositionRegistry`2" />.
+            </summary>
+      <param name="createBehavior">
+        <see cref="T:StockSharp.Diagram.ICompositionModelBehavior`2" />
+      </param>
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionRegistry`2.CreateComposition">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionRegistry`2.Serialize(StockSharp.Diagram.CompositionDiagramElement,System.Nullable{StockSharp.Diagram.SchemeTypes},System.Security.SecureString)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionRegistry`2.Deserialize(StockSharp.Diagram.CompositionDiagramElement,Ecng.Serialization.SettingsStorage,System.Func{System.Security.SecureString})">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Diagram.CompositionRegistry`2.Deserialize(Ecng.Serialization.SettingsStorage,System.Func{System.Security.SecureString})">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.IDiagramElementParam">
+      <summary>
+            The diagram element parameter.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.Name">
+      <summary>
+            Parameter name.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.DisplayName">
+      <summary>
+            The displayed name.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.Description">
+      <summary>
+            The parameter description.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.Category">
+      <summary>
+            Category.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.Type">
+      <summary>
+            Parameter type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.Attributes">
+      <summary>
+            Attributes.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.Value">
+      <summary>
+            The parameter value.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.IsDefault">
+      <summary>
+            The default value is specified.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.IsParam">
+      <summary>
+            The changeable parameter.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.IgnoreOnSave">
+      <summary>
+            To ignore when saving.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.IDiagramElementParam.SetValueWithIgnoreOnSave(System.Object)">
+      <summary>
+            Set value and ignore it on save settings.
+            </summary>
+      <param name="value">Value.</param>
+    </member>
+    <member name="P:StockSharp.Diagram.IDiagramElementParam.NotifyOnChanged">
+      <summary>
+            Raise changed event when property is changed.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.INameEditorConstants">
+      <summary>
+        <see cref="T:StockSharp.Diagram.INameEditor" /> constants.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.INameEditorConstants.ResetName">
+      <summary>
+            Reset name.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.INameEditor">
+      <summary>
+            Interface describes name editor with reset option.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.IUndoableEdit">
+      <summary>
+            This interface specifies how a document change (an edit).
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoableEdit.Clear">
+      <summary>
+            Forget about any state remembered in this edit.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoableEdit.CanUndo">
+      <summary>
+            Determine if this edit is ready to be and can be undone.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoableEdit.Undo">
+      <summary>
+            Restore the previous state of this edit.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoableEdit.CanRedo">
+      <summary>
+            Determine if this edit is ready to be and can be redone.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoableEdit.Redo">
+      <summary>
+            Restore the new state of this edit after having been undone.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.IUndoManager">
+      <summary>
+            Undo/redo manager.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.IUndoManager.IsUndoingRedoing">
+      <summary>
+            This property is <see langword="true" /> during a call to <see cref="M:StockSharp.Diagram.IUndoManager.Undo" /> or <see cref="M:StockSharp.Diagram.IUndoManager.Redo" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoManager.CanUndo">
+      <summary>
+            Can undo.
+            </summary>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoManager.CanRedo">
+      <summary>
+            Can redo.
+            </summary>
+      <returns>Check result.</returns>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoManager.Undo">
+      <summary>
+            Undo.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.IUndoManager.Redo">
+      <summary>
+            Redo.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.ModelChange">
+      <summary>
+            An enumeration of the predefined ways in which models may be changed.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.Property">
+      <summary>
+            Changes to data properties and extended model properties, and other non-predefined property changes
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodesSource">
+      <summary>
+            Changed (replaced) the NodesSource collection property (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodeKeyPath">
+      <summary>
+            Changed the NodeKeyPath property (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodeCategoryPath">
+      <summary>
+            Changed the NodeCategoryPath property (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodeIsGroupPath">
+      <summary>
+            Changed the NodeIsGroupPath property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedGroupNodePath">
+      <summary>
+            Changed the GroupNodePath property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedMemberNodesPath">
+      <summary>
+            Changed the MemberNodesPath property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodeIsLinkLabelPath">
+      <summary>
+            Changed the NodeIsLinkLabelPath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinksSource">
+      <summary>
+            Changed (replaced) the LinksSource collection property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkFromPath">
+      <summary>
+            Changed the LinkFromPath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkToPath">
+      <summary>
+            Changed the LinkToPath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedFromNodesPath">
+      <summary>
+            Changed the FromNodesPath property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedToNodesPath">
+      <summary>
+            Changed the ToNodesPath property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkLabelNodePath">
+      <summary>
+            Changed the LinkLabelNodePath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkFromParameterPath">
+      <summary>
+            Changed the LinkFromParameterPath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkToParameterPath">
+      <summary>
+            Changed the LinkToParameterPath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkCategoryPath">
+      <summary>
+            Changed the LinkCategoryPath property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedName">
+      <summary>
+            Changed the Name property (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedDataFormat">
+      <summary>
+            Changed the DataFormat property (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedModifiable">
+      <summary>
+            Changed the Modifiable property (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedCopyingGroupCopiesMembers">
+      <summary>
+            Changed the CopyingGroupCopiesMembers property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedCopyingLinkCopiesLabel">
+      <summary>
+            Changed the CopyingLinkCopiesLabel property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedRemovingGroupRemovesMembers">
+      <summary>
+            Changed the RemovingGroupRemovesMembers property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedRemovingLinkRemovesLabel">
+      <summary>
+            Changed the RemovingLinkRemovesLabel property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedValidCycle">
+      <summary>
+            Changed the ValidCycle property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedValidUnconnectedLinks">
+      <summary>
+            Changed the ValidUnconnectedLinks property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.AddedNode">
+      <summary>
+            Added a node data to NodesSource (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovingNode">
+      <summary>
+            About to remove a node data from NodesSource (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovedNode">
+      <summary>
+            Removed a node data from NodesSource (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodeKey">
+      <summary>
+            Changed the node key for a node data (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.AddedLink">
+      <summary>
+            Added a link data to LinksSource (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovingLink">
+      <summary>
+            About to remove a link data from LinksSource (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovedLink">
+      <summary>
+            Removed a link data from LinksSource (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkFromPort">
+      <summary>
+            Changed the LinkFromPort property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkToPort">
+      <summary>
+            Changed the LinkToPort property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkLabelKey">
+      <summary>
+            Changed the LinkLabelKey property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedFromNodeKeys">
+      <summary>
+            Changed (replaced) the FromNodeKeys collection property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.AddedFromNodeKey">
+      <summary>
+            Added a node key to the FromNodeKeys collection property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovedFromNodeKey">
+      <summary>
+            Removed a node key from the FromNodeKeys collection property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedToNodeKeys">
+      <summary>
+            Changed (replaced) the ToNodeKeys collection property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.AddedToNodeKey">
+      <summary>
+            Added a node key to the ToNodeKeys collection property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovedToNodeKey">
+      <summary>
+            Removed a node key from the ToNodeKeys collection property (GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedGroupNodeKey">
+      <summary>
+            Changed the GroupNodeKey property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkGroupNodeKey">
+      <summary>
+            Changed the LinkGroupKey property (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedMemberNodeKeys">
+      <summary>
+            Changed (replaced) the MemberNodeKeys collection property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.AddedMemberNodeKey">
+      <summary>
+            Added a node key to the MemberNodeKeys collection property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovedMemberNodeKey">
+      <summary>
+            Removed a node key from the MemberNodeKeys collection property (GraphLinksModel, GraphModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedParentNodeKey">
+      <summary>
+            Changed the ParentNodeKey property (TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedChildNodeKeys">
+      <summary>
+            Changed (replaced) the ChildNodeKeys collection property (TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.AddedChildNodeKey">
+      <summary>
+            Added a node key to the ChildNodeKeys collection property (TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RemovedChildNodeKey">
+      <summary>
+            Removed a node key from the ChildNodeKeys collection property (TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedNodeCategory">
+      <summary>
+            Changed the value of the Category for a node data (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ChangedLinkCategory">
+      <summary>
+            Changed the value of the Category for a link data (GraphLinksModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.StartedTransaction">
+      <summary>
+            Started a transaction.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.CommittedTransaction">
+      <summary>
+            Committed the changes for a transaction.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.RolledBackTransaction">
+      <summary>
+            Rolled back the changes of a transaction and aborted it.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.StartingUndo">
+      <summary>
+            Starting an undo operation.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.StartingRedo">
+      <summary>
+            Starting a redo operation.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.FinishedUndo">
+      <summary>
+            Finished an undo operation.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.FinishedRedo">
+      <summary>
+            Finished a redo operation.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.InvalidateRelationships">
+      <summary>
+            Changed the shape or bounds of a node or one or more of its ports (GraphLinksModel, GraphModel, TreeModel)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ReplacedReference">
+      <summary>
+            (for internal use)
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.ClearedUndoManager">
+      <summary>
+            Cleared the contents of the UndoManager (for all models).
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.ModelChange.None">
+      <summary>
+            A transient data change that should not be considered a change to the model;
+            such changes are ignored by the UndoManager and by the Diagram.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.OrderConditionSettings">
+      <summary>
+        <see cref="F:StockSharp.Messages.OrderTypes.Conditional" /> settings.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.OrderConditionSettings.AdapterType">
+      <summary>
+        <see cref="T:StockSharp.Messages.IMessageAdapter" /> type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.OrderConditionSettings.Parameters">
+      <summary>
+            Condition parameters.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.OrderConditionSettings.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Diagram.OrderConditionSettings" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Diagram.OrderConditionSettings.ToString">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Diagram.PasswordType">
+      <summary>
+            Password types.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.PasswordType.Predefined">
+      <summary>
+            Predefined.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.PasswordType.UserPredefined">
+      <summary>
+            User predefined.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.PasswordType.User">
+      <summary>
+            User prompt.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.SchemeTypes">
+      <summary>
+            Scheme types.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.SchemeTypes.Regular">
+      <summary>
+            Regular scheme.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.SchemeTypes.Encrypted">
+      <summary>
+            Encrypted scheme.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.SchemeTypes.Independent">
+      <summary>
+            Independent scheme.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.StaticSocketIds">
+      <summary>
+            Socket ids for static sockets.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Trigger">
+      <summary>
+            Trigger.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Flag">
+      <summary>
+            Flag.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Price">
+      <summary>
+            Price.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Volume">
+      <summary>
+            Volume.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Security">
+      <summary>
+            Security.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Candles">
+      <summary>
+            Candles.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.MarketDepth">
+      <summary>
+            Market depth.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Order">
+      <summary>
+            Order.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.OrderFail">
+      <summary>
+            Order fail.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.MyTrade">
+      <summary>
+            Own trade.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Trade">
+      <summary>
+            Trade.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Trades">
+      <summary>
+            Trades.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.FirstOperand">
+      <summary>
+            First operand.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.SecondOperand">
+      <summary>
+            Second operand.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Input">
+      <summary>
+            Input.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.SecondInput">
+      <summary>
+            Second input.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Output">
+      <summary>
+            Output.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.MaxDeviation">
+      <summary>
+            Maximum deviation.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Options">
+      <summary>
+            Options.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Position">
+      <summary>
+            Position.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Portfolio">
+      <summary>
+            Portfolio.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.UnderlyingAsset">
+      <summary>
+            Underlying asset.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.PnLUnreal">
+      <summary>
+            Unrealized profit.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.PnLRealized">
+      <summary>
+            Realized profit.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Commission">
+      <summary>
+            Commission.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Side">
+      <summary>
+            Side.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Date">
+      <summary>
+            Date.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Time">
+      <summary>
+            Time.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Strategy">
+      <summary>
+            Strategy.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Signal">
+      <summary>
+            Signal.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Diagram.StaticSocketIds.Direction">
+      <summary>
+            Direction.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.StrategyType">
+      <summary>
+            Strategy type info.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.StrategyType.Name">
+      <summary>
+            Name.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.StrategyType.Description">
+      <summary>
+            Description.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.StrategyType.Type">
+      <summary>
+            Type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.StrategyType.TypeName">
+      <summary>
+            Type name.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Diagram.TemplateEditorAttribute">
+      <summary>
+      </summary>
+    </member>
+    <member name="P:StockSharp.Diagram.TemplateEditorAttribute.TemplateKey">
+      <summary>
+            Template key.
+            </summary>
+    </member>
+  </members>
+</doc>

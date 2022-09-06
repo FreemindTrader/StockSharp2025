@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSharp.Studio.Community</name>
+    </assembly>
+    <members>
+        <member name="T:StockSharp.Studio.Community.CommunityAuthorization">
+            <summary>
+            The module of the connection access check based on the StockSharp authorization.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityAuthorization.#ctor(System.Int64,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Studio.Community.CommunityAuthorization"/>.
+            </summary>
+            <param name="productId">Product id.</param>
+            <param name="version">Version.</param>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityAuthorization.ValidateCredentials(System.String,System.Security.SecureString,System.Net.IPAddress)">
+            <summary>
+            To check the username and password on correctness.
+            </summary>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+            <param name="clientAddress">Remote network address.</param>
+            <returns>Session ID.</returns>
+        </member>
+        <member name="T:StockSharp.Studio.Community.CommunityHelper">
+            <summary>
+            Community helper.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityHelper.CreateAdapter(Ecng.Common.IdGenerator,System.String,System.String,System.String,System.String,System.Security.SecureString)">
+            <summary>
+            Create community adapter.
+            </summary>
+            <param name="transactionIdGenerator">Transaction id generator.</param>
+            <param name="address">Address.</param>
+            <param name="name">Server name.</param>
+            <param name="clientVersion">Client app version.</param>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+            <returns>Adapter.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityHelper.InitAdapter(StockSharp.Messages.IMessageAdapter,System.String,System.String,System.String,System.String,System.Security.SecureString)">
+            <summary>
+            Create community adapter.
+            </summary>
+            <param name="adapter">Adapter.</param>
+            <param name="address">Address.</param>
+            <param name="name">Server name.</param>
+            <param name="clientVersion">Client app version.</param>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+            <returns>Adapter.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityHelper.CreateStockSharpAdapters(Ecng.Common.IdGenerator,System.String,System.Security.SecureString)">
+            <summary>
+            Create adapters for StockSharp server connections.
+            </summary>
+            <param name="transactionIdGenerator">Transaction id generator.</param>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+            <returns>Adapters for StockSharp server connections.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityHelper.InitStockSharpAdapters(StockSharp.Messages.IMessageAdapter,StockSharp.Messages.IMessageAdapter,System.String,System.Security.SecureString)">
+            <summary>
+            Create adapters for StockSharp server connections.
+            </summary>
+            <param name="transAdapter">Transactinal adapter.</param>
+            <param name="dataAdapter">Market-data adapter.</param>
+            <param name="login">Login.</param>
+            <param name="password">Password.</param>
+            <returns>Adapters for StockSharp server connections.</returns>
+        </member>
+        <member name="T:StockSharp.Studio.Community.CommunityServicesRegistry">
+            <summary>
+            Services registry.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Studio.Community.CommunityServicesRegistry.Offline">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:StockSharp.Studio.Community.CommunityServicesRegistry.ApiServiceProvider">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:StockSharp.Studio.Community.CommunityServicesRegistry.GetService``1">
+            <summary>
+            Get required service instance.
+            </summary>
+            <typeparam name="TService">Service type.</typeparam>
+            <returns>Required service instance.</returns>
+        </member>
+        <member name="T:StockSharp.Studio.Community.Helper">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:StockSharp.Studio.Community.Helper.CurrentDomain">
+            <summary>
+            Current domain id.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Studio.Community.Helper.ProductId">
+            <summary>
+            Current product id.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Studio.Community.Helper.GetCurrentDomain(StockSharp.Web.DomainModel.Product)">
+            <summary>
+            Get product domain info.
+            </summary>
+            <param name="product">Product.</param>
+            <returns>Product domain info.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.Helper.GetCurrentDomain(StockSharp.Web.DomainModel.ProductGroup)">
+            <summary>
+            Get product group domain info.
+            </summary>
+            <param name="group">Product group.</param>
+            <returns>Product group domain info.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.Helper.GetName(StockSharp.Web.DomainModel.Product)">
+            <summary>
+            Get product's name.
+            </summary>
+            <param name="product">Product.</param>
+            <returns>Name.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.Helper.GetName(StockSharp.Web.DomainModel.ProductGroup)">
+            <summary>
+            Get group's name.
+            </summary>
+            <param name="group">Product group.</param>
+            <returns>Name.</returns>
+        </member>
+        <member name="M:StockSharp.Studio.Community.Helper.RegisterServices(System.Boolean,System.Type)">
+             <summary>
+            
+             </summary>
+             <param name="onlineMode"></param>
+             <param name="owner"></param>
+        </member>
+        <member name="M:StockSharp.Studio.Community.Helper.InitServices(System.Action{StockSharp.Web.DomainModel.SystemMessage},System.Action,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+    </members>
+</doc>

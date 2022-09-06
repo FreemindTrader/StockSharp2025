@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>StockSharp.Server.Fix</name>
+  </assembly>
+  <members>
+    <member name="T:StockSharp.Server.Fix.FixServer">
+      <summary>
+            FIX server.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.#ctor(Ecng.Security.IAuthorization,StockSharp.Server.Core.ITransactionIdStorage)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Server.Fix.FixServer" />.
+            </summary>
+      <param name="authorization">The customer authentication.</param>
+      <param name="transactionIdStorage">Transaction and request identifiers storage.</param>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServer.SendOutHeartbeats">
+      <summary>
+            Send via <see cref="E:StockSharp.Server.Fix.FixServer.NewOutMessage" /> heartbeat.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServer.Authorization">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServer.TransactionIdStorage">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServer.Settings">
+      <summary>
+            Settings.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServer.StateChanged">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServer.SessionConnected">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServer.SessionDisconnected">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServer.Sessions">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServer.SubscriptionChanged">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.HasSubscriptions(StockSharp.Messages.DataType,StockSharp.Messages.SecurityId)">
+      <summary>
+            Are there subscribers.
+            </summary>
+      <param name="dataType">Market data type.</param>
+      <param name="securityId">Security ID.</param>
+      <returns>Are there subscribers.</returns>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.GetSubscriptions(StockSharp.Server.Core.IMessageListenerSession)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.AddSubscription(StockSharp.Server.Core.ServerSubscription)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Suspend(StockSharp.Server.Core.ServerSubscription)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Resume(StockSharp.Server.Core.ServerSubscription)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.RemoveSubscription(StockSharp.Server.Core.ServerSubscription)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Suspend(StockSharp.Server.Core.IMessageListenerSession)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Resume(StockSharp.Server.Core.IMessageListenerSession)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Disconnect(StockSharp.Server.Core.IMessageListenerSession)">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServer.State">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Open">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Close">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.DisposeManaged">
+      <summary>
+            Release resources.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServer.NewOutMessage">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.RaiseNewOutMessage(StockSharp.Server.Core.IMessageListenerSession,StockSharp.Messages.Message)">
+      <summary>
+            To call the event <see cref="E:StockSharp.Server.Fix.FixServer.NewOutMessage" />.
+            </summary>
+      <param name="session">Session.</param>
+      <param name="message">Message.</param>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.OnProcess(StockSharp.Server.Fix.FixSession,System.String,StockSharp.Fix.Native.IFixReader)">
+      <summary>
+            The method is called when the received message is processing.
+            </summary>
+      <param name="session">Session.</param>
+      <param name="msgType">Message type.</param>
+      <param name="reader">Data reader.</param>
+      <returns>Whether the data was successfully processed.</returns>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.ReadOrderCondition(StockSharp.Fix.Native.IFixReader,StockSharp.Fix.Native.FixTags,System.Func{StockSharp.Messages.OrderCondition})">
+      <summary>
+            To read the order condition <see cref="T:StockSharp.Messages.OrderCondition" />.
+            </summary>
+      <param name="reader">Data reader.</param>
+      <param name="tag">Tag.</param>
+      <param name="getCondition">The function returning the order condition.</param>
+      <returns>Whether the data was successfully processed.</returns>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.CreateCondition">
+      <summary>
+            To create the order condition.
+            </summary>
+      <returns>The order condition.</returns>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.PostInitCondition(System.Char,StockSharp.Messages.OrderCondition)">
+      <summary>
+            The final initialization of the order condition.
+            </summary>
+      <param name="ordType">Order type.</param>
+      <param name="condition">The order condition.</param>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.SendInMessage(StockSharp.Server.Core.IMessageListenerSession,System.Nullable{System.Int64},StockSharp.Messages.Message)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.SendInMessage(StockSharp.Messages.Message)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServer.WriterFixOrderCondition(StockSharp.Fix.Native.IFixWriter,StockSharp.Messages.OrderCondition)">
+      <summary>
+            To record data by the order condition.
+            </summary>
+      <param name="writer">FIX data writer.</param>
+      <param name="condition">Order condition (e.g., stop- and algo- orders parameters).</param>
+    </member>
+    <member name="T:StockSharp.Server.Fix.FixServerChannel">
+      <summary>
+        <see cref="T:StockSharp.Server.Fix.FixServer" /> in-memory channel.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.#ctor(StockSharp.Server.Fix.FixServer,StockSharp.Messages.IMessageChannel,StockSharp.Messages.IMessageChannel)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Server.Fix.FixServerChannel" />.
+            </summary>
+      <param name="server">FIX server.</param>
+      <param name="inChannel">Incoming messages channel.</param>
+      <param name="outChannel">Outgoing messages channel.</param>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerChannel.Server">
+      <summary>
+            FIX server.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerChannel.State">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServerChannel.StateChanged">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Server.Fix.FixServerChannel.NewOutMessage">
+      <summary>
+            New message event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.SendInMessage(StockSharp.Messages.Message)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.Open">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.Close">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.Suspend">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.Resume">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerChannel.Clear">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Server.Fix.FixServerSettings">
+      <summary>
+            Settings.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixServerSettings.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Server.Fix.FixServerSettings" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerSettings.ConvertToLatin">
+      <summary>
+            Convert all non-latin text messages to latin.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerSettings.QuotesInterval">
+      <summary>
+            Quotes updating interval.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerSettings.TransactionSession">
+      <summary>
+            Transactional session.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerSettings.MarketDataSession">
+      <summary>
+            Transactional session.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerSettings.KeepSubscriptionsOnDisconnect">
+      <summary>
+            Keep subscriptions on disconnect.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixServerSettings.DeadSessionCleanupInterval">
+      <summary>
+            Keep subscriptions on disconnect.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Server.Fix.FixSession">
+      <summary>
+            Session settings.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixSession.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Server.Fix.FixSession" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.IsConnected">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.IsEnabled">
+      <summary>
+            Enabled.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.Address">
+      <summary>
+            Server address.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.Dialect">
+      <summary>
+            The FIX dialect. The default is <see cref="T:StockSharp.Fix.Dialects.DefaultFixDialect" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.TargetCompId">
+      <summary>
+            Target ID.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.SenderCompId">
+      <summary>
+            Sender ID.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.HeartBeat">
+      <summary>
+            The interval of the connection availability check. The default is 1 minute.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.Encoding">
+      <summary>
+            The encoding used for data transmission.
+            </summary>
+      <remarks>The default value is <see cref="P:System.Text.Encoding.UTF8" />.</remarks>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.IncrementalDepthUpdates">
+      <summary>
+            To send changes by the order book. If disabled, the order book is sent entirely. The default is enabled.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.DateParser">
+      <summary>
+            Date parser.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.DateTimeParser">
+      <summary>
+            Date and time parser.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.YearMonthParser">
+      <summary>
+            Year and month parser.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.TimeParser">
+      <summary>
+            Time parser.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.ReadTimeout">
+      <summary>
+            The timeout of reading data. The default value is <see cref="F:System.TimeSpan.Zero" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.WriteTimeout">
+      <summary>
+            The timeout of sending data. The default value is <see cref="F:System.TimeSpan.Zero" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.MaxReadBytes">
+      <summary>
+            Gets and sets the maximum allowed bytes per read.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.MaxWriteBytes">
+      <summary>
+            Gets and sets the maximum allowed bytes per write.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Server.Fix.FixSession.Format">
+      <summary>
+            Format.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixSession.Load(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Server.Fix.FixSession.Save(Ecng.Serialization.SettingsStorage)">
+      <inheritdoc />
+    </member>
+  </members>
+</doc>

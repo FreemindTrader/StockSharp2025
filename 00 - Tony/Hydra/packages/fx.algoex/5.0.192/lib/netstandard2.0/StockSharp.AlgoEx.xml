@@ -1,0 +1,539 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSharp.AlgoEx</name>
+    </assembly>
+    <members>
+        <member name="T:StockSharp.Algo.Storages.AlgoGeneralHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.AlgoGeneralHelper.GetFileCreationTime(StockSharp.Algo.Storages.IMarketDataDrive,StockSharp.Messages.SecurityId,StockSharp.Messages.DataType,System.DateTime)">
+            <summary>
+            Get the Creation time of the file storing the databars. If the file is too old, that means, the databars are not downloaded recently. We can delete it
+            if the databars are not continuous.
+            </summary>
+            <param name="drive"></param>
+            <param name="securityId"></param>
+            <param name="dataType"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.AlgoGeneralHelper.GetPath(StockSharp.Algo.Storages.IMarketDataDrive,StockSharp.Messages.SecurityId,StockSharp.Messages.DataType,System.DateTime,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="drive"></param>
+            <param name="securityId"></param>
+            <param name="dataType"></param>
+            <param name="date"></param>
+            <param name="isLoad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.AlgoGeneralHelper.GetFileName(StockSharp.Messages.DataType,System.Nullable{StockSharp.Algo.Storages.StorageFormats},System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="dataType"></param>
+            <param name="format"></param>
+            <param name="throwIfUnknown"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.AlgoGeneralHelper.GetExtension(StockSharp.Algo.Storages.StorageFormats)">
+            <summary>
+            To get the file extension for the format.
+            </summary>
+            <param name="format">Format.</param>
+            <returns>The extension.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.AlgoGeneralHelper.GetSecurityPath(StockSharp.Messages.SecurityId)">
+            <summary>
+            
+            </summary>
+            <param name="securityId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1">
+            <summary>
+            The aggregator-storage, allowing to load data simultaneously from several market data storages.
+            </summary>
+            <typeparam name="TMessage">Message type.</typeparam>
+        </member>
+        <member name="P:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.InnerStorages">
+            <summary>
+            Embedded storages of market data.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1"/>.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.DisposeManaged">
+            <summary>
+            Release resources.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.PassThroughOrderBookInrement">
+            <summary>
+            Pass through incremental <see cref="T:StockSharp.Messages.QuoteChangeMessage"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.DataType">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.SecurityId">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxBasketMarketDataStorage`1.Load(System.DateTime)">
+            <summary>
+            To load messages from embedded storages for specified date.
+            </summary>
+            <param name="date">Date.</param>
+            <returns>The messages loader.</returns>
+        </member>
+        <member name="T:StockSharp.Algo.Storages.fxLocalMarketDataDrive">
+            <summary>
+            The file storage for market data.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Storages.fxLocalMarketDataDrive"/>.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Storages.fxLocalMarketDataDrive"/>.
+            </summary>
+            <param name="path">The path to the directory with data.</param>
+        </member>
+        <member name="P:StockSharp.Algo.Storages.fxLocalMarketDataDrive.Path">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.Storages.fxLocalMarketDataDrive.AvailableSecurities">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetAvailableSecurities(System.String)">
+            <summary>
+            Get all available instruments.
+            </summary>
+            <param name="path">The path to the directory with data.</param>
+            <returns>All available instruments.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetAvailableDataTypes(StockSharp.Messages.SecurityId,StockSharp.Algo.Storages.StorageFormats)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetStorageDrive(StockSharp.Messages.SecurityId,StockSharp.Messages.DataType,StockSharp.Algo.Storages.StorageFormats)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.Verify">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.LookupSecurities(StockSharp.Messages.SecurityLookupMessage,StockSharp.BusinessEntities.ISecurityProvider,System.Action{StockSharp.Messages.SecurityMessage},System.Func{System.Boolean},System.Action{System.Int32,System.Int32})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetExtension(StockSharp.Algo.Storages.StorageFormats)">
+            <summary>
+            To get the file extension for the format.
+            </summary>
+            <param name="format">Format.</param>
+            <returns>The extension.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetDataType(System.String)">
+            <summary>
+            Get data type and parameter for the specified file name.
+            </summary>
+            <param name="fileName">The file name.</param>
+            <returns>Data type and parameter associated with the type. For example, <see cref="P:StockSharp.Messages.CandleMessage.Arg"/>.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetFileName(StockSharp.Messages.DataType,System.Nullable{StockSharp.Algo.Storages.StorageFormats},System.Boolean)">
+            <summary>
+            To get the file name by the type of data.
+            </summary>
+            <param name="dataType">Data type info.</param>
+            <param name="format">Storage format. If set an extension will be added to the file name.</param>
+            <param name="throwIfUnknown">Throw exception if the specified type is unknown.</param>
+            <returns>The file name.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetFileName(System.Type,System.Object,System.Nullable{StockSharp.Algo.Storages.StorageFormats})">
+            <summary>
+            To get the file name by the type of data.
+            </summary>
+            <param name="dataType">Data type.</param>
+            <param name="arg">The parameter associated with the <paramref name="dataType" /> type. For example, <see cref="P:StockSharp.Messages.CandleMessage.Arg"/>.</param>
+            <param name="format">Storage format. If set an extension will be added to the file name.</param>
+            <returns>The file name.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetDate(System.String)">
+            <summary>
+            Convert directory name to the date.
+            </summary>
+            <param name="dirName">Directory name.</param>
+            <returns>The date.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetDirName(System.DateTime)">
+            <summary>
+            Convert the date to directory name.
+            </summary>
+            <param name="date">The date.</param>
+            <returns>Directory name.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Storages.fxLocalMarketDataDrive.GetSecurityPath(StockSharp.Messages.SecurityId)">
+            <summary>
+            To get the path to the folder with market data for the instrument.
+            </summary>
+            <param name="securityId">Security ID.</param>
+            <returns>The path to the folder with market data.</returns>
+        </member>
+        <member name="T:StockSharp.Algo.Candles.CandleHelperEx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Candles.CandleHelperEx.GetLastDayOfMonth(System.DateTime)">
+            <summary>
+            Tony: Get last day of the month
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Candles.CandleHelperEx.GetFxcmBarOpenTime(System.DateTime,System.TimeSpan)">
+            <summary>
+            Tony: Since FXCM store the daily, weekly, month bar begin time from the previous days's close 
+            </summary>
+            <param name="anyDate"></param>
+            <param name="period"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Candles.CandleHelperEx.GetFxcmBarCloseTimeByOpen(System.DateTime,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="barOpenTime"></param>
+            <param name="period"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Candles.CandleHelperEx.GetFxcmBarCloseTime(System.DateTime,System.TimeSpan)">
+            <summary>
+            
+            </summary>
+            <param name="barCloseTime"></param>
+            <param name="period"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Candles.CandleHelperEx.FirstDayOfWeek(System.DateTime)">
+            <summary>
+            Get the first Day of the Week
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSharp.Algo.Candles.CandleHelperEx.LastWorkingDayOfWeek(System.DateTime)">
+            <summary>
+            Return the last working day of the week. Normally it is the Friday of the week.
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="T:StockSharp.Algo.Testing.FreemindOrderCondition">
+            <summary>
+            <see cref="T:StockSharp.Algo.Testing.IMarketEmulator"/> order condition.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.FreemindOrderCondition.IsTakeProfit">
+            <summary>
+            Is take profit.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.FreemindOrderCondition.StopPrice">
+            <summary>
+            Stop-price.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.FreemindOrderCondition.TakeProfitPips">
+            <summary>
+            Number of pips to take profit
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.FreemindOrderCondition.StopLossPips">
+            <summary>
+            Number of Pips for Stop Loss
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.FreemindOrderCondition.WithEscape">
+            <summary>
+            Number of Pips for Stop Loss
+            </summary>
+        </member>
+        <member name="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector">
+            <summary>
+            The emulation connection. It uses historical data and/or occasionally generated.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.#ctor(System.Collections.Generic.IEnumerable{StockSharp.BusinessEntities.Security},System.Collections.Generic.IEnumerable{StockSharp.BusinessEntities.Portfolio})">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector"/>.
+            </summary>
+            <param name="securities">Instruments, which will be sent through the <see cref="E:StockSharp.BusinessEntities.IConnector.NewSecurities"/> event.</param>
+            <param name="portfolios">Portfolios, which will be sent through the <see cref="E:StockSharp.BusinessEntities.IConnector.NewPortfolios"/> event.</param>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.#ctor(System.Collections.Generic.IEnumerable{StockSharp.BusinessEntities.Security},System.Collections.Generic.IEnumerable{StockSharp.BusinessEntities.Portfolio},StockSharp.Algo.Storages.IStorageRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector"/>.
+            </summary>
+            <param name="securities">Instruments, the operation will be performed with.</param>
+            <param name="portfolios">Portfolios, the operation will be performed with.</param>
+            <param name="storageRegistry">Market data storage.</param>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.#ctor(StockSharp.BusinessEntities.ISecurityProvider,System.Collections.Generic.IEnumerable{StockSharp.BusinessEntities.Portfolio})">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector"/>.
+            </summary>
+            <param name="securityProvider">The provider of information about instruments.</param>
+            <param name="portfolios">Portfolios, the operation will be performed with.</param>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.#ctor(StockSharp.BusinessEntities.ISecurityProvider,StockSharp.BusinessEntities.IPortfolioProvider,StockSharp.Algo.Storages.IExchangeInfoProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector"/>.
+            </summary>
+            <param name="securityProvider">The provider of information about instruments.</param>
+            <param name="portfolioProvider">The portfolio to be used to register orders. If value is not given, the portfolio with default name Simulator will be created.</param>
+            <param name="exchangeInfoProvider">Exchanges and trading boards provider.</param>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.#ctor(StockSharp.BusinessEntities.ISecurityProvider,StockSharp.BusinessEntities.IPortfolioProvider,StockSharp.Algo.Storages.IExchangeInfoProvider,StockSharp.Algo.Storages.IStorageRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector"/>.
+            </summary>
+            <param name="securityProvider">The provider of information about instruments.</param>
+            <param name="portfolioProvider">The portfolio to be used to register orders. If value is not given, the portfolio with default name Simulator will be created.</param>
+            <param name="storageRegistry">Market data storage.</param>
+            <param name="exchangeInfoProvider">Exchanges and trading boards provider.</param>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.#ctor(StockSharp.Messages.IMessageAdapter,System.Boolean,StockSharp.Messages.IMessageChannel,StockSharp.BusinessEntities.ISecurityProvider,StockSharp.BusinessEntities.IPortfolioProvider,StockSharp.Algo.Storages.IExchangeInfoProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Testing.fxHistoricEmulationConnector"/>.
+            </summary>
+            <param name="innerAdapter">Underlying adapter.</param>
+            <param name="ownInnerAdapter">Control <paramref name="innerAdapter"/> lifetime.</param>
+            <param name="inChannel">Incoming messages channel.</param>
+            <param name="securityProvider">The provider of information about instruments.</param>
+            <param name="portfolioProvider">The portfolio to be used to register orders. If value is not given, the portfolio with default name Simulator will be created.</param>
+            <param name="exchangeInfoProvider">Exchanges and trading boards provider.</param>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.RiskManager">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.SupportBasketSecurities">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.SupportSnapshots">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.HistoryMessageAdapter">
+            <summary>
+            The adapter, receiving messages form the storage <see cref="T:StockSharp.Algo.Storages.IStorageRegistry"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.State">
+            <summary>
+            The emulator state.
+            </summary>
+        </member>
+        <member name="E:StockSharp.Algo.Testing.fxHistoricEmulationConnector.StateChanged">
+            <summary>
+            The event on the emulator state change <see cref="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.State"/>.
+            </summary>
+        </member>
+        <member name="E:StockSharp.Algo.Testing.fxHistoricEmulationConnector.ProgressChanged">
+            <summary>
+            Progress changed event.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.IsFinished">
+            <summary>
+            Has the emulator ended its operation due to end of data, or it was interrupted through the <see cref="M:StockSharp.BusinessEntities.IConnector.Disconnect"/>method.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Testing.fxHistoricEmulationConnector.MarketTimeChangedInterval">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.ClearCache">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.OnConnect">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.OnDisconnect">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.DisposeManaged">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.Start">
+            <summary>
+            To start the emulation.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.Suspend">
+            <summary>
+            To suspend the emulation.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.OnProcessMessage(StockSharp.Messages.Message)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.RegisterHistorySource(StockSharp.BusinessEntities.Security,StockSharp.Messages.DataType,System.Func{System.DateTimeOffset,System.Collections.Generic.IEnumerable{StockSharp.Messages.Message}})">
+            <summary>
+            Register historical data source.
+            </summary>
+            <param name="security">Instrument. If passed <see langword="null"/> the source will be applied for all subscriptions.</param>
+            <param name="dataType">Data type.</param>
+            <param name="getMessages">Historical data source.</param>
+            <returns>Subscription.</returns>
+        </member>
+        <member name="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.UnRegisterHistorySource(StockSharp.BusinessEntities.Security,StockSharp.Messages.DataType)">
+            <summary>
+            Unregister historical data source, previously registered by <see cref="M:StockSharp.Algo.Testing.fxHistoricEmulationConnector.RegisterHistorySource(StockSharp.BusinessEntities.Security,StockSharp.Messages.DataType,System.Func{System.DateTimeOffset,System.Collections.Generic.IEnumerable{StockSharp.Messages.Message}})"/>.
+            </summary>
+            <param name="security">Instrument. If passed <see langword="null"/> the source will be removed for all subscriptions.</param>
+            <param name="dataType">Data type.</param>
+        </member>
+        <member name="T:StockSharp.Algo.fxHistoryMessageAdapter">
+            <summary>
+            The adapter, receiving messages form the storage <see cref="T:StockSharp.Algo.Storages.IStorageRegistry"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.LoadedMessageCount">
+            <summary>
+            The number of loaded events.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.PostTradeMarketTimeChangedCount">
+            <summary>
+            The number of the event <see cref="E:StockSharp.BusinessEntities.IConnector.MarketTimeChanged"/> calls after end of trading. By default it is equal to 2.
+            </summary>
+            <remarks>
+            It is required for activation of post-trade rules (rules, basing on events, occurring after end of trading).
+            </remarks>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.StorageRegistry">
+            <summary>
+            Market data storage.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.Drive">
+            <summary>
+            The storage which is used by default. By default, <see cref="P:StockSharp.Algo.Storages.IStorageRegistry.DefaultDrive"/> is used.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.StorageFormat">
+            <summary>
+            The format of market data. <see cref="F:StockSharp.Algo.Storages.StorageFormats.Binary"/> is used by default.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.SecurityProvider">
+            <summary>
+            The provider of information about instruments.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.MarketTimeChangedInterval">
+            <summary>
+            The interval of message <see cref="T:StockSharp.Messages.TimeMessage"/> generation. By default, it is equal to 1 sec.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.Boards">
+            <summary>
+            List of all exchange boards, for which instruments are loaded.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.#ctor(Ecng.Common.IdGenerator,StockSharp.BusinessEntities.ISecurityProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.fxHistoryMessageAdapter"/>.
+            </summary>
+            <param name="transactionIdGenerator">Transaction id generator.</param>
+            <param name="securityProvider">The provider of information about instruments.</param>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.StartDate">
+            <summary>
+            Date in history for starting the paper trading.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.StopDate">
+            <summary>
+            Date in history to stop the paper trading (date is included).
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.CheckTradableDates">
+            <summary>
+            Check loading dates are they tradable.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.OrderLogMarketDepthBuilders">
+            <summary>
+            Order book builders.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.CreateOrderLogMarketDepthBuilder(StockSharp.Messages.SecurityId)">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.CurrentTime">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.DisposeManaged">
+            <summary>
+            Release resources.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.SupportedMarketDataTypes">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.IsFullCandlesOnly">
+            <inheritdoc />
+        </member>
+        <member name="P:StockSharp.Algo.fxHistoryMessageAdapter.IsSupportCandlesUpdates">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.GetCandleArgs(System.Type,StockSharp.Messages.SecurityId,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.IsAllDownloadingSupported(StockSharp.Messages.DataType)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.OnSendInMessage(StockSharp.Messages.Message)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.Start(System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+            Start data loading.
+            </summary>
+            <param name="startDate">Date in history for starting the paper trading.</param>
+            <param name="stopDate">Date in history to stop the paper trading (date is included).</param>
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.Stop">
+            <summary>
+            Stop data loading.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.SendOutMessage(StockSharp.Messages.Message)">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.fxHistoryMessageAdapter.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:StockSharp.AlgoEx.SecurityHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StockSharp.AlgoEx.SecurityHelper.IsRelatedNews(StockSharp.BusinessEntities.Security,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="security"></param>
+            <param name="country"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

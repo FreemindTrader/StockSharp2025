@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Web.DomainModel</id>
+    <version>5.0.200</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Nito.AsyncEx.Tasks" version="5.1.2" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Localization" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Messages" version="5.0.192" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

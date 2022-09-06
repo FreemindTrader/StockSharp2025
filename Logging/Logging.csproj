@@ -6,4 +6,16 @@
   <ItemGroup>
     <ProjectReference Include="..\Localization\Localization.csproj" />
   </ItemGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <RootNamespace>StockSharp.Logging</RootNamespace>
+        <AssemblyName>StockSharp.Logging</AssemblyName>
+        <PackageId>StockSharp.Logging</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.212</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
 </Project>

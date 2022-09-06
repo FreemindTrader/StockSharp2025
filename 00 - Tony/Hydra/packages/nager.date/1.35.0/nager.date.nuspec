@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Nager.Date</id>
+    <version>1.35.0</version>
+    <authors>Tino Hager</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>calendar.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://date.nager.at/</projectUrl>
+    <description>Calculate Public Holidays / Federal Holidays for a given year, translation native and english. Country and County support. Supports more than 100 countries</description>
+    <releaseNotes>A changelog is available at https://github.com/nager/Nager.Date/blob/master/CHANGELOG.md</releaseNotes>
+    <tags>Holiday Public-Holiday PublicHoliday Bank-Holiday BankHoliday FederalHoliday NationalHoliday</tags>
+    <repository url="https://github.com/nager/Nager.Date" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
+      <group targetFramework="net6.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
