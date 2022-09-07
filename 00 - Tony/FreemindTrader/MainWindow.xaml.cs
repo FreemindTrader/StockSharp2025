@@ -58,7 +58,7 @@ using DevExpress.Mvvm;
 
 namespace FreemindTrader
 {
-    public partial class MainWindow : DXRibbonWindow, IInstallerChannelHandler, IComponentConnector
+    public partial class MainWindow : DXRibbonWindow, IComponentConnector
     {
         public static RoutedCommand ConnectorSettingsCommand = new RoutedCommand();
         public static RoutedCommand ConnectDisconnectCommand = new RoutedCommand();
@@ -80,7 +80,7 @@ namespace FreemindTrader
         private SubscriptionControlManager _subscriptionManager;
         private LayoutManager _layoutManager;
         private EmulationSettingsEx _emulationSettings;
-        private readonly InstallerChannel _installerChannel;
+        //private readonly InstallerChannel _installerChannel;
         private bool _closeSuccess;
         private bool _firstSecuritiesInit;
         private bool _firstPortfoliosInit;
@@ -860,7 +860,7 @@ namespace FreemindTrader
             commandService.Register<RevertPositionCommand>( this, false, OnRevertPositionCommand, null );
             commandService.Register<ClosePositionCommand>( this, false, OnClosePositionCommand, null );
             commandService.Register<CancelAllOrdersCommand>( this, false, cmd => _connector.Orders.Where( o => o.State == OrderStates.Active ).ForEach( o => _connector.CancelOrder( o ) ), null );
-            commandService.Register<OrderFailCommand>( this, false, cmd => AlertServicesRegistry.NotificationService.Notify( AlertNotifications.Popup, LocalizedStrings.XamlStr182, cmd.Entity.Error.Message, cmd.Entity.ServerTime ), null );
+            commandService.Register<OrderFailCommand>( this, false, OnOrderFailedCommand, null );
             commandService.Register<CreateSecurityCommand>( this, true, OnCreateSecurityCommand, null );
             commandService.Register<EditSecuritiesCommand>( this, true, OnEditSecuritiesCommand, null );
             commandService.Register<RemoveSecuritiesCommand>( this, true, OnRemoveSecuritiesCommand, null );
@@ -1039,6 +1039,13 @@ namespace FreemindTrader
                     break;
                 _connector.SendOutMessage( security.ToMessage( new SecurityId?(), 0L, false ) );
             }
+        }
+
+        private void OnOrderFailedCommand( OrderFailCommand cmd )
+        {
+            var token = GeneralHelper.GlobalExitToken( );
+
+            AlertServicesRegistry.NotificationService.NotifyAsync( AlertNotifications.Popup, LocalizedStrings.XamlStr182, cmd.Entity.Error.Message, cmd.Entity.ServerTime, token );
         }
 
         private void OnRemoveSecuritiesCommand( RemoveSecuritiesCommand cmd )

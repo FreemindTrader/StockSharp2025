@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Diectory.Build.props" />
     <PropertyGroup>
         <ProjectGuid>{A7934EB3-1783-4612-90AC-1AE729458091}</ProjectGuid>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>fx.AITrade</PackageId>
-        <Version>5.0.210</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
@@ -266,9 +267,9 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
-      <PackageReference Include="fx.Disruptor" Version="5.0.210" />
-      <PackageReference Include="fx.Strategies" Version="5.0.210" />
-      <PackageReference Include="StockSharp.Xaml" Version="5.0.132" />
+      <PackageReference Include="fx.Disruptor" Version="5.0.212" />
+      <PackageReference Include="fx.Strategies" Version="5.0.213" />
+      <PackageReference Include="StockSharp.Xaml" Version="5.0.134" />
       <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     </ItemGroup>
     <ItemGroup>

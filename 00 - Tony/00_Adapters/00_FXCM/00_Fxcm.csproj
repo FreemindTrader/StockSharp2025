@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
     <PropertyGroup>
         <ProjectGuid>{8336E15D-D31C-4B90-91B0-D8DFCD36F8CF}</ProjectGuid>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -245,7 +246,7 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <Version>5.0.211</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
