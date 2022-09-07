@@ -19,18 +19,25 @@ namespace StockSharp.Server.Core
         {
             if ( message == null )
                 throw new ArgumentNullException( nameof( message ) );
-            PermissionCredentials permissionCredentials1 = new PermissionCredentials();
-            permissionCredentials1.Email = message.Login;
-            permissionCredentials1.Password = message.Password;
-            PermissionCredentials permissionCredentials2 = permissionCredentials1;
-            permissionCredentials2.IpRestrictions = message.IpRestrictions.ToArray();
-            foreach ( KeyValuePair<UserPermissions, IDictionary<Tuple<string, string, object, DateTime?>, bool>> permission in message.Permissions )
-            {
-                SynchronizedDictionary<Tuple<string, string, object, DateTime?>, bool> synchronizedDictionary = new SynchronizedDictionary<Tuple<string, string, object, DateTime?>, bool>();
-                ( ( ICollection<KeyValuePair<Tuple<string, string, object, DateTime?>, bool>> )synchronizedDictionary ).AddRange( permission.Value );
-                permissionCredentials2.Permissions.Add( permission.Key, synchronizedDictionary );
+            
+            var credential            = new PermissionCredentials();
+            credential.Email          = message.Login;
+            credential.Password       = message.Password;            
+            credential.IpRestrictions = message.IpRestrictions.ToArray();
+
+            
+
+            foreach ( var permission in message.Permissions )
+            {                
+                var permissionDict = new SynchronizedDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>>();                
+
+                permissionDict.Add( permission.Key, permission.Value );
+
+                credential.Permissions.Add( permission.Key, permission.Value );
             }
-            return permissionCredentials2;
+
+
+            return credential;
         }
 
         /// <summary>
@@ -43,15 +50,22 @@ namespace StockSharp.Server.Core
         {
             if ( credentials == null )
                 throw new ArgumentNullException( nameof( credentials ) );
+            
             UserInfoMessage userInfoMessage = new UserInfoMessage()
             {
                 Login = credentials.Email,
                 IpRestrictions = credentials.IpRestrictions.ToArray()
             };
+
             if ( copyPassword )
                 userInfoMessage.Password = credentials.Password;
-            foreach ( KeyValuePair<UserPermissions, SynchronizedDictionary<Tuple<string, string, object, DateTime?>, bool>> permission in credentials.Permissions )
-                userInfoMessage.Permissions.Add( permission.Key, ( ( IEnumerable<KeyValuePair<Tuple<string, string, object, DateTime?>, bool>> )permission.Value ).ToDictionary() );
+
+            foreach( var permission in credentials.Permissions )
+            {
+                userInfoMessage.Permissions.Add( permission.Key, permission.Value );
+            }
+                
+                    
             return userInfoMessage;
         }
     }

@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Studio.Controls</RootNamespace>
         <AssemblyName>StockSharp.Studio.Controls</AssemblyName>
@@ -20,21 +21,25 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.211</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Roslyn" Version="1.0.112" />
-      <PackageReference Include="StockSharp.Alerts" Version="5.0.126" />
-      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.210" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.210" />
-      <PackageReference Include="StockSharp.Localization" Version="5.0.210" />
-      <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.131" />
+      <PackageReference Include="Ecng.Roslyn" Version="1.0.113" />
+      <PackageReference Include="StockSharp.Alerts" Version="5.0.128" />
+      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.212" />
+      <PackageReference Include="StockSharp.Configuration" Version="5.0.212" />
+      <PackageReference Include="StockSharp.Localization" Version="5.0.212" />
+      <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.133" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\StockSharp.Studio.Core\10_StockSharp.Studio.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>    
 </Project>

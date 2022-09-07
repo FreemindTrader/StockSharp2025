@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using static StockSharp.Configuration.Paths;
 
 #pragma warning disable CS0618
 #pragma warning disable CS1998
@@ -101,7 +102,7 @@ namespace StockSharp.Studio.Core
             file.Id = num;
             entity.File = file;
             CancellationToken cancellationToken1 = cancellationToken;
-            return Paths.GetFileLink( ( object )await service.AddAsync( entity, cancellationToken1 ) );
+            return Paths.GetPageUrl( Pages.File, await service.AddAsync( entity, cancellationToken1 ) );
         }
 
         async Task IBackupService.UnPublishAsync(
