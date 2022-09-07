@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Hydra</RootNamespace>
         <AssemblyName>Hydra</AssemblyName>        
@@ -20,7 +21,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.205</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <OutputType>WinExe</OutputType>
@@ -37,9 +38,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="linq2db" Version="3.5.1" />
-      <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.95" />
-      <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.211" />
+      <PackageReference Include="linq2db" Version="4.2.0" />
+      <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.96" />
+      <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.213" />
       <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
       <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
     </ItemGroup>
@@ -109,6 +110,10 @@
       <Reference Include="StockSharp.Xaml.CodeEditor">
         <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\StockSharp.Xaml.CodeEditor.dll</HintPath>
       </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
     
 
