@@ -612,8 +612,8 @@ namespace StockSharp.Studio.Controls
         {
             ( ( Action )( () =>
                {
-                   ConfigManager.RegisterService<IAlertProcessingService>( ( IAlertProcessingService )new AlertProcessingService( ) );
-                   ConfigManager.RegisterService<IAlertNotificationService>( ( IAlertNotificationService )new AlertNotificationService( Paths.AppDataPath ) );
+                   ConfigManager.RegisterService<IAlertProcessingService>( ( IAlertProcessingService )new AlertProcessingService( 1024 ) );
+                   ConfigManager.RegisterService<IAlertNotificationService>( ( IAlertNotificationService )new AlertNotificationService( 1024, Paths.AppDataPath, null ) );
                    IAlertProcessingService alertService = AlertServicesRegistry.ProcessingService;
                    SettingsStorage settings = BaseUserConfig<StudioUserConfig>.Instance.GetAlertService();
                    if ( settings != null )

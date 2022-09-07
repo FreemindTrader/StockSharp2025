@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Server.Core</RootNamespace>
         <AssemblyName>StockSharp.Server.Core</AssemblyName>
@@ -19,18 +20,18 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.210</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
 
     <ItemGroup>        
-        <PackageReference Include="Ecng.Serialization" Version="1.0.122" />        
-        <PackageReference Include="StockSharp.Localization" Version="5.0.210" />
-        <PackageReference Include="StockSharp.Messages" Version="5.0.210" />
-        <PackageReference Include="StockSharp.Logging" Version="5.0.210" />
-        <PackageReference Include="StockSharp.Configuration" Version="5.0.210" />
-        <PackageReference Include="StockSharp.Algo" Version="5.0.210" />
+        <PackageReference Include="Ecng.Serialization" Version="1.0.124" />        
+        <PackageReference Include="StockSharp.Localization" Version="5.0.212" />
+        <PackageReference Include="StockSharp.Messages" Version="5.0.212" />
+        <PackageReference Include="StockSharp.Logging" Version="5.0.212" />
+        <PackageReference Include="StockSharp.Configuration" Version="5.0.213" />
+        <PackageReference Include="StockSharp.Algo" Version="5.0.212" />
     </ItemGroup>
 </Project>
 

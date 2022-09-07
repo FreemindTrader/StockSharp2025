@@ -18,7 +18,7 @@ namespace StockSharp.Server.Core
         [DebuggerBrowsable( DebuggerBrowsableState.Never )]
         private IEnumerable<IPAddress> _ipRestriction = Enumerable.Empty<IPAddress>();
         [DebuggerBrowsable( DebuggerBrowsableState.Never )]
-        private readonly SynchronizedDictionary<UserPermissions, SynchronizedDictionary<Tuple<string, string, object, DateTime?>, bool>> _userPermissionDictionary = new SynchronizedDictionary<UserPermissions, SynchronizedDictionary<Tuple<string, string, object, DateTime?>, bool>>();
+        private readonly SynchronizedDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>> _userPermissionDictionary = new SynchronizedDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>>();
 
         /// <summary>IP address restrictions.</summary>
         public IEnumerable<IPAddress> IpRestrictions
@@ -32,7 +32,7 @@ namespace StockSharp.Server.Core
         }
 
         /// <summary>Permission set.</summary>
-        public SynchronizedDictionary<UserPermissions, SynchronizedDictionary<Tuple<string, string, object, DateTime?>, bool>> Permissions => _userPermissionDictionary;
+        public SynchronizedDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>> Permissions => _userPermissionDictionary;
 
         /// <inheritdoc />
         public override void Save( SettingsStorage storage )
@@ -58,7 +58,7 @@ namespace StockSharp.Server.Core
         {
             base.Load( storage );
             IpRestrictions = storage.GetValue<string>( nameof( IpRestrictions ) ).SplitByComma().Select( p => p.To<IPAddress>() ).ToArray();
-            var permissions = storage.GetValue<IDictionary<UserPermissions, IDictionary<Tuple<string, string, object, DateTime?>, bool>>>( nameof( Permissions ) );
+            var permissions = storage.GetValue<IDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>>>( nameof( Permissions ) );
             SyncObject syncRoot = Permissions.SyncRoot;
 
             bool lockTaken = false;

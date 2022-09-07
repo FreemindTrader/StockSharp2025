@@ -396,7 +396,7 @@ namespace StockSharp.Server.Core
                     {
                         ExecutionMessage executionMessage = ( ExecutionMessage )message;
                         long originalTransactionId1 = executionMessage.OriginalTransactionId;
-                        ExecutionTypes? executionType = executionMessage.ExecutionType;
+                        ExecutionTypes? executionType = executionMessage.DataTypeEx.ToExecutionType();
                         if ( executionType.HasValue )
                         {
                             switch ( executionType.GetValueOrDefault() )
