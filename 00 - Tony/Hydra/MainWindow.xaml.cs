@@ -154,7 +154,7 @@ namespace StockSharp.Hydra
             
             UserConfig.SuspendChangesMonitor();
             
-            AppStartSettings appStartSettings = AppStartSettings.TryLoad();
+            var appStartSettings = StockSharp.Configuration.AppStartSettings.TryLoad();
             Helper.RegisterServices( appStartSettings == null || appStartSettings.Online, GetType() );
             ConfigManager.RegisterService( "SecuritiesSelectWindowType", typeof( Windows.SecuritiesWindowEx ) );
             ConfigManager.RegisterService<IStudioCommandService>( new StudioCommandService() );
@@ -176,8 +176,8 @@ namespace StockSharp.Hydra
 
             ( ( Action )( () =>
                                 {
-                                    DatabaseProviderRegistry.AddProvider( () => new SqlServerDataProvider( "SqlServer.2012", SqlServerVersion.v2012 ) );
-                                    DatabaseProviderRegistry.AddProvider( () => new SQLiteDataProvider( "SQLite.MS" ) );
+                                    //DatabaseProviderRegistry.AddProvider( () => new SqlServerDataProvider( "SqlServer.2012", SqlServerVersion.v2012 ) );
+                                    //DatabaseProviderRegistry.AddProvider( () => new SQLiteDataProvider( "SQLite.MS" ) );
                                     DatabaseConnectionCache service = new DatabaseConnectionCache();
                                     ConfigManager.RegisterService( service );
 
