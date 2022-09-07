@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>fx.Database</RootNamespace>
         <AssemblyName>fx.Database</AssemblyName>
@@ -21,21 +22,24 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.210</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
         <PackageReference Include="EntityFramework" Version="6.4.4" />
-        <PackageReference Include="fx.Bars" Version="5.0.210" />
-        <PackageReference Include="fx.Collections" Version="5.0.210" />
+        <PackageReference Include="fx.Bars" Version="5.0.213" />
+        <PackageReference Include="fx.Collections" Version="5.0.212" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\00FreemindBase\Ecng.Data\Ecng.Data.csproj" />
       <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>    
 </Project>
 

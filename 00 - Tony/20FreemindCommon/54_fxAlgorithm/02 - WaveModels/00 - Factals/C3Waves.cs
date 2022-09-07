@@ -246,7 +246,7 @@ namespace fx.Algorithm
 
             var lastWaveName = ElliottWaveEnum.NONE;
             var lastWaveTime = 1L;
-            var lowerDegWave = ElliottWaveEnum.NONE;
+            //var lowerDegWave = ElliottWaveEnum.NONE;
 
             var inBtw   = hews.Where( x => x.Value.StartDate >= beginTime && x.Value.StartDate <= endTime ).OrderBy( x => x.Value.StartDate );
 

@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>fx.Common</RootNamespace>
         <AssemblyName>fx.CommonWnd</AssemblyName>
@@ -20,16 +21,20 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.210</Version>
+        <Version>5.0.213</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
-        <PackageReference Include="fx.Collections" Version="5.0.210" />
-        <PackageReference Include="fx.Definitions" Version="5.0.210" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.210" />
+        <PackageReference Include="fx.Collections" Version="5.0.212" />
+        <PackageReference Include="fx.Definitions" Version="5.0.212" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.212" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 
 </Project>
