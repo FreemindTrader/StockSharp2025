@@ -294,6 +294,11 @@ namespace fx.Algorithm
 
                 }
             }
+
+            if ( is5Waves )
+            {
+
+            }
         }
 
 
@@ -508,6 +513,11 @@ namespace fx.Algorithm
                     break;
 
                 }
+            }
+
+            if ( is5Waves )
+            {
+
             }
         }
 

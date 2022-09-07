@@ -26,11 +26,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Collections" Version="1.0.111" />
-      <PackageReference Include="Ecng.Common" Version="1.0.108" />
-      <PackageReference Include="Ecng.ComponentModel" Version="1.0.136" />
-      <PackageReference Include="Ecng.Serialization" Version="1.0.121" />
-      <PackageReference Include="linq2db" Version="3.5.1" />
+      <PackageReference Include="Ecng.Collections" Version="1.0.113" />
+      <PackageReference Include="Ecng.Common" Version="1.0.110" />
+      <PackageReference Include="Ecng.ComponentModel" Version="1.0.139" />
+      <PackageReference Include="Ecng.Serialization" Version="1.0.124" />
+      <PackageReference Include="linq2db" Version="4.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>       
 </Project>
 

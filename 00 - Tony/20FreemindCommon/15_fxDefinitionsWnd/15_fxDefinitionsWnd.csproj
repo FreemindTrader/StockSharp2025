@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>fx.DefintionsWnd</RootNamespace>
         <AssemblyName>fx.DefintionsWnd</AssemblyName>
@@ -23,14 +24,18 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.210</Version>
+        <Version>5.0.212</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Definitions" Version="5.0.210" />
-        <PackageReference Include="StockSharp.Algo" Version="5.0.210" />
-        <PackageReference Include="StockSharp.Configuration" Version="5.0.210" />
+        <PackageReference Include="fx.Definitions" Version="5.0.212" />
+        <PackageReference Include="StockSharp.Algo" Version="5.0.212" />
+        <PackageReference Include="StockSharp.Configuration" Version="5.0.212" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>  
 </Project>

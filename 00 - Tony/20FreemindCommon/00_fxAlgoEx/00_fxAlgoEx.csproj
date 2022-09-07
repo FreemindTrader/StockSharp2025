@@ -30,10 +30,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="fx.Base" Version="5.0.210" />
+      <PackageReference Include="fx.Base" Version="5.0.212" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>  
 </Project>
