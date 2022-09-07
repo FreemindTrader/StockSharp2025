@@ -40,7 +40,6 @@ using SciChart.Charting.Model.DataSeries;
 using DevExpress.Xpf.Bars;
 using fx.Collections;
 using fx.Bars;
-using fx.Messages;
 using fx.Base;
 
 namespace FreemindAITrade.ViewModels
