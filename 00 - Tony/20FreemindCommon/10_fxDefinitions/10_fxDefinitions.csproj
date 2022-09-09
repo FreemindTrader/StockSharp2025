@@ -20,17 +20,17 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.212</Version>
+        <Version>5.0.225</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="fx.Collections" Version="5.0.212" />
-    <PackageReference Include="StockSharp.Algo" Version="5.0.212" />
-    <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.212" />
-    <PackageReference Include="StockSharp.Configuration" Version="5.0.212" />
-    <PackageReference Include="StockSharp.Localization" Version="5.0.212" />
+    <PackageReference Include="fx.Collections" Version="5.0.220" />
+    <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
+    <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.220" />
+    <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
+    <PackageReference Include="StockSharp.Localization" Version="5.0.220" />
   </ItemGroup>
 
   <ItemGroup>

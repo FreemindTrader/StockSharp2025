@@ -749,7 +749,7 @@ namespace StockSharp.FxConnectFXCM
 			{
 				var exeMsg = new ExecutionMessage( );
 
-				exeMsg.ExecutionType = ExecutionTypes.Transaction;
+				exeMsg.DataTypeEx = DataType.Transactions;
 				exeMsg.HasOrderInfo = true;
 				exeMsg.OriginalTransactionId = transId.Value;
 				exeMsg.OrderState = OrderStates.Failed;

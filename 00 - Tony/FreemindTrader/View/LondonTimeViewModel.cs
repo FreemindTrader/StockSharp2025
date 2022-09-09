@@ -1,36 +1,32 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf.Gauges;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FreemindTrader
 {
     [POCOViewModel]
     public class LondonTimeViewModel : ISupportParentViewModel
     {
-        WorldClockViewModel     _parent;
+        WorldClockViewModel _parent;
 
         DigitalRedClockModel _activeClock;
         DigitalProgressiveModel _offhour;
         DigitalYellowSubmarineModel _beforeOffHour;
 
-        public LondonTimeViewModel( )
+        public LondonTimeViewModel()
         {
-            _activeClock   = new DigitalRedClockModel( );
-            _offhour       = new DigitalProgressiveModel( );
-            _beforeOffHour = new DigitalYellowSubmarineModel( );
+            _activeClock = new DigitalRedClockModel();
+            _offhour = new DigitalProgressiveModel();
+            _beforeOffHour = new DigitalYellowSubmarineModel();
         }
 
-        
+
 
         public virtual object ParentViewModel { get; set; }
 
-        protected void OnParentViewModelChanged( )
+        protected void OnParentViewModelChanged()
         {
             _parent = ( ( WorldClockViewModel )ParentViewModel );
 

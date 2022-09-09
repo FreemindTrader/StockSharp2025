@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{9586FEFC-0AA8-4800-90A2-6D0F96CC47D1}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -21,16 +21,19 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.223</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
-        <PackageReference Include="fx.Collections" Version="5.0.212" />
-        <PackageReference Include="fx.Definitions" Version="5.0.212" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.212" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="fx.Collections" Version="5.0.220" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

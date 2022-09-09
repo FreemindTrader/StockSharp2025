@@ -35,10 +35,10 @@ namespace DevExpress.Internal
         {
             string message = GetMessage();
             var window = new Window() { Width = 600, Height = 400, WindowStyle = WindowStyle.ToolWindow, ShowActivated = true, Title = "Unhandled exception" };
-            var grid = new Grid() { Margin = new Thickness(5) };
-            var closeButton = new Button() { Content = "Close", Margin = new Thickness(3) };
+            var grid = new Grid() { Margin = new Thickness( 5 ) };
+            var closeButton = new Button() { Content = "Close", Margin = new Thickness( 3 ) };
             closeButton.Click += button_Click;
-            var copyButton = new Button() { Content = "Copy error", Margin = new Thickness(3) };
+            var copyButton = new Button() { Content = "Copy error", Margin = new Thickness( 3 ) };
             copyButton.Click += copyButton_Click;
             var stackPanel = new StackPanel() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Center };
             Grid.SetRow( stackPanel, 1 );
@@ -54,7 +54,7 @@ namespace DevExpress.Internal
         }
         static string GetMessage()
         {
-            Exception ex = (Exception)arguments.ExceptionObject;
+            Exception ex = ( Exception )arguments.ExceptionObject;
             var result = new StringBuilder();
             if ( Assembly.GetEntryAssembly() != null )
             {
@@ -83,9 +83,9 @@ namespace DevExpress.Internal
         }
         static void AppendLine( StringBuilder stringBuilder, string text, int index )
         {
-            string tabOffset = new string('\t', index);
+            string tabOffset = new string( '\t', index );
             stringBuilder.Append( tabOffset );
-            var regex = new Regex("\r\n*\\s");
+            var regex = new Regex( "\r\n*\\s" );
             stringBuilder.AppendLine( regex.Replace( text, "\r\n" + tabOffset ) );
         }
         static void copyButton_Click( object sender, RoutedEventArgs e )

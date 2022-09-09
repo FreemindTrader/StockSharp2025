@@ -1,6 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\common.props" />
-    <Import Project="..\Diectory.Build.props" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\common.props" />    
     <ItemGroup>
         <ProjectReference Include="..\Algo\Algo.csproj" />
     </ItemGroup>
@@ -13,8 +12,8 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.212</Version>
+        <Version>5.0.220</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 </Project>

@@ -808,7 +808,7 @@ namespace fx.Charting
 
             }
 
-            if ( fib.HasTonyExtensions )
+            if ( fib.HasTonyExtensions && fib.ShowTonyExtensions )
             {
                 _elliottWaveFibCount++;
                 var fibRet              = new fxTonyProjectionAnnotation( fib, ref realBar, fib.TargetPoints );
@@ -825,7 +825,7 @@ namespace fx.Charting
                 GetParentSurface( ).Annotations.Add( fibRet );
             }
 
-            if ( fib.HasTonyExtensions2 )
+            if ( fib.HasTonyExtensions2 && fib.ShowTonyExtension2 )
             {
                 _elliottWaveFibCount++;
                 var fibRet              = new fxTonyProjectionAnnotation( fib, ref realBar, fib.TargetPoints, true );

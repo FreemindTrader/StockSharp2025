@@ -180,7 +180,7 @@ namespace StockSharp.FxConnectFXCM
                                     new ExecutionMessage
                                     {
                                         ServerTime = CurrentTime.ConvertToUtc( ),
-                                        ExecutionType = ExecutionTypes.Transaction,
+                                        DataTypeEx = DataType.Transactions,
                                         OriginalTransactionId = cancelMsg.TransactionId,
                                         HasOrderInfo = true,
                                     }

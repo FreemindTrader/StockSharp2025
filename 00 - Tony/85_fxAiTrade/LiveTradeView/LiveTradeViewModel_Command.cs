@@ -1,41 +1,13 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
-using Ecng.Common;
-using Ecng.Configuration;
-using Ecng.Serialization;
-using MoreLinq;
-using StockSharp.Algo;
-using StockSharp.Algo.Candles;
-using StockSharp.Algo.Candles.Compression;
-using StockSharp.Algo.Indicators;
-using StockSharp.Algo.Storages;
-using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Logging;
-using StockSharp.Messages;
-using StockSharp.Studio.Core.Commands;
-using StockSharp.Xaml.Charting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-using Ecng.ComponentModel;
 using fx.Algorithm;
 using fx.Bars;
+using fx.Definitions;
+using System;
+using System.Linq;
 
 namespace FreemindAITrade.ViewModels
 {
-    public partial class LiveTradeViewModel 
+    public partial class LiveTradeViewModel
     {
         public ElliottWaveCycle AddToExistingWave(
                                                     int waveScenarioNo,
@@ -49,28 +21,28 @@ namespace FreemindAITrade.ViewModels
 
             if ( _hews.WaveCount( waveScenarioNo, selectedBarTime ) == 0 ) return desiredCycle;
 
-            var highestDegreeHewPointInfo = _hews.GetWaveOfHigestDegree( waveScenarioNo,selectedBarTime );
+            var highestDegreeHewPointInfo = _hews.GetWaveOfHigestDegree( waveScenarioNo, selectedBarTime );
 
-            var highestDegreeCycle        = highestDegreeHewPointInfo.HasValue ? highestDegreeHewPointInfo.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
+            var highestDegreeCycle = highestDegreeHewPointInfo.HasValue ? highestDegreeHewPointInfo.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
 
-            var lowestDegreeHewPointInfo  = _hews.GetWaveOfLowestDegree( waveScenarioNo,selectedBarTime );
+            var lowestDegreeHewPointInfo = _hews.GetWaveOfLowestDegree( waveScenarioNo, selectedBarTime );
 
-            var lowestDegreeCycle         = lowestDegreeHewPointInfo.HasValue ? lowestDegreeHewPointInfo.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
+            var lowestDegreeCycle = lowestDegreeHewPointInfo.HasValue ? lowestDegreeHewPointInfo.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
 
-            var oneDegreeHigher           = highestDegreeCycle + GlobalConstants.OneWaveCycle;
-            var oneDegreeLower            = lowestDegreeCycle  - GlobalConstants.OneWaveCycle;
+            var oneDegreeHigher = highestDegreeCycle + GlobalConstants.OneWaveCycle;
+            var oneDegreeLower = lowestDegreeCycle - GlobalConstants.OneWaveCycle;
 
-            var previousHigherWaveName    = _hews.GetPreviousWaveOfDegree( waveScenarioNo, selectedBarTime, oneDegreeHigher );
-            var previousLowerWaveName     = _hews.GetPreviousWaveOfDegree( waveScenarioNo, selectedBarTime, oneDegreeLower );
+            var previousHigherWaveName = _hews.GetPreviousWaveOfDegree( waveScenarioNo, selectedBarTime, oneDegreeHigher );
+            var previousLowerWaveName = _hews.GetPreviousWaveOfDegree( waveScenarioNo, selectedBarTime, oneDegreeLower );
 
-            var currentWaveName           = highestDegreeHewPointInfo.Value.WaveName;
+            var currentWaveName = highestDegreeHewPointInfo.Value.WaveName;
 
 
 
             ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
 
             if ( bar != SBar.EmptySBar )
-            {                
+            {
                 if ( _hews.TryUpgradeWaveC( waveScenarioNo, ResponsibleTF, selectedBarTime, waveNameToBeAdded, ref bar ) )
                 {
                     return waveCycle;
@@ -121,11 +93,11 @@ namespace FreemindAITrade.ViewModels
                         {
                             ProcessAddingWaveC( waveScenarioNo, selectedBarTime, oneDegreeLower );
 
-                            doneAdding   = true;
+                            doneAdding = true;
                         }
                         else
                         {
-                            doneAdding   = true;
+                            doneAdding = true;
 
                             desiredCycle = oneDegreeLower;
 
@@ -134,7 +106,7 @@ namespace FreemindAITrade.ViewModels
                     }
                     else if ( waveNameToBeAdded == ElliottWaveEnum.Wave5 || waveNameToBeAdded == ElliottWaveEnum.Wave5C || waveNameToBeAdded == ElliottWaveEnum.WaveC )
                     {
-                        doneAdding   = true;
+                        doneAdding = true;
 
                         desiredCycle = oneDegreeLower;
 
@@ -154,94 +126,94 @@ namespace FreemindAITrade.ViewModels
                             case ElliottWaveEnum.Wave3C:
                             case ElliottWaveEnum.WaveA:
                             case ElliottWaveEnum.WaveC:
-                            {
-                                if ( waveNameToBeAdded == ElliottWaveEnum.Wave5 )
                                 {
-                                    desiredCycle = oneDegreeLower;
+                                    if ( waveNameToBeAdded == ElliottWaveEnum.Wave5 )
+                                    {
+                                        desiredCycle = oneDegreeLower;
 
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
                                 }
-                            }
-                            break;
+                                break;
 
                             case ElliottWaveEnum.Wave5C:
-                            {
-                                if ( waveNameToBeAdded == ElliottWaveEnum.Wave5 )
                                 {
-                                    desiredCycle = oneDegreeLower;
+                                    if ( waveNameToBeAdded == ElliottWaveEnum.Wave5 )
+                                    {
+                                        desiredCycle = oneDegreeLower;
 
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
-                                }
-                                else if ( waveNameToBeAdded == ElliottWaveEnum.WaveA || waveNameToBeAdded == ElliottWaveEnum.WaveC )
-                                {
-                                    desiredCycle = oneDegreeHigher;
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
+                                    else if ( waveNameToBeAdded == ElliottWaveEnum.WaveA || waveNameToBeAdded == ElliottWaveEnum.WaveC )
+                                    {
+                                        desiredCycle = oneDegreeHigher;
 
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
                                 }
-                            }
-                            break;
+                                break;
 
 
                             // Tony Lam: Need to work on adding wave C to this wave before adding lower degree wave.
                             case ElliottWaveEnum.Wave1:
-                            {
-                                if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
                                 {
-                                    _hews.ReplaceWaveInManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, lowestDegreeCycle, ElliottWaveEnum.Wave1, ElliottWaveEnum.Wave1C, ref bar );
+                                    if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
+                                    {
+                                        _hews.ReplaceWaveInManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, lowestDegreeCycle, ElliottWaveEnum.Wave1, ElliottWaveEnum.Wave1C, ref bar );
+                                    }
+                                    else
+                                    {
+                                        desiredCycle = oneDegreeLower;
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
                                 }
-                                else
-                                {
-                                    desiredCycle = oneDegreeLower;
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
-                                }
-                            }
-                            break;
+                                break;
 
                             case ElliottWaveEnum.Wave3:
-                            {
-                                if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
                                 {
-                                    _hews.ReplaceWaveInManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, lowestDegreeCycle, ElliottWaveEnum.Wave3, ElliottWaveEnum.Wave3C, ref bar );
+                                    if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
+                                    {
+                                        _hews.ReplaceWaveInManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, lowestDegreeCycle, ElliottWaveEnum.Wave3, ElliottWaveEnum.Wave3C, ref bar );
+                                    }
+                                    else
+                                    {
+                                        desiredCycle = oneDegreeLower;
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
                                 }
-                                else
-                                {
-                                    desiredCycle = oneDegreeLower;
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
-                                }
-                            }
-                            break;
+                                break;
 
                             case ElliottWaveEnum.Wave5:
-                            {
-                                if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
                                 {
-                                    _hews.ReplaceWaveInManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, lowestDegreeCycle, ElliottWaveEnum.Wave5, ElliottWaveEnum.Wave5C, ref bar );
+                                    if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
+                                    {
+                                        _hews.ReplaceWaveInManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, lowestDegreeCycle, ElliottWaveEnum.Wave5, ElliottWaveEnum.Wave5C, ref bar );
+                                    }
+                                    else
+                                    {
+                                        desiredCycle = oneDegreeLower;
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
                                 }
-                                else
-                                {
-                                    desiredCycle = oneDegreeLower;
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
-                                }
-                            }
-                            break;
+                                break;
 
                             case ElliottWaveEnum.WaveB:
                             case ElliottWaveEnum.WaveW:
                             case ElliottWaveEnum.WaveX:
                             case ElliottWaveEnum.WaveY:
                             case ElliottWaveEnum.WaveZ:
-                            {
-                                if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
                                 {
+                                    if ( waveNameToBeAdded == ElliottWaveEnum.WaveC )
+                                    {
 
-                                    desiredCycle = oneDegreeLower;
-                                    _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                        desiredCycle = oneDegreeLower;
+                                        _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );
+                                    }
                                 }
-                            }
-                            break;
+                                break;
 
                             default:
-                                Console.Beep( );
+                                Console.Beep();
                                 break;
                         }
                     }
@@ -275,7 +247,7 @@ namespace FreemindAITrade.ViewModels
 
             ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
 
-            if ( bar == SBar.EmptySBar ) return;                
+            if ( bar == SBar.EmptySBar ) return;
 
             var beginWaveHewInfo = _hews.FindBeginningWaveOfThisWaveC( waveScenarioNo, selectedBarTime, waveCycle );
 
@@ -299,54 +271,54 @@ namespace FreemindAITrade.ViewModels
                 switch ( beginningWave )
                 {
                     case ElliottWaveEnum.Wave2:
-                    {
-                        if ( beginWaveHewInfo.Value.WaveCycle == waveCycle )
                         {
-                            nextWave = ElliottWaveEnum.Wave3C;
+                            if ( beginWaveHewInfo.Value.WaveCycle == waveCycle )
+                            {
+                                nextWave = ElliottWaveEnum.Wave3C;
 
-                            _hews.SmartAddWaveXtoManagerAndBar( WaveScenarioNumber, ResponsibleTF, selectedBarTime, waveCycle, nextWave, ref bar );
+                                _hews.SmartAddWaveXtoManagerAndBar( WaveScenarioNumber, ResponsibleTF, selectedBarTime, waveCycle, nextWave, ref bar );
 
-                            _chartVM.Refresh();
+                                _chartVM.Refresh();
 
-                            return;
+                                return;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
 
                     case ElliottWaveEnum.Wave4:
-                    {
-                        if ( beginWaveHewInfo.Value.WaveCycle == waveCycle )
                         {
-                            nextWave = ElliottWaveEnum.Wave5C;
+                            if ( beginWaveHewInfo.Value.WaveCycle == waveCycle )
+                            {
+                                nextWave = ElliottWaveEnum.Wave5C;
 
-                            _hews.SmartAddEndingWave5CtoManagerAndBar( WaveScenarioNumber, ResponsibleTF, selectedBarTime, waveCycle, nextWave, beginWaveHewInfo.Value.OppositeLabelDirection(), ref bar );
+                                _hews.SmartAddEndingWave5CtoManagerAndBar( WaveScenarioNumber, ResponsibleTF, selectedBarTime, waveCycle, nextWave, beginWaveHewInfo.Value.OppositeLabelDirection(), ref bar );
 
-                            _chartVM.Refresh();
+                                _chartVM.Refresh();
 
-                            return;
+                                return;
+                            }
                         }
-                    }
-                    break;
+                        break;
 
 
                     case ElliottWaveEnum.WaveB:
-                    {
+                        {
 
-                    }
-                    break;
+                        }
+                        break;
 
 
                     default:
-                    {
+                        {
 
-                    }
-                    break;
+                        }
+                        break;
                 }
 
                 _hews.SmartAddWaveXtoManagerAndBar( WaveScenarioNumber, ResponsibleTF, selectedBarTime, waveCycle, nextWave, ref bar );
 
-                _chartVM.Refresh( );
+                _chartVM.Refresh();
 
                 return;
             }
@@ -356,10 +328,10 @@ namespace FreemindAITrade.ViewModels
         {
             var selectedBarTime = _chartVM.SelectedCandleBarTime;
 
-            ref SBar bar        = ref _bars.GetBarByTime( selectedBarTime );
+            ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
 
             if ( bar != SBar.EmptySBar )
-            {                
+            {
                 if ( _chartVM.IsSpecialBar || _hews.IsSpecialBar( waveScenarioNo, selectedBarTime ) || bar.IsSpecialBar )
                 {
                     _hews?.AddIntelliWave( waveScenarioNo, ResponsibleTF, selectedBarTime, waveCycle, elliottWave, ref bar, true, _bars.IsOutsideBar( selectedBarTime ) );
@@ -379,7 +351,7 @@ namespace FreemindAITrade.ViewModels
                 }
             }
 
-            Refresh( );
+            Refresh();
         }
     }
 }

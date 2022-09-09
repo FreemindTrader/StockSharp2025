@@ -38,6 +38,8 @@ namespace fx.Definitions
         Fib_14_6 = 2,
         [Description( "23.6%" )]
         Fib_23_6,
+        [Description( "30.0%" )]
+        Fib_30,
         [Description( "33.3%" )]
         Fib_33_3,
         [Description( "38.2%" )]
@@ -4038,6 +4040,7 @@ namespace fx.Definitions
                                                                 9.02f,
                                                                 14.60f,
                                                                 23.60f,
+                                                                30.00f,
                                                                 33.30f,
                                                                 38.20f,
                                                                 41.40f,
@@ -4057,6 +4060,7 @@ namespace fx.Definitions
                                                                 FibPercentage.Fib_9_02,
                                                                 FibPercentage.Fib_14_6,
                                                                 FibPercentage.Fib_23_6,
+                                                                FibPercentage.Fib_30,
                                                                 FibPercentage.Fib_33_3,
                                                                 FibPercentage.Fib_38_2,
                                                                 FibPercentage.Fib_41_4,
@@ -4075,7 +4079,8 @@ namespace fx.Definitions
         {
                                                                 0,
                                                                 0,
-                                                                5,
+                                                                10,
+                                                                20,
                                                                 0,
                                                                 5,
                                                                 10,

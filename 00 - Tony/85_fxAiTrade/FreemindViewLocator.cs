@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using DevExpress.Mvvm.UI;
+using fx.Collections;
+using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Windows;
-using System;
-using DevExpress.Mvvm;
-using DevExpress.Mvvm.UI;
 using static DevExpress.Mvvm.UI.ViewLocatorExtensions;
-using fx.Collections;
 #if !NETFX_CORE
 using DevExpress.Mvvm.POCO;
 #else
@@ -23,7 +22,7 @@ namespace FreemindAITrade
         internal static readonly IViewLocator Instance = new FreemindViewLocator( Application.Current );
         readonly IEnumerable<Assembly> _assemblies;
 
-        PooledList< Assembly > _withViews = new PooledList< Assembly >( );
+        PooledList<Assembly> _withViews = new PooledList<Assembly>();
 
         protected override IEnumerable<Assembly> Assemblies
         {
@@ -33,10 +32,10 @@ namespace FreemindAITrade
             }
         }
 
-        public FreemindViewLocator( )
+        public FreemindViewLocator()
         {
-            var entry = EntryAssembly != null && !EntryAssembly.IsInDesignMode( ) ? new[ ] { EntryAssembly } : new Assembly[ 0 ];
-            var thisA = typeof(FreemindViewLocator).Assembly;
+            var entry = EntryAssembly != null && !EntryAssembly.IsInDesignMode() ? new[ ] { EntryAssembly } : new Assembly[0];
+            var thisA = typeof( FreemindViewLocator ).Assembly;
 
             _withViews.AddRange( entry );
             _withViews.Add( thisA );
@@ -44,7 +43,7 @@ namespace FreemindAITrade
 
         public FreemindViewLocator( Application application )
 #if !NETFX_CORE
-            : this( EntryAssembly != null && !EntryAssembly.IsInDesignMode( ) ? new[ ] { EntryAssembly } : new Assembly[ 0 ] )
+            : this( EntryAssembly != null && !EntryAssembly.IsInDesignMode() ? new[ ] { EntryAssembly } : new Assembly[0] )
         {
 #else
 			: this(EntryAssembly != null && !DesignMode.DesignModeEnabled ? new[] { EntryAssembly } : new Assembly[0]) {
@@ -57,7 +56,7 @@ namespace FreemindAITrade
         }
 
         public FreemindViewLocator( params Assembly[ ] assemblies )
-            : this( ( IEnumerable<Assembly> ) assemblies )
+            : this( ( IEnumerable<Assembly> )assemblies )
         {
         }
 
@@ -74,7 +73,7 @@ namespace FreemindAITrade
 
         public object ResolveView( string viewName )
         {
-            Type viewType = ((IViewLocator)this).ResolveViewType(viewName);
+            Type viewType = ( ( IViewLocator )this ).ResolveViewType( viewName );
             if ( viewType != null )
                 return CreateInstance( viewType, viewName );
             return CreateFallbackView( viewName );
@@ -82,7 +81,7 @@ namespace FreemindAITrade
 
         internal static object CreateFallbackView( string errorText )
         {
-            return new FallbackView( ) { Text = errorText };
+            return new FallbackView() { Text = errorText };
         }
     }
 }

@@ -1,66 +1,48 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
+﻿using DevExpress.Xpf.Docking;
 using Ecng.Common;
-using Ecng.Configuration;
 using Ecng.Serialization;
+using fx.Collections;
+using fx.Common;
 using MoreLinq;
 using StockSharp.Algo;
 using StockSharp.Algo.Candles;
-using StockSharp.Algo.Candles.Compression;
-using StockSharp.Algo.Indicators;
 using StockSharp.Algo.Storages;
-using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Logging;
 using StockSharp.Messages;
-using StockSharp.Studio.Core.Commands;
-using fx.Charting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-using Ecng.ComponentModel;
-using fx.Collections;
 
 namespace FreemindAITrade.ViewModels
 {
-    public partial class LiveTradeViewModel 
+    public partial class LiveTradeViewModel
     {
         private DateTimeOffset? LoadTicksAndBuildOneSecondBars( CandleSeries series, TimeSpan daysLoad )
         {
-            var taskBegin  = series.From.Value.UtcDateTime;
-            var taskEnd    = series.To.HasValue ? series.To.Value.UtcDateTime : DateTime.UtcNow;
+            var taskBegin = series.From.Value.UtcDateTime;
+            var taskEnd = series.To.HasValue ? series.To.Value.UtcDateTime : DateTime.UtcNow;
 
-            var lvl1From   = _level1Storage.GetFromTime( );
-            var lvl1To     = _level1Storage.GetToTime( );
+            var lvl1From = _level1Storage.GetFromTime();
+            var lvl1To = _level1Storage.GetToTime();
 
-            var OneSecFrom = _candleStorage.GetFromTime( );
-            var OneSecTo   = _candleStorage.GetToTime( );
+            var OneSecFrom = _candleStorage.GetFromTime();
+            var OneSecTo = _candleStorage.GetToTime();
 
-            var buffer     = new PooledList<IEnumerable<Candle>>( );
+            var buffer = new PooledList<IEnumerable<Candle>>();
 
             if ( lvl1From.HasValue && lvl1To.HasValue )
             {
-                lvl1From         = new DateTime?( taskBegin.Max( lvl1From.Value ) );
+                lvl1From = new DateTime?( taskBegin.Max( lvl1From.Value ) );
 
-                var dates1Sec    = _candleStorage.Dates;
+                var dates1Sec = _candleStorage.Dates;
 
-                var missingDates = new PooledList<DateTime>( );
+                var missingDates = new PooledList<DateTime>();
 
                 if ( lvl1From.Value > lvl1To.Value )
                 {
                     // We don't have required tick data in the storage
-                    lvl1To = DateTime.UtcNow.AddDays( 5 ) ;
+                    lvl1To = DateTime.UtcNow.AddDays( 5 );
                 }
                 else
                 {
@@ -72,12 +54,12 @@ namespace FreemindAITrade.ViewModels
 
                         try
                         {
-                            var data       = ( ( IMarketDataStorage<Level1ChangeMessage> )_level1Storage ).Load( date );
-                            var dataTicks  = data.ToFxcmTicks( );
+                            var data = ( ( IMarketDataStorage<Level1ChangeMessage> )_level1Storage ).Load( date );
+                            var dataTicks = data.ToFxcmTicks();
 
                             var candlesMsg = dataTicks.ToCandles( series );
 
-                            var count      = _candleStorage.Save( candlesMsg );
+                            var count = _candleStorage.Save( candlesMsg );
 
                             if ( count > 0 )
                             {
@@ -103,20 +85,20 @@ namespace FreemindAITrade.ViewModels
                 }
 
                 DateTimeOffset begin = range.Item1.UtcDateTime.Date;
-                DateTimeOffset end = range.Item2.UtcDateTime.Date.EndOfDay( );
+                DateTimeOffset end = range.Item2.UtcDateTime.Date.EndOfDay();
 
-                var messages = ( ( IMarketDataStorage < CandleMessage > )_candleStorage).Load( begin, end );
+                var messages = ( ( IMarketDataStorage<CandleMessage> )_candleStorage ).Load( begin, end );
 
                 _drawCandles = messages.ToCandles<Candle>( series.Security );
 
                 if ( _drawCandles != null )
                 {
-                    var last = _drawCandles.FirstOrDefault( );
+                    var last = _drawCandles.FirstOrDefault();
 
                     if ( last != null )
                     {
                         return last.OpenTime;
-                    }                    
+                    }
                 }
 
                 return null;

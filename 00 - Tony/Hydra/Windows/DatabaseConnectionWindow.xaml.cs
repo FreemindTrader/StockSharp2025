@@ -34,13 +34,13 @@ namespace StockSharp.Hydra.Windows
 
         private void ConnectionStrings_OnSelectionChanged( object sender, EditValueChangedEventArgs e )
         {
-            SettingsGrid.Pair = Pair ?? new DatabaseConnectionPair();
+            //SettingsGrid.Pair = Pair ?? new DatabaseConnectionPair();
             TestBtn.IsEnabled = OkBtn.IsEnabled = Pair != null;
         }
 
         private void TestBtn_OnClick( object sender, RoutedEventArgs e )
         {
-            SettingsGrid.Pair.Verify( this, true );
+            //SettingsGrid.Pair.Verify( this, true );
         }        
     }
 }

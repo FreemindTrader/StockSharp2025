@@ -56,12 +56,12 @@ namespace FreemindAITrade.Helpers
 
         public static ImageSource CreateEmptyImageSource()
         {
-            var bi     = new BitmapImage();
-            var ms     = new MemoryStream();
-            var source = new System.Drawing.Bitmap(1, 1);
+            var bi = new BitmapImage();
+            var ms = new MemoryStream();
+            var source = new System.Drawing.Bitmap( 1, 1 );
 
             source.Save( ms, System.Drawing.Imaging.ImageFormat.Png );
-            
+
             ms.Seek( 0, SeekOrigin.Begin );
             bi.BeginInit();
             bi.StreamSource = ms;

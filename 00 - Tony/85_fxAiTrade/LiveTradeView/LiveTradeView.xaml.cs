@@ -1,38 +1,17 @@
-﻿using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Bars;
-using DevExpress.Xpf.PropertyGrid;
-using Ecng.Backup;
-using Ecng.Collections;
-using Ecng.Common;
-using Ecng.Configuration;
-using Ecng.Serialization;
-using Ecng.Xaml;
-using FreemindAITrade.ViewModels;
-using MoreLinq;
-using StockSharp.Algo.Candles;
-using StockSharp.Algo.Indicators;
+﻿using FreemindAITrade.ViewModels;
 using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Xaml;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
 using System.Linq;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Threading;
 
 namespace FreemindAITrade.View
-{    
+{
     public partial class LiveTradeView : UserControl
-    {        
-        public LiveTradeView( )
+    {
+        public LiveTradeView()
         {
-            InitializeComponent( );            
-        }        
+            InitializeComponent();
+        }
 
         /* -------------------------------------------------------------------------------------------------------------------------------------------
          * 
@@ -44,13 +23,13 @@ namespace FreemindAITrade.View
          * 
          * ------------------------------------------------------------------------------------------------------------------------------------------- */
 
-        private void QuickOrderPanel_SettingsChanged( )
+        private void QuickOrderPanel_SettingsChanged()
         {
             var vm = DataContext as LiveTradeViewModel;
             if ( vm != null )
-            {                
-                vm.QuickOrderSettingChangedCommand.Execute( null );                
-            }            
+            {
+                vm.QuickOrderSettingChangedCommand.Execute( null );
+            }
         }
 
         private void QuickOrderPanel_RegisterOrder( Order myOrder )

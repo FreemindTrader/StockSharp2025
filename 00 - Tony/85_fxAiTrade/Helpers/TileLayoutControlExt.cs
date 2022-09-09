@@ -16,11 +16,11 @@ namespace FreemindAITrade.Helpers
     }
     public class TileLayoutControlExt : TileLayoutControl, ITileLayoutControlExt
     {
-        public static readonly DependencyProperty SelectedTileProperty = DependencyProperty.Register("SelectedTile", typeof(ITileExt), typeof(TileLayoutControlExt), new PropertyMetadata(null, (d, e) => ((TileLayoutControlExt)d).OnSelectedTileChanged(e)));
-        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register("SelectedItem", typeof(object),   typeof(TileLayoutControlExt), new PropertyMetadata(null, (d, e) => ((TileLayoutControlExt)d).OnSelectedItemChanged(e)));
+        public static readonly DependencyProperty SelectedTileProperty = DependencyProperty.Register( "SelectedTile", typeof( ITileExt ), typeof( TileLayoutControlExt ), new PropertyMetadata( null, ( d, e ) => ( ( TileLayoutControlExt )d ).OnSelectedTileChanged( e ) ) );
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register( "SelectedItem", typeof( object ), typeof( TileLayoutControlExt ), new PropertyMetadata( null, ( d, e ) => ( ( TileLayoutControlExt )d ).OnSelectedItemChanged( e ) ) );
 
         public object SelectedItem { get { return GetValue( SelectedItemProperty ); } set { SetValue( SelectedItemProperty, value ); } }
-        public ITileExt SelectedTile { get { return ( ITileExt ) GetValue( SelectedTileProperty ); } set { SetValue( SelectedTileProperty, value ); } }
+        public ITileExt SelectedTile { get { return ( ITileExt )GetValue( SelectedTileProperty ); } set { SetValue( SelectedTileProperty, value ); } }
 
         public ITileExt ItemToTile( object item )
         {
@@ -28,7 +28,7 @@ namespace FreemindAITrade.Helpers
         }
         public object TileToItem( ITileExt tile )
         {
-            return IndexToItem( TileToIndex( ( ITile ) tile ) );
+            return IndexToItem( TileToIndex( ( ITile )tile ) );
         }
 
         void ITileLayoutControlExt.SetTileIsSelected( ITileExt tile, bool isSelected )
@@ -45,8 +45,8 @@ namespace FreemindAITrade.Helpers
         }
         void OnSelectedTileChanged( DependencyPropertyChangedEventArgs e )
         {
-            ITileExt oldValue = (ITileExt)e.OldValue;
-            ITileExt newValue = (ITileExt)e.NewValue;
+            ITileExt oldValue = ( ITileExt )e.OldValue;
+            ITileExt newValue = ( ITileExt )e.NewValue;
             SelectedItem = TileToItem( newValue );
             if ( oldValue != null )
                 oldValue.IsSelected = false;
@@ -60,7 +60,7 @@ namespace FreemindAITrade.Helpers
 
         int ItemToIndex( object item )
         {
-            var x = item == null ? null : ItemsSource.OfType<object>().Select((o, i) => new { obj = o, index = i }).FirstOrDefault(p => Equals( p.obj, item));
+            var x = item == null ? null : ItemsSource.OfType<object>().Select( ( o, i ) => new { obj = o, index = i } ).FirstOrDefault( p => Equals( p.obj, item ) );
             return x == null ? -1 : x.index;
         }
         ITileExt IndexToTile( int index )
@@ -69,7 +69,7 @@ namespace FreemindAITrade.Helpers
         }
         int TileToIndex( ITile tile )
         {
-            var x = tile == null ? null : Children.OfType<UIElement>().Where(c => !(c is ScrollBar)).Select((o, i) => new { obj = o, index = i }).FirstOrDefault(p => Equals( p.obj, tile));
+            var x = tile == null ? null : Children.OfType<UIElement>().Where( c => !( c is ScrollBar ) ).Select( ( o, i ) => new { obj = o, index = i } ).FirstOrDefault( p => Equals( p.obj, tile ) );
             return x == null ? -1 : x.index;
         }
         object IndexToItem( int index )
@@ -79,12 +79,12 @@ namespace FreemindAITrade.Helpers
     }
     public class TileExt : Tile, ITileExt
     {
-        public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register("IsSelected", typeof(bool), typeof(TileExt), new PropertyMetadata(false, (d, e) => ((TileExt)d).OnIsSelectedChanged(e)));
-        public static readonly DependencyProperty SelectOnClickProperty = DependencyProperty.Register("SelectOnClick", typeof(bool), typeof(TileExt), new PropertyMetadata(true));
+        public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register( "IsSelected", typeof( bool ), typeof( TileExt ), new PropertyMetadata( false, ( d, e ) => ( ( TileExt )d ).OnIsSelectedChanged( e ) ) );
+        public static readonly DependencyProperty SelectOnClickProperty = DependencyProperty.Register( "SelectOnClick", typeof( bool ), typeof( TileExt ), new PropertyMetadata( true ) );
 
         public ITileLayoutControlExt LayoutControl { get { return Parent as ITileLayoutControlExt; } }
-        public bool IsSelected { get { return ( bool ) GetValue( IsSelectedProperty ); } set { SetValue( IsSelectedProperty, value ); } }
-        public bool SelectOnClick { get { return ( bool ) GetValue( SelectOnClickProperty ); } set { SetValue( SelectOnClickProperty, value ); } }
+        public bool IsSelected { get { return ( bool )GetValue( IsSelectedProperty ); } set { SetValue( IsSelectedProperty, value ); } }
+        public bool SelectOnClick { get { return ( bool )GetValue( SelectOnClickProperty ); } set { SetValue( SelectOnClickProperty, value ); } }
 
         protected override void OnClick()
         {
@@ -94,7 +94,7 @@ namespace FreemindAITrade.Helpers
         }
         void OnIsSelectedChanged( DependencyPropertyChangedEventArgs e )
         {
-            bool newValue = (bool)e.NewValue;
+            bool newValue = ( bool )e.NewValue;
             if ( LayoutControl != null )
                 LayoutControl.SetTileIsSelected( this, newValue );
         }

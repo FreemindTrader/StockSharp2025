@@ -22,15 +22,15 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.223</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>        
-        <PackageReference Include="StockSharp.Messages" Version="5.0.212" />        
-        <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.213" />
-        <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.213" />
+        <PackageReference Include="StockSharp.Messages" Version="5.0.220" />        
+        <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />
+        <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.223" />
     </ItemGroup>
 
     <ItemGroup>

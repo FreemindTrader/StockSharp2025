@@ -1,10 +1,7 @@
 ﻿using DevExpress.Xpf.Docking;
 using FreemindAITrade.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FreemindAITrade
 {
@@ -15,16 +12,16 @@ namespace FreemindAITrade
     {
         protected int counter = 0;
 
-        public string Resolve(DockLayoutManager owner, object item)
+        public string Resolve( DockLayoutManager owner, object item )
         {
             var testerVM = item as BackTesterViewModel;
 
-            if (testerVM != null)
+            if ( testerVM != null )
             {
                 string parentName = "DocumentGroup" + counter++;
 
-                var root = owner.LayoutRoot.Items[ 0 ] as LayoutGroup;
-                var newDoc = new DocumentGroup( ) { Name = parentName };
+                var root = owner.LayoutRoot.Items[0] as LayoutGroup;
+                var newDoc = new DocumentGroup() { Name = parentName };
 
                 root.Add( newDoc );
 
@@ -33,14 +30,14 @@ namespace FreemindAITrade
 
             var liveVM = item as LiveTradeViewModel;
 
-            if (liveVM != null)
+            if ( liveVM != null )
             {
                 string parentName = "DocumentGroup";
 
-                var newDocGroup = new DocumentGroup( ) { Name = parentName };
+                var newDocGroup = new DocumentGroup() { Name = parentName };
                 newDocGroup.CaptionLocation = CaptionLocation.Bottom;
 
-                (owner.LayoutRoot.Items[0] as LayoutGroup).Add(newDocGroup);
+                ( owner.LayoutRoot.Items[0] as LayoutGroup ).Add( newDocGroup );
                 return parentName;
             }
 

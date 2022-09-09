@@ -3,51 +3,48 @@ using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf.Gauges;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FreemindTrader
 {
     [POCOViewModel]
     public class NewYorkTimeViewModel : ISupportParentViewModel
     {
-        WorldClockViewModel     _parent;
+        WorldClockViewModel _parent;
 
         DigitalRedClockModel _activeClock;
         DigitalProgressiveModel _offhour;
         DigitalYellowSubmarineModel _beforeOffHour;
 
-        public NewYorkTimeViewModel( )
+        public NewYorkTimeViewModel()
         {
-            _activeClock   = new DigitalRedClockModel( );
-            _offhour       = new DigitalProgressiveModel( );
-            _beforeOffHour = new DigitalYellowSubmarineModel( );
+            _activeClock = new DigitalRedClockModel();
+            _offhour = new DigitalProgressiveModel();
+            _beforeOffHour = new DigitalYellowSubmarineModel();
         }
 
         public virtual object ParentViewModel { get; set; }
 
-        protected void OnParentViewModelChanged( )
+        protected void OnParentViewModelChanged()
         {
             _parent = ( ( WorldClockViewModel )ParentViewModel );
 
-            _parent.TimerTick += _parent_TimerTick;            
+            _parent.TimerTick += _parent_TimerTick;
         }
 
         private void _parent_TimerTick( DateTime currentTime )
-        {            
+        {
             var tz = TimeZoneInfo.FindSystemTimeZoneById( "Eastern Standard Time" );
             var dt = TimeZoneInfo.ConvertTimeFromUtc( currentTime, tz );
 
-            CurrenTimeText = string.Format( "{0:H:mm:ss}", dt );            
+            CurrenTimeText = string.Format( "{0:H:mm:ss}", dt );
 
             if ( dt.Hour >= 8 && dt.Hour < 17 )
             {
                 if ( Model != _activeClock )
                 {
                     Model = _activeClock;
-                }                
+                }
             }
             else
             {
@@ -65,14 +62,14 @@ namespace FreemindTrader
 
 
 
-        public static NewYorkTimeViewModel Create( )
+        public static NewYorkTimeViewModel Create()
         {
-            return ViewModelSource.Create( ( ) => new NewYorkTimeViewModel( ) );
+            return ViewModelSource.Create( () => new NewYorkTimeViewModel() );
         }
 
 
         public virtual string CurrenTimeText { get; set; }
-        public virtual DigitalGaugeModel Model { get; set; }        
+        public virtual DigitalGaugeModel Model { get; set; }
     }
 }
 

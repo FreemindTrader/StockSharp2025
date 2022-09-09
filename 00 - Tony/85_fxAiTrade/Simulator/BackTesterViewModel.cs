@@ -1,48 +1,38 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf.Docking;
 using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Configuration;
 using Ecng.Serialization;
+using Ecng.Xaml;
+using fx.Algorithm;
+using fx.Bars;
+using fx.Charting;
+using fx.Collections;
+using fx.Common;
+using fx.Definitions;
+using fx.Indicators;
 using MoreLinq;
 using StockSharp.Algo;
 using StockSharp.Algo.Candles;
 using StockSharp.Algo.Candles.Compression;
 using StockSharp.Algo.Indicators;
 using StockSharp.Algo.Storages;
+using StockSharp.Algo.Testing;
 using StockSharp.BusinessEntities;
-using StockSharp.Localization;
 using StockSharp.Logging;
 using StockSharp.Messages;
+using StockSharp.Studio.Core;
 using StockSharp.Studio.Core.Commands;
-using fx.Charting;
+using StockSharp.Studio.Core.Configuration;
+using StockSharp.Xaml;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using Ecng.ComponentModel;
-using fx.Database;
-using fx.Database.Common.DataModel;
-using fx.Database.ForexDatabarsDataModel;
-using fx.Algorithm;
-using System.Windows.Media;
-using StockSharp.Xaml;
-using fx.Indicators;
 using System.ComponentModel;
-using StockSharp.Studio.Core.Configuration;
-using Ecng.Xaml;
-using StockSharp.Algo.Testing;
-using StockSharp.Studio.Core;
-using Disruptor;
-using fx.Bars;
-using fx.Collections;
+using System.Linq;
 using System.Threading;
+using System.Windows;
 
 #pragma warning disable CS0618
 
@@ -50,41 +40,41 @@ namespace FreemindAITrade.ViewModels
 {
     public partial class BackTesterViewModel : ChartTabViewModelBase
     {
-        public BackTesterViewModel( IMutltiTimeFrameSessionDataRepo dataRepo, fxHistoricEmulationConnector connector, CandleManager candleManager, string caption, string imagePath, TimeSpan reponsible, Security sec, Portfolio portfolio, DateTime startDate, DateTime endDate, CancellationTokenSource exitSource)
+        public BackTesterViewModel( IMutltiTimeFrameSessionDataRepo dataRepo, fxHistoricEmulationConnector connector, CandleManager candleManager, string caption, string imagePath, TimeSpan reponsible, Security sec, Portfolio portfolio, DateTime startDate, DateTime endDate, CancellationTokenSource exitSource )
         {
-            Caption                 = caption + "Test";
-            Glyph                   = GlyphHelper.GetSvgImage( imagePath );
-            _waveScenarioNumber     = 1;
+            Caption = caption + "Test";
+            Glyph = GlyphHelper.GetSvgImage( imagePath );
+            _waveScenarioNumber = 1;
 
-            ResponsibleTF           = reponsible;
-            SelectedSecurity        = sec;
-            SelectedPortfolio       = portfolio;
+            ResponsibleTF = reponsible;
+            SelectedSecurity = sec;
+            SelectedPortfolio = portfolio;
 
-            OrderSettings           = new ChartPanelOrderSettings( );
-            OrderSettings.Security  = SelectedSecurity;
+            OrderSettings = new ChartPanelOrderSettings();
+            OrderSettings.Security = SelectedSecurity;
             OrderSettings.Portfolio = SelectedPortfolio;
 
-            _connector              = connector;
-            _candleManager          = candleManager;
+            _connector = connector;
+            _candleManager = candleManager;
 
-            _subscriptionManager    = new SubscriptionControlManager( _connector );
+            _subscriptionManager = new SubscriptionControlManager( _connector );
 
             _bars = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
-            
-            _bars.CreateDataBarCacheFriendlyStorage( SelectedSecurity, ResponsibleTF, startDate, endDate );
-            
 
-            var aa = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity.Code );
+            _bars.CreateDataBarCacheFriendlyStorage( SelectedSecurity, ResponsibleTF, startDate, endDate );
+
+
+            var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity.Code );
 
             if ( aa != null )
             {
-                _hews = (HewManager) aa.HewManager;
+                _hews = ( HewManager )aa.HewManager;
             }
 
-            
+
             if ( aa != null )
             {
-                _freemindIndicator = ( FreemindIndicator ) aa.GetFreemindIndicator( ResponsibleTF );
+                _freemindIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( ResponsibleTF );
                 _freemindIndicator.IsNonVisual = false;
                 _freemindIndicator.IndicatorExitTokenSource = exitSource;
                 _freemindIndicator.AttachDatasource( _bars );
@@ -93,7 +83,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( reponsible >= TimeSpan.FromDays( 1 ) )
                 {
-                    _pivotPointIndicator = ( PivotPointsCustom ) aa.GetPivotPoint( ResponsibleTF );
+                    _pivotPointIndicator = ( PivotPointsCustom )aa.GetPivotPoint( ResponsibleTF );
                     _pivotPointIndicator.AttachDatasource( _bars );
 
                     _pivotPointIndicator.PivotTimeSpan = reponsible;
@@ -109,19 +99,19 @@ namespace FreemindAITrade.ViewModels
             //_bars.WeeklyPivotsUpdateEvent  += DataBarHistory_WeeklyPivotsUpdateEvent;
             //_bars.MonthlyPivotsUpdateEvent += DataBarHistory_MonthlyPivotsUpdateEvent;
 
-            var timerName           = "BackTesterViewModel";
+            var timerName = "BackTesterViewModel";
 
-            _drawTimer              = new ResettableTimer( TimeSpan.FromSeconds( 0.5 ), timerName );
-            _drawTimer.Elapsed     += new Action<Func<bool>>( TonyChartPaneBackgroundWorkTimer );
+            _drawTimer = new ResettableTimer( TimeSpan.FromSeconds( 0.5 ), timerName );
+            _drawTimer.Elapsed += new Action<Func<bool>>( TonyChartPaneBackgroundWorkTimer );
 
-            StartDate               = startDate;
-            EndDate                 = endDate;
+            StartDate = startDate;
+            EndDate = endDate;
         }
 
         private void AaMgr_PivotPointChangedEvent( object sender, PPChangedEventArgs e )
         {
-            
-        }        
+
+        }
 
         private void DataBarHistory_DailyPivotsUpdateEvent( fxHistoricBarsRepo provider, IList<SRlevel> newLevels )
         {
@@ -169,25 +159,25 @@ namespace FreemindAITrade.ViewModels
             }
         }
 
-        protected override void InitializeChart( )
+        protected override void InitializeChart()
         {
-            RegisterCommandsAndEvents( );
+            RegisterCommandsAndEvents();
 
-            if (IsActive)
+            if ( IsActive )
             {
                 ChartVM.IsActive = IsActive;
             }
 
             ChartVM.SelectedSecurity = SelectedSecurity;
-            ChartVM.CrossHair        = true;
+            ChartVM.CrossHair = true;
             ChartVM.CrossHairTooltip = true;
-            ChartVM.MinimumRange     = 80;
-            ChartVM.IsInteracted     = true;
-            ChartVM.IsProgrammable   = true;
+            ChartVM.MinimumRange = 80;
+            ChartVM.IsInteracted = true;
+            ChartVM.IsProgrammable = true;
 
             FillIndicators();
 
-            InitializeConnector( );            
+            InitializeConnector();
         }
 
         public void RegisterCommandsAndEvents()
@@ -199,9 +189,9 @@ namespace FreemindAITrade.ViewModels
 
             _commandService = ConfigManager.GetService<IStudioCommandService>();
             #region COMMAND 
-            _commandService.Register< ChartAddElementExCommand >( this, false, Step5_OnChartAddUIsToChart);
-            _commandService.Register< SubscribeCommand         >( this, false, Step6_OnSubscribeToSymbol, null);
-            
+            _commandService.Register<ChartAddElementExCommand>( this, false, Step5_OnChartAddUIsToChart );
+            _commandService.Register<SubscribeCommand>( this, false, Step6_OnSubscribeToSymbol, null );
+
             #endregion ------------------------------------------------------COMMAND --------------------------------------------------------
 
 
@@ -233,7 +223,7 @@ namespace FreemindAITrade.ViewModels
         {
             if ( SelectedPortfolio != null )
             {
-                _storageRegistry = ServicesRegistry.StorageRegistry;                                               
+                _storageRegistry = ServicesRegistry.StorageRegistry;
             }
             else
             {
@@ -241,7 +231,7 @@ namespace FreemindAITrade.ViewModels
                 {
                     ParentViewModel.SplashScreenService.HideSplashScreen();
 
-                    var PortfolioSource = ConfigManager.GetService< PortfolioDataSource >( );
+                    var PortfolioSource = ConfigManager.GetService<PortfolioDataSource>();
 
                     var setupOkay = ShowPortfolioDialog( PortfolioSource );
 
@@ -269,26 +259,26 @@ namespace FreemindAITrade.ViewModels
         }
 
 
-        
+
         void SetupCandSeries()
         {
-            _candlesSeries = new CandleSeries(SeriesSetting.CandleType, _security, ResponsibleTF)
+            _candlesSeries = new CandleSeries( SeriesSetting.CandleType, _security, ResponsibleTF )
             {
-                BuildCandlesMode  = MarketDataBuildModes.Load,
+                BuildCandlesMode = MarketDataBuildModes.Load,
                 BuildCandlesFrom2 = DataType.Transactions,
-                From              = StartDate,
-                To                = EndDate
+                From = StartDate,
+                To = EndDate
             };
         }
 
         [Command]
-        public void StartStrategy( )
+        public void StartStrategy()
         {
             bool setupOkay = false;
 
             if ( OrderSettings.Portfolio == null )
             {
-                var PortfolioSource = ConfigManager.GetService< PortfolioDataSource >( );
+                var PortfolioSource = ConfigManager.GetService<PortfolioDataSource>();
 
                 setupOkay = ShowPortfolioDialog( PortfolioSource );
             }
@@ -300,11 +290,11 @@ namespace FreemindAITrade.ViewModels
         *  After BackTester Control has been loaded, the following will be called automatically
         * 
         * ------------------------------------------------------------------------------------------------------------------------------------------- */
-        public override void Step01_ExecuteAddChartArea( )
+        public override void Step01_ExecuteAddChartArea()
         {
-            if ( ChartVM.CanAddArea( ) )
+            if ( ChartVM.CanAddArea() )
             {
-                ChartVM.Step01_AddChartArea( );
+                ChartVM.Step01_AddChartArea();
             }
         }
 
@@ -314,22 +304,22 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( e.NewStartingIndex == 0 )
                 {
-                    Step04_ProgrammaticallyAddCandlesToSurface( );
+                    Step04_ProgrammaticallyAddCandlesToSurface();
                 }
             }
         }
 
-        private void Step04_ProgrammaticallyAddCandlesToSurface( )
+        private void Step04_ProgrammaticallyAddCandlesToSurface()
         {
             var surfaceVM = ChartVM.ScichartSurfaceViewModels;
 
             if ( surfaceVM.Count > 0 )
             {
-                var pane = surfaceVM.First( );
+                var pane = surfaceVM.First();
 
                 if ( pane != null )
                 {
-                    if ( ChartVM.CanExecuteAddCandlesProgramatically( ) )
+                    if ( ChartVM.CanExecuteAddCandlesProgramatically() )
                     {
                         ChartVM.Step05_ExecuteAddCandlesProgramatically( pane.Area, _candlesSeries, ChartHelper.GetFifoCapcity( ResponsibleTF ) );
                     }
@@ -339,7 +329,7 @@ namespace FreemindAITrade.ViewModels
 
         private void Step4_SubscribeCandleUiEventHandler( CandlestickUI element, CandleSeries series )
         {
-            var command = new ChartAddElementExCommand( element,  series);
+            var command = new ChartAddElementExCommand( element, series );
 
             if ( _loadingSettings )
             {
@@ -350,13 +340,13 @@ namespace FreemindAITrade.ViewModels
                 command.Process( this, false );
             }
 
-            if ( !CanTrackChanges( ) )
+            if ( !CanTrackChanges() )
                 return;
 
             if ( OrderSettings.Security == null )
                 OrderSettings.Security = series.Security;
 
-            RaiseChangedCommand( );
+            RaiseChangedCommand();
         }
 
         private void ManuallyAddIndicators( IndicatorUI element, CandleSeries series, IIndicator indicator )
@@ -374,9 +364,9 @@ namespace FreemindAITrade.ViewModels
            */
         private void Step5_OnChartAddUIsToChart( ChartAddElementExCommand command )
         {
-            var candleSeries = (CandleSeries) command.Source;
+            var candleSeries = ( CandleSeries )command.Source;
 
-            if (_candlesSeries != candleSeries )
+            if ( _candlesSeries != candleSeries )
             {
                 return;
             }
@@ -390,12 +380,12 @@ namespace FreemindAITrade.ViewModels
                 ChartVM.ShowDivergence( false );
                 ChartVM.ShowCandlePattern( false );
                 ChartVM.ShowGannPriceTime( false );
-                ChartVM.IsSimulation(true);
+                ChartVM.IsSimulation( true );
 
-                _chartVM.WaveScenarioNo(_waveScenarioNumber);
+                _chartVM.WaveScenarioNo( _waveScenarioNumber );
 
-                CandleSeries myCandles = (CandleSeries) command.Source;
-                Subscription subscription = new Subscription(myCandles);
+                CandleSeries myCandles = ( CandleSeries )command.Source;
+                Subscription subscription = new Subscription( myCandles );
 
                 var candleSeriesData = new CandleSeriesData( _candleUI, _bars, subscription, DateTimeOffset.MinValue );
 
@@ -406,7 +396,7 @@ namespace FreemindAITrade.ViewModels
 
                 new SubscribeCommand( subscription ).Process( this, false );
             }
-            else 
+            else
             {
                 var indicatorUI = command.Element as IndicatorUI;
 
@@ -415,7 +405,7 @@ namespace FreemindAITrade.ViewModels
                     return;
                 }
 
-                CandleSeries myCandles = ( CandleSeries ) command.Source;
+                CandleSeries myCandles = ( CandleSeries )command.Source;
                 CandleSeriesData candleSeriesData;
 
                 if ( !_candles.TryGetValue( myCandles, out candleSeriesData ) )
@@ -427,18 +417,18 @@ namespace FreemindAITrade.ViewModels
                 var indicatorPair = new IndicatorPair( this, indicatorUI, command.Indicator, _drawSeries );
                 _indicators.Add( indicatorUI, indicatorPair );
 
-                var first = _indicatorsBySeries.SafeAdd(myCandles,  key => Array.Empty<Tuple<IndicatorUI, IndicatorPair>>() );
-                _indicatorsBySeries[ myCandles ] = first.Concat( new Tuple<IndicatorUI, IndicatorPair>[1] { Tuple.Create( indicatorUI, indicatorPair ) } ).ToArray();
+                var first = _indicatorsBySeries.SafeAdd( myCandles, key => Array.Empty<Tuple<IndicatorUI, IndicatorPair>>() );
+                _indicatorsBySeries[myCandles] = first.Concat( new Tuple<IndicatorUI, IndicatorPair>[1] { Tuple.Create( indicatorUI, indicatorPair ) } ).ToArray();
 
-                var data          = new ChartDrawDataEx();
+                var data = new ChartDrawDataEx();
 
-                var indicator     = indicatorPair.MyIndicator;
-                var count         = candleSeriesData.BarsRepo.MainDataBars.Count;
+                var indicator = indicatorPair.MyIndicator;
+                var count = candleSeriesData.BarsRepo.MainDataBars.Count;
                 var indicatorList = data.SetIndicatorSource( indicatorUI, count );
 
                 for ( int i = 0; i < count; i++ )
                 {
-                    ref SBar bar = ref candleSeriesData.BarsRepo[ i ];
+                    ref SBar bar = ref candleSeriesData.BarsRepo[i];
 
                     var indicatorRes = indicator.Process( ref bar );
 
@@ -484,30 +474,30 @@ namespace FreemindAITrade.ViewModels
         }
 
         private void Step6_OnSubscribeToSymbol( object sender, SubscribeCommand cmd )
-        {            
-            if ( _candlesSeries != cmd.Subscription.CandleSeries)
+        {
+            if ( _candlesSeries != cmd.Subscription.CandleSeries )
             {
                 return;
             }
 
             _subscriptionManager.Subscribe( sender, cmd.Subscription );
-                        
+
             _subscriptionManager.Subscribe( sender, new Subscription( _candlesSeries ) );
 
 
-            _candleManager.Start(_candlesSeries);
+            _candleManager.Start( _candlesSeries );
 
             RaiseDoneDownloadBarsEvent();
         }
 
-        
 
-        
+
+
 
         public override void StartSimulation()
         {
             _connector.Connect();
-            _connector.Start( );
+            _connector.Start();
         }
 
 
@@ -515,27 +505,27 @@ namespace FreemindAITrade.ViewModels
 
 
 
-        protected void RaiseChangedCommand( )
+        protected void RaiseChangedCommand()
         {
             //new ControlChangedCommand( this ).Process( this, false );
         }
 
-        private bool CanTrackChanges( )
+        private bool CanTrackChanges()
         {
             return _chartVM.IsInteracted && !_loadingSettings;
         }
 
-        
 
-        
 
-        
+
+
+
 
         private DateTimeOffset? LoadCandles( IMarketDataStorage<CandleMessage> storage, CandleSeries series, TimeSpan daysLoad )
         {
             var taskBegin = series.From.Value.DateTime;
-            var taskEnd   = series.To.HasValue ? series.To.Value.DateTime : DateTime.UtcNow;
-            var period    = ( TimeSpan )series.Arg;
+            var taskEnd = series.To.HasValue ? series.To.Value.DateTime : DateTime.UtcNow;
+            var period = ( TimeSpan )series.Arg;
 
             var range = fxCandleHelper.GetRange( storage, series.From, series.To, daysLoad );
 
@@ -556,7 +546,7 @@ namespace FreemindAITrade.ViewModels
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */
             DateTimeOffset begin = range.Item1.UtcDateTime.Date;
-            DateTimeOffset end   = range.Item2.UtcDateTime.Date.EndOfDay( );
+            DateTimeOffset end = range.Item2.UtcDateTime.Date.EndOfDay();
 
             var lastEntry = storage.GetToTime();
 
@@ -566,7 +556,7 @@ namespace FreemindAITrade.ViewModels
 
             if ( _drawCandles != null )
             {
-                var last = _drawCandles.FirstOrDefault( );
+                var last = _drawCandles.FirstOrDefault();
 
                 if ( last != null )
                 {
@@ -592,11 +582,11 @@ namespace FreemindAITrade.ViewModels
 
             if ( !allowBuildFromSmallerTimeFrame )
             {
-                return _storageRegistry.GetCandleMessageStorage( typeof( TimeFrameCandleMessage ), security.ToSecurityId( ), timeFrame, Drive, Format );
+                return _storageRegistry.GetCandleMessageStorage( typeof( TimeFrameCandleMessage ), security.ToSecurityId(), timeFrame, Drive, Format );
             }
 
 
-            var candleBuilderProvider = ConfigManager.TryGetService<CandleBuilderProvider>( ) ?? new CandleBuilderProvider( ServicesRegistry.EnsureGetExchangeInfoProvider( ) );
+            var candleBuilderProvider = ConfigManager.TryGetService<CandleBuilderProvider>() ?? new CandleBuilderProvider( ServicesRegistry.EnsureGetExchangeInfoProvider() );
 
             var smallerTFSource = StorageHelper.GetCandleMessageBuildableStorage( candleBuilderProvider, _storageRegistry, security.ToSecurityId(), timeFrame, Drive, Format );
 
@@ -609,16 +599,16 @@ namespace FreemindAITrade.ViewModels
             return smallerTFSource;
         }
 
-        
 
-        public bool CanStartStrategy( )
+
+        public bool CanStartStrategy()
         {
             return true;
         }
 
         public bool ShowPortfolioDialog( PortfolioDataSource portfolioDataSource )
         {
-            var service              = GetService<IDialogService>( "SelectPortfolioService" );
+            var service = GetService<IDialogService>( "SelectPortfolioService" );
 
 
             // Tony: https://www.devexpress.com/Support/Center/Question/Details/T315317/how-to-pass-param-to-dialog-in-wpf-mvvm
@@ -626,28 +616,28 @@ namespace FreemindAITrade.ViewModels
             // So there are two view model and the second view model is empty without 
 
 
-            var portfolioVM = PortfolioPickerWindowViewModel.Create( );
+            var portfolioVM = PortfolioPickerWindowViewModel.Create();
 
             portfolioVM.PortfolioDataSource = portfolioDataSource;
 
-            UICommand registerCommand = new UICommand( )
+            UICommand registerCommand = new UICommand()
             {
-                Caption   = "Okay",
-                IsCancel  = false,
+                Caption = "Okay",
+                IsCancel = false,
                 IsDefault = true,
-                Command   = new DevExpress.Mvvm.DelegateCommand<CancelEventArgs>( x => myExecuteMethod( ), x => portfolioVM.SelectedPortfolio != null ),
+                Command = new DevExpress.Mvvm.DelegateCommand<CancelEventArgs>( x => myExecuteMethod(), x => portfolioVM.SelectedPortfolio != null ),
             };
 
-            UICommand cancelCommand = new UICommand( )
+            UICommand cancelCommand = new UICommand()
             {
-                Id        = MessageBoxResult.Cancel,
-                Caption   = "Cancel",
-                IsCancel  = true,
+                Id = MessageBoxResult.Cancel,
+                Caption = "Cancel",
+                IsCancel = true,
                 IsDefault = false,
             };
 
             UICommand result = service.ShowDialog(
-                                                        dialogCommands: new List<UICommand>( ) { registerCommand, cancelCommand },
+                                                        dialogCommands: new List<UICommand>() { registerCommand, cancelCommand },
                                                         title: "Select Portfolio",
                                                         documentType: "PortfolioPickerView",
                                                         viewModel: portfolioVM,
@@ -660,14 +650,14 @@ namespace FreemindAITrade.ViewModels
                 return false;
             }
 
-            UserConfig.SetDelayValue( "PortfolioPickerView", ( ) => GuiDispatcher.GlobalDispatcher.AddSyncAction( ( ) => portfolioVM.Save( ) ) );
+            UserConfig.SetDelayValue( "PortfolioPickerView", () => GuiDispatcher.GlobalDispatcher.AddSyncAction( () => portfolioVM.Save() ) );
 
             SelectedPortfolio = portfolioVM.SelectedPortfolio;
 
             return true;
         }
 
-        private void myExecuteMethod( )
+        private void myExecuteMethod()
         {
             //Debug.Print( "Registration complete" );
         }
@@ -693,7 +683,7 @@ namespace FreemindAITrade.ViewModels
         }
 
 
-        
+
 
 
 
@@ -709,7 +699,7 @@ namespace FreemindAITrade.ViewModels
                         DrawCandles( _drawSeries, _drawCandles );
                     }
                 }
-                
+
             }
             catch ( Exception ex )
             {
@@ -739,11 +729,11 @@ namespace FreemindAITrade.ViewModels
                 _isDrawingCandles = true;
             }
 
-            var drawData = new ChartDrawDataEx( );
+            var drawData = new ChartDrawDataEx();
 
-            int offerId  = SymbolsMgr.Instance.GetOfferId( SelectedSecurity );
+            int offerId = SymbolsMgr.Instance.GetOfferId( SelectedSecurity );
 
-            PooledList< Candle > holder = new PooledList<Candle>();
+            PooledList<Candle> holder = new PooledList<Candle>();
 
             foreach ( Candle candle in _drawCandles )
             {
@@ -762,7 +752,7 @@ namespace FreemindAITrade.ViewModels
             var candleUI = candleSeriesData.CandleUI;
 
 
-            Tuple<IndicatorUI, IndicatorPair>[] indicatorTuple;
+            Tuple<IndicatorUI, IndicatorPair>[ ] indicatorTuple;
 
             var ssIndicators = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
 
@@ -771,14 +761,14 @@ namespace FreemindAITrade.ViewModels
             foreach ( var candle in allCandles )
             {
                 var lastBarTime = candle.OpenTime;
-                
+
                 var drawDataItem = drawData.Group( lastBarTime ).Add( candleUI, candle );
 
                 if ( ssIndicators )
                 {
                     foreach ( var indicatorValue in indicatorTuple )
                     {
-                        var indicatorUI  = indicatorValue.Item1;
+                        var indicatorUI = indicatorValue.Item1;
                         var indicatorRes = indicatorValue.Item2.MyIndicator.Process( candle );
 
                         drawDataItem.Add( indicatorUI, indicatorRes );
@@ -789,7 +779,7 @@ namespace FreemindAITrade.ViewModels
             _chartVM.Draw( drawData );
 
             _doneDrawing = true;
-            
+
             return _lastBarTime;
         }
     }

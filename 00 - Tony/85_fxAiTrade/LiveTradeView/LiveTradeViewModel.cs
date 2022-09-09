@@ -1,15 +1,23 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using DevExpress.Xpf.Docking;
 using Ecng.Collections;
 using Ecng.Common;
+using Ecng.ComponentModel;
 using Ecng.Configuration;
 using Ecng.Serialization;
+using fx.Algorithm;
+using fx.Bars;
+using fx.Charting;
+using fx.Collections;
+using fx.Common;
+using fx.Database;
+using fx.Database.Common.DataModel;
+using fx.Database.ForexDatabarsDataModel;
+using fx.Definitions;
+using fx.Indicators;
 using MoreLinq;
 using StockSharp.Algo;
 using StockSharp.Algo.Candles;
-using StockSharp.Algo.Candles.Compression;
 using StockSharp.Algo.Indicators;
 using StockSharp.Algo.Storages;
 using StockSharp.BusinessEntities;
@@ -17,26 +25,11 @@ using StockSharp.Localization;
 using StockSharp.Logging;
 using StockSharp.Messages;
 using StockSharp.Studio.Core.Commands;
-using fx.Charting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using Ecng.ComponentModel;
-using fx.Database;
-using fx.Database.Common.DataModel;
-using fx.Database.ForexDatabarsDataModel;
-using fx.Algorithm;
-using System.Windows.Media;
-using StockSharp.Xaml;
-using fx.Indicators;
-using fx.Collections;
-using fx.Bars;
 using System.Threading;
+using System.Windows;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -44,10 +37,10 @@ namespace FreemindAITrade.ViewModels
     {
         public CandleSeriesData( CandlestickUI candleUI, fxHistoricBarsRepo bars, Subscription subs, DateTimeOffset barTime )
         {
-            CandleUI     = candleUI;
-            BarsRepo     = bars;
+            CandleUI = candleUI;
+            BarsRepo = bars;
             Subscription = subs;
-            LastBarTime  = barTime;
+            LastBarTime = barTime;
         }
 
         public CandlestickUI CandleUI { get; set; }
@@ -67,39 +60,39 @@ namespace FreemindAITrade.ViewModels
     /// The other one is from the View Itself, which doesn't take parameters. Guess the Later one will take precedence over the formerly created one, so 
     /// the XAML don't see the AddAreaCommand and SetupChartCommand
     /// </summary>
-    public partial class LiveTradeViewModel :ChartTabViewModelBase
+    public partial class LiveTradeViewModel : ChartTabViewModelBase
     {
-        protected IMessageBoxService MessageBoxService { get { return GetService<IMessageBoxService>( ); } }
+        protected IMessageBoxService MessageBoxService { get { return GetService<IMessageBoxService>(); } }
 
-        private readonly PooledDictionary<CandleSeries, CandleSeriesData > _candles = new PooledDictionary<CandleSeries, CandleSeriesData >();
+        private readonly PooledDictionary<CandleSeries, CandleSeriesData> _candles = new PooledDictionary<CandleSeries, CandleSeriesData>();
         private readonly PooledDictionary<IndicatorUI, IndicatorPair> _indicators = new PooledDictionary<IndicatorUI, IndicatorPair>();
 
-        private readonly PooledDictionary<CandleSeries, Tuple<IndicatorUI, IndicatorPair>[]> _indicatorsBySeries = new PooledDictionary<CandleSeries, Tuple<IndicatorUI, IndicatorPair>[]>();
+        private readonly PooledDictionary<CandleSeries, Tuple<IndicatorUI, IndicatorPair>[ ]> _indicatorsBySeries = new PooledDictionary<CandleSeries, Tuple<IndicatorUI, IndicatorPair>[ ]>();
 
-        private readonly PooledDictionary<Order, ChartActiveOrderInfo>                         _chartOrders          = new PooledDictionary<Order, ChartActiveOrderInfo>( );
-        private readonly PooledDictionary<AnnotationUI, ChartDrawDataEx.sAnnotation>          _annotations          = new PooledDictionary<AnnotationUI, ChartDrawDataEx.sAnnotation>( );
+        private readonly PooledDictionary<Order, ChartActiveOrderInfo> _chartOrders = new PooledDictionary<Order, ChartActiveOrderInfo>();
+        private readonly PooledDictionary<AnnotationUI, ChartDrawDataEx.sAnnotation> _annotations = new PooledDictionary<AnnotationUI, ChartDrawDataEx.sAnnotation>();
 
         private CandleSeries _candlesSeries;
-        private CandleSeries                                                             _drawSeries;
+        private CandleSeries _drawSeries;
 
         private bool _isBarIntegrityCheck = false;
 
-        private IStudioCommandService                                                    _commandService;
-        private bool                                                                     _loading = false;
+        private IStudioCommandService _commandService;
+        private bool _loading = false;
 
-        private readonly IStorageRegistry                                                _storageRegistry;
-        private IMarketDataDrive                                                         _drive;
-        private bool                                                                     _initializing;
-       
+        private readonly IStorageRegistry _storageRegistry;
+        private IMarketDataDrive _drive;
+        private bool _initializing;
 
-        
 
-        private IRepository<DbElliottWave, long>                                         _dbElliottWaveRepo;
-        private IUnitOfWorkFactory<IForexDatabarsUnitOfWork>                             _unitOfWorkFactory = null;
 
-        private IForexDatabarsUnitOfWork                                                 _unitOfWork;
 
-        private Connector                                                                _connector;
+        private IRepository<DbElliottWave, long> _dbElliottWaveRepo;
+        private IUnitOfWorkFactory<IForexDatabarsUnitOfWork> _unitOfWorkFactory = null;
+
+        private IForexDatabarsUnitOfWork _unitOfWork;
+
+        private Connector _connector;
 
         private bool _isNonVisual = false;
 
@@ -133,50 +126,50 @@ namespace FreemindAITrade.ViewModels
 
         public LiveTradeViewModel( IMutltiTimeFrameSessionDataRepo dataRepo, string caption, string imagePath, TimeSpan reponsible, Security sec, Connector connector, bool isBarIntegrityCheck, int waveScenarioCount, bool isNonVisual, bool loadAll, CancellationTokenSource exitSource )
         {
-            _isNonVisual                    = isNonVisual;
-            _waveScenarioNumber             = waveScenarioCount;
-            _unitOfWorkFactory              = UnitOfWorkSource.GetUnitOfWorkFactory( );
-            _unitOfWork                     = _unitOfWorkFactory.CreateUnitOfWork( );
-            _dbElliottWaveRepo              = _unitOfWork.ELLIOTTWAVES;
-            _isBarIntegrityCheck            = isBarIntegrityCheck;
+            _isNonVisual = isNonVisual;
+            _waveScenarioNumber = waveScenarioCount;
+            _unitOfWorkFactory = UnitOfWorkSource.GetUnitOfWorkFactory();
+            _unitOfWork = _unitOfWorkFactory.CreateUnitOfWork();
+            _dbElliottWaveRepo = _unitOfWork.ELLIOTTWAVES;
+            _isBarIntegrityCheck = isBarIntegrityCheck;
             _exitSource = exitSource;
 
-            Caption                         = caption;
-            Glyph                           = GlyphHelper.GetSvgImage( imagePath );
-            Text                            = String.Format( "Document text ({0})", caption );
-            ResponsibleTF                   = reponsible;
-            SelectedSecurity                = sec;
+            Caption = caption;
+            Glyph = GlyphHelper.GetSvgImage( imagePath );
+            Text = String.Format( "Document text ({0})", caption );
+            ResponsibleTF = reponsible;
+            SelectedSecurity = sec;
             _loadAllBars = loadAll;
 
-            if ( ! _isNonVisual )
+            if ( !_isNonVisual )
             {
-                var timerName       = "ChartTabVM_" + reponsible.ToReadable( );
-                _drawTimer          = new ResettableTimer( TimeSpan.FromSeconds( 0.5 ), timerName );
-                _drawTimer.Elapsed  += new Action<Func<bool>>( TonyChartPaneBackgroundWorkTimer );
+                var timerName = "ChartTabVM_" + reponsible.ToReadable();
+                _drawTimer = new ResettableTimer( TimeSpan.FromSeconds( 0.5 ), timerName );
+                _drawTimer.Elapsed += new Action<Func<bool>>( TonyChartPaneBackgroundWorkTimer );
 
             }
 
-            _connector                      = connector;
+            _connector = connector;
 
-            _storageRegistry                = ServicesRegistry.StorageRegistry;
+            _storageRegistry = ServicesRegistry.StorageRegistry;
 
-            AddAreaCommand                  = new DelegateCommand( Step01_ExecuteAddChartArea, CanAddArea );
-            
+            AddAreaCommand = new DelegateCommand( Step01_ExecuteAddChartArea, CanAddArea );
+
             QuickOrderSettingChangedCommand = new DelegateCommand( ExecuteQuickOrderSettingChanged );
 
-            _name                           = GetType( ).GetDisplayName( );
+            _name = GetType().GetDisplayName();
 
-            _bars                           = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
+            _bars = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
             _bars.HistoricBarUpdateEvent += _bars_HistoricBarUpdateEvent;
 
-            var aaMgr                       = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity.Code );
+            var aaMgr = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity.Code );
 
             if ( aaMgr != null )
             {
-                _hews = (HewManager)aaMgr.HewManager;
+                _hews = ( HewManager )aaMgr.HewManager;
             }
 
-            var aa = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity );
+            var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity );
 
             if ( aa != null )
             {
@@ -188,11 +181,11 @@ namespace FreemindAITrade.ViewModels
                 {
                     _bars.AddIndicator( _freemindIndicator, true );
                 }
-                
+
 
                 if ( reponsible >= TimeSpan.FromDays( 1 ) )
                 {
-                    _pivotPointIndicator = ( PivotPointsCustom ) aa.GetPivotPoint( ResponsibleTF );
+                    _pivotPointIndicator = ( PivotPointsCustom )aa.GetPivotPoint( ResponsibleTF );
 
                     _pivotPointIndicator.PivotTimeSpan = reponsible;
                     _pivotPointIndicator.Security = SelectedSecurity;
@@ -201,14 +194,14 @@ namespace FreemindAITrade.ViewModels
                 }
             }
 
-            _bars.DailyPivotsUpdateEvent   += new SupportResistanceLevelsUpdateDelege( DataBarHistory_DailyPivotsUpdateEvent );
-            _bars.WeeklyPivotsUpdateEvent  += new SupportResistanceLevelsUpdateDelege( DataBarHistory_WeeklyPivotsUpdateEvent );
+            _bars.DailyPivotsUpdateEvent += new SupportResistanceLevelsUpdateDelege( DataBarHistory_DailyPivotsUpdateEvent );
+            _bars.WeeklyPivotsUpdateEvent += new SupportResistanceLevelsUpdateDelege( DataBarHistory_WeeklyPivotsUpdateEvent );
             _bars.MonthlyPivotsUpdateEvent += new SupportResistanceLevelsUpdateDelege( DataBarHistory_MonthlyPivotsUpdateEvent );
-           
-            
 
-            OrderSettings = new ChartPanelOrderSettings( );
-            OrderSettings.PropertyChanged += ( ( s, e ) => SettingsChanged?.Invoke( ) );
+
+
+            OrderSettings = new ChartPanelOrderSettings();
+            OrderSettings.PropertyChanged += ( ( s, e ) => SettingsChanged?.Invoke() );
         }
 
         private void _bars_HistoricBarUpdateEvent( object sender, HistoricBarsUpdateEventArg e )
@@ -220,7 +213,7 @@ namespace FreemindAITrade.ViewModels
                     return;
                 }
 
-                InternalDrawCandles( _drawSeries, series.CandleUI, _bars.MainDataBars, ( e.BeginIndex, e.EndIndex ) );
+                InternalDrawCandles( _drawSeries, series.CandleUI, _bars.MainDataBars, (e.BeginIndex, e.EndIndex) );
             }
         }
 
@@ -254,7 +247,7 @@ namespace FreemindAITrade.ViewModels
 
         public void RegisterCommandsAndEvents()
         {
-            _commandService = ConfigManager.GetService<IStudioCommandService>( );
+            _commandService = ConfigManager.GetService<IStudioCommandService>();
 
             #region COMMAND             
             _commandService.Register<SelectCommand>( this, true, OnSelectCommand );
@@ -267,33 +260,33 @@ namespace FreemindAITrade.ViewModels
 
             ChartVM.ScichartSurfaceViewModels.CollectionChanged += Step03_ChartOrIndicatorPanesAdded;
 
-            ChartVM.CreateOrder                                 += TonyOnCreateOrder;
-            ChartVM.MoveOrder                                   += TonyOnMoveOrder;
-            ChartVM.CancelOrder                                 += TonyOnCancelOrder;
-            ChartVM.AnnotationCreated                           += TonyOnAnnotationCreated;
-            ChartVM.AnnotationModified                          += TonyOnAnnotationModified;
-            ChartVM.AnnotationDeleted                           += TonyOnAnnotationDeleted;
-            ChartVM.SubscribeCandleElement                      += Step4_SubscribeCandleUiEventHandler;
-            ChartVM.SubscribeIndicatorElement                   += Step08_SubscribeIndicatorUIEventHandler;
-            ChartVM.SubscribeOrderElement                       += TonyOnSubscribeOrderElement;
-            ChartVM.SubscribeTradeElement                       += TonyOnSubscribeTradeElement;
-            ChartVM.UnSubscribeElement                          += TonyOnUnSubscribeElement;
+            ChartVM.CreateOrder += TonyOnCreateOrder;
+            ChartVM.MoveOrder += TonyOnMoveOrder;
+            ChartVM.CancelOrder += TonyOnCancelOrder;
+            ChartVM.AnnotationCreated += TonyOnAnnotationCreated;
+            ChartVM.AnnotationModified += TonyOnAnnotationModified;
+            ChartVM.AnnotationDeleted += TonyOnAnnotationDeleted;
+            ChartVM.SubscribeCandleElement += Step4_SubscribeCandleUiEventHandler;
+            ChartVM.SubscribeIndicatorElement += Step08_SubscribeIndicatorUIEventHandler;
+            ChartVM.SubscribeOrderElement += TonyOnSubscribeOrderElement;
+            ChartVM.SubscribeTradeElement += TonyOnSubscribeTradeElement;
+            ChartVM.UnSubscribeElement += TonyOnUnSubscribeElement;
 
 
 
-            ChartVM.RegisterOrder                               += TonyOnRegisterOrder;
-            ChartVM.SettingsChanged                             += TonyOnSettingsChanged;
-            ChartVM.ChartAreas.Added                            += new Action<ChartArea>( TonyOnAreasAdded );
-            ChartVM.ChartAreas.Removed                          += new Action<ChartArea>( TonyOnAreasRemoved );
-            ChartVM.ChartAreas.Cleared                          += new Action( TonyOnAreaCleared );
+            ChartVM.RegisterOrder += TonyOnRegisterOrder;
+            ChartVM.SettingsChanged += TonyOnSettingsChanged;
+            ChartVM.ChartAreas.Added += new Action<ChartArea>( TonyOnAreasAdded );
+            ChartVM.ChartAreas.Removed += new Action<ChartArea>( TonyOnAreasRemoved );
+            ChartVM.ChartAreas.Cleared += new Action( TonyOnAreaCleared );
         }
 
 
-        public override void UnRegisterCommandsAndEvents( )
-        {            
-            _commandService = ConfigManager.GetService<IStudioCommandService>( );
+        public override void UnRegisterCommandsAndEvents()
+        {
+            _commandService = ConfigManager.GetService<IStudioCommandService>();
             #region COMMAND 
-            _commandService.UnRegister<CandleCommand>( this ); 
+            _commandService.UnRegister<CandleCommand>( this );
             _commandService.UnRegister<SelectCommand>( this );
             _commandService.UnRegister<OrderCommand>( this );
             _commandService.UnRegister<OrderFailCommand>( this );
@@ -304,30 +297,30 @@ namespace FreemindAITrade.ViewModels
 
             ChartVM.ScichartSurfaceViewModels.CollectionChanged -= Step03_ChartOrIndicatorPanesAdded;
 
-            ChartVM.CreateOrder                                 -= TonyOnCreateOrder;
-            ChartVM.MoveOrder                                   -= TonyOnMoveOrder;
-            ChartVM.CancelOrder                                 -= TonyOnCancelOrder;
-            ChartVM.AnnotationCreated                           -= TonyOnAnnotationCreated;
-            ChartVM.AnnotationModified                          -= TonyOnAnnotationModified;
-            ChartVM.AnnotationDeleted                           -= TonyOnAnnotationDeleted;
-            ChartVM.SubscribeCandleElement                      -= Step4_SubscribeCandleUiEventHandler;
-            ChartVM.SubscribeIndicatorElement                   -= Step08_SubscribeIndicatorUIEventHandler;
-            ChartVM.SubscribeOrderElement                       -= TonyOnSubscribeOrderElement;
-            ChartVM.SubscribeTradeElement                       -= TonyOnSubscribeTradeElement;
-            ChartVM.UnSubscribeElement                          -= TonyOnUnSubscribeElement;
+            ChartVM.CreateOrder -= TonyOnCreateOrder;
+            ChartVM.MoveOrder -= TonyOnMoveOrder;
+            ChartVM.CancelOrder -= TonyOnCancelOrder;
+            ChartVM.AnnotationCreated -= TonyOnAnnotationCreated;
+            ChartVM.AnnotationModified -= TonyOnAnnotationModified;
+            ChartVM.AnnotationDeleted -= TonyOnAnnotationDeleted;
+            ChartVM.SubscribeCandleElement -= Step4_SubscribeCandleUiEventHandler;
+            ChartVM.SubscribeIndicatorElement -= Step08_SubscribeIndicatorUIEventHandler;
+            ChartVM.SubscribeOrderElement -= TonyOnSubscribeOrderElement;
+            ChartVM.SubscribeTradeElement -= TonyOnSubscribeTradeElement;
+            ChartVM.UnSubscribeElement -= TonyOnUnSubscribeElement;
 
 
 
-            ChartVM.RegisterOrder                               -= TonyOnRegisterOrder;
-            ChartVM.SettingsChanged                             -= TonyOnSettingsChanged;
-            ChartVM.ChartAreas.Added                            -= new Action<ChartArea>( TonyOnAreasAdded );
-            ChartVM.ChartAreas.Removed                          -= new Action<ChartArea>( TonyOnAreasRemoved );
-            ChartVM.ChartAreas.Cleared                          -= new Action( TonyOnAreaCleared );
+            ChartVM.RegisterOrder -= TonyOnRegisterOrder;
+            ChartVM.SettingsChanged -= TonyOnSettingsChanged;
+            ChartVM.ChartAreas.Added -= new Action<ChartArea>( TonyOnAreasAdded );
+            ChartVM.ChartAreas.Removed -= new Action<ChartArea>( TonyOnAreasRemoved );
+            ChartVM.ChartAreas.Cleared -= new Action( TonyOnAreaCleared );
         }
 
-        protected override void InitializeChart( )
+        protected override void InitializeChart()
         {
-            RegisterCommandsAndEvents( );           
+            RegisterCommandsAndEvents();
 
             if ( IsActive )
             {
@@ -340,22 +333,22 @@ namespace FreemindAITrade.ViewModels
             IsInteractive = true;
             IsProgrammable = true;
 
-            FillIndicators( );
+            FillIndicators();
         }
-        
+
         private void TonyOnSubscribeTradeElement( TradesUI arg1, Security arg2 )
         {
-            throw new NotImplementedException( );
+            throw new NotImplementedException();
         }
 
         private void TonyOnSubscribeOrderElement( OrdersUI arg1, Security arg2 )
         {
-            throw new NotImplementedException( );
+            throw new NotImplementedException();
         }
 
         private void TonyOnCreateOrder( ChartArea arg1, Order arg2 )
         {
-            throw new NotImplementedException( );
+            throw new NotImplementedException();
         }
 
         private void TonyOnUnSubscribeElement( IfxChartElement element )
@@ -370,22 +363,22 @@ namespace FreemindAITrade.ViewModels
                 command.Process( this, false );
             }
 
-            if ( !CanTrackChanges( ) )
+            if ( !CanTrackChanges() )
             {
                 return;
             }
 
-            RaiseChangedCommand( );
+            RaiseChangedCommand();
         }
 
 
-        public override void Step01_ExecuteAddChartArea( )
+        public override void Step01_ExecuteAddChartArea()
         {
             _stopWatch.Start();
 
-            if ( ChartVM.CanAddArea( ) )
+            if ( ChartVM.CanAddArea() )
             {
-                ChartVM.Step01_AddChartArea( );
+                ChartVM.Step01_AddChartArea();
             }
         }
 
@@ -399,61 +392,61 @@ namespace FreemindAITrade.ViewModels
             }
         }
 
-        public bool CanAddArea( )
+        public bool CanAddArea()
         {
             return ( ( ChartVM != null ) && IsInteractive );
         }
 
-        private void ExecuteQuickOrderSettingChanged( )
+        private void ExecuteQuickOrderSettingChanged()
         {
 
         }
 
-        protected override void OnInitializeInDesignMode( )
+        protected override void OnInitializeInDesignMode()
         {
-            base.OnInitializeInDesignMode( );
+            base.OnInitializeInDesignMode();
         }
 
-        protected override void OnInitializeInRuntime( )
+        protected override void OnInitializeInRuntime()
         {
-            base.OnInitializeInRuntime( );
+            base.OnInitializeInRuntime();
 
         }
 
 
 
-        
+
         public event Action SettingsChanged;
 
-        private void OnUiChanged( )
+        private void OnUiChanged()
         {
-            if ( !CanTrackChanges( ) )
+            if ( !CanTrackChanges() )
             {
                 return;
             }
 
-            RaiseChangedCommand( );
+            RaiseChangedCommand();
         }
 
-        private void TonyOnAreaCleared( )
+        private void TonyOnAreaCleared()
         {
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void TonyOnAreasRemoved( ChartArea area )
         {
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void TonyOnAreasAdded( ChartArea area )
         {
-            OnUiChanged( );
+            OnUiChanged();
         }
 
 
-        private void TonyOnSettingsChanged( )
+        private void TonyOnSettingsChanged()
         {
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void TonyOnRegisterOrder( ChartArea area, Order orderDraft )
@@ -462,7 +455,7 @@ namespace FreemindAITrade.ViewModels
 
             if ( security == null )
             {
-                security = area.Elements.OfType<CandlestickUI>( ).Select( e => ( ChartVM.GetSource( e ) as CandleSeries )?.Security ).FirstOrDefault( s => s != null );
+                security = area.Elements.OfType<CandlestickUI>().Select( e => ( ChartVM.GetSource( e ) as CandleSeries )?.Security ).FirstOrDefault( s => s != null );
                 if ( security == null )
                 {
                     MessageBoxService.Show( messageBoxText: LocalizedStrings.Str1380, caption: "Register Order", button: MessageBoxButton.OK );
@@ -476,26 +469,26 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                Order order = new Order( )
+                Order order = new Order()
                 {
-                    Type      = new OrderTypes?( OrderTypes.Limit ),
-                    Volume    = orderDraft.Volume,
+                    Type = new OrderTypes?( OrderTypes.Limit ),
+                    Volume = orderDraft.Volume,
                     Direction = orderDraft.Direction,
-                    Security  = security,
+                    Security = security,
                     Portfolio = orderDraft.Portfolio,
-                    Price     = security.ShrinkPrice( orderDraft.Price, ShrinkRules.Auto )
+                    Price = security.ShrinkPrice( orderDraft.Price, ShrinkRules.Auto )
                 };
 
                 new RegisterOrderCommand( order ).Process( this, false );
 
-                ActiveOrdersUI activeOrdersElement = area.Elements.OfType<ActiveOrdersUI>( ).FirstOrDefault( );
+                ActiveOrdersUI activeOrdersElement = area.Elements.OfType<ActiveOrdersUI>().FirstOrDefault();
                 if ( activeOrdersElement == null )
                 {
-                    activeOrdersElement = new ActiveOrdersUI( );
+                    activeOrdersElement = new ActiveOrdersUI();
                     ChartVM.AddElement( area, activeOrdersElement );
                 }
 
-                ChartActiveOrderInfo chartActiveOrderInfo = new ChartActiveOrderInfo( );
+                ChartActiveOrderInfo chartActiveOrderInfo = new ChartActiveOrderInfo();
                 _chartOrders.Add( order, chartActiveOrderInfo );
                 activeOrdersElement.Orders.Add( chartActiveOrderInfo );
                 chartActiveOrderInfo.UpdateOrderState( order, false, true );
@@ -504,13 +497,13 @@ namespace FreemindAITrade.ViewModels
 
         private void TonyOnMoveOrder( Order order, Decimal price )
         {
-            Order orderClone = order.ReRegisterClone( new Decimal?( price ), new Decimal?( ) );
+            Order orderClone = order.ReRegisterClone( new Decimal?( price ), new Decimal?() );
             ChartActiveOrderInfo activeOrderInfo = _chartOrders.TryGetValue( order );
 
             if ( activeOrderInfo != null )
             {
                 activeOrderInfo.IsFrozen = true;
-                var newOrderInfo = new ChartActiveOrderInfo( )
+                var newOrderInfo = new ChartActiveOrderInfo()
                 {
                     AutoRemoveFromChart = activeOrderInfo.AutoRemoveFromChart,
                     ChartX = activeOrderInfo.ChartX
@@ -538,14 +531,14 @@ namespace FreemindAITrade.ViewModels
 
         private void TonyOnAnnotationCreated( AnnotationUI annotation )
         {
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void TonyOnAnnotationDeleted( AnnotationUI annotation )
         {
             _annotations.Remove( annotation );
 
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void TonyOnAnnotationModified( AnnotationUI annotation, ChartDrawDataEx.sAnnotation data )
@@ -555,42 +548,42 @@ namespace FreemindAITrade.ViewModels
                 return;
             }
 
-            _annotations[ annotation ] = data;
+            _annotations[annotation] = data;
 
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void OnChartResetElementCommand( ChartResetElementExCommand command )
         {
-            ChartVM.Reset( new IfxChartElement[ 1 ] { command.Element } );
+            ChartVM.Reset( new IfxChartElement[1] { command.Element } );
             IndicatorPair tag = ( IndicatorPair )command.Tag;
-            tag.MyIndicator.Load( tag.UI.Save( ) );
+            tag.MyIndicator.Load( tag.UI.Save() );
 
-            var candleSeriesData = _candles.TryGetValue(tag.Series);
+            var candleSeriesData = _candles.TryGetValue( tag.Series );
             if ( candleSeriesData == null )
             {
                 return;
             }
 
-            var data          = new ChartDrawDataEx( );
+            var data = new ChartDrawDataEx();
 
-            var indicatorUI   = (IndicatorUI) command.Element;
-            var indicator     = tag.MyIndicator;
-            var count         = candleSeriesData.BarsRepo.MainDataBars.Count;
+            var indicatorUI = ( IndicatorUI )command.Element;
+            var indicator = tag.MyIndicator;
+            var count = candleSeriesData.BarsRepo.MainDataBars.Count;
             var indicatorList = data.SetIndicatorSource( indicatorUI, count );
 
             for ( int i = 0; i < count; i++ )
             {
-                ref SBar bar = ref candleSeriesData.BarsRepo[ i ];
+                ref SBar bar = ref candleSeriesData.BarsRepo[i];
 
                 var indicatorRes = indicator.Process( ref bar );
 
                 indicatorList.SetIndicatorValue( bar.BarTime, indicatorRes );
             }
-            
+
             ChartVM.Draw( data );
 
-            OnUiChanged( );
+            OnUiChanged();
         }
 
         private void OnChartRemoveElementCommand( ChartRemoveElementExCommand command )
@@ -601,20 +594,20 @@ namespace FreemindAITrade.ViewModels
             if ( ind != null )
             {
                 _indicators.Remove( ind );
-                foreach ( KeyValuePair<CandleSeries, Tuple<IndicatorUI, IndicatorPair>[ ]> keyValuePair in _indicatorsBySeries.ToArray( ) )
+                foreach ( KeyValuePair<CandleSeries, Tuple<IndicatorUI, IndicatorPair>[ ]> keyValuePair in _indicatorsBySeries.ToArray() )
                 {
-                    Tuple<IndicatorUI, IndicatorPair>[] array = keyValuePair.Value.Where( t =>  t.Item1 != ind).ToArray();
+                    Tuple<IndicatorUI, IndicatorPair>[ ] array = keyValuePair.Value.Where( t => t.Item1 != ind ).ToArray();
                     if ( array.Length == 0 )
                         _indicatorsBySeries.Remove( keyValuePair.Key );
                     else
-                        _indicatorsBySeries[ keyValuePair.Key ] = array;
+                        _indicatorsBySeries[keyValuePair.Key] = array;
                 }
             }
             else
             {
                 if ( !( command.Element is CandlestickUI ) )
                     return;
-                CandleSeries source = (CandleSeries) command.Source;
+                CandleSeries source = ( CandleSeries )command.Source;
                 CandleSeriesData candleSeriesData;
                 if ( !_candles.TryGetAndRemove( source, out candleSeriesData ) )
                     return;
@@ -714,12 +707,12 @@ namespace FreemindAITrade.ViewModels
 
 
 
-        private bool CanTrackChanges( )
+        private bool CanTrackChanges()
         {
             return ChartVM.IsInteracted && !_loading;
         }
 
-        protected void RaiseChangedCommand( )
+        protected void RaiseChangedCommand()
         {
             //new ControlChangedCommand( this ).Process( this, false );
         }
@@ -811,14 +804,14 @@ namespace FreemindAITrade.ViewModels
             }
         }
 
-        private void Step04_LoadCandlesFromLocalStorage( )
+        private void Step04_LoadCandlesFromLocalStorage()
         {
             _stopWatch.Restart();
 
             _initializing = true;
 
-            var startDate      = DateTime.MinValue;
-            var endDate        = DateTime.MinValue;
+            var startDate = DateTime.MinValue;
+            var endDate = DateTime.MinValue;
 
             _candlesSeries = new CandleSeries( typeof( TimeFrameCandle ), SelectedSecurity, ResponsibleTF );
 
@@ -826,11 +819,11 @@ namespace FreemindAITrade.ViewModels
             {
                 ParentViewModel.LinkSeriesWithVM( _candlesSeries, this );
             }
-            
+
             if ( _loadAllBars )
             {
                 _candleStorage = _storageRegistry.GetCandleMessageStorage( typeof( TimeFrameCandleMessage ), SelectedSecurity.ToSecurityId(), ResponsibleTF, Drive, Format );
-                var start = _candleStorage.GetFromDate( );
+                var start = _candleStorage.GetFromDate();
                 if ( start.HasValue )
                 {
                     startDate = start.Value;
@@ -847,7 +840,7 @@ namespace FreemindAITrade.ViewModels
                 ForexHelper.GetStartAndEndDateForDatabar( ResponsibleTF, out startDate, out endDate );
             }
 
-            
+
 
             _candlesSeries.From = startDate;
             _candlesSeries.To = endDate;
@@ -881,11 +874,11 @@ namespace FreemindAITrade.ViewModels
 
             if ( surfaceVM.Count > 0 )
             {
-                var pane = surfaceVM.First( );
+                var pane = surfaceVM.First();
 
                 if ( pane != null )
                 {
-                    if ( ChartVM.CanExecuteAddCandlesProgramatically( ) )
+                    if ( ChartVM.CanExecuteAddCandlesProgramatically() )
                     {
                         ChartVM.Step05_ExecuteAddCandlesProgramatically( pane.Area, _candlesSeries );
                     }
@@ -894,7 +887,7 @@ namespace FreemindAITrade.ViewModels
         }
 
 
-        
+
         private static bool ShouldBuilldFromLowerTimerFrame( TimeSpan tf )
         {
             if ( tf == TimeSpan.FromSeconds( 1 ) )
@@ -941,7 +934,7 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                var d     = DateTime.Today.AddMinutes( -( totalbars * period.TotalMinutes ) );
+                var d = DateTime.Today.AddMinutes( -( totalbars * period.TotalMinutes ) );
                 startDate = new DateTime( d.Year, d.Month, d.Day, d.Hour, 0, 0, DateTimeKind.Utc );
             }
         }
@@ -958,7 +951,7 @@ namespace FreemindAITrade.ViewModels
 
                     this.AddWarningLog( msg );
 
-                    Step04_LoadCandlesFromLocalStorage( );
+                    Step04_LoadCandlesFromLocalStorage();
                 }
                 else
                 {
@@ -1009,8 +1002,8 @@ namespace FreemindAITrade.ViewModels
             {
                 ChartVM.MinimumRange = value;
             }
-        }        
-        
+        }
+
 
         protected static ISecurityProvider SecurityProvider
         {
@@ -1024,12 +1017,12 @@ namespace FreemindAITrade.ViewModels
         {
             get
             {
-                return ConfigManager.GetService<IStudioCommandService>( );
+                return ConfigManager.GetService<IStudioCommandService>();
             }
         }
-        
 
-        
+
+
 
 
 
@@ -1056,7 +1049,7 @@ namespace FreemindAITrade.ViewModels
             //    LiveTradeViewModel.Draw( data );
             //}
         }
-        
+
 
         private void DrawQuotes( Func<bool> canProcess )
         {
@@ -1107,27 +1100,6 @@ namespace FreemindAITrade.ViewModels
             //    }
             //    LiveTradeViewModel.Draw( data );
             //}
-        }
-
-        
-
-        private enum BuildTypes
-        {
-            DoNot,
-            Ticks,
-            OrderLog,
-            Depths,
-            SmallerTimeFrame,
-            Level1,
-            FromComposites,
-        }
-
-        private enum ExtraBuildTypes
-        {
-            Last,
-            Bid,
-            Ask,
-            Middle,
         }
 
 

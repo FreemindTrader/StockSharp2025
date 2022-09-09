@@ -1,4 +1,6 @@
-﻿using DevExpress.Xpf.Bars;
+﻿using DevExpress.Mvvm;
+using DevExpress.Mvvm.UI;
+using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Docking.Base;
@@ -9,10 +11,16 @@ using Ecng.Common;
 using Ecng.Configuration;
 using Ecng.Serialization;
 using Ecng.Xaml;
+using FreemindAITrade;
+using FreemindAITrade.View;
+using FreemindTrader.Controls;
+using fx.Algorithm;
+using fx.Bars;
+using fx.Common;
+using fx.Definitions;
 using MoreLinq;
 using StockSharp.Alerts;
 using StockSharp.Algo;
-using StockSharp.Algo.Candles;
 using StockSharp.Algo.Risk;
 using StockSharp.Algo.Storages;
 using StockSharp.Algo.Storages.Csv;
@@ -29,32 +37,20 @@ using StockSharp.Studio.Core;
 using StockSharp.Studio.Core.Commands;
 using StockSharp.Studio.Core.Configuration;
 using StockSharp.Studio.Core.Services;
-using FreemindTrader.Controls;
-using FreemindTrader.Properties;
 using StockSharp.Xaml;
 using StockSharp.Xaml.GridControl;
 using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
+
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
-
-using FreemindAITrade.View;
-using FreemindAITrade;
-using System.Reflection;
-using DevExpress.Mvvm.UI;
-using fx.Algorithm;
-using fx.Common;
-using fx.Bars;
-using fx.Definitions;
-using DevExpress.Mvvm;
 
 namespace FreemindTrader
 {
@@ -107,16 +103,16 @@ namespace FreemindTrader
             UserConfig.SuspendChangesMonitor();
             _entityRegistry = new CsvEntityRegistry( Paths.AppDataPath );
 
-            var tradeObjectsStorage    = _entityRegistry;
-            var studioCommandService   = ( IStudioCommandService   ) new StudioCommandService();
-            var securityIdStorage      = ( INativeIdStorage        ) new CsvNativeIdStorage( Paths.SecurityNativeIdDir )       { DelayAction = _entityRegistry.DelayAction };
-            var securityIdMapping      = ( ISecurityMappingStorage ) new CsvSecurityMappingStorage( Paths.SecurityMappingDir ) { DelayAction = _entityRegistry.DelayAction };
-            var extendedInfoStorageSvc = ( IExtendedInfoStorage    ) new CsvExtendedInfoStorage( Paths.SecurityExtendedInfo )  { DelayAction = _entityRegistry.DelayAction };
+            var tradeObjectsStorage = _entityRegistry;
+            var studioCommandService = ( IStudioCommandService )new StudioCommandService();
+            var securityIdStorage = ( INativeIdStorage )new CsvNativeIdStorage( Paths.SecurityNativeIdDir ) { DelayAction = _entityRegistry.DelayAction };
+            var securityIdMapping = ( ISecurityMappingStorage )new CsvSecurityMappingStorage( Paths.SecurityMappingDir ) { DelayAction = _entityRegistry.DelayAction };
+            var extendedInfoStorageSvc = ( IExtendedInfoStorage )new CsvExtendedInfoStorage( Paths.SecurityExtendedInfo ) { DelayAction = _entityRegistry.DelayAction };
 
-            ConfigManager.RegisterService( tradeObjectsStorage    );
-            ConfigManager.RegisterService( studioCommandService   );
-            ConfigManager.RegisterService( securityIdStorage      );
-            ConfigManager.RegisterService( securityIdMapping      );
+            ConfigManager.RegisterService( tradeObjectsStorage );
+            ConfigManager.RegisterService( studioCommandService );
+            ConfigManager.RegisterService( securityIdStorage );
+            ConfigManager.RegisterService( securityIdMapping );
             ConfigManager.RegisterService( extendedInfoStorageSvc );
 
 
@@ -129,15 +125,15 @@ namespace FreemindTrader
 
             ConfigManager.RegisterService( new SnapshotRegistry( Paths.SnapshotsDir ) );
             StorageExchangeInfoProvider exchangeInfoProvider = new StorageExchangeInfoProvider( _entityRegistry, false );
-            ConfigManager.RegisterService< IExchangeInfoProvider >( exchangeInfoProvider                          );
-            ConfigManager.RegisterService< IMarketDataDrive      >( new LocalMarketDataDrive( "t:\\ForexData\\" ) );
-            ConfigManager.RegisterService< IBackupService        >( new StockSharpBackupService()                 );
-            ConfigManager.RegisterService< IStorageRegistry      >( new StorageRegistry( exchangeInfoProvider ) { DefaultDrive = ConfigManager.GetService<IMarketDataDrive>() } );
+            ConfigManager.RegisterService<IExchangeInfoProvider>( exchangeInfoProvider );
+            ConfigManager.RegisterService<IMarketDataDrive>( new LocalMarketDataDrive( "t:\\ForexData\\" ) );
+            ConfigManager.RegisterService<IBackupService>( new StockSharpBackupService() );
+            ConfigManager.RegisterService<IStorageRegistry>( new StorageRegistry( exchangeInfoProvider ) { DefaultDrive = ConfigManager.GetService<IMarketDataDrive>() } );
 
             InitializeDriveCache();
             InitializeComponent();
 
-            Title       = Paths.AppNameWithVersion;
+            Title = Paths.AppNameWithVersion;
             LoadMainWindowSettings();
             var manager = UserConfig.LogConfig.Manager;
 
@@ -147,20 +143,20 @@ namespace FreemindTrader
 
             new Action( exchangeInfoProvider.Init ).DoWithLog();
 
-            var securities           = ( ISecurityStorage                 ) _entityRegistry.Securities;
-            var positionStorage      = ( IPositionStorage                 ) _entityRegistry.PositionStorage;
-            var securityProvider     = ( ISecurityProvider                ) new FilterableSecurityProvider( _entityRegistry.Securities );
-            var securityMsgProvider  = ( ISecurityMessageAdapterProvider  ) new CsvSecurityMessageAdapterProvider( Path.Combine( Paths.AppDataPath, "security_adapter.csv" ) );
-            var portfolioMsgProvider = ( IPortfolioMessageAdapterProvider ) new CsvPortfolioMessageAdapterProvider( Path.Combine( Paths.AppDataPath, "portfolio_adapter.csv" ) );
+            var securities = ( ISecurityStorage )_entityRegistry.Securities;
+            var positionStorage = _entityRegistry.PositionStorage;
+            var securityProvider = ( ISecurityProvider )new FilterableSecurityProvider( _entityRegistry.Securities );
+            var securityMsgProvider = ( ISecurityMessageAdapterProvider )new CsvSecurityMessageAdapterProvider( Path.Combine( Paths.AppDataPath, "security_adapter.csv" ) );
+            var portfolioMsgProvider = ( IPortfolioMessageAdapterProvider )new CsvPortfolioMessageAdapterProvider( Path.Combine( Paths.AppDataPath, "portfolio_adapter.csv" ) );
 
-            ConfigManager.RegisterService< ISecurityStorage                 > ( securities           );
-            ConfigManager.RegisterService< IPositionStorage                 > ( positionStorage      );
-            ConfigManager.RegisterService< ISecurityProvider                > ( securityProvider     );
-            ConfigManager.RegisterService< ISecurityMessageAdapterProvider  > ( securityMsgProvider  );
-            ConfigManager.RegisterService< IPortfolioMessageAdapterProvider > ( portfolioMsgProvider );
+            ConfigManager.RegisterService<ISecurityStorage>( securities );
+            ConfigManager.RegisterService<IPositionStorage>( positionStorage );
+            ConfigManager.RegisterService<ISecurityProvider>( securityProvider );
+            ConfigManager.RegisterService<ISecurityMessageAdapterProvider>( securityMsgProvider );
+            ConfigManager.RegisterService<IPortfolioMessageAdapterProvider>( portfolioMsgProvider );
 
-            INativeIdStorage nativeIdStorage         = ServicesRegistry.NativeIdStorage;
-            ISecurityMappingStorage mappingStorage   = ServicesRegistry.MappingStorage;
+            INativeIdStorage nativeIdStorage = ServicesRegistry.NativeIdStorage;
+            ISecurityMappingStorage mappingStorage = ServicesRegistry.MappingStorage;
             IExtendedInfoStorage extendedInfoStorage = ServicesRegistry.ExtendedInfoStorage;
 
             LoggingHelper.DoWithLog( new Func<IDictionary<string, Exception>>( nativeIdStorage.Init ) );
@@ -173,7 +169,7 @@ namespace FreemindTrader
             IRiskManager service = new RiskManager();
             UserConfig.TryLoadSettings( "RiskManager", new Action<SettingsStorage>( service.Load ) );
             ConfigManager.RegisterService( service );
-            
+
             UserConfig.GetCommonSettings<StudioCommonSettings>().UpdateGlobalTimeZone();
 
             InitializeLayoutManager();
@@ -257,7 +253,7 @@ namespace FreemindTrader
 
 
 
-        
+
 
 
 
@@ -277,62 +273,62 @@ namespace FreemindTrader
         private void InitializeConnector()
         {
             DXSplashScreen.SetState( LocalizedStrings.InitializingConnector );
-            _connector = new StudioConnector( 
-                                                ServicesRegistry.SecurityStorage, 
-                                                ServicesRegistry.PositionStorage, 
-                                                ServicesRegistry.StorageRegistry, 
-                                                ServicesRegistry.SnapshotRegistry, 
-                                                ServicesRegistry.NativeIdStorage, 
-                                                ServicesRegistry.MappingStorage, 
-                                                ServicesRegistry.ExchangeInfoProvider, 
-                                                ServicesRegistry.SecurityAdapterProvider, 
-                                                ServicesRegistry.PortfolioAdapterProvider 
+            _connector = new StudioConnector(
+                                                ServicesRegistry.SecurityStorage,
+                                                ServicesRegistry.PositionStorage,
+                                                ServicesRegistry.StorageRegistry,
+                                                ServicesRegistry.SnapshotRegistry,
+                                                ServicesRegistry.NativeIdStorage,
+                                                ServicesRegistry.MappingStorage,
+                                                ServicesRegistry.ExchangeInfoProvider,
+                                                ServicesRegistry.SecurityAdapterProvider,
+                                                ServicesRegistry.PortfolioAdapterProvider
                                             );
 
-            _connector.Adapter.LatencyManager              = null;
-            _connector.Adapter.SlippageManager             = null;
+            _connector.Adapter.LatencyManager = null;
+            _connector.Adapter.SlippageManager = null;
 
-            _connector.Adapter.SupportLookupTracking       = false;
-            _connector.Adapter.IsSupportTransactionLog     = false;
-            _connector.Adapter.IsSupportOrderBookSort      = false;
-            _connector.Adapter.Level1Extend                = false;
-            _connector.Adapter.SupportPartialDownload      = false;
+            _connector.Adapter.SupportLookupTracking = false;
+            _connector.Adapter.IsSupportTransactionLog = false;
+            _connector.Adapter.IsSupportOrderBookSort = false;
+            _connector.Adapter.Level1Extend = false;
+            _connector.Adapter.SupportPartialDownload = false;
             _connector.Adapter.SupportBuildingFromOrderLog = false;
-            _connector.Adapter.SupportOrderBookTruncate    = false;
-            _connector.Adapter.SupportCandlesCompression   = false;
+            _connector.Adapter.SupportOrderBookTruncate = false;
+            _connector.Adapter.SupportCandlesCompression = false;
 
             _connector.UpdateEmulatorSettings( UserConfig.LoadEmulatorSettings() );
             _subscriptionManager = new SubscriptionControlManager( _connector );
             ServicesRegistry.LogManager.Sources.Add( _connector );
 
-            _connector.Connected                          += new Action( ConnectorOnConnectionStateChanged );
-            _connector.Disconnected                       += new Action( ConnectorOnConnectionStateChanged );
-            _connector.ConnectionLost                     += new Action<IMessageAdapter>( ConnectorOnConnectionLost );
-            _connector.ConnectionRestored                 += new Action<IMessageAdapter>( ConnectorOnConnectionRestored );
-            _connector.ConnectionError                    += new Action<Exception>( ConnectorOnConnectionError );
-            _connector.OrderRegisterFailReceived          += ( sub, fail ) => RaiseOrderFailedCommand( sub, fail, OrderFailTypes.Register );
-            _connector.OrderCancelFailReceived            += ( sub, fail ) => RaiseOrderFailedCommand( sub, fail, OrderFailTypes.Cancel );
+            _connector.Connected += new Action( ConnectorOnConnectionStateChanged );
+            _connector.Disconnected += new Action( ConnectorOnConnectionStateChanged );
+            _connector.ConnectionLost += new Action<IMessageAdapter>( ConnectorOnConnectionLost );
+            _connector.ConnectionRestored += new Action<IMessageAdapter>( ConnectorOnConnectionRestored );
+            _connector.ConnectionError += new Action<Exception>( ConnectorOnConnectionError );
+            _connector.OrderRegisterFailReceived += ( sub, fail ) => RaiseOrderFailedCommand( sub, fail, OrderFailTypes.Register );
+            _connector.OrderCancelFailReceived += ( sub, fail ) => RaiseOrderFailedCommand( sub, fail, OrderFailTypes.Cancel );
             _connector.OrderEditFailReceived -= ( sub, fail ) => RaiseOrderFailedCommand( sub, fail, OrderFailTypes.Edit );
-            _connector.TickTradeReceived                  += ( s, t ) => RaiseEntityCommand( s, t );
-            _connector.OrderLogItemReceived               += ( s, i ) => RaiseEntityCommand( s, i );
-            _connector.OrderBookReceived                  += ( s, m ) => RaiseEntityCommand( s, m );
-            _connector.Level1Received                     += ( s, m ) => RaiseEntityCommand( s, m );
-            _connector.MarketDataSubscriptionFailed2      += new Action<Security, MarketDataMessage, SubscriptionResponseMessage>( ConnectorOnMarketDataSubscriptionFailed2 );
-            _connector.MarketDataUnSubscriptionFailed2    += new Action<Security, MarketDataMessage, SubscriptionResponseMessage>( ConnectorOnMarketDataSubscriptionFailed2 );
-            _connector.MassOrderCancelFailed              += ( id, error ) => error.LogError( null );
-            _connector.OrderStatusFailed                  += ( id, error ) => error.LogError( null );
-            _connector.CandleReceived                     += ( s, c ) =>
+            _connector.TickTradeReceived += ( s, t ) => RaiseEntityCommand( s, t );
+            _connector.OrderLogItemReceived += ( s, i ) => RaiseEntityCommand( s, i );
+            _connector.OrderBookReceived += ( s, m ) => RaiseEntityCommand( s, m );
+            _connector.Level1Received += ( s, m ) => RaiseEntityCommand( s, m );
+            _connector.MarketDataSubscriptionFailed2 += new Action<Security, MarketDataMessage, SubscriptionResponseMessage>( ConnectorOnMarketDataSubscriptionFailed2 );
+            _connector.MarketDataUnSubscriptionFailed2 += new Action<Security, MarketDataMessage, SubscriptionResponseMessage>( ConnectorOnMarketDataSubscriptionFailed2 );
+            _connector.MassOrderCancelFailed += ( id, error ) => error.LogError( null );
+            _connector.OrderStatusFailed += ( id, error ) => error.LogError( null );
+            _connector.CandleReceived += ( s, c ) =>
                                                                     {
                                                                         object[ ] targets = _subscriptionManager.Get( s );
                                                                         if ( targets.Length == 0 )
                                                                             return;
                                                                         new CandleCommand( s.CandleSeries, c ).Process( this, targets );
                                                                     };
-            _connector.OrderReceived                   += new Action<Subscription, Order>( RaiseOrderCommand );
-            _connector.OwnTradeReceived                += ( s, t ) => RaiseEntityCommand( s, t );
-            _connector.PortfolioReceived               += new Action<Subscription, Portfolio>( RaisePortfolioCommand );
-            _connector.PositionReceived                += ( s, p ) => RaiseEntityCommand( s, p );
-            _connector.LookupSecuritiesResult          += ( message, securities, error ) =>
+            _connector.OrderReceived += new Action<Subscription, Order>( RaiseOrderCommand );
+            _connector.OwnTradeReceived += ( s, t ) => RaiseEntityCommand( s, t );
+            _connector.PortfolioReceived += new Action<Subscription, Portfolio>( RaisePortfolioCommand );
+            _connector.PositionReceived += ( s, p ) => RaiseEntityCommand( s, p );
+            _connector.LookupSecuritiesResult += ( message, securities, error ) =>
                                                                                             {
                                                                                                 if ( !_firstSecuritiesInit )
                                                                                                     return;
@@ -341,7 +337,7 @@ namespace FreemindTrader
                                                                                                     return;
                                                                                                 new FirstInitSecuritiesCommand( securities ).Deep().Process( this, false );
                                                                                             };
-            _connector.LookupPortfoliosResult          += ( message, portfolios, error ) =>
+            _connector.LookupPortfoliosResult += ( message, portfolios, error ) =>
                                                                                             {
                                                                                                 if ( !_firstPortfoliosInit )
                                                                                                     return;
@@ -353,21 +349,21 @@ namespace FreemindTrader
                                                                                                     return;
                                                                                                 new FirstInitPortfoliosCommand( array ).Deep().Process( this, false );
                                                                                             };
-            
+
             _connector.ValuesChanged += _connector_ValuesChanged;
             _connector.NewOrder += _connector_NewOrder;
 
-            ConfigManager.RegisterService( new PortfolioDataSource ( _connector ) );
-            ConfigManager.RegisterService< IConnector             >( _connector );
-            ConfigManager.RegisterService< Connector              >( _connector );
+            ConfigManager.RegisterService( new PortfolioDataSource( _connector ) );
+            ConfigManager.RegisterService<IConnector>( _connector );
+            ConfigManager.RegisterService<Connector>( _connector );
             ConfigManager.RegisterService( _connector.Adapter.SecurityAdapterProvider );
             ConfigManager.RegisterService( _connector.Adapter.PortfolioAdapterProvider );
-            ConfigManager.RegisterService< IMarketDataProvider    >( _connector );
-            ConfigManager.RegisterService< ISubscriptionProvider  >( _connector );
-            ConfigManager.RegisterService< IPortfolioProvider     >( _connector );
-            ConfigManager.RegisterService< IPositionProvider      >( _connector );
-            ConfigManager.RegisterService< INewsProvider          >( _connector );
-            ConfigManager.RegisterService< IPriceChartDataProvider>( new PriceChartDataProvider( _connector ) );
+            ConfigManager.RegisterService<IMarketDataProvider>( _connector );
+            ConfigManager.RegisterService<ISubscriptionProvider>( _connector );
+            ConfigManager.RegisterService<IPortfolioProvider>( _connector );
+            ConfigManager.RegisterService<IPositionProvider>( _connector );
+            ConfigManager.RegisterService<INewsProvider>( _connector );
+            ConfigManager.RegisterService<IPriceChartDataProvider>( new PriceChartDataProvider( _connector ) );
             ConfigManager.RegisterService( ( IMessageAdapterProvider )new StudioMessageAdapterProvider( _connector.Adapter.InnerAdapters ) );
 
             TraderHelper.LookupAll( _connector );
@@ -386,34 +382,34 @@ namespace FreemindTrader
                 switch ( lvl1 )
                 {
                     case Level1Fields.HighPrice:
-                    {
+                        {
 
-                    }
-                    break;
+                        }
+                        break;
 
                     case Level1Fields.LowPrice:
-                    {
+                        {
 
-                    }
-                    break;
+                        }
+                        break;
 
                     case Level1Fields.LastTradePrice:
-                    {
+                        {
 
-                    }
-                    break;
+                        }
+                        break;
 
                     case Level1Fields.BestBidPrice:
-                    {
-                        bidPrice = ( double )( decimal )level1Fields.Value;
-                    }
-                    break;
+                        {
+                            bidPrice = ( double )( decimal )level1Fields.Value;
+                        }
+                        break;
 
                     case Level1Fields.BestAskPrice:
-                    {
-                        askPrice = ( double )( decimal )level1Fields.Value;
-                    }
-                    break;
+                        {
+                            askPrice = ( double )( decimal )level1Fields.Value;
+                        }
+                        break;
                 }
 
             }
@@ -534,14 +530,14 @@ namespace FreemindTrader
         private void LoadMainWindowSettings()
         {
             StudioUserConfig settings = UserConfig;
-            ( ( Action )( 
+            ( ( Action )(
                             () =>
                                 {
                                     string ribbon = settings.GetRibbon();
                                     if ( ribbon.IsEmpty() )
                                         return;
                                     Ribbon.LoadDevExpressControl( ribbon );
-                                } ) 
+                                } )
                         ).DoWithLog();
 
             ( ( Action )( () => UserConfig.LoadMainWindowSettings( this ) ) ).DoWithLog();
@@ -640,8 +636,8 @@ namespace FreemindTrader
 
         private void ConnectDisconnectCommand_OnCanExecute( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute =  _connector.ConnectionState == ConnectionStates.Connected || 
-                            _connector.ConnectionState == ConnectionStates.Disconnected || 
+            e.CanExecute = _connector.ConnectionState == ConnectionStates.Connected ||
+                            _connector.ConnectionState == ConnectionStates.Disconnected ||
                             _connector.ConnectionState == ConnectionStates.Failed;
         }
 
@@ -692,9 +688,9 @@ namespace FreemindTrader
         {
             Ecng.Xaml.XamlHelper.ShowModal( new PortfolioMessageAdaptersWindow()
             {
-                Portfolios               = StudioServicesRegistry.PortfolioDataSource,
+                Portfolios = StudioServicesRegistry.PortfolioDataSource,
                 PortfolioAdapterProvider = ServicesRegistry.PortfolioAdapterProvider,
-                AdapterProvider          = ServicesRegistry.AdapterProvider
+                AdapterProvider = ServicesRegistry.AdapterProvider
             }, this );
         }
 
@@ -707,9 +703,9 @@ namespace FreemindTrader
         {
             Ecng.Xaml.XamlHelper.ShowModal( new SecurityMessageAdaptersWindow()
             {
-                SecurityProvider        = ServicesRegistry.SecurityProvider,
+                SecurityProvider = ServicesRegistry.SecurityProvider,
                 SecurityAdapterProvider = ServicesRegistry.SecurityAdapterProvider,
-                AdapterProvider         = ServicesRegistry.AdapterProvider
+                AdapterProvider = ServicesRegistry.AdapterProvider
             }, this );
         }
 
@@ -919,12 +915,12 @@ namespace FreemindTrader
         }
 
         private void OnOpenWindowCommand( OpenWindowCommand cmd )
-        {            
+        {
             cmd.Result = cmd.IsToolWindow ? _layoutManager.OpenToolWindow( cmd.CtrlType, null, true ) : _layoutManager.OpenDocumentWindow( cmd.CtrlType, null, true );
         }
 
         private void OnPositionEditCommand( PositionEditCommand cmd )
-        {            
+        {
             var pos = cmd.Position.Clone();
 
             var posEditWnd = new PositionEditWindow()
@@ -1043,7 +1039,7 @@ namespace FreemindTrader
 
         private void OnOrderFailedCommand( OrderFailCommand cmd )
         {
-            var token = GeneralHelper.GlobalExitToken( );
+            var token = GeneralHelper.GlobalExitToken();
 
             AlertServicesRegistry.NotificationService.NotifyAsync( AlertNotifications.Popup, LocalizedStrings.XamlStr182, cmd.Entity.Error.Message, cmd.Entity.ServerTime, token );
         }
@@ -1090,7 +1086,7 @@ namespace FreemindTrader
                                              );
         }
 
-        private Dictionary< Guid, TradeStationView > _tradeStationView = new Dictionary<Guid, TradeStationView>();
+        private Dictionary<Guid, TradeStationView> _tradeStationView = new Dictionary<Guid, TradeStationView>();
         private Type _fxMainTradeStationType = null;
 
         private void TradeStation_ItemClick( object sender, ItemClickEventArgs e )
@@ -1099,8 +1095,8 @@ namespace FreemindTrader
 
             tradeStationView.ViewGuid = Guid.NewGuid();
             tradeStationView.Closing += _fxMainTradeStation_Closing;
-            tradeStationView.Closed  += _fxMainTradeStation_Closed;
-            _connector.Connected     += tradeStationView.ViewModel.OnAdapterConnected;
+            tradeStationView.Closed += _fxMainTradeStation_Closed;
+            _connector.Connected += tradeStationView.ViewModel.OnAdapterConnected;
 
             _tradeStationView.Add( tradeStationView.ViewGuid, tradeStationView );
 
@@ -1125,17 +1121,17 @@ namespace FreemindTrader
             {
                 var secondary = ScreenHelper.GetSecondaryScreen();
 
-                tradeStationView.Left   = secondary.Bounds.Left;
-                tradeStationView.Top    = secondary.Bounds.Top;
-                tradeStationView.Width  = secondary.Bounds.Width;
+                tradeStationView.Left = secondary.Bounds.Left;
+                tradeStationView.Top = secondary.Bounds.Top;
+                tradeStationView.Width = secondary.Bounds.Width;
                 tradeStationView.Height = secondary.Bounds.Height;
             }
             else
             {
                 var primary = ScreenHelper.GetPrimaryScreen();
 
-                tradeStationView.Left   = primary.Bounds.Left;
-                tradeStationView.Top    = primary.Bounds.Top;
+                tradeStationView.Left = primary.Bounds.Left;
+                tradeStationView.Top = primary.Bounds.Top;
             }
 
             tradeStationView.ViewModel.Connector = _connector;
@@ -1149,7 +1145,7 @@ namespace FreemindTrader
         }
 
         private void _fxMainTradeStation_Closed( object sender, EventArgs e )
-        {            
+        {
             if ( sender is TradeStationView )
             {
                 var view = ( TradeStationView )sender;
@@ -1172,8 +1168,8 @@ namespace FreemindTrader
                     _connector.Disconnect();
                 }
 
-                GeneralHelper.CreateNewGlobalExitSource( );
-            }            
+                GeneralHelper.CreateNewGlobalExitSource();
+            }
         }
 
         private void CheckIfFractalAnalysisDllExist()
@@ -1201,8 +1197,8 @@ namespace FreemindTrader
                 {
                     if ( type.BaseType == typeof( DXRibbonWindow ) )
                     {
-                        _fxMainTradeStationType = type;                        
-                        
+                        _fxMainTradeStationType = type;
+
                         TradeStation.IsVisible = true;
                         FreemindResult.IsVisible = true;
 

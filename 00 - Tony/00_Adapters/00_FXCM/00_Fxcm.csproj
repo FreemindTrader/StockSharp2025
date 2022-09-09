@@ -10,8 +10,8 @@
         <RootNamespace>StockSharp.FxConnect</RootNamespace>
         <AssemblyName>StockSharp.FxConnect</AssemblyName>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <BaseOutputPath>T:\tonyfreemind\source\repos\10stocksharp\StockSharp\00 - Tony\40_Adapters\00_FXCM\bin</BaseOutputPath>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.1|AnyCPU'">
         <NoWarn>1701;1702;3001;3002;3003</NoWarn>
@@ -22,8 +22,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="fx.AlgoEx" Version="5.0.210" />
-      <PackageReference Include="fx.Base" Version="5.0.210" />
+      <PackageReference Include="fx.AlgoEx" Version="5.0.220" />
+      <PackageReference Include="fx.Base" Version="5.0.220" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\00FreemindBase\33_fxMessages\33_fxMessages.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -245,10 +249,14 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
+
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.223</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
 

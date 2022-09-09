@@ -1,30 +1,19 @@
-﻿using Ecng.Common;
+﻿using fx.Definitions;
 using StockSharp.Algo;
-using StockSharp.Algo.Candles;
-using StockSharp.Algo.Indicators;
-using StockSharp.Studio.Core.Commands;
-using fx.Charting;
+using StockSharp.Logging;
+using StockSharp.Messages;
 using System;
 using System.Collections.Generic;
-using fx.Algorithm;
-using static fx.Charting.ChartDrawDataEx;
-using fx.Collections;
-using fx.Bars;
-using SciChart.Charting.Model.DataSeries;
-using fx.Base;
-using StockSharp.Logging;
-using fx.Definitions;
-using StockSharp.Messages;
 
 namespace FreemindAITrade.ViewModels
 {
     public partial class LiveTradeViewModel
     {
         DateTime _reloadCandleFromDate = DateTime.MinValue;
-        DateTime _reloadCandleToDate = DateTime.MinValue;        
+        DateTime _reloadCandleToDate = DateTime.MinValue;
 
         public override void Step9_OnCandleStruct( ref CandleStruct cmd, bool endOfBatch )
-        {            
+        {
             if ( !_candles.TryGetValue( cmd.Series, out CandleSeriesData seriesData ) )
             {
                 return;
@@ -43,12 +32,12 @@ namespace FreemindAITrade.ViewModels
                     //continue;
                 }
 
-                (uint first, uint last ) barsRange = default;
+                (uint first, uint last) barsRange = default;
 
                 if ( _candleBuffer.Count > 2 && _reloadCandleFromDate != DateTime.MinValue && _reloadCandleToDate != DateTime.MinValue )
                 {
-                    var first = _candleBuffer[ 0 ].OpenTime.UtcDateTime;
-                    var last = _candleBuffer[ _candleBuffer.Count -1  ].OpenTime.UtcDateTime;
+                    var first = _candleBuffer[0].OpenTime.UtcDateTime;
+                    var last = _candleBuffer[_candleBuffer.Count - 1].OpenTime.UtcDateTime;
 
                     if ( first >= _reloadCandleFromDate && last <= _reloadCandleToDate )
                     {
@@ -63,12 +52,12 @@ namespace FreemindAITrade.ViewModels
                 {
                     barsRange = _bars.AddReplaceCandlesRange( SelectedSecurity, _candleBuffer, ResponsibleTF, _waveScenarioNumber );
                 }
-                    
+
                 if ( _isNonVisual )
                 {
                     return;
                 }
-                 
+
 
                 if ( barsRange != default )
                 {
@@ -83,24 +72,24 @@ namespace FreemindAITrade.ViewModels
                         return;
 
                     InternalDrawCandles( cmd.Series, seriesData.CandleUI, _bars.MainDataBars, barsRange );
-                }                
+                }
             }
         }
 
         public override void ReloadCandles()
         {
-            ( TimeSpan, ( long from, long to)  ) range =  _bars.GetSelectedBarTimeRange();            
+            (TimeSpan, (long from, long to)) range = _bars.GetSelectedBarTimeRange();
 
-            var subscription      = new Subscription(_candlesSeries);
+            var subscription = new Subscription( _candlesSeries );
 
             _reloadCandleFromDate = range.Item2.from.FromLinuxTime().Date;
-            _reloadCandleToDate   = range.Item2.to.FromLinuxTime().Date;
+            _reloadCandleToDate = range.Item2.to.FromLinuxTime().Date;
 
-            var mdMsg             = (MarketDataMessage)subscription.SubscriptionMessage;
-            mdMsg.From            = _reloadCandleFromDate;
-            mdMsg.To              = _reloadCandleToDate.AddDays( 1 ).AddSeconds( -1 );
-            mdMsg.Adapter         = null;            
-            
+            var mdMsg = ( MarketDataMessage )subscription.SubscriptionMessage;
+            mdMsg.From = _reloadCandleFromDate;
+            mdMsg.To = _reloadCandleToDate.AddDays( 1 ).AddSeconds( -1 );
+            mdMsg.Adapter = null;
+
             mdMsg.ExtensionInfo = new Dictionary<string, object>();
             mdMsg.ExtensionInfo.Add( "ReloadCandles", true );
 
@@ -108,17 +97,17 @@ namespace FreemindAITrade.ViewModels
 
             _reloadCandleToDate = _reloadCandleToDate.AddDays( 1 ).AddSeconds( -1 );
 
-            _connector.Subscribe( subscription );            
+            _connector.Subscribe( subscription );
         }
 
         public void RequestMarketDataFromLastBar( DateTimeOffset lastBarTime )
         {
-            var subscription      = new Subscription(_candlesSeries);
+            var subscription = new Subscription( _candlesSeries );
 
-            var mdMsg             = (MarketDataMessage)subscription.SubscriptionMessage;
-            mdMsg.From            = lastBarTime;
-            mdMsg.To              = DateTime.UtcNow; ;
-            mdMsg.Adapter         = null;
+            var mdMsg = ( MarketDataMessage )subscription.SubscriptionMessage;
+            mdMsg.From = lastBarTime;
+            mdMsg.To = DateTime.UtcNow; ;
+            mdMsg.Adapter = null;
 
 
             /* --------------------------------------------------------------------------------------------------

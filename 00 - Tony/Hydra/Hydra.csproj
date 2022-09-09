@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>net5.0-windows</TargetFramework>
+        <TargetFramework>net6.0-windows</TargetFramework>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -21,9 +21,9 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.220</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
         <OutputType>WinExe</OutputType>
         <ApplicationIcon>Properties\FreemindServer.ico</ApplicationIcon>
     </PropertyGroup>

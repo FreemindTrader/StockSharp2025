@@ -1,10 +1,7 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -16,9 +13,9 @@ namespace FreemindAITrade.ViewModels
 
         protected void OnParentViewModelChanged()
         {
-            _parent = ( ( TradeStationViewModel ) ParentViewModel );
+            _parent = ( ( TradeStationViewModel )ParentViewModel );
 
-           
+
         }
     }
 }

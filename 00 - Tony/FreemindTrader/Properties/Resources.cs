@@ -13,56 +13,56 @@ using System.Runtime.CompilerServices;
 
 namespace FreemindTrader.Properties
 {
-  [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
-  [DebuggerNonUserCode]
-  [CompilerGenerated]
-  internal class Resources
-  {
-    private static ResourceManager resourceMan;
-    private static CultureInfo resourceCulture;
-
-    internal Resources()
+    [GeneratedCode( "System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0" )]
+    [DebuggerNonUserCode]
+    [CompilerGenerated]
+    internal class Resources
     {
-    }
+        private static ResourceManager resourceMan;
+        private static CultureInfo resourceCulture;
 
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    internal static ResourceManager ResourceManager
-    {
-      get
-      {
-        if (FreemindTrader.Properties.Resources.resourceMan == null)
-          FreemindTrader.Properties.Resources.resourceMan = new ResourceManager("FreemindTrader.Properties.Resources", typeof (FreemindTrader.Properties.Resources).Assembly);
-        return FreemindTrader.Properties.Resources.resourceMan;
-      }
-    }
+        internal Resources()
+        {
+        }
 
-    [EditorBrowsable(EditorBrowsableState.Advanced)]
-    internal static CultureInfo Culture
-    {
-      get
-      {
-        return FreemindTrader.Properties.Resources.resourceCulture;
-      }
-      set
-      {
-        FreemindTrader.Properties.Resources.resourceCulture = value;
-      }
-    }
+        [EditorBrowsable( EditorBrowsableState.Advanced )]
+        internal static ResourceManager ResourceManager
+        {
+            get
+            {
+                if ( FreemindTrader.Properties.Resources.resourceMan == null )
+                    FreemindTrader.Properties.Resources.resourceMan = new ResourceManager( "FreemindTrader.Properties.Resources", typeof( FreemindTrader.Properties.Resources ).Assembly );
+                return FreemindTrader.Properties.Resources.resourceMan;
+            }
+        }
 
-    internal static string DefaultAreaLayout
-    {
-      get
-      {
-        return FreemindTrader.Properties.Resources.ResourceManager.GetString(nameof (DefaultAreaLayout), FreemindTrader.Properties.Resources.resourceCulture);
-      }
-    }
+        [EditorBrowsable( EditorBrowsableState.Advanced )]
+        internal static CultureInfo Culture
+        {
+            get
+            {
+                return FreemindTrader.Properties.Resources.resourceCulture;
+            }
+            set
+            {
+                FreemindTrader.Properties.Resources.resourceCulture = value;
+            }
+        }
 
-    internal static string DefaultLayout
-    {
-      get
-      {
-        return FreemindTrader.Properties.Resources.ResourceManager.GetString(nameof (DefaultLayout), FreemindTrader.Properties.Resources.resourceCulture);
-      }
+        internal static string DefaultAreaLayout
+        {
+            get
+            {
+                return FreemindTrader.Properties.Resources.ResourceManager.GetString( nameof( DefaultAreaLayout ), FreemindTrader.Properties.Resources.resourceCulture );
+            }
+        }
+
+        internal static string DefaultLayout
+        {
+            get
+            {
+                return FreemindTrader.Properties.Resources.ResourceManager.GetString( nameof( DefaultLayout ), FreemindTrader.Properties.Resources.resourceCulture );
+            }
+        }
     }
-  }
 }

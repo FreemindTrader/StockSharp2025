@@ -1,47 +1,33 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
-using Ecng.Common;
+﻿using DevExpress.Mvvm.DataAnnotations;
 using Ecng.ComponentModel;
-using Ecng.Serialization;
-using fx.Charting;
 using fx.Algorithm;
-using fx.Indicators;
+using fx.Bars;
 using fx.Definitions;
 using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Logging;
 using StockSharp.Studio.Core.Commands;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fx.Bars;
 
 namespace FreemindAITrade.ViewModels
 {
-    public partial class ChartTabViewModelBase 
+    public partial class ChartTabViewModelBase
     {
         public TimeSpan ResponsibleTF { get; set; }
 
-        public void Refresh( )
+        public void Refresh()
         {
-            _chartVM.Refresh( );
+            _chartVM.Refresh();
         }
 
-        
-        public void OnChartTabSelected( )
+
+        public void OnChartTabSelected()
         {
             if ( NeedToCenterOnBar )
             {
                 NeedToCenterOnBar = false;
 
                 var centerIndex = CenterViewOnThisBarTime;
-                DateTime selectedBarTime = SelectedCandleBarTime.FromLinuxTime( );
+                DateTime selectedBarTime = SelectedCandleBarTime.FromLinuxTime();
 
 
                 ChartVM.CenterViewOnTime( selectedBarTime );
@@ -61,19 +47,19 @@ namespace FreemindAITrade.ViewModels
             }
         }
 
-        public void StartChartDrawingTimerThread( )
+        public void StartChartDrawingTimerThread()
         {
             if ( _drawTimer != null )
             {
-                _drawTimer.Activate( );
+                _drawTimer.Activate();
             }
         }
 
-        public void StopTimerThread( )
+        public void StopTimerThread()
         {
             if ( _drawTimer != null )
             {
-                _drawTimer.Cancel( );
+                _drawTimer.Cancel();
 
                 _drawTimer = null;
             }
@@ -85,7 +71,7 @@ namespace FreemindAITrade.ViewModels
 
         }
 
-        
+
 
         public void ShowGannPriceTime( bool show )
         {
@@ -125,7 +111,7 @@ namespace FreemindAITrade.ViewModels
             _chartVM.ShowTradingTime( show );
         }
 
-        
+
 
         public void ShowCandlePattern( bool show )
         {
@@ -141,7 +127,7 @@ namespace FreemindAITrade.ViewModels
                 bar.IsSelected = true;
 
                 _chartVM.CenterViewOnIndexNow( selectedBarTime );
-            }            
+            }
         }
 
         string _caption;
@@ -172,18 +158,18 @@ namespace FreemindAITrade.ViewModels
         * ------------------------------------------------------------------------------------------------------------------------------------------- */
         public void SwitchToTimeFrameX( TimeSpan reponsible )
         {
-            Caption = reponsible.ToReadable( );
+            Caption = reponsible.ToReadable();
             Text = String.Format( "Document text ({0})", Caption );
             ResponsibleTF = reponsible;
 
-            _name = GetType( ).GetDisplayName( );
+            _name = GetType().GetDisplayName();
             _bars = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
 
             var aa = SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity );
 
             if ( aa != null )
             {
-                _hews = ( HewManager ) aa.HewManager;
+                _hews = ( HewManager )aa.HewManager;
             }
         }
 
@@ -227,7 +213,7 @@ namespace FreemindAITrade.ViewModels
             TabActivated?.Invoke( this );
         }
 
-        public void RaiseDoneDownloadBarsEvent( )
+        public void RaiseDoneDownloadBarsEvent()
         {
             DoneDownloadBarsEvent?.Invoke( this );
         }
@@ -243,11 +229,11 @@ namespace FreemindAITrade.ViewModels
 
             set
             {
-                SetValue(ref _quickOrderSecurity, value);
+                SetValue( ref _quickOrderSecurity, value );
             }
         }
 
-        public void SetQuickOrderPanel(Security security)
+        public void SetQuickOrderPanel( Security security )
         {
             QuickOrderSecurity = security;
         }
@@ -257,7 +243,7 @@ namespace FreemindAITrade.ViewModels
         [Command]
         public void SetupChart()
         {
-            if (!_isPaneLoaded)
+            if ( !_isPaneLoaded )
             {
                 RaiseTabeActivatedEvent();
 

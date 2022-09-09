@@ -4,7 +4,6 @@
 // MVID: C7FF2C7B-469F-4E71-BC76-9E79C0E574D9
 // Assembly location: T:\00-StockSharp\Terminal\Terminal.dll
 
-using DevExpress.Xpf.Docking;
 using Ecng.ComponentModel;
 using Ecng.Serialization;
 using Ecng.Xaml;
@@ -15,7 +14,6 @@ using StockSharp.Studio.Controls;
 using StockSharp.Studio.Core;
 using StockSharp.Studio.Core.Commands;
 using System;
-using System.Windows;
 using System.Windows.Markup;
 
 namespace FreemindTrader.Controls

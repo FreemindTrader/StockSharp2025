@@ -71,7 +71,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
                    )
                 {
                     var msg                   = new ExecutionMessage( );
-                    msg.ExecutionType         = ExecutionTypes.Transaction;
+                    msg.DataTypeEx         = DataType.Transactions;
                     msg.SecurityId            = pos.OfferID.ToSecurityId( );                    
 
                     var customId = pos.OpenOrderRequestTXT.Split(',').Select(x => x.Split('=')).Where(x => x.Length > 1 && !String.IsNullOrEmpty(x[0].Trim()) && !String.IsNullOrEmpty(x[1].Trim())).ToDictionary(x => x[0].Trim(), x => x[1].Trim());

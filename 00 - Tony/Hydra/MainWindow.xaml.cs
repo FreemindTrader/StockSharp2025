@@ -176,8 +176,8 @@ namespace StockSharp.Hydra
 
             ( ( Action )( () =>
                                 {
-                                    DatabaseProviderRegistry.AddProvider<LinqToDB.Data.DataConnection>( () => new LinqToDB.Data.DataConnection( LinqToDB.ProviderName.SqlServer2012, @"Server=.\;Database=SqlServer.2012;Trusted_Connection=True;Enlist=False;" ));
-                                    DatabaseProviderRegistry.AddProvider( () => new SQLiteDataProvider( "SQLite.MS" ) );
+                                    //DatabaseProviderRegistry.AddProvider<LinqToDB.Data.DataConnection>( () => new LinqToDB.Data.DataConnection( LinqToDB.ProviderName.SqlServer2012, @"Server=.\;Database=SqlServer.2012;Trusted_Connection=True;Enlist=False;" ));
+                                    //DatabaseProviderRegistry.AddProvider( () => new SQLiteDataProvider( "SQLite.MS" ) );
                                     DatabaseConnectionCache service = new DatabaseConnectionCache();
                                     ConfigManager.RegisterService( service );
 

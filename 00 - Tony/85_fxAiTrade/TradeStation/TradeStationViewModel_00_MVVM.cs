@@ -1,41 +1,20 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Mvvm.UI;
 using DevExpress.Xpf.Docking.Base;
-using StockSharp.Algo;
-using StockSharp.BusinessEntities;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using fx.Definitions;
-using fx.Common;
-using fx.Definitions.UndoRedo;
-using fx.Algorithm;
-using Ecng.Collections;
-using StockSharp.Logging;
-using fx.Indicators;
-using StockSharp.Localization;
-using fx.Charting;
-using System.Windows.Media;
-using StockSharp.Xaml;
-using StockSharp.Studio.Core.Configuration;
 using Ecng.Common;
-using StockSharp.Studio.Core.Services;
+using Ecng.Configuration;
 using Ecng.Serialization;
 using Ecng.Xaml;
-using StockSharp.Algo.Candles;
 using Freemind.Strategies;
-using Ecng.Configuration;
-using Disruptor;
+using fx.Algorithm;
+using fx.Charting;
+using fx.Definitions;
+using StockSharp.Algo.Candles;
+using StockSharp.Logging;
 using StockSharp.Messages;
+using StockSharp.Studio.Core.Configuration;
+using StockSharp.Xaml;
+using System;
+using System.Linq;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -46,19 +25,19 @@ namespace FreemindAITrade.ViewModels
         public virtual ChartPanelOrderSettings OrderSettings
         {
             get; set;
-        } = new ChartPanelOrderSettings( );
+        } = new ChartPanelOrderSettings();
 
         public virtual CandleDrawStyleImage SelectedCandleStyle
         {
             get;
             set;
-        } = CandleDrawStyleImages[ 1 ];
+        } = CandleDrawStyleImages[1];
 
         public virtual WaveCycleImage SelectedWaveCycle
         {
             get;
             set;
-        } = WaveCycleImages[ 14 ];
+        } = WaveCycleImages[14];
 
         protected void OnSelectedWaveCycleChanging( WaveCycleImage impt )
         {
@@ -74,7 +53,7 @@ namespace FreemindAITrade.ViewModels
         {
             get;
             set;
-        } = WaveImptImages[ 1 ];
+        } = WaveImptImages[1];
 
         protected void OnSelectedWaveImptChanging( WaveImptImage impt )
         {
@@ -98,7 +77,7 @@ namespace FreemindAITrade.ViewModels
 
         }
 
-        
+
 
         public virtual double MonthlyOpacityValue { get; set; } = 50;
         protected void OnMonthlyOpacityValueChanging( double newOpacity )
@@ -131,20 +110,20 @@ namespace FreemindAITrade.ViewModels
                     vm.ChartVM.ShowCandlePattern( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
-        
+
 
         public virtual bool ShowTradingTime { get; set; }
         protected void OnShowTradingTimeChanging( bool newBool )
         {
-            foreach (var vm in _intradayViewModels )
+            foreach ( var vm in _intradayViewModels )
             {
                 if ( vm.ChartVM != null )
                     vm.ChartVM.ShowTradingTime( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public virtual bool ShowFreemindIndicators { get; set; }
@@ -154,8 +133,8 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( _selectedViewModel.ChartVM != null )
                 {
-                    _selectedViewModel.Step01_ExecuteAddIndicatorArea( );
-                    
+                    _selectedViewModel.Step01_ExecuteAddIndicatorArea();
+
                 }
             }
             else
@@ -166,25 +145,25 @@ namespace FreemindAITrade.ViewModels
                 }
             }
 
-            foreach (var vm in _allVisibleViewModels )
+            foreach ( var vm in _allVisibleViewModels )
             {
                 if ( vm.ChartVM != null )
                     vm.ChartVM.ShowFreemindIndicators( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public virtual bool YAxisAutoRange { get; set; } = true;
         protected void OnYAxisAutoRangeChanging( bool newBool )
         {
-            foreach (var vm in _allVisibleViewModels )
+            foreach ( var vm in _allVisibleViewModels )
             {
                 if ( vm.ChartVM != null )
                     vm.ChartVM.YAxisAutoRange( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
 
@@ -192,13 +171,13 @@ namespace FreemindAITrade.ViewModels
         public virtual bool ShowElliottWave { get; set; }
         protected void OnShowElliottWaveChanging( bool newBool )
         {
-            foreach (var vm in _allVisibleViewModels )
+            foreach ( var vm in _allVisibleViewModels )
             {
                 if ( vm.ChartVM != null )
                     vm.ChartVM.ShowElliottWave( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public virtual bool StepByStepChecked { get; set; }
@@ -206,7 +185,7 @@ namespace FreemindAITrade.ViewModels
         {
             foreach ( var vm in _allVisibleViewModels )
             {
-                vm.StepByStep =  newBool;
+                vm.StepByStep = newBool;
             }
 
             _selectedViewModel.Refresh();
@@ -215,13 +194,13 @@ namespace FreemindAITrade.ViewModels
         public virtual bool ShowMonoWave { get; set; }
         protected void OnShowMonoWaveChanging( bool newBool )
         {
-            foreach (var vm in _allVisibleViewModels )
+            foreach ( var vm in _allVisibleViewModels )
             {
                 if ( vm.ChartVM != null )
                     vm.ChartVM.ShowMonoWave( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
 
@@ -235,7 +214,7 @@ namespace FreemindAITrade.ViewModels
                     vm.ChartVM.ShowHewDetection( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public virtual bool ShowDivergence { get; set; }
@@ -247,7 +226,7 @@ namespace FreemindAITrade.ViewModels
                     vm.ChartVM.ShowDivergence( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public virtual bool ShowSmallTradingEvent { get; set; }
@@ -259,7 +238,7 @@ namespace FreemindAITrade.ViewModels
                     vm.ChartVM.ShowSmallTradingEvent( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
 
@@ -274,7 +253,7 @@ namespace FreemindAITrade.ViewModels
                     vm.ChartVM.ShowGannPriceTime( newBool );
             }
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public virtual object SelectedPanel { get; set; }
@@ -291,7 +270,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( _selectedViewModel != null )
                 {
-                    _selectedViewModel.StartChartDrawingTimerThread( );
+                    _selectedViewModel.StartChartDrawingTimerThread();
 
                     var aa = SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _security );
 
@@ -299,7 +278,7 @@ namespace FreemindAITrade.ViewModels
 
                     if ( aa != null )
                     {
-                        elliottWaveManager = ( HewManager ) aa.HewManager;
+                        elliottWaveManager = ( HewManager )aa.HewManager;
                     }
                     else
                     {
@@ -310,7 +289,7 @@ namespace FreemindAITrade.ViewModels
 
                     _selectedUndoRedoArea = elliottWaveManager.GetSelectedUndoRedoArea( _selectedViewModel.ResponsibleTF );
 
-                    _selectedViewModel.OnChartTabSelected( );
+                    _selectedViewModel.OnChartTabSelected();
                 }
             }
         }
@@ -318,16 +297,16 @@ namespace FreemindAITrade.ViewModels
 
         public override void Load( SettingsStorage storage )
         {
-            ShowElliottWave        = storage.GetValue<bool>( nameof( ShowElliottWave        ) );
-            ShowCandlePattern      = storage.GetValue<bool>( nameof( ShowCandlePattern      ) );
-            ShowTradingTime        = storage.GetValue<bool>( nameof( ShowTradingTime        ) );
+            ShowElliottWave = storage.GetValue<bool>( nameof( ShowElliottWave ) );
+            ShowCandlePattern = storage.GetValue<bool>( nameof( ShowCandlePattern ) );
+            ShowTradingTime = storage.GetValue<bool>( nameof( ShowTradingTime ) );
             ShowFreemindIndicators = storage.GetValue<bool>( nameof( ShowFreemindIndicators ) );
-            YAxisAutoRange         = storage.GetValue<bool>( nameof( YAxisAutoRange         ) );
-            ShowMonoWave           = storage.GetValue<bool>( nameof( ShowMonoWave           ) );
-            ShowHewDetection       = storage.GetValue<bool>( nameof( ShowHewDetection       ) );
-            ShowDivergence         = storage.GetValue<bool>( nameof( ShowDivergence         ) );
-            ShowSmallTradingEvent  = storage.GetValue<bool>( nameof( ShowSmallTradingEvent  ) );
-            ShowGannPriceTime      = storage.GetValue<bool>( nameof( ShowGannPriceTime      ) );
+            YAxisAutoRange = storage.GetValue<bool>( nameof( YAxisAutoRange ) );
+            ShowMonoWave = storage.GetValue<bool>( nameof( ShowMonoWave ) );
+            ShowHewDetection = storage.GetValue<bool>( nameof( ShowHewDetection ) );
+            ShowDivergence = storage.GetValue<bool>( nameof( ShowDivergence ) );
+            ShowSmallTradingEvent = storage.GetValue<bool>( nameof( ShowSmallTradingEvent ) );
+            ShowGannPriceTime = storage.GetValue<bool>( nameof( ShowGannPriceTime ) );
 
             var waveCycle = storage.GetValue<ElliottWaveCycle>( nameof( SelectedWaveCycle ) );
 
@@ -335,7 +314,7 @@ namespace FreemindAITrade.ViewModels
 
             if ( index > -1 )
             {
-                SelectedWaveCycle = WaveCycleImages[ index ];
+                SelectedWaveCycle = WaveCycleImages[index];
             }
 
             var waveImpt = storage.GetValue<int>( nameof( SelectedWaveImpt ) );
@@ -344,7 +323,7 @@ namespace FreemindAITrade.ViewModels
 
             if ( index2 > -1 )
             {
-                SelectedWaveImpt = WaveImptImages[ index2 ];
+                SelectedWaveImpt = WaveImptImages[index2];
             }
         }
 
@@ -353,48 +332,48 @@ namespace FreemindAITrade.ViewModels
             if ( storage is null )
                 throw new ArgumentNullException( nameof( storage ) );
 
-            storage.SetValue( nameof( ShowElliottWave        ), ShowElliottWave        );
-            storage.SetValue( nameof( ShowCandlePattern      ), ShowCandlePattern      );
-            storage.SetValue( nameof( ShowTradingTime        ), ShowTradingTime        );
+            storage.SetValue( nameof( ShowElliottWave ), ShowElliottWave );
+            storage.SetValue( nameof( ShowCandlePattern ), ShowCandlePattern );
+            storage.SetValue( nameof( ShowTradingTime ), ShowTradingTime );
             storage.SetValue( nameof( ShowFreemindIndicators ), ShowFreemindIndicators );
-            storage.SetValue( nameof( YAxisAutoRange         ), YAxisAutoRange         );
-            storage.SetValue( nameof( ShowMonoWave           ), ShowMonoWave           );
-            storage.SetValue( nameof( ShowHewDetection       ), ShowHewDetection       );
-            storage.SetValue( nameof( ShowDivergence         ), ShowDivergence         );
-            storage.SetValue( nameof( ShowSmallTradingEvent  ), ShowSmallTradingEvent  );
-            storage.SetValue( nameof( ShowGannPriceTime      ), ShowGannPriceTime      );
-            storage.SetValue( nameof( SelectedWaveCycle      ), SelectedWaveCycle.WaveCycle );
-            storage.SetValue( nameof( SelectedWaveImpt       ), SelectedWaveImpt.WaveImportance );
+            storage.SetValue( nameof( YAxisAutoRange ), YAxisAutoRange );
+            storage.SetValue( nameof( ShowMonoWave ), ShowMonoWave );
+            storage.SetValue( nameof( ShowHewDetection ), ShowHewDetection );
+            storage.SetValue( nameof( ShowDivergence ), ShowDivergence );
+            storage.SetValue( nameof( ShowSmallTradingEvent ), ShowSmallTradingEvent );
+            storage.SetValue( nameof( ShowGannPriceTime ), ShowGannPriceTime );
+            storage.SetValue( nameof( SelectedWaveCycle ), SelectedWaveCycle.WaveCycle );
+            storage.SetValue( nameof( SelectedWaveImpt ), SelectedWaveImpt.WaveImportance );
         }
 
-        public void SaveSettings( )
+        public void SaveSettings()
         {
-            StudioUserConfig userConfig = UserConfig;                        
+            StudioUserConfig userConfig = UserConfig;
 
-            UserConfig.SetDelayValue( "TradeStationChartsSettings", ( ) => GuiDispatcher.GlobalDispatcher.AddSyncAction( ( ) => this.Save( ) ) );
+            UserConfig.SetDelayValue( "TradeStationChartsSettings", () => GuiDispatcher.GlobalDispatcher.AddSyncAction( () => this.Save() ) );
         }
 
-        private void TonyOnRefreshEvent( )
+        private void TonyOnRefreshEvent()
         {
             foreach ( var vm in _allVisibleViewModels )
             {
                 vm.SetQuickOrderPanel( _security );
             }
-            
-            UpdateTimeframe( );
+
+            UpdateTimeframe();
         }
 
 
         private bool _isUpdatingTfSelecto;
 
-        private void UpdateTimeframe( )
+        private void UpdateTimeframe()
         {
             if ( _isUpdatingTfSelecto )
                 return;
             _isUpdatingTfSelecto = true;
             try
             {
-                if ( _selectedViewModel  != null )
+                if ( _selectedViewModel != null )
                 {
                     CandleSeries rebuiltSeries = _selectedViewModel.ChartVM.CandleSeriesRebuilt;
 
@@ -403,20 +382,20 @@ namespace FreemindAITrade.ViewModels
                         object period = rebuiltSeries.Arg;
                         if ( period is TimeSpan )
                         {
-                            TimeSpan timeSpan = (TimeSpan) period;
+                            TimeSpan timeSpan = ( TimeSpan )period;
                             if ( _timeFrames.Contains( timeSpan ) )
                             {
                                 SelectedTimeFrame = timeSpan;
                                 return;
                             }
 
-                            SelectedTimeFrame = _timeFrames[ 0 ];
+                            SelectedTimeFrame = _timeFrames[0];
                             return;
                         }
                     }
 
-                    SelectedTimeFrame = _timeFrames[ 0 ];
-                }                
+                    SelectedTimeFrame = _timeFrames[0];
+                }
             }
             finally
             {
@@ -432,7 +411,7 @@ namespace FreemindAITrade.ViewModels
                 return;
             _isUpdatingTfSelecto = true;
             try
-            {                
+            {
                 if ( !( timeSpan > TimeSpan.Zero ) )
                     return;
 
@@ -444,7 +423,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( aa != null )
                 {
-                    elliottWaveManager = ( HewManager ) aa.HewManager;
+                    elliottWaveManager = ( HewManager )aa.HewManager;
                 }
                 else
                 {
@@ -453,7 +432,7 @@ namespace FreemindAITrade.ViewModels
 
                 elliottWaveManager.SwitchTimeFrame( this, timeSpan );
 
-                _selectedUndoRedoArea = elliottWaveManager.GetSelectedUndoRedoArea( timeSpan );                
+                _selectedUndoRedoArea = elliottWaveManager.GetSelectedUndoRedoArea( timeSpan );
 
                 _selectedViewModel.ChartVM.LoadCandlesOfXTimeFrame( timeSpan );
             }
@@ -473,34 +452,34 @@ namespace FreemindAITrade.ViewModels
 
             if ( OrderSettings.Portfolio == null )
             {
-                var PortfolioSource = ConfigManager.GetService< PortfolioDataSource >( );
+                var PortfolioSource = ConfigManager.GetService<PortfolioDataSource>();
 
                 setupOkay = ShowPortfolioDialog( PortfolioSource );
-                
+
                 //if ( wnd.ShowModal( this ) )
                 //    OrderSettings.Portfolio = wnd.SelectedPortfolio;
             }
 
             if ( setupOkay )
             {
-                _fxStrategy = new FreemindStrategy( ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _security ) )
+                _fxStrategy = new FreemindStrategy( ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _security ) )
                 {
                     Security = _security,
                     Connector = _liveTradingConnector,
                     Portfolio = _selectedPortfolio
                 };
-                
-                _fxStrategy.Start( );
+
+                _fxStrategy.Start();
             }
 
-            
+
         }
 
         public void StopStrategy()
         {
             if ( _fxStrategy != null )
             {
-                _fxStrategy.Stop( );
+                _fxStrategy.Stop();
             }
 
         }
@@ -512,7 +491,7 @@ namespace FreemindAITrade.ViewModels
             _backTestingConnector.Connect();
             _backTestingConnector.Start();
 
-            StartRingBuffer( );
+            StartRingBuffer();
 
             _backTestingConnector.CandleSeriesProcessing += RingBufferCandleSeriesProcessing;
 
@@ -524,23 +503,23 @@ namespace FreemindAITrade.ViewModels
             return _symbolSelected;
         }
 
-        
+
 
         public void PauseSimulation()
         {
             if ( SimulationState == ChannelStates.Suspended )
-            {                
+            {
                 SimulationState = ChannelStates.Starting;
-                _backTestingConnector.Start( );
-                _candlesDisruptor.Resume( );
+                _backTestingConnector.Start();
+                _candlesDisruptor.Resume();
             }
             else
             {
                 SimulationState = ChannelStates.Suspended;
                 _backTestingConnector.Suspend();
-                _candlesDisruptor.Halt( );
-            }            
-        }        
+                _candlesDisruptor.Halt();
+            }
+        }
 
         public void StepByStep()
         {
@@ -578,7 +557,7 @@ namespace FreemindAITrade.ViewModels
                 if ( _state == value )
                     return;
 
-                _state = value;                
+                _state = value;
             }
         }
     }

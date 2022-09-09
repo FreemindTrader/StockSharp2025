@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DevExpress.Xpf.Grid;
+using DevExpress.Xpf.Grid.Native;
+using System;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DevExpress.Xpf.Grid;
-using DevExpress.Xpf.Grid.Native;
 
 namespace FreemindTrader
 {
@@ -22,16 +13,16 @@ namespace FreemindTrader
     public partial class SupportResistanceView : UserControl
     {
         SupportResistanceViewModel _vm;
-         
-        public SupportResistanceView( )
+
+        public SupportResistanceView()
         {
-            InitializeComponent( );
+            InitializeComponent();
 
             _vm = ( SupportResistanceViewModel )DataContext;
 
         }
 
-        
+
 
         double dataRowHeightCore;
         double DataRowHeight
@@ -74,7 +65,7 @@ namespace FreemindTrader
         private void View_FocusedRowChanged( object sender, FocusedRowChangedEventArgs e )
         {
             //var rowHandle =  View.FocusedRowHandle;
-            
+
         }
     }
 }

@@ -3,23 +3,19 @@ using DevExpress.Xpf.Docking;
 using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
-using fx.Charting;
 using fx.Algorithm;
-using fx.Indicators;
+using fx.Bars;
+using fx.Charting;
 using fx.Definitions;
+using fx.Indicators;
 using StockSharp.Localization;
 using StockSharp.Logging;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fx.Bars;
-
 using System.Diagnostics;
-using StockSharp.Algo.Indicators;
+
+using System.Linq;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -78,7 +74,7 @@ namespace FreemindAITrade.ViewModels
         {
             if ( Parameter is ChartExViewModel )
             {
-                ChartVM = ( ChartExViewModel ) Parameter;
+                ChartVM = ( ChartExViewModel )Parameter;
             }
         }
 
@@ -98,7 +94,7 @@ namespace FreemindAITrade.ViewModels
 
         protected override void OnParentViewModelChanged( object parentViewModel )
         {
-            _parentVM = ( TradeStationViewModel ) parentViewModel;
+            _parentVM = ( TradeStationViewModel )parentViewModel;
 
             base.OnParentViewModelChanged( parentViewModel );
         }
@@ -356,8 +352,8 @@ namespace FreemindAITrade.ViewModels
         }
 
         public virtual void AnalysisWave()
-        { 
-        
+        {
+
         }
 
 
@@ -421,10 +417,10 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( _stepByStep == value )
                     return;
-                _stepByStep = value;                
+                _stepByStep = value;
             }
         }
-        
+
 
         protected HewManager _hews = null;
 
@@ -462,7 +458,7 @@ namespace FreemindAITrade.ViewModels
 
         protected void FillIndicators()
         {
-            var allIndicators = ChartHelper.GetIndicatorTypes( );
+            var allIndicators = ChartHelper.GetIndicatorTypes();
 
             ChartVM.IndicatorTypes.Clear();
 
@@ -471,7 +467,7 @@ namespace FreemindAITrade.ViewModels
 
         public virtual void ReloadCandles()
         {
-            
-        }        
+
+        }
     }
 }

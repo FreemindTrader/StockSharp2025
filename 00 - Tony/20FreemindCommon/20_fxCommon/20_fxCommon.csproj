@@ -21,16 +21,19 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.212</Version>
+        <Version>5.0.221</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Collections" Version="5.0.212" />
-        <PackageReference Include="fx.Definitions" Version="5.0.212" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.212" />
+        <PackageReference Include="fx.Collections" Version="5.0.220" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
         <PackageReference Include="Nager.Date" Version="1.200.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

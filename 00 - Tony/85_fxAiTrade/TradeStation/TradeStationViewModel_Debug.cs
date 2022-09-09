@@ -1,30 +1,12 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Mvvm.UI;
-using DevExpress.Xpf.Docking.Base;
-using StockSharp.Algo;
-using StockSharp.BusinessEntities;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using fx.Definitions;
-using fx.Common;
-using fx.Definitions.UndoRedo;
 using fx.Algorithm;
-using Ecng.Collections;
-using StockSharp.Logging;
-using fx.Indicators;
-using DevExpress.Xpf.Bars;
 using fx.Database;
+using fx.Definitions;
+using fx.Definitions.UndoRedo;
+using StockSharp.Logging;
+using System;
 using System.Data.Common;
+using System.Linq;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -33,7 +15,7 @@ namespace FreemindAITrade.ViewModels
         public void CopyBarTimeToClipboard()
         {
             _selectedViewModel.CopyBarTimeToClipboard();
-        }        
+        }
 
         public void TestTTS()
         {
@@ -67,13 +49,13 @@ namespace FreemindAITrade.ViewModels
 
         }
 
-        public void ConvertEWaveTable( )
+        public void ConvertEWaveTable()
         {
             var debugUndo = new UndoRedoArea( "Debug" );
 
             using ( debugUndo.Start( "ConvertEWaveTable" ) )
             {
-                using ( var context = new ForexDatabars( ) )
+                using ( var context = new ForexDatabars() )
                 {
                     var allWaves = context.ELLIOTTWAVE;
 
@@ -81,7 +63,7 @@ namespace FreemindAITrade.ViewModels
                     {
                         try
                         {
-                            DateTimeOffset myDt = wave.StartDate.FromLinuxTime( );
+                            DateTimeOffset myDt = wave.StartDate.FromLinuxTime();
                             wave.WaveDate = myDt;
                         }
                         catch ( DbException ex )
@@ -130,7 +112,7 @@ namespace FreemindAITrade.ViewModels
 
                     try
                     {
-                        context.SaveChanges( );
+                        context.SaveChanges();
                     }
                     catch ( DbException ex )
                     {
@@ -142,6 +124,6 @@ namespace FreemindAITrade.ViewModels
             }
         }
 
-        
+
     }
 }

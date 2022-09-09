@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{FA920120-5CA3-4972-BDC1-7318855BF3A8}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <OutputType>WinExe</OutputType>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
@@ -24,25 +24,26 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.220</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0-windows|AnyCPU'">
-      <NoWarn>1701;1702;MSB3270</NoWarn>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0-windows|AnyCPU'">
-      <NoWarn>1701;1702;MSB3270</NoWarn>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|AnyCPU'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0-windows|x64'">
-      <NoWarn>1701;1702;MSB3270</NoWarn>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|x64'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0-windows|x64'">
-      <NoWarn>1701;1702;MSB3270</NoWarn>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|x64'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
@@ -183,19 +184,19 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
-      <PackageReference Include="fx.DefintionsWnd" Version="5.0.212" />
-      <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
-      <PackageReference Include="StockSharp.Alerts.Interfaces" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Configuration.Adapters" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.96" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="fx.DefintionsWnd" Version="5.0.220" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
+        <PackageReference Include="StockSharp.Alerts.Interfaces" Version="5.0.220" />
+        <PackageReference Include="StockSharp.Configuration.Adapters" Version="5.0.220" />
+        <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
+        <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
     </ItemGroup>
 
-    
-    
+
+
     <ItemGroup>
         <Resource Include="layout\defaultarealayout.json" />
         <Resource Include="layout\defaultlayout.json" />
@@ -203,8 +204,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="DevExpress.Xpf.Gauges.v21.1">
-            <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\NetCore\DevExpress.Xpf.Gauges.v21.1.dll</HintPath>
+        <Reference Include="DevExpress.Xpf.Gauges.v22.1">
+          <HintPath>C:\Program Files\DevExpress 22.1\Components\Bin\NetCore\DevExpress.Xpf.Gauges.v22.1.dll</HintPath>
         </Reference>
         <Reference Include="SciChart.Charting">
             <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.dll</HintPath>
@@ -235,6 +236,9 @@
         <Resource Include="Properties\FreemindTrader.ico" />
         <Resource Include="SvgImages\fmResult.svg" />
         <Resource Include="SvgImages\fxtrader3.svg" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

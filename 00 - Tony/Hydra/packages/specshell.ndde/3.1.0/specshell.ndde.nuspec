@@ -12,13 +12,13 @@
     <tags>Dde Client Server Dynamic Data Exchange Library Windows</tags>
     <repository type="git" url="https://github.com/Specshell/specshell.software.ndde" branch="tags/v3.1.0" commit="f433bb7e8a56a767c814a97a0545d0bf2f246095" />
     <dependencies>
-      <group targetFramework="net5.0-windows7.0">
+      <group targetFramework="net6.0-windows7.0">
         <dependency id="Specshell.WinForm.HiddenForm" version="1.0.0" exclude="Build,Analyzers" />
         <dependency id="System.Text.Encoding.CodePages" version="5.0.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <frameworkReferences>
-      <group targetFramework="net5.0-windows7.0">
+      <group targetFramework="net6.0-windows7.0">
         <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
       </group>
     </frameworkReferences>

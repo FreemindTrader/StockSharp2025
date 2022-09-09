@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <NoWarn>CA1416</NoWarn>
@@ -22,16 +22,14 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.224</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Bars" Version="5.0.213" />
-        <PackageReference Include="fx.Collections" Version="5.0.212" />
-        <PackageReference Include="fx.Definitions" Version="5.0.212" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.212" />
+        <PackageReference Include="fx.Collections" Version="5.0.220" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
 
     </ItemGroup>
 

@@ -1,32 +1,19 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
-using Ecng.Common;
-using Ecng.Serialization;
+﻿using fx.Bars;
 using fx.Charting;
-using fx.Algorithm;
-using fx.Indicators;
 using fx.Definitions;
+using fx.Indicators;
 using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Logging;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fx.Bars;
 
 namespace FreemindAITrade.ViewModels
 {
     public interface IChartTabViewModel
     {
         int WaveScenarioNumber { get; set; }
-        FreemindIndicator FreemindIndicator { get;  }
+        FreemindIndicator FreemindIndicator { get; }
         PivotPointsCustom PivotPointIndicator { get; }
-        ChartExViewModel ChartVM { get;  }
+        ChartExViewModel ChartVM { get; }
         long SelectedCandleBarTime { get; set; }
         string TargetName { get; set; }
 
@@ -37,27 +24,27 @@ namespace FreemindAITrade.ViewModels
 
         fxHistoricBarsRepo DatabarRepo { get; }
 
-        void OnChartTabSelected( );
-        void Refresh( );
-        
+        void OnChartTabSelected();
+        void Refresh();
+
 
         void CenterViewOnTime( DateTime selectedBarTime );
 
-        void CenterViewOnIndexNow(  DateTime selectedBarTime );
+        void CenterViewOnIndexNow( DateTime selectedBarTime );
 
-        void StartChartDrawingTimerThread( );
+        void StartChartDrawingTimerThread();
 
-        void StopTimerThread( );
+        void StopTimerThread();
 
         void SetQuickOrderPanel( Security security );
 
         TimeSpan ResponsibleTF { get; set; }
 
-        event Action<IChartTabViewModel > TabActivated;
+        event Action<IChartTabViewModel> TabActivated;
         event Action<IChartTabViewModel> CandlesLoadedEvent;
-        event Action<IChartTabViewModel>  DoneDownloadBarsEvent;
+        event Action<IChartTabViewModel> DoneDownloadBarsEvent;
 
-        void UnRegisterCommandsAndEvents( );
+        void UnRegisterCommandsAndEvents();
 
         void AddWaveOneToChart( int waveScenarioNo, ElliottWaveCycle waveCycle, ElliottWaveEnum elliottWave );
 
@@ -83,29 +70,29 @@ namespace FreemindAITrade.ViewModels
 
         void MarkPrimary();
 
-        void AnalyzeWaveTarget( );            
+        void AnalyzeWaveTarget();
 
-        void LockWavesInDB( );
+        void LockWavesInDB();
 
-        void SwitchToTimeFrameX( TimeSpan reponsible );        
+        void SwitchToTimeFrameX( TimeSpan reponsible );
 
-        void CopyBarTimeToClipboard( );
+        void CopyBarTimeToClipboard();
 
         void FindAndLoadDatabarsLowerTimeFrame( int waveScenarioNo );
 
         void FindAndLoadDatabarsHigherTimeFrame( int waveScenarioNo );
 
-        void StartSimulation( );
+        void StartSimulation();
         bool StepByStep { get; set; }
 
         void ReloadCandles();
 
-        void Step01_ExecuteAddChartArea( );
-        
-        void Step01_ExecuteAddIndicatorArea( );
+        void Step01_ExecuteAddChartArea();
+
+        void Step01_ExecuteAddIndicatorArea();
 
         void Step3_LoadCandlesFromLocalStorage_NonVisual();
 
-        void AnalysisWave( );
+        void AnalysisWave();
     }
 }

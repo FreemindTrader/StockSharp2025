@@ -1,25 +1,20 @@
 ﻿using DevExpress.Xpf.Core;
 using Ecng.Collections;
 using Ecng.Common;
-using Ecng.Xaml;
 using StockSharp.Algo;
 using StockSharp.Algo.Storages;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Logging;
-using StockSharp.Xaml;
+using StockSharp.Messages;
+using StockSharp.Studio.Controls;
+using StockSharp.Studio.Core.Commands;
 using StockSharp.Xaml.PropertyGrid;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
-using StockSharp.Messages;
-using StockSharp.Studio.Core.Configuration;
-using StockSharp.Studio.Core.Commands;
-using StockSharp.Studio.Controls;
 
 namespace FreemindAITrade.View
 {
@@ -68,17 +63,17 @@ namespace FreemindAITrade.View
         {
             get;
         }
-        
+
 
         /// <summary>
         /// Запустить.
         /// </summary>
-        void Start( );
+        void Start();
 
         /// <summary>
         /// Остановить.
         /// </summary>
-        void Stop( );
+        void Stop();
 
         /// <summary>
         /// Поддерживаемые типы данных.
@@ -107,17 +102,17 @@ namespace FreemindAITrade.View
         /// <summary>
         /// Событие о загрузке маркет-данных.
         /// </summary>
-        event Action< Security, DataType, DateTimeOffset, int, IEnumerable< Message > > DataLoaded;
+        event Action<Security, DataType, DateTimeOffset, int, IEnumerable<Message>> DataLoaded;
 
         /// <summary>
         /// Событие запуска.
         /// </summary>
-        event Action< IHydraTask > Started;
+        event Action<IHydraTask> Started;
 
         /// <summary>
         /// Событие остановки.
         /// </summary>
-        event Action< IHydraTask > Stopped;
+        event Action<IHydraTask> Stopped;
 
         /// <summary>
         /// Текущее состояние задачи.
@@ -143,11 +138,11 @@ namespace FreemindAITrade.View
         {
             get
             {
-                return SecuritiesSelected.Securities.LookupAll( );
+                return SecuritiesSelected.Securities.LookupAll();
             }
             set
             {
-                SelectSecurities( value.ToArray( ) );
+                SelectSecurities( value.ToArray() );
             }
         }
 
@@ -178,21 +173,21 @@ namespace FreemindAITrade.View
             }
         }
 
-        public SecuritiesWindowView( )
+        public SecuritiesWindowView()
         {
-            InitializeComponent( );
+            InitializeComponent();
 
             SecuritiesAll.SecurityDoubleClick += security =>
             {
                 if ( security == null )
                     return;
-                SelectSecurities( new Security[ 1 ] { security } );
+                SelectSecurities( new Security[1] { security } );
             };
             SecuritiesSelected.SecurityDoubleClick += security =>
             {
                 if ( security == null )
                     return;
-                UnselectSecurities( new Security[ 1 ] { security } );
+                UnselectSecurities( new Security[1] { security } );
             };
         }
 
@@ -222,7 +217,7 @@ namespace FreemindAITrade.View
             SecuritiesSelected.Securities.AddRange( securities );
             if ( !AllowDuplicates )
                 SecuritiesAll.ExcludeSecurities.AddRange( securities );
-            EnableOk( );
+            EnableOk();
         }
 
         private void UnselectSecurities( Security[ ] securities )
@@ -230,36 +225,36 @@ namespace FreemindAITrade.View
             SecuritiesSelected.Securities.RemoveRange( securities );
             if ( !AllowDuplicates )
                 SecuritiesAll.ExcludeSecurities.RemoveRange( securities );
-            EnableOk( );
+            EnableOk();
         }
 
         private void ExecutedSelectSecurity( object sender, ExecutedRoutedEventArgs e )
         {
-            SelectSecurities( SecuritiesAll.SelectedSecurities.ToArray( ) );
+            SelectSecurities( SecuritiesAll.SelectedSecurities.ToArray() );
         }
 
         private void CanExecuteSelectSecurity( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = SecuritiesAll.SelectedSecurities.Any( );
+            e.CanExecute = SecuritiesAll.SelectedSecurities.Any();
         }
         private void ExecutedUnselectSecurity( object sender, ExecutedRoutedEventArgs e )
         {
-            UnselectSecurities( SecuritiesSelected.SelectedSecurities.ToArray( ) );
+            UnselectSecurities( SecuritiesSelected.SelectedSecurities.ToArray() );
         }
 
         private void CanExecuteUnselectSecurity( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = SecuritiesSelected.SelectedSecurities.Any( );
+            e.CanExecute = SecuritiesSelected.SelectedSecurities.Any();
         }
 
-        private void EnableOk( )
+        private void EnableOk()
         {
             Ok.IsEnabled = true;
         }
 
         private void LookupPanel_OnLookup( Security filter )
         {
-            SecuritiesAll.Securities.Clear( );
+            SecuritiesAll.Securities.Clear();
             new LookupSecuritiesCommand( filter ).Process( this, false );
         }
 

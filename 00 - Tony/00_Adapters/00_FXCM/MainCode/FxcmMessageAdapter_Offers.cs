@@ -2386,7 +2386,7 @@ namespace StockSharp.FxConnectFXCM
                                         {
                                             var tickMsg           = new ExecutionMessage( );
                                             tickMsg.SecurityId    = securityId;
-                                            tickMsg.ExecutionType = ExecutionTypes.Tick;
+                                            tickMsg.DataTypeEx = DataType.Ticks;
                                             tickMsg.ServerTime    = tickBar.BarTime;
                                             tickMsg.TradePrice    = tickBar.Price;  
                                             
@@ -2439,7 +2439,7 @@ namespace StockSharp.FxConnectFXCM
                     {
                         var tickMsg = new ExecutionMessage( );
                         tickMsg.SecurityId = securityId;
-                        tickMsg.ExecutionType = ExecutionTypes.Tick;
+                        tickMsg.DataTypeEx = DataType.Ticks;
                         tickMsg.ServerTime = tickBar.BarTime;
                         tickMsg.TradePrice = tickBar.Price;
 
