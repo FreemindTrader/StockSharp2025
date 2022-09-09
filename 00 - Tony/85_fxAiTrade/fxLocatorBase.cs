@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FreemindAITrade
 {
@@ -20,7 +18,7 @@ namespace FreemindAITrade
 #if NETFX_CORE
 					entryAssembly = Assembly.GetEntryAssembly();
 #else
-                    entryAssembly = Assembly.GetEntryAssembly( );
+                    entryAssembly = Assembly.GetEntryAssembly();
 #endif
                 }
                 return entryAssembly;
@@ -29,10 +27,10 @@ namespace FreemindAITrade
         }
         protected abstract IEnumerable<Assembly> Assemblies { get; }
 
-        PooledDictionary<string, Type> _registeredTypes        = new PooledDictionary<string, Type>();
+        PooledDictionary<string, Type> _registeredTypes = new PooledDictionary<string, Type>();
         PooledDictionary<string, Type> _shortNameToTypeMapping = new PooledDictionary<string, Type>();
-        PooledDictionary<string, Type> _fullNameToTypeMapping  = new PooledDictionary<string, Type>();
-        
+        PooledDictionary<string, Type> _fullNameToTypeMapping = new PooledDictionary<string, Type>();
+
         IEnumerator<Type> enumerator;
 
         public void RegisterType( string name, Type type )
@@ -50,13 +48,13 @@ namespace FreemindAITrade
                 return type;
             if ( _shortNameToTypeMapping.TryGetValue( name, out type ) || _fullNameToTypeMapping.TryGetValue( name, out type ) )
                 return type;
-            if ( enumerator == null ) enumerator = GetTypes( );
-            while ( enumerator.MoveNext( ) )
+            if ( enumerator == null ) enumerator = GetTypes();
+            while ( enumerator.MoveNext() )
             {
                 if ( !_fullNameToTypeMapping.ContainsKey( enumerator.Current.FullName ) )
                 {
-                    _shortNameToTypeMapping[ enumerator.Current.Name ] = enumerator.Current;
-                    _fullNameToTypeMapping[ enumerator.Current.FullName ] = enumerator.Current;
+                    _shortNameToTypeMapping[enumerator.Current.Name] = enumerator.Current;
+                    _fullNameToTypeMapping[enumerator.Current.FullName] = enumerator.Current;
                 }
                 if ( enumerator.Current.Name == name || enumerator.Current.FullName == name )
                     return enumerator.Current;
@@ -66,18 +64,18 @@ namespace FreemindAITrade
         protected string ResolveTypeName( Type type, IDictionary<string, string> properties )
         {
             if ( type == null ) return null;
-            var props = CreateTypeProperties(properties);
+            var props = CreateTypeProperties( properties );
             return props + type.FullName;
         }
-        protected virtual IEnumerator<Type> GetTypes( )
+        protected virtual IEnumerator<Type> GetTypes()
         {
             foreach ( Assembly asm in Assemblies )
             {
-                Type[] types = new Type[] { };
+                Type[ ] types = new Type[ ] { };
                 try
                 {
 #if !NETFX_CORE
-                    types = asm.GetTypes( );
+                    types = asm.GetTypes();
 #else
 					types = asm.GetTypes();
 #endif
@@ -97,27 +95,27 @@ namespace FreemindAITrade
         {
             Func<string, string> getPropName = x =>
             {
-                var ind = x.IndexOf('=');
-                return ind == -1 ? null : x.Substring(0, ind);
+                var ind = x.IndexOf( '=' );
+                return ind == -1 ? null : x.Substring( 0, ind );
             };
             Func<string, string> getPropValue = x =>
             {
-                var ind1 = x.IndexOf('=');
-                var ind2 = x.IndexOf(';');
-                if(ind1 == -1 || ind2 == -1) return null;
-                return x.Substring(ind1 + 1, ind2 - ind1 - 1);
+                var ind1 = x.IndexOf( '=' );
+                var ind2 = x.IndexOf( ';' );
+                if ( ind1 == -1 || ind2 == -1 ) return null;
+                return x.Substring( ind1 + 1, ind2 - ind1 - 1 );
             };
             Func<string, string> removeProp = x =>
             {
-                var ind = x.IndexOf(';');
-                return x.Remove(0, ind + 1);
+                var ind = x.IndexOf( ';' );
+                return x.Remove( 0, ind + 1 );
             };
-            properties = new PooledDictionary<string, string>( );
+            properties = new PooledDictionary<string, string>();
             if ( string.IsNullOrEmpty( name ) ) return;
             while ( true )
             {
-                var propName = getPropName(name);
-                var propValue = getPropValue(name);
+                var propName = getPropName( name );
+                var propValue = getPropValue( name );
                 if ( propName == null || propValue == null ) break;
                 properties.Add( propName, propValue );
                 name = removeProp( name );
@@ -155,7 +153,7 @@ namespace FreemindAITrade
 #else
                 var parameterlessCtor = type.GetConstructor(
                     BindingFlags.CreateInstance | BindingFlags.Public | BindingFlags.Instance,
-                    null, new Type[] { }, null);
+                    null, new Type[ ] { }, null );
                 if ( parameterlessCtor != null )
                     res = parameterlessCtor.Invoke( null );
                 if ( res == null )
@@ -168,9 +166,9 @@ namespace FreemindAITrade
             }
             catch ( Exception e )
             {
-                throw new LocatorException( GetType( ).Name, typeName, e );
+                throw new LocatorException( GetType().Name, typeName, e );
             }
-            if ( res == null ) throw new LocatorException( GetType( ).Name, typeName, null );
+            if ( res == null ) throw new LocatorException( GetType().Name, typeName, null );
             return res;
         }
     }

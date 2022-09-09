@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{387378DC-8A5D-4578-80FB-478A722D909B}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
@@ -24,15 +24,18 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.212</Version>
+        <Version>5.0.220</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Definitions" Version="5.0.212" />
-        <PackageReference Include="StockSharp.Algo" Version="5.0.212" />
-        <PackageReference Include="StockSharp.Configuration" Version="5.0.212" />
+        <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
+        <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

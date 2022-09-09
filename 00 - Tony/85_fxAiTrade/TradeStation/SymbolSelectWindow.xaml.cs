@@ -1,21 +1,11 @@
 ﻿using DevExpress.Xpf.Core;
-using Ecng.Collections;
 using FreemindAITrade.ViewModels;
 using StockSharp.Algo;
 using StockSharp.BusinessEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace FreemindAITrade
 {
@@ -26,9 +16,9 @@ namespace FreemindAITrade
     {
         SymbolSelectViewModel _viewModel = null;
 
-        public SymbolSelectWindow( )
+        public SymbolSelectWindow()
         {
-            InitializeComponent( );
+            InitializeComponent();
 
             DataContext = this;
 
@@ -52,12 +42,12 @@ namespace FreemindAITrade
         public IEnumerable<Security> SelectedSecurities
         {
             get
-            {                
-                return _viewModel.Securities.LookupAll( );
+            {
+                return _viewModel.Securities.LookupAll();
             }
             set
             {
-                _viewModel.Securities.AddRange( value.ToArray( ) );
+                _viewModel.Securities.AddRange( value.ToArray() );
             }
         }
 
@@ -65,7 +55,7 @@ namespace FreemindAITrade
         {
             get
             {
-               
+
 
                 return _viewModel.SecurityProvider;
             }

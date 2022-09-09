@@ -126,7 +126,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_StockSharp.Web.Api.Inter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_StockSharp.Studio.Controls", "00 - Tony\30FreemindPearl\StockSharp.Studio.Controls\10_StockSharp.Studio.Controls.csproj", "{8C2AA02E-5601-482E-A75E-607AFDD7ED0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10_StockSharp.Studio.Core", "00 - Tony\30FreemindPearl\StockSharp.Studio.Core\10_StockSharp.Studio.Core.csproj", "{2CAFE858-3A40-46DF-AA80-9AB8B8F22A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_StockSharp.Studio.Core", "00 - Tony\30FreemindPearl\StockSharp.Studio.Core\07_StockSharp.Studio.Core.csproj", "{2CAFE858-3A40-46DF-AA80-9AB8B8F22A6E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "15_StockSharp.Server.Core", "00 - Tony\30FreemindPearl\StockSharp.Server.Core\15_StockSharp.Server.Core.csproj", "{418441FA-8672-4457-89A9-133F2CAA43E4}"
 EndProject

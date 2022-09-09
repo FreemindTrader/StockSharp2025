@@ -1,46 +1,12 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
-using Ecng.Common;
-using Ecng.Configuration;
-using Ecng.Serialization;
-using MoreLinq;
+﻿using fx.Common;
+using fx.Definitions;
 using StockSharp.Algo;
 using StockSharp.Algo.Candles;
-using StockSharp.Algo.Candles.Compression;
-using StockSharp.Algo.Indicators;
 using StockSharp.Algo.Storages;
-using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Logging;
 using StockSharp.Messages;
-using StockSharp.Studio.Core.Commands;
-using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using StockSharp.Algo.Storages.Binary;
-
-using Ecng.ComponentModel;
-using static fx.Charting.ChartDrawDataEx.sCandle;
-using fx.Algorithm;
-using fx.Charting;
-using ChartDrawDataEx = fx.Charting.ChartDrawDataEx;
-using static fx.Charting.ChartDrawDataEx;
-using SciChart.Charting.Model.DataSeries;
-using DevExpress.Xpf.Bars;
-using fx.Collections;
-using fx.Bars;
-using fx.Base;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -48,13 +14,13 @@ namespace FreemindAITrade.ViewModels
     {
         public override void Step3_LoadCandlesFromLocalStorage_NonVisual()
         {
-            
+
             _stopWatch.Restart();
 
             _initializing = true;
 
-            var startDate      = DateTime.MinValue;
-            var endDate        = DateTime.MinValue;
+            var startDate = DateTime.MinValue;
+            var endDate = DateTime.MinValue;
 
             _candlesSeries = new CandleSeries( typeof( TimeFrameCandle ), SelectedSecurity, ResponsibleTF );
 
@@ -66,7 +32,7 @@ namespace FreemindAITrade.ViewModels
             if ( ResponsibleTF >= TimeSpan.FromDays( 1 ) /*|| ResponsibleForWhatTimeFrame == TimeSpan.FromHours( 1 )*/ ) // I would only add one hour bars from the beginning during wave Analysis sesssion.
             {
                 _candleStorage = _storageRegistry.GetCandleMessageStorage( typeof( TimeFrameCandleMessage ), SelectedSecurity.ToSecurityId(), ResponsibleTF, Drive, Format );
-                var start      = _candleStorage.GetFromDate( );
+                var start = _candleStorage.GetFromDate();
 
                 if ( start.HasValue )
                 {
@@ -87,7 +53,7 @@ namespace FreemindAITrade.ViewModels
 
 
             _candlesSeries.From = startDate;
-            _candlesSeries.To   = endDate;
+            _candlesSeries.To = endDate;
 
             /* -------------------------------------------------------------------------------------------------------------------------------------------
              * 
@@ -118,12 +84,12 @@ namespace FreemindAITrade.ViewModels
 
         private void Step5_OnChartAddUIsToChart_NonVisual()
         {
-            _doneDrawing     = false;
-            _drawSeries      = _candlesSeries;
+            _doneDrawing = false;
+            _drawSeries = _candlesSeries;
 
-            var period       = ( TimeSpan )_drawSeries.Arg;
+            var period = ( TimeSpan )_drawSeries.Arg;
 
-            var subscription = new Subscription(_candlesSeries);
+            var subscription = new Subscription( _candlesSeries );
 
             var candleSeriesData = new CandleSeriesData( null, _bars, subscription, DateTimeOffset.MinValue );
 
@@ -139,19 +105,19 @@ namespace FreemindAITrade.ViewModels
 
             if ( ResponsibleTF >= TimeSpan.FromMinutes( 1 ) )
             {
-                _candleStorage = GetTimeFrameCandleMessageStorage( _drawSeries.Security, ( TimeSpan ) _drawSeries.Arg, _drawSeries.AllowBuildFromSmallerTimeFrame );
+                _candleStorage = GetTimeFrameCandleMessageStorage( _drawSeries.Security, ( TimeSpan )_drawSeries.Arg, _drawSeries.AllowBuildFromSmallerTimeFrame );
 
-                lastTime = LoadCandles( ( IMarketDataStorage<CandleMessage> ) _candleStorage, _drawSeries, TimeSpan.FromDays( 5 ) );
+                lastTime = LoadCandles( ( IMarketDataStorage<CandleMessage> )_candleStorage, _drawSeries, TimeSpan.FromDays( 5 ) );
             }
             else
             {
-                var secId      = _drawSeries.Security.ToSecurityId( );
+                var secId = _drawSeries.Security.ToSecurityId();
                 _level1Storage = _storageRegistry.GetLevel1MessageStorage( secId, Drive, Format ); ;
                 _candleStorage = _storageRegistry.GetCandleMessageStorage( typeof( TimeFrameCandleMessage ), secId, period, Drive, Format );
 
                 lastTime = LoadTicksAndBuildOneSecondBars( _drawSeries, TimeSpan.FromDays( 5 ) );
             }
-            
+
 
             if ( lastTime != null )
             {
@@ -179,7 +145,7 @@ namespace FreemindAITrade.ViewModels
 
             _preloadCandlesStatus = WorkFlowStatus.StartWork;
 
-            List< Candle > holder = new List<Candle>( _drawCandles.Count() );
+            List<Candle> holder = new List<Candle>( _drawCandles.Count() );
 
             foreach ( Candle candle in _drawCandles )
             {
@@ -210,14 +176,14 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                _lastBarTime = holder[ holder.Count - 1 ].OpenTime;
+                _lastBarTime = holder[holder.Count - 1].OpenTime;
 
                 _bars.ReloadAllCandlesNoWaves( SelectedSecurity, holder, ResponsibleTF, _waveScenarioNumber );
             }
 
             RaiseCandleLoadedEvent();
 
-            
+
             RequestMarketDataFromLastBar( _lastBarTime );
 
             _preloadCandlesStatus = WorkFlowStatus.DoneWork;

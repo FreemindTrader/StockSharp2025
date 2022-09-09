@@ -1,44 +1,24 @@
-﻿using DevExpress.Mvvm.POCO;
-using DevExpress.Mvvm.UI;
-using DevExpress.Xpf.Bars;
+﻿using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Core;
+using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.Ribbon;
+using Ecng.Collections;
+using Ecng.ComponentModel;
 using Ecng.Xaml;
 using FreemindAITrade.ViewModels;
+using fx.Collections;
 using StockSharp.Algo;
 using StockSharp.BusinessEntities;
+using StockSharp.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Ecng.Collections;
-using Ecng.ComponentModel;
-using Ecng.Serialization;
-using StockSharp.Messages;
-using StockSharp.Localization;
-using fx.Charting;
-using StockSharp.Xaml;
-using System.Collections.ObjectModel;
-using StockSharp.Studio.Controls;
-using fx.Collections;
-using DevExpress.Xpf.Docking;
-using System.Threading;
 //using TracerAttributes;
 
 namespace FreemindAITrade.View
 {
-    
+
 
     /// <summary>
     /// Interaction logic for fxTradeStation.xaml
@@ -47,7 +27,7 @@ namespace FreemindAITrade.View
     {
         //private readonly LayoutManager _layoutManager;
         TradeStationViewModel _viewModel;
-        private readonly fxSecurityTrie _allSecurities = new fxSecurityTrie( );
+        private readonly fxSecurityTrie _allSecurities = new fxSecurityTrie();
 
         //[TraceOn]
         public TradeStationView()
@@ -90,15 +70,15 @@ namespace FreemindAITrade.View
         }
 
         private void SelectSymbol_ItemClick( object sender, ItemClickEventArgs e )
-        {            
-            
+        {
+
         }
 
         private void DockLayoutManager_DockOperationCompleted( object sender, DevExpress.Xpf.Docking.Base.DockOperationCompletedEventArgs e )
         {
             if ( e.Item is LayoutGroup )
             {
-                var widths = (e.Item as LayoutGroup).Items.Where(c => c.ItemWidth.IsAbsolute).Select(c => c.ItemWidth.Value);
+                var widths = ( e.Item as LayoutGroup ).Items.Where( c => c.ItemWidth.IsAbsolute ).Select( c => c.ItemWidth.Value );
                 if ( widths.Count() > 0 )
                 {
                     ( e.Item as LayoutGroup ).ItemWidth = new GridLength( widths.Max() );
@@ -133,14 +113,14 @@ namespace FreemindAITrade.View
         }
 
         private void WaveAnalysisClicked( object sender, ItemClickEventArgs e )
-        {            
-            var selectSecWnd = new SecuritiesWindowView( )
-            {                
+        {
+            var selectSecWnd = new SecuritiesWindowView()
+            {
                 SecurityProvider = SecurityProvider
             };
-            
-            selectSecWnd.SelectedSecurities = _allSecurities.Retrieve( string.Empty ).Where( s => !s.IsAllSecurity( ) );
-            
+
+            selectSecWnd.SelectedSecurities = _allSecurities.Retrieve( string.Empty ).Where( s => !s.IsAllSecurity() );
+
             if ( !selectSecWnd.ShowModal( this ) )
                 return;
 
@@ -163,7 +143,7 @@ namespace FreemindAITrade.View
 
     public class fxSecurityTrie : SecurityTrie
     {
-        private readonly PooledDictionary<Security, HydraTaskSecurity> _securities = new PooledDictionary<Security, HydraTaskSecurity>( );
+        private readonly PooledDictionary<Security, HydraTaskSecurity> _securities = new PooledDictionary<Security, HydraTaskSecurity>();
 
         public void AddRange( IEnumerable<HydraTaskSecurity> securities )
         {
@@ -176,30 +156,30 @@ namespace FreemindAITrade.View
             }
         }
 
-        public HydraTaskSecurity GetAllSecurity( )
+        public HydraTaskSecurity GetAllSecurity()
         {
-            return RetrieveHydra( "ALL@ALL" ).FirstOrDefault( );
+            return RetrieveHydra( "ALL@ALL" ).FirstOrDefault();
         }
 
         public IEnumerable<HydraTaskSecurity> RetrieveHydra( string filter )
         {
-            return Retrieve( filter ).Select( s => _securities[ s ] );
+            return Retrieve( filter ).Select( s => _securities[s] );
         }
 
         public void RemoveRange( IEnumerable<HydraTaskSecurity> securities )
         {
             if ( securities == null )
                 throw new ArgumentNullException( nameof( securities ) );
-            Security[ ] array = securities.Select( s => s.Security ).ToArray( );
+            Security[ ] array = securities.Select( s => s.Security ).ToArray();
             RemoveRange( array );
             foreach ( Security key in array )
                 _securities.Remove( key );
         }
 
-        public override void Clear( )
+        public override void Clear()
         {
-            base.Clear( );
-            _securities.Clear( );
+            base.Clear();
+            _securities.Clear();
         }
     }
 
@@ -208,15 +188,15 @@ namespace FreemindAITrade.View
         /// <summary>
         /// Хэш-коллекция для быстрой проверки <see cref="P:StockSharp.Hydra.Core.HydraTaskSecurity.DataTypes"/>.
         /// </summary>
-        
-        public readonly CachedSynchronizedSet< DataType > DataTypesSet = new CachedSynchronizedSet< DataType >( );
-        private TypeInfo _tradeInfo = new TypeInfo( );
-        private TypeInfo _depthInfo = new TypeInfo( );
-        private TypeInfo _orderLogInfo = new TypeInfo( );
-        private TypeInfo _level1Info = new TypeInfo( );
-        private TypeInfo _candleInfo = new TypeInfo( );
-        private TypeInfo _transactionInfo = new TypeInfo( );
-        private TypeInfo _positionChangeInfo = new TypeInfo( );
+
+        public readonly CachedSynchronizedSet<DataType> DataTypesSet = new CachedSynchronizedSet<DataType>();
+        private TypeInfo _tradeInfo = new TypeInfo();
+        private TypeInfo _depthInfo = new TypeInfo();
+        private TypeInfo _orderLogInfo = new TypeInfo();
+        private TypeInfo _level1Info = new TypeInfo();
+        private TypeInfo _candleInfo = new TypeInfo();
+        private TypeInfo _transactionInfo = new TypeInfo();
+        private TypeInfo _positionChangeInfo = new TypeInfo();
 
         /// <summary>
         /// Уникальный идентификатор инструмента.
@@ -240,7 +220,7 @@ namespace FreemindAITrade.View
         /// <summary>
         /// Биржевой инструмент.
         /// </summary>
-        
+
         public Security Security
         {
             get;
@@ -250,7 +230,7 @@ namespace FreemindAITrade.View
         /// <summary>
         /// Типы данных, которые нужно получать для данного инструмента.
         /// </summary>
-        
+
         public DataType[ ] DataTypes
         {
             get
@@ -267,12 +247,12 @@ namespace FreemindAITrade.View
                 {
                     throw new ArgumentException( nameof( value ) );
                 }
-                DataTypesSet.Clear( );
+                DataTypesSet.Clear();
                 DataTypesSet.AddRange( value );
             }
         }
 
-        
+
 
         /// <summary>
         /// Информация о сделках.
@@ -421,15 +401,15 @@ namespace FreemindAITrade.View
         {
             get;
             set;
-        } = new PooledDictionary<DataType, DateTypeInfo>( );
+        } = new PooledDictionary<DataType, DateTypeInfo>();
 
         /// <summary>
         /// Получить строковое представление.
         /// </summary>
         /// <returns>Строковое представление.</returns>
-        public override string ToString( )
+        public override string ToString()
         {
-            return Security?.ToString( ) ?? string.Empty;
+            return Security?.ToString() ?? string.Empty;
         }
 
         /// <summary>
@@ -459,7 +439,7 @@ namespace FreemindAITrade.View
             /// <summary>
             /// Временная метка последних обработанных данных.
             /// </summary>
-           
+
             public DateTime? LastTime
             {
                 get
@@ -485,7 +465,7 @@ namespace FreemindAITrade.View
             /// <summary>
             /// Дата начала загрузки данных.
             /// </summary>
-            
+
             public DateTime? BeginDate
             {
                 get
@@ -502,7 +482,7 @@ namespace FreemindAITrade.View
             /// <summary>
             /// Дата окончания загрузки данных.
             /// </summary>
-            
+
             public DateTime? EndDate
             {
                 get

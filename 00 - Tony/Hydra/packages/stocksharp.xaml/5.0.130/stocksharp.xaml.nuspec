@@ -16,7 +16,7 @@
     <tags>StockSharp Xaml Trading Finance Algotrading Forex Bitcoin Cryptocurrencies Stock Exchange Derivatives Options</tags>
     <repository type="GitHub" url="https://github.com/StockSharp/StockSharp" commit="80367a4eb98421561db7b73993cde239c595e408" />
     <dependencies>
-      <group targetFramework="net5.0-windows7.0">
+      <group targetFramework="net6.0-windows7.0">
         <dependency id="Ecng.Xaml.DXRefs" version="1.0.5" />
         <dependency id="Ecng.Backup" version="1.0.113" />
         <dependency id="Ecng.HtmlRenderer" version="1.0.50" />

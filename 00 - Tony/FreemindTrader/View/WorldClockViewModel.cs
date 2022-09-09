@@ -1,14 +1,6 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using fx.Algorithm;
-using fx.Definitions;
-using StockSharp.BusinessEntities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace FreemindTrader
@@ -24,18 +16,18 @@ namespace FreemindTrader
 
         bool IsAnimationLocked { get { return animationLockCounterCore > 0; } }
 
-        public WorldClockViewModel( )
+        public WorldClockViewModel()
         {
-            _mintimer = new DispatcherTimer( )
+            _mintimer = new DispatcherTimer()
             {
                 Interval = _scrollTimerInterval
             };
             _mintimer.Tick += new EventHandler( OnTimerTick );
 
-            _mintimer.Start( );
+            _mintimer.Start();
         }
 
-        
+
         public bool Visible
         {
             get { return _visible; }
@@ -47,7 +39,7 @@ namespace FreemindTrader
                 RaisePropertyChanged( nameof( Visible ) );
             }
         }
-        
+
 
         private void OnTimerTick( object sender, EventArgs e )
         {
@@ -56,30 +48,30 @@ namespace FreemindTrader
             TimerTick?.Invoke( currentTime );
         }
 
-        void LockAnimation( )
+        void LockAnimation()
         {
             animationLockCounterCore++;
         }
 
-        void UnlockAnimation( )
+        void UnlockAnimation()
         {
             animationLockCounterCore--;
         }
 
-        void DoAnimation( )
+        void DoAnimation()
         {
             var currentTime = DateTime.UtcNow;
 
             TimerTick?.Invoke( currentTime );
 
-            var tz          = TimeZoneInfo.FindSystemTimeZoneById( "China Standard Time" );
-            var chinaTime   = TimeZoneInfo.ConvertTimeFromUtc( currentTime, tz );
+            var tz = TimeZoneInfo.FindSystemTimeZoneById( "China Standard Time" );
+            var chinaTime = TimeZoneInfo.ConvertTimeFromUtc( currentTime, tz );
 
-            var tz1         = TimeZoneInfo.FindSystemTimeZoneById( "Eastern Standard Time" );
+            var tz1 = TimeZoneInfo.FindSystemTimeZoneById( "Eastern Standard Time" );
             var newYorkTime = TimeZoneInfo.ConvertTimeFromUtc( currentTime, tz1 );
 
-            var tz2         = TimeZoneInfo.FindSystemTimeZoneById( "GMT Standard Time" );
-            var londonTime  = TimeZoneInfo.ConvertTimeFromUtc( currentTime, tz2 );
+            var tz2 = TimeZoneInfo.FindSystemTimeZoneById( "GMT Standard Time" );
+            var londonTime = TimeZoneInfo.ConvertTimeFromUtc( currentTime, tz2 );
 
             UpdateClock( newYorkTime /* _newYorkArcScaleBackgroundLayer, _newYorkHourNeedle, _newYorkMinuteNeedle, _newYorkSecondNeedle */ );
             UpdateClock( chinaTime   /* _chinaArcScaleBackgroundLayer, _chinaTimeHourNeedle, _chinaTimeMinuteNeedle, _chinaTimeSecondNeedle*/ );
@@ -123,8 +115,8 @@ namespace FreemindTrader
 
 
             int hour = dt.Hour <= 12 ? dt.Hour : dt.Hour - 12;
-            int min  = dt.Minute;
-            int sec  = dt.Second;
+            int min = dt.Minute;
+            int sec = dt.Second;
             //h.Value = ( float )hour + ( float )( min ) / 60.0f;
             //m.Value = ( ( float )min + ( float )( sec ) / 60.0f ) / 5f;
             //s.Value = sec / 5.0f;

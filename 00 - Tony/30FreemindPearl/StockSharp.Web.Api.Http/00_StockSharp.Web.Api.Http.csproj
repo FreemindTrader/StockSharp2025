@@ -22,13 +22,13 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.223</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Common" Version="1.0.110" />
+      <PackageReference Include="Ecng.Common" Version="1.0.113" />
       <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     </ItemGroup>
 

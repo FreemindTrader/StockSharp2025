@@ -1,26 +1,20 @@
 ﻿using DevExpress.Mvvm;
 using Ecng.ComponentModel;
-using Ecng.Xaml;
 using fx.Algorithm;
-using fx.Collections;
 using fx.Definitions;
 using StockSharp.BusinessEntities;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ViewModelBase = DevExpress.Mvvm.ViewModelBase;
 
 namespace FreemindTrader
 {
     public class TechnicalAnalysisViewModel : ViewModelBase, ISupportParameter
     {
-        private Security _symbol;        
+        private Security _symbol;
         private AdvancedAnalysisResult _taResult;
 
-        public TechnicalAnalysisViewModel( )
+        public TechnicalAnalysisViewModel()
         {
             Messenger.Default.Register<SelectSecurityMessage>( this, x => OnSelectSecurityMessage( x ) );
         }
@@ -38,7 +32,7 @@ namespace FreemindTrader
             else
             {
                 return;
-            }             
+            }
 
             RaisePropertyChanged( nameof( BarPercentageItemSource ) );
         }
@@ -63,11 +57,11 @@ namespace FreemindTrader
                 {
                     return null;
                 }
-                
+
                 var barPrecentage = aa.BarPercentageItemSource;
 
                 return barPrecentage;
             }
-        }        
+        }
     }
 }

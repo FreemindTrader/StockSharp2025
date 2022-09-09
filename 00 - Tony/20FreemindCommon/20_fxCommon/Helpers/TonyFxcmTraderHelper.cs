@@ -28,7 +28,7 @@ namespace fx.Common
 
             return new ExecutionMessage
             {
-                ExecutionType = ExecutionTypes.Tick,
+                DataTypeEx = DataType.Ticks,
                 SecurityId    = level1.SecurityId,
                 TradeId       = ( long? )level1.Changes.TryGetValue( Level1Fields.LastTradeId ),
                 TradePrice    = price,

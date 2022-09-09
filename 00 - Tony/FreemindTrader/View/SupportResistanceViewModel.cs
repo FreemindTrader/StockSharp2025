@@ -1,19 +1,12 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using Ecng.ComponentModel;
 using Ecng.Xaml;
 using fx.Algorithm;
-using fx.Collections;
 using fx.Common;
 using fx.Definitions;
 using StockSharp.BusinessEntities;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace FreemindTrader
@@ -37,11 +30,11 @@ namespace FreemindTrader
 
         bool _isUpdating = false;
 
-        public SupportResistanceViewModel( )
+        public SupportResistanceViewModel()
         {
-            Messenger.Default.Register< SelectSecurityMessage>( this, x => OnSelectSecurityMessage( x ) );
-            Messenger.Default.Register< QuoteMessage         >( this, x => OnQuoteUpdate( x ) );
-            Messenger.Default.Register< PivotPointMessage    >( this, x => OnPivotPointMessage( x ) );
+            Messenger.Default.Register<SelectSecurityMessage>( this, x => OnSelectSecurityMessage( x ) );
+            Messenger.Default.Register<QuoteMessage>( this, x => OnQuoteUpdate( x ) );
+            Messenger.Default.Register<PivotPointMessage>( this, x => OnPivotPointMessage( x ) );
         }
 
         private void OnPivotPointMessage( PivotPointMessage msg )
@@ -59,7 +52,7 @@ namespace FreemindTrader
             else
             {
                 return;
-            }            
+            }
 
             srList.AddSRlines( msg.SrLevels, _security.Decimals.Value );
 
@@ -70,7 +63,7 @@ namespace FreemindTrader
         {
             _security = x.Symbol;
 
-            _instrumentPointSize = x.Symbol.PriceStep.Value;            
+            _instrumentPointSize = x.Symbol.PriceStep.Value;
 
             var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _security );
 
@@ -81,7 +74,7 @@ namespace FreemindTrader
             else
             {
                 return;
-            }             
+            }
 
             RaisePropertyChanged( nameof( SrLevelsItemSource ) );
 
@@ -91,11 +84,11 @@ namespace FreemindTrader
         {
             get
             {
-                return GetService<IFocusCellService>( );
+                return GetService<IFocusCellService>();
             }
         }
 
-        
+
         public int LastRowIndex
         {
             get { return _lastRowIndex; }
@@ -107,7 +100,7 @@ namespace FreemindTrader
                 RaisePropertyChanged( nameof( LastRowIndex ) );
             }
         }
-        
+
 
         private int _srRowHandle;
 
@@ -148,7 +141,7 @@ namespace FreemindTrader
             {
                 if ( _security != null )
                 {
-                    var aa =( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _security );
+                    var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _security );
 
                     if ( aa != null )
                     {
@@ -157,7 +150,7 @@ namespace FreemindTrader
                     else
                     {
                         return null;
-                    }                     
+                    }
 
                     return _srLevelsCollection;
                 }
@@ -171,10 +164,10 @@ namespace FreemindTrader
             if ( _srLevelsCollection == null || _srLevelsCollection.Count == 0 )
                 return;
 
-            if( quote.Security.Code != _security.Code )
+            if ( quote.Security.Code != _security.Code )
                 return;
 
-            if( _isUpdating )
+            if ( _isUpdating )
                 return;
 
             _average = ( quote.Ask + quote.Bid ) / 2;
@@ -192,7 +185,7 @@ namespace FreemindTrader
             if ( index > -1 )
             {
                 selectedIndex = index;
-                srLevel = _srLevelsCollection[ index ];
+                srLevel = _srLevelsCollection[index];
 
                 if ( _srLevelClosest == null )
                 {
@@ -213,7 +206,7 @@ namespace FreemindTrader
                 {
                     if ( index + 1 < _srLevelsCollection.Count )
                     {
-                        srLevelNext = _srLevelsCollection[ index + 1 ];
+                        srLevelNext = _srLevelsCollection[index + 1];
                     }
 
                     _lastRowIndex = index;
@@ -227,10 +220,10 @@ namespace FreemindTrader
                             TheTopRow = _lastRowIndex - 7;
                         }
 
-                        GuiDispatcher.GlobalDispatcher.AddAction( ( ) => FocusCell( ) );
+                        GuiDispatcher.GlobalDispatcher.AddAction( () => FocusCell() );
                     }
 
-                    
+
 
                     if ( srLevelNext != null )
                     {
@@ -248,12 +241,12 @@ namespace FreemindTrader
                         }
                     }
 
-                    ClosestPP = _srLevelClosest.SR3rdType.ToDescription( );
+                    ClosestPP = _srLevelClosest.SR3rdType.ToDescription();
 
                     //_SRLevelGridView.RefreshRow( selectedIndex );
                 }
 
-                var diff = ( _average - _srLevelClosest.SRvalue ) / (double)_instrumentPointSize;
+                var diff = ( _average - _srLevelClosest.SRvalue ) / ( double )_instrumentPointSize;
 
                 if ( diff != _lastDiff )
                 {
@@ -269,9 +262,9 @@ namespace FreemindTrader
             }
         }
 
-        public void FocusCell( )
+        public void FocusCell()
         {
-            FocusCellService.FocusCell( );
+            FocusCellService.FocusCell();
         }
 
         private double _pipsFromPivotPoint;

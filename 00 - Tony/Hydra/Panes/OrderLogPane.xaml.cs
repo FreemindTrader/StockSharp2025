@@ -33,7 +33,7 @@ namespace StockSharp.Hydra.Panes
         public OrderLogPane()
         {
             InitializeComponent();
-            FindedOrderLog.HideColumns( ExecutionTypes.OrderLog );
+            FindedOrderLog.HideColumns( DataType.OrderLog );
             Init( ExportBtn, MainGrid, SelectSecurityBtn, new Func<SecurityId, DateTime?, DateTime?, bool, IEnumerable>( GetOrderLog ) );
             SetTitlePrefix( LocalizedStrings.OrderLog );
         }

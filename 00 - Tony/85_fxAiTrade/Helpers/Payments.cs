@@ -40,14 +40,14 @@ namespace FreemindAITrade.Helpers
             payment = Trunc2( payment );
             List<LoanPayment> payments = new List<LoanPayment>();
             double balance = loanAmount;
-            for ( int i = 1; i <= ( int ) months; i++ )
+            for ( int i = 1; i <= ( int )months; i++ )
             {
-                LoanPayment lp = new LoanPayment(balance, payment, i, interestRate, startMonth);
+                LoanPayment lp = new LoanPayment( balance, payment, i, interestRate, startMonth );
                 balance = lp.Balance;
                 payments.Add( lp );
                 if ( lp.Balance <= 0 ) break;
             }
-            payments[ payments.Count - 1 ].UpdateBalance();
+            payments[payments.Count - 1].UpdateBalance();
             return payments;
         }
     }

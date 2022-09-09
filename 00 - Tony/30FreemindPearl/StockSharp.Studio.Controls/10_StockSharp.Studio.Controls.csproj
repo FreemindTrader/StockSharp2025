@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{8C2AA02E-5601-482E-A75E-607AFDD7ED0E}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -21,22 +21,22 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.225</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Roslyn" Version="1.0.113" />
-      <PackageReference Include="StockSharp.Alerts" Version="5.0.128" />
-      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Localization" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.133" />
+      <PackageReference Include="Ecng.Roslyn" Version="1.0.116" />
+      <PackageReference Include="StockSharp.Alerts" Version="5.0.129" />
+      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Localization" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.134" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\StockSharp.Studio.Core\10_StockSharp.Studio.Core.csproj" />
+      <ProjectReference Include="..\StockSharp.Studio.Core\07_StockSharp.Studio.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

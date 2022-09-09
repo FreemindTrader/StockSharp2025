@@ -10,7 +10,7 @@ namespace FreemindAITrade.Helpers
         {
             string source = value as string;
             if ( source == null ) return string.Empty;
-            string[] list = source.Split(',');
+            string[ ] list = source.Split( ',' );
             string ret = string.Empty;
             foreach ( string item in list )
                 ret += string.Format( "• {0}\r\n", item.Trim() );

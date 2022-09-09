@@ -9,14 +9,14 @@ namespace FreemindAITrade.Helpers
         public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
         {
             decimal? i = value as decimal?;
-            return i == null ? 0M : ( decimal ) i;
+            return i == null ? 0M : ( decimal )i;
         }
         public object ConvertBack( object value, Type targetType, object parameter, CultureInfo culture )
         {
             decimal? i = value as decimal?;
-            if ( i != null ) return ( decimal ) i;
+            if ( i != null ) return ( decimal )i;
             double? f = value as double?;
-            return f == null ? 0M : ( decimal ) ( double ) f;
+            return f == null ? 0M : ( decimal )( double )f;
         }
     }
 }

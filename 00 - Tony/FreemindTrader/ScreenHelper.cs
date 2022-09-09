@@ -7,7 +7,7 @@ namespace FreemindTrader
 {
     public static class ScreenHelper
     {
-        public static Screen GetPrimaryScreen( )
+        public static Screen GetPrimaryScreen()
         {
             var allScreen = Screen.AllScreens;
             var mainScreen = allScreen.ElementAt( 0 );
@@ -26,7 +26,7 @@ namespace FreemindTrader
             return false;
         }
 
-        public static Screen GetSecondaryScreen( )
+        public static Screen GetSecondaryScreen()
         {
             if ( HasSecondMonitor() )
             {
@@ -35,7 +35,7 @@ namespace FreemindTrader
                 return mainScreen;
             }
 
-            throw new NotImplementedException( );
+            throw new NotImplementedException();
         }
     }
 }

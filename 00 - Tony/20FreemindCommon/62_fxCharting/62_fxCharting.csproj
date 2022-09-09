@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{B75234BA-4DDE-4552-9696-90EA2CFE8FA2}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
         <NoWarn>CA1416</NoWarn>
@@ -66,8 +66,8 @@
         <None Remove="StockSharp\Xaml\Charting\Images\TrailingStop2_16x16.png" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.134" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.135" />
     </ItemGroup>
     <ItemGroup>
         <Resource Include="StockSharp\Xaml\Charting\Images\00Long_16x16.png">
@@ -202,9 +202,9 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.225</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
 

@@ -1,12 +1,9 @@
 ﻿using DevExpress.Xpf.Core;
 using Ecng.Configuration;
-using StockSharp.Studio.Controls;
-using StockSharp.Studio.Core.Configuration;
 using StockSharp.Xaml;
 using System;
-using System.Windows.Threading;
-using System.Diagnostics;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace FreemindTrader
 {
@@ -14,6 +11,7 @@ namespace FreemindTrader
     {
         static App()
         {
+            //DevExpress.Xpf.Core.ClearAutomationEventsHelper.IsEnabled = false;
             ApplicationThemeHelper.ApplicationThemeName = Theme.Win10Light.Name;
         }
 

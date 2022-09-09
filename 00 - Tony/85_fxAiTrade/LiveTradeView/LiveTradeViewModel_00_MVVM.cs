@@ -1,47 +1,20 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
 using Ecng.Common;
-using Ecng.Configuration;
 using Ecng.Serialization;
-using MoreLinq;
-using StockSharp.Algo;
-using StockSharp.Algo.Candles;
-using StockSharp.Algo.Candles.Compression;
-using StockSharp.Algo.Indicators;
+using fx.Charting;
 using StockSharp.Algo.Storages;
 using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Logging;
-using StockSharp.Messages;
-using StockSharp.Studio.Core.Commands;
-using fx.Charting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using Ecng.ComponentModel;
-using fx.Database;
-using fx.Database.Common.DataModel;
-using fx.Database.ForexDatabarsDataModel;
-using fx.Algorithm;
-using System.Windows.Media;
-using StockSharp.Xaml;
 
 namespace FreemindAITrade.ViewModels
-{    
-    public partial class LiveTradeViewModel 
+{
+    public partial class LiveTradeViewModel
     {
         #region Bindable Properties
 
         private ChartPanelOrderSettings _orderSettings = null;
-        
+
         public ChartPanelOrderSettings OrderSettings
         {
             get
@@ -51,7 +24,7 @@ namespace FreemindAITrade.ViewModels
 
             set { SetValue( ref _orderSettings, value ); }
         }
-               
+
 
         string _tabName;
         public string TabName
@@ -60,12 +33,12 @@ namespace FreemindAITrade.ViewModels
             set { SetValue( ref _tabName, value ); }
         }
 
-        
 
-        
 
-        
-                
+
+
+
+
 
         public IMarketDataDrive Drive
         {
@@ -140,7 +113,7 @@ namespace FreemindAITrade.ViewModels
             private set;
         }
 
-        
+
 
         #endregion
 
@@ -149,7 +122,7 @@ namespace FreemindAITrade.ViewModels
         /// </summary>
         /// <param name="storage">Settings storage.</param>
         public override void Load( SettingsStorage storage )
-        {            
+        {
             OrderSettings.Load( storage.GetValue<SettingsStorage>( "OrderSettings", null ) );
 
             base.Load( storage );
@@ -160,8 +133,8 @@ namespace FreemindAITrade.ViewModels
         /// </summary>
         /// <param name="storage">Settings storage.</param>
         public override void Save( SettingsStorage storage )
-        {            
-            storage.SetValue( "OrderSettings", OrderSettings.Save( ) );
+        {
+            storage.SetValue( "OrderSettings", OrderSettings.Save() );
 
             base.Save( storage );
         }
@@ -183,8 +156,8 @@ namespace FreemindAITrade.ViewModels
 
         #endregion
 
-        
 
-                      
+
+
     }
 }

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using fx.Common;
-using Ecng.Collections;
-using StockSharp.Algo.Candles;
-using Disruptor;
-using StockSharp.Studio.Core.Commands;
-using StockSharp.Messages;
-using System.Threading;
+﻿using Disruptor;
 using fx.Collections;
+using StockSharp.Algo.Candles;
+using StockSharp.Studio.Core.Commands;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -60,10 +57,10 @@ namespace FreemindAITrade.ViewModels
 
     public partial class TradeStationViewModel
     {
-        private Disruptor.Dsl.ValueDisruptor<CandleStruct>  _candlesDisruptor = null;
+        private Disruptor.Dsl.ValueDisruptor<CandleStruct> _candlesDisruptor = null;
         private ValueRingBuffer<CandleStruct> _ringBuffer;
 
-        PooledDictionary< CandleSeries, ChartTabViewModelBase > _candle2Vm = new PooledDictionary< CandleSeries, ChartTabViewModelBase >( );
+        PooledDictionary<CandleSeries, ChartTabViewModelBase> _candle2Vm = new PooledDictionary<CandleSeries, ChartTabViewModelBase>();
 
         public void LinkSeriesWithVM( CandleSeries candlesSeries, ChartTabViewModelBase backTesterVM )
         {
@@ -78,29 +75,29 @@ namespace FreemindAITrade.ViewModels
         private void StartRingBuffer()
         {
             if ( _candlesDisruptor == null )
-            {                
+            {
                 _candlesDisruptor = new Disruptor.Dsl.ValueDisruptor<CandleStruct>( () => new CandleStruct(), BUFFER_SIZE, TaskScheduler.Default, Disruptor.Dsl.ProducerType.Single, new BlockingSpinWaitWaitStrategy() );
                 _candlesDisruptor.TonyHandleEventsWith( this );
-                _candlesDisruptor.Start( );
+                _candlesDisruptor.Start();
 
-                _ringBuffer = _candlesDisruptor.RingBuffer;                
+                _ringBuffer = _candlesDisruptor.RingBuffer;
             }
         }
 
-        Queue< CandleCommand > _pasuedCandleHolder = new Queue< CandleCommand >( );
+        Queue<CandleCommand> _pasuedCandleHolder = new Queue<CandleCommand>();
 
         private void RingBufferCandleSeriesProcessing( CandleSeries series, Candle candle )
         {
             using ( var scope = _candlesDisruptor.PublishEvent() )
             {
                 ref var data = ref scope.Event();
-                data.Series  = series;
-                data.Candle  = candle;
-            }                                
+                data.Series = series;
+                data.Candle = candle;
+            }
         }
 
         public void OnEvent( ref CandleStruct data, long sequence, bool endOfBatch )
-        {            
+        {
             if ( _candle2Vm.TryGetValue( data.Series, out ChartTabViewModelBase myClass ) )
             {
                 myClass.Step9_OnCandleStruct( ref data, endOfBatch );
@@ -109,7 +106,7 @@ namespace FreemindAITrade.ViewModels
             if ( StepByStepChecked )
             {
                 Thread.Sleep( 500 );
-            }                                    
+            }
         }
 
         public void CancelAllTasks()

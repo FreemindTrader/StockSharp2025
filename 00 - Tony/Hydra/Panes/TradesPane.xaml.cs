@@ -32,7 +32,7 @@ namespace StockSharp.Hydra.Panes
         public TradesPane()
         {
             InitializeComponent();
-            FindedTrades.HideColumns( ExecutionTypes.Tick );
+            FindedTrades.HideColumns( DataType.Ticks );
             Init( ExportBtn, MainGrid, SelectSecurityBtn, new Func<SecurityId, DateTime?, DateTime?, bool, IEnumerable>( GetTrades ) );
             SetTitlePrefix( LocalizedStrings.Str985 );
         }

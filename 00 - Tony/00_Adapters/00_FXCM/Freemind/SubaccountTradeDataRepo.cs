@@ -9,6 +9,7 @@ using fxcore2;
 using Ecng.Common;
 using fx.Messages;
 
+
 #pragma warning disable CS0168
 
 namespace StockSharp.FxConnectFXCM.Freemind

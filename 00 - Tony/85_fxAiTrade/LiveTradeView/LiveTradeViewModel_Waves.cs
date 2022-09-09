@@ -1,34 +1,12 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Docking;
-using Ecng.Collections;
-using Ecng.Common;
-using Ecng.Configuration;
-using Ecng.Serialization;
-using MoreLinq;
-using StockSharp.Algo;
-using StockSharp.Algo.Candles;
-using StockSharp.Algo.Candles.Compression;
-using StockSharp.Algo.Indicators;
-using StockSharp.Algo.Storages;
-using StockSharp.BusinessEntities;
-using StockSharp.Localization;
-using StockSharp.Logging;
-using StockSharp.Messages;
-using StockSharp.Studio.Core.Commands;
-using StockSharp.Xaml.Charting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
 using fx.Algorithm;
-using fx.Collections;
 using fx.Bars;
+using fx.Collections;
+using fx.Definitions;
+using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -55,7 +33,7 @@ namespace FreemindAITrade.ViewModels
             if ( bar == SBar.EmptySBar ) return;
 
 
-                var finalWaveCycle = waveCycle;
+            var finalWaveCycle = waveCycle;
 
             if ( /*_chartVM.IsSpecialBar ||*/ _hews.IsSpecialBar( _waveScenarioNumber, selectedBarTime ) || bar.IsSpecialBar )
             {
@@ -66,7 +44,7 @@ namespace FreemindAITrade.ViewModels
 
             else
             {
-                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber,selectedBarTime );
+                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber, selectedBarTime );
 
                 if ( allWave != null && allWave.Count > 0 )
                 {
@@ -82,7 +60,7 @@ namespace FreemindAITrade.ViewModels
                     }
                 }
 
-                long beginningTime = _hews.FindBeginningWaveTimeOfCurrentCycle(_waveScenarioNumber, selectedBarTime, finalWaveCycle );
+                long beginningTime = _hews.FindBeginningWaveTimeOfCurrentCycle( _waveScenarioNumber, selectedBarTime, finalWaveCycle );
 
                 _hews.SmartAdd_ABC_ToWave( waveScenarioNo, ResponsibleTF, beginningTime, selectedBarTime, finalWaveCycle );
             }
@@ -113,7 +91,7 @@ namespace FreemindAITrade.ViewModels
 
             else
             {
-                var allWave = _hews.GetAllWavesDescending(_waveScenarioNumber, selectedBarTime );
+                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber, selectedBarTime );
 
                 if ( allWave != null && allWave.Count > 0 )
                 {
@@ -148,7 +126,7 @@ namespace FreemindAITrade.ViewModels
 
             else
             {
-                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber,selectedBarTime );
+                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber, selectedBarTime );
 
                 if ( allWave != null && allWave.Count > 0 )
                 {
@@ -192,7 +170,7 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber,selectedBarTime );
+                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber, selectedBarTime );
 
                 if ( allWave != null && allWave.Count > 0 )
                 {
@@ -207,7 +185,7 @@ namespace FreemindAITrade.ViewModels
                     if ( dbHewPrev != null ) // This means we are dealing with the ABC of a larger timeframe
                     {
                         ref var hew = ref dbHewPrev.GetWaveFromScenario( waveScenarioNo );
-                        var previousWaves = hew.GetAllWaves( );
+                        var previousWaves = hew.GetAllWaves();
 
                         foreach ( var previousWave in previousWaves )
                         {
@@ -253,7 +231,7 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                var allWave = _hews.GetAllWavesDescending(_waveScenarioNumber, selectedBarTime );
+                var allWave = _hews.GetAllWavesDescending( _waveScenarioNumber, selectedBarTime );
 
                 if ( allWave != null && allWave.Count > 0 )
                 {
@@ -355,7 +333,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( aa != null )
                 {
-                    _hews = ( HewManager ) aa.HewManager;
+                    _hews = ( HewManager )aa.HewManager;
                 }
                 else
                 {
@@ -378,7 +356,7 @@ namespace FreemindAITrade.ViewModels
                             if ( bar != SBar.EmptySBar )
                             {
                                 _hews.CycleUpSelectedBar( waveScenarioNo, ResponsibleTF, bar.LinuxTime, ref bar );
-                            }                                
+                            }
                         }
                     }
                 }
@@ -392,7 +370,7 @@ namespace FreemindAITrade.ViewModels
                     ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
 
                     if ( bar != SBar.EmptySBar )
-                        _hews.CycleUpSelectedBar( waveScenarioNo, ResponsibleTF, selectedBarTime, ref bar );                    
+                        _hews.CycleUpSelectedBar( waveScenarioNo, ResponsibleTF, selectedBarTime, ref bar );
                 }
             }
 
@@ -407,7 +385,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( aa != null )
                 {
-                    _hews = ( HewManager ) aa.HewManager;
+                    _hews = ( HewManager )aa.HewManager;
                 }
                 else
                 {
@@ -442,7 +420,7 @@ namespace FreemindAITrade.ViewModels
                     ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
 
                     if ( bar != SBar.EmptySBar )
-                        _hews.CycleDownSelectedBar( waveScenarioNo, ResponsibleTF, selectedBarTime, ref bar );                    
+                        _hews.CycleDownSelectedBar( waveScenarioNo, ResponsibleTF, selectedBarTime, ref bar );
                 }
             }
 
@@ -502,7 +480,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( aa != null )
                 {
-                    _hews = ( HewManager ) aa.HewManager;
+                    _hews = ( HewManager )aa.HewManager;
                 }
                 else
                 {
@@ -542,7 +520,7 @@ namespace FreemindAITrade.ViewModels
                     ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
 
                     if ( bar != SBar.EmptySBar )
-                    {                        
+                    {
                         _hews?.DeleteWavesFromManagerAndBar( waveScenarioNo, selectedBarTime, ref bar, period );
                     }
                 }
@@ -558,22 +536,22 @@ namespace FreemindAITrade.ViewModels
 
             if ( selectedBarTime > -1 )
             {
-                var aa    = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _bars.Security );
+                var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _bars.Security );
 
                 WaveTargetsTsoCollection waveTargets = aa.WaveTargetBindingList;
-                waveTargets.Clear( );
+                waveTargets.Clear();
 
                 _hews.AnalyzeWaveTarget( _waveScenarioNumber, ResponsibleTF, _bars, selectedBarTime );
             }
         }
 
-        public override void FindAndLoadDatabarsHigherTimeFrame(int waveScenarioNo  )
+        public override void FindAndLoadDatabarsHigherTimeFrame( int waveScenarioNo )
         {
             long selectedBarTime = _chartVM.SelectedCandleBarTime;
 
             ref SBar selectedBar = ref _bars.GetBarByTime( selectedBarTime );
 
-            if ( selectedBar == SBar.EmptySBar ) return;                
+            if ( selectedBar == SBar.EmptySBar ) return;
 
             var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity );
 
@@ -596,7 +574,7 @@ namespace FreemindAITrade.ViewModels
                 ref SBar higherBar = ref higherTFRepo.GetBarContainingTime( selectedBar.BarTime, higherTimeSpan );
 
                 if ( higherBar != SBar.EmptySBar )
-                {                    
+                {
                     Messenger.Default.Send( new LocateBarMessage( higherBar.BarIndex, higherBar.LinuxTime, higherTimeSpan, true ) );
                 }
             }
@@ -628,22 +606,22 @@ namespace FreemindAITrade.ViewModels
                 return;
             }
 
-            var endTime       = DateTime.MinValue;
+            var endTime = DateTime.MinValue;
 
-            
+
 
             if ( selectedBar != SBar.EmptySBar && lowerTimespan >= TimeSpan.FromTicks( 1 ) )
             {
-                barsLTF    = SymbolsMgr.Instance.GetDatabarRepo( SelectedSecurity, lowerTimespan );                
+                barsLTF = SymbolsMgr.Instance.GetDatabarRepo( SelectedSecurity, lowerTimespan );
 
-                var lowerRange = selectedBarTime.FromLinuxTime( );
+                var lowerRange = selectedBarTime.FromLinuxTime();
 
                 var upperRange = lowerRange + ResponsibleTF;
-                
+
                 if ( selectedBar.HasElliottWave )
                 {
-                    ref var hew     = ref selectedBar.GetWaveFromScenario( waveScenarioNo );
-                    var highestWave = hew.GetFirstHighestWaveInfo( );
+                    ref var hew = ref selectedBar.GetWaveFromScenario( waveScenarioNo );
+                    var highestWave = hew.GetFirstHighestWaveInfo();
 
                     if ( highestWave.HasValue )
                     {
@@ -661,7 +639,7 @@ namespace FreemindAITrade.ViewModels
                 }
 
 
-                if ( selectedBar.IsExtremum( ) )
+                if ( selectedBar.IsExtremum() )
                 {
                     int waveImportance = -1;
 
@@ -670,7 +648,7 @@ namespace FreemindAITrade.ViewModels
                         waveImportance = _hews.GetWaveImportance( selectedBar.BarPeriod, selectedBar.LinuxTime );
                     }
 
-                    var extremumType = selectedBar.GetExtremumType( );
+                    var extremumType = selectedBar.GetExtremumType();
 
                     if ( waveImportance > -1 && extremumType != TASignal.NONE )
                     {
@@ -689,7 +667,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( barsLTF.TotalBarCount > 0 )
                 {
-                    endTime = barsLTF[ 0 ].BarTime - lowerTimespan;
+                    endTime = barsLTF[0].BarTime - lowerTimespan;
                 }
             }
 
@@ -754,7 +732,7 @@ namespace FreemindAITrade.ViewModels
             {
                 var barTimes = _chartVM.HighlightedBarLinuxTime;
 
-                var lockedTime = new PooledList< long >( );
+                var lockedTime = new PooledList<long>();
 
                 if ( barTimes.Count > 0 )
                 {

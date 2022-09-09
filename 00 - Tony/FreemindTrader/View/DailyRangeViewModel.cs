@@ -1,24 +1,18 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using fx.Algorithm;
 using fx.Definitions;
-using StockSharp.BusinessEntities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FreemindTrader
-{    
+{
     public class DailyRangeViewModel : ViewModelBase
     {
         private string _security;
-        
+
         private PeriodXTaManager _manager;
 
-        public DailyRangeViewModel( )
+        public DailyRangeViewModel()
         {
             Messenger.Default.Register<SelectSecurityMessage>( this, x => OnSelectSecurityMessage( x ) );
         }
@@ -31,7 +25,7 @@ namespace FreemindTrader
             if ( aa == null )
                 return;
 
-            TaManager = ( PeriodXTaManager ) aa.GetPeriodXTa( TimeSpan.FromDays( 1 ) );            
+            TaManager = ( PeriodXTaManager )aa.GetPeriodXTa( TimeSpan.FromDays( 1 ) );
         }
 
 
@@ -43,7 +37,7 @@ namespace FreemindTrader
             get { return _manager; }
             set
             {
-                SetValue( ref _manager, value );                
+                SetValue( ref _manager, value );
             }
         }
 

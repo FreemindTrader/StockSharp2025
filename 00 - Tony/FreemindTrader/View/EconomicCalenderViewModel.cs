@@ -1,32 +1,22 @@
-﻿using fx.Collections;
-using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using Ecng.Xaml;
+﻿using DevExpress.Mvvm;
+using Ecng.ComponentModel;
 using fx.Algorithm;
+using fx.Collections;
 using fx.Common;
 using fx.Definitions;
+using HtmlAgilityPack;
+using StockSharp.AlgoEx;
 using StockSharp.BusinessEntities;
 using StockSharp.Xaml;
 using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Threading;
-using System.Xml;
 using ViewModelBase = DevExpress.Mvvm.ViewModelBase;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using HtmlAgilityPack;
-using System.Diagnostics;
-using System.Collections.ObjectModel;
-using StockSharp.AlgoEx;
-using Ecng.ComponentModel;
 
 #pragma warning disable 168
 
@@ -35,16 +25,16 @@ namespace FreemindTrader
 {
     public class EconomicCalenderViewModel : ViewModelBase
     {
-        private ThreadSafeDictionary<FxNewsEvent, string> _sentNewsEvents   = new ThreadSafeDictionary<FxNewsEvent, string>( );
-        private string                                    _xmlAddress       = "https://sslecal2.forexprostools.com/";
-        private ObservableCollectionEx<FxNewsEvent>       _ecoCalendarItemSource;
+        private ThreadSafeDictionary<FxNewsEvent, string> _sentNewsEvents = new ThreadSafeDictionary<FxNewsEvent, string>();
+        private string _xmlAddress = "https://sslecal2.forexprostools.com/";
+        private ObservableCollectionEx<FxNewsEvent> _ecoCalendarItemSource;
 
-        private string                                    _security;
-        private PooledList<FxNewsEvent>                   _weeklyNewEvents  = new PooledList<FxNewsEvent>( );
-        private DateTime                                  _lastDownloadTime = DateTime.MinValue;
-        private Security                                  _monitoringSymbol;
-        FxEconomicCalendarBindingList                     _ecoCalendarBindingList;
-        private readonly DispatcherTimer                  _mintimer;
+        private string _security;
+        private PooledList<FxNewsEvent> _weeklyNewEvents = new PooledList<FxNewsEvent>();
+        private DateTime _lastDownloadTime = DateTime.MinValue;
+        private Security _monitoringSymbol;
+        FxEconomicCalendarBindingList _ecoCalendarBindingList;
+        private readonly DispatcherTimer _mintimer;
 
         private WorkFlowStatus _downloadStatus = WorkFlowStatus.NotStarted;
 
@@ -77,11 +67,11 @@ namespace FreemindTrader
             if ( _downloadStatus == WorkFlowStatus.NotStarted || _downloadStatus == WorkFlowStatus.ErrorInWork )
             {
                 Task detectTask = new Task(
-                                            ( ) =>
+                                            () =>
                                             {
-                                                DownloadWeeklyNews( );
+                                                DownloadWeeklyNews();
 
-                                            }, GeneralHelper.GlobalExitToken( )
+                                            }, GeneralHelper.GlobalExitToken()
                                         );
 
                 detectTask.Start();
@@ -100,7 +90,7 @@ namespace FreemindTrader
 
         private void BindSymbolsNewsToList( Security monitoringSymbol )
         {
-            PooledList<FxNewsEvent> temp = new PooledList<FxNewsEvent>( );
+            PooledList<FxNewsEvent> temp = new PooledList<FxNewsEvent>();
 
             if ( _weeklyNewEvents.Count == 0 )
             {
@@ -117,7 +107,7 @@ namespace FreemindTrader
                     {
                         TimeSpan difference = fxNewsEvent.EventTimeUTC - currentTime;
 
-                        string differstr = "";
+                        string differstr = string.Empty;
 
                         if ( difference.TotalMinutes < -5 )
                         {
@@ -145,7 +135,7 @@ namespace FreemindTrader
                         {
                             if ( difference.TotalMinutes > 0 && difference.TotalMinutes <= 15 )
                             {
-                                _sentNewsEvents[ fxNewsEvent ] = differstr;
+                                _sentNewsEvents[fxNewsEvent] = differstr;
 
                                 Messenger.Default.Send( new ImportantNewsComingMessage( fxNewsEvent ) );
 
@@ -252,7 +242,7 @@ namespace FreemindTrader
             var setting = BaseApplication.ProxySettings;
 
             _isUpdating = true;
-            var events         = new PooledList<FxNewsEvent>( );
+            var events = new PooledList<FxNewsEvent>();
 
             try
             {
@@ -260,8 +250,8 @@ namespace FreemindTrader
 
                 if ( setting.UseProxy )
                 {
-                    var proxyAddress = "http://" + setting.Address.ToString( );
-                    var uri = new Uri(proxyAddress);
+                    var proxyAddress = "http://" + setting.Address.ToString();
+                    var uri = new Uri( proxyAddress );
                     var wp = new WebProxy( uri );
 
                     wc.Proxy = wp;
@@ -271,7 +261,7 @@ namespace FreemindTrader
                 var doc = new HtmlDocument();
                 doc.LoadHtml( xmlFile );
 
-                var eventTables = doc.DocumentNode.SelectNodes( "//table[@id='ecEventsTable']//tr");
+                var eventTables = doc.DocumentNode.SelectNodes( "//table[@id='ecEventsTable']//tr" );
 
                 foreach ( HtmlNode row in eventTables )
                 {
@@ -283,17 +273,17 @@ namespace FreemindTrader
                         {
                             Debug.WriteLine( eventTimeStamp );
 
-                            var economyHtml   = row.SelectSingleNode("td[@class='flagCur']")?.InnerText;
+                            var economyHtml = row.SelectSingleNode( "td[@class='flagCur']" )?.InnerText;
 
-                            string economy    = Regex.Replace(economyHtml, @"<[^>]+>|&nbsp;", "").Trim();
+                            string economy = Regex.Replace( economyHtml, @"<[^>]+>|&nbsp;", string.Empty ).Trim();
 
-                            var impact        = row.SelectSingleNode("td[@class='sentiment']")?.Attributes["title"]?.Value;
-                            var name          = row.SelectSingleNode("td[@class='left event']")?.InnerText;
-                            var actual        = row.SelectSingleNode("td[contains(@class, 'act')]")?.InnerText;
-                            var forecastHtml  = row.SelectSingleNode("td[@class='fore']")?.InnerText;
-                            string forecast   = Regex.Replace(forecastHtml, @"<[^>]+>|&nbsp;", "").Trim();
-                            var previousHtml  = row.SelectSingleNode("td[contains(@id, 'eventPrevious')]")?.InnerText;
-                            string previous   = Regex.Replace(previousHtml, @"<[^>]+>|&nbsp;", "").Trim();
+                            var impact = row.SelectSingleNode( "td[@class='sentiment']" )?.Attributes["title"]?.Value;
+                            var name = row.SelectSingleNode( "td[@class='left event']" )?.InnerText;
+                            var actual = row.SelectSingleNode( "td[contains(@class, 'act')]" )?.InnerText;
+                            var forecastHtml = row.SelectSingleNode( "td[@class='fore']" )?.InnerText;
+                            string forecast = Regex.Replace( forecastHtml, @"<[^>]+>|&nbsp;", string.Empty ).Trim();
+                            var previousHtml = row.SelectSingleNode( "td[contains(@id, 'eventPrevious')]" )?.InnerText;
+                            string previous = Regex.Replace( previousHtml, @"<[^>]+>|&nbsp;", string.Empty ).Trim();
 
                             EventImpact impactValue = EventImpact.Unknown;
 
@@ -315,27 +305,27 @@ namespace FreemindTrader
                             }
 
 
-                            DateTimeFormatInfo info = new DateTimeFormatInfo( );                            // Perform custom date time format and fix (month-day-year).
+                            DateTimeFormatInfo info = new DateTimeFormatInfo();                            // Perform custom date time format and fix (month-day-year).
                             info.LongTimePattern = "MM-dd-yyyy";
                             DateTime dateTimeValue = DateTime.Parse( eventTimeStamp, info );
 
-                            var newsEvent =  new FxNewsEvent(   name,
+                            var newsEvent = new FxNewsEvent( name,
                                                             economy,
                                                             string.IsNullOrEmpty( eventTimeStamp ) == false,
                                                             dateTimeValue,
-                                                            "",
+string.Empty,
                                                             impactValue,
                                                             forecast,
                                                             previous
                                                        );
 
-                            if ( ! events.Exists( x => x == newsEvent ) )
+                            if ( !events.Exists( x => x == newsEvent ) )
                             {
                                 events.Add( newsEvent );
                             }
 
 
-                            
+
                         }
 
 

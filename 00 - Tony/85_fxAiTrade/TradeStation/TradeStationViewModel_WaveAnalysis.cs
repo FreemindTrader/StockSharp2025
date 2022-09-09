@@ -1,26 +1,10 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Mvvm.UI;
-using DevExpress.Xpf.Docking.Base;
-using StockSharp.Algo;
+﻿using fx.Algorithm;
+using fx.Definitions;
 using StockSharp.BusinessEntities;
+using StockSharp.Logging;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using fx.Definitions;
-using fx.Common;
-using fx.Definitions.UndoRedo;
-using fx.Algorithm;
-using Ecng.Collections;
-using StockSharp.Logging;
 
 namespace FreemindAITrade.ViewModels
 {
@@ -28,27 +12,27 @@ namespace FreemindAITrade.ViewModels
     {
         public void StartWaveAnalysis( IEnumerable<Security> selectedSymbols )
         {
-            
+
         }
 
         public void ShowMoreWaves()
         {
-            _selectedViewModel.ChartVM.ShowMoreWaves( );            
+            _selectedViewModel.ChartVM.ShowMoreWaves();
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public void ShowLessWaves()
         {
-            _selectedViewModel.ChartVM.ShowLessWaves( );            
+            _selectedViewModel.ChartVM.ShowLessWaves();
 
-            _selectedViewModel.Refresh( );
+            _selectedViewModel.Refresh();
         }
 
         public void AddAltWaves()
-        {                     
+        {
             var viewModel = CreateAltViewModel( _selectedViewModel.ResponsibleTF, _selectedViewModel.ResponsibleTF.ToReadable() );
-            
+
             if ( _selectedViewModel.ResponsibleTF < TimeSpan.FromDays( 1 ) )
             {
                 _intradayViewModels.Add( viewModel );
@@ -63,9 +47,9 @@ namespace FreemindAITrade.ViewModels
         {
             using ( _selectedUndoRedoArea.Start( "MarkPrimary" ) )
             {
-                IChartTabViewModel anotherVM = GetViewModelFromWaveScenarioNo( _selectedViewModel.ResponsibleTF,  1 );
+                IChartTabViewModel anotherVM = GetViewModelFromWaveScenarioNo( _selectedViewModel.ResponsibleTF, 1 );
 
-                if (anotherVM != null )
+                if ( anotherVM != null )
                 {
                     _selectedViewModel.ChartVM.RemoveAllEWaves();
                     anotherVM.ChartVM.RemoveAllEWaves();
@@ -73,7 +57,7 @@ namespace FreemindAITrade.ViewModels
                     _selectedViewModel.MarkPrimary();
 
                     _selectedViewModel.Refresh();
-                    
+
                     anotherVM.Refresh();
                 }
 
@@ -84,23 +68,23 @@ namespace FreemindAITrade.ViewModels
         }
         public IChartTabViewModel GetViewModelFromWaveScenarioNo( TimeSpan period, int waveScenarioNumber )
         {
-            if ( period == TimeSpan.FromMinutes( 1 ))
+            if ( period == TimeSpan.FromMinutes( 1 ) )
             {
-                switch( waveScenarioNumber )
+                switch ( waveScenarioNumber )
                 {
                     case 1:
                         return _01MinVm;
 
                     default:
-                    {
-                        int index = _01MinAltVms.FindIndex( x => x.WaveScenarioNumber == waveScenarioNumber );
-
-                        if (index  > -1 )
                         {
-                            return _01MinAltVms[ index ];
+                            int index = _01MinAltVms.FindIndex( x => x.WaveScenarioNumber == waveScenarioNumber );
+
+                            if ( index > -1 )
+                            {
+                                return _01MinAltVms[index];
+                            }
                         }
-                    }
-                    break;   
+                        break;
                 }
 
             }
@@ -112,15 +96,15 @@ namespace FreemindAITrade.ViewModels
                         return _01hrsVm;
 
                     default:
-                    {
-                        int index = _01hrsAltVms.FindIndex( x => x.WaveScenarioNumber == waveScenarioNumber );
-
-                        if ( index > -1 )
                         {
-                            return _01hrsAltVms[ index ];
+                            int index = _01hrsAltVms.FindIndex( x => x.WaveScenarioNumber == waveScenarioNumber );
+
+                            if ( index > -1 )
+                            {
+                                return _01hrsAltVms[index];
+                            }
                         }
-                    }
-                    break;
+                        break;
                 }
             }
             else if ( period == TimeSpan.FromDays( 1 ) )
@@ -131,15 +115,15 @@ namespace FreemindAITrade.ViewModels
                         return _dailyVm;
 
                     default:
-                    {
-                        int index = _dailyAltVms.FindIndex( x => x.WaveScenarioNumber == waveScenarioNumber );
-
-                        if ( index > -1 )
                         {
-                            return _dailyAltVms[ index ];
+                            int index = _dailyAltVms.FindIndex( x => x.WaveScenarioNumber == waveScenarioNumber );
+
+                            if ( index > -1 )
+                            {
+                                return _dailyAltVms[index];
+                            }
                         }
-                    }
-                    break;
+                        break;
                 }
             }
 
@@ -148,7 +132,7 @@ namespace FreemindAITrade.ViewModels
 
         public void CheckEnabledViewOptions()
         {
-            if ( ShowCandlePattern  )
+            if ( ShowCandlePattern )
             {
                 _selectedViewModel.ChartVM.ShowCandlePattern( true );
             }

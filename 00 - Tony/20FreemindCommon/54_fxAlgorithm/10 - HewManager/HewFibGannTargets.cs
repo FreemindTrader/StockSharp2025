@@ -24,8 +24,10 @@ namespace fx.Algorithm
 
     public class HewFibGannTargets : IEquatable<HewFibGannTargets>
     {
+        bool _showTonyExtension2;
+        bool _showTonyExtensions;
         private RetraceProjectionType _retracementOrProjection;
-        private FibonacciType         _fibCalculationType     = FibonacciType.NONE;
+        private FibonacciType _fibCalculationType = FibonacciType.NONE;
 
         public FibonacciType FibType
         {
@@ -35,7 +37,7 @@ namespace fx.Algorithm
             }
         }
 
-        
+
         public RetraceProjectionType RetracementOrProjection
         {
             get { return _retracementOrProjection; }
@@ -44,106 +46,106 @@ namespace fx.Algorithm
                 _retracementOrProjection = value;
             }
         }
-        
+
 
         public TimeSpan Period { get; set; }
 
-        public PooledList<fxFibRatioModel> GetTonyLevels( )
+        public PooledList<fxFibRatioModel> GetTonyLevels()
         {
             return fxFibRatioConstants.TonyDiscoveryFibLevels;
         }
 
-        public PooledList<fxFibRatioModel> GetFibLevels( )
+        public PooledList<fxFibRatioModel> GetFibLevels()
         {
             switch ( this.FibType )
             {
                 case FibonacciType.TonyRetracement:
                 case FibonacciType.Wave2Retracement:
-                {
-                    return fxFibRatioConstants.Wave2RetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave2RetracementFibLevels;
+                    }
 
-                
+
                 case FibonacciType.Wave4Retracement:
-                {
-                    return fxFibRatioConstants.Wave4RetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave4RetracementFibLevels;
+                    }
 
                 case FibonacciType.ABCWaveBRetracement:
-                {
-                    return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
+                    }
 
                 case FibonacciType.Wave3Projection:
-                {
-                    return fxFibRatioConstants.Wave3ProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave3ProjectionFibLevels;
+                    }
 
                 case FibonacciType.Wave3CProjection:
-                {
-                    return fxFibRatioConstants.Wave3CProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave3CProjectionFibLevels;
+                    }
 
                 case FibonacciType.Wave5Projection:
-                {
-                    return fxFibRatioConstants.Wave5ProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave5ProjectionFibLevels;
+                    }
 
                 case FibonacciType.ABCWaveCProjection:
-                {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
+                    }
 
                 case FibonacciType.Wave5CProjection:
-                {
-                    return fxFibRatioConstants.Wave5CProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave5CProjectionFibLevels;
+                    }
 
                 case FibonacciType.WaveEFBRetracement:
-                {
-                    return fxFibRatioConstants.WaveEFBRetraceFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveEFBRetraceFibLevels;
+                    }
 
                 case FibonacciType.WaveTriBRetracement:
-                {
-                    return fxFibRatioConstants.WaveTriBRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriBRetracementFibLevels;
+                    }
 
                 case FibonacciType.WaveTriCProjection:
-                {
-                    return fxFibRatioConstants.WaveTriCRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriCRetracementFibLevels;
+                    }
 
                 case FibonacciType.WaveTriDProjection:
-                {
-                    return fxFibRatioConstants.WaveTriDRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriDRetracementFibLevels;
+                    }
 
                 case FibonacciType.WaveTriEProjection:
-                {
-                    return fxFibRatioConstants.WaveTriERetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriERetracementFibLevels;
+                    }
 
                 case FibonacciType.FirstXProjection:
-                {
-                    return fxFibRatioConstants.FirstXProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.FirstXProjectionFibLevels;
+                    }
 
                 case FibonacciType.SecondXProjection:
-                {
-                    return fxFibRatioConstants.SecondXProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.SecondXProjectionFibLevels;
+                    }
 
 
                 case FibonacciType.WaveCProjection:
-                {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
+                    }
 
-                //case FibonacciType.TonyProjection:
-                //{
-                //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
-                //}
+                    //case FibonacciType.TonyProjection:
+                    //{
+                    //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
+                    //}
             }
 
             return null;
@@ -154,129 +156,129 @@ namespace fx.Algorithm
             switch ( fibType )
             {
                 case FibonacciType.Wave2Retracement:
-                {
-                    return fxFibRatioConstants.Wave2RetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave2RetracementFibLevels;
+                    }
 
                 case FibonacciType.Wave4Retracement:
-                {
-                    return fxFibRatioConstants.Wave4RetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave4RetracementFibLevels;
+                    }
 
                 case FibonacciType.ABCWaveBRetracement:
-                {
-                    return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
+                    }
 
                 case FibonacciType.Wave3Projection:
-                {
-                    return fxFibRatioConstants.Wave3ProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave3ProjectionFibLevels;
+                    }
 
                 case FibonacciType.Wave3CProjection:
-                {
-                    return fxFibRatioConstants.Wave3CProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave3CProjectionFibLevels;
+                    }
 
                 case FibonacciType.Wave5Projection:
-                {
-                    return fxFibRatioConstants.Wave5ProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave5ProjectionFibLevels;
+                    }
 
                 case FibonacciType.ABCWaveCProjection:
-                {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
+                    }
 
                 case FibonacciType.Wave5CProjection:
-                {
-                    return fxFibRatioConstants.Wave5CProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.Wave5CProjectionFibLevels;
+                    }
 
                 case FibonacciType.WaveEFBRetracement:
-                {
-                    return fxFibRatioConstants.WaveEFBRetraceFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveEFBRetraceFibLevels;
+                    }
 
                 case FibonacciType.WaveTriBRetracement:
-                {
-                    return fxFibRatioConstants.WaveTriBRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriBRetracementFibLevels;
+                    }
 
                 case FibonacciType.WaveTriCProjection:
-                {
-                    return fxFibRatioConstants.WaveTriCRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriCRetracementFibLevels;
+                    }
 
                 case FibonacciType.WaveTriDProjection:
-                {
-                    return fxFibRatioConstants.WaveTriDRetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriDRetracementFibLevels;
+                    }
 
                 case FibonacciType.WaveTriEProjection:
-                {
-                    return fxFibRatioConstants.WaveTriERetracementFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.WaveTriERetracementFibLevels;
+                    }
 
                 case FibonacciType.FirstXProjection:
-                {
-                    return fxFibRatioConstants.FirstXProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.FirstXProjectionFibLevels;
+                    }
 
                 case FibonacciType.SecondXProjection:
-                {
-                    return fxFibRatioConstants.SecondXProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.SecondXProjectionFibLevels;
+                    }
 
 
                 case FibonacciType.WaveCProjection:
-                {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
-                }
+                    {
+                        return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
+                    }
 
-                //case FibonacciType.TonyProjection:
-                //{
-                //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
-                //}
+                    //case FibonacciType.TonyProjection:
+                    //{
+                    //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
+                    //}
             }
 
             return null;
         }
 
-        
 
-        private HewManager                 _hews                        = null;
 
-        private float                      _startingX                         = 0;
+        private HewManager _hews = null;
 
-        private int                        _startingXIndex                    = 0;
+        private float _startingX = 0;
 
-        private int                        _endingXIndex                      = 0;
+        private int _startingXIndex = 0;
 
-        private float                      _endingX                           = 0;
+        private int _endingXIndex = 0;
 
-        private long                       _owingBarLinuxTime                 = -1;
+        private float _endingX = 0;
 
-        private float[ ]                   _fibonaccilevels;
+        private long _owingBarLinuxTime = -1;
 
-        private DateTime                   _nextWaveIndex                     = DateTime.MinValue;
+        private float[ ] _fibonaccilevels;
 
-        private int                        _selectedLinesCount                = 0;                
+        private DateTime _nextWaveIndex = DateTime.MinValue;
 
-        private PooledList<int>                  _selectedFibLevels                 = new PooledList<int>( );
+        private int _selectedLinesCount = 0;
 
-        private FibLevelsCollection         _regularRetraceProjectionLevels    = null;
-        private FibLevelsCollection         _tonyFirstLevels                   = null;
-        private FibLevelsCollection         _tonySecondLevels                  = null;
-        private FibLevelsCollection         _tonyRetracementLevels             = null;
+        private PooledList<int> _selectedFibLevels = new PooledList<int>();
 
-        private GannLevelsCollection  _gannLevelsCollection = null;
+        private FibLevelsCollection _regularRetraceProjectionLevels = null;
+        private FibLevelsCollection _tonyFirstLevels = null;
+        private FibLevelsCollection _tonySecondLevels = null;
+        private FibLevelsCollection _tonyRetracementLevels = null;
+
+        private GannLevelsCollection _gannLevelsCollection = null;
 
         public FibLevelsCollection RegularRetraceProjectionLevels
         {
             get { return _regularRetraceProjectionLevels; }
         }
-        
+
         public FibLevelsCollection TonySecondLevels
         {
             get { return _tonySecondLevels; }
@@ -300,7 +302,7 @@ namespace fx.Algorithm
         }
 
 
-        private (DateTime, float)          _tonyStartPoint2        = default;
+        private (DateTime, float) _tonyStartPoint2 = default;
         public (DateTime Time, float Value) TonyStartPoint2
         {
             get
@@ -309,7 +311,7 @@ namespace fx.Algorithm
             }
         }
 
-        private (DateTime, float)          _tonyEndPoint2          = default;
+        private (DateTime, float) _tonyEndPoint2 = default;
         public (DateTime Time, float Value) TonyEndPoint2
         {
             get
@@ -318,7 +320,7 @@ namespace fx.Algorithm
             }
         }
 
-        private (DateTime, float)          _tonyStartPoint         = default;
+        private (DateTime, float) _tonyStartPoint = default;
         public (DateTime Time, float Value) TonyStartPoint
         {
             get
@@ -328,7 +330,7 @@ namespace fx.Algorithm
         }
 
 
-        private (DateTime, float)          _tonyEndPoint           = default;
+        private (DateTime, float) _tonyEndPoint = default;
         public (DateTime Time, float Value) TonyEndPoint
         {
             get
@@ -337,7 +339,7 @@ namespace fx.Algorithm
             }
         }
 
-        private (DateTime, float)          _tonyRetracementStartPoint         = default;
+        private (DateTime, float) _tonyRetracementStartPoint = default;
         public (DateTime Time, float Value) TonyRetracementStartPoint
         {
             get
@@ -347,7 +349,7 @@ namespace fx.Algorithm
         }
 
 
-        private (DateTime, float)          _tonyRetracementEndPoint           = default;
+        private (DateTime, float) _tonyRetracementEndPoint = default;
         public (DateTime Time, float Value) TonyRetracementEndPoint
         {
             get
@@ -356,7 +358,7 @@ namespace fx.Algorithm
             }
         }
 
-        private (DateTime, float)          _startPoint             = default;                
+        private (DateTime, float) _startPoint = default;
 
         public (DateTime Time, float Value) StartPoint
         {
@@ -366,7 +368,7 @@ namespace fx.Algorithm
             }
         }
 
-        private (DateTime, float)          _endPoint               = default;
+        private (DateTime, float) _endPoint = default;
         public (DateTime Time, float Value) EndPoint
         {
             get
@@ -375,7 +377,7 @@ namespace fx.Algorithm
             }
         }
 
-        private (DateTime, float)          _projectionPoint        = default;
+        private (DateTime, float) _projectionPoint = default;
         public (DateTime Time, float Value) ProjectionPoint
         {
             get
@@ -424,20 +426,20 @@ namespace fx.Algorithm
 
         public SymbolEx Symbol { get; set; }
 
-        
+
 
         public HewFibGannTargets( long owingBarTime, SymbolEx symbol, string name, TimeSpan period )
         {
-            Symbol              = symbol;
-            _owingBarLinuxTime  = owingBarTime;
+            Symbol = symbol;
+            _owingBarLinuxTime = owingBarTime;
 
-            var aa = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( symbol );
+            var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( symbol );
 
             if ( aa != null )
             {
-                _hews = ( HewManager ) aa.HewManager;
+                _hews = ( HewManager )aa.HewManager;
             }
-            
+
             _selectedLinesCount = 0;
             Period = period;
         }
@@ -445,26 +447,32 @@ namespace fx.Algorithm
         public void SetTonyRetracement( ((DateTime, float) startPoint, (DateTime, float) endPoint) pt, ElliottWaveEnum wave )
         {
             _tonyRetracementStartPoint = pt.startPoint;
-            _tonyRetracementEndPoint   = pt.endPoint;
+            _tonyRetracementEndPoint = pt.endPoint;
 
-            _fibonaccilevels           = GlobalConstants.Wave2RetracementLevels;
-            _fibCalculationType        = FibonacciType.TonyRetracement;
+            _fibonaccilevels = GlobalConstants.Wave2RetracementLevels;
+            _fibCalculationType = FibonacciType.TonyRetracement;
 
-            RetracementOrProjection    = RetraceProjectionType.Retracement;
+            RetracementOrProjection = RetraceProjectionType.Retracement;
 
-            _tonyRetracementLevels     = new FibLevelsCollection( _fibCalculationType, _tonyRetracementStartPoint, _tonyRetracementEndPoint );
+            _tonyRetracementLevels = new FibLevelsCollection( _fibCalculationType, _tonyRetracementStartPoint, _tonyRetracementEndPoint );
         }
 
 
-        
+
 
         public void SetTonyExtension( ((DateTime, float) startPoint, (DateTime, float) endPoint) pt, ElliottWaveEnum wave )
         {
-            _tonyStartPoint       = pt.startPoint;
-            _tonyEndPoint         = pt.endPoint;            
+            if ( wave == ElliottWaveEnum.Wave2 )
+            {
+                return;
+            }
 
-            _fibonaccilevels      = GlobalConstants.TonyDiscoveryLevels;
-            _fibCalculationType   = FibonacciType.TonyProjection;
+
+            _tonyStartPoint = pt.startPoint;
+            _tonyEndPoint = pt.endPoint;
+
+            _fibonaccilevels = GlobalConstants.TonyDiscoveryLevels;
+            _fibCalculationType = FibonacciType.TonyProjection;
 
             RetracementOrProjection = RetraceProjectionType.TonyProjection;
 
@@ -473,12 +481,17 @@ namespace fx.Algorithm
 
         public void SetTonyExtension2( ((DateTime, float) startPoint, (DateTime, float) endPoint) pt, ElliottWaveEnum wave )
         {
-            _tonyStartPoint2      = pt.startPoint;
-            _tonyEndPoint2        = pt.endPoint;
-            
+            if ( wave == ElliottWaveEnum.Wave2 )
+            {
+                return;
+            }
 
-            _fibonaccilevels      = GlobalConstants.TonyDiscoveryLevels;
-            _fibCalculationType   = FibonacciType.TonyProjection;
+            _tonyStartPoint2 = pt.startPoint;
+            _tonyEndPoint2 = pt.endPoint;
+
+
+            _fibonaccilevels = GlobalConstants.TonyDiscoveryLevels;
+            _fibCalculationType = FibonacciType.TonyProjection;
 
             RetracementOrProjection = RetraceProjectionType.TonyProjection;
 
@@ -509,6 +522,14 @@ namespace fx.Algorithm
             }
         }
 
+
+        public bool ShowTonyExtensions
+        {
+            get => _showTonyExtensions;
+            set => _showTonyExtensions = value;
+        }
+
+
         public bool HasTonyExtensions2
         {
             get
@@ -516,6 +537,14 @@ namespace fx.Algorithm
                 return _tonyEndPoint2 != default && _tonyStartPoint2 != default;
             }
         }
+
+        
+        public bool ShowTonyExtension2
+        {
+            get => _showTonyExtension2;
+            set => _showTonyExtension2 = value;
+        }
+        
 
 
         public void SetFibonacciProjections( (DateTime, float) startPoint,

@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Hydra.Core.ConnectorHydraTask`1
-// Assembly: StockSharp.Hydra.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: BF4FBD4E-7629-47D5-B0AC-6D48C0A60551
-// Assembly location: T:\00-StockSharp\Data\StockSharp.Hydra.Core.dll
-
-using Ecng.Collections;
+﻿using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
 using MoreLinq;
@@ -162,7 +156,7 @@ namespace StockSharp.Hydra.Core
         public bool UpdateSecurities { get; set; }
 
         /// <inheritdoc />
-        public override IEnumerable<StockSharp.Messages.DataType> SupportedDataTypes
+        public override IEnumerable<Messages.DataType> SupportedDataTypes
         {
             get
             {
@@ -219,7 +213,7 @@ namespace StockSharp.Hydra.Core
         }
 
         /// <inheritdoc />
-        public override bool IsAllDownloadingSupported( StockSharp.Messages.DataType dataType )
+        public override bool IsAllDownloadingSupported( Messages.DataType dataType )
         {
             return Adapter.IsAllDownloadingSupported( dataType );
         }
@@ -340,9 +334,9 @@ namespace StockSharp.Hydra.Core
 
         private void Connect( bool supportLookup, bool needReconnect )
         {
-            TMessageAdapter messageAdapter = Adapter.TypedClone<TMessageAdapter>();
-            if ( _refreshOnly || Securities.All<HydraTaskSecurity>( s => s.GetDataTypes().All<StockSharp.Messages.DataType>( t => t.IsMarketData ) ) )
-                messageAdapter.SupportedInMessages = messageAdapter.SupportedInMessages.Except<MessageTypes>( StockSharp.Messages.Extensions.TransactionalMessageTypes );
+            TMessageAdapter messageAdapter = Adapter.TypedClone();
+            if ( _refreshOnly || Securities.All( s => s.GetDataTypes().All( t => t.IsMarketData ) ) )
+                messageAdapter.SupportedInMessages = messageAdapter.SupportedInMessages.Except( StockSharp.Messages.Extensions.TransactionalMessageTypes );
             if ( !needReconnect )
             {
                 messageAdapter.ReConnectionSettings.AttemptCount = 0;
@@ -364,7 +358,9 @@ namespace StockSharp.Hydra.Core
                     Buffer.FilterSubscription = true;
                     foreach ( HydraTaskSecurity security in Securities )
                         _securityMap.Add( security.Security, security );
-                    _associatedSecurityCodes.AddRange<KeyValuePair<string, HydraTaskSecurity>>( Securities.Where<HydraTaskSecurity>( p => p.Security.Board == ExchangeBoard.Associated ).DistinctBy<HydraTaskSecurity, string>( sec => sec.Security.Code ).ToDictionary<HydraTaskSecurity, string, HydraTaskSecurity>( s => s.Security.Code, s => s ) );
+
+                    var result = MoreEnumerable.DistinctBy( Securities.Where( p => p.Security.Board == ExchangeBoard.Associated ), sec => sec.Security.Code ).ToDictionary( s => s.Security.Code, s => s );
+                    _associatedSecurityCodes.AddRange( result );                    
                 }
                 else
                     Buffer.FilterSubscription = false;
@@ -412,7 +408,7 @@ namespace StockSharp.Hydra.Core
             if ( _allSecurity == null && !_securityMap.ContainsKey( security ) )
                 return;
             HydraTaskSecurity taskSecurity;
-            foreach ( StockSharp.Messages.DataType dataType in GetDataTypes( security, out taskSecurity ).ToArray<StockSharp.Messages.DataType>() )
+            foreach ( Messages.DataType dataType in GetDataTypes( security, out taskSecurity ).ToArray() )
             {
                 if ( dataType == StockSharp.Messages.DataType.MarketDepth )
                 {
@@ -460,7 +456,7 @@ namespace StockSharp.Hydra.Core
           Action<Security, DateTimeOffset?, DateTimeOffset?> subscribe,
           Security security,
           HydraTaskSecurity map,
-          StockSharp.Messages.DataType dataType,
+          Messages.DataType dataType,
           DateTime? taskSettingsStartDate )
         {
             if ( subscribe == null )
@@ -569,7 +565,7 @@ namespace StockSharp.Hydra.Core
             }
         }
 
-        private IEnumerable<StockSharp.Messages.DataType> GetDataTypes(
+        private IEnumerable<Messages.DataType> GetDataTypes(
           Security security,
           out HydraTaskSecurity taskSecurity )
         {
@@ -580,11 +576,11 @@ namespace StockSharp.Hydra.Core
                 return _allSecurity.GetDataTypes();
             }
             if ( security.Board == ExchangeBoard.Associated )
-                return Enumerable.Empty<StockSharp.Messages.DataType>();
-            taskSecurity = _securityMap.TryGetValue<Security, HydraTaskSecurity>( security );
+                return Enumerable.Empty<Messages.DataType>();
+            taskSecurity = _securityMap.TryGetValue( security );
             if ( taskSecurity != null )
                 return taskSecurity.GetDataTypes();
-            return _associatedSecurityCodes.TryGetValue<string, HydraTaskSecurity>( security.Code )?.GetDataTypes() ?? Enumerable.Empty<StockSharp.Messages.DataType>();
+            return _associatedSecurityCodes.TryGetValue( security.Code )?.GetDataTypes() ?? Enumerable.Empty<Messages.DataType>();
         }
 
         public override void Refresh(
@@ -695,11 +691,11 @@ namespace StockSharp.Hydra.Core
             base.Load( storage );
             if ( storage.Contains( "Adapter" ) )
                 Adapter.Load( storage.GetValue<SettingsStorage>( "Adapter", null ) );
-            IsDownloadNews = storage.GetValue<bool>( "IsDownloadNews", IsDownloadNews );
-            CandlesFromDate = storage.GetValue<DateTime?>( "CandlesFromDate", CandlesFromDate );
-            TicksFromDate = storage.GetValue<DateTime?>( "TicksFromDate", TicksFromDate );
-            UpdateSecurities = storage.GetValue<bool>( "UpdateSecurities", UpdateSecurities );
-            ResumeDownload = storage.GetValue<bool>( "ResumeDownload", true );
+            IsDownloadNews = storage.GetValue( "IsDownloadNews", IsDownloadNews );
+            CandlesFromDate = storage.GetValue( "CandlesFromDate", CandlesFromDate );
+            TicksFromDate = storage.GetValue( "TicksFromDate", TicksFromDate );
+            UpdateSecurities = storage.GetValue( "UpdateSecurities", UpdateSecurities );
+            ResumeDownload = storage.GetValue( "ResumeDownload", true );
         }
 
         IMessageChannel ICloneable<IMessageChannel>.Clone()

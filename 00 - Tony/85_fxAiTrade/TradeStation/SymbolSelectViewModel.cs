@@ -1,52 +1,46 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fx.Definitions;
-using System.Collections.ObjectModel;
-using DevExpress.Utils.Svg;
-using System.Windows.Controls;
-using Ecng.Configuration;
-using StockSharp.Studio.Core.Commands;
-using StockSharp.BusinessEntities;
-using StockSharp.Algo;
+using DevExpress.Xpf.Bars;
 using Ecng.Collections;
 using Ecng.Common;
-using StockSharp.Messages;
-using Ecng.Xaml;
-using System.Reflection;
-using System.IO;
-using System.Windows.Media.Imaging;
-using fx.Common;
+using Ecng.ComponentModel;
+using Ecng.Configuration;
 using Ecng.Serialization;
+using Ecng.Xaml;
+using fx.Bars;
+using fx.Charting;
+using fx.Collections;
+using fx.Common;
+using fx.Definitions;
+using StockSharp.Algo;
+using StockSharp.BusinessEntities;
+using StockSharp.Messages;
+using StockSharp.Studio.Core.Commands;
 using StockSharp.Studio.Core.Configuration;
 using StockSharp.Studio.Core.Services;
-using DevExpress.Xpf.Bars;
-using fx.Charting;
 using StockSharp.Xaml;
-using fx.Collections;
-using fx.Algorithm;
-using fx.Bars;
-using Ecng.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace FreemindAITrade.ViewModels
 {
     [POCOViewModel]
     public class SymbolSelectViewModel : IPersistable
     {
-        private readonly CachedSynchronizedSet<Security>            _excludeSecurities = new CachedSynchronizedSet<Security>( );
-        private readonly ThreadSafeObservableCollection< Security > _filterSecurities;        
-        private readonly CollectionSecurityProvider                 _securities        = new CollectionSecurityProvider( );
-        private ISecurityProvider                                   _securityProvider;        
-        private string                                              _prevFilter        = "";
-        private string                                              _securityFilter    = string.Empty;
-        private SecurityTypes?                                      _prevType          = null;
-        private SecurityTypes?                                      _selectedType;
-        private SymbolForGrid                                       _selectedItem;
+        private readonly CachedSynchronizedSet<Security> _excludeSecurities = new CachedSynchronizedSet<Security>();
+        private readonly ThreadSafeObservableCollection<Security> _filterSecurities;
+        private readonly CollectionSecurityProvider _securities = new CollectionSecurityProvider();
+        private ISecurityProvider _securityProvider;
+        private string _prevFilter = string.Empty;
+        private string _securityFilter = string.Empty;
+        private SecurityTypes? _prevType = null;
+        private SecurityTypes? _selectedType;
+        private SymbolForGrid _selectedItem;
 
         private string _selectedSecurity = null;
 
@@ -56,52 +50,52 @@ namespace FreemindAITrade.ViewModels
 
         public SymbolSelectViewModel()
         {
-            SymbolForGridCollection = new ObservableCollection<SymbolForGrid>( );            
+            SymbolForGridCollection = new ObservableCollection<SymbolForGrid>();
 
-            var securities          = new ObservableCollectionEx<Security>( );
+            var securities = new ObservableCollectionEx<Security>();
 
-            _filterSecurities       = new ThreadSafeObservableCollection<Security>( securities ) { MaxCount = 1000 };
+            _filterSecurities = new ThreadSafeObservableCollection<Security>( securities ) { MaxCount = 1000 };
 
-            Sec01                   = false;
-            Min01                   = true;
-            Min04                   = false;
-            Min05                   = true;
-            Min15                   = true;
-            Min30                   = true;
-            Hrs01                   = true;
-            Hrs02                   = true;
-            Hrs03                   = true;
-            Hrs04                   = true;
-            Hrs06                   = true;
-            Hrs08                   = true;
-            Daily                   = true;
-            Weekly                  = true;
-            Monthly                 = true;
-            ToSelectAll             = false;
-            IsBarIntegrityCheck     = false;
-            ShowAllTimeFrameCharts  = false;
-           
+            Sec01 = false;
+            Min01 = true;
+            Min04 = false;
+            Min05 = true;
+            Min15 = true;
+            Min30 = true;
+            Hrs01 = true;
+            Hrs02 = true;
+            Hrs03 = true;
+            Hrs04 = true;
+            Hrs06 = true;
+            Hrs08 = true;
+            Daily = true;
+            Weekly = true;
+            Monthly = true;
+            ToSelectAll = false;
+            IsBarIntegrityCheck = false;
+            ShowAllTimeFrameCharts = false;
+
             //SBar.Inspect(typeof(SBar));
 
-            var symboexSize = System.Runtime.InteropServices.Marshal.SizeOf(typeof(SymbolEx));
+            var symboexSize = System.Runtime.InteropServices.Marshal.SizeOf( typeof( SymbolEx ) );
 
-            var taSignalSize = System.Runtime.InteropServices.Marshal.SizeOf(typeof(SBar));
+            var taSignalSize = System.Runtime.InteropServices.Marshal.SizeOf( typeof( SBar ) );
 
-            OrderSettings = new ChartPanelOrderSettings( );
+            OrderSettings = new ChartPanelOrderSettings();
 
             if ( OrderSettings.Portfolio == null )
             {
-                var PortfolioSource = ConfigManager.GetService< PortfolioDataSource >( );
+                var PortfolioSource = ConfigManager.GetService<PortfolioDataSource>();
 
-                portfolioVM = PortfolioPickerWindowViewModel.Create( );
+                portfolioVM = PortfolioPickerWindowViewModel.Create();
 
-                portfolioVM.PortfolioDataSource = PortfolioSource;                
+                portfolioVM.PortfolioDataSource = PortfolioSource;
             }
         }
 
         public PooledList<TimeSpan> GetSelectedTimeFrames()
         {
-            PooledList< TimeSpan > output = new PooledList< TimeSpan >( );
+            PooledList<TimeSpan> output = new PooledList<TimeSpan>();
 
             if ( Sec01 )
             {
@@ -176,98 +170,98 @@ namespace FreemindAITrade.ViewModels
             if ( Monthly )
             {
                 output.Add( TimeSpan.FromDays( 30 ) );
-            }            
+            }
 
             return output;
         }
 
         public void SelectWaveButton()
         {
-            Sec01   = false;
-            Min01   = true;
-            Min04   = false;
-            Min05   = false;
-            Min15   = false;
-            Min30   = false;
-            Hrs01   = true;
-            Hrs02   = false;
-            Hrs03   = false;
-            Hrs04   = false;
-            Hrs06   = false;
-            Hrs08   = false;
-            Daily   = true;
-            Weekly  = true;
+            Sec01 = false;
+            Min01 = true;
+            Min04 = false;
+            Min05 = false;
+            Min15 = false;
+            Min30 = false;
+            Hrs01 = true;
+            Hrs02 = false;
+            Hrs03 = false;
+            Hrs04 = false;
+            Hrs06 = false;
+            Hrs08 = false;
+            Daily = true;
+            Weekly = true;
             Monthly = true;
         }
 
-        public void SelectStandardButton( )
+        public void SelectStandardButton()
         {
-            Sec01   = false;
-            Min01   = true;
-            Min04   = false;
-            Min05   = true;
-            Min15   = true;
-            Min30   = true;
-            Hrs01   = true;
-            Hrs02   = true;
-            Hrs03   = true;
-            Hrs04   = true;
-            Hrs06   = true;
-            Hrs08   = true;
-            Daily   = true;
-            Weekly  = true;
+            Sec01 = false;
+            Min01 = true;
+            Min04 = false;
+            Min05 = true;
+            Min15 = true;
+            Min30 = true;
+            Hrs01 = true;
+            Hrs02 = true;
+            Hrs03 = true;
+            Hrs04 = true;
+            Hrs06 = true;
+            Hrs08 = true;
+            Daily = true;
+            Weekly = true;
             Monthly = true;
         }
 
-        public void SelectMinButton( )
+        public void SelectMinButton()
         {
-            Sec01   = false;
-            Min01   = true;
-            Min04   = false;
-            Min05   = false;
-            Min15   = false;
-            Min30   = false;
-            Hrs01   = false;
-            Hrs02   = false;
-            Hrs03   = false;
-            Hrs04   = false;
-            Hrs06   = false;
-            Hrs08   = false;
-            Daily   = true;
-            Weekly  = true;
+            Sec01 = false;
+            Min01 = true;
+            Min04 = false;
+            Min05 = false;
+            Min15 = false;
+            Min30 = false;
+            Hrs01 = false;
+            Hrs02 = false;
+            Hrs03 = false;
+            Hrs04 = false;
+            Hrs06 = false;
+            Hrs08 = false;
+            Daily = true;
+            Weekly = true;
             Monthly = true;
         }
 
-        public void SelectMaxButton( )
+        public void SelectMaxButton()
         {
-            Sec01   = true;
-            Min01   = true;
-            Min04   = true;
-            Min05   = true;
-            Min15   = true;
-            Min30   = true;
-            Hrs01   = true;
-            Hrs02   = true;
-            Hrs03   = true;
-            Hrs04   = true;
-            Hrs06   = true;
-            Hrs08   = true;
-            Daily   = true;
-            Weekly  = true;
+            Sec01 = true;
+            Min01 = true;
+            Min04 = true;
+            Min05 = true;
+            Min15 = true;
+            Min30 = true;
+            Hrs01 = true;
+            Hrs02 = true;
+            Hrs03 = true;
+            Hrs04 = true;
+            Hrs06 = true;
+            Hrs08 = true;
+            Daily = true;
+            Weekly = true;
             Monthly = true;
         }
 
         public static SymbolSelectViewModel Create()
         {
-            return ViewModelSource.Create( ( ) => new SymbolSelectViewModel( ) );
+            return ViewModelSource.Create( () => new SymbolSelectViewModel() );
         }
 
-        protected TradeStationViewModel ParentVM 
-        { 
-            get 
-            { 
-                return this.GetParentViewModel<TradeStationViewModel>( ); 
-            } 
+        protected TradeStationViewModel ParentVM
+        {
+            get
+            {
+                return this.GetParentViewModel<TradeStationViewModel>();
+            }
         }
 
         public virtual ICollection<SymbolForGrid> SymbolForGridCollection
@@ -287,7 +281,7 @@ namespace FreemindAITrade.ViewModels
             {
                 _selectedItem = value;
 
-                _securities.Clear( );
+                _securities.Clear();
 
                 _securities.Add( _selectedItem.Security );
 
@@ -306,7 +300,7 @@ namespace FreemindAITrade.ViewModels
 
             set
             {
-                if( value == null )
+                if ( value == null )
                     return;
 
                 _selectedSecurity = value;
@@ -323,32 +317,32 @@ namespace FreemindAITrade.ViewModels
         }
 
         public virtual bool ToSelectAll { get; set; }
-        
 
-        public void OnToSelectAllChanged( )
+
+        public void OnToSelectAllChanged()
         {
-            Sec01   = ToSelectAll;
-            Min01   = ToSelectAll;
-            Min04   = ToSelectAll;
-            Min05   = ToSelectAll;
-            Min15   = ToSelectAll;
-            Min30   = ToSelectAll;
-            Hrs01   = ToSelectAll;
-            Hrs02   = ToSelectAll;
-            Hrs03   = ToSelectAll;
-            Hrs04   = ToSelectAll;
-            Hrs06   = ToSelectAll;
-            Hrs08   = ToSelectAll;
-            Daily   = ToSelectAll;
-            Weekly  = ToSelectAll;
+            Sec01 = ToSelectAll;
+            Min01 = ToSelectAll;
+            Min04 = ToSelectAll;
+            Min05 = ToSelectAll;
+            Min15 = ToSelectAll;
+            Min30 = ToSelectAll;
+            Hrs01 = ToSelectAll;
+            Hrs02 = ToSelectAll;
+            Hrs03 = ToSelectAll;
+            Hrs04 = ToSelectAll;
+            Hrs06 = ToSelectAll;
+            Hrs08 = ToSelectAll;
+            Daily = ToSelectAll;
+            Weekly = ToSelectAll;
             Monthly = ToSelectAll;
         }
-        
+
         public virtual bool IsLiveTrading { get; set; }
         public virtual bool IsBackTesting { get; set; }
         public virtual bool IsBarIntegrityCheck { get; set; }
         public virtual bool ShowAllTimeFrameCharts { get; set; }
-        public virtual bool Sec01 { get; set; }        
+        public virtual bool Sec01 { get; set; }
         public virtual bool Min01 { get; set; }
         public virtual bool Min04 { get; set; }
         public virtual bool Min05 { get; set; }
@@ -372,7 +366,7 @@ namespace FreemindAITrade.ViewModels
 
 
         public virtual DateTime StartDate { get; set; } = new DateTime( 2020, 01, 01 );
-        public virtual DateTime EndDate { get; set; } = DateTime.UtcNow;        
+        public virtual DateTime EndDate { get; set; } = DateTime.UtcNow;
 
 
         public virtual bool IsEnable
@@ -383,17 +377,17 @@ namespace FreemindAITrade.ViewModels
 
         public void AskParentToCloseWindow()
         {
-            ParentVM.CloseDocument( );
+            ParentVM.CloseDocument();
         }
 
-        public Task OnLoaded( )
+        public Task OnLoaded()
         {
             return Task.Factory.StartNew( PopulateAllSymbols );
         }
 
-        private void PopulateAllSymbols( )
+        private void PopulateAllSymbols()
         {
-            ConfigManager.GetService< IStudioCommandService >( ).Register< LookupSecuritiesResultCommand >( this, false, OnSecurityResults );        
+            ConfigManager.GetService<IStudioCommandService>().Register<LookupSecuritiesResultCommand>( this, false, OnSecurityResults );
         }
 
         private void OnSecurityResults( LookupSecuritiesResultCommand cmd )
@@ -428,7 +422,7 @@ namespace FreemindAITrade.ViewModels
 
                 if ( _securityProvider != null )
                 {
-                    _securityProvider.Added   -= OnAddNewSecurities;
+                    _securityProvider.Added -= OnAddNewSecurities;
                     _securityProvider.Removed -= OnRemoveSecurities;
                     _securityProvider.Cleared -= OnClearSecurities;
 
@@ -438,11 +432,11 @@ namespace FreemindAITrade.ViewModels
                 if ( value == null )
                 {
                     value = new FilterableSecurityProvider( _securities );
-                    
+
                 }
                 else
                 {
-                    
+
                 }
 
                 _securityProvider = value;
@@ -491,11 +485,11 @@ namespace FreemindAITrade.ViewModels
             //SecuritiesCtrl.BeginDataUpdate( );
             try
             {
-                string filter = SecurityFilter?.Trim( );
+                string filter = SecurityFilter?.Trim();
 
-                if ( !bool_3 && !_prevFilter.IsEmpty( ) && ( filter != null && filter.StartsWithIgnoreCase( _prevFilter ) ) )
+                if ( !bool_3 && !_prevFilter.IsEmpty() && ( filter != null && filter.StartsWithIgnoreCase( _prevFilter ) ) )
                 {
-                    if ( ( _prevType.GetValueOrDefault( ) == SelectedType.GetValueOrDefault( ) & _prevType.HasValue == SelectedType.HasValue || !_prevType.HasValue && SelectedType.HasValue ) && FilteredSecurities.Count < 500 )
+                    if ( ( _prevType.GetValueOrDefault() == SelectedType.GetValueOrDefault() & _prevType.HasValue == SelectedType.HasValue || !_prevType.HasValue && SelectedType.HasValue ) && FilteredSecurities.Count < 500 )
                     {
                         FilteredSecurities.RemoveWhere( s => !CheckCondition( s ) );
                         return;
@@ -505,14 +499,14 @@ namespace FreemindAITrade.ViewModels
                 string prevFilter = null;
                 int? indexOfAt = filter?.LastIndexOf( '@' );
 
-                if ( indexOfAt.GetValueOrDefault( ) > 0 & indexOfAt.HasValue )
+                if ( indexOfAt.GetValueOrDefault() > 0 & indexOfAt.HasValue )
                 {
                     string oldFilter = filter;
                     filter = oldFilter.Substring( 0, indexOfAt.Value );
                     prevFilter = oldFilter.Substring( indexOfAt.Value + 1 );
                 }
 
-                IEnumerable<Security> source = filter.IsEmpty( ) ? SecurityProvider.LookupAll( ) : SecurityProvider.LookupByCode( filter );
+                IEnumerable<Security> source = filter.IsEmpty() ? SecurityProvider.LookupAll() : SecurityProvider.LookupByCode( filter );
 
                 if ( prevFilter != null )
                 {
@@ -531,23 +525,23 @@ namespace FreemindAITrade.ViewModels
                                                                 return true;
                                                             }
 
-                                                            return s.Type.GetValueOrDefault( ) == _prevType.GetValueOrDefault( ) & s.Type.HasValue == _prevType.HasValue;
+                                                            return s.Type.GetValueOrDefault() == _prevType.GetValueOrDefault() & s.Type.HasValue == _prevType.HasValue;
                                                         }
-                                               ).ToArray( );
+                                               ).ToArray();
 
                 if ( FilteredSecurities.SequenceEqual( array ) )
                 {
                     return;
                 }
 
-                FilteredSecurities.Clear( );
+                FilteredSecurities.Clear();
                 FilteredSecurities.AddRange( array );
 
-                SymbolForGridCollection.Clear( );
+                SymbolForGridCollection.Clear();
 
                 foreach ( Security security in array )
                 {
-                    var secWithout = security.Code.Replace( @"/", "" );
+                    var secWithout = security.Code.Replace( @"/", string.Empty );
 
                     SymbolForGrid newEntry = new SymbolForGrid( security.Type.ToString(), security.Code, SymbolImageHelper.GetImageSourece( security ), security );
 
@@ -589,12 +583,12 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( selectedType.HasValue )
                 {
-                    if ( !( sec.Type.GetValueOrDefault( ) == selectedType.GetValueOrDefault( ) & sec.Type.HasValue ) )
+                    if ( !( sec.Type.GetValueOrDefault() == selectedType.GetValueOrDefault() & sec.Type.HasValue ) )
                     {
                         return false;
                     }
                 }
-                if ( !securityFilter.IsEmpty( ) && ( sec.Code.IsEmpty( ) || !sec.Code.ContainsIgnoreCase( securityFilter ) ) && ( ( sec.Name.IsEmpty( ) || !sec.Name.ContainsIgnoreCase( securityFilter ) ) && ( sec.ShortName.IsEmpty( ) || !sec.ShortName.ContainsIgnoreCase( securityFilter ) ) ) )
+                if ( !securityFilter.IsEmpty() && ( sec.Code.IsEmpty() || !sec.Code.ContainsIgnoreCase( securityFilter ) ) && ( ( sec.Name.IsEmpty() || !sec.Name.ContainsIgnoreCase( securityFilter ) ) && ( sec.ShortName.IsEmpty() || !sec.ShortName.ContainsIgnoreCase( securityFilter ) ) ) )
                 {
                     return sec.Id.ContainsIgnoreCase( securityFilter );
                 }
@@ -615,33 +609,33 @@ namespace FreemindAITrade.ViewModels
             //SecurityProviderOnSecuritiesChanged( false, NotifyCollectionChangedAction.Remove, securities );
         }
 
-        private void OnClearSecurities( )
+        private void OnClearSecurities()
         {
             //SecurityProviderOnSecuritiesChanged( false, NotifyCollectionChangedAction.Reset, null );
         }
 
         public void Load( SettingsStorage storage )
-        {            
-            Sec01                  = storage.GetValue<bool>( nameof( Sec01 ) );
-            Min01                  = storage.GetValue<bool>( nameof( Min01 ) );
-            Min04                  = storage.GetValue<bool>( nameof( Min04 ) );
-            Min05                  = storage.GetValue<bool>( nameof( Min05 ) );
-            Min15                  = storage.GetValue<bool>( nameof( Min15 ) );
-            Min30                  = storage.GetValue<bool>( nameof( Min30 ) );
-            Hrs01                  = storage.GetValue<bool>( nameof( Hrs01 ) );
-            Hrs02                  = storage.GetValue<bool>( nameof( Hrs02 ) );
-            Hrs03                  = storage.GetValue<bool>( nameof( Hrs03 ) );
-            Hrs04                  = storage.GetValue<bool>( nameof( Hrs04 ) );
-            Hrs06                  = storage.GetValue<bool>( nameof( Hrs06 ) );
-            Hrs08                  = storage.GetValue<bool>( nameof( Hrs08 ) );
-            Daily                  = storage.GetValue<bool>( nameof( Daily ) );
-            Weekly                 = storage.GetValue<bool>( nameof( Weekly ) );
-            Monthly                = storage.GetValue<bool>( nameof( Monthly ) );
-            IsBarIntegrityCheck    = storage.GetValue<bool>( nameof( IsBarIntegrityCheck ) );
+        {
+            Sec01 = storage.GetValue<bool>( nameof( Sec01 ) );
+            Min01 = storage.GetValue<bool>( nameof( Min01 ) );
+            Min04 = storage.GetValue<bool>( nameof( Min04 ) );
+            Min05 = storage.GetValue<bool>( nameof( Min05 ) );
+            Min15 = storage.GetValue<bool>( nameof( Min15 ) );
+            Min30 = storage.GetValue<bool>( nameof( Min30 ) );
+            Hrs01 = storage.GetValue<bool>( nameof( Hrs01 ) );
+            Hrs02 = storage.GetValue<bool>( nameof( Hrs02 ) );
+            Hrs03 = storage.GetValue<bool>( nameof( Hrs03 ) );
+            Hrs04 = storage.GetValue<bool>( nameof( Hrs04 ) );
+            Hrs06 = storage.GetValue<bool>( nameof( Hrs06 ) );
+            Hrs08 = storage.GetValue<bool>( nameof( Hrs08 ) );
+            Daily = storage.GetValue<bool>( nameof( Daily ) );
+            Weekly = storage.GetValue<bool>( nameof( Weekly ) );
+            Monthly = storage.GetValue<bool>( nameof( Monthly ) );
+            IsBarIntegrityCheck = storage.GetValue<bool>( nameof( IsBarIntegrityCheck ) );
             ShowAllTimeFrameCharts = storage.GetValue<bool>( nameof( ShowAllTimeFrameCharts ) );
-            SelectedSecurity       = storage.GetValue<string>( nameof( SelectedSecurity ) );
-            TradingMode            = storage.GetValue<TradingMode>( nameof( TradingMode ) );
-            
+            SelectedSecurity = storage.GetValue<string>( nameof( SelectedSecurity ) );
+            TradingMode = storage.GetValue<TradingMode>( nameof( TradingMode ) );
+
         }
 
         public void Save( SettingsStorage storage )
@@ -676,9 +670,9 @@ namespace FreemindAITrade.ViewModels
             }
 
             set
-            {                
-                _tradingMode = value;    
-                
+            {
+                _tradingMode = value;
+
                 if ( _tradingMode == TradingMode.BACKTESTING )
                 {
                     IsBackTesting = true;
@@ -692,7 +686,7 @@ namespace FreemindAITrade.ViewModels
 
         private TradingMode _tradingMode = TradingMode.LIVETRADING;
 
-        [ Command( false )]
+        [Command( false )]
         public void OnCheckChanged( ItemClickEventArgs args )
         {
             ItemClickEventArgs myevent = args;
@@ -707,7 +701,7 @@ namespace FreemindAITrade.ViewModels
                 }
             }
 
-            _tradingMode = ( TradingMode )Enum.Parse( typeof( TradingMode ), ( string )myevent.Item.Tag );            
+            _tradingMode = ( TradingMode )Enum.Parse( typeof( TradingMode ), ( string )myevent.Item.Tag );
         }
 
 
@@ -726,34 +720,34 @@ namespace FreemindAITrade.ViewModels
                 }
             }
 
-            _tradingMode = ( TradingMode ) Enum.Parse( typeof( TradingMode ), ( string ) myevent.Item.Tag );
+            _tradingMode = ( TradingMode )Enum.Parse( typeof( TradingMode ), ( string )myevent.Item.Tag );
         }
     }
 
     public class SymbolPeriod : BindableBase
-    {        
-        public TimeSpan SymbolTimeSpan 
+    {
+        public TimeSpan SymbolTimeSpan
         {
-            get { return GetValue<TimeSpan>( ); }
+            get { return GetValue<TimeSpan>(); }
             set
             {
                 SetValue( value );
             }
-        }        
+        }
 
         public string ForexPeriod
         {
-            get { return GetValue<string>( ); }
+            get { return GetValue<string>(); }
             set
             {
                 SetValue( value );
             }
-        }        
+        }
 
         public SymbolPeriod( TimeSpan time )
         {
             SymbolTimeSpan = time;
-            ForexPeriod    = time.ToReadable( );
+            ForexPeriod = time.ToReadable();
         }
     }
 
@@ -763,7 +757,7 @@ namespace FreemindAITrade.ViewModels
 
         public ISymbol SymbolObject
         {
-            get { return GetValue<ISymbol>( ); }
+            get { return GetValue<ISymbol>(); }
             set
             {
                 SetValue( value );
@@ -772,7 +766,7 @@ namespace FreemindAITrade.ViewModels
 
         public string SymbolGroup
         {
-            get { return GetValue<string>( ); }
+            get { return GetValue<string>(); }
             set
             {
                 SetValue( value );
@@ -781,7 +775,7 @@ namespace FreemindAITrade.ViewModels
 
         public string SymbolName
         {
-            get { return GetValue<string>( ); }
+            get { return GetValue<string>(); }
             set
             {
                 SetValue( value );
@@ -790,7 +784,7 @@ namespace FreemindAITrade.ViewModels
 
         public BitmapImage SymbolImage
         {
-            get { return GetValue<BitmapImage>( ); }
+            get { return GetValue<BitmapImage>(); }
             set
             {
                 SetValue( value );
@@ -809,9 +803,9 @@ namespace FreemindAITrade.ViewModels
         public SymbolForGrid( string group, string name, BitmapImage image, Security security )
         {
             SymbolGroup = group;
-            SymbolName  = name;
+            SymbolName = name;
             SymbolImage = image;
-            Security    = security;
+            Security = security;
         }
 
         public SymbolForGrid( ISymbol symbol )
@@ -820,10 +814,10 @@ namespace FreemindAITrade.ViewModels
 
             if ( symbol.SymbolGroup == fx.Definitions.SymbolGroup.NA )
             {
-                symbol.FixSymbol( );
+                symbol.FixSymbol();
             }
 
-            SymbolGroup = symbol.SymbolGroup.ToString( );
+            SymbolGroup = symbol.SymbolGroup.ToString();
 
             SymbolName = symbol.SymbolString;
         }

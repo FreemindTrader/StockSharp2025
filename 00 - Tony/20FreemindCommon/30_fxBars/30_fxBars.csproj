@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -22,21 +22,23 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.225</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Collections" Version="5.0.212" />
-        <PackageReference Include="fx.Common" Version="5.0.212" />
-        <PackageReference Include="fx.CommonWnd" Version="5.0.213" />
-        <PackageReference Include="fx.Definitions" Version="5.0.212" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.212" />
+        <PackageReference Include="fx.Collections" Version="5.0.220" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
     </ItemGroup>
 
     <ItemGroup>
         <Folder Include="TimeBlock\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\20_fxCommon\20_fxCommon.csproj" />
+      <ProjectReference Include="..\25_fxCommonWnd\25_fxCommonWnd.csproj" />
     </ItemGroup>
 
     <ItemGroup>

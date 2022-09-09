@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{9A548DA8-BE6C-43C6-A69C-FFE711D8801B}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>net5.0-windows</TargetFramework>
+        <TargetFramework>net6.0-windows</TargetFramework>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -21,20 +21,20 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.223</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="StockSharp.Algo" Version="5.0.212" />
-      <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.213" />
-      <PackageReference Include="StockSharp.Logging" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Messages" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Server.Core" Version="5.0.210" />
-      <PackageReference Include="StockSharp.Server.Fix" Version="5.0.107" />
-      <PackageReference Include="Stocksharp.Studio.Core" Version="5.0.213" />
+      <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
+      <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Logging" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Server.Core" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Server.Fix" Version="5.0.108" />
+      <PackageReference Include="Stocksharp.Studio.Core" Version="5.0.223" />
     </ItemGroup>
 
     <ItemGroup>

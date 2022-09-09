@@ -1,17 +1,14 @@
 ﻿using DevExpress.Mvvm.UI;
 using DevExpress.Xpf.Grid;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace FreemindTrader
 {
     public interface IFocusCellService
     {
-        void FocusCell( );
+        void FocusCell();
     }
 
     public class FocusCellService : ServiceBase, IFocusCellService
@@ -58,7 +55,7 @@ namespace FreemindTrader
 
         public static readonly DependencyProperty RowHandleProperty = DependencyProperty.Register( "RowHandle", typeof( int ), typeof( FocusCellService ), new PropertyMetadata( 0 ) );
 
-        void IFocusCellService.FocusCell( )
+        void IFocusCellService.FocusCell()
         {
             if ( View == null )
             {
@@ -71,8 +68,8 @@ namespace FreemindTrader
             }
 
             View.FocusedRowHandle = RowHandle;
-            View.Grid.CurrentColumn = View.Grid.Columns[ ColumnName ];
-            View.ShowEditor( );
+            View.Grid.CurrentColumn = View.Grid.Columns[ColumnName];
+            View.ShowEditor();
         }
     }
 }

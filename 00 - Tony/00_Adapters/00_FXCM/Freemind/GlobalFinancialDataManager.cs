@@ -1270,7 +1270,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
         public static ExecutionMessage GetTradeMessage( FxDetailedPosition pos, long transId, O2GTableUpdateType updateType )
         {
             var msg                   = new ExecutionMessage( );
-            msg.ExecutionType         = ExecutionTypes.Transaction;
+            msg.DataTypeEx         = DataType.Transactions;
             msg.SecurityId            = pos.OfferID.ToSecurityId( );
             msg.OriginalTransactionId = transId;
             msg.ServerTime            = pos.OpenTime;
@@ -1327,7 +1327,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
             }
 
             var msg                   = new ExecutionMessage( );
-            msg.ExecutionType         = ExecutionTypes.Transaction;
+            msg.DataTypeEx         = DataType.Transactions;
             msg.HasOrderInfo          = true;
             msg.SecurityId            = detailedOrder.OfferID.ToSecurityId( );
             msg.OriginalTransactionId = transId;
@@ -1417,7 +1417,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
                    )
                 {
                     ExecutionMessage exeMsg      = new ExecutionMessage( );
-                    exeMsg.ExecutionType         = ExecutionTypes.Transaction;
+                    exeMsg.DataTypeEx         = DataType.Transactions;
                     exeMsg.HasOrderInfo          = true;
                     exeMsg.SecurityId            = row.OfferID.ToSecurityId( );
 

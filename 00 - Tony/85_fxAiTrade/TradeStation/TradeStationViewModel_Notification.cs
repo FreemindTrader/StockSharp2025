@@ -1,42 +1,24 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Mvvm.UI;
-using DevExpress.Xpf.Docking.Base;
-using StockSharp.Algo;
-using StockSharp.BusinessEntities;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using fx.Definitions;
-using fx.Common;
-using fx.Definitions.UndoRedo;
 using fx.Algorithm;
-using Ecng.Collections;
-using StockSharp.Logging;
-using StockSharp.Algo.Candles;
 using fx.Collections;
+using fx.Definitions;
+using StockSharp.Logging;
+using System;
+using System.Linq;
 
 namespace FreemindAITrade.ViewModels
 {
     public partial class TradeStationViewModel : BaseLogReceiver, IMutltiTimeFrameSessionDataRepo
     {
-        PooledList< double > _soundAlertPrice = new PooledList< double >( );
+        PooledList<double> _soundAlertPrice = new PooledList<double>();
 
         TrendDirection _alertDirection = TrendDirection.NoTrend;
 
-        PooledList< double > _spokenPrice = new PooledList< double >( );
-        
-        public void AddSoundAlert( )
+        PooledList<double> _spokenPrice = new PooledList<double>();
+
+        public void AddSoundAlert()
         {
-            var selectedLines = _selectedViewModel.ChartVM.GetSelectedLinesForSoundAlert( );
+            var selectedLines = _selectedViewModel.ChartVM.GetSelectedLinesForSoundAlert();
 
             if ( selectedLines.Count > 0 )
             {
@@ -55,7 +37,7 @@ namespace FreemindAITrade.ViewModels
             if ( quote.Security.Code != _security.Code )
                 return;
 
-            
+
             var average = ( quote.Ask + quote.Bid ) / 2;
 
             if ( _alertDirection == TrendDirection.NoTrend )
@@ -134,6 +116,6 @@ namespace FreemindAITrade.ViewModels
             //}            
         }
 
-        
+
     }
 }

@@ -16,7 +16,7 @@
     <tags>Ecng ManagedWinapi</tags>
     <repository commit="bc7d88ba7d67e38078a3c1310bda0675c691a3d2" />
     <dependencies>
-      <group targetFramework="net5.0-windows7.0">
+      <group targetFramework="net6.0-windows7.0">
         <dependency id="Microsoft.Windows.Compatibility" version="5.0.2" />
         <dependency id="Ecng.Interop" version="1.0.132" />
       </group>

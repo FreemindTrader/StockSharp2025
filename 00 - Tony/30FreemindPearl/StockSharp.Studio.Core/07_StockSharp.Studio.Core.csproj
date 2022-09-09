@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{2CAFE858-3A40-46DF-AA80-9AB8B8F22A6E}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>net5.0-windows</TargetFramework>
+        <TargetFramework>net6.0-windows</TargetFramework>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
@@ -21,20 +21,23 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.225</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="fx.Charting" Version="5.0.213" />
-      <PackageReference Include="StockSharp.Algo" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.212" />
-      <PackageReference Include="StockSharp.Diagram.Core" Version="5.0.8" />
-      <PackageReference Include="StockSharp.Studio.Community" Version="5.0.210" />
-      <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.213" />
-      <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.213" />
+      <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Diagram.Core" Version="5.0.9" />
+      <PackageReference Include="StockSharp.Studio.Community" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.223" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\20FreemindCommon\62_fxCharting\62_fxCharting.csproj" />
     </ItemGroup>
 
     <ItemGroup>

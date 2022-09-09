@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{356B8531-598E-43B1-BBF1-F6EC5CFB99D8}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>net5.0-windows</TargetFramework>
+        <TargetFramework>net6.0-windows</TargetFramework>
         <LangVersion>8.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <NoWarn>1701;1702;CS3003;CS0612</NoWarn>
@@ -22,23 +22,23 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.213</Version>
+        <Version>5.0.224</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
         <PackageReference Include="EntityFramework" Version="6.4.4" />
-        <PackageReference Include="fx.AlgoEx" Version="5.0.212" />
-        <PackageReference Include="fx.Bars" Version="5.0.213" />
-        <PackageReference Include="fx.Collections" Version="5.0.212" />
-        <PackageReference Include="fx.Common" Version="5.0.212" />
-        <PackageReference Include="fx.CommonWnd" Version="5.0.213" />
-        <PackageReference Include="fx.Database" Version="5.0.213" />
-        <PackageReference Include="fx.Definitions" Version="5.0.212" />
-        <PackageReference Include="fx.DefintionsWnd" Version="5.0.212" />
-        <PackageReference Include="fx.TALib" Version="5.0.212" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.134" />
+        <PackageReference Include="fx.AlgoEx" Version="5.0.220" />
+        <PackageReference Include="fx.Collections" Version="5.0.220" />
+        <PackageReference Include="fx.Database" Version="5.0.225" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.135" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj" />
+      <ProjectReference Include="..\30_fxTALib\30_fxTALib.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="SciChart.Charting">

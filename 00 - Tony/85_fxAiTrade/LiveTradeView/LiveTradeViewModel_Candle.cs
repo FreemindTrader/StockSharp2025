@@ -1,11 +1,14 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using DevExpress.Xpf.Docking;
+﻿using DevExpress.Xpf.Docking;
 using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Configuration;
 using Ecng.Serialization;
+using fx.Algorithm;
+using fx.Bars;
+using fx.Charting;
+using fx.Collections;
+using fx.Common;
+using fx.Definitions;
 using MoreLinq;
 using StockSharp.Algo;
 using StockSharp.Algo.Candles;
@@ -13,62 +16,41 @@ using StockSharp.Algo.Candles.Compression;
 using StockSharp.Algo.Indicators;
 using StockSharp.Algo.Storages;
 using StockSharp.BusinessEntities;
-using StockSharp.Localization;
 using StockSharp.Logging;
 using StockSharp.Messages;
 using StockSharp.Studio.Core.Commands;
-using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using fx.Definitions;
-using fx.Common;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using StockSharp.Algo.Storages.Binary;
-
-using Ecng.ComponentModel;
-using static fx.Charting.ChartDrawDataEx.sCandle;
-using fx.Algorithm;
-using fx.Charting;
 using ChartDrawDataEx = fx.Charting.ChartDrawDataEx;
-using static fx.Charting.ChartDrawDataEx;
-using SciChart.Charting.Model.DataSeries;
-using DevExpress.Xpf.Bars;
-using fx.Collections;
-using fx.Bars;
-using fx.Base;
 
 namespace FreemindAITrade.ViewModels
 {
     public partial class LiveTradeViewModel
     {
-        private readonly SynchronizedDictionary< Security, PooledList< LongDownloadTaskInfo >> _longRunningCandlesTask        = new SynchronizedDictionary< Security, PooledList<LongDownloadTaskInfo>>( );
+        private readonly SynchronizedDictionary<Security, PooledList<LongDownloadTaskInfo>> _longRunningCandlesTask = new SynchronizedDictionary<Security, PooledList<LongDownloadTaskInfo>>();
 
-        PooledList<DownloadRange>       _downloadBackward     = new PooledList<DownloadRange>( );
-        private fxList<ChartDrawDataEx> _preloadedData        = new fxList<ChartDrawDataEx>( );
-        PooledList<DownloadRange>       _nonContinousDownload = new PooledList<DownloadRange>( );
-        private IEnumerable<Candle>     _drawCandles;
-        private bool                    _isDrawingCandles     = false;
-        private WorkFlowStatus          _preloadCandlesStatus = WorkFlowStatus.NotStarted;
-        private IMarketDataStorage      _candleStorage;
-        private IMarketDataStorage      _level1Storage;
+        PooledList<DownloadRange> _downloadBackward = new PooledList<DownloadRange>();
+        private fxList<ChartDrawDataEx> _preloadedData = new fxList<ChartDrawDataEx>();
+        PooledList<DownloadRange> _nonContinousDownload = new PooledList<DownloadRange>();
+        private IEnumerable<Candle> _drawCandles;
+        private bool _isDrawingCandles = false;
+        private WorkFlowStatus _preloadCandlesStatus = WorkFlowStatus.NotStarted;
+        private IMarketDataStorage _candleStorage;
+        private IMarketDataStorage _level1Storage;
 
-        private DateTimeOffset          _lastBarTime          = DateTimeOffset.MinValue;
+        private DateTimeOffset _lastBarTime = DateTimeOffset.MinValue;
 
-        private DateTime                _lastCandleCommandTime = DateTime.MinValue;
+        private DateTime _lastCandleCommandTime = DateTime.MinValue;
 
         //private bool                    _flushingCandles      = false;
 
-        private bool                    _doneDrawing          = false;
+        private bool _doneDrawing = false;
 
-        private List< Candle > _candleBuffer         = new List<Candle>( 1000 );
-        
+        private List<Candle> _candleBuffer = new List<Candle>( 1000 );
 
-        private fxList<ChartDrawDataEx> _newCandlesList       = new fxList<ChartDrawDataEx>( );
+
+        private fxList<ChartDrawDataEx> _newCandlesList = new fxList<ChartDrawDataEx>();
 
 
         private void Step4_SubscribeCandleUiEventHandler( CandlestickUI element, CandleSeries series )
@@ -124,7 +106,7 @@ namespace FreemindAITrade.ViewModels
 
             this.AddWarningLog( msg );
 
-            var candleSeries = (CandleSeries) command.Source;
+            var candleSeries = ( CandleSeries )command.Source;
 
 
             /* -------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,9 +122,9 @@ namespace FreemindAITrade.ViewModels
             }
 
             _doneDrawing = false;
-            _drawSeries  = candleSeries;
+            _drawSeries = candleSeries;
 
-            var period   = ( TimeSpan )_drawSeries.Arg;
+            var period = ( TimeSpan )_drawSeries.Arg;
 
             if ( period == TimeSpan.FromMinutes( 5 ) )
             {
@@ -162,8 +144,8 @@ namespace FreemindAITrade.ViewModels
 
                 _chartVM.WaveScenarioNo( _waveScenarioNumber );
 
-                CandleSeries myCandles = (CandleSeries) command.Source;
-                Subscription subscription = new Subscription(myCandles);
+                CandleSeries myCandles = ( CandleSeries )command.Source;
+                Subscription subscription = new Subscription( myCandles );
 
                 var candleSeriesData = new CandleSeriesData( candleUI, _bars, subscription, DateTimeOffset.MinValue );
 
@@ -178,20 +160,20 @@ namespace FreemindAITrade.ViewModels
 
                 if ( ResponsibleTF >= TimeSpan.FromMinutes( 1 ) )
                 {
-                    _candleStorage = GetTimeFrameCandleMessageStorage( _drawSeries.Security, ( TimeSpan ) _drawSeries.Arg, _drawSeries.AllowBuildFromSmallerTimeFrame );
+                    _candleStorage = GetTimeFrameCandleMessageStorage( _drawSeries.Security, ( TimeSpan )_drawSeries.Arg, _drawSeries.AllowBuildFromSmallerTimeFrame );
 
 
-                    
 
-                    lastTime = LoadCandles( ( IMarketDataStorage<CandleMessage> ) _candleStorage, _drawSeries, TimeSpan.FromDays( 5 ) );
+
+                    lastTime = LoadCandles( ( IMarketDataStorage<CandleMessage> )_candleStorage, _drawSeries, TimeSpan.FromDays( 5 ) );
                 }
                 else
                 {
-                    var secId      = _drawSeries.Security.ToSecurityId( );
+                    var secId = _drawSeries.Security.ToSecurityId();
                     _level1Storage = _storageRegistry.GetLevel1MessageStorage( secId, Drive, Format ); ;
                     _candleStorage = _storageRegistry.GetCandleMessageStorage( typeof( TimeFrameCandleMessage ), secId, period, Drive, Format );
 
-                    lastTime       = LoadTicksAndBuildOneSecondBars( _drawSeries, TimeSpan.FromDays( 5 ) );
+                    lastTime = LoadTicksAndBuildOneSecondBars( _drawSeries, TimeSpan.FromDays( 5 ) );
                 }
 
 
@@ -233,7 +215,7 @@ namespace FreemindAITrade.ViewModels
                     return;
                 }
 
-                CandleSeries myCandles = ( CandleSeries ) command.Source;
+                CandleSeries myCandles = ( CandleSeries )command.Source;
                 CandleSeriesData candleSeriesData;
 
                 if ( !_candles.TryGetValue( myCandles, out candleSeriesData ) )
@@ -250,18 +232,18 @@ namespace FreemindAITrade.ViewModels
                 var indicatorPair = new IndicatorPair( this, indicatorUI, command.Indicator, _drawSeries );
                 _indicators.Add( indicatorUI, indicatorPair );
 
-                var first         = _indicatorsBySeries.SafeAdd(myCandles,  key => Array.Empty<Tuple<IndicatorUI, IndicatorPair>>());
-                _indicatorsBySeries[ myCandles ] = first.Concat( new Tuple<IndicatorUI, IndicatorPair>[1] { Tuple.Create( indicatorUI, indicatorPair ) } ).ToArray();
+                var first = _indicatorsBySeries.SafeAdd( myCandles, key => Array.Empty<Tuple<IndicatorUI, IndicatorPair>>() );
+                _indicatorsBySeries[myCandles] = first.Concat( new Tuple<IndicatorUI, IndicatorPair>[1] { Tuple.Create( indicatorUI, indicatorPair ) } ).ToArray();
 
-                var data          = new ChartDrawDataEx();
+                var data = new ChartDrawDataEx();
 
-                var indicator     = indicatorPair.MyIndicator;
-                var count         = candleSeriesData.BarsRepo.MainDataBars.Count;
+                var indicator = indicatorPair.MyIndicator;
+                var count = candleSeriesData.BarsRepo.MainDataBars.Count;
                 var indicatorList = data.SetIndicatorSource( indicatorUI, count );
 
                 for ( int i = 0; i < count; i++ )
                 {
-                    ref SBar bar     = ref candleSeriesData.BarsRepo[ i ];
+                    ref SBar bar = ref candleSeriesData.BarsRepo[i];
                     var indicatorRes = indicator.Process( ref bar );
 
                     indicatorList.SetIndicatorValue( bar.BarTime, indicatorRes );
@@ -294,7 +276,7 @@ namespace FreemindAITrade.ViewModels
             }
 
 
-            var candleBuilderProvider = ConfigManager.TryGetService<CandleBuilderProvider>( ) ?? new CandleBuilderProvider( ServicesRegistry.EnsureGetExchangeInfoProvider( ) );
+            var candleBuilderProvider = ConfigManager.TryGetService<CandleBuilderProvider>() ?? new CandleBuilderProvider( ServicesRegistry.EnsureGetExchangeInfoProvider() );
 
             var smallerTFSource = StorageHelper.GetCandleMessageBuildableStorage( candleBuilderProvider, _storageRegistry, security.ToSecurityId(), timeFrame, Drive, Format );
 
@@ -373,7 +355,7 @@ namespace FreemindAITrade.ViewModels
 
         private void FlushBufferedCandles()
         {
-            if ( ! _bars.DoneLoading )
+            if ( !_bars.DoneLoading )
             {
                 return;
             }
@@ -388,7 +370,7 @@ namespace FreemindAITrade.ViewModels
 
                 _candleBuffer = new List<Candle>();
 
-                var buffer         = new List< Candle >( );
+                var buffer = new List<Candle>();
 
                 foreach ( var candle in toBeDrawCandle )
                 {
@@ -397,7 +379,7 @@ namespace FreemindAITrade.ViewModels
 
                 var bars = _bars.AddReplaceCandlesRange( SelectedSecurity, buffer, ResponsibleTF, _waveScenarioNumber );
 
-                
+
                 CandleSeriesData candleSeriesData;
 
                 if ( !_candles.TryGetValue( _candlesSeries, out candleSeriesData ) )
@@ -414,15 +396,15 @@ namespace FreemindAITrade.ViewModels
 
         }
 
-        
 
-        void InternalDrawCandles( CandleSeries series, CandlestickUI candleUI, SBarList barList, (uint first, uint last )  barsRange )
+
+        void InternalDrawCandles( CandleSeries series, CandlestickUI candleUI, SBarList barList, (uint first, uint last) barsRange )
         {
-            ChartDrawDataEx drawData = new ChartDrawDataEx( );
+            ChartDrawDataEx drawData = new ChartDrawDataEx();
 
-            Tuple<IndicatorUI, IndicatorPair>[] indicatorTuple;
+            Tuple<IndicatorUI, IndicatorPair>[ ] indicatorTuple;
 
-            var ssIndicators = _indicatorsBySeries.TryGetValue( series , out indicatorTuple );
+            var ssIndicators = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
 
             if ( drawData.SetCandleSource( candleUI, _bars, barsRange ) )
             {
@@ -430,21 +412,21 @@ namespace FreemindAITrade.ViewModels
                 {
                     foreach ( var indicator in indicatorTuple )
                     {
-                        var indicatorUI   = indicator.Item1;
-                        var length        = (int)( barsRange.last - barsRange.first + 1 );
+                        var indicatorUI = indicator.Item1;
+                        var length = ( int )( barsRange.last - barsRange.first + 1 );
                         var indicatorList = drawData.SetIndicatorSource( indicatorUI, length );
 
                         for ( var i = barsRange.first; i <= barsRange.last; i++ )
                         {
-                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref _bars[ i ] );
+                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref _bars[i] );
 
-                            indicatorList.SetIndicatorValue( _bars[ i ].BarTime, indicatorRes );
+                            indicatorList.SetIndicatorValue( _bars[i].BarTime, indicatorRes );
                         }
                     }
                 }
             }
 
-            
+
 
             if ( !_doneDrawing )
             {
@@ -482,11 +464,11 @@ namespace FreemindAITrade.ViewModels
                 _isDrawingCandles = true;
             }
 
-            var drawData = new ChartDrawDataEx( );
+            var drawData = new ChartDrawDataEx();
 
-            int offerId  = SymbolsMgr.Instance.GetOfferId( SelectedSecurity );
+            int offerId = SymbolsMgr.Instance.GetOfferId( SelectedSecurity );
 
-            List< Candle > holder = new List<Candle>();
+            List<Candle> holder = new List<Candle>();
 
             if ( _waveScenarioNumber == 1 )
             {
@@ -503,7 +485,7 @@ namespace FreemindAITrade.ViewModels
 
                     candleSeriesData.LastBarTime = openTime;
                 }
-                
+
 
                 if ( _isBarIntegrityCheck )
                 {
@@ -520,7 +502,7 @@ namespace FreemindAITrade.ViewModels
                 }
                 else
                 {
-                    _lastBarTime = holder[ holder.Count - 1 ].OpenTime;
+                    _lastBarTime = holder[holder.Count - 1].OpenTime;
 
                     _bars.ReloadAllCandles( SelectedSecurity, holder, ResponsibleTF, _waveScenarioNumber );
                 }
@@ -540,19 +522,19 @@ namespace FreemindAITrade.ViewModels
             var candleUI = candleSeriesData.CandleUI;
 
 
-            Tuple<IndicatorUI, IndicatorPair>[] indicatorTuple;
+            Tuple<IndicatorUI, IndicatorPair>[ ] indicatorTuple;
 
             var ssIndicators = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
 
             _stopWatch.Restart();
 
-            if ( drawData.SetCandleSource( candleUI, _bars, 0, (uint) bars.Count - 1  ) )
+            if ( drawData.SetCandleSource( candleUI, _bars, 0, ( uint )bars.Count - 1 ) )
             {
                 if ( ssIndicators )
                 {
-                    foreach( var indicator in indicatorTuple )
+                    foreach ( var indicator in indicatorTuple )
                     {
-                        var indicatorUI   = indicator.Item1;
+                        var indicatorUI = indicator.Item1;
                         var indicatorList = drawData.SetIndicatorSource( indicatorUI, bars.Count );
 
                         for ( int i = 0; i < bars.Count; i++ )
@@ -588,14 +570,14 @@ namespace FreemindAITrade.ViewModels
 
         private void CheckNotContinousInstrumentsCandles( CandleSeries series, List<Candle> allCandles, CandleSeriesData sData )
         {
-            decimal lastClose  = 0;
-            Candle lastCandle  = null;
-            var earliestDate   = DateTimeOffset.MaxValue;
-            var today          = DateTime.UtcNow;
-            var period         = (TimeSpan ) series.Arg;
+            decimal lastClose = 0;
+            Candle lastCandle = null;
+            var earliestDate = DateTimeOffset.MaxValue;
+            var today = DateTime.UtcNow;
+            var period = ( TimeSpan )series.Arg;
 
             var minCandleType = StockSharp.Messages.DataType.Create( typeof( TimeFrameCandleMessage ), series.Arg );
-            var candleStore    = Drive.GetStorageDrive( series.Security.ToSecurityId(), minCandleType, StorageFormats.Binary );
+            var candleStore = Drive.GetStorageDrive( series.Security.ToSecurityId(), minCandleType, StorageFormats.Binary );
 
             DateTime deleteFromHere = DateTime.MinValue;
 
@@ -710,10 +692,10 @@ namespace FreemindAITrade.ViewModels
                     }
                 }
 
-                _lastBarTime      = candle.OpenTime;
-                lastClose         = candle.ClosePrice;
+                _lastBarTime = candle.OpenTime;
+                lastClose = candle.ClosePrice;
                 sData.LastBarTime = candle.OpenTime;
-                lastCandle        = candle;
+                lastCandle = candle;
             }
 
             if ( needDelete )
@@ -724,7 +706,7 @@ namespace FreemindAITrade.ViewModels
 
         public static double GetBusinessDays( DateTime startD, DateTime endD )
         {
-            double calcBusinessDays = 1 + ((endD - startD).TotalDays * 5 - (startD.DayOfWeek - endD.DayOfWeek) * 2) / 7;
+            double calcBusinessDays = 1 + ( ( endD - startD ).TotalDays * 5 - ( startD.DayOfWeek - endD.DayOfWeek ) * 2 ) / 7;
 
             if ( endD.DayOfWeek == DayOfWeek.Saturday ) calcBusinessDays--;
             if ( startD.DayOfWeek == DayOfWeek.Sunday ) calcBusinessDays--;
@@ -734,17 +716,17 @@ namespace FreemindAITrade.ViewModels
 
         private void CheckAndDeleteNonContinuousCandles( CandleSeries series, List<Candle> allCandles, CandleSeriesData sData )
         {
-            decimal lastClose  = 0;
-            Candle lastCandle  = null;
-            var earliestDate   = DateTimeOffset.MaxValue;
-            var today          = DateTime.UtcNow;
-            var period         = (TimeSpan ) series.Arg;
+            decimal lastClose = 0;
+            Candle lastCandle = null;
+            var earliestDate = DateTimeOffset.MaxValue;
+            var today = DateTime.UtcNow;
+            var period = ( TimeSpan )series.Arg;
 
             var minCandleType = StockSharp.Messages.DataType.Create( typeof( TimeFrameCandleMessage ), series.Arg );
-            var candleStore    = Drive.GetStorageDrive( series.Security.ToSecurityId(), minCandleType, StorageFormats.Binary );
+            var candleStore = Drive.GetStorageDrive( series.Security.ToSecurityId(), minCandleType, StorageFormats.Binary );
 
             var priceStep = series.Security.PriceStep;
-            var secID     = series.Security.ToSecurityId();
+            var secID = series.Security.ToSecurityId();
 
             bool needDelete = false;
 
@@ -785,7 +767,7 @@ namespace FreemindAITrade.ViewModels
                                 }
                             }
 
-                            
+
 
                             // Most of the non continous candle problem is the previous day candle not probably saved because I exited the software.
                             var creationTime = Drive.GetFileCreationTime( secID, minCandleType, prevCandleTime );
@@ -813,7 +795,7 @@ namespace FreemindAITrade.ViewModels
                                         DeleteCandlesFromStorage( prevCandleTime );
 
                                         break;
-                                       
+
                                     }
                                 }
                                 else
@@ -836,10 +818,10 @@ namespace FreemindAITrade.ViewModels
                     }
                 }
 
-                _lastBarTime      = candle.OpenTime;
-                lastClose         = candle.ClosePrice;
-                sData.LastBarTime = candle.OpenTime;                
-                lastCandle        = candle;
+                _lastBarTime = candle.OpenTime;
+                lastClose = candle.ClosePrice;
+                sData.LastBarTime = candle.OpenTime;
+                lastCandle = candle;
             }
 
             if ( needDelete )
@@ -849,11 +831,11 @@ namespace FreemindAITrade.ViewModels
         }
 
 
-        
+
 
         public void DeleteCandlesFromStorage( DateTime startDate )
         {
-            var delTillDate          = DateTime.UtcNow;
+            var delTillDate = DateTime.UtcNow;
 
             _lastBarTime = startDate.Date.AddDays( -1 );
 
@@ -872,7 +854,7 @@ namespace FreemindAITrade.ViewModels
         }
 
         public void DeleteCandlesFromStorage( DateTime startDate, DateTime endDate )
-        {            
+        {
             _lastBarTime = startDate.Date.AddDays( -1 );
 
             do
@@ -907,27 +889,27 @@ namespace FreemindAITrade.ViewModels
                 {
                     if ( runInfo.IsTick )
                     {
-                        long nextId           = _connector.TransactionIdGenerator.GetNextId( );
+                        long nextId = _connector.TransactionIdGenerator.GetNextId();
                         //_histTickRequests.Add( nextId, Tuple.Create( security, fromDay ) );
 
                         //Connector connector = Connector;
-                        var msg               = new MarketDataMessage( );
-                        msg.SecurityId        = security.ToSecurityId();
-                        msg.DataType          = MarketDataTypes.Level1;
-                        msg.From              = new DateTimeOffset?( runInfo.From.Value );
-                        msg.To                = new DateTimeOffset?( runInfo.To.Value );
-                        msg.IsSubscribe       = true;
-                        msg.TransactionId     = nextId;
+                        var msg = new MarketDataMessage();
+                        msg.SecurityId = security.ToSecurityId();
+                        msg.DataType = MarketDataTypes.Level1;
+                        msg.From = new DateTimeOffset?( runInfo.From.Value );
+                        msg.To = new DateTimeOffset?( runInfo.To.Value );
+                        msg.IsSubscribe = true;
+                        msg.TransactionId = nextId;
 
-                        MarketDataMessage marketDataMessage = msg.ValidateBounds( );
+                        MarketDataMessage marketDataMessage = msg.ValidateBounds();
                         _connector.SendInMessage( marketDataMessage );
                     }
                     else
                     {
-                        var count         = new long?( );
-                        var transactionId = new long?( );
+                        var count = new long?();
+                        var transactionId = new long?();
 
-                        var extendedInfo  = new PooledDictionary<string, object>( );
+                        var extendedInfo = new PooledDictionary<string, object>();
 
                         extendedInfo.Add( "DownloadBackward", true );
 
@@ -936,7 +918,7 @@ namespace FreemindAITrade.ViewModels
 
                         var subscription = new Subscription( runInfo.CandleSeries );
 
-                        var mdMsg = (MarketDataMessage)subscription.SubscriptionMessage;
+                        var mdMsg = ( MarketDataMessage )subscription.SubscriptionMessage;
 
                         mdMsg.ExtensionInfo = extendedInfo;
 
@@ -961,7 +943,7 @@ namespace FreemindAITrade.ViewModels
             }
         }
 
-        
+
 
         private void DrawCandlesFromPreloadedData()
         {
@@ -1005,9 +987,9 @@ namespace FreemindAITrade.ViewModels
                 return null;
             }
 
-            _preloadCandlesStatus = WorkFlowStatus.StartWork;            
+            _preloadCandlesStatus = WorkFlowStatus.StartWork;
 
-            List< Candle > holder = new List<Candle>( _drawCandles.Count() );
+            List<Candle> holder = new List<Candle>( _drawCandles.Count() );
 
             foreach ( Candle candle in _drawCandles )
             {
@@ -1038,14 +1020,14 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                _lastBarTime = holder[ holder.Count - 1 ].OpenTime;
+                _lastBarTime = holder[holder.Count - 1].OpenTime;
 
                 _bars.ReloadAllCandles( SelectedSecurity, holder, ResponsibleTF, _waveScenarioNumber );
             }
 
             RaiseCandleLoadedEvent();
 
-            ChartDrawDataEx drawData = new ChartDrawDataEx( );
+            ChartDrawDataEx drawData = new ChartDrawDataEx();
 
             var bars = _bars.MainDataBars;
 
@@ -1054,27 +1036,27 @@ namespace FreemindAITrade.ViewModels
             var candleUI = candleSeriesData.CandleUI;
 
 
-            Tuple<IndicatorUI, IndicatorPair>[] indicatorTuple;
+            Tuple<IndicatorUI, IndicatorPair>[ ] indicatorTuple;
 
             var ssIndicators = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
 
             _stopWatch.Restart();
 
-            if ( drawData.SetCandleSource( candleUI, _bars, 0, ( uint ) bars.Count - 1 ) )
+            if ( drawData.SetCandleSource( candleUI, _bars, 0, ( uint )bars.Count - 1 ) )
             {
                 if ( ssIndicators )
                 {
                     foreach ( var indicator in indicatorTuple )
                     {
-                        var indicatorUI   = indicator.Item1;
-                        var length        = bars.Count;
+                        var indicatorUI = indicator.Item1;
+                        var length = bars.Count;
                         var indicatorList = drawData.SetIndicatorSource( indicatorUI, length );
 
                         for ( int i = 0; i < length; i++ )
                         {
-                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref _bars[ i ] );
+                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref _bars[i] );
 
-                            indicatorList.SetIndicatorValue( _bars[ i ].BarTime, indicatorRes );
+                            indicatorList.SetIndicatorValue( _bars[i].BarTime, indicatorRes );
                         }
                     }
                 }
@@ -1096,8 +1078,8 @@ namespace FreemindAITrade.ViewModels
         private DateTimeOffset? LoadCandles( IMarketDataStorage<CandleMessage> storage, CandleSeries series, TimeSpan daysLoad )
         {
             var taskBegin = series.From.Value.DateTime;
-            var taskEnd   = series.To.HasValue ? series.To.Value.DateTime : DateTime.UtcNow;
-            var period    = ( TimeSpan )series.Arg;
+            var taskEnd = series.To.HasValue ? series.To.Value.DateTime : DateTime.UtcNow;
+            var period = ( TimeSpan )series.Arg;
 
             var range = fxCandleHelper.GetRange( storage, series.From, series.To, daysLoad );
 
@@ -1124,9 +1106,9 @@ namespace FreemindAITrade.ViewModels
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */
             DateTimeOffset begin = range.Item1.UtcDateTime.Date;
-            DateTimeOffset end   = range.Item2.UtcDateTime.Date.EndOfDay( );
+            DateTimeOffset end = range.Item2.UtcDateTime.Date.EndOfDay();
 
-            
+
 
             var messages = storage.Load( begin, end );
 
@@ -1134,7 +1116,7 @@ namespace FreemindAITrade.ViewModels
 
             if ( _drawCandles != null )
             {
-                var last = _drawCandles.FirstOrDefault( );
+                var last = _drawCandles.FirstOrDefault();
 
                 if ( last != null )
                 {

@@ -1,26 +1,18 @@
-﻿using fx.Collections;
-using DevExpress.Mvvm;
-using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
-using Ecng.Xaml;
-using fx.Algorithm;
-using fx.Definitions;
-using StockSharp.BusinessEntities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ViewModelBase = DevExpress.Mvvm.ViewModelBase;
-using System.Collections.ObjectModel;
+﻿using DevExpress.Mvvm;
 using Ecng.ComponentModel;
+using fx.Algorithm;
+using fx.Collections;
+using fx.Definitions;
+using System;
+using System.Linq;
+using ViewModelBase = DevExpress.Mvvm.ViewModelBase;
 
 namespace FreemindTrader
 {
     public class TradingEventViewModel : ViewModelBase
     {
         private string _symbol;
-        public TradingEventViewModel( )
+        public TradingEventViewModel()
         {
             Messenger.Default.Register<SelectSecurityMessage>( this, x => OnSelectSecurityMessage( x ) );
         }
@@ -39,23 +31,23 @@ namespace FreemindTrader
             aa.InitializeTechnicalAnalysis( x.SelectedTF );
 
             RaisePropertyChanged( nameof( TradingEventsItemSource ) );
-        }        
+        }
 
         public ObservableCollectionEx<FxTradingEvents> TradingEventsItemSource
         {
             get
             {
                 if ( _symbol != null )
-                {                    
-                    var tradingEventList = (( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _symbol )).TradingEventsItemSource;
+                {
+                    var tradingEventList = ( ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _symbol ) ).TradingEventsItemSource;
 
                     return tradingEventList;
                 }
 
                 return null;
             }
-        } 
-        
+        }
+
         //public PooledList< > 
     }
 

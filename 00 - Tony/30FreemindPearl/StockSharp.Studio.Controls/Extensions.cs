@@ -610,23 +610,23 @@ namespace StockSharp.Studio.Controls
 
         public static void InitAlerts()
         {
-            ( ( Action )( () =>
-               {
-                   ConfigManager.RegisterService<IAlertProcessingService>( ( IAlertProcessingService )new AlertProcessingService( 1024 ) );
-                   ConfigManager.RegisterService<IAlertNotificationService>( ( IAlertNotificationService )new AlertNotificationService( 1024, Paths.AppDataPath, null ) );
-                   IAlertProcessingService alertService = AlertServicesRegistry.ProcessingService;
-                   SettingsStorage settings = BaseUserConfig<StudioUserConfig>.Instance.GetAlertService();
-                   if ( settings != null )
-                       Do.Invariant( ( Action )( () => alertService.Load( settings ) ) );
-                   alertService.Registered += new Action<AlertSchema>( AlertsChanged );
-                   alertService.UnRegistered += new Action<AlertSchema>( AlertsChanged );
-                   ServicesRegistry.Connector.NewMessage += new Action<StockSharp.Messages.Message>( alertService.Process );
+            //( ( Action )( () =>
+            //   {
+            //       ConfigManager.RegisterService<IAlertProcessingService>( ( IAlertProcessingService )new AlertProcessingService( 1024 ) );
+            //       ConfigManager.RegisterService<IAlertNotificationService>( ( IAlertNotificationService )new AlertNotificationService( 1024, Paths.AppDataPath, null ) );
+            //       IAlertProcessingService alertService = AlertServicesRegistry.ProcessingService;
+            //       SettingsStorage settings = BaseUserConfig<StudioUserConfig>.Instance.GetAlertService();
+            //       if ( settings != null )
+            //           Do.Invariant( ( Action )( () => alertService.Load( settings ) ) );
+            //       alertService.Registered += new Action<AlertSchema>( AlertsChanged );
+            //       alertService.UnRegistered += new Action<AlertSchema>( AlertsChanged );
+            //       ServicesRegistry.Connector.NewMessage += new Action<StockSharp.Messages.Message>( alertService.Process );
 
-                   void AlertsChanged( AlertSchema schema )
-                   {
-                       BaseUserConfig<StudioUserConfig>.Instance.SetAlertService( alertService.Save() );
-                   }
-               } ) ).DoWithLog();
+            //       void AlertsChanged( AlertSchema schema )
+            //       {
+            //           BaseUserConfig<StudioUserConfig>.Instance.SetAlertService( alertService.Save() );
+            //       }
+            //   } ) ).DoWithLog();
         }
     }
 }
