@@ -158,14 +158,6 @@
                     <dxr:RibbonPage Caption="Home">
                         <dxr:RibbonPageGroup x:Name="ActionGroup" Caption="Action">
                             <dxb:BarButtonItem
-                                x:Name="WaveAnalysis"
-                                Content="Wave Analysis"
-                                Command="{Binding WaveAnalysisCommand}"
-                                Glyph="{dx:SvgImageSource Uri=../SvgImages/fxtrader3.svg}"
-                                IsVisible="True"
-                                ItemClick="WaveAnalysisClicked"
-                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/fxtrader3.svg}" />
-                            <dxb:BarButtonItem
                                 x:Name="SelectSymbol"
                                 Command="{Binding ShowDialogCommand}"
                                 Content="Trade"
@@ -599,104 +591,6 @@
                         </dxr:RibbonPageGroup>
                     </dxr:RibbonPage>
                 </dxr:RibbonDefaultPageCategory>
-                <dxr:RibbonPageCategory Color="#FFB498D6" Caption="Trading Strategies">
-                    <dxr:RibbonPage Caption="Strategies">
-
-                        <dxr:RibbonPageGroup Caption="Simulation">
-                            <dxb:BarButtonItem
-                                Command="{Binding StartSimulationCommand}"
-                                Content="Start Simulation"
-                                Glyph="{ssXaml:ThemedIcons Key=Start}"
-                                LargeGlyph="{ssXaml:ThemedIcons Key=Start}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Command="{Binding PauseSimulationCommand}"
-                                Content="Pause Simulation"
-                                Glyph="{ssXaml:ThemedIcons Key=Pause}"
-                                LargeGlyph="{ssXaml:ThemedIcons Key=Pause}"
-                                RibbonStyle="Large" />
-                            <dxb:BarCheckItem
-                                x:Name="StepByStep"
-                                Command="{Binding StepByStepCommand}"
-                                Content="Step by Step"
-                                Glyph="{dx:DXImage SvgImages/Arrows/DoubleLast.svg}"
-                                IsChecked="{Binding Path=StepByStepChecked}"
-                                LargeGlyph="{dx:DXImage SvgImages/Arrows/DoubleLast.svg}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Command="{Binding StopSimulationCommand}"
-                                Content="Stop Simulation"
-                                Glyph="{ssXaml:ThemedIcons Key=Stop}"
-                                LargeGlyph="{ssXaml:ThemedIcons Key=Stop}"
-                                RibbonStyle="Large" />
-                        </dxr:RibbonPageGroup>
-
-                        <dxr:RibbonPageGroup Caption="AutoTrade">
-                            <dxb:BarButtonItem
-                                Content="Simulation"
-                                Glyph="{ssXaml:ThemedIcons Key=Add}"
-                                LargeGlyph="{ssXaml:ThemedIcons Key=Add}"
-                                RibbonStyle="Large" />
-
-                            <dxb:BarSplitButtonItem
-                                Command="{Binding StartStrategyCommand}"
-                                Content="Start Freemind Strategies"
-                                Glyph="{ssXaml:ThemedIcons Key=Live}"
-                                LargeGlyph="{ssXaml:ThemedIcons Key=Live}"
-                                RibbonStyle="Large">
-                                <dxb:BarSplitButtonItem.PopupControl>
-                                    <dxb:PopupControlContainer>
-                                        <sxpg:PropertyGridEx
-                                            x:Name="OrderSettingsPropertyGrid"
-                                            Width="270"
-                                            MinHeight="140"
-                                            SelectedObject="{Binding OrderSettings}" />
-                                    </dxb:PopupControlContainer>
-                                </dxb:BarSplitButtonItem.PopupControl>
-                            </dxb:BarSplitButtonItem>
-
-
-                            <dxb:BarButtonItem
-                                Command="{Binding StopStrategyCommand}"
-                                Content="Stop Freemind Strategies"
-                                Glyph="{ssXaml:ThemedIcons Key=Exit}"
-                                LargeGlyph="{ssXaml:ThemedIcons Key=Live}"
-                                RibbonStyle="Large" />
-
-                        </dxr:RibbonPageGroup>
-                        <dxr:RibbonPageGroup Caption="Profit Stop Safety Net">
-                            <dxb:BarButtonItem
-                                Content="Calculate Targets"
-                                Glyph="{dx:DXImage SvgImages/Spreadsheet/PivotTableCalculationsFieldsItemsSetsGroup.svg}"
-                                LargeGlyph="{dx:DXImage SvgImages/Spreadsheet/PivotTableCalculationsFieldsItemsSetsGroup.svg}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Content="Set Take Profit"
-                                Glyph="{dx:SvgImageSource Uri=../SvgImages/TakeProfit.svg}"
-                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/TakeProfit.svg}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Content="Set Stop Loss"
-                                Glyph="{dx:SvgImageSource Uri=../SvgImages/loss.svg}"
-                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/loss.svg}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Content="Set Safety Net"
-                                Glyph="{dx:SvgImageSource Uri=../SvgImages/net.svg}"
-                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/net.svg}"
-                                RibbonStyle="Large" />
-                        </dxr:RibbonPageGroup>
-                        <dxr:RibbonPageGroup Caption="Notification">
-                            <dxb:BarButtonItem
-                                Command="{Binding AddSoundAlertCommand}"
-                                Content="Add Sound Alert"
-                                Glyph="{dx:DXImage SvgImages/Business Objects/BO_Notifications.svg}"
-                                LargeGlyph="{dx:DXImage SvgImages/Business Objects/BO_Notifications.svg}"
-                                RibbonStyle="Large" />
-                        </dxr:RibbonPageGroup>
-
-                    </dxr:RibbonPage>
-                </dxr:RibbonPageCategory>
                 <dxr:RibbonPageCategory Color="#FF83B5F1" Caption="Fractals">
                     <dxr:RibbonPage Caption="Action">
                         <dxr:RibbonPageGroup Caption="Save">
@@ -783,28 +677,8 @@
                                 KeyGesture="CTRL+SHIFT+Y"
                                 LargeGlyph="{dx:DXImage SvgImages/Dashboards/Redo.svg}"
                                 RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                x:Name="EWaveAnalysis"
-                                Command="{Binding AnalyzeWaveTargetCommand}"
-                                Content="Wave Target Analysis"
-                                Glyph="{dx:SvgImageSource Uri=../SvgImages/analytics.svg}"
-                                KeyGesture="CTRL+T"
-                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/analytics.svg}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Command="{Binding LockFibLevelsCommand}"
-                                Content="Lock Fibs"
-                                Glyph="{dx:SvgImageSource Uri=../SvgImages/HHLL.svg}"
-                                KeyGesture="CTRL+L"
-                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/HHLL.svg}"
-                                RibbonStyle="Large" />
-                            <dxb:BarButtonItem
-                                Command="{Binding DeleteAllLockFibLevelsCommand}"
-                                Content="Delete Lock Fibs"
-                                Glyph="{dx:DXImage SvgImages/Dashboards/ShowWeightedLegendNone.svg}"
-                                KeyGesture="CTRL+Delete"
-                                LargeGlyph="{dx:DXImage SvgImages/Dashboards/ShowWeightedLegendNone.svg}"
-                                RibbonStyle="Large" />
+                            
+                            
                             <dxb:BarButtonItem
                                 Command="{Binding CycleWaveUpCommand}"
                                 Content="Cycle Wave Up"
@@ -990,6 +864,181 @@
                     </dxr:RibbonPage>
                 </dxr:RibbonPageCategory>
 
+                <dxr:RibbonPageCategory Color="#FFB498D6" Caption="Trading Strategies">
+                    <dxr:RibbonPage Caption="Strategies">
+
+                        <dxr:RibbonPageGroup Caption="Simulation">
+                            <dxb:BarButtonItem
+                                Command="{Binding StartSimulationCommand}"
+                                Content="Start Simulation"
+                                Glyph="{ssXaml:ThemedIcons Key=Start}"
+                                LargeGlyph="{ssXaml:ThemedIcons Key=Start}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem
+                                Command="{Binding PauseSimulationCommand}"
+                                Content="Pause Simulation"
+                                Glyph="{ssXaml:ThemedIcons Key=Pause}"
+                                LargeGlyph="{ssXaml:ThemedIcons Key=Pause}"
+                                RibbonStyle="Large" />
+                            <dxb:BarCheckItem
+                                x:Name="StepByStep"
+                                Command="{Binding StepByStepCommand}"
+                                Content="Step by Step"
+                                Glyph="{dx:DXImage SvgImages/Arrows/DoubleLast.svg}"
+                                IsChecked="{Binding Path=StepByStepChecked}"
+                                LargeGlyph="{dx:DXImage SvgImages/Arrows/DoubleLast.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem
+                                Command="{Binding StopSimulationCommand}"
+                                Content="Stop Simulation"
+                                Glyph="{ssXaml:ThemedIcons Key=Stop}"
+                                LargeGlyph="{ssXaml:ThemedIcons Key=Stop}"
+                                RibbonStyle="Large" />
+                        </dxr:RibbonPageGroup>
+
+                        <dxr:RibbonPageGroup Caption="AutoTrade">
+                            <dxb:BarButtonItem
+                                Content="Simulation"
+                                Glyph="{ssXaml:ThemedIcons Key=Add}"
+                                LargeGlyph="{ssXaml:ThemedIcons Key=Add}"
+                                RibbonStyle="Large" />
+
+                            <dxb:BarSplitButtonItem
+                                Command="{Binding StartStrategyCommand}"
+                                Content="Start Freemind Strategies"
+                                Glyph="{ssXaml:ThemedIcons Key=Live}"
+                                LargeGlyph="{ssXaml:ThemedIcons Key=Live}"
+                                RibbonStyle="Large">
+                                <dxb:BarSplitButtonItem.PopupControl>
+                                    <dxb:PopupControlContainer>
+                                        <sxpg:PropertyGridEx
+                                            x:Name="OrderSettingsPropertyGrid"
+                                            Width="270"
+                                            MinHeight="140"
+                                            SelectedObject="{Binding OrderSettings}" />
+                                    </dxb:PopupControlContainer>
+                                </dxb:BarSplitButtonItem.PopupControl>
+                            </dxb:BarSplitButtonItem>
+
+
+                            <dxb:BarButtonItem
+                                Command="{Binding StopStrategyCommand}"
+                                Content="Stop Freemind Strategies"
+                                Glyph="{ssXaml:ThemedIcons Key=Exit}"
+                                LargeGlyph="{ssXaml:ThemedIcons Key=Live}"
+                                RibbonStyle="Large" />
+
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Profit Stop Safety Net">
+                            <dxb:BarButtonItem
+                                Content="Calculate Targets"
+                                Glyph="{dx:DXImage SvgImages/Spreadsheet/PivotTableCalculationsFieldsItemsSetsGroup.svg}"
+                                LargeGlyph="{dx:DXImage SvgImages/Spreadsheet/PivotTableCalculationsFieldsItemsSetsGroup.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem
+                                Content="Set Take Profit"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/TakeProfit.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/TakeProfit.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem
+                                Content="Set Stop Loss"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/loss.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/loss.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem
+                                Content="Set Safety Net"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/net.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/net.svg}"
+                                RibbonStyle="Large" />
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Notification">
+                            <dxb:BarButtonItem
+                                Command="{Binding AddSoundAlertCommand}"
+                                Content="Add Sound Alert"
+                                Glyph="{dx:DXImage SvgImages/Business Objects/BO_Notifications.svg}"
+                                LargeGlyph="{dx:DXImage SvgImages/Business Objects/BO_Notifications.svg}"
+                                RibbonStyle="Large" />
+                        </dxr:RibbonPageGroup>
+
+                    </dxr:RibbonPage>
+                </dxr:RibbonPageCategory>
+
+                <dxr:RibbonPageCategory Color="PeachPuff" Caption="Wave Target">
+                    <dxr:RibbonPage Caption="Wave Targets">
+
+                        <dxr:RibbonPageGroup Caption="Actions">
+                            <dxb:BarButtonItem
+                                x:Name="WaveAnalysis"
+                                Content="Wave Analysis"
+                                Command="{Binding WaveAnalysisCommand}"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/fxtrader3.svg}"
+                                IsVisible="True"
+                                ItemClick="WaveAnalysisClicked"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/fxtrader3.svg}" />
+                            <dxb:BarButtonItem
+                                x:Name="EWaveAnalysis"
+                                Command="{Binding AnalyzeWaveTargetCommand}"
+                                Content="Wave Target Analysis"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/analytics.svg}"
+                                KeyGesture="CTRL+T"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/analytics.svg}"
+                                RibbonStyle="Large" />
+
+                            <dxb:BarButtonItem
+                                Command="{Binding LockFibLevelsCommand}"
+                                Content="Lock Fibs"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/HHLL.svg}"
+                                KeyGesture="CTRL+L"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/HHLL.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem
+                                Command="{Binding DeleteAllLockFibLevelsCommand}"
+                                Content="Delete Lock Fibs"
+                                Glyph="{dx:DXImage SvgImages/Dashboards/ShowWeightedLegendNone.svg}"
+                                KeyGesture="CTRL+Delete"
+                                LargeGlyph="{dx:DXImage SvgImages/Dashboards/ShowWeightedLegendNone.svg}"
+                                RibbonStyle="Large" />
+
+
+                        </dxr:RibbonPageGroup>
+
+                        <dxr:RibbonPageGroup Caption="Impulsive Waves">
+                            
+                            <dxb:BarButtonItem                                
+                                Content="Classic Wave 3"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/Three.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Three.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarButtonItem                                
+                                Content="Extended Wave 3"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/Extended3.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Extended3.svg}"
+                                RibbonStyle="Large" />
+                            <dxb:BarCheckItem                                                                
+                                Content="Super Extened Wave 3"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/Big3.svg}"
+                                IsChecked="{Binding Path=StepByStepChecked}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Big3.svg}"
+                                RibbonStyle="Large" />
+                        </dxr:RibbonPageGroup>
+
+                        <dxr:RibbonPageGroup Caption="Retracement">
+                            <dxb:BarButtonItem
+                                Content="Wave C Target"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/ABC.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/ABC.svg}"
+                                RibbonStyle="Large" />
+
+                            <dxb:BarButtonItem                                
+                                Content="Wave 4 Target"
+                                Glyph="{dx:SvgImageSource Uri=../SvgImages/Four.svg}"
+                                LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Four.svg}"
+                                RibbonStyle="Large" />
+
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                </dxr:RibbonPageCategory>
+                
                 <dxr:RibbonPageCategory Caption="Debug" IsVisible="{x:Static View:TradeStationView.IsDebug}">
                     <dxr:RibbonPage Caption="Debug">
                         <dxr:RibbonPageGroup Caption="Bar">

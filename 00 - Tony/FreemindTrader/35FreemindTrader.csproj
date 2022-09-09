@@ -185,14 +185,12 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
-        <PackageReference Include="fx.DefintionsWnd" Version="5.0.220" />
         <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
-        <PackageReference Include="StockSharp.Alerts.Interfaces" Version="5.0.220" />
         <PackageReference Include="StockSharp.Configuration.Adapters" Version="5.0.220" />
         <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
+      <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
     </ItemGroup>
 
 

@@ -177,9 +177,11 @@
         <None Remove="SplashScreen\FreeMindPleaseWait180.png" />
         <None Remove="SplashScreen\FreeMindPleaseWait200.png" />
         <None Remove="SvgImages\A.svg" />
+        <None Remove="SvgImages\ABC.svg" />
         <None Remove="SvgImages\analytics.svg" />
         <None Remove="SvgImages\B.svg" />
         <None Remove="SvgImages\bar_chart.svg" />
+        <None Remove="SvgImages\Big3.svg" />
         <None Remove="SvgImages\Branch.svg" />
         <None Remove="SvgImages\BreakEven.svg" />
         <None Remove="SvgImages\broken.svg" />
@@ -196,6 +198,7 @@
         <None Remove="SvgImages\EFB.svg" />
         <None Remove="SvgImages\EFC.svg" />
         <None Remove="SvgImages\escape.svg" />
+        <None Remove="SvgImages\Extended3.svg" />
         <None Remove="SvgImages\FibLines.svg" />
         <None Remove="SvgImages\FibLucasGann.svg" />
         <None Remove="SvgImages\FilterWave.svg" />
@@ -422,9 +425,11 @@
         <Resource Include="SplashScreen\FreeMindPleaseWait180.png" />
         <Resource Include="SplashScreen\FreeMindPleaseWait200.png" />
         <Resource Include="SvgImages\A.svg" />
+        <Resource Include="SvgImages\ABC.svg" />
         <Resource Include="SvgImages\analytics.svg" />
         <Resource Include="SvgImages\B.svg" />
         <Resource Include="SvgImages\bar_chart.svg" />
+        <Resource Include="SvgImages\Big3.svg" />
         <Resource Include="SvgImages\Branch.svg" />
         <Resource Include="SvgImages\BreakEven.svg" />
         <Resource Include="SvgImages\broken2.svg" />
@@ -440,6 +445,7 @@
         <Resource Include="SvgImages\EFB.svg" />
         <Resource Include="SvgImages\EFC.svg" />
         <Resource Include="SvgImages\escape.svg" />
+        <Resource Include="SvgImages\Extended3.svg" />
         <Resource Include="SvgImages\FibLines.svg" />
         <Resource Include="SvgImages\FibLucasGann.svg" />
         <Resource Include="SvgImages\FilterWave.svg" />
