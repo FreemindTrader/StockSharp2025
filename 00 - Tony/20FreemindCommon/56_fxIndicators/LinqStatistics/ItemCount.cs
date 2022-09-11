@@ -46,12 +46,12 @@ namespace fx.Indicators
         /// <returns></returns>
         public static bool operator ==(ItemCount<T> lhs, ItemCount<T> rhs)
         {
-            if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
+            if ( ReferenceEquals( null, lhs) && ReferenceEquals( rhs, null))
             {
                 return true;
             }
 
-            if (object.ReferenceEquals(null, lhs) || object.ReferenceEquals(rhs, null))
+            if ( ReferenceEquals( null, lhs) || ReferenceEquals( rhs, null))
             {
                 return false;
             }
@@ -79,14 +79,14 @@ namespace fx.Indicators
         {
             if (obj is ItemCount<T> c)
             {
-                return this.Equals(c);
+                return Equals(c);
             }
 
             return false;
         }
 
         /// <summary>
-        /// <see cref="System.IEquatable{T}.Equals(T)"/>
+        /// <see cref="IEquatable{T}.Equals(T)"/>
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
@@ -99,10 +99,10 @@ namespace fx.Indicators
 
             if (RepresentativeValue != null)
             {
-                return this.RepresentativeValue.Equals(other.RepresentativeValue) && this.Count == other.Count;
+                return RepresentativeValue.Equals(other.RepresentativeValue) && Count == other.Count;
             }
 
-            return other.RepresentativeValue == null && this.Count == other.Count;
+            return other.RepresentativeValue == null && Count == other.Count;
         }
 
         /// <summary>

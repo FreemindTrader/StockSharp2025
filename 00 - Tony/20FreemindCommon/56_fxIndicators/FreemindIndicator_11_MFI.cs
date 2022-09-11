@@ -78,7 +78,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Mfi( Bars, startIndex, endIndex, myMfi, out outBeginIdx, out outNBElement, 21);
+            Core.Mfi( Bars, startIndex, endIndex, myMfi, out outBeginIdx, out outNBElement, 21);
 
             if( outNBElement > 0 )
             {
@@ -119,7 +119,7 @@ namespace fx.Indicators
 
             var myMfi            = new double [ indexCount ];
 
-            fx.TALib.Core.Mfi( Bars, startIndex, endIndex, myMfi, out outBeginIdx, out outNBElement, 21 );
+            Core.Mfi( Bars, startIndex, endIndex, myMfi, out outBeginIdx, out outNBElement, 21 );
 
             if ( outNBElement > 0 )
             {

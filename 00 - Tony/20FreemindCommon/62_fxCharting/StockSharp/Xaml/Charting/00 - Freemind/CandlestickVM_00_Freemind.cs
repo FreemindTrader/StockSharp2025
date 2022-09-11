@@ -110,10 +110,10 @@ namespace fx.Charting
                     series = CreateRenderableSeries<FreemindCandlestickRenderableSeries>( new ChildVM[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
                         
 
-                    series.SetBindings( FreemindCandlestickRenderableSeries.FillUpProperty,              ChartElement, "UpFillColor",         BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.FillDownProperty,            ChartElement, "DownFillColor",       BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.StrokeUpProperty,            ChartElement, "UpBorderColor",       BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.StrokeDownProperty,          ChartElement, "DownBorderColor",     BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastCandlestickRenderableSeries.FillUpProperty,              ChartElement, "UpFillColor",         BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+                    series.SetBindings( FastCandlestickRenderableSeries.FillDownProperty,            ChartElement, "DownFillColor",       BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+                    series.SetBindings( FastCandlestickRenderableSeries.StrokeUpProperty,            ChartElement, "UpBorderColor",       BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastCandlestickRenderableSeries.StrokeDownProperty,          ChartElement, "DownBorderColor",     BindingMode.TwoWay, null, null );
                     series.SetBindings( FreemindCandlestickRenderableSeries.ShowCandlePatternProperty,   ChartElement, "ShowCandlePattern",   BindingMode.TwoWay, null, null );
                     series.SetBindings( FreemindCandlestickRenderableSeries.ShowIndicatorResultProperty, ChartElement, "ShowIndicatorResult", BindingMode.TwoWay, null, null );
                     series.SetBindings( FreemindCandlestickRenderableSeries.ShowExtremesProperty,        ChartElement, "ShowExtremes",        BindingMode.TwoWay, null, null );
@@ -224,7 +224,7 @@ namespace fx.Charting
                 break;
 
                 default:
-                    throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( ( object ) ChartElement.DrawStyle ) );
+                    throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( ChartElement.DrawStyle ) );
             }
 
             //if( ChartElement.DrawStyle.IsVolumeProfileChart( ) )

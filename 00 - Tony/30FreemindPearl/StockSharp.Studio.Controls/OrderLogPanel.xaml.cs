@@ -49,44 +49,44 @@ namespace StockSharp.Studio.Controls
 
         private void RaiseSelectedCommand()
         {
-            new SelectCommand<OrderLogItem>( this.OrderLogGrid.SelectedLogItem, false ).Process( ( object )this, false );
+            new SelectCommand<OrderLogItem>( OrderLogGrid.SelectedLogItem, false ).Process( this, false );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "OrderLogGrid", this.OrderLogGrid.Save() );
-            storage.SetValue<SettingsStorage>( "AlertBtn", this.AlertBtn.Save() );
-            storage.SetValue<string>( "BarManager", this.BarManager.SaveDevExpressControl() );
-            this.SaveSubscriptions( storage );
+            storage.SetValue( "OrderLogGrid", OrderLogGrid.Save() );
+            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
+            SaveSubscriptions( storage );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.OrderLogGrid.Load( storage.GetValue<SettingsStorage>( "OrderLogGrid", ( SettingsStorage )null ) );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", ( SettingsStorage )null );
+            OrderLogGrid.Load( storage.GetValue<SettingsStorage>( "OrderLogGrid", null ) );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
             if ( storage1 != null )
-                this.AlertBtn.Load( storage1 );
-            string settings = storage.GetValue<string>( "BarManager", ( string )null );
+                AlertBtn.Load( storage1 );
+            string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings != null )
-                this.BarManager.LoadDevExpressControl( settings );
-            this.LoadSubscriptions( storage );
+                BarManager.LoadDevExpressControl( settings );
+            LoadSubscriptions( storage );
         }
 
         public override void Dispose( CloseReason reason )
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<EntityCommand<OrderLogItem>>( ( object )this );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<EntityCommand<OrderLogItem>>( this );
             if ( reason == CloseReason.CloseWindow )
-                this.AlertBtn.Dispose();
+                AlertBtn.Dispose();
             base.Dispose( reason );
         }
 
         private void Filter_OnClick( object sender, RoutedEventArgs e )
         {
-            this.FilterConfig();
+            FilterConfig();
         }        
     }
 }

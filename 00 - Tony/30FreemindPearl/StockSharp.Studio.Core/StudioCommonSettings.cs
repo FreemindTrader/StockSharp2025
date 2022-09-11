@@ -22,14 +22,14 @@ namespace StockSharp.Studio.Core
 
         public virtual void Load( SettingsStorage storage )
         {
-            this.IsDark = storage.GetValue<bool>( "IsDark", this.IsDark );
-            this.TimeZone = storage.GetValue<string>( "TimeZone", ( string )null ).To<TimeZoneInfo>();
+            IsDark = storage.GetValue( "IsDark", IsDark );
+            TimeZone = storage.GetValue<string>( "TimeZone", null ).To<TimeZoneInfo>();
         }
 
         public virtual void Save( SettingsStorage storage )
         {
-            storage.SetValue<bool>( "IsDark", this.IsDark );
-            storage.SetValue<string>( "TimeZone", this.TimeZone.To<string>() );
+            storage.SetValue( "IsDark", IsDark );
+            storage.SetValue( "TimeZone", TimeZone.To<string>() );
         }
     }
 }

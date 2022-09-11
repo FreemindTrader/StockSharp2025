@@ -14,27 +14,27 @@ namespace StockSharp.Web.Api.Client
     {
         public static void SetHeader<TService>(this TService service, string name, object value)
         {
-            ((object)service).To<BaseApiClient>().PerRequestHeaders[name] = value.To<string>();
+            service.To<BaseApiClient>().PerRequestHeaders[name] = value.To<string>();
         }
 
         public static TService TrySetIp<TService>(this TService service, IPAddress value)
         {
             if (value != null)
-                service.SetHeader<TService>("SS-ADDR", (object)value);
+                service.SetHeader( "SS-ADDR", value );
             return service;
         }
 
         public static TService TrySetAsUser<TService>(this TService service, bool value)
         {
             if (value)
-                service.SetHeader<TService>("SS-ASU", (object)true);
+                service.SetHeader( "SS-ASU", true );
             return service;
         }
 
         public static TService TrySetExtended<TService>(this TService service, bool value)
         {
             if (value)
-                service.SetHeader<TService>("SS-EX", (object)true);
+                service.SetHeader( "SS-EX", true );
             return service;
         }
 
@@ -49,7 +49,7 @@ namespace StockSharp.Web.Api.Client
         public static TService TrySetErrorInfo<TService>(this TService service, bool value)
         {
             if (value)
-                service.SetHeader<TService>("SS-EI", (object)true);
+                service.SetHeader( "SS-EI", true );
             return service;
         }
     }

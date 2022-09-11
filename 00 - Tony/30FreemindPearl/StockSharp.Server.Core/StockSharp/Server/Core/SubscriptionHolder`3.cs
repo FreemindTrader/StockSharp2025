@@ -90,7 +90,7 @@ namespace StockSharp.Server.Core
             if ( info.Id != 0L )
                 _subscriptionIdentifiers.Add( info.Id, info );
 
-            var changedEvent = this.SubscriptionChanged;
+            var changedEvent = SubscriptionChanged;
             if ( changedEvent == null )
                 return;
             changedEvent( info );
@@ -191,7 +191,7 @@ namespace StockSharp.Server.Core
             foreach ( TSubcription subcription in subscriptions )
             {
                 subcription.State = subcription.State.ChangeSubscriptionState( SubscriptionStates.Stopped, subcription.Id, _messageListener );
-                var changedEvent = this.SubscriptionChanged;
+                var changedEvent = SubscriptionChanged;
                 if ( changedEvent != null )
                     changedEvent( subcription );
             }
@@ -312,13 +312,13 @@ namespace StockSharp.Server.Core
             if ( byId == null )
             {
                 if ( _subscriptionById.TryAdd( id ) )
-                    _messageListener.AddWarningLog( LocalizedStrings.SubscriptionNonExist, ( object )id );
+                    _messageListener.AddWarningLog( LocalizedStrings.SubscriptionNonExist, id );
                 return default( TSubcription );
             }
             if ( state.HasValue )
             {
                 byId.State = byId.State.ChangeSubscriptionState( state.Value, id, _messageListener );
-                Action<TSubcription> changedEvents = this.SubscriptionChanged;
+                Action<TSubcription> changedEvents = SubscriptionChanged;
                 if ( changedEvents != null )
                     changedEvents( byId );
             }
@@ -372,7 +372,7 @@ namespace StockSharp.Server.Core
             if ( _dataTypeSecIDSubscriptions.TryGetValue( Tuple.Create( dataType, secId ), out var subscription ) )
                 cache = cache.Concat( subscription.Cache );
 
-            return cache.Where<TSubcription>( p => p.State == SubscriptionStates.Online && !p.Suspend ).Distinct<TSubcription>();
+            return cache.Where( p => p.State == SubscriptionStates.Online && !p.Suspend ).Distinct();
         }
 
         /// <summary>Get subscription for the specified message.</summary>

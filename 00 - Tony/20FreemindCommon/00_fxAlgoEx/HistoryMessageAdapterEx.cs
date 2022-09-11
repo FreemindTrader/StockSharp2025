@@ -16,7 +16,7 @@
 	using StockSharp.Localization;
 	using StockSharp.Logging;
 
-	using SourceKey = System.Tuple<StockSharp.Messages.SecurityId, StockSharp.Messages.DataType>;
+	using SourceKey = System.Tuple<Messages.SecurityId, Messages.DataType>;
 	using StockSharp.Algo.Candles;
     using StockSharp.Algo.Testing;
 

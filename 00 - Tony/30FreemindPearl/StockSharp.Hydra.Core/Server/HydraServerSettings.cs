@@ -31,8 +31,8 @@ namespace StockSharp.Hydra.Core.Server
     /// </summary>
     public HydraServerSettings()
     {
-      FixSession marketDataSession = this.ServerSettings.MarketDataSession;
-      FixSession transactionSession = this.ServerSettings.TransactionSession;
+      FixSession marketDataSession = ServerSettings.MarketDataSession;
+      FixSession transactionSession = ServerSettings.TransactionSession;
       transactionSession.MaxReadBytes = marketDataSession.MaxReadBytes = 1048576;
       transactionSession.MaxWriteBytes = marketDataSession.MaxWriteBytes = 10485760;
       marketDataSession.Address = RemoteMarketDataDrive.DefaultAddress;
@@ -59,13 +59,13 @@ namespace StockSharp.Hydra.Core.Server
     {
       get
       {
-        return this._maxSecurityCount;
+        return _maxSecurityCount;
       }
       set
       {
         if (value < 1)
           throw new ArgumentOutOfRangeException(nameof (value));
-        this._maxSecurityCount = value;
+        _maxSecurityCount = value;
       }
     }
 
@@ -77,13 +77,13 @@ namespace StockSharp.Hydra.Core.Server
     {
       get
       {
-        return this._candleHistoryMaxDays;
+        return _candleHistoryMaxDays;
       }
       set
       {
         if (value < 0)
           throw new ArgumentOutOfRangeException(nameof (value));
-        this._candleHistoryMaxDays = value;
+        _candleHistoryMaxDays = value;
       }
     }
 
@@ -95,13 +95,13 @@ namespace StockSharp.Hydra.Core.Server
     {
       get
       {
-        return this._tickHistoryMaxDays;
+        return _tickHistoryMaxDays;
       }
       set
       {
         if (value < 0)
           throw new ArgumentOutOfRangeException(nameof (value));
-        this._tickHistoryMaxDays = value;
+        _tickHistoryMaxDays = value;
       }
     }
 
@@ -113,13 +113,13 @@ namespace StockSharp.Hydra.Core.Server
     {
       get
       {
-        return this._orderBookHistoryMaxDays;
+        return _orderBookHistoryMaxDays;
       }
       set
       {
         if (value < 0)
           throw new ArgumentOutOfRangeException(nameof (value));
-        this._orderBookHistoryMaxDays = value;
+        _orderBookHistoryMaxDays = value;
       }
     }
 
@@ -131,13 +131,13 @@ namespace StockSharp.Hydra.Core.Server
     {
       get
       {
-        return this._orderLogHistoryMaxDays;
+        return _orderLogHistoryMaxDays;
       }
       set
       {
         if (value < 0)
           throw new ArgumentOutOfRangeException(nameof (value));
-        this._orderLogHistoryMaxDays = value;
+        _orderLogHistoryMaxDays = value;
       }
     }
 
@@ -149,13 +149,13 @@ namespace StockSharp.Hydra.Core.Server
     {
       get
       {
-        return this._transactionsHistoryMaxDays;
+        return _transactionsHistoryMaxDays;
       }
       set
       {
         if (value < 0)
           throw new ArgumentOutOfRangeException(nameof (value));
-        this._transactionsHistoryMaxDays = value;
+        _transactionsHistoryMaxDays = value;
       }
     }
 
@@ -171,43 +171,43 @@ namespace StockSharp.Hydra.Core.Server
     /// <param name="storage">Settings storage.</param>
     public void Load(SettingsStorage storage)
     {
-      this.IsFixServer = storage.GetValue<bool>("IsFixServer", false);
-      this.Authorization = storage.GetValue<AuthorizationModes>("Authorization", AuthorizationModes.Anonymous);
+      IsFixServer = storage.GetValue( "IsFixServer", false);
+      Authorization = storage.GetValue( "Authorization", AuthorizationModes.Anonymous);
       if (storage.ContainsKey("ServerSettings"))
       {
-        this.ServerSettings.ForceLoad<FixServerSettings>(storage.GetValue<SettingsStorage>("ServerSettings", (SettingsStorage) null));
+        ServerSettings.ForceLoad( storage.GetValue<SettingsStorage>("ServerSettings", null ) );
       }
       else
       {
-        SettingsStorage storage1 = storage.GetValue<SettingsStorage>("FixMarketDataSession", (SettingsStorage) null);
+        SettingsStorage storage1 = storage.GetValue<SettingsStorage>("FixMarketDataSession", null );
         if (storage1 != null)
-          this.ServerSettings.MarketDataSession.Load(storage1);
+          ServerSettings.MarketDataSession.Load(storage1);
       }
-      this.MaxSecurityCount = storage.GetValue<int>("MaxSecurityCount", this.MaxSecurityCount);
-      this.CandleHistoryMaxDays = storage.GetValue<int>("CandleHistoryMaxDays", this.CandleHistoryMaxDays);
-      this.TickHistoryMaxDays = storage.GetValue<int>("TickHistoryMaxDays", this.TickHistoryMaxDays);
-      this.OrderBookHistoryMaxDays = storage.GetValue<int>("OrderBookHistoryMaxDays", this.OrderBookHistoryMaxDays);
-      this.OrderLogHistoryMaxDays = storage.GetValue<int>("OrderLogHistoryMaxDays", this.OrderLogHistoryMaxDays);
-      this.TransactionsHistoryMaxDays = storage.GetValue<int>("TransactionsHistoryMaxDays", this.TransactionsHistoryMaxDays);
-      this.SimulatorEnabled = storage.GetValue<bool>("SimulatorEnabled", this.SimulatorEnabled);
-      this.OnlyMappedSecurities = storage.GetValue<bool>("OnlyMappedSecurities", this.OnlyMappedSecurities);
+      MaxSecurityCount = storage.GetValue( "MaxSecurityCount", MaxSecurityCount);
+      CandleHistoryMaxDays = storage.GetValue( "CandleHistoryMaxDays", CandleHistoryMaxDays);
+      TickHistoryMaxDays = storage.GetValue( "TickHistoryMaxDays", TickHistoryMaxDays);
+      OrderBookHistoryMaxDays = storage.GetValue( "OrderBookHistoryMaxDays", OrderBookHistoryMaxDays);
+      OrderLogHistoryMaxDays = storage.GetValue( "OrderLogHistoryMaxDays", OrderLogHistoryMaxDays);
+      TransactionsHistoryMaxDays = storage.GetValue( "TransactionsHistoryMaxDays", TransactionsHistoryMaxDays);
+      SimulatorEnabled = storage.GetValue( "SimulatorEnabled", SimulatorEnabled);
+      OnlyMappedSecurities = storage.GetValue( "OnlyMappedSecurities", OnlyMappedSecurities);
     }
 
     /// <summary>Save settings.</summary>
     /// <param name="storage">Settings storage.</param>
     public void Save(SettingsStorage storage)
     {
-      storage.SetValue<bool>("IsFixServer", this.IsFixServer);
-      storage.SetValue<string>("Authorization", ((object) this.Authorization).To<string>());
-      storage.SetValue<SettingsStorage>("ServerSettings", this.ServerSettings.Save());
-      storage.SetValue<int>("MaxSecurityCount", this.MaxSecurityCount);
-      storage.SetValue<int>("CandleHistoryMaxDays", this.CandleHistoryMaxDays);
-      storage.SetValue<int>("TickHistoryMaxDays", this.TickHistoryMaxDays);
-      storage.SetValue<int>("OrderBookHistoryMaxDays", this.OrderBookHistoryMaxDays);
-      storage.SetValue<int>("OrderLogHistoryMaxDays", this.OrderLogHistoryMaxDays);
-      storage.SetValue<int>("TransactionsHistoryMaxDays", this.TransactionsHistoryMaxDays);
-      storage.SetValue<bool>("SimulatorEnabled", this.SimulatorEnabled);
-      storage.SetValue<bool>("OnlyMappedSecurities", this.OnlyMappedSecurities);
+      storage.SetValue( "IsFixServer", IsFixServer);
+      storage.SetValue( "Authorization", Authorization.To<string>());
+      storage.SetValue( "ServerSettings", ServerSettings.Save());
+      storage.SetValue( "MaxSecurityCount", MaxSecurityCount);
+      storage.SetValue( "CandleHistoryMaxDays", CandleHistoryMaxDays);
+      storage.SetValue( "TickHistoryMaxDays", TickHistoryMaxDays);
+      storage.SetValue( "OrderBookHistoryMaxDays", OrderBookHistoryMaxDays);
+      storage.SetValue( "OrderLogHistoryMaxDays", OrderLogHistoryMaxDays);
+      storage.SetValue( "TransactionsHistoryMaxDays", TransactionsHistoryMaxDays);
+      storage.SetValue( "SimulatorEnabled", SimulatorEnabled);
+      storage.SetValue( "OnlyMappedSecurities", OnlyMappedSecurities);
     }
   }
 }

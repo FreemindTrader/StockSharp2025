@@ -101,8 +101,8 @@ namespace fx.Algorithm
         public PlatformIndicator SimpleClone( )
         {
             PlatformIndicator indicator = OnSimpleClone( );
-            indicator.RangeMaximum = this.RangeMaximum;
-            indicator.RangeMinimum = this.RangeMinimum;
+            indicator.RangeMaximum = RangeMaximum;
+            indicator.RangeMinimum = RangeMinimum;
 
             return indicator;
         }

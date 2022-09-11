@@ -141,7 +141,7 @@ namespace fx.Indicators
 
             double[] pSAR   = new double[indexCount];
 
-            fx.TALib.Core.SarExt( Bars, startIndex, endIndex, pSAR, out outBeginIdx, out outNBElement, 0, 0, _PSAR_Step, _PSAR_Step, _PSAR_Max, _PSAR_Step, _PSAR_Step, _PSAR_Max );
+            Core.SarExt( Bars, startIndex, endIndex, pSAR, out outBeginIdx, out outNBElement, 0, 0, _PSAR_Step, _PSAR_Step, _PSAR_Max, _PSAR_Step, _PSAR_Step, _PSAR_Max );
 
             IndicatorResult.AddSetValues( "PSAR", outBeginIdx, outNBElement, true, pSAR );
         }
@@ -166,7 +166,7 @@ namespace fx.Indicators
 
             double[] pSAR   = new double[indexCount];
 
-            fx.TALib.Core.SarExt( Bars, startIndex, endIndex, pSAR, out outBeginIdx, out outNBElement, 0, 0, _PSAR_Step, _PSAR_Step, _PSAR_Max, _PSAR_Step, _PSAR_Step, _PSAR_Max );
+            Core.SarExt( Bars, startIndex, endIndex, pSAR, out outBeginIdx, out outNBElement, 0, 0, _PSAR_Step, _PSAR_Step, _PSAR_Max, _PSAR_Step, _PSAR_Step, _PSAR_Max );
 
             IndicatorResult.AddSetValues( "PSAR", outBeginIdx, outNBElement, true, pSAR );
         }

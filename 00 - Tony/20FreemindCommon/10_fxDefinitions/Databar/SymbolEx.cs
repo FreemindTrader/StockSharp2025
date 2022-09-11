@@ -86,7 +86,7 @@ namespace fx.Definitions
             {
                 var periodBit = ( uint ) GetPeriodEnum( period );
 
-                _symbolBit    = _symbolBit | ( uint ) periodBit;                
+                _symbolBit    = _symbolBit | periodBit;                
 
                 uint myType   = (uint) ToSecurityBit( secType );
 

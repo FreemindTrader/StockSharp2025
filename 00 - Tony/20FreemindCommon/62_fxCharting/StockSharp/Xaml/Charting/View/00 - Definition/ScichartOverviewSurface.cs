@@ -16,7 +16,7 @@ namespace fx.Charting
 {
     internal sealed class ScichartOverviewSurface
     {
-        public static readonly DependencyProperty ItemsControlParentSurfaceProperty = DependencyProperty.RegisterAttached( "ItemsControlParentSurface", typeof( ItemsControl ), typeof( ScichartOverviewSurface ), new PropertyMetadata( null, new PropertyChangedCallback( ScichartOverviewSurface.OnItemsControlParentSurfacePropertyChanged ) ) );
+        public static readonly DependencyProperty ItemsControlParentSurfaceProperty = DependencyProperty.RegisterAttached( "ItemsControlParentSurface", typeof( ItemsControl ), typeof( ScichartOverviewSurface ), new PropertyMetadata( null, new PropertyChangedCallback( OnItemsControlParentSurfacePropertyChanged ) ) );
 
         public static void SetItemsControlParentSurface( UIElement uiElement, ItemsControl itemControl )
         {

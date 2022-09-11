@@ -8,7 +8,7 @@ namespace fx.Definitions
     /// <summary>
     /// 中国日历异常处理
     /// </summary>
-    public class ChineseCalendarException : System.Exception
+    public class ChineseCalendarException : Exception
     {
         public ChineseCalendarException( string msg )
             : base( msg )
@@ -358,11 +358,11 @@ namespace fx.Definitions
             leap = GetChineseLeapMonth( cy );// 计算该年应该闰哪个月
             if ( leap != 0 )
             {
-                this._cIsLeapYear = true;
+                _cIsLeapYear = true;
             }
             else
             {
-                this._cIsLeapYear = false;
+                _cIsLeapYear = false;
             }
             if ( cm != leap )
             {
@@ -411,7 +411,7 @@ namespace fx.Definitions
                 else  //计算月等于闰月
                 {
                     //如果需要计算的是闰月，则应首先加上与闰月对应的普通月的天数
-                    if ( this._cIsLeapMonth == true ) //计算月为闰月
+                    if ( _cIsLeapMonth == true ) //计算月为闰月
                     {
                         Temp = GetChineseMonthDays( cy, cm ); //计算非闰月天数
                         offset = offset + Temp;
@@ -525,7 +525,7 @@ namespace fx.Definitions
             }
             //zhiHour = zhiStr[offset].ToString();
             //计算天干
-            TimeSpan ts = this._date - GanZhiStartDay;
+            TimeSpan ts = _date - GanZhiStartDay;
             i = ts.Days % 60;
             indexGan = ( ( i % 10 + 1 ) * 2 - 1 ) % 10 - 1; //ganStr[i % 10] 为日的天干,(n*2-1) %10得出地支对应,n从1开始
             tmpGan = ganStr.Substring( indexGan ) + ganStr.Substring( 0, indexGan + 2 );//凑齐12位
@@ -720,21 +720,21 @@ namespace fx.Definitions
             get
             {
                 string tempStr = "";
-                if ( this._cIsLeapMonth == false ) //闰月不计算节日
+                if ( _cIsLeapMonth == false ) //闰月不计算节日
                 {
                     foreach ( LunarHolidayStruct lh in lHolidayInfo )
                     {
-                        if ( ( lh.Month == this._cMonth ) && ( lh.Day == this._cDay ) )
+                        if ( ( lh.Month == _cMonth ) && ( lh.Day == _cDay ) )
                         {
                             tempStr = lh.HolidayName;
                             break;
                         }
                     }
                     //对除夕进行特别处理
-                    if ( this._cMonth == 12 )
+                    if ( _cMonth == 12 )
                     {
-                        int i = GetChineseMonthDays( this._cYear, 12 ); //计算当年农历12月的总天数
-                        if ( this._cDay == i ) //如果为最后一天
+                        int i = GetChineseMonthDays( _cYear, 12 ); //计算当年农历12月的总天数
+                        if ( _cDay == i ) //如果为最后一天
                         {
                             tempStr = "除夕";
                         }
@@ -843,7 +843,7 @@ namespace fx.Definitions
         {
             get
             {
-                return "公元" + this._date.ToLongDateString( );
+                return "公元" + _date.ToLongDateString( );
             }
         }
         #endregion
@@ -855,7 +855,7 @@ namespace fx.Definitions
         {
             get
             {
-                return DateTime.IsLeapYear( this._date.Year );
+                return DateTime.IsLeapYear( _date.Year );
             }
         }
         #endregion
@@ -869,7 +869,7 @@ namespace fx.Definitions
             {
                 int offset = 0;
                 int modStarDay = 0;
-                TimeSpan ts = this._date - ChineseConstellationReferDay;
+                TimeSpan ts = _date - ChineseConstellationReferDay;
                 offset = ts.Days;
                 modStarDay = offset % 28;
                 return ( modStarDay >= 0 ? _chineseConstellationName[ modStarDay ] : _chineseConstellationName[ 27 + modStarDay ] );
@@ -896,7 +896,7 @@ namespace fx.Definitions
         /// </summary>
         public bool IsChineseLeapMonth
         {
-            get { return this._cIsLeapMonth; }
+            get { return _cIsLeapMonth; }
         }
         #endregion
         #region IsChineseLeapYear
@@ -907,7 +907,7 @@ namespace fx.Definitions
         {
             get
             {
-                return this._cIsLeapYear;
+                return _cIsLeapYear;
             }
         }
         #endregion
@@ -917,7 +917,7 @@ namespace fx.Definitions
         /// </summary>
         public int ChineseDay
         {
-            get { return this._cDay; }
+            get { return _cDay; }
         }
         #endregion
         #region ChineseDayString
@@ -928,7 +928,7 @@ namespace fx.Definitions
         {
             get
             {
-                switch ( this._cDay )
+                switch ( _cDay )
                 {
                     case 0:
                     return "";
@@ -939,7 +939,7 @@ namespace fx.Definitions
                     case 30:
                     return "三十";
                     default:
-                    return nStr2[ ( int )( _cDay / 10 ) ].ToString( ) + nStr1[ _cDay % 10 ].ToString( );
+                    return nStr2[_cDay / 10].ToString( ) + nStr1[ _cDay % 10 ].ToString( );
                 }
             }
         }
@@ -950,7 +950,7 @@ namespace fx.Definitions
         /// </summary>
         public int ChineseMonth
         {
-            get { return this._cMonth; }
+            get { return _cMonth; }
         }
         #endregion
         #region ChineseMonthString
@@ -961,7 +961,7 @@ namespace fx.Definitions
         {
             get
             {
-                return _monthString[ this._cMonth ];
+                return _monthString[ _cMonth ];
             }
         }
         #endregion
@@ -971,7 +971,7 @@ namespace fx.Definitions
         /// </summary>
         public int ChineseYear
         {
-            get { return this._cYear; }
+            get { return _cYear; }
         }
         #endregion
         #region ChineseYearString
@@ -983,7 +983,7 @@ namespace fx.Definitions
             get
             {
                 string tempStr = "";
-                string num = this._cYear.ToString( );
+                string num = _cYear.ToString( );
                 for ( int i = 0; i < 4; i++ )
                 {
                     tempStr += ConvertNumToChineseNum( num[ i ] );
@@ -1000,7 +1000,7 @@ namespace fx.Definitions
         {
             get
             {
-                if ( this._cIsLeapMonth == true )
+                if ( _cIsLeapMonth == true )
                 {
                     return "农历" + ChineseYearString + "闰" + ChineseMonthString + ChineseDayString;
                 }
@@ -1032,7 +1032,7 @@ namespace fx.Definitions
                 double num;
                 int y;
                 string tempStr = "";
-                y = this._date.Year;
+                y = _date.Year;
                 for ( int i = 1; i <= 24; i++ )
                 {
                     num = 525948.76 * ( y - 1900 ) + sTermInfo[ i - 1 ];
@@ -1056,7 +1056,7 @@ namespace fx.Definitions
                 double num;
                 int y;
                 string tempStr = "";
-                y = this._date.Year;
+                y = _date.Year;
                 for ( int i = 24; i >= 1; i-- )
                 {
                     num = 525948.76 * ( y - 1900 ) + sTermInfo[ i - 1 ];
@@ -1080,7 +1080,7 @@ namespace fx.Definitions
                 double num;
                 int y;
                 string tempStr = "";
-                y = this._date.Year;
+                y = _date.Year;
                 for ( int i = 1; i <= 24; i++ )
                 {
                     num = 525948.76 * ( y - 1900 ) + sTermInfo[ i - 1 ];
@@ -1178,7 +1178,7 @@ namespace fx.Definitions
             get
             {
                 string tempStr;
-                int i = ( this._cYear - GanZhiStartYear ) % 60; //计算干支
+                int i = ( _cYear - GanZhiStartYear ) % 60; //计算干支
                 tempStr = ganStr[ i % 10 ].ToString( ) + zhiStr[ i % 12 ].ToString( );
                 return tempStr;
             }
@@ -1203,19 +1203,19 @@ namespace fx.Definitions
                 //每个月的地支总是固定的,而且总是从寅月开始
                 int zhiIndex;
                 string zhi;
-                if ( this._cMonth > 10 )
+                if ( _cMonth > 10 )
                 {
-                    zhiIndex = this._cMonth - 10;
+                    zhiIndex = _cMonth - 10;
                 }
                 else
                 {
-                    zhiIndex = this._cMonth + 2;
+                    zhiIndex = _cMonth + 2;
                 }
                 zhi = zhiStr[ zhiIndex - 1 ].ToString( );
                 //根据当年的干支年的干来计算月干的第一个
                 int ganIndex = 1;
                 string gan;
-                int i = ( this._cYear - GanZhiStartYear ) % 60; //计算干支
+                int i = ( _cYear - GanZhiStartYear ) % 60; //计算干支
                 switch ( i % 10 )
                 {
                     #region ...
@@ -1251,7 +1251,7 @@ namespace fx.Definitions
                     break;
                     #endregion
                 }
-                gan = ganStr[ ( ganIndex + this._cMonth - 2 ) % 10 ].ToString( );
+                gan = ganStr[ ( ganIndex + _cMonth - 2 ) % 10 ].ToString( );
                 return gan + zhi;
             }
         }
@@ -1273,7 +1273,7 @@ namespace fx.Definitions
             get
             {
                 int i, offset;
-                TimeSpan ts = this._date - GanZhiStartDay;
+                TimeSpan ts = _date - GanZhiStartDay;
                 offset = ts.Days;
                 i = offset % 60;
                 return ganStr[ i % 10 ].ToString( ) + zhiStr[ i % 12 ].ToString( );

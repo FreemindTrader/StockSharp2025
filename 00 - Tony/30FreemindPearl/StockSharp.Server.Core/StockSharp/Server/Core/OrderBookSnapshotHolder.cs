@@ -54,7 +54,7 @@ namespace StockSharp.Server.Core
                         {
                             if ( ++refTriple.Third == 100 )
                                 this.AddErrorLog( LocalizedStrings.SnapshotTurnedOff, securityId, refTriple.Third, 100 );
-                            throw new InvalidOperationException( LocalizedStrings.MessageWithError.Put( ( object )quoteMsg ), ex );
+                            throw new InvalidOperationException( LocalizedStrings.MessageWithError.Put( quoteMsg ), ex );
                         }
                     }
                     else
@@ -90,7 +90,7 @@ namespace StockSharp.Server.Core
                         {
                             if ( ++refTriple.Third == 100 )
                                 this.AddErrorLog( LocalizedStrings.SnapshotTurnedOff, securityId, refTriple.Third, 100 );
-                            throw new InvalidOperationException( LocalizedStrings.MessageWithError.Put( ( object )quoteMsg ), ex );
+                            throw new InvalidOperationException( LocalizedStrings.MessageWithError.Put( quoteMsg ), ex );
                         }
                     }
                     else

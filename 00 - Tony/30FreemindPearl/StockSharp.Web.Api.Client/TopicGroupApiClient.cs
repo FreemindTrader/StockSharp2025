@@ -29,7 +29,7 @@ namespace StockSharp.Web.Api.Client
           long? roleId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<TopicGroup>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)roleId);
+            return Get<BaseEntitySet<TopicGroup>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, roleId );
         }
 
         Task ITopicGroupService.AddRoleAsync(
@@ -38,7 +38,7 @@ namespace StockSharp.Web.Api.Client
           bool isRead,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddRoleAsync"), cancellationToken, (object)groupId, (object)roleId, (object)isRead);
+            return Post( GetCurrentMethod( "AddRoleAsync"), cancellationToken, groupId, roleId, isRead );
         }
 
         Task<bool> ITopicGroupService.RemoveRoleAsync(
@@ -47,7 +47,7 @@ namespace StockSharp.Web.Api.Client
           bool isRead,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveRoleAsync"), cancellationToken, (object)groupId, (object)roleId, (object)isRead);
+            return Post<bool>( GetCurrentMethod( "RemoveRoleAsync"), cancellationToken, groupId, roleId, isRead );
         }
     }
 }

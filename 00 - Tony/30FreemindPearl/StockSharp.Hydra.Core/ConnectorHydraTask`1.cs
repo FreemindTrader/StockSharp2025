@@ -72,7 +72,7 @@ namespace StockSharp.Hydra.Core
             connector.Adapter.SecurityMappingStorage = ServicesRegistry.MappingStorage;
             _connector = connector;
 
-            Adapter = typeof( TMessageAdapter ).CreateInstance<TMessageAdapter>( ( object )_connector.TransactionIdGenerator );
+            Adapter = typeof( TMessageAdapter ).CreateInstance<TMessageAdapter>( _connector.TransactionIdGenerator );
             Adapter.GenerateOrderBookFromLevel1 = false;
 
             if ( Adapter is INotifyPropertyChanged adapter )
@@ -238,7 +238,7 @@ namespace StockSharp.Hydra.Core
             if ( ( refreshCancelled != null ? ( refreshCancelled() ? 1 : 0 ) : 0 ) != 0 )
                 return;
             SaveSecurity( security );
-            if ( _refreshOnly || _allSecurity == null || !Adapter.IsSecurityRequired( StockSharp.Messages.DataType.Level1 ) )
+            if ( _refreshOnly || _allSecurity == null || !Adapter.IsSecurityRequired( Messages.DataType.Level1 ) )
                 return;
             SubscribeSecurity( security );
         }
@@ -283,15 +283,15 @@ namespace StockSharp.Hydra.Core
                     foreach ( KeyValuePair<Security, HydraTaskSecurity> cachedPair in _securityMap.CachedPairs )
                     {
                         SubscribeSecurity( cachedPair.Key );
-                        if ( !flag && cachedPair.Value.Enabled( StockSharp.Messages.DataType.News ) )
+                        if ( !flag && cachedPair.Value.Enabled( Messages.DataType.News ) )
                             flag = true;
                     }
                 }
                 else
                 {
-                    if ( !Adapter.IsSecurityRequired( StockSharp.Messages.DataType.Level1 ) )
+                    if ( !Adapter.IsSecurityRequired( Messages.DataType.Level1 ) )
                         SubscribeSecurity( _allSecurity.Security );
-                    if ( !flag && _allSecurity.Enabled( StockSharp.Messages.DataType.News ) )
+                    if ( !flag && _allSecurity.Enabled( Messages.DataType.News ) )
                         flag = true;
                 }
                 RaiseStarted();
@@ -336,7 +336,7 @@ namespace StockSharp.Hydra.Core
         {
             TMessageAdapter messageAdapter = Adapter.TypedClone();
             if ( _refreshOnly || Securities.All( s => s.GetDataTypes().All( t => t.IsMarketData ) ) )
-                messageAdapter.SupportedInMessages = messageAdapter.SupportedInMessages.Except( StockSharp.Messages.Extensions.TransactionalMessageTypes );
+                messageAdapter.SupportedInMessages = messageAdapter.SupportedInMessages.Except( Messages.Extensions.TransactionalMessageTypes );
             if ( !needReconnect )
             {
                 messageAdapter.ReConnectionSettings.AttemptCount = 0;
@@ -410,25 +410,25 @@ namespace StockSharp.Hydra.Core
             HydraTaskSecurity taskSecurity;
             foreach ( Messages.DataType dataType in GetDataTypes( security, out taskSecurity ).ToArray() )
             {
-                if ( dataType == StockSharp.Messages.DataType.MarketDepth )
+                if ( dataType == Messages.DataType.MarketDepth )
                 {
                     int? maxDepth = taskSecurity != null ? taskSecurity.GetMaxDepth( dataType ) : new int?();
-                    ProcessDataTypeSubscription( ( Action<Security, DateTimeOffset?, DateTimeOffset?> )( ( sec, from, to ) =>
+                    ProcessDataTypeSubscription( ( sec, from, to ) =>
                     {
-                        long? count = new long?();                        
+                        long? count = new long?();
                         TimeSpan? refreshSpeed = new TimeSpan?();
                         long? skip = new long?();
 
                         _connector.SubscribeMarketDepth( sec, from, to, count, MarketDataBuildModes.LoadAndBuild, null, maxDepth, refreshSpeed, null, true, null, skip );
-                    } ), security, taskSecurity, dataType, TicksFromDate );
+                    }, security, taskSecurity, dataType, TicksFromDate );
                 }
-                else if ( dataType == StockSharp.Messages.DataType.Level1 )
+                else if ( dataType == Messages.DataType.Level1 )
                     ProcessDataTypeSubscription( ( sec, from, to ) => _connector.SubscribeLevel1( sec, from, to, new long?(), MarketDataBuildModes.LoadAndBuild, null, null, new long?() ), security, taskSecurity, dataType, TicksFromDate );
-                else if ( dataType == StockSharp.Messages.DataType.Ticks )
+                else if ( dataType == Messages.DataType.Ticks )
                     ProcessDataTypeSubscription( ( sec, from, to ) => _connector.SubscribeTrades( sec, from, to, new long?(), MarketDataBuildModes.LoadAndBuild, null, null, new long?() ), security, taskSecurity, dataType, TicksFromDate );
-                else if ( dataType == StockSharp.Messages.DataType.OrderLog )
+                else if ( dataType == Messages.DataType.OrderLog )
                     ProcessDataTypeSubscription( ( sec, from, to ) => _connector.SubscribeOrderLog( sec, from, to, new long?(), null, new long?() ), security, taskSecurity, dataType, TicksFromDate );
-                else if ( !( dataType == StockSharp.Messages.DataType.Transactions ) && !( dataType == StockSharp.Messages.DataType.PositionChanges ) && dataType.IsCandles )
+                else if ( !( dataType == Messages.DataType.Transactions ) && !( dataType == Messages.DataType.PositionChanges ) && dataType.IsCandles )
                 {
                     CandleSeries series = dataType.ToCandleSeries( security );
                     bool? nullable1;

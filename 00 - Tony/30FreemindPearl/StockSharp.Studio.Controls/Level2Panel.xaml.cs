@@ -43,24 +43,24 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.BuySellPanel.Settings;
+                return BuySellPanel.Settings;
             }
         }
 
         public Level2Panel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            this.BuySellPanel.Host = ( IStudioControl )this;
-            this.SecurityAsksGrid.LayoutChanged += RaiseChangedCommand;
-            this.SecurityAsksGrid.SelectionChanged += new GridSelectionChangedEventHandler( this.SecuritiesCtrlOnSelectionChanged );
-            this.SecurityBidsGrid.LayoutChanged += RaiseChangedCommand;
-            this.SecurityBidsGrid.SelectionChanged += new GridSelectionChangedEventHandler( this.SecuritiesCtrlOnSelectionChanged );
-            this.SecurityPicker.EditValueChanged += new EditValueChangedEventHandler( this.SecurityPickerSecuritySelected );
-            this.SecurityPicker.SecurityProvider = BaseStudioControl.SecurityProvider;
-            this.SecurityAsksGrid.MarketDataProvider = this.SecurityBidsGrid.MarketDataProvider = BaseStudioControl.MarketDataProvider;
-            Level2Panel.SetVisibleColumns( ( GridControl )this.SecurityAsksGrid, ( ISet<string> )this._askDefaultColumns );
-            Level2Panel.SetVisibleColumns( ( GridControl )this.SecurityBidsGrid, ( ISet<string> )this._bidDefaultColumns );
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            BuySellPanel.Host = this;
+            SecurityAsksGrid.LayoutChanged += RaiseChangedCommand;
+            SecurityAsksGrid.SelectionChanged += new GridSelectionChangedEventHandler( SecuritiesCtrlOnSelectionChanged );
+            SecurityBidsGrid.LayoutChanged += RaiseChangedCommand;
+            SecurityBidsGrid.SelectionChanged += new GridSelectionChangedEventHandler( SecuritiesCtrlOnSelectionChanged );
+            SecurityPicker.EditValueChanged += new EditValueChangedEventHandler( SecurityPickerSecuritySelected );
+            SecurityPicker.SecurityProvider = SecurityProvider;
+            SecurityAsksGrid.MarketDataProvider = SecurityBidsGrid.MarketDataProvider = MarketDataProvider;
+            SetVisibleColumns( SecurityAsksGrid, _askDefaultColumns );
+            SetVisibleColumns( SecurityBidsGrid, _bidDefaultColumns );
         }
 
         private static void SetVisibleColumns( GridControl grid, ISet<string> columns )
@@ -71,53 +71,53 @@ namespace StockSharp.Studio.Controls
 
         private void SecurityPickerSecuritySelected( object sender, EditValueChangedEventArgs e )
         {
-            Security[ ] array = BaseStudioControl.SecurityProvider.LookupByCode( this.SecurityPicker.SelectedSecurity.Code, new SecurityTypes?() ).ToArray<Security>();
-            Security[ ] securities = this._securities;
+            Security[ ] array = SecurityProvider.LookupByCode( SecurityPicker.SelectedSecurity.Code, new SecurityTypes?() ).ToArray();
+            Security[ ] securities = _securities;
             if ( securities != null )
-                ( ( IEnumerable<Security> )securities ).ForEach<Security>( ( Action<Security> )( s => this._subscriptionManager.RemoveSubscriptions( s, Level2Panel._dataType ) ) );
-            this.SecurityAsksGrid.Securities.Clear();
-            this.SecurityBidsGrid.Securities.Clear();
-            this._securities = array;
-            if ( this._securities == null )
+                securities.ForEach( s => _subscriptionManager.RemoveSubscriptions( s, _dataType ) );
+            SecurityAsksGrid.Securities.Clear();
+            SecurityBidsGrid.Securities.Clear();
+            _securities = array;
+            if ( _securities == null )
                 return;
-            ( ( IEnumerable<Security> )this._securities ).ForEach<Security>( ( Action<Security> )( s => this._subscriptionManager.CreateSubscription( s, Level2Panel._dataType, ( Action<Subscription> )null ) ) );
-            this.SecurityAsksGrid.Securities.AddRange( ( IEnumerable<Security> )this._securities );
-            this.SecurityBidsGrid.Securities.AddRange( ( IEnumerable<Security> )this._securities );
+            _securities.ForEach( s => _subscriptionManager.CreateSubscription( s, _dataType, null ) );
+            SecurityAsksGrid.Securities.AddRange( _securities );
+            SecurityBidsGrid.Securities.AddRange( _securities );
         }
 
         private void SecuritiesCtrlOnSelectionChanged( object sender, GridSelectionChangedEventArgs e )
         {
-            this.Settings.Security = ( ( SecurityGrid )sender ).SelectedSecurity;
+            Settings.Security = ( ( SecurityGrid )sender ).SelectedSecurity;
         }
 
         public override void Load( SettingsStorage storage )
         {
-            string id = storage.GetValue<string>( "SecurityId", ( string )null );
+            string id = storage.GetValue<string>( "SecurityId", null );
             if ( id != null )
-                this.SecurityPicker.SelectedSecurity = BaseStudioControl.SecurityProvider.LookupById( id );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "SecurityAsksGrid", ( SettingsStorage )null );
+                SecurityPicker.SelectedSecurity = SecurityProvider.LookupById( id );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "SecurityAsksGrid", null );
             if ( storage1 != null )
-                this.SecurityAsksGrid.Load( storage1 );
-            SettingsStorage storage2 = storage.GetValue<SettingsStorage>( "SecurityBidsGrid", ( SettingsStorage )null );
+                SecurityAsksGrid.Load( storage1 );
+            SettingsStorage storage2 = storage.GetValue<SettingsStorage>( "SecurityBidsGrid", null );
             if ( storage2 != null )
-                this.SecurityBidsGrid.Load( storage2 );
-            SettingsStorage storage3 = storage.GetValue<SettingsStorage>( "BuySellSettings", ( SettingsStorage )null );
+                SecurityBidsGrid.Load( storage2 );
+            SettingsStorage storage3 = storage.GetValue<SettingsStorage>( "BuySellSettings", null );
             if ( storage3 == null )
                 return;
-            this.BuySellPanel.Load( storage3 );
+            BuySellPanel.Load( storage3 );
         }
 
         public override void Save( SettingsStorage storage )
         {
-            storage.SetValue<string>( "SecurityId", this.SecurityPicker.SelectedSecurity?.Id );
-            storage.SetValue<SettingsStorage>( "SecurityAsksGrid", this.SecurityAsksGrid.Save() );
-            storage.SetValue<SettingsStorage>( "SecurityBidsGrid", this.SecurityBidsGrid.Save() );
-            storage.SetValue<SettingsStorage>( "BuySellSettings", this.BuySellPanel.Save() );
+            storage.SetValue( "SecurityId", SecurityPicker.SelectedSecurity?.Id );
+            storage.SetValue( "SecurityAsksGrid", SecurityAsksGrid.Save() );
+            storage.SetValue( "SecurityBidsGrid", SecurityBidsGrid.Save() );
+            storage.SetValue( "BuySellSettings", BuySellPanel.Save() );
         }
 
         public override void Dispose( CloseReason reason )
         {
-            this._subscriptionManager.Dispose();
+            _subscriptionManager.Dispose();
             base.Dispose( reason );
         }        
     }

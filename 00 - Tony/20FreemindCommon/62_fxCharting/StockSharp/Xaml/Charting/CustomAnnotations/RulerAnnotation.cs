@@ -269,7 +269,7 @@ namespace fx.Charting.CustomAnnotations
             {
                 DateTime x1DateTime = (DateTime) xCalc.TransformIndexToData( x1Value );
                 DateTime x2DateTime = (DateTime) xCalc.TransformIndexToData( x2Value );
-                str = RulerAnnotation.FormatDimeDiff( x2DateTime - x1DateTime );
+                str = FormatDimeDiff( x2DateTime - x1DateTime );
             }
 
             var diff = Math.Round( pipDiff, _numberOfDigits );
@@ -298,12 +298,12 @@ namespace fx.Charting.CustomAnnotations
             if ( axis != YAxis )
                 return comparable;
             double num = (double) comparable;
-            return ( IComparable ) ( _priceStep > 0.0 ? Math.Round( num / _priceStep ) * _priceStep : num );
+            return _priceStep > 0.0 ? Math.Round( num / _priceStep ) * _priceStep : num;
         }
 
         protected override IAnnotationPlacementStrategy GetCurrentPlacementStrategy( )
         {
-            return ( IAnnotationPlacementStrategy ) new RulerAnnotation.RulerPlacementStrategy( this );
+            return new RulerPlacementStrategy( this );
         }
 
         public class RulerPlacementStrategy : IAnnotationPlacementStrategy
@@ -324,7 +324,7 @@ namespace fx.Charting.CustomAnnotations
 
             public Point[ ] GetBasePoints( AnnotationCoordinates coordinates )
             {
-                return ( Point[ ] ) null;
+                return null;
             }
 
             public void SetBasePoint( Point newPoint, int index )

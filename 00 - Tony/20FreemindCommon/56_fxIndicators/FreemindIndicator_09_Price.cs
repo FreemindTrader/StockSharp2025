@@ -121,7 +121,7 @@ namespace fx.Indicators
                 token.ThrowIfCancellationRequested();
             }
 
-            fx.TALib.Core.RetCode code = fx.TALib.Core.Atr(Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, ATRtimePeriod );
+            TALib.Core.RetCode code = TALib.Core.Atr(Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, ATRtimePeriod );
 
             if ( outNBElement > 0 )
             {
@@ -186,7 +186,7 @@ namespace fx.Indicators
                 token.ThrowIfCancellationRequested();
             }
 
-            fx.TALib.Core.RetCode code = fx.TALib.Core.Atr( Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, ATRtimePeriod );
+            TALib.Core.RetCode code = TALib.Core.Atr( Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, ATRtimePeriod );
 
             if ( outNBElement > 0 )
             {

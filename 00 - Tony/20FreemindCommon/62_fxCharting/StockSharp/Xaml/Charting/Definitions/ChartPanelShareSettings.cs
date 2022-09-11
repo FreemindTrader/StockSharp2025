@@ -11,7 +11,7 @@ namespace fx.Charting
 {
     public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
     {
-        private string string_0 = "Chart_{0:yyyyMMdd_HHmmssfff}.png".Put( ( object )DateTime.Now );
+        private string string_0 = "Chart_{0:yyyyMMdd_HHmmssfff}.png".Put( DateTime.Now );
         private TimeSpan timeSpan_0 = TimeSpan.FromMinutes( 5.0 );
         private bool bool_0;
         private bool bool_1;

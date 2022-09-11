@@ -52,92 +52,92 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.BuySellPanel.Settings;
+                return BuySellPanel.Settings;
             }
         }
 
         public ScalpingMarketDepthControl()
         {
             DelayActionHelper delayActionHelper = new DelayActionHelper() { Interval = TimeSpan.FromSeconds( 2.5 ).TotalMilliseconds };
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            this.BuySellPanel.Host = ( IStudioControl )this;
-            this.Settings.ValueChanged += ( Action<string, object, object> )( ( name, _1, _2 ) =>
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            BuySellPanel.Host = this;
+            Settings.ValueChanged += ( name, _1, _2 ) =>
               {
                   if ( name == "Security" || name == "Depth" )
-                      delayActionHelper.Start( new Action( this.Resubscribe ) );
-                  ( ( DispatcherObject )this ).GuiAsync( new Action( this.UpdateTitle ) );
-                  if ( this._isLoaded )
+                      delayActionHelper.Start( new Action( Resubscribe ) );
+                  this.GuiAsync( new Action( UpdateTitle ) );
+                  if ( _isLoaded )
                       return;
-                  this.RaiseChangedCommand();
-              } );
-            this.MdControl.LayoutChanged += RaiseChangedCommand;
-            this.MdControl.RegisteringOrder += new Action<Sides, Decimal>( this.OnRegisteringOrder );
-            this.MdControl.MovingOrder += new Action<Order, Decimal>( this.OnMovingOrder );
-            this.MdControl.CancelingOrder += new Action<Order>( this.OnCancelingOrder );
-            this.MdControl.SelectedQuoteChanged += new Action<QuoteChange?>( this.OnSelectedQuoteChanged );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<EntityCommand<QuoteChangeMessage>>( ( object )this, false, ( Action<EntityCommand<QuoteChangeMessage>> )( cmd =>
+                  RaiseChangedCommand();
+              };
+            MdControl.LayoutChanged += RaiseChangedCommand;
+            MdControl.RegisteringOrder += new Action<Sides, Decimal>( OnRegisteringOrder );
+            MdControl.MovingOrder += new Action<Order, Decimal>( OnMovingOrder );
+            MdControl.CancelingOrder += new Action<Order>( OnCancelingOrder );
+            MdControl.SelectedQuoteChanged += new Action<QuoteChange?>( OnSelectedQuoteChanged );
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<EntityCommand<QuoteChangeMessage>>( this, false, cmd =>
                 {
                     QuoteChangeMessage entity = cmd.Entity;
-                    Security security = this.Settings.Security;
-                    if ( security == null || !( entity.SecurityId == security.ToSecurityId( ( SecurityIdGenerator )null, true, false ) ) )
+                    Security security = Settings.Security;
+                    if ( security == null || !( entity.SecurityId == security.ToSecurityId( null, true, false ) ) )
                         return;
-                    this.MdControl.UpdateDepth( entity, security );
-                } ), ( Func<EntityCommand<QuoteChangeMessage>, bool> )null );
-            commandService.Register<ClearMarketDepthCommand>( ( object )this, true, ( Action<ClearMarketDepthCommand> )( cmd =>
+                    MdControl.UpdateDepth( entity, security );
+                }, null );
+            commandService.Register<ClearMarketDepthCommand>( this, true, cmd =>
                 {
-                    this.MdControl.Clear();
-                    if ( cmd.Security == null || cmd.Security == this.Settings.Security )
+                    MdControl.Clear();
+                    if ( cmd.Security == null || cmd.Security == Settings.Security )
                         return;
-                    this.Settings.Security = cmd.Security;
-                } ), ( Func<ClearMarketDepthCommand, bool> )null );
-            commandService.Register<OrderCommand>( ( object )this, false, ( Action<OrderCommand> )( cmd =>
+                    Settings.Security = cmd.Security;
+                }, null );
+            commandService.Register<OrderCommand>( this, false, cmd =>
                 {
                     Order entity = cmd.Entity;
                     OrderTypes? type = entity.Type;
                     OrderTypes orderTypes = OrderTypes.Conditional;
-                    if ( type.GetValueOrDefault() == orderTypes & type.HasValue || entity.Security != this.Settings.Security )
+                    if ( type.GetValueOrDefault() == orderTypes & type.HasValue || entity.Security != Settings.Security )
                         return;
-                    this.MdControl.ProcessOrder( entity, cmd.Price, cmd.Balance, cmd.State );
-                } ), ( Func<OrderCommand, bool> )null );
-            commandService.Register<OrderFailCommand>( ( object )this, false, ( Action<OrderFailCommand> )( cmd => this.MdControl.ProcessOrderFail( cmd.Entity, cmd.State ) ), ( Func<OrderFailCommand, bool> )null );
-            commandService.Register<SecuritiesRemovedCommand>( ( object )this, false, ( Action<SecuritiesRemovedCommand> )( cmd =>
+                    MdControl.ProcessOrder( entity, cmd.Price, cmd.Balance, cmd.State );
+                }, null );
+            commandService.Register<OrderFailCommand>( this, false, cmd => MdControl.ProcessOrderFail( cmd.Entity, cmd.State ), null );
+            commandService.Register<SecuritiesRemovedCommand>( this, false, cmd =>
                 {
                     bool flag = false;
                     foreach ( Security security in cmd.Securities )
                     {
-                        if ( this.Settings.Security == security )
+                        if ( Settings.Security == security )
                         {
-                            this.Settings.Security = ( Security )null;
-                            this.MdControl.Clear();
+                            Settings.Security = null;
+                            MdControl.Clear();
                             flag = true;
                             break;
                         }
                     }
                     if ( !flag )
                         return;
-                    this.RaiseChangedCommand();
-                } ), ( Func<SecuritiesRemovedCommand, bool> )null );
-            commandService.Register<FirstInitSecuritiesCommand>( ( object )this, true, ( Action<FirstInitSecuritiesCommand> )( cmd =>
+                    RaiseChangedCommand();
+                }, null );
+            commandService.Register<FirstInitSecuritiesCommand>( this, true, cmd =>
                 {
-                    if ( this.Settings.Security != null )
+                    if ( Settings.Security != null )
                         return;
-                    this.Settings.Security = cmd.Securities.First<Security>();
-                } ), ( Func<FirstInitSecuritiesCommand, bool> )null );
-            commandService.Register<FirstInitPortfoliosCommand>( ( object )this, true, ( Action<FirstInitPortfoliosCommand> )( cmd =>
+                    Settings.Security = cmd.Securities.First();
+                }, null );
+            commandService.Register<FirstInitPortfoliosCommand>( this, true, cmd =>
                 {
-                    if ( this.Settings.Portfolio != null )
+                    if ( Settings.Portfolio != null )
                         return;
-                    this.Settings.Portfolio = cmd.Portfolios.First<Portfolio>();
-                } ), ( Func<FirstInitPortfoliosCommand, bool> )null );
-            this.WhenLoaded( ( Action )( () => this._subscriptionManager.CreateSubscription( DataType.Transactions, ( Action<Subscription> )null ) ) );
+                    Settings.Portfolio = cmd.Portfolios.First();
+                }, null );
+            WhenLoaded( () => _subscriptionManager.CreateSubscription( DataType.Transactions, null ) );
         }
 
         public override void SendCommand( IStudioCommand command )
         {
             if ( command is CancelAllOrdersCommand )
-                this.MdControl.CancelOrders( ( Func<Order, bool> )null );
+                MdControl.CancelOrders( null );
             else
                 base.SendCommand( command );
         }
@@ -146,108 +146,108 @@ namespace StockSharp.Studio.Controls
         {
             if ( !quote.HasValue )
                 return;
-            this.BuySellPanel.Settings.LimitPrice = quote.Value.Price;
+            BuySellPanel.Settings.LimitPrice = quote.Value.Price;
         }
 
         private void OnCancelingOrder( Order order )
         {
-            new CancelOrderCommand( order ).Process( ( object )this, false );
+            new CancelOrderCommand( order ).Process( this, false );
         }
 
         private void OnMovingOrder( Order order, Decimal newPrice )
         {
             Order order1 = order.ReRegisterClone( new Decimal?( newPrice ), new Decimal?() );
-            bool? nullable = BaseStudioControl.Connector.IsOrderReplaceable( order );
+            bool? nullable = Connector.IsOrderReplaceable( order );
             bool flag = true;
             if ( nullable.GetValueOrDefault() == flag & nullable.HasValue )
             {
-                new ReRegisterOrderCommand( order, order1 ).Process( ( object )this, false );
+                new ReRegisterOrderCommand( order, order1 ).Process( this, false );
             }
             else
             {
-                new CancelOrderCommand( order ).Process( ( object )this, false );
-                new RegisterOrderCommand( order1 ).Process( ( object )this, false );
+                new CancelOrderCommand( order ).Process( this, false );
+                new RegisterOrderCommand( order1 ).Process( this, false );
             }
         }
 
         private void Resubscribe()
         {
-            if ( this._subscription != null )
+            if ( _subscription != null )
             {
-                this._subscriptionManager.RemoveSubscription( this._subscription );
-                this._subscription = ( Subscription )null;
+                _subscriptionManager.RemoveSubscription( _subscription );
+                _subscription = null;
             }
-            this.MdControl.Clear();
-            this._subscriptionManager.MaxDepth = new int?( Math.Max( 1, Math.Min( 200, this.Settings.Depth ) ) );
-            Security security = this.Settings.Security;
+            MdControl.Clear();
+            _subscriptionManager.MaxDepth = new int?( Math.Max( 1, Math.Min( 200, Settings.Depth ) ) );
+            Security security = Settings.Security;
             if ( security == null )
                 return;
-            this._subscription = this._subscriptionManager.CreateSubscription( security, DataType.MarketDepth, ( Action<Subscription> )null );
+            _subscription = _subscriptionManager.CreateSubscription( security, DataType.MarketDepth, null );
         }
 
         private void OnRegisteringOrder( Sides side, Decimal price )
         {
-            if ( this.Settings.Portfolio == null )
+            if ( Settings.Portfolio == null )
             {
-                PortfolioPickerWindow wnd = new PortfolioPickerWindow() { Portfolios = BaseStudioControl.PortfolioDataSource };
-                if ( wnd.ShowModal( ( DependencyObject )this ) )
-                    this.Settings.Portfolio = wnd.SelectedPortfolio;
+                PortfolioPickerWindow wnd = new PortfolioPickerWindow() { Portfolios = PortfolioDataSource };
+                if ( wnd.ShowModal( this ) )
+                    Settings.Portfolio = wnd.SelectedPortfolio;
             }
-            if ( this.Settings.Portfolio == null )
+            if ( Settings.Portfolio == null )
                 return;
-            new RegisterOrderCommand( this.CreateOrder( side, price, OrderTypes.Limit ) ).Process( ( object )this, false );
+            new RegisterOrderCommand( CreateOrder( side, price, OrderTypes.Limit ) ).Process( this, false );
         }
 
         private void UpdateTitle()
         {
-            this.Title = this.Settings.Security != null ? this.Settings.Security.Id : LocalizedStrings.MarketDepth;
+            Title = Settings.Security != null ? Settings.Security.Id : LocalizedStrings.MarketDepth;
         }
 
         private Order CreateOrder( Sides direction, Decimal price = 0M, OrderTypes type = OrderTypes.Market )
         {
-            return new Order() { Portfolio = this.Settings.Portfolio, Security = this.Settings.Security, Direction = direction, Price = price, Volume = this.Settings.Volume, Type = new OrderTypes?( type ) };
+            return new Order() { Portfolio = Settings.Portfolio, Security = Settings.Security, Direction = direction, Price = price, Volume = Settings.Volume, Type = new OrderTypes?( type ) };
         }
 
         public override void Dispose()
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            this.MdControl.RegisteringOrder -= new Action<Sides, Decimal>( this.OnRegisteringOrder );
-            this.MdControl.MovingOrder -= new Action<Order, Decimal>( this.OnMovingOrder );
-            this.MdControl.CancelingOrder -= new Action<Order>( this.OnCancelingOrder );
-            this.MdControl.SelectedQuoteChanged -= new Action<QuoteChange?>( this.OnSelectedQuoteChanged );
-            commandService.UnRegister<EntityCommand<QuoteChangeMessage>>( ( object )this );
-            commandService.UnRegister<ClearMarketDepthCommand>( ( object )this );
-            commandService.UnRegister<OrderCommand>( ( object )this );
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<SecuritiesRemovedCommand>( ( object )this );
-            commandService.UnRegister<FirstInitSecuritiesCommand>( ( object )this );
-            commandService.UnRegister<FirstInitPortfoliosCommand>( ( object )this );
-            this._subscriptionManager.Dispose();
+            IStudioCommandService commandService = CommandService;
+            MdControl.RegisteringOrder -= new Action<Sides, Decimal>( OnRegisteringOrder );
+            MdControl.MovingOrder -= new Action<Order, Decimal>( OnMovingOrder );
+            MdControl.CancelingOrder -= new Action<Order>( OnCancelingOrder );
+            MdControl.SelectedQuoteChanged -= new Action<QuoteChange?>( OnSelectedQuoteChanged );
+            commandService.UnRegister<EntityCommand<QuoteChangeMessage>>( this );
+            commandService.UnRegister<ClearMarketDepthCommand>( this );
+            commandService.UnRegister<OrderCommand>( this );
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<SecuritiesRemovedCommand>( this );
+            commandService.UnRegister<FirstInitSecuritiesCommand>( this );
+            commandService.UnRegister<FirstInitPortfoliosCommand>( this );
+            _subscriptionManager.Dispose();
             base.Dispose();
         }
 
         public override void Save( SettingsStorage settings )
         {
             base.Save( settings );
-            settings.SetValue<SettingsStorage>( "MdControl", this.MdControl.Save() );
-            settings.SetValue<SettingsStorage>( "BuySellPanel", this.BuySellPanel.Save() );
+            settings.SetValue( "MdControl", MdControl.Save() );
+            settings.SetValue( "BuySellPanel", BuySellPanel.Save() );
         }
 
         public override void Load( SettingsStorage settings )
         {
-            this._isLoaded = true;
+            _isLoaded = true;
             try
             {
                 base.Load( settings );
-                this.MdControl.Load( settings.GetValue<SettingsStorage>( "MdControl", ( SettingsStorage )null ) );
-                SettingsStorage storage = settings.GetValue<SettingsStorage>( "BuySellPanel", ( SettingsStorage )null );
+                MdControl.Load( settings.GetValue<SettingsStorage>( "MdControl", null ) );
+                SettingsStorage storage = settings.GetValue<SettingsStorage>( "BuySellPanel", null );
                 if ( storage == null )
                     return;
-                this.BuySellPanel.Load( storage );
+                BuySellPanel.Load( storage );
             }
             finally
             {
-                this._isLoaded = false;
+                _isLoaded = false;
             }
         }
 

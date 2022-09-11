@@ -30,8 +30,6 @@
       <PackageReference Include="Ecng.Roslyn" Version="1.0.116" />
       <PackageReference Include="StockSharp.Alerts" Version="5.0.129" />
       <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Localization" Version="5.0.220" />
       <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.134" />
     </ItemGroup>
 

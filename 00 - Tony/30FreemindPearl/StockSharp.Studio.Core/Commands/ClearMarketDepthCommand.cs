@@ -14,7 +14,7 @@ namespace StockSharp.Studio.Core.Commands
 
         public ClearMarketDepthCommand( Security security )
         {
-            this.Security = security;
+            Security = security;
         }
     }
 }

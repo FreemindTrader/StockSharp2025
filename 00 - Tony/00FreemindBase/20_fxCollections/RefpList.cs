@@ -329,7 +329,7 @@ namespace fx.Collections
         #endregion
 
         /// <summary>
-        /// Gets a <see cref="System.Span{T}"/> for the items currently in the collection.
+        /// Gets a <see cref="Span{T}"/> for the items currently in the collection.
         /// </summary>
         public Span<T> Span => _items.AsSpan(0, _size);
 

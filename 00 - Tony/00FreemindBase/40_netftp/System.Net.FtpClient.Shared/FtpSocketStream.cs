@@ -531,7 +531,7 @@ namespace System.Net.FtpClient
         /// Reads a line from the socket
         /// </summary>
         /// <returns>A line from the stream, null if there is nothing to read</returns>
-        public string ReadLine( System.Text.Encoding encoding )
+        public string ReadLine( Text.Encoding encoding )
         {
             List<byte> data = new List<byte>();
             byte[ ] buf = new byte[1];
@@ -570,7 +570,7 @@ namespace System.Net.FtpClient
         /// </summary>
         /// <param name="encoding">Encoding used for writing the line</param>
         /// <param name="buf">The data to write</param>
-        public void WriteLine( System.Text.Encoding encoding, string buf )
+        public void WriteLine( Text.Encoding encoding, string buf )
         {
             byte[ ] data;
             data = encoding.GetBytes( string.Format( "{0}\r\n", buf ) );

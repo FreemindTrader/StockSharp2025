@@ -514,7 +514,7 @@ namespace fx.Charting
 
             foreach ( var item in removed )
             {
-                annotations.Remove( ( IAnnotation ) item );
+                annotations.Remove( item );
             }
 
             ClearConfluenceVariables( );
@@ -2724,7 +2724,7 @@ namespace fx.Charting
 
                 if ( totalWaves.Count > 1 )
                 {
-                    _lastDrawWaveIndex = (int)barData.Index;
+                    _lastDrawWaveIndex = barData.Index;
                 }
 
                 //if ( totalWaves.Count == 1 )
@@ -5051,11 +5051,11 @@ namespace fx.Charting
 
                     if ( realBar != SBar.EmptySBar && realBar.HasCandleStickPattern && ShowCandlePattern )
                     {
-                        brush = realBar.IsSelected ? fillPaletteProvider.OverrideFillBrush( this, currIdx, ( IPointMetadata ) realBar ) : new SolidColorBrush( realBar.GetCandleStickPatternColor( false ).Value );
+                        brush = realBar.IsSelected ? fillPaletteProvider.OverrideFillBrush( this, currIdx, realBar ) : new SolidColorBrush( realBar.GetCandleStickPatternColor( false ).Value );
                     }
                     else
                     {
-                        brush = fillPaletteProvider.OverrideFillBrush( this, currIdx, ( IPointMetadata ) realBar );
+                        brush = fillPaletteProvider.OverrideFillBrush( this, currIdx, realBar );
                     }
 
                     if ( brush != null )

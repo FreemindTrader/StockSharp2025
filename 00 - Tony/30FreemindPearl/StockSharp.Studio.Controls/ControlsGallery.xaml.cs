@@ -27,20 +27,20 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( IEnumerable<ControlType> )this.GetValue( ControlsGallery.ControlTypesProperty );
+                return ( IEnumerable<ControlType> )GetValue( ControlTypesProperty );
             }
             set
             {
-                this.SetValue( ControlsGallery.ControlTypesProperty, ( object )value );
+                SetValue( ControlTypesProperty, value );
             }
         }
 
         public ControlsGallery()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             if ( this.IsDesignMode() )
                 return;
-            this.ControlTypes = BaseAppConfig<StudioAppConfig, StudioSection>.Instance.StrategyControls.GetControlTypes();
+            ControlTypes = BaseAppConfig<StudioAppConfig, StudioSection>.Instance.StrategyControls.GetControlTypes();
         }
 
         private void Gallery_OnItemClick( object sender, GalleryItemEventArgs e )
@@ -48,7 +48,7 @@ namespace StockSharp.Studio.Controls
             ControlType dataContext1 = e.Item.DataContext as ControlType;
             if ( dataContext1 == null )
                 return;
-            IControlsGalleryControl dataContext2 = this.DataContext as IControlsGalleryControl;
+            IControlsGalleryControl dataContext2 = DataContext as IControlsGalleryControl;
             if ( dataContext2 == null )
                 return;
             OpenWindowCommand command = new OpenWindowCommand( Guid.NewGuid().To<string>(), dataContext1.Type, true );
@@ -63,10 +63,10 @@ namespace StockSharp.Studio.Controls
             dxSaveFileDialog.DefaultExt = "xml";
             dxSaveFileDialog.RestoreDirectory = true;
             DXSaveFileDialog dlg = dxSaveFileDialog;
-            if ( !dlg.ShowModal( ( DependencyObject )this ) )
+            if ( !dlg.ShowModal( this ) )
                 return;
             SaveLayoutCommand command = new SaveLayoutCommand();
-            command.SyncProcess( ( ( IControlsGalleryControl )this.DataContext ).State );
+            command.SyncProcess( ( ( IControlsGalleryControl )DataContext ).State );
             if ( command.Layout.IsEmpty() )
                 return;
             File.WriteAllText( dlg.FileName, command.Layout );
@@ -79,9 +79,9 @@ namespace StockSharp.Studio.Controls
             dxOpenFileDialog.CheckFileExists = true;
             dxOpenFileDialog.RestoreDirectory = true;
             DXOpenFileDialog dlg = dxOpenFileDialog;
-            if ( !dlg.ShowModal( ( DependencyObject )this ) )
+            if ( !dlg.ShowModal( this ) )
                 return;
-            new LoadLayoutCommand( File.ReadAllText( dlg.FileName ) ).SyncProcess( ( ( IControlsGalleryControl )this.DataContext ).State );
+            new LoadLayoutCommand( File.ReadAllText( dlg.FileName ) ).SyncProcess( ( ( IControlsGalleryControl )DataContext ).State );
         }
 
         

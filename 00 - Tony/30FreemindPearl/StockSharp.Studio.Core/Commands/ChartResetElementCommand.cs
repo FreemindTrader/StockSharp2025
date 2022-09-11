@@ -20,8 +20,8 @@ namespace StockSharp.Studio.Core.Commands
             IChartElement chartElement = element;
             if ( chartElement == null )
                 throw new ArgumentNullException( nameof( element ) );
-            this.Element = chartElement;
-            this.Tag = tag;
+            Element = chartElement;
+            Tag = tag;
         }
     }
 }

@@ -3481,7 +3481,7 @@ namespace StockSharp.Algo
 			if (news == null)
 				throw new ArgumentNullException(nameof(news));
 
-			return news.Source.EqualsIgnoreCase(Messages.Extensions.NewsStockSharpSource);
+			return news.Source.EqualsIgnoreCase( Extensions.NewsStockSharpSource);
 		}
 
 		/// <summary>

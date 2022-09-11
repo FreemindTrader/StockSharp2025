@@ -43,10 +43,10 @@ namespace StockSharp.Algo
 		public abstract IEnumerable<BasketPosition> InnerPositions { get; }
 	}
 
-	/// <summary>
-	/// Portfolios basket based on the weights <see cref="WeightedPortfolio.Weights"/>.
-	/// </summary>
-	public class WeightedPortfolio : BasketPortfolio
+    /// <summary>
+    /// Portfolios basket based on the weights <see cref="Weights"/>.
+    /// </summary>
+    public class WeightedPortfolio : BasketPortfolio
 	{
 		private sealed class WeightsDictionary : CachedSynchronizedDictionary<Portfolio, decimal>
 		{

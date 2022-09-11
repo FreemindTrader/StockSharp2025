@@ -32,14 +32,14 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Error>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)paymentId, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<Error>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, paymentId, like, likeCompare );
         }
 
         Task IErrorService.MinimizePriorityAsync(
           long id,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("MinimizePriorityAsync"), cancellationToken, (object)id);
+            return Post( GetCurrentMethod( "MinimizePriorityAsync"), cancellationToken, id );
         }
     }
 }

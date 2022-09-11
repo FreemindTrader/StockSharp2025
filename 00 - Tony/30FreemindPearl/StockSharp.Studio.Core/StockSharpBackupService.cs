@@ -94,15 +94,15 @@ namespace StockSharp.Studio.Core
         async Task<string> IBackupService.PublishAsync( BackupEntry entry, CancellationToken cancellationToken )
         {
             long num;
-            if ( !this._fileIds.TryGetValue( entry, out num ) )
-                return ( string )null;
+            if ( !_fileIds.TryGetValue( entry, out num ) )
+                return null;
             IFileShareService service = CommunityServicesRegistry.GetService<IFileShareService>();
-            StockSharp.Web.DomainModel.FileShare entity = new StockSharp.Web.DomainModel.FileShare();
-            StockSharp.Web.DomainModel.File file = new StockSharp.Web.DomainModel.File();
+            Web.DomainModel.FileShare entity = new Web.DomainModel.FileShare();
+            Web.DomainModel.File file = new Web.DomainModel.File();
             file.Id = num;
             entity.File = file;
             CancellationToken cancellationToken1 = cancellationToken;
-            return Paths.GetPageUrl( Pages.File, await service.AddAsync( entity, cancellationToken1 ) );
+            return GetPageUrl( Pages.File, await service.AddAsync( entity, cancellationToken1 ) );
         }
 
         async Task IBackupService.UnPublishAsync(
@@ -110,7 +110,7 @@ namespace StockSharp.Studio.Core
           CancellationToken cancellationToken )
         {
             long fileId;
-            if ( !this._fileIds.TryGetValue( entry, out fileId ) )
+            if ( !_fileIds.TryGetValue( entry, out fileId ) )
                 return;
             await CommunityServicesRegistry.GetService<IFileShareService>().RemoveByFileIdAsync( fileId, cancellationToken );
         }

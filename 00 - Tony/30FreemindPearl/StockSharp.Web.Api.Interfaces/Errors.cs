@@ -28,7 +28,7 @@ namespace StockSharp.Web.Api.Interfaces
 
         public static KeyNotFoundException Deleted<TEntity>(this TEntity entity) where TEntity : BaseEntity
         {
-            return Errors.Deleted(typeof(TEntity).Name, entity.Id);
+            return Deleted( typeof(TEntity).Name, entity.Id);
         }
 
         public static KeyNotFoundException Deleted(
@@ -48,7 +48,7 @@ namespace StockSharp.Web.Api.Interfaces
           Client client)
           where TEntity : BaseEntity
         {
-            return entity.NotAccess<TEntity>(client.CheckOnNull<Client>("value").Id);
+            return entity.NotAccess( client.CheckOnNull( "value").Id);
         }
 
         public static ForbiddenException NotAccess<TEntity>(
@@ -56,7 +56,7 @@ namespace StockSharp.Web.Api.Interfaces
           long clientId)
           where TEntity : BaseEntity
         {
-            return Errors.NotAccess(typeof(TEntity).Name, entity.Id, clientId);
+            return NotAccess( typeof(TEntity).Name, entity.Id, clientId);
         }
 
         public static ForbiddenException NotAccess(
@@ -157,14 +157,14 @@ namespace StockSharp.Web.Api.Interfaces
             return new InvalidOperationException(string.Format("File {0} is not root.", fileId));
         }
 
-        public static InvalidOperationException NotImage(this StockSharp.Web.DomainModel.File file)
+        public static InvalidOperationException NotImage(this File file )
         {
-            return Errors.FileNotImage(file.Id);
+            return FileNotImage( file.Id);
         }
 
-        public static InvalidOperationException NotRoot(this StockSharp.Web.DomainModel.File file)
+        public static InvalidOperationException NotRoot(this File file )
         {
-            return Errors.FileNotRoot(file.Id);
+            return FileNotRoot( file.Id);
         }
 
         public static InvalidOperationException UnknownCompression(

@@ -42,36 +42,36 @@ namespace StockSharp.Studio.Controls
         
         public EquityCurveChartPanel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            this._totalPnL = this.EquityChart.CreateCurve( LocalizedStrings.PnL, Colors.Green, Colors.Red, ChartIndicatorDrawStyles.Area, EquityCurveChartPanel._totalPnlId );
-            this._unrealizedPnL = this.EquityChart.CreateCurve( LocalizedStrings.PnLUnreal, Colors.Black, ChartIndicatorDrawStyles.Line, EquityCurveChartPanel._unrealizedPnLId );
-            this._commission = this.EquityChart.CreateCurve( LocalizedStrings.Str159, Colors.Red, ChartIndicatorDrawStyles.DashedLine, EquityCurveChartPanel._commissionId );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            _totalPnL = EquityChart.CreateCurve( LocalizedStrings.PnL, Colors.Green, Colors.Red, ChartIndicatorDrawStyles.Area, _totalPnlId );
+            _unrealizedPnL = EquityChart.CreateCurve( LocalizedStrings.PnLUnreal, Colors.Black, ChartIndicatorDrawStyles.Line, _unrealizedPnLId );
+            _commission = EquityChart.CreateCurve( LocalizedStrings.Str159, Colors.Red, ChartIndicatorDrawStyles.DashedLine, _commissionId );
+            IStudioCommandService commandService = CommandService;
             DateTimeOffset? lastTime = new DateTimeOffset?();
-            commandService.Register<ResetedCommand>( ( object )this, false, ( Action<ResetedCommand> )( cmd =>
+            commandService.Register<ResetedCommand>( this, false, cmd =>
                 {
                     lastTime = new DateTimeOffset?();
-                    this.EquityChart.Reset( ( IEnumerable<IChartBandElement> )new IChartBandElement[3]
+                    EquityChart.Reset( new IChartBandElement[3]
           {
-          this._totalPnL,
-          this._unrealizedPnL,
-          this._commission
+          _totalPnL,
+          _unrealizedPnL,
+          _commission
                   } );
-                } ), ( Func<ResetedCommand, bool> )null );
-            commandService.Register<PnLChangedCommand>( ( object )this, false, ( Action<PnLChangedCommand> )( cmd =>
+                }, null );
+            commandService.Register<PnLChangedCommand>( this, false, cmd =>
                 {
-                    if ( cmd.Time.IsDefault<DateTimeOffset>() || lastTime.HasValue && cmd.Time < lastTime.Value )
+                    if ( cmd.Time.IsDefault() || lastTime.HasValue && cmd.Time < lastTime.Value )
                         return;
                     lastTime = new DateTimeOffset?( cmd.Time );
-                    IChartDrawData data = this.EquityChart.CreateData();
+                    IChartDrawData data = EquityChart.CreateData();
                     IChartDrawData.IChartDrawDataItem chartDrawDataItem1 = data.Group( cmd.Time );
                     bool flag = false;
                     Decimal? nullable = cmd.TotalPnL;
                     if ( nullable.HasValue )
                     {
                         IChartDrawData.IChartDrawDataItem chartDrawDataItem2 = chartDrawDataItem1;
-                        IChartBandElement totalPnL = this._totalPnL;
+                        IChartBandElement totalPnL = _totalPnL;
                         nullable = cmd.TotalPnL;
                         Decimal num = nullable.Value;
                         chartDrawDataItem2.Add( totalPnL, num );
@@ -81,7 +81,7 @@ namespace StockSharp.Studio.Controls
                     if ( nullable.HasValue )
                     {
                         IChartDrawData.IChartDrawDataItem chartDrawDataItem2 = chartDrawDataItem1;
-                        IChartBandElement unrealizedPnL = this._unrealizedPnL;
+                        IChartBandElement unrealizedPnL = _unrealizedPnL;
                         nullable = cmd.UnrealizedPnL;
                         Decimal num = nullable.Value;
                         chartDrawDataItem2.Add( unrealizedPnL, num );
@@ -91,7 +91,7 @@ namespace StockSharp.Studio.Controls
                     if ( nullable.HasValue )
                     {
                         IChartDrawData.IChartDrawDataItem chartDrawDataItem2 = chartDrawDataItem1;
-                        IChartBandElement commission = this._commission;
+                        IChartBandElement commission = _commission;
                         nullable = cmd.Commission;
                         Decimal num = nullable.Value;
                         chartDrawDataItem2.Add( commission, num );
@@ -99,43 +99,43 @@ namespace StockSharp.Studio.Controls
                     }
                     if ( !flag )
                         return;
-                    this.EquityChart.Draw( data );
-                } ), ( Func<PnLChangedCommand, bool> )null );
-            this.WhenLoaded( ( Action )( () => this._subscriptionManager.CreateSubscription( DataType.PositionChanges, ( Action<Subscription> )null ) ) );
+                    EquityChart.Draw( data );
+                }, null );
+            WhenLoaded( () => _subscriptionManager.CreateSubscription( DataType.PositionChanges, null ) );
         }
 
         public override void Dispose()
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<PnLChangedCommand>( ( object )this );
-            this._subscriptionManager.Dispose();
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<PnLChangedCommand>( this );
+            _subscriptionManager.Dispose();
             base.Dispose();
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "EquityChart", ( SettingsStorage )null );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "EquityChart", null );
             if ( storage1 == null )
                 return;
-            this.EquityChart.Load( storage1 );
-            this._totalPnL = this.EquityChart.Elements.First<IChartBandElement>( ( Func<IChartBandElement, bool> )( e => e.Id == EquityCurveChartPanel._totalPnlId ) );
-            this._unrealizedPnL = this.EquityChart.Elements.First<IChartBandElement>( ( Func<IChartBandElement, bool> )( e => e.Id == EquityCurveChartPanel._unrealizedPnLId ) );
-            this._commission = this.EquityChart.Elements.First<IChartBandElement>( ( Func<IChartBandElement, bool> )( e => e.Id == EquityCurveChartPanel._commissionId ) );
-            if ( this._totalPnL.FullTitle.IsEmpty() )
-                this._totalPnL.FullTitle = LocalizedStrings.PnL;
-            if ( this._unrealizedPnL.FullTitle.IsEmpty() )
-                this._unrealizedPnL.FullTitle = LocalizedStrings.PnLUnreal;
-            if ( !this._commission.FullTitle.IsEmpty() )
+            EquityChart.Load( storage1 );
+            _totalPnL = EquityChart.Elements.First( e => e.Id == _totalPnlId );
+            _unrealizedPnL = EquityChart.Elements.First( e => e.Id == _unrealizedPnLId );
+            _commission = EquityChart.Elements.First( e => e.Id == _commissionId );
+            if ( _totalPnL.FullTitle.IsEmpty() )
+                _totalPnL.FullTitle = LocalizedStrings.PnL;
+            if ( _unrealizedPnL.FullTitle.IsEmpty() )
+                _unrealizedPnL.FullTitle = LocalizedStrings.PnLUnreal;
+            if ( !_commission.FullTitle.IsEmpty() )
                 return;
-            this._commission.FullTitle = LocalizedStrings.Str159;
+            _commission.FullTitle = LocalizedStrings.Str159;
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "EquityChart", this.EquityChart.Save() );
+            storage.SetValue( "EquityChart", EquityChart.Save() );
         }        
     }
 }

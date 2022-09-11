@@ -56,7 +56,7 @@ public sealed class VisbleRangeDp : DependencyObject
         }
         set
         {
-            SetValue( VisbleRangeDp.CategoryDateTimeRangeProperty, value );
+            SetValue( CategoryDateTimeRangeProperty, value );
         }
     }
 
@@ -68,7 +68,7 @@ public sealed class VisbleRangeDp : DependencyObject
         }
         set
         {
-            SetValue( VisbleRangeDp.NumericRangeProperty, value );
+            SetValue( NumericRangeProperty, value );
         }
     }
 
@@ -80,7 +80,7 @@ public sealed class VisbleRangeDp : DependencyObject
         }
         set
         {
-            SetValue( VisbleRangeDp.DateTimeRangeProperty, value );
+            SetValue( DateTimeRangeProperty, value );
         }
     }
 

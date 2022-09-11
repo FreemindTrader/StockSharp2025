@@ -27,19 +27,19 @@ namespace StockSharp.Studio.Controls
     {        
         public ExchangeEditorPanel()
         {
-            this.InitializeComponent();
-            this.Panel.Changed += RaiseChangedCommand;
+            InitializeComponent();
+            Panel.Changed += RaiseChangedCommand;
         }
 
         public override void Save( SettingsStorage storage )
         {
-            this.Panel.Save( storage );
+            Panel.Save( storage );
             base.Save( storage );
         }
 
         public override void Load( SettingsStorage storage )
         {
-            this.Panel.Load( storage );
+            Panel.Load( storage );
             base.Load( storage );
         }
 

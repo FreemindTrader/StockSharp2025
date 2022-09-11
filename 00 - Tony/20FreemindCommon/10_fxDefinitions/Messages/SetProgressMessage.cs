@@ -28,9 +28,9 @@ namespace fx.Definitions
 
         public SetProgessMessage( double progress, double maxProgress, object message )
         {
-            this.Progress = progress;
-            this.MaxProgress = maxProgress;
-            this.State = message;
+            Progress = progress;
+            MaxProgress = maxProgress;
+            State = message;
         }
     }
 }

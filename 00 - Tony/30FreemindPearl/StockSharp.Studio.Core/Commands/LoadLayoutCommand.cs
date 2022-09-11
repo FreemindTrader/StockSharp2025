@@ -15,7 +15,7 @@ namespace StockSharp.Studio.Core.Commands
         {
             if ( layout.IsEmpty() )
                 throw new ArgumentNullException( nameof( layout ) );
-            this.Layout = layout;
+            Layout = layout;
         }
 
         public string Layout { get; }

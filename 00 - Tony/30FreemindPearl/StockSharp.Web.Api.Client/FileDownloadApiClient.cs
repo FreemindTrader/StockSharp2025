@@ -31,7 +31,7 @@ namespace StockSharp.Web.Api.Client
           long? fileId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<FileDownload>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)fileId);
+            return Get<BaseEntitySet<FileDownload>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, fileId );
         }
     }
 }

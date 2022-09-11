@@ -19,7 +19,7 @@ namespace StockSharp.Web.DomainModel
 
         public static async Task<BaseEntitySet<TEntity>> ToEntitySetAsync<TEntity>( this IEnumerable<Task<TEntity>> me, int count = 0)
         {
-            return ((IEnumerable<TEntity>)await me.WhenAll<TEntity>()).ToEntitySet(count);
+            return ( await me.WhenAll() ).ToEntitySet(count);
         }
 
         public static IEnumerable<TEntity> ToEnumerable<TEntity>( this BaseEntitySet<TEntity> set ) where TEntity : BaseEntity

@@ -10,15 +10,15 @@ namespace StockSharp.Web.Api.Interfaces
             object obj = dataContext;
             if (obj == null)
                 throw new ArgumentNullException(nameof(dataContext));
-            this.DataContext = obj;
+            DataContext = obj;
             IClientContext clientContext1 = clientContext;
             if (clientContext1 == null)
                 throw new ArgumentNullException(nameof(clientContext));
-            this.ClientContext = clientContext1;
+            ClientContext = clientContext1;
             IBackupService backupService1 = backupService;
             if (backupService1 == null)
                 throw new ArgumentNullException(nameof(backupService));
-            this.BackupService = backupService1;
+            BackupService = backupService1;
         }
 
         public object DataContext { get; }

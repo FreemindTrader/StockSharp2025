@@ -31,61 +31,61 @@ namespace StockSharp.Studio.Controls
         
         public FileProgressWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         public (string name, byte[ ] body , long id ) File { get; set; }
         
         
-        public event Func<string, byte[ ], Action<long>, CancellationToken, Task<StockSharp.Web.DomainModel.File>> FileProcessing;
+        public event Func<string, byte[ ], Action<long>, CancellationToken, Task<Web.DomainModel.File>> FileProcessing;
 
         private void UpdateProgressBar( long current )
         {
-            int total = this.File.Item2.Length;
-            long per = current * 100L / ( long )total;
-            ( ( DispatcherObject )this ).GuiSync<string>( ( Func<string> )( () => this.ProgressText.Text = string.Format( "{0}/{1} ({2}%)", ( object )current, ( object )total, ( object )per ) ) );
+            int total = File.Item2.Length;
+            long per = current * 100L / total;
+            this.GuiSync( () => ProgressText.Text = string.Format( "{0}/{1} ({2}%)", current, total, per ) );
         }
 
         private void Cancel_OnClick( object sender, RoutedEventArgs e )
         {
-            this.TryCancel();
+            TryCancel();
         }
 
         private void TryCancel()
         {
-            if ( new MessageBoxBuilder().Caption( this.Title ).Question().Text( LocalizedStrings.CancelOperationQuestion ).YesNo().Owner( ( Window )this ).Show() != MessageBoxResult.Yes )
+            if ( new MessageBoxBuilder().Caption( Title ).Question().Text( LocalizedStrings.CancelOperationQuestion ).YesNo().Owner( this ).Show() != MessageBoxResult.Yes )
                 return;
-            this._cts.Cancel();
+            _cts.Cancel();
         }
 
         private void FileProgressWindow_OnClosing( object sender, CancelEventArgs e )
         {
-            e.Cancel = this._isProcessing;
-            if ( !this._isProcessing )
+            e.Cancel = _isProcessing;
+            if ( !_isProcessing )
                 return;
-            this.TryCancel();
+            TryCancel();
         }
 
         private void FileProgressWindow_OnLoaded( object sender, RoutedEventArgs e )
         {
-            ValueTuple<string, byte[ ], long> file = this.File;
-            Func<string, byte[ ], Action<long>, CancellationToken, Task<StockSharp.Web.DomainModel.File>> evt = this.FileProcessing;
+            ValueTuple<string, byte[ ], long> file = File;
+            Func<string, byte[ ], Action<long>, CancellationToken, Task<Web.DomainModel.File>> evt = FileProcessing;
             ValueTuple<string, byte[ ], long> valueTuple = file;
             string str = valueTuple.Item1;
             byte[ ] numArray = valueTuple.Item2;
             long num = valueTuple.Item3;
-            if ( str == ( string )null && numArray == null && num == 0L || evt == null )
+            if ( str == null && numArray == null && num == 0L || evt == null )
                 return;
-            this.Progress.Value = 0.0;
-            this.ProgressText.Text = string.Format( "0/{0}", ( object )file.Item2.Length );
-            this.ProcessAction( ( Func<CancellationToken, Task<StockSharp.Web.DomainModel.File>> )( token => evt( file.Item1, file.Item2, new Action<long>( this.UpdateProgressBar ), token ) ) );
+            Progress.Value = 0.0;
+            ProgressText.Text = string.Format( "0/{0}", file.Item2.Length );
+            ProcessAction( token => evt( file.Item1, file.Item2, new Action<long>( UpdateProgressBar ), token ) );
         }
 
-        private void ProcessAction( Func<CancellationToken, Task<StockSharp.Web.DomainModel.File>> action )
+        private void ProcessAction( Func<CancellationToken, Task<Web.DomainModel.File>> action )
         {
             if ( action == null )
                 throw new ArgumentNullException( nameof( action ) );
-            this._isProcessing = true;
+            _isProcessing = true;
             //( ( Action )( async () =>
             //   {
             //       try

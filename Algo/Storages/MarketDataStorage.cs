@@ -321,7 +321,7 @@ namespace StockSharp.Algo.Storages
 							}
 							else
 							{
-								((IMarketDataStorage)this).Delete(date);
+                                this.Delete(date);
 								stream = null;
 							}
 						}
@@ -330,7 +330,7 @@ namespace StockSharp.Algo.Storages
 							stream.Dispose();
 							stream = null;
 
-							((IMarketDataStorage)this).Delete(date);
+                            this.Delete(date);
 						}
 					}
 					catch

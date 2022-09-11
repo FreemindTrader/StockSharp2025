@@ -180,8 +180,8 @@ namespace fx.Indicators
         public override PlatformIndicator OnSimpleClone( )
         {
             var result          = new FreemindJurikMA();
-            result._description = this._description;
-            result._name = this._name;
+            result._description = _description;
+            result._name = _name;
 
 
             return result;
@@ -193,7 +193,7 @@ namespace fx.Indicators
             {
                 lock ( this )
                 {
-                    _lookbackCount = fx.TALib.Core.SmaLookback( _jmaLength );
+                    _lookbackCount = TALib.Core.SmaLookback( _jmaLength );
                 }
             }
         }
@@ -397,7 +397,7 @@ namespace fx.Indicators
                 stddev += Math.Pow( _workFil [ i - k , instanceNo + _fchange ] - _workFil [ i - k , instanceNo + _fachang ], 2 );
             }
 
-            stddev = Math.Sqrt( stddev / ( double ) period );
+            stddev = Math.Sqrt( stddev / period );
             double filtev = filter * stddev;
 
             if ( Math.Abs( _workFil [ i , instanceNo + _fprice ] - _workFil [ i - 1 , instanceNo + _fprice ] ) < filtev )

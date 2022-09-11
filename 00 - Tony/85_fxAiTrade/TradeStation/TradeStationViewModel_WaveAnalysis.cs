@@ -193,6 +193,6 @@ namespace FreemindAITrade.ViewModels
 
                 _selectedUndoRedoArea.Commit();
             }
-        }
+        }        
     }
 }

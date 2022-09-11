@@ -30,7 +30,7 @@ namespace StockSharp.Web.Api.Client
           string url,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<PayGateway>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)domainId, (object)url);
+            return Get<BaseEntitySet<PayGateway>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, domainId, url );
         }
     }
 }

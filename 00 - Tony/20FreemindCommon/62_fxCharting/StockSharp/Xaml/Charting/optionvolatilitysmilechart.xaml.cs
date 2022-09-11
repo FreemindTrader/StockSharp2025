@@ -27,7 +27,7 @@ namespace fx.Charting
     public partial class OptionVolatilitySmileChartDx : UserControl, IComponentConnector, IPersistable, IThemeableChart
     {
         private readonly PooledList<OptionVolatilitySmileList> _smileChartList = new PooledList<OptionVolatilitySmileList>( );
-        public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register( nameof( SmileStep ), typeof( double ), typeof( OptionVolatilitySmileChartDx ), new PropertyMetadata(   10.0, new PropertyChangedCallback( OptionVolatilitySmileChartDx.OnSmileStepPropertyChanged ) ) );
+        public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register( nameof( SmileStep ), typeof( double ), typeof( OptionVolatilitySmileChartDx ), new PropertyMetadata(   10.0, new PropertyChangedCallback( OnSmileStepPropertyChanged ) ) );
         private readonly ScichartSurfaceMVVM _chartPaneViewModel;
         private readonly ChartModifierBase[ ] _modifiers;
         private bool bool_0;
@@ -43,8 +43,8 @@ namespace fx.Charting
             InitializeComponent( );
             _chartPaneViewModel                 = ( ScichartSurfaceMVVM )Chart.DataContext;
             _chartPaneViewModel.ShowLegend      = true;
-            var xAxis                           = ( ( IEnumerable<ChartAxis> )_chartPaneViewModel.Area.XAxises ).First( );
-            var yAxis                           = ( ( IEnumerable<ChartAxis> )_chartPaneViewModel.Area.YAxises ).First( );
+            var xAxis                           = _chartPaneViewModel.Area.XAxises.First( );
+            var yAxis                           = _chartPaneViewModel.Area.YAxises.First( );
             xAxis.AutoRange                     = true;
             yAxis.AutoRange                     = true;
             yAxis.TextFormatting                = "0.##";
@@ -105,11 +105,11 @@ namespace fx.Charting
         {
             get
             {
-                return ( double )GetValue( OptionVolatilitySmileChartDx.SmileStepProperty );
+                return ( double )GetValue( SmileStepProperty );
             }
             set
             {
-                SetValue( OptionVolatilitySmileChartDx.SmileStepProperty, value );
+                SetValue( SmileStepProperty, value );
             }
         }
 
@@ -315,7 +315,7 @@ namespace fx.Charting
                 GetSimpleChart( ).Reset( new VolatilitySmileUI[ 1 ] { Element } );
                 ChartDrawDataEx data = new ChartDrawDataEx( );
 
-                using ( IEnumerator<LineData<double>> enumerator = this.GetEnumerator( ) )
+                using ( IEnumerator<LineData<double>> enumerator = GetEnumerator( ) )
                 {
                     while ( enumerator.MoveNext( ) )
                     {
@@ -375,7 +375,7 @@ namespace fx.Charting
             {
                 double min = double.MaxValue;
 
-                for ( int index = 1; index < this.Count; ++index )
+                for ( int index = 1; index < Count; ++index )
                 {
                     double diff = this[ index ].X - this[ index - 1 ].X;
 

@@ -55,7 +55,7 @@ namespace fx.Indicators
 
         protected void CalculateHewRsi( bool fullRecalculation, DataBarUpdateType? updateType, int curIterationBarcount )
         {
-            _hewRsiLookback = fx.TALib.Core.RsiLookback( 14 );
+            _hewRsiLookback = Core.RsiLookback( 14 );
 
             int resultSetLength   = IndicatorResult["FreemindRsi"].Count;
 
@@ -186,7 +186,7 @@ namespace fx.Indicators
                 return IndicatorReturn.BadParam;
             }
 
-            lookbackTotal = fx.TALib.Core.RsiLookback( 14 );
+            lookbackTotal = Core.RsiLookback( 14 );
 
             if ( startIdx < lookbackTotal )
             {
@@ -198,7 +198,7 @@ namespace fx.Indicators
                 return IndicatorReturn.Success;
             }
 
-            unstablePeriod = ( int ) fx.TALib.Core.GetUnstablePeriod( Core.FuncUnstId.Rsi );
+            unstablePeriod = ( int )Core.GetUnstablePeriod( Core.FuncUnstId.Rsi );
 
             outIdx = 0;
 

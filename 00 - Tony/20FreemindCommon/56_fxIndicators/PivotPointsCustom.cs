@@ -759,7 +759,7 @@ namespace fx.Indicators
             if ( pp != null )
             {
                 var ppEvt = pp.ToEventArgs( );
-                ppEvt.Security = this.Security.Code;
+                ppEvt.Security = Security.Code;
 
                 var aa = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _indicatorSecurity );
                 if ( aa == null )
@@ -774,8 +774,8 @@ namespace fx.Indicators
         public override PlatformIndicator OnSimpleClone( )
         {
             PivotPointsCustom result = new PivotPointsCustom( );
-            result._description = this._description;
-            result._name = this._name;
+            result._description = _description;
+            result._name = _name;
 
             return result;
         }

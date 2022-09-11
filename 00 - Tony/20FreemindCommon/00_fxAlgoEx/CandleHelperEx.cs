@@ -68,7 +68,7 @@ namespace StockSharp.Algo.Candles
 			}
 			else if ( period == TimeSpan.FromDays( 7 ) )
 			{
-				int num_days = System.DayOfWeek.Friday - barOpenTime.DayOfWeek;
+				int num_days = DayOfWeek.Friday - barOpenTime.DayOfWeek;
 				if ( num_days < 0 ) num_days += 7;
 
 				output = barOpenTime.AddDays( num_days );

@@ -37,7 +37,7 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<FileGroup>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)parentId, (object)childId, (object)fileId, (object)nestedGroups, (object)clientId, (object)distributiveOnly, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<FileGroup>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, parentId, childId, fileId, nestedGroups, clientId, distributiveOnly, like, likeCompare );
         }
 
         Task IFileGroupService.AddChildAsync(
@@ -45,7 +45,7 @@ namespace StockSharp.Web.Api.Client
           long childId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddChildAsync"), cancellationToken, (object)parentId, (object)childId);
+            return Post( GetCurrentMethod( "AddChildAsync"), cancellationToken, parentId, childId );
         }
 
         Task<bool> IFileGroupService.RemoveChildAsync(
@@ -53,7 +53,7 @@ namespace StockSharp.Web.Api.Client
           long childId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveChildAsync"), cancellationToken, (object)parentId, (object)childId);
+            return Post<bool>( GetCurrentMethod( "RemoveChildAsync"), cancellationToken, parentId, childId );
         }
 
         Task IFileGroupService.AddFileAsync(
@@ -61,7 +61,7 @@ namespace StockSharp.Web.Api.Client
           long fileId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddFileAsync"), cancellationToken, (object)groupId, (object)fileId);
+            return Post( GetCurrentMethod( "AddFileAsync"), cancellationToken, groupId, fileId );
         }
 
         Task<bool> IFileGroupService.RemoveFileAsync(
@@ -69,7 +69,7 @@ namespace StockSharp.Web.Api.Client
           long fileId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveFileAsync"), cancellationToken, (object)groupId, (object)fileId);
+            return Post<bool>( GetCurrentMethod( "RemoveFileAsync"), cancellationToken, groupId, fileId );
         }
 
         Task IFileGroupService.AddRoleAsync(
@@ -77,7 +77,7 @@ namespace StockSharp.Web.Api.Client
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddRoleAsync"), cancellationToken, (object)groupId, (object)roleId);
+            return Post( GetCurrentMethod( "AddRoleAsync"), cancellationToken, groupId, roleId );
         }
 
         Task<bool> IFileGroupService.RemoveRoleAsync(
@@ -85,7 +85,7 @@ namespace StockSharp.Web.Api.Client
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveRoleAsync"), cancellationToken, (object)groupId, (object)roleId);
+            return Post<bool>( GetCurrentMethod( "RemoveRoleAsync"), cancellationToken, groupId, roleId );
         }
     }
 }

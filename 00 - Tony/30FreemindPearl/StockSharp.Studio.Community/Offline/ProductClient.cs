@@ -52,7 +52,7 @@ namespace StockSharp.Studio.Community.Offline
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<Product>>(new BaseEntitySet<Product>());
+            return Task.FromResult( new BaseEntitySet<Product>());
         }
 
         Task<BaseEntitySet<(Client client, bool isManager, DateTime? till)>> IProductService.FindPermissionsAsync(

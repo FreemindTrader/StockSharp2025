@@ -16,10 +16,10 @@ namespace StockSharp.Studio.Core.Commands
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            this.Securities = ( IEnumerable<Security> )new Security[1]
+            Securities =   ( new Security[1]
             {
         security
-            };
+            } );
         }
 
         public EditSecuritiesCommand( IEnumerable<Security> securities )
@@ -27,7 +27,7 @@ namespace StockSharp.Studio.Core.Commands
             IEnumerable<Security> securities1 = securities;
             if ( securities1 == null )
                 throw new ArgumentNullException( nameof( securities ) );
-            this.Securities = securities1;
+            Securities = securities1;
         }
 
         public IEnumerable<Security> Securities { get; }

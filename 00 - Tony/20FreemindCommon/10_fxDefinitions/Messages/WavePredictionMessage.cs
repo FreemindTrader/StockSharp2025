@@ -14,13 +14,13 @@ namespace fx.Definitions
 
         public WavePredictionMessage( Security symbol )
         {
-            this.Symbol = symbol;
+            Symbol = symbol;
             BarTime = 0;
         }
 
         public WavePredictionMessage( Security symbol, long barTime )
         {
-            this.Symbol = symbol;
+            Symbol = symbol;
             BarTime = barTime;
         }
     }

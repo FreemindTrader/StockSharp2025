@@ -19,11 +19,11 @@ namespace StockSharp.Studio.Core.Commands
             Subscription subscription1 = subscription;
             if ( subscription1 == null )
                 throw new ArgumentNullException( nameof( subscription ) );
-            this.Subscription = subscription1;
+            Subscription = subscription1;
             TEntity entity1 = entity;
-            if ( ( object )entity1 == null )
+            if ( entity1 == null )
                 throw new ArgumentNullException( nameof( entity ) );
-            this.Entity = entity1;
+            Entity = entity1;
         }
 
         public EntityCommand( Subscription subscription, IEnumerable<TEntity> entities )
@@ -31,11 +31,11 @@ namespace StockSharp.Studio.Core.Commands
             Subscription subscription1 = subscription;
             if ( subscription1 == null )
                 throw new ArgumentNullException( nameof( subscription ) );
-            this.Subscription = subscription1;
+            Subscription = subscription1;
             IEnumerable<TEntity> entities1 = entities;
             if ( entities1 == null )
                 throw new ArgumentNullException( nameof( entities ) );
-            this._entities = entities1;
+            _entities = entities1;
         }
 
         public Subscription Subscription { get; }
@@ -46,12 +46,12 @@ namespace StockSharp.Studio.Core.Commands
         {
             get
             {
-                if ( this._entities == null && ( object )this.Entity != null )
-                    this._entities = ( IEnumerable<TEntity> )new TEntity[1]
+                if ( _entities == null && Entity != null )
+                    _entities =   ( new TEntity[1]
                     {
-            this.Entity
-                    };
-                return this._entities;
+            Entity
+                    } );
+                return _entities;
             }
         }
     }

@@ -9,7 +9,7 @@ namespace StockSharp.Studio.Controls
 
         public DockingWindowTypeAttribute( bool isToolWindow = false )
         {
-            this.IsToolWindow = isToolWindow;
+            IsToolWindow = isToolWindow;
         }
     }
 }

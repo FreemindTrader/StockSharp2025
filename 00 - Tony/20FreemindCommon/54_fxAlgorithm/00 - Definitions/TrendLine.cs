@@ -128,8 +128,8 @@ namespace fx.Algorithm
         {
             intersection = new Vector( );
 
-            var p    = this.Begin;
-            var p2   = this.End;
+            var p    = Begin;
+            var p2   = End;
             var q    = other.Begin;
             var q2   = other.End;
 

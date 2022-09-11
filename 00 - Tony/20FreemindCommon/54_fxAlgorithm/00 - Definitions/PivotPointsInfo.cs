@@ -224,20 +224,20 @@ namespace fx.Algorithm
         {
             var e    = new PPChangedEventArgs( );
 
-            e.M0     = this.M0;
-            e.M1     = this.M1;
-            e.M2     = this.M2;
-            e.M3     = this.M3;
-            e.M4     = this.M4;
-            e.M5     = this.M5;
-            e.S1     = this.S1;
-            e.S2     = this.S2;
-            e.S3     = this.S3;
-            e.R1     = this.R1;
-            e.R2     = this.R2;
-            e.R3     = this.R3;            
-            e.Pivot  = this.Pivot;
-            e.Period = this.TimePeriod;
+            e.M0     = M0;
+            e.M1     = M1;
+            e.M2     = M2;
+            e.M3     = M3;
+            e.M4     = M4;
+            e.M5     = M5;
+            e.S1     = S1;
+            e.S2     = S2;
+            e.S3     = S3;
+            e.R1     = R1;
+            e.R2     = R2;
+            e.R3     = R3;            
+            e.Pivot  = Pivot;
+            e.Period = TimePeriod;
 
             return e;
         }

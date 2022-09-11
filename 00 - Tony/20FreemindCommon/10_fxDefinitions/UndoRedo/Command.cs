@@ -17,7 +17,7 @@ namespace fx.Definitions.UndoRedo
         {
             Caption = caption;
             this.parentArea = parentArea;
-            this.Visible = visible;
+            Visible = visible;
             changes = new PooledDictionary<IUndoRedoMember, IChange>( );
         }
 

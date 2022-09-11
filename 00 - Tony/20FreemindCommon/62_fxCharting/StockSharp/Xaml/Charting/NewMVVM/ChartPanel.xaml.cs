@@ -529,7 +529,7 @@ namespace fx.Charting
         {
             string string_0;
             if ( !ShareSettings.IsEnabled )
-                string_0 = "Chart_{0:yyyyMMdd_HHmmssfff}.png".Put( ( object )DateTime.Now );
+                string_0 = "Chart_{0:yyyyMMdd_HHmmssfff}.png".Put( DateTime.Now );
             else
                 string_0 = ShareSettings.FileName;
             Upload( string_0, true );

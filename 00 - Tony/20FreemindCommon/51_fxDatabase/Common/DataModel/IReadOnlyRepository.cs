@@ -38,32 +38,32 @@ namespace fx.Database.Common.DataModel
 
         protected RepositoryQueryBase( Func< IQueryable< T > > getQueryable )
         {
-            this.queryable = new Lazy< IQueryable< T > >(getQueryable);
+            queryable = new Lazy< IQueryable< T > >(getQueryable);
         }
 
         Type IQueryable.ElementType
         {
-            get { return this.Queryable.ElementType; }
+            get { return Queryable.ElementType; }
         }
 
         Expression IQueryable.Expression
         {
-            get { return this.Queryable.Expression; }
+            get { return Queryable.Expression; }
         }
 
         IQueryProvider IQueryable.Provider
         {
-            get { return this.Queryable.Provider; }
+            get { return Queryable.Provider; }
         }
 
         IEnumerator IEnumerable.GetEnumerator( )
         {
-            return this.Queryable.GetEnumerator( );
+            return Queryable.GetEnumerator( );
         }
 
         IEnumerator< T > IEnumerable<T>.GetEnumerator( )
         {
-            return this.Queryable.GetEnumerator( );
+            return Queryable.GetEnumerator( );
         }
     }
 

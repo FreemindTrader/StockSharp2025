@@ -79,7 +79,7 @@ namespace fx.Algorithm
 
             if ( addNew )
             {
-                this.Add( sRlevel );
+                Add( sRlevel );
             }
 
             ////if ()
@@ -98,7 +98,7 @@ namespace fx.Algorithm
             lock ( _lock )
             {
                 PooledList< SRlevel > newSRLevels = null;
-                newSRLevels = new PooledList<SRlevel>( this.Items );
+                newSRLevels = new PooledList<SRlevel>( Items );
                 foreach ( SRlevel sRlevel in sRlevels )
                 {
                     sRlevel.PriceStep = priceStep;
@@ -122,8 +122,8 @@ namespace fx.Algorithm
                 var a = newSRLevels.OrderBy( i => i.SRvalue ).ToPooledList();
 
 
-                this.Items.Clear( );
-                this.Items.AddRange( a );
+                Items.Clear( );
+                Items.AddRange( a );
 
                 _sortedList.Clear( );
 

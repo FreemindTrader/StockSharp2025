@@ -16,7 +16,7 @@ namespace StockSharp.Studio.Core.Commands
             IChartDrawData chartDrawData = values;
             if ( chartDrawData == null )
                 throw new ArgumentNullException( nameof( values ) );
-            this.Values = chartDrawData;
+            Values = chartDrawData;
         }
 
         public IChartDrawData Values { get; }

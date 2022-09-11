@@ -27,7 +27,7 @@ namespace fx.Charting
 
             if ( parentViewModel != null )
             {
-                fx.Charting.Xaml.DoHelper.AddPropertyListener( parentViewModel, ChartViewModel.IsInteractedProperty, e => NotifyChanged( "AllowToRemove" ) );
+                Xaml.DoHelper.AddPropertyListener( parentViewModel, ChartViewModel.IsInteractedProperty, e => NotifyChanged( "AllowToRemove" ) );
             }
 
             Elements = surfaceVM.LegendElements;

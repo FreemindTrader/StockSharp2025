@@ -417,10 +417,10 @@ namespace StockSharp.Algo
 			set => SupportAssociatedSecurity = value;
 		}
 
-		/// <summary>
-		/// The number of errors passed through the <see cref="Connector.Error"/> event.
-		/// </summary>
-		public int ErrorCount { get; private set; }
+        /// <summary>
+        /// The number of errors passed through the <see cref="Error"/> event.
+        /// </summary>
+        public int ErrorCount { get; private set; }
 
 		private TimeSpan _marketTimeChangedInterval = TimeSpan.FromMilliseconds(10);
 
@@ -1209,10 +1209,10 @@ namespace StockSharp.Algo
 			_cleared?.Invoke();
 		}
 
-		/// <summary>
-		/// To release allocated resources. In particular, to disconnect from the trading system via <see cref="Connector.Disconnect"/>.
-		/// </summary>
-		protected override void DisposeManaged()
+        /// <summary>
+        /// To release allocated resources. In particular, to disconnect from the trading system via <see cref="Disconnect"/>.
+        /// </summary>
+        protected override void DisposeManaged()
 		{
 			_isDisposing = true;
 

@@ -26,52 +26,52 @@ namespace fx.Definitions
             if ( other == null )
                 return 1;
             int result = 0;
-            result = this.BarTime.CompareTo( other.BarTime );
+            result = BarTime.CompareTo( other.BarTime );
             if ( result != 0 )
                 return result;
-            result = this.Open.CompareTo( other.Open );
+            result = Open.CompareTo( other.Open );
             if ( result != 0 )
                 return result;
-            result = this.High.CompareTo( other.High );
+            result = High.CompareTo( other.High );
             if ( result != 0 )
                 return result;
-            result = this.Low.CompareTo( other.Low );
+            result = Low.CompareTo( other.Low );
             if ( result != 0 )
                 return result;
-            result = this.Close.CompareTo( other.Close );
+            result = Close.CompareTo( other.Close );
             if ( result != 0 )
                 return result;
-            result = this.Volume.CompareTo( other.Volume );
+            result = Volume.CompareTo( other.Volume );
             if ( result != 0 )
                 return result;
-            result = this.Macd.CompareTo( other.Macd );
+            result = Macd.CompareTo( other.Macd );
             if ( result != 0 )
                 return result;
-            result = this.MacdSignal.CompareTo( other.MacdSignal );
+            result = MacdSignal.CompareTo( other.MacdSignal );
             if ( result != 0 )
                 return result;
-            result = this.K.CompareTo( other.K );
+            result = K.CompareTo( other.K );
             if ( result != 0 )
                 return result;
-            result = this.D.CompareTo( other.D );
+            result = D.CompareTo( other.D );
             if ( result != 0 )
                 return result;
-            result = this.Sma.CompareTo( other.Sma );
+            result = Sma.CompareTo( other.Sma );
             if ( result != 0 )
                 return result;
-            result = this.BBMean.CompareTo( other.BBMean );
+            result = BBMean.CompareTo( other.BBMean );
             if ( result != 0 )
                 return result;
-            result = this.InnerBBUpper.CompareTo( other.InnerBBUpper );
+            result = InnerBBUpper.CompareTo( other.InnerBBUpper );
             if ( result != 0 )
                 return result;
-            result = this.InnerBBLower.CompareTo( other.InnerBBLower );
+            result = InnerBBLower.CompareTo( other.InnerBBLower );
             if ( result != 0 )
                 return result;
-            result = this.OuterBBUpper.CompareTo( other.OuterBBUpper );
+            result = OuterBBUpper.CompareTo( other.OuterBBUpper );
             if ( result != 0 )
                 return result;
-            result = this.OuterBBLower.CompareTo( other.OuterBBLower );
+            result = OuterBBLower.CompareTo( other.OuterBBLower );
             if ( result != 0 )
                 return result;
             return result;
@@ -104,7 +104,7 @@ namespace fx.Definitions
                 return false;
             if ( ReferenceEquals( this, other ) )
                 return true;
-            return this.BarTime.Equals( other.BarTime ) && this.Open.Equals( other.Open ) && this.High.Equals( other.High ) && this.Low.Equals( other.Low ) && this.Close.Equals( other.Close ) && this.Volume.Equals( other.Volume ) && this.Macd.Equals( other.Macd ) && this.MacdSignal.Equals( other.MacdSignal ) && this.K.Equals( other.K ) && this.D.Equals( other.D ) && this.Sma.Equals( other.Sma ) && this.BBMean.Equals( other.BBMean ) && this.InnerBBUpper.Equals( other.InnerBBUpper ) && this.InnerBBLower.Equals( other.InnerBBLower ) && this.OuterBBUpper.Equals( other.OuterBBUpper ) && this.OuterBBLower.Equals( other.OuterBBLower );
+            return BarTime.Equals( other.BarTime ) && Open.Equals( other.Open ) && High.Equals( other.High ) && Low.Equals( other.Low ) && Close.Equals( other.Close ) && Volume.Equals( other.Volume ) && Macd.Equals( other.Macd ) && MacdSignal.Equals( other.MacdSignal ) && K.Equals( other.K ) && D.Equals( other.D ) && Sma.Equals( other.Sma ) && BBMean.Equals( other.BBMean ) && InnerBBUpper.Equals( other.InnerBBUpper ) && InnerBBLower.Equals( other.InnerBBLower ) && OuterBBUpper.Equals( other.OuterBBUpper ) && OuterBBLower.Equals( other.OuterBBLower );
         }
 
         public override int GetHashCode( )
@@ -112,22 +112,22 @@ namespace fx.Definitions
             unchecked
             {
                 int hashCode = 47;
-                hashCode = ( hashCode * 53 ) ^ this.BarTime.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Open.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.High.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Low.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Close.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Volume.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Macd.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.MacdSignal.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.K.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.D.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Sma.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.BBMean.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.InnerBBUpper.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.InnerBBLower.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.OuterBBUpper.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.OuterBBLower.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ BarTime.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Open.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ High.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Low.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Close.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Volume.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Macd.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ MacdSignal.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ K.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ D.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Sma.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ BBMean.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ InnerBBUpper.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ InnerBBLower.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ OuterBBUpper.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ OuterBBLower.GetHashCode( );
                 return hashCode;
             }
         }

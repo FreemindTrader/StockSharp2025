@@ -579,7 +579,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
         foreach ( IElementWithXYAxes element in noParents )
         {
-            var combinedElements = MoreLinq.MoreEnumerable.Append( element.ChildElements, element );
+            var combinedElements = MoreEnumerable.Append( element.ChildElements, element );
 
             var childElements = combinedElements
                                                 .OfType<IDrawableChartElement>( )
@@ -618,7 +618,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
         if ( Chart != null )
         {
-            var combinedElements = MoreLinq.MoreEnumerable.Append( anyChartUiXY.ChildElements, anyChartUiXY );
+            var combinedElements = MoreEnumerable.Append( anyChartUiXY.ChildElements, anyChartUiXY );
             var childElements = combinedElements.OfType<IDrawableChartElement>( ).Where( e => !e.DontDraw ).Select( e => e.CreateViewModel( this ) ).Where( e => e != null );
 
             foreach ( var child in childElements )

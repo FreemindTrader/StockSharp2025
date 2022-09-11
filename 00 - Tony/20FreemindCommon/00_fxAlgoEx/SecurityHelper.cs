@@ -22,7 +22,7 @@ namespace StockSharp.AlgoEx
 
             switch ( security.Type )
             {
-                case StockSharp.Messages.SecurityTypes.Currency:
+                case Messages.SecurityTypes.Currency:
                 {
                     var secString = security.Code;
 
@@ -39,7 +39,7 @@ namespace StockSharp.AlgoEx
                 }
                 break;
 
-                case StockSharp.Messages.SecurityTypes.Cfd:
+                case Messages.SecurityTypes.Cfd:
                 {
                     switch ( security.Code )
                     {
@@ -82,7 +82,7 @@ namespace StockSharp.AlgoEx
                 }
                 break;
 
-                case StockSharp.Messages.SecurityTypes.Index:
+                case Messages.SecurityTypes.Index:
                 {
                     switch ( security.Code )
                     {
@@ -149,7 +149,7 @@ namespace StockSharp.AlgoEx
                 }
                 break;
 
-                case StockSharp.Messages.SecurityTypes.Commodity:
+                case Messages.SecurityTypes.Commodity:
                 {
                     switch ( security.Code )
                     {
@@ -181,7 +181,7 @@ namespace StockSharp.AlgoEx
                 }
                 break;
 
-                case StockSharp.Messages.SecurityTypes.CryptoCurrency:
+                case Messages.SecurityTypes.CryptoCurrency:
                 {
                     return true;
                 }                

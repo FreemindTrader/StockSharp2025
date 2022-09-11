@@ -20,7 +20,7 @@ namespace StockSharp.Web.Api.Client
         private readonly HttpMessageInvoker _http;
 
         public ApiServiceProvider()
-          : this((HttpMessageInvoker)new HttpClient())
+          : this( new HttpClient() )
         {
         }
 
@@ -30,17 +30,17 @@ namespace StockSharp.Web.Api.Client
             if (httpMessageInvoker == null)
                 throw new ArgumentNullException(nameof(http));
             _http = httpMessageInvoker;
-            foreach (Type type in ((IEnumerable<Type>)typeof(ApiServiceProvider).Assembly.GetTypes()).Where<Type>((Func<Type, bool>)(t =>
+            foreach (Type type in typeof( ApiServiceProvider ).Assembly.GetTypes().Where( t =>
          {
-             if (!t.IsAbstract)
-                 return t.IsSubclassOf(typeof(BaseApiClient));
+             if ( !t.IsAbstract )
+                 return t.IsSubclassOf( typeof( BaseApiClient ) );
              return false;
-         })))
+         } ) )
             {
                 foreach (Type key in type.GetInterfaces())
                 {
                     if (key.Namespace.StartsWithIgnoreCase("StockSharp") || key.Namespace.StartsWithIgnoreCase("Ecng"))
-                        _clients.TryAdd2<Type, Type>(key, type);
+                        _clients.TryAdd2( key, type);
                 }
             }
         }
@@ -57,7 +57,7 @@ namespace StockSharp.Web.Api.Client
 
         private TService GetService<TService>(params object[] args)
         {
-            BaseApiClient instance = GetClientType<TService>().CreateInstance<BaseApiClient>(((object[])new HttpMessageInvoker[1] { _http }).Concat<object>(args));
+            BaseApiClient instance = GetClientType<TService>().CreateInstance<BaseApiClient>(( new HttpMessageInvoker[1] { _http } ).Concat( args));
             if (Tracing)
                 instance.Tracing = true;
             return instance.To<TService>();
@@ -65,14 +65,14 @@ namespace StockSharp.Web.Api.Client
 
         TService IApiServiceProvider.GetService<TService>(SecureString token)
         {
-            return GetService<TService>((object)CheckOnEmpty(token, nameof(token)));
+            return GetService<TService>( CheckOnEmpty( token, nameof( token ) ) );
         }
 
         TService IApiServiceProvider.GetService<TService>(
           string login,
           SecureString password)
         {
-            return GetService<TService>((object)CheckOnEmpty(login, nameof(login)), (object)CheckOnEmpty(password, nameof(password)));
+            return GetService<TService>( CheckOnEmpty( login, nameof( login ) ), CheckOnEmpty( password, nameof( password ) ) );
         }
 
         private string CheckOnEmpty(string str, string paramName)

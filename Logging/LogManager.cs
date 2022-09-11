@@ -30,10 +30,10 @@ namespace StockSharp.Logging
 
 	using StockSharp.Localization;
 
-	/// <summary>
-	/// Messages logging manager that monitors the <see cref="ILogSource.Log"/> event and forwards messages to the <see cref="LogManager.Listeners"/>.
-	/// </summary>
-	public class LogManager : Disposable, IPersistable
+    /// <summary>
+    /// Messages logging manager that monitors the <see cref="ILogSource.Log"/> event and forwards messages to the <see cref="Listeners"/>.
+    /// </summary>
+    public class LogManager : Disposable, IPersistable
 	{
 		private static readonly MemoryStatisticsValue<LogMessage> _logMsgStat = new(LocalizedStrings.MessageLog);
 

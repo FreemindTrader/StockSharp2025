@@ -41,26 +41,26 @@ namespace StockSharp.Server.Core
           ServerSubscription subscription,
           MessageTypes type )
         {
-            this._session = session ?? throw new ArgumentNullException( nameof( session ) );
-            this._requestId = requestId;
-            this._subscription = subscription ?? throw new ArgumentNullException( nameof( subscription ) );
-            this._messageTypes = type;
+            _session = session ?? throw new ArgumentNullException( nameof( session ) );
+            _requestId = requestId;
+            _subscription = subscription ?? throw new ArgumentNullException( nameof( subscription ) );
+            _messageTypes = type;
         }
 
         /// <summary>Session.</summary>
-        public TSession Session => this._session;
+        public TSession Session => _session;
 
         /// <summary>Request identifier.</summary>
-        public TRequestId RequestId => this._requestId;
+        public TRequestId RequestId => _requestId;
 
         /// <summary>Subscription id.</summary>
         public long Id => Subscription.TransactionId;
 
         /// <summary>Subscription.</summary>
-        public ServerSubscription Subscription => this._subscription;
+        public ServerSubscription Subscription => _subscription;
 
         /// <summary>Message type.</summary>
-        public MessageTypes Type => this._messageTypes;
+        public MessageTypes Type => _messageTypes;
 
         /// <summary>Security ID.</summary>
         public SecurityId SecurityId => Subscription.SecurityId.GetValueOrDefault();
@@ -71,8 +71,8 @@ namespace StockSharp.Server.Core
         /// <summary>Extra argument.</summary>
         public object Arg
         {
-            get => this._arg;
-            set => this._arg = value;
+            get => _arg;
+            set => _arg = value;
         }
 
         /// <summary>State.</summary>
@@ -85,8 +85,8 @@ namespace StockSharp.Server.Core
         /// <summary>Suspended.</summary>
         public bool Suspend
         {
-            get => this._isSuspend;
-            set => this._isSuspend = value;
+            get => _isSuspend;
+            set => _isSuspend = value;
         }
     }
 }

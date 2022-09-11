@@ -4460,25 +4460,25 @@ namespace fx.Algorithm
 
                     bar.MergeHigherTimeFrameWaves( waveScenarioNo, topWaves );
 
-                    if ( !hews.ContainsKey( ( long ) bar.LinuxTime ) )
+                    if ( !hews.ContainsKey( bar.LinuxTime ) )
                     {
                         var dbHewNew = new DbElliottWave( _offerId, bars, ref bar );
 
-                        hews.Add( ( long ) bar.LinuxTime, dbHewNew );
+                        hews.Add( bar.LinuxTime, dbHewNew );
                     }
 
-                    ref SBar previousExtremumLoweTF = ref bars.GetLowestBarOfTheRange( dbHewHTF.BeginTimeUTC, ( DateTime ) bar.BarTime );
+                    ref SBar previousExtremumLoweTF = ref bars.GetLowestBarOfTheRange( dbHewHTF.BeginTimeUTC, bar.BarTime );
                     if ( previousExtremumLoweTF != SBar.EmptySBar )
                     {
                         var bottomWaves = elliottWave.GetBottomWaves( );
 
                         previousExtremumLoweTF.MergeHigherTimeFrameWaves( waveScenarioNo, bottomWaves );
 
-                        if ( !hews.ContainsKey( ( long ) previousExtremumLoweTF.LinuxTime ) )
+                        if ( !hews.ContainsKey( previousExtremumLoweTF.LinuxTime ) )
                         {
                             var dbHewNew = new DbElliottWave(  _offerId, bars, ref previousExtremumLoweTF );
 
-                            hews.Add( ( long ) previousExtremumLoweTF.LinuxTime, dbHewNew );
+                            hews.Add( previousExtremumLoweTF.LinuxTime, dbHewNew );
                         }
                     }
                 }
@@ -4495,11 +4495,11 @@ namespace fx.Algorithm
 
                     bar.MergeHigherTimeFrameWaves( waveScenarioNo, bottomWaves );
 
-                    if ( !hews.ContainsKey( ( long ) bar.LinuxTime ) )
+                    if ( !hews.ContainsKey( bar.LinuxTime ) )
                     {
                         var dbHewNew = new DbElliottWave( _offerId, bars, ref bar );
 
-                        hews.Add( ( long ) bar.LinuxTime, dbHewNew );
+                        hews.Add( bar.LinuxTime, dbHewNew );
                     }
 
 
@@ -4511,7 +4511,7 @@ namespace fx.Algorithm
                      * ----------------------------------------------------------------------------------------------------------------------
                      */
 
-                    ref SBar previousExtremumLoweTF = ref bars.GetLowestBarOfTheRange( dbHewHTF.BeginTimeUTC, ( DateTime ) bar.BarTime );
+                    ref SBar previousExtremumLoweTF = ref bars.GetLowestBarOfTheRange( dbHewHTF.BeginTimeUTC, bar.BarTime );
                     if ( previousExtremumLoweTF != SBar.EmptySBar )
                     {
                         var topWaves = elliottWave.GetTopWaves( );

@@ -186,7 +186,7 @@ namespace fx.Definitions
             {
                 if ( waveCycleCount < GlobalConstants.MaxCountPerLong )
                 {
-                    _hewBits |= ( long ) bitwiseWave << ( int ) ( waveCycleCount * GlobalConstants.NewHewBits );
+                    _hewBits |= bitwiseWave << waveCycleCount * GlobalConstants.NewHewBits;
                 }
             }
 
@@ -258,7 +258,7 @@ namespace fx.Definitions
                 {
                     if ( waveCycleCount < GlobalConstants.MaxCountPerLong )
                     {
-                        _hewBits |= ( long ) bitwiseWave << ( int ) ( waveCycleCount * GlobalConstants.NewHewBits );
+                        _hewBits |= bitwiseWave << waveCycleCount * GlobalConstants.NewHewBits;
                     }
 
                 }
@@ -726,7 +726,7 @@ namespace fx.Definitions
                             bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
                         }
 
-                        newHew |= ( long ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+                        newHew |= ( long ) bitwiseWave << i * GlobalConstants.NewHewBits;
                     }
                 }
 
@@ -776,7 +776,7 @@ namespace fx.Definitions
                             bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
                         }
 
-                        newHew |= ( long ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+                        newHew |= ( long ) bitwiseWave << i * GlobalConstants.NewHewBits;
                     }
                 }
 
@@ -2585,7 +2585,7 @@ namespace fx.Definitions
 
             if ( tempWave.Count > 0 )
             {
-                this.CopyFrom( ref tempWave );
+                CopyFrom( ref tempWave );
             }
             else
             {
@@ -2595,7 +2595,7 @@ namespace fx.Definitions
 
         public bool RemoveMatchedWaves( IHarmonicElliottWave<uint> hew )
         {
-            if ( this.Count == 0 ) return false;
+            if ( Count == 0 ) return false;
 
             var myWaves    = GetAllWaves( );
             bool found     = false;
@@ -2619,7 +2619,7 @@ namespace fx.Definitions
 
             if ( tempWave.Count > 0 )
             {
-                this.CopyFrom( ref tempWave );
+                CopyFrom( ref tempWave );
             }
             else
             {
@@ -2633,7 +2633,7 @@ namespace fx.Definitions
 
         public bool RemoveMatchedWaves( IHarmonicElliottWave<long> hew )
         {
-            if ( this.Count == 0 ) return false;
+            if ( Count == 0 ) return false;
 
             var myWaves    = GetAllWaves( );
             bool found     = false;
@@ -2657,7 +2657,7 @@ namespace fx.Definitions
 
             if ( tempWave.Count > 0 )
             {
-                this.CopyFrom( ref tempWave );
+                CopyFrom( ref tempWave );
             }
             else
             {
@@ -2673,7 +2673,7 @@ namespace fx.Definitions
         {
             if ( otherWave.RawWave < long.MaxValue )
             {
-                _hewBits = ( long ) otherWave.RawWave;
+                _hewBits = otherWave.RawWave;
             }
             else
             {

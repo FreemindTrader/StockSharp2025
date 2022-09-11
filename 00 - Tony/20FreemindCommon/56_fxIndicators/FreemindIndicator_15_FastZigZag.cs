@@ -200,7 +200,7 @@ namespace fx.Indicators
             {
                 get
                 {
-                    return this.direction == 1;
+                    return direction == 1;
                 }
 
             }
@@ -209,26 +209,26 @@ namespace fx.Indicators
             {
                 get
                 {
-                    return this.direction == -1;
+                    return direction == -1;
                 }
             }
 
             public bool IsHigherHigh( int i )
             {
-                return Bars[ i ].High > this.zzH[ this.LastBarIndex ];
+                return Bars[ i ].High > zzH[ LastBarIndex ];
             }
 
             public bool IsLowerLow( int i )
             {
-                return Bars[ i ].Low < this.zzL[ this.LastBarIndex ];
+                return Bars[ i ].Low < zzL[ LastBarIndex ];
             }
 
             public void RemoveLastHighAndSetCurrentHigh( int i )
             {
-                this.zzH[ this.LastBarIndex ] = 0;
-                zzSignals.Remove( Bars[ this.LastBarIndex ].LinuxTime );
+                zzH[ LastBarIndex ] = 0;
+                zzSignals.Remove( Bars[ LastBarIndex ].LinuxTime );
 
-                this.zzH[ i ] = Bars[ i ].High;
+                zzH[ i ] = Bars[ i ].High;
 
                 zzSignals.TryGetValueAndAddOrReplace( Bars[ i ].LinuxTime, TASignal.WAVE_PEAK, out var old );
 
@@ -238,7 +238,7 @@ namespace fx.Indicators
             public void RemoveLastLowAndSetCurrentLow( int i )
             {
                 zzL[ LastBarIndex ] = 0;
-                zzSignals.Remove( Bars[ this.LastBarIndex ].LinuxTime );
+                zzSignals.Remove( Bars[ LastBarIndex ].LinuxTime );
 
                 zzL[ i ] = Bars[ i ].Low;
                 zzSignals.TryAdd( Bars[ i ].LinuxTime, TASignal.WAVE_TROUGH );
@@ -263,8 +263,8 @@ namespace fx.Indicators
 
             internal void RestoreLastHigh( int i )
             {
-                this.zzH[ this.LastBarIndex ] = Bars[ this.LastBarIndex ].High;
-                zzSignals.TryAdd( Bars[ this.LastBarIndex ].LinuxTime, TASignal.WAVE_PEAK );
+                zzH[ LastBarIndex ] = Bars[ LastBarIndex ].High;
+                zzSignals.TryAdd( Bars[ LastBarIndex ].LinuxTime, TASignal.WAVE_PEAK );
 
                 if ( LastBarIndex < _startingChangesIndex )
                 {
@@ -274,8 +274,8 @@ namespace fx.Indicators
 
             internal void RestoreLastLow( int i )
             {
-                this.zzL[ this.LastBarIndex ] = Bars[ this.LastBarIndex ].Low;
-                zzSignals.TryAdd( Bars[ this.LastBarIndex ].LinuxTime, TASignal.WAVE_TROUGH );
+                zzL[ LastBarIndex ] = Bars[ LastBarIndex ].Low;
+                zzSignals.TryAdd( Bars[ LastBarIndex ].LinuxTime, TASignal.WAVE_TROUGH );
 
                 if ( LastBarIndex < _startingChangesIndex )
                 {
@@ -295,7 +295,7 @@ namespace fx.Indicators
 
             internal void MarkCurrentBarAsWaveTrough( int i )
             {
-                this.zzL[ i ] = Bars[ i ].Low;
+                zzL[ i ] = Bars[ i ].Low;
                 zzSignals.TryAdd( Bars[ i ].LinuxTime, TASignal.WAVE_TROUGH );
 
                 if ( i < _startingChangesIndex )
@@ -307,7 +307,7 @@ namespace fx.Indicators
 
             internal void MarkCurrentBarAsWavePeak( int i )
             {
-                this.zzH[ i ] = Bars[ i ].High;
+                zzH[ i ] = Bars[ i ].High;
                 zzSignals.TryAdd( Bars[ i ].LinuxTime, TASignal.WAVE_PEAK );
 
                 if ( i < _startingChangesIndex )
@@ -319,17 +319,17 @@ namespace fx.Indicators
 
             internal bool FallBigThenRecoverMoreThanDepth( int i, double depth )
             {
-                return Bars[ i ].High > this.zzL[ i ] + depth && Bars[ i ].Open < Bars[ i ].Close;
+                return Bars[ i ].High > zzL[ i ] + depth && Bars[ i ].Open < Bars[ i ].Close;
             }
 
             internal bool RiseBigThenRetraceMoreThanDepth( int i, double depth )
             {
-                return Bars[ i ].Low < this.zzH[ i ] - depth && Bars[ i ].Open > Bars[ i ].Close;
+                return Bars[ i ].Low < zzH[ i ] - depth && Bars[ i ].Open > Bars[ i ].Close;
             }
 
             internal void AddExtraWavePeak( int i )
             {
-                this.zzH[ i ] = Bars[ i ].High;
+                zzH[ i ] = Bars[ i ].High;
                 zzSignals.TryAdd( Bars[ i ].LinuxTime, TASignal.WAVE_PEAK );
 
                 if ( i < _startingChangesIndex )
@@ -340,7 +340,7 @@ namespace fx.Indicators
 
             internal void AddExtraWaveTrough( int i )
             {
-                this.zzL[ i ] = Bars[ i ].Low;
+                zzL[ i ] = Bars[ i ].Low;
                 zzSignals.TryAdd( Bars[ i ].LinuxTime, TASignal.WAVE_TROUGH );
 
                 if ( i < _startingChangesIndex )
@@ -351,22 +351,22 @@ namespace fx.Indicators
 
             internal bool CurrentLowBreakPreBarsHighByDepth( int i, double depth )
             {
-                return ( Bars[ i ].Low < Bars[ this.LastBarIndex ].High - depth );
+                return ( Bars[ i ].Low < Bars[ LastBarIndex ].High - depth );
             }
 
             internal bool CurrentHighBreakPreBarsLowByDepth( int i, double depth )
             {
-                return Bars[ i ].High > Bars[ this.LastBarIndex ].Low + depth;
+                return Bars[ i ].High > Bars[ LastBarIndex ].Low + depth;
             }
 
             internal bool CurrentLowBreakPreZigZagHighByDepth( int i, double depth )
             {
-                return Bars[ i ].Low < this.zzH[ this.LastBarIndex ] - depth;
+                return Bars[ i ].Low < zzH[ LastBarIndex ] - depth;
             }
 
             internal bool CurrentHighBreakPreZigZagLowByDepth( int i, double depth )
             {
-                return Bars[ i ].High > this.zzL[ this.LastBarIndex ] + depth;
+                return Bars[ i ].High > zzL[ LastBarIndex ] + depth;
             }
 
             internal void AddZigZagInfo( HewManager hew, int startIndex, int pips )

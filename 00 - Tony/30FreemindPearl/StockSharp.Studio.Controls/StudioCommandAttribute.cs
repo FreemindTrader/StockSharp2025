@@ -12,7 +12,7 @@ namespace StockSharp.Studio.Controls
             Type type = commandType;
             if ( ( object )type == null )
                 throw new ArgumentNullException( nameof( commandType ) );
-            this.CommandType = type;
+            CommandType = type;
         }
     }
 }

@@ -36,11 +36,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.SecuritiesSelected.Securities.LookupAll();
+                return SecuritiesSelected.Securities.LookupAll();
             }
             set
             {
-                this.SelectSecurities( value.ToArray<Security>() );
+                SelectSecurities( value.ToArray() );
             }
         }
 
@@ -48,11 +48,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.SecuritiesAll.SecurityProvider;
+                return SecuritiesAll.SecurityProvider;
             }
             set
             {
-                this.SecuritiesAll.SecurityProvider = value;
+                SecuritiesAll.SecurityProvider = value;
             }
         }
 
@@ -60,84 +60,84 @@ namespace StockSharp.Studio.Controls
 
         public SecuritiesWindowEx()
         {
-            this.InitializeComponent();
-            this.SecuritiesAll.SecurityDoubleClick += ( Action<Security> )( security =>
+            InitializeComponent();
+            SecuritiesAll.SecurityDoubleClick += security =>
               {
                   if ( security == null )
                       return;
-                  this.SelectSecurities( new Security[1] { security } );
-              } );
-            this.SecuritiesSelected.SecurityDoubleClick += ( Action<Security> )( security =>
+                  SelectSecurities( new Security[1] { security } );
+              };
+            SecuritiesSelected.SecurityDoubleClick += security =>
               {
                   if ( security == null )
                       return;
-                  this.UnselectSecurities( new Security[1] { security } );
-              } );
+                  UnselectSecurities( new Security[1] { security } );
+              };
         }
 
         private void SecuritiesWindowEx_OnLoaded( object sender, RoutedEventArgs e )
         {
-            if ( this.IsLookup )
+            if ( IsLookup )
             {
-                this.SecuritiesAll.Title = LocalizedStrings.Str3255;
-                this.SecuritiesSelected.Title = LocalizedStrings.Str3256;
-                StudioServicesRegistry.CommandService.Register<LookupSecuritiesResultCommand>( ( object )this, false, ( Action<LookupSecuritiesResultCommand> )( cmd => this.SecuritiesAll.Securities.AddRange( cmd.Securities ) ), ( Func<LookupSecuritiesResultCommand, bool> )null );
+                SecuritiesAll.Title = LocalizedStrings.Str3255;
+                SecuritiesSelected.Title = LocalizedStrings.Str3256;
+                StudioServicesRegistry.CommandService.Register<LookupSecuritiesResultCommand>( this, false, cmd => SecuritiesAll.Securities.AddRange( cmd.Securities ), null );
             }
             else
-                this.LookupPanel.Visibility = Visibility.Collapsed;
+                LookupPanel.Visibility = Visibility.Collapsed;
         }
 
         protected override void OnClosed( EventArgs e )
         {
-            StudioServicesRegistry.CommandService.UnRegister<LookupSecuritiesResultCommand>( ( object )this );
+            StudioServicesRegistry.CommandService.UnRegister<LookupSecuritiesResultCommand>( this );
             base.OnClosed( e );
         }
 
         private void SelectSecurities( Security[ ] securities )
         {
-            this.SecuritiesSelected.Securities.AddRange( ( IEnumerable<Security> )securities );
-            if ( !this.AllowDuplicates )
-                this.SecuritiesAll.ExcludeSecurities.AddRange<Security>( ( IEnumerable<Security> )securities );
-            this.EnableOk();
+            SecuritiesSelected.Securities.AddRange( securities );
+            if ( !AllowDuplicates )
+                SecuritiesAll.ExcludeSecurities.AddRange( securities );
+            EnableOk();
         }
 
         private void UnselectSecurities( Security[ ] securities )
         {
-            this.SecuritiesSelected.Securities.RemoveRange( ( IEnumerable<Security> )securities );
-            if ( !this.AllowDuplicates )
-                this.SecuritiesAll.ExcludeSecurities.RemoveRange<Security>( ( IEnumerable<Security> )securities );
-            this.EnableOk();
+            SecuritiesSelected.Securities.RemoveRange( securities );
+            if ( !AllowDuplicates )
+                SecuritiesAll.ExcludeSecurities.RemoveRange( securities );
+            EnableOk();
         }
 
         private void ExecutedSelectSecurity( object sender, ExecutedRoutedEventArgs e )
         {
-            this.SelectSecurities( this.SecuritiesAll.SelectedSecurities.ToArray<Security>() );
+            SelectSecurities( SecuritiesAll.SelectedSecurities.ToArray() );
         }
 
         private void CanExecuteSelectSecurity( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.SecuritiesAll.SelectedSecurities.Any<Security>();
+            e.CanExecute = SecuritiesAll.SelectedSecurities.Any();
         }
 
         private void ExecutedUnselectSecurity( object sender, ExecutedRoutedEventArgs e )
         {
-            this.UnselectSecurities( this.SecuritiesSelected.SelectedSecurities.ToArray<Security>() );
+            UnselectSecurities( SecuritiesSelected.SelectedSecurities.ToArray() );
         }
 
         private void CanExecuteUnselectSecurity( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.SecuritiesSelected.SelectedSecurities.Any<Security>();
+            e.CanExecute = SecuritiesSelected.SelectedSecurities.Any();
         }
 
         private void EnableOk()
         {
-            this.Ok.IsEnabled = true;
+            Ok.IsEnabled = true;
         }
 
         private void LookupPanel_OnLookup( Security filter )
         {
-            this.SecuritiesAll.Securities.Clear();
-            new LookupSecuritiesCommand( filter ).Process( ( object )this, false );
+            SecuritiesAll.Securities.Clear();
+            new LookupSecuritiesCommand( filter ).Process( this, false );
         }
 
         

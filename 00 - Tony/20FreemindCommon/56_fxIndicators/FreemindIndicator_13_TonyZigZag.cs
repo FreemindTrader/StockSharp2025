@@ -81,7 +81,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement  = 0;
 
-            fx.TALib.Core.RetCode code = fx.TALib.Core.Atr(Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, ATRtimePeriod );
+            Core.RetCode code = Core.Atr(Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, ATRtimePeriod );
 
             var avgRange = atr[ outNBElement - 1 ];
 

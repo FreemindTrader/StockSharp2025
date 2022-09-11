@@ -49,7 +49,7 @@ namespace fx.Charting
         static ChartHelper( )
         {
             StockSharpSection rootSection = StockSharp.Configuration.Extensions.RootSection;
-            ChartHelper._customIndicators = ( rootSection != null ? rootSection.CustomIndicators.SafeAdd( new Func<IndicatorElement, IndicatorType>( elem => new IndicatorType( elem.Type.To<Type>( ), elem.Painter.To<Type>( ) ) ) )  : null ) ?? Array.Empty<IndicatorType>( );
+            _customIndicators = ( rootSection != null ? rootSection.CustomIndicators.SafeAdd( new Func<IndicatorElement, IndicatorType>( elem => new IndicatorType( elem.Type.To<Type>( ), elem.Painter.To<Type>( ) ) ) )  : null ) ?? Array.Empty<IndicatorType>( );
         }
 
         private static readonly IndicatorType[ ] _customIndicators = Array.Empty<IndicatorType>();
@@ -119,7 +119,7 @@ namespace fx.Charting
             }
             if( !( chart is Chart elem ) )
             {
-                throw new ArgumentException( LocalizedStrings.Str1970Params.Put( ( object )chart.GetType( ) ), nameof( chart ) );
+                throw new ArgumentException( LocalizedStrings.Str1970Params.Put( chart.GetType() ), nameof( chart ) );
             }
             MemoryStream memoryStream = new MemoryStream( );
             elem.GetImage( ).SaveImage( memoryStream );

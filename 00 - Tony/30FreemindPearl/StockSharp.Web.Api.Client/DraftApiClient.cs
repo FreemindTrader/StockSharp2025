@@ -30,28 +30,28 @@ namespace StockSharp.Web.Api.Client
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Draft>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId);
+            return Get<BaseEntitySet<Draft>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId );
         }
 
         Task<Draft> IDraftService.TryGetByPageIdAsync(
           string pageId,
           CancellationToken cancellationToken)
         {
-            return this.Post<Draft>(RestBaseApiClient.GetCurrentMethod("TryGetByPageIdAsync"), cancellationToken, (object)pageId);
+            return Post<Draft>( GetCurrentMethod( "TryGetByPageIdAsync"), cancellationToken, pageId );
         }
 
         Task<bool> IDraftService.RemoveByPageAsync(
           string pageId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveByPageAsync"), cancellationToken, (object)pageId);
+            return Post<bool>( GetCurrentMethod( "RemoveByPageAsync"), cancellationToken, pageId );
         }
 
         Task<bool> IDraftService.RemoveFileAsync(
           long fileId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveFileAsync"), cancellationToken, (object)fileId);
+            return Post<bool>( GetCurrentMethod( "RemoveFileAsync"), cancellationToken, fileId );
         }
     }
 }

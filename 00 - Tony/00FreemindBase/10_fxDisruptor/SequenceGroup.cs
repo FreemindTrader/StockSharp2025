@@ -7,8 +7,8 @@ namespace Disruptor
     /// A <see cref="Sequence"/> group that can dynamically have <see cref="Sequence"/>s added and removed while being
     /// thread safe.
     /// 
-    /// The <see cref="SequenceGroup.Value"/> get and set methods are lock free and can be
-    /// concurrently called with the <see cref="SequenceGroup.Add"/> and <see cref="SequenceGroup.Remove"/>.
+    /// The <see cref="Value"/> get and set methods are lock free and can be
+    /// concurrently called with the <see cref="Add"/> and <see cref="Remove"/>.
     /// </summary>
     public class SequenceGroup : ISequence
     {
@@ -64,7 +64,7 @@ namespace Disruptor
 
         /// <summary>
         /// Add a <see cref="Sequence"/> into this aggregate. This should only be used during
-        /// initialisation. Use <see cref="SequenceGroup.AddWhileRunning"/>.
+        /// initialisation. Use <see cref="AddWhileRunning"/>.
         /// </summary>
         /// <param name="sequence">sequence to be added to the aggregate.</param>
         public void Add(ISequence sequence)

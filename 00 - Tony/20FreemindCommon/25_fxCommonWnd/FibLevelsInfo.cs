@@ -265,7 +265,7 @@ namespace fx.Common
 
         public bool WithinCluster( FibLevelInfo fibLevel, double pipAllowance )
         {
-            if ( this.HasRange )
+            if ( HasRange )
             {
                 if ( ( fibLevel.FibLevel <= UpperBound ) && ( fibLevel.FibLevel >= LowerBound ) )
                 {
@@ -273,7 +273,7 @@ namespace fx.Common
                 }
             }
 
-            var diff = Math.Abs( fibLevel.FibLevel - this.FibLevel );
+            var diff = Math.Abs( fibLevel.FibLevel - FibLevel );
 
             if ( diff <= pipAllowance )
             {

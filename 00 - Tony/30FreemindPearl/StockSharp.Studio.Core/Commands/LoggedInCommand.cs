@@ -16,7 +16,7 @@ namespace StockSharp.Studio.Core.Commands
             Client client = profile;
             if ( client == null )
                 throw new ArgumentNullException( nameof( profile ) );
-            this.Profile = client;
+            Profile = client;
         }
 
         public Client Profile { get; }

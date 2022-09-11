@@ -28,12 +28,12 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._marketDataDrive;
+                return _marketDataDrive;
             }
             set
             {
-                this._marketDataDrive = value;
-                this.NotifyChanged( nameof( MarketDataDrive ) );
+                _marketDataDrive = value;
+                NotifyChanged( nameof( MarketDataDrive ) );
             }
         }
 
@@ -42,12 +42,12 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._storageFormat;
+                return _storageFormat;
             }
             set
             {
-                this._storageFormat = value;
-                this.NotifyChanged( nameof( StorageFormat ) );
+                _storageFormat = value;
+                NotifyChanged( nameof( StorageFormat ) );
             }
         }
 
@@ -56,12 +56,12 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._maxVolume;
+                return _maxVolume;
             }
             set
             {
-                this._maxVolume = value;
-                this.NotifyChanged( nameof( MaxVolume ) );
+                _maxVolume = value;
+                NotifyChanged( nameof( MaxVolume ) );
             }
         }
 
@@ -71,46 +71,46 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._commissionRules;
+                return _commissionRules;
             }
             set
             {
-                this._commissionRules = value;
-                this.NotifyChanged( nameof( CommissionRules ) );
+                _commissionRules = value;
+                NotifyChanged( nameof( CommissionRules ) );
             }
         }
 
         public EmulationSettingsEx()
         {
-            this.StartTime = DateTime.Today.AddDays( -60.0 );
-            this.StopTime = DateTime.Today;
-            this.StorageFormat = StorageFormats.Binary;
-            this.MaxDepth = 5;
-            this.MaxVolume = 100;
-            this.IsSupportAtomicReRegister = true;
-            this.MatchOnTouch = false;
-            this.Latency = TimeSpan.Zero;
-            this.CommissionRules = ( IEnumerable<CommissionRule> )Array.Empty<CommissionRule>();
-            this.TradeDataMode = this.DepthDataMode = this.OrderLogDataMode = EmulationMarketDataModes.No;
+            StartTime = DateTime.Today.AddDays( -60.0 );
+            StopTime = DateTime.Today;
+            StorageFormat = StorageFormats.Binary;
+            MaxDepth = 5;
+            MaxVolume = 100;
+            IsSupportAtomicReRegister = true;
+            MatchOnTouch = false;
+            Latency = TimeSpan.Zero;
+            CommissionRules = Array.Empty<CommissionRule>();
+            TradeDataMode = DepthDataMode = OrderLogDataMode = EmulationMarketDataModes.No;
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.MaxVolume = storage.GetValue<int>( "MaxVolume", this.MaxVolume );
-            this.MarketDataDrive = ServicesRegistry.DriveCache.GetDrive( storage.GetValue<string>( "MarketDataDrive", ( string )null ) );
-            this.StorageFormat = storage.GetValue<StorageFormats>( "StorageFormat", this.StorageFormat );
-            storage.TryLoadSettings<SettingsStorage[ ]>( "CommissionRules", ( Action<SettingsStorage[ ]> )( s => this.CommissionRules = ( IEnumerable<CommissionRule> )( ( IEnumerable<SettingsStorage> )s ).Select<SettingsStorage, CommissionRule>( ( Func<SettingsStorage, CommissionRule> )( i => i.LoadEntire<CommissionRule>() ) ).ToArray<CommissionRule>() ) );
+            MaxVolume = storage.GetValue( "MaxVolume", MaxVolume );
+            MarketDataDrive = ServicesRegistry.DriveCache.GetDrive( storage.GetValue<string>( "MarketDataDrive", null ) );
+            StorageFormat = storage.GetValue( "StorageFormat", StorageFormat );
+            storage.TryLoadSettings<SettingsStorage[ ]>( "CommissionRules", s => CommissionRules = s.Select( i => i.LoadEntire<CommissionRule>() ).ToArray() );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<int>( "MaxVolume", this.MaxVolume );
-            if ( this.MarketDataDrive != null )
-                storage.SetValue<string>( "MarketDataDrive", this.MarketDataDrive.Path );
-            storage.SetValue<StorageFormats>( "StorageFormat", this.StorageFormat );
-            storage.SetValue<SettingsStorage[ ]>( "CommissionRules", this.CommissionRules.Select<CommissionRule, SettingsStorage>( ( Func<CommissionRule, SettingsStorage> )( c => c.SaveEntire( false ) ) ).ToArray<SettingsStorage>() );
+            storage.SetValue( "MaxVolume", MaxVolume );
+            if ( MarketDataDrive != null )
+                storage.SetValue( "MarketDataDrive", MarketDataDrive.Path );
+            storage.SetValue( "StorageFormat", StorageFormat );
+            storage.SetValue( "CommissionRules", CommissionRules.Select( c => c.SaveEntire( false ) ).ToArray() );
         }
 
         public override string ToString()

@@ -57,18 +57,18 @@ namespace fx.Definitions
         
         public PivotsPointUpdateMessage( string symbol, ShowPivotPoints pivotPointsShowType )
         {
-            this.Symbol = symbol;
+            Symbol = symbol;
 
-            this.PivotPointsShowType = pivotPointsShowType;
+            PivotPointsShowType = pivotPointsShowType;
 
             _selectedBarTime = -1;
         }
 
         public PivotsPointUpdateMessage( string symbol, ShowPivotPoints pivotPointsShowType, long selectedBarTime )
         {
-            this.Symbol = symbol;
+            Symbol = symbol;
 
-            this.PivotPointsShowType = pivotPointsShowType;
+            PivotPointsShowType = pivotPointsShowType;
 
             _selectedBarTime = selectedBarTime;
         }

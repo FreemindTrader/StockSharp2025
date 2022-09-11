@@ -56,11 +56,11 @@ namespace fx.Indicators
         {
             if ( Bars.Period < TimeSpan.FromHours( 1 ) )
             {
-                _macdLookback = fx.TALib.Core.MacdExtLookback( Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
+                _macdLookback = Core.MacdExtLookback( Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
             }
             else
             {
-                _macdLookback = fx.TALib.Core.MacdExtLookback( Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
+                _macdLookback = Core.MacdExtLookback( Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
             }
 
 
@@ -90,15 +90,15 @@ namespace fx.Indicators
 
             
             long unstablePeriod = 120;
-            fx.TALib.Core.RetCode retCode;
+            Core.RetCode retCode;
 
             if ( _macdLookback > barB4Calculation )
             {
-                unstablePeriod = fx.TALib.Core.GetUnstablePeriod( Core.FuncUnstId.Ema );
+                unstablePeriod = Core.GetUnstablePeriod( Core.FuncUnstId.Ema );
 
-                retCode = fx.TALib.Core.SetUnstablePeriod( Core.FuncUnstId.Ema, 30 );
+                retCode = Core.SetUnstablePeriod( Core.FuncUnstId.Ema, 30 );
 
-                if ( retCode != fx.TALib.Core.RetCode.Success )
+                if ( retCode != Core.RetCode.Success )
                 {
                     return;
                 }
@@ -109,16 +109,16 @@ namespace fx.Indicators
 
             if ( Bars.Period < TimeSpan.FromHours( 1 ) )
             {
-                fx.TALib.Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
+                Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
             }
             else
             {
-                fx.TALib.Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
+                Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
             }
 
             if ( _macdLookback > barB4Calculation )
             {
-                fx.TALib.Core.SetUnstablePeriod( Core.FuncUnstId.Ema, unstablePeriod );
+                Core.SetUnstablePeriod( Core.FuncUnstId.Ema, unstablePeriod );
             }
 
             if ( outNBElement > 0 )
@@ -162,15 +162,15 @@ namespace fx.Indicators
             int outNBElement = 0;
 
             long unstablePeriod = 120;
-            fx.TALib.Core.RetCode retCode;
+            Core.RetCode retCode;
 
             if ( _macdLookback > barB4Calculation )
             {
-                unstablePeriod = fx.TALib.Core.GetUnstablePeriod( Core.FuncUnstId.Ema );
+                unstablePeriod = Core.GetUnstablePeriod( Core.FuncUnstId.Ema );
 
-                retCode = fx.TALib.Core.SetUnstablePeriod( Core.FuncUnstId.Ema, 30 );
+                retCode = Core.SetUnstablePeriod( Core.FuncUnstId.Ema, 30 );
 
-                if ( retCode != fx.TALib.Core.RetCode.Success )
+                if ( retCode != Core.RetCode.Success )
                 {
                     return;
                 }
@@ -183,16 +183,16 @@ namespace fx.Indicators
 
             if ( Bars.Period < TimeSpan.FromHours( 1 ) )
             {
-                fx.TALib.Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
+                Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
             }
             else
             {
-                fx.TALib.Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
+                Core.MacdExt( Bars, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
             }
 
             if ( _macdLookback > barB4Calculation )
             {
-                fx.TALib.Core.SetUnstablePeriod( Core.FuncUnstId.Ema, unstablePeriod );
+                Core.SetUnstablePeriod( Core.FuncUnstId.Ema, unstablePeriod );
             }
 
             if ( outNBElement > 0 )

@@ -78,7 +78,7 @@ namespace fx.Indicators
                 token.ThrowIfCancellationRequested();
             }
 
-            fx.TALib.Core.Aroon( Bars, startIndex, endIndex, aroonDown, aroonUp, out outBeginIdx, out outNBElement, 25 );
+            Core.Aroon( Bars, startIndex, endIndex, aroonDown, aroonUp, out outBeginIdx, out outNBElement, 25 );
 
             lock ( IndicatorResult )
             {
@@ -110,7 +110,7 @@ namespace fx.Indicators
                 token.ThrowIfCancellationRequested();
             }
 
-            fx.TALib.Core.Aroon( Bars, startIndex, endIndex, aroonDown, aroonUp, out outBeginIdx, out outNBElement, 25 );
+            Core.Aroon( Bars, startIndex, endIndex, aroonDown, aroonUp, out outBeginIdx, out outNBElement, 25 );
 
             if ( outNBElement > 0 )
             {

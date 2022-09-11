@@ -58,11 +58,11 @@ namespace fx.Definitions.Collections
         {
             
             this.keyComparer = keyComparer;
-            this.first = new Node( nodeCapacity );
-            this.root = this.first;
+            first = new Node( nodeCapacity );
+            root = first;
 
-            this.keys = new KeyCollection( this );
-            this.values = new ValueCollection( this );
+            keys = new KeyCollection( this );
+            values = new ValueCollection( this );
         }
 
         #endregion
@@ -79,7 +79,7 @@ namespace fx.Definitions.Collections
             get
             {
                 TValue result;
-                if ( this.TryGetValue( key, out result ) )
+                if ( TryGetValue( key, out result ) )
                     return result;
                 
                 throw new InvalidOperationException(  );
@@ -109,7 +109,7 @@ namespace fx.Definitions.Collections
             {
                 Contract.Ensures( Contract.Result<int>( ) >= 0 );
 
-                return this.root.TotalCount;
+                return root.TotalCount;
             }
         }
 
@@ -122,7 +122,7 @@ namespace fx.Definitions.Collections
             {
                 Contract.Ensures( Contract.Result<IComparer<TKey>>( ) != null );
 
-                return this.keyComparer;
+                return keyComparer;
             }
         }
 
@@ -135,7 +135,7 @@ namespace fx.Definitions.Collections
             {
                 Contract.Ensures( Contract.Result<ISortedCollection<TKey>>( ) != null );
 
-                return this.keys;
+                return keys;
             }
         }
 
@@ -148,7 +148,7 @@ namespace fx.Definitions.Collections
             {
                 Contract.Ensures( Contract.Result<ICollection<TValue>>( ) != null );
 
-                return this.values;
+                return values;
             }
         }
 
@@ -166,10 +166,10 @@ namespace fx.Definitions.Collections
         /// </summary>
         public bool AllowDuplicates
         {
-            get { return this.allowDuplicates; }
+            get { return allowDuplicates; }
             set
             {
-                this.allowDuplicates = value;
+                allowDuplicates = value;
             }
         }
 
@@ -313,7 +313,7 @@ namespace fx.Definitions.Collections
         public void RemoveAt( int index )
         {
             
-            Contract.Requires( index >= 0 && index < this.Count );
+            Contract.Requires( index >= 0 && index < Count );
 
             var leaf = Node.LeafAt( root, ref index );
             Node.Remove( leaf, index, ref root );
@@ -353,7 +353,7 @@ namespace fx.Definitions.Collections
                                 TValue value )
         {
             
-            Contract.Requires( index >= 0 && index < this.Count );
+            Contract.Requires( index >= 0 && index < Count );
 
             var leaf = Node.LeafAt( root, ref index );
             leaf.SetValue( index, value );
@@ -535,12 +535,12 @@ namespace fx.Definitions.Collections
 
             public int TotalCount
             {
-                get { return this.totalCount; }
+                get { return totalCount; }
             }
 
             public bool IsRoot
             {
-                get { return this.parent == null; }
+                get { return parent == null; }
             }
 
             public bool IsLeaf
@@ -550,7 +550,7 @@ namespace fx.Definitions.Collections
 
             public int NodeCount
             {
-                get { return this.nodeCount; }
+                get { return nodeCount; }
             }
 
             #endregion
@@ -562,8 +562,8 @@ namespace fx.Definitions.Collections
             /// </summary>
             public TKey GetKey( int pos )
             {
-                Contract.Requires( pos >= 0 && pos < this.nodeCount );
-                return this.keys[ pos ];
+                Contract.Requires( pos >= 0 && pos < nodeCount );
+                return keys[ pos ];
             }
 
             /// <summary>
@@ -571,8 +571,8 @@ namespace fx.Definitions.Collections
             /// </summary>
             public TValue GetValue( int pos )
             {
-                Contract.Requires( pos >= 0 && pos < this.NodeCount );
-                return this.values[ pos ];
+                Contract.Requires( pos >= 0 && pos < NodeCount );
+                return values[ pos ];
             }
 
             /// <summary>
@@ -581,8 +581,8 @@ namespace fx.Definitions.Collections
             public void SetValue( int pos,
                                   TValue value )
             {
-                Contract.Requires( pos >= 0 && pos < this.NodeCount );
-                this.values[ pos ] = value;
+                Contract.Requires( pos >= 0 && pos < NodeCount );
+                values[ pos ] = value;
             }
 
             /// <summary>
@@ -633,8 +633,8 @@ namespace fx.Definitions.Collections
             {
                 Contract.Requires( root != null );
                 Contract.Requires( root.IsRoot );
-                Contract.Ensures( Contract.ValueAtReturn<Node>( out leaf ) != null );
-                Contract.Ensures( 0 <= Contract.ValueAtReturn<int>( out pos ) && Contract.ValueAtReturn<int>( out pos ) <= leaf.NodeCount );
+                Contract.Ensures( Contract.ValueAtReturn( out leaf ) != null );
+                Contract.Ensures( 0 <= Contract.ValueAtReturn( out pos ) && Contract.ValueAtReturn( out pos ) <= leaf.NodeCount );
 
                 pos = Array.BinarySearch( root.keys, 0, root.nodeCount, key, keyComparer );
                 while ( root.nodes != null )
@@ -849,24 +849,24 @@ namespace fx.Definitions.Collections
             Node( int nodeCapacity,
                   bool leaf )
             {
-                this.keys = new TKey[ nodeCapacity ];
+                keys = new TKey[ nodeCapacity ];
 
                 if ( leaf )
                 {
-                    this.values = new TValue[ nodeCapacity ];
-                    this.nodes = null;
+                    values = new TValue[ nodeCapacity ];
+                    nodes = null;
                 }
                 else
                 {
-                    this.values = null;
-                    this.nodes = new Node[ nodeCapacity ];
+                    values = null;
+                    nodes = new Node[ nodeCapacity ];
                 }
 
-                this.nodeCount = 0;
-                this.totalCount = 0;
-                this.parent = null;
-                this.next = null;
-                this.prev = null;
+                nodeCount = 0;
+                totalCount = 0;
+                parent = null;
+                next = null;
+                prev = null;
             }
 
             /// <summary>
@@ -1161,7 +1161,7 @@ namespace fx.Definitions.Collections
 
             System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator( )
             {
-                return this.GetEnumerator( );
+                return GetEnumerator( );
             }
 
             #endregion
@@ -1183,12 +1183,12 @@ namespace fx.Definitions.Collections
 
             public override bool Contains( TValue item )
             {
-                return this.tree.Any( keyValue => object.Equals( item, keyValue.Value ) );
+                return tree.Any( keyValue => Equals( item, keyValue.Value ) );
             }
 
             public override IEnumerator<TValue> GetEnumerator( )
             {
-                return this.tree.Select( keyValue => keyValue.Value ).GetEnumerator( );
+                return tree.Select( keyValue => keyValue.Value ).GetEnumerator( );
             }
 
             #endregion
@@ -1248,7 +1248,7 @@ namespace fx.Definitions.Collections
 
             public TKey At( int index )
             {
-                return this.tree.At( index ).Key;
+                return tree.At( index ).Key;
             }
 
             public override bool Contains( TKey item )
@@ -1284,12 +1284,12 @@ namespace fx.Definitions.Collections
 
             public IEnumerable<TKey> ForwardFromIndex( int index )
             {
-                return this.tree.ForwardFromIndex( index ).Select( item => item.Key );
+                return tree.ForwardFromIndex( index ).Select( item => item.Key );
             }
 
             public IEnumerable<TKey> BackwardFromIndex( int index )
             {
-                return this.tree.BackwardFromIndex( index ).Select( item => item.Key );
+                return tree.BackwardFromIndex( index ).Select( item => item.Key );
             }
 
             #endregion
@@ -1298,7 +1298,7 @@ namespace fx.Definitions.Collections
 
             System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator( )
             {
-                return this.GetEnumerator( );
+                return GetEnumerator( );
             }
 
             #endregion
@@ -1320,7 +1320,7 @@ namespace fx.Definitions.Collections
 
         ICollection<TKey> IDictionary<TKey, TValue>.Keys
         {
-            get { return this.Keys; }
+            get { return Keys; }
         }
 
         #endregion
@@ -1329,13 +1329,13 @@ namespace fx.Definitions.Collections
 
         void ICollection<KeyValuePair<TKey, TValue>>.Add( KeyValuePair<TKey, TValue> item )
         {
-            this.Add( item.Key, item.Value );
+            Add( item.Key, item.Value );
         }
 
         bool ICollection<KeyValuePair<TKey, TValue>>.Contains( KeyValuePair<TKey, TValue> item )
         {
             TValue value;
-            return this.TryGetValue( item.Key, out value ) && Object.Equals( item.Value, value );
+            return TryGetValue( item.Key, out value ) && Equals( item.Value, value );
         }
 
         bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly
@@ -1346,9 +1346,9 @@ namespace fx.Definitions.Collections
         bool ICollection<KeyValuePair<TKey, TValue>>.Remove( KeyValuePair<TKey, TValue> item )
         {
             TValue value;
-            if ( this.TryGetValue( item.Key, out value ) && object.Equals( item.Value, value ) )
+            if ( TryGetValue( item.Key, out value ) && Equals( item.Value, value ) )
             {
-                this.Remove( item.Key );
+                Remove( item.Key );
                 return true;
             }
             return false;
@@ -1360,7 +1360,7 @@ namespace fx.Definitions.Collections
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator( )
         {
-            return this.GetEnumerator( );
+            return GetEnumerator( );
         }
 
         #endregion

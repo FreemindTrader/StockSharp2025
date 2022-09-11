@@ -19,9 +19,9 @@ namespace fx.Collections
         private const int _writeBitShift = 24;
         private const int _upgradeBitShift = 16;
 
-        private const LockIntegralType _writeLockValue = ( ( LockIntegralType ) 1 ) << _writeBitShift;
+        private const LockIntegralType _writeLockValue = 1 << _writeBitShift;
         private const LockIntegralType _writeUnlockValue = -_writeLockValue;
-        private const LockIntegralType _upgradeLockValue = ( ( LockIntegralType ) 1 ) << _upgradeBitShift;
+        private const LockIntegralType _upgradeLockValue = 1 << _upgradeBitShift;
         private const LockIntegralType _upgradeUnlockValue = -_upgradeLockValue;
         private const LockIntegralType _allReadsValue = _upgradeLockValue - 1;
         private const LockIntegralType _someExclusiveLockValue = _writeLockValue | _upgradeLockValue;

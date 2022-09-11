@@ -46,13 +46,13 @@ namespace StockSharp.BusinessEntities
 
 		private int _maxDepth = 100;
 
-		/// <summary>
-		/// The maximum depth of order book.
-		/// </summary>
-		/// <remarks>
-		/// The default value is 100. If the exceeded the maximum depth the event <see cref="MarketDepth.QuoteOutOfDepth"/> will triggered.
-		/// </remarks>
-		[DisplayNameLoc(LocalizedStrings.Str1660Key)]
+        /// <summary>
+        /// The maximum depth of order book.
+        /// </summary>
+        /// <remarks>
+        /// The default value is 100. If the exceeded the maximum depth the event <see cref="QuoteOutOfDepth"/> will triggered.
+        /// </remarks>
+        [DisplayNameLoc(LocalizedStrings.Str1660Key)]
 		[Browsable(false)]
 		[Obsolete]
 		public int MaxDepth
@@ -366,12 +366,12 @@ namespace StockSharp.BusinessEntities
 			return orderDirection == Sides.Buy ? BestBid2 : BestAsk2;
 		}
 
-		/// <summary>
-		/// To get a pair of quotes (bid + offer) by the depth index.
-		/// </summary>
-		/// <param name="depthIndex">Depth index. Zero index means the best pair of quotes.</param>
-		/// <returns>The pair of quotes. If the index is larger than book order depth <see cref="MarketDepth.Depth"/>, then the <see langword="null" /> is returned.</returns>
-		public MarketDepthPair GetPair(int depthIndex)
+        /// <summary>
+        /// To get a pair of quotes (bid + offer) by the depth index.
+        /// </summary>
+        /// <param name="depthIndex">Depth index. Zero index means the best pair of quotes.</param>
+        /// <returns>The pair of quotes. If the index is larger than book order depth <see cref="Depth"/>, then the <see langword="null" /> is returned.</returns>
+        public MarketDepthPair GetPair(int depthIndex)
 		{
 			if (depthIndex < 0)
 				throw new ArgumentOutOfRangeException(nameof(depthIndex), depthIndex, LocalizedStrings.Str483);

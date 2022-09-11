@@ -81,7 +81,7 @@ namespace StockSharp.Studio.Community.Offline
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<Client>>(new BaseEntitySet<Client>());
+            return Task.FromResult( new BaseEntitySet<Client>());
         }
 
         Task<Client> IClientService.FindByEmailAsync(
@@ -95,7 +95,7 @@ namespace StockSharp.Studio.Community.Offline
           bool? includedOrders,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<Client>(new Client() { DisplayName = "Offline" });
+            return Task.FromResult( new Client() { DisplayName = "Offline" });
         }
 
         Task<(bool isAdmin, bool canPublish, bool isProductManager)> IClientService.GetNugetPermissionsAsync(
@@ -108,7 +108,7 @@ namespace StockSharp.Studio.Community.Offline
           long roleId,
           CancellationToken cancellationToken)
         {
-            return (Task<bool>)null;
+            return null;
         }
 
         Task<string[]> IClientService.GetRolesAsync(

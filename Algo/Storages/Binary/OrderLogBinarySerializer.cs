@@ -550,7 +550,7 @@ namespace StockSharp.Algo.Storages.Binary
 
 					execMsg.IsSystem = metaInfo.Version < MarketDataVersions.Version49
 						? reader.Read()
-						: (reader.Read() ? reader.Read() : (bool?)null);
+						: (reader.Read() ? reader.Read() : null );
 
 					if (metaInfo.Version >= MarketDataVersions.Version34)
 					{

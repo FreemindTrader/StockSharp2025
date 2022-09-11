@@ -116,8 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Configuration\Configuration.csproj" />
-    <ProjectReference Include="..\Messages\Messages.csproj" />
-
-    <ProjectReference Include="..\Samples\Connectors\BitStamp\BitStamp.csproj" />
+    <ProjectReference Include="..\Messages\Messages.csproj" />    
   </ItemGroup>
 </Project>

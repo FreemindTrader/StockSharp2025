@@ -67,7 +67,7 @@ namespace FreemindTrader.Controls
                     int num = ( int )new MessageBoxBuilder().Text( LocalizedStrings.LoadCompositionError ).Error().Owner( this ).Show();
                 }
             }, ( Func<LoadLayoutCommand, bool> )null );
-            commandService.Register( this, true, cmd => cmd.Layout = _layoutManager.SaveToString<JsonSerializer<SettingsStorage>>(), ( Func<StockSharp.Studio.Core.Commands.SaveLayoutCommand, bool> )null );
+            commandService.Register( this, true, cmd => cmd.Layout = _layoutManager.SaveToString<JsonSerializer<SettingsStorage>>(), ( Func<SaveLayoutCommand, bool> )null );
             commandService.Register( this, true, cmd => cmd.Process( this, false ), ( Func<ReRegisterOrderCommand, bool> )null );
             commandService.Bind( _state, this );
             RaiseBindCommand( null );
@@ -89,7 +89,7 @@ namespace FreemindTrader.Controls
             commandService.UnRegister<RequestBindSource>( this );
             commandService.UnRegister<OpenWindowCommand>( this );
             commandService.UnRegister<LoadLayoutCommand>( this );
-            commandService.UnRegister<StockSharp.Studio.Core.Commands.SaveLayoutCommand>( this );
+            commandService.UnRegister<SaveLayoutCommand>( this );
             base.Dispose();
         }
 

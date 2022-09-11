@@ -26,56 +26,56 @@ namespace StockSharp.Studio.Controls
 
         public BuySellGridPanel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            Portfolio defaultPortfolio = ( Portfolio )null;
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<ResetedCommand>( ( object )this, false, ( Action<ResetedCommand> )( cmd => this.UnderlyingGrid.ClearPanels() ), ( Func<ResetedCommand, bool> )null );
-            commandService.Register<SecuritiesRemovedCommand>( ( object )this, false, ( Action<SecuritiesRemovedCommand> )( cmd =>
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            Portfolio defaultPortfolio = null;
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<ResetedCommand>( this, false, cmd => UnderlyingGrid.ClearPanels(), null );
+            commandService.Register<SecuritiesRemovedCommand>( this, false, cmd =>
                 {
                     bool flag = false;
                     foreach ( Security security1 in cmd.Securities )
                     {
                         Security security = security1;
-                        StockSharp.Xaml.BuySellPanel buySellPanel = this.UnderlyingGrid.Panels.FirstOrDefault<StockSharp.Xaml.BuySellPanel>( ( Func<StockSharp.Xaml.BuySellPanel, bool> )( p => p.Security == security ) );
+                        Xaml.BuySellPanel buySellPanel = UnderlyingGrid.Panels.FirstOrDefault( p => p.Security == security );
                         if ( buySellPanel != null )
                         {
-                            buySellPanel.Security = ( Security )null;
+                            buySellPanel.Security = null;
                             flag = true;
                         }
                     }
                     if ( !flag )
                         return;
-                    this.RaiseChangedCommand();
-                } ), ( Func<SecuritiesRemovedCommand, bool> )null );
-            commandService.Register<FirstInitSecuritiesCommand>( ( object )this, true, ( Action<FirstInitSecuritiesCommand> )( cmd =>
+                    RaiseChangedCommand();
+                }, null );
+            commandService.Register<FirstInitSecuritiesCommand>( this, true, cmd =>
                 {
-                    foreach ( Security security in cmd.Securities.Take<Security>( 4 ) )
-                        this.UnderlyingGrid.AddPanel( security ).Portfolio = defaultPortfolio;
-                } ), ( Func<FirstInitSecuritiesCommand, bool> )null );
-            commandService.Register<FirstInitPortfoliosCommand>( ( object )this, true, ( Action<FirstInitPortfoliosCommand> )( cmd =>
+                    foreach ( Security security in cmd.Securities.Take( 4 ) )
+                        UnderlyingGrid.AddPanel( security ).Portfolio = defaultPortfolio;
+                }, null );
+            commandService.Register<FirstInitPortfoliosCommand>( this, true, cmd =>
                 {
-                    Portfolio portfolio = cmd.Portfolios.First<Portfolio>();
-                    if ( this.UnderlyingGrid.Panels.IsEmpty<StockSharp.Xaml.BuySellPanel>() )
+                    Portfolio portfolio = cmd.Portfolios.First();
+                    if ( UnderlyingGrid.Panels.IsEmpty() )
                         defaultPortfolio = portfolio;
                     else
-                        this.UnderlyingGrid.Panels.ForEach<StockSharp.Xaml.BuySellPanel>( ( Action<StockSharp.Xaml.BuySellPanel> )( p => p.Portfolio = portfolio ) );
-                } ), ( Func<FirstInitPortfoliosCommand, bool> )null );
-            this.UnderlyingGrid.SecurityProvider = BaseStudioControl.SecurityProvider;
-            this.UnderlyingGrid.MarketDataProvider = BaseStudioControl.MarketDataProvider;
-            this.UnderlyingGrid.Portfolios = BaseStudioControl.PortfolioDataSource;
-            this.UnderlyingGrid.OrderRegistering += new Action<Security, Portfolio, Sides, Decimal, Decimal>( this.UnderlyingGridOnOrderRegistering );
+                        UnderlyingGrid.Panels.ForEach( p => p.Portfolio = portfolio );
+                }, null );
+            UnderlyingGrid.SecurityProvider = SecurityProvider;
+            UnderlyingGrid.MarketDataProvider = MarketDataProvider;
+            UnderlyingGrid.Portfolios = PortfolioDataSource;
+            UnderlyingGrid.OrderRegistering += new Action<Security, Portfolio, Sides, Decimal, Decimal>( UnderlyingGridOnOrderRegistering );
         }
 
         public override void Dispose()
         {
-            this.UnderlyingGrid.OrderRegistering -= new Action<Security, Portfolio, Sides, Decimal, Decimal>( this.UnderlyingGridOnOrderRegistering );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<SecuritiesRemovedCommand>( ( object )this );
-            commandService.UnRegister<FirstInitSecuritiesCommand>( ( object )this );
-            commandService.UnRegister<FirstInitPortfoliosCommand>( ( object )this );
-            this._subscriptionManager.Dispose();
+            UnderlyingGrid.OrderRegistering -= new Action<Security, Portfolio, Sides, Decimal, Decimal>( UnderlyingGridOnOrderRegistering );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<SecuritiesRemovedCommand>( this );
+            commandService.UnRegister<FirstInitSecuritiesCommand>( this );
+            commandService.UnRegister<FirstInitPortfoliosCommand>( this );
+            _subscriptionManager.Dispose();
             base.Dispose();
         }
 
@@ -93,62 +93,62 @@ namespace StockSharp.Studio.Controls
                 Direction = side,
                 Price = price,
                 Volume = volume
-            } ).Process( ( object )this, false );
+            } ).Process( this, false );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "UnderlyingGrid", this.UnderlyingGrid.Save() );
+            storage.SetValue( "UnderlyingGrid", UnderlyingGrid.Save() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.UnderlyingGrid.Load( storage.GetValue<SettingsStorage>( "UnderlyingGrid", ( SettingsStorage )null ) );
+            UnderlyingGrid.Load( storage.GetValue<SettingsStorage>( "UnderlyingGrid", null ) );
         }
 
-        private void UnderlyingGrid_OnPanelAdded( StockSharp.Xaml.BuySellPanel panel )
+        private void UnderlyingGrid_OnPanelAdded( Xaml.BuySellPanel panel )
         {
             if ( panel.Security != null )
-                this.RequestMarketData( panel.Security );
-            panel.SecurityChanged += new Action<Security, Security>( this.PanelOnSecurityChanged );
-            panel.PortfolioChanged += new Action<Portfolio, Portfolio>( this.PanelOnPortfolioChanged );
-            this.RaiseChangedCommand();
+                RequestMarketData( panel.Security );
+            panel.SecurityChanged += new Action<Security, Security>( PanelOnSecurityChanged );
+            panel.PortfolioChanged += new Action<Portfolio, Portfolio>( PanelOnPortfolioChanged );
+            RaiseChangedCommand();
         }
 
-        private void UnderlyingGrid_OnPanelRemoved( StockSharp.Xaml.BuySellPanel panel )
+        private void UnderlyingGrid_OnPanelRemoved( Xaml.BuySellPanel panel )
         {
             if ( panel.Security != null )
-                this.RefuseMarketData( panel.Security );
-            panel.SecurityChanged -= new Action<Security, Security>( this.PanelOnSecurityChanged );
-            panel.PortfolioChanged -= new Action<Portfolio, Portfolio>( this.PanelOnPortfolioChanged );
-            this.RaiseChangedCommand();
+                RefuseMarketData( panel.Security );
+            panel.SecurityChanged -= new Action<Security, Security>( PanelOnSecurityChanged );
+            panel.PortfolioChanged -= new Action<Portfolio, Portfolio>( PanelOnPortfolioChanged );
+            RaiseChangedCommand();
         }
 
         private void PanelOnSecurityChanged( Security oldSecurity, Security newSecurity )
         {
             if ( oldSecurity != null )
-                this.RefuseMarketData( oldSecurity );
+                RefuseMarketData( oldSecurity );
             if ( newSecurity != null )
-                this.RequestMarketData( newSecurity );
-            this.RaiseChangedCommand();
+                RequestMarketData( newSecurity );
+            RaiseChangedCommand();
         }
 
         private void PanelOnPortfolioChanged( Portfolio oldPortfolio, Portfolio newPortfolio )
         {
-            this.RaiseChangedCommand();
+            RaiseChangedCommand();
         }
 
         private void RequestMarketData( Security security )
         {
-            this._subscriptionManager.CreateSubscription( security, DataType.Level1, ( Action<Subscription> )null );
-            this._subscriptionManager.CreateSubscription( security, DataType.MarketDepth, ( Action<Subscription> )null );
+            _subscriptionManager.CreateSubscription( security, DataType.Level1, null );
+            _subscriptionManager.CreateSubscription( security, DataType.MarketDepth, null );
         }
 
         private void RefuseMarketData( Security security )
         {
-            this._subscriptionManager.RemoveSubscriptions( security );
+            _subscriptionManager.RemoveSubscriptions( security );
         }
 
 

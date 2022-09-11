@@ -80,7 +80,7 @@ namespace fx.Indicators
             //this.ChartSeries.Visible                               = true;
             //this.ChartSeries.InvolvedInDisplayAreaCalculation      = true;
 
-            _lookback = fx.TALib.Core.MacdExtLookback();
+            _lookback = Core.MacdExtLookback();
         }
 
         protected override void OnCalculate( bool fullRecalculation, HistoricBarsUpdateEventArg e )
@@ -113,11 +113,11 @@ namespace fx.Indicators
 
             if ( _lookback > barB4Calculation )
             {
-                unstablePeriod = fx.TALib.Core.GetUnstablePeriod( Core.FuncUnstId.Ema );
+                unstablePeriod = Core.GetUnstablePeriod( Core.FuncUnstId.Ema );
 
-                var retCode = fx.TALib.Core.SetUnstablePeriod( Core.FuncUnstId.Ema, 30 );
+                var retCode = Core.SetUnstablePeriod( Core.FuncUnstId.Ema, 30 );
 
-                if ( retCode != fx.TALib.Core.RetCode.Success )
+                if ( retCode != Core.RetCode.Success )
                 {
                     return;
                 }
@@ -126,7 +126,7 @@ namespace fx.Indicators
             int outBeginIdx   = 0;
             int outNBElement = 0;
 
-            fx.TALib.Core.MacdExt( close, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
+            Core.MacdExt( close, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
 
             AddUnfilteredValue( _unfilteredMacd, outBeginIdx, outNBElement, true, macd );
             AddUnfilteredValue( _unfilteredMacdSig, outBeginIdx, outNBElement, true, macdSignal );
@@ -249,7 +249,7 @@ namespace fx.Indicators
             var macdSignal        = new double [ indexCount ];
             var macdHistory       = new double [ indexCount ];
 
-            fx.TALib.Core.MacdExt( close, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
+            Core.MacdExt( close, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
 
             AddUnfilteredValue( _unfilteredMacd, repoStartingIndex + outBeginIdx, outNBElement, true, macd );
             AddUnfilteredValue( _unfilteredMacdSig, repoStartingIndex + outBeginIdx, outNBElement, true, macdSignal );
@@ -397,7 +397,7 @@ namespace fx.Indicators
             var macdSignal             = new double [ indexCount ];
             var macdHistory            = new double [ indexCount ];
 
-            fx.TALib.Core.MacdExt( close, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
+            Core.MacdExt( close, startIndex, endIndex, macd, macdSignal, macdHistory, out outBeginIdx, out outNBElement, Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 12, 26, 9 );
 
             AddUnfilteredValue( _unfilteredMacd, outBeginIdx, outNBElement, true, macd );
             AddUnfilteredValue( _unfilteredMacdSig, outBeginIdx, outNBElement, true, macdSignal );
@@ -606,11 +606,11 @@ namespace fx.Indicators
         {
             FreemindJurikMacd result = new FreemindJurikMacd( );
 
-            result._description = this._description;
-            result._name = this._name;
-            result._fastPeriod = this._fastPeriod;
-            result._slowPeriod = this._slowPeriod;
-            result._custom_signal = this._custom_signal;
+            result._description = _description;
+            result._name = _name;
+            result._fastPeriod = _fastPeriod;
+            result._slowPeriod = _slowPeriod;
+            result._custom_signal = _custom_signal;
 
             return result;
         }

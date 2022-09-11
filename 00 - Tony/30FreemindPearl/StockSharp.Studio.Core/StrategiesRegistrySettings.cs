@@ -28,14 +28,14 @@ namespace StockSharp.Studio.Core
 
         public StrategiesRegistrySettings( string path )
         {
-            this.Compositions = Path.GetFullPath( Path.Combine( path, nameof( Compositions ) ) );
-            this.Strategies = Path.GetFullPath( Path.Combine( path, nameof( Strategies ) ) );
-            this.LiveStrategies = Path.GetFullPath( Path.Combine( path, nameof( LiveStrategies ) ) );
-            this.RemoteStrategies = Path.GetFullPath( Path.Combine( path, nameof( RemoteStrategies ) ) );
-            this.SourceCodeInfos = Path.GetFullPath( Path.Combine( path, "SourceCode" ) );
-            this.Templates = Path.GetFullPath( Path.Combine( path, nameof( Templates ) ) );
-            this.PaletteTree = Path.GetFullPath( Path.Combine( path, "paletteTree.json" ) );
-            this.SolutionTree = Path.GetFullPath( Path.Combine( path, "solutionTree.json" ) );
+            Compositions = Path.GetFullPath( Path.Combine( path, nameof( Compositions ) ) );
+            Strategies = Path.GetFullPath( Path.Combine( path, nameof( Strategies ) ) );
+            LiveStrategies = Path.GetFullPath( Path.Combine( path, nameof( LiveStrategies ) ) );
+            RemoteStrategies = Path.GetFullPath( Path.Combine( path, nameof( RemoteStrategies ) ) );
+            SourceCodeInfos = Path.GetFullPath( Path.Combine( path, "SourceCode" ) );
+            Templates = Path.GetFullPath( Path.Combine( path, nameof( Templates ) ) );
+            PaletteTree = Path.GetFullPath( Path.Combine( path, "paletteTree.json" ) );
+            SolutionTree = Path.GetFullPath( Path.Combine( path, "solutionTree.json" ) );
         }
     }
 }

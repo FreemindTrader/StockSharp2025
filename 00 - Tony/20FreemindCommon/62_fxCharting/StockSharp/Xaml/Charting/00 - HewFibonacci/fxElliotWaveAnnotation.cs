@@ -152,7 +152,7 @@ namespace fx.Charting.HewFibonacci
                                                                         } );
 
             Point[ ] basePoints = GetBasePoints( );
-            Point lastPt = ( ( IEnumerable<Point> )basePoints ).LastOrDefault( );
+            Point lastPt = basePoints.LastOrDefault( );
 
             if ( annotation == null )
             {
@@ -224,7 +224,7 @@ namespace fx.Charting.HewFibonacci
                 IComparable yPrice = FromCoordinate( point.Y, YAxis );
                 IComparable xDate = FromCoordinate( point.X, XAxis );
                 renderTransform.X = -annotation.ActualWidth / 2.0;
-                int num = ( ( IEnumerable<IAnnotation> )waveNames ).Count( ) - 1;
+                int num = waveNames.Count( ) - 1;
                 if ( index == 0 )
                 {
                     if ( basePoints[ index + 1 ].Y > point.Y )

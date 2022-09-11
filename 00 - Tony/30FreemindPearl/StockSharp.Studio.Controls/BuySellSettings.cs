@@ -40,22 +40,22 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._security;
+                return _security;
             }
             set
             {
-                if ( this._security == value )
+                if ( _security == value )
                     return;
-                Security security = this._security;
-                this._security = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                Security security = _security;
+                _security = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( Security ), ( object )security, ( object )value );
-                this.NotifyChanged( nameof( Security ) );
-                if ( this._isLoading )
+                    valueChanged( nameof( Security ), security, value );
+                NotifyChanged( nameof( Security ) );
+                if ( _isLoading )
                     return;
-                this.PriceTextFormat = value != null ? value.GetPriceTextFormat() : ( string )null;
-                this.VolumeTextFormat = value != null ? value.GetVolumeTextFormat() : ( string )null;
+                PriceTextFormat = value != null ? value.GetPriceTextFormat() : null;
+                VolumeTextFormat = value != null ? value.GetVolumeTextFormat() : null;
             }
         }
 
@@ -64,18 +64,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._portfolio;
+                return _portfolio;
             }
             set
             {
-                if ( this._portfolio == value )
+                if ( _portfolio == value )
                     return;
-                Portfolio portfolio = this._portfolio;
-                this._portfolio = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                Portfolio portfolio = _portfolio;
+                _portfolio = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( Portfolio ), ( object )portfolio, ( object )value );
-                this.NotifyChanged( nameof( Portfolio ) );
+                    valueChanged( nameof( Portfolio ), portfolio, value );
+                NotifyChanged( nameof( Portfolio ) );
             }
         }
 
@@ -84,18 +84,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._volume;
+                return _volume;
             }
             set
             {
-                if ( this._volume == value )
+                if ( _volume == value )
                     return;
-                Decimal volume = this._volume;
-                this._volume = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                Decimal volume = _volume;
+                _volume = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( Volume ), ( object )volume, ( object )value );
-                this.NotifyChanged( nameof( Volume ) );
+                    valueChanged( nameof( Volume ), volume, value );
+                NotifyChanged( nameof( Volume ) );
             }
         }
 
@@ -104,20 +104,20 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._depth;
+                return _depth;
             }
             set
             {
                 if ( value < 1 )
                     throw new ArgumentOutOfRangeException();
-                if ( this._depth == value )
+                if ( _depth == value )
                     return;
-                int depth = this._depth;
-                this._depth = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                int depth = _depth;
+                _depth = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( Depth ), ( object )depth, ( object )value );
-                this.NotifyChanged( nameof( Depth ) );
+                    valueChanged( nameof( Depth ), depth, value );
+                NotifyChanged( nameof( Depth ) );
             }
         }
 
@@ -126,18 +126,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._showCancelAll;
+                return _showCancelAll;
             }
             set
             {
-                if ( this._showCancelAll == value )
+                if ( _showCancelAll == value )
                     return;
-                bool showCancelAll = this._showCancelAll;
-                this._showCancelAll = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                bool showCancelAll = _showCancelAll;
+                _showCancelAll = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( ShowCancelAll ), ( object )showCancelAll, ( object )value );
-                this.NotifyChanged( nameof( ShowCancelAll ) );
+                    valueChanged( nameof( ShowCancelAll ), showCancelAll, value );
+                NotifyChanged( nameof( ShowCancelAll ) );
             }
         }
 
@@ -146,18 +146,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._showLimitOrderPanel;
+                return _showLimitOrderPanel;
             }
             set
             {
-                if ( this._showLimitOrderPanel == value )
+                if ( _showLimitOrderPanel == value )
                     return;
-                bool showLimitOrderPanel = this._showLimitOrderPanel;
-                this._showLimitOrderPanel = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                bool showLimitOrderPanel = _showLimitOrderPanel;
+                _showLimitOrderPanel = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( ShowLimitOrderPanel ), ( object )showLimitOrderPanel, ( object )value );
-                this.NotifyChanged( nameof( ShowLimitOrderPanel ) );
+                    valueChanged( nameof( ShowLimitOrderPanel ), showLimitOrderPanel, value );
+                NotifyChanged( nameof( ShowLimitOrderPanel ) );
             }
         }
 
@@ -166,18 +166,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._showMarketOrderPanel;
+                return _showMarketOrderPanel;
             }
             set
             {
-                if ( this._showMarketOrderPanel == value )
+                if ( _showMarketOrderPanel == value )
                     return;
-                bool marketOrderPanel = this._showMarketOrderPanel;
-                this._showMarketOrderPanel = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                bool marketOrderPanel = _showMarketOrderPanel;
+                _showMarketOrderPanel = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( ShowMarketOrderPanel ), ( object )marketOrderPanel, ( object )value );
-                this.NotifyChanged( nameof( ShowMarketOrderPanel ) );
+                    valueChanged( nameof( ShowMarketOrderPanel ), marketOrderPanel, value );
+                NotifyChanged( nameof( ShowMarketOrderPanel ) );
             }
         }
 
@@ -186,18 +186,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._showBoardColumn;
+                return _showBoardColumn;
             }
             set
             {
-                if ( this._showBoardColumn == value )
+                if ( _showBoardColumn == value )
                     return;
-                bool showBoardColumn = this._showBoardColumn;
-                this._showBoardColumn = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                bool showBoardColumn = _showBoardColumn;
+                _showBoardColumn = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( ShowBoardColumn ), ( object )showBoardColumn, ( object )value );
-                this.NotifyChanged( nameof( ShowBoardColumn ) );
+                    valueChanged( nameof( ShowBoardColumn ), showBoardColumn, value );
+                NotifyChanged( nameof( ShowBoardColumn ) );
             }
         }
 
@@ -206,18 +206,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._isBidsOnTop;
+                return _isBidsOnTop;
             }
             set
             {
-                if ( this._isBidsOnTop == value )
+                if ( _isBidsOnTop == value )
                     return;
-                bool isBidsOnTop = this._isBidsOnTop;
-                this._isBidsOnTop = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                bool isBidsOnTop = _isBidsOnTop;
+                _isBidsOnTop = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( IsBidsOnTop ), ( object )isBidsOnTop, ( object )value );
-                this.NotifyChanged( nameof( IsBidsOnTop ) );
+                    valueChanged( nameof( IsBidsOnTop ), isBidsOnTop, value );
+                NotifyChanged( nameof( IsBidsOnTop ) );
             }
         }
 
@@ -226,18 +226,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._priceTextFormat;
+                return _priceTextFormat;
             }
             set
             {
-                if ( this._priceTextFormat == value )
+                if ( _priceTextFormat == value )
                     return;
-                string priceTextFormat = this._priceTextFormat;
-                this._priceTextFormat = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                string priceTextFormat = _priceTextFormat;
+                _priceTextFormat = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( PriceTextFormat ), ( object )priceTextFormat, ( object )value );
-                this.NotifyChanged( nameof( PriceTextFormat ) );
+                    valueChanged( nameof( PriceTextFormat ), priceTextFormat, value );
+                NotifyChanged( nameof( PriceTextFormat ) );
             }
         }
 
@@ -246,18 +246,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._volumeTextFormat;
+                return _volumeTextFormat;
             }
             set
             {
-                if ( this._volumeTextFormat == value )
+                if ( _volumeTextFormat == value )
                     return;
-                string volumeTextFormat = this._volumeTextFormat;
-                this._volumeTextFormat = value;
-                Action<string, object, object> valueChanged = this.ValueChanged;
+                string volumeTextFormat = _volumeTextFormat;
+                _volumeTextFormat = value;
+                Action<string, object, object> valueChanged = ValueChanged;
                 if ( valueChanged != null )
-                    valueChanged( nameof( VolumeTextFormat ), ( object )volumeTextFormat, ( object )value );
-                this.NotifyChanged( nameof( VolumeTextFormat ) );
+                    valueChanged( nameof( VolumeTextFormat ), volumeTextFormat, value );
+                NotifyChanged( nameof( VolumeTextFormat ) );
             }
         }
 
@@ -266,66 +266,66 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._limitPrice;
+                return _limitPrice;
             }
             set
             {
-                if ( this._limitPrice == value )
+                if ( _limitPrice == value )
                     return;
-                this._limitPrice = value;
-                this.NotifyChanged( nameof( LimitPrice ) );
+                _limitPrice = value;
+                NotifyChanged( nameof( LimitPrice ) );
             }
         }
 
         public void Load( SettingsStorage storage )
         {
-            this.Volume = ( Decimal )storage.GetValue<int>( "Volume", 1 );
-            this.ShowLimitOrderPanel = storage.GetValue<bool>( "ShowLimitOrderPanel", true );
-            this.ShowMarketOrderPanel = storage.GetValue<bool>( "ShowMarketOrderPanel", true );
-            this.ShowCancelAll = storage.GetValue<bool>( "ShowCancelAll", true );
-            this.Depth = storage.GetValue<int>( "Depth", 20 );
-            this.ShowBoardColumn = storage.GetValue<bool>( "ShowBoardColumn", this.ShowBoardColumn );
-            this.IsBidsOnTop = storage.GetValue<bool>( "IsBidsOnTop", this.IsBidsOnTop );
-            this.PriceTextFormat = storage.GetValue<string>( "PriceTextFormat", this.PriceTextFormat );
-            this.VolumeTextFormat = storage.GetValue<string>( "VolumeTextFormat", this.VolumeTextFormat );
+            Volume = storage.GetValue( "Volume", 1 );
+            ShowLimitOrderPanel = storage.GetValue( "ShowLimitOrderPanel", true );
+            ShowMarketOrderPanel = storage.GetValue( "ShowMarketOrderPanel", true );
+            ShowCancelAll = storage.GetValue( "ShowCancelAll", true );
+            Depth = storage.GetValue( "Depth", 20 );
+            ShowBoardColumn = storage.GetValue( "ShowBoardColumn", ShowBoardColumn );
+            IsBidsOnTop = storage.GetValue( "IsBidsOnTop", IsBidsOnTop );
+            PriceTextFormat = storage.GetValue( "PriceTextFormat", PriceTextFormat );
+            VolumeTextFormat = storage.GetValue( "VolumeTextFormat", VolumeTextFormat );
             ISecurityProvider securityProvider = ServicesRegistry.SecurityProvider;
-            string str1 = storage.GetValue<string>( "Security", ( string )null );
+            string str1 = storage.GetValue<string>( "Security", null );
             if ( !str1.IsEmpty() )
             {
-                this._isLoading = true;
+                _isLoading = true;
                 try
                 {
-                    this.Security = securityProvider.LookupById( str1 );
+                    Security = securityProvider.LookupById( str1 );
                 }
                 finally
                 {
-                    this._isLoading = false;
+                    _isLoading = false;
                 }
             }
             IPortfolioProvider portfolioProvider = ServicesRegistry.PortfolioProvider;
-            string str2 = storage.GetValue<string>( "Portfolio", ( string )null );
+            string str2 = storage.GetValue<string>( "Portfolio", null );
             if ( !str2.IsEmpty() )
-                this.Portfolio = portfolioProvider.LookupByPortfolioName( str2 );
-            this.LimitPrice = storage.GetValue<Decimal>( "LimitPrice", Decimal.Zero );
+                Portfolio = portfolioProvider.LookupByPortfolioName( str2 );
+            LimitPrice = storage.GetValue( "LimitPrice", Decimal.Zero );
         }
 
         public void Save( SettingsStorage storage )
         {
-            storage.SetValue<Decimal>( "Volume", this.Volume );
-            storage.SetValue<bool>( "ShowLimitOrderPanel", this.ShowLimitOrderPanel );
-            storage.SetValue<bool>( "ShowMarketOrderPanel", this.ShowMarketOrderPanel );
-            storage.SetValue<bool>( "ShowCancelAll", this.ShowCancelAll );
-            storage.SetValue<int>( "Depth", this.Depth );
-            storage.SetValue<bool>( "ShowBoardColumn", this.ShowBoardColumn );
-            storage.SetValue<bool>( "IsBidsOnTop", this.IsBidsOnTop );
-            storage.SetValue<string>( "PriceTextFormat", this.PriceTextFormat );
-            storage.SetValue<string>( "VolumeTextFormat", this.VolumeTextFormat );
-            storage.SetValue<string>( "Security", this.Security?.Id );
+            storage.SetValue( "Volume", Volume );
+            storage.SetValue( "ShowLimitOrderPanel", ShowLimitOrderPanel );
+            storage.SetValue( "ShowMarketOrderPanel", ShowMarketOrderPanel );
+            storage.SetValue( "ShowCancelAll", ShowCancelAll );
+            storage.SetValue( "Depth", Depth );
+            storage.SetValue( "ShowBoardColumn", ShowBoardColumn );
+            storage.SetValue( "IsBidsOnTop", IsBidsOnTop );
+            storage.SetValue( "PriceTextFormat", PriceTextFormat );
+            storage.SetValue( "VolumeTextFormat", VolumeTextFormat );
+            storage.SetValue( "Security", Security?.Id );
             SettingsStorage settingsStorage = storage;
-            Portfolio portfolio = this.Portfolio;
-            string str = portfolio != null ? portfolio.GetUniqueId() : ( string )null;
-            settingsStorage.SetValue<string>( "Portfolio", str );
-            storage.SetValue<Decimal>( "LimitPrice", this.LimitPrice );
+            Portfolio portfolio = Portfolio;
+            string str = portfolio != null ? portfolio.GetUniqueId() : null;
+            settingsStorage.SetValue( "Portfolio", str );
+            storage.SetValue( "LimitPrice", LimitPrice );
         }
     }
 }

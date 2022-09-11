@@ -21,7 +21,7 @@ namespace StockSharp.Web.Api.Client
 
         Task<BaseEntitySet<DiagramStrategy>> IDiagramStrategyService.FindAsync( long skip, long? count, bool? deleted, string orderBy, bool? orderByDesc, CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<DiagramStrategy>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc);
+            return Get<BaseEntitySet<DiagramStrategy>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc );
         }
     }
 }

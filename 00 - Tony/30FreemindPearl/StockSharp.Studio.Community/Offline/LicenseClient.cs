@@ -26,7 +26,7 @@ namespace StockSharp.Studio.Community.Offline
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<License>>(((IEnumerable<License>)Array.Empty<License>()).ToEntitySet<License>(0));
+            return Task.FromResult( Array.Empty<License>().ToEntitySet( 0));
         }
 
         Task<License> ILicenseService.RenewLicenseAsync(

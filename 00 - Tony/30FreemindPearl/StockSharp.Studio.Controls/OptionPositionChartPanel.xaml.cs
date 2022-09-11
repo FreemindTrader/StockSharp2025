@@ -84,81 +84,81 @@ namespace StockSharp.Studio.Controls
 
         private void MakeDirty()
         {
-            lock ( this._needRefreshLock )
-                this._needRefresh = true;
+            lock ( _needRefreshLock )
+                _needRefresh = true;
         }
 
         public override void Dispose()
         {
-            this._refreshTimer.Stop();
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<SecuritiesRemovedCommand>( ( object )this );
-            this.FilterPanel.Dispose();
+            _refreshTimer.Stop();
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<SecuritiesRemovedCommand>( this );
+            FilterPanel.Dispose();
             base.Dispose();
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "FilterPanel", this.FilterPanel.Save() );
-            storage.SetValue<SettingsStorage>( "PosChart", this.PosChart.Save() );
+            storage.SetValue( "FilterPanel", FilterPanel.Save() );
+            storage.SetValue( "PosChart", PosChart.Save() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.FilterPanel.Load( storage.GetValue<SettingsStorage>( "FilterPanel", ( SettingsStorage )null ) );
-            this.PosChart.Load( storage.GetValue<SettingsStorage>( "PosChart", ( SettingsStorage )null ) );
+            FilterPanel.Load( storage.GetValue<SettingsStorage>( "FilterPanel", null ) );
+            PosChart.Load( storage.GetValue<SettingsStorage>( "PosChart", null ) );
         }
 
         private void RefreshChart()
         {
-            if ( this.FilterPanel.UnderlyingAsset == null )
+            if ( FilterPanel.UnderlyingAsset == null )
                 return;
-            OptionPositionChart posChart = this.PosChart;
-            Decimal? assetPrice = this.FilterPanel.AssetPrice;
-            DateTime? nullable = this.FilterPanel.CurrentDate;
+            OptionPositionChart posChart = PosChart;
+            Decimal? assetPrice = FilterPanel.AssetPrice;
+            DateTime? nullable = FilterPanel.CurrentDate;
             DateTimeOffset? currentTime = nullable.HasValue ? new DateTimeOffset?( ( DateTimeOffset )nullable.GetValueOrDefault() ) : new DateTimeOffset?();
-            nullable = this.FilterPanel.ExpiryDate;
+            nullable = FilterPanel.ExpiryDate;
             DateTimeOffset? expiryDate = nullable.HasValue ? new DateTimeOffset?( ( DateTimeOffset )nullable.GetValueOrDefault() ) : new DateTimeOffset?();
             posChart.Refresh( assetPrice, currentTime, expiryDate );
         }
 
         private void FilterPanel_OnUnderlyingAssetChanged()
         {
-            this.PosChart.UnderlyingAsset = this.FilterPanel.UnderlyingAsset;
-            if ( this.PosChart.UnderlyingAsset != null )
-                ( ( IEnumerable<Security> )this.FilterPanel.Options ).ForEach<Security>( new Action<Security>( ( ( CollectionBase<Security> )this.PosChart.Options ).Add ) );
-            this.Title = LocalizedStrings.Str3239 + " " + this.FilterPanel.UnderlyingAsset?.ToString();
-            this.RefreshChart();
-            this.RaiseChangedCommand();
+            PosChart.UnderlyingAsset = FilterPanel.UnderlyingAsset;
+            if ( PosChart.UnderlyingAsset != null )
+                FilterPanel.Options.ForEach( new Action<Security>( PosChart.Options.Add ) );
+            Title = LocalizedStrings.Str3239 + " " + FilterPanel.UnderlyingAsset?.ToString();
+            RefreshChart();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnFilterChanged()
         {
-            this.RefreshChart();
-            this.RaiseChangedCommand();
+            RefreshChart();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnUseBlackModelChanged()
         {
-            this.PosChart.UseBlackModel = this.FilterPanel.UseBlackModel;
-            this.RefreshChart();
-            this.RaiseChangedCommand();
+            PosChart.UseBlackModel = FilterPanel.UseBlackModel;
+            RefreshChart();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnOptionsChanged()
         {
-            this.PosChart.Options.Clear();
-            ( ( IEnumerable<Security> )this.FilterPanel.Options ).ForEach<Security>( new Action<Security>( ( ( CollectionBase<Security> )this.PosChart.Options ).Add ) );
-            this.RefreshChart();
-            this.RaiseChangedCommand();
+            PosChart.Options.Clear();
+            FilterPanel.Options.ForEach( new Action<Security>( PosChart.Options.Add ) );
+            RefreshChart();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnSecurityChanged( bool isOption, Security security, IEnumerable<KeyValuePair<Level1Fields, object>> values )
         {
-            this.MakeDirty();
+            MakeDirty();
         }        
     }
 }

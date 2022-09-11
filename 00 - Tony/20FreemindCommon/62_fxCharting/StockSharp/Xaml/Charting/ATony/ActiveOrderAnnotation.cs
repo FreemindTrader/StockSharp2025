@@ -59,11 +59,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( string )GetValue( ActiveOrderAnnotation.OrderTextProperty );
+                return ( string )GetValue( OrderTextProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.OrderTextProperty, value );
+                SetValue( OrderTextProperty, value );
             }
         }
 
@@ -71,11 +71,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( string )GetValue( ActiveOrderAnnotation.OrderSizeTextProperty );
+                return ( string )GetValue( OrderSizeTextProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.OrderSizeTextProperty, value );
+                SetValue( OrderSizeTextProperty, value );
             }
         }
 
@@ -83,11 +83,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( Brush )GetValue( ActiveOrderAnnotation.StrokeProperty );
+                return ( Brush )GetValue( StrokeProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.StrokeProperty, value );
+                SetValue( StrokeProperty, value );
             }
         }
 
@@ -95,11 +95,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( Brush )GetValue( ActiveOrderAnnotation.CancelButtonFillProperty );
+                return ( Brush )GetValue( CancelButtonFillProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.CancelButtonFillProperty, value );
+                SetValue( CancelButtonFillProperty, value );
             }
         }
 
@@ -107,11 +107,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( Brush )GetValue( ActiveOrderAnnotation.CancelButtonColorProperty );
+                return ( Brush )GetValue( CancelButtonColorProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.CancelButtonColorProperty, value );
+                SetValue( CancelButtonColorProperty, value );
             }
         }
 
@@ -119,11 +119,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( double )GetValue( ActiveOrderAnnotation.YDragStepProperty );
+                return ( double )GetValue( YDragStepProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.YDragStepProperty, value );
+                SetValue( YDragStepProperty, value );
             }
         }
 
@@ -131,11 +131,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( bool )GetValue( ActiveOrderAnnotation.IsAnimationEnabledProperty );
+                return ( bool )GetValue( IsAnimationEnabledProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.IsAnimationEnabledProperty, value );
+                SetValue( IsAnimationEnabledProperty, value );
             }
         }
 
@@ -143,11 +143,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( string )GetValue( ActiveOrderAnnotation.OrderErrorTextProperty );
+                return ( string )GetValue( OrderErrorTextProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.OrderErrorTextProperty, value );
+                SetValue( OrderErrorTextProperty, value );
             }
         }
 
@@ -155,11 +155,11 @@ namespace fx.Charting.ATony
         {
             get
             {
-                return ( Color )GetValue( ActiveOrderAnnotation.BlinkColorProperty );
+                return ( Color )GetValue( BlinkColorProperty );
             }
             set
             {
-                SetValue( ActiveOrderAnnotation.BlinkColorProperty, value );
+                SetValue( BlinkColorProperty, value );
             }
         }
 
@@ -172,17 +172,17 @@ namespace fx.Charting.ATony
             markerAnnotation.IsEditable = false;
             markerAnnotation.IsSelected = false;
             _axisMarker = markerAnnotation;
-            _axisMarker.SetBindings( UIElement.VisibilityProperty, this, "Visibility", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( Control.ForegroundProperty, this, "Foreground", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( Control.BackgroundProperty, this, "Background", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( Control.BorderBrushProperty, this, "Background", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, this, "XAxisId", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( AnnotationBase.YAxisIdProperty, this, "YAxisId", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( AnnotationBase.Y1Property, this, "Y1", BindingMode.OneWay, null, null );
-            _axisMarker.SetBindings( AnnotationBase.IsHiddenProperty, this, "IsHidden", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( VisibilityProperty, this, "Visibility", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( ForegroundProperty, this, "Foreground", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( BackgroundProperty, this, "Background", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( BorderBrushProperty, this, "Background", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( XAxisIdProperty, this, "XAxisId", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( YAxisIdProperty, this, "YAxisId", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( Y1Property, this, "Y1", BindingMode.OneWay, null, null );
+            _axisMarker.SetBindings( IsHiddenProperty, this, "IsHidden", BindingMode.OneWay, null, null );
             _scrollTimer = new DispatcherTimer( )
             {
-                Interval = ActiveOrderAnnotation._scrollTimerInterval
+                Interval = _scrollTimerInterval
             };
             _scrollTimer.Tick += new EventHandler( ScrollTimerOnTick );
         }
@@ -223,7 +223,7 @@ namespace fx.Charting.ATony
 
                  cancelClick( this );
              };
-                _cancelButton.SetBindings( UIElement.IsEnabledProperty, this, "IsEditable", BindingMode.OneWay, null, null );
+                _cancelButton.SetBindings( IsEnabledProperty, this, "IsEditable", BindingMode.OneWay, null, null );
             }
             _templateInitialized = true;
             //HandleIsEditable( );
@@ -256,8 +256,8 @@ namespace fx.Charting.ATony
 
         protected override void GetPropertiesFromIndex( int index, out DependencyProperty X, out DependencyProperty Y )
         {
-            X = AnnotationBase.X1Property;
-            Y = AnnotationBase.Y1Property;
+            X = X1Property;
+            Y = Y1Property;
         }
 
         protected override void SetBasePoint( Point newPoint, int index, IAxis xAxis, IAxis yAxis )
@@ -338,7 +338,7 @@ namespace fx.Charting.ATony
             {
                 if ( yaxis.AutoRange == AutoRange.Always )
                 {
-                    ( ( DependencyObject )yaxis ).SetCurrentValue( AxisBase.AutoRangeProperty, AutoRange.Once );
+                    ( ( DependencyObject )yaxis ).SetCurrentValue( AxisCore.AutoRangeProperty, AutoRange.Once );
                 }
 
                 if ( !_isOutOfBounds )

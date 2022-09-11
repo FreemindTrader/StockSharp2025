@@ -53,8 +53,8 @@ namespace fx.Indicators
         {
             var result          = new FreemindATR();
             
-            result._description = this._description;
-            result._name        = this._name;
+            result._description = _description;
+            result._name        = _name;
             
             return result;
         }
@@ -85,7 +85,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.RetCode code = fx.TALib.Core.Atr(Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, TimePeriod );
+            TALib.Core.RetCode code = TALib.Core.Atr(Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, TimePeriod );
 
             lock ( IndicatorResult )
             {
@@ -109,7 +109,7 @@ namespace fx.Indicators
 
             var atr           = new double [ indexCount ];
 
-            fx.TALib.Core.RetCode code = fx.TALib.Core.Atr( Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, TimePeriod );            
+            TALib.Core.RetCode code = TALib.Core.Atr( Bars, startIndex, endIndex, atr, out outBeginIdx, out outNBElement, TimePeriod );            
 
             lock ( IndicatorResult )
             {

@@ -228,7 +228,7 @@ namespace fx.Definitions
 				}
 				lPosition++;
 			}
-			return ( byte ) pDest;
+			return pDest;
 		}
 
 
@@ -1410,7 +1410,7 @@ namespace fx.Definitions
 			}
 			else if ( !pOn )
 			{
-				pInput &= ( long ) ~( 1 << ( pPosition - 1 ) );
+				pInput &= ~( 1 << ( pPosition - 1 ) );
 			}
 
 
@@ -1475,7 +1475,7 @@ namespace fx.Definitions
 		/// <returns></returns>
 		public static byte HiByte( short pWord )
 		{
-			return ( ( byte ) ( ( ( short ) ( pWord ) >> 8 ) & 0xFF ) );
+			return ( ( byte ) ( ( pWord >> 8 ) & 0xFF ) );
 		}
 
 		/// <summary>
@@ -1498,11 +1498,11 @@ namespace fx.Definitions
 		{
 			if ( pValueHigh == 0 )
 			{
-				return ( long ) pValueLow;
+				return pValueLow;
 			}
 			long lTemp = SizeOf(pValueHigh);
 			lTemp = ( pValueHigh << ( ( BIT_SIZE_LONG ) - ( ( int ) lTemp + 1 ) ) );
-			return ( long ) ( (long) pValueLow | lTemp );
+			return ( long )pValueLow | lTemp;
 		}
 
 		/// <summary>
@@ -1515,11 +1515,11 @@ namespace fx.Definitions
 		{
 			if ( pValueHigh == 0 )
 			{
-				return ( int ) pValueLow;
+				return pValueLow;
 			}
 			int lTemp = SizeOf(pValueHigh);
 			lTemp = pValueHigh << ( ( BIT_SIZE_INT ) - ( lTemp + 1 ) );
-			return ( int ) ( lTemp | (int)pValueLow );
+			return lTemp | ( int )pValueLow;
 		}
 
 
@@ -1533,7 +1533,7 @@ namespace fx.Definitions
 		{
 			if ( pValueHigh == 0 )
 			{
-				return ( short ) pValueLow;
+				return pValueLow;
 			}
 			int lTemp = SizeOf(pValueHigh);
 			lTemp = pValueHigh << ( ( BIT_SIZE_SHORT ) - ( lTemp + 1 ) );

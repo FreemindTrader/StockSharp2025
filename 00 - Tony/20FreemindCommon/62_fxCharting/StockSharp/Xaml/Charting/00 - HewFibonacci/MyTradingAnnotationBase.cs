@@ -361,7 +361,7 @@ namespace fx.Charting.HewFibonacci
         protected override Point[ ] GetBasePoints( AnnotationCoordinates coordinates )
         {
             IAnnotation[ ] array = MovingLinesPartAnnotations.ToArray( );
-            int num = ( ( IEnumerable<IAnnotation> )array ).Count( );
+            int num = array.Count( );
             Point[ ] pointArray = new Point[ num + 1 ];
             for ( int index = 0; index < num; ++index )
             {
@@ -383,7 +383,7 @@ namespace fx.Charting.HewFibonacci
         {
             Point[ ] basePoints = GetBasePoints( );
             ComparablePoint[ ] comparablePointArray = new ComparablePoint[ basePoints.Length ];
-            for ( int index = 0; index < ( ( IEnumerable<Point> )basePoints ).Count( ); ++index )
+            for ( int index = 0; index < basePoints.Count( ); ++index )
             {
                 Point point = basePoints[ index ];
                 IComparable dataValue1 = XAxis.GetDataValue( point.X );

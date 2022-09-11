@@ -105,19 +105,19 @@ namespace fx.Charting.AUtils
 
         internal static bool IsDivisibleBy( DateTime current, TimeSpan dateSpan )
         {
-            if ( dateSpan.Ticks % DateUtil.OneYear.Ticks == 0L && current.Day == 1 && current.Month == 1 || dateSpan.Ticks % TimeSpanExtensions.FromMonths( 1 ).Ticks == 0L && current.Day == 1 )
+            if ( dateSpan.Ticks % OneYear.Ticks == 0L && current.Day == 1 && current.Month == 1 || dateSpan.Ticks % TimeSpanExtensions.FromMonths( 1 ).Ticks == 0L && current.Day == 1 )
             {
                 return true;
             }
 
-            return DateUtil.RoundUp( current, dateSpan ).Equals( current );
+            return RoundUp( current, dateSpan ).Equals( current );
         }
 
         internal static DateTime RoundUp( DateTime current, TimeSpan dateSpan )
         {
-            if ( dateSpan.IsDivisibleBy( DateUtil.OneYear ) )
+            if ( dateSpan.IsDivisibleBy( OneYear ) )
             {
-                long num = dateSpan.Ticks / DateUtil.OneYear.Ticks;
+                long num = dateSpan.Ticks / OneYear.Ticks;
                 if ( current.Day == 1 && current.Month == 1 && NumberUtil.IsDivisibleBy( current.Year, ( double )num ) )
                 {
                     return current;
@@ -125,27 +125,27 @@ namespace fx.Charting.AUtils
 
                 return new DateTime( ( int )NumberUtil.RoundUp( current.Year + 1, ( double )num ), 1, 1 );
             }
-            if ( dateSpan.IsDivisibleBy( DateUtil.SixMonths ) )
+            if ( dateSpan.IsDivisibleBy( SixMonths ) )
             {
-                if ( current.Day == 1 && DateUtil.HalfMonths.Contains( current.Month ) )
+                if ( current.Day == 1 && HalfMonths.Contains( current.Month ) )
                 {
                     return current;
                 }
 
                 int newMonth = current.Month < 7 ? 7 : 13;
-                return DateUtil.NewAlignedDateTime( current.Year, newMonth );
+                return NewAlignedDateTime( current.Year, newMonth );
             }
-            if ( dateSpan.IsDivisibleBy( DateUtil.ThreeMonths ) )
+            if ( dateSpan.IsDivisibleBy( ThreeMonths ) )
             {
-                if ( current.Day == 1 && DateUtil.QuarterMonths.Contains( current.Month ) )
+                if ( current.Day == 1 && QuarterMonths.Contains( current.Month ) )
                 {
                     return current;
                 }
 
                 int newMonth = current.Month < 4 ? 4 : ( current.Month < 7 ? 7 : ( current.Month < 10 ? 10 : 13 ) );
-                return DateUtil.NewAlignedDateTime( current.Year, newMonth );
+                return NewAlignedDateTime( current.Year, newMonth );
             }
-            if ( !dateSpan.IsDivisibleBy( DateUtil.OneMonth ) )
+            if ( !dateSpan.IsDivisibleBy( OneMonth ) )
             {
                 return new DateTime( ( long )NumberUtil.RoundUp( current.Ticks, ( double )dateSpan.Ticks ) );
             }
@@ -155,9 +155,9 @@ namespace fx.Charting.AUtils
                 return current;
             }
 
-            long num1 =   ( int )( dateSpan.Ticks / DateUtil.OneMonth.Ticks );
+            long num1 =   ( int )( dateSpan.Ticks / OneMonth.Ticks );
             int newMonth1 = ( int )NumberUtil.RoundUp(    current.Month + 1 , ( double )num1 );
-            return DateUtil.NewAlignedDateTime( current.Year, newMonth1 );
+            return NewAlignedDateTime( current.Year, newMonth1 );
         }
 
         private static DateTime NewAlignedDateTime( int newYear, int newMonth )
@@ -204,20 +204,20 @@ namespace fx.Charting.AUtils
             }
             else
             {
-                PooledList<int> source = DateUtil.BiMonths;
+                PooledList<int> source = BiMonths;
                 if ( num1 == 2 )
                 {
-                    source = DateUtil.BiMonths;
+                    source = BiMonths;
                 }
 
                 if ( num1 == 3 )
                 {
-                    source = DateUtil.QuarterMonths;
+                    source = QuarterMonths;
                 }
 
                 if ( num1 == 6 )
                 {
-                    source = DateUtil.HalfMonths;
+                    source = HalfMonths;
                 }
 
                 num2 = source.First( x => x > current.Month );

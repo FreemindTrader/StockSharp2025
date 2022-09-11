@@ -78,10 +78,10 @@ namespace StockSharp.Algo.Strategies.Testing
 		/// </summary>
 		public EmulationSettings EmulationSettings { get; }
 
-		/// <summary>
-		/// Has the emulator ended its operation due to end of data, or it was interrupted through the <see cref="BatchEmulation.Stop"/>method.
-		/// </summary>
-		public bool IsFinished { get; private set; }
+        /// <summary>
+        /// Has the emulator ended its operation due to end of data, or it was interrupted through the <see cref="Stop"/>method.
+        /// </summary>
+        public bool IsFinished { get; private set; }
 
 		private ChannelStates _state = ChannelStates.Stopped;
 		

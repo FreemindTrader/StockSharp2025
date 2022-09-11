@@ -32,7 +32,7 @@ namespace fx.Algorithm
         {
             get
             {
-                if( this.Enabled == false )
+                if( Enabled == false )
                 {
                     return null;
                 }
@@ -93,7 +93,7 @@ namespace fx.Algorithm
         {
             get
             {
-                if( this.Enabled == false )
+                if( Enabled == false )
                 {
                     return null;
                 }
@@ -339,7 +339,7 @@ namespace fx.Algorithm
                 _indicatorSecurity = dataProvider.Security;
 
                 _instrumentPointSize = _indicatorSecurity.PriceStep.HasValue ? ( double ) _indicatorSecurity.PriceStep.Value : 1;
-                _instrumentDigits = _indicatorSecurity.Decimals.HasValue ? ( int ) _indicatorSecurity.Decimals.Value : 5;
+                _instrumentDigits = _indicatorSecurity.Decimals.HasValue ? _indicatorSecurity.Decimals.Value : 5;
 
                 _results = new IndicatorResults( this, _results.SetsNamesList.ToArray( ), FinancialHelper.CalculateStorageSize( _indicatorBarsRepo.Period.Value ) );
 
@@ -468,15 +468,15 @@ namespace fx.Algorithm
         /// <returns></returns>
         public string GetUserFriendlyName( )
         {
-            string name = this.GetType( ).Name;
-            UserFriendlyNameAttribute.GetTypeAttributeValue( this.GetType( ), ref name );
+            string name = GetType( ).Name;
+            UserFriendlyNameAttribute.GetTypeAttributeValue( GetType( ), ref name );
 
             return name;
         }
 
         public void FreemindCalculateIndicators( bool fullRecalculation, HistoricBarsUpdateEventArg e )
         {
-            if( this.Initialized == false || this.Enabled == false )
+            if( Initialized == false || Enabled == false )
             {
                 return;
             }

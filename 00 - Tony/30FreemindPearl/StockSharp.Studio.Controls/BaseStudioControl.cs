@@ -44,11 +44,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( string )this.GetValue( TitleProperty );
+                return ( string )GetValue( TitleProperty );
             }
             set
             {
-                this.SetValue( TitleProperty, value );
+                SetValue( TitleProperty, value );
             }
         }
 
@@ -56,11 +56,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( Uri )this.GetValue( IconProperty );
+                return ( Uri )GetValue( IconProperty );
             }
             set
             {
-                this.SetValue( IconProperty, value );
+                SetValue( IconProperty, value );
             }
         }
 
@@ -82,11 +82,11 @@ namespace StockSharp.Studio.Controls
 
         protected BaseStudioControl()
         {
-            Type type = this.GetType();
-            this.Key = type.CreateKey();
-            this.Title = type.GetDisplayName( null );
-            this.Icon = type.GetIconUrl();
-            this.SaveWithLayout = true;
+            Type type = GetType();
+            Key = type.CreateKey();
+            Title = type.GetDisplayName( null );
+            Icon = type.GetIconUrl();
+            SaveWithLayout = true;
         }
 
         protected static IStudioCommandService CommandService
@@ -155,14 +155,14 @@ namespace StockSharp.Studio.Controls
 
         protected void WhenLoaded( Action action )
         {
-            this._loadedAction = action;
-            this.Loaded += new RoutedEventHandler( this.OnLoaded );
+            _loadedAction = action;
+            Loaded += new RoutedEventHandler( OnLoaded );
         }
 
         private void OnLoaded( object sender, RoutedEventArgs e )
         {
-            this.Loaded -= new RoutedEventHandler( this.OnLoaded );
-            Action loadedAction = this._loadedAction;
+            Loaded -= new RoutedEventHandler( OnLoaded );
+            Action loadedAction = _loadedAction;
             if ( loadedAction == null )
                 return;
             loadedAction();
@@ -175,7 +175,7 @@ namespace StockSharp.Studio.Controls
 
         public virtual void Dispose( CloseReason reason )
         {
-            this.Dispose();
+            Dispose();
         }
 
         public virtual void Dispose()
@@ -188,16 +188,16 @@ namespace StockSharp.Studio.Controls
 
         public virtual void Load( SettingsStorage storage )
         {
-            if ( this.IsTitleEditable )
-                this.Title = storage.GetValue<string>( "Title", this.Title );
-            this.Key = storage.GetValue<string>( "Key", null );
+            if ( IsTitleEditable )
+                Title = storage.GetValue( "Title", Title );
+            Key = storage.GetValue<string>( "Key", null );
         }
 
         public virtual void Save( SettingsStorage storage )
         {
-            if ( this.IsTitleEditable )
-                storage.SetValue<string>( "Title", this.Title );
-            storage.SetValue<string>( "Key", this.Key );
+            if ( IsTitleEditable )
+                storage.SetValue( "Title", Title );
+            storage.SetValue( "Key", Key );
         }
 
         protected void RaiseChangedCommand()
@@ -216,7 +216,7 @@ namespace StockSharp.Studio.Controls
         {
             GuiDispatcher.GlobalDispatcher.AddAction( () =>
             {
-                PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                PropertyChangedEventHandler propertyChanged = PropertyChanged;
                 if ( propertyChanged == null )
                     return;
                 propertyChanged( this, new PropertyChangedEventArgs( name ) );

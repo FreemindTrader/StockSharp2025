@@ -25,26 +25,26 @@ namespace StockSharp.Studio.Core.Configuration
 
         public LogConfig()
         {
-            this._logSettingsFile = Path.Combine( Paths.AppDataPath, "logManager.json" );
-            this.LogsDir = Path.Combine( Paths.AppDataPath, "Logs" );
-            this._manager = new Lazy<LogManager>( ( Func<LogManager> )( () =>
+            _logSettingsFile = Path.Combine( Paths.AppDataPath, "logManager.json" );
+            LogsDir = Path.Combine( Paths.AppDataPath, "Logs" );
+            _manager = new Lazy<LogManager>( () =>
                {
                    LogManager logManager = ServicesRegistry.LogManager ?? new LogManager();
-                   if ( this._logSettingsFile.IsConfigExists() )
+                   if ( _logSettingsFile.IsConfigExists() )
                    {
-                       if ( !logManager.LoadIfNotNull( this._logSettingsFile.Deserialize<SettingsStorage>() ) )
+                       if ( !logManager.LoadIfNotNull( _logSettingsFile.Deserialize<SettingsStorage>() ) )
                        {
                            InitLogsDefault();
                        }
                        else
                        {
-                           FileLogListener fileLogListener = logManager.Listeners.OfType<FileLogListener>().FirstOrDefault<FileLogListener>( ( Func<FileLogListener, bool> )( fl => !fl.LogDirectory.IsEmpty() ) );
+                           FileLogListener fileLogListener = logManager.Listeners.OfType<FileLogListener>().FirstOrDefault( fl => !fl.LogDirectory.IsEmpty() );
                            if ( fileLogListener != null )
-                               this.LogsDir = fileLogListener.LogDirectory;
-                           if ( !LogConfig.OverrideLogsDirectory.IsEmpty() )
+                               LogsDir = fileLogListener.LogDirectory;
+                           if ( !OverrideLogsDirectory.IsEmpty() )
                            {
-                               this.LogsDir = LogConfig.OverrideLogsDirectory;
-                               logManager.Listeners.OfType<FileLogListener>().ForEach<FileLogListener>( ( Action<FileLogListener> )( fl => fl.LogDirectory = this.LogsDir ) );
+                               LogsDir = OverrideLogsDirectory;
+                               logManager.Listeners.OfType<FileLogListener>().ForEach( fl => fl.LogDirectory = LogsDir );
                            }
                        }
                    }
@@ -54,17 +54,17 @@ namespace StockSharp.Studio.Core.Configuration
 
                    void InitLogsDefault()
                    {
-                       logManager.Listeners.Add( ( ILogListener )new FileLogListener()
+                       logManager.Listeners.Add( new FileLogListener()
                        {
                            Append = true,
-                           LogDirectory = this.LogsDir,
+                           LogDirectory = LogsDir,
                            MaxLength = 104857600L,
                            MaxCount = 10,
                            SeparateByDates = SeparateByDateModes.SubDirectories
                        } );
-                       logManager.Save().Serialize<SettingsStorage>( this._logSettingsFile );
+                       logManager.Save().Serialize( _logSettingsFile );
                    }
-               } ) );
+               } );
         }
 
         public string LogsDir { get; private set; }
@@ -73,13 +73,13 @@ namespace StockSharp.Studio.Core.Configuration
         {
             get
             {
-                return this._manager.Value;
+                return _manager.Value;
             }
         }
 
         public void DeleteFiles()
         {
-            File.Delete( this._logSettingsFile );
+            File.Delete( _logSettingsFile );
         }
     }
 }

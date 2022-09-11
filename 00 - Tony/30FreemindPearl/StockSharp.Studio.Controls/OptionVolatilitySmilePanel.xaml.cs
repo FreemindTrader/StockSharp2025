@@ -55,33 +55,33 @@ namespace StockSharp.Studio.Controls
 
         public OptionVolatilitySmilePanel()
         {
-            this.InitializeComponent();
-            this.FilterPanel.SubscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<ResetedCommand>( ( object )this, true, ( Action<ResetedCommand> )( cmd => this.ClearSmiles() ), ( Func<ResetedCommand, bool> )null );
-            commandService.Register<SecuritiesRemovedCommand>( ( object )this, false, ( Action<SecuritiesRemovedCommand> )( cmd =>
+            InitializeComponent();
+            FilterPanel.SubscriptionManager = new SubscriptionManager( this );
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<ResetedCommand>( this, true, cmd => ClearSmiles(), null );
+            commandService.Register<SecuritiesRemovedCommand>( this, false, cmd =>
                 {
-                    Security[ ] array = this.FilterPanel.RemoveOptions( cmd.Securities ).ToArray<Security>();
+                    Security[ ] array = FilterPanel.RemoveOptions( cmd.Securities ).ToArray();
                     if ( array.Length == 0 )
                         return;
                     foreach ( Security security in array )
-                        this._model.Remove( security );
-                    this.MakeDirty();
-                    this.RaiseChangedCommand();
-                } ), ( Func<SecuritiesRemovedCommand, bool> )null );
-            this._model = new OptionDeskModel()
+                        _model.Remove( security );
+                    MakeDirty();
+                    RaiseChangedCommand();
+                }, null );
+            _model = new OptionDeskModel()
             {
-                MarketDataProvider = BaseStudioControl.MarketDataProvider,
-                ExchangeInfoProvider = BaseStudioControl.ExchangeInfoProvider
+                MarketDataProvider = MarketDataProvider,
+                ExchangeInfoProvider = ExchangeInfoProvider
             };
-            this.FilterPanel.SecurityProvider = BaseStudioControl.SecurityProvider;
-            this.FilterPanel.MarketDataProvider = BaseStudioControl.MarketDataProvider;
-            this._putBidSmile = this.SmileChart.CreateSmile( "Put (B)", Colors.DarkRed, ChartIndicatorDrawStyles.Line, OptionVolatilitySmilePanel._putBidSmileId );
-            this._putAskSmile = this.SmileChart.CreateSmile( "Put (A)", Colors.Red, ChartIndicatorDrawStyles.Line, OptionVolatilitySmilePanel._putAskSmileId );
-            this._putLastSmile = this.SmileChart.CreateSmile( "Put (L)", Colors.OrangeRed, ChartIndicatorDrawStyles.Line, OptionVolatilitySmilePanel._putLastSmileId );
-            this._callBidSmile = this.SmileChart.CreateSmile( "Call (B)", Colors.GreenYellow, ChartIndicatorDrawStyles.Line, OptionVolatilitySmilePanel._callBidSmileId );
-            this._callAskSmile = this.SmileChart.CreateSmile( "Call (A)", Colors.DarkGreen, ChartIndicatorDrawStyles.Line, OptionVolatilitySmilePanel._callAskSmileId );
-            this._callLastSmile = this.SmileChart.CreateSmile( "Call (L)", Colors.DarkOliveGreen, ChartIndicatorDrawStyles.Line, OptionVolatilitySmilePanel._callLastSmileId );
+            FilterPanel.SecurityProvider = SecurityProvider;
+            FilterPanel.MarketDataProvider = MarketDataProvider;
+            _putBidSmile = SmileChart.CreateSmile( "Put (B)", Colors.DarkRed, ChartIndicatorDrawStyles.Line, _putBidSmileId );
+            _putAskSmile = SmileChart.CreateSmile( "Put (A)", Colors.Red, ChartIndicatorDrawStyles.Line, _putAskSmileId );
+            _putLastSmile = SmileChart.CreateSmile( "Put (L)", Colors.OrangeRed, ChartIndicatorDrawStyles.Line, _putLastSmileId );
+            _callBidSmile = SmileChart.CreateSmile( "Call (B)", Colors.GreenYellow, ChartIndicatorDrawStyles.Line, _callBidSmileId );
+            _callAskSmile = SmileChart.CreateSmile( "Call (A)", Colors.DarkGreen, ChartIndicatorDrawStyles.Line, _callAskSmileId );
+            _callLastSmile = SmileChart.CreateSmile( "Call (L)", Colors.DarkOliveGreen, ChartIndicatorDrawStyles.Line, _callLastSmileId );
 
             _refreshTimer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds( 5.0 ) };
             _refreshTimer.Tick += ( s, e ) =>
@@ -102,17 +102,17 @@ namespace StockSharp.Studio.Controls
 
         private void MakeDirty()
         {
-            lock ( this._needRefreshLock )
-                this._needRefresh = true;
+            lock ( _needRefreshLock )
+                _needRefresh = true;
         }
 
         public override void Dispose()
         {
-            this._refreshTimer.Stop();
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<SecuritiesRemovedCommand>( ( object )this );
-            this.FilterPanel.Dispose();
+            _refreshTimer.Stop();
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<SecuritiesRemovedCommand>( this );
+            FilterPanel.Dispose();
             base.Dispose();
         }
 
@@ -132,92 +132,92 @@ namespace StockSharp.Studio.Controls
 
         private void ClearSmiles()
         {
-            this._putBidSmile.Clear();
-            this._putAskSmile.Clear();
-            this._putLastSmile.Clear();
-            this._callBidSmile.Clear();
-            this._callAskSmile.Clear();
-            this._callLastSmile.Clear();
+            _putBidSmile.Clear();
+            _putAskSmile.Clear();
+            _putLastSmile.Clear();
+            _callBidSmile.Clear();
+            _callAskSmile.Clear();
+            _callLastSmile.Clear();
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.FilterPanel.Load( storage.GetValue<SettingsStorage>( "FilterPanel", ( SettingsStorage )null ) );
-            this.SmileChart.Load( storage.GetValue<SettingsStorage>( "SmileChart", ( SettingsStorage )null ) );
-            KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement> keyValuePair = this.SmileChart.Elements.First<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>( ( Func<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>, bool> )( e => e.Value.Id == OptionVolatilitySmilePanel._putBidSmileId ) );
-            this._putBidSmile = keyValuePair.Key;
-            keyValuePair = this.SmileChart.Elements.First<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>( ( Func<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>, bool> )( e => e.Value.Id == OptionVolatilitySmilePanel._putAskSmileId ) );
-            this._putAskSmile = keyValuePair.Key;
-            keyValuePair = this.SmileChart.Elements.First<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>( ( Func<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>, bool> )( e => e.Value.Id == OptionVolatilitySmilePanel._putLastSmileId ) );
-            this._putLastSmile = keyValuePair.Key;
-            keyValuePair = this.SmileChart.Elements.First<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>( ( Func<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>, bool> )( e => e.Value.Id == OptionVolatilitySmilePanel._callBidSmileId ) );
-            this._callBidSmile = keyValuePair.Key;
-            keyValuePair = this.SmileChart.Elements.First<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>( ( Func<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>, bool> )( e => e.Value.Id == OptionVolatilitySmilePanel._callAskSmileId ) );
-            this._callAskSmile = keyValuePair.Key;
-            keyValuePair = this.SmileChart.Elements.First<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>( ( Func<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>, bool> )( e => e.Value.Id == OptionVolatilitySmilePanel._callLastSmileId ) );
-            this._callLastSmile = keyValuePair.Key;
+            FilterPanel.Load( storage.GetValue<SettingsStorage>( "FilterPanel", null ) );
+            SmileChart.Load( storage.GetValue<SettingsStorage>( "SmileChart", null ) );
+            KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement> keyValuePair = SmileChart.Elements.First( e => e.Value.Id == _putBidSmileId );
+            _putBidSmile = keyValuePair.Key;
+            keyValuePair = SmileChart.Elements.First( e => e.Value.Id == _putAskSmileId );
+            _putAskSmile = keyValuePair.Key;
+            keyValuePair = SmileChart.Elements.First( e => e.Value.Id == _putLastSmileId );
+            _putLastSmile = keyValuePair.Key;
+            keyValuePair = SmileChart.Elements.First( e => e.Value.Id == _callBidSmileId );
+            _callBidSmile = keyValuePair.Key;
+            keyValuePair = SmileChart.Elements.First( e => e.Value.Id == _callAskSmileId );
+            _callAskSmile = keyValuePair.Key;
+            keyValuePair = SmileChart.Elements.First( e => e.Value.Id == _callLastSmileId );
+            _callLastSmile = keyValuePair.Key;
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "FilterPanel", this.FilterPanel.Save() );
-            storage.SetValue<SettingsStorage>( "SmileChart", this.SmileChart.Save() );
+            storage.SetValue( "FilterPanel", FilterPanel.Save() );
+            storage.SetValue( "SmileChart", SmileChart.Save() );
         }
 
         private void RefreshModel()
         {
-            OptionDeskModel model = this._model;
-            DateTime? currentDate = this.FilterPanel.CurrentDate;
+            OptionDeskModel model = _model;
+            DateTime? currentDate = FilterPanel.CurrentDate;
             DateTimeOffset? currentTime = currentDate.HasValue ? new DateTimeOffset?( ( DateTimeOffset )currentDate.GetValueOrDefault() ) : new DateTimeOffset?();
-            Decimal? assetPrice = this.FilterPanel.AssetPrice;
+            Decimal? assetPrice = FilterPanel.AssetPrice;
             model.Refresh( currentTime, assetPrice );
-            this.ClearSmiles();
-            foreach ( OptionDeskRow row in this._model.Rows )
+            ClearSmiles();
+            foreach ( OptionDeskRow row in _model.Rows )
             {
                 Decimal? strike = row.Strike;
                 if ( strike.HasValue )
                 {
-                    OptionVolatilitySmilePanel.TryAddSmileItem( this._callBidSmile, strike.Value, row.Call?.ImpliedVolatilityBestBid );
-                    OptionVolatilitySmilePanel.TryAddSmileItem( this._callAskSmile, strike.Value, row.Call?.ImpliedVolatilityBestAsk );
-                    OptionVolatilitySmilePanel.TryAddSmileItem( this._callLastSmile, strike.Value, row.Call?.ImpliedVolatilityLastTrade );
-                    OptionVolatilitySmilePanel.TryAddSmileItem( this._putBidSmile, strike.Value, row.Put?.ImpliedVolatilityBestBid );
-                    OptionVolatilitySmilePanel.TryAddSmileItem( this._putAskSmile, strike.Value, row.Put?.ImpliedVolatilityBestAsk );
-                    OptionVolatilitySmilePanel.TryAddSmileItem( this._putLastSmile, strike.Value, row.Put?.ImpliedVolatilityLastTrade );
+                    TryAddSmileItem( _callBidSmile, strike.Value, row.Call?.ImpliedVolatilityBestBid );
+                    TryAddSmileItem( _callAskSmile, strike.Value, row.Call?.ImpliedVolatilityBestAsk );
+                    TryAddSmileItem( _callLastSmile, strike.Value, row.Call?.ImpliedVolatilityLastTrade );
+                    TryAddSmileItem( _putBidSmile, strike.Value, row.Put?.ImpliedVolatilityBestBid );
+                    TryAddSmileItem( _putAskSmile, strike.Value, row.Put?.ImpliedVolatilityBestAsk );
+                    TryAddSmileItem( _putLastSmile, strike.Value, row.Put?.ImpliedVolatilityLastTrade );
                 }
             }
         }
 
         private void FilterPanel_OnUnderlyingAssetChanged()
         {
-            this._model.UnderlyingAsset = this.FilterPanel.UnderlyingAsset;
-            if ( this._model.UnderlyingAsset != null )
-                ( ( IEnumerable<Security> )this.FilterPanel.Options ).ForEach<Security>( new Action<Security>( this._model.Add ) );
-            this.Title = LocalizedStrings.VolatilitySmile + " " + this._model.UnderlyingAsset?.ToString();
-            this.RefreshModel();
-            this.RaiseChangedCommand();
+            _model.UnderlyingAsset = FilterPanel.UnderlyingAsset;
+            if ( _model.UnderlyingAsset != null )
+                FilterPanel.Options.ForEach( new Action<Security>( _model.Add ) );
+            Title = LocalizedStrings.VolatilitySmile + " " + _model.UnderlyingAsset?.ToString();
+            RefreshModel();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnFilterChanged()
         {
-            this.RefreshModel();
-            this.RaiseChangedCommand();
+            RefreshModel();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnUseBlackModelChanged()
         {
-            this._model.UseBlackModel = this.FilterPanel.UseBlackModel;
-            this.RefreshModel();
-            this.RaiseChangedCommand();
+            _model.UseBlackModel = FilterPanel.UseBlackModel;
+            RefreshModel();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnOptionsChanged()
         {
-            this._model.Clear();
-            ( ( IEnumerable<Security> )this.FilterPanel.Options ).ForEach<Security>( new Action<Security>( this._model.Add ) );
-            this.RefreshModel();
-            this.RaiseChangedCommand();
+            _model.Clear();
+            FilterPanel.Options.ForEach( new Action<Security>( _model.Add ) );
+            RefreshModel();
+            RaiseChangedCommand();
         }
 
         private void FilterPanel_OnSecurityChanged(
@@ -225,7 +225,7 @@ namespace StockSharp.Studio.Controls
           Security security,
           IEnumerable<KeyValuePair<Level1Fields, object>> values )
         {
-            this.MakeDirty();
+            MakeDirty();
         }        
     }
 }

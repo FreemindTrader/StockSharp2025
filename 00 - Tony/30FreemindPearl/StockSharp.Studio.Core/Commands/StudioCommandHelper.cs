@@ -21,12 +21,12 @@ namespace StockSharp.Studio.Core.Commands
 
         public static void Process( this IStudioCommand command, object sender, object[ ] targets )
         {
-            StudioCommandHelper.Service.Process( sender, command, targets, false );
+            Service.Process( sender, command, targets, false );
         }
 
         public static void Process( this IStudioCommand command, object sender, bool isSyncProcess = false )
         {
-            StudioCommandHelper.Service.Process( sender, command, ( object[ ] )null, isSyncProcess );
+            Service.Process( sender, command, null, isSyncProcess );
         }
 
         public static void SyncProcess( this IStudioCommand command, object sender )
@@ -36,22 +36,22 @@ namespace StockSharp.Studio.Core.Commands
 
         public static void RouteToGlobal( this IStudioCommand command, bool isSyncProcess = false )
         {
-            command.Process( ( object )StudioCommandHelper.Service.GlobalScope, false );
+            command.Process( Service.GlobalScope, false );
         }
 
         public static bool CanProcess( this IStudioCommand command, object sender )
         {
-            return StudioCommandHelper.Service.CanProcess( sender, command );
+            return Service.CanProcess( sender, command );
         }
 
         public static TCommand Top<TCommand>( this TCommand command ) where TCommand : BaseStudioCommand
         {
-            return command.Direction<TCommand>( StudioCommandDirections.Top );
+            return command.Direction( StudioCommandDirections.Top );
         }
 
         public static TCommand Deep<TCommand>( this TCommand command ) where TCommand : BaseStudioCommand
         {
-            return command.Direction<TCommand>( StudioCommandDirections.Deep );
+            return command.Direction( StudioCommandDirections.Deep );
         }
 
         public static TCommand Direction<TCommand>(
@@ -59,7 +59,7 @@ namespace StockSharp.Studio.Core.Commands
           StudioCommandDirections possibleDirection )
           where TCommand : BaseStudioCommand
         {
-            if ( ( object )command == null )
+            if ( command == null )
                 throw new ArgumentNullException( nameof( command ) );
             command.PossibleDirection = possibleDirection;
             return command;
@@ -75,7 +75,7 @@ namespace StockSharp.Studio.Core.Commands
         {
             if ( handler == null )
                 throw new ArgumentNullException( nameof( handler ) );
-            service.Register<TCommand>( listener, guiAsync, ( Action<object, TCommand> )( ( sender, cmd ) => handler( cmd ) ), canExecute );
+            service.Register( listener, guiAsync, ( sender, cmd ) => handler( cmd ), canExecute );
         }
     }
 }

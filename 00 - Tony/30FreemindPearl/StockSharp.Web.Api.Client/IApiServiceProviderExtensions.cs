@@ -17,7 +17,7 @@ namespace StockSharp.Web.Api.Client
 
         public static TService GetService<TService>(this IApiServiceProvider provider, string token)
         {
-            return provider.CheckOnNull<IApiServiceProvider>(nameof(provider)).GetService<TService>(token.Secure());
+            return provider.CheckOnNull( nameof(provider)).GetService<TService>(token.Secure());
         }
     }
 }

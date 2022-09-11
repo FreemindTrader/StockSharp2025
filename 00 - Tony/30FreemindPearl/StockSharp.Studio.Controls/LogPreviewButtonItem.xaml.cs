@@ -22,7 +22,7 @@ namespace StockSharp.Studio.Controls
 {
     public partial class LogPreviewButtonItem : BarButtonItem, ILogListener, IPersistable, IDisposable, IStudioControl, IComponentConnector
     {
-        public static readonly DependencyProperty HasErrorsProperty = DependencyProperty.Register( nameof( HasErrors ), typeof( bool ), typeof( LogPreviewButtonItem ), new PropertyMetadata( ( object )false ) );
+        public static readonly DependencyProperty HasErrorsProperty = DependencyProperty.Register( nameof( HasErrors ), typeof( bool ), typeof( LogPreviewButtonItem ), new PropertyMetadata( false ) );
         private bool _logControlOpened;
         
 
@@ -30,44 +30,44 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( bool )this.GetValue( LogPreviewButtonItem.HasErrorsProperty );
+                return ( bool )GetValue( HasErrorsProperty );
             }
             set
             {
-                this.SetValue( LogPreviewButtonItem.HasErrorsProperty, ( object )value );
+                SetValue( HasErrorsProperty, value );
             }
         }
 
         public LogPreviewButtonItem()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             if ( this.IsDesignMode() )
                 return;
-            StudioServicesRegistry.CommandService.Register<ControlOpenedCommand>( ( object )this, false, ( Action<ControlOpenedCommand> )( cmd =>
+            StudioServicesRegistry.CommandService.Register<ControlOpenedCommand>( this, false, cmd =>
                 {
-                    this._logControlOpened = cmd.Control.GetType() == typeof( LogManagerPanel );
-                    if ( !this._logControlOpened )
+                    _logControlOpened = cmd.Control.GetType() == typeof( LogManagerPanel );
+                    if ( !_logControlOpened )
                         return;
-                    GuiDispatcher.GlobalDispatcher.AddAction( ( Action )( () => this.HasErrors = false ) );
-                } ), ( Func<ControlOpenedCommand, bool> )null );
+                    GuiDispatcher.GlobalDispatcher.AddAction( () => HasErrors = false );
+                }, null );
         }
 
         private void LogPreviewButtonItem_OnItemClick( object sender, ItemClickEventArgs e )
         {
-            new OpenWindowCommand( typeof( LogManagerPanel ).GUID.ToString(), typeof( LogManagerPanel ), true ).SyncProcess( ( object )this );
-            this.HasErrors = false;
+            new OpenWindowCommand( typeof( LogManagerPanel ).GUID.ToString(), typeof( LogManagerPanel ), true ).SyncProcess( this );
+            HasErrors = false;
         }
 
         void ILogListener.WriteMessages( IEnumerable<LogMessage> messages )
         {
-            if ( this._logControlOpened )
+            if ( _logControlOpened )
                 return;
             foreach ( LogMessage message in messages )
             {
                 if ( message.Level == LogLevels.Error )
                 {
-                    this._logControlOpened = true;
-                    GuiDispatcher.GlobalDispatcher.AddAction( ( Action )( () => this.HasErrors = true ) );
+                    _logControlOpened = true;
+                    GuiDispatcher.GlobalDispatcher.AddAction( () => HasErrors = true );
                 }
             }
         }
@@ -88,7 +88,7 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( string )null;
+                return null;
             }
             set
             {
@@ -107,7 +107,7 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( Uri )null;
+                return null;
             }
         }
 

@@ -19,12 +19,12 @@ namespace StockSharp.Studio.Community.Offline
 
         Task<TEntity> IBaseEntityService<TEntity>.AddAsync( TEntity entity, CancellationToken cancellationToken)
         {
-            return Task.FromResult<TEntity>(entity);
+            return Task.FromResult( entity);
         }
 
         Task<TEntity[]> IBaseEntityService<TEntity>.AddBatchAsync( TEntity[] entities, CancellationToken cancellationToken)
         {
-            return Task.FromResult<TEntity[]>(entities);
+            return Task.FromResult( entities);
         }
 
         Task<bool> IBaseEntityService<TEntity>.DeleteAsync( long id, CancellationToken cancellationToken)
@@ -54,7 +54,7 @@ namespace StockSharp.Studio.Community.Offline
 
         Task<TEntity> IBaseEntityService<TEntity>.UpdateAsync( TEntity entity, CancellationToken cancellationToken)
         {
-            return Task.FromResult<TEntity>(entity);
+            return Task.FromResult( entity);
         }
     }
 }

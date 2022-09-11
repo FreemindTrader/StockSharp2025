@@ -164,10 +164,10 @@ namespace StockSharp.Messages
 		[MainCategory]
 		public string OrderStringId { get; set; }
 
-		/// <summary>
-		/// Board order id. Uses in case of <see cref="ExecutionMessage.OrderId"/> and <see cref="ExecutionMessage.OrderStringId"/> is a brokerage system ids.
-		/// </summary>
-		[DataMember]
+        /// <summary>
+        /// Board order id. Uses in case of <see cref="OrderId"/> and <see cref="OrderStringId"/> is a brokerage system ids.
+        /// </summary>
+        [DataMember]
 		[DisplayNameLoc(LocalizedStrings.Str117Key)]
 		[DescriptionLoc(LocalizedStrings.Str118Key)]
 		[MainCategory]

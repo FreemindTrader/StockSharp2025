@@ -51,8 +51,8 @@ namespace fx.Indicators
         {
             var result          = new FreemindEma();
 
-            result._description = this._description;
-            result._name        = this._name;
+            result._description = _description;
+            result._name        = _name;
 
             return result;
         }
@@ -103,7 +103,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
+            TALib.Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
             
             lock ( IndicatorResult )
             {
@@ -127,7 +127,7 @@ namespace fx.Indicators
 
             var ema          = new double [ indexCount ];
 
-            fx.TALib.Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
+            TALib.Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
             
             lock ( IndicatorResult )
             {

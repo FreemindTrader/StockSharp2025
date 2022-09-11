@@ -67,7 +67,7 @@ namespace fx.Collections
         /// <returns></returns>
         public new bool Add( TClass item )
         {
-            if( SingleEntryMode && this.Contains( item ) )
+            if( SingleEntryMode && Contains( item ) )
             {
                 return false;
             }
@@ -85,7 +85,7 @@ namespace fx.Collections
 
                 foreach( TClass item in collection )
                 {
-                    if( this.Contains( item ) == false )
+                    if( Contains( item ) == false )
                     {
                         items.Add( item );
                     }
@@ -101,7 +101,7 @@ namespace fx.Collections
 
         public new void Insert( int index, TClass item )
         {
-            if( SingleEntryMode && this.Contains( item ) )
+            if( SingleEntryMode && Contains( item ) )
             {
                 return;
             }
@@ -117,7 +117,7 @@ namespace fx.Collections
 
                 foreach( TClass item in collection )
                 {
-                    if( this.Contains( item ) == false )
+                    if( Contains( item ) == false )
                     {
                         items.Add( item );
                     }
@@ -134,7 +134,7 @@ namespace fx.Collections
         {
             foreach( TClass item in items )
             {
-                base.Remove( item );
+                Remove( item );
             }
         }
     }

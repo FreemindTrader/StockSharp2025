@@ -43,16 +43,16 @@ namespace StockSharp.Studio.Controls
 
         public ContinuousSecurityPanel()
         {
-            this.InputBorder.Child = ( UIElement )this.CreateControl();
-            this.IndexSecurityWindow.Caption = ( object )LocalizedStrings.ContinuousSecurity;
-            this._editor.Changed += new Action( this.SecurityChanged );
-            this._editor.Drop += new DragEventHandler( this.EditorOnDrop );
-            ISecurityProvider secProvider = BaseStudioControl.SecurityProvider;
+            InputBorder.Child = CreateControl();
+            IndexSecurityWindow.Caption = LocalizedStrings.ContinuousSecurity;
+            _editor.Changed += new Action( SecurityChanged );
+            _editor.Drop += new DragEventHandler( EditorOnDrop );
+            ISecurityProvider secProvider = SecurityProvider;
             DateTime today = DateTime.Today;
             DateTime from = today.AddMonths( -4 );
             today = DateTime.Today;
             DateTime to = today.AddMonths( 6 );
-            Func<string, Security> getSecurity = ( Func<string, Security> )( code => secProvider.LookupById( code + "@" + ExchangeBoard.Forts.Code ) );
+            Func<string, Security> getSecurity = code => secProvider.LookupById( code + "@" + ExchangeBoard.Forts.Code );
             foreach ( Security fortsJump in "RI".GetFortsJumps( from, to, getSecurity, true ) )
             {
                 DateTimeOffset? expiryDate = fortsJump.ExpiryDate;
@@ -60,7 +60,7 @@ namespace StockSharp.Studio.Controls
                 if ( !expiryDate.HasValue )
                 {
                     if ( fortsJump.Code.Length < 4 )
-                        throw new InvalidOperationException( LocalizedStrings.Str3228Params.Put( ( object )fortsJump.Code ) );
+                        throw new InvalidOperationException( LocalizedStrings.Str3228Params.Put( fortsJump.Code ) );
                     int year = DateTime.Today.Year / 10 * 10 + fortsJump.Code.Substring( 3, 1 ).To<int>();
                     int num;
                     switch ( fortsJump.Code[2] )
@@ -88,7 +88,7 @@ namespace StockSharp.Studio.Controls
                     expiryDate = fortsJump.ExpiryDate;
                     dateTime = expiryDate.Value.UtcDateTime;
                 }
-                this._editor.Jumps.Add( new SecurityJump()
+                _editor.Jumps.Add( new SecurityJump()
                 {
                     Security = fortsJump,
                     Date = dateTime
@@ -104,54 +104,54 @@ namespace StockSharp.Studio.Controls
             {
                 Width = GridLength.Auto
             } );
-            Grid.SetColumn( ( UIElement )this._editor, 0 );
-            grid.Children.Add( ( UIElement )this._editor );
+            Grid.SetColumn( _editor, 0 );
+            grid.Children.Add( _editor );
             StackPanel stackPanel1 = new StackPanel();
             stackPanel1.VerticalAlignment = VerticalAlignment.Center;
             UIElementCollection children1 = stackPanel1.Children;
             Button button1 = new Button();
-            button1.Content = ( object )"\xF0EF";
+            button1.Content = "\xF0EF";
             button1.FontFamily = new FontFamily( "Wingdings" );
             button1.FontSize = 15.0;
             button1.Margin = new Thickness( 2.0 );
-            button1.Command = ( ICommand )new DelegateCommand( ( Action<object> )( o => this._editor.Jumps.Add( new SecurityJump()
+            button1.Command = new DelegateCommand( o => _editor.Jumps.Add( new SecurityJump()
             {
-                Security = this.SecurityPicker.SelectedSecurity
-            } ) ), ( Predicate<object> )( o => this.SecurityPicker.SelectedSecurity != null ) );
-            button1.ToolTip = ( object )LocalizedStrings.Str3229;
-            children1.Add( ( UIElement )button1 );
+                Security = SecurityPicker.SelectedSecurity
+            } ), o => SecurityPicker.SelectedSecurity != null );
+            button1.ToolTip = LocalizedStrings.Str3229;
+            children1.Add( button1 );
             UIElementCollection children2 = stackPanel1.Children;
             Button button2 = new Button();
-            button2.Content = ( object )"\xF0F0";
+            button2.Content = "\xF0F0";
             button2.FontFamily = new FontFamily( "Wingdings" );
             button2.FontSize = 15.0;
             button2.Margin = new Thickness( 2.0 );
-            button2.Command = ( ICommand )new DelegateCommand( ( Action<object> )( o => this._editor.Jumps.RemoveRange<SecurityJump>( this._editor.SelectedJumps ) ), ( Predicate<object> )( o => this._editor.SelectedJump != null ) );
-            button2.ToolTip = ( object )LocalizedStrings.Str2060;
-            children2.Add( ( UIElement )button2 );
+            button2.Command = new DelegateCommand( o => _editor.Jumps.RemoveRange( _editor.SelectedJumps ), o => _editor.SelectedJump != null );
+            button2.ToolTip = LocalizedStrings.Str2060;
+            children2.Add( button2 );
             StackPanel stackPanel2 = stackPanel1;
-            Grid.SetColumn( ( UIElement )stackPanel2, 1 );
-            grid.Children.Add( ( UIElement )stackPanel2 );
+            Grid.SetColumn( stackPanel2, 1 );
+            grid.Children.Add( stackPanel2 );
             return grid;
         }
 
         private void SecurityChanged()
         {
-            this.ShowError( this._editor.Validate() ?? this.Validate( this._editor.Jumps.Select<SecurityJump, Security>( ( Func<SecurityJump, Security> )( j => j.Security ) ), ( Security )null ) );
+            ShowError( _editor.Validate() ?? Validate( _editor.Jumps.Select( j => j.Security ), null ) );
         }
 
         protected override bool OnSecurityChanged( Security security )
         {
             ExpirationContinuousSecurity continuousSecurity = ( ExpirationContinuousSecurity )security;
-            if ( continuousSecurity.ExpirationJumps.IsEmpty<KeyValuePair<SecurityId, DateTimeOffset>>() )
+            if ( continuousSecurity.ExpirationJumps.IsEmpty() )
                 return false;
-            this._editor.Jumps.Clear();
-            this._editor.Jumps.AddRange<SecurityJump>( continuousSecurity.ExpirationJumps.Select<KeyValuePair<SecurityId, DateTimeOffset>, SecurityJump>( ( Func<KeyValuePair<SecurityId, DateTimeOffset>, SecurityJump> )( p => new SecurityJump()
+            _editor.Jumps.Clear();
+            _editor.Jumps.AddRange( continuousSecurity.ExpirationJumps.Select( p => new SecurityJump()
             {
-                Security = BaseStudioControl.SecurityProvider.LookupById( p.Key ),
+                Security = SecurityProvider.LookupById( p.Key ),
                 Date = p.Value.UtcDateTime
-            } ) ) );
-            this.SecurityChanged();
+            } ) );
+            SecurityChanged();
             return true;
         }
 
@@ -159,12 +159,12 @@ namespace StockSharp.Studio.Controls
         {
             ExpirationContinuousSecurity continuousSecurity = ( ExpirationContinuousSecurity )security;
             continuousSecurity.ExpirationJumps.Clear();
-            continuousSecurity.ExpirationJumps.AddRange<KeyValuePair<SecurityId, DateTimeOffset>>( this._editor.Jumps.Select<SecurityJump, KeyValuePair<SecurityId, DateTimeOffset>>( ( Func<SecurityJump, KeyValuePair<SecurityId, DateTimeOffset>> )( j => new KeyValuePair<SecurityId, DateTimeOffset>( j.Security.ToSecurityId( ( SecurityIdGenerator )null, true, false ), ( DateTimeOffset )j.Date ) ) ) );
+            continuousSecurity.ExpirationJumps.AddRange( _editor.Jumps.Select( j => new KeyValuePair<SecurityId, DateTimeOffset>( j.Security.ToSecurityId( null, true, false ), ( DateTimeOffset )j.Date ) ) );
         }
 
         protected override void InsertSecurity( Security security )
         {
-            this._editor.Jumps.Add( new SecurityJump()
+            _editor.Jumps.Add( new SecurityJump()
             {
                 Security = security
             } );
@@ -173,7 +173,7 @@ namespace StockSharp.Studio.Controls
         private void EditorOnDrop( object sender, DragEventArgs e )
         {
             Security data = ( Security )e.Data.GetData( typeof( Security ) );
-            this._editor.Jumps.Add( new SecurityJump()
+            _editor.Jumps.Add( new SecurityJump()
             {
                 Security = data
             } );

@@ -84,7 +84,7 @@ public sealed partial class ChartViewModel : DependencyObject
 
     internal void ExecuteAddXAxisCommand( ChartArea a )
     {
-        var area = this.GetRealChartArea( a );
+        var area = GetRealChartArea( a );
         if ( area == null )
             return;
 
@@ -103,16 +103,16 @@ public sealed partial class ChartViewModel : DependencyObject
         if ( area != null)
             return area;
 
-        ObservableCollection<ScichartSurfaceMVVM> vm = this.ScichartSurfaceViewModels;
+        ObservableCollection<ScichartSurfaceMVVM> vm = ScichartSurfaceViewModels;
         if ( vm == null )
-            return (ChartArea) null;
+            return null;
 
-        return vm.FirstOrDefault<ScichartSurfaceMVVM>()?.Area;
+        return vm.FirstOrDefault()?.Area;
     }
 
     internal void ExecuteAddYAxisCommand( ChartArea a )
     {
-        ChartArea area = this.GetRealChartArea( a );
+        ChartArea area = GetRealChartArea( a );
         if ( area == null )
             return;
 
@@ -246,7 +246,7 @@ public sealed partial class ChartViewModel : DependencyObject
 
     internal void RaiseRebuildCandlesEvent( IfxChartElement chartUI, CandleSeries candleSeries )
     {
-        Action<IfxChartElement, CandleSeries> rebuildEvent = this.RebuildCandlesEvent;
+        Action<IfxChartElement, CandleSeries> rebuildEvent = RebuildCandlesEvent;
         if ( rebuildEvent == null )
             return;
         rebuildEvent( chartUI, candleSeries );
@@ -330,11 +330,11 @@ public sealed partial class ChartViewModel : DependencyObject
 
     private void ExecuteAddCandlesCommand( ChartArea area )
     {
-        Action<ChartArea> myEvent = this.AddCandlesEvent;
+        Action<ChartArea> myEvent = AddCandlesEvent;
         if ( myEvent == null )
             return;
 
-        myEvent( this.GetRealChartArea( area ) );        
+        myEvent( GetRealChartArea( area ) );        
     }
 
 
@@ -345,11 +345,11 @@ public sealed partial class ChartViewModel : DependencyObject
 
     private void ExecuteAddIndicatorCommand( ChartArea area )
     {
-        Action<ChartArea> myEvent = this.AddIndicatorEvent;
+        Action<ChartArea> myEvent = AddIndicatorEvent;
         if ( myEvent == null )
             return;
 
-        myEvent( this.GetRealChartArea( area ) );        
+        myEvent( GetRealChartArea( area ) );        
     }
 
     private bool CanExecuteAddIndicatorCommand( ChartArea chartArea )
@@ -359,11 +359,11 @@ public sealed partial class ChartViewModel : DependencyObject
 
     private void ExecuteAddOrdersCommand( ChartArea area )
     {
-        Action<ChartArea> myEvent = this.AddOrdersEvent;
+        Action<ChartArea> myEvent = AddOrdersEvent;
         if ( myEvent == null )
             return;
 
-        myEvent( this.GetRealChartArea( area ) );        
+        myEvent( GetRealChartArea( area ) );        
     }
 
     private bool CanExecuteAddOrdersCommand( ChartArea chartArea )
@@ -373,11 +373,11 @@ public sealed partial class ChartViewModel : DependencyObject
 
     private void ExecuteAddTradesCommand( ChartArea area )
     {
-        Action<ChartArea> myEvent = this.AddTradesEvent;
+        Action<ChartArea> myEvent = AddTradesEvent;
         if ( myEvent == null )
             return;
 
-        myEvent( this.GetRealChartArea( area ) );
+        myEvent( GetRealChartArea( area ) );
     }
 
     private bool CanExecuteAddTradesCommand( ChartArea chartArea )
@@ -398,19 +398,19 @@ public sealed partial class ChartViewModel : DependencyObject
         }
         else
         {
-            ScichartSurfaceViewModels.ForEach<ScichartSurfaceMVVM>( p => p.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null ) );
+            ScichartSurfaceViewModels.ForEach( p => p.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null ) );
         }
 
     }
 
     private bool CanExecuteShowHiddenAxes( ChartArea _param1 )
     {
-        return this.IsInteracted;
+        return IsInteracted;
     }
 
     private void ExecuteCancelActiveOrders( ChartArea _param1 )
     {
-        this.OnExecuteCancelActiveOrders( ( Func<Order, bool> ) null );
+        OnExecuteCancelActiveOrders( null );
     }
 
     public void OnExecuteCancelActiveOrders( Func<Order, bool> cancelOrdersFunc )
@@ -430,12 +430,12 @@ public sealed partial class ChartViewModel : DependencyObject
                                     } );
         }
 
-        var some = this.ScichartSurfaceViewModels.SelectMany<ScichartSurfaceMVVM, Order>(selectActiverOrders).Where<Order>(cancelOrdersFunc);
-        var ordersSet = System.Linq.Enumerable.ToHashSet< Order >(some);
+        var some = ScichartSurfaceViewModels.SelectMany( selectActiverOrders).Where( cancelOrdersFunc);
+        var ordersSet = Enumerable.ToHashSet( some);
 
         foreach ( var order in ordersSet )
         {
-            var cancelOrder = this.CancelActiveOrderEvent;
+            var cancelOrder = CancelActiveOrderEvent;
             if ( cancelOrder == null )
                 return;
             cancelOrder( order );            
@@ -444,7 +444,7 @@ public sealed partial class ChartViewModel : DependencyObject
 
     private bool CanExecuteCancelActiveOrders( ChartArea _param1 )
     {
-        return this.IsInteracted;
+        return IsInteracted;
     }    
     #region Tony
     public void ExecuteCodingAddCandles( ChartArea chartArea, CandleSeries series )

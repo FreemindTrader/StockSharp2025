@@ -33,7 +33,7 @@ namespace StockSharp.Web.Api.Client
           int? maxErrorCount,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Email>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)transactionId, (object)maxErrorCount);
+            return Get<BaseEntitySet<Email>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, transactionId, maxErrorCount );
         }
 
         Task IEmailService.StartMassRequestAsync(
@@ -48,20 +48,20 @@ namespace StockSharp.Web.Api.Client
           string bodyPlain,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("StartMassRequestAsync"), cancellationToken, (object)transactionId, (object)domainId, (object)included, (object)excluded, (object)fromAddress, (object)fromAlias, (object)subject, (object)bodyHtml, (object)bodyPlain);
+            return Post( GetCurrentMethod( "StartMassRequestAsync"), cancellationToken, transactionId, domainId, included, excluded, fromAddress, fromAlias, subject, bodyHtml, bodyPlain );
         }
 
         Task IEmailService.StopMassRequestAsync(
           Guid transactionId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("StopMassRequestAsync"), cancellationToken, (object)transactionId);
+            return Post( GetCurrentMethod( "StopMassRequestAsync"), cancellationToken, transactionId );
         }
 
-        Task<BaseEntitySet<(Guid transactionId, bool isCancelled, long domainId, StockSharp.Web.DomainModel.Client[] clients, string fromAddress, string fromAlias, string subject, (string bodyHtml, string bodyPlain))>> IEmailService.GetMassRequests(
+        Task<BaseEntitySet<(Guid transactionId, bool isCancelled, long domainId, DomainModel.Client[] clients, string fromAddress, string fromAlias, string subject, (string bodyHtml, string bodyPlain))>> IEmailService.GetMassRequests(
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<(Guid transactionId, bool isCancelled, long domainId, StockSharp.Web.DomainModel.Client[] clients, string fromAddress, string fromAlias, string subject, (string bodyHtml, string bodyPlain))>>(RestBaseApiClient.GetCurrentMethod("GetMassRequests"), cancellationToken);
+            return Get<BaseEntitySet<(Guid transactionId, bool isCancelled, long domainId, DomainModel.Client[] clients, string fromAddress, string fromAlias, string subject, (string bodyHtml, string bodyPlain))>>( GetCurrentMethod( "GetMassRequests"), cancellationToken);
         }
     }
 }

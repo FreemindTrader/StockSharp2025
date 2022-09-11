@@ -28,9 +28,9 @@ namespace StockSharp.Studio.Controls
         public PropertiesPanel()
         {
             PropertiesPanel propertiesPanel = this;
-            this.InitializeComponent();
-            Type prevType = ( Type )null;
-            BaseStudioControl.CommandService.Register<SelectCommand>( ( object )this, true, ( Action<SelectCommand> )( cmd =>
+            InitializeComponent();
+            Type prevType = null;
+            CommandService.Register<SelectCommand>( this, true, cmd =>
                 {
                     if ( cmd.Instance == null && cmd.InstanceType != prevType )
                         return;
@@ -40,22 +40,22 @@ namespace StockSharp.Studio.Controls
                     {
                         propertiesPanel.WatermarkTextBlock.Text = instance;
                         propertiesPanel.WatermarkTextBlock.Visibility = Visibility.Visible;
-                        propertiesPanel.PropertyGrid.SelectedObject = ( object )null;
+                        propertiesPanel.PropertyGrid.SelectedObject = null;
                     }
                     else
                     {
                         propertiesPanel.WatermarkTextBlock.Visibility = Visibility.Collapsed;
                         if ( propertiesPanel.PropertyGrid.SelectedObject == cmd.Instance )
-                            propertiesPanel.PropertyGrid.SelectedObject = ( object )null;
+                            propertiesPanel.PropertyGrid.SelectedObject = null;
                         propertiesPanel.PropertyGrid.ReadOnly = !cmd.CanEdit;
                         propertiesPanel.PropertyGrid.SelectedObject = cmd.Instance;
                     }
-                } ), ( Func<SelectCommand, bool> )null );
+                }, null );
         }
 
         public override void Dispose()
         {
-            BaseStudioControl.CommandService.UnRegister<SelectCommand>( ( object )this );
+            CommandService.UnRegister<SelectCommand>( this );
             base.Dispose();
         }        
     }

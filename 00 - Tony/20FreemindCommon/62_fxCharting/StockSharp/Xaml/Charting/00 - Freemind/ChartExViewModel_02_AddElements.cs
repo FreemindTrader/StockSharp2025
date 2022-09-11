@@ -44,7 +44,7 @@ namespace fx.Charting
     {
         public void LoadCandlesOfXTimeFrame( TimeSpan newTimeSpan )
         {
-            var uiSeriesPair = this.GetCandleUISeries();
+            var uiSeriesPair = GetCandleUISeries();
             if ( uiSeriesPair == null )
                 return;
 
@@ -55,11 +55,11 @@ namespace fx.Charting
                 return;
             }
 
-            var newSeries        = uiSeriesPair.Item2.Clone<CandleSeries>();
-            newSeries.Arg = ( object ) newTimeSpan;
+            var newSeries        = uiSeriesPair.Item2.Clone();
+            newSeries.Arg = newTimeSpan;
             newSeries.CandleType = typeof( TimeFrameCandle );
 
-            this.OnRebuildCandles( uiSeriesPair.Item1, newSeries );
+            OnRebuildCandles( uiSeriesPair.Item1, newSeries );
         }
 
 
@@ -71,7 +71,7 @@ namespace fx.Charting
 
             var candleArea   = candleUI.ChartArea;
             var candleSeries = GetSource< CandleSeries > ( candleUI );
-            var indicatorUI  = this._uiDatasource.Where( p =>
+            var indicatorUI  = _uiDatasource.Where( p =>
                                                             {
                                                                 var candleS = ( CandleSeries ) p.Value;
                                                                 if( candleS == candleSeries )
@@ -90,14 +90,14 @@ namespace fx.Charting
                                                             }
                                                      ).Select( p => ( IndicatorUI ) p.Key );
 
-            var indicatorUiDict = indicatorUI.ToDictionary<IndicatorUI, IndicatorUI, Tuple<IIndicator, ChartArea>>( ( p => p ), ind => Tuple.Create<IIndicator, ChartArea>( this.GetIndicator( ind ), ind.ChartArea ) );
+            var indicatorUiDict = indicatorUI.ToDictionary( ( p => p ), ind => Tuple.Create( GetIndicator( ind ), ind.ChartArea ) );
 
 
-            this.OnRemoveElement( candleUI );
+            OnRemoveElement( candleUI );
             indicatorUiDict.Keys.ForEach( OnRemoveElement );
 
             ( ( IElementWithXYAxes ) candleUI ).ResetUI();
-            this.AddElement( candleArea, candleUI, series );
+            AddElement( candleArea, candleUI, series );
 
             foreach ( var indicatorPair in indicatorUiDict )
             {
@@ -105,25 +105,25 @@ namespace fx.Charting
                 var ui    = indicatorPair.Key;
                 var val   = indicatorPair.Value.Item1;
 
-                this.AddElement( area, ui, series, val );
+                AddElement( area, ui, series, val );
             }
 
-            this.RefreshView();
+            RefreshView();
         }
 
         private void RefreshView()
         {
-            Tuple< CandlestickUI, CandleSeries> tuple = this.GetCandleUISeries();
+            Tuple< CandlestickUI, CandleSeries> tuple = GetCandleUISeries();
 
             if ( tuple == null )
                 return;
 
-            if ( this.CandleSeriesRebuilt == tuple?.Item2 && this.SelectedSecurity == tuple?.Item2.Security )
+            if ( CandleSeriesRebuilt == tuple?.Item2 && SelectedSecurity == tuple?.Item2.Security )
                 return;
 
             CandleSeriesRebuilt = tuple?.Item2;
             SelectedSecurity = CandleSeriesRebuilt.Security;
-            Action myEvent = ChartExViewModel.RefreshEvent;
+            Action myEvent = RefreshEvent;
             if ( myEvent == null )
                 return;
             myEvent();
@@ -131,18 +131,18 @@ namespace fx.Charting
 
         private Tuple<CandlestickUI, CandleSeries> GetCandleUISeries()
         {
-            foreach ( var chartElement in this.ChartAreas.SelectMany( a => a.Elements ) )
+            foreach ( var chartElement in ChartAreas.SelectMany( a => a.Elements ) )
             {
                 var candle = chartElement as CandlestickUI;
 
                 if ( candle != null )
                 {
-                    CandleSeries candleSeries = this.GetSource< CandleSeries > ( ( IfxChartElement ) candle );
+                    CandleSeries candleSeries = GetSource< CandleSeries > ( candle );
                     if ( candleSeries?.Security != null )
-                        return Tuple.Create<CandlestickUI, CandleSeries>( candle, candleSeries );
+                        return Tuple.Create( candle, candleSeries );
                 }
             }
-            return ( Tuple<CandlestickUI, CandleSeries> ) null;
+            return null;
         }
 
         /* --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -643,7 +643,7 @@ namespace fx.Charting
             {
                 if ( IsInteracted )
                 {
-                    ( ( IEnumerable<IfxChartElement> ) elementArray ).ForEach( new Action<IfxChartElement>( RaiseUnsubscribeElementEvent ) );
+                    elementArray.ForEach( new Action<IfxChartElement>( RaiseUnsubscribeElementEvent ) );
                 }
 
                 Reset( elementArray );
@@ -653,7 +653,7 @@ namespace fx.Charting
                     return;
                 }
 
-                ( ( IEnumerable<IfxChartElement> ) elementArray ).ForEach( new Action<IfxChartElement>( RaiseChartElementSubscribedEvent ) );
+                elementArray.ForEach( new Action<IfxChartElement>( RaiseChartElementSubscribedEvent ) );
             }
             else
             {
@@ -662,7 +662,7 @@ namespace fx.Charting
                     return;
                 }
 
-                ( ( IEnumerable<IfxChartElement> ) elementArray ).ForEach( new Action<IfxChartElement>( RemoveAndRaiseUnsubscribeElementEvent ) );
+                elementArray.ForEach( new Action<IfxChartElement>( RemoveAndRaiseUnsubscribeElementEvent ) );
             }
         }
 
@@ -691,7 +691,7 @@ namespace fx.Charting
 
         private T GetSource<T>( IfxChartElement _param1 ) where T : class
         {
-            return ( T ) this.GetSource( _param1 );
+            return ( T ) GetSource( _param1 );
         }
 
         public object GetSource( IfxChartElement element )

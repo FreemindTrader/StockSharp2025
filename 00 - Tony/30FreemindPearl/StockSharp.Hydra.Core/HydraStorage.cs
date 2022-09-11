@@ -26,7 +26,7 @@ namespace StockSharp.Hydra.Core
     /// <summary>Hydra tasks settings storage.</summary>
     public class HydraStorage
     {
-        private readonly Dictionary<Guid, HydraStorage.HydraSecurityStorage> _securityStorages = new Dictionary<Guid, HydraStorage.HydraSecurityStorage>();
+        private readonly Dictionary<Guid, HydraSecurityStorage> _securityStorages = new Dictionary<Guid, HydraSecurityStorage>();
         private readonly string _path;
         private DelayAction _delayAction;
 
@@ -38,8 +38,8 @@ namespace StockSharp.Hydra.Core
         {
             if ( path.IsEmpty() )
                 throw new ArgumentNullException( nameof( path ) );
-            this._path = path;
-            this._delayAction = new DelayAction( ( Action<Exception> )( ex => ex.LogError( ( string )null ) ) );
+            _path = path;
+            _delayAction = new DelayAction( ex => ex.LogError( null ) );
         }
 
         /// <summary>The time delayed action.</summary>
@@ -47,27 +47,27 @@ namespace StockSharp.Hydra.Core
         {
             get
             {
-                return this._delayAction;
+                return _delayAction;
             }
             set
             {
                 DelayAction delayAction = value;
                 if ( delayAction == null )
                     throw new ArgumentNullException( nameof( value ) );
-                this._delayAction = delayAction;
+                _delayAction = delayAction;
             }
         }
 
         /// <summary>Initialize the storage.</summary>
         public void Init()
         {
-            Directory.CreateDirectory( this._path );
+            Directory.CreateDirectory( _path );
         }
 
         /// <summary>Reset all settings.</summary>
         public void Reset()
         {
-            Directory.Delete( this._path, true );
+            Directory.Delete( _path, true );
         }
 
         /// <summary>Load all tasks.</summary>
@@ -77,29 +77,29 @@ namespace StockSharp.Hydra.Core
           ILogReceiver logs )
         {
             Dictionary<HydraTaskInfo, IEnumerable<HydraTaskSecurity>> retVal = new Dictionary<HydraTaskInfo, IEnumerable<HydraTaskSecurity>>();
-            Do.Invariant( ( Action )( () =>
+            Do.Invariant( () =>
             {
-                foreach ( string enumerateConfig in this._path.EnumerateConfigs( "task_*" ) )
+                foreach ( string enumerateConfig in _path.EnumerateConfigs( "task_*" ) )
                 {
                     try
                     {
                         SettingsStorage settingsStorage = enumerateConfig.Deserialize<SettingsStorage>();
                         if ( settingsStorage != null )
                         {
-                            Guid guid = settingsStorage.GetValue<Guid>( "Id", new Guid() );
-                            string taskType = settingsStorage.GetValue<string>( "TaskType", ( string )null );
+                            Guid guid = settingsStorage.GetValue( "Id", new Guid() );
+                            string taskType = settingsStorage.GetValue<string>( "TaskType", null );
                             HydraTaskInfo key = new HydraTaskInfo( guid, taskType, new SettingsStorage() );
-                            foreach ( KeyValuePair<string, object> keyValuePair in ( SynchronizedDictionary<string, object> )( settingsStorage.GetValue<SettingsStorage>( "Settings", ( SettingsStorage )null ) ?? settingsStorage.GetValue<SettingsStorage>( "ExtensionInfo", ( SettingsStorage )null ) ) )
+                            foreach ( KeyValuePair<string, object> keyValuePair in ( SynchronizedDictionary<string, object> )( settingsStorage.GetValue<SettingsStorage>( "Settings", null ) ?? settingsStorage.GetValue<SettingsStorage>( "ExtensionInfo", null ) ) )
                             {
-                                if ( !key.Settings.TryAdd<KeyValuePair<string, object>>( keyValuePair ) )
-                                    logs.AddErrorLog( string.Format( "For task {0} ({1}) value '{2}' already added.", ( object )guid, ( object )taskType, ( object )keyValuePair.Key ) );
+                                if ( !key.Settings.TryAdd( keyValuePair ) )
+                                    logs.AddErrorLog( string.Format( "For task {0} ({1}) value '{2}' already added.", guid, taskType, keyValuePair.Key ) );
                             }
-                            HydraStorage.HydraSecurityStorage hydraSecurityStorage = new HydraStorage.HydraSecurityStorage( this._path, guid );
+                            HydraSecurityStorage hydraSecurityStorage = new HydraSecurityStorage( _path, guid );
                             IEnumerable<HydraTaskSecurity> hydraTaskSecurities = hydraSecurityStorage.Load( logs );
-                            if ( this._securityStorages.ContainsKey( guid ) )
-                                logs.AddErrorLog( string.Format( "Task {0} already added.", ( object )guid ) );
+                            if ( _securityStorages.ContainsKey( guid ) )
+                                logs.AddErrorLog( string.Format( "Task {0} already added.", guid ) );
                             else
-                                this._securityStorages.Add( guid, hydraSecurityStorage );
+                                _securityStorages.Add( guid, hydraSecurityStorage );
                             retVal.Add( key, hydraTaskSecurities );
                         }
                     }
@@ -108,8 +108,8 @@ namespace StockSharp.Hydra.Core
                         logs.AddErrorLog( ex );
                     }
                 }
-            } ) );
-            return ( IDictionary<HydraTaskInfo, IEnumerable<HydraTaskSecurity>> )retVal;
+            } );
+            return retVal;
         }
 
         /// <summary>Update task settings.</summary>
@@ -118,37 +118,37 @@ namespace StockSharp.Hydra.Core
         {
             if ( info == null )
                 throw new ArgumentNullException( nameof( info ) );
-            this.DelayAction.DefaultGroup.Add( ( Action )( () => Do.Invariant( ( Action )( () =>
+            DelayAction.DefaultGroup.Add( () => Do.Invariant( () =>
             {
                 new SettingsStorage()
               {
           {
             "Id",
-            (object) info.Id
+             info.Id
           },
           {
             "TaskType",
-            (object) info.TaskType
+             info.TaskType
           },
           {
             "Settings",
-            (object) info.Settings
+             info.Settings
           }
-              }.Serialize<SettingsStorage>( this.GetFileName( info.Id ) );
-                this._securityStorages.SafeAdd<Guid, HydraStorage.HydraSecurityStorage>( info.Id, ( Func<Guid, HydraStorage.HydraSecurityStorage> )( key => new HydraStorage.HydraSecurityStorage( this._path, key ) ) );
-            } ) ) ), ( Action<Exception> )null, true, true );
+              }.Serialize( GetFileName( info.Id ) );
+                _securityStorages.SafeAdd( info.Id, key => new HydraSecurityStorage( _path, key ) );
+            } ), null, true, true );
         }
 
         /// <summary>Delete task settings.</summary>
         /// <param name="taskId">Task id.</param>
         public void Delete( Guid taskId )
         {
-            this.DelayAction.DefaultGroup.Add( ( Action )( () => Do.Invariant( ( Action )( () =>
+            DelayAction.DefaultGroup.Add( () => Do.Invariant( () =>
             {
-                File.Delete( this.GetFileName( taskId ) );
-                this._securityStorages[taskId].Clear();
-                this._securityStorages.Remove( taskId );
-            } ) ) ), ( Action<Exception> )null, true, true );
+                File.Delete( GetFileName( taskId ) );
+                _securityStorages[taskId].Clear();
+                _securityStorages.Remove( taskId );
+            } ), null, true, true );
         }
 
         /// <summary>Add securities into the task.</summary>
@@ -158,7 +158,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( securities == null )
                 throw new ArgumentNullException( nameof( securities ) );
-            this.DelayAction.DefaultGroup.Add( ( Action )( () => Do.Invariant( ( Action )( () => this._securityStorages[taskId].Add( securities ) ) ) ), ( Action<Exception> )null, true, true );
+            DelayAction.DefaultGroup.Add( () => Do.Invariant( () => _securityStorages[taskId].Add( securities ) ), null, true, true );
         }
 
         /// <summary>Update securities info.</summary>
@@ -168,7 +168,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( securities == null )
                 throw new ArgumentNullException( nameof( securities ) );
-            this.DelayAction.DefaultGroup.Add( ( Action )( () => Do.Invariant( ( Action )( () => this._securityStorages[taskId].Update( securities ) ) ) ), ( Action<Exception> )null, true, true );
+            DelayAction.DefaultGroup.Add( () => Do.Invariant( () => _securityStorages[taskId].Update( securities ) ), null, true, true );
         }
 
         /// <summary>Delete securities from the task.</summary>
@@ -178,19 +178,19 @@ namespace StockSharp.Hydra.Core
         {
             if ( securities == null )
                 throw new ArgumentNullException( nameof( securities ) );
-            this.DelayAction.DefaultGroup.Add( ( Action )( () => Do.Invariant( ( Action )( () => this._securityStorages[taskId].Delete( securities ) ) ) ), ( Action<Exception> )null, true, true );
+            DelayAction.DefaultGroup.Add( () => Do.Invariant( () => _securityStorages[taskId].Delete( securities ) ), null, true, true );
         }
 
         /// <summary>Delete all securities from the task.</summary>
         /// <param name="taskId">Task id.</param>
         public void DeleteAll( Guid taskId )
         {
-            this.DelayAction.DefaultGroup.Add( ( Action )( () => Do.Invariant( ( Action )( () => this._securityStorages[taskId].Clear() ) ) ), ( Action<Exception> )null, true, true );
+            DelayAction.DefaultGroup.Add( () => Do.Invariant( () => _securityStorages[taskId].Clear() ), null, true, true );
         }
 
         private string GetFileName( Guid taskId )
         {
-            return Path.Combine( this._path, string.Format( "task_{0}{1}", ( object )taskId, ( object )".json" ) );
+            return Path.Combine( _path, string.Format( "task_{0}{1}", taskId, ".json" ) );
         }
 
         private class HydraSecurityStorage
@@ -204,9 +204,9 @@ namespace StockSharp.Hydra.Core
                     throw new ArgumentNullException( nameof( path ) );
                 if ( taskId == new Guid() )
                     throw new ArgumentNullException( nameof( taskId ) );
-                this._taskId = taskId;
-                this._path = Path.Combine( path, string.Format( "task_{0}_securities", ( object )taskId ) );
-                Directory.CreateDirectory( this._path );
+                _taskId = taskId;
+                _path = Path.Combine( path, string.Format( "task_{0}_securities", taskId ) );
+                Directory.CreateDirectory( _path );
             }
 
             public IEnumerable<HydraTaskSecurity> Load( ILogReceiver logs )
@@ -216,16 +216,16 @@ namespace StockSharp.Hydra.Core
                 List<HydraTaskSecurity> hydraTaskSecurityList = new List<HydraTaskSecurity>();
                 try
                 {
-                    string str1 = this._path + ".csv";
+                    string str1 = _path + ".csv";
                     if ( File.Exists( str1 ) )
                     {
-                        hydraTaskSecurityList.AddRange( HydraStorage.HydraSecurityStorage.HydraSecurityStorageOld.Load( str1, this._taskId, logs ) );
-                        this.Add( ( IEnumerable<HydraTaskSecurity> )hydraTaskSecurityList );
-                        str1.MoveToBackup( str1 + string.Format( ".migrated_{0:yyyy_MM_dd_HH_mm}", ( object )DateTime.Now ) );
+                        hydraTaskSecurityList.AddRange( HydraSecurityStorageOld.Load( str1, _taskId, logs ) );
+                        Add( hydraTaskSecurityList );
+                        str1.MoveToBackup( str1 + string.Format( ".migrated_{0:yyyy_MM_dd_HH_mm}", DateTime.Now ) );
                     }
                     else
                     {
-                        foreach ( string str2 in Directory.EnumerateDirectories( this._path ).SelectMany<string, string>( ( Func<string, IEnumerable<string>> )( dir => Directory.EnumerateFiles( dir, "*.json" ) ) ) )
+                        foreach ( string str2 in Directory.EnumerateDirectories( _path ).SelectMany( dir => Directory.EnumerateFiles( dir, "*.json" ) ) )
                         {
                             string str3 = File.ReadAllText( str2 );
                             if ( !str3.IsEmpty() )
@@ -238,13 +238,13 @@ namespace StockSharp.Hydra.Core
                                         IDictionary<string, HydraTaskSecurity.DateTypeInfo> dictionary = str3.DeserializeObject<IDictionary<string, HydraTaskSecurity.DateTypeInfo>>();
                                         HydraTaskSecurity hydraTaskSecurity = new HydraTaskSecurity() { Security = security };
                                         foreach ( KeyValuePair<string, HydraTaskSecurity.DateTypeInfo> keyValuePair in ( IEnumerable<KeyValuePair<string, HydraTaskSecurity.DateTypeInfo>> )dictionary )
-                                            hydraTaskSecurity.InfoDict.Add( HydraStorage.HydraSecurityStorage.ToDataType( keyValuePair.Key ), keyValuePair.Value );
+                                            hydraTaskSecurity.InfoDict.Add( ToDataType( keyValuePair.Key ), keyValuePair.Value );
                                         hydraTaskSecurityList.Add( hydraTaskSecurity );
                                     }
                                     catch ( Exception ex )
                                     {
-                                        logs.AddErrorLog( ( Exception )new InvalidOperationException( LocalizedStrings.Str2929Params.Put( ( object )str2 ), ex ) );
-                                        str2.MoveToBackup( str2 + string.Format( ".corrupted_{0:yyyy_MM_dd_HH_mm}", ( object )DateTime.Now ) );
+                                        logs.AddErrorLog( new InvalidOperationException( LocalizedStrings.Str2929Params.Put( str2 ), ex ) );
+                                        str2.MoveToBackup( str2 + string.Format( ".corrupted_{0:yyyy_MM_dd_HH_mm}", DateTime.Now ) );
                                     }
                                 }
                             }
@@ -253,14 +253,14 @@ namespace StockSharp.Hydra.Core
                 }
                 catch ( Exception ex )
                 {
-                    logs.AddErrorLog( ( Exception )new InvalidOperationException( LocalizedStrings.Str2929Params.Put( ( object )this._path ), ex ) );
+                    logs.AddErrorLog( new InvalidOperationException( LocalizedStrings.Str2929Params.Put( _path ), ex ) );
                 }
-                return ( IEnumerable<HydraTaskSecurity> )hydraTaskSecurityList.ToArray();
+                return hydraTaskSecurityList.ToArray();
             }
 
             private static DataType ToDataType( string str )
             {
-                return LocalMarketDataDrive.GetDataType( str ) ?? DataType.Create( str.Replace( "_", ", " ).To<Type>(), ( object )null );
+                return LocalMarketDataDrive.GetDataType( str ) ?? DataType.Create( str.Replace( "_", ", " ).To<Type>(), null );
             }
 
             private static string ToString( DataType dataType )
@@ -270,7 +270,7 @@ namespace StockSharp.Hydra.Core
 
             public void Add( IEnumerable<HydraTaskSecurity> securities )
             {
-                this.Update( securities );
+                Update( securities );
             }
 
             public void Update( IEnumerable<HydraTaskSecurity> securities )
@@ -279,17 +279,17 @@ namespace StockSharp.Hydra.Core
                     throw new ArgumentNullException( nameof( securities ) );
                 foreach ( HydraTaskSecurity security in securities )
                 {
-                    Dictionary<string, HydraTaskSecurity.DateTypeInfo> dictionary = security.InfoDict.ToDictionary<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>, string, HydraTaskSecurity.DateTypeInfo>( ( Func<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>, string> )( p => HydraStorage.HydraSecurityStorage.ToString( p.Key ) ), ( Func<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>, HydraTaskSecurity.DateTypeInfo> )( p => p.Value ) );
-                    string path = this.GetPath( security );
+                    Dictionary<string, HydraTaskSecurity.DateTypeInfo> dictionary = security.InfoDict.ToDictionary( p => ToString( p.Key ), p => p.Value );
+                    string path = GetPath( security );
                     Directory.CreateDirectory( Path.GetDirectoryName( path ) );
-                    File.WriteAllText( path, JsonConvert.SerializeObject( ( object )dictionary, Formatting.Indented ) );
+                    File.WriteAllText( path, JsonConvert.SerializeObject( dictionary, Formatting.Indented ) );
                 }
             }
 
             public void Delete( IEnumerable<HydraTaskSecurity> securities )
             {
                 foreach ( HydraTaskSecurity security in securities )
-                    File.Delete( this.GetPath( security ) );
+                    File.Delete( GetPath( security ) );
             }
 
             private string GetPath( HydraTaskSecurity security )
@@ -297,12 +297,12 @@ namespace StockSharp.Hydra.Core
                 if ( security == null )
                     throw new ArgumentNullException( nameof( security ) );
                 string folderName = security.Security.Id.SecurityIdToFolderName();
-                return Path.Combine( this._path, folderName.Substring( 0, 1 ), folderName + ".json" );
+                return Path.Combine( _path, folderName.Substring( 0, 1 ), folderName + ".json" );
             }
 
             public void Clear()
             {
-                Directory.Delete( this._path, true );
+                Directory.Delete( _path, true );
             }
 
             [Obsolete]
@@ -330,7 +330,7 @@ namespace StockSharp.Hydra.Core
                                 long position = fileStream.Position;
                                 int num1 = fileStream.Read( numArray, 0, numArray.Length );
                                 if ( num1 != numArray.Length )
-                                    throw new InvalidOperationException( string.Format( "read={0}, pos={1}, len={2}", ( object )num1, ( object )fileStream.Position, ( object )fileStream.Length ) );
+                                    throw new InvalidOperationException( string.Format( "read={0}, pos={1}, len={2}", num1, fileStream.Position, fileStream.Length ) );
                                 string[ ] parts = numArray.UTF8().Remove( "\0", false ).Split( ';' );
                                 int index1 = 0;
                                 Security security = ServicesRegistry.SecurityProvider.LookupById( parts[index1++] );
@@ -382,16 +382,16 @@ namespace StockSharp.Hydra.Core
                     }
                     catch ( Exception ex )
                     {
-                        logs.AddErrorLog( ( Exception )new InvalidOperationException( LocalizedStrings.Str2929Params.Put( ( object )fileName ), ex ) );
+                        logs.AddErrorLog( new InvalidOperationException( LocalizedStrings.Str2929Params.Put( fileName ), ex ) );
                         hydraTaskSecurityList.Clear();
-                        fileName.MoveToBackup( fileName + string.Format( ".corrupted_{0:yyyy_MM_dd_HH_mm}", ( object )DateTime.Now ) );
+                        fileName.MoveToBackup( fileName + string.Format( ".corrupted_{0:yyyy_MM_dd_HH_mm}", DateTime.Now ) );
                     }
-                    return ( IEnumerable<HydraTaskSecurity> )hydraTaskSecurityList.ToArray();
+                    return hydraTaskSecurityList.ToArray();
 
                     DateTime? ToDateTime( string str )
                     {
                         if ( !str.IsEmpty() )
-                            return new DateTime?( str.Length > 8 ? str.ToDateTime( "yyyyMMddHHmmss", ( CultureInfo )null ) : str.ToDateTime( "yyyyMMdd", ( CultureInfo )null ) );
+                            return new DateTime?( str.Length > 8 ? str.ToDateTime( "yyyyMMddHHmmss", null ) : str.ToDateTime( "yyyyMMdd", null ) );
                         return new DateTime?();
                     }
 
@@ -402,12 +402,12 @@ namespace StockSharp.Hydra.Core
 
                     DataType ToDataType( string str )
                     {
-                        return LocalMarketDataDrive.GetDataType( str ) ?? DataType.Create( str.Replace( "_", ", " ).To<Type>(), ( object )null );
+                        return LocalMarketDataDrive.GetDataType( str ) ?? DataType.Create( str.Replace( "_", ", " ).To<Type>(), null );
                     }
 
                     DataType[ ] LoadDataTypes( string str )
                     {
-                        return ( ( IEnumerable<string> )str.SplitByComma( false ) ).Select<string, DataType>( new Func<string, DataType>( ToDataType ) ).ToArray<DataType>();
+                        return str.SplitByComma( false ).Select( new Func<string, DataType>( ToDataType ) ).ToArray();
                     }
                 }
             }

@@ -17,14 +17,14 @@ namespace Microsoft.Practices.ServiceLocation
     {
       get
       {
-        if (!ServiceLocator.IsLocationProviderSet)
+        if (!IsLocationProviderSet )
           throw new InvalidOperationException(Resources.ServiceLocationProviderNotSetMessage);
-        return ServiceLocator.currentProvider();
+        return currentProvider();
       }
     }
 
-    public static void SetLocatorProvider(ServiceLocatorProvider newProvider) => ServiceLocator.currentProvider = newProvider;
+    public static void SetLocatorProvider(ServiceLocatorProvider newProvider) => currentProvider = newProvider;
 
-    public static bool IsLocationProviderSet => ServiceLocator.currentProvider != null;
+    public static bool IsLocationProviderSet => currentProvider != null;
   }
 }

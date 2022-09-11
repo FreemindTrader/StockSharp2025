@@ -65,7 +65,7 @@ namespace fx.Algorithm
             {
                 lock( this )
                 {
-                    return GeneralHelper.EnumerableToList< object >( _dynamicValues.Values );
+                    return GeneralHelper.EnumerableToList( _dynamicValues.Values );
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace fx.Algorithm
             {
                 lock( this )
                 {
-                    return GeneralHelper.EnumerableToList< string >( _dynamicValues.Keys );
+                    return GeneralHelper.EnumerableToList( _dynamicValues.Keys );
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace fx.Algorithm
             {
                 lock( this )
                 {
-                    return GeneralHelper.EnumerableToList< object >( _coreValues.Values );
+                    return GeneralHelper.EnumerableToList( _coreValues.Values );
                 }
             }
         }
@@ -119,7 +119,7 @@ namespace fx.Algorithm
             {
                 lock( this )
                 {
-                    return GeneralHelper.EnumerableToList< string >( _coreValues.Keys );
+                    return GeneralHelper.EnumerableToList( _coreValues.Keys );
                 }
             }
         }

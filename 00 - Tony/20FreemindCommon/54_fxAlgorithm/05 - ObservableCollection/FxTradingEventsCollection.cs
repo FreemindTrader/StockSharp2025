@@ -216,7 +216,7 @@ namespace fx.Algorithm
                 _periodToItem.Add( timeFrame, tradingEvent );
             }
 
-            this.Add( tradingEvent );
+            Add( tradingEvent );
         }
 
         public void AddEmaCrossSignal( TimeSpan timeFrame, int ithBar, MarketDirection signal, int barCount )
@@ -471,9 +471,9 @@ namespace fx.Algorithm
 
         public int FindIndexByPeriod( TimeSpan myPeriod )
         {
-            if( this.Items.Count > 0 )
+            if( Items.Count > 0 )
             {
-                var index = this.IndexOf( this.Where( X => X.Period == myPeriod ).FirstOrDefault( ) );
+                var index = IndexOf( this.Where( X => X.Period == myPeriod ).FirstOrDefault( ) );
 
                 return index;
             }
@@ -483,11 +483,11 @@ namespace fx.Algorithm
 
         private void InternalAddExtremum( TimeSpan timeFrame, int ithBar, int barCount )
         {
-            int index = this.FindIndexByPeriod( timeFrame );
+            int index = FindIndexByPeriod( timeFrame );
 
             if( index >= 0 )
             {
-                var tradingEvent = this.Items[ index ];
+                var tradingEvent = Items[ index ];
 
                 tradingEvent.BarsFromLastExtremum = barCount - ithBar;
                 tradingEvent.SpecialNumber = FinancialHelper.GetSpecialNumber( tradingEvent.BarsFromLastExtremum );
@@ -499,7 +499,7 @@ namespace fx.Algorithm
                 tradingEvent.BarsFromLastExtremum = barCount - ithBar;
                 tradingEvent.SpecialNumber = FinancialHelper.GetSpecialNumber( tradingEvent.BarsFromLastExtremum );
 
-                this.Add( tradingEvent );
+                Add( tradingEvent );
             }
 
             CheckIfAllIndicatorResultsReceived( timeFrame );
@@ -513,7 +513,7 @@ namespace fx.Algorithm
                 {
                     _indicatorResultsReceived.Remove( timeFrame );
 
-                    float eventCount = this.Items.Count;
+                    float eventCount = Items.Count;
 
                     if( eventCount > 0 )
                     {

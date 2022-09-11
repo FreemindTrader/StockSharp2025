@@ -240,7 +240,7 @@ namespace fx.Algorithm
 
         public double GetCurrentSmaValue( TimeSpan period )
         {
-            var indicator = this.GetFreemindIndicator( period );
+            var indicator = GetFreemindIndicator( period );
 
             var sma = indicator.IndicatorResult[ "SMA" ];
             var last = sma.Count - 1;            
@@ -252,7 +252,7 @@ namespace fx.Algorithm
         {
             (double macd, double macdSig) output = default;
 
-            var indicator  = this.GetFreemindIndicator( period );            
+            var indicator  = GetFreemindIndicator( period );            
             var MACD       = indicator.IndicatorResult["MACD"];
             var MACDSignal = indicator.IndicatorResult["MACDSignal"];
 

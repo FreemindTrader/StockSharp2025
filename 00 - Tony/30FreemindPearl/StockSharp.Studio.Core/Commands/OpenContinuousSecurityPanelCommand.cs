@@ -18,7 +18,7 @@ namespace StockSharp.Studio.Core.Commands
             ContinuousSecurity continuousSecurity = security;
             if ( continuousSecurity == null )
                 throw new ArgumentNullException( nameof( security ) );
-            this.Security = continuousSecurity;
+            Security = continuousSecurity;
         }
     }
 }

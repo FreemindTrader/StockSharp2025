@@ -36,45 +36,45 @@ namespace StockSharp.Studio.Controls
 
         public SecuritiesPanel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            ( ( IEnumerable<string> )SecuritiesPanel._defaultColumns ).ForEach<string>( ( Action<string> )( c => this.SecurityPicker.SetColumnVisibility( c, Visibility.Visible ) ) );
-            this.SecurityPicker.GridChanged += RaiseChangedCommand;
-            this.AlertBtn.SchemaChanged += RaiseChangedCommand;
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<BindCommand>( ( object )this, true, ( Action<BindCommand> )( cmd =>
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            _defaultColumns.ForEach( c => SecurityPicker.SetColumnVisibility( c, Visibility.Visible ) );
+            SecurityPicker.GridChanged += RaiseChangedCommand;
+            AlertBtn.SchemaChanged += RaiseChangedCommand;
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<BindCommand>( this, true, cmd =>
                 {
-                    if ( !cmd.CheckControl( ( IStudioControl )this ) )
+                    if ( !cmd.CheckControl( this ) )
                         return;
-                    this.SecurityPicker.PriceChartDataProvider = StudioServicesRegistry.PriceChartDataProvider;
-                } ), ( Func<BindCommand, bool> )null );
-            commandService.Register<SecuritiesRemovedCommand>( ( object )this, false, ( Action<SecuritiesRemovedCommand> )( cmd =>
+                    SecurityPicker.PriceChartDataProvider = StudioServicesRegistry.PriceChartDataProvider;
+                }, null );
+            commandService.Register<SecuritiesRemovedCommand>( this, false, cmd =>
                 {
                     bool flag = false;
                     foreach ( Security security in cmd.Securities )
                     {
-                        if ( this.SecurityPicker.Securities.Remove( security ) )
+                        if ( SecurityPicker.Securities.Remove( security ) )
                         {
-                            this._subscriptionManager.RemoveSubscriptions( security, SecuritiesPanel._dataType );
+                            _subscriptionManager.RemoveSubscriptions( security, _dataType );
                             flag = true;
                         }
                     }
                     if ( !flag )
                         return;
-                    this.RaiseChangedCommand();
-                } ), ( Func<SecuritiesRemovedCommand, bool> )null );
-            commandService.Register<FirstInitSecuritiesCommand>( ( object )this, true, ( Action<FirstInitSecuritiesCommand> )( cmd =>
+                    RaiseChangedCommand();
+                }, null );
+            commandService.Register<FirstInitSecuritiesCommand>( this, true, cmd =>
                 {
-                    this.SecurityPicker.Securities.AddRange( cmd.Securities );
-                    cmd.Securities.ForEach<Security>( ( Action<Security> )( s => this._subscriptionManager.CreateSubscription( s, SecuritiesPanel._dataType, ( Action<Subscription> )null ) ) );
-                    this.RaiseChangedCommand();
-                } ), ( Func<FirstInitSecuritiesCommand, bool> )null );
-            commandService.Register<EntityCommand<Level1ChangeMessage>>( ( object )this, false, ( Action<EntityCommand<Level1ChangeMessage>> )( cmd =>
+                    SecurityPicker.Securities.AddRange( cmd.Securities );
+                    cmd.Securities.ForEach( s => _subscriptionManager.CreateSubscription( s, _dataType, null ) );
+                    RaiseChangedCommand();
+                }, null );
+            commandService.Register<EntityCommand<Level1ChangeMessage>>( this, false, cmd =>
                 {
                     Dictionary<Security, Level1ChangeMessage> dictionary = new Dictionary<Security, Level1ChangeMessage>();
                     foreach ( Level1ChangeMessage entity in cmd.Entities )
                     {
-                        Security key = BaseStudioControl.SecurityProvider.LookupById( entity.SecurityId );
+                        Security key = SecurityProvider.LookupById( entity.SecurityId );
                         if ( key != null )
                         {
                             Level1ChangeMessage level1ChangeMessage;
@@ -87,93 +87,93 @@ namespace StockSharp.Studio.Controls
                                 dictionary.Add( key, entity );
                         }
                     }
-                    this.SecurityPicker.ProcessLevel1( ( IDictionary<Security, Level1ChangeMessage> )dictionary );
-                } ), ( Func<EntityCommand<Level1ChangeMessage>, bool> )null );
-            this.WhenLoaded( ( Action )( () => new RequestBindSource( ( IStudioControl )this ).SyncProcess( ( object )this ) ) );
+                    SecurityPicker.ProcessLevel1( dictionary );
+                }, null );
+            WhenLoaded( () => new RequestBindSource( this ).SyncProcess( this ) );
         }
 
         private void RaiseSelectedCommand()
         {
-            new SelectCommand<Security>( this.SecurityPicker.SelectedSecurity, false ).Process( ( object )this, false );
+            new SelectCommand<Security>( SecurityPicker.SelectedSecurity, false ).Process( this, false );
         }
 
         public override void Dispose( CloseReason reason )
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<BindCommand>( ( object )this );
-            commandService.UnRegister<SecuritiesRemovedCommand>( ( object )this );
-            commandService.UnRegister<EntityCommand<Level1ChangeMessage>>( ( object )this );
-            commandService.UnRegister<FirstInitSecuritiesCommand>( ( object )this );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<BindCommand>( this );
+            commandService.UnRegister<SecuritiesRemovedCommand>( this );
+            commandService.UnRegister<EntityCommand<Level1ChangeMessage>>( this );
+            commandService.UnRegister<FirstInitSecuritiesCommand>( this );
             if ( reason == CloseReason.CloseWindow )
-                this.AlertBtn.Dispose();
-            this._subscriptionManager.Dispose();
+                AlertBtn.Dispose();
+            _subscriptionManager.Dispose();
             base.Dispose( reason );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "SecurityPicker", this.SecurityPicker.Save() );
-            storage.SetValue<string[ ]>( "Securities", this.SecurityPicker.Securities.LookupAll().Select<Security, string>( ( Func<Security, string> )( s => s.Id ) ).ToArray<string>() );
-            storage.SetValue<SettingsStorage>( "AlertBtn", this.AlertBtn.Save() );
-            storage.SetValue<string>( "BarManager", this.BarManager.SaveDevExpressControl() );
+            storage.SetValue( "SecurityPicker", SecurityPicker.Save() );
+            storage.SetValue( "Securities", SecurityPicker.Securities.LookupAll().Select( s => s.Id ).ToArray() );
+            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "SecurityPicker", ( SettingsStorage )null );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "SecurityPicker", null );
             if ( storage1 != null )
-                this.SecurityPicker.Load( storage1 );
-            this.SecurityPicker.Securities.Clear();
-            foreach ( string id in storage.GetValue<string[ ]>( "Securities", Array.Empty<string>() ) )
+                SecurityPicker.Load( storage1 );
+            SecurityPicker.Securities.Clear();
+            foreach ( string id in storage.GetValue( "Securities", Array.Empty<string>() ) )
             {
-                Security security = BaseStudioControl.SecurityProvider.LookupById( id );
+                Security security = SecurityProvider.LookupById( id );
                 if ( security != null )
                 {
-                    this.SecurityPicker.Securities.Add( security );
-                    this._subscriptionManager.CreateSubscription( security, SecuritiesPanel._dataType, ( Action<Subscription> )null );
+                    SecurityPicker.Securities.Add( security );
+                    _subscriptionManager.CreateSubscription( security, _dataType, null );
                 }
             }
-            SettingsStorage storage2 = storage.GetValue<SettingsStorage>( "AlertBtn", ( SettingsStorage )null );
+            SettingsStorage storage2 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
             if ( storage2 != null )
-                this.AlertBtn.Load( storage2 );
-            string settings = storage.GetValue<string>( "BarManager", ( string )null );
+                AlertBtn.Load( storage2 );
+            string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings == null )
                 return;
-            this.BarManager.LoadDevExpressControl( settings );
+            BarManager.LoadDevExpressControl( settings );
         }
 
         private void SecurityPicker_SecuritySelected( Security security )
         {
-            this.RaiseSelectedCommand();
-            this.RemoveSecurities.IsEnabled = this.SecurityPicker.SelectedSecurity != null;
+            RaiseSelectedCommand();
+            RemoveSecurities.IsEnabled = SecurityPicker.SelectedSecurity != null;
         }
 
         private void AddSecurities_OnClick( object sender, ItemClickEventArgs e )
         {
-            IEnumerable<Security> securities = this.SecurityPicker.Securities.LookupAll();
-            SecuritiesWindowEx wnd = new SecuritiesWindowEx() { SecurityProvider = BaseStudioControl.SecurityProvider, SelectedSecurities = securities };
-            if ( !wnd.ShowModal( ( DependencyObject )this ) )
+            IEnumerable<Security> securities = SecurityPicker.Securities.LookupAll();
+            SecuritiesWindowEx wnd = new SecuritiesWindowEx() { SecurityProvider = SecurityProvider, SelectedSecurities = securities };
+            if ( !wnd.ShowModal( this ) )
                 return;
-            Security[ ] array1 = securities.Except<Security>( wnd.SelectedSecurities ).ToArray<Security>();
-            Security[ ] array2 = wnd.SelectedSecurities.Except<Security>( securities ).ToArray<Security>();
+            Security[ ] array1 = securities.Except( wnd.SelectedSecurities ).ToArray();
+            Security[ ] array2 = wnd.SelectedSecurities.Except( securities ).ToArray();
             if ( array1.Length == 0 && array2.Length == 0 )
                 return;
-            this.SecurityPicker.Securities.RemoveRange( ( IEnumerable<Security> )array1 );
-            this.SecurityPicker.Securities.AddRange( ( IEnumerable<Security> )array2 );
-            ( ( IEnumerable<Security> )array1 ).ForEach<Security>( ( Action<Security> )( s => this._subscriptionManager.RemoveSubscriptions( s, SecuritiesPanel._dataType ) ) );
-            ( ( IEnumerable<Security> )array2 ).ForEach<Security>( ( Action<Security> )( s => this._subscriptionManager.CreateSubscription( s, SecuritiesPanel._dataType, ( Action<Subscription> )null ) ) );
-            this.RaiseChangedCommand();
+            SecurityPicker.Securities.RemoveRange( array1 );
+            SecurityPicker.Securities.AddRange( array2 );
+            array1.ForEach( s => _subscriptionManager.RemoveSubscriptions( s, _dataType ) );
+            array2.ForEach( s => _subscriptionManager.CreateSubscription( s, _dataType, null ) );
+            RaiseChangedCommand();
         }
 
         private void RemoveSecurities_OnClick( object sender, ItemClickEventArgs e )
         {
-            Security[ ] array = this.SecurityPicker.SelectedSecurities.ToArray<Security>();
+            Security[ ] array = SecurityPicker.SelectedSecurities.ToArray();
             foreach ( Security security in array )
-                this._subscriptionManager.RemoveSubscriptions( security, SecuritiesPanel._dataType );
-            this.SecurityPicker.Securities.RemoveRange( ( IEnumerable<Security> )array );
-            this.RaiseChangedCommand();
+                _subscriptionManager.RemoveSubscriptions( security, _dataType );
+            SecurityPicker.Securities.RemoveRange( array );
+            RaiseChangedCommand();
         }
 
 

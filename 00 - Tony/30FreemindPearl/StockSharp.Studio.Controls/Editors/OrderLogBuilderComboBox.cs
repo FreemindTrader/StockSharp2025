@@ -14,37 +14,37 @@ namespace StockSharp.Studio.Controls.Editors
   {
     public OrderLogBuilderComboBox()
     {
-      this.DisplayMember = "Name";
-      this.ValueMember = "Type";
-      this.IsTextEditable = new bool?(false);
-      this.AutoComplete = true;
+      DisplayMember = "Name";
+      ValueMember = "Type";
+      IsTextEditable = new bool?(false);
+      AutoComplete = true;
       Type defaultBuilder;
-      this.ItemsSource = OrderLogBuilderItem.CreateSource(out defaultBuilder);
-      this.SelectedBuilder = defaultBuilder;
+      ItemsSource = OrderLogBuilderItem.CreateSource(out defaultBuilder);
+      SelectedBuilder = defaultBuilder;
     }
 
     protected override BaseEditSettings CreateEditorSettings()
     {
-      return (BaseEditSettings) new OrderLogBuilderComboEditor();
+      return new OrderLogBuilderComboEditor();
     }
 
     protected override void OnLoadedInternal()
     {
       base.OnLoadedInternal();
-      if (this.EditMode != EditMode.Standalone)
+      if (EditMode != EditMode.Standalone)
         return;
-      this.Settings.ApplyToEdit((IBaseEdit) this, true, (IDefaultEditorViewInfo) EmptyDefaultEditorViewInfo.Instance);
+      Settings.ApplyToEdit( this, true, EmptyDefaultEditorViewInfo.Instance );
     }
 
     public Type SelectedBuilder
     {
       get
       {
-        return (Type) this.EditValue;
+        return (Type) EditValue;
       }
       set
       {
-        this.EditValue = (object) value;
+        EditValue = value;
       }
     }
   }

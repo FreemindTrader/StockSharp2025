@@ -17,7 +17,7 @@ namespace StockSharp.Studio.Controls
             {
                 if ( message.Level == LogLevels.Error && !( message.Source is HistoryEmulationConnector ) && ( !( message.Source is HistoryMessageAdapter ) && !( message.Source is EmulationMessageAdapter ) ) && !( message.Source is MarketEmulator ) )
                 {
-                    this.HasErrors = true;
+                    HasErrors = true;
                     break;
                 }
             }

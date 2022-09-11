@@ -215,7 +215,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             break;
 
             default:
-                throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( ( object )ChartElement.Style ) );
+                throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( ChartElement.Style ) );
         }
 
         visualSereis.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, ChartElement, "DrawTemplate", BindingMode.TwoWay, null, null );

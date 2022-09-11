@@ -134,11 +134,11 @@ namespace StockSharp.Studio.Controls
         public static RoutedCommand DownloadCommand = new RoutedCommand();
         public static RoutedCommand EditSecurityCommand = new RoutedCommand();
         public static RoutedCommand DeleteSecurityCommand = new RoutedCommand();
-        private readonly MarketDataPanel.ProgressData _progressData = new MarketDataPanel.ProgressData();
-        private readonly Tuple<string, object> _storageDataSource = new Tuple<string, object>( LocalizedStrings.Str1405, ( object )LocalizedStrings.Str1405 );
+        private readonly ProgressData _progressData = new ProgressData();
+        private readonly Tuple<string, object> _storageDataSource = new Tuple<string, object>( LocalizedStrings.Str1405, LocalizedStrings.Str1405 );
         private readonly SecurityTypes[ ] _defaultSecurityTypes = new SecurityTypes[5] { SecurityTypes.Currency, SecurityTypes.Index, SecurityTypes.Stock, SecurityTypes.Future, SecurityTypes.CryptoCurrency };
         private CancellationTokenSource _downloadCts;
-        private readonly MarketDataPanel.SelectableObject[ ] _allCandleTimeFrames;
+        private readonly SelectableObject[ ] _allCandleTimeFrames;
         private readonly Connector _connector;
         private int _numSecuritiesBeforeLookup;
         private bool _isCancelled;
@@ -170,8 +170,8 @@ namespace StockSharp.Studio.Controls
 
         public MarketDataPanel()
         {
-            this.InitializeComponent();
-            this.TimeFrames.ItemsSource = ( IEnumerable )( this._allCandleTimeFrames = ( ( IEnumerable<int> )new int[7]
+            InitializeComponent();
+            TimeFrames.ItemsSource = _allCandleTimeFrames = ( new int[7]
             {
         1,
         5,
@@ -180,58 +180,58 @@ namespace StockSharp.Studio.Controls
         30,
         60,
         1440
-            } ).Select<int, MarketDataPanel.SelectableObject>( ( Func<int, MarketDataPanel.SelectableObject> )( i =>
+            } ).Select( i =>
           {
-              TimeSpan timeSpan = TimeSpan.FromMinutes( ( double )i );
-              MarketDataPanel.SelectableObject selectableObject = new MarketDataPanel.SelectableObject( DataType.TimeFrame( timeSpan ), timeSpan );
+              TimeSpan timeSpan = TimeSpan.FromMinutes( i );
+              SelectableObject selectableObject = new SelectableObject( DataType.TimeFrame( timeSpan ), timeSpan );
               if ( timeSpan == TimeSpan.FromMinutes( 5.0 ) )
                   selectableObject.IsSelected = true;
               return selectableObject;
-          } ) ).ToArray<MarketDataPanel.SelectableObject>() );
-            this.SecuritiesAll.GridChanged += RaiseChangedCommand;
-            this.SecuritiesAll.SecurityDoubleClick += ( Action<Security> )( security =>
+          } ).ToArray();
+            SecuritiesAll.GridChanged += RaiseChangedCommand;
+            SecuritiesAll.SecurityDoubleClick += security =>
               {
                   if ( security == null )
                       return;
-                  this.SelectSecurities( new Security[1] { security } );
-              } );
-            this.SecuritiesSelected.GridChanged += RaiseChangedCommand;
-            this.SecuritiesSelected.SecurityDoubleClick += ( Action<Security> )( security =>
+                  SelectSecurities( new Security[1] { security } );
+              };
+            SecuritiesSelected.GridChanged += RaiseChangedCommand;
+            SecuritiesSelected.SecurityDoubleClick += security =>
               {
                   if ( security == null )
                       return;
-                  this.UnselectSecurities( new Security[1] { security } );
-              } );
-            this.SecuritiesAll.SecurityProvider = BaseStudioControl.SecurityProvider;
-            this.SelectedDrive = ServicesRegistry.DriveCache.DefaultDrive;
+                  UnselectSecurities( new Security[1] { security } );
+              };
+            SecuritiesAll.SecurityProvider = SecurityProvider;
+            SelectedDrive = ServicesRegistry.DriveCache.DefaultDrive;
             DateTime today = DateTime.Today;
-            this.DateTimeFrom.NullValue = ( object )DateTime.MinValue;
-            this.DateTimeFrom.DateTime = today.AddDays( -365.0 );
-            this.DateTimeTo.NullValue = ( object )DateTime.MinValue;
-            this.DateTimeTo.DateTime = today;
+            DateTimeFrom.NullValue = DateTime.MinValue;
+            DateTimeFrom.DateTime = today.AddDays( -365.0 );
+            DateTimeTo.NullValue = DateTime.MinValue;
+            DateTimeTo.DateTime = today;
             
             // Tony
             //this.TimeoutSeconds.Value = ( Decimal )MarketDataPanel.DataDownloader.DefaultDataTimeout.TotalSeconds.To<int>();
 
-            this.TimeoutSeconds.Value = 10;
-            this.StorageFormat = StorageFormats.Binary;
-            this.BusyIndicator.BusyContent = ( object )this._progressData;
-            this.MarketDataGrid.LayoutChanged += RaiseChangedCommand;
-            this.MarketDataGrid.DataLoading += ( Action )( () => this.BusyIndicator1.IsBusy = true );
-            this.MarketDataGrid.DataLoaded += ( Action )( () => this.BusyIndicator1.IsBusy = false );
-            this._connector = BaseStudioControl.Connector;
-            MarketDataPanel.ExtendedInfoStorage.Deleted += new Action<IExtendedInfoStorageItem>( this.OnExtendedInfoStorageDeleted );
+            TimeoutSeconds.Value = 10;
+            StorageFormat = StorageFormats.Binary;
+            BusyIndicator.BusyContent = _progressData;
+            MarketDataGrid.LayoutChanged += RaiseChangedCommand;
+            MarketDataGrid.DataLoading += () => BusyIndicator1.IsBusy = true;
+            MarketDataGrid.DataLoaded += () => BusyIndicator1.IsBusy = false;
+            _connector = Connector;
+            ExtendedInfoStorage.Deleted += new Action<IExtendedInfoStorageItem>( OnExtendedInfoStorageDeleted );
         }
 
         public IMarketDataDrive SelectedDrive
         {
             get
             {
-                return this.DriveCtrl.SelectedDrive;
+                return DriveCtrl.SelectedDrive;
             }
             set
             {
-                this.DriveCtrl.SelectedDrive = value;
+                DriveCtrl.SelectedDrive = value;
             }
         }
 
@@ -239,11 +239,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.FormatCtrl.SelectedFormat;
+                return FormatCtrl.SelectedFormat;
             }
             set
             {
-                this.FormatCtrl.SelectedFormat = value;
+                FormatCtrl.SelectedFormat = value;
             }
         }
 
@@ -265,32 +265,32 @@ namespace StockSharp.Studio.Controls
 
         public override CloseAction CanClose( CloseReason reason )
         {
-            return reason == CloseReason.Shutdown || !this.BusyIndicator.IsBusy ? CloseAction.Close : CloseAction.StayOpen;
+            return reason == CloseReason.Shutdown || !BusyIndicator.IsBusy ? CloseAction.Close : CloseAction.StayOpen;
         }
 
         private void ExecutedSelectSecurity( object sender, ExecutedRoutedEventArgs e )
         {
-            this.SelectSecurities( this.SecuritiesAll.SelectedSecurities.ToArray<Security>() );
+            SelectSecurities( SecuritiesAll.SelectedSecurities.ToArray() );
         }
 
         private void CanExecuteSelectSecurity( object sender, CanExecuteRoutedEventArgs e )
         {
             CanExecuteRoutedEventArgs executeRoutedEventArgs = e;
-            SecurityPicker securitiesAll = this.SecuritiesAll;
-            int num = securitiesAll != null ? ( securitiesAll.SelectedSecurities.Any<Security>() ? 1 : 0 ) : 0;
+            SecurityPicker securitiesAll = SecuritiesAll;
+            int num = securitiesAll != null ? ( securitiesAll.SelectedSecurities.Any() ? 1 : 0 ) : 0;
             executeRoutedEventArgs.CanExecute = num != 0;
         }
 
         private void ExecutedUnselectSecurity( object sender, ExecutedRoutedEventArgs e )
         {
-            this.UnselectSecurities( this.SecuritiesSelected.SelectedSecurities.ToArray<Security>() );
+            UnselectSecurities( SecuritiesSelected.SelectedSecurities.ToArray() );
         }
 
         private void CanExecuteUnselectSecurity( object sender, CanExecuteRoutedEventArgs e )
         {
             CanExecuteRoutedEventArgs executeRoutedEventArgs = e;
-            SecurityPicker securitiesSelected = this.SecuritiesSelected;
-            int num = securitiesSelected != null ? ( securitiesSelected.SelectedSecurities.Any<Security>() ? 1 : 0 ) : 0;
+            SecurityPicker securitiesSelected = SecuritiesSelected;
+            int num = securitiesSelected != null ? ( securitiesSelected.SelectedSecurities.Any() ? 1 : 0 ) : 0;
             executeRoutedEventArgs.CanExecute = num != 0;
         }
 
@@ -303,11 +303,11 @@ namespace StockSharp.Studio.Controls
             }
             catch ( OperationCanceledException ex )
             {
-                int num = ( int )new MessageBoxBuilder().Warning().Owner( ( DependencyObject )marketDataPanel ).Caption( LocalizedStrings.Warning ).Text( LocalizedStrings.OperationCanceled ).Show();
+                int num = ( int )new MessageBoxBuilder().Warning().Owner( marketDataPanel ).Caption( LocalizedStrings.Warning ).Text( LocalizedStrings.OperationCanceled ).Show();
             }
             catch ( Exception ex )
             {
-                int num = ( int )new MessageBoxBuilder().Error().Owner( ( DependencyObject )marketDataPanel ).Caption( LocalizedStrings.Str152 ).Text( ex.ToString() ).Show();
+                int num = ( int )new MessageBoxBuilder().Error().Owner( marketDataPanel ).Caption( LocalizedStrings.Str152 ).Text( ex.ToString() ).Show();
             }
         }
 
@@ -316,15 +316,15 @@ namespace StockSharp.Studio.Controls
             MarketDataPanel parent = this;
             parent.RaiseChangedCommand();
             DataSourceWindow wnd = new DataSourceWindow();
-            wnd.Configure = ( Action )( () => this.ConfigureConnector( ( ICollection<Tuple<string, object>> )wnd.DataSourceItemsSource, false ) );
-            parent.FillDataSources( ( ICollection<Tuple<string, object>> )wnd.DataSourceItemsSource, false );
-            Security[ ] array1 = parent.SecuritiesSelected.Securities.LookupAll().ToArray<Security>();
+            wnd.Configure = () => ConfigureConnector( wnd.DataSourceItemsSource, false );
+            parent.FillDataSources( wnd.DataSourceItemsSource, false );
+            Security[ ] array1 = parent.SecuritiesSelected.Securities.LookupAll().ToArray();
             ExchangeBoard board = array1[0].Board;
-            if ( array1.Length == 1 || ( Equatable<ExchangeBoard> )board != ( ExchangeBoard )null && ( ( IEnumerable<Security> )array1 ).All<Security>( ( Func<Security, bool> )( s => ( Equatable<ExchangeBoard> )s.Board == board ) ) )
+            if ( array1.Length == 1 || board != null && array1.All( s => s.Board == board ) )
             {
-                Guid? secAdapter = ServicesRegistry.SecurityAdapterProvider.TryGetAdapter( array1[0].ToSecurityId( ( SecurityIdGenerator )null, true, false ), ( DataType )null );
+                Guid? secAdapter = ServicesRegistry.SecurityAdapterProvider.TryGetAdapter( array1[0].ToSecurityId( null, true, false ), null );
                 if ( secAdapter.HasValue )
-                    wnd.SelectedDataSource = wnd.DataSourceItemsSource.FirstOrDefault<Tuple<string, object>>( ( Func<Tuple<string, object>, bool> )( t =>
+                    wnd.SelectedDataSource = wnd.DataSourceItemsSource.FirstOrDefault( t =>
                        {
                            IMessageAdapter messageAdapter = t.Item2 as IMessageAdapter;
                            if ( messageAdapter == null )
@@ -334,21 +334,21 @@ namespace StockSharp.Studio.Controls
                            if ( !nullable.HasValue )
                                return false;
                            return id == nullable.GetValueOrDefault();
-                       } ) );
+                       } );
             }
-            if ( !wnd.ShowModal( ( DependencyObject )parent ) )
+            if ( !wnd.ShowModal( parent ) )
                 return;
             DateTime dateTime1 = parent.DateTimeFrom.DateTime;
             DateTime dateTime2 = parent.DateTimeTo.DateTime;
-            IEnumerable<DataType> dataTypes = ( ( IEnumerable<MarketDataPanel.SelectableObject> )parent._allCandleTimeFrames ).Where<MarketDataPanel.SelectableObject>( ( Func<MarketDataPanel.SelectableObject, bool> )( t => t.IsSelected ) ).Select<MarketDataPanel.SelectableObject, DataType>( ( Func<MarketDataPanel.SelectableObject, DataType> )( t => t.Value ) );
+            IEnumerable<DataType> dataTypes = parent._allCandleTimeFrames.Where( t => t.IsSelected ).Select( t => t.Value );
             bool? isChecked = parent.Ticks.IsChecked;
             bool flag = true;
             if ( isChecked.GetValueOrDefault() == flag & isChecked.HasValue )
-                dataTypes = dataTypes.Concat<DataType>( ( IEnumerable<DataType> )new DataType[1]
+                dataTypes = dataTypes.Concat( new DataType[1]
                 {
           DataType.Ticks
                 } );
-            IEnumerable<DataType> array2 = ( IEnumerable<DataType> )dataTypes.ToArray<DataType>();
+            IEnumerable<DataType> array2 = dataTypes.ToArray();
             IMessageAdapter messageAdapter1 = wnd.SelectedDataSource.Item2 as IMessageAdapter;
             List<Subscription> source = new List<Subscription>();
             foreach ( Security security in array1 )
@@ -362,9 +362,9 @@ namespace StockSharp.Studio.Controls
                     source.Add( subscription );
                 }
             }
-            if ( source.IsEmpty<Subscription>() )
+            if ( source.IsEmpty() )
             {
-                int num = ( int )new MessageBoxBuilder().Owner( ( DependencyObject )parent ).Text( LocalizedStrings.XamlStr344 ).Show();
+                int num = ( int )new MessageBoxBuilder().Owner( parent ).Text( LocalizedStrings.XamlStr344 ).Show();
             }
             else
             {
@@ -374,7 +374,7 @@ namespace StockSharp.Studio.Controls
                 try
                 {
                     parent.BusyIndicator.IsBusy = true;
-                    parent.SetProgressSettings( LocalizedStrings.XamlStr189, ( BaseEditStyleSettings )new ProgressBarMarqueeStyleSettings() );
+                    parent.SetProgressSettings( LocalizedStrings.XamlStr189, new ProgressBarMarqueeStyleSettings() );
                     parent._downloadCts = new CancellationTokenSource();
                     
                     // TOny
@@ -391,134 +391,134 @@ namespace StockSharp.Studio.Controls
 
         private void CanExecuteDownload( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.SecuritiesSelected.Securities.Count > 0;
+            e.CanExecute = SecuritiesSelected.Securities.Count > 0;
         }
 
         private void ExecutedCancel( object sender, ExecutedRoutedEventArgs e )
         {
-            this._isCancelled = true;
-            this._downloadCts?.Cancel();
+            _isCancelled = true;
+            _downloadCts?.Cancel();
         }
 
         private void CanExecuteCancel( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = !this._isCancelled;
+            e.CanExecute = !_isCancelled;
         }
 
         private void CreateRegular( object sender, RoutedEventArgs e )
         {
-            new CreateSecurityCommand( typeof( Security ) ).Process( ( object )this, true );
+            new CreateSecurityCommand( typeof( Security ) ).Process( this, true );
         }
 
         private void CreateIndex( object sender, RoutedEventArgs e )
         {
-            new CreateSecurityCommand( typeof( IndexSecurity ) ).Process( ( object )this, true );
+            new CreateSecurityCommand( typeof( IndexSecurity ) ).Process( this, true );
         }
 
         private void CreateContinuous( object sender, RoutedEventArgs e )
         {
-            new CreateSecurityCommand( typeof( ContinuousSecurity ) ).Process( ( object )this, true );
+            new CreateSecurityCommand( typeof( ContinuousSecurity ) ).Process( this, true );
         }
 
         private void EditSecurityCommandExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-            new EditSecuritiesCommand( ( IEnumerable<Security> )this.SecuritiesAll.SelectedSecurities ).Process( ( object )this, true );
+            new EditSecuritiesCommand( SecuritiesAll.SelectedSecurities ).Process( this, true );
         }
 
         private void EditSecurityCommandCanExecute( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.SecuritiesAll?.SelectedSecurity != null;
+            e.CanExecute = SecuritiesAll?.SelectedSecurity != null;
         }
 
         private void DeleteSecurityCommandExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-            new RemoveSecuritiesCommand( ( IEnumerable<Security> )this.SecuritiesAll.SelectedSecurities.ToArray<Security>() ).Process( ( object )this, true );
+            new RemoveSecuritiesCommand( SecuritiesAll.SelectedSecurities.ToArray() ).Process( this, true );
         }
 
         private void DeleteSecurityCommandCanExecute( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.SecuritiesAll?.SelectedSecurity != null;
+            e.CanExecute = SecuritiesAll?.SelectedSecurity != null;
         }
 
         public void SelectSecurities( Security[ ] securities )
         {
-            this.SecuritiesSelected.Securities.AddRange( ( IEnumerable<Security> )securities );
-            this.SecuritiesAll.ExcludeSecurities.AddRange<Security>( ( IEnumerable<Security> )securities );
-            this.RaiseChangedCommand();
+            SecuritiesSelected.Securities.AddRange( securities );
+            SecuritiesAll.ExcludeSecurities.AddRange( securities );
+            RaiseChangedCommand();
         }
 
         private void UnselectSecurities( Security[ ] securities )
         {
-            this.SecuritiesSelected.Securities.RemoveRange( ( IEnumerable<Security> )securities );
-            this.SecuritiesAll.ExcludeSecurities.RemoveRange<Security>( ( IEnumerable<Security> )securities );
-            this.RaiseChangedCommand();
+            SecuritiesSelected.Securities.RemoveRange( securities );
+            SecuritiesAll.ExcludeSecurities.RemoveRange( securities );
+            RaiseChangedCommand();
         }
 
         private void DownloadSecurities_OnClick( object sender, RoutedEventArgs e )
         {
-            SecurityLookupWindow wnd = new SecurityLookupWindow() { ExchangeInfoProvider = BaseStudioControl.ExchangeInfoProvider, ShowDataSourcePanel = true };
-            wnd.Configure = ( Action )( () => this.ConfigureConnector( ( ICollection<Tuple<string, object>> )wnd.DataSourceItemsSource, true ) );
-            this.FillDataSources( ( ICollection<Tuple<string, object>> )wnd.DataSourceItemsSource, true );
-            if ( !wnd.ShowModal( ( DependencyObject )this ) )
+            SecurityLookupWindow wnd = new SecurityLookupWindow() { ExchangeInfoProvider = ExchangeInfoProvider, ShowDataSourcePanel = true };
+            wnd.Configure = () => ConfigureConnector( wnd.DataSourceItemsSource, true );
+            FillDataSources( wnd.DataSourceItemsSource, true );
+            if ( !wnd.ShowModal( this ) )
                 return;
             Tuple<string, object> selectedDataSource = wnd.SelectedDataSource;
-            if ( !this.OnCanLookup( selectedDataSource ) )
+            if ( !OnCanLookup( selectedDataSource ) )
                 return;
-            this._isCancelled = false;
-            this._numSecuritiesBeforeLookup = BaseStudioControl.SecurityProvider.Count;
-            this.BusyIndicator.IsBusy = true;
-            this.SetProgressSettings( LocalizedStrings.Str3657, ( BaseEditStyleSettings )new ProgressBarMarqueeStyleSettings() );
+            _isCancelled = false;
+            _numSecuritiesBeforeLookup = SecurityProvider.Count;
+            BusyIndicator.IsBusy = true;
+            SetProgressSettings( LocalizedStrings.Str3657, new ProgressBarMarqueeStyleSettings() );
             SecurityLookupMessage criteriaMessage = wnd.CriteriaMessage;
-            if ( object.Equals( ( object )selectedDataSource, ( object )this._storageDataSource ) )
-                this.OnStorageLookup( criteriaMessage );
+            if ( Equals( selectedDataSource, _storageDataSource ) )
+                OnStorageLookup( criteriaMessage );
             else
-                this.OnConnectorLookup( criteriaMessage, selectedDataSource );
+                OnConnectorLookup( criteriaMessage, selectedDataSource );
         }
 
         private bool OnCanLookup( Tuple<string, object> type )
         {
-            if ( object.Equals( ( object )type, ( object )this._storageDataSource ) )
+            if ( Equals( type, _storageDataSource ) )
                 return true;
-            if ( !this.CanLookup )
+            if ( !CanLookup )
             {
-                int num = ( int )new MessageBoxBuilder().Owner( ( DependencyObject )this ).Warning().Text( LocalizedStrings.LookupSecuritiesNotSupported ).Show();
+                int num = ( int )new MessageBoxBuilder().Owner( this ).Warning().Text( LocalizedStrings.LookupSecuritiesNotSupported ).Show();
                 return false;
             }
-            return this.CheckConnectionState();
+            return CheckConnectionState();
         }
 
         private bool CheckConnectionState()
         {
-            if ( this._connector.ConnectionState == ConnectionStates.Connected )
+            if ( _connector.ConnectionState == ConnectionStates.Connected )
                 return true;
-            return new MessageBoxBuilder().Owner( ( DependencyObject )this ).Question().Text( "{0} {1}?".Put( ( object )LocalizedStrings.NoActiveConnection, ( object )LocalizedStrings.Connect ) ).YesNo().Show() == MessageBoxResult.Yes;
+            return new MessageBoxBuilder().Owner( this ).Question().Text( "{0} {1}?".Put( LocalizedStrings.NoActiveConnection, LocalizedStrings.Connect ) ).YesNo().Show() == MessageBoxResult.Yes;
         }
 
         private void ConfigureConnector( ICollection<Tuple<string, object>> items, bool addStorageSource )
         {
-            if ( this._connector.ConnectionState == ConnectionStates.Connected )
+            if ( _connector.ConnectionState == ConnectionStates.Connected )
             {
-                if ( new MessageBoxBuilder().Owner( ( DependencyObject )this ).Question().Text( "{0} {1}?".Put( ( object )LocalizedStrings.Str1555, ( object )LocalizedStrings.Disconnect ) ).YesNo().Show() != MessageBoxResult.Yes )
+                if ( new MessageBoxBuilder().Owner( this ).Question().Text( "{0} {1}?".Put( LocalizedStrings.Str1555, LocalizedStrings.Disconnect ) ).YesNo().Show() != MessageBoxResult.Yes )
                     return;
-                this._connector.Disconnect();
+                _connector.Disconnect();
             }
             ConfigureConnectorCommand command = new ConfigureConnectorCommand();
-            command.Process( ( object )this, true );
+            command.Process( this, true );
             if ( !command.Result )
                 return;
-            this.FillDataSources( items, addStorageSource );
+            FillDataSources( items, addStorageSource );
         }
 
         private void OnConnectorConnectionError( Exception error )
         {
-            this.OnComplete( error.Message, true );
+            OnComplete( error.Message, true );
         }
 
         private bool CanLookup
         {
             get
             {
-                IMessageAdapter marketDataAdapter = this._connector.MarketDataAdapter;
+                IMessageAdapter marketDataAdapter = _connector.MarketDataAdapter;
                 if ( marketDataAdapter == null )
                     return false;
                 return marketDataAdapter.IsMessageSupported( MessageTypes.SecurityLookup );
@@ -527,24 +527,24 @@ namespace StockSharp.Studio.Controls
 
         private void OnConnectorLookup( SecurityLookupMessage filter, Tuple<string, object> dataSource )
         {
-            this._securityFilter = filter;
-            this._dataSource = dataSource;
-            this._connector.LookupSecuritiesResult2 += new Action<SecurityLookupMessage, IEnumerable<Security>, IEnumerable<Security>, Exception>( this.OnLookupConnectorLookupSecuritiesResult );
-            if ( this._connector.ConnectionState != ConnectionStates.Connected )
+            _securityFilter = filter;
+            _dataSource = dataSource;
+            _connector.LookupSecuritiesResult2 += new Action<SecurityLookupMessage, IEnumerable<Security>, IEnumerable<Security>, Exception>( OnLookupConnectorLookupSecuritiesResult );
+            if ( _connector.ConnectionState != ConnectionStates.Connected )
             {
-                this._connector.Connected += new Action( this.OnLookupConnectorConnected );
-                this._connector.ConnectionError += new Action<Exception>( this.OnConnectorConnectionError );
-                this._connector.Connect();
+                _connector.Connected += new Action( OnLookupConnectorConnected );
+                _connector.ConnectionError += new Action<Exception>( OnConnectorConnectionError );
+                _connector.Connect();
             }
             else
-                this.OnLookupConnectorConnected();
+                OnLookupConnectorConnected();
         }
 
         private void OnLookupConnectorConnected()
         {
-            SecurityLookupMessage criteria = this._securityFilter.TypedClone<SecurityLookupMessage>();
-            criteria.Adapter = ( IMessageAdapter )this._dataSource?.Item2;
-            this._connector.LookupSecurities( criteria );
+            SecurityLookupMessage criteria = _securityFilter.TypedClone();
+            criteria.Adapter = ( IMessageAdapter )_dataSource?.Item2;
+            _connector.LookupSecurities( criteria );
         }
 
         private void OnLookupConnectorLookupSecuritiesResult(
@@ -553,22 +553,22 @@ namespace StockSharp.Studio.Controls
           IEnumerable<Security> newSecurities,
           Exception error )
         {
-            this._connector.Connected -= new Action( this.OnLookupConnectorConnected );
-            this._connector.ConnectionError -= new Action<Exception>( this.OnConnectorConnectionError );
-            this._connector.LookupSecuritiesResult2 -= new Action<SecurityLookupMessage, IEnumerable<Security>, IEnumerable<Security>, Exception>( this.OnLookupConnectorLookupSecuritiesResult );
-            this._securityFilter = ( SecurityLookupMessage )null;
-            this._dataSource = ( Tuple<string, object> )null;
-            this.OnComplete( LocalizedStrings.Str3264Params.Put( ( object )( BaseStudioControl.SecurityProvider.Count - this._numSecuritiesBeforeLookup ) ), false );
+            _connector.Connected -= new Action( OnLookupConnectorConnected );
+            _connector.ConnectionError -= new Action<Exception>( OnConnectorConnectionError );
+            _connector.LookupSecuritiesResult2 -= new Action<SecurityLookupMessage, IEnumerable<Security>, IEnumerable<Security>, Exception>( OnLookupConnectorLookupSecuritiesResult );
+            _securityFilter = null;
+            _dataSource = null;
+            OnComplete( LocalizedStrings.Str3264Params.Put( SecurityProvider.Count - _numSecuritiesBeforeLookup ), false );
         }
 
         private void DriveCtrl_OnChanged( IMarketDataDrive drive, bool isNew )
         {
-            if ( new MessageBoxBuilder().Text( LocalizedStrings.ImportSecurities ).Question().YesNo().Owner( ( DependencyObject )this ).Show() != MessageBoxResult.Yes )
+            if ( new MessageBoxBuilder().Text( LocalizedStrings.ImportSecurities ).Question().YesNo().Owner( this ).Show() != MessageBoxResult.Yes )
                 return;
-            SecurityLookupWindow wnd = new SecurityLookupWindow() { CriteriaMessage = new SecurityLookupMessage() { SecurityTypes = this._defaultSecurityTypes } };
-            if ( !wnd.ShowModal( ( DependencyObject )this ) )
+            SecurityLookupWindow wnd = new SecurityLookupWindow() { CriteriaMessage = new SecurityLookupMessage() { SecurityTypes = _defaultSecurityTypes } };
+            if ( !wnd.ShowModal( this ) )
                 return;
-            this.OnStorageLookup( wnd.CriteriaMessage );
+            OnStorageLookup( wnd.CriteriaMessage );
         }
 
         private void OnStorageLookup( SecurityLookupMessage filter )
@@ -619,215 +619,215 @@ namespace StockSharp.Studio.Controls
 
         private void OnComplete( string message, bool error )
         {
-            GuiDispatcher.GlobalDispatcher.AddAction( ( Action )( () =>
+            GuiDispatcher.GlobalDispatcher.AddAction( () =>
                {
-                   this.BusyIndicator.IsBusy = false;
+                   BusyIndicator.IsBusy = false;
                    if ( !message.IsEmpty() )
                    {
-                       MessageBoxBuilder messageBoxBuilder = new MessageBoxBuilder().Owner( ( DependencyObject )this ).Text( message );
+                       MessageBoxBuilder messageBoxBuilder = new MessageBoxBuilder().Owner( this ).Text( message );
                        if ( error )
                            messageBoxBuilder.Error();
                        int num = ( int )messageBoxBuilder.Show();
                    }
                    else
-                       this.RefreshGrid( this._lastSelectedSecurity );
-               } ) );
+                       RefreshGrid( _lastSelectedSecurity );
+               } );
         }
 
         private void SetProgressSettings( string title, BaseEditStyleSettings settings )
         {
-            this._progressData.Title = title;
-            this._progressData.Settings = settings;
+            _progressData.Title = title;
+            _progressData.Settings = settings;
         }
 
         private void SetProgress( double minimum, double maximum, double value )
         {
-            this._progressData.Minimum = minimum;
-            this._progressData.Value = value;
-            this._progressData.Maximum = maximum;
+            _progressData.Minimum = minimum;
+            _progressData.Value = value;
+            _progressData.Maximum = maximum;
         }
 
         private void Candles_OnClick( object sender, RoutedEventArgs e )
         {
-            this.ShowCandlesPopup();
+            ShowCandlesPopup();
         }
 
         private void Candles_OnMouseEnter( object sender, MouseEventArgs e )
         {
-            this.ShowCandlesPopup();
+            ShowCandlesPopup();
         }
 
         private void ShowCandlesPopup()
         {
-            this.TimeFramesPopup.IsOpen = false;
-            this.TimeFramesPopup.IsOpen = true;
+            TimeFramesPopup.IsOpen = false;
+            TimeFramesPopup.IsOpen = true;
         }
 
         private void FillDataSources( ICollection<Tuple<string, object>> items, bool addStorageSource )
         {
             items.Clear();
             if ( addStorageSource )
-                items.Add( this._storageDataSource );
-            foreach ( IMessageAdapter sortedAdapter in this._connector.Adapter.InnerAdapters.SortedAdapters )
-                items.Add( new Tuple<string, object>( sortedAdapter.ToString(), ( object )sortedAdapter ) );
+                items.Add( _storageDataSource );
+            foreach ( IMessageAdapter sortedAdapter in _connector.Adapter.InnerAdapters.SortedAdapters )
+                items.Add( new Tuple<string, object>( sortedAdapter.ToString(), sortedAdapter ) );
         }
 
         public override void Load( SettingsStorage storage )
         {
-            this._isLoading = true;
+            _isLoading = true;
             try
             {
                 base.Load( storage );
-                this.DateTimeFrom.DateTime = storage.GetValue<DateTime>( "DateTimeFrom", this.DateTimeFrom.DateTime );
-                this.DateTimeTo.DateTime = storage.GetValue<DateTime>( "DateTimeTo", this.DateTimeTo.DateTime );
+                DateTimeFrom.DateTime = storage.GetValue( "DateTimeFrom", DateTimeFrom.DateTime );
+                DateTimeTo.DateTime = storage.GetValue( "DateTimeTo", DateTimeTo.DateTime );
                 
                 // Tony
                 //this.TimeoutSeconds.Value = ( Decimal )storage.GetValue<int>( "TimeoutSeconds", ( int )MarketDataPanel.DataDownloader.DefaultDataTimeout.TotalSeconds );
-                this.StorageFormat = storage.GetValue<StorageFormats>( "StorageFormat", this.StorageFormat );
-                this.SelectedDrive = ServicesRegistry.DriveCache.GetDrive( storage.GetValue<string>( "SelectedDrive", ( string )null ) );
-                CheckBox ticks = this.Ticks;
+                StorageFormat = storage.GetValue( "StorageFormat", StorageFormat );
+                SelectedDrive = ServicesRegistry.DriveCache.GetDrive( storage.GetValue<string>( "SelectedDrive", null ) );
+                CheckBox ticks = Ticks;
                 SettingsStorage settingsStorage = storage;
-                bool? isChecked = this.Ticks.IsChecked;
+                bool? isChecked = Ticks.IsChecked;
                 bool flag = true;
                 int num = isChecked.GetValueOrDefault() == flag & isChecked.HasValue ? 1 : 0;
-                bool? nullable = new bool?( settingsStorage.GetValue<bool>( "LoadTicks", num != 0 ) );
+                bool? nullable = new bool?( settingsStorage.GetValue( "LoadTicks", num != 0 ) );
                 ticks.IsChecked = nullable;
-                foreach ( TimeSpan timeSpan in storage.GetValue<IEnumerable<TimeSpan>>( "LoadCandles", Enumerable.Empty<TimeSpan>() ) )
+                foreach ( TimeSpan timeSpan in storage.GetValue( "LoadCandles", Enumerable.Empty<TimeSpan>() ) )
                 {
                     TimeSpan period = timeSpan;
-                    ( ( IEnumerable<MarketDataPanel.SelectableObject> )this._allCandleTimeFrames ).First<MarketDataPanel.SelectableObject>( ( Func<MarketDataPanel.SelectableObject, bool> )( t => t.TimeFrame == period ) ).IsSelected = true;
+                    _allCandleTimeFrames.First( t => t.TimeFrame == period ).IsSelected = true;
                 }
-                IEnumerable<string> source = storage.GetValue<IEnumerable<string>>( "Securities", Enumerable.Empty<string>() );
-                ISecurityStorage secStorage = MarketDataPanel.SecurityStorage;
-                Func<string, Security> selector = ( Func<string, Security> )( id => secStorage.LookupById( id ) );
-                this.SelectSecurities( source.Select<string, Security>( selector ).Where<Security>( ( Func<Security, bool> )( s => s != null ) ).ToArray<Security>() );
-                this.FormatCtrl.SelectedFormat = storage.GetValue<StorageFormats>( "StorageFormat", this.FormatCtrl.SelectedFormat );
-                storage.TryLoadSettings<SettingsStorage>( "SecuritiesAll", ( Action<SettingsStorage> )( s => this.SecuritiesAll.Load( s ) ) );
-                storage.TryLoadSettings<SettingsStorage>( "SecuritiesSelected", ( Action<SettingsStorage> )( s => this.SecuritiesSelected.Load( s ) ) );
-                storage.TryLoadSettings<SettingsStorage>( "MarketDataGrid", ( Action<SettingsStorage> )( s => this.MarketDataGrid.Load( s ) ) );
-                storage.TryLoadSettings<string>( "ExtendedInfo", ( Action<string> )( s =>
+                IEnumerable<string> source = storage.GetValue( "Securities", Enumerable.Empty<string>() );
+                ISecurityStorage secStorage = SecurityStorage;
+                Func<string, Security> selector = id => secStorage.LookupById( id );
+                SelectSecurities( source.Select( selector ).Where( s => s != null ).ToArray() );
+                FormatCtrl.SelectedFormat = storage.GetValue( "StorageFormat", FormatCtrl.SelectedFormat );
+                storage.TryLoadSettings<SettingsStorage>( "SecuritiesAll", s => SecuritiesAll.Load( s ) );
+                storage.TryLoadSettings<SettingsStorage>( "SecuritiesSelected", s => SecuritiesSelected.Load( s ) );
+                storage.TryLoadSettings<SettingsStorage>( "MarketDataGrid", s => MarketDataGrid.Load( s ) );
+                storage.TryLoadSettings<string>( "ExtendedInfo", s =>
                    {
                        if ( s.IsEmpty() )
                            return;
-                       this._extendedStorage = MarketDataPanel.ExtendedInfoStorage.Get( s );
-                       this.ApplyExtendedStorage();
-                   } ) );
-                this._mappingSecurityWindowSettings = storage.GetValue<SettingsStorage>( "SecurityMappingWindow", ( SettingsStorage )null );
+                       _extendedStorage = ExtendedInfoStorage.Get( s );
+                       ApplyExtendedStorage();
+                   } );
+                _mappingSecurityWindowSettings = storage.GetValue<SettingsStorage>( "SecurityMappingWindow", null );
             }
             finally
             {
-                this._isLoading = false;
+                _isLoading = false;
             }
-            this.RefreshGrid( this.SecuritiesSelected.SelectedSecurity ?? this.SecuritiesAll.SelectedSecurity );
+            RefreshGrid( SecuritiesSelected.SelectedSecurity ?? SecuritiesAll.SelectedSecurity );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<DateTime>( "DateTimeFrom", this.DateTimeFrom.DateTime );
-            storage.SetValue<DateTime>( "DateTimeTo", this.DateTimeTo.DateTime );
-            storage.SetValue<int>( "TimeoutSeconds", this.TimeoutSeconds.Value.To<int>() );
-            storage.SetValue<StorageFormats>( "StorageFormat", this.StorageFormat );
-            if ( this.SelectedDrive != null )
-                storage.SetValue<string>( "SelectedDrive", this.SelectedDrive.Path );
+            storage.SetValue( "DateTimeFrom", DateTimeFrom.DateTime );
+            storage.SetValue( "DateTimeTo", DateTimeTo.DateTime );
+            storage.SetValue( "TimeoutSeconds", TimeoutSeconds.Value.To<int>() );
+            storage.SetValue( "StorageFormat", StorageFormat );
+            if ( SelectedDrive != null )
+                storage.SetValue( "SelectedDrive", SelectedDrive.Path );
             SettingsStorage settingsStorage = storage;
-            bool? isChecked = this.Ticks.IsChecked;
+            bool? isChecked = Ticks.IsChecked;
             bool flag = true;
             int num = isChecked.GetValueOrDefault() == flag & isChecked.HasValue ? 1 : 0;
-            settingsStorage.SetValue<bool>( "LoadTicks", num != 0 );
-            storage.SetValue<TimeSpan[ ]>( "LoadCandles", ( ( IEnumerable<MarketDataPanel.SelectableObject> )this._allCandleTimeFrames ).Where<MarketDataPanel.SelectableObject>( ( Func<MarketDataPanel.SelectableObject, bool> )( t => t.IsSelected ) ).Select<MarketDataPanel.SelectableObject, TimeSpan>( ( Func<MarketDataPanel.SelectableObject, TimeSpan> )( t => t.TimeFrame ) ).ToArray<TimeSpan>() );
-            storage.SetValue<string[ ]>( "Securities", this.SecuritiesSelected.Securities.LookupAll().Select<Security, string>( ( Func<Security, string> )( s => s.Id ) ).ToArray<string>() );
-            storage.SetValue<StorageFormats>( "StorageFormat", this.FormatCtrl.SelectedFormat );
-            storage.SetValue<SettingsStorage>( "SecuritiesAll", this.SecuritiesAll.Save() );
-            storage.SetValue<SettingsStorage>( "SecuritiesSelected", this.SecuritiesSelected.Save() );
-            storage.SetValue<SettingsStorage>( "MarketDataGrid", this.MarketDataGrid.Save() );
-            storage.SetValue<string>( "ExtendedInfo", this._extendedStorage?.StorageName );
-            storage.SetValue<SettingsStorage>( "SecurityMappingWindow", this._mappingSecurityWindowSettings );
+            settingsStorage.SetValue( "LoadTicks", num != 0 );
+            storage.SetValue( "LoadCandles", _allCandleTimeFrames.Where( t => t.IsSelected ).Select( t => t.TimeFrame ).ToArray() );
+            storage.SetValue( "Securities", SecuritiesSelected.Securities.LookupAll().Select( s => s.Id ).ToArray() );
+            storage.SetValue( "StorageFormat", FormatCtrl.SelectedFormat );
+            storage.SetValue( "SecuritiesAll", SecuritiesAll.Save() );
+            storage.SetValue( "SecuritiesSelected", SecuritiesSelected.Save() );
+            storage.SetValue( "MarketDataGrid", MarketDataGrid.Save() );
+            storage.SetValue( "ExtendedInfo", _extendedStorage?.StorageName );
+            storage.SetValue( "SecurityMappingWindow", _mappingSecurityWindowSettings );
         }
 
         private void SettingsChanged()
         {
-            if ( this._isLoading )
+            if ( _isLoading )
                 return;
-            this.RaiseChangedCommand();
-            this.RefreshGrid( this._lastSelectedSecurity );
+            RaiseChangedCommand();
+            RefreshGrid( _lastSelectedSecurity );
         }
 
         private void SecurityPicker_OnSecuritySelected( Security security )
         {
-            if ( this._isLoading )
+            if ( _isLoading )
                 return;
-            this.RefreshGrid( security );
+            RefreshGrid( security );
         }
 
         private void RefreshGrid( Security security )
         {
-            if ( this.DriveCtrl == null || this.FormatCtrl == null )
+            if ( DriveCtrl == null || FormatCtrl == null )
                 return;
-            this._lastSelectedSecurity = security;
-            this.MarketDataGrid.BeginMakeEntries( ServicesRegistry.StorageRegistry, security != null ? new SecurityId?( security.ToSecurityId( ( SecurityIdGenerator )null, true, false ) ) : new SecurityId?(), this.StorageFormat, this.SelectedDrive );
+            _lastSelectedSecurity = security;
+            MarketDataGrid.BeginMakeEntries( ServicesRegistry.StorageRegistry, security != null ? new SecurityId?( security.ToSecurityId( null, true, false ) ) : new SecurityId?(), StorageFormat, SelectedDrive );
         }
 
         private void Grid_OnSizeChanged( object sender, SizeChangedEventArgs e )
         {
-            this.RaiseChangedCommand();
+            RaiseChangedCommand();
         }
 
         private void ExtendedInfo_OnClick( object sender, RoutedEventArgs e )
         {
-            if ( this.SecuritiesAll.ExtendedInfoStorage != null )
+            if ( SecuritiesAll.ExtendedInfoStorage != null )
             {
-                this.SecuritiesAll.ExtendedInfoStorage = ( IExtendedInfoStorageItem )null;
-                this.ExtendedInfo.Content = ( object )LocalizedStrings.ExtendedInfo;
-                this._extendedStorage = ( IExtendedInfoStorageItem )null;
+                SecuritiesAll.ExtendedInfoStorage = null;
+                ExtendedInfo.Content = LocalizedStrings.ExtendedInfo;
+                _extendedStorage = null;
             }
             else
             {
                 ExtendedInfoStorageWindow wnd = new ExtendedInfoStorageWindow();
-                if ( !wnd.ShowModal( ( DependencyObject )this ) )
+                if ( !wnd.ShowModal( this ) )
                     return;
-                this._extendedStorage = wnd.SelectedStorage;
-                this.ApplyExtendedStorage();
+                _extendedStorage = wnd.SelectedStorage;
+                ApplyExtendedStorage();
             }
         }
 
         private void OnExtendedInfoStorageDeleted( IExtendedInfoStorageItem storage )
         {
-            ( ( DispatcherObject )this ).GuiAsync( ( Action )( () =>
-                  {
-                      if ( this.SecuritiesAll.ExtendedInfoStorage != storage )
-                          return;
-                      this.SecuritiesAll.ExtendedInfoStorage = ( IExtendedInfoStorageItem )null;
-                  } ) );
+            this.GuiAsync( () =>
+               {
+                   if ( SecuritiesAll.ExtendedInfoStorage != storage )
+                       return;
+                   SecuritiesAll.ExtendedInfoStorage = null;
+               } );
         }
 
         private void ApplyExtendedStorage()
         {
-            this.SecuritiesAll.ExtendedInfoStorage = this._extendedStorage;
-            this.ExtendedInfo.Content = ( object )( LocalizedStrings.ExtendedInfo + ": " + this._extendedStorage?.StorageName );
+            SecuritiesAll.ExtendedInfoStorage = _extendedStorage;
+            ExtendedInfo.Content = LocalizedStrings.ExtendedInfo + ": " + _extendedStorage?.StorageName;
         }
 
         private void SecurityMappings_OnClick( object sender, RoutedEventArgs e )
         {
             SecurityMappingWindow securityMappingWindow = new SecurityMappingWindow();
-            if ( this._mappingSecurityWindowSettings != null )
-                securityMappingWindow.Load( this._mappingSecurityWindowSettings );
+            if ( _mappingSecurityWindowSettings != null )
+                securityMappingWindow.Load( _mappingSecurityWindowSettings );
             foreach ( IMessageAdapter possibleAdapter in ServicesRegistry.AdapterProvider.PossibleAdapters )
                 securityMappingWindow.ConnectorsInfo.Add( new ConnectorInfo( possibleAdapter ) );
             securityMappingWindow.Storage = ServicesRegistry.MappingStorage;
-            securityMappingWindow.ShowModal( ( DependencyObject )this );
-            this._mappingSecurityWindowSettings = securityMappingWindow.Save();
-            this.RaiseChangedCommand();
+            securityMappingWindow.ShowModal( this );
+            _mappingSecurityWindowSettings = securityMappingWindow.Save();
+            RaiseChangedCommand();
         }
 
         private void DriveCtrl_OnEditValueChanged( object sender, EditValueChangedEventArgs e )
         {
-            this.SettingsChanged();
+            SettingsChanged();
         }
 
         private void FormatCtrl_OnEditValueChanged( object sender, EditValueChangedEventArgs e )
         {
-            this.SettingsChanged();
+            SettingsChanged();
         }
 
     }

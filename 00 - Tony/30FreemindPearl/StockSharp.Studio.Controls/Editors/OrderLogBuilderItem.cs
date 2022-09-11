@@ -20,8 +20,8 @@ namespace StockSharp.Studio.Controls.Editors
 
     public OrderLogBuilderItem(string name, Type type)
     {
-      this.Name = name;
-      this.Type = type;
+      Name = name;
+      Type = type;
     }
 
     public static object CreateSource(out Type defaultBuilder)
@@ -34,7 +34,7 @@ namespace StockSharp.Studio.Controls.Editors
         if (!dictionary.ContainsKey(type))
           dictionary.Add(type, new OrderLogBuilderItem(possibleAdapter.StorageName, type));
       }
-      return (object) dictionary.Values;
+      return dictionary.Values;
     }
   }
 }

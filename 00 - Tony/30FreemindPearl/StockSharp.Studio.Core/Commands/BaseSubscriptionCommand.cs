@@ -26,7 +26,7 @@ namespace StockSharp.Studio.Core.Commands
             Subscription subscription1 = subscription;
             if ( subscription1 == null )
                 throw new ArgumentNullException( nameof( subscription ) );
-            this.Subscription = subscription1;
+            Subscription = subscription1;
         }
     }
 }

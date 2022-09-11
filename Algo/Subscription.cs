@@ -11,7 +11,7 @@ namespace StockSharp.Algo
 	using StockSharp.Localization;
 	using StockSharp.Messages;
 
-	using DataType = StockSharp.Messages.DataType;
+	using DataType = Messages.DataType;
 
 	/// <summary>
 	/// Subscription states.

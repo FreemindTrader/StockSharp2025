@@ -37,7 +37,7 @@ namespace fx.Charting
                     
                 CandleSeries selectedObject = ( CandleSeries )SeriesCtrl.SelectedObject;
                 CandleSeries candleSeries   = new CandleSeries( );
-                candleSeries.Load( ( ( IPersistable )selectedObject ).Save( ) );
+                candleSeries.Load( selectedObject.Save( ) );
                 candleSeries.Security       = ( selectedObject.Security );
                 candleSeries.CandleType     = ( _candleSeriesItem.CandleSeries.CandleType );
                 candleSeries.Arg            = ( _candleSeriesItem.CandleSeries.Arg );
@@ -52,7 +52,7 @@ namespace fx.Charting
                         CandleSeries = value
                     };
                     
-                    _candleSeriesItem.Load( ( ( IPersistable )value ).Save( ) );
+                    _candleSeriesItem.Load( value.Save( ) );
                     
                     if ( !_candleSeriesItem.From.HasValue && !_candleSeriesItem.To.HasValue )
                     {

@@ -74,12 +74,12 @@ namespace fx.Indicators
         /// <returns></returns>
         public static bool operator ==( Bin lhs, Bin rhs )
         {
-            if ( object.ReferenceEquals( null, lhs ) && object.ReferenceEquals( rhs, null ) )
+            if ( ReferenceEquals( null, lhs ) && ReferenceEquals( rhs, null ) )
             {
                 return true;
             }
 
-            if ( object.ReferenceEquals( null, lhs ) || object.ReferenceEquals( rhs, null ) )
+            if ( ReferenceEquals( null, lhs ) || ReferenceEquals( rhs, null ) )
             {
                 return false;
             }
@@ -107,14 +107,14 @@ namespace fx.Indicators
         {
             if ( obj is Bin b )
             {
-                this.Equals( b );
+                Equals( b );
             }
 
             return false;
         }
 
         /// <summary>
-        /// <see cref="System.IEquatable{T}.Equals(T)"/>
+        /// <see cref="IEquatable{T}.Equals(T)"/>
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
@@ -122,7 +122,7 @@ namespace fx.Indicators
         {
             if ( base.Equals( other ) )
             {
-                return other.Range == this.Range && other.MaxInclusive == this.MaxInclusive;
+                return other.Range == Range && other.MaxInclusive == MaxInclusive;
             }
 
             return false;

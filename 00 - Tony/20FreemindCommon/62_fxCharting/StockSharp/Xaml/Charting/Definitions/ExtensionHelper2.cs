@@ -55,6 +55,6 @@ internal static class ExtensionHelper2
             throw new ArgumentNullException( "annotation" );
         }
 
-        return _chartAnnotationTypesToType.Values.Contains( ( ( object )annotation ).GetType( ) );
+        return _chartAnnotationTypesToType.Values.Contains( annotation.GetType( ) );
     }
 }

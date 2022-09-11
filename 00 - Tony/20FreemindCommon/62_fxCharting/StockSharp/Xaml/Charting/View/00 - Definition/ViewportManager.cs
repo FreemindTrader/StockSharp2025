@@ -144,8 +144,8 @@ public sealed class ViewportManager : ViewportManagerBase
             return yrange;
         }
 
-        double min = ( ( IEnumerable< double > )customAnnotations ).Min( );
-        double max = ( ( IEnumerable< double > )customAnnotations ).Max( );
+        double min = customAnnotations.Min( );
+        double max = customAnnotations.Max( );
 
         if( yrange.IsDefined )
         {

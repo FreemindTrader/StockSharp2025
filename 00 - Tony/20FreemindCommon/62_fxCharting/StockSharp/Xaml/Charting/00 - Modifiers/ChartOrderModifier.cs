@@ -51,11 +51,11 @@ internal sealed class ChartOrderModifier : ChartModifierBase
     {
         get
         {
-            return ( bool )GetValue( ChartOrderModifier.CanCreateOrdersProperty );
+            return ( bool )GetValue( CanCreateOrdersProperty );
         }
         set
         {
-            SetValue( ChartOrderModifier.CanCreateOrdersProperty, value );
+            SetValue( CanCreateOrdersProperty, value );
         }
     }
 
@@ -63,11 +63,11 @@ internal sealed class ChartOrderModifier : ChartModifierBase
     {
         get
         {
-            return ( bool )GetValue( ChartOrderModifier.ShowHorizontalLineProperty );
+            return ( bool )GetValue( ShowHorizontalLineProperty );
         }
         set
         {
-            SetValue( ChartOrderModifier.ShowHorizontalLineProperty, value );
+            SetValue( ShowHorizontalLineProperty, value );
         }
     }
 
@@ -75,14 +75,14 @@ internal sealed class ChartOrderModifier : ChartModifierBase
     {
         base.OnAttached( );
 
-        ( ( UIElement ) this.ParentSurface ).PreviewMouseDown += new MouseButtonEventHandler( OnPreviewMouseDown );
+        ( ( UIElement ) ParentSurface ).PreviewMouseDown += new MouseButtonEventHandler( OnPreviewMouseDown );
     }
 
     public override void OnDetached( )
     {
         base.OnDetached( );
 
-        var surface = ( UIElement ) this.ParentSurface;
+        var surface = ( UIElement ) ParentSurface;
 
         if ( surface != null )
         {
@@ -143,7 +143,7 @@ internal sealed class ChartOrderModifier : ChartModifierBase
         e.Handled = true;
 
         Sides sides      = e.MouseButtons == MouseButtons.Left ? Sides.Buy : Sides.Sell;
-        double dataValue = ( double )   this .YAxis.GetDataValue( e.MousePoint.Y );
+        double dataValue = ( double )    YAxis.GetDataValue( e.MousePoint.Y );
 
         var order        = new Order( );
         order.Direction  = ( sides );
@@ -174,7 +174,7 @@ internal sealed class ChartOrderModifier : ChartModifierBase
 
             _orderLine            = line;
 
-            DependencyProperty visibilityProperty = UIElement.VisibilityProperty;
+            DependencyProperty visibilityProperty = VisibilityProperty;
             string str = "ShowHorizontalLine";
 
             var converter = new BoolToVisibilityConverter( );
@@ -187,7 +187,7 @@ internal sealed class ChartOrderModifier : ChartModifierBase
             AdornerLayer.GetAdornerLayer( _orderLine ).Add( _orderAdorner );
         }
 
-        double dataValue = ( double )   this .YAxis.GetDataValue( pt.Y );
+        double dataValue = ( double )    YAxis.GetDataValue( pt.Y );
         _orderLine.Y1 = pt.Y;
         _orderLine.Y2 = pt.Y;
 

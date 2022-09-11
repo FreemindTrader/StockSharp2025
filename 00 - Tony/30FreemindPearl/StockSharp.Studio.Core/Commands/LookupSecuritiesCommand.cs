@@ -16,7 +16,7 @@ namespace StockSharp.Studio.Core.Commands
             Security security = criteria;
             if ( security == null )
                 throw new ArgumentNullException( nameof( criteria ) );
-            this.Criteria = security;
+            Criteria = security;
         }
 
         public Security Criteria { get; }

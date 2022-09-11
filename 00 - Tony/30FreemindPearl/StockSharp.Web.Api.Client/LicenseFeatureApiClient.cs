@@ -30,7 +30,7 @@ namespace StockSharp.Web.Api.Client
           bool? ownOnly,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<LicenseFeature>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)roleId, (object)ownOnly);
+            return Get<BaseEntitySet<LicenseFeature>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, roleId, ownOnly );
         }
     }
 }

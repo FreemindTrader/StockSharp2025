@@ -93,7 +93,7 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IfxChar
                                                                                                                                             if ( !typeof( IfxChartElement ).IsAssignableFrom( pd.PropertyType ) )
                                                                                                                                                 return pd;
 
-                                                                                                                                            return ChartElementChartSetting.Create( getCountString( pd.GetDisplayName( ) ), indicatorPainter, ( IfxChartElement )pd.GetValue( indicatorPainter ), _propertyDescSelector );
+                                                                                                                                            return Create( getCountString( pd.GetDisplayName( ) ), indicatorPainter, ( IfxChartElement )pd.GetValue( indicatorPainter ), _propertyDescSelector );
                                                                                                                                         }
                                                                                                                              );
                             }
@@ -121,7 +121,7 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IfxChar
                                 name = Extensions.GetDisplayName( propD,   null );
                             }
 
-                            var propertyDescriptor = ChartElementChartSetting.Create( getCountString( name ),   chartElement, chartElement, _propertyDescSelector );
+                            var propertyDescriptor = Create( getCountString( name ),   chartElement, chartElement, _propertyDescSelector );
                             pdArrary[ index ] = propertyDescriptor;
                             return   pdArrary;
                         }

@@ -159,13 +159,13 @@ namespace fx.Charting.ATony
 
         internal static bool IsDivisibleBy( Decimal value, Decimal divisor )
         {
-            if( Math.Abs( divisor - Decimal.Zero ) < NumberUtil.DecimalEpsilon )
+            if( Math.Abs( divisor - Decimal.Zero ) < DecimalEpsilon )
             {
                 return false;
             }
 
             Decimal d = Math.Abs( value / divisor );
-            Decimal num = NumberUtil.DecimalEpsilon * d;
+            Decimal num = DecimalEpsilon * d;
             return Math.Abs( d - Math.Round( d ) ) <= num;
         }
 
@@ -264,7 +264,7 @@ namespace fx.Charting.ATony
 
         public static bool IsPowerOf( double value, double power, double logBase )
         {
-            return Math.Abs( NumberUtil.RoundUpPower( value, power, logBase ) - value ) <= double.Epsilon;
+            return Math.Abs( RoundUpPower( value, power, logBase ) - value ) <= double.Epsilon;
         }
 
         internal static double RoundUpPower( double value, double power, double logBase )

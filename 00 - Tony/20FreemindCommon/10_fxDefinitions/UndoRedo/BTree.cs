@@ -52,8 +52,8 @@ namespace fx.Definitions
         {
             
             this.comparer = comparer;
-            this.first = new Node( nodeCapacity );
-            this.root = this.first;
+            first = new Node( nodeCapacity );
+            root = first;
         }
 
         #endregion
@@ -69,7 +69,7 @@ namespace fx.Definitions
             {
                 Contract.Ensures( Contract.Result<int>( ) >= 0 );
 
-                return this.root.TotalCount;
+                return root.TotalCount;
             }
         }
 
@@ -82,7 +82,7 @@ namespace fx.Definitions
             {
                 Contract.Ensures( Contract.Result<IComparer<T>>( ) != null );
 
-                return this.comparer;
+                return comparer;
             }
         }
 
@@ -100,10 +100,10 @@ namespace fx.Definitions
         /// </summary>
         public bool AllowDuplicates
         {
-            get { return this.allowDuplicates; }
+            get { return allowDuplicates; }
             set
             {                
-                this.allowDuplicates = value;
+                allowDuplicates = value;
             }
         }
 
@@ -220,7 +220,7 @@ namespace fx.Definitions
         /// <returns>The index of the first item greater than the specified value, or Count if no such item exists.</returns>
         public int FirstIndexWhereGreaterThan( T value )
         {
-            Contract.Ensures( Contract.Result<int>( ) >= 0 && Contract.Result<int>( ) <= this.Count );
+            Contract.Ensures( Contract.Result<int>( ) >= 0 && Contract.Result<int>( ) <= Count );
 
             Node leaf;
             int pos;
@@ -238,7 +238,7 @@ namespace fx.Definitions
         /// <returns>The index of the last item less than the specified value, or -1 if no such item exists.</returns>
         public int LastIndexWhereLessThan( T value )
         {
-            Contract.Ensures( Contract.Result<int>( ) >= -1 && Contract.Result<int>( ) < this.Count );
+            Contract.Ensures( Contract.Result<int>( ) >= -1 && Contract.Result<int>( ) < Count );
 
             Node leaf;
             int pos;
@@ -386,12 +386,12 @@ namespace fx.Definitions
 
             public int TotalCount
             {
-                get { return this.totalCount; }
+                get { return totalCount; }
             }
 
             public bool IsRoot
             {
-                get { return this.parent == null; }
+                get { return parent == null; }
             }
 
             public bool IsLeaf
@@ -401,7 +401,7 @@ namespace fx.Definitions
 
             public int NodeCount
             {
-                get { return this.nodeCount; }
+                get { return nodeCount; }
             }
 
             #endregion
@@ -413,8 +413,8 @@ namespace fx.Definitions
             /// </summary>
             public T GetKey( int pos )
             {
-                Contract.Requires( pos >= 0 && pos < this.NodeCount );
-                return this.keys[ pos ];
+                Contract.Requires( pos >= 0 && pos < NodeCount );
+                return keys[ pos ];
             }
 
             /// <summary>
@@ -467,8 +467,8 @@ namespace fx.Definitions
             {
                 Contract.Requires( root != null );
                 Contract.Requires( root.IsRoot );
-                Contract.Ensures( Contract.ValueAtReturn<Node>( out leaf ) != null );
-                Contract.Ensures( 0 <= Contract.ValueAtReturn<int>( out pos ) && Contract.ValueAtReturn<int>( out pos ) <= leaf.NodeCount );
+                Contract.Ensures( Contract.ValueAtReturn( out leaf ) != null );
+                Contract.Ensures( 0 <= Contract.ValueAtReturn( out pos ) && Contract.ValueAtReturn( out pos ) <= leaf.NodeCount );
 
                 pos = Array.BinarySearch( root.keys, 0, root.nodeCount, key, keyComparer );
                 while ( root.nodes != null )
@@ -670,22 +670,22 @@ namespace fx.Definitions
             Node( int nodeCapacity,
                   bool leaf )
             {
-                this.keys = new T[ nodeCapacity ];
+                keys = new T[ nodeCapacity ];
 
                 if ( leaf )
                 {
-                    this.nodes = null;
+                    nodes = null;
                 }
                 else
                 {
-                    this.nodes = new Node[ nodeCapacity ];
+                    nodes = new Node[ nodeCapacity ];
                 }
 
-                this.nodeCount = 0;
-                this.totalCount = 0;
-                this.parent = null;
-                this.next = null;
-                this.prev = null;
+                nodeCount = 0;
+                totalCount = 0;
+                parent = null;
+                next = null;
+                prev = null;
             }
 
             /// <summary>
@@ -918,7 +918,7 @@ namespace fx.Definitions
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator( )
         {
-            return this.GetEnumerator( );
+            return GetEnumerator( );
         }
 
         #endregion

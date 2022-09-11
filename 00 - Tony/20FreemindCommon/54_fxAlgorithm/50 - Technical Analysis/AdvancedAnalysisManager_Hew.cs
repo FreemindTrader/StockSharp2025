@@ -35,7 +35,7 @@ namespace fx.Algorithm
         {            
             var _waveImportanceCalcStatus = new ThreadSafeDictionary< TimeSpan, WorkFlowStatus >( );
 
-            var supportedTF = this.SupportedTimeSpan;
+            var supportedTF = SupportedTimeSpan;
 
             foreach( var tf in supportedTF )
             {

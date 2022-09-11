@@ -12,12 +12,12 @@ namespace StockSharp.Studio.Core.Configuration
     {
         protected override ConfigurationElement CreateNewElement()
         {
-            return ( ConfigurationElement )new ControlElement();
+            return new ControlElement();
         }
 
         protected override object GetElementKey( ConfigurationElement element )
         {
-            return ( object )( ( ControlElement )element ).Type;
+            return ( ( ControlElement )element ).Type;
         }
     }
 }

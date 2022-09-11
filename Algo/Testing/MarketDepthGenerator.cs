@@ -49,13 +49,13 @@ namespace StockSharp.Algo.Testing
 
 		private int _minSpreadStepCount = 1;
 
-		/// <summary>
-		/// The minimal value of spread between the best quotes in units of price increments number. The spread value will be selected randomly between <see cref="MarketDepthGenerator.MinSpreadStepCount"/> and <see cref="MarketDepthGenerator.MaxSpreadStepCount"/>.
-		/// </summary>
-		/// <remarks>
-		/// The default value is 1.
-		/// </remarks>
-		public int MinSpreadStepCount
+        /// <summary>
+        /// The minimal value of spread between the best quotes in units of price increments number. The spread value will be selected randomly between <see cref="MinSpreadStepCount"/> and <see cref="MaxSpreadStepCount"/>.
+        /// </summary>
+        /// <remarks>
+        /// The default value is 1.
+        /// </remarks>
+        public int MinSpreadStepCount
 		{
 			get => _minSpreadStepCount;
 			set
@@ -69,13 +69,13 @@ namespace StockSharp.Algo.Testing
 
 		private int _maxSpreadStepCount = int.MaxValue;
 
-		/// <summary>
-		/// The maximal value of spread between the best quotes in units of price increments number. The spread value will be selected randomly between <see cref="MarketDepthGenerator.MinSpreadStepCount"/> and <see cref="MarketDepthGenerator.MaxSpreadStepCount"/>.
-		/// </summary>
-		/// <remarks>
-		/// The default value is <see cref="int.MaxValue"/>.
-		/// </remarks>
-		public int MaxSpreadStepCount
+        /// <summary>
+        /// The maximal value of spread between the best quotes in units of price increments number. The spread value will be selected randomly between <see cref="MinSpreadStepCount"/> and <see cref="MaxSpreadStepCount"/>.
+        /// </summary>
+        /// <remarks>
+        /// The default value is <see cref="int.MaxValue"/>.
+        /// </remarks>
+        public int MaxSpreadStepCount
 		{
 			get => _maxSpreadStepCount;
 			set

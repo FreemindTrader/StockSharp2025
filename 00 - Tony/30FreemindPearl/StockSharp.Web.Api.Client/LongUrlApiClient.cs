@@ -29,7 +29,7 @@ namespace StockSharp.Web.Api.Client
           bool? orderByDesc,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<LongUrl>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc);
+            return Get<BaseEntitySet<LongUrl>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc );
         }
     }
 }

@@ -120,7 +120,7 @@ namespace fx.Charting
         [Command]
         public void AddXAxis( ChartArea a )
         {
-            var area = this.GetRealChartArea( a );
+            var area = GetRealChartArea( a );
             if ( area == null )
                 return;
 
@@ -142,7 +142,7 @@ namespace fx.Charting
         [Command]
         public void AddYAxis( ChartArea a )
         {
-            ChartArea area = this.GetRealChartArea( a );
+            ChartArea area = GetRealChartArea( a );
             if ( area == null )
                 return;
 
@@ -169,14 +169,14 @@ namespace fx.Charting
             }
             else
             {
-                ScichartSurfaceViewModels.ForEach<ScichartSurfaceMVVM>( p => p.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null ) );
+                ScichartSurfaceViewModels.ForEach( p => p.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null ) );
             }
 
         }
 
         public bool CanShowHiddenAxes( ChartArea _param1 )
         {
-            return this.IsInteracted;
+            return IsInteracted;
         }
 
 
@@ -185,22 +185,22 @@ namespace fx.Charting
             if ( area != null )
                 return area;
 
-            ObservableCollection<ScichartSurfaceMVVM> vm = this.ScichartSurfaceViewModels;
+            ObservableCollection<ScichartSurfaceMVVM> vm = ScichartSurfaceViewModels;
             if ( vm == null )
-                return ( ChartArea ) null;
+                return null;
 
-            return vm.FirstOrDefault<ScichartSurfaceMVVM>( )?.Area;
+            return vm.FirstOrDefault( )?.Area;
         }
 
         [Command]
         public void CancelActiveOrders( ChartArea _param1 )
         {
-            this.OnExecuteCancelActiveOrders( ( Func<Order, bool> ) null );
+            OnExecuteCancelActiveOrders( null );
         }
 
         public bool CanCancelActiveOrders( ChartArea _param1 )
         {
-            return this.IsInteracted;
+            return IsInteracted;
         }
 
         public void OnExecuteCancelActiveOrders( Func<Order, bool> cancelOrdersFunc )
@@ -220,12 +220,12 @@ namespace fx.Charting
                 } );
             }
 
-            var some = this.ScichartSurfaceViewModels.SelectMany<ScichartSurfaceMVVM, Order>(selectActiverOrders).Where<Order>(cancelOrdersFunc);
-            var ordersSet = System.Linq.Enumerable.ToHashSet< Order >(some);
+            var some = ScichartSurfaceViewModels.SelectMany( selectActiverOrders).Where( cancelOrdersFunc);
+            var ordersSet = Enumerable.ToHashSet( some);
 
             foreach ( var order in ordersSet )
             {
-                var cancelOrder = this.CancelActiveOrderEvent;
+                var cancelOrder = CancelActiveOrderEvent;
                 if ( cancelOrder == null )
                     return;
                 cancelOrder( order );

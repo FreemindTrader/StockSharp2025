@@ -126,10 +126,10 @@ namespace fx.Charting
 
         private void RemoveRulerAnnotation( )
         {
-            if ( this._rulerAnnotation == null )
+            if ( _rulerAnnotation == null )
                 return;
-            this.ParentSurface.Annotations.Remove( ( IAnnotation ) this._rulerAnnotation );
-            this._rulerAnnotation = ( RulerAnnotation ) null;
+            ParentSurface.Annotations.Remove( _rulerAnnotation );
+            _rulerAnnotation = null;
         }
 
         protected override AnnotationBase CreateAnnotation( Type _param1, Style data )
@@ -139,18 +139,18 @@ namespace fx.Charting
                 return base.CreateAnnotation( _param1, data );
             }
 
-            this.RemoveRulerAnnotation( );
-            double num = (double) ((Decimal?) (this._chartArea.Chart.GetSource( ( IfxChartElement ) this._chartArea.Elements.OfType< CandlestickUI >( ).FirstOrDefault<CandlestickUI>( ) ) as CandleSeries)?.Security?.PriceStep ?? new Decimal( 1, 0, 0, false, ( byte ) 2 ));
+            RemoveRulerAnnotation( );
+            double num = (double) ( ( ( _chartArea.Chart.GetSource( _chartArea.Elements.OfType<CandlestickUI>().FirstOrDefault() ) as CandleSeries )?.Security?.PriceStep ) ?? new Decimal( 1, 0, 0, false, 2 ) );
             RulerAnnotation ruler = new RulerAnnotation();
-            ruler.YAxisId = this.YAxisId;
-            ruler.XAxisId = this.XAxisId;
+            ruler.YAxisId = YAxisId;
+            ruler.XAxisId = XAxisId;
             ruler.PriceStep = num;
             ruler.RemoveOnClick = true;
 
-            this._rulerAnnotation = ruler;
+            _rulerAnnotation = ruler;
 
-            this.ParentSurface.Annotations.Add( ruler );
-            return ( AnnotationBase ) ruler;
+            ParentSurface.Annotations.Add( ruler );
+            return ruler;
         }
 
         public override void OnModifierMouseDown( ModifierMouseArgs e )
@@ -274,7 +274,7 @@ namespace fx.Charting
             _baseToAnnotationPair.Add( lastAnnotation, chartAnnotation );
             _chartArea.Elements.Add( chartAnnotation );
 
-            Ecng.Common.MayBe.Do(ChartArea, c =>
+            MayBe.Do(ChartArea, c =>
             {
                 c.InvokeAnnotationCreatedEvent( chartAnnotation );
                 c.InvokeAnnotationModifiedEvent( chartAnnotation, GetAnnotationData( lastAnnotation ) );
@@ -467,7 +467,7 @@ namespace fx.Charting
 
             if ( b is HorizontalLineAnnotation )
             {
-                propList.Add( FrameworkElement.HorizontalAlignmentProperty );
+                propList.Add( HorizontalAlignmentProperty );
             }
             else if ( b is VerticalLineAnnotation )
             {
@@ -475,20 +475,20 @@ namespace fx.Charting
             }
             else if ( b is BoxAnnotation )
             {
-                propList.Add( Control.BackgroundProperty );
-                propList.Add( Control.BorderBrushProperty );
-                propList.Add( Control.BorderThicknessProperty );
+                propList.Add( BackgroundProperty );
+                propList.Add( BorderBrushProperty );
+                propList.Add( BorderThicknessProperty );
             }
             else if ( b is TextAnnotation )
             {
                 propList.Add( TextAnnotation.TextProperty );
-                propList.Add( Control.BackgroundProperty );
-                propList.Add( Control.BorderBrushProperty );
-                propList.Add( Control.BorderThicknessProperty );
+                propList.Add( BackgroundProperty );
+                propList.Add( BorderBrushProperty );
+                propList.Add( BorderThicknessProperty );
             }
             else if ( b is RulerAnnotation )
             {
-                propList.Add( Control.BackgroundProperty );
+                propList.Add( BackgroundProperty );
             }                                               
 
             foreach ( DependencyProperty d in propList )
@@ -710,7 +710,7 @@ namespace fx.Charting
                         return;
                     RulerAnnotation rulerAnnotation = ruler;
                     SolidColorBrush fill = data.Fill as SolidColorBrush;
-                    Brush brush = fill != null ? (Brush) new SolidColorBrush(fill.Color.ToTransparent((byte) 50)) : data.Fill;
+                    Brush brush = fill != null ? new SolidColorBrush( fill.Color.ToTransparent( 50 ) ) : data.Fill;
                     rulerAnnotation.Background = brush;
                 }                
             }
@@ -734,7 +734,7 @@ namespace fx.Charting
 
                 if ( !( s.sCalc is ICategoryCoordinateCalculator calculator ) )
                 {
-                    throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( ( object ) "int" ) );
+                    throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( "int" ) );
                 }
 
                 var datetimeData = (DateTime) calculator.TransformIndexToData( index );
@@ -752,7 +752,7 @@ namespace fx.Charting
                 return ( double ) input;
             }
 
-            throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( ( object ) input.GetType( ).Name ) );
+            throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( input.GetType().Name ) );
         }
 
         internal static IComparable DataToIndex( IComparable input, ref Struct1 s )
@@ -774,7 +774,7 @@ namespace fx.Charting
                 return output;
             }
 
-            throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( ( object ) input.GetType( ).Name ) );
+            throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( input.GetType().Name ) );
         }
 
         internal static IComparable GetYCoordinate( IComparable input, ref Struct0 s )
@@ -791,7 +791,7 @@ namespace fx.Charting
 
             if ( s.sCalc is ICategoryCoordinateCalculator && ( s.b.CoordinateMode == AnnotationCoordinateMode.Absolute || s.b.CoordinateMode == AnnotationCoordinateMode.RelativeY ) )
             {
-                throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( ( object ) input.GetType( ).Name ) );
+                throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( input.GetType().Name ) );
             }
 
             if ( input is Decimal )
@@ -801,7 +801,7 @@ namespace fx.Charting
 
             if ( !( input is double ) )
             {
-                throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( ( object ) input.GetType( ).Name ) );
+                throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( input.GetType().Name ) );
             }
 
             return ( double ) input;
@@ -825,7 +825,7 @@ namespace fx.Charting
             }
 
 
-            throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( ( object ) input.GetType( ).Name ) );
+            throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( input.GetType().Name ) );
         }
 
         private void AddNewMenu( AnnotationBase annoBase, bool hasAnnotation )
@@ -846,7 +846,7 @@ namespace fx.Charting
 
             annoBase.IsEditable = hasAnnotation;
             annoBase.CanEditText = hasAnnotation;
-            annoBase.FocusVisualStyle = ( Style ) null;
+            annoBase.FocusVisualStyle = null;
             //vlaHqpwJgrmBsvfI.\u0023\u003Dz8yBlZ7wLyGMQ = new \u0023\u003DzSQJobdqtH0NktyvbaGGemSPQUc7tX1uNXA\u003D\u003D< AnnotationBase > ( new Action<AnnotationBase>( vlaHqpwJgrmBsvfI.Func1 ) );
 
 
@@ -863,8 +863,8 @@ namespace fx.Charting
                                                                         _annotationEditor.PlacementTarget = b;
                                                                         _annotationEditor.IsOpen = true;
                                                                     } );
-            mItem.CommandParameter = ( object ) annoBase;
-            menu.Items.Add( ( IBarItem ) mItem );
+            mItem.CommandParameter = annoBase;
+            menu.Items.Add( mItem );
 
             var deleteCommand = new ActionCommand<AnnotationBase>( b =>
             {
@@ -884,15 +884,15 @@ namespace fx.Charting
 
             BarButtonItem mItem2 = new BarButtonItem();
             mItem2.Glyph = ThemedIconsExtension.GetImage( "remove2" );
-            mItem2.Content = ( object ) LocalizedStrings.Str2060;
+            mItem2.Content = LocalizedStrings.Str2060;
             mItem2.Command = deleteCommand;
-            mItem2.CommandParameter = ( object ) annoBase;
-            menu.Items.Add( ( IBarItem ) mItem2 );
+            mItem2.CommandParameter = annoBase;
+            menu.Items.Add( mItem2 );
 
 
             if ( hasAnnotation )
             {
-                BarManager.SetDXContextMenu( ( UIElement ) annoBase, ( IPopupControl ) menu );
+                BarManager.SetDXContextMenu( annoBase, menu );
             }
 
 

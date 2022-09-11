@@ -50,7 +50,7 @@ namespace fx.Database.Common.DataModel.EntityFramework
                   )
         {
             this.getPrimaryKeyExpression = getPrimaryKeyExpression;
-            this.entityTraits            = ExpressionHelper.GetEntityTraits( this, getPrimaryKeyExpression );
+            entityTraits            = ExpressionHelper.GetEntityTraits( this, getPrimaryKeyExpression );
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace fx.Database.Common.DataModel.EntityFramework
 
         Expression< Func< TEntity, TPrimaryKey > > IRepository< TEntity, TPrimaryKey >.GetPrimaryKeyExpression
         {
-            get { return this.getPrimaryKeyExpression; }
+            get { return getPrimaryKeyExpression; }
         }
 
         void IRepository<TEntity, TPrimaryKey>.SetPrimaryKey( TEntity entity, TPrimaryKey key )

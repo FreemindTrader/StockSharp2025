@@ -75,14 +75,14 @@ namespace fx.Indicators
             //this.ChartSeries.Visible                                 = true;
             //this.ChartSeries.InvolvedInDisplayAreaCalculation        = true;
 
-            _lookback = fx.TALib.Core.RsiLookback( 14 );
+            _lookback = Core.RsiLookback( 14 );
         }
 
         public override PlatformIndicator OnSimpleClone( )
         {
             var result          = new FreemindHewRsi();
-            result._description = this._description;
-            result._name        = this._name;
+            result._description = _description;
+            result._name        = _name;
 
             return result;
         }
@@ -235,7 +235,7 @@ namespace fx.Indicators
                 return IndicatorReturn.BadParam;
             }
 
-            lookbackTotal = fx.TALib.Core.RsiLookback( 14 );
+            lookbackTotal = Core.RsiLookback( 14 );
 
             if ( startIdx < lookbackTotal )
             {
@@ -247,7 +247,7 @@ namespace fx.Indicators
                 return IndicatorReturn.Success;
             }
 
-            unstablePeriod = ( int ) fx.TALib.Core.GetUnstablePeriod( Core.FuncUnstId.Rsi );
+            unstablePeriod = ( int )Core.GetUnstablePeriod( Core.FuncUnstId.Rsi );
 
             outIdx         = 0;            
 

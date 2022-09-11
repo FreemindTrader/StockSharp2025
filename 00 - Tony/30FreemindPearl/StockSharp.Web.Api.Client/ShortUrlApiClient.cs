@@ -29,21 +29,21 @@ namespace StockSharp.Web.Api.Client
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ShortUrl>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId);
+            return Get<BaseEntitySet<ShortUrl>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId );
         }
 
         Task<ShortUrl> IShortUrlService.GetByShortAsync(
           string url,
           CancellationToken cancellationToken)
         {
-            return this.Get<ShortUrl>(RestBaseApiClient.GetCurrentMethod("GetByShortAsync"), cancellationToken, (object)url);
+            return Get<ShortUrl>( GetCurrentMethod( "GetByShortAsync"), cancellationToken, url );
         }
 
         Task<ShortUrl> IShortUrlService.GetByOriginAsync(
           string origin,
           CancellationToken cancellationToken)
         {
-            return this.Get<ShortUrl>(RestBaseApiClient.GetCurrentMethod("GetByOriginAsync"), cancellationToken, (object)origin);
+            return Get<ShortUrl>( GetCurrentMethod( "GetByOriginAsync"), cancellationToken, origin );
         }
     }
 }

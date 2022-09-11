@@ -26,7 +26,7 @@ namespace StockSharp.Algo.Export
 
 	using StockSharp.Messages;
 	using StockSharp.Localization;
-	using DataType = StockSharp.Messages.DataType;
+	using DataType = Messages.DataType;
 
 	using LinqToDB;
 	using LinqToDB.Data;

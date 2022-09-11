@@ -385,7 +385,7 @@ namespace fx.Charting
             rd.Source = new Uri( "pack://application:,,,/fx.Charting;component/ChartExViewRes.xaml" );
 
 
-            UltrachartCursormodifier.SetTooltipTemplate( rSeries, ( DataTemplate ) rd[ "CursorTooltipTemplate" ] );
+            CursorModifier.SetTooltipTemplate( rSeries, ( DataTemplate ) rd[ "CursorTooltipTemplate" ] );
 
 
 

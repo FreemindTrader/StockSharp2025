@@ -20,7 +20,7 @@ namespace StockSharp.Studio.Community.Offline
           long? productId,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<ProductFeedback>>(((IEnumerable<ProductFeedback>)Array.Empty<ProductFeedback>()).ToEntitySet<ProductFeedback>(0));
+            return Task.FromResult( Array.Empty<ProductFeedback>().ToEntitySet( 0));
         }
 
         Task<ProductFeedback> IProductFeedbackService.GetByProductAndClientAsync(
@@ -28,7 +28,7 @@ namespace StockSharp.Studio.Community.Offline
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<ProductFeedback>(new ProductFeedback());
+            return Task.FromResult( new ProductFeedback());
         }
     }
 }

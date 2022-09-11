@@ -19,8 +19,8 @@ namespace StockSharp.Studio.Core.Commands
         {
             if ( account.IsEmpty() )
                 throw new ArgumentNullException( nameof( account ) );
-            this.BrokerId = brokerId;
-            this.Account = account;
+            BrokerId = brokerId;
+            Account = account;
         }
     }
 }

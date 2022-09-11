@@ -21,7 +21,7 @@ namespace StockSharp.Configuration
 	using StockSharp.Bithumb;
 	using StockSharp.BitMax;
 	using StockSharp.Bitmex;
-	using StockSharp.BitStamp;
+	
 	using StockSharp.Bittrex;
 	using StockSharp.BitZ;
 	//using StockSharp.Blackwood;
@@ -143,13 +143,13 @@ namespace StockSharp.Configuration
 
 		private static readonly Lazy<Func<Type>[]> _standardAdapters = new(() => new[]
 		{
-			(Func<Type>)(() => typeof(AlfaDirectMessageAdapter)),
+            () => typeof(AlfaDirectMessageAdapter),
 #if NETSTANDARD2_1
 			() => typeof(BvmtMarketDataAdapter),
 			() => typeof(BvmtTransactionAdapter),
 #endif
 			() => typeof(BarChartMessageAdapter),
-			() => typeof(BitStampMessageAdapter),
+			//() => typeof(BitStampMessageAdapter),
 			//() => typeof(BlackwoodMessageAdapter),
 			() => typeof(BtceMessageAdapter),
 			() => typeof(CqgComMessageAdapter),

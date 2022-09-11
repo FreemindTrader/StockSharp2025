@@ -46,14 +46,14 @@ namespace StockSharp.Studio.Community
             if ( product == null )
                 throw new ArgumentNullException( nameof( product ) );
             ProductDomain[ ] items = product.Domains?.Items;
-            long currDomain = Helper.CurrentDomain;
-            return ( ( IEnumerable<ProductDomain> )items ).FirstOrDefault( d =>
+            long currDomain = CurrentDomain;
+            return items.FirstOrDefault( d =>
             {
                 Domain domain = d.Domain;
                 if ( domain == null )
                     return false;
                 return domain.Id == currDomain;
-            } ) ?? ( ( IEnumerable<ProductDomain> )items ).FirstOrDefault();
+            } ) ?? items.FirstOrDefault();
         }
 
         /// <summary>Get product group domain info.</summary>
@@ -64,14 +64,14 @@ namespace StockSharp.Studio.Community
             if ( group == null )
                 throw new ArgumentNullException( nameof( group ) );
             ProductGroupDomain[ ] items = group.Domains?.Items;
-            long currDomain = Helper.CurrentDomain;
-            return ( ( IEnumerable<ProductGroupDomain> )items ).FirstOrDefault( d =>
+            long currDomain = CurrentDomain;
+            return items.FirstOrDefault( d =>
             {
                 Domain domain = d.Domain;
                 if ( domain == null )
                     return false;
                 return domain.Id == currDomain;
-            } ) ?? ( ( IEnumerable<ProductGroupDomain> )items ).FirstOrDefault();
+            } ) ?? items.FirstOrDefault();
         }
 
         /// <summary>Get product's name.</summary>
@@ -103,7 +103,7 @@ namespace StockSharp.Studio.Community
         /// <param name="owner"></param>
         public static void RegisterServices( bool onlineMode, Type owner )
         {
-            Helper.ProductId = Extensions.GetProductId();
+            ProductId = Extensions.GetProductId();
             ConfigManager.RegisterService<IApiServiceProvider>( new ApiServiceProvider() );
             ConfigManager.RegisterService<ICredentialsProvider>( new DefaultCredentialsProvider() );
             ConfigManager.RegisterService<IHtmlFormatter>( new HtmlFormatter() );
@@ -127,7 +127,7 @@ namespace StockSharp.Studio.Community
             }
 
 
-            return Task.Run( ( Func<Task> )( async () =>
+            return Task.Run( async () =>
             {
 
                 ISessionService sessionSvc;
@@ -140,7 +140,7 @@ namespace StockSharp.Studio.Community
                     Session entity = new Session();
                     entity.Product = new Product()
                     {
-                        Id = Helper.ProductId
+                        Id = ProductId
                     };
                     entity.Version = Paths.InstalledVersion;
 
@@ -173,7 +173,7 @@ namespace StockSharp.Studio.Community
                         {
                             if ( !( ex is OperationCanceledException ) )
                             {
-                                ex.LogError( ( string )null );
+                                ex.LogError( null );
                                 HttpRequestException requestEx = ex as HttpRequestException;
 
                                 if ( requestEx != null )
@@ -185,35 +185,35 @@ namespace StockSharp.Studio.Community
                                         {
                                             case HttpStatusCode.Unauthorized:
                                             case HttpStatusCode.Forbidden:
+                                            {
+                                                if ( ++unauth > 5 )
                                                 {
-                                                    if ( ++unauth > 5 )
+                                                    Action action = disconnected;
+                                                    if ( action != null )
                                                     {
-                                                        Action action = disconnected;
-                                                        if ( action != null )
-                                                        {
-                                                            action();
-                                                            sessionSvc = null;
-                                                            session = null;
-                                                            messageSvc = null;
+                                                        action();
+                                                        sessionSvc = null;
+                                                        session = null;
+                                                        messageSvc = null;
 
-                                                            return;
-                                                        }
-                                                        else
-                                                        {
-                                                            sessionSvc = null;
-                                                            session = null;
-                                                            messageSvc = null;
-
-                                                            return;
-                                                        }
-
+                                                        return;
                                                     }
                                                     else
-                                                        continue;
+                                                    {
+                                                        sessionSvc = null;
+                                                        session = null;
+                                                        messageSvc = null;
+
+                                                        return;
+                                                    }
+
                                                 }
+                                                else
+                                                    continue;
+                                            }
 
                                             default:
-                                                continue;
+                                            continue;
                                         }
                                     }
                                 }
@@ -229,7 +229,7 @@ namespace StockSharp.Studio.Community
                     }
                     catch ( Exception ex )
                     {
-                        ex.LogError( ( string )null );
+                        ex.LogError( null );
                     }
                 }
                 catch ( Exception ex )
@@ -240,7 +240,7 @@ namespace StockSharp.Studio.Community
                     return;
                 }
 
-            } ) );
+            } );
         }
 
         private class HtmlFormatter : IHtmlFormatter
@@ -268,7 +268,7 @@ namespace StockSharp.Studio.Community
             {
                 IMessageService service = CommunityServicesRegistry.GetService<IMessageService>();
                 string body = text;
-                long currentDomain = Helper.CurrentDomain;
+                long currentDomain = CurrentDomain;
                 CancellationToken cancellationToken1 = cancellationToken;
                 int? truncate = new int?();
                 bool? preventScaling = new bool?();

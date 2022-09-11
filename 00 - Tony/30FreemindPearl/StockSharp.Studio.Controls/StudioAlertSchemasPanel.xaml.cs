@@ -24,20 +24,20 @@ namespace StockSharp.Studio.Controls
 
         public StudioAlertSchemasPanel()
         {
-            this.InitializeComponent();
-            this.SchemasPanel.ProcessingService = AlertServicesRegistry.ProcessingService;
+            InitializeComponent();
+            SchemasPanel.ProcessingService = AlertServicesRegistry.ProcessingService;
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "SchemasPanel", this.SchemasPanel.Save() );
+            storage.SetValue( "SchemasPanel", SchemasPanel.Save() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.SchemasPanel.Load( storage.GetValue<SettingsStorage>( "SchemasPanel", ( SettingsStorage )null ) );
+            SchemasPanel.Load( storage.GetValue<SettingsStorage>( "SchemasPanel", null ) );
         }
 
 

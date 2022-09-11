@@ -18,7 +18,7 @@ namespace StockSharp.Studio.Core.Configuration
       where TConfig : BaseAppConfig<TConfig, TSection>, new()
       where TSection : StudioSection
     {
-        private static readonly Lazy<TConfig> _instance = new Lazy<TConfig>( ( Func<TConfig> )( () => new TConfig() ) );
+        private static readonly Lazy<TConfig> _instance = new Lazy<TConfig>( () => new TConfig() );
         private readonly CachedSynchronizedList<Type> _strategyControls = new CachedSynchronizedList<Type>();
         private readonly CachedSynchronizedList<Type> _toolControls = new CachedSynchronizedList<Type>();
 
@@ -26,7 +26,7 @@ namespace StockSharp.Studio.Core.Configuration
         {
             get
             {
-                return BaseAppConfig<TConfig, TSection>._instance.Value;
+                return _instance.Value;
             }
         }
 
@@ -34,7 +34,7 @@ namespace StockSharp.Studio.Core.Configuration
         {
             get
             {
-                return ( IEnumerable<Type> )this._strategyControls.Cache;
+                return _strategyControls.Cache;
             }
         }
 
@@ -42,15 +42,15 @@ namespace StockSharp.Studio.Core.Configuration
         {
             get
             {
-                return ( IEnumerable<Type> )this._toolControls.Cache;
+                return _toolControls.Cache;
             }
         }
 
         protected BaseAppConfig()
         {
-            TSection rootSection = this.RootSection;
-            BaseAppConfig<TConfig, TSection>.SafeAdd<ControlElement>( ( IEnumerable )rootSection.StrategyControls, ( Action<ControlElement> )( elem => this._strategyControls.Add( elem.Type.To<Type>() ) ) );
-            BaseAppConfig<TConfig, TSection>.SafeAdd<ControlElement>( ( IEnumerable )rootSection.ToolControls, ( Action<ControlElement> )( elem => this._toolControls.Add( elem.Type.To<Type>() ) ) );
+            TSection rootSection = RootSection;
+            SafeAdd<ControlElement>( rootSection.StrategyControls, elem => _strategyControls.Add( elem.Type.To<Type>() ) );
+            SafeAdd<ControlElement>( rootSection.ToolControls, elem => _toolControls.Add( elem.Type.To<Type>() ) );
         }
 
         protected TSection RootSection
@@ -65,7 +65,7 @@ namespace StockSharp.Studio.Core.Configuration
         {
             get
             {
-                return this.RootSection.FixServerAddress;
+                return RootSection.FixServerAddress;
             }
         }
 
@@ -79,7 +79,7 @@ namespace StockSharp.Studio.Core.Configuration
                 }
                 catch ( Exception ex )
                 {
-                    ex.LogError( ( string )null );
+                    ex.LogError( null );
                 }
             }
         }

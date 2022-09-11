@@ -1032,8 +1032,8 @@ namespace fx.Algorithm
                 {
                     var lastWaveStartEnd    = GetPoints_Wave0_Wave3C_ForWave4( waveScenarioNo, period, barTime, currentWaveDegree );
                     var wave3C_wave4        = GetPoints_Wave3C_Wave4( waveScenarioNo, period, barTime, currentWaveDegree );
-                    fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), period );
-                    var bars = GetDatabarsRepository( period );
+                    fibTarget               = new HewFibGannTargets( barTime, symbol, barTime.ToString(), period );
+                    var bars                = GetDatabarsRepository( period );
                     var projectionPoint     = GetCurrentPoint(waveScenarioNo, bars, period,  barTime );
 
                     fibTarget.SetTonyExtension( wave3C_wave4, ElliottWaveEnum.Wave4 );
@@ -1930,19 +1930,35 @@ namespace fx.Algorithm
                 return;
             }
 
-            //var waveKey = new WaveModelKey( bars.Security, period, waveScenarioNo, selectedBarTime );
+            var bar = bars.GetBarByTime( selectedBarTime );
 
-            //WavePredictionModel waveModel = null;
+            ref var hew = ref bar.GetWaveFromScenario( waveScenarioNo );
 
-            //if ( ! aa.GetOrCreateWaveModel( waveKey, bars, this, out waveModel ) )
-            //{
-            //    waveModel.BuildWaveModel();
-            //}
+            if ( hew == AdvBarInfo.EmptyHew )
+            {
+                return;
+            }
 
-           
+            var highestWave = hew.GetFirstHighestWaveInfo( );
 
+            if ( highestWave.HasValue )
+            {
+                var waveKey = new WaveModelKey( bars.Security, period, waveScenarioNo, selectedBarTime, -1, highestWave.Value.WaveCycle );
+
+                WavePredictionModel waveModel = null;
+
+                if ( aa.GetOrCreateWaveModel( waveKey, bars, this, out waveModel ) )
+                {
+                    waveModel.BuildWaveModel();
+                }
+            }
 
             
+
+
+
+
+
 
 
         }

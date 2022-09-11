@@ -79,11 +79,11 @@ namespace StockSharp.Studio.Community
         /// <returns>Adapters for StockSharp server connections.</returns>
         public static IEnumerable<IMessageAdapter> InitStockSharpAdapters( this IMessageAdapter transAdapter, IMessageAdapter dataAdapter, string login, SecureString password)
         {
-            transAdapter.InitAdapter(ConfigManager.TryGet<string>("transAddr", string.Format("stocksharp.com:{0}", (object)24020)), ConfigManager.TryGet<string>("transName", "StockSharpTS"), Paths.InstalledVersion, login, password);
-            dataAdapter.InitAdapter(ConfigManager.TryGet<string>("dataAddr", string.Format("stocksharp.com:{0}", (object)24021)), ConfigManager.TryGet<string>("dataName", "StockSharpMD"), Paths.InstalledVersion, login, password);
+            transAdapter.InitAdapter(ConfigManager.TryGet( "transAddr", string.Format("stocksharp.com:{0}", 24020 ) ), ConfigManager.TryGet( "transName", "StockSharpTS"), Paths.InstalledVersion, login, password);
+            dataAdapter.InitAdapter(ConfigManager.TryGet( "dataAddr", string.Format("stocksharp.com:{0}", 24021 ) ), ConfigManager.TryGet( "dataName", "StockSharpMD"), Paths.InstalledVersion, login, password);
             transAdapter.ChangeSupported(false, true);
             dataAdapter.ChangeSupported(false, false);
-            return (IEnumerable<IMessageAdapter>)new IMessageAdapter[2] { transAdapter, dataAdapter };
+            return new IMessageAdapter[2] { transAdapter, dataAdapter };
         }
     }
 }

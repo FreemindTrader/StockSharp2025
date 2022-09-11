@@ -13,27 +13,27 @@ internal static class ExtensionHelper3
 {
     
 
-    public static SettingsStorage ToARGB( this System.Windows.Media.Color color )
+    public static SettingsStorage ToARGB( this Color color )
     {
         SettingsStorage settingsStorage = new SettingsStorage();
-        settingsStorage.SetValue<byte>( "A", color.A );
-        settingsStorage.SetValue<byte>( "R", color.R );
-        settingsStorage.SetValue<byte>( "G", color.G );
-        settingsStorage.SetValue<byte>( "B", color.B );
+        settingsStorage.SetValue( "A", color.A );
+        settingsStorage.SetValue( "R", color.R );
+        settingsStorage.SetValue( "G", color.G );
+        settingsStorage.SetValue( "B", color.B );
         return settingsStorage;
     }
 
-    public static System.Windows.Media.Color FromARGB( this SettingsStorage setting )
+    public static Color FromARGB( this SettingsStorage setting )
     {
         if ( setting == null )
             throw new ArgumentNullException( "setting == null" );
-        return System.Windows.Media.Color.FromArgb( setting.GetValue<byte>( "A", ( byte )0 ),
-                                                    setting.GetValue<byte>( "R", ( byte )0 ),
-                                                    setting.GetValue<byte>( "G", ( byte )0 ),
-                                                    setting.GetValue<byte>( "B", ( byte )0 ) );
+        return Color.FromArgb( setting.GetValue<byte>( "A", 0 ),
+                                                    setting.GetValue<byte>( "R", 0 ),
+                                                    setting.GetValue<byte>( "G", 0 ),
+                                                    setting.GetValue<byte>( "B", 0 ) );
     }
 
-    public static System.Windows.Media.Color ToColor( this object o )
+    public static Color ToColor( this object o )
     {
         if ( o is int )
             return ( ( int )o ).ToColor();
@@ -98,34 +98,34 @@ internal static class ExtensionHelper3
                 }
                 else
                 {
-                    settingsStorage.SetValue<string>( "Type", typeof( RadialGradientBrush ).GetTypeName( true ) );
-                    settingsStorage.SetValue<ColorInterpolationMode>( "ColorInterpolationMode", radialGradientBrush.ColorInterpolationMode );
-                    settingsStorage.SetValue<double>( "Opacity", radialGradientBrush.Opacity );
-                    settingsStorage.SetValue<Point>( "Center", radialGradientBrush.Center );
-                    settingsStorage.SetValue<Point>( "GradientOrigin", radialGradientBrush.GradientOrigin );
-                    settingsStorage.SetValue<GradientSpreadMethod>( "SpreadMethod", radialGradientBrush.SpreadMethod );
-                    settingsStorage.SetValue<SettingsStorage[ ]>( "GradientStops", radialGradientBrush.GradientStops.SaveGradientStop() );
-                    settingsStorage.SetValue<double>( "RadiusX", radialGradientBrush.RadiusX );
-                    settingsStorage.SetValue<double>( "RadiusY", radialGradientBrush.RadiusY );
-                    settingsStorage.SetValue<BrushMappingMode>( "MappingMode", radialGradientBrush.MappingMode );
+                    settingsStorage.SetValue( "Type", typeof( RadialGradientBrush ).GetTypeName( true ) );
+                    settingsStorage.SetValue( "ColorInterpolationMode", radialGradientBrush.ColorInterpolationMode );
+                    settingsStorage.SetValue( "Opacity", radialGradientBrush.Opacity );
+                    settingsStorage.SetValue( "Center", radialGradientBrush.Center );
+                    settingsStorage.SetValue( "GradientOrigin", radialGradientBrush.GradientOrigin );
+                    settingsStorage.SetValue( "SpreadMethod", radialGradientBrush.SpreadMethod );
+                    settingsStorage.SetValue( "GradientStops", radialGradientBrush.GradientStops.SaveGradientStop() );
+                    settingsStorage.SetValue( "RadiusX", radialGradientBrush.RadiusX );
+                    settingsStorage.SetValue( "RadiusY", radialGradientBrush.RadiusY );
+                    settingsStorage.SetValue( "MappingMode", radialGradientBrush.MappingMode );
                 }
             }
             else
             {
-                settingsStorage.SetValue<string>( "Type", typeof( LinearGradientBrush ).GetTypeName( true ) );
-                settingsStorage.SetValue<ColorInterpolationMode>( "ColorInterpolationMode", linearGradientBrush.ColorInterpolationMode );
-                settingsStorage.SetValue<double>( "Opacity", linearGradientBrush.Opacity );
-                settingsStorage.SetValue<Point>( "StartPoint", linearGradientBrush.StartPoint );
-                settingsStorage.SetValue<Point>( "EndPoint", linearGradientBrush.EndPoint );
-                settingsStorage.SetValue<GradientSpreadMethod>( "SpreadMethod", linearGradientBrush.SpreadMethod );
-                settingsStorage.SetValue<SettingsStorage[ ]>( "GradientStops", linearGradientBrush.GradientStops.SaveGradientStop() );
+                settingsStorage.SetValue( "Type", typeof( LinearGradientBrush ).GetTypeName( true ) );
+                settingsStorage.SetValue( "ColorInterpolationMode", linearGradientBrush.ColorInterpolationMode );
+                settingsStorage.SetValue( "Opacity", linearGradientBrush.Opacity );
+                settingsStorage.SetValue( "StartPoint", linearGradientBrush.StartPoint );
+                settingsStorage.SetValue( "EndPoint", linearGradientBrush.EndPoint );
+                settingsStorage.SetValue( "SpreadMethod", linearGradientBrush.SpreadMethod );
+                settingsStorage.SetValue( "GradientStops", linearGradientBrush.GradientStops.SaveGradientStop() );
             }
         }
         else
         {
-            settingsStorage.SetValue<string>( "Type", typeof( SolidColorBrush ).GetTypeName( true ) );
-            settingsStorage.SetValue<SettingsStorage>("ARGB", solidColorBrush.Color.ToARGB() );
-            settingsStorage.SetValue<double>( "Opacity", solidColorBrush.Opacity );
+            settingsStorage.SetValue( "Type", typeof( SolidColorBrush ).GetTypeName( true ) );
+            settingsStorage.SetValue( "ARGB", solidColorBrush.Color.ToARGB() );
+            settingsStorage.SetValue( "Opacity", solidColorBrush.Opacity );
         }
         return settingsStorage;
     }
@@ -141,8 +141,8 @@ internal static class ExtensionHelper3
         foreach ( GradientStop gradientStop in stops )
         {
             SettingsStorage settingsStorage = new SettingsStorage();
-            settingsStorage.SetValue<SettingsStorage>("ARGB", gradientStop.Color.ToARGB() );
-            settingsStorage.SetValue<double>("Offset", gradientStop.Offset );
+            settingsStorage.SetValue( "ARGB", gradientStop.Color.ToARGB() );
+            settingsStorage.SetValue( "Offset", gradientStop.Offset );
             settingsStorageList.Add( settingsStorage );
         }
         return settingsStorageList.ToArray();
@@ -186,7 +186,7 @@ internal static class ExtensionHelper3
             brush.StartPoint = setting.GetValue( "StartPoint", brush.StartPoint );
             brush.EndPoint = setting.GetValue( "EndPoint", brush.EndPoint );
             brush.SpreadMethod = setting.GetValue( "SpreadMethod", brush.SpreadMethod );
-            ExtensionHelper3.GetStops( brush, setting.GetValue( "GradientStops", ( IEnumerable<SettingsStorage> )null ) );
+            GetStops( brush, setting.GetValue( "GradientStops", ( IEnumerable<SettingsStorage> )null ) );
 
             return brush;
         }
@@ -203,7 +203,7 @@ internal static class ExtensionHelper3
         gBrush.RadiusX = setting.GetValue( "RadiusX", gBrush.RadiusX );
         gBrush.RadiusY = setting.GetValue( "RadiusY", gBrush.RadiusY );
         gBrush.MappingMode = setting.GetValue( "MappingMode", gBrush.MappingMode );
-        ExtensionHelper3.GetStops( gBrush, setting.GetValue( "GradientStops", ( IEnumerable<SettingsStorage> )null ) );
+        GetStops( gBrush, setting.GetValue( "GradientStops", ( IEnumerable<SettingsStorage> )null ) );
         return gBrush;
     }
 

@@ -17,7 +17,7 @@ namespace StockSharp.Studio.Core.Commands
 
         public ClosePositionCommand( Security sec )
         {
-            this.Security = sec;
+            Security = sec;
         }
 
         public ClosePositionCommand( Position position )
@@ -25,7 +25,7 @@ namespace StockSharp.Studio.Core.Commands
             Position position1 = position;
             if ( position1 == null )
                 throw new ArgumentNullException( nameof( position ) );
-            this.Position = position1;
+            Position = position1;
         }
     }
 }

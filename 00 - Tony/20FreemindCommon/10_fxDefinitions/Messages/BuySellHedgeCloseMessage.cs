@@ -80,8 +80,8 @@ namespace fx.Definitions
 
         public BuySellHedgeCloseMessage( TradingSignalEnum buyOrSell, TradingSignalEnum closeOrHedge )
         {
-            this._buyOrSell = buyOrSell;
-            this._closeOrHedge = closeOrHedge;
+            _buyOrSell = buyOrSell;
+            _closeOrHedge = closeOrHedge;
         }
 
 

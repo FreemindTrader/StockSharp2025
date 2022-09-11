@@ -42,8 +42,8 @@ namespace fx.Database
                 return true;
 
             return 
-                   this._startDate.Equals( other._startDate ) &&
-                   this.Id.Equals( other.Id );
+                   _startDate.Equals( other._startDate ) &&
+                   Id.Equals( other.Id );
         }
 
         public override int GetHashCode( )
@@ -51,8 +51,8 @@ namespace fx.Database
             unchecked
             {
                 int hashCode = 47;
-                hashCode = ( hashCode * 53 ) ^ this._startDate.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this.Id.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ _startDate.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ Id.GetHashCode( );
                 
                 return hashCode;
             }

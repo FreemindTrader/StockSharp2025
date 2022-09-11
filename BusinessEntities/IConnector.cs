@@ -197,10 +197,10 @@ namespace StockSharp.BusinessEntities
 		/// </summary>
 		event Action<long, Exception> ChangePasswordResult;
 
-		/// <summary>
-		/// Server time changed <see cref="IConnector.ExchangeBoards"/>. It passed the time difference since the last call of the event. The first time the event passes the value <see cref="TimeSpan.Zero"/>.
-		/// </summary>
-		event Action<TimeSpan> MarketTimeChanged;
+        /// <summary>
+        /// Server time changed <see cref="ExchangeBoards"/>. It passed the time difference since the last call of the event. The first time the event passes the value <see cref="TimeSpan.Zero"/>.
+        /// </summary>
+        event Action<TimeSpan> MarketTimeChanged;
 
 		/// <summary>
 		/// Session changed.
@@ -219,10 +219,10 @@ namespace StockSharp.BusinessEntities
 		/// </summary>
 		IEnumerable<ExchangeBoard> ExchangeBoards { get; }
 
-		/// <summary>
-		/// List of all loaded instruments. It should be called after event <see cref="IConnector.NewSecurities"/> arisen. Otherwise the empty set will be returned.
-		/// </summary>
-		IEnumerable<Security> Securities { get; }
+        /// <summary>
+        /// List of all loaded instruments. It should be called after event <see cref="NewSecurities"/> arisen. Otherwise the empty set will be returned.
+        /// </summary>
+        IEnumerable<Security> Securities { get; }
 
 		/// <summary>
 		/// Get all orders.
@@ -346,18 +346,18 @@ namespace StockSharp.BusinessEntities
 		/// <param name="message">Message.</param>
 		void SendOutMessage(Message message);
 
-		/// <summary>
-		/// To start getting quotes (order book) by the instrument. Quotes values are available through the event <see cref="IConnector.MarketDepthsChanged"/>.
-		/// </summary>
-		/// <param name="security">The instrument by which quotes getting should be started.</param>
-		/// <param name="from">The initial date from which you need to get data.</param>
-		/// <param name="to">The final date by which you need to get data.</param>
-		/// <param name="count">Max count.</param>
-		/// <param name="buildMode">Build mode.</param>
-		/// <param name="buildFrom">Which market-data type is used as a source value.</param>
-		/// <param name="maxDepth">Max depth of requested order book.</param>
-		/// <param name="adapter">Target adapter. Can be <see langword="null" />.</param>
-		[Obsolete("Use SubscribeMarketDepth method instead.")]
+        /// <summary>
+        /// To start getting quotes (order book) by the instrument. Quotes values are available through the event <see cref="MarketDepthsChanged"/>.
+        /// </summary>
+        /// <param name="security">The instrument by which quotes getting should be started.</param>
+        /// <param name="from">The initial date from which you need to get data.</param>
+        /// <param name="to">The final date by which you need to get data.</param>
+        /// <param name="count">Max count.</param>
+        /// <param name="buildMode">Build mode.</param>
+        /// <param name="buildFrom">Which market-data type is used as a source value.</param>
+        /// <param name="maxDepth">Max depth of requested order book.</param>
+        /// <param name="adapter">Target adapter. Can be <see langword="null" />.</param>
+        [Obsolete("Use SubscribeMarketDepth method instead.")]
 		void RegisterMarketDepth(Security security, DateTimeOffset? from = null, DateTimeOffset? to = null, long? count = null, MarketDataBuildModes buildMode = MarketDataBuildModes.LoadAndBuild, DataType buildFrom = null, int? maxDepth = null, IMessageAdapter adapter = null);
 
 		/// <summary>
@@ -367,17 +367,17 @@ namespace StockSharp.BusinessEntities
 		[Obsolete("Use UnSubscribeMarketDepth method instead.")]
 		void UnRegisterMarketDepth(Security security);
 
-		/// <summary>
-		/// To start getting trades (tick data) by the instrument. New trades will come through the event <see cref="IConnector.NewTrades"/>.
-		/// </summary>
-		/// <param name="security">The instrument by which trades getting should be started.</param>
-		/// <param name="from">The initial date from which you need to get data.</param>
-		/// <param name="to">The final date by which you need to get data.</param>
-		/// <param name="count">Max count.</param>
-		/// <param name="buildMode">Build mode.</param>
-		/// <param name="buildFrom">Which market-data type is used as a source value.</param>
-		/// <param name="adapter">Target adapter. Can be <see langword="null" />.</param>
-		[Obsolete("Use SubscribeTrades method instead.")]
+        /// <summary>
+        /// To start getting trades (tick data) by the instrument. New trades will come through the event <see cref="NewTrades"/>.
+        /// </summary>
+        /// <param name="security">The instrument by which trades getting should be started.</param>
+        /// <param name="from">The initial date from which you need to get data.</param>
+        /// <param name="to">The final date by which you need to get data.</param>
+        /// <param name="count">Max count.</param>
+        /// <param name="buildMode">Build mode.</param>
+        /// <param name="buildFrom">Which market-data type is used as a source value.</param>
+        /// <param name="adapter">Target adapter. Can be <see langword="null" />.</param>
+        [Obsolete("Use SubscribeTrades method instead.")]
 		void RegisterTrades(Security security, DateTimeOffset? from = null, DateTimeOffset? to = null, long? count = null, MarketDataBuildModes buildMode = MarketDataBuildModes.LoadAndBuild, DataType buildFrom = null, IMessageAdapter adapter = null);
 
 		/// <summary>

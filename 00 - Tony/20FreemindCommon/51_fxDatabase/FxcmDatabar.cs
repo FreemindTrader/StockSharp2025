@@ -164,21 +164,21 @@ namespace fx.Database
             }
 
             FxcmDatabar other = ( FxcmDatabar ) obj;
-            return this.Equals( other );
+            return Equals( other );
         }
 
         public bool Equals( FxcmDatabar other )
         {
-            return  this.StartDate == other.StartDate   &&
-                    this.AskClose  == other.AskClose    &&
-                    this.AskHigh   == other.AskHigh     &&
-                    this.AskLow    == other.AskLow      &&
-                    this.AskOpen   == other.AskOpen     &&
-                    this.BidClose  == other.BidClose    &&
-                    this.BidHigh   == other.BidHigh     &&
-                    this.BidLow    == other.BidLow      &&
-                    this.BidOpen   == other.BidOpen     &&
-                    this.Volume    == other.Volume;
+            return  StartDate == other.StartDate   &&
+                    AskClose  == other.AskClose    &&
+                    AskHigh   == other.AskHigh     &&
+                    AskLow    == other.AskLow      &&
+                    AskOpen   == other.AskOpen     &&
+                    BidClose  == other.BidClose    &&
+                    BidHigh   == other.BidHigh     &&
+                    BidLow    == other.BidLow      &&
+                    BidOpen   == other.BidOpen     &&
+                    Volume    == other.Volume;
         }
 
         public override int GetHashCode()

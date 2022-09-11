@@ -38,7 +38,7 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<InstrumentInfo>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)type, (object)assetLike, (object)assetLikeCompare, (object)expiryDate, (object)settlDate, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<InstrumentInfo>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, type, assetLike, assetLikeCompare, expiryDate, settlDate, like, likeCompare );
         }
     }
 }

@@ -372,7 +372,7 @@ namespace fx.Charting
 
         public sCandleEx GetCandle( CandlestickUI ui )
         {
-            return _candleMap.TryGetValue<CandlestickUI, sCandleEx>( ui );
+            return _candleMap.TryGetValue( ui );
         }
 
         public PooledList<sCandleColor> GetCandleColor( CandlestickUI _param1 )

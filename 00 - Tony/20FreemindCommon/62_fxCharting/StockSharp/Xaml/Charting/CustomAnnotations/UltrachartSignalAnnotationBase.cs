@@ -41,7 +41,7 @@ namespace fx.Charting.CustomAnnotations
             }
             set
             {
-                SetValue( UseAltIconProperty, ( object ) value );
+                SetValue( UseAltIconProperty, value );
             }
         }
 

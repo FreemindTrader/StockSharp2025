@@ -25,7 +25,7 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.DataSourcePanel.ItemsSource;
+                return DataSourcePanel.ItemsSource;
             }
         }
 
@@ -33,11 +33,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.DataSourcePanel.SelectedItem;
+                return DataSourcePanel.SelectedItem;
             }
             set
             {
-                this.DataSourcePanel.SelectedItem = value;
+                DataSourcePanel.SelectedItem = value;
             }
         }
 
@@ -45,28 +45,28 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.DataSourcePanel.Configure;
+                return DataSourcePanel.Configure;
             }
             set
             {
-                this.DataSourcePanel.Configure = value;
+                DataSourcePanel.Configure = value;
             }
         }
 
         public DataSourceWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void OkCommand_OnCanExecute( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.SelectedDataSource != null;
+            e.CanExecute = SelectedDataSource != null;
         }
 
         private void OkCommand_OnExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-            this.DialogResult = new bool?( true );
-            this.Close();
+            DialogResult = new bool?( true );
+            Close();
         }        
     }
 }

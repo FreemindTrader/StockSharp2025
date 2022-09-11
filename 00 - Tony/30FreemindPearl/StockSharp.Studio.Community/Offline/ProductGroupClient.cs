@@ -26,7 +26,7 @@ namespace StockSharp.Studio.Community.Offline
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<ProductGroup>>(((IEnumerable<ProductGroup>)Array.Empty<ProductGroup>()).ToEntitySet<ProductGroup>(0));
+            return Task.FromResult( Array.Empty<ProductGroup>().ToEntitySet( 0));
         }
 
         Task IProductGroupService.AddChildAsync(

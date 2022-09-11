@@ -14,7 +14,7 @@ namespace StockSharp.Studio.Core.Commands
 
         public RemoveLogListenerCommand( ILogListener info )
         {
-            this.Listener = info;
+            Listener = info;
         }
     }
 }

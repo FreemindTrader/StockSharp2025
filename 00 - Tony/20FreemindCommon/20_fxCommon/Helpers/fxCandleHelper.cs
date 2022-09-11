@@ -48,7 +48,7 @@ namespace fx.Common
             var taskBegin        = beginTime;
             var taskEnd          = endTime.HasValue ? endTime.Value : currentTime;
 
-            var storeLast        = candleDates.LastOr<DateTime>( );
+            var storeLast        = candleDates.LastOr( );
             var storeFirst       = candleDates.FirstOr( );
             var lastBarInStorage = DateTime.MinValue;
 
@@ -61,7 +61,7 @@ namespace fx.Common
             {
                 if ( storeLast.HasValue )
                 {
-                    if ( DateSystem.IsPublicHoliday( storeLast.Value.Date, Nager.Date.CountryCode.US ) || storeLast.Value.DayOfWeek == DayOfWeek.Saturday || storeLast.Value.DayOfWeek == DayOfWeek.Sunday )
+                    if ( DateSystem.IsPublicHoliday( storeLast.Value.Date, CountryCode.US ) || storeLast.Value.DayOfWeek == DayOfWeek.Saturday || storeLast.Value.DayOfWeek == DayOfWeek.Sunday )
                     {
                         goto DontNeedToCheck;
                     }
@@ -82,7 +82,7 @@ namespace fx.Common
                             goto DontNeedToCheck;
                         }
 
-                        var normalLastDate = fxCandleHelper.GetLastBarOfNormalDay( last, period );
+                        var normalLastDate = GetLastBarOfNormalDay( last, period );
 
                         // Yesterday was holiday, today we should be back to normal, so closing time should be the same now.
                         if ( DateSystem.IsPublicHoliday( prevDay, CountryCode.US ) )
@@ -95,7 +95,7 @@ namespace fx.Common
                         if ( firstTimeOfDay.TotalSeconds != 0 )
                         {
                             var diff = firstTimeOfDay;
-                            var allowance = TimeSpan.FromTicks( period.Ticks * fxCandleHelper.GetBarCountErrorAllowance( period ) );
+                            var allowance = TimeSpan.FromTicks( period.Ticks * GetBarCountErrorAllowance( period ) );
 
                             if ( diff > allowance )
                             {
@@ -106,7 +106,7 @@ namespace fx.Common
                         var timeDiff = last - first;
                         var barCnt = timeDiff.TotalSeconds / period.TotalSeconds + 1;
 
-                        if ( barCnt < fxCandleHelper.GetMininumBar( period ) )
+                        if ( barCnt < GetMininumBar( period ) )
                         {
                             sizeWrong = true;
                         }
@@ -115,7 +115,7 @@ namespace fx.Common
                         if ( last != normalLastDate )
                         {
                             var diff2 = normalLastDate - last;
-                            var allowance = TimeSpan.FromTicks( period.Ticks * fxCandleHelper.GetBarCountErrorAllowance( period ) );
+                            var allowance = TimeSpan.FromTicks( period.Ticks * GetBarCountErrorAllowance( period ) );
 
                             if ( diff2 > allowance )
                             {
@@ -163,7 +163,7 @@ DontNeedToCheck:
                 }
                 else
                 {
-                    storeLast = storage.Dates.LastOr<DateTime>( );
+                    storeLast = storage.Dates.LastOr( );
                     downloadForward.Add( new DownloadRange( storeLast.Value, DateTime.UtcNow, 1 ) );
                 }
 
@@ -387,7 +387,7 @@ DontNeedToCheck:
         {
             DateTime lastBar = last;
 
-            if ( DateSystem.IsPublicHoliday( last, Nager.Date.CountryCode.US ) || last.DayOfWeek == DayOfWeek.Saturday || last.DayOfWeek == DayOfWeek.Sunday )
+            if ( DateSystem.IsPublicHoliday( last, CountryCode.US ) || last.DayOfWeek == DayOfWeek.Saturday || last.DayOfWeek == DayOfWeek.Sunday )
             {
                 // Since it special day, so the open and close time can be different.
 

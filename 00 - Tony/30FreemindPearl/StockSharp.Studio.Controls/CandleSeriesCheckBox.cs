@@ -13,11 +13,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( DataType )this.GetValue( CandleSeriesCheckBox.SeriesProperty );
+                return ( DataType )GetValue( SeriesProperty );
             }
             set
             {
-                this.SetValue( CandleSeriesCheckBox.SeriesProperty, ( object )value );
+                SetValue( SeriesProperty, value );
             }
         }
     }

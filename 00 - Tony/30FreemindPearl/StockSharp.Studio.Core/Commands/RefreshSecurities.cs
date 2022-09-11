@@ -32,23 +32,23 @@ namespace StockSharp.Studio.Core.Commands
             IMarketDataDrive marketDataDrive = drive;
             if ( marketDataDrive == null )
                 throw new ArgumentNullException( nameof( drive ) );
-            this.Drive = marketDataDrive;
+            Drive = marketDataDrive;
             SecurityLookupMessage securityLookupMessage = criteria;
             if ( securityLookupMessage == null )
                 throw new ArgumentNullException( nameof( criteria ) );
-            this.Criteria = securityLookupMessage;
+            Criteria = securityLookupMessage;
             Func<bool> func = isCancelled;
             if ( func == null )
                 throw new ArgumentNullException( nameof( isCancelled ) );
-            this.IsCancelled = func;
+            IsCancelled = func;
             Action<int> action1 = progressChanged;
             if ( action1 == null )
                 throw new ArgumentNullException( nameof( progressChanged ) );
-            this.ProgressChanged = action1;
+            ProgressChanged = action1;
             Action<int> action2 = whenFinished;
             if ( action2 == null )
                 throw new ArgumentNullException( nameof( whenFinished ) );
-            this.WhenFinished = action2;
+            WhenFinished = action2;
         }
     }
 }

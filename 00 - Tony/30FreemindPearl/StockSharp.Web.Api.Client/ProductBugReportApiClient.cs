@@ -33,14 +33,14 @@ namespace StockSharp.Web.Api.Client
           bool? aggregated,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ProductBugReport>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)productId, (object)errorId, (object)aggregated);
+            return Get<BaseEntitySet<ProductBugReport>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, productId, errorId, aggregated );
         }
 
         Task<ProductBugReport> IProductBugReportService.TryProposeAsync(
           ProductBugReport entity,
           CancellationToken cancellationToken)
         {
-            return this.Post<ProductBugReport>(RestBaseApiClient.GetCurrentMethod("TryProposeAsync"), cancellationToken, (object)entity);
+            return Post<ProductBugReport>( GetCurrentMethod( "TryProposeAsync"), cancellationToken, entity );
         }
     }
 }

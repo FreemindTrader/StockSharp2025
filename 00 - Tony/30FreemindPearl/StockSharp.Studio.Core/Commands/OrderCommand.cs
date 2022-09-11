@@ -16,10 +16,10 @@ namespace StockSharp.Studio.Core.Commands
         public OrderCommand( Subscription subscription, Order order )
           : base( subscription, order )
         {
-            this.Time = order.LastChangeTime;
-            this.Balance = order.Balance;
-            this.State = order.State;
-            this.Price = order.Price;
+            Time = order.LastChangeTime;
+            Balance = order.Balance;
+            State = order.State;
+            Price = order.Price;
         }
 
         public DateTimeOffset Time { get; }

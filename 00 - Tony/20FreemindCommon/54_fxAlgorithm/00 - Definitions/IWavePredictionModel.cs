@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace fx.Algorithm
 {
     public interface IWavePredictionModel
-    {
+    {        
         //void AnalysePastImpulsiveMove( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree );
         //void AnalyseWave5Movement( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree );
 
