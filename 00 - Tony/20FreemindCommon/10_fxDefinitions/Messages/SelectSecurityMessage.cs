@@ -14,13 +14,13 @@ namespace fx.Definitions
 
         public SelectSecurityMessage( Security symbol )
         {
-            this.Symbol = symbol;
+            Symbol = symbol;
             SelectedTF = null;
         }
 
         public SelectSecurityMessage( Security symbol, PooledList<TimeSpan> selected )
         {
-            this.Symbol = symbol;
+            Symbol = symbol;
             SelectedTF = selected;
         }
     }

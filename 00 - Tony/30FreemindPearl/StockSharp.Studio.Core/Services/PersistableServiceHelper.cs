@@ -35,7 +35,7 @@ namespace StockSharp.Studio.Core.Services
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<SettingsStorage>( "StudioSession", ( SettingsStorage )null );
+            return service.GetValue<SettingsStorage>( "StudioSession", null );
         }
 
         public static void SetStudioSession( this IPersistableService service, SettingsStorage session )
@@ -44,28 +44,28 @@ namespace StockSharp.Studio.Core.Services
                 throw new ArgumentNullException( nameof( service ) );
             if ( session == null )
                 throw new ArgumentNullException( nameof( session ) );
-            service.SetValue( "StudioSession", ( object )session );
+            service.SetValue( "StudioSession", session );
         }
 
         public static bool GetAutoConnect( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<bool>( "AutoConnect", false );
+            return service.GetValue( "AutoConnect", false );
         }
 
         public static void SetAutoConnect( this IPersistableService service, bool autoConnect )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "AutoConnect", ( object )autoConnect );
+            service.SetValue( "AutoConnect", autoConnect );
         }
 
         public static void SetDriveCache( this IPersistableService service, SettingsStorage storage )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "DriveCache", ( object )storage );
+            service.SetValue( "DriveCache", storage );
         }
 
         public static void TryLoadSettings(
@@ -85,8 +85,8 @@ namespace StockSharp.Studio.Core.Services
                 throw new ArgumentNullException( nameof( service ) );
             ( ( Action )( () =>
                {
-                   T obj = service.GetValue<T>( name, default( T ) );
-                   if ( ( object )obj == null )
+                   T obj = service.GetValue( name, default( T ) );
+                   if ( obj == null )
                        return;
                    load( obj );
                } ) ).DoWithLog();
@@ -102,8 +102,8 @@ namespace StockSharp.Studio.Core.Services
                 throw new ArgumentNullException( nameof( storage ) );
             ( ( Action )( () =>
                {
-                   T obj = storage.GetValue<T>( name, default( T ) );
-                   if ( ( object )obj == null )
+                   T obj = storage.GetValue( name, default( T ) );
+                   if ( obj == null )
                        return;
                    load( obj );
                } ) ).DoWithLog();
@@ -113,7 +113,7 @@ namespace StockSharp.Studio.Core.Services
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<SettingsStorage>( "Layout", ( SettingsStorage )null );
+            return service.GetValue<SettingsStorage>( "Layout", null );
         }
 
         public static void SetLayout( this IPersistableService service, Func<SettingsStorage> getLayout )
@@ -122,133 +122,133 @@ namespace StockSharp.Studio.Core.Services
                 throw new ArgumentNullException( nameof( service ) );
             if ( getLayout == null )
                 throw new ArgumentNullException( nameof( getLayout ) );
-            service.SetDelayValue( "Layout", ( Func<object> )getLayout );
+            service.SetDelayValue( "Layout", getLayout );
         }
 
         public static string GetRibbon( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<string>( "Ribbon", ( string )null );
+            return service.GetValue<string>( "Ribbon", null );
         }
 
         public static void SetRibbon( this IPersistableService service, string ribbon )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "Ribbon", ( object )ribbon );
+            service.SetValue( "Ribbon", ribbon );
         }
 
         public static DateTime? GetNextTimeFeedback( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<DateTime?>( "NextTimeFeedback", new DateTime?() );
+            return service.GetValue( "NextTimeFeedback", new DateTime?() );
         }
 
         public static void SetNextTimeFeedback( this IPersistableService service, DateTime date )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "NextTimeFeedback", ( object )date );
+            service.SetValue( "NextTimeFeedback", date );
         }
 
         public static bool GetDoNotShowQuestionWindow( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<bool>( "DoNotShowSuggestionsWindow", false );
+            return service.GetValue( "DoNotShowSuggestionsWindow", false );
         }
 
         public static void SetDoNotShowQuestionWindow( this IPersistableService service, bool doNotShow )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "DoNotShowSuggestionsWindow", ( object )doNotShow );
+            service.SetValue( "DoNotShowSuggestionsWindow", doNotShow );
         }
 
         public static SettingsStorage GetAlertService( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<SettingsStorage>( "AlertService", ( SettingsStorage )null );
+            return service.GetValue<SettingsStorage>( "AlertService", null );
         }
 
         public static void SetAlertService( this IPersistableService service, SettingsStorage value )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "AlertService", ( object )value );
+            service.SetValue( "AlertService", value );
         }
 
         public static bool GetIsFirstRun( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<bool>( "IsFirstRun", true );
+            return service.GetValue( "IsFirstRun", true );
         }
 
         public static void SetIsFirstRun( this IPersistableService service, bool value )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "IsFirstRun", ( object )value );
+            service.SetValue( "IsFirstRun", value );
         }
 
         public static TimeSpan GetDaysLoad( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return TimeSpan.FromDays( ( double )service.GetValue<int>( "DaysLoad", 7 ) );
+            return TimeSpan.FromDays( service.GetValue( "DaysLoad", 7 ) );
         }
 
         public static void SetDaysLoad( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "DaysLoad", ( object )7 );
+            service.SetValue( "DaysLoad", 7 );
         }
 
         public static StorageFormats GetStorageFormat( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<StorageFormats>( "StorageFormat", StorageFormats.Binary );
+            return service.GetValue( "StorageFormat", StorageFormats.Binary );
         }
 
         public static void SetStorageFormat( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "StorageFormat", ( object )StorageFormats.Binary );
+            service.SetValue( "StorageFormat", StorageFormats.Binary );
         }
 
         public static SettingsStorage GetConnector( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<SettingsStorage>( "Connector", ( SettingsStorage )null );
+            return service.GetValue<SettingsStorage>( "Connector", null );
         }
 
         public static void SetConnector( this IPersistableService service, SettingsStorage value )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "Connector", ( object )value );
+            service.SetValue( "Connector", value );
         }
 
         public static SettingsStorage GetConnectorWindow( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<SettingsStorage>( "ConnectorWindow", ( SettingsStorage )null );
+            return service.GetValue<SettingsStorage>( "ConnectorWindow", null );
         }
 
         public static void SetConnectorWindow( this IPersistableService service, SettingsStorage value )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "ConnectorWindow", ( object )value );
+            service.SetValue( "ConnectorWindow", value );
         }
 
         public static void SaveRiskManager( this IPersistableService service, SettingsStorage value )
@@ -257,7 +257,7 @@ namespace StockSharp.Studio.Core.Services
                 throw new ArgumentNullException( nameof( service ) );
             if ( value == null )
                 throw new ArgumentNullException( nameof( value ) );
-            service.SetValue( "RiskManager", ( object )value );
+            service.SetValue( "RiskManager", value );
         }
 
         public static void SaveEmulatorSettings(
@@ -268,7 +268,7 @@ namespace StockSharp.Studio.Core.Services
                 throw new ArgumentNullException( nameof( service ) );
             if ( settings == null )
                 throw new ArgumentNullException( nameof( settings ) );
-            service.SetValue( "MarketEmulatorSettings", ( object )settings.Save() );
+            service.SetValue( "MarketEmulatorSettings", settings.Save() );
         }
 
         public static MarketEmulatorSettings LoadEmulatorSettings(
@@ -288,18 +288,18 @@ namespace StockSharp.Studio.Core.Services
 
         public static void SetCommonSettings<T>( this IPersistableService service, T settings ) where T : StudioCommonSettings, new()
         {
-            service.SetSettings<T>( "Settings", settings );
+            service.SetSettings( "Settings", settings );
         }
 
         public static T GetSettings<T>( this IPersistableService service, string key ) where T : class, IPersistable, new()
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            object obj1 = service.GetValue<object>( key, ( object )null );
+            object obj1 = service.GetValue<object>( key, null );
             if ( obj1 == null )
                 return new T();
             T obj2 = obj1 as T;
-            if ( ( object )obj2 != null )
+            if ( obj2 != null )
                 return obj2;
             return ( ( SettingsStorage )obj1 ).Load<T>();
         }
@@ -308,7 +308,7 @@ namespace StockSharp.Studio.Core.Services
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( key, ( object )settings.Save() );
+            service.SetValue( key, settings.Save() );
         }
     }
 }

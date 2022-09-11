@@ -22,34 +22,34 @@ namespace StockSharp.Studio.Controls
     {                
         public CandleChartPanel()
         {
-            this.InitializeComponent();
-            BaseStudioControl.CommandService.Register<BindCommand>( ( object )this, true, ( Action<BindCommand> )( cmd =>
+            InitializeComponent();
+            CommandService.Register<BindCommand>( this, true, cmd =>
                 {
-                    if ( !cmd.CheckControl( ( IStudioControl )this ) )
+                    if ( !cmd.CheckControl( this ) )
                         return;
-                    this.ChartPanel.IsInteracted = cmd.IsInteractive;
-                    cmd.Source.SetChart( ( IChart )this.ChartPanel );
-                } ), ( Func<BindCommand, bool> )null );
-            this.ChartPanel.MinimumRange = 200;
-            this.WhenLoaded( ( Action )( () => new RequestBindSource( ( IStudioControl )this ).SyncProcess( ( object )this ) ) );
+                    ChartPanel.IsInteracted = cmd.IsInteractive;
+                    cmd.Source.SetChart( ChartPanel );
+                }, null );
+            ChartPanel.MinimumRange = 200;
+            WhenLoaded( () => new RequestBindSource( this ).SyncProcess( this ) );
         }
 
         public override void Dispose()
         {
-            BaseStudioControl.CommandService.UnRegister<BindCommand>( ( object )this );
+            CommandService.UnRegister<BindCommand>( this );
             base.Dispose();
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.ChartPanel.Load( storage.GetValue<SettingsStorage>( "ChartPanel", ( SettingsStorage )null ) );
+            ChartPanel.Load( storage.GetValue<SettingsStorage>( "ChartPanel", null ) );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "ChartPanel", this.ChartPanel.Save() );
+            storage.SetValue( "ChartPanel", ChartPanel.Save() );
         }        
     }
 }

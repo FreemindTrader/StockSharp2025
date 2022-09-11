@@ -18,7 +18,7 @@ namespace StockSharp.Studio.Core.Commands
             Security security1 = security;
             if ( security1 == null )
                 throw new ArgumentNullException( nameof( security ) );
-            this.Security = security1;
+            Security = security1;
         }
     }
 }

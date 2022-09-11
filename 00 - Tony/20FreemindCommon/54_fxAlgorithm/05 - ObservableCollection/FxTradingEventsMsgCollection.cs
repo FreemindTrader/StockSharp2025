@@ -25,9 +25,9 @@ namespace fx.Algorithm
 
         public int FindIndexByPeriod( TimeSpan myPeriod )
         {
-            if( this.Items.Count > 0 )
+            if( Items.Count > 0 )
             {
-                var index = this.IndexOf( this.Where( X => X.Period == myPeriod ).FirstOrDefault( ) );
+                var index = IndexOf( this.Where( X => X.Period == myPeriod ).FirstOrDefault( ) );
 
                 return index;
             }
@@ -58,7 +58,7 @@ namespace fx.Algorithm
                 _periodToItem.Add( timeFrame, tradingEvent );
             }
 
-            this.Add( tradingEvent );
+            Add( tradingEvent );
         }
 
         public void AddMessage( TimeSpan timeFrame, fxMsgType msgtype, string message )

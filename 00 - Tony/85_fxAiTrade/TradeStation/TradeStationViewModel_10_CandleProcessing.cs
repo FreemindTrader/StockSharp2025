@@ -60,7 +60,7 @@ namespace FreemindAITrade.ViewModels
         private Disruptor.Dsl.ValueDisruptor<CandleStruct> _candlesDisruptor = null;
         private ValueRingBuffer<CandleStruct> _ringBuffer;
 
-        PooledDictionary<CandleSeries, ChartTabViewModelBase> _candle2Vm = new PooledDictionary<CandleSeries, ChartTabViewModelBase>();
+        ThreadSafeDictionary<CandleSeries, ChartTabViewModelBase> _candle2Vm = new ThreadSafeDictionary<CandleSeries, ChartTabViewModelBase>();
 
         public void LinkSeriesWithVM( CandleSeries candlesSeries, ChartTabViewModelBase backTesterVM )
         {

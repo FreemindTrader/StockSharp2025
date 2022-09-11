@@ -12,10 +12,10 @@ namespace StockSharp.Studio.Controls
         {
             string str3273 = LocalizedStrings.Str3273;
             if ( !( value is Decimal ) )
-                return new ValidationResult( false, ( object )str3273 );
+                return new ValidationResult( false, str3273 );
             if ( !( ( Decimal )value <= Decimal.Zero ) )
                 return ValidationResult.ValidResult;
-            return new ValidationResult( false, ( object )str3273 );
+            return new ValidationResult( false, str3273 );
         }
     }
 }

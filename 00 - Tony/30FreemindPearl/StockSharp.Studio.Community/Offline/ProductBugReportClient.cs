@@ -22,14 +22,14 @@ namespace StockSharp.Studio.Community.Offline
           bool? aggregated,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<ProductBugReport>>(((IEnumerable<ProductBugReport>)Array.Empty<ProductBugReport>()).ToEntitySet<ProductBugReport>(0));
+            return Task.FromResult( Array.Empty<ProductBugReport>().ToEntitySet( 0));
         }
 
         Task<ProductBugReport> IProductBugReportService.TryProposeAsync(
           ProductBugReport entity,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<ProductBugReport>((ProductBugReport)null);
+            return Task.FromResult<ProductBugReport>( null );
         }
     }
 }

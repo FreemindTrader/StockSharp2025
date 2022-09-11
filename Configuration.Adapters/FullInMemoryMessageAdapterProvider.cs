@@ -23,7 +23,7 @@ namespace StockSharp.Configuration
 	using StockSharp.Bithumb;
 	using StockSharp.BitMax;
 	using StockSharp.Bitmex;
-	using StockSharp.BitStamp;
+	
 	using StockSharp.Bittrex;
 	using StockSharp.BitZ;
 	//using StockSharp.Blackwood;
@@ -153,7 +153,7 @@ namespace StockSharp.Configuration
 			() => typeof(OkexMessageAdapter),
 #endif
 			() => typeof(BarChartMessageAdapter),
-			() => typeof(BitStampMessageAdapter),
+			//() => typeof(BitStampMessageAdapter),
 			//() => typeof(BlackwoodMessageAdapter),
 			() => typeof(BtceMessageAdapter),
 			() => typeof(CqgComMessageAdapter),

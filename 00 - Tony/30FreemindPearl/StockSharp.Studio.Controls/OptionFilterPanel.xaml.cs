@@ -44,8 +44,8 @@ namespace StockSharp.Studio.Controls
 
         public OptionFilterPanel()
         {
-            this.InitializeComponent();
-            this.UpdateSelectOptionsTitle();
+            InitializeComponent();
+            UpdateSelectOptionsTitle();
         }
 
         public SubscriptionManager SubscriptionManager { get; set; }
@@ -54,12 +54,12 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._securityProvider;
+                return _securityProvider;
             }
             set
             {
-                this._securityProvider = value;
-                this.UnderlyingAssetCtrl.SecurityProvider = value;
+                _securityProvider = value;
+                UnderlyingAssetCtrl.SecurityProvider = value;
             }
         }
 
@@ -67,18 +67,18 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._marketDataProvider;
+                return _marketDataProvider;
             }
             set
             {
-                if ( value == this._marketDataProvider )
+                if ( value == _marketDataProvider )
                     return;
-                if ( this._marketDataProvider != null )
-                    this._marketDataProvider.ValuesChanged -= new Action<Security, IEnumerable<KeyValuePair<Level1Fields, object>>, DateTimeOffset, DateTimeOffset>( this.MarketDataProvider_OnValuesChanged );
-                this._marketDataProvider = value;
-                if ( this._marketDataProvider == null )
+                if ( _marketDataProvider != null )
+                    _marketDataProvider.ValuesChanged -= new Action<Security, IEnumerable<KeyValuePair<Level1Fields, object>>, DateTimeOffset, DateTimeOffset>( MarketDataProvider_OnValuesChanged );
+                _marketDataProvider = value;
+                if ( _marketDataProvider == null )
                     return;
-                this._marketDataProvider.ValuesChanged += new Action<Security, IEnumerable<KeyValuePair<Level1Fields, object>>, DateTimeOffset, DateTimeOffset>( this.MarketDataProvider_OnValuesChanged );
+                _marketDataProvider.ValuesChanged += new Action<Security, IEnumerable<KeyValuePair<Level1Fields, object>>, DateTimeOffset, DateTimeOffset>( MarketDataProvider_OnValuesChanged );
             }
         }
 
@@ -86,11 +86,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( DateTime? )this.CurrentDateCtrl.EditValue;
+                return ( DateTime? )CurrentDateCtrl.EditValue;
             }
             private set
             {
-                this.CurrentDateCtrl.EditValue = ( object )value;
+                CurrentDateCtrl.EditValue = value;
             }
         }
 
@@ -98,11 +98,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( Decimal? )this.AssetPriceCtrl.EditValue;
+                return ( Decimal? )AssetPriceCtrl.EditValue;
             }
             private set
             {
-                this.AssetPriceCtrl.EditValue = ( object )value;
+                AssetPriceCtrl.EditValue = value;
             }
         }
 
@@ -110,13 +110,13 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                bool? isChecked = this.UseBlackModelCtrl.IsChecked;
+                bool? isChecked = UseBlackModelCtrl.IsChecked;
                 bool flag = true;
                 return isChecked.GetValueOrDefault() == flag & isChecked.HasValue;
             }
             private set
             {
-                this.UseBlackModelCtrl.IsChecked = new bool?( value );
+                UseBlackModelCtrl.IsChecked = new bool?( value );
             }
         }
 
@@ -124,11 +124,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._underlyingAsset;
+                return _underlyingAsset;
             }
             private set
             {
-                this.UnderlyingAssetCtrl.SelectedSecurity = value;
+                UnderlyingAssetCtrl.SelectedSecurity = value;
             }
         }
 
@@ -136,11 +136,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._expiryDate;
+                return _expiryDate;
             }
             private set
             {
-                this.ExpiryDateComboCtrl.SelectedItem = ( object )value;
+                ExpiryDateComboCtrl.SelectedItem = value;
             }
         }
 
@@ -148,11 +148,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._minStrike;
+                return _minStrike;
             }
             private set
             {
-                this.MinStrikeCtrl.EditValue = ( object )value;
+                MinStrikeCtrl.EditValue = value;
             }
         }
 
@@ -160,11 +160,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this._maxStrike;
+                return _maxStrike;
             }
             private set
             {
-                this.MaxStrikeCtrl.EditValue = ( object )value;
+                MaxStrikeCtrl.EditValue = value;
             }
         }
 
@@ -172,35 +172,35 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( ( IEnumerable<Security> )this._options.Cache ).Where<Security>( ( Func<Security, bool> )( o =>
+                return _options.Cache.Where( o =>
                       {
-                          if ( this.ExpiryDate.HasValue )
+                          if ( ExpiryDate.HasValue )
                           {
                               DateTimeOffset? expiryDate = o.ExpiryDate;
                               ref DateTimeOffset? local = ref expiryDate;
                               DateTime? nullable = local.HasValue ? new DateTime?( local.GetValueOrDefault().Date ) : new DateTime?();
-                              DateTime date = this.ExpiryDate.Value.Date;
+                              DateTime date = ExpiryDate.Value.Date;
                               if ( ( nullable.HasValue ? ( nullable.HasValue ? ( nullable.GetValueOrDefault() != date ? 1 : 0 ) : 0 ) : 1 ) != 0 )
                                   return false;
                           }
                           Decimal? nullable1;
-                          if ( this.MinStrike.HasValue )
+                          if ( MinStrike.HasValue )
                           {
                               Decimal? strike = o.Strike;
-                              nullable1 = this.MinStrike;
+                              nullable1 = MinStrike;
                               if ( strike.GetValueOrDefault() < nullable1.GetValueOrDefault() & ( strike.HasValue & nullable1.HasValue ) )
                                   return false;
                           }
-                          nullable1 = this.MaxStrike;
+                          nullable1 = MaxStrike;
                           if ( nullable1.HasValue )
                           {
                               nullable1 = o.Strike;
-                              Decimal? maxStrike = this.MaxStrike;
+                              Decimal? maxStrike = MaxStrike;
                               if ( nullable1.GetValueOrDefault() > maxStrike.GetValueOrDefault() & ( nullable1.HasValue & maxStrike.HasValue ) )
                                   return false;
                           }
                           return true;
-                      } ) ).ToArray<Security>();
+                      } ).ToArray();
             }
         }
 
@@ -216,12 +216,12 @@ namespace StockSharp.Studio.Controls
 
         private void SubscribeMarketData( Security option )
         {
-            this.SubscriptionManager?.CreateSubscription( option, DataType.Level1, ( Action<Subscription> )null );
+            SubscriptionManager?.CreateSubscription( option, DataType.Level1, null );
         }
 
         private void UnSubscribeMarketData( Security option )
         {
-            this.SubscriptionManager?.RemoveSubscriptions( option );
+            SubscriptionManager?.RemoveSubscriptions( option );
         }
 
         private void MarketDataProvider_OnValuesChanged(
@@ -230,18 +230,18 @@ namespace StockSharp.Studio.Controls
           DateTimeOffset serverTime,
           DateTimeOffset localTime )
         {
-            if ( this._options.Contains( security ) )
+            if ( _options.Contains( security ) )
             {
-                Action<bool, Security, IEnumerable<KeyValuePair<Level1Fields, object>>> securityChanged = this.SecurityChanged;
+                Action<bool, Security, IEnumerable<KeyValuePair<Level1Fields, object>>> securityChanged = SecurityChanged;
                 if ( securityChanged == null )
                     return;
                 securityChanged( true, security, values );
             }
             else
             {
-                if ( security != this.UnderlyingAsset )
+                if ( security != UnderlyingAsset )
                     return;
-                Action<bool, Security, IEnumerable<KeyValuePair<Level1Fields, object>>> securityChanged = this.SecurityChanged;
+                Action<bool, Security, IEnumerable<KeyValuePair<Level1Fields, object>>> securityChanged = SecurityChanged;
                 if ( securityChanged == null )
                     return;
                 securityChanged( false, security, values );
@@ -250,50 +250,50 @@ namespace StockSharp.Studio.Controls
 
         public void Save( SettingsStorage storage )
         {
-            if ( this.UnderlyingAsset != null )
-                storage.SetValue<string>( "UnderlyingAsset", this.UnderlyingAsset.Id );
-            storage.SetValue<string>( "Options", ( ( IEnumerable<Security> )this._options.Cache ).Select<Security, string>( ( Func<Security, string> )( o => o.Id ) ).JoinComma() );
-            storage.SetValue<DateTime?>( "ExpiryDate", this.ExpiryDate );
-            storage.SetValue<bool>( "UseBlackModel", this.UseBlackModel );
-            storage.SetValue<Decimal?>( "MinStrike", this.MinStrike );
-            storage.SetValue<Decimal?>( "MaxStrike", this.MaxStrike );
-            storage.SetValue<DateTime?>( "CurrentDate", this.CurrentDate );
-            storage.SetValue<Decimal?>( "AssetPrice", this.AssetPrice );
+            if ( UnderlyingAsset != null )
+                storage.SetValue( "UnderlyingAsset", UnderlyingAsset.Id );
+            storage.SetValue( "Options", _options.Cache.Select( o => o.Id ).JoinComma() );
+            storage.SetValue( "ExpiryDate", ExpiryDate );
+            storage.SetValue( "UseBlackModel", UseBlackModel );
+            storage.SetValue( "MinStrike", MinStrike );
+            storage.SetValue( "MaxStrike", MaxStrike );
+            storage.SetValue( "CurrentDate", CurrentDate );
+            storage.SetValue( "AssetPrice", AssetPrice );
         }
 
         public void Load( SettingsStorage storage )
         {
-            this.ExpiryDate = storage.GetValue<DateTime?>( "ExpiryDate", new DateTime?() );
-            this.MinStrike = storage.GetValue<Decimal?>( "MinStrike", new Decimal?() );
-            this.MaxStrike = storage.GetValue<Decimal?>( "MaxStrike", new Decimal?() );
-            this.UseBlackModel = storage.GetValue<bool>( "UseBlackModel", false );
-            this.CurrentDate = storage.GetValue<DateTime?>( "CurrentDate", new DateTime?() );
-            this.AssetPrice = storage.GetValue<Decimal?>( "AssetPrice", new Decimal?() );
-            if ( this.SecurityProvider == null )
+            ExpiryDate = storage.GetValue( "ExpiryDate", new DateTime?() );
+            MinStrike = storage.GetValue( "MinStrike", new Decimal?() );
+            MaxStrike = storage.GetValue( "MaxStrike", new Decimal?() );
+            UseBlackModel = storage.GetValue( "UseBlackModel", false );
+            CurrentDate = storage.GetValue( "CurrentDate", new DateTime?() );
+            AssetPrice = storage.GetValue( "AssetPrice", new Decimal?() );
+            if ( SecurityProvider == null )
                 return;
             if ( storage.ContainsKey( "UnderlyingAsset" ) )
             {
-                this._changeFromCode = true;
+                _changeFromCode = true;
                 try
                 {
-                    this.UnderlyingAsset = this.SecurityProvider.LookupById( storage.GetValue<string>( "UnderlyingAsset", ( string )null ) );
+                    UnderlyingAsset = SecurityProvider.LookupById( storage.GetValue<string>( "UnderlyingAsset", null ) );
                 }
                 finally
                 {
-                    this._changeFromCode = false;
+                    _changeFromCode = false;
                 }
             }
             if ( !storage.ContainsKey( "Options" ) )
                 return;
-            string[ ] strArray = storage.GetValue<string>( "Options", ( string )null ).SplitByComma( false );
-            this._options.Clear();
+            string[ ] strArray = storage.GetValue<string>( "Options", null ).SplitByComma( false );
+            _options.Clear();
             foreach ( string id in strArray )
-                this._options.Add( this.SecurityProvider.LookupById( id ) );
-            foreach ( Security option in this._options.Cache )
-                this.SubscribeMarketData( option );
-            this.UpdateSelectOptionsTitle();
-            this.UpdateDatesComboBox();
-            Action optionsChanged = this.OptionsChanged;
+                _options.Add( SecurityProvider.LookupById( id ) );
+            foreach ( Security option in _options.Cache )
+                SubscribeMarketData( option );
+            UpdateSelectOptionsTitle();
+            UpdateDatesComboBox();
+            Action optionsChanged = OptionsChanged;
             if ( optionsChanged == null )
                 return;
             optionsChanged();
@@ -301,43 +301,43 @@ namespace StockSharp.Studio.Controls
 
         private void UnderlyingAssetCtrl_OnSecuritySelected( object sender, EditValueChangedEventArgs e )
         {
-            Security selectedSecurity = this.UnderlyingAssetCtrl.SelectedSecurity;
-            if ( this._underlyingAsset == selectedSecurity )
+            Security selectedSecurity = UnderlyingAssetCtrl.SelectedSecurity;
+            if ( _underlyingAsset == selectedSecurity )
                 return;
-            if ( this._underlyingAsset != null )
+            if ( _underlyingAsset != null )
             {
-                foreach ( Security option in this._options.Cache )
-                    this.UnSubscribeMarketData( option );
-                this.SubscriptionManager?.RemoveSubscriptions( this._underlyingAsset, DataType.Level1 );
-                this._options.Clear();
-                this._minAssetPrice = this._maxAssetPrice = new Decimal?();
-                this._minDate = this._maxDate = new DateTimeOffset?();
-                this._changeFromCode = true;
+                foreach ( Security option in _options.Cache )
+                    UnSubscribeMarketData( option );
+                SubscriptionManager?.RemoveSubscriptions( _underlyingAsset, DataType.Level1 );
+                _options.Clear();
+                _minAssetPrice = _maxAssetPrice = new Decimal?();
+                _minDate = _maxDate = new DateTimeOffset?();
+                _changeFromCode = true;
                 try
                 {
-                    this.AssetPrice = new Decimal?();
-                    this.CurrentDate = new DateTime?();
+                    AssetPrice = new Decimal?();
+                    CurrentDate = new DateTime?();
                 }
                 finally
                 {
-                    this._changeFromCode = false;
+                    _changeFromCode = false;
                 }
-                this.UpdateSelectOptionsTitle();
+                UpdateSelectOptionsTitle();
             }
-            this._underlyingAsset = selectedSecurity;
-            if ( this._underlyingAsset != null )
+            _underlyingAsset = selectedSecurity;
+            if ( _underlyingAsset != null )
             {
-                if ( !this._changeFromCode )
-                    this._options.AddRange( this._underlyingAsset.GetDerivatives( this.SecurityProvider, new DateTimeOffset?() ) );
-                this.UpdateSelectOptionsTitle();
-                foreach ( Security option in this._options.Cache )
-                    this.SubscribeMarketData( option );
-                this.SubscriptionManager?.CreateSubscription( selectedSecurity, DataType.Level1, ( Action<Subscription> )null );
-                this.SetPriceLimits( selectedSecurity );
-                this.SetDateLimits( selectedSecurity );
+                if ( !_changeFromCode )
+                    _options.AddRange( _underlyingAsset.GetDerivatives( SecurityProvider, new DateTimeOffset?() ) );
+                UpdateSelectOptionsTitle();
+                foreach ( Security option in _options.Cache )
+                    SubscribeMarketData( option );
+                SubscriptionManager?.CreateSubscription( selectedSecurity, DataType.Level1, null );
+                SetPriceLimits( selectedSecurity );
+                SetDateLimits( selectedSecurity );
             }
-            this.UpdateDatesComboBox();
-            Action underlyingAssetChanged = this.UnderlyingAssetChanged;
+            UpdateDatesComboBox();
+            Action underlyingAssetChanged = UnderlyingAssetChanged;
             if ( underlyingAssetChanged == null )
                 return;
             underlyingAssetChanged();
@@ -345,51 +345,51 @@ namespace StockSharp.Studio.Controls
 
         private void UpdateDatesComboBox()
         {
-            this.ExpiryDateComboCtrl.ItemsSource = ( object )( ( IEnumerable<Security> )this._options.Cache ).Select<Security, DateTime>( ( Func<Security, DateTime> )( o => o.ExpiryDate.Value.Date ) ).Distinct<DateTime>().OrderBy<DateTime, DateTime>( ( Func<DateTime, DateTime> )( d => d ) ).ToArray<DateTime>();
+            ExpiryDateComboCtrl.ItemsSource = _options.Cache.Select( o => o.ExpiryDate.Value.Date ).Distinct().OrderBy( d => d ).ToArray();
         }
 
         private Decimal? LastTradePrice
         {
             get
             {
-                return ( Decimal? )this.MarketDataProvider.GetSecurityValue( this.UnderlyingAsset, Level1Fields.LastTradePrice );
+                return ( Decimal? )MarketDataProvider.GetSecurityValue( UnderlyingAsset, Level1Fields.LastTradePrice );
             }
         }
 
         private void SetPriceLimits( Security asset )
         {
-            Decimal? securityValue1 = ( Decimal? )this.MarketDataProvider.GetSecurityValue( asset, Level1Fields.MinPrice );
-            Decimal? securityValue2 = ( Decimal? )this.MarketDataProvider.GetSecurityValue( asset, Level1Fields.MaxPrice );
+            Decimal? securityValue1 = ( Decimal? )MarketDataProvider.GetSecurityValue( asset, Level1Fields.MinPrice );
+            Decimal? securityValue2 = ( Decimal? )MarketDataProvider.GetSecurityValue( asset, Level1Fields.MaxPrice );
             if ( securityValue1.HasValue && securityValue2.HasValue )
             {
                 Decimal? nullable1 = securityValue1;
                 Decimal? nullable2 = securityValue2;
                 if ( nullable1.GetValueOrDefault() > nullable2.GetValueOrDefault() & ( nullable1.HasValue & nullable2.HasValue ) )
-                    throw new InvalidOperationException( string.Format( "{0} > {1}", ( object )securityValue1, ( object )securityValue2 ) );
-                this._minAssetPrice = new Decimal?( securityValue1.Value );
-                this._maxAssetPrice = new Decimal?( securityValue2.Value );
+                    throw new InvalidOperationException( string.Format( "{0} > {1}", securityValue1, securityValue2 ) );
+                _minAssetPrice = new Decimal?( securityValue1.Value );
+                _maxAssetPrice = new Decimal?( securityValue2.Value );
             }
             else
             {
-                Security[ ] array = this.UnderlyingAsset.GetDerivatives( this.SecurityProvider, new DateTimeOffset?() ).ToArray<Security>();
+                Security[ ] array = UnderlyingAsset.GetDerivatives( SecurityProvider, new DateTimeOffset?() ).ToArray();
                 if ( array.Length == 0 )
                 {
-                    Decimal? lastTradePrice = this.LastTradePrice;
+                    Decimal? lastTradePrice = LastTradePrice;
                     if ( !lastTradePrice.HasValue )
                         return;
                     Security security1 = asset;
                     Decimal? nullable = lastTradePrice;
-                    Decimal price1 = ( Decimal )( ( nullable.HasValue ? ( Unit )nullable.GetValueOrDefault() : ( Unit )null ) - this._maxStrikeOffset );
-                    this._minAssetPrice = new Decimal?( security1.ShrinkPrice( price1, ShrinkRules.Auto ) );
+                    Decimal price1 = ( Decimal )( ( nullable.HasValue ? ( Unit )nullable.GetValueOrDefault() : null ) - _maxStrikeOffset );
+                    _minAssetPrice = new Decimal?( security1.ShrinkPrice( price1, ShrinkRules.Auto ) );
                     Security security2 = asset;
                     nullable = lastTradePrice;
-                    Decimal price2 = ( Decimal )( ( nullable.HasValue ? ( Unit )nullable.GetValueOrDefault() : ( Unit )null ) + this._maxStrikeOffset );
-                    this._maxAssetPrice = new Decimal?( security2.ShrinkPrice( price2, ShrinkRules.Auto ) );
+                    Decimal price2 = ( Decimal )( ( nullable.HasValue ? ( Unit )nullable.GetValueOrDefault() : null ) + _maxStrikeOffset );
+                    _maxAssetPrice = new Decimal?( security2.ShrinkPrice( price2, ShrinkRules.Auto ) );
                 }
                 else
                 {
-                    this._minAssetPrice = ( ( IEnumerable<Security> )array ).Min<Security>( ( Func<Security, Decimal?> )( o => o.Strike ) );
-                    this._maxAssetPrice = ( ( IEnumerable<Security> )array ).Max<Security>( ( Func<Security, Decimal?> )( o => o.Strike ) );
+                    _minAssetPrice = array.Min( o => o.Strike );
+                    _maxAssetPrice = array.Max( o => o.Strike );
                 }
             }
         }
@@ -398,72 +398,72 @@ namespace StockSharp.Studio.Controls
           object sender,
           RoutedPropertyChangedEventArgs<double> e )
         {
-            if ( this._changeFromCode || !this._minAssetPrice.HasValue || ( !this._maxAssetPrice.HasValue || this.UnderlyingAsset == null ) )
+            if ( _changeFromCode || !_minAssetPrice.HasValue || ( !_maxAssetPrice.HasValue || UnderlyingAsset == null ) )
                 return;
             Decimal newValue = ( Decimal )e.NewValue;
-            Decimal? maxAssetPrice = this._maxAssetPrice;
-            Decimal? minAssetPrice = this._minAssetPrice;
+            Decimal? maxAssetPrice = _maxAssetPrice;
+            Decimal? minAssetPrice = _minAssetPrice;
             Decimal num = ( maxAssetPrice.HasValue & minAssetPrice.HasValue ? new Decimal?( maxAssetPrice.GetValueOrDefault() - minAssetPrice.GetValueOrDefault() ) : new Decimal?() ).Value;
-            this._fromModifier = true;
+            _fromModifier = true;
             try
             {
-                this.AssetPrice = new Decimal?( this._minAssetPrice.Value + this.UnderlyingAsset.ShrinkPrice( newValue / new Decimal( 100 ) * num, ShrinkRules.Auto ) );
+                AssetPrice = new Decimal?( _minAssetPrice.Value + UnderlyingAsset.ShrinkPrice( newValue / new Decimal( 100 ) * num, ShrinkRules.Auto ) );
             }
             finally
             {
-                this._fromModifier = false;
+                _fromModifier = false;
             }
         }
 
         private void AssetPriceCtrl_OnEditValueChanged( object sender, EditValueChangedEventArgs e )
         {
             Decimal? newValue = ( Decimal? )e.NewValue;
-            this._changeFromCode = true;
+            _changeFromCode = true;
             try
             {
                 if ( !newValue.HasValue )
                 {
-                    if ( !this._fromModifier )
-                        this.AssetPriceModified.Value = this.AssetPriceModified.Minimum;
-                    this.AssetPriceReset.IsEnabled = false;
-                    Action filterChanged = this.FilterChanged;
+                    if ( !_fromModifier )
+                        AssetPriceModified.Value = AssetPriceModified.Minimum;
+                    AssetPriceReset.IsEnabled = false;
+                    Action filterChanged = FilterChanged;
                     if ( filterChanged == null )
                         return;
                     filterChanged();
                     return;
                 }
                 Decimal num1 = newValue.Value;
-                if ( !this._fromModifier )
+                if ( !_fromModifier )
                 {
-                    if ( this._minAssetPrice.HasValue )
+                    if ( _minAssetPrice.HasValue )
                     {
-                        if ( this._maxAssetPrice.HasValue )
+                        if ( _maxAssetPrice.HasValue )
                         {
                             Decimal num2 = num1;
-                            Decimal? maxAssetPrice1 = this._maxAssetPrice;
+                            Decimal? maxAssetPrice1 = _maxAssetPrice;
                             Decimal valueOrDefault1 = maxAssetPrice1.GetValueOrDefault();
                             if ( num2 > valueOrDefault1 & maxAssetPrice1.HasValue )
                             {
-                                this.AssetPriceModified.Value = this.AssetPriceModified.Maximum;
+                                AssetPriceModified.Value = AssetPriceModified.Maximum;
                             }
                             else
                             {
                                 Decimal num3 = num1;
-                                Decimal? minAssetPrice1 = this._minAssetPrice;
+                                Decimal? minAssetPrice1 = _minAssetPrice;
                                 Decimal valueOrDefault2 = minAssetPrice1.GetValueOrDefault();
                                 if ( num3 < valueOrDefault2 & minAssetPrice1.HasValue )
                                 {
-                                    this.AssetPriceModified.Value = this.AssetPriceModified.Minimum;
+                                    AssetPriceModified.Value = AssetPriceModified.Minimum;
                                 }
                                 else
                                 {
-                                    Decimal? maxAssetPrice2 = this._maxAssetPrice;
-                                    Decimal? minAssetPrice2 = this._minAssetPrice;
+                                    Decimal? maxAssetPrice2 = _maxAssetPrice;
+                                    Decimal? minAssetPrice2 = _minAssetPrice;
                                     Decimal num4 = ( maxAssetPrice2.HasValue & minAssetPrice2.HasValue ? new Decimal?( maxAssetPrice2.GetValueOrDefault() - minAssetPrice2.GetValueOrDefault() ) : new Decimal?() ).Value;
                                     if ( num4 == Decimal.Zero )
-                                        this.AssetPriceModified.Value = this.AssetPriceModified.Minimum;
+                                        AssetPriceModified.Value = AssetPriceModified.Minimum;
                                     else
-                                        this.AssetPriceModified.Value = ( double )( ( num1 - this._minAssetPrice.Value ) / num4 * new Decimal( 100 ) );
+                                        AssetPriceModified.Value = ( double )( ( num1 - _minAssetPrice.Value ) / num4 * new Decimal( 100 ) );
                                 }
                             }
                         }
@@ -472,10 +472,10 @@ namespace StockSharp.Studio.Controls
             }
             finally
             {
-                this._changeFromCode = false;
+                _changeFromCode = false;
             }
-            this.AssetPriceReset.IsEnabled = true;
-            Action filterChanged1 = this.FilterChanged;
+            AssetPriceReset.IsEnabled = true;
+            Action filterChanged1 = FilterChanged;
             if ( filterChanged1 == null )
                 return;
             filterChanged1();
@@ -483,80 +483,80 @@ namespace StockSharp.Studio.Controls
 
         private void AssetPriceReset_OnClick( object sender, RoutedEventArgs e )
         {
-            this.AssetPriceReset.IsEnabled = false;
-            this.AssetPriceCtrl.EditValue = ( object )null;
+            AssetPriceReset.IsEnabled = false;
+            AssetPriceCtrl.EditValue = null;
         }
 
         private void CurrentDateModified_OnValueChanged(
           object sender,
           RoutedPropertyChangedEventArgs<double> e )
         {
-            if ( this._changeFromCode || !this._minDate.HasValue || ( !this._maxDate.HasValue || this.UnderlyingAsset == null ) )
+            if ( _changeFromCode || !_minDate.HasValue || ( !_maxDate.HasValue || UnderlyingAsset == null ) )
                 return;
-            DateTimeOffset? maxDate = this._maxDate;
-            DateTimeOffset? minDate = this._minDate;
+            DateTimeOffset? maxDate = _maxDate;
+            DateTimeOffset? minDate = _minDate;
             long ticks = ( maxDate.HasValue & minDate.HasValue ? new TimeSpan?( maxDate.GetValueOrDefault() - minDate.GetValueOrDefault() ) : new TimeSpan?() ).Value.Ticks;
             if ( ticks == 0L )
                 return;
-            this._fromModifier = true;
+            _fromModifier = true;
             try
             {
-                this.CurrentDate = new DateTime?( this._minDate.Value.AddTicks( ( long )( e.NewValue / 100.0 * ( double )ticks ) ).DateTime );
+                CurrentDate = new DateTime?( _minDate.Value.AddTicks( ( long )( e.NewValue / 100.0 * ticks ) ).DateTime );
             }
             finally
             {
-                this._fromModifier = false;
+                _fromModifier = false;
             }
         }
 
         private void CurrentDateCtrl_OnEditValueChanged( object sender, EditValueChangedEventArgs e )
         {
             DateTime? newValue = ( DateTime? )e.NewValue;
-            DateTime? minValue = this.CurrentDateCtrl.MinValue;
-            this._changeFromCode = true;
+            DateTime? minValue = CurrentDateCtrl.MinValue;
+            _changeFromCode = true;
             try
             {
                 if ( !newValue.HasValue )
                 {
-                    if ( !this._fromModifier )
-                        this.CurrentDateModified.Value = this.UnderlyingAsset == null || !minValue.HasValue ? 0.0 : ( TimeHelper.Now - minValue.Value ).TotalDays;
-                    this.CurrentDateReset.IsEnabled = false;
-                    Action filterChanged = this.FilterChanged;
+                    if ( !_fromModifier )
+                        CurrentDateModified.Value = UnderlyingAsset == null || !minValue.HasValue ? 0.0 : ( TimeHelper.Now - minValue.Value ).TotalDays;
+                    CurrentDateReset.IsEnabled = false;
+                    Action filterChanged = FilterChanged;
                     if ( filterChanged == null )
                         return;
                     filterChanged();
                     return;
                 }
                 DateTime dateTime = newValue.Value;
-                if ( !this._fromModifier )
+                if ( !_fromModifier )
                 {
-                    if ( this._minDate.HasValue )
+                    if ( _minDate.HasValue )
                     {
-                        if ( this._maxDate.HasValue )
+                        if ( _maxDate.HasValue )
                         {
                             DateTimeOffset dateTimeOffset1 = ( DateTimeOffset )dateTime;
-                            DateTimeOffset? maxDate1 = this._maxDate;
+                            DateTimeOffset? maxDate1 = _maxDate;
                             if ( ( maxDate1.HasValue ? ( dateTimeOffset1 > maxDate1.GetValueOrDefault() ? 1 : 0 ) : 0 ) != 0 )
                             {
-                                this.CurrentDateModified.Value = this.CurrentDateModified.Maximum;
+                                CurrentDateModified.Value = CurrentDateModified.Maximum;
                             }
                             else
                             {
                                 DateTimeOffset dateTimeOffset2 = ( DateTimeOffset )dateTime;
-                                DateTimeOffset? minDate1 = this._minDate;
+                                DateTimeOffset? minDate1 = _minDate;
                                 if ( ( minDate1.HasValue ? ( dateTimeOffset2 < minDate1.GetValueOrDefault() ? 1 : 0 ) : 0 ) != 0 )
                                 {
-                                    this.CurrentDateModified.Value = this.CurrentDateModified.Minimum;
+                                    CurrentDateModified.Value = CurrentDateModified.Minimum;
                                 }
                                 else
                                 {
-                                    DateTimeOffset? maxDate2 = this._maxDate;
-                                    DateTimeOffset? minDate2 = this._minDate;
+                                    DateTimeOffset? maxDate2 = _maxDate;
+                                    DateTimeOffset? minDate2 = _minDate;
                                     long ticks = ( maxDate2.HasValue & minDate2.HasValue ? new TimeSpan?( maxDate2.GetValueOrDefault() - minDate2.GetValueOrDefault() ) : new TimeSpan?() ).Value.Ticks;
                                     if ( ticks == 0L )
-                                        this.CurrentDateModified.Value = this.CurrentDateModified.Minimum;
+                                        CurrentDateModified.Value = CurrentDateModified.Minimum;
                                     else
-                                        this.CurrentDateModified.Value = ( double )( ( ( DateTimeOffset )dateTime - this._minDate.Value ).Ticks / ticks * 100L );
+                                        CurrentDateModified.Value = ( ( DateTimeOffset )dateTime - _minDate.Value ).Ticks / ticks * 100L;
                                 }
                             }
                         }
@@ -565,10 +565,10 @@ namespace StockSharp.Studio.Controls
             }
             finally
             {
-                this._changeFromCode = false;
+                _changeFromCode = false;
             }
-            this.CurrentDateReset.IsEnabled = true;
-            Action filterChanged1 = this.FilterChanged;
+            CurrentDateReset.IsEnabled = true;
+            Action filterChanged1 = FilterChanged;
             if ( filterChanged1 == null )
                 return;
             filterChanged1();
@@ -576,26 +576,26 @@ namespace StockSharp.Studio.Controls
 
         private void CurrentDateReset_OnClick( object sender, RoutedEventArgs e )
         {
-            this.CurrentDateReset.IsEnabled = false;
-            this.CurrentDateCtrl.EditValue = ( object )null;
+            CurrentDateReset.IsEnabled = false;
+            CurrentDateCtrl.EditValue = null;
         }
 
         private void SetDateLimits( Security asset )
         {
-            Security[ ] cache = this._options.Cache;
-            Security security1 = ( ( IEnumerable<Security> )cache ).OrderByDescending<Security, DateTimeOffset?>( ( Func<Security, DateTimeOffset?> )( s => s.ExpiryDate ) ).FirstOrDefault<Security>() ?? asset;
-            Security security2 = ( ( IEnumerable<Security> )cache ).OrderBy<Security, DateTimeOffset?>( ( Func<Security, DateTimeOffset?> )( s => s.ExpiryDate ) ).FirstOrDefault<Security>() ?? asset;
+            Security[ ] cache = _options.Cache;
+            Security security1 = cache.OrderByDescending( s => s.ExpiryDate ).FirstOrDefault() ?? asset;
+            Security security2 = cache.OrderBy( s => s.ExpiryDate ).FirstOrDefault() ?? asset;
             DateTimeOffset? expiryDate = security1?.ExpiryDate;
-            this._maxDate = new DateTimeOffset?( ( expiryDate ?? ( DateTimeOffset )DateTime.Today ) + TimeSpan.FromDays( 5.0 ) );
+            _maxDate = new DateTimeOffset?( ( expiryDate ?? ( DateTimeOffset )DateTime.Today ) + TimeSpan.FromDays( 5.0 ) );
             expiryDate = security2?.ExpiryDate;
-            this._minDate = new DateTimeOffset?( ( expiryDate ?? ( DateTimeOffset )DateTime.Today ) - TimeSpan.FromDays( 30.0 ) );
+            _minDate = new DateTimeOffset?( ( expiryDate ?? ( DateTimeOffset )DateTime.Today ) - TimeSpan.FromDays( 30.0 ) );
         }
 
         private void UseBlackModelCtrl_OnClick( object sender, RoutedEventArgs e )
         {
-            if ( this.UnderlyingAsset == null )
+            if ( UnderlyingAsset == null )
                 return;
-            Action blackModelChanged = this.UseBlackModelChanged;
+            Action blackModelChanged = UseBlackModelChanged;
             if ( blackModelChanged == null )
                 return;
             blackModelChanged();
@@ -603,13 +603,13 @@ namespace StockSharp.Studio.Controls
 
         private void OnEditValueChanged( object sender, EditValueChangedEventArgs e )
         {
-            this._expiryDate = this.ExpiryDateComboCtrl.EditValue as DateTime?;
-            this._minStrike = ( Decimal? )this.MinStrikeCtrl.EditValue;
-            this._maxStrike = ( Decimal? )this.MaxStrikeCtrl.EditValue;
-            if ( this.UnderlyingAsset == null )
+            _expiryDate = ExpiryDateComboCtrl.EditValue as DateTime?;
+            _minStrike = ( Decimal? )MinStrikeCtrl.EditValue;
+            _maxStrike = ( Decimal? )MaxStrikeCtrl.EditValue;
+            if ( UnderlyingAsset == null )
                 return;
-            this.UpdateSelectOptionsTitle();
-            Action optionsChanged = this.OptionsChanged;
+            UpdateSelectOptionsTitle();
+            Action optionsChanged = OptionsChanged;
             if ( optionsChanged == null )
                 return;
             optionsChanged();
@@ -617,18 +617,18 @@ namespace StockSharp.Studio.Controls
 
         public void Dispose()
         {
-            if ( this._marketDataProvider != null )
-                this._marketDataProvider.ValuesChanged -= new Action<Security, IEnumerable<KeyValuePair<Level1Fields, object>>, DateTimeOffset, DateTimeOffset>( this.MarketDataProvider_OnValuesChanged );
-            this.SubscriptionManager?.Dispose();
+            if ( _marketDataProvider != null )
+                _marketDataProvider.ValuesChanged -= new Action<Security, IEnumerable<KeyValuePair<Level1Fields, object>>, DateTimeOffset, DateTimeOffset>( MarketDataProvider_OnValuesChanged );
+            SubscriptionManager?.Dispose();
         }
 
         public IEnumerable<Security> RemoveOptions( IEnumerable<Security> options )
         {
             foreach ( Security option in options )
             {
-                if ( this._options.Remove( option ) )
+                if ( _options.Remove( option ) )
                 {
-                    this.UnSubscribeMarketData( option );
+                    UnSubscribeMarketData( option );
                     yield return option;
                 }
             }
@@ -636,20 +636,20 @@ namespace StockSharp.Studio.Controls
 
         private void SelectOptions_OnClick( object sender, RoutedEventArgs e )
         {
-            Security[ ] cache = this._options.Cache;
-            SecuritiesWindowEx wnd = new SecuritiesWindowEx() { SecurityProvider = this.SecurityProvider, SelectedSecurities = ( IEnumerable<Security> )cache };
+            Security[ ] cache = _options.Cache;
+            SecuritiesWindowEx wnd = new SecuritiesWindowEx() { SecurityProvider = SecurityProvider, SelectedSecurities = cache };
             if ( !wnd.ShowModal( this ) )
                 return;
-            Security[ ] array1 = ( ( IEnumerable<Security> )cache ).Except<Security>( wnd.SelectedSecurities ).ToArray<Security>();
-            Security[ ] array2 = wnd.SelectedSecurities.Except<Security>( ( IEnumerable<Security> )cache ).ToArray<Security>();
+            Security[ ] array1 = cache.Except( wnd.SelectedSecurities ).ToArray();
+            Security[ ] array2 = wnd.SelectedSecurities.Except( cache ).ToArray();
             foreach ( Security option in array1 )
-                this.UnSubscribeMarketData( option );
+                UnSubscribeMarketData( option );
             foreach ( Security option in array2 )
-                this.SubscribeMarketData( option );
-            this._options.Clear();
-            this._options.AddRange( wnd.SelectedSecurities );
-            this.UpdateSelectOptionsTitle();
-            Action optionsChanged = this.OptionsChanged;
+                SubscribeMarketData( option );
+            _options.Clear();
+            _options.AddRange( wnd.SelectedSecurities );
+            UpdateSelectOptionsTitle();
+            Action optionsChanged = OptionsChanged;
             if ( optionsChanged == null )
                 return;
             optionsChanged();
@@ -657,21 +657,21 @@ namespace StockSharp.Studio.Controls
 
         private void UpdateSelectOptionsTitle()
         {
-            SimpleButton selectOptions = this.SelectOptions;
+            SimpleButton selectOptions = SelectOptions;
             string nnOptions = LocalizedStrings.NNOptions;
             object[ ] objArray = new object[1];
-            int num = this.Options.Length;
+            int num = Options.Length;
             string str1 = num.ToString();
-            num = this._options.Count;
+            num = _options.Count;
             string str2 = num.ToString();
-            objArray[0] = ( object )( str1 + "/" + str2 );
+            objArray[0] = str1 + "/" + str2;
             string str3 = nnOptions.Put( objArray );
-            selectOptions.Content = ( object )str3;
+            selectOptions.Content = str3;
         }
 
         private void ClearDateButton_Click( object sender, RoutedEventArgs e )
         {
-            this.ExpiryDateComboCtrl.EditValue = ( object )null;
+            ExpiryDateComboCtrl.EditValue = null;
         }
 
 

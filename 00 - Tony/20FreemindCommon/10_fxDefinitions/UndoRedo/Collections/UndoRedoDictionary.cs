@@ -194,7 +194,7 @@ namespace fx.Definitions.UndoRedo
         {
             TValue value;
 
-            if ( base.TryGetValue( key, out value ) )
+            if ( TryGetValue( key, out value ) )
             {
                 ChangesList changes = Enlist( );
                 if ( changes != null )

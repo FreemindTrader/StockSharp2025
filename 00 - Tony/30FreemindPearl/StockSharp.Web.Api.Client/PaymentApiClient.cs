@@ -39,28 +39,28 @@ namespace StockSharp.Web.Api.Client
           long? gatewayId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Payment>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)state, (object)productId, (object)orderId, (object)accountId, (object)gatewayId);
+            return Get<BaseEntitySet<Payment>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, state, productId, orderId, accountId, gatewayId );
         }
 
         Task<(Payment payment, DynamicPage page)> IPaymentService.GetByTokenAsync(
           string paymentToken,
           CancellationToken cancellationToken)
         {
-            return this.Get<ValueTuple<Payment, DynamicPage>>(RestBaseApiClient.GetCurrentMethod("GetByTokenAsync"), cancellationToken, (object)paymentToken);
+            return Get<ValueTuple<Payment, DynamicPage>>( GetCurrentMethod( "GetByTokenAsync"), cancellationToken, paymentToken );
         }
 
         Task<Payment> IPaymentService.PayFromBalanceAsync(
           string pid,
           CancellationToken cancellationToken)
         {
-            return this.Post<Payment>(RestBaseApiClient.GetCurrentMethod("PayFromBalanceAsync"), cancellationToken, (object)pid);
+            return Post<Payment>( GetCurrentMethod( "PayFromBalanceAsync"), cancellationToken, pid );
         }
 
         Task IPaymentService.ApplyActionsAsync(
           long paymentId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ApplyActionsAsync"), cancellationToken, (object)paymentId);
+            return Post( GetCurrentMethod( "ApplyActionsAsync"), cancellationToken, paymentId );
         }
 
         Task<string> IPaymentService.ApproveAsync(
@@ -68,7 +68,7 @@ namespace StockSharp.Web.Api.Client
           string returnUrl,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("ApproveAsync"), cancellationToken, (object)paymentId, (object)returnUrl);
+            return Post<string>( GetCurrentMethod( "ApproveAsync"), cancellationToken, paymentId, returnUrl );
         }
 
         Task<string> IPaymentService.CancelAsync(
@@ -76,7 +76,7 @@ namespace StockSharp.Web.Api.Client
           string returnUrl,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("CancelAsync"), cancellationToken, (object)paymentId, (object)returnUrl);
+            return Post<string>( GetCurrentMethod( "CancelAsync"), cancellationToken, paymentId, returnUrl );
         }
 
         Task IPaymentService.AddDocumentAsync(
@@ -84,7 +84,7 @@ namespace StockSharp.Web.Api.Client
           long fileId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddDocumentAsync"), cancellationToken, (object)paymentId, (object)fileId);
+            return Post( GetCurrentMethod( "AddDocumentAsync"), cancellationToken, paymentId, fileId );
         }
 
         Task<bool> IPaymentService.RemoveDocumentAsync(
@@ -92,7 +92,7 @@ namespace StockSharp.Web.Api.Client
           long fileId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveDocumentAsync"), cancellationToken, (object)paymentId, (object)fileId);
+            return Post<bool>( GetCurrentMethod( "RemoveDocumentAsync"), cancellationToken, paymentId, fileId );
         }
 
         Task<(string payUrl, string payBody)> IPaymentService.PayAsync(
@@ -102,21 +102,21 @@ namespace StockSharp.Web.Api.Client
           CurrencyTypes currency,
           CancellationToken cancellationToken)
         {
-            return this.Post<ValueTuple<string, string>>(RestBaseApiClient.GetCurrentMethod("PayAsync"), cancellationToken, (object)url, (object)domainId, (object)gatewayId, (object)currency);
+            return Post<ValueTuple<string, string>>( GetCurrentMethod( "PayAsync"), cancellationToken, url, domainId, gatewayId, currency );
         }
 
         Task<string> IPaymentService.EncryptAsync(
           string text,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("EncryptAsync"), cancellationToken, (object)text);
+            return Post<string>( GetCurrentMethod( "EncryptAsync"), cancellationToken, text );
         }
 
         Task<string> IPaymentService.DecryptAsync(
           string text,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("DecryptAsync"), cancellationToken, (object)text);
+            return Post<string>( GetCurrentMethod( "DecryptAsync"), cancellationToken, text );
         }
 
         Task IPaymentService.ProcessResponseAsync(
@@ -126,7 +126,7 @@ namespace StockSharp.Web.Api.Client
           IDictionary<string, string> responseArgs,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ProcessResponseAsync"), cancellationToken, (object)gatewayId, (object)url, (object)content, (object)responseArgs);
+            return Post( GetCurrentMethod( "ProcessResponseAsync"), cancellationToken, gatewayId, url, content, responseArgs );
         }
 
         Task<Decimal> ICurrencyConverter.GetRateAsync(
@@ -135,7 +135,7 @@ namespace StockSharp.Web.Api.Client
           DateTime date,
           CancellationToken cancellationToken)
         {
-            return this.Get<Decimal>(RestBaseApiClient.GetCurrentMethod("GetRateAsync"), cancellationToken, (object)from, (object)to, (object)date);
+            return Get<Decimal>( GetCurrentMethod( "GetRateAsync"), cancellationToken, from, to, date );
         }
     }
 }

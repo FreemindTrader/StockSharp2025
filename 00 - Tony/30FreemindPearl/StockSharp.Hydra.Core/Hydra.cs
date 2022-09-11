@@ -37,8 +37,8 @@ namespace StockSharp.Hydra.Core
     public class Hydra : BaseLogReceiver
     {
         private readonly SynchronizedDictionary<IHydraTask, HydraTaskSecurity> _taskAllSecurities = new SynchronizedDictionary<IHydraTask, HydraTaskSecurity>();
-        private readonly SynchronizedDictionary<IHydraTask, SynchronizedDictionary<StockSharp.BusinessEntities.Security, HydraTaskSecurity>> _taskSecurityCache = new SynchronizedDictionary<IHydraTask, SynchronizedDictionary<StockSharp.BusinessEntities.Security, HydraTaskSecurity>>();
-        private readonly StockSharp.Hydra.Core.Hydra.HydraAuthorization _authorization;
+        private readonly SynchronizedDictionary<IHydraTask, SynchronizedDictionary<Security, HydraTaskSecurity>> _taskSecurityCache = new SynchronizedDictionary<IHydraTask, SynchronizedDictionary<Security, HydraTaskSecurity>>();
+        private readonly HydraAuthorization _authorization;
 
         /// <summary>Server mode mapping security id storage.</summary>
         public ISecurityMappingStorage ServerMapping
@@ -57,7 +57,7 @@ namespace StockSharp.Hydra.Core
         {
             get
             {
-                return ( IAuthorization )this._authorization;
+                return _authorization;
             }
         }
 
@@ -102,53 +102,53 @@ namespace StockSharp.Hydra.Core
             HydraServerSettings hydraServerSettings = serverSettings;
             if ( hydraServerSettings == null )
                 throw new ArgumentNullException( nameof( serverSettings ) );
-            this.ServerSettings = hydraServerSettings;
+            ServerSettings = hydraServerSettings;
             MarketEmulatorSettings emulatorSettings1 = emulatorSettings;
             if ( emulatorSettings1 == null )
                 throw new ArgumentNullException( nameof( emulatorSettings ) );
-            this.EmulatorSettings = emulatorSettings1;
+            EmulatorSettings = emulatorSettings1;
             AuthorizationProvider authorizationProvider = authProvider;
             if ( authorizationProvider == null )
                 throw new ArgumentNullException( nameof( authProvider ) );
-            this.AuthProvider = authorizationProvider;
-            ConfigManager.RegisterService<IStorageRegistry>( ( IStorageRegistry )new StorageRegistry()
+            AuthProvider = authorizationProvider;
+            ConfigManager.RegisterService<IStorageRegistry>( new StorageRegistry()
             {
-                DefaultDrive = ( IMarketDataDrive )new LocalMarketDataDrive( Path.Combine( Directory.GetCurrentDirectory(), "Storage" ) )
+                DefaultDrive = new LocalMarketDataDrive( Path.Combine( Directory.GetCurrentDirectory(), "Storage" ) )
             } );
             CsvEntityRegistry csvEntityRegistry = new CsvEntityRegistry( Paths.AppDataPath );
-            ConfigManager.RegisterService<IEntityRegistry>( ( IEntityRegistry )csvEntityRegistry );
-            INativeIdStorage service1 = ( INativeIdStorage )new CsvNativeIdStorage( Paths.SecurityNativeIdDir ) { DelayAction = csvEntityRegistry.DelayAction };
-            ISecurityMappingStorage service2 = ( ISecurityMappingStorage )new CsvSecurityMappingStorage( Paths.SecurityMappingDir ) { DelayAction = csvEntityRegistry.DelayAction };
-            IExtendedInfoStorage service3 = ( IExtendedInfoStorage )new CsvExtendedInfoStorage( Paths.SecurityExtendedInfo ) { DelayAction = csvEntityRegistry.DelayAction };
-            ISecurityMappingStorage service4 = ( ISecurityMappingStorage )new CsvSecurityMappingStorage( Path.Combine( Paths.AppDataPath, "Server mapping" ) ) { DelayAction = csvEntityRegistry.DelayAction };
+            ConfigManager.RegisterService<IEntityRegistry>( csvEntityRegistry );
+            INativeIdStorage service1 = new CsvNativeIdStorage( Paths.SecurityNativeIdDir ) { DelayAction = csvEntityRegistry.DelayAction };
+            ISecurityMappingStorage service2 = new CsvSecurityMappingStorage( Paths.SecurityMappingDir ) { DelayAction = csvEntityRegistry.DelayAction };
+            IExtendedInfoStorage service3 = new CsvExtendedInfoStorage( Paths.SecurityExtendedInfo ) { DelayAction = csvEntityRegistry.DelayAction };
+            ISecurityMappingStorage service4 = new CsvSecurityMappingStorage( Path.Combine( Paths.AppDataPath, "Server mapping" ) ) { DelayAction = csvEntityRegistry.DelayAction };
             HydraStorage service5 = new HydraStorage( Path.Combine( Paths.AppDataPath, "Tasks" ) );
             service5.DelayAction = csvEntityRegistry.DelayAction;
-            ConfigManager.RegisterService<INativeIdStorage>( service1 );
-            ConfigManager.RegisterService<ISecurityMappingStorage>( service2 );
-            ConfigManager.RegisterService<IExtendedInfoStorage>( service3 );
-            ConfigManager.RegisterService<HydraStorage>( service5 );
-            ConfigManager.RegisterService<ISecurityMappingStorage>( "server_mapping", service4 );
-            StorageExchangeInfoProvider exchangeInfoProvider = new StorageExchangeInfoProvider( ( IEntityRegistry )csvEntityRegistry, true );
-            ConfigManager.RegisterService<IExchangeInfoProvider>( ( IExchangeInfoProvider )exchangeInfoProvider );
-            ConfigManager.RegisterService<CandleBuilderProvider>( new CandleBuilderProvider( ( IExchangeInfoProvider )exchangeInfoProvider ) );
-            ConfigManager.RegisterService<ISecurityProvider>( ( ISecurityProvider )new FilterableSecurityProvider( ( ISecurityProvider )csvEntityRegistry.Securities ) );
-            ConfigManager.RegisterService<ISecurityStorage>( ( ISecurityStorage )csvEntityRegistry.Securities );
-            ConfigManager.RegisterService<IPositionStorage>( csvEntityRegistry.PositionStorage );
-            ConfigManager.TryRegisterService<IMessageAdapterProvider>( ( IMessageAdapterProvider )new InMemoryMessageAdapterProvider( Enumerable.Empty<IMessageAdapter>() ) );
+            ConfigManager.RegisterService( service1 );
+            ConfigManager.RegisterService( service2 );
+            ConfigManager.RegisterService( service3 );
+            ConfigManager.RegisterService( service5 );
+            ConfigManager.RegisterService( "server_mapping", service4 );
+            StorageExchangeInfoProvider exchangeInfoProvider = new StorageExchangeInfoProvider( csvEntityRegistry, true );
+            ConfigManager.RegisterService<IExchangeInfoProvider>( exchangeInfoProvider );
+            ConfigManager.RegisterService( new CandleBuilderProvider( exchangeInfoProvider ) );
+            ConfigManager.RegisterService<ISecurityProvider>( new FilterableSecurityProvider( csvEntityRegistry.Securities ) );
+            ConfigManager.RegisterService<ISecurityStorage>( csvEntityRegistry.Securities );
+            ConfigManager.RegisterService( csvEntityRegistry.PositionStorage );
+            ConfigManager.TryRegisterService<IMessageAdapterProvider>( new InMemoryMessageAdapterProvider( Enumerable.Empty<IMessageAdapter>() ) );
             HydraTaskManager service6 = new HydraTaskManager();
-            service6.Parent = ( ILogSource )this;
-            ConfigManager.RegisterService<HydraTaskManager>( service6 );
-            this._authorization = new StockSharp.Hydra.Core.Hydra.HydraAuthorization( ( ILogReceiver )this );
+            service6.Parent = this;
+            ConfigManager.RegisterService( service6 );
+            _authorization = new HydraAuthorization( this );
             HydraServer hydraServer = new HydraServer( this, getPermissions );
-            hydraServer.Parent = ( ILogSource )this;
-            this.Server = hydraServer;
-            this.Server.EmulatorSettings.Apply<MarketEmulatorSettings>( this.EmulatorSettings );
+            hydraServer.Parent = this;
+            Server = hydraServer;
+            Server.EmulatorSettings.Apply( EmulatorSettings );
         }
 
         /// <inheritdoc />
         protected override void DisposeManaged()
         {
-            this.Server.Dispose();
+            Server.Dispose();
             base.DisposeManaged();
         }
 
@@ -166,11 +166,11 @@ namespace StockSharp.Hydra.Core
         public void Initialize()
         {
             StudioBaseHelper.InitializeDriveCache();
-            LoggingHelper.DoWithLog<string>( new Func<IDictionary<string, Exception>>( ServicesRegistry.NativeIdStorage.Init ) );
-            LoggingHelper.DoWithLog<string>( new Func<IDictionary<string, Exception>>( ServicesRegistry.MappingStorage.Init ) );
-            LoggingHelper.DoWithLog<IExtendedInfoStorageItem>( new Func<IDictionary<IExtendedInfoStorageItem, Exception>>( ServicesRegistry.ExtendedInfoStorage.Init ) );
-            LoggingHelper.DoWithLog<object>( new Func<IDictionary<object, Exception>>( ServicesRegistry.EntityRegistry.Init ) );
-            LoggingHelper.DoWithLog<string>( new Func<IDictionary<string, Exception>>( this.ServerMapping.Init ) );
+            LoggingHelper.DoWithLog( new Func<IDictionary<string, Exception>>( ServicesRegistry.NativeIdStorage.Init ) );
+            LoggingHelper.DoWithLog( new Func<IDictionary<string, Exception>>( ServicesRegistry.MappingStorage.Init ) );
+            LoggingHelper.DoWithLog( new Func<IDictionary<IExtendedInfoStorageItem, Exception>>( ServicesRegistry.ExtendedInfoStorage.Init ) );
+            LoggingHelper.DoWithLog( new Func<IDictionary<object, Exception>>( ServicesRegistry.EntityRegistry.Init ) );
+            LoggingHelper.DoWithLog( new Func<IDictionary<string, Exception>>( ServerMapping.Init ) );
             new Action( ConfigManager.GetService<HydraStorage>().Init ).DoWithLog();
             IEntityRegistry entityRegistry = ServicesRegistry.EntityRegistry;
             if ( entityRegistry.Securities.GetAllSecurity() == null )
@@ -179,9 +179,9 @@ namespace StockSharp.Hydra.Core
                 entityRegistry.WaitSecuritiesFlush();
             }
             HydraTaskManager instance = HydraTaskManager.Instance;
-            instance.TaskAdded += new Action<IHydraTask>( this.OnTaskAdded );
-            instance.TaskRemoved += new Action<IHydraTask>( this.OnTaskRemoved );
-            instance.Init( ServicesRegistry.AdapterProvider.PossibleAdapters.Select<IMessageAdapter, Type>( ( Func<IMessageAdapter, Type> )( a => a.GetType() ) ), new Func<string, Type>( this.ConvertConnectorTask ) );
+            instance.TaskAdded += new Action<IHydraTask>( OnTaskAdded );
+            instance.TaskRemoved += new Action<IHydraTask>( OnTaskRemoved );
+            instance.Init( ServicesRegistry.AdapterProvider.PossibleAdapters.Select( a => a.GetType() ), new Func<string, Type>( ConvertConnectorTask ) );
         }
 
         private Type ConvertConnectorTask( string type )
@@ -191,14 +191,14 @@ namespace StockSharp.Hydra.Core
                 type = type.Substring( 0, type.IndexOf( ',' ) );
                 type = type.Substring( type.LastIndexOf( '.' ) + 1 ).Remove( "Task", false );
                 Type type1 = Type.GetType( "StockSharp." + type + "." + type + "MessageAdapter, StockSharp." + type, false, true );
-                if ( type1 == ( Type )null )
-                    return ( Type )null;
+                if ( type1 == null )
+                    return null;
                 return typeof( ConnectorHydraTask<> ).Make( type1 );
             }
             catch ( Exception ex )
             {
-                ex.LogError( ( string )null );
-                return ( Type )null;
+                ex.LogError( null );
+                return null;
             }
         }
 
@@ -226,9 +226,9 @@ namespace StockSharp.Hydra.Core
             else if ( ( uint )( type - 36 ) <= 2U || ( uint )( type - 65 ) <= 1U )
                 return;
             label_13:
-            if ( this.Server.State != ChannelStates.Started )
+            if ( Server.State != ChannelStates.Started )
                 return;
-            this.Server.TrySendByFix( this.TryRemoveSubscriptionId( message ) );
+            Server.TrySendByFix( TryRemoveSubscriptionId( message ) );
         }
 
         private Message TryRemoveSubscriptionId( Message message )
@@ -241,121 +241,121 @@ namespace StockSharp.Hydra.Core
             if ( subscriptionIdMessage != null )
             {
                 subscriptionIdMessage.SubscriptionId = 0L;
-                subscriptionIdMessage.SubscriptionIds = ( long[ ] )null;
+                subscriptionIdMessage.SubscriptionIds = null;
             }
             return message;
         }
 
         private void Task_OnStopped( IHydraTask task )
         {
-            this._taskAllSecurities.Remove( task );
-            this._taskSecurityCache.Remove( task );
+            _taskAllSecurities.Remove( task );
+            _taskSecurityCache.Remove( task );
         }
 
         private void OnTaskAdded( IHydraTask task )
         {
             IMessageChannel msgChannel = task as IMessageChannel;
             if ( msgChannel != null )
-                msgChannel.NewOutMessage += new Action<Message>( this.TaskNewOutMessage );
-            task.Stopped += new Action<IHydraTask>( this.Task_OnStopped );
-            task.DataLoaded += ( Action<StockSharp.BusinessEntities.Security, DataType, DateTimeOffset?, int, IEnumerable<Message>> )( ( security, dataType, time, count, messages ) =>
+                msgChannel.NewOutMessage += new Action<Message>( TaskNewOutMessage );
+            task.Stopped += new Action<IHydraTask>( Task_OnStopped );
+            task.DataLoaded += ( security, dataType, time, count, messages ) =>
             {
                 if ( security == null )
                     security = TraderHelper.AllSecurity;
-                if ( msgChannel == null && this.Server.State == ChannelStates.Started )
+                if ( msgChannel == null && Server.State == ChannelStates.Started )
                 {
                     foreach ( Message message in messages )
-                        this.Server.TrySendByFix( this.TryRemoveSubscriptionId( message ) );
+                        Server.TrySendByFix( TryRemoveSubscriptionId( message ) );
                 }
-                HydraTaskSecurity security1 = this._taskAllSecurities.SafeAdd<IHydraTask, HydraTaskSecurity>( task, ( Func<IHydraTask, HydraTaskSecurity> )( _ => task.GetAllSecurity() ) );
+                HydraTaskSecurity security1 = _taskAllSecurities.SafeAdd( task, _ => task.GetAllSecurity() );
                 HydraTaskSecurity security2;
                 HydraTaskSecurity.TypeInfo typeInfo1;
                 HydraTaskSecurity.TypeInfo typeInfo2;
-                if ( ( Equatable<DataType> )dataType == DataType.News )
+                if ( dataType == DataType.News )
                 {
-                    security2 = ( HydraTaskSecurity )null;
-                    typeInfo1 = ( HydraTaskSecurity.TypeInfo )null;
-                    typeInfo2 = security1 != null ? ( HydraTaskSecurity.TypeInfo )security1.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ) : ( HydraTaskSecurity.TypeInfo )null;
-                    this.LoadedNews += ( long )count;
+                    security2 = null;
+                    typeInfo1 = null;
+                    typeInfo2 = security1 != null ? security1.InfoDict.SafeAdd( dataType ) : ( HydraTaskSecurity.TypeInfo )null;
+                    LoadedNews += count;
                 }
                 else
                 {
-                    security2 = this._taskSecurityCache.SafeAdd<IHydraTask, SynchronizedDictionary<StockSharp.BusinessEntities.Security, HydraTaskSecurity>>( task ).SafeAdd<StockSharp.BusinessEntities.Security, HydraTaskSecurity>( security, ( Func<StockSharp.BusinessEntities.Security, HydraTaskSecurity> )( key => task.Securities.FirstOrDefault<HydraTaskSecurity>( ( Func<HydraTaskSecurity, bool> )( s => s.Security == key ) ) ) );
-                    if ( ( Equatable<DataType> )dataType == DataType.Ticks )
-                        this.LoadedTrades += ( long )count;
-                    else if ( ( Equatable<DataType> )dataType == DataType.OrderLog )
-                        this.LoadedOrderLog += ( long )count;
-                    else if ( ( Equatable<DataType> )dataType == DataType.Transactions )
-                        this.LoadedTransactions += ( long )count;
-                    else if ( ( Equatable<DataType> )dataType == DataType.MarketDepth )
-                        this.LoadedDepths += ( long )count;
-                    else if ( ( Equatable<DataType> )dataType == DataType.Level1 )
-                        this.LoadedLevel1 += ( long )count;
-                    else if ( ( Equatable<DataType> )dataType == DataType.PositionChanges )
+                    security2 = _taskSecurityCache.SafeAdd( task ).SafeAdd( security, key => task.Securities.FirstOrDefault( s => s.Security == key ) );
+                    if ( dataType == DataType.Ticks )
+                        LoadedTrades += count;
+                    else if ( dataType == DataType.OrderLog )
+                        LoadedOrderLog += count;
+                    else if ( dataType == DataType.Transactions )
+                        LoadedTransactions += count;
+                    else if ( dataType == DataType.MarketDepth )
+                        LoadedDepths += count;
+                    else if ( dataType == DataType.Level1 )
+                        LoadedLevel1 += count;
+                    else if ( dataType == DataType.PositionChanges )
                     {
-                        this.LoadedLevel1 += ( long )count;
+                        LoadedLevel1 += count;
                     }
                     else
                     {
-                        if ( ( Equatable<DataType> )dataType == DataType.BoardState )
+                        if ( dataType == DataType.BoardState )
                             return;
                         if ( !dataType.IsCandles )
-                            throw new ArgumentOutOfRangeException( nameof( dataType ), ( object )dataType, LocalizedStrings.Str1018 );
-                        this.LoadedCandles += ( long )count;
+                            throw new ArgumentOutOfRangeException( nameof( dataType ), dataType, LocalizedStrings.Str1018 );
+                        LoadedCandles += count;
                     }
-                    typeInfo1 = security2 != null ? ( HydraTaskSecurity.TypeInfo )security2.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ) : ( HydraTaskSecurity.TypeInfo )null;
-                    typeInfo2 = security1 != null ? ( HydraTaskSecurity.TypeInfo )security1.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ) : ( HydraTaskSecurity.TypeInfo )null;
+                    typeInfo1 = security2 != null ? security2.InfoDict.SafeAdd( dataType ) : ( HydraTaskSecurity.TypeInfo )null;
+                    typeInfo2 = security1 != null ? security1.InfoDict.SafeAdd( dataType ) : ( HydraTaskSecurity.TypeInfo )null;
                 }
                 if ( typeInfo2 != null )
                 {
                     UpdateInfo( typeInfo2 );
                     if ( dataType.IsCandles )
-                        UpdateInfo( ( HydraTaskSecurity.TypeInfo )security1.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ) );
+                        UpdateInfo( security1.InfoDict.SafeAdd( dataType ) );
                     task.UpdateSecurity( security1 );
                 }
                 if ( typeInfo1 == null )
                     return;
                 UpdateInfo( typeInfo1 );
                 if ( dataType.IsCandles )
-                    UpdateInfo( ( HydraTaskSecurity.TypeInfo )security2.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ) );
+                    UpdateInfo( security2.InfoDict.SafeAdd( dataType ) );
                 task.UpdateSecurity( security2 );
 
                 void UpdateInfo( HydraTaskSecurity.TypeInfo typeInfo )
                 {
-                    typeInfo.Count += ( long )count;
+                    typeInfo.Count += count;
                     if ( !time.HasValue )
                         return;
                     typeInfo.LastTime = new DateTime?( time.Value.LocalDateTime );
                 }
-            } );
+            };
         }
 
         private void OnTaskRemoved( IHydraTask task )
         {
-            task.Stopped -= new Action<IHydraTask>( this.Task_OnStopped );
+            task.Stopped -= new Action<IHydraTask>( Task_OnStopped );
             IMessageChannel messageChannel = task as IMessageChannel;
             if ( messageChannel == null )
                 return;
-            messageChannel.NewOutMessage -= new Action<Message>( this.TaskNewOutMessage );
+            messageChannel.NewOutMessage -= new Action<Message>( TaskNewOutMessage );
         }
 
         public bool ApplyServerSettings( bool needSave, Func<bool> canStart )
         {
             if ( canStart == null )
                 throw new ArgumentNullException( nameof( canStart ) );
-            if ( this.Server.State == ChannelStates.Started )
-                this.Server.Close();
-            this.Server.TransportSettings.Apply<FixServerSettings>( this.ServerSettings.ServerSettings );
-            this._authorization.Underlying = this.AuthProvider[this.ServerSettings.Authorization];
-            if ( this.ServerSettings.IsFixServer )
+            if ( Server.State == ChannelStates.Started )
+                Server.Close();
+            Server.TransportSettings.Apply( ServerSettings.ServerSettings );
+            _authorization.Underlying = AuthProvider[ServerSettings.Authorization];
+            if ( ServerSettings.IsFixServer )
             {
                 if ( canStart() )
                 {
-                    this.Server.Open();
+                    Server.Open();
                 }
                 else
                 {
-                    this.ServerSettings.IsFixServer = false;
+                    ServerSettings.IsFixServer = false;
                     needSave = true;
                 }
             }
@@ -364,7 +364,7 @@ namespace StockSharp.Hydra.Core
 
         private class HydraAuthorization : IAuthorization
         {
-            private IAuthorization _underlying = ( IAuthorization )new StockSharp.Hydra.Core.Hydra.HydraAuthorization.DisabledAuthorization();
+            private IAuthorization _underlying = new DisabledAuthorization();
             private readonly ILogReceiver _logReceiver;
 
             public HydraAuthorization( ILogReceiver logReceiver )
@@ -372,21 +372,21 @@ namespace StockSharp.Hydra.Core
                 ILogReceiver logReceiver1 = logReceiver;
                 if ( logReceiver1 == null )
                     throw new ArgumentNullException( nameof( logReceiver ) );
-                this._logReceiver = logReceiver1;
+                _logReceiver = logReceiver1;
             }
 
             public IAuthorization Underlying
             {
                 get
                 {
-                    return this._underlying;
+                    return _underlying;
                 }
                 set
                 {
                     IAuthorization authorization = value;
                     if ( authorization == null )
                         throw new ArgumentNullException( nameof( value ) );
-                    this._underlying = authorization;
+                    _underlying = authorization;
                 }
             }
 
@@ -395,13 +395,13 @@ namespace StockSharp.Hydra.Core
               SecureString password,
               IPAddress clientAddress )
             {
-                string validate = StockSharp.Hydra.Core.Hydra.Validate;
+                string validate = Validate;
                 if ( !validate.IsEmpty() )
                 {
-                    this._logReceiver.AddErrorLog( validate );
+                    _logReceiver.AddErrorLog( validate );
                     throw new UnauthorizedAccessException( LocalizedStrings.Str2083 );
                 }
-                return this._underlying.ValidateCredentials( login, password, clientAddress );
+                return _underlying.ValidateCredentials( login, password, clientAddress );
             }
 
             private class DisabledAuthorization : IAuthorization

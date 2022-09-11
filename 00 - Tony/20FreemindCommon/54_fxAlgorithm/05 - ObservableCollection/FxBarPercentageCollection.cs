@@ -36,7 +36,7 @@ namespace fx.Algorithm
                 _barNumberToItem.Add( barNumber, percentage );
             }
 
-            this.Add( percentage );
+            Add( percentage );
         }
 
         public void AddBarPercentage( int barNumber, double percentage, int color )

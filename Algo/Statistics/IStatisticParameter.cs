@@ -51,10 +51,10 @@ namespace StockSharp.Algo.Statistics
 		/// </summary>
 		string Category { get; }
 
-		/// <summary>
-		/// <see cref="IStatisticParameter.Value"/> change event.
-		/// </summary>
-		event Action ValueChanged;
+        /// <summary>
+        /// <see cref="Value"/> change event.
+        /// </summary>
+        event Action ValueChanged;
 
 		/// <summary>
 		/// To reset the parameter value.

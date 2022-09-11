@@ -50,7 +50,7 @@ namespace fx.Definitions
             var h = (c - c / 4 - (8 * c + 13) / 25 + 19 * g + 15) % 30;
             var i = h - (h / 28) * (1 - (h / 28) * (29 / (h + 1)) * ((21 - g) / 11));
 
-            var day = i - ((year + (int)(year / 4) + i + 2 - c + (int)(c / 4)) % 7) + 28;
+            var day = i - ((year + year / 4 + i + 2 - c + c / 4 ) % 7) + 28;
             var month = 3;
 
             if ( day > 31 )
@@ -170,7 +170,7 @@ namespace fx.Definitions
         public bool Fixed { get; set; }
         public bool CountyOfficialHoliday { get; set; }
         public bool CountyAdministrationHoliday { get; set; }
-        public bool Global { get { return this.Counties?.Length > 0 ? false : true; } }
+        public bool Global { get { return Counties?.Length > 0 ? false : true; } }
         //ISO-3166-2
         public string [ ] Counties { get; set; }
         public PublicHolidayType Type { get; set; }
@@ -191,19 +191,19 @@ namespace fx.Definitions
         /// <param name="countyAdministrationHoliday"></param>
         public PublicHoliday( int year, int month, int day, string localName, string englishName, CountryCode countryCode, int? launchYear = null, string [ ] counties = null, bool countyOfficialHoliday = true, bool countyAdministrationHoliday = true, PublicHolidayType type = PublicHolidayType.Public )
         {
-            this.Date                        = new DateTime( year, month, day );
-            this.LocalName                   = localName;
-            this.Name                        = englishName;
-            this.CountryCode                 = countryCode;
-            this.Fixed                       = true;
-            this.CountyOfficialHoliday       = countyOfficialHoliday;
-            this.CountyAdministrationHoliday = countyAdministrationHoliday;
-            this.Type                        = type;
-            this.LaunchYear                  = launchYear;
+            Date                        = new DateTime( year, month, day );
+            LocalName                   = localName;
+            Name                        = englishName;
+            CountryCode                 = countryCode;
+            Fixed                       = true;
+            CountyOfficialHoliday       = countyOfficialHoliday;
+            CountyAdministrationHoliday = countyAdministrationHoliday;
+            Type                        = type;
+            LaunchYear                  = launchYear;
 
             if ( counties?.Length > 0 )
             {
-                this.Counties = counties;
+                Counties = counties;
             }
         }
 
@@ -220,25 +220,25 @@ namespace fx.Definitions
         /// <param name="countyAdministrationHoliday"></param>
         public PublicHoliday( DateTime date, string localName, string englishName, CountryCode countryCode, int? launchYear = null, string [ ] counties = null, bool countyOfficialHoliday = true, bool countyAdministrationHoliday = true, PublicHolidayType type = PublicHolidayType.Public )
         {
-            this.Date                        = date;
-            this.LocalName                   = localName;
-            this.Name                        = englishName;
-            this.CountryCode                 = countryCode;
-            this.Fixed                       = false;
-            this.CountyOfficialHoliday       = countyOfficialHoliday;
-            this.CountyAdministrationHoliday = countyAdministrationHoliday;
-            this.Type                        = type;
-            this.LaunchYear                  = launchYear;
+            Date                        = date;
+            LocalName                   = localName;
+            Name                        = englishName;
+            CountryCode                 = countryCode;
+            Fixed                       = false;
+            CountyOfficialHoliday       = countyOfficialHoliday;
+            CountyAdministrationHoliday = countyAdministrationHoliday;
+            Type                        = type;
+            LaunchYear                  = launchYear;
 
             if ( counties?.Length > 0 )
             {
-                this.Counties = counties;
+                Counties = counties;
             }
         }
 
         public override string ToString( )
         {
-            return $"{this.Date:yyyy-MM-dd} {this.Name}";
+            return $"{Date:yyyy-MM-dd} {Name}";
         }
     }
 
@@ -616,7 +616,7 @@ namespace fx.Definitions
         {
             lock ( lock_variable )
             {
-                if ( DateTimeHelper.TryParse( str, DateTimeHelper.DateTimeFormat.USA_DATE, out parsed_date_time ) &&
+                if ( TryParse( str, DateTimeFormat.USA_DATE, out parsed_date_time ) &&
                      parsed_date_time.IsDateFound &&
                      parsed_date_time.IsTimeFound )
                 {

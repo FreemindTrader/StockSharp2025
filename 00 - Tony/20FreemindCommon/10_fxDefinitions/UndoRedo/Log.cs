@@ -13,7 +13,7 @@ namespace fx.Definitions.UndoRedo
 
         public Log( int maxRecords )
         {
-            this.size = Math.Max( 1, maxRecords );
+            size = Math.Max( 1, maxRecords );
             logRecords = new string [ size ];
         }
         /// <summary>

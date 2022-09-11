@@ -119,7 +119,7 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
 
         _wholeBandRSerie.Fill = _wholeBandRSerie.Fill = Colors.Transparent;
 
-        _wholeBandRSerie.SetBindings( FastBandRenderableSeries.StrokeProperty,   ChartElement.Line1, "AdditionalColor", BindingMode.TwoWay, null, null );
+        _wholeBandRSerie.SetBindings( BaseRenderableSeries.StrokeProperty,   ChartElement.Line1, "AdditionalColor", BindingMode.TwoWay, null, null );
         _wholeBandRSerie.SetBindings( FastBandRenderableSeries.StrokeY1Property, ChartElement.Line2, "AdditionalColor", BindingMode.TwoWay, null, null );
     }
 

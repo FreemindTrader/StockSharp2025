@@ -119,7 +119,7 @@ namespace fx.Algorithm
         /// Will create for you the needed instances of the given type children types with DEFAULT CONSTRUCTORS only, no
         /// params.
         /// </summary>
-        public static PooledList< TypeRequired > GetTypeChildrenInstances< TypeRequired >( System.Reflection.Assembly assembly )
+        public static PooledList< TypeRequired > GetTypeChildrenInstances< TypeRequired >( Assembly assembly )
         {
             return GetTypeChildrenInstances< TypeRequired >( new Assembly[ ] { assembly } );
         }
@@ -173,11 +173,11 @@ namespace fx.Algorithm
             foreach( Assembly assembly in assemblies )
             {
                 // Collect all the types that match the description
-                PooledList< Type > blockTypes = ReflectionHelper.GetTypeChildrenTypes( typeof( TypeRequired ), assembly );
+                PooledList< Type > blockTypes = GetTypeChildrenTypes( typeof( TypeRequired ), assembly );
 
                 foreach( Type blockType in blockTypes )
                 {
-                    System.Reflection.ConstructorInfo[ ] constructorInfo = blockType.GetConstructors( );
+                    ConstructorInfo[ ] constructorInfo = blockType.GetConstructors( );
 
                     if( constructorInfo == null ||
                          constructorInfo.Length == 0 ||
@@ -316,7 +316,7 @@ namespace fx.Algorithm
 
             foreach( Assembly assembly in assemblies )
             {
-                PooledList< Type > types = ReflectionHelper.GetTypeChildrenTypes( parentType, assembly );
+                PooledList< Type > types = GetTypeChildrenTypes( parentType, assembly );
                 foreach( Type type in types )
                 {
                     if( ( allowOnlyClasses == false || type.IsClass ) &&
@@ -395,7 +395,7 @@ namespace fx.Algorithm
         /// <returns></returns>
         public static MethodBase GetExternalCallingMethod( int stackPop, PooledList< Type > ownerTypesIgnored )
         {
-            MethodBase baseMethod = ReflectionHelper.GetCallingMethod( stackPop );
+            MethodBase baseMethod = GetCallingMethod( stackPop );
             MethodBase method = baseMethod;
 
             int methodIndex = stackPop + 1;
@@ -403,7 +403,7 @@ namespace fx.Algorithm
             {
                 // All calls from system monitor get traced back one additional step backwards.
 
-                method = ReflectionHelper.GetCallingMethod( methodIndex );
+                method = GetCallingMethod( methodIndex );
                 methodIndex++;
 
                 if( method == null )
@@ -450,7 +450,7 @@ namespace fx.Algorithm
         /// <summary>
         /// Collect them from a given assembly.
         /// </summary>
-        public static PooledList< Type > GetTypeChildrenTypes( Type typeSearched, System.Reflection.Assembly assembly )
+        public static PooledList< Type > GetTypeChildrenTypes( Type typeSearched, Assembly assembly )
         {
             PooledList< Type > result = new PooledList< Type >( );
             Type[ ] types;

@@ -15,8 +15,8 @@ namespace StockSharp.Studio.Core.Commands
         public OrderFailCommand( Subscription subscription, OrderFail fail, OrderFailTypes type )
           : base( subscription, fail )
         {
-            this.State = fail.Order.State;
-            this.Type = type;
+            State = fail.Order.State;
+            Type = type;
         }
 
         public OrderStates State { get; }

@@ -27,9 +27,9 @@ namespace fx.Definitions
 
         public AdapterMessage( AdapterMessageType messageType, DateTime fromDate, TimeSpan timeSpan )
         {
-            this.MessageType = messageType;
-            this.StartingDate = fromDate;
-            this.Period = timeSpan;
+            MessageType = messageType;
+            StartingDate = fromDate;
+            Period = timeSpan;
         }
     }
 

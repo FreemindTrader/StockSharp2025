@@ -20,7 +20,7 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="paramName">The parameter name.</param>
         /// <param name="condition">The condition result.</param>
-        /// <exception cref="System.ArgumentException">If <code>condition</code> is true.</exception>
+        /// <exception cref="ArgumentException">If <code>condition</code> is true.</exception>
         public static void IsFalse( string paramName, bool condition )
         {
             if ( condition )
@@ -32,7 +32,7 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="paramName">The parameter name.</param>
         /// <param name="condition">The condition result.</param>
-        /// <exception cref="System.ArgumentException">If <code>condition</code> is false.</exception>
+        /// <exception cref="ArgumentException">If <code>condition</code> is false.</exception>
         public static void IsTrue( string paramName, bool condition )
         {
             if ( !condition )
@@ -44,7 +44,7 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="paramName">The name of the parameter to assert.</param>
         /// <param name="value">The value to test.</param>
-        /// <exception cref="System.ArgumentNullException">If <code>value</code> is null.</exception>
+        /// <exception cref="ArgumentNullException">If <code>value</code> is null.</exception>
         public static void NotNull( string paramName, object value )
         {
             if ( value == null )
@@ -55,7 +55,7 @@ namespace fx.Definitions
         /// Asserts that <code>value</code> is not null.
         /// </summary>
         /// <param name="value">The value to test.</param>
-        /// <exception cref="System.ArgumentNullException">If <code>value</code> is null.</exception>
+        /// <exception cref="ArgumentNullException">If <code>value</code> is null.</exception>
         public static void NotNull( object value )
         {
             if ( value == null )

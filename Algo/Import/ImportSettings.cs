@@ -15,7 +15,7 @@ namespace StockSharp.Algo.Import
 	using StockSharp.Algo.Storages;
 	using StockSharp.Localization;
 
-	using DataType = StockSharp.Messages.DataType;
+	using DataType = Messages.DataType;
 
 	/// <summary>
 	/// Settings of import.

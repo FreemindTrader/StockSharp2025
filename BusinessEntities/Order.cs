@@ -161,10 +161,10 @@ namespace StockSharp.BusinessEntities
 
 		private string _boardId;
 
-		/// <summary>
-		/// Board order id. Uses in case of <see cref="Order.Id"/> and <see cref="Order.StringId"/> is a brokerage system ids.
-		/// </summary>
-		[DataMember]
+        /// <summary>
+        /// Board order id. Uses in case of <see cref="Id"/> and <see cref="StringId"/> is a brokerage system ids.
+        /// </summary>
+        [DataMember]
 		[DisplayNameLoc(LocalizedStrings.Str117Key)]
 		[DescriptionLoc(LocalizedStrings.Str118Key)]
 		[MainCategory]

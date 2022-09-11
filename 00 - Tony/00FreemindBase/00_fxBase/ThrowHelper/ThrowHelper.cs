@@ -289,7 +289,7 @@ namespace fx.Base
 #pragma warning disable CS8653 // A default expression introduces a null value for a type parameter.
             if ( !( default( T ) == null ) && value == null )
             {
-                ThrowHelper.ThrowArgumentNullException( argName );
+                ThrowArgumentNullException( argName );
             }
 #pragma warning restore CS8653
 

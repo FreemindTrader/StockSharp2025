@@ -28,11 +28,11 @@ namespace fx.Definitions
         public string Symbol { get; set; }
         public SafetyNetBrokenMessage( string accountName, string symbol, double brokenAmount )
         {
-            this.Symbol       = symbol;
+            Symbol       = symbol;
 
-            this.AccountName  = accountName;
+            AccountName  = accountName;
 
-            this.BrokenAmount = brokenAmount;
+            BrokenAmount = brokenAmount;
         }
     }
 
@@ -47,9 +47,9 @@ namespace fx.Definitions
         public string Symbol { get; set; }
         public SafetyNetActionMessage( string symbol, SafetyNetAction action )
         {
-            this.Symbol = symbol;            
+            Symbol = symbol;            
 
-            this.Action = action;
+            Action = action;
         }
     }
 }

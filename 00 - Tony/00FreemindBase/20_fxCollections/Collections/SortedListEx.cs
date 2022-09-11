@@ -12,13 +12,13 @@ namespace fx.Collections
         /// </summary>
         public bool RemoveFirstValue( TValue value )
         {
-            int index = this.IndexOfValue( value );
+            int index = IndexOfValue( value );
             if( index < 0 )
             {
                 return false;
             }
 
-            this.RemoveAt( index );
+            RemoveAt( index );
             return true;
         }
     }

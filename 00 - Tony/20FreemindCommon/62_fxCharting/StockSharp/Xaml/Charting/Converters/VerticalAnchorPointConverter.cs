@@ -17,17 +17,17 @@ namespace fx.Charting
         {
             get
             {
-                return this._center;
+                return _center;
             }
             set
             {
-                this._center = value;
+                _center = value;
             }
         }        
 
         public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
         {
-            return ( object ) ( VerticalAnchorPoint ) ( ( bool ) _param1 ? VerticalAnchorPoint.Center : ( this.Center ? VerticalAnchorPoint.Top : VerticalAnchorPoint.Bottom ) );
+            return ( bool )_param1 ? VerticalAnchorPoint.Center : ( Center ? VerticalAnchorPoint.Top : VerticalAnchorPoint.Bottom );
         }
 
         object IValueConverter.ConvertBack( object _param1, Type _param2, object _param3, CultureInfo _param4 )

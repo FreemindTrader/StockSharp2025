@@ -22,11 +22,11 @@ namespace fx.Charting
         {
             get
             {
-                return ( IEnumerable<PropertyDefinition> ) this.GetValue( UltrachartAnnotationEditor.PropertyDefinitionsProperty );
+                return ( IEnumerable<PropertyDefinition> ) GetValue( PropertyDefinitionsProperty );
             }
             set
             {
-                this.SetValue( UltrachartAnnotationEditor.PropertyDefinitionsProperty, value );
+                SetValue( PropertyDefinitionsProperty, value );
             }
         }
     }

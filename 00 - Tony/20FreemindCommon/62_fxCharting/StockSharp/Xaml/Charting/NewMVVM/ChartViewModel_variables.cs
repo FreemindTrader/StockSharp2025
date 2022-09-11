@@ -88,7 +88,7 @@ public sealed partial class ChartViewModel
     private void AllowAddXPropertyChanged( )
     {
         CommandManager.InvalidateRequerySuggested( );
-        this.ClosePaneCommand.RaiseCanExecuteChanged( );
+        ClosePaneCommand.RaiseCanExecuteChanged( );
         Action myEvent = InteractedEvent;
         if ( myEvent == null )
             return;
@@ -175,11 +175,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( ICommand ) this.GetValue( ShowHiddenAxesCommandProperty );
+            return ( ICommand ) GetValue( ShowHiddenAxesCommandProperty );
         }
         set
         {
-            this.SetValue( ShowHiddenAxesCommandProperty, value );
+            SetValue( ShowHiddenAxesCommandProperty, value );
         }
     }
 
@@ -187,11 +187,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( bool ) this.GetValue( AllowAddAreaProperty );
+            return ( bool ) GetValue( AllowAddAreaProperty );
         }
         set
         {
-            this.SetValue( AllowAddAreaProperty, value );
+            SetValue( AllowAddAreaProperty, value );
         }
     }
 
@@ -199,11 +199,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( bool ) this.GetValue( AllowAddAxisProperty );
+            return ( bool ) GetValue( AllowAddAxisProperty );
         }
         set
         {
-            this.SetValue( AllowAddAxisProperty, value );
+            SetValue( AllowAddAxisProperty, value );
         }
     }
 
@@ -211,11 +211,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( bool ) this.GetValue( AllowAddCandlesProperty );
+            return ( bool ) GetValue( AllowAddCandlesProperty );
         }
         set
         {
-            this.SetValue( AllowAddCandlesProperty, value );
+            SetValue( AllowAddCandlesProperty, value );
         }
     }
 
@@ -223,11 +223,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( bool ) this.GetValue( AllowAddIndicatorsProperty );
+            return ( bool ) GetValue( AllowAddIndicatorsProperty );
         }
         set
         {
-            this.SetValue( AllowAddIndicatorsProperty, value );
+            SetValue( AllowAddIndicatorsProperty, value );
         }
     }
 
@@ -235,11 +235,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( bool ) this.GetValue( AllowAddOrdersProperty );
+            return ( bool ) GetValue( AllowAddOrdersProperty );
         }
         set
         {
-            this.SetValue( AllowAddOrdersProperty, value );
+            SetValue( AllowAddOrdersProperty, value );
         }
     }
 
@@ -247,11 +247,11 @@ public sealed partial class ChartViewModel
     {
         get
         {
-            return ( bool ) this.GetValue( AllowAddOwnTradesProperty );
+            return ( bool ) GetValue( AllowAddOwnTradesProperty );
         }
         set
         {
-            this.SetValue( AllowAddOwnTradesProperty, value );
+            SetValue( AllowAddOwnTradesProperty, value );
         }
     }
 }

@@ -43,7 +43,7 @@ namespace fx.Algorithm
                 _bbStrengthToItem.Add( period, percentage );
             }
 
-            this.Add( percentage );
+            Add( percentage );
         }
 
         public void AddBBstrength( TimeSpan period, int strength, int color )

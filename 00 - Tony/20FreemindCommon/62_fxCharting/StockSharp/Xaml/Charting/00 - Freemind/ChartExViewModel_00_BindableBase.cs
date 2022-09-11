@@ -201,7 +201,7 @@ namespace fx.Charting
 
         void OnAllowAddXXXChanged( )
         {
-            this.ClosePaneCommand.RaiseCanExecuteChanged( );
+            ClosePaneCommand.RaiseCanExecuteChanged( );
             Action myEvent = RefreshEvent;
             if ( myEvent == null )
                 return;

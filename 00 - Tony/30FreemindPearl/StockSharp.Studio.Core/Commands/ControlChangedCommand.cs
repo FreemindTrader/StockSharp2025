@@ -15,7 +15,7 @@ namespace StockSharp.Studio.Core.Commands
             IStudioControl studioControl = control;
             if ( studioControl == null )
                 throw new ArgumentNullException( nameof( control ) );
-            this.Control = studioControl;
+            Control = studioControl;
         }
 
         public IStudioControl Control { get; }

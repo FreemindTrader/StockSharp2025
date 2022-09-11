@@ -38,8 +38,8 @@ namespace fx.Database.Common.ViewModel
 
         public EntityMessage(TPrimaryKey primaryKey, EntityMessageType messageType)
         {
-            this.PrimaryKey = primaryKey;
-            this.MessageType = messageType;
+            PrimaryKey = primaryKey;
+            MessageType = messageType;
         }
     }
 

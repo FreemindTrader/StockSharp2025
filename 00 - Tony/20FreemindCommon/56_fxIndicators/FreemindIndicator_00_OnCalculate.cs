@@ -820,7 +820,7 @@ namespace fx.Indicators
             _doneFetchingFromDatabase = false;            
 
             _instrumentPointSize      = _indicatorSecurity.PriceStep.HasValue ? ( double ) _indicatorSecurity.PriceStep.Value : 1;
-            _instrumentDigits         = _indicatorSecurity.Decimals.HasValue ? ( int ) _indicatorSecurity.Decimals.Value : 5;
+            _instrumentDigits         = _indicatorSecurity.Decimals.HasValue ? _indicatorSecurity.Decimals.Value : 5;
 
             var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _indicatorSecurity );
 
@@ -939,7 +939,7 @@ namespace fx.Indicators
             
             _numberOfBarsRequired = GetConsectiveNthBarBeforeTrendChange( Bars.Period.Value );
 
-            for ( int i = 0; i < fx.TALib.Core.BbandsLookback( ); i++ )
+            for ( int i = 0; i < TALib.Core.BbandsLookback( ); i++ )
             {
                 _signalBollinger.Add( i, BBANDSStates.Default );
                 _crossBollinger.Add( 0 );
@@ -1051,7 +1051,7 @@ namespace fx.Indicators
             _gannVariables5.ResetVariables();
 
 
-            for ( int i = 0; i < fx.TALib.Core.BbandsLookback( ); i++ )
+            for ( int i = 0; i < TALib.Core.BbandsLookback( ); i++ )
             {
                 _signalBollinger.TryAdd( i, BBANDSStates.Default );
                 _crossBollinger.Add( 0 );
@@ -1109,7 +1109,7 @@ namespace fx.Indicators
             
 
 
-            for ( int i = 0; i < fx.TALib.Core.BbandsLookback( ); i++ )
+            for ( int i = 0; i < TALib.Core.BbandsLookback( ); i++ )
             {
                 _signalBollinger.TryAdd( i, BBANDSStates.Default );
                 _crossBollinger.Add( 0 );
@@ -1258,19 +1258,19 @@ namespace fx.Indicators
                 outBeginIdx = 0;
                 outNBElement = 0;
 
-                fx.TALib.Core.Sma( pivot, startIndex, endIndex,  fastComas, out outBeginIdx, out outNBElement, 2 );
+                TALib.Core.Sma( pivot, startIndex, endIndex,  fastComas, out outBeginIdx, out outNBElement, 2 );
                 IndicatorResult.AddSetValues( "FastComas", repoStartingIndex + outBeginIdx, outNBElement, true, fastComas );
                 //Results.AddSetValues( "PivotPoint", repoStartingIndex + startIndex, endIndex + 1, true, pivot );
 
                 outBeginIdx = 0;
                 outNBElement = 0;
-                fx.TALib.Core.Sma( pivot, startIndex, endIndex, marketDirectionNo, out outBeginIdx, out outNBElement, 3 );
+                TALib.Core.Sma( pivot, startIndex, endIndex, marketDirectionNo, out outBeginIdx, out outNBElement, 3 );
                 IndicatorResult.AddSetValues( "MarketDirectionNo", repoStartingIndex + outBeginIdx, outNBElement, true, marketDirectionNo );
 
                 outBeginIdx = 0;
                 outNBElement = 0;
 
-                fx.TALib.Core.Sma( pivot, startIndex, endIndex, slowComas, out outBeginIdx, out outNBElement, 5 );
+                TALib.Core.Sma( pivot, startIndex, endIndex, slowComas, out outBeginIdx, out outNBElement, 5 );
 
                 IndicatorResult.AddSetValues( "SlowComas", repoStartingIndex + outBeginIdx, outNBElement, true, slowComas );
             }
@@ -1851,8 +1851,8 @@ namespace fx.Indicators
         {
             FreemindIndicator result = new FreemindIndicator();
 
-            result._description = this._description;
-            result._name = this._name;
+            result._description = _description;
+            result._name = _name;
 
             return result;
         }
@@ -2349,7 +2349,7 @@ namespace fx.Indicators
             _doneFetchingFromDatabase = false;                        
 
             _instrumentPointSize = _indicatorSecurity.PriceStep.HasValue ? ( double )_indicatorSecurity.PriceStep.Value : 1;
-            _instrumentDigits = _indicatorSecurity.Decimals.HasValue ? ( int )_indicatorSecurity.Decimals.Value : 5;
+            _instrumentDigits = _indicatorSecurity.Decimals.HasValue ? _indicatorSecurity.Decimals.Value : 5;
 
             var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _indicatorSecurity );
 

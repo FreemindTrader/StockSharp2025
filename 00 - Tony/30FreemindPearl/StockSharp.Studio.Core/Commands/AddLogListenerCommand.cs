@@ -14,7 +14,7 @@ namespace StockSharp.Studio.Core.Commands
 
         public AddLogListenerCommand( ILogListener info )
         {
-            this.Listener = info;
+            Listener = info;
         }
     }
 }

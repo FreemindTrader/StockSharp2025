@@ -20,8 +20,8 @@ namespace StockSharp.Studio.Core.Commands
             IMarketDataDrive marketDataDrive = drive;
             if ( marketDataDrive == null )
                 throw new ArgumentNullException( nameof( drive ) );
-            this.Drive = marketDataDrive;
-            this.Format = format;
+            Drive = marketDataDrive;
+            Format = format;
         }
     }
 }

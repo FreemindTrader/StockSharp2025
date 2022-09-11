@@ -17,15 +17,15 @@ namespace fx.Algorithm
     //![](9B4595CED784909AC1195C12F1754846.png;;;0.03159,0.02605)
     public partial class WavePredictionModel : BaseLogReceiver, IWavePredictionModel
     {
-        private PooledList< FibLevelInfo > _largerTargets = null;
-        private PooledList< FibLevelInfo > _unfoldingTargets = null;
-        private fxHistoricBarsRepo         _bars;
-        private HewManager                 _hews;
-        private WaveModelKey               _k;
+        private PooledList<FibLevelInfo> _largerTargets = null;
+        private PooledList<FibLevelInfo> _unfoldingTargets = null;
+        private fxHistoricBarsRepo _bars;
+        private HewManager _hews;
+        private WaveModelKey _k;
 
         public WavePredictionModel( WaveModelKey key, fxHistoricBarsRepo bars, HewManager hewManager )
         {
-            _k    = key; 
+            _k = key;
             _bars = bars;
             _hews = hewManager;
         }
@@ -38,16 +38,16 @@ namespace fx.Algorithm
 
             if ( hews.ContainsKey( _k.RawBeginTime ) )
             {
-                selectedWave = hews[ _k.RawBeginTime ];
+                selectedWave = hews[_k.RawBeginTime];
             }
 
             ref var hew = ref selectedWave.GetWaveFromScenario( _k.WaveScenarioNo );
 
-            var highestWave = hew.GetFirstHighestWaveInfo( );
+            var highestWave = hew.GetFirstHighestWaveInfo();
 
             if ( highestWave.HasValue )
             {
-                var waveName   = highestWave.Value.WaveName;
+                var waveName = highestWave.Value.WaveName;
                 var waveDegree = highestWave.Value.WaveCycle;
 
                 switch ( waveName )
@@ -88,49 +88,52 @@ namespace fx.Algorithm
 
                     case ElliottWaveEnum.WaveTA:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveTB:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveTC:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveTD:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveTE:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveEFA:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveEFB:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveEFC:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveA:
+                    {
+                        AnalyseWaveBRetracementTarget( _k, ref hew, waveName, waveDegree );
+                    }
+                    break;
 
-                        break;
                     case ElliottWaveEnum.WaveB:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveC:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveX:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveY:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveZ:
 
-                        break;
+                    break;
                     case ElliottWaveEnum.WaveW:
 
-                        break;
+                    break;
                 }
             }
 
@@ -138,24 +141,87 @@ namespace fx.Algorithm
 
         private void AnalyseWave4RetracementTarget( WaveModelKey k, ref HewLong hew, ElliottWaveEnum highestWaveName, ElliottWaveCycle highestWaveDegree )
         {
-            var wave3PreditWave4    = new C5Waves( _bars, _hews, k );
+            var wave3PreditWave4 = new C5Waves( _bars, _hews, k );
 
             wave3PreditWave4.StartAnalysis( ref hew, highestWaveName, highestWaveDegree );
-            AnalyseWithPivotPoints( wave3PreditWave4 );
-            
+            //AnalyseWithPivotPoints( wave3PreditWave4 );
+
 
 
         }
 
+        private void AnalyseWaveBRetracementTarget( WaveModelKey k, ref HewLong hew, ElliottWaveEnum highestWaveName, ElliottWaveCycle highestWaveDegree )
+        {
+            // ![](C8E272AC030B3D488D26185106CBF001.png)
+            long preceding5WavesStartTime = -1;
+
+            var precedingWave = _hews.GetPreviousWaveStructureOfDegree( k.WaveScenarioNo, k.RawBeginTime, k.WaveCycle );
+
+            if ( precedingWave != null )
+            {
+                ref var prevHew = ref precedingWave.GetWaveFromScenario( _k.WaveScenarioNo );
+
+                var highestWave = prevHew.GetFirstHighestWaveInfo();
+
+                if ( highestWave.HasValue )
+                {
+                    var waveName = highestWave.Value.WaveName;
+                    var waveDegree = highestWave.Value.WaveCycle;
+
+                    switch ( waveName )
+                    {
+                        case ElliottWaveEnum.Wave2:
+                        {
+                            // So we just finished Wave 3A, currently in Wave 3B
+
+                            preceding5WavesStartTime = precedingWave.StartDate;
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave4:
+                        {
+                            // So we just finished Wave 5A, currently in Wave 5B
+                            preceding5WavesStartTime = precedingWave.StartDate;
+                        }
+                        break;
+
+
+                        default:
+                        {
+                            throw new NotImplementedException();
+                        }
+                    }
+                }
+
+
+                var prevK       = new WaveModelKey( k.Security, k.Period, k.WaveScenarioNo, preceding5WavesStartTime, k.RawBeginTime, k.WaveCycle );
+                var prev5Wave   = new C5Waves( _bars, _hews, prevK );
+
+                prev5Wave.ProcessFinishedWaves( );
+
+                var bar         = _bars.GetBarByTime( k.RawBeginTime );
+
+                var retracement = _hews.GetHewFibTargets( k.WaveScenarioNo, bar.SymbolEx, k.RawBeginTime, ElliottWaveEnum.WaveA, k.WaveCycle );
+
+                var waveABC     = new WaveABC( _bars, _hews, k );
+
+                waveABC.StartAnalysis( ref hew, highestWaveName, highestWaveDegree, prev5Wave, retracement );
+                AnalyseWithPivotPoints( waveABC );
+
+
+
+            }
+        }
+
         private void AnalyseWithPivotPoints( IFactal factal )
         {
-            var aa = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _bars.Security );
+            var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _bars.Security );
             if ( aa == null )
                 return;
 
-            var dailyPP      = ( IPivotPointIndicator ) aa.DailyPivotPoint;
-            var weeklyPP     = ( IPivotPointIndicator ) aa.WeeklyPivotPoint;
-            var monthlyPP    = ( IPivotPointIndicator ) aa.MonthlyPivotPoint;
+            var dailyPP = ( IPivotPointIndicator )aa.DailyPivotPoint;
+            var weeklyPP = ( IPivotPointIndicator )aa.WeeklyPivotPoint;
+            var monthlyPP = ( IPivotPointIndicator )aa.MonthlyPivotPoint;
 
             var wave4Targets = factal.PredictedTargets;
 
@@ -186,7 +252,7 @@ namespace fx.Algorithm
 
                         if ( index > -1 )
                         {
-                            var wave4CalcTarget = wave4Targets[ index ];
+                            var wave4CalcTarget = wave4Targets[index];
 
                             wave4CalcTarget.DynamicSRLinesRating += 30;
                         }
@@ -216,7 +282,7 @@ namespace fx.Algorithm
 
                         if ( index > -1 )
                         {
-                            var wave4CalcTarget = wave4Targets[ index ];
+                            var wave4CalcTarget = wave4Targets[index];
 
                             wave4CalcTarget.DynamicSRLinesRating += 7;
                         }
@@ -247,7 +313,7 @@ namespace fx.Algorithm
 
                         if ( index > -1 )
                         {
-                            var wave4CalcTarget = wave4Targets[ index ];
+                            var wave4CalcTarget = wave4Targets[index];
 
                             wave4CalcTarget.DynamicSRLinesRating += 1;
                         }
@@ -272,7 +338,7 @@ namespace fx.Algorithm
         public ElliottWaveCycle MyWaveCycle { get; set; }
 
 
-        
+
         public PooledList<FibLevelInfo> LargerTargets
         {
             get { return _largerTargets; }
@@ -306,7 +372,7 @@ namespace fx.Algorithm
             {
                 if ( Bar0 != SBar.EmptySBar )
                 {
-                    if( Bar0.IsTrough( ) )
+                    if ( Bar0.IsTrough() )
                     {
                         return TrendDirection.Uptrend;
                     }
@@ -314,11 +380,11 @@ namespace fx.Algorithm
                     {
                         return TrendDirection.DownTrend;
                     }
-                        
+
                 }
 
                 return TrendDirection.NoTrend;
-            }            
+            }
         }
 
         public void GetFibExtremum( out FibLevelInfo output )
@@ -348,9 +414,9 @@ namespace fx.Algorithm
                         output = level;
                     }
                 }
-            }                           
+            }
         }
-        
+
         public Wave3Type Wave3Type { get; set; }
 
         public FibPercentage Wave2Ret { get; set; }
@@ -380,9 +446,9 @@ namespace fx.Algorithm
         public SBar Bar5B;
         public SBar Bar5C;
 
-        
 
-        
+
+
         //private void PredictTargetsBasedOnWave3Model( int waveScenarioNo, TimeSpan period, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree, Wave3Type wave3Type )
         //{
         //    if ( wave3Type == Wave3Type.Classic )
@@ -492,10 +558,10 @@ namespace fx.Algorithm
         //}
 
         //
-        
-        
 
-        
+
+
+
 
         //public void AnalyseCurrentCorrection( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree )
         //{
@@ -536,7 +602,7 @@ namespace fx.Algorithm
         //    _impulsiveWaveC = new WavePredictionModel( _bars, _hews );
 
         //    _largerTargets = _impulsiveWaveC.Analyse5A5B5C( waveScenarioNo, period, bars, selectedBarTime, waveName, waveDegree );
-            
+
         //}
 
         //public PooledList<FibLevelInfo> Analyse5A5B5C( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle wave5Degree )
@@ -544,7 +610,7 @@ namespace fx.Algorithm
         //    PooledList< FibLevelInfo > output = new PooledList< FibLevelInfo >( );
 
         //    var smWavesOf5 = _hews.GetAllWavesAfter(waveScenarioNo, period, selectedBarTime );
-            
+
 
         //    foreach ( var smallerWaves in smWavesOf5 )
         //    {
@@ -700,7 +766,7 @@ namespace fx.Algorithm
         //    return output;
         //}
 
-        
+
     }
-    
+
 }

@@ -37,35 +37,35 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<License>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)featureId, (object)platformId, (object)hardwareId, (object)expirationDateMin, (object)expirationDateMax, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<License>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, featureId, platformId, hardwareId, expirationDateMin, expirationDateMax, like, likeCompare );
         }
 
         Task<License> ILicenseService.RenewLicenseAsync(
           long licenseId,
           CancellationToken cancellationToken)
         {
-            return this.Post<License>(RestBaseApiClient.GetCurrentMethod("RenewLicenseAsync"), cancellationToken, (object)licenseId);
+            return Post<License>( GetCurrentMethod( "RenewLicenseAsync"), cancellationToken, licenseId );
         }
 
         Task ILicenseService.SendLicenseByEmailAsync(
           long licenseId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("SendLicenseByEmailAsync"), cancellationToken, (object)licenseId);
+            return Post( GetCurrentMethod( "SendLicenseByEmailAsync"), cancellationToken, licenseId );
         }
 
         Task<LicenseFeatureEx> ILicenseService.AddFeatureAsync(
           LicenseFeatureEx feature,
           CancellationToken cancellationToken)
         {
-            return this.Post<LicenseFeatureEx>(RestBaseApiClient.GetCurrentMethod("AddFeatureAsync"), cancellationToken, (object)feature);
+            return Post<LicenseFeatureEx>( GetCurrentMethod( "AddFeatureAsync"), cancellationToken, feature );
         }
 
         Task<bool> ILicenseService.RemoveFeatureAsync(
           long featureId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveFeatureAsync"), cancellationToken, (object)featureId);
+            return Post<bool>( GetCurrentMethod( "RemoveFeatureAsync"), cancellationToken, featureId );
         }
     }
 }

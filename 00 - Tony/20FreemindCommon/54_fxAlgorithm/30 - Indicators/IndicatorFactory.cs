@@ -71,14 +71,14 @@ namespace fx.Algorithm
                 // Setup the unstable period; unstable periods usually stretch to the start, however
                 // we can approximate to 120 bars; this will extend the lookback of the unstable functions 120.
                 // see here: http://www.tadoc.org/forum/index.php?topic=858.0
-                
-                Core.SetUnstablePeriod( FuncUnstId.FuncUnstAll, 120 );
 
-                MethodInfo[ ] methods = typeof( fx.TALib.Core ).GetMethods( );
+                SetUnstablePeriod( FuncUnstId.FuncUnstAll, 120 );
+
+                MethodInfo[ ] methods = typeof( Core ).GetMethods( );
 
                 foreach( MethodInfo methodInfo in methods )
                 {
-                    if( methodInfo.ReturnType == typeof( Core.RetCode ) )
+                    if( methodInfo.ReturnType == typeof( RetCode ) )
                     {
                         if( methodsVerified.ContainsKey( methodInfo.Name ) )
                         {
@@ -131,7 +131,7 @@ namespace fx.Algorithm
 
             InitializeTaLibIndicator( methodsVerified[ "Adxr" ], "Average Directional Movement Index Rating", null, null, null, null, null, null, 14 );
 
-            InitializeTaLibIndicator( methodsVerified[ "Apo" ], "Absolute Price Oscillator", null, null, null, null, DataBarProperty.Close, null, 10, 20, Core.MAType.Ema );
+            InitializeTaLibIndicator( methodsVerified[ "Apo" ], "Absolute Price Oscillator", null, null, null, null, DataBarProperty.Close, null, 10, 20, MAType.Ema );
 
             InitializeTaLibIndicator( methodsVerified[ "Aroon" ], "Aroon", null, null, null, null, null, null, 14 );
 
@@ -145,7 +145,7 @@ namespace fx.Algorithm
 
             InitializeTaLibIndicator( methodsVerified[ "AvgPrice" ], "Average Price", null, null, null, null, null, null );
 
-            InitializeTaLibIndicator( methodsVerified[ "Bbands" ], "Bollinger Bands", null, null, null, null, DataBarProperty.Close, null, 14, 10d, 10d, Core.MAType.Ema );
+            InitializeTaLibIndicator( methodsVerified[ "Bbands" ], "Bollinger Bands", null, null, null, null, DataBarProperty.Close, null, 14, 10d, 10d, MAType.Ema );
 
             InitializeTaLibIndicator( methodsVerified[ "Beta" ], "Beta", null, null, null, null, DataBarProperty.Open, DataBarProperty.Close, 14 );
 
@@ -204,7 +204,7 @@ namespace fx.Algorithm
             InitializeTaLibIndicator( methodsVerified[ "Macd" ], "Moving Average Convergence/Divergence", null, null, null, null, DataBarProperty.Close, null, 20, 40, 10 );
 
             InitializeTaLibIndicator(
-                methodsVerified[ "MacdExt" ], "MACD with controllable MA type", null, null, null, null, DataBarProperty.Close, null, 20, Core.MAType.Ema, 40, Core.MAType.Ema, 10, Core.MAType.Ema );
+                methodsVerified[ "MacdExt" ], "MACD with controllable MA type", null, null, null, null, DataBarProperty.Close, null, 20, MAType.Ema, 40, MAType.Ema, 10, MAType.Ema );
 
             InitializeTaLibIndicator( methodsVerified[ "MacdFix" ], "Moving Average Convergence/Divergence Fix 12/26", null, null, null, null, DataBarProperty.Close, null, 10 );
 
@@ -236,7 +236,7 @@ namespace fx.Algorithm
 
             InitializeTaLibIndicator( methodsVerified[ "Mom" ], "Momentum", null, null, null, null, DataBarProperty.Close, null, 14 );
 
-            InitializeTaLibIndicator( methodsVerified[ "Ma" ], "Moving Average", null, null, null, null, DataBarProperty.Close, null, 14, Core.MAType.Sma );
+            InitializeTaLibIndicator( methodsVerified[ "Ma" ], "Moving Average", null, null, null, null, DataBarProperty.Close, null, 14, MAType.Sma );
 
             // Consumes double[] inPeriods, which is to be established programatically only.
             //InitializeTaLibIndicator(methodsVerified["MovingAverageVariablePeriod"], "Moving Average with variable period", null, null, 2, 20, Core.MAType.Ema);
@@ -251,7 +251,7 @@ namespace fx.Algorithm
 
             InitializeTaLibIndicator( methodsVerified[ "PlusDM" ], "Plus Directional Movement", null, null, null, null, null, null, 14 );
 
-            InitializeTaLibIndicator( methodsVerified[ "Ppo" ], "Percentage Price Oscillator", null, null, null, null, DataBarProperty.Close, null, 12, 24, Core.MAType.Ema );
+            InitializeTaLibIndicator( methodsVerified[ "Ppo" ], "Percentage Price Oscillator", null, null, null, null, DataBarProperty.Close, null, 12, 24, MAType.Ema );
 
             InitializeTaLibIndicator( methodsVerified[ "Roc" ], "Rate of change : ((price/prevPrice)-1)*100", null, null, null, null, DataBarProperty.Close, null, 14 );
 
@@ -279,11 +279,11 @@ namespace fx.Algorithm
 
             InitializeTaLibIndicator( methodsVerified[ "StdDev" ], "Standard Deviation", null, null, null, null, DataBarProperty.Close, null, 14, 2d );
 
-            InitializeTaLibIndicator( methodsVerified[ "Stoch" ], "Stochastic", null, null, null, null, null, null, 10, 20, Core.MAType.Ema, 22, Core.MAType.Ema );
+            InitializeTaLibIndicator( methodsVerified[ "Stoch" ], "Stochastic", null, null, null, null, null, null, 10, 20, MAType.Ema, 22, MAType.Ema );
 
-            InitializeTaLibIndicator( methodsVerified[ "StochF" ], "Stochastic Fast", null, null, null, null, null, null, 10, 20, Core.MAType.Ema );
+            InitializeTaLibIndicator( methodsVerified[ "StochF" ], "Stochastic Fast", null, null, null, null, null, null, 10, 20, MAType.Ema );
 
-            InitializeTaLibIndicator( methodsVerified[ "StochRsi" ], "Stochastic Relative Strength Index", null, null, null, null, DataBarProperty.Close, null, 14, 10, 20, Core.MAType.Ema );
+            InitializeTaLibIndicator( methodsVerified[ "StochRsi" ], "Stochastic Relative Strength Index", null, null, null, null, DataBarProperty.Close, null, 14, 10, 20, MAType.Ema );
 
             InitializeTaLibIndicator( methodsVerified[ "Sub" ], "Vector Arithmetic Substraction", null, null, null, null, DataBarProperty.Open, DataBarProperty.Close );
 
@@ -387,7 +387,7 @@ namespace fx.Algorithm
             lock( this )
             {
                 MethodInfo lookBackCountMethodInfo = null;
-                foreach( MethodInfo info in typeof( fx.TALib.Core ).GetMethods( ) )
+                foreach( MethodInfo info in typeof( Core ).GetMethods( ) )
                 {
                     if( info.Name == methodInfo.Name + "Lookback" )
                     {
@@ -454,7 +454,7 @@ namespace fx.Algorithm
             {
                 if( _indicatorsGroups.ContainsKey( indicatorsGroup ) )
                 {
-                    return GeneralHelper.EnumerableToArray< string >( _indicatorsGroups[ indicatorsGroup ].Keys );
+                    return GeneralHelper.EnumerableToArray( _indicatorsGroups[ indicatorsGroup ].Keys );
                 }
             }
 
@@ -475,7 +475,7 @@ namespace fx.Algorithm
                     {
                         if( name.ToLower( ) == indicatorName.ToLower( ) )
                         {
-                            return ( ( PlatformIndicator )_indicatorsGroups[ group ][ indicatorName ] ).SimpleClone( );
+                            return _indicatorsGroups[group][indicatorName].SimpleClone( );
                         }
                     }
                 }
@@ -493,7 +493,7 @@ namespace fx.Algorithm
             {
                 if( _indicatorsGroups[ indicatorGroup ].ContainsKey( name ) )
                 {
-                    return ( ( PlatformIndicator )_indicatorsGroups[ indicatorGroup ][ name ] ).SimpleClone( );
+                    return _indicatorsGroups[indicatorGroup][name].SimpleClone( );
                 }
             }
 

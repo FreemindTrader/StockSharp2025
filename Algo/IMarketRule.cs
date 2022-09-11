@@ -324,13 +324,13 @@ namespace StockSharp.Algo
 			return Activated<object>(arg => handler());
 		}
 
-		/// <summary>
-		/// To add the processor, accepting argument from <see cref="Do{TResult}(System.Func{TResult})"/>, which will be called at action activation.
-		/// </summary>
-		/// <typeparam name="TResult">The type of result, returned from the processor.</typeparam>
-		/// <param name="handler">The handler.</param>
-		/// <returns>Rule.</returns>
-		public MarketRule<TToken, TArg> Activated<TResult>(Action<TResult> handler)
+        /// <summary>
+        /// To add the processor, accepting argument from <see cref="Do{TResult}(Func{TResult})"/>, which will be called at action activation.
+        /// </summary>
+        /// <typeparam name="TResult">The type of result, returned from the processor.</typeparam>
+        /// <param name="handler">The handler.</param>
+        /// <returns>Rule.</returns>
+        public MarketRule<TToken, TArg> Activated<TResult>(Action<TResult> handler)
 		{
 			if (handler == null)
 				throw new ArgumentNullException(nameof(handler));
@@ -347,11 +347,11 @@ namespace StockSharp.Algo
 			Activate(default);
 		}
 
-		/// <summary>
-		/// To activate the rule.
-		/// </summary>
-		/// <param name="arg">The value, which will be sent to processor, registered through <see cref="Do(System.Action{TArg})"/>.</param>
-		protected virtual void Activate(TArg arg)
+        /// <summary>
+        /// To activate the rule.
+        /// </summary>
+        /// <param name="arg">The value, which will be sent to processor, registered through <see cref="Do(Action{TArg})"/>.</param>
+        protected virtual void Activate(TArg arg)
 		{
 			if (!IsReady || IsSuspended)
 				return;

@@ -20,10 +20,10 @@ namespace StockSharp.Messages
 
 	using Ecng.Collections;
 
-	/// <summary>
-	/// The interface for all trading types that have the property <see cref="IExtendableEntity.ExtensionInfo"/> for keeping extended information.
-	/// </summary>
-	public interface IExtendableEntity
+    /// <summary>
+    /// The interface for all trading types that have the property <see cref="ExtensionInfo"/> for keeping extended information.
+    /// </summary>
+    public interface IExtendableEntity
 	{
 		/// <summary>
 		/// Extended information.

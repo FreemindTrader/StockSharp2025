@@ -144,7 +144,7 @@ namespace fx.Charting
                     return new sxTuple<T>( _param0.To<DateTimeOffset>().UtcDateTime, _param1, _param2 );
                 if ( ( ValueType ) _param0 is double )
                     return new sxTuple<T>( _param0.To<double>(), _param1, _param2 );
-                throw new NotSupportedException( LocalizedStrings.Str888Params.Put( ( object ) typeof( TXOrig ).Name ) );
+                throw new NotSupportedException( LocalizedStrings.Str888Params.Put( typeof( TXOrig ).Name ) );
             }
 
             public static sxTuple<T> CreateSxTuple( T _param0 )
@@ -563,13 +563,13 @@ namespace fx.Charting
             {
                 _utcTime          = bar.BarTime;
                 _candleArg        = bar.SymbolEx.Period;
-                _openPrice        = ( double ) bar.Open;
-                _highPrice        = ( double ) bar.High;
-                _lowPrice         = ( double ) bar.Low;
-                _closePrice       = ( double ) bar.Close;
+                _openPrice        = bar.Open;
+                _highPrice        = bar.High;
+                _lowPrice         = bar.Low;
+                _closePrice       = bar.Close;
                 _candlePriceLevel = null;
                 _priceStep        = bar.SymbolEx.PriceStep;
-                _advancedTAinfo   = ( IPointMetadata ) bar;
+                _advancedTAinfo   = bar;
             }
 
             public sCandle( DateTimeOffset utcTime, object candleArg, double openPrice, double highPrice, double lowPrice, double closePrice, IEnumerable<CandlePriceLevel> priceLvls, double? priceStep, IPointMetadata advancedTAInfo )

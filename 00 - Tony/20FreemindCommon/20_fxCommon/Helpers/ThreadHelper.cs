@@ -39,10 +39,10 @@ namespace fx.Common
         /// Reset the name of the set thread.
         /// </summary>
         /// <param name="thread" type="Thread">The thread.</param>
-        /// <exception cref="System.NullReferenceException">Thread cannot be null</exception>
+        /// <exception cref="NullReferenceException">Thread cannot be null</exception>
         static private void ResetThreadName( Thread thread )
         {
-            if ( null == thread ) throw new System.NullReferenceException( "Thread cannot be null" );
+            if ( null == thread ) throw new NullReferenceException( "Thread cannot be null" );
             lock ( thread )
             {
                 //

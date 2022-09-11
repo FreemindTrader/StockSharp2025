@@ -15,7 +15,7 @@ namespace Ecng.Data
         {
             get
             {
-                return ( IEnumerable<DatabaseConnectionPair> )this._connections.Cache;
+                return _connections.Cache;
             }
         }
 
@@ -31,12 +31,12 @@ namespace Ecng.Data
                 throw new ArgumentNullException( nameof( provider ) );
             if ( connectionString.IsEmpty() )
                 throw new ArgumentNullException( nameof( connectionString ) );
-            DatabaseConnectionPair connection = this.Connections.FirstOrDefault<DatabaseConnectionPair>( ( Func<DatabaseConnectionPair, bool> )( p =>
+            DatabaseConnectionPair connection = Connections.FirstOrDefault( p =>
             {
                 if ( p.Provider == provider )
                     return p.ConnectionString.EqualsIgnoreCase( connectionString );
                 return false;
-            } ) );
+            } );
             if ( connection == null )
             {
                 connection = new DatabaseConnectionPair()
@@ -44,7 +44,7 @@ namespace Ecng.Data
                     Provider = provider,
                     ConnectionString = connectionString
                 };
-                this.AddConnection( connection );
+                AddConnection( connection );
             }
             return connection;
         }
@@ -53,8 +53,8 @@ namespace Ecng.Data
         {
             if ( connection == null )
                 throw new ArgumentNullException( nameof( connection ) );
-            this._connections.Add( connection );
-            Action<DatabaseConnectionPair> connectionCreated = this.ConnectionCreated;
+            _connections.Add( connection );
+            Action<DatabaseConnectionPair> connectionCreated = ConnectionCreated;
             if ( connectionCreated == null )
                 return;
             connectionCreated( connection );
@@ -64,9 +64,9 @@ namespace Ecng.Data
         {
             if ( connection == null )
                 throw new ArgumentNullException( nameof( connection ) );
-            if ( !this._connections.Remove( connection ) )
+            if ( !_connections.Remove( connection ) )
                 return false;
-            Action<DatabaseConnectionPair> connectionDeleted = this.ConnectionDeleted;
+            Action<DatabaseConnectionPair> connectionDeleted = ConnectionDeleted;
             if ( connectionDeleted != null )
                 connectionDeleted( connection );
             return true;
@@ -74,14 +74,14 @@ namespace Ecng.Data
 
         public void Load( SettingsStorage storage )
         {
-            DatabaseConnectionPair[ ] array = storage.GetValue<IEnumerable<DatabaseConnectionPair>>( "Connections", ( IEnumerable<DatabaseConnectionPair> )null ).Where<DatabaseConnectionPair>( ( Func<DatabaseConnectionPair, bool> )( p => p.Provider != ( Type )null ) ).ToArray<DatabaseConnectionPair>();
-            lock ( this._connections.SyncRoot )
-                this._connections.AddRange( ( IEnumerable<DatabaseConnectionPair> )array );
+            DatabaseConnectionPair[ ] array = storage.GetValue<IEnumerable<DatabaseConnectionPair>>( "Connections", null ).Where( p => p.Provider != null ).ToArray();
+            lock ( _connections.SyncRoot )
+                _connections.AddRange( array );
         }
 
         public void Save( SettingsStorage storage )
         {
-            storage.SetValue<SettingsStorage[ ]>( "Connections", this.Connections.Select<DatabaseConnectionPair, SettingsStorage>( ( Func<DatabaseConnectionPair, SettingsStorage> )( pair => pair.Save() ) ).ToArray<SettingsStorage>() );
+            storage.SetValue( "Connections", Connections.Select( pair => pair.Save() ).ToArray() );
         }
     }
 }

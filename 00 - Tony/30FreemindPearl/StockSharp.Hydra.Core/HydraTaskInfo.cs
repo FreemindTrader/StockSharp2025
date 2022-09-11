@@ -25,12 +25,12 @@ namespace StockSharp.Hydra.Core
         throw new ArgumentNullException(nameof (id));
       if (taskType.IsEmpty())
         throw new ArgumentNullException(nameof (taskType));
-      this.Id = id;
-      this.TaskType = taskType;
+      Id = id;
+      TaskType = taskType;
       SettingsStorage settingsStorage = settings;
       if (settingsStorage == null)
         throw new ArgumentNullException(nameof (settings));
-      this.Settings = settingsStorage;
+      Settings = settingsStorage;
     }
 
     /// <summary>Task id.</summary>

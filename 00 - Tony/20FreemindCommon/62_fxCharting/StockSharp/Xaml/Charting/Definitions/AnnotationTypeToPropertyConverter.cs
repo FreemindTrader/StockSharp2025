@@ -64,7 +64,7 @@ namespace fx.Charting
                 return null;
             }
 
-            var annotationType = ( ( IAnnotation )annotation ).GetAnnotationType( );
+            var annotationType = annotation.GetAnnotationType( );
 
             PooledList<PropertyDefinition> propertyDefinitionList;
 

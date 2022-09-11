@@ -41,62 +41,62 @@ namespace StockSharp.Web.Api.Client
           bool? isRepeatOnly,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ProductOrder>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)productId, (object)contentType, (object)repeatAmountLow, (object)repeatAmountHigh, (object)endLow, (object)endHigh, (object)flags, (object)isActiveOnly, (object)isReferralOnly, (object)isRepeatOnly);
+            return Get<BaseEntitySet<ProductOrder>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, productId, contentType, repeatAmountLow, repeatAmountHigh, endLow, endHigh, flags, isActiveOnly, isReferralOnly, isRepeatOnly );
         }
 
         Task<Payment> IProductOrderService.MakeRecurrentAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post<Payment>(RestBaseApiClient.GetCurrentMethod("MakeRecurrentAsync"), cancellationToken, (object)orderId);
+            return Post<Payment>( GetCurrentMethod( "MakeRecurrentAsync"), cancellationToken, orderId );
         }
 
         Task IProductOrderService.MakeRecurrentsAsync(
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("MakeRecurrentsAsync"), cancellationToken, Array.Empty<object>());
+            return Post( GetCurrentMethod( "MakeRecurrentsAsync"), cancellationToken, Array.Empty<object>());
         }
 
         Task<ProductOrder> IProductOrderService.RenewAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post<ProductOrder>(RestBaseApiClient.GetCurrentMethod("RenewAsync"), cancellationToken, (object)orderId);
+            return Post<ProductOrder>( GetCurrentMethod( "RenewAsync"), cancellationToken, orderId );
         }
 
         Task<ProductOrder> IProductOrderService.StopAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post<ProductOrder>(RestBaseApiClient.GetCurrentMethod("StopAsync"), cancellationToken, (object)orderId);
+            return Post<ProductOrder>( GetCurrentMethod( "StopAsync"), cancellationToken, orderId );
         }
 
         Task IProductOrderService.TrialRejectAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("TrialRejectAsync"), cancellationToken, (object)orderId);
+            return Post( GetCurrentMethod( "TrialRejectAsync"), cancellationToken, orderId );
         }
 
         Task IProductOrderService.TrialApproveAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("TrialApproveAsync"), cancellationToken, (object)orderId);
+            return Post( GetCurrentMethod( "TrialApproveAsync"), cancellationToken, orderId );
         }
 
         Task IProductOrderService.RefundRejectAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RefundRejectAsync"), cancellationToken, (object)orderId);
+            return Post( GetCurrentMethod( "RefundRejectAsync"), cancellationToken, orderId );
         }
 
         Task IProductOrderService.RefundApproveAsync(
           long orderId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RefundApproveAsync"), cancellationToken, (object)orderId);
+            return Post( GetCurrentMethod( "RefundApproveAsync"), cancellationToken, orderId );
         }
     }
 }

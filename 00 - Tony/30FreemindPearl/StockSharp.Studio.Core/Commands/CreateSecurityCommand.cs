@@ -24,7 +24,7 @@ namespace StockSharp.Studio.Core.Commands
             Type type = securityType;
             if ( ( object )type == null )
                 throw new ArgumentNullException( nameof( securityType ) );
-            this.SecurityType = type;
+            SecurityType = type;
         }
 
         public Type SecurityType { get; }

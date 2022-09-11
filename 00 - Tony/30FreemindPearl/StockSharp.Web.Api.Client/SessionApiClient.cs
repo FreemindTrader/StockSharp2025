@@ -34,14 +34,14 @@ namespace StockSharp.Web.Api.Client
           bool? aggregated,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Session>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)productId, (object)day, (object)aggregated);
+            return Get<BaseEntitySet<Session>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, productId, day, aggregated );
         }
 
         Task ISessionService.RemoveAllSessionAsync(
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RemoveAllSessionAsync"), cancellationToken, (object)clientId);
+            return Post( GetCurrentMethod( "RemoveAllSessionAsync"), cancellationToken, clientId );
         }
     }
 }

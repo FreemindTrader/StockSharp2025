@@ -182,7 +182,7 @@ namespace fx.Charting
         
         public void OnCheckChanged( ItemClickEventArgs args )
         {
-            ItemClickEventArgs myevent = ( ItemClickEventArgs ) args;
+            ItemClickEventArgs myevent = args;
 
             //if ( args.Source is BarCheckItem )
             //{

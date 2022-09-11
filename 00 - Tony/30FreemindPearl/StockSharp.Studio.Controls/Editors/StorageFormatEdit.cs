@@ -17,11 +17,11 @@ namespace StockSharp.Studio.Controls.Editors
     {
       get
       {
-        return (bool) this.GetValue(StorageFormatEdit.IsDefaultEditorProperty);
+        return (bool) GetValue( IsDefaultEditorProperty );
       }
       set
       {
-        this.SetValue(StorageFormatEdit.IsDefaultEditorProperty, (object) value);
+        SetValue( IsDefaultEditorProperty, value );
       }
     }
 

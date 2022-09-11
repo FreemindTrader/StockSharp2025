@@ -139,7 +139,7 @@ namespace fx.Algorithm
 
         public void Analyze( )
         {
-            var newSRlevels = this.ToSRlevelList( );
+            var newSRlevels = ToSRlevelList( );
 
             var aa = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _startingBar.SymbolEx );
 

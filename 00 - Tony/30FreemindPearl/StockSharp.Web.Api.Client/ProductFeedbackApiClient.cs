@@ -31,7 +31,7 @@ namespace StockSharp.Web.Api.Client
           long? productId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ProductFeedback>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)productId);
+            return Get<BaseEntitySet<ProductFeedback>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, productId );
         }
 
         Task<ProductFeedback> IProductFeedbackService.GetByProductAndClientAsync(
@@ -39,7 +39,7 @@ namespace StockSharp.Web.Api.Client
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<ProductFeedback>(RestBaseApiClient.GetCurrentMethod("GetByProductAndClientAsync"), cancellationToken, (object)productId, (object)clientId);
+            return Get<ProductFeedback>( GetCurrentMethod( "GetByProductAndClientAsync"), cancellationToken, productId, clientId );
         }
     }
 }

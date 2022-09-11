@@ -34,46 +34,46 @@ namespace StockSharp.Studio.Controls
         
         public MyTradesTable()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            this.TradesGrid.LayoutChanged += RaiseChangedCommand;
-            this.TradesGrid.SelectionChanged += ( GridSelectionChangedEventHandler )( ( s, e ) => new SelectCommand<MyTrade>( this.TradesGrid.SelectedTrade, false ).Process( ( object )this, false ) );
-            this.GotFocus += ( RoutedEventHandler )( ( s, e ) => new SelectCommand<MyTrade>( this.TradesGrid.SelectedTrade, false ).Process( ( object )this, false ) );
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            TradesGrid.LayoutChanged += RaiseChangedCommand;
+            TradesGrid.SelectionChanged += ( s, e ) => new SelectCommand<MyTrade>( TradesGrid.SelectedTrade, false ).Process( this, false );
+            GotFocus += ( s, e ) => new SelectCommand<MyTrade>( TradesGrid.SelectedTrade, false ).Process( this, false );
             HashSet<long> tradeIds = new HashSet<long>();
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<EntityCommand<MyTrade>>( ( object )this, false, ( Action<EntityCommand<MyTrade>> )( command =>
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<EntityCommand<MyTrade>>( this, false, command =>
                 {
                     if ( tradeIds.Contains( command.Entity.Trade.Id ) )
                         return;
                     tradeIds.Add( command.Entity.Trade.Id );
-                    this.TradesGrid.Trades.TryAddEntities<MyTrade>( command );
-                } ), ( Func<EntityCommand<MyTrade>, bool> )null );
-            commandService.Register<ResetedCommand>( ( object )this, false, ( Action<ResetedCommand> )( cmd =>
+                    TradesGrid.Trades.TryAddEntities( command );
+                }, null );
+            commandService.Register<ResetedCommand>( this, false, cmd =>
                 {
                     tradeIds.Clear();
-                    this.TradesGrid.Trades.Clear();
-                } ), ( Func<ResetedCommand, bool> )null );
-            this.WhenLoaded( ( Action )( () => this._subscriptionManager.CreateSubscription( DataType.Transactions, ( Action<Subscription> )null ) ) );
+                    TradesGrid.Trades.Clear();
+                }, null );
+            WhenLoaded( () => _subscriptionManager.CreateSubscription( DataType.Transactions, null ) );
         }
 
         public override void Save( SettingsStorage settings )
         {
             base.Save( settings );
-            settings.SetValue<SettingsStorage>( "TradesGrid", this.TradesGrid.Save() );
+            settings.SetValue( "TradesGrid", TradesGrid.Save() );
         }
 
         public override void Load( SettingsStorage settings )
         {
             base.Load( settings );
-            this.TradesGrid.Load( settings.GetValue<SettingsStorage>( "TradesGrid", ( SettingsStorage )null ) );
+            TradesGrid.Load( settings.GetValue<SettingsStorage>( "TradesGrid", null ) );
         }
 
         public override void Dispose()
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<EntityCommand<MyTrade>>( ( object )this );
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            this._subscriptionManager.Dispose();
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<EntityCommand<MyTrade>>( this );
+            commandService.UnRegister<ResetedCommand>( this );
+            _subscriptionManager.Dispose();
             base.Dispose();
         }        
     }

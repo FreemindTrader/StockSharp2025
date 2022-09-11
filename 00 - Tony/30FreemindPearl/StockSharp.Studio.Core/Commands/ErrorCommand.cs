@@ -19,18 +19,18 @@ namespace StockSharp.Studio.Core.Commands
             Exception exception = error;
             if ( exception == null )
                 throw new ArgumentNullException( nameof( error ) );
-            this.Error = exception;
-            this.Message = error.Message;
+            Error = exception;
+            Message = error.Message;
         }
 
         public ErrorCommand( string message )
         {
-            this.Message = message;
+            Message = message;
         }
 
         public override string ToString()
         {
-            return this.Error?.ToString() ?? this.Message;
+            return Error?.ToString() ?? Message;
         }
     }
 }

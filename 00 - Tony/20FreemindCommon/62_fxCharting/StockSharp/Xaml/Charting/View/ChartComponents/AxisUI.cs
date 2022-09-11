@@ -135,12 +135,12 @@ namespace fx.Charting
         {
             get
             {
-                return !this.SwitchAxisLocation ? ChartAxisAlignment.Default : ChartAxisAlignment.Left;
+                return !SwitchAxisLocation ? ChartAxisAlignment.Default : ChartAxisAlignment.Left;
             }
             set
             {
-                this.SwitchAxisLocation = ( uint ) value > 0U;
-                this.NotifyChanged( nameof( AxisAlignment ) );
+                SwitchAxisLocation = ( uint ) value > 0U;
+                NotifyChanged( nameof( AxisAlignment ) );
             }
         }
 
@@ -151,12 +151,12 @@ namespace fx.Charting
         {
             get
             {
-                return this._switchAxisLocation;
+                return _switchAxisLocation;
             }
             set
             {
-                this._switchAxisLocation = value;
-                this.NotifyChanged( nameof( SwitchAxisLocation ) );
+                _switchAxisLocation = value;
+                NotifyChanged( nameof( SwitchAxisLocation ) );
             }
         }
 
@@ -382,7 +382,7 @@ namespace fx.Charting
             DrawLabels           = storage.GetValue( "DrawLabels", false );
             TextFormatting       = storage.GetValue( "TextFormatting", ( string )null );
             SubDayTextFormatting = storage.GetValue( "SubDayTextFormatting", SubDayTextFormatting );
-            SwitchAxisLocation = storage.GetValue<bool>( nameof( SwitchAxisLocation ), false );            
+            SwitchAxisLocation = storage.GetValue( nameof( SwitchAxisLocation ), false );            
             AxisType             = storage.GetValue( "AxisType", ChartAxisType.DateTime );
 
             if ( Id == "Y" )
@@ -390,7 +390,7 @@ namespace fx.Charting
                 AxisType = ChartAxisType.Numeric;
             }
 
-            TimeZone             = Ecng.Common.MayBe.With(storage.GetValue("TimeZone", (string)null), new Func< string, TimeZoneInfo >( TimeZoneInfo.FindSystemTimeZoneById ) ) ?? TimeZoneInfo.Local;
+            TimeZone             = MayBe.With(storage.GetValue("TimeZone", (string)null), new Func< string, TimeZoneInfo >( TimeZoneInfo.FindSystemTimeZoneById ) ) ?? TimeZoneInfo.Local;
         }
 
         public void Save( SettingsStorage storage )
@@ -407,7 +407,7 @@ namespace fx.Charting
             storage.SetValue( "DrawLabels", DrawLabels );
             storage.SetValue( "TextFormatting", TextFormatting );
             storage.SetValue( "SubDayTextFormatting", SubDayTextFormatting );
-            storage.SetValue<bool>( nameof( SwitchAxisLocation ), this.SwitchAxisLocation );            
+            storage.SetValue( nameof( SwitchAxisLocation ), SwitchAxisLocation );            
             storage.SetValue( "AxisType", AxisType );
             storage.SetValue( "TimeZone", TimeZone?.Id );
         }

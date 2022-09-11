@@ -40,7 +40,7 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Product>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)managerId, (object)groupId, (object)nestedGroups, (object)groupIds, (object)contentType, (object)emailTemplateId, (object)flags, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<Product>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, managerId, groupId, nestedGroups, groupIds, contentType, emailTemplateId, flags, like, likeCompare );
         }
 
         Task IProductService.AddPermissionAsync(
@@ -50,7 +50,7 @@ namespace StockSharp.Web.Api.Client
           DateTime? till,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddPermissionAsync"), cancellationToken, (object)productId, (object)clientId, (object)isManager, (object)till);
+            return Post( GetCurrentMethod( "AddPermissionAsync"), cancellationToken, productId, clientId, isManager, till );
         }
 
         Task IProductService.RemovePermissionAsync(
@@ -58,7 +58,7 @@ namespace StockSharp.Web.Api.Client
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RemovePermissionAsync"), cancellationToken, (object)productId, (object)clientId);
+            return Post( GetCurrentMethod( "RemovePermissionAsync"), cancellationToken, productId, clientId );
         }
 
         
@@ -67,14 +67,14 @@ namespace StockSharp.Web.Api.Client
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post<ProductOrder>(RestBaseApiClient.GetCurrentMethod("RequestTrialAsync"), cancellationToken, (object)productId);
+            return Post<ProductOrder>( GetCurrentMethod( "RequestTrialAsync"), cancellationToken, productId );
         }
 
         Task<ProductOrder> IProductService.RequestRefundAsync(
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post<ProductOrder>(RestBaseApiClient.GetCurrentMethod("RequestRefundAsync"), cancellationToken, (object)productId);
+            return Post<ProductOrder>( GetCurrentMethod( "RequestRefundAsync"), cancellationToken, productId );
         }
 
         
@@ -83,7 +83,7 @@ namespace StockSharp.Web.Api.Client
           long messageId,
           CancellationToken cancellationToken)
         {
-            return this.Post<Product>(RestBaseApiClient.GetCurrentMethod("SelectExecutorAsync"), cancellationToken, (object)messageId);
+            return Post<Product>( GetCurrentMethod( "SelectExecutorAsync"), cancellationToken, messageId );
         }
 
         Task<ProductOrder> IProductService.ReserveMoneyAsync(
@@ -91,63 +91,63 @@ namespace StockSharp.Web.Api.Client
           Decimal amount,
           CancellationToken cancellationToken)
         {
-            return this.Post<ProductOrder>(RestBaseApiClient.GetCurrentMethod("ReserveMoneyAsync"), cancellationToken, (object)productId, (object)amount);
+            return Post<ProductOrder>( GetCurrentMethod( "ReserveMoneyAsync"), cancellationToken, productId, amount );
         }
 
         Task IProductService.CancelMoneyAsync(
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("CancelMoneyAsync"), cancellationToken, (object)productId);
+            return Post( GetCurrentMethod( "CancelMoneyAsync"), cancellationToken, productId );
         }
 
         Task IProductService.StartAsync(
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("StartAsync"), cancellationToken, (object)productId);
+            return Post( GetCurrentMethod( "StartAsync"), cancellationToken, productId );
         }
 
         Task IProductService.FinishAsync(
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("FinishAsync"), cancellationToken, (object)productId);
+            return Post( GetCurrentMethod( "FinishAsync"), cancellationToken, productId );
         }
 
         Task IProductService.PayoutAsync(
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("PayoutAsync"), cancellationToken, (object)productId);
+            return Post( GetCurrentMethod( "PayoutAsync"), cancellationToken, productId );
         }
 
         Task IProductService.OpenAccountAsync(
           long productId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("OpenAccountAsync"), cancellationToken, (object)productId);
+            return Post( GetCurrentMethod( "OpenAccountAsync"), cancellationToken, productId );
         }
 
         Task<long?> IProductService.GetIdByUrlPart(
           string urlPart,
           CancellationToken cancellationToken)
         {
-            return this.Get<long?>(RestBaseApiClient.GetCurrentMethod("GetIdByUrlPart"), cancellationToken, (object)urlPart);
+            return Get<long?>( GetCurrentMethod( "GetIdByUrlPart"), cancellationToken, urlPart );
         }
 
         Task IProductService.AddRoleAsync(
           ProductRole role,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddRoleAsync"), cancellationToken, (object)role);
+            return Post( GetCurrentMethod( "AddRoleAsync"), cancellationToken, role );
         }
 
         Task<bool> IProductService.RemoveRoleAsync(
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveRoleAsync"), cancellationToken, (object)roleId);
+            return Post<bool>( GetCurrentMethod( "RemoveRoleAsync"), cancellationToken, roleId );
         }
 
         Task IProductService.BlockClientAsync(
@@ -155,7 +155,7 @@ namespace StockSharp.Web.Api.Client
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("BlockClientAsync"), cancellationToken, (object)productId, (object)clientId);
+            return Post( GetCurrentMethod( "BlockClientAsync"), cancellationToken, productId, clientId );
         }
 
         Task IProductService.UnBlockClientAsync(
@@ -163,7 +163,7 @@ namespace StockSharp.Web.Api.Client
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("UnBlockClientAsync"), cancellationToken, (object)productId, (object)clientId);
+            return Post( GetCurrentMethod( "UnBlockClientAsync"), cancellationToken, productId, clientId );
         }
 
         Task IProductService.AddGroupAsync(
@@ -171,7 +171,7 @@ namespace StockSharp.Web.Api.Client
           long groupId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddGroupAsync"), cancellationToken, (object)productId, (object)groupId);
+            return Post( GetCurrentMethod( "AddGroupAsync"), cancellationToken, productId, groupId );
         }
 
         Task<bool> IProductService.RemoveGroupAsync(
@@ -179,19 +179,19 @@ namespace StockSharp.Web.Api.Client
           long groupId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveGroupAsync"), cancellationToken, (object)productId, (object)groupId);
+            return Post<bool>( GetCurrentMethod( "RemoveGroupAsync"), cancellationToken, productId, groupId );
         }
 
         Task<BaseEntitySet<(DomainModel.Client client, bool isManager, DateTime? till)>> IProductService.FindPermissionsAsync(long skip, long? count, bool? deleted, string orderBy, bool? orderByDesc, long? productId, CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<(StockSharp.Web.DomainModel.Client client, bool isManager, DateTime? till)>>(RestBaseApiClient.GetCurrentMethod("FindPermissionsAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)productId);
+            return Get<BaseEntitySet<(DomainModel.Client client, bool isManager, DateTime? till)>>( GetCurrentMethod( "FindPermissionsAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, productId );
         }
 
         
 
         Task IProductService.AddReleaseNotesAsync((long productId, string version, (long domainId, string releaseNotes)[])[] releaseNotes, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddReleaseNotesAsync"), cancellationToken, (object)releaseNotes);
+            return Post( GetCurrentMethod( "AddReleaseNotesAsync"), cancellationToken, releaseNotes );
         }
 
         

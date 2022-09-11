@@ -185,7 +185,7 @@ namespace fx.Algorithm
 
         public string GetStructureLabelString( )
         {
-            return MonoWaveGroup.GetStructureLabelString( _structureLabel );
+            return GetStructureLabelString( _structureLabel );
         }
 
         public static string GetStructureLabelString( StructureLabelEnum label )
@@ -477,7 +477,7 @@ namespace fx.Algorithm
 
         public bool Is3Wave( )
         {
-            var subMonoWaves = this.GetSubWaves( );
+            var subMonoWaves = GetSubWaves( );
 
             if ( MonoWavesCount > 0 )
             {
@@ -691,11 +691,11 @@ namespace fx.Algorithm
 
         public bool EndNotExceededForXTime( int fourtime_m3_Tom1 )
         {
-            var m1BrokenLevel    = this.End;            
+            var m1BrokenLevel    = End;            
             int timeSpent        = 0;
             bool didBreak        = false;
 
-            var testingMonowave  = this.GetNext();
+            var testingMonowave  = GetNext();
 
             /* -------------------------------------------------------------------------------------------------------------------------------------------
              * 
@@ -784,7 +784,7 @@ namespace fx.Algorithm
         {
             var retracePercentage = other.Over( this );
 
-            double timeRetrace = ( double ) other.TimeUnit / ( double ) TimeUnit;
+            double timeRetrace = other.TimeUnit / ( double ) TimeUnit;
 
             if ( retracePercentage > percent && timeRetrace > percent )
             {
@@ -1008,12 +1008,12 @@ namespace fx.Algorithm
 
         public bool IsCompletelyRetraced_Faster_byM( IWave other )
         {
-            return ( IsCompletelyRetraced_LT_Ytime_byM( this.TimeUnit, other ) );            
+            return ( IsCompletelyRetraced_LT_Ytime_byM( TimeUnit, other ) );            
         }
 
         public bool IsCompletelyRetraced_Slower_byM( IWave other )
         {
-            return ( IsCompletelyRetraced_GT_Ytime_byM( this.TimeUnit, other ) );
+            return ( IsCompletelyRetraced_GT_Ytime_byM( TimeUnit, other ) );
         }
 
         public bool Plus1TU_IsCompletelyRetraced_Faster_byM( IWave other )
@@ -1156,7 +1156,7 @@ namespace fx.Algorithm
 
         public MonoWaveGroup Combine( INeelyWave m1, INeelyWave m2, INeelyWave m3, INeelyWave m4  )
         {
-            var m0_m2 = this.Combine( m1, m2 );
+            var m0_m2 = Combine( m1, m2 );
             var m0_m4 = m0_m2.Combine( m3, m4 );
 
             return m0_m4;
@@ -1361,7 +1361,7 @@ namespace fx.Algorithm
         {
             get
             {
-                return ( int ) Math.Abs( BeginBarIndex - EndBarIndex );
+                return Math.Abs( BeginBarIndex - EndBarIndex );
             }
         }
 

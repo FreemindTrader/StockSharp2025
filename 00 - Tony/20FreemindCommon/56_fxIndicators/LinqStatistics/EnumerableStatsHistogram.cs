@@ -50,11 +50,11 @@ namespace fx.Indicators
 
             var minMax = source.MinMax();
 
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+            var bins = BinFactory.CreateBins( minMax.Min, minMax.Max, binCount, mode);
 
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Contains((double)value));
+                var bin = bins.First(b => b.Contains( value ) );
                 bin.Count++;
             }
 
@@ -131,11 +131,11 @@ namespace fx.Indicators
 
             var minMax = source.MinMax();
 
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+            var bins = BinFactory.CreateBins( minMax.Min, minMax.Max, binCount, mode);
 
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Contains((double)value));
+                var bin = bins.First(b => b.Contains( value ) );
                 bin.Count++;
             }
 

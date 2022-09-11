@@ -27,7 +27,7 @@ namespace fx.Algorithm
 
         public void ClearNewsEvent( )
         {
-            this.Clear( );
+            Clear( );
             _sentNewsEvents.Clear( );
         }
 
@@ -41,7 +41,7 @@ namespace fx.Algorithm
                     _sentNewsEvents.Add( fxNewsEvent, "" );
                 }
 
-                if ( !this.Items.Contains( fxNewsEvent ) )
+                if ( !Items.Contains( fxNewsEvent ) )
                 {
                     newsList.Add( fxNewsEvent );
                 }
@@ -52,7 +52,7 @@ namespace fx.Algorithm
             {
                 var a = newsList.OrderBy( i => i.EventTimeUTC );
 
-                this.Items.AddRange( a );
+                Items.AddRange( a );
             }
 
                         
@@ -70,13 +70,13 @@ namespace fx.Algorithm
 
         public void InternalUpdateCountDown( Security monitoringSymbol )
         {
-            PooledList< FxNewsEvent > temp = new PooledList< FxNewsEvent >( this.Items.Count );
+            PooledList< FxNewsEvent > temp = new PooledList< FxNewsEvent >( Items.Count );
 
             DateTime currentTime = DateTime.UtcNow;
 
             bool needToRemoved = false;
 
-            foreach( var fxNewsEvent in this.Items )
+            foreach( var fxNewsEvent in Items )
             {
                 if ( monitoringSymbol.IsRelatedNews( fxNewsEvent.Country ) )                    
                 {

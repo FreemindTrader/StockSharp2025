@@ -18,7 +18,7 @@ namespace fx.Definitions
 
         protected override void RemoveItem( int index )
         {
-            if ( index > -1 && index < this.Count )
+            if ( index > -1 && index < Count )
             {
                 OnRemoving(( new ListChangedEventArgs( ListChangedType.ItemDeleted, index )));
             }

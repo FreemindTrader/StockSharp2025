@@ -39,7 +39,7 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Message>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)pm, (object)domainId, (object)clientId, (object)topicId, (object)parentId, (object)excludeRoot, (object)rootsOnly, (object)convertBodyToHtml, (object)truncate, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<Message>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, pm, domainId, clientId, topicId, parentId, excludeRoot, rootsOnly, convertBodyToHtml, truncate, like, likeCompare );
         }
 
         Task<BaseEntitySet<SystemMessage>> IMessageService.FindSystemAsync(
@@ -51,21 +51,21 @@ namespace StockSharp.Web.Api.Client
           long? domainId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<SystemMessage>>(RestBaseApiClient.GetCurrentMethod("FindSystemAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)domainId);
+            return Get<BaseEntitySet<SystemMessage>>( GetCurrentMethod( "FindSystemAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, domainId );
         }
 
         Task<string> IMessageService.BodyCleanAsync(
           string body,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("BodyCleanAsync"), cancellationToken, (object)body);
+            return Post<string>( GetCurrentMethod( "BodyCleanAsync"), cancellationToken, body );
         }
 
         Task<string> IMessageService.MessageCleanAsync(
           long messageId,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("MessageCleanAsync"), cancellationToken, (object)messageId);
+            return Post<string>( GetCurrentMethod( "MessageCleanAsync"), cancellationToken, messageId );
         }
 
         Task<string> IMessageService.BodyToHtmlAsync(
@@ -75,7 +75,7 @@ namespace StockSharp.Web.Api.Client
           bool? preventScaling,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("BodyToHtmlAsync"), cancellationToken, (object)body, (object)domainId, (object)truncate, (object)preventScaling);
+            return Post<string>( GetCurrentMethod( "BodyToHtmlAsync"), cancellationToken, body, domainId, truncate, preventScaling );
         }
 
         Task<string> IMessageService.MessageToHtmlAsync(
@@ -85,7 +85,7 @@ namespace StockSharp.Web.Api.Client
           bool? preventScaling,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("MessageToHtmlAsync"), cancellationToken, (object)messageId, (object)domainId, (object)truncate, (object)preventScaling);
+            return Post<string>( GetCurrentMethod( "MessageToHtmlAsync"), cancellationToken, messageId, domainId, truncate, preventScaling );
         }
 
         Task<string> IMessageService.PageToHtmlAsync(
@@ -93,7 +93,7 @@ namespace StockSharp.Web.Api.Client
           long domainId,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("PageToHtmlAsync"), cancellationToken, (object)pageId, (object)domainId);
+            return Post<string>( GetCurrentMethod( "PageToHtmlAsync"), cancellationToken, pageId, domainId );
         }
 
         Task<object> IMessageService.GetJsonLDAsync(
@@ -104,7 +104,7 @@ namespace StockSharp.Web.Api.Client
           long? topicId,
           CancellationToken cancellationToken)
         {
-            return this.Get<object>(RestBaseApiClient.GetCurrentMethod("GetJsonLDAsync"), cancellationToken, (object)domainId, (object)pageId, (object)productId, (object)clientId, (object)topicId);
+            return Get<object>( GetCurrentMethod( "GetJsonLDAsync"), cancellationToken, domainId, pageId, productId, clientId, topicId );
         }
 
         Task<Message> IMessageService.GetWithPageAsync(
@@ -112,7 +112,7 @@ namespace StockSharp.Web.Api.Client
           int pageSize,
           CancellationToken cancellationToken)
         {
-            return this.Get<Message>(RestBaseApiClient.GetCurrentMethod("GetWithPageAsync"), cancellationToken, (object)messageId, (object)pageSize);
+            return Get<Message>( GetCurrentMethod( "GetWithPageAsync"), cancellationToken, messageId, pageSize );
         }
     }
 }

@@ -154,7 +154,7 @@ namespace StockSharp.Hydra
             
             UserConfig.SuspendChangesMonitor();
             
-            var appStartSettings = StockSharp.Configuration.AppStartSettings.TryLoad();
+            var appStartSettings = AppStartSettings.TryLoad();
             Helper.RegisterServices( appStartSettings == null || appStartSettings.Online, GetType() );
             ConfigManager.RegisterService( "SecuritiesSelectWindowType", typeof( Windows.SecuritiesWindowEx ) );
             ConfigManager.RegisterService<IStudioCommandService>( new StudioCommandService() );

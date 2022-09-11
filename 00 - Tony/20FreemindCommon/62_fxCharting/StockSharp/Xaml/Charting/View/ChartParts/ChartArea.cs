@@ -391,16 +391,16 @@ namespace fx.Charting
 
             private static int GetAxisCount( string string_1 )
             {
-                if( !( string_1 == ChartArea.XAxisId ) )
+                if( !( string_1 == XAxisId ) )
                 {
-                    return ++ChartArea.AxisNotifyList._yAxisCount;
+                    return ++_yAxisCount;
                 }
-                return ++ChartArea.AxisNotifyList._xAxisCount;
+                return ++_xAxisCount;
             }
 
             protected override bool OnAdding( ChartAxis axis )
             {
-                int num = AxisNotifyList.GetAxisCount( _defaultId );
+                int num = GetAxisCount( _defaultId );
 
                 if( StringHelper.IsEmpty( axis.Id ) )
                 {
@@ -491,7 +491,7 @@ namespace fx.Charting
                     throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
                 }
 
-                ChartAxis[ ] axises = ( this ).ToArray( );
+                ChartAxis[ ] axises = ToArray( );
 
                 if( base.OnClearing( ) )
                 {

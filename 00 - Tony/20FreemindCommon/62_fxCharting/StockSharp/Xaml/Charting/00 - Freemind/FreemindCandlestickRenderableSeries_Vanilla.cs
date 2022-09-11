@@ -89,7 +89,7 @@ namespace fx.Charting
                 var tmpBar        = ( SBar ) metadata;
                 CheckBarsRepo( ref tmpBar );
                 ref SBar realBar  = ref _barList[ tmpBar.Index ];
-                realBarIndex      = ( int ) realBar.Index;
+                realBarIndex      = realBar.Index;
 
                 if ( realBar.IsSelected )
                 {
@@ -399,7 +399,7 @@ namespace fx.Charting
                 var tmpBar        = ( SBar ) metadata;
                 CheckBarsRepo( ref tmpBar );
                 ref SBar realBar  = ref _barList[ tmpBar.Index ];
-                realBarIndex = ( int ) realBar.Index;
+                realBarIndex = realBar.Index;
 
                 if ( realBar.IsSelected )
                 {
@@ -638,7 +638,7 @@ namespace fx.Charting
                 var tmpBar        = ( SBar ) metadata;
                 CheckBarsRepo( ref tmpBar );
                 ref SBar realBar  = ref _barList[ tmpBar.Index ];
-                realBarIndex      = ( int ) realBar.Index;
+                realBarIndex      = realBar.Index;
 
                 if ( realBar.IsSelected )
                 {

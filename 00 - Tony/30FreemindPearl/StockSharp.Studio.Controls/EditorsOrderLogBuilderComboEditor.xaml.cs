@@ -13,11 +13,11 @@ namespace StockSharp.Studio.Controls.Editors
     {        
         public OrderLogBuilderComboEditor()
         {
-            this.InitializeComponent();
-            this.DisplayMember = "Name";
-            this.ValueMember = "Type";
+            InitializeComponent();
+            DisplayMember = "Name";
+            ValueMember = "Type";
             Type defaultBuilder;
-            this.ItemsSource = OrderLogBuilderItem.CreateSource( out defaultBuilder );
+            ItemsSource = OrderLogBuilderItem.CreateSource( out defaultBuilder );
         }        
     }
 }

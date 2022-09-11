@@ -25,8 +25,8 @@ namespace fx.Algorithm
         /// </summary>
         public static int RoundTo( int value, int roundBase )
         {
-            double temp = ( double )value / ( double )roundBase;
-            return ( int )( ( int )temp * roundBase );
+            double temp = value / ( double )roundBase;
+            return ( int )temp * roundBase;
         }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace StockSharp.Studio.Core.Commands
 
         public ChartAutoRangeCommand( bool autoRange )
         {
-            this.AutoRange = autoRange;
+            AutoRange = autoRange;
         }
     }
 }

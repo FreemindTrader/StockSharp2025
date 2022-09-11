@@ -38,7 +38,7 @@ namespace StockSharp.Server.Core
                 throw new ArgumentNullException( nameof( fileName ) );
             if ( !Directory.Exists( Path.GetDirectoryName( fileName ) ) )
                 throw new InvalidOperationException( LocalizedStrings.Str2866Params.Put( new object[1] { fileName } ) );
-            this._credentialPath = fileName;
+            _credentialPath = fileName;
         }
 
         /// <summary>Credentials.</summary>
@@ -46,18 +46,18 @@ namespace StockSharp.Server.Core
         {
             get
             {
-                return this._credentials.CachedValues;
+                return _credentials.CachedValues;
             }
             set
             {
                 if ( value == null )
                     throw new ArgumentNullException( nameof( value ) );
 
-                lock ( this._credentials.SyncRoot )
+                lock ( _credentials.SyncRoot )
                 {
-                    this._credentials.Clear();
+                    _credentials.Clear();
                     foreach ( PermissionCredentials permissionCredentials in value )
-                        this._credentials.Add( permissionCredentials.Email, permissionCredentials );
+                        _credentials.Add( permissionCredentials.Email, permissionCredentials );
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace StockSharp.Server.Core
         /// <returns>Credentials with set of permissions.</returns>
         public virtual PermissionCredentials TryGetByLogin( string login )
         {
-            return this._credentials.TryGetValue( login );
+            return _credentials.TryGetValue( login );
         }
 
         /// <summary>Add new credentials.</summary>
@@ -76,7 +76,7 @@ namespace StockSharp.Server.Core
         {
             if ( credentials == null )
                 throw new ArgumentNullException( nameof( credentials ) );
-            this._credentials.Add( credentials.Email, credentials );
+            _credentials.Add( credentials.Email, credentials );
         }
 
         /// <summary>Delete credentials by login.</summary>
@@ -84,7 +84,7 @@ namespace StockSharp.Server.Core
         /// <returns>Operation result.</returns>
         public bool DeleteByLogin( string login )
         {
-            return this._credentials.Remove( login );
+            return _credentials.Remove( login );
         }
 
         /// <summary>Load credentials from file.</summary>
@@ -92,9 +92,9 @@ namespace StockSharp.Server.Core
         {
             try
             {
-                if ( !this._credentialPath.IsConfigExists() )
+                if ( !_credentialPath.IsConfigExists() )
                     return;
-                Do.Invariant( new Action( this.LoadCredentialsAction ) );
+                Do.Invariant( new Action( LoadCredentialsAction ) );
             }
             catch ( Exception ex )
             {
@@ -108,7 +108,7 @@ namespace StockSharp.Server.Core
         {
             try
             {
-                Do.Invariant( new Action( this.SaveCredentialsAction ) );
+                Do.Invariant( new Action( SaveCredentialsAction ) );
             }
             catch ( Exception ex )
             {
@@ -119,18 +119,18 @@ namespace StockSharp.Server.Core
 
         private void LoadCredentialsAction()
         {
-            SettingsStorage[ ] settingsStorageArray = this._credentialPath.Deserialize<SettingsStorage[ ]>();
+            SettingsStorage[ ] settingsStorageArray = _credentialPath.Deserialize<SettingsStorage[ ]>();
             if ( settingsStorageArray == null )
                 return;
             ContinueOnExceptionContext exceptionContext = new ContinueOnExceptionContext();
             exceptionContext.Error += new Action<Exception>( x => x.LogError( ) );
             using ( exceptionContext.ToScope( true ) )
-                this.Credentials = settingsStorageArray.Select( x => x.Load<PermissionCredentials>() ).ToArray();
+                Credentials = settingsStorageArray.Select( x => x.Load<PermissionCredentials>() ).ToArray();
         }
 
         private void SaveCredentialsAction()
         {
-            Credentials.Select( x => x.Save() ).ToArray().Serialize( this._credentialPath );
+            Credentials.Select( x => x.Save() ).ToArray().Serialize( _credentialPath );
         }        
     }
 }

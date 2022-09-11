@@ -258,7 +258,7 @@ namespace fx.Indicators
 
             if ( ( endIdx < 0 ) || ( ( endIdx + 1 ) < startIdx ) ) return null;
 
-            lookbackCount = fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            lookbackCount = Core.BbandsLookback( Core.MAType.Ema, 20 );
 
             if ( startIdx < lookbackCount ) startIdx = lookbackCount;
 
@@ -740,7 +740,7 @@ namespace fx.Indicators
 
             if ( ( endIdx < 0 ) || ( endIdx < startIdx ) ) return null;
 
-            lookbackCount = fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            lookbackCount = Core.BbandsLookback( Core.MAType.Ema, 20 );
 
             if ( startIdx < lookbackCount ) startIdx = lookbackCount;
 

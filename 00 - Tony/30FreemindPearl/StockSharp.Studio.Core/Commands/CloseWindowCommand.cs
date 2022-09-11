@@ -16,10 +16,10 @@ namespace StockSharp.Studio.Core.Commands
 
         public CloseWindowCommand( string id, Type ctrlType )
         {
-            if ( ctrlType == ( Type )null )
+            if ( ctrlType == null )
                 throw new ArgumentNullException( nameof( ctrlType ) );
-            this.Id = id;
-            this.CtrlType = ctrlType;
+            Id = id;
+            CtrlType = ctrlType;
         }
     }
 }

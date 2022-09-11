@@ -204,7 +204,7 @@ namespace fx.Indicators
 
         private void FindCrossPointAndStrength( )
         {
-            int lookbackCount = fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            int lookbackCount = Core.BbandsLookback( Core.MAType.Ema, 20 );
 
             lock ( this )
             {
@@ -279,7 +279,7 @@ namespace fx.Indicators
             
             if ( fullRecalculation == false )
             {
-                repoStartingIndex = Math.Max( 0, resultSetLength - fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 ) - 2 );
+                repoStartingIndex = Math.Max( 0, resultSetLength - Core.BbandsLookback( Core.MAType.Ema, 20 ) - 2 );
             }
 
             //!+ Get Bollinger Band
@@ -298,7 +298,7 @@ namespace fx.Indicators
             outerbblower = new double [ indexCount ];
 
 
-            fx.TALib.Core.RetCode code = fx.TALib.Core.Bbands(Bars, startIndex, endIndex, innerbbupper, innerbbmean, innerbblower, out outBeginIdx, out outNBElement, Core.MAType.Ema, 20, 1, 1  );
+            Core.RetCode code = Core.Bbands(Bars, startIndex, endIndex, innerbbupper, innerbbmean, innerbblower, out outBeginIdx, out outNBElement, Core.MAType.Ema, 20, 1, 1  );
 
 
             IndicatorResult.AddSetValues( "BBMean",       outBeginIdx, outNBElement, true, innerbbmean );
@@ -309,7 +309,7 @@ namespace fx.Indicators
             outBeginIdx = 0;
             outNBElement = 0;
 
-            fx.TALib.Core.Bbands( Bars, startIndex, endIndex, innerbbupper, innerbbmean, innerbblower, out outBeginIdx, out outNBElement, Core.MAType.Ema, 20, 2, 2  );
+            Core.Bbands( Bars, startIndex, endIndex, innerbbupper, innerbbmean, innerbblower, out outBeginIdx, out outNBElement, Core.MAType.Ema, 20, 2, 2  );
             
             IndicatorResult.AddSetValues( "OuterBBUpper", outBeginIdx, outNBElement, true, outerbbupper );
             IndicatorResult.AddSetValues( "OuterBBLower", outBeginIdx, outNBElement, true, outerbblower );
@@ -343,7 +343,7 @@ namespace fx.Indicators
                 return;
             }
 
-            int startIndex = Math.Max( fx.TALib.Core.BbandsLookback(Core.MAType.Ema, 20 ), _indexOfLastBollingBandCross);
+            int startIndex = Math.Max( Core.BbandsLookback(Core.MAType.Ema, 20 ), _indexOfLastBollingBandCross);
             int endIndex   = calcCount - 2;         // Tony: We need to ignore the last bar as it is still updating
             int indexCount = endIndex - startIndex + 1;
 

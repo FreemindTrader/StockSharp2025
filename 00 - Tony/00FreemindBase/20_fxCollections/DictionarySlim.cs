@@ -276,7 +276,7 @@ namespace fx.Collections
             Debug.Assert( _entries.Length == _count || _entries.Length == 1 ); // We only copy _count, so if it's longer we will miss some
             int count = _count;
             int newSize = _entries.Length * 2;
-            if ( ( uint ) newSize > ( uint ) int.MaxValue ) // uint cast handles overflow
+            if ( ( uint ) newSize > int.MaxValue ) // uint cast handles overflow
                 throw new InvalidOperationException( Strings.Arg_HTCapacityOverflow );
 
             var entries = new Entry[newSize];

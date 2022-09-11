@@ -13,19 +13,19 @@ namespace Microsoft.Practices.ServiceLocation
 {
   public abstract class ServiceLocatorImplBase : IServiceLocator, IServiceProvider
   {
-    public virtual object GetService(Type serviceType) => this.GetInstance(serviceType, (string) null);
+    public virtual object GetService(Type serviceType) => GetInstance(serviceType, null );
 
-    public virtual object GetInstance(Type serviceType) => this.GetInstance(serviceType, (string) null);
+    public virtual object GetInstance(Type serviceType) => GetInstance(serviceType, null );
 
     public virtual object GetInstance(Type serviceType, string key)
     {
       try
       {
-        return this.DoGetInstance(serviceType, key);
+        return DoGetInstance(serviceType, key);
       }
       catch (Exception ex)
       {
-        throw new ActivationException(this.FormatActivationExceptionMessage(ex, serviceType, key), ex);
+        throw new ActivationException(FormatActivationExceptionMessage(ex, serviceType, key), ex);
       }
     }
 
@@ -33,21 +33,21 @@ namespace Microsoft.Practices.ServiceLocation
     {
       try
       {
-        return this.DoGetAllInstances(serviceType);
+        return DoGetAllInstances(serviceType);
       }
       catch (Exception ex)
       {
-        throw new ActivationException(this.FormatActivateAllExceptionMessage(ex, serviceType), ex);
+        throw new ActivationException(FormatActivateAllExceptionMessage(ex, serviceType), ex);
       }
     }
 
-    public virtual TService GetInstance<TService>() => (TService) this.GetInstance(typeof (TService), (string) null);
+    public virtual TService GetInstance<TService>() => (TService) GetInstance(typeof (TService), null );
 
-    public virtual TService GetInstance<TService>(string key) => (TService) this.GetInstance(typeof (TService), key);
+    public virtual TService GetInstance<TService>(string key) => (TService) GetInstance(typeof (TService), key);
 
     public virtual IEnumerable<TService> GetAllInstances<TService>()
     {
-      foreach (TService allInstance in this.GetAllInstances(typeof (TService)))
+      foreach (TService allInstance in GetAllInstances(typeof (TService)))
         yield return allInstance;
     }
 
@@ -60,14 +60,14 @@ namespace Microsoft.Practices.ServiceLocation
       Type serviceType,
       string key)
     {
-      return string.Format((IFormatProvider) CultureInfo.CurrentUICulture, Resources.ActivationExceptionMessage, (object) serviceType.Name, (object) key);
+      return string.Format( CultureInfo.CurrentUICulture, Resources.ActivationExceptionMessage, serviceType.Name, key );
     }
 
     protected virtual string FormatActivateAllExceptionMessage(
       Exception actualException,
       Type serviceType)
     {
-      return string.Format((IFormatProvider) CultureInfo.CurrentUICulture, Resources.ActivateAllExceptionMessage, (object) serviceType.Name);
+      return string.Format( CultureInfo.CurrentUICulture, Resources.ActivateAllExceptionMessage, serviceType.Name );
     }
   }
 }

@@ -15,10 +15,10 @@ namespace StockSharp.Studio.Controls
           CultureInfo _ )
         {
             if ( value is DateTime )
-                return ( object )( ( DateTime )value ).ToString( "D", ( IFormatProvider )Thread.CurrentThread.CurrentCulture );
+                return ( ( DateTime )value ).ToString( "D", Thread.CurrentThread.CurrentCulture );
             if ( value == null )
-                return ( object )null;
-            return ( object )value.ToString();
+                return null;
+            return value.ToString();
         }
 
         object IValueConverter.ConvertBack(

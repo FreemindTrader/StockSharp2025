@@ -21,7 +21,7 @@ namespace fx.Charting
     public partial class OptionPositionChartEx : UserControl, IComponentConnector, IPersistable, IThemeableChart
     {
         private readonly PooledDictionary<Security, OptionNowExpLines> _securityOptionLines = new PooledDictionary<Security, OptionNowExpLines>( );
-        private Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> _chartParamFunc = OptionPositionChartEx._premiumFunc;
+        private Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> _chartParamFunc = _premiumFunc;
         private readonly AnnotationUI _chartAnnotation = new AnnotationUI( ) { Type = ChartAnnotationTypes.VerticalLineAnnotation };
         private readonly CachedSynchronizedSet<Security> _options = new CachedSynchronizedSet<Security>( );
         private bool _showExpiration = true;
@@ -56,8 +56,8 @@ namespace fx.Charting
             _chartPaneViewModel = ( ScichartSurfaceMVVM )Chart.DataContext;
             _chartPaneViewModel.ShowLegend = true;
 
-            var xAxis = ( ( IEnumerable<ChartAxis> )_chartPaneViewModel.Area.XAxises ).First( );
-            var yAxis = ( ( IEnumerable<ChartAxis> )_chartPaneViewModel.Area.YAxises ).First( );
+            var xAxis = _chartPaneViewModel.Area.XAxises.First( );
+            var yAxis = _chartPaneViewModel.Area.YAxises.First( );
             
             yAxis.AutoRange = true;
             yAxis.TextFormatting = "0.##";
@@ -219,22 +219,22 @@ namespace fx.Charting
                 switch ( value )
                 {
                     case OptionPositionChartParams.Premium:
-                        _chartParamFunc = OptionPositionChartEx._premiumFunc;
+                        _chartParamFunc = _premiumFunc;
                         break;
                     case OptionPositionChartParams.Delta:
-                        _chartParamFunc = OptionPositionChartEx._deltaFunc;
+                        _chartParamFunc = _deltaFunc;
                         break;
                     case OptionPositionChartParams.Gamma:
-                        _chartParamFunc = OptionPositionChartEx._gammaFunc;
+                        _chartParamFunc = _gammaFunc;
                         break;
                     case OptionPositionChartParams.Theta:
-                        _chartParamFunc = OptionPositionChartEx._thetaFunc;
+                        _chartParamFunc = _thetaFunc;
                         break;
                     case OptionPositionChartParams.Vega:
-                        _chartParamFunc = OptionPositionChartEx._vegaFunc;
+                        _chartParamFunc = _vegaFunc;
                         break;
                     case OptionPositionChartParams.Rho:
-                        _chartParamFunc = OptionPositionChartEx._rhoFunc;
+                        _chartParamFunc = _rhoFunc;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException( nameof( value ) );
@@ -318,8 +318,8 @@ namespace fx.Charting
                     {
                         string id = key.Id;
                         var optionLines = new OptionNowExpLines( );
-                        optionLines.Now( OptionPositionChartEx.CreateChartLineElement( id + " (NOW)", Colors.Black ) );
-                        optionLines.Expiration( ShowExpiration ? OptionPositionChartEx.CreateChartLineElement( id + " (EXP)", Colors.SandyBrown ) : null );
+                        optionLines.Now( CreateChartLineElement( id + " (NOW)", Colors.Black ) );
+                        optionLines.Expiration( ShowExpiration ? CreateChartLineElement( id + " (EXP)", Colors.SandyBrown ) : null );
 
                         _securityOptionLines.Add( key, optionLines );
 
@@ -334,8 +334,8 @@ namespace fx.Charting
                 if ( !ShowSeparated )
                 {
                     var optionLines = new OptionNowExpLines( );
-                    optionLines.Now( OptionPositionChartEx.CreateChartLineElement( "NOW", Colors.Black ) );
-                    optionLines.Expiration( ShowExpiration ? OptionPositionChartEx.CreateChartLineElement( "EXP", Colors.SandyBrown ) : null );
+                    optionLines.Now( CreateChartLineElement( "NOW", Colors.Black ) );
+                    optionLines.Expiration( ShowExpiration ? CreateChartLineElement( "EXP", Colors.SandyBrown ) : null );
                     _optionNowExpLines = optionLines;
 
                     GetChartAreaElments( ).Add( _optionNowExpLines.GetNowChartLine( ) );

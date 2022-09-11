@@ -24,19 +24,19 @@ namespace StockSharp.Studio.Core
     {
         public static string CreateKey( this Type controlType )
         {
-            return string.Format( "_{0:N}", ( object )( controlType.GetAttribute<GuidAttribute>( true ) != null ? controlType.GUID : Guid.NewGuid() ) );
+            return string.Format( "_{0:N}", controlType.GetAttribute<GuidAttribute>( true ) != null ? controlType.GUID : Guid.NewGuid() );
         }
 
         public static void InitializeDriveCache()
         {
             DriveCache cache = new DriveCache( ServicesRegistry.StorageRegistry.DefaultDrive );
-            ConfigManager.RegisterService<DriveCache>( cache );
+            ConfigManager.RegisterService( cache );
             StudioUserConfig config = BaseUserConfig<StudioUserConfig>.Instance;
             if ( config.GetIsFirstRun() )
                 cache.GetDrive( RemoteMarketDataDrive.DefaultAddress.To<string>() );
             else
                 config.TryLoadSettings( "DriveCache", new Action<SettingsStorage>( cache.Load ) );
-            cache.Changed += ( Action )( () => config.SetDriveCache( cache.Save() ) );
+            cache.Changed += () => config.SetDriveCache( cache.Save() );
         }
 
         public static EntityCommand<TEntity> ToCommand<TEntity>(

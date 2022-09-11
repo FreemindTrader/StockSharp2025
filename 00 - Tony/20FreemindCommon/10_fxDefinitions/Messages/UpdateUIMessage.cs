@@ -37,9 +37,9 @@ namespace fx.Definitions
 
         public UpdateUIMessage( UiUpdateType updateType, string updateString, object otherParameter )
         {
-            this.UpdateType     = updateType;
-            this.UpdateString   = updateString;
-            this.OtherParameter = otherParameter;
+            UpdateType     = updateType;
+            UpdateString   = updateString;
+            OtherParameter = otherParameter;
         }
     }
 }

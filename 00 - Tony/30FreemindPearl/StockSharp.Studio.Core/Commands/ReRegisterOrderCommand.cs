@@ -16,11 +16,11 @@ namespace StockSharp.Studio.Core.Commands
             Order order1 = oldOrder;
             if ( order1 == null )
                 throw new ArgumentNullException( nameof( oldOrder ) );
-            this.OldOrder = order1;
+            OldOrder = order1;
             Order order2 = newOrder;
             if ( order2 == null )
                 throw new ArgumentNullException( nameof( newOrder ) );
-            this.NewOrder = order2;
+            NewOrder = order2;
         }
 
         public Order OldOrder { get; }

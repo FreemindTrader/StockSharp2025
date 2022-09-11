@@ -59,8 +59,8 @@ namespace fx.DefinitionsWnd
             var esterFrom1970 = l15 - epoch;
             var dayEaster = epoch.AddMilliseconds( esterFrom1970.TotalMilliseconds + 86400000 * ( 7 - ( int )l15.DayOfWeek ) );
             
-            this.m = dayEaster.Month;
-            this.d = ( int ) dayEaster.DayOfWeek;
+            m = dayEaster.Month;
+            d = ( int ) dayEaster.DayOfWeek;
         }
     }
 
@@ -85,8 +85,8 @@ namespace fx.DefinitionsWnd
             var n           = 0;
             var firstLM     = 0;
             sDObj           = new DateTime( y, m, 1, 0, 0, 0, 0 );      //当月一日日期
-            this.length     = ChronosDefintion.solarDays( y, m );       //公历当月天数
-            this.firstWeek  = (int) sDObj.DayOfWeek;                    //公历当月1日星期几
+            length     = ChronosDefintion.solarDays( y, m );       //公历当月天数
+            firstWeek  = (int) sDObj.DayOfWeek;                    //公历当月1日星期几
 
             /*-----------------------年柱 1900年立春后为庚子年(60进制36)----------------------------*/
             if ( m < 2 )
@@ -113,7 +113,7 @@ namespace fx.DefinitionsWnd
 
             int dayCyclical = (int) diff.TotalDays + 25567 + 10;
 
-            for ( var i = 0; i < this.length; i++ )
+            for ( var i = 0; i < length; i++ )
             {
                 if ( lD > lX )
                 {
@@ -149,7 +149,7 @@ namespace fx.DefinitionsWnd
                 //lYear,lMonth,lDay,isLeap,
                 //cYear,cMonth,cDay
 
-                var cal = new calElement( y, m + 1, i + 1, ChronosDefintion.nStr1[ ( i + this.firstWeek ) % 7 ], lY, lM, lD++, lL, cY, cM, cD );
+                var cal = new calElement( y, m + 1, i + 1, ChronosDefintion.nStr1[ ( i + firstWeek ) % 7 ], lY, lM, lD++, lL, cY, cM, cD );
 
                 _calElements.Add( cal );
                 cal.sgz5 = ChronosDefintion.CalConv2( lY2 % 12, lM2 % 12, ( lD2 ) % 12, lY2 % 10, ( lD2 ) % 10, lM, lD - 1, m + 1 );
@@ -228,14 +228,14 @@ namespace fx.DefinitionsWnd
 
                         if ( tmp1 < 5 )
                         {
-                            _calElements[ ( ( this.firstWeek > tmp2 ) ? 7 : 0 ) + 7 * ( tmp1 - 1 ) + tmp2 - this.firstWeek ].solarFestival += match.Groups[ 5 ].Value + ' ';
+                            _calElements[ ( ( firstWeek > tmp2 ) ? 7 : 0 ) + 7 * ( tmp1 - 1 ) + tmp2 - firstWeek ].solarFestival += match.Groups[ 5 ].Value + ' ';
                         }
                             
                         else
                         {
                             tmp1 -= 5;
-                            tmp3 = ( this.firstWeek + this.length - 1 ) % 7; //当月最后一天星期?
-                            _calElements[ this.length - tmp3 - 7 * tmp1 + tmp2 - ( tmp2 > tmp3 ? 7 : 0 ) - 1 ].solarFestival += match.Groups[ 5 ].Value + ' ';
+                            tmp3 = ( firstWeek + length - 1 ) % 7; //当月最后一天星期?
+                            _calElements[ length - tmp3 - 7 * tmp1 + tmp2 - ( tmp2 > tmp3 ? 7 : 0 ) - 1 ].solarFestival += match.Groups[ 5 ].Value + ' ';
                         }
                     }
                 }
@@ -255,7 +255,7 @@ namespace fx.DefinitionsWnd
                     if ( tmp1 >= 0 && tmp1 < n )
                     {
                         tmp2 = lDPOS[ tmp1 ] + Int32.Parse( match.Groups[ 2 ].Value ) - 1;
-                        if ( tmp2 >= 0 && tmp2 < this.length && _calElements[ tmp2 ].isLeap != true )
+                        if ( tmp2 >= 0 && tmp2 < length && _calElements[ tmp2 ].isLeap != true )
                         {
                             _calElements[ tmp2 ].lunarFestival += match.Groups[ 4 ].Value + ' ';
                             if ( match.Groups[ 3 ].Value == "*") _calElements[ tmp2 ].color = Colors.Red;
@@ -276,11 +276,11 @@ namespace fx.DefinitionsWnd
             }
             if ( m == 2 )
             {
-                _calElements[ 20 ].solarFestival = _calElements[ 20 ].solarFestival + System.Text.RegularExpressions.Regex.Unescape( "%20%u6D35%u8CE2%u751F%u65E5" );
+                _calElements[ 20 ].solarFestival = _calElements[ 20 ].solarFestival + Regex.Unescape( "%20%u6D35%u8CE2%u751F%u65E5" );
             }
 
             //黑色星期五
-            if ( ( this.firstWeek + 12 ) % 7 == 5 )
+            if ( ( firstWeek + 12 ) % 7 == 5 )
             {
                 _calElements[ 12 ].solarFestival += "黑色星期五";
             }
@@ -454,7 +454,7 @@ namespace fx.DefinitionsWnd
 
         public calElement( int sYear, int sMonth, int sDay, string week, int lYear, int lMonth, int lDay, bool isLeap, string cYear, string cMonth, string cDay )
         {
-            this.isToday       = false;
+            isToday       = false;
             //瓣句
             this.sYear         = sYear;     //公元年4位数字
             this.sMonth        = sMonth;    //公元月数字
@@ -465,17 +465,17 @@ namespace fx.DefinitionsWnd
             this.lYear         = lYear;     //公元年4位数字
             this.lMonth        = lMonth;    //农历月数字
             this.lDay          = lDay;      //农历日数字
-            this._isLeap       = isLeap;    //是否为农历闰月?
+            _isLeap       = isLeap;    //是否为农历闰月?
             
             //八字
             this.cYear         = cYear;     //年柱, 2个中文
             this.cMonth        = cMonth;    //月柱, 2个中文
             this.cDay          = cDay;      //日柱, 2个中文
 
-            this.color         = Colors.Transparent;
-            this.lunarFestival = "";        //农历节日
-            this.solarFestival = "";        //公历节日
-            this.solarTerms    = "";        //节气
+            color         = Colors.Transparent;
+            lunarFestival = "";        //农历节日
+            solarFestival = "";        //公历节日
+            solarTerms    = "";        //节气
         }
     }
 
@@ -542,40 +542,40 @@ namespace fx.DefinitionsWnd
                 offset += temp;
                 i--;
             }
-            this._year = i;
+            _year = i;
             leap = ChronosDefintion.leapMonth( i ); //闰哪个月
-            this._isLeap = false;
+            _isLeap = false;
 
             for ( i = 1; i < 13 && offset > 0; i++ )
             {
                 //闰月
-                if ( leap > 0 && i == ( leap + 1 ) && this._isLeap == false )
+                if ( leap > 0 && i == ( leap + 1 ) && _isLeap == false )
                 {
                     --i;
-                    this._isLeap = true;
-                    temp = ChronosDefintion.leapDays( this._year );
+                    _isLeap = true;
+                    temp = ChronosDefintion.leapDays( _year );
                 }
                 else
                 {
-                    temp = ChronosDefintion.monthDays( this._year, i );
+                    temp = ChronosDefintion.monthDays( _year, i );
                 }
                 //解除闰月
-                if ( this._isLeap == true && i == ( leap + 1 ) )
+                if ( _isLeap == true && i == ( leap + 1 ) )
                 {
-                    this._isLeap = false;
+                    _isLeap = false;
                 }
 
                 offset -= temp;
             }
             if ( offset == 0 && leap > 0 && i == leap + 1 )
             {
-                if ( this._isLeap )
+                if ( _isLeap )
                 {
-                    this._isLeap = false;
+                    _isLeap = false;
                 }
                 else
                 {
-                    this._isLeap = true;
+                    _isLeap = true;
                     --i;
                 }
             }
@@ -585,8 +585,8 @@ namespace fx.DefinitionsWnd
                 offset += temp;
                 --i;
             }
-            this._month = i;
-            this._day = ( int )offset + 1;
+            _month = i;
+            _day = ( int )offset + 1;
         }
     }
 

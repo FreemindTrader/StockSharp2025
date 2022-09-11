@@ -255,13 +255,13 @@ namespace StockSharp.Algo.Indicators
 		{
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CandleIndicatorValue"/>.
-		/// </summary>
-		/// <param name="indicator">Indicator.</param>
-		/// <param name="value">Value.</param>
-		/// <param name="getPart">The candle converter, through which its parameter can be got. By default, the <see cref="CandleIndicatorValue.ByClose"/> is used.</param>
-		public CandleIndicatorValue(IIndicator indicator, Candle value, Func<Candle, decimal> getPart)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CandleIndicatorValue"/>.
+        /// </summary>
+        /// <param name="indicator">Indicator.</param>
+        /// <param name="value">Value.</param>
+        /// <param name="getPart">The candle converter, through which its parameter can be got. By default, the <see cref="ByClose"/> is used.</param>
+        public CandleIndicatorValue(IIndicator indicator, Candle value, Func<Candle, decimal> getPart)
 			: base(indicator, value)
 		{
 			if (value == null)
@@ -332,13 +332,13 @@ namespace StockSharp.Algo.Indicators
 		{
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="MarketDepthIndicatorValue"/>.
-		/// </summary>
-		/// <param name="indicator">Indicator.</param>
-		/// <param name="depth">Market depth.</param>
-		/// <param name="getPart">The order book converter, through which its parameter can be got. By default, the <see cref="MarketDepthIndicatorValue.ByMiddle"/> is used.</param>
-		public MarketDepthIndicatorValue(IIndicator indicator, MarketDepth depth, Func<MarketDepth, decimal?> getPart)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketDepthIndicatorValue"/>.
+        /// </summary>
+        /// <param name="indicator">Indicator.</param>
+        /// <param name="depth">Market depth.</param>
+        /// <param name="getPart">The order book converter, through which its parameter can be got. By default, the <see cref="ByMiddle"/> is used.</param>
+        public MarketDepthIndicatorValue(IIndicator indicator, MarketDepth depth, Func<MarketDepth, decimal?> getPart)
 			: base(indicator, depth)
 		{
 			if (depth == null)

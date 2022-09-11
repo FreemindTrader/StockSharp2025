@@ -36,7 +36,7 @@ namespace fx.Charting
             ReceiveHandledEvents = true;
             IsEnabled = true;
 
-            SetCurrentValue( InspectSeriesModifierBase.SeriesDataProperty, new ChartDataObject() );
+            SetCurrentValue( SeriesDataProperty, new ChartDataObject() );
         }
 
         public LegendModifierVM ViewModel { get; set; }

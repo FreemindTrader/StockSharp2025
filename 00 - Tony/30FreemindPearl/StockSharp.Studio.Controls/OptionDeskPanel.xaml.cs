@@ -46,7 +46,7 @@ namespace StockSharp.Studio.Controls
                                                                 cmd =>
                                                                 {
                                                                     _model.Clear();
-                                                                    ( ( IEnumerable<Security> )FilterPanel.Options ).ForEach( new Action<Security>( _model.Add ) );
+                                                                    FilterPanel.Options.ForEach( new Action<Security>( _model.Add ) );
                                                                     MakeDirty();
                                                                 },
                                                                 null );
@@ -126,7 +126,7 @@ namespace StockSharp.Studio.Controls
         private void FilterPanel_OnOptionsChanged()
         {
             _model.Clear();
-            ( ( IEnumerable<Security> )FilterPanel.Options ).ForEach( new Action<Security>( _model.Add ) );
+            FilterPanel.Options.ForEach( new Action<Security>( _model.Add ) );
             RefreshModel();
             RaiseChangedCommand();
         }
@@ -142,7 +142,7 @@ namespace StockSharp.Studio.Controls
             _model.UnderlyingAsset = FilterPanel.UnderlyingAsset;
             if ( _model.UnderlyingAsset != null )
             {
-                ( ( IEnumerable<Security> )FilterPanel.Options ).ForEach( new Action<Security>( _model.Add ) );
+                FilterPanel.Options.ForEach( new Action<Security>( _model.Add ) );
             }
 
             Title = LocalizedStrings.OptionDesk + " " + _model.UnderlyingAsset?.ToString();

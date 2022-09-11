@@ -409,7 +409,7 @@ namespace fx.Charting.IndicatorPainters
 
             public ReadOnlyCollection< IIndicatorValue > GetIndicatorValueList( IIndicator indicator )
             {
-                return ( ( IDictionary< IIndicator, PooledList< IIndicatorValue > > )_indicatorToValueMap ).TryGetValue( indicator )?.AsReadOnly( );
+                return _indicatorToValueMap.TryGetValue( indicator )?.AsReadOnly( );
             }            
         }
     }

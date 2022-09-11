@@ -177,12 +177,12 @@ namespace StockSharp.Algo.Derivatives
 			}
 		}
 
-		/// <summary>
-		/// To round to <see cref="BlackScholes.RoundDecimals"/>.
-		/// </summary>
-		/// <param name="value">The initial value.</param>
-		/// <returns>The rounded value.</returns>
-		protected decimal? TryRound(decimal? value)
+        /// <summary>
+        /// To round to <see cref="RoundDecimals"/>.
+        /// </summary>
+        /// <param name="value">The initial value.</param>
+        /// <returns>The rounded value.</returns>
+        protected decimal? TryRound(decimal? value)
 		{
 			if (value != null && RoundDecimals >= 0)
 				value = Math.Round(value.Value, RoundDecimals);

@@ -30,7 +30,7 @@ namespace StockSharp.Web.Api.Client
           DynamicMenuLocations? location,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<DynamicMenu>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)location);
+            return Get<BaseEntitySet<DynamicMenu>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, location );
         }
 
         Task IDynamicMenuService.AddRoleAsync(
@@ -38,7 +38,7 @@ namespace StockSharp.Web.Api.Client
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddRoleAsync"), cancellationToken, (object)menuId, (object)roleId);
+            return Post( GetCurrentMethod( "AddRoleAsync"), cancellationToken, menuId, roleId );
         }
 
         Task<bool> IDynamicMenuService.RemoveRoleAsync(
@@ -46,7 +46,7 @@ namespace StockSharp.Web.Api.Client
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveRoleAsync"), cancellationToken, (object)menuId, (object)roleId);
+            return Post<bool>( GetCurrentMethod( "RemoveRoleAsync"), cancellationToken, menuId, roleId );
         }
     }
 }

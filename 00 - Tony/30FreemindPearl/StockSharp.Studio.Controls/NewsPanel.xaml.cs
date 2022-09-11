@@ -31,11 +31,7 @@ namespace StockSharp.Studio.Controls
     [VectorIcon( "Telegram" )]
     public partial class NewsPanel : BaseStudioControl, IComponentConnector
     {
-        public static readonly DependencyProperty SubscribeNewsProperty = DependencyProperty.Register(
-            nameof( SubscribeNews ),
-            typeof( bool ),
-            typeof( NewsPanel ),
-            new PropertyMetadata( new PropertyChangedCallback( SubscribeNewsChanged ) ) );
+        public static readonly DependencyProperty SubscribeNewsProperty = DependencyProperty.Register( nameof( SubscribeNews ), typeof( bool ), typeof( NewsPanel ), new PropertyMetadata( new PropertyChangedCallback( SubscribeNewsChanged ) ) );
         private readonly SubscriptionManager _subscriptionManager;
         private Subscription _subscription;
 
@@ -58,58 +54,58 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( bool )this.GetValue( NewsPanel.SubscribeNewsProperty );
+                return ( bool )GetValue( SubscribeNewsProperty );
             }
             set
             {
-                this.SetValue( NewsPanel.SubscribeNewsProperty, ( object )value );
+                SetValue( SubscribeNewsProperty, value );
             }
         }
 
         public NewsPanel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
-            this.NewsGrid.NewsProvider = ServicesRegistry.NewsProvider;
-            this.NewsGrid.LayoutChanged += RaiseChangedCommand;
-            this.NewsGrid.SelectionChanged += ( GridSelectionChangedEventHandler )( ( s, e ) => new SelectCommand<News>( this.NewsGrid.FirstSelectedNews, false ).Process( ( object )this, false ) );
-            this.AlertBtn.SchemaChanged += RaiseChangedCommand;
-            this.GotFocus += ( RoutedEventHandler )( ( s, e ) => new SelectCommand<News>( this.NewsGrid.FirstSelectedNews, false ).Process( ( object )this, false ) );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<EntityCommand<News>>( ( object )this, false, ( Action<EntityCommand<News>> )( cmd => this.NewsGrid.News.AddRange( cmd.Entities.Where<News>( ( Func<News, bool> )( n => !n.IsStockSharp() ) ) ) ), ( Func<EntityCommand<News>, bool> )null );
-            commandService.Register<ResetedCommand>( ( object )this, false, ( Action<ResetedCommand> )( cmd => this.NewsGrid.News.Clear() ), ( Func<ResetedCommand, bool> )null );
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
+            NewsGrid.NewsProvider = ServicesRegistry.NewsProvider;
+            NewsGrid.LayoutChanged += RaiseChangedCommand;
+            NewsGrid.SelectionChanged += ( s, e ) => new SelectCommand<News>( NewsGrid.FirstSelectedNews, false ).Process( this, false );
+            AlertBtn.SchemaChanged += RaiseChangedCommand;
+            GotFocus += ( s, e ) => new SelectCommand<News>( NewsGrid.FirstSelectedNews, false ).Process( this, false );
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<EntityCommand<News>>( this, false, cmd => NewsGrid.News.AddRange( cmd.Entities.Where( n => !n.IsStockSharp() ) ), null );
+            commandService.Register<ResetedCommand>( this, false, cmd => NewsGrid.News.Clear(), null );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "NewsGrid", this.NewsGrid.Save() );
-            storage.SetValue<SettingsStorage>( "AlertBtn", this.AlertBtn.Save() );
-            storage.SetValue<string>( "BarManager", this.BarManager.SaveDevExpressControl() );
-            storage.SetValue<bool>( "SubscribeNews", this.SubscribeNews );
+            storage.SetValue( "NewsGrid", NewsGrid.Save() );
+            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
+            storage.SetValue( "SubscribeNews", SubscribeNews );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.NewsGrid.Load( storage.GetValue<SettingsStorage>( "NewsGrid", ( SettingsStorage )null ) );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", ( SettingsStorage )null );
+            NewsGrid.Load( storage.GetValue<SettingsStorage>( "NewsGrid", null ) );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
             if ( storage1 != null )
-                this.AlertBtn.Load( storage1 );
-            string settings = storage.GetValue<string>( "BarManager", ( string )null );
+                AlertBtn.Load( storage1 );
+            string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings != null )
-                this.BarManager.LoadDevExpressControl( settings );
-            this.SubscribeNews = storage.GetValue<bool>( "SubscribeNews", false );
+                BarManager.LoadDevExpressControl( settings );
+            SubscribeNews = storage.GetValue( "SubscribeNews", false );
         }
 
         public override void Dispose( CloseReason reason )
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<EntityCommand<News>>( ( object )this );
-            commandService.UnRegister<ResetedCommand>( ( object )this );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<EntityCommand<News>>( this );
+            commandService.UnRegister<ResetedCommand>( this );
             if ( reason == CloseReason.CloseWindow )
-                this.AlertBtn.Dispose();
-            this._subscriptionManager.Dispose();
+                AlertBtn.Dispose();
+            _subscriptionManager.Dispose();
             base.Dispose( reason );
         }
 

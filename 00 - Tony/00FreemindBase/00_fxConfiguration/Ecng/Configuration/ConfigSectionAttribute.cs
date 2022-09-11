@@ -20,6 +20,6 @@ namespace fx.Configuration
         throw new ArgumentException(nameof (sectionType));
     }
 
-    public Type SectionType => this.FactoryType;
+    public Type SectionType => FactoryType;
   }
 }

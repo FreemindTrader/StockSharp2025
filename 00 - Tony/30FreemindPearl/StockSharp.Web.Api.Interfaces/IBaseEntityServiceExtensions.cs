@@ -16,12 +16,12 @@ namespace StockSharp.Web.Api.Interfaces
     {
         public static bool IsNotSaved<TEntity>(this TEntity entity) where TEntity : BaseEntity
         {
-            return entity.CheckOnNull<TEntity>(nameof(entity)).Id == 0L;
+            return entity.CheckOnNull( nameof(entity)).Id == 0L;
         }
 
         public static bool IsSaved<TEntity>(this TEntity entity) where TEntity : BaseEntity
         {
-            return !entity.IsNotSaved<TEntity>();
+            return !entity.IsNotSaved();
         }
 
         public static Task<TEntity> SaveAsync<TEntity>(
@@ -34,7 +34,7 @@ namespace StockSharp.Web.Api.Interfaces
                 throw new ArgumentNullException(nameof(service));
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
-            if (entity.IsNotSaved<TEntity>())
+            if (entity.IsNotSaved())
                 return service.AddAsync(entity, cancellationToken);
             return service.UpdateAsync(entity, cancellationToken);
         }

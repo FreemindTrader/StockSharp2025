@@ -43,7 +43,7 @@ namespace FreemindTrader
             Messenger.Default.Register<SelectSecurityMessage>( this, x => OnSelectSecurityMessage( x ) );
             //Messenger.Default.Register< EconomicCalenderDataSourceUpdateMessage >( this, x => OnEconomicCalenderDataSourceUpdateMessage( x ) );
 
-            OnLoadedCommand = new DevExpress.Mvvm.DelegateCommand( OnLoaded );
+            OnLoadedCommand = new DelegateCommand( OnLoaded );
 
             _mintimer = new DispatcherTimer();
         }
@@ -56,7 +56,7 @@ namespace FreemindTrader
         //    BindSymbolsNewsToList( _monitoringSymbol );
         //}
 
-        public DevExpress.Mvvm.DelegateCommand OnLoadedCommand
+        public DelegateCommand OnLoadedCommand
         {
             get;
             private set;

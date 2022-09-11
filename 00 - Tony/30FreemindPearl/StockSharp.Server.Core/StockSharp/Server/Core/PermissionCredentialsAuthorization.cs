@@ -37,8 +37,8 @@ namespace StockSharp.Server.Core
             if ( byLogin == null || !byLogin.Password.IsEqualTo( password ) )
                 throw new UnauthorizedAccessException( LocalizedStrings.WrongLoginOrPassword );
             IPAddress[ ] array = byLogin.IpRestrictions.ToArray();
-            if ( array.Length != 0 && ( clientAddress == null || !( ( IEnumerable<IPAddress> )array ).Contains( clientAddress ) ) )
-                throw new UnauthorizedAccessException( LocalizedStrings.IpAddrNotValid.Put( ( object )clientAddress ) );
+            if ( array.Length != 0 && ( clientAddress == null || !array.Contains( clientAddress ) ) )
+                throw new UnauthorizedAccessException( LocalizedStrings.IpAddrNotValid.Put( clientAddress ) );
             return Guid.NewGuid().To<string>();
         }
     }

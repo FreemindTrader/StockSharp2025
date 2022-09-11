@@ -54,7 +54,7 @@ namespace fx.Indicators
 
         protected void CalculateSMA( bool fullRecalculation, DataBarUpdateType? updateType, int curIterationBarcount )
         {
-            _smaLookback = fx.TALib.Core.SmaLookback( 55 );
+            _smaLookback = Core.SmaLookback( 55 );
 
             int smaLength = IndicatorResult[ "SMA" ].Count;
 
@@ -79,7 +79,7 @@ namespace fx.Indicators
             var outBeginIdx = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Sma( Bars, startIndex, endIndex, sma, out outBeginIdx, out outNBElement, 55 );
+            Core.Sma( Bars, startIndex, endIndex, sma, out outBeginIdx, out outNBElement, 55 );
 
             if ( outNBElement > 0 )
             {
@@ -108,7 +108,7 @@ namespace fx.Indicators
             var outBeginIdx = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Sma( Bars, startIndex, endIndex, sma, out outBeginIdx, out outNBElement, 55 );
+            Core.Sma( Bars, startIndex, endIndex, sma, out outBeginIdx, out outNBElement, 55 );
 
             if ( outNBElement > 0 )
             {

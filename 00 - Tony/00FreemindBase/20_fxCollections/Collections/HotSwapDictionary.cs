@@ -211,7 +211,7 @@ namespace fx.Collections
         /// </summary>
         public void Add( KeyValuePair< TKey, TValue > item )
         {
-            this.Add( item.Key, item.Value );
+            Add( item.Key, item.Value );
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace fx.Collections
         /// </summary>
         public bool Remove( KeyValuePair< TKey, TValue > item )
         {
-            return this.Remove( item.Key );
+            return Remove( item.Key );
         }
 
         /// <summary>

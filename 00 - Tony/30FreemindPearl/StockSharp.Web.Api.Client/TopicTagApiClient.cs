@@ -36,14 +36,14 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<TopicTag>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)topicId, (object)topicType, (object)domainId, (object)my, (object)aggregated, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<TopicTag>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, topicId, topicType, domainId, my, aggregated, like, likeCompare );
         }
 
         Task<TopicTag> ITopicTagService.GetByNameAsync(
           string name,
           CancellationToken cancellationToken)
         {
-            return this.Get<TopicTag>(RestBaseApiClient.GetCurrentMethod("GetByNameAsync"), cancellationToken, (object)name);
+            return Get<TopicTag>( GetCurrentMethod( "GetByNameAsync"), cancellationToken, name );
         }
     }
 }

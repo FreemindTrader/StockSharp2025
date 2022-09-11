@@ -23,7 +23,7 @@ namespace fx.Charting
                     if ( obj2 is double )
                     {
                         double num2 = (double) obj2;
-                        return ( object ) ( num2 > 0.0 ? num2 : num1 );
+                        return num2 > 0.0 ? num2 : num1;
                     }
                 }
             }

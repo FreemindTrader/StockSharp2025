@@ -27,8 +27,8 @@ namespace fx.Definitions
         /// <param name="upperBound">The upper bound of the range.</param>
         public RangeEx( T lowerBound, T upperBound )
         {
-            Assert.NotNull( "lowerBound", ( object ) lowerBound );
-            Assert.NotNull( "upperBound", ( object ) upperBound );
+            Assert.NotNull( "lowerBound", lowerBound );
+            Assert.NotNull( "upperBound", upperBound );
             Assert.IsTrue( "lowerBound", lowerBound.CompareTo( upperBound ) <= 0 );
 
             _lowerBound = lowerBound;
@@ -66,10 +66,10 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">The value to look for.</param>
         /// <returns>true if the range contains <code>value</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
         public bool Contains( T value )
         {
-            Assert.NotNull( "value", ( object ) value );
+            Assert.NotNull( "value", value );
 
             return ( ( LowerBound.CompareTo( value ) <= 0 ) && ( UpperBound.CompareTo( value ) >= 0 ) );
         }
@@ -79,7 +79,7 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">A range to test.</param>
         /// <returns>true if the entire range in <code>value</code> is within this range.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
         public bool Contains( RangeEx<T> value )
         {
             Assert.NotNull( "value", value );
@@ -94,7 +94,7 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">A range to test.</param>
         /// <returns>true if the entire range is within <code>value</code>.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
         public bool IsContainedBy( RangeEx<T> value )
         {
             Assert.NotNull( "value", value );
@@ -107,7 +107,7 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">A range to test.</param>
         /// <returns>true if any of the range in <code>value</code> is within this range.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
         public bool Overlaps( RangeEx<T> value )
         {
             Assert.NotNull( "value", value );
@@ -120,8 +120,8 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">The range to intersect with.</param>
         /// <returns>A range that contains the values that are common in both ranges, or null if there is no intersection.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
-        /// <exception cref="System.ArgumentException"><code>value</code> does not overlap the range.</exception>
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentException"><code>value</code> does not overlap the range.</exception>
         public RangeEx<T> Intersect( RangeEx<T> value )
         {
             Assert.NotNull( "value", value );
@@ -152,15 +152,15 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">The range to union with.</param>
         /// <returns>A range that contains both ranges, or null if there is no union.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
-        /// <exception cref="System.ArgumentException"><code>value</code> is not contiguous with the range.</exception>
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentException"><code>value</code> is not contiguous with the range.</exception>
         public RangeEx<T> Union( RangeEx<T> value )
         {
             Assert.NotNull( "value", value );
             Assert.IsTrue( "value", IsContiguousWith( value ) );    // Union makes no sense unless there is a contiguous border
 
             // If either one is a subset of the other, then is it the union
-            if ( this.Contains( value ) )
+            if ( Contains( value ) )
             {
                 return this;
             }
@@ -196,8 +196,8 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="value">The value to complement the range by.</param>
         /// <returns>The complemented range.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>value</code> is null.</exception>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentNullException"><code>value</code> is null.</exception>
+        /// <exception cref="ArgumentException">
         /// <code>value</code> is contained by this range, complementing would lead to a split range.
         /// </exception>
         public RangeEx<T> Complement( RangeEx<T> value )
@@ -240,11 +240,11 @@ namespace fx.Definitions
         /// </summary>
         /// <param name="position">The position to split the range at.</param>
         /// <returns>The split ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>position</code> is null.</exception>
-        /// <exception cref="System.ArgumentException"><code>position</code> is not contained within the range.</exception>
+        /// <exception cref="ArgumentNullException"><code>position</code> is null.</exception>
+        /// <exception cref="ArgumentException"><code>position</code> is not contained within the range.</exception>
         public IEnumerable<RangeEx<T>> Split( T position )
         {
-            Assert.NotNull( "position", ( object ) position );
+            Assert.NotNull( "position", position );
             Assert.IsTrue( "position", Contains( position ) );
 
             if ( ( LowerBound.CompareTo( position ) == 0 ) || ( UpperBound.CompareTo( position ) == 0 ) )
@@ -350,7 +350,7 @@ namespace fx.Definitions
         public static bool operator ==( RangeEx<T> left, RangeEx<T> right )
         {
             // If both are null, or both are same instance, return true.
-            if ( Object.ReferenceEquals( left, right ) )
+            if ( ReferenceEquals( left, right ) )
             {
                 return true;
             }
@@ -503,7 +503,7 @@ namespace fx.Definitions
 
         #region IComparable<Range<T>> Members
         /// <summary>
-        /// See <see cref="System.IComparable{T}.CompareTo"/>.
+        /// See <see cref="IComparable{T}.CompareTo"/>.
         /// </summary>
         public int CompareTo( RangeEx<T> other )
         {
@@ -513,7 +513,7 @@ namespace fx.Definitions
 
         #region IComparable<T> Members
         /// <summary>
-        /// See <see cref="System.IComparable{T}.CompareTo"/>.
+        /// See <see cref="IComparable{T}.CompareTo"/>.
         /// </summary>
         public int CompareTo( T other )
         {
@@ -523,7 +523,7 @@ namespace fx.Definitions
 
         #region IComparable Members
         /// <summary>
-        /// See <see cref="System.IComparable.CompareTo"/>.
+        /// See <see cref="IComparable.CompareTo"/>.
         /// </summary>
         public int CompareTo( object obj )
         {
@@ -638,8 +638,8 @@ namespace fx.Definitions
         /// <param name="startIndex">The start index for the array.</param>
         /// <param name="values">The array values.</param>
         /// <returns>The range array.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>values</code> is null.</exception>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentNullException"><code>values</code> is null.</exception>
+        /// <exception cref="ArgumentException">
         /// <code>values</code> is empty, or <code>startIndex</code> is less than zero.
         /// </exception>
         public static RangeArray<T> Create<T>( int startIndex, T [ ] values )
@@ -658,8 +658,8 @@ namespace fx.Definitions
         /// <param name="range">The range for the array.</param>
         /// <param name="values">The array values.</param>
         /// <returns>The range array.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>range</code> or <code>values</code> is null.</exception>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentNullException"><code>range</code> or <code>values</code> is null.</exception>
+        /// <exception cref="ArgumentException">
         /// <code>values</code> is empty, or the range does not match the values.Length.
         /// </exception>
         public static RangeArray<T> Create<T>( RangeEx<int> range, T [ ] values )
@@ -679,11 +679,11 @@ namespace fx.Definitions
         /// <param name="from">The from value.</param>
         /// <param name="to">The to value.</param>
         /// <returns>The range.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>from</code> or <code>to</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>from</code> or <code>to</code> is null.</exception>
         public static RangeEx<T> Create<T>( T from, T to ) where T : IComparable<T>
         {
-            Assert.NotNull( "from", ( object ) from );
-            Assert.NotNull( "to", ( object ) to );
+            Assert.NotNull( "from", from );
+            Assert.NotNull( "to", to );
 
             return new RangeEx<T>( from, to );
         }
@@ -697,11 +697,11 @@ namespace fx.Definitions
         /// <param name="to">The to value.</param>
         /// <param name="value">The value.</param>
         /// <returns>The range.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>from</code> or <code>to</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>from</code> or <code>to</code> is null.</exception>
         public static Range<TKey, TValue> Create<TKey, TValue>( TKey from, TKey to, TValue value ) where TKey : IComparable<TKey>
         {
-            Assert.NotNull( "from", ( object ) from );
-            Assert.NotNull( "to", ( object ) to );
+            Assert.NotNull( "from", from );
+            Assert.NotNull( "to", to );
 
             return new Range<TKey, TValue>( from, to, value );
         }
@@ -721,7 +721,7 @@ namespace fx.Definitions
 
             foreach ( Range<TKey, TValue> item in ranges )
             {
-                yield return ( RangeEx<TKey> ) item;
+                yield return item;
             }
         }
 
@@ -737,7 +737,7 @@ namespace fx.Definitions
 
             foreach ( RangeArray<T> item in ranges )
             {
-                yield return ( RangeEx<int> ) item;
+                yield return item;
             }
         }
 
@@ -749,13 +749,13 @@ namespace fx.Definitions
         /// <param name="from">The start to look for.</param>
         /// <param name="to">The end to look for.</param>
         /// <returns>true if <code>ranges</code> contain the range, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>from</code> is null, or <code>to</code> is null.</exception>
-        /// <exception cref="System.ArgumentException"><code>from</code> is greater than <code>to</code>.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>from</code> is null, or <code>to</code> is null.</exception>
+        /// <exception cref="ArgumentException"><code>from</code> is greater than <code>to</code>.</exception>
         public static bool Contains<T>( this IEnumerable<RangeEx<T>> ranges, T from, T to ) where T : IComparable<T>
         {
             Assert.NotNull( "ranges", ranges );
-            Assert.NotNull( "from", ( object ) from );
-            Assert.NotNull( "to", ( object ) to );
+            Assert.NotNull( "from", from );
+            Assert.NotNull( "to", to );
             Assert.IsTrue( "from", from.CompareTo( to ) <= 0 );
 
             return ranges.Contains( Create( from, to ) );
@@ -770,8 +770,8 @@ namespace fx.Definitions
         /// <param name="from">The start to look for.</param>
         /// <param name="to">The end to look for.</param>
         /// <returns>true if <code>ranges</code> contain the range, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>from</code> is null, or <code>to</code> is null.</exception>
-        /// <exception cref="System.ArgumentException"><code>from</code> is greater than <code>to</code>.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>from</code> is null, or <code>to</code> is null.</exception>
+        /// <exception cref="ArgumentException"><code>from</code> is greater than <code>to</code>.</exception>
         public static bool Contains<TKey, TValue>( this IEnumerable<Range<TKey, TValue>> ranges, TKey from, TKey to ) where TKey : IComparable<TKey>
         {
             return ranges.MakeCovariant( ).Contains( from, to );
@@ -785,8 +785,8 @@ namespace fx.Definitions
         /// <param name="from">The start to look for.</param>
         /// <param name="to">The end to look for.</param>
         /// <returns>true if <code>ranges</code> contain the range, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>from</code> is null, or <code>to</code> is null.</exception>
-        /// <exception cref="System.ArgumentException"><code>from</code> is greater than <code>to</code>.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>from</code> is null, or <code>to</code> is null.</exception>
+        /// <exception cref="ArgumentException"><code>from</code> is greater than <code>to</code>.</exception>
         public static bool Contains<T>( this IEnumerable<RangeArray<T>> ranges, int from, int to )
         {
             return ranges.MakeCovariant( ).Contains( from, to );
@@ -799,11 +799,11 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges to look in.</param>
         /// <param name="range">The item to look for.</param>
         /// <returns>true if <code>ranges</code> contain <code>range</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
         public static bool Contains<T>( this IEnumerable<RangeEx<T>> ranges, RangeEx<T> range ) where T : IComparable<T>
         {
             Assert.NotNull( "ranges", ranges );
-            Assert.NotNull( "item", ( object ) range );
+            Assert.NotNull( "item", range );
 
             foreach ( RangeEx<T> item in ranges.Overlapped( range ).Coalesce( ) )
             {
@@ -824,7 +824,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges to look in.</param>
         /// <param name="range">The item to look for.</param>
         /// <returns>true if <code>ranges</code> contain <code>range</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
         public static bool Contains<TKey, TValue>( this IEnumerable<Range<TKey, TValue>> ranges, RangeEx<TKey> range ) where TKey : IComparable<TKey>
         {
             return ranges.MakeCovariant( ).Contains( range );
@@ -837,7 +837,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges to look in.</param>
         /// <param name="range">The item to look for.</param>
         /// <returns>true if <code>ranges</code> contain <code>range</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
         public static bool Contains<T>( this IEnumerable<RangeArray<T>> ranges, RangeEx<int> range )
         {
             return ranges.MakeCovariant( ).Contains( range );
@@ -850,11 +850,11 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges to look in.</param>
         /// <param name="item">The item to look for.</param>
         /// <returns>true if <code>ranges</code> contain <code>item</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>item</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>item</code> is null.</exception>
         public static bool Contains<T>( this IEnumerable<RangeEx<T>> ranges, T item ) where T : IComparable<T>
         {
             Assert.NotNull( "ranges", ranges );
-            Assert.NotNull( "item", ( object ) item );
+            Assert.NotNull( "item", item );
 
             foreach ( RangeEx<T> range in ranges )
             {
@@ -875,7 +875,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges to look in.</param>
         /// <param name="item">The item to look for.</param>
         /// <returns>true if <code>ranges</code> contain <code>item</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>item</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>item</code> is null.</exception>
         public static bool Contains<TKey, TValue>( this IEnumerable<Range<TKey, TValue>> ranges, TKey item ) where TKey : IComparable<TKey>
         {
             return ranges.MakeCovariant( ).Contains( item );
@@ -888,7 +888,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges to look in.</param>
         /// <param name="item">The item to look for.</param>
         /// <returns>true if <code>ranges</code> contain <code>item</code>, false otherwise.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>item</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>item</code> is null.</exception>
         public static bool Contains<T>( this IEnumerable<RangeArray<T>> ranges, int item )
         {
             return ranges.MakeCovariant( ).Contains( item );
@@ -900,7 +900,7 @@ namespace fx.Definitions
         /// <typeparam name="T">The type of range.</typeparam>
         /// <param name="ranges">The sorted ranges.</param>
         /// <returns>The sorted ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> is null.</exception>
         public static IEnumerable<RangeEx<T>> Sort<T>( this IEnumerable<RangeEx<T>> ranges ) where T : IComparable<T>
         {
             Assert.NotNull( "ranges", ranges );
@@ -917,7 +917,7 @@ namespace fx.Definitions
         /// <typeparam name="TValue">The range value type.</typeparam>
         /// <param name="ranges">The sorted ranges.</param>
         /// <returns>The sorted ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> is null.</exception>
         public static IEnumerable<RangeEx<TKey>> Sort<TKey, TValue>( this IEnumerable<Range<TKey, TValue>> ranges ) where TKey : IComparable<TKey>
         {
             return ranges.MakeCovariant( ).Sort( );
@@ -929,7 +929,7 @@ namespace fx.Definitions
         /// <typeparam name="T">The range value type.</typeparam>
         /// <param name="ranges">The sorted ranges.</param>
         /// <returns>The sorted ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> is null.</exception>
         public static IEnumerable<RangeEx<int>> Sort<T>( this IEnumerable<RangeArray<T>> ranges )
         {
             return ranges.MakeCovariant( ).Sort( );
@@ -941,7 +941,7 @@ namespace fx.Definitions
         /// <typeparam name="T">The range key type.</typeparam>
         /// <param name="ranges">The ranges to coalesce.</param>
         /// <returns>The coalesced ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> is null.</exception>
         public static IEnumerable<RangeEx<T>> Coalesce<T>( this IEnumerable<RangeEx<T>> ranges ) where T : IComparable<T>
         {
             Assert.NotNull( "ranges", ranges );
@@ -982,7 +982,7 @@ namespace fx.Definitions
         /// <typeparam name="TValue">The range value type.</typeparam>
         /// <param name="ranges">The ranges to coalesce.</param>
         /// <returns>The coalesced ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> is null.</exception>
         public static IEnumerable<RangeEx<TKey>> Coalesce<TKey, TValue>( this IEnumerable<Range<TKey, TValue>> ranges ) where TKey : IComparable<TKey>
         {
             return ranges.MakeCovariant( ).Coalesce( );
@@ -994,7 +994,7 @@ namespace fx.Definitions
         /// <typeparam name="T">The range value type.</typeparam>
         /// <param name="ranges">The ranges to coalesce.</param>
         /// <returns>The coalesced ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> is null.</exception>
         public static IEnumerable<RangeEx<int>> Coalesce<T>( this IEnumerable<RangeArray<T>> ranges )
         {
             return ranges.MakeCovariant( ).Coalesce( );
@@ -1007,7 +1007,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges.</param>
         /// <param name="range">The range to test for overlappping.</param>
         /// <returns>The overlapped ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
         public static IEnumerable<RangeEx<T>> Overlapped<T>( this IEnumerable<RangeEx<T>> ranges, RangeEx<T> range ) where T : IComparable<T>
         {
             Assert.NotNull( "ranges", ranges );
@@ -1030,7 +1030,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges.</param>
         /// <param name="range">The range to test for overlappping.</param>
         /// <returns>The overlapped ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
         public static IEnumerable<RangeEx<TKey>> Overlapped<TKey, TValue>( this IEnumerable<Range<TKey, TValue>> ranges, RangeEx<TKey> range ) where TKey : IComparable<TKey>
         {
             return ranges.MakeCovariant( ).Overlapped( range );
@@ -1043,7 +1043,7 @@ namespace fx.Definitions
         /// <param name="ranges">The ranges.</param>
         /// <param name="range">The range to test for overlappping.</param>
         /// <returns>The overlapped ranges.</returns>
-        /// <exception cref="System.ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
+        /// <exception cref="ArgumentNullException"><code>ranges</code> or <code>range</code> is null.</exception>
         public static IEnumerable<RangeEx<int>> Overlapped<T>( this IEnumerable<RangeArray<T>> ranges, RangeEx<int> range )
         {
             return ranges.MakeCovariant( ).Overlapped( range );

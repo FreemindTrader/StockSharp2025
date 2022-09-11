@@ -29,7 +29,7 @@ namespace StockSharp.Web.Api.Client
           long? parentId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<DynamicPage>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)parentId);
+            return Get<BaseEntitySet<DynamicPage>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, parentId );
         }
 
         Task<string> IDynamicPageService.GetFullUrlAsync(
@@ -37,7 +37,7 @@ namespace StockSharp.Web.Api.Client
           long domainId,
           CancellationToken cancellationToken)
         {
-            return this.Get<string>(RestBaseApiClient.GetCurrentMethod("GetFullUrlAsync"), cancellationToken, (object)pageId, (object)domainId);
+            return Get<string>( GetCurrentMethod( "GetFullUrlAsync"), cancellationToken, pageId, domainId );
         }
     }
 }

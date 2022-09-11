@@ -172,7 +172,7 @@ namespace fx.Algorithm
         /// </summary>
         public void GetObjectData( SerializationInfo info, StreamingContext context )
         {
-            info.AddValue( "resultSetsNames", GeneralHelper.EnumerableToArray< string >( _resultSets.Keys ) );
+            info.AddValue( "resultSetsNames", GeneralHelper.EnumerableToArray( _resultSets.Keys ) );
             info.AddValue( "resultSetsChartTypes", _resultSetsChartTypes );
         }
 

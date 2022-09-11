@@ -51,9 +51,9 @@ namespace fx.Algorithm
             unchecked
             {
                 int hashCode = 47;
-                hashCode = ( hashCode * 53 ) ^ this._period.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this._from.GetHashCode( );
-                hashCode = ( hashCode * 53 ) ^ this._to.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ _period.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ _from.GetHashCode( );
+                hashCode = ( hashCode * 53 ) ^ _to.GetHashCode( );
 
                 return hashCode;
             }
@@ -103,19 +103,19 @@ namespace fx.Algorithm
 
             int result = 0;
 
-            result = this._period.CompareTo( other._period );
+            result = _period.CompareTo( other._period );
             if( result != 0 )
             {
                 return result;
             }
 
-            result = this._from.CompareTo( other._from );
+            result = _from.CompareTo( other._from );
             if( result != 0 )
             {
                 return result;
             }
 
-            return this._to.CompareTo( other._to );
+            return _to.CompareTo( other._to );
             ;
         }
 

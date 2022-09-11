@@ -1944,18 +1944,13 @@ namespace FreemindAITrade.ViewModels
             _selectedViewModel.ChartVM.LockFibLevelsObject();
         }
 
-        public void AnalyzeWaveTarget()
-        {
-            _selectedViewModel.AnalyzeWaveTarget();
-        }
+        
 
         public void DeleteAllLockFibLevels()
         {
             _selectedViewModel.ChartVM.DeleteAllLockFibLevels();
         }
-
-
-
+       
 
         public void SyncWavesUp()
         {

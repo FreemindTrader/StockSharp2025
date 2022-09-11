@@ -30,7 +30,7 @@ namespace StockSharp.Web.Api.Client
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<AccountRequisites>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId);
+            return Get<BaseEntitySet<AccountRequisites>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId );
         }
     }
 }

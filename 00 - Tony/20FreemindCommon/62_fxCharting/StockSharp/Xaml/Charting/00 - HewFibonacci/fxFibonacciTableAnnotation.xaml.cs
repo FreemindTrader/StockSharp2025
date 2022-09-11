@@ -914,7 +914,7 @@ namespace fx.Charting.HewFibonacci
                 return;
             }
             Binding binding = new Binding( ) { Source = ( this ), Path = new PropertyPath( FontSizeProperty ) };
-            textAnnotation.SetBinding( Control.FontSizeProperty, binding );
+            textAnnotation.SetBinding( FontSizeProperty, binding );
         }
 
 

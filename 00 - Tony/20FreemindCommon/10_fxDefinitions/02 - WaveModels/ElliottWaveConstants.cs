@@ -378,7 +378,7 @@ namespace fx.Definitions
             if ( ReferenceEquals( this, other ) )
                 return true;
 
-            return this._barLinuxTime.Equals( other._barLinuxTime ) && this._waveImportance.Equals( other._waveImportance ) && this._waveImportanceType.Equals( other._waveImportanceType ) && this._signal.Equals( other._signal );
+            return _barLinuxTime.Equals( other._barLinuxTime ) && _waveImportance.Equals( other._waveImportance ) && _waveImportanceType.Equals( other._waveImportanceType ) && _signal.Equals( other._signal );
         }
 
         public override int GetHashCode( )
@@ -387,10 +387,10 @@ namespace fx.Definitions
             {
                 int hashCode = 47;
 
-                hashCode     = ( hashCode * 53 ) ^ this._barLinuxTime.GetHashCode( );
-                hashCode     = ( hashCode * 53 ) ^ this._waveImportance.GetHashCode( );
-                hashCode     = ( hashCode * 53 ) ^ this._waveImportanceType.GetHashCode( );
-                hashCode     = ( hashCode * 53 ) ^ this._signal.GetHashCode( );
+                hashCode     = ( hashCode * 53 ) ^ _barLinuxTime.GetHashCode( );
+                hashCode     = ( hashCode * 53 ) ^ _waveImportance.GetHashCode( );
+                hashCode     = ( hashCode * 53 ) ^ _waveImportanceType.GetHashCode( );
+                hashCode     = ( hashCode * 53 ) ^ _signal.GetHashCode( );
 
                 return hashCode;
             }
@@ -425,22 +425,22 @@ namespace fx.Definitions
 
             int result = 0;
 
-            result = this._barLinuxTime.CompareTo( other._barLinuxTime );
+            result = _barLinuxTime.CompareTo( other._barLinuxTime );
 
             if ( result != 0 )
                 return result;
 
-            result = this._waveImportanceType.CompareTo( other._waveImportanceType );
+            result = _waveImportanceType.CompareTo( other._waveImportanceType );
 
             if ( result != 0 )
                 return result;
 
-            result = this._signal.CompareTo( other._signal );
+            result = _signal.CompareTo( other._signal );
 
             if ( result != 0 )
                 return result;
 
-            return this._waveImportance.CompareTo( other._waveImportance );
+            return _waveImportance.CompareTo( other._waveImportance );
         }
 
         
@@ -954,7 +954,7 @@ namespace fx.Definitions
                 bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
             }
 
-            newHew |= ( long ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+            newHew |= ( long ) bitwiseWave << i * GlobalConstants.NewHewBits;
 
             return newHew;
         }
@@ -976,7 +976,7 @@ namespace fx.Definitions
                 bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
             }
 
-            newHew |= ( uint ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+            newHew |= ( uint ) bitwiseWave << i * GlobalConstants.NewHewBits;
 
             return newHew;
         }
@@ -1002,7 +1002,7 @@ namespace fx.Definitions
                 bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
             }
 
-            newHew |= ( long ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+            newHew |= ( long ) bitwiseWave << i * GlobalConstants.NewHewBits;
 
             return newHew;
         }
@@ -1028,7 +1028,7 @@ namespace fx.Definitions
                 bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
             }
 
-            newHew |= ( uint ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+            newHew |= ( uint ) bitwiseWave << i * GlobalConstants.NewHewBits;
 
             return newHew;
         }
@@ -1055,7 +1055,7 @@ namespace fx.Definitions
                 bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
             }
 
-            newHew |= ( long ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+            newHew |= ( long ) bitwiseWave << i * GlobalConstants.NewHewBits;
 
             return newHew;
         }
@@ -1081,7 +1081,7 @@ namespace fx.Definitions
                 bitwiseWave = bitwiseWave | GlobalConstants.NewHewLabelMask;
             }
 
-            newHew |= ( uint ) bitwiseWave << ( int ) ( i * GlobalConstants.NewHewBits );
+            newHew |= ( uint ) bitwiseWave << i * GlobalConstants.NewHewBits;
 
             return newHew;
         }

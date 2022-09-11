@@ -603,8 +603,8 @@ namespace fx.Charting
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue( "UpFillColor", this.UpFillColor.ToInt() );
-            storage.SetValue( "UpBorderColor", this.UpBorderColor.ToInt());
+            storage.SetValue( "UpFillColor", UpFillColor.ToInt() );
+            storage.SetValue( "UpBorderColor", UpBorderColor.ToInt());
             storage.SetValue( "DownFillColor",  ( DownFillColor.ToInt() ) );
             storage.SetValue( "DownBorderColor",  ( DownBorderColor.ToInt() ) );
             storage.SetValue( "LineColor",  ( LineColor.ToInt() ) );

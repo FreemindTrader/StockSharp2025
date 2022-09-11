@@ -24,7 +24,7 @@ namespace fx.Charting
 
             var timeString = timeSpan.ToReadable( );
             
-            return ( object ) timeString;
+            return timeString;
         }
 
         object IValueConverter.ConvertBack(

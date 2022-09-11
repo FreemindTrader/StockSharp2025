@@ -18,7 +18,7 @@ namespace StockSharp.Studio.Core.Commands
             ExpressionIndexSecurity expressionIndexSecurity = security;
             if ( expressionIndexSecurity == null )
                 throw new ArgumentNullException( nameof( security ) );
-            this.Security = expressionIndexSecurity;
+            Security = expressionIndexSecurity;
         }
     }
 }

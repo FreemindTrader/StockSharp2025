@@ -32,20 +32,20 @@ namespace StockSharp.Web.Api.Client
           bool? orderByDesc,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<SiteSettings>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc);
+            return Get<BaseEntitySet<SiteSettings>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc );
         }
 
         Task ISiteSettingsService.ResetCacheAsync(
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ResetCacheAsync"), cancellationToken, Array.Empty<object>());
+            return Post( GetCurrentMethod( "ResetCacheAsync"), cancellationToken, Array.Empty<object>());
         }
 
         Task<byte[]> ISiteSettingsService.SignAsync(
           byte[] data,
           CancellationToken cancellationToken)
         {
-            return this.Post<byte[]>(RestBaseApiClient.GetCurrentMethod("SignAsync"), cancellationToken, (object)data);
+            return Post<byte[]>( GetCurrentMethod( "SignAsync"), cancellationToken, data );
         }
 
         Task<(string value1, string value2, string value3)> ISiteSettingsService.EncryptUrlAsync(
@@ -54,7 +54,7 @@ namespace StockSharp.Web.Api.Client
           string value3,
           CancellationToken cancellationToken)
         {
-            return this.Post<ValueTuple<string, string, string>>(RestBaseApiClient.GetCurrentMethod("EncryptUrlAsync"), cancellationToken, (object)value1, (object)value2, (object)value3);
+            return Post<ValueTuple<string, string, string>>( GetCurrentMethod( "EncryptUrlAsync"), cancellationToken, value1, value2, value3 );
         }
 
         Task<(string value1, string value2, string value3)> ISiteSettingsService.DecryptUrlAsync(
@@ -63,20 +63,20 @@ namespace StockSharp.Web.Api.Client
           string value3,
           CancellationToken cancellationToken)
         {
-            return this.Post<ValueTuple<string, string, string>>(RestBaseApiClient.GetCurrentMethod("DecryptUrlAsync"), cancellationToken, (object)value1, (object)value2, (object)value3);
+            return Post<ValueTuple<string, string, string>>( GetCurrentMethod( "DecryptUrlAsync"), cancellationToken, value1, value2, value3 );
         }
 
         Task<float> ICaptchaService.GetScoreAsync(
           IPAddress address,
           CancellationToken cancellationToken)
         {
-            return this.Get<float>(RestBaseApiClient.GetCurrentMethod("GetScoreAsync"), cancellationToken, (object)address);
+            return Get<float>( GetCurrentMethod( "GetScoreAsync"), cancellationToken, address );
         }
 
         Task<BaseEntitySet<(string address, DateTime time, float? score, string message)>> ICaptchaService.GetPendingAsync(
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ValueTuple<string, DateTime, float?, string>>>(RestBaseApiClient.GetCurrentMethod("GetPendingAsync"), cancellationToken);
+            return Get<BaseEntitySet<ValueTuple<string, DateTime, float?, string>>>( GetCurrentMethod( "GetPendingAsync"), cancellationToken);
         }
 
         Task<bool> ICaptchaValidator<bool>.ValidateAsync(
@@ -84,7 +84,7 @@ namespace StockSharp.Web.Api.Client
           string address,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("ValidateAsync"), cancellationToken, (object)response, (object)address);
+            return Post<bool>( GetCurrentMethod( "ValidateAsync"), cancellationToken, response, address );
         }
     }
 }

@@ -20,10 +20,10 @@ namespace StockSharp.Algo.Indicators
 
 	using StockSharp.Localization;
 
-	/// <summary>
-	/// The average true range <see cref="AverageTrueRange.TrueRange"/>.
-	/// </summary>
-	[DisplayName("ATR")]
+    /// <summary>
+    /// The average true range <see cref="TrueRange"/>.
+    /// </summary>
+    [DisplayName("ATR")]
 	[DescriptionLoc(LocalizedStrings.Str758Key)]
 	public class AverageTrueRange : LengthIndicator<IIndicatorValue>
 	{

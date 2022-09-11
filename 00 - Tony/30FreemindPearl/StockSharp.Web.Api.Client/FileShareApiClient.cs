@@ -30,21 +30,21 @@ namespace StockSharp.Web.Api.Client
           long? fileId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<FileShare>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)fileId);
+            return Get<BaseEntitySet<FileShare>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, fileId );
         }
 
         Task<FileShare> IFileShareService.GetByTokenAsync(
           string token,
           CancellationToken cancellationToken)
         {
-            return this.Get<FileShare>(RestBaseApiClient.GetCurrentMethod("GetByTokenAsync"), cancellationToken, (object)token);
+            return Get<FileShare>( GetCurrentMethod( "GetByTokenAsync"), cancellationToken, token );
         }
 
         Task IFileShareService.RemoveByFileIdAsync(
           long fileId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RemoveByFileIdAsync"), cancellationToken, (object)fileId);
+            return Post( GetCurrentMethod( "RemoveByFileIdAsync"), cancellationToken, fileId );
         }
     }
 }

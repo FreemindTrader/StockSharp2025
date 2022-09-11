@@ -38,14 +38,14 @@ namespace StockSharp.Studio.Controls
 
         public OrdersPanel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( this );
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
             Security prevSecurity = null;
             Portfolio prevPortfolio = null;
             OrderTypes? prevType = new OrderTypes?();
-            this.OrderGrid.OrderRegistering += () =>
+            OrderGrid.OrderRegistering += () =>
            {
-               OrderWindow wnd = new OrderWindow() { SecurityProvider = BaseStudioControl.SecurityProvider, MarketDataProvider = BaseStudioControl.MarketDataProvider, Portfolios = BaseStudioControl.PortfolioDataSource, AdapterProvider = ServicesRegistry.AdapterProvider, PortfolioAdapterProvider = BaseStudioControl.PortfolioMessageAdapterProvider, Order = CreateOrder( prevType ) };
+               OrderWindow wnd = new OrderWindow() { SecurityProvider = SecurityProvider, MarketDataProvider = MarketDataProvider, Portfolios = PortfolioDataSource, AdapterProvider = ServicesRegistry.AdapterProvider, PortfolioAdapterProvider = PortfolioMessageAdapterProvider, Order = CreateOrder( prevType ) };
                if ( !wnd.ShowModal( this ) )
                    return;
                Order order = wnd.Order;
@@ -54,15 +54,15 @@ namespace StockSharp.Studio.Controls
                prevPortfolio = order.Portfolio;
                new RegisterOrderCommand( order ).Process( this, false );
            };
-            this.OrderGrid.OrderReRegistering += order =>
+            OrderGrid.OrderReRegistering += order =>
            {
                OrderWindow orderWindow1 = new OrderWindow();
-               orderWindow1.Title = LocalizedStrings.Str2976Params.Put( ( object )order.TransactionId );
-               orderWindow1.SecurityProvider = BaseStudioControl.SecurityProvider;
-               orderWindow1.MarketDataProvider = BaseStudioControl.MarketDataProvider;
-               orderWindow1.Portfolios = BaseStudioControl.PortfolioDataSource;
+               orderWindow1.Title = LocalizedStrings.Str2976Params.Put( order.TransactionId );
+               orderWindow1.SecurityProvider = SecurityProvider;
+               orderWindow1.MarketDataProvider = MarketDataProvider;
+               orderWindow1.Portfolios = PortfolioDataSource;
                orderWindow1.AdapterProvider = ServicesRegistry.AdapterProvider;
-               orderWindow1.PortfolioAdapterProvider = BaseStudioControl.PortfolioMessageAdapterProvider;
+               orderWindow1.PortfolioAdapterProvider = PortfolioMessageAdapterProvider;
                OrderWindow orderWindow2 = orderWindow1;
                Order oldOrder = order;
                Decimal? nullable = new Decimal?( order.Balance );
@@ -78,13 +78,13 @@ namespace StockSharp.Studio.Controls
                    return;
                new ReRegisterOrderCommand( order, wnd.Order ).Process( this, false );
            };
-            this.OrderGrid.OrderCanceling += order => new CancelOrderCommand( order ).Process( this, false );
-            this.OrderGrid.SelectionChanged += ( s, e ) => new SelectCommand<Order>( this.OrderGrid.SelectedOrder, false ).Process( this, false );
-            this.OrderGrid.LayoutChanged += RaiseChangedCommand;
-            this.AlertBtn.SchemaChanged += RaiseChangedCommand;
-            this.GotFocus += ( s, e ) => new SelectCommand<Order>( this.OrderGrid.SelectedOrder, false ).Process( this, false );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<ResetedCommand>( this, false, cmd => this.OrderGrid.Orders.Clear(), null );
+            OrderGrid.OrderCanceling += order => new CancelOrderCommand( order ).Process( this, false );
+            OrderGrid.SelectionChanged += ( s, e ) => new SelectCommand<Order>( OrderGrid.SelectedOrder, false ).Process( this, false );
+            OrderGrid.LayoutChanged += RaiseChangedCommand;
+            AlertBtn.SchemaChanged += RaiseChangedCommand;
+            GotFocus += ( s, e ) => new SelectCommand<Order>( OrderGrid.SelectedOrder, false ).Process( this, false );
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<ResetedCommand>( this, false, cmd => OrderGrid.Orders.Clear(), null );
             commandService.Register(
                                         this,
                                         false,
@@ -93,11 +93,11 @@ namespace StockSharp.Studio.Controls
 
             commandService.Register<ReRegisterOrderCommand>( this, false, cmd =>
              {
-                 bool? nullable = BaseStudioControl.Connector.IsOrderEditable( cmd.OldOrder );
+                 bool? nullable = Connector.IsOrderEditable( cmd.OldOrder );
                  bool flag = true;
                  if ( nullable.GetValueOrDefault() == flag & nullable.HasValue )
                      return;
-                 this.OrderGrid.Orders.Add( cmd.NewOrder );
+                 OrderGrid.Orders.Add( cmd.NewOrder );
              }, null );
 
             commandService.Register<OrderFailCommand>( this, false, cmd =>
@@ -106,9 +106,9 @@ namespace StockSharp.Studio.Controls
                      return;
                  OrderFail entity = cmd.Entity;
                  Order order = entity.Order;
-                 if ( !this.OrderGrid.Orders.Contains( order ) )
-                     this.OrderGrid.Orders.Add( order );
-                 this.OrderGrid.AddRegistrationFail( entity );
+                 if ( !OrderGrid.Orders.Contains( order ) )
+                     OrderGrid.Orders.Add( order );
+                 OrderGrid.AddRegistrationFail( entity );
              }, null );
 
             commandService.Register<BindCommand>( this, true, cmd =>
@@ -117,13 +117,13 @@ namespace StockSharp.Studio.Controls
                      return;
                  prevSecurity = cmd.Source.Security;
                  prevPortfolio = cmd.Source.Portfolio;
-                 this.OrderGrid.IsInteractive = cmd.IsInteractive;
+                 OrderGrid.IsInteractive = cmd.IsInteractive;
              }, null );
 
-            this.WhenLoaded( () =>
+            WhenLoaded( () =>
             {
                 new RequestBindSource( this ).SyncProcess( this );
-                this._subscriptionManager.CreateSubscription( DataType.Transactions, null );
+                _subscriptionManager.CreateSubscription( DataType.Transactions, null );
             } );
 
             Order CreateOrder( OrderTypes? type )
@@ -134,37 +134,37 @@ namespace StockSharp.Studio.Controls
 
         public override void Dispose( CloseReason reason )
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
+            IStudioCommandService commandService = CommandService;
             commandService.UnRegister<ResetedCommand>( this );
             commandService.UnRegister<OrderCommand>( this );
             commandService.UnRegister<ReRegisterOrderCommand>( this );
             commandService.UnRegister<OrderFailCommand>( this );
             commandService.UnRegister<BindCommand>( this );
             if ( reason == CloseReason.CloseWindow )
-                this.AlertBtn.Dispose();
-            this._subscriptionManager.Dispose();
+                AlertBtn.Dispose();
+            _subscriptionManager.Dispose();
             base.Dispose( reason );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "OrderGrid", this.OrderGrid.Save() );
-            storage.SetValue<SettingsStorage>( "AlertBtn", this.AlertBtn.Save() );
-            storage.SetValue<string>( "BarManager", this.BarManager.SaveDevExpressControl() );
+            storage.SetValue( "OrderGrid", OrderGrid.Save() );
+            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.OrderGrid.Load( storage.GetValue<SettingsStorage>( "OrderGrid", null ) );
+            OrderGrid.Load( storage.GetValue<SettingsStorage>( "OrderGrid", null ) );
             SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
             if ( storage1 != null )
-                this.AlertBtn.Load( storage1 );
+                AlertBtn.Load( storage1 );
             string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings == null )
                 return;
-            this.BarManager.LoadDevExpressControl( settings );
+            BarManager.LoadDevExpressControl( settings );
         }
     }
 }

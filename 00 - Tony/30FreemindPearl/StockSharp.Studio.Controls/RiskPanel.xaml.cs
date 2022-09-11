@@ -20,25 +20,25 @@ namespace StockSharp.Studio.Controls
 
         public RiskPanel()
         {
-            this.InitializeComponent();
-            this.RiskPanelCtrl.Rules = ( INotifyList<IRiskRule> )ServicesRegistry.RiskManager.Rules;
+            InitializeComponent();
+            RiskPanelCtrl.Rules = ServicesRegistry.RiskManager.Rules;
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "RiskPanelCtrl", this.RiskPanelCtrl.Save() );
+            storage.SetValue( "RiskPanelCtrl", RiskPanelCtrl.Save() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.RiskPanelCtrl.Load( storage.GetValue<SettingsStorage>( "RiskPanelCtrl", ( SettingsStorage )null ) );
+            RiskPanelCtrl.Load( storage.GetValue<SettingsStorage>( "RiskPanelCtrl", null ) );
         }
 
         private void RiskPanelCtrl_OnLayoutChanged()
         {
-            this.RaiseChangedCommand();
+            RaiseChangedCommand();
         }
 
 

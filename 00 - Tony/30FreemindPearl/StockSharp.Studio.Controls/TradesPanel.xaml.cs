@@ -36,58 +36,58 @@ namespace StockSharp.Studio.Controls
 
         public TradesPanel()
         {
-            this.InitializeComponent();
-            this.TradesGrid.LayoutChanged += RaiseChangedCommand;
-            this.TradesGrid.SelectionChanged += ( GridSelectionChangedEventHandler )( ( s, e ) => this.RaiseSelectedCommand() );
-            this.AlertBtn.SchemaChanged += RaiseChangedCommand;
-            this.GotFocus += ( RoutedEventHandler )( ( s, e ) => this.RaiseSelectedCommand() );
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<ResetedCommand>( ( object )this, false, ( Action<ResetedCommand> )( cmd => this.TradesGrid.Trades.Clear() ), ( Func<ResetedCommand, bool> )null );
-            commandService.Register<EntityCommand<Trade>>( ( object )this, false, new Action<EntityCommand<Trade>>( ( TradesGrid.Trades ).AddEntities<Trade> ), ( Func<EntityCommand<Trade>, bool> )null );
-            commandService.Register<FirstInitSecuritiesCommand>( ( object )this, false, ( Action<FirstInitSecuritiesCommand> )( cmd => this.AddSecurities( cmd.Securities.Take<Security>( 2 ), ( IEnumerable<Security> )this.Securities ) ), ( Func<FirstInitSecuritiesCommand, bool> )null );
+            InitializeComponent();
+            TradesGrid.LayoutChanged += RaiseChangedCommand;
+            TradesGrid.SelectionChanged += ( s, e ) => RaiseSelectedCommand();
+            AlertBtn.SchemaChanged += RaiseChangedCommand;
+            GotFocus += ( s, e ) => RaiseSelectedCommand();
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<ResetedCommand>( this, false, cmd => TradesGrid.Trades.Clear(), null );
+            commandService.Register( this, false, new Action<EntityCommand<Trade>>( ( TradesGrid.Trades ).AddEntities ), null );
+            commandService.Register<FirstInitSecuritiesCommand>( this, false, cmd => AddSecurities( cmd.Securities.Take( 2 ), Securities ), null );
         }
 
         public override void Dispose( CloseReason reason )
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<EntityCommand<Trade>>( ( object )this );
-            commandService.UnRegister<FirstInitSecuritiesCommand>( ( object )this );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<EntityCommand<Trade>>( this );
+            commandService.UnRegister<FirstInitSecuritiesCommand>( this );
             if ( reason == CloseReason.CloseWindow )
-                this.AlertBtn.Dispose();
+                AlertBtn.Dispose();
             base.Dispose( reason );
         }
 
         private void RaiseSelectedCommand()
         {
-            new SelectCommand<Trade>( this.TradesGrid.SelectedTrade, false ).Process( ( object )this, false );
+            new SelectCommand<Trade>( TradesGrid.SelectedTrade, false ).Process( this, false );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "TradesGrid", this.TradesGrid.Save() );
-            storage.SetValue<SettingsStorage>( "AlertBtn", this.AlertBtn.Save() );
-            storage.SetValue<string>( "BarManager", this.BarManager.SaveDevExpressControl() );
-            this.SaveSubscriptions( storage );
+            storage.SetValue( "TradesGrid", TradesGrid.Save() );
+            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
+            SaveSubscriptions( storage );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.TradesGrid.Load( storage.GetValue<SettingsStorage>( "TradesGrid", ( SettingsStorage )null ) );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", ( SettingsStorage )null );
+            TradesGrid.Load( storage.GetValue<SettingsStorage>( "TradesGrid", null ) );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
             if ( storage1 != null )
-                this.AlertBtn.Load( storage1 );
-            string settings = storage.GetValue<string>( "BarManager", ( string )null );
+                AlertBtn.Load( storage1 );
+            string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings != null )
-                this.BarManager.LoadDevExpressControl( settings );
-            this.LoadSubscriptions( storage );
+                BarManager.LoadDevExpressControl( settings );
+            LoadSubscriptions( storage );
         }
 
         private void Filter_OnClick( object sender, RoutedEventArgs e )
         {
-            this.FilterConfig();
+            FilterConfig();
         }
 
         

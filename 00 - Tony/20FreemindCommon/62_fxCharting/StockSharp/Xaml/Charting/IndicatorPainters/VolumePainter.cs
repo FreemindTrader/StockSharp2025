@@ -55,7 +55,7 @@ namespace fx.Charting.IndicatorPainters
         {
             VolumeIndicator indicator = ( VolumeIndicator )Indicator;
             return ( DrawValues( indicator, UpVolume, i => {
-                                                                if ( !VolumePainter.IsUpOrDown( i ) )
+                                                                if ( !IsUpOrDown( i ) )
                                                                 {
                                                                     return double.NaN;
                                                                 }
@@ -64,7 +64,7 @@ namespace fx.Charting.IndicatorPainters
                                                             }   
                                 ) |
                     DrawValues( indicator, DownVolume, i => {
-                                                                if ( !VolumePainter.IsUpOrDown( i ) )
+                                                                if ( !IsUpOrDown( i ) )
                                                                 {
                                                                     return Decimal.ToDouble( i.GetValue<Decimal>( ) );
                                                                 }

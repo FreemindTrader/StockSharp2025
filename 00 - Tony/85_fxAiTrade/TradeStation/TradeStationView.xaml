@@ -239,7 +239,7 @@
                                 Content="Research Past TA"
                                 Glyph="{dx:DXImage SvgImages/Spreadsheet/100Percent.svg}"
                                 IsChecked="{Binding Path=ResearchPastTA}"
-                                KeyGesture="F12"
+                                KeyGesture="CTRL+SHIFT+R"
                                 LargeGlyph="{dx:DXImage SvgImages/Spreadsheet/100Percent.svg}"
                                 RibbonStyle="Large" />
                         </dxr:RibbonPageGroup>
@@ -355,14 +355,14 @@
                                 Content="Show Elliott Wave"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/analytics.svg}"
                                 IsChecked="{Binding Path=ShowElliottWave}"
-                                KeyGesture="F1"
+                                KeyGesture="CTRL+SHIFT+E"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/analytics.svg}"
                                 RibbonStyle="Large" />
                             <dxb:BarCheckItem
-                                Content="Show Trading Event"
+                                Content="Show Signal Panel"
                                 Glyph="{dx:DXImage SvgImages/Outlook Inspired/Categorize.svg}"
                                 IsChecked="{Binding Path=ShowSmallTradingEvent}"
-                                KeyGesture="F2"
+                                KeyGesture="CTRL+SHIFT+S"
                                 LargeGlyph="{dx:DXImage SvgImages/Outlook Inspired/Categorize.svg}"
                                 RibbonStyle="Large" />
                             <dxb:BarCheckItem
@@ -370,7 +370,7 @@
                                 Content="Show Divergence"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/ShowDivg.svg}"
                                 IsChecked="{Binding Path=ShowDivergence}"
-                                KeyGesture="F3"
+                                KeyGesture="CTRL+SHIFT+D"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/ShowDivg.svg}"
                                 RibbonStyle="Large" />
                             <dxb:BarSubItem
@@ -395,10 +395,10 @@
                                     Tag="99" />
                                 <dxb:BarCheckItem
                                     CheckedChanged="{DXEvent '@c.OnCheckChanged(@args)'}"
-                                    Content="Only Today"
+                                    Content="Only Today"                                    
                                     Glyph="{dx:DXImage SvgImages/Icon Builder/Actions_Calendar.svg}"
                                     GroupIndex="37"
-                                    KeyGesture="F4"
+                                    KeyGesture="CTRL+SHIFT+P"
                                     LargeGlyph="{dx:DXImage SvgImages/Icon Builder/Actions_Calendar.svg}"
                                     Tag="1" />
                                 <dxb:BarCheckItem
@@ -419,6 +419,7 @@
                                 <dxb:BarCheckItem
                                     CheckedChanged="{DXEvent '@c.OnCheckChanged(@args)'}"
                                     Content="Show None"
+                                    KeyGesture="CTRL+SHIFT+N"
                                     Glyph="{dx:DXImage SvgImages/Actions/New.svg}"
                                     GroupIndex="37"
                                     LargeGlyph="{dx:DXImage SvgImages/Actions/New.svg}"
@@ -474,21 +475,21 @@
                                 Content="Show Gann"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/ShowGann.svg}"
                                 IsChecked="{Binding Path=ShowGannPriceTime}"
-                                KeyGesture="F5"
+                                KeyGesture="CTRL+SHIFT+G"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/ShowGann.svg}"
                                 RibbonStyle="Large" />
                             <dxb:BarCheckItem
                                 Content="Freemind Indicators"
                                 Glyph="{dx:DXImage SvgImages/Dashboards/AddCalculatedField.svg}"
                                 IsChecked="{Binding Path=ShowFreemindIndicators}"
-                                KeyGesture="F6"
+                                KeyGesture="CTRL+SHIFT+F"
                                 LargeGlyph="{dx:DXImage SvgImages/Dashboards/AddCalculatedField.svg}"
                                 RibbonStyle="Large" />
                             <dxb:BarCheckItem
                                 Content="Show HEW Detection"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/ShowHew.svg}"
                                 IsChecked="{Binding Path=ShowHewDetection}"
-                                KeyGesture="F7"
+                                KeyGesture="CTRL+SHIFT+H"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/ShowHew.svg}"
                                 RibbonStyle="Large" />
 
@@ -497,7 +498,7 @@
                                 Content="Trading Time"
                                 Glyph="{dx:DXImage SvgImages/Business Objects/BO_Scheduler.svg}"
                                 IsChecked="{Binding Path=ShowTradingTime}"
-                                KeyGesture="F9"
+                                KeyGesture="CTRL+SHIFT+T"
                                 LargeGlyph="{dx:DXImage SvgImages/Business Objects/BO_Scheduler.svg}"
                                 RibbonStyle="Large" />
 
@@ -505,7 +506,7 @@
                                 Content="Candle Patterns"
                                 Glyph="{dx:DXImage SvgImages/Chart/ChartType_CandleStick.svg}"
                                 IsChecked="{Binding Path=ShowCandlePattern}"
-                                KeyGesture="F10"
+                                KeyGesture="CTRL+SHIFT+C"
                                 LargeGlyph="{dx:DXImage SvgImages/Chart/ChartType_CandleStick.svg}"
                                 RibbonStyle="Large" />
 
@@ -514,7 +515,7 @@
                                 Content="Show MonoWaveGroup"
                                 Glyph="{dx:DXImage SvgImages/Business Objects/BO_Opportunity.svg}"
                                 IsChecked="{Binding Path=ShowMonoWave}"
-                                KeyGesture="F11"
+                                KeyGesture="CTRL+SHIFT+M"
                                 LargeGlyph="{dx:DXImage SvgImages/Business Objects/BO_Opportunity.svg}"
                                 RibbonStyle="Large" />
                             <dxb:BarSubItem
@@ -1006,33 +1007,43 @@
                             
                             <dxb:BarButtonItem                                
                                 Content="Classic Wave 3"
+                                Command="{Binding ClassicWave3TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Three.svg}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Three.svg}"
+                                KeyGesture="F3"
                                 RibbonStyle="Large" />
                             <dxb:BarButtonItem                                
                                 Content="Extended Wave 3"
+                                Command="{Binding ExtendedWave3TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Extended3.svg}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Extended3.svg}"
+                                KeyGesture="CTRL+F3"
                                 RibbonStyle="Large" />
                             <dxb:BarCheckItem                                                                
                                 Content="Super Extened Wave 3"
+                                Command="{Binding SuperExtendedWave3TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Big3.svg}"
                                 IsChecked="{Binding Path=StepByStepChecked}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Big3.svg}"
+                                KeyGesture="CTRL+SHIFT+F3"
                                 RibbonStyle="Large" />
                         </dxr:RibbonPageGroup>
 
                         <dxr:RibbonPageGroup Caption="Retracement">
                             <dxb:BarButtonItem
                                 Content="Wave C Target"
+                                Command="{Binding WaveCTargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/ABC.svg}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/ABC.svg}"
+                                KeyGesture="F5"
                                 RibbonStyle="Large" />
 
                             <dxb:BarButtonItem                                
                                 Content="Wave 4 Target"
+                                Command="{Binding Wave4TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Four.svg}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Four.svg}"
+                                KeyGesture="F4"
                                 RibbonStyle="Large" />
 
                         </dxr:RibbonPageGroup>

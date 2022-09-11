@@ -257,7 +257,7 @@ namespace System.Net.FtpClient
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach ( System.Reflection.PropertyInfo p in GetType().GetProperties() )
+            foreach ( Reflection.PropertyInfo p in GetType().GetProperties() )
             {
                 sb.AppendLine( string.Format( "{0}: {1}", p.Name, p.GetValue( this, null ) ) );
             }

@@ -11,49 +11,37 @@ using System.Threading.Tasks;
 
 namespace StockSharp.Web.Api.Client
 {
-    public class ClientApiClient : BaseApiEntityClient<StockSharp.Web.DomainModel.Client>, IClientService, IBaseEntityService<StockSharp.Web.DomainModel.Client>, IBaseService, ISmsService
+    public class ClientApiClient : BaseApiEntityClient<DomainModel.Client>, IClientService, IBaseEntityService<DomainModel.Client>, IBaseService, ISmsService
     {
-        public ClientApiClient(HttpMessageInvoker http, SecureString token)
-          : base(http, token)
+        public ClientApiClient(HttpMessageInvoker http, SecureString token) : base(http, token)
         {
         }
 
-        public ClientApiClient(HttpMessageInvoker http, string login, SecureString password)
-          : base(http, login, password)
+        public ClientApiClient(HttpMessageInvoker http, string login, SecureString password) : base(http, login, password)
         {
         }
 
-        Task<StockSharp.Web.DomainModel.Client> IClientService.FindByEmailAsync(
-          string email,
-          CancellationToken cancellationToken)
+        Task<DomainModel.Client> IClientService.FindByEmailAsync( string email, CancellationToken cancellationToken)
         {
-            return this.Get<StockSharp.Web.DomainModel.Client>(RestBaseApiClient.GetCurrentMethod("FindByEmailAsync"), cancellationToken, (object)email);
+            return Get<DomainModel.Client>( GetCurrentMethod( "FindByEmailAsync"), cancellationToken, email );
         }
 
-        Task<StockSharp.Web.DomainModel.Client> IClientService.GetCurrentAsync(
-          bool? includedOrders,
-          CancellationToken cancellationToken)
+        Task<DomainModel.Client> IClientService.GetCurrentAsync( bool? includedOrders, CancellationToken cancellationToken)
         {
-            return this.Get<StockSharp.Web.DomainModel.Client>(RestBaseApiClient.GetCurrentMethod("GetCurrentAsync"), cancellationToken, (object)includedOrders);
+            return Get<DomainModel.Client>( GetCurrentMethod( "GetCurrentAsync"), cancellationToken, includedOrders );
         }
 
-        Task IClientService.ValidateActivationTokenAsync(
-          CancellationToken cancellationToken)
+        Task IClientService.ValidateActivationTokenAsync( CancellationToken cancellationToken )
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ValidateActivationTokenAsync"), cancellationToken, Array.Empty<object>());
+            return Post( GetCurrentMethod( "ValidateActivationTokenAsync"), cancellationToken, Array.Empty<object>());
         }
 
-        Task<StockSharp.Web.DomainModel.Client> IClientService.AddWithPasswordAsync(
-          StockSharp.Web.DomainModel.Client entity,
-          string password,
-          string passwordQuestion,
-          string passwordAnswer,
-          CancellationToken cancellationToken)
+        Task<DomainModel.Client> IClientService.AddWithPasswordAsync( DomainModel.Client entity, string password, string passwordQuestion, string passwordAnswer, CancellationToken cancellationToken)
         {
-            return this.Post<StockSharp.Web.DomainModel.Client>(RestBaseApiClient.GetCurrentMethod("AddWithPasswordAsync"), cancellationToken, (object)entity, (object)password, (object)passwordQuestion, (object)passwordAnswer);
+            return Post<DomainModel.Client>( GetCurrentMethod( "AddWithPasswordAsync"), cancellationToken, entity, password, passwordQuestion, passwordAnswer );
         }
 
-        Task<BaseEntitySet<StockSharp.Web.DomainModel.Client>> IClientService.FindAsync(
+        Task<BaseEntitySet<DomainModel.Client>> IClientService.FindAsync(
           long skip,
           long? count,
           bool? deleted,
@@ -77,108 +65,90 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<StockSharp.Web.DomainModel.Client>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)awardId, (object)roleId, (object)groupId, (object)licenseFeatureId, (object)fileGroupId, (object)isApproved, (object)isGroups, (object)productId, (object)domainId, (object)referralId, (object)hasBalance, (object)isOnline, (object)isTopTags, (object)tagName, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<DomainModel.Client>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, awardId, roleId, groupId, licenseFeatureId, fileGroupId, isApproved, isGroups, productId, domainId, referralId, hasBalance, isOnline, isTopTags, tagName, like, likeCompare );
         }
 
-        Task IClientService.EmailAsSpamAsync(
-          string email,
-          CancellationToken cancellationToken)
+        Task IClientService.EmailAsSpamAsync( string email, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("EmailAsSpamAsync"), cancellationToken, (object)email);
+            return Post( GetCurrentMethod( "EmailAsSpamAsync"), cancellationToken, email );
         }
 
-        Task IClientService.EmailBouncedAsync(
-          string email,
-          CancellationToken cancellationToken)
+        Task IClientService.EmailBouncedAsync( string email, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("EmailBouncedAsync"), cancellationToken, (object)email);
+            return Post( GetCurrentMethod( "EmailBouncedAsync"), cancellationToken, email );
         }
 
-        Task IClientService.EmailDeliveredAsync(
-          string email,
-          CancellationToken cancellationToken)
+        Task IClientService.EmailDeliveredAsync( string email, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("EmailDeliveredAsync"), cancellationToken, (object)email);
+            return Post( GetCurrentMethod( "EmailDeliveredAsync"), cancellationToken, email );
         }
 
-        Task<(bool isAdmin, bool canPublish, bool isProductManager)> IClientService.GetNugetPermissionsAsync(
-          CancellationToken cancellationToken)
+        Task<(bool isAdmin, bool canPublish, bool isProductManager)> IClientService.GetNugetPermissionsAsync( CancellationToken cancellationToken)
         {
-            return this.Get<ValueTuple<bool, bool, bool>>(RestBaseApiClient.GetCurrentMethod("GetNugetPermissionsAsync"), cancellationToken);
+            return Get<ValueTuple<bool, bool, bool>>( GetCurrentMethod( "GetNugetPermissionsAsync"), cancellationToken);
         }
 
-        Task IClientService.ChangePasswordAsync(
-          string newPassword,
-          long? clientId,
-          CancellationToken cancellationToken)
+        Task IClientService.ChangePasswordAsync( string newPassword, long? clientId, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ChangePasswordAsync"), cancellationToken, (object)newPassword, (object)clientId);
+            return Post( GetCurrentMethod( "ChangePasswordAsync"), cancellationToken, newPassword, clientId );
         }
 
         Task IClientService.ResetPasswordAsync(CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ResetPasswordAsync"), cancellationToken, Array.Empty<object>());
+            return Post( GetCurrentMethod( "ResetPasswordAsync"), cancellationToken, Array.Empty<object>());
         }
 
-        Task IClientService.UpdateProfileAsync(
-          StockSharp.Web.DomainModel.Client changes,
-          CancellationToken cancellationToken)
+        Task IClientService.UpdateProfileAsync( DomainModel.Client changes, CancellationToken cancellationToken)
         {
-            return this.Put(RestBaseApiClient.GetCurrentMethod("UpdateProfileAsync"), cancellationToken, (object)changes);
+            return Put( GetCurrentMethod( "UpdateProfileAsync"), cancellationToken, changes );
         }
 
-        Task IClientService.UpdateReferralAsync(
-          long referralId,
-          CancellationToken cancellationToken)
+        Task IClientService.UpdateReferralAsync( long referralId, CancellationToken cancellationToken)
         {
-            return this.Put(RestBaseApiClient.GetCurrentMethod("UpdateReferralAsync"), cancellationToken, (object)referralId);
+            return Put( GetCurrentMethod( "UpdateReferralAsync"), cancellationToken, referralId );
         }
 
-        Task IClientService.BlockAsync(
-          long clientId,
-          CancellationToken cancellationToken)
+        Task IClientService.BlockAsync( long clientId, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("BlockAsync"), cancellationToken, (object)clientId);
+            return Post( GetCurrentMethod( "BlockAsync"), cancellationToken, clientId );
         }
 
-        Task IClientService.SubscribeAsync(
-          bool enable,
-          CancellationToken cancellationToken)
+        Task IClientService.SubscribeAsync( bool enable, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("SubscribeAsync"), cancellationToken, (object)enable);
+            return Post( GetCurrentMethod( "SubscribeAsync"), cancellationToken, enable );
         }
 
         Task IClientService.SelfDeleteAsync(CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("SelfDeleteAsync"), cancellationToken, Array.Empty<object>());
+            return Post( GetCurrentMethod( "SelfDeleteAsync"), cancellationToken, Array.Empty<object>());
         }
 
         Task<bool> IClientService.IsInRoleAsync(
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("IsInRoleAsync"), cancellationToken, (object)roleId);
+            return Post<bool>( GetCurrentMethod( "IsInRoleAsync"), cancellationToken, roleId );
         }
 
         Task<string[]> IClientService.GetRolesAsync(
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<string[]>(RestBaseApiClient.GetCurrentMethod("GetRolesAsync"), cancellationToken, (object)clientId);
+            return Get<string[]>( GetCurrentMethod( "GetRolesAsync"), cancellationToken, clientId );
         }
 
         Task IClientService.ReactivateAsync(
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ReactivateAsync"), cancellationToken, (object)clientId);
+            return Post( GetCurrentMethod( "ReactivateAsync"), cancellationToken, clientId );
         }
 
         Task IClientService.ResetNugetAsync(
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ResetNugetAsync"), cancellationToken, (object)clientId);
+            return Post( GetCurrentMethod( "ResetNugetAsync"), cancellationToken, clientId );
         }
 
         Task IClientService.SetRoleAsync(
@@ -188,14 +158,14 @@ namespace StockSharp.Web.Api.Client
           DateTime? till,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("SetRoleAsync"), cancellationToken, (object)clientId, (object)roleId, (object)oneAppId, (object)till);
+            return Post( GetCurrentMethod( "SetRoleAsync"), cancellationToken, clientId, roleId, oneAppId, till );
         }
 
         Task<bool> IClientService.RemoveRoleAsync(
           long roleId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveRoleAsync"), cancellationToken, (object)roleId);
+            return Post<bool>( GetCurrentMethod( "RemoveRoleAsync"), cancellationToken, roleId );
         }
 
         Task IClientService.AddAwardAsync(
@@ -203,7 +173,7 @@ namespace StockSharp.Web.Api.Client
           long awardId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddAwardAsync"), cancellationToken, (object)clientId, (object)awardId);
+            return Post( GetCurrentMethod( "AddAwardAsync"), cancellationToken, clientId, awardId );
         }
 
         Task<bool> IClientService.RemoveAwardAsync(
@@ -211,7 +181,7 @@ namespace StockSharp.Web.Api.Client
           long awardId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveAwardAsync"), cancellationToken, (object)clientId, (object)awardId);
+            return Post<bool>( GetCurrentMethod( "RemoveAwardAsync"), cancellationToken, clientId, awardId );
         }
 
         Task IClientService.AddLicenseFeatureAsync(
@@ -219,7 +189,7 @@ namespace StockSharp.Web.Api.Client
           long featureId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddLicenseFeatureAsync"), cancellationToken, (object)clientId, (object)featureId);
+            return Post( GetCurrentMethod( "AddLicenseFeatureAsync"), cancellationToken, clientId, featureId );
         }
 
         Task<bool> IClientService.RemoveLicenseFeatureAsync(
@@ -227,14 +197,14 @@ namespace StockSharp.Web.Api.Client
           long featureId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveLicenseFeatureAsync"), cancellationToken, (object)clientId, (object)featureId);
+            return Post<bool>( GetCurrentMethod( "RemoveLicenseFeatureAsync"), cancellationToken, clientId, featureId );
         }
 
         Task IClientService.AddTagAsync(
           string tagName,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddTagAsync"), cancellationToken, (object)tagName);
+            return Post( GetCurrentMethod( "AddTagAsync"), cancellationToken, tagName );
         }
 
         Task<string> ISmsService.SendAsync(
@@ -242,7 +212,7 @@ namespace StockSharp.Web.Api.Client
           string message,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("SendAsync"), cancellationToken, (object)phone, (object)message);
+            return Post<string>( GetCurrentMethod( "SendAsync"), cancellationToken, phone, message );
         }
     }
 }

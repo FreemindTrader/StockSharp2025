@@ -38,7 +38,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( task == null )
                 throw new ArgumentNullException( nameof( task ) );
-            return task.Securities.FirstOrDefault<HydraTaskSecurity>( ( Func<HydraTaskSecurity, bool> )( s => s.IsAllSecurity() ) );
+            return task.Securities.FirstOrDefault( s => s.IsAllSecurity() );
         }
 
         /// <summary>
@@ -56,8 +56,8 @@ namespace StockSharp.Hydra.Core
             if ( securities == null )
                 throw new ArgumentNullException( nameof( securities ) );
             HydraTaskSecurity allSec = task.GetAllSecurity();
-            Dictionary<Security, HydraTaskSecurity> secMap = task.Securities.ToDictionary<HydraTaskSecurity, Security, HydraTaskSecurity>( ( Func<HydraTaskSecurity, Security> )( s => s.Security ), ( Func<HydraTaskSecurity, HydraTaskSecurity> )( s => s ) );
-            return securities.Where<Security>( ( Func<Security, bool> )( s => s != allSec.Security ) ).Select<Security, HydraTaskSecurity>( ( Func<Security, HydraTaskSecurity> )( s =>
+            Dictionary<Security, HydraTaskSecurity> secMap = task.Securities.ToDictionary( s => s.Security, s => s );
+            return securities.Where( s => s != allSec.Security ).Select( s =>
             {
                 HydraTaskSecurity hydraTaskSecurity;
                 if ( !secMap.TryGetValue( s, out hydraTaskSecurity ) )
@@ -71,7 +71,7 @@ namespace StockSharp.Hydra.Core
                         hydraTaskSecurity.AddDataType( dataType );
                 }
                 return hydraTaskSecurity;
-            } ) );
+            } );
         }
 
         /// <summary>Получить отображаемое имя для задачи.</summary>
@@ -102,14 +102,14 @@ namespace StockSharp.Hydra.Core
                 str = dataType.DataTypeToFileName();
                 if ( str.IsEmpty() )
                 {
-                    if ( ( Equatable<DataType> )dataType == DataType.Securities )
+                    if ( dataType == DataType.Securities )
                     {
                         str = "securities";
                     }
                     else
                     {
                         if ( !( dataType.MessageType == typeof( IndicatorValue ) ) )
-                            throw new ArgumentOutOfRangeException( nameof( dataType ), ( object )dataType, LocalizedStrings.Str1219 );
+                            throw new ArgumentOutOfRangeException( nameof( dataType ), dataType, LocalizedStrings.Str1219 );
                         str = "indicator_" + ( ( IndicatorType )dataType.Arg )?.Name;
                     }
                 }
@@ -135,7 +135,7 @@ namespace StockSharp.Hydra.Core
                 case ExportTypes.StockSharp:
                     return format != StorageFormats.Binary ? ".csv" : ".bin";
                 default:
-                    throw new ArgumentOutOfRangeException( nameof( type ), ( object )type, LocalizedStrings.Str1219 );
+                    throw new ArgumentOutOfRangeException( nameof( type ), type, LocalizedStrings.Str1219 );
             }
         }
 
@@ -155,7 +155,7 @@ namespace StockSharp.Hydra.Core
           ExportTypes type,
           StorageFormats format )
         {
-            return Extensions.GetFileName( fileNamePrefix, dataType ) + "_{Security.Id}_{From:yyyy_MM_dd}_{To:yyyy_MM_dd}" + Extensions.GetExtension( type, format );
+            return GetFileName( fileNamePrefix, dataType ) + "_{Security.Id}_{From:yyyy_MM_dd}_{To:yyyy_MM_dd}" + GetExtension( type, format );
         }
 
         /// <summary>Сгенерировать имя эспортируемого файла.</summary>
@@ -180,20 +180,20 @@ namespace StockSharp.Hydra.Core
         {
             if ( fileFormat.IsEmpty() )
             {
-                string str = Extensions.GetFileName( fileNamePrefix, dataType );
+                string str = GetFileName( fileNamePrefix, dataType );
                 if ( security != null )
                     str = str + "_" + security.Id.SecurityIdToFolderName();
                 if ( from.HasValue )
-                    str += string.Format( "_{0:yyyy_MM_dd}", ( object )from );
+                    str += string.Format( "_{0:yyyy_MM_dd}", from );
                 if ( to.HasValue )
-                    str += string.Format( "_{0:yyyy_MM_dd}", ( object )to );
-                return str + Extensions.GetExtension( type, format );
+                    str += string.Format( "_{0:yyyy_MM_dd}", to );
+                return str + GetExtension( type, format );
             }
             Security security1 = security.Clone();
             security1.Id = security1.Id.SecurityIdToFolderName();
             if ( !security1.Code.IsEmpty() )
                 security1.Code = security1.Code.SecurityIdToFolderName();
-            return fileFormat.PutEx( ( object )new
+            return fileFormat.PutEx( new
             {
                 Security = security1,
                 From = from,
@@ -228,12 +228,12 @@ namespace StockSharp.Hydra.Core
         /// <returns>Тип адаптера сообщений.</returns>
         public static Type GetAdapterType( this Type taskType )
         {
-            if ( taskType == ( Type )null )
+            if ( taskType == null )
                 throw new ArgumentNullException( nameof( taskType ) );
             Type genericType = ReflectionHelper.GetGenericType( taskType, typeof( ConnectorHydraTask<> ) );
             if ( ( object )genericType == null )
-                return ( Type )null;
-            return ( ( IEnumerable<Type> )genericType.GetGenericArguments() ).First<Type>();
+                return null;
+            return genericType.GetGenericArguments().First();
         }
 
         /// <summary>Получить тип для рефлекции мета-информации.</summary>
@@ -241,7 +241,7 @@ namespace StockSharp.Hydra.Core
         /// <returns>Тип.</returns>
         public static Type GetReflectTaskType( this Type taskType )
         {
-            if ( taskType == ( Type )null )
+            if ( taskType == null )
                 throw new ArgumentNullException( nameof( taskType ) );
             Type adapterType = taskType.GetAdapterType();
             if ( ( object )adapterType != null )
@@ -267,7 +267,7 @@ namespace StockSharp.Hydra.Core
             ref MessageAdapterCategories? local = ref categories;
             if ( !local.HasValue )
                 return false;
-            return local.GetValueOrDefault().HasFlag( ( Enum )category );
+            return local.GetValueOrDefault().HasFlag( category );
         }
 
         /// <summary>Получить инонку задачи.</summary>
@@ -283,7 +283,7 @@ namespace StockSharp.Hydra.Core
         /// <returns>Отображаемое имя.</returns>
         public static string GetTaskDisplayName( this Type taskType )
         {
-            return taskType.GetReflectTaskType().GetDisplayName( ( string )null );
+            return taskType.GetReflectTaskType().GetDisplayName( null );
         }
 
         /// <summary>Получить описание задачи.</summary>
@@ -291,7 +291,7 @@ namespace StockSharp.Hydra.Core
         /// <returns>Описание задачи.</returns>
         public static string GetTaskDescription( this Type taskType )
         {
-            return taskType.GetReflectTaskType().GetDescription( ( string )null );
+            return taskType.GetReflectTaskType().GetDescription( null );
         }
 
         /// <summary>
@@ -336,35 +336,35 @@ namespace StockSharp.Hydra.Core
         {
             if ( registry == null )
                 throw new ArgumentNullException( nameof( registry ) );
-            if ( ( Equatable<DataType> )dataType == ( DataType )null )
+            if ( dataType == null )
                 throw new ArgumentNullException( nameof( dataType ) );
-            if ( ( Equatable<DataType> )dataType == DataType.Securities )
+            if ( dataType == DataType.Securities )
                 return registry.TemplateTxtSecurity;
-            if ( ( Equatable<DataType> )dataType == DataType.News )
+            if ( dataType == DataType.News )
                 return registry.TemplateTxtNews;
-            if ( ( Equatable<DataType> )dataType == DataType.Board )
+            if ( dataType == DataType.Board )
                 return registry.TemplateTxtBoard;
-            if ( ( Equatable<DataType> )dataType == DataType.BoardState )
+            if ( dataType == DataType.BoardState )
                 return registry.TemplateTxtBoardState;
             if ( dataType.IsCandles )
                 return registry.TemplateTxtCandle;
-            if ( ( Equatable<DataType> )dataType == DataType.Level1 )
+            if ( dataType == DataType.Level1 )
             {
                 if ( isEmptySecurity )
                     return registry.TemplateTxtOptions;
                 return registry.TemplateTxtLevel1;
             }
-            if ( ( Equatable<DataType> )dataType == DataType.MarketDepth )
+            if ( dataType == DataType.MarketDepth )
                 return registry.TemplateTxtDepth;
-            if ( ( Equatable<DataType> )dataType == DataType.Ticks )
+            if ( dataType == DataType.Ticks )
                 return registry.TemplateTxtTick;
-            if ( ( Equatable<DataType> )dataType == DataType.Transactions )
+            if ( dataType == DataType.Transactions )
                 return registry.TemplateTxtTransaction;
-            if ( ( Equatable<DataType> )dataType == DataType.OrderLog )
+            if ( dataType == DataType.OrderLog )
                 return registry.TemplateTxtOrderLog;
             if ( dataType.MessageType == typeof( IndicatorValue ) )
                 return registry.TemplateTxtIndicator;
-            throw new ArgumentOutOfRangeException( nameof( dataType ), ( object )dataType, LocalizedStrings.Str721 );
+            throw new ArgumentOutOfRangeException( nameof( dataType ), dataType, LocalizedStrings.Str721 );
         }
 
         /// <summary>Установить новый txt шаблон.</summary>
@@ -380,41 +380,41 @@ namespace StockSharp.Hydra.Core
         {
             if ( registry == null )
                 throw new ArgumentNullException( nameof( registry ) );
-            if ( ( Equatable<DataType> )dataType == ( DataType )null )
+            if ( dataType == null )
                 throw new ArgumentNullException( nameof( dataType ) );
             if ( txtTemplate.IsEmpty() )
                 throw new ArgumentNullException( nameof( txtTemplate ) );
-            if ( ( Equatable<DataType> )dataType == DataType.Securities )
+            if ( dataType == DataType.Securities )
                 registry.TemplateTxtSecurity = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.News )
+            else if ( dataType == DataType.News )
                 registry.TemplateTxtNews = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.Board )
+            else if ( dataType == DataType.Board )
                 registry.TemplateTxtBoard = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.BoardState )
+            else if ( dataType == DataType.BoardState )
                 registry.TemplateTxtBoardState = txtTemplate;
             else if ( dataType.IsCandles )
                 registry.TemplateTxtCandle = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.Level1 )
+            else if ( dataType == DataType.Level1 )
             {
                 if ( !isEmptySecurity )
                     registry.TemplateTxtLevel1 = txtTemplate;
                 else
                     registry.TemplateTxtOptions = txtTemplate;
             }
-            else if ( ( Equatable<DataType> )dataType == DataType.MarketDepth )
+            else if ( dataType == DataType.MarketDepth )
                 registry.TemplateTxtDepth = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.Ticks )
+            else if ( dataType == DataType.Ticks )
                 registry.TemplateTxtTick = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.Transactions )
+            else if ( dataType == DataType.Transactions )
                 registry.TemplateTxtTransaction = txtTemplate;
-            else if ( ( Equatable<DataType> )dataType == DataType.OrderLog )
+            else if ( dataType == DataType.OrderLog )
             {
                 registry.TemplateTxtOrderLog = txtTemplate;
             }
             else
             {
                 if ( !( dataType.MessageType == typeof( IndicatorValue ) ) )
-                    throw new ArgumentOutOfRangeException( nameof( dataType ), ( object )dataType, LocalizedStrings.Str721 );
+                    throw new ArgumentOutOfRangeException( nameof( dataType ), dataType, LocalizedStrings.Str721 );
                 registry.TemplateTxtIndicator = txtTemplate;
             }
         }
@@ -454,13 +454,13 @@ namespace StockSharp.Hydra.Core
           int daysOffset,
           TimeSpan? interval = null )
         {
-            if ( ( Equatable<DataType> )dataType == ( DataType )null )
+            if ( dataType == null )
                 throw new ArgumentNullException( nameof( dataType ) );
-            HydraTaskSecurity.DateTypeInfo dateTypeInfo = security != null ? security.InfoDict.TryGetValue<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ) : ( HydraTaskSecurity.DateTypeInfo )null;
+            HydraTaskSecurity.DateTypeInfo dateTypeInfo = security != null ? security.InfoDict.TryGetValue( dataType ) : null;
             DateTime? nullable = dateTypeInfo?.BeginDate;
             DateTime from = nullable ?? startDate;
             nullable = dateTypeInfo?.EndDate;
-            DateTime to = nullable ?? DateTime.Today - TimeSpan.FromDays( ( double )daysOffset );
+            DateTime to = nullable ?? DateTime.Today - TimeSpan.FromDays( daysOffset );
             TimeSpan interval1 = interval ?? TimeSpan.FromDays( 1.0 );
             return from.Range( to, interval1 );
         }
@@ -476,7 +476,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            security.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ).BeginDate = beginDate;
+            security.InfoDict.SafeAdd( dataType ).BeginDate = beginDate;
         }
 
         /// <summary>Получить дату начала.</summary>
@@ -487,7 +487,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            return security.InfoDict.TryGetValue<DataType, HydraTaskSecurity.DateTypeInfo>( dataType )?.BeginDate;
+            return security.InfoDict.TryGetValue( dataType )?.BeginDate;
         }
 
         /// <summary>Получить дату окончания.</summary>
@@ -498,7 +498,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            return security.InfoDict.TryGetValue<DataType, HydraTaskSecurity.DateTypeInfo>( dataType )?.EndDate;
+            return security.InfoDict.TryGetValue( dataType )?.EndDate;
         }
 
         /// <summary>Установить дата окончания.</summary>
@@ -512,7 +512,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            security.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ).EndDate = endDate;
+            security.InfoDict.SafeAdd( dataType ).EndDate = endDate;
         }
 
         /// <summary>Получить источник данных построения свечей.</summary>
@@ -525,7 +525,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            return security.InfoDict.TryGetValue<DataType, HydraTaskSecurity.DateTypeInfo>( dataType )?.CandlesBuildFrom;
+            return security.InfoDict.TryGetValue( dataType )?.CandlesBuildFrom;
         }
 
         /// <summary>Установить источник данных построения свечей.</summary>
@@ -539,7 +539,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            security.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ).CandlesBuildFrom = candlesBuildFrom;
+            security.InfoDict.SafeAdd( dataType ).CandlesBuildFrom = candlesBuildFrom;
         }
 
         /// <summary>Get max depth.</summary>
@@ -547,7 +547,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            return security.InfoDict.TryGetValue<DataType, HydraTaskSecurity.DateTypeInfo>( dataType )?.MaxDepth;
+            return security.InfoDict.TryGetValue( dataType )?.MaxDepth;
         }
 
         /// <summary>Get vol profile.</summary>
@@ -555,7 +555,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            return security.InfoDict.TryGetValue<DataType, HydraTaskSecurity.DateTypeInfo>( dataType )?.VolumeProfile;
+            return security.InfoDict.TryGetValue( dataType )?.VolumeProfile;
         }
 
         /// <summary>Set max depth.</summary>
@@ -566,7 +566,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            security.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ).MaxDepth = maxDepth;
+            security.InfoDict.SafeAdd( dataType ).MaxDepth = maxDepth;
         }
 
         /// <summary>Set vol profile.</summary>
@@ -577,7 +577,7 @@ namespace StockSharp.Hydra.Core
         {
             if ( security == null )
                 throw new ArgumentNullException( nameof( security ) );
-            security.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>( dataType ).VolumeProfile = volumeProfile;
+            security.InfoDict.SafeAdd( dataType ).VolumeProfile = volumeProfile;
         }
 
         /// <summary>Получить дату последней свечи.</summary>
@@ -585,12 +585,12 @@ namespace StockSharp.Hydra.Core
         /// <returns>Дата.</returns>
         public static DateTime GetLastDate( this IEnumerable<CandleMessage> candles )
         {
-            DateTime dateTime = candles.Last<CandleMessage>().OpenTime.UtcDateTime;
+            DateTime dateTime = candles.Last().OpenTime.UtcDateTime;
             dateTime = dateTime.Date;
             return dateTime.AddDays( 1.0 );
         }
 
         /// <summary>Тайм-фреймы.</summary>
-        public static IEnumerable<DataType> GeneratedTimeFrames { get; } = ( IEnumerable<DataType> )new DataType[12] { DataType.TimeFrame( TimeSpan.FromTicks( 1L ) ), DataType.TimeFrame( TimeSpan.FromSeconds( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 5.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 10.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 15.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 30.0 ) ), DataType.TimeFrame( TimeSpan.FromHours( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromDays( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromDays( 7.0 ) ), DataType.TimeFrame( TimeSpan.FromTicks( 25920000000000L ) ), DataType.TimeFrame( TimeSpan.FromTicks( 315360000000000L ) ) };
+        public static IEnumerable<DataType> GeneratedTimeFrames { get; } = new DataType[12] { DataType.TimeFrame( TimeSpan.FromTicks( 1L ) ), DataType.TimeFrame( TimeSpan.FromSeconds( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 5.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 10.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 15.0 ) ), DataType.TimeFrame( TimeSpan.FromMinutes( 30.0 ) ), DataType.TimeFrame( TimeSpan.FromHours( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromDays( 1.0 ) ), DataType.TimeFrame( TimeSpan.FromDays( 7.0 ) ), DataType.TimeFrame( TimeSpan.FromTicks( 25920000000000L ) ), DataType.TimeFrame( TimeSpan.FromTicks( 315360000000000L ) ) };
     }
 }

@@ -23,38 +23,38 @@ namespace StockSharp.Studio.Controls
 
         public LogManagerPanel()
         {
-            this.Content = ( object )this._monitor;
-            this._listener = new GuiLogListener( ( ILogListener )this._monitor );
-            BaseStudioControl.LogManager.Listeners.Add( ( ILogListener )this._listener );
-            this._monitor.LayoutChanged += RaiseChangedCommand;
+            Content = _monitor;
+            _listener = new GuiLogListener( _monitor );
+            LogManager.Listeners.Add( _listener );
+            _monitor.LayoutChanged += RaiseChangedCommand;
         }
 
         public bool ShowStrategies
         {
             get
             {
-                return this._monitor.ShowStrategies;
+                return _monitor.ShowStrategies;
             }
             set
             {
-                this._monitor.ShowStrategies = value;
+                _monitor.ShowStrategies = value;
             }
         }
 
         public override void Load( SettingsStorage storage )
         {
-            this._monitor.Load( storage );
+            _monitor.Load( storage );
         }
 
         public override void Save( SettingsStorage storage )
         {
-            this._monitor.Save( storage );
+            _monitor.Save( storage );
         }
 
         public override void Dispose()
         {
-            this._monitor.LayoutChanged -= RaiseChangedCommand;
-            new RemoveLogListenerCommand( ( ILogListener )this._listener ).Process( ( object )this, false );
+            _monitor.LayoutChanged -= RaiseChangedCommand;
+            new RemoveLogListenerCommand( _listener ).Process( this, false );
             base.Dispose();
         }
     }

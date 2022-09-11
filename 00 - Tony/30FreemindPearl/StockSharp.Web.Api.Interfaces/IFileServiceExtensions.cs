@@ -19,7 +19,7 @@ namespace StockSharp.Web.Api.Interfaces
         {
             FileStream body;            
             string fileName = Path.GetFileName( path );
-            body = System.IO.File.OpenRead( path );            
+            body = File.OpenRead( path );            
             var file = new DomainModel.File();
             file.Name = fileName;
 

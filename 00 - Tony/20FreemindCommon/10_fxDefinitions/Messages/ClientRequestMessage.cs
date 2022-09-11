@@ -56,7 +56,7 @@ namespace fx.Definitions
 
         public ClientRequestMessage( string message )
         {
-            this._MessageString = message;            
+            _MessageString = message;            
         }
     }
 
@@ -82,14 +82,14 @@ namespace fx.Definitions
 
         public PerformingWorkMessage( string message )
         {
-            this._MessageString = message;
-            this._periodStarted = TimeSpan.Zero;
+            _MessageString = message;
+            _periodStarted = TimeSpan.Zero;
         }
 
         public PerformingWorkMessage( string message, TimeSpan periodStarted )
         {
-            this._MessageString = message;
-            this._periodStarted = periodStarted;
+            _MessageString = message;
+            _periodStarted = periodStarted;
         }
     }
 
@@ -117,7 +117,7 @@ namespace fx.Definitions
 
         public WorkDoneMessage( string message )
         {
-            this._MessageString = message;
+            _MessageString = message;
             _Percentage = -1;
         }
 
@@ -150,7 +150,7 @@ namespace fx.Definitions
         
         public CritialErrorMessage( string message, TimeSpan period  )
         {
-            this._MessageString = message;
+            _MessageString = message;
 
             _periodStarted = period;
         }        
@@ -184,7 +184,7 @@ namespace fx.Definitions
 
         public HewMessage( ElliottWaveCycle cycle )
         {
-            this._waveCycle = cycle;
+            _waveCycle = cycle;
         }
     }
 
@@ -334,13 +334,13 @@ namespace fx.Definitions
 
         public fxStationMessage( string workProgressMessage, string barInfoMessage )
         {
-            this._workProgressMessage = workProgressMessage;
-            this.BarInfoMessage = barInfoMessage;
+            _workProgressMessage = workProgressMessage;
+            BarInfoMessage = barInfoMessage;
         }
 
         public fxStationMessage( int progress )
         {
-            this._progress = progress;            
+            _progress = progress;            
         }
 
     }
@@ -361,7 +361,7 @@ namespace fx.Definitions
 
         public AccountsInfoReadyMessage( string mainLoginName)
         {
-            this._mainLoginName = mainLoginName;
+            _mainLoginName = mainLoginName;
         }
 
 

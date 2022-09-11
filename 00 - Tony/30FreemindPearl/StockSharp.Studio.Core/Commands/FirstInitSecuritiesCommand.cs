@@ -18,8 +18,8 @@ namespace StockSharp.Studio.Core.Commands
             IEnumerable<Security> securities1 = securities;
             if ( securities1 == null )
                 throw new ArgumentNullException( nameof( securities ) );
-            this.Securities = securities1;
-            if ( this.Securities.IsEmpty<Security>() )
+            Securities = securities1;
+            if ( Securities.IsEmpty() )
                 throw new ArgumentException( nameof( securities ) );
         }
 

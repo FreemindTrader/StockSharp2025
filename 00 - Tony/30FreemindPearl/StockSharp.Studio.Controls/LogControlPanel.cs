@@ -19,24 +19,24 @@ namespace StockSharp.Studio.Controls
 
         public LogControlPanel()
         {
-            this.Content = ( object )this._logControl;
-            this._listener = new GuiLogListener( ( ILogListener )this._logControl );
-            this.WhenLoaded( ( Action )( () => new AddLogListenerCommand( ( ILogListener )this._listener ).SyncProcess( ( object )this ) ) );
+            Content = _logControl;
+            _listener = new GuiLogListener( _logControl );
+            WhenLoaded( () => new AddLogListenerCommand( _listener ).SyncProcess( this ) );
         }
 
         public override void Load( SettingsStorage storage )
         {
-            this._logControl.Load( storage );
+            _logControl.Load( storage );
         }
 
         public override void Save( SettingsStorage storage )
         {
-            this._logControl.Save( storage );
+            _logControl.Save( storage );
         }
 
         public override void Dispose()
         {
-            new RemoveLogListenerCommand( ( ILogListener )this._listener ).Process( ( object )this, false );
+            new RemoveLogListenerCommand( _listener ).Process( this, false );
             base.Dispose();
         }
     }

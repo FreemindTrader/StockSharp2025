@@ -21,10 +21,10 @@ namespace StockSharp.Studio.Core.Commands
           Decimal? commission )
           : base( subscription, portfolio )
         {
-            this.Time = time;
-            this.TotalPnL = totalPnL;
-            this.UnrealizedPnL = unrealizedPnL;
-            this.Commission = commission;
+            Time = time;
+            TotalPnL = totalPnL;
+            UnrealizedPnL = unrealizedPnL;
+            Commission = commission;
         }
 
         public DateTimeOffset Time { get; }

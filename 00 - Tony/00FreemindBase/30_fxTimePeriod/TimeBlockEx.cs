@@ -14,7 +14,7 @@ namespace fx.TimePeriod
         {
             get
             {
-                return this.End - this.Start;
+                return End - Start;
             }
         }
 
@@ -24,25 +24,25 @@ namespace fx.TimePeriod
 		{
 			if ( start <= end )
 			{
-				this.Start = start;
-				this.End = end;
+				Start = start;
+				End = end;
 			}
 			else
 			{
-				this.Start = start;
-				this.End = end;
+				Start = start;
+				End = end;
 			}			
 		}
 
         public TimeBlockEx( DateTime start, TimeSpan period )
         {
-            this.Start = start;
-            this.End = start + period;            
+            Start = start;
+            End = start + period;            
         }
 
         public bool HasInside( DateTime test )
 		{
-			return test >= this.Start && test <= this.End;			
+			return test >= Start && test <= End;			
 		}
 
         public override bool Equals( object obj )

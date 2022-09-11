@@ -295,11 +295,11 @@ namespace fx.Charting
 
             using ( ParentSurface.SuspendUpdates() )
             {
-                if ( XyDirection != SciChart.Charting.XyDirection.YDirection )
+                if ( XyDirection != XyDirection.YDirection )
                 {
                     foreach ( IAxis xax in XAxes )
                     {
-                        if ( fxZoomPanModifier.Includes( xax ) )
+                        if ( Includes( xax ) )
                         {
                             if ( xax.IsHorizontalAxis == XAxis.IsHorizontalAxis )
                             {
@@ -331,7 +331,7 @@ namespace fx.Charting
                         }
                     }
                 }
-                if ( XyDirection == SciChart.Charting.XyDirection.XDirection )
+                if ( XyDirection == XyDirection.XDirection )
                 {
                     if ( !ZoomExtentsY )
                     {
@@ -343,7 +343,7 @@ namespace fx.Charting
                 {
                     foreach ( IAxis yax in YAxes )
                     {
-                        if ( fxZoomPanModifier.Includes( yax ) )
+                        if ( Includes( yax ) )
                         {
                             yax.Scroll( yax.IsHorizontalAxis ? -xDelta : yDelta, ClipMode.None );
                         }
@@ -360,11 +360,11 @@ namespace fx.Charting
 
             using ( ParentSurface.SuspendUpdates() )
             {
-                if ( XyDirection != SciChart.Charting.XyDirection.YDirection )
+                if ( XyDirection != XyDirection.YDirection )
                 {
                     foreach ( IAxis xax in XAxes )
                     {
-                        if ( fxZoomPanModifier.Includes( xax ) )
+                        if ( Includes( xax ) )
                         {
                             if ( xax.IsHorizontalAxis == XAxis.IsHorizontalAxis )
                             {
@@ -394,7 +394,7 @@ namespace fx.Charting
 
                     foreach ( IAxis xax in YAxes )
                     {
-                        if ( fxZoomPanModifier.Includes( xax ) )
+                        if ( Includes( xax ) )
                         {
                             using ( IUpdateSuspender updateSuspender = xax.SuspendUpdates() )
                             {
@@ -412,7 +412,7 @@ namespace fx.Charting
                         }
                     }
                 }
-                if ( XyDirection == SciChart.Charting.XyDirection.XDirection )
+                if ( XyDirection == XyDirection.XDirection )
                 {
                     if ( !ZoomExtentsY )
                     {
@@ -424,7 +424,7 @@ namespace fx.Charting
                 {
                     foreach ( IAxis yax in YAxes )
                     {
-                        if ( fxZoomPanModifier.Includes( yax ) )
+                        if ( Includes( yax ) )
                         {
                             //yax.Scroll( yax.IsHorizontalAxis ? -xDelta : yDelta, ClipMode.None );
                         }

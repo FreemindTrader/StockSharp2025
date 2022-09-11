@@ -11,12 +11,12 @@ namespace StockSharp.Studio.Controls
     {        
         public OptionDeskButton()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         protected override void OnClick()
         {
-            new OpenWindowCommand( Guid.NewGuid().ToString(), typeof( OptionDeskPanel ), false ).Process( ( object )this, false );
+            new OpenWindowCommand( Guid.NewGuid().ToString(), typeof( OptionDeskPanel ), false ).Process( this, false );
             base.OnClick();
         }
 
@@ -44,7 +44,7 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( string )this.ToolTip;
+                return ( string )ToolTip;
             }
             set
             {
@@ -55,7 +55,7 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( Uri )null;
+                return null;
             }
         }
 

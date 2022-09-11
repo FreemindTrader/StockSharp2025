@@ -15,8 +15,8 @@ namespace fx.Charting.Xaml
         public static IDisposable AddPropertyListener( this DependencyObject sourceObject, DependencyProperty property, Action<DependencyPropertyChangedEventArgs> onChanged )
         {
             DependencyObjectEx doEx = new DependencyObjectEx( sourceObject, property, onChanged );
-            DoHelper._myList.Add( ( IDisposable )doEx );
-            return ( IDisposable )doEx;
+            _myList.Add( doEx );
+            return doEx;
         }
     }
 
@@ -28,17 +28,17 @@ namespace fx.Charting.Xaml
 
         public DependencyObjectEx( DependencyObject d, DependencyProperty p, Action<DependencyPropertyChangedEventArgs> myEvent )
         {
-            this.SetBindings( DependencyObjectEx.FreemindProperties, d, new PropertyPath( p ), BindingMode.OneWay, null, null );
-            this.myEventArgs = myEvent;
+            this.SetBindings( FreemindProperties, d, new PropertyPath( p ), BindingMode.OneWay, null, null );
+            myEventArgs = myEvent;
         }
 
 
         void IDisposable.Dispose()
         {
-            if ( this._disposing )
+            if ( _disposing )
                 return;
-            this._disposing = true;
-            BindingOperations.ClearBinding( this, DependencyObjectEx.FreemindProperties );
+            _disposing = true;
+            BindingOperations.ClearBinding( this, FreemindProperties );
         }
 
         private static void Invoke( DependencyObject d, DependencyPropertyChangedEventArgs _param1 )

@@ -96,7 +96,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Ema( Bars, 0, indexCount - 1, ema, out outBeginIdx, out outNBElement, emaLength );
+            Core.Ema( Bars, 0, indexCount - 1, ema, out outBeginIdx, out outNBElement, emaLength );
 
             lock ( IndicatorResult )
             {
@@ -115,7 +115,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Ema( Bars, 0, indexCount - 1, ema, out outBeginIdx, out outNBElement, emaLength );
+            Core.Ema( Bars, 0, indexCount - 1, ema, out outBeginIdx, out outNBElement, emaLength );
             
 
             if ( outNBElement > 1 )
@@ -160,7 +160,7 @@ namespace fx.Indicators
 
             var ema          = new double [ indexCount ];
 
-            fx.TALib.Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
+            Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
             
 
             lock ( IndicatorResult )
@@ -186,7 +186,7 @@ namespace fx.Indicators
 
             var ema          = new double [ indexCount ];
 
-            fx.TALib.Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
+            Core.Ema( Bars, startIndex, endIndex, ema, out outBeginIdx, out outNBElement, emaLength );
 
             if ( outNBElement > 0 )
             {

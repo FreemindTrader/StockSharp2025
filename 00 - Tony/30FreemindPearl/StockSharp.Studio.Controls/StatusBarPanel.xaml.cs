@@ -42,7 +42,7 @@ namespace StockSharp.Studio.Controls
         public static readonly RoutedCommand CopyToBufferCommand = new RoutedCommand();
         public static readonly RoutedCommand LogDirectoryCommand = new RoutedCommand();
         public static readonly DependencyProperty StatusProperty = DependencyProperty.Register( nameof( Status ), typeof( string ), typeof( StatusBarPanel ) );
-        public static readonly DependencyProperty LastLogInfoProperty = DependencyProperty.Register( nameof( LastLogInfo ), typeof( StatusBarPanel.LogInfo ), typeof( StatusBarPanel ), new PropertyMetadata( ( object )new StatusBarPanel.LogInfo() ) );
+        public static readonly DependencyProperty LastLogInfoProperty = DependencyProperty.Register( nameof( LastLogInfo ), typeof( LogInfo ), typeof( StatusBarPanel ), new PropertyMetadata( new LogInfo() ) );
         private readonly SubscriptionManager _subscriptionManager;
         private int _uniqueBugReports;
         private const int _maxUniqueBugReports = 10;
@@ -51,58 +51,58 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return ( string )this.GetValue( StatusBarPanel.StatusProperty );
+                return ( string )GetValue( StatusProperty );
             }
             set
             {
-                this.SetValue( StatusBarPanel.StatusProperty, ( object )value );
+                SetValue( StatusProperty, value );
             }
         }
 
-        public StatusBarPanel.LogInfo LastLogInfo
+        public LogInfo LastLogInfo
         {
             get
             {
-                return ( StatusBarPanel.LogInfo )this.GetValue( StatusBarPanel.LastLogInfoProperty );
+                return ( LogInfo )GetValue( LastLogInfoProperty );
             }
             set
             {
-                this.SetValue( StatusBarPanel.LastLogInfoProperty, ( object )value );
+                SetValue( LastLogInfoProperty, value );
             }
         }
 
         public StatusBarPanel()
         {
-            this.InitializeComponent();
-            this._subscriptionManager = new SubscriptionManager( ( IStudioControl )this );
+            InitializeComponent();
+            _subscriptionManager = new SubscriptionManager( this );
             if ( this.IsDesignMode() )
                 return;
-            BaseStudioControl.CommandService.Register<EntityCommand<News>>( ( object )this, true, ( Action<EntityCommand<News>> )( cmd => this.AdvertisePanel.AddNews( cmd.Entities.Where<News>( ( Func<News, bool> )( n => n.IsStockSharp() ) ) ) ), ( Func<EntityCommand<News>, bool> )null );
-            this.WhenLoaded( ( Action )( () => this._subscriptionManager.CreateSubscription( DataType.News, ( Action<StockSharp.Algo.Subscription> )null ) ) );
+            CommandService.Register<EntityCommand<News>>( this, true, cmd => AdvertisePanel.AddNews( cmd.Entities.Where( n => n.IsStockSharp() ) ), null );
+            WhenLoaded( () => _subscriptionManager.CreateSubscription( DataType.News, null ) );
         }
 
         public override void Dispose( CloseReason reason )
         {
-            BaseStudioControl.CommandService.UnRegister<EntityCommand<News>>( ( object )this );
-            this._subscriptionManager.Dispose();
+            CommandService.UnRegister<EntityCommand<News>>( this );
+            _subscriptionManager.Dispose();
             base.Dispose( reason );
         }
 
         public void ResetLogsImages()
         {
-            this.LastLogInfo.LastWarnVisible = Visibility.Collapsed;
-            this.LastLogInfo.LastErrorVisible = Visibility.Collapsed;
-            this.LastLogInfo.LastLogMessage = string.Empty;
+            LastLogInfo.LastWarnVisible = Visibility.Collapsed;
+            LastLogInfo.LastErrorVisible = Visibility.Collapsed;
+            LastLogInfo.LastLogMessage = string.Empty;
         }
 
         private void CopyToBufferCommand_CanExecute( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = !this.LastLogInfo.LastLogMessage.IsEmpty();
+            e.CanExecute = !LastLogInfo.LastLogMessage.IsEmpty();
         }
 
         private void CopyToBufferCommand_OnExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-            this.LastLogInfo.LastLogMessage.CopyToClipboard<string>();
+            LastLogInfo.LastLogMessage.CopyToClipboard();
         }
 
         private void LogDirectoryCommand_CanExecute( object sender, CanExecuteRoutedEventArgs e )
@@ -112,11 +112,11 @@ namespace StockSharp.Studio.Controls
 
         private void LogDirectoryCommand_OnExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-            this.ResetLogsImages();
+            ResetLogsImages();
             string logsDir = BaseUserConfig<StudioUserConfig>.Instance.LogConfig.LogsDir;
             if ( !Directory.Exists( logsDir ) )
                 return;
-            logsDir.TryOpenLink( ( DependencyObject )this );
+            logsDir.TryOpenLink( this );
         }
 
         void ILogListener.WriteMessages( IEnumerable<LogMessage> messages )
@@ -126,7 +126,7 @@ namespace StockSharp.Studio.Controls
                 LogMessage message = message1;
                 if ( ( message.Level == LogLevels.Warning || message.Level == LogLevels.Error ) && ( !( message.Source is HistoryEmulationConnector ) && !( message.Source is HistoryMessageAdapter ) ) && ( !( message.Source is EmulationMessageAdapter ) && !( message.Source is MarketEmulator ) ) )
                 {
-                    if ( message.Level == LogLevels.Error && this._uniqueBugReports < 10 )
+                    if ( message.Level == LogLevels.Error && _uniqueBugReports < 10 )
                     {
                         Client profile = Extensions.Profile;
                         int num;
@@ -145,7 +145,7 @@ namespace StockSharp.Studio.Controls
                             try
                             {
                                 IProductBugReportService reportSvc = CommunityServicesRegistry.GetService<IProductBugReportService>();
-                                ProductBugReport bugReport = AsyncContext.Run<ProductBugReport>( ( Func<Task<ProductBugReport>> )( () =>
+                                ProductBugReport bugReport = AsyncContext.Run( () =>
                                    {
                                        IProductBugReportService bugReportService = reportSvc;
                                        ProductBugReport entity = new ProductBugReport();
@@ -155,17 +155,17 @@ namespace StockSharp.Studio.Controls
                                        };
                                        entity.Version = Paths.InstalledVersion;
                                        entity.SystemInfo = Extensions.GetSystemInfo();
-                                       entity.Message = new StockSharp.Web.DomainModel.Message()
+                                       entity.Message = new Web.DomainModel.Message()
                                        {
                                            Body = message.Message
                                        };
                                        CancellationToken cancellationToken = new CancellationToken();
                                        return bugReportService.TryProposeAsync( entity, cancellationToken );
-                                   } ) );
+                                   } );
                                 if ( bugReport != null )
                                 {
-                                    ++this._uniqueBugReports;
-                                    string zip = Extensions.PrepareLogsFile( TimeSpan.FromDays( 1.0 ), ( Action<Exception> )( ex => { } ) );
+                                    ++_uniqueBugReports;
+                                    string zip = Extensions.PrepareLogsFile( TimeSpan.FromDays( 1.0 ), ex => { } );
                                     try
                                     {
                                         using ( FileStream body = System.IO.File.OpenRead( zip ) )
@@ -201,20 +201,20 @@ namespace StockSharp.Studio.Controls
                             }
                         }
                     }
-                    GuiDispatcher.GlobalDispatcher.AddAction( ( Action )( () =>
+                    GuiDispatcher.GlobalDispatcher.AddAction( () =>
                        {
-                           this.LastLogInfo.LastLogMessage = string.Format( "{0:HH:mm:ss}  {1}", ( object )message.Time, ( object )message.Message );
+                           LastLogInfo.LastLogMessage = string.Format( "{0:HH:mm:ss}  {1}", message.Time, message.Message );
                            if ( message.Level == LogLevels.Warning )
                            {
-                               this.LastLogInfo.LastWarnVisible = Visibility.Visible;
-                               this.LastLogInfo.LastErrorVisible = Visibility.Collapsed;
+                               LastLogInfo.LastWarnVisible = Visibility.Visible;
+                               LastLogInfo.LastErrorVisible = Visibility.Collapsed;
                            }
                            else
                            {
-                               this.LastLogInfo.LastWarnVisible = Visibility.Collapsed;
-                               this.LastLogInfo.LastErrorVisible = Visibility.Visible;
+                               LastLogInfo.LastWarnVisible = Visibility.Collapsed;
+                               LastLogInfo.LastErrorVisible = Visibility.Visible;
                            }
-                       } ) );
+                       } );
                 }
             }
         }
@@ -243,14 +243,14 @@ namespace StockSharp.Studio.Controls
             {
                 get
                 {
-                    return this._lastErrorVisible;
+                    return _lastErrorVisible;
                 }
                 set
                 {
-                    if ( this._lastErrorVisible == value )
+                    if ( _lastErrorVisible == value )
                         return;
-                    this._lastErrorVisible = value;
-                    this.NotifyChanged( nameof( LastErrorVisible ) );
+                    _lastErrorVisible = value;
+                    NotifyChanged( nameof( LastErrorVisible ) );
                 }
             }
 
@@ -258,14 +258,14 @@ namespace StockSharp.Studio.Controls
             {
                 get
                 {
-                    return this._lastWarnVisible;
+                    return _lastWarnVisible;
                 }
                 set
                 {
-                    if ( this._lastWarnVisible == value )
+                    if ( _lastWarnVisible == value )
                         return;
-                    this._lastWarnVisible = value;
-                    this.NotifyChanged( nameof( LastWarnVisible ) );
+                    _lastWarnVisible = value;
+                    NotifyChanged( nameof( LastWarnVisible ) );
                 }
             }
 
@@ -273,14 +273,14 @@ namespace StockSharp.Studio.Controls
             {
                 get
                 {
-                    return this._lastLogMessage;
+                    return _lastLogMessage;
                 }
                 set
                 {
-                    if ( this._lastLogMessage == value )
+                    if ( _lastLogMessage == value )
                         return;
-                    this._lastLogMessage = value;
-                    this.NotifyChanged( nameof( LastLogMessage ) );
+                    _lastLogMessage = value;
+                    NotifyChanged( nameof( LastLogMessage ) );
                 }
             }
         }

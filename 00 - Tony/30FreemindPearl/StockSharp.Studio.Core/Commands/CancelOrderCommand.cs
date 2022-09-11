@@ -18,7 +18,7 @@ namespace StockSharp.Studio.Core.Commands
             Order order1 = order;
             if ( order1 == null )
                 throw new ArgumentNullException( nameof( order ) );
-            this.Order = order1;
+            Order = order1;
         }
     }
 }

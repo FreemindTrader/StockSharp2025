@@ -696,7 +696,7 @@ namespace fx.Algorithm
                 return true;
             }
 
-            if( obj.GetType( ) != this.GetType( ) )
+            if( obj.GetType( ) != GetType( ) )
             {
                 return false;
             }
@@ -1036,12 +1036,12 @@ namespace fx.Algorithm
             currency1 = string.Empty;
             currency2 = string.Empty;
 
-            if( string.IsNullOrEmpty( this.SymbolString ) )
+            if( string.IsNullOrEmpty( SymbolString ) )
             {
                 return false;
             }
 
-            string name = this.SymbolString.ToUpper( );
+            string name = SymbolString.ToUpper( );
             string[ ] currencyNames = Enum.GetNames( typeof( Currency ) );
 
             foreach( string currencyName in currencyNames )

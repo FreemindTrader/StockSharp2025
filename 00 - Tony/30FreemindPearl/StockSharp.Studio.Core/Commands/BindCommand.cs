@@ -22,14 +22,14 @@ namespace StockSharp.Studio.Core.Commands
             Strategy strategy = source;
             if ( strategy == null )
                 throw new ArgumentNullException( nameof( source ) );
-            this.Source = strategy;
-            this.Control = control;
+            Source = strategy;
+            Control = control;
         }
 
         public bool CheckControl( IStudioControl control )
         {
-            if ( this.Control != null )
-                return this.Control == control;
+            if ( Control != null )
+                return Control == control;
             return true;
         }
     }

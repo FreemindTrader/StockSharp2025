@@ -141,7 +141,7 @@ namespace fx.Indicators
         }
 
         /// <summary>
-        /// <see cref="System.IComparable.CompareTo(object)"/>
+        /// <see cref="IComparable.CompareTo(object)"/>
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
@@ -154,14 +154,14 @@ namespace fx.Indicators
 
             if (obj is Range<T> r)
             {
-                return this.CompareTo(r);
+                return CompareTo(r);
             }
 
             throw new ArgumentException("Comparand must be of type Range<T>");
         }
 
         /// <summary>
-        /// <see cref="System.IComparable{T}.CompareTo(T)"/>
+        /// <see cref="IComparable{T}.CompareTo(T)"/>
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>

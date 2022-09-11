@@ -37,8 +37,8 @@ namespace fx.Indicators
         public override PlatformIndicator OnSimpleClone( )
         {
             var result          = new FreemindVolume();
-            result._description = this._description;
-            result._name        = this._name;
+            result._description = _description;
+            result._name        = _name;
 
             return result;
         }
@@ -128,7 +128,7 @@ namespace fx.Indicators
             {
                 lock ( this )
                 {
-                    _lookbackCount = fx.TALib.Core.RsiLookback( 14 );
+                    _lookbackCount = TALib.Core.RsiLookback( 14 );
                 }
             }
         }

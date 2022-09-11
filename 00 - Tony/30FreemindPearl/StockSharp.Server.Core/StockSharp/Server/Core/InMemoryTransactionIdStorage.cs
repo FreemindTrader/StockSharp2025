@@ -74,9 +74,9 @@ namespace StockSharp.Server.Core
                 {
                     Monitor.Enter( syncRoot, ref flag );
                     if ( _longStringPairSet.ContainsKey( _param2 ) )
-                        throw new ArgumentException( LocalizedStrings.Str415Params.Put( ( object )_param2 ) );
+                        throw new ArgumentException( LocalizedStrings.Str415Params.Put( _param2 ) );
                     if ( _longStringPairSet.ContainsValue( _param1 ) )
-                        throw new ArgumentException( LocalizedStrings.Str415Params.Put( ( object )_param1 ) );
+                        throw new ArgumentException( LocalizedStrings.Str415Params.Put( _param1 ) );
                     _longStringPairSet.Add( _param2, _param1 );
                 }
                 finally

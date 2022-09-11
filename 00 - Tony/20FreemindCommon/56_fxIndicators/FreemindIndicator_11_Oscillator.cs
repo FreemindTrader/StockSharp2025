@@ -88,7 +88,7 @@ namespace fx.Indicators
             double[] valueD = new double[indexCount];
 
 
-            fx.TALib.Core.Stoch( Bars, startIndex, endIndex, valueK, valueD, out outBeginIdx, out outNBElement, Core.MAType.Sma, Core.MAType.Sma, 14, 5, 5 );
+            Core.Stoch( Bars, startIndex, endIndex, valueK, valueD, out outBeginIdx, out outNBElement, Core.MAType.Sma, Core.MAType.Sma, 14, 5, 5 );
 
             IndicatorResult.AddSetValues( "K", outBeginIdx, outNBElement, true, valueK );
             IndicatorResult.AddSetValues( "D", outBeginIdx, outNBElement, true, valueD );
@@ -124,7 +124,7 @@ namespace fx.Indicators
             double[] valueD = new double[indexCount];
 
 
-            fx.TALib.Core.Stoch( Bars, startIndex, endIndex, valueK, valueD, out outBeginIdx, out outNBElement, Core.MAType.Sma, Core.MAType.Sma, 14, 5, 5 );
+            Core.Stoch( Bars, startIndex, endIndex, valueK, valueD, out outBeginIdx, out outNBElement, Core.MAType.Sma, Core.MAType.Sma, 14, 5, 5 );
 
             IndicatorResult.AddSetValues( "K", outBeginIdx, outNBElement, true, valueK );
             IndicatorResult.AddSetValues( "D", outBeginIdx, outNBElement, true, valueD );

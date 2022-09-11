@@ -72,6 +72,16 @@ namespace FreemindAITrade.ViewModels
 
         void AnalyzeWaveTarget();
 
+        void ClassicWave3Target( );
+
+        void ExtendedWave3Target( );
+
+        void SuperExtendedWave3Target( );
+
+        void WaveCTarget( );
+
+        void Wave4Target( );
+
         void LockWavesInDB();
 
         void SwitchToTimeFrameX( TimeSpan reponsible );

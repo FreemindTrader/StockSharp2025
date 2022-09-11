@@ -49,59 +49,59 @@ namespace fx.Charting
             switch ( symbol )
             {
                 case TASignalSymbol.GannImportance:
-                xaml = FreemindTaXaml.GetGannImportance( width, colorInt );
+                xaml = GetGannImportance( width, colorInt );
                 break;
 
                 case TASignalSymbol.WaveImportance:
-                xaml = FreemindTaXaml.GetWaveImportance( width, colorInt );
+                xaml = GetWaveImportance( width, colorInt );
                 break;
 
                 case TASignalSymbol.PositiveDivergence:
-                xaml = FreemindTaXaml.GetPositiveDivergence( width, colorInt );
+                xaml = GetPositiveDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.ImportantPositive:
-                xaml = FreemindTaXaml.GetImportantPositiveDivergence( width, colorInt, colorInt );
+                xaml = GetImportantPositiveDivergence( width, colorInt, colorInt );
                 break;
 
                 case TASignalSymbol.ImportantHiddenPosDiv:
-                xaml = FreemindTaXaml.GetImptHiddenPositiveDivergence( width, colorInt );
+                xaml = GetImptHiddenPositiveDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.HiddenPosDiv:
-                xaml = FreemindTaXaml.GetHiddenPositiveDivergence( width, colorInt );
+                xaml = GetHiddenPositiveDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.NegativeDivergence:
-                xaml = FreemindTaXaml.GetNegativeDivergence( width, colorInt );
+                xaml = GetNegativeDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.ImportantNegative:
-                xaml = FreemindTaXaml.GetImportantNegativeDivergence( width, colorInt, colorInt );
+                xaml = GetImportantNegativeDivergence( width, colorInt, colorInt );
                 break;
 
                 case TASignalSymbol.ImportantHiddenNegDiv:
-                xaml = FreemindTaXaml.GetImptHiddenNegativeDivergence( width, colorInt );
+                xaml = GetImptHiddenNegativeDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.HiddenNegDiv:
-                xaml = FreemindTaXaml.GetHiddenNegativeDivergence( width, colorInt );
+                xaml = GetHiddenNegativeDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.WaveRotation_HHLL:
-                xaml = FreemindTaXaml.GetHighHighF( width, colorInt );
+                xaml = GetHighHighF( width, colorInt );
                 break;
 
                 case TASignalSymbol.WaveRotation_HLLH:
-                xaml = FreemindTaXaml.GetHighLowF( width, colorInt );
+                xaml = GetHighLowF( width, colorInt );
                 break;
 
                 case TASignalSymbol.WaveRotation_Correction:
-                xaml = FreemindTaXaml.GetCorrection( width, colorInt );
+                xaml = GetCorrection( width, colorInt );
                 break;
 
                 case TASignalSymbol.WaveRotation_BarCount:
-                xaml = FreemindTaXaml.GetBarSum( width, colorInt );
+                xaml = GetBarSum( width, colorInt );
                 break;                
             }
 
@@ -165,11 +165,11 @@ namespace fx.Charting
 
             if ( topSignal == TAToppingSignal.MACD_CROSS_DOWN )
             {
-                pointMarker = FreemindTaXaml.GetSellPointMarker( ptSize );
+                pointMarker = GetSellPointMarker( ptSize );
             }
             else if ( topSignal == TAToppingSignal.ExitOverBought )
             {
-                pointMarker = FreemindTaXaml.GetExitOverboughPointMarker( ptSize );
+                pointMarker = GetExitOverboughPointMarker( ptSize );
             }
             else if ( topSignal == TAToppingSignal.OscillatorCrossDown )
             {
@@ -202,11 +202,11 @@ namespace fx.Charting
 
             if ( bottomSignal == TABottomingSignal.MACD_CROSS_UP )
             {
-                pointMarker = FreemindTaXaml.GetBuyPointMarker( ptSize );
+                pointMarker = GetBuyPointMarker( ptSize );
             }            
             else if ( bottomSignal == TABottomingSignal.ExitOverSold )
             {
-                pointMarker = FreemindTaXaml.GetExitOverSoldPointMarker( ptSize );
+                pointMarker = GetExitOverSoldPointMarker( ptSize );
             }
                         
 
@@ -530,40 +530,40 @@ namespace fx.Charting
             switch ( symbol )
             {
                 case TASignalSymbol.WaveImportance:
-                xaml = FreemindTaXaml.GetWaveImportance( width, colorInt );
+                xaml = GetWaveImportance( width, colorInt );
                 break;
 
                 case TASignalSymbol.PositiveDivergence:
-                xaml = FreemindTaXaml.GetPositiveDivergence( width, colorInt );
+                xaml = GetPositiveDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.ImportantPositive:
-                xaml = FreemindTaXaml.GetImportantPositiveDivergence( width, colorInt, colorInt2 );
+                xaml = GetImportantPositiveDivergence( width, colorInt, colorInt2 );
                 break;
 
                 case TASignalSymbol.ImportantHiddenPosDiv:
-                xaml = FreemindTaXaml.GetImptHiddenPositiveDivergence( width, colorInt );
+                xaml = GetImptHiddenPositiveDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.HiddenPosDiv:
-                xaml = FreemindTaXaml.GetHiddenPositiveDivergence( width, colorInt );
+                xaml = GetHiddenPositiveDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.NegativeDivergence:
-                xaml = FreemindTaXaml.GetNegativeDivergence( width, colorInt );
+                xaml = GetNegativeDivergence( width, colorInt );
                 break;
 
                 
                 case TASignalSymbol.ImportantNegative:
-                xaml = FreemindTaXaml.GetImportantNegativeDivergence( width, colorInt, colorInt2 );
+                xaml = GetImportantNegativeDivergence( width, colorInt, colorInt2 );
                 break;
 
                 case TASignalSymbol.ImportantHiddenNegDiv:
-                xaml = FreemindTaXaml.GetImptHiddenNegativeDivergence( width, colorInt );
+                xaml = GetImptHiddenNegativeDivergence( width, colorInt );
                 break;
 
                 case TASignalSymbol.HiddenNegDiv:
-                xaml = FreemindTaXaml.GetHiddenNegativeDivergence( width, colorInt );
+                xaml = GetHiddenNegativeDivergence( width, colorInt );
                 break;
             }
 

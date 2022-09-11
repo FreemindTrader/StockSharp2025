@@ -13,9 +13,9 @@ namespace StockSharp.Studio.Core.Commands
     {
         public InitializeStrategyCommand( Strategy strategy, DateTime from, DateTime to )
         {
-            this.Strategy = strategy;
-            this.FromDate = from;
-            this.ToDate = to;
+            Strategy = strategy;
+            FromDate = from;
+            ToDate = to;
         }
 
         public Strategy Strategy { get; }

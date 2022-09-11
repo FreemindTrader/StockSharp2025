@@ -10,7 +10,7 @@ namespace fx.Base
 	/// <summary>
 	/// Candle states.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract]
+	[DataContract]
 	[Serializable]
 	public enum fxBatchStatus : byte
 	{

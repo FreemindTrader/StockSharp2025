@@ -25,14 +25,14 @@ namespace StockSharp.Hydra.Core
     /// </summary>
     [Obsolete]
     public readonly CachedSynchronizedSet<DataType> DataTypesSet = new CachedSynchronizedSet<DataType>();
-    private HydraTaskSecurity.TypeInfo _tradeInfo = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _depthInfo = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _orderLogInfo = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _level1Info = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _candleInfo = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _transactionInfo = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _positionChangeInfo = new HydraTaskSecurity.TypeInfo();
-    private HydraTaskSecurity.TypeInfo _newsInfo = new HydraTaskSecurity.TypeInfo();
+    private TypeInfo _tradeInfo = new TypeInfo();
+    private TypeInfo _depthInfo = new TypeInfo();
+    private TypeInfo _orderLogInfo = new TypeInfo();
+    private TypeInfo _level1Info = new TypeInfo();
+    private TypeInfo _candleInfo = new TypeInfo();
+    private TypeInfo _transactionInfo = new TypeInfo();
+    private TypeInfo _positionChangeInfo = new TypeInfo();
+    private TypeInfo _newsInfo = new TypeInfo();
 
     /// <summary>Уникальный идентификатор инструмента.</summary>
     [Obsolete]
@@ -52,16 +52,16 @@ namespace StockSharp.Hydra.Core
     {
       get
       {
-        return this.DataTypesSet.Cache;
+        return DataTypesSet.Cache;
       }
       set
       {
         if (value == null)
           throw new ArgumentNullException(nameof (value));
-        if (((IEnumerable<DataType>) value).Any<DataType>((Func<DataType, bool>) (t => t.MessageType == (Type) null)))
+        if ( value.Any( t => t.MessageType == null ) )
           throw new ArgumentException(nameof (value));
-        this.DataTypesSet.Clear();
-        this.DataTypesSet.AddRange((IEnumerable<DataType>) value);
+        DataTypesSet.Clear();
+        DataTypesSet.AddRange( value );
       }
     }
 
@@ -80,149 +80,149 @@ namespace StockSharp.Hydra.Core
 
     /// <summary>Информация о сделках.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo TradeInfo
+    public TypeInfo TradeInfo
     {
       get
       {
-        return this._tradeInfo;
+        return _tradeInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._tradeInfo = typeInfo;
+        _tradeInfo = typeInfo;
       }
     }
 
     /// <summary>Информация о стаканах.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo DepthInfo
+    public TypeInfo DepthInfo
     {
       get
       {
-        return this._depthInfo;
+        return _depthInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._depthInfo = typeInfo;
+        _depthInfo = typeInfo;
       }
     }
 
     /// <summary>Информация о логе заявок.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo OrderLogInfo
+    public TypeInfo OrderLogInfo
     {
       get
       {
-        return this._orderLogInfo;
+        return _orderLogInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._orderLogInfo = typeInfo;
+        _orderLogInfo = typeInfo;
       }
     }
 
     /// <summary>Информация о Level1.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo Level1Info
+    public TypeInfo Level1Info
     {
       get
       {
-        return this._level1Info;
+        return _level1Info;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._level1Info = typeInfo;
+        _level1Info = typeInfo;
       }
     }
 
     /// <summary>Информация о свечах.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo CandleInfo
+    public TypeInfo CandleInfo
     {
       get
       {
-        return this._candleInfo;
+        return _candleInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._candleInfo = typeInfo;
+        _candleInfo = typeInfo;
       }
     }
 
     /// <summary>Информация о логе собственных транзакций.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo TransactionInfo
+    public TypeInfo TransactionInfo
     {
       get
       {
-        return this._transactionInfo;
+        return _transactionInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._transactionInfo = typeInfo;
+        _transactionInfo = typeInfo;
       }
     }
 
     /// <summary>Информация об изменениях позиций.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo PositionChangeInfo
+    public TypeInfo PositionChangeInfo
     {
       get
       {
-        return this._positionChangeInfo;
+        return _positionChangeInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._positionChangeInfo = typeInfo;
+        _positionChangeInfo = typeInfo;
       }
     }
 
     /// <summary>Информация о новостях.</summary>
     [Obsolete]
-    public HydraTaskSecurity.TypeInfo NewsInfo
+    public TypeInfo NewsInfo
     {
       get
       {
-        return this._newsInfo;
+        return _newsInfo;
       }
       set
       {
-        HydraTaskSecurity.TypeInfo typeInfo = value;
+                TypeInfo typeInfo = value;
         if (typeInfo == null)
           throw new ArgumentNullException(nameof (value));
-        this._newsInfo = typeInfo;
+        _newsInfo = typeInfo;
       }
     }
 
     /// <summary>Информация по типу данных.</summary>
-    public SynchronizedDictionary<DataType, HydraTaskSecurity.DateTypeInfo> InfoDict { get; set; } = new SynchronizedDictionary<DataType, HydraTaskSecurity.DateTypeInfo>();
+    public SynchronizedDictionary<DataType, DateTypeInfo> InfoDict { get; set; } = new SynchronizedDictionary<DataType, DateTypeInfo>();
 
     /// <summary>
     /// </summary>
     public bool Enabled(DataType dataType)
     {
-      HydraTaskSecurity.DateTypeInfo dateTypeInfo;
-      if (this.InfoDict.TryGetValue(dataType, out dateTypeInfo))
+            DateTypeInfo dateTypeInfo;
+      if (InfoDict.TryGetValue(dataType, out dateTypeInfo))
         return !dateTypeInfo.Disabled;
       return false;
     }
@@ -231,14 +231,14 @@ namespace StockSharp.Hydra.Core
     /// </summary>
     public IEnumerable<DataType> GetDataTypes()
     {
-      return (IEnumerable<DataType>) this.InfoDict.SyncGet<SynchronizedDictionary<DataType, HydraTaskSecurity.DateTypeInfo>, DataType[]>((Func<SynchronizedDictionary<DataType, HydraTaskSecurity.DateTypeInfo>, DataType[]>) (d => d.Where<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>>((Func<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>, bool>) (p => !p.Value.Disabled)).Select<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>, DataType>((Func<KeyValuePair<DataType, HydraTaskSecurity.DateTypeInfo>, DataType>) (p => p.Key)).ToArray<DataType>()));
+      return InfoDict.SyncGet( d => d.Where( p => !p.Value.Disabled ).Select( p => p.Key ).ToArray() );
     }
 
     /// <summary>
     /// </summary>
-    public HydraTaskSecurity.DateTypeInfo AddDataType(DataType dataType)
+    public DateTypeInfo AddDataType(DataType dataType)
     {
-      HydraTaskSecurity.DateTypeInfo dateTypeInfo = this.InfoDict.SafeAdd<DataType, HydraTaskSecurity.DateTypeInfo>(dataType);
+            DateTypeInfo dateTypeInfo = InfoDict.SafeAdd( dataType);
       dateTypeInfo.Disabled = false;
       return dateTypeInfo;
     }
@@ -247,8 +247,8 @@ namespace StockSharp.Hydra.Core
     /// </summary>
     public void RemoveDataType(DataType dataType)
     {
-      HydraTaskSecurity.DateTypeInfo dateTypeInfo;
-      if (!this.InfoDict.TryGetValue(dataType, out dateTypeInfo))
+            DateTypeInfo dateTypeInfo;
+      if (!InfoDict.TryGetValue(dataType, out dateTypeInfo))
         return;
       dateTypeInfo.Disabled = true;
     }
@@ -257,7 +257,7 @@ namespace StockSharp.Hydra.Core
     /// <returns>Строковое представление.</returns>
     public override string ToString()
     {
-      return this.Security?.Id;
+      return Security?.Id;
     }
 
     /// <summary>Информация по типу данных.</summary>
@@ -277,12 +277,12 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._count;
+          return _count;
         }
         set
         {
-          this._count = value;
-          this.NotifyPropertyChanged(nameof (Count));
+          _count = value;
+          NotifyPropertyChanged(nameof (Count));
         }
       }
 
@@ -292,19 +292,19 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._lastTime;
+          return _lastTime;
         }
         set
         {
-          this._lastTime = value;
-          this.NotifyPropertyChanged(nameof (LastTime));
+          _lastTime = value;
+          NotifyPropertyChanged(nameof (LastTime));
         }
       }
     }
 
     /// <summary>Информация по типу данных.</summary>
-    public class DateTypeInfo : HydraTaskSecurity.TypeInfo
-    {
+    public class DateTypeInfo : TypeInfo
+        {
       private DateTime? _beginDate;
       private DateTime? _endDate;
       private Level1Fields? _candlesBuildFrom;
@@ -317,12 +317,12 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._beginDate;
+          return _beginDate;
         }
         set
         {
-          this._beginDate = value;
-          this.NotifyChanged(nameof (BeginDate));
+          _beginDate = value;
+          NotifyChanged(nameof (BeginDate));
         }
       }
 
@@ -332,12 +332,12 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._endDate;
+          return _endDate;
         }
         set
         {
-          this._endDate = value;
-          this.NotifyChanged(nameof (EndDate));
+          _endDate = value;
+          NotifyChanged(nameof (EndDate));
         }
       }
 
@@ -347,12 +347,12 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._candlesBuildFrom;
+          return _candlesBuildFrom;
         }
         set
         {
-          this._candlesBuildFrom = value;
-          this.NotifyChanged(nameof (CandlesBuildFrom));
+          _candlesBuildFrom = value;
+          NotifyChanged(nameof (CandlesBuildFrom));
         }
       }
 
@@ -362,12 +362,12 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._maxDepth;
+          return _maxDepth;
         }
         set
         {
-          this._maxDepth = value;
-          this.NotifyChanged(nameof (MaxDepth));
+          _maxDepth = value;
+          NotifyChanged(nameof (MaxDepth));
         }
       }
 
@@ -377,27 +377,27 @@ namespace StockSharp.Hydra.Core
       {
         get
         {
-          return this._volumeProfile;
+          return _volumeProfile;
         }
         set
         {
-          this._volumeProfile = value;
-          this.NotifyChanged(nameof (VolumeProfile));
+          _volumeProfile = value;
+          NotifyChanged(nameof (VolumeProfile));
         }
       }
 
       /// <summary>
       /// </summary>
-      public HydraTaskSecurity.DateTypeInfo Clone()
+      public DateTypeInfo Clone()
       {
-        HydraTaskSecurity.DateTypeInfo dateTypeInfo = new HydraTaskSecurity.DateTypeInfo();
-        dateTypeInfo.BeginDate = this.BeginDate;
-        dateTypeInfo.EndDate = this.EndDate;
-        dateTypeInfo.CandlesBuildFrom = this.CandlesBuildFrom;
-        dateTypeInfo.MaxDepth = this.MaxDepth;
-        dateTypeInfo.Count = this.Count;
-        dateTypeInfo.LastTime = this.LastTime;
-        dateTypeInfo.VolumeProfile = this.VolumeProfile;
+                DateTypeInfo dateTypeInfo = new DateTypeInfo();
+        dateTypeInfo.BeginDate = BeginDate;
+        dateTypeInfo.EndDate = EndDate;
+        dateTypeInfo.CandlesBuildFrom = CandlesBuildFrom;
+        dateTypeInfo.MaxDepth = MaxDepth;
+        dateTypeInfo.Count = Count;
+        dateTypeInfo.LastTime = LastTime;
+        dateTypeInfo.VolumeProfile = VolumeProfile;
         return dateTypeInfo;
       }
     }

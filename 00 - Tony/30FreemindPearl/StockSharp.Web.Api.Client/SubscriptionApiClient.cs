@@ -37,7 +37,7 @@ namespace StockSharp.Web.Api.Client
           bool? checkCanSend,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Subscription>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)unionOrJoin, (object)clientId, (object)topicId, (object)includeTags, (object)topicType, (object)tagId, (object)author, (object)domainId, (object)checkCanSend);
+            return Get<BaseEntitySet<Subscription>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, unionOrJoin, clientId, topicId, includeTags, topicType, tagId, author, domainId, checkCanSend );
         }
     }
 }

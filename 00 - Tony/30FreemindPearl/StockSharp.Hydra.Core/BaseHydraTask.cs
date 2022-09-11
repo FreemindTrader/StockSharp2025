@@ -622,10 +622,10 @@ namespace StockSharp.Hydra.Core
         /// <param name="ticks">Тиковые сделки.</param>
         protected void SaveTicks( Security security, IEnumerable<ExecutionMessage> ticks )
         {
-            SafeSave( security, StockSharp.Messages.DataType.Ticks, ticks, t => t.ServerTime, new Func<ExecutionMessage, string>[2]
+            SafeSave( security, Messages.DataType.Ticks, ticks, t => t.ServerTime, new Func<ExecutionMessage, string>[2]
             {
-         t => BaseHydraTask.CheckStep(security.PriceStep, t.TradePrice, LocalizedStrings.TradePriceNotMultiple),
-         t => BaseHydraTask.CheckStep(security.VolumeStep, t.TradeVolume, LocalizedStrings.TradeVolumeNotMultiple)
+         t => CheckStep(security.PriceStep, t.TradePrice, LocalizedStrings.TradePriceNotMultiple),
+         t => CheckStep(security.VolumeStep, t.TradeVolume, LocalizedStrings.TradeVolumeNotMultiple)
             }, true );
         }
 
@@ -657,7 +657,7 @@ namespace StockSharp.Hydra.Core
                 _lastServerTime = d.ServerTime;
                 return d;
             } );
-            SafeSave( security, StockSharp.Messages.DataType.MarketDepth, depths, d => d.ServerTime, Enumerable.Empty<Func<QuoteChangeMessage, string>>(), true );
+            SafeSave( security, Messages.DataType.MarketDepth, depths, d => d.ServerTime, Enumerable.Empty<Func<QuoteChangeMessage, string>>(), true );
         }
 
         /// <summary>Сохранить лог заявок по инструменту в хранилище.</summary>
@@ -675,7 +675,7 @@ namespace StockSharp.Hydra.Core
         /// <param name="items">Лог заявок.</param>
         protected void SaveOrderLog( Security security, IEnumerable<ExecutionMessage> items )
         {
-            SafeSave( security, StockSharp.Messages.DataType.OrderLog, items, i => i.ServerTime, Enumerable.Empty<Func<ExecutionMessage, string>>(), true );
+            SafeSave( security, Messages.DataType.OrderLog, items, i => i.ServerTime, Enumerable.Empty<Func<ExecutionMessage, string>>(), true );
         }
 
         /// <summary>Сохранить изменения по инструменту в хранилище.</summary>
@@ -695,7 +695,7 @@ namespace StockSharp.Hydra.Core
         /// <param name="messages">Изменения.</param>
         protected void SaveLevel1Changes( Security security, IEnumerable<Level1ChangeMessage> messages )
         {
-            SafeSave( security, StockSharp.Messages.DataType.Level1, messages, c => c.ServerTime, new Func<Level1ChangeMessage, string>[1]
+            SafeSave( security, Messages.DataType.Level1, messages, c => c.ServerTime, new Func<Level1ChangeMessage, string>[1]
             {
          m =>
         {
@@ -713,7 +713,7 @@ namespace StockSharp.Hydra.Core
           Security security,
           IEnumerable<PositionChangeMessage> messages )
         {
-            SafeSave( security, StockSharp.Messages.DataType.PositionChanges, messages, c => c.ServerTime, new Func<PositionChangeMessage, string>[1]
+            SafeSave( security, Messages.DataType.PositionChanges, messages, c => c.ServerTime, new Func<PositionChangeMessage, string>[1]
             {
          m =>
         {
@@ -741,11 +741,11 @@ namespace StockSharp.Hydra.Core
         {
             candles.GroupBy( c => ( ( ISubscriptionIdMessage )c ).DataType ).ForEach( g => SafeSave( security, g.Key, g, c => c.OpenTime, new Func<CandleMessage, string>[5]
             {
-         c => BaseHydraTask.CheckStep(security.PriceStep, new Decimal?(c.OpenPrice), LocalizedStrings.Str2203),
-         c => BaseHydraTask.CheckStep(security.PriceStep, new Decimal?(c.HighPrice), LocalizedStrings.Str2204),
-         c => BaseHydraTask.CheckStep(security.PriceStep, new Decimal?(c.LowPrice), LocalizedStrings.Str2205),
-         c => BaseHydraTask.CheckStep(security.PriceStep, new Decimal?(c.ClosePrice), LocalizedStrings.Str2206),
-         c => BaseHydraTask.CheckStep(security.VolumeStep, new Decimal?(c.TotalVolume), LocalizedStrings.CandleVolumeNotMultiple)
+         c => CheckStep(security.PriceStep, new Decimal?(c.OpenPrice), LocalizedStrings.Str2203),
+         c => CheckStep(security.PriceStep, new Decimal?(c.HighPrice), LocalizedStrings.Str2204),
+         c => CheckStep(security.PriceStep, new Decimal?(c.LowPrice), LocalizedStrings.Str2205),
+         c => CheckStep(security.PriceStep, new Decimal?(c.ClosePrice), LocalizedStrings.Str2206),
+         c => CheckStep(security.VolumeStep, new Decimal?(c.TotalVolume), LocalizedStrings.CandleVolumeNotMultiple)
             }, true, ( s, d, c ) => StorageRegistry.GetCandleMessageStorage( g.Key.MessageType, security.ToSecurityId( null, true, false ), g.Key.Arg, d, c ) ) );
         }
 
@@ -757,7 +757,7 @@ namespace StockSharp.Hydra.Core
             if ( !array.Any() )
                 return;
             StorageRegistry.GetNewsMessageStorage( Drive, StorageFormat ).Save( array );
-            RaiseDataLoaded( null, StockSharp.Messages.DataType.News, array, n => n.ServerTime );
+            RaiseDataLoaded( null, Messages.DataType.News, array, n => n.ServerTime );
         }
 
         /// <summary>Сохранить состояние площадок в хранилище.</summary>
@@ -768,7 +768,7 @@ namespace StockSharp.Hydra.Core
             if ( !array.Any() )
                 return;
             StorageRegistry.GetBoardStateMessageStorage( Drive, StorageFormat ).Save( array );
-            RaiseDataLoaded( null, StockSharp.Messages.DataType.BoardState, array, n => n.ServerTime );
+            RaiseDataLoaded( null, Messages.DataType.BoardState, array, n => n.ServerTime );
         }
 
         /// <summary>Сохранить транзакции в хранилище.</summary>
@@ -777,7 +777,7 @@ namespace StockSharp.Hydra.Core
         protected void SaveTransactions( Security security, IEnumerable<ExecutionMessage> transactions )
         {
             foreach ( var grouping in transactions.GroupBy( ( Func<ExecutionMessage, ExecutionTypes?> )( e => e.DataTypeEx.ToExecutionType() ) ) )
-                SafeSave( security, StockSharp.Messages.DataType.Transactions, grouping, t => t.ServerTime, Enumerable.Empty<Func<ExecutionMessage, string>>(), true );
+                SafeSave( security, Messages.DataType.Transactions, grouping, t => t.ServerTime, Enumerable.Empty<Func<ExecutionMessage, string>>(), true );
         }
 
         private void RaiseDataLoaded<TMessage>(

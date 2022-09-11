@@ -80,11 +80,7 @@ namespace StockSharp.Hydra.Panes
             OrderLogBuilder.IsEnabled = BuildType == BuildTypes.OrderLog;
         }
 
-        private IEnumerable<QuoteChangeMessage> GetDepths(
-          SecurityId securityId,
-          DateTime? from,
-          DateTime? to,
-          bool exporting )
+        private IEnumerable<QuoteChangeMessage> GetDepths( SecurityId securityId, DateTime? from, DateTime? to, bool exporting )
         {
             IEnumerable<QuoteChangeMessage> source = InternalGetDepths( securityId, from, to, exporting );
             TimeZoneInfo tz = TimeZone.TimeZone;

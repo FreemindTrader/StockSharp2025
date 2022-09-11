@@ -7,19 +7,19 @@ namespace Ecng.Data
 {
     public class DatabaseConnectionPair : NotifiableObject, IPersistable
     {
-        private Type _provider = DatabaseProviderRegistry.Providers.FirstOrDefault<Type>();
+        private Type _provider = DatabaseProviderRegistry.Providers.FirstOrDefault();
         private string _connectionString;
 
         public Type Provider
         {
             get
             {
-                return this._provider;
+                return _provider;
             }
             set
             {
-                this._provider = value;
-                this.UpdateTitle();
+                _provider = value;
+                UpdateTitle();
             }
         }
 
@@ -27,12 +27,12 @@ namespace Ecng.Data
         {
             get
             {
-                return this._connectionString;
+                return _connectionString;
             }
             set
             {
-                this._connectionString = value;
-                this.UpdateTitle();
+                _connectionString = value;
+                UpdateTitle();
             }
         }
 
@@ -40,29 +40,29 @@ namespace Ecng.Data
         {
             get
             {
-                return "(" + this.Provider.Name + ") " + this.ConnectionString;
+                return "(" + Provider.Name + ") " + ConnectionString;
             }
         }
 
         private void UpdateTitle()
         {
-            this.NotifyChanged( "Title" );
+            NotifyChanged( "Title" );
         }
 
         public override string ToString()
         {
-            return this.Title;
+            return Title;
         }
 
         void IPersistable.Load( SettingsStorage storage )
         {
-            this.Provider = storage.GetValue<Type>( "Provider", ( Type )null );
-            this.ConnectionString = storage.GetValue<string>( "ConnectionString", ( string )null );
+            Provider = storage.GetValue<Type>( "Provider", null );
+            ConnectionString = storage.GetValue<string>( "ConnectionString", null );
         }
 
         void IPersistable.Save( SettingsStorage storage )
         {
-            storage.Set<Type>( "Provider", this.Provider ).Set<string>( "ConnectionString", this.ConnectionString );
+            storage.Set( "Provider", Provider ).Set( "ConnectionString", ConnectionString );
         }
     }
 }

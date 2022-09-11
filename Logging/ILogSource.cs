@@ -60,10 +60,10 @@ namespace StockSharp.Logging
 		/// </summary>
 		DateTimeOffset CurrentTime { get; }
 
-		/// <summary>
-		/// Whether the source is the root (even if <see cref="ILogSource.Parent"/> is not equal to <see langword="null" />).
-		/// </summary>
-		bool IsRoot { get; }
+        /// <summary>
+        /// Whether the source is the root (even if <see cref="Parent"/> is not equal to <see langword="null" />).
+        /// </summary>
+        bool IsRoot { get; }
 
 		/// <summary>
 		/// New debug message event.

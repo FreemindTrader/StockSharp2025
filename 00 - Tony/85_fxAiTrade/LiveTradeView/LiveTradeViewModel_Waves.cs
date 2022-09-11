@@ -709,20 +709,7 @@ namespace FreemindAITrade.ViewModels
         }
 
 
-        public override void AnalysisWave()
-        {
-            long selectedBarTime = _chartVM.SelectedCandleBarTime;
-
-            if ( selectedBarTime > -1 )
-            {
-                ref SBar bar = ref _bars.GetBarByTime( selectedBarTime );
-
-                if ( bar != SBar.EmptySBar )
-                {
-                    _freemindIndicator.DoInitialZigZagAnalysis( bar.Index );
-                }
-            }
-        }
+  
 
 
 

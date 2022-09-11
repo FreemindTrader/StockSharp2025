@@ -70,12 +70,12 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( ResponsibleTF == TimeSpan.FromSeconds( 1 ) )
                 {
-                    _candlesSeries.BuildCandlesFrom2 = StockSharp.Messages.DataType.Level1;
+                    _candlesSeries.BuildCandlesFrom2 = DataType.Level1;
                     _candlesSeries.BuildCandlesField = Level1Fields.SpreadMiddle;
                 }
                 else if ( ResponsibleTF == TimeSpan.FromMinutes( 4 ) )
                 {
-                    _candlesSeries.BuildCandlesFrom2 = StockSharp.Messages.DataType.CandleTimeFrame;
+                    _candlesSeries.BuildCandlesFrom2 = DataType.CandleTimeFrame;
                 }
             }
 

@@ -19,8 +19,8 @@ namespace StockSharp.Studio.Core.Commands
             IStudioControl studioControl = control;
             if ( studioControl == null )
                 throw new ArgumentNullException( nameof( control ) );
-            this.Control = studioControl;
-            this.IsMainWindow = isMainWindow;
+            Control = studioControl;
+            IsMainWindow = isMainWindow;
         }
     }
 }

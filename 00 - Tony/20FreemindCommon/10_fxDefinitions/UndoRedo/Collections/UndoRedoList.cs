@@ -351,7 +351,7 @@ namespace fx.Definitions.UndoRedo
         // converter is null.
         public List<TOutput> ConvertAll<TOutput>( Converter<T, TOutput> converter )
         {
-            return list.ConvertAll<TOutput>( converter );
+            return list.ConvertAll( converter );
         }
         //
         ///<summary>

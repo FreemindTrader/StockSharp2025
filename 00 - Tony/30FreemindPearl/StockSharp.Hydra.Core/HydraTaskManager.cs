@@ -54,7 +54,7 @@ namespace StockSharp.Hydra.Core
     {
       get
       {
-        return (IEnumerable<IHydraTask>) this._taskSecurities.CachedKeys;
+        return _taskSecurities.CachedKeys;
       }
     }
 
@@ -66,7 +66,7 @@ namespace StockSharp.Hydra.Core
     {
       get
       {
-        return (IEnumerable<HydraTaskInfo>) this._settings.Cache;
+        return _settings.Cache;
       }
     }
 
@@ -87,9 +87,9 @@ namespace StockSharp.Hydra.Core
       if (task == null)
         throw new ArgumentNullException(nameof (task));
       HydraTaskSecurity taskSecurity = task.ToTaskSecurity(TraderHelper.AllSecurity);
-      DataType[] array = task.SupportedDataTypes.Where<DataType>((Func<DataType, bool>) (t => t.IsMarketData)).ToArray<DataType>();
-      if (array.IsEmpty<DataType>())
-        array = task.SupportedDataTypes.ToArray<DataType>();
+      DataType[] array = task.SupportedDataTypes.Where( t => t.IsMarketData ).ToArray();
+      if (array.IsEmpty())
+        array = task.SupportedDataTypes.ToArray();
       foreach (DataType dataType in array)
         taskSecurity.AddDataType(dataType);
       return taskSecurity;
@@ -102,75 +102,75 @@ namespace StockSharp.Hydra.Core
       if (migration == null)
         throw new ArgumentNullException(nameof (migration));
       List<Type> typeList = new List<Type>();
-      typeList.AddRange(adapters.Select<Type, Type>((Func<Type, Type>) (a => typeof (ConnectorHydraTask<>).Make(a))));
-      Assembly[] array = ((IEnumerable<Assembly>) AppDomain.CurrentDomain.GetAssemblies()).ToArray<Assembly>();
+      typeList.AddRange(adapters.Select( a => typeof( ConnectorHydraTask<> ).Make( a ) ) );
+      Assembly[] array = AppDomain.CurrentDomain.GetAssemblies().ToArray();
       if (Directory.Exists("Plugins"))
       {
-        foreach (string str in ((IEnumerable<string>) Directory.GetFiles("Plugins", "*.dll")).Where<string>((Func<string, bool>) (p => Path.GetFileNameWithoutExtension(p).StartsWithIgnoreCase("StockSharp.Hydra."))))
+        foreach (string str in Directory.GetFiles( "Plugins", "*.dll" ).Where( p => Path.GetFileNameWithoutExtension( p ).StartsWithIgnoreCase( "StockSharp.Hydra." ) ) )
         {
           if (!str.IsAssembly())
           {
-            this.AddWarningLog(LocalizedStrings.Str2897Params, (object) str);
+            this.AddWarningLog(LocalizedStrings.Str2897Params, str );
           }
           else
           {
             AssemblyName asmName = AssemblyName.GetAssemblyName(str);
-            if (((IEnumerable<Assembly>) array).FirstOrDefault<Assembly>((Func<Assembly, bool>) (a => asmName.Name.EqualsIgnoreCase(a.GetName().Name))) != (Assembly) null)
+            if ( array.FirstOrDefault( a => asmName.Name.EqualsIgnoreCase( a.GetName().Name ) ) != null )
             {
-              this.AddWarningLog("{0} already loaded. ignoring.", (object) str);
+              this.AddWarningLog("{0} already loaded. ignoring.", str );
             }
             else
             {
               try
               {
                 Assembly assembly = Assembly.LoadFrom(str);
-                this.AddDebugLog("loaded plugin {0}", (object) str);
-                typeList.AddRange((IEnumerable<Type>) ((IEnumerable<Type>) assembly.GetTypes()).Where<Type>((Func<Type, bool>) (t =>
+                this.AddDebugLog("loaded plugin {0}", str );
+                typeList.AddRange( assembly.GetTypes().Where( t =>
                 {
-                  if (typeof (IHydraTask).IsAssignableFrom(t))
-                    return !t.IsAbstract;
-                  return false;
-                })).ToArray<Type>());
+                    if ( typeof( IHydraTask ).IsAssignableFrom( t ) )
+                        return !t.IsAbstract;
+                    return false;
+                } ).ToArray() );
               }
               catch (Exception ex)
               {
-                ex.LogError((string) null);
+                ex.LogError( null );
               }
             }
           }
         }
       }
-      this.AvailableTasks = typeList.ToArray();
+      AvailableTasks = typeList.ToArray();
       ContinueOnExceptionContext exceptionContext = new ContinueOnExceptionContext();
-      exceptionContext.Error += (Action<Exception>) (ex => ex.LogError((string) null));
-      IDictionary<HydraTaskInfo, IEnumerable<HydraTaskSecurity>> dictionary = HydraTaskManager.Storage.Load((ILogReceiver) this);
-      using (exceptionContext.ToScope<ContinueOnExceptionContext>(true))
-        this._settings.AddRange((IEnumerable<HydraTaskInfo>) dictionary.Keys);
-      foreach (IGrouping<string, HydraTaskInfo> grouping in this.Settings.GroupBy<HydraTaskInfo, string>((Func<HydraTaskInfo, string>) (set => set.TaskType)))
+      exceptionContext.Error += ex => ex.LogError( null );
+      IDictionary<HydraTaskInfo, IEnumerable<HydraTaskSecurity>> dictionary = Storage.Load( this );
+      using (exceptionContext.ToScope( true))
+        _settings.AddRange( dictionary.Keys );
+      foreach (IGrouping<string, HydraTaskInfo> grouping in Settings.GroupBy( set => set.TaskType ) )
       {
         Type type = Type.GetType(grouping.Key, false, true);
-        if (type == (Type) null)
+        if (type == null )
         {
           type = migration(grouping.Key);
-          if (type == (Type) null)
+          if (type == null )
           {
-            this.AddErrorLog(LocalizedStrings.Str2899Params, (object) grouping.Key);
+            this.AddErrorLog(LocalizedStrings.Str2899Params, grouping.Key );
             using (IEnumerator<HydraTaskInfo> enumerator = grouping.GetEnumerator())
             {
               while (enumerator.MoveNext())
               {
                 HydraTaskInfo current = enumerator.Current;
-                this._settings.Remove(current);
-                HydraTaskManager.Storage.Delete(current.Id);
+                _settings.Remove(current);
+                                Storage.Delete(current.Id);
               }
               continue;
             }
           }
         }
-        Type type1 = ((IEnumerable<Type>) this.AvailableTasks).FirstOrDefault<Type>((Func<Type, bool>) (t => t == type));
-        if (type1 == (Type) null)
+        Type type1 = AvailableTasks.FirstOrDefault( t => t == type );
+        if (type1 == null )
         {
-          this.AddWarningLog(LocalizedStrings.Str2900Params, (object) grouping.Key);
+          this.AddWarningLog(LocalizedStrings.Str2900Params, grouping.Key );
         }
         else
         {
@@ -179,29 +179,29 @@ namespace StockSharp.Hydra.Core
             try
             {
               IHydraTask instance = type1.CreateInstance<IHydraTask>();
-              instance.Parent = (ILogSource) this;
+              instance.Parent = this;
               instance.Init(index.Id);
               CachedSynchronizedSet<HydraTaskSecurity> cachedSynchronizedSet = new CachedSynchronizedSet<HydraTaskSecurity>();
               cachedSynchronizedSet.AddRange(dictionary[index]);
               if (cachedSynchronizedSet.Count == 0)
               {
-                HydraTaskSecurity all = this.CreateAll(instance);
+                HydraTaskSecurity all = CreateAll(instance);
                 cachedSynchronizedSet.Add(all);
-                HydraTaskManager.Storage.Add(index.Id, (IEnumerable<HydraTaskSecurity>) new HydraTaskSecurity[1]
+                                Storage.Add(index.Id, new HydraTaskSecurity[1]
                 {
                   all
-                });
+                } );
               }
-              instance.Securities = (IEnumerable<HydraTaskSecurity>) cachedSynchronizedSet.Cache;
+              instance.Securities = cachedSynchronizedSet.Cache;
               instance.Load(index.Settings);
-              this._taskSecurities.Add(instance, cachedSynchronizedSet);
-              Action<IHydraTask> taskAdded = this.TaskAdded;
+              _taskSecurities.Add(instance, cachedSynchronizedSet);
+              Action<IHydraTask> taskAdded = TaskAdded;
               if (taskAdded != null)
                 taskAdded(instance);
             }
             catch (Exception ex)
             {
-              ex.LogError((string) null);
+              ex.LogError( null );
             }
           }
         }
@@ -221,30 +221,30 @@ namespace StockSharp.Hydra.Core
         try
         {
           IHydraTask instance = taskType.CreateInstance<IHydraTask>();
-          instance.Parent = (ILogSource) this;
-          HydraTaskSecurity all = this.CreateAll(instance);
+          instance.Parent = this;
+          HydraTaskSecurity all = CreateAll(instance);
           instance.Init(Guid.NewGuid());
-          instance.Securities = (IEnumerable<HydraTaskSecurity>) new HydraTaskSecurity[1]
+          instance.Securities =  ( new HydraTaskSecurity[1]
           {
             all
-          };
+          } );
           CachedSynchronizedSet<HydraTaskSecurity> cachedSynchronizedSet1 = new CachedSynchronizedSet<HydraTaskSecurity>();
           cachedSynchronizedSet1.Add(all);
           CachedSynchronizedSet<HydraTaskSecurity> cachedSynchronizedSet2 = cachedSynchronizedSet1;
-          this.Save(instance);
-          HydraTaskManager.Storage.Add(instance.Id, (IEnumerable<HydraTaskSecurity>) instance.Securities.ToArray<HydraTaskSecurity>());
-          this._taskSecurities.Add(instance, cachedSynchronizedSet2);
-          Action<IHydraTask> taskAdded = this.TaskAdded;
+          Save(instance);
+                    Storage.Add(instance.Id, instance.Securities.ToArray() );
+          _taskSecurities.Add(instance, cachedSynchronizedSet2);
+          Action<IHydraTask> taskAdded = TaskAdded;
           if (taskAdded != null)
             taskAdded(instance);
           hydraTaskList.Add(instance);
         }
         catch (Exception ex)
         {
-          ex.LogError((string) null);
+          ex.LogError( null );
         }
       }
-      return (IEnumerable<IHydraTask>) hydraTaskList;
+      return hydraTaskList;
     }
 
     /// <summary>Add or update the task.</summary>
@@ -253,7 +253,7 @@ namespace StockSharp.Hydra.Core
     {
       if (task == null)
         throw new ArgumentNullException(nameof (task));
-      HydraTaskManager.Storage.Save(new HydraTaskInfo(task.Id, task.GetType().GetTypeName(false), task.Save()));
+            Storage.Save(new HydraTaskInfo(task.Id, task.GetType().GetTypeName(false), task.Save()));
     }
 
     /// <summary>Delete the task.</summary>
@@ -262,16 +262,16 @@ namespace StockSharp.Hydra.Core
     {
       if (task == null)
         throw new ArgumentNullException(nameof (task));
-      this.Tasks.ForEach<IHydraTask>((Action<IHydraTask>) (t =>
+      Tasks.ForEach( t =>
       {
-        if (t.DependFrom != task)
-          return;
-        t.DependFrom = (IHydraTask) null;
-      }));
-      HydraTaskManager.Storage.Delete(task.Id);
-      this._taskSecurities.Remove(task);
-      BaseUserConfig<StudioUserConfig>.Instance.LogConfig.Manager.Sources.Remove((ILogSource) task);
-      Action<IHydraTask> taskRemoved = this.TaskRemoved;
+          if ( t.DependFrom != task )
+              return;
+          t.DependFrom = null;
+      } );
+            Storage.Delete(task.Id);
+      _taskSecurities.Remove(task);
+      BaseUserConfig<StudioUserConfig>.Instance.LogConfig.Manager.Sources.Remove( task );
+      Action<IHydraTask> taskRemoved = TaskRemoved;
       if (taskRemoved == null)
         return;
       taskRemoved(task);
@@ -284,7 +284,7 @@ namespace StockSharp.Hydra.Core
     {
       if (security == null)
         throw new ArgumentNullException(nameof (security));
-      this.Save(task, new HydraTaskSecurity[1]{ security });
+      Save(task, new HydraTaskSecurity[1]{ security });
     }
 
     /// <summary>Add or update the specified security into the task.</summary>
@@ -297,8 +297,8 @@ namespace StockSharp.Hydra.Core
       if (securities.Length == 0)
         return;
       HashSet<HydraTaskSecurity> hydraTaskSecuritySet1 = new HashSet<HydraTaskSecurity>();
-      HydraTaskSecurity[] hydraTaskSecurityArray = (HydraTaskSecurity[]) null;
-      CachedSynchronizedSet<HydraTaskSecurity> taskSecurity = this._taskSecurities[task];
+      HydraTaskSecurity[] hydraTaskSecurityArray = null;
+      CachedSynchronizedSet<HydraTaskSecurity> taskSecurity = _taskSecurities[task];
       bool flag = taskSecurity.Count == 1 && taskSecurity.Cache[0].IsAllSecurity();
       lock (taskSecurity.SyncRoot)
       {
@@ -306,14 +306,14 @@ namespace StockSharp.Hydra.Core
         {
           if (flag)
           {
-            HydraTaskManager.Storage.Update(task.Id, (IEnumerable<HydraTaskSecurity>) securities);
+                        Storage.Update(task.Id, securities );
           }
           else
           {
             hydraTaskSecurityArray = taskSecurity.Cache;
             taskSecurity.Clear();
-            HydraTaskManager.Storage.DeleteAll(task.Id);
-            hydraTaskSecuritySet1.Add(this.AddAllSecurity(task, (ISet<HydraTaskSecurity>) taskSecurity));
+                        Storage.DeleteAll(task.Id);
+            hydraTaskSecuritySet1.Add(AddAllSecurity(task, taskSecurity ) );
           }
         }
         else
@@ -331,25 +331,25 @@ namespace StockSharp.Hydra.Core
             else
               hydraTaskSecuritySet2.Add(security);
           }
-          task.Securities = (IEnumerable<HydraTaskSecurity>) taskSecurity.Cache;
+          task.Securities = taskSecurity.Cache;
           if (hydraTaskSecurityArray != null)
-            HydraTaskManager.Storage.Delete(task.Id, (IEnumerable<HydraTaskSecurity>) hydraTaskSecurityArray);
+                        Storage.Delete(task.Id, hydraTaskSecurityArray );
           if (hydraTaskSecuritySet1.Count > 0)
-            HydraTaskManager.Storage.Add(task.Id, (IEnumerable<HydraTaskSecurity>) hydraTaskSecuritySet1);
+                        Storage.Add(task.Id, hydraTaskSecuritySet1 );
           if (hydraTaskSecuritySet2.Count > 0)
-            HydraTaskManager.Storage.Update(task.Id, (IEnumerable<HydraTaskSecurity>) hydraTaskSecuritySet2);
+                        Storage.Update(task.Id, hydraTaskSecuritySet2 );
         }
       }
       if (hydraTaskSecurityArray != null)
       {
-        Action<IHydraTask, IEnumerable<HydraTaskSecurity>, bool> securitiesRemoved = this.SecuritiesRemoved;
+        Action<IHydraTask, IEnumerable<HydraTaskSecurity>, bool> securitiesRemoved = SecuritiesRemoved;
         if (securitiesRemoved != null)
-          securitiesRemoved(task, (IEnumerable<HydraTaskSecurity>) hydraTaskSecurityArray, true);
+          securitiesRemoved(task, hydraTaskSecurityArray, true);
       }
-      Action<IHydraTask, IEnumerable<HydraTaskSecurity>> securitiesAdded = this.SecuritiesAdded;
+      Action<IHydraTask, IEnumerable<HydraTaskSecurity>> securitiesAdded = SecuritiesAdded;
       if (securitiesAdded == null)
         return;
-      securitiesAdded(task, (IEnumerable<HydraTaskSecurity>) hydraTaskSecuritySet1);
+      securitiesAdded(task, hydraTaskSecuritySet1 );
     }
 
     /// <summary>Remove the specified security from the task.</summary>
@@ -359,7 +359,7 @@ namespace StockSharp.Hydra.Core
     {
       if (security == null)
         throw new ArgumentNullException(nameof (security));
-      this.Delete(task, new HydraTaskSecurity[1]{ security });
+      Delete(task, new HydraTaskSecurity[1]{ security });
     }
 
     /// <summary>Remove the specified securities from the task.</summary>
@@ -371,27 +371,27 @@ namespace StockSharp.Hydra.Core
         throw new ArgumentNullException(nameof (task));
       if (securities.Length == 0)
         return;
-      CachedSynchronizedSet<HydraTaskSecurity> taskSecurity = this._taskSecurities[task];
+      CachedSynchronizedSet<HydraTaskSecurity> taskSecurity = _taskSecurities[task];
       HydraTaskSecurity hydraTaskSecurity;
       lock (taskSecurity.SyncRoot)
       {
-        taskSecurity.RemoveRange((IEnumerable<HydraTaskSecurity>) securities);
-        task.Securities = (IEnumerable<HydraTaskSecurity>) taskSecurity.Cache;
-        HydraTaskManager.Storage.Delete(task.Id, (IEnumerable<HydraTaskSecurity>) securities);
-        hydraTaskSecurity = this.TryAddAllSecurity(task, (ISet<HydraTaskSecurity>) taskSecurity);
+        taskSecurity.RemoveRange( securities );
+        task.Securities = taskSecurity.Cache;
+                Storage.Delete(task.Id, securities );
+        hydraTaskSecurity = TryAddAllSecurity(task, taskSecurity );
       }
-      Action<IHydraTask, IEnumerable<HydraTaskSecurity>, bool> securitiesRemoved = this.SecuritiesRemoved;
+      Action<IHydraTask, IEnumerable<HydraTaskSecurity>, bool> securitiesRemoved = SecuritiesRemoved;
       if (securitiesRemoved != null)
-        securitiesRemoved(task, (IEnumerable<HydraTaskSecurity>) securities, false);
+        securitiesRemoved(task, securities, false);
       if (hydraTaskSecurity == null)
         return;
-      Action<IHydraTask, IEnumerable<HydraTaskSecurity>> securitiesAdded = this.SecuritiesAdded;
+      Action<IHydraTask, IEnumerable<HydraTaskSecurity>> securitiesAdded = SecuritiesAdded;
       if (securitiesAdded == null)
         return;
-      securitiesAdded(task, (IEnumerable<HydraTaskSecurity>) new HydraTaskSecurity[1]
+      securitiesAdded(task, new HydraTaskSecurity[1]
       {
         hydraTaskSecurity
-      });
+      } );
     }
 
     /// <summary>Remove all securities from the task.</summary>
@@ -400,27 +400,27 @@ namespace StockSharp.Hydra.Core
     {
       if (task == null)
         throw new ArgumentNullException(nameof (task));
-      CachedSynchronizedSet<HydraTaskSecurity> taskSecurity = this._taskSecurities[task];
+      CachedSynchronizedSet<HydraTaskSecurity> taskSecurity = _taskSecurities[task];
       HydraTaskSecurity[] cache;
       HydraTaskSecurity hydraTaskSecurity;
       lock (taskSecurity.SyncRoot)
       {
         cache = taskSecurity.Cache;
         taskSecurity.Clear();
-        task.Securities = (IEnumerable<HydraTaskSecurity>) taskSecurity.Cache;
-        HydraTaskManager.Storage.DeleteAll(task.Id);
-        hydraTaskSecurity = this.AddAllSecurity(task, (ISet<HydraTaskSecurity>) taskSecurity);
+        task.Securities = taskSecurity.Cache;
+                Storage.DeleteAll(task.Id);
+        hydraTaskSecurity = AddAllSecurity(task, taskSecurity );
       }
-      Action<IHydraTask, IEnumerable<HydraTaskSecurity>, bool> securitiesRemoved = this.SecuritiesRemoved;
+      Action<IHydraTask, IEnumerable<HydraTaskSecurity>, bool> securitiesRemoved = SecuritiesRemoved;
       if (securitiesRemoved != null)
-        securitiesRemoved(task, (IEnumerable<HydraTaskSecurity>) cache, true);
-      Action<IHydraTask, IEnumerable<HydraTaskSecurity>> securitiesAdded = this.SecuritiesAdded;
+        securitiesRemoved(task, cache, true);
+      Action<IHydraTask, IEnumerable<HydraTaskSecurity>> securitiesAdded = SecuritiesAdded;
       if (securitiesAdded == null)
         return;
-      securitiesAdded(task, (IEnumerable<HydraTaskSecurity>) new HydraTaskSecurity[1]
+      securitiesAdded(task, new HydraTaskSecurity[1]
       {
         hydraTaskSecurity
-      });
+      } );
     }
 
     private HydraTaskSecurity TryAddAllSecurity(
@@ -428,21 +428,21 @@ namespace StockSharp.Hydra.Core
       ISet<HydraTaskSecurity> taskSecurities)
     {
       if (taskSecurities.Count != 0)
-        return (HydraTaskSecurity) null;
-      return this.AddAllSecurity(task, taskSecurities);
+        return null;
+      return AddAllSecurity(task, taskSecurities);
     }
 
     private HydraTaskSecurity AddAllSecurity(
       IHydraTask task,
       ISet<HydraTaskSecurity> taskSecurities)
     {
-      HydraTaskSecurity all = this.CreateAll(task);
+      HydraTaskSecurity all = CreateAll(task);
       taskSecurities.Add(all);
-      task.Securities = (IEnumerable<HydraTaskSecurity>) new HydraTaskSecurity[1]
+      task.Securities =  ( new HydraTaskSecurity[1]
       {
         all
-      };
-      HydraTaskManager.Storage.Add(task.Id, (IEnumerable<HydraTaskSecurity>) task.Securities.ToArray<HydraTaskSecurity>());
+      } );
+            Storage.Add(task.Id, task.Securities.ToArray() );
       return all;
     }
 
@@ -452,7 +452,7 @@ namespace StockSharp.Hydra.Core
     {
       if (security == null)
         throw new ArgumentNullException(nameof (security));
-      this.Delete(new Security[1]{ security });
+      Delete(new Security[1]{ security });
     }
 
     /// <summary>Remove securities.</summary>
@@ -463,29 +463,29 @@ namespace StockSharp.Hydra.Core
         throw new ArgumentNullException(nameof (securities));
       if (securities.Length == 0)
         return;
-      securities = ((IEnumerable<Security>) securities).Where<Security>((Func<Security, bool>) (s => !s.IsAllSecurity())).ToArray<Security>();
+      securities = securities.Where( s => !s.IsAllSecurity() ).ToArray();
       IEntityRegistry entityRegistry = ServicesRegistry.EntityRegistry;
       ISecurityStorage securityStorage = ServicesRegistry.SecurityStorage;
-      foreach (IHydraTask task in this.Tasks)
+      foreach (IHydraTask task in Tasks)
       {
-        CachedSynchronizedSet<HydraTaskSecurity> taskSecurities = this._taskSecurities[task];
+        CachedSynchronizedSet<HydraTaskSecurity> taskSecurities = _taskSecurities[task];
         HydraTaskSecurity[] array;
         lock (taskSecurities.SyncRoot)
-          array = ((IEnumerable<Security>) securities).Select<Security, HydraTaskSecurity>((Func<Security, HydraTaskSecurity>) (s => taskSecurities.FirstOrDefault<HydraTaskSecurity>((Func<HydraTaskSecurity, bool>) (s1 => s1.Security == s)))).Where<HydraTaskSecurity>((Func<HydraTaskSecurity, bool>) (s => s != null)).ToArray<HydraTaskSecurity>();
+          array = securities.Select( s => taskSecurities.FirstOrDefault( s1 => s1.Security == s ) ).Where( s => s != null ).ToArray();
         if (array.Length != 0)
-          this.Delete(task, array);
+          Delete(task, array);
       }
-      securityStorage.DeleteRange((IEnumerable<Security>) securities);
+      securityStorage.DeleteRange( securities );
       entityRegistry.WaitSecuritiesFlush();
     }
 
     /// <summary>Reset data.</summary>
     public void Reset()
     {
-      this.AvailableTasks = Array.Empty<Type>();
-      this._taskSecurities.Clear();
-      this._settings.Clear();
-      HydraTaskManager.Storage.Reset();
+      AvailableTasks = Array.Empty<Type>();
+      _taskSecurities.Clear();
+      _settings.Clear();
+            Storage.Reset();
     }
   }
 }

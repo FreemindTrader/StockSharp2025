@@ -30,8 +30,8 @@ namespace StockSharp.Studio.Community
         {
             if (version.IsEmpty())
                 throw new ArgumentNullException(nameof(version));
-            this._productId = productId;
-            this._version = version;
+            _productId = productId;
+            _version = version;
         }
 
         /// <summary>To check the username and password on correctness.</summary>
@@ -44,18 +44,18 @@ namespace StockSharp.Studio.Community
             ISessionService svc = CommunityServicesRegistry.ApiServiceProvider.GetService<ISessionService>(login, password);
             try
             {
-                return AsyncContext.Run<Session>((Func<Task<Session>>)(() =>
+                return AsyncContext.Run( () =>
                {
                    ISessionService sessionService = svc;
                    Session entity = new Session();
                    entity.Product = new Product()
                    {
-                       Id = this._productId
+                       Id = _productId
                    };
-                   entity.Version = this._version;
+                   entity.Version = _version;
                    CancellationToken cancellationToken = new CancellationToken();
-                   return sessionService.AddAsync(entity, cancellationToken);
-               })).Id.To<string>();
+                   return sessionService.AddAsync( entity, cancellationToken );
+               } ).Id.To<string>();
             }
             catch (Exception ex)
             {

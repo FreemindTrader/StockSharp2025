@@ -30,7 +30,7 @@ namespace StockSharp.Web.Api.Client
           string address,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<IpBan>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)address);
+            return Get<BaseEntitySet<IpBan>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, address );
         }
     }
 }

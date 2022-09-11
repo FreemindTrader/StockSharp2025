@@ -18,8 +18,8 @@ namespace StockSharp.Studio.Core.Commands
             IEnumerable<Portfolio> portfolios1 = portfolios;
             if ( portfolios1 == null )
                 throw new ArgumentNullException( nameof( portfolios ) );
-            this.Portfolios = portfolios1;
-            if ( this.Portfolios.IsEmpty<Portfolio>() )
+            Portfolios = portfolios1;
+            if ( Portfolios.IsEmpty() )
                 throw new ArgumentException( nameof( portfolios ) );
         }
 

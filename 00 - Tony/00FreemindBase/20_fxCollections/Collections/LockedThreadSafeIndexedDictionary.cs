@@ -762,7 +762,7 @@ namespace fx.Collections
 
         object IPfzDictionary.GetValueAndRemove( object key )
         {
-            return ( TValue ) GetValueAndRemove( ( TKey ) key ) !;
+            return GetValueAndRemove( ( TKey )key )!;
         }
 
         bool IPfzDictionary.TryAdd( object key, object value )

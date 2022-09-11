@@ -576,7 +576,7 @@ namespace FreemindAITrade.ViewModels
             var today = DateTime.UtcNow;
             var period = ( TimeSpan )series.Arg;
 
-            var minCandleType = StockSharp.Messages.DataType.Create( typeof( TimeFrameCandleMessage ), series.Arg );
+            var minCandleType = DataType.Create( typeof( TimeFrameCandleMessage ), series.Arg );
             var candleStore = Drive.GetStorageDrive( series.Security.ToSecurityId(), minCandleType, StorageFormats.Binary );
 
             DateTime deleteFromHere = DateTime.MinValue;
@@ -722,7 +722,7 @@ namespace FreemindAITrade.ViewModels
             var today = DateTime.UtcNow;
             var period = ( TimeSpan )series.Arg;
 
-            var minCandleType = StockSharp.Messages.DataType.Create( typeof( TimeFrameCandleMessage ), series.Arg );
+            var minCandleType = DataType.Create( typeof( TimeFrameCandleMessage ), series.Arg );
             var candleStore = Drive.GetStorageDrive( series.Security.ToSecurityId(), minCandleType, StorageFormats.Binary );
 
             var priceStep = series.Security.PriceStep;

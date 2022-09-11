@@ -539,7 +539,7 @@ namespace fx.Algorithm
 
             days += iDay - ( uint )1;
 
-            DateTime ThisNewYearDate = this.GetLunarNewYearDate( );
+            DateTime ThisNewYearDate = GetLunarNewYearDate( );
 
             return ThisNewYearDate.AddDays( days );
         }
@@ -632,7 +632,7 @@ namespace fx.Algorithm
                     Height = 29;
                 }
             }
-            return ( uint )( ( uint )( Low ) | ( uint )( Height ) << 16 ); //合成為uint
+            return ( uint )( Low ) | ( uint )( Height ) << 16; //合成為uint
         }
 
         /// <summary>

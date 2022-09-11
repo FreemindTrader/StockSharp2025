@@ -346,6 +346,32 @@ namespace FreemindAITrade.ViewModels
 
         }
 
+
+        public virtual void ClassicWave3Target()
+        {
+
+        }
+
+        public virtual void ExtendedWave3Target()
+        {
+
+        }
+
+        public virtual void SuperExtendedWave3Target()
+        {
+
+        }
+
+        public virtual void WaveCTarget()
+        {
+
+        }
+        public virtual void Wave4Target()
+        {
+
+        }
+
+
         public virtual void LockWavesInDB()
         {
 

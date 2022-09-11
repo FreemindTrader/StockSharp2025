@@ -32,7 +32,7 @@ namespace StockSharp.Web.Api.Client
           long? topicId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<EmailTemplate>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)productId, (object)productGroupId, (object)topicId);
+            return Get<BaseEntitySet<EmailTemplate>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, productId, productGroupId, topicId );
         }
 
         Task IEmailTemplateService.TestAsync(
@@ -42,7 +42,7 @@ namespace StockSharp.Web.Api.Client
           long? groupId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("TestAsync"), cancellationToken, (object)templateName, (object)currency, (object)productId, (object)groupId);
+            return Post( GetCurrentMethod( "TestAsync"), cancellationToken, templateName, currency, productId, groupId );
         }
     }
 }

@@ -24,7 +24,7 @@ namespace StockSharp.Studio.Controls
     public partial class QuestionWindow : ThemedWindow, IComponentConnector
     {
         public static readonly RoutedCommand OkCommand = new RoutedCommand();
-        private readonly Brush _negativeForeground = ( Brush )new SolidColorBrush( Colors.Red );
+        private readonly Brush _negativeForeground = new SolidColorBrush( Colors.Red );
         private bool _wasPos = true;
         private readonly Brush _positiveForeground;
         private const int _maxTextLen = 1000;
@@ -36,11 +36,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.LinkTxt.Text;
+                return LinkTxt.Text;
             }
             set
             {
-                this.LinkTxt.Text = value;
+                LinkTxt.Text = value;
             }
         }
 
@@ -48,11 +48,11 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.TitleCtrl.Text;
+                return TitleCtrl.Text;
             }
             set
             {
-                this.TitleCtrl.Text = value;
+                TitleCtrl.Text = value;
             }
         }
 
@@ -60,12 +60,12 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.TextCtrl.Text.Trim();
+                return TextCtrl.Text.Trim();
             }
             set
             {
-                this.TextCtrl.Text = value;
-                this.TextCtrl.CaretIndex = this.Text.Length;
+                TextCtrl.Text = value;
+                TextCtrl.CaretIndex = Text.Length;
             }
         }
 
@@ -73,48 +73,48 @@ namespace StockSharp.Studio.Controls
         {
             get
             {
-                return this.TextInfoCtrl.Text;
+                return TextInfoCtrl.Text;
             }
             set
             {
-                this.TextInfoCtrl.Text = value;
+                TextInfoCtrl.Text = value;
             }
         }
 
         public QuestionWindow()
         {
-            this.InitializeComponent();
-            this._positiveForeground = this.LeftToEnter.Foreground;
-            this.LeftToEnter.Text = 1000.To<string>();
+            InitializeComponent();
+            _positiveForeground = LeftToEnter.Foreground;
+            LeftToEnter.Text = 1000.To<string>();
         }
 
         private void OkCommand_OnCanExecute( object sender, CanExecuteRoutedEventArgs e )
         {
-            e.CanExecute = this.TextCtrl != null && this.Text.Length >= 20 && this.GetLeftToEnter() >= 0;
+            e.CanExecute = TextCtrl != null && Text.Length >= 20 && GetLeftToEnter() >= 0;
         }
 
-        public event Func<string, byte[ ], Action<long>, CancellationToken, Task<StockSharp.Web.DomainModel.File>> FileProcessing;
+        public event Func<string, byte[ ], Action<long>, CancellationToken, Task<Web.DomainModel.File>> FileProcessing;
 
         private void OkCommand_OnExecuted( object sender, ExecutedRoutedEventArgs e )
         {
-            string attachPath = this.AttachPath;
+            string attachPath = AttachPath;
             if ( !attachPath.IsEmpty() )
             {
                 Uri result;
                 int num = !Uri.TryCreate( attachPath, UriKind.Absolute, out result ) ? 0 : ( result.Scheme == Uri.UriSchemeHttp || result.Scheme == Uri.UriSchemeHttps ? 1 : ( result.Scheme == Uri.UriSchemeFtp ? 1 : 0 ) );
-                Func<string, byte[ ], Action<long>, CancellationToken, Task<StockSharp.Web.DomainModel.File>> fileProcessing = this.FileProcessing;
+                Func<string, byte[ ], Action<long>, CancellationToken, Task<Web.DomainModel.File>> fileProcessing = FileProcessing;
                 if ( num != 0 )
-                    this.Text = this.Text + Environment.NewLine + Environment.NewLine + "[i]" + LocalizedStrings.Str221 + ": " + attachPath + "[/i]";
+                    Text = Text + Environment.NewLine + Environment.NewLine + "[i]" + LocalizedStrings.Str221 + ": " + attachPath + "[/i]";
                 else if ( fileProcessing != null )
                 {
-                    if ( System.IO.File.Exists( attachPath ) )
+                    if ( File.Exists( attachPath ) )
                     {
                         try
                         {
                             FileProgressWindow wnd = new FileProgressWindow();
-                            wnd.File = new ValueTuple<string, byte[ ], long>( Path.GetFileName( attachPath ), System.IO.File.ReadAllBytes( attachPath ), 0L );
+                            wnd.File = new ValueTuple<string, byte[ ], long>( Path.GetFileName( attachPath ), File.ReadAllBytes( attachPath ), 0L );
                             wnd.FileProcessing += fileProcessing;
-                            if ( !wnd.ShowModal( ( Window )this ) )
+                            if ( !wnd.ShowModal( this ) )
                                 return;
                         }
                         catch ( Exception ex )
@@ -125,23 +125,23 @@ namespace StockSharp.Studio.Controls
                     }
                 }
             }
-            this.DialogResult = new bool?( true );
+            DialogResult = new bool?( true );
         }
 
         private void TextCtrl_OnTextChanged( object sender, TextChangedEventArgs e )
         {
-            int leftToEnter = this.GetLeftToEnter();
-            this.LeftToEnter.Text = string.Format( "{0}", ( object )leftToEnter );
+            int leftToEnter = GetLeftToEnter();
+            LeftToEnter.Text = string.Format( "{0}", leftToEnter );
             bool flag = leftToEnter >= 0;
-            if ( this._wasPos == flag )
+            if ( _wasPos == flag )
                 return;
-            this.LeftToEnter.Foreground = flag ? this._positiveForeground : this._negativeForeground;
-            this._wasPos = flag;
+            LeftToEnter.Foreground = flag ? _positiveForeground : _negativeForeground;
+            _wasPos = flag;
         }
 
         private int GetLeftToEnter()
         {
-            return 1000 - this.Text.Length;
+            return 1000 - Text.Length;
         }
 
 

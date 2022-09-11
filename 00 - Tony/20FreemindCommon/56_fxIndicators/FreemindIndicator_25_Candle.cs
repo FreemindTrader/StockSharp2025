@@ -683,7 +683,7 @@ namespace fx.Indicators
 
         public int ThreeLineStrikeLookBack()
         {
-            return fx.TALib.Core.Cdl3LineStrikeLookback();
+            return Core.Cdl3LineStrikeLookback();
         }
 
         public RetCode ThreeLineStrike4( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -807,7 +807,7 @@ namespace fx.Indicators
         /// <image url="$(SolutionDir)\..\..\30 - CommonImages\bullish_three_white_soldiers.jpg" />
         public int ThreeBlackCrowsOrWhiteSoldiersLookback()
         {
-            return ( fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 ) );
+            return ( Core.BbandsLookback( Core.MAType.Ema, 20 ) );
         }
 
         public RetCode ThreeBlackCrowsOrWhiteSoldiers4( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -1125,7 +1125,7 @@ namespace fx.Indicators
 
         public int MorningStarOrDojiLookback()
         {
-            return ( fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 ) );
+            return ( Core.BbandsLookback( Core.MAType.Ema, 20 ) );
         }
 
         public bool MorningStarOrDoji34( int barB4Calculation, int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer, out CandleStrength strength )
@@ -1404,7 +1404,7 @@ namespace fx.Indicators
 
         public int EveningStarOrDojiLoopBack()
         {
-            return ( fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 ) );
+            return ( Core.BbandsLookback( Core.MAType.Ema, 20 ) );
         }
 
         /// <summary>
@@ -1424,7 +1424,7 @@ namespace fx.Indicators
 
         public int EveningStarOrDojiLookback()
         {
-            return ( fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 ) );
+            return ( Core.BbandsLookback( Core.MAType.Ema, 20 ) );
         }
 
         public bool EveningStarOrDoji34( int barB4Calculation, int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer, out CandleStrength strength )
@@ -1812,7 +1812,7 @@ namespace fx.Indicators
 
         public int InvertedHammerLookBack()
         {
-            return fx.TALib.Core.CdlInvertedHammerLookback();
+            return Core.CdlInvertedHammerLookback();
         }
 
         public RetCode InvertedHammer2( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -1961,7 +1961,7 @@ namespace fx.Indicators
 
         public int BreakAwayLookBack()
         {
-            return fx.TALib.Core.CdlBreakawayLookback();
+            return Core.CdlBreakawayLookback();
         }
 
         public RetCode BreakAway4567( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -1975,7 +1975,7 @@ namespace fx.Indicators
 
             if ( ( endIdx < 0 ) || ( endIdx < startIdx ) ) return RetCode.OutOfRangeEndIndex;
 
-            lookbackCount = fx.TALib.Core.CdlInvertedHammerLookback();
+            lookbackCount = Core.CdlInvertedHammerLookback();
 
             if ( startIdx < lookbackCount ) startIdx = lookbackCount;
 
@@ -2299,7 +2299,7 @@ namespace fx.Indicators
 
         public int PiercingOrDarkCloudCoverLookBack()
         {
-            return ( Math.Max( fx.TALib.Core.CdlPiercingLookback(), fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 ) ) );
+            return ( Math.Max( Core.CdlPiercingLookback(), Core.BbandsLookback( Core.MAType.Ema, 20 ) ) );
         }
 
         public RetCode PiercingOrDarkCloudCover2( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -2760,7 +2760,7 @@ namespace fx.Indicators
 
         public int MeetingLinesLoopBack()
         {
-            return fx.TALib.Core.MacdExtLookback( Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
+            return Core.MacdExtLookback( Core.MAType.Ema, Core.MAType.Ema, Core.MAType.Ema, 20, 40, 10 );
         }
 
         //public RetCode MeetingLinesBear2( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[] buffer )
@@ -2861,7 +2861,7 @@ namespace fx.Indicators
 
         public int ThreeStarsInSouthLookBack()
         {
-            return fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            return Core.BbandsLookback( Core.MAType.Ema, 20 );
         }
 
         public RetCode ThreeStarsInSouth3( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -2956,7 +2956,7 @@ namespace fx.Indicators
 
         public int EngulfingLookBack()
         {
-            return fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            return Core.BbandsLookback( Core.MAType.Ema, 20 );
         }
         public bool Engulfing2WithBollinger( int barB4Calculation, int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer, out CandleStrength strength )
         {
@@ -3319,7 +3319,7 @@ namespace fx.Indicators
         /// </summary>
         public int AdvanceBlockLookBack()
         {
-            return fx.TALib.Core.CdlAdvanceBlockLookback();
+            return Core.CdlAdvanceBlockLookback();
         }
 
         public RetCode AdvanceBlock3( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -3485,7 +3485,7 @@ namespace fx.Indicators
 
         public int DojiOrHammerLookBack()
         {
-            return fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            return Core.BbandsLookback( Core.MAType.Ema, 20 );
         }
 
         public RetCode DojiOrHammer1WithBollinger( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -3614,7 +3614,7 @@ namespace fx.Indicators
 
             if ( ( endIdx < 0 ) || ( endIdx < startIdx ) ) return RetCode.OutOfRangeEndIndex;
 
-            lookbackCount = fx.TALib.Core.BbandsLookback( Core.MAType.Ema, 20 );
+            lookbackCount = Core.BbandsLookback( Core.MAType.Ema, 20 );
 
             if ( startIdx < lookbackCount ) startIdx = lookbackCount;
 
@@ -3796,7 +3796,7 @@ namespace fx.Indicators
 
         public int KickingLoopBack()
         {
-            return ( fx.TALib.Core.CdlKickingLookback() );
+            return ( Core.CdlKickingLookback() );
         }
         /// <summary>
         /// <image url="$(SolutionDir)\..\..\30 - CommonImages\BullishKicker.png" scale="0.7"/>
@@ -4041,7 +4041,7 @@ namespace fx.Indicators
 
         public int RisingOrFallingLoookBack()
         {
-            return fx.TALib.Core.CdlRiseFall3MethodsLookback();
+            return Core.CdlRiseFall3MethodsLookback();
         }
 
         public RetCode RisingOrFalling3Methods456( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )
@@ -4283,7 +4283,7 @@ namespace fx.Indicators
 
         public int LadderBottomLookBack()
         {
-            return fx.TALib.Core.CdlLadderBottomLookback();
+            return Core.CdlLadderBottomLookback();
         }
 
         public RetCode LadderBottom5( int startIdx, int endIdx, out int outBegIdx, out int outNBElement, ref TACandle[ ] buffer )

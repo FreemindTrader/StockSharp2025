@@ -36,7 +36,7 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ProductGroup>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)productId, (object)childId, (object)parentId, (object)managerId, (object)emailTemplateId, (object)expandInner, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<ProductGroup>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, productId, childId, parentId, managerId, emailTemplateId, expandInner, like, likeCompare );
         }
 
         Task IProductGroupService.AddChildAsync(
@@ -44,7 +44,7 @@ namespace StockSharp.Web.Api.Client
           long childId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddChildAsync"), cancellationToken, (object)parentId, (object)childId);
+            return Post( GetCurrentMethod( "AddChildAsync"), cancellationToken, parentId, childId );
         }
 
         Task<bool> IProductGroupService.RemoveChildAsync(
@@ -52,7 +52,7 @@ namespace StockSharp.Web.Api.Client
           long childId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveChildAsync"), cancellationToken, (object)parentId, (object)childId);
+            return Post<bool>( GetCurrentMethod( "RemoveChildAsync"), cancellationToken, parentId, childId );
         }
 
         Task IProductGroupService.AddManagerAsync(
@@ -60,7 +60,7 @@ namespace StockSharp.Web.Api.Client
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddManagerAsync"), cancellationToken, (object)groupId, (object)clientId);
+            return Post( GetCurrentMethod( "AddManagerAsync"), cancellationToken, groupId, clientId );
         }
 
         Task<bool> IProductGroupService.RemoveManagerAsync(
@@ -68,7 +68,7 @@ namespace StockSharp.Web.Api.Client
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveManagerAsync"), cancellationToken, (object)groupId, (object)clientId);
+            return Post<bool>( GetCurrentMethod( "RemoveManagerAsync"), cancellationToken, groupId, clientId );
         }
     }
 }

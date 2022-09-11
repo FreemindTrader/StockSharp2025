@@ -9,7 +9,7 @@ namespace StockSharp.Hydra.Panes
     {
         public override object Convert( object value, Type targetType, object parameter, CultureInfo culture )
         {
-            StockSharp.Messages.DataType msg = ( StockSharp.Messages.DataType )value;
+            Messages.DataType msg = ( Messages.DataType )value;
 
             if ( msg == TaskPane.Custom )
                 return LocalizedStrings.Custom;

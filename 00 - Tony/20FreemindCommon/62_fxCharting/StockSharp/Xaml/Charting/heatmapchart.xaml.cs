@@ -55,11 +55,11 @@ namespace fx.Charting
         {
             get
             {
-                return ( bool )GetValue( HeatmapChart.ShowColorMapProperty );
+                return ( bool )GetValue( ShowColorMapProperty );
             }
             set
             {
-                SetValue( HeatmapChart.ShowColorMapProperty, value );
+                SetValue( ShowColorMapProperty, value );
             }
         }
 

@@ -505,7 +505,7 @@ namespace System.Net.FtpClient
             {
                 m_keepAlive = value;
                 if ( m_stream != null )
-                    m_stream.SetSocketOption( Sockets.SocketOptionLevel.Socket, Sockets.SocketOptionName.KeepAlive, value );
+                    m_stream.SetSocketOption( SocketOptionLevel.Socket, SocketOptionName.KeepAlive, value );
             }
         }
 
@@ -653,7 +653,7 @@ namespace System.Net.FtpClient
         /// <returns>True if the feature was found</returns>
         public bool HasFeature( FtpCapability cap )
         {
-            return ( ( this.Capabilities & cap ) == cap );
+            return ( ( Capabilities & cap ) == cap );
         }
 
         /// <summary>
@@ -914,8 +914,8 @@ namespace System.Net.FtpClient
                 m_stream.ConnectTimeout = m_connectTimeout;
                 m_stream.SocketPollInterval = m_socketPollInterval;
                 m_stream.Connect( Host, Port, InternetProtocolVersions );
-                m_stream.SetSocketOption( Sockets.SocketOptionLevel.Socket,
-                    Sockets.SocketOptionName.KeepAlive, m_keepAlive );
+                m_stream.SetSocketOption( SocketOptionLevel.Socket,
+                    SocketOptionName.KeepAlive, m_keepAlive );
 
                 if ( EncryptionMode == FtpEncryptionMode.Implicit )
                     m_stream.ActivateEncryption( Host,
@@ -1224,7 +1224,7 @@ namespace System.Net.FtpClient
                 if ( !( reply = Execute( "EPSV" ) ).Success )
                 {
                     // if we're connected with IPv4 and data channel type is AutoPassive then fallback to IPv4
-                    if ( reply.Type == FtpResponseType.PermanentNegativeCompletion && type == FtpDataConnectionType.AutoPassive && m_stream != null && m_stream.LocalEndPoint.AddressFamily == Sockets.AddressFamily.InterNetwork )
+                    if ( reply.Type == FtpResponseType.PermanentNegativeCompletion && type == FtpDataConnectionType.AutoPassive && m_stream != null && m_stream.LocalEndPoint.AddressFamily == AddressFamily.InterNetwork )
                         return OpenPassiveDataStream( FtpDataConnectionType.PASV, command, restart );
                     throw new FtpCommandException( reply );
                 }
@@ -1240,7 +1240,7 @@ namespace System.Net.FtpClient
             }
             else
             {
-                if ( m_stream.LocalEndPoint.AddressFamily != Sockets.AddressFamily.InterNetwork )
+                if ( m_stream.LocalEndPoint.AddressFamily != AddressFamily.InterNetwork )
                     throw new FtpException( "Only IPv4 is supported by the PASV command. Use EPSV instead." );
 
                 if ( !( reply = Execute( "PASV" ) ).Success )
@@ -1275,7 +1275,7 @@ namespace System.Net.FtpClient
             stream.ConnectTimeout = DataConnectionConnectTimeout;
             stream.ReadTimeout = DataConnectionReadTimeout;
             stream.Connect( host, port, InternetProtocolVersions );
-            stream.SetSocketOption( Sockets.SocketOptionLevel.Socket, Sockets.SocketOptionName.KeepAlive, m_keepAlive );
+            stream.SetSocketOption( SocketOptionLevel.Socket, SocketOptionName.KeepAlive, m_keepAlive );
 
             if ( restart > 0 )
             {
@@ -1298,7 +1298,7 @@ namespace System.Net.FtpClient
             // this needs to take place after the command is executed
             if ( m_dataConnectionEncryption && m_encryptionmode != FtpEncryptionMode.None )
                 stream.ActivateEncryption( m_host,
-                    this.ClientCertificates.Count > 0 ? this.ClientCertificates : null,
+                    ClientCertificates.Count > 0 ? ClientCertificates : null,
                     m_SslProtocols );
 
             return stream;
@@ -1329,10 +1329,10 @@ namespace System.Net.FtpClient
 
                 switch ( stream.LocalEndPoint.AddressFamily )
                 {
-                    case Sockets.AddressFamily.InterNetwork:
+                    case AddressFamily.InterNetwork:
                         ipver = 1; // IPv4
                         break;
-                    case Sockets.AddressFamily.InterNetworkV6:
+                    case AddressFamily.InterNetworkV6:
                         ipver = 2; // IPv6
                         break;
                     default:
@@ -1344,7 +1344,7 @@ namespace System.Net.FtpClient
                 {
 
                     // if we're connected with IPv4 and the data channel type is AutoActive then try to fall back to the PORT command
-                    if ( reply.Type == FtpResponseType.PermanentNegativeCompletion && type == FtpDataConnectionType.AutoActive && m_stream != null && m_stream.LocalEndPoint.AddressFamily == Sockets.AddressFamily.InterNetwork )
+                    if ( reply.Type == FtpResponseType.PermanentNegativeCompletion && type == FtpDataConnectionType.AutoActive && m_stream != null && m_stream.LocalEndPoint.AddressFamily == AddressFamily.InterNetwork )
                     {
                         stream.ControlConnection = null; // we don't want this failed EPRT attempt to close our control connection when the stream is closed so clear out the reference.
                         stream.Close();
@@ -1359,7 +1359,7 @@ namespace System.Net.FtpClient
             }
             else
             {
-                if ( m_stream.LocalEndPoint.AddressFamily != Sockets.AddressFamily.InterNetwork )
+                if ( m_stream.LocalEndPoint.AddressFamily != AddressFamily.InterNetwork )
                     throw new FtpException( "Only IPv4 is supported by the PORT command. Use EPRT instead." );
 
                 if ( !( reply = Execute( "PORT {0},{1},{2}",
@@ -1401,10 +1401,10 @@ namespace System.Net.FtpClient
 
             if ( m_dataConnectionEncryption && m_encryptionmode != FtpEncryptionMode.None )
                 stream.ActivateEncryption( m_host,
-                    this.ClientCertificates.Count > 0 ? this.ClientCertificates : null,
+                    ClientCertificates.Count > 0 ? ClientCertificates : null,
                     m_SslProtocols );
 
-            stream.SetSocketOption( Sockets.SocketOptionLevel.Socket, Sockets.SocketOptionName.KeepAlive, m_keepAlive );
+            stream.SetSocketOption( SocketOptionLevel.Socket, SocketOptionName.KeepAlive, m_keepAlive );
             stream.ReadTimeout = m_dataConnectionReadTimeout;
 
             return stream;
@@ -1429,7 +1429,7 @@ namespace System.Net.FtpClient
                 // The PORT and PASV commands do not work with IPv6 so
                 // if either one of those types are set change them
                 // to EPSV or EPRT appropriately.
-                if ( m_stream.LocalEndPoint.AddressFamily == Sockets.AddressFamily.InterNetworkV6 )
+                if ( m_stream.LocalEndPoint.AddressFamily == AddressFamily.InterNetworkV6 )
                 {
                     switch ( type )
                     {

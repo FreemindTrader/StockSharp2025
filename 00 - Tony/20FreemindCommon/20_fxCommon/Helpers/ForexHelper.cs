@@ -151,7 +151,7 @@ namespace fx.Common
             startDate = DateTime.UtcNow.Date;
             endDate = DateTime.UtcNow.AddMinutes( 5 );
 
-            var totalbars = ForexHelper.CalculateStorageSize( period );
+            var totalbars = CalculateStorageSize( period );
 
             if ( period.Days == 30 )
             {

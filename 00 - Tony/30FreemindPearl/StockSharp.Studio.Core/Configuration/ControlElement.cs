@@ -21,7 +21,7 @@ namespace StockSharp.Studio.Core.Configuration
             }
             set
             {
-                this["type"] = ( object )value;
+                this["type"] = value;
             }
         }
     }

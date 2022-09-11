@@ -139,7 +139,7 @@ namespace fx.Definitions
             {
                 int hashCode = 47;
                 hashCode = ( hashCode * 53 ) ^ ( int ) _candleType;
-                hashCode = ( hashCode * 53 ) ^ ( int ) _strength;
+                hashCode = ( hashCode * 53 ) ^ _strength;
                 hashCode = ( hashCode * 53 ) ^ _endIndex.GetHashCode( );
                 hashCode = ( hashCode * 53 ) ^ _beginIndex.GetHashCode( );
                 hashCode = ( hashCode * 53 ) ^ EqualityComparer<TimeSpan>.Default.GetHashCode( _period );

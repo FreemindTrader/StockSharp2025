@@ -34,7 +34,7 @@ namespace StockSharp.Web.Api.Client
           long? groupId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ProductGroupReferral>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)groupId);
+            return Get<BaseEntitySet<ProductGroupReferral>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, groupId );
         }
     }
 }

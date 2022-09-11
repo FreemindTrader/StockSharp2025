@@ -22,7 +22,7 @@ namespace StockSharp.Studio.Core.Commands
             License license1 = license;
             if ( license1 == null )
                 throw new ArgumentNullException( nameof( license ) );
-            this.License = license1;
+            License = license1;
         }
     }
 }

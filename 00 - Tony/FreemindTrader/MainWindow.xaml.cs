@@ -149,11 +149,11 @@ namespace FreemindTrader
             var securityMsgProvider = ( ISecurityMessageAdapterProvider )new CsvSecurityMessageAdapterProvider( Path.Combine( Paths.AppDataPath, "security_adapter.csv" ) );
             var portfolioMsgProvider = ( IPortfolioMessageAdapterProvider )new CsvPortfolioMessageAdapterProvider( Path.Combine( Paths.AppDataPath, "portfolio_adapter.csv" ) );
 
-            ConfigManager.RegisterService<ISecurityStorage>( securities );
-            ConfigManager.RegisterService<IPositionStorage>( positionStorage );
-            ConfigManager.RegisterService<ISecurityProvider>( securityProvider );
-            ConfigManager.RegisterService<ISecurityMessageAdapterProvider>( securityMsgProvider );
-            ConfigManager.RegisterService<IPortfolioMessageAdapterProvider>( portfolioMsgProvider );
+            ConfigManager.RegisterService( securities );
+            ConfigManager.RegisterService( positionStorage );
+            ConfigManager.RegisterService( securityProvider );
+            ConfigManager.RegisterService( securityMsgProvider );
+            ConfigManager.RegisterService( portfolioMsgProvider );
 
             INativeIdStorage nativeIdStorage = ServicesRegistry.NativeIdStorage;
             ISecurityMappingStorage mappingStorage = ServicesRegistry.MappingStorage;

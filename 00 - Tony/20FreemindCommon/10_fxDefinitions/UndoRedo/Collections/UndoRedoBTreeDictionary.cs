@@ -33,7 +33,7 @@ namespace fx.Definitions.UndoRedo
         {
             foreach ( var keyValuePairTKey in dictionary )
             {
-                this.Add( keyValuePairTKey.Key, keyValuePairTKey.Value );
+                Add( keyValuePairTKey.Key, keyValuePairTKey.Value );
             }
         }
 
@@ -68,7 +68,7 @@ namespace fx.Definitions.UndoRedo
         {
             foreach ( var keyValuePairTKey in dictionary )
             {
-                this.Add( keyValuePairTKey.Key, keyValuePairTKey.Value );
+                Add( keyValuePairTKey.Key, keyValuePairTKey.Value );
             }
         }
         /// <summary>
@@ -198,7 +198,7 @@ namespace fx.Definitions.UndoRedo
         {
             TValue value;
 
-            if ( base.TryGetValue( key, out value ) )
+            if ( TryGetValue( key, out value ) )
             {
                 ChangesList changes = Enlist( );
                 if ( changes != null )

@@ -52,7 +52,7 @@ namespace fx.Database
         {
             if ( ReferenceEquals( null, obj ) ) return false;
             if ( ReferenceEquals( this, obj ) ) return true;
-            if ( obj.GetType( ) != this.GetType( ) ) return false;
+            if ( obj.GetType( ) != GetType( ) ) return false;
             return Equals( ( DbClosedTrade ) obj );
         }
 
@@ -94,7 +94,7 @@ namespace fx.Database
         {
             // If we used == to check for null instead of Object.ReferenceEquals(), we'd
             // get a StackOverflowException. Can you figure out why?
-            if ( Object.ReferenceEquals( left, null ) )
+            if ( ReferenceEquals( left, null ) )
                 return false;
             else
                 return left.Equals( right );

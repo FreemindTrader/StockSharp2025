@@ -61,10 +61,10 @@ namespace StockSharp.Studio.Controls
 
         public static void InitServices()
         {
-            ConfigManager.RegisterService<IDispatcher>( ( IDispatcher )GuiDispatcher.GlobalDispatcher );
-            ConfigManager.RegisterService<IIndicatorProvider>( ( IIndicatorProvider )new ChartIndicatorProvider() );
-            ConfigManager.RegisterService<ICompilerService>( ( ICompilerService )new RoslynCompilerService() );
-            ConfigManager.RegisterService<IExcelWorkerProvider>( ( IExcelWorkerProvider )new DevExpExcelWorkerProvider() );
+            ConfigManager.RegisterService<IDispatcher>( GuiDispatcher.GlobalDispatcher );
+            ConfigManager.RegisterService<IIndicatorProvider>( new ChartIndicatorProvider() );
+            ConfigManager.RegisterService<ICompilerService>( new RoslynCompilerService() );
+            ConfigManager.RegisterService<IExcelWorkerProvider>( new DevExpExcelWorkerProvider() );
         }
 
         public static void AddToolControl(
@@ -78,27 +78,27 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( controlType ) );
             if ( sender == null )
                 throw new ArgumentNullException( nameof( sender ) );
-            System.Type type = controlType.Type;
+            Type type = controlType.Type;
             string id = type.GUID.ToString();
             bool isToolWindow = controlType.IsToolWindow;
             StudioCommandAttribute studioCommand = controlType.Type.GetAttribute<StudioCommandAttribute>( true );
             BarButtonItem barButtonItem1 = new BarButtonItem();
-            barButtonItem1.Content = ( object )controlType.Name;
-            barButtonItem1.ToolTip = ( object )controlType.Description;
+            barButtonItem1.Content = controlType.Name;
+            barButtonItem1.ToolTip = controlType.Description;
             barButtonItem1.Glyph = controlType.Icon;
             BarButtonItem barButtonItem2 = barButtonItem1;
-            barButtonItem2.SetBinding( BarItem.LargeGlyphProperty, ( BindingBase )new ThemedIconBinding( ( DrawingImage )controlType.Icon ) );
+            barButtonItem2.SetBinding( BarItem.LargeGlyphProperty, new ThemedIconBinding( ( DrawingImage )controlType.Icon ) );
             if ( studioCommand == null )
-                barButtonItem2.ItemClick += ( ItemClickEventHandler )( ( s, e ) => new OpenWindowCommand( id, type, isToolWindow ).Process( sender, false ) );
+                barButtonItem2.ItemClick += ( s, e ) => new OpenWindowCommand( id, type, isToolWindow ).Process( sender, false );
             else
-                barButtonItem2.ItemClick += ( ItemClickEventHandler )( ( s, e ) => studioCommand.CommandType.CreateInstance<IStudioCommand>().Process( sender, false ) );
-            page.Items.Add( ( IBarItem )barButtonItem2 );
+                barButtonItem2.ItemClick += ( s, e ) => studioCommand.CommandType.CreateInstance<IStudioCommand>().Process( sender, false );
+            page.Items.Add( barButtonItem2 );
         }
 
         public static IEnumerable<ControlType> GetControlTypes(
-          this IEnumerable<System.Type> types )
+          this IEnumerable<Type> types )
         {
-            return ( IEnumerable<ControlType> )types.Select<System.Type, ControlType>( ( Func<System.Type, ControlType> )( type => new ControlType( type ) ) ).ToArray<ControlType>();
+            return types.Select( type => new ControlType( type ) ).ToArray();
         }
 
         public static void UpdateTitle( this Window window, Client profile )
@@ -120,41 +120,41 @@ namespace StockSharp.Studio.Controls
             if ( owner == null )
                 throw new ArgumentNullException( nameof( owner ) );
             IProductFeedbackService svc = CommunityServicesRegistry.GetService<IProductFeedbackService>();
-            if ( AsyncContext.Run<ProductFeedback>( ( Func<Task<ProductFeedback>> )( () => svc.GetByProductAndClientAsync( StockSharp.Studio.Community.Helper.ProductId, new long?(), new CancellationToken() ) ) ) != null )
+            if ( AsyncContext.Run( () => svc.GetByProductAndClientAsync( Helper.ProductId, new long?(), new CancellationToken() ) ) != null )
                 return;
-            DateTime? nextTimeFeedback = Extensions.Config.GetNextTimeFeedback();
+            DateTime? nextTimeFeedback = Config.GetNextTimeFeedback();
             DateTime now = DateTime.Now;
             if ( ( nextTimeFeedback.HasValue ? ( nextTimeFeedback.GetValueOrDefault() > now ? 1 : 0 ) : 0 ) != 0 )
                 return;
             RatingWindow wnd = new RatingWindow();
             if ( !XamlHelper.ShowModal( wnd, owner ) )
             {
-                Extensions.Config.SetNextTimeFeedback( DateTime.Now.AddDays( 7.0 ) );
+                Config.SetNextTimeFeedback( DateTime.Now.AddDays( 7.0 ) );
             }
             else
             {
                 int rating = wnd.RatingValue;
                 string comment = wnd.Comment;
-                AsyncContext.Run<ProductFeedback>( ( Func<Task<ProductFeedback>> )( () =>
+                AsyncContext.Run( () =>
                    {
                        IProductFeedbackService productFeedbackService = svc;
                        ProductFeedback entity = new ProductFeedback();
                        entity.Product = new Product()
                        {
-                           Id = StockSharp.Studio.Community.Helper.ProductId
+                           Id = Helper.ProductId
                        };
                        entity.Rate = rating;
-                       entity.Message = new StockSharp.Web.DomainModel.Message() { Body = comment };
+                       entity.Message = new Web.DomainModel.Message() { Body = comment };
                        CancellationToken cancellationToken = new CancellationToken();
                        return productFeedbackService.AddAsync( entity, cancellationToken );
-                   } ) );
+                   } );
                 int num = ( int )new MessageBoxBuilder().Text( LocalizedStrings.ThankYouForFeedback ).Owner( owner ).Show();
             }
         }
 
         internal static string GetSystemInfo()
         {
-            return string.Format( "{0}: {1}\r\n{2}: {3}", ( object )LocalizedStrings.XamlStr47, ( object )Environment.Is64BitProcess, ( object )LocalizedStrings.OSVersion, ( object )Environment.OSVersion );
+            return string.Format( "{0}: {1}\r\n{2}: {3}", LocalizedStrings.XamlStr47, Environment.Is64BitProcess, LocalizedStrings.OSVersion, Environment.OSVersion );
         }
 
         public static void ShowQuestionWindow(
@@ -214,14 +214,14 @@ namespace StockSharp.Studio.Controls
           string text = null )
         {
             if ( delay.HasValue )
-                ( ( Action )( () => ( ( DispatcherObject )owner ).GuiAsync( ( Action )( () =>
+                ( ( Action )( () => owner.GuiAsync( () =>
                          {
                              int num = ( int )new MessageBoxBuilder().Owner( owner ).Caption( owner.Title ).Text( LocalizedStrings.IfYouHaveAnyQuestions ).YesNo().Show();
-                             Extensions.Config.SetDoNotShowQuestionWindow( true );
+                             Config.SetDoNotShowQuestionWindow( true );
                              if ( num != 6 )
                                  return;
                              owner.ShowQuestionWindow( attachPath, caption, text, false );
-                         } ) ) ) ).Timer().Interval( delay.Value, TimeSpan.Zero );
+                         } ) ) ).Timer().Interval( delay.Value, TimeSpan.Zero );
             else
                 owner.ShowQuestionWindow( attachPath, caption, text, false );
         }
@@ -230,8 +230,8 @@ namespace StockSharp.Studio.Controls
         {
             if ( errorHandler == null )
                 throw new ArgumentNullException( nameof( errorHandler ) );
-            string path2 = string.Format( "logs_{0:yyyyMMdd}", ( object )DateTime.Today );
-            string logsDir = Extensions.Config.LogConfig.LogsDir;
+            string path2 = string.Format( "logs_{0:yyyyMMdd}", DateTime.Today );
+            string logsDir = Config.LogConfig.LogsDir;
             string str1 = Path.Combine( Paths.AppDataPath, path2 );
             string str2 = str1 + ".zip";
             str1.SafeDeleteDir();
@@ -290,10 +290,10 @@ namespace StockSharp.Studio.Controls
                 caption = LocalizedStrings.BugReport;
             try
             {
-                string str = Extensions.PrepareLogsFile( duration.Value, ( Action<Exception> )( ex => ex.LogError( "Prepare logs file error: {0}" ) ) );
+                string str = PrepareLogsFile( duration.Value, ex => ex.LogError( "Prepare logs file error: {0}" ) );
                 LogManager instance = LogManager.Instance;
                 if ( instance != null )
-                    instance.Application.AddDebugLog( "created logs zip: {0}", ( object )str );
+                    instance.Application.AddDebugLog( "created logs zip: {0}", str );
                 try
                 {
                     owner.ShowQuestionWindow( str, caption, text, isBugReport );
@@ -306,7 +306,7 @@ namespace StockSharp.Studio.Controls
                     }
                     catch ( Exception ex )
                     {
-                        ex.LogError( ( string )null );
+                        ex.LogError( null );
                     }
                 }
             }
@@ -322,8 +322,8 @@ namespace StockSharp.Studio.Controls
             if ( owner == null )
                 throw new ArgumentNullException( nameof( owner ) );
             ICredentialsProvider credProvider = ServicesRegistry.CredentialsProvider;
-            ServerCredentials credentials = ( ServerCredentials )null;
-            bool flag = ( ( Func<bool> )( () => !credProvider.TryLoad( out credentials ) ) ).DoWithLog<bool>();
+            ServerCredentials credentials = null;
+            bool flag = ( ( Func<bool> )( () => !credProvider.TryLoad( out credentials ) ) ).DoWithLog();
             Client client;
             while ( true )
             {
@@ -341,23 +341,23 @@ namespace StockSharp.Studio.Controls
                 try
                 {
                     IClientService clientSvc = CommunityServicesRegistry.GetService<IClientService>();
-                    client = AsyncContext.Run<Client>( ( Func<Task<Client>> )( () => clientSvc.GetCurrentAsync( new bool?(), token ) ) );
+                    client = AsyncContext.Run( () => clientSvc.GetCurrentAsync( new bool?(), token ) );
                     goto label_10;
                 }
                 catch ( Exception ex )
                 {
                     int num = ( int )new MessageBoxBuilder().Text( LocalizedStrings.Str3647 + ex.Message ).Error().Owner( owner ).Show();
-                    ex.LogError( ( string )null );
+                    ex.LogError( null );
                     flag = true;
                 }
             }
             owner.Close();
-            return ( Client )null;
+            return null;
         label_10:
             if ( !client.AuthToken.IsEmpty() )
             {
                 credentials.Token = client.AuthToken.Secure();
-                credentials.Password = ( SecureString )null;
+                credentials.Password = null;
                 ( ( Action )( () => credProvider.Save( credentials ) ) ).DoWithLog();
             }
             return client;
@@ -374,22 +374,22 @@ namespace StockSharp.Studio.Controls
             }
             else
             {
-                Extensions.Profile = profile;
-                new LoggedInCommand( profile ).Process( ( object )owner, false );
-                StockSharp.Algo.Subscription mySubscription = new StockSharp.Algo.Subscription( DataType.News, ( SecurityMessage )null );
-                StockSharp.Studio.Community.Helper.InitServices( ( Action<SystemMessage> )( m =>
+                Profile = profile;
+                new LoggedInCommand( profile ).Process( owner, false );
+                Algo.Subscription mySubscription = new Algo.Subscription( DataType.News, ( SecurityMessage )null );
+                Helper.InitServices( m =>
                    {
                        if ( !( m.Source == "StockSharp" ) )
                            return;
-                       StockSharp.Algo.Subscription subscription = mySubscription;
+                       Algo.Subscription subscription = mySubscription;
                        News entity = new News();
                        entity.Headline = m.Topic.Title;
                        DateTime? expiryDate = m.ExpiryDate;
                        entity.ExpiryDate = expiryDate.HasValue ? new DateTimeOffset?( ( DateTimeOffset )expiryDate.GetValueOrDefault() ) : new DateTimeOffset?();
                        entity.Story = m.Body;
                        entity.Id = m.Id.To<string>();
-                       new EntityCommand<News>( subscription, entity ).Process( ( object )owner, false );
-                   } ), ( Action )( () => { } ), token );
+                       new EntityCommand<News>( subscription, entity ).Process( owner, false );
+                   }, () => { }, token );
             }
         }
 
@@ -397,7 +397,7 @@ namespace StockSharp.Studio.Controls
         {
             if ( owner == null )
                 throw new ArgumentNullException( nameof( owner ) );
-            if ( new MessageBoxBuilder().Text( LocalizedStrings.Str2952Params.Put( ( object )Paths.AppName ) ).Owner( owner ).Info().YesNo().Show() != MessageBoxResult.Yes )
+            if ( new MessageBoxBuilder().Text( LocalizedStrings.Str2952Params.Put( Paths.AppName ) ).Owner( owner ).Info().YesNo().Show() != MessageBoxResult.Yes )
                 return false;
             string activeLanguage = LocalizedStrings.ActiveLanguage;
             bool flag = !CommunityServicesRegistry.Offline;
@@ -421,12 +421,12 @@ namespace StockSharp.Studio.Controls
         {
             if ( owner == null )
                 throw new ArgumentNullException( nameof( owner ) );
-            if ( new MessageBoxBuilder().Text( LocalizedStrings.Str2954Params.Put( ( object )Paths.AppName ) ).Warning().Owner( owner ).YesNo().Show() != MessageBoxResult.Yes )
+            if ( new MessageBoxBuilder().Text( LocalizedStrings.Str2954Params.Put( Paths.AppName ) ).Warning().Owner( owner ).YesNo().Show() != MessageBoxResult.Yes )
                 return false;
             if ( postAction != null )
                 postAction();
             AlertServicesRegistry.TryNotificationService?.Dispose();
-            Extensions.Config.ResetSettings();
+            Config.ResetSettings();
             owner.Restart();
             return true;
         }
@@ -437,7 +437,7 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( owner ) );
             owner.Close();
             System.Windows.Forms.Application.Restart();
-            System.Windows.Application.Current.Shutdown();
+            Application.Current.Shutdown();
         }
 
         public static bool InitStockSharpConnections( this Connector connector, Window owner )
@@ -447,31 +447,31 @@ namespace StockSharp.Studio.Controls
             ServerCredentials credentials;
             if ( new MessageBoxBuilder().Info().Text( LocalizedStrings.SetupStockSharpConnectionFirstTime ).Owner( owner ).YesNo().Show() != MessageBoxResult.Yes || !ServicesRegistry.CredentialsProvider.TryLoad( out credentials ) )
                 return false;
-            connector.Adapter.InnerAdapters.AddRange<IMessageAdapter>( ServicesRegistry.AdapterProvider.CreateStockSharpAdapters( connector.TransactionIdGenerator, credentials.Email, credentials.Password ) );
-            Extensions.Config.SetConnector( connector.Save() );
-            Extensions.Config.SetAutoConnect( true );
+            connector.Adapter.InnerAdapters.AddRange( ServicesRegistry.AdapterProvider.CreateStockSharpAdapters( connector.TransactionIdGenerator, credentials.Email, credentials.Password ) );
+            Config.SetConnector( connector.Save() );
+            Config.SetAutoConnect( true );
             return true;
         }
 
         public static void TryAddEntities<TEntity>(
-          this IList<StockSharp.BusinessEntities.Position> entities,
+          this IList<Position> entities,
           EntityCommand<TEntity> cmd )
-          where TEntity : StockSharp.BusinessEntities.Position
+          where TEntity : Position
         {
             if ( entities == null )
                 throw new ArgumentNullException( nameof( entities ) );
             if ( cmd == null )
                 throw new ArgumentNullException( nameof( cmd ) );
-            if ( ( object )cmd.Entity != null )
+            if ( cmd.Entity != null )
             {
-                entities.TryAdd<StockSharp.BusinessEntities.Position>( ( StockSharp.BusinessEntities.Position )cmd.Entity );
+                entities.TryAdd( cmd.Entity );
             }
             else
             {
                 if ( cmd.Entities == null )
                     return;
                 foreach ( TEntity entity in cmd.Entities )
-                    entities.TryAdd<StockSharp.BusinessEntities.Position>( ( StockSharp.BusinessEntities.Position )entity );
+                    entities.TryAdd( entity );
             }
         }
 
@@ -484,7 +484,7 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( entities ) );
             if ( cmd == null )
                 throw new ArgumentNullException( nameof( cmd ) );
-            if ( ( object )cmd.Entity != null )
+            if ( cmd.Entity != null )
             {
                 entities.Add( cmd.Entity );
             }
@@ -492,7 +492,7 @@ namespace StockSharp.Studio.Controls
             {
                 if ( cmd.Entities == null )
                     return;
-                entities.AddRange<TEntity>( cmd.Entities );
+                entities.AddRange( cmd.Entities );
             }
         }
 
@@ -505,20 +505,20 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( entities ) );
             if ( cmd == null )
                 throw new ArgumentNullException( nameof( cmd ) );
-            if ( ( object )cmd.Entity != null )
+            if ( cmd.Entity != null )
             {
-                entities.TryAdd<TEntity>( cmd.Entity );
+                entities.TryAdd( cmd.Entity );
             }
             else
             {
                 if ( cmd.Entities == null )
                     return;
                 foreach ( TEntity entity in cmd.Entities )
-                    entities.TryAdd<TEntity>( entity );
+                    entities.TryAdd( entity );
             }
         }
 
-        public static bool CanCloseOrRevert( this StockSharp.BusinessEntities.Position position )
+        public static bool CanCloseOrRevert( this Position position )
         {
             if ( position == null || position is Portfolio )
                 return false;
@@ -536,12 +536,12 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( owner ) );
             StudioUserConfig instance = BaseUserConfig<StudioUserConfig>.Instance;
             TSettings commonSettings = instance.GetCommonSettings<TSettings>();
-            SettingsWindow wnd = new SettingsWindow() { Settings = ( IPersistable )commonSettings.Clone<TSettings>() };
+            SettingsWindow wnd = new SettingsWindow() { Settings = commonSettings.Clone() };
             ( ( TSettings )wnd.Settings ).IsDark = ThemeExtensions.IsCurrDark();
             if ( !XamlHelper.ShowModal( wnd, owner ) )
                 return;
-            commonSettings.Apply<IPersistable>( wnd.Settings );
-            instance.SetCommonSettings<TSettings>( commonSettings );
+            commonSettings.Apply( wnd.Settings );
+            instance.SetCommonSettings( commonSettings );
             if ( applyChanges != null )
                 applyChanges( commonSettings );
             if ( ThemeExtensions.IsCurrDark() != commonSettings.IsDark )
@@ -561,7 +561,7 @@ namespace StockSharp.Studio.Controls
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return ( IEnumerable<CodeReference> )service.GetValue<CodeReference[ ]>( "References", Array.Empty<CodeReference>() );
+            return service.GetValue( "References", Array.Empty<CodeReference>() );
         }
 
         public static void SetReferences(
@@ -572,28 +572,28 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( service ) );
             if ( references == null )
                 throw new ArgumentNullException( nameof( references ) );
-            service.SetValue( "References", ( object )references.ToArray<CodeReference>() );
+            service.SetValue( "References", references.ToArray() );
         }
 
         public static string GetTheme( this IPersistableService service )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            return service.GetValue<string>( "Theme", ThemeExtensions.DefaultTheme );
+            return service.GetValue( "Theme", ThemeExtensions.DefaultTheme );
         }
 
         public static void SetTheme( this IPersistableService service, string theme )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            service.SetValue( "Theme", ( object )theme );
+            service.SetValue( "Theme", theme );
         }
 
         public static void LoadMainWindowSettings( this IPersistableService service, Window window )
         {
             if ( service == null )
                 throw new ArgumentNullException( nameof( service ) );
-            SettingsStorage storage = service.GetValue<SettingsStorage>( "MainWindow", ( SettingsStorage )null );
+            SettingsStorage storage = service.GetValue<SettingsStorage>( "MainWindow", null );
             if ( storage == null )
                 return;
             window.LoadWindowSettings( storage );
@@ -605,7 +605,7 @@ namespace StockSharp.Studio.Controls
                 throw new ArgumentNullException( nameof( service ) );
             SettingsStorage storage = new SettingsStorage();
             window.SaveWindowSettings( storage );
-            service.SetValue( "MainWindow", ( object )storage );
+            service.SetValue( "MainWindow", storage );
         }
 
         public static void InitAlerts()

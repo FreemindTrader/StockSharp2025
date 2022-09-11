@@ -20,11 +20,11 @@ namespace StockSharp.Studio.Core.Commands
             CandleSeries candleSeries = series;
             if ( candleSeries == null )
                 throw new ArgumentNullException( nameof( series ) );
-            this.Series = candleSeries;
+            Series = candleSeries;
             Candle candle1 = candle;
             if ( candle1 == null )
                 throw new ArgumentNullException( nameof( candle ) );
-            this.Candle = candle1;
+            Candle = candle1;
         }
     }
 }

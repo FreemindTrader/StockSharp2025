@@ -17,11 +17,11 @@ namespace StockSharp.Studio.Core.Commands
             IChartElement chartElement = element;
             if ( chartElement == null )
                 throw new ArgumentNullException( nameof( element ) );
-            this.Element = chartElement;
+            Element = chartElement;
             object obj = source;
             if ( obj == null )
                 throw new ArgumentNullException( nameof( source ) );
-            this.Source = obj;
+            Source = obj;
         }
 
         public ChartAddElementCommand( IChartElement element, object source, IIndicator indicator )
@@ -30,7 +30,7 @@ namespace StockSharp.Studio.Core.Commands
             IIndicator indicator1 = indicator;
             if ( indicator1 == null )
                 throw new ArgumentNullException( nameof( indicator ) );
-            this.Indicator = indicator1;
+            Indicator = indicator1;
         }
 
         public IChartElement Element { get; }

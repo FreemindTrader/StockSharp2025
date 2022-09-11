@@ -234,7 +234,7 @@ namespace fx.Algorithm
 
             if( _tradingEventsMsgForSymbol.TryAdd( symbol, eventsBindingList ) )
             {
-                var supportedTF = this.SupportedTimeSpan;
+                var supportedTF = SupportedTimeSpan;
 
                 foreach( var tf in supportedTF )
                 {

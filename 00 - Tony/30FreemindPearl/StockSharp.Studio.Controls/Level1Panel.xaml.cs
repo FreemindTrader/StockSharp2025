@@ -49,39 +49,39 @@ namespace StockSharp.Studio.Controls
 
         public override void Dispose( CloseReason reason )
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<ResetedCommand>( ( object )this );
-            commandService.UnRegister<EntityCommand<Level1ChangeMessage>>( ( object )this );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<ResetedCommand>( this );
+            commandService.UnRegister<EntityCommand<Level1ChangeMessage>>( this );
             if ( reason == CloseReason.CloseWindow )
-                this.AlertBtn.Dispose();
+                AlertBtn.Dispose();
             base.Dispose( reason );
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "Level1Grid", this.Level1Grid.Save() );
-            storage.SetValue<SettingsStorage>( "AlertBtn", this.AlertBtn.Save() );
-            storage.SetValue<string>( "BarManager", this.BarManager.SaveDevExpressControl() );
-            this.SaveSubscriptions( storage );
+            storage.SetValue( "Level1Grid", Level1Grid.Save() );
+            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
+            SaveSubscriptions( storage );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            this.Level1Grid.Load( storage.GetValue<SettingsStorage>( "Level1Grid", ( SettingsStorage )null ) );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", ( SettingsStorage )null );
+            Level1Grid.Load( storage.GetValue<SettingsStorage>( "Level1Grid", null ) );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
             if ( storage1 != null )
-                this.AlertBtn.Load( storage1 );
-            string settings = storage.GetValue<string>( "BarManager", ( string )null );
+                AlertBtn.Load( storage1 );
+            string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings != null )
-                this.BarManager.LoadDevExpressControl( settings );
-            this.LoadSubscriptions( storage );
+                BarManager.LoadDevExpressControl( settings );
+            LoadSubscriptions( storage );
         }
 
         private void Filter_OnClick( object sender, RoutedEventArgs e )
         {
-            this.FilterConfig();
+            FilterConfig();
         }        
     }
 }

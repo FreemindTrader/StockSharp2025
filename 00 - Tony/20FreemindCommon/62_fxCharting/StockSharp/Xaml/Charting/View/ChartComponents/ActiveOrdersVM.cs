@@ -185,7 +185,7 @@ namespace fx.Charting
 
         private void RemoveActiveOrdersInfo( )
         {
-            ( ( IEnumerable<Order> ) _orderInfoAnnotation.Keys.ToArray( ) ).ForEach( new Action<Order>( RemoveActiveOrderInfo ) );
+            _orderInfoAnnotation.Keys.ToArray().ForEach( new Action<Order>( RemoveActiveOrderInfo ) );
         }
 
         protected override void Clear( )
@@ -232,7 +232,7 @@ namespace fx.Charting
 
                     activeOrderInfo = SetupAnnotationBinding( order );
                     _orderInfoAnnotation.Add( myOrder, activeOrderInfo );
-                    ScichartSurfaceMVVM.AddAxisMakerAnnotation( RootElem, ( IAnnotation ) activeOrderInfo.Annotation, ( object ) myOrder );
+                    ScichartSurfaceMVVM.AddAxisMakerAnnotation( RootElem, activeOrderInfo.Annotation, myOrder );
                     OrderAnimation( activeOrderInfo, order, true );
                 }
                 else if ( IsValidOrder( myOrder, activeOrderInfo.AutoRemoveFromChart, order.OrderStates( ), order.IsError ) )
@@ -366,7 +366,7 @@ namespace fx.Charting
 
         private Order GetActiveOrderInfo( ActiveOrderAnnotation _param1, out ChartActiveOrderInfo _param2 )
         {
-            var keyValuePair = _orderInfoAnnotation.FirstOrDefault<KeyValuePair<Order, ChartActiveOrderInfo>>( p => p.Value.Annotation == _param1);
+            var keyValuePair = _orderInfoAnnotation.FirstOrDefault( p => p.Value.Annotation == _param1);
             _param2 = keyValuePair.Value;
             return keyValuePair.Key;
         }

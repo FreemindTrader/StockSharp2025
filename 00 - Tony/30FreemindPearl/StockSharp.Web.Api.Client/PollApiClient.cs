@@ -30,35 +30,35 @@ namespace StockSharp.Web.Api.Client
           long? clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Poll>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId);
+            return Get<BaseEntitySet<Poll>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId );
         }
 
         Task<PollChoice> IPollService.AddChoiceAsync(
           PollChoice choice,
           CancellationToken cancellationToken)
         {
-            return this.Post<PollChoice>(RestBaseApiClient.GetCurrentMethod("AddChoiceAsync"), cancellationToken, (object)choice);
+            return Post<PollChoice>( GetCurrentMethod( "AddChoiceAsync"), cancellationToken, choice );
         }
 
         Task<bool> IPollService.RemoveChoiceAsync(
           long choiceId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveChoiceAsync"), cancellationToken, (object)choiceId);
+            return Post<bool>( GetCurrentMethod( "RemoveChoiceAsync"), cancellationToken, choiceId );
         }
 
         Task<PollVote> IPollService.AddVoteAsync(
           long choiceId,
           CancellationToken cancellationToken)
         {
-            return this.Post<PollVote>(RestBaseApiClient.GetCurrentMethod("AddVoteAsync"), cancellationToken, (object)choiceId);
+            return Post<PollVote>( GetCurrentMethod( "AddVoteAsync"), cancellationToken, choiceId );
         }
 
         Task<bool> IPollService.RemoveVoteAsync(
           long voteId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveVoteAsync"), cancellationToken, (object)voteId);
+            return Post<bool>( GetCurrentMethod( "RemoveVoteAsync"), cancellationToken, voteId );
         }
     }
 }

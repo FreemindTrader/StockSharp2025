@@ -33,7 +33,7 @@ namespace StockSharp.Web.Api.Client
           Compressions? compression,
           CancellationToken cancellationToken)
         {
-            return this.Post<string>(RestBaseApiClient.GetCurrentMethod("StartUploadAsync"), cancellationToken, (object)file, (object)compression);
+            return Post<string>( GetCurrentMethod( "StartUploadAsync"), cancellationToken, file, compression );
         }
 
         Task IFileService.UploadAsync(
@@ -41,7 +41,7 @@ namespace StockSharp.Web.Api.Client
           byte[] bodyPart,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("UploadAsync"), cancellationToken, (object)operationId, (object)bodyPart);
+            return Post( GetCurrentMethod( "UploadAsync"), cancellationToken, operationId, bodyPart );
         }
 
         Task<File> IFileService.FinishUploadAsync(
@@ -49,7 +49,7 @@ namespace StockSharp.Web.Api.Client
           bool isCancel,
           CancellationToken cancellationToken)
         {
-            return this.Post<File>(RestBaseApiClient.GetCurrentMethod("FinishUploadAsync"), cancellationToken, (object)operationId, (object)isCancel);
+            return Post<File>( GetCurrentMethod( "FinishUploadAsync"), cancellationToken, operationId, isCancel );
         }
 
         Task<BaseEntitySet<File>> IFileService.GetTempsAsync(
@@ -62,7 +62,7 @@ namespace StockSharp.Web.Api.Client
           bool downloads,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<File>>(RestBaseApiClient.GetCurrentMethod("GetTempsAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)uploads, (object)downloads);
+            return Get<BaseEntitySet<File>>( GetCurrentMethod( "GetTempsAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, uploads, downloads );
         }
 
         Task IFileService.ClearTempsAsync(
@@ -70,21 +70,21 @@ namespace StockSharp.Web.Api.Client
           bool downloads,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("ClearTempsAsync"), cancellationToken, (object)uploads, (object)downloads);
+            return Post( GetCurrentMethod( "ClearTempsAsync"), cancellationToken, uploads, downloads );
         }
 
         Task IFileService.RemoveTempAsync(
           string operationId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RemoveTempAsync"), cancellationToken, (object)operationId);
+            return Post( GetCurrentMethod( "RemoveTempAsync"), cancellationToken, operationId );
         }
 
         Task<File> IFileService.GetTempAsync(
           string operationId,
           CancellationToken cancellationToken)
         {
-            return this.Get<File>(RestBaseApiClient.GetCurrentMethod("GetTempAsync"), cancellationToken, (object)operationId);
+            return Get<File>( GetCurrentMethod( "GetTempAsync"), cancellationToken, operationId );
         }
 
         Task<byte[]> IFileService.GetBodyAsync(
@@ -95,7 +95,7 @@ namespace StockSharp.Web.Api.Client
           bool isSnapshot,
           CancellationToken cancellationToken)
         {
-            return this.Get<byte[]>(RestBaseApiClient.GetCurrentMethod("GetBodyAsync"), cancellationToken, (object)fileId, (object)skip, (object)count, (object)compression, (object)isSnapshot);
+            return Get<byte[]>( GetCurrentMethod( "GetBodyAsync"), cancellationToken, fileId, skip, count, compression, isSnapshot );
         }
 
         Task<BaseEntitySet<File>> IFileService.FindAsync(
@@ -116,7 +116,7 @@ namespace StockSharp.Web.Api.Client
           LikeCompares? likeCompare,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<File>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)clientId, (object)groupId, (object)nestedGroups, (object)includeHistory, (object)messageId, (object)draftId, (object)emailId, (object)emailTemplateOnly, (object)like, (object)likeCompare);
+            return Get<BaseEntitySet<File>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, clientId, groupId, nestedGroups, includeHistory, messageId, draftId, emailId, emailTemplateOnly, like, likeCompare );
         }
 
         Task<BaseEntitySet<File>> IFileService.GetHistoryAsync(
@@ -128,7 +128,7 @@ namespace StockSharp.Web.Api.Client
           long? fileId,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<File>>(RestBaseApiClient.GetCurrentMethod("GetHistoryAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)fileId);
+            return Get<BaseEntitySet<File>>( GetCurrentMethod( "GetHistoryAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, fileId );
         }
 
         Task<BaseEntitySet<(File, byte[] nuspec, string[] frameworks)>> IFileService.GetNugetPackagesAsync(
@@ -139,21 +139,21 @@ namespace StockSharp.Web.Api.Client
           bool? orderByDesc,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ValueTuple<File, byte[], string[]>>>(RestBaseApiClient.GetCurrentMethod("GetNugetPackagesAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc);
+            return Get<BaseEntitySet<ValueTuple<File, byte[], string[]>>>( GetCurrentMethod( "GetNugetPackagesAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc );
         }
 
         Task<File> IFileService.AddNugetPackageAsync(
           byte[] package,
           CancellationToken cancellationToken)
         {
-            return this.Post<File>(RestBaseApiClient.GetCurrentMethod("AddNugetPackageAsync"), cancellationToken, (object)package);
+            return Post<File>( GetCurrentMethod( "AddNugetPackageAsync"), cancellationToken, package );
         }
 
         Task<File> IFileService.GetAvatarAsync(
           long clientId,
           CancellationToken cancellationToken)
         {
-            return this.Get<File>(RestBaseApiClient.GetCurrentMethod("GetAvatarAsync"), cancellationToken, (object)clientId);
+            return Get<File>( GetCurrentMethod( "GetAvatarAsync"), cancellationToken, clientId );
         }
 
         Task IFileService.AddGroupAsync(
@@ -161,7 +161,7 @@ namespace StockSharp.Web.Api.Client
           long groupId,
           CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("AddGroupAsync"), cancellationToken, (object)fileId, (object)groupId);
+            return Post( GetCurrentMethod( "AddGroupAsync"), cancellationToken, fileId, groupId );
         }
 
         Task<bool> IFileService.RemoveGroupAsync(
@@ -169,7 +169,7 @@ namespace StockSharp.Web.Api.Client
           long groupId,
           CancellationToken cancellationToken)
         {
-            return this.Post<bool>(RestBaseApiClient.GetCurrentMethod("RemoveGroupAsync"), cancellationToken, (object)fileId, (object)groupId);
+            return Post<bool>( GetCurrentMethod( "RemoveGroupAsync"), cancellationToken, fileId, groupId );
         }
 
         Task IVideoService.UpdateInfoAsync(
@@ -179,7 +179,7 @@ namespace StockSharp.Web.Api.Client
           long length,
           CancellationToken cancellationToken)
         {
-            return this.Put(RestBaseApiClient.GetCurrentMethod("UpdateInfoAsync"), cancellationToken, (object)clientToken, (object)fileId, (object)path, (object)length);
+            return Put( GetCurrentMethod( "UpdateInfoAsync"), cancellationToken, clientToken, fileId, path, length );
         }
 
         
@@ -187,12 +187,12 @@ namespace StockSharp.Web.Api.Client
         Task<(string clientToken, long fileId)[]> IVideoService.GetPendingRequestsAsync(
           CancellationToken cancellationToken)
         {
-            return this.Get<ValueTuple<string, long>[]>(RestBaseApiClient.GetCurrentMethod("GetPendingRequestsAsync"), cancellationToken);
+            return Get<ValueTuple<string, long>[]>( GetCurrentMethod( "GetPendingRequestsAsync"), cancellationToken);
         }
 
         Task<(string path, long length)> IVideoService.GetInfoAsync(long fileId, CancellationToken cancellationToken)
         {
-            return this.Get<ValueTuple<string, long>>(RestBaseApiClient.GetCurrentMethod("GetInfoAsync"), cancellationToken, (object)fileId);
+            return Get<ValueTuple<string, long>>( GetCurrentMethod( "GetInfoAsync"), cancellationToken, fileId );
         }
     }
 }

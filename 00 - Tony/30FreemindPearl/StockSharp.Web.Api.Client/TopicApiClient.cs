@@ -39,7 +39,7 @@ namespace StockSharp.Web.Api.Client
           int? truncate,
           CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<Topic>>(RestBaseApiClient.GetCurrentMethod("FindAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)domainId, (object)clientId, (object)groupId, (object)tagId, (object)tagName, (object)topicType, (object)flags, (object)my, (object)hasGroups, (object)convertBodyToHtml, (object)truncate);
+            return Get<BaseEntitySet<Topic>>( GetCurrentMethod( "FindAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, domainId, clientId, groupId, tagId, tagName, topicType, flags, my, hasGroups, convertBodyToHtml, truncate );
         }
 
         Task<Topic> ITopicService.UpdateFlagsAsync(
@@ -47,7 +47,7 @@ namespace StockSharp.Web.Api.Client
           TopicFlags flags,
           CancellationToken cancellationToken)
         {
-            return this.Put<Topic>(RestBaseApiClient.GetCurrentMethod("UpdateFlagsAsync"), cancellationToken, (object)topicId, (object)flags);
+            return Put<Topic>( GetCurrentMethod( "UpdateFlagsAsync"), cancellationToken, topicId, flags );
         }
     }
 }

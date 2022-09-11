@@ -178,8 +178,8 @@ namespace fx.Definitions
 
         public override string ToString( )
         {
-            var priceTimeType = this.GannPriceTimeType;
-            string output = "[" + _beginBarIndex + "-> " + _parentBarIndex + "] " + _barDiff + GetPriceTimeTypeDesc( priceTimeType ) + "\r\nType = " + priceTimeType.ToDescription() + "\r\nN=" + this.WaveTimeType.ToString();
+            var priceTimeType = GannPriceTimeType;
+            string output = "[" + _beginBarIndex + "-> " + _parentBarIndex + "] " + _barDiff + GetPriceTimeTypeDesc( priceTimeType ) + "\r\nType = " + priceTimeType.ToDescription() + "\r\nN=" + WaveTimeType.ToString();
 
             if ( isGannPriceTimeType( priceTimeType ) )
             {

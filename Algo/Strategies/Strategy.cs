@@ -42,7 +42,7 @@ namespace StockSharp.Algo.Strategies
 	/// <summary>
 	/// <see cref="Order.Comment"/> auto-fill modes.
 	/// </summary>
-	[System.Runtime.Serialization.DataContract]
+	[DataContract]
 	[Serializable]
 	public enum StrategyCommentModes
 	{
@@ -602,20 +602,20 @@ namespace StockSharp.Algo.Strategies
 
 		private IPnLManager _pnLManager = new PnLManager { UseOrderBook = true };
 
-		/// <summary>
-		/// The profit-loss manager. It accounts trades of this strategy, as well as of its subsidiary strategies <see cref="Strategy.ChildStrategies"/>.
-		/// </summary>
-		[Browsable(false)]
+        /// <summary>
+        /// The profit-loss manager. It accounts trades of this strategy, as well as of its subsidiary strategies <see cref="ChildStrategies"/>.
+        /// </summary>
+        [Browsable(false)]
 		public IPnLManager PnLManager
 		{
 			get => _pnLManager;
 			set => _pnLManager = value ?? throw new ArgumentNullException(nameof(value));
 		}
 
-		/// <summary>
-		/// The aggregate value of profit-loss without accounting commission <see cref="Strategy.Commission"/>.
-		/// </summary>
-		[Display(
+        /// <summary>
+        /// The aggregate value of profit-loss without accounting commission <see cref="Commission"/>.
+        /// </summary>
+        [Display(
 			ResourceType = typeof(LocalizedStrings),
 			Name = LocalizedStrings.PnLKey,
 			Description = LocalizedStrings.Str1364Key,
@@ -1013,11 +1013,11 @@ namespace StockSharp.Algo.Strategies
 		/// </summary>
 		public event Action<Strategy> ProcessStateChanged;
 
-		/// <summary>
-		/// To call the event <see cref="Strategy.ProcessStateChanged"/>.
-		/// </summary>
-		/// <param name="strategy">Strategy.</param>
-		protected void RaiseProcessStateChanged(Strategy strategy)
+        /// <summary>
+        /// To call the event <see cref="ProcessStateChanged"/>.
+        /// </summary>
+        /// <param name="strategy">Strategy.</param>
+        protected void RaiseProcessStateChanged(Strategy strategy)
 		{
 			if (strategy == null)
 				throw new ArgumentNullException(nameof(strategy));
@@ -1240,13 +1240,13 @@ namespace StockSharp.Algo.Strategies
 
 		private readonly StrategyParam<bool> _disposeOnStop;
 
-		/// <summary>
-		/// Automatically to clear resources, used by the strategy, when it stops (state <see cref="Strategy.ProcessState"/> becomes equal to <see cref="ProcessStates.Stopped"/>) and delete it from the parent strategy through <see cref="Strategy.ChildStrategies"/>.
-		/// </summary>
-		/// <remarks>
-		/// The mode is used only for one-time strategies, i.e. for those strategies, which will not be started again (for example, quoting). It is disabled by default.
-		/// </remarks>
-		[Browsable(false)]
+        /// <summary>
+        /// Automatically to clear resources, used by the strategy, when it stops (state <see cref="ProcessState"/> becomes equal to <see cref="ProcessStates.Stopped"/>) and delete it from the parent strategy through <see cref="ChildStrategies"/>.
+        /// </summary>
+        /// <remarks>
+        /// The mode is used only for one-time strategies, i.e. for those strategies, which will not be started again (for example, quoting). It is disabled by default.
+        /// </remarks>
+        [Browsable(false)]
 		public bool DisposeOnStop
 		{
 			get => _disposeOnStop.Value;
@@ -2200,11 +2200,11 @@ namespace StockSharp.Algo.Strategies
 			NewMyTrade?.Invoke(trade);
 		}
 
-		/// <summary>
-		/// To call the event <see cref="Strategy.OrderRegistering"/>.
-		/// </summary>
-		/// <param name="order">Order.</param>
-		protected virtual void OnOrderRegistering(Order order)
+        /// <summary>
+        /// To call the event <see cref="OrderRegistering"/>.
+        /// </summary>
+        /// <param name="order">Order.</param>
+        protected virtual void OnOrderRegistering(Order order)
 		{
 			TryAddChildOrder(order);
 
@@ -2643,12 +2643,12 @@ namespace StockSharp.Algo.Strategies
 			RaiseLatencyChanged();
 		}
 
-		/// <summary>
-		/// To process orders, received for the connection <see cref="Strategy.Connector"/>, and find among them those, belonging to the strategy.
-		/// </summary>
-		/// <param name="newOrders">New orders.</param>
-		/// <returns>Orders, belonging to the strategy.</returns>
-		protected virtual IEnumerable<Order> ProcessNewOrders(IEnumerable<Order> newOrders)
+        /// <summary>
+        /// To process orders, received for the connection <see cref="Connector"/>, and find among them those, belonging to the strategy.
+        /// </summary>
+        /// <param name="newOrders">New orders.</param>
+        /// <returns>Orders, belonging to the strategy.</returns>
+        protected virtual IEnumerable<Order> ProcessNewOrders(IEnumerable<Order> newOrders)
 		{
 			return _ordersInfo.SyncGet(d => newOrders.Where(IsOwnOrder).ToArray());
 		}

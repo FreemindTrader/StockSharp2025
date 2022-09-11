@@ -23,13 +23,13 @@ namespace StockSharp.Studio.Core.Configuration
     public abstract class BaseUserConfig<TConfig> : Disposable, IPersistableService
       where TConfig : BaseUserConfig<TConfig>, new()
     {
-        private static readonly Lazy<TConfig> _instance = new Lazy<TConfig>( ( Func<TConfig> )( () => new TConfig() ) );
-        private readonly CachedSynchronizedDictionary<string, BaseUserConfig<TConfig>.FileSettingsInfo> _fileServices = new CachedSynchronizedDictionary<string, BaseUserConfig<TConfig>.FileSettingsInfo>();
-        private readonly CachedSynchronizedDictionary<string, BaseUserConfig<TConfig>.DirectorySettingsInfo> _directoryServices = new CachedSynchronizedDictionary<string, BaseUserConfig<TConfig>.DirectorySettingsInfo>();
+        private static readonly Lazy<TConfig> _instance = new Lazy<TConfig>( () => new TConfig() );
+        private readonly CachedSynchronizedDictionary<string, FileSettingsInfo> _fileServices = new CachedSynchronizedDictionary<string, FileSettingsInfo>();
+        private readonly CachedSynchronizedDictionary<string, DirectorySettingsInfo> _directoryServices = new CachedSynchronizedDictionary<string, DirectorySettingsInfo>();
         private readonly TimeSpan _period = TimeSpan.FromSeconds( 5.0 );
         private readonly SyncObject _flushingSync = new SyncObject();
         private readonly SyncObject _refCountSync = new SyncObject();
-        private readonly BaseUserConfig<TConfig>.FileSettingsInfo _fileSettings;
+        private readonly FileSettingsInfo _fileSettings;
         private Timer _flushTimer;
         private bool _isFlushing;
         private bool _isDisposing;
@@ -39,11 +39,11 @@ namespace StockSharp.Studio.Core.Configuration
         {
             get
             {
-                return BaseUserConfig<TConfig>._instance.Value;
+                return _instance.Value;
             }
         }
 
-        public IBasketSecurityProcessorProvider ProcessorProvider { get; } = ( IBasketSecurityProcessorProvider )new BasketSecurityProcessorProvider();
+        public IBasketSecurityProcessorProvider ProcessorProvider { get; } = new BasketSecurityProcessorProvider();
 
         public bool IsReseting { get; private set; }
 
@@ -52,93 +52,93 @@ namespace StockSharp.Studio.Core.Configuration
         protected BaseUserConfig()
         {
             Directory.CreateDirectory( Paths.AppDataPath );
-            this._fileSettings = new BaseUserConfig<TConfig>.FileSettingsInfo( Path.Combine( Paths.AppDataPath, "settings.json" ) );
-            this.LogConfig = new LogConfig();
-            this._flushTimer = new Timer( new TimerCallback( this.OnFlush ), ( object )null, this._period, this._period );
+            _fileSettings = new FileSettingsInfo( Path.Combine( Paths.AppDataPath, "settings.json" ) );
+            LogConfig = new LogConfig();
+            _flushTimer = new Timer( new TimerCallback( OnFlush ), null, _period, _period );
         }
 
         public bool IsChangesSuspended
         {
             get
             {
-                lock ( this._refCountSync )
-                    return this._refCount > 0;
+                lock ( _refCountSync )
+                    return _refCount > 0;
             }
         }
 
         public void SuspendChangesMonitor()
         {
-            lock ( this._refCountSync )
-                ++this._refCount;
+            lock ( _refCountSync )
+                ++_refCount;
         }
 
         public void ResumeChangesMonitor()
         {
-            lock ( this._refCountSync )
-                --this._refCount;
+            lock ( _refCountSync )
+                --_refCount;
         }
 
         public void ResetSettings()
         {
-            this.IsReseting = true;
+            IsReseting = true;
             ServicesRegistry.LogManager.Dispose();
             IOHelper.BlockDeleteDir( Paths.AppDataPath, true, 1000, 0 );
         }
 
         protected override void DisposeManaged()
         {
-            this._isDisposing = true;
-            if ( !this.IsReseting )
+            _isDisposing = true;
+            if ( !IsReseting )
             {
-                this.DisposeTimer();
-                this.OnSave( true );
+                DisposeTimer();
+                OnSave( true );
             }
             base.DisposeManaged();
         }
 
         private void OnFlush( object state )
         {
-            lock ( this._flushingSync )
+            lock ( _flushingSync )
             {
-                if ( this._isFlushing )
+                if ( _isFlushing )
                     return;
-                this._isFlushing = true;
+                _isFlushing = true;
             }
-            if ( this._isDisposing )
+            if ( _isDisposing )
                 return;
             try
             {
-                this.OnSave( false );
+                OnSave( false );
             }
             finally
             {
-                lock ( this._flushingSync )
-                    this._isFlushing = false;
+                lock ( _flushingSync )
+                    _isFlushing = false;
             }
         }
 
         private void OnSave( bool force )
         {
-            this._fileSettings.Save( force );
-            foreach ( BaseUserConfig<TConfig>.FileSettingsInfo cachedValue in this._fileServices.CachedValues )
+            _fileSettings.Save( force );
+            foreach ( FileSettingsInfo cachedValue in _fileServices.CachedValues )
                 cachedValue.Save( force );
-            foreach ( BaseUserConfig<TConfig>.DirectorySettingsInfo cachedValue in this._directoryServices.CachedValues )
+            foreach ( DirectorySettingsInfo cachedValue in _directoryServices.CachedValues )
                 cachedValue.Save( force );
         }
 
         private void DisposeTimer()
         {
-            if ( this._flushTimer == null )
+            if ( _flushTimer == null )
                 return;
-            this._flushTimer.Dispose();
-            this._flushTimer = ( Timer )null;
+            _flushTimer.Dispose();
+            _flushTimer = null;
         }
 
         public INamedPersistableService GetService( string key )
         {
             if ( key == null )
                 throw new ArgumentNullException( nameof( key ) );
-            return ( INamedPersistableService )this._fileServices.SafeAdd<string, BaseUserConfig<TConfig>.FileSettingsInfo>( key, ( Func<string, BaseUserConfig<TConfig>.FileSettingsInfo> )( k => new BaseUserConfig<TConfig>.FileSettingsInfo( k ) ) );
+            return _fileServices.SafeAdd( key, k => new FileSettingsInfo( k ) );
         }
 
         public INamedPersistableService GetService( string group, string key )
@@ -147,7 +147,7 @@ namespace StockSharp.Studio.Core.Configuration
                 throw new ArgumentNullException( nameof( group ) );
             if ( key == null )
                 throw new ArgumentNullException( nameof( key ) );
-            return this._directoryServices.SafeAdd<string, BaseUserConfig<TConfig>.DirectorySettingsInfo>( group, ( Func<string, BaseUserConfig<TConfig>.DirectorySettingsInfo> )( k => new BaseUserConfig<TConfig>.DirectorySettingsInfo( Path.Combine( Paths.AppDataPath, k ) ) ) ).GetService( key );
+            return _directoryServices.SafeAdd( group, k => new DirectorySettingsInfo( Path.Combine( Paths.AppDataPath, k ) ) ).GetService( key );
         }
 
         public IEnumerable<INamedPersistableService> GetServices(
@@ -155,7 +155,7 @@ namespace StockSharp.Studio.Core.Configuration
         {
             if ( group == null )
                 throw new ArgumentNullException( nameof( group ) );
-            return this._directoryServices.SafeAdd<string, BaseUserConfig<TConfig>.DirectorySettingsInfo>( group, ( Func<string, BaseUserConfig<TConfig>.DirectorySettingsInfo> )( k => new BaseUserConfig<TConfig>.DirectorySettingsInfo( Path.Combine( Paths.AppDataPath, k ) ) ) ).GetServices();
+            return _directoryServices.SafeAdd( group, k => new DirectorySettingsInfo( Path.Combine( Paths.AppDataPath, k ) ) ).GetServices();
         }
 
         public void RemoveService( string group, string key )
@@ -164,38 +164,38 @@ namespace StockSharp.Studio.Core.Configuration
                 throw new ArgumentNullException( nameof( group ) );
             if ( key == null )
                 throw new ArgumentNullException( nameof( key ) );
-            this._directoryServices.TryGetValue<string, BaseUserConfig<TConfig>.DirectorySettingsInfo>( group ).RemoveService( key );
+            _directoryServices.TryGetValue( group ).RemoveService( key );
         }
 
         public bool ContainsKey( string key )
         {
-            return this._fileSettings.ContainsKey( key );
+            return _fileSettings.ContainsKey( key );
         }
 
         public TValue GetValue<TValue>( string key, TValue defaultValue = default )
         {
-            return this._fileSettings.GetValue<TValue>( key, defaultValue );
+            return _fileSettings.GetValue( key, defaultValue );
         }
 
         public void SetValue( string key, object value )
         {
-            if ( this.IsChangesSuspended )
+            if ( IsChangesSuspended )
                 return;
-            this._fileSettings.SetValue( key, value );
+            _fileSettings.SetValue( key, value );
         }
 
         public void SetDelayValue( string key, Func<object> value )
         {
             if ( value == null )
                 throw new ArgumentNullException( nameof( value ) );
-            if ( this.IsChangesSuspended )
+            if ( IsChangesSuspended )
                 return;
-            this._fileSettings.SetDelayValue( key, value );
+            _fileSettings.SetDelayValue( key, value );
         }
 
         private sealed class FileSettingsInfo : INamedPersistableService, IPersistableService
         {
-            private readonly IDictionary<string, Func<object>> _delayValues = ( IDictionary<string, Func<object>> )new Dictionary<string, Func<object>>();
+            private readonly IDictionary<string, Func<object>> _delayValues = new Dictionary<string, Func<object>>();
             private readonly SyncObject _syncRoot = new SyncObject();
             private readonly string _settingsFile;
             private SettingsStorage _values;
@@ -205,15 +205,15 @@ namespace StockSharp.Studio.Core.Configuration
             {
                 get
                 {
-                    if ( this._values != null )
-                        return this._values;
+                    if ( _values != null )
+                        return _values;
                     ( ( Action )( () =>
                        {
-                           if ( !File.Exists( this._settingsFile ) )
+                           if ( !File.Exists( _settingsFile ) )
                                return;
-                           this._values = Do.Invariant<SettingsStorage>( ( Func<SettingsStorage> )( () => this._settingsFile.Deserialize<SettingsStorage>() ) );
+                           _values = Do.Invariant( () => _settingsFile.Deserialize<SettingsStorage>() );
                        } ) ).DoWithLog();
-                    return this._values ?? ( this._values = new SettingsStorage() );
+                    return _values ?? ( _values = new SettingsStorage() );
                 }
             }
 
@@ -222,28 +222,28 @@ namespace StockSharp.Studio.Core.Configuration
                 string str = settingsFile;
                 if ( str == null )
                     throw new ArgumentNullException( nameof( settingsFile ) );
-                this._settingsFile = str;
+                _settingsFile = str;
             }
 
             public void Save( bool force )
             {
                 ( ( Action )( () =>
                    {
-                       lock ( this._syncRoot )
+                       lock ( _syncRoot )
                        {
-                           if ( !this._isChanged && !force )
+                           if ( !_isChanged && !force )
                                return;
-                           this._isChanged = false;
+                           _isChanged = false;
                        }
-                       this.OnSave();
+                       OnSave();
                    } ) ).DoWithLog();
             }
 
             private void OnSave()
             {
                 IDictionary<string, Func<object>> dictionary;
-                lock ( this._syncRoot )
-                    dictionary = this._delayValues.Count == 0 ? ( IDictionary<string, Func<object>> )null : this._delayValues.ToDictionary<string, Func<object>>();
+                lock ( _syncRoot )
+                    dictionary = _delayValues.Count == 0 ? null : _delayValues.ToDictionary();
                 if ( dictionary != null )
                 {
                     foreach ( KeyValuePair<string, Func<object>> keyValuePair in ( IEnumerable<KeyValuePair<string, Func<object>>> )dictionary )
@@ -252,19 +252,19 @@ namespace StockSharp.Studio.Core.Configuration
                         ( ( Action )( () =>
                            {
                                object obj = pair.Value();
-                               lock ( this._syncRoot )
-                                   this.Values.Set<object>( pair.Key, obj );
+                               lock ( _syncRoot )
+                                   Values.Set( pair.Key, obj );
                            } ) ).DoWithLog();
                     }
                 }
                 SettingsStorage clone = new SettingsStorage();
-                lock ( this._syncRoot )
-                    clone.AddRange<KeyValuePair<string, object>>( ( IEnumerable<KeyValuePair<string, object>> )this.Values.ToArray<KeyValuePair<string, object>>() );
+                lock ( _syncRoot )
+                    clone.AddRange( Values.ToArray() );
                 ( ( Action )( () =>
                    {
-                       byte[ ] bytes = Do.Invariant<byte[ ]>( ( Func<byte[ ]> )( () => clone.Serialize<SettingsStorage>() ) );
-                       lock ( this._syncRoot )
-                           File.WriteAllBytes( this._settingsFile, bytes );
+                       byte[ ] bytes = Do.Invariant( () => clone.Serialize() );
+                       lock ( _syncRoot )
+                           File.WriteAllBytes( _settingsFile, bytes );
                    } ) ).DoWithLog();
             }
 
@@ -272,28 +272,28 @@ namespace StockSharp.Studio.Core.Configuration
             {
                 get
                 {
-                    return Path.GetFileName( this._settingsFile );
+                    return Path.GetFileName( _settingsFile );
                 }
             }
 
             public bool ContainsKey( string key )
             {
-                lock ( this._syncRoot )
-                    return this.Values.ContainsKey( key );
+                lock ( _syncRoot )
+                    return Values.ContainsKey( key );
             }
 
             public TValue GetValue<TValue>( string key, TValue defaultValue = default )
             {
-                lock ( this._syncRoot )
-                    return this.Values.GetValue<TValue>( key, defaultValue );
+                lock ( _syncRoot )
+                    return Values.GetValue( key, defaultValue );
             }
 
             public void SetValue( string key, object value )
             {
-                lock ( this._syncRoot )
+                lock ( _syncRoot )
                 {
-                    this.Values.Set<object>( key, value );
-                    this._isChanged = true;
+                    Values.Set( key, value );
+                    _isChanged = true;
                 }
             }
 
@@ -301,17 +301,17 @@ namespace StockSharp.Studio.Core.Configuration
             {
                 if ( value == null )
                     throw new ArgumentNullException( nameof( value ) );
-                lock ( this._syncRoot )
+                lock ( _syncRoot )
                 {
-                    this._delayValues[key] = value;
-                    this._isChanged = true;
+                    _delayValues[key] = value;
+                    _isChanged = true;
                 }
             }
         }
 
         private sealed class DirectorySettingsInfo
         {
-            private readonly CachedSynchronizedDictionary<string, BaseUserConfig<TConfig>.FileSettingsInfo> _persistableServices = new CachedSynchronizedDictionary<string, BaseUserConfig<TConfig>.FileSettingsInfo>();
+            private readonly CachedSynchronizedDictionary<string, FileSettingsInfo> _persistableServices = new CachedSynchronizedDictionary<string, FileSettingsInfo>();
             private readonly string _path;
 
             public DirectorySettingsInfo( string path )
@@ -319,41 +319,41 @@ namespace StockSharp.Studio.Core.Configuration
                 string str = path;
                 if ( str == null )
                     throw new ArgumentNullException( nameof( path ) );
-                this._path = str;
-                Directory.CreateDirectory( this._path );
-                foreach ( string file in Directory.GetFiles( this._path, "*.json" ) )
-                    this._persistableServices.Add( Path.GetFileName( file ), new BaseUserConfig<TConfig>.FileSettingsInfo( file ) );
+                _path = str;
+                Directory.CreateDirectory( _path );
+                foreach ( string file in Directory.GetFiles( _path, "*.json" ) )
+                    _persistableServices.Add( Path.GetFileName( file ), new FileSettingsInfo( file ) );
             }
 
             public INamedPersistableService GetService( string key )
             {
                 if ( key == null )
                     throw new ArgumentNullException( nameof( key ) );
-                return ( INamedPersistableService )this._persistableServices.SafeAdd<string, BaseUserConfig<TConfig>.FileSettingsInfo>( key, ( Func<string, BaseUserConfig<TConfig>.FileSettingsInfo> )( k => new BaseUserConfig<TConfig>.FileSettingsInfo( this.GetPath( k ) ) ) );
+                return _persistableServices.SafeAdd( key, k => new FileSettingsInfo( GetPath( k ) ) );
             }
 
             public IEnumerable<INamedPersistableService> GetServices()
             {
-                return ( IEnumerable<INamedPersistableService> )this._persistableServices.CachedValues;
+                return _persistableServices.CachedValues;
             }
 
             public void RemoveService( string key )
             {
                 if ( key == null )
                     throw new ArgumentNullException( nameof( key ) );
-                this._persistableServices.Remove( key );
-                File.Delete( this.GetPath( key ) );
+                _persistableServices.Remove( key );
+                File.Delete( GetPath( key ) );
             }
 
             public void Save( bool force )
             {
-                foreach ( BaseUserConfig<TConfig>.FileSettingsInfo cachedValue in this._persistableServices.CachedValues )
+                foreach ( FileSettingsInfo cachedValue in _persistableServices.CachedValues )
                     cachedValue.Save( force );
             }
 
             private string GetPath( string key )
             {
-                return Path.Combine( this._path, key );
+                return Path.Combine( _path, key );
             }
         }
     }

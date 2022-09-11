@@ -19,39 +19,39 @@ namespace StockSharp.Studio.Controls
 
         public StatisticsPanel()
         {
-            this.InitializeComponent();
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.Register<BindCommand>( ( object )this, true, ( Action<BindCommand> )( cmd =>
+            InitializeComponent();
+            IStudioCommandService commandService = CommandService;
+            commandService.Register<BindCommand>( this, true, cmd =>
                 {
-                    if ( !cmd.CheckControl( ( IStudioControl )this ) )
+                    if ( !cmd.CheckControl( this ) )
                         return;
-                    this.StatisticsGrid.StatisticManager = cmd.Source.StatisticManager;
-                } ), ( Func<BindCommand, bool> )null );
-            commandService.Register<ResetedCommand>( ( object )this, true, ( Action<ResetedCommand> )( cmd => this.StatisticsGrid.Reset() ), ( Func<ResetedCommand, bool> )null );
-            this.WhenLoaded( ( Action )( () => new RequestBindSource( ( IStudioControl )this ).SyncProcess( ( object )this ) ) );
+                    StatisticsGrid.StatisticManager = cmd.Source.StatisticManager;
+                }, null );
+            commandService.Register<ResetedCommand>( this, true, cmd => StatisticsGrid.Reset(), null );
+            WhenLoaded( () => new RequestBindSource( this ).SyncProcess( this ) );
         }
 
         public override void Dispose()
         {
-            IStudioCommandService commandService = BaseStudioControl.CommandService;
-            commandService.UnRegister<BindCommand>( ( object )this );
-            commandService.UnRegister<ResetedCommand>( ( object )this );
+            IStudioCommandService commandService = CommandService;
+            commandService.UnRegister<BindCommand>( this );
+            commandService.UnRegister<ResetedCommand>( this );
             base.Dispose();
         }
 
         public override void Save( SettingsStorage storage )
         {
             base.Save( storage );
-            storage.SetValue<SettingsStorage>( "StatisticsGrid", this.StatisticsGrid.Save() );
+            storage.SetValue( "StatisticsGrid", StatisticsGrid.Save() );
         }
 
         public override void Load( SettingsStorage storage )
         {
             base.Load( storage );
-            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "StatisticsGrid", ( SettingsStorage )null );
+            SettingsStorage storage1 = storage.GetValue<SettingsStorage>( "StatisticsGrid", null );
             if ( storage1 == null )
                 return;
-            this.StatisticsGrid.Load( storage1 );
+            StatisticsGrid.Load( storage1 );
         }
 
 

@@ -197,17 +197,17 @@ namespace fx.Charting
 
         UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
-            return this._viewModel = ( UIBaseVM ) new ChartActiveOrdersVM( this );
+            return _viewModel = new ChartActiveOrdersVM( this );
         }
 
         bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawDataEx.IDrawValue > drawValue )
         {
-            return this._viewModel.Draw( drawValue );
+            return _viewModel.Draw( drawValue );
         }
 
         void IDrawableChartElement.StartDrawing( )
         {
-            this._viewModel.Draw( Enumerable.Empty<ChartDrawDataEx.IDrawValue>( ).ToEx<ChartDrawDataEx.IDrawValue>( 0 ) );
+            _viewModel.Draw( Enumerable.Empty<ChartDrawDataEx.IDrawValue>( ).ToEx( 0 ) );
         }
 
         protected override bool OnDraw( ChartDrawDataEx data )
@@ -215,7 +215,7 @@ namespace fx.Charting
             PooledList < ChartDrawDataEx.sActiveOrder > source = data.GetActiveOrders( this );
             if ( source == null || source.IsEmpty( ) )
                 return false;
-            return ( ( IDrawableChartElement ) this ).StartDrawing( source.Cast<ChartDrawDataEx.IDrawValue>( ).ToEx<ChartDrawDataEx.IDrawValue>( source.Count ) );
+            return ( ( IDrawableChartElement ) this ).StartDrawing( source.Cast<ChartDrawDataEx.IDrawValue>( ).ToEx( source.Count ) );
         }
 
         public override void Load( SettingsStorage storage )

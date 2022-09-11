@@ -282,12 +282,12 @@ namespace fx.Definitions
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator( );
+            return GetEnumerator( );
         }
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
         
 

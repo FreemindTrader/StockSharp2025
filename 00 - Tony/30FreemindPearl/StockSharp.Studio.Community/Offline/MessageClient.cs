@@ -28,7 +28,7 @@ namespace StockSharp.Studio.Community.Offline
           string body,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<string>(body);
+            return Task.FromResult( body);
         }
 
         Task<string> IMessageService.BodyToHtmlAsync(
@@ -38,7 +38,7 @@ namespace StockSharp.Studio.Community.Offline
           bool? preventScaling,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<string>(body);
+            return Task.FromResult( body);
         }
 
         Task<bool> IBaseEntityService<Message>.DeleteAsync(
@@ -79,7 +79,7 @@ namespace StockSharp.Studio.Community.Offline
           long? domainId,
           CancellationToken cancellationToken)
         {
-            return Task.FromResult<BaseEntitySet<SystemMessage>>(((IEnumerable<SystemMessage>)Array.Empty<SystemMessage>()).ToEntitySet<SystemMessage>(0));
+            return Task.FromResult( Array.Empty<SystemMessage>().ToEntitySet( 0));
         }
 
         Task<Message> IBaseEntityService<Message>.GetAsync(

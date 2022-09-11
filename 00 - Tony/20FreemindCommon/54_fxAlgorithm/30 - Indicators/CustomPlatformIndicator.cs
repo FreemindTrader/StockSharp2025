@@ -19,7 +19,7 @@ namespace fx.Algorithm
         public CustomPlatformIndicator( string name, bool isIndicatorVisible, bool? isTradeable, bool? isShowInMasterPane, string[ ] resultSetNames ) : base( name, isIndicatorVisible, isTradeable, isShowInMasterPane, resultSetNames )
         {
             // Collect properties and supply them to the indicator parameters class.
-            Type type = this.GetType( );
+            Type type = GetType( );
             foreach( PropertyInfo info in type.GetProperties( ) )
             {
                 if( info.CanRead &&
@@ -46,7 +46,7 @@ namespace fx.Algorithm
         /// <param name="value"></param>
         private void _parameters_ParameterUpdatedValueEvent( string name, object value )
         {
-            foreach( PropertyInfo info in this.GetType( ).GetProperties( ) )
+            foreach( PropertyInfo info in GetType( ).GetProperties( ) )
             {
                 if( info.Name == name )
                 {

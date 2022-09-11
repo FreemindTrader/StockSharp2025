@@ -478,7 +478,7 @@ namespace fx.Algorithm
         {
             if( _zigZagInfo.ContainsKey( startAddingTime ) )
             {
-                fx.Collections.RemoveManyDictionaryDelegate< long, TASignal > removeDelegate = delegate( long x, TASignal signal )
+                Collections.RemoveManyDictionaryDelegate< long, TASignal > removeDelegate = delegate( long x, TASignal signal )
                 {
                     if( x > startAddingTime )
                     {
@@ -519,7 +519,7 @@ namespace fx.Algorithm
         {
             if ( _zigZagInfo.ContainsKey( startAddingTime ) )
             {
-                fx.Collections.RemoveManyDictionaryDelegate< long, TASignal > removeDelegate = delegate( long x, TASignal signal )
+                Collections.RemoveManyDictionaryDelegate< long, TASignal > removeDelegate = delegate( long x, TASignal signal )
                 {
                     if( x > startAddingTime )
                     {

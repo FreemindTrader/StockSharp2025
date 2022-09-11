@@ -48,7 +48,7 @@ namespace fx.Charting
 
             internal void NotifyAllProperties( )
             {
-                ( ( IEnumerable<string> ) this._stringArray ).ForEach<string>( p => ( ( INotifyPropertyChangedEx ) _chartVM ).NotifyPropertyChanged( p ) );
+                _stringArray.ForEach( p => ( ( INotifyPropertyChangedEx ) _chartVM ).NotifyPropertyChanged( p ) );
             }
         }
 
@@ -196,7 +196,7 @@ namespace fx.Charting
             base.OnInitializeInRuntime( );
 
             ChangeApplicationTheme( );
-            DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += ThemeManager_ApplicationThemeChanged;
+            ThemeManager.ApplicationThemeChanged += ThemeManager_ApplicationThemeChanged;
         }
 
         private void ThemeManager_ApplicationThemeChanged( DependencyObject sender, ThemeChangedRoutedEventArgs e )
@@ -706,7 +706,7 @@ namespace fx.Charting
 
             public void Save( SettingsStorage settings )
             {
-                settings.SetValue( "Areas", ( ( IEnumerable<ChartArea> )this ).Select( a =>
+                settings.SetValue( "Areas", this.Select( a =>
                 {
                     var s = a.Save( );
                     s.SetValue( "Height", a.ChartSurfaceViewModel.Height );
@@ -809,7 +809,7 @@ namespace fx.Charting
             CrossHairTooltip       = storage.GetValue( "CrossHairTooltip"      , CrossHairTooltip );
             CrossHairAxisLabels    = storage.GetValue( "CrossHairAxisLabels"   , CrossHairAxisLabels );
             OrderCreationMode      = storage.GetValue( "OrderCreationMode"     , OrderCreationMode );
-            TimeZone               = Ecng.Common.MayBe.With(storage.GetValue<string>("TimeZone", null), new Func<string, TimeZoneInfo>( TimeZoneInfo.FindSystemTimeZoneById ) ) ?? TimeZoneInfo.Local;
+            TimeZone               = MayBe.With(storage.GetValue<string>("TimeZone", null), new Func<string, TimeZoneInfo>( TimeZoneInfo.FindSystemTimeZoneById ) ) ?? TimeZoneInfo.Local;
 
             if ( !IsInteracted )
             {
@@ -891,7 +891,7 @@ namespace fx.Charting
 
             foreach ( var pair in _indicators.SyncGet( d => d.ToArray( ) ) )
             {
-                settingsStorage.SetValue( pair.Key.Id.ToString( ), ( ( IPersistable )pair.Value ).SaveEntire( false ) );
+                settingsStorage.SetValue( pair.Key.Id.ToString( ), pair.Value.SaveEntire( false ) );
             }
 
             return settingsStorage;
@@ -1062,7 +1062,7 @@ namespace fx.Charting
 
             w.Series = series;
             w.SecurityProvider = ServicesRegistry.SecurityProvider;
-            w.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
             w.ShowDialog( );
 
@@ -1077,7 +1077,7 @@ namespace fx.Charting
                 IndicatorTypes    = indicatorTypes
             };
 
-            w.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
             w.ShowDialog( );
 
@@ -1092,7 +1092,7 @@ namespace fx.Charting
                 SelectedElement = CandlestickUI
             };
 
-            w.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
             w.ShowDialog( );
 
@@ -1104,7 +1104,7 @@ namespace fx.Charting
             var w                   = new SecurityPickerWindow( );
             w.SelectionMode         = SelectionMode;
             w.SecurityProvider      = ServicesRegistry.SecurityProvider;
-            w.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner;
+            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
             w.ShowDialog( );
 

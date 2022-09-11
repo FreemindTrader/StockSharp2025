@@ -12,11 +12,11 @@ namespace StockSharp.Studio.Core.Commands
     {
         public OpenWindowCommand( string id, Type ctrlType, bool isToolWindow )
         {
-            if ( ctrlType == ( Type )null )
+            if ( ctrlType == null )
                 throw new ArgumentNullException( nameof( ctrlType ) );
-            this.Id = id;
-            this.CtrlType = ctrlType;
-            this.IsToolWindow = isToolWindow;
+            Id = id;
+            CtrlType = ctrlType;
+            IsToolWindow = isToolWindow;
         }
 
         public string Id { get; }

@@ -18,11 +18,11 @@ namespace fx.Charting.HewFibonacci
         {
             get
             {
-                return ( double )GetValue( SRlevelLineAnnotationBase.NextLineLevelProperty );
+                return ( double )GetValue( NextLineLevelProperty );
             }
             set
             {
-                SetValue( SRlevelLineAnnotationBase.NextLineLevelProperty, value );
+                SetValue( NextLineLevelProperty, value );
             }
         }
 
@@ -30,11 +30,11 @@ namespace fx.Charting.HewFibonacci
         {
             get
             {
-                return ( double )GetValue( SRlevelLineAnnotationBase.LineLevelProperty );
+                return ( double )GetValue( LineLevelProperty );
             }
             set
             {
-                SetValue( SRlevelLineAnnotationBase.LineLevelProperty, value );
+                SetValue( LineLevelProperty, value );
             }
         }
 

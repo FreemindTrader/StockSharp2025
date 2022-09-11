@@ -60,7 +60,7 @@ internal sealed class IndicatorChartSettings : ChartSettingsObjectBase<IIndicato
                                     return pd;
                                 }
 
-                                return IndicatorChartSettings.GetPropertyDescriptor( Extensions.GetDisplayName( pd, ind.Name ), i, ind );
+                                return GetPropertyDescriptor( Extensions.GetDisplayName( pd, ind.Name ), i, ind );
                             }
                         ).ToArray( );
             }
@@ -70,7 +70,7 @@ internal sealed class IndicatorChartSettings : ChartSettingsObjectBase<IIndicato
     private sealed class IndicatorProxyDescriptor : ProxyDescriptor
     {
         public IndicatorProxyDescriptor( string name, object settingObject, IIndicator indicator )
-          : base( name, settingObject, indicator, MoreLinq.MoreEnumerable.Append( TypeDescriptor.GetAttributes( indicator, false ).Cast<Attribute>( ), new TypeConverterAttribute( typeof( ExpandableObjectConverter ) ) ), null )
+          : base( name, settingObject, indicator, MoreEnumerable.Append( TypeDescriptor.GetAttributes( indicator, false ).Cast<Attribute>( ), new TypeConverterAttribute( typeof( ExpandableObjectConverter ) ) ), null )
         {
         }
 

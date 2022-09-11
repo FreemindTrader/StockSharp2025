@@ -22,17 +22,17 @@ namespace StockSharp.Web.Api.Client
 
         Task<BaseEntitySet<ClientBalanceHistory>> IClientBalanceService.FindHistoryAsync( long skip, long? count, bool? deleted, string orderBy, bool? orderByDesc, long? balanceId, long? clientId, CancellationToken cancellationToken)
         {
-            return this.Get<BaseEntitySet<ClientBalanceHistory>>(RestBaseApiClient.GetCurrentMethod("FindHistoryAsync"), cancellationToken, (object)skip, (object)count, (object)deleted, (object)orderBy, (object)orderByDesc, (object)balanceId, (object)clientId);
+            return Get<BaseEntitySet<ClientBalanceHistory>>( GetCurrentMethod( "FindHistoryAsync"), cancellationToken, skip, count, deleted, orderBy, orderByDesc, balanceId, clientId );
         }
 
         Task<ClientBalanceHistory> IClientBalanceService.UpdateHistoryAsync( ClientBalanceHistory history, CancellationToken cancellationToken)
         {
-            return this.Put<ClientBalanceHistory>(RestBaseApiClient.GetCurrentMethod("UpdateHistoryAsync"), cancellationToken, (object)history);
+            return Put<ClientBalanceHistory>( GetCurrentMethod( "UpdateHistoryAsync"), cancellationToken, history );
         }
 
         Task IClientBalanceService.RemoveHistoryAsync( long id, CancellationToken cancellationToken)
         {
-            return this.Post(RestBaseApiClient.GetCurrentMethod("RemoveHistoryAsync"), cancellationToken, (object)id);
+            return Post( GetCurrentMethod( "RemoveHistoryAsync"), cancellationToken, id );
         }
     }
 }

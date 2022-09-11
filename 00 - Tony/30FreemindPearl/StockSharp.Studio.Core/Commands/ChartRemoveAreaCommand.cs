@@ -18,7 +18,7 @@ namespace StockSharp.Studio.Core.Commands
             IChartArea chartArea = area;
             if ( chartArea == null )
                 throw new ArgumentNullException( nameof( area ) );
-            this.Area = chartArea;
+            Area = chartArea;
         }
     }
 }

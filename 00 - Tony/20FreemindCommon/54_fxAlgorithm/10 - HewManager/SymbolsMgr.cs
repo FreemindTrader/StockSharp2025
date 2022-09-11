@@ -120,7 +120,7 @@ namespace fx.Algorithm
 
             if ( _taManagerForSymbol.TryGetValue( symbol, out result ) )
             {
-                return ( IAdvancedAnalysisManager ) result;
+                return result;
             }
 
             var taManager = new AdvancedAnalysisManager( symbol );
@@ -212,7 +212,7 @@ namespace fx.Algorithm
                     return bars;
                 }
 
-                var aa = SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( security.Code );             
+                var aa = Instance.GetOrCreateAdvancedAnalysis( security.Code );             
 
                 var indicator = new IndicatorManager( );
 
@@ -229,7 +229,7 @@ namespace fx.Algorithm
             {
                 symbolDatabars = new ThreadSafeDictionary< TimeSpan, fxHistoricBarsRepo >( );
 
-                var aa = SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( security.Code );
+                var aa = Instance.GetOrCreateAdvancedAnalysis( security.Code );
 
                 var indicator = new IndicatorManager( );
 
@@ -318,14 +318,14 @@ namespace fx.Algorithm
 
         public  void UpdateMacd( Security security, TimeSpan period, DateTime? lastBarTime, double macd, double macdSig )
         {            
-            var aa    = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( security );                            
+            var aa    = ( AdvancedAnalysisManager )Instance.GetOrCreateAdvancedAnalysis( security );                            
             aa.RaiseMacdValueChange( security, period, (macd, macdSig), lastBarTime != null ? lastBarTime.Value : DateTime.MinValue );
             
         }
 
         public  void UpdateSma( Security security, TimeSpan period, DateTime? lastBarTime  )
         {
-            var aa    = ( AdvancedAnalysisManager ) SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( security );
+            var aa    = ( AdvancedAnalysisManager )Instance.GetOrCreateAdvancedAnalysis( security );
 
             if( aa == null )
                 return;

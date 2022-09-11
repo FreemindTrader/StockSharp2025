@@ -55,7 +55,7 @@ namespace fx.Indicators
 
         protected void CalculateCci( bool fullRecalculation, DataBarUpdateType? updateType, int curIterationBarcount )
         {
-            _cciLookback = fx.TALib.Core.CciLookback( 21 );
+            _cciLookback = Core.CciLookback( 21 );
 
             int resultSetLength   = IndicatorResult["CCI"].Count;
 
@@ -83,7 +83,7 @@ namespace fx.Indicators
             var outBeginIdx   = 0;
             var outNBElement = 0;
 
-            fx.TALib.Core.Cci( Bars, startIndex, endIndex, myCci, out outBeginIdx, out outNBElement, 21 );
+            Core.Cci( Bars, startIndex, endIndex, myCci, out outBeginIdx, out outNBElement, 21 );
 
             if( outNBElement == 0 )
                 return;
@@ -125,7 +125,7 @@ namespace fx.Indicators
 
             var myCci            = new double [ indexCount ];
 
-            fx.TALib.Core.Cci( Bars, startIndex, endIndex, myCci, out outBeginIdx, out outNBElement, 21 );            
+            Core.Cci( Bars, startIndex, endIndex, myCci, out outBeginIdx, out outNBElement, 21 );            
 
             if ( outNBElement > 0 )
             {

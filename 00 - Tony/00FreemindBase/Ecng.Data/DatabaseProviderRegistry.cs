@@ -12,7 +12,7 @@ namespace Ecng.Data
 
         public static void AddProvider<TProvider>( Func<TProvider> createProvider ) where TProvider : IDataProvider
         {
-            DatabaseProviderRegistry.AddProvider( typeof( TProvider ), ( Func<IDataProvider> )( () => ( IDataProvider )createProvider() ) );
+            AddProvider( typeof( TProvider ), () => createProvider() );
         }
 
         public static void AddProvider( Type provider, Func<IDataProvider> createProvider )
@@ -21,30 +21,30 @@ namespace Ecng.Data
                 throw new ArgumentNullException( nameof( provider ) );
             if ( !provider.Is<IDataProvider>() )
                 throw new ArgumentException( nameof( provider ) );
-            DatabaseProviderRegistry._providers.Add( provider, createProvider );
+            _providers.Add( provider, createProvider );
         }
 
         public static void RemoveProvider<TProvider>() where TProvider : IDataProvider
         {
-            DatabaseProviderRegistry.RemoveProvider( typeof( TProvider ) );
+            RemoveProvider( typeof( TProvider ) );
         }
 
         public static void RemoveProvider( Type provider )
         {
-            DatabaseProviderRegistry._providers.Remove( provider );
+            _providers.Remove( provider );
         }
 
         public static IEnumerable<Type> Providers
         {
             get
             {
-                return ( IEnumerable<Type> )DatabaseProviderRegistry._providers.CachedKeys;
+                return _providers.CachedKeys;
             }
         }
 
         public static IDataProvider CreateProvider( Type provider )
         {
-            CachedSynchronizedDictionary<Type, Func<IDataProvider>> providers = DatabaseProviderRegistry._providers;
+            CachedSynchronizedDictionary<Type, Func<IDataProvider>> providers = _providers;
             Type index = provider;
             if ( ( object )index == null )
                 throw new ArgumentNullException( nameof( provider ) );

@@ -44,14 +44,14 @@ namespace StockSharp.Logging
 		{
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="LogMessage"/>.
-		/// </summary>
-		/// <param name="source">The log source.</param>
-		/// <param name="time">Message creating time.</param>
-		/// <param name="level">The level of the log message.</param>
-		/// <param name="getMessage">The function returns the text for <see cref="LogMessage.Message"/>.</param>
-		public LogMessage(ILogSource source, DateTimeOffset time, LogLevels level, Func<string> getMessage)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogMessage"/>.
+        /// </summary>
+        /// <param name="source">The log source.</param>
+        /// <param name="time">Message creating time.</param>
+        /// <param name="level">The level of the log message.</param>
+        /// <param name="getMessage">The function returns the text for <see cref="Message"/>.</param>
+        public LogMessage(ILogSource source, DateTimeOffset time, LogLevels level, Func<string> getMessage)
 		{
 			Source = source ?? throw new ArgumentNullException(nameof(source));
 			_getMessage = getMessage ?? throw new ArgumentNullException(nameof(getMessage));

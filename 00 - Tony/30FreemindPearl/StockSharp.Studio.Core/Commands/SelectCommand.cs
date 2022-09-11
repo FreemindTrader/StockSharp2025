@@ -15,9 +15,9 @@ namespace StockSharp.Studio.Core.Commands
 
         protected SelectCommand( Type instanceType, object instance, bool canEdit )
         {
-            this._canEdit = canEdit;
-            this.InstanceType = instanceType;
-            this.Instance = instance;
+            _canEdit = canEdit;
+            InstanceType = instanceType;
+            Instance = instance;
         }
 
         protected SelectCommand( Type instanceType, object instance, Func<bool> canEdit )
@@ -25,9 +25,9 @@ namespace StockSharp.Studio.Core.Commands
             Func<bool> func = canEdit;
             if ( func == null )
                 throw new ArgumentNullException( nameof( canEdit ) );
-            this._canEditFunc = func;
-            this.InstanceType = instanceType;
-            this.Instance = instance;
+            _canEditFunc = func;
+            InstanceType = instanceType;
+            Instance = instance;
         }
 
         public override StudioCommandDirections PossibleDirection
@@ -46,9 +46,9 @@ namespace StockSharp.Studio.Core.Commands
         {
             get
             {
-                Func<bool> canEditFunc = this._canEditFunc;
+                Func<bool> canEditFunc = _canEditFunc;
                 if ( canEditFunc == null )
-                    return this._canEdit;
+                    return _canEdit;
                 return canEditFunc();
             }
         }

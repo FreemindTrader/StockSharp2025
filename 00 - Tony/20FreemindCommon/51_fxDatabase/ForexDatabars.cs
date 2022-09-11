@@ -32,17 +32,17 @@ namespace fx.Database
 
         }
 
-        public ForexDatabars( System.Data.Common.DbConnection connection ) : base( connection, true ) { }
+        public ForexDatabars( DbConnection connection ) : base( connection, true ) { }
         
 
         public void DisableAutoDetectChanges()
         {
-            this.Configuration.AutoDetectChangesEnabled = false;
+            Configuration.AutoDetectChangesEnabled = false;
         }
 
         public void EnableAutoDetectChanges( )
         {
-            this.Configuration.AutoDetectChangesEnabled = true;
+            Configuration.AutoDetectChangesEnabled = true;
         }
 
         

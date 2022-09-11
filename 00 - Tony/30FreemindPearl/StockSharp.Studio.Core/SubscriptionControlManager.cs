@@ -13,46 +13,46 @@ namespace StockSharp.Studio.Core
 {
     public class SubscriptionControlManager
     {
-        private readonly SynchronizedDictionary<Subscription, SubscriptionControlManager.SubInfo> _subscriptions = new SynchronizedDictionary<Subscription, SubscriptionControlManager.SubInfo>();
+        private readonly SynchronizedDictionary<Subscription, SubInfo> _subscriptions = new SynchronizedDictionary<Subscription, SubInfo>();
         private readonly ISubscriptionProvider _provider;
 
         public SubscriptionControlManager( ISubscriptionProvider provider )
         {
-            this._provider = provider;
-            provider.SubscriptionStopped += ( Action<Subscription, Exception> )( ( s, _ ) => this.CheckUnsubscribe( s, false ) );
-            provider.SubscriptionStarted += ( Action<Subscription> )( s => this.CheckUnsubscribe( s, false ) );
-            provider.SubscriptionFailed += ( Action<Subscription, Exception, bool> )( ( s, _1, _2 ) => this.CheckUnsubscribe( s, false ) );
-            provider.SubscriptionOnline += ( Action<Subscription> )( s => this.CheckUnsubscribe( s, false ) );
-            provider.SubscriptionReceived += ( Action<Subscription, Message> )( ( s, _ ) => this.CheckUnsubscribe( s, false ) );
+            _provider = provider;
+            provider.SubscriptionStopped += ( s, _ ) => CheckUnsubscribe( s, false );
+            provider.SubscriptionStarted += s => CheckUnsubscribe( s, false );
+            provider.SubscriptionFailed += ( s, _1, _2 ) => CheckUnsubscribe( s, false );
+            provider.SubscriptionOnline += s => CheckUnsubscribe( s, false );
+            provider.SubscriptionReceived += ( s, _ ) => CheckUnsubscribe( s, false );
         }
 
         private void CheckUnsubscribe( Subscription sub, bool unsub = false )
         {
-            SubscriptionControlManager.SubInfo subInfo = this._subscriptions.TryGetValue<Subscription, SubscriptionControlManager.SubInfo>( sub );
+            SubInfo subInfo = _subscriptions.TryGetValue( sub );
             if ( subInfo == null )
                 return;
             if ( unsub )
                 subInfo.IsSubscribed = false;
             if ( subInfo.IsSubscribed || !sub.State.IsActive() )
                 return;
-            this._subscriptions.Remove( sub );
-            this._provider.UnSubscribe( sub );
+            _subscriptions.Remove( sub );
+            _provider.UnSubscribe( sub );
         }
 
         public void Subscribe( object handler, Subscription subscription )
         {
-            this._subscriptions.SafeAdd<Subscription, SubscriptionControlManager.SubInfo>( subscription ).Listeners.Add( handler );
-            this._provider.Subscribe( subscription );
+            _subscriptions.SafeAdd( subscription ).Listeners.Add( handler );
+            _provider.Subscribe( subscription );
         }
 
         public object[ ] Get( Subscription subscription )
         {
-            return this._subscriptions.TryGetValue<Subscription, SubscriptionControlManager.SubInfo>( subscription )?.Listeners.ToArray() ?? Array.Empty<object>();
+            return _subscriptions.TryGetValue( subscription )?.Listeners.ToArray() ?? Array.Empty<object>();
         }
 
         public void Unsubscribe( Subscription subscription )
         {
-            this.CheckUnsubscribe( subscription, true );
+            CheckUnsubscribe( subscription, true );
         }
 
         private class SubInfo

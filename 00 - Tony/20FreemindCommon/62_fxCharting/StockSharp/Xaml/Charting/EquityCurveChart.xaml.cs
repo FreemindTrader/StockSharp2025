@@ -179,7 +179,7 @@ namespace fx.Charting
         {
             if ( title == null )
                 throw new ArgumentNullException( nameof( title ) );
-            return new EquityCurveList( this, CreateCurve( title, color, secondColor, EquityCurveChartEx.GetDrawStylesByLineStyle( style ), id ) );
+            return new EquityCurveList( this, CreateCurve( title, color, secondColor, GetDrawStylesByLineStyle( style ), id ) );
         }
 
         [Obsolete( "Use CreateCurve() methods which returns BandsUI." )]

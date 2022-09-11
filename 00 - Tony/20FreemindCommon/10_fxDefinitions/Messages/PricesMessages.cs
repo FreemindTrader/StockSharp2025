@@ -26,11 +26,11 @@ namespace fx.Definitions
         public string Symbol { get; set; }
         public ChangeStopLimitSafetyMsg( string symbol, PriceLevelsType messageType, PooledList<float> priceLevels )
         {
-            this.Symbol      = symbol;
+            Symbol      = symbol;
 
-            this.MessageType = messageType;
+            MessageType = messageType;
 
-            this.PriceLevels = priceLevels;
+            PriceLevels = priceLevels;
         }
     }
 }

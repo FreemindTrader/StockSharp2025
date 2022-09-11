@@ -20,7 +20,7 @@ namespace fx.Configuration
       object value)
     {
       string connectionStringName = (string) value;
-      return (object) ConfigManagerEx.GetSection<ConnectionStringsSection>().ConnectionStrings.Cast<ConnectionStringSettings>().Single<ConnectionStringSettings>((Func<ConnectionStringSettings, bool>) (settings => settings.Name == connectionStringName)).ConnectionString;
+      return ConfigManagerEx.GetSection<ConnectionStringsSection>().ConnectionStrings.Cast<ConnectionStringSettings>().Single( settings => settings.Name == connectionStringName ).ConnectionString;
     }
   }
 }

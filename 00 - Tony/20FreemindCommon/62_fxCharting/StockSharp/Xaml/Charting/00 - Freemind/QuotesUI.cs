@@ -63,7 +63,7 @@ namespace fx.Charting
 
                 if ( value != ChartIndicatorDrawStyles.Band && value != ChartIndicatorDrawStyles.BandOneValue )
                 {
-                    throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( ( object )value ) );
+                    throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( value ) );
                 }
 
                 RaisePropertyValueChanging( nameof( Style ), value );

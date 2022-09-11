@@ -114,13 +114,13 @@ namespace StockSharp.Messages
 		{
 		}
 
-		/// <summary>
-		/// Create a value of types <see cref="UnitTypes.Point"/> and <see cref="UnitTypes.Step"/>.
-		/// </summary>
-		/// <param name="value">Value.</param>
-		/// <param name="type">Measure unit.</param>
-		/// <param name="getTypeValue">The handler returns a value associated with <see cref="Unit.Type"/> (price or volume steps).</param>
-		public Unit(decimal value, UnitTypes type, Func<UnitTypes, decimal?> getTypeValue)
+        /// <summary>
+        /// Create a value of types <see cref="UnitTypes.Point"/> and <see cref="UnitTypes.Step"/>.
+        /// </summary>
+        /// <param name="value">Value.</param>
+        /// <param name="type">Measure unit.</param>
+        /// <param name="getTypeValue">The handler returns a value associated with <see cref="Type"/> (price or volume steps).</param>
+        public Unit(decimal value, UnitTypes type, Func<UnitTypes, decimal?> getTypeValue)
 		{
 			// mika current check should be do while arithmetics operations
 			//
@@ -150,10 +150,10 @@ namespace StockSharp.Messages
 		[field: NonSerialized]
 		private Func<UnitTypes, decimal?> _getTypeValue;
 
-		/// <summary>
-		/// The handler returns a value associated with <see cref="Unit.Type"/> (price or volume steps).
-		/// </summary>
-		[XmlIgnore]
+        /// <summary>
+        /// The handler returns a value associated with <see cref="Type"/> (price or volume steps).
+        /// </summary>
+        [XmlIgnore]
 		public Func<UnitTypes, decimal?> GetTypeValue
 		{
 			get => _getTypeValue;
@@ -557,14 +557,14 @@ namespace StockSharp.Messages
 			return Convert(destinationType, GetTypeValue, throwException);
 		}
 
-		/// <summary>
-		/// Cast the value to another type.
-		/// </summary>
-		/// <param name="destinationType">Destination value type.</param>
-		/// <param name="getTypeValue">The handler returns a value associated with <see cref="Unit.Type"/> (price or volume steps).</param>
-		/// <param name="throwException">Throw exception in case of impossible conversion. Otherwise, returns <see langword="null"/>.</param>
-		/// <returns>Converted value.</returns>
-		public Unit Convert(UnitTypes destinationType, Func<UnitTypes, decimal?> getTypeValue, bool throwException = true)
+        /// <summary>
+        /// Cast the value to another type.
+        /// </summary>
+        /// <param name="destinationType">Destination value type.</param>
+        /// <param name="getTypeValue">The handler returns a value associated with <see cref="Type"/> (price or volume steps).</param>
+        /// <param name="throwException">Throw exception in case of impossible conversion. Otherwise, returns <see langword="null"/>.</param>
+        /// <returns>Converted value.</returns>
+        public Unit Convert(UnitTypes destinationType, Func<UnitTypes, decimal?> getTypeValue, bool throwException = true)
 		{
 			if (Type == destinationType)
 				return Clone();
@@ -696,12 +696,12 @@ namespace StockSharp.Messages
 		/// <returns><see langword="true" />, if the first value is less than or equal to the second, <see langword="false" />.</returns>
 		public static bool operator <=(Unit u1, Unit u2) => u1 == u2 || MoreThan(u2, u1) == true;
 
-		/// <summary>
-		/// Get the value with the opposite sign from the value <see cref="Unit.Value"/>.
-		/// </summary>
-		/// <param name="u">Unit.</param>
-		/// <returns>Opposite value.</returns>
-		public static Unit operator -(Unit u)
+        /// <summary>
+        /// Get the value with the opposite sign from the value <see cref="Value"/>.
+        /// </summary>
+        /// <param name="u">Unit.</param>
+        /// <returns>Opposite value.</returns>
+        public static Unit operator -(Unit u)
 		{
 			if (u is null)
 				return null;

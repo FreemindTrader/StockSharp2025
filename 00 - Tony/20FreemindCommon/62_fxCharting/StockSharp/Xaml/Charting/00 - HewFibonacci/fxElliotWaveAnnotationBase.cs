@@ -77,7 +77,7 @@ namespace fx.Charting.HewFibonacci
         private void RefreshBasePoints( )
         {
             Point[ ] basePoints = GetBasePoints( );
-            for ( int index = 0; index < ( ( IEnumerable<Point> )basePoints ).Count( ); ++index )
+            for ( int index = 0; index < basePoints.Count( ); ++index )
             {
                 Point point = basePoints[ index ];
                 SetBasePoint( FromCoordinate( point.X, XAxis ), FromCoordinate( point.Y, YAxis ), index );

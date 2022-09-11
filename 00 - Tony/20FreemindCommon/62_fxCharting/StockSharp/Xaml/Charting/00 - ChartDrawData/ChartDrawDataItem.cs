@@ -157,7 +157,7 @@ namespace fx.Charting
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( OrdersUI element, long orderId, string orderStringId, Sides side, Decimal price, Decimal volume, string errorMessage = null )
             {
-                return Add<OrdersUI, sTrade>( _drawData.GetOrderMap(), element, new sTrade( TimeStamp, orderId, orderStringId, side, price, volume, errorMessage ) );
+                return Add( _drawData.GetOrderMap(), element, new sTrade( TimeStamp, orderId, orderStringId, side, price, volume, errorMessage ) );
             }
 
             /// <summary>Put the order data.</summary>
@@ -184,7 +184,7 @@ namespace fx.Charting
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( TradesUI element, long tradeId, string tradeStringId, Sides side, Decimal price, Decimal volume )
             {
-                return Add<TradesUI, sTrade>( _drawData.GetTradeMap(), element, new sTrade( TimeStamp, tradeId, tradeStringId, side, price, volume, null ) );
+                return Add( _drawData.GetTradeMap(), element, new sTrade( TimeStamp, tradeId, tradeStringId, side, price, volume, null ) );
             }
 
             /// <summary>Put the line data.</summary>
@@ -196,8 +196,8 @@ namespace fx.Charting
             public ChartDrawDataItem Add( LineUI element, double value1, double value2 = double.NaN )
             {
                 if ( !XValue.IsNaN() )
-                    return Add<LineUI, sxTuple<double>>( _drawData.GetLineValueMap(), element, sxTuple<double>.CreateSxTuple( XValue, value1, value2 ) );
-                return Add<LineUI, sxTuple<DateTime>>( _drawData.GetLineTimeMap(), element, sxTuple<DateTime>.CreateSxTuple( TimeStamp, value1, value2 ) );
+                    return Add( _drawData.GetLineValueMap(), element, sxTuple<double>.CreateSxTuple( XValue, value1, value2 ) );
+                return Add( _drawData.GetLineTimeMap(), element, sxTuple<DateTime>.CreateSxTuple( TimeStamp, value1, value2 ) );
             }
 
             /// <summary>Put the line data.</summary>
@@ -219,8 +219,8 @@ namespace fx.Charting
             public ChartDrawDataItem Add( BandsUI element, double value1, double value2 )
             {
                 if ( !XValue.IsNaN() )
-                    return Add<BandsUI, sxTuple<double>>( _drawData.GetBandValueMap(), element, sxTuple<double>.CreateSxTuple( XValue, value1, value2 ) );
-                return Add<BandsUI, sxTuple<DateTime>>( _drawData.GetBandTimeMap(), element, sxTuple<DateTime>.CreateSxTuple( TimeStamp, value1, value2 ) );
+                    return Add( _drawData.GetBandValueMap(), element, sxTuple<double>.CreateSxTuple( XValue, value1, value2 ) );
+                return Add( _drawData.GetBandTimeMap(), element, sxTuple<DateTime>.CreateSxTuple( TimeStamp, value1, value2 ) );
             }
 
             /// <summary>Put the chart data.</summary>
@@ -281,9 +281,9 @@ namespace fx.Charting
                             Tuple<double, double> tuple = value as Tuple<double, double>;
                             if ( tuple != null )
                                 return Add( element6, tuple.Item1, tuple.Item2 );
-                            throw new ArgumentException( LocalizedStrings.Str888Params.Put( ( object ) value.GetType().Name ) );
+                            throw new ArgumentException( LocalizedStrings.Str888Params.Put( value.GetType().Name ) );
                         }
-                        throw new ArgumentException( LocalizedStrings.Str2062Params.Put( ( object ) element ) );
+                        throw new ArgumentException( LocalizedStrings.Str2062Params.Put( element ) );
                     }
                     if ( value == null )
                         throw new ArgumentNullException( nameof( value ) );
@@ -300,7 +300,7 @@ namespace fx.Charting
                     Tuple<double, double> tuple1 = value as Tuple<double, double>;
                     if ( tuple1 != null )
                         return Add( element5, tuple1.Item1, tuple1.Item2 );
-                    throw new ArgumentException( LocalizedStrings.Str888Params.Put( ( object ) value.GetType().Name ) );
+                    throw new ArgumentException( LocalizedStrings.Str888Params.Put( value.GetType().Name ) );
                 }
                 Order order = (Order) value;
                 return Add( element3, order, order.State != OrderStates.Failed ? null : LocalizedStrings.Failed );

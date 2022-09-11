@@ -133,7 +133,7 @@ namespace fx.Definitions.UndoRedo
         /// <returns>Interface that allows properly finish the command with 'using' statement</returns>
         public IDisposable Start( string commandCaption )
         {
-            this.affinityOwner = null;
+            affinityOwner = null;
             log.Add( "'" + commandCaption + "'" );
             return Start( commandCaption, true );
         }
@@ -152,7 +152,7 @@ namespace fx.Definitions.UndoRedo
         /// <returns>Interface that allows properly finish the command with 'using' statement</returns>
         public IDisposable Start( string commandCaption, object owner )
         {
-            if ( owner == this.affinityOwner && // owners are equal
+            if ( owner == affinityOwner && // owners are equal
                 owner != null && // owners are not null
                 currentPosition >= 0 && // history has a command to check affinity
                 history [ currentPosition ].Caption == commandCaption ) // captions are equal
@@ -162,7 +162,7 @@ namespace fx.Definitions.UndoRedo
             }
             else
             {
-                this.affinityOwner = owner;
+                affinityOwner = owner;
                 log.Add( "'" + commandCaption + "'" );
                 return Start( commandCaption, true );
             }

@@ -23,29 +23,29 @@ namespace StockSharp.Studio.Controls.Editors
         {
             get
             {
-                return ( bool )this.GetValue( StorageFormatEditSettings.IsDefaultEditorProperty );
+                return ( bool )GetValue( IsDefaultEditorProperty );
             }
             set
             {
-                this.SetValue( StorageFormatEditSettings.IsDefaultEditorProperty, ( object )value );
+                SetValue( IsDefaultEditorProperty, value );
             }
         }
 
         static StorageFormatEditSettings()
         {
-            StorageFormatEditSettings.RegisterCustomEdit();
+            RegisterCustomEdit();
         }
 
         public static void RegisterCustomEdit()
         {
-            EditorSettingsProvider.Default.RegisterUserEditor( typeof( StorageFormatEdit ), typeof( StorageFormatEditSettings ), ( CreateEditorMethod )( () => ( IBaseEdit )new StorageFormatEdit() ), ( CreateEditorSettingsMethod )( () => ( BaseEditSettings )new StorageFormatEditSettings() ) );
+            EditorSettingsProvider.Default.RegisterUserEditor( typeof( StorageFormatEdit ), typeof( StorageFormatEditSettings ), () => new StorageFormatEdit(), () => new StorageFormatEditSettings() );
         }
 
         public StorageFormatEditSettings()
         {
-            this.ItemsSource = ( object )Ecng.Common.Enumerator.GetValues<StorageFormats>().Select<StorageFormats, Tuple<string, object>>( ( Func<StorageFormats, Tuple<string, object>> )( v => new Tuple<string, object>( v.GetDisplayName(), ( object )v ) ) ).ToArray<Tuple<string, object>>();
-            this.DisplayMember = "Item1";
-            this.ValueMember = "Item2";
+            ItemsSource = Ecng.Common.Enumerator.GetValues<StorageFormats>().Select( v => new Tuple<string, object>( v.GetDisplayName(), v ) ).ToArray();
+            DisplayMember = "Item1";
+            ValueMember = "Item2";
         }
     }
 }

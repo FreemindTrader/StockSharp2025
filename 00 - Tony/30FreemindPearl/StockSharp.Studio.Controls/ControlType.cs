@@ -21,14 +21,14 @@ namespace StockSharp.Studio.Controls
         public bool IsToolWindow { get; }
 
         public ControlType( Type type )
-          : this( type, type.GetDisplayName( ( string )null ), type.GetDescription( ( string )null ), type.GetIconUrl() )
+          : this( type, type.GetDisplayName( null ), type.GetDescription( null ), type.GetIconUrl() )
         {
             DockingWindowTypeAttribute attribute = type.GetAttribute<DockingWindowTypeAttribute>( true );
-            this.IsToolWindow = attribute != null && attribute.IsToolWindow;
+            IsToolWindow = attribute != null && attribute.IsToolWindow;
             string icon = type.GetAttribute<VectorIconAttribute>( true )?.Icon;
             if ( icon.IsEmpty() )
                 return;
-            this.Icon = ThemedIconsExtension.GetImage( icon );
+            Icon = ThemedIconsExtension.GetImage( icon );
         }
 
         public ControlType( Type type, string name, string description, Uri icon )
@@ -36,15 +36,15 @@ namespace StockSharp.Studio.Controls
             Type type1 = type;
             if ( ( object )type1 == null )
                 throw new ArgumentNullException( nameof( type ) );
-            this.Type = type1;
+            Type = type1;
             string str = name;
             if ( str == null )
                 throw new ArgumentNullException( nameof( name ) );
-            this.Name = str;
-            this.Description = description;
-            if ( !( icon != ( Uri )null ) )
+            Name = str;
+            Description = description;
+            if ( !( icon != null ) )
                 return;
-            this.Icon = ( ImageSource )new BitmapImage( icon );
+            Icon = new BitmapImage( icon );
         }
     }
 }

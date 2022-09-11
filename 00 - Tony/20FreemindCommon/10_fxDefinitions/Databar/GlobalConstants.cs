@@ -1509,7 +1509,7 @@ namespace fx.Definitions
         public const char DownTrendRetracement           = '\u2BAD';
         //char DownTrendRetracement                      = '\u2B00';
 
-        public const int FIFTEEN_MINUTES_BARS_DOWNLOAD = GlobalConstants.FIFTEEN_MINUTES_BARS_PER_MONTH * 3 + GlobalConstants.FIFTEEN_MINUTES_BARS_PER_WEEK + 1;
+        public const int FIFTEEN_MINUTES_BARS_DOWNLOAD = FIFTEEN_MINUTES_BARS_PER_MONTH * 3 + FIFTEEN_MINUTES_BARS_PER_WEEK + 1;
        
 
 
@@ -3691,10 +3691,10 @@ namespace fx.Definitions
 
         
 
-        
-
         public static readonly float [ ] Wave5ProjectionLevels = new float [ ]
         {
+                                                                33.30f,
+                                                                38.20f,
                                                                 41.40f,
                                                                 50.00f,
                                                                 61.80f,
@@ -3709,6 +3709,8 @@ namespace fx.Definitions
 
         public static readonly FibPercentage [ ] Wave5ProjectionFibLevelType = new FibPercentage [ ]
         {
+                                                                FibPercentage.Fib_33_3,
+                                                                FibPercentage.Fib_38_2,
                                                                 FibPercentage.Fib_41_4,
                                                                 FibPercentage.Fib_50,                                                                
                                                                 FibPercentage.Fib_61_8,
@@ -3724,6 +3726,8 @@ namespace fx.Definitions
 
         public static readonly int [ ] Wave5ProjectionStrength = new int [ ]
         {
+                                                                5,
+                                                                5,
                                                                 30,
                                                                 30,
                                                                 30,

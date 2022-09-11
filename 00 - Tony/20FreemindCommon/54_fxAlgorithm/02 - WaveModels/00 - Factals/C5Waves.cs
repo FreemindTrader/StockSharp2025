@@ -294,6 +294,12 @@ namespace fx.Algorithm
             }
         }
 
+        public void ProcessFinishedWaves()
+        {
+            var hews = _hews.GetElliottWavesDictionary( _k.Period );
+            ProcessFinishedWaves( _k.WaveScenarioNo, _k.RawBeginTime, _k.RawEndTime, _k.WaveCycle, hews, null );
+        }
+
         public void ProcessFinishedWaves( int waveScenarioNo, long beginTime, long endTime, ElliottWaveCycle cycle, UndoRedoBTreeDictionary<long, DbElliottWave> hews, List<DbElliottWave> dbHews )
         {
             if ( beginTime > -1 )

@@ -27,9 +27,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
       <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
       <PackageReference Include="StockSharp.Diagram.Core" Version="5.0.9" />
       <PackageReference Include="StockSharp.Studio.Community" Version="5.0.223" />
       <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />

@@ -35,7 +35,7 @@ namespace StockSharp.Studio.Community
             ServerCredentials credentials;
             if (!ServicesRegistry.CredentialsProvider.TryLoad(out credentials))
                 throw new InvalidOperationException("TryLoadCredentials == false");
-            if (CommunityServicesRegistry.Offline)
+            if ( Offline )
             {
                 if (typeof(TService) == typeof(IFileService))
                     return new FileClient().To<TService>();
@@ -57,8 +57,8 @@ namespace StockSharp.Studio.Community
                     return new ProfileClient().To<TService>();
                 throw new ArgumentOutOfRangeException(typeof(TService).Name);
             }
-            IApiServiceProvider apiServiceProvider = CommunityServicesRegistry.ApiServiceProvider;
-            return (!credentials.Token.IsEmpty() ? apiServiceProvider.GetService<TService>(credentials.Token) : apiServiceProvider.GetService<TService>(credentials.Email, credentials.Password)).TrySetAsUser<TService>(true);
+            IApiServiceProvider apiServiceProvider = ApiServiceProvider;
+            return (!credentials.Token.IsEmpty() ? apiServiceProvider.GetService<TService>(credentials.Token) : apiServiceProvider.GetService<TService>(credentials.Email, credentials.Password)).TrySetAsUser( true);
         }
     }
 }
