@@ -29,7 +29,7 @@ using System.Windows;
 using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
 using fx.Common;
-using StockSharp.Xaml;
+
 
 
 

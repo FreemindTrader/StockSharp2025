@@ -27,13 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="fx.Collections" Version="5.0.220" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
-    <ProjectReference Include="..\..\..\BusinessEntities\BusinessEntities.csproj" />
-    <ProjectReference Include="..\..\..\Configuration\Configuration.csproj" />
-    <ProjectReference Include="..\..\..\Localization\Localization.csproj" />
+    <PackageReference Include="StockSharp.Algo" Version="5.0.232" />
   </ItemGroup>
 
   <ItemGroup>

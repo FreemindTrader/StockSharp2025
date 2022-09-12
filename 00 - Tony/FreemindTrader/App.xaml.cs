@@ -11,7 +11,7 @@ namespace FreemindTrader
     {
         static App()
         {
-            //DevExpress.Xpf.Core.ClearAutomationEventsHelper.IsEnabled = false;
+            DevExpress.Xpf.Core.ClearAutomationEventsHelper.IsEnabled = false;
             ApplicationThemeHelper.ApplicationThemeName = Theme.Win10Light.Name;
         }
 

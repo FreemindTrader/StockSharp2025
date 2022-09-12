@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="StockSharp.Xaml.StorageSettingsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StockSharp.Xaml"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:sxDev="clr-namespace:Ecng.Xaml.DevExp;assembly=Ecng.Xaml.DevExp"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+             
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <RadioButton x:Name="IsLocalCtrl" Grid.Row="0" VerticalAlignment="Center" IsChecked="True">
+            <TextBlock Text="{x:Static loc:LocalizedStrings.Str1441}"/>
+        </RadioButton>
+        <dxlc:GroupBox Grid.Column="1" Grid.Row="0">
+            <Grid IsEnabled="{Binding ElementName=IsLocalCtrl, Path=IsChecked}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{x:Static loc:LocalizedStrings.XamlStr594}"/>
+                <dxe:TextEdit x:Name="PathCtrl" Grid.Row="0" Grid.Column="1" FrameworkElement.VerticalAlignment="Center"/>
+                <dx:SimpleButton x:Name="Browse" Grid.Row="0" Grid.Column="3" Click="BrowseButtonClicked">...</dx:SimpleButton>
+            </Grid>
+        </dxlc:GroupBox>
+        <RadioButton x:Name="IsRemoteCtrl" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
+            <TextBlock Text="{x:Static loc:LocalizedStrings.XamlStr782}"/>
+        </RadioButton>
+        <dxlc:GroupBox Grid.Column="1" Grid.Row="2">
+            <Grid IsEnabled="{Binding ElementName=IsRemoteCtrl, Path=IsChecked}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+          <Run Text="{x:Static loc:LocalizedStrings.Address}"/>
+          :
+                </TextBlock>
+                <sxDev:EndPointEditor x:Name="AddressCtrl" Grid.Column="1" Grid.Row="0"
+                                FrameworkElement.VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" IsEnabled="{Binding IsCredentialsEnabled}">
+          <Run Text="{x:Static loc:LocalizedStrings.Login}"/>
+          :
+                </TextBlock>
+                <dxe:TextEdit x:Name="LoginCtrl" Grid.Column="1" Grid.Row="2"
+                             FrameworkElement.VerticalAlignment="Center" UIElement.IsEnabled="{Binding IsCredentialsEnabled}"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" IsEnabled="{Binding IsCredentialsEnabled}">
+          <Run Text="{x:Static loc:LocalizedStrings.Password}"/>
+          :
+                </TextBlock>
+                <sxDev:SecretEdit x:Name="PasswordCtrl" Grid.Column="1" Grid.Row="4"
+                            FrameworkElement.VerticalAlignment="Center" UIElement.IsEnabled="{Binding IsCredentialsEnabled}"/>
+            </Grid>
+        </dxlc:GroupBox>
+    </Grid>
+</UserControl>

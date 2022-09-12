@@ -22,15 +22,15 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.225</Version>
+        <Version>5.0.231</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
         <PackageReference Include="EntityFramework" Version="6.4.4" />
-        <PackageReference Include="fx.Bars" Version="5.0.225" />
+        <PackageReference Include="fx.Bars" Version="5.0.231" />
         <PackageReference Include="fx.Collections" Version="5.0.220" />
     </ItemGroup>
 

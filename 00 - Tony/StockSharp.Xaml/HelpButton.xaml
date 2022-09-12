@@ -1,0 +1,24 @@
+﻿<Button
+    x:Class="StockSharp.Xaml.HelpButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:StockSharp.Xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    IsEnabled="false"
+    ToolTip="{x:Static loc:LocalizedStrings.Help}">
+
+    <StackPanel>
+        <TextBlock
+            x:Name="TextCtrl"
+            Text="{x:Static loc:LocalizedStrings.Help}"
+            Visibility="Collapsed" />
+        <Image x:Name="ImgCtrl" Width="16">
+            <Image.Source>
+                <local:ThemedIconsExtension Key="Help" />
+            </Image.Source>
+        </Image>
+    </StackPanel>
+
+</Button>

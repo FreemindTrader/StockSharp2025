@@ -21,13 +21,13 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.223</Version>
+        <Version>5.0.231</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
         <PackageReference Include="fx.Collections" Version="5.0.220" />
         <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
     </ItemGroup>

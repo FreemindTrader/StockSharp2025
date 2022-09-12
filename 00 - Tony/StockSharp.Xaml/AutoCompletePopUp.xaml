@@ -1,0 +1,41 @@
+﻿<Popup
+    x:Class="StockSharp.Xaml.AutoCompletePopUp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ex="clr-namespace:Ecng.Xaml;assembly=Ecng.Xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xaml="clr-namespace:StockSharp.Xaml"
+    x:Name="ppBox"
+    HorizontalAlignment="Left"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    IsOpen="false"
+    Placement="Bottom"
+    StaysOpen="False"
+    mc:Ignorable="d">
+
+    <Border Width="{Binding Path=Width, ElementName=ppBox, Mode=Default}" Height="Auto">
+        <ListBox
+            x:Name="Matches"
+            MaxHeight="90"
+            FontFamily="Segoe UI"
+            FontSize="14"
+            IsSynchronizedWithCurrentItem="True"
+            IsTextSearchEnabled="True"
+            MouseDoubleClick="lstMatches_MouseDoubleClick"
+            PreviewKeyDown="lstMatches_PreviewKeyDown"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ex:HighlightingTextBlock
+                        HighlightBrush="#FF44A0FF"
+                        HighlightText="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type xaml:AutoCompletePopUp}}, Path=MatchText}"
+                        Text="{Binding Path=Id}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Border>
+
+</Popup>

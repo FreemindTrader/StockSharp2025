@@ -1,0 +1,47 @@
+﻿<dx:DXWindow
+    x:Class="StockSharp.Xaml.FileProgressWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:StockSharp.Xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Closing="FileProgressWindowClosing"
+    FrameworkElement.Width="300"
+    Loaded="FileProgressWindowLoaded"
+    Window.ResizeMode="NoResize"
+    Window.ShowInTaskbar="false"
+    Window.SizeToContent="Height"
+    Window.Title="{x:Static loc:LocalizedStrings.Str1574}"
+    Window.WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ProgressBar
+            x:Name="Progress"
+            Grid.Row="0"
+            Height="40" />
+        <TextBlock
+            x:Name="ProgressText"
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="Black"
+            Text="0/0" />
+        <Button
+            Grid.Row="2"
+            Width="100"
+            HorizontalAlignment="Right"
+            Click="Button_Click"
+            Content="{x:Static loc:LocalizedStrings.Cancel}" />
+    </Grid>
+
+</dx:DXWindow>

@@ -1,0 +1,9 @@
+﻿<dx:DropDownButton
+    x:Class="StockSharp.Xaml.PropertyGrid.WorkingTimeEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:local="clr-namespace:StockSharp.Xaml.PropertyGrid"
+    Content="{Binding WorkingTime}">
+    <local:WorkingTimeControl WorkingTime="{Binding Path=WorkingTime, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:WorkingTimeEditor}}}" />
+</dx:DropDownButton>
