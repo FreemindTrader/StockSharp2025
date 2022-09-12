@@ -395,7 +395,16 @@ namespace StockSharp.Algo.Storages
 					if (message is CandleMessage candleMsg && candleMsg.State == CandleStates.Finished)
 					{
 						if (CanStore(candleMsg))
-							_candleBuffer.Add(Tuple.Create(candleMsg.SecurityId, candleMsg.GetType(), candleMsg.Arg), candleMsg.TypedClone());
+                        {
+							/* -------------------------------------------------------------------------------------------------------------------------------------------
+							* 
+							*  Tony Candle Saving: All the finished Candles are stored in a buffer before Save to Storage
+							* 
+							* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+							_candleBuffer.Add( Tuple.Create( candleMsg.SecurityId, candleMsg.GetType(), candleMsg.Arg ), candleMsg.TypedClone() );
+						}
+						
 					}
 
 					break;

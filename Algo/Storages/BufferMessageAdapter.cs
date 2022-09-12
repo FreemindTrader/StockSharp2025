@@ -437,6 +437,11 @@ namespace StockSharp.Algo.Storages
 
 					foreach (var pair in Buffer.GetCandles())
 					{
+						/* -------------------------------------------------------------------------------------------------------------------------------------------
+						* 
+						*  Tony Candle Saving: All the finished Candles are stored in a buffer before Save to Storage
+						* 
+						* ------------------------------------------------------------------------------------------------------------------------------------------- */
 						Settings.GetStorage(pair.Key.Item1, pair.Key.Item2, pair.Key.Item3).Save(pair.Value);
 					}
 

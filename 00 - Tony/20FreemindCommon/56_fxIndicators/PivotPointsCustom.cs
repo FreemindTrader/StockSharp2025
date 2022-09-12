@@ -401,6 +401,12 @@ namespace fx.Indicators
 
                             if ( i == endIndex )
                             {
+                                var lastDate = todaysPPInfo.DataTime + Bars.Period;
+
+                                var lastRange = GetPivotTimeBlock( lastDate.Value );
+
+                                _pivotPointsForDates.TryAdd( lastRange, todaysPPInfo );
+
                                 _ppSearchTimeBlock = _pivotPointsForDates.Keys.OrderByDescending( x => x.Start ).ToPooledList( );
                             }
                             
