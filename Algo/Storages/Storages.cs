@@ -34,7 +34,7 @@ namespace StockSharp.Algo.Storages
 				}
 				else if (msg.ServerTime == prevTime)
 				{
-					// если разные сделки имеют одинаковое время
+					// если разные сделки имею?одинаковое время
 					if (prevId != 0 && msg.TradeId != null && msg.TradeId != prevId)
 					{
 						prevId = msg.TradeId ?? 0;
