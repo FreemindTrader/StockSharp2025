@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="StockSharp.Xaml.IndexEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StockSharp.Xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    LostFocus="UserControl_LostFocus"
+    mc:Ignorable="d">
+
+    <FrameworkElement.Resources>
+        <ControlTemplate x:Key="TextBoxControlTemplateNormal" TargetType="{x:Type RichTextBox}">
+            <Grid>
+                <Border
+                    Width="Auto"
+                    HorizontalAlignment="Stretch"
+                    Background="{TemplateBinding Control.Background}"
+                    BorderBrush="{TemplateBinding Control.BorderBrush}"
+                    BorderThickness="1,1,1,1">
+                    <ScrollViewer Name="PART_ContentHost" Background="{TemplateBinding Control.Background}" />
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </FrameworkElement.Resources>
+
+    <Grid x:Name="ieGrid">
+        <Canvas
+            Name="LayoutRoot"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <RichTextBox
+                Name="txInput"
+                Width="{Binding Path=ActualWidth, ElementName=ieGrid, Mode=OneWay}"
+                Height="{Binding Path=ActualHeight, ElementName=ieGrid, Mode=OneWay}"
+                VerticalAlignment="Stretch"
+                HorizontalContentAlignment="Left"
+                VerticalContentAlignment="Center"
+                AcceptsReturn="true"
+                AcceptsTab="false"
+                FontFamily="Segoe UI"
+                FontSize="14"
+                IsDocumentEnabled="true"
+                IsUndoEnabled="false"
+                PreviewKeyDown="txInput_PreviewKeyDown"
+                Template="{DynamicResource TextBoxControlTemplateNormal}"
+                TextChanged="txInput_TextChanged"
+                VerticalScrollBarVisibility="Auto" />
+        </Canvas>
+    </Grid>
+
+</UserControl>

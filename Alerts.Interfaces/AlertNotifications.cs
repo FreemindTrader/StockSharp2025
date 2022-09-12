@@ -62,7 +62,7 @@
 		/// Telegram.
 		/// </summary>
 		[EnumMember]
-		[Display(ResourceType = typeof(LocalizedStrings), Name = LocalizedStrings.TelegramKey)]
+		[Display(ResourceType = typeof(LocalizedStrings), Name = "Telegram")]
 		Telegram,
 	}
 }

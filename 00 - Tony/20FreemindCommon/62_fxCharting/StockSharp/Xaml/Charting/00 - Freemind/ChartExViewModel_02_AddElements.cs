@@ -30,7 +30,7 @@ using System.Windows;
 using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
 using fx.Common;
-using StockSharp.Xaml;
+
 using StockSharp.Messages;
 using fx.Indicators;
 using fx.Charting.IndicatorPainters;

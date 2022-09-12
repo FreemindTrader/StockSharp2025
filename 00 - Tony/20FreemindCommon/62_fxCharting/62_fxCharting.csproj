@@ -66,8 +66,8 @@
         <None Remove="StockSharp\Xaml\Charting\Images\TrailingStop2_16x16.png" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.135" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.133" />
     </ItemGroup>
     <ItemGroup>
         <Resource Include="StockSharp\Xaml\Charting\Images\00Long_16x16.png">

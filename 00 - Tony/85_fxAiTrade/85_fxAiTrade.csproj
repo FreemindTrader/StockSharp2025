@@ -4,7 +4,7 @@
         <ProjectGuid>{A7934EB3-1783-4612-90AC-1AE729458091}</ProjectGuid>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>fx.AITrade</PackageId>
-        <Version>5.0.225</Version>
+        <Version>5.0.231</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
@@ -266,10 +266,10 @@
         <None Include="..\.editorconfig" Link=".editorconfig" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
         <PackageReference Include="fx.Disruptor" Version="5.0.220" />
         <PackageReference Include="fx.Strategies" Version="5.0.223" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.135" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.133" />
         <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     </ItemGroup>
     <ItemGroup>

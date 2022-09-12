@@ -184,7 +184,7 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
         <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
         <PackageReference Include="StockSharp.Configuration.Adapters" Version="5.0.220" />
         <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
@@ -202,8 +202,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="DevExpress.Xpf.Gauges.v22.1">
-          <HintPath>C:\Program Files\DevExpress 22.1\Components\Bin\NetCore\DevExpress.Xpf.Gauges.v22.1.dll</HintPath>
+        <Reference Include="DevExpress.Xpf.Gauges.v21.1">
+          <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\Framework\DevExpress.Xpf.Gauges.v21.1.dll</HintPath>
         </Reference>
         <Reference Include="SciChart.Charting">
             <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.dll</HintPath>

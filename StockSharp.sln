@@ -148,6 +148,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Hydra", "10 - Hydra", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hydra", "00 - Tony\Hydra\Hydra.csproj", "{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecng.Security", "00 - Tony\00FreemindBase\Ecng.Security\Ecng.Security.csproj", "{0445F3B1-AF33-4319-BB8C-8A0B2957832E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -636,6 +638,14 @@ Global
 		{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1}.Release|x64.ActiveCfg = Release|x64
 		{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1}.Release|x64.Build.0 = Release|x64
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Debug|x64.ActiveCfg = Debug|x64
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Debug|x64.Build.0 = Debug|x64
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Release|x64.ActiveCfg = Release|x64
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -709,6 +719,7 @@ Global
 		{A7934EB3-1783-4612-90AC-1AE729458091} = {3374E1D2-F06B-486F-B844-CC84BCE09950}
 		{FA920120-5CA3-4972-BDC1-7318855BF3A8} = {3374E1D2-F06B-486F-B844-CC84BCE09950}
 		{7EFE56E1-764D-4E36-8D59-A213FCB3F4A1} = {2C8B5E72-391A-4544-B5EC-C0FF2912275E}
+		{0445F3B1-AF33-4319-BB8C-8A0B2957832E} = {9060DE31-ECC3-4786-85E0-A40FE3137226}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}

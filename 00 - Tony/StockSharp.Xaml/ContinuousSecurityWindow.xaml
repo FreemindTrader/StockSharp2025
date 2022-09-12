@@ -1,0 +1,199 @@
+﻿<dx:DXWindow
+    x:Class="StockSharp.Xaml.ContinuousSecurityWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:ecng="clr-namespace:Ecng.Xaml;assembly=Ecng.Xaml"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:StockSharp.Xaml"
+    xmlns:markup="clr-namespace:System.Windows.Markup;assembly=System.Xaml"
+    xmlns:sxGrid="clr-namespace:StockSharp.Xaml.PropertyGrid"
+    Title="{x:Static loc:LocalizedStrings.ContinuousSecurity}"
+    Width="700"
+    Height="500"
+    ShowInTaskbar="false"
+    WindowStartupLocation="CenterScreen">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center">
+                <Run Text="{x:Static loc:LocalizedStrings.Id}" />
+                :</TextBlock>
+            <local:SecurityIdTextBox
+                x:Name="SecurityId"
+                Grid.Column="2"
+                EditValueChanged="SecurityId_EditValueChanged" />
+        </Grid>
+        <dx:DXTabControl
+            x:Name="TabCtrl"
+            Grid.Row="2"
+            SelectionChanged="TabCtrl_SelectionChanged">
+            <dx:DXTabItem x:Name="ExpTab" Header="{x:Static loc:LocalizedStrings.XamlStr848}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="250" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <local:SecurityJumpsEditor
+                        x:Name="JumpsGrid"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Changed="JumpsGrid_Changed"
+                        JumpSelected="JumpsGrid_JumpSelected" />
+                    <Grid Column="2" Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <sxGrid:PropertyGridEx x:Name="ExpirationPropGrid" />
+                        <Grid Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <dxe:TextEdit
+                                x:Name="AssetCode"
+                                EditValueChanged="AssetCode_EditValueChanged"
+                                NullText="{x:Static loc:LocalizedStrings.UnderlyingAsset}" />
+                            <dx:SimpleButton
+                                x:Name="Auto"
+                                Grid.Column="2"
+                                Width="80"
+                                Click="Auto_Click"
+                                Content="{x:Static loc:LocalizedStrings.XamlStr11}"
+                                IsEnabled="false"
+                                ToolTip="{x:Static loc:LocalizedStrings.XamlStr15}" />
+                        </Grid>
+                    </Grid>
+                    <Grid Column="0" Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <dx:SimpleButton
+                            x:Name="AddRow"
+                            Grid.Column="0"
+                            Click="OnAddRowClicked"
+                            ToolTip="{x:Static loc:LocalizedStrings.XamlStr137}">
+                            <dx:SimpleButton.Glyph>
+                                <local:ThemedIconsExtension Key="Add" />
+                            </dx:SimpleButton.Glyph>
+                        </dx:SimpleButton>
+                        <dx:SimpleButton
+                            x:Name="RemoveRow"
+                            Grid.Column="2"
+                            Click="RemoveRow_Click"
+                            IsEnabled="false"
+                            ToolTip="{x:Static loc:LocalizedStrings.XamlStr788}">
+                            <dx:SimpleButton.Glyph>
+                                <local:ThemedIconsExtension Key="Remove2" />
+                            </dx:SimpleButton.Glyph>
+                        </dx:SimpleButton>
+                        <dx:SimpleButton
+                            x:Name="UpRow"
+                            Grid.Column="4"
+                            Padding="0"
+                            Click="UpRow_Click"
+                            Content=""
+                            FontFamily="Wingdings"
+                            FontSize="15"
+                            IsEnabled="false"
+                            ToolTip="{x:Static loc:LocalizedStrings.XamlStr137}" />
+                        <dx:SimpleButton
+                            x:Name="DownRow"
+                            Grid.Column="6"
+                            Padding="0"
+                            Click="DownRow_Click"
+                            Content=""
+                            FontFamily="Wingdings"
+                            FontSize="15"
+                            IsEnabled="false"
+                            ToolTip="{x:Static loc:LocalizedStrings.XamlStr788}" />
+                    </Grid>
+                </Grid>
+            </dx:DXTabItem>
+            <dx:DXTabItem x:Name="VolTab" Header="{x:Static loc:LocalizedStrings.Volume}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="250" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="24" />
+                    </Grid.RowDefinitions>
+                    <local:SecurityGrid x:Name="VolSecGrid" SelectedItemChanged="VolSecGrid_SelectedItemChanged" />
+                    <Grid Column="0" Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <dx:SimpleButton
+                            x:Name="AddRowVolSecGrid"
+                            Grid.Column="0"
+                            Click="AddRowVolSecGrid_Click"
+                            ToolTip="{x:Static loc:LocalizedStrings.XamlStr137}">
+                            <dx:SimpleButton.Glyph>
+                                <local:ThemedIconsExtension Key="Add" />
+                            </dx:SimpleButton.Glyph>
+                        </dx:SimpleButton>
+                        <dx:SimpleButton
+                            x:Name="RemoveRowVolSecGrid"
+                            Grid.Column="2"
+                            Click="RemoveRowVolSecGrid_Click"
+                            IsEnabled="false"
+                            ToolTip="{x:Static loc:LocalizedStrings.XamlStr788}">
+                            <dx:SimpleButton.Glyph>
+                                <local:ThemedIconsExtension Key="Remove2" />
+                            </dx:SimpleButton.Glyph>
+                        </dx:SimpleButton>
+                    </Grid>
+                    <sxGrid:PropertyGridEx
+                        x:Name="VolumePropGrid"
+                        Grid.Row="0"
+                        Grid.Column="2" />
+                </Grid>
+            </dx:DXTabItem>
+        </dx:DXTabControl>
+        <dx:SimpleButton
+            x:Name="Ok"
+            Grid.Row="4"
+            Width="80"
+            HorizontalAlignment="Right"
+            Click="Ok_Click"
+            Content="{x:Static loc:LocalizedStrings.OK}"
+            IsEnabled="false" />
+    </Grid>
+</dx:DXWindow>

@@ -1,0 +1,117 @@
+﻿<dx:DXWindow
+    x:Class="StockSharp.Xaml.Code.CodeReferencesWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Bars="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:basegrid="clr-namespace:StockSharp.Xaml.GridControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:ex="clr-namespace:Ecng.Xaml;assembly=Ecng.Xaml"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Code"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sx="clr-namespace:StockSharp.Xaml"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    FrameworkElement.Height="350"
+    FrameworkElement.Width="600"
+    Window.ResizeMode="CanResize"
+    Window.ShowInTaskbar="false"
+    Window.Title="{x:Static loc:LocalizedStrings.XamlStr151}"
+    Window.WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <UIElement.CommandBindings>
+        <CommandBinding
+            CanExecute="CanOk"
+            Command="{x:Static local:CodeReferencesWindow.OkCommand}"
+            Executed="ExecuteOk" />
+        <CommandBinding
+            CanExecute="CanAdd"
+            Command="{x:Static local:CodeReferencesWindow.AddCommand}"
+            Executed="ExecuteAdd" />
+        <CommandBinding
+            CanExecute="CanRemove"
+            Command="{x:Static local:CodeReferencesWindow.RemoveCommand}"
+            Executed="ExecuteRemove" />
+    </UIElement.CommandBindings>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Bars:BarManager
+            x:Name="BarManager"
+            Grid.Row="0"
+            AllowGlyphTheming="true">
+            <Bars:BarManager.Bars>
+                <Bars:Bar Caption="{x:Static loc:LocalizedStrings.Main}">
+                    <Bars:BarButtonItem
+                        Command="{x:Static local:CodeReferencesWindow.AddCommand}"
+                        ToolTip="{x:Static loc:LocalizedStrings.Str3229}"
+                        ToolTipService.ShowOnDisabled="true">
+                        <Bars:BarItem.Glyph>
+                            <sx:IconsExtension Key="Add" />
+                        </Bars:BarItem.Glyph>
+                    </Bars:BarButtonItem>
+                    <Bars:BarButtonItem
+                        Command="{x:Static local:CodeReferencesWindow.RemoveCommand}"
+                        ToolTip="{x:Static loc:LocalizedStrings.Str2060}"
+                        ToolTipService.ShowOnDisabled="true">
+                        <Bars:BarItem.Glyph>
+                            <sx:IconsExtension Key="Remove2" />
+                        </Bars:BarItem.Glyph>
+                    </Bars:BarButtonItem>
+                </Bars:Bar>
+            </Bars:BarManager.Bars>
+        </Bars:BarManager>
+        <basegrid:BaseGridControl
+            x:Name="ReferencesListView"
+            Grid.Row="1"
+            BorderThickness="0"
+            SelectionMode="Row">
+            <dxg:GridControl.View>
+                <dxg:TableView
+                    AllowEditing="false"
+                    AutoWidth="true"
+                    NavigationStyle="Row"
+                    ShowFilterPanelMode="Never"
+                    ShowGroupPanel="false"
+                    ShowIndicator="false" />
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn
+                    Width="100"
+                    Binding="{Binding Path=Name}"
+                    Header="{x:Static loc:LocalizedStrings.Name}" />
+                <dxg:GridColumn Binding="{Binding Path=Location}" Header="{x:Static loc:LocalizedStrings.Str2804}" />
+            </dxg:GridControl.Columns>
+        </basegrid:BaseGridControl>
+        <Grid Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="1"
+                Width="80"
+                ex:XamlHelper.DialogResult="True"
+                Command="{x:Static local:CodeReferencesWindow.OkCommand}"
+                Content="{x:Static loc:LocalizedStrings.OK}"
+                IsDefault="true" />
+            <Button
+                Grid.Column="3"
+                Width="80"
+                ex:XamlHelper.DialogResult="False"
+                Content="{x:Static loc:LocalizedStrings.Cancel}"
+                IsCancel="true" />
+        </Grid>
+    </Grid>
+
+</dx:DXWindow>

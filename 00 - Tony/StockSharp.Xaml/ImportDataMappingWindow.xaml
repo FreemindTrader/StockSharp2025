@@ -1,0 +1,101 @@
+﻿<dx:DXWindow
+    x:Class="StockSharp.Xaml.ImportDataMappingWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:basegrid="clr-namespace:StockSharp.Xaml.GridControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:StockSharp.Xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <basegrid:BaseGridControl
+            x:Name="ValuesGrid"
+            Grid.Row="0"
+            SelectedItemChanged="ValuesGrid_SelectedItemChanged"
+            SelectionMode="Row">
+            <dxg:GridControl.View>
+                <dxg:TableView
+                    AutoWidth="true"
+                    ShowFilterPanelMode="Never"
+                    ShowGroupPanel="false"
+                    ShowIndicator="false" />
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn
+                    Width="150"
+                    FieldName="ValueFile"
+                    Header="{x:Static loc:LocalizedStrings.XamlStr187}">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:TextEditSettings />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn
+                    Width="200"
+                    FieldName="ValueStockSharp"
+                    Header="{x:Static loc:LocalizedStrings.XamlStr186}">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:ComboBoxEditSettings
+                            AutoComplete="true"
+                            IsTextEditable="False"
+                            ItemsSource="{Binding DataValues}" />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+        </basegrid:BaseGridControl>
+        <Grid Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <dx:SimpleButton
+                x:Name="AddRow"
+                Grid.Column="0"
+                Click="AddRow_Click"
+                FrameworkElement.HorizontalAlignment="Center"
+                FrameworkElement.ToolTip="{x:Static loc:LocalizedStrings.XamlStr135}"
+                FrameworkElement.VerticalAlignment="Center">
+                <Image Width="16">
+                    <Image.Source>
+                        <local:ThemedIconsExtension Key="Add" />
+                    </Image.Source>
+                </Image>
+            </dx:SimpleButton>
+            <dx:SimpleButton
+                x:Name="RemoveRow"
+                Grid.Column="2"
+                Click="RemoveRow_Click"
+                FrameworkElement.HorizontalAlignment="Center"
+                FrameworkElement.ToolTip="{x:Static loc:LocalizedStrings.XamlStr784}"
+                FrameworkElement.VerticalAlignment="Center"
+                UIElement.IsEnabled="false">
+                <Image Width="16">
+                    <Image.Source>
+                        <local:ThemedIconsExtension Key="Remove2" />
+                    </Image.Source>
+                </Image>
+            </dx:SimpleButton>
+            <dx:SimpleButton
+                x:Name="Ok"
+                Grid.Column="4"
+                Click="Ok_Click"
+                ContentControl.Content="{x:Static loc:LocalizedStrings.OK}"
+                FrameworkElement.Width="80" />
+        </Grid>
+    </Grid>
+
+</dx:DXWindow>

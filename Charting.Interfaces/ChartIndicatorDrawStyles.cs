@@ -36,7 +36,7 @@ namespace StockSharp.Charting
 		/// <summary>
 		/// The range with a single value.
 		/// </summary>
-		[Display(ResourceType = typeof(LocalizedStrings), Name = LocalizedStrings.Str1974_2Key)]
+		[Display(ResourceType = typeof(LocalizedStrings), Name = "The range with a single value")]
 		BandOneValue,
 
 		/// <summary>
