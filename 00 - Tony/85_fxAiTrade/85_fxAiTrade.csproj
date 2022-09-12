@@ -4,7 +4,7 @@
         <ProjectGuid>{A7934EB3-1783-4612-90AC-1AE729458091}</ProjectGuid>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>fx.AITrade</PackageId>
-        <Version>5.0.231</Version>
+        <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
