@@ -5,7 +5,7 @@
         <ProjectGuid>{B47F9C23-A4BD-46A9-BF27-54CB3D653503}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-	    <PackageReference Include="Ecng.Serialization" Version="$(EcngVer)" />
+	    <PackageReference Include="Ecng.Serialization" Version="1.0.127" />
 	    <PackageReference Include="fx.Base" Version="5.0.205" />
     </ItemGroup>
     <ItemGroup>
@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.250</Version>
+        <Version>5.0.253</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
