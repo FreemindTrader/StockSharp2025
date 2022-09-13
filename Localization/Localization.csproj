@@ -10,7 +10,7 @@
         <None Remove="XmlComments\**" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Ecng.ComponentModel" Version="$(EcngVer)" />
+        <PackageReference Include="Ecng.ComponentModel" Version="1.0.142" />
         <PackageReference Include="Ecng.Configuration" Version="$(EcngVer)" />
         <PackageReference Include="Ecng.Localization" Version="$(EcngVer)" />
     </ItemGroup>
@@ -26,8 +26,10 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.250</Version>
+        <Version>5.0.253</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 </Project>
