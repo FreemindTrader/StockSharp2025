@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32802.462
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecng.ComponentModel", "Ecng.ComponentModel.csproj", "{7F616F44-D013-431D-957F-EBCD19E69A49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F616F44-D013-431D-957F-EBCD19E69A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F616F44-D013-431D-957F-EBCD19E69A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F616F44-D013-431D-957F-EBCD19E69A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F616F44-D013-431D-957F-EBCD19E69A49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CEB28CD-73DD-4593-90FC-18E8DC2D34A4}
+	EndGlobalSection
+EndGlobal

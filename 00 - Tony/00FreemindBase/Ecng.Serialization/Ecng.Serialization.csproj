@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">    
+    <PropertyGroup>
+        <RootNamespace>Ecng.Serialization</RootNamespace>
+        <AssemblyName>Ecng.Serialization</AssemblyName>
+        <PackageId>Ecng.Serialization</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{23E86E02-1076-48D2-A501-6BADD0AFDE3E}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>1.0.156</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ecng.Collections" Version="1.0.117" />
+      <PackageReference Include="Ecng.Common" Version="1.0.114" />
+      <PackageReference Include="Ecng.Reflection" Version="1.0.118" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ecng.Security\Ecng.Security.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
+</Project>
+
+
+

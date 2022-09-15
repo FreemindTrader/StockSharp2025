@@ -1,0 +1,20 @@
+<l111l:YandexLoginWindow xmlns:li1ili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:l111l="clr-namespace:Ecng.Xaml.Yandex"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:liii11lli="clr-namespace:System.Windows.Markup;assembly=System.Xaml"
+                         xmlns:liili="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                         xmlns:l11="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+                         Window.Title="{Static liili:LocalizedStrings.ShareFile}" FrameworkElement.Height="850"
+                         FrameworkElement.Width="640" Window.WindowStartupLocation="CenterScreen" Window.Topmost="True"
+                         Window.ShowInTaskbar="False">
+  <l11:LoadingDecorator li1ili1:Name="BusyIndicator" IsSplashScreenShown="True">
+    <l11:LoadingDecorator.SplashScreenTemplate>
+      <DataTemplate>
+        <l11:WaitIndicator DeferedVisibility="True" ContentControl.Content="{Binding Title}"/>
+      </DataTemplate>
+    </l11:LoadingDecorator.SplashScreenTemplate>
+    <Grid>
+      <WebBrowser Name="Browser"/>
+    </Grid>
+  </l11:LoadingDecorator>
+</l111l:YandexLoginWindow>

@@ -1,0 +1,45 @@
+<local:EndPointEditor 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Ecng.Xaml.EndPointEditor"
+                       xmlns:local="clr-namespace:Ecng.Xaml"
+                       
+                       xmlns:liii11lli="clr-namespace:System.Windows.Markup;assembly=System.Xaml"
+                       xmlns:l1l11l="clr-namespace:Ecng.Xaml.Converters"
+                        xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+    <FrameworkElement.Resources>
+        <Style TargetType="{Type TextBox}">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <Border BorderBrush="Red" BorderThickness="1">
+                                <AdornedElementPlaceholder/>
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="FrameworkElement.ToolTip"
+                  Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <l1l11l:EndPointConverter x:Key="EndPointToString"/>
+    </FrameworkElement.Resources>
+    <dxe:TextEdit x:Name="Address"
+                   Control.BorderThickness="{Binding RelativeSource={RelativeSource AncestorType={system:Type local:EndPointEditor}}, Path=BorderThickness}"
+                   Control.BorderBrush="{Binding RelativeSource={RelativeSource AncestorType={Type local:EndPointEditor}}, Path=BorderBrush}">
+        <dxe:TextEditBase.Text>
+            <Binding Path="EndPoint" Mode="TwoWay" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged"
+               Converter="{StaticResource EndPointToString}"
+               RelativeSource="{RelativeSource AncestorType={Type local:EndPointEditor}}">
+                <Binding.ValidationRules>
+                    <local:EndPointValidationRule/>
+                </Binding.ValidationRules>
+            </Binding>
+        </dxe:TextEditBase.Text>
+    </dxe:TextEdit>
+</local:EndPointEditor>

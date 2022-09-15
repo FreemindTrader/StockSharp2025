@@ -1,0 +1,42 @@
+<liill1:FileBrowserPicker xmlns:li1ili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:liill1="clr-namespace:Ecng.Xaml"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:liii11lli="clr-namespace:System.Windows.Markup;assembly=System.Xaml"
+                          xmlns:l11="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+                          xmlns:lilill1ll="clr-namespace:-">
+  <FrameworkElement.Resources>
+    <Style TargetType="{Type TextBox}">
+      <Setter Property="Validation.ErrorTemplate">
+        <Setter.Value>
+          <ControlTemplate>
+            <DockPanel LastChildFill="True">
+              <Border BorderBrush="Red" BorderThickness="1">
+                <AdornedElementPlaceholder/>
+              </Border>
+            </DockPanel>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+      <Style.Triggers>
+        <Trigger Property="Validation.HasError" Value="true">
+          <Setter Property="FrameworkElement.ToolTip"
+                  Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+  </FrameworkElement.Resources>
+  <DockPanel LastChildFill="True">
+    <l11:SimpleButton li1ili1:Name="OpenFile" DockPanel.Dock="Right" FrameworkElement.Width="20"
+                      FrameworkElement.Margin="5,0,0,0" Control.Padding="0" ContentControl.Content="..."/>
+    <TextBox li1ili1:Name="FilePath" IsReadOnly="True">
+      <TextBox.Text>
+        <Binding Path="File" Mode="TwoWay" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged"
+                 RelativeSource="{RelativeSource AncestorType={Type liill1:FileBrowserPicker}}">
+          <Binding.ValidationRules>
+            <lilill1ll:dje_z7VFZ5P5XG4ZCAE86LAPYNLEGD25A_ejd/>
+          </Binding.ValidationRules>
+        </Binding>
+      </TextBox.Text>
+    </TextBox>
+  </DockPanel>
+</liill1:FileBrowserPicker>

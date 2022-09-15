@@ -1,0 +1,16 @@
+<liill1:FileBrowserEditor xmlns:li1ili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:liill1="clr-namespace:Ecng.Xaml"
+                          xmlns:llill="clr-namespace:DevExpress.Xpf.Editors.Settings;assembly=DevExpress.Xpf.Core.v22.1"
+                          xmlns:lilill1ll="clr-namespace:-"
+                          xmlns:lilil1="clr-namespace:DevExpress.Xpf.Editors;assembly=DevExpress.Xpf.Core.v22.1"
+                          AllowDefaultButton="False">
+  <liill1:ValidationHelper.ValidationRules>
+    <liill1:ValidationRulesCollection>
+      <lilill1ll:dje_z7VFZ5P5XG4ZCAE86LAPYNLEGD25A_ejd/>
+    </liill1:ValidationRulesCollection>
+  </liill1:ValidationHelper.ValidationRules>
+  <llill:ButtonEditSettings.Buttons>
+    <lilil1:ButtonInfo li1ili1:Name="OpenBtn" GlyphKind="Search"/>
+    <lilil1:ButtonInfo li1ili1:Name="ClearBtn" GlyphKind="Cancel"/>
+  </llill:ButtonEditSettings.Buttons>
+</liill1:FileBrowserEditor>
