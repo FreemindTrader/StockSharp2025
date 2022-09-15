@@ -1,0 +1,38 @@
+<l1llill:DatabaseConnectionWindow xmlns:li1ili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                                  xmlns:l1llill="clr-namespace:Ecng.Xaml.Database"
+                                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                  xmlns:liii11lli="clr-namespace:System.Windows.Markup;assembly=System.Xaml"
+                                  xmlns:liili="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                                  xmlns:ll1i11l="clr-namespace:StockSharp.Xaml.PropertyGrid"
+                                  xmlns:l11="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+                                  xmlns:liill1="clr-namespace:Ecng.Xaml"
+                                  Window.Title="{Static liili:LocalizedStrings.XamlStr84}" FrameworkElement.Width="700"
+                                  FrameworkElement.Height="500" Window.WindowStartupLocation="CenterOwner"
+                                  Window.ResizeMode="NoResize" Window.ShowInTaskbar="False">
+  <Grid Margin="5">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="5"/>
+      <RowDefinition Height="*" MinHeight="300"/>
+      <RowDefinition Height="5"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <l1llill:DatabaseConnectionComboBox li1ili1:Name="ConnectionStrings" EditValueChanged="dje_z935M9NP2DCUL7LY9MA6DV_ejd"
+                                        UIElement.Visibility="Collapsed" Grid.Row="0" FrameworkElement.MinWidth="300"/>
+    <ll1i11l:PropertyGridEx li1ili1:Name="SettingsGrid" Grid.Row="2" Grid.ColumnSpan="3"/>
+    <Grid Row="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <l11:SimpleButton li1ili1:Name="TestBtn" Grid.Column="0" UIElement.IsEnabled="False"
+                        ContentControl.Content="{Static liili:LocalizedStrings.XamlStr572}" FrameworkElement.MinWidth="75"/>
+      <l11:SimpleButton li1ili1:Name="OkBtn" Grid.Column="4" UIElement.IsEnabled="False"
+                        ContentControl.Content="{Static liili:LocalizedStrings.OK}" FrameworkElement.Width="75"
+                        Button.IsDefault="True" liill1:XamlHelper.DialogResult="True"/>
+    </Grid>
+  </Grid>
+</l1llill:DatabaseConnectionWindow>

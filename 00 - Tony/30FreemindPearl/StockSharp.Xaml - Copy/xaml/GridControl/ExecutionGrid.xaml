@@ -1,0 +1,184 @@
+﻿<basegrid:BaseGridControl 
+             x:Class="StockSharp.Xaml.ExecutionGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StockSharp.Xaml"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+             xmlns:basegrid="clr-namespace:StockSharp.Xaml.GridControl"
+    xmlns:ex="clr-namespace:Ecng.Xaml.Converters;assembly=Ecng.Xaml"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:sxMsg="clr-namespace:StockSharp.Messages;assembly=StockSharp.Messages"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:xaml="clr-namespace:Ecng.Xaml;assembly=Ecng.Xaml"
+    mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <FrameworkElement.Resources>
+        <ex:FormattingConverter x:Key="ValueConverter"/>
+        <local:PlatformToColorConverter x:Key="MultiIdConverter"/>
+        <ex:EnumDisplayNameConverter x:Key="EnumDisplayNameConverter"/>
+        <local:TradeSideBrushConverter x:Key="SideColorConverter"/>
+        <DataTemplate x:Key="SideColumnTemplate">
+            <TextBlock TextAlignment="Center"
+                 Text="{Binding Path=RowData.Row.Side, Converter={StaticResource EnumDisplayNameConverter}}">
+                <TextBlock.Foreground>
+                    <MultiBinding Converter="{StaticResource SideColorConverter}">
+                        <Binding Path="RowData.Row.Side"/>
+                        <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                    </MultiBinding>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </DataTemplate>
+        <DataTemplate x:Key="OriginSideColumnTemplate">
+            <TextBlock TextAlignment="Center"
+                 Text="{Binding Path=RowData.Row.OriginSide, Converter={StaticResource EnumDisplayNameConverter}}">
+                <TextBlock.Foreground>
+                    <MultiBinding Converter="{StaticResource SideColorConverter}">
+                        <Binding Path="RowData.Row.OriginSide"/>
+                        <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                    </MultiBinding>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </DataTemplate>
+    </FrameworkElement.Resources>
+    <dxg:GridControl.View>
+        <dxg:TableView AllowEditing="false" ShowGroupPanel="false" NavigationStyle="Row" ShowIndicator="false"/>
+    </dxg:GridControl.View>
+    <dxg:GridControl.Columns>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Type}" Width="40"
+                      FieldName="ExecutionType">
+            <dxg:GridColumn.EditSettings>
+                <dxe:ComboBoxEditSettings>
+                    <dxe:LookUpEditSettingsBase.ItemsSource>
+                        <dxe:EnumItemsSource EnumType="sxMsg:ExecutionTypes"/>
+                    </dxe:LookUpEditSettingsBase.ItemsSource>
+                </dxe:ComboBoxEditSettings>
+            </dxg:GridColumn.EditSettings>
+        </dxg:GridColumn>
+        <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Security}" Width="70"
+                      FieldName="SecurityId.SecurityCode"/>
+        <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Board}" Width="70"
+                      FieldName="SecurityId.BoardCode"/>
+        <dxg:GridColumn x:Name="PortfolioColumn"
+                      Header="{x:Static loc:LocalizedStrings.Portfolio}" Width="120"
+                      FieldName="PortfolioName"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.ClientCode}" Width="120"
+                      FieldName="ClientCode"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Broker}" Width="120"
+                      FieldName="BrokerCode"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Depo}" Width="80"
+                      FieldName="DepoName"/>
+        <dxg:GridColumn x:Name="TransactionColumn"
+                      Header="{x:Static loc:LocalizedStrings.Transaction}" Width="100"
+                      FieldName="TransactionId"/>
+        <dxg:GridColumn x:Name="OrderIdColumn" Header="{x:Static loc:LocalizedStrings.Id}"
+                      Width="70" FieldName="OrderId">
+            <dxg:ColumnBase.Binding>
+                <MultiBinding Converter="{StaticResource MultiIdConverter}">
+                    <Binding Path="Data.OrderId"/>
+                    <Binding Path="Data.OrderStringId"/>
+                </MultiBinding>
+            </dxg:ColumnBase.Binding>
+        </dxg:GridColumn>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.XamlStr365}" Width="100"
+                      FieldName="BoardId"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Str165}" Width="100"
+                      FieldName="UserOrderId"/>
+        <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Time}" Width="120" FieldName="ServerTime">
+            <dxg:ColumnBase.Binding>
+                <xaml:CultureAwareBinding Binding.Path="ServerTime" Binding.Converter="{StaticResource ValueConverter}" Binding.ConverterParameter='{}{0:G}' />
+            </dxg:ColumnBase.Binding>
+        </dxg:GridColumn>
+        <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.TimeZone}" Visible="false" Width="50"
+                      FieldName="ServerTime.Offset"
+                      Binding="{Binding Path=ServerTime, Converter={StaticResource ValueConverter}, ConverterParameter='{}{0:zzz}' }"/>
+        <dxg:GridColumn Header="{x:Static loc:LocalizedStrings.Str514}" Visible="false" Width="120"
+                      FieldName="LocalTime">
+            <dxg:ColumnBase.Binding>
+                <xaml:CultureAwareBinding Binding.Path="LocalTime" Binding.Converter="{StaticResource ValueConverter}" Binding.ConverterParameter='{}{0:G}'/>
+            </dxg:ColumnBase.Binding>
+        </dxg:GridColumn>
+        <dxg:GridColumn x:Name="OrderPriceColumn" Header="{x:Static loc:LocalizedStrings.Price}"
+                      Width="60" FieldName="OrderPrice"/>
+        <dxg:GridColumn x:Name="OrderVolumeColumn" Header="{x:Static loc:LocalizedStrings.Volume}"
+                      Width="50" FieldName="OrderVolume"/>
+        <dxg:GridColumn x:Name="TradeVolumeColumn" Header="{x:Static loc:LocalizedStrings.Volume}"
+                      Width="50" FieldName="TradeVolume"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.VisibleVolume}" Width="50"
+                      FieldName="VisibleVolume"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Currency}" Width="40"
+                      FieldName="Currency"/>
+        <dxg:GridColumn x:Name="BalanceColumn" Header="{x:Static loc:LocalizedStrings.Str1325}"
+                      Width="50" FieldName="Balance"/>
+        <dxg:GridColumn x:Name="OrderSideColumn" Header="{x:Static loc:LocalizedStrings.Str128}"
+                      Width="60" FieldName="Side" CellTemplate="{StaticResource SideColumnTemplate}">
+            <dxg:GridColumn.EditSettings>
+                <dxe:ComboBoxEditSettings HorizontalContentAlignment="Center">
+                    <dxe:LookUpEditSettingsBase.ItemsSource>
+                        <dxe:EnumItemsSource EnumType="sxMsg:Sides"/>
+                    </dxe:LookUpEditSettingsBase.ItemsSource>
+                </dxe:ComboBoxEditSettings>
+            </dxg:GridColumn.EditSettings>
+        </dxg:GridColumn>
+        <dxg:GridColumn x:Name="OrderTypeColumn" Header="{x:Static loc:LocalizedStrings.Str132}"
+                      Width="40" FieldName="OrderType">
+            <dxg:GridColumn.EditSettings>
+                <dxe:ComboBoxEditSettings HorizontalContentAlignment="Center">
+                    <dxe:LookUpEditSettingsBase.ItemsSource>
+                        <dxe:EnumItemsSource EnumType="sxMsg:OrderTypes"/>
+                    </dxe:LookUpEditSettingsBase.ItemsSource>
+                </dxe:ComboBoxEditSettings>
+            </dxg:GridColumn.EditSettings>
+        </dxg:GridColumn>
+        <dxg:GridColumn x:Name="OrderStateColumn" Header="{x:Static loc:LocalizedStrings.Str1324}"
+                      Width="60" FieldName="OrderState">
+            <dxg:GridColumn.EditSettings>
+                <dxe:ComboBoxEditSettings HorizontalContentAlignment="Center">
+                    <dxe:LookUpEditSettingsBase.ItemsSource>
+                        <dxe:EnumItemsSource EnumType="sxMsg:OrderStates"/>
+                    </dxe:LookUpEditSettingsBase.ItemsSource>
+                </dxe:ComboBoxEditSettings>
+            </dxg:GridColumn.EditSettings>
+        </dxg:GridColumn>
+        <dxg:GridColumn x:Name="OriginSideColumn" Header="{x:Static loc:LocalizedStrings.Str329}"
+                      Width="60" FieldName="OriginSide" CellTemplate="{StaticResource OriginSideColumnTemplate}">
+            <dxg:GridColumn.EditSettings>
+                <dxe:ComboBoxEditSettings HorizontalContentAlignment="Center">
+                    <dxe:LookUpEditSettingsBase.ItemsSource>
+                        <dxe:EnumItemsSource EnumType="sxMsg:Sides"/>
+                    </dxe:LookUpEditSettingsBase.ItemsSource>
+                </dxe:ComboBoxEditSettings>
+            </dxg:GridColumn.EditSettings>
+        </dxg:GridColumn>
+        <dxg:GridColumn x:Name="TradeIdColumn" Header="{x:Static loc:LocalizedStrings.Str506}"
+                      Width="70" FieldName="TradeId">
+            <dxg:ColumnBase.Binding>
+                <MultiBinding Converter="{StaticResource MultiIdConverter}">
+                    <Binding Path="Data.TradeId"/>
+                    <Binding Path="Data.TradeStringId"/>
+                </MultiBinding>
+            </dxg:ColumnBase.Binding>
+        </dxg:GridColumn>
+        <dxg:GridColumn x:Name="TradePriceColumn"
+                      Header="{x:Static loc:LocalizedStrings.TradePrice}" Width="60"
+                      FieldName="TradePrice"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.OI}" Width="60"
+                      FieldName="OpenInterest"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Str342}" Width="60"
+                      FieldName="IsSystem"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.XamlStr67}" Width="60"
+                      FieldName="IsUpTick"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Str161}" Width="60"
+                      FieldName="Latency"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Str159}" Width="60"
+                      FieldName="Commission"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Str135}" Width="120"
+                      FieldName="Comment"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.Str137}" Width="120"
+                      FieldName="SystemComment"/>
+        <dxg:GridColumn Visible="false" Header="{x:Static loc:LocalizedStrings.MarketMaker}" Width="60"
+                      FieldName="IsMarketMaker"/>
+    </dxg:GridControl.Columns>
+</basegrid:BaseGridControl>
