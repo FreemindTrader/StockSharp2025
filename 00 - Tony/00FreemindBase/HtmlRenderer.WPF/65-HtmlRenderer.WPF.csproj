@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">    
+    <PropertyGroup>
+        <RootNamespace>TheArtOfDev.HtmlRenderer.WPF</RootNamespace>
+        <AssemblyName>HtmlRenderer.WPF</AssemblyName>
+        <PackageId>HtmlRenderer.WPF</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{7E4E8DB5-85AD-4388-BDCB-38C6F423B8B0}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>                
+        <UseWPF>true</UseWPF>
+        <LangVersion>8.0</LangVersion>        
+        <NoWarn>CS1711;CS1712;CS1584;CS1658;CS1591;CS8600;CS8602;CS8603;CS8604;CS8625</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.251</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>      
+</Project>
+

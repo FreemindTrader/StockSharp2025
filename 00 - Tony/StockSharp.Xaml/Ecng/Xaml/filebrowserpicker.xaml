@@ -1,0 +1,55 @@
+<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="Ecng.Xaml.FileBrowserPicker"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+    xmlns:ecngXaml="clr-namespace:Ecng.Xaml"
+    xmlns:local="clr-namespace:Ecng.Xaml">
+    <FrameworkElement.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <Border BorderBrush="Red" BorderThickness="1">
+                                <AdornedElementPlaceholder />
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="FrameworkElement.ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </FrameworkElement.Resources>
+    <DockPanel LastChildFill="True">
+        <dx:SimpleButton
+            x:Name="OpenFile"
+            Click="OnOpenFileBtnClicked"
+            ContentControl.Content="..."
+            Control.Padding="0"
+            DockPanel.Dock="Right"
+            FrameworkElement.Margin="5,0,0,0"
+            FrameworkElement.Width="20" />
+        <TextBox
+            x:Name="FilePath"
+            IsReadOnly="True"
+            TextChanged="FilePath_OnTextChanged">
+            <TextBox.Text>
+                <Binding
+                    Mode="TwoWay"
+                    NotifyOnValidationError="True"
+                    Path="File"
+                    RelativeSource="{RelativeSource AncestorType={x:Type ecngXaml:FileBrowserPicker}}"
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IsActiveValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+    </DockPanel>
+</UserControl>

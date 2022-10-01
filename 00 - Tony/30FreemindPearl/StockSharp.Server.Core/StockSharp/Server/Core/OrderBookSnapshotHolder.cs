@@ -15,7 +15,7 @@ namespace StockSharp.Server.Core
     /// </summary>
     public class OrderBookSnapshotHolder : BaseLogReceiver, ISnapshotHolder<QuoteChangeMessage>
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly SynchronizedDictionary<SecurityId, RefTriple<QuoteChangeMessage, OrderBookIncrementBuilder, int>> _secIdTripleDictionary = new SynchronizedDictionary<SecurityId, RefTriple<QuoteChangeMessage, OrderBookIncrementBuilder, int>>();
 
         /// <inheritdoc />

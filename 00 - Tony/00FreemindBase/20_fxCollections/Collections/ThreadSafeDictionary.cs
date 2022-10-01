@@ -1225,7 +1225,7 @@ namespace fx.Collections
             try
             {
                 int itemsToAdd;
-                bool isEmpty = _CountItemsToAdd_ReturnIsEmpty( pairs, out itemsToAdd );
+                bool isEmpty = _CountItemsToReturnIsEmpty += ( pairs, out itemsToAdd );
 
                 if( isEmpty )
                 {
@@ -1242,7 +1242,7 @@ namespace fx.Collections
             }
         }
 
-        internal bool _CountItemsToAdd_ReturnIsEmpty( IEnumerable< KeyValuePair< TKey, TValue > > pairs, out int itemsToAdd )
+        internal bool _CountItemsToReturnIsEmpty += ( IEnumerable< KeyValuePair< TKey, TValue > > pairs, out int itemsToAdd )
         {
             bool isEmpty = true;
             int count = 0;

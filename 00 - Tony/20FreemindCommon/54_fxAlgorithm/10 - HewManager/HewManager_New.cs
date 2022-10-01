@@ -598,15 +598,27 @@ namespace fx.Algorithm
                         {
                             var lastHigherWaveName = GetPreviousWaveOfDegree( waveScenarioNo, rawBarTime, changedWavedCycle + GlobalConstants.OneWaveCycle );
 
-                            waveNameToBeAdded = harmonicEWave.GetNextWave( lastHigherWaveName );
-
                             if ( waveNameToBeAdded != ElliottWaveEnum.NONE )
                             {
-                                changedWavedCycle = changedWavedCycle + GlobalConstants.OneWaveCycle;
+                                waveNameToBeAdded = harmonicEWave.GetNextWave( lastHigherWaveName );
 
-                                newWave.AddHarmonicElliottWave( changedWavedCycle, waveNameToBeAdded, labelPosition );
+                                if ( waveNameToBeAdded != ElliottWaveEnum.NONE )
+                                {
+                                    changedWavedCycle = changedWavedCycle + GlobalConstants.OneWaveCycle;
+
+                                    newWave.AddHarmonicElliottWave( changedWavedCycle, waveNameToBeAdded, labelPosition );
+
+                                    continue;
+                                }
                             }
                         }
+                        
+                        changedWavedCycle = changedWavedCycle + GlobalConstants.OneWaveCycle;
+
+                        if ( changedWavedCycle >= ElliottWaveCycle.MAX )
+                        {
+                            break;
+                        }                                                    
                     }
 
                     var waves = newWave.GetAllWaves( );

@@ -1,0 +1,9 @@
+<dxe:ComboBoxEditSettings
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Ecng.Xaml.Database.DatabaseConnectionEditor"   
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    IsTextEditable="False">
+    <dxe:ButtonEditSettings.Buttons>
+        <dxe:ButtonInfo x:Name="SearchBtn" GlyphKind="Search" Click="OnCommandInfoButtonClick"/>
+    </dxe:ButtonEditSettings.Buttons>
+</dxe:ComboBoxEditSettings>

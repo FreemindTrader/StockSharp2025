@@ -16,7 +16,7 @@ namespace StockSharp.Server.Core
     /// </summary>
     public class PermissionCredentialsAuthorization : IAuthorization
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly PermissionCredentialsStorage _permissionCredentialsStorage;
 
         /// <summary>

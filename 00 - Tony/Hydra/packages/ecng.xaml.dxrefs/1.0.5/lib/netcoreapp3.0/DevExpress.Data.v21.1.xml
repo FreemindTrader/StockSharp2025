@@ -11933,7 +11933,7 @@
     <member name="M:DevExpress.Utils.UrlAccessSecurityLevelSetting.#ctor">
       <summary />
     </member>
-    <member name="M:DevExpress.Utils.UrlAccessSecurityLevelSetting.CreateUriFromCustomRegistration(System.String)">
+    <member name="M:DevExpress.Utils.UrlAccessSecurityLevelSetting.GetIconUriFromCustomRegistration(System.String)">
       <summary />
       <param name="path"></param>
       <returns></returns>

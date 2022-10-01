@@ -23,31 +23,66 @@ namespace Ecng.Data
 
         public event Action<DatabaseConnectionPair> ConnectionDeleted;
 
-        public DatabaseConnectionPair GetConnection(
-          Type provider,
-          string connectionString )
+        public DatabaseConnectionPair GetOrAddCache( string provider, string connectionString )
         {
-            if ( ( object )provider == null )
+            if ( StringHelper.IsEmpty( provider ) )
                 throw new ArgumentNullException( nameof( provider ) );
-            if ( connectionString.IsEmpty() )
+            if ( StringHelper.IsEmpty( connectionString ) )
                 throw new ArgumentNullException( nameof( connectionString ) );
-            DatabaseConnectionPair connection = Connections.FirstOrDefault( p =>
+            return this.GetOrAddCache( new DatabaseConnectionPair()
             {
-                if ( p.Provider == provider )
-                    return p.ConnectionString.EqualsIgnoreCase( connectionString );
-                return false;
+                Provider = provider,
+                ConnectionString = connectionString
             } );
-            if ( connection == null )
-            {
-                connection = new DatabaseConnectionPair()
-                {
-                    Provider = provider,
-                    ConnectionString = connectionString
-                };
-                AddConnection( connection );
-            }
-            return connection;
         }
+
+        public DatabaseConnectionPair GetOrAddCache( DatabaseConnectionPair pair )
+        {
+            if ( pair == null )
+                throw new ArgumentNullException( nameof( pair ) );
+            lock ( this._connections.SyncRoot )
+            {
+                DatabaseConnectionPair databaseConnectionPair = this._connections.FirstOrDefault<DatabaseConnectionPair>( ( Func<DatabaseConnectionPair, bool> )( p =>
+                {
+                    if ( p.Provider == pair.Provider )
+                        return p.ConnectionString.EqualsIgnoreCase( pair.ConnectionString );
+                    return false;
+                } ) );
+                if ( databaseConnectionPair != null )
+                    return databaseConnectionPair;
+                this._connections.Add( pair );
+            }
+            Action<DatabaseConnectionPair> connectionCreated = this.ConnectionCreated;
+            if ( connectionCreated != null )
+                connectionCreated( pair );
+            return pair;
+        }
+
+        //public DatabaseConnectionPair GetConnection(
+        //  Type provider,
+        //  string connectionString )
+        //{
+        //    if ( ( object )provider == null )
+        //        throw new ArgumentNullException( nameof( provider ) );
+        //    if ( connectionString.IsEmpty() )
+        //        throw new ArgumentNullException( nameof( connectionString ) );
+        //    DatabaseConnectionPair connection = Connections.FirstOrDefault( p =>
+        //    {
+        //        if ( p.Provider == provider )
+        //            return p.ConnectionString.EqualsIgnoreCase( connectionString );
+        //        return false;
+        //    } );
+        //    if ( connection == null )
+        //    {
+        //        connection = new DatabaseConnectionPair()
+        //        {
+        //            Provider = provider,
+        //            ConnectionString = connectionString
+        //        };
+        //        AddConnection( connection );
+        //    }
+        //    return connection;
+        //}
 
         private void AddConnection( DatabaseConnectionPair connection )
         {

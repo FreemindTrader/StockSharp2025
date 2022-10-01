@@ -15,7 +15,7 @@ namespace StockSharp.Server.Core
     /// </summary>
     public class Level1SnapshotHolder : BaseLogReceiver, ISnapshotHolder<Level1ChangeMessage>
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly Dictionary<SecurityId, Level1ChangeMessage> _secIdToLevel1ChangeMsgDictionary = new Dictionary<SecurityId, Level1ChangeMessage>();
 
         /// <inheritdoc />

@@ -325,7 +325,7 @@ namespace fx.Algorithm
             return Math.Abs( length0A - lengthBC );
         }
 
-        public void SmartAdd_12345_InWaveA( int waveScenarioNo, long bartimeWaveA )
+        public void Smart12345_InWaveA( int waveScenarioNo, long bartimeWaveA )
         {
             ref SBar barWaveA = ref _bars.GetBarByTime( bartimeWaveA );
             
@@ -371,7 +371,7 @@ namespace fx.Algorithm
             }
         }
 
-        public void SmartAdd_12345_InWaveC( int waveScenarioNo, long bartimeWaveC )
+        public void Smart12345_InWaveC( int waveScenarioNo, long bartimeWaveC )
         {
             ref SBar barWaveC = ref _bars.GetBarByTime( bartimeWaveC );
 
@@ -619,7 +619,7 @@ namespace fx.Algorithm
             return false;
         }
 
-        public void SmartAdd_ABC_ToWave( int waveScenarioNo, TimeSpan period,
+        public void SmartABC_ToWave( int waveScenarioNo, TimeSpan period,
                                          long beginPointTime,
                                          long endPointTime,
                                          ElliottWaveCycle waveCycle )

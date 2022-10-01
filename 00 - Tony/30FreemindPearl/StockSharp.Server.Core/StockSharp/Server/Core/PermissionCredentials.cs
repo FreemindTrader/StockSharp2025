@@ -15,9 +15,9 @@ namespace StockSharp.Server.Core
     /// <summary>Credentials with set of permissions.</summary>
     public class PermissionCredentials : ServerCredentials
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private IEnumerable<IPAddress> _ipRestriction = Enumerable.Empty<IPAddress>();
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly SynchronizedDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>> _userPermissionDictionary = new SynchronizedDictionary<UserPermissions, IDictionary<(string, string, string, DateTime?), bool>>();
 
         /// <summary>IP address restrictions.</summary>

@@ -1,0 +1,81 @@
+﻿<UserControl
+    x:Class="StockSharp.Xaml.PropertyGrid.SpecialDaysOfWeekControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:Ecng.Xaml.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:StockSharp.Xaml.PropertyGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sXaml="clr-namespace:StockSharp.Xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+            <Setter Property="FrameworkElement.Height" Value="18" />
+            <Setter Property="Control.Padding" Value="0,-1,0,0" />
+        </Style>
+        <converters:NullToBoolConverter x:Key="NullToBool" />
+    </FrameworkElement.Resources>
+    <StackPanel x:Name="MainPanel" Orientation="Horizontal">
+        <StackPanel IsEnabled="{Binding ItemsSource, Converter={StaticResource NullToBool}}">
+            <TextBlock Text="{x:Static loc:LocalizedStrings.SpecialDays}" />
+            <ListBox
+                Width="160"
+                Height="140"
+                Margin="0,0,0,3"
+                HorizontalContentAlignment="Stretch"
+                ItemsSource="{Binding ItemsSource}"
+                SelectedItem="{Binding SelectedItem}"
+                SelectionMode="Extended"
+                ToolTip="{x:Static loc:LocalizedStrings.XamlStr730}"
+                VirtualizingStackPanel.IsVirtualizing="false">
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock
+                            Margin="0,0,10,0"
+                            HorizontalAlignment="Right"
+                            Text="{Binding Day}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
+            <dxe:ComboBoxEdit HorizontalAlignment="Stretch" EditValue="{Binding NewDayOfWeek}">
+                <dxmvvm:Interaction.Behaviors>
+                    <dxmvvm:EnumItemsSourceBehavior EnumType="{x:Type system:DayOfWeek}" />
+                </dxmvvm:Interaction.Behaviors>
+            </dxe:ComboBoxEdit>
+            <Grid Margin="0,5,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <dx:SimpleButton
+                    Grid.Column="0"
+                    Command="{Binding CommandAddDayOfWeek}"
+                    Content="{x:Static loc:LocalizedStrings.Str3229}" />
+                <dx:SimpleButton
+                    Grid.Column="2"
+                    Command="{Binding CommandDelDayOfWeek}"
+                    Content="{x:Static loc:LocalizedStrings.Str2060}" />
+            </Grid>
+        </StackPanel>
+        <Grid Width="5" />
+        <sXaml:RangeListEditor
+            DataChanged="OnDataChangedEvent"
+            Error="OnErrorEvent"
+            Ranges="{Binding SelectedItem.Ranges}" />
+
+
+    </StackPanel>
+</UserControl>

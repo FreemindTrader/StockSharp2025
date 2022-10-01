@@ -540,7 +540,7 @@ namespace fx.Collections
 
             var owner = _GetOwner( );
             int itemsToAdd;
-            bool isEmpty = owner._CountItemsToAdd_ReturnIsEmpty( pairs, out itemsToAdd );
+            bool isEmpty = owner._CountItemsToReturnIsEmpty += ( pairs, out itemsToAdd );
 
             if( isEmpty )
             {
