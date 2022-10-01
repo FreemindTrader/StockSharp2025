@@ -1,0 +1,60 @@
+<dx:ThemedWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="Ecng.Xaml.Database.DatabaseConnectionWindow"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:ecngXaml="clr-namespace:Ecng.Xaml"
+    xmlns:eDb="clr-namespace:Ecng.Xaml.Database"    
+    xmlns:sxpg="clr-namespace:StockSharp.Xaml.PropertyGrid"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    FrameworkElement.Height="500"
+    FrameworkElement.Width="700"
+    Window.ResizeMode="NoResize"
+    Window.ShowInTaskbar="False"
+    Window.Title="{x:Static loc:LocalizedStrings.XamlStr84}"
+    Window.WindowStartupLocation="CenterOwner">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" MinHeight="300" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <eDb:DatabaseConnectionComboBox
+            x:Name="ConnectionStrings"
+            Grid.Row="0"
+            EditValueChanged="OnEditValueChanged"
+            FrameworkElement.MinWidth="300"
+            UIElement.Visibility="Collapsed" />
+        <sxpg:PropertyGridEx
+            x:Name="SettingsGrid"
+            Grid.Row="2"
+            Grid.ColumnSpan="3" />
+        <Grid Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <dx:SimpleButton
+                x:Name="TestBtn"
+                Click="OnVerifyButtonClicked"
+                Grid.Column="0"
+                ContentControl.Content="{x:Static loc:LocalizedStrings.XamlStr572}"
+                FrameworkElement.MinWidth="75"
+                UIElement.IsEnabled="False" />
+            <dx:SimpleButton
+                x:Name="OkBtn"
+                
+                Grid.Column="4"
+                Button.IsDefault="True"
+                ContentControl.Content="{x:Static loc:LocalizedStrings.OK}"
+                ecngXaml:XamlHelper.DialogResult="True"
+                FrameworkElement.Width="75"
+                UIElement.IsEnabled="False" />
+        </Grid>
+    </Grid>
+</dx:ThemedWindow>

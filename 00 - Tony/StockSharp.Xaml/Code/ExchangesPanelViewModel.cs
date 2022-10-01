@@ -1,4 +1,5 @@
-﻿using Ecng.Common;
+﻿using DevExpress.Mvvm;
+using Ecng.Common;
 using Ecng.Xaml;
 using StockSharp.Algo.Storages;
 using StockSharp.BusinessEntities;

@@ -12,9 +12,9 @@ namespace StockSharp.Server.Core
     /// </summary>
     public class InMemoryTransactionIdStorage : ITransactionIdStorage
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly IdGenerator _idGenerator;
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly SynchronizedDictionary<string, ISessionTransactionIdStorage> _sessionIdStorage = new SynchronizedDictionary<string, ISessionTransactionIdStorage>();
 
         /// <summary>

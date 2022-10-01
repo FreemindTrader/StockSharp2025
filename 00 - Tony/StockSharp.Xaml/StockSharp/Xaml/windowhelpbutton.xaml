@@ -1,0 +1,19 @@
+<dx:HeaderItemControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="StockSharp.Xaml.WindowHelpButton"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:local="clr-namespace:StockSharp.Xaml"    
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    ButtonBase.Command="{x:Static local:BaseApplication.HelpCommand}"
+    ButtonBase.CommandParameter="{Binding}"
+    FrameworkElement.Height="20"
+    FrameworkElement.ToolTip="{x:Static loc:LocalizedStrings.Help}"
+    FrameworkElement.Width="26"
+    UIElement.Focusable="False">
+    <Image Width="15" Height="15">
+        <Image.Source>
+            <local:ThemedIconsExtension Key="Help3" />
+        </Image.Source>
+    </Image>
+</dx:HeaderItemControl>

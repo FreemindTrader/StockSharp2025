@@ -23,9 +23,9 @@ namespace StockSharp.Server.Core
     /// </summary>
     public class PermissionCredentialsStorage
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly CachedSynchronizedDictionary<string, PermissionCredentials> _credentials = new CachedSynchronizedDictionary<string, PermissionCredentials>( StringComparer.InvariantCultureIgnoreCase );
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly string _credentialPath;
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace StockSharp.Xaml
         private readonly SynchronizedSet<PortfolioPropertyChangeHandler> _portfolioPositionSet;
         private readonly IPortfolioProvider _provider;
         private readonly object _pfPeriodicalActionHandler;
-        private readonly ObservableCollectionEx<PortfolioPropertyChangeHandler> _itemSource;
+        private readonly UIObservableCollectionEx<PortfolioPropertyChangeHandler> _itemSource;
         private readonly ConvertibleObservableCollection<Portfolio, PortfolioPropertyChangeHandler> _portfolioPositionsCollection;
 
         public PortfolioDataSource( ) : this( null )
@@ -21,7 +21,7 @@ namespace StockSharp.Xaml
         public PortfolioDataSource( IPortfolioProvider provider )
         {
             _provider                     = provider;
-            _itemSource                   = new ObservableCollectionEx<PortfolioPropertyChangeHandler>( );
+            _itemSource                   = new UIObservableCollectionEx<PortfolioPropertyChangeHandler>( );
             _portfolioPositionSet         = new SynchronizedSet<PortfolioPropertyChangeHandler>( );
             _portfolioPositionsCollection = new ConvertibleObservableCollection<Portfolio, PortfolioPropertyChangeHandler>( new ThreadSafeObservableCollection<PortfolioPropertyChangeHandler>( Items ), p => new PortfolioPropertyChangeHandler( p, new Action<PortfolioPropertyChangeHandler>( ( _portfolioPositionSet ).Add ) ) );
             _pfPeriodicalActionHandler    = GuiDispatcher.GlobalDispatcher.AddPeriodicalAction( new Action( pfPeriodicalAction ) );
@@ -40,7 +40,7 @@ namespace StockSharp.Xaml
             return Items.Count;
         }
 
-        public ObservableCollectionEx<PortfolioPropertyChangeHandler> Items
+        public UIObservableCollectionEx<PortfolioPropertyChangeHandler> Items
         {
             get
             {

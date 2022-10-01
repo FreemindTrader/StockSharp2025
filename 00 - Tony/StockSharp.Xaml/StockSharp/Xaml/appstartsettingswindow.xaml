@@ -1,0 +1,143 @@
+<dx:ThemedWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="StockSharp.Xaml.AppStartSettingsWindow"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:cnvt="clr-namespace:Ecng.Xaml.Converters"        
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    FrameworkElement.DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    Window.ResizeMode="NoResize"
+    Window.SizeToContent="WidthAndHeight"
+    Window.WindowStartupLocation="CenterScreen">
+    <FrameworkElement.Resources>
+        <cnvt:NullImageConverter x:Key="NullImageConverter" />
+    </FrameworkElement.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image
+            Width="128"
+            Height="128"
+            Source="{Binding Path=AppIcon, Converter={StaticResource NullImageConverter}}" />
+        <Grid Column="1" Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                FontFamily="Calibri"
+                FontSize="24"
+                FontWeight="Bold"
+                Text="{Binding AppName}" />
+            <StackPanel
+                x:Name="LangPanel"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <FrameworkElement.Resources>
+                    <Style TargetType="{x:Type ToggleButton}">
+                        <Setter Property="Control.Background" Value="Transparent" />
+                        <Setter Property="Control.BorderThickness" Value="0" />
+                        <Style.Triggers>
+                            <Trigger Property="ToggleButton.IsChecked" Value="False">
+                                <Setter Property="UIElement.Opacity" Value="0.3" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </FrameworkElement.Resources>
+                <ToggleButton
+                    x:Name="RussianLang"
+                    IsChecked="True"
+                    Padding="2"
+                    ToolTip="Переключиться на Русский язык">
+                    <Ellipse Width="48" Height="48">
+                        <Shape.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <dx:SvgImageSourceExtension Uri="pack://application:,,,/StockSharp.Xaml;component/Resources/Flags/ru.svg" />
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Shape.Fill>
+                    </Ellipse>
+                </ToggleButton>
+                <ToggleButton
+                    x:Name="EnglishLang"
+                    Margin="5,0,0,0"
+                    Padding="2"
+                    ToolTip="Switch to English language">
+                    <Ellipse Width="48" Height="48">
+                        <Shape.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <dx:SvgImageSourceExtension Uri="pack://application:,,,/StockSharp.Xaml;component/Resources/Flags/gb.svg" />
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Shape.Fill>
+                    </Ellipse>
+                </ToggleButton>
+            </StackPanel>
+        </Grid>
+        <Grid
+            Column="0"
+            ColumnSpan="2"
+            Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                x:Name="SelectPlatformLabel"
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Text="{x:Static loc:LocalizedStrings.SelectAppMode}" />
+        </Grid>
+        <Grid
+            Margin="3"
+            Column="0"
+            ColumnSpan="2"
+            Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <CheckBox
+                x:Name="AutoCheckBox"
+                Grid.Column="0"
+                MinWidth="450"
+                VerticalAlignment="Center"
+                Content="{x:Static loc:LocalizedStrings.XamlStr176}"
+                IsChecked="{Binding AutoStart}" />
+            <CheckBox
+                x:Name="OnlineMode"
+                Grid.Column="1"
+                Margin="0,0,5,0"
+                VerticalAlignment="Center"
+                Content="{x:Static loc:LocalizedStrings.Str3211}"
+                IsChecked="{Binding Online}"
+                Visibility="Collapsed" />
+            <dx:SimpleButton
+                x:Name="OkButton"
+                Grid.Column="2"
+                ContentControl.Content="{x:Static loc:LocalizedStrings.OK}"
+                FrameworkElement.HorizontalAlignment="Right"
+                FrameworkElement.MinWidth="100" />
+        </Grid>
+    </Grid>
+</dx:ThemedWindow>

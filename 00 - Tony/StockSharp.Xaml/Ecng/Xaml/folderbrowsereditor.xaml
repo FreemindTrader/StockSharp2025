@@ -1,0 +1,17 @@
+<dxe:ButtonEditSettings
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Ecng.Xaml.FolderBrowserEditor"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:ecngXaml="clr-namespace:Ecng.Xaml"
+    xmlns:local="clr-namespace:Ecng.Xaml"
+    AllowDefaultButton="False">
+    <ecngXaml:ValidationHelper.ValidationRules>
+        <ecngXaml:ValidationRulesCollection>
+            <local:FolderPathValidationRule />
+        </ecngXaml:ValidationRulesCollection>
+    </ecngXaml:ValidationHelper.ValidationRules>
+    <dxe:ButtonEditSettings.Buttons>
+        <dxe:ButtonInfo x:Name="OpenBtn" GlyphKind="Search" />
+        <dxe:ButtonInfo x:Name="ClearBtn" GlyphKind="Cancel" />
+    </dxe:ButtonEditSettings.Buttons>
+</dxe:ButtonEditSettings>

@@ -7,10 +7,10 @@ namespace Ecng.Data
 {
     public class DatabaseConnectionPair : NotifiableObject, IPersistable
     {
-        private Type _provider = DatabaseProviderRegistry.Providers.FirstOrDefault();
+        private string _provider;
         private string _connectionString;
 
-        public Type Provider
+        public string Provider
         {
             get
             {
@@ -40,7 +40,7 @@ namespace Ecng.Data
         {
             get
             {
-                return "(" + Provider.Name + ") " + ConnectionString;
+                return "(" + Provider + ") " + ConnectionString;
             }
         }
 
@@ -56,7 +56,7 @@ namespace Ecng.Data
 
         void IPersistable.Load( SettingsStorage storage )
         {
-            Provider = storage.GetValue<Type>( "Provider", null );
+            Provider = storage.GetValue<string>( "Provider", null );
             ConnectionString = storage.GetValue<string>( "ConnectionString", null );
         }
 

@@ -11,21 +11,21 @@ namespace StockSharp.Server.Core
     /// <typeparam name="TRequestId">Request identifier type.</typeparam>
     public class SubscriptionInfo<TSession, TRequestId> where TSession : class, IMessageListenerSession
     {
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly TSession _session;
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly TRequestId _requestId;
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly ServerSubscription _subscription;
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private readonly MessageTypes _messageTypes;
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private object _arg;
         /// <summary>Responses.</summary>
         public readonly ISet<MessageTypes> Responses = new HashSet<MessageTypes>();
         /// <summary>Processed level1 securities.</summary>
         public readonly HashSet<SecurityId> ProcessedLevel1 = new HashSet<SecurityId>();
-        [DebuggerBrowsable( DebuggerBrowsableState.Never )]
+        
         private bool _isSuspend;
 
         /// <summary>

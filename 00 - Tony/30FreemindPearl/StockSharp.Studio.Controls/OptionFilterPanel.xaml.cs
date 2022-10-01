@@ -481,7 +481,7 @@ namespace StockSharp.Studio.Controls
             filterChanged1();
         }
 
-        private void AssetPriceReset_OnClick( object sender, RoutedEventArgs e )
+        private void AssetPriceReOnClick = ( object sender, RoutedEventArgs e )
         {
             AssetPriceReset.IsEnabled = false;
             AssetPriceCtrl.EditValue = null;
@@ -574,7 +574,7 @@ namespace StockSharp.Studio.Controls
             filterChanged1();
         }
 
-        private void CurrentDateReset_OnClick( object sender, RoutedEventArgs e )
+        private void CurrentDateReOnClick = ( object sender, RoutedEventArgs e )
         {
             CurrentDateReset.IsEnabled = false;
             CurrentDateCtrl.EditValue = null;

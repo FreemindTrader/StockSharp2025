@@ -22,7 +22,7 @@ namespace StockSharp.Xaml
 
     using Ecng.Common;
     using Ecng.Serialization;
-    using Ecng.Xaml.DevExp;
+    //using Ecng.Xaml.DevExp;
 
     using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
