@@ -91,26 +91,41 @@ namespace fx.Charting.HewFibonacci
             if ( fibRatios == null )
                 return;
 
-            Annotations.Add( CreateFibRatioLine( fibRatios[ 0 ].Value, fibRatios[ 0 ].Brush ) );
-
-            var fibText        = new SRlevelTextAnnotation( );
-            fibText.Y1         = fibRatios[ 0 ].Value;
-            fibText.Tag        = fibRatios[ 0 ].Value;
-            fibText.Foreground = fibRatios[ 0 ].Brush;
-
-            Annotations.Add( fibText );
-
-            for ( int index = 1; index < fibRatios.Count; ++index )
+            using ( ParentSurface.SuspendUpdates() )
             {
-                Annotations.Add( CreateFibRatioLine( fibRatios[ index ].Value, fibRatios[ index ].Brush ) );
+                var myAnnotations = new AnnotationCollection();
 
-                var fibText2        = new SRlevelTextAnnotation( );
-                fibText2.Y1         = fibRatios[ index ].Value;
-                fibText2.Tag        = fibRatios[ 0 ].Value;
-                fibText2.Foreground = fibRatios[ index ].Brush;
+                myAnnotations.Add( CreateFibRatioLine( fibRatios[0].Value, fibRatios[0].Brush ) );
 
-                Annotations.Add( fibText2 );
+                var fibText = new SRlevelTextAnnotation();
+                fibText.Y1 = fibRatios[0].Value;
+                fibText.Tag = fibRatios[0].Value;
+                fibText.Foreground = fibRatios[0].Brush;
+
+                myAnnotations.Add( fibText );
+
+                for ( int index = 1; index < fibRatios.Count; ++index )
+                {
+                    myAnnotations.Add( CreateFibRatioLine( fibRatios[index].Value, fibRatios[index].Brush ) );
+
+                    var fibText2 = new SRlevelTextAnnotation();
+                    fibText2.Y1 = fibRatios[index].Value;
+                    fibText2.Tag = fibRatios[0].Value;
+                    fibText2.Foreground = fibRatios[index].Brush;
+
+                    myAnnotations.Add( fibText2 );
+                }
+
+                if ( myAnnotations.Count > 0 )
+                {
+                    foreach ( var singleFib in myAnnotations )
+                    {
+                        Annotations.Add( singleFib );
+                    }
+                }
             }
+
+                
 
             IsEnabled = false;
         }
@@ -131,27 +146,39 @@ namespace fx.Charting.HewFibonacci
             var fibRatios = HewFibGannTargets.GetFibLevels( fibType );
 
             if ( fibRatios == null )
-                return;            
+                return;
 
-            Annotations.Add( CreateFibRatioLine( fibRatios[ 0 ].Value, fibRatios[ 0 ].Brush ) );
-
-            var fibText        = new SRlevelTextAnnotation( );
-            fibText.Y1         = fibRatios[ 0 ].Value;
-            fibText.Tag        = fibRatios[ 0 ].Value;
-            fibText.Foreground = fibRatios[ 0 ].Brush;
-
-            Annotations.Add( fibText );            
-
-            for ( int index = 1; index < fibRatios.Count; ++index )
+            using ( ParentSurface.SuspendUpdates() )
             {
-                Annotations.Add( CreateFibRatioLine( fibRatios[ index ].Value, fibRatios[ index ].Brush ) );
+                var myAnnotations = new AnnotationCollection();
+                myAnnotations.Add( CreateFibRatioLine( fibRatios[0].Value, fibRatios[0].Brush ) );
 
-                var fibText2        = new SRlevelTextAnnotation( );
-                fibText2.Y1         = fibRatios[ index ].Value;
-                fibText2.Tag        = fibRatios[ 0 ].Value;
-                fibText2.Foreground = fibRatios[ index ].Brush;                
+                var fibText = new SRlevelTextAnnotation();
+                fibText.Y1 = fibRatios[0].Value;
+                fibText.Tag = fibRatios[0].Value;
+                fibText.Foreground = fibRatios[0].Brush;
 
-                Annotations.Add( fibText2 );
+                myAnnotations.Add( fibText );
+
+                for ( int index = 1; index < fibRatios.Count; ++index )
+                {
+                    myAnnotations.Add( CreateFibRatioLine( fibRatios[index].Value, fibRatios[index].Brush ) );
+
+                    var fibText2 = new SRlevelTextAnnotation();
+                    fibText2.Y1 = fibRatios[index].Value;
+                    fibText2.Tag = fibRatios[0].Value;
+                    fibText2.Foreground = fibRatios[index].Brush;
+
+                    myAnnotations.Add( fibText2 );
+                }
+
+                if ( myAnnotations.Count > 0 )
+                {
+                    foreach ( var singleFib in myAnnotations )
+                    {
+                        Annotations.Add( singleFib );
+                    }
+                }
             }
            
             IsEnabled = false;
@@ -520,29 +547,33 @@ namespace fx.Charting.HewFibonacci
 
             if ( _hasConfluence )
                 return;
-
-            if ( _targetBars.Count > 0 )
+            
+            using ( ParentSurface.SuspendUpdates() )
             {
-                foreach ( SBar bar in _targetBars )
+                if ( _targetBars.Count > 0 )
                 {
-                    if ( bar.IsWavePeak( ) || bar.IsGannPeak() )
+                    foreach ( SBar bar in _targetBars )
                     {
-                        DrawAnnotations( bar.High );
-                    }
-                    else if ( bar.IsWaveTrough( ) || bar.IsGannTrough() )
-                    {
-                        DrawAnnotations( bar.Low );
-                    }
-                    else
-                    {
-                        DrawAnnotations( bar.Close );
+                        if ( bar.IsWavePeak() || bar.IsGannPeak() )
+                        {
+                            DrawAnnotations( bar.High );
+                        }
+                        else if ( bar.IsWaveTrough() || bar.IsGannTrough() )
+                        {
+                            DrawAnnotations( bar.Low );
+                        }
+                        else
+                        {
+                            DrawAnnotations( bar.Close );
+                        }
                     }
                 }
-            }    
-            else
-            {
-                DrawAnnotations( );
+                else
+                {
+                    DrawAnnotations();
+                }
             }
+                
         }
 
         private void DrawAnnotations(  )

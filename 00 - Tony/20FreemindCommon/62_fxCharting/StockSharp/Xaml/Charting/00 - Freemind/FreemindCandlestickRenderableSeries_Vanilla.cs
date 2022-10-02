@@ -239,7 +239,7 @@ namespace fx.Charting
                         
                     }
 
-                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE && HighQualityWaveText )
+                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE  )
                     {
                         RemoveWavesFromChart( ref realBar );
 
@@ -543,7 +543,7 @@ namespace fx.Charting
                         selectedBarHasChanged = false;
                     }
 
-                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE && HighQualityWaveText )
+                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE  )
                     {
                         RemoveWavesFromChart( ref realBar );
 
@@ -738,7 +738,7 @@ namespace fx.Charting
                         
                     }
 
-                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE && HighQualityWaveText )
+                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE  )
                     {
                         RemoveWavesFromChart( ref realBar );
 

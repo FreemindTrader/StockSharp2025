@@ -62,7 +62,7 @@ namespace FreemindAITrade.ViewModels
 
                 long beginningTime = _hews.FindBeginningWaveTimeOfCurrentCycle( _waveScenarioNumber, selectedBarTime, finalWaveCycle );
 
-                _hews.SmartABC_ToWave += ( waveScenarioNo, ResponsibleTF, beginningTime, selectedBarTime, finalWaveCycle );
+                _hews.SmartABC_ToWave( waveScenarioNo, ResponsibleTF, beginningTime, selectedBarTime, finalWaveCycle );
             }
 
         }

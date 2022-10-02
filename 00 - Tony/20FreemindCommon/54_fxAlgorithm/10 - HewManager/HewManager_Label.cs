@@ -516,6 +516,34 @@ namespace fx.Algorithm
             {
                 return WaveLabelPosition.TOP;
             }
+            else if ( IsExpandedFlat( currentWaveName ) )
+            {
+                ref var hew = ref previousWave.GetWaveFromScenario( waveScenarioNo );
+                var waveInfo = hew.GetFirstHighestWaveInfo();
+
+                if ( waveInfo.Value.WaveName.IsNextWave( currentWaveName ) )
+                {
+                    return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
+            }
+            else if ( IsTriangleWaveABCDE( currentWaveName ) )
+            {
+                ref var hew = ref previousWave.GetWaveFromScenario( waveScenarioNo );
+                var waveInfo = hew.GetFirstHighestWaveInfo();
+
+                if ( waveInfo.Value.WaveName.IsNextWave( currentWaveName ) )
+                {
+                    return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
+            }
             else if( IsTriangleWaveABCDE( currentWaveName ) )
             {
                 if( currentWaveName == ElliottWaveEnum.WaveTA || currentWaveName == ElliottWaveEnum.WaveTC || currentWaveName == ElliottWaveEnum.WaveTE )
@@ -584,18 +612,32 @@ namespace fx.Algorithm
             {
                 return WaveLabelPosition.BOTTOM;
             }
+            else if ( IsExpandedFlat( currentWaveName ) )
+            {
+                ref var hew = ref previousWave.GetWaveFromScenario( waveScenarioNo );
+                var waveInfo = hew.GetFirstHighestWaveInfo();
+
+                if ( waveInfo.Value.WaveName.IsNextWave( currentWaveName ) )
+                {
+                    return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
+                }                
+                else 
+                {
+                    throw new NotImplementedException();
+                }
+            }
             else if( IsTriangleWaveABCDE( currentWaveName ) )
             {
                 ref var hew = ref previousWave.GetWaveFromScenario( waveScenarioNo );
                 var waveInfo = hew.GetFirstHighestWaveInfo( );
 
-                if( ( waveInfo.Value.WaveName == ElliottWaveEnum.WaveTA || waveInfo.Value.WaveName == ElliottWaveEnum.WaveTC || waveInfo.Value.WaveName == ElliottWaveEnum.WaveTE ) && ( ( currentWaveName == ElliottWaveEnum.WaveTB ) || ( currentWaveName == ElliottWaveEnum.WaveTD ) ) )
+                if ( waveInfo.Value.WaveName.IsNextWave( currentWaveName ) )
                 {
                     return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
                 }
-                else if( ( waveInfo.Value.WaveName == ElliottWaveEnum.WaveTB || waveInfo.Value.WaveName == ElliottWaveEnum.WaveTD ) && ( currentWaveName == ElliottWaveEnum.WaveTA || currentWaveName == ElliottWaveEnum.WaveTC || currentWaveName == ElliottWaveEnum.WaveTE ) )
+                else
                 {
-                    return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
+                    throw new NotImplementedException();
                 }
             }
             else
@@ -751,6 +793,16 @@ namespace fx.Algorithm
         public bool IsTriangleWaveABCDE( ElliottWaveEnum currentWaveName )
         {
             if( currentWaveName == ElliottWaveEnum.WaveTA || currentWaveName == ElliottWaveEnum.WaveTB || currentWaveName == ElliottWaveEnum.WaveTC || currentWaveName == ElliottWaveEnum.WaveTD || currentWaveName == ElliottWaveEnum.WaveTE )
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsExpandedFlat( ElliottWaveEnum currentWaveName )
+        {
+            if ( currentWaveName == ElliottWaveEnum.WaveEFA || currentWaveName == ElliottWaveEnum.WaveEFB || currentWaveName == ElliottWaveEnum.WaveEFC  )
             {
                 return true;
             }

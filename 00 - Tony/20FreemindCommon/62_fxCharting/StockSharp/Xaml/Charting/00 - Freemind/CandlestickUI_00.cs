@@ -60,7 +60,7 @@ namespace fx.Charting
         private bool                  _showMonotWave;
         private bool                  _showDivergence;        
         private bool                  _showPriceTimeSignal;
-        private bool                  _highQualityWaveText           = true;
+        private bool                  _highQualityFibLines           = true;
         private int                   _signalMargin;        
 
         private Color                 _fxFallingBarFill              = Color.FromRgb( 212, 212, 212 );

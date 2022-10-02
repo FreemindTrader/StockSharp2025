@@ -131,7 +131,7 @@ namespace fx.Charting
                     series.SetBindings( FreemindCandlestickRenderableSeries.WaveImportanceProperty,      ChartElement, "WaveImportance",      BindingMode.TwoWay, null, null );
                     series.SetBindings( FreemindCandlestickRenderableSeries.WaveCycleProperty,           ChartElement, "WaveCycle",           BindingMode.TwoWay, null, null );
 
-                    series.SetBindings( FreemindCandlestickRenderableSeries.HighQualityWaveTextProperty, ChartElement, "HighQualityWaveText", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.HighQualityFibLinesProperty, ChartElement, "HighQualityFibLines", BindingMode.TwoWay, null, null );
 
                     series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness",                        BindingMode.TwoWay, null, null );
                     series.PaletteProvider = ( this );
