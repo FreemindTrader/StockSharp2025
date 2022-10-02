@@ -755,92 +755,109 @@ namespace fx.Charting
         {
             ref SBar realBar = ref _barList[ _lastBarIndex ];
 
-            if ( fib.isRetracement )
+            var scichart = GetParentSurface();
+
+            var fibAnnotation = new AnnotationCollection();
+
+            using ( scichart.SuspendUpdates() )
             {
-                _elliottWaveFibCount++;
-                var fibRet              = new fxFibonacciRetracementAnnotation( fib, ref realBar, fib.TargetPoints );
+                if ( fib.isRetracement )
+                {
+                    _elliottWaveFibCount++;
+                    var fibRet = new fxFibonacciRetracementAnnotation( fib, ref realBar, fib.TargetPoints );
+
+                    fibRet.XAxisId = "X";
+                    fibRet.YAxisId = "Y";
+                    fibRet.IsEnabled = false;
+                    fibRet.IsEditable = false;
+                    fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
+
+
+
+                    fibRet.Selected += FibRet_Selected;
+                    fibRet.Unselected += FibRet_Unselected;
+
+                    fibAnnotation.Add( fibRet );
+                    //scichart.Annotations.Add( fibRet );
+                }
+                else if ( fib.isProjection )
+                {
+                    _elliottWaveFibCount++;
+                    var fibProjection = new fxFibonacciExtensionAnnotation( fib, ref realBar, fib.TargetPoints );
+                    fibProjection.XAxisId = "X";
+                    fibProjection.YAxisId = "Y";
+                    fibProjection.IsEnabled = false;
+                    fibProjection.IsEditable = false;
+                    fibProjection.Selected += FibProjection_Selected;
+                    fibProjection.Unselected += FibProjection_Unselected;
+                    fibProjection.AnnotationCanvas = AnnotationCanvas.BelowChart;
+
+                    fibAnnotation.Add( fibProjection );                    
+                }
+
+                if ( fib.HasTonyRetracement )
+                {
+                    _elliottWaveFibCount++;
+                    var fibRet = new fxFibonacciRetracementAnnotation( fib, ref realBar, fib.TargetPoints, true );
+
+                    fibRet.XAxisId = "X";
+                    fibRet.YAxisId = "Y";
+                    fibRet.IsEnabled = false;
+                    fibRet.IsEditable = false;
+                    fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
+
+                    
+
+                    fibRet.Selected += FibRet_Selected;
+                    fibRet.Unselected += FibRet_Unselected;
+
+                    fibAnnotation.Add( fibRet );                    
+                }
+
+                if ( fib.HasTonyExtensions && fib.ShowTonyExtensions )
+                {
+                    _elliottWaveFibCount++;
+                    var fibRet = new fxTonyProjectionAnnotation( fib, ref realBar, fib.TargetPoints );
+
+                    fibRet.XAxisId = "X";
+                    fibRet.YAxisId = "Y";
+                    fibRet.IsEnabled = false;
+                    fibRet.IsEditable = false;
+                    fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
+
+                    fibRet.Selected += FibRet_Selected;
+                    fibRet.Unselected += FibRet_Unselected;
+
+                    fibAnnotation.Add( fibRet );                    
+                }
+
+                if ( fib.HasTonyExtensions2 && fib.ShowTonyExtension2 )
+                {
+                    _elliottWaveFibCount++;
+                    var fibRet = new fxTonyProjectionAnnotation( fib, ref realBar, fib.TargetPoints, true );
+
+                    fibRet.XAxisId = "X";
+                    fibRet.YAxisId = "Y";
+                    fibRet.IsEnabled = false;
+                    fibRet.IsEditable = false;
+                    fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
+
+                    fibRet.Selected += FibRet_Selected;
+                    fibRet.Unselected += FibRet_Unselected;
+
+                    fibAnnotation.Add( fibRet );                    
+                }
+
+                if ( fibAnnotation.Count > 0 )
+                {
+                    foreach( var singleFib in fibAnnotation)
+                    {
+                        scichart.Annotations.Add( singleFib );
+                    }                    
+                }
+            }
+
                 
-                fibRet.XAxisId          = "X";
-                fibRet.YAxisId          = "Y";
-                fibRet.IsEnabled        = false;
-                fibRet.IsEditable       = false;
-                fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
-
-                var scichart            = GetParentSurface( );                               
-
-                fibRet.Selected        += FibRet_Selected;
-                fibRet.Unselected      += FibRet_Unselected;
-
-                scichart.Annotations.Add( fibRet );
-            }
-            else if ( fib.isProjection )
-            {
-                _elliottWaveFibCount++;
-                var fibProjection              = new fxFibonacciExtensionAnnotation( fib, ref realBar, fib.TargetPoints );
-                fibProjection.XAxisId          = "X";
-                fibProjection.YAxisId          = "Y";
-                fibProjection.IsEnabled        = false;
-                fibProjection.IsEditable       = false;                               
-                fibProjection.Selected        += FibProjection_Selected;
-                fibProjection.Unselected      += FibProjection_Unselected;
-                fibProjection.AnnotationCanvas = AnnotationCanvas.BelowChart;
-
-                GetParentSurface( ).Annotations.Add( fibProjection );                               
-            }
-
-            if ( fib.HasTonyRetracement )
-            {
-                _elliottWaveFibCount++;
-                var fibRet              = new fxFibonacciRetracementAnnotation( fib, ref realBar, fib.TargetPoints, true );
-
-                fibRet.XAxisId          = "X";
-                fibRet.YAxisId          = "Y";
-                fibRet.IsEnabled        = false;
-                fibRet.IsEditable       = false;
-                fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
-
-                var scichart            = GetParentSurface( );
-
-                fibRet.Selected        += FibRet_Selected;
-                fibRet.Unselected      += FibRet_Unselected;
-
-                scichart.Annotations.Add( fibRet );
-
-            }
-
-            if ( fib.HasTonyExtensions && fib.ShowTonyExtensions )
-            {
-                _elliottWaveFibCount++;
-                var fibRet              = new fxTonyProjectionAnnotation( fib, ref realBar, fib.TargetPoints );
-
-                fibRet.XAxisId          = "X";
-                fibRet.YAxisId          = "Y";
-                fibRet.IsEnabled        = false;
-                fibRet.IsEditable       = false;
-                fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
-
-                fibRet.Selected        += FibRet_Selected;
-                fibRet.Unselected      += FibRet_Unselected;
-
-                GetParentSurface( ).Annotations.Add( fibRet );
-            }
-
-            if ( fib.HasTonyExtensions2 && fib.ShowTonyExtension2 )
-            {
-                _elliottWaveFibCount++;
-                var fibRet              = new fxTonyProjectionAnnotation( fib, ref realBar, fib.TargetPoints, true );
-
-                fibRet.XAxisId          = "X";
-                fibRet.YAxisId          = "Y";
-                fibRet.IsEnabled        = false;
-                fibRet.IsEditable       = false;
-                fibRet.AnnotationCanvas = AnnotationCanvas.BelowChart;
-
-                fibRet.Selected        += FibRet_Selected;
-                fibRet.Unselected      += FibRet_Unselected;
-
-                GetParentSurface( ).Annotations.Add( fibRet );
-            }
 
         }
 
@@ -1780,7 +1797,7 @@ namespace fx.Charting
 
                         var drawRect     = new Rect( drawPoint, size );
                         
-                        if ( HighQualityWaveText )
+                        
                         {
                             if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                             {
@@ -1833,10 +1850,10 @@ namespace fx.Charting
                             }
 
                         }
-                        else
-                        {
-                            g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
-                        }
+                        //else
+                        //{
+                        //    g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
+                        //}
 
                         mySortedListString.Remove( waveCycle );
                     }
@@ -1878,7 +1895,7 @@ namespace fx.Charting
 
                     
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -1931,10 +1948,10 @@ namespace fx.Charting
                         }
 
                     }
-                    else
-                    {
-                        g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
-                    }
+                    //else
+                    //{
+                    //    g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
+                    //}
 
                     //g.DrawText( new Rect( drawPoint, size ), waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
 
@@ -1991,7 +2008,7 @@ namespace fx.Charting
 
                     var drawRect     = new Rect( drawPoint, size );                    
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -2044,10 +2061,10 @@ namespace fx.Charting
                         }
 
                     }
-                    else
-                    {
-                        g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
-                    }
+                    //else
+                    //{
+                    //    g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
+                    //}
 
                     mySortedListString.Remove( waveCycle );
                 }
@@ -2089,7 +2106,7 @@ namespace fx.Charting
 
                         var drawRect   = new Rect( drawPoint, size );
                         
-                        if ( HighQualityWaveText )
+                        
                         {
                             if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                             {
@@ -2142,10 +2159,10 @@ namespace fx.Charting
                             }
 
                         }
-                        else
-                        {
-                            g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
-                        }
+                        //else
+                        //{
+                        //    g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
+                        //}
 
                         _lastBottomPosition = drawY + size.Height;
 
@@ -2205,7 +2222,7 @@ namespace fx.Charting
 
                     
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -2241,12 +2258,12 @@ namespace fx.Charting
                         }
 
                     }
-                    else
-                    {
-                        var drawPoint = new Point(xCoor - size.Width / 2, drawY - 10 - size.Height);
-                        var drawRect = new Rect(drawPoint, size);
-                        g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
-                    }
+                    //else
+                    //{
+                    //    var drawPoint = new Point(xCoor - size.Width / 2, drawY - 10 - size.Height);
+                    //    var drawRect = new Rect(drawPoint, size);
+                    //    g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
+                    //}
 
                     //g.DrawText( new Rect( drawPoint, size ), waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
                     
@@ -2368,7 +2385,7 @@ namespace fx.Charting
 
                     var drawRect = new Rect( drawPoint, size );                    
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( ! _waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -2403,10 +2420,10 @@ namespace fx.Charting
                             }
                         }                        
                     }
-                    else
-                    {
-                        g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
-                    }
+                    //else
+                    //{
+                    //    g.DrawText( drawRect, waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
+                    //}
 
                     //g.DrawText( new Rect( drawPoint, size ), waveColor, fontSize, drawString, _fontFamily, _fontWeight, _fontStyle );
 
@@ -2577,7 +2594,7 @@ namespace fx.Charting
 
                     var drawRect     = new Rect( drawPoint, size );
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -2635,7 +2652,7 @@ namespace fx.Charting
 
                     var drawRect = new Rect( drawPoint, size );
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -2801,7 +2818,7 @@ namespace fx.Charting
 
                     var drawRect     = new Rect( drawPoint, size );
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {
@@ -2859,7 +2876,7 @@ namespace fx.Charting
 
                     var drawRect = new Rect( drawPoint, size );
 
-                    if ( HighQualityWaveText )
+                    
                     {
                         if ( !_waveAnnotationAdded.ContainsKey( waveKey ) )
                         {

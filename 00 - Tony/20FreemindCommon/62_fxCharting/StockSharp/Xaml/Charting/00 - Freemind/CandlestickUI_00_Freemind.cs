@@ -233,16 +233,16 @@ namespace fx.Charting
         }
 
         
-        public bool HighQualityWaveText
+        public bool HighQualityFibLines
         {
             get
             {
-                return _highQualityWaveText;
+                return _highQualityFibLines;
             }
             set
             {
-                _highQualityWaveText = value;
-                RaisePropertyChanged( nameof( HighQualityWaveText ) );
+                _highQualityFibLines = value;
+                RaisePropertyChanged( nameof( HighQualityFibLines ) );
             }
         }
 

@@ -222,7 +222,7 @@ namespace fx.Charting
                     selectedBarChangedFib = false;
 
 
-                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE && HighQualityWaveText )
+                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE  )
                     {
                         RemoveWavesFromChart( ref realBar );
                         realBar.WaveDirty = WaveDirtyEnum.NONE;
@@ -438,7 +438,7 @@ namespace fx.Charting
                     selectedBarChangedFib = false;
 
 
-                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE && HighQualityWaveText )
+                    if ( realBar.WaveDirty != WaveDirtyEnum.NONE  )
                     {
                         RemoveWavesFromChart( ref realBar );
                         realBar.WaveDirty = WaveDirtyEnum.NONE;

@@ -42,7 +42,7 @@ namespace fx.Charting
 
         public static readonly DependencyProperty ShowDivergenceProperty      = DependencyProperty.Register( nameof( ShowDivergence ),      typeof( bool ), typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( false, new PropertyChangedCallback( OnInvalidateParentSurface ) ) );
         public static readonly DependencyProperty ShowPriceTimeSignalProperty = DependencyProperty.Register( nameof( ShowPriceTimeSignal ), typeof( bool ), typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( false, new PropertyChangedCallback( OnInvalidateParentSurface ) ) );
-        public static readonly DependencyProperty HighQualityWaveTextProperty = DependencyProperty.Register( nameof( HighQualityWaveText ), typeof( bool ), typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( true,  new PropertyChangedCallback( OnInvalidateParentSurface ) ) );
+        public static readonly DependencyProperty HighQualityFibLinesProperty = DependencyProperty.Register( nameof( HighQualityFibLines ), typeof( bool ), typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( true,  new PropertyChangedCallback( OnInvalidateParentSurface ) ) );
         public static readonly DependencyProperty SignalMarginProperty        = DependencyProperty.Register( nameof( SignalMargin ),        typeof( int ) , typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( 2,     new PropertyChangedCallback( OnSignalMarginChanged ) ) );
         public static readonly DependencyProperty FifoCapacityProperty        = DependencyProperty.Register( nameof( FifoCapacity ),        typeof( int ) , typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( -1,    new PropertyChangedCallback( OnFifoCapcityChanged ) ) );
         public static readonly DependencyProperty WaveScenarioNoProperty      = DependencyProperty.Register( nameof( WaveScenarioNo ),      typeof( int ),  typeof( FreemindCandlestickRenderableSeries ), new PropertyMetadata( 0,     new PropertyChangedCallback( OnWaveScenarioNoChanged ) ) );
@@ -444,15 +444,15 @@ namespace fx.Charting
 
         
 
-        public bool HighQualityWaveText
+        public bool HighQualityFibLines
         {
             get
             {
-                return ( bool ) GetValue( HighQualityWaveTextProperty );
+                return ( bool ) GetValue( HighQualityFibLinesProperty );
             }
             set
             {
-                SetValue( HighQualityWaveTextProperty, value );
+                SetValue( HighQualityFibLinesProperty, value );
             }
         }
 

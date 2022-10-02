@@ -217,41 +217,44 @@ namespace fx.Charting.HewFibonacci
             }
             else
             {
-                var line             = new LineAnnotation( );
-                line.X1 = x;
-                line.Y1 = y;
-                line.X2 = x;
-                line.Y2 = y;
-                line.StrokeDashArray = new DoubleCollection( ) { 2.0, 4.0 };
-                line.StrokeThickness = 1.0;
-                line.Stroke = new SolidColorBrush( Color.FromArgb( byte.MaxValue, 186, 186, 186 ) );
-                line.Opacity = 0.5;
-                Panel.SetZIndex( line, 1 );
-                line.IsEditable = true;
+                using ( ParentSurface.SuspendUpdates() )
+                {
+                    var myAnnotations = new AnnotationCollection();
 
-                SetMovingPart( line, true );
-                Annotations.Add( line );
+                    var line = new LineAnnotation();
+                    line.X1 = x;
+                    line.Y1 = y;
+                    line.X2 = x;
+                    line.Y2 = y;
+                    line.StrokeDashArray = new DoubleCollection() { 2.0, 4.0 };
+                    line.StrokeThickness = 1.0;
+                    line.Stroke = new SolidColorBrush( Color.FromArgb( byte.MaxValue, 186, 186, 186 ) );
+                    line.Opacity = 0.5;
+                    Panel.SetZIndex( line, 1 );
+                    line.IsEditable = true;
 
-                // Have to set the LineAnnotation hidden after being add to collection or else the Line will be visible.
-                //line.IsHidden = true;
+                    SetMovingPart( line, true );
+                    myAnnotations.Add( line );
+                    
 
-                //ICategoryCoordinateCalculator<DateTime> coordinateCalculator = XAxis.GetCurrentCoordinateCalculator( ) as ICategoryCoordinateCalculator<DateTime>;
+                    var fibTable = new fxFibonacciTableAnnotation( _fibTarget, _gripStyle, ref _lastBar, _targetBars, true );
+                    fibTable.X1 = x;
+                    fibTable.Y1 = y;
+                    fibTable.X2 = x;
+                    fibTable.Y2 = y;
+                    fibTable.IsEditable = false;                    
 
-                //if ( coordinateCalculator != null )
-                //{
-                //    x = coordinateCalculator.TransformDataToIndex( x );
-                //}
+                    myAnnotations.Add( fibTable );
 
-                var fibTable         = new fxFibonacciTableAnnotation( _fibTarget, _gripStyle, ref _lastBar,  _targetBars, true );
-                fibTable.X1 = x;
-                fibTable.Y1 = y;
-                fibTable.X2 = x;
-                fibTable.Y2 = y;
-                fibTable.IsEditable = false;
-
-                //SetMovingPart( fibTable, true );
-
-                Annotations.Add( fibTable );
+                    if ( myAnnotations.Count > 0 )
+                    {
+                        foreach ( var singleFib in myAnnotations )
+                        {
+                            Annotations.Add( singleFib );
+                        }
+                    }
+                }
+                    
             }
         }
 
