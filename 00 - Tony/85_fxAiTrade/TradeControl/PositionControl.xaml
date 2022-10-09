@@ -95,7 +95,7 @@
                         <dx:DXImage
                             Width="96"
                             Height="96"
-                            Source="{dx:SvgImageSource Uri='pack://application:,,,/DevExpress.Images.v20.2;component/SvgImages/Outlook Inspired/CustomerProfileReport.svg'}"
+                            Source="{dx:SvgImageSource Uri='pack://application:,,,/DevExpress.Images.v21.1;component/SvgImages/Outlook Inspired/CustomerProfileReport.svg'}"
                             Stretch="UniformToFill" />
 
                     </StackPanel>

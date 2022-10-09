@@ -8,8 +8,10 @@ namespace fx.Algorithm
     public enum Wave3Type : byte
     {
         UNKNOWN,
+        Compact,
         Classic,
         Extended,
+        ExtendedPlus,
         SuperExtended
     }
 

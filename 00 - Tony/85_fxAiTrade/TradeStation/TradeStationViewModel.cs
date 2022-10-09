@@ -1941,6 +1941,7 @@ namespace FreemindAITrade.ViewModels
 
         public void LockFibLevels()
         {
+            _selectedViewModel.AnalysisLockedFibs( );
             _selectedViewModel.ChartVM.LockFibLevelsObject();
         }
 

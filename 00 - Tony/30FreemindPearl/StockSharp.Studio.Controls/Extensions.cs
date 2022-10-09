@@ -367,30 +367,18 @@ namespace StockSharp.Studio.Controls
 
         public static void ProcessLogInCommand( this Window owner, CancellationToken token )
         {
-            Client profile = owner.TryLogin( token );
-            if ( profile == null )
-            {
-                owner.Close();
-            }
-            else
-            {
-                Profile = profile;
-                new LoggedInCommand( profile ).Process( owner, false );
-                Algo.Subscription mySubscription = new Algo.Subscription( DataType.News, ( SecurityMessage )null );
-                Helper.InitServices( m =>
-                   {
-                       if ( !( m.Source == "StockSharp" ) )
-                           return;
-                       Algo.Subscription subscription = mySubscription;
-                       News entity = new News();
-                       entity.Headline = m.Topic.Title;
-                       DateTime? expiryDate = m.ExpiryDate;
-                       entity.ExpiryDate = expiryDate.HasValue ? new DateTimeOffset?( ( DateTimeOffset )expiryDate.GetValueOrDefault() ) : new DateTimeOffset?();
-                       entity.Story = m.Body;
-                       entity.Id = m.Id.To<string>();
-                       new EntityCommand<News>( subscription, entity ).Process( owner, false );
-                   }, () => { }, token );
-            }
+            //Client profile = owner.TryLogin( token );
+
+            Client myProfile = new Client( );
+            myProfile.AuthToken = "AQAAAAAAAAASA8MHOE0zgWMSCDCNbABv";
+            myProfile.DisplayName = "TonyFreemind";
+            myProfile.Email = "tonyfreemind@msn.com";
+            myProfile.Id = 39508;
+            myProfile.RealName = "tonyfreemind";
+            
+            Profile = myProfile;
+            new LoggedInCommand( myProfile ).Process( owner, false );
+                
         }
 
         public static bool TryChangeLaunchMode( this Window owner )

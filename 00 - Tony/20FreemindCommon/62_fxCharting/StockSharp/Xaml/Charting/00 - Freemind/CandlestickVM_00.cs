@@ -78,7 +78,7 @@ namespace fx.Charting
     {
         private double                                      _pnfBoxSize = 0.2;
         private readonly OhlcDataSeries< DateTime, double > _ohlcDataSeries;
-        private readonly XyDataSeries< DateTime, double >   _xyDataSeries;
+        //private readonly XyDataSeries< DateTime, double >   _xyDataSeries;          // Tony : I don't need to look at only close line
         //private ChartSeriesViewModel                        _chartSeriesViewModel;
         //private TimeframeSegmentDataSeries                  _timeframeSegmentDataSeries;
         private DateTime                                    _dateTimeUtc;
@@ -118,12 +118,12 @@ namespace fx.Charting
             if ( _fifoCapacity > 0 )
             {
                 _ohlcDataSeries = new OhlcDataSeries<DateTime, double>() { FifoCapacity = _fifoCapacity };
-                _xyDataSeries   = new XyDataSeries<DateTime, double>() { FifoCapacity = _fifoCapacity }; 
+                //_xyDataSeries   = new XyDataSeries<DateTime, double>() { FifoCapacity = _fifoCapacity }; 
             }
             else
             {
                 _ohlcDataSeries = new OhlcDataSeries<DateTime, double>();
-                _xyDataSeries   = new XyDataSeries<DateTime, double>();
+                //_xyDataSeries   = new XyDataSeries<DateTime, double>();
             }
 
             
@@ -131,17 +131,19 @@ namespace fx.Charting
 
         private IDataSeries GetDataSeriesByDrawStyle( )
         {
-            //if( ChartElement.DrawStyle.IsVolumeProfileChart( ) )
+            return _ohlcDataSeries;
+
+            ////if( ChartElement.DrawStyle.IsVolumeProfileChart( ) )
+            ////{
+            ////    return _timeframeSegmentDataSeries;
+            ////}
+
+            //if ( ChartElement.DrawStyle != ChartCandleDrawStyles.Area )
             //{
-            //    return _timeframeSegmentDataSeries;
+                
             //}
 
-            if ( ChartElement.DrawStyle != ChartCandleDrawStyles.Area )
-            {
-                return _ohlcDataSeries;
-            }
-
-            return _xyDataSeries;
+            //return _xyDataSeries;
         }
 
         protected override void Init( )
@@ -360,7 +362,7 @@ namespace fx.Charting
         protected override void UpdateUi( )
         {
             _ohlcDataSeries.Clear( );
-            _xyDataSeries.Clear( );
+            //_xyDataSeries.Clear( );
 
             // _timeframeSegmentDataSeries = null;
             _totalMinutes                  = 1;
@@ -592,7 +594,7 @@ namespace fx.Charting
                     }
 
                     _ohlcDataSeries.Update( (int)i, open, high, low, close );
-                    _xyDataSeries.Update( (int)i, close );
+                    //_xyDataSeries.Update( (int)i, close );
 
                     --count;
                 }                               
@@ -619,7 +621,7 @@ namespace fx.Charting
             Array.Resize( ref advancedTAInfo, index + 1 );
 
             _ohlcDataSeries.Append( timeArray, openArray, highArray, lowArray, closeArray, advancedTAInfo );
-            _xyDataSeries.Append( timeArray, closeArray );
+            //_xyDataSeries.Append( timeArray, closeArray );
 
             if ( _lastNullBar.Index < _latestBarIndex.Value )
             {
@@ -634,7 +636,7 @@ namespace fx.Charting
             PerformUiAction( () =>
                                     {
                                         _ohlcDataSeries.InvalidateParentSurface( RangeMode.None, true );
-                                        _xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
+                                        //_xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
                                         
                                     },
                                     true
@@ -663,7 +665,7 @@ namespace fx.Charting
             PerformUiAction( () =>
                                     {
                                         _ohlcDataSeries.InvalidateParentSurface( RangeMode.None, true );
-                                        _xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
+                                        //_xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
                                     },
                                     true
                             );
@@ -714,7 +716,7 @@ namespace fx.Charting
                     case 0:
                     {
                         _ohlcDataSeries.Update( bar.UtcTime( ), bar.OpenPrice( ), bar.HighPrice( ), bar.LowPrice( ), bar.ClosePrice( ) );
-                        _xyDataSeries.Update( bar.UtcTime( ), bar.ClosePrice( ) );
+                        //_xyDataSeries.Update( bar.UtcTime( ), bar.ClosePrice( ) );
 
                         //if ( bar.PriceLevels( ) != null /* && _timeframeSegmentDataSeries != null */ )
                         //{
@@ -774,14 +776,14 @@ namespace fx.Charting
             Array.Resize( ref advancedTAInfo, index + 1 );
 
             _ohlcDataSeries.Append( timeArray, openArray, highArray, lowArray, closeArray, advancedTAInfo );
-            _xyDataSeries.Append( timeArray, closeArray );
+            //_xyDataSeries.Append( timeArray, closeArray );
 
 
             // Tony: After update of the Candles, we need to notify the binding that our datasource has changed and need to rerender.
             PerformUiAction( ( ) =>
                                     {
                                         _ohlcDataSeries.InvalidateParentSurface( RangeMode.None, true );
-                                        _xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
+                                        //_xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
                                     },
                                     true
                             );

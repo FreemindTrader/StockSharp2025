@@ -15,6 +15,149 @@ namespace fx.Algorithm
 {
     public partial class C5Waves : I5Waves
     {
+        public void AnalyseWave3C( ref HewLong hew, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree )
+        {
+            var afterWaves = _hews.GetAllWavesOfDegreeAfter( _k.WaveScenarioNo, _k.Period, _k.RawBeginTime, waveDegree );
+
+            bool has3A = false;
+            bool has3B = false;
+            bool has3C = false;
+            bool has4 = false;
+            bool has5A = false;
+            bool has5B = false;
+            bool has5C = false;
+
+            foreach ( var afterWave in afterWaves )
+            {
+                ref HewLong afterWaveHew = ref afterWave.GetWaveFromScenario( _k.WaveScenarioNo );
+
+                var waveInfo = afterWaveHew.GetFirstHighestWaveInfo();
+
+                if ( waveInfo.HasValue )
+                {
+                    var afterWaveName = waveInfo.Value.WaveName;
+
+                    switch ( afterWaveName )
+                    {
+
+                        case ElliottWaveEnum.Wave3:
+                        case ElliottWaveEnum.Wave3C:
+                        {
+                            has3C = true;
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave4:
+                        {
+                            has4 = true;
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave5:
+                        case ElliottWaveEnum.Wave5C:
+                        {
+                            has5C = false;
+                        }
+                        break;
+
+
+                        case ElliottWaveEnum.WaveA:
+                        {
+                            if ( has3A == false && has5A == false )
+                            {
+                                has3A = true;
+                            }
+                            else if ( has3A == true && has5A == false )
+                            {
+                                has5A = true;
+                            }
+                        }
+                        break;
+
+                        case ElliottWaveEnum.WaveB:
+                        {
+                            if ( has3B == false && has5B == false )
+                            {
+                                has3B = true;
+                            }
+                            else if ( has3B == true && has5B == false )
+                            {
+                                has5B = true;
+                            }
+                        }
+                        break;
+
+                        case ElliottWaveEnum.WaveC:
+                        {
+                            if ( has3C == false && has5C == false )
+                            {
+                                has3C = true;
+                            }
+                            else if ( has3C == true && has5C == false )
+                            {
+                                has5C = true;
+                            }
+                        }
+                        break;
+                    }
+
+                }
+            }
+
+            if ( has3A )
+            {
+                if ( has3B )
+                {
+                    if ( has3C )
+                    {
+                        if ( has4 )
+                        {
+                            if ( has5A )
+                            {
+                                if ( has5B )
+                                {
+                                    if ( has5C )
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        // Predict Wave 5C target
+                                    }
+                                }
+                                else
+                                {
+                                    // Predict Wave 5B target
+                                }
+                            }
+                            else
+                            {
+                                // Predict Wave 5A target
+                            }
+                        }
+                        else
+                        {
+                            // Predict Wave 4 target
+                        }
+                    }
+                    else
+                    {
+                        // Predict Wave 3C target
+
+                    }
+
+                }
+                else
+                {
+                    // Predict Wave 3B target
+                }
+            }
+            else
+            {
+                // Predict Wave 3A target
+            }
+        }
+
         public void StartAnalysis( ref HewLong hew, ElliottWaveEnum highestWaveName, ElliottWaveCycle highestWaveDegree )
         {
             var waveInfos = hew.GetAllWaves( );
@@ -46,7 +189,7 @@ namespace fx.Algorithm
 
                 case ElliottWaveEnum.Wave2:
                 {
-
+                    ProcessWave2( waveInfo );
                 }
                 break;
 
@@ -274,7 +417,7 @@ namespace fx.Algorithm
 
                 case FibPercentage p when ( p > FibPercentage.Fib_123_6 && p < FibPercentage.Fib_176_4 ):
                 {
-                    if ( wave3CtoWave1.FibPrecentage >= FibPercentage.Fib_214_6 && wave3CtoWave1.FibPrecentage < FibPercentage.Fib_261_8 )
+                    if ( wave3CtoWave1.FibPrecentage >= FibPercentage.Fib_214_6 && wave3CtoWave1.FibPrecentage <= FibPercentage.Fib_261_8 )
                     {
                         return Wave3Type.Extended;
                     }
@@ -305,7 +448,7 @@ namespace fx.Algorithm
             {
                 return Wave3Type.Classic;
             }
-            else if ( wave3CtoWave1.FibPrecentage >= FibPercentage.Fib_214_6 && wave3CtoWave1.FibPrecentage < FibPercentage.Fib_261_8 )
+            else if ( wave3CtoWave1.FibPrecentage >= FibPercentage.Fib_214_6 && wave3CtoWave1.FibPrecentage <= FibPercentage.Fib_261_8 )
             {
                 return Wave3Type.Extended;
             }

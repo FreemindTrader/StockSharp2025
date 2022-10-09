@@ -30,6 +30,41 @@ namespace fx.Algorithm
             _hews = hewManager;
         }
 
+        public void BuildWaveModel( long beginWave, ElliottWaveCycle waveCycle )
+        {
+            var bar = _bars.GetBarByTime( beginWave );
+
+            ref var hew = ref bar.GetWaveFromScenario( _k.WaveScenarioNo );
+
+            var beginWInfo = hew.GetFirstHighestWaveInfo( );
+
+            if ( beginWInfo.HasValue )
+            {
+                var waveName = beginWInfo.Value.WaveName;
+
+                switch ( waveName )
+                {
+                    case ElliottWaveEnum.Wave2:
+                    case ElliottWaveEnum.Wave4:
+                    case ElliottWaveEnum.WaveB:
+                    {
+                        var impulsiveWave = new C5Waves( _bars, _hews, _k );
+
+                        impulsiveWave.IdentifyWaves( _k.WaveScenarioNo, beginWave,  waveCycle );
+                    }
+                    break;
+
+                    default:
+                    {
+
+                    }
+                    break;
+                }
+            }
+
+            
+        }
+
         public void BuildWaveModel()
         {
             var hews = _hews.GetElliottWavesDictionary( _k.Period );
@@ -61,7 +96,7 @@ namespace fx.Algorithm
 
                     case ElliottWaveEnum.Wave2:
                     {
-
+                        AnalyseWave3CProjectionTarget( _k, ref hew, waveName, waveDegree );                        
                     }
                     break;
 
@@ -137,6 +172,150 @@ namespace fx.Algorithm
                 }
             }
 
+        }
+
+        private void AnalyseWave3CProjectionTarget( WaveModelKey k, ref HewLong hew, ElliottWaveEnum highestWaveName, ElliottWaveCycle highestWaveDegree )
+        {
+            var wave2PreditWave3 = new C5Waves( _bars, _hews, k );
+
+            wave2PreditWave3.StartAnalysis( ref hew, highestWaveName, highestWaveDegree );
+        }
+
+        private void AnalyseWave5ProjectionTarget( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveCycle waveDegree )
+        {
+            /*
+            var aa     = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( bars.Security );
+
+            var symbol = bars.Security.Code;
+            
+            if ( aa == null )
+            {
+                return;
+            }
+
+            var waveKey = new WaveModelKey( bars.Security, period, waveScenarioNo, selectedBarTime );
+
+            var wave4PredictWave5Target    = aa.GetOrCreateWaveModel( waveKey, bars, this );
+
+            wave4PredictWave5Target.AnalysePastImpulsiveMove( waveScenarioNo, period, bars, selectedBarTime, ElliottWaveEnum.Wave4, waveDegree );
+            wave4PredictWave5Target.AnalyseWave5Movement( waveScenarioNo, period, bars, selectedBarTime, ElliottWaveEnum.Wave4, waveDegree );
+           
+            var wave4Targets      = wave4PredictWave5Target.LargerTargets;
+
+            if ( wave4Targets == null )
+            {
+                return;
+            }
+
+            var dailyPP           = ( IPivotPointIndicator ) aa.DailyPivotPoint;
+            var weeklyPP          = ( IPivotPointIndicator ) aa.WeeklyPivotPoint;
+            var monthlyPP         = ( IPivotPointIndicator ) aa.MonthlyPivotPoint;
+
+            PivotPointsInfo monthlyPivotPoint = null;
+
+            if ( monthlyPP == null )
+            {
+                this.AddErrorLog( "Monthly Pivot Point is missing, Calculating Target will be miinaccuratessing" );
+            }
+            else
+            {
+                monthlyPivotPoint = monthlyPP.GetPivotPointsAt( selectedBarTime.FromLinuxTime(), out TimeBlockEx temp3 );
+
+                if ( monthlyPivotPoint == null )
+                {
+                    this.AddErrorLog( "Monthly Pivot Point is missing, Calculating Target will be miinaccuratessing" );
+                }
+                else
+                {
+                    foreach ( var pp in monthlyPivotPoint.AllPivotPoints )
+                    {
+                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibLevel - pp.Value ) < bars.PipsAllowance() );
+
+                        if ( index > -1 )
+                        {
+                            var wave4CalcTarget = wave4Targets[ index ];
+
+                            wave4CalcTarget.DynamicSRLinesRating += 30;
+                        }
+                    }
+                }
+            }
+
+            PivotPointsInfo weeklyPivotPoint = null;
+
+            if ( weeklyPP == null )
+            {
+                this.AddErrorLog( "Weekly Pivot Point is missing, Calculating Target will be inaccurate" );
+            }
+            else
+            {
+                weeklyPivotPoint = weeklyPP.GetPivotPointsAt( selectedBarTime.FromLinuxTime(), out TimeBlockEx temp2 );
+
+                if ( weeklyPivotPoint == null )
+                {
+                    this.AddErrorLog( "Weekly Pivot Point is missing, Calculating Target will be inaccurate" );
+                }
+                else
+                {
+                    foreach ( var pp in weeklyPivotPoint.AllPivotPoints )
+                    {
+                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibLevel - pp.Value ) < bars.PipsAllowance() );
+
+                        if ( index > -1 )
+                        {
+                            var wave4CalcTarget = wave4Targets[ index ];
+
+                            wave4CalcTarget.DynamicSRLinesRating += 7;
+                        }
+                    }
+                }
+            }
+            
+            var today = DateTime.UtcNow;
+
+            if ( dailyPP == null )
+            {
+                this.AddErrorLog( "Daily Pivot Point is missing, Calculating Target will be inaccurate" );
+            }
+            else
+            {
+                var dailyPivotPoint = dailyPP.GetPivotPointsAt( today, out TimeBlockEx temp1 );
+
+                if ( dailyPivotPoint == null )
+                {
+                    this.AddErrorLog( "Daily Pivot Point is missing, Calculating Target will be inaccurate" );
+                }
+                else
+                {
+                    foreach ( var pp in dailyPivotPoint.AllPivotPoints )
+                    {
+                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibLevel - pp.Value ) < bars.PipsAllowance() );
+
+                        if ( index > -1 )
+                        {
+                            var wave4CalcTarget = wave4Targets[ index ];
+
+                            wave4CalcTarget.DynamicSRLinesRating += 1;
+                        }
+                    }
+                }
+            }
+
+                
+
+
+            WaveTargetsTsoCollection waveTargets = aa.WaveTargetBindingList;
+
+            waveTargets.Clear( );
+
+
+            foreach ( var target in wave4Targets )
+            {
+                waveTargets.Add( target );
+            }
+
+            Messenger.Default.Send( new WavePredictionMessage( _security, selectedBarTime ) );
+            */
         }
 
         private void AnalyseWave4RetracementTarget( WaveModelKey k, ref HewLong hew, ElliottWaveEnum highestWaveName, ElliottWaveCycle highestWaveDegree )

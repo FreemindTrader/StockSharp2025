@@ -166,7 +166,8 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         var cursor                              = new UltrachartCursormodifier( );
         cursor.ShowTooltip                      = true;
         cursor.ReceiveHandledEvents             = true;
-        cursor.ShowTooltipOn                    = ShowTooltipOptions.MouseHover;
+        cursor.ShowTooltipOn                    = ShowTooltipOptions.MouseRightButtonDown;
+        cursor.SnappingMode = CursorSnappingMode.TooltipToSeries;
         cursor.HoverDelay = 1000;
 
         var orderLines                          = new ChartOrderModifier( Area );
@@ -197,7 +198,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         yaxisDragModifier.AxisId                = "Y";
 
         var bandXyZoomModifier                  = new RubberBandXyZoomModifier( );
-        bandXyZoomModifier.IsXAxisOnly          = true;
+        bandXyZoomModifier.IsXAxisOnly          = false;
         bandXyZoomModifier.ExecuteOn            = ExecuteOn.MouseRightButton;
         bandXyZoomModifier.ReceiveHandledEvents = true;
 

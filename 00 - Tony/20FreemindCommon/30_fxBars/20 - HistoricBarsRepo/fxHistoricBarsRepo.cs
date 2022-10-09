@@ -398,10 +398,13 @@ namespace fx.Bars
             _stopWatch.Restart();
 
             if ( candles.Count > 0 )
-            {                
+            {
+                var firstCandleTime = candles.First().OpenTime.UtcDateTime;
+                var lastCandleTime = candles.Last().OpenTime.UtcDateTime;
+
                 int offerId = symbolMgr.GetOfferId( security );
 
-                BuildElliottWaveDictionary( security.Code, offerId, period );
+                BuildElliottWaveDictionary( security.Code, offerId, period, firstCandleTime, lastCandleTime );
 
                 var waveDates = _hews.GetWaveDatesList( period );
                                 
@@ -1574,7 +1577,7 @@ namespace fx.Bars
             }
         }
 
-        void BuildElliottWaveDictionary( string instrument, int offerId, TimeSpan period )
+        void BuildElliottWaveDictionary( string instrument, int offerId, TimeSpan period, DateTime startDate, DateTime endDate )
         {
             var command = string.Format( "BuildElliottWaveDictionary", FinancialHelper.GetPeriodString( period ) );                       
 
@@ -1582,10 +1585,10 @@ namespace fx.Bars
 
             undoArea.Start( command );           
 
-            var startDate = DateTime.MinValue;
-            var endDate   = DateTime.MinValue;
+            //var startDate = DateTime.MinValue;
+            //var endDate   = DateTime.MinValue;
 
-            ForexHelper.GetStartAndEndDateForDatabar( period, out startDate, out endDate );
+            //ForexHelper.GetStartAndEndDateForDatabar( period, out startDate, out endDate );
             _hews.GetElliottWave( offerId, startDate.ToLinuxTime( ), endDate.ToLinuxTime( ), period );
 
             undoArea.Commit( );

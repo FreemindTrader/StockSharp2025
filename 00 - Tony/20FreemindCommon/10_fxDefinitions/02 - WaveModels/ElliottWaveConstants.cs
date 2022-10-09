@@ -86,8 +86,8 @@ namespace fx.Definitions
         WaveCProjection     = 21,
         [Description( "Wave 2 Retracement" )]
         Wave2Retracement    = 22,
-        [Description( "Wave 3 Projection" )]
-        Wave3Projection     = 23,
+        [Description( "Wave 3 Classic Projection" )]
+        Wave3ClassicProjection     = 23,
         [Description( "Wave 3C Projection" )]
         Wave3CProjection    = 24,
         [Description( "Wave 4 Retracement" )]
@@ -117,6 +117,42 @@ namespace fx.Definitions
         [Description( "Tony Projection" )]
         TonyProjection   = 37,
         TonyRetracement   = 38,
+        [Description( "Wave 3 Extended Projection" )]
+        Wave3Extended = 39,
+        [Description( "Wave 3 Super Extended Projection" )]
+        Wave3SuperExtended = 40,
+        [Description( "Wave 3 All Projection" )]
+        Wave3All = 41,
+        CompactWave3 = 42
+    }
+
+    public enum FibonacciTargetType : byte
+    {
+        NONE = 0,
+        [Description( "3A Projection" )]
+        Wave3A = 1,
+        [Description( "3B Retracement" )]
+        Wave3B = 2,
+        [Description( "3C Projection" )]
+        Wave3C = 3,
+        [Description( "4 Retracement" )]
+        Wave4 = 4,
+        [Description( "5 Projection" )]
+        Wave5 = 5,
+        [Description( "C Projection" )]
+        Wave3All = 6,
+        [Description( "C Projection" )]
+        WaveC = 7,
+        [Description( "Wave3A_Wave4" )]
+        Wave3A_Wave4 = 90,
+        [Description( "Wave3A_Wave4" )]
+        Wave3C_Wave5 = 91,
+        [Description( "WaveX" )]
+        WaveX = 92,
+        [Description( "Inverse Retracement" )]
+        InverseRetracement = 98,
+        [Description( "Retracement" )]
+        Retracement = 99
     }
 
     public enum FibLevelOccurance : byte
@@ -297,7 +333,7 @@ namespace fx.Definitions
         [Description( "Wave 2 Retracement" )]
         Wave2Retracement    = 22,
         [Description( "Wave 3 Projection" )]
-        Wave3Projection     = 23,
+        Wave3ClassicProjection     = 23,
         [Description( "Wave 3C Projection" )]
         Wave3CProjection    = 24,
         [Description( "Wave 4 Retracement" )]
@@ -1381,7 +1417,7 @@ namespace fx.Definitions
                 case FibonacciType.Wave2Retracement:
                     return SR1stType.HewRET;
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3ClassicProjection:
                     return SR1stType.HewEXP;
 
 
@@ -1442,8 +1478,8 @@ namespace fx.Definitions
                 case FibonacciType.Wave2Retracement:
                     return SR3rdType.Wave2Retracement;
 
-                case FibonacciType.Wave3Projection:
-                    return SR3rdType.Wave3Projection;
+                case FibonacciType.Wave3ClassicProjection:
+                    return SR3rdType.Wave3ClassicProjection;
 
 
                 case FibonacciType.Wave3CProjection:

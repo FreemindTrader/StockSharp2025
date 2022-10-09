@@ -970,9 +970,9 @@ namespace fx.Charting.HewFibonacci
         //            return ABCWaveBRetracementLevelsRatio;
         //        }
 
-        //        case FibonacciType.Wave3Projection:
+        //        case FibonacciType.Wave3ClassicProjection:
         //        {
-        //            return Wave3ProjectionLevels;
+        //            return Wave3AllProjectionLevels;
         //        }
 
         //        case FibonacciType.Wave3CProjection:

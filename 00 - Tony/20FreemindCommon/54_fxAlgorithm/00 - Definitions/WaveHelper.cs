@@ -23,149 +23,187 @@ namespace fx.Algorithm
                                                               double endPoint,
                                                               double projectionPoint )
         {
-            PooledList< double > output = new PooledList< double >( 20 );
+            PooledList<double> output = new PooledList<double>( 20 );
 
             int i = 0;
 
             switch ( fibCalculationType )
             {
                 case FibonacciType.WaveCProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
-                        {
-                            output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[ i ] / 100 ) );
-                        }
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.Wave2Retracement:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3All:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave3ProjectionLevels.Length; i++ )
-                        {
-                            output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3ProjectionLevels[ i ] / 100 ) );
-                        }
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 ) );
+                    }                    
+                }
+                break;
+
+                case FibonacciType.Wave3ClassicProjection:
+                {
+                    for ( i = 0; i < Wave3Classic.ClassicWave3.Length; i++ )
+                    {
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3Classic.ClassicWave3[i].Value / 100 ) );
+                    }                    
+                }
+                break;
+
+                case FibonacciType.CompactWave3:
+                {
+                    for ( i = 0; i < Wave3Compressed.CompressWave3.Length; i++ )
+                    {
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3Classic.ClassicWave3[i].Value / 100 ) );                        
                     }
-                    break;
+                }
+                break;
+
+                case FibonacciType.Wave3Extended:
+                {
+                    for ( i = 0; i < Wave3Extended.ExtendedWave3.Length; i++ )
+                    {
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3Extended.ExtendedWave3[i].Value / 100 ) );
+                    }                    
+                }
+                break;
+
+                case FibonacciType.Wave3SuperExtended:
+                {
+                    for ( i = 0; i < Wave3SuperExtended.SuperExtendedWave3.Length; i++ )
+                    {
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3SuperExtended.SuperExtendedWave3[i].Value / 100 ) );
+                    }                    
+                }
+                break;
+
+                
 
                 case FibonacciType.Wave3CProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
-                        {
-                            output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[ i ] / 100 ) );
-                        }
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.Wave4Retracement:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.Wave5Projection:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
-                        {
-                            output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[ i ] / 100 ) );
-                        }
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.Wave5CProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
-                        {
-                            output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[ i ] / 100 ) );
-                        }
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.ABCWaveCProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
-                        {
-                            output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[ i ] / 100 ) );
-                        }
+                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.ABCWaveBRetracement:
+                {
+                    for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.WaveEFBRetracement:
+                {
+                    for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.WaveTriBRetracement:
+                {
+                    for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.WaveTriCProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.WaveTriDProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
 
                 case FibonacciType.WaveTriEProjection:
+                {
+                    for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
                     {
-                        for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
-                        {
-                            output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[ i ] / 100 ) );
-                        }
+                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 ) );
                     }
-                    break;
+                }
+                break;
             }
 
             return output;
         }
 
 
-        public static PooledList< ( float, int ) > CalculateAcutalFibonacciLevelsAndStrength(   FibonacciType fibCalculationType,
+        public static PooledList<(float, int)> CalculateAcutalFibonacciLevelsAndStrength( FibonacciType fibCalculationType,
                                                                                           float startPoint,
                                                                                           float endPoint,
                                                                                           float projectionPoint )
         {
-            PooledList< ( float, int ) > output = new PooledList<(float, int) >( 20 );
+            PooledList<(float, int)> output = new PooledList<(float, int)>( 20 );
 
             int i = 0;
 
@@ -175,8 +213,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels [ i ] / 100 );
-                        var strength = GlobalConstants.ABCWaveCProjectionStrength[ i ];
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
 
                         output.Add( (level, strength) );
                     }
@@ -187,8 +225,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels [ i ] / 100 ) ;
-                        var strength = GlobalConstants.Wave2RetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave2RetracementStrength[i];
 
                         output.Add( (level, strength) );
                     }
@@ -199,7 +237,7 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.FirstXProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ((endPoint - startPoint) * GlobalConstants.FirstXProjectionLevels[i] / 100);
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.FirstXProjectionLevels[i] / 100 );
                         var strength = GlobalConstants.FirstXProjectionStrength[i];
 
                         output.Add( (level, strength) );
@@ -211,7 +249,7 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.SecondXProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ((endPoint - startPoint) * GlobalConstants.SecondXProjectionLevels[i] / 100);
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.SecondXProjectionLevels[i] / 100 );
                         var strength = GlobalConstants.SecondXProjectionStrength[i];
 
                         output.Add( (level, strength) );
@@ -219,12 +257,12 @@ namespace fx.Algorithm
                 }
                 break;
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3ClassicProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave3ProjectionLevels.Length; i++ )
+                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3ProjectionLevels [ i ] / 100 );
-                        var strength = GlobalConstants.Wave3ProjectionStrength[ i ];
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave3AllProjectionStrength[i];
 
                         output.Add( (level, strength) );
                     }
@@ -235,8 +273,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels [ i ] / 100 );
-                        var strength = GlobalConstants.Wave3CProjectionStrength[ i ];
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave3CProjectionStrength[i];
 
                         output.Add( (level, strength) );
                     }
@@ -247,8 +285,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels [ i ] / 100 );
-                        var strength = GlobalConstants.Wave4RetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave4RetracementStrength[i];
 
                         output.Add( (level, strength) );
                     }
@@ -259,8 +297,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels [ i ] / 100 );
-                        var strength = GlobalConstants.Wave5ProjectionStrength[ i ];
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave5ProjectionStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -272,8 +310,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels [ i ] / 100 );
-                        var strength = GlobalConstants.Wave5CProjectionStrength[ i ];
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave5CProjectionStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -285,8 +323,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
                     {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels [ i ] / 100 );
-                        var strength = GlobalConstants.ABCWaveCProjectionStrength[ i ];
+                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -298,8 +336,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels [ i ] / 100 ) ;
-                        var strength = GlobalConstants.ABCWaveBRetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.ABCWaveBRetracementStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -311,8 +349,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels [ i ] / 100 ) ;
-                        var strength = GlobalConstants.WaveEFBRetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.WaveEFBRetracementStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -324,8 +362,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels [ i ] / 100 ) ;
-                        var strength = GlobalConstants.WaveTriBRetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.WaveTriBRetracementStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -337,8 +375,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels [ i ] / 100 ) ;
-                        var strength = GlobalConstants.WaveTriCRetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.WaveTriCRetracementStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -350,8 +388,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels [ i ] / 100 );
-                        var strength = GlobalConstants.WaveTriDRetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.WaveTriDRetracementStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -363,8 +401,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels [ i ] / 100 );
-                        var strength = GlobalConstants.WaveTriERetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.WaveTriERetracementStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -376,8 +414,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.TonyDiscoveryLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.TonyDiscoveryLevels [ i ] / 100 );
-                        var strength = GlobalConstants.TonyDiscoveryLevelsStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.TonyDiscoveryLevels[i] / 100 );
+                        var strength = GlobalConstants.TonyDiscoveryLevelsStrength[i];
 
 
                         output.Add( (level, strength) );
@@ -389,8 +427,8 @@ namespace fx.Algorithm
                 {
                     for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
                     {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels [ i ] / 100 ) ;
-                        var strength = GlobalConstants.Wave2RetracementStrength[ i ];
+                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave2RetracementStrength[i];
 
                         output.Add( (level, strength) );
                     }
@@ -402,14 +440,14 @@ namespace fx.Algorithm
         }
 
 
-        
+
         public static PooledList<WaveSRLineResponse> GetSRLinesResponse( FibonacciType fibType, ref SBar bar, PooledList<FibLevelInfo> srLines, TrendDirection direction )
         {
-            PooledList< WaveSRLineResponse > output = new PooledList< WaveSRLineResponse >( );
+            PooledList<WaveSRLineResponse> output = new PooledList<WaveSRLineResponse>();
 
             for ( int i = 0; i < srLines.Count; i++ )
             {
-                var fibLevelInfo = srLines[ i ];
+                var fibLevelInfo = srLines[i];
                 var response = GetBarReactionAtSRLine( ref bar, fibLevelInfo.FibLevel, direction );
 
                 if ( response != SRLineResponseType.NoRelationShip )
@@ -458,7 +496,7 @@ namespace fx.Algorithm
 
                 return true;
             }
-            
+
 
             return false;
         }
@@ -466,7 +504,7 @@ namespace fx.Algorithm
 
         public static bool isRetracement( this FibonacciType fibType )
         {
-            if ( fibType == FibonacciType.Wave2Retracement || 
+            if ( fibType == FibonacciType.Wave2Retracement ||
                  fibType == FibonacciType.Wave4Retracement ||
                  fibType == FibonacciType.WaveTriBRetracement ||
                  fibType == FibonacciType.ABCWaveBRetracement ||
@@ -481,7 +519,7 @@ namespace fx.Algorithm
         public static bool isProjection( this FibonacciType fibType )
         {
             if ( fibType == FibonacciType.WaveCProjection ||
-                 fibType == FibonacciType.Wave3Projection ||
+                 fibType == FibonacciType.Wave3ClassicProjection ||
                  fibType == FibonacciType.Wave3CProjection ||
                  fibType == FibonacciType.Wave5Projection ||
                  fibType == FibonacciType.Wave5CProjection ||
@@ -490,7 +528,7 @@ namespace fx.Algorithm
                  fibType == FibonacciType.WaveTriDProjection ||
                  fibType == FibonacciType.WaveTriEProjection ||
                  fibType == FibonacciType.FirstXProjection ||
-                 fibType == FibonacciType.SecondXProjection )                
+                 fibType == FibonacciType.SecondXProjection )
             {
                 return true;
             }
@@ -515,11 +553,11 @@ namespace fx.Algorithm
                     }
                     else if ( upperShadow.AlmostTouch( srLine ) )
                     {
-                        return SRLineResponseType.AlmostTouch;                        
+                        return SRLineResponseType.AlmostTouch;
                     }
                     else if ( upperShadow.Contains( srLine ) )
                     {
-                        return SRLineResponseType.PenetratedAndClosedBelow;                        
+                        return SRLineResponseType.PenetratedAndClosedBelow;
                     }
                     else
                     {
@@ -527,7 +565,7 @@ namespace fx.Algorithm
 
                         if ( realBody.HighestPointExactTouch( srLine ) )
                         {
-                            return SRLineResponseType.ExactTouch;                            
+                            return SRLineResponseType.ExactTouch;
                         }
                         else if ( realBody.HighestPointAlmostTouch( srLine ) )
                         {
@@ -535,11 +573,11 @@ namespace fx.Algorithm
                         }
                         else if ( ( bar.Open < srLine ) && ( bar.Close > srLine ) )
                         {
-                            return SRLineResponseType.BrokenAndClosedAbove;                            
+                            return SRLineResponseType.BrokenAndClosedAbove;
                         }
                         else if ( ( bar.Open > srLine ) && ( bar.Close < srLine ) )
                         {
-                            return SRLineResponseType.TestedAndFailedBelow;                            
+                            return SRLineResponseType.TestedAndFailedBelow;
                         }
                     }
                 }
@@ -633,13 +671,13 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.WaveEFA:
                 case ElliottWaveEnum.WaveEFC:
 
+                {
+                    if ( currentWave == ElliottWaveEnum.WaveA )
                     {
-                        if ( currentWave == ElliottWaveEnum.WaveA )
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                    break;
+                }
+                break;
 
                 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  * 
@@ -648,13 +686,13 @@ namespace fx.Algorithm
                  * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  */
                 case ElliottWaveEnum.WaveA:
+                {
+                    if ( currentWave == ElliottWaveEnum.WaveA || currentWave == ElliottWaveEnum.WaveEFA )
                     {
-                        if ( currentWave == ElliottWaveEnum.WaveA || currentWave == ElliottWaveEnum.WaveEFA )
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                    break;
+                }
+                break;
 
 
                 case ElliottWaveEnum.Wave2:
@@ -688,9 +726,9 @@ namespace fx.Algorithm
                 break;
 
                 default:
-                    {
-                        throw new NotImplementedException( );
-                    }
+                {
+                    throw new NotImplementedException();
+                }
             }
 
             return false;
@@ -709,8 +747,8 @@ namespace fx.Algorithm
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 case ElliottWaveEnum.Wave1:
                 case ElliottWaveEnum.Wave1C:
-                    output = ElliottWaveEnum.Wave2;
-                    break;
+                output = ElliottWaveEnum.Wave2;
+                break;
 
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //
@@ -718,8 +756,8 @@ namespace fx.Algorithm
                 //
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 case ElliottWaveEnum.Wave2:
-                    output = ElliottWaveEnum.Wave3;
-                    break;
+                output = ElliottWaveEnum.Wave3;
+                break;
 
                 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //
@@ -728,8 +766,8 @@ namespace fx.Algorithm
                 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 case ElliottWaveEnum.Wave3:
                 case ElliottWaveEnum.Wave3C:
-                    output = ElliottWaveEnum.Wave4;
-                    break;
+                output = ElliottWaveEnum.Wave4;
+                break;
 
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //
@@ -737,53 +775,53 @@ namespace fx.Algorithm
                 //
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 case ElliottWaveEnum.Wave4:
-                    output = ElliottWaveEnum.Wave5;
-                    break;
+                output = ElliottWaveEnum.Wave5;
+                break;
 
                 case ElliottWaveEnum.Wave5:
                 case ElliottWaveEnum.Wave5C:
-                    output = ElliottWaveEnum.WaveA;
-                    break;
+                output = ElliottWaveEnum.WaveA;
+                break;
 
                 case ElliottWaveEnum.WaveA:
-                    output = ElliottWaveEnum.WaveB;
-                    break;
+                output = ElliottWaveEnum.WaveB;
+                break;
 
                 case ElliottWaveEnum.WaveB:
-                    output = ElliottWaveEnum.WaveC;
-                    break;
+                output = ElliottWaveEnum.WaveC;
+                break;
 
                 case ElliottWaveEnum.WaveC:
-                    output = ElliottWaveEnum.NONE;
-                    break;
+                output = ElliottWaveEnum.NONE;
+                break;
 
                 case ElliottWaveEnum.WaveX:
-                    output = ElliottWaveEnum.WaveA;
-                    break;
+                output = ElliottWaveEnum.WaveA;
+                break;
 
                 case ElliottWaveEnum.WaveW:
-                    output = ElliottWaveEnum.WaveX;
-                    break;
+                output = ElliottWaveEnum.WaveX;
+                break;
 
                 case ElliottWaveEnum.WaveY:
-                    output = ElliottWaveEnum.WaveX;
-                    break;
-                
+                output = ElliottWaveEnum.WaveX;
+                break;
+
                 case ElliottWaveEnum.WaveZ:
-                    output = ElliottWaveEnum.NONE;
-                    break;
+                output = ElliottWaveEnum.NONE;
+                break;
 
 
                 case ElliottWaveEnum.WaveEFA:
-                    output = ElliottWaveEnum.WaveEFB;
-                    break;
+                output = ElliottWaveEnum.WaveEFB;
+                break;
 
                 case ElliottWaveEnum.WaveEFB:
-                    output = ElliottWaveEnum.WaveEFC;
-                    break;
+                output = ElliottWaveEnum.WaveEFC;
+                break;
 
                 default:
-                    throw new NotImplementedException( );
+                throw new NotImplementedException();
             }
 
             return output;
@@ -793,49 +831,49 @@ namespace fx.Algorithm
         {
             FibonacciType output = FibonacciType.NONE;
             switch ( containingWave )
-            {                
+            {
                 case ElliottWaveEnum.Wave1:
-                    output = FibonacciType.WaveCProjection;
-                    break;
-                
+                output = FibonacciType.WaveCProjection;
+                break;
+
                 case ElliottWaveEnum.Wave3:
-                    output = FibonacciType.Wave3CProjection;
-                    break;
-                
+                output = FibonacciType.Wave3CProjection;
+                break;
+
                 case ElliottWaveEnum.Wave5:
-                    output = FibonacciType.Wave5CProjection;
-                    break;
-                
-                case ElliottWaveEnum.WaveTA:                    
+                output = FibonacciType.Wave5CProjection;
+                break;
+
+                case ElliottWaveEnum.WaveTA:
                 case ElliottWaveEnum.WaveTB:
                 case ElliottWaveEnum.WaveTC:
                 case ElliottWaveEnum.WaveTD:
                 case ElliottWaveEnum.WaveTE:
-                    output = FibonacciType.WaveCProjection;
-                    break;
+                output = FibonacciType.WaveCProjection;
+                break;
 
-                case ElliottWaveEnum.WaveEFA:                    
+                case ElliottWaveEnum.WaveEFA:
                 case ElliottWaveEnum.WaveEFB:
-                    output = FibonacciType.WaveCProjection;
-                    break;
-                
+                output = FibonacciType.WaveCProjection;
+                break;
+
                 case ElliottWaveEnum.WaveA:
-                case ElliottWaveEnum.WaveB:                
-                    output = FibonacciType.WaveCProjection;
-                    break;
+                case ElliottWaveEnum.WaveB:
+                output = FibonacciType.WaveCProjection;
+                break;
                 case ElliottWaveEnum.WaveX:
                 case ElliottWaveEnum.WaveY:
                 case ElliottWaveEnum.WaveZ:
-                    output = FibonacciType.FirstXProjection;
-                    break;
-                
+                output = FibonacciType.FirstXProjection;
+                break;
+
             }
 
             return output;
         }
 
 
-        
+
 
         public static bool IsNextWave( this ElliottWaveEnum previousWave, ElliottWaveEnum nextWave )
         {
@@ -912,7 +950,7 @@ namespace fx.Algorithm
                     {
                         return true;
                     }
-                } 
+                }
                 break;
 
                 case ElliottWaveEnum.WaveA:
@@ -960,7 +998,7 @@ namespace fx.Algorithm
                     }
                 }
                 break;
-                
+
                 case ElliottWaveEnum.WaveZ:
                 {
                     if ( nextWave == ElliottWaveEnum.Wave1 )
@@ -971,64 +1009,64 @@ namespace fx.Algorithm
                 break;
 
                 case ElliottWaveEnum.WaveTE:
-                    if ( nextWave == ElliottWaveEnum.WaveA )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveA )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveTD:
-                    if ( nextWave == ElliottWaveEnum.WaveTE )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveTE )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveTC:
-                    if ( nextWave == ElliottWaveEnum.WaveTD )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveTD )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveTB:
-                    if ( nextWave == ElliottWaveEnum.WaveTC )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveTC )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveTA:
-                    if ( nextWave == ElliottWaveEnum.WaveTB )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveTB )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveEFA:
-                    if ( nextWave == ElliottWaveEnum.WaveEFB )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveEFB )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveEFB:
-                    if ( nextWave == ElliottWaveEnum.WaveEFC )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( nextWave == ElliottWaveEnum.WaveEFC )
+                {
+                    return true;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveEFC:
-                    if (nextWave == ElliottWaveEnum.WaveA)
-                    {
-                        return true;
-                    }
-                    break;
-                    
+                if ( nextWave == ElliottWaveEnum.WaveA )
+                {
+                    return true;
+                }
+                break;
+
 
                 default:
-                    throw new NotImplementedException( );
+                throw new NotImplementedException();
             }
 
             return false;
@@ -1056,13 +1094,13 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.Wave3C:
                 case ElliottWaveEnum.Wave5:
                 case ElliottWaveEnum.Wave5C:
+                {
+                    if ( lowerDegreeWave == ElliottWaveEnum.Wave5 || lowerDegreeWave == ElliottWaveEnum.Wave5C )
                     {
-                        if ( lowerDegreeWave == ElliottWaveEnum.Wave5 || lowerDegreeWave == ElliottWaveEnum.Wave5C )
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                    break;
+                }
+                break;
 
                 case ElliottWaveEnum.WaveEFA:
                 case ElliottWaveEnum.WaveEFB:
@@ -1073,13 +1111,13 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.WaveTD:
                 case ElliottWaveEnum.WaveTE:
                 case ElliottWaveEnum.Wave2:
+                {
+                    if ( ( lowerDegreeWave == ElliottWaveEnum.WaveC ) || ( lowerDegreeWave == ElliottWaveEnum.WaveEFC ) || ( lowerDegreeWave == ElliottWaveEnum.WaveTE ) )
                     {
-                        if ( ( lowerDegreeWave == ElliottWaveEnum.WaveC ) || ( lowerDegreeWave == ElliottWaveEnum.WaveEFC ) || ( lowerDegreeWave == ElliottWaveEnum.WaveTE ) )
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                    break;
+                }
+                break;
 
                 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //
@@ -1099,14 +1137,21 @@ namespace fx.Algorithm
                 }
                 break;
 
-
+                case ElliottWaveEnum.WaveW:
+                {
+                    if ( lowerDegreeWave == ElliottWaveEnum.WaveY  )
+                    {
+                        return true;
+                    }
+                }
+                    break;
 
 
 
                 default:
-                    {
-                        throw new NotImplementedException( );
-                    }
+                {
+                    throw new NotImplementedException();
+                }
             }
 
             return false;
@@ -1124,7 +1169,7 @@ namespace fx.Algorithm
 
             if ( labelEnum.HasFlag( StructureLabelEnum.c3 ) )
             {
-                if( !string.IsNullOrEmpty( output ) )
+                if ( !string.IsNullOrEmpty( output ) )
                     output += "/";
 
                 output += ":c3";
@@ -1226,13 +1271,13 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.WaveTE:
                 case ElliottWaveEnum.WaveEFA:
                 case ElliottWaveEnum.WaveEFB:
+                {
+                    if ( currentWave == ElliottWaveEnum.Wave1 )
                     {
-                        if ( currentWave == ElliottWaveEnum.Wave1 )
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                    break;
+                }
+                break;
 
                 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  * 
@@ -1247,13 +1292,13 @@ namespace fx.Algorithm
                  * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  */
                 case ElliottWaveEnum.WaveEFC:
+                {
+                    if ( currentWave == ElliottWaveEnum.Wave1 )
                     {
-                        if ( currentWave == ElliottWaveEnum.Wave1 )
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                    break;
+                }
+                break;
 
 
                 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1268,7 +1313,7 @@ namespace fx.Algorithm
                  */
                 case ElliottWaveEnum.Wave2:
                 case ElliottWaveEnum.Wave4:
-                case ElliottWaveEnum.WaveX:                
+                case ElliottWaveEnum.WaveX:
                 case ElliottWaveEnum.WaveB:
                 {
                     if ( currentWave == ElliottWaveEnum.WaveA )
@@ -1330,7 +1375,7 @@ namespace fx.Algorithm
 
                 default:
                 {
-                    throw new NotImplementedException( );
+                    throw new NotImplementedException();
                 }
             }
 
@@ -1362,11 +1407,11 @@ namespace fx.Algorithm
 
                 case ElliottWaveEnum.WaveA:
                 case ElliottWaveEnum.WaveC:
-                    if ( firstWave == ElliottWaveEnum.Wave4 || firstWave == ElliottWaveEnum.WaveB )
-                    {
-                        return true;
-                    }
-                    break;
+                if ( firstWave == ElliottWaveEnum.Wave4 || firstWave == ElliottWaveEnum.WaveB )
+                {
+                    return true;
+                }
+                break;
 
                 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  * 
@@ -1402,7 +1447,7 @@ namespace fx.Algorithm
                  * 
                  * * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  */
-                
+
                 case ElliottWaveEnum.Wave2:
                 case ElliottWaveEnum.Wave4:
                 case ElliottWaveEnum.WaveB:
@@ -1445,7 +1490,7 @@ namespace fx.Algorithm
 
                 default:
                 {
-                    throw new NotImplementedException( );
+                    throw new NotImplementedException();
                 }
             }
             return false;
@@ -1491,7 +1536,7 @@ namespace fx.Algorithm
 
                 default:
                 {
-                    throw new NotImplementedException( );
+                    throw new NotImplementedException();
                 }
             }
         }
@@ -1503,25 +1548,25 @@ namespace fx.Algorithm
                 switch ( projectionWave ) // We we are doing projection, the only possiblities are.
                 {
                     case ElliottWaveEnum.Wave2: // i) Projection of Wave 1 length from the base of Wave 2
-                        {
-                            if ( endWaveName == ElliottWaveEnum.Wave1 )
-                                return true;
-                        }
-                        break;
+                    {
+                        if ( endWaveName == ElliottWaveEnum.Wave1 )
+                            return true;
+                    }
+                    break;
 
                     case ElliottWaveEnum.Wave4: // ii) Projection of Wave 1-3 length from the base of Wave 4
-                        {
-                            if ( endWaveName == ElliottWaveEnum.Wave3 )
-                                return true;
-                        }
-                        break;
+                    {
+                        if ( endWaveName == ElliottWaveEnum.Wave3 )
+                            return true;
+                    }
+                    break;
 
                     case ElliottWaveEnum.WaveB: // iii) Projection of Wave A length from the base of Wave B
-                        {
-                            if ( endWaveName == ElliottWaveEnum.WaveA )
-                                return true;
-                        }
-                        break;
+                    {
+                        if ( endWaveName == ElliottWaveEnum.WaveA )
+                            return true;
+                    }
+                    break;
                 }
             }
             else
@@ -1530,32 +1575,32 @@ namespace fx.Algorithm
                 {
                     case ElliottWaveEnum.Wave1: // i) Projection of Wave 1 length from the base of Wave 2
                     case ElliottWaveEnum.Wave1C: // i) Projection of Wave 1 length from the base of Wave 2
-                        {
-                            if ( startWaveName == ElliottWaveEnum.Wave5 )
-                                return true;
-                        }
-                        break;
+                    {
+                        if ( startWaveName == ElliottWaveEnum.Wave5 )
+                            return true;
+                    }
+                    break;
 
                     case ElliottWaveEnum.Wave3: // ii) Projection of Wave 1-3 length from the base of Wave 4
                     case ElliottWaveEnum.Wave3C: // ii) Projection of Wave 1-3 length from the base of Wave 4
-                        {
-                            if ( startWaveName == ElliottWaveEnum.Wave2 )
-                                return true;
-                        }
-                        break;
+                    {
+                        if ( startWaveName == ElliottWaveEnum.Wave2 )
+                            return true;
+                    }
+                    break;
 
                     case ElliottWaveEnum.Wave5: // iii) Projection of Wave A length from the base of Wave B
                     case ElliottWaveEnum.Wave5C: // iii) Projection of Wave A length from the base of Wave B
-                        {
-                            if ( startWaveName == ElliottWaveEnum.Wave5 || startWaveName == ElliottWaveEnum.WaveC )
-                                return true;
-                        }
-                        break;
+                    {
+                        if ( startWaveName == ElliottWaveEnum.Wave5 || startWaveName == ElliottWaveEnum.WaveC )
+                            return true;
+                    }
+                    break;
 
                     case ElliottWaveEnum.WaveA:
-                        {
-                            return true;
-                        }
+                    {
+                        return true;
+                    }
                 }
             }
 
@@ -1563,8 +1608,8 @@ namespace fx.Algorithm
             return false;
         }
 
-        
-        
+
+
 
         public static bool AnyKindOfWaveC( ElliottWaveEnum waveName )
         {
@@ -1584,13 +1629,13 @@ namespace fx.Algorithm
                 }
             }
 
-            if ( ( beginWave == ElliottWaveEnum.WaveA ) && ( currentWave == ElliottWaveEnum.WaveB )   )
+            if ( ( beginWave == ElliottWaveEnum.WaveA ) && ( currentWave == ElliottWaveEnum.WaveB ) )
             {
                 if ( AnyKindOfWaveC( endWave ) )
                 {
                     return true;
                 }
-                
+
             }
 
             if ( ( beginWave == ElliottWaveEnum.WaveW ) && ( currentWave == ElliottWaveEnum.WaveB ) )
@@ -1602,11 +1647,11 @@ namespace fx.Algorithm
 
             }
 
-            if ( beginWave == ElliottWaveEnum.WaveB ) 
-            {                
+            if ( beginWave == ElliottWaveEnum.WaveB )
+            {
                 if ( currentWave == ElliottWaveEnum.WaveC )
                 {
-                    if ( endWave == ElliottWaveEnum.WaveX  )
+                    if ( endWave == ElliottWaveEnum.WaveX )
                     {
                         return true;
                     }
@@ -1623,11 +1668,11 @@ namespace fx.Algorithm
                 }
 
                 if ( currentWave == ElliottWaveEnum.Wave1C || currentWave == ElliottWaveEnum.Wave1 )
-                {                    
+                {
                     if ( endWave == ElliottWaveEnum.Wave2 )
                     {
                         return true;
-                    }                    
+                    }
                 }
 
                 if ( currentWave == ElliottWaveEnum.Wave3C || currentWave == ElliottWaveEnum.Wave3 )
@@ -1636,7 +1681,7 @@ namespace fx.Algorithm
                     {
                         return true;
                     }
-                }                
+                }
             }
 
             if ( ( beginWave == ElliottWaveEnum.WaveW ) && ( currentWave == ElliottWaveEnum.WaveX ) && ( endWave == ElliottWaveEnum.WaveY ) )
@@ -1649,7 +1694,7 @@ namespace fx.Algorithm
                 return true;
             }
 
-            if ( ( beginWave == ElliottWaveEnum.WaveC ) && ( currentWave == ElliottWaveEnum.WaveX ) && ( endWave == ElliottWaveEnum.WaveA )  )
+            if ( ( beginWave == ElliottWaveEnum.WaveC ) && ( currentWave == ElliottWaveEnum.WaveX ) && ( endWave == ElliottWaveEnum.WaveA ) )
             {
                 return true;
             }
@@ -1700,7 +1745,7 @@ namespace fx.Algorithm
                                                                        ElliottWaveCycle cycle,
                                                                        ElliottWaveEnum currentWaveName
                                                                 )
-        {            
+        {
             if ( previousWave == null || nextWave == null )
             {
                 return null;
@@ -1708,24 +1753,24 @@ namespace fx.Algorithm
 
             var posCycle = new WaveInfo( ElliottWaveCycle.UNKNOWN, ElliottWaveEnum.NONE, WaveLabelPosition.UNKNOWN );
 
-            ElliottWaveCycle output        = cycle;
+            ElliottWaveCycle output = cycle;
 
-            ref var hewPrev            = ref previousWave.GetWaveFromScenario( 1 );
-            ref var hewNext                = ref nextWave.GetWaveFromScenario( 1 );
+            ref var hewPrev = ref previousWave.GetWaveFromScenario( 1 );
+            ref var hewNext = ref nextWave.GetWaveFromScenario( 1 );
 
-            var previousHighestWave        = hewPrev.GetLastHighestWaveDegree( );
-            var nextHighestWave            = hewNext.GetFirstHighestWaveInfo( );
+            var previousHighestWave = hewPrev.GetLastHighestWaveDegree();
+            var nextHighestWave = hewNext.GetFirstHighestWaveInfo();
 
-            var previousHighestWaveName    = previousHighestWave.HasValue ? previousHighestWave.Value.WaveName  : ElliottWaveEnum.NONE;
-            var previousHighestWaveCycle   = previousHighestWave.HasValue ? previousHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;            
-            var nextHighestWaveName        = nextHighestWave.HasValue     ? nextHighestWave.Value.WaveName      : ElliottWaveEnum.NONE;
-            var nextHighestWaveCycle       = nextHighestWave.HasValue     ? nextHighestWave.Value.WaveCycle     : ElliottWaveCycle.UNKNOWN;
-            
+            var previousHighestWaveName = previousHighestWave.HasValue ? previousHighestWave.Value.WaveName : ElliottWaveEnum.NONE;
+            var previousHighestWaveCycle = previousHighestWave.HasValue ? previousHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
+            var nextHighestWaveName = nextHighestWave.HasValue ? nextHighestWave.Value.WaveName : ElliottWaveEnum.NONE;
+            var nextHighestWaveCycle = nextHighestWave.HasValue ? nextHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
 
-            int previousWaveCount          = hewPrev.GetWaveDegreeCount( );
-            int nextWaveCount              = hewNext.GetWaveDegreeCount( );
 
-            
+            int previousWaveCount = hewPrev.GetWaveDegreeCount();
+            int nextWaveCount = hewNext.GetWaveDegreeCount();
+
+
 
 
             if ( previousHighestWaveCycle == nextHighestWaveCycle )
@@ -1795,7 +1840,7 @@ namespace fx.Algorithm
                     else if ( previousWaveLowerDegreeName.Count > 0 && IsNextWave( previousWaveLowerDegreeName[0], nextHighestWaveName ) )
                     {
                         output = nextHighestWaveCycle - GlobalConstants.OneWaveCycle;
-                    }                    
+                    }
                     else if ( previousHighestWaveName.IsNextWaveOneDegreeLowerBeginning( currentWaveName ) )
                     {
                         output = previousHighestWaveCycle - GlobalConstants.OneWaveCycle;
@@ -1807,7 +1852,7 @@ namespace fx.Algorithm
                     else
                     {
 
-                    }                    
+                    }
                 }
                 else if ( ( previousHighestWaveCycle - nextHighestWaveCycle ) > GlobalConstants.OneWaveCycle )
                 {
@@ -1852,7 +1897,7 @@ namespace fx.Algorithm
                         nextWaveLowerDegreeName.Add( GetLowerDegreeWaveName( nextHighestWaveName ) );
                     }
 
-                    if ( nextWaveLowerDegreeName.Count > 0 && IsInBetweenWave( previousHighestWaveName, currentWaveName, nextWaveLowerDegreeName[ 0 ] ) )
+                    if ( nextWaveLowerDegreeName.Count > 0 && IsInBetweenWave( previousHighestWaveName, currentWaveName, nextWaveLowerDegreeName[0] ) )
                     {
                         output = previousHighestWaveCycle;
                     }
@@ -1902,7 +1947,7 @@ namespace fx.Algorithm
             }
 
 
-            return posCycle;            
+            return posCycle;
         }
 
         public static ElliottWaveCycle FindCycleBetweenWaves( int waveScenarioNo,
@@ -1925,39 +1970,39 @@ namespace fx.Algorithm
 
             //ISmartWaveCycles estWaveCycle = null;
 
-            ref var hewPrev       = ref previousWave.GetWaveFromScenario( waveScenarioNo );
-            ref var hewNext           = ref nextWave.GetWaveFromScenario( waveScenarioNo );
+            ref var hewPrev = ref previousWave.GetWaveFromScenario( waveScenarioNo );
+            ref var hewNext = ref nextWave.GetWaveFromScenario( waveScenarioNo );
 
-            var previousHighestWave       = hewPrev.GetLastHighestWaveDegree( );
-            var nextHighestWave           = hewNext.GetFirstHighestWaveInfo( );
+            var previousHighestWave = hewPrev.GetLastHighestWaveDegree();
+            var nextHighestWave = hewNext.GetFirstHighestWaveInfo();
 
-            var previousHighestWaveName   = previousHighestWave.HasValue ? previousHighestWave.Value.WaveName : ElliottWaveEnum.NONE;
-            var previousHighestWaveCycle  = previousHighestWave.HasValue ? previousHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
-            var nextHighestWaveName       = nextHighestWave.HasValue ? nextHighestWave.Value.WaveName : ElliottWaveEnum.NONE;
-            var nextHighestWaveCycle      = nextHighestWave.HasValue ? nextHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
+            var previousHighestWaveName = previousHighestWave.HasValue ? previousHighestWave.Value.WaveName : ElliottWaveEnum.NONE;
+            var previousHighestWaveCycle = previousHighestWave.HasValue ? previousHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
+            var nextHighestWaveName = nextHighestWave.HasValue ? nextHighestWave.Value.WaveName : ElliottWaveEnum.NONE;
+            var nextHighestWaveCycle = nextHighestWave.HasValue ? nextHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
 
-            int previousWaveCount         = hewPrev.GetWaveDegreeCount( );
-            int nextWaveCount             = hewNext.GetWaveDegreeCount( );
+            int previousWaveCount = hewPrev.GetWaveDegreeCount();
+            int nextWaveCount = hewNext.GetWaveDegreeCount();
 
             var estPreviousWaveImportance = -1;
-            var estNextWaveImportance     = -1;
-            var estWaveImportance         = -1;
+            var estNextWaveImportance = -1;
+            var estWaveImportance = -1;
 
             if ( waveImportanceDict != null )
             {
                 if ( waveImportanceDict.ContainsKey( rawBarTime ) )
                 {
-                    estWaveImportance = waveImportanceDict [ rawBarTime ].WaveImportance;
+                    estWaveImportance = waveImportanceDict[rawBarTime].WaveImportance;
                 }
 
                 if ( waveImportanceDict.ContainsKey( previousWave.StartDate ) )
                 {
-                    estPreviousWaveImportance = waveImportanceDict [ previousWave.StartDate ].WaveImportance;
+                    estPreviousWaveImportance = waveImportanceDict[previousWave.StartDate].WaveImportance;
                 }
 
                 if ( waveImportanceDict.ContainsKey( nextWave.StartDate ) )
                 {
-                    estNextWaveImportance = waveImportanceDict [ nextWave.StartDate ].WaveImportance;
+                    estNextWaveImportance = waveImportanceDict[nextWave.StartDate].WaveImportance;
                 }
             }
 
@@ -2038,11 +2083,11 @@ namespace fx.Algorithm
 
                     if ( previousWaveLowerDegree.Count > 0 )
                     {
-                        if ( IsInBetweenWave( previousWaveLowerDegree [ 0 ], currentWaveName, nextHighestWaveName ) )
+                        if ( IsInBetweenWave( previousWaveLowerDegree[0], currentWaveName, nextHighestWaveName ) )
                         {
                             output = nextHighestWaveCycle;
                         }
-                        else if ( IsNextWave( previousWaveLowerDegree [ 0 ], nextHighestWaveName ) )
+                        else if ( IsNextWave( previousWaveLowerDegree[0], nextHighestWaveName ) )
                         {
                             output = nextHighestWaveCycle - GlobalConstants.OneWaveCycle;
                         }
@@ -2081,7 +2126,7 @@ namespace fx.Algorithm
                     }
                     else
                     {
-                        if ( IsNextWave(previousHighestWaveName, currentWaveName) )
+                        if ( IsNextWave( previousHighestWaveName, currentWaveName ) )
                         {
                             output = previousHighestWaveCycle;
                         }
@@ -2155,16 +2200,16 @@ namespace fx.Algorithm
                      *          b) If there isn't wave at that degree                     
                      *  --------------------------------------------------------------------------------------------------------------------------------------------------
                     */
-                  
+
                     var nextWaveLowerDegreeName = hewNext.GetWavesAtCycle( previousHighestWaveCycle );
 
                     if ( nextWaveLowerDegreeName.Count > 0 )
                     {
-                        if ( IsInBetweenWave( previousHighestWaveName, currentWaveName, nextWaveLowerDegreeName [ 0 ] ) )
+                        if ( IsInBetweenWave( previousHighestWaveName, currentWaveName, nextWaveLowerDegreeName[0] ) )
                         {
                             output = previousHighestWaveCycle;
                         }
-                        else if ( IsNextWave( previousHighestWaveName, nextWaveLowerDegreeName [ 0 ] ) )
+                        else if ( IsNextWave( previousHighestWaveName, nextWaveLowerDegreeName[0] ) )
                         {
                             output = previousHighestWaveCycle - GlobalConstants.OneWaveCycle;
                         }
@@ -2207,7 +2252,7 @@ namespace fx.Algorithm
                         {
                             output = previousHighestWaveCycle;
                         }
-                        else if (IsNextWave(currentWaveName, nextHighestWaveName))
+                        else if ( IsNextWave( currentWaveName, nextHighestWaveName ) )
                         {
                             output = nextHighestWaveCycle;
                         }
@@ -2263,19 +2308,19 @@ namespace fx.Algorithm
             return output;
         }
 
-        public static ElliottWaveCycle FindCycleFromNextWave(  int waveScenarioNo,
+        public static ElliottWaveCycle FindCycleFromNextWave( int waveScenarioNo,
                                                                 BTreeDictionary<long, WavePointImportance> waveImportanceDict,
                                                                 IElliottWave nextWaveDB,
                                                                 TimeSpan responsibleForWhatTimeFrame,
                                                                 long rawBarTime,
                                                                 ElliottWaveCycle cycle,
                                                                 ElliottWaveEnum currentWaveName,
-                                                                ref SBar bar 
+                                                                ref SBar bar
                                                             )
         {
             ref var hew = ref nextWaveDB.GetWaveFromScenario( waveScenarioNo );
 
-            var allwaves = hew.GetAllWaves( );
+            var allwaves = hew.GetAllWaves();
 
             foreach ( var nextWave in allwaves )
             {
@@ -2299,22 +2344,22 @@ namespace fx.Algorithm
 
             ref var hew2 = ref nextWaveDB.GetWaveFromScenario( waveScenarioNo );
 
-            var nextHighestWave            = hew2.GetFirstHighestWaveInfo( );
-            var nextHighestWaveCycle       = nextHighestWave.HasValue ? nextHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
+            var nextHighestWave = hew2.GetFirstHighestWaveInfo();
+            var nextHighestWaveCycle = nextHighestWave.HasValue ? nextHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
 
-            var estNextWaveImportance      = -1;
-            var estWaveImportance          = -1;
+            var estNextWaveImportance = -1;
+            var estWaveImportance = -1;
 
             if ( waveImportanceDict != null )
             {
                 if ( waveImportanceDict.ContainsKey( rawBarTime ) )
                 {
-                    estWaveImportance = waveImportanceDict [ rawBarTime ].WaveImportance;
+                    estWaveImportance = waveImportanceDict[rawBarTime].WaveImportance;
                 }
 
                 if ( waveImportanceDict.ContainsKey( nextWaveDB.StartDate ) )
                 {
-                    estNextWaveImportance = waveImportanceDict [ nextWaveDB.StartDate ].WaveImportance;
+                    estNextWaveImportance = waveImportanceDict[nextWaveDB.StartDate].WaveImportance;
                 }
             }
 
@@ -2328,7 +2373,7 @@ namespace fx.Algorithm
             *         degree.
             *  -----------------------------------------------------------------------------------------------------------------------------
             */
-            ElliottWaveCycle output        = cycle;
+            ElliottWaveCycle output = cycle;
             //ISmartWaveCycles estWaveCycle = null;
 
             if ( estNextWaveImportance > -1 && estWaveImportance > -1 )
@@ -2356,7 +2401,7 @@ namespace fx.Algorithm
         }
 
 
-        public static ElliottWaveCycle FindCycleFromPreviousWave( int waveScenarioNo, 
+        public static ElliottWaveCycle FindCycleFromPreviousWave( int waveScenarioNo,
                                                                     BTreeDictionary<long, WavePointImportance> waveImportanceDict,
                                                                     IElliottWave previousDB,
                                                                     TimeSpan responsibleForWhatTimeFrame,
@@ -2366,7 +2411,7 @@ namespace fx.Algorithm
                                                                     ref SBar bar )
         {
             ref var hew = ref previousDB.GetWaveFromScenario( waveScenarioNo );
-            var allwaves = hew.GetAllWaves( );
+            var allwaves = hew.GetAllWaves();
 
             foreach ( var previousWave in allwaves )
             {
@@ -2392,8 +2437,8 @@ namespace fx.Algorithm
                 }
             }
 
-            
-            var previousHighestWave = hew.GetFirstHighestWaveInfo( );
+
+            var previousHighestWave = hew.GetFirstHighestWaveInfo();
             var previousHighestWaveCycle = previousHighestWave.HasValue ? previousHighestWave.Value.WaveCycle : ElliottWaveCycle.UNKNOWN;
 
             var estNextWaveImportance = -1;
@@ -2403,12 +2448,12 @@ namespace fx.Algorithm
             {
                 if ( waveImportanceDict.ContainsKey( rawBarTime ) )
                 {
-                    estWaveImportance = waveImportanceDict [ rawBarTime ].WaveImportance;
+                    estWaveImportance = waveImportanceDict[rawBarTime].WaveImportance;
                 }
 
                 if ( waveImportanceDict.ContainsKey( previousDB.StartDate ) )
                 {
-                    estNextWaveImportance = waveImportanceDict [ previousDB.StartDate ].WaveImportance;
+                    estNextWaveImportance = waveImportanceDict[previousDB.StartDate].WaveImportance;
                 }
             }
 
@@ -2465,19 +2510,19 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.Wave3:
                 case ElliottWaveEnum.Wave3C:
 
-                    if ( beginWave == ElliottWaveEnum.Wave2 ) return true;
-                    break;
+                if ( beginWave == ElliottWaveEnum.Wave2 ) return true;
+                break;
 
                 case ElliottWaveEnum.Wave5:
                 case ElliottWaveEnum.Wave5C:
 
-                    if ( beginWave == ElliottWaveEnum.Wave4 ) return true;
-                    break;
+                if ( beginWave == ElliottWaveEnum.Wave4 ) return true;
+                break;
 
                 case ElliottWaveEnum.Wave1:
                 case ElliottWaveEnum.Wave1C:
-                    if ( beginWave == ElliottWaveEnum.Wave5 || beginWave == ElliottWaveEnum.Wave5C ) return true;
-                    break;
+                if ( beginWave == ElliottWaveEnum.Wave5 || beginWave == ElliottWaveEnum.Wave5C ) return true;
+                break;
             }
             return false;
         }
@@ -2598,7 +2643,7 @@ namespace fx.Algorithm
                 }
                 else if ( waveImportance == 34 )
                 {
-                    output = ElliottWaveCycle.Minor; 
+                    output = ElliottWaveCycle.Minor;
                 }
                 else if ( waveImportance == 21 )
                 {
@@ -2679,7 +2724,7 @@ namespace fx.Algorithm
                     output = ElliottWaveCycle.Intermediate;
                 }
             }
-        
+
 
             return output;
         }
@@ -2690,7 +2735,7 @@ namespace fx.Algorithm
 
             if ( previousWave != null && nextWave != null ) // We are trying to label wave in Betwen 2 wave labels
             {
-                output = FindCycleBetweenWaves( waveScenarioNo, waveImportanceDictionary, previousWave, nextWave, responsibleForWhatTimeFrame, rawBarTime, cycle, currentWaveName, ref  bar );
+                output = FindCycleBetweenWaves( waveScenarioNo, waveImportanceDictionary, previousWave, nextWave, responsibleForWhatTimeFrame, rawBarTime, cycle, currentWaveName, ref bar );
             }
             else if ( previousWave != null )
             {
@@ -2707,12 +2752,12 @@ namespace fx.Algorithm
                 {
                     if ( waveImportanceDictionary.ContainsKey( rawBarTime ) )
                     {
-                        waveImpt = waveImportanceDictionary [ rawBarTime ].WaveImportance;
+                        waveImpt = waveImportanceDictionary[rawBarTime].WaveImportance;
                     }
 
                     if ( waveImpt > -1 )
                     {
-                        output = GetWaveCycleEstimation( offerId, responsibleForWhatTimeFrame, waveImportanceDictionary [ rawBarTime ].WaveImportance );                        
+                        output = GetWaveCycleEstimation( offerId, responsibleForWhatTimeFrame, waveImportanceDictionary[rawBarTime].WaveImportance );
                     }
                 }
             }
@@ -2729,6 +2774,6 @@ namespace fx.Algorithm
     }
 
 }
-    
+
 
 

@@ -1,18 +1,17 @@
 ﻿<UserControl
     x:Class="fx.Charting.ChartExView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
-    xmlns:VM="clr-namespace:fx.Charting"
-    xmlns:View="clr-namespace:fx.Charting"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cnvt="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
     xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
-    
-    
     xmlns:local="clr-namespace:fx.Charting"
     xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
     xmlns:s3D="http://schemas.abtsoftware.co.uk/scichart3D"
-    xmlns:sysXaml="clr-namespace:System.Windows.Markup;assembly=System.Xaml" xmlns:cnvt="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+    xmlns:sysXaml="clr-namespace:System.Windows.Markup;assembly=System.Xaml"
+    xmlns:View="clr-namespace:fx.Charting"
+    xmlns:VM="clr-namespace:fx.Charting"
     s:ThemeManager.Theme="{Binding SelectedTheme}">
 
     <UserControl.DataContext>
@@ -33,7 +32,7 @@
             <Setter Property="s:SciChartGroup.IsTabbed" Value="True" />
         </Style>
         <Style x:Key="Grpstyle" TargetType="{x:Type s:SciChartGroupPane}">
-            
+
             <Setter Property="s:SciChartGroupPane.HeaderTemplate">
                 <Setter.Value>
                     <DataTemplate DataType="s:ItemPane">
@@ -137,22 +136,23 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <FrameworkElement.ContextMenu>
+        <!--<FrameworkElement.ContextMenu>
             <ContextMenu DataContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}" Visibility="{Binding ChartExViewModel.IsInteracted, Converter={StaticResource BoolToVisibilityConverter}}">
                 <MenuItem
                     Command="{Binding ChartExViewModel.AddAreaCommand}"
                     Header="{x:Static loc:LocalizedStrings.XamlStr143}"
                     ToolTip="{x:Static loc:LocalizedStrings.XamlStr143}" />
             </ContextMenu>
-        </FrameworkElement.ContextMenu>
-        <s:SciChartGroup IsTabbed="True"
+        </FrameworkElement.ContextMenu>-->
+        <s:SciChartGroup
             x:Name="ChartGroupEx"
+            IsTabbed="True"
             ItemContainerStyle="{StaticResource Grpstyle}"
             ItemsSource="{Binding ScichartSurfaceViewModels}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="local:ScichartSurfaceMVVM">
                     <Grid>
-                        <FrameworkElement.ContextMenu>
+                        <!--<FrameworkElement.ContextMenu>
                             <ContextMenu DataContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}" Visibility="{Binding ChartExViewModel.IsInteracted, Converter={StaticResource BoolToVisibilityConverter}}">
                                 <MenuItem Command="{Binding ChartExViewModel.AddAreaCommand}" ToolTip="{x:Static loc:LocalizedStrings.XamlStr143}">
                                     <HeaderedItemsControl.Header>
@@ -179,21 +179,24 @@
                                     <HeaderedItemsControl.Header>
                                         <TextBlock>
                                             <Run Text="{x:Static loc:LocalizedStrings.Candles}" />
-                                            ...</TextBlock>
+                                            ...
+                                        </TextBlock>
                                     </HeaderedItemsControl.Header>
                                 </MenuItem>
                                 <MenuItem Command="{Binding ChartExViewModel.AddIndicatorCommand}" CommandParameter="{Binding Area}">
                                     <HeaderedItemsControl.Header>
                                         <TextBlock>
                                             <Run Text="{x:Static loc:LocalizedStrings.Str1981}" />
-                                            ...</TextBlock>
+                                            ...
+                                        </TextBlock>
                                     </HeaderedItemsControl.Header>
                                 </MenuItem>
                                 <MenuItem Command="{Binding ChartExViewModel.AddIndicatorFifoCommand}" CommandParameter="{Binding Area}">
                                     <HeaderedItemsControl.Header>
                                         <TextBlock>
                                             <Run Text="{x:Static loc:LocalizedStrings.IndicatorFifo}" />
-                                            ...</TextBlock>
+                                            ...
+                                        </TextBlock>
                                     </HeaderedItemsControl.Header>
                                 </MenuItem>
                                 <Separator />
@@ -201,21 +204,27 @@
                                     <HeaderedItemsControl.Header>
                                         <TextBlock>
                                             <Run Text="{x:Static loc:LocalizedStrings.Orders}" />
-                                            ...</TextBlock>
+                                            ...
+                                        </TextBlock>
                                     </HeaderedItemsControl.Header>
                                 </MenuItem>
                                 <MenuItem Command="{Binding ChartExViewModel.AddTradesCommand}" CommandParameter="{Binding Area}">
                                     <HeaderedItemsControl.Header>
                                         <TextBlock>
                                             <Run Text="{x:Static loc:LocalizedStrings.MyTrades}" />
-                                            ...</TextBlock>
+                                            ...
+                                        </TextBlock>
                                     </HeaderedItemsControl.Header>
                                 </MenuItem>
                             </ContextMenu>
-                        </FrameworkElement.ContextMenu>
+                        </FrameworkElement.ContextMenu>-->
 
                         <s:SciChartSurface
                             x:Name="TonySciChart"
+                            Background="White"
+                            ChartModifier="{Binding ChartModifier}"
+                            ClipModifierSurface="true"
+                            Initialized="OnInitialized"
                             s:SciChartGroup.VerticalChartGroup="{Binding PaneGroup}"
                             s:SciChartSurface.Annotations="{Binding Annotations}"
                             s:SciChartSurface.RenderableSeries="{Binding AdvanceChartRenderableSeries}"
@@ -225,10 +234,6 @@
                             s:VisualXcceleratorEngine.EnableImpossibleMode="True"
                             s:VisualXcceleratorEngine.FallbackType="{x:Type s:HighQualityRenderSurface}"
                             s:VisualXcceleratorEngine.IsEnabled="True"
-                            Background="White"
-                            ChartModifier="{Binding ChartModifier}"
-                            ClipModifierSurface="true"
-                            Initialized="OnInitialized"
                             ViewportManager="{Binding ViewportManager}" />
                         <local:ultrachartlegend
                             FrameworkElement.DataContext="{Binding LegendViewModel}"

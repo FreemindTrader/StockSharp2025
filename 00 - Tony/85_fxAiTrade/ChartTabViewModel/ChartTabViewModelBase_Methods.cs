@@ -278,5 +278,10 @@ namespace FreemindAITrade.ViewModels
 
         }
 
+        public virtual void AnalysisLockedFibs()
+        {
+
+        }
+
     }
 }

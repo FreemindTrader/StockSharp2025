@@ -70,7 +70,7 @@ namespace fx.Algorithm
 
         public void AnalysePastImpulsiveMove( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree )
         {
-            var postActions = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, period, selectedBarTime, waveName, waveDegree );
+            var postActions = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, period, selectedBarTime, waveDegree );
 
             _correctionPattern = GetCorrectionPattern( waveScenarioNo, selectedBarTime, postActions );
 

@@ -53,5 +53,10 @@ namespace fx.Algorithm
             //    _wave1Time = _hews.FindPreviousWave1Btw( waveScenarioNo, period, _wave0Time, _wave3CTime, waveDegree );
             //}
         }
+
+        private void ProcessWave2( WaveInfo waveInfo )
+        {
+
+        }
     }
 }

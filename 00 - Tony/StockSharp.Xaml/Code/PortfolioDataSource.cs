@@ -1,4 +1,5 @@
 ﻿using Ecng.Collections;
+using Ecng.ComponentModel;
 using Ecng.Xaml;
 using StockSharp.BusinessEntities;
 using System;

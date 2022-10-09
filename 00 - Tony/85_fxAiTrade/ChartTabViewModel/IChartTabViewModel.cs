@@ -72,7 +72,7 @@ namespace FreemindAITrade.ViewModels
 
         void AnalyzeWaveTarget();
 
-        void ClassicWave3Target( );
+        void ShrinkWave3Target( );
 
         void ExtendedWave3Target( );
 
@@ -104,5 +104,6 @@ namespace FreemindAITrade.ViewModels
         void Step3_LoadCandlesFromLocalStorage_NonVisual();
 
         void AnalysisWave();
+        void AnalysisLockedFibs();
     }
 }
