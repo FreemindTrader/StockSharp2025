@@ -1513,119 +1513,119 @@ namespace fx.Definitions
        
 
 
-        #region Retracement of Waves
-        public static readonly float [ ] Wave2RetracementLevels = new float [ ]
-        {
-                                                                9.02f,
-                                                                14.6f,
-                                                                23.6f,
-                                                                33.3f,
-                                                                38.2f,
-                                                                41.4f,
-                                                                50f,
-                                                                58.6f,
-                                                                61.8f,
-                                                                66.66f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                98.68f
-        };
+        
+        //public static readonly float [ ] Wave2RetracementLevels = new float [ ]
+        //{
+        //                                                        9.02f,
+        //                                                        14.6f,
+        //                                                        23.6f,
+        //                                                        33.3f,
+        //                                                        38.2f,
+        //                                                        41.4f,
+        //                                                        50f,
+        //                                                        58.6f,
+        //                                                        61.8f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        98.68f
+        //};
 
-        public static readonly FibPercentage [ ] Wave2RetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_9_02,
-                                                                FibPercentage.Fib_14_6,
-                                                                FibPercentage.Fib_23_6,
-                                                                FibPercentage.Fib_33_3,
-                                                                FibPercentage.Fib_38_2,
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_58_6,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_98_68
-        };
+        //public static readonly FibPercentage [ ] Wave2RetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_9_02,
+        //                                                        FibPercentage.Fib_14_6,
+        //                                                        FibPercentage.Fib_23_6,
+        //                                                        FibPercentage.Fib_33_3,
+        //                                                        FibPercentage.Fib_38_2,
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_58_6,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_98_68
+        //};
 
 
 
-        public static readonly int[ ] Wave2RetracementStrength = new int[ ]
-        {
-                                                                5,      // Fib_9_02
-                                                                10,      // Fib_14_6
-                                                                10,     // Fib_23_6
-                                                                15,
-                                                                15,
-                                                                20,
-                                                                30,
-                                                                30,
-                                                                30,
-                                                                30,
-                                                                40,
-                                                                30,
-                                                                10,
-                                                                5
-        };
+        //public static readonly int[ ] Wave2RetracementStrength = new int[ ]
+        //{
+        //                                                        5,      // Fib_9_02
+        //                                                        10,      // Fib_14_6
+        //                                                        10,     // Fib_23_6
+        //                                                        15,
+        //                                                        15,
+        //                                                        20,
+        //                                                        30,
+        //                                                        30,
+        //                                                        30,
+        //                                                        30,
+        //                                                        40,
+        //                                                        30,
+        //                                                        10,
+        //                                                        5
+        //};
 
         
 
-        //public static readonly SolidColorBrush BaseColor   = new SolidColorBrush( Color.FromArgb( byte.MaxValue, 119, 119, 135 ) );
-        //public static readonly SolidColorBrush Impt0Color  = new SolidColorBrush( Colors.LightGray );
-        //public static readonly SolidColorBrush Impt10Color = new SolidColorBrush( Colors.Blue );
-        //public static readonly SolidColorBrush Impt20Color = new SolidColorBrush( Colors.Red );
-        //
+        ////public static readonly SolidColorBrush BaseColor   = new SolidColorBrush( Color.FromArgb( byte.MaxValue, 119, 119, 135 ) );
+        ////public static readonly SolidColorBrush Impt0Color  = new SolidColorBrush( Colors.LightGray );
+        ////public static readonly SolidColorBrush Impt10Color = new SolidColorBrush( Colors.Blue );
+        ////public static readonly SolidColorBrush Impt20Color = new SolidColorBrush( Colors.Red );
+        ////
         
 
-        public static readonly float [ ] Wave4RetracementLevels = new float [ ]
-        {
-                                                                9.02f,
-                                                                14.60f,
-                                                                23.60f,
-                                                                33.30f,
-                                                                38.20f,
-                                                                41.40f,
-                                                                44.10f,
-                                                                50.00f,
-                                                                58.60f,
-                                                                61.80f,
-                                                                66.66f,
-                                                                76.40f,
-        };
+        //public static readonly float [ ] Wave4RetracementLevels = new float [ ]
+        //{
+        //                                                        9.02f,
+        //                                                        14.60f,
+        //                                                        23.60f,
+        //                                                        33.30f,
+        //                                                        38.20f,
+        //                                                        41.40f,
+        //                                                        44.10f,
+        //                                                        50.00f,
+        //                                                        58.60f,
+        //                                                        61.80f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //};
 
-        public static readonly FibPercentage [ ] Wave4RetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_9_02,
-                                                                FibPercentage.Fib_14_6,
-                                                                FibPercentage.Fib_23_6,
-                                                                FibPercentage.Fib_33_3,
-                                                                FibPercentage.Fib_38_2,
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_44_1,
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_58_6,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4
-        };
+        //public static readonly FibPercentage [ ] Wave4RetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_9_02,
+        //                                                        FibPercentage.Fib_14_6,
+        //                                                        FibPercentage.Fib_23_6,
+        //                                                        FibPercentage.Fib_33_3,
+        //                                                        FibPercentage.Fib_38_2,
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_44_1,
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_58_6,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4
+        //};
 
-        public static readonly int[ ] Wave4RetracementStrength = new int[ ]
-        {
-                                                                5,
-                                                                5,
-                                                                10,
-                                                                10,
-                                                                20,
-                                                                30,
-                                                                30,
-                                                                30,
-                                                                20,
-                                                                10,
-                                                                10,
-                                                                5
-        };
+        //public static readonly int[ ] Wave4RetracementStrength = new int[ ]
+        //{
+        //                                                        5,
+        //                                                        5,
+        //                                                        10,
+        //                                                        10,
+        //                                                        20,
+        //                                                        30,
+        //                                                        30,
+        //                                                        30,
+        //                                                        20,
+        //                                                        10,
+        //                                                        10,
+        //                                                        5
+        //};
 
        
 
@@ -1634,154 +1634,154 @@ namespace fx.Definitions
 
 
 
-        #endregion
+        //#endregion
 
-        #region Projection of Waves
-        public static readonly float[ ] TonyDiscoveryLevels = new float[ ]
-        {
-                                                                109.20f,                                                                
-                                                                127.20f,
-                                                                150.00f,
-                                                                161.80f,
-                                                                200.00f,
-                                                                209.20f,
-                                                                214.60f,
-                                                                227.20f,
-                                                                250.00f,
-                                                                261.80f,
+        //#region Projection of Waves
+        //public static readonly float[ ] TonyDiscoveryLevels = new float[ ]
+        //{
+        //                                                        109.20f,                                                                
+        //                                                        127.20f,
+        //                                                        150.00f,
+        //                                                        161.80f,
+        //                                                        200.00f,
+        //                                                        209.20f,
+        //                                                        214.60f,
+        //                                                        227.20f,
+        //                                                        250.00f,
+        //                                                        261.80f,
                                                                 
-                                                                276.40f,
-                                                                285.40f,
-                                                                290.00f,
-                                                                294.40f,
-                                                                298.40f,
+        //                                                        276.40f,
+        //                                                        285.40f,
+        //                                                        290.00f,
+        //                                                        294.40f,
+        //                                                        298.40f,
 
-                                                                300.00f,
-                                                                327.20f,
-                                                                350.00f,
-                                                                361.80f,
-                                                                400.00f,
-                                                                427.20f,
-                                                                450.00f,
-                                                                461.80f,
-                                                                500.00f,
-                                                                527.20f,
-                                                                550.00f,
-                                                                561.80f,
-                                                                600.00f,
-                                                                627.20f,
-                                                                650.00f,
-                                                                661.80f,
-                                                                700.00f,
-                                                                727.20f,
-                                                                750.00f,
-                                                                761.80f,
-                                                                800.00f,
-                                                                827.20f,
-                                                                850.00f,
-                                                                861.80f,
-                                                                900.00f,
-                                                                927.20f,
-                                                                950.00f,
-                                                                961.80f,
-        };
+        //                                                        300.00f,
+        //                                                        327.20f,
+        //                                                        350.00f,
+        //                                                        361.80f,
+        //                                                        400.00f,
+        //                                                        427.20f,
+        //                                                        450.00f,
+        //                                                        461.80f,
+        //                                                        500.00f,
+        //                                                        527.20f,
+        //                                                        550.00f,
+        //                                                        561.80f,
+        //                                                        600.00f,
+        //                                                        627.20f,
+        //                                                        650.00f,
+        //                                                        661.80f,
+        //                                                        700.00f,
+        //                                                        727.20f,
+        //                                                        750.00f,
+        //                                                        761.80f,
+        //                                                        800.00f,
+        //                                                        827.20f,
+        //                                                        850.00f,
+        //                                                        861.80f,
+        //                                                        900.00f,
+        //                                                        927.20f,
+        //                                                        950.00f,
+        //                                                        961.80f,
+        //};
 
-        public static readonly FibPercentage [ ] TonyDiscoveryLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_127_2,
-                                                                FibPercentage.Fib_150,
-                                                                FibPercentage.Fib_161_8,
-                                                                FibPercentage.Fib_200,
-                                                                FibPercentage.Fib_209_2,
-                                                                FibPercentage.Fib_214_6,
-                                                                FibPercentage.Fib_227_2,
-                                                                FibPercentage.Fib_250,
-                                                                FibPercentage.Fib_261_8,
+        //public static readonly FibPercentage [ ] TonyDiscoveryLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_127_2,
+        //                                                        FibPercentage.Fib_150,
+        //                                                        FibPercentage.Fib_161_8,
+        //                                                        FibPercentage.Fib_200,
+        //                                                        FibPercentage.Fib_209_2,
+        //                                                        FibPercentage.Fib_214_6,
+        //                                                        FibPercentage.Fib_227_2,
+        //                                                        FibPercentage.Fib_250,
+        //                                                        FibPercentage.Fib_261_8,
 
-                                                                FibPercentage.Fib_276_4,
-                                                                FibPercentage.Fib_285_4,
-                                                                FibPercentage.Fib_290_2,
-                                                                FibPercentage.Fib_294_4,
-                                                                FibPercentage.Fib_298_4,
+        //                                                        FibPercentage.Fib_276_4,
+        //                                                        FibPercentage.Fib_285_4,
+        //                                                        FibPercentage.Fib_290_2,
+        //                                                        FibPercentage.Fib_294_4,
+        //                                                        FibPercentage.Fib_298_4,
 
-                                                                FibPercentage.Fib_300,
-                                                                FibPercentage.Fib_327_2,
-                                                                FibPercentage.Fib_350,
-                                                                FibPercentage.Fib_361_8,
-                                                                FibPercentage.Fib_400,
-                                                                FibPercentage.Fib_427_2,
-                                                                FibPercentage.Fib_450,
-                                                                FibPercentage.Fib_461_8,
-                                                                FibPercentage.Fib_500,
-                                                                FibPercentage.Fib_527_2,
-                                                                FibPercentage.Fib_550,
-                                                                FibPercentage.Fib_561_8,
-                                                                FibPercentage.Fib_600,
-                                                                FibPercentage.Fib_627_2,
-                                                                FibPercentage.Fib_650,
-                                                                FibPercentage.Fib_661_8,
-                                                                FibPercentage.Fib_700,
-                                                                FibPercentage.Fib_727_2,
-                                                                FibPercentage.Fib_750,
-                                                                FibPercentage.Fib_761_8,
-                                                                FibPercentage.Fib_800,
-                                                                FibPercentage.Fib_827_2,
-                                                                FibPercentage.Fib_850,
-                                                                FibPercentage.Fib_861_8,
-                                                                FibPercentage.Fib_900,
-                                                                FibPercentage.Fib_927_2,
-                                                                FibPercentage.Fib_950,
-                                                                FibPercentage.Fib_961_8,
-        };
+        //                                                        FibPercentage.Fib_300,
+        //                                                        FibPercentage.Fib_327_2,
+        //                                                        FibPercentage.Fib_350,
+        //                                                        FibPercentage.Fib_361_8,
+        //                                                        FibPercentage.Fib_400,
+        //                                                        FibPercentage.Fib_427_2,
+        //                                                        FibPercentage.Fib_450,
+        //                                                        FibPercentage.Fib_461_8,
+        //                                                        FibPercentage.Fib_500,
+        //                                                        FibPercentage.Fib_527_2,
+        //                                                        FibPercentage.Fib_550,
+        //                                                        FibPercentage.Fib_561_8,
+        //                                                        FibPercentage.Fib_600,
+        //                                                        FibPercentage.Fib_627_2,
+        //                                                        FibPercentage.Fib_650,
+        //                                                        FibPercentage.Fib_661_8,
+        //                                                        FibPercentage.Fib_700,
+        //                                                        FibPercentage.Fib_727_2,
+        //                                                        FibPercentage.Fib_750,
+        //                                                        FibPercentage.Fib_761_8,
+        //                                                        FibPercentage.Fib_800,
+        //                                                        FibPercentage.Fib_827_2,
+        //                                                        FibPercentage.Fib_850,
+        //                                                        FibPercentage.Fib_861_8,
+        //                                                        FibPercentage.Fib_900,
+        //                                                        FibPercentage.Fib_927_2,
+        //                                                        FibPercentage.Fib_950,
+        //                                                        FibPercentage.Fib_961_8,
+        //};
 
-        public static readonly int [ ] TonyDiscoveryLevelsStrength = new int [ ]
-        {
-                                                                25,     // Fib_109_2
-                                                                35,     // Fib_127_2,
-                                                                25,     // Fib_150
-                                                                35,     // Fib_161_8
-                                                                35,     // Fib_200
-                                                                5,      // Fib_209_2
-                                                                5,      // Fib_214_6
-                                                                35,     // Fib_227_2
-                                                                25,     // Fib_250
-                                                                35,     // Fib_261_8
-                                                                5,      //FibPercentage.Fib_276_4,
-                                                                5,      //FibPercentage.Fib_285_4,
-                                                                5,      //FibPercentage.Fib_290,
-                                                                5,      // FibPercentage.Fib_294_4,
-                                                                5,      // FibPercentage.Fib_298_4,
+        //public static readonly int [ ] TonyDiscoveryLevelsStrength = new int [ ]
+        //{
+        //                                                        25,     // Fib_109_2
+        //                                                        35,     // Fib_127_2,
+        //                                                        25,     // Fib_150
+        //                                                        35,     // Fib_161_8
+        //                                                        35,     // Fib_200
+        //                                                        5,      // Fib_209_2
+        //                                                        5,      // Fib_214_6
+        //                                                        35,     // Fib_227_2
+        //                                                        25,     // Fib_250
+        //                                                        35,     // Fib_261_8
+        //                                                        5,      //FibPercentage.Fib_276_4,
+        //                                                        5,      //FibPercentage.Fib_285_4,
+        //                                                        5,      //FibPercentage.Fib_290,
+        //                                                        5,      // FibPercentage.Fib_294_4,
+        //                                                        5,      // FibPercentage.Fib_298_4,
 
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5
-        };
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5
+        //};
 
 
         
@@ -1789,749 +1789,749 @@ namespace fx.Definitions
         
 
         
-        public static readonly float [ ] Wave3CProjectionLevels = new float [ ]
-        {
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                98.40f,
+        //public static readonly float [ ] Wave3CProjectionLevels = new float [ ]
+        //{
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        98.40f,
 
-                                                                100.00f,
-                                                                105.60f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                138.20f,
-                                                                141.40f,
-                                                                150.00f,
-                                                                161.80f,
-                                                                166.70f,
-                                                                176.40f,
-                                                                185.40f,
-                                                                194.40f,
+        //                                                        100.00f,
+        //                                                        105.60f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        138.20f,
+        //                                                        141.40f,
+        //                                                        150.00f,
+        //                                                        161.80f,
+        //                                                        166.70f,
+        //                                                        176.40f,
+        //                                                        185.40f,
+        //                                                        194.40f,
 
-                                                                200.00f,
-                                                                205.60f,
-                                                                209.20f,
-                                                                214.60f,
-                                                                223.60f,
-                                                                238.20f,
-                                                                241.40f,
-                                                                250.00f,
-                                                                261.80f,
-                                                                266.70f,
-                                                                276.40f,
-        };
+        //                                                        200.00f,
+        //                                                        205.60f,
+        //                                                        209.20f,
+        //                                                        214.60f,
+        //                                                        223.60f,
+        //                                                        238.20f,
+        //                                                        241.40f,
+        //                                                        250.00f,
+        //                                                        261.80f,
+        //                                                        266.70f,
+        //                                                        276.40f,
+        //};
 
-        public static readonly FibPercentage [ ] Wave3CProjectionFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_98_4,
+        //public static readonly FibPercentage [ ] Wave3CProjectionFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_98_4,
 
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_105_6,
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_138_2,
-                                                                FibPercentage.Fib_141_4,
-                                                                FibPercentage.Fib_150,
-                                                                FibPercentage.Fib_161_8,
-                                                                FibPercentage.Fib_166_7,
-                                                                FibPercentage.Fib_176_4,
-                                                                FibPercentage.Fib_185_4,
-                                                                FibPercentage.Fib_194_4,
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_105_6,
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_138_2,
+        //                                                        FibPercentage.Fib_141_4,
+        //                                                        FibPercentage.Fib_150,
+        //                                                        FibPercentage.Fib_161_8,
+        //                                                        FibPercentage.Fib_166_7,
+        //                                                        FibPercentage.Fib_176_4,
+        //                                                        FibPercentage.Fib_185_4,
+        //                                                        FibPercentage.Fib_194_4,
 
-                                                                FibPercentage.Fib_200,
-                                                                FibPercentage.Fib_205_6,
-                                                                FibPercentage.Fib_209_2,
-                                                                FibPercentage.Fib_214_6,
-                                                                FibPercentage.Fib_223_6,
-                                                                FibPercentage.Fib_238_2,
-                                                                FibPercentage.Fib_241_4,
-                                                                FibPercentage.Fib_250,
-                                                                FibPercentage.Fib_261_8,
-                                                                FibPercentage.Fib_266_7,
-                                                                FibPercentage.Fib_276_4,
+        //                                                        FibPercentage.Fib_200,
+        //                                                        FibPercentage.Fib_205_6,
+        //                                                        FibPercentage.Fib_209_2,
+        //                                                        FibPercentage.Fib_214_6,
+        //                                                        FibPercentage.Fib_223_6,
+        //                                                        FibPercentage.Fib_238_2,
+        //                                                        FibPercentage.Fib_241_4,
+        //                                                        FibPercentage.Fib_250,
+        //                                                        FibPercentage.Fib_261_8,
+        //                                                        FibPercentage.Fib_266_7,
+        //                                                        FibPercentage.Fib_276_4,
 
-        };
+        //};
 
 
 
-        public static readonly int [ ] Wave3CProjectionStrength = new int [ ]
-        {
-                                                                5,              // Fib_76_4
-                                                                10,             // Fib_85_4
-                                                                10,             // Fib_90_02
-                                                                10,             // Fib_94_4
-                                                                10,             // Fib_98_4
+        //public static readonly int [ ] Wave3CProjectionStrength = new int [ ]
+        //{
+        //                                                        5,              // Fib_76_4
+        //                                                        10,             // Fib_85_4
+        //                                                        10,             // Fib_90_02
+        //                                                        10,             // Fib_94_4
+        //                                                        10,             // Fib_98_4
                                                                 
-                                                                40,             // Fib_100
-                                                                40,             // Fib_105_6
-                                                                40,             // Fib_109_2
-                                                                10,             // Fib_114_6
-                                                                40,             // Fib_123_6
-                                                                10,             // Fib_138_2
-                                                                30,             // Fib_141_4
-                                                                5,              // Fib_150
-                                                                5,              // Fib_161_8
-                                                                5,              // Fib_166_7
-                                                                5,              // Fib_176_4
-                                                                20,             // Fib_185_4
-                                                                20,             // Fib_194_4
+        //                                                        40,             // Fib_100
+        //                                                        40,             // Fib_105_6
+        //                                                        40,             // Fib_109_2
+        //                                                        10,             // Fib_114_6
+        //                                                        40,             // Fib_123_6
+        //                                                        10,             // Fib_138_2
+        //                                                        30,             // Fib_141_4
+        //                                                        5,              // Fib_150
+        //                                                        5,              // Fib_161_8
+        //                                                        5,              // Fib_166_7
+        //                                                        5,              // Fib_176_4
+        //                                                        20,             // Fib_185_4
+        //                                                        20,             // Fib_194_4
 
-                                                                40,             // Fib_200
-                                                                40,             // Fib_205_6
-                                                                40,             // Fib_209_2
-                                                                10,             // Fib_214_6
-                                                                40,             // Fib_223_6
-                                                                10,             // Fib_238_2
-                                                                30,             // Fib_241_4
-                                                                5,              // Fib_250
-                                                                5,              // Fib_261_8
-                                                                5,              // Fib_266_7
-                                                                5,              // Fib_276_4
-        };
+        //                                                        40,             // Fib_200
+        //                                                        40,             // Fib_205_6
+        //                                                        40,             // Fib_209_2
+        //                                                        10,             // Fib_214_6
+        //                                                        40,             // Fib_223_6
+        //                                                        10,             // Fib_238_2
+        //                                                        30,             // Fib_241_4
+        //                                                        5,              // Fib_250
+        //                                                        5,              // Fib_261_8
+        //                                                        5,              // Fib_266_7
+        //                                                        5,              // Fib_276_4
+        //};
 
         
 
-        public static readonly float [ ] Wave5ProjectionLevels = new float [ ]
-        {
-                                                                33.30f,
-                                                                38.20f,
-                                                                41.40f,
-                                                                50.00f,
-                                                                61.80f,
-                                                                66.67f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                100.00f,
-                                                                105.60f
-        };
+        //public static readonly float [ ] Wave5ProjectionLevels = new float [ ]
+        //{
+        //                                                        33.30f,
+        //                                                        38.20f,
+        //                                                        41.40f,
+        //                                                        50.00f,
+        //                                                        61.80f,
+        //                                                        66.67f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        100.00f,
+        //                                                        105.60f
+        //};
 
-        public static readonly FibPercentage [ ] Wave5ProjectionFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_33_3,
-                                                                FibPercentage.Fib_38_2,
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_50,                                                                
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_105_6
+        //public static readonly FibPercentage [ ] Wave5ProjectionFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_33_3,
+        //                                                        FibPercentage.Fib_38_2,
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_50,                                                                
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_105_6
 
-        };
+        //};
 
-        public static readonly int [ ] Wave5ProjectionStrength = new int [ ]
-        {
-                                                                5,
-                                                                5,
-                                                                30,
-                                                                30,
-                                                                30,
-                                                                20,
-                                                                20,
-                                                                15,
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5
-        };
+        //public static readonly int [ ] Wave5ProjectionStrength = new int [ ]
+        //{
+        //                                                        5,
+        //                                                        5,
+        //                                                        30,
+        //                                                        30,
+        //                                                        30,
+        //                                                        20,
+        //                                                        20,
+        //                                                        15,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5
+        //};
 
-        public static readonly float [ ] Wave5CProjectionLevels = new float [ ]
-        {
-                                                                50.00f,
-                                                                61.80f,
-                                                                66.67f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                98.40f,
-                                                                100,
-                                                                105.60f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                138.20f,
-                                                                161.80f,
-                                                                166.70f,
-                                                                176.40f,
-                                                                185.40f,
-                                                                194.40f,
-                                                                223.60f,
-                                                                261.80f,
-                                                                276.40f
-        };
+        //public static readonly float [ ] Wave5CProjectionLevels = new float [ ]
+        //{
+        //                                                        50.00f,
+        //                                                        61.80f,
+        //                                                        66.67f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        98.40f,
+        //                                                        100,
+        //                                                        105.60f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        138.20f,
+        //                                                        161.80f,
+        //                                                        166.70f,
+        //                                                        176.40f,
+        //                                                        185.40f,
+        //                                                        194.40f,
+        //                                                        223.60f,
+        //                                                        261.80f,
+        //                                                        276.40f
+        //};
 
-        public static readonly FibPercentage [ ] Wave5CProjectionFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_98_4,
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_105_6,
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_138_2,
-                                                                FibPercentage.Fib_161_8,
-                                                                FibPercentage.Fib_166_7,
-                                                                FibPercentage.Fib_176_4,
-                                                                FibPercentage.Fib_185_4,
-                                                                FibPercentage.Fib_194_4,
-                                                                FibPercentage.Fib_223_6,
-                                                                FibPercentage.Fib_261_8,
-                                                                FibPercentage.Fib_276_4
+        //public static readonly FibPercentage [ ] Wave5CProjectionFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_98_4,
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_105_6,
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_138_2,
+        //                                                        FibPercentage.Fib_161_8,
+        //                                                        FibPercentage.Fib_166_7,
+        //                                                        FibPercentage.Fib_176_4,
+        //                                                        FibPercentage.Fib_185_4,
+        //                                                        FibPercentage.Fib_194_4,
+        //                                                        FibPercentage.Fib_223_6,
+        //                                                        FibPercentage.Fib_261_8,
+        //                                                        FibPercentage.Fib_276_4
 
-        };
+        //};
 
-        public static readonly int [ ] Wave5CProjectionStrength = new int [ ]
-        {
-            0,
-                                                                5,      // Fib_50
-                                                                5,      // Fib_61_8
-                                                                5,      // Fib_66_66
-                                                                10,     // Fib_76_4
-                                                                10,     // Fib_85_4
-                                                                20,     // Fib_90_02
-                                                                25,     // Fib_94_4
-                                                                25,     // Fib_98_4
-                                                                50,     // Fib_100
-                                                                50,     // Fib_105_6
-                                                                40,     // Fib_109_2
-                                                                40,     // Fib_114_6
-                                                                40,     // Fib_123_6
-                                                                30,     // Fib_138_2
-                                                                10,      // Fib_161_8
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                5,
-                                                                5,
-                                                                5
-        };
+        //public static readonly int [ ] Wave5CProjectionStrength = new int [ ]
+        //{
+        //    0,
+        //                                                        5,      // Fib_50
+        //                                                        5,      // Fib_61_8
+        //                                                        5,      // Fib_66_66
+        //                                                        10,     // Fib_76_4
+        //                                                        10,     // Fib_85_4
+        //                                                        20,     // Fib_90_02
+        //                                                        25,     // Fib_94_4
+        //                                                        25,     // Fib_98_4
+        //                                                        50,     // Fib_100
+        //                                                        50,     // Fib_105_6
+        //                                                        40,     // Fib_109_2
+        //                                                        40,     // Fib_114_6
+        //                                                        40,     // Fib_123_6
+        //                                                        30,     // Fib_138_2
+        //                                                        10,      // Fib_161_8
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5
+        //};
 
-        #endregion
+        //#endregion
 
-        #region ABC Projection
+        //#region ABC Projection
 
-        public static readonly float [ ] ABCWaveCProjectionLevels = new float [ ]
-        {
-                                                                41.40f,
-                                                                50.00f,
-                                                                61.80f,
-                                                                66.67f,
+        //public static readonly float [ ] ABCWaveCProjectionLevels = new float [ ]
+        //{
+        //                                                        41.40f,
+        //                                                        50.00f,
+        //                                                        61.80f,
+        //                                                        66.67f,
 
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                100.00f,
-                                                                105.60f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                138.20f,
-                                                                150.00f,
-                                                                161.80f,
-                                                                166.70f,
-                                                                176.40f,
-                                                                185.40f,
-                                                                194.40f,
-                                                                223.60f,
-                                                                261.80f,
-                                                                276.40f,
-                                                                285.40f,
-                                                                361.80f
-        };
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        100.00f,
+        //                                                        105.60f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        138.20f,
+        //                                                        150.00f,
+        //                                                        161.80f,
+        //                                                        166.70f,
+        //                                                        176.40f,
+        //                                                        185.40f,
+        //                                                        194.40f,
+        //                                                        223.60f,
+        //                                                        261.80f,
+        //                                                        276.40f,
+        //                                                        285.40f,
+        //                                                        361.80f
+        //};
 
-        public static readonly FibPercentage [ ] ABCWaveCProjectionFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_105_6,
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_138_2,
-                                                                FibPercentage.Fib_150,
-                                                                FibPercentage.Fib_161_8,
-                                                                FibPercentage.Fib_166_7,
-                                                                FibPercentage.Fib_176_4,
-                                                                FibPercentage.Fib_185_4,
-                                                                FibPercentage.Fib_194_4,
-                                                                FibPercentage.Fib_223_6,
-                                                                FibPercentage.Fib_261_8,
-                                                                FibPercentage.Fib_276_4,
-                                                                FibPercentage.Fib_285_4,
-                                                                FibPercentage.Fib_361_8
-        };
+        //public static readonly FibPercentage [ ] ABCWaveCProjectionFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_105_6,
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_138_2,
+        //                                                        FibPercentage.Fib_150,
+        //                                                        FibPercentage.Fib_161_8,
+        //                                                        FibPercentage.Fib_166_7,
+        //                                                        FibPercentage.Fib_176_4,
+        //                                                        FibPercentage.Fib_185_4,
+        //                                                        FibPercentage.Fib_194_4,
+        //                                                        FibPercentage.Fib_223_6,
+        //                                                        FibPercentage.Fib_261_8,
+        //                                                        FibPercentage.Fib_276_4,
+        //                                                        FibPercentage.Fib_285_4,
+        //                                                        FibPercentage.Fib_361_8
+        //};
 
-        public static readonly int [ ] ABCWaveCProjectionStrength = new int [ ]
-        {
-                                                                5,
-                                                                5,
-                                                                5,          // Fib_61_8
-                                                                5,
-                                                                10,         // Fib_76_4
-                                                                5,         // Fib_85_4
-                                                                5,         // Fib_90_02
-                                                                5,         // Fib_94_4
-                                                                10,         // Fib_100
-                                                                5,         // Fib_105_6
-                                                                10,         // Fib_109_2
-                                                                5,         // Fib_114_6
-                                                                5,         // Fib_123_6
-                                                                50,          // Fib_138_2
-                                                                5,         // Fib_150
-                                                                5,         // Fib_161_8
-                                                                5,          // Fib_166_7
-                                                                50,          // Fib_176_4
-                                                                5,          // Fib_185_4
-                                                                5,          // Fib_194_4
-                                                                50,          // Fib_223_6
-                                                                5,
-                                                                5,
-                                                                5,
-                                                                5
-        };
+        //public static readonly int [ ] ABCWaveCProjectionStrength = new int [ ]
+        //{
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,          // Fib_61_8
+        //                                                        5,
+        //                                                        10,         // Fib_76_4
+        //                                                        5,         // Fib_85_4
+        //                                                        5,         // Fib_90_02
+        //                                                        5,         // Fib_94_4
+        //                                                        10,         // Fib_100
+        //                                                        5,         // Fib_105_6
+        //                                                        10,         // Fib_109_2
+        //                                                        5,         // Fib_114_6
+        //                                                        5,         // Fib_123_6
+        //                                                        50,          // Fib_138_2
+        //                                                        5,         // Fib_150
+        //                                                        5,         // Fib_161_8
+        //                                                        5,          // Fib_166_7
+        //                                                        50,          // Fib_176_4
+        //                                                        5,          // Fib_185_4
+        //                                                        5,          // Fib_194_4
+        //                                                        50,          // Fib_223_6
+        //                                                        5,
+        //                                                        5,
+        //                                                        5,
+        //                                                        5
+        //};
 
 
        
 
 
-        public static readonly float[] FirstXProjectionLevels = new float[]
-        {
-                                                                76.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                100.00f,
-                                                                105.60f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                138.20f,
-                                                                150.00f,
-                                                                161.80f,
-                                                                166.70f,
-                                                                176.40f,
-                                                                185.40f,
-                                                                194.40f,
-                                                                223.60f,
-                                                                238.20f,
-                                                                261.80f,
-                                                                276.40f,
-                                                                285.40f,
-                                                                361.80f
-        };
+        //public static readonly float[] FirstXProjectionLevels = new float[]
+        //{
+        //                                                        76.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        100.00f,
+        //                                                        105.60f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        138.20f,
+        //                                                        150.00f,
+        //                                                        161.80f,
+        //                                                        166.70f,
+        //                                                        176.40f,
+        //                                                        185.40f,
+        //                                                        194.40f,
+        //                                                        223.60f,
+        //                                                        238.20f,
+        //                                                        261.80f,
+        //                                                        276.40f,
+        //                                                        285.40f,
+        //                                                        361.80f
+        //};
 
-        public static readonly FibPercentage [ ] FirstXProjectionFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_105_6,
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_138_2,
-                                                                FibPercentage.Fib_150,
-                                                                FibPercentage.Fib_161_8,
-                                                                FibPercentage.Fib_166_7,
-                                                                FibPercentage.Fib_176_4,
-                                                                FibPercentage.Fib_185_4,
-                                                                FibPercentage.Fib_194_4,
-                                                                FibPercentage.Fib_223_6,
-                                                                FibPercentage.Fib_238_2,
-                                                                FibPercentage.Fib_261_8,
-                                                                FibPercentage.Fib_276_4,
-                                                                FibPercentage.Fib_285_4,
-                                                                FibPercentage.Fib_361_8
-        };
+        //public static readonly FibPercentage [ ] FirstXProjectionFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_105_6,
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_138_2,
+        //                                                        FibPercentage.Fib_150,
+        //                                                        FibPercentage.Fib_161_8,
+        //                                                        FibPercentage.Fib_166_7,
+        //                                                        FibPercentage.Fib_176_4,
+        //                                                        FibPercentage.Fib_185_4,
+        //                                                        FibPercentage.Fib_194_4,
+        //                                                        FibPercentage.Fib_223_6,
+        //                                                        FibPercentage.Fib_238_2,
+        //                                                        FibPercentage.Fib_261_8,
+        //                                                        FibPercentage.Fib_276_4,
+        //                                                        FibPercentage.Fib_285_4,
+        //                                                        FibPercentage.Fib_361_8
+        //};
 
-        public static readonly int[] FirstXProjectionStrength = new int[]
-        {
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0
-        };
+        //public static readonly int[] FirstXProjectionStrength = new int[]
+        //{
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0
+        //};
 
-        public static readonly float[] SecondXProjectionLevels = new float[]
-        {
-                                                                76.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                100.00f,
-                                                                105.60f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                138.20f,
-                                                                150.00f,
-                                                                161.80f
+        //public static readonly float[] SecondXProjectionLevels = new float[]
+        //{
+        //                                                        76.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        100.00f,
+        //                                                        105.60f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        138.20f,
+        //                                                        150.00f,
+        //                                                        161.80f
 
-        };
+        //};
 
-        public static readonly FibPercentage [ ] SecondXProjectionFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_105_6,
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_138_2,
-                                                                FibPercentage.Fib_150,
-                                                                FibPercentage.Fib_161_8
+        //public static readonly FibPercentage [ ] SecondXProjectionFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_105_6,
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_138_2,
+        //                                                        FibPercentage.Fib_150,
+        //                                                        FibPercentage.Fib_161_8
                                                                 
-        };
+        //};
 
-        public static readonly int[] SecondXProjectionStrength = new int[]
-        {
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0
-        };
+        //public static readonly int[] SecondXProjectionStrength = new int[]
+        //{
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0
+        //};
 
 
         
-        public static readonly float [ ] ABCWaveBRetracementLevels = new float [ ]
-        {
-                                                                9.02f,
-                                                                14.60f,
-                                                                23.60f,
-                                                                30.00f,
-                                                                33.30f,
-                                                                38.20f,
-                                                                41.40f,
-                                                                50.00f,
-                                                                58.60f,
-                                                                61.80f,
-                                                                66.66f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                98.60f
-        };
+        //public static readonly float [ ] ABCWaveBRetracementLevels = new float [ ]
+        //{
+        //                                                        9.02f,
+        //                                                        14.60f,
+        //                                                        23.60f,
+        //                                                        30.00f,
+        //                                                        33.30f,
+        //                                                        38.20f,
+        //                                                        41.40f,
+        //                                                        50.00f,
+        //                                                        58.60f,
+        //                                                        61.80f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        98.60f
+        //};
 
-        public static readonly FibPercentage [ ] ABCWaveBRetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_9_02,
-                                                                FibPercentage.Fib_14_6,
-                                                                FibPercentage.Fib_23_6,
-                                                                FibPercentage.Fib_30,
-                                                                FibPercentage.Fib_33_3,
-                                                                FibPercentage.Fib_38_2,
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_58_6,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_98_68
-        };
+        //public static readonly FibPercentage [ ] ABCWaveBRetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_9_02,
+        //                                                        FibPercentage.Fib_14_6,
+        //                                                        FibPercentage.Fib_23_6,
+        //                                                        FibPercentage.Fib_30,
+        //                                                        FibPercentage.Fib_33_3,
+        //                                                        FibPercentage.Fib_38_2,
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_58_6,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_98_68
+        //};
 
-        public static readonly int [ ] ABCWaveBRetracementStrength = new int [ ]
-        {
-                                                                0,
-                                                                0,
-                                                                10,
-                                                                20,
-                                                                0,
-                                                                5,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                20,
-                                                                20,
-                                                                20,
-                                                                20,
-                                                                5,
-                                                                0,
-                                                                5
-        };
+        //public static readonly int [ ] ABCWaveBRetracementStrength = new int [ ]
+        //{
+        //                                                        0,
+        //                                                        0,
+        //                                                        10,
+        //                                                        20,
+        //                                                        0,
+        //                                                        5,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        20,
+        //                                                        20,
+        //                                                        20,
+        //                                                        20,
+        //                                                        5,
+        //                                                        0,
+        //                                                        5
+        //};
 
-        public static readonly float [ ] WaveEFBRetracementLevels = new float [ ]
-        {
-                                                                9.02f,
-                                                                14.60f,
-                                                                23.60f,
-                                                                33.30f,
-                                                                38.20f,
-                                                                41.40f,
-                                                                50.00f,
-                                                                58.60f,
-                                                                61.80f,
-                                                                66.66f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                98.68f,
-                                                                100.00f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                133.30f,
-                                                                138.20f
-        };
+        //public static readonly float [ ] WaveEFBRetracementLevels = new float [ ]
+        //{
+        //                                                        9.02f,
+        //                                                        14.60f,
+        //                                                        23.60f,
+        //                                                        33.30f,
+        //                                                        38.20f,
+        //                                                        41.40f,
+        //                                                        50.00f,
+        //                                                        58.60f,
+        //                                                        61.80f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        98.68f,
+        //                                                        100.00f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        133.30f,
+        //                                                        138.20f
+        //};
 
-        public static readonly FibPercentage [ ] WaveEFBRetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_9_02,
-                                                                FibPercentage.Fib_14_6,
-                                                                FibPercentage.Fib_23_6,
-                                                                FibPercentage.Fib_33_3,
-                                                                FibPercentage.Fib_38_2,
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_58_6,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_98_68,
-                                                                FibPercentage.Fib_100,                                                                
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_133_3,
-                                                                FibPercentage.Fib_138_2,
-        };
+        //public static readonly FibPercentage [ ] WaveEFBRetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_9_02,
+        //                                                        FibPercentage.Fib_14_6,
+        //                                                        FibPercentage.Fib_23_6,
+        //                                                        FibPercentage.Fib_33_3,
+        //                                                        FibPercentage.Fib_38_2,
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_58_6,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_98_68,
+        //                                                        FibPercentage.Fib_100,                                                                
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_133_3,
+        //                                                        FibPercentage.Fib_138_2,
+        //};
 
 
-        public static readonly int [ ] WaveEFBRetracementStrength = new int [ ]
-        {
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0
-        };
+        //public static readonly int [ ] WaveEFBRetracementStrength = new int [ ]
+        //{
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0
+        //};
 
-        public static readonly float [ ] WaveTriBRetracementLevels = new float [ ]
-        {
-                                                                61.80f,
-                                                                66.66f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f,
-                                                                100.00f,
-                                                                109.20f,
-                                                                114.60f,
-                                                                123.60f,
-                                                                133.30f,
-                                                                138.20f
-        };
+        //public static readonly float [ ] WaveTriBRetracementLevels = new float [ ]
+        //{
+        //                                                        61.80f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f,
+        //                                                        100.00f,
+        //                                                        109.20f,
+        //                                                        114.60f,
+        //                                                        123.60f,
+        //                                                        133.30f,
+        //                                                        138.20f
+        //};
 
-        public static readonly FibPercentage [ ] WaveTriBRetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,                                                                
-                                                                FibPercentage.Fib_100,
-                                                                FibPercentage.Fib_109_2,
-                                                                FibPercentage.Fib_114_6,
-                                                                FibPercentage.Fib_123_6,
-                                                                FibPercentage.Fib_133_3,
-                                                                FibPercentage.Fib_138_2,
-        };
+        //public static readonly FibPercentage [ ] WaveTriBRetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,                                                                
+        //                                                        FibPercentage.Fib_100,
+        //                                                        FibPercentage.Fib_109_2,
+        //                                                        FibPercentage.Fib_114_6,
+        //                                                        FibPercentage.Fib_123_6,
+        //                                                        FibPercentage.Fib_133_3,
+        //                                                        FibPercentage.Fib_138_2,
+        //};
 
-        public static readonly int [ ] WaveTriBRetracementStrength = new int [ ]
-        {
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0,
-                                                                0
-        };
+        //public static readonly int [ ] WaveTriBRetracementStrength = new int [ ]
+        //{
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0
+        //};
 
-        public static readonly float [ ] WaveTriCRetracementLevels = new float [ ]
-        {
-                                                                61.80f,
-                                                                66.66f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.20f,
-                                                                94.40f,
-                                                                100.00f
-        };
+        //public static readonly float [ ] WaveTriCRetracementLevels = new float [ ]
+        //{
+        //                                                        61.80f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.20f,
+        //                                                        94.40f,
+        //                                                        100.00f
+        //};
 
-        public static readonly FibPercentage [ ] WaveTriCRetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4,
-                                                                FibPercentage.Fib_100
-        };
+        //public static readonly FibPercentage [ ] WaveTriCRetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4,
+        //                                                        FibPercentage.Fib_100
+        //};
 
-        public static readonly int [ ] WaveTriCRetracementStrength = new int [ ]
-        {
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0,
-                                                                0
-        };
+        //public static readonly int [ ] WaveTriCRetracementStrength = new int [ ]
+        //{
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0,
+        //                                                        0
+        //};
 
-        public static readonly float [ ] WaveTriDRetracementLevels = new float [ ]
-        {
-                                                                61.80f,
-                                                                66.66f,
-                                                                76.40f,
-                                                                85.40f,
-                                                                90.02f,
-                                                                94.40f
-        };
+        //public static readonly float [ ] WaveTriDRetracementLevels = new float [ ]
+        //{
+        //                                                        61.80f,
+        //                                                        66.66f,
+        //                                                        76.40f,
+        //                                                        85.40f,
+        //                                                        90.02f,
+        //                                                        94.40f
+        //};
 
-        public static readonly FibPercentage [ ] WaveTriDRetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4,
-                                                                FibPercentage.Fib_90_02,
-                                                                FibPercentage.Fib_94_4
+        //public static readonly FibPercentage [ ] WaveTriDRetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4,
+        //                                                        FibPercentage.Fib_90_02,
+        //                                                        FibPercentage.Fib_94_4
                                                                 
-        };
+        //};
 
-        public static readonly int [ ] WaveTriDRetracementStrength = new int [ ]
-        {
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0
-        };
+        //public static readonly int [ ] WaveTriDRetracementStrength = new int [ ]
+        //{
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0
+        //};
 
-        public static readonly float [ ] WaveTriERetracementLevels = new float [ ]
-        {
-                                                                38.20f,
-                                                                41.40f,
-                                                                50.00f,
-                                                                58.60f,
-                                                                61.80f,
-                                                                66.60f,
-                                                                76.40f,
-                                                                85.40f
-        };
+        //public static readonly float [ ] WaveTriERetracementLevels = new float [ ]
+        //{
+        //                                                        38.20f,
+        //                                                        41.40f,
+        //                                                        50.00f,
+        //                                                        58.60f,
+        //                                                        61.80f,
+        //                                                        66.60f,
+        //                                                        76.40f,
+        //                                                        85.40f
+        //};
 
-        public static readonly FibPercentage [ ] WaveTriERetracementFibLevelType = new FibPercentage [ ]
-        {
-                                                                FibPercentage.Fib_38_2,
-                                                                FibPercentage.Fib_41_4,
-                                                                FibPercentage.Fib_50,
-                                                                FibPercentage.Fib_58_6,
-                                                                FibPercentage.Fib_61_8,
-                                                                FibPercentage.Fib_66_66,
-                                                                FibPercentage.Fib_76_4,
-                                                                FibPercentage.Fib_85_4
-        };
+        //public static readonly FibPercentage [ ] WaveTriERetracementFibLevelType = new FibPercentage [ ]
+        //{
+        //                                                        FibPercentage.Fib_38_2,
+        //                                                        FibPercentage.Fib_41_4,
+        //                                                        FibPercentage.Fib_50,
+        //                                                        FibPercentage.Fib_58_6,
+        //                                                        FibPercentage.Fib_61_8,
+        //                                                        FibPercentage.Fib_66_66,
+        //                                                        FibPercentage.Fib_76_4,
+        //                                                        FibPercentage.Fib_85_4
+        //};
 
-        public static readonly int [ ] WaveTriERetracementStrength = new int [ ]
-        {
-                                                                0,
-                                                                0,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                10,
-                                                                0,
-                                                                0
-        };
-        #endregion
+        //public static readonly int [ ] WaveTriERetracementStrength = new int [ ]
+        //{
+        //                                                        0,
+        //                                                        0,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        10,
+        //                                                        0,
+        //                                                        0
+        //};
+        //#endregion
     }
 
     public enum TrendDirection : byte

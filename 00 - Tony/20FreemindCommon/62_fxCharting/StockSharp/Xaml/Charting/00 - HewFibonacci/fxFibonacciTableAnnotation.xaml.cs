@@ -15,6 +15,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;
 using fx.Bars;
+using fx.DefinitionsWnd;
 
 namespace fx.Charting.HewFibonacci
 {
@@ -45,34 +46,149 @@ namespace fx.Charting.HewFibonacci
 
             _isUp       = fibTarget != null ? fibTarget.IsUptrend: false;
 
-            var fibRatios = fibTarget.GetFibLevels();
+
+            var fibRatios = fibTarget.GetFibLevels( );
 
             if ( fibRatios == null )
                 return;
 
-            Annotations.Add( CreateFibRatioLine( fibRatios[ 0 ].Value, fibRatios[ 0 ].Brush ) );
+            var firstBrush = GetBrushFromFibTargetType( fibRatios[0].FibTargetType, fibRatios[0].FibStrength );
+
+            Annotations.Add( CreateFibRatioLine( fibRatios[ 0 ].FibValue /100, firstBrush ) );
 
             var fibText        = new SRlevelTextAnnotation( );
-            fibText.Y1         = fibRatios[ 0 ].Value;
-            fibText.Tag        = fibRatios[ 0 ].Value;
-            fibText.Foreground = fibRatios[ 0 ].Brush;
+            fibText.Y1         = fibRatios[ 0 ].FibValue / 100;
+            fibText.Tag        = fibRatios[ 0 ].FibValue / 100;
+            fibText.Foreground = firstBrush;
 
             Annotations.Add( fibText );
 
-            for ( int index = 1; index < fibRatios.Count; ++index )
+            for ( int index = 1; index < fibRatios.Length; ++index )
             {
-                Annotations.Add( CreateFibRatioLine( fibRatios[ index ].Value, fibRatios[ index ].Brush ) );
+                var myBrush = GetBrushFromFibTargetType( fibRatios[ index ].FibTargetType, fibRatios[index].FibStrength );
+                Annotations.Add( CreateFibRatioLine( fibRatios[ index ].FibValue / 100, myBrush ) );
 
                 var fibText2        = new SRlevelTextAnnotation( );
-                fibText2.Y1         = fibRatios[ index ].Value;
-                fibText2.Tag        = fibRatios[ 0 ].Value;
-                fibText2.Foreground = fibRatios[ index ].Brush;
+                fibText2.Y1         = fibRatios[ index ].FibValue / 100;
+                fibText2.Tag        = fibRatios[ 0 ].FibValue / 100;
+                fibText2.Foreground = myBrush;
 
                 Annotations.Add( fibText2 );
             }           
 
             IsEnabled = true;
         }
+
+        public static readonly SolidColorBrush BaseColor = new SolidColorBrush( Color.FromArgb( byte.MaxValue, 119, 119, 135 ) );
+        public static readonly SolidColorBrush Wave2Color = new SolidColorBrush( Colors.LightGray );
+        public static readonly SolidColorBrush Wave3AColor = new SolidColorBrush( Colors.Red );
+        public static readonly SolidColorBrush Wave3BColor = new SolidColorBrush( Colors.LightGray );
+        public static readonly SolidColorBrush Wave3CColor = new SolidColorBrush( Colors.Red );
+        public static readonly SolidColorBrush Wave4 = new SolidColorBrush( Colors.LightGray );
+        public static readonly SolidColorBrush Wave5 = new SolidColorBrush( Colors.Green );
+        public static readonly SolidColorBrush Wave3A_Wave4 = new SolidColorBrush( Colors.OrangeRed );
+        public static readonly SolidColorBrush Wave3C_Wave5 = new SolidColorBrush( Colors.DarkOliveGreen );
+
+        private Brush GetBrushFromFibTargetType( FibonacciTargetType fibLevel, int strength )
+        {
+            switch ( fibLevel )
+            {                                
+                case FibonacciTargetType.Wave3A:
+                    return Wave3AColor;
+
+                case FibonacciTargetType.Wave3B:
+                    return Wave3BColor;
+
+                case FibonacciTargetType.Wave3C:
+                    return Wave3CColor;
+
+                case FibonacciTargetType.Wave4:
+                    return Wave4;
+                
+                case FibonacciTargetType.Wave5:
+                return Wave5;
+                                                                
+                case FibonacciTargetType.Wave3A_Wave4:
+                return Wave3A_Wave4;
+                
+                case FibonacciTargetType.Wave3C_Wave5:
+                return Wave3C_Wave5;
+                
+                default:
+                {
+                    return GetFibColor( strength );
+                }                    
+            }
+        }
+
+        public static readonly SolidColorBrush StrengthBaseColor = new SolidColorBrush( Color.FromArgb( byte.MaxValue, 119, 119, 135 ) );
+        public static readonly SolidColorBrush Impt0Color = new SolidColorBrush( Colors.LightGray );
+        public static readonly SolidColorBrush Impt5Color = new SolidColorBrush( Colors.LightGray );
+        public static readonly SolidColorBrush Impt10Color = new SolidColorBrush( Colors.Blue );
+        public static readonly SolidColorBrush Impt20Color = new SolidColorBrush( Colors.Red );
+        public static readonly SolidColorBrush Impt50Color = new SolidColorBrush( Colors.Red );
+        public static readonly SolidColorBrush Impt100Color = new SolidColorBrush( Colors.Red );
+        public static readonly SolidColorBrush Impt95Color = new SolidColorBrush( Colors.Magenta );
+        public static readonly SolidColorBrush Impt85Color = new SolidColorBrush( Colors.Red );
+        public static readonly SolidColorBrush Impt75Color = new SolidColorBrush( Colors.Blue );
+        public static readonly SolidColorBrush Impt35Color = new SolidColorBrush( Colors.Violet );
+        public static readonly SolidColorBrush Impt25Color = new SolidColorBrush( Colors.Plum );
+
+
+
+
+
+        public static SolidColorBrush GetFibColor( int strength )
+        {
+            if ( strength == 0 )
+            {
+                return Impt0Color;
+            }
+            else if ( strength == 5 )
+            {
+                return Impt5Color;
+            }
+            else if ( strength == 10 )
+            {
+                return Impt10Color;
+            }
+            else if ( strength == 20 )
+            {
+                return Impt20Color;
+            }
+            else if ( strength == 25 )
+            {
+                return Impt25Color;
+            }
+            else if ( strength == 35 )
+            {
+                return Impt35Color;
+            }
+            else if ( strength == 50 )
+            {
+                return Impt50Color;
+            }
+            else if ( strength == 75 )
+            {
+                return Impt75Color;
+            }
+            else if ( strength == 85 )
+            {
+                return Impt85Color;
+            }
+            else if ( strength == 95 )
+            {
+                return Impt95Color;
+            }
+            else if ( strength == 100 )
+            {
+                return Impt100Color;
+            }
+
+            return StrengthBaseColor;
+        }
+
+
 
         public fxFibonacciTableAnnotation( HewFibGannTargets fibTarget, Style gripStyle, ref SBar lastBar, PooledList<SBar> targetPoints, bool useTony )
         {
@@ -95,23 +211,27 @@ namespace fx.Charting.HewFibonacci
             {
                 var myAnnotations = new AnnotationCollection();
 
-                myAnnotations.Add( CreateFibRatioLine( fibRatios[0].Value, fibRatios[0].Brush ) );
+                var firstBrush = GetBrushFromFibTargetType( fibRatios[0].FibTargetType, fibRatios[0].FibStrength );
+
+                myAnnotations.Add( CreateFibRatioLine( fibRatios[0].FibValue / 100,  firstBrush ) );
 
                 var fibText = new SRlevelTextAnnotation();
-                fibText.Y1 = fibRatios[0].Value;
-                fibText.Tag = fibRatios[0].Value;
-                fibText.Foreground = fibRatios[0].Brush;
+                fibText.Y1 = fibRatios[0].FibValue / 100;
+                fibText.Tag = fibRatios[0].FibValue / 100;
+                fibText.Foreground = firstBrush;
 
                 myAnnotations.Add( fibText );
 
-                for ( int index = 1; index < fibRatios.Count; ++index )
+                for ( int index = 1; index < fibRatios.Length; ++index )
                 {
-                    myAnnotations.Add( CreateFibRatioLine( fibRatios[index].Value, fibRatios[index].Brush ) );
+                    var myBrush = GetBrushFromFibTargetType( fibRatios[index].FibTargetType, fibRatios[index].FibStrength );
+
+                    myAnnotations.Add( CreateFibRatioLine( fibRatios[index].FibValue / 100, myBrush ) );
 
                     var fibText2 = new SRlevelTextAnnotation();
-                    fibText2.Y1 = fibRatios[index].Value;
-                    fibText2.Tag = fibRatios[0].Value;
-                    fibText2.Foreground = fibRatios[index].Brush;
+                    fibText2.Y1 = fibRatios[index].FibValue /100;
+                    fibText2.Tag = fibRatios[0].FibValue / 100;
+                    fibText2.Foreground = myBrush;
 
                     myAnnotations.Add( fibText2 );
                 }
@@ -131,9 +251,11 @@ namespace fx.Charting.HewFibonacci
         }
 
 
-        public fxFibonacciTableAnnotation( FibonacciType fibType, Style gripStyle, ref SBar lastBar, bool isUp, PooledList<SBar> targetPoints )
+        public fxFibonacciTableAnnotation( FibonacciType fibType, Style gripStyle, ref SBar lastBar, double starting, double ending, PooledList<SBar> targetPoints )
         {
             InitializeComponent( );
+
+            
 
             _gripStyle    = gripStyle;
 
@@ -141,9 +263,9 @@ namespace fx.Charting.HewFibonacci
 
             _targetBars = targetPoints;
 
-            _isUp         = isUp;
+            _isUp         = ending > starting;
 
-            var fibRatios = HewFibGannTargets.GetFibLevels( fibType );
+            var fibRatios = HewFibGannTargets.GetFibLevels( fibType, starting, ending );
 
             if ( fibRatios == null )
                 return;
@@ -151,23 +273,28 @@ namespace fx.Charting.HewFibonacci
             using ( ParentSurface.SuspendUpdates() )
             {
                 var myAnnotations = new AnnotationCollection();
-                myAnnotations.Add( CreateFibRatioLine( fibRatios[0].Value, fibRatios[0].Brush ) );
+
+                var firstBrush = GetBrushFromFibTargetType( fibRatios[0].FibTargetType, fibRatios[0].FibLevelStrengh );
+
+                myAnnotations.Add( CreateFibRatioLine( fibRatios[0].FibLevel, firstBrush ) );
 
                 var fibText = new SRlevelTextAnnotation();
-                fibText.Y1 = fibRatios[0].Value;
-                fibText.Tag = fibRatios[0].Value;
-                fibText.Foreground = fibRatios[0].Brush;
+                fibText.Y1 = fibRatios[0].FibLevel;
+                fibText.Tag = fibRatios[0].FibLevel;
+                fibText.Foreground = firstBrush;
 
                 myAnnotations.Add( fibText );
 
                 for ( int index = 1; index < fibRatios.Count; ++index )
                 {
-                    myAnnotations.Add( CreateFibRatioLine( fibRatios[index].Value, fibRatios[index].Brush ) );
+                    var myBrush = GetBrushFromFibTargetType( fibRatios[index].FibTargetType, fibRatios[index].FibLevelStrengh );
+
+                    myAnnotations.Add( CreateFibRatioLine( fibRatios[index].FibLevel, myBrush ) );
 
                     var fibText2 = new SRlevelTextAnnotation();
-                    fibText2.Y1 = fibRatios[index].Value;
-                    fibText2.Tag = fibRatios[0].Value;
-                    fibText2.Foreground = fibRatios[index].Brush;
+                    fibText2.Y1 = fibRatios[index].FibLevel;
+                    fibText2.Tag = fibRatios[0].FibLevel;
+                    fibText2.Foreground = myBrush;
 
                     myAnnotations.Add( fibText2 );
                 }

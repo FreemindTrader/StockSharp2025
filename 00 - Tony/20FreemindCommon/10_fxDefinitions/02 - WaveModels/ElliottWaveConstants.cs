@@ -141,8 +141,20 @@ namespace fx.Definitions
         Wave5 = 5,
         [Description( "C Projection" )]
         Wave3All = 6,
-        [Description( "C Projection" )]
-        WaveC = 7,
+        [Description( "Wave A" )]
+        WaveA = 7,
+        [Description( "Wave B" )]
+        WaveB = 8,
+        [Description( "Wave C" )]
+        WaveC = 9,
+        [Description( "Wave XYZ" )]
+        WaveXYZ = 9,
+        [Description( "Wave 5C" )]
+        Wave5C = 10,
+        [Description( "Wave EFB" )]
+        WaveEFB = 11,
+        [Description( "Wave EFC" )]
+        WaveEFC = 12,
         [Description( "Wave3A_Wave4" )]
         Wave3A_Wave4 = 90,
         [Description( "Wave3A_Wave4" )]

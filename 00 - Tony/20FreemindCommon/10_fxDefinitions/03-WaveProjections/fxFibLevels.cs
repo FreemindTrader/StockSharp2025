@@ -18,13 +18,13 @@ namespace fx.Definitions
         /// <param name="strength"></param>
         public fxFibLevels( FibPercentage percentage, double value, FibonacciTargetType targetType, int fibStrength )
         {
-            Value = value;
+            FibValue = value;
             Percentage = percentage;
-            TargetType = targetType;
+            FibTargetType = targetType;
             FibStrength = fibStrength;
         }
 
-        public double Value { get; set; }
+        public double FibValue { get; set; }
 
 
         int _fibStrength;
@@ -38,7 +38,7 @@ namespace fx.Definitions
         }
 
 
-        public FibonacciTargetType TargetType
+        public FibonacciTargetType FibTargetType
         {
             get => _targetType;
             set => _targetType = value;

@@ -279,7 +279,7 @@ namespace fx.Charting.HewFibonacci
                 }
                 else
                 {
-                    var table = new fxFibonacciTableAnnotation( FibonacciType.ABCWaveCProjection, _gripStyle, ref _lastBar, _endingY.ToDouble( ) > _startingY.ToDouble( ), _targetBars );
+                    var table = new fxFibonacciTableAnnotation( FibonacciType.ABCWaveCProjection, _gripStyle, ref _lastBar, _startingY.ToDouble( ), _endingY.ToDouble(), _targetBars );
                     table.X1 = x;
                     table.Y1 = y;
                     table.X2 = x;

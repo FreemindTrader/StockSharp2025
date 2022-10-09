@@ -1614,6 +1614,8 @@ namespace fx.Algorithm
                         _wave3ProjectionType = AnalyseWave3ProjectionType( waveScenarioNo, barTime, currentWaveDegree, wave3all );
                     }
 
+                    AnalyseWave3A3B3C45( waveScenarioNo, barTime, currentWaveDegree, wave3all );
+
                     var points = GetImportanceWavePointsForWave3( waveScenarioNo, barTime, currentWaveDegree );
                     fibTarget.TargetPoints = points;
 

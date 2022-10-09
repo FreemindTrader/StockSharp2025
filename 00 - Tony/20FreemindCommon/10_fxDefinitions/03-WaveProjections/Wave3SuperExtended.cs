@@ -7,46 +7,7 @@ using fx.Definitions.Messages;
 using fx.Collections;
 
 namespace fx.Definitions
-{
-
-    public static class Wave3SuperExtended
-    {
-        public static readonly fxFibLevels[ ] SuperExtendedWave3 = new fxFibLevels[ ]
-        {
-            new fxFibLevels( FibPercentage.Fib_50,      50f,      FibonacciTargetType.Wave3B,  10 ),
-            new fxFibLevels( FibPercentage.Fib_61_8,    61.8f,    FibonacciTargetType.Wave3B,  10 ),
-            new fxFibLevels( FibPercentage.Fib_66_66,   66.7f,    FibonacciTargetType.Wave3B,  10 ),
-            new fxFibLevels( FibPercentage.Fib_76_4,    76.4f,    FibonacciTargetType.Wave3B,  10 ),
-
-            new fxFibLevels( FibPercentage.Fib_150,     150.00f,  FibonacciTargetType.Wave3A,        75 ),
-            new fxFibLevels( FibPercentage.Fib_161_8,   161.8f,   FibonacciTargetType.Wave3A,        75 ),
-            new fxFibLevels( FibPercentage.Fib_166_7,   166.70f,  FibonacciTargetType.Wave3A,  75 ),
-            new fxFibLevels( FibPercentage.Fib_176_4,   176.40f,  FibonacciTargetType.Wave3A,         75 ),
-
-            new fxFibLevels( FibPercentage.Fib_176_4,   176.40f,  FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_185_4,   185.40f,  FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_190_2,   190.20f,  FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_198_4,   198.40f,  FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_200,     200.0f,   FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_205_6,   205.6f,   FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_209_2,   209.20f,  FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_214_6,   214.6f,   FibonacciTargetType.Wave4, 75 ),
-            new fxFibLevels( FibPercentage.Fib_223_6,   223.60f,  FibonacciTargetType.Wave4, 75 ),
-
-            new fxFibLevels( FibPercentage.Fib_366_7,   336.70f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_376_4,   376.4f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_385_4,   385.4f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_390_2,   390.2f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_394_4,   394.4f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_398_4,   398.4f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_400,     400.0f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_405_6,   405.6f,  FibonacciTargetType.Wave5, 75 ),
-            new fxFibLevels( FibPercentage.Fib_409_2,   409.2f,  FibonacciTargetType.Wave5, 75 ),
-
-
-        };
-    }
-
+{    
     public static partial class GlobalConstants
     {
 
