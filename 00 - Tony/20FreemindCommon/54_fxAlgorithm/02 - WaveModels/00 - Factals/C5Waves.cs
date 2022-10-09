@@ -16,18 +16,18 @@ namespace fx.Algorithm
 {
     public partial class C5Waves : I5Waves
     {
-        public SBar Bar0;
-        public SBar Bar1A;
-        public SBar Bar1B;
-        public SBar Bar1C;
-        public SBar Bar2;
-        public SBar Bar3A;
-        public SBar Bar3B;
-        public SBar Bar3C;
-        public SBar Bar4;
-        public SBar Bar5A;
-        public SBar Bar5B;
-        public SBar Bar5C;
+        public SBar Bar0 = SBar.EmptySBar;
+        public SBar Bar1A = SBar.EmptySBar;
+        public SBar Bar1B = SBar.EmptySBar;
+        public SBar Bar1C = SBar.EmptySBar;
+        public SBar Bar2 = SBar.EmptySBar;
+        public SBar Bar3A = SBar.EmptySBar;
+        public SBar Bar3B = SBar.EmptySBar;
+        public SBar Bar3C = SBar.EmptySBar;
+        public SBar Bar4 = SBar.EmptySBar;
+        public SBar Bar5A = SBar.EmptySBar;
+        public SBar Bar5B = SBar.EmptySBar;
+        public SBar Bar5C = SBar.EmptySBar;
 
         private HewFibGannTargets  _wave0Ret      = null;
         private HewFibGannTargets  _wave2Ret      = null;
@@ -298,6 +298,263 @@ namespace fx.Algorithm
         {
             var hews = _hews.GetElliottWavesDictionary( _k.Period );
             ProcessFinishedWaves( _k.WaveScenarioNo, _k.RawBeginTime, _k.RawEndTime, _k.WaveCycle, hews, null );
+        }
+
+        public void IdentifyWaves( int waveScenarioNo, long beginTime, ElliottWaveCycle waveCycle )
+        {
+            var waves = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, _k.Period, beginTime, waveCycle );
+
+            foreach ( var dbHew in waves )
+            {
+                ref var hew = ref dbHew.GetWaveFromScenario( waveScenarioNo );
+
+                var waveInfo = hew.GetHewPointInfoAtCycle( waveCycle );
+
+                if ( waveInfo.HasValue )
+                {
+                    switch ( waveInfo.Value.WaveName )
+                    {
+                        case ElliottWaveEnum.Wave1:
+                        case ElliottWaveEnum.Wave1C:
+                        {
+                            _wave1CTime = dbHew.StartDate;
+                            Bar1C = _bars.GetBarByTime( _wave1CTime );
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave2:
+                        {
+                            _wave2Time = dbHew.StartDate;
+                            Bar2 = _bars.GetBarByTime( _wave2Time );
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave3:
+                        case ElliottWaveEnum.Wave3C:
+                        {
+                            _wave3CTime = dbHew.StartDate;
+                            Bar3C = _bars.GetBarByTime( _wave3CTime );
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave4:
+                        {
+                            _wave4Time = dbHew.StartDate;
+                            Bar4 = _bars.GetBarByTime( _wave4Time );
+                        }
+                        break;
+
+                        case ElliottWaveEnum.Wave5:
+                        case ElliottWaveEnum.Wave5C:
+                        {
+                            _wave5CTime = dbHew.StartDate;
+                            Bar5C = _bars.GetBarByTime( _wave5CTime );
+                        }
+                        break;
+
+                        case ElliottWaveEnum.WaveA:
+                        {
+                            if ( _wave1CTime == -1 && _wave2Time == -1 && _wave3CTime == -1 && _wave4Time == -1 )
+                            {
+                                _wave1ATime = dbHew.StartDate;
+                                Bar1A = _bars.GetBarByTime( _wave1ATime );
+                            }
+                            else if ( _wave1CTime > -1 && _wave2Time > -1 && _wave3CTime == -1 && _wave4Time == -1 )
+                            {
+                                _wave3ATime = dbHew.StartDate;
+                                Bar3A = _bars.GetBarByTime( _wave3ATime );
+                            }
+                            else if ( _wave1CTime > -1 && _wave2Time > -1 && _wave3CTime > -1 && _wave4Time > -1 )
+                            {
+                                _wave5ATime = dbHew.StartDate;
+                                Bar5A = _bars.GetBarByTime( _wave5ATime );
+                            }
+                        }
+                        break;
+
+                        case ElliottWaveEnum.WaveB:
+                        {
+                            if ( _wave1CTime == -1 && _wave2Time == -1 && _wave3CTime == -1 && _wave4Time == -1 )
+                            {
+                                _wave1BTime = dbHew.StartDate;
+                                Bar1B = _bars.GetBarByTime( _wave1BTime );
+                            }
+                            else if ( _wave1CTime > -1 && _wave2Time > -1 && _wave3CTime == -1 && _wave4Time == -1 )
+                            {
+                                _wave3BTime = dbHew.StartDate;
+                                Bar3B = _bars.GetBarByTime( _wave3BTime );
+                            }
+                            else if ( _wave1CTime > -1 && _wave2Time > -1 && _wave3CTime > -1 && _wave4Time > -1 && _wave5ATime > -1 )
+                            {
+                                _wave5BTime = dbHew.StartDate;
+                                Bar5B = _bars.GetBarByTime( _wave5BTime );
+                            }
+                        }
+                        break;
+
+                        case ElliottWaveEnum.WaveTA:
+                        break;
+
+                        case ElliottWaveEnum.WaveTB:
+                        break;
+
+                        case ElliottWaveEnum.WaveTC:
+                        break;
+
+                        case ElliottWaveEnum.WaveTD:
+                        break;
+
+                        case ElliottWaveEnum.WaveTE:
+                        break;
+
+                        case ElliottWaveEnum.WaveEFA:
+                        break;
+
+                        case ElliottWaveEnum.WaveEFB:
+                        break;
+
+                        case ElliottWaveEnum.WaveEFC:
+
+                        break;
+
+                        case ElliottWaveEnum.WaveX:
+
+                        break;
+                        case ElliottWaveEnum.WaveY:
+
+                        break;
+                        case ElliottWaveEnum.WaveZ:
+
+                        break;
+                        case ElliottWaveEnum.WaveW:
+
+                        break;
+
+                    }
+                }
+            }
+
+            CalculateProjectionAndRetracement( waveScenarioNo, _k.Period, waveCycle );
+        }
+
+        public void CalculateProjectionAndRetracement( int waveScenarioNo, TimeSpan period, ElliottWaveCycle waveDegree )
+        {
+            var symbolex = SymbolHelper.ToSymbolEx( _bars.Security, period );
+
+            FibLevelInfo wave2Retracement = default;
+            FibLevelInfo wave3AtoWave1 = default;
+            FibLevelInfo wave3btowave1 = default;
+            FibLevelInfo wave3CtoWave1 = default;
+
+            if ( _wave1CTime > -1 )
+            {
+                _wave2Ret = _hews.GetHewFibTargets( waveScenarioNo, symbolex, _wave1CTime, ElliottWaveEnum.Wave1, waveDegree );
+
+                if ( _wave2Ret != null && Bar2 != SBar.EmptySBar )
+                {
+                    if ( _wave2Ret.GetClosestFibLevel( Bar2.PeakTroughValue, out wave2Retracement ) )
+                    {
+                        Wave2Ret = wave2Retracement.FibPrecentage;
+                    }
+                }
+            }
+
+            if ( _wave2Time > -1 )
+            {
+                _wave3Exp = _hews.GetHewFibTargets( waveScenarioNo, symbolex, _wave2Time, ElliottWaveEnum.Wave2, waveDegree );
+
+                if ( _wave3Exp != null )
+                {
+                    if ( Bar3A != SBar.EmptySBar )
+                    {
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3A.PeakTroughValue, out wave3AtoWave1 ) )
+                        {
+                            Wave3aProj = wave3AtoWave1.FibPrecentage;
+                        }
+                    }
+
+                    if ( Bar3B != SBar.EmptySBar )
+                    {
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out wave3btowave1 ) )
+                        {
+                            Wave3btoWave1 = wave3btowave1.FibPrecentage;
+                        }
+                    }
+
+                    if ( Bar3C != SBar.EmptySBar )
+                    {
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3C.PeakTroughValue, out wave3CtoWave1 ) )
+                        {
+                            Wave3cProj = wave3CtoWave1.FibPrecentage;
+                        }
+                    }
+                }
+            }
+
+            if ( _wave3ATime > -1 )
+            {
+                _wave3BRet = _hews.GetHewFibTargets( waveScenarioNo, symbolex, _wave3ATime, ElliottWaveEnum.WaveA, waveDegree );
+
+                if ( _wave3BRet != null && Bar3B != SBar.EmptySBar )
+                {
+                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3BRetValue ) )
+                    {
+                        Wave3bRet = wave3BRetValue.FibPrecentage;
+                    }
+
+                    if ( _wave3Exp != null )
+                    {
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btoWave1Value ) )
+                        {
+                            Wave3btoWave1 = wave3btoWave1Value.FibPrecentage;
+                        }
+                    }
+                }
+            }
+
+
+            if ( _wave3CTime > -1 )
+            {
+                _wave4Ret = _hews.GetHewFibTargets( waveScenarioNo, symbolex, _wave3CTime, ElliottWaveEnum.Wave3, waveDegree );
+
+                if ( _wave4Ret != null && Bar4 != SBar.EmptySBar )
+                {
+                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4RetValue ) )
+                    {
+                        Wave4Ret = wave4RetValue.FibPrecentage;
+                    }
+
+                    if ( _wave3Exp != null )
+                    {
+                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4toWave1Value ) )
+                        {
+                            Wave4toWave1 = wave4toWave1Value.FibPrecentage;
+                        }
+                    }
+                }
+            }
+
+            if ( _wave4Time > -1 )
+            {
+                _wave5Exp = _hews.GetHewFibTargets( waveScenarioNo, symbolex, _wave4Time, ElliottWaveEnum.Wave4, waveDegree );
+            }
+
+
+            if ( wave2Retracement != default && wave3AtoWave1 != default && wave3btowave1 != default && wave3CtoWave1 != default )
+            {
+                Wave3Type = GetWave3Type( ref wave2Retracement, ref wave3AtoWave1, ref wave3btowave1, ref wave3CtoWave1 );
+            }
+
+
+            if ( wave3CtoWave1 != default && Wave3Type == Wave3Type.UNKNOWN )
+            {
+                Wave3Type = GetWave3TypeByWave3CTarget( ref wave3CtoWave1 );
+            }
+
+            if ( wave3AtoWave1 != default && Wave3Type == Wave3Type.UNKNOWN )
+            {
+                Wave3Type = GetWave3TypeByWave3ATarget( ref wave3CtoWave1 );
+            }
         }
 
         public void ProcessFinishedWaves( int waveScenarioNo, long beginTime, long endTime, ElliottWaveCycle cycle, UndoRedoBTreeDictionary<long, DbElliottWave> hews, List<DbElliottWave> dbHews )

@@ -11,7 +11,7 @@
 //    public static class fxFibRatioConstants
 //    {
 //        public static readonly PooledList< fxFibRatioModel > Wave2RetracementFibLevels         = new PooledList<fxFibRatioModel>();
-//        public static readonly PooledList< fxFibRatioModel > Wave3ProjectionFibLevels          = new PooledList<fxFibRatioModel>();
+//        public static readonly PooledList< fxFibRatioModel > Wave3ClassicProjectionFibLevels          = new PooledList<fxFibRatioModel>();
 //        public static readonly PooledList< fxFibRatioModel > Wave3CProjectionFibLevels         = new PooledList<fxFibRatioModel>();
 //        public static readonly PooledList< fxFibRatioModel > Wave4RetracementFibLevels         = new PooledList<fxFibRatioModel>();
 //        public static readonly PooledList< fxFibRatioModel > Wave5ProjectionFibLevels          = new PooledList<fxFibRatioModel>();
@@ -41,10 +41,10 @@
 //                Wave2RetracementFibLevels.Add( lvls );
 //            }
 
-//            for ( i = 0; i < GlobalConstants.Wave3ProjectionLevels.Length; i++ )
+//            for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
 //            {
-//                var lvls = new fxFibRatioModel( GlobalConstants.Wave3ProjectionLevels[ i ],    GetFibColor( GlobalConstants.Wave3ProjectionStrength[ i ] ) );
-//                Wave3ProjectionFibLevels.Add( lvls );
+//                var lvls = new fxFibRatioModel( GlobalConstants.Wave3AllProjectionLevels[ i ],    GetFibColor( GlobalConstants.Wave3AllProjectionStrength[ i ] ) );
+//                Wave3ClassicProjectionFibLevels.Add( lvls );
 //            }
 
 //            for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )

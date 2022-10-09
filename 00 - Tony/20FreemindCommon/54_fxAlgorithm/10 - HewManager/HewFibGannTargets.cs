@@ -76,9 +76,24 @@ namespace fx.Algorithm
                     return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
                 }
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3ClassicProjection:
                 {
-                    return fxFibRatioConstants.Wave3ProjectionFibLevels;
+                    return fxFibRatioConstants.Wave3ClassicFibLevels;
+                }
+
+                case FibonacciType.Wave3Extended:
+                {
+                    return fxFibRatioConstants.Wave3ExtendedFibLevels;
+                }
+
+                case FibonacciType.Wave3SuperExtended:
+                {
+                    return fxFibRatioConstants.Wave3SuperExtendedFibLevels;
+                }
+
+                case FibonacciType.Wave3All:
+                {
+                    return fxFibRatioConstants.Wave3AllFibLevels;
                 }
 
                 case FibonacciType.Wave3CProjection:
@@ -142,6 +157,11 @@ namespace fx.Algorithm
                     return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
                 }
 
+                case FibonacciType.CompactWave3:
+                {
+                    return fxFibRatioConstants.Wave3CompressFibLevels;
+                }
+
                 //case FibonacciType.TonyProjection:
                 //{
                 //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
@@ -170,9 +190,9 @@ namespace fx.Algorithm
                     return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
                 }
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3ClassicProjection:
                 {
-                    return fxFibRatioConstants.Wave3ProjectionFibLevels;
+                    return fxFibRatioConstants.Wave3ClassicFibLevels;
                 }
 
                 case FibonacciType.Wave3CProjection:
@@ -259,8 +279,7 @@ namespace fx.Algorithm
 
         private long _owingBarLinuxTime = -1;
 
-        private float[ ] _fibonaccilevels;
-
+        
         private DateTime _nextWaveIndex = DateTime.MinValue;
 
         private int _selectedLinesCount = 0;
@@ -448,8 +467,7 @@ namespace fx.Algorithm
         {
             _tonyRetracementStartPoint = pt.startPoint;
             _tonyRetracementEndPoint   = pt.endPoint;
-
-            _fibonaccilevels           = GlobalConstants.Wave2RetracementLevels;
+            
             _fibCalculationType        = FibonacciType.TonyRetracement;
 
             RetracementOrProjection    = RetraceProjectionType.Retracement;
@@ -470,8 +488,7 @@ namespace fx.Algorithm
 
             _tonyStartPoint = pt.startPoint;
             _tonyEndPoint = pt.endPoint;
-
-            _fibonaccilevels = GlobalConstants.TonyDiscoveryLevels;
+            
             _fibCalculationType = FibonacciType.TonyProjection;
 
             RetracementOrProjection = RetraceProjectionType.TonyProjection;
@@ -489,8 +506,7 @@ namespace fx.Algorithm
             _tonyStartPoint2 = pt.startPoint;
             _tonyEndPoint2 = pt.endPoint;
 
-
-            _fibonaccilevels = GlobalConstants.TonyDiscoveryLevels;
+            
             _fibCalculationType = FibonacciType.TonyProjection;
 
             RetracementOrProjection = RetraceProjectionType.TonyProjection;
@@ -559,10 +575,34 @@ namespace fx.Algorithm
             RetracementOrProjection = RetraceProjectionType.Projection;
 
             if ( _hews.GetFibonacciProjection( wave, out FibLevelsInfo projection ) )
-            {
-                _fibonaccilevels = projection.FibLevels;
+            {                
                 _fibCalculationType = projection.FibType;
             }
+
+            if ( _projectionPoint != default )
+            {
+                TrendDirection direction = endPoint.Item2 > startPoint.Item2 ? TrendDirection.Uptrend : TrendDirection.DownTrend;
+
+                _gannLevelsCollection = new GannLevelsCollection( _projectionPoint.Item2, _projectionPoint.Item1.ToLinuxTime(), direction, 5 );
+            }
+
+
+
+            _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
+        }
+
+        public void SetWave3Projections( (DateTime, float) startPoint,
+                                             (DateTime, float) endPoint,
+                                             (DateTime, float) projectionPoint,
+                                             FibonacciType waveType )
+        {
+            _startPoint = startPoint;
+            _endPoint = endPoint;
+            _projectionPoint = projectionPoint;
+
+            RetracementOrProjection = RetraceProjectionType.Projection;
+
+            _fibCalculationType = waveType;
 
             if ( _projectionPoint != default )
             {
@@ -595,7 +635,7 @@ namespace fx.Algorithm
             }
 
             _hews.GetWaveCProjection( wave, out FibLevelsInfo projection );
-            _fibonaccilevels = projection.FibLevels;
+            
             _fibCalculationType = projection.FibType;
 
             _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
@@ -621,7 +661,7 @@ namespace fx.Algorithm
             RetracementOrProjection = RetraceProjectionType.Projection;
 
             _hews.GetFirstXProjection( out FibLevelsInfo projection );
-            _fibonaccilevels = projection.FibLevels;
+            
             _fibCalculationType = projection.FibType;
 
             _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
@@ -647,7 +687,7 @@ namespace fx.Algorithm
             RetracementOrProjection = RetraceProjectionType.Projection;
 
             _hews.GetSecondXProjection( out FibLevelsInfo projection );
-            _fibonaccilevels = projection.FibLevels;
+            
             _fibCalculationType = projection.FibType;
 
             _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
@@ -664,8 +704,7 @@ namespace fx.Algorithm
             RetracementOrProjection = RetraceProjectionType.Retracement;
 
             if ( _hews.GetFibonacciRetracment( wave, out FibLevelsInfo retracement ) )
-            {
-                _fibonaccilevels = retracement.FibLevels;
+            {                
                 _fibCalculationType = retracement.FibType;
             }
 
@@ -746,14 +785,70 @@ namespace fx.Algorithm
                 }
                 break;
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3ClassicProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave3ProjectionLevels.Length; i++ )
+                    for ( i = 0; i < Wave3Classic.ClassicWave3.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.Wave3ProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave3ProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3Classic.ClassicWave3[i].Value / 100 );
+                        var strength = Wave3Classic.ClassicWave3[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
-                        var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3Projection );
+                        var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
+
+                        output.Add( lvl );
+                    }
+                }
+                break;
+
+                case FibonacciType.CompactWave3:
+                {
+                    for ( i = 0; i < Wave3Compressed.CompressWave3.Length; i++ )
+                    {
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3Compressed.CompressWave3[i].Value / 100 );
+                        var strength = Wave3Compressed.CompressWave3[i].FibStrength;
+                        var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
+                        var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
+
+                        output.Add( lvl );
+                    }                    
+                }
+                break;
+
+                case FibonacciType.Wave3Extended:
+                {
+                    for ( i = 0; i < Wave3Extended.ExtendedWave3.Length; i++ )
+                    {
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3Extended.ExtendedWave3[i].Value / 100 );
+                        var strength = Wave3Extended.ExtendedWave3[i].FibStrength;
+                        var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
+                        var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
+
+                        output.Add( lvl );
+                    }
+                }
+                break;
+
+                case FibonacciType.Wave3SuperExtended:
+                {
+                    for ( i = 0; i < Wave3SuperExtended.SuperExtendedWave3.Length; i++ )
+                    {
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3SuperExtended.SuperExtendedWave3[i].Value / 100 );
+                        var strength = Wave3SuperExtended.SuperExtendedWave3[i].FibStrength;
+                        var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
+                        var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
+
+                        output.Add( lvl );
+                    }
+                }
+                break;
+
+                case FibonacciType.Wave3All:
+                {
+                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
+                    {
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 );
+                        var strength = GlobalConstants.Wave3AllProjectionStrength[i];
+                        var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
+                        var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
                         output.Add( lvl );
                     }
@@ -1328,7 +1423,7 @@ namespace fx.Algorithm
                 return true;
             }
 
-            return _retracementOrProjection.Equals( other._retracementOrProjection ) && _fibCalculationType.Equals( other._fibCalculationType ) && Equals( _hews, other._hews ) && _startingX.Equals( other._startingX ) && _startingXIndex.Equals( other._startingXIndex ) && _endingXIndex.Equals( other._endingXIndex ) && _endingX.Equals( other._endingX ) && _owingBarLinuxTime.Equals( other._owingBarLinuxTime ) && Equals( _fibonaccilevels, other._fibonaccilevels ) && _nextWaveIndex.Equals( other._nextWaveIndex ) && _selectedLinesCount.Equals( other._selectedLinesCount ) && Equals( _selectedFibLevels, other._selectedFibLevels ) && Equals( _regularRetraceProjectionLevels, other._regularRetraceProjectionLevels ) && Equals( _tonyFirstLevels, other._tonyFirstLevels ) && Equals( _tonySecondLevels, other._tonySecondLevels ) && Equals( _tonyRetracementLevels, other._tonyRetracementLevels ) && Equals( _gannLevelsCollection, other._gannLevelsCollection ) && _tonyStartPoint2.Equals( other._tonyStartPoint2 ) && _tonyEndPoint2.Equals( other._tonyEndPoint2 ) && _tonyStartPoint.Equals( other._tonyStartPoint ) && _tonyEndPoint.Equals( other._tonyEndPoint ) && _tonyRetracementStartPoint.Equals( other._tonyRetracementStartPoint ) && _tonyRetracementEndPoint.Equals( other._tonyRetracementEndPoint ) && _startPoint.Equals( other._startPoint ) && _endPoint.Equals( other._endPoint ) && _projectionPoint.Equals( other._projectionPoint ) && Equals( _targetBars, other._targetBars ) && Period.Equals( other.Period ) && isRetracement.Equals( other.isRetracement ) && isProjection.Equals( other.isProjection ) && Symbol.Equals( other.Symbol );
+            return _retracementOrProjection.Equals( other._retracementOrProjection ) && _fibCalculationType.Equals( other._fibCalculationType ) && Equals( _hews, other._hews ) && _startingX.Equals( other._startingX ) && _startingXIndex.Equals( other._startingXIndex ) && _endingXIndex.Equals( other._endingXIndex ) && _endingX.Equals( other._endingX ) && _owingBarLinuxTime.Equals( other._owingBarLinuxTime ) && _nextWaveIndex.Equals( other._nextWaveIndex ) && _selectedLinesCount.Equals( other._selectedLinesCount ) && Equals( _selectedFibLevels, other._selectedFibLevels ) && Equals( _regularRetraceProjectionLevels, other._regularRetraceProjectionLevels ) && Equals( _tonyFirstLevels, other._tonyFirstLevels ) && Equals( _tonySecondLevels, other._tonySecondLevels ) && Equals( _tonyRetracementLevels, other._tonyRetracementLevels ) && Equals( _gannLevelsCollection, other._gannLevelsCollection ) && _tonyStartPoint2.Equals( other._tonyStartPoint2 ) && _tonyEndPoint2.Equals( other._tonyEndPoint2 ) && _tonyStartPoint.Equals( other._tonyStartPoint ) && _tonyEndPoint.Equals( other._tonyEndPoint ) && _tonyRetracementStartPoint.Equals( other._tonyRetracementStartPoint ) && _tonyRetracementEndPoint.Equals( other._tonyRetracementEndPoint ) && _startPoint.Equals( other._startPoint ) && _endPoint.Equals( other._endPoint ) && _projectionPoint.Equals( other._projectionPoint ) && Equals( _targetBars, other._targetBars ) && Period.Equals( other.Period ) && isRetracement.Equals( other.isRetracement ) && isProjection.Equals( other.isProjection ) && Symbol.Equals( other.Symbol );
         }
 
         public override int GetHashCode()
@@ -1348,10 +1443,7 @@ namespace fx.Algorithm
                 hashCode = ( hashCode * 53 ) ^ _endingXIndex.GetHashCode();
                 hashCode = ( hashCode * 53 ) ^ _endingX.GetHashCode();
                 hashCode = ( hashCode * 53 ) ^ _owingBarLinuxTime.GetHashCode();
-                if ( _fibonaccilevels != null )
-                {
-                    hashCode = ( hashCode * 53 ) ^ EqualityComparer<float[ ]>.Default.GetHashCode( _fibonaccilevels );
-                }
+                
 
                 hashCode = ( hashCode * 53 ) ^ _nextWaveIndex.GetHashCode();
                 hashCode = ( hashCode * 53 ) ^ _selectedLinesCount.GetHashCode();

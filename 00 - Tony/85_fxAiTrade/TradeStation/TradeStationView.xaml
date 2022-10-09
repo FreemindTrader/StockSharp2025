@@ -1006,26 +1006,26 @@
                         <dxr:RibbonPageGroup Caption="Impulsive Waves">
                             
                             <dxb:BarButtonItem                                
-                                Content="Classic Wave 3"
-                                Command="{Binding ClassicWave3TargetCommand}"
+                                Content="Shrink Wave 3"
+                                Command="{Binding ShrinkWave3TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Three.svg}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Three.svg}"
-                                KeyGesture="F3"
+                                KeyGesture="CTRL+Left"
                                 RibbonStyle="Large" />
                             <dxb:BarButtonItem                                
                                 Content="Extended Wave 3"
                                 Command="{Binding ExtendedWave3TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Extended3.svg}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Extended3.svg}"
-                                KeyGesture="CTRL+F3"
+                                KeyGesture="CTRL+Right"
                                 RibbonStyle="Large" />
                             <dxb:BarCheckItem                                                                
                                 Content="Super Extened Wave 3"
-                                Command="{Binding SuperExtendedWave3TargetCommand}"
+                                Command="{Binding ExtendedWave3TargetCommand}"
                                 Glyph="{dx:SvgImageSource Uri=../SvgImages/Big3.svg}"
                                 IsChecked="{Binding Path=StepByStepChecked}"
                                 LargeGlyph="{dx:SvgImageSource Uri=../SvgImages/Big3.svg}"
-                                KeyGesture="CTRL+SHIFT+F3"
+                                KeyGesture="CTRL+Right"
                                 RibbonStyle="Large" />
                         </dxr:RibbonPageGroup>
 

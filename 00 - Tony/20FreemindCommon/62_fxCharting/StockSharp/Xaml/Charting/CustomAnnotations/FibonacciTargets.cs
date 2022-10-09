@@ -247,9 +247,9 @@
 //                    return ABCWaveBRetracementLevelsRatio;
 //                }
 
-//                case FibonacciType.Wave3Projection:
+//                case FibonacciType.Wave3ClassicProjection:
 //                {
-//                    return Wave3ProjectionLevels;
+//                    return Wave3AllProjectionLevels;
 //                }
 
 //                case FibonacciType.Wave3CProjection:
@@ -776,7 +776,7 @@
 //            new RatioModel( 0.6666, Impt10Color ),
 //       };
 
-//        public static readonly RatioModel[ ] Wave3ProjectionLevels = new RatioModel[ ]
+//        public static readonly RatioModel[ ] Wave3AllProjectionLevels = new RatioModel[ ]
 //        {
 //            new RatioModel( 1.0902, Impt50Color ),
 //            new RatioModel( 1.146,  Impt50Color ),

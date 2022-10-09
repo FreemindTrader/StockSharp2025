@@ -22,110 +22,117 @@ namespace fx.Algorithm
     public partial class HewManager : BaseLogReceiver, IHewManager
     {
         public bool DoneLoading { get; set; }
-        private IForexDatabarsUnitOfWork                                       _unitOfWork;
-        private TimeSpan                                                       _currentActiveTimeFrame;
-        private fxHistoricBarsRepo                                              _bars;
+        FibonacciType _wave3ProjectionType = FibonacciType.NONE;
+        private IForexDatabarsUnitOfWork _unitOfWork;
+        private TimeSpan _currentActiveTimeFrame;
+        private fxHistoricBarsRepo _bars;
 
-        private IUnitOfWorkFactory< IForexDatabarsUnitOfWork >                 _unitOfWorkFactory            = null;
-        private UndoRedoBTreeDictionary< long, DbElliottWave >                 _hews            = null;
-        private BTreeDictionary< long, WavePointImportance >                   _selectedWaveImportanceDict   = null;
-        private UndoRedoList< long >                                           _selectedRemovedWavesList     = null;
+        private IUnitOfWorkFactory<IForexDatabarsUnitOfWork> _unitOfWorkFactory = null;
+        private UndoRedoBTreeDictionary<long, DbElliottWave> _hews = null;
+        private BTreeDictionary<long, WavePointImportance> _selectedWaveImportanceDict = null;
+        private UndoRedoList<long> _selectedRemovedWavesList = null;
 
-        private readonly UndoRedoArea                                          _monthlyUndoArea              = new UndoRedoArea( "Monthly" );
-        private readonly UndoRedoArea                                          _weeklyUndoArea               = new UndoRedoArea( "Weekly" );
-        private readonly UndoRedoArea                                          _dailyUndoArea                = new UndoRedoArea( "Daily" );
-        private readonly UndoRedoArea                                          _08HourUndoArea               = new UndoRedoArea( "08Hour" );
-        private readonly UndoRedoArea                                          _06HourUndoArea               = new UndoRedoArea( "06Hour" );
-        private readonly UndoRedoArea                                          _04HourUndoArea               = new UndoRedoArea( "04Hour" );
-        private readonly UndoRedoArea                                          _03HourUndoArea               = new UndoRedoArea( "03Hour" );
-        private readonly UndoRedoArea                                          _02HourUndoArea               = new UndoRedoArea( "02Hour" );
-        private readonly UndoRedoArea                                          _01HourUndoArea               = new UndoRedoArea( "01Hour" );
-        private readonly UndoRedoArea                                          _30minsUndoArea               = new UndoRedoArea( "30Mins" );
-        private readonly UndoRedoArea                                          _15minsUndoArea               = new UndoRedoArea( "15Mins" );
-        private readonly UndoRedoArea                                          _05minsUndoArea               = new UndoRedoArea( "05Mins" );
-        private readonly UndoRedoArea                                          _04minsUndoArea               = new UndoRedoArea( "04Mins" );
-        private readonly UndoRedoArea                                          _01minsUndoArea               = new UndoRedoArea( "01Mins" );
-        private readonly UndoRedoArea                                          _01SecondUndoArea             = new UndoRedoArea( "ticks" );
+        private readonly UndoRedoArea _monthlyUndoArea = new UndoRedoArea( "Monthly" );
+        private readonly UndoRedoArea _weeklyUndoArea = new UndoRedoArea( "Weekly" );
+        private readonly UndoRedoArea _dailyUndoArea = new UndoRedoArea( "Daily" );
+        private readonly UndoRedoArea _08HourUndoArea = new UndoRedoArea( "08Hour" );
+        private readonly UndoRedoArea _06HourUndoArea = new UndoRedoArea( "06Hour" );
+        private readonly UndoRedoArea _04HourUndoArea = new UndoRedoArea( "04Hour" );
+        private readonly UndoRedoArea _03HourUndoArea = new UndoRedoArea( "03Hour" );
+        private readonly UndoRedoArea _02HourUndoArea = new UndoRedoArea( "02Hour" );
+        private readonly UndoRedoArea _01HourUndoArea = new UndoRedoArea( "01Hour" );
+        private readonly UndoRedoArea _30minsUndoArea = new UndoRedoArea( "30Mins" );
+        private readonly UndoRedoArea _15minsUndoArea = new UndoRedoArea( "15Mins" );
+        private readonly UndoRedoArea _05minsUndoArea = new UndoRedoArea( "05Mins" );
+        private readonly UndoRedoArea _04minsUndoArea = new UndoRedoArea( "04Mins" );
+        private readonly UndoRedoArea _01minsUndoArea = new UndoRedoArea( "01Mins" );
+        private readonly UndoRedoArea _01SecondUndoArea = new UndoRedoArea( "ticks" );
 
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _monthlyEWaveDescDictionary   = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _weeklyEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _dailyEWaveDescDictionary     = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _01HourEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _02HourEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _03HourEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _04HourEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _06HourEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _08HourEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _30minsEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _15minsEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _05minsEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _04minsEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _01minsEWaveDescDictionary    = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
-        private readonly UndoRedoBTreeDictionary< long, DbElliottWave >        _01SecondEWaveDescDictionary  = new UndoRedoBTreeDictionary< long, DbElliottWave >( new ReverseComparer( ) ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _monthlyEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _weeklyEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _dailyEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _01HourEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _02HourEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _03HourEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _04HourEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _06HourEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _08HourEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _30minsEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _15minsEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _05minsEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _04minsEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _01minsEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
+        private readonly UndoRedoBTreeDictionary<long, DbElliottWave> _01SecondEWaveDescDictionary = new UndoRedoBTreeDictionary<long, DbElliottWave>( new ReverseComparer() ); // Here I want to keep track of the wave count in a reverse order.
 
-        private readonly UndoRedoList< long >                                  _monthlyRemovedWaves          = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _weeklyRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _dailyRemovedWaves            = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _08HourRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _06HourRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _04HourRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _03HourRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _02HourRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _01HourRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _30minsRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _15minsRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _05minsRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _04minsRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _01minsRemovedWaves           = new UndoRedoList< long >( );
-        private readonly UndoRedoList< long >                                  _01SecondRemovedWaves         = new UndoRedoList< long >( );
+        private readonly UndoRedoList<long> _monthlyRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _weeklyRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _dailyRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _08HourRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _06HourRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _04HourRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _03HourRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _02HourRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _01HourRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _30minsRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _15minsRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _05minsRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _04minsRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _01minsRemovedWaves = new UndoRedoList<long>();
+        private readonly UndoRedoList<long> _01SecondRemovedWaves = new UndoRedoList<long>();
 
-        private BTreeDictionary< long, WavePointImportance >                   _01SecElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _01minElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _04minElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _05minElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _15minElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _30minElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _01HourElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _02HourElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _03HourElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _04HourElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _06HourElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _08HourElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _dailyElliottWave             = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _weeklyElliottWave            = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _monthlyElliottWave           = new BTreeDictionary< long, WavePointImportance >( );
+        private BTreeDictionary<long, WavePointImportance> _01SecElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _01minElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _04minElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _05minElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _15minElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _30minElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _01HourElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _02HourElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _03HourElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _04HourElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _06HourElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _08HourElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _dailyElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _weeklyElliottWave = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _monthlyElliottWave = new BTreeDictionary<long, WavePointImportance>();
 
-        private BTreeDictionary< long, WavePointImportance >                   _01SecGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _01MinGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _04MinGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _05MinGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _15MinGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _30MinGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _01HourMinGannSwing           = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _02HourMinGannSwing           = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _03HourMinGannSwing           = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _04HourMinGannSwing           = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _06HourMinGannSwing           = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _08HourMinGannSwing           = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _dailyGannSwing               = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _weeklyGannSwing              = new BTreeDictionary< long, WavePointImportance >( );
-        private BTreeDictionary< long, WavePointImportance >                   _monthlyGannSwing             = new BTreeDictionary< long, WavePointImportance >( );
+        private BTreeDictionary<long, WavePointImportance> _01SecGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _01MinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _04MinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _05MinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _15MinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _30MinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _01HourMinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _02HourMinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _03HourMinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _04HourMinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _06HourMinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _08HourMinGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _dailyGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _weeklyGannSwing = new BTreeDictionary<long, WavePointImportance>();
+        private BTreeDictionary<long, WavePointImportance> _monthlyGannSwing = new BTreeDictionary<long, WavePointImportance>();
 
         //private BTreeDictionary< long, HewFibTargets >                         _waveFibTargets               = new BTreeDictionary< long, HewFibTargets >( );
 
-        private bool                                                           _smartWaveLabeling            = true;
-        private object                                                         _objLock                      = new object( );
-        private object                                                         _gannLock                     = new object( );
-        private object                                                         _zigZagLock                   = new object( );
-        private bool                                                           _doneLoadingDatabase          = false;
+        private bool _smartWaveLabeling = true;
+        private object _objLock = new object();
+        private object _gannLock = new object();
+        private object _zigZagLock = new object();
+        private bool _doneLoadingDatabase = false;
 
-        private IRepository< DbElliottWave, long >                             _dbElliottWaveRepo;
-        private IRepository< DbSmartWaveCycles, long >                         _dbSmartWaveCycles;
-        private int                                                            _offerId;
+        private IRepository<DbElliottWave, long> _dbElliottWaveRepo;
+        private IRepository<DbSmartWaveCycles, long> _dbSmartWaveCycles;
+        private int _offerId;
 
         private Security _security;
 
-
+        
+        public FibonacciType Wave3ProjectionType
+        {
+            get => _wave3ProjectionType;
+            set => _wave3ProjectionType = value;
+        }
+        
 
         public HewManager()
         {
@@ -6290,9 +6297,9 @@ namespace fx.Algorithm
                 case FibonacciType.WaveCProjection:
                     break;
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3ClassicProjection:
                 {
-                    var output = GetWave3ProjectionOccurence( fibonacciLevel );
+                    var output = GetWave3ClassicProjectionOccurence( fibonacciLevel );
                 }
 
                 break;
@@ -6331,7 +6338,7 @@ namespace fx.Algorithm
             return 0;
         }
 
-        public FibLevelOccurance GetWave3ProjectionOccurence( float fibonacciLevel )
+        public FibLevelOccurance GetWave3ClassicProjectionOccurence( float fibonacciLevel )
         {
             return FibLevelOccurance.Unknown;
         }
@@ -6442,7 +6449,7 @@ namespace fx.Algorithm
             switch ( wave )
             {
                 case ElliottWaveEnum.Wave3: // We are calculating the Wave C of Wave 3                
-                    output = ( new FibLevelsInfo( FibonacciType.Wave3Projection, GlobalConstants.Wave3ProjectionLevels, GlobalConstants.Wave3ProjectionStrength ) );
+                    output = ( new FibLevelsInfo( FibonacciType.Wave3ClassicProjection, GlobalConstants.Wave3AllProjectionLevels, GlobalConstants.Wave3AllProjectionStrength ) );
                     break;
 
                 case ElliottWaveEnum.Wave5: // We are calculating the Wave C of Wave 5                
@@ -6456,6 +6463,8 @@ namespace fx.Algorithm
 
             return true;
         }
+
+        
 
         public WaveVector GetContainingWaveOfThis( int waveScenarioNo, long selectedBarTime, TimeSpan period )
         {

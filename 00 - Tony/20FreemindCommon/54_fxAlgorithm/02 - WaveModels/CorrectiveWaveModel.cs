@@ -54,7 +54,7 @@ namespace fx.Algorithm
 
         public void AnalysePreAction( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree )
         {
-            var postActions = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, period, selectedBarTime, waveName, waveDegree );
+            var postActions = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, period, selectedBarTime, waveDegree );
 
             if ( postActions.Count > 0 )
             {
@@ -77,7 +77,7 @@ namespace fx.Algorithm
                             if ( waveCTarget != null )
                             {
                                 var cSubDegree        = waveDegree - GlobalConstants.OneWaveCycle;
-                                var waveCSub          = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, period, lastWave.StartDate, ElliottWaveEnum.WaveB,  cSubDegree);
+                                var waveCSub          = _hews.GetAllWavesOfDegreeAfter( waveScenarioNo, period, lastWave.StartDate,  cSubDegree);
                                 var lastWaveInCSub    = waveCSub[ waveCSub.Count - 1 ];
                                 var lastTopWaveInCSub = lastWaveInCSub.GetWaveFromScenario( waveScenarioNo ).GetFirstHighestWaveInfo( );
 

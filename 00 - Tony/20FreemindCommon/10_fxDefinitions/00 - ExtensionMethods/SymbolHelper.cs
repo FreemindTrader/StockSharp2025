@@ -134,8 +134,16 @@ namespace fx.Definitions
             return ( 0 );
         }
 
+        static ThreadSafeCache< int, float > _pointSizeCache = new ThreadSafeCache< int, float >( );
+        static ThreadSafeCache<string, float> _pointSizeCache2 = new ThreadSafeCache<string, float>();
+
         public static float GetInstrumentPointSize( int offerId )
         {
+            var value = _pointSizeCache.GetValue( offerId );
+
+            if( value > 0 )
+                return value;
+
             var symbol = GetSymbolFromOfferId( offerId );
 
             if ( !string.IsNullOrEmpty( symbol ) )
@@ -148,6 +156,8 @@ namespace fx.Definitions
 
                     if ( symbol == code )
                     {
+                        _pointSizeCache.Set( offerId, ( float )sec.PriceStep );
+
                         return ( float ) sec.PriceStep;
                     }
                 }
@@ -158,6 +168,11 @@ namespace fx.Definitions
 
         public static double GetInstrumentPointSize( string instrument )
         {
+            var value = _pointSizeCache2.GetValue( instrument );
+
+            if ( value > 0 )
+                return value;
+
             var secs = ServicesRegistry.EntityRegistry.Securities;
 
             foreach ( var sec in secs )
@@ -166,6 +181,7 @@ namespace fx.Definitions
 
                 if ( instrument == code )
                 {
+                    _pointSizeCache2.Set( instrument, ( float )sec.PriceStep );
                     return ( double ) sec.PriceStep;
                 }
             }

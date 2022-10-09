@@ -15,11 +15,15 @@ namespace FreemindAITrade.ViewModels
             _selectedViewModel.AnalyzeWaveTarget();
         }
 
-        public void ClassicWave3Target()
+        public void ShrinkWave3Target()
         {
             ShowSmallTradingEvent = true;
 
-            _selectedViewModel.ClassicWave3Target();
+            _selectedViewModel.ShrinkWave3Target();
+
+            _selectedViewModel.ChartVM.CheckAndShowFibonacci();
+
+            _selectedViewModel.Refresh();            
         }
 
         public void ExtendedWave3Target()
@@ -27,6 +31,10 @@ namespace FreemindAITrade.ViewModels
             ShowSmallTradingEvent = true;
 
             _selectedViewModel.ExtendedWave3Target();
+
+            _selectedViewModel.ChartVM.CheckAndShowFibonacci();
+
+            _selectedViewModel.Refresh();            
         }
 
         public void SuperExtendedWave3Target()

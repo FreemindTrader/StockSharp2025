@@ -269,7 +269,7 @@ namespace fx.Indicators
 
                     if ( foundWave1 && foundWave2 )
                     {
-                        var wave3ProjectionObj = new FibLevelsCollection( FibonacciType.Wave3Projection, bar0.LowTimeValue, bar1.HighTimeValue, bar2.LowTimeValue );
+                        var wave3ProjectionObj = new FibLevelsCollection( FibonacciType.Wave3ClassicProjection, bar0.LowTimeValue, bar1.HighTimeValue, bar2.LowTimeValue );
 
                         wave3Projection = wave3ProjectionObj.FibLevels;
                     }
@@ -282,7 +282,7 @@ namespace fx.Indicators
 
                         if ( wave3Projection.Count > 0 )
                         {
-                            harmonicEWave.GetClosestSRLine( FibonacciType.Wave3Projection, ref bar3c, wave3Projection, TrendDirection.Uptrend, out wave3C_Response );
+                            harmonicEWave.GetClosestSRLine( FibonacciType.Wave3ClassicProjection, ref bar3c, wave3Projection, TrendDirection.Uptrend, out wave3C_Response );
                         }
 
                         len_2_3 = bar3c.High - bar2.Low;
@@ -589,7 +589,7 @@ namespace fx.Indicators
 
                     if ( foundWave1 && foundWave2 )
                     {
-                        var wave3ProjectionObj = new FibLevelsCollection( FibonacciType.Wave3Projection, bar0.HighTimeValue, bar1.LowTimeValue, bar2.HighTimeValue );
+                        var wave3ProjectionObj = new FibLevelsCollection( FibonacciType.Wave3ClassicProjection, bar0.HighTimeValue, bar1.LowTimeValue, bar2.HighTimeValue );
 
                         wave3Projection = wave3ProjectionObj.FibLevels;
                     }
@@ -602,7 +602,7 @@ namespace fx.Indicators
 
                         if ( wave3Projection.Count > 0 )
                         {
-                            harmonicEWave.GetClosestSRLine( FibonacciType.Wave3Projection, ref bar3c, wave3Projection, TrendDirection.DownTrend, out wave3C_Response );
+                            harmonicEWave.GetClosestSRLine( FibonacciType.Wave3ClassicProjection, ref bar3c, wave3Projection, TrendDirection.DownTrend, out wave3C_Response );
                         }
 
                         len_2_3 = bar2.High - bar3c.Low;
@@ -703,7 +703,7 @@ namespace fx.Indicators
                                     {
                                         Bars.GetBarByTime( trough1.Key );
 
-                                        harmonicEWave.GetClosestSRLine( FibonacciType.Wave3Projection, ref bar3a, wave3Projection, TrendDirection.DownTrend, out wave3A_Response );
+                                        harmonicEWave.GetClosestSRLine( FibonacciType.Wave3ClassicProjection, ref bar3a, wave3Projection, TrendDirection.DownTrend, out wave3A_Response );
 
                                         len_2_3a = bar2.High - bar3a.Low;
 
@@ -781,7 +781,7 @@ namespace fx.Indicators
 
             PooledList< WaveABCInfo > matches = new PooledList< WaveABCInfo >( );
 
-            var wave3ProjectionObj  = new FibLevelsCollection( FibonacciType.Wave3Projection, bar0.LowTimeValue, bar1.HighTimeValue, bar2.LowTimeValue );
+            var wave3ProjectionObj  = new FibLevelsCollection( FibonacciType.Wave3ClassicProjection, bar0.LowTimeValue, bar1.HighTimeValue, bar2.LowTimeValue );
 
             PooledList<FibLevelInfo> wave3Projection   = null;
             PooledList<FibLevelInfo> wave3BRetracement = null;
@@ -811,7 +811,7 @@ namespace fx.Indicators
                     {
                         Bars.GetBarByTime( peak.Key );
 
-                        harmonicEWave.GetClosestSRLine( FibonacciType.Wave3Projection, ref bar3a, wave3Projection, TrendDirection.Uptrend, out wave3A_Response );
+                        harmonicEWave.GetClosestSRLine( FibonacciType.Wave3ClassicProjection, ref bar3a, wave3Projection, TrendDirection.Uptrend, out wave3A_Response );
 
                         len_2_3a = bar3a.High - bar2.Low;
 
@@ -909,7 +909,7 @@ namespace fx.Indicators
 
             PooledList< WaveABCInfo > matches = new PooledList< WaveABCInfo >( );
 
-            var wave3ProjectionObj  = new FibLevelsCollection( FibonacciType.Wave3Projection, bar0.HighTimeValue, bar1.LowTimeValue, bar2.HighTimeValue );
+            var wave3ProjectionObj  = new FibLevelsCollection( FibonacciType.Wave3ClassicProjection, bar0.HighTimeValue, bar1.LowTimeValue, bar2.HighTimeValue );
 
             PooledList<FibLevelInfo> wave3Projection   = null;
             PooledList<FibLevelInfo> wave3BRetracement = null;
@@ -939,7 +939,7 @@ namespace fx.Indicators
                     {
                         Bars.GetBarByTime( trough.Key );
 
-                        harmonicEWave.GetClosestSRLine( FibonacciType.Wave3Projection, ref bar3a, wave3Projection, TrendDirection.DownTrend, out wave3A_Response );
+                        harmonicEWave.GetClosestSRLine( FibonacciType.Wave3ClassicProjection, ref bar3a, wave3Projection, TrendDirection.DownTrend, out wave3A_Response );
 
                         len_2_3a = bar2.High - bar3a.Low;
 

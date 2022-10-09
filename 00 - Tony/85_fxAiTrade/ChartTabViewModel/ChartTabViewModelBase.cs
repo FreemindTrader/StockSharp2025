@@ -347,7 +347,7 @@ namespace FreemindAITrade.ViewModels
         }
 
 
-        public virtual void ClassicWave3Target()
+        public virtual void ShrinkWave3Target()
         {
 
         }
@@ -495,5 +495,7 @@ namespace FreemindAITrade.ViewModels
         {
 
         }
+
+        
     }
 }

@@ -63,7 +63,7 @@
 //                case FibonacciType.Wave2Retracement:
 //                    return SR1stType.HewRET;
 
-//                case FibonacciType.Wave3Projection:
+//                case FibonacciType.Wave3ClassicProjection:
 //                    return SR1stType.HewEXP;
 
 
@@ -124,8 +124,8 @@
 //                case FibonacciType.Wave2Retracement:
 //                    return SR3rdType.Wave2Retracement;
 
-//                case FibonacciType.Wave3Projection:
-//                    return SR3rdType.Wave3Projection;
+//                case FibonacciType.Wave3ClassicProjection:
+//                    return SR3rdType.Wave3ClassicProjection;
 
 
 //                case FibonacciType.Wave3CProjection:
@@ -245,14 +245,14 @@
 //                }
 //                break;
 
-//                case FibonacciType.Wave3Projection:
+//                case FibonacciType.Wave3ClassicProjection:
 //                {
-//                    for ( i = 0; i < GlobalConstants.Wave3ProjectionLevels.Length; i++ )
+//                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
 //                    {
-//                        var level    = projectionPoint.Value + ( ( endPoint.Value - startPoint.Value ) * GlobalConstants.Wave3ProjectionLevels [ i ] / 100 );
-//                        var strength = GlobalConstants.Wave3ProjectionStrength[ i ];
+//                        var level    = projectionPoint.Value + ( ( endPoint.Value - startPoint.Value ) * GlobalConstants.Wave3AllProjectionLevels [ i ] / 100 );
+//                        var strength = GlobalConstants.Wave3AllProjectionStrength[ i ];
 //                        var tb       = new TimeBlock( startPoint.Time, projectionPoint.Time );
-//                        var lvl      = new SRlevel( tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3Projection );
+//                        var lvl      = new SRlevel( tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
 //                        output.Add( lvl );
 //                    }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fx.Definitions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,11 @@ namespace fx.DefinitionsWnd
         // Summary:
         //     Initializes a new instance of the SciChart.Charting.DrawingTools.TradingAnnotations.Models.RatioModel
         //     class.
-        public fxFibRatioModel( double value, Brush brush )
+        public fxFibRatioModel( double value, Brush brush, FibonacciTargetType fibType )
         {
             Value = value;
             Brush = brush;
+            FibType = fibType;
         }
         //
         // Summary:
@@ -26,6 +28,8 @@ namespace fx.DefinitionsWnd
         // Summary:
         //     Gets or sets brush that is used for coloring (SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation.FibonacciRatioLine)
         public Brush Brush { get; set; }
+
+        public FibonacciTargetType FibType { get; set; }
     }
 
 

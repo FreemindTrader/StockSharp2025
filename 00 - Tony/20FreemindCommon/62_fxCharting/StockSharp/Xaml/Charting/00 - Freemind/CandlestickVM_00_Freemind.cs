@@ -306,7 +306,7 @@ namespace fx.Charting
                 _lastNullBar.Close = price;
 
                 _ohlcDataSeries.Update( _lastNullBar.Index, _lastNullBar.Open, _lastNullBar.High, _lastNullBar.Low, _lastNullBar.Close );
-                _xyDataSeries.Update( _lastNullBar.Index, _lastNullBar.Close );
+                //_xyDataSeries.Update( _lastNullBar.Index, _lastNullBar.Close );
             }
             else if ( barTime > nextBarTime && barTime < nextBarTime + _lastNullBar.BarPeriod )
             {
@@ -327,7 +327,7 @@ namespace fx.Charting
                     }
 
                     _ohlcDataSeries.Append( _lastNullBar.BarTime, _lastNullBar.Open, _lastNullBar.High, _lastNullBar.Low, _lastNullBar.Close, _lastNullBar );
-                    _xyDataSeries.Append( _lastNullBar.BarTime, _lastNullBar.Close );
+                    //_xyDataSeries.Append( _lastNullBar.BarTime, _lastNullBar.Close );
                 }
             }
 

@@ -242,17 +242,68 @@ namespace fx.Algorithm
                 }
                     break;
 
-                case FibonacciType.Wave3Projection:
+                case FibonacciType.Wave3All:
                 {
-                    for( i = 0; i < GlobalConstants.Wave3ProjectionLevels.Length; i++ )
+                    for( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
                     {
-                        var fibValue = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3ProjectionLevels[ i ] / 100 );
-                        var info = new FibLevelInfo( GlobalConstants.Wave3ProjectionFibLevelType[ i ], fibValue, GlobalConstants.Wave3ProjectionStrength[ i ] );
+                        var fibValue = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[ i ] / 100 );
+                        var info = new FibLevelInfo( GlobalConstants.Wave3AllFibLevelType[i], fibValue, GlobalConstants.Wave3AllProjectionStrength[i] );
 
                         _fibLevels.Add( info );                        
                     }
                 }
                     break;
+
+                case FibonacciType.CompactWave3:
+                {
+                    for ( i = 0; i < Wave3Compressed.CompressWave3.Length; i++ )
+                    {
+                        var fibValue = projectionPoint + ( ( endPoint - startPoint ) * Wave3Compressed.CompressWave3[i].Value / 100 );
+                        var info = new FibLevelInfo( Wave3Compressed.CompressWave3[i].Percentage, ( float )fibValue, Wave3Compressed.CompressWave3[i].FibStrength );
+
+                        _fibLevels.Add( info );                        
+                    }                    
+                }
+                break;
+
+                
+
+
+                case FibonacciType.Wave3ClassicProjection:
+                {
+                    for ( i = 0; i < Wave3Classic.ClassicWave3.Length; i++ )
+                    {
+                        var fibValue = projectionPoint + ( ( endPoint - startPoint ) * Wave3Classic.ClassicWave3[i].Value / 100 );
+                        var info = new FibLevelInfo( Wave3Classic.ClassicWave3[i].Percentage, (float) fibValue, Wave3Classic.ClassicWave3[i].FibStrength );
+
+                        _fibLevels.Add( info );
+                    }
+                }
+                break;
+
+                case FibonacciType.Wave3Extended:
+                {
+                    for ( i = 0; i < Wave3Extended.ExtendedWave3.Length; i++ )
+                    {
+                        var fibValue = projectionPoint + ( ( endPoint - startPoint ) * Wave3Extended.ExtendedWave3[i].Value / 100 );
+                        var info = new FibLevelInfo( Wave3Extended.ExtendedWave3[i].Percentage, ( float )fibValue, Wave3Extended.ExtendedWave3[i].FibStrength );
+
+                        _fibLevels.Add( info );
+                    }
+                }
+                break;
+
+                case FibonacciType.Wave3SuperExtended:
+                {
+                    for ( i = 0; i < Wave3SuperExtended.SuperExtendedWave3.Length; i++ )
+                    {
+                        var fibValue = projectionPoint + ( ( endPoint - startPoint ) * Wave3SuperExtended.SuperExtendedWave3[i].Value / 100 );
+                        var info = new FibLevelInfo( Wave3SuperExtended.SuperExtendedWave3[i].Percentage, ( float )fibValue, Wave3SuperExtended.SuperExtendedWave3[i].FibStrength );
+
+                        _fibLevels.Add( info );
+                    }
+                }
+                break;
 
                 case FibonacciType.Wave3CProjection:
                 {
@@ -352,6 +403,64 @@ namespace fx.Algorithm
                 temp.Add( SRLinesRet );
                 _majorSL.GetOrAddValueRef( closestRet ) = temp;
             }            
+        }
+
+        public bool GetClosestFibLevel( double lineValue, out FibLevelInfo closestLine )
+        {
+            double minDiff = double.MaxValue;
+            closestLine = default;
+
+            if ( _fibLevels.Count == 0 )
+                return false;
+
+            bool found = false;
+
+            foreach ( var level in _fibLevels )
+            {
+                var fibLvlY = level.FibLevel;
+
+                if ( fibLvlY == 0 )
+                    continue;
+
+                if ( Math.Abs( fibLvlY - lineValue ) < minDiff )
+                {
+                    closestLine = level;
+                    minDiff = Math.Abs( fibLvlY - lineValue );
+
+                    found = true;
+                }
+            }
+
+            return found;
+        }
+
+        public bool GetClosestFibLevel( float lineValue, out FibLevelInfo closestLine )
+        {
+            float minDiff = float.MaxValue;
+            closestLine = default;
+
+            if ( _fibLevels.Count == 0 )
+                return false;
+
+            bool found = false;
+
+            foreach ( var level in _fibLevels )
+            {
+                var fibLvlY = level.FibLevel;
+
+                if ( fibLvlY == 0 )
+                    continue;
+
+                if ( Math.Abs( fibLvlY - lineValue ) < minDiff )
+                {
+                    closestLine = level;
+                    minDiff = Math.Abs( fibLvlY - lineValue );
+
+                    found = true;
+                }
+            }
+
+            return found;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace fx.Algorithm
 {
     public partial class HewManager
     {
+        
         public void WhereAreWeInWavesCycle( int waveScenarioNo, PooledList<WavePointInfo> allWaves, fxHistoricBarsRepo bars, TimeSpan period, BTreeDictionary<long, WavePointImportance> waveImportance )
         {
             if ( allWaves.Count == 0 )
@@ -995,20 +996,29 @@ namespace fx.Algorithm
 
                 case ElliottWaveEnum.Wave2:
                 {
-                    (( DateTime, float ) wave0, ( DateTime, float ) wave1C ) pts0_1C = GetPoints_Wave0_Wave1C_ForWave2( waveScenarioNo, period, barTime, currentWaveDegree );
-                    (( DateTime, float ) wave1c, ( DateTime, float ) wave2 ) pt1C_2  = GetPoints_Wave1C_Wave12( waveScenarioNo, period, barTime, currentWaveDegree );
+                    ((DateTime, float) wave0, (DateTime, float) wave1C) pts0_1C = GetPoints_Wave0_Wave1C_ForWave2( waveScenarioNo, barTime, currentWaveDegree );
+                    ((DateTime, float) wave1c, (DateTime, float) wave2) pt1C_2 = GetPoints_Wave1C_Wave12( waveScenarioNo, barTime, currentWaveDegree );
 
-                    fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), period );
+                    fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), _bars.Period.Value );
                     fibTarget.SetTonyExtension( pt1C_2, ElliottWaveEnum.Wave2 );
 
                     var bars = GetDatabarsRepository( period );
-                    var wave2              = GetCurrentPoint(waveScenarioNo, bars, period, barTime );
-                    var points             = GetImportanceWavePointsForWave3( waveScenarioNo, period, barTime, currentWaveDegree );
+                    var wave2 = GetCurrentPoint( waveScenarioNo, bars, period, barTime );                    
+
+                    var wave3all = new FibLevelsCollection( FibonacciType.Wave3All, pts0_1C.wave0, pts0_1C.wave1C, wave2 );
+
+                    if ( _wave3ProjectionType == FibonacciType.NONE )
+                    {
+                        _wave3ProjectionType = AnalyseWave3ProjectionType( waveScenarioNo, barTime, currentWaveDegree, wave3all );
+                    }
+                    
+
+                    var points = GetImportanceWavePointsForWave3( waveScenarioNo, barTime, currentWaveDegree );
                     fibTarget.TargetPoints = points;
 
                     if ( pts0_1C != default && wave2 != default )
                     {
-                        fibTarget.SetFibonacciProjections( pts0_1C.wave0, pts0_1C.wave1C, wave2, ElliottWaveEnum.Wave3 );
+                        fibTarget.SetWave3Projections( pts0_1C.wave0, pts0_1C.wave1C, wave2, _wave3ProjectionType );
 
                         if ( nextWave != null )
                         {
@@ -1027,6 +1037,41 @@ namespace fx.Algorithm
                     }
                 }
                 break;
+
+                //case ElliottWaveEnum.Wave2:
+                //{
+                //    (( DateTime, float ) wave0, ( DateTime, float ) wave1C ) pts0_1C = GetPoints_Wave0_Wave1C_ForWave2( waveScenarioNo, period, barTime, currentWaveDegree );
+                //    (( DateTime, float ) wave1c, ( DateTime, float ) wave2 ) pt1C_2  = GetPoints_Wave1C_Wave12( waveScenarioNo, period, barTime, currentWaveDegree );
+
+                //    fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), period );
+                //    fibTarget.SetTonyExtension( pt1C_2, ElliottWaveEnum.Wave2 );
+
+                //    var bars = GetDatabarsRepository( period );
+                //    var wave2 = GetCurrentPoint(waveScenarioNo, bars, period, barTime );
+                //    var points = GetImportanceWavePointsForWave3( waveScenarioNo, period, barTime, currentWaveDegree );
+                //    fibTarget.TargetPoints = points;
+
+                //    if ( pts0_1C != default && wave2 != default )
+                //    {
+                //        fibTarget.SetFibonacciProjections( pts0_1C.wave0, pts0_1C.wave1C, wave2, ElliottWaveEnum.Wave3 );
+
+                //        if ( nextWave != null )
+                //        {
+                //            var nextWaveNameInfo = nextWave.GetWaveFromScenario( waveScenarioNo ).GetHewPointInfoAtCycle( currentWaveDegree );
+
+                //            if ( nextWaveNameInfo != null )
+                //            {
+                //                if ( nextWave.HasOwingBar() )
+                //                {
+                //                    fibTarget.SetEndingIndexTime( nextWave.GetMarginDateTime() );
+                //                }
+                //            }
+                //        }
+
+                //        fibTarget.Analyse3rdWave();
+                //    }
+                //}
+                //break;
 
                 case ElliottWaveEnum.Wave4:
                 {
@@ -1560,13 +1605,21 @@ namespace fx.Algorithm
 
                     fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString( ), _bars.Period.Value );
                     fibTarget.SetTonyExtension( pt1C_2, ElliottWaveEnum.Wave2 );
-                    var wave2              = GetCurrentPoint(waveScenarioNo,  barTime );
-                    var points             = GetImportanceWavePointsForWave3( waveScenarioNo, barTime, currentWaveDegree );
+                    var wave2 = GetCurrentPoint(waveScenarioNo,  barTime );
+
+                    var wave3all = new FibLevelsCollection( FibonacciType.Wave3All, pts0_1C.wave0, pts0_1C.wave1C, wave2 );
+
+                    if ( _wave3ProjectionType == FibonacciType.NONE )
+                    {
+                        _wave3ProjectionType = AnalyseWave3ProjectionType( waveScenarioNo, barTime, currentWaveDegree, wave3all );
+                    }
+
+                    var points = GetImportanceWavePointsForWave3( waveScenarioNo, barTime, currentWaveDegree );
                     fibTarget.TargetPoints = points;
 
                     if ( pts0_1C != default && wave2 != default )
-                    {
-                        fibTarget.SetFibonacciProjections( pts0_1C.wave0, pts0_1C.wave1C, wave2, ElliottWaveEnum.Wave3 );
+                    {                        
+                        fibTarget.SetWave3Projections( pts0_1C.wave0, pts0_1C.wave1C, wave2, _wave3ProjectionType );
 
                         if ( nextWave != null )
                         {
@@ -1715,6 +1768,8 @@ namespace fx.Algorithm
 
             return fibTarget;
         }
+
+        
 
         public PooledList<WavePointInfo> GetWavesOfHighestDegree( int waveScenarioNo, TimeSpan period )
         {
@@ -1952,19 +2007,54 @@ namespace fx.Algorithm
                     waveModel.BuildWaveModel();
                 }
             }
-
-            
-
-
-
-
-
-
-
         }
 
-        
-        public PooledList<DbElliottWave> GetAllWavesOfDegreeAfter( int waveScenarioNo, TimeSpan period, long rawBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree )
+        /* -------------------------------------------------------------------------------------------------------------------------------------------
+         * 
+         *  I will do wave target prediction based on Hew theory and Pivot Pionts targets.
+         * 
+         * ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        public void AnalyzeWaveTargetsFromWave2( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime )
+        {
+            var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( bars.Security );
+
+            if ( aa == null )
+            {
+                return;
+            }
+
+            var bar = bars.GetBarByTime( selectedBarTime );
+
+            ref var hew = ref bar.GetWaveFromScenario( waveScenarioNo );
+
+            if ( hew == AdvBarInfo.EmptyHew )
+            {
+                return;
+            }
+
+            var highestWave = hew.GetFirstHighestWaveInfo();
+
+            if ( highestWave.HasValue )
+            {
+                var waveName = highestWave.Value.WaveName;
+                var waveCycle = highestWave.Value.WaveCycle;
+
+                var begin = FindBeginOfCurrentTrend( waveScenarioNo, period, selectedBarTime, waveCycle );
+
+                var waveKey = new WaveModelKey( bars.Security, period, waveScenarioNo, begin, -1, waveCycle );
+
+                WavePredictionModel waveModel = null;
+
+                if ( aa.GetOrCreateWaveModel( waveKey, bars, this, out waveModel ) )
+                {
+                    waveModel.BuildWaveModel( begin, waveCycle );
+                }
+            }
+        }
+
+
+        public PooledList<DbElliottWave> GetAllWavesOfDegreeAfter( int waveScenarioNo, TimeSpan period, long rawBarTime, ElliottWaveCycle waveDegree )
         {
             var output = new PooledList< DbElliottWave >( );
 
@@ -2125,6 +2215,133 @@ namespace fx.Algorithm
             detectTask.Start();
 
             return detectTask;
+        }
+
+        private FibonacciType AnalyseWave3ProjectionType( int waveScenarioNo, long wave2CTime, ElliottWaveCycle currentWaveDegree, FibLevelsCollection wave3All )
+        {
+            ((DateTime, float PeakTrough) wave0, (DateTime, float PeakTrough) wave1C) pts = GetPoints_Wave0_Wave1C_ForWave2( waveScenarioNo, _currentActiveTimeFrame, wave2CTime, currentWaveDegree );
+
+            bool uptrend = pts.wave1C.PeakTrough > pts.wave0.PeakTrough ? false : true;
+
+            var waveImportance = GetWaveImportanceDictionary( _currentActiveTimeFrame );
+
+            var nextWaveImportance = waveImportance.GetElementsRightOf( wave2CTime );
+
+            (SBar bar, WavePointImportance impt) highest = FindLatestHighestWaveImportance( nextWaveImportance );
+
+            if ( highest != default )
+            {
+                if ( wave3All.GetClosestFibLevel( highest.bar.ClosePrice, out var closetLine ) )
+                {
+                    if ( closetLine.FibPrecentage > FibPercentage.Fib_323_6 )
+                    {
+                        return FibonacciType.Wave3SuperExtended;
+                    }
+                    else if ( closetLine.FibPrecentage > FibPercentage.Fib_241_4 )
+                    {
+                        return FibonacciType.Wave3Extended;
+                    }
+                }
+            }
+
+            return FibonacciType.Wave3ClassicProjection;
+        }
+
+        public (SBar, WavePointImportance) FindLatestHighestWaveImportance( IEnumerable<KeyValuePair<long, WavePointImportance>> wavePts )
+        {
+            SBar highestBar = default;
+            WavePointImportance highestWave = null;
+
+            int highestWaveImpt = -1;
+
+            foreach ( KeyValuePair<long, WavePointImportance> impt in wavePts )
+            {
+                if ( impt.Value.WaveImportance > highestWaveImpt )
+                {
+                    highestWaveImpt = impt.Value.WaveImportance;
+                }
+            }
+
+            foreach ( KeyValuePair<long, WavePointImportance> wavePt in wavePts )
+            {
+                if ( wavePt.Value.WaveImportance == highestWaveImpt )
+                {
+                    ref SBar currentBar = ref _bars.GetBarByTime( wavePt.Key );
+
+                    if ( currentBar != SBar.EmptySBar )
+                    {
+                        highestBar = currentBar;
+                        highestWave = wavePt.Value;                        
+                    }
+                }
+            }
+
+            return (highestBar, highestWave);
+        }
+
+        public List<((SBar, WavePointImportance), (SBar, WavePointImportance))> FindHighestWaveImportancePairs( IEnumerable<KeyValuePair<long, WavePointImportance>> wavePts )
+        {
+            List<((SBar, WavePointImportance), (SBar, WavePointImportance))> output = new List<((SBar, WavePointImportance), (SBar, WavePointImportance))>();
+
+            int highestWaveImpt = -1;
+
+            foreach ( KeyValuePair<long, WavePointImportance> impt in wavePts )
+            {
+                if ( impt.Value.WaveImportance > highestWaveImpt )
+                {
+                    highestWaveImpt = impt.Value.WaveImportance;
+                }
+            }
+            
+
+            SBar beginBar = default;
+            WavePointImportance beginWaveImpt = null;
+
+            SBar endBar = default;
+            WavePointImportance endWaveImpt = null;
+
+            foreach ( KeyValuePair<long, WavePointImportance> wavePt in wavePts )
+            {
+                if ( wavePt.Value.WaveImportance == highestWaveImpt )
+                {
+                    ref SBar currentBar = ref _bars.GetBarByTime( wavePt.Key );
+
+                    if ( currentBar != SBar.EmptySBar )
+                    {
+                        if ( beginBar == default )
+                        {
+                            beginBar = currentBar;
+                            beginWaveImpt = wavePt.Value;
+
+                            continue;
+                        }
+
+                        if ( beginBar != default && endBar == default )
+                        {
+                            endBar = currentBar;
+                            endWaveImpt = wavePt.Value;
+                        }
+
+                        if ( beginBar != default && endBar != default )
+                        {
+                            output.Add( ((beginBar, beginWaveImpt), (endBar, endWaveImpt)) );
+
+                            beginBar = default;
+                            endBar = default;
+                        }
+                    }
+                }
+            }
+            
+            if ( output.Count == 0 )
+            {
+                if ( beginBar != default && endBar == default )
+                {
+                    output.Add( ((beginBar, beginWaveImpt), (endBar, endWaveImpt)) );
+                }
+            }
+
+            return output;
         }
 
     }
