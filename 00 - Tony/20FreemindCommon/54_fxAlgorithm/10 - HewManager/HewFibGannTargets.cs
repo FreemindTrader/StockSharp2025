@@ -50,219 +50,185 @@ namespace fx.Algorithm
 
         public TimeSpan Period { get; set; }
 
-        public PooledList<fxFibRatioModel> GetTonyLevels()
+        public fxFibLevels[ ] GetTonyLevels()
         {
-            return fxFibRatioConstants.TonyDiscoveryFibLevels;
+            return WaveFibConstants.TonyDiscoveryLevels;
+            //if ( _tonyRetracementLevels != null )
+            //{
+            //    return _tonyRetracementLevels.FibLevels;
+            //}
+            //else if ( _tonyFirstLevels != null )
+            //{
+            //    return _tonyFirstLevels.FibLevels;
+            //}
+            //else if ( _tonySecondLevels != null )
+            //{
+            //    return _tonySecondLevels.FibLevels;
+            //}
+
+            //return null;
         }
 
-        public PooledList<fxFibRatioModel> GetFibLevels()
+        public fxFibLevels[ ] GetNewFibLevels()
+        {
+            switch ( FibType )
+            {                                
+                case FibonacciType.Wave3ClassicProjection:
+                {
+                    return WaveFibConstants.ClassicWave3;
+                }
+
+                case FibonacciType.Wave3Extended:
+                {
+                    return WaveFibConstants.ExtendedWave3;
+                }
+
+                case FibonacciType.Wave3SuperExtended:
+                {
+                    return WaveFibConstants.SuperExtendedWave3;
+                }
+
+                //case FibonacciType.Wave3All:
+                //{
+                //    return fxFibRatioConstants.Wave3AllFibLevels;
+                //}
+                
+
+                case FibonacciType.CompactWave3:
+                {
+                    return WaveFibConstants.CompressWave3;
+                }
+
+                //case FibonacciType.TonyProjection:
+                //{
+                //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
+                //}
+            }
+
+            return null;
+        }
+
+        public fxFibLevels[ ] GetFibLevels()
         {
             switch ( FibType )
             {
                 case FibonacciType.TonyRetracement:
                 case FibonacciType.Wave2Retracement:
                 {
-                    return fxFibRatioConstants.Wave2RetracementFibLevels;
+                    return WaveFibConstants.Wave2RetracementLevels;
                 }
 
 
                 case FibonacciType.Wave4Retracement:
                 {
-                    return fxFibRatioConstants.Wave4RetracementFibLevels;
+                    return WaveFibConstants.Wave4RetracementLevels;
                 }
 
                 case FibonacciType.ABCWaveBRetracement:
                 {
-                    return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
+                    return WaveFibConstants.ABCWaveBRetracementFibLevels;
                 }
 
                 case FibonacciType.Wave3ClassicProjection:
                 {
-                    return fxFibRatioConstants.Wave3ClassicFibLevels;
+                    return WaveFibConstants.ClassicWave3;
                 }
 
                 case FibonacciType.Wave3Extended:
                 {
-                    return fxFibRatioConstants.Wave3ExtendedFibLevels;
+                    return WaveFibConstants.ExtendedWave3;
                 }
 
                 case FibonacciType.Wave3SuperExtended:
                 {
-                    return fxFibRatioConstants.Wave3SuperExtendedFibLevels;
+                    return WaveFibConstants.SuperExtendedWave3;
                 }
 
                 case FibonacciType.Wave3All:
                 {
-                    return fxFibRatioConstants.Wave3AllFibLevels;
+                    return WaveFibConstants.AllWave3;
                 }
 
                 case FibonacciType.Wave3CProjection:
                 {
-                    return fxFibRatioConstants.Wave3CProjectionFibLevels;
+                    return WaveFibConstants.Wave3CProjectionLevels;
                 }
 
                 case FibonacciType.Wave5Projection:
                 {
-                    return fxFibRatioConstants.Wave5ProjectionFibLevels;
+                    return WaveFibConstants.Wave5ProjectionFibLevels;
                 }
 
                 case FibonacciType.ABCWaveCProjection:
                 {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
+                    return WaveFibConstants.ABCWaveCProjectionFibLevels;
                 }
 
                 case FibonacciType.Wave5CProjection:
                 {
-                    return fxFibRatioConstants.Wave5CProjectionFibLevels;
+                    return WaveFibConstants.Wave5CProjectionFibLevels;
                 }
 
                 case FibonacciType.WaveEFBRetracement:
                 {
-                    return fxFibRatioConstants.WaveEFBRetraceFibLevels;
+                    return WaveFibConstants.WaveEFBRetracementLevels;
                 }
 
                 case FibonacciType.WaveTriBRetracement:
                 {
-                    return fxFibRatioConstants.WaveTriBRetracementFibLevels;
+                    return WaveFibConstants.WaveTriBRetracementLevels;
                 }
 
                 case FibonacciType.WaveTriCProjection:
                 {
-                    return fxFibRatioConstants.WaveTriCRetracementFibLevels;
+                    return WaveFibConstants.WaveTriCRetracementLevels;
                 }
 
                 case FibonacciType.WaveTriDProjection:
                 {
-                    return fxFibRatioConstants.WaveTriDRetracementFibLevels;
+                    return WaveFibConstants.WaveTriDRetracementLevels;
                 }
 
                 case FibonacciType.WaveTriEProjection:
                 {
-                    return fxFibRatioConstants.WaveTriERetracementFibLevels;
+                    return WaveFibConstants.WaveTriERetracementLevels;
                 }
 
                 case FibonacciType.FirstXProjection:
                 {
-                    return fxFibRatioConstants.FirstXProjectionFibLevels;
+                    return WaveFibConstants.FirstXProjectionLevels;
                 }
 
                 case FibonacciType.SecondXProjection:
                 {
-                    return fxFibRatioConstants.SecondXProjectionFibLevels;
+                    return WaveFibConstants.FirstXProjectionLevels;
                 }
 
 
                 case FibonacciType.WaveCProjection:
                 {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
+                    return WaveFibConstants.ABCWaveCProjectionFibLevels;
                 }
 
                 case FibonacciType.CompactWave3:
                 {
-                    return fxFibRatioConstants.Wave3CompressFibLevels;
+                    return WaveFibConstants.CompressWave3;
                 }
 
                 //case FibonacciType.TonyProjection:
                 //{
-                //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
+                //    return WaveFibConstants.TonyDiscoveryFibLevels;
                 //}
             }
 
             return null;
         }
 
-        public static PooledList<fxFibRatioModel> GetFibLevels( FibonacciType fibType )
+        public static PooledList<FibLevelInfo> GetFibLevels( FibonacciType fibType, double starting, double ending )
         {
-            switch ( fibType )
-            {
-                case FibonacciType.Wave2Retracement:
-                {
-                    return fxFibRatioConstants.Wave2RetracementFibLevels;
-                }
+            var temp = new FibLevelsCollection( fibType, starting, ending );
 
-                case FibonacciType.Wave4Retracement:
-                {
-                    return fxFibRatioConstants.Wave4RetracementFibLevels;
-                }
-
-                case FibonacciType.ABCWaveBRetracement:
-                {
-                    return fxFibRatioConstants.ABCWaveBRetracementFibLevels;
-                }
-
-                case FibonacciType.Wave3ClassicProjection:
-                {
-                    return fxFibRatioConstants.Wave3ClassicFibLevels;
-                }
-
-                case FibonacciType.Wave3CProjection:
-                {
-                    return fxFibRatioConstants.Wave3CProjectionFibLevels;
-                }
-
-                case FibonacciType.Wave5Projection:
-                {
-                    return fxFibRatioConstants.Wave5ProjectionFibLevels;
-                }
-
-                case FibonacciType.ABCWaveCProjection:
-                {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
-                }
-
-                case FibonacciType.Wave5CProjection:
-                {
-                    return fxFibRatioConstants.Wave5CProjectionFibLevels;
-                }
-
-                case FibonacciType.WaveEFBRetracement:
-                {
-                    return fxFibRatioConstants.WaveEFBRetraceFibLevels;
-                }
-
-                case FibonacciType.WaveTriBRetracement:
-                {
-                    return fxFibRatioConstants.WaveTriBRetracementFibLevels;
-                }
-
-                case FibonacciType.WaveTriCProjection:
-                {
-                    return fxFibRatioConstants.WaveTriCRetracementFibLevels;
-                }
-
-                case FibonacciType.WaveTriDProjection:
-                {
-                    return fxFibRatioConstants.WaveTriDRetracementFibLevels;
-                }
-
-                case FibonacciType.WaveTriEProjection:
-                {
-                    return fxFibRatioConstants.WaveTriERetracementFibLevels;
-                }
-
-                case FibonacciType.FirstXProjection:
-                {
-                    return fxFibRatioConstants.FirstXProjectionFibLevels;
-                }
-
-                case FibonacciType.SecondXProjection:
-                {
-                    return fxFibRatioConstants.SecondXProjectionFibLevels;
-                }
-
-
-                case FibonacciType.WaveCProjection:
-                {
-                    return fxFibRatioConstants.ABCWaveCProjectionFibLevels;
-                }
-
-                //case FibonacciType.TonyProjection:
-                //{
-                //    return fxFibRatioConstants.TonyDiscoveryFibLevels;
-                //}
-            }
-
-            return null;
+            return temp.FibLevels;
         }
 
 
@@ -574,10 +540,7 @@ namespace fx.Algorithm
 
             RetracementOrProjection = RetraceProjectionType.Projection;
 
-            if ( _hews.GetFibonacciProjection( wave, out FibLevelsInfo projection ) )
-            {                
-                _fibCalculationType = projection.FibType;
-            }
+            _fibCalculationType = _hews.GetFibonacciProjection( wave );
 
             if ( _projectionPoint != default )
             {
@@ -633,10 +596,8 @@ namespace fx.Algorithm
 
                 _gannLevelsCollection = new GannLevelsCollection( _projectionPoint.Item2, _projectionPoint.Item1.ToLinuxTime(), direction, 5 );
             }
-
-            _hews.GetWaveCProjection( wave, out FibLevelsInfo projection );
-            
-            _fibCalculationType = projection.FibType;
+                       
+            _fibCalculationType = _hews.GetWaveCProjectionFibType( wave ); 
 
             _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
 
@@ -658,11 +619,9 @@ namespace fx.Algorithm
                 _gannLevelsCollection = new GannLevelsCollection( _projectionPoint.Item2, _projectionPoint.Item1.ToLinuxTime(), direction, 5 );
             }
 
-            RetracementOrProjection = RetraceProjectionType.Projection;
-
-            _hews.GetFirstXProjection( out FibLevelsInfo projection );
+            RetracementOrProjection = RetraceProjectionType.Projection;            
             
-            _fibCalculationType = projection.FibType;
+            _fibCalculationType = FibonacciType.FirstXProjection;
 
             _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
 
@@ -684,11 +643,9 @@ namespace fx.Algorithm
                 _gannLevelsCollection = new GannLevelsCollection( _projectionPoint.Item2, _projectionPoint.Item1.ToLinuxTime(), direction, 5 );
             }
 
-            RetracementOrProjection = RetraceProjectionType.Projection;
-
-            _hews.GetSecondXProjection( out FibLevelsInfo projection );
+            RetracementOrProjection = RetraceProjectionType.Projection;            
             
-            _fibCalculationType = projection.FibType;
+            _fibCalculationType = FibonacciType.SecondXProjection;
 
             _regularRetraceProjectionLevels = new FibLevelsCollection( _fibCalculationType, _startPoint, _endPoint, _projectionPoint );
 
@@ -703,10 +660,7 @@ namespace fx.Algorithm
 
             RetracementOrProjection = RetraceProjectionType.Retracement;
 
-            if ( _hews.GetFibonacciRetracment( wave, out FibLevelsInfo retracement ) )
-            {                
-                _fibCalculationType = retracement.FibType;
-            }
+            _fibCalculationType = _hews.GetFibonacciRetracment( wave );
 
             TrendDirection direction = endPoint.Item2 > startPoint.Item2 ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
@@ -731,10 +685,10 @@ namespace fx.Algorithm
             {
                 case FibonacciType.WaveCProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.ABCWaveCProjectionFibLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.ABCWaveCProjectionFibLevels[i].FibValue / 100 );
+                        var strength = WaveFibConstants.ABCWaveCProjectionFibLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.WaveCProjection );
 
@@ -745,10 +699,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave2Retracement:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.Wave2RetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave2RetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.Wave2RetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.Wave2RetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave2Retracement );
 
@@ -759,10 +713,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.FirstXProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.FirstXProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.FirstXProjectionLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.FirstXProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.FirstXProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.FirstXProjectionLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.FirstXProjectionLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.FirstXProjection );
 
@@ -773,10 +727,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.SecondXProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.SecondXProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.FirstXProjectionLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.SecondXProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.SecondXProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.FirstXProjectionLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.FirstXProjectionLevels[ i ].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.SecondXProjection );
 
@@ -787,10 +741,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave3ClassicProjection:
                 {
-                    for ( i = 0; i < Wave3Classic.ClassicWave3.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.ClassicWave3.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3Classic.ClassicWave3[i].Value / 100 );
-                        var strength = Wave3Classic.ClassicWave3[i].FibStrength;
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.ClassicWave3[i].FibValue / 100 );
+                        var strength = WaveFibConstants.ClassicWave3[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
@@ -801,10 +755,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.CompactWave3:
                 {
-                    for ( i = 0; i < Wave3Compressed.CompressWave3.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.CompressWave3.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3Compressed.CompressWave3[i].Value / 100 );
-                        var strength = Wave3Compressed.CompressWave3[i].FibStrength;
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.CompressWave3[i].FibValue / 100 );
+                        var strength = WaveFibConstants.CompressWave3[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
@@ -815,10 +769,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave3Extended:
                 {
-                    for ( i = 0; i < Wave3Extended.ExtendedWave3.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.ExtendedWave3.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3Extended.ExtendedWave3[i].Value / 100 );
-                        var strength = Wave3Extended.ExtendedWave3[i].FibStrength;
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.ExtendedWave3[i].FibValue / 100 );
+                        var strength = WaveFibConstants.ExtendedWave3[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
@@ -829,10 +783,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave3SuperExtended:
                 {
-                    for ( i = 0; i < Wave3SuperExtended.SuperExtendedWave3.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.SuperExtendedWave3.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * Wave3SuperExtended.SuperExtendedWave3[i].Value / 100 );
-                        var strength = Wave3SuperExtended.SuperExtendedWave3[i].FibStrength;
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.SuperExtendedWave3[i].FibValue / 100 );
+                        var strength = WaveFibConstants.SuperExtendedWave3[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
@@ -843,10 +797,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave3All:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.AllWave3.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave3AllProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.AllWave3[i].FibValue / 100  );
+                        var strength = WaveFibConstants.AllWave3[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3ClassicProjection );
 
@@ -857,10 +811,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave3CProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.Wave3CProjectionLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave3CProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.Wave3CProjectionLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.Wave3CProjectionLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave3CProjection );
 
@@ -872,10 +826,10 @@ namespace fx.Algorithm
                 case FibonacciType.TonyRetracement:
                 case FibonacciType.Wave4Retracement:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.Wave4RetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.Wave4RetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave4RetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.Wave4RetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.Wave4RetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave4Retracement );
 
@@ -886,10 +840,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave5Projection:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.Wave5ProjectionFibLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave5ProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.Wave5ProjectionFibLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.Wave5ProjectionFibLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave5Projection );
 
@@ -900,10 +854,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave5CProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.Wave5ProjectionFibLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave5CProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.Wave5ProjectionFibLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.Wave5ProjectionFibLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.Wave5CProjection );
 
@@ -914,10 +868,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.ABCWaveCProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.ABCWaveCProjectionFibLevels.Length; i++ )
                     {
-                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
+                        var level = ProjectionPoint.Value + ( ( EndPoint.Value - StartPoint.Value ) * WaveFibConstants.ABCWaveCProjectionFibLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.ABCWaveCProjectionFibLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, ProjectionPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.ABCWaveCProjection );
 
@@ -928,10 +882,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.ABCWaveBRetracement:
                 {
-                    for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.ABCWaveBRetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.ABCWaveBRetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.ABCWaveBRetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.ABCWaveBRetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.ABCWaveBRetracement );
 
@@ -942,10 +896,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.WaveEFBRetracement:
                 {
-                    for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.WaveEFBRetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveEFBRetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.WaveEFBRetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.WaveEFBRetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.WaveEFBRetracement );
 
@@ -956,10 +910,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.WaveTriBRetracement:
                 {
-                    for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.WaveTriBRetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriBRetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.WaveTriBRetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.WaveTriBRetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.WaveTriBRetracement );
 
@@ -970,10 +924,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.WaveTriCProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.WaveTriCRetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriCRetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.WaveTriCRetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.WaveTriCRetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.WaveTriCProjection );
 
@@ -984,10 +938,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.WaveTriDProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.WaveTriDRetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriDRetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.WaveTriDRetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.WaveTriDRetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.WaveTriDProjection );
 
@@ -998,10 +952,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.WaveTriEProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.WaveTriERetracementLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriERetracementStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.WaveTriERetracementLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.WaveTriERetracementLevels[i].FibStrength;
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.WaveTriEProjection );
 
@@ -1012,10 +966,10 @@ namespace fx.Algorithm
 
                 case FibonacciType.TonyProjection:
                 {
-                    for ( i = 0; i < GlobalConstants.TonyDiscoveryLevels.Length; i++ )
+                    for ( i = 0; i < WaveFibConstants.TonyDiscoveryLevels.Length; i++ )
                     {
-                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * GlobalConstants.TonyDiscoveryLevels[i] / 100 );
-                        var strength = GlobalConstants.TonyDiscoveryLevelsStrength[i];
+                        var level = EndPoint.Value + ( ( StartPoint.Value - EndPoint.Value ) * WaveFibConstants.TonyDiscoveryLevels[i].FibValue / 100  );
+                        var strength = WaveFibConstants.TonyDiscoveryLevels[i].FibStrength;
 
                         var tb = new TimeBlockEx( StartPoint.Time, EndPoint.Time );
                         var lvl = new SRlevel( ref tb, TimeSpan.FromMinutes( 1 ), level, strength, SR3rdType.TonyProjection );

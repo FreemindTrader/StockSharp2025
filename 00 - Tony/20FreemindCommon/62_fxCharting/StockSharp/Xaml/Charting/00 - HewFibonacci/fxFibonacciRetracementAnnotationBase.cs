@@ -255,7 +255,7 @@ namespace fx.Charting.HewFibonacci
                 }
                 else
                 {
-                    var fibTable        = new fxFibonacciTableAnnotation( FibonacciType.Wave2Retracement, _gripStyle, ref _lastBar, _endingY.ToDouble() > _startingY.ToDouble( ), _targetBars );
+                    var fibTable        = new fxFibonacciTableAnnotation( FibonacciType.Wave2Retracement, _gripStyle, ref _lastBar, _startingY.ToDouble(), _endingY.ToDouble() , _targetBars );
                     fibTable.X1         = x;
                     fibTable.Y1         = y;
                     fibTable.X2         = x;

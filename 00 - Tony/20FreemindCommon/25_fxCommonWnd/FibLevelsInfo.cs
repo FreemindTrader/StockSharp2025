@@ -162,8 +162,16 @@ namespace fx.Common
             }
         }
 
-        double _fibLevelStrengh;
-        public double FibLevelStrengh
+        FibonacciTargetType _targetType;
+
+        public FibonacciTargetType FibTargetType
+        {
+            get => _targetType;
+            set => _targetType = value;
+        }
+
+        int _fibLevelStrengh;
+        public int FibLevelStrengh
         {
             get => _fibLevelStrengh;
             set
@@ -215,14 +223,31 @@ namespace fx.Common
 
         
 
-        public FibLevelInfo( FibPercentage percentage, float fibLevel, double fibLevelStrengh )
+        //public FibLevelInfo( FibPercentage percentage, float fibLevel, double fibLevelStrengh )
+        //{
+        //    FibPrecentage = percentage;
+        //    FibLevelStrengh = fibLevelStrengh;
+        //    FibLevel = fibLevel;
+        //    LowerBound = fibLevel;
+        //    UpperBound = fibLevel;
+        //    LikelyScore = fibLevelStrengh;
+        //    IsBroken = false;
+        //    DynamicSRLinesRating = 0;
+        //    OverlappedCount = 0;
+        //}
+
+
+
+
+        public FibLevelInfo( fxFibLevels fib, float fibLevel )
         {
-            FibPrecentage = percentage;
-            FibLevelStrengh = fibLevelStrengh;
+            FibPrecentage = fib.Percentage;
+            FibLevelStrengh = fib.FibStrength;
+            FibTargetType = fib.FibTargetType;
             FibLevel = fibLevel;
             LowerBound = fibLevel;
             UpperBound = fibLevel;
-            LikelyScore = fibLevelStrengh;
+            LikelyScore = fib.FibStrength;
             IsBroken = false;
             DynamicSRLinesRating = 0;
             OverlappedCount = 0;

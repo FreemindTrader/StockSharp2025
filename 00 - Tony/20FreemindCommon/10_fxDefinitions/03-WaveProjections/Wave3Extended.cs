@@ -8,30 +8,7 @@ using fx.Collections;
 
 namespace fx.Definitions
 {
-    public static class Wave3Extended
-    {
-        public static readonly fxFibLevels[ ] ExtendedWave3 = new fxFibLevels[ ]
-        {            
-            new fxFibLevels( FibPercentage.Fib_100,     100.00f,  FibonacciTargetType.Wave3B,  10 ),
-            new fxFibLevels( FibPercentage.Fib_109_2,   109.20f,  FibonacciTargetType.Wave3B,  75 ),
-            
-            new fxFibLevels( FibPercentage.Fib_123_6,   123.60f,  FibonacciTargetType.Wave3A,  75 ),
-            new fxFibLevels( FibPercentage.Fib_138_2,   138.20f,  FibonacciTargetType.Wave3A,  75 ),
-            new fxFibLevels( FibPercentage.Fib_141_4,   141.4f,   FibonacciTargetType.Wave4,   75 ),
-
-            
-            new fxFibLevels( FibPercentage.Fib_223_6,   223.60f,  FibonacciTargetType.Wave3C,  75 ),
-            new fxFibLevels( FibPercentage.Fib_238_2,   238.20f,  FibonacciTargetType.Wave3C,  75 ),
-
-            new fxFibLevels( FibPercentage.Fib_285_4,   285.40f,  FibonacciTargetType.Wave5,   75 ),
-            new fxFibLevels( FibPercentage.Fib_290_2,   290.2f,   FibonacciTargetType.Wave5,   75 ),
-            new fxFibLevels( FibPercentage.Fib_298_4,   298.4f,   FibonacciTargetType.Wave5,   75 ),
-            new fxFibLevels( FibPercentage.Fib_305_6,   305.6f,   FibonacciTargetType.Wave5,   75 ),
-            new fxFibLevels( FibPercentage.Fib_314_6,   314.6f,   FibonacciTargetType.Wave5,   75 ),
-            new fxFibLevels( FibPercentage.Fib_327_2,   323.6f,   FibonacciTargetType.Wave5,   75 ),
-
-        };
-    }
+    
     public static partial class GlobalConstants
     {
         public static readonly float[ ] ExtendedWave3ClassicProjectionLevels = new float[ ]

@@ -700,7 +700,7 @@ namespace fx.Algorithm
 
                         output = priceTimeInfo;
 
-                        bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave2RetracementLevels );
+                        bool validRetracement = CheckRetracementValue( ratio, WaveFibConstants.Wave2RetracementLevels );
 
                         if ( validRetracement )
                         {
@@ -793,7 +793,7 @@ namespace fx.Algorithm
 
                         var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, wave2BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
 
-                        bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave2RetracementLevels );
+                        bool validRetracement = CheckRetracementValue( ratio, WaveFibConstants.Wave2RetracementLevels );
 
                         if ( validRetracement )
                         {
@@ -820,9 +820,9 @@ namespace fx.Algorithm
             return false;
         }
 
-        private bool CheckRetracementValue( double ratio, float[ ] wave2RetracementLevels )
+        private bool CheckRetracementValue( double ratio, fxFibLevels[ ] wave2RetracementLevels )
         {
-            if ( ratio > wave2RetracementLevels[ 0 ] && ( ratio < wave2RetracementLevels[ wave2RetracementLevels.Length - 1 ] ) )
+            if ( ratio > wave2RetracementLevels[ 0 ].FibValue && ( ratio < wave2RetracementLevels[ wave2RetracementLevels.Length - 1 ].FibValue ) )
             {
                 return true;
             }
@@ -899,7 +899,7 @@ namespace fx.Algorithm
 
                         var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave2BarIndex, bars.GetIndexByTime( wave3BarTime ), wave4BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
 
-                        bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave4RetracementLevels );
+                        bool validRetracement = CheckRetracementValue( ratio, WaveFibConstants.Wave4RetracementLevels );
 
                         if ( validRetracement )
                         {
@@ -995,7 +995,7 @@ namespace fx.Algorithm
 
                         var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave2BarIndex, bars.GetIndexByTime( wave3BarTime ), wave4BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
 
-                        bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave4RetracementLevels );
+                        bool validRetracement = CheckRetracementValue( ratio, WaveFibConstants.Wave4RetracementLevels );
 
                         if ( validRetracement )
                         {
@@ -1092,7 +1092,7 @@ namespace fx.Algorithm
 
                         var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave024XBarIndex, waveABarIndex, waveBBarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
 
-                        bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.ABCWaveBRetracementLevels );
+                        bool validRetracement = CheckRetracementValue( ratio, WaveFibConstants.ABCWaveBRetracementLevels );
 
                         if ( validRetracement )
                         {
@@ -1186,7 +1186,7 @@ namespace fx.Algorithm
 
                         var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave024XBarIndex, bars.GetIndexByTime( waveAtime ) , waveBBarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
 
-                        bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.ABCWaveBRetracementLevels );
+                        bool validRetracement = CheckRetracementValue( ratio, WaveFibConstants.ABCWaveBRetracementLevels );
 
                         if ( validRetracement )
                         {

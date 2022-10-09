@@ -413,7 +413,7 @@
 
 //            _controlPointCount  = 3;
 
-//            var projection      = _hews.GetWaveCProjection( wave );
+//            var projection      = _hews.GetWaveCProjectionFibType( wave );
 //            _fibonaccilevels    = projection.FibLevels;
 //            _fibCalculationType = projection.FibType;
 

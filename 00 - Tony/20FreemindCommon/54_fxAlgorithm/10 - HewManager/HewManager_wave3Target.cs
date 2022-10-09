@@ -102,5 +102,44 @@ namespace fx.Algorithm
 
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="waveScenarioNo"></param>
+        /// <param name="wave2CTime"></param>
+        /// <param name="currentWaveDegree"></param>
+        /// <param name="wave3All"></param>
+        /// <returns></returns>
+        private FibonacciType AnalyseWave3A3B3C45( int waveScenarioNo, long wave2CTime, ElliottWaveCycle currentWaveDegree, FibLevelsCollection wave3All )
+        {
+            //![](4940A3181E5ADC0F695E0C104B459425.png;;;0.03291,0.03345)
+            ((DateTime, float PeakTrough) wave0, (DateTime, float PeakTrough) wave1C) pts = GetPoints_Wave0_Wave1C_ForWave2( waveScenarioNo, _currentActiveTimeFrame, wave2CTime, currentWaveDegree );
+
+            bool uptrend = pts.wave1C.PeakTrough > pts.wave0.PeakTrough ? false : true;
+
+            var waveImportance = GetWaveImportanceDictionary( _currentActiveTimeFrame );
+
+            var nextWaveImportance = waveImportance.GetElementsRightOf( wave2CTime );
+
+            (SBar bar, WavePointImportance impt) highest = FindLatestHighestWaveImportance( nextWaveImportance );
+
+            if ( highest != default )
+            {
+                if ( wave3All.GetClosestFibLevel( highest.bar.ClosePrice, out var closetLine ) )
+                {
+                    if ( closetLine.FibPrecentage > FibPercentage.Fib_323_6 )
+                    {
+                        return FibonacciType.Wave3SuperExtended;
+                    }
+                    else if ( closetLine.FibPrecentage > FibPercentage.Fib_241_4 )
+                    {
+                        return FibonacciType.Wave3Extended;
+                    }
+                }
+            }
+
+            return FibonacciType.Wave3ClassicProjection;
+        }
     }
 }

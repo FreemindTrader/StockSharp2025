@@ -6343,42 +6343,36 @@ namespace fx.Algorithm
             return FibLevelOccurance.Unknown;
         }
 
-        public void GetFirstXProjection( out FibLevelsInfo output )
-        {
-            output = new FibLevelsInfo( FibonacciType.FirstXProjection, GlobalConstants.FirstXProjectionLevels, GlobalConstants.FirstXProjectionStrength );
-        }
+        
 
-        public void GetSecondXProjection( out FibLevelsInfo output )
-        {
-            output = new FibLevelsInfo( FibonacciType.SecondXProjection, GlobalConstants.SecondXProjectionLevels, GlobalConstants.SecondXProjectionStrength );
-        }
+        
 
-        public void GetWaveCProjection( ElliottWaveEnum wave, out FibLevelsInfo output )
+        public FibonacciType GetWaveCProjectionFibType( ElliottWaveEnum wave )
         {
             switch ( wave )
             {
                 case ElliottWaveEnum.Wave1:                 // We are calculating the Wave C of Wave 1
                 case ElliottWaveEnum.Wave1C:                // We are calculating the Wave C of Wave 2
                 {
-                    output = ( new FibLevelsInfo( FibonacciType.ABCWaveCProjection, GlobalConstants.ABCWaveCProjectionLevels, GlobalConstants.ABCWaveCProjectionStrength ) );
+                    return( FibonacciType.ABCWaveCProjection );
                 }
-                break;
+                
 
 
                 case ElliottWaveEnum.Wave3:                 // We are calculating the Wave C of Wave 3                    
                 case ElliottWaveEnum.Wave3C:                // We are calculating the Wave C of Wave 2
                 {
-                    output = ( new FibLevelsInfo( FibonacciType.Wave3CProjection, GlobalConstants.Wave3CProjectionLevels, GlobalConstants.Wave3CProjectionStrength ) );
+                    return( FibonacciType.Wave3CProjection );
                 }
-                break;
+                
 
 
                 case ElliottWaveEnum.Wave5:                 // We are calculating the Wave C of Wave 5                    
                 case ElliottWaveEnum.Wave5C:                // We are calculating the Wave C of Wave 5
                 {
-                    output = ( new FibLevelsInfo( FibonacciType.Wave5CProjection, GlobalConstants.Wave5CProjectionLevels, GlobalConstants.Wave5CProjectionStrength ) );
+                    return( FibonacciType.Wave5CProjection );
                 }
-                break;
+                
 
 
                 case ElliottWaveEnum.Wave2:                 // We are calculating the Wave C of Wave 2                
@@ -6386,82 +6380,75 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.WaveC:
                 case ElliottWaveEnum.WaveEFC:
                 {
-                    output = ( new FibLevelsInfo( FibonacciType.WaveCProjection, GlobalConstants.ABCWaveCProjectionLevels, GlobalConstants.ABCWaveCProjectionStrength ) );
+                    return( FibonacciType.WaveCProjection );
                 }
-                break;
+                
 
                 default:
                 {
-                    output = ( new FibLevelsInfo( FibonacciType.WaveCProjection, GlobalConstants.ABCWaveCProjectionLevels, GlobalConstants.ABCWaveCProjectionStrength ) );
+                    return( FibonacciType.WaveCProjection );
                 }
-                break;
+                
             }
         }
 
-        public bool GetFibonacciRetracment( ElliottWaveEnum wave, out FibLevelsInfo output )
+        public FibonacciType GetFibonacciRetracment( ElliottWaveEnum wave )
         {
             switch ( wave )
             {
                 case ElliottWaveEnum.Wave5:
                 case ElliottWaveEnum.Wave5C:
                 case ElliottWaveEnum.Wave2:
-                    output = ( new FibLevelsInfo( FibonacciType.Wave2Retracement, GlobalConstants.Wave2RetracementLevels, GlobalConstants.Wave2RetracementStrength ) );
-                    break;
+                    return( FibonacciType.Wave2Retracement );
+                    
 
                 case ElliottWaveEnum.Wave4:
-                    output = ( new FibLevelsInfo( FibonacciType.Wave4Retracement, GlobalConstants.Wave4RetracementLevels, GlobalConstants.Wave4RetracementStrength ) );
-                    break;
+                    return( FibonacciType.Wave4Retracement);
+                    
 
                 case ElliottWaveEnum.WaveB:
-                    output = ( new FibLevelsInfo( FibonacciType.ABCWaveBRetracement, GlobalConstants.ABCWaveBRetracementLevels, GlobalConstants.ABCWaveBRetracementStrength ) );
-                    break;
+                    return( FibonacciType.ABCWaveBRetracement );
+                    
 
                 case ElliottWaveEnum.WaveTB:
-                    output = ( new FibLevelsInfo( FibonacciType.WaveTriBRetracement, GlobalConstants.WaveTriBRetracementLevels, GlobalConstants.WaveTriBRetracementStrength ) );
-                    break;
+                    return( FibonacciType.WaveTriBRetracement );
+                    
 
                 case ElliottWaveEnum.WaveTC:
-                    output = ( new FibLevelsInfo( FibonacciType.WaveTriCProjection, GlobalConstants.WaveTriCRetracementLevels, GlobalConstants.WaveTriCRetracementStrength ) );
-                    break;
+                    return( FibonacciType.WaveTriCProjection );
+                    
 
                 case ElliottWaveEnum.WaveTD:
-                    output = ( new FibLevelsInfo( FibonacciType.WaveTriDProjection, GlobalConstants.WaveTriDRetracementLevels, GlobalConstants.WaveTriDRetracementStrength ) );
-                    break;
+                    return( FibonacciType.WaveTriDProjection );
+                    
 
                 case ElliottWaveEnum.WaveTE:
-                    output = ( new FibLevelsInfo( FibonacciType.WaveTriEProjection, GlobalConstants.WaveTriERetracementLevels, GlobalConstants.WaveTriERetracementStrength ) );
-                    break;
+                    return( FibonacciType.WaveTriEProjection );
+                    
 
                 case ElliottWaveEnum.WaveEFB:
-                    output = ( new FibLevelsInfo( FibonacciType.WaveEFBRetracement, GlobalConstants.WaveEFBRetracementLevels, GlobalConstants.WaveEFBRetracementStrength ) );
-                    break;
+                    return( FibonacciType.WaveEFBRetracement );
+                    
 
                 default:
-                    output = default;
-                    return false;
-            }
-
-            return true;
+                    
+                    return FibonacciType.NONE;
+            }            
         }
 
-        public bool GetFibonacciProjection( ElliottWaveEnum wave, out FibLevelsInfo output )
+        public FibonacciType GetFibonacciProjection( ElliottWaveEnum wave )
         {
             switch ( wave )
             {
                 case ElliottWaveEnum.Wave3: // We are calculating the Wave C of Wave 3                
-                    output = ( new FibLevelsInfo( FibonacciType.Wave3ClassicProjection, GlobalConstants.Wave3AllProjectionLevels, GlobalConstants.Wave3AllProjectionStrength ) );
-                    break;
+                    return( FibonacciType.Wave3ClassicProjection );
+                    
 
                 case ElliottWaveEnum.Wave5: // We are calculating the Wave C of Wave 5                
-                    output = ( new FibLevelsInfo( FibonacciType.Wave5Projection, GlobalConstants.Wave5ProjectionLevels, GlobalConstants.Wave5ProjectionStrength ) );
-                    break;
-
-                default:
-                    output = default;
-                    return false;
+                    return( FibonacciType.Wave5Projection );                                   
             }
 
-            return true;
+            return ( FibonacciType.NONE );
         }
 
         

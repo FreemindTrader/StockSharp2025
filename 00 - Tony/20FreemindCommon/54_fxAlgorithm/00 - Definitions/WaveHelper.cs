@@ -18,426 +18,426 @@ namespace fx.Algorithm
     /// </summary>
     public static class harmonicEWave
     {
-        public static PooledList<double> CalcFibLevels( FibonacciType fibCalculationType,
-                                                              double startPoint,
-                                                              double endPoint,
-                                                              double projectionPoint )
-        {
-            PooledList<double> output = new PooledList<double>( 20 );
+        //public static PooledList<double> CalcFibLevels( FibonacciType fibCalculationType,
+        //                                                      double startPoint,
+        //                                                      double endPoint,
+        //                                                      double projectionPoint )
+        //{
+        //    PooledList<double> output = new PooledList<double>( 20 );
 
-            int i = 0;
+        //    int i = 0;
 
-            switch ( fibCalculationType )
-            {
-                case FibonacciType.WaveCProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //    switch ( fibCalculationType )
+        //    {
+        //        case FibonacciType.WaveCProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.Wave2Retracement:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.Wave2Retracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.Wave3All:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 ) );
-                    }                    
-                }
-                break;
+        //        case FibonacciType.Wave3All:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 ) );
+        //            }                    
+        //        }
+        //        break;
 
-                case FibonacciType.Wave3ClassicProjection:
-                {
-                    for ( i = 0; i < Wave3Classic.ClassicWave3.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3Classic.ClassicWave3[i].Value / 100 ) );
-                    }                    
-                }
-                break;
+        //        case FibonacciType.Wave3ClassicProjection:
+        //        {
+        //            for ( i = 0; i < WaveFibConstants.ClassicWave3.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ClassicWave3[i].FibValue / 100 ) );
+        //            }                    
+        //        }
+        //        break;
 
-                case FibonacciType.CompactWave3:
-                {
-                    for ( i = 0; i < Wave3Compressed.CompressWave3.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3Classic.ClassicWave3[i].Value / 100 ) );                        
-                    }
-                }
-                break;
+        //        case FibonacciType.CompactWave3:
+        //        {
+        //            for ( i = 0; i < WaveFibConstants.CompressWave3.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ClassicWave3[i].FibValue / 100 ) );                        
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.Wave3Extended:
-                {
-                    for ( i = 0; i < Wave3Extended.ExtendedWave3.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3Extended.ExtendedWave3[i].Value / 100 ) );
-                    }                    
-                }
-                break;
+        //        case FibonacciType.Wave3Extended:
+        //        {
+        //            for ( i = 0; i < WaveFibConstants.ExtendedWave3.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ExtendedWave3[i].FibValue / 100 ) );
+        //            }                    
+        //        }
+        //        break;
 
-                case FibonacciType.Wave3SuperExtended:
-                {
-                    for ( i = 0; i < Wave3SuperExtended.SuperExtendedWave3.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * Wave3SuperExtended.SuperExtendedWave3[i].Value / 100 ) );
-                    }                    
-                }
-                break;
+        //        case FibonacciType.Wave3SuperExtended:
+        //        {
+        //            for ( i = 0; i < WaveFibConstants.SuperExtendedWave3.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.SuperExtendedWave3[i].FibValue / 100 ) );
+        //            }                    
+        //        }
+        //        break;
 
                 
 
-                case FibonacciType.Wave3CProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.Wave3CProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.Wave4Retracement:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.Wave4Retracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.Wave5Projection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.Wave5Projection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.Wave5CProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.Wave5CProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.ABCWaveCProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
-                    {
-                        output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.ABCWaveCProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
+        //            {
+        //                output.Add( projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.ABCWaveBRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.ABCWaveBRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveEFBRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.WaveEFBRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveTriBRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.WaveTriBRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveTriCProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.WaveTriCProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveTriDProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
+        //        case FibonacciType.WaveTriDProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveTriEProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
-                    {
-                        output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 ) );
-                    }
-                }
-                break;
-            }
+        //        case FibonacciType.WaveTriEProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
+        //            {
+        //                output.Add( endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 ) );
+        //            }
+        //        }
+        //        break;
+        //    }
 
-            return output;
-        }
-
-
-        public static PooledList<(float, int)> CalculateAcutalFibonacciLevelsAndStrength( FibonacciType fibCalculationType,
-                                                                                          float startPoint,
-                                                                                          float endPoint,
-                                                                                          float projectionPoint )
-        {
-            PooledList<(float, int)> output = new PooledList<(float, int)>( 20 );
-
-            int i = 0;
-
-            switch ( fibCalculationType )
-            {
-                case FibonacciType.WaveCProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.Wave2Retracement:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave2RetracementStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.FirstXProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.FirstXProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.FirstXProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.FirstXProjectionStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.SecondXProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.SecondXProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.SecondXProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.SecondXProjectionStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.Wave3ClassicProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave3AllProjectionStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.Wave3CProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave3CProjectionStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.Wave4Retracement:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave4RetracementStrength[i];
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.Wave5Projection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave5ProjectionStrength[i];
+        //    return output;
+        //}
 
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //public static PooledList<(float, int)> CalculateAcutalFibonacciLevelsAndStrength( FibonacciType fibCalculationType,
+        //                                                                                  float startPoint,
+        //                                                                                  float endPoint,
+        //                                                                                  float projectionPoint )
+        //{
+        //    PooledList<(float, int)> output = new PooledList<(float, int)>( 20 );
 
-                case FibonacciType.Wave5CProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave5CProjectionStrength[i];
+        //    int i = 0;
 
+        //    switch ( fibCalculationType )
+        //    {
+        //        case FibonacciType.WaveCProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.ABCWaveCProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
-                    {
-                        var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
-                        var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
+        //        case FibonacciType.Wave2Retracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave2RetracementStrength[i];
 
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //        case FibonacciType.FirstXProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.FirstXProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.FirstXProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.FirstXProjectionStrength[i];
 
-                case FibonacciType.ABCWaveBRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.ABCWaveBRetracementStrength[i];
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
+        //        case FibonacciType.SecondXProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.SecondXProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.SecondXProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.SecondXProjectionStrength[i];
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveEFBRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveEFBRetracementStrength[i];
+        //        case FibonacciType.Wave3ClassicProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave3AllProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3AllProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave3AllProjectionStrength[i];
 
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //        case FibonacciType.Wave3CProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave3CProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave3CProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave3CProjectionStrength[i];
 
-                case FibonacciType.WaveTriBRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriBRetracementStrength[i];
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
+        //        case FibonacciType.Wave4Retracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave4RetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave4RetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave4RetracementStrength[i];
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.WaveTriCProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriCRetracementStrength[i];
-
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.WaveTriDProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriDRetracementStrength[i];
-
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.WaveTriEProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.WaveTriERetracementStrength[i];
-
-
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-
-                case FibonacciType.TonyProjection:
-                {
-                    for ( i = 0; i < GlobalConstants.TonyDiscoveryLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.TonyDiscoveryLevels[i] / 100 );
-                        var strength = GlobalConstants.TonyDiscoveryLevelsStrength[i];
+        //        case FibonacciType.Wave5Projection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave5ProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5ProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave5ProjectionStrength[i];
 
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
 
-                case FibonacciType.TonyRetracement:
-                {
-                    for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
-                    {
-                        var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
-                        var strength = GlobalConstants.Wave2RetracementStrength[i];
+        //        case FibonacciType.Wave5CProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave5CProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.Wave5CProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave5CProjectionStrength[i];
 
-                        output.Add( (level, strength) );
-                    }
-                }
-                break;
-            }
 
-            return output;
-        }
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.ABCWaveCProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.ABCWaveCProjectionLevels.Length; i++ )
+        //            {
+        //                var level = projectionPoint + ( ( endPoint - startPoint ) * GlobalConstants.ABCWaveCProjectionLevels[i] / 100 );
+        //                var strength = GlobalConstants.ABCWaveCProjectionStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.ABCWaveBRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.ABCWaveBRetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.ABCWaveBRetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.ABCWaveBRetracementStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.WaveEFBRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveEFBRetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveEFBRetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.WaveEFBRetracementStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.WaveTriBRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriBRetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriBRetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.WaveTriBRetracementStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.WaveTriCProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriCRetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriCRetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.WaveTriCRetracementStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.WaveTriDProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriDRetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriDRetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.WaveTriDRetracementStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.WaveTriEProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.WaveTriERetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.WaveTriERetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.WaveTriERetracementStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.TonyProjection:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.TonyDiscoveryLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.TonyDiscoveryLevels[i] / 100 );
+        //                var strength = GlobalConstants.TonyDiscoveryLevelsStrength[i];
+
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+
+        //        case FibonacciType.TonyRetracement:
+        //        {
+        //            for ( i = 0; i < GlobalConstants.Wave2RetracementLevels.Length; i++ )
+        //            {
+        //                var level = endPoint + ( ( startPoint - endPoint ) * GlobalConstants.Wave2RetracementLevels[i] / 100 );
+        //                var strength = GlobalConstants.Wave2RetracementStrength[i];
+
+        //                output.Add( (level, strength) );
+        //            }
+        //        }
+        //        break;
+        //    }
+
+        //    return output;
+        //}
 
 
 

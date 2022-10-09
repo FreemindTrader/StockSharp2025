@@ -16,20 +16,20 @@ namespace fx.DefinitionsWnd
         //     class.
         public fxFibRatioModel( double value, Brush brush, FibonacciTargetType fibType )
         {
-            Value = value;
+            FibValue = value;
             Brush = brush;
-            FibType = fibType;
+            FibTargetType = fibType;
         }
         //
         // Summary:
         //     Gets or sets the Value that is used for displaying Level of the (SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation.FibonacciRatioLine)
-        public double Value { get; set; }
+        public double FibValue { get; set; }
         //
         // Summary:
         //     Gets or sets brush that is used for coloring (SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation.FibonacciRatioLine)
         public Brush Brush { get; set; }
 
-        public FibonacciTargetType FibType { get; set; }
+        public FibonacciTargetType FibTargetType { get; set; }
     }
 
 
