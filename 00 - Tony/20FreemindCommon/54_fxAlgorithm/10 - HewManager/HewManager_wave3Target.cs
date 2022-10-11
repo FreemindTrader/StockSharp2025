@@ -47,13 +47,13 @@ namespace fx.Algorithm
 
                 case FibonacciType.Wave3ClassicProjection:
                 {
-                    _wave3ProjectionType = FibonacciType.CompactWave3;
+                    _wave3ProjectionType = FibonacciType.Wave3Compressed;
                 }
                 break;
 
-                case FibonacciType.CompactWave3:
+                case FibonacciType.Wave3Compressed:
                 {
-                    _wave3ProjectionType = FibonacciType.CompactWave3;
+                    _wave3ProjectionType = FibonacciType.Wave3Compressed;
                 }
                     break;
 
@@ -88,7 +88,7 @@ namespace fx.Algorithm
                 }
                 break;
 
-                case FibonacciType.CompactWave3:
+                case FibonacciType.Wave3Compressed:
                 {
                     _wave3ProjectionType = FibonacciType.Wave3ClassicProjection;
                 }

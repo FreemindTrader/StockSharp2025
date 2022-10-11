@@ -301,10 +301,7 @@ namespace StockSharp.Hydra.Core
             }
         }
 
-        private void OnLookupSecuritiesResult(
-          SecurityLookupMessage message,
-          IEnumerable<Security> securities,
-          Exception error )
+        private void OnLookupSecuritiesResult( SecurityLookupMessage message, IEnumerable<Security> securities, Exception error )
         {
             if ( _newSecurity == null )
                 return;
@@ -406,8 +403,12 @@ namespace StockSharp.Hydra.Core
         private void SubscribeSecurity( Security security )
         {
             if ( _allSecurity == null && !_securityMap.ContainsKey( security ) )
+            {
                 return;
+            }
+                
             HydraTaskSecurity taskSecurity;
+
             foreach ( Messages.DataType dataType in GetDataTypes( security, out taskSecurity ).ToArray() )
             {
                 if ( dataType == Messages.DataType.MarketDepth )
@@ -423,12 +424,18 @@ namespace StockSharp.Hydra.Core
                     }, security, taskSecurity, dataType, TicksFromDate );
                 }
                 else if ( dataType == Messages.DataType.Level1 )
+                {
                     ProcessDataTypeSubscription( ( sec, from, to ) => _connector.SubscribeLevel1( sec, from, to, new long?(), MarketDataBuildModes.LoadAndBuild, null, null, new long?() ), security, taskSecurity, dataType, TicksFromDate );
+                }                    
                 else if ( dataType == Messages.DataType.Ticks )
+                {
                     ProcessDataTypeSubscription( ( sec, from, to ) => _connector.SubscribeTrades( sec, from, to, new long?(), MarketDataBuildModes.LoadAndBuild, null, null, new long?() ), security, taskSecurity, dataType, TicksFromDate );
+                }                    
                 else if ( dataType == Messages.DataType.OrderLog )
+                {
                     ProcessDataTypeSubscription( ( sec, from, to ) => _connector.SubscribeOrderLog( sec, from, to, new long?(), null, new long?() ), security, taskSecurity, dataType, TicksFromDate );
-                else if ( !( dataType == Messages.DataType.Transactions ) && !( dataType == Messages.DataType.PositionChanges ) && dataType.IsCandles )
+                }                    
+                else if ( ( dataType != Messages.DataType.Transactions ) && ( dataType != Messages.DataType.PositionChanges ) && dataType.IsCandles )
                 {
                     CandleSeries series = dataType.ToCandleSeries( security );
                     bool? nullable1;
@@ -452,15 +459,11 @@ namespace StockSharp.Hydra.Core
             }
         }
 
-        private void ProcessDataTypeSubscription(
-          Action<Security, DateTimeOffset?, DateTimeOffset?> subscribe,
-          Security security,
-          HydraTaskSecurity map,
-          Messages.DataType dataType,
-          DateTime? taskSettingsStartDate )
+        private void ProcessDataTypeSubscription( Action<Security, DateTimeOffset?, DateTimeOffset?> subscribe, Security security, HydraTaskSecurity map, Messages.DataType dataType, DateTime? taskSettingsStartDate )
         {
             if ( subscribe == null )
                 throw new ArgumentNullException( nameof( subscribe ) );
+            
             if ( map == null || security.IsAllSecurity() )
             {
                 this.AddVerboseLog( string.Format( "{0}: ignoring map isnull={1}", security.Id, map == null ) );
@@ -470,74 +473,56 @@ namespace StockSharp.Hydra.Core
             {
                 bool resumeDownload = ResumeDownload;
                 DateTime? beginDate = map.GetBeginDate( dataType );
-                DateTime? nullable1 = beginDate;
-                DateTime? nullable2 = nullable1.HasValue ? nullable1 : taskSettingsStartDate;
-                DateTimeOffset? nullable3 = nullable2.HasValue ? new DateTimeOffset?( ( DateTimeOffset )nullable2.GetValueOrDefault() ) : new DateTimeOffset?();
-                DateTimeOffset? nullable4;
-                DateTimeOffset? nullable5;
+                
+
+                DateTime? tempDate = beginDate.HasValue ? beginDate : taskSettingsStartDate;
+                
+                DateTimeOffset? beginDTO = tempDate.HasValue ? new DateTimeOffset?( ( DateTimeOffset )tempDate.GetValueOrDefault() ) : new DateTimeOffset?();
+                
                 if ( resumeDownload )
                 {
-                    DateTimeOffset? max = StorageRegistry.GetStorage( security, dataType, Drive, StorageFormat ).GetRange( new DateTimeOffset?(), new DateTimeOffset?() )?.Max;
-                    this.AddVerboseLog( string.Format( "{0}: storageLastDate={1}", security.Id, max ) );
-                    if ( nullable3.HasValue )
+                    var lastDateInStorage = StorageRegistry.GetStorage( security, dataType, Drive, StorageFormat ).GetRange( new DateTimeOffset?(), new DateTimeOffset?() )?.Max;
+
+                    this.AddVerboseLog( string.Format( "{0}: storageLastDate={1}", security.Id, lastDateInStorage ) );
+                    
+                    if ( beginDTO.HasValue )
                     {
-                        nullable4 = max;
-                        nullable5 = nullable3;
-                        if ( ( nullable4.HasValue & nullable5.HasValue ? ( nullable4.GetValueOrDefault() > nullable5.GetValueOrDefault() ? 1 : 0 ) : 0 ) == 0 )
-                            goto label_8;
-                    }
-                    nullable3 = max;
-                }
-            label_8:
-                this.AddVerboseLog( string.Format( "{0}: resume={1}, taskSecStartDate={2}, taskSettingsStartDate={3}, fromDate={4}", security.Id, resumeDownload, beginDate, taskSettingsStartDate, nullable3 ) );
-                DateTime? nullable6 = map.GetEndDate( dataType );
-                if ( nullable6.HasValue )
-                {
-                    nullable2 = nullable6;
-                    TimeSpan timeSpan = TimeSpan.FromDays( 1.0 );
-                    DateTime? nullable7;
-                    if ( !nullable2.HasValue )
-                    {
-                        nullable1 = new DateTime?();
-                        nullable7 = nullable1;
+                        if ( ( lastDateInStorage.HasValue & beginDTO.HasValue ) && ( lastDateInStorage.Value < beginDTO.Value ) )
+                        {
+                            beginDTO = lastDateInStorage;
+                        }                            
                     }
                     else
-                        nullable7 = new DateTime?( nullable2.GetValueOrDefault() + timeSpan );
-                    nullable6 = nullable7;
-                    if ( nullable3.HasValue )
                     {
-                        nullable5 = nullable3;
-                        nullable2 = nullable6;
-                        nullable4 = nullable2.HasValue ? new DateTimeOffset?( ( DateTimeOffset )nullable2.GetValueOrDefault() ) : new DateTimeOffset?();
-                        if ( ( nullable5.HasValue & nullable4.HasValue ? ( nullable5.GetValueOrDefault() > nullable4.GetValueOrDefault() ? 1 : 0 ) : 0 ) != 0 )
-                        {
-                            nullable2 = nullable6;
-                            DateTimeOffset? nullable8;
-                            if ( !nullable2.HasValue )
-                            {
-                                nullable4 = new DateTimeOffset?();
-                                nullable8 = nullable4;
-                            }
-                            else
-                                nullable8 = new DateTimeOffset?( ( DateTimeOffset )nullable2.GetValueOrDefault() );
-                            nullable3 = nullable8;
+                        beginDTO = lastDateInStorage;
+                    }                    
+                }
+            
+                this.AddVerboseLog( string.Format( "{0}: resume={1}, taskSecStartDate={2}, taskSettingsStartDate={3}, fromDate={4}", security.Id, resumeDownload, beginDate, taskSettingsStartDate, beginDTO ) );
+                
+                DateTime? endDate = map.GetEndDate( dataType );
+                
+                if ( endDate.HasValue )
+                {                                        
+                    DateTime? oneDayLater = new DateTime?( endDate.Value + TimeSpan.FromDays( 1.0 ) );
+                        
+                    endDate = oneDayLater;
+
+                    if ( beginDTO.HasValue )
+                    {                        
+                        var endDTO = oneDayLater.HasValue ? new DateTimeOffset?( ( DateTimeOffset )oneDayLater.GetValueOrDefault() ) : new DateTimeOffset?();
+                        
+                        if ( ( beginDTO.HasValue & endDTO.HasValue ) && ( beginDTO.Value > endDTO.Value ) )
+                        {                            
+                            beginDTO = new DateTimeOffset?( endDate.GetValueOrDefault() );
                         }
                     }
                 }
-                this.AddVerboseLog( string.Format( "{0}: type={1}, from={2}, to={3}", security.Id, dataType, nullable3, nullable6 ) );
-                Action<Security, DateTimeOffset?, DateTimeOffset?> action = subscribe;
-                Security security1 = security;
-                DateTimeOffset? nullable9 = nullable3;
-                nullable2 = nullable6;
-                DateTimeOffset? nullable10;
-                if ( !nullable2.HasValue )
-                {
-                    nullable4 = new DateTimeOffset?();
-                    nullable10 = nullable4;
-                }
-                else
-                    nullable10 = new DateTimeOffset?( ( DateTimeOffset )nullable2.GetValueOrDefault() );
-                action( security1, nullable9, nullable10 );
+                this.AddVerboseLog( string.Format( "{0}: type={1}, from={2}, to={3}", security.Id, dataType, beginDTO, endDate ) );
+                
+                var endDownloadDTO = endDate.HasValue ? new DateTimeOffset?( ( DateTimeOffset )endDate.GetValueOrDefault() ) : new DateTimeOffset?();
+
+                subscribe( security, beginDTO, endDownloadDTO );
             }
         }
 

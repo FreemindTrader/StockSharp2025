@@ -610,5 +610,27 @@ namespace fx.Definitions
 
             return false;
         }
+        public bool IsBeginningWaveOfDoubleThree( ElliottWaveCycle cycle )
+        {
+            long content = 0;
+
+            var waveCycleCount = GetWaveDegreeCount();
+
+            if ( waveCycleCount <= GlobalConstants.MaxCountPerLong )
+            {
+                for ( int i = 0; i < waveCycleCount; i++ )
+                {
+                    content = _hewBits >> ( GlobalConstants.NewHewBits * i );
+                    var ewavePoint = new WaveInfo( content );
+
+                    if ( ewavePoint.HasWave() && ( ewavePoint.WaveName == ElliottWaveEnum.WaveX || ewavePoint.WaveName == ElliottWaveEnum.Wave3 || ewavePoint.WaveName == ElliottWaveEnum.WaveA || ewavePoint.WaveName == ElliottWaveEnum.WaveC ) && ( ewavePoint.WaveCycle >= cycle + GlobalConstants.OneWaveCycle ) )
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

@@ -65,7 +65,7 @@ namespace fx.Algorithm
         //        }
         //        break;
 
-        //        case FibonacciType.CompactWave3:
+        //        case FibonacciType.Wave3Compressed:
         //        {
         //            for ( i = 0; i < WaveFibConstants.CompressWave3.Length; i++ )
         //            {
@@ -441,14 +441,14 @@ namespace fx.Algorithm
 
 
 
-        public static PooledList<WaveSRLineResponse> GetSRLinesResponse( FibonacciType fibType, ref SBar bar, PooledList<FibLevelInfo> srLines, TrendDirection direction )
+        public static PooledList<WaveSRLineResponse> GetSRLinesResponse( FibonacciType fibType, ref SBar bar, PooledList<fxFibLevelCluster> srLines, TrendDirection direction )
         {
             PooledList<WaveSRLineResponse> output = new PooledList<WaveSRLineResponse>();
 
             for ( int i = 0; i < srLines.Count; i++ )
             {
                 var fibLevelInfo = srLines[i];
-                var response = GetBarReactionAtSRLine( ref bar, fibLevelInfo.FibLevel, direction );
+                var response = GetBarReactionAtSRLine( ref bar, fibLevelInfo.FibValue, direction );
 
                 if ( response != SRLineResponseType.NoRelationShip )
                 {
@@ -461,7 +461,7 @@ namespace fx.Algorithm
             return output;
         }
 
-        public static bool GetClosestSRLine( FibonacciType fibType, ref SBar bar, PooledList<FibLevelInfo> srLines, TrendDirection direction, out WaveSRLineResponse output )
+        public static bool GetClosestSRLine( FibonacciType fibType, ref SBar bar, PooledList<fxFibLevelCluster> srLines, TrendDirection direction, out WaveSRLineResponse output )
         {
             output = default;
 

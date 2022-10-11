@@ -17,7 +17,7 @@ namespace fx.Algorithm
         long EndTime { get; set; }
 
         bool HasChildren { get; set; }
-        PooledList<FibLevelInfo> PredictedTargets { get; }
+        PooledList<fxFibLevelCluster> PredictedTargets { get; }
     }
 
     public interface I3Waves : IFactal

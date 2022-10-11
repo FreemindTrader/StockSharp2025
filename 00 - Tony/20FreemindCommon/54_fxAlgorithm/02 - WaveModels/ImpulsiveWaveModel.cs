@@ -22,9 +22,9 @@ namespace fx.Algorithm
         HewFibGannTargets _wave4Ret = null;
         HewFibGannTargets _wave5Exp = null;
 
-        private PooledList< FibLevelInfo > _largerTargets = null;
-        private PooledList< FibLevelInfo > _unfoldingTargets = null;
-        private PooledList< FibLevelInfo > _predictedTargets = null;
+        private PooledList< fxFibLevelCluster > _largerTargets = null;
+        private PooledList< fxFibLevelCluster > _unfoldingTargets = null;
+        private PooledList< fxFibLevelCluster > _predictedTargets = null;
 
         private IWaveModel _unfoldingWave = null;
 
@@ -35,7 +35,7 @@ namespace fx.Algorithm
         }
 
         
-        public PooledList<FibLevelInfo> LargerTargets
+        public PooledList<fxFibLevelCluster> LargerTargets
         {
             get { return _largerTargets; }
             set
@@ -44,7 +44,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> UnfoldingTargets
+        public PooledList<fxFibLevelCluster> UnfoldingTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -53,7 +53,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> PredictedTargets
+        public PooledList<fxFibLevelCluster> PredictedTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -83,7 +83,7 @@ namespace fx.Algorithm
             }            
         }        
 
-        public void GetFibExtremum( out FibLevelInfo output )
+        public void GetFibExtremum( out fxFibLevelCluster output )
         {
             output = default;
 
@@ -92,9 +92,9 @@ namespace fx.Algorithm
                 double max = double.MinValue;
                 foreach ( var level in _largerTargets )
                 {
-                    if ( level.FibLevel > max )
+                    if ( level.FibValue > max )
                     {
-                        max = level.FibLevel;
+                        max = level.FibValue;
                         output = level;
                     }
                 }
@@ -104,9 +104,9 @@ namespace fx.Algorithm
                 double min = double.MaxValue;
                 foreach ( var level in _largerTargets )
                 {
-                    if ( level.FibLevel < min )
+                    if ( level.FibValue < min )
                     {
-                        min = level.FibLevel;
+                        min = level.FibValue;
                         output = level;
                     }
                 }
@@ -159,12 +159,12 @@ namespace fx.Algorithm
             long wave3C       = -1;
             long wave4        = -1;
 
-            FibLevelInfo wave2Retracement = default;
-            FibLevelInfo wave3AtoWave1    = default;
-            FibLevelInfo wave3btowave1    = default;
-            FibLevelInfo wave3CtoWave1    = default;
+            fxFibLevelCluster wave2Retracement = default;
+            fxFibLevelCluster wave3AtoWave1    = default;
+            fxFibLevelCluster wave3btowave1    = default;
+            fxFibLevelCluster wave3CtoWave1    = default;
 
-            PooledList< FibLevelInfo > potentialLevels = new PooledList< FibLevelInfo >( );
+            PooledList< fxFibLevelCluster > potentialLevels = new PooledList< fxFibLevelCluster >( );
 
 
             begin = _hews.FindBeginOfCurrentTrend( waveScenarioNo, period, selectedBarTime, waveDegree );
@@ -329,14 +329,14 @@ namespace fx.Algorithm
 
                 if ( _wave3BRet != null && Bar3B != SBar.EmptySBar)
                 {                    
-                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3BRetValue ) )
+                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3BRetValue ) )
                     {
                         Wave3bRet = wave3BRetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {                        
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btoWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3btoWave1Value ) )
                         {
                             Wave3btoWave1 = wave3btoWave1Value.FibPrecentage;
                         }                        
@@ -351,14 +351,14 @@ namespace fx.Algorithm
 
                 if ( _wave4Ret != null && Bar4 != SBar.EmptySBar)
                 {                    
-                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4RetValue ) )
+                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4RetValue ) )
                     {
                         Wave4Ret = wave4RetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {                        
-                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4toWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4toWave1Value ) )
                         {
                             Wave4toWave1 = wave4toWave1Value.FibPrecentage;
                         }
@@ -398,7 +398,7 @@ namespace fx.Algorithm
         
         
 
-        public Wave3Type GetWave3Type( ref FibLevelInfo wave1Retracement, ref FibLevelInfo wave3AtoWave1, ref FibLevelInfo wave3btowave1, ref FibLevelInfo wave3CtoWave1 )
+        public Wave3Type GetWave3Type( ref fxFibLevelCluster wave1Retracement, ref fxFibLevelCluster wave3AtoWave1, ref fxFibLevelCluster wave3btowave1, ref fxFibLevelCluster wave3CtoWave1 )
         {
             if ( wave1Retracement == default || wave3AtoWave1 == default || wave3btowave1 == default || wave3CtoWave1 == default)
             {
@@ -451,7 +451,7 @@ namespace fx.Algorithm
             return Wave3Type.UNKNOWN;
         }
 
-        public Wave3Type GetWave3TypeByWave3CTarget( ref FibLevelInfo wave3CtoWave1 )
+        public Wave3Type GetWave3TypeByWave3CTarget( ref fxFibLevelCluster wave3CtoWave1 )
         {
             if ( wave3CtoWave1 == default)
             {
@@ -474,7 +474,7 @@ namespace fx.Algorithm
             return Wave3Type.UNKNOWN;
         }
 
-        public Wave3Type GetWave3TypeByWave3ATarget( ref FibLevelInfo wave3AtoWave1 )
+        public Wave3Type GetWave3TypeByWave3ATarget( ref fxFibLevelCluster wave3AtoWave1 )
         {
             if ( wave3AtoWave1 == default)
             {
@@ -521,7 +521,7 @@ namespace fx.Algorithm
 
                 var largerTargets  = _largerTargets;
 
-                foreach ( FibLevelInfo largerTarget in largerTargets )
+                foreach ( fxFibLevelCluster largerTarget in largerTargets )
                 {
                     var index = _unfoldingTargets.FindIndex( x => x.WithinCluster( largerTarget, diff * 4  ) );
 

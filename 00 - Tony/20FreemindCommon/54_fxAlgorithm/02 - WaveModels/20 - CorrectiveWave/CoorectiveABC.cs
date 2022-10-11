@@ -20,9 +20,9 @@ namespace fx.Algorithm
         HewManager _hews;
         fxHistoricBarsRepo _bars;
 
-        PooledList<FibLevelInfo> _largerTargets = null;
-        PooledList<FibLevelInfo> _unfoldingTargets = null;
-        private PooledList<FibLevelInfo> _predictedTargets = null;
+        PooledList<fxFibLevelCluster> _largerTargets = null;
+        PooledList<fxFibLevelCluster> _unfoldingTargets = null;
+        private PooledList<fxFibLevelCluster> _predictedTargets = null;
 
         public CorrectiveABC( fxHistoricBarsRepo bars, HewManager hewManager )
         {
@@ -30,7 +30,7 @@ namespace fx.Algorithm
             _hews = hewManager;
         }
 
-        public PooledList<FibLevelInfo> LargerTargets
+        public PooledList<fxFibLevelCluster> LargerTargets
         {
             get { return _largerTargets; }
             set
@@ -39,7 +39,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> UnfoldingTargets
+        public PooledList<fxFibLevelCluster> UnfoldingTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -48,7 +48,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> PredictedTargets
+        public PooledList<fxFibLevelCluster> PredictedTargets
         {
             get { return _unfoldingTargets; }
             set

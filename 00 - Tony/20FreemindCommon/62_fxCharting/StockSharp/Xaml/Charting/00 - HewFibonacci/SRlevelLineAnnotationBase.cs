@@ -13,7 +13,7 @@ namespace fx.Charting.HewFibonacci
     {
         public static readonly DependencyProperty LineLevelProperty     = DependencyProperty.Register( nameof( LineLevel ),     typeof( double ), typeof( SRlevelLineAnnotationBase ), new PropertyMetadata(   0.0 ) );
         public static readonly DependencyProperty NextLineLevelProperty = DependencyProperty.Register( nameof( NextLineLevel ), typeof( double ), typeof( SRlevelLineAnnotationBase ), new PropertyMetadata(   0.0 ) );
-
+        
         public double NextLineLevel
         {
             get
@@ -38,6 +38,7 @@ namespace fx.Charting.HewFibonacci
             }
         }
 
+        
         public bool LineSelected { get; set; }
 
     }    

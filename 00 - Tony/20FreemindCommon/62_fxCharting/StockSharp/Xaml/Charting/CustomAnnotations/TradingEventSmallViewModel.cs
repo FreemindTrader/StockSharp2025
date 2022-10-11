@@ -150,13 +150,13 @@ namespace fx.Charting
             }
         }
 
-        public ObservableCollectionEx<FibLevelInfo> WaveTargetItemSource
+        public ObservableCollectionEx<fxFibLevelCluster> WaveTargetItemSource
         {
             get
             {
                 if ( _symbol != null )
                 {
-                    ObservableCollectionEx< FibLevelInfo > waveTargets = null;
+                    ObservableCollectionEx< fxFibLevelCluster > waveTargets = null;
 
                     var aa = (AdvancedAnalysisManager)SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _symbol );
 

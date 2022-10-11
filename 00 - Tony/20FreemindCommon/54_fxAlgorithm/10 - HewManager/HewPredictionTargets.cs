@@ -93,7 +93,7 @@ namespace fx.Algorithm
 
             foreach( var fibLevel in _fibLevels.FibLevels )
             {
-                output.Add( new SRlevel( ref _timePeriod, _period, fibLevel.FibLevel, ( int )fibLevel.FibLevelStrengh, _fibType.To1stSuppRes( ), TargetWaveName.To2ndSuppRes( ), _fibType.To3rdSuppRes( ), fibLevel.FibPrecentage.ToString( ) ) );
+                output.Add( new SRlevel( ref _timePeriod, _period, fibLevel.FibValue, ( int )fibLevel.FibStrength, _fibType.To1stSuppRes( ), TargetWaveName.To2ndSuppRes( ), _fibType.To3rdSuppRes( ), fibLevel.FibPrecentage.ToString( ) ) );
             }
 
             foreach( var fibExpRetPair in _otherfibLevels )

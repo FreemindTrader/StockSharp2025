@@ -255,8 +255,8 @@ namespace fx.Algorithm
                     var tb = fibKey.FibTimeBlock;
                     output.Add( new SRlevel( ref tb, 
                                                 _owningBar.BarPeriod, 
-                                                fibLvl.FibLevel, 
-                                                ( int )fibLvl.FibLevelStrengh, 
+                                                fibLvl.FibValue, 
+                                                ( int )fibLvl.FibStrength, 
                                                 fibKey.FibType.To1stSuppRes( ),
                                                 _targetWaveName.To2ndSuppRes( ), 
                                                 fibKey.FibType.To3rdSuppRes( ), 
@@ -273,8 +273,8 @@ namespace fx.Algorithm
                     var tb = fibKey.FibTimeBlock;
                     output.Add( new SRlevel( ref tb,
                                                 _owningBar.BarPeriod,
-                                                fibLvl.FibLevel,
-                                                ( int )fibLvl.FibLevelStrengh,
+                                                fibLvl.FibValue,
+                                                ( int )fibLvl.FibStrength,
                                                 fibKey.FibType.To1stSuppRes( ),
                                                 _targetWaveName.To2ndSuppRes( ),
                                                 fibKey.FibType.To3rdSuppRes( ),

@@ -2094,6 +2094,32 @@ namespace fx.Algorithm
             return ( default );
         }
 
+        public ((DateTime, float), (DateTime, float)) GetWaveWBeginEndPoints( int waveScenarioNo, long waveAtime, ElliottWaveCycle currentWaveDegree )
+        {
+            var wave024Xtime = FindPreviousWave024X( waveScenarioNo, waveAtime, currentWaveDegree );
+
+            if ( -1 == wave024Xtime )
+            {
+                return default;
+            }
+
+            if ( NoHigherWaveBetween( waveScenarioNo, wave024Xtime, waveAtime, currentWaveDegree ) )
+            {
+                var wave024X = _hews[wave024Xtime];
+
+                ref var hew = ref wave024X.GetWaveFromScenario( waveScenarioNo );
+
+                var beginningWave = hew.GetFirstHighestWaveInfo();
+
+                if ( beginningWave.HasValue )
+                {
+                    return ( GetWavePoints( waveScenarioNo, wave024Xtime, waveAtime, currentWaveDegree ) );
+                }
+            }
+
+            return ( default );
+        }
+
         #region Find Wave of ABC
 
         public ((DateTime, float), (DateTime, float)) GetWaveABeginEndPoints( int waveScenarioNo, long waveAtime, ElliottWaveCycle currentWaveDegree )
@@ -6404,7 +6430,10 @@ namespace fx.Algorithm
 
                 case ElliottWaveEnum.Wave4:
                     return( FibonacciType.Wave4Retracement);
-                    
+
+                case ElliottWaveEnum.Wave3B:
+                return ( FibonacciType.Wave3BRetracement );
+
 
                 case ElliottWaveEnum.WaveB:
                     return( FibonacciType.ABCWaveBRetracement );
@@ -6428,6 +6457,9 @@ namespace fx.Algorithm
 
                 case ElliottWaveEnum.WaveEFB:
                     return( FibonacciType.WaveEFBRetracement );
+
+                case ElliottWaveEnum.WaveW:
+                    return ( FibonacciType.WaveXRetracement );
                     
 
                 default:

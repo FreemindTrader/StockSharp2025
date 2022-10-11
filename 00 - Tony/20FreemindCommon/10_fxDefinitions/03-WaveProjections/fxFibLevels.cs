@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace fx.Definitions
 {
-    public class fxFibLevels
+    public class fxFibLevel
     {                
         /// <summary>
         /// This call is used to store all the properties for every single fib levels
@@ -16,7 +16,7 @@ namespace fx.Definitions
         /// <param name="value"></param>
         /// <param name="fibTargetType"></param>
         /// <param name="strength"></param>
-        public fxFibLevels( FibPercentage percentage, double value, FibonacciTargetType targetType, int fibStrength )
+        public fxFibLevel( FibPercentage percentage, double value, FibonacciTargetType targetType, int fibStrength )
         {
             FibValue = value;
             Percentage = percentage;

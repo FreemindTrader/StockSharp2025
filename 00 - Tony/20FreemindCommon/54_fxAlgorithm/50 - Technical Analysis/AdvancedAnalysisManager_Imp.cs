@@ -322,7 +322,7 @@ namespace fx.Algorithm
             {
                 if ( _waveTargetBindingList == null )
                 {
-                    var itemsSource = new ObservableCollectionEx< FibLevelInfo >( );
+                    var itemsSource = new ObservableCollectionEx< fxFibLevelCluster >( );
 
                     _waveTargetsItemSource = itemsSource;
 
@@ -334,8 +334,8 @@ namespace fx.Algorithm
         }
 
         private WaveTargetsTsoCollection _waveTargetBindingList;
-        private ObservableCollectionEx< FibLevelInfo > _waveTargetsItemSource ;
-        public ObservableCollectionEx<FibLevelInfo> WaveTargetItemSource
+        private ObservableCollectionEx< fxFibLevelCluster > _waveTargetsItemSource ;
+        public ObservableCollectionEx<fxFibLevelCluster> WaveTargetItemSource
         {
             get
             {

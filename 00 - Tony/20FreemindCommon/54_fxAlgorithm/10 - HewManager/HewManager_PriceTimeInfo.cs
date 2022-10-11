@@ -327,9 +327,9 @@ namespace fx.Algorithm
 
                     if ( fibRetracement.FibLevels.Count > 0 )
                     {
-                        var closestRet = fibRetracement.FibLevels.OrderBy(item => Math.Abs( barHigh - item.FibLevel)).First();
+                        var closestRet = fibRetracement.FibLevels.OrderBy(item => Math.Abs( barHigh - item.FibValue)).First();
 
-                        var SRLinesRet = bar.GetUpperShadowSRInfo(period, closestRet.FibPrecentage.ToDescription(), closestRet.FibLevel);
+                        var SRLinesRet = bar.GetUpperShadowSRInfo(period, closestRet.FibPrecentage.ToDescription(), closestRet.FibValue);
 
                         if ( SRLinesRet != null )
                         {
@@ -339,9 +339,9 @@ namespace fx.Algorithm
 
                     if ( fibExpansion.FibLevels.Count > 0 )
                     {
-                        var closestExp = fibExpansion.FibLevels.OrderBy(item => Math.Abs( barHigh - item.FibLevel)).First();
+                        var closestExp = fibExpansion.FibLevels.OrderBy(item => Math.Abs( barHigh - item.FibValue)).First();
 
-                        var SRLinesExp = bar.GetUpperShadowSRInfo(period, closestExp.FibPrecentage.ToDescription(), closestExp.FibLevel);
+                        var SRLinesExp = bar.GetUpperShadowSRInfo(period, closestExp.FibPrecentage.ToDescription(), closestExp.FibValue);
 
                         if ( SRLinesExp != null )
                         {
@@ -381,8 +381,8 @@ namespace fx.Algorithm
 
                     if ( fibRetracement.FibLevels.Count > 0 )
                     {
-                        var closestRet = fibRetracement.FibLevels.OrderBy(item => Math.Abs( barLow - item.FibLevel)).First();
-                        var SRLinesRet = bar.GetLowerShadowSRInfo(period, closestRet.FibPrecentage.ToDescription(), closestRet.FibLevel);
+                        var closestRet = fibRetracement.FibLevels.OrderBy(item => Math.Abs( barLow - item.FibValue)).First();
+                        var SRLinesRet = bar.GetLowerShadowSRInfo(period, closestRet.FibPrecentage.ToDescription(), closestRet.FibValue);
 
                         if ( SRLinesRet != null )
                         {
@@ -392,8 +392,8 @@ namespace fx.Algorithm
 
                     if ( fibExpansion.FibLevels.Count > 0 )
                     {
-                        var closestExp = fibExpansion.FibLevels.OrderBy(item => Math.Abs( barLow - item.FibLevel)).First();
-                        var SRLinesExp = bar.GetLowerShadowSRInfo(period, closestExp.FibPrecentage.ToDescription(), closestExp.FibLevel);
+                        var closestExp = fibExpansion.FibLevels.OrderBy(item => Math.Abs( barLow - item.FibValue)).First();
+                        var SRLinesExp = bar.GetLowerShadowSRInfo(period, closestExp.FibPrecentage.ToDescription(), closestExp.FibValue);
 
                         if ( SRLinesExp != null )
                         {
@@ -820,7 +820,7 @@ namespace fx.Algorithm
             return false;
         }
 
-        private bool CheckRetracementValue( double ratio, fxFibLevels[ ] wave2RetracementLevels )
+        private bool CheckRetracementValue( double ratio, fxFibLevel[ ] wave2RetracementLevels )
         {
             if ( ratio > wave2RetracementLevels[ 0 ].FibValue && ( ratio < wave2RetracementLevels[ wave2RetracementLevels.Length - 1 ].FibValue ) )
             {

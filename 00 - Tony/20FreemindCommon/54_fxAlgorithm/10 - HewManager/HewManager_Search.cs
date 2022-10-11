@@ -1953,6 +1953,38 @@ namespace fx.Algorithm
             return -1;
         }
 
+        public long FindBeginningWaveOfCurrentDoubleThree( int waveScenarioNo, long rawBarTime, ElliottWaveCycle cycle )
+        {
+            if ( _hews.Count > 0 )
+            {
+                if ( IsSpecialBar( waveScenarioNo, rawBarTime ) )
+                {
+                    var specialWave = _hews[rawBarTime];
+                    ref var hew = ref specialWave.GetWaveFromScenario( waveScenarioNo );
+                    if ( hew.IsBeginningWaveOfExpandedFlat_ScanBackward( cycle ) )
+                    {
+                        return rawBarTime;
+                    }
+                }
+
+                var previousWaves = _hews.GetElementsRightOf( rawBarTime );
+
+                foreach ( var wave in previousWaves )
+                {
+                    ref var hew = ref wave.Value.GetWaveFromScenario( waveScenarioNo );
+
+                    if ( hew.IsBeginningWaveOfDoubleThree( cycle ) )
+                    {
+                        return wave.Key;
+                    }
+                }
+            }
+
+            return -1;
+        }
+
+        
+
         public long FindBeginningWaveOfCurrentExpandedFlat( int waveScenarioNo, TimeSpan period, long rawBarTime, ElliottWaveCycle cycle )
         {
             var hews = GetElliottWavesDictionary( period );

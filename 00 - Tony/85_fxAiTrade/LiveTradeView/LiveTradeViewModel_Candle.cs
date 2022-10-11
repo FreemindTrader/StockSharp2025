@@ -418,9 +418,11 @@ namespace FreemindAITrade.ViewModels
 
                         for ( var i = barsRange.first; i <= barsRange.last; i++ )
                         {
-                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref _bars[i] );
+                            var myBar = _bars[ i ];
 
-                            indicatorList.SetIndicatorValue( _bars[i].BarTime, indicatorRes );
+                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref myBar );
+
+                            indicatorList.SetIndicatorValue( myBar.BarTime, indicatorRes );
                         }
                     }
                 }
@@ -893,12 +895,12 @@ namespace FreemindAITrade.ViewModels
                         //_histTickRequests.Add( nextId, Tuple.Create( security, fromDay ) );
 
                         //Connector connector = Connector;
-                        var msg = new MarketDataMessage();
-                        msg.SecurityId = security.ToSecurityId();
-                        msg.DataType = MarketDataTypes.Level1;
-                        msg.From = new DateTimeOffset?( runInfo.From.Value );
-                        msg.To = new DateTimeOffset?( runInfo.To.Value );
-                        msg.IsSubscribe = true;
+                        var msg           = new MarketDataMessage();
+                        msg.SecurityId    = security.ToSecurityId();
+                        msg.DataType      = MarketDataTypes.Level1;
+                        msg.From          = new DateTimeOffset?( runInfo.From.Value );
+                        msg.To            = new DateTimeOffset?( runInfo.To.Value );
+                        msg.IsSubscribe   = true;
                         msg.TransactionId = nextId;
 
                         MarketDataMessage marketDataMessage = msg.ValidateBounds();

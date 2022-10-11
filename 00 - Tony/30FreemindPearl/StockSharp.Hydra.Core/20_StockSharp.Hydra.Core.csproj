@@ -27,14 +27,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
-      <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Logging" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Server.Core" Version="5.0.223" />
       <PackageReference Include="StockSharp.Server.Fix" Version="5.0.108" />
-      <PackageReference Include="Stocksharp.Studio.Core" Version="5.0.225" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\StockSharp.Studio.Core\07_StockSharp.Studio.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
