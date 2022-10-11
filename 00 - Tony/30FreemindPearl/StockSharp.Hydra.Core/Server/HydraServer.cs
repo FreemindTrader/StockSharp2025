@@ -1058,9 +1058,9 @@ namespace StockSharp.Hydra.Core.Server
                         return unauthorizedAccessException;
                     }
                     
-                    IDictionary<(string, string, string, DateTime?), bool>  temp = new SynchronizedDictionary< (string, string, string, DateTime?), bool> ();
+                    //IDictionary<(string, string, string, DateTime?), bool>  temp = new SynchronizedDictionary< (string, string, string, DateTime?), bool> ();
                     
-                    if ( permissionCredentials.Permissions.TryGetValue( permission, out temp ) )
+                    if ( permissionCredentials.Permissions.TryGetValue( permission, out var temp ) )
                         return null;
                     UnauthorizedAccessException unauthorizedAccessException1 = new UnauthorizedAccessException( LocalizedStrings.SessionNoPermission.Put( session.Id, permission ) );
                     logs.AddErrorLog( unauthorizedAccessException1 );

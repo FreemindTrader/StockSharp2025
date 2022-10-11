@@ -284,9 +284,9 @@ namespace fx.Algorithm
 
         public Wave3Type Wave3Type          { get; set; }
 
-        private PooledList< FibLevelInfo > _predictedTargets = null;
+        private PooledList< fxFibLevelCluster > _predictedTargets = null;
 
-        public PooledList<FibLevelInfo> PredictedTargets
+        public PooledList<fxFibLevelCluster> PredictedTargets
         {
             get
             {
@@ -441,10 +441,10 @@ namespace fx.Algorithm
         {
             var symbolex = SymbolHelper.ToSymbolEx( _bars.Security, period );
 
-            FibLevelInfo wave2Retracement = default;
-            FibLevelInfo wave3AtoWave1 = default;
-            FibLevelInfo wave3btowave1 = default;
-            FibLevelInfo wave3CtoWave1 = default;
+            fxFibLevelCluster wave2Retracement = default;
+            fxFibLevelCluster wave3AtoWave1 = default;
+            fxFibLevelCluster wave3btowave1 = default;
+            fxFibLevelCluster wave3CtoWave1 = default;
 
             if ( _wave1CTime > -1 )
             {
@@ -497,14 +497,14 @@ namespace fx.Algorithm
 
                 if ( _wave3BRet != null && Bar3B != SBar.EmptySBar )
                 {
-                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3BRetValue ) )
+                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3BRetValue ) )
                     {
                         Wave3bRet = wave3BRetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btoWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3btoWave1Value ) )
                         {
                             Wave3btoWave1 = wave3btoWave1Value.FibPrecentage;
                         }
@@ -519,14 +519,14 @@ namespace fx.Algorithm
 
                 if ( _wave4Ret != null && Bar4 != SBar.EmptySBar )
                 {
-                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4RetValue ) )
+                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4RetValue ) )
                     {
                         Wave4Ret = wave4RetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4toWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4toWave1Value ) )
                         {
                             Wave4toWave1 = wave4toWave1Value.FibPrecentage;
                         }
@@ -717,7 +717,7 @@ namespace fx.Algorithm
 
                 if ( _wave2Ret != null && Bar2 != SBar.EmptySBar )
                 {
-                    if ( _wave2Ret.GetClosestFibLevel( Bar2.PeakTroughValue, out FibLevelInfo wave2Retracement ) )
+                    if ( _wave2Ret.GetClosestFibLevel( Bar2.PeakTroughValue, out fxFibLevelCluster wave2Retracement ) )
                     {
                         Wave2Ret = wave2Retracement.FibPrecentage;
                     }
@@ -732,7 +732,7 @@ namespace fx.Algorithm
                 {
                     if ( Bar3A != SBar.EmptySBar )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3A.PeakTroughValue, out FibLevelInfo wave3AtoWave1 ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3A.PeakTroughValue, out fxFibLevelCluster wave3AtoWave1 ) )
                         {
                             Wave3aProj = wave3AtoWave1.FibPrecentage;
                         }
@@ -740,7 +740,7 @@ namespace fx.Algorithm
 
                     if ( Bar3B != SBar.EmptySBar )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btowave1 ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3btowave1 ) )
                         {
                             Wave3btoWave1 = wave3btowave1.FibPrecentage;
                         }
@@ -748,7 +748,7 @@ namespace fx.Algorithm
 
                     if ( Bar3C != SBar.EmptySBar )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3C.PeakTroughValue, out FibLevelInfo wave3CtoWave1 ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3C.PeakTroughValue, out fxFibLevelCluster wave3CtoWave1 ) )
                         {
                             Wave3cProj = wave3CtoWave1.FibPrecentage;
                         }
@@ -762,14 +762,14 @@ namespace fx.Algorithm
 
                 if ( _wave3BRet != null && Bar3B != SBar.EmptySBar )
                 {
-                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3BRetValue ) )
+                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3BRetValue ) )
                     {
                         Wave3bRet = wave3BRetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btoWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3btoWave1Value ) )
                         {
                             Wave3btoWave1 = wave3btoWave1Value.FibPrecentage;
                         }
@@ -784,14 +784,14 @@ namespace fx.Algorithm
 
                 if ( _wave4Ret != null && Bar4 != SBar.EmptySBar )
                 {
-                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4RetValue ) )
+                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4RetValue ) )
                     {
                         Wave4Ret = wave4RetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4toWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4toWave1Value ) )
                         {
                             Wave4toWave1 = wave4toWave1Value.FibPrecentage;
                         }
@@ -805,7 +805,7 @@ namespace fx.Algorithm
 
                 if ( _wave3CExp != null && Bar3C != SBar.EmptySBar )
                 {
-                    if ( _wave3CExp.GetClosestFibLevel( Bar3C.PeakTroughValue, out FibLevelInfo wave3CtoWave3a ) )
+                    if ( _wave3CExp.GetClosestFibLevel( Bar3C.PeakTroughValue, out fxFibLevelCluster wave3CtoWave3a ) )
                     {
                         Wave3CtoWave3A = wave3CtoWave3a.FibPrecentage;
                     }                    
@@ -820,7 +820,7 @@ namespace fx.Algorithm
                 {
                     if ( Bar5A != SBar.EmptySBar )
                     {
-                        if ( _wave5Exp.GetClosestFibLevel( Bar5A.PeakTroughValue, out FibLevelInfo wave5AExp ) )
+                        if ( _wave5Exp.GetClosestFibLevel( Bar5A.PeakTroughValue, out fxFibLevelCluster wave5AExp ) )
                         {
                             Wave5AProj = wave5AExp.FibPrecentage;
                         }
@@ -828,7 +828,7 @@ namespace fx.Algorithm
 
                     if ( Bar5C != SBar.EmptySBar )
                     {
-                        if ( _wave5Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out FibLevelInfo wave5CExp ) )
+                        if ( _wave5Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out fxFibLevelCluster wave5CExp ) )
                         {
                             Wave5CProj = wave5CExp.FibPrecentage;
                         }
@@ -837,7 +837,7 @@ namespace fx.Algorithm
 
                 if ( _wave3Exp != null )
                 {
-                    if ( _wave3Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out FibLevelInfo wave5CtoWave1 ) )
+                    if ( _wave3Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out fxFibLevelCluster wave5CtoWave1 ) )
                     {
                         Wave5toWave1 = wave5CtoWave1.FibPrecentage;
                     }
@@ -1126,7 +1126,7 @@ namespace fx.Algorithm
 
                 if ( _wave2Ret != null && Bar2 != SBar.EmptySBar )
                 {
-                    if ( _wave2Ret.GetClosestFibLevel( Bar2.PeakTroughValue, out FibLevelInfo wave2Retracement ) )
+                    if ( _wave2Ret.GetClosestFibLevel( Bar2.PeakTroughValue, out fxFibLevelCluster wave2Retracement ) )
                     {
                         Wave2Ret = wave2Retracement.FibPrecentage;
                     }
@@ -1141,7 +1141,7 @@ namespace fx.Algorithm
                 {
                     if ( Bar3A != SBar.EmptySBar )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3A.PeakTroughValue, out FibLevelInfo wave3AtoWave1 ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3A.PeakTroughValue, out fxFibLevelCluster wave3AtoWave1 ) )
                         {
                             Wave3aProj = wave3AtoWave1.FibPrecentage;
                         }
@@ -1149,7 +1149,7 @@ namespace fx.Algorithm
 
                     if ( Bar3B != SBar.EmptySBar )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btowave1 ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3btowave1 ) )
                         {
                             Wave3btoWave1 = wave3btowave1.FibPrecentage;
                         }
@@ -1157,7 +1157,7 @@ namespace fx.Algorithm
 
                     if ( Bar3C != SBar.EmptySBar )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3C.PeakTroughValue, out FibLevelInfo wave3CtoWave1 ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3C.PeakTroughValue, out fxFibLevelCluster wave3CtoWave1 ) )
                         {
                             Wave3cProj = wave3CtoWave1.FibPrecentage;
                         }
@@ -1171,14 +1171,14 @@ namespace fx.Algorithm
 
                 if ( _wave3BRet != null && Bar3B != SBar.EmptySBar )
                 {
-                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3BRetValue ) )
+                    if ( _wave3BRet.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3BRetValue ) )
                     {
                         Wave3bRet = wave3BRetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out FibLevelInfo wave3btoWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar3B.PeakTroughValue, out fxFibLevelCluster wave3btoWave1Value ) )
                         {
                             Wave3btoWave1 = wave3btoWave1Value.FibPrecentage;
                         }
@@ -1193,14 +1193,14 @@ namespace fx.Algorithm
 
                 if ( _wave4Ret != null && Bar4 != SBar.EmptySBar )
                 {
-                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4RetValue ) )
+                    if ( _wave4Ret.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4RetValue ) )
                     {
                         Wave4Ret = wave4RetValue.FibPrecentage;
                     }
 
                     if ( _wave3Exp != null )
                     {
-                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out FibLevelInfo wave4toWave1Value ) )
+                        if ( _wave3Exp.GetClosestFibLevel( Bar4.PeakTroughValue, out fxFibLevelCluster wave4toWave1Value ) )
                         {
                             Wave4toWave1 = wave4toWave1Value.FibPrecentage;
                         }
@@ -1216,7 +1216,7 @@ namespace fx.Algorithm
                 {
                     if ( Bar5A != SBar.EmptySBar )
                     {
-                        if ( _wave5Exp.GetClosestFibLevel( Bar5A.PeakTroughValue, out FibLevelInfo wave5AExp ) )
+                        if ( _wave5Exp.GetClosestFibLevel( Bar5A.PeakTroughValue, out fxFibLevelCluster wave5AExp ) )
                         {
                             Wave5AProj = wave5AExp.FibPrecentage;
                         }
@@ -1224,7 +1224,7 @@ namespace fx.Algorithm
 
                     if ( Bar5C != SBar.EmptySBar )
                     {
-                        if ( _wave5Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out FibLevelInfo wave5CExp ) )
+                        if ( _wave5Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out fxFibLevelCluster wave5CExp ) )
                         {
                             Wave5CProj = wave5CExp.FibPrecentage;
                         }
@@ -1233,7 +1233,7 @@ namespace fx.Algorithm
 
                 if ( _wave3Exp != null )
                 {
-                    if ( _wave3Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out FibLevelInfo wave5CtoWave1 ) )
+                    if ( _wave3Exp.GetClosestFibLevel( Bar5C.PeakTroughValue, out fxFibLevelCluster wave5CtoWave1 ) )
                     {
                         Wave5toWave1 = wave5CtoWave1.FibPrecentage;
                     }

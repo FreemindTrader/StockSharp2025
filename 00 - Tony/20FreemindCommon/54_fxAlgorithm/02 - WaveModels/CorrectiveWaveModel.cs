@@ -15,8 +15,8 @@ namespace fx.Algorithm
         HewManager _hews;
         fxHistoricBarsRepo _bars;
 
-        PooledList< FibLevelInfo > _largerTargets = null;
-        PooledList< FibLevelInfo > _unfoldingTargets = null;
+        PooledList< fxFibLevelCluster > _largerTargets = null;
+        PooledList< fxFibLevelCluster > _unfoldingTargets = null;
         //private PooledList< FibLevelInfo > _predictedTargets = null;
 
         public CorrectiveWaveModel( fxHistoricBarsRepo bars, HewManager hewManager )
@@ -25,7 +25,7 @@ namespace fx.Algorithm
             _hews = hewManager;
         }        
 
-        public PooledList<FibLevelInfo> LargerTargets
+        public PooledList<fxFibLevelCluster> LargerTargets
         {
             get { return _largerTargets; }
             set
@@ -34,7 +34,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> UnfoldingTargets
+        public PooledList<fxFibLevelCluster> UnfoldingTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -43,7 +43,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> PredictedTargets
+        public PooledList<fxFibLevelCluster> PredictedTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -107,7 +107,7 @@ namespace fx.Algorithm
                                         break;
                                     }
 
-                                    PooledList< FibLevelInfo > allLevels = null;
+                                    PooledList< fxFibLevelCluster > allLevels = null;
 
                                     if ( waveC5Waves != null )
                                     {
@@ -116,9 +116,9 @@ namespace fx.Algorithm
                                             var diff = (double) _bars.Security.PriceStep.Value;
                                             allLevels = waveC5Waves.LargerTargets;
 
-                                            waveC5Waves.GetFibExtremum( out FibLevelInfo highestLowestFib );
+                                            waveC5Waves.GetFibExtremum( out fxFibLevelCluster highestLowestFib );
 
-                                            foreach ( FibLevelInfo fibLevelInfo in waveCTarget.RegularRetraceProjectionLevels.FibLevels )
+                                            foreach ( fxFibLevelCluster fibLevelInfo in waveCTarget.RegularRetraceProjectionLevels.FibLevels )
                                             {
                                                 var index = allLevels.FindIndex( x => x.WithinCluster( fibLevelInfo, diff * 4  ) );
 
@@ -132,11 +132,11 @@ namespace fx.Algorithm
                                                 {
                                                     if ( waveCTarget.IsUptrend )
                                                     {
-                                                        if ( fibLevelInfo.FibLevel < highestLowestFib.FibLevel )
+                                                        if ( fibLevelInfo.FibValue < highestLowestFib.FibValue )
                                                         {
                                                             if ( waveC5Waves.Bar3C != SBar.EmptySBar)
                                                             {
-                                                                if ( fibLevelInfo.FibLevel > waveC5Waves.Bar3C.PeakTroughValue )
+                                                                if ( fibLevelInfo.FibValue > waveC5Waves.Bar3C.PeakTroughValue )
                                                                 {
                                                                     allLevels.Add( fibLevelInfo );
                                                                 }
@@ -149,11 +149,11 @@ namespace fx.Algorithm
                                                     }
                                                     else
                                                     {
-                                                        if ( fibLevelInfo.FibLevel > highestLowestFib.FibLevel )
+                                                        if ( fibLevelInfo.FibValue > highestLowestFib.FibValue )
                                                         {
                                                             if ( waveC5Waves.Bar3C != SBar.EmptySBar)
                                                             {
-                                                                if ( fibLevelInfo.FibLevel < waveC5Waves.Bar3C.PeakTroughValue )
+                                                                if ( fibLevelInfo.FibValue < waveC5Waves.Bar3C.PeakTroughValue )
                                                                 {
                                                                     allLevels.Add( fibLevelInfo );
                                                                 }

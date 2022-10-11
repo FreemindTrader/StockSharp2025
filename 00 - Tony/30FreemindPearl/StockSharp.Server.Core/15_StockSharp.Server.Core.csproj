@@ -26,12 +26,11 @@
     </PropertyGroup>
 
     <ItemGroup>        
-        <PackageReference Include="Ecng.Serialization" Version="1.0.127" />        
-        <PackageReference Include="StockSharp.Localization" Version="5.0.220" />
-        <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
-        <PackageReference Include="StockSharp.Logging" Version="5.0.220" />
-        <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
-        <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
+        <PackageReference Include="Ecng.Serialization" Version="1.0.127" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
     </ItemGroup>
 
     <ItemGroup>

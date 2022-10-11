@@ -27,14 +27,14 @@ namespace fx.Algorithm
             FibLevelStrengh    = 0;
         }
 
-        public WaveSRLineResponse( TrendDirection trendDirection, FibonacciType fibType, SRLineResponseType sRLineResponse, FibLevelInfo info )
+        public WaveSRLineResponse( TrendDirection trendDirection, FibonacciType fibType, SRLineResponseType sRLineResponse, fxFibLevelCluster info )
         {
             FibType            = fibType;
             SRLineResponseType = sRLineResponse;
             FibPrecentage      = info.FibPrecentage;
-            SRLineValue        = info.FibLevel;
+            SRLineValue        = info.FibValue;
             TrendDirection     = trendDirection;
-            FibLevelStrengh    = info.FibLevelStrengh;
+            FibLevelStrengh    = info.FibStrength;
         }
 
         public override string ToString()

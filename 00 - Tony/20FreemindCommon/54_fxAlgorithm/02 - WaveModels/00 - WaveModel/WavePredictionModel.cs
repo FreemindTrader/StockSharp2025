@@ -17,8 +17,8 @@ namespace fx.Algorithm
     //![](9B4595CED784909AC1195C12F1754846.png;;;0.03159,0.02605)
     public partial class WavePredictionModel : BaseLogReceiver, IWavePredictionModel
     {
-        private PooledList<FibLevelInfo> _largerTargets = null;
-        private PooledList<FibLevelInfo> _unfoldingTargets = null;
+        private PooledList<fxFibLevelCluster> _largerTargets = null;
+        private PooledList<fxFibLevelCluster> _unfoldingTargets = null;
         private fxHistoricBarsRepo _bars;
         private HewManager _hews;
         private WaveModelKey _k;
@@ -427,7 +427,7 @@ namespace fx.Algorithm
                 {
                     foreach ( var pp in monthlyPivotPoint.AllPivotPoints )
                     {
-                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibLevel - pp.Value ) < _bars.PipsAllowance() );
+                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibValue - pp.Value ) < _bars.PipsAllowance() );
 
                         if ( index > -1 )
                         {
@@ -457,7 +457,7 @@ namespace fx.Algorithm
                 {
                     foreach ( var pp in weeklyPivotPoint.AllPivotPoints )
                     {
-                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibLevel - pp.Value ) < _bars.PipsAllowance() );
+                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibValue - pp.Value ) < _bars.PipsAllowance() );
 
                         if ( index > -1 )
                         {
@@ -488,7 +488,7 @@ namespace fx.Algorithm
                 {
                     foreach ( var pp in dailyPivotPoint.AllPivotPoints )
                     {
-                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibLevel - pp.Value ) < _bars.PipsAllowance() );
+                        var index = wave4Targets.FindIndex( x => Math.Abs( x.FibValue - pp.Value ) < _bars.PipsAllowance() );
 
                         if ( index > -1 )
                         {
@@ -518,7 +518,7 @@ namespace fx.Algorithm
 
 
 
-        public PooledList<FibLevelInfo> LargerTargets
+        public PooledList<fxFibLevelCluster> LargerTargets
         {
             get { return _largerTargets; }
             set
@@ -527,7 +527,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> UnfoldingTargets
+        public PooledList<fxFibLevelCluster> UnfoldingTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -536,7 +536,7 @@ namespace fx.Algorithm
             }
         }
 
-        public PooledList<FibLevelInfo> PredictedTargets
+        public PooledList<fxFibLevelCluster> PredictedTargets
         {
             get { return _unfoldingTargets; }
             set
@@ -566,7 +566,7 @@ namespace fx.Algorithm
             }
         }
 
-        public void GetFibExtremum( out FibLevelInfo output )
+        public void GetFibExtremum( out fxFibLevelCluster output )
         {
             output = default;
 
@@ -575,9 +575,9 @@ namespace fx.Algorithm
                 double max = double.MinValue;
                 foreach ( var level in _largerTargets )
                 {
-                    if ( level.FibLevel > max )
+                    if ( level.FibValue > max )
                     {
-                        max = level.FibLevel;
+                        max = level.FibValue;
                         output = level;
                     }
                 }
@@ -587,9 +587,9 @@ namespace fx.Algorithm
                 double min = double.MaxValue;
                 foreach ( var level in _largerTargets )
                 {
-                    if ( level.FibLevel < min )
+                    if ( level.FibValue < min )
                     {
-                        min = level.FibLevel;
+                        min = level.FibValue;
                         output = level;
                     }
                 }

@@ -223,9 +223,9 @@ namespace fx.Algorithm
             set => _subWaveC3 = value;
         }
 
-        private PooledList< FibLevelInfo > _predictedTargets = null;
+        private PooledList< fxFibLevelCluster > _predictedTargets = null;
 
-        public PooledList<FibLevelInfo> PredictedTargets
+        public PooledList<fxFibLevelCluster> PredictedTargets
         {
             get
             {

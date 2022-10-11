@@ -81,90 +81,100 @@ namespace fx.Definitions
     
     public enum FibonacciType : byte
     {
-        NONE                = 0,
-        [Description( "Wave C Projection" )]
-        WaveCProjection     = 21,
-        [Description( "Wave 2 Retracement" )]
-        Wave2Retracement    = 22,
-        [Description( "Wave 3 Classic Projection" )]
-        Wave3ClassicProjection     = 23,
-        [Description( "Wave 3C Projection" )]
-        Wave3CProjection    = 24,
-        [Description( "Wave 4 Retracement" )]
-        Wave4Retracement    = 25,
-        [Description( "Wave 5 Projection" )]
-        Wave5Projection     = 26,
-        [Description( "Wave C Projection" )]
-        Wave5CProjection    = 27,
-        [Description( "Wave C of ABC Projection" )]
-        ABCWaveCProjection  = 28,
-        [Description( "Wave B of ABC Retracement" )]
-        ABCWaveBRetracement = 29,
-        [Description( "EFB Retracement" )]
-        WaveEFBRetracement  = 30,
-        [Description( "^B Retracement" )]
-        WaveTriBRetracement = 31,
-        [Description( "^C Retracement" )]
-        WaveTriCProjection  = 32,
-        [Description( "^D Retracement" )]
-        WaveTriDProjection  = 33,
-        [Description( "^E Retracement" )]
-        WaveTriEProjection  = 34,
-        [Description( "1st X Projection" )]
-        FirstXProjection    = 35,
-        [Description( "2nd X Projection" )]
-        SecondXProjection   = 36,
-        [Description( "Tony Projection" )]
-        TonyProjection   = 37,
-        TonyRetracement   = 38,
-        [Description( "Wave 3 Extended Projection" )]
-        Wave3Extended = 39,
-        [Description( "Wave 3 Super Extended Projection" )]
-        Wave3SuperExtended = 40,
-        [Description( "Wave 3 All Projection" )]
-        Wave3All = 41,
-        CompactWave3 = 42
+        NONE                       = 0,
+        
+        WaveCProjection            = 1,
+        
+        Wave2Retracement           = 2,
+
+        Wave3Compressed            = 5,
+        Wave3ClassicProjection     = 6,
+        Wave3Extended              = 7,
+        Wave3SuperExtended         = 8,
+        Wave3All                   = 9,
+        Wave3CProjection           = 10,
+        Wave3BRetracement          = 11,
+
+        Wave4Retracement           = 15,
+        
+        Wave5Projection            = 20,
+        Wave5BRetracement          = 22,
+        Wave5CProjection           = 24,
+
+        ABCWaveBRetracement        = 26,
+        ABCWaveCProjection         = 28,        
+        
+        
+        WaveEFBRetracement         = 34,
+        
+        WaveTriBRetracement        = 36,        
+        WaveTriCProjection         = 37,        
+        WaveTriDProjection         = 38,        
+        WaveTriEProjection         = 39,
+        
+        FirstXProjection           = 42,        
+        SecondXProjection          = 43,
+        
+        TonyProjection             = 45,
+        TonyRetracement            = 46,        
+        WaveXRetracement           = 47
     }
 
-    public enum FibonacciTargetType : byte
+    public enum FibonacciTargetType :byte
     {
         NONE = 0,
-        [Description( "3A Projection" )]
-        Wave3A = 1,
-        [Description( "3B Retracement" )]
-        Wave3B = 2,
-        [Description( "3C Projection" )]
-        Wave3C = 3,
-        [Description( "4 Retracement" )]
-        Wave4 = 4,
-        [Description( "5 Projection" )]
-        Wave5 = 5,
-        [Description( "C Projection" )]
-        Wave3All = 6,
-        [Description( "Wave A" )]
-        WaveA = 7,
-        [Description( "Wave B" )]
-        WaveB = 8,
-        [Description( "Wave C" )]
-        WaveC = 9,
-        [Description( "Wave XYZ" )]
-        WaveXYZ = 9,
-        [Description( "Wave 5C" )]
-        Wave5C = 10,
-        [Description( "Wave EFB" )]
-        WaveEFB = 11,
-        [Description( "Wave EFC" )]
-        WaveEFC = 12,
-        [Description( "Wave3A_Wave4" )]
-        Wave3A_Wave4 = 90,
-        [Description( "Wave3A_Wave4" )]
-        Wave3C_Wave5 = 91,
-        [Description( "WaveX" )]
+        Wave3All = 1,
+        Wave3A = 2,
+        AroundWave3A = 4,
+
+        Wave3B = 6,
+
+        Wave3C = 8,
+        AroundWave3C = 10,
+        Wave3A_Wave4 = 12,
+        AroundWave3A_Wave4 = 14,
+
+        Wave3C_Wave5 = 16,
+        AroundWave3C_Wave5 = 18,
+
+        Wave4 = 20,
+
+        Wave5 = 22,
+        Wave5C = 21,
+        AroundWave5 = 23,
+
+
+        WaveA = 60,
+        AroundWaveA = 61,
+        WaveB = 62,
+
+        WaveC = 64,
+        AroundWaveC = 65,
+
+        WaveXYZ = 70,
+
+
+        WaveEFB = 85,
+        WaveEFC = 86,
+
+
         WaveX = 92,
-        [Description( "Inverse Retracement" )]
+        [ Description( "Inverse Retracement" ) ]
         InverseRetracement = 98,
-        [Description( "Retracement" )]
-        Retracement = 99
+        [ Description( "Retracement" ) ]
+        Retracement = 99,
+
+        MinimumTarget = 100,
+        AroundMinimumTarget = 105,
+
+        AverageTarget = 110,
+        AroundAvgTarget = 111,
+
+        StrongTarget = 120,
+        AroundStrongTarget = 121,
+
+        ExtremeTarget = 130,
+        AroundExtremeTarget = 131
     }
 
     public enum FibLevelOccurance : byte
@@ -246,6 +256,9 @@ namespace fx.Definitions
         WaveY     = 21,
         WaveZ     = 22,
         WaveW     = 23,
+        Wave1B    = 24,
+        Wave3B = 25,
+        Wave5B = 26,
         COMPLEX   = 31      // MAX 
     }
 

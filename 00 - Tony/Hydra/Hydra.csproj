@@ -2,7 +2,7 @@
     <Import Project="..\..\Diectory.Build.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Hydra</RootNamespace>
-        <AssemblyName>Hydra</AssemblyName>        
+        <AssemblyName>Hydra</AssemblyName>
         <PackageId>StockSharp.Hydra</PackageId>
     </PropertyGroup>
 
@@ -23,64 +23,66 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
         <OutputType>WinExe</OutputType>
         <ApplicationIcon>Properties\FreemindServer.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Properties\stocksharp_data.ico" />
+        <None Remove="Properties\stocksharp_data.ico" />
     </ItemGroup>
 
     <ItemGroup>
-      <Resource Include="Properties\FreemindServer.ico" />
-      <Resource Include="Properties\stocksharp_data.ico" />
+        <Resource Include="Properties\FreemindServer.ico" />
+        <Resource Include="Properties\stocksharp_data.ico" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
-      <PackageReference Include="linq2db" Version="4.2.0" />
-      <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
-      <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.225" />
-      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-      <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="linq2db" Version="4.2.0" />
+        <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
+        <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.225" />
+        <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+        <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\30FreemindPearl\StockSharp.Hydra.Core\20_StockSharp.Hydra.Core.csproj" />
+        <ProjectReference Include="..\30FreemindPearl\StockSharp.Hydra.Core\20_StockSharp.Hydra.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="ActiproSoftware.Shared.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Shared.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="ActiproSoftware.SyntaxEditor.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.SyntaxEditor.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="ActiproSoftware.Text.Addons.DotNet.Roslyn.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Addons.DotNet.Roslyn.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="ActiproSoftware.Text.Addons.DotNet.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Addons.DotNet.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="ActiproSoftware.Text.LLParser.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.LLParser.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="ActiproSoftware.Text.Wpf">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Wpf.dll</HintPath>
-      </Reference>
-      <Reference Include="StockSharp.Xaml.CodeEditor">
-        <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\StockSharp.Xaml.CodeEditor.dll</HintPath>
-      </Reference>
+        <Reference Include="ActiproSoftware.Shared.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Shared.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.SyntaxEditor.Addons.DotNet.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="ActiproSoftware.SyntaxEditor.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.SyntaxEditor.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="ActiproSoftware.Text.Addons.DotNet.Roslyn.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Addons.DotNet.Roslyn.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="ActiproSoftware.Text.Addons.DotNet.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Addons.DotNet.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="ActiproSoftware.Text.LLParser.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.LLParser.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="ActiproSoftware.Text.Wpf">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\ActiproSoftware.Text.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="StockSharp.Xaml.CodeEditor">
+            <HintPath>..\..\..\..\..\..\..\00-StockSharp\Data\StockSharp.Xaml.CodeEditor.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
-    
+
 
 </Project>
 

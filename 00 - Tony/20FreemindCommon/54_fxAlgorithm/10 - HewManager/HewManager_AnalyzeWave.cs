@@ -736,6 +736,24 @@ namespace fx.Algorithm
                     (( DateTime, float ) wave4, ( DateTime, float ) waveA )  pt4_A  = GetPoints_smallWave4_WaveA( waveScenarioNo, period, barTime, currentWaveDegree );
                     (( DateTime, float ) wave4B, ( DateTime, float ) waveA ) pt4B_A = GetPoints_smallWave4B_WaveA( waveScenarioNo, period, barTime, currentWaveDegree );
 
+                    var bars = GetDatabarsRepository( period );
+
+                    ref SBar startBar = ref bars.GetBarByTime( lastWaveStartEnd.Item1.Item1 );
+
+                    var beginWaveName = startBar.GetWaveFromScenario( waveScenarioNo ).GetFirstHighestWaveInfo().Value.WaveName;
+
+                    ElliottWaveEnum waveBName = ElliottWaveEnum.WaveB;
+
+                    if ( beginWaveName == ElliottWaveEnum.Wave2 )
+                    {
+                        waveBName = ElliottWaveEnum.Wave3B;
+                    }
+                    else if ( beginWaveName == ElliottWaveEnum.Wave4 )
+                    {
+                        waveBName = ElliottWaveEnum.Wave5B;
+                    }
+
+
                     fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), _bars.Period.Value );
 
                     if ( pt4B_A != default )
@@ -753,7 +771,7 @@ namespace fx.Algorithm
 
                     if ( lastWaveStartEnd != default )
                     {
-                        fibTarget.SetFibonacciRetracment( lastWaveStartEnd.Item1, lastWaveStartEnd.Item2, ElliottWaveEnum.WaveB );
+                        fibTarget.SetFibonacciRetracment( lastWaveStartEnd.Item1, lastWaveStartEnd.Item2, waveBName );
 
                         if ( nextWave != null )
                         {
@@ -1349,6 +1367,23 @@ namespace fx.Algorithm
 
                     fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString( ), _bars.Period.Value );
 
+                    var bars = GetDatabarsRepository( _currentActiveTimeFrame );
+
+                    ref SBar startBar = ref bars.GetBarByTime( lastWaveStartEnd.Item1.Item1 );
+
+                    var beginWaveName = startBar.GetWaveFromScenario( waveScenarioNo ).GetFirstHighestWaveInfo().Value.WaveName;
+
+                    ElliottWaveEnum waveBName = ElliottWaveEnum.WaveB;
+
+                    if ( beginWaveName == ElliottWaveEnum.Wave2 )
+                    {
+                        waveBName = ElliottWaveEnum.Wave3B;
+                    }
+                    else if ( beginWaveName == ElliottWaveEnum.Wave4 )
+                    {
+                        waveBName = ElliottWaveEnum.Wave5B;
+                    }
+
                     if ( pt4B_A != default )
                     {
                         fibTarget.SetTonyExtension( pt4B_A, ElliottWaveEnum.WaveA );
@@ -1364,7 +1399,7 @@ namespace fx.Algorithm
 
                     if ( lastWaveStartEnd != default )
                     {
-                        fibTarget.SetFibonacciRetracment( lastWaveStartEnd.Item1, lastWaveStartEnd.Item2, ElliottWaveEnum.WaveB );
+                        fibTarget.SetFibonacciRetracment( lastWaveStartEnd.Item1, lastWaveStartEnd.Item2, waveBName );
 
                         if ( nextWave != null )
                         {
@@ -1381,6 +1416,8 @@ namespace fx.Algorithm
                     }
                 }
                 break;
+
+                
 
                 case ElliottWaveEnum.WaveEFA:
                 {
@@ -1400,6 +1437,37 @@ namespace fx.Algorithm
                             {
                                 var nextWaveNameInfo = nextWave.GetWaveFromScenario( waveScenarioNo ).GetHewPointInfoAtCycle( currentWaveDegree );
                                 
+                                if ( nextWaveNameInfo != null )
+                                {
+                                    if ( nextWave.HasOwingBar() )
+                                    {
+                                        fibTarget.SetEndingIndexTime( nextWave.GetMarginDateTime() );
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+
+                case ElliottWaveEnum.WaveW:
+                {
+                    var beginningWave = FindBeginOfCurrentTrend( waveScenarioNo, _bars.Period.Value, barTime, currentWaveDegree );
+
+                    if ( beginningWave != -1 )
+                    {
+                        var points = GetWavePoints( waveScenarioNo, beginningWave, barTime, currentWaveDegree );
+
+                        fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), _bars.Period.Value );
+
+                        if ( points != default )
+                        {
+                            fibTarget.SetFibonacciRetracment( points.Item1, points.Item2, ElliottWaveEnum.WaveW );
+
+                            if ( nextWave != null )
+                            {
+                                var nextWaveNameInfo = nextWave.GetWaveFromScenario( waveScenarioNo ).GetHewPointInfoAtCycle( currentWaveDegree );
+
                                 if ( nextWaveNameInfo != null )
                                 {
                                     if ( nextWave.HasOwingBar() )

@@ -88,7 +88,7 @@ namespace fx.Common
     //    }
     //}
 
-    public class FibLevelInfo : BindableBase, IEquatable<FibLevelInfo>, IComparable, IComparable<FibLevelInfo>
+    public class fxFibLevelCluster : BindableBase, IEquatable<fxFibLevelCluster>, IComparable, IComparable<fxFibLevelCluster>
     {
         
         private double _likelyScore;
@@ -171,7 +171,7 @@ namespace fx.Common
         }
 
         int _fibLevelStrengh;
-        public int FibLevelStrengh
+        public int FibStrength
         {
             get => _fibLevelStrengh;
             set
@@ -181,7 +181,7 @@ namespace fx.Common
         }
 
         public float _fibLevel;
-        public float FibLevel
+        public float FibValue
         {
             get => _fibLevel;
             set
@@ -239,22 +239,22 @@ namespace fx.Common
 
 
 
-        public FibLevelInfo( fxFibLevels fib, float fibLevel )
+        public fxFibLevelCluster( fxFibLevel fib, float fibLevel )
         {
-            FibPrecentage = fib.Percentage;
-            FibLevelStrengh = fib.FibStrength;
-            FibTargetType = fib.FibTargetType;
-            FibLevel = fibLevel;
-            LowerBound = fibLevel;
-            UpperBound = fibLevel;
-            LikelyScore = fib.FibStrength;
-            IsBroken = false;
+            FibPrecentage        = fib.Percentage;
+            FibStrength          = fib.FibStrength;
+            FibTargetType        = fib.FibTargetType;
+            FibValue             = fibLevel;
+            LowerBound           = fibLevel;
+            UpperBound           = fibLevel;
+            LikelyScore          = fib.FibStrength;
+            IsBroken             = false;
             DynamicSRLinesRating = 0;
-            OverlappedCount = 0;
+            OverlappedCount      = 0;
         }
 
 
-        public void UpdateAll( FibLevelInfo fibLevel )
+        public void UpdateAll( fxFibLevelCluster fibLevel )
         {
             if ( fibLevel.HasRange )
             {
@@ -272,14 +272,14 @@ namespace fx.Common
             }
             else
             {
-                if ( fibLevel.FibLevel > UpperBound )
+                if ( fibLevel.FibValue > UpperBound )
                 {
-                    UpperBound = fibLevel.FibLevel;
+                    UpperBound = fibLevel.FibValue;
                 }
 
-                if ( fibLevel.FibLevel < LowerBound )
+                if ( fibLevel.FibValue < LowerBound )
                 {
-                    LowerBound = fibLevel.FibLevel;
+                    LowerBound = fibLevel.FibValue;
                 }
 
                 OverlappedCount += 1;
@@ -288,28 +288,28 @@ namespace fx.Common
             LikelyScore += fibLevel.LikelyScore;
         }
 
-        public bool WithinCluster( FibLevelInfo fibLevel, double pipAllowance )
+        public bool WithinCluster( fxFibLevelCluster fibLevel, double pipAllowance )
         {
             if ( HasRange )
             {
-                if ( ( fibLevel.FibLevel <= UpperBound ) && ( fibLevel.FibLevel >= LowerBound ) )
+                if ( ( fibLevel.FibValue <= UpperBound ) && ( fibLevel.FibValue >= LowerBound ) )
                 {
                     return true;
                 }
             }
 
-            var diff = Math.Abs( fibLevel.FibLevel - FibLevel );
+            var diff = Math.Abs( fibLevel.FibValue - FibValue );
 
             if ( diff <= pipAllowance )
             {
-                if ( fibLevel.FibLevel > UpperBound )
+                if ( fibLevel.FibValue > UpperBound )
                 {
-                    UpperBound = fibLevel.FibLevel;
+                    UpperBound = fibLevel.FibValue;
                 }
 
-                if ( fibLevel.FibLevel < LowerBound )
+                if ( fibLevel.FibValue < LowerBound )
                 {
-                    LowerBound = fibLevel.FibLevel;
+                    LowerBound = fibLevel.FibValue;
                 }
 
                 return true;
@@ -329,7 +329,7 @@ namespace fx.Common
 
         public override string ToString()
         {
-            var level = Math.Round( FibLevel, 5 );
+            var level = Math.Round( FibValue, 5 );
             var lower = Math.Round( LowerBound, 5 );
             var upper = Math.Round( UpperBound, 5 );
             var score = Math.Round( LikelyScore, 1 );
@@ -372,7 +372,7 @@ namespace fx.Common
 
         public override bool Equals( object obj )
         {
-            if ( obj is FibLevelInfo fibLevelInfo )
+            if ( obj is fxFibLevelCluster fibLevelInfo )
             {
                 return Equals( fibLevelInfo );
             }
@@ -380,7 +380,7 @@ namespace fx.Common
             return base.Equals( obj );
         }
 
-        public static bool operator ==( FibLevelInfo first, FibLevelInfo second )
+        public static bool operator ==( fxFibLevelCluster first, fxFibLevelCluster second )
         {
             if ( ( object ) first == null )
             {
@@ -390,12 +390,12 @@ namespace fx.Common
             return first.Equals( second );
         }
 
-        public static bool operator !=( FibLevelInfo first, FibLevelInfo second )
+        public static bool operator !=( fxFibLevelCluster first, fxFibLevelCluster second )
         {
             return !( first == second );
         }
 
-        public bool Equals( FibLevelInfo other )
+        public bool Equals( fxFibLevelCluster other )
         {
             if ( ReferenceEquals( null, other ) )
             {
@@ -436,16 +436,16 @@ namespace fx.Common
                 return 1;
             }
 
-            FibLevelInfo other = obj as FibLevelInfo;
+            fxFibLevelCluster other = obj as fxFibLevelCluster;
             if ( other == null )
             {
-                throw new ArgumentException( nameof( obj ) + " is not a " + nameof( FibLevelInfo ) );
+                throw new ArgumentException( nameof( obj ) + " is not a " + nameof( fxFibLevelCluster ) );
             }
 
             return CompareTo( other );
         }
 
-        public int CompareTo( FibLevelInfo other )
+        public int CompareTo( fxFibLevelCluster other )
         {
             if ( other == null )
             {

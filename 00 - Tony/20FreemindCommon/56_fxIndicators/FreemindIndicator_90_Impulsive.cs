@@ -72,12 +72,12 @@ namespace fx.Indicators
                 KeyValuePair< long, WavePointImportance >? wave2 = null;
                 KeyValuePair< long, WavePointImportance >? wave4 = null;
 
-                PooledList<FibLevelInfo> wave2Retracement              = null;
-                PooledList<FibLevelInfo> wave3Projection               = null;
+                PooledList<fxFibLevelCluster> wave2Retracement              = null;
+                PooledList<fxFibLevelCluster> wave3Projection               = null;
 
-                PooledList<FibLevelInfo> wave3CProjection              = null;
-                PooledList<FibLevelInfo> wave4Retracement              = null;
-                PooledList<FibLevelInfo> wave5Projection               = null;
+                PooledList<fxFibLevelCluster> wave3CProjection              = null;
+                PooledList<fxFibLevelCluster> wave4Retracement              = null;
+                PooledList<fxFibLevelCluster> wave5Projection               = null;
 
                 WaveSRLineResponse wave2_Response                = default;
                 WaveSRLineResponse wave3A_Response               = default;
@@ -478,12 +478,12 @@ namespace fx.Indicators
                 KeyValuePair< long, WavePointImportance >? wave2 = null;
                 KeyValuePair< long, WavePointImportance >? wave4 = null;
 
-                PooledList<FibLevelInfo> wave2Retracement  = null;
-                PooledList<FibLevelInfo> wave3Projection   = null;
-                PooledList<FibLevelInfo> wave3BRetracement = null;
-                PooledList<FibLevelInfo> wave3CProjection  = null;
-                PooledList<FibLevelInfo> wave4Retracement  = null;
-                PooledList<FibLevelInfo> wave5Projection   = null;
+                PooledList<fxFibLevelCluster> wave2Retracement  = null;
+                PooledList<fxFibLevelCluster> wave3Projection   = null;
+                PooledList<fxFibLevelCluster> wave3BRetracement = null;
+                PooledList<fxFibLevelCluster> wave3CProjection  = null;
+                PooledList<fxFibLevelCluster> wave4Retracement  = null;
+                PooledList<fxFibLevelCluster> wave5Projection   = null;
 
                 WaveSRLineResponse wave2_Response    = default;
                 WaveSRLineResponse wave3A_Response   = default;
@@ -783,9 +783,9 @@ namespace fx.Indicators
 
             var wave3ProjectionObj  = new FibLevelsCollection( FibonacciType.Wave3ClassicProjection, bar0.LowTimeValue, bar1.HighTimeValue, bar2.LowTimeValue );
 
-            PooledList<FibLevelInfo> wave3Projection   = null;
-            PooledList<FibLevelInfo> wave3BRetracement = null;
-            PooledList<FibLevelInfo> wave3CProjection  = null;
+            PooledList<fxFibLevelCluster> wave3Projection   = null;
+            PooledList<fxFibLevelCluster> wave3BRetracement = null;
+            PooledList<fxFibLevelCluster> wave3CProjection  = null;
 
 
             double len_2_3a   = 0;
@@ -911,9 +911,9 @@ namespace fx.Indicators
 
             var wave3ProjectionObj  = new FibLevelsCollection( FibonacciType.Wave3ClassicProjection, bar0.HighTimeValue, bar1.LowTimeValue, bar2.HighTimeValue );
 
-            PooledList<FibLevelInfo> wave3Projection   = null;
-            PooledList<FibLevelInfo> wave3BRetracement = null;
-            PooledList<FibLevelInfo> wave3CProj        = null;
+            PooledList<fxFibLevelCluster> wave3Projection   = null;
+            PooledList<fxFibLevelCluster> wave3BRetracement = null;
+            PooledList<fxFibLevelCluster> wave3CProj        = null;
 
             double len_2_3a   = 0;
             double len_3a_3b  = 0;

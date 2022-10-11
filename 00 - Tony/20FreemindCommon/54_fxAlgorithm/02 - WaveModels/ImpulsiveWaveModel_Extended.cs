@@ -17,7 +17,7 @@ namespace fx.Algorithm
             if( _wave5Exp == null )
                 return;
 
-            PooledList< FibLevelInfo > wave5Targets = null;
+            PooledList< fxFibLevelCluster > wave5Targets = null;
 
             var diff = _bars.Security.PriceStep.Value;
 
@@ -38,9 +38,9 @@ namespace fx.Algorithm
 
                 if ( _wave5Exp.HasTonyExtensions )
                 {
-                    foreach ( FibLevelInfo fibLevelInfo in _wave5Exp.TonyFirstLevels.FibLevels )
+                    foreach ( fxFibLevelCluster fibLevelInfo in _wave5Exp.TonyFirstLevels.FibLevels )
                     {
-                        var index = wave5Targets.FindIndex( x => Math.Abs( x.FibLevel - fibLevelInfo.FibLevel ) < (double)( diff * 4 ) );
+                        var index = wave5Targets.FindIndex( x => Math.Abs( x.FibValue - fibLevelInfo.FibValue ) < (double)( diff * 4 ) );
 
                         if ( index > -1 )
                         {
@@ -52,14 +52,14 @@ namespace fx.Algorithm
                         {
                             if ( _wave5Exp.IsUptrend )
                             {
-                                if ( fibLevelInfo.FibLevel < highestLowestFib && fibLevelInfo.FibLevel >= Bar3C.PeakTroughValue)
+                                if ( fibLevelInfo.FibValue < highestLowestFib && fibLevelInfo.FibValue >= Bar3C.PeakTroughValue)
                                 {
                                     wave5Targets.Add( fibLevelInfo );
                                 }
                             }
                             else
                             {
-                                if ( fibLevelInfo.FibLevel > highestLowestFib && fibLevelInfo.FibLevel <= Bar3C.PeakTroughValue )
+                                if ( fibLevelInfo.FibValue > highestLowestFib && fibLevelInfo.FibValue <= Bar3C.PeakTroughValue )
                                 {
                                     wave5Targets.Add( fibLevelInfo );
                                 }
@@ -70,9 +70,9 @@ namespace fx.Algorithm
 
                 if ( _wave5Exp.HasTonyExtensions2 )
                 {
-                    foreach ( FibLevelInfo fibLevelInfo in _wave5Exp.TonySecondLevels.FibLevels )
+                    foreach ( fxFibLevelCluster fibLevelInfo in _wave5Exp.TonySecondLevels.FibLevels )
                     {
-                        var index = wave5Targets.FindIndex( x => Math.Abs( x.FibLevel - fibLevelInfo.FibLevel ) < (double)( diff * 4 ) );
+                        var index = wave5Targets.FindIndex( x => Math.Abs( x.FibValue - fibLevelInfo.FibValue ) < (double)( diff * 4 ) );
 
                         if ( index > -1 )
                         {
@@ -84,14 +84,14 @@ namespace fx.Algorithm
                         {
                             if ( _wave5Exp.IsUptrend )
                             {
-                                if ( fibLevelInfo.FibLevel < highestLowestFib && fibLevelInfo.FibLevel >= Bar3C.PeakTroughValue )
+                                if ( fibLevelInfo.FibValue < highestLowestFib && fibLevelInfo.FibValue >= Bar3C.PeakTroughValue )
                                 {
                                     wave5Targets.Add( fibLevelInfo );
                                 }
                             }
                             else
                             {
-                                if ( fibLevelInfo.FibLevel > highestLowestFib && fibLevelInfo.FibLevel <= Bar3C.PeakTroughValue )
+                                if ( fibLevelInfo.FibValue > highestLowestFib && fibLevelInfo.FibValue <= Bar3C.PeakTroughValue )
                                 {
                                     wave5Targets.Add( fibLevelInfo );
                                 }
@@ -105,9 +105,9 @@ namespace fx.Algorithm
             {
                 var target = _wave3Exp.GetFibLevelsBtw( FibPercentage.Fib_276_4, FibPercentage.Fib_323_6 );
 
-                foreach ( FibLevelInfo fibLevelInfo in target )
+                foreach ( fxFibLevelCluster fibLevelInfo in target )
                 {
-                    var index = wave5Targets.FindIndex( x => Math.Abs( x.FibLevel - fibLevelInfo.FibLevel ) < (double)( diff * 4 ) );
+                    var index = wave5Targets.FindIndex( x => Math.Abs( x.FibValue - fibLevelInfo.FibValue ) < (double)( diff * 4 ) );
 
                     if ( index > -1 )
                     {
@@ -119,14 +119,14 @@ namespace fx.Algorithm
                     {
                         if ( _wave5Exp.IsUptrend )
                         {
-                            if ( fibLevelInfo.FibLevel < highestLowestFib )
+                            if ( fibLevelInfo.FibValue < highestLowestFib )
                             {
                                 wave5Targets.Add( fibLevelInfo );
                             }
                         }
                         else
                         {
-                            if ( fibLevelInfo.FibLevel > highestLowestFib )
+                            if ( fibLevelInfo.FibValue > highestLowestFib )
                             {
                                 wave5Targets.Add( fibLevelInfo );
                             }
@@ -136,9 +136,9 @@ namespace fx.Algorithm
 
                 if ( _wave3Exp.HasTonyExtensions )
                 {
-                    foreach ( FibLevelInfo fibLevelInfo in _wave3Exp.TonyFirstLevels.FibLevels )
+                    foreach ( fxFibLevelCluster fibLevelInfo in _wave3Exp.TonyFirstLevels.FibLevels )
                     {
-                        var index = wave5Targets.FindIndex( x => Math.Abs( x.FibLevel - fibLevelInfo.FibLevel ) < (double)( diff * 4 ) );
+                        var index = wave5Targets.FindIndex( x => Math.Abs( x.FibValue - fibLevelInfo.FibValue ) < (double)( diff * 4 ) );
 
                         if ( index > -1 )
                         {
@@ -150,14 +150,14 @@ namespace fx.Algorithm
                         {
                             if ( _wave5Exp.IsUptrend )
                             {
-                                if ( fibLevelInfo.FibLevel < highestLowestFib && fibLevelInfo.FibLevel >= Bar3C.PeakTroughValue )
+                                if ( fibLevelInfo.FibValue < highestLowestFib && fibLevelInfo.FibValue >= Bar3C.PeakTroughValue )
                                 {
                                     wave5Targets.Add( fibLevelInfo );
                                 }
                             }
                             else
                             {
-                                if ( fibLevelInfo.FibLevel > highestLowestFib && fibLevelInfo.FibLevel <= Bar3C.PeakTroughValue )
+                                if ( fibLevelInfo.FibValue > highestLowestFib && fibLevelInfo.FibValue <= Bar3C.PeakTroughValue )
                                 {
                                     wave5Targets.Add( fibLevelInfo );
 

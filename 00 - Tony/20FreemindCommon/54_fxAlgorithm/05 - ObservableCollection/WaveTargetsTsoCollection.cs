@@ -15,13 +15,13 @@ using Ecng.Xaml;
 
 namespace fx.Algorithm
 {
-    public class WaveTargetsTsoCollection : ThreadSafeObservableCollection<FibLevelInfo>, INotifyPropertyChanged
+    public class WaveTargetsTsoCollection : ThreadSafeObservableCollection<fxFibLevelCluster>, INotifyPropertyChanged
     {
         private readonly SyncObject _lock = new SyncObject( );
 
-        private ThreadSafeDictionary< Tuple< SR1stType, SR2ndType, SR3rdType >, FibLevelInfo > _supResisMap = new ThreadSafeDictionary< Tuple< SR1stType, SR2ndType, SR3rdType >, FibLevelInfo >( );
+        private ThreadSafeDictionary< Tuple< SR1stType, SR2ndType, SR3rdType >, fxFibLevelCluster > _supResisMap = new ThreadSafeDictionary< Tuple< SR1stType, SR2ndType, SR3rdType >, fxFibLevelCluster >( );
 
-        SortedList< double, FibLevelInfo > _sortedList = new SortedList<double, FibLevelInfo>();
+        SortedList< double, fxFibLevelCluster > _sortedList = new SortedList<double, fxFibLevelCluster>();
         PooledList< double > _sortedListKey = new PooledList< double >( );
 
         ThreadSafeDictionary< TimeSpan, bool > _indicatorResultsReceived = new ThreadSafeDictionary< TimeSpan, bool >( 8 );
@@ -40,7 +40,7 @@ namespace fx.Algorithm
             }
         }
 
-        public WaveTargetsTsoCollection( IListEx<FibLevelInfo> items ) : base( items )
+        public WaveTargetsTsoCollection( IListEx<fxFibLevelCluster> items ) : base( items )
         {
         }
 

@@ -17,7 +17,7 @@ namespace fx.Algorithm
 
         //void AnalyseCurrentCorrection( int waveScenarioNo, TimeSpan period, fxHistoricBarsRepo bars, long selectedBarTime, ElliottWaveEnum waveName, ElliottWaveCycle waveDegree );
 
-        PooledList<FibLevelInfo> LargerTargets { get; set; }
-        PooledList<FibLevelInfo> UnfoldingTargets { get; set; }
+        PooledList<fxFibLevelCluster> LargerTargets { get; set; }
+        PooledList<fxFibLevelCluster> UnfoldingTargets { get; set; }
     }
 }

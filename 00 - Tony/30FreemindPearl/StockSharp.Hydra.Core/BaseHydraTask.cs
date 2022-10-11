@@ -344,15 +344,27 @@ namespace StockSharp.Hydra.Core
                     WaitWhileActive( TimeSpan.Zero );
                     _workingSecurities.Clear();
                     _isAllSecurity = this.GetAllSecurity() != null;
+                    
                     if ( !_isAllSecurity )
+                    {
                         _workingSecurities.AddRange( Securities.Select( s => s.Security ) );
+                    }
+                        
+                    
                     State = TaskStates.Starting;
                     OnStarting();
                     int num = 60;
+                    
                     while ( State == TaskStates.Starting && num-- > 0 )
+                    {
                         WaitWhileActive( TimeSpan.FromSeconds( 1.0 ) );
+                    }
+                        
                     if ( State == TaskStates.Starting )
+                    {
                         this.AddErrorLog( LocalizedStrings.Str2191 );
+                    }
+                        
                     while ( State == TaskStates.Started )
                     {
                         try
@@ -532,14 +544,7 @@ namespace StockSharp.Hydra.Core
             SafeSave( security, dataType, values, getTime, getErrors, isWarning, ( s, d, f ) => ( IMarketDataStorage<T> )StorageRegistry.GetStorage( s, dataType, d, f ) );
         }
 
-        private void SafeSave<T>(
-          Security security,
-          Messages.DataType dataType,
-          IEnumerable<T> values,
-          Func<T, DateTimeOffset> getTime,
-          IEnumerable<Func<T, string>> getErrors,
-          bool isWarning,
-          Func<Security, IMarketDataDrive, StorageFormats, IMarketDataStorage<T>> getStorage )
+        private void SafeSave<T>( Security security, Messages.DataType dataType, IEnumerable<T> values, Func<T, DateTimeOffset> getTime, IEnumerable<Func<T, string>> getErrors, bool isWarning, Func<Security, IMarketDataDrive, StorageFormats, IMarketDataStorage<T>> getStorage )
           where T : Message
         {
             if ( dataType == null )
@@ -552,6 +557,7 @@ namespace StockSharp.Hydra.Core
             if ( list.Count == 0 )
                 return;
             getErrors = getErrors.ToArray();
+            
             for ( int index = 0; index < list.Count; ++index )
             {
                 T obj = list[index];
@@ -571,6 +577,7 @@ namespace StockSharp.Hydra.Core
             }
             if ( !_isAllSecurity && !_workingSecurities.Contains( security ) )
                 return;
+
             try
             {
                 getStorage( security, Drive, StorageFormat ).Save( list );
@@ -589,23 +596,16 @@ namespace StockSharp.Hydra.Core
         {
             int num1;
             if ( priceStep.HasValue && price.HasValue )
-            {
-                Decimal? nullable1 = priceStep;
-                Decimal num2 = new Decimal();
-                if ( !( nullable1.GetValueOrDefault() == num2 & nullable1.HasValue ) )
+            {                
+                if ( priceStep.HasValue && priceStep.Value > 0  ) 
                 {
-                    Decimal? nullable2 = price;
-                    Decimal? nullable3 = priceStep;
-                    Decimal? nullable4 = nullable2.HasValue & nullable3.HasValue ? new Decimal?( nullable2.GetValueOrDefault() % nullable3.GetValueOrDefault() ) : new Decimal?();
-                    Decimal num3 = new Decimal();
-                    num1 = !( nullable4.GetValueOrDefault() == num3 & nullable4.HasValue ) ? 1 : 0;
-                    goto label_4;
+                    var reminder = price.Value % priceStep.Value;
+                    
+                    if ( reminder < priceStep )
+                        return string.Empty;                    
                 }
             }
-            num1 = 0;
-        label_4:
-            if ( num1 == 0 )
-                return string.Empty;
+            
             return message.Put( priceStep, price );
         }
 
@@ -739,14 +739,19 @@ namespace StockSharp.Hydra.Core
         /// <param name="candles">Свечи.</param>
         protected void SaveCandles( Security security, IEnumerable<CandleMessage> candles )
         {
-            candles.GroupBy( c => ( ( ISubscriptionIdMessage )c ).DataType ).ForEach( g => SafeSave( security, g.Key, g, c => c.OpenTime, new Func<CandleMessage, string>[5]
-            {
-         c => CheckStep(security.PriceStep, new Decimal?(c.OpenPrice), LocalizedStrings.Str2203),
-         c => CheckStep(security.PriceStep, new Decimal?(c.HighPrice), LocalizedStrings.Str2204),
-         c => CheckStep(security.PriceStep, new Decimal?(c.LowPrice), LocalizedStrings.Str2205),
-         c => CheckStep(security.PriceStep, new Decimal?(c.ClosePrice), LocalizedStrings.Str2206),
-         c => CheckStep(security.VolumeStep, new Decimal?(c.TotalVolume), LocalizedStrings.CandleVolumeNotMultiple)
-            }, true, ( s, d, c ) => StorageRegistry.GetCandleMessageStorage( g.Key.MessageType, security.ToSecurityId( null, true, false ), g.Key.Arg, d, c ) ) );
+            candles.GroupBy( c => ( ( ISubscriptionIdMessage )c ).DataType ).ForEach( g => SafeSave( security, 
+                g.Key, 
+                g, 
+                c => c.OpenTime, new Func<CandleMessage, string>[5]
+                                            {
+                                                c => CheckStep(security.PriceStep, new Decimal?(c.OpenPrice), LocalizedStrings.Str2203),
+                                                c => CheckStep(security.PriceStep, new Decimal?(c.HighPrice), LocalizedStrings.Str2204),
+                                                c => CheckStep(security.PriceStep, new Decimal?(c.LowPrice), LocalizedStrings.Str2205),
+                                                c => CheckStep(security.PriceStep, new Decimal?(c.ClosePrice), LocalizedStrings.Str2206),
+                                                c => CheckStep(security.VolumeStep, new Decimal?(c.TotalVolume), LocalizedStrings.CandleVolumeNotMultiple)
+                                            }, 
+                true, 
+                ( s, d, c ) => StorageRegistry.GetCandleMessageStorage( g.Key.MessageType, security.ToSecurityId( null, true, false ), g.Key.Arg, d, c ) ) );
         }
 
         /// <summary>Сохранить новости в хранилище.</summary>

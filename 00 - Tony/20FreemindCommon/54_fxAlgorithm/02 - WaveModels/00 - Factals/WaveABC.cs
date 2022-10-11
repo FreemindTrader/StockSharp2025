@@ -60,7 +60,7 @@ namespace fx.Algorithm
         public long EndTime { get; set; }
 
         public bool HasChildren { get; set; }
-        public PooledList<FibLevelInfo> PredictedTargets { get; }
+        public PooledList<fxFibLevelCluster> PredictedTargets { get; }
 
 
         public WaveType WaveAType

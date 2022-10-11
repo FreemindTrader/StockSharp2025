@@ -33,23 +33,23 @@ namespace fx.Algorithm
                 }
             }
 
-            if( bar.IsWavePeak( ) && estWaveImportance >= 5 )
+            if ( !isOutsideBar )
             {
-                return WaveLabelPosition.TOP;
-            }
-            else
-            {
-                if( bar.IsWaveTrough( ) && estWaveImportance >= 5 )
+                if ( bar.IsWavePeak() && estWaveImportance >= 5 )
+                {
+                    return WaveLabelPosition.TOP;
+                }
+                else if ( bar.IsWaveTrough() && estWaveImportance >= 5 )
                 {
                     return WaveLabelPosition.BOTTOM;
                 }
             }
 
             var byWaveCount = WaveLabelPosition.UNKNOWN;
-            var byTASignal = WaveLabelPosition.UNKNOWN;
+            var byTASignal  = WaveLabelPosition.UNKNOWN;
 
-            var dbHewPrev = GetPreviousWaveStructure( waveScenarioNo, rawBarTime );
-            var dbHewNext = GetNextWaveStructure( waveScenarioNo, rawBarTime );
+            var dbHewPrev   = GetPreviousWaveStructure( waveScenarioNo, rawBarTime );
+            var dbHewNext   = GetNextWaveStructure( waveScenarioNo, rawBarTime );
 
             if( dbHewPrev != null && dbHewNext != null ) // We are trying to label wave in Betwen
             {

@@ -12,8 +12,8 @@ namespace fx.Algorithm
     public class FibLevelsCollection
     {
         private FibKey _fibKey = null;
-        private PooledList< FibLevelInfo > _fibLevels = new PooledList< FibLevelInfo >( );
-        private DictionarySlim<FibLevelInfo, PooledList<MatchedSRinfo>> _majorSL = new DictionarySlim<FibLevelInfo, PooledList<MatchedSRinfo>>();
+        private PooledList< fxFibLevelCluster > _fibLevels = new PooledList< fxFibLevelCluster >( );
+        private DictionarySlim<fxFibLevelCluster, PooledList<MatchedSRinfo>> _majorSL = new DictionarySlim<fxFibLevelCluster, PooledList<MatchedSRinfo>>();
        
 
         public FibLevelsCollection( FibonacciType fibType, ( DateTime, float ) startPoint, ( DateTime, float ) endPoint, ( DateTime, float ) projectionPoint )
@@ -120,7 +120,7 @@ namespace fx.Algorithm
             //}
         }
 
-        public PooledList< FibLevelInfo > FibLevels
+        public PooledList< fxFibLevelCluster > FibLevels
         {
             get
             {
@@ -142,7 +142,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.Wave2RetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.Wave2RetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.Wave2RetracementLevels[ i ], (float) fibValue );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave2RetracementLevels[ i ], (float) fibValue );
 
                         _fibLevels.Add( info );                        
                     }
@@ -156,7 +156,7 @@ namespace fx.Algorithm
                         for ( i = 0; i < WaveFibConstants.Wave4RetracementLevels.Length; i++ )
                         {
                             var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.Wave4RetracementLevels[ i ].FibValue / 100 );
-                            var info = new FibLevelInfo( WaveFibConstants.Wave4RetracementLevels[ i ], (float) fibValue );
+                            var info = new fxFibLevelCluster( WaveFibConstants.Wave4RetracementLevels[ i ], (float) fibValue );
 
                             _fibLevels.Add( info );
                         }
@@ -169,7 +169,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.Wave4RetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.Wave4RetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.Wave4RetracementLevels[ i ], (float) fibValue );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave4RetracementLevels[ i ], (float) fibValue );
 
                         _fibLevels.Add( info );                        
                     }
@@ -181,19 +181,43 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.ABCWaveBRetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.ABCWaveBRetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.ABCWaveBRetracementLevels[ i ], (float) fibValue );
+                        var info = new fxFibLevelCluster( WaveFibConstants.ABCWaveBRetracementLevels[ i ], (float) fibValue );
 
                         _fibLevels.Add( info );                        
                     }
                 }
                     break;
 
+                case FibonacciType.Wave3BRetracement:
+                {
+                    for ( i = 0; i < WaveFibConstants.Wave3BRetracementLevels.Length; i++ )
+                    {
+                        var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.Wave3BRetracementLevels[i].FibValue / 100 );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave3BRetracementLevels[i], ( float )fibValue );
+
+                        _fibLevels.Add( info );
+                    }
+                }
+                break;
+
+                case FibonacciType.Wave5BRetracement:
+                {
+                    for ( i = 0; i < WaveFibConstants.Wave5BRetracementLevels.Length; i++ )
+                    {
+                        var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.Wave5BRetracementLevels[i].FibValue / 100 );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave5BRetracementLevels[i], ( float )fibValue );
+
+                        _fibLevels.Add( info );
+                    }
+                }
+                break;
+
                 case FibonacciType.WaveEFBRetracement:
                 {
                     for( i = 0; i < WaveFibConstants.WaveEFBRetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.WaveEFBRetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.WaveEFBRetracementLevels[ i ], (float) fibValue );
+                        var info = new fxFibLevelCluster( WaveFibConstants.WaveEFBRetracementLevels[ i ], (float) fibValue );
 
                         _fibLevels.Add( info );                        
                     }
@@ -205,9 +229,21 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.WaveTriBRetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.WaveTriBRetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.WaveTriBRetracementLevels[ i ], (float) fibValue );
+                        var info = new fxFibLevelCluster( WaveFibConstants.WaveTriBRetracementLevels[ i ], (float) fibValue );
 
                         _fibLevels.Add( info );                        
+                    }
+                }
+                break;
+
+                case FibonacciType.WaveXRetracement:
+                {
+                    for ( i = 0; i < WaveFibConstants.WaveXRetracementLevels.Length; i++ )
+                    {
+                        var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.WaveXRetracementLevels[i].FibValue / 100 );
+                        var info = new fxFibLevelCluster( WaveFibConstants.WaveXRetracementLevels[i], ( float )fibValue );
+
+                        _fibLevels.Add( info );
                     }
                 }
                 break;
@@ -217,7 +253,7 @@ namespace fx.Algorithm
                     for ( i = 0; i < WaveFibConstants.TonyDiscoveryLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.TonyDiscoveryLevels [ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.TonyDiscoveryLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.TonyDiscoveryLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -242,7 +278,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.ABCWaveCProjectionFibLevels.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ABCWaveCProjectionFibLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.ABCWaveCProjectionFibLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.ABCWaveCProjectionFibLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -254,19 +290,19 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.AllWave3.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.AllWave3[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.AllWave3[i], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.AllWave3[i], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
                 }
                     break;
 
-                case FibonacciType.CompactWave3:
+                case FibonacciType.Wave3Compressed:
                 {
                     for ( i = 0; i < WaveFibConstants.CompressWave3.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.CompressWave3[i].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.CompressWave3[i], ( float )fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.CompressWave3[i], ( float )fibValue  );
 
                         _fibLevels.Add( info );                        
                     }                    
@@ -281,7 +317,7 @@ namespace fx.Algorithm
                     for ( i = 0; i < WaveFibConstants.ClassicWave3.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ClassicWave3[i].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.ClassicWave3[i], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.ClassicWave3[i], (float) fibValue  );
 
                         _fibLevels.Add( info );
                     }
@@ -293,7 +329,7 @@ namespace fx.Algorithm
                     for ( i = 0; i < WaveFibConstants.ExtendedWave3.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ExtendedWave3[i].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.ExtendedWave3[i], ( float )fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.ExtendedWave3[i], ( float )fibValue  );
 
                         _fibLevels.Add( info );
                     }
@@ -305,7 +341,7 @@ namespace fx.Algorithm
                     for ( i = 0; i < WaveFibConstants.SuperExtendedWave3.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.SuperExtendedWave3[i].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.SuperExtendedWave3[i], ( float )fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.SuperExtendedWave3[i], ( float )fibValue  );
 
                         _fibLevels.Add( info );
                     }
@@ -317,7 +353,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.Wave3CProjectionLevels.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.Wave3CProjectionLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.Wave3CProjectionLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave3CProjectionLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -329,7 +365,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.Wave5ProjectionFibLevels.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.Wave5ProjectionFibLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.Wave5ProjectionFibLevels[ i ], (float) fibValue );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave5ProjectionFibLevels[ i ], (float) fibValue );
 
                         _fibLevels.Add( info );                        
                     }
@@ -341,7 +377,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.Wave5CProjectionFibLevels.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.Wave5CProjectionFibLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.Wave5CProjectionFibLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.Wave5CProjectionFibLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -353,7 +389,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.ABCWaveCProjectionFibLevels.Length; i++ )
                     {
                         var fibValue = projectionPoint + ( ( endPoint - startPoint ) * WaveFibConstants.ABCWaveCProjectionFibLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.ABCWaveCProjectionFibLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.ABCWaveCProjectionFibLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -365,7 +401,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.WaveTriCRetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.WaveTriCRetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.WaveTriCRetracementLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.WaveTriCRetracementLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -377,7 +413,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.WaveTriDRetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.WaveTriDRetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.WaveTriDRetracementLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.WaveTriDRetracementLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -389,7 +425,7 @@ namespace fx.Algorithm
                     for( i = 0; i < WaveFibConstants.WaveTriERetracementLevels.Length; i++ )
                     {
                         var fibValue = endPoint + ( ( startPoint - endPoint ) * WaveFibConstants.WaveTriERetracementLevels[ i ].FibValue / 100 );
-                        var info = new FibLevelInfo( WaveFibConstants.WaveTriERetracementLevels[ i ], (float) fibValue  );
+                        var info = new fxFibLevelCluster( WaveFibConstants.WaveTriERetracementLevels[ i ], (float) fibValue  );
 
                         _fibLevels.Add( info );                        
                     }
@@ -398,7 +434,7 @@ namespace fx.Algorithm
             }
         }
 
-        public void AddMatchedSRinfo( ref FibLevelInfo closestRet, MatchedSRinfo SRLinesRet )
+        public void AddMatchedSRinfo( ref fxFibLevelCluster closestRet, MatchedSRinfo SRLinesRet )
         {
             if ( _majorSL.TryGetValue( closestRet, out PooledList<MatchedSRinfo> value  ) )
             {
@@ -412,7 +448,7 @@ namespace fx.Algorithm
             }            
         }
 
-        public bool GetClosestFibLevel( double lineValue, out FibLevelInfo closestLine )
+        public bool GetClosestFibLevel( double lineValue, out fxFibLevelCluster closestLine )
         {
             double minDiff = double.MaxValue;
             closestLine = default;
@@ -424,7 +460,7 @@ namespace fx.Algorithm
 
             foreach ( var level in _fibLevels )
             {
-                var fibLvlY = level.FibLevel;
+                var fibLvlY = level.FibValue;
 
                 if ( fibLvlY == 0 )
                     continue;
@@ -441,7 +477,7 @@ namespace fx.Algorithm
             return found;
         }
 
-        public bool GetClosestFibLevel( float lineValue, out FibLevelInfo closestLine )
+        public bool GetClosestFibLevel( float lineValue, out fxFibLevelCluster closestLine )
         {
             float minDiff = float.MaxValue;
             closestLine = default;
@@ -453,7 +489,7 @@ namespace fx.Algorithm
 
             foreach ( var level in _fibLevels )
             {
-                var fibLvlY = level.FibLevel;
+                var fibLvlY = level.FibValue;
 
                 if ( fibLvlY == 0 )
                     continue;
