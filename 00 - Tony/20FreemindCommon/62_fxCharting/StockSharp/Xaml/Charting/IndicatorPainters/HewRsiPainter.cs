@@ -15,6 +15,7 @@ namespace fx.Charting.IndicatorPainters
         private readonly LineUI _overBought;
         private readonly LineUI _hewRsi;
         private readonly LineUI _overSold;
+        private readonly LineUI _middle;
 
         public HewRsiPainter()
         {
@@ -33,9 +34,16 @@ namespace fx.Charting.IndicatorPainters
                 Color = Colors.Red
             };
 
+            _middle = new LineUI()
+            {
+                Color = Colors.Black,
+                Style = ChartIndicatorDrawStyles.DashedLine
+            };
+
             AddChildElement( OverBought );
             AddChildElement( HewRsi );
             AddChildElement( OverSold );
+            AddChildElement( Middle );
         }
 
         [DisplayName( "OverBought" )]
@@ -44,6 +52,15 @@ namespace fx.Charting.IndicatorPainters
             get
             {
                 return _overBought;
+            }
+        }
+
+        [DisplayName( "Mid" )]
+        public LineUI Middle
+        {
+            get
+            {
+                return _middle;
             }
         }
 
@@ -69,7 +86,7 @@ namespace fx.Charting.IndicatorPainters
         {
             HewRsiComplex indicator = ( HewRsiComplex )Indicator;
 
-            return ( DrawValues( indicator.OverBought, OverBought ) | DrawValues( indicator.Rsi, HewRsi ) | DrawValues( indicator.OverSold, OverSold ) );
+            return ( DrawValues( indicator.OverBought, OverBought ) | DrawValues( indicator.Rsi, HewRsi ) | DrawValues( indicator.OverSold, OverSold ) | DrawValues( indicator.Middle, Middle ) );
         }
 
         public override void Load( SettingsStorage storage )
@@ -78,6 +95,7 @@ namespace fx.Charting.IndicatorPainters
             OverBought.Load( storage.GetValue<SettingsStorage>( "OverBought", null ) );
             HewRsi.Load( storage.GetValue<SettingsStorage>( "HewRsi", null ) );
             OverSold.Load( storage.GetValue<SettingsStorage>( "OverSold", null ) );
+            Middle.Load( storage.GetValue<SettingsStorage>( "Middle", null ) );
         }
 
         public override void Save( SettingsStorage storage )
@@ -86,6 +104,7 @@ namespace fx.Charting.IndicatorPainters
             storage.SetValue( "OverBought", OverBought.Save() );
             storage.SetValue( "HewRsi", HewRsi.Save() );
             storage.SetValue( "OverSold", OverSold.Save() );
+            storage.SetValue( "Middle", Middle.Save() );
         }
     }
 }

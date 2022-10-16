@@ -65,7 +65,7 @@ namespace fx.Indicators
     {
         private int _lookback = -1;
         
-        public FreemindHewRsi( ) : base( typeof( FreemindHewRsi ).Name, true, true, false, new string[ ] { "FreemindRsi", "RsiOverBought", "RsiOverSold" } )
+        public FreemindHewRsi( ) : base( typeof( FreemindHewRsi ).Name, true, true, false, new string[ ] { "FreemindRsi", "RsiOverBought", "RsiOverSold", "RsiMiddle" } )
         {
             // The following will set how the Hew RSI lines look like
             //this.ChartSeries.OutputResultSetsPens[ "FreemindRsi" ]   = Pens.Red;
@@ -114,6 +114,7 @@ namespace fx.Indicators
 
             var overSold      = MathHelper.CreateFixedLineResultLength(30, fixedCount);
             var overBought    = MathHelper.CreateFixedLineResultLength(70, fixedCount);
+            var middle = MathHelper.CreateFixedLineResultLength( 50, fixedCount );
 
             var outBeginIdx   = 0;
             var outNBElement = 0;
@@ -125,6 +126,7 @@ namespace fx.Indicators
                 IndicatorResult.AddSetValues( "FreemindRsi"  , outBeginIdx, outNBElement, true, RS );
                 IndicatorResult.AddSetValues( "RsiOverBought", outBeginIdx, outNBElement, true, overBought );
                 IndicatorResult.AddSetValues( "RsiOverSold"  , outBeginIdx, outNBElement, true, overSold );
+                IndicatorResult.AddSetValues( "RsiMiddle", outBeginIdx, outNBElement, true, middle );
             }
         }
 
@@ -146,14 +148,16 @@ namespace fx.Indicators
 
             var overSold      = MathHelper.CreateFixedLineResultLength(30, indexCount);
             var overBought    = MathHelper.CreateFixedLineResultLength(70, indexCount);
+            var middle        = MathHelper.CreateFixedLineResultLength( 50, indexCount );
 
-            HewRsi( startIndex, endIndex, Bars, 14, out outBeginIdx, out outNBElement, RS );
+            HewRsi( startIndex, endIndex, Bars, 55, out outBeginIdx, out outNBElement, RS );
 
             lock ( IndicatorResult )
             {
                 IndicatorResult.AddSetValues( "FreemindRsi"  , outBeginIdx, outNBElement, true, RS );
                 IndicatorResult.AddSetValues( "RsiOverBought", outBeginIdx, outNBElement, true, overBought );
                 IndicatorResult.AddSetValues( "RsiOverSold"  , outBeginIdx, outNBElement, true, overSold );
+                IndicatorResult.AddSetValues( "RsiMiddle", outBeginIdx, outNBElement, true, middle );
             }
         }
 

@@ -158,33 +158,47 @@ namespace fx.Charting
 
             indicatorUI.IndicatorPainter = null;
 
-            if (e.ChartArea.Title == "MACD")
+            if ( e.ChartArea.Title == "MACD" )
             {
-                if (_period == TimeSpan.FromMinutes(1))
+                if ( _period == TimeSpan.FromMinutes( 1 ) )
                 {
-                    var longEma   = new ExponentialMovingAverage { Length = 200 };
-                    var shortEma  = new ExponentialMovingAverage { Length = 100 };
-                    var signal    = new ExponentialMovingAverage { Length = 50 };
-                    var macdSmall = new MovingAverageConvergenceDivergence(longEma, shortEma);
+                    var longEma = new ExponentialMovingAverage { Length = 200 };
+                    var shortEma = new ExponentialMovingAverage { Length = 100 };
+                    var signal = new ExponentialMovingAverage { Length = 50 };
+                    var macdSmall = new MovingAverageConvergenceDivergence( longEma, shortEma );
 
-                    indicator     = new MovingAverageConvergenceDivergenceHistogram(macdSmall, signal);
+                    indicator = new MovingAverageConvergenceDivergenceHistogram( macdSmall, signal );
                 }
                 else
                 {
-                    var longEma   = new ExponentialMovingAverage { Length = 40 };
-                    var shortEma  = new ExponentialMovingAverage { Length = 20 };
-                    var signal    = new ExponentialMovingAverage { Length = 10 };
-                    var macdSmall = new MovingAverageConvergenceDivergence(longEma, shortEma);
+                    var longEma = new ExponentialMovingAverage { Length = 40 };
+                    var shortEma = new ExponentialMovingAverage { Length = 20 };
+                    var signal = new ExponentialMovingAverage { Length = 10 };
+                    var macdSmall = new MovingAverageConvergenceDivergence( longEma, shortEma );
 
-                    indicator     = new MovingAverageConvergenceDivergenceHistogram(macdSmall, signal);
+                    indicator = new MovingAverageConvergenceDivergenceHistogram( macdSmall, signal );
                 }
             }
-            else if (e.ChartArea.Title == "RSI")
+            else if ( e.ChartArea.Title == "RSI" )
             {
-                indicator = new HewRsiComplex();
+                HewRsiComplex rsiIndicator = new HewRsiComplex();
                 indicatorUI.IndicatorPainter = new HewRsiPainter();
-            }
 
+                if ( _period == TimeSpan.FromMinutes( 1 ) )
+                {
+                    rsiIndicator.Length = 55;
+                }
+                else if ( _period == TimeSpan.FromMinutes( 5 ) || _period == TimeSpan.FromMinutes( 15 ) )
+                {
+                    rsiIndicator.Length = 18;
+                }
+                else if ( _period == TimeSpan.FromHours( 1 ) )
+                {
+                    rsiIndicator.Length = 12;
+                }
+
+                indicator = rsiIndicator;
+            }
 
             
 

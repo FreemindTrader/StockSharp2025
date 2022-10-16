@@ -2581,7 +2581,110 @@ namespace fx.Algorithm
                 }
             }
 
-            return ElliottWaveEnum.WaveC;
+            return ElliottWaveEnum.NONE;
+        }
+
+        public ElliottWaveEnum WaveAOfWhat( int waveScenarioNo, TimeSpan period, long waveAtime, ElliottWaveCycle currentWaveDegree )
+        {
+            var hews = GetElliottWavesDictionary( period );
+
+            var wave024Xtime = FindPreviousWave024X( waveScenarioNo, waveAtime, currentWaveDegree );
+
+            if ( -1 == wave024Xtime )
+            {
+                return default;
+            }
+
+            if ( NoHigherWaveBetween( waveScenarioNo, wave024Xtime, waveAtime, currentWaveDegree ) )
+            {
+                var wave024X = _hews[wave024Xtime];
+
+                ref var hew = ref wave024X.GetWaveFromScenario( waveScenarioNo );
+
+                var beginningWave = hew.GetFirstHighestWaveInfo();
+
+                if ( beginningWave.HasValue )
+                {
+                    if ( beginningWave.Value.WaveCycle == currentWaveDegree )
+                    {
+                        switch ( beginningWave.Value.WaveName )
+                        {
+                            case ElliottWaveEnum.Wave2:
+                            return ElliottWaveEnum.Wave3B;
+
+                            case ElliottWaveEnum.Wave4:
+                            return ElliottWaveEnum.Wave5B;
+
+                            case ElliottWaveEnum.WaveX:
+                            {
+                                var prevWYTime = FindPreviousWaveWY( waveScenarioNo, waveAtime, currentWaveDegree );
+
+                                if ( -1 != prevWYTime )
+                                {
+                                    var waveDbWY = _hews[prevWYTime];
+                                    ref var hew2 = ref waveDbWY.GetWaveFromScenario( waveScenarioNo );
+                                    var waveWY = hew2.GetFirstHighestWaveInfo();
+
+                                    switch ( waveWY.Value.WaveName )
+                                    {
+                                        case ElliottWaveEnum.WaveW:
+                                        return ElliottWaveEnum.WaveY;
+
+                                        case ElliottWaveEnum.WaveY:
+                                        return ElliottWaveEnum.WaveZ;
+                                    }
+                                }
+                            }
+                            break;
+
+                            default:
+                            break;
+                        }
+                    }
+                    else if ( beginningWave.Value.WaveCycle == currentWaveDegree + GlobalConstants.OneWaveCycle )
+                    {
+                        switch ( beginningWave.Value.WaveName )
+                        {
+                            case ElliottWaveEnum.Wave1:
+                            case ElliottWaveEnum.Wave1C:
+                            return ElliottWaveEnum.Wave2;
+
+                            case ElliottWaveEnum.Wave3:
+                            case ElliottWaveEnum.Wave3C:
+                            return ElliottWaveEnum.Wave4;
+
+                            // Since previous wave of One Higher degress is Wave X, that means we are in Wave A, the first wave B will be correction of Wave A
+                            case ElliottWaveEnum.WaveW:
+                            case ElliottWaveEnum.WaveX:
+                            case ElliottWaveEnum.WaveY:
+                            case ElliottWaveEnum.WaveZ:
+                            return ElliottWaveEnum.WaveB;
+
+                            // Since previous wave of One Higher degress is Wave B, that means we are in Wave C, the first wave B will be Wave 1 of Wave C
+                            case ElliottWaveEnum.WaveB:
+                            return ElliottWaveEnum.Wave1;
+
+                            case ElliottWaveEnum.WaveA:
+                            return ElliottWaveEnum.WaveB;
+
+                            case ElliottWaveEnum.WaveEFA:
+                            return ElliottWaveEnum.WaveEFB;
+
+                            case ElliottWaveEnum.Wave5:
+                            case ElliottWaveEnum.Wave5C:
+                            return ElliottWaveEnum.Wave1;
+
+                            case ElliottWaveEnum.Wave4:
+                            return ElliottWaveEnum.Wave5;
+
+                            case ElliottWaveEnum.Wave2:
+                            return ElliottWaveEnum.Wave1;
+                        }
+                    }
+                }
+            }
+
+            return ElliottWaveEnum.WaveB;
         }
 
         #endregion
@@ -6426,7 +6529,11 @@ namespace fx.Algorithm
                 case ElliottWaveEnum.Wave5C:
                 case ElliottWaveEnum.Wave2:
                     return( FibonacciType.Wave2Retracement );
-                    
+
+
+                case ElliottWaveEnum.Wave5B:
+                    return ( FibonacciType.Wave5BRetracement );
+
 
                 case ElliottWaveEnum.Wave4:
                     return( FibonacciType.Wave4Retracement);

@@ -28,7 +28,7 @@ namespace fx.Bars
         public event PropertyChangedEventHandler      PropertyChanged;            // 8    => 8        
         
         private SBarList          _parent;                                        // 8    => 16        
-        public long               LinuxTime;                                      // 8    => 24
+        private long _linuxTime;                                      // 8    => 24
 
         //private uint _barDiff;
         // _low   =  0 -  9 bits
@@ -111,6 +111,12 @@ namespace fx.Bars
             get => _barIndex;
         }
 
+        public long LinuxTime
+        {
+            get => _linuxTime;
+            set => _linuxTime = value;
+        }
+
         public SBarList Parent
         {
             get => _parent;
@@ -142,7 +148,7 @@ namespace fx.Bars
         {
             _parent = null;
             PropertyChanged      = null;
-            LinuxTime            = 0;
+            _linuxTime            = 0;
 
             _high                 = -1;
             _low                  = -1;
@@ -163,7 +169,7 @@ namespace fx.Bars
             _parent = null;
 
             PropertyChanged      = null;
-            LinuxTime            = candle.OpenTime.UtcDateTime.ToLinuxTime();
+            _linuxTime = candle.OpenTime.UtcDateTime.ToLinuxTime();
 
             _high                 = ( float ) candle.HighPrice;
             _low                  = ( float ) candle.LowPrice;
@@ -185,7 +191,7 @@ namespace fx.Bars
         {
             _parent         = null;
             PropertyChanged = null;
-            LinuxTime       = candle.OpenTime.UtcDateTime.ToLinuxTime();
+            _linuxTime = candle.OpenTime.UtcDateTime.ToLinuxTime();
 
             _high            = ( float ) candle.HighPrice;
             _low             = ( float ) candle.LowPrice;
@@ -206,7 +212,7 @@ namespace fx.Bars
         {
             _parent         = null;
             PropertyChanged = null;
-            LinuxTime       = 0;
+            _linuxTime = 0;
 
             _high            = 0.0f;
             _low             = 0.0f;
@@ -224,7 +230,7 @@ namespace fx.Bars
         {
             _parent         = parent;
             PropertyChanged = null;
-            LinuxTime       = i * 60;
+            _linuxTime = i * 60;
 
             _high            = test;
             _low             = test;

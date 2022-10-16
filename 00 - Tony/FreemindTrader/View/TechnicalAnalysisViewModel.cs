@@ -63,5 +63,7 @@ namespace FreemindTrader
                 return barPrecentage;
             }
         }
+
+        public double RangeBarValue { get; set; }
     }
 }

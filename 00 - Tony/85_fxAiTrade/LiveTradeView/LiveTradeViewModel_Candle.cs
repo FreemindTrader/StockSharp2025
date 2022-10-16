@@ -9,6 +9,7 @@ using fx.Charting;
 using fx.Collections;
 using fx.Common;
 using fx.Definitions;
+using fx.Indicators;
 using MoreLinq;
 using StockSharp.Algo;
 using StockSharp.Algo.Candles;
@@ -235,19 +236,45 @@ namespace FreemindAITrade.ViewModels
                 var first = _indicatorsBySeries.SafeAdd( myCandles, key => Array.Empty<Tuple<IndicatorUI, IndicatorPair>>() );
                 _indicatorsBySeries[myCandles] = first.Concat( new Tuple<IndicatorUI, IndicatorPair>[1] { Tuple.Create( indicatorUI, indicatorPair ) } ).ToArray();
 
-                var data = new ChartDrawDataEx();
+                var data          = new ChartDrawDataEx();
 
-                var indicator = indicatorPair.MyIndicator;
-                var count = candleSeriesData.BarsRepo.MainDataBars.Count;
+                var indicator     = indicatorPair.MyIndicator;
+                var count         = candleSeriesData.BarsRepo.MainDataBars.Count;
                 var indicatorList = data.SetIndicatorSource( indicatorUI, count );
 
-                for ( int i = 0; i < count; i++ )
-                {
-                    ref SBar bar = ref candleSeriesData.BarsRepo[i];
-                    var indicatorRes = indicator.Process( ref bar );
+                var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _drawSeries.Security );
 
-                    indicatorList.SetIndicatorValue( bar.BarTime, indicatorRes );
+                FreemindIndicator fmIndicator = null;
+
+                if ( aa != null )
+                {
+                    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );
                 }
+
+                //if ( indicator.Name == "SMA" )
+                //{
+                    
+                //}
+                //else if ( indicator.Name == "MACD Histogram" )
+                //{
+
+                //}
+                //else if ( indicator.Name == "HewRsiComplex" )
+                //{
+
+                //}
+                //else
+                {
+                    for ( int i = 0; i < count; i++ )
+                    {
+                        ref SBar bar = ref candleSeriesData.BarsRepo[i];
+
+                        var indicatorFm = indicator.Process( ref bar );                        
+
+                        indicatorList.SetIndicatorValue( bar.BarTime, indicatorFm );
+                    }
+                }
+                    
 
                 _chartVM.Draw( data );
 
@@ -410,6 +437,15 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( ssIndicators )
                 {
+                    //var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( series.Security );
+
+                    //FreemindIndicator fmIndicator = null;
+
+                    //if ( aa != null )
+                    //{
+                    //    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );                        
+                    //}
+
                     foreach ( var indicator in indicatorTuple )
                     {
                         var indicatorUI = indicator.Item1;
@@ -420,9 +456,9 @@ namespace FreemindAITrade.ViewModels
                         {
                             var myBar = _bars[ i ];
 
-                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref myBar );
+                            var indicatorFm = indicator.Item2.MyIndicator.Process( ref myBar );                            
 
-                            indicatorList.SetIndicatorValue( myBar.BarTime, indicatorRes );
+                            indicatorList.SetIndicatorValue( myBar.BarTime, indicatorFm );
                         }
                     }
                 }
@@ -534,6 +570,15 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( ssIndicators )
                 {
+                    //var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( series.Security );
+
+                    //FreemindIndicator fmIndicator = null;
+
+                    //if ( aa != null )
+                    //{
+                    //    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );
+                    //}
+
                     foreach ( var indicator in indicatorTuple )
                     {
                         var indicatorUI = indicator.Item1;
@@ -541,9 +586,9 @@ namespace FreemindAITrade.ViewModels
 
                         for ( int i = 0; i < bars.Count; i++ )
                         {
-                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref bars[i] );
-
-                            indicatorList.SetIndicatorValue( bars.BarTime( i ), indicatorRes );
+                            var indicatorFm = indicator.Item2.MyIndicator.Process( ref bars[i] );
+                            
+                            indicatorList.SetIndicatorValue( bars.BarTime( i ), indicatorFm );
                         }
                     }
                 }
@@ -1048,6 +1093,15 @@ namespace FreemindAITrade.ViewModels
             {
                 if ( ssIndicators )
                 {
+                    //var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( series.Security );
+
+                    //FreemindIndicator fmIndicator = null;
+
+                    //if ( aa != null )
+                    //{
+                    //    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );
+                    //}
+
                     foreach ( var indicator in indicatorTuple )
                     {
                         var indicatorUI = indicator.Item1;
@@ -1056,9 +1110,9 @@ namespace FreemindAITrade.ViewModels
 
                         for ( int i = 0; i < length; i++ )
                         {
-                            var indicatorRes = indicator.Item2.MyIndicator.Process( ref _bars[i] );
-
-                            indicatorList.SetIndicatorValue( _bars[i].BarTime, indicatorRes );
+                            var indicatorFm = indicator.Item2.MyIndicator.Process( ref _bars[i] );
+                            
+                            indicatorList.SetIndicatorValue( _bars[i].BarTime, indicatorFm );
                         }
                     }
                 }

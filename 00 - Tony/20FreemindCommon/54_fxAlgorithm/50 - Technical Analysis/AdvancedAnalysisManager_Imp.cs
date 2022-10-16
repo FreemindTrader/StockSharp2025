@@ -448,6 +448,8 @@ namespace fx.Algorithm
 
             if ( _hewWave35.TryGetValue( key, out factal ) )
             {
+
+
                 c3waves = ( C3Waves ) factal;
                 return true;
             }

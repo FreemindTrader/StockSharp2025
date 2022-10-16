@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using fxcore2;
 using Ecng.Common;
-using fx.Messages;
+
 
 
 #pragma warning disable CS0168
@@ -774,7 +774,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
                     var customId     = position.Comment.Split(',').Select(x => x.Split('=')).Where(x => x.Length > 1 && !String.IsNullOrEmpty(x[0].Trim()) && !String.IsNullOrEmpty(x[1].Trim())).ToDictionary(x => x[0].Trim(), x => x[1].Trim());
 
                     int posEffect    = 0;
-                    var opEffect     = fxOrderPositionEffects.Default;
+                    var opEffect     = OrderPositionEffects.Default;
 
                     if ( customId.ContainsKey( "PE" ) )
                     {
@@ -782,7 +782,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
 
                         if ( posEffect > 0 )
                         {
-                            opEffect = ( fxOrderPositionEffects ) posEffect;
+                            opEffect = ( OrderPositionEffects ) posEffect;
                         }
 
                     }
@@ -813,7 +813,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
 
                         case Messages.ClosePositionsType.AllHedge:
                         {
-                            if ( opEffect == fxOrderPositionEffects.HedgeLong || opEffect == fxOrderPositionEffects.HedgeShort )
+                            if ( opEffect == OrderPositionEffects.HedgeLong || opEffect == OrderPositionEffects.HedgeShort )
                             {
                                 CloseSomeOrdersData data    = new CloseSomeOrdersData( position.AccountID, position.Ticket, offerid, side, position.Amount);
                                 newOrdersData.Add( data );
@@ -823,7 +823,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
 
                         case Messages.ClosePositionsType.LongHedge:
                         {
-                            if ( opEffect == fxOrderPositionEffects.HedgeLong )
+                            if ( opEffect == OrderPositionEffects.HedgeLong )
                             {
                                 CloseSomeOrdersData data    = new CloseSomeOrdersData( position.AccountID, position.Ticket, offerid, side, position.Amount);
                                 newOrdersData.Add( data );
@@ -833,7 +833,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
 
                         case Messages.ClosePositionsType.ShortHedge:
                         {
-                            if ( opEffect == fxOrderPositionEffects.HedgeShort )
+                            if ( opEffect == OrderPositionEffects.HedgeShort )
                             {
                                 CloseSomeOrdersData data    = new CloseSomeOrdersData( position.AccountID, position.Ticket, offerid, side, position.Amount);
                                 newOrdersData.Add( data );
@@ -863,7 +863,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
 
                         case Messages.ClosePositionsType.LossingHedge:
                         {
-                            if ( position.PipProfit < 0 && ( opEffect == fxOrderPositionEffects.HedgeLong || opEffect == fxOrderPositionEffects.HedgeShort ) )
+                            if ( position.PipProfit < 0 && ( opEffect == OrderPositionEffects.HedgeLong || opEffect == OrderPositionEffects.HedgeShort ) )
                             {
                                 CloseSomeOrdersData data    = new CloseSomeOrdersData( position.AccountID, position.Ticket, offerid, side, position.Amount);
                                 newOrdersData.Add( data );
@@ -873,7 +873,7 @@ namespace StockSharp.FxConnectFXCM.Freemind
 
                         case Messages.ClosePositionsType.WinningHedge:
                         {
-                            if ( position.PipProfit > 0 && ( opEffect == fxOrderPositionEffects.HedgeLong || opEffect == fxOrderPositionEffects.HedgeShort ) )
+                            if ( position.PipProfit > 0 && ( opEffect == OrderPositionEffects.HedgeLong || opEffect == OrderPositionEffects.HedgeShort ) )
                             {
                                 CloseSomeOrdersData data    = new CloseSomeOrdersData( position.AccountID, position.Ticket, offerid, side, position.Amount);
                                 newOrdersData.Add( data );

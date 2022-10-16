@@ -48,7 +48,7 @@ namespace FreemindAITrade.ViewModels
                     return waveCycle;
                 }
 
-                if ( ( waveNameToBeAdded == ElliottWaveEnum.WaveEFA || waveNameToBeAdded == ElliottWaveEnum.WaveEFB || waveNameToBeAdded == ElliottWaveEnum.WaveA ) && ( highestDegreeHewPointInfo.Value.WaveName == ElliottWaveEnum.WaveC ) )
+                if ( ( waveNameToBeAdded == ElliottWaveEnum.WaveEFA || waveNameToBeAdded == ElliottWaveEnum.WaveEFB || waveNameToBeAdded == ElliottWaveEnum.WaveA ) && ( ( highestDegreeHewPointInfo.Value.WaveName == ElliottWaveEnum.WaveC ) || ( highestDegreeHewPointInfo.Value.WaveName == ElliottWaveEnum.WaveY ) )) 
                 {
                     desiredCycle = oneDegreeHigher;
                     _hews.SmartAddWaveXtoManagerAndBar( waveScenarioNo, ResponsibleTF, selectedBarTime, desiredCycle, waveNameToBeAdded, ref bar );

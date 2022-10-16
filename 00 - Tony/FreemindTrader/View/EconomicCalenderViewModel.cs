@@ -271,7 +271,7 @@ namespace FreemindTrader
 
                         if ( eventTimeStamp != null )
                         {
-                            Debug.WriteLine( eventTimeStamp );
+                            //Debug.WriteLine( eventTimeStamp );
 
                             var economyHtml = row.SelectSingleNode( "td[@class='flagCur']" )?.InnerText;
 

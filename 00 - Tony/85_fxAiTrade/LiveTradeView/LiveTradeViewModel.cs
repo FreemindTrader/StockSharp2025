@@ -126,20 +126,20 @@ namespace FreemindAITrade.ViewModels
 
         public LiveTradeViewModel( IMutltiTimeFrameSessionDataRepo dataRepo, string caption, string imagePath, TimeSpan reponsible, Security sec, Connector connector, bool isBarIntegrityCheck, int waveScenarioCount, bool isNonVisual, bool loadAll, CancellationTokenSource exitSource )
         {
-            _isNonVisual = isNonVisual;
-            _waveScenarioNumber = waveScenarioCount;
-            _unitOfWorkFactory = UnitOfWorkSource.GetUnitOfWorkFactory();
-            _unitOfWork = _unitOfWorkFactory.CreateUnitOfWork();
-            _dbElliottWaveRepo = _unitOfWork.ELLIOTTWAVES;
+            _isNonVisual         = isNonVisual;
+            _waveScenarioNumber  = waveScenarioCount;
+            _unitOfWorkFactory   = UnitOfWorkSource.GetUnitOfWorkFactory();
+            _unitOfWork          = _unitOfWorkFactory.CreateUnitOfWork();
+            _dbElliottWaveRepo   = _unitOfWork.ELLIOTTWAVES;
             _isBarIntegrityCheck = isBarIntegrityCheck;
-            _exitSource = exitSource;
+            _exitSource          = exitSource;
 
-            Caption = caption;
-            Glyph = GlyphHelper.GetSvgImage( imagePath );
-            Text = String.Format( "Document text ({0})", caption );
-            ResponsibleTF = reponsible;
-            SelectedSecurity = sec;
-            _loadAllBars = loadAll;
+            Caption              = caption;
+            Glyph                = GlyphHelper.GetSvgImage( imagePath );
+            Text                 = String.Format( "Document text ({0})", caption );
+            ResponsibleTF        = reponsible;
+            SelectedSecurity     = sec;
+            _loadAllBars         = loadAll;
 
             if ( !_isNonVisual )
             {
@@ -149,17 +149,17 @@ namespace FreemindAITrade.ViewModels
 
             }
 
-            _connector = connector;
+            _connector                      = connector;
 
-            _storageRegistry = ServicesRegistry.StorageRegistry;
+            _storageRegistry                = ServicesRegistry.StorageRegistry;
 
-            AddAreaCommand = new DelegateCommand( Step01_ExecuteAddChartArea, CanAddArea );
+            AddAreaCommand                  = new DelegateCommand( Step01_ExecuteAddChartArea, CanAddArea );
 
             QuickOrderSettingChangedCommand = new DelegateCommand( ExecuteQuickOrderSettingChanged );
 
-            _name = GetType().GetDisplayName();
+            _name                           = GetType().GetDisplayName();
 
-            _bars = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
+            _bars                           = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
             _bars.HistoricBarUpdateEvent += _bars_HistoricBarUpdateEvent;
 
             var aaMgr = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity.Code );
@@ -201,20 +201,17 @@ namespace FreemindAITrade.ViewModels
 
 
             OrderSettings = new ChartPanelOrderSettings();
-            OrderSettings.PropertyChanged += ( ( s, e ) => SettingsChanged?.Invoke() );
+            OrderSettings.PropertyChanged += ( ( s, e ) => SettingsChanged?.Invoke() );            
         }
 
         private void _bars_HistoricBarUpdateEvent( object sender, HistoricBarsUpdateEventArg e )
         {
-            if ( _waveScenarioNumber > 1 )
+            if ( !_candles.TryGetValue( _candlesSeries, out CandleSeriesData series ) )
             {
-                if ( !_candles.TryGetValue( _candlesSeries, out CandleSeriesData series ) )
-                {
-                    return;
-                }
-
-                InternalDrawCandles( _drawSeries, series.CandleUI, _bars.MainDataBars, (e.BeginIndex, e.EndIndex) );
+                return;
             }
+
+            InternalDrawCandles( _drawSeries, series.CandleUI, _bars.MainDataBars, (e.BeginIndex, e.EndIndex) );
         }
 
 
@@ -572,13 +569,22 @@ namespace FreemindAITrade.ViewModels
             var count = candleSeriesData.BarsRepo.MainDataBars.Count;
             var indicatorList = data.SetIndicatorSource( indicatorUI, count );
 
+            var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( tag.Series.Security );
+
+            //FreemindIndicator fmIndicator = null;
+
+            //if ( aa != null )
+            //{
+            //    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );
+            //}
+
             for ( int i = 0; i < count; i++ )
             {
                 ref SBar bar = ref candleSeriesData.BarsRepo[i];
 
-                var indicatorRes = indicator.Process( ref bar );
-
-                indicatorList.SetIndicatorValue( bar.BarTime, indicatorRes );
+                var indicatorFm = indicator.Process( ref bar );
+                
+                indicatorList.SetIndicatorValue( bar.BarTime, indicatorFm );
             }
 
             ChartVM.Draw( data );
@@ -1101,7 +1107,7 @@ namespace FreemindAITrade.ViewModels
             //    LiveTradeViewModel.Draw( data );
             //}
         }
-
+        
 
     }
 

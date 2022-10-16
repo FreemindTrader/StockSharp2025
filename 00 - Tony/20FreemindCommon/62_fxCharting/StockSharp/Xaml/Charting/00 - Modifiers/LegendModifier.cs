@@ -222,24 +222,32 @@ namespace fx.Charting
 
         public override void OnParentSurfaceRendered( SciChartRenderedMessage msg )
         {
-            base.OnParentSurfaceRendered( msg );
-
-            int count = 0;
-
-            if ( ParentSurface.RenderableSeries != null )
+            try
             {
-                count = ParentSurface.RenderableSeries.Count;
+                base.OnParentSurfaceRendered( msg );
+
+                int count = 0;
+
+                if ( ParentSurface.RenderableSeries != null )
+                {
+                    count = ParentSurface.RenderableSeries.Count;
+                }
+
+
+                if ( _count == count )
+                {
+                    return;
+                }
+
+                _count = count;
+
+                HandleMouseEvent( new ModifierMouseArgs( new Point( ModifierSurface.ActualWidth / 2.0, ModifierSurface.ActualHeight / 2.0 ), MouseButtons.None, MouseModifier.None, true, null ) );
             }
-
-
-            if ( _count == count )
+            catch( Exception ex )
             {
-                return;
+
             }
-
-            _count = count;
-
-            HandleMouseEvent( new ModifierMouseArgs( new Point( ModifierSurface.ActualWidth / 2.0, ModifierSurface.ActualHeight / 2.0 ), MouseButtons.None, MouseModifier.None, true, null ) );
+            
         }
 
 

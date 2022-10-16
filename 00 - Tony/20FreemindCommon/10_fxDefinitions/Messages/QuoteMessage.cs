@@ -20,4 +20,30 @@ namespace fx.Definitions
             Bid = bid;
         }
     }
+
+    public class NullBarMessage
+    {
+        public DateTime QuoteTime { get; set; }
+        public double Open { get; }
+        public double Close { get; }
+
+        public double High { get; }
+
+        public double Low { get; }
+
+        public double Volume { get; }
+
+        public string Security { get; }
+
+        public NullBarMessage( DateTime quoteTime, double open, double close, double high, double low, double volume, string security )
+        {
+            QuoteTime = quoteTime;
+            Open = open;
+            Close = close;
+            High = high;
+            Low = low;
+            Volume = volume;
+            Security = security;
+        }
+    }
 }

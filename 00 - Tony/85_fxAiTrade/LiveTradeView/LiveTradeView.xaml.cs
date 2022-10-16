@@ -1,4 +1,6 @@
-﻿using FreemindAITrade.ViewModels;
+﻿using DevExpress.Mvvm;
+using FreemindAITrade.ViewModels;
+using fx.Definitions;
 using StockSharp.BusinessEntities;
 using System;
 using System.Linq;
@@ -11,6 +13,8 @@ namespace FreemindAITrade.View
         public LiveTradeView()
         {
             InitializeComponent();
+
+            //Messenger.Default.Register<NullBarMessage>( this, x => OnNullBarUpdate( x ) );
         }
 
         /* -------------------------------------------------------------------------------------------------------------------------------------------
@@ -40,5 +44,14 @@ namespace FreemindAITrade.View
                 vm.OnQuickPanelRegisterOrder( myOrder );
             }
         }
+
+        //private void OnNullBarUpdate( NullBarMessage barMessage )
+        //{
+        //    var vm = DataContext as LiveTradeViewModel;
+        //    if ( vm != null )
+        //    {
+                
+        //    }
+        //}
     }
 }

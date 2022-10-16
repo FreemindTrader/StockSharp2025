@@ -27,7 +27,10 @@
 
   <ItemGroup>
     <PackageReference Include="fx.Collections" Version="5.0.220" />
-    <PackageReference Include="StockSharp.Algo" Version="5.0.253" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
   </ItemGroup>
 
   <ItemGroup>

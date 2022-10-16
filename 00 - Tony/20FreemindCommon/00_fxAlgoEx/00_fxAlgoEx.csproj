@@ -30,10 +30,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="fx.Base" Version="5.0.220" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
     </ItemGroup>
 

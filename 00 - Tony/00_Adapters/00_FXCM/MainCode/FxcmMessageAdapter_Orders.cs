@@ -5,8 +5,7 @@ namespace StockSharp.FxConnectFXCM
     using System.Linq;
 
     using Ecng.Collections;
-    using Ecng.Common;
-    using fx.Messages;
+    using Ecng.Common;    
     using fxcore2;
     using MoreLinq;
     using StockSharp.Algo.Testing;
@@ -464,8 +463,10 @@ namespace StockSharp.FxConnectFXCM
         {
             var accountName  = orderMsg.PortfolioName;
             var offerId = (string) orderMsg.SecurityId.Native;
-            var fxOrder      = ( FreemindOrderCondition ) orderMsg.Condition;
-            var withEscape   = fxOrder.WithEscape.HasValue ? fxOrder.WithEscape.Value : true;
+
+
+            var fxOrder = ( bool? )orderMsg.Condition.Parameters.TryGetValue( "WithEscape" );
+            bool withEscape   = fxOrder.HasValue ? fxOrder.Value : true;
 
             if ( !string.IsNullOrEmpty( accountName ) )
             {
@@ -617,8 +618,9 @@ namespace StockSharp.FxConnectFXCM
         private bool SetBreakEven( OrderRegisterMessage orderMsg )
         {
             var accountName = orderMsg.PortfolioName;
-            var fxOrder     = ( FreemindOrderCondition ) orderMsg.Condition;            
-            var profitPip   = fxOrder.TakeProfitPips.HasValue ? fxOrder.TakeProfitPips.Value.To<double>() : 50;
+            
+            var fxOrder = ( decimal? )orderMsg.Condition.Parameters.TryGetValue( "TakeProfitPips" );            
+            var profitPip   = fxOrder.HasValue ? fxOrder.Value.To<double>() : 50;
 
             if ( !string.IsNullOrEmpty( accountName ) )
             {
@@ -749,8 +751,9 @@ namespace StockSharp.FxConnectFXCM
             var accountName    = orderMsg.PortfolioName;
             var symbol         = orderMsg.SecurityId.SecurityCode;
 
-            var fxOrder      = ( FreemindOrderCondition ) orderMsg.Condition;
-            var safetyPip      = fxOrder.StopLossPips.HasValue ? fxOrder.StopLossPips.Value.To<double>() : 50;
+
+            var fxOrder = ( decimal? )orderMsg.Condition.Parameters.TryGetValue( "StopLossPips" );
+            var safetyPip = fxOrder.HasValue ? fxOrder.Value.To<double>() : 50;            
 
             if ( !string.IsNullOrEmpty( accountName ) )
             {
@@ -926,8 +929,9 @@ namespace StockSharp.FxConnectFXCM
         {
             bool output     = false;
             var accountName = orderMsg.PortfolioName;
-            var fxOrder     = ( FreemindOrderCondition ) orderMsg.Condition;
-            var profitPip   = fxOrder.TakeProfitPips.HasValue ? fxOrder.TakeProfitPips.Value.To<double>() : 50;
+
+            var fxOrder = ( decimal? )orderMsg.Condition.Parameters.TryGetValue( "StopLossPips" );
+            var profitPip = fxOrder.HasValue ? fxOrder.Value.To<double>() : 50;            
             
             if ( !string.IsNullOrEmpty( accountName ) )
             {

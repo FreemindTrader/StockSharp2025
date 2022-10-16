@@ -38,6 +38,7 @@ namespace fx.Definitions
 
         
         long             BarIndex                            { get; set; }
+        
 
         int Index { get; }
 

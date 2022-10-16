@@ -736,23 +736,8 @@ namespace fx.Algorithm
                     (( DateTime, float ) wave4, ( DateTime, float ) waveA )  pt4_A  = GetPoints_smallWave4_WaveA( waveScenarioNo, period, barTime, currentWaveDegree );
                     (( DateTime, float ) wave4B, ( DateTime, float ) waveA ) pt4B_A = GetPoints_smallWave4B_WaveA( waveScenarioNo, period, barTime, currentWaveDegree );
 
-                    var bars = GetDatabarsRepository( period );
-
-                    ref SBar startBar = ref bars.GetBarByTime( lastWaveStartEnd.Item1.Item1 );
-
-                    var beginWaveName = startBar.GetWaveFromScenario( waveScenarioNo ).GetFirstHighestWaveInfo().Value.WaveName;
-
-                    ElliottWaveEnum waveBName = ElliottWaveEnum.WaveB;
-
-                    if ( beginWaveName == ElliottWaveEnum.Wave2 )
-                    {
-                        waveBName = ElliottWaveEnum.Wave3B;
-                    }
-                    else if ( beginWaveName == ElliottWaveEnum.Wave4 )
-                    {
-                        waveBName = ElliottWaveEnum.Wave5B;
-                    }
-
+                    var waveBName = WaveAOfWhat( waveScenarioNo, period, barTime, currentWaveDegree );
+                    
 
                     fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), _bars.Period.Value );
 
@@ -1128,13 +1113,15 @@ namespace fx.Algorithm
                     var lastWaveStartEnd    = GetPoints_Wave024X_WaveA( waveScenarioNo, period, barTime, currentWaveDegree );
                     var waveA_waveB         = GetPoints_WaveA_WaveB( waveScenarioNo, period, barTime, currentWaveDegree );
                     var waveBContainingWave = WaveBOfWhat( waveScenarioNo, period, barTime, currentWaveDegree );
-                    var bars = GetDatabarsRepository( period );
+                    var bars                = GetDatabarsRepository( period );
                     var projectionPoint     = GetCurrentPoint(waveScenarioNo, bars, period, barTime );
                     var points              = GetImportanceWavePointsForWaveC( waveScenarioNo, period, barTime, currentWaveDegree );
 
                     fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString(), _bars.Period.Value );
                     fibTarget.SetTonyExtension( waveA_waveB, ElliottWaveEnum.WaveB );
                     fibTarget.TargetPoints = points;
+
+
 
                     if ( lastWaveStartEnd != default && projectionPoint != default && waveBContainingWave != ElliottWaveEnum.NONE )
                     {
@@ -1367,22 +1354,7 @@ namespace fx.Algorithm
 
                     fibTarget = new HewFibGannTargets( barTime, symbol, barTime.ToString( ), _bars.Period.Value );
 
-                    var bars = GetDatabarsRepository( _currentActiveTimeFrame );
-
-                    ref SBar startBar = ref bars.GetBarByTime( lastWaveStartEnd.Item1.Item1 );
-
-                    var beginWaveName = startBar.GetWaveFromScenario( waveScenarioNo ).GetFirstHighestWaveInfo().Value.WaveName;
-
-                    ElliottWaveEnum waveBName = ElliottWaveEnum.WaveB;
-
-                    if ( beginWaveName == ElliottWaveEnum.Wave2 )
-                    {
-                        waveBName = ElliottWaveEnum.Wave3B;
-                    }
-                    else if ( beginWaveName == ElliottWaveEnum.Wave4 )
-                    {
-                        waveBName = ElliottWaveEnum.Wave5B;
-                    }
+                    var waveBName = WaveAOfWhat( waveScenarioNo, _currentActiveTimeFrame, barTime, currentWaveDegree );                    
 
                     if ( pt4B_A != default )
                     {
@@ -2267,7 +2239,7 @@ namespace fx.Algorithm
 
             if ( _ew1HrDone && _ew1MinDone && _ewDailyDone )
             {
-                TaskBuildElliottWaves( );
+                //TaskBuildElliottWaves( );
             }
 
         }
