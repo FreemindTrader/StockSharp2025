@@ -10,7 +10,7 @@ namespace FreemindAITrade.ViewModels
     public partial class LiveTradeViewModel
     {
         DateTime _reloadCandleFromDate = DateTime.MinValue;
-        DateTime _reloadCandleToDate = DateTime.MinValue;
+        DateTime _reloadCandleToDate = DateTime.MinValue;        
 
         public override void Step9_OnCandleStruct( ref CandleStruct cmd, bool endOfBatch )
         {

@@ -28,8 +28,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Collections" Version="5.0.220" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
+        <PackageReference Include="fx.Collections" Version="5.0.250" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.250" />
 
     </ItemGroup>
 

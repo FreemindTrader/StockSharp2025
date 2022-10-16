@@ -118,13 +118,20 @@ namespace FreemindAITrade.ViewModels
 
                             switch ( waveName )
                             {
+                                
+                                case ElliottWaveEnum.Wave1:                                
+                                case ElliottWaveEnum.Wave1C:
+                                
+                                break;
+
                                 case ElliottWaveEnum.Wave2:
                                 {
                                     _hews.AnalyzeWaveTargetsFromWave2( _waveScenarioNumber, ResponsibleTF, _bars, selectedBarTime );
                                 }
                                 break;
 
-                                case ElliottWaveEnum.WaveB:
+                                case ElliottWaveEnum.Wave3:                                
+                                case ElliottWaveEnum.Wave3C:
                                 {
 
                                 }
@@ -135,29 +142,79 @@ namespace FreemindAITrade.ViewModels
 
                                 }
                                 break;
-                                                                
                                 
-                                case ElliottWaveEnum.Wave3:
+                                case ElliottWaveEnum.Wave5:                                
+                                case ElliottWaveEnum.Wave5C:
+                                {
+
+                                }
+                                break;
+                                
+                                case ElliottWaveEnum.WaveTA:
                                 {
 
                                 }
                                 break;
 
-                                case ElliottWaveEnum.Wave3C:
+                                case ElliottWaveEnum.WaveTB:
                                 {
 
                                 }
                                 break;
 
-
-
-                                default:
+                                case ElliottWaveEnum.WaveTC:
                                 {
-                                    throw new NotImplementedException( );
-                                }                                
-                            }
+
+                                }
+                                break;
+
+                                case ElliottWaveEnum.WaveTD:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveTE:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveEFA:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveEFB:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveEFC:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveA:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveB:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveC:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveX:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveY:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveZ:
+                                
+                                break;
+                                case ElliottWaveEnum.WaveW:
+                                
+                                break;
+                                case ElliottWaveEnum.Wave1B:
+                                
+                                break;
+                                case ElliottWaveEnum.Wave3B:
+                                
+                                break;
+                                case ElliottWaveEnum.Wave5B:
+                                
+                                break;                                
+                            }                            
                         }
-
                     }
                 }
             }

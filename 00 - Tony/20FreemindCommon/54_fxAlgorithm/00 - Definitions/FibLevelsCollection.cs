@@ -200,6 +200,8 @@ namespace fx.Algorithm
                 }
                 break;
 
+
+
                 case FibonacciType.Wave5BRetracement:
                 {
                     for ( i = 0; i < WaveFibConstants.Wave5BRetracementLevels.Length; i++ )

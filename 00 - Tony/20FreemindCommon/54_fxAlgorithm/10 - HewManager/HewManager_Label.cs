@@ -516,12 +516,20 @@ namespace fx.Algorithm
             {
                 return WaveLabelPosition.TOP;
             }
+            else if ( IsWaveWYZ( currentWaveName ) )
+            {
+                return WaveLabelPosition.BOTTOM;
+            }
             else if ( IsExpandedFlat( currentWaveName ) )
             {
                 ref var hew = ref previousWave.GetWaveFromScenario( waveScenarioNo );
                 var waveInfo = hew.GetFirstHighestWaveInfo();
 
                 if ( waveInfo.Value.WaveName.IsNextWave( currentWaveName ) )
+                {
+                    return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
+                }
+                else if ( waveInfo.Value.WaveName.IsNextWaveOneDegreeLowerBeginning( currentWaveName ) )
                 {
                     return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
                 }
@@ -612,6 +620,10 @@ namespace fx.Algorithm
             {
                 return WaveLabelPosition.BOTTOM;
             }
+            else if ( IsWaveWYZ( currentWaveName ) )
+            {
+                return WaveLabelPosition.TOP;
+            }
             else if ( IsExpandedFlat( currentWaveName ) )
             {
                 ref var hew = ref previousWave.GetWaveFromScenario( waveScenarioNo );
@@ -620,7 +632,11 @@ namespace fx.Algorithm
                 if ( waveInfo.Value.WaveName.IsNextWave( currentWaveName ) )
                 {
                     return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
-                }                
+                }
+                else if ( waveInfo.Value.WaveName.IsNextWaveOneDegreeLowerBeginning( currentWaveName ) )
+                {
+                    return ( waveInfo.Value.LabelPosition == WaveLabelPosition.TOP ) ? WaveLabelPosition.BOTTOM : WaveLabelPosition.TOP;
+                }
                 else 
                 {
                     throw new NotImplementedException();
@@ -783,6 +799,16 @@ namespace fx.Algorithm
         public bool IsWave24( ElliottWaveEnum currentWaveName )
         {
             if( currentWaveName == ElliottWaveEnum.Wave2 || currentWaveName == ElliottWaveEnum.Wave4 )
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsWaveWYZ( ElliottWaveEnum currentWaveName )
+        {
+            if ( currentWaveName == ElliottWaveEnum.WaveW || currentWaveName == ElliottWaveEnum.WaveY || currentWaveName == ElliottWaveEnum.WaveZ )
             {
                 return true;
             }

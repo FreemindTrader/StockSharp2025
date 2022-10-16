@@ -69,7 +69,7 @@ namespace fx.Charting.IndicatorPainters
         {
             MovingAverageConvergenceDivergenceHistogram indicator = ( MovingAverageConvergenceDivergenceHistogram )Indicator;
 
-            return ( ( DrawValues( indicator.Macd, indicator.SignalMa, Histogram, ( d1, d2 ) => d1 - d2 ) ) | DrawValues( indicator.Macd, Macd ) | DrawValues( indicator.SignalMa, Signal ) );
+            return ( (  DrawValues( indicator.Macd, Macd ) | DrawValues( indicator.SignalMa, Signal ) | DrawValues( indicator.Macd, indicator.SignalMa, Histogram, ( d1, d2 ) => d1 - d2 ) ) );
         }
 
         public override void Load( SettingsStorage storage )

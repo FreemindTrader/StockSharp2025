@@ -489,6 +489,7 @@ namespace fx.Indicators
             }
         }
 
+        
 
         protected void DetectBaZiOfRedDots( Security symbol, TimeSpan period, PeriodXTaManager taManager, BTreeDictionary<long, WavePointImportance> waveImportance )
         {

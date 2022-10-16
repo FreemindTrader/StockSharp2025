@@ -16,8 +16,8 @@ namespace fx.Charting.IndicatorPainters
     public abstract class BaseChartIndicatorPainter : BaseVM, ICloneable, IPersistable, IChartIndicatorPainter
     {
         private readonly PooledList< IfxChartElement >  _innerElements    = new PooledList< IfxChartElement >( );
-        private readonly IndicatorPainterHelper _indicatorPainter = new IndicatorPainterHelper( );
-        private IndicatorUI                     _indicatorElement;
+        private readonly IndicatorPainterHelper         _indicatorPainter = new IndicatorPainterHelper( );
+        private IndicatorUI                             _indicatorElement;
 
         [Browsable( false )]
         public IndicatorUI Element
@@ -94,6 +94,7 @@ namespace fx.Charting.IndicatorPainters
 
                 return false;
             }
+
             ChildElementsStartDrawing( );
             return false;
         }

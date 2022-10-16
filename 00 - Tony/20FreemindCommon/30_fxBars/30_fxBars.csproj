@@ -22,14 +22,14 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.250</Version>
+        <Version>5.0.257</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Collections" Version="5.0.220" />
-        <PackageReference Include="fx.TimePeriod" Version="5.0.220" />
+        <PackageReference Include="fx.Collections" Version="5.0.250" />
+        <PackageReference Include="fx.TimePeriod" Version="5.0.250" />
     </ItemGroup>
 
     <ItemGroup>

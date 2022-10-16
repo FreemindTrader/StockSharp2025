@@ -26,7 +26,7 @@
 			_gain = new SmoothedMovingAverage();
 			_loss = new SmoothedMovingAverage();
 
-			Length = 15;
+			Length = 55;
 		}
 
 		/// <inheritdoc />

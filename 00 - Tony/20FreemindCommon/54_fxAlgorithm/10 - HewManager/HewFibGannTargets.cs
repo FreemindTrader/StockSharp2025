@@ -642,10 +642,7 @@ namespace fx.Algorithm
 
         }
 
-        public void SetSecondXProjections( (DateTime, float) startPoint,
-                                           (DateTime, float) waveA,
-                                         (DateTime, float) waveB
-                                        )
+        public void SetSecondXProjections( (DateTime, float) startPoint, (DateTime, float) waveA, (DateTime, float) waveB )
         {
             _startPoint = startPoint;
             _endPoint = waveA;
@@ -666,9 +663,7 @@ namespace fx.Algorithm
 
         }
 
-        public void SetFibonacciRetracment( (DateTime, float) startPoint,
-                                            (DateTime, float) endPoint,
-                                            ElliottWaveEnum wave )
+        public void SetFibonacciRetracment( (DateTime, float) startPoint, (DateTime, float) endPoint, ElliottWaveEnum wave )
         {
             _startPoint = startPoint;
             _endPoint = endPoint;

@@ -1828,7 +1828,7 @@ namespace fx.Algorithm
 
         public long FindBeginningWaveOfWaveW( int waveScenarioNo, long rawBarTime, ElliottWaveCycle cycle )
         {
-            return ( FindBeginningWaveOfWaveY( waveScenarioNo, _currentActiveTimeFrame, rawBarTime, cycle ) );
+            return ( FindBeginningWaveOfWaveW( waveScenarioNo, _currentActiveTimeFrame, rawBarTime, cycle ) );
         }
 
         public long FindBeginningWaveOfWaveW( int waveScenarioNo, TimeSpan period, long rawBarTime, ElliottWaveCycle cycle )

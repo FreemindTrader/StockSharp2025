@@ -21,7 +21,7 @@ namespace StockSharp.FxConnectFXCM
     using Ecng.ComponentModel;
     using StockSharp.FxConnectFXCM.Freemind;
     using StockSharp.Algo;
-    using fx.Messages;
+    
     using StockSharp.Algo.Candles;
 
     /* ---------------------------------------------------------------------------------------------------------------------------

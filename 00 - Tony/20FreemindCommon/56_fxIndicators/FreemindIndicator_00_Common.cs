@@ -17,6 +17,7 @@ using System.Linq;
 using fx.Definitions.Collections;
 using System.Threading;
 using System.Collections.Generic;
+using StockSharp.Algo.Indicators;
 
 
 #pragma warning disable 414
@@ -25,6 +26,102 @@ namespace fx.Indicators
 {
     public partial class FreemindIndicator : CustomPlatformIndicator, ILogSource, ILogReceiver
     {
+        public IIndicatorValue GetIndicatorValue( IIndicator indicator, int index )
+        {
+            return GetIndicatorValue( indicator, (uint) index );
+        }
+        public IIndicatorValue GetIndicatorValue( IIndicator indicator, uint index )
+        {
+            switch( indicator.Name )
+            {
+                case "SMA":
+                {
+                    var smaValue = IndicatorResult[ "SMA" ];
+                    var sma = new SingleIndicatorValue<double>( indicator, smaValue[ (int) index ] );
+                    sma.IsFinal = true;                    
+
+                    return sma;
+                }
+                
+
+                case "MACD Histogram":
+                {                    
+                    var MACD        = IndicatorResult["MACD"];
+                    var MACDSignal  = IndicatorResult["MACDSignal"];
+
+                    var complex = ( IComplexIndicator )indicator;
+
+                    var value = new ComplexIndicatorValue( indicator );
+
+                    foreach ( IIndicator ind in complex.InnerIndicators )
+                    {
+                        if ( ind.Name == "MACD" )
+                        {
+                            var macdValue = new SingleIndicatorValue<double>( ind, MACD[( int )index] );
+                            macdValue.IsFinal = true;
+                            value.InnerValues.Add( ind, macdValue );
+                        }
+                        else if ( ind.Name == "EMA" )
+                        {
+                            var signalValue = new SingleIndicatorValue<double>( ind, MACDSignal[( int )index] );
+                            signalValue.IsFinal = true;
+                            value.InnerValues.Add( ind, signalValue );
+                        }
+                    }                    
+                    
+                    return value;
+                }
+                
+
+                case "HewRsiComplex":
+                {
+                    var FreemindRsi   = IndicatorResult["FreemindRsi"];
+                    var RsiOverBought = IndicatorResult["RsiOverBought"];
+                    var RsiOverSold   = IndicatorResult["RsiOverSold"];
+                    var RsiMiddle     = IndicatorResult["RsiMiddle"];
+
+                    var complex       = ( IComplexIndicator )indicator;
+
+                    var value         = new ComplexIndicatorValue( indicator );
+
+                    foreach ( IIndicator ind in complex.InnerIndicators )
+                    {
+                        if ( ind.Name == "HewRSI" )
+                        {
+                            var macdValue = new SingleIndicatorValue<double>( ind, FreemindRsi[( int )index] );
+                            macdValue.IsFinal = true;
+                            value.InnerValues.Add( ind, macdValue );
+                        }
+                        else if ( ind.Name == "OverBought" )
+                        {
+                            var signalValue = new SingleIndicatorValue<double>( ind, RsiOverBought[( int )index] );
+                            signalValue.IsFinal = true;
+                            value.InnerValues.Add( ind, signalValue );
+                        }
+                        else if ( ind.Name == "OverSold" )
+                        {
+                            var signalValue = new SingleIndicatorValue<double>( ind, RsiOverSold[( int )index] );
+                            signalValue.IsFinal = true;
+                            value.InnerValues.Add( ind, signalValue );
+                        }
+                        else if ( ind.Name == "Middle" )
+                        {
+                            var signalValue = new SingleIndicatorValue<double>( ind, RsiMiddle[( int )index] );
+                            signalValue.IsFinal = true;
+                            value.InnerValues.Add( ind, signalValue );
+                        }
+                    }
+
+                    return value;
+                }                
+            }
+
+
+
+
+            return null;
+        }
+
         private void CheckForAbcWaveRotation( TimeSpan period, PeriodXTaManager taManager, KeyValuePair<long, WavePointImportance> first, KeyValuePair<long, WavePointImportance> second, KeyValuePair<long, WavePointImportance> third, KeyValuePair<long, WavePointImportance> fourth, bool isMajor, CancellationToken token )
         {
             ref SBar bar1st = ref Bars.GetBarByTime( first.Key );
@@ -1964,6 +2061,7 @@ namespace fx.Indicators
                                                                                                             "FreemindATR",
                                                                                                             "RsiOverBought",
                                                                                                             "RsiOverSold",
+                                                                                                            "RsiMiddle",
                                                                                                             "MFI",
                                                                                                             "CCI",
                                                                                                              "K",

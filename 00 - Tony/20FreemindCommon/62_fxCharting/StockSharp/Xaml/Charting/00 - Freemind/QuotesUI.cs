@@ -18,6 +18,8 @@ namespace fx.Charting
         private LineUI                   _bidLine;
         private LineUI                   _askLine;
         private UIBaseVM                 _viewModel;
+        private bool _antiAliasing = true;
+        private int _strokeThickness = 1;
 
         public QuotesUI( )
         {
@@ -37,6 +39,32 @@ namespace fx.Charting
             
             AddChildElement( BidLine, true );
             AddChildElement( AskLine, true );
+        }
+
+        
+        public bool AntiAliasing
+        {
+            get
+            {
+                return _antiAliasing;
+            }
+            set
+            {
+                _antiAliasing = value;
+                RaisePropertyChanged( nameof( AntiAliasing ) );
+            }
+        }
+
+        public int StrokeThickness
+        {
+            get
+            {
+                return _strokeThickness;
+            }
+            set
+            {
+                _strokeThickness = value;
+            }
         }
 
         Color IDrawableChartElement.Color

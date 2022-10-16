@@ -42,12 +42,10 @@
                     Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/SortZA.svg"
                     Label="Descending" />
                 <dxwui:AppBarSeparator />
-                <dxwui:AppBarButton
-                    Command="{Binding NewCommand}"
+                <dxwui:AppBarButton                    
                     Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/New.svg"
                     Label="New" />
-                <dxwui:AppBarButton
-                    Command="{Binding EditCommand}"
+                <dxwui:AppBarButton                    
                     CommandParameter="{Binding SelectedEntity}"
                     Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/Edit.svg"
                     Label="Edit" />
@@ -78,8 +76,7 @@
                                 HorizontalContentAlignment="Center"
                                 VerticalContentAlignment="Center"
                                 Background="#b6b6b6"
-                                BorderBrush="Black"
-                                Command="{Binding NavigateCommand}"
+                                BorderBrush="Black"                                
                                 CommandParameter="CalculatorView"
                                 Header="100"
                                 Size="Small">

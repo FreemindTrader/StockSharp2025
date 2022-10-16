@@ -6,7 +6,7 @@ namespace StockSharp.FxConnectFXCM
     using System.Threading.Tasks;
     using Ecng.Common;
     using Ecng.ComponentModel;
-    using fx.Messages;
+    
     using fxcore2;
     using StockSharp.Algo;
     using StockSharp.BusinessEntities;
@@ -15,7 +15,8 @@ namespace StockSharp.FxConnectFXCM
     using StockSharp.Logging;
     using StockSharp.Messages;
     using fx.Base;
-
+    using fx.Definitions;
+    
 
     partial class FxConnectFxcmMsgAdapter
 	{
@@ -580,7 +581,7 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period < TimeSpan.FromHours( 1 ) )
+                    if ( period == TimeSpan.FromMinutes( 1 ) )
                     {
                         acending.RemoveAt( acending.Count - 1 );
                     }
@@ -603,11 +604,11 @@ namespace StockSharp.FxConnectFXCM
                 }
                 else if ( buffer.Count == 1 )
                 {
-                    foreach ( var candleMsg in buffer )
-                    {
-                        candleMsg.BatchStatus = fxBatchStatus.FromStorage;
-                        SendOutMessage( candleMsg );
-                    }
+                    //foreach ( var candleMsg in buffer )
+                    //{
+                    //    candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                    //    SendOutMessage( candleMsg );
+                    //}
 
                     buffer.Clear();
                 }
@@ -825,7 +826,7 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period < TimeSpan.FromHours( 1 ) )
+                    if ( period == TimeSpan.FromMinutes( 1 ) )
                     {
                         acending.RemoveAt( acending.Count - 1 );
                     }
@@ -848,11 +849,11 @@ namespace StockSharp.FxConnectFXCM
                 }
                 else if ( buffer.Count == 1 )
                 {
-                    foreach ( var candleMsg in buffer )
-                    {
-                        candleMsg.BatchStatus = fxBatchStatus.FromStorage;
-                        SendOutMessage( candleMsg );
-                    }
+                    //foreach ( var candleMsg in buffer )
+                    //{
+                    //    candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                    //    SendOutMessage( candleMsg );
+                    //}
 
                     buffer.Clear();
                 }
@@ -1080,7 +1081,7 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period < TimeSpan.FromHours( 1 ) )
+                    if ( period == TimeSpan.FromMinutes( 1 ) )
                     {
                         acending.RemoveAt( acending.Count - 1 );
                     }
@@ -1380,7 +1381,7 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period < TimeSpan.FromHours( 1 ) )
+                    if ( period == TimeSpan.FromMinutes( 1 ) )
                     {
                         acending.RemoveAt( acending.Count - 1 );
                     }
@@ -1438,9 +1439,9 @@ namespace StockSharp.FxConnectFXCM
                 SendSubscriptionFinished( mdMsg.TransactionId, new DateTimeOffset?() );
             }
 
-            //MarketDataMessage marketDataMessage = new MarketDataMessage( );
-            //marketDataMessage.OriginalTransactionId = ( mdMsg.TransactionId );
-            //SendOutMessage( marketDataMessage );
+            MarketDataMessage marketDataMessage = new MarketDataMessage();
+            marketDataMessage.OriginalTransactionId = ( mdMsg.TransactionId );
+            SendOutMessage( marketDataMessage );
 
         }
 
@@ -1685,7 +1686,7 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period < TimeSpan.FromHours( 1 ) )
+                    if ( period == TimeSpan.FromMinutes( 1 ) )
                     {
                         acending.RemoveAt( acending.Count - 1 );
                     }
@@ -1851,31 +1852,33 @@ namespace StockSharp.FxConnectFXCM
                                 break;
                             }
                         }
+                        
 
                         for ( int index = reader.Count - 1; index >= 0; index-- )
                         {
                             if ( reader.isBar )
                             {
-                                var candleMsg        = new TimeFrameCandleMessage( );
+                                var candleMsg                     = new TimeFrameCandleMessage( );
 
-                                candleMsg.OpenPrice  = reader.getBidOpen( index ).ToDecimal( ) ?? decimal.Zero;
-                                candleMsg.HighPrice  = reader.getBidHigh( index ).ToDecimal( ) ?? decimal.Zero;
-                                candleMsg.LowPrice   = reader.getBidLow( index ).ToDecimal( ) ?? decimal.Zero;
-                                candleMsg.ClosePrice = reader.getBidClose( index ).ToDecimal( ) ?? decimal.Zero;
+                                candleMsg.OpenPrice               = reader.getBidOpen( index ).ToDecimal( ) ?? decimal.Zero;
+                                candleMsg.HighPrice               = reader.getBidHigh( index ).ToDecimal( ) ?? decimal.Zero;
+                                candleMsg.LowPrice                = reader.getBidLow( index ).ToDecimal( ) ?? decimal.Zero;
+                                candleMsg.ClosePrice              = reader.getBidClose( index ).ToDecimal( ) ?? decimal.Zero;
 
-                                barDate              = reader.getDate( index );
-                                var utcTime          = DateTime.SpecifyKind( barDate, DateTimeKind.Utc );
-
+                                barDate                           = reader.getDate( index );
+                                var utcTime                       = DateTime.SpecifyKind( barDate, DateTimeKind.Utc );
+                                
+                                candleMsg.OpenTime                = utcTime;
+                                candleMsg.TotalVolume             = reader.getVolume( index );
+                                candleMsg.OriginalTransactionId   = transactionId;                                
+                                candleMsg.State                   = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
+                               
                                 if ( barDate > latestBarTime )
                                 {
                                     latestBarTime = barDate;
                                 }
 
-                                candleMsg.OpenTime                = utcTime;
-                                candleMsg.TotalVolume             = reader.getVolume( index );
-                                candleMsg.OriginalTransactionId   = transactionId;
-                                //candleMsg.State                   = CandleStates.Finished ;
-                                candleMsg.State                 = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
+
                                 candleMsg.BatchStatus             = fxBatchStatus.Latest;
 
                                 if ( sameDate.Date == barDate.Date )
@@ -1926,7 +1929,11 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    acending.RemoveAt( acending.Count - 1 );
+
+                    if ( period == TimeSpan.FromMinutes( 1 ) )
+                    {
+                        acending.RemoveAt( acending.Count - 1 );
+                    }
 
                     foreach ( var candleMsg in acending )
                     {
@@ -1941,10 +1948,10 @@ namespace StockSharp.FxConnectFXCM
                 LoggingHelper.AddErrorLog( this, e );
             }
 
-            //var mktDataMsg = new MarketDataMessage( );
-            //mktDataMsg.OriginalTransactionId = transactionId;
+            var mktDataMsg = new MarketDataMessage();
+            mktDataMsg.OriginalTransactionId = transactionId;
 
-            //SendOutMessage( mktDataMsg );
+            SendOutMessage( mktDataMsg );
 
             return latestBarTime;
         }

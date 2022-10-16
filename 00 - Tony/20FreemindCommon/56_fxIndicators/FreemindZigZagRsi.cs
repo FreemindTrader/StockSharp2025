@@ -38,7 +38,7 @@ namespace fx.Indicators
         private string _symbol;
         private TimeSpan _period;
 
-        public FreemindZigZagRsi( ) : base( typeof( FreemindZigZagRsi ).Name, true, true, false, new string[ ] { "ZigZagRsi", "RsiOverBought", "RsiOverSold" } )
+        public FreemindZigZagRsi( ) : base( typeof( FreemindZigZagRsi ).Name, true, true, false, new string[ ] { "ZigZagRsi", "RsiOverBought", "RsiOverSold", "RsiMiddle" } )
         {
             // The following will set how the Hew RSI lines look like
             //this.ChartSeries.OutputResultSetsPens[ "ZigZagRsi" ]     = Pens.Red;

@@ -1366,22 +1366,22 @@ namespace StockSharp.FxConnectFXCM.Freemind
             if ( ( orderType.GetValueOrDefault( ) == OrderTypes.Conditional ? ( orderType.HasValue ? 1 : 0 ) : 0 ) != 0 )
             {
 
-                var order               = new FxcmOrderCondition( );
-                order.ExtendedType = fxcmOrder;
-                order.RateMin = detailedOrder.RateMin.ToDecimal( );
-                order.RateMax = detailedOrder.RateMax.ToDecimal( );
-                order.AtMarket = detailedOrder.AtMarket.ToDecimal( );
+                var order                 = new FxcmOrderCondition( );
+                order.ExtendedType        = fxcmOrder;
+                order.RateMin             = detailedOrder.RateMin.ToDecimal( );
+                order.RateMax             = detailedOrder.RateMax.ToDecimal( );
+                order.AtMarket            = detailedOrder.AtMarket.ToDecimal( );
 
-                order.ContingencyType = detailedOrder.ContingencyType.ToFxcmContingencyType( );
-                order.ContingentOrderId = detailedOrder.ContingentOrderID;
-                order.PegType = detailedOrder.PegType;
-                order.PegOffset = detailedOrder.PegOffset.ToDecimal( );
+                order.ContingencyType     = detailedOrder.ContingencyType.ToFxcmContingencyType( );
+                order.ContingentOrderId   = detailedOrder.ContingentOrderID;
+                order.PegType             = detailedOrder.PegType;
+                order.PegOffset           = detailedOrder.PegOffset.ToDecimal( );
                 //order.PegOffsetMin      = row.PegOffsetMin.ToDecimal( );
                 //order.PegOffsetMax      = row.PegOffsetMax.ToDecimal( );
-                order.TrailRate = detailedOrder.TrailRate.ToDecimal( );
-                order.TrailStep = detailedOrder.TrailStep.ToNullableInt( );
-                order.Parties = detailedOrder.Parties;
-                msg.Condition = order;
+                order.TrailRate           = detailedOrder.TrailRate.ToDecimal( );
+                order.TrailStep           = detailedOrder.TrailStep.ToNullableInt( );
+                order.Parties             = detailedOrder.Parties;
+                msg.Condition             = order;
             }
             if ( detailedOrder.TimeInForce == "GTD" )
             {

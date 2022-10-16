@@ -177,6 +177,12 @@ namespace fx.Charting
 
         protected override bool OnDraw( ChartDrawDataEx data )
         {
+            // ---------------------------------------------------------------------------------------------------------------------
+            //
+            // Tony: Here is where the indicator is painted.
+            //
+            // ---------------------------------------------------------------------------------------------------------------------
+
             return IndicatorPainter.Draw( data );
         }
 

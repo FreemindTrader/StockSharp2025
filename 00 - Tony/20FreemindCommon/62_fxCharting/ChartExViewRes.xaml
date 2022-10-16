@@ -133,6 +133,10 @@
                 <Run FontWeight="Bold" Text="HK Time: " />
                 <Run FontWeight="Normal" Text="{Binding PointMetadata.ChinaTime, StringFormat=G, Mode=OneWay}" />
             </TextBlock>
+            <TextBlock FontSize="12" Foreground="LightYellow">
+                <Run FontWeight="Bold" Text="Linux Time: " />                
+                <Run FontWeight="Normal" Text="{Binding PointMetadata.LinuxTime, StringFormat='{}{0}', Mode=OneWay}" />
+            </TextBlock>
 
             
         </StackPanel>

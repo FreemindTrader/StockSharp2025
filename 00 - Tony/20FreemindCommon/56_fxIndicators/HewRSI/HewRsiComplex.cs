@@ -25,6 +25,7 @@ namespace StockSharp.Algo.Indicators
             InnerIndicators.Add( Rsi = new fxHewRSI() );
             InnerIndicators.Add( OverBought = new ConstantLineIndicator( 70 ) { Name = "OverBought" } );
             InnerIndicators.Add( OverSold = new ConstantLineIndicator( 30 ) { Name = "OverSold" } );
+            InnerIndicators.Add( Middle = new ConstantLineIndicator( 50 ) { Name = "Middle" } );
         }
 
         /// <summary>
@@ -35,6 +36,9 @@ namespace StockSharp.Algo.Indicators
 
         [Browsable( false )]
         public ConstantLineIndicator OverBought { get; }
+
+        [Browsable( false )]
+        public ConstantLineIndicator Middle { get; }
 
         /// <summary>
         /// Lower band -.
@@ -62,6 +66,7 @@ namespace StockSharp.Algo.Indicators
         {
             var overbough = OverBought.Process(input);
             var overSold = OverSold.Process(input);
+            var middle = Middle.Process( input );
             var rsi = Rsi.Process( input );
 
             var value = new ComplexIndicatorValue(this);
@@ -69,6 +74,7 @@ namespace StockSharp.Algo.Indicators
             value.InnerValues.Add( OverBought, overbough );
             value.InnerValues.Add( Rsi, rsi );
             value.InnerValues.Add( OverSold, overSold );
+            value.InnerValues.Add( Middle, middle );
             return value;
         }
     }
