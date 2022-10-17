@@ -350,7 +350,8 @@ namespace FreemindAITrade.ViewModels
 
         private void TonyOnUnSubscribeElement( IfxChartElement element )
         {
-            var command = new ChartRemoveElementExCommand( element, ( CandleSeries )ChartVM.GetSource( element ) );
+            var command = new ChartRemoveElementExCommand( element, ChartVM.GetSource( element ) );
+            
             if ( _loading )
             {
                 OnChartRemoveElementCommand( command );

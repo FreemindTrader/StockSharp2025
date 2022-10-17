@@ -135,8 +135,7 @@ namespace StockSharp.Hydra.Panes
             return tickCandle;
         }
 
-        private IMarketDataStorage<TMessage> CombineStorage<TMessage>(
-          Func<SecurityId, IMarketDataStorage> getStorage )
+        private IMarketDataStorage<TMessage> CombineStorage<TMessage>( Func<SecurityId, IMarketDataStorage> getStorage )
           where TMessage : Message
         {
             BasketMarketDataStorage<TMessage> marketDataStorage = new BasketMarketDataStorage<TMessage>();
@@ -145,9 +144,7 @@ namespace StockSharp.Hydra.Panes
             return marketDataStorage;
         }
 
-        private static IEnumerable<Tuple<DateTimeOffset, Tuple<Decimal, Decimal>>> Join<TMessage>(
-            IEnumerable<TMessage> messages,
-            Func<TMessage, Decimal?> getPrice )
+        private static IEnumerable<Tuple<DateTimeOffset, Tuple<Decimal, Decimal>>> Join<TMessage>( IEnumerable<TMessage> messages, Func<TMessage, Decimal?> getPrice )
             where TMessage : Message
         {
             Dictionary<SecurityId, Decimal> dict = new Dictionary<SecurityId, Decimal>();
@@ -172,10 +169,7 @@ namespace StockSharp.Hydra.Panes
                     } );
         }
 
-        private IEnumerable<Tuple<DateTimeOffset, IIndicatorValue>> GetPairIndicatorValues(
-      IIndicator indicator,
-      DateTime? from,
-      DateTime? to )
+        private IEnumerable<Tuple<DateTimeOffset, IIndicatorValue>> GetPairIndicatorValues( IIndicator indicator, DateTime? from, DateTime? to )
         {
             switch ( BuildType )
             {
@@ -219,11 +213,7 @@ namespace StockSharp.Hydra.Panes
             }
         }
 
-        private IEnumerable<Tuple<DateTimeOffset, IIndicatorValue>> GetSingleIndicatorValues(
-          IIndicator indicator,
-          SecurityId securityId,
-          DateTime? from,
-          DateTime? to )
+        private IEnumerable<Tuple<DateTimeOffset, IIndicatorValue>> GetSingleIndicatorValues( IIndicator indicator, SecurityId securityId, DateTime? from, DateTime? to )
         {
             Security security = GetSecurity( securityId );
             switch ( BuildType )
@@ -268,11 +258,7 @@ namespace StockSharp.Hydra.Panes
             }
         }
 
-        private IEnumerable<Tuple<DateTimeOffset, IIndicatorValue>> GetLevel1IndicatorValues(
-          IIndicator indicator,
-          SecurityId securityId,
-          DateTime? from,
-          DateTime? to )
+        private IEnumerable<Tuple<DateTimeOffset, IIndicatorValue>> GetLevel1IndicatorValues( IIndicator indicator, SecurityId securityId, DateTime? from, DateTime? to )
         {
             switch ( BuildType )
             {
@@ -316,11 +302,7 @@ namespace StockSharp.Hydra.Panes
             }
         }
 
-        private IEnumerable<IndicatorValue> GetIndicatorValues(
-          SecurityId securityId,
-          DateTime? from,
-          DateTime? to,
-          bool exporting )
+        private IEnumerable<IndicatorValue> GetIndicatorValues( SecurityId securityId, DateTime? from, DateTime? to, bool exporting )
         {
             IEnumerable<IndicatorValue> source = InternalGetIndicatorValues( securityId, from, to );
             TimeZoneInfo tz = TimeZone.TimeZone;
@@ -334,10 +316,7 @@ namespace StockSharp.Hydra.Panes
             return source;
         }
 
-        private IEnumerable<IndicatorValue> InternalGetIndicatorValues(
-          SecurityId securityId,
-          DateTime? from,
-          DateTime? to )
+        private IEnumerable<IndicatorValue> InternalGetIndicatorValues( SecurityId securityId, DateTime? from, DateTime? to )
         {
             IIndicator indicator = Indicator.Clone();
             IEnumerable<IndicatorValue> source = ( IsPairIndicator ? GetPairIndicatorValues( indicator, from, to ) : ( SelectedIndicator.InputValue == typeof( SingleIndicatorValue<Level1ChangeMessage> ) ? GetLevel1IndicatorValues( indicator, securityId, from, to ) : GetSingleIndicatorValues( indicator, securityId, from, to ) ) ).Select( t =>

@@ -242,14 +242,14 @@ namespace FreemindAITrade.ViewModels
                 var count         = candleSeriesData.BarsRepo.MainDataBars.Count;
                 var indicatorList = data.SetIndicatorSource( indicatorUI, count );
 
-                var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _drawSeries.Security );
+                //var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( _drawSeries.Security );
 
-                FreemindIndicator fmIndicator = null;
+                //FreemindIndicator fmIndicator = null;
 
-                if ( aa != null )
-                {
-                    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );
-                }
+                //if ( aa != null )
+                //{
+                //    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );
+                //}
 
                 //if ( indicator.Name == "SMA" )
                 //{

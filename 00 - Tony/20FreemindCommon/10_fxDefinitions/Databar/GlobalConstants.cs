@@ -1461,7 +1461,7 @@ namespace fx.Definitions
         public const int FIVE_MINUTES_BARS_PER_MONTH     = 6600;
         public const int FIFTEEN_MINUTES_BARS_PER_WEEK   = 490;
         public const int FIFTEEN_MINUTES_BARS_PER_MONTH  = 2940;
-        public const int HOURLY_BARS_QUATERLY            = 10000;
+        public const int HOURLY_BARS_QUATERLY            = 20000;
         public const int HOURLY_BARS_PER_WEEK            = 125;
         public const int DAILY_BARS_50YEARS              = 3650 * 5;
         public const int DAILY_BARS_PER_WEEK             = 6;

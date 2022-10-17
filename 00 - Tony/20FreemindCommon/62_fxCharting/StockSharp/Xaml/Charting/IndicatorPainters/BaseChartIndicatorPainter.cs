@@ -392,7 +392,7 @@ namespace fx.Charting.IndicatorPainters
                 }
 
                 if( Indicator != null )
-                {
+                {                    
                     throw new InvalidOperationException( LocalizedStrings.NewIndicatorNoReset );
                 }
 

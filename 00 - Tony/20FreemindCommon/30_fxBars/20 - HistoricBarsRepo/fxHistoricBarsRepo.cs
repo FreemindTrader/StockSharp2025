@@ -286,8 +286,15 @@ namespace fx.Bars
             var newBarTime      = candle.OpenTime.UtcDateTime;
             var barPeriod       = (TimeSpan) candle.Arg;
 
-            var currentBarIndex = _barList.Count - 1;
-            var currentBarTime  = currentBarIndex > 0 ? _barList.LastBarTime : newBarTime;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            var currentBarIndex = bl.Count - 1;
+            var currentBarTime  = currentBarIndex > 0 ? bl.LastBarTime : newBarTime;
 
             /* -------------------------------------------------------------------------------------------
              * 
@@ -301,11 +308,11 @@ namespace fx.Bars
             // The candle is still updating not finished yet and should have been added to _databars
             if ( newBarTime == _lastActiveBarTime )
             {
-                ref SBar sameBar = ref _barList.UpdateLastCandle( candle );
+                ref SBar sameBar = ref bl.UpdateLastCandle( candle );
             }
             else if ( newBarTime == GetNextPeriodTime( _lastConfirmedBarTime, barPeriod ) )
             {
-                ref SBar newBar = ref _barList.AddCandle( candle );
+                ref SBar newBar = ref bl.AddCandle( candle );
                 _lastActiveBarTime = candle.OpenTime.UtcDateTime;
             }
             else if( newBarTime > GetNextPeriodTime( _lastConfirmedBarTime, barPeriod ) )
@@ -317,7 +324,7 @@ namespace fx.Bars
                     this.AddWarningLog( msg );
                 }
 
-                ref SBar newBar = ref _barList.AddCandle( candle );
+                ref SBar newBar = ref bl.AddCandle( candle );
                 _lastActiveBarTime = candle.OpenTime.UtcDateTime;
             }
             else
@@ -339,10 +346,10 @@ namespace fx.Bars
 
             _lastDataUpdate = DateTime.Now;
 
-            HistoricBarUpdateEvent?.Invoke( this, new HistoricBarsUpdateEventArg( updateType, _barList.LastBarIndex, _barList.LastBarIndex ) );
+            HistoricBarUpdateEvent?.Invoke( this, new HistoricBarsUpdateEventArg( updateType, bl.LastBarIndex, bl.LastBarIndex ) );
 
 
-            return ref _barList[ _barList.Count - 1 ];                        
+            return ref bl[ bl.Count - 1 ];                        
         }
 
         public ( uint, uint ) AddReplaceCandlesRange( Security security, List< Candle > candles, TimeSpan period, int waveScenarioNo, bool restoreWave = false )
@@ -353,22 +360,29 @@ namespace fx.Bars
                 return ( 0, _barList.LastBarIndex );
             }
 
-            if( _lastActiveBarTime < _lastConfirmedBarTime )
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return default;
+            }
+
+            if ( _lastActiveBarTime < _lastConfirmedBarTime )
             {
                 _lastActiveBarTime = _lastConfirmedBarTime;
             }
             
-            (uint begin, uint end ) range = _barList.AddReplaceCandles( candles );
+            (uint begin, uint end ) range = bl.AddReplaceCandles( candles );
 
             if ( restoreWave )
             {
-                _hews.RestoreElliottWaves( _barList, period, waveScenarioNo );
+                _hews.RestoreElliottWaves( bl, period, waveScenarioNo );
             }
             
             if ( range == default ) return range;
 
-            _lastConfirmedBarTime = _barList.LastBarTime;
-            _lastActiveBarTime    = _barList.LastBarTime;            
+            _lastConfirmedBarTime = bl.LastBarTime;
+            _lastActiveBarTime    = bl.LastBarTime;            
 
             HistoricBarUpdateEvent?.Invoke( this, new HistoricBarsUpdateEventArg( DataBarUpdateType.HistoryUpdate, range.begin, range.end ) );
 
@@ -406,15 +420,17 @@ namespace fx.Bars
 
                 BuildElliottWaveDictionary( security.Code, offerId, period, firstCandleTime, lastCandleTime );
 
-                var waveDates = _hews.GetWaveDatesList( period );
-                                
-                _barList = new SBarList( security, period, candles, waveDates );
+                var waveDates = _hews.GetWaveDatesList( period );                
 
-                _barList.CopyCandlesSetSession( candles );
+                var newbl = new SBarList( security, period, candles, waveDates );
 
-                _barList.AllocateWaves( waveDates );
+                newbl.CopyCandlesSetSession( candles );
 
-                _hews.RestoreElliottWaves( _barList, period, waveScenarioNo );
+                newbl.AllocateWaves( waveDates );
+
+                _hews.RestoreElliottWaves( newbl, period, waveScenarioNo );
+
+                _barList = newbl;
 
                 _lastConfirmedBarTime = _barList.LastBarTime;
             }                                  
@@ -458,10 +474,12 @@ namespace fx.Bars
             _stopWatch.Restart();
 
             if ( candles.Count > 0 )
-            { 
-                _barList = new SBarList( security, period, candles, null );
+            {
+                var newbl = new SBarList( security, period, candles, null );
 
-                _barList.CopyCandlesSetSession( candles );
+                newbl.CopyCandlesSetSession( candles );
+
+                _barList = newbl;
 
                 _lastConfirmedBarTime = _barList.LastBarTime;
             }
@@ -499,7 +517,9 @@ namespace fx.Bars
         {
             _databarCacheSize = FinancialHelper.CalculateStorageSize( period, miniBarCount );
 
-            _barList = new SBarList( security, period, _databarCacheSize );
+            var newBl = new SBarList( security, period, _databarCacheSize );
+
+            _barList = newBl;
         }
 
         public void CreateDataBarCacheFriendlyStorage( Security security, TimeSpan period, DateTime beginDate, DateTime endDate )
@@ -508,9 +528,11 @@ namespace fx.Bars
 
             var totalMinutes  = dateDiff.TotalMinutes;
 
-            _databarCacheSize = (int) ( totalMinutes / period.TotalMinutes + 3 );            
-            
-            _barList         = new SBarList( security, period, _databarCacheSize );
+            _databarCacheSize = (int) ( totalMinutes / period.TotalMinutes + 3 );
+
+            var newBl = new SBarList( security, period, _databarCacheSize );
+
+            _barList = newBl;
         }
 
         
@@ -522,12 +544,19 @@ namespace fx.Bars
                 return false;
             }
 
-            if( ( _barList.High( selectedBarIndex  ) >= _barList[ selectedBarIndex - 1 ].High ) && ( _barList.Low( selectedBarIndex ) < _barList.Low( selectedBarIndex - 1 ) ) )
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
+            if ( ( bl.High( selectedBarIndex  ) >= bl[ selectedBarIndex - 1 ].High ) && ( bl.Low( selectedBarIndex ) < bl.Low( selectedBarIndex - 1 ) ) )
             {
                 return true;
             }
 
-            if( ( _barList.High( selectedBarIndex  ) > _barList[ selectedBarIndex - 1 ].High ) && ( _barList.Low( selectedBarIndex ) <= _barList.Low( selectedBarIndex - 1 ) ) )
+            if( ( bl.High( selectedBarIndex  ) > bl[ selectedBarIndex - 1 ].High ) && ( bl.Low( selectedBarIndex ) <= bl.Low( selectedBarIndex - 1 ) ) )
             {
                 return true;
             }
@@ -554,12 +583,19 @@ namespace fx.Bars
                 return false;
             }
 
-            if( ( _barList.High(  secondBarIndex  ) >= _barList.High(  firstBarIndex  ) ) && ( _barList.Low(  secondBarIndex  ) < _barList.Low(  firstBarIndex  ) ) )
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
+            if ( ( bl.High(  secondBarIndex  ) >= bl.High(  firstBarIndex  ) ) && ( bl.Low(  secondBarIndex  ) < bl.Low(  firstBarIndex  ) ) )
             {
                 return true;
             }
 
-            if( ( _barList.High(  secondBarIndex  ) > _barList.High(  firstBarIndex  ) ) && ( _barList.Low(  secondBarIndex  ) <= _barList.Low(  firstBarIndex  ) ) )
+            if( ( bl.High(  secondBarIndex  ) > bl.High(  firstBarIndex  ) ) && ( bl.Low(  secondBarIndex  ) <= bl.Low(  firstBarIndex  ) ) )
             {
                 return true;
             }
@@ -567,22 +603,20 @@ namespace fx.Bars
             return false;
         }
 
-        
-
-        
-
-        
-        
-
-        
-
         public ref SBar Current
         {
             get
             {
-                if ( _barList.Count > 0 )
+                var bl = _barList;
+
+                if ( bl == null )
                 {
-                    return ref _barList[ _barList.Count - 1 ];
+                    return ref SBar.EmptySBar;
+                }
+
+                if ( bl.Count > 0 )
+                {
+                    return ref bl[bl.Count - 1 ];
                 }
                 else
                 {
@@ -606,9 +640,16 @@ namespace fx.Bars
                 return -1;
             }
 
-            for( int i = index; i > -1; i-- )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                ref SBar bar = ref _barList[i];
+                return -1;
+            }
+
+            for ( int i = index; i > -1; i-- )
+            {
+                ref SBar bar = ref bl[i];
 
                 if( bar.IsWavePeak( ) || bar.IsWaveTrough( ) || bar.IsGannPeak( ) || bar.IsGannTrough( ) )
                 {
@@ -626,9 +667,16 @@ namespace fx.Bars
                 return -1;
             }
 
-            for( int i = index; i < TotalBarCount; i++ )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                ref SBar bar = ref _barList[i];
+                return -1;
+            }
+
+            for ( int i = index; i < TotalBarCount; i++ )
+            {
+                ref SBar bar = ref bl[i];
 
                 if( bar.IsWavePeak( ) || bar.IsWaveTrough( ) || bar.IsGannPeak( ) || bar.IsGannTrough( ) )
                 {
@@ -651,7 +699,15 @@ namespace fx.Bars
         {
             get
             {
-                return ref _barList[ _barList.Count - 1 ];
+                var bl = _barList;
+
+                if ( bl != null && bl.Count > 0 )
+                {
+                    return ref bl[bl.Count - 1];
+                }
+
+                return ref SBar.EmptySBar;
+
             }
         }
 
@@ -659,9 +715,11 @@ namespace fx.Bars
         {
             get
             {
-                if ( _barList != null && _barList.Count > 0 )
+                var bl = _barList;
+
+                if ( bl != null && bl.Count > 0 )
                 {
-                    return _barList[ _barList.Count - 1 ].BarTime;
+                    return bl[bl.Count - 1 ].BarTime;
                 }
 
                 return null;
@@ -680,9 +738,11 @@ namespace fx.Bars
         {
             get
             {
-                if ( _barList != null && _barList.Count > 0 )
+                var bl = _barList;
+
+                if ( bl != null && bl.Count > 0 )
                 {
-                    return _barList[ 0 ].BarTime;
+                    return bl[ 0 ].BarTime;
                 }
 
                 return null;                
@@ -702,8 +762,10 @@ namespace fx.Bars
         {
             get
             {
-                if ( _barList == null ) return 0;
-                return _barList.Count;
+                var bl = _barList;
+
+                if ( bl == null ) return 0;
+                return bl.Count;
             }
         }
 
@@ -731,15 +793,17 @@ namespace fx.Bars
             {
                 return _barList;
             }
-
-            
         }
 
         public bool CheckBars()
         {
-            for ( int i = 0; i < _barList.Count; i++ )
+            var bl = _barList;
+
+            if ( bl == null ) return false;
+
+            for ( int i = 0; i < bl.Count; i++ )
             {
-                if ( _barList[ i ].BarIndex != i )
+                if ( bl[ i ].BarIndex != i )
                 {
                     throw new InvalidProgramException( );
                 }
@@ -750,42 +814,62 @@ namespace fx.Bars
 
         public ref SBar GetBarByIndex( int index )
         {
-            if( index < 0 || index >= _barList.Count )
+            var bl = _barList;
+
+            if ( bl == null || index < 0 || index >= bl.Count )
             {
                 return ref SBar.EmptySBar;
-            }            
+            }
 
-            return ref _barList[ index ];
+            return ref bl[ index ];
         }
 
         public ref SBar GetBarByIndex( uint index )
         {
-            if ( index < 0 || index >= _barList.Count )
+            var bl = _barList;
+
+            if ( bl == null || index < 0 || index >= bl.Count )
             {
                 return ref SBar.EmptySBar;
             }            
 
-            return ref _barList[ index ];
+            return ref bl[ index ];
         }
 
         public ref SBar GetBarByIndex( long index )
         {
-            if( index < 0 || index >= _barList.Count )
+            var bl = _barList;
+
+            if ( bl == null || index < 0 || index >= bl.Count )
             {
                 return ref SBar.EmptySBar;
             }            
 
-            return ref _barList[ (int) index ];
+            return ref bl[ (int) index ];
         }
 
         public ref SBar GetBarByTime( DateTime barTime )
-        {                                    
-            return ref _barList.GetBarByTime( barTime );
+        {
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            return ref bl.GetBarByTime( barTime );
         }
 
         public ref SBar GetBarByTime( long rawBarTime )
         {
-            return ref _barList.GetBarByTime( rawBarTime );
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            return ref bl.GetBarByTime( rawBarTime );
         }        
 
         public ref SBar this[ int index ]
@@ -806,7 +890,9 @@ namespace fx.Bars
 
         public int iLowest( int begin, int end )
         {
-            if( ( begin < 0 ) || ( end >= _barList.Count ) )
+            var bl = _barList;
+
+            if ( ( bl == null ) || ( begin < 0 ) || ( end >= bl.Count ) )
             {
                 return -1;
             }                       
@@ -816,9 +902,9 @@ namespace fx.Bars
 
             for( int i = begin; i <= end; i++ )
             {
-                if( _barList.Low(  i  ) < lowest )
+                if( bl.Low(  i  ) < lowest )
                 {
-                    lowest = _barList.Low(  i  );
+                    lowest = bl.Low(  i  );
                     index = i;
                 }
             }
@@ -843,19 +929,21 @@ namespace fx.Bars
         /// <returns></returns>
         public int iLowest1MoreBar( int begin, int end, int localLowIndex)
         {
-            if ( ( begin < 0 ) || ( end >= _barList.Count ) )
+            var bl = _barList;
+
+            if ( ( bl == null ) || ( begin < 0 ) || ( end >= bl.Count ) )
             {
                 return -1;
             }
 
             if ( localLowIndex > -1 )
             {
-                double lowest = _barList.Low(  localLowIndex  );
+                double lowest = bl.Low(  localLowIndex  );
                 int index = localLowIndex;
 
                 if ( begin < localLowIndex && localLowIndex < end )
                 {
-                    if ( _barList.Low(  end  ) <= lowest )
+                    if ( bl.Low(  end  ) <= lowest )
                     {
                         return end;
                     }
@@ -870,7 +958,9 @@ namespace fx.Bars
 
         public int iHighest( int begin, int end )
         {
-            if ( ( begin < 0 ) || ( end >= _barList.Count ) )
+            var bl = _barList;
+
+            if ( ( bl == null ) || ( begin < 0 ) || ( end >= bl.Count ) )
             {
                 return -1;
             }
@@ -880,9 +970,9 @@ namespace fx.Bars
 
             for ( int i = begin; i <= end; i++ )
             {
-                if ( _barList.High(  i  ) > highest )
+                if ( bl.High(  i  ) > highest )
                 {
-                    highest = _barList.High(  i  );
+                    highest = bl.High(  i  );
                     index = i;
                 }
             }
@@ -892,19 +982,21 @@ namespace fx.Bars
 
         public int iHighest1MoreBar( int begin, int end, int localHighIndex )
         {
-            if ( ( begin < 0 ) || ( end >= _barList.Count ) )
+            var bl = _barList;
+
+            if ( ( bl == null ) || ( begin < 0 ) || ( end >= bl.Count ) )
             {
                 return -1;
             }
 
             if ( localHighIndex > -1 )
             {
-                double highest = _barList.High(  localHighIndex  );
+                double highest = bl.High(  localHighIndex  );
                 int index = localHighIndex;
 
                 if ( begin < localHighIndex && localHighIndex < end )
                 {
-                    if ( _barList.High(  end  ) >= highest )
+                    if ( bl.High(  end  ) >= highest )
                     {
                         return end;
                     }
@@ -916,11 +1008,18 @@ namespace fx.Bars
 
         public double GetHighest( long start, long end )
         {
+            var bl = _barList;
+
+            if ( bl == null ) 
+            {
+                return double.MinValue;
+            }
+
             double highest = double.MinValue;
 
             for( long i = start; i <= end; i++ )
             {
-                ref SBar bar = ref _barList[ (int) i ];
+                ref SBar bar = ref bl[ (int) i ];
 
                 if( bar != SBar.EmptySBar )
                 {
@@ -938,11 +1037,18 @@ namespace fx.Bars
 
         public double GetLowest( long start, long end )
         {
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return double.MaxValue;
+            }
+
             double lowest = double.MaxValue;
 
             for( long i = start; i <= end; i++ )
             {
-                double currentLow = _barList[ (int) i ].Low;
+                double currentLow = bl[ (int) i ].Low;
 
                 if( currentLow < lowest )
                 {
@@ -964,28 +1070,35 @@ namespace fx.Bars
 
             int count = indexCount;
 
-            if( count == 0 )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                count = _barList.Count - startingIndex;
+                throw new InvalidProgramException( );
             }
 
-            result = new double[ Math.Min( count, _barList.Count ) ];
+            if ( count == 0 )
+            {
+                count = bl.Count - startingIndex;
+            }
+
+            result = new double[ Math.Min( count, bl.Count ) ];
 
             int endindex;
 
-            if( ( startingIndex + count ) < _barList.Count )
+            if( ( startingIndex + count ) < bl.Count )
             {
                 endindex = startingIndex + count;
             }
             else
             {
-                endindex = _barList.Count - 1;
+                endindex = bl.Count - 1;
             }
 
             Parallel.For( startingIndex, endindex,
             k =>
             {
-                ref SBar bar = ref _barList[ k ];
+                ref SBar bar = ref bl[ k ];
                 result[ k - startingIndex ] = bar.GetValue( valueEnum );
             } );
 
@@ -996,9 +1109,17 @@ namespace fx.Bars
         {
             var output = new PooledList< double >( );
 
-            if( _barList.Count > 0 )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                foreach ( var bar in _barList )
+                return output;
+            }
+
+
+            if ( bl.Count > 0 )
+            {
+                foreach ( var bar in bl )
                 {
                     output.Add( bar.RealBodyAsPip );
                 }                
@@ -1011,9 +1132,16 @@ namespace fx.Bars
         {
             var output = new PooledList< double >( );
 
-            if ( _barList.Count > 0 )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                foreach ( var bar in _barList )
+                return output;
+            }
+
+            if ( bl.Count > 0 )
+            {
+                foreach ( var bar in bl )
                 {
                     output.Add( bar.LowerShadowLengthAsPip );
                 }
@@ -1026,9 +1154,16 @@ namespace fx.Bars
         {
             var output = new PooledList< double >( );
 
-            if ( _barList.Count > 0 )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                foreach ( var bar in _barList )
+                return output;
+            }
+
+            if ( bl.Count > 0 )
+            {
+                foreach ( var bar in bl )
                 {
                     output.Add( bar.UpperShadowLengthAsPip );
                 }
@@ -1041,9 +1176,16 @@ namespace fx.Bars
         {
             var output = new PooledList< double >( );
 
-            if ( _barList.Count > 0 )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                foreach ( var bar in _barList )
+                return output;
+            }
+
+            if ( bl.Count > 0 )
+            {
+                foreach ( var bar in bl )
                 {
                     output.Add( bar.CandleLengthAsPip );
                 }
@@ -1054,7 +1196,14 @@ namespace fx.Bars
 
         public double GetDataBarSubset( DataBarProperty valueEnum, int startingIndex )
         {
-            ref SBar bar = ref _barList[ startingIndex ];
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                throw new InvalidProgramException();
+            }
+
+            ref SBar bar = ref bl[ startingIndex ];
             return ( ( double )bar.GetValue( valueEnum ) );
         }
 
@@ -1125,58 +1274,64 @@ namespace fx.Bars
 
             long endindex = startingIndex + count;
 
-            if( endindex >= _barList.Count )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                endindex = _barList.Count;
+                return result;
+            }
+
+            if ( endindex >= bl.Count )
+            {
+                endindex = bl.Count;
             }
 
             switch( valueEnum )
             {
                 case DataBarProperty.Close:
+                {
+                    for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
                     {
-                        for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
-                        {
-                            result.Add( _barList.Close( i ) );
-                        }
+                        result.Add( bl.Close( i ) );
                     }
-                    
-                    break;
+                }                    
+                break;
 
                 case DataBarProperty.Open:
+                {
+                    for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++   )
                     {
-                        for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++   )
-                        {
-                            result.Add( _barList.Open(  i  ) );
-                        }
+                        result.Add( bl.Open(  i  ) );
                     }
-                    break;
+                }
+                break;
 
                 case DataBarProperty.High:
+                {
+                    for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
                     {
-                        for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
-                        {
-                            result.Add( _barList.High(  i  ) );
-                        }
+                        result.Add( bl.High(  i  ) );
                     }
-                    break;
+                }
+                break;
 
                 case DataBarProperty.Low:
+                {
+                    for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
                     {
-                        for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
-                        {
-                            result.Add( _barList.Low(  i  ) );
-                        }
+                        result.Add( bl.Low(  i  ) );
                     }
-                    break;
+                }
+                break;
 
                 case DataBarProperty.Volume:
+                {
+                    for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
                     {
-                        for ( int i = startingIndex; i < ( int ) ( endindex - startingIndex ); i++ )
-                        {
-                            result.Add( _barList.Volume(  i  ) );
-                        }
+                        result.Add( bl.Volume(  i  ) );
                     }
-                    break;
+                }
+                break;
                 
                 default:
                     throw new NotImplementedException( valueEnum.ToString( ) );
@@ -1251,9 +1406,11 @@ namespace fx.Bars
 
         public bool IsTodaySession( int barIndex )
         {
-            if ( _barList != null )
+            var bl = _barList;
+
+            if ( bl != null )
             {
-                return _barList.IsTodaySession( barIndex );
+                return bl.IsTodaySession( barIndex );
             }
             
 
@@ -1301,9 +1458,11 @@ namespace fx.Bars
         {
             int index = -1;
 
-            if ( _barList != null )
+            var bl = _barList;
+
+            if ( bl != null )
             {
-                index =  _barList.GetTimeBlockIndex( barTime );
+                index = bl.GetTimeBlockIndex( barTime );
 
                 return GetIndexByTime( index );
             }
@@ -1313,9 +1472,11 @@ namespace fx.Bars
 
         public DateTime? GetTimeAtIndex( int index )
         {
-            if( _barList.Count > 0 && index < _barList.Count )
+            var bl = _barList;
+
+            if ( bl != null && bl.Count > 0 && index < bl.Count )
             {
-                ref SBar bar = ref _barList[ index ];
+                ref SBar bar = ref bl[ index ];
                 return bar.BarTime;
             }
 
@@ -1354,7 +1515,12 @@ namespace fx.Bars
         /// </summary>
         public int GetIndexByTime( DateTime time )
         {
-            return _barList.GetIndexByTime( time.ToLinuxTime() );            
+            var bl = _barList;
+
+            if( bl == null )
+                return -1;
+
+            return bl.GetIndexByTime( time.ToLinuxTime() );            
         }
 
         
@@ -1366,14 +1532,21 @@ namespace fx.Bars
                 return ref GetMonthlyIndexContainingTime( time );
             }
 
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
             long min = 0;
-            long max = _barList.Count - 1;
+            long max = bl.Count - 1;
 
             while( min <= max )
             {
                 long mid     = ( min + max ) / 2;
                 
-                ref SBar bar = ref _barList[ (int) mid ];
+                ref SBar bar = ref bl[ (int) mid ];
                 var fromTime = bar.BarTime;
                 var toTime   = fromTime + period;
 
@@ -1396,13 +1569,20 @@ namespace fx.Bars
 
         public ref SBar GetMonthlyIndexContainingTime( DateTime time )
         {
-            long barCount = _barList.Count - 1;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            long barCount = bl.Count - 1;
 
             for( int i = 0; i < barCount; i++ )
             {
-                ref SBar curBar = ref _barList[ i ];
+                ref SBar curBar = ref bl[ i ];
                 var fromTime = curBar.BarTime;
-                var toTime   = _barList[( i + 1 )].BarTime;
+                var toTime   = bl[( i + 1 )].BarTime;
 
                 if( time >= fromTime && time < toTime )
                 {
@@ -1433,11 +1613,18 @@ namespace fx.Bars
 
         public void ApplyPatternsToBars( int startingIndex, int count, TACandle[ ] pattern )
         {
-            for( int i = startingIndex; i < startingIndex + count; i++ )
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
+            for ( int i = startingIndex; i < startingIndex + count; i++ )
             {
                 if( pattern[ i - startingIndex ] > 0 )
                 {
-                    ref SBar bar = ref _barList[i];
+                    ref SBar bar = ref bl[i];
                     bar.CandlePatterns = pattern[ i - startingIndex ];
                 }
             }
@@ -1445,7 +1632,14 @@ namespace fx.Bars
 
         public void ApplyPatternsToBars( CandleFormation pattern )
         {
-            var barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
+            var barCount = bl.Count;
 
             if( pattern == null )
             {
@@ -1456,7 +1650,7 @@ namespace fx.Bars
             {
                 if( i > 0 && i < barCount )
                 {
-                    ref SBar bar = ref _barList[i];
+                    ref SBar bar = ref bl[i];
                     bar.CandlePatterns = pattern.CandleType;
                 }
             }
@@ -1464,9 +1658,16 @@ namespace fx.Bars
 
         public void AddSignalsToDataBar( IEnumerable< KeyValuePair< int, TASignal > > signalCollection )
         {
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
             Parallel.ForEach( signalCollection, signal =>
             {   
-                ref SBar safeDataBars = ref _barList[ signal.Key ];
+                ref SBar safeDataBars = ref bl[ signal.Key ];
 
                 if( safeDataBars != SBar.EmptySBar )
                 {
@@ -1477,6 +1678,13 @@ namespace fx.Bars
 
         public void AddSignalsToDataBar( IEnumerable< KeyValuePair< long, TASignal > > signalCollection )
         {
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
             Parallel.ForEach( signalCollection, signal =>
             {
                 if( signal.Key == 1580449020000 )
@@ -1487,7 +1695,7 @@ namespace fx.Bars
 
                 if ( index < 0 ) return;
 
-                ref SBar safeDataBars = ref _barList[ index ];
+                ref SBar safeDataBars = ref bl[ index ];
 
                 if( safeDataBars != SBar.EmptySBar )
                 {
@@ -1502,9 +1710,16 @@ namespace fx.Bars
         {
             int count = TotalBarCount;
 
-            for( int i = 0; i < count; i++ )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                ref SBar safeDataBars = ref _barList[i];
+                return;
+            }
+
+            for ( int i = 0; i < count; i++ )
+            {
+                ref SBar safeDataBars = ref bl[i];
 
                 if( safeDataBars != SBar.EmptySBar && safeDataBars.TechnicalAnalysisSignal != TASignal.NONE )
                 {
@@ -1515,7 +1730,14 @@ namespace fx.Bars
 
         public void RemoveWavePTsFromOneBar( int removedIndex )
         {
-            ref SBar safeDataBars = ref _barList[ removedIndex ];
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
+            ref SBar safeDataBars = ref bl[ removedIndex ];
 
             if( safeDataBars != SBar.EmptySBar && safeDataBars.TechnicalAnalysisSignal != TASignal.NONE )
             {
@@ -1532,13 +1754,16 @@ namespace fx.Bars
                 return;
             }
 
-            for( int i = startIndex; i < count; i++ )
-            {
-                if( i == 83704 )
-                {
-                }
+            var bl = _barList;
 
-                ref SBar safeDataBars = ref _barList[i];
+            if ( bl == null )
+            {
+                return;
+            }
+
+            for ( int i = startIndex; i < count; i++ )
+            {                
+                ref SBar safeDataBars = ref bl[i];
 
                 if( safeDataBars.TechnicalAnalysisSignal != TASignal.NONE )
                 {
@@ -1549,11 +1774,18 @@ namespace fx.Bars
 
         public void RemoveSignalsFromList( PooledList< long > tobeRemoved, TASignal signal1, TASignal signal2 )
         {
-            foreach( long barTime in tobeRemoved )
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
+            foreach ( long barTime in tobeRemoved )
             {
                 var index = GetIndexByTime( barTime );
 
-                ref SBar safeDataBars = ref _barList[ index ];
+                ref SBar safeDataBars = ref bl[ index ];
 
                 if( safeDataBars.TechnicalAnalysisSignal != TASignal.NONE )
                 {
@@ -1566,9 +1798,16 @@ namespace fx.Bars
         {
             int count = TotalBarCount;
 
-            for( int i = 0; i < count; i++ )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                ref SBar safeDataBars = ref _barList[i];
+                return;
+            }
+
+            for ( int i = 0; i < count; i++ )
+            {
+                ref SBar safeDataBars = ref bl[i];
 
                 if( safeDataBars.TechnicalAnalysisSignal != TASignal.NONE )
                 {
@@ -1596,33 +1835,47 @@ namespace fx.Bars
 
         public void GetExtremumsOfRange( int start, int end, ref float minimum, ref float maximum, bool includeBidAsk )
         {
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
+            long barCount = bl.Count;
 
             minimum       = float.MaxValue;
             maximum       = float.MinValue;
 
             for( int i = start; i < end && i < barCount; i++ )
             {
-                if( _barList.Low(  i  ) > 0 )
+                if( bl.Low(  i  ) > 0 )
                 {
-                    minimum = ( float )Math.Min( _barList.Low(  i  ), minimum );
+                    minimum = ( float )Math.Min( bl.Low(  i  ), minimum );
                 }
 
-                if( _barList.High(  i  ) > 0 )
+                if( bl.High(  i  ) > 0 )
                 {
-                    maximum = ( float )Math.Max( _barList.High(  i  ), maximum );
+                    maximum = ( float )Math.Max( bl.High(  i  ), maximum );
                 }
             }
         }
 
         public void ClearSignalAndPattern( )
         {
-            long endindex = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return;
+            }
+
+            long endindex = bl.Count;
 
             Parallel.For( 0, endindex,
             k =>
             {
-                ref SBar bar = ref _barList[ (int) k ];
+                ref SBar bar = ref bl[ (int) k ];
                 bar.ClearSignal( );
                 bar.ClearPattern( );
             } );
@@ -1634,7 +1887,14 @@ namespace fx.Bars
 
             if( index > 0 )
             {
-                ref SBar  specificBar = ref _barList[ index ];
+                var bl = _barList;
+
+                if ( bl == null )
+                {
+                    return;
+                }
+
+                ref SBar  specificBar = ref bl[ index ];
 
                 specificBar.RemoveWavesFromDatabar( waveScenarioNo );
             }
@@ -1655,11 +1915,18 @@ namespace fx.Bars
                 return output;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return output;
+            }
+
+            long barCount = bl.Count;
 
             for( long i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ (int) i ];
+                ref SBar bar = ref bl[ (int) i ];
                 if ( bar.RemoveMatchedWavesFromDatabar( waveScenarioNo, waves.GetWaveFromScenario( waveScenarioNo ) ) )
                 {
                     output.Add( bar.LinuxTime );
@@ -1683,11 +1950,18 @@ namespace fx.Bars
                 return output;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return output;
+            }
+
+            long barCount = bl.Count;
 
             for( long i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                ref SBar bar = ref bl[ ( int ) i ];
                 if ( bar.RemoveMatchedWavesFromDatabar( waveScenarioNo, waves.ElliottWave ) )
                 {
                     output.Add( bar.LinuxTime );
@@ -1712,7 +1986,14 @@ namespace fx.Bars
                 return output;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return output;
+            }
+
+            long barCount = bl.Count;
 
             var hew1st = waves.GetWaveFromScenario( 1 ).GetFirstWave( );
 
@@ -1723,7 +2004,7 @@ namespace fx.Bars
                 for( long i = beginindex; i < endindex && i < barCount; i++ )
                 {
                     var firstInfo = hew1st.Value;
-                    ref SBar bar = ref _barList[ ( int ) i ];
+                    ref SBar bar = ref bl[ ( int ) i ];
 
                     if ( bar.MatchesWave( ref firstInfo ) )
                     {
@@ -1737,7 +2018,7 @@ namespace fx.Bars
                 for( long i = beginindex; i < endindex && i < barCount; i++ )
                 {
                     var secondInfo = hew2nd.Value;
-                    ref SBar bar = ref _barList[ ( int ) i ];
+                    ref SBar bar = ref bl[ ( int ) i ];
 
                     if ( bar.MatchesWave( ref secondInfo ) )
                     {
@@ -1771,24 +2052,31 @@ namespace fx.Bars
                 return ref SBar.EmptySBar;
             }
 
-            var maximum = _barList.High(  beginindex  );
+            var bl = _barList;
 
-            var barCount = _barList.Count;
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            var maximum = bl.High(  beginindex  );
+
+            var barCount = bl.Count;
 
             int hIndex = -1;
 
             for ( int i = beginindex; i <= endindex && i < barCount; i++ )
             {
-                if( _barList.High(  i  ) > maximum )
+                if( bl.High(  i  ) > maximum )
                 {
-                    maximum = _barList.High(  i  );
+                    maximum = bl.High(  i  );
                     hIndex = i;                    
                 }
             }
 
             if ( hIndex > -1 )
             {
-                return ref _barList[ hIndex ];
+                return ref bl[ hIndex ];
             }
             else
             {
@@ -1836,22 +2124,29 @@ namespace fx.Bars
 
             double maximum = beginBar.High;
 
-            long barCount  = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            long barCount  = bl.Count;
 
             int hBarIndex = beginBar.Index;
 
             for ( int i = beginBar.Index; i < endBar.Index && i < barCount; i++ )
             {
-                if ( _barList.High(  i  ) > maximum )
+                if ( bl.High(  i  ) > maximum )
                 {
-                    maximum = _barList.High(  i  );
+                    maximum = bl.High(  i  );
                     hBarIndex = i;
                 }
             }
 
             if ( hBarIndex > -1 )
             {
-                return ref _barList[ hBarIndex ];
+                return ref bl[ hBarIndex ];
             }
             else
             {
@@ -1908,22 +2203,29 @@ namespace fx.Bars
 
             double minimum = beginBar.Low;
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            long barCount = bl.Count;
 
             int lBar = beginBar.Index;
 
             for ( int i = beginBar.Index; i <= endBar.Index && i < barCount; i++ )
             {
-                if( _barList.Low(  i  ) < minimum )
+                if( bl.Low(  i  ) < minimum )
                 {
-                    minimum = _barList.Low(  i  );
+                    minimum = bl.Low(  i  );
                     lBar = i;
                 }
             }
 
             if ( lBar > -1 )
             {
-                return ref _barList[ lBar ];
+                return ref bl[ lBar ];
             }
             else
             {
@@ -1932,10 +2234,17 @@ namespace fx.Bars
         }
 
         private ref SBar GetPreviousBar( DateTime beginBarTime  )
-        {            
-            for( long i = 0; i <= TotalBarCount; i++ )
+        {
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                return ref SBar.EmptySBar;
+            }
+
+            for ( long i = 0; i <= TotalBarCount; i++ )
+            {
+                ref SBar bar = ref bl[ ( int ) i ];
 
                 if ( bar.BarTime > beginBarTime )
                 {                    
@@ -1948,9 +2257,16 @@ namespace fx.Bars
 
         private ref SBar GetNextBar( DateTime beginBarTime )
         {
-            for( long i = 0; i <= TotalBarCount; i++ )
+            var bl = _barList;
+
+            if ( bl == null )
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                return ref SBar.EmptySBar;
+            }
+
+            for ( long i = 0; i <= TotalBarCount; i++ )
+            {
+                ref SBar bar = ref bl[ ( int ) i ];
 
                 if ( bar.BarTime > beginBarTime )
                 {
@@ -1971,17 +2287,24 @@ namespace fx.Bars
                 return ref SBar.EmptySBar;
             }
 
-            var minimum  = _barList.Low(  beginindex  );
+            var bl = _barList;
 
-            var barCount = _barList.Count;
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            var minimum  = bl.Low(  beginindex  );
+
+            var barCount = bl.Count;
 
             int lBar     = -1;
 
             for ( int i = beginindex; i <= endindex && i < barCount; i++ )
             {
-                if( _barList.Low(  i  ) < minimum )
+                if( bl.Low(  i  ) < minimum )
                 {
-                    minimum = _barList.Low(  i  );
+                    minimum = bl.Low(  i  );
                     lBar = i;                    
                 }
             }
@@ -1989,7 +2312,7 @@ namespace fx.Bars
 
             if ( lBar > -1 )
             {
-                return ref _barList[ lBar ];
+                return ref bl[ lBar ];
             }
             else
             {
@@ -2020,12 +2343,19 @@ namespace fx.Bars
                 return false;
             }
 
-            if( ( _barList.High(  firstBarIndex  ) >= _barList.High(  secondBarIndex  ) ) && ( _barList.Low(  firstBarIndex  ) < _barList.Low(  secondBarIndex  ) ) )
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
+            if ( ( bl.High(  firstBarIndex  ) >= bl.High(  secondBarIndex  ) ) && ( bl.Low(  firstBarIndex  ) < bl.Low(  secondBarIndex  ) ) )
             {
                 return true;
             }
 
-            if( ( _barList.High(  firstBarIndex  ) > _barList.High(  secondBarIndex  ) ) && ( _barList.Low(  firstBarIndex  ) <= _barList.Low(  secondBarIndex  ) ) )
+            if( ( bl.High(  firstBarIndex  ) > bl.High(  secondBarIndex  ) ) && ( bl.Low(  firstBarIndex  ) <= bl.Low(  secondBarIndex  ) ) )
             {
                 return true;
             }
@@ -2259,8 +2589,15 @@ namespace fx.Bars
         public bool GetBarThatBreakWaveFourAndExtremumIndex( ref SBar wave4Bar, TrendDirection trend, out SBar wave5, ref SBar bBar )
         {
             wave5             = default;
-            
-            long barCount     = _barList.Count;
+
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
+            long barCount     = bl.Count;
 
             double wave4Low   = wave4Bar.Low;
             double wave4High  = wave4Bar.High;
@@ -2275,17 +2612,17 @@ namespace fx.Bars
             {
                 for( int i = wave4Bar.Index; i < barCount; i++ )
                 {
-                    if( _barList.High(  i  ) > maximum )
+                    if( bl.High(  i  ) > maximum )
                     {
-                        maximum = _barList.High(  i  );
+                        maximum = bl.High(  i  );
                         maximumIndex = i;
                     }
 
-                    if( _barList.Low(  i  ) < wave4Low )
+                    if( bl.Low(  i  ) < wave4Low )
                     {
-                        wave5 = ref _barList[ (int) maximumIndex ];
+                        wave5 = ref bl[ (int) maximumIndex ];
 
-                        bBar = ref _barList[i];
+                        bBar = ref bl[i];
 
                         return true;
                     }
@@ -2295,17 +2632,17 @@ namespace fx.Bars
             {
                 for( int i = wave4Bar.Index; i < barCount; i++ )
                 {
-                    if( _barList.Low(  i  ) < minimum )
+                    if( bl.Low(  i  ) < minimum )
                     {
-                        minimum = _barList.Low(  i  );
+                        minimum = bl.Low(  i  );
                         minimumIndex = i;
                     }
 
-                    if( _barList.High(  i  ) > wave4High )
+                    if( bl.High(  i  ) > wave4High )
                     {
-                        wave5 = ref _barList[ ( int ) minimumIndex ];
+                        wave5 = ref bl[ ( int ) minimumIndex ];
 
-                        bBar = ref _barList[i];
+                        bBar = ref bl[i];
 
                         return true;
                     }
@@ -2328,7 +2665,14 @@ namespace fx.Bars
                 return false;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
+            long barCount = bl.Count;
 
             for( long i = beginindex; i < endindex && i < barCount; i++ )
             {
@@ -2337,7 +2681,7 @@ namespace fx.Bars
                 foreach( var wave in hewAll )
                 {
                     var refWave = wave;
-                    ref SBar bar = ref _barList[ ( int ) i ];
+                    ref SBar bar = ref bl[ ( int ) i ];
 
                     if ( bar.MatchesWave( ref refWave ) )
                     {
@@ -2359,7 +2703,14 @@ namespace fx.Bars
                 beginindex = 0;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return -1;
+            }
+
+            long barCount = bl.Count;
 
             if( endindex == -1 )
             {
@@ -2371,7 +2722,7 @@ namespace fx.Bars
 
             for( long i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ (int) i ];
+                ref SBar bar = ref bl[ (int) i ];
 
                 if( bar.BarTime >= beginTime && bar.BarTime <= endTime )
                 {
@@ -2410,7 +2761,14 @@ namespace fx.Bars
                 beginindex = 0;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            long barCount = bl.Count;
 
             if( endindex == -1 )
             {
@@ -2423,7 +2781,7 @@ namespace fx.Bars
 
             for( int i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[i];
+                ref SBar bar = ref bl[i];
 
                 if( bar.BarTime >= beginTime && bar.BarTime <= endTime )
                 {
@@ -2448,7 +2806,7 @@ namespace fx.Bars
 
             if ( hBar > -1 )
             {
-                return ref _barList[ hBar ];
+                return ref bl[ hBar ];
             }
             else
             {
@@ -2467,11 +2825,18 @@ namespace fx.Bars
                 return ref SBar.EmptySBar;
             }
 
-            long barCount = _barList.Count;            
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return ref SBar.EmptySBar;
+            }
+
+            long barCount = bl.Count;            
 
             for( long i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ (int) i ];
+                ref SBar bar = ref bl[ (int) i ];
                 
                 if ( bar.MatchesWave( ref wave ) )
                 {
@@ -2495,14 +2860,21 @@ namespace fx.Bars
                 return false;
             }
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
+            long barCount = bl.Count;
 
             for( long i = beginindex; i < endindex && i < barCount; i++ )
             {
                 foreach( WaveInfo wave in waves )
                 {
                     var refWave = wave; 
-                    ref SBar bar = ref _barList[ ( int ) i ];
+                    ref SBar bar = ref bl[ ( int ) i ];
 
                     if ( bar.MatchesWave( ref refWave ) )
                     {
@@ -2525,14 +2897,21 @@ namespace fx.Bars
         }
 
         public bool WasBrokenUpWard(ref SBar barB)
-        {            
+        {
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
             int beginindex = barB.Index;
             var brokenLevel = barB.High;
-            long barCount = _barList.Count;
+            long barCount = bl.Count;
 
             for (long i = beginindex; i < barCount; i++)
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                ref SBar bar = ref bl[ ( int ) i ];
                 if (bar.High > brokenLevel )
                 {
                     return true;
@@ -2544,13 +2923,20 @@ namespace fx.Bars
 
         public bool WasBrokenDownward(ref SBar barB)
         {
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return false;
+            }
+
             int beginindex = barB.Index;
             var brokenLevel = barB.Low;
-            long barCount = _barList.Count;
+            long barCount = bl.Count;
 
             for (long i = beginindex; i < barCount; i++)
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                ref SBar bar = ref bl[ ( int ) i ];
                 if (bar.Low < brokenLevel)
                 {
                     return true;
@@ -2562,11 +2948,18 @@ namespace fx.Bars
 
         public int GetIndexBreakDown( long beginindex, long endindex, double brokenLevel )
         {
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return -1;
+            }
+
+            long barCount = bl.Count;
 
             for ( long i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                ref SBar bar = ref bl[ ( int ) i ];
                 if ( bar.Low < brokenLevel )
                 {
                     return (int) i;
@@ -2581,11 +2974,18 @@ namespace fx.Bars
             long lowest = 0;
             long higest = 0;
 
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return default;
+            }
+
+            long barCount = bl.Count;
 
             for ( long i = 0;  i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                ref SBar bar = ref bl[ ( int ) i ];
                 
                 if ( bar.IsSelected )
                 {
@@ -2601,16 +3001,23 @@ namespace fx.Bars
                 }
             }
 
-            return ( _barList.Period(), ( lowest, higest ) );
+            return (bl.Period(), ( lowest, higest ) );
         }
 
         public int GetIndexBreakUp( long beginindex, long endindex, double brokenLevel )
         {
-            long barCount = _barList.Count;
+            var bl = _barList;
+
+            if ( bl == null )
+            {
+                return -1;
+            }
+
+            long barCount = bl.Count;
 
             for ( long i = beginindex; i < endindex && i < barCount; i++ )
             {
-                ref SBar bar = ref _barList[ ( int ) i ];
+                ref SBar bar = ref bl[ ( int ) i ];
                 if ( bar.High > brokenLevel )
                 {
                     return ( int ) i;
