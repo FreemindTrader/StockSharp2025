@@ -257,25 +257,25 @@ namespace FreemindAITrade.ViewModels
 
             ChartVM.ScichartSurfaceViewModels.CollectionChanged += Step03_ChartOrIndicatorPanesAdded;
 
-            ChartVM.CreateOrder += TonyOnCreateOrder;
-            ChartVM.MoveOrder += TonyOnMoveOrder;
-            ChartVM.CancelOrder += TonyOnCancelOrder;
-            ChartVM.AnnotationCreated += TonyOnAnnotationCreated;
-            ChartVM.AnnotationModified += TonyOnAnnotationModified;
-            ChartVM.AnnotationDeleted += TonyOnAnnotationDeleted;
-            ChartVM.SubscribeCandleElement += Step4_SubscribeCandleUiEventHandler;
-            ChartVM.SubscribeIndicatorElement += Step08_SubscribeIndicatorUIEventHandler;
-            ChartVM.SubscribeOrderElement += TonyOnSubscribeOrderElement;
-            ChartVM.SubscribeTradeElement += TonyOnSubscribeTradeElement;
-            ChartVM.UnSubscribeElement += TonyOnUnSubscribeElement;
+            ChartVM.CreateOrder                                 += TonyOnCreateOrder;
+            ChartVM.MoveOrder                                   += TonyOnMoveOrder;
+            ChartVM.CancelOrder                                 += TonyOnCancelOrder;
+            ChartVM.AnnotationCreated                           += TonyOnAnnotationCreated;
+            ChartVM.AnnotationModified                          += TonyOnAnnotationModified;
+            ChartVM.AnnotationDeleted                           += TonyOnAnnotationDeleted;
+            ChartVM.SubscribeCandleElement                      += Step4_SubscribeCandleUiEventHandler;
+            ChartVM.SubscribeIndicatorElement                   += Step08_SubscribeIndicatorUIEventHandler;
+            ChartVM.SubscribeOrderElement                       += TonyOnSubscribeOrderElement;
+            ChartVM.SubscribeTradeElement                       += TonyOnSubscribeTradeElement;
+            ChartVM.UnSubscribeElement                          += TonyOnUnSubscribeElement;
 
 
 
-            ChartVM.RegisterOrder += TonyOnRegisterOrder;
-            ChartVM.SettingsChanged += TonyOnSettingsChanged;
-            ChartVM.ChartAreas.Added += new Action<ChartArea>( TonyOnAreasAdded );
-            ChartVM.ChartAreas.Removed += new Action<ChartArea>( TonyOnAreasRemoved );
-            ChartVM.ChartAreas.Cleared += new Action( TonyOnAreaCleared );
+            ChartVM.RegisterOrder                               += TonyOnRegisterOrder;
+            ChartVM.SettingsChanged                             += TonyOnSettingsChanged;
+            ChartVM.ChartAreas.Added                            += new Action<ChartArea>( TonyOnAreasAdded );
+            ChartVM.ChartAreas.Removed                          += new Action<ChartArea>( TonyOnAreasRemoved );
+            ChartVM.ChartAreas.Cleared                          += new Action( TonyOnAreaCleared );
         }
 
 
@@ -294,25 +294,25 @@ namespace FreemindAITrade.ViewModels
 
             ChartVM.ScichartSurfaceViewModels.CollectionChanged -= Step03_ChartOrIndicatorPanesAdded;
 
-            ChartVM.CreateOrder -= TonyOnCreateOrder;
-            ChartVM.MoveOrder -= TonyOnMoveOrder;
-            ChartVM.CancelOrder -= TonyOnCancelOrder;
-            ChartVM.AnnotationCreated -= TonyOnAnnotationCreated;
-            ChartVM.AnnotationModified -= TonyOnAnnotationModified;
-            ChartVM.AnnotationDeleted -= TonyOnAnnotationDeleted;
-            ChartVM.SubscribeCandleElement -= Step4_SubscribeCandleUiEventHandler;
-            ChartVM.SubscribeIndicatorElement -= Step08_SubscribeIndicatorUIEventHandler;
-            ChartVM.SubscribeOrderElement -= TonyOnSubscribeOrderElement;
-            ChartVM.SubscribeTradeElement -= TonyOnSubscribeTradeElement;
-            ChartVM.UnSubscribeElement -= TonyOnUnSubscribeElement;
+            ChartVM.CreateOrder                                 -= TonyOnCreateOrder;
+            ChartVM.MoveOrder                                   -= TonyOnMoveOrder;
+            ChartVM.CancelOrder                                 -= TonyOnCancelOrder;
+            ChartVM.AnnotationCreated                           -= TonyOnAnnotationCreated;
+            ChartVM.AnnotationModified                          -= TonyOnAnnotationModified;
+            ChartVM.AnnotationDeleted                           -= TonyOnAnnotationDeleted;
+            ChartVM.SubscribeCandleElement                      -= Step4_SubscribeCandleUiEventHandler;
+            ChartVM.SubscribeIndicatorElement                   -= Step08_SubscribeIndicatorUIEventHandler;
+            ChartVM.SubscribeOrderElement                       -= TonyOnSubscribeOrderElement;
+            ChartVM.SubscribeTradeElement                       -= TonyOnSubscribeTradeElement;
+            ChartVM.UnSubscribeElement                          -= TonyOnUnSubscribeElement;
 
 
 
-            ChartVM.RegisterOrder -= TonyOnRegisterOrder;
-            ChartVM.SettingsChanged -= TonyOnSettingsChanged;
-            ChartVM.ChartAreas.Added -= new Action<ChartArea>( TonyOnAreasAdded );
-            ChartVM.ChartAreas.Removed -= new Action<ChartArea>( TonyOnAreasRemoved );
-            ChartVM.ChartAreas.Cleared -= new Action( TonyOnAreaCleared );
+            ChartVM.RegisterOrder                               -= TonyOnRegisterOrder;
+            ChartVM.SettingsChanged                             -= TonyOnSettingsChanged;
+            ChartVM.ChartAreas.Added                            -= new Action<ChartArea>( TonyOnAreasAdded );
+            ChartVM.ChartAreas.Removed                          -= new Action<ChartArea>( TonyOnAreasRemoved );
+            ChartVM.ChartAreas.Cleared                          -= new Action( TonyOnAreaCleared );
         }
 
         protected override void InitializeChart()
