@@ -2672,7 +2672,7 @@ namespace fx.Algorithm
 
                             case ElliottWaveEnum.Wave5:
                             case ElliottWaveEnum.Wave5C:
-                            return ElliottWaveEnum.Wave1;
+                            return ElliottWaveEnum.Wave1B;
 
                             case ElliottWaveEnum.Wave4:
                             return ElliottWaveEnum.Wave5;
@@ -6525,6 +6525,10 @@ namespace fx.Algorithm
         {
             switch ( wave )
             {
+                case ElliottWaveEnum.Wave1B:                
+                    return ( FibonacciType.ABCWaveBRetracement );
+                
+
                 case ElliottWaveEnum.Wave5:
                 case ElliottWaveEnum.Wave5C:
                 case ElliottWaveEnum.Wave2:

@@ -253,7 +253,7 @@ namespace FreemindAITrade.ViewModels
 
                 //if ( indicator.Name == "SMA" )
                 //{
-                    
+
                 //}
                 //else if ( indicator.Name == "MACD Histogram" )
                 //{
@@ -261,7 +261,7 @@ namespace FreemindAITrade.ViewModels
                 //}
                 //else if ( indicator.Name == "HewRsiComplex" )
                 //{
-
+                // https://www.castawaytrader.com/2022/10/16/es-mini-the-weekend-update-my-green-box-is-located-200-points-lower/
                 //}
                 //else
                 {
