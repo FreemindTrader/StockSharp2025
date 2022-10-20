@@ -96,6 +96,10 @@ namespace FreemindAITrade.ViewModels
                         else
                         {
                             // We are missing some databars.
+
+                            _lastFinishedBarTime = candleTime;
+
+                            _candleBuffer.Add( cmd.Candle );
                         }
                     }
                     else
