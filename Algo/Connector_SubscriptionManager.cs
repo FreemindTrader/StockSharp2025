@@ -84,8 +84,13 @@ namespace StockSharp.Algo
 					* 
 					* ------------------------------------------------------------------------------------------------------------------------------------------- */
 
-					if (_currentCandle.State == CandleStates.Finished && message.BatchStatus != fx.Base.fxBatchStatus.Latest)
+					if (_currentCandle.State == CandleStates.Finished )
 						return false;
+
+					if ( message.BatchStatus != fx.Base.fxBatchStatus.LiveUpdate )
+                    {
+						throw new NotImplementedException( );
+                    }
 
 					_currentCandle.Update(message);
 				}

@@ -1,6 +1,7 @@
 ﻿using System;
 using fx.Definitions;
 using SciChart.Charting.Model.DataSeries;
+using StockSharp.Algo.Candles;
 using fx.Collections;
 using Ecng.Configuration;
 using fx.Bars;
@@ -292,6 +293,7 @@ namespace fx.Bars
             }
 
             return null;
-        }        
+        }
+        
     }
 }

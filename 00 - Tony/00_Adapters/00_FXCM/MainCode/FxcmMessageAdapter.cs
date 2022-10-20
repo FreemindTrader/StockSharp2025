@@ -349,10 +349,14 @@ namespace StockSharp.FxConnectFXCM
 
 																if ( now - lastUpdateTime >= TimeSpan.FromSeconds( 30 ) )
 																{
-																	if ( UpdateLatestCandle( DateTime.UtcNow ) )
-																	{
-																		lastUpdateTime = now;
+																	if ( ! _isReloading )
+                                                                    {
+																		if ( UpdateLatestCandle( DateTime.UtcNow ) )
+																		{
+																			lastUpdateTime = now;
+																		}
 																	}
+																	
 																}
 
 																time = now;

@@ -184,7 +184,7 @@ namespace FreemindAITrade.ViewModels
             RaiseCandleLoadedEvent();
 
 
-            RequestMarketDataFromLastBar( _lastBarTime );
+            RequestMarketDataFromLastBar( _lastFinishedBarTime );
 
             _preloadCandlesStatus = WorkFlowStatus.DoneWork;
             return _lastBarTime;

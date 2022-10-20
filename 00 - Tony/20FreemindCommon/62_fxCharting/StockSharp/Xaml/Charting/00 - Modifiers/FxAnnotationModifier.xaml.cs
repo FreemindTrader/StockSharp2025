@@ -884,7 +884,7 @@ namespace fx.Charting
 
             if ( hasAnnotation )
             {
-                BarManager.SetDXContextMenu( annoBase, menu );
+                //BarManager.SetDXContextMenu( annoBase, menu );
             }
 
 

@@ -139,7 +139,7 @@ namespace fx.Indicators
 
             barsLTF = GetDatabarRepo( lowerTimeSpan );
 
-            if ( barsLTF == null || barsLTF.DoneLoading == false )
+            if ( barsLTF == null || barsLTF.DoneIndicatorCalculation == false )
                 return;
             var lowerWaveImpt = _hews.GetGannSwingDictionary(lowerTimeSpan);
 
@@ -226,7 +226,7 @@ namespace fx.Indicators
 
             barsLTF = GetDatabarRepo( lowerTimeSpan );
 
-            if ( barsLTF == null || barsLTF.DoneLoading == false )
+            if ( barsLTF == null || barsLTF.DoneIndicatorCalculation == false )
                 return;
             var lowerWaveImpt = _hews.GetAscendingWaveImportanceClone( lowerTimeSpan );
 

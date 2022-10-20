@@ -25,6 +25,8 @@ namespace StockSharp.FxConnectFXCM
 
         private DateTime _lastOfferUpdateTime = DateTime.MinValue;
 
+        private bool _isReloading = false;
+
         private void OnOfferTableLoaded( ISubscriptionMessage msg, O2GResponse response )
         {
             var o2Gsession = GetSession( );
@@ -292,7 +294,7 @@ namespace StockSharp.FxConnectFXCM
                             {
                                 if ( !_candlesLiveDownload.ContainsKey( (symbol, period) ) )
                                 {
-                                    FullDownloadHistoricBars( mdMsg );
+                                    OneTimeDownloadInitialMissingBars( mdMsg );
                                 }
 
                                 return;
@@ -300,7 +302,9 @@ namespace StockSharp.FxConnectFXCM
 
                             if ( info.ContainsKey( "ReloadCandles" ) || info.ContainsKey( "DownloadBackward" ) )
                             {
-                                ReloadHistoricBars( mdMsg );
+                                _isReloading = true;
+                                ReloadUserRequestedDatabars( mdMsg );
+                                _isReloading = false;
                                 return;
                             }
                         }
@@ -310,15 +314,15 @@ namespace StockSharp.FxConnectFXCM
                             {
                                 if ( period >= TimeSpan.FromDays( 1 ) )
                                 {
-                                    DownloadHistoricBars( mdMsg );
+                                    OneTimeDownloadDailyBars( mdMsg );
                                 }
                                 else if ( period >= TimeSpan.FromHours( 1 ) )
                                 {
-                                    DownloadIntradayHoulyHistoricBars( mdMsg );
+                                    OneTimeDownloadHourlyBars( mdMsg );
                                 }
                                 else
                                 {
-                                    DownloadIntradayHistoricBars( mdMsg );
+                                    OneTimeDownloadMinutesBars( mdMsg );
                                 }
                             }
                         }
@@ -381,7 +385,7 @@ namespace StockSharp.FxConnectFXCM
             SendOutMessage( newsMessage );
         }
 
-        public void ReloadHistoricBars( MarketDataMessage mdMsg )
+        public void ReloadUserRequestedDatabars( MarketDataMessage mdMsg )
         {
             var o2Gsession          = GetSession( );
 
@@ -542,7 +546,7 @@ namespace StockSharp.FxConnectFXCM
                                 msg.OriginalTransactionId = transactionId;
                                 msg.SubscriptionId        = transactionId;
                                 msg.State                 = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
-                                msg.BatchStatus           = fxBatchStatus.Batching;
+                                msg.BatchStatus           = fxBatchStatus.Reloaded;
 
                                 if ( barDate > latestBarTime )
                                 {
@@ -580,17 +584,10 @@ namespace StockSharp.FxConnectFXCM
                 if ( buffer.Count > 1 )
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
-
-                    if ( period == TimeSpan.FromMinutes( 1 ) )
-                    {
-                        acending.RemoveAt( acending.Count - 1 );
-                    }
-
-                    var begin         = acending.First( );
-                    begin.BatchStatus = fxBatchStatus.BeginBatch;
+                    
+                    var begin         = acending.First( );                    
                     var end           = acending.Last( );
-                    end.BatchStatus = fxBatchStatus.EndBatch;
-
+                    
                     foreach ( var candleMsg in acending )
                     {
                         SendOutMessage( candleMsg );
@@ -619,7 +616,7 @@ namespace StockSharp.FxConnectFXCM
             }
         }
 
-        public void FullDownloadHistoricBars( MarketDataMessage mdMsg )
+        public void OneTimeDownloadInitialMissingBars( MarketDataMessage mdMsg )
         {
             var o2Gsession          = GetSession( );
 
@@ -789,7 +786,7 @@ namespace StockSharp.FxConnectFXCM
 
                                  
                                 
-                                msg.BatchStatus = fxBatchStatus.Batching;
+                                msg.BatchStatus = fxBatchStatus.InitialUpdate;
 
                                 if ( barDate > latestBarTime )
                                 {
@@ -826,16 +823,11 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period == TimeSpan.FromMinutes( 1 ) )
-                    {
-                        acending.RemoveAt( acending.Count - 1 );
-                    }
+                    acending[acending.Count - 1].State = CandleStates.Active;
 
-                    var begin         = acending.First( );
-                    begin.BatchStatus = fxBatchStatus.BeginBatch;
+                    var begin         = acending.First( );                    
                     var end           = acending.Last( );
-                    end.BatchStatus = fxBatchStatus.EndBatch;
-
+                    
                     foreach ( var candleMsg in acending )
                     {
                         SendOutMessage( candleMsg );
@@ -885,7 +877,7 @@ namespace StockSharp.FxConnectFXCM
             }
         }
 
-        public void DownloadHistoricBars( MarketDataMessage mdMsg )
+        public void OneTimeDownloadDailyBars( MarketDataMessage mdMsg )
         {
             var o2Gsession          = GetSession( );
 
@@ -1044,7 +1036,7 @@ namespace StockSharp.FxConnectFXCM
                                 msg.OriginalTransactionId = transactionId;
                                 msg.SubscriptionId        = transactionId;
                                 msg.State = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
-                                msg.BatchStatus           = fxBatchStatus.Batching;
+                                msg.BatchStatus           = fxBatchStatus.InitialUpdate;
 
                                 if ( barDate > latestBarTime )
                                 {
@@ -1081,15 +1073,11 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period == TimeSpan.FromMinutes( 1 ) )
-                    {
-                        acending.RemoveAt( acending.Count - 1 );
-                    }
+                    acending[acending.Count - 1].State = CandleStates.Active;
 
-                    var begin         = acending.First( );
-                    begin.BatchStatus = fxBatchStatus.BeginBatch;
+                    var begin         = acending.First( );                    
                     var end           = acending.Last( );
-                    end.BatchStatus = fxBatchStatus.EndBatch;
+                    
 
                     foreach ( var candleMsg in acending )
                     {
@@ -1105,8 +1093,7 @@ namespace StockSharp.FxConnectFXCM
                 else if ( buffer.Count == 1 )
                 {
                     foreach ( var candleMsg in buffer )
-                    {
-                        candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                    {                        
                         SendOutMessage( candleMsg );
                     }
 
@@ -1140,7 +1127,7 @@ namespace StockSharp.FxConnectFXCM
             }
         }
 
-        public void DownloadIntradayHistoricBars( MarketDataMessage mdMsg )
+        public void OneTimeDownloadMinutesBars( MarketDataMessage mdMsg )
         {
             var o2Gsession = GetSession( );
 
@@ -1297,7 +1284,7 @@ namespace StockSharp.FxConnectFXCM
                                 msg.OriginalTransactionId = transactionId;
                                 msg.SubscriptionId        = transactionId;
                                 msg.State = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
-                                msg.BatchStatus           = fxBatchStatus.Batching;
+                                msg.BatchStatus           = fxBatchStatus.InitialUpdate;
 
                                 if ( barDate > latestBarTime )
                                 {
@@ -1316,12 +1303,10 @@ namespace StockSharp.FxConnectFXCM
                                     {
                                         var acending = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
+                                        acending[acending.Count - 1].State = CandleStates.Active;
 
-
-                                        var begin         = acending.First( );
-                                        begin.BatchStatus = fxBatchStatus.BeginBatch;
-                                        var end           = acending.Last( );
-                                        end.BatchStatus = fxBatchStatus.EndBatch;
+                                        var begin         = acending.First( );                                        
+                                        var end           = acending.Last( );                                        
 
                                         foreach ( var candleMsg in acending )
                                         {
@@ -1337,8 +1322,7 @@ namespace StockSharp.FxConnectFXCM
                                     else if ( buffer.Count == 1 )
                                     {
                                         foreach ( var candleMsg in buffer )
-                                        {
-                                            candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                                        {                                            
                                             SendOutMessage( candleMsg );
                                         }
 
@@ -1381,15 +1365,11 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period == TimeSpan.FromMinutes( 1 ) )
-                    {
-                        acending.RemoveAt( acending.Count - 1 );
-                    }
+                    acending[acending.Count - 1].State = CandleStates.Active;
 
-                    var begin         = acending.First( );
-                    begin.BatchStatus = fxBatchStatus.BeginBatch;
+                    var begin         = acending.First( );                    
                     var end           = acending.Last( );
-                    end.BatchStatus = fxBatchStatus.EndBatch;
+                    
 
                     foreach ( var candleMsg in acending )
                     {
@@ -1405,8 +1385,7 @@ namespace StockSharp.FxConnectFXCM
                 else if ( buffer.Count == 1 )
                 {
                     foreach ( var candleMsg in buffer )
-                    {
-                        candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                    {                        
                         SendOutMessage( candleMsg );
                     }
 
@@ -1445,7 +1424,7 @@ namespace StockSharp.FxConnectFXCM
 
         }
 
-        public void DownloadIntradayHoulyHistoricBars( MarketDataMessage mdMsg )
+        public void OneTimeDownloadHourlyBars( MarketDataMessage mdMsg )
         {
             var o2Gsession = GetSession( );
 
@@ -1604,7 +1583,7 @@ namespace StockSharp.FxConnectFXCM
                                 msg.OriginalTransactionId = transactionId;
                                 msg.SubscriptionId        = transactionId;
                                 msg.State = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
-                                msg.BatchStatus           = fxBatchStatus.Batching;
+                                msg.BatchStatus           = fxBatchStatus.InitialUpdate;
 
                                 if ( barDate > latestBarTime )
                                 {
@@ -1621,12 +1600,11 @@ namespace StockSharp.FxConnectFXCM
                                 {
                                     if ( buffer.Count > 1 )
                                     {
-                                        var acending = buffer.OrderBy( x => x.OpenTime ).ToList( );
+                                        var acending = buffer.OrderBy( x => x.OpenTime ).ToList( );                                        
 
-                                        var begin         = acending.First( );
-                                        begin.BatchStatus = fxBatchStatus.BeginBatch;
+                                        var begin         = acending.First( );                                        
                                         var end           = acending.Last( );
-                                        end.BatchStatus   = fxBatchStatus.EndBatch;
+                                        
 
                                         foreach ( var candleMsg in acending )
                                         {
@@ -1642,8 +1620,7 @@ namespace StockSharp.FxConnectFXCM
                                     else if ( buffer.Count == 1 )
                                     {
                                         foreach ( var candleMsg in buffer )
-                                        {
-                                            candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                                        {                                            
                                             SendOutMessage( candleMsg );
                                         }
 
@@ -1686,15 +1663,10 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending      = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-                    if ( period == TimeSpan.FromMinutes( 1 ) )
-                    {
-                        acending.RemoveAt( acending.Count - 1 );
-                    }
+                    acending[acending.Count - 1].State = CandleStates.Active;
 
-                    var begin         = acending.First( );
-                    begin.BatchStatus = fxBatchStatus.BeginBatch;
-                    var end           = acending.Last( );
-                    end.BatchStatus = fxBatchStatus.EndBatch;
+                    var begin         = acending.First( );                    
+                    var end           = acending.Last( );                    
 
                     foreach ( var candleMsg in acending )
                     {
@@ -1710,8 +1682,7 @@ namespace StockSharp.FxConnectFXCM
                 else if ( buffer.Count == 1 )
                 {
                     foreach ( var candleMsg in buffer )
-                    {
-                        candleMsg.BatchStatus = fxBatchStatus.FromStorage;
+                    {                        
                         SendOutMessage( candleMsg );
                     }
 
@@ -1871,15 +1842,15 @@ namespace StockSharp.FxConnectFXCM
                                 candleMsg.OpenTime                = utcTime;
                                 candleMsg.TotalVolume             = reader.getVolume( index );
                                 candleMsg.OriginalTransactionId   = transactionId;                                
-                                candleMsg.State                   = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;
-                               
+                                candleMsg.State                   = ( upperBound >= barDate + period ) ? CandleStates.Finished : CandleStates.Active;                                                              
+
                                 if ( barDate > latestBarTime )
                                 {
                                     latestBarTime = barDate;
                                 }
 
 
-                                candleMsg.BatchStatus             = fxBatchStatus.Latest;
+                                candleMsg.BatchStatus             = fxBatchStatus.LiveUpdate;
 
                                 if ( sameDate.Date == barDate.Date )
                                 {
@@ -1929,11 +1900,7 @@ namespace StockSharp.FxConnectFXCM
                 {
                     var acending = buffer.OrderBy( x => x.OpenTime ).ToList( );
 
-
-                    if ( period == TimeSpan.FromMinutes( 1 ) )
-                    {
-                        acending.RemoveAt( acending.Count - 1 );
-                    }
+                    acending[ acending.Count - 1 ].State = CandleStates.Active;                    
 
                     foreach ( var candleMsg in acending )
                     {

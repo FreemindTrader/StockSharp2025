@@ -99,7 +99,7 @@ namespace fx.Bars
             get;
         }
 
-        bool DoneLoading
+        bool DoneIndicatorCalculation
         {
             get;
         }
