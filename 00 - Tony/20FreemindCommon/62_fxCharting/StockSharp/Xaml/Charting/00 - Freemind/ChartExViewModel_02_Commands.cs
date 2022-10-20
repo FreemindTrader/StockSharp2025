@@ -51,6 +51,37 @@ namespace fx.Charting
                 {
                     RemoveArea( area );
                 }
+
+                List<IndicatorUI> indicatorUIList = new List<IndicatorUI>();
+
+                foreach ( KeyValuePair<IfxChartElement, object> uiElements in _uiDatasource )
+                {
+                    if ( uiElements.Key is IndicatorUI ind )
+                    {
+                        indicatorUIList.Add( ind );
+                    }
+                }
+
+                //var indicatorUI = _uiDatasource.Where( p => p.Key != ( IfxChartElement )_candleStickUI ).Select( p => ( IndicatorUI )p.Key );
+
+                var indicatorUiDict = indicatorUIList.ToDictionary( ( p => p ), ind => Tuple.Create( GetIndicator( ind ), ind.ChartArea ) );
+
+                indicatorUiDict.Keys.ForEach( OnRemoveElement );
+
+                _indicators.Clear( );
+
+            //    if ( element is IndicatorUI indicator && indicator.ParentElement != null )
+            //    {
+            //        element = indicator.ParentElement;
+            //    }
+
+            //( ( IChart )this ).RemoveElement( element.ChartArea, element );
+
+            //    RefreshView();
+
+                _sma55Indicator = null;
+                _macdIndicator = null;
+                _hewRsiIndicator = null;
             }
         }
 

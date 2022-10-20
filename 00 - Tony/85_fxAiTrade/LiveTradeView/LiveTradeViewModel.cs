@@ -160,7 +160,7 @@ namespace FreemindAITrade.ViewModels
             _name                           = GetType().GetDisplayName();
 
             _bars                           = SymbolsMgr.Instance.CreateOrGetDatabarRepo( SelectedSecurity, ResponsibleTF );
-            _bars.HistoricBarUpdateEvent += _bars_HistoricBarUpdateEvent;
+            //_bars.HistoricBarUpdateEvent += _bars_HistoricBarUpdateEvent;
 
             var aaMgr = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( SelectedSecurity.Code );
 
@@ -211,7 +211,7 @@ namespace FreemindAITrade.ViewModels
                 return;
             }
 
-            InternalDrawCandles( _drawSeries, series.CandleUI, _bars.MainDataBars, (e.BeginIndex, e.EndIndex) );
+            InternalDrawCandlesAndIndicators( _drawSeries, series.CandleUI, _bars.MainDataBars, (e.BeginIndex, e.EndIndex) );
         }
 
 

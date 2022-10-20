@@ -587,7 +587,13 @@ namespace fx.Charting
 
         public void RemoveArea( ChartArea area )
         {
-            DispatcherService.BeginInvoke( () => _chartAreas.Remove( area ) );
+            DispatcherService.BeginInvoke
+            (                 
+                () =>
+                {
+                    _chartAreas.Remove( area );                    
+                }
+            );
         }
 
         public void ReSubscribeElements()

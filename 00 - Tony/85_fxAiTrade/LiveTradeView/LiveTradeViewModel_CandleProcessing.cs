@@ -21,6 +21,8 @@ namespace FreemindAITrade.ViewModels
                 return;
             }
 
+            bool isActive = false;
+
             _candlesSeries = cmd.Series;
 
             var myCandle   = cmd.Candle;
@@ -31,6 +33,7 @@ namespace FreemindAITrade.ViewModels
             if ( cmd.Candle.State == CandleStates.Active )
             {
                 endOfBatch = true;
+                isActive = true;
             }
 
             switch ( cmd.Candle.BatchStatus )
@@ -173,7 +176,14 @@ namespace FreemindAITrade.ViewModels
                     if ( barsRange == default )
                         return;
 
-                    InternalDrawCandles( cmd.Series, seriesData.CandleUI, _bars.MainDataBars, barsRange );
+                    if ( isActive )
+                    {
+                        InternalDrawFinishedCandlesAndIndicators( cmd.Series, seriesData.CandleUI, _bars.MainDataBars, barsRange );
+                    }
+                    else
+                    {
+                        InternalDrawCandlesAndIndicators( cmd.Series, seriesData.CandleUI, _bars.MainDataBars, barsRange );
+                    }                    
                 }
             }
         }

@@ -1201,6 +1201,13 @@ namespace StockSharp.Algo
 			*  
 			*			I am moving the States to the top and I wanna compare if this candle is any different
 			*			The following are the changes
+			*			
+			*			This candle update is so fucked up when working with RingBuffer.
+			*			The RingBuffer indeed is getting a reference to this candle and the candle is subjected to changes during the execution of
+			*			Step9_OnCandleStruct.
+			*			
+			*			I observed that the candle State was Active during the initial execution of Step9_OnCandleStruct
+			*			and then changed to Finished when we are drawing the Candles and indicators.
 			* 
 			* ------------------------------------------------------------------------------------------------------------------------------------------- */
 			candle.BatchStatus = message.BatchStatus;
