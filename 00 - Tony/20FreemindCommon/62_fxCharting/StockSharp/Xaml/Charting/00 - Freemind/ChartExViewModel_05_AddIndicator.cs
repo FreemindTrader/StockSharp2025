@@ -42,6 +42,10 @@ namespace fx.Charting
 {
     public partial class ChartExViewModel
     {
+        IIndicator _sma55Indicator = null;
+        IIndicator _macdIndicator = null;
+        IIndicator _hewRsiIndicator = null;
+
         [Command]
         public void Step01_AddIndicatorArea()
         {
@@ -120,7 +124,7 @@ namespace fx.Charting
 
             IIndicator indicator = null;
 
-            IIndicator sma55indicator = null;
+            
 
             if (chartUi == null)
             {
@@ -140,19 +144,24 @@ namespace fx.Charting
 
             sma55indicatorUI.IndicatorPainter = new Sma55Painter();
 
-            if (_period == TimeSpan.FromMinutes(1))
-            {                
-                sma55indicator = new SimpleMovingAverage { Length = 55 * 5 };
-            }
-            else
+            if ( _sma55Indicator == null )
             {
-                sma55indicator = new SimpleMovingAverage { Length = 55 };
+                if ( _period == TimeSpan.FromMinutes( 1 ) )
+                {
+                    _sma55Indicator = new SimpleMovingAverage { Length = 55 * 5 };
+                }
+                else
+                {
+                    _sma55Indicator = new SimpleMovingAverage { Length = 55 };
+                }
+
+                if ( _sma55Indicator != null )
+                {
+                    Step07_AddIndicatorElement( _mainChartArea, sma55indicatorUI, tonyCandleSeries, _sma55Indicator );
+                }
             }
 
-            if (sma55indicator != null)
-            {
-                Step07_AddIndicatorElement( _mainChartArea, sma55indicatorUI, tonyCandleSeries, sma55indicator);
-            }
+            
 
             var indicatorUI = new IndicatorUI();
 
@@ -160,44 +169,55 @@ namespace fx.Charting
 
             if ( e.ChartArea.Title == "MACD" )
             {
-                if ( _period == TimeSpan.FromMinutes( 1 ) )
+                if ( _macdIndicator == null )
                 {
-                    var longEma = new ExponentialMovingAverage { Length = 200 };
-                    var shortEma = new ExponentialMovingAverage { Length = 100 };
-                    var signal = new ExponentialMovingAverage { Length = 50 };
-                    var macdSmall = new MovingAverageConvergenceDivergence( longEma, shortEma );
+                    if ( _period == TimeSpan.FromMinutes( 1 ) )
+                    {
+                        var longEma = new ExponentialMovingAverage { Length = 200 };
+                        var shortEma = new ExponentialMovingAverage { Length = 100 };
+                        var signal = new ExponentialMovingAverage { Length = 50 };
+                        var macdSmall = new MovingAverageConvergenceDivergence( longEma, shortEma );
 
-                    indicator = new MovingAverageConvergenceDivergenceHistogram( macdSmall, signal );
-                }
-                else
-                {
-                    var longEma = new ExponentialMovingAverage { Length = 40 };
-                    var shortEma = new ExponentialMovingAverage { Length = 20 };
-                    var signal = new ExponentialMovingAverage { Length = 10 };
-                    var macdSmall = new MovingAverageConvergenceDivergence( longEma, shortEma );
+                        _macdIndicator = new MovingAverageConvergenceDivergenceHistogram( macdSmall, signal );
+                    }
+                    else
+                    {
+                        var longEma = new ExponentialMovingAverage { Length = 40 };
+                        var shortEma = new ExponentialMovingAverage { Length = 20 };
+                        var signal = new ExponentialMovingAverage { Length = 10 };
+                        var macdSmall = new MovingAverageConvergenceDivergence( longEma, shortEma );
 
-                    indicator = new MovingAverageConvergenceDivergenceHistogram( macdSmall, signal );
-                }
+                        _macdIndicator = new MovingAverageConvergenceDivergenceHistogram( macdSmall, signal );
+                    }
+
+                    indicator = _macdIndicator;
+                }                
             }
             else if ( e.ChartArea.Title == "RSI" )
             {
-                HewRsiComplex rsiIndicator = new HewRsiComplex();
-                indicatorUI.IndicatorPainter = new HewRsiPainter();
+                if ( _hewRsiIndicator == null )
+                {
+                    HewRsiComplex rsiIndicator = new HewRsiComplex();
+                    indicatorUI.IndicatorPainter = new HewRsiPainter();
 
-                if ( _period == TimeSpan.FromMinutes( 1 ) )
-                {
-                    rsiIndicator.Length = 55;
-                }
-                else if ( _period == TimeSpan.FromMinutes( 5 ) || _period == TimeSpan.FromMinutes( 15 ) )
-                {
-                    rsiIndicator.Length = 18;
-                }
-                else if ( _period == TimeSpan.FromHours( 1 ) )
-                {
-                    rsiIndicator.Length = 12;
-                }
+                    if ( _period == TimeSpan.FromMinutes( 1 ) )
+                    {
+                        rsiIndicator.Length = 55;
+                    }
+                    else if ( _period == TimeSpan.FromMinutes( 5 ) || _period == TimeSpan.FromMinutes( 15 ) )
+                    {
+                        rsiIndicator.Length = 18;
+                    }
+                    else if ( _period == TimeSpan.FromHours( 1 ) )
+                    {
+                        rsiIndicator.Length = 12;
+                    }
 
-                indicator = rsiIndicator;
+                    _hewRsiIndicator = rsiIndicator;
+                }
+                
+
+                indicator = _hewRsiIndicator;
             }
 
             

@@ -257,7 +257,14 @@ namespace FreemindAITrade.ViewModels
 
                 //if ( indicator.Name == "SMA" )
                 //{
+                //    for ( int i = 0; i < count; i++ )
+                //    {
+                //        ref SBar bar = ref candleSeriesData.BarsRepo[i];
 
+                //        var indicatorFm = fmIndicator.GetIndicatorValue( indicator, i );
+
+                //        indicatorList.SetIndicatorValue( bar.BarTime, indicatorFm );
+                //    }
                 //}
                 //else if ( indicator.Name == "MACD Histogram" )
                 //{
@@ -420,7 +427,7 @@ namespace FreemindAITrade.ViewModels
 
                 toBeDrawCandle.Clear();
 
-                InternalDrawCandles( _candlesSeries, candleSeriesData.CandleUI, _bars.MainDataBars, bars );
+                InternalDrawCandlesAndIndicators( _candlesSeries, candleSeriesData.CandleUI, _bars.MainDataBars, bars );
 
                 //_flushingCandles = false;
             }
@@ -429,7 +436,7 @@ namespace FreemindAITrade.ViewModels
 
 
 
-        void InternalDrawCandles( CandleSeries series, CandlestickUI candleUI, SBarList barList, (uint first, uint last) barsRange )
+        private void InternalDrawCandlesAndIndicators( CandleSeries series, CandlestickUI candleUI, SBarList barList, (uint first, uint last) barsRange )
         {
             ChartDrawDataEx drawData = new ChartDrawDataEx();
 
@@ -461,6 +468,63 @@ namespace FreemindAITrade.ViewModels
                             var myBar = _bars[ i ];
 
                             var indicatorFm = indicator.Item2.MyIndicator.Process( ref myBar );                            
+
+                            indicatorList.SetIndicatorValue( myBar.BarTime, indicatorFm );
+                        }
+                    }
+                }
+            }
+
+
+
+            if ( !_doneDrawing )
+            {
+                /* -------------------------------------------------------------------------------------------------------------------------------------------
+                * 
+                *  Since we haven't rendered the preloaded data to Chart, we can't draw this new candles. If we did, the preloaded candles will be ignored.
+                *                           
+                * ------------------------------------------------------------------------------------------------------------------------------------------- 
+                */
+                _newCandlesList.Add( drawData );
+            }
+            else
+            {
+                _chartVM.Draw( drawData );
+            }
+        }
+
+        private void InternalDrawFinishedCandlesAndIndicators( CandleSeries series, CandlestickUI candleUI, SBarList barList, (uint first, uint last) barsRange )
+        {
+            ChartDrawDataEx drawData = new ChartDrawDataEx();
+
+            Tuple<IndicatorUI, IndicatorPair>[ ] indicatorTuple;
+
+            var ssIndicators = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
+
+            if ( drawData.SetCandleSource( candleUI, _bars, barsRange ) )
+            {
+                if ( ssIndicators )
+                {
+                    //var aa = ( AdvancedAnalysisManager )SymbolsMgr.Instance.GetOrCreateAdvancedAnalysis( series.Security );
+
+                    //FreemindIndicator fmIndicator = null;
+
+                    //if ( aa != null )
+                    //{
+                    //    fmIndicator = ( FreemindIndicator )aa.GetFreemindIndicator( _bars.Period.Value );                        
+                    //}
+
+                    foreach ( var indicator in indicatorTuple )
+                    {
+                        var indicatorUI = indicator.Item1;
+                        var length = ( int )( barsRange.last - barsRange.first + 1 );
+                        var indicatorList = drawData.SetIndicatorSource( indicatorUI, length );
+
+                        for ( var i = barsRange.first; i < barsRange.last; i++ )
+                        {
+                            var myBar = _bars[i];
+
+                            var indicatorFm = indicator.Item2.MyIndicator.Process( ref myBar );
 
                             indicatorList.SetIndicatorValue( myBar.BarTime, indicatorFm );
                         }
