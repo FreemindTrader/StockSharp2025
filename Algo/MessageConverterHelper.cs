@@ -1195,6 +1195,19 @@ namespace StockSharp.Algo
 			if (message == null)
 				throw new ArgumentNullException(nameof(message));
 
+			/* -------------------------------------------------------------------------------------------------------------------------------------------
+			* 
+			*  Tony 04: Candle BatchStatus Copy 
+			*  
+			*			I am moving the States to the top and I wanna compare if this candle is any different
+			*			The following are the changes
+			* 
+			* ------------------------------------------------------------------------------------------------------------------------------------------- */
+			candle.BatchStatus = message.BatchStatus;
+			candle.State = message.State;
+			// ------------------------------------------------------------------------------------------------------------------------------------------- 
+
+
 			candle.OpenPrice = message.OpenPrice;
 			candle.OpenVolume = message.OpenVolume;
 			candle.OpenTime = message.OpenTime;
@@ -1222,16 +1235,11 @@ namespace StockSharp.Algo
 
 			candle.PriceLevels = message.PriceLevels?/*.Select(l => l.Clone())*/.ToArray();
 
-			candle.State = message.State;
+			
 			candle.SeqNum = message.SeqNum;
 			candle.BuildFrom = message.BuildFrom;
 
-			/* -------------------------------------------------------------------------------------------------------------------------------------------
-			* 
-			*  Tony 04: Candle BatchStatus Copy 
-			* 
-			* ------------------------------------------------------------------------------------------------------------------------------------------- */
-			candle.BatchStatus = message.BatchStatus;
+			
 
 			return candle;
 		}

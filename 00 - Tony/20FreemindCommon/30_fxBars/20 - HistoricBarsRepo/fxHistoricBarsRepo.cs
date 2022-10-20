@@ -33,7 +33,7 @@ namespace fx.Bars
         private DateTime                               _lastConfirmedBarTime;
         private DateTime                               _lastActiveBarTime;        
         private DateTime                               _lastDataUpdate = DateTime.MinValue;
-        private bool                                   _doneLoading = false;
+        private bool                                   _indicatorCalculationIsDone = false;
         private TimeSpan?                              _period;
         private Stopwatch                              _stopWatch = new Stopwatch();
         private int                                    _fifoCapacity = -1;
@@ -104,11 +104,11 @@ namespace fx.Bars
         }
 
 
-        public bool DoneLoading
+        public bool DoneIndicatorCalculation
         {
             get
             {
-                return _doneLoading;
+                return _indicatorCalculationIsDone;
             }
         }
 
@@ -384,8 +384,11 @@ namespace fx.Bars
             _lastConfirmedBarTime = bl.LastBarTime;
             _lastActiveBarTime    = bl.LastBarTime;            
 
-            HistoricBarUpdateEvent?.Invoke( this, new HistoricBarsUpdateEventArg( DataBarUpdateType.HistoryUpdate, range.begin, range.end ) );
-
+            if ( _indicatorCalculationIsDone )
+            {
+                HistoricBarUpdateEvent?.Invoke( this, new HistoricBarsUpdateEventArg( DataBarUpdateType.HistoryUpdate, range.begin, range.end ) );
+            }
+            
             return range;
         }
 
@@ -3035,7 +3038,7 @@ namespace fx.Bars
 
         private void Indicator_FullCalculationDoneEvent( object sender, HistoricBarsUpdateEventArg e )
         {
-            _doneLoading = true;
+            _indicatorCalculationIsDone = true;
         }
     }
 }

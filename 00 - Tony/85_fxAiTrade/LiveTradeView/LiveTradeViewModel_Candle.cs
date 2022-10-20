@@ -42,6 +42,8 @@ namespace FreemindAITrade.ViewModels
 
         private DateTimeOffset _lastBarTime = DateTimeOffset.MinValue;
 
+        private DateTimeOffset _lastFinishedBarTime = DateTimeOffset.MinValue;
+
         private DateTime _lastCandleCommandTime = DateTime.MinValue;
 
         //private bool                    _flushingCandles      = false;
@@ -195,7 +197,9 @@ namespace FreemindAITrade.ViewModels
 
                     RaiseDoneDownloadBarsEvent();
 
-                    RequestMarketDataFromLastBar( _drawSeries.From.Value.UtcDateTime );
+                    var downloadTime = _drawSeries.From.Value.UtcDateTime - ( TimeSpan )_drawSeries.Arg;
+
+                    RequestMarketDataFromLastBar( downloadTime );
                 }
 
 
@@ -382,7 +386,7 @@ namespace FreemindAITrade.ViewModels
 
         private void FlushBufferedCandles()
         {
-            if ( !_bars.DoneLoading )
+            if ( !_bars.DoneIndicatorCalculation )
             {
                 return;
             }
@@ -539,23 +543,21 @@ namespace FreemindAITrade.ViewModels
                     _bars.ReloadAllCandles( SelectedSecurity, holder, ResponsibleTF, _waveScenarioNumber );
                 }
                 else
-                {
-                    _lastBarTime = holder[holder.Count - 1].OpenTime;
-
+                {                    
                     _bars.ReloadAllCandles( SelectedSecurity, holder, ResponsibleTF, _waveScenarioNumber );
                 }
 
                 RaiseCandleLoadedEvent();
             }
-            else
-            {
-                _lastBarTime = _bars.LastBarTime.Value;
-            }
+            
 
 
             var bars = _bars.MainDataBars;
 
             if ( bars.Count == 0 ) return _lastBarTime;
+
+            _lastBarTime         = _bars.LastBarTime.Value;
+            _lastFinishedBarTime = _bars.LastBarTime.Value;
 
             var candleUI = candleSeriesData.CandleUI;
 
@@ -610,7 +612,7 @@ namespace FreemindAITrade.ViewModels
 
             RaiseDoneDownloadBarsEvent();
 
-            RequestMarketDataFromLastBar( _lastBarTime );
+            RequestMarketDataFromLastBar( _lastFinishedBarTime );
 
             return _lastBarTime;
         }
@@ -1067,11 +1069,11 @@ namespace FreemindAITrade.ViewModels
             }
             else
             {
-                _lastBarTime = holder[holder.Count - 1].OpenTime;
+                
 
                 _bars.ReloadAllCandles( SelectedSecurity, holder, ResponsibleTF, _waveScenarioNumber );
             }
-
+                        
             RaiseCandleLoadedEvent();
 
             ChartDrawDataEx drawData = new ChartDrawDataEx();
@@ -1080,12 +1082,14 @@ namespace FreemindAITrade.ViewModels
 
             if ( bars.Count == 0 ) return _lastBarTime;
 
-            var candleUI = candleSeriesData.CandleUI;
-
-
             Tuple<IndicatorUI, IndicatorPair>[ ] indicatorTuple;
 
-            var ssIndicators = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
+            _lastBarTime         = _bars.LastBarTime.Value;
+            _lastFinishedBarTime = _bars.LastBarTime.Value;
+
+            var candleUI         = candleSeriesData.CandleUI;
+           
+            var ssIndicators     = _indicatorsBySeries.TryGetValue( series, out indicatorTuple );
 
             _stopWatch.Restart();
 
@@ -1120,7 +1124,7 @@ namespace FreemindAITrade.ViewModels
 
             _preloadedData.Add( drawData );
 
-            RequestMarketDataFromLastBar( _lastBarTime );
+            RequestMarketDataFromLastBar( _lastFinishedBarTime );
 
             _preloadCandlesStatus = WorkFlowStatus.DoneWork;
             return _lastBarTime;

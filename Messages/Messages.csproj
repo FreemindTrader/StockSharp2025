@@ -6,7 +6,7 @@
     </PropertyGroup>
     <ItemGroup>
 	    <PackageReference Include="Ecng.Serialization" Version="1.0.127" />
-	    <PackageReference Include="fx.Base" Version="5.0.205" />
+	    <PackageReference Include="fx.Base" Version="5.0.263" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Logging\Logging.csproj" />

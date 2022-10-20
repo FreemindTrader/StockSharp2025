@@ -1458,18 +1458,14 @@ namespace StockSharp.Algo.Storages
 
 				/* -------------------------------------------------------------------------------------------------------------------------------------------
                  * 
-                 *  Tony 05 : Add BatchStatus to the Message so we don't have to do technical analysis per bar.
+                 *  Tony 05 : Add BatchStatus to the Message so we know that those candles are in deed from local storage not from Live Server
+                 *				In a way, those bars are stored from previous session of running this software
                  * 
                  * ------------------------------------------------------------------------------------------------------------------------------------------- */
 
-				if (message is TimeFrameCandleMessage tf)
+				if ( message is TimeFrameCandleMessage tf )
 				{
-					tf.BatchStatus = fxBatchStatus.Batching;
-
-					if (msgIndex == count - 1)
-					{
-						tf.BatchStatus = fxBatchStatus.EndBatch;
-					}
+					tf.BatchStatus = fxBatchStatus.FromStorage;					
 				}
 
 				message.OriginalTransactionId = transactionId;

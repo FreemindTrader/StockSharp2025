@@ -173,6 +173,11 @@ namespace StockSharp.Messages
 							if (_version != version)
 								break;
 
+							if ( message is TimeFrameCandleMessage )
+                            {
+
+                            }
+
 							_msgStat.Remove(message);
 							NewOutMessage?.Invoke(message);
 						}
@@ -236,6 +241,10 @@ namespace StockSharp.Messages
 			_msgStat.Add(message);
 			_queue.Enqueue(message);
 
+			if ( message is TimeFrameCandleMessage )
+			{
+
+			}
 
 			/* -------------------------------------------------------------------------------------------------------------------------------------------
 			* 

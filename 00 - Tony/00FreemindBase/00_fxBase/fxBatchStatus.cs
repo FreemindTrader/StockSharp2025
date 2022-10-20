@@ -15,33 +15,28 @@ namespace fx.Base
 	public enum fxBatchStatus : byte
 	{
 		/// <summary>
-		/// Single Message
+		/// Initial Request to Live Server for databars missing since Last run
+		/// </summary>
+		[EnumMember]
+		InitialUpdate,
+
+		/// <summary>
+		/// Representing the bar pull from Live Server every 30 second
+		/// </summary>
+		[EnumMember]
+		LiveUpdate,
+
+
+		/// <summary>
+		/// Representing the bars pull from Live Server when user selects reloaded Bars from Server
+		/// </summary>
+		[EnumMember]
+		Reloaded,
+
+		/// <summary>
+		/// Representing the bars that are from local storage
 		/// </summary>
 		[EnumMember]
 		FromStorage,
-
-		/// <summary>
-		/// Message Batching Begin
-		/// </summary>
-		[EnumMember]
-		BeginBatch,
-
-		/// <summary>
-		/// Still Batching
-		/// </summary>
-		[EnumMember]
-		Batching,
-
-		/// <summary>
-		/// End of current Message Batch
-		/// </summary>
-		[EnumMember]
-		EndBatch,
-
-		/// <summary>
-		/// End of current Message Batch
-		/// </summary>
-		[EnumMember]
-		Latest,
 	}
 }

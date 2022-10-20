@@ -71,14 +71,24 @@ namespace StockSharp.Algo.Storages
 				/* -------------------------------------------------------------------------------------------------------------------------------------------
 				* 
 				*  Tony 06 : If MarketDataMessage has Extension Info, we will pass along the message to adapter to download
+				*  
+				*			 The following Settings.LoadMessages is so fucked up, it keeps building databars from some of it only snapshot
+				*			 My Intention is obviously wanna to download databars from the live server so that the bars can be accurate,
+				*			 Unfortunately, I forgot ext.ContainsKey( "FullDownload" )
+				*			 
+				*			 And in a way, the LoadMessages will try to build databars from whatever shit it stores and so the databars are no
+				*			 longer accurate.
+				*			 
+				*			 I have been tracked this problems for ages until one point I can't take it anymore. So I was stepping pretty much 
+				*			 a lot of code and then I finally tracked it down to the following building of databars from some Level1, or whatever
 				* 
 				* ------------------------------------------------------------------------------------------------------------------------------------------- */
 
-				if (message.ExtensionInfo != null)
+				if ( message.ExtensionInfo != null)
 				{
 					IDictionary<string, object> ext = message.ExtensionInfo;
 
-					if (ext.ContainsKey("ReloadCandles"))
+					if (ext.ContainsKey("ReloadCandles") || ext.ContainsKey( "FullDownload" ) )
 					{
 						return message;
 					}
