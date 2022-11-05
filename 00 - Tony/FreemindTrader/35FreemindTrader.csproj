@@ -27,7 +27,7 @@
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
-        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">

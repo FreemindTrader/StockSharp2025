@@ -20,6 +20,6 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <Company>FreemindFx</Company><BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 </Project>

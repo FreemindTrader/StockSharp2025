@@ -11,7 +11,7 @@
         <AssemblyName>StockSharp.FxConnect</AssemblyName>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <TargetFramework>net6.0-windows</TargetFramework>
-        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.1|AnyCPU'">
         <NoWarn>1701;1702;3001;3002;3003</NoWarn>
@@ -251,7 +251,7 @@
     <PropertyGroup>
         <Version>5.0.255</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <Company>FreemindFx</Company><BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
         <DebugType>portable</DebugType>
     </PropertyGroup>
 
