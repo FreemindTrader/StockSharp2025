@@ -25,21 +25,21 @@
 
     <PropertyGroup>
         <Version>5.0.250</Version>
-        <Authors>TonyFreemind</Authors>        
+        <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
         <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="fx.Collections" Version="5.0.220" />
+      <PackageReference Include="fx.Collections" Version="5.0.220" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
+      <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>  
 </Project>

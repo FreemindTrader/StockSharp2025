@@ -36,11 +36,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
+      <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 
 </Project>

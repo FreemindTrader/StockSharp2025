@@ -25,7 +25,7 @@
 
     <PropertyGroup>
         <Version>5.0.250</Version>
-        <Authors>TonyFreemind</Authors>        
+        <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
         <DebugType>portable</DebugType>
@@ -38,10 +38,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\00_fxBase\00_fxBase.csproj" />
+      <ProjectReference Include="..\00_fxBase\00_fxBase.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>

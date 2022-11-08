@@ -40,8 +40,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\20_fxCommon\20_fxCommon.csproj" />
-        <ProjectReference Include="..\25_fxCommonWnd\25_fxCommonWnd.csproj" />
+      <ProjectReference Include="..\20_fxCommon\20_fxCommon.csproj" />
+      <ProjectReference Include="..\25_fxCommonWnd\25_fxCommonWnd.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -51,9 +51,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
-
-
+  
+  
 </Project>
 

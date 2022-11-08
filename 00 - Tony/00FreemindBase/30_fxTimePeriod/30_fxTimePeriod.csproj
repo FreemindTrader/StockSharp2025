@@ -10,7 +10,7 @@
         <ProjectGuid>{ABFFA28D-1545-4E62-A83A-492A6A789367}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
         <TargetFrameworks>netstandard2.0</TargetFrameworks>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>        
         <LangVersion>8.0</LangVersion>
         <NoWarn>1701;1702;CS0414;CS8602;CS8618;CS8604;CS8601;CS1591;NU1803</NoWarn>
     </PropertyGroup>
@@ -24,7 +24,7 @@
 
     <PropertyGroup>
         <Version>5.0.250</Version>
-        <Authors>TonyFreemind</Authors>        
+        <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
         <DebugType>portable</DebugType>
@@ -41,6 +41,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>

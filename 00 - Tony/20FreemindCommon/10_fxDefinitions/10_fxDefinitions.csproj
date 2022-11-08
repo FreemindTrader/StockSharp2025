@@ -5,7 +5,7 @@
         <AssemblyName>fx.Definitions</AssemblyName>
         <PackageId>fx.Definitions</PackageId>
     </PropertyGroup>
-
+    
     <PropertyGroup>
         <ProjectGuid>{63356FB4-1909-43EE-96CA-EAA32817EDAA}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
@@ -28,16 +28,16 @@
         <DebugType>portable</DebugType>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="fx.Collections" Version="5.0.220" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="fx.Collections" Version="5.0.220" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+  </ItemGroup>
+  
 </Project>

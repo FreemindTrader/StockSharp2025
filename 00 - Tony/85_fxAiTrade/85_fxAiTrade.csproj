@@ -5,7 +5,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>fx.AITrade</PackageId>
         <Version>5.0.250</Version>
-        <Authors>TonyFreemind</Authors>        
+        <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
         <DebugType>portable</DebugType>
@@ -25,7 +25,7 @@
     <ItemGroup>
         <SourceRoot Include="../" />
     </ItemGroup>
-
+    
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">
         <NoWarn>1701;1702;CA1416;NU1803</NoWarn>
     </PropertyGroup>

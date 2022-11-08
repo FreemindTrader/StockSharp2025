@@ -30,17 +30,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="StockSharp.Web.Api.Client" Version="5.0.223" />
-        <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />
-        <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.Api.Client" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.223" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+      <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

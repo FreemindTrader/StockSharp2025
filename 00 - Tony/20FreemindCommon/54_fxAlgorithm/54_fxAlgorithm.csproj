@@ -40,8 +40,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj" />
-        <ProjectReference Include="..\30_fxTALib\30_fxTALib.csproj" />
+      <ProjectReference Include="..\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj" />
+      <ProjectReference Include="..\30_fxTALib\30_fxTALib.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="SciChart.Charting">
@@ -49,7 +49,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

@@ -30,14 +30,14 @@
         <DebugType>portable</DebugType>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
+    <ItemGroup>        
+        <PackageReference Include="StockSharp.Messages" Version="5.0.220" />        
         <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />
         <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.223" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

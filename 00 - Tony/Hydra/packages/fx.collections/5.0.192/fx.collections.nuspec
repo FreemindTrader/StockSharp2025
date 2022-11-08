@@ -3,7 +3,11 @@
   <metadata>
     <id>fx.Collections</id>
     <version>5.0.192</version>
+<<<<<<< HEAD
     <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
+=======
+    <authors>TonyFreemind</authors>
+>>>>>>> 1f54c435f50a416a754b59d842bc2c7173db72bf
     <description>Package Description</description>
     <dependencies>
       <group targetFramework=".NETStandard2.0">

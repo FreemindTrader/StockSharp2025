@@ -38,12 +38,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\00FreemindBase\Ecng.Data\Ecng.Data.csproj" />
+      <ProjectReference Include="..\..\00FreemindBase\Ecng.Data\Ecng.Data.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>    
 </Project>
 
 

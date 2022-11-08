@@ -6,7 +6,7 @@
         <AssemblyName>StockSharp.AlgoEx</AssemblyName>
         <PackageId>fx.AlgoEx</PackageId>
     </PropertyGroup>
-
+    
     <PropertyGroup>
         <ProjectGuid>{B631A32D-1843-4D9D-8B45-597D982C10C7}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
@@ -29,14 +29,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="T:\tonyfreemind\source\repos\20FreemindCommon\IsExternalInit.cs" />
+      <Compile Remove="T:\tonyfreemind\source\repos\20FreemindCommon\IsExternalInit.cs" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+      <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>  
 </Project>
