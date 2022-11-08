@@ -12,7 +12,7 @@
         <TargetFrameworks>netstandard2.0</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+        <NoWarn>1701;1702;CS3003;CS0612;NU1803</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -23,19 +23,21 @@
 
     <PropertyGroup>
         <Version>5.0.250</Version>
-        <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <Authors>TonyFreemind</Authors>        
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Nito.AsyncEx.Tasks" Version="5.1.2" />
-      <PackageReference Include="StockSharp.Localization" Version="5.0.220" />
-      <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
+        <PackageReference Include="Nito.AsyncEx.Tasks" Version="5.1.2" />
+        <PackageReference Include="StockSharp.Localization" Version="5.0.220" />
+        <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>    
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
 </Project>
 
 

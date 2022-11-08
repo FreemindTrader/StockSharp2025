@@ -24,7 +24,10 @@
     <PropertyGroup>
         <Version>5.0.224</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
@@ -34,7 +37,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\54_fxAlgorithm\54_fxAlgorithm.csproj" />
+        <ProjectReference Include="..\54_fxAlgorithm\54_fxAlgorithm.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="SciChart.Charting">
@@ -42,6 +45,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>

@@ -24,16 +24,19 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Common" Version="1.0.113" />
-      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+        <PackageReference Include="Ecng.Common" Version="1.0.113" />
+        <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>    
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
 </Project>
 

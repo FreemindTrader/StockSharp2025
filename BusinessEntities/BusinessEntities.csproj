@@ -18,14 +18,9 @@
     <PropertyGroup>
         <Version>5.0.253</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-      <NoWarn>1701;1702;MSB3270</NoWarn>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-      <NoWarn>1701;1702;MSB3270</NoWarn>
-    </PropertyGroup>
+        <NoWarn>NU1803;1701;1702;MSB3270</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>    
 </Project>

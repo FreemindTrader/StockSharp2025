@@ -3,7 +3,7 @@
   <metadata>
     <id>StockSharp.Hydra.Core</id>
     <version>5.0.200</version>
-    <authors>TonyFreemind</authors>
+    <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
     <description>Package Description</description>
     <repository type="git" commit="cf2cccbc7cc4ccb86a31a13b1ee6ed33b396347c" />
     <dependencies>

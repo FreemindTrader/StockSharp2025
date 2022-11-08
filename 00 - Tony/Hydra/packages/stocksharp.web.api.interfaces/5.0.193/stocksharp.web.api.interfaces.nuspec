@@ -3,7 +3,7 @@
   <metadata>
     <id>StockSharp.Web.Api.Interfaces</id>
     <version>5.0.193</version>
-    <authors>TonyFreemind</authors>
+    <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
     <description>Package Description</description>
     <repository type="git" commit="a8cdd836dfb691730a4ee2c1e42db7b9b4f0705e" />
     <dependencies>

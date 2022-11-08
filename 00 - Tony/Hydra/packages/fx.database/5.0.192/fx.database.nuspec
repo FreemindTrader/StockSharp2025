@@ -3,7 +3,7 @@
   <metadata>
     <id>fx.Database</id>
     <version>5.0.192</version>
-    <authors>TonyFreemind</authors>
+    <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
     <description>Package Description</description>
     <repository type="git" commit="4ef54300d83ab1e87ffb662aa78f881f3c1906a0" />
     <dependencies>

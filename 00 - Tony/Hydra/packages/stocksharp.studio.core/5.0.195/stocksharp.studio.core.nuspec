@@ -3,7 +3,7 @@
   <metadata>
     <id>Stocksharp.Studio.Core</id>
     <version>5.0.195</version>
-    <authors>TonyFreemind</authors>
+    <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
     <description>Package Description</description>
     <repository type="git" commit="9087e797ff79af92c8873fa4a2bea50afc69c231" />
     <dependencies>

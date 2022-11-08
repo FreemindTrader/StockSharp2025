@@ -40,7 +40,7 @@ namespace StockSharp.Studio.Controls
             _subscriptionManager = new SubscriptionManager( this );
             _defaultColumns.ForEach( c => SecurityPicker.SetColumnVisibility( c, Visibility.Visible ) );
             SecurityPicker.GridChanged += RaiseChangedCommand;
-            AlertBtn.SchemaChanged += RaiseChangedCommand;
+            //AlertBtn.SchemaChanged += RaiseChangedCommand;
             IStudioCommandService commandService = CommandService;
             commandService.Register<BindCommand>( this, true, cmd =>
                 {
@@ -105,7 +105,7 @@ namespace StockSharp.Studio.Controls
             commandService.UnRegister<EntityCommand<Level1ChangeMessage>>( this );
             commandService.UnRegister<FirstInitSecuritiesCommand>( this );
             if ( reason == CloseReason.CloseWindow )
-                AlertBtn.Dispose();
+                //AlertBtn.Dispose();
             _subscriptionManager.Dispose();
             base.Dispose( reason );
         }
@@ -115,7 +115,7 @@ namespace StockSharp.Studio.Controls
             base.Save( storage );
             storage.SetValue( "SecurityPicker", SecurityPicker.Save() );
             storage.SetValue( "Securities", SecurityPicker.Securities.LookupAll().Select( s => s.Id ).ToArray() );
-            storage.SetValue( "AlertBtn", AlertBtn.Save() );
+            //storage.SetValue( "AlertBtn", AlertBtn.Save() );
             storage.SetValue( "BarManager", BarManager.SaveDevExpressControl() );
         }
 
@@ -135,9 +135,9 @@ namespace StockSharp.Studio.Controls
                     _subscriptionManager.CreateSubscription( security, _dataType, null );
                 }
             }
-            SettingsStorage storage2 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
-            if ( storage2 != null )
-                AlertBtn.Load( storage2 );
+            //SettingsStorage storage2 = storage.GetValue<SettingsStorage>( "AlertBtn", null );
+            //if ( storage2 != null )
+                //AlertBtn.Load( storage2 );
             string settings = storage.GetValue<string>( "BarManager", null );
             if ( settings == null )
                 return;

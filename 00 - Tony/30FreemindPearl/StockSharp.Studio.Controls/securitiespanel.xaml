@@ -23,7 +23,7 @@
           <dxb:BarButtonItem ItemClick="RemoveSecurities_OnClick" x:Name="RemoveSecurities"
                              ToolTip="{x:Static loc:LocalizedStrings.XamlStr789}" ToolTipService.ShowOnDisabled="True"
                              IsEnabled="False" Glyph="{sx:ThemedIcons Key=Remove2}"/>
-          <alerts:AlertButton x:Name="AlertBtn" MessageType="{x:Type messages:Level1ChangeMessage}"/>
+          
         </dxb:Bar>
       </dxb:BarManager.Bars>
     </dxb:BarManager>

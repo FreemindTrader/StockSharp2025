@@ -22,19 +22,22 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
-    <ItemGroup>        
+    <ItemGroup>
         <PackageReference Include="Ecng.Serialization" Version="1.0.127" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+        <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

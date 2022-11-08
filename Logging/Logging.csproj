@@ -15,9 +15,9 @@
 
     <PropertyGroup>
         <Version>5.0.253</Version>
-        <Authors>TonyFreemind</Authors>
+        <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
         <Company>FreemindFx</Company>
-        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
         <DebugType>portable</DebugType>
     </PropertyGroup>
 </Project>

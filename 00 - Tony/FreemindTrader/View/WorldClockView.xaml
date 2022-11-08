@@ -26,18 +26,7 @@
                 <ColumnDefinition Width="5*" />
                 <ColumnDefinition Width="0.1*" />
             </Grid.ColumnDefinitions>
-            <local:NewYorkTimeView
-                Grid.Row="1"
-                Grid.Column="1"
-                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
-            <local:LondonTimeView
-                Grid.Row="1"
-                Grid.Column="3"
-                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
-            <local:HongKongTimeView
-                Grid.Row="1"
-                Grid.Column="5"
-                dxmvvm:ViewModelExtensions.ParentViewModel="{Binding DataContext, ElementName=LayoutRoot}" />
+            
         </Grid>
     </Grid>
 </UserControl>

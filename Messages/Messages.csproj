@@ -7,6 +7,7 @@
     <ProjectGuid>{B47F9C23-A4BD-46A9-BF27-54CB3D653503}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\00 - Tony\00FreemindBase\00_fxBase\00_fxBase.csproj" />
     <ProjectReference Include="..\Logging\Logging.csproj" />
   </ItemGroup>
 
@@ -24,8 +25,8 @@
 
     <PropertyGroup>
         <Version>5.0.253</Version>
-        <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company><BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
 
 </Project>

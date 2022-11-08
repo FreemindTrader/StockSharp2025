@@ -3,7 +3,7 @@
   <metadata>
     <id>StockSharp.BusinessEntities</id>
     <version>5.0.192</version>
-    <authors>TonyFreemind</authors>
+    <Authors>TonyFreemind</Authors><NoWarn>NU1803</NoWarn>
     <description>Package Description</description>
     <dependencies>
       <group targetFramework=".NETStandard2.0">

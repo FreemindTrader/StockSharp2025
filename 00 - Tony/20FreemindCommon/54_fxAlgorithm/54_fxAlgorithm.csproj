@@ -24,21 +24,24 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
         <PackageReference Include="EntityFramework" Version="6.4.4" />
         <PackageReference Include="fx.AlgoEx" Version="5.0.250" />
         <PackageReference Include="fx.Collections" Version="5.0.250" />
-        <PackageReference Include="fx.Database" Version="5.0.257" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.133" />
+        <PackageReference Include="fx.Database" Version="5.0.260" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj" />
-      <ProjectReference Include="..\30_fxTALib\30_fxTALib.csproj" />
+        <ProjectReference Include="..\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj" />
+        <ProjectReference Include="..\30_fxTALib\30_fxTALib.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="SciChart.Charting">
@@ -46,7 +49,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

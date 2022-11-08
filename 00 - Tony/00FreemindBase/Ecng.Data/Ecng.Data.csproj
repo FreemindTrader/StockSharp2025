@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{499A4776-E2C8-43F1-A841-4FB4C77F7BD9}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>netstandard2.0</TargetFramework>        
+        <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
 
 
@@ -22,19 +22,22 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Collections" Version="1.0.113" />
-      <PackageReference Include="Ecng.Common" Version="1.0.110" />
-      <PackageReference Include="Ecng.ComponentModel" Version="1.0.139" />
-      <PackageReference Include="Ecng.Serialization" Version="1.0.124" />
-      <PackageReference Include="linq2db" Version="4.2.0" />
+        <PackageReference Include="Ecng.Collections" Version="1.0.113" />
+        <PackageReference Include="Ecng.Common" Version="1.0.110" />
+        <PackageReference Include="Ecng.ComponentModel" Version="1.0.139" />
+        <PackageReference Include="Ecng.Serialization" Version="1.0.124" />
+        <PackageReference Include="linq2db" Version="4.2.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>       
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
 </Project>
 

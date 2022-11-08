@@ -26,24 +26,9 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
+        <NoWarn>NU1803;1701;1702;MSB3270</NoWarn>
         <Company>FreemindFx</Company>
-        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">
-        <NoWarn>1701;1702;MSB3270</NoWarn>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|AnyCPU'">
-        <NoWarn>1701;1702;MSB3270</NoWarn>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|x64'">
-        <NoWarn>1701;1702;MSB3270</NoWarn>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|x64'">
-        <NoWarn>1701;1702;MSB3270</NoWarn>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -184,13 +169,13 @@
         </Content>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.5" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
         <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
         <PackageReference Include="StockSharp.Configuration.Adapters" Version="5.0.220" />
         <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
+        <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
     </ItemGroup>
 
 
@@ -202,9 +187,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="DevExpress.Xpf.Gauges.v21.1">
-          <HintPath>C:\Program Files (x86)\DevExpress 21.1\Components\Bin\Framework\DevExpress.Xpf.Gauges.v21.1.dll</HintPath>
-        </Reference>
         <Reference Include="SciChart.Charting">
             <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.dll</HintPath>
         </Reference>
@@ -236,7 +218,7 @@
         <Resource Include="SvgImages\fxtrader3.svg" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     </ItemGroup>
 </Project>
 

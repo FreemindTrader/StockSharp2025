@@ -23,19 +23,22 @@
     <PropertyGroup>
         <Version>5.0.250</Version>
         <Authors>TonyFreemind</Authors>
-        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="StockSharp.Server.Fix" Version="5.0.108" />
+        <PackageReference Include="StockSharp.Server.Fix" Version="5.0.108" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\StockSharp.Studio.Core\07_StockSharp.Studio.Core.csproj" />
+        <ProjectReference Include="..\StockSharp.Studio.Core\07_StockSharp.Studio.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    </ItemGroup>    
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
 </Project>
 
