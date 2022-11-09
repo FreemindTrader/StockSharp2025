@@ -126,7 +126,7 @@ namespace FreemindTrader
             ConfigManager.RegisterService( new SnapshotRegistry( Paths.SnapshotsDir ) );
             StorageExchangeInfoProvider exchangeInfoProvider = new StorageExchangeInfoProvider( _entityRegistry, false );
             ConfigManager.RegisterService<IExchangeInfoProvider>( exchangeInfoProvider );
-            ConfigManager.RegisterService<IMarketDataDrive>( new LocalMarketDataDrive( "t:\\ForexData\\" ) );
+            ConfigManager.RegisterService<IMarketDataDrive>( new LocalMarketDataDrive( "U:\\ForexData\\" ) );
             ConfigManager.RegisterService<IBackupService>( new StockSharpBackupService() );
             ConfigManager.RegisterService<IStorageRegistry>( new StorageRegistry( exchangeInfoProvider ) { DefaultDrive = ConfigManager.GetService<IMarketDataDrive>() } );
 

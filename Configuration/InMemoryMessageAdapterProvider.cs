@@ -71,7 +71,8 @@ namespace StockSharp.Configuration
 			"StockSharp.QuikLua",
 			"StockSharp.QuikLua32",
 			// Tony Fix : Here we also want to ignore the AlgoEx
-			"StockSharp.AlgoEx"
+			"StockSharp.AlgoEx",
+			"StockSharp.BitStamp"
 		};
 		
 		/// <summary>
