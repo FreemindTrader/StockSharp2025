@@ -111,5 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+    <ProjectReference Include="..\..\..\Configuration.Adapters\Configuration.AdaptersGitHub.csproj" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="StockSharp.Xaml" Version="$(StockSharpVer)" />
+    <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
     <PackageReference Include="StockSharp.Algo.Strategies" Version="$(StockSharpVer)" />
   </ItemGroup>
   <ItemGroup>
