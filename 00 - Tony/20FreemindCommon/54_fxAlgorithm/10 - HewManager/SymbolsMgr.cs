@@ -187,7 +187,7 @@ namespace fx.Algorithm
             var id = new SecurityId
             {
                 SecurityCode = instrutment,
-                BoardCode = "Fxcm"
+                BoardCode = "FXCM"
             };
 
             var storage = ServicesRegistry.NativeIdStorage;

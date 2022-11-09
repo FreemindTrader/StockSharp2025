@@ -166,8 +166,20 @@
 					var pMsg = new PortfolioMessage();
 					pMsg.PortfolioName = subAccount.AccountName;
 					pMsg.OriginalTransactionId = pMsg.TransactionId;
+					pMsg.BoardCode = "FXCM";
 
-					SendOutMessage( pMsg );
+					object acctCurrency = CurrencyTypes.USD;
+
+
+                    if ( Enum.TryParse( typeof( CurrencyTypes ), currency, out acctCurrency ) )
+					{
+                        pMsg.Currency = ( CurrencyTypes ) acctCurrency;
+					}
+
+					pMsg.ClientCode = subAccount.AccountID;
+
+
+                    SendOutMessage( pMsg );
 
                     var posMsg = GFMgr.GetAccountSummaryMessage( Login, accountName, CurrentTime );
 

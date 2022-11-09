@@ -152,6 +152,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleHistoryTestingParalle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleRealTimeEmulationGitHub", "Samples\Testing\SampleRealTimeEmulation\SampleRealTimeEmulationGitHub.csproj", "{2AFA8980-ACE8-4C5C-9D7C-7DE0D9C276F2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tutorials", "Tutorials", "{0C10684B-BC87-4AF3-842D-61848868853C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -731,6 +733,7 @@ Global
 		{20A454D0-A030-4266-80C0-D7CB07CE6876} = {15527764-8921-4428-A15A-CB2D65818B63}
 		{6D7AC972-0EE2-44A8-B259-6C2046202670} = {15527764-8921-4428-A15A-CB2D65818B63}
 		{2AFA8980-ACE8-4C5C-9D7C-7DE0D9C276F2} = {15527764-8921-4428-A15A-CB2D65818B63}
+		{0C10684B-BC87-4AF3-842D-61848868853C} = {A7C97D24-F256-497E-B471-0C3A26AB9B07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
