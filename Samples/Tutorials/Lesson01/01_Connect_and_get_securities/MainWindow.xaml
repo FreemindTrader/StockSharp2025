@@ -1,0 +1,24 @@
+﻿<Window x:Class="_01_Connect_and_get_securities.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xaml="http://schemas.stocksharp.com/xaml"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="800" Left="10" Top="10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+
+            <ColumnDefinition Width="170*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Setting" Name="Setting" Click="Setting_Click"/>
+        <Button Grid.Column="1" Content="Connect" Name="Connect" Click="Connect_Click"/>
+        <xaml:SecurityPicker Name="SecurityPicker"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"></xaml:SecurityPicker>
+    </Grid>
+</Window>

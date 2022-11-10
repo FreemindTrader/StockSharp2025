@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <RootNamespace>_01_Connect_and_get_securities</RootNamespace>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Algo\Algo.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <Version>5.0.255</Version>
+        <Authors>TonyFreemind</Authors>
+        <NoWarn>NU1803</NoWarn>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>
+
+</Project>

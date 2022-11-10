@@ -615,7 +615,13 @@ namespace StockSharp.FxConnectFXCM
 
 			_connectionManager = new FxConnectionManager( this );
 
-			ServicesRegistry.LogManager.Sources.Add( _connectionManager );
+			var logMgr = ServicesRegistry.LogManager;
+
+			if ( logMgr != null )
+			{
+                logMgr.Sources.Add( _connectionManager );
+            }
+            
 
 			_fxSessionId = O2GTransport.createSession( );
 					
