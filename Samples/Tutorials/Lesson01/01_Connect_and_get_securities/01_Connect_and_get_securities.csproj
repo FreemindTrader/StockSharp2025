@@ -9,11 +9,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Ecng.Serialization" Version="1.0.133" />
         <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\Algo\Algo.csproj" />
+      <ProjectReference Include="..\..\..\..\Configuration.Adapters\Configuration.AdaptersGitHub.csproj" />
     </ItemGroup>
 
     <PropertyGroup>

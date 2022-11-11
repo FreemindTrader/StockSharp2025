@@ -7,8 +7,8 @@
     </PropertyGroup>
     
     <PropertyGroup>
-        <RootNamespace>StockSharp.FxConnect</RootNamespace>
-        <AssemblyName>StockSharp.FxConnect</AssemblyName>
+        <RootNamespace>StockSharp.FxConnectFXCM</RootNamespace>
+        <AssemblyName>StockSharp.FxConnectFXCM</AssemblyName>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <TargetFramework>net6.0-windows</TargetFramework>
         <BaseOutputPath>U:\00-FreemindTraderExe</BaseOutputPath>
@@ -249,7 +249,7 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <Version>5.0.255</Version>
+        <Version>5.0.260</Version>
         <Authors>TonyFreemind</Authors>
         <NoWarn>NU1803</NoWarn>
         <Company>FreemindFx</Company>
