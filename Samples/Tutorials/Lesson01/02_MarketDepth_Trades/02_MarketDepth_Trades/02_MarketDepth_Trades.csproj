@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>_02_MarketDepth_Trades</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ecng.Serialization" Version="1.0.135" />
+    <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Algo\Algo.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Configuration.Adapters\Configuration.AdaptersGitHub.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Serialization" Version="1.0.133" />
+        <PackageReference Include="Ecng.Serialization" Version="1.0.135" />
         <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
     </ItemGroup>
 

@@ -1,10 +1,12 @@
-﻿using Ecng.Serialization;
+﻿using Ecng.Configuration;
+using Ecng.Serialization;
 using StockSharp.Algo;
-using StockSharp.Algo.Testing;
+using StockSharp.BusinessEntities;
+using StockSharp.Configuration;
+using StockSharp.Messages;
 using StockSharp.Xaml;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,26 +19,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Serialization;
-using System.Xml;
-using DevExpress.Xpf.Core.Serialization;
-using StockSharp.Configuration;
-using Ecng.ComponentModel;
-using System.Data;
-using Ecng.Common;
-using Ecng.Configuration;
-using StockSharp.Messages;
-using StockSharp.BusinessEntities;
-using TheArtOfDev.HtmlRenderer.Adapters;
 
-namespace _01_Connect_and_get_securities
+namespace _02_MarketDepth_Trades
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Connector _connector = new Connector();        
+        private Connector _connector = new Connector();
         private static readonly string _settingsFile = $"connection{Paths.DefaultSettingsExt}";
 
         public MainWindow()
@@ -58,14 +49,14 @@ namespace _01_Connect_and_get_securities
             {
                 var setting = _settingsFile.Deserialize<SettingsStorage>();
                 _connector.Load( setting );
-            }            
+            }
         }
 
         private void Setting_Click( object sender, RoutedEventArgs e )
         {
             if ( _connector.Configure( this ) )
             {
-                _connector.Save().Serialize( _settingsFile );                
+                _connector.Save().Serialize( _settingsFile );
             }
         }
 
@@ -74,14 +65,14 @@ namespace _01_Connect_and_get_securities
             SecurityPicker.SecurityProvider = _connector;
             SecurityPicker.MarketDataProvider = _connector;
 
-            _connector.Connected += _connector_Connected;
+            //_connector.Connected += _connector_Connected;
             _connector.Connect();
         }
 
-        private void _connector_Connected()
-        {
-            _connector.LookupSecurities( new Security() { Code = "EUR/USD" } );
-        }
+        //private void _connector_Connected()
+        //{
+        //    _connector.LookupSecurities( new Security() { Code = "EUR/USD" } );
+        //}
 
         private void SecurityPicker_SecuritySelected( StockSharp.BusinessEntities.Security security )
         {
@@ -105,3 +96,4 @@ namespace _01_Connect_and_get_securities
         }
     }
 }
+
