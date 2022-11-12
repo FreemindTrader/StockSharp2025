@@ -19,6 +19,6 @@
         </Grid.ColumnDefinitions>
         <Button Content="Setting" Name="Setting" Click="Setting_Click"/>
         <Button Grid.Column="1" Content="Connect" Name="Connect" Click="Connect_Click"/>
-        <xaml:SecurityPicker Name="SecurityPicker"  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"></xaml:SecurityPicker>
+        <xaml:SecurityPicker Name="SecurityPicker" ShowCommonStatColumns="True" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3"></xaml:SecurityPicker>
     </Grid>
 </Window>

@@ -14,10 +14,18 @@ namespace StockSharp.Configuration
 	using StockSharp.Logging;
 	using StockSharp.Messages;
 
-	/// <summary>
-	/// In memory configuration message adapter's provider.
-	/// </summary>
-	public class InMemoryMessageAdapterProvider : IMessageAdapterProvider
+    /// <summary>
+    /// Tony:	This class mainly search for all StockSharp.xxxxx.dlls to find which one implement
+    ///			IMessageAdapter interface and then load the assemblies and stores them in 
+	///			PossibleAdapters
+	///			
+	///			PossibleAdapters - Contains all the StockSharp.xxxx.dll which implment IMessageAdapter.
+	///			
+	///			Only after the dlls are loaded, we can instantiate an instance of the adpater
+    /// 
+    /// In memory configuration message adapter's provider.
+    /// </summary>
+    public class InMemoryMessageAdapterProvider : IMessageAdapterProvider
 	{
 		/// <summary>
 		/// Initialize <see cref="InMemoryMessageAdapterProvider"/>.
@@ -76,6 +84,12 @@ namespace StockSharp.Configuration
 		};
 		
 		/// <summary>
+		/// Tony:	The following code will get all dlls in current directory with name that begin with StockSharp.xxxxx.dll
+		///			except those in the _exceptions list.
+		///			
+		///			Important thing is that all those found dlls will be Loaded into memory so we can instantiate adpaters
+		///			in the constructor 
+		/// 
 		/// Get all available adapters.
 		/// </summary>
 		/// <returns>All available adapters.</returns>
