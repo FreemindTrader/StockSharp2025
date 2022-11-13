@@ -65,19 +65,32 @@ namespace _02_MarketDepth_Trades
             SecurityPicker.SecurityProvider = _connector;
             SecurityPicker.MarketDataProvider = _connector;
 
-            //_connector.Connected += _connector_Connected;
+            // -----------Old NewTrade event --------------------
+            _connector.TickTradeReceived += Connector_TickTradeReceived;
+            
+            // -----------Old MarketDepthChanged event --------------------
+            _connector.MarketDepthReceived += Connector_MarketDepthReceived;
+
             _connector.Connect();
         }
 
-        //private void _connector_Connected()
-        //{
-        //    _connector.LookupSecurities( new Security() { Code = "EUR/USD" } );
-        //}
+        private void Connector_MarketDepthReceived( Subscription sub, MarketDepth md )
+        {
+            MarketDepthControl.UpdateDepth( md );
+        }
+
+        
+
+        private void Connector_TickTradeReceived( Subscription sub, Trade trade )
+        {
+            TradeGrid.Trades.Add( trade );
+        }
 
         private void SecurityPicker_SecuritySelected( StockSharp.BusinessEntities.Security security )
         {
             if ( security == null ) return;
 
+            // ------------------------------------- Register for price update -------------------------------
             var whatToSubscribe = new MarketDataMessage
             {
                 DataType2 = DataType.Level1,
@@ -93,6 +106,28 @@ namespace _02_MarketDepth_Trades
             };
 
             _connector.SubscribeMarketData( security, whatToSubscribe );
+
+            // ------------------------------------- Subscribe to security Trades  -------------------------------
+            _connector.SubscribeTrades( security );
+
+            MarketDepthControl.Clear();
+
+            // MarketDepth is the same as Order Book
+            var marketDepths = _connector.RegisteredMarketDepths;
+
+            foreach ( var depth in marketDepths )
+            {
+                // ------------------  _connector.UnSubscribeMarketDepth( depth ) -------------------
+                _connector.UnSubscribeMarketData( security, new MarketDataMessage
+                {
+                    DataType2 = DataType.MarketDepth,
+                    IsSubscribe = false,
+                } );                                
+            }
+
+            // ------------------------------------- Subscribe to security Market Depth  -------------------------------
+            _connector.SubscribeMarketDepth( security );
+
         }
     }
 }
