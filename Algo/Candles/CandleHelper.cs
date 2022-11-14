@@ -35,14 +35,31 @@ namespace StockSharp.Algo.Candles
 	/// </summary>
 	public static class CandleHelper
 	{
-		/// <summary>
-		/// Try get suitable market-data type for candles compression.
-		/// </summary>
-		/// <param name="adapter">Adapter.</param>
-		/// <param name="subscription">Subscription.</param>
-		/// <param name="provider">Candle builders provider.</param>
-		/// <returns>Which market-data type is used as a source value. <see langword="null"/> is compression is impossible.</returns>
-		public static DataType TryGetCandlesBuildFrom(this IMessageAdapter adapter, MarketDataMessage subscription, CandleBuilderProvider provider)
+        /// <summary>
+        /// Try get suitable market-data type for candles compression.
+        /// 
+        /// Tony:	In order to build candles, the system will use Ticks and then Level1 
+        ///			In my example, I was trying to load 5 minute candles, when IsCalcVolumeProfile is true,
+        ///			The system will try to build candles from the following info
+        ///			1)	Ticks
+        ///			2)	Level1
+        ///			3)	OrderLog
+        ///			4)	MarketDepth
+        ///			
+        ///			It will then transform the MarketDataTypes datatype from 
+        ///			*) TimeFrameCandle ====> Level1
+        ///			
+        ///			In a way, when I did this
+        ///			_connector.SubscribeCandles( _candleSeries, from, to );
+		///			
+		///			It becomes subscription to ticks data
+		///			
+        /// </summary>
+        /// <param name="adapter">Adapter.</param>
+        /// <param name="subscription">Subscription.</param>
+        /// <param name="provider">Candle builders provider.</param>
+        /// <returns>Which market-data type is used as a source value. <see langword="null"/> is compression is impossible.</returns>
+        public static DataType TryGetCandlesBuildFrom(this IMessageAdapter adapter, MarketDataMessage subscription, CandleBuilderProvider provider)
 		{
 			if (adapter == null)
 				throw new ArgumentNullException(nameof(adapter));

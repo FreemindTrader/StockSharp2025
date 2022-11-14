@@ -127,10 +127,12 @@ namespace StockSharp.FxConnectFXCM
 		{
 			this.AddMarketDataSupport( );
 			this.AddTransactionalSupport( );
-			this.RemoveSupportedMessage( MessageTypes.Portfolio );			
-			this.AddSupportedMarketDataType( DataType.Level1 );
+			this.RemoveSupportedMessage( MessageTypes.Portfolio );
+            this.AddSupportedMarketDataType( DataType.Ticks );
+            this.AddSupportedMarketDataType( DataType.Level1 );
 			this.AddSupportedMarketDataType( DataType.CandleTimeFrame );
-			this.AddSupportedResultMessage( MessageTypes.SecurityLookup );
+            this.AddSupportedMarketDataType( DataType.CandleVolume );
+            this.AddSupportedResultMessage( MessageTypes.SecurityLookup );
 			this.AddSupportedResultMessage( MessageTypes.PortfolioLookup );
 			this.AddSupportedResultMessage( MessageTypes.OrderStatus );
 			this.AddSupportedResultMessage( MessageTypes.OrderGroupCancel );
