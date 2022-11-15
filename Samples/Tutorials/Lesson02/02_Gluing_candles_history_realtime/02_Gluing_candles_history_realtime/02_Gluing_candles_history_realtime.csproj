@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>_02_Gluing_candles_history_realtime</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
+    <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.136" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\00 - Tony\00_Adapters\00_FXCM\00_Fxcm.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Algo\Algo.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Configuration.Adapters\Configuration.AdaptersGitHub.csproj" />
+  </ItemGroup>
+
+</Project>

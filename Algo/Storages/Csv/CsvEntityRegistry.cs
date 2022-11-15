@@ -1048,6 +1048,8 @@ namespace StockSharp.Algo.Storages.Csv
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CsvEntityRegistry"/>.
+		/// 
+		/// Tony: It stores lists of instruments, portfolios, exchange, platforms
 		/// </summary>
 		/// <param name="path">The path to data directory.</param>
 		public CsvEntityRegistry(string path)

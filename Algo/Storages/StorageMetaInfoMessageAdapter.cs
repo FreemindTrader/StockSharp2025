@@ -20,15 +20,24 @@ namespace StockSharp.Algo.Storages
 
 		private readonly StorageProcessor _storageProcessor;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="StorageMetaInfoMessageAdapter"/>.
-		/// </summary>
-		/// <param name="innerAdapter">The adapter, to which messages will be directed.</param>
-		/// <param name="securityStorage">Securities meta info storage.</param>
-		/// <param name="positionStorage">Position storage.</param>
-		/// <param name="exchangeInfoProvider">Exchanges and trading boards provider.</param>
-		/// <param name="storageProcessor">Storage processor.</param>
-		public StorageMetaInfoMessageAdapter(IMessageAdapter innerAdapter, ISecurityStorage securityStorage,
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StorageMetaInfoMessageAdapter"/>.
+        /// 
+        /// Tony: This adapter is responsible for Storing the following to the corresponding csv files
+        ///		1) Securities			======>	security.csv
+        ///		2) Boards				======>	exchange.csv and exchangeboard.csv
+        ///		3) Portfolio			======>	portfolio.csv
+        ///		4) PositionChanges		======>	position.scv
+        ///		
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="innerAdapter">The adapter, to which messages will be directed.</param>
+        /// <param name="securityStorage">Securities meta info storage.</param>
+        /// <param name="positionStorage">Position storage.</param>
+        /// <param name="exchangeInfoProvider">Exchanges and trading boards provider.</param>
+        /// <param name="storageProcessor">Storage processor.</param>
+        public StorageMetaInfoMessageAdapter(IMessageAdapter innerAdapter, ISecurityStorage securityStorage,
 			IPositionStorage positionStorage, IExchangeInfoProvider exchangeInfoProvider, StorageProcessor storageProcessor)
 			: base(innerAdapter)
 		{

@@ -806,7 +806,16 @@ namespace StockSharp.Algo.Storages
 			return args.OrderBy().ToArray();
 		}
 
-		private class ConvertableStorage<TMessage, TEntity> : IEntityMarketDataStorage<TEntity, TMessage>, IMarketDataStorageInfo<TMessage>
+
+        /// <summary>
+        /// Tony:	This is the generic storage of market data (ticks, order books etc.). It doesn't have code of its own.
+		///			It mainly implements the interface and call the _messageStorage, _exchangeInfoProvider and 
+		///			_toMessage to prefrom the required functions.
+		///			
+        /// </summary>
+        /// <typeparam name="TMessage"></typeparam>
+        /// <typeparam name="TEntity"></typeparam>
+        private class ConvertableStorage<TMessage, TEntity> : IEntityMarketDataStorage<TEntity, TMessage>, IMarketDataStorageInfo<TMessage>
 			where TMessage : Message
 		{
 			private readonly Security _security;
