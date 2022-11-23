@@ -473,7 +473,7 @@ namespace StockSharp.Algo
 				return;
 			}
 
-			// если некоторые свечи имеют неполные данные, то и индекс будет таким же неполным
+			// если некоторы?свеч?имею?неполные данные, то ?индекс буде?таки?же неполным
 			if (indexCandle.OpenPrice == 0 || indexCandle.HighPrice == 0 || indexCandle.LowPrice == 0 || indexCandle.ClosePrice == 0)
 			{
 				var nonZeroPrice = indexCandle.OpenPrice;
