@@ -136,8 +136,8 @@ namespace SampleHistoryTesting
 
 					// calc order price as a close price + offset
 					var price = candle.ClosePrice + ((direction == Sides.Buy ? Security.PriceStep : -Security.PriceStep) ?? 1);
-
-					RegisterOrder(this.CreateOrder(direction, price, volume));
+                    
+                    RegisterOrder(this.CreateOrder(direction, price, volume));
 
 					// or revert position via market quoting
 					//var strategy = new MarketQuotingStrategy(direction, volume);

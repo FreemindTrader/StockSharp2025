@@ -894,10 +894,18 @@ namespace StockSharp.Algo.Strategies
 
 		private ProcessStates _processState;
 
-		/// <summary>
-		/// The operation state.
-		/// </summary>
-		[Browsable(false)]
+        /// <summary>
+        /// The operation state.
+        /// </summary>
+        // ------------------------------------------------------------------------------------------
+        // 
+        //+++ Step 4: ProcessState is where our custom Strategy
+        //+++ is invoked. OnStarted is a virtual function override
+		//+++ by the inherited strategy
+        // 
+        // ------------------------------------------------------------------------------------------
+
+        [Browsable(false)]
 		public virtual ProcessStates ProcessState
 		{
 			get => _processState;
@@ -2000,7 +2008,15 @@ namespace StockSharp.Algo.Strategies
 		public virtual void Start()
 		{
 			_stopping = false;
-			SafeGetConnector().SendOutMessage(new StrategyChangeStateMessage(this, ProcessStates.Started));
+
+            // ------------------------------------------------------------------------------------------
+            // 
+            //+++ Step 3: To start strategy, sys sends
+			//+++ StrategyChangeStateMessage
+            // 
+            // ------------------------------------------------------------------------------------------
+
+            SafeGetConnector().SendOutMessage(new StrategyChangeStateMessage(this, ProcessStates.Started));
 		}
 
 		/// <summary>

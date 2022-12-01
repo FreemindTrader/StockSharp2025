@@ -504,8 +504,14 @@ namespace SampleHistoryTesting
 						connector.SubscribeLevel1(security);
 					}
 
-					// start strategy before emulation started
-					strategy.Start();
+                    // ------------------------------------------------------------------------------------------
+                    // 
+                    //+++ Step 2: Received Security, now start Strategy
+                    // 
+                    // ------------------------------------------------------------------------------------------
+
+                    // start strategy before emulation started
+                    strategy.Start();
 
 					// start historical data loading when connection established successfully and all data subscribed
 					connector.Start();
@@ -611,8 +617,15 @@ namespace SampleHistoryTesting
 			// start emulation
 			foreach (var connector in _connectors.Cache)
 			{
-				// raise NewSecurities and NewPortfolio for full fill strategy properties
-				connector.Connect();
+                // raise NewSecurities and NewPortfolio for full fill strategy properties
+                // ------------------------------------------------------------------------------------------
+                // 
+                //+++ Step 1: Kick start the whole strategy by Connect
+                // 
+                // ------------------------------------------------------------------------------------------
+                //
+
+                connector.Connect();
 
 				// 1 cent commission for trade
 				connector.SendInMessage(new CommissionRuleMessage
