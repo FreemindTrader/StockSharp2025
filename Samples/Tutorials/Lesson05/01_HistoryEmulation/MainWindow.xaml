@@ -13,13 +13,33 @@
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="100"></ColumnDefinition>
-            <ColumnDefinition Width="450"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="92"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            
         </Grid.RowDefinitions>
-        <Button Content="Button" Grid.Column="3"></Button>
-        <xaml:CandleSettingsEditor x:Name="CandleSettingsEditor" Grid.Column="2" Grid.Row="0" Width="100"></xaml:CandleSettingsEditor>
+        <Button Content="Start" x:Name="Start"  Grid.Column="3" Click="Start_Click"></Button>
+        <xaml:CandleSettingsEditor x:Name="CandleSettingsEditor" Grid.Column="0" Grid.Row="0" Width="100"></xaml:CandleSettingsEditor>
+        <DatePicker x:Name="DatePickerBegin" Grid.Column="1"></DatePicker>
+        <DatePicker x:Name="DatePickerEnd" Grid.Column="2"></DatePicker>
+        <TabControl Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="2">
+            <TabItem Header="Chart&amp;MarketDepth">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="270*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="90*">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <xaml:Chart x:Name="Chart"></xaml:Chart>
+                    <xaml:MarketDepthControl Grid.Column="1"></xaml:MarketDepthControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Monitor">
+                
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
