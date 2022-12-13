@@ -1,0 +1,109 @@
+<Window x:Class="_01_NewHistoryEmulationGithub.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+		Title="{x:Static loc:LocalizedStrings.XamlStr562}" Height="520" Width="834"
+		xmlns:sx="http://schemas.stocksharp.com/xaml"
+		xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+        xmlns:exc="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+        xmlns:charting="http://schemas.stocksharp.com/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+
+	<Window.Resources>
+		<exc:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" FalseValue="Hidden" />
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="5"/>
+			<ColumnDefinition Width="250"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="85*" />
+				<ColumnDefinition Width="497*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Grid Grid.ColumnSpan="2">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="100" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="10" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="10" />
+				</Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Content="{x:Static loc:LocalizedStrings.XamlStr593}" />
+
+                <Grid Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="130" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="23" />
+						<RowDefinition Height="23" />
+						<RowDefinition Height="23" />
+						<RowDefinition Height="23" />
+						
+					</Grid.RowDefinitions>
+
+					<TextBox x:Name="SecId" />
+					<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                        <ComboBox x:Name="TimeFrame" Width="100">
+                            <ComboBoxItem>1min</ComboBoxItem>
+                            <ComboBoxItem>5min</ComboBoxItem>
+                        </ComboBox>
+                        <dxe:DateEdit x:Name="From" Width="180" />
+						<dxe:DateEdit x:Name="To"  Width="180" />
+                        
+                        <CheckBox Content="{x:Static loc:LocalizedStrings.XamlStr117}" VerticalAlignment="Center" Name="DebugLogCheckBox" />
+					</StackPanel>
+
+					<ProgressBar x:Name="CandlesProgress" Grid.Column="1" Grid.Row="1" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="1">Progress</TextBlock>
+					
+                    <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                        <Button x:Name="StartBtn" Content="{x:Static loc:LocalizedStrings.Str2421}" Width="100" Click="StartBtnClick" IsEnabled="False"/>
+                        <Button x:Name="PauseBtn" Content="{x:Static loc:LocalizedStrings.Pause}" Width="100" Click="PauseBtnClick" IsEnabled="False"/>
+                        <Button x:Name="StopBtn" Content="{x:Static loc:LocalizedStrings.Str242}" Width="100" HorizontalAlignment="Left" Click="StopBtnClick" IsEnabled="False"/>
+                    </StackPanel>
+					
+					
+					
+				</Grid>
+			</Grid>
+
+			<Grid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
+                <TabControl>
+                    <TabItem Header="{x:Static loc:LocalizedStrings.Candles}">
+                        <charting:ChartPanel x:Name="CandlesChart" ShowOverview="False" />
+                    </TabItem>
+                    <TabItem Header="{x:Static loc:LocalizedStrings.Equity}">
+                        <charting:EquityCurveChart x:Name="CandlesEquity" />
+                    </TabItem>
+                    <TabItem Header="{x:Static loc:LocalizedStrings.Str436}">
+                        <sx:StatisticParameterGrid x:Name="CandlesParameterGrid" />
+                    </TabItem>
+                    <TabItem Header="{x:Static loc:LocalizedStrings.Str862}">
+                        <charting:EquityCurveChart x:Name="CandlesPosition" />
+                    </TabItem>
+                </TabControl>
+            </Grid>
+		</Grid>
+
+		<GridSplitter Grid.Column="1" ResizeDirection="Columns" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+
+		<sx:MarketDepthControl Grid.Column="2" x:Name="MarketDepth" />
+	</Grid>
+</Window>

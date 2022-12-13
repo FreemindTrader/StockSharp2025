@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <RootNamespace>_01_NewHistoryEmulationGithub</RootNamespace>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.137" />
+        <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.136" />
+    </ItemGroup>
+
+</Project>

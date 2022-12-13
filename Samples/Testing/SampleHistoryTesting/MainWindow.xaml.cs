@@ -44,8 +44,9 @@ namespace SampleHistoryTesting
 
 	public partial class MainWindow
 	{
-		// emulation settings
-		private sealed class EmulationInfo
+        private string _pathHistory = @"U:\ForexData";
+        // emulation settings
+        private sealed class EmulationInfo
 		{
 			public bool UseTicks { get; set; }
 			public bool UseMarketDepth { get; set; }
@@ -313,7 +314,10 @@ namespace SampleHistoryTesting
 			var storageRegistry = new StorageRegistry
 			{
 				// set historical path
-				DefaultDrive = new LocalMarketDataDrive(HistoryPath.Folder)
+				
+
+                DefaultDrive = new LocalMarketDataDrive( _pathHistory )
+                //DefaultDrive = new LocalMarketDataDrive(HistoryPath.Folder)
 			};
 
 			var startTime = ((DateTime)From.EditValue).UtcKind();

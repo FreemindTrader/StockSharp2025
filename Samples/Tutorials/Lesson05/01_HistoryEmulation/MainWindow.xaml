@@ -34,11 +34,11 @@
                         </ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <xaml:Chart x:Name="Chart"></xaml:Chart>
-                    <xaml:MarketDepthControl Grid.Column="1"></xaml:MarketDepthControl>
+                    <xaml:MarketDepthControl x:Name="MarketDepthControl" Grid.Column="1"></xaml:MarketDepthControl>
                 </Grid>
             </TabItem>
             <TabItem Header="Monitor">
-                
+                <xaml:Monitor x:Name="Monitor"></xaml:Monitor>
             </TabItem>
         </TabControl>
     </Grid>
