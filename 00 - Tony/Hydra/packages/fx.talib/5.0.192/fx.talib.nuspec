@@ -6,7 +6,7 @@
     <authors>TonyFreemind</authors>
     <description>Package Description</description>
     <dependencies>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <dependency id="fx.Bars" version="5.0.192" exclude="Build,Analyzers" />
       </group>
     </dependencies>

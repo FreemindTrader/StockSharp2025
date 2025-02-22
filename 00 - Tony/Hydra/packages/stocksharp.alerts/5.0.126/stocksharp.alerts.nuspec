@@ -16,7 +16,7 @@
     <tags>StockSharp Alerts Trading Finance Algotrading Forex Bitcoin Cryptocurrencies Stock Exchange Derivatives Options</tags>
     <repository type="GitHub" url="https://github.com/StockSharp/StockSharp" commit="2742fb004a34e2b10e2f74c0043133a8de25f3a0" />
     <dependencies>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <dependency id="StockSharp.Alerts.Interfaces" version="5.0.6" />
         <dependency id="StockSharp.Xaml" version="5.0.132" />
       </group>

@@ -10,7 +10,7 @@
         <RootNamespace>StockSharp.FxConnect</RootNamespace>
         <AssemblyName>StockSharp.FxConnect</AssemblyName>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFramework>net9.0-windows</TargetFramework>
         <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.1|AnyCPU'">

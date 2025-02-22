@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{FA920120-5CA3-4972-BDC1-7318855BF3A8}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net6.0-windows</TargetFrameworks>
+        <TargetFrameworks>net9.0-windows</TargetFrameworks>
         <OutputType>WinExe</OutputType>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
@@ -30,19 +30,19 @@
         <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows|AnyCPU'">
         <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|AnyCPU'">
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows|AnyCPU'">
         <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|x64'">
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows|x64'">
         <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|x64'">
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows|x64'">
         <NoWarn>1701;1702;MSB3270</NoWarn>
     </PropertyGroup>
 

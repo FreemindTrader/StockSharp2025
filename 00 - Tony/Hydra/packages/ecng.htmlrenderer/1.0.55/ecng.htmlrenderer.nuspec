@@ -16,7 +16,7 @@
     <tags>Ecng HtmlRenderer</tags>
     <repository commit="f1410757afda7f62e6f3ffd3e0d12c54d46f3f3b" />
     <dependencies>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <dependency id="Ecng.Xaml.DXRefs" version="1.0.5" />
         <dependency id="Ecng.Common" version="1.0.105" />
       </group>

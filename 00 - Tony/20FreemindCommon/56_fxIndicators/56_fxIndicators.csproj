@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net6.0-windows</TargetFrameworks>
+        <TargetFrameworks>net9.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <NoWarn>CA1416</NoWarn>

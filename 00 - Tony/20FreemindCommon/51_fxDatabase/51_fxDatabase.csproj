@@ -9,7 +9,7 @@
     <PropertyGroup>
         <ProjectGuid>{CF631F3F-41A7-49B4-B9AB-A333B4AA9D82}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFrameworks>net6.0-windows</TargetFrameworks>
+        <TargetFrameworks>net9.0-windows</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>

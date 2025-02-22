@@ -6,7 +6,7 @@
     <authors>TonyFreemind</authors>
     <description>Package Description</description>
     <dependencies>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <dependency id="Ecng.Xaml.DXRefs" version="1.0.5" exclude="Build,Analyzers" />
         <dependency id="fx.Collections" version="5.0.192" exclude="Build,Analyzers" />
         <dependency id="fx.Definitions" version="5.0.192" exclude="Build,Analyzers" />
@@ -14,7 +14,7 @@
       </group>
     </dependencies>
     <frameworkReferences>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
       </group>
     </frameworkReferences>

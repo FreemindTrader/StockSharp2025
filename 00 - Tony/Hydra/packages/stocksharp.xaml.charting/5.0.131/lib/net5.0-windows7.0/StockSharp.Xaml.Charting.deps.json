@@ -187,7 +187,7 @@
           "Ecng.Xaml.DXRefs": "1.0.5"
         },
         "runtime": {
-          "lib/net6.0-windows7.0/Ecng.HtmlRenderer.dll": {
+          "lib/net9.0-windows/Ecng.HtmlRenderer.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -214,7 +214,7 @@
           "System.Management": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0-windows7.0/Ecng.Interop.Windows.dll": {
+          "lib/net9.0-windows/Ecng.Interop.Windows.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -263,7 +263,7 @@
           "Microsoft.Windows.Compatibility": "5.0.2"
         },
         "runtime": {
-          "lib/net6.0-windows7.0/Ecng.ManagedWinapi.dll": {
+          "lib/net9.0-windows/Ecng.ManagedWinapi.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2127,7 +2127,7 @@
           "System.Text.Encoding.CodePages": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0-windows7.0/NDde.dll": {
+          "lib/net9.0-windows/NDde.dll": {
             "assemblyVersion": "3.1.0.0",
             "fileVersion": "3.1.0.0"
           }
@@ -2135,7 +2135,7 @@
       },
       "Specshell.WinForm.HiddenForm/1.0.0": {
         "runtime": {
-          "lib/net6.0-windows7.0/Specshell.WinForm.HiddenForm.dll": {
+          "lib/net9.0-windows/Specshell.WinForm.HiddenForm.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }

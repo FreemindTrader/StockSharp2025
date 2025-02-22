@@ -7,7 +7,7 @@
     <description>Package Description</description>
     <repository type="git" commit="84f27136a0cfac961da46b8744b14d10058e76df" />
     <dependencies>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <dependency id="StockSharp.Algo" version="5.0.192" exclude="Build,Analyzers" />
         <dependency id="StockSharp.Charting.Interfaces" version="5.0.192" exclude="Build,Analyzers" />
         <dependency id="StockSharp.Configuration" version="5.0.192" exclude="Build,Analyzers" />
@@ -19,7 +19,7 @@
       </group>
     </dependencies>
     <frameworkReferences>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
       </group>
     </frameworkReferences>

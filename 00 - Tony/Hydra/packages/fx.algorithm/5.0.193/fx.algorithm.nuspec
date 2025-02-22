@@ -7,7 +7,7 @@
     <description>Package Description</description>
     <repository type="git" commit="49e75b2cc28c20c7f1d6afbbc0553d53d63ef1ae" />
     <dependencies>
-      <group targetFramework="net6.0-windows7.0">
+      <group targetFramework="net9.0-windows">
         <dependency id="EntityFramework" version="6.4.4" exclude="Build,Analyzers" />
         <dependency id="StockSharp.Xaml" version="5.0.130" exclude="Build,Analyzers" />
         <dependency id="fx.AlgoEx" version="5.0.192" exclude="Build,Analyzers" />
