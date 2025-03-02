@@ -7,6 +7,7 @@
     <ProjectGuid>{B47F9C23-A4BD-46A9-BF27-54CB3D653503}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\00 - Tony\00FreemindBase\00_fxBase\00_fxBase.csproj" />
     <ProjectReference Include="..\Localization\Localization.csproj" />
   </ItemGroup>
   <ItemGroup>

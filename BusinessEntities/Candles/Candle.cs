@@ -2,6 +2,11 @@ namespace StockSharp.Algo.Candles;
 
 using StockSharp.BusinessEntities;
 
+// ----------------------------------------------------- Tony ------------------------------------------------------------	
+using fx.Base;
+// ----------------------------------------------------- Tony ------------------------------------------------------------
+
+
 /// <summary>
 /// Base candle class (contains main parameters).
 /// </summary>
@@ -355,6 +360,26 @@ public abstract class Candle : Cloneable<Candle>, ICandleMessage
 
 		return destination;
 	}
+
+    // ----------------------------------------------------- Tony ------------------------------------------------------------
+    private fxBatchStatus _batchStatus;
+    /// <summary>
+    /// Batch Status
+    /// </summary>
+    [DataMember]
+    [CLSCompliant( false )]
+    public fxBatchStatus BatchStatus
+    {
+        get
+        {
+            return _batchStatus;
+        }
+        set
+        {
+            _batchStatus = value;
+        }
+    }
+    // ----------------------------------------------------- Tony ------------------------------------------------------------
 }
 
 /// <summary>

@@ -1,5 +1,6 @@
 namespace StockSharp.Messages;
 
+using fx.Base;
 /// <summary>
 /// Candle states.
 /// </summary>
@@ -328,7 +329,15 @@ public abstract class CandleMessage : Message, ISubscriptionIdMessage, ICandleMe
 		copy.BuildFrom = BuildFrom;
 		copy.SeqNum = SeqNum;
 
-		return copy;
+        /* -------------------------------------------------------------------------------------------------------------------------------------------
+        * 
+        *  Tony 03: BatchStatus
+        * 
+        * ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        copy.BatchStatus = BatchStatus;
+
+        return copy;
 	}
 
 	/// <inheritdoc />
@@ -347,6 +356,14 @@ public abstract class CandleMessage : Message, ISubscriptionIdMessage, ICandleMe
 		get => OpenTime;
 		set => OpenTime = value;
 	}
+
+    [DataMember]
+    [CLSCompliant( false )]
+    public fxBatchStatus BatchStatus
+    {
+        get;
+        set;
+    }
 }
 
 /// <summary>

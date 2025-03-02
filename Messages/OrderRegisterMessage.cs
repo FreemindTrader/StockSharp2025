@@ -201,4 +201,15 @@ public class OrderRegisterMessage : OrderMessage
 
 		return str;
 	}
+
+    /* -------------------------------------------------------------------------------------------------------------------------------------------
+	* 
+	*  Tony 05: What type of Position to Close
+	* 
+	* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    /// <summary>
+    /// What type of Position to Close
+    /// </summary>
+    public ClosePositionsType? ClosePositionType { get; set; }
 }

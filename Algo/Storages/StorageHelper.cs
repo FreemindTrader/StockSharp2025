@@ -5,6 +5,11 @@ using System.Diagnostics;
 using StockSharp.Algo.Candles;
 using StockSharp.Algo.Candles.Compression;
 
+// ----------------------------------------------------------- Tony ----------------------------------------------------------------------------
+using fx.Base;
+// ----------------------------------------------------------- Tony --------------------------------------------------------------------------------
+
+
 /// <summary>
 /// Extension class for storage.
 /// </summary>
@@ -1216,7 +1221,17 @@ public static class StorageHelper
 
 		DateTimeOffset? lastTime = null;
 
-		foreach (var message in messages)
+        /* -------------------------------------------------------------------------------------------------------------------------------------------
+        * 
+        *  Tony 05 : After loading of candles, we will add that this is a batch candle, so we don't process one bar by a time
+        * 
+        * ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        int msgIndex = 0;
+        var msgCount = messages.Count();
+
+
+        foreach ( var message in messages)
 		{
 			if (lastTime is null)
 			{
@@ -1226,7 +1241,23 @@ public static class StorageHelper
 			else if (message.ServerTime < lastTime)
 				continue;
 
-			message.OriginalTransactionId = transactionId;
+            /* -------------------------------------------------------------------------------------------------------------------------------------------
+                * 
+                *  Tony 05 : Add BatchStatus to the Message so we don't have to do technical analysis per bar.
+                * 
+                * ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+            if ( message is TimeFrameCandleMessage tf )
+            {
+                tf.BatchStatus = fxBatchStatus.Batching;
+
+                if ( msgIndex == msgCount - 1 )
+                {
+                    tf.BatchStatus = fxBatchStatus.EndBatch;
+                }
+            }
+
+            message.OriginalTransactionId = transactionId;
 			message.SetSubscriptionIds(subscriptionId: transactionId);
 
 			lastTime = message.ServerTime;

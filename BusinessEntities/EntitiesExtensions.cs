@@ -1535,7 +1535,14 @@ public static class EntitiesExtensions
 		candle.SeqNum = message.SeqNum;
 		candle.BuildFrom = message.BuildFrom;
 
-		return candle;
+        /* -------------------------------------------------------------------------------------------------------------------------------------------
+		* 
+		*  Tony 04: Candle BatchStatus Copy 
+		* 
+		* ------------------------------------------------------------------------------------------------------------------------------------------- */
+        candle.BatchStatus = message.BatchStatus;
+
+        return candle;
 	}
 
 	/// <summary>

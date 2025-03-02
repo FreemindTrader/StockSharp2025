@@ -900,4 +900,19 @@ public class Level1ChangeMessage : BaseChangeMessage<Level1ChangeMessage, Level1
 
 		return str;
 	}
+
+    /* -------------------------------------------------------------------------------------------------------------------------------------------
+	* 
+	*  Tony 02: IsReloadFromServer
+	* 
+	* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    /// <inheritdoc />
+
+    [DataMember]
+    public bool IsReloadFromServer
+    {
+        get;
+        set;
+    }
 }

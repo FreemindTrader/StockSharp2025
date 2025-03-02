@@ -64,12 +64,19 @@ partial class Connector
 			candle = null;
 
 			if (_currentCandle != null && _currentCandle.OpenTime == message.OpenTime)
-			{
-				if (_currentCandle.State == CandleStates.Finished)
-					return false;
+			{				
+                /* -------------------------------------------------------------------------------------------------------------------------------------------
+				* 
+				*  Tony 10: If those candles are freshly loaded from the server, I want these candles to pass thru
+				* 
+				* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+                if ( _currentCandle.State == CandleStates.Finished && message.BatchStatus != fx.Base.fxBatchStatus.Latest )
+                    return false;
+
 
 #pragma warning disable CS0618 // Type or member is obsolete
-				if (_currentCandle is Candle entity) // Subscription.DisableEntity is false
+                if (_currentCandle is Candle entity) // Subscription.DisableEntity is false
 					entity.Update(message);
 				else
 #pragma warning restore CS0618 // Type or member is obsolete
