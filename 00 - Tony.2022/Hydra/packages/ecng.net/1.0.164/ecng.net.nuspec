@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Net</id>
+    <version>1.0.164</version>
+    <title>Ecng.Net</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Net</tags>
+    <repository commit="7f8ab065c96520633bb11a3313a6381df5941866" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" />
+        <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.7" />
+        <dependency id="Microsoft.Net.Http.Headers" version="2.2.8" />
+        <dependency id="Ecng.ComponentModel" version="1.0.134" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

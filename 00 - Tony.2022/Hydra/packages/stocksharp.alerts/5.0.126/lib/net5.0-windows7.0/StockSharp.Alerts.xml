@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>StockSharp.Alerts</name>
+  </assembly>
+  <members>
+    <member name="T:StockSharp.Alerts.AlertButton">
+      <summary>
+            Button activation alert settings.
+            </summary>
+      <summary>
+            AlertButton
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertButton.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertButton" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertButton.MessageType">
+      <summary>
+            Message type.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertButton.SchemaChanged">
+      <summary>
+            Schema change event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertButton.Load(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Load settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertButton.Save(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Save settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertButton.Dispose">
+      <summary>
+            Release resources.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertButton.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:StockSharp.Alerts.AlertFieldPanel">
+      <summary>
+            Panel schema parameter modification.
+            </summary>
+      <summary>
+            AlertFieldPanel
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertFieldPanel.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertFieldPanel" />.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertFieldPanel.MessageTypeProperty">
+      <summary>
+        <see cref="T:System.Windows.DependencyProperty" /> for <see cref="P:StockSharp.Alerts.AlertFieldPanel.MessageType" />.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertFieldPanel.FieldProperty">
+      <summary>
+        <see cref="T:System.Windows.DependencyProperty" /> for <see cref="P:StockSharp.Alerts.AlertFieldPanel.Field" />.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertFieldPanel.OperatorProperty">
+      <summary>
+        <see cref="T:System.Windows.DependencyProperty" /> for <see cref="P:StockSharp.Alerts.AlertFieldPanel.Operator" />.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertFieldPanel.ValueProperty">
+      <summary>
+        <see cref="T:System.Windows.DependencyProperty" /> for <see cref="P:StockSharp.Alerts.AlertFieldPanel.Value" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertFieldPanel.MessageType">
+      <summary>
+            Message type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertFieldPanel.Field">
+      <summary>
+            Message property, which will be made a comparison with the value of <see cref="P:StockSharp.Alerts.AlertFieldPanel.Value" /> based on the criterion <see cref="P:StockSharp.Alerts.AlertFieldPanel.Operator" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertFieldPanel.Operator">
+      <summary>
+            The criterion of comparison values <see cref="P:StockSharp.Alerts.AlertFieldPanel.Value" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertFieldPanel.Value">
+      <summary>
+            Comparison value.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertFieldPanel.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:StockSharp.Alerts.AlertMessageTypePickerWindow">
+      <summary>
+            Message type picker window.
+            </summary>
+      <summary>
+            AlertMessageTypePickerWindow
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertMessageTypePickerWindow.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertMessageTypePickerWindow" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertMessageTypePickerWindow.MessageType">
+      <summary>
+            Message type.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertMessageTypePickerWindow.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:StockSharp.Alerts.AlertNotificationService">
+      <summary>
+            Alert notification service.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertNotificationService.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertNotificationService" />.
+            </summary>
+      <param name="dumpDir">Temp files directory.</param>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertNotificationService.Notify(StockSharp.Alerts.AlertNotifications,System.String,System.String,System.DateTimeOffset)">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Alerts.AlertNotificationService.DisposeManaged">
+      <summary>
+            Release resources.
+            </summary>
+    </member>
+    <member name="T:StockSharp.Alerts.AlertProcessingService">
+      <summary>
+            Alert processing service.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertProcessingService.Registered">
+      <inheritdoc />
+    </member>
+    <member name="E:StockSharp.Alerts.AlertProcessingService.UnRegistered">
+      <inheritdoc />
+    </member>
+    <member name="M:StockSharp.Alerts.AlertProcessingService.Register(StockSharp.Alerts.AlertSchema)">
+      <inheritdoc />
+    </member>
+    <member name="P:StockSharp.Alerts.AlertProcessingService.Schemas">
+      <inheritdoc />
+    </member>
+    <member name="T:StockSharp.Alerts.AlertSchemasPanel">
+      <summary>
+            Panel for schemas modification.
+            </summary>
+      <summary>
+            AlertSchemasPanel
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertSchemasPanel.AddSchemaCommand">
+      <summary>
+            The command to add new schema.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertSchemasPanel.EditSchemaCommand">
+      <summary>
+            The command to edit selected schema.
+            </summary>
+    </member>
+    <member name="F:StockSharp.Alerts.AlertSchemasPanel.RemoveSchemasCommand">
+      <summary>
+            The command to remove selected schemas.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSchemasPanel.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertSchemasPanel" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSchemasPanel.ProcessingService">
+      <summary>
+            Alert processing service.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSchemasPanel.Load(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Load settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSchemasPanel.Save(Ecng.Serialization.SettingsStorage)">
+      <summary>
+            Save settings.
+            </summary>
+      <param name="storage">Settings storage.</param>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertSchemasPanel.LayoutChanged">
+      <summary>
+            Layout changed event.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSchemasPanel.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:StockSharp.Alerts.AlertSettingsPanel">
+      <summary>
+            Panel for schema modification.
+            </summary>
+      <summary>
+            AlertSettingsPanel
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSettingsPanel.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertSettingsPanel" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsPanel.Schema">
+      <summary>
+            Schema.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsPanel.AlertType">
+      <summary>
+            Alert type.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsPanel.Caption">
+      <summary>
+            Header.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsPanel.Message">
+      <summary>
+            Message.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsPanel.Rules">
+      <summary>
+            Rules.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsPanel.SelectedRules">
+      <summary>
+            Selected rules.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertSettingsPanel.CaptionChanged">
+      <summary>
+            The change event <see cref="P:StockSharp.Alerts.AlertSettingsPanel.Caption" />.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertSettingsPanel.MessageChanged">
+      <summary>
+            The change event <see cref="P:StockSharp.Alerts.AlertSettingsPanel.Message" />.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertSettingsPanel.SelectedRulesChanged">
+      <summary>
+            The change event <see cref="P:StockSharp.Alerts.AlertSettingsPanel.SelectedRules" />.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertSettingsPanel.SchemaChanged">
+      <summary>
+            The change event <see cref="P:StockSharp.Alerts.AlertSettingsPanel.Schema" />.
+            </summary>
+    </member>
+    <member name="E:StockSharp.Alerts.AlertSettingsPanel.AlertTypeChanged">
+      <summary>
+            The change event <see cref="P:StockSharp.Alerts.AlertSettingsPanel.AlertType" />.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSettingsPanel.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+    <member name="T:StockSharp.Alerts.AlertSettingsWindow">
+      <summary>
+            Schema modification window.
+            </summary>
+      <summary>
+            AlertSettingsWindow
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSettingsWindow.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertSettingsWindow" />.
+            </summary>
+    </member>
+    <member name="P:StockSharp.Alerts.AlertSettingsWindow.Schema">
+      <summary>
+            Schema.
+            </summary>
+    </member>
+    <member name="M:StockSharp.Alerts.AlertSettingsWindow.InitializeComponent">
+      <summary>
+            InitializeComponent
+            </summary>
+    </member>
+  </members>
+</doc>

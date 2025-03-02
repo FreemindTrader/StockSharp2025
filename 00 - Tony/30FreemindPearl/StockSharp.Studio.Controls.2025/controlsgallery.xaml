@@ -1,0 +1,48 @@
+<dxr:RibbonGalleryBarItem x:Class="StockSharp.Studio.Controls.ControlsGallery"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                          xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                          xmlns:sx="http://schemas.stocksharp.com/xaml"
+                          xmlns:ui="clr-namespace:StockSharp.Studio.Controls"
+                          xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                          Content="{sx:Localization Components}" Glyph="{sx:ThemedIcons Key=Tools}"
+                          LargeGlyph="{sx:ThemedIcons Key=Tools}">
+  <dxr:RibbonGalleryBarItem.DropDownGallery>
+    <dxb:Gallery ItemClick="Gallery_OnItemClick" IsItemCaptionVisible="True" IsItemDescriptionVisible="False"
+                 ColCount="3" ItemGlyphStretch="Fill" ItemGlyphHorizontalAlignment="Center"
+                 ItemGlyphVerticalAlignment="Center" MinColCount="3" AllowFilter="False" AllowToolTips="True"
+                 ItemGlyphSize="24,24">
+      <dxb:GalleryItemGroup ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ui:ControlsGallery}}, Path=ControlTypes}">
+        <dxb:GalleryItemGroup.ItemTemplate>
+          <DataTemplate>
+            <ContentControl>
+              <dxb:GalleryItem Caption="{Binding Name}" Hint="{Binding Description}" Glyph="{ex:ThemedIconBinding Path=Icon}"/>
+            </ContentControl>
+          </DataTemplate>
+        </dxb:GalleryItemGroup.ItemTemplate>
+      </dxb:GalleryItemGroup>
+    </dxb:Gallery>
+  </dxr:RibbonGalleryBarItem.DropDownGallery>
+  <dxr:RibbonGalleryBarItem.Gallery>
+    <dxb:Gallery ItemClick="Gallery_OnItemClick" IsItemCaptionVisible="True" ColCount="3" ItemGlyphSize="16,16"
+                 IsItemDescriptionVisible="False" AllowFilter="False" AllowToolTips="True" MinColCount="3"
+                 ItemGlyphHorizontalAlignment="Center" ItemGlyphVerticalAlignment="Center" ItemCheckMode="None">
+      <dxb:GalleryItemGroup ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ui:ControlsGallery}}, Path=ControlTypes}">
+        <dxb:GalleryItemGroup.ItemTemplate>
+          <DataTemplate>
+            <ContentControl>
+              <dxb:GalleryItem Caption="{Binding Name}" Hint="{Binding Description}" Glyph="{ex:ThemedIconBinding Path=Icon}"/>
+            </ContentControl>
+          </DataTemplate>
+        </dxb:GalleryItemGroup.ItemTemplate>
+      </dxb:GalleryItemGroup>
+    </dxb:Gallery>
+  </dxr:RibbonGalleryBarItem.Gallery>
+  <dxr:RibbonGalleryBarItem.DropDownMenuItems>
+    <dxb:BarButtonItem ItemClick="LoadLayout_OnItemClick" IsEnabled="True" Content="{sx:Localization LoadLayout}"
+                       Glyph="{sx:ThemedIcons Key=Open}"/>
+    <dxb:BarButtonItem ItemClick="SaveLayout_OnItemClick" IsEnabled="True" Content="{sx:Localization SaveLayout}"
+                       Glyph="{sx:ThemedIcons Key=Save}"/>
+  </dxr:RibbonGalleryBarItem.DropDownMenuItems>
+</dxr:RibbonGalleryBarItem>

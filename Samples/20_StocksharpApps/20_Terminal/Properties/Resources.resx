@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DefaultLayout" xml:space="preserve">
+    <value>{
+	"Controls": [
+		{
+			"ControlType": "StockSharp.Studio.Controls.LogManagerPanel, StockSharp.Studio.Controls",
+			"IsToolWindow": true
+		},
+		{
+			"ControlType": "StockSharp.Studio.Controls.PortfoliosPanel, StockSharp.Studio.Controls",
+			"IsToolWindow": false,
+			"Key": "_ac608491b1fe4a80870725f3cf263302"
+		}
+	],
+	"Layout": "﻿&lt;XtraSerializer version=\"1.0\" application=\"DockLayoutManager\"&gt;\n  &lt;property name=\"#LayoutVersion\" isnull=\"true\" /&gt;\n  &lt;property name=\"$DockLayoutManager\" iskey=\"true\" value=\"DockLayoutManager\"&gt;\n    &lt;property name=\"DockingStyle\"&gt;VS2010&lt;/property&gt;\n    &lt;property name=\"FloatingDocumentContainer\"&gt;DocumentHost&lt;/property&gt;\n    &lt;property name=\"FloatingMode\"&gt;Desktop&lt;/property&gt;\n    &lt;property name=\"Items\" iskey=\"true\" value=\"6\"&gt;\n      &lt;property name=\"Item1\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"Orientation\"&gt;Vertical&lt;/property&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;-1&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\" isnull=\"true\" /&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;Root&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item2\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"ClosePageButtonShowMode\"&gt;InAllTabPageHeaders&lt;/property&gt;\n        &lt;property name=\"DestroyOnClosingChildren\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;0&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"TypeName\"&gt;DocumentGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;Root&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;DocumentHost&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item3\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;DocumentPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;DocumentHost&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_ac608491b1fe4a80870725f3cf263302&lt;/property&gt;\n        &lt;property name=\"SerializableMDIBounds\"&gt;0,0,NaN,NaN&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item4\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"DockType\"&gt;Bottom&lt;/property&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;-1&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"TypeName\"&gt;AutoHideGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\" isnull=\"true\" /&gt;\n        &lt;property name=\"ParentCollectionName\"&gt;$AutoHideGroups&lt;/property&gt;\n        &lt;property name=\"Name\"&gt;dockItem1&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item5\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"FloatSize\"&gt;715,678&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"1\"&gt;\n          &lt;property name=\"Item1\" isnull=\"true\" iskey=\"true\"&gt;\n            &lt;property name=\"DockState\"&gt;Docked&lt;/property&gt;\n            &lt;property name=\"ParentName\"&gt;Root&lt;/property&gt;\n            &lt;property name=\"OwnerName\"&gt;_f97dcb8b21044df3b6c5cbb2b8b3b704&lt;/property&gt;\n            &lt;property name=\"Index\"&gt;1&lt;/property&gt;\n          &lt;/property&gt;\n        &lt;/property&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem1&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_f97dcb8b21044df3b6c5cbb2b8b3b704&lt;/property&gt;\n      &lt;/property&gt;\n    &lt;/property&gt;\n    &lt;property name=\"ManualClosedPanelsBarVisibility\"&gt;false&lt;/property&gt;\n    &lt;property name=\"RestoreLayoutOptions.FloatPanelsRestoreOffset\" OwnerType=\"DevExpress.Xpf.Docking.RestoreLayoutOptions\" DependencyPropertyType=\"System.Windows.Point\"&gt;1,147&lt;/property&gt;\n  &lt;/property&gt;\n&lt;/XtraSerializer&gt;"
+}</value>
+  </data>
+  <data name="DefaultAreaLayout" xml:space="preserve">
+    <value>{
+	"Controls": [
+		{
+			"ControlType": "StockSharp.Studio.Controls.SecuritiesPanel, StockSharp.Studio.Controls",
+			"IsToolWindow": true,
+			"Key": "_fca604ed8632478faa6729947d22609e"
+		},
+		{
+			"ControlType": "StockSharp.Studio.Controls.ScalpingMarketDepthControl, StockSharp.Studio.Controls",
+			"IsToolWindow": true,
+			"Key": "_9361036ef4f34780b27f48e3176d41f9"
+		},
+		{
+			"ControlType": "StockSharp.Studio.Controls.InteractiveChart, StockSharp.Studio.Controls",
+			"IsToolWindow": true,
+			"Key": "_48148651b4904377ace183704b1c84c6"
+		},
+		{
+			"ControlType": "StockSharp.Studio.Controls.OrdersPanel, StockSharp.Studio.Controls",
+			"IsToolWindow": true,
+			"Key": "_ea48c667f3844deca76166c40748cfdd"
+		},
+		{
+			"ControlType": "StockSharp.Studio.Controls.BuySellGridPanel, StockSharp.Studio.Controls",
+			"IsToolWindow": true,
+			"Key": "_66adc86dc80e4256a5b95e6e81f91ffa"
+		},
+		{
+			"ControlType": "StockSharp.Studio.Controls.MyTradesPanel, StockSharp.Studio.Controls",
+			"IsToolWindow": true,
+			"Key": "_89aeb865673b46e0b7c2f7f7538a0fbe"
+		}
+	],
+	"Layout": "﻿&lt;XtraSerializer version=\"1.0\" application=\"DockLayoutManager\"&gt;\n  &lt;property name=\"#LayoutVersion\" isnull=\"true\" /&gt;\n  &lt;property name=\"$DockLayoutManager\" iskey=\"true\" value=\"DockLayoutManager\"&gt;\n    &lt;property name=\"DockingStyle\"&gt;VS2010&lt;/property&gt;\n    &lt;property name=\"FloatingMode\"&gt;Desktop&lt;/property&gt;\n    &lt;property name=\"Items\" iskey=\"true\" value=\"11\"&gt;\n      &lt;property name=\"Item1\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"Orientation\"&gt;Horizontal&lt;/property&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;-1&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\"&gt;\n          &lt;property name=\"IsUserDefined\"&gt;false&lt;/property&gt;\n        &lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\" isnull=\"true\" /&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;dockItem1&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item2\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"Orientation\"&gt;Vertical&lt;/property&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;-1&lt;/property&gt;\n        &lt;property name=\"ItemWidth\"&gt;1.5801418439716313*&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\"&gt;\n          &lt;property name=\"IsUserDefined\"&gt;false&lt;/property&gt;\n        &lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem1&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;dockItem2&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item3\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"AllowRename\"&gt;false&lt;/property&gt;\n        &lt;property name=\"FloatSize\"&gt;473,621&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"ItemHeight\"&gt;1.08072487644152*&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem2&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_48148651b4904377ace183704b1c84c6&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item4\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;0&lt;/property&gt;\n        &lt;property name=\"ItemHeight\"&gt;0.919275123558484*&lt;/property&gt;\n        &lt;property name=\"ItemWidth\"&gt;*&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\"&gt;\n          &lt;property name=\"IsUserDefined\"&gt;false&lt;/property&gt;\n        &lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;TabbedGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem2&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;dockItem4&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item5\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"AllowRename\"&gt;false&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem4&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_fca604ed8632478faa6729947d22609e&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item6\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"AllowRename\"&gt;false&lt;/property&gt;\n        &lt;property name=\"FloatSize\"&gt;353,621&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem4&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_66adc86dc80e4256a5b95e6e81f91ffa&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item7\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"AllowRename\"&gt;false&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem4&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_ea48c667f3844deca76166c40748cfdd&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item8\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"AllowRename\"&gt;false&lt;/property&gt;\n        &lt;property name=\"FloatSize\"&gt;282,621&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem4&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_89aeb865673b46e0b7c2f7f7538a0fbe&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item9\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"AllowSplitters\"&gt;true&lt;/property&gt;\n        &lt;property name=\"Orientation\"&gt;Vertical&lt;/property&gt;\n        &lt;property name=\"SerializableSelectedTabPageIndex\"&gt;-1&lt;/property&gt;\n        &lt;property name=\"ItemHeight\"&gt;*&lt;/property&gt;\n        &lt;property name=\"ItemWidth\"&gt;0.41985815602836873*&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\"&gt;\n          &lt;property name=\"IsUserDefined\"&gt;false&lt;/property&gt;\n        &lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutGroup&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem1&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;dockItem3&lt;/property&gt;\n      &lt;/property&gt;\n      &lt;property name=\"Item10\" isnull=\"true\" iskey=\"true\"&gt;\n        &lt;property name=\"SerializableFloatingBounds\"&gt;0,0,0,0&lt;/property&gt;\n        &lt;property name=\"SerializableFloatingOffset\"&gt;0,0&lt;/property&gt;\n        &lt;property name=\"AllowClose\"&gt;true&lt;/property&gt;\n        &lt;property name=\"AllowRename\"&gt;false&lt;/property&gt;\n        &lt;property name=\"IsActive\"&gt;false&lt;/property&gt;\n        &lt;property name=\"SerializableDockSituation\" iskey=\"true\" value=\"0\" /&gt;\n        &lt;property name=\"SerializationInfo\" isnull=\"true\" iskey=\"true\" /&gt;\n        &lt;property name=\"ShowCloseButton\"&gt;true&lt;/property&gt;\n        &lt;property name=\"TypeName\"&gt;LayoutPanel&lt;/property&gt;\n        &lt;property name=\"ParentName\"&gt;dockItem3&lt;/property&gt;\n        &lt;property name=\"ParentCollectionName\" isnull=\"true\" /&gt;\n        &lt;property name=\"Name\"&gt;_9361036ef4f34780b27f48e3176d41f9&lt;/property&gt;\n        &lt;property name=\"Visibility\"&gt;Visible&lt;/property&gt;\n      &lt;/property&gt;\n    &lt;/property&gt;\n    &lt;property name=\"ManualClosedPanelsBarVisibility\"&gt;false&lt;/property&gt;\n    &lt;property name=\"RestoreLayoutOptions.FloatPanelsRestoreOffset\" OwnerType=\"DevExpress.Xpf.Docking.RestoreLayoutOptions\" DependencyPropertyType=\"System.Windows.Point\"&gt;11,86&lt;/property&gt;\n  &lt;/property&gt;\n&lt;/XtraSerializer&gt;"
+}</value>
+  </data>
+</root>

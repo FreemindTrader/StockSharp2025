@@ -1,0 +1,24 @@
+<controls:BaseStudioControl x:Class="StockSharp.Studio.Controls.OrdersPanel"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:sx="http://schemas.stocksharp.com/xaml"
+                            xmlns:controls="clr-namespace:StockSharp.Studio.Controls"
+                            xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                            xmlns:alerts="clr-namespace:StockSharp.Alerts;assembly=StockSharp.Alerts"
+                            xmlns:messages="clr-namespace:StockSharp.Messages;assembly=StockSharp.Messages"
+                            xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <dxb:BarManager x:Name="BarManager" Grid.Row="0">
+      <dxb:BarManager.Bars>
+        <dxb:Bar Caption="{x:Static loc:LocalizedStrings.Main}">
+          <alerts:AlertButton x:Name="AlertBtn" MessageType="{x:Type messages:ExecutionMessage}"/>
+        </dxb:Bar>
+      </dxb:BarManager.Bars>
+    </dxb:BarManager>
+    <sx:OrderGrid x:Name="OrderGrid" Grid.Row="1"/>
+  </Grid>
+</controls:BaseStudioControl>

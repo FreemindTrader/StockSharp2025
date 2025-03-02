@@ -1,0 +1,10 @@
+<local:BaseStudioControl x:Class="StockSharp.Studio.Controls.InteractiveChart"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:local="clr-namespace:StockSharp.Studio.Controls"
+                         xmlns:charting="http://schemas.stocksharp.com/xaml">
+  <charting:ChartPanel RegisterOrder="ChartPanel_OnRegisterOrder" MoveOrder="ChartPanel_OnMoveOrder"
+                       CancelOrder="ChartPanel_OnCancelOrder" AnnotationCreated="ChartPanel_OnAnnotationCreated"
+                       AnnotationDeleted="ChartPanel_OnAnnotationDeleted"
+                       AnnotationModified="ChartPanel_OnAnnotationModified" x:Name="ChartPanel"/>
+</local:BaseStudioControl>

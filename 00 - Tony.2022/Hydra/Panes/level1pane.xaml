@@ -1,0 +1,67 @@
+<panes:DataPane x:Class="StockSharp.Hydra.Panes.Level1Pane"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:controls="clr-namespace:StockSharp.Hydra.Controls"
+                xmlns:sx="http://schemas.stocksharp.com/xaml"
+                xmlns:panes="clr-namespace:StockSharp.Hydra.Panes"
+                xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                sx:Doc.Url="f3ff535d-84d8-4fa5-8d3a-e123a5c57e99.htm">
+  <DockPanel>
+    <controls:ExportProgress x:Name="Progress" VerticalAlignment="Bottom" DockPanel.Dock="Bottom"/>
+    <Grid x:Name="MainGrid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <controls:DrivePanel x:Name="DrivePanel"/>
+      <Grid Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="200"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="200"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto" MinWidth="100"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <dxe:DateEdit EditValueChanged="OnDateValueChanged" x:Name="FromCtrl" Grid.Column="0" DisplayFormatString="d"/>
+        <dxe:DateEdit EditValueChanged="OnDateValueChanged" x:Name="ToCtrl" Grid.Column="2" DisplayFormatString="d"/>
+        <controls:SecurityPickerButton x:Name="SelectSecurityBtn" Grid.Column="4"/>
+        <ex:TimeZoneEditor x:Name="TimeZone" Grid.Column="6" ToolTip="{x:Static loc:LocalizedStrings.MarketDataTimeZone}"/>
+        <sx:Level1FieldsComboBox EditValueChanged="Level1FieldsCtrl_EditValueChanged" x:Name="Level1FieldsCtrl" Grid.Column="8"
+                                 MinWidth="100"/>
+        <dx:SimpleButton Click="FindClick" x:Name="Find" Grid.Column="10">
+          <Image Width="16" Source="{sx:ThemedIcons Key=Search}"/>
+        </dx:SimpleButton>
+        <dx:SimpleButton Click="ShowChartCandles_Click" x:Name="ShowChartCandles" Grid.Column="12"
+                         ToolTip="{x:Static loc:LocalizedStrings.XamlStr482}">
+          <Image Width="16" Source="{sx:ThemedIcons Key=CandleStick}"/>
+        </dx:SimpleButton>
+        <dx:SimpleButton Click="ShowChartSpread_Click" x:Name="ShowChartSpread" Grid.Column="14"
+                         ToolTip="{x:Static loc:LocalizedStrings.ChartShowSpread}">
+          <Image Width="16" Source="{sx:ThemedIcons Key=LineChart}"/>
+        </dx:SimpleButton>
+        <controls:ExportButton x:Name="ExportBtn" Grid.Column="16"/>
+      </Grid>
+      <sx:Level1Grid x:Name="FindedChanges" Grid.Row="4"/>
+    </Grid>
+  </DockPanel>
+</panes:DataPane>

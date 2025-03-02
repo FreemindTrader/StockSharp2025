@@ -1,0 +1,34 @@
+<dxb:BarButtonItem x:Class="StockSharp.Studio.Controls.LogPreviewButtonItem"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                   xmlns:sx="http://schemas.stocksharp.com/xaml"
+                   Content="{sx:Localization Logs}" ToolTip="{sx:Localization Logs}"
+                   DataContext="{Binding RelativeSource={RelativeSource Self}}">
+  <FrameworkContentElement.Resources>
+    <sx:ThemedIcons x:Key="LogsIcon" Key="Logs"/>
+    <sx:ThemedIcons x:Key="WarnIcon" Key="Warning"/>
+  </FrameworkContentElement.Resources>
+  <FrameworkContentElement.Style>
+    <Style TargetType="{x:Type dxb:BarButtonItem}">
+      <Setter Property="dxb:BarItem.Glyph" Value="{StaticResource LogsIcon}"/>
+      <Style.Triggers>
+        <DataTrigger Binding="{Binding HasErrors}" Value="True">
+          <TriggerBase.EnterActions>
+            <BeginStoryboard x:Name="S1">
+              <Storyboard TargetProperty="Glyph">
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:01" AutoReverse="True" RepeatBehavior="Forever"
+                                               FillBehavior="Stop">
+                  <DiscreteObjectKeyFrame KeyTime="00:00:00.7000000" Value="{StaticResource WarnIcon}"/>
+                </ObjectAnimationUsingKeyFrames>
+              </Storyboard>
+            </BeginStoryboard>
+          </TriggerBase.EnterActions>
+          <TriggerBase.ExitActions>
+            <StopStoryboard BeginStoryboardName="S1"/>
+          </TriggerBase.ExitActions>
+        </DataTrigger>
+      </Style.Triggers>
+    </Style>
+  </FrameworkContentElement.Style>
+</dxb:BarButtonItem>

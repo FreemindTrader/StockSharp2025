@@ -1,0 +1,76 @@
+﻿<UserControl
+    x:Class="fx.Charting.SimpleChartDx"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+    xmlns:local="clr-namespace:fx.Charting"
+    xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+    xmlns:s3D="http://schemas.abtsoftware.co.uk/scichart3D"
+    xmlns:sysMark="clr-namespace:System.Windows.Markup;assembly=System.Xaml" xmlns:cnvt="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+    s:ThemeManager.Theme="{Binding SelectedTheme}">
+    <FrameworkElement.Resources>
+        <Style x:Key="PerfStatsStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextBlock.FontSize" Value="20" />
+            <Setter Property="FrameworkElement.Margin" Value="0" />
+            <Setter Property="TextBlock.FontWeight" Value="Bold" />
+            <Setter Property="TextBlock.Foreground" Value="#BBFC9C29" />
+            <Setter Property="TextBlock.FontFamily" Value="Consolas" />
+        </Style>
+        <cnvt:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <local:UltrachartOverviewVisibilityConverter x:Key="UltrachartOverviewVisibilityConverter" />
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <FrameworkElement.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="{Binding ShowHiddenAxesCommand}" ToolTip="{x:Static loc:LocalizedStrings.ShowHiddenAxes}">
+                        <HeaderedItemsControl.Header>
+                            <TextBlock Text="{x:Static loc:LocalizedStrings.ShowHiddenAxes}" />
+                        </HeaderedItemsControl.Header>
+                    </MenuItem>
+                </ContextMenu>
+            </FrameworkElement.ContextMenu>
+
+            <s:SciChartSurface
+                x:Name="Surface"
+                s3D:DirectXHelper.FallbackType="{x:Type s:HighSpeedRenderSurface}"
+                s3D:DirectXHelper.TryApplyDirectXRenderer="False"
+                s:SciChartSurface.Annotations="{Binding Annotations}"
+                s:SciChartSurface.SeriesSource="{Binding ChartSeriesViewModels}"
+                s:SciChartSurface.XAxes="{Binding XAxises}"
+                s:SciChartSurface.YAxes="{Binding YAxises}"
+                ChartModifier="{Binding ChartModifier}"
+                ClipModifierSurface="True"
+                Initialized="OnInitialized" />
+
+            <local:ultrachartlegend
+                FrameworkElement.DataContext="{Binding LegendViewModel}"
+                FrameworkElement.Margin="23,23"
+                UIElement.Visibility="{Binding Pane.ShowLegend, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" />
+            <TextBlock
+                Margin="0,20,70,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Style="{StaticResource PerfStatsStyle}"
+                Text="{Binding PerfStats}"
+                Visibility="{Binding ShowPerfStats, Converter={StaticResource BoolToVisibilityConverter}}" />
+        </Grid>
+        <s:SciChartOverview
+            Grid.Row="1"
+            Height="40"
+            VerticalAlignment="Stretch"
+            ParentSurface="{Binding ElementName=Surface}"
+            XAxisId="X">
+            <UIElement.Visibility>
+                <MultiBinding Converter="{StaticResource UltrachartOverviewVisibilityConverter}">
+                    <Binding Path="ShowOverview" />
+                    <Binding Path="ParentSurface" RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </UIElement.Visibility>
+        </s:SciChartOverview>
+    </Grid>
+</UserControl>

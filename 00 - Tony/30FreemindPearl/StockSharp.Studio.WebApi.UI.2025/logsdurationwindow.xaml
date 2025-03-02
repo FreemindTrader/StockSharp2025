@@ -1,0 +1,36 @@
+<dx:ThemedWindow x:Class="StockSharp.Studio.Controls.LogsDurationWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 xmlns:xaml="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                 xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                 xmlns:sx="http://schemas.stocksharp.com/xaml"
+                 ShowInTaskbar="False" WindowStartupLocation="CenterOwner" Width="250" Height="Auto"
+                 SizeToContent="WidthAndHeight" ResizeMode="NoResize" Title="{sx:Localization PreparationLogs}">
+  <Grid Margin="5">
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="5"/>
+      <RowDefinition/>
+      <RowDefinition Height="5"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <TextBlock>
+      <Run Text="{sx:Localization SelectLogsDurationToExport}"/>
+      :
+    </TextBlock>
+    <dxe:ComboBoxEdit x:Name="ComboBoxEdit" Grid.Row="2" IsTextEditable="False"/>
+    <Grid Row="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <dx:SimpleButton Grid.Row="2" Grid.Column="1" IsDefault="True" xaml:XamlHelper.DialogResult="True"
+                       Content="{sx:Localization OK}"/>
+      <dx:SimpleButton Grid.Row="2" Grid.Column="3" IsCancel="True" xaml:XamlHelper.DialogResult="False"
+                       Content="{sx:Localization Cancel}"/>
+    </Grid>
+  </Grid>
+</dx:ThemedWindow>

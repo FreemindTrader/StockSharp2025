@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AWSSDK.Glacier</id>
+    <version>3.7.0.91</version>
+    <title>AWSSDK - Amazon Glacier</title>
+    <authors>Amazon Web Services</authors>
+    <owners>Amazon Web Services</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
+    <description>Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.</description>
+    <language>en-US</language>
+    <tags>AWS Amazon cloud Glacier aws-sdk-v3</tags>
+    <dependencies>
+      <dependency id="AWSSDK.SQS" version="[3.7.1.34, 4.0.0)" />
+      <dependency id="AWSSDK.SimpleNotificationService" version="[3.7.2.62, 4.0.0)" />
+      <dependency id="AWSSDK.Core" version="[3.7.3.31, 4.0.0)" />
+    </dependencies>
+  </metadata>
+</package>

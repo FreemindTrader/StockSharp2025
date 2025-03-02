@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Common</id>
+    <version>1.0.100</version>
+    <title>Ecng.Common</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes>ss-205: fix threading synchronization bug</releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Common</tags>
+    <repository commit="c4dd9457c2dff675aa57258ef2a5cbe031d9a670" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="System.Text.Encoding.CodePages" version="5.0.0" />
+        <dependency id="System.Reflection.Emit.Lightweight" version="4.7.0" />
+        <dependency id="Nito.AsyncEx" version="5.1.2" />
+        <dependency id="Ecng.SmartFormat" version="1.0.5" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

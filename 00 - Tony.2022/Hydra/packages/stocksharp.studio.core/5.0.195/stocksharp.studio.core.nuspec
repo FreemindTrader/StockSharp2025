@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Stocksharp.Studio.Core</id>
+    <version>5.0.195</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="9087e797ff79af92c8873fa4a2bea50afc69c231" />
+    <dependencies>
+      <group targetFramework="net9.0-windows">
+        <dependency id="StockSharp.Algo" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Charting.Interfaces" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Configuration" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Diagram.Core" version="5.0.4" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Studio.Community" version="5.0.194" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Web.Api.Interfaces" version="5.0.193" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Web.DomainModel" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.Charting" version="5.0.192" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net9.0-windows">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

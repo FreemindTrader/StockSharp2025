@@ -1,0 +1,20 @@
+<controls:BaseStudioControl x:Class="StockSharp.Studio.Controls.PositionsPanel"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:sx="http://schemas.stocksharp.com/xaml"
+                            xmlns:controls="clr-namespace:StockSharp.Studio.Controls"
+                            xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid">
+  <UIElement.CommandBindings>
+    <CommandBinding Executed="ExecutedClosePositionCommand" CanExecute="CanExecuteClosePositionCommand"
+                    Command="{x:Static controls:PositionsPanel.ClosePositionCommand}"/>
+    <CommandBinding Executed="ExecutedRevertPositionCommand" CanExecute="CanExecuteRevertPositionCommand"
+                    Command="{x:Static controls:PositionsPanel.RevertPositionCommand}"/>
+  </UIElement.CommandBindings>
+  <sx:PortfolioGrid x:Name="PortfolioGrid">
+    <dxg:GridControl.View>
+      <dxg:TableView AllowEditing="False" ShowGroupPanel="False" NavigationStyle="Row" ShowIndicator="False"/>
+    </dxg:GridControl.View>
+  </sx:PortfolioGrid>
+</controls:BaseStudioControl>

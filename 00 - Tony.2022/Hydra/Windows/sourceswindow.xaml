@@ -1,0 +1,198 @@
+<dx:ThemedWindow x:Class="StockSharp.Hydra.Windows.SourcesWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                 xmlns:windows="clr-namespace:StockSharp.Hydra.Windows"
+                 xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                 xmlns:converters="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+                 xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                 xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 xmlns:sx="http://schemas.stocksharp.com/xaml"
+                 Title="{x:Static loc:LocalizedStrings.XamlStr140}" Height="740" Width="1000" ShowInTaskbar="False"
+                 WindowStartupLocation="CenterOwner" sx:Doc.Url="47ebc084-6b07-4b69-8f96-ea190110111f.htm">
+    <FrameworkElement.Resources>
+        <converters:UriToImageSourceConverter x:Key="UriToImageSourceConverter"/>
+    </FrameworkElement.Resources>
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dxlc:GroupBox Grid.Column="0" Grid.Row="0"
+              dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.Find}">
+            <TextBox TextChanged="NameLike_OnTextChanged" x:Name="NameLike"/>
+        </dxlc:GroupBox>
+        <dxlc:GroupBox Grid.Column="0" Grid.Row="2" MinimizeElementVisibility="Visible"
+              dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.Str511}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Stock" Grid.Row="0" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Stock}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Currency" Grid.Row="2"
+                       Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Currency}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Futures" Grid.Row="4" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Futures}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Options" Grid.Row="6" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Options}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Bitcoins" Grid.Row="8"
+                       Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Cryptocurrency}"/>
+                </dxe:CheckEdit>
+            </Grid>
+        </dxlc:GroupBox>
+        <dxlc:GroupBox Grid.Column="0" Grid.Row="3" MinimizeElementVisibility="Visible"
+              dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.DataType}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Ticks" Grid.Row="0" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Ticks}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Candles" Grid.Row="2" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Candles}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Depths" Grid.Row="4" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.MarketDepths}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Level1" Grid.Row="6" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Level1}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="News" Grid.Row="8" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.News}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="OrderLog" Grid.Row="10"
+                       Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.OrderLog}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Transactions" Grid.Row="12"
+                       Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Transactions}"/>
+                </dxe:CheckEdit>
+            </Grid>
+        </dxlc:GroupBox>
+        <dxlc:GroupBox Grid.Column="0" Grid.Row="4" MinimizeElementVisibility="Visible"
+              dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.Cost}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Free" Grid.Row="0" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Free}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="Paid" Grid.Row="2" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.Paid}"/>
+                </dxe:CheckEdit>
+            </Grid>
+        </dxlc:GroupBox>
+        <dxlc:GroupBox Grid.Column="0" Grid.Row="5" MinimizeElementVisibility="Visible"
+              dx:HeaderedContentControlBase.Header="{x:Static loc:LocalizedStrings.Type}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="RealTime" Grid.Row="0"
+                       Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.RealTime}"/>
+                </dxe:CheckEdit>
+                <dxe:CheckEdit Checked="OnFilterChanged" Unchecked="OnFilterChanged" x:Name="History" Grid.Row="2" Grid.Column="0">
+                    <TextBlock Text="{x:Static loc:LocalizedStrings.History}"/>
+                </dxe:CheckEdit>
+            </Grid>
+        </dxlc:GroupBox>
+        <ListBox x:Name="TasksCtrl" Grid.Column="2" Grid.Row="0" Grid.RowSpan="7">
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsVisible}" Value="False">
+                            <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsVisible}" Value="True">
+                            <Setter Property="UIElement.Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type windows:TaskInfo}">
+                    <Grid Height="40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox VerticalAlignment="Center" IsChecked="{Binding IsSelected}"/>
+                        <TextBlock Grid.Column="2" VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Name}"
+                       ToolTip="{Binding Description}"/>
+                        <Image Grid.Column="4" VerticalAlignment="Center" MaxHeight="22"
+                   Source="{Binding Path=Icon, Converter={StaticResource UriToImageSourceConverter}}"/>
+                        <TextBlock Grid.Column="6" VerticalAlignment="Center" Text="{Binding Description}"
+                       ToolTip="{Binding Description}"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
+        <Grid Row="8" Column="0" ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <dx:SimpleButton Click="SelectAll_OnClick" x:Name="SelectAll" Grid.Column="0" Width="100"
+                       Content="{x:Static loc:LocalizedStrings.SelectAll}"/>
+            <dx:SimpleButton Click="UnSelectAll_OnClick" x:Name="UnSelectAll" Grid.Column="2" Width="120"
+                       Content="{x:Static loc:LocalizedStrings.UnSelectAll}"/>
+            <dx:SimpleButton x:Name="OkBtn" Grid.Column="3" IsDefault="True" ex:XamlHelper.DialogResult="True"
+                       Content="{x:Static loc:LocalizedStrings.OK}" Width="75" IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</dx:ThemedWindow>

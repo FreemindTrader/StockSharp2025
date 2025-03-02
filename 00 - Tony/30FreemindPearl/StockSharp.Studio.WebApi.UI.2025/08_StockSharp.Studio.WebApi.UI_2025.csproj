@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\common_target_netwindows.props" />
+    <Import Project="..\..\..\Diectory.Build.props" />
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Studio.WebApi.UI</RootNamespace>
+        <AssemblyName>StockSharp.Studio.WebApi.UI</AssemblyName>
+        <PackageId>StockSharp.Studio.WebApi.UI</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{8AEF2C48-EEEC-4FFD-BF87-B2F9373284B7}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>        
+        <LangVersion>13.0</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+        <TargetFrameworks>net6.0-windows7.0</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.302</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ecng.Backup" Version="1.0.194" />
+        <PackageReference Include="Ecng.Collections" Version="1.0.204" />
+        <PackageReference Include="Ecng.Common" Version="1.0.186" />
+        <PackageReference Include="Ecng.Net" Version="1.0.353" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.10" />
+        <PackageReference Include="Nito.AsyncEx.Tasks" Version="5.1.2" />
+        <PackageReference Include="StockSharp.Licensing.Core" Version="5.0.28" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.218" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Configuration\Configuration.csproj" />
+        <ProjectReference Include="..\..\..\Localization\Localization.csproj" />
+        <ProjectReference Include="..\..\..\Messages\Messages.csproj" />
+        <ProjectReference Include="..\StockSharp.Studio.Core.2025\07_StockSharp.Studio.Core_2025.csproj" />
+        <ProjectReference Include="..\StockSharp.Web.Api.Client.2025\05_StockSharp.Web.Api.Client_2025.csproj" />
+        <ProjectReference Include="..\StockSharp.Web.Api.Interfaces.2025\05_StockSharp.Web.Api.Interfaces_2025.csproj" />
+        <ProjectReference Include="..\StockSharp.Web.Common.2025\06_StockSharp.Web.Common_2025.csproj" />
+        <ProjectReference Include="..\StockSharp.Web.DomainModel.2025\03_StockSharp.Web.DomainModel_2025.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
+</Project>
+
+
+
+
+
+
+
+
+
+

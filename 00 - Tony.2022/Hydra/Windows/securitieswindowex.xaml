@@ -1,0 +1,85 @@
+<dx:ThemedWindow x:Class="StockSharp.Hydra.Windows.SecuritiesWindowEx"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                 xmlns:sx="http://schemas.stocksharp.com/xaml"
+                 xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                 xmlns:windows="clr-namespace:StockSharp.Hydra.Windows"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 Loaded="SecuritiesWindowEx_OnLoaded" Height="400" Width="780"
+                 Title="{x:Static loc:LocalizedStrings.Securities}" WindowStartupLocation="CenterOwner"
+                 ShowInTaskbar="False">
+  <UIElement.CommandBindings>
+    <CommandBinding Executed="ExecutedSelectSecurity" CanExecute="CanExecuteSelectSecurity"
+                    Command="{x:Static windows:SecuritiesWindowEx.SelectSecurityCommand}"/>
+    <CommandBinding Executed="ExecutedUnselectSecurity" CanExecute="CanExecuteUnselectSecurity"
+                    Command="{x:Static windows:SecuritiesWindowEx.UnselectSecurityCommand}"/>
+  </UIElement.CommandBindings>
+  <ex:BusyIndicator x:Name="BusyIndicator">
+    <ex:BusyIndicator.BusyContentTemplate>
+      <DataTemplate>
+        <Grid Margin="4">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="250" Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="80"/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Column="0" Foreground="Black" HorizontalAlignment="Center" Text="{Binding}"/>
+          <dx:SimpleButton x:Name="CancelBtn" Grid.Column="2" Content="{x:Static loc:LocalizedStrings.Cancel}"/>
+        </Grid>
+      </DataTemplate>
+    </ex:BusyIndicator.BusyContentTemplate>
+    <Grid Margin="5">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="85*"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="85*"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="25"/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <dx:SimpleButton Click="DownloadSecurities_OnClick" x:Name="DownloadSecurities" Grid.ColumnSpan="5" Grid.Column="0"
+                       Grid.Row="1" Margin="0,0,0,5" Visibility="Collapsed">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Text="{x:Static loc:LocalizedStrings.DownloadSecurities}" FontWeight="Bold"
+                     VerticalAlignment="Center"/>
+          <Image Margin="5,0,0,0" Width="32" Source="{sx:ThemedIcons Key=Download}"/>
+        </StackPanel>
+      </dx:SimpleButton>
+      <sx:SecurityPicker x:Name="SecuritiesAll" Title="{x:Static loc:LocalizedStrings.Str1569}" Grid.Row="2" Grid.RowSpan="5"
+                         Grid.Column="0"/>
+      <sx:SecurityPicker x:Name="SecuritiesSelected" Title="{x:Static loc:LocalizedStrings.Str3256}" Grid.Row="2"
+                         Grid.Column="4" Grid.RowSpan="5"/>
+      <Button Content="" Grid.Row="3" Grid.Column="2" Padding="0" FontFamily="Wingdings" FontSize="15"
+              Command="{x:Static windows:SecuritiesWindowEx.SelectSecurityCommand}" Focusable="False"/>
+      <Button Content="" Grid.Row="5" Grid.Column="2" Padding="0" FontFamily="Wingdings" FontSize="15"
+              Command="{x:Static windows:SecuritiesWindowEx.UnselectSecurityCommand}" Focusable="False"/>
+      <Grid Row="8" ColumnSpan="5" Column="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="25"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <dx:SimpleButton Click="CreateSecurity_OnClick" Name="CreateSecurity" Focusable="False"
+                         ToolTip="{x:Static loc:LocalizedStrings.Str2921}" Padding="0">
+          <Image Width="16" Source="{sx:ThemedIcons Key=Add}"/>
+        </dx:SimpleButton>
+        <dx:SimpleButton x:Name="Ok" Content="{x:Static loc:LocalizedStrings.OK}" Grid.Column="2"
+                         ex:XamlHelper.DialogResult="True"/>
+        <dx:SimpleButton Content="{x:Static loc:LocalizedStrings.Cancel}" Grid.Column="4" IsCancel="True"/>
+      </Grid>
+    </Grid>
+  </ex:BusyIndicator>
+</dx:ThemedWindow>

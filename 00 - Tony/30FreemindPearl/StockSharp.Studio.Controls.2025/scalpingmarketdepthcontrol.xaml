@@ -1,0 +1,45 @@
+<local:BaseStudioControl x:Class="StockSharp.Studio.Controls.ScalpingMarketDepthControl"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:local="clr-namespace:StockSharp.Studio.Controls"
+                         xmlns:sx="http://schemas.stocksharp.com/xaml"
+                         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+                         xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                         xmlns:messages="clr-namespace:StockSharp.Messages;assembly=StockSharp.Messages"
+                         DataContext="{Binding RelativeSource={RelativeSource Self}}">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <dxb:StatusBarControl Grid.Row="0" Grid.Column="1">
+      <dxb:BarStaticItem ItemDoubleClick="Orders_ItemDoubleClick" ItemWidth="50" Tag="{x:Static messages:Sides.Buy}"
+                         Content="{Binding OrdersBuyCount}" ToolTip="{sx:Localization BidOwn}"/>
+      <dxb:BarStaticItem ItemDoubleClick="Orders_ItemDoubleClick" ItemWidth="50" Tag="{x:Static messages:Sides.Sell}"
+                         Content="{Binding OrdersSellCount}" ToolTip="{sx:Localization AskOwn}"/>
+    </dxb:StatusBarControl>
+    <sx:MarketDepthControl x:Name="MdControl" Grid.Row="1" Grid.Column="1" AutoUpdateFormat="False"
+                           MaxDepth="{Binding ElementName=BuySellPanel, Path=Settings.Depth, TargetNullValue=20}"
+                           IsBidsOnTop="{Binding ElementName=BuySellPanel, Path=Settings.IsBidsOnTop, Mode=TwoWay}"
+                           AllowSpreadToMove="{Binding ElementName=BuySellPanel, Path=Settings.AllowSpreadToMove, Mode=TwoWay}"
+                           ShowSingleVolumeColumn="{Binding ElementName=BuySellPanel, Path=Settings.SingleVolumeColumn, Mode=TwoWay}"
+                           ShowBoardColumn="{Binding ElementName=BuySellPanel, Path=Settings.ShowBoardColumn, Mode=TwoWay}"
+                           PriceTextFormat="{Binding ElementName=BuySellPanel, Path=Settings.PriceTextFormat, Mode=TwoWay}"
+                           VolumeTextFormat="{Binding ElementName=BuySellPanel, Path=Settings.VolumeTextFormat, Mode=TwoWay}"
+                           RegisterOrderOn="{Binding ElementName=BuySellPanel, Path=Settings.RegisterOrderOn, Mode=TwoWay}"
+                           GroupRange="{Binding ElementName=BuySellPanel, Path=Settings.GroupRange, Mode=TwoWay}"
+                           SparseRange="{Binding ElementName=BuySellPanel, Path=Settings.SparseRange, Mode=TwoWay}"/>
+    <local:ScalpingChartControl x:Name="Chart" Grid.Row="1" Grid.Column="0" Width="150"
+                                Visibility="{Binding ElementName=BuySellPanel, Path=Settings.ShowChart, Converter={dxmvvm:BooleanToVisibilityConverter}}"/>
+    <local:BuySellPanel x:Name="BuySellPanel" Grid.Row="2" Grid.ColumnSpan="2"/>
+  </Grid>
+</local:BaseStudioControl>

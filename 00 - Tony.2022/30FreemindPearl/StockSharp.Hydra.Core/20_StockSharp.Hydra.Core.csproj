@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Hydra.Core</RootNamespace>
+        <AssemblyName>StockSharp.Hydra.Core</AssemblyName>
+        <PackageId>StockSharp.Hydra.Core</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{9A548DA8-BE6C-43C6-A69C-FFE711D8801B}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.225</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="StockSharp.Algo" Version="5.0.220" />
+      <PackageReference Include="StockSharp.BusinessEntities" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Configuration" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Logging" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Messages" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Server.Core" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Server.Fix" Version="5.0.108" />
+      <PackageReference Include="Stocksharp.Studio.Core" Version="5.0.225" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>    
+</Project>
+

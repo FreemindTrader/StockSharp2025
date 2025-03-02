@@ -1,0 +1,32 @@
+<studio:BaseStudioControl x:Class="StockSharp.Hydra.Panes.ImportPane"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                          xmlns:sx="http://schemas.stocksharp.com/xaml"
+                          xmlns:studio="clr-namespace:StockSharp.Studio.Controls;assembly=StockSharp.Studio.Controls"
+                          xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                          xmlns:controls="clr-namespace:StockSharp.Hydra.Controls"
+                          sx:Doc.Url="4edabdad-84d9-4dfa-9940-0559642b1ca2.htm">
+  <Grid Margin="5">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="5"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="5"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <dx:SimpleButton Click="ImportBtn_OnClick" x:Name="ImportBtn" Grid.Column="0" Width="100">
+        <TextBlock x:Name="ImportBtnText" Text="{x:Static loc:LocalizedStrings.Import}"/>
+      </dx:SimpleButton>
+      <ProgressBar x:Name="ProgressBar" Grid.Column="2"/>
+    </Grid>
+    <controls:DrivePanel x:Name="DrivePanel" Grid.Row="2"/>
+    <sx:ImportSettingsPanel x:Name="SettingsPanel" Grid.Row="4"/>
+  </Grid>
+</studio:BaseStudioControl>

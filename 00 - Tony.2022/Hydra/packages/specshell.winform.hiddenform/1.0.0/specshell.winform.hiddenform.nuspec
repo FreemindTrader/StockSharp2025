@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Specshell.WinForm.HiddenForm</id>
+    <version>1.0.0</version>
+    <authors>Specshell</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/Specshell/specshell.software.winform.hiddenform</projectUrl>
+    <description>Hidden Forms library</description>
+    <copyright>Copyright Specshell 2021.</copyright>
+    <tags>Windows Forms Hidden Form</tags>
+    <repository type="git" url="https://github.com/Specshell/specshell.software.winform.hiddenform" branch="tags/v1.0.0" commit="65a942be1407d6b895e5725283d03161111d897c" />
+    <dependencies>
+      <group targetFramework="net9.0-windows" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net9.0-windows">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\common_samples_netwindows.props" />
+    <Import Project="..\..\common_connectors.props" />
+    <ItemGroup>
+        <PackageReference Include="Ecng.Compilation.Roslyn" Version="1.0.150" />
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.10" />
+        <PackageReference Include="StockSharp.Alerts.Interfaces" Version="5.0.79" />
+        <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.228" />
+        <PackageReference Include="StockSharp.Studio.Core" Version="5.0.216" />
+        <PackageReference Include="StockSharp.Studio.WebApi" Version="5.0.75" />
+        <PackageReference Include="StockSharp.Studio.WebApi.UI" Version="5.0.80" />
+        <PackageReference Include="StockSharp.Xaml" Version="$(StockSharpVer)" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <Version>5.0.302</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+        <DebugType>portable</DebugType>
+    </PropertyGroup>
+</Project>

@@ -1,0 +1,256 @@
+﻿<UserControl
+    x:Class="fx.AITrade.TradeControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:FreemindAITrade.ViewModels"
+    mc:Ignorable="d"
+    Background="#333333"
+    d:DesignHeight="1610.1"
+    d:DesignWidth="950"
+    DataContext="{dxmvvm:ViewModelSource Type={x:Type local:TradeControlViewModel}}">
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/fx.AITrade;component/Themes/CommonResources.xaml" />
+                <ResourceDictionary Source="/fx.AITrade;component/Themes/CommonStyles.xaml" />
+                <ResourceDictionary Source="/fx.AITrade;component/Themes/CommonTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid>
+
+        <DockPanel>
+            <dxwui:AppBar DockPanel.Dock="Top" HideMode="AlwaysVisible">
+                <dxwui:AppBarButton
+                    Command="{Binding ElementName=collectionViewBehavior, Path=SortAscendingCommand}"
+                    CommandParameter="LastName"
+                    Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/PivotPoints.svg"
+                    Label="Fibs" />
+                <dxwui:AppBarButton
+                    Command="{Binding ElementName=collectionViewBehavior, Path=SortDescendingCommand}"
+                    CommandParameter="LastName"
+                    Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/SortZA.svg"
+                    Label="Descending" />
+                <dxwui:AppBarSeparator />
+                <dxwui:AppBarButton
+                    Command="{Binding NewCommand}"
+                    Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/New.svg"
+                    Label="New" />
+                <dxwui:AppBarButton
+                    Command="{Binding EditCommand}"
+                    CommandParameter="{Binding SelectedEntity}"
+                    Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/Edit.svg"
+                    Label="Edit" />
+                <dxwui:AppBarSeparator />
+                <dxwui:AppBarButton
+                    Command="{Binding ElementName=printFalyout, Path=OpenCommand}"
+                    Glyph="pack://application:,,,/fx.AITrade;component/SvgImages/Reports.svg"
+                    Label="Reports"
+                    Name="reportsAppBarButton" />
+                <dxwui:AppBarSeparator />
+
+
+            </dxwui:AppBar>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+
+                    </Grid.RowDefinitions>
+                    <dxwui:PageAdornerControl
+                        Grid.Row="0"
+                        Header="TradeControl"
+                        Padding="0,0,0,0"
+                        ShowBackButton="False">
+                        <dxlc:TileLayoutControl Padding="10,10,10,10">
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#b6b6b6"
+                                BorderBrush="Black"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="CalculatorView"
+                                Header="100"
+                                Size="Small">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <dx:DXImage
+                                        Width="64"
+                                        Height="64"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/medal.svg'}"
+                                        Stretch="UniformToFill" />
+                                    <TextBlock
+                                        Margin="0,0,20,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="40"
+                                        Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=dxlc:Tile}}" />
+                                </StackPanel>
+
+                            </dxlc:Tile>
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#b6b6b6"
+                                BorderBrush="Black"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="CalculatorView"
+                                Header="300"
+                                Size="Small">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <dx:DXImage
+                                        Width="64"
+                                        Height="64"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/medal.svg'}"
+                                        Stretch="UniformToFill" />
+                                    <TextBlock
+                                        Margin="0,0,20,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="40"
+                                        Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=dxlc:Tile}}" />
+                                </StackPanel>
+
+                            </dxlc:Tile>
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#7d7d7d"
+                                BorderBrush="Black"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="CalculatorView"
+                                Header="600"
+                                Size="Small">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <dx:DXImage
+                                        Width="64"
+                                        Height="64"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/dollar.svg'}"
+                                        Stretch="UniformToFill" />
+                                    <TextBlock
+                                        Margin="0,0,20,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="40"
+                                        Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=dxlc:Tile}}" />
+                                </StackPanel>
+
+                            </dxlc:Tile>
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#6d6d6d"
+                                BorderBrush="Black"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="CalculatorView"
+                                Header="900"
+                                Size="Small">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <dx:DXImage
+                                        Width="64"
+                                        Height="64"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/diamond.svg'}"
+                                        Stretch="UniformToFill" />
+                                    <TextBlock
+                                        Margin="0,0,20,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="40"
+                                        Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=dxlc:Tile}}" />
+                                </StackPanel>
+
+                            </dxlc:Tile>
+
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#49a4be"
+                                BorderBrush="#08718f"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="CalculatorView"
+                                Header="BuySell"
+                                Size="Large">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <dx:DXImage
+                                        Width="64"
+                                        Height="64"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/up.svg'}"
+                                        Stretch="UniformToFill" />
+                                    <TextBlock
+                                        Margin="30,0,0,0"
+                                        VerticalAlignment="Center"
+                                        FontSize="40"
+                                        Text="{Binding Path=Header, RelativeSource={RelativeSource AncestorType=dxlc:Tile}}" />
+                                </StackPanel>
+
+                            </dxlc:Tile>
+                        </dxlc:TileLayoutControl>
+                    </dxwui:PageAdornerControl>
+                    <dxwui:PageAdornerControl
+                        Grid.Row="1"
+                        Header=""
+                        Padding="0,0,0,0"
+                        ShowBackButton="False">
+                        <dxlc:TileLayoutControl Padding="10,10,10,10">
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#6d6d6d"
+                                BorderBrush="Black"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="DraftView"
+                                Header="Selected Fibs"
+                                Size="Small">
+                                <StackPanel>
+                                    <dx:DXImage
+                                        Width="96"
+                                        Height="96"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/FibLines.svg'}"
+                                        Stretch="UniformToFill" />
+
+                                </StackPanel>
+                            </dxlc:Tile>
+                            <dxlc:Tile
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#7d7d7d"
+                                BorderBrush="Black"
+                                Command="{Binding NavigateCommand}"
+                                CommandParameter="DraftView"
+                                Header="SR Broken"
+                                Size="Small">
+                                <StackPanel>
+                                    <dx:DXImage
+                                        Width="96"
+                                        Height="96"
+                                        Source="{dx:SvgImageSource Uri='pack://application:,,,/fx.AITrade;component/SvgImages/broken2.svg'}"
+                                        Stretch="UniformToFill" />
+
+                                </StackPanel>
+                            </dxlc:Tile>
+                        </dxlc:TileLayoutControl>
+
+                    </dxwui:PageAdornerControl>
+                </Grid>
+
+            </StackPanel>
+
+
+
+
+
+        </DockPanel>
+    </Grid>
+
+</UserControl>

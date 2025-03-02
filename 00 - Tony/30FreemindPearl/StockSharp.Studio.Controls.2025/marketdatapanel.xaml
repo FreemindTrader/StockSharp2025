@@ -1,0 +1,224 @@
+<local:BaseStudioControl x:Class="StockSharp.Studio.Controls.MarketDataPanel"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:sx="http://schemas.stocksharp.com/xaml"
+                         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                         xmlns:xaml1="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                         xmlns:local="clr-namespace:StockSharp.Studio.Controls"
+                         xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                         DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <UIElement.CommandBindings>
+        <CommandBinding Executed="ExecutedSelectSecurity" CanExecute="CanExecuteSelectSecurity"
+                    Command="{x:Static local:MarketDataPanel.SelectSecurityCommand}"/>
+        <CommandBinding Executed="ExecutedUnselectSecurity" CanExecute="CanExecuteUnselectSecurity"
+                    Command="{x:Static local:MarketDataPanel.UnselectSecurityCommand}"/>
+        <CommandBinding Executed="ExecutedDownload" CanExecute="CanExecuteDownload"
+                    Command="{x:Static local:MarketDataPanel.DownloadCommand}"/>
+        <CommandBinding Executed="ExecutedCancel" CanExecute="CanExecuteCancel"
+                    Command="{x:Static local:MarketDataPanel.CancelCommand}"/>
+        <CommandBinding Executed="EditSecurityCommandExecuted" CanExecute="EditSecurityCommandCanExecute"
+                    Command="{x:Static local:MarketDataPanel.EditSecurityCommand}"/>
+        <CommandBinding Executed="DeleteSecurityCommandExecuted" CanExecute="DeleteSecurityCommandCanExecute"
+                    Command="{x:Static local:MarketDataPanel.DeleteSecurityCommand}"/>
+    </UIElement.CommandBindings>
+    <FrameworkElement.Resources>
+        <sx:SeriesToStringConverter x:Key="SeriesToStringConverter"/>
+        <Style TargetType="{x:Type dx:LoadingDecorator}">
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="dx:LoadingDecorator.OwnerLock" Value="LoadingContent"/>
+                        <Condition Property="dx:LoadingDecorator.IsSplashScreenShown" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="UIElement.Opacity" Value=".5"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </FrameworkElement.Resources>
+    <xaml1:BusyIndicator x:Name="BusyIndicator" IsBusy="False">
+        <xaml1:BusyIndicator.BusyContentTemplate>
+            <DataTemplate>
+                <StackPanel Margin="4" Width="250">
+                    <TextBlock Foreground="Black" HorizontalAlignment="Center" Text="{Binding Title}"/>
+                    <dxe:ProgressBarEdit Margin="4" Height="20" IsPercent="True" DisplayFormatString="{}{0:p0}" ContentDisplayMode="Value"
+                               Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" EditValue="{Binding Value}"
+                               StyleSettings="{Binding Settings}"/>
+                    <dx:SimpleButton Command="{x:Static local:MarketDataPanel.CancelCommand}" HorizontalAlignment="Center"
+                           Content="{sx:Localization Cancel}"/>
+                </StackPanel>
+            </DataTemplate>
+        </xaml1:BusyIndicator.BusyContentTemplate>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid SizeChanged="Grid_OnSizeChanged" Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <dx:SimpleButton Click="DownloadSecurities_OnClick" x:Name="DownloadSecurities" Grid.Row="0" Grid.Column="0"
+                         ToolTip="{sx:Localization DownloadSecurities}">
+                    <Image Width="16" Source="{sx:ThemedIcons Key=Download}"/>
+                </dx:SimpleButton>
+                <dx:DropDownButton Grid.Row="0" Grid.Column="2" Focusable="False" HorizontalAlignment="Left"
+                           ToolTip="{sx:Localization CreateSecurity}">
+                    <ContentControl.Content>
+                        <Image Width="16" Source="{sx:ThemedIcons Key=Add}"/>
+                    </ContentControl.Content>
+                    <StackPanel>
+                        <dx:SimpleButton Click="CreateRegular" HorizontalContentAlignment="Left">
+                            <TextBlock Text="{sx:Localization Security}"/>
+                        </dx:SimpleButton>
+                        <dx:SimpleButton Click="CreateIndex" HorizontalContentAlignment="Left">
+                            <TextBlock Text="{sx:Localization Index}"/>
+                        </dx:SimpleButton>
+                        <dx:SimpleButton Click="CreateContinuous" HorizontalContentAlignment="Left">
+                            <TextBlock Text="{sx:Localization ContinuousSecurity}"/>
+                        </dx:SimpleButton>
+                    </StackPanel>
+                </dx:DropDownButton>
+                <dx:SimpleButton Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" Focusable="False"
+                         Command="{x:Static local:MarketDataPanel.EditSecurityCommand}"
+                         ToolTip="{sx:Localization EditSecurity}">
+                    <Image Width="16" Source="{sx:ThemedIcons Key=Edit}"/>
+                </dx:SimpleButton>
+                <dx:SimpleButton Grid.Row="0" Grid.Column="6" VerticalAlignment="Center" Focusable="False"
+                         Command="{x:Static local:MarketDataPanel.DeleteSecurityCommand}"
+                         ToolTip="{sx:Localization DeleteSecurities}">
+                    <Image Width="16" Source="{sx:ThemedIcons Key=Remove2}"/>
+                </dx:SimpleButton>
+                <dx:SimpleButton Click="ExtendedInfo_OnClick" x:Name="ExtendedInfo" Grid.Row="0" Grid.Column="8" Focusable="False"
+                         Content="{sx:Localization ExtendedInfo}"/>
+                <dx:SimpleButton Click="SecurityMappings_OnClick" x:Name="SecurityMappings" Grid.Row="0" Grid.Column="10"
+                         HorizontalAlignment="Left" Focusable="False" Content="{sx:Localization CodesMapping}"/>
+                <Grid SizeChanged="Grid_OnSizeChanged" Row="2" Column="0" ColumnSpan="11">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <sx:SecurityPicker SecuritySelected="SecurityPicker_OnSecuritySelected" x:Name="SecuritiesAll" Grid.Row="0"
+                             Grid.Column="0" Grid.RowSpan="5" SelectionMode="Row" Title="{sx:Localization AllSecurities}"/>
+                    <Button Content="" Grid.Row="1" Grid.Column="2" FontFamily="Wingdings" FontSize="12" Padding="0"
+                  Command="{x:Static local:MarketDataPanel.SelectSecurityCommand}"/>
+                    <Button Content="" Grid.Row="3" Grid.Column="2" FontFamily="Wingdings" FontSize="12" Padding="0"
+                  Command="{x:Static local:MarketDataPanel.UnselectSecurityCommand}"/>
+                    <sx:SecurityPicker SecuritySelected="SecurityPicker_OnSecuritySelected" x:Name="SecuritiesSelected" Grid.Row="0"
+                             Grid.Column="4" Grid.RowSpan="5" SelectionMode="Row" Title="{sx:Localization Active3}"/>
+                </Grid>
+            </Grid>
+            <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext"/>
+            <xaml1:BusyIndicator x:Name="BusyIndicator1" Grid.Column="2">
+                <xaml1:BusyIndicator.BusyContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="4" Width="250">
+                            <TextBlock Foreground="Black" HorizontalAlignment="Center" Text="{sx:Localization LoadingDataWait}"/>
+                            <dxe:ProgressBarEdit Margin="4" Height="20" ContentDisplayMode="None">
+                                <dxe:ProgressBarEdit.StyleSettings>
+                                    <dxe:ProgressBarMarqueeStyleSettings/>
+                                </dxe:ProgressBarEdit.StyleSettings>
+                            </dxe:ProgressBarEdit>
+                        </StackPanel>
+                    </DataTemplate>
+                </xaml1:BusyIndicator.BusyContentTemplate>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center">
+              <Run Text="{sx:Localization Storage}"/>
+              <Run Text=":"/>
+                        </TextBlock>
+                        <sx:DriveComboBox EditValueChanged="DriveCtrl_OnEditValueChanged" Changed="DriveCtrl_OnChanged" x:Name="DriveCtrl"
+                              Grid.Column="2"/>
+                        <TextBlock Grid.Column="4" VerticalAlignment="Center">
+              <Run Text="{sx:Localization Format}"/>
+              :
+                        </TextBlock>
+                        <sx:StorageFormatComboBox EditValueChanged="FormatCtrl_OnEditValueChanged" x:Name="FormatCtrl" Grid.Column="6" Width="80"/>
+                    </Grid>
+                    <GroupBox Grid.Row="1" Header="{sx:Localization Download}">
+                        <Grid>
+                            <WrapPanel Orientation="Horizontal">
+                                <TextBlock Margin="5,0,1,0" VerticalAlignment="Center">
+                  <Run Text="{sx:Localization From}"/>
+                  :
+                                </TextBlock>
+                                <dxe:DateEdit EditValueChanged="DateTime_EditValueChanged" x:Name="DateTimeFrom" Width="110" Mask="d"
+                              AllowNullInput="False"/>
+                                <TextBlock Margin="5,0,1,0" VerticalAlignment="Center">
+                  <Run Text="{sx:Localization Until}"/>
+                  :
+                                </TextBlock>
+                                <dxe:DateEdit EditValueChanged="DateTime_EditValueChanged" x:Name="DateTimeTo" Width="110" Mask="d"
+                              AllowNullInput="False"/>
+                                <TextBlock Margin="5,0,1,0" VerticalAlignment="Center">
+                  <Run Text="{sx:Localization TimeOutSecond}"/>
+                  :
+                                </TextBlock>
+                                <dxe:SpinEdit x:Name="TimeoutSeconds" Width="50" MinValue="5" MaxValue="36000" AllowNullInput="False"
+                              IsFloatValue="False" Increment="10" AllowSpinOnMouseWheel="True"/>
+                                <dx:DropDownButton Click="Candles_OnClick" MouseEnter="Candles_OnMouseEnter" x:Name="Candles" Height="23"
+                                   Margin="5,0,0,0" MinHeight="25" VerticalAlignment="Center" Content="{sx:Localization Candles}">
+                                    <ListBox Name="TimeFrames" BorderThickness="0" Margin="5">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <local:CandleSeriesCheckBox VerticalAlignment="Center"
+                                                    Content="{Binding Value, Converter={StaticResource SeriesToStringConverter}}"
+                                                    IsChecked="{Binding IsSelected}" Series="{Binding Value}"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ListBox>
+                                </dx:DropDownButton>
+                                <dx:SimpleButton Width="80" Margin="5,0,0,0" Command="{x:Static local:MarketDataPanel.DownloadCommand}"
+                                 Content="{sx:Localization Start}"/>
+                            </WrapPanel>
+                        </Grid>
+                    </GroupBox>
+                    <sx:MarketDataGrid x:Name="MarketDataGrid" Margin="2" Grid.Row="2"/>
+                </Grid>
+            </xaml1:BusyIndicator>
+        </Grid>
+    </xaml1:BusyIndicator>
+</local:BaseStudioControl>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Server.Core</id>
+    <version>5.0.200</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="84f27136a0cfac961da46b8744b14d10058e76df" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Ecng.Serialization" version="1.0.119" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Algo" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Configuration" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Localization" version="5.0.195" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Logging" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Messages" version="5.0.195" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

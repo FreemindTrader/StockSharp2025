@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Web.DomainModel</id>
+    <version>5.0.25</version>
+    <title>StockSharp.Web.DomainModel</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>StockSharp WebApi</description>
+    <releaseNotes>ILikeEntity</releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Web DomainModel</tags>
+    <repository commit="1c578b89518b9605b70dffc1a705e938fa1fae44" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="Ecng.ComponentModel" version="1.0.130" />
+        <dependency id="StockSharp.Messages" version="5.0.127" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

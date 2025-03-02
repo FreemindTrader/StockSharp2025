@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Hydra.Tools</RootNamespace>
+        <AssemblyName>StockSharp.Hydra.Tools</AssemblyName>
+        <PackageId>StockSharp.Hydra.Tools</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{BB7BFB30-83BC-4469-A986-FBFDA1E6E34C}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net5.0-windows</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.210</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ecng.Backup.AWS" Version="1.0.6" />
+      <PackageReference Include="Ecng.Backup.Yandex" Version="1.0.1" />
+      <PackageReference Include="StockSharp.Algo.Export" Version="5.0.32" />
+      <PackageReference Include="StockSharp.Studio.Controls" Version="5.0.211" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\30FreemindPearl\StockSharp.Hydra.Core\20_StockSharp.Hydra.Core.csproj" />
+    </ItemGroup>   
+</Project>

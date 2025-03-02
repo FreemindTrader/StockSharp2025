@@ -1,0 +1,32 @@
+<controls:BaseStudioControl x:Class="StockSharp.Studio.Controls.SecuritiesPanel"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:sx="http://schemas.stocksharp.com/xaml"
+                            xmlns:controls="clr-namespace:StockSharp.Studio.Controls"
+                            xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                            xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                            xmlns:alerts="clr-namespace:StockSharp.Alerts;assembly=StockSharp.Alerts"
+                            xmlns:messages="clr-namespace:StockSharp.Messages;assembly=StockSharp.Messages"
+                            DataContext="{Binding RelativeSource={RelativeSource Self}}">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <dxb:BarManager x:Name="BarManager" Grid.Row="0">
+      <dxb:BarManager.Bars>
+        <dxb:Bar Caption="{x:Static loc:LocalizedStrings.Main}">
+          <dxb:BarButtonItem ItemClick="AddSecurities_OnClick" ToolTip="{x:Static loc:LocalizedStrings.XamlStr138}"
+                             ToolTipService.ShowOnDisabled="True" Glyph="{sx:ThemedIcons Key=Add}"/>
+          <dxb:BarButtonItem ItemClick="RemoveSecurities_OnClick" x:Name="RemoveSecurities"
+                             ToolTip="{x:Static loc:LocalizedStrings.XamlStr789}" ToolTipService.ShowOnDisabled="True"
+                             IsEnabled="False" Glyph="{sx:ThemedIcons Key=Remove2}"/>
+          <alerts:AlertButton x:Name="AlertBtn" MessageType="{x:Type messages:Level1ChangeMessage}"/>
+        </dxb:Bar>
+      </dxb:BarManager.Bars>
+    </dxb:BarManager>
+    <sx:SecurityPicker SecuritySelected="SecurityPicker_SecuritySelected" x:Name="SecurityPicker" Grid.Row="1"/>
+  </Grid>
+</controls:BaseStudioControl>

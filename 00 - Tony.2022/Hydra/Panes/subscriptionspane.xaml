@@ -1,0 +1,12 @@
+<studio:BaseStudioControl x:Class="StockSharp.Hydra.Panes.SubscriptionsPane"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:studio="clr-namespace:StockSharp.Studio.Controls;assembly=StockSharp.Studio.Controls"
+                          xmlns:sx="http://schemas.stocksharp.com/xaml">
+  <sx:SubscriptionPanel SubscriptionRemoving="SubscriptionPanel_SubscriptionRemoving"
+                        SubscriptionSuspending="SubscriptionPanel_SubscriptionSuspending"
+                        SubscriptionResuming="SubscriptionPanel_SubscriptionResuming"
+                        SessionRemoving="SubscriptionPanel_SessionRemoving"
+                        SessionSuspending="SubscriptionPanel_SessionSuspending"
+                        SessionResuming="SubscriptionPanel_SessionResuming" x:Name="SubscriptionPanel"/>
+</studio:BaseStudioControl>

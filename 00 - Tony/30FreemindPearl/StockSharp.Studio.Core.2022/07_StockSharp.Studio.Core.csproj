@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
+    <PropertyGroup>
+        <RootNamespace>Stocksharp.Studio.Core</RootNamespace>
+        <AssemblyName>Stocksharp.Studio.Core</AssemblyName>
+        <PackageId>Stocksharp.Studio.Core</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{2CAFE858-3A40-46DF-AA80-9AB8B8F22A6E}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.225</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Diagram.Core" Version="5.0.9" />
+      <PackageReference Include="StockSharp.Studio.Community" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.Api.Interfaces" Version="5.0.223" />
+      <PackageReference Include="StockSharp.Web.DomainModel" Version="5.0.223" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\20FreemindCommon\62_fxCharting\62_fxCharting.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
+    
+</Project>
+

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Hydra.Core</id>
+    <version>5.0.200</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="cf2cccbc7cc4ccb86a31a13b1ee6ed33b396347c" />
+    <dependencies>
+      <group targetFramework="net9.0-windows">
+        <dependency id="StockSharp.Algo" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.BusinessEntities" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Configuration" version="5.0.200" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Logging" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Messages" version="5.0.195" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Server.Core" version="5.0.200" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Server.Fix" version="5.0.105" exclude="Build,Analyzers" />
+        <dependency id="Stocksharp.Studio.Core" version="5.0.200" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net9.0-windows">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

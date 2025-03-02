@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Ecng.Security</id>
+    <version>1.0.107</version>
+    <title>Ecng.Security</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Ecng system framework</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>Ecng Security</tags>
+    <repository commit="cd780596c8123d5144786b4b0a751b57a74f5b5e" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="NETStandard.Library" version="2.0.3" />
+        <dependency id="System.Security.Permissions" version="5.0.0" />
+        <dependency id="System.Security.Cryptography.ProtectedData" version="5.0.0" />
+        <dependency id="Ecng.Reflection" version="1.0.106" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

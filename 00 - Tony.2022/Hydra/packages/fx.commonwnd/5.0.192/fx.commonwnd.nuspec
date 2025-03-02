@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>fx.CommonWnd</id>
+    <version>5.0.192</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net9.0-windows">
+        <dependency id="Ecng.Xaml.DXRefs" version="1.0.5" exclude="Build,Analyzers" />
+        <dependency id="fx.Collections" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.Definitions" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="fx.TimePeriod" version="5.0.192" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net9.0-windows">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

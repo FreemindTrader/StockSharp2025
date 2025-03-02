@@ -1,0 +1,188 @@
+<dxn:NavBarControl x:Class="StockSharp.Hydra.Controls.TaskNavigator"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+                   xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                   xmlns:sx="http://schemas.stocksharp.com/xaml"
+                   xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                   xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                   xmlns:core="clr-namespace:StockSharp.Hydra.Core;assembly=StockSharp.Hydra.Core"
+                   xmlns:messages="clr-namespace:StockSharp.Messages;assembly=StockSharp.Messages"
+                   xmlns:hydra="clr-namespace:StockSharp.Hydra"
+                   xmlns:converters="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+                   xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/navbar/themekeys"
+                   xmlns:hydraControls="clr-namespace:StockSharp.Hydra.Controls"
+                   xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                   Loaded="TaskNavigator_OnLoaded">
+    <FrameworkElement.Resources>
+        <converters:BoolToDoubleConverter x:Key="BoolToDoubleConverter"/>
+        <converters:MultiBoolToOpacityConverter x:Key="MultiBoolToOpacityConverter"/>
+        <converters:BoolToBrushConverter x:Key="BoolToBackground" FalseValue="Transparent" TrueValue="#f8ce53"/>
+        <converters:BoolToBrushConverter x:Key="BoolToBorder" FalseValue="#D0D0D0" TrueValue="#f8ce53"/>
+        <converters:UriToImageSourceConverter x:Key="UriToImageSourceConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <LinearGradientBrush x:Key="CheckedBlue" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FF285AB3" Offset="0"/>
+            <GradientStop Color="#FF4184EC" Offset="0.5"/>
+            <GradientStop Color="#FF558BED" Offset="0.5"/>
+            <GradientStop Color="#FF7DACF0" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="CheckedBlueBorder" Color="#FF143874"/>
+        <Style x:Key="OrangeSwitchStyle" TargetType="{x:Type CheckBox}">
+            <Setter Property="Control.Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Control.Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <FrameworkTemplate.Resources>
+                            <Storyboard x:Key="OnChecking">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="slider"
+                                               Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="30"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="OnUnchecking">
+                                <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="slider"
+                                               Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </FrameworkTemplate.Resources>
+                        <DockPanel x:Name="dockPanel">
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"
+                                Content="{TemplateBinding ContentControl.Content}"
+                                ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                                ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" RecognizesAccessKey="True"
+                                VerticalAlignment="Center"/>
+                            <Grid>
+                                <Border x:Name="BackgroundBorder" BorderBrush="#FF939393" BorderThickness="1" CornerRadius="3" Height="20"
+                        Width="60">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="#FFB5B5B5" Offset="0"/>
+                                            <GradientStop Color="#FFDEDEDE" Offset="0.1"/>
+                                            <GradientStop Color="#FFEEEEEE" Offset="0.5"/>
+                                            <GradientStop Color="#FFFAFAFA" Offset="0.5"/>
+                                            <GradientStop Color="#FFFEFEFE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Ellipse x:Name="Off" Width="10" Height="10" Stroke="#FF7A7A7A" StrokeThickness="2" Grid.Column="1"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        <Line x:Name="On" X1="0" Y1="2" X2="0" Y2="10" Stroke="#FF7A7A7A" StrokeThickness="2" Grid.Column="0"
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <Border x:Name="slider" BorderBrush="#FF939393" HorizontalAlignment="Left" Width="30" Height="20"
+                        BorderThickness="1" CornerRadius="3" RenderTransformOrigin="0.5,0.5" Margin="0">
+                                    <UIElement.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                            <SkewTransform AngleX="0" AngleY="0"/>
+                                            <RotateTransform Angle="0"/>
+                                            <TranslateTransform X="0" Y="0"/>
+                                        </TransformGroup>
+                                    </UIElement.RenderTransform>
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                            <GradientStop Color="#FFCDCDCD" Offset="0.1"/>
+                                            <GradientStop Color="#FFFBFBFB" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </DockPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                <TriggerBase.ExitActions>
+                                    <BeginStoryboard x:Name="OnUnchecking_BeginStoryboard" Storyboard="{StaticResource OnUnchecking}"/>
+                                </TriggerBase.ExitActions>
+                                <TriggerBase.EnterActions>
+                                    <BeginStoryboard x:Name="OnChecking_BeginStoryboard" Storyboard="{StaticResource OnChecking}"/>
+                                </TriggerBase.EnterActions>
+                                <Setter TargetName="On" Property="Shape.Stroke" Value="White"/>
+                                <Setter TargetName="Off" Property="Shape.Stroke" Value="White"/>
+                                <Setter TargetName="BackgroundBorder" Value="{StaticResource CheckedBlue}" Property="Border.Background"/>
+                                <Setter TargetName="BackgroundBorder" Value="{StaticResource CheckedBlueBorder}"
+                        Property="Border.BorderBrush"/>
+                            </Trigger>
+                            <Trigger Property="UIElement.IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <hydraControls:AutoRefreshCollectionViewSource x:Key="SortedSources" Filter="SortedSources_OnFilter" Source="{Binding Path=Tasks}">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="IsEnabled" Direction="Descending"/>
+            </CollectionViewSource.SortDescriptions>
+        </hydraControls:AutoRefreshCollectionViewSource>
+        <hydraControls:AutoRefreshCollectionViewSource x:Key="SortedTools" Filter="SortedTools_OnFilter" Source="{Binding Path=Tasks}">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="IsEnabled" Direction="Descending"/>
+            </CollectionViewSource.SortDescriptions>
+        </hydraControls:AutoRefreshCollectionViewSource>
+        <ControlTemplate x:Key="{themes:CommonElementsThemeKey ResourceKey=ItemTemplate, IsThemeIndependent=True}">
+            <Border x:Name="PART_Border" CornerRadius="3" BorderThickness="3" Margin="3"
+              DataContext="{Binding Content}"
+              Background="{Binding Path=(core:IHydraTask.IsEnabled), Converter={StaticResource BoolToBackground}}"
+              BorderBrush="{Binding Path=(core:IHydraTask.IsEnabled), Converter={StaticResource BoolToBorder}}">
+                <StackPanel Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="22" VerticalAlignment="Center"
+                   Source="{Binding Path=(core:IHydraTask.Icon), Converter={StaticResource UriToImageSourceConverter}}"/>
+                        <TextBlock FontWeight="Bold" VerticalAlignment="Center" Margin="5,0,0,0"
+                       Text="{Binding Path=(core:IHydraTask.Title)}"/>
+                        <Image Height="22" Margin="5,0,0,0" VerticalAlignment="Center" Source="{sx:ThemedIcons Key=Clock}"
+                   Visibility="{Binding Path=(messages:IScheduledTask.WorkingTime).IsEnabled, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"/>
+                    </StackPanel>
+                    <StackPanel x:Name="buttons" Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                        <CheckBox Style="{StaticResource OrangeSwitchStyle}" Margin="3" DockPanel.Dock="Right"
+                      Command="{x:Static hydra:MainWindow.TaskEnabledChangedCommand}"
+                      IsChecked="{Binding IsEnabled, Mode=OneWay, UpdateSourceTrigger=Explicit}"
+                      Opacity="{Binding Path=IsStarted, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type hydra:MainWindow}}, Converter={StaticResource BoolToDoubleConverter}, ConverterParameter=true}"
+                      CommandParameter="{Binding}"/>
+                        <dx:SimpleButton Background="Transparent" Margin="3" Focusable="False"
+                             Command="{x:Static hydra:MainWindow.RemoveTaskCommand}" BorderBrush="{x:Null}"
+                             CommandParameter="{Binding}">
+                            <UIElement.Opacity>
+                                <MultiBinding Converter="{StaticResource MultiBoolToOpacityConverter}" ConverterParameter="true">
+                                    <Binding Path="IsStarted"
+                           RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type hydra:MainWindow}}"/>
+                                    <Binding Path="IsEnabled"/>
+                                </MultiBinding>
+                            </UIElement.Opacity>
+                            <ContentControl.Content>
+                                <Image x:Name="imgClose" Width="16" ToolTip="{x:Static loc:LocalizedStrings.XamlStr787}"
+                       Source="{sx:ThemedIcons Key=Remove2}"/>
+                            </ContentControl.Content>
+                        </dx:SimpleButton>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <DataTrigger Value="True" Binding="{Binding Path=IsSelected}">
+                    <Setter TargetName="PART_Border" Property="Border.BorderBrush" Value="#f8ce53"/>
+                    <Setter TargetName="buttons" Property="UIElement.Visibility" Value="Visible"/>
+                </DataTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </FrameworkElement.Resources>
+    <dxn:NavBarControl.View>
+        <dxn:NavigationPaneView ItemSelected="NavBarViewBase_OnItemSelected" MouseDoubleClick="Control_OnMouseDoubleClick"
+                            IsExpandButtonVisible="False"/>
+    </dxn:NavBarControl.View>
+    <dxn:NavBarGroup x:Name="SourcesGroup" GroupScrollMode="ScrollBar" Header="{x:Static loc:LocalizedStrings.XamlStr227}"
+                   ImageSource="{sx:ThemedIcons Key=Download}"
+                   ItemsSource="{Binding Source={StaticResource SortedSources}}"/>
+    <dxn:NavBarGroup x:Name="ToolsGroup" GroupScrollMode="ScrollBar" Header="{x:Static loc:LocalizedStrings.Tools}"
+                   ImageSource="{sx:ThemedIcons Key=Check}"
+                   ItemsSource="{Binding Source={StaticResource SortedTools}}"/>
+</dxn:NavBarControl>

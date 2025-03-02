@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\Diectory.Build.props" />
+    <PropertyGroup>
+        <RootNamespace>StockSharp.Studio.Controls</RootNamespace>
+        <AssemblyName>StockSharp.Studio.Controls</AssemblyName>
+        <PackageId>StockSharp.Studio.Controls</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{8C2AA02E-5601-482E-A75E-607AFDD7ED0E}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net9.0-windows</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.225</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ecng.Roslyn" Version="1.0.116" />
+      <PackageReference Include="StockSharp.Alerts" Version="5.0.129" />
+      <PackageReference Include="StockSharp.Charting.Interfaces" Version="5.0.220" />
+      <PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.134" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\StockSharp.Studio.Core\07_StockSharp.Studio.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>    
+</Project>

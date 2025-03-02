@@ -1,0 +1,57 @@
+<controls:BaseStudioControl x:Class="StockSharp.Studio.Controls.StatusBarPanel"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:sx="http://schemas.stocksharp.com/xaml"
+                            xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                            xmlns:controls="clr-namespace:StockSharp.Studio.Controls"
+                            xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars">
+  <UIElement.CommandBindings>
+    <CommandBinding CanExecute="CopyToBufferCommand_CanExecute" Executed="CopyToBufferCommand_OnExecuted"
+                    Command="{x:Static controls:StatusBarPanel.CopyToBufferCommand}"/>
+    <CommandBinding CanExecute="LogDirectoryCommand_CanExecute" Executed="LogDirectoryCommand_OnExecuted"
+                    Command="{x:Static controls:StatusBarPanel.LogDirectoryCommand}"/>
+  </UIElement.CommandBindings>
+  <Grid Height="20">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="5"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="5"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Label Grid.Column="0" VerticalContentAlignment="Bottom"
+           Content="{Binding Path=Status, RelativeSource={RelativeSource AncestorType={x:Type controls:StatusBarPanel}}}"/>
+    <sx:AdvertisePanel x:Name="AdvertisePanel" Grid.Column="2" HorizontalAlignment="Stretch"/>
+    <Grid Column="4" Width="800"
+          DataContext="{Binding LastLogInfo, RelativeSource={RelativeSource AncestorType={x:Type controls:StatusBarPanel}}}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <Image Grid.Column="0" Margin="2" Width="16" VerticalAlignment="Center"
+             Source="{sx:ThemedIcons Key=Warning}" Visibility="{Binding Path=LastWarnVisible}"/>
+      <Image Grid.Column="1" Margin="2" Width="16" VerticalAlignment="Center"
+             Source="{sx:ThemedIcons Key=Error}" Visibility="{Binding Path=LastErrorVisible}"/>
+      <Label Grid.Column="2" VerticalContentAlignment="Center" Height="25"
+             Content="{Binding Path=LastLogMessage}" ToolTip="{Binding Path=LastLogMessage}">
+        <dxb:BarManager.DXContextMenu>
+          <dxb:PopupMenu>
+            <dxb:PopupMenu.Items>
+              <dxb:BarButtonItem Command="{x:Static controls:StatusBarPanel.CopyToBufferCommand}" Glyph="{sx:ThemedIcons Key=Copy}"
+                                 Content="{sx:Localization CopyToClipboard}"
+                                 CommandTarget="{Binding Path=PlacementTarget, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:PopupMenu}}}"/>
+            </dxb:PopupMenu.Items>
+          </dxb:PopupMenu>
+        </dxb:BarManager.DXContextMenu>
+      </Label>
+      <dx:SimpleButton Grid.Column="3" HorizontalAlignment="Right"
+                       Command="{x:Static controls:StatusBarPanel.LogDirectoryCommand}"
+                       ToolTip="{sx:Localization LogDirectory}" Glyph="{sx:ThemedIcons Key=Open}"/>
+      <TextBlock Grid.Column="4" Margin="5,0,5,0" VerticalAlignment="Center"
+                 Text="{Binding Path=LoginInfo, RelativeSource={RelativeSource AncestorType={x:Type controls:StatusBarPanel}}}"/>
+    </Grid>
+  </Grid>
+</controls:BaseStudioControl>
