@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\..\..\Diectory.Build.props" />
+    <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
         <RootNamespace>Ecng.Data</RootNamespace>
         <AssemblyName>Ecng.Data</AssemblyName>
@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.302</Version>
+        <Version>5.0.305</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company><BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>

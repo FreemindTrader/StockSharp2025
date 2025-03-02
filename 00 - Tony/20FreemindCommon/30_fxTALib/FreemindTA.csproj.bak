@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Freemind.TaLib</RootNamespace>
+    <AssemblyName>Freemind.TaLib</AssemblyName>
+    <TargetFrameworks>net48;netcoreapp3.1;netstandard2.1</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EcngVer>1.0.28</EcngVer>
+    <LangVersion>default</LangVersion>
+    <StockSharpVer>5.*</StockSharpVer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+</Project>

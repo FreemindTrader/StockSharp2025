@@ -1,0 +1,74 @@
+﻿namespace StockSharp.Algo.History
+{
+    internal enum FinVizColumns
+    {
+        Ticker                        = 1,
+        Company                       = 2,
+        Sector                        = 3,
+        Industry                      = 4,
+        Country                       = 5,
+        MarketCap                     = 6,
+        PE                            = 7,
+        ForwardPE                     = 8,
+        PEG                           = 9,
+        PS                            = 10, // 0x0000000A
+        PB                            = 11, // 0x0000000B
+        PCash                         = 12, // 0x0000000C
+        PFreeCash                     = 13, // 0x0000000D
+        DividendYield                 = 14, // 0x0000000E
+        PayoutRatio                   = 15, // 0x0000000F
+        EpsTtm                        = 16, // 0x00000010
+        EpsGrowthThisYear             = 17, // 0x00000011
+        EpsGrowthNextYear             = 18, // 0x00000012
+        EpsGrowthPast5Years           = 19, // 0x00000013
+        EpsGrowthNext5Years           = 20, // 0x00000014
+        SalesGrowthPast5Years         = 21, // 0x00000015
+        EpsGrowthQuarterOverQuarter   = 22, // 0x00000016
+        SalesGrowthQuarterOverQuarter = 23, // 0x00000017
+        SharesOutstanding             = 24, // 0x00000018
+        SharesFloat                   = 25, // 0x00000019
+        InsiderOwnership              = 26, // 0x0000001A
+        InsiderTransactions           = 27, // 0x0000001B
+        InstitutionalOwnership        = 28, // 0x0000001C
+        InstitutionalTransactions     = 29, // 0x0000001D
+        FloatShort                    = 30, // 0x0000001E
+        ShortRatio                    = 31, // 0x0000001F
+        ReturnOnAssets                = 32, // 0x00000020
+        ReturnOnEquity                = 33, // 0x00000021
+        ReturnOnInvestment            = 34, // 0x00000022
+        CurrentRatio                  = 35, // 0x00000023
+        QuickRatio                    = 36, // 0x00000024
+        LtDebtEquity                  = 37, // 0x00000025
+        TotalDebtEquity               = 38, // 0x00000026
+        GrossMargin                   = 39, // 0x00000027
+        OperatingMargin               = 40, // 0x00000028
+        ProfitMargin                  = 41, // 0x00000029
+        PerformanceWeek               = 42, // 0x0000002A
+        PerformanceMonth              = 43, // 0x0000002B
+        PerformanceQuarter            = 44, // 0x0000002C
+        PerformanceHalfYear           = 45, // 0x0000002D
+        PerformanceYear               = 46, // 0x0000002E
+        PerformanceYtd                = 47, // 0x0000002F
+        Beta                          = 48, // 0x00000030
+        AverageTrueRange              = 49, // 0x00000031
+        VolatilityWeek                = 50, // 0x00000032
+        VolatilityMonth               = 51, // 0x00000033
+        Sma20Days                     = 52, // 0x00000034
+        Sma50Days                     = 53, // 0x00000035
+        Sma200Days                    = 54, // 0x00000036
+        High50Days                    = 55, // 0x00000037
+        Low50Days                     = 56, // 0x00000038
+        High52Weeks                   = 57, // 0x00000039
+        Low52Weeks                    = 58, // 0x0000003A
+        Rsi14                         = 59, // 0x0000003B
+        ChangeFromOpen                = 60, // 0x0000003C
+        Gap                           = 61, // 0x0000003D
+        AnalystRecom                  = 62, // 0x0000003E
+        AverageVolume                 = 63, // 0x0000003F
+        RelativeVolume                = 64, // 0x00000040
+        Price                         = 65, // 0x00000041
+        Change                        = 66, // 0x00000042
+        Volume                        = 67, // 0x00000043
+        EarningsDate                  = 68, // 0x00000044
+    }
+}
