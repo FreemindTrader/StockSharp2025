@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\..\..\Diectory.Build.props" />
+    <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Web.Common</RootNamespace>
         <AssemblyName>StockSharp.Web.Common</AssemblyName>
@@ -22,7 +22,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.302</Version>
+        <Version>5.0.305</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
@@ -30,10 +30,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.IO" Version="1.0.191" />
-        <PackageReference Include="Ecng.Linq" Version="1.0.92" />
-        <PackageReference Include="Ecng.Net.Clients" Version="1.0.180" />
-        <PackageReference Include="stocksharp.messages" Version="5.0.301" />
+        <PackageReference Include="Ecng.IO" Version="1.0.193" />
+        <PackageReference Include="Ecng.Linq" Version="1.0.94" />
+        <PackageReference Include="Ecng.Net.Clients" Version="1.0.182" />
+        <PackageReference Include="stocksharp.messages" Version="5.0.305" />
     </ItemGroup>
 
     <ItemGroup>
@@ -41,7 +41,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     </ItemGroup>
 </Project>
 

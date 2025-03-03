@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\common_target_netwindows.props" />
-    <Import Project="..\..\..\Diectory.Build.props" />
+    <Import Project="..\..\..\common_target_netwindows.props" />
+    <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Studio.IPC</RootNamespace>
         <AssemblyName>StockSharp.Studio.IPC</AssemblyName>
@@ -24,7 +24,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.302</Version>
+        <Version>5.0.305</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
@@ -38,7 +38,7 @@
 
     
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     </ItemGroup>
 </Project>
 

@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\..\..\Diectory.Build.props" />
+    <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Web.Api.Client</RootNamespace>
         <AssemblyName>StockSharp.Web.Api.Client</AssemblyName>
@@ -22,7 +22,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.302</Version>
+        <Version>5.0.305</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
@@ -30,11 +30,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ecng.Common" Version="1.0.186" />
-      <PackageReference Include="Ecng.Linq" Version="1.0.92" />
-      <PackageReference Include="Ecng.Logging" Version="1.0.14" />
-      <PackageReference Include="Ecng.Net" Version="1.0.353" />
-      <PackageReference Include="Ecng.Net.Clients" Version="1.0.180" />
+      <PackageReference Include="Ecng.Common" Version="1.0.188" />
+      <PackageReference Include="Ecng.Linq" Version="1.0.94" />
+      <PackageReference Include="Ecng.Logging" Version="1.0.16" />
+      <PackageReference Include="Ecng.Net" Version="1.0.355" />
+      <PackageReference Include="Ecng.Net.Clients" Version="1.0.182" />
     </ItemGroup>
 
     <ItemGroup>
@@ -45,7 +45,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     </ItemGroup>
 </Project>
 

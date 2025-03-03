@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\common_target_netwindows.props" />
-    <Import Project="..\..\..\Diectory.Build.props" />
+    <Import Project="..\..\..\common_target_netwindows.props" />
+    <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
         <RootNamespace>StockSharp.Studio.WebApi.UI</RootNamespace>
         <AssemblyName>StockSharp.Studio.WebApi.UI</AssemblyName>
@@ -24,7 +24,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.302</Version>
+        <Version>5.0.305</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
         <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
@@ -32,14 +32,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Backup" Version="1.0.194" />
-        <PackageReference Include="Ecng.Collections" Version="1.0.204" />
-        <PackageReference Include="Ecng.Common" Version="1.0.186" />
-        <PackageReference Include="Ecng.Net" Version="1.0.353" />
+        <PackageReference Include="Ecng.Backup" Version="1.0.196" />
+        <PackageReference Include="Ecng.Collections" Version="1.0.206" />
+        <PackageReference Include="Ecng.Common" Version="1.0.188" />
+        <PackageReference Include="Ecng.Net" Version="1.0.355" />
         <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.10" />
         <PackageReference Include="Nito.AsyncEx.Tasks" Version="5.1.2" />
-        <PackageReference Include="StockSharp.Licensing.Core" Version="5.0.28" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.218" />
+        <PackageReference Include="StockSharp.Licensing.Core" Version="5.0.29" />
+        <PackageReference Include="StockSharp.Xaml" Version="5.0.220" />
     </ItemGroup>
 
     <ItemGroup>
@@ -54,7 +54,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     </ItemGroup>
 </Project>
 
