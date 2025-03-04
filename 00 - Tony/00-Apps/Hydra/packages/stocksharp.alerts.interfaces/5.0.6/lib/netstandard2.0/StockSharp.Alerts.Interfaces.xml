@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSharp.Alerts.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:StockSharp.Alerts.AlertNotifications">
+            <summary>
+            Alert types.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Alerts.AlertNotifications.Sound">
+            <summary>
+            Sound.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Alerts.AlertNotifications.Speech">
+            <summary>
+            Speech.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Alerts.AlertNotifications.Popup">
+            <summary>
+            Popup window.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Alerts.AlertNotifications.Sms">
+            <summary>
+            SMS.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Alerts.AlertNotifications.Email">
+            <summary>
+            Email.
+            </summary>
+        </member>
+        <member name="F:StockSharp.Alerts.AlertNotifications.Log">
+            <summary>
+            Log file.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Alerts.AlertRule">
+            <summary>
+            Rule.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertRule"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRule.Field">
+            <summary>
+            Message property, which will be made a comparison with the value of <see cref="P:StockSharp.Alerts.AlertRule.Value"/> based on the criterion <see cref="P:StockSharp.Alerts.AlertRule.Operator"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRule.Operator">
+            <summary>
+            The criterion of comparison values <see cref="P:StockSharp.Alerts.AlertRule.Value"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRule.Value">
+            <summary>
+            Comparison value.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRule.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="storage">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRule.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="storage">Settings storage.</param>
+        </member>
+        <member name="T:StockSharp.Alerts.AlertRuleField">
+            <summary>
+            Tracking field info.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertRuleField"/>.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.#ctor(System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertRuleField"/>.
+            </summary>
+            <param name="property">Tracking property.</param>
+            <param name="extraField">Extra info for <see cref="P:StockSharp.Alerts.AlertRuleField.Property"/>.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertRuleField"/>.
+            </summary>
+            <param name="displayName">Display name.</param>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRuleField.DisplayName">
+            <summary>
+            Display name.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRuleField.Property">
+            <summary>
+            Tracking property.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRuleField.ExtraField">
+            <summary>
+            Extra info for <see cref="P:StockSharp.Alerts.AlertRuleField.Property"/>.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertRuleField.ValueType">
+            <summary>
+            Value type.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="storage">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="storage">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.Invoke(StockSharp.Messages.Message)">
+            <summary>
+            Invoke field.
+            </summary>
+            <param name="message">Message.</param>
+            <returns>Value.</returns>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.GetHashCode">
+            <summary>Serves as a hash function for a particular type. </summary>
+            <returns>A hash code for the current <see cref="T:System.Object" />.</returns>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.OnEquals(StockSharp.Alerts.AlertRuleField)">
+            <summary>
+            Compare <see cref="T:StockSharp.Alerts.AlertRuleField"/> on the equivalence.
+            </summary>
+            <param name="other">Another value with which to compare.</param>
+            <returns><see langword="true" />, if the specified object is equal to the current object, otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertRuleField.Clone">
+            <summary>
+            Create a copy of <see cref="T:StockSharp.Alerts.AlertRuleField"/>.
+            </summary>
+            <returns>Copy.</returns>
+        </member>
+        <member name="T:StockSharp.Alerts.AlertSchema">
+            <summary>
+            Schema.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertSchema.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertSchema"/>.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertSchema.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Alerts.AlertSchema"/>.
+            </summary>
+            <param name="messageType">Message type.</param>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.Id">
+            <summary>
+            Identifier.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.IsEnabled">
+            <summary>
+            Enabled.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.MessageType">
+            <summary>
+            Message type.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.Rules">
+            <summary>
+            Rules.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.AlertType">
+            <summary>
+            Alert type.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.Caption">
+            <summary>
+            Signal header.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertSchema.Message">
+            <summary>
+            Alert text.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertSchema.Load(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Load settings.
+            </summary>
+            <param name="storage">Settings storage.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.AlertSchema.Save(Ecng.Serialization.SettingsStorage)">
+            <summary>
+            Save settings.
+            </summary>
+            <param name="storage">Settings storage.</param>
+        </member>
+        <member name="T:StockSharp.Alerts.AlertServicesRegistry">
+            <summary>
+            Extension class.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertServicesRegistry.NotificationService">
+            <summary>
+            Alert notification service.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertServicesRegistry.TryNotificationService">
+            <summary>
+            Alert notification service.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertServicesRegistry.ProcessingService">
+            <summary>
+            Alert processing service.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.AlertServicesRegistry.TryProcessingService">
+            <summary>
+            Alert processing service.
+            </summary>
+        </member>
+        <member name="T:StockSharp.Alerts.IAlertNotificationService">
+            <summary>
+            Defines an alert notification service.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.IAlertNotificationService.Notify(StockSharp.Alerts.AlertNotifications,System.String,System.String,System.DateTimeOffset)">
+            <summary>
+            Add alert at the output.
+            </summary>
+            <param name="type">Alert type.</param>
+            <param name="caption">Signal header.</param>
+            <param name="message">Alert text.</param>
+            <param name="time">Creation time.</param>
+        </member>
+        <member name="T:StockSharp.Alerts.IAlertProcessingService">
+            <summary>
+            Defines an alert processing service.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Alerts.IAlertProcessingService.Schemas">
+            <summary>
+            All schemas.
+            </summary>
+        </member>
+        <member name="E:StockSharp.Alerts.IAlertProcessingService.Registered">
+            <summary>
+            Schema registration event.
+            </summary>
+        </member>
+        <member name="E:StockSharp.Alerts.IAlertProcessingService.UnRegistered">
+            <summary>
+            Schema unregistering event.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Alerts.IAlertProcessingService.Register(StockSharp.Alerts.AlertSchema)">
+            <summary>
+            Register schema.
+            </summary>
+            <param name="schema">Schema.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.IAlertProcessingService.UnRegister(StockSharp.Alerts.AlertSchema)">
+            <summary>
+            Remove previously registered by <see cref="M:StockSharp.Alerts.IAlertProcessingService.Register(StockSharp.Alerts.AlertSchema)"/> schema.
+            </summary>
+            <param name="schema">Schema.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.IAlertProcessingService.Process(StockSharp.Messages.Message)">
+            <summary>
+            Check message on alert conditions.
+            </summary>
+            <param name="message">Message.</param>
+        </member>
+        <member name="M:StockSharp.Alerts.IAlertProcessingService.FindSchema(System.Guid)">
+            <summary>
+            Find schema by the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>Found schema. <see langword="null"/> if schema with the specified identifier doesn't exist.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+    </members>
+</doc>

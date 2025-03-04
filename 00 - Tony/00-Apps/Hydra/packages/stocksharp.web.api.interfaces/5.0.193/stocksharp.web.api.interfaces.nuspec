@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Web.Api.Interfaces</id>
+    <version>5.0.193</version>
+    <authors>TonyFreemind</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="a8cdd836dfb691730a4ee2c1e42db7b9b4f0705e" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Ecng.Backup" version="1.0.115" exclude="Build,Analyzers" />
+        <dependency id="Ecng.Common" version="1.0.102" exclude="Build,Analyzers" />
+        <dependency id="Ecng.Net" version="1.0.155" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http" version="2.2.2" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Messages" version="5.0.192" exclude="Build,Analyzers" />
+        <dependency id="StockSharp.Web.DomainModel" version="5.0.192" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

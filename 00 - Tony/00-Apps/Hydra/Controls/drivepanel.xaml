@@ -1,0 +1,14 @@
+<UserControl x:Class="StockSharp.Hydra.Controls.DrivePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:xaml="http://schemas.stocksharp.com/xaml">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="5"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <xaml:DriveComboBox x:Name="DriveCtrl"/>
+    <xaml:StorageFormatComboBox x:Name="FormatCtrl" Grid.Column="2" VerticalAlignment="Center"/>
+  </Grid>
+</UserControl>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSharp.Algo.Export</name>
+    </assembly>
+    <members>
+        <member name="T:StockSharp.Algo.Export.DatabaseExporter">
+            <summary>
+            The export into database.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.#ctor(System.Nullable{System.Decimal},System.Nullable{System.Decimal},StockSharp.Messages.DataType,System.Func{System.Int32,System.Boolean},Ecng.Data.DatabaseConnectionPair)">
+            <summary>
+            Initializes a new instance of the <see cref="T:StockSharp.Algo.Export.DatabaseExporter"/>.
+            </summary>
+            <param name="priceStep">Minimum price step.</param>
+            <param name="volumeStep">Minimum volume step.</param>
+            <param name="dataType">Data type info.</param>
+            <param name="isCancelled">The processor, returning process interruption sign.</param>
+            <param name="connection">The connection to DB.</param>
+        </member>
+        <member name="P:StockSharp.Algo.Export.DatabaseExporter.PriceStep">
+            <summary>
+            Minimum price step.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Export.DatabaseExporter.VolumeStep">
+            <summary>
+            Minimum volume step.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Export.DatabaseExporter.BatchSize">
+            <summary>
+            The size of transmitted data package. The default is 50 elements.
+            </summary>
+        </member>
+        <member name="P:StockSharp.Algo.Export.DatabaseExporter.CheckUnique">
+            <summary>
+            To check uniqueness of data in the database. It effects performance. The default is enabled.
+            </summary>
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.ExportOrderLog(System.Collections.Generic.IEnumerable{StockSharp.Messages.ExecutionMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.ExportTicks(System.Collections.Generic.IEnumerable{StockSharp.Messages.ExecutionMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.ExportTransactions(System.Collections.Generic.IEnumerable{StockSharp.Messages.ExecutionMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Messages.QuoteChangeMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Messages.Level1ChangeMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Messages.CandleMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Messages.NewsMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Messages.SecurityMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Messages.PositionChangeMessage})">
+            <inheritdoc />
+        </member>
+        <member name="M:StockSharp.Algo.Export.DatabaseExporter.Export(System.Collections.Generic.IEnumerable{StockSharp.Algo.Export.IndicatorValue})">
+            <inheritdoc />
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+    </members>
+</doc>

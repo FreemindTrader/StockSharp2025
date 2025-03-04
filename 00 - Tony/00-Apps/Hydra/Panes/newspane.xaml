@@ -1,0 +1,46 @@
+<panes:DataPane x:Class="StockSharp.Hydra.Panes.NewsPane"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:controls="clr-namespace:StockSharp.Hydra.Controls"
+                xmlns:sx="http://schemas.stocksharp.com/xaml"
+                xmlns:panes="clr-namespace:StockSharp.Hydra.Panes"
+                xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                sx:Doc.Url="243486c1-b9d4-47af-889e-61aaaa670644.htm">
+  <DockPanel>
+    <controls:ExportProgress x:Name="Progress" VerticalAlignment="Bottom" DockPanel.Dock="Bottom"/>
+    <Grid x:Name="MainGrid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <controls:DrivePanel x:Name="DrivePanel" Grid.Row="0"/>
+      <Grid Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto" MinWidth="100"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <dxe:DateEdit EditValueChanged="OnDateValueChanged" x:Name="FromCtrl" Grid.Column="0" DisplayFormatString="d"/>
+        <dxe:DateEdit EditValueChanged="OnDateValueChanged" x:Name="ToCtrl" Grid.Column="2" DisplayFormatString="d"/>
+        <ex:TimeZoneEditor x:Name="TimeZone" Grid.Column="4" ToolTip="{x:Static loc:LocalizedStrings.MarketDataTimeZone}"/>
+        <dx:SimpleButton Click="Find_OnClick" x:Name="Find" Grid.Column="6">
+          <Image Width="16" Source="{sx:ThemedIcons Key=Search}"/>
+        </dx:SimpleButton>
+        <controls:ExportButton x:Name="ExportBtn" Grid.Column="8"/>
+      </Grid>
+      <sx:NewsMessagePanel x:Name="NewsPanel" Grid.Row="4"/>
+    </Grid>
+  </DockPanel>
+</panes:DataPane>

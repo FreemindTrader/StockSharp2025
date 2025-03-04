@@ -1,0 +1,243 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\Diectory.Build.props" />
+    <PropertyGroup>
+        <RootNamespace>FreemindTrader</RootNamespace>
+        <AssemblyName>FreemindTrader</AssemblyName>
+        <PackageId>FreemindTrader</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{FA920120-5CA3-4972-BDC1-7318855BF3A8}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net9.0-windows</TargetFrameworks>
+        <OutputType>WinExe</OutputType>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ApplicationIcon>FreemindServer.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.220</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindTraderExe</BaseOutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows|AnyCPU'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows|AnyCPU'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows|x64'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-windows|x64'">
+        <NoWarn>1701;1702;MSB3270</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="Chronos\**" />
+        <EmbeddedResource Remove="Chronos\**" />
+        <None Remove="Chronos\**" />
+        <Page Remove="Chronos\**" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Remove="Images\00Long_16x16.png" />
+        <None Remove="Images\00Negative_16x16.png" />
+        <None Remove="Images\00Positive_16x16.png" />
+        <None Remove="Images\Candles\BearishEngulfing_16x16.png" />
+        <None Remove="Images\Candles\BullishEngulfing_16x16.png" />
+        <None Remove="Images\Candles\DarkcloudCover_16x16.png" />
+        <None Remove="Images\Candles\EveningStar_16x16.png" />
+        <None Remove="Images\Candles\GreenDoji_16x16.png" />
+        <None Remove="Images\Candles\GreenHammer_16x16.png" />
+        <None Remove="Images\Candles\GreenShootingStar_16x16.png" />
+        <None Remove="Images\Candles\Hammer_16x16.png" />
+        <None Remove="Images\Candles\MorningStar_16x16.png" />
+        <None Remove="Images\Candles\Piercing_16x16.png" />
+        <None Remove="Images\Candles\RedDoji_16x16.png" />
+        <None Remove="Images\Candles\RedShootingStar_16x16.png" />
+        <None Remove="Images\Candles\TriStars_16x16.png" />
+        <None Remove="Images\CircularScales\IconLondon.png" />
+        <None Remove="Images\CircularScales\IconMoscow.png" />
+        <None Remove="Images\CircularScales\IconNewYork.png" />
+        <None Remove="Images\CircularScales\Shadow.png" />
+        <None Remove="Images\ExitOverSold2_16x16.png" />
+        <None Remove="Images\GreenStar16x16.png" />
+        <None Remove="Images\HiddenNegative16x16.png" />
+        <None Remove="Images\HiddenPositive16x16.png" />
+        <None Remove="Images\ImpHiddenNegative16x16.png" />
+        <None Remove="Images\ImpHiddenPositive16x16.png" />
+        <None Remove="Images\RedLight_16x16.png" />
+        <None Remove="Images\RedStar16x16.png" />
+        <None Remove="Images\Refresh_16x16.png" />
+        <None Remove="Images\timeFibLucas.png" />
+        <None Remove="Images\TrailingStop2_16x16.png" />
+        <None Remove="Properties\FreemindTrader.ico" />
+        <None Remove="SvgImages\fmResult.svg" />
+        <None Remove="SvgImages\fxtrader3.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Images\00Long_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\00Negative_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\00Positive_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\BearishEngulfing_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\BullishEngulfing_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\DarkcloudCover_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\EveningStar_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\GreenDoji_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\GreenHammer_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\GreenShootingStar_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\Hammer_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\MorningStar_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\Piercing_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\RedDoji_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\RedShootingStar_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Candles\TriStars_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\CircularScales\IconLondon.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\CircularScales\IconMoscow.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\CircularScales\IconNewYork.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\CircularScales\Shadow.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\ExitOverSold2_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\GreenStar16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\HiddenNegative16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\HiddenPositive16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\ImpHiddenNegative16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\ImpHiddenPositive16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\RedLight_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\RedStar16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\Refresh_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\timeFibLucas.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Images\TrailingStop2_16x16.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.7" />
+        <PackageReference Include="HtmlAgilityPack" Version="1.11.45" />
+        <PackageReference Include="StockSharp.Configuration.Adapters" Version="5.0.220" />
+        <PackageReference Include="StockSharp.Installer.IPC" Version="5.0.97" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\85_fxAiTrade\85_fxAiTrade.csproj" />
+    </ItemGroup>
+
+
+
+    <ItemGroup>
+        <Resource Include="layout\defaultarealayout.json" />
+        <Resource Include="layout\defaultlayout.json" />
+        <Resource Include="properties\stocksharp_studio.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="DevExpress.Xpf.Gauges.v22.1">
+          <HintPath>C:\Program Files\DevExpress 22.1\Components\Bin\NetCore\DevExpress.Xpf.Gauges.v22.1.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Charting">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Charting.DrawingTools">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.DrawingTools.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Charting3D">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting3D.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Core">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Data">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Data.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Drawing">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Drawing.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Drawing.DirectX">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Drawing.DirectX.dll</HintPath>
+        </Reference>
+        <Reference Include="SciChart.Examples.ExternalDependencies">
+            <HintPath>C:\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Examples.ExternalDependencies.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Include="Properties\FreemindTrader.ico" />
+        <Resource Include="SvgImages\fmResult.svg" />
+        <Resource Include="SvgImages\fxtrader3.svg" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+    </ItemGroup>
+</Project>
+
+

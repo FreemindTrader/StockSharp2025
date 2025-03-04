@@ -1,0 +1,7 @@
+<studio:BaseStudioControl x:Class="StockSharp.Hydra.Panes.UsersPane"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:studio="clr-namespace:StockSharp.Studio.Controls;assembly=StockSharp.Studio.Controls"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:sx="http://schemas.stocksharp.com/xaml">
+  <sx:PermissionCredentialsPanel Saving="CredentialsPanel_Saving" x:Name="CredentialsPanel"/>
+</studio:BaseStudioControl>

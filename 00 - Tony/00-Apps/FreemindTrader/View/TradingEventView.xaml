@@ -1,0 +1,659 @@
+﻿<UserControl
+    x:Class="FreemindTrader.TradingEventView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+    xmlns:local="clr-namespace:FreemindTrader"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <local:TradingEventViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=BlueSolidDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarBlueBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarBlueBrush_Solid}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            ZeroLineBrush="Transparent" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=GreenSolidDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarGreenBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarGreenBrush_Solid}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=RedSolidDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarRedBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarRedBrush_Solid}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=OrangeSolidDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarOrangeBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarOrangeBrush_Solid}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=LightBlueSolidDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarLightBlueBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarLightBlueBrush_Solid}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=PurpleSolidDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarPurpleBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarPurpleBrush_Solid}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}" />
+
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=BlueGradientDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarBlueBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarBlueBrush_Gradient}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Gradient}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=GreenGradientDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarGreenBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarGreenBrush_Gradient}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Gradient}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=RedGradientDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarRedBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarRedBrush_Gradient}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Gradient}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=OrangeGradientDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarOrangeBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarOrangeBrush_Gradient}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Gradient}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=LightBlueGradientDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarLightBlueBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarLightBlueBrush_Gradient}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Gradient}}" />
+        <dxc:DataBarFormat
+            x:Key="{dxt:FormatThemeKey ResourceKey=PurpleGradientDataBar}"
+            BorderBrush="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarPurpleBrush_Solid}}"
+            BorderBrushNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Solid}}"
+            Fill="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarPurpleBrush_Gradient}}"
+            FillNegative="{StaticResource {dxt:FormatThemeKey ResourceKey=DataBarNegativeBrush_Gradient}}" />
+
+
+
+        <dxc:FormatInfoCollection x:Key="{dxt:ConditionalFormattingThemeKey ResourceKey=PredefinedDataBarFormats, IsThemeIndependent=True}">
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="BlueGradientDataBar"
+                Group="GradientFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon GradientBlueDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="GreenGradientDataBar"
+                Group="GradientFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon GradientGreenDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="RedGradientDataBar"
+                Group="GradientFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon GradientRedDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="OrangeGradientDataBar"
+                Group="GradientFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon GradientOrangeDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="LightBlueGradientDataBar"
+                Group="GradientFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon GradientLightBlueDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="PurpleGradientDataBar"
+                Group="GradientFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon GradientPurpleDataBar_16x16.png}" />
+
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="BlueSolidDataBar"
+                Group="SolidFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon SolidBlueDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="GreenSolidDataBar"
+                Group="SolidFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon SolidGreenDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="RedSolidDataBar"
+                Group="SolidFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon SolidRedDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="OrangeSolidDataBar"
+                Group="SolidFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon SolidOrangeDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="LightBlueSolidDataBar"
+                Group="SolidFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon SolidLightBlueDataBar_16x16.png}" />
+            <dxt:StandardDataBarFormatInfoExtension
+                FormatName="PurpleSolidDataBar"
+                Group="SolidFillGroup"
+                Icon="{dxt:ConditionalFormattingMenuIcon SolidPurpleDataBar_16x16.png}" />
+        </dxc:FormatInfoCollection>
+        <dxc:ImageDataConverter x:Key="ImageDataConverter" />
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="TextTrimming">
+                <Setter.Value>CharacterEllipsis</Setter.Value>
+            </Setter>
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <DataTemplate x:Key="candleCellTemplate">
+            <dxe:ImageEdit
+                Width="16"
+                Height="16"
+                HorizontalAlignment="Center"
+                EditValue="{Binding Path=Data.ProductCategory.Picture}"
+                IsReadOnly="True"
+                RenderOptions.BitmapScalingMode="NearestNeighbor"
+                ShowBorder="False"
+                ToolTipService.ToolTip="{Binding Path=Value.Name}" />
+        </DataTemplate>
+        <DataTemplate x:Key="timeHeader">
+            <StackPanel Orientation="Horizontal">
+                <Image
+                    Width="16"
+                    Height="16"
+                    Source="..\Images\timeFibLucas.png"
+                    Stretch="Uniform" />
+                <TextBlock Margin="3,0,0,0" Text="{Binding}" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="TrendHeader">
+            <StackPanel Orientation="Horizontal">
+                <Image
+                    Width="13"
+                    Height="13"
+                    Source="..\Images\TrailingStop2_16x16.png"
+                    Stretch="Uniform" />
+                <TextBlock Margin="3,0,0,0" Text="{Binding}" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ReversalHeader">
+            <StackPanel Orientation="Horizontal">
+                <Image
+                    Width="13"
+                    Height="13"
+                    Source="..\Images\Refresh_16x16.png"
+                    Stretch="Uniform" />
+                <TextBlock Margin="3,0,0,0" Text="{Binding}" />
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="colCandleComboBoxStyle" TargetType="{x:Type dxe:ComboBoxEditSettings}">
+            <Setter Property="ItemsSource" Value="{x:Static local:CandlesData.DataSource}" />
+            <Setter Property="IsTextEditable" Value="False" />
+            <Setter Property="ApplyItemTemplateToSelectedItem" Value="True" />
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Height="16"
+                                Margin="4,0,4,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Source="{Binding Path=Flag, Converter={StaticResource ImageDataConverter}}"
+                                Stretch="Uniform" />
+                            <TextBlock
+                                Grid.Column="1"
+                                Margin="4,0,0,0"
+                                Style="{StaticResource TextBlockStyle}"
+                                Text="{Binding Path=Name}" />
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="colCandleStyle" TargetType="{x:Type dxg:ColumnBase}">
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxe:ComboBoxEditSettings
+                        DisplayMember="ActualName"
+                        Style="{StaticResource colCandleComboBoxStyle}"
+                        ValueMember="ActualNWindName" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        
+        <Grid Grid.Row="0">
+            <dxg:GridControl
+                x:Name="_fxTrading"
+                Grid.Row="1"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutoGenerateColumns="None"
+                CustomColumnDisplayText="GridControl_CustomColumnDisplayText"
+                EnableSmartColumnsGeneration="True"
+                ItemsSource="{Binding TradingEventsItemSource}">
+                <dxg:GridControl.Bands>
+                    <dxg:GridControlBand Header="Time" HeaderTemplate="{StaticResource timeHeader}">
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="50"
+                            FieldName="PeriodSmallString"
+                            Header="Time" />
+
+                    </dxg:GridControlBand>
+                    <dxg:GridControlBand Header="Main Trend" HeaderTemplate="{StaticResource TrendHeader}">
+                        <dxg:GridColumn
+                            Width="30"
+                            MinWidth="30"
+                            FieldName="Sma50xSignal"
+                            ToolTip="SMA"
+                            Header="SMA">
+                            <dxg:GridColumn.EditSettings>
+                                <dxe:SpinEditSettings />
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn
+                            Width="30"
+                            MinWidth="30"
+                            FieldName="MacdCrossSignal"
+                            ToolTip="MACD"
+                            Header="MACD" />
+                        <dxg:GridColumn
+                            Width="30"
+                            MinWidth="30"
+                            FieldName="MaXoverSignal"
+                            ToolTip="MaX"
+                            Header="MaX" />
+                        <dxg:GridColumn
+                            Width="30"
+                            MinWidth="30"
+                            FieldName="EmaTrend"
+                            ToolTip="EmaT"
+                            Header="EmaT" />
+                        <dxg:GridColumn
+                            Width="30"
+                            MinWidth="30"
+                            FieldName="AroonXSignal"
+                            ToolTip="AroonX"
+                            Header="ArX" />
+                        <dxg:GridColumn
+                            Width="30"
+                            MinWidth="30"
+                            FieldName="PsarSignal"
+                            ToolTip="PSAR"
+                            Header="PSAR" />
+                    </dxg:GridControlBand>
+                    <dxg:GridControlBand Header="Reversal" HeaderTemplate="{StaticResource ReversalHeader}">
+                        <dxg:GridColumn
+                            x:Name="colCandle"
+                            Width="60"
+                            MinWidth="50"
+                            AllowEditing="false"
+                            FieldName="CandlePattern"
+                            Header="Candle">
+                            <dxg:GridColumn.CellTemplate>
+                                <DataTemplate>
+                                    <dxe:ComboBoxEdit
+                                        x:Name="PART_Editor"
+                                        ApplyItemTemplateToSelectedItem="True"
+                                        IsTextEditable="False"
+                                        ItemsSource="{Binding Data.CandlePatternList}"
+                                        ValueMember="Candle">
+                                        <dxe:ComboBoxEdit.ItemTemplate>
+                                            <DataTemplate>
+                                                <dxe:ImageEdit
+                                                    Width="16"
+                                                    Margin="8,3,0,3"
+                                                    HorizontalAlignment="Center"
+                                                    AllowDrop="False"
+                                                    BorderBrush="White"
+                                                    BorderThickness="0"
+                                                    ShowBorder="False"
+                                                    ShowMenu="False"
+                                                    Source="{Binding ImageUrl}"
+                                                    Stretch="Fill" />
+                                            </DataTemplate>
+                                        </dxe:ComboBoxEdit.ItemTemplate>
+                                        <!--<dxe:ImageEdit Source="{Binding Value.UnitString}" Width="25" AllowDrop="False" BorderThickness="0" BorderBrush="White" ShowBorder="False" ShowMenu="False" HorizontalAlignment="Center" Margin="8,3,0,3" Stretch="Fill" />-->
+                                    </dxe:ComboBoxEdit>
+                                </DataTemplate>
+                            </dxg:GridColumn.CellTemplate>
+                        </dxg:GridColumn>
+                        <dxg:GridColumn
+                            Width="60"
+                            MinWidth="50"
+                            AllowEditing="false"
+                            FieldName="LastDivergenceSignal"
+                            Header="Div">
+                            <dxg:GridColumn.CellTemplate>
+                                <DataTemplate>
+                                    <dxe:ComboBoxEdit
+                                        x:Name="PART_Editor"
+                                        ApplyItemTemplateToSelectedItem="True"
+                                        IsTextEditable="False"
+                                        ItemsSource="{Binding Data.TADivergenceList}"
+                                        ValueMember="TaDivergence">
+                                        <dxe:ComboBoxEdit.ItemTemplate>
+                                            <DataTemplate>
+                                                <dxe:ImageEdit
+                                                    Width="16"
+                                                    Margin="8,3,0,3"
+                                                    HorizontalAlignment="Center"
+                                                    AllowDrop="False"
+                                                    BorderBrush="White"
+                                                    BorderThickness="0"
+                                                    ShowBorder="False"
+                                                    ShowMenu="False"
+                                                    Source="{Binding ImageUrl}"
+                                                    Stretch="Fill" />
+                                            </DataTemplate>
+                                        </dxe:ComboBoxEdit.ItemTemplate>
+                                        <!--<dxe:ImageEdit Source="{Binding Value.UnitString}" Width="25" AllowDrop="False" BorderThickness="0" BorderBrush="White" ShowBorder="False" ShowMenu="False" HorizontalAlignment="Center" Margin="8,3,0,3" Stretch="Fill" />-->
+                                    </dxe:ComboBoxEdit>
+                                </DataTemplate>
+                            </dxg:GridColumn.CellTemplate>
+
+                        </dxg:GridColumn>
+                    </dxg:GridControlBand>
+                    <dxg:GridControlBand Header="Over Bought/ Over Sold">
+                        <dxg:GridColumn
+                            Width="130"
+                            MinWidth="100"
+                            FieldName="CciTrueValue"
+                            Header="CCI" />
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            Header="C. Sig" />
+                        <dxg:GridColumn
+                            Width="130"
+                            MinWidth="100"
+                            FieldName="StochValue"
+                            Header="Sto"
+                            IsSmart="True"
+                            SortIndex="0"
+                            SortOrder="Descending" />
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            FieldName="LastStochSignal"
+                            Header="S. Sig" />
+                        <dxg:GridColumn
+                            Width="130"
+                            MinWidth="100"
+                            FieldName="HewRsiValue"
+                            Header="RSI" />
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            Header="R. Sig" />
+                        
+                        <dxg:GridColumn
+                            Width="130"
+                            MinWidth="100"
+                            FieldName="MfiValue"
+                            Header="MFI" />
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            Header="M. Sig" />
+                    </dxg:GridControlBand>
+                    <dxg:GridControlBand Header="Other">
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            FieldName="BarsFromLastSignal"
+                            Header="nth Bar" />
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            FieldName="LastDivergenceBar"
+                            Header="Div Bar" />
+                        <dxg:GridColumn
+                            Width="50"
+                            MinWidth="40"
+                            FieldName="BarsFromLastExtremum"
+                            Header="nth Extreme" />
+                        <dxg:GridColumn
+                            Width="550"
+                            MinWidth="40"
+                            FieldName="NextTarget"
+                            Header="Next Target" />
+                    </dxg:GridControlBand>
+                </dxg:GridControl.Bands>
+                <dxg:GridControl.View>
+                    <dxg:TableView
+                        Name="view"
+                        AllowConditionalFormattingManager="True"
+                        AllowConditionalFormattingMenu="True"
+                        AllowPerPixelScrolling="True"
+                        HorizontalScrollbarVisibility="Hidden"
+                        ShowGroupPanel="False"
+                        ShowIndicator="False">
+                        <dxg:TableView.FormatConditions>
+                            <dxg:IconSetFormatCondition FieldName="Sma50xSignal">
+                                <dxc:IconSetFormat
+                                    ElementThresholdType="Number"
+                                    IconSetType="{x:Null}"
+                                    IconVerticalAlignment="Center">
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_2}"
+                                        Threshold="98"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows3_1}"
+                                        Threshold="90"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_3}"
+                                        Threshold="80"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_1}"
+                                        Threshold="30"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows5_5}"
+                                        Threshold="20"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=RedToBlack4_3}"
+                                        Threshold="0"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                </dxc:IconSetFormat>
+                            </dxg:IconSetFormatCondition>
+                            <dxg:IconSetFormatCondition FieldName="MacdCrossSignal">
+                                <dxc:IconSetFormat
+                                    ElementThresholdType="Number"
+                                    IconSetType="{x:Null}"
+                                    IconVerticalAlignment="Center">
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_2}"
+                                        Threshold="98"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows3_1}"
+                                        Threshold="90"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_3}"
+                                        Threshold="80"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_1}"
+                                        Threshold="30"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows5_5}"
+                                        Threshold="20"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=RedToBlack4_3}"
+                                        Threshold="0"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                </dxc:IconSetFormat>
+                            </dxg:IconSetFormatCondition>
+                            <dxg:IconSetFormatCondition FieldName="MaXoverSignal">
+                                <dxc:IconSetFormat
+                                    ElementThresholdType="Number"
+                                    IconSetType="{x:Null}"
+                                    IconVerticalAlignment="Center">
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_2}"
+                                        Threshold="98"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows3_1}"
+                                        Threshold="90"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_3}"
+                                        Threshold="80"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_1}"
+                                        Threshold="30"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows5_5}"
+                                        Threshold="20"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=RedToBlack4_3}"
+                                        Threshold="0"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                </dxc:IconSetFormat>
+                            </dxg:IconSetFormatCondition>
+                            <dxg:IconSetFormatCondition FieldName="EmaTrend">
+                                <dxc:IconSetFormat
+                                    ElementThresholdType="Number"
+                                    IconSetType="{x:Null}"
+                                    IconVerticalAlignment="Center">
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_2}"
+                                        Threshold="98"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows3_1}"
+                                        Threshold="90"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_3}"
+                                        Threshold="80"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_1}"
+                                        Threshold="30"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows5_5}"
+                                        Threshold="20"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=RedToBlack4_3}"
+                                        Threshold="0"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                </dxc:IconSetFormat>
+                            </dxg:IconSetFormatCondition>
+                            <dxg:IconSetFormatCondition FieldName="AroonXSignal">
+                                <dxc:IconSetFormat
+                                    ElementThresholdType="Number"
+                                    IconSetType="{x:Null}"
+                                    IconVerticalAlignment="Center">
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_2}"
+                                        Threshold="98"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows3_1}"
+                                        Threshold="90"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_3}"
+                                        Threshold="80"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_1}"
+                                        Threshold="30"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows5_5}"
+                                        Threshold="20"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=RedToBlack4_3}"
+                                        Threshold="0"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                </dxc:IconSetFormat>
+                            </dxg:IconSetFormatCondition>
+                            <dxg:IconSetFormatCondition FieldName="PsarSignal">
+                                <dxc:IconSetFormat
+                                    ElementThresholdType="Number"
+                                    IconSetType="{x:Null}"
+                                    IconVerticalAlignment="Center">
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_2}"
+                                        Threshold="98"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows3_1}"
+                                        Threshold="90"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_3}"
+                                        Threshold="80"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Triangles3_1}"
+                                        Threshold="30"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=Arrows5_5}"
+                                        Threshold="20"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                    <dxc:IconSetElement
+                                        Icon="{dx:IconSet Name=RedToBlack4_3}"
+                                        Threshold="0"
+                                        ThresholdComparisonType="GreaterOrEqual" />
+                                </dxc:IconSetFormat>
+                            </dxg:IconSetFormatCondition>
+                            <dxg:DataBarFormatCondition
+                                FieldName="StochValue"
+                                MaxValue="100"
+                                MinValue="0"
+                                PredefinedFormatName="RedGradientDataBar" />
+                            <dxg:DataBarFormatCondition
+                                FieldName="HewRsiValue"
+                                MaxValue="100"
+                                MinValue="0"
+                                PredefinedFormatName="BlueGradientDataBar" />
+                            <dxg:DataBarFormatCondition
+                                FieldName="CciTrueValue"
+                                MaxValue="100"
+                                MinValue="-100"
+                                PredefinedFormatName="GreenGradientDataBar" />
+                            <dxg:DataBarFormatCondition
+                                FieldName="MfiValue"
+                                MaxValue="100"
+                                MinValue="0"
+                                PredefinedFormatName="OrangeGradientDataBar" />
+                        </dxg:TableView.FormatConditions>
+                    </dxg:TableView>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </Grid>
+    </Grid>
+</UserControl>

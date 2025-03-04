@@ -1,0 +1,70 @@
+<panes:DataPane x:Class="StockSharp.Hydra.Panes.OrderLogPane"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
+                xmlns:controls="clr-namespace:StockSharp.Hydra.Controls"
+                xmlns:panes="clr-namespace:StockSharp.Hydra.Panes"
+                xmlns:xaml="http://schemas.stocksharp.com/xaml"
+                xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                xmlns:ex="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+                xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                xmlns:core="clr-namespace:StockSharp.Hydra.Core;assembly=StockSharp.Hydra.Core"
+                xmlns:editors="clr-namespace:StockSharp.Studio.Controls.Editors;assembly=StockSharp.Studio.Controls"
+                xaml:Doc.Url="fe4f5992-a496-45bb-82e6-d353b42df894.htm">
+  <DockPanel>
+    <controls:ExportProgress x:Name="Progress" VerticalAlignment="Bottom" DockPanel.Dock="Bottom"/>
+    <Grid x:Name="MainGrid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="5"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <controls:DrivePanel x:Name="DrivePanel"/>
+      <Grid Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="200"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="200"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="*" MinWidth="170"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto" MinWidth="100"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="5"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <dxe:DateEdit EditValueChanged="OnDateValueChanged" x:Name="FromCtrl" Grid.Column="0" DisplayFormatString="d"/>
+        <dxe:DateEdit EditValueChanged="OnDateValueChanged" x:Name="ToCtrl" Grid.Column="2" DisplayFormatString="d"/>
+        <controls:SecurityPickerButton x:Name="SelectSecurityBtn" Grid.Column="4"/>
+        <ex:TimeZoneEditor x:Name="TimeZone" Grid.Column="6" ToolTip="{x:Static loc:LocalizedStrings.MarketDataTimeZone}"/>
+        <dxe:CheckEdit x:Name="IsNonSystem" Content="{x:Static loc:LocalizedStrings.XamlStr62}" Grid.Column="8"
+                       VerticalAlignment="Center" ToolTip="{x:Static loc:LocalizedStrings.XamlStr86}"/>
+        <dx:SimpleButton Click="FindClick" x:Name="Find" Grid.Column="10">
+          <Image Width="16" Source="{xaml:ThemedIcons Key=Search}"/>
+        </dx:SimpleButton>
+        <dx:SimpleButton Click="ShowChartCandles_Click" x:Name="ShowChartCandles" Grid.Column="12"
+                         ToolTip="{x:Static loc:LocalizedStrings.XamlStr482}">
+          <Image Width="16" Source="{xaml:ThemedIcons Key=CandleStick}"/>
+        </dx:SimpleButton>
+        <dx:SimpleButton Click="ShowChartSpread_Click" x:Name="ShowChartSpread" Grid.Column="14"
+                         ToolTip="{x:Static loc:LocalizedStrings.ChartShowSpread}">
+          <Image Width="16" Source="{xaml:ThemedIcons Key=LineChart}"/>
+        </dx:SimpleButton>
+        <editors:OrderLogBuilderComboBox x:Name="OrderLogBuilder" Grid.Column="16" MinWidth="50"/>
+        <controls:ExportButton x:Name="ExportBtn" Grid.Column="18"/>
+      </Grid>
+      <xaml:ExecutionGrid x:Name="FindedOrderLog" Grid.Row="4"/>
+    </Grid>
+  </DockPanel>
+</panes:DataPane>

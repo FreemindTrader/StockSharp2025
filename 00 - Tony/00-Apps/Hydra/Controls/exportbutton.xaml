@@ -1,0 +1,58 @@
+<dx:DropDownButton x:Class="StockSharp.Hydra.Controls.ExportButton"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:xaml="http://schemas.stocksharp.com/xaml"
+                   xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                   xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization">
+  <ContentControl.Content>
+    <Image Width="16" Source="{xaml:ThemedIcons Key=Save}"/>
+  </ContentControl.Content>
+  <dx:DropDownButtonBase.PopupContent>
+    <ListBox x:Name="ExportTypeCtrl">
+      <ListBoxItem>
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=Excel}"/>
+          <Label Margin="5,0,0,0">Excel</Label>
+        </StackPanel>
+      </ListBoxItem>
+      <ListBoxItem>
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=Xml}"/>
+          <Label Margin="5,0,0,0">Xml</Label>
+        </StackPanel>
+      </ListBoxItem>
+      <ListBoxItem>
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=Csv}"/>
+          <Label Margin="5,0,0,0">CSV</Label>
+        </StackPanel>
+      </ListBoxItem>
+      <ListBoxItem>
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=Storage}"/>
+          <Label Margin="5,0,0,0">SQL</Label>
+        </StackPanel>
+      </ListBoxItem>
+      <ListBoxItem>
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=Json}"/>
+          <Label Margin="5,0,0,0">JSON</Label>
+        </StackPanel>
+      </ListBoxItem>
+      <ListBoxItem>
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=StockSharp}"/>
+          <Label Margin="5,0,0,0">S#</Label>
+        </StackPanel>
+      </ListBoxItem>
+      <ListBoxItem x:Name="SaveBuildItem" IsEnabled="False">
+        <StackPanel Orientation="Horizontal">
+          <Image Height="16" Width="16" VerticalAlignment="Center" Source="{xaml:ThemedIcons Key=Save}"/>
+          <Label Margin="5,0,0,0" Content="{x:Static loc:LocalizedStrings.SaveBuild}"/>
+        </StackPanel>
+      </ListBoxItem>
+    </ListBox>
+  </dx:DropDownButtonBase.PopupContent>
+</dx:DropDownButton>

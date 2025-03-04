@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DailyHighestVolumeStrategy" xml:space="preserve">
+    <value>namespace StockSharp.Algo.Strategies.Analytics
+{
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.Linq;
+
+	using Ecng.Common;
+	using Ecng.ComponentModel;
+	using Ecng.Collections;
+
+	using StockSharp.Algo.Candles;
+	using StockSharp.Algo.Storages;
+	using StockSharp.Localization;
+	using StockSharp.Logging;
+
+	/// &lt;summary&gt;
+	/// The analytic strategy, calculating distribution of the biggest volume by hours.
+	/// &lt;/summary&gt;
+	public class DailyHighestVolumeStrategy : BaseAnalyticsStrategy
+	{
+		private class GridRow : NotifiableObject
+		{
+			public TimeSpan Time { get; set; }
+
+			private decimal _volume;
+
+			public decimal Volume
+			{
+				get =&gt; _volume;
+				set
+				{
+					_volume = value;
+					NotifyChanged();
+				}
+			}
+		}
+
+		private readonly StrategyParam&lt;TimeSpan&gt; _timeFrame;
+
+		/// &lt;summary&gt;
+		/// Time-frame.
+		/// &lt;/summary&gt;
+		[Display(
+			ResourceType = typeof(LocalizedStrings),
+			Name = LocalizedStrings.Str1242Key,
+			Description = LocalizedStrings.Str1243Key,
+			GroupName = LocalizedStrings.AnalyticsKey,
+			Order = 0)]
+		public TimeSpan TimeFrame
+		{
+			get =&gt; _timeFrame.Value;
+			set =&gt; _timeFrame.Value = value;
+		}
+
+		/// &lt;summary&gt;
+		/// Initializes a new instance of the &lt;see cref="DailyHighestVolumeStrategy"/&gt;.
+		/// &lt;/summary&gt;
+		public DailyHighestVolumeStrategy()
+		{
+			_timeFrame = this.Param(nameof(TimeFrame), TimeSpan.FromMinutes(5));
+		}
+
+		/// &lt;inheritdoc /&gt;
+		protected override void OnAnalyze()
+		{
+			// clear prev values
+			Panel.ClearControls();
+
+			ICollection&lt;GridRow&gt; gridSeries = null;
+			IAnalyticsChart chart = null;
+
+			switch (ResultType)
+			{
+				case AnalyticsResultTypes.Grid:
+				{
+					var grid = Panel.CreateGrid(LocalizedStrings.Str3280);
+
+					grid.AddColumn(nameof(GridRow.Time), LocalizedStrings.Time).Width = 150;
+					var volumeColumn = grid.AddColumn(nameof(GridRow.Volume), LocalizedStrings.Volume);
+					volumeColumn.Width = 100;
+
+					gridSeries = grid.CreateSource&lt;GridRow&gt;();
+
+					grid.SetSort(volumeColumn, ListSortDirection.Descending);
+					break;
+				}
+				case AnalyticsResultTypes.Bubble:
+					chart = Panel.CreateBubbleChart(LocalizedStrings.Str3200);
+					break;
+				case AnalyticsResultTypes.Heatmap:
+					chart = Panel.CreateHeatmap(LocalizedStrings.Str3200);
+					break;
+				case AnalyticsResultTypes.Histogram:
+					chart = Panel.CreateHistogramChart(LocalizedStrings.Str3200);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+
+			// get candle storage
+			var storage = StorateRegistry.GetCandleStorage(typeof(TimeFrameCandle), Security, TimeFrame, format: StorageFormat);
+			
+			// get available dates for the specified period
+			var dates = storage.GetDates(From, To).ToArray();
+
+			if (dates.Length == 0)
+			{
+				this.AddWarningLog(LocalizedStrings.Str2913);
+			}
+			else
+			{
+				var rows = new Dictionary&lt;TimeSpan, GridRow&gt;();
+
+				foreach (var loadDate in dates)
+				{
+					// check if stopped
+					if (ProcessState != ProcessStates.Started)
+						break;
+
+					// load candles
+					var candles = storage.Load(loadDate);
+
+					// grouping candles by open time
+					var groupedCandles = candles.GroupBy(c =&gt; c.OpenTime.TimeOfDay.Truncate(TimeSpan.FromHours(1)));
+
+					foreach (var group in groupedCandles.OrderBy(g =&gt; g.Key))
+					{
+						// check if stopped
+						if (ProcessState != ProcessStates.Started)
+							break;
+
+						var time = group.Key;
+
+						// calc total volume for the specified time frame
+						var sumVol = group.Sum(c =&gt; c.TotalVolume);
+
+						var row = rows.TryGetValue(time);
+						if (row == null)
+						{
+							// new volume level
+							rows.Add(time, row = new GridRow { Time = time, Volume = sumVol });
+
+							// draw on chart
+							chart?.Append(DateTime.Today + time, sumVol, sumVol / 1000);
+
+							// draw on table
+							gridSeries?.Add(row);
+						}
+						else
+						{
+							// update existing volume level
+							row.Volume += sumVol;
+
+							// update chart
+							chart?.Update(DateTime.Today + time, row.Volume, row.Volume / 1000);
+						}
+					}
+				
+					//// scale chart
+					//chart?.ZoomExtents();
+				}
+			}
+
+			// notify the script stopped
+			Stop();
+		}
+	}
+}</value>
+  </data>
+  <data name="PriceVolumeDistributionStrategy" xml:space="preserve">
+    <value>namespace StockSharp.Algo.Strategies.Analytics
+{
+	using System;
+	using System.Collections.Generic;
+	using System.ComponentModel;
+	using System.ComponentModel.DataAnnotations;
+	using System.Linq;
+
+	using Ecng.Collections;
+	using Ecng.ComponentModel;
+
+	using StockSharp.Algo.Candles;
+	using StockSharp.Algo.Storages;
+	using StockSharp.Localization;
+	using StockSharp.Logging;
+
+	/// &lt;summary&gt;
+	/// The analytic strategy, calculating distribution of the volume by price levels.
+	/// &lt;/summary&gt;
+	public class PriceVolumeDistributionStrategy : BaseAnalyticsStrategy
+	{
+		private class GridRow : NotifiableObject
+		{
+			public decimal Price { get; set; }
+
+			private decimal _volume;
+
+			public decimal Volume
+			{
+				get =&gt; _volume;
+				set
+				{
+					_volume = value;
+					NotifyChanged();
+				}
+			}
+		}
+
+		private readonly StrategyParam&lt;TimeSpan&gt; _timeFrame;
+
+		/// &lt;summary&gt;
+		/// Time-frame.
+		/// &lt;/summary&gt;
+		[Display(
+			ResourceType = typeof(LocalizedStrings),
+			Name = LocalizedStrings.Str1242Key,
+			Description = LocalizedStrings.Str1243Key,
+			GroupName = LocalizedStrings.AnalyticsKey,
+			Order = 0)]
+		public TimeSpan TimeFrame
+		{
+			get =&gt; _timeFrame.Value;
+			set =&gt; _timeFrame.Value = value;
+		}
+		
+		/// &lt;summary&gt;
+		/// Initializes a new instance of the &lt;see cref="PriceVolumeDistributionStrategy"/&gt;.
+		/// &lt;/summary&gt;
+		public PriceVolumeDistributionStrategy()
+		{
+			_timeFrame = this.Param(nameof(TimeFrame), TimeSpan.FromMinutes(5));
+		}
+
+		/// &lt;inheritdoc /&gt;
+		protected override void OnAnalyze()
+		{
+			// clear prev values
+			Panel.ClearControls();
+
+			ICollection&lt;GridRow&gt; gridSeries = null;
+			IAnalyticsChart chart = null;
+
+			switch (ResultType)
+			{
+				case AnalyticsResultTypes.Grid:
+				{
+					var grid = Panel.CreateGrid(LocalizedStrings.Str3280);
+
+					grid.AddColumn(nameof(GridRow.Price), LocalizedStrings.Price).Width = 150;
+					var volumeColumn = grid.AddColumn(nameof(GridRow.Volume), LocalizedStrings.Volume);
+					volumeColumn.Width = 100;
+
+					gridSeries = grid.CreateSource&lt;GridRow&gt;();
+
+					grid.SetSort(volumeColumn, ListSortDirection.Descending);
+					break;
+				}
+				case AnalyticsResultTypes.Bubble:
+					chart = Panel.CreateBubbleChart(LocalizedStrings.Str3200);
+					break;
+				case AnalyticsResultTypes.Heatmap:
+					chart = Panel.CreateHeatmap(LocalizedStrings.Str3200);
+					break;
+				case AnalyticsResultTypes.Histogram:
+					chart = Panel.CreateHistogramChart(LocalizedStrings.Str3200);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+
+			// get candle storage
+			var storage = StorateRegistry.GetCandleStorage(typeof(TimeFrameCandle), Security, TimeFrame, format: StorageFormat);
+
+			// get available dates for the specified period
+			var dates = storage.GetDates(From, To).ToArray();
+
+			if (dates.Length == 0)
+			{
+				this.AddWarningLog(LocalizedStrings.Str2913);
+			}
+			else
+			{
+				var rows = new Dictionary&lt;decimal, GridRow&gt;();
+
+				foreach (var loadDate in dates)
+				{
+					// check if stopped
+					if (ProcessState != ProcessStates.Started)
+						break;
+
+					// load candles
+					var candles = storage.Load(loadDate);
+
+					// grouping candles by candle's middle price
+					var groupedCandles = candles.GroupBy(c =&gt; c.LowPrice + c.GetLength() / 2);
+
+					foreach (var group in groupedCandles.OrderBy(g =&gt; g.Key))
+					{
+						// check if stopped
+						if (ProcessState != ProcessStates.Started)
+							break;
+
+						var price = group.Key;
+
+						// calc total volume for the specified time frame
+						var sumVol = group.Sum(c =&gt; c.TotalVolume);
+
+						var row = rows.TryGetValue(price);
+						if (row == null)
+						{
+							// new price level
+							rows.Add(price, row = new GridRow { Price = price, Volume = sumVol });
+
+							// draw on chart
+							chart?.Append(loadDate, price, sumVol);
+
+							// draw on table
+							gridSeries?.Add(row);
+						}
+						else
+						{
+							// update existing price level
+							row.Volume += sumVol;
+
+							// update chart
+							chart?.Update(loadDate, price, row.Volume);
+						}
+					}
+
+					//// scale chart
+					//chart?.ZoomExtents();
+				}
+			}
+
+			// notify the script stopped
+			Stop();
+		}
+	}
+}</value>
+  </data>
+  <data name="NewAnalyticsStrategy" xml:space="preserve">
+    <value>namespace StockSharp.Studio.Strategies
+{
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Windows.Media;
+
+	using Ecng.Common;
+	using Ecng.ComponentModel;
+	using Ecng.Collections;
+
+	using StockSharp.Algo.Storages;
+	using StockSharp.Algo.Strategies;
+	using StockSharp.Algo.Strategies.Analytics;
+
+	public class NewAnalyticsStrategy : BaseAnalyticsStrategy
+	{
+		/// &lt;summary&gt;
+		/// Initializes a new instance of the &lt;see cref="NewAnalyticsStrategy"/&gt;.
+		/// &lt;/summary&gt;
+		public NewAnalyticsStrategy()
+		{
+		}
+
+		/// &lt;summary&gt;
+		/// To analyze.
+		/// &lt;/summary&gt;
+		protected override void OnAnalyze()
+		{
+			// notify the script stopped
+			Stop();
+		}
+	}
+}</value>
+  </data>
+</root>

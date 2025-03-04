@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>StockSharp.Xaml.Charting</id>
+    <version>5.0.131</version>
+    <title>StockSharp.Xaml.Charting</title>
+    <authors>StockSharp Platform LLC https://stocksharp.com</authors>
+    <owners>StockSharp Platform LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://stocksharp.com/products/eula/</licenseUrl>
+    <projectUrl>https://stocksharp.com/</projectUrl>
+    <iconUrl>https://stocksharp.com/images/logo.png</iconUrl>
+    <description>Trading and algorithmic trading platform (stock markets, forex, bitcoins and options). .NET API for InteractiveBrokers, GainCapital, OANDA, FIX/FAST, Binance etc. More info on web site https://stocksharp.com/products/api/</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright @ StockSharp 2021</copyright>
+    <tags>StockSharp Xaml Charting Trading Finance Algotrading Forex Bitcoin Cryptocurrencies Stock Exchange Derivatives Options</tags>
+    <repository type="GitHub" url="https://github.com/StockSharp/StockSharp" commit="c3b88b48ecb1e7c34006a9b9e47f158a2da7f55c" />
+    <dependencies>
+      <group targetFramework="net9.0-windows">
+        <dependency id="StockSharp.Charting.Interfaces" version="5.0.6" />
+        <dependency id="StockSharp.Xaml" version="5.0.132" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

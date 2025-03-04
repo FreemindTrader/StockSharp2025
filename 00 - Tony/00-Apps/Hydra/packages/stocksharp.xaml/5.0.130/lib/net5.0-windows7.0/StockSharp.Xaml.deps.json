@@ -1,0 +1,3728 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "StockSharp.Xaml/1.0.0": {
+        "dependencies": {
+          "Ecng.Backup": "1.0.113",
+          "Ecng.Data": "1.0.107",
+          "Ecng.HtmlRenderer": "1.0.50",
+          "Ecng.Interop.Windows": "1.0.126",
+          "Ecng.Xaml.DXRefs": "1.0.5",
+          "StockSharp.Diagram.Core": "1.0.0",
+          "StockSharp.Licensing": "1.0.0",
+          "StockSharp.Media": "1.0.0",
+          "StockSharp.Server.Core": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Xaml.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.7.3.31": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.3.31"
+          }
+        }
+      },
+      "AWSSDK.Glacier/3.7.0.91": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.3.31",
+          "AWSSDK.SQS": "3.7.1.34",
+          "AWSSDK.SimpleNotificationService": "3.7.2.62"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Glacier.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.0.91"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.3.24": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.3.31"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.3.24"
+          }
+        }
+      },
+      "AWSSDK.SimpleNotificationService/3.7.2.62": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.3.31"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.2.62"
+          }
+        }
+      },
+      "AWSSDK.SQS/3.7.1.34": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.3.31"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SQS.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.1.34"
+          }
+        }
+      },
+      "Ecng.Backup/1.0.113": {
+        "dependencies": {
+          "AWSSDK.Glacier": "3.7.0.91",
+          "AWSSDK.S3": "3.7.3.24",
+          "AWSSDK.SQS": "3.7.1.34",
+          "AWSSDK.SimpleNotificationService": "3.7.2.62",
+          "Ecng.Serialization": "1.0.112",
+          "Ecng.YandexDisk": "1.0.35",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Backup.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Collections/1.0.103": {
+        "dependencies": {
+          "Ecng.Common": "1.0.100",
+          "Ecng.PowerCollections": "1.0.36",
+          "morelinq": "3.3.2",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Collections.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Common/1.0.100": {
+        "dependencies": {
+          "Ecng.SmartFormat": "1.0.5",
+          "NETStandard.Library": "2.0.3",
+          "Nito.AsyncEx": "5.1.2",
+          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Compilation/1.0.5": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.CodeDom": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Compilation.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.ComponentModel/1.0.125": {
+        "dependencies": {
+          "Ecng.Compilation": "1.0.5",
+          "Ecng.Serialization": "1.0.112",
+          "Ecng.System.ComponentModel.Annotations": "5.0.0",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.ComponentModel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Configuration/1.0.100": {
+        "dependencies": {
+          "Ecng.Common": "1.0.100",
+          "NETStandard.Library": "2.0.3",
+          "System.Configuration.ConfigurationManager": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Configuration.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Data/1.0.107": {
+        "dependencies": {
+          "Ecng.ComponentModel": "1.0.125",
+          "Ecng.Transactions": "1.0.112",
+          "NETStandard.Library": "2.0.3",
+          "linq2db": "3.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Data.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Drawing/1.0.14": {
+        "dependencies": {
+          "Ecng.Common": "1.0.100",
+          "NETStandard.Library": "2.0.3",
+          "System.Drawing.Common": "5.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Drawing.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.HtmlRenderer/1.0.50": {
+        "dependencies": {
+          "Ecng.Common": "1.0.100",
+          "Ecng.Xaml.DXRefs": "1.0.5"
+        },
+        "runtime": {
+          "lib/net9.0-windows/Ecng.HtmlRenderer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Interop/1.0.125": {
+        "dependencies": {
+          "Ecng.ComponentModel": "1.0.125",
+          "NETStandard.Library": "2.0.3",
+          "System.Management": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Interop.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Interop.Windows/1.0.126": {
+        "dependencies": {
+          "Ecng.ManagedWinapi": "1.0.81",
+          "Ecng.Security": "1.0.105",
+          "Specshell.NDde": "3.1.0",
+          "System.Management": "5.0.0"
+        },
+        "runtime": {
+          "lib/net9.0-windows/Ecng.Interop.Windows.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.IO/1.0.101": {
+        "dependencies": {
+          "Ecng.Common": "1.0.100",
+          "Ecng.Lzma": "1.0.36",
+          "NETStandard.Library": "2.0.3",
+          "Octodiff": "1.2.36"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.IO.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Localization/1.0.105": {
+        "dependencies": {
+          "Ecng.Common": "1.0.100",
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Localization.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Lzma/1.0.36": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Lzma.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.ManagedWinapi/1.0.81": {
+        "dependencies": {
+          "Ecng.Interop": "1.0.125",
+          "Microsoft.Windows.Compatibility": "5.0.2"
+        },
+        "runtime": {
+          "lib/net9.0-windows/Ecng.ManagedWinapi.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Net/1.0.153": {
+        "dependencies": {
+          "Ecng.ComponentModel": "1.0.125",
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
+          "Microsoft.CSharp": "4.7.0",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Net.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.PowerCollections/1.0.36": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.PowerCollections.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Reflection/1.0.104": {
+        "dependencies": {
+          "Ecng.Collections": "1.0.103",
+          "Lokad.ILPack": "0.1.7",
+          "NETStandard.Library": "2.0.3",
+          "System.Reflection.Emit": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Reflection.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Security/1.0.105": {
+        "dependencies": {
+          "Ecng.Reflection": "1.0.104",
+          "NETStandard.Library": "2.0.3",
+          "System.Security.Cryptography.ProtectedData": "5.0.0",
+          "System.Security.Permissions": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Security.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Serialization/1.0.112": {
+        "dependencies": {
+          "Ecng.Security": "1.0.105",
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Serialization.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.SmartFormat/1.0.5": {
+        "dependencies": {
+          "Microsoft.SourceLink.GitHub": "1.0.0",
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Text.Json": "4.7.2",
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.SmartFormat.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.StringSearch/1.0.60": {
+        "dependencies": {
+          "Ecng.Collections": "1.0.103",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.StringSearch.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.System.ComponentModel.Annotations/5.0.0": {},
+      "Ecng.Transactions/1.0.112": {
+        "dependencies": {
+          "Ecng.Serialization": "1.0.112",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.Transactions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Ecng.Xaml.DXRefs/1.0.5": {
+        "runtime": {
+          "lib/netcoreapp3.0/DevExpress.Data.Desktop.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Data.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Dialogs.v21.1.Core.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Images.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Mvvm.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Pdf.v21.1.Core.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Pdf.v21.1.Drawing.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Printing.v21.1.Core.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Controls.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Core.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Dialogs.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Docking.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.DocumentViewer.v21.1.Core.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Grid.v21.1.Core.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Grid.v21.1.Extensions.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Grid.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Layout.v21.1.Core.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.LayoutControl.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.NavBar.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.PdfViewer.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Printing.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.PropertyGrid.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Ribbon.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.DXStyle.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.HybridApp.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.LightGray.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.MetropolisDark.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.MetropolisLight.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2007Black.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2007Blue.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2007Silver.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2010Black.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2010Blue.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2010Silver.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2013.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2013DarkGray.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2013LightGray.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016Black.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016BlackSE.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016Colorful.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016ColorfulSE.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016DarkGraySE.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016White.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2016WhiteSE.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2019Black.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2019Colorful.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2019DarkGray.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2019HighContrast.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Office2019White.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Seven.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.TouchlineDark.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2010.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2017Blue.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2017Dark.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2017Light.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2019Blue.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2019Dark.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.VS2019Light.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          },
+          "lib/netcoreapp3.0/DevExpress.Xpf.Themes.Win10Light.v21.1.dll": {
+            "assemblyVersion": "21.1.5.0",
+            "fileVersion": "21.1.5.0"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/de/DevExpress.Charts.Designer.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Dashboard.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Dashboard.v21.1.Win.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Data.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.DataAccess.v21.1.UI.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.DataAccess.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Diagram.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Dialogs.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.EntityFrameworkCore.Security.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.AuditTrail.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Chart.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.CloneObject.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Dashboards.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Dashboards.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.FileAttachment.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Kpi.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Notifications.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Objects.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Office.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.PivotChart.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.PivotChart.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.PivotGrid.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.ReportsV2.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.ReportsV2.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Scheduler.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Scheduler.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.ScriptRecorder.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.ScriptRecorder.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Security.Xpo.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Security.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.StateMachine.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Validation.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Validation.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.ViewVariantsModule.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.Win.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.ExpressApp.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Map.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Mvvm.v21.1.DataModel.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Office.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Pdf.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Persistent.Base.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.PivotGrid.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Printing.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.RichEdit.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Sparkline.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Spreadsheet.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Utils.v21.1.UI.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Utils.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Charts.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Controls.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Core.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Docking.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.DocumentViewer.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Gantt.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Gauges.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Grid.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.LayoutControl.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.NavBar.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.PdfViewer.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Printing.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.PropertyGrid.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.ReportDesigner.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Ribbon.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.RichEdit.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Scheduler.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Scheduling.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.SpellChecker.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpf.Spreadsheet.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.Xpo.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraBars.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraCharts.v21.1.Wizard.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraCharts.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraEditors.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraGauges.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraGauges.v21.1.Presets.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraGrid.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraLayout.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraNavBar.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraPdfViewer.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraPivotGrid.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraPrinting.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraReports.v21.1.Extensions.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraReports.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraRichEdit.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraScheduler.v21.1.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraScheduler.v21.1.Extensions.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraScheduler.v21.1.Reporting.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraScheduler.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraSpellChecker.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraSpreadsheet.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraTreeList.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraVerticalGrid.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/DevExpress.XtraWizard.v21.1.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Charts.Designer.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Dashboard.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Dashboard.v21.1.Win.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Data.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.DataAccess.v21.1.UI.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.DataAccess.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Diagram.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Dialogs.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.EntityFrameworkCore.Security.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.AuditTrail.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Chart.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.CloneObject.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Dashboards.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Dashboards.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.FileAttachment.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Kpi.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Notifications.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Objects.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Office.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.PivotChart.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.PivotChart.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.PivotGrid.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.ReportsV2.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.ReportsV2.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Scheduler.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Scheduler.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.ScriptRecorder.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.ScriptRecorder.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Security.Xpo.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Security.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.StateMachine.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Validation.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Validation.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.ViewVariantsModule.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.Win.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.ExpressApp.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Map.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Mvvm.v21.1.DataModel.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Office.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Pdf.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Persistent.Base.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.PivotGrid.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Printing.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.RichEdit.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Sparkline.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Spreadsheet.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Utils.v21.1.UI.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Utils.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Charts.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Controls.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Core.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Docking.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.DocumentViewer.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Gantt.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Gauges.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Grid.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.LayoutControl.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.NavBar.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.PdfViewer.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Printing.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.PropertyGrid.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.ReportDesigner.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Ribbon.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.RichEdit.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Scheduler.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Scheduling.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.SpellChecker.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpf.Spreadsheet.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.Xpo.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraBars.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraCharts.v21.1.Wizard.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraCharts.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraEditors.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraGauges.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraGauges.v21.1.Presets.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraGrid.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraLayout.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraNavBar.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraPdfViewer.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraPivotGrid.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraPrinting.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraReports.v21.1.Extensions.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraReports.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraRichEdit.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraScheduler.v21.1.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraScheduler.v21.1.Extensions.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraScheduler.v21.1.Reporting.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraScheduler.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraSpellChecker.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraSpreadsheet.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraTreeList.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraVerticalGrid.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/DevExpress.XtraWizard.v21.1.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Charts.Designer.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Dashboard.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Dashboard.v21.1.Win.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Data.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.DataAccess.v21.1.UI.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.DataAccess.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Diagram.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Dialogs.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.EntityFrameworkCore.Security.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.AuditTrail.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Chart.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.CloneObject.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Dashboards.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Dashboards.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.FileAttachment.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Kpi.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Notifications.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Objects.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Office.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.PivotChart.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.PivotChart.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.PivotGrid.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.ReportsV2.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.ReportsV2.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Scheduler.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Scheduler.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.ScriptRecorder.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.ScriptRecorder.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Security.Xpo.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Security.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.StateMachine.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Validation.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Validation.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.ViewVariantsModule.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.Win.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.ExpressApp.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Map.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Mvvm.v21.1.DataModel.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Office.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Pdf.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Persistent.Base.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.PivotGrid.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Printing.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.RichEdit.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Sparkline.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Spreadsheet.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Utils.v21.1.UI.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Utils.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Charts.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Controls.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Core.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Docking.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.DocumentViewer.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Gantt.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Gauges.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Grid.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.LayoutControl.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.NavBar.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.PdfViewer.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Printing.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.PropertyGrid.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.ReportDesigner.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Ribbon.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.RichEdit.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Scheduler.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Scheduling.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.SpellChecker.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpf.Spreadsheet.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.Xpo.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraBars.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraCharts.v21.1.Wizard.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraCharts.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraEditors.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraGauges.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraGauges.v21.1.Presets.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraGrid.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraLayout.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraNavBar.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraPdfViewer.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraPivotGrid.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraPrinting.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraReports.v21.1.Extensions.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraReports.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraRichEdit.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraScheduler.v21.1.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraScheduler.v21.1.Extensions.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraScheduler.v21.1.Reporting.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraScheduler.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraSpellChecker.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraSpreadsheet.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraTreeList.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraVerticalGrid.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/DevExpress.XtraWizard.v21.1.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Charts.Designer.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Dashboard.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Dashboard.v21.1.Win.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Data.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.DataAccess.v21.1.UI.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.DataAccess.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Diagram.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Dialogs.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.EntityFrameworkCore.Security.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.AuditTrail.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Chart.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.CloneObject.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Dashboards.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Dashboards.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.FileAttachment.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Kpi.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Notifications.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Objects.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Office.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.PivotChart.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.PivotChart.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.PivotGrid.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.ReportsV2.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.ReportsV2.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Scheduler.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Scheduler.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.ScriptRecorder.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.ScriptRecorder.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Security.Xpo.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Security.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.StateMachine.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Validation.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Validation.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.ViewVariantsModule.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.Win.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.ExpressApp.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Map.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Mvvm.v21.1.DataModel.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Office.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Pdf.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Persistent.Base.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.PivotGrid.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Printing.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.RichEdit.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Sparkline.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Spreadsheet.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Utils.v21.1.UI.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Utils.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Charts.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Controls.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Core.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Docking.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.DocumentViewer.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Gantt.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Gauges.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Grid.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.LayoutControl.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.NavBar.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.PdfViewer.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Printing.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.PropertyGrid.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.ReportDesigner.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Ribbon.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.RichEdit.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Scheduler.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Scheduling.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.SpellChecker.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpf.Spreadsheet.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.Xpo.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraBars.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraCharts.v21.1.Wizard.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraCharts.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraEditors.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraGauges.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraGauges.v21.1.Presets.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraGrid.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraLayout.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraNavBar.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraPdfViewer.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraPivotGrid.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraPrinting.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraReports.v21.1.Extensions.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraReports.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraRichEdit.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraScheduler.v21.1.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraScheduler.v21.1.Extensions.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraScheduler.v21.1.Reporting.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraScheduler.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraSpellChecker.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraSpreadsheet.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraTreeList.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraVerticalGrid.v21.1.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/DevExpress.XtraWizard.v21.1.resources.dll": {
+            "locale": "ru"
+          }
+        }
+      },
+      "Ecng.YandexDisk/1.0.35": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ecng.YandexDisk.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "linq2db/3.5.1": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/linq2db.dll": {
+            "assemblyVersion": "3.5.1.0",
+            "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "Lokad.ILPack/0.1.7": {
+        "runtime": {
+          "lib/netcoreapp2.1/Lokad.ILPack.dll": {
+            "assemblyVersion": "0.1.7.0",
+            "fileVersion": "0.1.7.0"
+          }
+        }
+      },
+      "MathNet.Numerics/4.15.0": {
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {
+            "assemblyVersion": "4.15.0.0",
+            "fileVersion": "4.15.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.7": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.7.0",
+            "fileVersion": "5.2.61128.0"
+          }
+        }
+      },
+      "Microsoft.Build.Tasks.Git/1.0.0": {},
+      "Microsoft.CSharp/4.7.0": {},
+      "Microsoft.NETCore.Platforms/5.0.1": {},
+      "Microsoft.SourceLink.Common/1.0.0": {},
+      "Microsoft.SourceLink.GitHub/1.0.0": {
+        "dependencies": {
+          "Microsoft.Build.Tasks.Git": "1.0.0",
+          "Microsoft.SourceLink.Common": "1.0.0"
+        }
+      },
+      "Microsoft.Win32.Registry/5.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "Microsoft.Win32.Registry.AccessControl/5.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.Security.AccessControl": "5.0.0"
+        }
+      },
+      "Microsoft.Win32.SystemEvents/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1"
+        }
+      },
+      "Microsoft.Windows.Compatibility/5.0.2": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "5.0.0",
+          "Microsoft.Win32.Registry.AccessControl": "5.0.0",
+          "Microsoft.Win32.SystemEvents": "5.0.0",
+          "System.CodeDom": "5.0.0",
+          "System.ComponentModel.Composition": "5.0.0",
+          "System.ComponentModel.Composition.Registration": "5.0.0",
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Data.DataSetExtensions": "4.5.0",
+          "System.Data.Odbc": "5.0.0",
+          "System.Data.OleDb": "5.0.0",
+          "System.Data.SqlClient": "4.8.1",
+          "System.Diagnostics.EventLog": "5.0.1",
+          "System.Diagnostics.PerformanceCounter": "5.0.1",
+          "System.DirectoryServices": "5.0.0",
+          "System.DirectoryServices.AccountManagement": "5.0.0",
+          "System.DirectoryServices.Protocols": "5.0.0",
+          "System.Drawing.Common": "5.0.3",
+          "System.IO.FileSystem.AccessControl": "5.0.0",
+          "System.IO.Packaging": "5.0.0",
+          "System.IO.Pipes.AccessControl": "5.0.0",
+          "System.IO.Ports": "5.0.0",
+          "System.Management": "5.0.0",
+          "System.Reflection.Context": "5.0.0",
+          "System.Reflection.Emit": "4.7.0",
+          "System.Reflection.Emit.ILGeneration": "4.7.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0",
+          "System.Runtime.Caching": "5.0.0",
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Cryptography.Cng": "5.0.0",
+          "System.Security.Cryptography.Pkcs": "5.0.1",
+          "System.Security.Cryptography.ProtectedData": "5.0.0",
+          "System.Security.Cryptography.Xml": "5.0.0",
+          "System.Security.Permissions": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0",
+          "System.ServiceModel.Duplex": "4.8.0",
+          "System.ServiceModel.Http": "4.8.0",
+          "System.ServiceModel.NetTcp": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0",
+          "System.ServiceModel.Security": "4.8.0",
+          "System.ServiceModel.Syndication": "5.0.0",
+          "System.ServiceProcess.ServiceController": "5.0.0",
+          "System.Speech": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0",
+          "System.Threading.AccessControl": "5.0.0"
+        }
+      },
+      "morelinq/3.3.2": {
+        "runtime": {
+          "lib/netstandard2.0/MoreLinq.dll": {
+            "assemblyVersion": "3.3.2.0",
+            "fileVersion": "3.3.2.0"
+          }
+        }
+      },
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1"
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.1.20722"
+          }
+        }
+      },
+      "Nito.AsyncEx/5.1.2": {
+        "dependencies": {
+          "Nito.AsyncEx.Context": "5.1.2",
+          "Nito.AsyncEx.Coordination": "5.1.2",
+          "Nito.AsyncEx.Interop.WaitHandles": "5.1.2",
+          "Nito.AsyncEx.Oop": "5.1.2",
+          "Nito.AsyncEx.Tasks": "5.1.2",
+          "Nito.Cancellation": "1.1.2"
+        }
+      },
+      "Nito.AsyncEx.Context/5.1.2": {
+        "dependencies": {
+          "Nito.AsyncEx.Tasks": "5.1.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nito.AsyncEx.Context.dll": {
+            "assemblyVersion": "5.1.2.0",
+            "fileVersion": "5.1.2.0"
+          }
+        }
+      },
+      "Nito.AsyncEx.Coordination/5.1.2": {
+        "dependencies": {
+          "Nito.AsyncEx.Tasks": "5.1.2",
+          "Nito.Collections.Deque": "1.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nito.AsyncEx.Coordination.dll": {
+            "assemblyVersion": "5.1.2.0",
+            "fileVersion": "5.1.2.0"
+          }
+        }
+      },
+      "Nito.AsyncEx.Interop.WaitHandles/5.1.2": {
+        "dependencies": {
+          "Nito.AsyncEx.Tasks": "5.1.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nito.AsyncEx.Interop.WaitHandles.dll": {
+            "assemblyVersion": "5.1.2.0",
+            "fileVersion": "5.1.2.0"
+          }
+        }
+      },
+      "Nito.AsyncEx.Oop/5.1.2": {
+        "dependencies": {
+          "Nito.AsyncEx.Coordination": "5.1.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nito.AsyncEx.Oop.dll": {
+            "assemblyVersion": "5.1.2.0",
+            "fileVersion": "5.1.2.0"
+          }
+        }
+      },
+      "Nito.AsyncEx.Tasks/5.1.2": {
+        "dependencies": {
+          "Nito.Disposables": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nito.AsyncEx.Tasks.dll": {
+            "assemblyVersion": "5.1.2.0",
+            "fileVersion": "5.1.2.0"
+          }
+        }
+      },
+      "Nito.Cancellation/1.1.2": {
+        "dependencies": {
+          "Nito.Disposables": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Nito.Cancellation.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
+        }
+      },
+      "Nito.Collections.Deque/1.1.1": {
+        "runtime": {
+          "lib/netstandard2.0/Nito.Collections.Deque.dll": {
+            "assemblyVersion": "1.1.1.0",
+            "fileVersion": "1.1.1.0"
+          }
+        }
+      },
+      "Nito.Disposables/2.2.1": {
+        "dependencies": {
+          "System.Collections.Immutable": "1.7.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Nito.Disposables.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
+      "NuGet.Common/5.11.0": {
+        "dependencies": {
+          "NuGet.Frameworks": "5.11.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Common.dll": {
+            "assemblyVersion": "5.11.0.10",
+            "fileVersion": "5.11.0.10"
+          }
+        }
+      },
+      "NuGet.Configuration/5.11.0": {
+        "dependencies": {
+          "NuGet.Common": "5.11.0",
+          "System.Security.Cryptography.ProtectedData": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Configuration.dll": {
+            "assemblyVersion": "5.11.0.10",
+            "fileVersion": "5.11.0.10"
+          }
+        }
+      },
+      "NuGet.Frameworks/5.11.0": {
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {
+            "assemblyVersion": "5.11.0.10",
+            "fileVersion": "5.11.0.10"
+          }
+        }
+      },
+      "Octodiff/1.2.36": {
+        "runtime": {
+          "lib/netstandard2.0/Octodiff.dll": {
+            "assemblyVersion": "1.2.36.0",
+            "fileVersion": "1.2.36.0"
+          }
+        }
+      },
+      "runtime.linux-arm.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSystem.IO.Ports.Native.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "runtime.linux-arm64.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libSystem.IO.Ports.Native.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "runtime.linux-x64.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libSystem.IO.Ports.Native.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "runtime.native.System.Data.SqlClient.sni/4.7.0": {
+        "dependencies": {
+          "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
+          "runtime.win-x64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
+          "runtime.win-x86.runtime.native.System.Data.SqlClient.sni": "4.4.0"
+        }
+      },
+      "runtime.native.System.IO.Ports/5.0.0": {
+        "dependencies": {
+          "runtime.linux-arm.runtime.native.System.IO.Ports": "5.0.0-rtm.20519.4",
+          "runtime.linux-arm64.runtime.native.System.IO.Ports": "5.0.0-rtm.20519.4",
+          "runtime.linux-x64.runtime.native.System.IO.Ports": "5.0.0-rtm.20519.4",
+          "runtime.osx-x64.runtime.native.System.IO.Ports": "5.0.0-rtm.20519.4"
+        }
+      },
+      "runtime.osx-x64.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+        "runtimeTargets": {
+          "runtimes/osx-x64/native/libSystem.IO.Ports.Native.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/sni.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/sni.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "runtimeTargets": {
+          "runtimes/win-x86/native/sni.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "Specshell.NDde/3.1.0": {
+        "dependencies": {
+          "Specshell.WinForm.HiddenForm": "1.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/net9.0-windows/NDde.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "Specshell.WinForm.HiddenForm/1.0.0": {
+        "runtime": {
+          "lib/net9.0-windows/Specshell.WinForm.HiddenForm.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "System.CodeDom/5.0.0": {},
+      "System.Collections.Immutable/1.7.1": {},
+      "System.ComponentModel.Annotations/4.7.0": {},
+      "System.ComponentModel.Composition/5.0.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/System.ComponentModel.Composition.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.ComponentModel.Composition.Registration/5.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Composition": "5.0.0",
+          "System.Reflection.Context": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/System.ComponentModel.Composition.Registration.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/5.0.0": {
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "5.0.0",
+          "System.Security.Permissions": "5.0.0"
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {},
+      "System.Data.Odbc/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.Odbc.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/freebsd/lib/netcoreapp2.0/System.Data.Odbc.dll": {
+            "rid": "freebsd",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/linux/lib/netcoreapp2.0/System.Data.Odbc.dll": {
+            "rid": "linux",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/osx/lib/netcoreapp2.0/System.Data.Odbc.dll": {
+            "rid": "osx",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.Data.Odbc.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Data.OleDb/5.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Diagnostics.PerformanceCounter": "5.0.1",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.OleDb.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Data.OleDb.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Data.SqlClient/4.8.1": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0",
+          "runtime.native.System.Data.SqlClient.sni": "4.7.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "assemblyVersion": "4.6.1.1",
+            "fileVersion": "4.700.20.6702"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "4.6.1.1",
+            "fileVersion": "4.700.20.6702"
+          },
+          "runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.6.1.1",
+            "fileVersion": "4.700.20.6702"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/5.0.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.321.7212"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.EventLog.Messages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.EventLog.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.321.7212"
+          }
+        }
+      },
+      "System.Diagnostics.PerformanceCounter/5.0.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.321.7212"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.321.7212"
+          }
+        }
+      },
+      "System.DirectoryServices/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "System.IO.FileSystem.AccessControl": "5.0.0",
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Permissions": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.DirectoryServices.AccountManagement/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.DirectoryServices": "5.0.0",
+          "System.DirectoryServices.Protocols": "5.0.0",
+          "System.IO.FileSystem.AccessControl": "5.0.0",
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.DirectoryServices.AccountManagement.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.AccountManagement.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.DirectoryServices.Protocols/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.DirectoryServices.Protocols.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll": {
+            "rid": "linux",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/osx/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll": {
+            "rid": "osx",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.DirectoryServices.Protocols.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Drawing.Common/5.0.3": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "5.0.0.2",
+            "fileVersion": "5.0.1221.52207"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.2",
+            "fileVersion": "5.0.1221.52207"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.2",
+            "fileVersion": "5.0.1221.52207"
+          }
+        }
+      },
+      "System.Formats.Asn1/5.0.0": {},
+      "System.IO.FileSystem.AccessControl/5.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.IO.Packaging/5.0.0": {},
+      "System.IO.Pipes.AccessControl/5.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.IO.Ports/5.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "5.0.0",
+          "runtime.native.System.IO.Ports": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Ports.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux/lib/netstandard2.0/System.IO.Ports.dll": {
+            "rid": "linux",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/osx/lib/netstandard2.0/System.IO.Ports.dll": {
+            "rid": "osx",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          },
+          "runtimes/win/lib/netstandard2.0/System.IO.Ports.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Management/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.CodeDom": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Management.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {},
+      "System.Private.ServiceModel/4.8.0": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Reflection.DispatchProxy": "4.7.1",
+          "System.Security.Cryptography.Xml": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Private.ServiceModel.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.Reflection.Context/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/System.Reflection.Context.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Reflection.DispatchProxy/4.7.1": {},
+      "System.Reflection.Emit/4.7.0": {},
+      "System.Reflection.Emit.ILGeneration/4.7.0": {},
+      "System.Reflection.Emit.Lightweight/4.7.0": {},
+      "System.Runtime.Caching/5.0.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.Caching.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Security.AccessControl/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.Security.Cryptography.Cng/5.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/5.0.1": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0",
+          "System.Security.Cryptography.Cng": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.120.57516"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.120.57516"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/5.0.0": {},
+      "System.Security.Cryptography.Xml/5.0.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "5.0.1",
+          "System.Security.Permissions": "5.0.0"
+        }
+      },
+      "System.Security.Permissions/5.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Windows.Extensions": "5.0.0"
+        }
+      },
+      "System.Security.Principal.Windows/5.0.0": {},
+      "System.ServiceModel.Duplex/4.8.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Duplex.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.ServiceModel.Http/4.8.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Http.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.ServiceModel.NetTcp/4.8.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.NetTcp.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.ServiceModel.Primitives/4.8.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/System.ServiceModel.Primitives.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.20.51907"
+          },
+          "lib/netcoreapp2.1/System.ServiceModel.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.ServiceModel.Security/4.8.0": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.8.0",
+          "System.ServiceModel.Primitives": "4.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Security.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.800.20.51907"
+          }
+        }
+      },
+      "System.ServiceModel.Syndication/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Syndication.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.ServiceProcess.ServiceController/5.0.0": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceProcess.ServiceController.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.ServiceProcess.ServiceController.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Speech/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1",
+          "Microsoft.Win32.Registry": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Speech.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.321.7212"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.1/System.Speech.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.321.7212"
+          }
+        }
+      },
+      "System.Text.Encoding.CodePages/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.1"
+        }
+      },
+      "System.Text.Json/4.7.2": {},
+      "System.Threading.AccessControl/5.0.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "System.ValueTuple/4.5.0": {},
+      "System.Windows.Extensions/5.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "5.0.3"
+        }
+      },
+      "StockSharp.Alerts.Interfaces/1.0.0": {
+        "dependencies": {
+          "StockSharp.Algo": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Alerts.Interfaces.dll": {}
+        }
+      },
+      "StockSharp.Algo/1.0.0": {
+        "dependencies": {
+          "Ecng.Compilation": "1.0.5",
+          "Ecng.IO": "1.0.101",
+          "Ecng.Interop": "1.0.125",
+          "Ecng.Net": "1.0.153",
+          "Ecng.StringSearch": "1.0.60",
+          "MathNet.Numerics": "4.15.0",
+          "Microsoft.CSharp": "4.7.0",
+          "StockSharp.BusinessEntities": "1.0.0",
+          "StockSharp.Configuration": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Algo.dll": {}
+        }
+      },
+      "StockSharp.Algo.Strategies/1.0.0": {
+        "dependencies": {
+          "StockSharp.Algo": "1.0.0",
+          "StockSharp.Licensing": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Algo.Strategies.dll": {}
+        }
+      },
+      "StockSharp.BusinessEntities/1.0.0": {
+        "dependencies": {
+          "StockSharp.Messages": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.BusinessEntities.dll": {}
+        }
+      },
+      "StockSharp.Charting.Interfaces/1.0.0": {
+        "dependencies": {
+          "Ecng.Drawing": "1.0.14",
+          "StockSharp.Algo": "1.0.0",
+          "StockSharp.BusinessEntities": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Charting.Interfaces.dll": {}
+        }
+      },
+      "StockSharp.Configuration/1.0.0": {
+        "dependencies": {
+          "NuGet.Configuration": "5.11.0",
+          "StockSharp.Messages": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Configuration.dll": {}
+        }
+      },
+      "StockSharp.Diagram.Core/1.0.0": {
+        "dependencies": {
+          "StockSharp.Alerts.Interfaces": "1.0.0",
+          "StockSharp.Algo": "1.0.0",
+          "StockSharp.Algo.Strategies": "1.0.0",
+          "StockSharp.Charting.Interfaces": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Diagram.Core.dll": {}
+        }
+      },
+      "StockSharp.Licensing/1.0.0": {
+        "dependencies": {
+          "Ecng.Interop": "1.0.125",
+          "StockSharp.Configuration": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Licensing.dll": {}
+        }
+      },
+      "StockSharp.Localization/1.0.0": {
+        "dependencies": {
+          "Ecng.ComponentModel": "1.0.125",
+          "Ecng.Configuration": "1.0.100",
+          "Ecng.Localization": "1.0.105"
+        },
+        "runtime": {
+          "StockSharp.Localization.dll": {}
+        }
+      },
+      "StockSharp.Logging/1.0.0": {
+        "dependencies": {
+          "StockSharp.Localization": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Logging.dll": {}
+        }
+      },
+      "StockSharp.Media/1.0.0": {
+        "dependencies": {
+          "StockSharp.Localization": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Media.dll": {}
+        }
+      },
+      "StockSharp.Messages/1.0.0": {
+        "dependencies": {
+          "Ecng.Serialization": "1.0.112",
+          "StockSharp.Logging": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Messages.dll": {}
+        }
+      },
+      "StockSharp.Server.Core/1.0.0": {
+        "dependencies": {
+          "StockSharp.Algo": "1.0.0"
+        },
+        "runtime": {
+          "StockSharp.Server.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "StockSharp.Xaml/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWSSDK.Core/3.7.3.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PN7l43TFbgQ3vm85ahyy9nliI2wsTwB7CuEU2N3MkYzqvhYXdll5tiX4K97SPfDnOxnqnJK7qCKnoPPH01EfYA==",
+      "path": "awssdk.core/3.7.3.31",
+      "hashPath": "awssdk.core.3.7.3.31.nupkg.sha512"
+    },
+    "AWSSDK.Glacier/3.7.0.91": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OkkyVEXj1k4vxF2i+vQhDKeryQkVSyTUJXhB7kY7+18BYABqkodfIBToffBO4N8u4lT3oQMfqcht8PFa71RTdA==",
+      "path": "awssdk.glacier/3.7.0.91",
+      "hashPath": "awssdk.glacier.3.7.0.91.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.7.3.24": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6NOj48pU18tbLo5MV1IjtFsTWiKHFRyBgmEg1jdH6D+UmY1c3rrrzhLxSEincsFmOQsMh6VO9161YfFgOABtZA==",
+      "path": "awssdk.s3/3.7.3.24",
+      "hashPath": "awssdk.s3.3.7.3.24.nupkg.sha512"
+    },
+    "AWSSDK.SimpleNotificationService/3.7.2.62": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UmsUSGO2ykRbOslpK2MOoYmMMZWGs4gXJM0kGK0MP1Tl8u6ujcCFvyb6jgTXiUTJPkNEuFH7GkCmecvR6ha9aA==",
+      "path": "awssdk.simplenotificationservice/3.7.2.62",
+      "hashPath": "awssdk.simplenotificationservice.3.7.2.62.nupkg.sha512"
+    },
+    "AWSSDK.SQS/3.7.1.34": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VMJtmufXFF35yQj6f5SwduxswACkfs9BFKv2idZTnJaNha0iwmgQTeEJ8RwyT8IiEsh0r72kCcLvOih8bYqgMg==",
+      "path": "awssdk.sqs/3.7.1.34",
+      "hashPath": "awssdk.sqs.3.7.1.34.nupkg.sha512"
+    },
+    "Ecng.Backup/1.0.113": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fpCYQEj5+FkSX5aYSpURXz49xpKPCNGa8nl0ViJMD3pLcPm+hWmd8ib7wSZ9R4l1GCmapR4lQjWJHpaNroOj5Q==",
+      "path": "ecng.backup/1.0.113",
+      "hashPath": "ecng.backup.1.0.113.nupkg.sha512"
+    },
+    "Ecng.Collections/1.0.103": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SJoxJv3s6gsSHsn3fs1ypy6yTOVCbXCKljiFMq0vpgpOeKvznmv4DXr3xx7w9q7qaPBHJR/zIMwZ4Nb8eQUjIA==",
+      "path": "ecng.collections/1.0.103",
+      "hashPath": "ecng.collections.1.0.103.nupkg.sha512"
+    },
+    "Ecng.Common/1.0.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gk4Llie/im6BKbDKflp3l+8buDZmGEBS/XxoTouEdBNTb+omxngfCx13QufhIuLypWVaHKIL8GPHkkkFq/3UGg==",
+      "path": "ecng.common/1.0.100",
+      "hashPath": "ecng.common.1.0.100.nupkg.sha512"
+    },
+    "Ecng.Compilation/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JEI2Gn94n9W0/GHCTjzOr8KQR//wQwm4v6GkAFE7Gymlfw4U/WS+i++onJiWlnZM9g3KhEAvTbJuKAqcnLD9BA==",
+      "path": "ecng.compilation/1.0.5",
+      "hashPath": "ecng.compilation.1.0.5.nupkg.sha512"
+    },
+    "Ecng.ComponentModel/1.0.125": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cT96WTxLufTdnStICqmTxLgliPq4BltMn2vFlvuc0NFZJJsRYZA+NKYmiwKmjOR1zYsO1rBp10n/24i1OyjwZA==",
+      "path": "ecng.componentmodel/1.0.125",
+      "hashPath": "ecng.componentmodel.1.0.125.nupkg.sha512"
+    },
+    "Ecng.Configuration/1.0.100": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2gZCvDdrw2LUh84YWtfc8pvk24hgNCmvix/qZ41uVH/NT7nPD8IMZ6wI/i4w3FlEzWIoJ06jIyejpayFefOc/g==",
+      "path": "ecng.configuration/1.0.100",
+      "hashPath": "ecng.configuration.1.0.100.nupkg.sha512"
+    },
+    "Ecng.Data/1.0.107": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Aa+N4Fkv2+1ddMIv0WFZfT/cTFz+6Fg07r+KQAbImmUz4dQQPqIVeyFkbEn0jM6u40LT+FRH30Llxw4ssuvdA==",
+      "path": "ecng.data/1.0.107",
+      "hashPath": "ecng.data.1.0.107.nupkg.sha512"
+    },
+    "Ecng.Drawing/1.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bBu7HgQqKdOBQ7M5rAcCU5TgSEI8O5NaqQKikpw4v2qsKtzJzY/2InMGyA0goXNGrYqXRaInG3sK3EEq89X9NA==",
+      "path": "ecng.drawing/1.0.14",
+      "hashPath": "ecng.drawing.1.0.14.nupkg.sha512"
+    },
+    "Ecng.HtmlRenderer/1.0.50": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-guvLE3IVPl2MD+FHUDnEoD3FiYCHmJwZ/nDZqO9yzf4dxS1NVDUTdnOuLAg/H/p1vJFIpLgo3X3adMxZdcFUbQ==",
+      "path": "ecng.htmlrenderer/1.0.50",
+      "hashPath": "ecng.htmlrenderer.1.0.50.nupkg.sha512"
+    },
+    "Ecng.Interop/1.0.125": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GqN0AERuzh3oxTozBU9KpkM0a2oc489gL8Ezl3P0tuZ23CHshmD6jxbr4Zs7G60EnoQvpx7gxghAJh96IeBbNg==",
+      "path": "ecng.interop/1.0.125",
+      "hashPath": "ecng.interop.1.0.125.nupkg.sha512"
+    },
+    "Ecng.Interop.Windows/1.0.126": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MRgP2HrHQPdWNp70AjYwsFXVET7tc6wLUcE2fNR1P+3FINliHheLwBsv2/FJagHAnvFpAad97e3Ruvgei0CGXg==",
+      "path": "ecng.interop.windows/1.0.126",
+      "hashPath": "ecng.interop.windows.1.0.126.nupkg.sha512"
+    },
+    "Ecng.IO/1.0.101": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dAqeJcgZIDhbvNWLnVGDNi27r+nVUOpitOU/CmYGCbP8egOnxOrNPCdnP43Rt4clYphErznbjfEAAHq64TLaFg==",
+      "path": "ecng.io/1.0.101",
+      "hashPath": "ecng.io.1.0.101.nupkg.sha512"
+    },
+    "Ecng.Localization/1.0.105": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PJQsums2Vl/Atd23tfdtWJTfEgmamkBUIrDp9RvZn7/KP7bTIMQr0QGPdx9jAR/QPJlwy0TEb/xDlmAJDDcnZA==",
+      "path": "ecng.localization/1.0.105",
+      "hashPath": "ecng.localization.1.0.105.nupkg.sha512"
+    },
+    "Ecng.Lzma/1.0.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lhu3tcR0yAovgkEqamWGx4mrMEXyYIww5xUW4ccV1ID1XqV5An8RzXWUs1AT1X1C2Wt0UbdRZl6cRc9lJiULzQ==",
+      "path": "ecng.lzma/1.0.36",
+      "hashPath": "ecng.lzma.1.0.36.nupkg.sha512"
+    },
+    "Ecng.ManagedWinapi/1.0.81": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h3bhmhSGbvQNXzhGsB9ZE47w5TSrD8exlEIR/+hIVo8h89ZX9AzLwRcZqj6o/mRRv2eqEbe/Sps8zIAJRaHWtA==",
+      "path": "ecng.managedwinapi/1.0.81",
+      "hashPath": "ecng.managedwinapi.1.0.81.nupkg.sha512"
+    },
+    "Ecng.Net/1.0.153": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TPCDSwSUHKwyliaUprgcFcsjGRRhhecCm4QlZiAlQ3lnrTpztkhKbUjctQzwDT9vj2rr5lJiHby2hgTdBfEkug==",
+      "path": "ecng.net/1.0.153",
+      "hashPath": "ecng.net.1.0.153.nupkg.sha512"
+    },
+    "Ecng.PowerCollections/1.0.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mz4GpND/2ty1tiost6RhJTIw17jYyZiw5qbxuRrhwm2mVwh5Lq1n7L4wNNpfnANmBOz4noBJjbgTup1aaDbaWA==",
+      "path": "ecng.powercollections/1.0.36",
+      "hashPath": "ecng.powercollections.1.0.36.nupkg.sha512"
+    },
+    "Ecng.Reflection/1.0.104": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QlpW/7EcDhIBRKwbOXly73+1esFNPA404B2M3ncu9p6sEXAKO4/Gf7KwiXhaA64QSrTSIXzfFdK9qWna/Ax3+g==",
+      "path": "ecng.reflection/1.0.104",
+      "hashPath": "ecng.reflection.1.0.104.nupkg.sha512"
+    },
+    "Ecng.Security/1.0.105": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aVQHx4CmxKbkmTfxl+z+tdCVaUknBFnf/fqsPWI+GZYeOnfv8vrGRpE3o8US7iR2btNj7jWAp9rgHMuuhQoUgQ==",
+      "path": "ecng.security/1.0.105",
+      "hashPath": "ecng.security.1.0.105.nupkg.sha512"
+    },
+    "Ecng.Serialization/1.0.112": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HcW0sg86Oco8kwIT3YQdR/XS10uKMAcKno/ocxISd4A3ulvaoAHww05XRBv7IVvklZleLKGGNjsDGKF2IQQL5g==",
+      "path": "ecng.serialization/1.0.112",
+      "hashPath": "ecng.serialization.1.0.112.nupkg.sha512"
+    },
+    "Ecng.SmartFormat/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LitgpAkWKVsLl16XiOtGl+rVd+LYeMOV1Vcv9R+pjsgTi7QAEyvgZtcMqPxdae7V6wBEOIirTvZHVeXNnJATbQ==",
+      "path": "ecng.smartformat/1.0.5",
+      "hashPath": "ecng.smartformat.1.0.5.nupkg.sha512"
+    },
+    "Ecng.StringSearch/1.0.60": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i7BuaToqsRNhMC5q/Bn4f3wLaS/XKYMHrQYu23loayu5rffpKbUNCwxP7iWXnf2uLcXjVRzN8OUy3oeycCEApQ==",
+      "path": "ecng.stringsearch/1.0.60",
+      "hashPath": "ecng.stringsearch.1.0.60.nupkg.sha512"
+    },
+    "Ecng.System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EthavmSMP3/wRndcl4sJO8f5pRv3f0OK1BgTOmocAu3TtE4PLAtOYczafPoulcNHNz8X4updqo7aAVTtQqlgFQ==",
+      "path": "ecng.system.componentmodel.annotations/5.0.0",
+      "hashPath": "ecng.system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "Ecng.Transactions/1.0.112": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JilNtCUu1Iv0g6eUcBrFPCP0qIXiZfym0vNDuwKhhtMio1DwSvABrfWWQ/U4WAqkmC7jLGLzF1FhzfQ6PweHbw==",
+      "path": "ecng.transactions/1.0.112",
+      "hashPath": "ecng.transactions.1.0.112.nupkg.sha512"
+    },
+    "Ecng.Xaml.DXRefs/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SvtvgE5eyR/CdzM2D//Dhy0xBE36kRrvC+IOSfazt7SjhnTr3paiC2fAco+R75NP8JhrKKUXoFAH92B7mcAEkQ==",
+      "path": "ecng.xaml.dxrefs/1.0.5",
+      "hashPath": "ecng.xaml.dxrefs.1.0.5.nupkg.sha512"
+    },
+    "Ecng.YandexDisk/1.0.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-im6tNGiMvxnLDThkaWKPX1oy0YZk2kXibq3aaCA3SDS3EE23/YtQfraRIGjlcZXG3QUIKZiSDFUESvD+c4897w==",
+      "path": "ecng.yandexdisk/1.0.35",
+      "hashPath": "ecng.yandexdisk.1.0.35.nupkg.sha512"
+    },
+    "linq2db/3.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yu/Yq50PIguuOqgyZV7wfNrLCqxN999JJDtFfRYKt7GwOny7PB4yKDhCk+Ji3DwRdMN12BEtG8Fgfz/RKZunng==",
+      "path": "linq2db/3.5.1",
+      "hashPath": "linq2db.3.5.1.nupkg.sha512"
+    },
+    "Lokad.ILPack/0.1.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0tNM0zh0zJcjHUt/PHqgeML7OoWof0tiltGLcX2zur8Kjildye01X/RDwTt4Fxru5uIGXQvGHWqkWicvHmpcaQ==",
+      "path": "lokad.ilpack/0.1.7",
+      "hashPath": "lokad.ilpack.0.1.7.nupkg.sha512"
+    },
+    "MathNet.Numerics/4.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cP4QgPPiU7boMyL8npvuQyVGVYUd/JQY1AWa+Wl2f//fuJN40qwt9ABRazunZIcDLHg3SSlgD/e+3Lnp69jNTg==",
+      "path": "mathnet.numerics/4.15.0",
+      "hashPath": "mathnet.numerics.4.15.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
+      "path": "microsoft.aspnet.webapi.client/5.2.7",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
+    },
+    "Microsoft.Build.Tasks.Git/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z2fpmmt+1Jfl+ZnBki9nSP08S1/tbEOxFdsK1rSR+LBehIJz1Xv9/6qOOoGNqlwnAGGVGis1Oj6S8Kt9COEYlQ==",
+      "path": "microsoft.build.tasks.git/1.0.0",
+      "hashPath": "microsoft.build.tasks.git.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z3YFkbnl1RMj6lb+Bm/2tsZ0cJCULlB4uPOFqlj6dNSm/8feJl4UrXmG6TcZh8ipJQwkAS5I6UCs1FnGog4QZg==",
+      "path": "microsoft.netcore.platforms/5.0.1",
+      "hashPath": "microsoft.netcore.platforms.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.SourceLink.Common/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G8DuQY8/DK5NN+3jm5wcMcd9QYD90UV7MiLmdljSJixi3U/vNaeBKmmXUqI4DJCOeWizIUEh4ALhSt58mR+5eg==",
+      "path": "microsoft.sourcelink.common/1.0.0",
+      "hashPath": "microsoft.sourcelink.common.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.SourceLink.GitHub/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aZyGyGg2nFSxix+xMkPmlmZSsnGQ3w+mIG23LTxJZHN+GPwTQ5FpPgDo7RMOq+Kcf5D4hFWfXkGhoGstawX13Q==",
+      "path": "microsoft.sourcelink.github/1.0.0",
+      "hashPath": "microsoft.sourcelink.github.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg==",
+      "path": "microsoft.win32.registry/5.0.0",
+      "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry.AccessControl/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rwF501ZS/xKGWz5H3RLBvwta6E5kcMLB0UYGTgrZ8nL5bvrbGmtEcEObgMC/qRFhA3og/0Zh+eacrcA+0FBXJA==",
+      "path": "microsoft.win32.registry.accesscontrol/5.0.0",
+      "hashPath": "microsoft.win32.registry.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Windows.Compatibility/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2imzNvgFenWrUJMr4XKwR9LHy2LZK8VbmUE4Z8hTT9fB0mMisjZjn/1mgLAcn8TE5U7Bjk8zVEwsEttLC1yenA==",
+      "path": "microsoft.windows.compatibility/5.0.2",
+      "hashPath": "microsoft.windows.compatibility.5.0.2.nupkg.sha512"
+    },
+    "morelinq/3.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MQc8GppZJLmjvcpEdf3EkC6ovsp7gRWt2e5mC7dcIOrgwSc+yjFd3JQ0iRqr3XrUT6rb/phv0IkEmBtbfVA7AQ==",
+      "path": "morelinq/3.3.2",
+      "hashPath": "morelinq.3.3.2.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
+      "path": "newtonsoft.json.bson/1.0.1",
+      "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "Nito.AsyncEx/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hq+N63M/2znx2z1VzvPDHNg+HIWKdIloEZre+P7E0O+2iRf1Q4HBOgeiJU6SzFD/fWoyKyKSSSrekk4RgiXaeQ==",
+      "path": "nito.asyncex/5.1.2",
+      "hashPath": "nito.asyncex.5.1.2.nupkg.sha512"
+    },
+    "Nito.AsyncEx.Context/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rMwL7Nj3oNyvFu/jxUzQ/YBobEkM2RQHe+5mpCDRyq6mfD7vCj7Z3rjB6XgpM6Mqcx1CA2xGv0ascU/2Xk8IIg==",
+      "path": "nito.asyncex.context/5.1.2",
+      "hashPath": "nito.asyncex.context.5.1.2.nupkg.sha512"
+    },
+    "Nito.AsyncEx.Coordination/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QMyUfsaxov//0ZMbOHWr9hJaBFteZd66DV1ay4J5wRODDb8+K/uHC7+3VsOflo6SVw/29mu8OWZp8vMDSuzc0w==",
+      "path": "nito.asyncex.coordination/5.1.2",
+      "hashPath": "nito.asyncex.coordination.5.1.2.nupkg.sha512"
+    },
+    "Nito.AsyncEx.Interop.WaitHandles/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qym29lFBCSIacKvFcJDW+beXzuO+6y9lWdd1KecxzzAqtNuvlYgNPwIsxwdhEINLhTT4aDuCM3JalpUZYWI51Q==",
+      "path": "nito.asyncex.interop.waithandles/5.1.2",
+      "hashPath": "nito.asyncex.interop.waithandles.5.1.2.nupkg.sha512"
+    },
+    "Nito.AsyncEx.Oop/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MxQl/NFoPgMApyjbB2fSZBrjdf9r6ODd/BTrWLyJKYX6UeNfw0Ocr0cPiTg2LRN0Ayud8Gj4dh67AdasNn709Q==",
+      "path": "nito.asyncex.oop/5.1.2",
+      "hashPath": "nito.asyncex.oop.5.1.2.nupkg.sha512"
+    },
+    "Nito.AsyncEx.Tasks/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jEkCfR2/M26OK/U4G7SEN063EU/F4LiVA06TtpZILMdX/quIHCg+wn31Zerl2LC+u1cyFancjTY3cNAr2/89PA==",
+      "path": "nito.asyncex.tasks/5.1.2",
+      "hashPath": "nito.asyncex.tasks.5.1.2.nupkg.sha512"
+    },
+    "Nito.Cancellation/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z+SZKp0KxMC6tEVbXe8ah4pBJadyqP0pObQMaZcBavhIDEIsGuxt7PL+B9AiNJD3Ni5VgnZsnii5HPJgVDE81w==",
+      "path": "nito.cancellation/1.1.2",
+      "hashPath": "nito.cancellation.1.1.2.nupkg.sha512"
+    },
+    "Nito.Collections.Deque/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CU0/Iuv5VDynK8I8pDLwkgF0rZhbQoZahtodfL0M3x2gFkpBRApKs8RyMyNlAi1mwExE4gsmqQXk4aFVvW9a4Q==",
+      "path": "nito.collections.deque/1.1.1",
+      "hashPath": "nito.collections.deque.1.1.1.nupkg.sha512"
+    },
+    "Nito.Disposables/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6sZ5uynQeAE9dPWBQGKebNmxbY4xsvcc5VplB5WkYEESUS7oy4AwnFp0FhqxTSKm/PaFrFqLrYr696CYN8cugg==",
+      "path": "nito.disposables/2.2.1",
+      "hashPath": "nito.disposables.2.2.1.nupkg.sha512"
+    },
+    "NuGet.Common/5.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WCHexQBfSqBDRqP3PSDSUw7YM+PwuvMHGAkT/sXI5UHze4T41yLE+VB/km2Fe0z9y3m2mudcr2djFZezivjMJw==",
+      "path": "nuget.common/5.11.0",
+      "hashPath": "nuget.common.5.11.0.nupkg.sha512"
+    },
+    "NuGet.Configuration/5.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NqsQe198CTHoo7NMrKQL8utd6n9yVb9CPgJmpyF6kpEsLFo/9r0wqGL3ln8Mtcz8yuJpOPWFQEoOlzDzu3LfUg==",
+      "path": "nuget.configuration/5.11.0",
+      "hashPath": "nuget.configuration.5.11.0.nupkg.sha512"
+    },
+    "NuGet.Frameworks/5.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eaiXkUjC4NPcquGWzAGMXjuxvLwc6XGKMptSyOGQeT0X70BUZObuybJFZLA0OfTdueLd3US23NBPTBb6iF3V1Q==",
+      "path": "nuget.frameworks/5.11.0",
+      "hashPath": "nuget.frameworks.5.11.0.nupkg.sha512"
+    },
+    "Octodiff/1.2.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xl5szJwYLafbkeitAgCPI0PFlYLSTw+JHxMXLt2mEQMkOU6XjAmpwgVqklp0mWfVAnQgH8hTq0oX9GaQSN9WNQ==",
+      "path": "octodiff/1.2.36",
+      "hashPath": "octodiff.1.2.36.nupkg.sha512"
+    },
+    "runtime.linux-arm.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Np6w3r1dSFB930GGZHIKCc5ZClRXZIqOrCAT0pzcd/zXnsZPvGqLZB1MnxAbVhvriJl71B0N0tJaaT1ICWXsyg==",
+      "path": "runtime.linux-arm.runtime.native.system.io.ports/5.0.0-rtm.20519.4",
+      "hashPath": "runtime.linux-arm.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512"
+    },
+    "runtime.linux-arm64.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VnGZmQ7pzMNkcTVdmGtXUQIbytK4Xk8F4/mxm0I+n7zbrsW/WNgLrWMTv9pb2Uyq09azXazNDQhZao4R4ebWcw==",
+      "path": "runtime.linux-arm64.runtime.native.system.io.ports/5.0.0-rtm.20519.4",
+      "hashPath": "runtime.linux-arm64.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512"
+    },
+    "runtime.linux-x64.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kvMZgZjtcC6cA8Y8imKpjCpiOJKDtwlNekS86GzUol4Jmzh0FWiRwAj4E9ZKO8R7rTBGIA4rkmra9Ko8j7l6AA==",
+      "path": "runtime.linux-x64.runtime.native.system.io.ports/5.0.0-rtm.20519.4",
+      "hashPath": "runtime.linux-x64.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512"
+    },
+    "runtime.native.System.Data.SqlClient.sni/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9kyFSIdN3T0qjDQ2R0HRXYIhS3l5psBzQi6qqhdLz+SzFyEy4sVxNOke+yyYv8Cu8rPER12c3RDjLT8wF3WBYQ==",
+      "path": "runtime.native.system.data.sqlclient.sni/4.7.0",
+      "hashPath": "runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512"
+    },
+    "runtime.native.System.IO.Ports/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ME+/evR+UxVlWyGHUlLBoNTnsTdaylMbnvVwOp0Nl6XIZGGyXdqJqjlEew7e6TcKkJAA0lljhjKi3Kie+vzQ7g==",
+      "path": "runtime.native.system.io.ports/5.0.0",
+      "hashPath": "runtime.native.system.io.ports.5.0.0.nupkg.sha512"
+    },
+    "runtime.osx-x64.runtime.native.System.IO.Ports/5.0.0-rtm.20519.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N+dbbqhT7JBnPVHa7n2+Z5fHYO4a4UUhm7cQkbuQQoNkjbxLpxYnQ4lpRjr1RuQptqYkPmunKvN5etdFOObaiw==",
+      "path": "runtime.osx-x64.runtime.native.system.io.ports/5.0.0-rtm.20519.4",
+      "hashPath": "runtime.osx-x64.runtime.native.system.io.ports.5.0.0-rtm.20519.4.nupkg.sha512"
+    },
+    "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
+      "path": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-38ugOfkYJqJoX9g6EYRlZB5U2ZJH51UP8ptxZgdpS07FgOEToV+lS11ouNK2PM12Pr6X/PpT5jK82G3DwH/SxQ==",
+      "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
+      "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "Specshell.NDde/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FVUwBqti9XQMA+lxXpEvLGw11k8VZORFVDJJfiUTH7169grHMSuMj4ey+Sm/4L4U/vFyx7JiDcMg0HpY0LaLFA==",
+      "path": "specshell.ndde/3.1.0",
+      "hashPath": "specshell.ndde.3.1.0.nupkg.sha512"
+    },
+    "Specshell.WinForm.HiddenForm/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UaIPypGsVRVX0uf8Wsygg0PHcmOU+aXEHLe3Ji7o4IlgfL4G/588J5BIotGM6zs89C1SqVtix4879ylNGRvKMw==",
+      "path": "specshell.winform.hiddenform/1.0.0",
+      "hashPath": "specshell.winform.hiddenform.1.0.0.nupkg.sha512"
+    },
+    "System.CodeDom/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JPJArwA1kdj8qDAkY2XGjSWoYnqiM7q/3yRNkt6n28Mnn95MuEGkZXUbPBf7qc3IjwrGY5ttQon7yqHZyQJmOQ==",
+      "path": "system.codedom/5.0.0",
+      "hashPath": "system.codedom.5.0.0.nupkg.sha512"
+    },
+    "System.Collections.Immutable/1.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
+      "path": "system.collections.immutable/1.7.1",
+      "hashPath": "system.collections.immutable.1.7.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "hashPath": "system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Composition/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YL8iA3VOFxhyomn7FxtBgh3F+8XG5jOfT5UcqYLtkafSa6g6alQfKZuRwlEIWe+tzH6OVnj0Ekg5tn/DmV7SkQ==",
+      "path": "system.componentmodel.composition/5.0.0",
+      "hashPath": "system.componentmodel.composition.5.0.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Composition.Registration/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CTTPajoCKcXQ1NVTlazz6ned37MHVFf1qKfzsBIdHkaFJBnRVVh4hYsVkPP7z+RrMQU5iXdiTcsfxDb5DWOKOA==",
+      "path": "system.componentmodel.composition.registration/5.0.0",
+      "hashPath": "system.componentmodel.composition.registration.5.0.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aM7cbfEfVNlEEOj3DsZP+2g9NRwbkyiAv2isQEzw7pnkDg9ekCU2m1cdJLM02Uq691OaCS91tooaxcEn8d0q5w==",
+      "path": "system.configuration.configurationmanager/5.0.0",
+      "hashPath": "system.configuration.configurationmanager.5.0.0.nupkg.sha512"
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "path": "system.data.datasetextensions/4.5.0",
+      "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
+    },
+    "System.Data.Odbc/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j4WsYGmcD7m1D0Tc3N7HqWqcdUHNn9+kdXh9ODTWEsOGrAvALf+BgRStd7L0/O/zDS0R4Uu9vNM8UY6EnK+WYw==",
+      "path": "system.data.odbc/5.0.0",
+      "hashPath": "system.data.odbc.5.0.0.nupkg.sha512"
+    },
+    "System.Data.OleDb/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DHCZucsidgFtUr1w5OggQNjb7M6N722QpNbkG6TV+3hCvPSLXdrm1NjJqVZB5/OW067gzuZVj9W147hrkTF/Ig==",
+      "path": "system.data.oledb/5.0.0",
+      "hashPath": "system.data.oledb.5.0.0.nupkg.sha512"
+    },
+    "System.Data.SqlClient/4.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HKLykcv6eZLbLnSMnlQ6Os4+UAmFE+AgYm92CTvJYeTOBtOYusX3qu8OoGhFrnKZax91UcLcDo5vPrqvJUTSNQ==",
+      "path": "system.data.sqlclient/4.8.1",
+      "hashPath": "system.data.sqlclient.4.8.1.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k4O5RrjnhJZrP4EgOklUVkcmVdAxs9+PoXCGmlNS3NPIwaSyMMLy7pUaamMHCFkduiOO/ZUzIRjyoCnvXLJpfw==",
+      "path": "system.diagnostics.eventlog/5.0.1",
+      "hashPath": "system.diagnostics.eventlog.5.0.1.nupkg.sha512"
+    },
+    "System.Diagnostics.PerformanceCounter/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-omeUtUiY6Mqhfspdujqh0JJ2fLyb+kz+hhAxqgaUUpxlvHFtXVw7i/JjbA426hiZstzUL0GuXFGjTjmcx0ts/w==",
+      "path": "system.diagnostics.performancecounter/5.0.1",
+      "hashPath": "system.diagnostics.performancecounter.5.0.1.nupkg.sha512"
+    },
+    "System.DirectoryServices/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lAS54Y3KO1XV68akGa0/GJeddkkuuiv2CtcSkMiTmLHQ6o6kFbKpw4DmJZADF7a6KjPwYxmZnH4D3eGicrJdcg==",
+      "path": "system.directoryservices/5.0.0",
+      "hashPath": "system.directoryservices.5.0.0.nupkg.sha512"
+    },
+    "System.DirectoryServices.AccountManagement/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1WevH/8ULy0iixbsZW4k8ftV9fDqkeUJfeVMsJ7SySrHsnBISkRx1JuDRRV7QXfNTCQKrHeecfqcY5pevlDwog==",
+      "path": "system.directoryservices.accountmanagement/5.0.0",
+      "hashPath": "system.directoryservices.accountmanagement.5.0.0.nupkg.sha512"
+    },
+    "System.DirectoryServices.Protocols/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uQvO3kpXBDCoRQecbY8yXiQTVBT5t6ZMCZwBsyGFeCL0KUTlNJDsaIx+hsqCKF+bLglaYyz5nWLVRaxPKVeBBw==",
+      "path": "system.directoryservices.protocols/5.0.0",
+      "hashPath": "system.directoryservices.protocols.5.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rEQZuslijqdsO0pkJn7LtGBaMc//YVA8de0meGihkg9oLPaN+w+/Pb5d71lgp0YjPoKgBKNMvdq0IPnoW4PEng==",
+      "path": "system.drawing.common/5.0.3",
+      "hashPath": "system.drawing.common.5.0.3.nupkg.sha512"
+    },
+    "System.Formats.Asn1/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MTvUIktmemNB+El0Fgw9egyqT9AYSIk6DTJeoDSpc3GIHxHCMo8COqkWT1mptX5tZ1SlQ6HJZ0OsSvMth1c12w==",
+      "path": "system.formats.asn1/5.0.0",
+      "hashPath": "system.formats.asn1.5.0.0.nupkg.sha512"
+    },
+    "System.IO.FileSystem.AccessControl/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==",
+      "path": "system.io.filesystem.accesscontrol/5.0.0",
+      "hashPath": "system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Packaging/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ebfUwKsgZF4HTwaRUj67SrJdsM4O62Fxsd6u1bSk3MNgvU8yjyfEK0xQmUFUqOYJi1IcL4HENoccl4SKVPndYw==",
+      "path": "system.io.packaging/5.0.0",
+      "hashPath": "system.io.packaging.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Pipes.AccessControl/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P0FIsXSFNL1AXlHO9zpJ9atRUzVyoPZCkcbkYGZfXXMx9xlGA2H3HOGBwIhpKhB+h0eL3hry/z0UcfJZ+yb2kQ==",
+      "path": "system.io.pipes.accesscontrol/5.0.0",
+      "hashPath": "system.io.pipes.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Ports/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MZY/0cgRg5bcuvHR4LKHqWnlxWV7GkoTgBaOdwIoWGZKsfSBC1twDz+BzG0o1Rk46WdRhhV30E2qzsBABHwGUA==",
+      "path": "system.io.ports/5.0.0",
+      "hashPath": "system.io.ports.5.0.0.nupkg.sha512"
+    },
+    "System.Management/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MF1CHaRcC+MLFdnDthv4/bKWBZnlnSpkGqa87pKukQefgEdwtb9zFW6zs0GjPp73qtpYYg4q6PEKbzJbxCpKfw==",
+      "path": "system.management/5.0.0",
+      "hashPath": "system.management.5.0.0.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Private.ServiceModel/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V21eCo3u2GOzq/BOSD3hxlJQCOp71RHXI0TxzbFp8k5Gtnu/X2bBYETpiRFUsUojJz5MwUNjtW8BdwdUnwP05g==",
+      "path": "system.private.servicemodel/4.8.0",
+      "hashPath": "system.private.servicemodel.4.8.0.nupkg.sha512"
+    },
+    "System.Reflection.Context/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gG1wxxJLcjQaUkd07K2l2MKVoW+e0w8jS8Jye7QLPXrXT7XXMmOcFV/Ek6XyTOy5Z4GVN0WY95BQNp/iHEs5mw==",
+      "path": "system.reflection.context/5.0.0",
+      "hashPath": "system.reflection.context.5.0.0.nupkg.sha512"
+    },
+    "System.Reflection.DispatchProxy/4.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C1sMLwIG6ILQ2bmOT4gh62V6oJlyF4BlHcVMrOoor49p0Ji2tA8QAoqyMcIhAdH6OHKJ8m7BU+r4LK2CUEOKqw==",
+      "path": "system.reflection.dispatchproxy/4.7.1",
+      "hashPath": "system.reflection.dispatchproxy.4.7.1.nupkg.sha512"
+    },
+    "System.Reflection.Emit/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.ILGeneration/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AucBYo3DSI0IDxdUjKksBcQJXPHyoPyrCXYURW1WDsLI4M65Ar/goSHjdnHOAY9MiYDNKqDlIgaYm+zL2hA1KA==",
+      "path": "system.reflection.emit.ilgeneration/4.7.0",
+      "hashPath": "system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+    },
+    "System.Runtime.Caching/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-30D6MkO8WF9jVGWZIP0hmCN8l9BTY4LCsAzLIe4xFSXzs+AjDotR7DpSmj27pFskDURzUvqYYY0ikModgBTxWw==",
+      "path": "system.runtime.caching/5.0.0",
+      "hashPath": "system.runtime.caching.5.0.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dagJ1mHZO3Ani8GH0PHpPEe/oYO+rVdbQjvjJkBRNQkX4t0r1iaeGn8+/ybkSLEan3/slM0t59SVdHzuHf2jmw==",
+      "path": "system.security.accesscontrol/5.0.0",
+      "hashPath": "system.security.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Cng/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jIMXsKn94T9JY7PvPq/tMfqa6GAaHpElRDpmG+SuL+D3+sTw2M8VhnibKnN8Tq+4JqbPJ/f+BwtLeDMEnzAvRg==",
+      "path": "system.security.cryptography.cng/5.0.0",
+      "hashPath": "system.security.cryptography.cng.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9ualfJXOMrjW/E4z73cGHVcAvFMCCnMZQE+8xME9eX70bTZ0UAJCstG0khsMvL8B+9c9qw+ktowt1fN0BffMnQ==",
+      "path": "system.security.cryptography.pkcs/5.0.1",
+      "hashPath": "system.security.cryptography.pkcs.5.0.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HGxMSAFAPLNoxBvSfW08vHde0F9uh7BjASwu6JF9JnXuEPhCY3YUqURn0+bQV/4UWeaqymmrHWV+Aw9riQCtCA==",
+      "path": "system.security.cryptography.protecteddata/5.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Xml/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MYmkHtCW+paFmPGFDktnLdOeH3zUrNchbZNki87E1ejNSMm9enSRbJokmvFrsWUrDE4bRE1lVeAle01+t6SGhA==",
+      "path": "system.security.cryptography.xml/5.0.0",
+      "hashPath": "system.security.cryptography.xml.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Permissions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uE8juAhEkp7KDBCdjDIE3H9R1HJuEHqeqX8nLX9gmYKWwsqk3T5qZlPx8qle5DPKimC/Fy3AFTdV7HamgCh9qQ==",
+      "path": "system.security.permissions/5.0.0",
+      "hashPath": "system.security.permissions.5.0.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
+      "path": "system.security.principal.windows/5.0.0",
+      "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Duplex/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+LprVYRVD2exSoh4BLo5HJrXUMCoJICxeffYVSwVLhjTalcfUZU3dkGgp5oDtYU82CDV4D8hD8uvaOTNm0IogQ==",
+      "path": "system.servicemodel.duplex/4.8.0",
+      "hashPath": "system.servicemodel.duplex.4.8.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Http/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+kn7xCZjf/d02SE3OnwyU4wxggrxEhOoGLB+DUACSTXvSIGKZoHPXQ6LhkY0/m7nzdjqxmvc7cJO3UPWgIH/8Q==",
+      "path": "system.servicemodel.http/4.8.0",
+      "hashPath": "system.servicemodel.http.4.8.0.nupkg.sha512"
+    },
+    "System.ServiceModel.NetTcp/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KoeXvhicGSQ0A60AruHWTNN/D17ErLkv90SmWS/sFQ+QUc4Bbb8GDFwmDoUhwsa35khiwpSUWt8OBIcoM/ZabA==",
+      "path": "system.servicemodel.nettcp/4.8.0",
+      "hashPath": "system.servicemodel.nettcp.4.8.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Primitives/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-akJiBb0EcWTXQ/dgp1a27O7UynZbqQ84M17OY/ssxfb32x5wtQ5zRw6ExsQaPOUQgia4Wl2jy4FWZddQRLLnaA==",
+      "path": "system.servicemodel.primitives/4.8.0",
+      "hashPath": "system.servicemodel.primitives.4.8.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Security/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oeCYY/i2kFgsVsxkuF4+PdepnVjSKNZtwSKb2qD6CCisLeXfmT5g7IuCdlLlbc2Ppq+wI7KsNhf+xnh9ESnVCQ==",
+      "path": "system.servicemodel.security/4.8.0",
+      "hashPath": "system.servicemodel.security.4.8.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Syndication/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xjwRFydlevI/DMLlBcDRbOmofJTZNoJ0FCkEPdMw9i+85lDbl8Pw001LJKQbRSeHSVJCEuPfAvEuC1TAumxcmw==",
+      "path": "system.servicemodel.syndication/5.0.0",
+      "hashPath": "system.servicemodel.syndication.5.0.0.nupkg.sha512"
+    },
+    "System.ServiceProcess.ServiceController/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p2yX167GW1pr2DCR6cW+cBKrvhli4thckXk108faFaTPHnoudb0AYPcIPq3nmrwn7IQj9FEmjpyJlXzcOmIjjw==",
+      "path": "system.serviceprocess.servicecontroller/5.0.0",
+      "hashPath": "system.serviceprocess.servicecontroller.5.0.0.nupkg.sha512"
+    },
+    "System.Speech/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-URJOtiuS47+aK4u8uBGgky4XuiUzoiTFB7VGyaayD4iQDC/mE0aoPIB0m73lGzt0xYc/ZnMC6ltGb49t76wXJA==",
+      "path": "system.speech/5.0.0",
+      "hashPath": "system.speech.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
+      "path": "system.text.encoding.codepages/5.0.0",
+      "hashPath": "system.text.encoding.codepages.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "path": "system.text.json/4.7.2",
+      "hashPath": "system.text.json.4.7.2.nupkg.sha512"
+    },
+    "System.Threading.AccessControl/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WJ9w9m4iHJVq0VoH7hZvYAccbRq95itYRhAAXd6M4kVCzLmT6NqTwmSXKwp3oQilWHhYTXgqaIXxBfg8YaqtmA==",
+      "path": "system.threading.accesscontrol/5.0.0",
+      "hashPath": "system.threading.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "System.Windows.Extensions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
+      "path": "system.windows.extensions/5.0.0",
+      "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+    },
+    "StockSharp.Alerts.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Algo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Algo.Strategies/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.BusinessEntities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Charting.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Configuration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Diagram.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Licensing/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Localization/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Logging/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Media/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Messages/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StockSharp.Server.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

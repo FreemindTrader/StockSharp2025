@@ -1,0 +1,427 @@
+<SettingsStorage>
+  <KeyValuePairBeginStringAndObjectEnd>
+    <key>Controls</key>
+    <value>
+      <Type type="string">Ecng.Serialization.SettingsStorage[], Ecng.Serialization</Type>
+      <Value type="Ecng.Serialization.SettingsStorage[], Ecng.Serialization">
+        <SettingsStorage>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>ControlType</key>
+            <value>
+              <Type type="string">string</Type>
+              <Value type="string">StockSharp.Studio.Controls.LogManagerPanel, StockSharp.Studio.Controls</Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>IsToolWindow</key>
+            <value>
+              <Type type="string">bool</Type>
+              <Value type="bool">True</Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>LogControl</key>
+            <value>
+              <Type type="string">Ecng.Serialization.SettingsStorage, Ecng.Serialization</Type>
+              <Value type="Ecng.Serialization.SettingsStorage, Ecng.Serialization">
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>AutoScroll</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">False</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>AutoResize</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">False</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>ShowSourceNameColumn</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">True</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>MaxItemsCount</key>
+                  <value>
+                    <Type type="string">int</Type>
+                    <Value type="int">-1</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>TimeFormat</key>
+                  <value>
+                    <Type type="string">string</Type>
+                    <Value type="string">yy/MM/dd HH:mm:ss.fff</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>ShowInfo</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">True</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>ShowError</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">True</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>ShowWarning</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">True</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>ShowDebug</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">True</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>ShowVerbose</key>
+                  <value>
+                    <Type type="string">bool</Type>
+                    <Value type="bool">True</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>Like</key>
+                  <value>
+                    <Type type="string">string</Type>
+                    <Value type="string"></Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+              </Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+        </SettingsStorage>
+        <SettingsStorage>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>ControlType</key>
+            <value>
+              <Type type="string">string</Type>
+              <Value type="string">StockSharp.Studio.Controls.PortfoliosPanel, StockSharp.Studio.Controls</Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>IsToolWindow</key>
+            <value>
+              <Type type="string">bool</Type>
+              <Value type="bool">False</Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>Key</key>
+            <value>
+              <Type type="string">string</Type>
+              <Value type="string">_ac608491b1fe4a80870725f3cf263302</Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>PortfolioGrid</key>
+            <value>
+              <Type type="string">Ecng.Serialization.SettingsStorage, Ecng.Serialization</Type>
+              <Value type="Ecng.Serialization.SettingsStorage, Ecng.Serialization">
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>Layout</key>
+                  <value>
+                    <Type type="string">string</Type>
+                    <Value type="string">﻿&lt;XtraSerializer version="1.0" application="StockSharp"&gt;
+  &lt;property name="#LayoutVersion" isnull="true" /&gt;
+  &lt;property name="$GridControl" iskey="true" value="GridControl"&gt;
+    &lt;property name="UseFieldNameForSerialization"&gt;true&lt;/property&gt;
+    &lt;property name="GroupCount"&gt;1&lt;/property&gt;
+    &lt;property name="GroupSummary" iskey="true" value="1"&gt;
+      &lt;property name="Item1" isnull="true" iskey="true"&gt;
+        &lt;property name="SummaryType"&gt;Count&lt;/property&gt;
+        &lt;property name="DisplayFormat"&gt;Items count: {0}&lt;/property&gt;
+      &lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="SortInfo" iskey="true" value="1"&gt;
+      &lt;property name="Item1" isnull="true" iskey="true"&gt;
+        &lt;property name="FieldName"&gt;PortfolioName&lt;/property&gt;
+        &lt;property name="SortOrder"&gt;Ascending&lt;/property&gt;
+        &lt;property name="MergeWithPreviousGroup"&gt;false&lt;/property&gt;
+      &lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="Columns" iskey="true" value="18"&gt;
+      &lt;property name="Item1" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;PortfolioName&lt;/property&gt;
+        &lt;property name="Width"&gt;70&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;70&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item2" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Name&lt;/property&gt;
+        &lt;property name="VisibleIndex"&gt;0&lt;/property&gt;
+        &lt;property name="Width"&gt;70&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;70&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item3" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.BeginValue&lt;/property&gt;
+        &lt;property name="VisibleIndex"&gt;1&lt;/property&gt;
+        &lt;property name="Width"&gt;120&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;120&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item4" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.CurrentValue&lt;/property&gt;
+        &lt;property name="VisibleIndex"&gt;2&lt;/property&gt;
+        &lt;property name="Width"&gt;120&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;120&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item5" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.BlockedValue&lt;/property&gt;
+        &lt;property name="VisibleIndex"&gt;3&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item6" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.Description&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;200&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;200&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item7" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;ClientCode&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item8" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;DepoName&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item9" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;LimitType&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item10" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.Commission&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item11" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.VariationMargin&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item12" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.RealizedPnL&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item13" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.UnrealizedPnL&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item14" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.AveragePrice&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item15" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.CurrentPrice&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;50&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;50&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item16" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.LastChangeTime&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;120&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;120&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item17" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Position.LocalTime&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;60&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;60&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item18" isnull="true" iskey="true"&gt;
+        &lt;property name="GridRow"&gt;0&lt;/property&gt;
+        &lt;property name="FieldName"&gt;Portfolio.State&lt;/property&gt;
+        &lt;property name="Visible"&gt;false&lt;/property&gt;
+        &lt;property name="Width"&gt;60&lt;/property&gt;
+        &lt;property name="ActualWidth"&gt;60&lt;/property&gt;
+      &lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="View" isnull="true" iskey="true"&gt;
+      &lt;property name="FormatConditions" iskey="true" value="0" /&gt;
+      &lt;property name="ShowGroupPanel"&gt;false&lt;/property&gt;
+      &lt;property name="ColumnChooserState" isnull="true" iskey="true"&gt;
+        &lt;property name="Location"&gt;1208,349&lt;/property&gt;
+        &lt;property name="Size"&gt;220,250&lt;/property&gt;
+      &lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="TotalSummary" iskey="true" value="0" /&gt;
+    &lt;property name="MRUFilters" iskey="true" value="0" /&gt;
+    &lt;property name="GroupSummarySortInfo" iskey="true" value="0" /&gt;
+  &lt;/property&gt;
+&lt;/XtraSerializer&gt;</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+              </Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>AlertBtn</key>
+            <value>
+              <Type type="string">Ecng.Serialization.SettingsStorage, Ecng.Serialization</Type>
+              <Value type="Ecng.Serialization.SettingsStorage, Ecng.Serialization">
+                <KeyValuePairBeginStringAndObjectEnd>
+                  <key>AlertSchema</key>
+                  <value>
+                    <Type type="string">guid</Type>
+                    <Value type="guid">11f18e94-a2e5-49b7-b8fc-f60df0833677</Value>
+                  </value>
+                </KeyValuePairBeginStringAndObjectEnd>
+              </Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+          <KeyValuePairBeginStringAndObjectEnd>
+            <key>BarManager</key>
+            <value>
+              <Type type="string">string</Type>
+              <Value type="string">﻿&lt;XtraSerializer version="1.0" application="Designer"&gt;
+  &lt;property name="#LayoutVersion" isnull="true" /&gt;
+  &lt;property name="$BarManager" iskey="true" value="BarManager"&gt;
+    &lt;property name="RuntimeCustomizations" iskey="true" value="1"&gt;
+      &lt;property name="Item1" isnull="true" iskey="true"&gt;
+        &lt;property name="PropertyName"&gt;DockInfo.ContainerName&lt;/property&gt;
+        &lt;property name="NewValue" type="System.String" /&gt;
+        &lt;property name="OldValue" type="System.String" /&gt;
+        &lt;property name="ActOnHost"&gt;false&lt;/property&gt;
+        &lt;property name="TargetName"&gt;cName3F90F5F188BBF805D1CB7204940944F7&lt;/property&gt;
+        &lt;property name="Overwrite"&gt;true&lt;/property&gt;
+        &lt;property name="Timestamp"&gt;11609484&lt;/property&gt;
+        &lt;property name="CustomizationType"&gt;DevExpress.Xpf.Bars.RuntimePropertyCustomization&lt;/property&gt;
+        &lt;property name="AffectedTargets" iskey="true" value="0" /&gt;
+      &lt;/property&gt;
+    &lt;/property&gt;
+  &lt;/property&gt;
+&lt;/XtraSerializer&gt;</Value>
+            </value>
+          </KeyValuePairBeginStringAndObjectEnd>
+        </SettingsStorage>
+      </Value>
+    </value>
+  </KeyValuePairBeginStringAndObjectEnd>
+  <KeyValuePairBeginStringAndObjectEnd>
+    <key>Layout</key>
+    <value>
+      <Type type="string">string</Type>
+      <Value type="string">﻿&lt;XtraSerializer version="1.0" application="DockLayoutManager"&gt;
+  &lt;property name="#LayoutVersion" isnull="true" /&gt;
+  &lt;property name="$DockLayoutManager" iskey="true" value="DockLayoutManager"&gt;
+    &lt;property name="DockingStyle"&gt;VS2010&lt;/property&gt;
+    &lt;property name="FloatingDocumentContainer"&gt;DocumentHost&lt;/property&gt;
+    &lt;property name="FloatingMode"&gt;Desktop&lt;/property&gt;
+    &lt;property name="Items" iskey="true" value="6"&gt;
+      &lt;property name="Item1" isnull="true" iskey="true"&gt;
+        &lt;property name="Orientation"&gt;Vertical&lt;/property&gt;
+        &lt;property name="SerializableSelectedTabPageIndex"&gt;-1&lt;/property&gt;
+        &lt;property name="SerializableDockSituation" iskey="true" value="0" /&gt;
+        &lt;property name="SerializationInfo" isnull="true" iskey="true" /&gt;
+        &lt;property name="TypeName"&gt;LayoutGroup&lt;/property&gt;
+        &lt;property name="ParentName" isnull="true" /&gt;
+        &lt;property name="ParentCollectionName" isnull="true" /&gt;
+        &lt;property name="Name"&gt;Root&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item2" isnull="true" iskey="true"&gt;
+        &lt;property name="ClosePageButtonShowMode"&gt;InAllTabPageHeaders&lt;/property&gt;
+        &lt;property name="DestroyOnClosingChildren"&gt;false&lt;/property&gt;
+        &lt;property name="SerializableSelectedTabPageIndex"&gt;0&lt;/property&gt;
+        &lt;property name="SerializableDockSituation" iskey="true" value="0" /&gt;
+        &lt;property name="SerializationInfo" isnull="true" iskey="true" /&gt;
+        &lt;property name="TypeName"&gt;DocumentGroup&lt;/property&gt;
+        &lt;property name="ParentName"&gt;Root&lt;/property&gt;
+        &lt;property name="ParentCollectionName" isnull="true" /&gt;
+        &lt;property name="Name"&gt;DocumentHost&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item3" isnull="true" iskey="true"&gt;
+        &lt;property name="SerializableFloatingBounds"&gt;0,0,0,0&lt;/property&gt;
+        &lt;property name="SerializableFloatingOffset"&gt;0,0&lt;/property&gt;
+        &lt;property name="IsActive"&gt;false&lt;/property&gt;
+        &lt;property name="SerializableDockSituation" iskey="true" value="0" /&gt;
+        &lt;property name="SerializationInfo" isnull="true" iskey="true" /&gt;
+        &lt;property name="ShowCloseButton"&gt;true&lt;/property&gt;
+        &lt;property name="TypeName"&gt;DocumentPanel&lt;/property&gt;
+        &lt;property name="ParentName"&gt;DocumentHost&lt;/property&gt;
+        &lt;property name="ParentCollectionName" isnull="true" /&gt;
+        &lt;property name="Name"&gt;_ac608491b1fe4a80870725f3cf263302&lt;/property&gt;
+        &lt;property name="SerializableMDIBounds"&gt;0,0,NaN,NaN&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item4" isnull="true" iskey="true"&gt;
+        &lt;property name="DockType"&gt;Bottom&lt;/property&gt;
+        &lt;property name="SerializableSelectedTabPageIndex"&gt;-1&lt;/property&gt;
+        &lt;property name="SerializableDockSituation" iskey="true" value="0" /&gt;
+        &lt;property name="SerializationInfo" isnull="true" iskey="true" /&gt;
+        &lt;property name="TypeName"&gt;AutoHideGroup&lt;/property&gt;
+        &lt;property name="ParentName" isnull="true" /&gt;
+        &lt;property name="ParentCollectionName"&gt;$AutoHideGroups&lt;/property&gt;
+        &lt;property name="Name"&gt;dockItem1&lt;/property&gt;
+      &lt;/property&gt;
+      &lt;property name="Item5" isnull="true" iskey="true"&gt;
+        &lt;property name="SerializableFloatingBounds"&gt;0,0,0,0&lt;/property&gt;
+        &lt;property name="SerializableFloatingOffset"&gt;0,0&lt;/property&gt;
+        &lt;property name="FloatSize"&gt;715,678&lt;/property&gt;
+        &lt;property name="IsActive"&gt;false&lt;/property&gt;
+        &lt;property name="SerializableDockSituation" iskey="true" value="1"&gt;
+          &lt;property name="Item1" isnull="true" iskey="true"&gt;
+            &lt;property name="DockState"&gt;Docked&lt;/property&gt;
+            &lt;property name="ParentName"&gt;Root&lt;/property&gt;
+            &lt;property name="OwnerName"&gt;_f97dcb8b21044df3b6c5cbb2b8b3b704&lt;/property&gt;
+            &lt;property name="Index"&gt;1&lt;/property&gt;
+          &lt;/property&gt;
+        &lt;/property&gt;
+        &lt;property name="SerializationInfo" isnull="true" iskey="true" /&gt;
+        &lt;property name="ShowCloseButton"&gt;true&lt;/property&gt;
+        &lt;property name="TypeName"&gt;LayoutPanel&lt;/property&gt;
+        &lt;property name="ParentName"&gt;dockItem1&lt;/property&gt;
+        &lt;property name="ParentCollectionName" isnull="true" /&gt;
+        &lt;property name="Name"&gt;_f97dcb8b21044df3b6c5cbb2b8b3b704&lt;/property&gt;
+      &lt;/property&gt;
+    &lt;/property&gt;
+    &lt;property name="ManualClosedPanelsBarVisibility"&gt;false&lt;/property&gt;
+    &lt;property name="RestoreLayoutOptions.FloatPanelsRestoreOffset" OwnerType="DevExpress.Xpf.Docking.RestoreLayoutOptions" DependencyPropertyType="System.Windows.Point"&gt;1,147&lt;/property&gt;
+  &lt;/property&gt;
+&lt;/XtraSerializer&gt;</Value>
+    </value>
+  </KeyValuePairBeginStringAndObjectEnd>
+</SettingsStorage>
