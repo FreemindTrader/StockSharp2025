@@ -861,4 +861,15 @@ public class Order : NotifiableObject, IOrderMessage
 
 		return str;
 	}
+
+    /* -------------------------------------------------------------------------------------------------------------------------------------------
+	* 
+	*  Tony 00: What type of Position to Close 
+	* 
+	* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    /// <summary>
+    /// What type of Position to Close
+    /// </summary>
+    public ClosePositionsType? ClosePositionType { get; set; }
 }
