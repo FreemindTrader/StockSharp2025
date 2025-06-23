@@ -57,4 +57,16 @@
       <_Parameter1>false</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
+    <PropertyGroup>
+        <Version>5.0.306</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company>
+        <BaseOutputPath>T:\00-FreemindEXE</BaseOutputPath>
+        <DebugType>portable</DebugType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    </ItemGroup>
 </Project>
