@@ -27,4 +27,60 @@ public enum OrderPositionEffects
 	[EnumMember]
 	[Display(ResourceType = typeof(LocalizedStrings), Name = LocalizedStrings.CloseOnlyKey, Description = LocalizedStrings.PositionEffectCloseOnlyKey)]
 	CloseOnly,
+
+    /// <summary>
+    /// A trade to hedge All Long Positions.
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.HedgeLongKey, Description = LocalizedStrings.HedgeLongKey)]
+    HedgeLong = 3,
+
+    /// <summary>
+    /// A trade to hedge All Short Positions.
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.HedgeShortKey, Description = LocalizedStrings.HedgeShortKey)]
+    HedgeShort = 4,
+
+    /// <summary>
+    /// A trade to hedge All Positions.
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.HedgeAllKey, Description = LocalizedStrings.HedgeAllKey)]
+    HedgeAll = 5,
+
+    /// <summary>
+    /// A trade to Set Safety Net
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.SetSafetyKey, Description = LocalizedStrings.SetSafetyKey)]
+    SetSafety = 6,
+
+    /// <summary>
+    /// A trade to Set Safety Net
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.SetBreakEvenKey, Description = LocalizedStrings.SetBreakEvenKey)]
+    SetBreakEven = 7,
+
+    /// <summary>
+    /// A trade to Set Take Profit target
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.SetTakeProfitKey, Description = LocalizedStrings.SetTakeProfitKey)]
+    SetTakeProfit = 8,
+
+    /// <summary>
+    /// Hedge or Close existing trades and open trades in opposite direction
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.ReverseDirectionKey, Description = LocalizedStrings.ReverseDirectionKey)]
+    ReverseDirection = 9,
+
+    /// <summary>
+    /// Hedge or Close existing trades and open trades in opposite direction
+    /// </summary>
+    [EnumMember]
+    [Display(ResourceType = typeof( LocalizedStrings ), Name = LocalizedStrings.EscapeWithoutLossKey, Description = LocalizedStrings.EscapeWithoutLossKey)]
+    EscapeWithoutLoss = 10,
 }
