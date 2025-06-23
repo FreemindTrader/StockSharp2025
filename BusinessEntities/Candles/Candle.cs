@@ -353,8 +353,30 @@ public abstract class Candle : Cloneable<Candle>, ICandleMessage
 		destination.SeqNum = SeqNum;
 		destination.BuildFrom = BuildFrom;
 
+        // ----------------------------------------------------- Tony 02 ------------------------------------------------------------
+        destination.BatchStatus = BatchStatus;
+
 		return destination;
 	}
+
+    // ----------------------------------------------------- Tony 02 ------------------------------------------------------------
+    private int _batchStatus;
+    /// <summary>
+    /// Tony 02£ºBatch Status
+    /// </summary>
+    [DataMember]    
+    public int? BatchStatus
+    {
+        get
+        {
+            return _batchStatus;
+        }
+        set
+        {
+            _batchStatus = value.Value;
+        }
+    }
+    // ----------------------------------------------------- Tony 02 ------------------------------------------------------------
 }
 
 /// <summary>
