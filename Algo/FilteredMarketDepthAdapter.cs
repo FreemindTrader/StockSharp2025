@@ -277,9 +277,17 @@ public class FilteredMarketDepthAdapter(IMessageAdapter innerAdapter) : MessageA
 
 					mdMsg = mdMsg.TypedClone();
 					mdMsg.TransactionId = TransactionIdGenerator.GetNextId();
-					mdMsg.DataType2 = DataType.MarketDepth;
+                    /* -------------------------------------------------------------------------------------------------------------------------------------------
+                    * 
+                    *  Tony 03 : If DataType2 was changed to MarketDepth instead of FIlterMarketDepth, the SnapshotRegistry will fail
+                    * 
+                    * ------------------------------------------------------------------------------------------------------------------------------------------- */
+                    // ----------------------------------------------------- Tony ------------------------------------------------------------
+                    //	mdMsg.DataType2 = DataType.MarketDepth;
+                    // ----------------------------------------------------- Tony ------------------------------------------------------------
 
-					var orderStatus = new OrderStatusMessage
+
+                        var orderStatus = new OrderStatusMessage
 					{
 						TransactionId = TransactionIdGenerator.GetNextId(),
 						IsSubscribe = true,

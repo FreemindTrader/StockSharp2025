@@ -88,7 +88,10 @@ public class InMemoryMessageAdapterProvider : IMessageAdapterProvider
 		"StockSharp.Server.Core",
 		"StockSharp.Server.Fix",
 		"StockSharp.Server.Utils",
-	};
+
+		// Tony Fix : Here we also want to ignore the AlgoEx
+		"StockSharp.AlgoEx"
+    };
 	
 	private IEnumerable<Type> GetAdapters()
 	{
@@ -116,9 +119,11 @@ public class InMemoryMessageAdapterProvider : IMessageAdapterProvider
 
 				try
 				{
-					var asm = Assembly.Load(AssemblyName.GetAssemblyName(assembly));
+                    // Tony FIX: Instead of loading from name, we directly load from the assembly path
 
-					adapters.AddRange(asm.FindImplementations<IMessageAdapter>(extraFilter: t => !t.Name.EndsWith("Dialect")));
+                    var asm = Assembly.LoadFrom(assembly);
+
+                    adapters.AddRange(asm.FindImplementations<IMessageAdapter>(extraFilter: t => !t.Name.EndsWith("Dialect")));                    
 				}
 				catch (Exception e)
 				{
