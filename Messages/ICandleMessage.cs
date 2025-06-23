@@ -131,6 +131,12 @@ public interface ICandleMessage :
 	/// Type of argument.
 	/// </summary>
 	Type ArgType { get; }
+
+
+    /// <summary>
+    /// Tony 01： Batch Status of the candle, is it one candle or download whole bunch of candles from the data storage
+    /// </summary>
+    int? BatchStatus { get; set; }
 }
 
 /// <summary>
