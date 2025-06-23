@@ -136,7 +136,46 @@ public interface ICandleMessage :
     /// <summary>
     /// Tony 01： Batch Status of the candle, is it one candle or download whole bunch of candles from the data storage
     /// </summary>
-    int? BatchStatus { get; set; }
+    fxBatchStatus? BatchStatus { get; set; }
+}
+
+
+/// <summary>
+/// Tony 01： Batch Status of the candle, is it one candle or download whole bunch of candles from the data storage
+/// </summary>
+[DataContract]
+[Serializable]
+public enum fxBatchStatus : byte
+{
+    /// <summary>
+    /// Single Message
+    /// </summary>
+    [EnumMember]
+    FromStorage,
+
+    /// <summary>
+    /// Message Batching Begin
+    /// </summary>
+    [EnumMember]
+    BeginBatch,
+
+    /// <summary>
+    /// Still Batching
+    /// </summary>
+    [EnumMember]
+    Batching,
+
+    /// <summary>
+    /// End of current Message Batch
+    /// </summary>
+    [EnumMember]
+    EndBatch,
+
+    /// <summary>
+    /// End of current Message Batch
+    /// </summary>
+    [EnumMember]
+    Latest,
 }
 
 /// <summary>

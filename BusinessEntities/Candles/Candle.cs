@@ -360,12 +360,12 @@ public abstract class Candle : Cloneable<Candle>, ICandleMessage
 	}
 
     // ----------------------------------------------------- Tony 02 ------------------------------------------------------------
-    private int _batchStatus;
+    private fxBatchStatus _batchStatus;
     /// <summary>
     /// Tony 02£ºBatch Status
     /// </summary>
     [DataMember]    
-    public int? BatchStatus
+    public fxBatchStatus? BatchStatus
     {
         get
         {

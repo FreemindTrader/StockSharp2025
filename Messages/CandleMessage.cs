@@ -355,7 +355,7 @@ public abstract class CandleMessage(MessageTypes type) : Message(type), ISubscri
     /// <summary>
     /// Tony 01£º Batch Status of the candle, is it one candle or download whole bunch of candles from the data storage
     /// </summary>
-    public int? BatchStatus
+    public fxBatchStatus? BatchStatus
     {
         get;
         set;
