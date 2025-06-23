@@ -323,7 +323,15 @@ public abstract class CandleMessage(MessageTypes type) : Message(type), ISubscri
 		copy.BuildFrom = BuildFrom;
 		copy.SeqNum = SeqNum;
 
-		return copy;
+        /* -------------------------------------------------------------------------------------------------------------------------------------------
+        * 
+        *  Tony 01: BatchStatus
+        * 
+        * ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        copy.BatchStatus = BatchStatus;
+
+        return copy;
 	}
 
 	/// <inheritdoc />
@@ -342,6 +350,16 @@ public abstract class CandleMessage(MessageTypes type) : Message(type), ISubscri
 		get => OpenTime;
 		set => OpenTime = value;
 	}
+
+
+    /// <summary>
+    /// Tony 01£º Batch Status of the candle, is it one candle or download whole bunch of candles from the data storage
+    /// </summary>
+    public int? BatchStatus
+    {
+        get;
+        set;
+    }
 }
 
 /// <summary>
