@@ -150,6 +150,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00FreemindBase", "00Freemin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_fxBase", "00Components\00FreemindBase\00_fxBase\00_fxBase.csproj", "{89D8495D-A718-4445-80B2-99C6FF97218B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_fxConfiguration", "00Components\00FreemindBase\00_fxConfiguration\00_fxConfiguration.csproj", "{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -396,6 +398,10 @@ Global
 		{89D8495D-A718-4445-80B2-99C6FF97218B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89D8495D-A718-4445-80B2-99C6FF97218B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89D8495D-A718-4445-80B2-99C6FF97218B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -454,6 +460,7 @@ Global
 		{BA8ACDEB-5A53-40F6-A462-03477517F20C} = {F61BC84B-4D73-4F77-975A-DB92638363EA}
 		{05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{89D8495D-A718-4445-80B2-99C6FF97218B} = {05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125}
+		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3} = {05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
