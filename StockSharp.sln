@@ -152,6 +152,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_fxBase", "00Components\0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_fxConfiguration", "00Components\00FreemindBase\00_fxConfiguration\00_fxConfiguration.csproj", "{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_fxDisruptor", "00Components\00FreemindBase\10_fxDisruptor\10_fxDisruptor.csproj", "{0DA766EE-26D1-404D-8152-AA85CB0A5076}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -402,6 +404,10 @@ Global
 		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA766EE-26D1-404D-8152-AA85CB0A5076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA766EE-26D1-404D-8152-AA85CB0A5076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA766EE-26D1-404D-8152-AA85CB0A5076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA766EE-26D1-404D-8152-AA85CB0A5076}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -461,6 +467,7 @@ Global
 		{05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{89D8495D-A718-4445-80B2-99C6FF97218B} = {05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125}
 		{C0C2BAB6-613A-40C2-93D4-EFB1256BE4F3} = {05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125}
+		{0DA766EE-26D1-404D-8152-AA85CB0A5076} = {05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
