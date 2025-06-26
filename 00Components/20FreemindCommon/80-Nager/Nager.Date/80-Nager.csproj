@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>Tino Hager</Authors>
+    <Company>nager.at</Company>
+    <Description>Calculate Public Holidays / Federal Holidays for a given year, translation native and english. Country and County support. Supports more than 100 countries</Description>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <LangVersion>12.0</LangVersion>
+    <IncludeSymbols>true</IncludeSymbols>
+
+    <Nullable>enable</Nullable>
+
+    <PackageIcon>calendar.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    
+    <PackageReleaseNotes>A changelog is available at https://github.com/nager/Nager.Date/releases</PackageReleaseNotes>
+    <PackageProjectUrl>https://date.nager.at</PackageProjectUrl>
+    <PackageTags>Holiday Public-Holiday PublicHoliday Bank-Holiday BankHoliday FederalHoliday NationalHoliday</PackageTags>
+
+    <RepositoryUrl>https://github.com/nager/Nager.Date</RepositoryUrl>
+
+    <TargetFrameworks>net472;netstandard2.0;net6.0;net8.0</TargetFrameworks>
+
+    <!-- Version is automatically replaced by build process -->
+    <Version>2.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="readme.txt" Pack="true" PackagePath="\" />
+    <None Include="..\..\doc\Icons\calendar.png" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- This makes it possible for the architecture tests themselves to be performed internally.  -->
+    <InternalsVisibleTo Include="Nager.Date.ArchitectureTest" />
+    <InternalsVisibleTo Include="Nager.Date.UnitTest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nager.LicenseSystem" Version="1.1.0" />
+  </ItemGroup>
+
+</Project>
