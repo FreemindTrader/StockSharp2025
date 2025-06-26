@@ -18,7 +18,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>5.0.305</Version>
+        <Version>5.0.306</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company><BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath><DebugType>portable</DebugType>
     </PropertyGroup>
