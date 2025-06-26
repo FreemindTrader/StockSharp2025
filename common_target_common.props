@@ -61,7 +61,7 @@
         <Version>5.0.306</Version>
         <Authors>TonyFreemind</Authors>
         <Company>FreemindFx</Company>
-        <BaseOutputPath>T:\00-FreemindEXE</BaseOutputPath>
+        <BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
         <DebugType>portable</DebugType>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
