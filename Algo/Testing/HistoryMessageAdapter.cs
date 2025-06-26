@@ -647,7 +647,7 @@ public class HistoryMessageAdapter : MessageAdapter
 
 			if (msg.LocalTime < fromTime)
 			{
-				// не пропускаем только стаканы, тики и ОЛ
+				// не пропускаем только стакан? тики ?ОЛ
 				if (msg.Type is MessageTypes.QuoteChange or MessageTypes.Execution)
 					continue;
 			}
