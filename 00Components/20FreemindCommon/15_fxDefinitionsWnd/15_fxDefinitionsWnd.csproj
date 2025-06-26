@@ -1,22 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
-        <RootNamespace>fx.Definitions</RootNamespace>
-        <AssemblyName>fx.Definitions</AssemblyName>
-        <PackageId>fx.Definitions</PackageId>
+        <RootNamespace>fx.DefintionsWnd</RootNamespace>
+        <AssemblyName>fx.DefintionsWnd</AssemblyName>
+        <PackageId>fx.DefintionsWnd</PackageId>
     </PropertyGroup>
-    
+
     <PropertyGroup>
-        <ProjectGuid>{63356FB4-1909-43EE-96CA-EAA32817EDAA}</ProjectGuid>
+        <ProjectGuid>{387378DC-8A5D-4578-80FB-478A722D909B}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFrameworks>net6.0-windows</TargetFrameworks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+        <NoWarn>CS1711;CS1712;CS1584;CS1658;CS1591;CS8600;CS8602;CS8603;CS8604;CS8625</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup>
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -29,15 +33,11 @@
       <PackageReference Include="fx.Collections" Version="5.0.306" />
     </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
-    <ProjectReference Include="..\..\..\BusinessEntities\BusinessEntities.csproj" />
-    <ProjectReference Include="..\..\..\Configuration\Configuration.csproj" />
-    <ProjectReference Include="..\..\..\Localization\Localization.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\10_fxDefinitions\10_fxDefinitions.csproj" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-  </ItemGroup>
-  
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    </ItemGroup>  
 </Project>

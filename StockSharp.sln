@@ -170,6 +170,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_fxAlgoEx", "00Components
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_fxDefinitions", "00Components\20FreemindCommon\10_fxDefinitions\10_fxDefinitions.csproj", "{63356FB4-1909-43EE-96CA-EAA32817EDAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_fxDefinitionsWnd", "00Components\20FreemindCommon\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj", "{387378DC-8A5D-4578-80FB-478A722D909B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -452,6 +454,10 @@ Global
 		{63356FB4-1909-43EE-96CA-EAA32817EDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63356FB4-1909-43EE-96CA-EAA32817EDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63356FB4-1909-43EE-96CA-EAA32817EDAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387378DC-8A5D-4578-80FB-478A722D909B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387378DC-8A5D-4578-80FB-478A722D909B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387378DC-8A5D-4578-80FB-478A722D909B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387378DC-8A5D-4578-80FB-478A722D909B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -520,6 +526,7 @@ Global
 		{CB6BF31B-B214-445E-96FE-F63F6BBD4D48} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{B631A32D-1843-4D9D-8B45-597D982C10C7} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{63356FB4-1909-43EE-96CA-EAA32817EDAA} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
+		{387378DC-8A5D-4578-80FB-478A722D909B} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
