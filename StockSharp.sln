@@ -190,6 +190,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "56_fxIndicators", "00Compon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "62_fxCharting", "00Components\20FreemindCommon\62_fxCharting\62_fxCharting.csproj", "{B75234BA-4DDE-4552-9696-90EA2CFE8FA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "70_fxStrategies", "00Components\20FreemindCommon\70_fxStrategies\70_fxStrategies.csproj", "{52FA664A-44D1-41EB-A145-B20330DD049F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -512,6 +514,10 @@ Global
 		{B75234BA-4DDE-4552-9696-90EA2CFE8FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B75234BA-4DDE-4552-9696-90EA2CFE8FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B75234BA-4DDE-4552-9696-90EA2CFE8FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52FA664A-44D1-41EB-A145-B20330DD049F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52FA664A-44D1-41EB-A145-B20330DD049F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52FA664A-44D1-41EB-A145-B20330DD049F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52FA664A-44D1-41EB-A145-B20330DD049F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -590,6 +596,7 @@ Global
 		{356B8531-598E-43B1-BBF1-F6EC5CFB99D8} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{B75234BA-4DDE-4552-9696-90EA2CFE8FA2} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
+		{52FA664A-44D1-41EB-A145-B20330DD049F} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
