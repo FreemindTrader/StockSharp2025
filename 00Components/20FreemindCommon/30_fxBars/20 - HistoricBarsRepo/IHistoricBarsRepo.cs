@@ -3,6 +3,7 @@ using fx.Common;
 using fx.Definitions;
 using StockSharp.Algo.Candles;
 using StockSharp.BusinessEntities;
+using StockSharp.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,11 +71,11 @@ namespace fx.Bars
             get;
         }
 
-        int ReloadAllCandles( Security security, List<Candle> candles, TimeSpan period, int waveScenarioNo );
+        int ReloadAllCandles( Security security, List<TimeFrameCandleMessage> candles, TimeSpan period, int waveScenarioNo );
 
-        ref SBar AddSingleCandle( Candle candle );
+        ref SBar AddSingleCandle( TimeFrameCandleMessage candle );
 
-        (uint, uint) AddReplaceCandlesRange( Security security, List<Candle> candles, TimeSpan period, int waveScenarioNo, bool restoreWave = false );
+        (uint, uint) AddReplaceCandlesRange(Security security, List<TimeFrameCandleMessage> candles, TimeSpan period, int waveScenarioNo, bool restoreWave = false );
 
         int TotalBarCount
         {
@@ -280,6 +281,6 @@ namespace fx.Bars
         int GetIndexBreakDown( long lowerBound, long upperBound, double breakLevel );
         int GetIndexBreakUp( long lowerBound, long upperBound, double breakLevel );
 
-        void CreateDataBarCacheFriendlyStorage( Security security, TimeSpan period, DateTime beginDate, DateTime endDate );
+        void CreateDataBarCacheFriendlyStorage( SecurityId security, TimeSpan period, DateTime beginDate, DateTime endDate );
     }
 }

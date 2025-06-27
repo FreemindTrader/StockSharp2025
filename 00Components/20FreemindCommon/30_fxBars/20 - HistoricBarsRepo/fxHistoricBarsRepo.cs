@@ -15,6 +15,7 @@ using System.Diagnostics;
 using StockSharp.Algo;
 using Ecng.Configuration;
 using Ecng.Logging;
+using StockSharp.Messages;
 
 #pragma warning disable 168
 
@@ -275,7 +276,7 @@ namespace fx.Bars
             return confirmedBarTime + period;
         }
 
-        public ref SBar AddSingleCandle( Candle candle )
+        public ref SBar AddSingleCandle(TimeFrameCandleMessage candle )
         {
             DataBarUpdateType updateType = DataBarUpdateType.CurrentBarUpdate;            
 
@@ -284,8 +285,9 @@ namespace fx.Bars
                 _lastActiveBarTime = _lastConfirmedBarTime;
             }
 
+            
             var newBarTime      = candle.OpenTime.UtcDateTime;
-            var barPeriod       = (TimeSpan) candle.Arg;
+            var barPeriod       = (TimeSpan) candle.TimeFrame;
 
             var currentBarIndex = _barList.Count - 1;
             var currentBarTime  = currentBarIndex > 0 ? _barList.LastBarTime : newBarTime;
@@ -346,7 +348,7 @@ namespace fx.Bars
             return ref _barList[ _barList.Count - 1 ];                        
         }
 
-        public ( uint, uint ) AddReplaceCandlesRange( Security security, List< Candle > candles, TimeSpan period, int waveScenarioNo, bool restoreWave = false )
+        public ( uint, uint ) AddReplaceCandlesRange( Security security, List<TimeFrameCandleMessage> candles, TimeSpan period, int waveScenarioNo, bool restoreWave = false )
         {
             if ( _barList == null )
             {
@@ -376,7 +378,7 @@ namespace fx.Bars
             return range;
         }
 
-        public int ReloadAllCandles( Security security, List< Candle > candles, TimeSpan period, int waveScenarioNo )
+        public int ReloadAllCandles( Security security, List<TimeFrameCandleMessage> candles, TimeSpan period, int waveScenarioNo )
         {            
             var updateType = DataBarUpdateType.Initial;            
             
@@ -406,7 +408,7 @@ namespace fx.Bars
 
                 var waveDates = _hews.GetWaveDatesList( period );
                                 
-                _barList = new SBarList( security, period, candles, waveDates );
+                _barList = new SBarList( security.ToSecurityId(), period, candles, waveDates );
 
                 _barList.CopyCandlesSetSession( candles );
 
@@ -431,7 +433,7 @@ namespace fx.Bars
             return (int) _barList.LastBarIndex;
         }
 
-        public int ReloadAllCandlesNoWaves( Security security, List<Candle> candles, TimeSpan period, int waveScenarioNo )
+        public int ReloadAllCandlesNoWaves( Security security, List<TimeFrameCandleMessage> candles, TimeSpan period, int waveScenarioNo )
         {
             //_noNeedToShowUI = true;
 
@@ -457,7 +459,7 @@ namespace fx.Bars
 
             if ( candles.Count > 0 )
             { 
-                _barList = new SBarList( security, period, candles, null );
+                _barList = new SBarList( security.ToSecurityId(), period, candles, null );
 
                 _barList.CopyCandlesSetSession( candles );
 
@@ -493,14 +495,14 @@ namespace fx.Bars
                      
         }
 
-        public void CreateDataBarCacheFriendlyStorage( Security security, TimeSpan period, int miniBarCount )
+        public void CreateDataBarCacheFriendlyStorage( SecurityId secId, TimeSpan period, int miniBarCount )
         {
             _databarCacheSize = FinancialHelper.CalculateStorageSize( period, miniBarCount );
 
-            _barList = new SBarList( security, period, _databarCacheSize );
+            _barList = new SBarList(secId, period, _databarCacheSize );
         }
 
-        public void CreateDataBarCacheFriendlyStorage( Security security, TimeSpan period, DateTime beginDate, DateTime endDate )
+        public void CreateDataBarCacheFriendlyStorage( SecurityId security, TimeSpan period, DateTime beginDate, DateTime endDate )
         {
             var dateDiff      = endDate - beginDate;
 

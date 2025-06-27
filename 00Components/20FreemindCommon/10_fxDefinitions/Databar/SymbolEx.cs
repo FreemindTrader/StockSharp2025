@@ -77,7 +77,7 @@ namespace fx.Definitions
     {
         private uint _symbolBit;
 
-        public SymbolEx( Security security, SecurityTypes secType, TimeSpan period )
+        public SymbolEx( SecurityId security, SecurityTypes secType, TimeSpan period )
         {
             _symbolBit  = 0;
             var offerId = GetOfferId( security );
@@ -221,9 +221,9 @@ namespace fx.Definitions
 
         
 
-        public static int GetOfferId( Security instrument )
+        public static int GetOfferId(SecurityId instrumentId )
         {
-            var id = instrument.ToSecurityId( );
+            var id = instrumentId;
 
             var storage = ServicesRegistry.NativeIdStorage;
 

@@ -12,7 +12,7 @@
         <TargetFrameworks>netstandard2.0</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
-        <LangVersion>8.0</LangVersion>
+        <LangVersion>12.0</LangVersion>
         <NoWarn>CS1711;CS1712;CS1584;CS1658;CS1591;CS8600;CS8602;CS8603;CS8604;CS8625</NoWarn>
     </PropertyGroup>
 

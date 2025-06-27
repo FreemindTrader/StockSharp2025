@@ -10,7 +10,7 @@
         <ProjectGuid>{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
         <TargetFrameworks>net6.0-windows</TargetFrameworks>
-        <LangVersion>8.0</LangVersion>
+        <LangVersion>12.0</LangVersion>
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 

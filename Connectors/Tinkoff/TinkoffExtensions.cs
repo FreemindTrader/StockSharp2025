@@ -67,8 +67,8 @@ static class TinkoffExtensions
 	{
 		{ TimeSpan.FromMinutes(1), SubscriptionInterval.OneMinute },
 
-		// нормально поддерживаются с историей только минутки,
-		// поэтому внешний код старшие ТФ будет строить из минуток
+		// нормальн?поддерживают? ?историей только минутк?
+		// поэтом?внешни?ко?старши?ТФ буде?строит?из минуто?
 		//
 		//{ TimeSpan.FromMinutes(2), SubscriptionInterval._2Min },
 		//{ TimeSpan.FromMinutes(3), SubscriptionInterval._3Min },
@@ -85,8 +85,8 @@ static class TinkoffExtensions
 	{
 		{ TimeSpan.FromMinutes(1), CandleInterval._1Min },
 
-		// нормально поддерживаются с историей только минутки,
-		// поэтому внешний код старшие ТФ будет строить из минуток
+		// нормальн?поддерживают? ?историей только минутк?
+		// поэтом?внешни?ко?старши?ТФ буде?строит?из минуто?
 		//
 		//{ TimeSpan.FromMinutes(2), CandleInterval._2Min },
 		//{ TimeSpan.FromMinutes(3), CandleInterval._3Min },

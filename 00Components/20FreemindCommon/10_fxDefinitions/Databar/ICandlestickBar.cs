@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using StockSharp.Algo.Candles;
+using StockSharp.Messages;
 
 namespace fx.Definitions
 {    
@@ -24,7 +25,7 @@ namespace fx.Definitions
 
     public interface ICandlestickBar : ICandleBar
     {
-        Candle BarCandle { get;  }
+        TimeFrameCandleMessage BarCandle { get;  }
         bool   IsDojiCandle { get; }
         bool   IsBlackCandle                        { get; }
         bool   IsWhiteCandle                        { get; }

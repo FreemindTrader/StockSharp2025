@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using StockSharp.Messages;
+using StockSharp.Algo.Candles;
 
 namespace fx.Definitions
 {
@@ -13,9 +14,17 @@ namespace fx.Definitions
         public static DictionarySlim<string, string > _offerIdSymbol  = new DictionarySlim<string, string>( 24 );
         public static DictionarySlim<string, int >    _symbol2OfferId = new DictionarySlim<string, int>( 24 );
 
-        public static SymbolEx ToSymbolEx( Security sec, TimeSpan period )
+        public static SymbolEx ToSymbolEx( SecurityId secId, TimeSpan period )
         {
-            return new SymbolEx( sec, sec.Type.Value, period );
+            var secProvider = ServicesRegistry.TrySecurityProvider;
+
+            if (secProvider is null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var security = secProvider.LookupById(secId);
+            return new SymbolEx(secId, security.Type.Value, period);
         }
 
         public static int GetOfferId( Security instrument )

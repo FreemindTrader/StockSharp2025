@@ -1,4 +1,5 @@
 ﻿using StockSharp.Algo.Candles;
+using StockSharp.BusinessEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace fx.Common
 {
     public class LongDownloadTaskInfo
     {
-        public LongDownloadTaskInfo( CandleSeries candleSeries, DateTimeOffset? from, DateTimeOffset? to, int priority )
+        public LongDownloadTaskInfo(Subscription candleSeries, DateTimeOffset? from, DateTimeOffset? to, int priority )
         {
             CandleSeries = candleSeries;
             From         = from;
@@ -28,7 +29,7 @@ namespace fx.Common
 
         public int Priority { get; set; }
 
-        public CandleSeries CandleSeries
+        public Subscription CandleSeries
         {
             get; set;
         }
