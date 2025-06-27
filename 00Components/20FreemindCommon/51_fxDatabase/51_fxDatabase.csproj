@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\fx.packages.props" />
+    <PropertyGroup>
+        <RootNamespace>fx.Database</RootNamespace>
+        <AssemblyName>fx.Database</AssemblyName>
+        <PackageId>fx.Database</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{CF631F3F-41A7-49B4-B9AB-A333B4AA9D82}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net6.0-windows7</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.305</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.10" />
+        <PackageReference Include="EntityFramework" Version="6.5.1" />
+        <PackageReference Include="fx.Collections" Version="5.0.306" />
+        <PackageReference Include="fx.Definitions" Version="5.0.306" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\00FreemindBase\Ecng.Data\Ecng.Data.csproj" />
+      <ProjectReference Include="..\30_fxBars\30_fxBars.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    </ItemGroup>    
+</Project>
+
+
