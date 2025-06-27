@@ -2,8 +2,10 @@
 using fx.Collections;
 using fx.Definitions;
 using fx.TimePeriod;
+using StockSharp.Algo;
 using StockSharp.Algo.Candles;
 using StockSharp.BusinessEntities;
+using StockSharp.Messages;
 using System;
 using System.Buffers;
 using System.Collections;
@@ -106,21 +108,26 @@ namespace fx.Bars
             SetBarSessionFunction(symbol, symbol.Period);
         }
 
-        public SBarList(Security security, TimeSpan period, int capacity)
+        public SBarList(SecurityId secId, TimeSpan period, int capacity)
         {
-            _security = security;
-            _period = period;
+            var secProvider = ServicesRegistry.TrySecurityProvider;
 
-            CreateStorage(capacity);
+            if (secProvider is not null)
+            {
+                _security = secProvider.LookupById(secId);
+                _period = period;
 
-            _symbol = new SymbolEx(security, security.Type.Value, period);
+                CreateStorage(capacity);
 
-            // Here I am going to pre-allocate the SBarEx
-            _firstNode.PreAllocate(this, _symbol, 0);
+                _symbol = new SymbolEx(secId, _security.Type.Value, period);
 
-            CreateWaveStorage(DefaultWaveCount);
+                // Here I am going to pre-allocate the SBarEx
+                _firstNode.PreAllocate(this, _symbol, 0);
 
-            SetBarSessionFunction(security, period);
+                CreateWaveStorage(DefaultWaveCount);
+
+                SetBarSessionFunction(_security, period);
+            }
         }
 
 
@@ -130,41 +137,49 @@ namespace fx.Bars
         /// <param name="security"></param>
         /// <param name="period"></param>
         /// <param name="capacity"></param>        
-        public SBarList( Security security, TimeSpan period, IList<Candle> candles, List<long> wavesTimeList )
+        public SBarList(SecurityId secId, TimeSpan period, IList<TimeFrameCandleMessage> candles, List<long> wavesTimeList )
         {
-            _security = security;
-            _period   = period;
-            _symbol   = new SymbolEx( _security, _security.Type.Value, period );
+            var secProvider = ServicesRegistry.TrySecurityProvider;
 
-            _cacheTimePeriodToIndex = new TimePeriodCollectionEx( candles.Count );
-
-            if ( _period < TimeSpan.FromDays( 1 ) )
+            if (secProvider is not null)
             {
-                _isNotDailyBar = true;
+                _security = secProvider.LookupById(secId);
+
+                _period = period;
+                _symbol = new SymbolEx(secId, _security.Type.Value, period);
+
+                _cacheTimePeriodToIndex = new TimePeriodCollectionEx(candles.Count);
+
+                if (_period < TimeSpan.FromDays(1))
+                {
+                    _isNotDailyBar = true;
+                }
+
+                var capacity = candles.Count;
+
+                if (capacity < 0)
+                    ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument.capacity, ExceptionResource.ArgumentOutOfRange_NeedNonNegNum);
+
+                CreateStorage(capacity);
+
+
+
+                _symbol = new SymbolEx(secId, _security.Type.Value, period);
+
+                // Here I am going to pre-allocate the SBarEx
+                _firstNode.PreAllocate(this, _symbol, 0);
+
+                if (wavesTimeList == null || wavesTimeList.Count == 0)
+                {
+                    CreateWaveStorage(DefaultWaveCount);
+                }
+                else
+                {
+                    CreateWaveStorage(wavesTimeList.Count);
+                }
+
+                SetBarSessionFunction(_security, period);
             }
-
-            var capacity = candles.Count;
-
-            if ( capacity < 0 )
-                ThrowHelper.ThrowArgumentOutOfRangeException( ExceptionArgument.capacity, ExceptionResource.ArgumentOutOfRange_NeedNonNegNum );
-
-            CreateStorage( capacity );
-
-            _symbol = new SymbolEx( security, security.Type.Value, period );
-
-            // Here I am going to pre-allocate the SBarEx
-            _firstNode.PreAllocate( this, _symbol, 0 );
-
-            if ( wavesTimeList == null || wavesTimeList.Count == 0 )
-            {
-                CreateWaveStorage( DefaultWaveCount );
-            }
-            else
-            {
-                CreateWaveStorage( wavesTimeList.Count );
-            }
-
-            SetBarSessionFunction( security, period );
         }
 
         public void SetBarSessionFunction(SymbolEx security, TimeSpan period )
@@ -515,7 +530,7 @@ namespace fx.Bars
         public uint LastBarIndex => ( uint ) _barCount.Value - 1;
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public ref SBar UpdateLastCandle( Candle candle )
+        public ref SBar UpdateLastCandle(ICandleMessage candle )
         {
             int size = _barCount.Value;
 
@@ -531,7 +546,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public void CopyCandlesSetSession( IList<Candle> candles )
+        public void CopyCandlesSetSession( IList<TimeFrameCandleMessage> candles )
         {
             DateTime lastBarTime = DateTime.MinValue;
 
@@ -551,7 +566,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public (uint, uint) AddReplaceCandles( List<Candle> candles )
+        public (uint, uint) AddReplaceCandles( List<TimeFrameCandleMessage> candles )
         {
             var candleCount = candles.Count;
 
@@ -568,7 +583,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public (uint, uint) AddCandlesWithExpansion( List<Candle> candles )
+        public (uint, uint) AddCandlesWithExpansion( List<TimeFrameCandleMessage> candles )
         {
             DateTime lastBarTime = LastBarTime;
 
@@ -639,7 +654,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public (uint, uint) AddCandlesReturnRange( List<Candle> candles )
+        public (uint, uint) AddCandlesReturnRange( List<TimeFrameCandleMessage> candles )
         {
             DateTime lastBarTime = LastBarTime;
 
@@ -721,7 +736,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public void AddCandlesNoBoundCheck( List<Candle> candles )
+        public void AddCandlesNoBoundCheck( List<ICandleMessage> candles )
         {
             DateTime lastBarTime = LastBarTime;            
 
@@ -1083,7 +1098,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public ref SBar AddSingleCandleNoBoundCheck( Candle candle )
+        public ref SBar AddSingleCandleNoBoundCheck(ICandleMessage candle )
         {
             var lastBarTime = LastBarTime;
             var barTime     = candle.OpenTime.UtcDateTime;
@@ -1140,7 +1155,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public ref SBar AddCandleToExpanded( Candle candle )
+        public ref SBar AddCandleToExpanded(ICandleMessage candle )
         {
             var lastBarTime = LastBarTime;
             var barTime     = candle.OpenTime.UtcDateTime;
@@ -1206,7 +1221,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public ref SBar AddCandle( Candle candle )
+        public ref SBar AddCandle( TimeFrameCandleMessage candle )
         {
             if ( _barCountInActualArray.Value == _barArray.Length )
             {
@@ -1221,14 +1236,21 @@ namespace fx.Bars
                     addedSize = maxSize;
                 }
 
-                var newNode           = new sBarNode( addedSize );
-                _symbol               = new SymbolEx( candle.Security, candle.Security.Type.Value, (TimeSpan) candle.Arg );
-                newNode.PreAllocate( this, _symbol, _barCount.Value );
+                var secProvider = ServicesRegistry.TrySecurityProvider;
 
-                _actualNode._nextNode = newNode;
-                _actualNode           = newNode;
-                _barArray             = newNode._sBarArray;
-                _barCountInActualArray.SetValueVolatile( 0 );
+                if (secProvider is not null)
+                {
+                    var security = secProvider.LookupById(candle.SecurityId);
+
+                    var newNode = new sBarNode(addedSize);
+                    _symbol = new SymbolEx(candle.SecurityId, security.Type.Value, (TimeSpan)candle.Arg);
+                    newNode.PreAllocate(this, _symbol, _barCount.Value);
+
+                    _actualNode._nextNode = newNode;
+                    _actualNode = newNode;
+                    _barArray = newNode._sBarArray;
+                    _barCountInActualArray.SetValueVolatile(0);
+                }
             }
 
             return ref AddSingleCandleNoBoundCheck( candle );            

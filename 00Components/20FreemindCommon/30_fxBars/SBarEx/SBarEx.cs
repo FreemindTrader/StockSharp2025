@@ -158,7 +158,7 @@ namespace fx.Bars
         }
 
 
-        public SBar( int i, Candle candle, AdvBarInfo advBarInfo )
+        public SBar( int i, ICandleMessage candle, AdvBarInfo advBarInfo )
         {
             _parent = null;
 
@@ -181,7 +181,7 @@ namespace fx.Bars
         }
 
 
-        public SBar( Candle candle )
+        public SBar(ICandleMessage candle )
         {
             _parent         = null;
             PropertyChanged = null;
@@ -255,7 +255,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public void Update( Candle candle )
+        public void Update(ICandleMessage candle )
         {
             _high   = ( float ) candle.HighPrice;
             _low    = ( float ) candle.LowPrice;
@@ -265,7 +265,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public void CopyFrom( Candle candle )
+        public void CopyFrom(ICandleMessage candle )
         {
             LinuxTime      = candle.OpenTime.UtcDateTime.ToLinuxTime();
 
@@ -287,7 +287,7 @@ namespace fx.Bars
         }
 
         [MethodImpl( MethodImplOptions.AggressiveInlining )]
-        public void CopyFrom( int barIndex, Candle candle, AdvBarInfo info )
+        public void CopyFrom( int barIndex, ICandleMessage candle, AdvBarInfo info )
         {
             LinuxTime = candle.OpenTime.UtcDateTime.ToLinuxTime();
 

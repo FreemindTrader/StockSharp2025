@@ -1,5 +1,6 @@
 ﻿using fx.Definitions;
 using StockSharp.BusinessEntities;
+using StockSharp.Messages;
 using System;
 using System.Collections.Generic;
 using System.Text;
