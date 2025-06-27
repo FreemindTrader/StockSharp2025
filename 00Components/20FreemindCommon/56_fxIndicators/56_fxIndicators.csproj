@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
-        <RootNamespace>fx.Algorithm</RootNamespace>
-        <AssemblyName>fx.Algorithm</AssemblyName>
-        <PackageId>fx.Algorithm</PackageId>
+        <RootNamespace>fx.Indicators</RootNamespace>
+        <AssemblyName>fx.Indicators</AssemblyName>
+        <PackageId>fx.Indicators</PackageId>
     </PropertyGroup>
 
     <PropertyGroup>
-        <ProjectGuid>{356B8531-598E-43B1-BBF1-F6EC5CFB99D8}</ProjectGuid>
+        <ProjectGuid>{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
-        <TargetFramework>net6.0-windows7</TargetFramework>
+        <TargetFrameworks>net6.0-windows7</TargetFrameworks>
         <LangVersion>12.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+        <NoWarn>CA1416</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -28,17 +28,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.10" />
-        <PackageReference Include="EntityFramework" Version="6.5.1" />
-        <PackageReference Include="fx.AlgoEx" Version="5.0.306" />
-        <PackageReference Include="fx.Collections" Version="5.0.306" />
-        <PackageReference Include="StockSharp.Xaml" Version="5.0.230" />
+      <PackageReference Include="fx.Collections" Version="5.0.306" />
+      <PackageReference Include="fx.TimePeriod" Version="5.0.306" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\15_fxDefinitionsWnd\15_fxDefinitionsWnd.csproj" />
-      <ProjectReference Include="..\30_fxTALib\30_fxTALib.csproj" />
-      <ProjectReference Include="..\51_fxDatabase\51_fxDatabase.csproj" />
+      <ProjectReference Include="..\54_fxAlgorithm\54_fxAlgorithm.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Reference Include="SciChart.Charting">
@@ -49,4 +44,3 @@
       <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     </ItemGroup>
 </Project>
-

@@ -186,6 +186,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "51_fxDatabase", "00Componen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54_fxAlgorithm", "00Components\20FreemindCommon\54_fxAlgorithm\54_fxAlgorithm.csproj", "{356B8531-598E-43B1-BBF1-F6EC5CFB99D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "56_fxIndicators", "00Components\20FreemindCommon\56_fxIndicators\56_fxIndicators.csproj", "{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -500,6 +502,10 @@ Global
 		{356B8531-598E-43B1-BBF1-F6EC5CFB99D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{356B8531-598E-43B1-BBF1-F6EC5CFB99D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{356B8531-598E-43B1-BBF1-F6EC5CFB99D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -576,6 +582,7 @@ Global
 		{2CE27AFD-9221-420F-B3FA-D9DD151D83ED} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{CF631F3F-41A7-49B4-B9AB-A333B4AA9D82} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{356B8531-598E-43B1-BBF1-F6EC5CFB99D8} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
+		{D38DF8E8-C0B7-4280-A6BE-12F90205A0CA} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
