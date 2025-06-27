@@ -180,6 +180,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25_fxCommonWnd", "00Compone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "30_fxBars", "00Components\20FreemindCommon\30_fxBars\30_fxBars.csproj", "{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "30_fxTALib", "00Components\20FreemindCommon\30_fxTALib\30_fxTALib.csproj", "{2CE27AFD-9221-420F-B3FA-D9DD151D83ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -482,6 +484,10 @@ Global
 		{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE27AFD-9221-420F-B3FA-D9DD151D83ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE27AFD-9221-420F-B3FA-D9DD151D83ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE27AFD-9221-420F-B3FA-D9DD151D83ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE27AFD-9221-420F-B3FA-D9DD151D83ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -555,6 +561,7 @@ Global
 		{0FBDFA07-0BF7-B4A6-FF32-8818983ABBA0} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{9586FEFC-0AA8-4800-90A2-6D0F96CC47D1} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{E79B7F6B-E2FE-44F9-9BA4-4CC44B2979E0} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
+		{2CE27AFD-9221-420F-B3FA-D9DD151D83ED} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}
