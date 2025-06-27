@@ -1,0 +1,60 @@
+﻿<UserControl
+    x:Class="fx.Charting.ChartElementEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
+    xmlns:egXaml="clr-namespace:Ecng.Xaml;assembly=Ecng.Xaml"
+    xmlns:local="clr-namespace:fx.Charting"
+    xmlns:sxXaml="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+    xmlns:sxpg="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml"
+    xmlns:sysMark="clr-namespace:System.Windows.Markup;assembly=System.Xaml">
+    <FrameworkElement.Resources>
+        <Style x:Key="BtnStyle" TargetType="{x:Type dxe:CheckEdit}">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type dxe:CheckEdit}">
+                        <Image Source="{sxXaml:ThemedIcons Key=Settings}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type dxpg:RowControl}">
+            <Setter Property="dxpg:RowControlBase.ExpandButtonWidth" Value="5" />
+        </Style>
+    </FrameworkElement.Resources>
+    <StackPanel>
+        <dxe:CheckEdit
+            x:Name="ButtonShowPopup"
+            Width="12"
+            Height="12"
+            Margin="0,2,0,0"
+            Style="{StaticResource BtnStyle}" />
+        <Popup
+            MaxHeight="500"
+            AllowsTransparency="true"
+            Focusable="true"
+            HorizontalOffset="0"
+            IsOpen="{Binding Path=IsChecked, ElementName=ButtonShowPopup, Mode=TwoWay}"
+            Placement="Bottom"
+            PlacementTarget="{Binding ElementName=ButtonShowPopup}"
+            PopupAnimation="Fade"
+            StaysOpen="false"
+            VerticalOffset="0">
+            <Border Padding="2" BorderThickness="1">
+                <sxpg:PropertyGridEx
+                    Width="330"
+                    MinHeight="300"
+                    MaxHeight="600"
+                    dxpg:PropertyGridControl.SelectedObject="{Binding}"
+                    dxpg:PropertyGridControl.ShowCategories="{Binding CategoriesMode, FallbackValue={x:Static dxpg:CategoriesShowMode.Visible}}"
+                    dxpg:PropertyGridControl.ShowDescriptionIn="ToolTip"
+                    dxpg:PropertyGridControl.ShowMenuButtonInRows="false"
+                    dxpg:PropertyGridControl.ShowSearchBox="false"
+                    dxpg:PropertyGridControl.ShowToolPanel="false"
+                    dxpg:PropertyGridControl.ValueColumnWidth="100"
+                    CustomExpand="OnCustomExpand" />
+            </Border>
+        </Popup>
+    </StackPanel>
+</UserControl>

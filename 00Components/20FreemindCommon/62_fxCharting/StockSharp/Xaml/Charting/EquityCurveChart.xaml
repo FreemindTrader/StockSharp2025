@@ -1,0 +1,13 @@
+﻿<UserControl
+    x:Class="fx.Charting.EquityCurveChartEx"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:fx.Charting">
+    <Grid>
+        <local:SimpleChartDx
+            x:Name="Chart"
+            PreviewMouseDoubleClick="simplechart_0_PreviewMouseDoubleClick"
+            PreviewMouseWheel="simplechart_0_PreviewMouseWheel"
+            XAxisType="CategoryDateTime" />
+    </Grid>
+</UserControl>
