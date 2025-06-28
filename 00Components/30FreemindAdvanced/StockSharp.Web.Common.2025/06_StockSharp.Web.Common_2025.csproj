@@ -10,7 +10,7 @@
         <ProjectGuid>{A27F22DC-8848-4757-B5A3-EDF6C9FC8190}</ProjectGuid>
         <Platforms>AnyCPU;x64</Platforms>
         <TargetFrameworks>net6.0</TargetFrameworks>
-        <LangVersion>8.0</LangVersion>
+        <LangVersion>12.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <NoWarn>1701;1702;CS3003;CS0612</NoWarn>
     </PropertyGroup>
