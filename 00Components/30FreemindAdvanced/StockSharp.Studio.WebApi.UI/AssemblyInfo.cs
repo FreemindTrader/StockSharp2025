@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-[assembly: Extension]
 [assembly: AssemblyTitle("S#.Studio.WebApi.UI")]
 [assembly: AssemblyDescription("UI types for webapi interfaces.")]
 [assembly: Guid("1503B429-BDE2-42E7-AA0E-EA1880D21771")]
