@@ -210,6 +210,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_StockSharp.Studio.Core",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_StockSharp.Studio.IPC", "00Components\30FreemindAdvanced\StockSharp.Studio.IPC\08_StockSharp.Studio.IPC.csproj", "{F4720B2A-5A9E-41D1-B28A-A47972B21CB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_StockSharp.Studio.Controls", "00Components\30FreemindAdvanced\StockSharp.Studio.Controls\09_StockSharp.Studio.Controls.csproj", "{8561EA84-51A1-4F90-A3E5-7F3E5420338F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -568,6 +570,10 @@ Global
 		{F4720B2A-5A9E-41D1-B28A-A47972B21CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4720B2A-5A9E-41D1-B28A-A47972B21CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4720B2A-5A9E-41D1-B28A-A47972B21CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -656,6 +662,7 @@ Global
 		{54EC22B3-D0D5-414F-9843-2B81B748014B} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
 		{2EA4A450-21D4-48C0-A384-18F19F5A1346} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
 		{F4720B2A-5A9E-41D1-B28A-A47972B21CB0} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
+		{8561EA84-51A1-4F90-A3E5-7F3E5420338F} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}

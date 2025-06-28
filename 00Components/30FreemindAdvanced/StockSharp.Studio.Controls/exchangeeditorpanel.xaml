@@ -1,0 +1,7 @@
+<controls:BaseStudioControl x:Class="StockSharp.Studio.Controls.ExchangeEditorPanel"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:controls="clr-namespace:StockSharp.Studio.Controls"
+                            xmlns:xaml="http://schemas.stocksharp.com/xaml">
+  <xaml:ExchangeBoardsPanel x:Name="Panel"/>
+</controls:BaseStudioControl>

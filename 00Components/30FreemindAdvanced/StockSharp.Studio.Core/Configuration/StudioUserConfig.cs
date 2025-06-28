@@ -189,7 +189,7 @@ public class StudioUserConfig : Disposable, IPersistableService
     private class FileSettingsInfo(string settingsFile) : INamedPersistableService, IPersistableService
     {
         private readonly IDictionary<string, Func<object>> _delayValues;
-        private readonly SyncObject _syncRoot;
+        private readonly SyncObject _syncRoot = new SyncObject();
         private readonly string _settingsFile = settingsFile ?? throw new ArgumentNullException(nameof(settingsFile));
         private SettingsStorage _values;
         private bool _isChanged;

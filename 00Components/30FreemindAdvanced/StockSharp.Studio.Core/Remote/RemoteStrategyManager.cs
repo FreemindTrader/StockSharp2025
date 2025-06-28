@@ -28,9 +28,9 @@ public class RemoteStrategyManager : BaseLogReceiver, IAsyncDisposable
 {
     private readonly
 #nullable disable
-    CachedSynchronizedDictionary<Guid, RemoteStrategyManager.RemoteStrategyController> _controllers;
-    private readonly SynchronizedSet<string> _uniqueMsgs;
-    private readonly SynchronizedDictionary<Guid, long> _idMap;
+    CachedSynchronizedDictionary<Guid, RemoteStrategyManager.RemoteStrategyController> _controllers = new CachedSynchronizedDictionary<Guid, RemoteStrategyController>();
+    private readonly SynchronizedSet<string> _uniqueMsgs = new SynchronizedSet<string>();
+    private readonly SynchronizedDictionary<Guid, long> _idMap = new SynchronizedDictionary<Guid, long>();
     private readonly Func<App> _createApp;
     private App _app;
     private IAppService _appSvc;

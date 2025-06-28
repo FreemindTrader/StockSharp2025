@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\fx.packages.props" />
+	<PropertyGroup>
+		<RootNamespace>StockSharp.Studio.Controls</RootNamespace>
+		<AssemblyName>StockSharp.Studio.Controls</AssemblyName>
+		<PackageId>StockSharp.Studio.Controls</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{8561EA84-51A1-4F90-A3E5-7F3E5420338F}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<TargetFrameworks>net9.0-windows7</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+		<LangVersion>12.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ecng.Collections" Version="1.0.*" />
+		<PackageReference Include="Ecng.Common" Version="1.0.*" />
+		<PackageReference Include="Ecng.Net" Version="1.0.*" />
+		<PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.10" />
+		<PackageReference Include="Nito.AsyncEx.Tasks" Version="5.1.2" />
+		<PackageReference Include="StockSharp.Alerts" Version="5.0.*" />
+		<PackageReference Include="StockSharp.Licensing.Core" Version="5.0.*" />
+		<PackageReference Include="StockSharp.Xaml" Version="5.0.*" />
+		<PackageReference Include="StockSharp.Xaml.Charting" Version="5.0.*" />
+		<PackageReference Include="System.Drawing.Common" Version="9.0.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\StockSharp.Web.DomainModel\01_StockSharp.Web.DomainModel.csproj" />
+		<ProjectReference Include="..\StockSharp.Web.Api.Interfaces\02_StockSharp.Web.Api.Interfaces.csproj" />
+		<ProjectReference Include="..\StockSharp.Web.Common\03_StockSharp.Web.Common.csproj" />
+		<ProjectReference Include="..\StockSharp.Web.Api.Client\04_StockSharp.Web.Api.Client.csproj" />
+		<ProjectReference Include="..\StockSharp.Studio.WebApi\05_StockSharp.Studio.WebApi.csproj" />
+		<ProjectReference Include="..\StockSharp.Studio.Core\06_StockSharp.Studio.Core.csproj" />
+		<ProjectReference Include="..\StockSharp.Studio.WebApi.UI\07_StockSharp.Studio.WebApi.UI.csproj" />
+		<ProjectReference Include="..\StockSharp.Studio.IPC\08_StockSharp.Studio.IPC.csproj" />
+		<ProjectReference Include="..\..\..\Alerts.Interfaces\Alerts.Interfaces.csproj" />
+		<ProjectReference Include="..\..\..\Algo.Export\Algo.Export.csproj" />
+		<ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+		<ProjectReference Include="..\..\..\BusinessEntities\BusinessEntities.csproj" />
+		<ProjectReference Include="..\..\..\Charting.Interfaces\Charting.Interfaces.csproj" />
+		<ProjectReference Include="..\..\..\Configuration\Configuration.csproj" />
+		<ProjectReference Include="..\..\..\Localization\Localization.csproj" />		
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+	</ItemGroup>
+</Project>
+
