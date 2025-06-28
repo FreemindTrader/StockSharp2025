@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\fx.packages.props" />
+	<PropertyGroup>
+		<RootNamespace>StockSharp.Web.Api.Interfaces</RootNamespace>
+		<AssemblyName>StockSharp.Web.Api.Interfaces</AssemblyName>
+		<PackageId>StockSharp.Web.Api.Interfaces</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{86FCDDD5-6584-4B8C-B730-6ACEBC2D0230}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<TargetFrameworks>net6.0</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ecng.IO" Version="1.0.*" />
+		<PackageReference Include="Ecng.Linq" Version="1.0.*" />
+		<PackageReference Include="Ecng.Net.Clients" Version="1.0.*" />
+		<PackageReference Include="stocksharp.messages" Version="5.0.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\StockSharp.Web.DomainModel\01_StockSharp.Web.DomainModel.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+	</ItemGroup>
+</Project>
+
+
