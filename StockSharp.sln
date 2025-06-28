@@ -194,6 +194,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "70_fxStrategies", "00Compon
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30FreemindAdvanced", "30FreemindAdvanced", "{88129B54-7A1F-4BD5-9661-6F1C8A1AA473}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockSharp.Web.DomainModel", "00Components\30FreemindAdvanced\StockSharp.Web.DomainModel\StockSharp.Web.DomainModel.csproj", "{8D2E4363-978F-4504-8255-40D5C5294CFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -520,6 +522,10 @@ Global
 		{52FA664A-44D1-41EB-A145-B20330DD049F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52FA664A-44D1-41EB-A145-B20330DD049F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52FA664A-44D1-41EB-A145-B20330DD049F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2E4363-978F-4504-8255-40D5C5294CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2E4363-978F-4504-8255-40D5C5294CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2E4363-978F-4504-8255-40D5C5294CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2E4363-978F-4504-8255-40D5C5294CFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -600,6 +606,7 @@ Global
 		{B75234BA-4DDE-4552-9696-90EA2CFE8FA2} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{52FA664A-44D1-41EB-A145-B20330DD049F} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{88129B54-7A1F-4BD5-9661-6F1C8A1AA473} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8D2E4363-978F-4504-8255-40D5C5294CFD} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}

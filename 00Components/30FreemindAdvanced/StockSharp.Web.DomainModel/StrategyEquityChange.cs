@@ -1,0 +1,30 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: StockSharp.Web.DomainModel.StrategyEquityChange
+// Assembly: StockSharp.Web.DomainModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: A12D0EDB-6AAE-47CD-AD7D-1699114722F7
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Web.DomainModel.dll
+
+using Ecng.Serialization;
+
+#nullable disable
+namespace StockSharp.Web.DomainModel;
+
+public class StrategyEquityChange : BaseEntity, IStrategyEntity
+{
+    public Strategy Strategy { get; set; }
+
+    public StrategyPnL PnL { get; set; }
+
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        this.Strategy = storage.GetValue<Strategy>("Strategy", (Strategy)null);
+        this.PnL = storage.GetValue<StrategyPnL>("PnL", (StrategyPnL)null);
+    }
+
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.Set<Strategy>("Strategy", this.Strategy).Set<StrategyPnL>("PnL", this.PnL);
+    }
+}
