@@ -1,141 +1,182 @@
-<l1lil:Chart xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
-             xmlns:s="clr-namespace:-"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
-             xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
-             xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
-             xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
-             xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
-             s:ThemeManager.Theme="{Binding SelectedTheme}">
-  <FrameworkElement.Resources>
-    <Style x:Key="Grpstyle"
-           TargetType="{x:Type s:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
-      <Setter Property="s:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.HeaderTemplate">
-        <Setter.Value>
-          <DataTemplate DataType="charting:ItemPane">
-            <Grid VerticalAlignment="Center" Background="{x:Null}">
-              <lll:EditableTextBlock MinWidth="20" HorizontalAlignment="Left" Margin="5,2,0,0" VerticalAlignment="Top"
-                                     Text="{Binding PaneViewModel.Title, Mode=TwoWay}"/>
-              <StackPanel Background="Transparent" HorizontalAlignment="Right" Margin="2,2" Orientation="Vertical"
-                          VerticalAlignment="Center">
-                <dx:SimpleButton Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                                         Command="{Binding ChangeOrientationCommand}">
-                  <StackPanel>
-                    <Image Width="12" Source="{loc:ThemedIcons Pin}"
-                           Visibility="{Binding ConverterParameter=inverse, Path=IsTabbed, Converter={s:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd}}"/>
-                    <Image Width="12" Source="{loc:ThemedIcons Pinned}"
-                           Visibility="{Binding Path=IsTabbed, Converter={s:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd}}"/>
-                  </StackPanel>
-                </dx:SimpleButton>
-                <dx:SimpleButton Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                                         CommandParameter="{Binding PaneViewModel}" Command="{Binding PaneViewModel.ClosePaneCommand}"
-                                         ToolTip="{loc:Localization Close}">
-                  <Image Width="12" Source="{loc:ThemedIcons Remove2}"/>
-                </dx:SimpleButton>
-              </StackPanel>
-            </Grid>
-          </DataTemplate>
-        </Setter.Value>
-      </Setter>
-      <Setter Property="Control.Template">
-        <Setter.Value>
-          <ControlTemplate TargetType="{x:Type s:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
-            <Grid>
-              <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
-              </Grid.RowDefinitions>
-              <Thumb x:Name="PART_TopSplitter" BorderBrush="#77999999" BorderThickness="0,1"
-                     Background="#33999999" Cursor="SizeNS" HorizontalAlignment="Stretch" Height="5"/>
-              <ContentPresenter x:Name="PART_ContentHost" Content="{TemplateBinding ContentControl.Content}" Grid.Row="1"
-                                Grid.RowSpan="2"/>
-              <Grid x:Name="PART_Header" Row="1">
-                <Grid.RowDefinitions>
-                  <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-              </Grid>
-            </Grid>
-          </ControlTemplate>
-        </Setter.Value>
-      </Setter>
-      <Setter Property="FrameworkElement.Height" Value="{Binding PaneViewModel.Height, Mode=TwoWay}"/>
-    </Style>
-    <Style x:Key="PerfStatsStyle" TargetType="{x:Type TextBlock}">
-      <Setter Property="TextBlock.FontSize" Value="20"/>
-      <Setter Property="FrameworkElement.Margin" Value="0"/>
-      <Setter Property="TextBlock.FontWeight" Value="Bold"/>
-      <Setter Property="TextBlock.Foreground" Value="#BBFC9C29"/>
-      <Setter Property="TextBlock.FontFamily" Value="Consolas"/>
-    </Style>
-    <ll1:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-    <s:dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLELR2Y64AQZB2ZMVREEG3YUEHPNZ_ejd x:Key="UltrachartOverviewVisibilityConverter"/>
-  </FrameworkElement.Resources>
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
-    <s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd x:Name="ChartGroupEx" ItemContainerStyle="{StaticResource Grpstyle}"
-                                                                             ItemsSource="{Binding ChartPaneViewModels}">
-      <ItemsControl.ItemTemplate>
-        <DataTemplate DataType="local:UltrachartPaneViewModel">
-          <Grid>
-            <dxb:BarManager.DXContextMenu>
-              <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding ParentViewModel}"
-                                                                          Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"/>
-            </dxb:BarManager.DXContextMenu>
-            <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
-                                                                                            s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.VerticalChartGroup="{Binding PaneGroup}"
-                                                                                            ChartModifier="{Binding ChartModifier}" ViewportManager="{Binding ViewportManager}">
-              <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
-                <Binding Mode="OneWay">                  <!-- constructor argument:
+<l1lil:Chart
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+    xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
+    xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+    xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+    xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+    xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+    xmlns:s="clr-namespace:-"
+    s:ThemeManager.Theme="{Binding SelectedTheme}">
+    <FrameworkElement.Resources>
+        <Style x:Key="Grpstyle" TargetType="{x:Type s:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
+            <Setter Property="s:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="charting:ItemPane">
+                        <Grid VerticalAlignment="Center" Background="{x:Null}">
+                            <lll:EditableTextBlock
+                                MinWidth="20"
+                                Margin="5,2,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Text="{Binding PaneViewModel.Title, Mode=TwoWay}" />
+                            <StackPanel
+                                Margin="2,2"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Background="Transparent"
+                                Orientation="Vertical">
+                                <dx:SimpleButton
+                                    HorizontalContentAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    Background="Transparent"
+                                    Command="{Binding ChangeOrientationCommand}">
+                                    <StackPanel>
+                                        <Image
+                                            Width="12"
+                                            Source="{loc:ThemedIcons Pin}"
+                                            Visibility="{Binding ConverterParameter=inverse, Path=IsTabbed, Converter={s:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd}}" />
+                                        <Image
+                                            Width="12"
+                                            Source="{loc:ThemedIcons Pinned}"
+                                            Visibility="{Binding Path=IsTabbed, Converter={s:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd}}" />
+                                    </StackPanel>
+                                </dx:SimpleButton>
+                                <dx:SimpleButton
+                                    HorizontalContentAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    Background="Transparent"
+                                    Command="{Binding PaneViewModel.ClosePaneCommand}"
+                                    CommandParameter="{Binding PaneViewModel}"
+                                    ToolTip="{loc:Localization Close}">
+                                    <Image Width="12" Source="{loc:ThemedIcons Remove2}" />
+                                </dx:SimpleButton>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type s:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Thumb
+                                x:Name="PART_TopSplitter"
+                                Height="5"
+                                HorizontalAlignment="Stretch"
+                                Background="#33999999"
+                                BorderBrush="#77999999"
+                                BorderThickness="0,1"
+                                Cursor="SizeNS" />
+                            <ContentPresenter
+                                x:Name="PART_ContentHost"
+                                Grid.Row="1"
+                                Grid.RowSpan="2"
+                                Content="{TemplateBinding ContentControl.Content}" />
+                            <Grid x:Name="PART_Header" Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FrameworkElement.Height" Value="{Binding PaneViewModel.Height, Mode=TwoWay}" />
+        </Style>
+        <Style x:Key="PerfStatsStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextBlock.FontSize" Value="20" />
+            <Setter Property="FrameworkElement.Margin" Value="0" />
+            <Setter Property="TextBlock.FontWeight" Value="Bold" />
+            <Setter Property="TextBlock.Foreground" Value="#BBFC9C29" />
+            <Setter Property="TextBlock.FontFamily" Value="Consolas" />
+        </Style>
+        <ll1:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <s:dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLELR2Y64AQZB2ZMVREEG3YUEHPNZ_ejd x:Key="UltrachartOverviewVisibilityConverter" />
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd
+            x:Name="ChartGroupEx"
+            ItemContainerStyle="{StaticResource Grpstyle}"
+            ItemsSource="{Binding ChartPaneViewModels}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="local:UltrachartPaneViewModel">
+                    <Grid>
+                        <dxb:BarManager.DXContextMenu>
+                            <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}" DataContext="{Binding ParentViewModel}" />
+                        </dxb:BarManager.DXContextMenu>
+                        <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd
+                            ChartModifier="{Binding ChartModifier}"
+                            ClipModifierSurface="True"
+                            Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd"
+                            s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.VerticalChartGroup="{Binding PaneGroup}"
+                            ViewportManager="{Binding ViewportManager}">
+                            <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
+                                <Binding Mode="OneWay">                                    <!-- constructor argument:
                        Annotations
                   -->
 
-                </Binding>
-              </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
-              <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
-                <Binding>                  <!-- constructor argument:
+                                </Binding>
+                            </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
+                            <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
+                                <Binding>                                    <!-- constructor argument:
                        ChartSeriesViewModels
                   -->
 
-                </Binding>
-              </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
-              <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
-                <Binding>                  <!-- constructor argument:
+                                </Binding>
+                            </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
+                            <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
+                                <Binding>                                    <!-- constructor argument:
                        XAxises
                   -->
 
-                </Binding>
-              </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
-              <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
-                <Binding>                  <!-- constructor argument:
+                                </Binding>
+                            </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
+                            <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
+                                <Binding>                                    <!-- constructor argument:
                        YAxises
                   -->
 
-                </Binding>
-              </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
-            </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
-            <s:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd Margin="23,23" DataContext="{Binding LegendViewModel}"
-                                                                                                        Visibility="{Binding Pane.ShowLegend, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"/>
-            <TextBlock Margin="0,20,70,0" VerticalAlignment="Top" HorizontalAlignment="Right"
-                       Style="{StaticResource PerfStatsStyle}"
-                       Visibility="{Binding ShowPerfStats, Converter={StaticResource BoolToVisibilityConverter}}"
-                       Text="{Binding PerfStats}"/>
-          </Grid>
-        </DataTemplate>
-      </ItemsControl.ItemTemplate>
-    </s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd>
-    <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd Grid.Row="1" XAxisId="X" VerticalAlignment="Stretch" Height="40"
-                                                                                    s:dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.ItemsControlParentSurface="{Binding Path=., ElementName=ChartGroupEx}">
-      <UIElement.Visibility>
-        <MultiBinding Converter="{StaticResource UltrachartOverviewVisibilityConverter}">
-          <Binding Path="ShowOverview"/>
-          <Binding Path="ParentSurface" RelativeSource="{RelativeSource Self}"/>
-        </MultiBinding>
-      </UIElement.Visibility>
-    </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd>
-  </Grid>
+                                </Binding>
+                            </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
+                        </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
+                        <s:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd
+                            Margin="23,23"
+                            DataContext="{Binding LegendViewModel}"
+                            Visibility="{Binding Pane.ShowLegend, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}" />
+                        <TextBlock
+                            Margin="0,20,70,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource PerfStatsStyle}"
+                            Text="{Binding PerfStats}"
+                            Visibility="{Binding ShowPerfStats, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd>
+        <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd
+            Grid.Row="1"
+            Height="40"
+            VerticalAlignment="Stretch"
+            s:dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.ItemsControlParentSurface="{Binding Path=., ElementName=ChartGroupEx}"
+            XAxisId="X">
+            <UIElement.Visibility>
+                <MultiBinding Converter="{StaticResource UltrachartOverviewVisibilityConverter}">
+                    <Binding Path="ShowOverview" />
+                    <Binding Path="ParentSurface" RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </UIElement.Visibility>
+        </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd>
+    </Grid>
 </l1lil:Chart>

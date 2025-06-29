@@ -8,7 +8,7 @@
                           xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                           xmlns:l11l11li1="clr-namespace:DevExpress.Xpf.PropertyGrid;assembly=DevExpress.Xpf.PropertyGrid.v22.1"
-                          xmlns:l1lili11i="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml">
+                          xmlns:sx="http://schemas.stocksharp.com/xaml">
   <FrameworkElement.Resources>
     <Style x:Key="BtnStyle" TargetType="{x:Type li1i:CheckEdit}">
       <Setter Property="Control.Template">
@@ -35,7 +35,7 @@
            PlacementTarget="{Binding ElementName=ButtonShowPopup}"
            IsOpen="{Binding Path=IsChecked, ElementName=ButtonShowPopup, Mode=TwoWay}">
       <Border BorderThickness="1" Padding="2">
-        <l1lili11i:PropertyGridEx Width="330" MinHeight="300" MaxHeight="600" ValueColumnWidth="100" ShowDescriptionIn="ToolTip"
+        <sx:PropertyGridEx Width="330" MinHeight="300" MaxHeight="600" ValueColumnWidth="100" ShowDescriptionIn="ToolTip"
                                   ShowMenuButtonInRows="False" ShowSearchBox="False" ShowToolPanel="False" SelectedObject="{Binding}"
                                   ShowCategories="{Binding CategoriesMode, FallbackValue={x:Static l11l11li1:CategoriesShowMode.Visible}}"/>
       </Border>

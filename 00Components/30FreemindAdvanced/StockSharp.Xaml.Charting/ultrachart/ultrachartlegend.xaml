@@ -5,7 +5,7 @@
                                                                                             xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
                                                                                             xmlns:l1lll="clr-namespace:DevExpress.Xpf.Editors.Themes;assembly=DevExpress.Xpf.Core.v22.1"
                                                                                             xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
-                                                                                            xmlns:l1lili11i="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml"
+                                                                                            xmlns:sx="http://schemas.stocksharp.com/xaml"
                                                                                             xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                                                                                             xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
                                                                                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -28,7 +28,7 @@
               <RowDefinition Height="*"/>
               <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <l1lili11i:CandleDataTypeEdit x:Name="candleSettingsEditor" Grid.Row="0"/>
+            <sx:CandleDataTypeEdit x:Name="candleSettingsEditor" Grid.Row="0"/>
             <dx:SimpleButton Grid.Row="1" Padding="3,1" FontSize="12" Margin="0,3" HorizontalAlignment="Center"
                                      Content="{loc:Localization Change}"/>
           </Grid>
