@@ -66,7 +66,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE
     if (service.TargetObject is Setter)
       return (object) new Binding()
       {
-        Path = new PropertyPath((object) dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.\u0023\u003DzOJJsEsQ\u003D),
+        Path = new PropertyPath((object) ThemeManager.\u0023\u003DzOJJsEsQ\u003D),
         ConverterParameter = (object) typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetGetMethod(),
         Converter = dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003DzMeh\u0024Scs\u003D,
         Mode = BindingMode.OneWay,
@@ -79,15 +79,15 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE
 
   private object \u0023\u003DzA13mM7FCopU4(DependencyObject _param1)
   {
-    string theme = dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.GetTheme(_param1);
-    return typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetValue((object) dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.\u0023\u003DzrILtKW7bADnV(theme), dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003Dz6VPkvJI\u003D);
+    string theme = ThemeManager.GetTheme(_param1);
+    return typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetValue((object) ThemeManager.\u0023\u003DzrILtKW7bADnV(theme), dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003Dz6VPkvJI\u003D);
   }
 
   internal sealed class \u0023\u003Dza2zbQRRjMsrw : IValueConverter
   {
     public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
     {
-      return (_param3 as MethodInfo).Invoke((object) dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.\u0023\u003DzrILtKW7bADnV(_param1 as string), dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003Dz6VPkvJI\u003D);
+      return (_param3 as MethodInfo).Invoke((object) ThemeManager.\u0023\u003DzrILtKW7bADnV(_param1 as string), dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003Dz6VPkvJI\u003D);
     }
 
     public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)

@@ -800,7 +800,7 @@ label_4:
     private void \u0023\u003DzO\u0024GBeNt4gKS5()
     {
       this.IsDark = ChartHelper.CurrChartTheme() == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427003);
-      this.\u0023\u003DziWrrroE\u003D = dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.\u0023\u003DzrILtKW7bADnV(ChartHelper.CurrChartTheme());
+      this.\u0023\u003DziWrrroE\u003D = ThemeManager.\u0023\u003DzrILtKW7bADnV(ChartHelper.CurrChartTheme());
     }
 
     public bool IsDark

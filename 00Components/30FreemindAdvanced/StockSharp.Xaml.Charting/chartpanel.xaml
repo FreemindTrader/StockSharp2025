@@ -4,10 +4,10 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                   xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
-                  xmlns:llliil11="clr-namespace:-"
+                  xmlns:s="clr-namespace:-"
                   xmlns:llli1="clr-namespace:DevExpress.Xpf.Editors.Settings;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
-                  xmlns:l1ilillll1="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+                  xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:li1111lil="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:l11="clr-namespace:DevExpress.Xpf.Bars.Themes;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
@@ -45,7 +45,7 @@
                                     ToolTip="{l1i11ii111:Localization AddPanel}" IsEnabled="{Binding IsInteracted, ElementName=Chart}"
                                     Glyph="{l1i11ii111:ThemedIcons Key=Add}">
             <li11l:BarSplitButtonItem.PopupControl>
-              <llliil11:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding DataContext, ElementName=Chart}"/>
+              <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding DataContext, ElementName=Chart}"/>
             </li11l:BarSplitButtonItem.PopupControl>
           </li11l:BarSplitButtonItem>
           <li11l:BarEditItem x:Name="CandleStyles" EditWidth="120">
@@ -183,20 +183,20 @@
                                     Command="{x:Static l1lil:ChartPanel.RegisterOrderCommand}"
                                     DataContext="{Binding ElementName=Chart}" CommandTarget="{Binding ElementName=Ctrl, Mode=OneWay}">
             <li11l:BarItem.SuperTip>
-              <l1ilillll1:SuperTip>
-                <l1ilillll1:SuperTipHeaderItem Content="{l1i11ii111:Localization RegOrdersByClick}"/>
-                <l1ilillll1:SuperTipItem Content="{l1i11ii111:Localization BuyCtrlLeftMouse}"/>
-                <l1ilillll1:SuperTipItem Content="{l1i11ii111:Localization SellCtrlRightMouse}"/>
-              </l1ilillll1:SuperTip>
+              <dx:SuperTip>
+                <dx:SuperTipHeaderItem Content="{l1i11ii111:Localization RegOrdersByClick}"/>
+                <dx:SuperTipItem Content="{l1i11ii111:Localization BuyCtrlLeftMouse}"/>
+                <dx:SuperTipItem Content="{l1i11ii111:Localization SellCtrlRightMouse}"/>
+              </dx:SuperTip>
             </li11l:BarItem.SuperTip>
             <li11l:BarItem.GlyphTemplate>
               <DataTemplate>
                 <ToggleButton Margin="-3" Style="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}"
                               IsChecked="{Binding Path=OrderCreationMode}">
                   <Image Style="{StaticResource ImgStyle}" Source="{l1i11ii111:ThemedIcons Key=Mouse}">
-                    <l1ilillll1:WpfSvgPalette.Palette>
+                    <dx:WpfSvgPalette.Palette>
                       <li1111lil:ThemeResource ThemeKey="{l11:BarSvgPaletteThemeKey ResourceKey=SvgPaletteInBar}"/>
-                    </l1ilillll1:WpfSvgPalette.Palette>
+                    </dx:WpfSvgPalette.Palette>
                   </Image>
                 </ToggleButton>
               </DataTemplate>

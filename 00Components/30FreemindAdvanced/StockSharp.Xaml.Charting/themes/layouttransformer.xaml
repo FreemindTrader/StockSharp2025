@@ -1,12 +1,12 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:llliil11="clr-namespace:-">
+                    xmlns:s="clr-namespace:-">
   <Style
-         TargetType="{x:Type llliil11:dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd}">
+         TargetType="{x:Type s:dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd}">
     <Setter Property="Control.Foreground" Value="Black"/>
     <Setter Property="Control.Template">
       <Setter.Value>
-        <ControlTemplate TargetType="{x:Type llliil11:dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd}">
+        <ControlTemplate TargetType="{x:Type s:dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd}">
           <Grid x:Name="TransformRoot" Background="{TemplateBinding Control.Background}">
             <ContentPresenter x:Name="Presenter" Content="{TemplateBinding ContentControl.Content}"
                               ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"/>

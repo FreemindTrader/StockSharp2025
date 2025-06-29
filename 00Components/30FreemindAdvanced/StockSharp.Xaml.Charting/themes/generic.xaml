@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l1li="clr-namespace:StockSharp.Xaml.Charting.Ultrachart"
-                    xmlns:llliil11="clr-namespace:-">
+                    xmlns:s="clr-namespace:-">
   <ResourceDictionary.MergedDictionaries>
     <ResourceDictionary Source="/StockSharp.Xaml.Charting;component/Themes/Default.xaml"/>
     <ResourceDictionary Source="/StockSharp.Xaml.Charting;component/Themes/LayoutTransformer.xaml"/>
@@ -47,8 +47,8 @@
       </Setter.Value>
     </Setter>
   </Style>
-  <ControlTemplate x:Key="{x:Static llliil11:dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.dje_zXWPHZG4CSS2GQXZJSD75W_ejd}"
-                   TargetType="{x:Type llliil11:dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd}">
+  <ControlTemplate x:Key="{x:Static s:dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.dje_zXWPHZG4CSS2GQXZJSD75W_ejd}"
+                   TargetType="{x:Type s:dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd}">
     <Image Stretch="Uniform" Source="{Binding MarkerImageSrc, Mode=OneWay}" Width="{Binding Width}"
            Height="{Binding Height}"/>
   </ControlTemplate>

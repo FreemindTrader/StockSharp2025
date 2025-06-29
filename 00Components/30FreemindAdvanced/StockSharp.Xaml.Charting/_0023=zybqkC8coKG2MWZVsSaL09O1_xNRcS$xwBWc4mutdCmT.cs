@@ -41,7 +41,7 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
     XmlWriter _param2)
   {
     base.\u0023\u003Dz7SZ\u0024Lrw\u003D(_param1, _param2);
-    string theme = dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.GetTheme((DependencyObject) _param1);
+    string theme = ThemeManager.GetTheme((DependencyObject) _param1);
     if (theme != null)
       _param2.WriteAttributeString(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440425), theme);
     string renderSurfaceType = dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.GetRenderSurfaceType((UIElement) _param1);
@@ -61,7 +61,7 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
     base.\u0023\u003Dz4EJs3pc\u003D(_param1, _param2);
     string str1 = _param2[\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440425)];
     if (str1 != null)
-      dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.SetTheme((DependencyObject) _param1, str1);
+      ThemeManager.SetTheme((DependencyObject) _param1, str1);
     string str2 = _param2[\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440469)];
     if (str2 != null)
       dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.SetRenderSurfaceType((UIElement) _param1, str2);
