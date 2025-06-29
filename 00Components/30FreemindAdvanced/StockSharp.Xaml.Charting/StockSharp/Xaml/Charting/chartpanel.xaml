@@ -1,4 +1,4 @@
-<l1lil:ChartPanel xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+<local:ChartPanel xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -13,10 +13,10 @@
                   xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
                   x:Name="Ctrl" dxb:BarNameScope.IsScopeOwner="True">
   <UIElement.CommandBindings>
-    <CommandBinding Command="{x:Static l1lil:ChartPanel.RegisterOrderCommand}"/>
-    <CommandBinding Command="{x:Static l1lil:ChartPanel.ShareCommand}"/>
+    <CommandBinding Command="{x:Static local:ChartPanel.RegisterOrderCommand}"/>
+    <CommandBinding Command="{x:Static local:ChartPanel.ShareCommand}"/>
     <CommandBinding Command="{x:Static loc:RoutedCommands.CancelOrders}"/>
-    <CommandBinding Command="{x:Static l1lil:ChartPanel.PatternCommand}"/>
+    <CommandBinding Command="{x:Static local:ChartPanel.PatternCommand}"/>
   </UIElement.CommandBindings>
   <FrameworkElement.Resources>
     <Style x:Key="ImgStyle" TargetType="{x:Type Image}">
@@ -29,7 +29,7 @@
     </Style>
     <ll1:EnumBooleanConverter x:Key="EnumBooleanConverter" DefaultValueWhenUnchecked="True"/>
     <ll1:VisibilityToBoolConverter x:Key="VisToBool"/>
-    <l1lil:ChartTimeFrameNameConverter x:Key="TimeFrame2Name"/>
+    <local:ChartTimeFrameNameConverter x:Key="TimeFrame2Name"/>
   </FrameworkElement.Resources>
   <Grid>
     <Grid.RowDefinitions>
@@ -106,7 +106,7 @@
                               ToolTip="{loc:Localization ShowValuesOnAxis}"
                               IsChecked="{Binding ElementName=Chart, Path=CrossHairAxisLabels}"
                               IsEnabled="{Binding ElementName=Chart, Path=CrossHair}" Glyph="{loc:ThemedIcons Key=Ruler}"/>
-          <dxb:BarButtonItem Command="{x:Static l1lil:ChartPanel.PatternCommand}"
+          <dxb:BarButtonItem Command="{x:Static local:ChartPanel.PatternCommand}"
                                ToolTip="{loc:Localization PatternDesc}" Content="{loc:Localization Pattern}"
                                Glyph="{loc:ThemedIcons Key=GanttChart}" CommandTarget="{Binding ElementName=Ctrl}"/>
           <dxb:BarItemSeparator/>
@@ -163,7 +163,7 @@
           <dxb:BarItemSeparator/>
           <dxb:BarButtonItem ToolTip="{loc:Localization SaveDataFromChart}"
                                Content="{loc:Localization SaveDataFromChart}" Glyph="{loc:ThemedIcons Key=Save}"/>
-          <dxb:BarSplitButtonItem Command="{x:Static l1lil:ChartPanel.ShareCommand}"
+          <dxb:BarSplitButtonItem Command="{x:Static local:ChartPanel.ShareCommand}"
                                     ToolTip="{loc:Localization ShareImage}" Content="{loc:Localization ShareImage}"
                                     CommandTarget="{Binding ElementName=Ctrl}" Glyph="{loc:ThemedIcons Key=Share}">
             <dxb:BarSplitButtonItem.PopupControl>
@@ -180,7 +180,7 @@
                                ToolTip="{loc:Localization ShowHiddenAxes}" Glyph="{loc:ThemedIcons Key=Footer}"/>
           <dxb:BarItemSeparator/>
           <dxb:BarSplitButtonItem ToolTipService.ShowOnDisabled="True"
-                                    Command="{x:Static l1lil:ChartPanel.RegisterOrderCommand}"
+                                    Command="{x:Static local:ChartPanel.RegisterOrderCommand}"
                                     DataContext="{Binding ElementName=Chart}" CommandTarget="{Binding ElementName=Ctrl, Mode=OneWay}">
             <dxb:BarItem.SuperTip>
               <dx:SuperTip>
@@ -220,6 +220,6 @@
         </dxb:Bar>
       </dxb:BarManager.Bars>
     </dxb:BarManager>
-    <l1lil:Chart x:Name="Chart" Grid.Row="1"/>
+    <local:Chart x:Name="Chart" Grid.Row="1"/>
   </Grid>
-</l1lil:ChartPanel>
+</local:ChartPanel>

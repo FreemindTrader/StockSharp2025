@@ -1,5 +1,5 @@
-<l1lil:Chart3D xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-               xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+<local:Chart3D xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
                xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1"
                AspectRatio="5 5 3">
   <li1:Chart3DControl.XAxis>
@@ -43,4 +43,4 @@
       <li1:SeriesPoint3DStorage x:Name="Storage"/>
     </li1:Series3D>
   </li1:Series3DStorage>
-</l1lil:Chart3D>
+</local:Chart3D>

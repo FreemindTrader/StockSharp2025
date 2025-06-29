@@ -1,5 +1,5 @@
-<l1lil:CandleSettingsWindow xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                            xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+<local:CandleSettingsWindow xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                             xmlns:sx="http://schemas.stocksharp.com/xaml"
@@ -15,4 +15,4 @@
     <dx:SimpleButton x:Name="OkBtn" Grid.Row="2" Grid.Column="0" IsDefault="True" IsEnabled="False" Width="100"
                              Content="{loc:Localization OK}"/>
   </Grid>
-</l1lil:CandleSettingsWindow>
+</local:CandleSettingsWindow>

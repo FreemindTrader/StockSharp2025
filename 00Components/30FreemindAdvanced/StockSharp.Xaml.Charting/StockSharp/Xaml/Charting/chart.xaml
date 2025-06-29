@@ -1,9 +1,9 @@
-<l1lil:Chart
+<local:Chart
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
     xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
-    xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
     xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
     xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
     xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
@@ -179,4 +179,4 @@
             </UIElement.Visibility>
         </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd>
     </Grid>
-</l1lil:Chart>
+</local:Chart>

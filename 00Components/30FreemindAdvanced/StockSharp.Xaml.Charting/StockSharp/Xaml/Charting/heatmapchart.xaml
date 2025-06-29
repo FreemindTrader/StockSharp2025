@@ -1,5 +1,5 @@
-<l1lil:HeatmapChart xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+<local:HeatmapChart xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:lii11lili1="clr-namespace:DevExpress.Xpf.Charts.Heatmap;assembly=DevExpress.Xpf.Charts.v22.1"
                     xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1">
@@ -26,4 +26,4 @@
       <lii11lili1:HeatmapLabel Foreground="Black" FontWeight="Bold" Background="#70FFFFFF" Padding="2" TextPattern="{V:0.00}"/>
     </lii11lili1:HeatmapControl.Label>
   </lii11lili1:HeatmapControl>
-</l1lil:HeatmapChart>
+</local:HeatmapChart>

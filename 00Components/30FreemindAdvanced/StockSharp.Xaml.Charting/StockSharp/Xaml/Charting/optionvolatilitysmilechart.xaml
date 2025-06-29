@@ -1,6 +1,6 @@
-<l1lil:OptionVolatilitySmileChart xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                                  xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+<local:OptionVolatilitySmileChart xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                  xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
                                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                   xmlns:s="clr-namespace:-">
   <s:dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd x:Name="Chart"/>
-</l1lil:OptionVolatilitySmileChart>
+</local:OptionVolatilitySmileChart>

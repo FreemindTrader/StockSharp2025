@@ -1,8 +1,8 @@
-<l1lil:ChartCandleElementPicker
+<local:ChartCandleElementPicker
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
-    xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
     xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
     xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
     ShowInTaskbar="False"
@@ -24,4 +24,4 @@
             IsEnabled="False"
             lll:XamlHelper.DialogResult="True" />
     </Grid>
-</l1lil:ChartCandleElementPicker>
+</local:ChartCandleElementPicker>
