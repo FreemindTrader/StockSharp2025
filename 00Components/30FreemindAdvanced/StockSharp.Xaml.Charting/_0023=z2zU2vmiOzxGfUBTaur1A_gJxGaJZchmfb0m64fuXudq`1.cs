@@ -22,7 +22,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
   IList,
   ICollection
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzU\u0024_meog\u003D;
 
   public \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D(
@@ -179,18 +179,18 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public void \u0023\u003Dz3MbNd8U\u003D(\u0023\u003DzH9HNkng\u003D[] _param1)
+  public void Clone(\u0023\u003DzH9HNkng\u003D[] _param1)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    this.\u0023\u003DzU\u0024_meog\u003D.Clone(_param1);
   }
 
-  public void \u0023\u003Dz3MbNd8U\u003D(
+  public void Clone(
     int _param1,
     \u0023\u003DzH9HNkng\u003D[] _param2,
     int _param3,
     int _param4)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003Dz3MbNd8U\u003D(_param1, _param2, _param3, _param4);
+    this.\u0023\u003DzU\u0024_meog\u003D.Clone(_param1, _param2, _param3, _param4);
   }
 
   public bool \u0023\u003Dz8_bgWJ3JomKk(int _param1)

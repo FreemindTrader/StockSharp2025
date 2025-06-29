@@ -14,38 +14,38 @@ using System.ComponentModel;
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D : 
+internal interface IfxChartElement :
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanging,
   INotifyPropertyChanged,
   IPersistable
 {
-  IChartElement ParentElement { get; }
+    IChartElement ParentElement { get; }
 
-  IEnumerable<IChartElement> ChildElements { get; }
+    IEnumerable<IChartElement> ChildElements { get; }
 
-  int Priority { get; }
+    int Priority { get; }
 
-  event Action<object, string, object> PropertyValueChanging;
+    event Action<object, string, object> PropertyValueChanging;
 
-  bool DontDraw { get; set; }
+    bool DontDraw { get; set; }
 
-  void \u0023\u003Dzy8S_C0E\u003D(IChartElement _param1);
+    void SetParent(IChartElement _param1);
 
-  \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D RootElement { get; }
+    IfxChartElement RootElement { get; }
 
-  Func<IComparable, Color?> Colorer { get; }
+    Func<IComparable, Color?> Colorer { get; }
 
-  void \u0023\u003DzXB7fUH9eZ9CX(ChartArea _param1);
+    void \u0023\u003DzXB7fUH9eZ9CX(ChartArea _param1);
 
-  void \u0023\u003DzxFfzrajElFbs();
+    void \u0023\u003DzxFfzrajElFbs();
 
-  bool CheckAxesCompatible(ChartAxisType? _param1, ChartAxisType? _param2);
+    bool CheckAxesCompatible(ChartAxisType? _param1, ChartAxisType? _param2);
 
-  void \u0023\u003Dz3MbNd8U\u003D(object _param1);
+    void Clone(object _param1);
 
-  bool \u0023\u003DzjgUUUJE\u003D(ChartDrawData _param1);
+    bool \u0023\u003DzjgUUUJE\u003D(ChartDrawData _param1);
 
   void \u0023\u003DzYI36Ggg\u003D();
 
@@ -53,7 +53,7 @@ internal interface \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u0
 
   string \u0023\u003DzLYR9XSrDCE6W();
 
-  string \u0023\u003Dzbk\u0024mfqA9iwbF(IChartElement _param1);
+    string \u0023\u003Dzbk\u0024mfqA9iwbF(IChartElement _param1);
 
-  bool \u0023\u003DzpU3scm4vRLfa(string _param1);
+    bool \u0023\u003DzpU3scm4vRLfa(string _param1);
 }

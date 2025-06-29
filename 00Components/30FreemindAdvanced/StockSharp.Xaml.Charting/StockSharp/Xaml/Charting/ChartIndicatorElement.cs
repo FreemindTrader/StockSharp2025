@@ -35,11 +35,11 @@ public sealed class ChartIndicatorElement :
   INotifyPropertyChanged,
   IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DefaultPainter \u0023\u003DzwZUN8k4QxNb8DrQ1IQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IChartIndicatorPainter \u0023\u003DzggYpSp2p8YZic9F7tQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzi6QomveZ37NV\u0024lKbXjNgtwc\u003D;
 
   /// <summary>

@@ -33,11 +33,11 @@ public class ChartOrderElement :
   INotifyPropertyChanged,
   IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzkZyAKIN\u0024NPN3;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzUAvz8ZozfnUe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartOrderDisplayFilter \u0023\u003DzMivvMSAVwLAH;
 
   /// <summary>
@@ -133,7 +133,7 @@ public class ChartOrderElement :
   protected override bool OnDraw(ChartDrawData data)
   {
     List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartOrderElement) this);
-    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((ICollection<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) source) && ((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this).\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
+    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((ICollection<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
   }
 
   /// <inheritdoc />
@@ -154,11 +154,11 @@ public class ChartOrderElement :
     storage.SetValue<string>(XXX.SSS(-539430538), Converter.To<string>((object) this.Filter));
   }
 
-  internal override ChartOrderElement \u0023\u003Dz3MbNd8U\u003D(ChartOrderElement _param1)
+  internal override ChartOrderElement Clone(ChartOrderElement _param1)
   {
     _param1.ErrorColor = this.ErrorColor;
     _param1.ErrorStrokeColor = this.ErrorStrokeColor;
     _param1.Filter = this.Filter;
-    return base.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    return base.Clone(_param1);
   }
 }

@@ -22,26 +22,26 @@ using System.Windows.Data;
 
 #nullable disable
 internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D> : 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D
-  where \u0023\u003Dzav4EkcQ\u003D : ChartPart<\u0023\u003Dzav4EkcQ\u003D>, \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X
+  UIBaseVM
+  where \u0023\u003Dzav4EkcQ\u003D : ChartPart<\u0023\u003Dzav4EkcQ\u003D>, IDrawableChartElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly HashSet<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D> \u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D = new HashSet<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private readonly HashSet<IfxChartElement> \u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D = new HashSet<IfxChartElement>();
+  
   private readonly \u0023\u003Dzav4EkcQ\u003D \u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D;
 
   protected \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024(
     \u0023\u003Dzav4EkcQ\u003D _param1)
   {
     this.\u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539330019));
-    this.\u0023\u003DzZcbqdpE\u003D((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this.\u0023\u003DzeaszzAAoBOY9());
+    this.\u0023\u003DzZcbqdpE\u003D((IfxChartElement) this.\u0023\u003DzeaszzAAoBOY9());
   }
 
-  public override \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X Element
+  public override IDrawableChartElement Element
   {
     get
     {
-      return (\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this.\u0023\u003DzeaszzAAoBOY9();
+      return (IDrawableChartElement) this.\u0023\u003DzeaszzAAoBOY9();
     }
   }
 
@@ -52,13 +52,13 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
 
   public sealed override void \u0023\u003Dz\u0024abmkXc\u003D()
   {
-    foreach (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D ddznyiGmdRlAevOq in this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.ToArray<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>())
+    foreach (IfxChartElement ddznyiGmdRlAevOq in this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.ToArray<IfxChartElement>())
       this.\u0023\u003DzfttffOE\u003D(ddznyiGmdRlAevOq);
     base.\u0023\u003Dz\u0024abmkXc\u003D();
   }
 
   protected void \u0023\u003DzZcbqdpE\u003D(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+    IfxChartElement _param1)
   {
     if (!this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.Add(_param1))
       return;
@@ -67,7 +67,7 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
   }
 
   private void \u0023\u003DzfttffOE\u003D(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+    IfxChartElement _param1)
   {
     if (!this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.Remove(_param1))
       return;
@@ -77,16 +77,16 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
 
   private void \u0023\u003DztQIFoT6W122c(object _param1, string _param2, object _param3)
   {
-    this.\u0023\u003DzfrhXX9MCW\u0024SC((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1, _param2, _param3);
+    this.\u0023\u003DzfrhXX9MCW\u0024SC((IfxChartElement) _param1, _param2, _param3);
   }
 
   private void \u0023\u003Dzn1W_trW7DSn3(object _param1, PropertyChangedEventArgs _param2)
   {
-    this.\u0023\u003Dz3u1qwgvgJlZC((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1, _param2.PropertyName);
+    this.\u0023\u003Dz3u1qwgvgJlZC((IfxChartElement) _param1, _param2.PropertyName);
   }
 
   protected static void \u0023\u003Dz9tL3mkpMz5PJ<T>(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param0,
+    IfxChartElement _param0,
     string _param1,
     T[] _param2)
   {
@@ -136,13 +136,13 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
       obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539434641));
       obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539434635));
     }
-    obj.Tag = _param1 == null || _param1.Length == 0 ? (object) (Tuple<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>) null : (object) Tuple.Create<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>((\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) this, _param1);
-    this.\u0023\u003DzXU6fBD\u0024oSmCR().\u0023\u003DzMNK339lzrtSc();
+    obj.Tag = _param1 == null || _param1.Length == 0 ? (object) (Tuple<UIBaseVM, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>) null : (object) Tuple.Create<UIBaseVM, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>((UIBaseVM) this, _param1);
+    this.GetParentVM().\u0023\u003DzMNK339lzrtSc();
     return obj;
   }
 
   protected static void \u0023\u003DzpbLgaWJ0hngn(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param0,
+    IRenderableSeries _param0,
     bool _param1)
   {
     dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd ls4St64EqzfbaEjd = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) _param0;

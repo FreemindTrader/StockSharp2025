@@ -26,27 +26,27 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>Chart drawing data.</summary>
 public class ChartDrawData : IChartDrawData
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>> \u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>> \u0023\u003Dz3mmVBunXGsFQZ9EtJw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>> _candleMap;
+  
+  private Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> _candleColorMap;
+  
   private Dictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>> \u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Dictionary<IChartOrderElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>> \u0023\u003DzFL6oOk7l7AmA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Dictionary<IChartTradeElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>> \u0023\u003DzW6Dk_spcRYsL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private Dictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>> \u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> \u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D;
+  
   private Dictionary<IChartLineElement, List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>> \u0023\u003Dz6X\u0024wSK2o_hkW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Dictionary<IChartLineElement, List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<double>>> \u0023\u003DzPFyjopyhj6ky;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Dictionary<IChartBandElement, List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>> \u0023\u003DzCjHRT3IUXyJaPuaHpg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Dictionary<IChartBandElement, List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<double>>> \u0023\u003DzeKPa3YtJH2v6RS3JOQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Dictionary<IChartAnnotationElement, IAnnotationData> \u0023\u003DzfS3q6Qc\u003D;
 
   /// <summary>
@@ -73,12 +73,12 @@ public class ChartDrawData : IChartDrawData
           case IChartCandleElement chartCandleElement:
             if (obj is ICandleMessage icandleMessage)
             {
-              CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>>((IDictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>>) this.\u0023\u003DzOrWGMasVFnPJ9EIggA\u003D\u003D(), chartCandleElement).Add(new ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D(first, icandleMessage.DataType, icandleMessage.OpenPrice, icandleMessage.HighPrice, icandleMessage.LowPrice, icandleMessage.ClosePrice, icandleMessage.PriceLevels));
+              CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawData.sCandle>>((IDictionary<IChartCandleElement, List<ChartDrawData.sCandle>>) this.\u0023\u003DzOrWGMasVFnPJ9EIggA\u003D\u003D(), chartCandleElement).Add(new ChartDrawData.sCandle(first, icandleMessage.DataType, icandleMessage.OpenPrice, icandleMessage.HighPrice, icandleMessage.LowPrice, icandleMessage.ClosePrice, icandleMessage.PriceLevels));
               continue;
             }
             if (obj is System.Windows.Media.Color color)
             {
-              CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>>((IDictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>>) this.\u0023\u003Dz\u0024lu1PoF9036WD8AKeQ\u003D\u003D(), chartCandleElement).Add(new ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D(first, new System.Windows.Media.Color?(color)));
+              CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawData.sCandleColor>>((IDictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>>) this.\u0023\u003Dz\u0024lu1PoF9036WD8AKeQ\u003D\u003D(), chartCandleElement).Add(new ChartDrawData.sCandleColor(first, new System.Windows.Media.Color?(color)));
               continue;
             }
             continue;
@@ -96,7 +96,7 @@ public class ChartDrawData : IChartDrawData
             CollectionHelper.SafeAdd<IChartTradeElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>>((IDictionary<IChartTradeElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>>) this.\u0023\u003Dz\u0024VcyBPrNElR\u0024tFZL2A\u003D\u003D(), chartTradeElement).Add(new ChartDrawData.\u0023\u003DzU3TaXFs\u003D(first, trade.Id.GetValueOrDefault(), trade.StringId, myTrade.Order.Side, trade.Price, trade.Volume, (string) null, false));
             continue;
           case IChartActiveOrdersElement activeOrdersElement:
-            CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>((IDictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>) this.\u0023\u003Dz9iIPMoqLxvOreh0Dog\u003D\u003D(), activeOrdersElement).Add((ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D) obj);
+            CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>((IDictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>) this.\u0023\u003Dz9iIPMoqLxvOreh0Dog\u003D\u003D(), activeOrdersElement).Add((ChartDrawData.sActiveOrder) obj);
             continue;
           default:
             throw new ArgumentException(StringHelper.Put(LocalizedStrings.UnknownType, new object[1]
@@ -108,14 +108,14 @@ public class ChartDrawData : IChartDrawData
     }
   }
 
-  private Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>> \u0023\u003DzOrWGMasVFnPJ9EIggA\u003D\u003D()
+  private Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>> \u0023\u003DzOrWGMasVFnPJ9EIggA\u003D\u003D()
   {
-    return this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D ?? (this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D = new Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>>());
+    return this._candleMap ?? (this._candleMap = new Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>>());
   }
 
-  private Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>> \u0023\u003Dz\u0024lu1PoF9036WD8AKeQ\u003D\u003D()
+  private Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> \u0023\u003Dz\u0024lu1PoF9036WD8AKeQ\u003D\u003D()
   {
-    return this.\u0023\u003Dz3mmVBunXGsFQZ9EtJw\u003D\u003D ?? (this.\u0023\u003Dz3mmVBunXGsFQZ9EtJw\u003D\u003D = new Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>>());
+    return this._candleColorMap ?? (this._candleColorMap = new Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>>());
   }
 
   private Dictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>> \u0023\u003DzMvN\u0024j0JXehj_W7wJCsA5vYc\u003D()
@@ -133,9 +133,9 @@ public class ChartDrawData : IChartDrawData
     return this.\u0023\u003DzW6Dk_spcRYsL ?? (this.\u0023\u003DzW6Dk_spcRYsL = new Dictionary<IChartTradeElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>>());
   }
 
-  private Dictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>> \u0023\u003Dz9iIPMoqLxvOreh0Dog\u003D\u003D()
+  private Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> \u0023\u003Dz9iIPMoqLxvOreh0Dog\u003D\u003D()
   {
-    return this.\u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D ?? (this.\u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D = new Dictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>());
+    return this.\u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D ?? (this.\u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D = new Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>());
   }
 
   private Dictionary<IChartLineElement, List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>> \u0023\u003DzIfFLwHfr6UGj()
@@ -215,22 +215,22 @@ public class ChartDrawData : IChartDrawData
       OrderStates orderStates = (OrderStates) 0;
       isFrozen = new bool?(nullable.GetValueOrDefault() == orderStates & nullable.HasValue || state.GetValueOrDefault() == 4);
     }
-    CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>((IDictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>) this.\u0023\u003Dz9iIPMoqLxvOreh0Dog\u003D\u003D(), element).Add(new ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D(order, balance.Value, state.Value, (Decimal?) order?.Security?.PriceStep ?? 0.01M, autoRemoveFromChart, isFrozen.Value, isHidden, ((int) isError ?? (state.GetValueOrDefault() == 3 ? 1 : 0)) != 0, price.Value));
+    CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>((IDictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>) this.\u0023\u003Dz9iIPMoqLxvOreh0Dog\u003D\u003D(), element).Add(new ChartDrawData.sActiveOrder(order, balance.Value, state.Value, (Decimal?) order?.Security?.PriceStep ?? 0.01M, autoRemoveFromChart, isFrozen.Value, isHidden, ((int) isError ?? (state.GetValueOrDefault() == 3 ? 1 : 0)) != 0, price.Value));
     return (IChartDrawData) this;
   }
 
-  internal List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D> \u0023\u003DzaZ5Qc3xeNY95(
+  internal List<ChartDrawData.sCandle> \u0023\u003DzaZ5Qc3xeNY95(
     IChartCandleElement _param1)
   {
-    Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>> a4BPs40sQtxmCo6Ew = this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D;
-    return a4BPs40sQtxmCo6Ew == null ? (List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>>((IDictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>>) a4BPs40sQtxmCo6Ew, _param1);
+    Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>> a4BPs40sQtxmCo6Ew = this._candleMap;
+    return a4BPs40sQtxmCo6Ew == null ? (List<ChartDrawData.sCandle>) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawData.sCandle>>((IDictionary<IChartCandleElement, List<ChartDrawData.sCandle>>) a4BPs40sQtxmCo6Ew, _param1);
   }
 
-  internal List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D> \u0023\u003DzCEKAoZ7e0Ko9(
+  internal List<ChartDrawData.sCandleColor> \u0023\u003DzCEKAoZ7e0Ko9(
     IChartCandleElement _param1)
   {
-    Dictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>> z3mmVbunXgsFqZ9EtJw = this.\u0023\u003Dz3mmVBunXGsFQZ9EtJw\u003D\u003D;
-    return z3mmVbunXgsFqZ9EtJw == null ? (List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>>((IDictionary<IChartCandleElement, List<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>>) z3mmVbunXgsFqZ9EtJw, _param1);
+    Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> z3mmVbunXgsFqZ9EtJw = this._candleColorMap;
+    return z3mmVbunXgsFqZ9EtJw == null ? (List<ChartDrawData.sCandleColor>) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawData.sCandleColor>>((IDictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>>) z3mmVbunXgsFqZ9EtJw, _param1);
   }
 
   internal List<ChartDrawData.IndicatorData> \u0023\u003DzaZ5Qc3xeNY95(
@@ -254,11 +254,11 @@ public class ChartDrawData : IChartDrawData
     return zW6DkSpcRysL == null ? (List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) null : CollectionHelper.TryGetValue<IChartTradeElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>>((IDictionary<IChartTradeElement, List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>>) zW6DkSpcRysL, _param1);
   }
 
-  internal List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D> \u0023\u003DzaZ5Qc3xeNY95(
+  internal List<ChartDrawData.sActiveOrder> \u0023\u003DzaZ5Qc3xeNY95(
     IChartActiveOrdersElement _param1)
   {
-    Dictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>> z4fpZvTfoaMgNvfE8Ng = this.\u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D;
-    return z4fpZvTfoaMgNvfE8Ng == null ? (List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>) null : CollectionHelper.TryGetValue<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>((IDictionary<IChartActiveOrdersElement, List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>>) z4fpZvTfoaMgNvfE8Ng, _param1);
+    Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> z4fpZvTfoaMgNvfE8Ng = this.\u0023\u003Dz4fpZVTfoaMgNvfE8Ng\u003D\u003D;
+    return z4fpZvTfoaMgNvfE8Ng == null ? (List<ChartDrawData.sActiveOrder>) null : CollectionHelper.TryGetValue<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>((IDictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>) z4fpZvTfoaMgNvfE8Ng, _param1);
   }
 
   internal List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>> \u0023\u003Dz_XHLxEJ0hNof(
@@ -319,13 +319,13 @@ public class ChartDrawData : IChartDrawData
     ChartDrawData.IDrawValue
     where \u0023\u003DzulcL8RA\u003D : struct, IComparable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzulcL8RA\u003D \u0023\u003Dzi356d4J_BEO1MM1iHw\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003DzOo4y0SHpsMppCYgBgQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003DzHsqtIm4nTXsCXtUzPQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003DzQEv2E_7fpX84HUnmDA\u003D\u003D;
 
     private \u0023\u003Dz6MdlWkBS_h\u00244(double _param1, double _param2, double _param3)
@@ -407,21 +407,21 @@ public class ChartDrawData : IChartDrawData
 
   internal sealed class \u0023\u003DzU3TaXFs\u003D : ChartDrawData.IDrawValue
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private string \u0023\u003Dz0tbDXgRR3FkF;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly long \u0023\u003DzSjIW5nBSyyCc;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly DateTime \u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    private readonly DateTime _utcTime;
+    
     private readonly Sides \u0023\u003DzZgovNezOGNlHK2a0Ow\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly double \u0023\u003Dz3G68FsAyTsTPL5Tu9cevQzk\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    private readonly double _price;
+    
     private readonly long \u0023\u003Dz3MLQsd3EnU9BIGBvjQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly string \u0023\u003Dz08Q5EpJM\u0024ZwaBqbCsg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly bool \u0023\u003DzQpEWlZ0T5BXiRgBNyQ\u003D\u003D;
 
     public \u0023\u003DzU3TaXFs\u003D(
@@ -436,9 +436,9 @@ public class ChartDrawData : IChartDrawData
     {
       this.\u0023\u003Dz0tbDXgRR3FkF = _param2 == 0L ? _param3 : (string) null;
       this.\u0023\u003DzSjIW5nBSyyCc = _param2;
-      this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1.UtcDateTime;
+      this._utcTime = _param1.UtcDateTime;
       this.\u0023\u003DzZgovNezOGNlHK2a0Ow\u003D\u003D = _param4;
-      this.\u0023\u003Dz3G68FsAyTsTPL5Tu9cevQzk\u003D = (double) _param5;
+      this._price = (double) _param5;
       this.\u0023\u003Dz3MLQsd3EnU9BIGBvjQ\u003D\u003D = (long) _param6;
       this.\u0023\u003Dz08Q5EpJM\u0024ZwaBqbCsg\u003D\u003D = _param7;
       this.\u0023\u003DzQpEWlZ0T5BXiRgBNyQ\u003D\u003D = _param8;
@@ -448,7 +448,7 @@ public class ChartDrawData : IChartDrawData
 
     public DateTime \u0023\u003Dzg86amuQ\u003D()
     {
-      return this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+      return this._utcTime;
     }
 
     public string \u0023\u003DzDmTtC9WghRFa()
@@ -458,7 +458,7 @@ public class ChartDrawData : IChartDrawData
 
     public Sides \u0023\u003DzUYTxG_Bgl8ih() => this.\u0023\u003DzZgovNezOGNlHK2a0Ow\u003D\u003D;
 
-    public double \u0023\u003DzbH5YDNBwpnry() => this.\u0023\u003Dz3G68FsAyTsTPL5Tu9cevQzk\u003D;
+    public double \u0023\u003DzbH5YDNBwpnry() => this._price;
 
     public long Volume => this.\u0023\u003Dz3MLQsd3EnU9BIGBvjQ\u003D\u003D;
 
@@ -489,24 +489,24 @@ public class ChartDrawData : IChartDrawData
     }
   }
 
-  internal readonly struct \u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D : ChartDrawData.IDrawValue
+  internal readonly struct sCandle : ChartDrawData.IDrawValue
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly DateTime \u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    private readonly DateTime _utcTime;
+    
     private readonly DataType \u0023\u003DzdgcgaziC7FxHmFtv9g\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003DziHpFjupL57O5oHu1Mw\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003DzD8EFLWLAF8etf1TLXA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003DzByFaQYKUGa5UYX0fCQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003DzIo3eteZ50RUQ\u0024tgctA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly CandlePriceLevel[] \u0023\u003DzUNPJK31aZC4jEiC7vA\u003D\u003D;
 
-    public \u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D(
+    public sCandle(
       DateTimeOffset _param1,
       DataType _param2,
       Decimal _param3,
@@ -515,7 +515,7 @@ public class ChartDrawData : IChartDrawData
       Decimal _param6,
       IEnumerable<CandlePriceLevel> _param7)
     {
-      this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1.UtcDateTime;
+      this._utcTime = _param1.UtcDateTime;
       this.\u0023\u003DzdgcgaziC7FxHmFtv9g\u003D\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539427521));
       this.\u0023\u003DziHpFjupL57O5oHu1Mw\u003D\u003D = (double) _param3;
       this.\u0023\u003DzD8EFLWLAF8etf1TLXA\u003D\u003D = (double) _param4;
@@ -526,7 +526,7 @@ public class ChartDrawData : IChartDrawData
 
     public DateTime \u0023\u003Dzg86amuQ\u003D()
     {
-      return this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+      return this._utcTime;
     }
 
     public DataType \u0023\u003DzdR0PhFO4Br84() => this.\u0023\u003DzdgcgaziC7FxHmFtv9g\u003D\u003D;
@@ -548,50 +548,50 @@ public class ChartDrawData : IChartDrawData
     }
   }
 
-  internal readonly struct \u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D : 
+  internal readonly struct sCandleColor : 
     ChartDrawData.IDrawValue
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly DateTime \u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    private readonly DateTime _utcTime;
+    
     private readonly System.Windows.Media.Color? \u0023\u003DzAxbyTBB0PvNop5R0Pg\u003D\u003D;
 
-    public \u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D(DateTimeOffset _param1, System.Windows.Media.Color? _param2)
+    public sCandleColor(DateTimeOffset _param1, System.Windows.Media.Color? _param2)
     {
-      this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1.UtcDateTime;
+      this._utcTime = _param1.UtcDateTime;
       this.\u0023\u003DzAxbyTBB0PvNop5R0Pg\u003D\u003D = _param2;
     }
 
     public DateTime \u0023\u003Dzg86amuQ\u003D()
     {
-      return this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+      return this._utcTime;
     }
 
     public System.Windows.Media.Color? Color => this.\u0023\u003DzAxbyTBB0PvNop5R0Pg\u003D\u003D;
   }
 
-  internal readonly struct \u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D : ChartDrawData.IDrawValue
+  internal readonly struct sActiveOrder : ChartDrawData.IDrawValue
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly Order \u0023\u003Dz4\u00248iX2\u0024NTce5pVGZ5A\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly Decimal \u0023\u003DzXj8Y9RlEtrX1U1I1Eg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly OrderStates \u0023\u003Dz2NuYvWXuCZCqNlHg9w\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly Decimal \u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly bool \u0023\u003DzsnB_gYU5TL6yIoS2YB\u0024_LhE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly bool \u0023\u003Dzv4Ros9fpAMv35I6yEw\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly bool \u0023\u003DzSzVwji8YCShTexyi6g\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly bool \u0023\u003DzQempeQBdiy_DpilZpg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly Decimal \u0023\u003Dz3G68FsAyTsTPL5Tu9cevQzk\u003D;
+    
+    private readonly Order _order;
+    
+    private readonly Decimal _balance;
+    
+    private readonly OrderStates _orderStates;
+    
+    private readonly Decimal _priceStep;
+    
+    private readonly bool _autoRemove;
+    
+    private readonly bool _isFrozen;
+    
+    private readonly bool _isHidden;
+    
+    private readonly bool _hasError;
+    
+    private readonly Decimal _price;
 
-    public \u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D(
+    public sActiveOrder(
       Order _param1,
       Decimal _param2,
       OrderStates _param3,
@@ -610,85 +610,85 @@ public class ChartDrawData : IChartDrawData
           Volume = _param2,
           Balance = _param2
         };
-      this.\u0023\u003Dz4\u00248iX2\u0024NTce5pVGZ5A\u003D\u003D = order;
-      this.\u0023\u003DzXj8Y9RlEtrX1U1I1Eg\u003D\u003D = _param2;
-      this.\u0023\u003Dz2NuYvWXuCZCqNlHg9w\u003D\u003D = _param1 == null ? (OrderStates) (object) 3 : _param3;
-      this.\u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D = _param4;
-      this.\u0023\u003DzsnB_gYU5TL6yIoS2YB\u0024_LhE\u003D = _param5 || _param1 == null;
-      this.\u0023\u003Dzv4Ros9fpAMv35I6yEw\u003D\u003D = _param6 || _param1 == null;
-      this.\u0023\u003DzSzVwji8YCShTexyi6g\u003D\u003D = _param7;
-      this.\u0023\u003DzQempeQBdiy_DpilZpg\u003D\u003D = _param8;
-      this.\u0023\u003Dz3G68FsAyTsTPL5Tu9cevQzk\u003D = _param9;
+      this._order = order;
+      this._balance = _param2;
+      this._orderStates = _param1 == null ? (OrderStates) (object) 3 : _param3;
+      this._priceStep = _param4;
+      this._autoRemove = _param5 || _param1 == null;
+      this._isFrozen = _param6 || _param1 == null;
+      this._isHidden = _param7;
+      this._hasError = _param8;
+      this._price = _param9;
     }
 
     public Order \u0023\u003DzEbEKEpf9EiRR()
     {
-      return this.\u0023\u003Dz4\u00248iX2\u0024NTce5pVGZ5A\u003D\u003D;
+      return this._order;
     }
 
     public Decimal \u0023\u003DzP9vQqYe3EED\u0024()
     {
-      return this.\u0023\u003DzXj8Y9RlEtrX1U1I1Eg\u003D\u003D;
+      return this._balance;
     }
 
     public OrderStates \u0023\u003Dzj7Cw0iE\u003D()
     {
-      return this.\u0023\u003Dz2NuYvWXuCZCqNlHg9w\u003D\u003D;
+      return this._orderStates;
     }
 
     public Decimal \u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D()
     {
-      return this.\u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D;
+      return this._priceStep;
     }
 
     public bool \u0023\u003DzzTd2XsqYavfdlfkXJw\u003D\u003D()
     {
-      return this.\u0023\u003DzsnB_gYU5TL6yIoS2YB\u0024_LhE\u003D;
+      return this._autoRemove;
     }
 
-    public bool \u0023\u003DzOWugxxYxGyL4() => this.\u0023\u003Dzv4Ros9fpAMv35I6yEw\u003D\u003D;
+    public bool \u0023\u003DzOWugxxYxGyL4() => this._isFrozen;
 
-    public bool \u0023\u003DzM6hjJk33XfMg() => this.\u0023\u003DzSzVwji8YCShTexyi6g\u003D\u003D;
+    public bool \u0023\u003DzM6hjJk33XfMg() => this._isHidden;
 
-    public bool IsError => this.\u0023\u003DzQempeQBdiy_DpilZpg\u003D\u003D;
+    public bool IsError => this._hasError;
 
-    public Decimal \u0023\u003DzbH5YDNBwpnry() => this.\u0023\u003Dz3G68FsAyTsTPL5Tu9cevQzk\u003D;
+    public Decimal \u0023\u003DzbH5YDNBwpnry() => this._price;
   }
 
   /// <summary>Used to transfer annotation draw data.</summary>
   public class AnnotationData : ChartDrawData.IDrawValue, IPersistable, IAnnotationData
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool? \u0023\u003DzDVmik2Cw62ImfJj4oQ\u003D\u003D = new bool?(true);
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool? \u0023\u003DzYXubScDfQrTXB6UBKw\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IComparable \u0023\u003Dzqd3FQYBK_LA3hXY2yQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IComparable \u0023\u003DzOo4y0SHpsMppCYgBgQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IComparable \u0023\u003Dz\u0024ZnIEGwkZ5eX9ae8QA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IComparable \u0023\u003DzHsqtIm4nTXsCXtUzPQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Media.Brush \u0023\u003DzyzlJTQKpqY_x2irG8w\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Media.Brush \u0023\u003DzzC_8Z\u0024y5dAaxpXf06Q\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Media.Brush \u0023\u003DzxqYIFOtQe2yvE8IR9w\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Thickness? \u0023\u003DzNuku2Q_MJPTAy5dSZA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool? \u0023\u003Dz8fLAWoL79IMaST2\u0024wlIkc0I\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private LabelPlacement? \u0023\u003Dz9PsZz0tnRpDYHWiQjNcgqMQ\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.HorizontalAlignment? \u0023\u003DzEVNVu_ZK7\u00248NZaMf6lPJDrQ\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.VerticalAlignment? \u0023\u003DzD\u0024vImVfDGuVPRP1kiGxuWsE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private AnnotationCoordinateMode? \u0023\u003DzFEFuGp8\u0024pUqAK41W_KORrlU\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private string \u0023\u003Dz\u0024O4Ws2iqxrjv3AMtlw\u003D\u003D;
 
     /// <inheritdoc />
@@ -958,11 +958,11 @@ public class ChartDrawData : IChartDrawData
   /// <summary>Chart drawing data item.</summary>
   public sealed class ChartDrawDataItem : IChartDrawData.IChartDrawDataItem
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartDrawData \u0023\u003DzU\u0024_meog\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly DateTimeOffset \u0023\u003DzRDsdW3VoE5Y8g7uFWw\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double \u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D;
 
     internal ChartDrawDataItem(ChartDrawData _param1, DateTimeOffset _param2)
@@ -995,7 +995,7 @@ public class ChartDrawData : IChartDrawData
     /// <inheritdoc />
     public IChartDrawData.IChartDrawDataItem Add(IChartCandleElement element, System.Windows.Media.Color? color)
     {
-      return (IChartDrawData.IChartDrawDataItem) this.\u0023\u003DzxdbSAbQ\u003D<IChartCandleElement, ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>(this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003Dz\u0024lu1PoF9036WD8AKeQ\u003D\u003D(), element, new ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D(this.TimeStamp, color));
+      return (IChartDrawData.IChartDrawDataItem) this.\u0023\u003DzxdbSAbQ\u003D<IChartCandleElement, ChartDrawData.sCandleColor>(this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003Dz\u0024lu1PoF9036WD8AKeQ\u003D\u003D(), element, new ChartDrawData.sCandleColor(this.TimeStamp, color));
     }
 
     /// <inheritdoc />
@@ -1010,7 +1010,7 @@ public class ChartDrawData : IChartDrawData
       CandlePriceLevel[] priceLevels,
       CandleStates _)
     {
-      return (IChartDrawData.IChartDrawDataItem) this.\u0023\u003DzxdbSAbQ\u003D<IChartCandleElement, ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>(this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzOrWGMasVFnPJ9EIggA\u003D\u003D(), element, new ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D(this.TimeStamp, dataType, openPrice, highPrice, lowPrice, closePrice, (IEnumerable<CandlePriceLevel>) priceLevels));
+      return (IChartDrawData.IChartDrawDataItem) this.\u0023\u003DzxdbSAbQ\u003D<IChartCandleElement, ChartDrawData.sCandle>(this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzOrWGMasVFnPJ9EIggA\u003D\u003D(), element, new ChartDrawData.sCandle(this.TimeStamp, dataType, openPrice, highPrice, lowPrice, closePrice, (IEnumerable<CandlePriceLevel>) priceLevels));
     }
 
     /// <inheritdoc />
@@ -1088,9 +1088,9 @@ public class ChartDrawData : IChartDrawData
   /// <summary>Indicator values to draw on chart.</summary>
   public readonly struct IndicatorData : ChartDrawData.IDrawValue
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly DateTime \u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    private readonly DateTime _utcTime;
+    
     private readonly IIndicatorValue \u0023\u003DzeThLMrnu32pVQmpVLQ\u003D\u003D;
 
     /// <summary>Create instance.</summary>
@@ -1103,12 +1103,12 @@ public class ChartDrawData : IChartDrawData
 
     internal IndicatorData(DateTime _param1, IIndicatorValue _param2)
     {
-      this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1;
+      this._utcTime = _param1;
       this.\u0023\u003DzeThLMrnu32pVQmpVLQ\u003D\u003D = _param2;
     }
 
     /// <summary>Value timestamp.</summary>
-    public DateTime Time => this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+    public DateTime Time => this._utcTime;
 
     /// <summary>Indicator value.</summary>
     public IIndicatorValue Value => this.\u0023\u003DzeThLMrnu32pVQmpVLQ\u003D\u003D;

@@ -14,11 +14,11 @@ internal sealed class \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK
   \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D,
   IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly WriteableBitmap \u0023\u003DzaL\u0024oZOu2gmct;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003Dz\u0024F\u0024ERMIoRsdr6mT2iQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003DzpNyBX\u00240Erlkj2Cvvig\u003D\u003D;
 
   public \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK3Nco\u0024rbGeT_23aNGi1tfLTsAtQ\u003D\u003D(

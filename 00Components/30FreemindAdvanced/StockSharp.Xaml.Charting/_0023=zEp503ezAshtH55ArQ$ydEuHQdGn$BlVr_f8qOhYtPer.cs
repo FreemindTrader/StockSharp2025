@@ -10,15 +10,15 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzP4R7yU0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzRNV_Dpk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dzp55dtus\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzSzOWcj8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ \u0023\u003DzISNDksKSYcjC = new \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ(double.MaxValue, double.MaxValue, double.MinValue, double.MinValue);
 
   public \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ(

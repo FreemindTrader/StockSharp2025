@@ -16,7 +16,7 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zUWZK4BU846MEUQCR5WKT9QZA85UZEQW6M2YZEKBE72N8R2PVRLRQA_ejd : 
   \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u00248riNI9I7z_
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly List<Type> \u0023\u003DzVGdWd1PKAs\u00242 = ((IEnumerable<Type>) new Type[1]
   {
     typeof (TimeSpan)

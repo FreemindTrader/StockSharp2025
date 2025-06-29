@@ -394,33 +394,33 @@ internal sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_uB
 
   private struct \u0023\u003Dzn2d7rrx68Fec
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dzs31XlgM\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzLNbWazE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzrS5XlCc\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzxpGWEWQ\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dz3MxuAfw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public \u0023\u003DzSQJobdqtH0NktyvbaGGemf4lpuP7IWrDyPzfHcmWMZgPGDmCBoWgpkV6Fnoq \u0023\u003DzLCJuIho\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public \u0023\u003DzSQJobdqtH0NktyvbaGGemf4lpuP7IWrDyPzfHcmWMZgPGDmCBoWgpkV6Fnoq \u0023\u003Dz2zQMp9I\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzhtbiT5rMznKy;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzcPhD7MRob2qB;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzgMqJAa8\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzWQGY3lo\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzKZQYYpc\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzOXGcd6E\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003DzDNR8pqc\u003D;
   }
 }

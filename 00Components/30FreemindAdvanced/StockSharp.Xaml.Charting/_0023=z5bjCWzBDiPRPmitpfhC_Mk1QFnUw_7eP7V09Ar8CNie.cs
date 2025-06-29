@@ -13,7 +13,7 @@ using System.Windows;
 internal sealed class \u0023\u003Dz5bjCWzBDiPRPmitpfhC_Mk1QFnUw_7eP7V09Ar8CNie\u0024 : 
   dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DataTemplate \u0023\u003Dz\u0024jsK2M\u0024fr2jwvVHRHw\u003D\u003D;
 
   public DataTemplate \u0023\u003DzZHuuQzDpL8K\u00246lVt6w\u003D\u003D()

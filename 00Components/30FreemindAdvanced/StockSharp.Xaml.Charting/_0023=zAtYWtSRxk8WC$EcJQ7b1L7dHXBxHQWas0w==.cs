@@ -13,7 +13,7 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D : 
   dje_zXJSU6RS8TCQ6ZVU6XJ5NL7C4LYU27ZM5SDS8FXR9_ejd<TimeSpan>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly string \u0023\u003Dz_wxyT_Q\u003D = XXX.SSS(-539329034);
 
   public \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D()

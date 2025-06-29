@@ -14,19 +14,19 @@ using System.Windows.Input;
 internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ : 
   dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly DependencyProperty \u0023\u003Dzy4Y1epMcZKTS = DependencyProperty.Register(XXX.SSS(-539428834), typeof (string), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) XXX.SSS(-539431487), new PropertyChangedCallback(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003Dzn0IbA1m7B6Pr)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzhGlyqoMEq_wf = DependencyProperty.Register(XXX.SSS(-539428627), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) \u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D.Scale));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzY3btX2_4ZgpM = DependencyProperty.Register(XXX.SSS(-539428638), typeof (double), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) 0.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Cursor \u0023\u003DzFl6tvxA\u003D = Cursors.Arrow;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzqGwbHdeZ8yMA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzeDqneUWYjgVB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz0RQE5sVUyiev;
 
   protected \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ()

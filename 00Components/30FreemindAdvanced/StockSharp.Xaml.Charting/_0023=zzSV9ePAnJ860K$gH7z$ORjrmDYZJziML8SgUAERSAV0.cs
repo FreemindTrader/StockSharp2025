@@ -19,14 +19,14 @@ using System.Linq;
 internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D : 
   ChartSettingsObjectBase<
   #nullable disable
-  \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>
+  IfxChartElement>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, PropertyDescriptor, bool> \u0023\u003DzZdxZPcbMFUEQ;
+  
+  private readonly Func<IfxChartElement, PropertyDescriptor, bool> \u0023\u003DzZdxZPcbMFUEQ;
 
   public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1,
-    Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, PropertyDescriptor, bool> _param2 = null)
+    IfxChartElement _param1,
+    Func<IfxChartElement, PropertyDescriptor, bool> _param2 = null)
     : base(_param1)
   {
     this.\u0023\u003DzZdxZPcbMFUEQ = _param2;
@@ -36,14 +36,14 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   public static PropertyDescriptor \u0023\u003DzANqI1s0\u003D(
     string _param0,
     object _param1,
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param2,
-    Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, PropertyDescriptor, bool> _param3)
+    IfxChartElement _param2,
+    Func<IfxChartElement, PropertyDescriptor, bool> _param3)
   {
     return (PropertyDescriptor) new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzxnJZ3YUHC\u00248n(_param0, _param1, _param2, _param3);
   }
 
   protected override PropertyDescriptor[] OnGetProperties(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+    IfxChartElement _param1)
   {
     \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
     vbxLeArTkallkIdHg.\u0023\u003DzRRvwDu67s9Rm = this;
@@ -70,7 +70,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
     #nullable disable
     HashSet<string> \u0023\u003DzaEWfwlo\u003D;
     public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
-    public \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D \u0023\u003DzLICojrU\u003D;
+    public IfxChartElement \u0023\u003DzLICojrU\u003D;
 
     internal string \u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(
       string _param1)
@@ -84,10 +84,10 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
 
     internal bool \u0023\u003Dz3OKSSmcreu7R3ztl\u0024g\u003D\u003D(PropertyDescriptor _param1)
     {
-      Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, PropertyDescriptor, bool> zZdxZpcbMfueq = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ;
+      Func<IfxChartElement, PropertyDescriptor, bool> zZdxZpcbMfueq = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ;
       if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, _param1) ? 1 : 0) : 1) == 0)
         return false;
-      \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D zLiCojrU = this.\u0023\u003DzLICojrU\u003D;
+      IfxChartElement zLiCojrU = this.\u0023\u003DzLICojrU\u003D;
       return zLiCojrU == null || !zLiCojrU.\u0023\u003DzpU3scm4vRLfa(_param1.Name);
     }
 
@@ -101,7 +101,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
       \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D d295Ww4skLs1HZBq = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D();
       d295Ww4skLs1HZBq.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D = this;
       IEnumerable<PropertyDescriptor> propertyDescriptors;
-      if (!(obj is \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D ddznyiGmdRlAevOq))
+      if (!(obj is IfxChartElement ddznyiGmdRlAevOq))
       {
         d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D = obj as IChartIndicatorPainter;
         propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
@@ -133,22 +133,22 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
     internal PropertyDescriptor \u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D(
       PropertyDescriptor _param1)
     {
-      return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ);
+      return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (IfxChartElement) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ);
     }
   }
 
   private sealed class \u0023\u003DzxnJZ3YUHC\u00248n(
     string _param1,
     object _param2,
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param3,
-    Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, PropertyDescriptor, bool> _param4) : 
-    ChartSettingsObjectBase<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>.ProxyDescriptor(_param1, _param2, _param3, Enumerable.Cast<Attribute>(TypeDescriptor.GetAttributes((object) _param3, false)), _param4)
+    IfxChartElement _param3,
+    Func<IfxChartElement, PropertyDescriptor, bool> _param4) : 
+    ChartSettingsObjectBase<IfxChartElement>.ProxyDescriptor(_param1, _param2, _param3, Enumerable.Cast<Attribute>(TypeDescriptor.GetAttributes((object) _param3, false)), _param4)
   {
-    protected override ChartSettingsObjectBase<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D> CreateWrapper(
-      \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1,
-      Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, PropertyDescriptor, bool> _param2 = null)
+    protected override ChartSettingsObjectBase<IfxChartElement> CreateWrapper(
+      IfxChartElement _param1,
+      Func<IfxChartElement, PropertyDescriptor, bool> _param2 = null)
     {
-      return (ChartSettingsObjectBase<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>) new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D(_param1, _param2);
+      return (ChartSettingsObjectBase<IfxChartElement>) new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D(_param1, _param2);
     }
   }
 }

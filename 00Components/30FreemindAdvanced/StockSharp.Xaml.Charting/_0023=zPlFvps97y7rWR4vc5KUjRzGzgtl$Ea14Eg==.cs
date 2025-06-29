@@ -171,11 +171,11 @@ internal static class \u0023\u003DzPlFvps97y7rWR4vc5KUjRzGzgtl\u0024Ea14Eg\u003D
 
   private sealed class \u0023\u003DzxYtXIbpnAMl0 : DependencyObject, IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static readonly DependencyProperty \u0023\u003DzlJGaRWxhHZPw = DependencyProperty.Register(XXX.SSS(-539426867), typeof (object), typeof (\u0023\u003DzPlFvps97y7rWR4vc5KUjRzGzgtl\u0024Ea14Eg\u003D\u003D.\u0023\u003DzxYtXIbpnAMl0), new PropertyMetadata((object) null, new PropertyChangedCallback(\u0023\u003DzPlFvps97y7rWR4vc5KUjRzGzgtl\u0024Ea14Eg\u003D\u003D.\u0023\u003DzxYtXIbpnAMl0.\u0023\u003Dz_hMBr1Clbh8u)));
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Action<DependencyPropertyChangedEventArgs> \u0023\u003Dz7CXThCs\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool \u0023\u003DzTH8vUR03qtWI;
 
     public \u0023\u003DzxYtXIbpnAMl0(

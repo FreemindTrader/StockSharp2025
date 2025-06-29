@@ -13,13 +13,13 @@ internal class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnLJ77ByVH81gaeQU2i00qjI8QhelTQ\u
   \u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D,
   INotifyPropertyChanged
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzeWnJxQc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzsSzaZ5c0aQtyUjczXg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dzk0QvTIqzWPOhJybPtA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dziis2LAS1n\u0024lcleXxEQ\u003D\u003D;
 
   public event PropertyChangedEventHandler PropertyChanged;

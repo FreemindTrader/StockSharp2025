@@ -39,7 +39,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     {
       fq05jnDg3bOrIrgCjote.\u0023\u003DzZreBqCsNdaNN(false);
       \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539332423), Array.Empty<object>());
-      this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D = new Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D)));
+      this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D = new Action<IRenderableSeries>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D)));
       Size size = this.\u0023\u003DzMRPYrFQxdo1UO1h10rB90f8\u003D((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D);
       if (this.\u0023\u003DzsGkoBP41VLI4((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, size, out ogQpZalPrDrRrx2Q))
       {
@@ -82,7 +82,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
       str = \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzJmwTBL5wi7Zy8Thmt0etFrw\u003D.Value + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString();
       flag = false;
     }
-    else if (_param1.XAxis is dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd && _param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>())
+    else if (_param1.XAxis is dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd && _param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
     {
       str = \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzlgqIi4B2zuQC1ih8Gx\u0024aMAJJcKZtTnjFo_9FGCE\u003D.Value + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString();
       flag = false;
@@ -99,8 +99,8 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     int num = _param2.Width < 2.0 ? 0 : (_param2.Height >= 2.0 ? 1 : 0);
     bool flag1 = !_param1.get_XAxes().Any<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzSjEALlyd467CDZCTsTwMrbo\u003D))) && !_param1.get_YAxes().Any<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5TYzsFNMIz7uGfzQgeU3D4E\u003D)));
     bool flag2 = !_param1.get_XAxes().Any<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRViYxWKLBIrrEXdSy3aN0E0\u003D))) && !_param1.get_YAxes().Any<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzqo9jwlb7htkBZP\u0024kf2q4SPc\u003D)));
-    bool flag3 = !this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>();
-    bool flag4 = flag3 && this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.All<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D = new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6hBTksUWEhZTQqEktRG1x1Q\u003D)));
+    bool flag3 = !this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>();
+    bool flag4 = flag3 && this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.All<IRenderableSeries>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D = new Func<IRenderableSeries, bool>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6hBTksUWEhZTQqEktRG1x1Q\u003D)));
     bool flag5 = _param1.get_RenderSurface() != null;
     string str = string.Empty;
     if (num == 0)
@@ -160,8 +160,8 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   {
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A1 = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
     zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D = _param0;
-    ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> renderableSeries = zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.get_RenderableSeries();
-    List<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> list = renderableSeries != null ? renderableSeries.Where<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(zPKCmcad6Nxc5A8A1.\u0023\u003DzFJV4yCyS4GkfcIY8Kg\u003D\u003D)).ToList<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>() : (List<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) null;
+    ObservableCollection<IRenderableSeries> renderableSeries = zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.get_RenderableSeries();
+    List<IRenderableSeries> list = renderableSeries != null ? renderableSeries.Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(zPKCmcad6Nxc5A8A1.\u0023\u003DzFJV4yCyS4GkfcIY8Kg\u003D\u003D)).ToList<IRenderableSeries>() : (List<IRenderableSeries>) null;
     // ISSUE: explicit non-virtual call
     int count = list != null ? __nonvirtual (list.Count) : 0;
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A2 = zPKCmcad6Nxc5A8A1;
@@ -181,7 +181,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
       (object) zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz_li6Ttc\u003D.Width,
       (object) zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz_li6Ttc\u003D.Height
     });
-    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D = new \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D[count];
+    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D = new IRenderableSeries[count];
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz4nxjMSnapDjJ = new \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ[count];
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dzoc6wScE\u003D = new \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D[count];
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz8O95DKv93zY9 = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D[count];
@@ -190,7 +190,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz4ASrz8c\u0024JOa7(zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D);
     for (int index = 0; index < count; ++index)
     {
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug = list[index];
+      IRenderableSeries s1JolYrWoYpqmQ6ug = list[index];
       \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ns01UjmP40FpxAl2jmQ;
       \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq;
       \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq;
@@ -213,7 +213,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
 
   private static void \u0023\u003Dz2iW_UgNEfXLUkWrnJw\u003D\u003D(
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D _param0,
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+    IRenderableSeries _param1,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param2,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param3,
     out \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param4,
@@ -271,7 +271,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     {
       \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D k0hz6MwLrPm7JfgVw01g = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D();
       k0hz6MwLrPm7JfgVw01g.\u0023\u003Dz4bf8Oyc\u003D = dynWmoFzgH4RlWB0lB;
-      \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dzm6624LJWpww_(_param0, _param1, new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzF3QfbV0ybHhoavXSPCz09zI\u003D));
+      \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dzm6624LJWpww_(_param0, _param1, new Func<IRenderableSeries, bool>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzF3QfbV0ybHhoavXSPCz09zI\u003D));
       k0hz6MwLrPm7JfgVw01g.\u0023\u003Dz4bf8Oyc\u003D.\u0023\u003Dzs15X3Ar32F1\u0024(_param1, ftrixUnpTllY1PkTyq);
     }
   }
@@ -290,7 +290,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
         \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = _param0.get_ViewportManager().\u0023\u003DzhDjoRkNuf3z7_02BMQ\u003D\u003D(dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D, _param1);
         if (!abyLt9clZggmJsWhw.Equals((object) dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D.VisibleRange) && dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D.\u0023\u003Dz2OKbyRBzRCBL(abyLt9clZggmJsWhw))
           dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D.VisibleRange = abyLt9clZggmJsWhw;
-        \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dzm6624LJWpww_(_param0, _param1, new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(dop2SzA2WchXh2wc.\u0023\u003DzelRiTdR9_Z_W9jMgDc061as\u003D));
+        \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dzm6624LJWpww_(_param0, _param1, new Func<IRenderableSeries, bool>(dop2SzA2WchXh2wc.\u0023\u003DzelRiTdR9_Z_W9jMgDc061as\u003D));
         dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D.\u0023\u003Dzs15X3Ar32F1\u0024(_param1, ftrixUnpTllY1PkTyq);
       }
     }
@@ -299,11 +299,11 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   private static \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzm6624LJWpww_(
     \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param0,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1,
-    Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool> _param2)
+    Func<IRenderableSeries, bool> _param2)
   {
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D xe6cQmBj9OjyffE7I = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D();
     xe6cQmBj9OjyffE7I.\u0023\u003Dzm6bkhTMv4TGS = _param2;
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug = _param0.get_RenderableSeries().FirstOrDefault<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(xe6cQmBj9OjyffE7I.\u0023\u003DzEQtawKU0gsYICcBClTLrWSc\u003D)) ?? _param0.get_RenderableSeries().FirstOrDefault<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(xe6cQmBj9OjyffE7I.\u0023\u003Dz\u0024MTmBniphw3al5MgNQIrqkg\u003D));
+    IRenderableSeries s1JolYrWoYpqmQ6ug = _param0.get_RenderableSeries().FirstOrDefault<IRenderableSeries>(new Func<IRenderableSeries, bool>(xe6cQmBj9OjyffE7I.\u0023\u003DzEQtawKU0gsYICcBClTLrWSc\u003D)) ?? _param0.get_RenderableSeries().FirstOrDefault<IRenderableSeries>(new Func<IRenderableSeries, bool>(xe6cQmBj9OjyffE7I.\u0023\u003Dz\u0024MTmBniphw3al5MgNQIrqkg\u003D));
     if (((IEnumerable<\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ>) _param1.\u0023\u003Dz4nxjMSnapDjJ).\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ>() || s1JolYrWoYpqmQ6ug == null)
       return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) null;
     \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D[] zoc6wScE = _param1.\u0023\u003Dzoc6wScE\u003D;
@@ -343,7 +343,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     List<int> intList = new List<int>();
     for (int index = 0; index < _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D.Length; ++index)
     {
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[index];
+      IRenderableSeries uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[index];
       if (uhIm4pSg8PxqhyA71 != null)
       {
         uhIm4pSg8PxqhyA71.XAxis = _param0.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(uhIm4pSg8PxqhyA71.get_XAxisId(), true);
@@ -365,7 +365,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param2,
     int _param3)
   {
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[_param3];
+    IRenderableSeries uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[_param3];
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2;
     if (!_param1.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D.TryGetValue(uhIm4pSg8PxqhyA71.get_YAxisId(), out xkzemsMs5tGkouk5w1) || !_param1.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D.TryGetValue(uhIm4pSg8PxqhyA71.get_XAxisId(), out xkzemsMs5tGkouk5w2))
@@ -385,10 +385,10 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
 
   private sealed class \u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D
   {
-    public Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool> \u0023\u003Dzm6bkhTMv4TGS;
+    public Func<IRenderableSeries, bool> \u0023\u003Dzm6bkhTMv4TGS;
 
     internal bool \u0023\u003DzEQtawKU0gsYICcBClTLrWSc\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       if (!this.\u0023\u003Dzm6bkhTMv4TGS(_param1))
         return false;
@@ -397,7 +397,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     }
 
     internal bool \u0023\u003Dz\u0024MTmBniphw3al5MgNQIrqkg\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       if (!this.\u0023\u003Dzm6bkhTMv4TGS(_param1))
         return false;
@@ -411,7 +411,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzS7JsfCE\u003D;
 
     internal bool \u0023\u003DzelRiTdR9_Z_W9jMgDc061as\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return _param1.get_YAxisId() == this.\u0023\u003DzS7JsfCE\u003D.get_Id() && _param1.IsVisible;
     }
@@ -423,12 +423,12 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public static readonly \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D();
     public static Action<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> \u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D;
     public static Action<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> \u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D;
-    public static Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> \u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D;
+    public static Action<IRenderableSeries> \u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D;
     public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
     public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D;
     public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
-    public static Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool> \u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D;
+    public static Func<IRenderableSeries, bool> \u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D;
     public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
     internal void \u0023\u003DzIQem3qD8jTxU5SNvvnOyq\u0024w\u003D(
@@ -444,7 +444,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     }
 
     internal void \u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       _param1.get_DataSeries()?.OnBeginRenderPass();
     }
@@ -474,7 +474,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     }
 
     internal bool \u0023\u003Dz6hBTksUWEhZTQqEktRG1x1Q\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() != null;
     }
@@ -491,7 +491,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003Dz4bf8Oyc\u003D;
 
     internal bool \u0023\u003DzF3QfbV0ybHhoavXSPCz09zI\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return _param1.get_XAxisId() == this.\u0023\u003Dz4bf8Oyc\u003D.get_Id() && _param1.IsVisible;
     }
@@ -503,7 +503,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D \u0023\u003Dz7Pgaal_fKVBn;
 
     internal bool \u0023\u003DzFJV4yCyS4GkfcIY8Kg\u003D\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return this.\u0023\u003Dzyyh4GZw\u003D.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(_param1.get_XAxisId(), false) != null && this.\u0023\u003Dzyyh4GZw\u003D.get_YAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(_param1.get_YAxisId(), false) != null;
     }

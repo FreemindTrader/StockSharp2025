@@ -14,9 +14,9 @@ using System.Threading;
 internal sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D : 
   dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> \u0023\u003Dz0oGDcgXNO1Ze;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> \u0023\u003DzrmlvxkfuVPe1;
 
   public void \u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D(

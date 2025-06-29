@@ -31,7 +31,7 @@ public abstract class ChartElement<T> :
   ChartPart<
   #nullable disable
   T>,
-  \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D,
+  IfxChartElement,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanging,
@@ -39,33 +39,33 @@ public abstract class ChartElement<T> :
   IPersistable
   where T : ChartElement<T>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D \u0023\u003DzU\u0024_meog\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private IfxChartElement \u0023\u003DzU\u0024_meog\u003D;
+  
   private readonly SynchronizedDictionary<Guid, string> \u0023\u003DzBhyJPYipojm7 = new SynchronizedDictionary<Guid, string>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedSet<string> \u0023\u003DzewltSxXtyQpQRTX1n50cC8Q\u003D = new SynchronizedSet<string>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly CachedSynchronizedSet<IChartElement> \u0023\u003DzbSEUhuE\u003D = new CachedSynchronizedSet<IChartElement>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IChartArea \u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private StockSharp.Xaml.Charting.ChartArea \u0023\u003DzpvwmDngT0_MF;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dz5A6vN_lzy9jl;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzVf6ckz06jjnq = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzY_3lsXhzr\u0024rW = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DztTcR7ybUS145 = XXX.SSS(-539433902);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzXAlmdTpL5g8f = XXX.SSS(-539432528);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<IComparable, System.Windows.Media.Color?> \u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<IComparable, System.Drawing.Color?> \u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DznKRyu26uXo5aoizqkSGB4LJBZD07y13sWMME\u0024ccMbmGwY9k6Vq4BKaE\u003D;
 
   /// <inheritdoc />
@@ -185,16 +185,16 @@ public abstract class ChartElement<T> :
   [Browsable(false)]
   public IChartElement ParentElement => (IChartElement) this.\u0023\u003DzU\u0024_meog\u003D;
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqcXFVJpr_GKP9Yp3Hww\u003D(
+  void IfxChartElement.\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqcXFVJpr_GKP9Yp3Hww\u003D(
     IChartElement _param1)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D = this.\u0023\u003DzU\u0024_meog\u003D == null || _param1 == null ? (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1 : throw new ArgumentException(LocalizedStrings.ParentElementAlreadySet);
+    this.\u0023\u003DzU\u0024_meog\u003D = this.\u0023\u003DzU\u0024_meog\u003D == null || _param1 == null ? (IfxChartElement) _param1 : throw new ArgumentException(LocalizedStrings.ParentElementAlreadySet);
     if (this.\u0023\u003DzU\u0024_meog\u003D == null)
       return;
     this.\u0023\u003DzU\u0024_meog\u003D.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzSJdYbCcHBpzmYpsDytEtTkY0OpqoIhQR2IXqEAMCtmjWsFRg\u0024g\u003D\u003D);
   }
 
-  int \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5Xjl\u0024VTn26BAxExunz_I758h()
+  int IfxChartElement.\u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5Xjl\u0024VTn26BAxExunz_I758h()
   {
     return this.Priority;
   }
@@ -203,9 +203,9 @@ public abstract class ChartElement<T> :
   /// </summary>
   protected virtual int Priority => int.MaxValue;
 
-  \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzK74oGPE3yyB7zop8uDdzn\u0024EtAlFfparLI9VkIbQLPbt\u0024()
+  IfxChartElement IfxChartElement.\u0023\u003DzK74oGPE3yyB7zop8uDdzn\u0024EtAlFfparLI9VkIbQLPbt\u0024()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D != null ? this.\u0023\u003DzU\u0024_meog\u003D.RootElement : (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this;
+    return this.\u0023\u003DzU\u0024_meog\u003D != null ? this.\u0023\u003DzU\u0024_meog\u003D.RootElement : (IfxChartElement) this;
   }
 
   /// <inheritdoc />
@@ -227,8 +227,8 @@ public abstract class ChartElement<T> :
       throw new ArgumentNullException(XXX.SSS(-539427819));
     if (!((SynchronizedSet<IChartElement>) this.\u0023\u003DzbSEUhuE\u003D).TryAdd(element))
       throw new InvalidOperationException(XXX.SSS(-539427602));
-    ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) element).\u0023\u003Dzy8S_C0E\u003D((IChartElement) this);
-    ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) element).DontDraw = dontDraw;
+    ((IfxChartElement) element).SetParent((IChartElement) this);
+    ((IfxChartElement) element).DontDraw = dontDraw;
   }
 
   /// <summary>Remove child chart element.</summary>
@@ -238,7 +238,7 @@ public abstract class ChartElement<T> :
       throw new ArgumentNullException(XXX.SSS(-539427594));
     if (!((BaseCollection<IChartElement, ISet<IChartElement>>) this.\u0023\u003DzbSEUhuE\u003D).Remove(element))
       return;
-    ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) element).\u0023\u003Dzy8S_C0E\u003D((IChartElement) null);
+    ((IfxChartElement) element).SetParent((IChartElement) null);
   }
 
   /// <summary>Reset element.</summary>
@@ -252,25 +252,25 @@ public abstract class ChartElement<T> :
   /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
   protected abstract bool OnDraw(ChartDrawData data);
 
-  bool \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZEW6yH9C3QEvQeoTm_c\u003D(
+  bool IfxChartElement.\u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZEW6yH9C3QEvQeoTm_c\u003D(
     ChartDrawData _param1)
   {
     return this.OnDraw(_param1);
   }
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzQN2Zes8h9tElvYmX48o49KTKAbz_6vhM\u0024G0TdN0\u003D()
+  void IfxChartElement.\u0023\u003DzQN2Zes8h9tElvYmX48o49KTKAbz_6vhM\u0024G0TdN0\u003D()
   {
     this.OnReset();
-    foreach (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D childElement in this.ChildElements)
+    foreach (IfxChartElement childElement in this.ChildElements)
       childElement.\u0023\u003DzYI36Ggg\u003D();
   }
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSswqcr11vVhHbZb1DIg\u003D()
+  void IfxChartElement.\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSswqcr11vVhHbZb1DIg\u003D()
   {
     this.RaisePropertyChanged(XXX.SSS(-539427760));
   }
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dz5VLaAZX2bctAcuSoajSAXiAWyCN77Q2JwvgX_JOkRsCm(
+  void IfxChartElement.\u0023\u003Dz5VLaAZX2bctAcuSoajSAXiAWyCN77Q2JwvgX_JOkRsCm(
     StockSharp.Xaml.Charting.ChartArea _param1)
   {
     if (this.ChartArea != null)
@@ -282,7 +282,7 @@ public abstract class ChartElement<T> :
     this.\u0023\u003Dz2DrmhCu9hZz815QBZA\u003D\u003D();
   }
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAZx\u00241KWiV4nA3yEFrP2Kk8Af()
+  void IfxChartElement.\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAZx\u00241KWiV4nA3yEFrP2Kk8Af()
   {
     if (this.ChartArea == null)
       return;
@@ -303,18 +303,18 @@ public abstract class ChartElement<T> :
     this.RaisePropertyChanged(XXX.SSS(-539427833));
   }
 
-  bool \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKlZ3wGlucPKFCzuSkzT6xviX()
+  bool IfxChartElement.\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKlZ3wGlucPKFCzuSkzT6xviX()
   {
     return this.\u0023\u003DznKRyu26uXo5aoizqkSGB4LJBZD07y13sWMME\u0024ccMbmGwY9k6Vq4BKaE\u003D;
   }
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dz4simfJ\u0024MaSW7GKJ8rfRfj9fAdjHgUulUDzuVFYE4LCBP(
+  void IfxChartElement.\u0023\u003Dz4simfJ\u0024MaSW7GKJ8rfRfj9fAdjHgUulUDzuVFYE4LCBP(
     bool _param1)
   {
     this.\u0023\u003DznKRyu26uXo5aoizqkSGB4LJBZD07y13sWMME\u0024ccMbmGwY9k6Vq4BKaE\u003D = _param1;
   }
 
-  string \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpSSjP2pjB\u0024sTisy0H4JVrbVL(
+  string IfxChartElement.\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpSSjP2pjB\u0024sTisy0H4JVrbVL(
     IChartElement _param1)
   {
     return CollectionHelper.TryGetValue<Guid, string>((IDictionary<Guid, string>) this.\u0023\u003DzBhyJPYipojm7, _param1.Id);
@@ -325,7 +325,7 @@ public abstract class ChartElement<T> :
     this.\u0023\u003DzBhyJPYipojm7[_param1.Id] = _param2;
   }
 
-  bool \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L6cpvMujIRSLvkaL\u0024hn1t0cz(
+  bool IfxChartElement.\u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L6cpvMujIRSLvkaL\u0024hn1t0cz(
     string _param1)
   {
     return ((BaseCollection<string, ISet<string>>) this.\u0023\u003DzewltSxXtyQpQRTX1n50cC8Q\u003D).Contains(_param1);
@@ -336,7 +336,7 @@ public abstract class ChartElement<T> :
     ((BaseCollection<string, ISet<string>>) this.\u0023\u003DzewltSxXtyQpQRTX1n50cC8Q\u003D).Add(_param1);
   }
 
-  string \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003DzNCoz_cr7eiA6K6bzw3PTScnmc152IcDGHYqt97WzXCM_()
+  string IfxChartElement.\u0023\u003DzNCoz_cr7eiA6K6bzw3PTScnmc152IcDGHYqt97WzXCM_()
   {
     string fullTitle = this.FullTitle;
     if (!StringHelper.IsEmptyOrWhiteSpace(fullTitle))
@@ -371,9 +371,9 @@ public abstract class ChartElement<T> :
     storage.SetValue<string>(XXX.SSS(-539427833), this.YAxisId);
   }
 
-  internal override T \u0023\u003Dz3MbNd8U\u003D(T _param1)
+  internal override T Clone(T _param1)
   {
-    base.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    base.Clone(_param1);
     _param1.IsVisible = this.IsVisible;
     _param1.FullTitle = this.FullTitle;
     _param1.IsLegend = this.IsLegend;
@@ -389,9 +389,9 @@ public abstract class ChartElement<T> :
       IChartElement chartElement2 = cache2[index];
       if (chartElement1.GetType() != chartElement2.GetType())
         throw new InvalidOperationException(XXX.SSS(-539427652));
-      ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) chartElement1).\u0023\u003Dz3MbNd8U\u003D((object) chartElement2);
+      ((IfxChartElement) chartElement1).Clone((object) chartElement2);
     }
-    _param1.DontDraw = ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this).DontDraw;
+    _param1.DontDraw = ((IfxChartElement) this).DontDraw;
     return _param1;
   }
 
@@ -408,14 +408,14 @@ public abstract class ChartElement<T> :
     uw9yL4K8Elv3B8f3hPm.\u0023\u003DzCdVlvQ8\u003D = this.CreateClone();
     uw9yL4K8Elv3B8f3hPm.\u0023\u003DzCdVlvQ8\u003D.\u0023\u003DzewltSxXtyQpQRTX1n50cC8Q\u003D.AddRange((IEnumerable<string>) this.\u0023\u003DzewltSxXtyQpQRTX1n50cC8Q\u003D);
     CollectionHelper.ForEach<KeyValuePair<Guid, string>>((IEnumerable<KeyValuePair<Guid, string>>) this.\u0023\u003DzBhyJPYipojm7, new Action<KeyValuePair<Guid, string>>(uw9yL4K8Elv3B8f3hPm.\u0023\u003DzHCUE8pxyT_S0mUpBMw\u003D\u003D));
-    this.\u0023\u003Dz3MbNd8U\u003D(uw9yL4K8Elv3B8f3hPm.\u0023\u003DzCdVlvQ8\u003D);
+    this.Clone(uw9yL4K8Elv3B8f3hPm.\u0023\u003DzCdVlvQ8\u003D);
     return uw9yL4K8Elv3B8f3hPm.\u0023\u003DzCdVlvQ8\u003D;
   }
 
-  void \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D.\u0023\u003Dzq8lPttT4Qpp4TSswk_CaTVGFY7g05gBW2YtIUCo\u003D(
+  void IfxChartElement.\u0023\u003Dzq8lPttT4Qpp4TSswk_CaTVGFY7g05gBW2YtIUCo\u003D(
     object _param1)
   {
-    this.\u0023\u003Dz3MbNd8U\u003D((T) _param1);
+    this.Clone((T) _param1);
   }
 
   /// <summary>

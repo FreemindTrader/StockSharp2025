@@ -23,7 +23,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
   private readonly Dictionary<double, CandlePriceLevel> \u0023\u003Dzmpn7D6HOiDmMk8BUKATzwUw\u003D;
   private readonly Dictionary<double, (KeyValuePair<double, CandlePriceLevel>[], SortedDictionary<double, CandlePriceLevel>, Decimal)> \u0023\u003DzCTCYaQHJ0R9odjhJvA\u003D\u003D;
   private readonly int \u0023\u003DzI313B3z6lrj1oSNb8A\u003D\u003D = _param2;
-  private readonly DateTime \u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1;
+  private readonly DateTime _utcTime = _param1;
   private double? \u0023\u003DzU\u0024pHYLKYv6OFV1n6ndxeCjk\u003D;
   private double \u0023\u003DzzqBTFWij9YGM\u0024sNd08bAy5Q\u003D = double.MinValue;
   private double \u0023\u003Dzrit88Hav9xHPgSKGjMesGrI\u003D = double.MaxValue;
@@ -33,7 +33,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
 
   public DateTime \u0023\u003Dzg86amuQ\u003D()
   {
-    return this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+    return this._utcTime;
   }
 
   public double? \u0023\u003DzJCVDIhjSn3vnyz7CPg\u003D\u003D()

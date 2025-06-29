@@ -19,12 +19,12 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   CandlePatternElement _param1) : 
   \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<CandlePatternElement>(_param1)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly HashSet<DateTime> \u0023\u003DzcU\u0024Li0iEvziI = new HashSet<DateTime>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DateTime[] \u0023\u003Dzn6iWmQ_uwD0z = Array.Empty<DateTime>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D \u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D;
+  
+  private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D _candleMap;
 
   protected override void \u0023\u003DzY0x9JtY\u003D()
   {
@@ -37,16 +37,16 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D candles = this.\u0023\u003Dz\u00246aIVrHDxlRJ().CandlesCompositeElement?.Candles;
     if (candles == null & _param1)
       throw new InvalidOperationException(XXX.SSS(-539330379));
-    if (this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D == candles)
+    if (this._candleMap == candles)
       return;
-    this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D?.\u0023\u003DziWBXfUI\u003D(this);
-    this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D = candles;
-    this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D?.\u0023\u003DznX2LIYg\u003D(this);
+    this._candleMap?.\u0023\u003DziWBXfUI\u003D(this);
+    this._candleMap = candles;
+    this._candleMap?.\u0023\u003DznX2LIYg\u003D(this);
   }
 
   protected override void \u0023\u003DzXfak0jM\u003D()
   {
-    this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D?.\u0023\u003DziWBXfUI\u003D(this);
+    this._candleMap?.\u0023\u003DziWBXfUI\u003D(this);
     this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzBCuJKIIaVAUt();
   }
 
@@ -58,7 +58,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   }
 
   protected override void \u0023\u003Dz3u1qwgvgJlZC(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1,
+    IfxChartElement _param1,
     string _param2)
   {
     base.\u0023\u003Dz3u1qwgvgJlZC(_param1, _param2);

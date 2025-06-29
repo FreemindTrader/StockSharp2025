@@ -18,30 +18,30 @@ using System.Linq;
 using System.Windows.Media;
 
 #nullable enable
-internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB : 
+internal sealed class ParentVM : 
   ChartBaseViewModel,
   IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly 
   #nullable disable
   ObservableCollection<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy> \u0023\u003Dz10jqvLI\u003D = new ObservableCollection<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly List<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> \u0023\u003DzH31vDNM\u003D = new List<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D \u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private readonly List<UIBaseVM> \u0023\u003DzH31vDNM\u003D = new List<UIBaseVM>();
+  
+  private readonly IScichartSurfaceVM \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
+  
+  private readonly IfxChartElement \u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D;
+  
   private readonly bool \u0023\u003DzltAOnz7pENYNz4RZiZiGFJ7j3MDa;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D \u0023\u003Dz\u0024j34drxVvrdumV_HyGybhvc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzeOVf5rToxe0_\u0024sT_tw\u003D\u003D;
 
-  public \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1,
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param2)
+  public ParentVM(
+    IScichartSurfaceVM _param1,
+    IfxChartElement _param2)
   {
     this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539329564));
     this.\u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539329543));
@@ -50,14 +50,14 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
     this.ChartElement.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzqKjZcEftBQYu8FctY__O05c\u003D);
   }
 
-  public \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj Pane
+  public IScichartSurfaceVM Pane
   {
     get => this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
   }
 
   public bool AllowToRemove => this.Pane.\u0023\u003Dzv_LIRKQ\u003D(this);
 
-  public \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D ChartElement
+  public IfxChartElement ChartElement
   {
     get => this.\u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D;
   }
@@ -72,11 +72,11 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
     private set => this.\u0023\u003Dz\u0024j34drxVvrdumV_HyGybhvc\u003D = value;
   }
 
-  public IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> Elements
+  public IEnumerable<UIBaseVM> Elements
   {
     get
     {
-      return (IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>) this.\u0023\u003DzH31vDNM\u003D;
+      return (IEnumerable<UIBaseVM>) this.\u0023\u003DzH31vDNM\u003D;
     }
   }
 
@@ -97,17 +97,17 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
   }
 
   public void \u0023\u003DzkFJdjYoyxP8n(
-    IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> _param1)
+    IEnumerable<UIBaseVM> _param1)
   {
-    \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D[] array = _param1.ToArray<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>();
-    if (CollectionHelper.IsEmpty<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(array))
+    UIBaseVM[] array = _param1.ToArray<UIBaseVM>();
+    if (CollectionHelper.IsEmpty<UIBaseVM>(array))
       throw new ArgumentException(XXX.SSS(-539329550));
-    this.\u0023\u003DzH31vDNM\u003D.AddRange((IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>) array);
+    this.\u0023\u003DzH31vDNM\u003D.AddRange((IEnumerable<UIBaseVM>) array);
     if (this.IsCandleElement && this.Candles == null)
       this.Candles = array.OfType<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D>().First<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D>();
     if (this.\u0023\u003DzH31vDNM\u003D.Count == 1)
       this.MapPropertyChangeNotification((INotifyPropertyChanged) this.\u0023\u003DzH31vDNM\u003D[0].Element, XXX.SSS(-539433444), XXX.SSS(-539433444));
-    CollectionHelper.ForEach<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>((IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>) array, new Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(this.\u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D));
+    CollectionHelper.ForEach<UIBaseVM>((IEnumerable<UIBaseVM>) array, new Action<UIBaseVM>(this.\u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D));
   }
 
   private void \u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY()
@@ -128,7 +128,7 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
 
   public void \u0023\u003DzMNK339lzrtSc()
   {
-    CollectionHelper.ForEach<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>((IEnumerable<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>) this.\u0023\u003Dz10jqvLI\u003D, \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D)));
+    CollectionHelper.ForEach<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>((IEnumerable<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>) this.\u0023\u003Dz10jqvLI\u003D, ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D)));
   }
 
   public bool \u0023\u003DzjgUUUJE\u003D(ChartDrawData _param1)
@@ -139,26 +139,26 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
   public void \u0023\u003DzYI36Ggg\u003D()
   {
     this.ChartElement.\u0023\u003DzYI36Ggg\u003D();
-    this.\u0023\u003DzH31vDNM\u003D.ForEach(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
+    this.\u0023\u003DzH31vDNM\u003D.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
   }
 
   public void \u0023\u003DzoK7PFLI\u003D()
   {
-    this.\u0023\u003DzH31vDNM\u003D.ForEach(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D)));
+    this.\u0023\u003DzH31vDNM\u003D.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D)));
   }
 
   public void \u0023\u003DzKy5smiO3gHXp()
   {
-    this.\u0023\u003DzH31vDNM\u003D.ForEach(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D = new Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D)));
+    this.\u0023\u003DzH31vDNM\u003D.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D)));
   }
 
   public void \u0023\u003Dz\u0024abmkXc\u003D()
   {
-    this.\u0023\u003DzH31vDNM\u003D.ForEach(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D)));
+    this.\u0023\u003DzH31vDNM\u003D.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D)));
   }
 
   internal Subscription \u0023\u003DzZ0VU1NABDfD8(
-    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+    IfxChartElement _param1)
   {
     return ((Chart) this.Pane.Chart).TryGetSubscription((IChartElement) _param1);
   }
@@ -187,7 +187,7 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
 
   private void \u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D(
     #nullable disable
-    \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D _param1)
+    UIBaseVM _param1)
   {
     _param1.\u0023\u003Dzfd2adzY\u003D(this);
   }
@@ -195,12 +195,12 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
   [Serializable]
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
-    public static readonly \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ParentVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ParentVM.\u0023\u003Dz7qOdpi4\u003D();
     public static Action<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy> \u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D;
-    public static Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> \u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D;
-    public static Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> \u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D;
-    public static Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> \u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D;
-    public static Action<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D> \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
+    public static Action<UIBaseVM> \u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D;
+    public static Action<UIBaseVM> \u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D;
+    public static Action<UIBaseVM> \u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D;
+    public static Action<UIBaseVM> \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
 
     internal void \u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D(
       \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy _param1)
@@ -209,25 +209,25 @@ internal sealed class \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4
     }
 
     internal void \u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D(
-      \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D _param1)
+      UIBaseVM _param1)
     {
       _param1.\u0023\u003DzYI36Ggg\u003D();
     }
 
     internal void \u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D(
-      \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D _param1)
+      UIBaseVM _param1)
     {
       _param1.\u0023\u003DzoK7PFLI\u003D();
     }
 
     internal void \u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D(
-      \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D _param1)
+      UIBaseVM _param1)
     {
       _param1.\u0023\u003DzKy5smiO3gHXp();
     }
 
     internal void \u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D(
-      \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D _param1)
+      UIBaseVM _param1)
     {
       _param1.\u0023\u003Dz\u0024abmkXc\u003D();
     }

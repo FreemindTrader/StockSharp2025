@@ -25,11 +25,11 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
   \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D,
   \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Canvas \u0023\u003DzF8_YcFVDbTFB = new Canvas();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ObservableCollection<UIElement> \u0023\u003DzbSEUhuE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.Register(XXX.SSS(-539430363), typeof (bool), typeof (dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd.\u0023\u003DzqcJkhvYEtK_9IQ_Dhw\u003D\u003D)));
 
   public dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd()

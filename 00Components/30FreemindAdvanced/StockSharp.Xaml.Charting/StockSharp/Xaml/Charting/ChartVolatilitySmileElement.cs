@@ -28,9 +28,9 @@ public class ChartVolatilitySmileElement :
   INotifyPropertyChanged,
   IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartLineElement \u0023\u003Dz10jqvLI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartLineElement \u0023\u003DzdBxDEgUJtz0N;
 
   /// <summary>Create instance.</summary>
@@ -69,7 +69,7 @@ public class ChartVolatilitySmileElement :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    return (0 | (((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this.Values).\u0023\u003DzjgUUUJE\u003D(data) ? 1 : 0) | (((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this.Smile).\u0023\u003DzjgUUUJE\u003D(data) ? 1 : 0)) != 0;
+    return (0 | (((IfxChartElement) this.Values).\u0023\u003DzjgUUUJE\u003D(data) ? 1 : 0) | (((IfxChartElement) this.Smile).\u0023\u003DzjgUUUJE\u003D(data) ? 1 : 0)) != 0;
   }
 
   /// <summary>Load settings.</summary>
@@ -99,12 +99,12 @@ public class ChartVolatilitySmileElement :
     storage.SetValue<SettingsStorage>(XXX.SSS(-539429991), PersistableHelper.Save((IPersistable) this.Smile));
   }
 
-  internal override ChartVolatilitySmileElement \u0023\u003Dz3MbNd8U\u003D(
+  internal override ChartVolatilitySmileElement Clone(
     ChartVolatilitySmileElement _param1)
   {
-    _param1 = base.\u0023\u003Dz3MbNd8U\u003D(_param1);
-    this.\u0023\u003Dz10jqvLI\u003D.\u0023\u003Dz3MbNd8U\u003D(_param1.\u0023\u003Dz10jqvLI\u003D);
-    this.\u0023\u003DzdBxDEgUJtz0N.\u0023\u003Dz3MbNd8U\u003D(_param1.\u0023\u003DzdBxDEgUJtz0N);
+    _param1 = base.Clone(_param1);
+    this.\u0023\u003Dz10jqvLI\u003D.Clone(_param1.\u0023\u003Dz10jqvLI\u003D);
+    this.\u0023\u003DzdBxDEgUJtz0N.Clone(_param1.\u0023\u003DzdBxDEgUJtz0N);
     return _param1;
   }
 }

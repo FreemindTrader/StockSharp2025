@@ -19,11 +19,11 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
   \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I,
   IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected readonly \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D \u0023\u003Dzwa3i3hwVZeqr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D \u0023\u003Dzvix_YyOZ9Wo4 = new \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Dictionary<string, FontFamily> \u0023\u003DzuF0tResk6jHB = new Dictionary<string, FontFamily>();
 
   protected \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D(

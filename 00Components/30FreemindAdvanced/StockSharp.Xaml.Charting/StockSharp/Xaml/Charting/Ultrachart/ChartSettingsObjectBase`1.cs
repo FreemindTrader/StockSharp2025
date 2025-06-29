@@ -25,9 +25,9 @@ namespace StockSharp.Xaml.Charting.Ultrachart;
 /// <param name="orig">Parent chart element or indicator.</param>
 public abstract class ChartSettingsObjectBase<T> : NotifiableObject, ICustomTypeDescriptor where T : class
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly T \u0023\u003DzospwsbhzrQArHP5ofw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private CategoriesShowMode \u0023\u003DzTWg19Vn1u7pTvAS8raKaWTM\u003D;
 
   /// <summary>
@@ -125,11 +125,11 @@ public abstract class ChartSettingsObjectBase<T> : NotifiableObject, ICustomType
   /// </summary>
   protected abstract class ProxyDescriptor : NamedPropertyDescriptor
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartSettingsObjectBase<T> \u0023\u003Dz\u0024KTWtGTYNAk9;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly object \u0023\u003DzKwdqDML77LmCBT9NQQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly AttributeCollection \u0023\u003Dz0RkMCSqBkh1BIjKldQ\u003D\u003D;
 
     /// <summary>Create instance.</summary>

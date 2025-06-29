@@ -13,20 +13,20 @@ using System.ComponentModel;
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X : 
-  \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D,
+internal interface IDrawableChartElement :
+  IfxChartElement,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanging,
   INotifyPropertyChanged,
   IPersistable
 {
-  Color Color { get; }
+    Color Color { get; }
 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003DzfuiyUvM\u003D(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1);
+    UIBaseVM CreateViewModel(
+      IScichartSurfaceVM _param1);
 
-  bool \u0023\u003Dz2dQykb\u0024x9fU4(IEnumerableEx<ChartDrawData.IDrawValue> _param1);
+    bool StartDrawing(IEnumerableEx<ChartDrawData.IDrawValue> _param1);
 
-  void \u0023\u003Dz0yXrIqwigzcF();
+    void ChildElementsStartDrawing();
 }

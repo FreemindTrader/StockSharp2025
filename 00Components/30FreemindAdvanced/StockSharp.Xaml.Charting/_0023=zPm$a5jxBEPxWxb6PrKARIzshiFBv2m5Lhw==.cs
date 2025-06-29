@@ -16,9 +16,9 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D
   ICloneable,
   IEquatable<\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeSpan \u0023\u003DzcJHzh_mr6f8CMKRKsZVWY\u0024w\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeSpan \u0023\u003Dze_N82X05Vu1NIUMEb0ySPgs\u003D;
 
   public \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D()

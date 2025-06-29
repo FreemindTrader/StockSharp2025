@@ -17,23 +17,23 @@ internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbC
   IDisposable,
   \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5\u0024e1A7bvEMO3Uo\u0024\u0024JpKeVOZ\u0024
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz2hK6CB_HnLdnXfkqDHqGc38\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzCBcNvb2NmGvS53uRbQFOJpZFb2Ia;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dzfzo3Zt0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzg3xZfFWMp7dcW\u0024h9DOojnRM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double[] \u0023\u003DzuGUVW3D\u0024dHUILYV7nA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzPsHNvsjqIq72;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHmVpviN0HpGru\u0024NZJ3VStlg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PenLineCap \u0023\u003DzCGem0PExVYDPR4B2GzA75a4\u003D;
 
   internal \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D(

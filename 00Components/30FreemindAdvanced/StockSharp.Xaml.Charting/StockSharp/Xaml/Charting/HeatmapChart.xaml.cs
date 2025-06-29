@@ -22,13 +22,13 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>HeatmapChart</summary>
 public class HeatmapChart : UserControl, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly HeatmapMatrixAdapter \u0023\u003Dzy9ZP39o\u003D = new HeatmapMatrixAdapter();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly double[,] \u0023\u003DzpYNJSsBLV187 = new double[0, 0];
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal HeatmapControl \u0023\u003Dz5ZPAD\u0024Ikyftb;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>

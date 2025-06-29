@@ -23,15 +23,15 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (RelativeVigorIndex))]
 public class RelativeVigorIndexPainter : BaseChartIndicatorPainter<RelativeVigorIndex>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzgPhsiGaFv1khCrU7gg\u003D\u003D;
 
   /// <summary>Create instance.</summary>
   public RelativeVigorIndexPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<RelativeVigorIndex>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<RelativeVigorIndex>.GetIndicatorColorProvider();
     this.\u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()

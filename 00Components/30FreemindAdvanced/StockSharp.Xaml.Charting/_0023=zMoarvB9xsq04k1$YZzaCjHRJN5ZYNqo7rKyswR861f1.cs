@@ -22,15 +22,15 @@ internal sealed class \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR86
   \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTZNhZ9vYpqD7krOMbM3CC9ny,
   \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<Thumb> \u0023\u003Dzg87ZCkaztoO1 = new List<Thumb>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point[] \u0023\u003DzYw05nwk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz4RCEv9uwIUW8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dztzbh7we4lkON;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzk\u00246wUexmCawb;
 
   public override void \u0023\u003DzFeNr2Uw\u003D()

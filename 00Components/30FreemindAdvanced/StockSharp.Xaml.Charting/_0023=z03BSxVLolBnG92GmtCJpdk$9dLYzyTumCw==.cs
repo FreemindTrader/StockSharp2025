@@ -20,21 +20,21 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D
   \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D,
   IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzQ4iRj1YTApc8D349VbLPOV89ONPzc9V3zddUgPY\u003D \u0023\u003Dzwa3i3hwVZeqr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4 \u0023\u003DzdoZ6J3YmzL6l;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int[] \u0023\u003DzwZXGaKKEActf;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private byte[] \u0023\u003Dzz4EAzUSAzMlk;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Brush \u0023\u003DzPbF2kpY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dzfzo3Zt0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Size \u0023\u003Dzr20zizEqZixc = Size.Empty;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzxiNuzSVW5XI8jjmXxQ\u003D\u003D;
 
   public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D(

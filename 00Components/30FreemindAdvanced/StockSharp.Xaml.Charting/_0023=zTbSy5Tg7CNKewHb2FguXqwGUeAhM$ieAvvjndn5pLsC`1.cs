@@ -20,13 +20,13 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
   IEnumerable<\u0023\u003DzH9HNkng\u003D>,
   IEnumerable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzkELV\u0024GPsC83d;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz0EJ0DjSA4vke = -1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzJpbCbio\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzdJFp_7vu05Ks;
 
   public \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI(int _param1)
@@ -150,7 +150,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     this.\u0023\u003DzwDCWXBFSmFxV(_param1, _param2);
   }
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   [IndexerName("#=zMRIb09I=")]
   public \u0023\u003DzH9HNkng\u003D this[int _param1]
   {
@@ -217,7 +217,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     Array.Copy((Array) this.\u0023\u003DzkELV\u0024GPsC83d, 0, (Array) _param1, length1 + _param2, length2);
   }
 
-  internal void \u0023\u003Dz3MbNd8U\u003D(
+  internal void Clone(
     int _param1,
     \u0023\u003DzH9HNkng\u003D[] _param2,
     int _param3,
@@ -298,13 +298,13 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     IEnumerator,
     IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzH9HNkng\u003D \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzWloIRY4kF_0P;
 
     [DebuggerHidden]

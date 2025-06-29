@@ -15,15 +15,15 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zPC3M3YAJUSMFFMDBKQGYAGLUKJA657QM99FD5CXEJLNLNQCGTL4JQ_ejd : 
   dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd \u0023\u003DzPe8_oE9VyZOl41cxBA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzYklHyyiv14LN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzgeFvyoahWukw3bL8yZfVYr7JNrME_OMqiz4nIDlTZlok \u0023\u003DzqHa24tYbLx0LAtSkPnzT2rI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003DzYo5GhqlKs7_nIGPcXw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzKasBY8yFp0kHGchcdspopP7GEE2mXL2_PJ3GAzDPqEBp355x434uR\u0024Xvxl7l \u0023\u003DziAttZBhsZA0vFhELFvwoTIOB_Klb;
 
   protected override Size MeasureOverride(Size _param1)

@@ -7,7 +7,7 @@
 
 #nullable disable
 internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no7oM806RFMQA4oT0jRI\u003D(
-  \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+  IRenderableSeries _param1,
   \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2) : 
   \u0023\u003DzupHrUO0UFO07vWyNRguf_6KxLa4699odrw\u003D\u003D(_param1, _param2)
 {

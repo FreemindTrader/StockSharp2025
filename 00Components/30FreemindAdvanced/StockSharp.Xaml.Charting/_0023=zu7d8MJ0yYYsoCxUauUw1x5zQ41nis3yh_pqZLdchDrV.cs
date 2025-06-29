@@ -14,61 +14,61 @@ using System.Windows;
 #nullable disable
 internal struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHOLwNuwoYSmR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dzz_6Dy9M\u003D = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D(true);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzmOTrHiqM7XRZxgQh2Xw3eOc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D \u0023\u003DznZarDQOrqU8Mpl9Hus6N6TE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzkyZE71ovNzJzK27GmjPXFSQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzVToonYzLZ27PZbuuox\u0024zO0s\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzcKE_lqOppDz7USEg8g\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzwWLr8LY9UMFP94G_oQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzPW_v4ruTqjPH\u00243hxBA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz4t6lSLV55_aXzBbMp6yJWhw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzneez24bDvwIvY6W6IQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzi3gEUUYsOO8nfl2WBHM8h\u0024w\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHhtr04QCZsJ7TNFF77Rky00\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzlqvA_W3CA5bvevW0BA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzxR_tVCMYKuTe5ZZHIA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzfTq4qBemDRQYVTcxrA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003Dzy9eIwzcjGhrQjkEk9g\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003Dz3FaGoH7vbLrmy1r4OQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzO0oX5cdMo7ZhL_UYGg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzLJKZfuY4GA9vdoKeJw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzpLYVbEUKlWbQ8NMB4Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzgJkrEJNVC9p\u0024vC87wtPTtD0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzDHDlJxajbDV8R32sjaxre4plJcRn;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003Dzh9XQVAGTpNHkJqUbOQRcgTTFKGK1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzDmCj5AqjTEG0XTKJoexvoLziDdPd;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private CandlePriceLevel \u0023\u003Dzswq21RUahV_UgsbxDA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DzJ\u0024LV5GgS6hjNL4Cw\u0024A\u003D\u003D;
 
   private \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D(bool _param1)

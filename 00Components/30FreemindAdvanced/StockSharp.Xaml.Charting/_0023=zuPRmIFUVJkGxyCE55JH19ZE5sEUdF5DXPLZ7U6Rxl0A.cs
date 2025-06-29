@@ -15,15 +15,15 @@ internal sealed class \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An 
   \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote,
   IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly object \u0023\u003Dz3xPfSd0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D \u0023\u003DzCede7bY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly IDictionary<\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D, \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D> \u0023\u003Dz6y_gICEiE1z2 = (IDictionary<\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D, \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D>) new Dictionary<\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D, \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly object \u0023\u003DzxztcSMfDuTst = new object();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz9lEOT9K2_723;
 
   internal \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An(
@@ -115,9 +115,9 @@ internal sealed class \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An 
 
   private struct \u0023\u003Dz2xTuPX8\u003D(int _param1, int _param2)
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003DzAbDuEyWeWQy8eEVPHg\u003D\u003D = _param1;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003Dz7_nBfUf9fA6Ul2TWLA_yrac\u003D = _param2;
 
     public readonly int \u0023\u003Dzn5AczsN5xzdc()

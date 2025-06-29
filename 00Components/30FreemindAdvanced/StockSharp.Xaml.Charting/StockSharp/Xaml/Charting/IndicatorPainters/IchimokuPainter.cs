@@ -23,19 +23,19 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (Ichimoku))]
 public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003Dz5_AjnFw1QFtxtJC_mWAb1vI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzTNYUJPFxGP2E98LvqJ2ne4I\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003Dzzxu0w2zkh6XPS0WbXgPV3KE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartBandElement \u0023\u003Dz0S4of5OfSeLaWsWJ2rBaurI\u003D;
 
   /// <summary>Create instance.</summary>
   public IchimokuPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Ichimoku>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Ichimoku>.GetIndicatorColorProvider();
     ChartBandElement chartBandElement = new ChartBandElement();
     ChartLineElement chartLineElement1 = new ChartLineElement();
     ChartLineElement chartLineElement2 = new ChartLineElement();

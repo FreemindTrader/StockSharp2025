@@ -23,9 +23,9 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>ChartElementEditor</summary>
 public class ChartElementEditor : UserControl, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal CheckEdit \u0023\u003DzW4kuZJQvOGhM;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>

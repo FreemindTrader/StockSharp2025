@@ -26,43 +26,43 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzKrsZ\u0024JY5ZFLk = DependencyProperty.Register(XXX.SSS(-539440414), typeof (bool), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzwRBYwhc7zDyy = DependencyProperty.Register(XXX.SSS(-539440444), typeof (string), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz8nrTMdEZLwbciOTO7Vi3t9Y\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzZlWtNzRQ4OYQ = DependencyProperty.Register(XXX.SSS(-539351947), typeof (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzjroGW0xeV8YH = DependencyProperty.Register(XXX.SSS(-539440596), typeof (double?), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd \u0023\u003DzO_kDrhvLYpaX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly object \u0023\u003DzxztcSMfDuTst = new object();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003Dz5Q_\u0024YkuhIHbd;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003DzvBK\u00248KQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzg8Ufa_EMXfJU;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd \u0023\u003DzoaInVTVF1PK_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7 \u0023\u003DzK_OtVrQnpn26;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly RoutedEventHandler \u0023\u003DzDBof02j7wNLE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly RoutedEventHandler \u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SizeChangedEventHandler \u0023\u003DzY4g995NuThV1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly DependencyPropertyChangedEventHandler \u0023\u003DzvhtXLpDgYpSt;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003Dzc0ALknKZKMZw;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<EventArgs> \u0023\u003DzcyGdlF8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHCK5HNRZ8B\u0024Asrf4ngfS7R9rAu5kGLnFo5b5v7I\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsr9VW2SiWlaFw0wjAU\u003D \u0023\u003DzQ7ziF8hV1\u0024a0lbi4RKafaLI\u003D;
 
   protected dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd()

@@ -19,23 +19,23 @@ using System.Windows.Media.Imaging;
 internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x : 
   \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly WriteableBitmap \u0023\u003DzpnLYJ1Q\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly uint[] \u0023\u003DzcNkyaHI7GTSW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected readonly \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq \u0023\u003DzeUisW3maAY9U;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Image \u0023\u003Dz2TNhyDg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D \u0023\u003DzK3L_6jB1hKFR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr \u0023\u003Dzdp7hSzeBLlAo = new \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<IDisposable> \u0023\u003DzBzoKzORE1dsQ = new List<IDisposable>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected readonly Size \u0023\u003DzgYZhPyPIW8zq;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private object \u0023\u003DzxztcSMfDuTst = new object();
 
   public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x(
@@ -789,25 +789,25 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024,
     IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x \u0023\u003DzrZyFxk8\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D \u0023\u003DzU\u0024ZxpXE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzFEDR40ugZMK3;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzGcDWpYNQwUmC;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Size \u0023\u003DzgYZhPyPIW8zq;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D \u0023\u003Dz1l66LxWIUC10;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool \u0023\u003DzfhO7iL9Vfl9R;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tiESttatY\u0024KE2k2uyGV0g01vOs3xfyzYzSge7gXJQq7CWw\u003D\u003D \u0023\u003DzC8YqVfw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_uBH616IqY6gSsYWlIWivPoFS9LlNAtJDMWElzgA\u003D\u003D \u0023\u003DzUWgGpuy5HIAmEgbqgQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb1WxUUMsJoFuIkNAGsBguUdsg\u003D\u003D \u0023\u003DzQ5nkUaE\u003D;
 
     public \u0023\u003DziSg2yR0Zst8P(
@@ -928,13 +928,13 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024,
     IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzPbF2kpY\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x \u0023\u003Dzui0AS26tu5YE;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tiESttatY\u0024KE2k2uyGV0g01vOs3xfyzYzSge7gXJQq7CWw\u003D\u003D \u0023\u003DzC8YqVfw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzxQYZMi0S4xrwAUmlOi_ANoo\u003D;
 
     public \u0023\u003DzmJRlt6lBeKjN(

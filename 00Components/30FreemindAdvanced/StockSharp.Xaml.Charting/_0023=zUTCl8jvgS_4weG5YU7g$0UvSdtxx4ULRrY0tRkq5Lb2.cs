@@ -12,41 +12,41 @@ using System.Runtime.CompilerServices;
 internal struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D : 
   \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public byte \u0023\u003DzcdKuX48ZXN_S;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public byte \u0023\u003DzoRsAtmfOFDZe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public byte \u0023\u003Dz4WHdt9g\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public byte \u0023\u003DzKCqGEcs\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DziT5e12c\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzmQK\u0024Ms_\u0024kEI_ = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(225, 225, 225, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz3jsTr080\u00242a0 = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(125, 125, 125, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzXMsQczM\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, 0, 0, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzr\u0024CAwAU\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, 0, 0, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzQ11P_zRSPdMN = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, (int) sbyte.MaxValue, 0, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz8Nx8mZ4\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, (int) byte.MaxValue, 0, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzCfZb6Vg\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, 0, (int) byte.MaxValue, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzeSZjfwP9PT8\u0024 = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(75, 0, 130, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz\u0024wMcc5BFs9G_ = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(143, 0, (int) byte.MaxValue, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzokZEel\u0024u0c1N = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzeoCalpffM4n8 = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, 0, (int) byte.MaxValue, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzD0g4s6O4aQOc = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, (int) byte.MaxValue, 0, (int) byte.MaxValue);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz97mMp8zEecupEsHcfw\u003D\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(154, 205, 50, (int) byte.MaxValue);
 
   public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(

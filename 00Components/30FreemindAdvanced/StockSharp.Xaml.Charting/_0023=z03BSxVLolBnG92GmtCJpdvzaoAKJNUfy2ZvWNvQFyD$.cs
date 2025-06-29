@@ -14,9 +14,9 @@ using System.Windows;
 internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D : 
   dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzp3T0E8s\u003D = DependencyProperty.Register(XXX.SSS(-539429510), typeof (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd), typeof (\u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D), new PropertyMetadata((object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan, new PropertyChangedCallback(\u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz80RJIH_dDgLn7Di7fNcKxH8\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<Point, double> \u0023\u003DzE5Q0sUQO_NoQ;
 
   public \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D()

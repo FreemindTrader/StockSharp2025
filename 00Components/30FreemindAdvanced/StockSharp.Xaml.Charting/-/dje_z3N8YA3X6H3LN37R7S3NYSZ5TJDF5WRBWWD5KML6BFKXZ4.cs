@@ -28,13 +28,13 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
   IComponentConnector,
   IStyleConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Popup \u0023\u003DzKkX3SOgS26uy;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly CandleDataTypeEdit \u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd \u0023\u003Dzv4BS1WQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd()
@@ -47,7 +47,7 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
   private void \u0023\u003DzFEhTVIBjIbf8(object _param1, RoutedEventArgs _param2)
   {
     Hyperlink hyperlink = (Hyperlink) _param1;
-    if (!(hyperlink.DataContext is \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB dataContext) || !(dataContext.ChartElement is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
+    if (!(hyperlink.DataContext is ParentVM dataContext) || !(dataContext.ChartElement is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
     Subscription subscription = dataContext.\u0023\u003DzZ0VU1NABDfD8(dataContext.ChartElement);
@@ -61,7 +61,7 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
 
   private void \u0023\u003DzOdlcCH3I2dRH(object _param1, RoutedEventArgs _param2)
   {
-    if (!((_param1 is FrameworkElement frameworkElement ? frameworkElement.DataContext : (object) null) is \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB dataContext))
+    if (!((_param1 is FrameworkElement frameworkElement ? frameworkElement.DataContext : (object) null) is ParentVM dataContext))
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
     Subscription subscription1 = dataContext.\u0023\u003DzZ0VU1NABDfD8(dataContext.ChartElement);

@@ -10,9 +10,9 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private byte \u0023\u003Dz8PXgNcU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private byte \u0023\u003Dzgzm8ZP4\u003D;
 
   public \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_(uint _param1)

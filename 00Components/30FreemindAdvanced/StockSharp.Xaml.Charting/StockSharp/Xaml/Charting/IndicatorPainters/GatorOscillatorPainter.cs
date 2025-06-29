@@ -23,15 +23,15 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (GatorOscillator))]
 public class GatorOscillatorPainter : BaseChartIndicatorPainter<GatorOscillator>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003Dzhomr8GNw5jahnu6U\u0024A\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzAUSthr5NvxGtnAJT\u0024g\u003D\u003D;
 
   /// <summary>Create instance.</summary>
   public GatorOscillatorPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<GatorOscillator>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<GatorOscillator>.GetIndicatorColorProvider();
     this.\u0023\u003Dzhomr8GNw5jahnu6U\u0024A\u003D\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()

@@ -26,9 +26,9 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (VolumeIndicator))]
 public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzA_pKfoSCgXJNJvgk60qKe4k\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzpZ7H_10udEV9\u0024GGb0g555yM\u003D;
 
   /// <summary>Create instance.</summary>

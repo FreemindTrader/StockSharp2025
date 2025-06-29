@@ -17,11 +17,11 @@ using System.Windows;
 internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzigzndanwPIFY = DependencyProperty.Register(XXX.SSS(-539429796), typeof (Style), typeof (\u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L.\u0023\u003DzBLNrrTpkTSKCvEflkQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<EventArgs> \u0023\u003DzDpzMqzE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz5h4MErOTnNi_;
 
   public \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L()
@@ -76,12 +76,12 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
   {
     if (this.ParentSurface == null)
       return;
-    this.ParentSurface.get_SelectedRenderableSeries().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(this.\u0023\u003DzFEW\u0024G5HKuzKO));
+    this.ParentSurface.get_SelectedRenderableSeries().\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003DzFEW\u0024G5HKuzKO));
   }
 
   protected override void \u0023\u003Dz\u0024523lOKnSPCb(
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param1,
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param2)
+    IEnumerable<IRenderableSeries> _param1,
+    IEnumerable<IRenderableSeries> _param2)
   {
     base.\u0023\u003Dz\u0024523lOKnSPCb(_param1, _param2);
     if (_param2 == null)
@@ -113,11 +113,11 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
 
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
-    bool flag = !this.ParentSurface.get_SelectedRenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>();
+    bool flag = !this.ParentSurface.get_SelectedRenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>();
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D[] array = this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1).ToArray<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>();
     if (\u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzDCv6G5Q\u003D<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(array))
     {
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D renderableSeries = ((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) array).First<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>().RenderableSeries;
+      IRenderableSeries renderableSeries = ((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) array).First<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>().RenderableSeries;
       if (this.\u0023\u003Dz5h4MErOTnNi_)
         this.\u0023\u003Dz\u0024AkGiLXUHbZU(renderableSeries);
       else
@@ -134,7 +134,7 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
   }
 
   protected virtual void \u0023\u003Dzl6QWjU23t55A(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     int num = !_param1.get_IsSelected() ? 1 : (this.ParentSurface.get_SelectedRenderableSeries().Count > 1 ? 1 : 0);
     this.\u0023\u003DzS__l_ifl50tN();
@@ -144,7 +144,7 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
   }
 
   protected virtual void \u0023\u003Dz\u0024AkGiLXUHbZU(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     _param1.set_IsSelected(!_param1.get_IsSelected());
     if (!_param1.get_IsSelected())
@@ -161,7 +161,7 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
   }
 
   protected virtual void \u0023\u003DzFEW\u0024G5HKuzKO(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     if (this.SelectedSeriesStyle == null)
       return;

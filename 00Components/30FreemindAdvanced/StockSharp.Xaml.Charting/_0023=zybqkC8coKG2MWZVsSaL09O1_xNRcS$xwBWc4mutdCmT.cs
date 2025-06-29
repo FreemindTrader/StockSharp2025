@@ -47,7 +47,7 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
     string renderSurfaceType = dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.GetRenderSurfaceType((UIElement) _param1);
     if (renderSurfaceType != null)
       _param2.WriteAttributeString(XXX.SSS(-539440469), renderSurfaceType);
-    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003DzLq2ODtDmwh8XhlieTRcobzhsPRrHR7GqyQ\u003D\u003D((IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) _param1.RenderableSeries, _param2);
+    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003DzLq2ODtDmwh8XhlieTRcobzhsPRrHR7GqyQ\u003D\u003D((IEnumerable<IRenderableSeries>) _param1.RenderableSeries, _param2);
     \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D>(_param1.XAxes, XXX.SSS(-539440461), _param2);
     \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D>(_param1.YAxes, XXX.SSS(-539440505), _param2);
     \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D>(_param1.Annotations, XXX.SSS(-539440485), _param2);
@@ -72,9 +72,9 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
       string localName = _param2.LocalName;
       if (localName == XXX.SSS(-539441807))
       {
-        ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> instance = (ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) Activator.CreateInstance(typeof (ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>));
-        IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> s1JolYrWoYpqmQ6ugs = \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DztbbHmR4\u003D(_param2);
-        instance.\u0023\u003Dz6_E5\u0024pE\u003D<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(s1JolYrWoYpqmQ6ugs);
+        ObservableCollection<IRenderableSeries> instance = (ObservableCollection<IRenderableSeries>) Activator.CreateInstance(typeof (ObservableCollection<IRenderableSeries>));
+        IEnumerable<IRenderableSeries> s1JolYrWoYpqmQ6ugs = \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DztbbHmR4\u003D(_param2);
+        instance.\u0023\u003Dz6_E5\u0024pE\u003D<IRenderableSeries>(s1JolYrWoYpqmQ6ugs);
         _param1.RenderableSeries = instance;
       }
       else
@@ -102,7 +102,7 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
   }
 
   private static void \u0023\u003DzLq2ODtDmwh8XhlieTRcobzhsPRrHR7GqyQ\u003D\u003D(
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param0,
+    IEnumerable<IRenderableSeries> _param0,
     XmlWriter _param1)
   {
     if (_param0 == null)

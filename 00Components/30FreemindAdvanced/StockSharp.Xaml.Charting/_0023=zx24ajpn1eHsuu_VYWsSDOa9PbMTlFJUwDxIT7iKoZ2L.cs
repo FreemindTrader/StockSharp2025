@@ -15,7 +15,7 @@ internal sealed class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr 
   IEnumerable<\u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT>,
   IEnumerable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IDictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D, \u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT> \u0023\u003Dz87apO99QtwOX = (IDictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D, \u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT>) new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D, \u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT>()
   {
     {
@@ -36,7 +36,7 @@ internal sealed class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr 
     }
   };
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   [IndexerName("#=zMRIb09I=")]
   public \u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT this[
     \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D _param1]

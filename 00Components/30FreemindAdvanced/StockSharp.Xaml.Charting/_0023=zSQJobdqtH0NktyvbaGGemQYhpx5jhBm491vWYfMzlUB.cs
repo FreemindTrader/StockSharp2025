@@ -18,40 +18,40 @@ using System.Windows.Input;
 internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS : 
   ChartBaseViewModel
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH \u0023\u003DzRrbXXZfT16PhrWmykQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzcMpkjcKq6\u0024YY = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private IEnumerable<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB> \u0023\u003DzH31vDNM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private IEnumerable<ParentVM> \u0023\u003DzH31vDNM\u003D;
+  
+  private readonly IScichartSurfaceVM \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
+  
   private readonly ICommand \u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<IChartElement> \u0023\u003DzeBeQVx4\u003D;
 
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+    IScichartSurfaceVM _param1)
   {
     this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539331223));
-    this.Elements = (IEnumerable<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB>) _param1.LegendElements;
-    this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D = (ICommand) new DelegateCommand<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB>(new Action<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB>(this.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D), \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB, bool>(\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D)));
+    this.Elements = (IEnumerable<ParentVM>) _param1.LegendElements;
+    this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D = (ICommand) new DelegateCommand<ParentVM>(new Action<ParentVM>(this.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D), \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<ParentVM, bool>(\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D)));
   }
 
-  public \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj Pane
+  public IScichartSurfaceVM Pane
   {
     get => this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
   }
 
   public ICommand RemoveElementCommand => this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D;
 
-  public IEnumerable<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB> Elements
+  public IEnumerable<ParentVM> Elements
   {
     get => this.\u0023\u003DzH31vDNM\u003D;
     set
     {
-      this.SetField<IEnumerable<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB>>(ref this.\u0023\u003DzH31vDNM\u003D, value, XXX.SSS(-539331230));
+      this.SetField<IEnumerable<ParentVM>>(ref this.\u0023\u003DzH31vDNM\u003D, value, XXX.SSS(-539331230));
     }
   }
 
@@ -98,7 +98,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
   }
 
   private void \u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D(
-    \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB _param1)
+    ParentVM _param1)
   {
     Action<IChartElement> zeBeQvx4 = this.\u0023\u003DzeBeQVx4\u003D;
     if (zeBeQvx4 == null)
@@ -110,10 +110,10 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<\u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB, bool> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
+    public static Func<ParentVM, bool> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
     internal bool \u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D(
-      \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB _param1)
+      ParentVM _param1)
     {
       return _param1 != null && _param1.AllowToRemove;
     }

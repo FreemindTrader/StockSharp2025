@@ -17,17 +17,17 @@ using System.Windows.Shapes;
 internal sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D : 
   dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzWsyKEigY1Lm6 = DependencyProperty.Register(XXX.SSS(-539440178), typeof (Color), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzgLLxE9j2DbxR = DependencyProperty.Register(XXX.SSS(-539440366), typeof (bool), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzuajeYkUJAgVf = DependencyProperty.Register(XXX.SSS(-539440131), typeof (double), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003DzjADvNnzgrrZX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Type \u0023\u003DzOHJ1xBv\u0024k2wEJE7MOQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DztqN4q7SP3Lir;
 
   public \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D()
@@ -212,7 +212,7 @@ internal sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAF
       Rect _param4)
     {
       if (this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider != null)
-        this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzLCyKrYI\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2, _param3);
+        this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2, _param3);
       if (this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.HasValue)
       {
         using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzL3In9ls\u003D(this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.Value, this.\u0023\u003DzRRvwDu67s9Rm.AntiAliasing, (float) this.\u0023\u003DzRRvwDu67s9Rm.StrokeThickness, this.\u0023\u003DzRRvwDu67s9Rm.Opacity, (double[]) null, PenLineCap.Round))

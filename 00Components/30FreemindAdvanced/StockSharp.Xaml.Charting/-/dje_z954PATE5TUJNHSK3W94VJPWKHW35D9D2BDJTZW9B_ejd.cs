@@ -13,7 +13,7 @@ namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd : FrameworkElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzKpMjgglc9VTa5MTZvA\u003D\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539439892), typeof (bool), typeof (dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.\u0023\u003Dz8k9aaPizAFciBJYAVA\u003D\u003D)));
 
   public static void SetSnapsToDevicePixels(DependencyObject _param0, bool _param1)

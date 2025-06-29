@@ -23,15 +23,15 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   IList,
   ICollection
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzUVmXdYNPmc0z = Array.Empty<\u0023\u003DzH9HNkng\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzg0gWX4E\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzJpbCbio\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private object \u0023\u003DzxztcSMfDuTst;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dzq9NR138\u003D;
 
   public \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL()
@@ -332,12 +332,12 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     return (\u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<\u0023\u003DzH9HNkng\u003D>) new \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D>(this);
   }
 
-  public void \u0023\u003Dz3MbNd8U\u003D(\u0023\u003DzH9HNkng\u003D[] _param1)
+  public void Clone(\u0023\u003DzH9HNkng\u003D[] _param1)
   {
     this.CopyTo(_param1, 0);
   }
 
-  public void \u0023\u003Dz3MbNd8U\u003D(
+  public void Clone(
     int _param1,
     \u0023\u003DzH9HNkng\u003D[] _param2,
     int _param3,
@@ -517,9 +517,9 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     IEnumerable<\u0023\u003DzH9HNkng\u003D>,
     IEnumerable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly List<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz5IntIgc\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly object \u0023\u003Dz6j0cxXE\u003D;
 
     internal \u0023\u003DzcHSqfbQ\u003D(List<\u0023\u003DzH9HNkng\u003D> _param1)
@@ -622,13 +622,13 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     IEnumerator,
     IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz5IntIgc\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003Dzq9NR138\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzH9HNkng\u003D \u0023\u003DzCUQ2vA0\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzKx97DYo\u003D;
 
     internal \u0023\u003DzdFhhG7w\u003D(

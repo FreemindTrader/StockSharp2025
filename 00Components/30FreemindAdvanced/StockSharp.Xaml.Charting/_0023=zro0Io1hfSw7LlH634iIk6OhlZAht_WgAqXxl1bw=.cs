@@ -12,11 +12,11 @@ using System.Diagnostics;
 #nullable disable
 internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D : EventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz8Toh3hY0dPESLVzrgimLohY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003DzGJfclzdUC6c5eKMlDA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzmjSHvTFV1\u0024jB8ZYlfw\u003D\u003D;
 
   public \u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D(

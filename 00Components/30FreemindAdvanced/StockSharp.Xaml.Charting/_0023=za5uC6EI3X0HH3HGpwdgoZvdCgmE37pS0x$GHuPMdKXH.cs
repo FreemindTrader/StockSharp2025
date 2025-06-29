@@ -17,22 +17,22 @@ using System.Windows.Media;
 internal sealed class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy : 
   ChartBaseViewModel
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly 
   #nullable disable
   Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color> \u0023\u003Dz6rrn61zvEDwM;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DzFIYMKhNJj4Yf;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzChcrgRo\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzEBLPoa4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dzfzo3Zt0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzXRhpdYI8boz_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB \u0023\u003DzTOCXFN06qVgbO6kYig\u003D\u003D;
+  
+  private ParentVM \u0023\u003DzTOCXFN06qVgbO6kYig\u003D\u003D;
 
   public \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy(
     INotifyPropertyChanged _param1,
@@ -64,7 +64,7 @@ internal sealed class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMd
     _param2.PropertyChanged += new PropertyChangedEventHandler(kiaDl76b0Nyu42rxJq.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D);
   }
 
-  public \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB Parent
+  public ParentVM Parent
   {
     get => this.\u0023\u003DzTOCXFN06qVgbO6kYig\u003D\u003D;
     set => this.\u0023\u003DzTOCXFN06qVgbO6kYig\u003D\u003D = value;

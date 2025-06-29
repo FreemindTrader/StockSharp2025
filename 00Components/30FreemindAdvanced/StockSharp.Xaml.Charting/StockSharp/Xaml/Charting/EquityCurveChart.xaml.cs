@@ -33,17 +33,17 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>EquityCurveChart</summary>
 public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private readonly IScichartSurfaceVM \u0023\u003DzKj7nvWQ\u003D;
+  
   private readonly dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[] \u0023\u003DzUyqHQCymOwtN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzlx9Rh5m0_e0t;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzjHU2QreifXYX = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd \u0023\u003DzO72kpz0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>
@@ -52,7 +52,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   public EquityCurveChart()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this.\u0023\u003DzKj7nvWQ\u003D = (IScichartSurfaceVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxisType = ChartAxisType.CategoryDateTime;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
     ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>().AutoRange = true;
@@ -197,7 +197,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   /// <summary>To reset all chart elements.</summary>
   public void Reset()
   {
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
+    IScichartSurfaceVM zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
     INotifyList<IChartElement> elements = this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements;
     int index = 0;
     IChartElement[] chartElementArray = new IChartElement[((ICollection<IChartElement>) elements).Count];
@@ -346,22 +346,22 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
 
   private sealed class \u0023\u003DztNaqcZK2DJoq : BaseList<LineData<DateTime>>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly EquityCurveChart \u0023\u003DzU\u0024_meog\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly IChartBandElement \u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+    
+    private readonly IChartBandElement _indicatorElement;
 
     public \u0023\u003DztNaqcZK2DJoq(EquityCurveChart _param1, IChartBandElement _param2)
     {
       this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539441328));
-      this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539441371));
+      this._indicatorElement = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539441371));
       // ISSUE: explicit constructor call
       base.\u002Ector();
     }
 
     public IChartBandElement \u0023\u003Dzj_CyhS4\u003D()
     {
-      return this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+      return this._indicatorElement;
     }
 
     protected virtual void OnAdded(LineData<DateTime> _param1)

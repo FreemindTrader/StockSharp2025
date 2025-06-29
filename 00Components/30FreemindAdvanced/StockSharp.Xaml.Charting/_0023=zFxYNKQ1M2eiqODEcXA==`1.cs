@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<\u0023\u003DzH
   ICollection<\u0023\u003DzH9HNkng\u003D>,
   IList<\u0023\u003DzH9HNkng\u003D>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzg0gWX4E\u003D;
 
   public \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D(\u0023\u003DzH9HNkng\u003D[] _param1)

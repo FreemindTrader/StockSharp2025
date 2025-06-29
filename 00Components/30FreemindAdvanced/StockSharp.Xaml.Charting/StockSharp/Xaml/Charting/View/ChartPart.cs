@@ -15,8 +15,8 @@ namespace StockSharp.Xaml.Charting;
 /// <typeparam name="T">The chart element type.</typeparam>
 public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INotifyPropertyChanged, IChartPart<T>, IPersistable where T : ChartPart<T>
 {
-[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private Guid _guid;
+    
+    private Guid _guid;
 
     /// <summary>
     /// Initialize <see cref="T:StockSharp.Xaml.Charting.ChartPart`1"/>.
@@ -61,22 +61,23 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// <see langword="true"/>, if the specified object is equal to the current object, otherwise, <see
     /// langword="false"/>.
     /// </returns>
-    protected virtual bool OnEquals(T other) => other.Id == this.Id;
+    protected override bool OnEquals(T other) => other.Id == this.Id;
 
     /// <summary>
     /// Get the hash code of the object <see cref="T:StockSharp.Xaml.Charting.ChartElement`1"/>.
     /// </summary>
     /// <returns>A hash code.</returns>
-    public virtual int GetHashCode() => this.Id.GetHashCode();
+    public override int GetHashCode() => this.Id.GetHashCode();
 
-  internal virtual T \u0023\u003Dz3MbNd8U\u003D(T _param1)
-  {
-    if (Equatable<T>.op_Equality((Equatable<T>) _param1, default (T)))
-      throw
-    new ArgumentNullException(XXX.SSS(-539430129));
-    _param1.Id = this.Id;
-    return _param1;
-  }
+    internal virtual T Clone(T other)
+    {
+        if (other == default(T))
+        {
+            throw new ArgumentNullException("elem");
+        }
+        other.Id = Id;
+        return other;
+    }
 
     /// <summary>
     /// The chart element properties value changing event.
@@ -89,12 +90,11 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// <param name="name">Property name.</param>
     protected void RaisePropertyChanging(string name)
     {
-        PropertyChangingEventHandler zyQ6a4Rs = this.\u0023\u003D
-        zyQ6a4Rs\u003D
-        ;
-        if(zyQ6a4Rs == null)
+        PropertyChangingEventHandler changing = this.PropertyChanging;
+
+        if (changing == null)
             return;
-        DelegateHelper.Invoke(zyQ6a4Rs, (object) this, name);
+        DelegateHelper.Invoke(changing, this, name);
     }
 
     /// <summary>
@@ -108,12 +108,11 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// <param name="name">Property name.</param>
     protected void RaisePropertyChanged(string name)
     {
-        PropertyChangedEventHandler zUapFgog = this.\u0023\u003D
-        zUApFgog\u003D
-        ;
-        if(zUapFgog == null)
+        PropertyChangingEventHandler changed = this.PropertyChanging;
+
+        if (changed == null)
             return;
-        DelegateHelper.Invoke(zUapFgog, (object) this, name);
+        DelegateHelper.Invoke(changed, this, name);
     }
 
     /// <summary>
@@ -128,11 +127,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// <param name="value">New value of the property.</param>
     protected void RaisePropertyValueChanging(string name, object value)
     {
-        Action<object, string, object> zewvKoksnfftN = this.\u0023\u003D
-        zewvKoksnfftN;
-        if(zewvKoksnfftN == null)
-            return;
-        zewvKoksnfftN((object) this, name, value);
+        PropertyValueChanging?.Invoke(this, name, value);
     }
 
     /// <summary>
@@ -147,11 +142,13 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// </returns>
     protected bool SetField<TField>(ref TField field, TField value, string name)
     {
-        if(EqualityComparer<TField>.Default.Equals(field, value))
+        if (EqualityComparer<TField>.Default.Equals(field, value))
+        {
             return false;
-        this.RaisePropertyChanging(name);
+        }
+        RaisePropertyChanging(name);
         field = value;
-        this.RaisePropertyChanged(name);
+        RaisePropertyChanged(name);
         return true;
     }
 }

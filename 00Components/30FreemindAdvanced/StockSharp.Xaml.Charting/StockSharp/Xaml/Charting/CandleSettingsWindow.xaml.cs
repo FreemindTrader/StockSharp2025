@@ -30,13 +30,13 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>CandleSettingsWindow</summary>
 public class CandleSettingsWindow : ThemedWindow, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Subscription \u0023\u003Dzh4DsglU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal PropertyGridEx \u0023\u003DzSBQp\u0024Vhxv74c;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal SimpleButton \u0023\u003DzR8YHGiJOGNl5;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>
@@ -119,9 +119,9 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
 
   private sealed class \u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D : NotifiableObject
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly MarketDataMessage \u0023\u003Dz7LtG0SkMrvA7;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Security \u0023\u003DzpaXnuR8\u003D;
 
     public \u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D(Subscription _param1)

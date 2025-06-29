@@ -31,39 +31,39 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzjroGW0xeV8YH = DependencyProperty.Register(XXX.SSS(-539440596), typeof (double?), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.\u0023\u003DzL8ZRB9csVw_UcT6v5V6Hxo0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzU3sbyS2_qQyl = DependencyProperty.Register(XXX.SSS(-539438991), typeof (bool), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzB\u0024niq80SYDhY = DependencyProperty.Register(XXX.SSS(-539439015), typeof (int), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) 50));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzsKzwhvawatYW = DependencyProperty.RegisterAttached(XXX.SSS(-539440469), typeof (string), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.\u0023\u003DzV210hqnzErQ4)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> \u0023\u003DzjgUUUJE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> \u0023\u003DzcyGdlF8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal static readonly string \u0023\u003Dz8UAGL9e3cOCn = Guid.NewGuid().ToString();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003DzAJ8tNFa80f45;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D \u0023\u003Dz\u0024wP7eNcNWEpx;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzvBK\u00248KQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Grid \u0023\u003DzS\u0024OTg_s\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Image \u0023\u003Dz2TNhyDg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected WriteableBitmap \u0023\u003DzRIsZuY3LT4U\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D \u0023\u003Dzwa3i3hwVZeqr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static int \u0023\u003Dzf3Z0CZk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D \u0023\u003DzJMDWU3P\u0024MwfW43PZdrim0N0\u003D;
 
   protected dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd()
@@ -247,9 +247,9 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   }
 
   [SpecialName]
-  public ReadOnlyCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> \u0023\u003Dzvxq3X_8T\u0024Noo()
+  public ReadOnlyCollection<IRenderableSeries> \u0023\u003Dzvxq3X_8T\u0024Noo()
   {
-    return new ReadOnlyCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>((IList<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) this.\u0023\u003DzqgMiDwaFbXWy().Children.OfType<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>().ToArray<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>());
+    return new ReadOnlyCollection<IRenderableSeries>((IList<IRenderableSeries>) this.\u0023\u003DzqgMiDwaFbXWy().Children.OfType<IRenderableSeries>().ToArray<IRenderableSeries>());
   }
 
   public void \u0023\u003Dz5q8i9C4\u003D() => this.\u0023\u003DzAJ8tNFa80f45 = true;
@@ -261,20 +261,20 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   }
 
   public bool \u0023\u003DzdBvSINdoeQWX(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     return _param1 is UIElement element && this.\u0023\u003DzS\u0024OTg_s\u003D.Children.Contains(element);
   }
 
   public void \u0023\u003DzJoneIt0\u003D(
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param1)
+    IEnumerable<IRenderableSeries> _param1)
   {
-    foreach (\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug in _param1)
+    foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in _param1)
       this.\u0023\u003DzJoneIt0\u003D(s1JolYrWoYpqmQ6ug);
   }
 
   public void \u0023\u003DzJoneIt0\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     this.\u0023\u003Dz_SCZwjM\u003D(_param1);
     _param1.\u0023\u003DzrEoWi5uPS0Yz(this.\u0023\u003Dzu\u0024P3XgkcE7BC());
@@ -285,7 +285,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   }
 
   public void \u0023\u003Dz_SCZwjM\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     _param1.\u0023\u003DzrEoWi5uPS0Yz((\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null);
     if (!(_param1 is FrameworkElement frameworkElement))

@@ -632,7 +632,7 @@ label_8:
     IList,
     ICollection
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TimeframeSegmentDataSeries \u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539436978));
 
     public int Count => this.\u0023\u003DzU\u0024_meog\u003D._segments.Count;

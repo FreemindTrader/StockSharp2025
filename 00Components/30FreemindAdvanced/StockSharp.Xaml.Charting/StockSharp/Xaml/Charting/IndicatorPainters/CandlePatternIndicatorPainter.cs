@@ -25,7 +25,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (CandlePatternIndicator))]
 public class CandlePatternIndicatorPainter : BaseChartIndicatorPainter<CandlePatternIndicator>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly CandlePatternElement \u0023\u003DzAiwJX\u0024zIPQsrx2qUGA\u003D\u003D;
 
   /// <summary>Create instance.</summary>
@@ -53,7 +53,7 @@ public class CandlePatternIndicatorPainter : BaseChartIndicatorPainter<CandlePat
     CandlePatternIndicator indicator,
     IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
   {
-    return ((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this.PatternElement).\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(data[(IIndicator) indicator].Cast<ChartDrawData.IDrawValue>(), data.Count));
+    return ((IDrawableChartElement) this.PatternElement).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(data[(IIndicator) indicator].Cast<ChartDrawData.IDrawValue>(), data.Count));
   }
 
   /// <inheritdoc />

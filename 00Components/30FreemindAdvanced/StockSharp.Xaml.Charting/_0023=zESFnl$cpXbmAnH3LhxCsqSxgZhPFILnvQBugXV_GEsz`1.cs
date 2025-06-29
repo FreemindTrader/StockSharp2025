@@ -14,9 +14,9 @@ using System.Linq;
 internal sealed class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
   \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis\u0024<\u0023\u003DzH9HNkng\u003D>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzy04c1jB0PxOy;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzfwiqU6ROP8\u0024k;
 
   public \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D(
@@ -35,7 +35,7 @@ internal sealed class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_G
     int num2 = Math.Min(this.Count - num1, _param2);
     if (this.\u0023\u003DzkELV\u0024GPsC83d.Count != this.\u0023\u003DzfwiqU6ROP8\u0024k)
       return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003DzkELV\u0024GPsC83d.\u0023\u003DzRr4AYdnHaTxa(), num1, num2);
-    ((\u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003DzkELV\u0024GPsC83d).\u0023\u003Dz3MbNd8U\u003D(num1, this.\u0023\u003Dzy04c1jB0PxOy, 0, num2);
+    ((\u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003DzkELV\u0024GPsC83d).Clone(num1, this.\u0023\u003Dzy04c1jB0PxOy, 0, num2);
     return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzy04c1jB0PxOy, 0, num2);
   }
 

@@ -165,7 +165,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
 
   private sealed class \u0023\u003DzEAflM12ss7VY(bool _param1) : IValueConverter
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly bool \u0023\u003DzlG_k5f4\u003D = _param1;
 
     public 

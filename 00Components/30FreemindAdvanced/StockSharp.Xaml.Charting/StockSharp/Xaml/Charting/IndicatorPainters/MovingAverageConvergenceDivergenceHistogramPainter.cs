@@ -25,17 +25,17 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 public class MovingAverageConvergenceDivergenceHistogramPainter : 
   BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzzDv8WsjezxtjXG3nKA\u003D\u003D;
 
   /// <summary>Create instance.</summary>
   public MovingAverageConvergenceDivergenceHistogramPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>.GetIndicatorColorProvider();
     this.\u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()

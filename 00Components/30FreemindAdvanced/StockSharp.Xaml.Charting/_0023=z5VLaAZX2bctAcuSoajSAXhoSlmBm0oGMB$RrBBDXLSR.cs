@@ -15,13 +15,13 @@ internal struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXV
   int _param3,
   int _param4)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzP4R7yU0\u003D = _param1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzRNV_Dpk\u003D = _param2;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzp55dtus\u003D = _param3;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzSzOWcj8\u003D = _param4;
 
   public void \u0023\u003DzkTP\u0024FzM\u003D(int _param1, int _param2, int _param3, int _param4)

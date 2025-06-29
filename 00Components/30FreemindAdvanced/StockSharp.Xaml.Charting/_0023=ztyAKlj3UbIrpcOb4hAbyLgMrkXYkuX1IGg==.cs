@@ -17,9 +17,9 @@ using System.Threading;
 [DataContract]
 internal class \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D : INotifyPropertyChanged
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangedEventHandler \u0023\u003DziApqnpw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzBSG7sit66zZH;
 
   private void \u0023\u003Dz\u0024AL3lYMid4z_(PropertyChangedEventHandler _param1)

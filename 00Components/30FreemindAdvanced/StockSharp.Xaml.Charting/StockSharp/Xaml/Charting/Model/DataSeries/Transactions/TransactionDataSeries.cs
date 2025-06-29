@@ -499,7 +499,7 @@ internal class TransactionDataSeries :
     IList,
     ICollection
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TransactionDataSeries \u0023\u003DzU\u0024_meog\u003D;
 
     public \u0023\u003DzV\u0024R8yw8\u003D(TransactionDataSeries _param1)

@@ -18,33 +18,33 @@ using System.Windows.Threading;
 internal sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a : 
   dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzqGwbHdeZ8yMA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzvQbXnoA\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<int, Point> \u0023\u003DzYw05nwk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<int, Point> \u0023\u003DzdXHzI2qgXcUL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzqx1eAeyQiSaJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzvwtbDVFk\u0024M3n;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzvfpGK0ec3b38;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly DispatcherTimer \u0023\u003DzEM3AHVhw9XWS;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzOsLBTKo4JmwE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzf1Hn4XroTm02;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzemTaNjeDUoih;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzodsqFZFZbLUe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz7EQIewpOll_c;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzoaFDpW7A_iqDVWvw5Q\u003D\u003D;
 
   public \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a()

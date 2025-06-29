@@ -10,17 +10,17 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tFDwl0NMb
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzwP120vA\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzi8jDI4I\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzu6bzeD\u0024Y6N55;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzy_5REws\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzLw_1RqQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzTgDnxCg\u003D;
 
   public void \u0023\u003DzIT\u0024DfT8\u003D()

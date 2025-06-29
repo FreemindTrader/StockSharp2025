@@ -24,9 +24,9 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zJLZUPHSEPLZTF5VGVGDZ9JUXE4R75CVWDEUZN533QFZ3KHTTF6HYKGF2MQA88KYWDX_ejd : 
   IValueConverter
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly PropertyGridEx \u0023\u003DzQ5nkUaE\u003D = new PropertyGridEx();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<ChartAnnotationTypes, List<PropertyDefinition>> \u0023\u003Dz42roLu9CtDAT = new Dictionary<ChartAnnotationTypes, List<PropertyDefinition>>();
 
   private static List<PropertyDefinition> \u0023\u003DzcwEjjmY\u003D(ChartAnnotationTypes _param0)
@@ -113,7 +113,7 @@ internal sealed class dje_zJLZUPHSEPLZTF5VGVGDZ9JUXE4R75CVWDEUZN533QFZ3KHTTF6HYK
   [StructLayout(LayoutKind.Auto)]
   private struct \u0023\u003DzEIQ1d2DpkNoBum8VDQ\u003D\u003D
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public List<PropertyDefinition> \u0023\u003Dzeev5XPg\u003D;
   }
 

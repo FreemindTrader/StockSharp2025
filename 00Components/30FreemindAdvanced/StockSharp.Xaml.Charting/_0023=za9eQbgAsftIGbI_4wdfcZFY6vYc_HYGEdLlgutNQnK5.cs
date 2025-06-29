@@ -10,10 +10,10 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzwP120vA\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzeids9mY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzSP2vcyDTa4xx;
 }

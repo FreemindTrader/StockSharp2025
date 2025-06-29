@@ -19,13 +19,13 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 /// <inheritdoc />
 public class IndicatorColorProvider : IIndicatorColorProvider
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly IndicatorColorProviderSeed \u0023\u003Dz4Q3sa\u0024gsAL0q = new IndicatorColorProviderSeed();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedDictionary<IndicatorColorProviderSeed, int> \u0023\u003Dzy4fXhVU\u003D = new SynchronizedDictionary<IndicatorColorProviderSeed, int>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz9IwAea1R8vuk;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Color[] \u0023\u003DzpJ1HExkWqXSv = new Color[14]
   {
     Colors.Blue,
@@ -43,7 +43,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
     Colors.Teal,
     Colors.MediumVioletRed
   };
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Color[] \u0023\u003DzwVHfLaDc921YiCH_fw\u003D\u003D = new Color[15]
   {
     Colors.Gold,
@@ -73,7 +73,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
   /// <inheritdoc />
   public Color GetNextColor()
   {
-    int num = CollectionHelper.SyncGet<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(this.\u0023\u003Dzy4fXhVU\u003D, new Func<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(new IndicatorColorProvider.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D()
+    int num = CollectionHelper.SyncGet<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(this.\u0023\u003Dzy4fXhVU\u003D, new Func<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(new IndicatorColorProvider.SomeClass111()
     {
       \u0023\u003DzRRvwDu67s9Rm = this,
       \u0023\u003Dzi2Vlbjk\u003D = Scope<IndicatorColorProviderSeed>.Current?.Value ?? IndicatorColorProvider.\u0023\u003Dz4Q3sa\u0024gsAL0q
@@ -89,7 +89,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
     this.\u0023\u003Dz9IwAea1R8vuk = ThemeExtensions.IsCurrDark();
   }
 
-  private sealed class \u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D
+  private sealed class SomeClass111
   {
     public IndicatorColorProvider \u0023\u003DzRRvwDu67s9Rm;
     public IndicatorColorProviderSeed \u0023\u003Dzi2Vlbjk\u003D;

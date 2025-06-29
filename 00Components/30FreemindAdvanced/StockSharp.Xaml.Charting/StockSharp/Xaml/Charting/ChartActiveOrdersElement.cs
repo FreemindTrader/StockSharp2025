@@ -24,8 +24,8 @@ namespace StockSharp.Xaml.Charting;
 [Display(ResourceType = typeof (LocalizedStrings), Name = "ActiveOrders")]
 public class ChartActiveOrdersElement : 
   ChartElement<ChartActiveOrdersElement>,
-  \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X,
-  \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D,
+  IDrawableChartElement,
+  IfxChartElement,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanging,
@@ -33,28 +33,28 @@ public class ChartActiveOrdersElement :
   IPersistable,
   IChartActiveOrdersElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzNB5fice33i0u;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzieAJJNZ68tP_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzGxRjOLyGVgTOFE5tow\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzB7fwIKZYaT0OAwSREQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003Dzes2ibafgS30F;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzXNnisOcwXbVoIrOusg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzVB7x7oMoIiJX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzeEJexoTVv0gn;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003Dzwpv8VkjqZubJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzzsiq00hapgVL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003Dz2YSX_Z4\u003D;
+  
+  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartActiveOrdersElement" />.
@@ -182,7 +182,7 @@ public class ChartActiveOrdersElement :
     }
   }
 
-  System.Windows.Media.Color \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  System.Windows.Media.Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
   {
     return Colors.Transparent;
   }
@@ -241,19 +241,19 @@ public class ChartActiveOrdersElement :
     set => this.ForegroundColor = value.ToWpf();
   }
 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+    IScichartSurfaceVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(this);
   }
 
-  bool \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     return this.\u0023\u003Dz2YSX_Z4\u003D.\u0023\u003DzjgUUUJE\u003D(_param1);
   }
 
-  void \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
   {
     this.\u0023\u003Dz2YSX_Z4\u003D.\u0023\u003DzjgUUUJE\u003D(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
@@ -261,8 +261,8 @@ public class ChartActiveOrdersElement :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartActiveOrdersElement) this);
-    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>((ICollection<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>) source) && ((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this).\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
+    List<ChartDrawData.sActiveOrder> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartActiveOrdersElement) this);
+    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sActiveOrder>((ICollection<ChartDrawData.sActiveOrder>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
   }
 
   /// <inheritdoc />
@@ -288,10 +288,10 @@ public class ChartActiveOrdersElement :
     storage.Set<int>(XXX.SSS(-539433667), this.BuyColor.ToInt()).Set<int>(XXX.SSS(-539433678), this.BuyBlinkColor.ToInt()).Set<int>(XXX.SSS(-539433641), this.BuyPendingColor.ToInt()).Set<int>(XXX.SSS(-539433497), this.SellColor.ToInt()).Set<int>(XXX.SSS(-539433481), this.SellBlinkColor.ToInt()).Set<int>(XXX.SSS(-539433698), this.SellPendingColor.ToInt()).Set<int>(XXX.SSS(-539433534), this.CancelButtonColor.ToInt()).Set<int>(XXX.SSS(-539433591), this.ForegroundColor.ToInt()).Set<int>(XXX.SSS(-539433558), this.CancelButtonBackground.ToInt()).Set<bool>(XXX.SSS(-539433577), this.IsAnimationEnabled);
   }
 
-  internal override ChartActiveOrdersElement \u0023\u003Dz3MbNd8U\u003D(
+  internal override ChartActiveOrdersElement Clone(
     ChartActiveOrdersElement _param1)
   {
-    _param1 = base.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    _param1 = base.Clone(_param1);
     _param1.BuyColor = this.BuyColor;
     _param1.SellColor = this.SellColor;
     _param1.CancelButtonColor = this.CancelButtonColor;

@@ -13,9 +13,9 @@ using System.Windows.Input;
 #nullable disable
 internal sealed class \u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK : EventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzfng7Rt8gvrt\u0024\u0024cPAXg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IEnumerable<TouchPoint> \u0023\u003DzAPxSEU8XlHJKq6i\u0024J8909RI\u003D;
 
   public \u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK(IEnumerable<TouchPoint> _param1)

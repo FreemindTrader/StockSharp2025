@@ -16,7 +16,7 @@ namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd : IValueConverter
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Visibility \u0023\u003Dzuuu0n2mobAynoPMTh6dB4JY\u003D;
 
   public dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd()
@@ -24,7 +24,7 @@ internal sealed class dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd :
     this.\u0023\u003DzgUA4lBZwhI1n(Visibility.Collapsed);
   }
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public Visibility dje_zHG9WX3XQJ2NF2B2_ejd
   {
     get => this.\u0023\u003Dzuuu0n2mobAynoPMTh6dB4JY\u003D;

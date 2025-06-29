@@ -14,11 +14,11 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC : IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzwt21uMVBOpMf;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV \u0023\u003DzwhoPcC4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private MouseEventHandler \u0023\u003DzMv6aNgkbDCcS;
 
   internal \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC(

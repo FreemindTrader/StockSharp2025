@@ -37,21 +37,21 @@ public class ChartArea :
   INotifyPropertyChanged,
   IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  private readonly IScichartSurfaceVM \u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
+  
   private IChart \u0023\u003DzF\u002458l4g\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartAxisType \u0023\u003Dzzk\u00249uybYN\u0024wy = ChartAxisType.CategoryDateTime;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzIzRA1GQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzqcgkI5Q\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly INotifyList<IChartElement> \u0023\u003DzflSOSCebwQXGi8fUNg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly INotifyList<IChartAxis> \u0023\u003DzYe8QEajBkzI0US3jz3KFoMQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly INotifyList<IChartAxis> \u0023\u003DzYQqL3flRD33LHxyIdb39M1g\u003D;
 
   /// <summary>
@@ -63,12 +63,12 @@ public class ChartArea :
     this.\u0023\u003DzYe8QEajBkzI0US3jz3KFoMQ\u003D = (INotifyList<IChartAxis>) new ChartArea.\u0023\u003Dzc77TSXc\u003D(this, true);
     this.\u0023\u003DzYQqL3flRD33LHxyIdb39M1g\u003D = (INotifyList<IChartAxis>) new ChartArea.\u0023\u003Dzc77TSXc\u003D(this, false);
     this.\u0023\u003DzzEkR_P1lc2uI();
-    this.\u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D = new \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj(this);
+    this.\u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D = new IScichartSurfaceVM(this);
     this.Height = 100.0;
     this.\u0023\u003Dz3ThQNm3rQ1fp().PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
   }
 
-  internal \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003Dz3ThQNm3rQ1fp()
+  internal IScichartSurfaceVM \u0023\u003Dz3ThQNm3rQ1fp()
   {
     return this.\u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
   }
@@ -125,7 +125,7 @@ public class ChartArea :
       IChart chart1 = this.Chart;
       if (chart1 != null)
         chart1.EnsureUIThread();
-      if (((IEnumerable) this.Elements).Cast<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>().Any<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>(new Func<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D, bool>(dkfA7SK9Zsjh7b7evY.\u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D)))
+      if (((IEnumerable) this.Elements).Cast<IfxChartElement>().Any<IfxChartElement>(new Func<IfxChartElement, bool>(dkfA7SK9Zsjh7b7evY.\u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D)))
         throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.ElementDontSupportAxisTypeParams, new object[1]
         {
           (object) dkfA7SK9Zsjh7b7evY.\u0023\u003DzxGz2_8k\u003D
@@ -248,7 +248,7 @@ public class ChartArea :
   /// <returns>Copy.</returns>
   public virtual ChartArea Clone()
   {
-    ChartArea chartArea = this.\u0023\u003Dz3MbNd8U\u003D(new ChartArea()
+    ChartArea chartArea = this.Clone(new ChartArea()
     {
       Title = this.Title,
       Height = this.Height,
@@ -310,7 +310,7 @@ public class ChartArea :
 
     internal void \u0023\u003DzM30dyEF9Fb2bzYLjmLgjtiE\u003D(IChartElement _param1)
     {
-      if (!(_param1 is \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D ddznyiGmdRlAevOq))
+      if (!(_param1 is IfxChartElement ddznyiGmdRlAevOq))
         return;
       ddznyiGmdRlAevOq.\u0023\u003DzMIAnwWQ\u003D();
     }
@@ -349,7 +349,7 @@ public class ChartArea :
   private sealed class \u0023\u003DzI6tCp9WWq\u0024x\u0024(ChartArea _param1) : 
     ChartArea.\u0023\u003DztvVgmnUXBPgS<IChartElement>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539433978));
 
     protected virtual bool OnAdding(IChartElement _param1)
@@ -358,7 +358,7 @@ public class ChartArea :
       q1d2DpkNoBum8Vdq.\u0023\u003DzNoL9aC4\u003D = _param1;
       if (q1d2DpkNoBum8Vdq.\u0023\u003DzNoL9aC4\u003D.TryGetChart() != null)
         throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
-      q1d2DpkNoBum8Vdq.\u0023\u003DzAH1vHCc\u003D = !((IEnumerable<IChartElement>) this).Any<IChartElement>(new Func<IChartElement, bool>(q1d2DpkNoBum8Vdq.\u0023\u003DzrnUOoaI6rwNWZtaLsg\u003D\u003D)) ? q1d2DpkNoBum8Vdq.\u0023\u003DzNoL9aC4\u003D as \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D : throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
+      q1d2DpkNoBum8Vdq.\u0023\u003DzAH1vHCc\u003D = !((IEnumerable<IChartElement>) this).Any<IChartElement>(new Func<IChartElement, bool>(q1d2DpkNoBum8Vdq.\u0023\u003DzrnUOoaI6rwNWZtaLsg\u003D\u003D)) ? q1d2DpkNoBum8Vdq.\u0023\u003DzNoL9aC4\u003D as IfxChartElement : throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
       if (q1d2DpkNoBum8Vdq.\u0023\u003DzAH1vHCc\u003D != null)
       {
         IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this.\u0023\u003DzeckSod0\u003D.YAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(q1d2DpkNoBum8Vdq.\u0023\u003DzYEKCeOuJjAm6Cv5GiA\u003D\u003D));
@@ -376,7 +376,7 @@ public class ChartArea :
     private sealed class \u0023\u003DzEIQ1d2DpkNoBum8VDQ\u003D\u003D
     {
       public IChartElement \u0023\u003DzNoL9aC4\u003D;
-      public \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D \u0023\u003DzAH1vHCc\u003D;
+      public IfxChartElement \u0023\u003DzAH1vHCc\u003D;
 
       internal bool \u0023\u003DzrnUOoaI6rwNWZtaLsg\u003D\u003D(IChartElement _param1)
       {
@@ -396,7 +396,7 @@ public class ChartArea :
     public ChartArea \u0023\u003DzRRvwDu67s9Rm;
 
     internal bool \u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D(
-      \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+      IfxChartElement _param1)
     {
       return !_param1.CheckAxesCompatible(new ChartAxisType?(this.\u0023\u003DzxGz2_8k\u003D), new ChartAxisType?());
     }
@@ -410,13 +410,13 @@ public class ChartArea :
   private sealed class \u0023\u003Dzc77TSXc\u003D(ChartArea _param1, bool _param2) : 
     ChartArea.\u0023\u003DztvVgmnUXBPgS<IChartAxis>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static int \u0023\u003Dz\u0024aPzPF8\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static int \u0023\u003DzllfDbLI\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly bool \u0023\u003DzxUZHFO7FWvR7ohJHTLp\u002424E\u003D = _param2;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539433942));
 
     private bool \u0023\u003Dz2BfyUzmYpKwx()
@@ -453,7 +453,7 @@ public class ChartArea :
         }));
       if (this == this.\u0023\u003DzeckSod0\u003D.XAxises && zPKCmcad6Nxc5A8A.\u0023\u003DzNoL9aC4\u003D.AxisType != this.\u0023\u003DzeckSod0\u003D.XAxisType)
         throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
-      foreach (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D elem in ((IEnumerable) this.\u0023\u003DzeckSod0\u003D.Elements).Cast<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>())
+      foreach (IfxChartElement elem in ((IEnumerable) this.\u0023\u003DzeckSod0\u003D.Elements).Cast<IfxChartElement>())
       {
         if (elem.TryGetXAxis() == null && this == this.\u0023\u003DzeckSod0\u003D.XAxises && zPKCmcad6Nxc5A8A.\u0023\u003DzNoL9aC4\u003D.Id == elem.XAxisId && !elem.CheckAxesCompatible(new ChartAxisType?(zPKCmcad6Nxc5A8A.\u0023\u003DzNoL9aC4\u003D.AxisType), new ChartAxisType?()))
           throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
@@ -533,13 +533,13 @@ public class ChartArea :
     INotifyCollectionChanged,
     INotifyPropertyChanged
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz6c10OEEYbDZc;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzH9HNkng\u003D \u0023\u003DzJth_SLf0lYGy;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private PropertyChangedEventHandler \u0023\u003DziApqnpw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private NotifyCollectionChangedEventHandler \u0023\u003DzLMHThYKh0KAF;
 
     protected virtual bool OnRemove(\u0023\u003DzH9HNkng\u003D _param1)

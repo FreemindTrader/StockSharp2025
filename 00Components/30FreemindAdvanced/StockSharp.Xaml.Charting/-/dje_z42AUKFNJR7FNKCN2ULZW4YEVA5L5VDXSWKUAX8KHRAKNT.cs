@@ -15,9 +15,9 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_z42AUKFNJR7FNKCN2ULZW4YEVA5L5VDXSWKUAX8KHRAKNTZLMV2GRX_ejd : 
   dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003Dz39nD3feKm878;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003DzynwqZ7\u00241dLS6;
 
   protected override void \u0023\u003DzdL613chSNlLB(

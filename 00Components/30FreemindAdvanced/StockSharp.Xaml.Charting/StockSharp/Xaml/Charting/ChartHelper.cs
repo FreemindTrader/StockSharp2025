@@ -31,7 +31,7 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 public static class ChartHelper
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Lazy<IndicatorColorProvider> \u0023\u003DzOejVh3VT5Dah = new Lazy<IndicatorColorProvider>();
 
   /// <summary>To save the chart as image.</summary>
@@ -104,7 +104,7 @@ public static class ChartHelper
   /// </param>
   public static void FillDefaultValues(this OptimizerChart3D chart)
   {
-    ChartHelper.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D skXz9pb7XdulaJda = new ChartHelper.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D();
+    ChartHelper.SomeClass111 skXz9pb7XdulaJda = new ChartHelper.SomeClass111();
     skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D = chart;
     if (skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D == null)
       throw new ArgumentNullException(XXX.SSS(-539427035));
@@ -226,7 +226,7 @@ public static class ChartHelper
     chart.AddElement(area, element, new Subscription(series), indicator);
   }
 
-  private sealed class \u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D
+  private sealed class SomeClass111
   {
     public OptimizerChart3D \u0023\u003Dz_3vetAU\u003D;
 

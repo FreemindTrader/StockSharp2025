@@ -14,33 +14,33 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd : 
   dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzJ9vZ1SlBkImj = DependencyProperty.Register(XXX.SSS(-539329127), typeof (Style), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSmF8nWOYvMQ_ = DependencyProperty.Register(XXX.SSS(-539329432), typeof (Style), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DztbK2Bw0aHrIx = DependencyProperty.Register(XXX.SSS(-539329413), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd.\u0023\u003DzbI1wn6DLqQEI)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzISO1gMx6b9vNqwnNKU5zU7w\u003D = DependencyProperty.Register(XXX.SSS(-539329471), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd.\u0023\u003DzbI1wn6DLqQEI)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz_KdgKi_srL\u0024p = DependencyProperty.Register(XXX.SSS(-539329495), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzwaZI9uCUost6EXraqCs4gZY\u003D = DependencyProperty.Register(XXX.SSS(-539329478), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzaf3Lae48WNlm = DependencyProperty.Register(XXX.SSS(-539329512), typeof (double), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) -1.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzn\u0024kyZmXv5BnB = DependencyProperty.Register(XXX.SSS(-539329307), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd.\u0023\u003DzJEfp2ojSpmqcIp9R5Q\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzu54g58TexZ1B = DependencyProperty.Register(XXX.SSS(-539329296), typeof (string), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd.\u0023\u003Dz9QrnGw3vI4pcW7I4XA\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzsou0kYCBYC1mAXWfsg\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539329323), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz8nrTMdEZLwbciOTO7Vi3t9Y\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzY8n4mF7fBfJM = DependencyProperty.Register(XXX.SSS(-539329346), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzAFMql64D06Xd = DependencyProperty.Register(XXX.SSS(-539329397), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register(XXX.SSS(-539432195), typeof (bool), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzyODCTTGX9yAa = DependencyProperty.Register(XXX.SSS(-539328659), typeof (Style), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) null));
 
   public dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd()

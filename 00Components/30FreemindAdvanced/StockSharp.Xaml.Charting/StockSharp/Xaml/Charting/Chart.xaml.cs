@@ -49,74 +49,74 @@ public class Chart :
   INotifyPropertyChanged,
   IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static int \u0023\u003DzOuojlfHTX4K6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003Dzt3ZlrZOO2ledE5D1Mw\u003D\u003D = ++Chart.\u0023\u003DzOuojlfHTX4K6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly 
   #nullable disable
   ChartBuilder \u0023\u003DzQedEwiM\u003D = new ChartBuilder();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Subscription \u0023\u003DzKCT2CVDV16nJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartCandleDrawStyles \u0023\u003DzwXDAJOwaveOju\u0024lre38VQ5w\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private MarketDataMessage \u0023\u003DzbEOGQO_Gw5r5YQ6kr3Jalls\u003D = new MarketDataMessage()
   {
     DataType2 = Extensions.TimeFrame(TimeSpan.FromMinutes(5.0))
   };
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 \u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg> \u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D = new SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedDictionary<IChartElement, Subscription> \u0023\u003DzvWHSaOs\u003D = new SynchronizedDictionary<IChartElement, Subscription>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartAnnotationTypes \u0023\u003DzdrtI10riHGVN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzRQNCutnxzurB = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzKSdoqGGT2Q0s17vWLQ\u003D\u003D = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzi\u0024DHUvHXaw26IYcmlA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzwuVzD4GYBhfk = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DznNCcb03RWapN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz_hnUMt3_OcvB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DznXh8y9EGbQ7R6xXCKw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzL6RNvETlqFx4;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<(IChartArea, IndicatorMeasures), string> \u0023\u003DzDUXY6MNzkE1e = new Dictionary<(IChartArea, IndicatorMeasures), string>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeSpan \u0023\u003Dz9Ee3umvrluGn = TimeSpan.FromMilliseconds(200.0);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<IChartArea> \u0023\u003Dza1mnh6ythHbd = new List<IChartArea>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ISecurityProvider \u0023\u003DzopaHcTq5\u0024VAJ1U\u0024FZA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzBUE9gFoni2x4vnoaWAL_8Q8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeZoneInfo \u0023\u003Dzlm3nxP8O1U6I = TimeZoneInfo.Local;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzEpShEnHWfpnt9EgGG53qksn4J8ln8AfdcBAf0gw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Security \u0023\u003DzCeIks\u0024kpJtyCA0n_Hg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Subscription \u0023\u003DzAFpdFZRw72NT1DPyxQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<IChartArea> \u0023\u003DzcHtgn6mNhxMM;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action \u0023\u003DzKGKj0Lc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangedEventHandler \u0023\u003DziApqnpw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd \u0023\u003DzxYLKFqWiCEs\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>
@@ -422,7 +422,7 @@ public class Chart :
     SynchronizedDictionary<IChartElement, Subscription> zvWhSaOs = this.\u0023\u003DzvWHSaOs\u003D;
     IChartElement chartElement = element;
     zvWhSaOs[chartElement] = subscription ?? throw new ArgumentNullException(XXX.SSS(-539431997));
-    ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) element).\u0023\u003DzMIAnwWQ\u003D();
+    ((IfxChartElement) element).\u0023\u003DzMIAnwWQ\u003D();
   }
 
   /// <summary>
@@ -987,7 +987,7 @@ public class Chart :
     Dictionary<IChartIndicatorElement, Tuple<IIndicator, IChartArea>> dictionary = ((IEnumerable<KeyValuePair<IChartElement, Subscription>>) this.\u0023\u003DzvWHSaOs\u003D).Where<KeyValuePair<IChartElement, Subscription>>(new Func<KeyValuePair<IChartElement, Subscription>, bool>(magwJg5Cu0tHrBa0.\u0023\u003Dz0h9UKK62LR3Vt49xiuMu8R9QgAUI)).Select<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D = new Func<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPMkLVMTIVacbdOnMgx5om9R8XfFp42JlLQ\u003D\u003D))).ToDictionary<IChartIndicatorElement, IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D = new Func<IChartIndicatorElement, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzuKv4rqmZgBRXOk9cL\u0024V\u0024mJZ_bYxaKSqnjQ\u003D\u003D)), new Func<IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(magwJg5Cu0tHrBa0.\u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX));
     this.\u0023\u003Dz\u0024_wDItQvnYOy((IChartElement) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D);
     CollectionHelper.ForEach<IChartIndicatorElement>((IEnumerable<IChartIndicatorElement>) dictionary.Keys, new Action<IChartIndicatorElement>(this.\u0023\u003Dz\u0024_wDItQvnYOy));
-    ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D).\u0023\u003DzMIAnwWQ\u003D();
+    ((IfxChartElement) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D).\u0023\u003DzMIAnwWQ\u003D();
     this.AddElement(chartArea, magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D, _param2);
     foreach (KeyValuePair<IChartIndicatorElement, Tuple<IIndicator, IChartArea>> keyValuePair in dictionary)
       this.AddElement(keyValuePair.Value.Item2, keyValuePair.Key, _param2, keyValuePair.Value.Item1);
@@ -1188,7 +1188,7 @@ public class Chart :
     IChartIndicatorElement _param1,
     IIndicator _param2)
   {
-    ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1).\u0023\u003DzMIAnwWQ\u003D();
+    ((IfxChartElement) _param1).\u0023\u003DzMIAnwWQ\u003D();
     this.\u0023\u003DzEm4mXfg\u003D((IChartElement) _param1, true);
   }
 
@@ -1600,11 +1600,11 @@ public class Chart :
 
   private sealed class \u0023\u003DzZQ9Hpf12oRwg : Disposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Chart \u0023\u003DzF\u002458l4g\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly IChartIndicatorElement \u0023\u003Dz2YSX_Z4\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly IIndicator \u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D;
 
     public \u0023\u003DzZQ9Hpf12oRwg(
@@ -1652,7 +1652,7 @@ public class Chart :
 
     internal void \u0023\u003Dqtx1KXraU1keT0uiySlEVOOB5PnDLulwyMJjyjX7rsVjruD1DZyrc16lnN0h2\u0024q6Q()
     {
-      ((\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).\u0023\u003Dz3p2JBPVHDEUh(this.\u0023\u003Dz6x1I8qQ\u003D);
+      ((IScichartSurfaceVM) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).\u0023\u003Dz3p2JBPVHDEUh(this.\u0023\u003Dz6x1I8qQ\u003D);
     }
 
     internal void \u0023\u003DzvrcTIvo4QYO6VIoIYgtMLK0\u003D(

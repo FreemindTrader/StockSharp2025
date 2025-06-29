@@ -13,11 +13,11 @@ internal struct \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4D
   int _param1,
   int _param2)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzwP120vA\u003D = _param1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzi8jDI4I\u003D = _param2;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzeids9mY\u003D = 0;
 
   public bool \u0023\u003DzGoZaFyE\u003D(

@@ -24,7 +24,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzU26lnNrA_u4g;
   private readonly Dictionary<double, CandlePriceLevel> \u0023\u003DzP4lbWAj_E1MXaCiGd7U\u0024TJw\u003D;
   private readonly IEnumerable<double> \u0023\u003DzKpF8UOqXDBb3yFmWUsLipO5D2P2j;
-  private readonly double \u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D;
+  private readonly double _priceStep;
   private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
   private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
 
@@ -39,7 +39,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     // ISSUE: explicit constructor call
     base.\u002Ector();
     mpa4F4mcyQlZrFjfRi.\u0023\u003DzRRvwDu67s9Rm = this;
-    this.\u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D = mpa4F4mcyQlZrFjfRi.\u0023\u003DzgSMmZSBP2RDX;
+    this._priceStep = mpa4F4mcyQlZrFjfRi.\u0023\u003DzgSMmZSBP2RDX;
     this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) _param2.Clone();
     if (!(_param3 is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq))
       g8Oq2rGx6KyfAreq = _param2;
@@ -122,7 +122,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
 
   public double \u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D()
   {
-    return this.\u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D;
+    return this._priceStep;
   }
 
   public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003Dz5O4ly_BelNuL()

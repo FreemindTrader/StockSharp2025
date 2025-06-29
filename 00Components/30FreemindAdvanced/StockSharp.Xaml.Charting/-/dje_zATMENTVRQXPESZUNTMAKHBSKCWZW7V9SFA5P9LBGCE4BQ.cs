@@ -17,11 +17,11 @@ namespace StockSharp.Xaml.Charting;
 internal class dje_zATMENTVRQXPESZUNTMAKHBSKCWZW7V9SFA5P9LBGCE4BQBNQAPN2D_ejd : 
   dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTkY8ZV9p8Yb\u0024waK\u0024JvDk6br \u0023\u003Dzxyhw1x0WHB0D = new \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTkY8ZV9p8Yb\u0024waK\u0024JvDk6br();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd> \u0023\u003DzYkVi0tC6ZJOZw\u00246TxQ\u003D\u003D = new List<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D = DependencyProperty.Register(XXX.SSS(-539335346), typeof (bool), typeof (dje_zATMENTVRQXPESZUNTMAKHBSKCWZW7V9SFA5P9LBGCE4BQBNQAPN2D_ejd), new PropertyMetadata((object) true));
 
   public bool IsLabelCullingEnabled

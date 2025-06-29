@@ -24,21 +24,21 @@ internal sealed class dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd :
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
   \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzzsmHSkfDouc4;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003Dz43zUgeo\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzoLEhkoxH9YzJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IList<TouchPoint> \u0023\u003Dzt0Qmpsjfylij = (IList<TouchPoint>) new List<TouchPoint>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IList<TouchPoint> \u0023\u003DzDUv3Acj1oZXB = (IList<TouchPoint>) new List<TouchPoint>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IList<TouchPoint> \u0023\u003Dzicg_lR7qq4W7 = (IList<TouchPoint>) new List<TouchPoint>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly RoutedEventHandler \u0023\u003DzDBof02j7wNLE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly RoutedEventHandler \u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D;
 
   public dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd()

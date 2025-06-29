@@ -10,13 +10,13 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzAJ2g5KE5bawCuhjG0TamYqc9paYUOELp42Wm9LewSjdeS3Z7h7fzLONw1_qb
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzP4R7yU0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzRNV_Dpk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dzp55dtus\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzSzOWcj8\u003D;
 
   public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYqc9paYUOELp42Wm9LewSjdeS3Z7h7fzLONw1_qb(double _param1)

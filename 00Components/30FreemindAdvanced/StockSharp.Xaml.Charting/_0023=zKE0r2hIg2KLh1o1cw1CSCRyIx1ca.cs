@@ -14,7 +14,7 @@ using System.Diagnostics;
 [Embedded]
 internal sealed class \u0023\u003DzKE0r2hIg2KLh1o1cw1CSCRyIx1ca : Attribute
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public readonly int \u0023\u003DzJZxbLsk\u003D;
 
   public \u0023\u003DzKE0r2hIg2KLh1o1cw1CSCRyIx1ca(int _param1)

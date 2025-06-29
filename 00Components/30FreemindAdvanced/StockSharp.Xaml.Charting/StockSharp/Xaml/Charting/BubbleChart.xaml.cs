@@ -24,9 +24,9 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>BubbleChart</summary>
 public class BubbleChart : UserControl, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal XYDiagram2D \u0023\u003DzC0s2qwQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>
@@ -87,9 +87,9 @@ public class BubbleChart : UserControl, IComponentConnector
     BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>
     where \u0023\u003DzulcL8RA\u003D : IComparable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539431255));
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539431262));
 
     void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(

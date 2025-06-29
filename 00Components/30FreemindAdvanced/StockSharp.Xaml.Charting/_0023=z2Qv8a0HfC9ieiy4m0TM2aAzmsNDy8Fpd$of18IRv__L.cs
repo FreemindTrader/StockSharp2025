@@ -15,7 +15,7 @@ using System.Windows.Data;
 internal sealed class \u0023\u003Dz2Qv8a0HfC9ieiy4m0TM2aAzmsNDy8Fpd\u0024of18IRv__L_ : 
   IValueConverter
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly LineAnnotationWithLabelsBase \u0023\u003Dzoem3lxBSJacx;
 
   public \u0023\u003Dz2Qv8a0HfC9ieiy4m0TM2aAzmsNDy8Fpd\u0024of18IRv__L_(

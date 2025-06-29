@@ -20,11 +20,11 @@ internal abstract class dje_zXJSU6RS8TCQ6ZVU6XJ5NL7C4LYU27ZM5SDS8FXR9_ejd<\u0023
   INotifyPropertyChanged
   where \u0023\u003DzH9HNkng\u003D : IComparable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzH9HNkng\u003D \u0023\u003DzWAnvsEc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzH9HNkng\u003D \u0023\u003DzjV9cs\u0024I\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzB8wkVW0YXGlP = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<\u0023\u003DzH9HNkng\u003D>();
 
   protected dje_zXJSU6RS8TCQ6ZVU6XJ5NL7C4LYU27ZM5SDS8FXR9_ejd()

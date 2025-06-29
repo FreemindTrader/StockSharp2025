@@ -28,43 +28,43 @@ public class ChartAxis :
   INotifyPropertyChanged,
   INotifyPropertyChanging
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IChartArea \u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DziM6zJqE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzVf6ckz06jjnq = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzIzRA1GQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DznLJWjME\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzv9FD1di4RC0T;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartAxisType \u0023\u003DzQbjuL1gVekSH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzdLTpPeMhlR6N = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzrhLICZ53UOoE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzMoUHwSZ26s\u0024B = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQX_eCV9XBE2Om3pH5A\u003D\u003D = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzomI8jgXvMYgj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHLFKxy_IJ02Bf4vYiQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzgTDrusYEVex\u0024 = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dz5wsolu6uzY0L;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dz6SqmY60jwVYP;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeZoneInfo \u0023\u003Dzlm3nxP8O1U6I;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzDtp\u00246FfBRlYq = double.NaN;
 
   /// <inheritdoc />

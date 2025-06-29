@@ -12,9 +12,9 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D : 
   PropertyChangedEventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private object \u0023\u003Dzn_9_y4JxSA1UdtyEOQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private object \u0023\u003DzxGIy4CvPRX71CLSKEQ\u003D\u003D;
 
   public \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D(

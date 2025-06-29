@@ -28,19 +28,19 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>OptimizerChart3D</summary>
 public class OptimizerChart3D : UserControl, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly DispatcherTimer \u0023\u003DzI189dKeTiS2S;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action \u0023\u003DzTsL\u0024ygfSgp6i;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEdit \u0023\u003Dz7qmq9F8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEdit \u0023\u003DzRBR31Bw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEdit \u0023\u003DzlFT\u00249og\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal Chart3D \u0023\u003DzO72kpz0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>
@@ -396,11 +396,11 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   [StructLayout(LayoutKind.Auto)]
   private struct \u0023\u003DzO3RMHvHjCCJ5FySBGtQj1mY\u003D
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public Func<Vector3D, bool> \u0023\u003Dz_kvDiExkluUo;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public double \u0023\u003DzYRvsjGVg1QYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public OptimizerChart3D \u0023\u003DzRRvwDu67s9Rm;
   }
 }

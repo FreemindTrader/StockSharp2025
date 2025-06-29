@@ -25,176 +25,172 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 /// The indicator renderer base class on the chart (for example, lines, histograms, etc.).
 /// </summary>
 /// <typeparam name="TIndicator">Type of <see cref="T:StockSharp.Algo.Indicators.IIndicator" />.</typeparam>
-public abstract class BaseChartIndicatorPainter<TIndicator> : 
-  ChartBaseViewModel,
-  IChartIndicatorPainter,
-  IPersistable
-  where TIndicator : IIndicator
+public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel, IChartIndicatorPainter, IPersistable where TIndicator : IIndicator
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly List<IChartElement> \u0023\u003DzqFRpave0Vtab = new List<IChartElement>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private IChartIndicatorElement \u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+    
+    private readonly List<IChartElement> _innerElements = new List<IChartElement>();
+  
+    private IChartIndicatorElement _indicatorElement;
 
-  internal static IIndicatorColorProvider \u0023\u003Dzl7RImWAQVb2K()
-  {
-    return ChartHelper.EnsureColorProvider();
-  }
-
-  /// <inheritdoc />
-  [Browsable(false)]
-  public IChartIndicatorElement Element
-  {
-    get => this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
-    private set => this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D = value;
-  }
-
-  /// <inheritdoc />
-  [Browsable(false)]
-  public IReadOnlyList<IChartElement> InnerElements
-  {
-    get => (IReadOnlyList<IChartElement>) this.\u0023\u003DzqFRpave0Vtab;
-  }
-
-  /// <summary>
-  /// Whether this painter is currently attached to chart element.
-  /// </summary>
-  protected bool IsAttached => this.Element != null;
-
-  private ChartIndicatorElement \u0023\u003DzcINLDhshur8x() => (ChartIndicatorElement) this.Element;
-
-  private void \u0023\u003Dz0yXrIqwigzcF()
-  {
-    CollectionHelper.ForEach<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X>(this.\u0023\u003DzcINLDhshur8x().ChildElements.OfType<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X>(), BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Action<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X>(BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D)));
-  }
-
-  /// <summary>Draw values on chart.</summary>
-  /// <param name="indicator">Indicator.</param>
-  /// <param name="data">Indicator values to draw on chart.</param>
-  /// <returns>
-  /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
-  protected abstract bool OnDraw(
-    TIndicator indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data);
-
-  /// <inheritdoc />
-  public virtual bool Draw(IChartDrawData data)
-  {
-    if (!this.IsAttached)
-      return false;
-    List<ChartDrawData.IndicatorData> indicatorDataList = ((ChartDrawData) data).\u0023\u003DzaZ5Qc3xeNY95(this.Element);
-    if (indicatorDataList == null || CollectionHelper.IsEmpty<ChartDrawData.IndicatorData>((ICollection<ChartDrawData.IndicatorData>) indicatorDataList))
+  internal static IIndicatorColorProvider GetIndicatorColorProvider()
     {
-      this.\u0023\u003Dz0yXrIqwigzcF();
-      return false;
+        return ChartHelper.EnsureColorProvider();
     }
-    BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D dkfA7SK9Zsjh7b7evY;
-    dkfA7SK9Zsjh7b7evY.\u0023\u003DzQGpA0P4\u003D = new Dictionary<IIndicator, IList<ChartDrawData.IndicatorData>>();
-    foreach (ChartDrawData.IndicatorData indicatorData in indicatorDataList)
-      BaseChartIndicatorPainter<TIndicator>.\u0023\u003DqHBqb1AYxgNo2ie3lzN8tC_nrhxBQRNPRtaqNxzADD3c\u003D(indicatorData.Value.Indicator, indicatorData.Time, indicatorData.Value, ref dkfA7SK9Zsjh7b7evY);
-    return this.OnDraw((TIndicator) indicatorDataList[0].Value.Indicator, (IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>>) dkfA7SK9Zsjh7b7evY.\u0023\u003DzQGpA0P4\u003D);
-  }
 
-  /// <inheritdoc />
-  public virtual void Reset()
-  {
-  }
+    /// <inheritdoc />
+    [Browsable(false)]
+    public IChartIndicatorElement Element
+    {
+        get => this._indicatorElement;
+        private set => this._indicatorElement = value;
+    }
 
-  /// <inheritdoc />
-  public void OnAttached(IChartIndicatorElement element)
-  {
-    this.Element = element;
-    CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.InnerElements, new Action<IChartElement>(this.\u0023\u003Dz1QuGUAX1zkMSls2D\u0024DLiPPw\u003D));
-  }
+    /// <inheritdoc />
+    [Browsable(false)]
+    public IReadOnlyList<IChartElement> InnerElements
+    {
+        get => (IReadOnlyList<IChartElement>)this._innerElements;
+    }
 
-  /// <inheritdoc />
-  public void OnDetached()
-  {
-    if (this.Element == null)
-      return;
-    CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.InnerElements, new Action<IChartElement>(this.\u0023\u003DzELzX6nSZmdU0vOyq3PAcXl8\u003D));
-    this.Element = (IChartIndicatorElement) null;
-  }
+    /// <summary>
+    /// Whether this painter is currently attached to chart element.
+    /// </summary>
+    protected bool IsAttached => this.Element != null;
 
-  /// <summary>Draw indicator values using value getter.</summary>
-  /// <param name="vals">Values.</param>
-  /// <param name="element">Element.</param>
-  /// <param name="getValue">Converter.</param>
-  /// <returns>
-  /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
-  protected bool DrawValues(
-    IList<ChartDrawData.IndicatorData> vals,
-    IChartElement element,
-    Func<ChartDrawData.IndicatorData, double> getValue)
-  {
-    BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D lvtppRwsYcyoelU8 = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D();
-    lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf = vals;
-    lvtppRwsYcyoelU8.\u0023\u003DztbpwouM\u003D = getValue;
-    if (lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf == null)
+    private ChartIndicatorElement GetChartIndicatorElement() => (ChartIndicatorElement)this.Element;
+
+    private void ChildElementsStartDrawing()
+    {
+        CollectionHelper.ForEach <IDrawableChartElement > (this.GetChartIndicatorElement().ChildElements.OfType <IDrawableChartElement > (), BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Action<IDrawableChartElement>(BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D)));
+    }
+
+    /// <summary>Draw values on chart.</summary>
+    /// <param name="indicator">Indicator.</param>
+    /// <param name="data">Indicator values to draw on chart.</param>
+    /// <returns>
+    /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
+    protected abstract bool OnDraw(
+      TIndicator indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data);
+
+    /// <inheritdoc />
+    public virtual bool Draw(IChartDrawData data)
+    {
+        if (!this.IsAttached)
+            return false;
+        List<ChartDrawData.IndicatorData> indicatorDataList = ((ChartDrawData)data).\u0023\u003DzaZ5Qc3xeNY95(this.Element);
+        if (indicatorDataList == null || CollectionHelper.IsEmpty<ChartDrawData.IndicatorData>((ICollection<ChartDrawData.IndicatorData>)indicatorDataList))
+        {
+            this.ChildElementsStartDrawing();
+            return false;
+        }
+        BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D dkfA7SK9Zsjh7b7evY;
+        dkfA7SK9Zsjh7b7evY.\u0023\u003DzQGpA0P4\u003D = new Dictionary<IIndicator, IList<ChartDrawData.IndicatorData>>();
+        foreach (ChartDrawData.IndicatorData indicatorData in indicatorDataList)
+            BaseChartIndicatorPainter<TIndicator>.\u0023\u003DqHBqb1AYxgNo2ie3lzN8tC_nrhxBQRNPRtaqNxzADD3c\u003D(indicatorData.Value.Indicator, indicatorData.Time, indicatorData.Value, ref dkfA7SK9Zsjh7b7evY);
+        return this.OnDraw((TIndicator)indicatorDataList[0].Value.Indicator, (IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>>)dkfA7SK9Zsjh7b7evY.\u0023\u003DzQGpA0P4\u003D);
+    }
+
+    /// <inheritdoc />
+    public virtual void Reset()
+    {
+    }
+
+    /// <inheritdoc />
+    public void OnAttached(IChartIndicatorElement element)
+    {
+        this.Element = element;
+        CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)this.InnerElements, new Action<IChartElement>(this.\u0023\u003Dz1QuGUAX1zkMSls2D\u0024DLiPPw\u003D));
+    }
+
+    /// <inheritdoc />
+    public void OnDetached()
+    {
+        if (this.Element == null)
+            return;
+        CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)this.InnerElements, new Action<IChartElement>(this.\u0023\u003DzELzX6nSZmdU0vOyq3PAcXl8\u003D));
+        this.Element = (IChartIndicatorElement)null;
+    }
+
+    /// <summary>Draw indicator values using value getter.</summary>
+    /// <param name="vals">Values.</param>
+    /// <param name="element">Element.</param>
+    /// <param name="getValue">Converter.</param>
+    /// <returns>
+    /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
+    protected bool DrawValues(
+      IList<ChartDrawData.IndicatorData> vals,
+      IChartElement element,
+      Func<ChartDrawData.IndicatorData, double> getValue)
+    {
+        BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D lvtppRwsYcyoelU8 = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D();
+        lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf = vals;
+        lvtppRwsYcyoelU8.\u0023\u003DztbpwouM\u003D = getValue;
+        if (lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf == null)
       throw new ArgumentNullException(XXX.SSS(-539442756));
-    return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf.Count, new Func<int, DateTime>(lvtppRwsYcyoelU8.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(lvtppRwsYcyoelU8.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, (Func<int, int>) null);
-  }
+        return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf.Count, new Func<int, DateTime>(lvtppRwsYcyoelU8.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(lvtppRwsYcyoelU8.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>)null, (Func<int, int>)null);
+    }
 
-  /// <summary>Draw indicator single double values.</summary>
-  /// <param name="vals">Values.</param>
-  /// <param name="element">Element.</param>
-  /// <returns>
-  /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
-  protected bool DrawValues(IList<ChartDrawData.IndicatorData> vals, IChartElement element)
-  {
-    BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D kiaDl76b0Nyu42rxJq = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D();
-    kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf = vals;
-    kiaDl76b0Nyu42rxJq.\u0023\u003DzRRvwDu67s9Rm = this;
-    if (kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf == null)
+    /// <summary>Draw indicator single double values.</summary>
+    /// <param name="vals">Values.</param>
+    /// <param name="element">Element.</param>
+    /// <returns>
+    /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
+    protected bool DrawValues(IList<ChartDrawData.IndicatorData> vals, IChartElement element)
+    {
+        BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D kiaDl76b0Nyu42rxJq = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D();
+        kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf = vals;
+        kiaDl76b0Nyu42rxJq.\u0023\u003DzRRvwDu67s9Rm = this;
+        if (kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf == null)
       throw new ArgumentNullException(XXX.SSS(-539442767));
-    return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf.Count, new Func<int, DateTime>(kiaDl76b0Nyu42rxJq.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(kiaDl76b0Nyu42rxJq.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, new Func<int, int>(kiaDl76b0Nyu42rxJq.\u0023\u003DzI5IxWb1lSuTpD9hsyw\u003D\u003D));
-  }
+        return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf.Count, new Func<int, DateTime>(kiaDl76b0Nyu42rxJq.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(kiaDl76b0Nyu42rxJq.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>)null, new Func<int, int>(kiaDl76b0Nyu42rxJq.\u0023\u003DzI5IxWb1lSuTpD9hsyw\u003D\u003D));
+    }
 
-  /// <summary>Draw indicator band values (2 doubles).</summary>
-  /// <param name="vals1">Values 1.</param>
-  /// <param name="vals2">Values 2.</param>
-  /// <param name="element">Element.</param>
-  /// <returns>
-  /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
-  protected bool DrawValues(
-    IList<ChartDrawData.IndicatorData> vals1,
-    IList<ChartDrawData.IndicatorData> vals2,
-    IChartElement element)
-  {
-    BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
-    v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN = vals1;
-    v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRRvwDu67s9Rm = this;
-    v4vdZv8GtEzAmB0rzFq.\u0023\u003Dz4e3i1kk9sNEQ = vals2;
-    if (v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN == null)
+    /// <summary>Draw indicator band values (2 doubles).</summary>
+    /// <param name="vals1">Values 1.</param>
+    /// <param name="vals2">Values 2.</param>
+    /// <param name="element">Element.</param>
+    /// <returns>
+    /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
+    protected bool DrawValues(
+      IList<ChartDrawData.IndicatorData> vals1,
+      IList<ChartDrawData.IndicatorData> vals2,
+      IChartElement element)
+    {
+        BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+        v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN = vals1;
+        v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRRvwDu67s9Rm = this;
+        v4vdZv8GtEzAmB0rzFq.\u0023\u003Dz4e3i1kk9sNEQ = vals2;
+        if (v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN == null)
       throw new ArgumentNullException(XXX.SSS(-539442806));
-    return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN.Count, new Func<int, DateTime>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), new Func<int, double>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzI5IxWb1lSuTpD9hsyw\u003D\u003D), (Func<int, int>) null);
-  }
+        return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN.Count, new Func<int, DateTime>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), new Func<int, double>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzI5IxWb1lSuTpD9hsyw\u003D\u003D), (Func<int, int>)null);
+    }
 
-  /// <summary>
-  /// Draw indicator converting from 2 doubles to one with converter.
-  /// </summary>
-  /// <param name="vals1">Values 1.</param>
-  /// <param name="vals2">Values 2.</param>
-  /// <param name="element">Element.</param>
-  /// <param name="op">Operation.</param>
-  /// <returns>
-  /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
-  protected bool DrawValues(
-    IList<ChartDrawData.IndicatorData> vals1,
-    IList<ChartDrawData.IndicatorData> vals2,
-    IChartElement element,
-    Func<double, double, double> op)
-  {
-    BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D jq9Llz3ahZ2LrQl4 = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D();
-    jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN = vals1;
-    jq9Llz3ahZ2LrQl4.\u0023\u003Dz6BEwh7k\u003D = op;
-    jq9Llz3ahZ2LrQl4.\u0023\u003DzRRvwDu67s9Rm = this;
-    jq9Llz3ahZ2LrQl4.\u0023\u003Dz4e3i1kk9sNEQ = vals2;
-    if (jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN == null)
+    /// <summary>
+    /// Draw indicator converting from 2 doubles to one with converter.
+    /// </summary>
+    /// <param name="vals1">Values 1.</param>
+    /// <param name="vals2">Values 2.</param>
+    /// <param name="element">Element.</param>
+    /// <param name="op">Operation.</param>
+    /// <returns>
+    /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
+    protected bool DrawValues(
+      IList<ChartDrawData.IndicatorData> vals1,
+      IList<ChartDrawData.IndicatorData> vals2,
+      IChartElement element,
+      Func<double, double, double> op)
+    {
+        BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D jq9Llz3ahZ2LrQl4 = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D();
+        jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN = vals1;
+        jq9Llz3ahZ2LrQl4.\u0023\u003Dz6BEwh7k\u003D = op;
+        jq9Llz3ahZ2LrQl4.\u0023\u003DzRRvwDu67s9Rm = this;
+        jq9Llz3ahZ2LrQl4.\u0023\u003Dz4e3i1kk9sNEQ = vals2;
+        if (jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN == null)
       throw new ArgumentNullException(XXX.SSS(-539442785));
-    if (jq9Llz3ahZ2LrQl4.\u0023\u003Dz6BEwh7k\u003D == null)
+        if (jq9Llz3ahZ2LrQl4.\u0023\u003Dz6BEwh7k\u003D == null)
       throw new ArgumentNullException(XXX.SSS(-539442800));
-    return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN.Count, new Func<int, DateTime>(jq9Llz3ahZ2LrQl4.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(jq9Llz3ahZ2LrQl4.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, (Func<int, int>) null);
+        return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN.Count, new Func<int, DateTime>(jq9Llz3ahZ2LrQl4.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(jq9Llz3ahZ2LrQl4.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, (Func<int, int>) null);
   }
 
   private static bool \u0023\u003Dz4W7cGG\u0024hFbB\u0024(
@@ -210,9 +206,9 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     doDcwiev7trI4Ny0.\u0023\u003DzpXxsWzTWfg7d = _param3;
     doDcwiev7trI4Ny0.\u0023\u003Dz5Kb6DbUnfYSy = _param4;
     doDcwiev7trI4Ny0.\u0023\u003DzSD3FqrQ\u003D = _param5;
-    if (!(_param0 is \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X uuxsVv2V6fHz4Vm4X))
+    if (!(_param0 is IDrawableChartElement uuxsVv2V6fHz4Vm4X))
       throw new InvalidOperationException(XXX.SSS(-539443099));
-    return uuxsVv2V6fHz4Vm4X.\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Range(0, _param1).Select<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(new Func<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(doDcwiev7trI4Ny0.\u0023\u003DzDejq7n39xBdAUCa3_A\u003D\u003D)).Cast<ChartDrawData.IDrawValue>(), _param1));
+    return uuxsVv2V6fHz4Vm4X.StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Range(0, _param1).Select<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(new Func<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(doDcwiev7trI4Ny0.\u0023\u003DzDejq7n39xBdAUCa3_A\u003D\u003D)).Cast<ChartDrawData.IDrawValue>(), _param1));
   }
 
   private double \u0023\u003DzHjhGbB8\u003D(IList<ChartDrawData.IndicatorData> _param1, int _param2)
@@ -251,7 +247,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D vqd1Qhu2nAw1nzwT0 = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D();
     vqd1Qhu2nAw1nzwT0.\u0023\u003DzRRvwDu67s9Rm = this;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D = element;
-    if (!CollectionHelper.TryAdd<IChartElement>((ICollection<IChartElement>) this.\u0023\u003DzqFRpave0Vtab, vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D))
+    if (!CollectionHelper.TryAdd<IChartElement>((ICollection<IChartElement>) this._innerElements, vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D))
       throw new ArgumentException(XXX.SSS(-539439915));
     if (!this.IsAttached)
       return;
@@ -262,11 +258,11 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
   /// <param name="element">Element.</param>
   protected void RemoveChildElement(IChartElement element)
   {
-    if (!this.\u0023\u003DzqFRpave0Vtab.Remove(element))
+    if (!this._innerElements.Remove(element))
       throw new ArgumentException(XXX.SSS(-539439915));
     if (!this.IsAttached)
       return;
-    this.\u0023\u003DzcINLDhshur8x().RemoveChildElement(element);
+    this.GetChartIndicatorElement().RemoveChildElement(element);
   }
 
   /// <summary>Load settings.</summary>
@@ -296,25 +292,25 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
 
   private void \u0023\u003Dz1QuGUAX1zkMSls2D\u0024DLiPPw\u003D(IChartElement _param1)
   {
-    this.\u0023\u003DzcINLDhshur8x().AddChildElement(_param1);
+    this.GetChartIndicatorElement().AddChildElement(_param1);
   }
 
   private void \u0023\u003DzELzX6nSZmdU0vOyq3PAcXl8\u003D(IChartElement _param1)
   {
-    this.\u0023\u003DzcINLDhshur8x().RemoveChildElement(_param1);
+    this.GetChartIndicatorElement().RemoveChildElement(_param1);
   }
 
   [Serializable]
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.\u0023\u003Dz7qOdpi4\u003D();
-    public static Action<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+    public static Action<IDrawableChartElement> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
     public static Func<IIndicator, IList<ChartDrawData.IndicatorData>> \u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D;
 
     internal void \u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D(
-      \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X _param1)
+      IDrawableChartElement _param1)
     {
-      _param1.\u0023\u003Dz0yXrIqwigzcF();
+      _param1.ChildElementsStartDrawing();
     }
 
     internal IList<ChartDrawData.IndicatorData> \u0023\u003DzEr1L4a4MYK7N\u0024OD_XA\u003D\u003D(
@@ -331,13 +327,13 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
 
     internal void \u0023\u003Dzcq6kjuER1auFcNKkPQ\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzcINLDhshur8x().AddChildElement(this.\u0023\u003Dz_i6sZDg\u003D);
+      this.\u0023\u003DzRRvwDu67s9Rm.GetChartIndicatorElement().AddChildElement(this.\u0023\u003Dz_i6sZDg\u003D);
       // ISSUE: explicit non-virtual call
-      \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.Element).PersistentChartArea).\u0023\u003Dz3ThQNm3rQ1fp();
-      \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB a4VgOpCeDiqsTdzB;
-      if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzcINLDhshur8x(), out a4VgOpCeDiqsTdzB))
+      IScichartSurfaceVM tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.Element).PersistentChartArea).\u0023\u003Dz3ThQNm3rQ1fp();
+      ParentVM a4VgOpCeDiqsTdzB;
+      if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r((IfxChartElement) this.\u0023\u003DzRRvwDu67s9Rm.GetChartIndicatorElement(), out a4VgOpCeDiqsTdzB))
         return;
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n((IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this.\u0023\u003Dz_i6sZDg\u003D).\u0023\u003DzfuiyUvM\u003D(tdnKj06Uu87Wzk09Wj)));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n((IEnumerable<UIBaseVM>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<UIBaseVM>(((IDrawableChartElement) this.\u0023\u003Dz_i6sZDg\u003D).CreateViewModel(tdnKj06Uu87Wzk09Wj)));
     }
   }
 
@@ -378,7 +374,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
   [StructLayout(LayoutKind.Auto)]
   private struct \u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public Dictionary<IIndicator, IList<ChartDrawData.IndicatorData>> \u0023\u003DzQGpA0P4\u003D;
   }
 

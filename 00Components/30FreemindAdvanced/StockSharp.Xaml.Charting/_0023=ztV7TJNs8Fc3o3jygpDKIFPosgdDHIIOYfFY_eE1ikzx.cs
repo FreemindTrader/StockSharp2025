@@ -471,11 +471,11 @@ internal sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66
 
   private struct \u0023\u003Dzh7UcPPSzOf\u0024r
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     internal int \u0023\u003Dz7D88q7f7iugS;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     internal int \u0023\u003DzJ_uAqhdJETQX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     internal int \u0023\u003DzH64ouBYJK6cR;
   }
 }

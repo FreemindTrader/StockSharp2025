@@ -24,15 +24,15 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (BollingerBands))]
 public class BollingerBandsPainter : BaseChartIndicatorPainter<BollingerBands>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartBandElement \u0023\u003DzyDIAbxWLefjyyLjECw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzwZGesrtF1zqkW0dOkS\u0024KEVs\u003D;
 
   /// <summary>Create instance.</summary>
   public BollingerBandsPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<BollingerBands>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<BollingerBands>.GetIndicatorColorProvider();
     Color nextColor1 = indicatorColorProvider.GetNextColor();
     Color nextColor2 = indicatorColorProvider.GetNextColor();
     ChartBandElement chartBandElement = new ChartBandElement();

@@ -24,11 +24,11 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>ChartCandleElementPicker</summary>
 public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEditEx \u0023\u003DzjQEUHP_xvugS;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal SimpleButton \u0023\u003Dzs4BdTaM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   /// <summary>
@@ -98,7 +98,7 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
 
     internal string \u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D(IChartCandleElement _param1)
     {
-      return ((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1).\u0023\u003DzLYR9XSrDCE6W();
+      return ((IfxChartElement) _param1).\u0023\u003DzLYR9XSrDCE6W();
     }
   }
 }

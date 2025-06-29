@@ -31,51 +31,51 @@ namespace StockSharp.Xaml.Charting;
 [TemplatePart(Name = "PART_RightThumb", Type = typeof (dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd))]
 internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd : Control
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly 
   #nullable disable
   DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register(XXX.SSS(-539349955), typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzEM7rzxveqzC2)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register(XXX.SSS(-539349935), typeof (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzGbJ0qpVdAcnUICGBTQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzu60E9d4eT7Mh = DependencyProperty.Register(XXX.SSS(-539349009), typeof (Point), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzKY6FELNu43vWrzYtTQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzC\u0024IzyRw5kNYh_iGfHw\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349002), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 10.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz34Mz8ydZLjGnc6U2iA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349027), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) double.NaN));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzFo\u0024BkIuazahQFPQ3fw\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349073), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzfVZZZD9CcUaj = DependencyProperty.Register(XXX.SSS(-539349058), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSszmx5ki9KQKy3MkQQ\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349110), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(XXX.SSS(-539428099), typeof (Orientation), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) Orientation.Horizontal));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzhdXvBNBQUywn = DependencyProperty.Register(XXX.SSS(-539349393), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 20.0, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzC5gZCRUAbdp9CTKgQg\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzdKNmsVR3XBR\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzpiJFhBb5bsfa;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzKbgVW2A4k9IH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzJ8xCDlzSVvPT;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003Dz6P0zcFDUJreJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Border \u0023\u003DzksK80_U\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Path \u0023\u003Dz91ieiKM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private RectangleGeometry \u0023\u003DzkjapkNExDEBm;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D \u0023\u003DzuT_nzto\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJWrW04 \u0023\u003Dz_a7lQd926eAW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D \u0023\u003Dz7GpEACzVt3nC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D> \u0023\u003DzMrFyXitt9QAh;
 
   public dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd()

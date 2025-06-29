@@ -33,15 +33,15 @@ internal sealed class dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd :
   INotifyPropertyChanged,
   IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartArea \u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangedEventHandler \u0023\u003DziApqnpw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartArea[] \u0023\u003Dza1mnh6ythHbd;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd \u0023\u003Dz_PI_EIE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd()

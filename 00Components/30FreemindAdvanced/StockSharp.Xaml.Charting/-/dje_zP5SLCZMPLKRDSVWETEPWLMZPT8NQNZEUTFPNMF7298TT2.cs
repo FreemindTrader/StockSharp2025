@@ -14,7 +14,7 @@ namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT8NQNZEUTFPNMF7298TT2H3CX8DZZ_ejd : ContentControl
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(XXX.SSS(-539428099), typeof (Orientation), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT8NQNZEUTFPNMF7298TT2H3CX8DZZ_ejd), new PropertyMetadata((object) Orientation.Horizontal));
 
   public dje_zP5SLCZMPLKRDSVWETEPWLMZPT8NQNZEUTFPNMF7298TT2H3CX8DZZ_ejd()

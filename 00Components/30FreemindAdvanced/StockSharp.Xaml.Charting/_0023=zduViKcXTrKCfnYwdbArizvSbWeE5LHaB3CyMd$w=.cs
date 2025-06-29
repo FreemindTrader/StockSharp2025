@@ -15,99 +15,99 @@ internal sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\
   \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D,
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzPsgXVEWl1rncLpvu7Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dzfqi6oaajC7jiVKKPPQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz9BmC\u0024cycDHeB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzxC5nS9J581oj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz5sgPfzK3aVH_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz48euRRLHTj7a;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz8ilgDt0TpIbh;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzOOlhMBhKvqD8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzuNfshm4Ywha\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dz5EqP4BQRxQUX1I_gtw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dz0kxBKg3EDeEz;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzdX\u00241d3EiaJKH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dznweo2T2ZzFPXBN5lsg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzMyVxOi7x6o09;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzhTT6baIK7lij;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz3Rm3iZjVScDe0eALvA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzZJZPHWawkID4\u0024ZZd1g\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzVYDDFaY6k793YEFQiA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzC66cbAEWDJV2wtnOPJ1tF9I\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzLl3aZG6ZrQvXIPvUXA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DznFyPUz2gWkZa;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz6g3okvU9KMPFVgqxYLlFCAU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzLKEgP\u0024CFhuSdhZmd912SHck\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzVqN9K2eSsGo6lWvYly8InA0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzrfHFG4f78ShF4qxOXw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dzjbp2JwMF6bQB1AUz_A\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzP4awWuKKUxT2n4J18w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dzap74WFPU3iLE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dzk5ghe9hMNl\u0024p;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dz_sYLtJst6ogP;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzknJvhg2v84xJFc5uxQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dzyr1NXRQGwB7J;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003Dzg8VA2CqF2xNU;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzN9VNZaaNYNjp\u0024y39\u0024A\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzQwNDTBB02BQM;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzygT40Q_SEL3qoNYFEkdiGl4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Brush \u0023\u003DzZgNYnbZVMSj8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzIofb0iw4SlBVjCJ8eVV0YUNsdp2B;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzcIz1D66ueGH4ksNMfPW2YZTA7NHC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzlzAfzI2VYa0KbIVncvBFXBt36bnV;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dz8cVhrEgqpp0yBk9Chw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzK\u0024_HFKxIyVRF7UOjjQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzKreKVOTT14wmqVT4SJblWBI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dz8irkkLlHyMoYrRC8ONqJmOU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dzi7gMwBaEi25hMUFE1Zcyejk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzGUo7xQ0pG5bHr76JuUCiQKQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzCQBrhh\u0024vUP6E80YOsyu6M38\u003D;
 
   public void \u0023\u003DzeHF6BUxLFClh(

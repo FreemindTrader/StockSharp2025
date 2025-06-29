@@ -30,37 +30,37 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
   ItemsControl,
   INotifyPropertyChanged
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSQ9PALvdLOX4 = DependencyProperty.RegisterAttached(XXX.SSS(-539332236), typeof (string), typeof (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003DznWImvCruq8sQ)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz3Y_OZ80lXJkE = DependencyProperty.Register(XXX.SSS(-539442206), typeof (bool), typeof (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003Dzgxjo2OnorrBU)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzenwCc\u0024sVGsge = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ContentPresenter \u0023\u003DzBexXE3VONLO6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TabControl \u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private StackPanel \u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Canvas \u0023\u003DzF8_YcFVDbTFB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzrSLETkwHQoH38mnTuw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzerqhc5X832JL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzVi6cjZRqUP3j;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzu9zFAJU\u00246XS3lPkdqi1iVcE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzi1vdbCxOaDS\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzzXyefThIl4Ak;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzBq2lcgtVrsr_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> \u0023\u003DzSp5oAkvK2sET;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> \u0023\u003Dzg0gWX4E\u003D = new List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>();
 
   public dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd()

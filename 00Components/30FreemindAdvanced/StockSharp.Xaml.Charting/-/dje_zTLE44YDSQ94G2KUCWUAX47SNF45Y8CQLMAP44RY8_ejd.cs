@@ -13,7 +13,7 @@ namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zTLE44YDSQ94G2KUCWUAX47SNF45Y8CQLMAP44RY8_ejd : FrameworkElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzb9NlFA1HMDOO = DependencyProperty.RegisterAttached(XXX.SSS(-539441220), typeof (dje_zVHECNFY3M2WCG49XYA6NSQB8Z75WSE6LTSJYB7WK_ejd), typeof (dje_zTLE44YDSQ94G2KUCWUAX47SNF45Y8CQLMAP44RY8_ejd), new PropertyMetadata((object) dje_zVHECNFY3M2WCG49XYA6NSQB8Z75WSE6LTSJYB7WK_ejd.All, new PropertyChangedCallback(dje_zTLE44YDSQ94G2KUCWUAX47SNF45Y8CQLMAP44RY8_ejd.\u0023\u003DzWE_UfM17p3U9)));
 
   public static void SetVisibleIn(

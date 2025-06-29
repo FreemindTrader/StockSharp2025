@@ -18,7 +18,7 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zLNMHB3FMDVJLWN9U6MV4V8GB8HDKH82X4U9VRGDD487Q2ESD3DZPC_ejd : 
   IValueConverter
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly dje_zLNMHB3FMDVJLWN9U6MV4V8GB8HDKH82X4U9VRGDD487Q2ESD3DZPC_ejd \u0023\u003DzUlh\u00243zY\u003D = new dje_zLNMHB3FMDVJLWN9U6MV4V8GB8HDKH82X4U9VRGDD487Q2ESD3DZPC_ejd();
 
   public object Convert(object _param1, Type _param2 = null, object _param3 = null, CultureInfo _param4 = null)

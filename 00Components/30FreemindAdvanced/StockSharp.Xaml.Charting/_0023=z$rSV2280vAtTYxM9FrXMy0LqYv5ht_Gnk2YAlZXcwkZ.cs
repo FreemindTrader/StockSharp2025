@@ -27,84 +27,84 @@ using System.Windows.Input;
 internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 : 
   DependencyObject
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private 
   #nullable disable
   Action \u0023\u003DzJ36T8eJDWvlL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<ChartArea> \u0023\u003DzrkKCMCLg7L5ZcVefKg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<ChartArea> \u0023\u003DzJ_BmQqM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<ChartArea> \u0023\u003DzfRlPeXe\u0024cYQx;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<ChartArea> \u0023\u003DzVRgWIb_qqFUL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<IChartElement> \u0023\u003DzeBeQVx4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<IChartElement, Subscription> \u0023\u003DziZu6zyxyyj5lOwEOlg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<Order> \u0023\u003DzmMdfCUCSnZWZ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<ChartArea> \u0023\u003DzJlQa5yc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzeopV6tZDn4Ln = DependencyProperty.Register(XXX.SSS(-539330756), typeof (string), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzw5K\u0024vsW8O9P3 = DependencyProperty.Register(XXX.SSS(-539432432), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register(XXX.SSS(-539432195), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static Action \u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D = DependencyProperty.Register(XXX.SSS(-539432837), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzygR3f9KFDxTEYisMidH\u0024JS0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzWEDxQqB6jgU9 = DependencyProperty.Register(XXX.SSS(-539432892), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzX7Gyz7DEzjur = DependencyProperty.Register(XXX.SSS(-539432879), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539432926), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D = DependencyProperty.Register(XXX.SSS(-539432952), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539432941), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D = DependencyProperty.Register(XXX.SSS(-539432706), typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz76r5\u0024wlS8ZBb = DependencyProperty.Register(XXX.SSS(-539330733), typeof (int), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz4t7qXCEHgeaFBnsnsEfGvGsGPrcn)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dzw_LOBOuAUrZC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539330963), typeof (ObservableCollection<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  public static readonly DependencyProperty \u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539330963), typeof (ObservableCollection<IScichartSurfaceVM>), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  
   private readonly ICommand \u0023\u003DzlI5Q0fMkGWsRwzw1OG_ENm_rPNsf;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539330953), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzLNiqY6UHLoB\u0024 = DependencyProperty.Register(XXX.SSS(-539330981), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539331034), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzRkLhT7Lt41PT = DependencyProperty.Register(XXX.SSS(-539331058), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539331056), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539330823), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzUWQ5iiwrKJD_ = DependencyProperty.Register(XXX.SSS(-539330874), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dze4EVknsZpYUH = DependencyProperty.Register(XXX.SSS(-539330899), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzKaPAMV2cOzbF = DependencyProperty.Register(XXX.SSS(-539330885), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz1DarHjvaoDtx = DependencyProperty.Register(XXX.SSS(-539330943), typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzfv12AVpZqluc = DependencyProperty.Register(XXX.SSS(-539332247), typeof (ObservableCollection<IndicatorType>), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly DelegateCommand<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D> \u0023\u003Dzl_qEzyyeDJwMh0wLFnT_MnQ\u003D;
 
   public \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6()
   {
-    this.ChartPaneViewModels = new ObservableCollection<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>();
+    this.ChartPaneViewModels = new ObservableCollection<IScichartSurfaceVM>();
     this.MinimumRange = 50;
     this.ShowOverview = false;
     this.ShowLegend = true;
@@ -352,7 +352,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     ccsreH3nwJbFwtEpkxQw.\u0023\u003DzXCEqv64\u003D = this.\u0023\u003DzmMdfCUCSnZWZ;
     if (_param1 == null)
       _param1 = \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Func<Order, bool>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzO_BIxNwmDn6VDgqOIx_JE6RwPKwP));
-    CollectionHelper.ForEach<Order>((IEnumerable<Order>) CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj, Order>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D = new Func<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj, IEnumerable<Order>>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.\u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D));
+    CollectionHelper.ForEach<Order>((IEnumerable<Order>) CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<IScichartSurfaceVM, Order>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D = new Func<IScichartSurfaceVM, IEnumerable<Order>>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.\u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D));
   }
 
   private void \u0023\u003Dz5RYhL5E\u003D() => this.SelectedTheme = ChartHelper.CurrChartTheme();
@@ -548,11 +548,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     }
   }
 
-  public ObservableCollection<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj> ChartPaneViewModels
+  public ObservableCollection<IScichartSurfaceVM> ChartPaneViewModels
   {
     get
     {
-      return (ObservableCollection<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D);
+      return (ObservableCollection<IScichartSurfaceVM>) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D);
     }
     set
     {
@@ -730,10 +730,10 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     ChartArea chartArea = _param1;
     if (chartArea != null)
       return chartArea;
-    ObservableCollection<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj> chartPaneViewModels = this.ChartPaneViewModels;
+    ObservableCollection<IScichartSurfaceVM> chartPaneViewModels = this.ChartPaneViewModels;
     if (chartPaneViewModels == null)
       return (ChartArea) null;
-    return chartPaneViewModels.FirstOrDefault<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>()?.Area;
+    return chartPaneViewModels.FirstOrDefault<IScichartSurfaceVM>()?.Area;
   }
 
   private void \u0023\u003DzLk5v0G8ASW9AV\u0024TMw8K1MAc\u003D(object _param1)
@@ -816,7 +816,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     if (Equatable<ChartArea>.op_Inequality((Equatable<ChartArea>) _param1, (ChartArea) null))
       _param1.\u0023\u003Dz3ThQNm3rQ1fp().ShowHiddenAxesCommand.TryExecute((object) null);
     else
-      CollectionHelper.ForEach<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>((IEnumerable<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>) this.ChartPaneViewModels, \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
+      CollectionHelper.ForEach<IScichartSurfaceVM>((IEnumerable<IScichartSurfaceVM>) this.ChartPaneViewModels, \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<IScichartSurfaceVM>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
   }
 
   private bool \u0023\u003DzjUJWvCc8BSpnpUc8DQ5qbx8\u003D(ChartArea _param1) => this.IsInteracted;
@@ -888,19 +888,19 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D();
-    public static Action<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj> \u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D;
+    public static Action<IScichartSurfaceVM> \u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D;
     public static Action<ChartAxis> \u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D;
     public static Action<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D> \u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D;
     public static Func<Order, bool> \u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D;
     public static Func<Order, bool> \u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D;
-    public static Func<\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj, 
+    public static Func<IScichartSurfaceVM, 
     #nullable enable
     IEnumerable<
     #nullable disable
     Order>> \u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D;
 
     internal void \u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D(
-      \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+      IScichartSurfaceVM _param1)
     {
       _param1.Area.\u0023\u003Dz3ThQNm3rQ1fp().ShowHiddenAxesCommand.TryExecute((object) null);
     }
@@ -920,7 +920,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     {
       \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D();
       lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D = _param1;
-      IChart chart = ((\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D).Chart;
+      IChart chart = ((IScichartSurfaceVM) lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D).Chart;
       IChartArea area = chart.Areas.FirstOrDefault<IChartArea>(new Func<IChartArea, bool>(lrrNtIjstOuVg4Rro.\u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D));
       if (area == null)
         return;
@@ -934,7 +934,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     IEnumerable<
     #nullable disable
     Order> \u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh(
-      \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+      IScichartSurfaceVM _param1)
     {
       return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
     }

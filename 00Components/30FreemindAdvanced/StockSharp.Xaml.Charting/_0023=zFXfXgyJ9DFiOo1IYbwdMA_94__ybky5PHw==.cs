@@ -12,7 +12,7 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D(bool _param1 = true) : 
   Attribute
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly bool \u0023\u003Dzu8IC\u00247BDZdCfXEuKnA\u003D\u003D = _param1;
 
   public bool \u0023\u003DzOJt8kfGtb6vl() => this.\u0023\u003Dzu8IC\u00247BDZdCfXEuKnA\u003D\u003D;

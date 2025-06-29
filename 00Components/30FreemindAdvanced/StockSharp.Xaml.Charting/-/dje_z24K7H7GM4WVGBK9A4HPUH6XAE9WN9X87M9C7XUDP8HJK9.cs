@@ -21,11 +21,11 @@ namespace StockSharp.Xaml.Charting;
 
 [System.Windows.Markup.ContentProperty("ChildModifiers")]
 internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd : 
-  \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D
+  SomeClass222
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register(XXX.SSS(-539429521), typeof (ObservableCollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>), typeof (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzMGnM8Q7UmYY2)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Grid \u0023\u003DzS\u0024OTg_s\u003D = new Grid();
 
   public dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd()

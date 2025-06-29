@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
   ICollection<\u0023\u003DzH9HNkng\u003D>,
   IList<\u0023\u003DzH9HNkng\u003D>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003Dznoh6bv8\u003D;
 
   public \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D(\u0023\u003DzH9HNkng\u003D _param1)
@@ -196,9 +196,9 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
     IEnumerator,
     IEnumerator<\u0023\u003DzH9HNkng\u003D>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003Dznoh6bv8\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool \u0023\u003DzoTGwV7jKHTwM;
 
     public \u0023\u003DzdFhhG7w\u003D(\u0023\u003DzH9HNkng\u003D _param1)

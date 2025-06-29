@@ -19,11 +19,11 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd : 
   \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Lazy<ControlTemplate> \u0023\u003Dzvoot7Cph1AG8 = new Lazy<ControlTemplate>(new Func<ControlTemplate>(dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Point \u0023\u003DzNJ8EGFEgy8EH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Lazy<ImageSource> \u0023\u003DzXwID4m_q_aiB;
 
   public dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd(
@@ -46,7 +46,7 @@ internal sealed class dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5Y
     this.PointMarkerTemplate = dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.\u0023\u003Dzvoot7Cph1AG8.Value;
   }
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static ComponentResourceKey dje_zXWPHZG4CSS2GQXZJSD75W_ejd
   {
     get

@@ -12,7 +12,7 @@ internal abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
 {
   public virtual Color? \u0023\u003DzP50Orng\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+    IRenderableSeries _param1,
     double _param2,
     double _param3)
   {
@@ -20,7 +20,7 @@ internal abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA
   }
 
   public virtual Color? \u0023\u003DzLCyKrYI\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+    IRenderableSeries _param1,
     double _param2,
     double _param3,
     double _param4,
@@ -31,7 +31,7 @@ internal abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA
   }
 
   public virtual Color? \u0023\u003DzLCyKrYI\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+    IRenderableSeries _param1,
     double _param2,
     double _param3,
     double _param4)

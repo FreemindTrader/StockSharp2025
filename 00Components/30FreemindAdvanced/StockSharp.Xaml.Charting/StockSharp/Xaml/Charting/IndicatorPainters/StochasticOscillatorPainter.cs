@@ -22,15 +22,15 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (StochasticOscillator))]
 public class StochasticOscillatorPainter : BaseChartIndicatorPainter<StochasticOscillator>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzSFmzZHfa8iS1i6kLog\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzQ1Aqc6A\u0024OGXVEu80\u0024g\u003D\u003D;
 
   /// <summary>Create instance.</summary>
   public StochasticOscillatorPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<StochasticOscillator>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<StochasticOscillator>.GetIndicatorColorProvider();
     this.\u0023\u003DzSFmzZHfa8iS1i6kLog\u003D\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()

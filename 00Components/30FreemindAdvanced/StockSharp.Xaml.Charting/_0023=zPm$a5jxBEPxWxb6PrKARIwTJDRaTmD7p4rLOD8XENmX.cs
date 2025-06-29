@@ -29,17 +29,17 @@ using System.Windows.Shapes;
 internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D(
   ChartArea _param1) : dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539331288));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dzos6SMwAMXZ33;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Line \u0023\u003DzujKvLh3D_ur8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D.\u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D \u0023\u003Dz31Z4JIE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzfEYbsFOKVADr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzISs1rY1PUWf_ = DependencyProperty.Register(XXX.SSS(-539331267), typeof (bool), typeof (\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D), new PropertyMetadata((object) true));
 
   public bool ShowHorizontalLine
@@ -195,11 +195,11 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
 
   private sealed class \u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D : Adorner
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Grid \u0023\u003DzS\u0024OTg_s\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TextBlock \u0023\u003Dz9JyKjT\u0024p5TwcRYYQWvrjKuE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TextBlock \u0023\u003DzeohlA0_r5\u0024pFHhDGdTiKpR4\u003D;
 
     public \u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D(UIElement _param1)

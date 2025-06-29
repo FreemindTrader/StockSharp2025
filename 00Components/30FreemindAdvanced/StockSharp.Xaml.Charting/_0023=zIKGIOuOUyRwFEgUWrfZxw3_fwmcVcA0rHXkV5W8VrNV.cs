@@ -11,39 +11,39 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003DztJAA1uMf9_P8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003DzdTxNrgQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003DznR9\u00242Eg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003Dzk0u64hpXv585;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003DzBeOlCgb3wUDW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003DzWaaoT4e35MUnXIdKsg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003DzJqKipxOjoBSS;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003DzFA18Bsxthn7B;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003Dz_jNjf7U\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal bool \u0023\u003DzYlmrR5WNSPuW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal IList \u0023\u003Dz9jZG_9RUfbqZ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DznUzlqIN9ReXL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzToxB29CkMiO6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003Dz_WzdhI8nAiba;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal double \u0023\u003DzormciIUBnCr2;
 
   public override bool Equals(object _param1)

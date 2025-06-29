@@ -20,13 +20,13 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>Chart share (upload image to web) settings.</summary>
 public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzPyzhV2NFLw\u0024q;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeSpan \u0023\u003DzDra\u0024AUHGVB33;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz9amTLwDdTF0z;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzU8xSjuFGDDJuii5WcA\u003D\u003D;
 
   public ChartPanelShareSettings()
