@@ -1,10 +1,10 @@
 <l1lil:CandleSettingsWindow xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                             xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                            xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+                            xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                             xmlns:l1lili11i="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml"
                             xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
-                            ShowInTaskbar="False" Width="400" Height="400" Title="{l1i11ii111:Localization CandleSettings}">
+                            ShowInTaskbar="False" Width="400" Height="400" Title="{loc:Localization CandleSettings}">
   <Grid Margin="5">
     <Grid.RowDefinitions>
       <RowDefinition/>
@@ -13,6 +13,6 @@
     </Grid.RowDefinitions>
     <l1lili11i:PropertyGridEx x:Name="SubscriptionCtrl" Grid.Row="0" Grid.Column="0"/>
     <dx:SimpleButton x:Name="OkBtn" Grid.Row="2" Grid.Column="0" IsDefault="True" IsEnabled="False" Width="100"
-                             Content="{l1i11ii111:Localization OK}"/>
+                             Content="{loc:Localization OK}"/>
   </Grid>
 </l1lil:CandleSettingsWindow>

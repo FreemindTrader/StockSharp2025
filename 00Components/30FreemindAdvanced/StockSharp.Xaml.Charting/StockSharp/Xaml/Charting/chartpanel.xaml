@@ -1,21 +1,21 @@
 <l1lil:ChartPanel xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
+                  xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+                  xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                   xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
                   xmlns:s="clr-namespace:-"
-                  xmlns:llli1="clr-namespace:DevExpress.Xpf.Editors.Settings;assembly=DevExpress.Xpf.Core.v22.1"
+                  xmlns:dxe="clr-namespace:DevExpress.Xpf.Editors.Settings;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
                   xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:li1111lil="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:l11="clr-namespace:DevExpress.Xpf.Bars.Themes;assembly=DevExpress.Xpf.Core.v22.1"
                   xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
-                  x:Name="Ctrl" li11l:BarNameScope.IsScopeOwner="True">
+                  x:Name="Ctrl" dxb:BarNameScope.IsScopeOwner="True">
   <UIElement.CommandBindings>
     <CommandBinding Command="{x:Static l1lil:ChartPanel.RegisterOrderCommand}"/>
     <CommandBinding Command="{x:Static l1lil:ChartPanel.ShareCommand}"/>
-    <CommandBinding Command="{x:Static l1i11ii111:RoutedCommands.CancelOrders}"/>
+    <CommandBinding Command="{x:Static loc:RoutedCommands.CancelOrders}"/>
     <CommandBinding Command="{x:Static l1lil:ChartPanel.PatternCommand}"/>
   </UIElement.CommandBindings>
   <FrameworkElement.Resources>
@@ -36,22 +36,22 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition/>
     </Grid.RowDefinitions>
-    <l1i11ii111:QuickOrderPanel x:Name="QuickOrderPanel" Grid.Row="1" Width="400" Height="45" Visibility="Collapsed"
+    <loc:QuickOrderPanel x:Name="QuickOrderPanel" Grid.Row="1" Width="400" Height="45" Visibility="Collapsed"
                                 Panel.ZIndex="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-    <li11l:BarManager x:Name="BarManager" Grid.Row="0">
-      <li11l:BarManager.Bars>
-        <li11l:Bar>
-          <li11l:BarSplitButtonItem ActAsDropDown="True" ToolTipService.ShowOnDisabled="True"
-                                    ToolTip="{l1i11ii111:Localization AddPanel}" IsEnabled="{Binding IsInteracted, ElementName=Chart}"
-                                    Glyph="{l1i11ii111:ThemedIcons Key=Add}">
-            <li11l:BarSplitButtonItem.PopupControl>
+    <dxb:BarManager x:Name="BarManager" Grid.Row="0">
+      <dxb:BarManager.Bars>
+        <dxb:Bar>
+          <dxb:BarSplitButtonItem ActAsDropDown="True" ToolTipService.ShowOnDisabled="True"
+                                    ToolTip="{loc:Localization AddPanel}" IsEnabled="{Binding IsInteracted, ElementName=Chart}"
+                                    Glyph="{loc:ThemedIcons Key=Add}">
+            <dxb:BarSplitButtonItem.PopupControl>
               <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding DataContext, ElementName=Chart}"/>
-            </li11l:BarSplitButtonItem.PopupControl>
-          </li11l:BarSplitButtonItem>
-          <li11l:BarEditItem x:Name="CandleStyles" EditWidth="120">
-            <li11l:BarEditItem.EditSettings>
-              <llli1:ComboBoxEditSettings x:Name="CandleStylesSettings" IsTextEditable="False" ApplyItemTemplateToSelectedItem="True">
-                <llli1:LookUpEditSettingsBase.ItemTemplate>
+            </dxb:BarSplitButtonItem.PopupControl>
+          </dxb:BarSplitButtonItem>
+          <dxb:BarEditItem x:Name="CandleStyles" EditWidth="120">
+            <dxb:BarEditItem.EditSettings>
+              <dxe:ComboBoxEditSettings x:Name="CandleStylesSettings" IsTextEditable="False" ApplyItemTemplateToSelectedItem="True">
+                <dxe:LookUpEditSettingsBase.ItemTemplate>
                   <DataTemplate>
                     <Border Background="Transparent">
                       <StackPanel Orientation="Horizontal">
@@ -60,166 +60,166 @@
                       </StackPanel>
                     </Border>
                   </DataTemplate>
-                </llli1:LookUpEditSettingsBase.ItemTemplate>
-              </llli1:ComboBoxEditSettings>
-            </li11l:BarEditItem.EditSettings>
-          </li11l:BarEditItem>
-          <li11l:BarEditItem x:Name="TfSelector" EditWidth="65" IsEnabled="{Binding IsInteracted, ElementName=Chart}">
-            <li11l:BarEditItem.EditSettings>
-              <llli1:ComboBoxEditSettings x:Name="_tfSelectorCb" IsTextEditable="False" ApplyItemTemplateToSelectedItem="True">
-                <llli1:LookUpEditSettingsBase.ItemTemplate>
+                </dxe:LookUpEditSettingsBase.ItemTemplate>
+              </dxe:ComboBoxEditSettings>
+            </dxb:BarEditItem.EditSettings>
+          </dxb:BarEditItem>
+          <dxb:BarEditItem x:Name="TfSelector" EditWidth="65" IsEnabled="{Binding IsInteracted, ElementName=Chart}">
+            <dxb:BarEditItem.EditSettings>
+              <dxe:ComboBoxEditSettings x:Name="_tfSelectorCb" IsTextEditable="False" ApplyItemTemplateToSelectedItem="True">
+                <dxe:LookUpEditSettingsBase.ItemTemplate>
                   <DataTemplate>
                     <Border Background="Transparent" Margin="5,0">
                       <TextBlock VerticalAlignment="Center" Text="{Binding Path=., Converter={StaticResource TimeFrame2Name}}"/>
                     </Border>
                   </DataTemplate>
-                </llli1:LookUpEditSettingsBase.ItemTemplate>
-              </llli1:ComboBoxEditSettings>
-            </li11l:BarEditItem.EditSettings>
-          </li11l:BarEditItem>
-          <li11l:BarItemSeparator/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization AutoScroll}"
-                              ToolTip="{l1i11ii111:Localization AutoScroll}"
+                </dxe:LookUpEditSettingsBase.ItemTemplate>
+              </dxe:ComboBoxEditSettings>
+            </dxb:BarEditItem.EditSettings>
+          </dxb:BarEditItem>
+          <dxb:BarItemSeparator/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization AutoScroll}"
+                              ToolTip="{loc:Localization AutoScroll}"
                               IsChecked="{Binding ElementName=Chart, Path=IsAutoScroll}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Scroll}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization AutoScaling}"
-                              ToolTip="{l1i11ii111:Localization AutoScaling}"
+                              Glyph="{loc:ThemedIcons Key=Scroll}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization AutoScaling}"
+                              ToolTip="{loc:Localization AutoScaling}"
                               IsChecked="{Binding ElementName=Chart, Path=AutoRangeByAnnotations}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=UpDown}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization Legend}"
-                              ToolTip="{l1i11ii111:Localization Legend}" IsChecked="{Binding ElementName=Chart, Path=ShowLegend}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=List}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization OverviewArea}"
-                              ToolTip="{l1i11ii111:Localization OverviewArea}"
+                              Glyph="{loc:ThemedIcons Key=UpDown}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization Legend}"
+                              ToolTip="{loc:Localization Legend}" IsChecked="{Binding ElementName=Chart, Path=ShowLegend}"
+                              Glyph="{loc:ThemedIcons Key=List}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization OverviewArea}"
+                              ToolTip="{loc:Localization OverviewArea}"
                               IsChecked="{Binding ElementName=Chart, Path=ShowOverview}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Footer}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization ShowCross}"
-                              ToolTip="{l1i11ii111:Localization ShowCross}"
+                              Glyph="{loc:ThemedIcons Key=Footer}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization ShowCross}"
+                              ToolTip="{loc:Localization ShowCross}"
                               IsChecked="{Binding ElementName=Chart, Path=CrossHair}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Crosshair}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization ShowTooltip}"
-                              ToolTip="{l1i11ii111:Localization ShowTooltip}"
+                              Glyph="{loc:ThemedIcons Key=Crosshair}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization ShowTooltip}"
+                              ToolTip="{loc:Localization ShowTooltip}"
                               IsChecked="{Binding ElementName=Chart, Path=CrossHairTooltip}"
                               IsEnabled="{Binding ElementName=Chart, Path=CrossHair}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Tooltip}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization ShowValuesOnAxis}"
-                              ToolTip="{l1i11ii111:Localization ShowValuesOnAxis}"
+                              Glyph="{loc:ThemedIcons Key=Tooltip}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization ShowValuesOnAxis}"
+                              ToolTip="{loc:Localization ShowValuesOnAxis}"
                               IsChecked="{Binding ElementName=Chart, Path=CrossHairAxisLabels}"
-                              IsEnabled="{Binding ElementName=Chart, Path=CrossHair}" Glyph="{l1i11ii111:ThemedIcons Key=Ruler}"/>
-          <li11l:BarButtonItem Command="{x:Static l1lil:ChartPanel.PatternCommand}"
-                               ToolTip="{l1i11ii111:Localization PatternDesc}" Content="{l1i11ii111:Localization Pattern}"
-                               Glyph="{l1i11ii111:ThemedIcons Key=GanttChart}" CommandTarget="{Binding ElementName=Ctrl}"/>
-          <li11l:BarItemSeparator/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization Line2}"
-                              ToolTip="{l1i11ii111:Localization Line2}"
+                              IsEnabled="{Binding ElementName=Chart, Path=CrossHair}" Glyph="{loc:ThemedIcons Key=Ruler}"/>
+          <dxb:BarButtonItem Command="{x:Static l1lil:ChartPanel.PatternCommand}"
+                               ToolTip="{loc:Localization PatternDesc}" Content="{loc:Localization Pattern}"
+                               Glyph="{loc:ThemedIcons Key=GanttChart}" CommandTarget="{Binding ElementName=Ctrl}"/>
+          <dxb:BarItemSeparator/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization Line2}"
+                              ToolTip="{loc:Localization Line2}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=LineAnnotation}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Line}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization Pointer}"
-                              ToolTip="{l1i11ii111:Localization Pointer}"
+                              Glyph="{loc:ThemedIcons Key=Line}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization Pointer}"
+                              ToolTip="{loc:Localization Pointer}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=LineArrowAnnotation}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=RightArrowLine}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization VerLine}"
-                              ToolTip="{l1i11ii111:Localization VerLine}"
+                              Glyph="{loc:ThemedIcons Key=RightArrowLine}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization VerLine}"
+                              ToolTip="{loc:Localization VerLine}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=VerticalLineAnnotation}">
-            <li11l:BarItem.GlyphTemplate>
+            <dxb:BarItem.GlyphTemplate>
               <DataTemplate>
-                <Image Source="{l1i11ii111:ThemedIcons Key=Line}">
+                <Image Source="{loc:ThemedIcons Key=Line}">
                   <UIElement.RenderTransform>
                     <RotateTransform Angle="-45" CenterX="7" CenterY="7"/>
                   </UIElement.RenderTransform>
                 </Image>
               </DataTemplate>
-            </li11l:BarItem.GlyphTemplate>
-          </li11l:BarCheckItem>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization HorLine}"
-                              ToolTip="{l1i11ii111:Localization HorLine}"
+            </dxb:BarItem.GlyphTemplate>
+          </dxb:BarCheckItem>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization HorLine}"
+                              ToolTip="{loc:Localization HorLine}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=HorizontalLineAnnotation}">
-            <li11l:BarItem.GlyphTemplate>
+            <dxb:BarItem.GlyphTemplate>
               <DataTemplate>
-                <Image Source="{l1i11ii111:ThemedIcons Key=Line}">
+                <Image Source="{loc:ThemedIcons Key=Line}">
                   <UIElement.RenderTransform>
                     <RotateTransform Angle="45" CenterX="7" CenterY="7"/>
                   </UIElement.RenderTransform>
                 </Image>
               </DataTemplate>
-            </li11l:BarItem.GlyphTemplate>
-          </li11l:BarCheckItem>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization Area}"
-                              ToolTip="{l1i11ii111:Localization Area}"
+            </dxb:BarItem.GlyphTemplate>
+          </dxb:BarCheckItem>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization Area}"
+                              ToolTip="{loc:Localization Area}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=BoxAnnotation}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Rectangle}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization Text}"
-                              ToolTip="{l1i11ii111:Localization Text}"
+                              Glyph="{loc:ThemedIcons Key=Rectangle}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization Text}"
+                              ToolTip="{loc:Localization Text}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=TextAnnotation}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Font}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization Ruler}"
-                              ToolTip="{l1i11ii111:Localization Ruler}"
+                              Glyph="{loc:ThemedIcons Key=Font}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization Ruler}"
+                              ToolTip="{loc:Localization Ruler}"
                               IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=RulerAnnotation}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Ruler2}"/>
-          <li11l:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{l1i11ii111:Localization ShowFPS}"
-                              ToolTip="{l1i11ii111:Localization ShowFPS}"
+                              Glyph="{loc:ThemedIcons Key=Ruler2}"/>
+          <dxb:BarCheckItem ToolTipService.ShowOnDisabled="True" Content="{loc:Localization ShowFPS}"
+                              ToolTip="{loc:Localization ShowFPS}"
                               IsChecked="{Binding ElementName=Chart, Path=ShowPerfStats}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Speedometer}"/>
-          <li11l:BarItemSeparator/>
-          <li11l:BarButtonItem ToolTip="{l1i11ii111:Localization SaveDataFromChart}"
-                               Content="{l1i11ii111:Localization SaveDataFromChart}" Glyph="{l1i11ii111:ThemedIcons Key=Save}"/>
-          <li11l:BarSplitButtonItem Command="{x:Static l1lil:ChartPanel.ShareCommand}"
-                                    ToolTip="{l1i11ii111:Localization ShareImage}" Content="{l1i11ii111:Localization ShareImage}"
-                                    CommandTarget="{Binding ElementName=Ctrl}" Glyph="{l1i11ii111:ThemedIcons Key=Share}">
-            <li11l:BarSplitButtonItem.PopupControl>
-              <li11l:PopupMenu>
-                <li11l:PopupMenu.Items>
-                  <li11l:BarButtonItem Content="{l1i11ii111:Localization Settings}" Glyph="{l1i11ii111:ThemedIcons Key=Settings}"/>
-                </li11l:PopupMenu.Items>
-              </li11l:PopupMenu>
-            </li11l:BarSplitButtonItem.PopupControl>
-          </li11l:BarSplitButtonItem>
-          <li11l:BarButtonItem ToolTipService.ShowOnDisabled="True"
+                              Glyph="{loc:ThemedIcons Key=Speedometer}"/>
+          <dxb:BarItemSeparator/>
+          <dxb:BarButtonItem ToolTip="{loc:Localization SaveDataFromChart}"
+                               Content="{loc:Localization SaveDataFromChart}" Glyph="{loc:ThemedIcons Key=Save}"/>
+          <dxb:BarSplitButtonItem Command="{x:Static l1lil:ChartPanel.ShareCommand}"
+                                    ToolTip="{loc:Localization ShareImage}" Content="{loc:Localization ShareImage}"
+                                    CommandTarget="{Binding ElementName=Ctrl}" Glyph="{loc:ThemedIcons Key=Share}">
+            <dxb:BarSplitButtonItem.PopupControl>
+              <dxb:PopupMenu>
+                <dxb:PopupMenu.Items>
+                  <dxb:BarButtonItem Content="{loc:Localization Settings}" Glyph="{loc:ThemedIcons Key=Settings}"/>
+                </dxb:PopupMenu.Items>
+              </dxb:PopupMenu>
+            </dxb:BarSplitButtonItem.PopupControl>
+          </dxb:BarSplitButtonItem>
+          <dxb:BarButtonItem ToolTipService.ShowOnDisabled="True"
                                Command="{Binding DataContext.ShowHiddenAxesCommand, ElementName=Chart}"
-                               Content="{l1i11ii111:Localization ShowHiddenAxes}"
-                               ToolTip="{l1i11ii111:Localization ShowHiddenAxes}" Glyph="{l1i11ii111:ThemedIcons Key=Footer}"/>
-          <li11l:BarItemSeparator/>
-          <li11l:BarSplitButtonItem ToolTipService.ShowOnDisabled="True"
+                               Content="{loc:Localization ShowHiddenAxes}"
+                               ToolTip="{loc:Localization ShowHiddenAxes}" Glyph="{loc:ThemedIcons Key=Footer}"/>
+          <dxb:BarItemSeparator/>
+          <dxb:BarSplitButtonItem ToolTipService.ShowOnDisabled="True"
                                     Command="{x:Static l1lil:ChartPanel.RegisterOrderCommand}"
                                     DataContext="{Binding ElementName=Chart}" CommandTarget="{Binding ElementName=Ctrl, Mode=OneWay}">
-            <li11l:BarItem.SuperTip>
+            <dxb:BarItem.SuperTip>
               <dx:SuperTip>
-                <dx:SuperTipHeaderItem Content="{l1i11ii111:Localization RegOrdersByClick}"/>
-                <dx:SuperTipItem Content="{l1i11ii111:Localization BuyCtrlLeftMouse}"/>
-                <dx:SuperTipItem Content="{l1i11ii111:Localization SellCtrlRightMouse}"/>
+                <dx:SuperTipHeaderItem Content="{loc:Localization RegOrdersByClick}"/>
+                <dx:SuperTipItem Content="{loc:Localization BuyCtrlLeftMouse}"/>
+                <dx:SuperTipItem Content="{loc:Localization SellCtrlRightMouse}"/>
               </dx:SuperTip>
-            </li11l:BarItem.SuperTip>
-            <li11l:BarItem.GlyphTemplate>
+            </dxb:BarItem.SuperTip>
+            <dxb:BarItem.GlyphTemplate>
               <DataTemplate>
                 <ToggleButton Margin="-3" Style="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}"
                               IsChecked="{Binding Path=OrderCreationMode}">
-                  <Image Style="{StaticResource ImgStyle}" Source="{l1i11ii111:ThemedIcons Key=Mouse}">
+                  <Image Style="{StaticResource ImgStyle}" Source="{loc:ThemedIcons Key=Mouse}">
                     <dx:WpfSvgPalette.Palette>
                       <li1111lil:ThemeResource ThemeKey="{l11:BarSvgPaletteThemeKey ResourceKey=SvgPaletteInBar}"/>
                     </dx:WpfSvgPalette.Palette>
                   </Image>
                 </ToggleButton>
               </DataTemplate>
-            </li11l:BarItem.GlyphTemplate>
-            <li11l:BarSplitButtonItem.PopupControl>
-              <li11l:PopupMenu>
-                <li11l:PopupMenu.Items>
-                  <li11l:BarButtonItem Content="{l1i11ii111:Localization Settings}" Glyph="{l1i11ii111:ThemedIcons Key=Settings}"/>
-                </li11l:PopupMenu.Items>
-              </li11l:PopupMenu>
-            </li11l:BarSplitButtonItem.PopupControl>
-          </li11l:BarSplitButtonItem>
-          <li11l:BarCheckItem x:Name="QuickOrderPanelButton" ToolTipService.ShowOnDisabled="True"
+            </dxb:BarItem.GlyphTemplate>
+            <dxb:BarSplitButtonItem.PopupControl>
+              <dxb:PopupMenu>
+                <dxb:PopupMenu.Items>
+                  <dxb:BarButtonItem Content="{loc:Localization Settings}" Glyph="{loc:ThemedIcons Key=Settings}"/>
+                </dxb:PopupMenu.Items>
+              </dxb:PopupMenu>
+            </dxb:BarSplitButtonItem.PopupControl>
+          </dxb:BarSplitButtonItem>
+          <dxb:BarCheckItem x:Name="QuickOrderPanelButton" ToolTipService.ShowOnDisabled="True"
                               IsChecked="{Binding ElementName=QuickOrderPanel, Path=Visibility, Converter={StaticResource VisToBool}}"
-                              Glyph="{l1i11ii111:ThemedIcons Key=Order}" Content="{l1i11ii111:Localization ShowQuickOrdersPanel}"
-                              ToolTip="{l1i11ii111:Localization ShowQuickOrdersPanel}"
+                              Glyph="{loc:ThemedIcons Key=Order}" Content="{loc:Localization ShowQuickOrdersPanel}"
+                              ToolTip="{loc:Localization ShowQuickOrdersPanel}"
                               IsEnabled="{Binding IsInteracted, ElementName=Chart}"/>
-          <li11l:BarButtonItem Command="{x:Static l1i11ii111:RoutedCommands.CancelOrders}"
-                               ToolTipService.ShowOnDisabled="True" Glyph="{l1i11ii111:ThemedIcons Key=Remove2}"
-                               CommandTarget="{Binding ElementName=Ctrl}" ToolTip="{l1i11ii111:Localization CancelOrders}"/>
-        </li11l:Bar>
-      </li11l:BarManager.Bars>
-    </li11l:BarManager>
+          <dxb:BarButtonItem Command="{x:Static loc:RoutedCommands.CancelOrders}"
+                               ToolTipService.ShowOnDisabled="True" Glyph="{loc:ThemedIcons Key=Remove2}"
+                               CommandTarget="{Binding ElementName=Ctrl}" ToolTip="{loc:Localization CancelOrders}"/>
+        </dxb:Bar>
+      </dxb:BarManager.Bars>
+    </dxb:BarManager>
     <l1lil:Chart x:Name="Chart" Grid.Row="1"/>
   </Grid>
 </l1lil:ChartPanel>

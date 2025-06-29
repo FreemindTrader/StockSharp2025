@@ -2,8 +2,8 @@
                                                             xmlns:s="clr-namespace:-"
                                                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                                             xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
-                                                            xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
-                                                            xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+                                                            xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
+                                                            xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                                                             s:ThemeManager.Theme="{Binding SelectedTheme}">
   <FrameworkElement.Resources>
     <Style x:Key="PerfStatsStyle" TargetType="{x:Type TextBlock}">
@@ -22,15 +22,15 @@
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
     <Grid>
-      <li11l:BarManager.DXContextMenu>
-        <li11l:PopupMenu>
-          <li11l:PopupMenu.Items>
-            <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=Footer}" Command="{Binding ShowHiddenAxesCommand}"
-                                 ToolTip="{l1i11ii111:Localization ShowHiddenAxes}"
-                                 Content="{l1i11ii111:Localization ShowHiddenAxes}"/>
-          </li11l:PopupMenu.Items>
-        </li11l:PopupMenu>
-      </li11l:BarManager.DXContextMenu>
+      <dxb:BarManager.DXContextMenu>
+        <dxb:PopupMenu>
+          <dxb:PopupMenu.Items>
+            <dxb:BarButtonItem Glyph="{loc:ThemedIcons Key=Footer}" Command="{Binding ShowHiddenAxesCommand}"
+                                 ToolTip="{loc:Localization ShowHiddenAxes}"
+                                 Content="{loc:Localization ShowHiddenAxes}"/>
+          </dxb:PopupMenu.Items>
+        </dxb:PopupMenu>
+      </dxb:BarManager.DXContextMenu>
       <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd x:Name="Surface" ClipModifierSurface="True" ChartModifier="{Binding ChartModifier}">
         <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
           <Binding Mode="OneWay">            <!-- constructor argument:

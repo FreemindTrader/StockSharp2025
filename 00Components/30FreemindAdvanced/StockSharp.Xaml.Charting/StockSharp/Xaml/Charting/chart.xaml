@@ -4,9 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
              xmlns:dx="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
-             xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+             xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
              xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
-             xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
+             xmlns:dxb="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
              s:ThemeManager.Theme="{Binding SelectedTheme}">
   <FrameworkElement.Resources>
     <Style x:Key="Grpstyle"
@@ -22,16 +22,16 @@
                 <dx:SimpleButton Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                          Command="{Binding ChangeOrientationCommand}">
                   <StackPanel>
-                    <Image Width="12" Source="{l1i11ii111:ThemedIcons Pin}"
+                    <Image Width="12" Source="{loc:ThemedIcons Pin}"
                            Visibility="{Binding ConverterParameter=inverse, Path=IsTabbed, Converter={s:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd}}"/>
-                    <Image Width="12" Source="{l1i11ii111:ThemedIcons Pinned}"
+                    <Image Width="12" Source="{loc:ThemedIcons Pinned}"
                            Visibility="{Binding Path=IsTabbed, Converter={s:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd}}"/>
                   </StackPanel>
                 </dx:SimpleButton>
                 <dx:SimpleButton Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                          CommandParameter="{Binding PaneViewModel}" Command="{Binding PaneViewModel.ClosePaneCommand}"
-                                         ToolTip="{l1i11ii111:Localization Close}">
-                  <Image Width="12" Source="{l1i11ii111:ThemedIcons Remove2}"/>
+                                         ToolTip="{loc:Localization Close}">
+                  <Image Width="12" Source="{loc:ThemedIcons Remove2}"/>
                 </dx:SimpleButton>
               </StackPanel>
             </Grid>
@@ -82,10 +82,10 @@
       <ItemsControl.ItemTemplate>
         <DataTemplate DataType="local:UltrachartPaneViewModel">
           <Grid>
-            <li11l:BarManager.DXContextMenu>
+            <dxb:BarManager.DXContextMenu>
               <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding ParentViewModel}"
                                                                           Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"/>
-            </li11l:BarManager.DXContextMenu>
+            </dxb:BarManager.DXContextMenu>
             <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
                                                                                             s:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.VerticalChartGroup="{Binding PaneGroup}"
                                                                                             ChartModifier="{Binding ChartModifier}" ViewportManager="{Binding ViewportManager}">
