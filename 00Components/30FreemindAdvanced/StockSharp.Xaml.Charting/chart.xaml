@@ -1,7 +1,7 @@
 <l1lil:Chart xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
              xmlns:llliil11="clr-namespace:-"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
              xmlns:l1ilillll1="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
              xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
@@ -9,12 +9,12 @@
              xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
              llliil11:dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.Theme="{Binding SelectedTheme}">
   <FrameworkElement.Resources>
-    <Style l1llili1:Key="Grpstyle"
-           TargetType="{l1llili1:Type llliil11:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
+    <Style x:Key="Grpstyle"
+           TargetType="{x:Type llliil11:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
       <Setter Property="llliil11:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.HeaderTemplate">
         <Setter.Value>
           <DataTemplate DataType="charting:ItemPane">
-            <Grid VerticalAlignment="Center" Background="{l1llili1:Null}">
+            <Grid VerticalAlignment="Center" Background="{x:Null}">
               <lll:EditableTextBlock MinWidth="20" HorizontalAlignment="Left" Margin="5,2,0,0" VerticalAlignment="Top"
                                      Text="{Binding PaneViewModel.Title, Mode=TwoWay}"/>
               <StackPanel Background="Transparent" HorizontalAlignment="Right" Margin="2,2" Orientation="Vertical"
@@ -40,18 +40,18 @@
       </Setter>
       <Setter Property="Control.Template">
         <Setter.Value>
-          <ControlTemplate TargetType="{l1llili1:Type llliil11:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
+          <ControlTemplate TargetType="{x:Type llliil11:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}">
             <Grid>
               <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
               </Grid.RowDefinitions>
-              <Thumb l1llili1:Name="PART_TopSplitter" BorderBrush="#77999999" BorderThickness="0,1"
+              <Thumb x:Name="PART_TopSplitter" BorderBrush="#77999999" BorderThickness="0,1"
                      Background="#33999999" Cursor="SizeNS" HorizontalAlignment="Stretch" Height="5"/>
-              <ContentPresenter l1llili1:Name="PART_ContentHost" Content="{TemplateBinding ContentControl.Content}" Grid.Row="1"
+              <ContentPresenter x:Name="PART_ContentHost" Content="{TemplateBinding ContentControl.Content}" Grid.Row="1"
                                 Grid.RowSpan="2"/>
-              <Grid l1llili1:Name="PART_Header" Row="1">
+              <Grid x:Name="PART_Header" Row="1">
                 <Grid.RowDefinitions>
                   <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -62,29 +62,29 @@
       </Setter>
       <Setter Property="FrameworkElement.Height" Value="{Binding PaneViewModel.Height, Mode=TwoWay}"/>
     </Style>
-    <Style l1llili1:Key="PerfStatsStyle" TargetType="{l1llili1:Type TextBlock}">
+    <Style x:Key="PerfStatsStyle" TargetType="{x:Type TextBlock}">
       <Setter Property="TextBlock.FontSize" Value="20"/>
       <Setter Property="FrameworkElement.Margin" Value="0"/>
       <Setter Property="TextBlock.FontWeight" Value="Bold"/>
       <Setter Property="TextBlock.Foreground" Value="#BBFC9C29"/>
       <Setter Property="TextBlock.FontFamily" Value="Consolas"/>
     </Style>
-    <ll1:BoolToVisibilityConverter l1llili1:Key="BoolToVisibilityConverter"/>
-    <llliil11:dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLELR2Y64AQZB2ZMVREEG3YUEHPNZ_ejd l1llili1:Key="UltrachartOverviewVisibilityConverter"/>
+    <ll1:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <llliil11:dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLELR2Y64AQZB2ZMVREEG3YUEHPNZ_ejd x:Key="UltrachartOverviewVisibilityConverter"/>
   </FrameworkElement.Resources>
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="*"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd l1llili1:Name="ChartGroupEx" ItemContainerStyle="{StaticResource Grpstyle}"
+    <llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd x:Name="ChartGroupEx" ItemContainerStyle="{StaticResource Grpstyle}"
                                                                              ItemsSource="{Binding ChartPaneViewModels}">
       <ItemsControl.ItemTemplate>
         <DataTemplate DataType="local:UltrachartPaneViewModel">
           <Grid>
             <li11l:BarManager.DXContextMenu>
               <llliil11:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding ParentViewModel}"
-                                                                          Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={l1llili1:Type Grid}}}"/>
+                                                                          Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"/>
             </li11l:BarManager.DXContextMenu>
             <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
                                                                                             llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.VerticalChartGroup="{Binding PaneGroup}"

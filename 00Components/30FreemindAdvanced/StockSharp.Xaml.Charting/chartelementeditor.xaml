@@ -6,14 +6,14 @@
                           xmlns:li1111lil="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v22.1"
                           xmlns:l11="clr-namespace:DevExpress.Xpf.Bars.Themes;assembly=DevExpress.Xpf.Core.v22.1"
                           xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
-                          xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                           xmlns:l11l11li1="clr-namespace:DevExpress.Xpf.PropertyGrid;assembly=DevExpress.Xpf.PropertyGrid.v22.1"
                           xmlns:l1lili11i="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml">
   <FrameworkElement.Resources>
-    <Style l1llili1:Key="BtnStyle" TargetType="{l1llili1:Type li1i:CheckEdit}">
+    <Style x:Key="BtnStyle" TargetType="{x:Type li1i:CheckEdit}">
       <Setter Property="Control.Template">
         <Setter.Value>
-          <ControlTemplate TargetType="{l1llili1:Type li1i:CheckEdit}">
+          <ControlTemplate TargetType="{x:Type li1i:CheckEdit}">
             <Image Source="{l1i11ii111:ThemedIcons Key=Settings}">
               <l1ilillll1:WpfSvgPalette.Palette>
                 <li1111lil:ThemeResource ThemeKey="{l11:BarSvgPaletteThemeKey ResourceKey=SvgPaletteInMenu}"/>
@@ -23,12 +23,12 @@
         </Setter.Value>
       </Setter>
     </Style>
-    <Style TargetType="{l1llili1:Type l11l11li1:RowControl}">
+    <Style TargetType="{x:Type l11l11li1:RowControl}">
       <Setter Property="l11l11li1:RowControlBase.ExpandButtonWidth" Value="5"/>
     </Style>
   </FrameworkElement.Resources>
   <StackPanel>
-    <li1i:CheckEdit l1llili1:Name="ButtonShowPopup" Width="12" Height="12" Margin="0,2,0,0"
+    <li1i:CheckEdit x:Name="ButtonShowPopup" Width="12" Height="12" Margin="0,2,0,0"
                     Style="{StaticResource BtnStyle}"/>
     <Popup VerticalOffset="0" MaxHeight="500" HorizontalOffset="0" Placement="Bottom" PopupAnimation="Fade"
            AllowsTransparency="True" Focusable="True" StaysOpen="false"
@@ -37,7 +37,7 @@
       <Border BorderThickness="1" Padding="2">
         <l1lili11i:PropertyGridEx Width="330" MinHeight="300" MaxHeight="600" ValueColumnWidth="100" ShowDescriptionIn="ToolTip"
                                   ShowMenuButtonInRows="False" ShowSearchBox="False" ShowToolPanel="False" SelectedObject="{Binding}"
-                                  ShowCategories="{Binding CategoriesMode, FallbackValue={l1llili1:Static l11l11li1:CategoriesShowMode.Visible}}"/>
+                                  ShowCategories="{Binding CategoriesMode, FallbackValue={x:Static l11l11li1:CategoriesShowMode.Visible}}"/>
       </Border>
     </Popup>
   </StackPanel>

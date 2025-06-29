@@ -1,9 +1,9 @@
-<l1lil:HeatmapChart xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+<l1lil:HeatmapChart xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:lii11lili1="clr-namespace:DevExpress.Xpf.Charts.Heatmap;assembly=DevExpress.Xpf.Charts.v22.1"
                     xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1">
-  <lii11lili1:HeatmapControl l1llili1:Name="Heatmap">
+  <lii11lili1:HeatmapControl x:Name="Heatmap">
     <lii11lili1:HeatmapControl.ColorProvider>
       <lii11lili1:HeatmapRangeColorProvider ApproximateColors="True">
         <lii11lili1:HeatmapPaletteColorProvider.Palette>
