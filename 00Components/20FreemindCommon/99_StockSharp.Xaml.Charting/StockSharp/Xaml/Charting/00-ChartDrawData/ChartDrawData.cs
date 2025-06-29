@@ -656,15 +656,15 @@ public class ChartDrawData : IChartDrawData
             this.X2 = ChartDrawData.AnnotationData.ConvertToUTC(storage.GetValue<IComparable>("", this.X2));
             this.Y2 = storage.GetValue<IComparable>("", this.Y2);
             SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-            this.Stroke = settingsStorage1 != null ? settingsStorage1.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush)null;
+            this.Stroke = settingsStorage1 != null ? settingsStorage1.GetBrush() : (System.Windows.Media.Brush)null;
             SettingsStorage settingsStorage2 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-            this.Fill = settingsStorage2 != null ? settingsStorage2.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush)null;
+            this.Fill = settingsStorage2 != null ? settingsStorage2.GetBrush() : (System.Windows.Media.Brush)null;
             SettingsStorage settingsStorage3 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-            this.Foreground = settingsStorage3 != null ? settingsStorage3.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush)null;
+            this.Foreground = settingsStorage3 != null ? settingsStorage3.GetBrush() : (System.Windows.Media.Brush)null;
             try
             {
                 SettingsStorage settingsStorage4 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-                this.Thickness = settingsStorage4 != null ? new System.Windows.Thickness?(settingsStorage4.\u0023\u003DzNnTxBiiEvu0_2NsnpA\u003D\u003D()) : new System.Windows.Thickness?();
+                this.Thickness = settingsStorage4 != null ? new System.Windows.Thickness?(settingsStorage4.CreateThickness()) : new System.Windows.Thickness?();
             }
             catch
             {

@@ -666,32 +666,32 @@ public class ChartDrawData : IChartDrawData
         /// <param name="storage">Settings storage.</param>
         public void Load(SettingsStorage storage)
         {
-            this.IsVisible = storage.GetValue<bool?>("", this.IsVisible);
-            this.IsEditable = storage.GetValue<bool?>("", this.IsEditable);
-            this.X1 = ChartDrawData.AnnotationData.ConvertToUTC(storage.GetValue<IComparable>("", this.X1));
-            this.Y1 = storage.GetValue<IComparable>("", this.Y1);
-            this.X2 = ChartDrawData.AnnotationData.ConvertToUTC(storage.GetValue<IComparable>("", this.X2));
-            this.Y2 = storage.GetValue<IComparable>("", this.Y2);
-            SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-            this.Stroke = settingsStorage1 != null ? settingsStorage1.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush)null;
-            SettingsStorage settingsStorage2 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-            this.Fill = settingsStorage2 != null ? settingsStorage2.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush)null;
-            SettingsStorage settingsStorage3 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-            this.Foreground = settingsStorage3 != null ? settingsStorage3.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush)null;
+            this.IsVisible = storage.GetValue<bool?>("IsVisible", this.IsVisible);
+            this.IsEditable = storage.GetValue<bool?>("IsEditable", this.IsEditable);
+            this.X1 = ChartDrawData.AnnotationData.ConvertToUTC(storage.GetValue<IComparable>("X1", this.X1));
+            this.Y1 = storage.GetValue<IComparable>("Y1", this.Y1);
+            this.X2 = ChartDrawData.AnnotationData.ConvertToUTC(storage.GetValue<IComparable>("X2", this.X2));
+            this.Y2 = storage.GetValue<IComparable>("Y2", this.Y2);
+            SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>("Stroke", (SettingsStorage)null);
+            this.Stroke = settingsStorage1 != null ? settingsStorage1.GetBrush() : (System.Windows.Media.Brush)null;
+            SettingsStorage settingsStorage2 = storage.GetValue<SettingsStorage>("Fill", (SettingsStorage)null);
+            this.Fill = settingsStorage2 != null ? settingsStorage2.GetBrush() : (System.Windows.Media.Brush)null;
+            SettingsStorage settingsStorage3 = storage.GetValue<SettingsStorage>("Foreground", (SettingsStorage)null);
+            this.Foreground = settingsStorage3 != null ? settingsStorage3.GetBrush() : (System.Windows.Media.Brush)null;
             try
             {
-                SettingsStorage settingsStorage4 = storage.GetValue<SettingsStorage>("", (SettingsStorage)null);
-                this.Thickness = settingsStorage4 != null ? new System.Windows.Thickness?(settingsStorage4.\u0023\u003DzNnTxBiiEvu0_2NsnpA\u003D\u003D()) : new System.Windows.Thickness?();
+                SettingsStorage settingsStorage4 = storage.GetValue<SettingsStorage>("Thickness", (SettingsStorage)null);
+                this.Thickness = settingsStorage4 != null ? new System.Windows.Thickness?(settingsStorage4.CreateThickness()) : new System.Windows.Thickness?();
             }
             catch
             {
             }
-            this.ShowLabel = storage.GetValue<bool?>("", this.ShowLabel);
-            this.LabelPlacement = storage.GetValue<LabelPlacement?>("", this.LabelPlacement);
-            this.HorizontalAlignment = storage.GetValue<System.Windows.HorizontalAlignment?>("", this.HorizontalAlignment);
-            this.VerticalAlignment = storage.GetValue<System.Windows.VerticalAlignment?>("", this.VerticalAlignment);
-            this.CoordinateMode = storage.GetValue<AnnotationCoordinateMode?>("", this.CoordinateMode);
-            this.Text = storage.GetValue<string>("", this.Text);
+            this.ShowLabel = storage.GetValue<bool?>("ShowLabel", this.ShowLabel);
+            this.LabelPlacement = storage.GetValue<LabelPlacement?>("LabelPlacement", this.LabelPlacement);
+            this.HorizontalAlignment = storage.GetValue<System.Windows.HorizontalAlignment?>("HorizontalAlignment", this.HorizontalAlignment);
+            this.VerticalAlignment = storage.GetValue<System.Windows.VerticalAlignment?>("VerticalAlignment", this.VerticalAlignment);
+            this.CoordinateMode = storage.GetValue<AnnotationCoordinateMode?>("CoordinateMode", this.CoordinateMode);
+            this.Text = storage.GetValue<string>("Text", this.Text);
         }
 
 
@@ -700,39 +700,39 @@ public class ChartDrawData : IChartDrawData
         /// <param name="storage">Settings storage.</param>
         public void Save(SettingsStorage storage)
         {
-            storage.SetValue<bool?>("", this.IsVisible);
-            storage.SetValue<bool?>("", this.IsEditable);
-            storage.SetValue<IComparable>("", ChartDrawData.AnnotationData.ConvertToUniversalTime(this.X1));
-            storage.SetValue<IComparable>("", this.Y1);
-            storage.SetValue<IComparable>("", ChartDrawData.AnnotationData.ConvertToUniversalTime(this.X2));
-            storage.SetValue<IComparable>("", this.Y2);
+            storage.SetValue<bool?>("IsVisible", this.IsVisible);
+            storage.SetValue<bool?>("IsEditable", this.IsEditable);
+            storage.SetValue<IComparable>("X1", ChartDrawData.AnnotationData.ConvertToUniversalTime(this.X1));
+            storage.SetValue<IComparable>("Y1", this.Y1);
+            storage.SetValue<IComparable>("X2", ChartDrawData.AnnotationData.ConvertToUniversalTime(this.X2));
+            storage.SetValue<IComparable>("Y2", this.Y2);
             SettingsStorage settingsStorage1 = storage;
-            string str1 = "";
+            string str1 = "Stroke";
             System.Windows.Media.Brush stroke = this.Stroke;
             SettingsStorage settingsStorage2 = stroke != null ? stroke.SaveBrush() : (SettingsStorage)null;
             settingsStorage1.SetValue<SettingsStorage>(str1, settingsStorage2);
             SettingsStorage settingsStorage3 = storage;
-            string str2 = "";
+            string str2 = "Fill";
             System.Windows.Media.Brush fill = this.Fill;
             SettingsStorage settingsStorage4 = fill != null ? fill.SaveBrush() : (SettingsStorage)null;
             settingsStorage3.SetValue<SettingsStorage>(str2, settingsStorage4);
             SettingsStorage settingsStorage5 = storage;
-            string str3 = "";
+            string str3 = "Foreground";
             System.Windows.Media.Brush foreground = this.Foreground;
             SettingsStorage settingsStorage6 = foreground != null ? foreground.SaveBrush() : (SettingsStorage)null;
             settingsStorage5.SetValue<SettingsStorage>(str3, settingsStorage6);
             SettingsStorage settingsStorage7 = storage;
-            string str4 = "";
+            string str4 = "Thickness";
             System.Windows.Thickness? thickness = this.Thickness;
             ref System.Windows.Thickness? local = ref thickness;
             SettingsStorage settingsStorage8 = local.HasValue ? local.GetValueOrDefault().SaveBrush() : (SettingsStorage)null;
             settingsStorage7.SetValue<SettingsStorage>(str4, settingsStorage8);
-            storage.SetValue<bool?>("", this.ShowLabel);
-            storage.SetValue<LabelPlacement?>("", this.LabelPlacement);
-            storage.SetValue<System.Windows.HorizontalAlignment?>("", this.HorizontalAlignment);
-            storage.SetValue<System.Windows.VerticalAlignment?>("", this.VerticalAlignment);
-            storage.SetValue<AnnotationCoordinateMode?>("", this.CoordinateMode);
-            storage.SetValue<string>("", this.Text);
+            storage.SetValue<bool?>("ShowLabel", this.ShowLabel);
+            storage.SetValue<LabelPlacement?>("LabelPlacement", this.LabelPlacement);
+            storage.SetValue<System.Windows.HorizontalAlignment?>("HorizontalAlignment", this.HorizontalAlignment);
+            storage.SetValue<System.Windows.VerticalAlignment?>("VerticalAlignment", this.VerticalAlignment);
+            storage.SetValue<AnnotationCoordinateMode?>("CoordinateMode", this.CoordinateMode);
+            storage.SetValue<string>("Text", this.Text);
         }
     }
 

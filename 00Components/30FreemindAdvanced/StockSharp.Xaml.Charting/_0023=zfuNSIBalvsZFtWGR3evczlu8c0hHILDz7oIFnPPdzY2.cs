@@ -46,7 +46,7 @@ internal sealed class ParentVM :
     this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException("");
     this.\u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D = _param2 ?? throw new ArgumentNullException("");
     this.\u0023\u003DzltAOnz7pENYNz4RZiZiGFJ7j3MDa = _param2 is IChartCandleElement;
-    \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(new Action(this.\u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY));
+    ChartViewModel.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(new Action(this.\u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY));
     this.ChartElement.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzqKjZcEftBQYu8FctY__O05c\u003D);
   }
 
@@ -171,7 +171,7 @@ internal sealed class ParentVM :
 
   public void Dispose()
   {
-    \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzFKIjoTgcr_ZQ\u0024BFi5BCDqDF5zYZT(new Action(this.\u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY));
+    ChartViewModel.\u0023\u003DzFKIjoTgcr_ZQ\u0024BFi5BCDqDF5zYZT(new Action(this.\u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY));
     this.IsDisposed = true;
   }
 

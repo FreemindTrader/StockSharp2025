@@ -24,8 +24,7 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable enable
-internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 : 
-  DependencyObject
+internal sealed class ChartViewModel :  DependencyObject
 {
   
   private 
@@ -48,61 +47,61 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   
   private Action<ChartArea> \u0023\u003DzJlQa5yc\u003D;
   
-  public static readonly DependencyProperty \u0023\u003DzeopV6tZDn4Ln = DependencyProperty.Register("", typeof (string), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzeopV6tZDn4Ln = DependencyProperty.Register("", typeof (string), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003Dzw5K\u0024vsW8O9P3 = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003Dzw5K\u0024vsW8O9P3 = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel));
   
   private static Action \u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
   
-  public static readonly DependencyProperty \u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzygR3f9KFDxTEYisMidH\u0024JS0\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzygR3f9KFDxTEYisMidH\u0024JS0\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzWEDxQqB6jgU9 = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
+  public static readonly DependencyProperty \u0023\u003DzWEDxQqB6jgU9 = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
   
-  public static readonly DependencyProperty \u0023\u003DzX7Gyz7DEzjur = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
+  public static readonly DependencyProperty \u0023\u003DzX7Gyz7DEzjur = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
   
-  public static readonly DependencyProperty \u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
+  public static readonly DependencyProperty \u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
   
-  public static readonly DependencyProperty \u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
+  public static readonly DependencyProperty \u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
   
-  public static readonly DependencyProperty \u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
+  public static readonly DependencyProperty \u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
   
-  public static readonly DependencyProperty \u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzgQVt7i8Rpksb)));
+  public static readonly DependencyProperty \u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D = DependencyProperty.Register("", typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.\u0023\u003DzyX0jaP1fZfwe), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
   
-  public static readonly DependencyProperty \u0023\u003Dz76r5\u0024wlS8ZBb = DependencyProperty.Register("", typeof (int), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz4t7qXCEHgeaFBnsnsEfGvGsGPrcn)));
+  public static readonly DependencyProperty \u0023\u003Dz76r5\u0024wlS8ZBb = DependencyProperty.Register("", typeof (int), typeof (ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz4t7qXCEHgeaFBnsnsEfGvGsGPrcn)));
   
   private int \u0023\u003Dzw_LOBOuAUrZC;
   
-  public static readonly DependencyProperty \u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D = DependencyProperty.Register("", typeof (ObservableCollection<IScichartSurfaceVM>), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D = DependencyProperty.Register("", typeof (ObservableCollection<IScichartSurfaceVM>), typeof (ChartViewModel));
   
   private readonly ICommand \u0023\u003DzlI5Q0fMkGWsRwzw1OG_ENm_rPNsf;
   
-  public static readonly DependencyProperty \u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003DzLNiqY6UHLoB\u0024 = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzLNiqY6UHLoB\u0024 = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003DzRkLhT7Lt41PT = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzRkLhT7Lt41PT = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003DzUWQ5iiwrKJD_ = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzUWQ5iiwrKJD_ = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003Dze4EVknsZpYUH = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003Dze4EVknsZpYUH = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003DzKaPAMV2cOzbF = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003DzKaPAMV2cOzbF = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003Dz1DarHjvaoDtx = DependencyProperty.Register("", typeof (ICommand), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003Dz1DarHjvaoDtx = DependencyProperty.Register("", typeof (ICommand), typeof (ChartViewModel));
   
-  public static readonly DependencyProperty \u0023\u003Dzfv12AVpZqluc = DependencyProperty.Register("", typeof (ObservableCollection<IndicatorType>), typeof (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6));
+  public static readonly DependencyProperty \u0023\u003Dzfv12AVpZqluc = DependencyProperty.Register("", typeof (ObservableCollection<IndicatorType>), typeof (ChartViewModel));
   
   private readonly DelegateCommand<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D> \u0023\u003Dzl_qEzyyeDJwMh0wLFnT_MnQ\u003D;
 
-  public \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6()
+  public ChartViewModel()
   {
     this.ChartPaneViewModels = new ObservableCollection<IScichartSurfaceVM>();
     this.MinimumRange = 50;
@@ -118,9 +117,9 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     this.ShowHiddenAxesCommand = (ICommand) new DelegateCommand<ChartArea>(new Action<ChartArea>(this.\u0023\u003DzAhcQ9lSmwA8jEy1mdYi6ePg\u003D), new Func<ChartArea, bool>(this.\u0023\u003DzjUJWvCc8BSpnpUc8DQ5qbx8\u003D));
     this.AddXAxisCommand = (ICommand) new DelegateCommand<ChartArea>(new Action<ChartArea>(this.\u0023\u003DzEzQRvC54NAkZrd_z3oUpUq8\u003D), new Func<ChartArea, bool>(this.\u0023\u003Dzu7XzqRESw\u0024Cj0yMZyfdgHlQ\u003D));
     this.AddYAxisCommand = (ICommand) new DelegateCommand<ChartArea>(new Action<ChartArea>(this.\u0023\u003Dz8avonJRP2fM8CXBcKAguZEc\u003D), new Func<ChartArea, bool>(this.\u0023\u003DzENqocWgP_pJukYrbe4XWVHg\u003D));
-    this.RemoveAxisCommand = (ICommand) new DelegateCommand<ChartAxis>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D = new Action<ChartAxis>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzziKq1fCxTiR\u0024IxwE1_to_NU\u003D)), new Func<ChartAxis, bool>(this.\u0023\u003DzQPhCaCOw2SD2t\u0024dJA7\u00247lOE\u003D));
+    this.RemoveAxisCommand = (ICommand) new DelegateCommand<ChartAxis>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D = new Action<ChartAxis>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzziKq1fCxTiR\u0024IxwE1_to_NU\u003D)), new Func<ChartAxis, bool>(this.\u0023\u003DzQPhCaCOw2SD2t\u0024dJA7\u00247lOE\u003D));
     this.\u0023\u003DzoMQQ88MEiBDX();
-    this.\u0023\u003Dzl_qEzyyeDJwMh0wLFnT_MnQ\u003D = new DelegateCommand<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D = new Action<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024yGfI4nRC88_Fx431vwDLXg\u003D)), new Func<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D, bool>(this.\u0023\u003Dz7Vq8a2RMrjOa5jLFAfNRwwA\u003D));
+    this.\u0023\u003Dzl_qEzyyeDJwMh0wLFnT_MnQ\u003D = new DelegateCommand<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D = new Action<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024yGfI4nRC88_Fx431vwDLXg\u003D)), new Func<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D, bool>(this.\u0023\u003Dz7Vq8a2RMrjOa5jLFAfNRwwA\u003D));
     this.\u0023\u003DzlI5Q0fMkGWsRwzw1OG_ENm_rPNsf = (ICommand) new DelegateCommand<ChartArea>(new Action<ChartArea>(this.\u0023\u003DzWll\u0024XnUAcUtY0YKI0GtTMhA\u003D), new Func<ChartArea, bool>(this.\u0023\u003Dz0lCLFNOjdrmsWu0\u0024ZdVnP0c\u003D));
     if (this.IsDesignMode())
       return;
@@ -348,11 +347,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
 
   public void \u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(Func<Order, bool> _param1)
   {
-    \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzymgCCsreH3nwJBFwtEPKXQw\u003D ccsreH3nwJbFwtEpkxQw = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzymgCCsreH3nwJBFwtEPKXQw\u003D();
+    ChartViewModel.\u0023\u003DzymgCCsreH3nwJBFwtEPKXQw\u003D ccsreH3nwJbFwtEpkxQw = new ChartViewModel.\u0023\u003DzymgCCsreH3nwJBFwtEPKXQw\u003D();
     ccsreH3nwJbFwtEpkxQw.\u0023\u003DzXCEqv64\u003D = this.\u0023\u003DzmMdfCUCSnZWZ;
     if (_param1 == null)
-      _param1 = \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Func<Order, bool>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzO_BIxNwmDn6VDgqOIx_JE6RwPKwP));
-    CollectionHelper.ForEach<Order>((IEnumerable<Order>) CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<IScichartSurfaceVM, Order>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D = new Func<IScichartSurfaceVM, IEnumerable<Order>>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.\u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D));
+      _param1 = ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Func<Order, bool>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzO_BIxNwmDn6VDgqOIx_JE6RwPKwP));
+    CollectionHelper.ForEach<Order>((IEnumerable<Order>) CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<IScichartSurfaceVM, Order>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D = new Func<IScichartSurfaceVM, IEnumerable<Order>>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.\u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D));
   }
 
   private void \u0023\u003Dz5RYhL5E\u003D() => this.SelectedTheme = ChartHelper.CurrChartTheme();
@@ -361,11 +360,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (string) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzeopV6tZDn4Ln);
+      return (string) this.GetValue(ChartViewModel.\u0023\u003DzeopV6tZDn4Ln);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzeopV6tZDn4Ln, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzeopV6tZDn4Ln, (object) value);
     }
   }
 
@@ -373,11 +372,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzw5K\u0024vsW8O9P3);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003Dzw5K\u0024vsW8O9P3);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzw5K\u0024vsW8O9P3, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dzw5K\u0024vsW8O9P3, (object) value);
     }
   }
 
@@ -385,36 +384,36 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvfWZFdhb7kc9);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DzvfWZFdhb7kc9);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvfWZFdhb7kc9, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzvfWZFdhb7kc9, (object) value);
     }
   }
 
   internal static void \u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(Action _param0)
   {
-    Action action1 = \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
+    Action action1 = ChartViewModel.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
     Action comparand;
     do
     {
       comparand = action1;
       Action action2 = comparand + _param0;
-      action1 = Interlocked.CompareExchange<Action>(ref \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D, action2, comparand);
+      action1 = Interlocked.CompareExchange<Action>(ref ChartViewModel.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D, action2, comparand);
     }
     while (action1 != comparand);
   }
 
   internal static void \u0023\u003DzFKIjoTgcr_ZQ\u0024BFi5BCDqDF5zYZT(Action _param0)
   {
-    Action action1 = \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
+    Action action1 = ChartViewModel.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
     Action comparand;
     do
     {
       comparand = action1;
       Action action2 = comparand - _param0;
-      action1 = Interlocked.CompareExchange<Action>(ref \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D, action2, comparand);
+      action1 = Interlocked.CompareExchange<Action>(ref ChartViewModel.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D, action2, comparand);
     }
     while (action1 != comparand);
   }
@@ -423,28 +422,28 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 zgziIlo367a8J0vVw6 = (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6) _param0;
-    zgziIlo367a8J0vVw6.CoerceValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzWEDxQqB6jgU9);
-    zgziIlo367a8J0vVw6.CoerceValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzX7Gyz7DEzjur);
-    zgziIlo367a8J0vVw6.CoerceValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D);
-    zgziIlo367a8J0vVw6.CoerceValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D);
-    zgziIlo367a8J0vVw6.CoerceValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D);
-    zgziIlo367a8J0vVw6.CoerceValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D);
-    ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6) _param0).\u0023\u003Dzq2WzUfXQkUHNY5VhTi_dHgzgYlRe();
+    ChartViewModel zgziIlo367a8J0vVw6 = (ChartViewModel) _param0;
+    zgziIlo367a8J0vVw6.CoerceValue(ChartViewModel.\u0023\u003DzWEDxQqB6jgU9);
+    zgziIlo367a8J0vVw6.CoerceValue(ChartViewModel.\u0023\u003DzX7Gyz7DEzjur);
+    zgziIlo367a8J0vVw6.CoerceValue(ChartViewModel.\u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D);
+    zgziIlo367a8J0vVw6.CoerceValue(ChartViewModel.\u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D);
+    zgziIlo367a8J0vVw6.CoerceValue(ChartViewModel.\u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D);
+    zgziIlo367a8J0vVw6.CoerceValue(ChartViewModel.\u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D);
+    ((ChartViewModel) _param0).\u0023\u003Dzq2WzUfXQkUHNY5VhTi_dHgzgYlRe();
   }
 
   private static void \u0023\u003DzyX0jaP1fZfwe(
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6) _param0).\u0023\u003Dzq2WzUfXQkUHNY5VhTi_dHgzgYlRe();
+    ((ChartViewModel) _param0).\u0023\u003Dzq2WzUfXQkUHNY5VhTi_dHgzgYlRe();
   }
 
   private void \u0023\u003Dzq2WzUfXQkUHNY5VhTi_dHgzgYlRe()
   {
     CommandManager.InvalidateRequerySuggested();
     this.ClosePaneCommand.RaiseCanExecuteChanged();
-    Action izKc6jG0gptPuO01M = \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
+    Action izKc6jG0gptPuO01M = ChartViewModel.\u0023\u003Dz7i2HTHIzKc6jG0gptPUO01M\u003D;
     if (izKc6jG0gptPuO01M == null)
       return;
     izKc6jG0gptPuO01M();
@@ -454,11 +453,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzJmdljkCrZ79uM4t8tIUE9U8\u003D, (object) value);
     }
   }
 
@@ -466,11 +465,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzWEDxQqB6jgU9);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DzWEDxQqB6jgU9);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzWEDxQqB6jgU9, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzWEDxQqB6jgU9, (object) value);
     }
   }
 
@@ -478,11 +477,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzX7Gyz7DEzjur);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DzX7Gyz7DEzjur);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzX7Gyz7DEzjur, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzX7Gyz7DEzjur, (object) value);
     }
   }
 
@@ -490,11 +489,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzrMO\u0024AhOl\u0024DHX0XylOA\u003D\u003D, (object) value);
     }
   }
 
@@ -502,11 +501,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzhEqKjKrXGg88Hv31FXG8nK0\u003D, (object) value);
     }
   }
 
@@ -514,11 +513,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dz519VfrZuK1ns4onzOw\u003D\u003D, (object) value);
     }
   }
 
@@ -526,17 +525,17 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D);
+      return (bool) this.GetValue(ChartViewModel.\u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DziBc9dbkgK8SVC\u00247hcrr7JBg\u003D, (object) value);
     }
   }
 
   private static object \u0023\u003DzgQVt7i8Rpksb(DependencyObject _param0, object _param1)
   {
-    return (object) (bool) (!((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6) _param0).IsInteracted ? 0 : ((bool) _param1 ? 1 : 0));
+    return (object) (bool) (!((ChartViewModel) _param0).IsInteracted ? 0 : ((bool) _param1 ? 1 : 0));
   }
 
   public int MinimumRange
@@ -544,7 +543,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     get => this.\u0023\u003Dzw_LOBOuAUrZC;
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz76r5\u0024wlS8ZBb, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dz76r5\u0024wlS8ZBb, (object) value);
     }
   }
 
@@ -552,11 +551,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ObservableCollection<IScichartSurfaceVM>) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D);
+      return (ObservableCollection<IScichartSurfaceVM>) this.GetValue(ChartViewModel.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D, (object) value);
     }
   }
 
@@ -569,11 +568,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dz8XahNhP3PI7vvpsncA\u003D\u003D, (object) value);
     }
   }
 
@@ -581,11 +580,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzLNiqY6UHLoB\u0024);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003DzLNiqY6UHLoB\u0024);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzLNiqY6UHLoB\u0024, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzLNiqY6UHLoB\u0024, (object) value);
     }
   }
 
@@ -593,11 +592,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dzt5tifD5SNuaQJ9EkVA\u003D\u003D, (object) value);
     }
   }
 
@@ -605,11 +604,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzRkLhT7Lt41PT);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003DzRkLhT7Lt41PT);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzRkLhT7Lt41PT, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzRkLhT7Lt41PT, (object) value);
     }
   }
 
@@ -617,11 +616,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzNIlMuVbIfLDOZB27IQ\u003D\u003D, (object) value);
     }
   }
 
@@ -629,11 +628,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzoOjeK6Nq3nq\u0024VNhK5A\u003D\u003D, (object) value);
     }
   }
 
@@ -641,11 +640,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzUWQ5iiwrKJD_);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003DzUWQ5iiwrKJD_);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzUWQ5iiwrKJD_, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzUWQ5iiwrKJD_, (object) value);
     }
   }
 
@@ -663,11 +662,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dze4EVknsZpYUH);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003Dze4EVknsZpYUH);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dze4EVknsZpYUH, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dze4EVknsZpYUH, (object) value);
     }
   }
 
@@ -675,11 +674,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzKaPAMV2cOzbF);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003DzKaPAMV2cOzbF);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzKaPAMV2cOzbF, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003DzKaPAMV2cOzbF, (object) value);
     }
   }
 
@@ -687,11 +686,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ICommand) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz1DarHjvaoDtx);
+      return (ICommand) this.GetValue(ChartViewModel.\u0023\u003Dz1DarHjvaoDtx);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz1DarHjvaoDtx, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dz1DarHjvaoDtx, (object) value);
     }
   }
 
@@ -699,11 +698,11 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   {
     get
     {
-      return (ObservableCollection<IndicatorType>) this.GetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzfv12AVpZqluc);
+      return (ObservableCollection<IndicatorType>) this.GetValue(ChartViewModel.\u0023\u003Dzfv12AVpZqluc);
     }
     set
     {
-      this.SetValue(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzfv12AVpZqluc, (object) value);
+      this.SetValue(ChartViewModel.\u0023\u003Dzfv12AVpZqluc, (object) value);
     }
   }
 
@@ -816,7 +815,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     if (Equatable<ChartArea>.op_Inequality((Equatable<ChartArea>) _param1, (ChartArea) null))
       _param1.\u0023\u003Dz3ThQNm3rQ1fp().ShowHiddenAxesCommand.TryExecute((object) null);
     else
-      CollectionHelper.ForEach<IScichartSurfaceVM>((IEnumerable<IScichartSurfaceVM>) this.ChartPaneViewModels, \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<IScichartSurfaceVM>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
+      CollectionHelper.ForEach<IScichartSurfaceVM>((IEnumerable<IScichartSurfaceVM>) this.ChartPaneViewModels, ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<IScichartSurfaceVM>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
   }
 
   private bool \u0023\u003DzjUJWvCc8BSpnpUc8DQ5qbx8\u003D(ChartArea _param1) => this.IsInteracted;
@@ -887,7 +886,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   [Serializable]
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
-    public static readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ChartViewModel.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartViewModel.\u0023\u003Dz7qOdpi4\u003D();
     public static Action<IScichartSurfaceVM> \u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D;
     public static Action<ChartAxis> \u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D;
     public static Action<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D> \u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D;
@@ -918,7 +917,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     internal void \u0023\u003Dz\u0024yGfI4nRC88_Fx431vwDLXg\u003D(
       \u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D _param1)
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D();
+      ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D();
       lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D = _param1;
       IChart chart = ((IScichartSurfaceVM) lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D).Chart;
       IChartArea area = chart.Areas.FirstOrDefault<IChartArea>(new Func<IChartArea, bool>(lrrNtIjstOuVg4Rro.\u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D));
@@ -936,7 +935,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     Order> \u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh(
       IScichartSurfaceVM _param1)
     {
-      return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
+      return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
     }
 
     internal bool \u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t(Order _param1)
@@ -948,7 +947,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
-      ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6) _param1).\u0023\u003Dzw_LOBOuAUrZC = (int) _param2.NewValue;
+      ((ChartViewModel) _param1).\u0023\u003Dzw_LOBOuAUrZC = (int) _param2.NewValue;
     }
   }
 

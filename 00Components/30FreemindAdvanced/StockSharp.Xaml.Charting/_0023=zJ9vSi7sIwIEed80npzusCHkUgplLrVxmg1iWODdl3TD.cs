@@ -269,10 +269,10 @@ internal sealed class IScichartSurfaceVM :
     else
     {
       this.ClosePaneCommand = (ICommand) this.ParentViewModel.ClosePaneCommand;
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvfWZFdhb7kc9, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D));
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzw5K\u0024vsW8O9P3, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D));
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz76r5\u0024wlS8ZBb, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D));
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzeopV6tZDn4Ln, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D));
+      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003DzvfWZFdhb7kc9, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D));
+      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003Dzw5K\u0024vsW8O9P3, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D));
+      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003Dz76r5\u0024wlS8ZBb, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D));
+      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003DzeopV6tZDn4Ln, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D));
     }
     StockSharp.Xaml.Charting.Chart groupChart = this.GroupChart;
     if (groupChart != null)
@@ -654,7 +654,7 @@ internal sealed class IScichartSurfaceVM :
 
   public ChartArea Area => this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
 
-  public \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 ParentViewModel
+  public ChartViewModel ParentViewModel
   {
     get => this.GroupChart?.\u0023\u003Dz3ThQNm3rQ1fp();
   }
@@ -891,7 +891,7 @@ internal sealed class IScichartSurfaceVM :
   {
     get
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 parentViewModel = this.ParentViewModel;
+      ChartViewModel parentViewModel = this.ParentViewModel;
       return parentViewModel == null ? this.\u0023\u003Dz_BSxov_qh\u0024r8 : parentViewModel.ShowLegend;
     }
     set
@@ -910,7 +910,7 @@ internal sealed class IScichartSurfaceVM :
   {
     get
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 parentViewModel = this.ParentViewModel;
+      ChartViewModel parentViewModel = this.ParentViewModel;
       return parentViewModel == null ? this.\u0023\u003Dzp9yX6hrHRIBY : parentViewModel.ShowOverview;
     }
     set
@@ -929,7 +929,7 @@ internal sealed class IScichartSurfaceVM :
   {
     get
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 parentViewModel = this.ParentViewModel;
+      ChartViewModel parentViewModel = this.ParentViewModel;
       return parentViewModel == null ? this.\u0023\u003Dzw_LOBOuAUrZC : parentViewModel.MinimumRange;
     }
     set

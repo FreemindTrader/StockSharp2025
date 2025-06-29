@@ -112,7 +112,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     {
       case IScichartSurfaceVM tdnKj06Uu87Wzk09Wj:
         return new int?(tdnKj06Uu87Wzk09Wj.MinimumRange);
-      case \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 zgziIlo367a8J0vVw6:
+      case ChartViewModel zgziIlo367a8J0vVw6:
         return new int?(zgziIlo367a8J0vVw6.MinimumRange);
       default:
         return new int?();

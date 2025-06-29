@@ -67,7 +67,7 @@ public class Chart :
     DataType2 = Extensions.TimeFrame(TimeSpan.FromMinutes(5.0))
   };
   
-  private readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 \u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
+  private readonly ChartViewModel \u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
   
   private readonly SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg> _indicatorMap = new SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>();
   
@@ -127,7 +127,7 @@ public class Chart :
     Chart.\u0023\u003DzRgOqXl_UCNpCcsODKLfs7Ks\u003D ucNpCcsOdkLfs7Ks = new Chart.\u0023\u003DzRgOqXl_UCNpCcsODKLfs7Ks\u003D();
     ucNpCcsOdkLfs7Ks.\u0023\u003DzRRvwDu67s9Rm = this;
     this.InitializeComponent();
-    this.DataContext = (object) (this.\u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6());
+    this.DataContext = (object) (this.\u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D = new ChartViewModel());
     this.\u0023\u003Dz3ThQNm3rQ1fp().\u0023\u003DzgNd4ReliYq4x(new Action<Order>(this.\u0023\u003DzrMNjBJFuBLP3));
     this.\u0023\u003Dz3ThQNm3rQ1fp().\u0023\u003DzqMcw8k8QHzu3(new Action<ChartArea>(this.\u0023\u003DzYhCvVp5ZsuEOxZPGgrZ6vLQ\u003D));
     this.AreaAdding += new Action(this.\u0023\u003DzA\u0024Wg8llSgKSoO3igMVHuEmE\u003D);
@@ -147,7 +147,7 @@ public class Chart :
       "",
       ""
     };
-    \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(new Action(ucNpCcsOdkLfs7Ks.\u0023\u003DzYqlPx6RFcqzqQlN8KA\u003D\u003D));
+    ChartViewModel.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(new Action(ucNpCcsOdkLfs7Ks.\u0023\u003DzYqlPx6RFcqzqQlN8KA\u003D\u003D));
     if (IChartExtensions.TryIndicatorProvider == null)
     {
       IndicatorProvider indicatorProvider = new IndicatorProvider();
@@ -183,7 +183,7 @@ public class Chart :
     }
   }
 
-  internal \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 \u0023\u003Dz3ThQNm3rQ1fp()
+  internal ChartViewModel \u0023\u003Dz3ThQNm3rQ1fp()
   {
     return this.\u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
   }
