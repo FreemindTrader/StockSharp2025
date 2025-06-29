@@ -29,8 +29,8 @@ public class IndicatorAttribute : Attribute
   public IndicatorAttribute(Type type)
   {
     if (type == (Type) null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442707));
-    this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D = TypeHelper.Is<IIndicator>(type, true) ? type : throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428523));
+      throw new ArgumentNullException(XXX.SSS(-539442707));
+    this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D = TypeHelper.Is<IIndicator>(type, true) ? type : throw new ArgumentException(XXX.SSS(-539428523));
   }
 
   /// <summary>Indicator type.</summary>

@@ -107,7 +107,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
     double _param2)
   {
     if (_param2 < 0.0)
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436054));
+      throw new ArgumentException(XXX.SSS(-539436054));
     if (this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.Count == 0)
       return (ChartDrawData.\u0023\u003DzU3TaXFs\u003D) null;
     this.\u0023\u003Dz2CmIkXghdxY9();

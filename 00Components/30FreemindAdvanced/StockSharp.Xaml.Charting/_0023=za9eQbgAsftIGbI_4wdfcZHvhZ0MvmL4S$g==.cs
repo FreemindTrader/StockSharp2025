@@ -31,7 +31,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   private bool \u0023\u003Dzu_GzT8bMWkGK5e7tIw\u003D\u003D;
   private EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> \u0023\u003Dz7F6WbE57tL8z;
   private EventHandler<EventArgs> \u0023\u003DzrN9MkyArV3jJ;
-  private string \u0023\u003Dz2lo_hq36wM_r\u0024Us8fw\u003D\u003D;
+  private string _guid;
   private bool \u0023\u003Dzs0Z9gR9q9AhlP_Xse1ll_RE\u003D;
   private \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3tOndLKZk0aGELbzVxE4VJ9A \u0023\u003DzjIW6bZkM3WeYBMKCvw\u003D\u003D;
   private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzGmZr\u0024oMYjkAL1VmdhsWq7jY\u003D;
@@ -215,8 +215,8 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public string Id
   {
-    get => this.\u0023\u003Dz2lo_hq36wM_r\u0024Us8fw\u003D\u003D;
-    set => this.\u0023\u003Dz2lo_hq36wM_r\u0024Us8fw\u003D\u003D = value;
+    get => this._guid;
+    set => this._guid = value;
   }
 
   public bool AutoTicks

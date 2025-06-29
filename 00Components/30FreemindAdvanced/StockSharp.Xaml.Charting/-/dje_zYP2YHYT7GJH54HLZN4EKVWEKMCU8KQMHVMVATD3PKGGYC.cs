@@ -14,8 +14,8 @@ namespace StockSharp.Xaml.Charting;
 
 internal static class dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd
 {
-  public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430363), typeof (bool), typeof (dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.\u0023\u003DzqcJkhvYEtK_9IQ_Dhw\u003D\u003D)));
-  public static readonly DependencyProperty \u0023\u003DziVSP6OFqTkR8hihgtQ\u003D\u003D = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430346), typeof (bool), typeof (dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.\u0023\u003DzGMStW6rixIDeThlHSw\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.RegisterAttached(XXX.SSS(-539430363), typeof (bool), typeof (dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.\u0023\u003DzqcJkhvYEtK_9IQ_Dhw\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DziVSP6OFqTkR8hihgtQ\u003D\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539430346), typeof (bool), typeof (dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.\u0023\u003DzGMStW6rixIDeThlHSw\u003D\u003D)));
 
   public static bool GetClipToBounds(DependencyObject _param0)
   {

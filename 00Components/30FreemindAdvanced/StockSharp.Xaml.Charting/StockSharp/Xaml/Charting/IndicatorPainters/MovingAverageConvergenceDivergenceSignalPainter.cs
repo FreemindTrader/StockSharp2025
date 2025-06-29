@@ -72,15 +72,15 @@ public class MovingAverageConvergenceDivergenceSignalPainter :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Macd, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442313));
-    PersistableHelper.Load((IPersistable) this.SignalMa, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442385));
+    PersistableHelper.Load((IPersistable) this.Macd, storage, XXX.SSS(-539442313));
+    PersistableHelper.Load((IPersistable) this.SignalMa, storage, XXX.SSS(-539442385));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442313), PersistableHelper.Save((IPersistable) this.Macd));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442385), PersistableHelper.Save((IPersistable) this.SignalMa));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442313), PersistableHelper.Save((IPersistable) this.Macd));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442385), PersistableHelper.Save((IPersistable) this.SignalMa));
   }
 }

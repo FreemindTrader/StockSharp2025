@@ -38,7 +38,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     using (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote fq05jnDg3bOrIrgCjote = this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.SuspendUpdates())
     {
       fq05jnDg3bOrIrgCjote.\u0023\u003DzZreBqCsNdaNN(false);
-      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332423), Array.Empty<object>());
+      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539332423), Array.Empty<object>());
       this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.RenderableSeries.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D = new Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D)));
       Size size = this.\u0023\u003DzMRPYrFQxdo1UO1h10rB90f8\u003D((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D);
       if (this.\u0023\u003DzsGkoBP41VLI4((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, size, out ogQpZalPrDrRrx2Q))
@@ -50,7 +50,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
         \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzMr2eR\u0024whaAA_(this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, ji3RvrDhjH0IDtfw);
         this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.\u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D();
         if (ji3RvrDhjH0IDtfw.\u0023\u003Dz38sEjvRVtcBw().Any<string>())
-          ogQpZalPrDrRrx2Q = new \u0023\u003Dzgg5QOmcWitJriAsXqwM_mn\u0024OgQPZalPRDrRrx2Q\u003D(\u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dz0N9wkruNEA8n2VLn\u0024A\u003D\u003D?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332456) + string.Join(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332456), (IEnumerable<string>) ji3RvrDhjH0IDtfw.\u0023\u003Dz38sEjvRVtcBw()) + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331732) + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString());
+          ogQpZalPrDrRrx2Q = new \u0023\u003Dzgg5QOmcWitJriAsXqwM_mn\u0024OgQPZalPRDrRrx2Q\u003D(\u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dz0N9wkruNEA8n2VLn\u0024A\u003D\u003D?.ToString() + XXX.SSS(-539332456) + string.Join(XXX.SSS(-539332456), (IEnumerable<string>) ji3RvrDhjH0IDtfw.\u0023\u003Dz38sEjvRVtcBw()) + XXX.SSS(-539331732) + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString());
       }
     }
     return ogQpZalPrDrRrx2Q;
@@ -104,17 +104,17 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     bool flag5 = _param1.get_RenderSurface() != null;
     string str = string.Empty;
     if (num == 0)
-      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzZfZaD0daRA_Ayq3hAw\u003D\u003D?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331737);
+      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzZfZaD0daRA_Ayq3hAw\u003D\u003D?.ToString() + XXX.SSS(-539331737);
     if (!flag1)
-      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dz7fmvaUdOaMs43deOXxIUBmxuL2EB\u0024BAvPMeAJ4c\u003D?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331737);
+      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dz7fmvaUdOaMs43deOXxIUBmxuL2EB\u0024BAvPMeAJ4c\u003D?.ToString() + XXX.SSS(-539331737);
     if (!flag2)
-      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzlBYRG1LNre\u0024H9D3BpA\u003D\u003D?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331737);
+      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzlBYRG1LNre\u0024H9D3BpA\u003D\u003D?.ToString() + XXX.SSS(-539331737);
     if (!flag3)
-      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzBtDGwTzEpj7wy4EhQgmbsn5ekSZR?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331737);
+      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzBtDGwTzEpj7wy4EhQgmbsn5ekSZR?.ToString() + XXX.SSS(-539331737);
     if (!flag4)
-      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dz5eJmyrndq8Dw2Juf7A\u003D\u003D?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331737);
+      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dz5eJmyrndq8Dw2Juf7A\u003D\u003D?.ToString() + XXX.SSS(-539331737);
     if (!flag5)
-      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dzz9ZrbqKsk2rEOWELZA\u003D\u003D?.ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331737);
+      str = str + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003Dzz9ZrbqKsk2rEOWELZA\u003D\u003D?.ToString() + XXX.SSS(-539331737);
     if (!string.IsNullOrWhiteSpace(str))
       str += \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString();
     _param3 = string.IsNullOrWhiteSpace(str) ? \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzWsHTUE0\u003D : new \u0023\u003Dzgg5QOmcWitJriAsXqwM_mn\u0024OgQPZalPRDrRrx2Q\u003D(str);
@@ -131,7 +131,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     {
       fq05jnDg3bOrIrgCjote.\u0023\u003DzZreBqCsNdaNN(false);
       if (zryEzCccXGdHkstU1g.\u0023\u003Dzyyh4GZw\u003D.get_ViewportManager() == null)
-        throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331720));
+        throw new InvalidOperationException(XXX.SSS(-539331720));
       zryEzCccXGdHkstU1g.\u0023\u003Dzyyh4GZw\u003D.get_XAxes().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(new Action<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(zryEzCccXGdHkstU1g.\u0023\u003DzYoUR26ISw2UpoBPdXNwkaJzrEw2s));
       zryEzCccXGdHkstU1g.\u0023\u003Dzyyh4GZw\u003D.get_YAxes().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(new Action<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(zryEzCccXGdHkstU1g.\u0023\u003Dz0tlnCwc6fL_hMd81kJD8Xf8mm6KC));
     }
@@ -175,7 +175,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
       ji3RvrDhjH0IDtfw1 = new \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D();
       return ji3RvrDhjH0IDtfw1;
     }
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331812), new object[3]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539331812), new object[3]
     {
       (object) zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.GetType().Name,
       (object) zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz_li6Ttc\u003D.Width,
@@ -186,7 +186,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dzoc6wScE\u003D = new \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D[count];
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz8O95DKv93zY9 = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D[count];
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D toOujo13K1Ho2jpA = zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D>();
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) toOujo13K1Ho2jpA, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331593));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) toOujo13K1Ho2jpA, XXX.SSS(-539331593));
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz4ASrz8c\u0024JOa7(zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D);
     for (int index = 0; index < count; ++index)
     {

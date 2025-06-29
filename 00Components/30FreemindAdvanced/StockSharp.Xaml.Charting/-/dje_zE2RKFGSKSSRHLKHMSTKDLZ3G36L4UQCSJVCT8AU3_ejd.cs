@@ -17,25 +17,25 @@ namespace StockSharp.Xaml.Charting;
 
 internal static class ThemeManager
 {
-  public static readonly DependencyProperty \u0023\u003DzOJJsEsQ\u003D = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440425), typeof (string), typeof (ThemeManager), (PropertyMetadata) new FrameworkPropertyMetadata((object) string.Empty, FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(ThemeManager.\u0023\u003Dzb3YxwRaSuvYM)));
+  public static readonly DependencyProperty \u0023\u003DzOJJsEsQ\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539440425), typeof (string), typeof (ThemeManager), (PropertyMetadata) new FrameworkPropertyMetadata((object) string.Empty, FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(ThemeManager.\u0023\u003Dzb3YxwRaSuvYM)));
   private static EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> \u0023\u003Dz8Fi7DbieAZ0u;
   private static readonly IDictionary<string, ResourceDictionary> \u0023\u003DzMBUtRf9zXbZf = (IDictionary<string, ResourceDictionary>) new Dictionary<string, ResourceDictionary>();
   private static \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D \u0023\u003DzObiFrX5IN\u0024C0;
   private static readonly Dictionary<string, \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D> \u0023\u003Dz782V6KE\u00242buI = new Dictionary<string, \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D>();
   public static IList<string> \u0023\u003DzPNNG5dU2KvYM = (IList<string>) new List<string>(7)
   {
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539333680),
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539333725),
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426954),
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539333747),
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427003),
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539333758),
-    \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539334040)
+    XXX.SSS(-539333680),
+    XXX.SSS(-539333725),
+    XXX.SSS(-539426954),
+    XXX.SSS(-539333747),
+    XXX.SSS(-539427003),
+    XXX.SSS(-539333758),
+    XXX.SSS(-539334040)
   };
 
   static ThemeManager()
   {
-    ThemeManager.\u0023\u003DzwI1vePI9DZf8().\u0023\u003DzeHF6BUxLFClh(ThemeManager.\u0023\u003DzB0x3mHFPBNZB(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427003)));
+    ThemeManager.\u0023\u003DzwI1vePI9DZf8().\u0023\u003DzeHF6BUxLFClh(ThemeManager.\u0023\u003DzB0x3mHFPBNZB(XXX.SSS(-539427003)));
   }
 
   public static string GetTheme(DependencyObject _param0)
@@ -109,7 +109,7 @@ internal static class ThemeManager
   public static \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D \u0023\u003DzrILtKW7bADnV(
     string _param0)
   {
-    _param0 = string.IsNullOrEmpty(_param0) ? \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427003) : _param0;
+    _param0 = string.IsNullOrEmpty(_param0) ? XXX.SSS(-539427003) : _param0;
     \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D gmt9VmM5IkNVtVwybkk;
     if (!ThemeManager.\u0023\u003Dz782V6KE\u00242buI.TryGetValue(_param0, out gmt9VmM5IkNVtVwybkk))
     {
@@ -136,7 +136,7 @@ internal static class ThemeManager
 
   private static Uri \u0023\u003DzDT70eQaaSY2I(string _param0)
   {
-    return _param0.ToUpper(CultureInfo.InvariantCulture).Contains(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539334027)) ? new Uri(_param0, UriKind.Relative) : new Uri(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539334073), (object) typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd).Assembly.\u0023\u003DzFARAiudukAjJ(), (object) _param0), UriKind.Relative);
+    return _param0.ToUpper(CultureInfo.InvariantCulture).Contains(XXX.SSS(-539334027)) ? new Uri(_param0, UriKind.Relative) : new Uri(string.Format(XXX.SSS(-539334073), (object) typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd).Assembly.\u0023\u003DzFARAiudukAjJ(), (object) _param0), UriKind.Relative);
   }
 
   private static void \u0023\u003DzeHF6BUxLFClh(this FrameworkElement _param0, string _param1)
@@ -166,7 +166,7 @@ internal static class ThemeManager
     FrameworkElement frameworkElement = _param0 as FrameworkElement;
     if (string.IsNullOrEmpty(str) || frameworkElement == null)
       return;
-    if (str.ToUpper(CultureInfo.InvariantCulture) == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539334110))
+    if (str.ToUpper(CultureInfo.InvariantCulture) == XXX.SSS(-539334110))
     {
       Random random = new Random();
       str = ThemeManager.\u0023\u003DzBG3JZN5PsfMx().ElementAt<string>(random.Next(ThemeManager.\u0023\u003DzBG3JZN5PsfMx().Count<string>()));

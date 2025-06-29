@@ -20,20 +20,20 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ
   {
     this.\u0023\u003Dz6DunSwc\u003D = new string[14]
     {
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434496),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439409),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439396),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427791),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427833),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427489),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439441),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439426),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439480),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434281),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434223),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434010),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434227),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439466)
+      XXX.SSS(-539434496),
+      XXX.SSS(-539439409),
+      XXX.SSS(-539439396),
+      XXX.SSS(-539427791),
+      XXX.SSS(-539427833),
+      XXX.SSS(-539427489),
+      XXX.SSS(-539439441),
+      XXX.SSS(-539439426),
+      XXX.SSS(-539439480),
+      XXX.SSS(-539434281),
+      XXX.SSS(-539434223),
+      XXX.SSS(-539434010),
+      XXX.SSS(-539434227),
+      XXX.SSS(-539439466)
     };
     this.\u0023\u003DzU1bOEY1Ldlir6qBx51Rdl_k\u003D = new Dictionary<Type, string[]>()
     {
@@ -41,47 +41,47 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ
         typeof (TextAnnotation),
         new string[2]
         {
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427542),
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440794)
+          XXX.SSS(-539427542),
+          XXX.SSS(-539440794)
         }
       },
       {
         typeof (LineAnnotationBase),
         new string[2]
         {
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434289),
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641)
+          XXX.SSS(-539434289),
+          XXX.SSS(-539434641)
         }
       },
       {
         typeof (LineArrowAnnotation),
         new string[2]
         {
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440782),
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440830)
+          XXX.SSS(-539440782),
+          XXX.SSS(-539440830)
         }
       },
       {
         typeof (LineAnnotationWithLabelsBase),
         new string[2]
         {
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434314),
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434362)
+          XXX.SSS(-539434314),
+          XXX.SSS(-539434362)
         }
       },
       {
         typeof (HorizontalLineAnnotation),
         new string[1]
         {
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427475)
+          XXX.SSS(-539427475)
         }
       },
       {
         typeof (VerticalLineAnnotation),
         new string[2]
         {
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440851),
-          \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427465)
+          XXX.SSS(-539440851),
+          XXX.SSS(-539427465)
         }
       }
     };
@@ -97,19 +97,19 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ
     XmlReader _param2)
   {
     base.\u0023\u003Dz4EJs3pc\u003D(_param1, _param2);
-    string typeName1 = _param2[\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440843)];
+    string typeName1 = _param2[XXX.SSS(-539440843)];
     if (typeName1 != null)
     {
       Type type = Type.GetType(typeName1);
-      _param1.set_X1((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434477), type));
-      _param1.set_X2((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434243), type));
+      _param1.set_X1((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(XXX.SSS(-539434477), type));
+      _param1.set_X2((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(XXX.SSS(-539434243), type));
     }
-    string typeName2 = _param2[\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440887)];
+    string typeName2 = _param2[XXX.SSS(-539440887)];
     if (typeName2 == null)
       return;
     Type type1 = Type.GetType(typeName2);
-    _param1.set_Y1((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434262), type1));
-    _param1.set_Y2((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434252), type1));
+    _param1.set_Y1((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(XXX.SSS(-539434262), type1));
+    _param1.set_Y2((IComparable) _param2.\u0023\u003Dzm2nn9hA\u003D(XXX.SSS(-539434252), type1));
   }
 
   public override void \u0023\u003Dz7SZ\u0024Lrw\u003D(
@@ -120,15 +120,15 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ
     if (_param1.get_X1() != null)
     {
       Type type = _param1.get_X1().GetType();
-      _param2.WriteAttributeString(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440843), type.\u0023\u003Dzb_Ih6a0\u003D());
-      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434477));
-      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434243));
+      _param2.WriteAttributeString(XXX.SSS(-539440843), type.\u0023\u003Dzb_Ih6a0\u003D());
+      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, XXX.SSS(-539434477));
+      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, XXX.SSS(-539434243));
     }
     if (_param1.get_Y1() == null)
       return;
     Type type1 = _param1.get_Y1().GetType();
-    _param2.WriteAttributeString(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440887), type1.\u0023\u003Dzb_Ih6a0\u003D());
-    _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434262));
-    _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434252));
+    _param2.WriteAttributeString(XXX.SSS(-539440887), type1.\u0023\u003Dzb_Ih6a0\u003D());
+    _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, XXX.SSS(-539434262));
+    _param2.\u0023\u003DzVjDFK7Q\u003D((object) _param1, XXX.SSS(-539434252));
   }
 }

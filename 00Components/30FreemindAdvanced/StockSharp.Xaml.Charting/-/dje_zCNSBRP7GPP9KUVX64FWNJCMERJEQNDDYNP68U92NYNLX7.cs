@@ -31,9 +31,9 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
   INotifyPropertyChanged
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzSQ9PALvdLOX4 = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332236), typeof (string), typeof (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003DznWImvCruq8sQ)));
+  public static readonly DependencyProperty \u0023\u003DzSQ9PALvdLOX4 = DependencyProperty.RegisterAttached(XXX.SSS(-539332236), typeof (string), typeof (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003DznWImvCruq8sQ)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dz3Y_OZ80lXJkE = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442206), typeof (bool), typeof (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003Dzgxjo2OnorrBU)));
+  public static readonly DependencyProperty \u0023\u003Dz3Y_OZ80lXJkE = DependencyProperty.Register(XXX.SSS(-539442206), typeof (bool), typeof (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003Dzgxjo2OnorrBU)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   internal static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzenwCc\u0024sVGsge = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -149,10 +149,10 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
   {
     base.OnApplyTemplate();
     this.\u0023\u003DzleRWWIS9Sb_X();
-    this.\u0023\u003DzBexXE3VONLO6 = this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332257)) as ContentPresenter;
-    this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D = this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332309)) as TabControl;
-    this.\u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D = this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332302)) as StackPanel;
-    this.\u0023\u003DzF8_YcFVDbTFB = this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332332)) as Canvas;
+    this.\u0023\u003DzBexXE3VONLO6 = this.GetTemplateChild(XXX.SSS(-539332257)) as ContentPresenter;
+    this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D = this.GetTemplateChild(XXX.SSS(-539332309)) as TabControl;
+    this.\u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D = this.GetTemplateChild(XXX.SSS(-539332302)) as StackPanel;
+    this.\u0023\u003DzF8_YcFVDbTFB = this.GetTemplateChild(XXX.SSS(-539332332)) as Canvas;
     if (this.ItemsSource == null)
       return;
     this.\u0023\u003DzdHZNWU3eA28h((IEnumerable) null, this.ItemsSource);
@@ -216,14 +216,14 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
       return;
     removeItem.Content = (object) null;
     this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D.Items.Remove((object) removeItem);
-    this.\u0023\u003Dz15moWio\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332145));
+    this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539332145));
   }
 
   private void \u0023\u003Dzx3xNOxupdPEo(
     \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
   {
     if (!_param1.\u0023\u003DzR8SPjvFW2FAx())
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332134));
+      throw new ArgumentException(XXX.SSS(-539332134));
     this.\u0023\u003DzBexXE3VONLO6.Content = (object) null;
     this.\u0023\u003Dzg0gWX4E\u003D.Remove(_param1);
     _param1.\u0023\u003DzcXGZaBR0mVD3(false);
@@ -299,7 +299,7 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
     TabItem newItem = tabItem;
     this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D.Items.Add((object) newItem);
     this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D.SelectedItem = (object) newItem;
-    this.\u0023\u003Dz15moWio\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332145));
+    this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539332145));
   }
 
   public void \u0023\u003DzjSk6Jvc\u003D(
@@ -353,7 +353,7 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
       int num = this.\u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D.Children.IndexOf((UIElement) this.\u0023\u003DzzXyefThIl4Ak.PaneElement);
       if (num < 0)
       {
-        \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzUuEJfBE\u003D(this.\u0023\u003DzzXyefThIl4Ak.IsTabbed, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332501));
+        \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzUuEJfBE\u003D(this.\u0023\u003DzzXyefThIl4Ak.IsTabbed, XXX.SSS(-539332501));
         int count = this.\u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D.Children.Count;
         this.\u0023\u003DzBq2lcgtVrsr_ = count > 0 ? dn1ebi1vn37xdjks.\u0023\u003Dq1qGQwgs_F6ae19p24dqRj6GgdRzMrVsVc3m6iIKHPR2xR8NNZoxf3Wma3slxNuB2(this.\u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D.Children[count - 1]) : this.\u0023\u003Dzg0gWX4E\u003D.First<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzje8bZnYPCcLUKo6EWw\u003D\u003D ?? (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzje8bZnYPCcLUKo6EWw\u003D\u003D = new Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool>(dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAVi2aBRehqWFfXq9jYMUhjI\u003D)));
       }
@@ -425,7 +425,7 @@ internal sealed class dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2
     DependencyPropertyChangedEventArgs _param1)
   {
     if (!(_param0 is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd))
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332532));
+      throw new InvalidOperationException(XXX.SSS(-539332532));
     string newValue = _param1.NewValue as string;
     string oldValue = _param1.OldValue as string;
     if (string.IsNullOrEmpty(newValue))

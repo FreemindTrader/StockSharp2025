@@ -20,11 +20,11 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003DzG8iU0LHRhO7j = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428243), typeof (bool), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((object) false));
+  DependencyProperty \u0023\u003DzG8iU0LHRhO7j = DependencyProperty.Register(XXX.SSS(-539428243), typeof (bool), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((object) false));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzgKwtLGQKgy\u0024Y = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428230), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllVisibleSeries));
+  public static readonly DependencyProperty \u0023\u003DzgKwtLGQKgy\u0024Y = DependencyProperty.Register(XXX.SSS(-539428230), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllVisibleSeries));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzE7h5hUE7Vu4g = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428283), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DzE7h5hUE7Vu4g = DependencyProperty.Register(XXX.SSS(-539428283), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   protected Point \u0023\u003DzeAqKwx8\u003D = new Point(double.NaN, double.NaN);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]

@@ -14,7 +14,7 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal class BoxAnnotation : AnnotationBase
 {
-  public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539343540), typeof (CornerRadius), typeof (BoxAnnotation), new PropertyMetadata((object) new CornerRadius()));
+  public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(XXX.SSS(-539343540), typeof (CornerRadius), typeof (BoxAnnotation), new PropertyMetadata((object) new CornerRadius()));
 
   public BoxAnnotation() => this.DefaultStyleKey = (object) typeof (BoxAnnotation);
 
@@ -27,7 +27,7 @@ internal class BoxAnnotation : AnnotationBase
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539343676));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(XXX.SSS(-539343676));
   }
 
   protected override Cursor GetSelectedCursor() => Cursors.SizeAll;

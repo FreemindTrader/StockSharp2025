@@ -24,25 +24,25 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 public class AlligatorPainter : BaseChartIndicatorPainter<Alligator>
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly IChartLineElement \u0023\u003Dzhbxo8_u3o4LM4hVvNIChcJE\u003D;
+  private readonly IChartLineElement _lips;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly IChartLineElement \u0023\u003Dz2JC2sIKxOe2wn1s69jRzXRA\u003D;
+  private readonly IChartLineElement _teeth = null;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly IChartLineElement \u0023\u003DzCmkJSWMuSM6EoQwLKA\u003D\u003D;
+  private readonly IChartLineElement _jaw;
 
   /// <summary>Create instance.</summary>
   public AlligatorPainter()
   {
     IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Alligator>.\u0023\u003Dzl7RImWAQVb2K();
-    this.\u0023\u003Dzhbxo8_u3o4LM4hVvNIChcJE\u003D = (IChartLineElement) new ChartLineElement()
+    this._lips = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()
     };
-    this.\u0023\u003Dz2JC2sIKxOe2wn1s69jRzXRA\u003D = (IChartLineElement) new ChartLineElement()
+    this._teeth = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()
     };
-    this.\u0023\u003DzCmkJSWMuSM6EoQwLKA\u003D\u003D = (IChartLineElement) new ChartLineElement()
+    this._jaw = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()
     };
@@ -55,19 +55,19 @@ public class AlligatorPainter : BaseChartIndicatorPainter<Alligator>
   /// <see cref="P:StockSharp.Algo.Indicators.Alligator.Lips" />.
   ///     </summary>
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Lips", Description = "Lips")]
-  public IChartLineElement Lips => this.\u0023\u003Dzhbxo8_u3o4LM4hVvNIChcJE\u003D;
+  public IChartLineElement Lips => this._lips;
 
   /// <summary>
   /// <see cref="P:StockSharp.Algo.Indicators.Alligator.Teeth" />.
   ///     </summary>
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Teeth", Description = "Teeth")]
-  public IChartLineElement Teeth => this.\u0023\u003Dz2JC2sIKxOe2wn1s69jRzXRA\u003D;
+  public IChartLineElement Teeth => this._teeth;
 
   /// <summary>
   /// <see cref="P:StockSharp.Algo.Indicators.Alligator.Jaw" />.
   ///     </summary>
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Jaw", Description = "Jaw")]
-  public IChartLineElement Jaw => this.\u0023\u003DzCmkJSWMuSM6EoQwLKA\u003D\u003D;
+  public IChartLineElement Jaw => this._jaw;
 
   /// <inheritdoc />
   protected override bool OnDraw(
@@ -81,17 +81,17 @@ public class AlligatorPainter : BaseChartIndicatorPainter<Alligator>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Lips, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442714));
-    PersistableHelper.Load((IPersistable) this.Teeth, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442693));
-    PersistableHelper.Load((IPersistable) this.Jaw, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442737));
+    PersistableHelper.Load((IPersistable) this.Lips, storage, XXX.SSS(-539442714));
+    PersistableHelper.Load((IPersistable) this.Teeth, storage, XXX.SSS(-539442693));
+    PersistableHelper.Load((IPersistable) this.Jaw, storage, XXX.SSS(-539442737));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442714), PersistableHelper.Save((IPersistable) this.Lips));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442693), PersistableHelper.Save((IPersistable) this.Teeth));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442737), PersistableHelper.Save((IPersistable) this.Jaw));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442714), PersistableHelper.Save((IPersistable) this.Lips));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442693), PersistableHelper.Save((IPersistable) this.Teeth));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442737), PersistableHelper.Save((IPersistable) this.Jaw));
   }
 }

@@ -77,16 +77,16 @@ public class ChartVolatilitySmileElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430006)))
+    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539430006)))
     {
       this.RemoveChildElement((IChartElement) this.Values);
-      PersistableHelper.Load((IPersistable) this.Values, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430006));
+      PersistableHelper.Load((IPersistable) this.Values, storage, XXX.SSS(-539430006));
       this.AddChildElement((IChartElement) this.Values);
     }
-    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429991)))
+    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539429991)))
       return;
     this.RemoveChildElement((IChartElement) this.Smile);
-    PersistableHelper.Load((IPersistable) this.Smile, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429991));
+    PersistableHelper.Load((IPersistable) this.Smile, storage, XXX.SSS(-539429991));
     this.AddChildElement((IChartElement) this.Smile);
   }
 
@@ -95,8 +95,8 @@ public class ChartVolatilitySmileElement :
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430006), PersistableHelper.Save((IPersistable) this.Values));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429991), PersistableHelper.Save((IPersistable) this.Smile));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539430006), PersistableHelper.Save((IPersistable) this.Values));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539429991), PersistableHelper.Save((IPersistable) this.Smile));
   }
 
   internal override ChartVolatilitySmileElement \u0023\u003Dz3MbNd8U\u003D(

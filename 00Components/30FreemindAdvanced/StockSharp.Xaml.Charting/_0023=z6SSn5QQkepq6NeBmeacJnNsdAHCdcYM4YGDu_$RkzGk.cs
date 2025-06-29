@@ -151,7 +151,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
   public CandlePriceLevel \u0023\u003DzHH6Br74\u003D(double _param1, double _param2)
   {
     if (_param2 <= 0.0)
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436960), (object) _param2, LocalizedStrings.InvalidValue);
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539436960), (object) _param2, LocalizedStrings.InvalidValue);
     lock (this.\u0023\u003DzqaMm3lQ\u003D)
     {
       \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D ww2IeiAf0VerjZev4 = new \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D();
@@ -176,7 +176,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
     double _param1)
   {
     if (_param1 <= 0.0)
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436939), (object) _param1, LocalizedStrings.InvalidValue);
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539436939), (object) _param1, LocalizedStrings.InvalidValue);
     lock (this.\u0023\u003DzqaMm3lQ\u003D)
     {
       (KeyValuePair<double, CandlePriceLevel>[], SortedDictionary<double, CandlePriceLevel>, Decimal) tuple;

@@ -24,6 +24,6 @@ internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D
   private static void \u0023\u003Dzu\u0024i\u0024b\u0024xmE81L<T>()
   {
     if (!typeof (T).IsInterface)
-      throw new Exception(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441071), (object) typeof (T)));
+      throw new Exception(string.Format(XXX.SSS(-539441071), (object) typeof (T)));
   }
 }

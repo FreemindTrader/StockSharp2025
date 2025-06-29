@@ -25,9 +25,9 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003DzNRygy3vTBpTh = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428079), typeof (bool), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd), new PropertyMetadata((object) true));
+  DependencyProperty \u0023\u003DzNRygy3vTBpTh = DependencyProperty.RegisterAttached(XXX.SSS(-539428079), typeof (bool), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd), new PropertyMetadata((object) true));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzYUs_mQPEOnkt = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429176), typeof (\u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00249CwG0Zwlkee45cZ96xFA\u0024Wy), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd.\u0023\u003DzFO8zq6HsiQjTOG\u0024B6g\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzYUs_mQPEOnkt = DependencyProperty.Register(XXX.SSS(-539429176), typeof (\u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00249CwG0Zwlkee45cZ96xFA\u0024Wy), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd.\u0023\u003DzFO8zq6HsiQjTOG\u0024B6g\u003D\u003D)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Dictionary<dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd>> \u0023\u003DzIG74tcJ5rDynZ21mNm2Rm5I\u003D = new Dictionary<dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd>>();
 
@@ -196,7 +196,7 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
 
   private void \u0023\u003Dz15moWio\u003D(object _param1, PropertyChangedEventArgs _param2)
   {
-    if (!(_param2.PropertyName == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429164)))
+    if (!(_param2.PropertyName == XXX.SSS(-539429164)))
       return;
     this.\u0023\u003Dz_wtru8oSZoY9(new Point());
   }

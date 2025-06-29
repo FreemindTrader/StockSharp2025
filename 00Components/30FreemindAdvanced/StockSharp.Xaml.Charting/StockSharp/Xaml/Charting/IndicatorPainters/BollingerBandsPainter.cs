@@ -47,7 +47,7 @@ public class BollingerBandsPainter : BaseChartIndicatorPainter<BollingerBands>
     this.AddChildElement((IChartElement) (this.\u0023\u003DzwZGesrtF1zqkW0dOkS\u0024KEVs\u003D = (IChartLineElement) chartLineElement));
     chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) chartBandElement.Line1, LocalizedStrings.UpperLine);
     chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) chartBandElement.Line2, LocalizedStrings.LowerLine);
-    chartBandElement.Line2.\u0023\u003DziQx4gl4\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433418));
+    chartBandElement.Line2.\u0023\u003DziQx4gl4\u003D(XXX.SSS(-539433418));
   }
 
   /// <summary>
@@ -74,15 +74,15 @@ public class BollingerBandsPainter : BaseChartIndicatorPainter<BollingerBands>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Band, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443161));
-    PersistableHelper.Load((IPersistable) this.MovingAverage, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443144));
+    PersistableHelper.Load((IPersistable) this.Band, storage, XXX.SSS(-539443161));
+    PersistableHelper.Load((IPersistable) this.MovingAverage, storage, XXX.SSS(-539443144));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443161), PersistableHelper.Save((IPersistable) this.Band));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443144), PersistableHelper.Save((IPersistable) this.MovingAverage));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443161), PersistableHelper.Save((IPersistable) this.Band));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443144), PersistableHelper.Save((IPersistable) this.MovingAverage));
   }
 }

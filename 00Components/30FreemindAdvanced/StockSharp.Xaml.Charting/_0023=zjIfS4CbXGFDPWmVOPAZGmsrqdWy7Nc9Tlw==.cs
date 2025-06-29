@@ -16,7 +16,7 @@ internal sealed class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private static Dictionary<string, List<ToggleButton>> \u0023\u003Dz4zWJLHVc016J = new Dictionary<string, List<ToggleButton>>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzXrmaHuc\u003D = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329067), typeof (string), typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003D), new PropertyMetadata((object) string.Empty, new PropertyChangedCallback(\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003D.\u0023\u003DzJbpy7\u00247ugE8z)));
+  public static readonly DependencyProperty \u0023\u003DzXrmaHuc\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539329067), typeof (string), typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003D), new PropertyMetadata((object) string.Empty, new PropertyChangedCallback(\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003D.\u0023\u003DzJbpy7\u00247ugE8z)));
 
   public static void SetGroupName(ToggleButton _param0, string _param1)
   {

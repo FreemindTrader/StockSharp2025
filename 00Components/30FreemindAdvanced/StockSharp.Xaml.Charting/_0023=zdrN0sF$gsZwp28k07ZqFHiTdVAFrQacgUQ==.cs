@@ -14,7 +14,7 @@ using System.Windows;
 #nullable disable
 internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D
 {
-  public static readonly DependencyProperty \u0023\u003DzvwIiO5ko1yGZ = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441491), typeof (string), typeof (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D), new PropertyMetadata((object) null, new PropertyChangedCallback(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzGDCsRX7fHtlf)));
+  public static readonly DependencyProperty \u0023\u003DzvwIiO5ko1yGZ = DependencyProperty.RegisterAttached(XXX.SSS(-539441491), typeof (string), typeof (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D), new PropertyMetadata((object) null, new PropertyChangedCallback(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzGDCsRX7fHtlf)));
   internal static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzovkpR0EIGwzr = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
 
   public static void SetHorizontalChartGroup(DependencyObject _param0, string _param1)
@@ -32,7 +32,7 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
     DependencyPropertyChangedEventArgs _param1)
   {
     if (!(_param0 is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd))
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441482));
+      throw new InvalidOperationException(XXX.SSS(-539441482));
     string newValue = _param1.NewValue as string;
     string oldValue = _param1.OldValue as string;
     if (string.IsNullOrEmpty(newValue))

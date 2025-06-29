@@ -21,7 +21,7 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd : ContentControl
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzZXWtkeeJbx_j = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332590), typeof (DataTemplate), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.\u0023\u003Dz\u0024YszLknqkUvS)));
+  public static readonly DependencyProperty \u0023\u003DzZXWtkeeJbx_j = DependencyProperty.Register(XXX.SSS(-539332590), typeof (DataTemplate), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.\u0023\u003Dz\u0024YszLknqkUvS)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private EventHandler<DragDeltaEventArgs> \u0023\u003DzKoryGH8\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -109,9 +109,9 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.\u0023\u003DzBexXE3VONLO6 = (ContentPresenter) this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332359));
-    this.\u0023\u003DzIcIt5i8Z\u0024_b2 = (Grid) this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332410));
-    this.\u0023\u003DzJUyG4Ire5BiC = (Thumb) this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539332400));
+    this.\u0023\u003DzBexXE3VONLO6 = (ContentPresenter) this.GetTemplateChild(XXX.SSS(-539332359));
+    this.\u0023\u003DzIcIt5i8Z\u0024_b2 = (Grid) this.GetTemplateChild(XXX.SSS(-539332410));
+    this.\u0023\u003DzJUyG4Ire5BiC = (Thumb) this.GetTemplateChild(XXX.SSS(-539332400));
     if (this.\u0023\u003DzJUyG4Ire5BiC != null)
     {
       this.\u0023\u003DzJUyG4Ire5BiC.DragDelta += new DragDeltaEventHandler(this.\u0023\u003DzlMFKvzCL8Fzd);

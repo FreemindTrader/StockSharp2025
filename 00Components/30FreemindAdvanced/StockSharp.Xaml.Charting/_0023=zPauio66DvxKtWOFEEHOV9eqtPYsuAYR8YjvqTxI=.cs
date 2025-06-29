@@ -20,7 +20,7 @@ internal struct \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(
 
   public override string ToString()
   {
-    return string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436650), (object) this.\u0023\u003DzMANe_Ig\u003D, (object) this.\u0023\u003Dz0HHYg1s\u003D);
+    return string.Format(XXX.SSS(-539436650), (object) this.\u0023\u003DzMANe_Ig\u003D, (object) this.\u0023\u003Dz0HHYg1s\u003D);
   }
 
   [SpecialName]

@@ -102,7 +102,7 @@ internal abstract class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7e
     \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB _param1)
   {
     if (this.\u0023\u003DzXU6fBD\u0024oSmCR() != null)
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329988));
+      throw new InvalidOperationException(XXX.SSS(-539329988));
     this.\u0023\u003Dz\u0024lVBDTRQbqUn(_param1);
     this.\u0023\u003DzY0x9JtY\u003D();
     this.\u0023\u003DzYI36Ggg\u003D();
@@ -141,8 +141,8 @@ internal abstract class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7e
     AxisMarkerAnnotation markerAnnotation2 = markerAnnotation1;
     this.\u0023\u003Dzg7Lkx8DryHNN[_param1] = markerAnnotation2;
     this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzIeZhoes\u003D(this.RootElem, (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) markerAnnotation2, (object) markerAnnotation2);
-    markerAnnotation2.SetBindings(AnnotationBase.XAxisIdProperty, (object) _param2, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427791));
-    markerAnnotation2.SetBindings(AnnotationBase.YAxisIdProperty, (object) _param2, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427833));
+    markerAnnotation2.SetBindings(AnnotationBase.XAxisIdProperty, (object) _param2, XXX.SSS(-539427791));
+    markerAnnotation2.SetBindings(AnnotationBase.YAxisIdProperty, (object) _param2, XXX.SSS(-539427833));
     AxisMarkerAnnotation markerAnnotation3 = markerAnnotation2;
     DependencyProperty isHiddenProperty = AnnotationBase.IsHiddenProperty;
     BoolAnyConverter conv = new BoolAnyConverter();

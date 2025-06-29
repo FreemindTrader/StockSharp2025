@@ -131,7 +131,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf = vals;
     lvtppRwsYcyoelU8.\u0023\u003DztbpwouM\u003D = getValue;
     if (lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442756));
+      throw new ArgumentNullException(XXX.SSS(-539442756));
     return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, lvtppRwsYcyoelU8.\u0023\u003DzVvGg4nk2a5lf.Count, new Func<int, DateTime>(lvtppRwsYcyoelU8.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(lvtppRwsYcyoelU8.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, (Func<int, int>) null);
   }
 
@@ -146,7 +146,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf = vals;
     kiaDl76b0Nyu42rxJq.\u0023\u003DzRRvwDu67s9Rm = this;
     if (kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442767));
+      throw new ArgumentNullException(XXX.SSS(-539442767));
     return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, kiaDl76b0Nyu42rxJq.\u0023\u003DzVvGg4nk2a5lf.Count, new Func<int, DateTime>(kiaDl76b0Nyu42rxJq.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(kiaDl76b0Nyu42rxJq.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, new Func<int, int>(kiaDl76b0Nyu42rxJq.\u0023\u003DzI5IxWb1lSuTpD9hsyw\u003D\u003D));
   }
 
@@ -166,7 +166,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRRvwDu67s9Rm = this;
     v4vdZv8GtEzAmB0rzFq.\u0023\u003Dz4e3i1kk9sNEQ = vals2;
     if (v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442806));
+      throw new ArgumentNullException(XXX.SSS(-539442806));
     return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, v4vdZv8GtEzAmB0rzFq.\u0023\u003DzaLhe6nMpxxxN.Count, new Func<int, DateTime>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), new Func<int, double>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzI5IxWb1lSuTpD9hsyw\u003D\u003D), (Func<int, int>) null);
   }
 
@@ -191,9 +191,9 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     jq9Llz3ahZ2LrQl4.\u0023\u003DzRRvwDu67s9Rm = this;
     jq9Llz3ahZ2LrQl4.\u0023\u003Dz4e3i1kk9sNEQ = vals2;
     if (jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442785));
+      throw new ArgumentNullException(XXX.SSS(-539442785));
     if (jq9Llz3ahZ2LrQl4.\u0023\u003Dz6BEwh7k\u003D == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442800));
+      throw new ArgumentNullException(XXX.SSS(-539442800));
     return BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz4W7cGG\u0024hFbB\u0024(element, jq9Llz3ahZ2LrQl4.\u0023\u003DzaLhe6nMpxxxN.Count, new Func<int, DateTime>(jq9Llz3ahZ2LrQl4.\u0023\u003DzoedkyJHxKB4GO9h_Zg\u003D\u003D), new Func<int, double>(jq9Llz3ahZ2LrQl4.\u0023\u003DzI1EnfZppMTtCDsn2yw\u003D\u003D), (Func<int, double>) null, (Func<int, int>) null);
   }
 
@@ -211,7 +211,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     doDcwiev7trI4Ny0.\u0023\u003Dz5Kb6DbUnfYSy = _param4;
     doDcwiev7trI4Ny0.\u0023\u003DzSD3FqrQ\u003D = _param5;
     if (!(_param0 is \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X uuxsVv2V6fHz4Vm4X))
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443099));
+      throw new InvalidOperationException(XXX.SSS(-539443099));
     return uuxsVv2V6fHz4Vm4X.\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Range(0, _param1).Select<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(new Func<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(doDcwiev7trI4Ny0.\u0023\u003DzDejq7n39xBdAUCa3_A\u003D\u003D)).Cast<ChartDrawData.IDrawValue>(), _param1));
   }
 
@@ -226,9 +226,9 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
       if (chart == null)
       {
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(24, 1);
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443127));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539443127));
         interpolatedStringHandler.AppendFormatted<IChartIndicatorElement>(this.Element);
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443156));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539443156));
         throw new InvalidOperationException(interpolatedStringHandler.ToStringAndClear());
       }
       if (chart.ShowNonFormedIndicators || indicatorValue.IsFormed)
@@ -252,7 +252,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     vqd1Qhu2nAw1nzwT0.\u0023\u003DzRRvwDu67s9Rm = this;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D = element;
     if (!CollectionHelper.TryAdd<IChartElement>((ICollection<IChartElement>) this.\u0023\u003DzqFRpave0Vtab, vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D))
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439915));
+      throw new ArgumentException(XXX.SSS(-539439915));
     if (!this.IsAttached)
       return;
     GuiDispatcher.GlobalDispatcher.AddSyncAction(new Action(vqd1Qhu2nAw1nzwT0.\u0023\u003Dzcq6kjuER1auFcNKkPQ\u003D\u003D));
@@ -263,7 +263,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
   protected void RemoveChildElement(IChartElement element)
   {
     if (!this.\u0023\u003DzqFRpave0Vtab.Remove(element))
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439915));
+      throw new ArgumentException(XXX.SSS(-539439915));
     if (!this.IsAttached)
       return;
     this.\u0023\u003DzcINLDhshur8x().RemoveChildElement(element);

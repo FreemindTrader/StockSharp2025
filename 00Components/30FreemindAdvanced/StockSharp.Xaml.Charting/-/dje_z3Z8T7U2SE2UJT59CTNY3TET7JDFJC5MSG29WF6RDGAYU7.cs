@@ -23,7 +23,7 @@ internal sealed class dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXT
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ControlTemplate \u0023\u003Dzh\u0024ZLVlTJ\u0024Noh;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DztwQ4ieQ9dTof = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329649), typeof (bool), typeof (dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd.\u0023\u003Dzuc47VriCXw3z)));
+  public static readonly DependencyProperty \u0023\u003DztwQ4ieQ9dTof = DependencyProperty.Register(XXX.SSS(-539329649), typeof (bool), typeof (dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd.\u0023\u003Dzuc47VriCXw3z)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -65,7 +65,7 @@ internal sealed class dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXT
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329638), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539329638), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]

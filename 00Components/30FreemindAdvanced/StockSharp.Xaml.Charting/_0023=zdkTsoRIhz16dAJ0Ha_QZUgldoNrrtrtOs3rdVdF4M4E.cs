@@ -365,7 +365,7 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
 
   public override string ToString()
   {
-    return string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539323233), (object) this.\u0023\u003Dz9wx8aZCn12QF(), (object) this.\u0023\u003DzMFog0bw\u003D());
+    return string.Format(XXX.SSS(-539323233), (object) this.\u0023\u003Dz9wx8aZCn12QF(), (object) this.\u0023\u003DzMFog0bw\u003D());
   }
 
   public override bool Equals(object _param1)

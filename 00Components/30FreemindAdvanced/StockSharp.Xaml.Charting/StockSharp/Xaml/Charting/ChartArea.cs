@@ -78,7 +78,7 @@ public class ChartArea :
     if (!((IEnumerable<IChartAxis>) this.XAxises).Any<IChartAxis>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D ?? (ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D = new Func<IChartAxis, bool>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D))))
       ((ICollection<IChartAxis>) this.XAxises).Add((IChartAxis) new ChartAxis()
       {
-        Id = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433902),
+        Id = XXX.SSS(-539433902),
         AutoRange = false,
         AxisType = ChartAxisType.CategoryDateTime
       });
@@ -86,7 +86,7 @@ public class ChartArea :
       return;
     ((ICollection<IChartAxis>) this.YAxises).Add((IChartAxis) new ChartAxis()
     {
-      Id = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432528),
+      Id = XXX.SSS(-539432528),
       AxisType = ChartAxisType.Numeric
     });
   }
@@ -169,7 +169,7 @@ public class ChartArea :
     set
     {
       this.\u0023\u003DzIzRA1GQ\u003D = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431078));
+      this.RaisePropertyChanged(XXX.SSS(-539431078));
     }
   }
 
@@ -191,7 +191,7 @@ public class ChartArea :
       if (Math.Abs(this.\u0023\u003DzqcgkI5Q\u003D - value) < double.Epsilon)
         return;
       this.\u0023\u003DzqcgkI5Q\u003D = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432499));
+      this.RaisePropertyChanged(XXX.SSS(-539432499));
     }
   }
 
@@ -210,24 +210,24 @@ public class ChartArea :
   {
     ((ICollection<IChartElement>) this.Elements).Clear();
     base.Load(storage);
-    this.Title = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431078), (string) null);
-    this.Height = storage.GetValue<double>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432499), 0.0);
-    this.XAxisType = storage.GetValue<ChartAxisType>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433957), this.XAxisType);
-    this.GroupId = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433749), this.GroupId);
-    ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433735), (ICollection<IChartAxis>) this.XAxises);
-    ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433777), (ICollection<IChartAxis>) this.YAxises);
+    this.Title = storage.GetValue<string>(XXX.SSS(-539431078), (string) null);
+    this.Height = storage.GetValue<double>(XXX.SSS(-539432499), 0.0);
+    this.XAxisType = storage.GetValue<ChartAxisType>(XXX.SSS(-539433957), this.XAxisType);
+    this.GroupId = storage.GetValue<string>(XXX.SSS(-539433749), this.GroupId);
+    ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, XXX.SSS(-539433735), (ICollection<IChartAxis>) this.XAxises);
+    ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, XXX.SSS(-539433777), (ICollection<IChartAxis>) this.YAxises);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431078), this.Title);
-    storage.SetValue<double>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432499), this.Height);
-    storage.SetValue<ChartAxisType>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433957), this.XAxisType);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433749), this.GroupId);
-    storage.SetValue<SettingsStorage[]>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433735), ((IEnumerable<IChartAxis>) this.XAxises).Select<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D ?? (ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D = new Func<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzxv2ll83UBK_RmlktVQ\u003D\u003D))).ToArray<SettingsStorage>());
-    storage.SetValue<SettingsStorage[]>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433777), ((IEnumerable<IChartAxis>) this.YAxises).Select<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D ?? (ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D = new Func<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzx2FJ4suusAb7GDyK1w\u003D\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<string>(XXX.SSS(-539431078), this.Title);
+    storage.SetValue<double>(XXX.SSS(-539432499), this.Height);
+    storage.SetValue<ChartAxisType>(XXX.SSS(-539433957), this.XAxisType);
+    storage.SetValue<string>(XXX.SSS(-539433749), this.GroupId);
+    storage.SetValue<SettingsStorage[]>(XXX.SSS(-539433735), ((IEnumerable<IChartAxis>) this.XAxises).Select<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D ?? (ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D = new Func<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzxv2ll83UBK_RmlktVQ\u003D\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<SettingsStorage[]>(XXX.SSS(-539433777), ((IEnumerable<IChartAxis>) this.YAxises).Select<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D ?? (ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D = new Func<IChartAxis, SettingsStorage>(ChartArea.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzx2FJ4suusAb7GDyK1w\u003D\u003D))).ToArray<SettingsStorage>());
   }
 
   private static void \u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(
@@ -277,9 +277,9 @@ public class ChartArea :
     object? _param1,
     PropertyChangedEventArgs _param2)
   {
-    if (!(_param2.PropertyName == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433763)))
+    if (!(_param2.PropertyName == XXX.SSS(-539433763)))
       return;
-    this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433749));
+    this.RaisePropertyChanged(XXX.SSS(-539433749));
   }
 
   [Serializable]
@@ -300,12 +300,12 @@ public class ChartArea :
 
     internal bool \u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D(IChartAxis _param1)
     {
-      return _param1.Id == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433902);
+      return _param1.Id == XXX.SSS(-539433902);
     }
 
     internal bool \u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D(IChartAxis _param1)
     {
-      return _param1.Id == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432528);
+      return _param1.Id == XXX.SSS(-539432528);
     }
 
     internal void \u0023\u003DzM30dyEF9Fb2bzYLjmLgjtiE\u003D(IChartElement _param1)
@@ -350,7 +350,7 @@ public class ChartArea :
     ChartArea.\u0023\u003DztvVgmnUXBPgS<IChartElement>
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433978));
+    private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539433978));
 
     protected virtual bool OnAdding(IChartElement _param1)
     {
@@ -417,7 +417,7 @@ public class ChartArea :
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private readonly bool \u0023\u003DzxUZHFO7FWvR7ohJHTLp\u002424E\u003D = _param2;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433942));
+    private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539433942));
 
     private bool \u0023\u003Dz2BfyUzmYpKwx()
     {
@@ -428,7 +428,7 @@ public class ChartArea :
     {
       ChartArea.\u0023\u003Dzc77TSXc\u003D.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A = new ChartArea.\u0023\u003Dzc77TSXc\u003D.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
       zPKCmcad6Nxc5A8A.\u0023\u003DzNoL9aC4\u003D = _param1;
-      string str = this.\u0023\u003Dz2BfyUzmYpKwx() ? \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433902) : \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432528);
+      string str = this.\u0023\u003Dz2BfyUzmYpKwx() ? XXX.SSS(-539433902) : XXX.SSS(-539432528);
       int num1;
       if (!this.\u0023\u003Dz2BfyUzmYpKwx())
         num1 = ++ChartArea.\u0023\u003Dzc77TSXc\u003D.\u0023\u003DzllfDbLI\u003D;
@@ -440,9 +440,9 @@ public class ChartArea :
         IChartAxis zNoL9aC4 = zPKCmcad6Nxc5A8A.\u0023\u003DzNoL9aC4\u003D;
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(2, 2);
         interpolatedStringHandler.AppendFormatted(str);
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432568));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432568));
         interpolatedStringHandler.AppendFormatted<Guid>(Guid.NewGuid());
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432576));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432576));
         string stringAndClear = interpolatedStringHandler.ToStringAndClear();
         zNoL9aC4.Id = stringAndClear;
       }
@@ -591,8 +591,8 @@ public class ChartArea :
       \u0023\u003DzH9HNkng\u003D _param2,
       int _param3)
     {
-      this.\u0023\u003Dz0AXa0sp7IkH8(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433921));
-      this.\u0023\u003Dz0AXa0sp7IkH8(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433933));
+      this.\u0023\u003Dz0AXa0sp7IkH8(XXX.SSS(-539433921));
+      this.\u0023\u003Dz0AXa0sp7IkH8(XXX.SSS(-539433933));
       NotifyCollectionChangedEventHandler zLmhThYkh0Kaf = this.\u0023\u003DzLMHThYKh0KAF;
       if (zLmhThYkh0Kaf == null)
         return;
@@ -601,8 +601,8 @@ public class ChartArea :
 
     private void \u0023\u003DzvLLUhiQ3_S8T()
     {
-      this.\u0023\u003Dz0AXa0sp7IkH8(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433921));
-      this.\u0023\u003Dz0AXa0sp7IkH8(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433933));
+      this.\u0023\u003Dz0AXa0sp7IkH8(XXX.SSS(-539433921));
+      this.\u0023\u003Dz0AXa0sp7IkH8(XXX.SSS(-539433933));
       NotifyCollectionChangedEventHandler zLmhThYkh0Kaf = this.\u0023\u003DzLMHThYKh0KAF;
       if (zLmhThYkh0Kaf == null)
         return;

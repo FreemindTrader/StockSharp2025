@@ -53,8 +53,8 @@ public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
     this.AddChildElement((IChartElement) (this.\u0023\u003DzTNYUJPFxGP2E98LvqJ2ne4I\u003D = (IChartLineElement) chartLineElement2));
     this.AddChildElement((IChartElement) (this.\u0023\u003Dzzxu0w2zkh6XPS0WbXgPV3KE\u003D = (IChartLineElement) chartLineElement3));
     this.AddChildElement((IChartElement) (this.\u0023\u003Dz0S4of5OfSeLaWsWJ2rBaurI\u003D = (IChartBandElement) chartBandElement));
-    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) this.Senkou.Line1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443033));
-    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) this.Senkou.Line2, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443019));
+    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) this.Senkou.Line1, XXX.SSS(-539443033));
+    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) this.Senkou.Line2, XXX.SSS(-539443019));
   }
 
   /// <summary>
@@ -91,19 +91,19 @@ public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Tenkan, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443061));
-    PersistableHelper.Load((IPersistable) this.Kijun, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443042));
-    PersistableHelper.Load((IPersistable) this.Chinkou, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443054));
-    PersistableHelper.Load((IPersistable) this.Senkou, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442336));
+    PersistableHelper.Load((IPersistable) this.Tenkan, storage, XXX.SSS(-539443061));
+    PersistableHelper.Load((IPersistable) this.Kijun, storage, XXX.SSS(-539443042));
+    PersistableHelper.Load((IPersistable) this.Chinkou, storage, XXX.SSS(-539443054));
+    PersistableHelper.Load((IPersistable) this.Senkou, storage, XXX.SSS(-539442336));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443061), PersistableHelper.Save((IPersistable) this.Tenkan));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443042), PersistableHelper.Save((IPersistable) this.Kijun));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443054), PersistableHelper.Save((IPersistable) this.Chinkou));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442336), PersistableHelper.Save((IPersistable) this.Senkou));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443061), PersistableHelper.Save((IPersistable) this.Tenkan));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443042), PersistableHelper.Save((IPersistable) this.Kijun));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443054), PersistableHelper.Save((IPersistable) this.Chinkou));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442336), PersistableHelper.Save((IPersistable) this.Senkou));
   }
 }

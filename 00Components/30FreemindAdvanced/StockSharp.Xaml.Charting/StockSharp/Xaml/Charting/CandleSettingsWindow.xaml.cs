@@ -95,7 +95,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432648), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539432648), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -126,7 +126,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
 
     public \u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D(Subscription _param1)
     {
-      this.\u0023\u003Dz7LtG0SkMrvA7 = _param1 != null ? _param1.MarketData : throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432617));
+      this.\u0023\u003Dz7LtG0SkMrvA7 = _param1 != null ? _param1.MarketData : throw new ArgumentNullException(XXX.SSS(-539432617));
       DateTimeOffset? nullable = this.\u0023\u003Dz7LtG0SkMrvA7.From;
       if (nullable.HasValue)
         return;
@@ -147,7 +147,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
         if ((value != null ? (!Extensions.IsBuildOnly(value.MessageType) ? 1 : 0) : 1) != 0)
           return;
         this.BuildMode = (MarketDataBuildModes) 2;
-        this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432664));
+        this.NotifyChanged(XXX.SSS(-539432664));
       }
     }
 
@@ -174,7 +174,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
         if (!value)
           return;
         this.BuildMode = (MarketDataBuildModes) 2;
-        this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432664));
+        this.NotifyChanged(XXX.SSS(-539432664));
       }
     }
 

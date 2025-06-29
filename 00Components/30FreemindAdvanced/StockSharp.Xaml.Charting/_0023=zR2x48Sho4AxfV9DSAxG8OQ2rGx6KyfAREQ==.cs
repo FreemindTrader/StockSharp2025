@@ -39,7 +39,7 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
 
   private void \u0023\u003Dz15moWio\u003D(object _param1, PropertyChangedEventArgs _param2)
   {
-    if (_param2.PropertyName != \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442858) && _param2.PropertyName != \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442904))
+    if (_param2.PropertyName != XXX.SSS(-539442858) && _param2.PropertyName != XXX.SSS(-539442904))
       return;
     if ((int) this.\u0023\u003DzeLxWL8r3I02c.\u0023\u003DzZsq6ZfbZQvsf() != this.Min)
       this.\u0023\u003DzeLxWL8r3I02c = (double) this.Min;
@@ -121,7 +121,7 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
 
   public override string ToString()
   {
-    return string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442910), (object) this.Min, (object) this.Max, (object) this.\u0023\u003DzeLxWL8r3I02c, (object) this.\u0023\u003Dz8pG_zbXA5b87);
+    return string.Format(XXX.SSS(-539442910), (object) this.Min, (object) this.Max, (object) this.\u0023\u003DzeLxWL8r3I02c, (object) this.\u0023\u003Dz8pG_zbXA5b87);
   }
 
   public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> \u0023\u003DzJIqIiUw\u003D(

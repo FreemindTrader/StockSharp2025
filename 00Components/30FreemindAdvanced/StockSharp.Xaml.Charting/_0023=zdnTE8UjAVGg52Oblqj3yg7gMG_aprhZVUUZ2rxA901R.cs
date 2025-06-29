@@ -24,7 +24,7 @@ internal sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC
     uint _param4 = 10)
   {
     if (_param3 < 1)
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437904));
+      throw new ArgumentException(XXX.SSS(-539437904));
     this.\u0023\u003DzWAnvsEc\u003D = _param1;
     this.\u0023\u003DzjV9cs\u0024I\u003D = _param2;
     this.\u0023\u003Dz5BKXmnjcYbh2SvP6Xw\u003D\u003D = _param3;

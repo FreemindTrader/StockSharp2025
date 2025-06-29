@@ -12,7 +12,7 @@ internal static class \u0023\u003DzHHCBm9UpsKz28K2k\u002432Cv1CbkwBGB44tCF5ztT0\
 {
   internal static string \u0023\u003DzFARAiudukAjJ(this Assembly _param0)
   {
-    int length = _param0.FullName.IndexOf(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439882));
+    int length = _param0.FullName.IndexOf(XXX.SSS(-539439882));
     return _param0.FullName.Substring(0, length);
   }
 

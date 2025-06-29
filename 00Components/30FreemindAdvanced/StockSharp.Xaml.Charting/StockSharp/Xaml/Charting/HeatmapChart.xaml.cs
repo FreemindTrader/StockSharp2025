@@ -47,11 +47,11 @@ public class HeatmapChart : UserControl, IComponentConnector
   public void Draw(string[] xTitles, string[] yTitles, double[,] data)
   {
     HeatmapMatrixAdapter zy9Zp39o1 = this.\u0023\u003Dzy9ZP39o\u003D;
-    zy9Zp39o1.XArguments = (IEnumerable) (xTitles ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441268)));
+    zy9Zp39o1.XArguments = (IEnumerable) (xTitles ?? throw new ArgumentNullException(XXX.SSS(-539441268)));
     HeatmapMatrixAdapter zy9Zp39o2 = this.\u0023\u003Dzy9ZP39o\u003D;
-    zy9Zp39o2.YArguments = (IEnumerable) (yTitles ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441279)));
+    zy9Zp39o2.YArguments = (IEnumerable) (yTitles ?? throw new ArgumentNullException(XXX.SSS(-539441279)));
     HeatmapMatrixAdapter zy9Zp39o3 = this.\u0023\u003Dzy9ZP39o\u003D;
-    zy9Zp39o3.Values = data ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441254));
+    zy9Zp39o3.Values = data ?? throw new ArgumentNullException(XXX.SSS(-539441254));
   }
 
   /// <summary>Clear chart.</summary>
@@ -68,7 +68,7 @@ public class HeatmapChart : UserControl, IComponentConnector
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441553), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539441553), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]

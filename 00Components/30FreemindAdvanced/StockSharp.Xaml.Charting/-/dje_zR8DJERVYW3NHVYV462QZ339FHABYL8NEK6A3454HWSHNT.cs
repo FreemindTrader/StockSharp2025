@@ -21,7 +21,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ6
 {
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003Dz\u0024fIrKTSXQyu0 = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331114), typeof (ItemsControl), typeof (dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.\u0023\u003DzfboVa5iAInKu)));
+  DependencyProperty \u0023\u003Dz\u0024fIrKTSXQyu0 = DependencyProperty.RegisterAttached(XXX.SSS(-539331114), typeof (ItemsControl), typeof (dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.\u0023\u003DzfboVa5iAInKu)));
 
   public static void SetItemsControlParentSurface(UIElement _param0, ItemsControl _param1)
   {
@@ -96,7 +96,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ6
 
     internal bool \u0023\u003DznZr9nJa8\u00246cBEfGURUqenkw\u003D(PropertyInfo _param1)
     {
-      return _param1.Name == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539331134);
+      return _param1.Name == XXX.SSS(-539331134);
     }
   }
 }

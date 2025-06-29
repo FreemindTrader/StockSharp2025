@@ -21,7 +21,7 @@ internal sealed class \u0023\u003DzuPRmIFUVJkGxyCE55JH19eXYhbmxqBtjx36O52S9n6TED
     : base(_param1)
   {
     if (_param3 == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441687));
+      throw new ArgumentNullException(XXX.SSS(-539441687));
     this.\u0023\u003DzWW9iAGBoakw\u0024(_param2);
     this.\u0023\u003DzFtvyKr1Ys0eH(_param3);
   }

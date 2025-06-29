@@ -176,14 +176,14 @@ internal sealed class \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<
     \u0023\u003DzulcL8RA\u003D _param1,
     params \u0023\u003DzE8zkRfY\u003D[] _param2)
   {
-    throw new InvalidOperationException(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437641), (object) this.GetType().Name));
+    throw new InvalidOperationException(string.Format(XXX.SSS(-539437641), (object) this.GetType().Name));
   }
 
   public override void Append(
     IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
     params IEnumerable<\u0023\u003DzE8zkRfY\u003D>[] _param2)
   {
-    throw new InvalidOperationException(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437641), (object) this.GetType().Name));
+    throw new InvalidOperationException(string.Format(XXX.SSS(-539437641), (object) this.GetType().Name));
   }
 
   public void \u0023\u003Dznc8esWY\u003D(

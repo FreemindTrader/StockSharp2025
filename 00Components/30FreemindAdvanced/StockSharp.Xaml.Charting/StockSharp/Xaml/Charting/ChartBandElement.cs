@@ -84,9 +84,9 @@ public sealed class ChartBandElement :
         {
           (object) value
         }));
-      this.RaisePropertyValueChanging(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382), (object) value);
+      this.RaisePropertyValueChanging(XXX.SSS(-539433382), (object) value);
       this.\u0023\u003DzOoq7N0E\u003D = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382));
+      this.RaisePropertyChanged(XXX.SSS(-539433382));
     }
   }
 
@@ -140,16 +140,16 @@ public sealed class ChartBandElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433426)))
+    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539433426)))
     {
       this.RemoveChildElement((IChartElement) this.Line1);
-      PersistableHelper.Load((IPersistable) this.Line1, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433426));
+      PersistableHelper.Load((IPersistable) this.Line1, storage, XXX.SSS(-539433426));
       this.AddChildElement((IChartElement) this.Line1, true);
     }
-    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433438)))
+    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539433438)))
       return;
     this.RemoveChildElement((IChartElement) this.Line2);
-    PersistableHelper.Load((IPersistable) this.Line2, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433438));
+    PersistableHelper.Load((IPersistable) this.Line2, storage, XXX.SSS(-539433438));
     this.AddChildElement((IChartElement) this.Line2, true);
   }
 
@@ -158,8 +158,8 @@ public sealed class ChartBandElement :
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433426), PersistableHelper.Save((IPersistable) this.Line1));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433438), PersistableHelper.Save((IPersistable) this.Line2));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539433426), PersistableHelper.Save((IPersistable) this.Line1));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539433438), PersistableHelper.Save((IPersistable) this.Line2));
   }
 
   internal override ChartBandElement \u0023\u003Dz3MbNd8U\u003D(ChartBandElement _param1)
@@ -175,8 +175,8 @@ public sealed class ChartBandElement :
     object? _param1,
     PropertyChangedEventArgs _param2)
   {
-    if (!(_param2.PropertyName == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433418)))
+    if (!(_param2.PropertyName == XXX.SSS(-539433418)))
       return;
-    this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433444));
+    this.RaisePropertyChanged(XXX.SSS(-539433444));
   }
 }

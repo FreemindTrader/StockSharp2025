@@ -31,9 +31,9 @@ internal sealed class dje_zX3YUCVJCVL7KGW8SJASMBFF766BPYEJRUYPZPQ4JCE2SM2PZQHPGZ
     if (!this.CanConvertFrom(_param1, _param3.GetType()))
     {
       DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(112 /*0x70*/, 1);
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430269));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430269));
       interpolatedStringHandler.AppendFormatted<Type>(_param3.GetType());
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439697));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439697));
       throw new FormatException(interpolatedStringHandler.ToStringAndClear());
     }
     string s = (string) _param3;
@@ -47,7 +47,7 @@ internal sealed class dje_zX3YUCVJCVL7KGW8SJASMBFF766BPYEJRUYPZPQ4JCE2SM2PZQHPGZ
     }
     catch (Exception ex)
     {
-      throw new FormatException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440006));
+      throw new FormatException(XXX.SSS(-539440006));
     }
   }
 }

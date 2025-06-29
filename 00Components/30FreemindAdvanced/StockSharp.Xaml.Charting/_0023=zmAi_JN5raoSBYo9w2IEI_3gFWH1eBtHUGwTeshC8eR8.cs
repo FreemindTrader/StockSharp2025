@@ -28,7 +28,7 @@ internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A :
     uint _param4 = 10)
   {
     if (_param3 < 1)
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437904));
+      throw new ArgumentException(XXX.SSS(-539437904));
     this.\u0023\u003Dz9SNCNR_cYKQr = _param1;
     this.\u0023\u003DzRanwdSJnFyTa = _param2;
     this.\u0023\u003Dz5BKXmnjcYbh2SvP6Xw\u003D\u003D = _param3;

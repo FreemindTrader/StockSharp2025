@@ -26,15 +26,15 @@ internal class ActiveOrderAnnotation : AnnotationBase
 {
   public static readonly 
   #nullable disable
-  DependencyProperty OrderTextProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539341172), typeof (string), typeof (ActiveOrderAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
-  public static readonly DependencyProperty OrderSizeTextProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539341156), typeof (string), typeof (ActiveOrderAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
-  public static readonly DependencyProperty StrokeProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434289), typeof (Brush), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Brushes.White));
-  public static readonly DependencyProperty CancelButtonFillProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342488), typeof (Brush), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Brushes.DarkGray));
-  public static readonly DependencyProperty CancelButtonColorProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433534), typeof (Brush), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Brushes.Black));
-  public static readonly DependencyProperty YDragStepProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342479), typeof (double), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) 0.0));
-  public static readonly DependencyProperty IsAnimationEnabledProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433577), typeof (bool), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) true));
-  public static readonly DependencyProperty OrderErrorTextProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342527), typeof (string), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342548)));
-  public static readonly DependencyProperty BlinkColorProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342560), typeof (Color), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Colors.Black));
+  DependencyProperty OrderTextProperty = DependencyProperty.Register(XXX.SSS(-539341172), typeof (string), typeof (ActiveOrderAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty OrderSizeTextProperty = DependencyProperty.Register(XXX.SSS(-539341156), typeof (string), typeof (ActiveOrderAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty StrokeProperty = DependencyProperty.Register(XXX.SSS(-539434289), typeof (Brush), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Brushes.White));
+  public static readonly DependencyProperty CancelButtonFillProperty = DependencyProperty.Register(XXX.SSS(-539342488), typeof (Brush), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Brushes.DarkGray));
+  public static readonly DependencyProperty CancelButtonColorProperty = DependencyProperty.Register(XXX.SSS(-539433534), typeof (Brush), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Brushes.Black));
+  public static readonly DependencyProperty YDragStepProperty = DependencyProperty.Register(XXX.SSS(-539342479), typeof (double), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty IsAnimationEnabledProperty = DependencyProperty.Register(XXX.SSS(-539433577), typeof (bool), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty OrderErrorTextProperty = DependencyProperty.Register(XXX.SSS(-539342527), typeof (string), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) XXX.SSS(-539342548)));
+  public static readonly DependencyProperty BlinkColorProperty = DependencyProperty.Register(XXX.SSS(-539342560), typeof (Color), typeof (ActiveOrderAnnotation), new PropertyMetadata((object) Colors.Black));
   private const double MinScrollSpeed = 0.3;
   private const double MaxScrollSpeed = 2.0;
   private static readonly TimeSpan _scrollTimerInterval = TimeSpan.FromMilliseconds(50.0);
@@ -61,14 +61,14 @@ internal class ActiveOrderAnnotation : AnnotationBase
     markerAnnotation.IsEditable = false;
     markerAnnotation.IsSelected = false;
     this._axisMarker = markerAnnotation;
-    this._axisMarker.SetBindings(UIElement.VisibilityProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539341123), BindingMode.OneWay);
-    this._axisMarker.SetBindings(Control.ForegroundProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434281), BindingMode.OneWay);
-    this._axisMarker.SetBindings(Control.BackgroundProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439441), BindingMode.OneWay);
-    this._axisMarker.SetBindings(Control.BorderBrushProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439441), BindingMode.OneWay);
-    this._axisMarker.SetBindings(AnnotationBase.XAxisIdProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427791), BindingMode.OneWay);
-    this._axisMarker.SetBindings(AnnotationBase.YAxisIdProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427833), BindingMode.OneWay);
-    this._axisMarker.SetBindings(AnnotationBase.Y1Property, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434262), BindingMode.OneWay);
-    this._axisMarker.SetBindings(AnnotationBase.IsHiddenProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439409), BindingMode.OneWay);
+    this._axisMarker.SetBindings(UIElement.VisibilityProperty, (object) this, XXX.SSS(-539341123), BindingMode.OneWay);
+    this._axisMarker.SetBindings(Control.ForegroundProperty, (object) this, XXX.SSS(-539434281), BindingMode.OneWay);
+    this._axisMarker.SetBindings(Control.BackgroundProperty, (object) this, XXX.SSS(-539439441), BindingMode.OneWay);
+    this._axisMarker.SetBindings(Control.BorderBrushProperty, (object) this, XXX.SSS(-539439441), BindingMode.OneWay);
+    this._axisMarker.SetBindings(AnnotationBase.XAxisIdProperty, (object) this, XXX.SSS(-539427791), BindingMode.OneWay);
+    this._axisMarker.SetBindings(AnnotationBase.YAxisIdProperty, (object) this, XXX.SSS(-539427833), BindingMode.OneWay);
+    this._axisMarker.SetBindings(AnnotationBase.Y1Property, (object) this, XXX.SSS(-539434262), BindingMode.OneWay);
+    this._axisMarker.SetBindings(AnnotationBase.IsHiddenProperty, (object) this, XXX.SSS(-539439409), BindingMode.OneWay);
     this._scrollTimer = new DispatcherTimer()
     {
       Interval = ActiveOrderAnnotation._scrollTimerInterval
@@ -143,17 +143,17 @@ internal class ActiveOrderAnnotation : AnnotationBase
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328955));
-    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342541));
-    this._gridOrderInfo = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342589));
-    this._borderOrderCount = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342358));
-    this._borderOrderText = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342388));
-    this._orderPointer = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Polygon>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342377));
-    this._txtCount = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBlock>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342401));
-    this._txtOrderText = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBlock>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342463));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539328955));
+    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539342541));
+    this._gridOrderInfo = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539342589));
+    this._borderOrderCount = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(XXX.SSS(-539342358));
+    this._borderOrderText = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(XXX.SSS(-539342388));
+    this._orderPointer = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Polygon>(XXX.SSS(-539342377));
+    this._txtCount = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBlock>(XXX.SSS(-539342401));
+    this._txtOrderText = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBlock>(XXX.SSS(-539342463));
     if (this._cancelButton == null)
     {
-      this._cancelButton = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Button>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342740));
+      this._cancelButton = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Button>(XXX.SSS(-539342740));
       this._cancelButton.Click += (RoutedEventHandler) ((sender, args) =>
       {
         Action<ActiveOrderAnnotation> cancelClick = this.CancelClick;
@@ -161,7 +161,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
           return;
         cancelClick(this);
       });
-      this._cancelButton.SetBindings(UIElement.IsEnabledProperty, (object) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434496), BindingMode.OneWay);
+      this._cancelButton.SetBindings(UIElement.IsEnabledProperty, (object) this, XXX.SSS(-539434496), BindingMode.OneWay);
     }
     this._templateInitialized = true;
     this.HandleIsEditable();
@@ -323,7 +323,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
   protected override \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq GetCurrentPlacementStrategy()
   {
     if (this.XAxis != null && this.XAxis.get_IsPolarAxis())
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342732));
+      throw new InvalidOperationException(XXX.SSS(-539342732));
     return (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new ActiveOrderAnnotation.\u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(this);
   }
 
@@ -365,11 +365,11 @@ internal class ActiveOrderAnnotation : AnnotationBase
     }
     this._fillAnimation = new Storyboard();
     this._fillAnimation.Completed += (EventHandler) ((sender, args) => this.TryInvokeAnimationDone());
-    DoubleAnimation doubleAnimation1 = this.InitAnimation<DoubleAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderCount, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342790));
-    DoubleAnimation doubleAnimation2 = this.InitAnimation<DoubleAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderCount, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342823));
-    ColorAnimation colorAnimation1 = this.InitAnimation<ColorAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderText, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342596));
-    ColorAnimation colorAnimation2 = this.InitAnimation<ColorAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderCount, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342596));
-    ColorAnimation colorAnimation3 = this.InitAnimation<ColorAnimation>(this._fillAnimation, (DependencyObject) this._orderPointer, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342651));
+    DoubleAnimation doubleAnimation1 = this.InitAnimation<DoubleAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderCount, XXX.SSS(-539342790));
+    DoubleAnimation doubleAnimation2 = this.InitAnimation<DoubleAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderCount, XXX.SSS(-539342823));
+    ColorAnimation colorAnimation1 = this.InitAnimation<ColorAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderText, XXX.SSS(-539342596));
+    ColorAnimation colorAnimation2 = this.InitAnimation<ColorAnimation>(this._fillAnimation, (DependencyObject) this._borderOrderCount, XXX.SSS(-539342596));
+    ColorAnimation colorAnimation3 = this.InitAnimation<ColorAnimation>(this._fillAnimation, (DependencyObject) this._orderPointer, XXX.SSS(-539342651));
     DoubleAnimation doubleAnimation3 = doubleAnimation2;
     double? nullable1 = new double?(1.5);
     double? nullable2 = nullable1;
@@ -426,12 +426,12 @@ internal class ActiveOrderAnnotation : AnnotationBase
     this._errorAnimation.Completed += (EventHandler) ((sender, args) => this.TryInvokeAnimationDone());
     Color red = Colors.Red;
     Color black = Colors.Black;
-    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._borderOrderText, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342596), red, black);
-    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._borderOrderCount, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342596), red, black);
-    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._orderPointer, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342651), red, black);
-    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._txtCount, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342636), black, red);
-    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._txtOrderText, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342636), black, red);
-    StringAnimationUsingKeyFrames animationUsingKeyFrames = this.InitAnimation<StringAnimationUsingKeyFrames>(this._errorAnimation, (DependencyObject) this._txtOrderText, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427542));
+    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._borderOrderText, XXX.SSS(-539342596), red, black);
+    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._borderOrderCount, XXX.SSS(-539342596), red, black);
+    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._orderPointer, XXX.SSS(-539342651), red, black);
+    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._txtCount, XXX.SSS(-539342636), black, red);
+    this.InitErrorColorAnimation(this._errorAnimation, (DependencyObject) this._txtOrderText, XXX.SSS(-539342636), black, red);
+    StringAnimationUsingKeyFrames animationUsingKeyFrames = this.InitAnimation<StringAnimationUsingKeyFrames>(this._errorAnimation, (DependencyObject) this._txtOrderText, XXX.SSS(-539427542));
     animationUsingKeyFrames.FillBehavior = FillBehavior.HoldEnd;
     StringKeyFrameCollection keyFrames = animationUsingKeyFrames.KeyFrames;
     DiscreteStringKeyFrame keyFrame = new DiscreteStringKeyFrame();

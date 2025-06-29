@@ -18,7 +18,7 @@ internal sealed class \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbdZ
     : base(_param1, _param2, _param3)
   {
     if (_param1.\u0023\u003Dz8hY71usSYcKH().\u0023\u003DztvwmoyKu8oUlLP4_gA\u003D\u003D().\u0023\u003DzVAoYC\u0024MJfjKU3EUhiA\u003D\u003D() != 32 /*0x20*/)
-      throw new FormatException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539324097));
+      throw new FormatException(XXX.SSS(-539324097));
   }
 
   public override void \u0023\u003DzvJVSzbY\u003D(

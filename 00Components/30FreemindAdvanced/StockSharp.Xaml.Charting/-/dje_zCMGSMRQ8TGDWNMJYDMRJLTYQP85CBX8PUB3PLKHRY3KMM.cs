@@ -17,7 +17,7 @@ internal sealed class dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4
   dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzTwmsLrVpwa38 = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539339955), typeof (DataTemplate), typeof (dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd.\u0023\u003Dzw52y5BiydelX)));
+  public static readonly DependencyProperty \u0023\u003DzTwmsLrVpwa38 = DependencyProperty.Register(XXX.SSS(-539339955), typeof (DataTemplate), typeof (dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd.\u0023\u003Dzw52y5BiydelX)));
 
   public DataTemplate DeferredContent
   {
@@ -61,7 +61,7 @@ internal sealed class dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4
   {
     if (!(_param0 is dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd znetutjmmvvasEjd) || znetutjmmvvasEjd.DeferredContent == null || !(znetutjmmvvasEjd.DeferredContent.LoadContent() is FrameworkElement frameworkElement))
       return;
-    Binding binding = new Binding(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539339941))
+    Binding binding = new Binding(XXX.SSS(-539339941))
     {
       Source = (object) znetutjmmvvasEjd
     };

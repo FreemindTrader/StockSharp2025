@@ -66,7 +66,7 @@ IChartElement>
     {
       \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D iybwdMa94Ybky5Phw = _param1.Attributes.OfType<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D>().FirstOrDefault<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D>();
       if ((iybwdMa94Ybky5Phw != null ? (!iybwdMa94Ybky5Phw.\u0023\u003DzOJt8kfGtb6vl() ? 1 : 0) : 1) != 0)
-        return _param0.ParentElement != null || !(_param1.Name == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813));
+        return _param0.ParentElement != null || !(_param1.Name == XXX.SSS(-539433813));
     }
     return false;
   }
@@ -77,7 +77,7 @@ IChartElement>
   {
     if (_param0.ParentElement != null)
       return false;
-    if (_param1.Name == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813))
+    if (_param1.Name == XXX.SSS(-539433813))
       return true;
     BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
     if ((browsableAttribute != null ? (browsableAttribute.Browsable ? 1 : 0) : 1) == 0)

@@ -40,7 +40,7 @@ public static class ChartHelper
   public static Stream SaveToImage(this IChart chart)
   {
     if (chart == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426968));
+      throw new ArgumentNullException(XXX.SSS(-539426968));
     if (chart is Chart elem)
     {
       MemoryStream file = new MemoryStream();
@@ -51,7 +51,7 @@ public static class ChartHelper
     throw new ArgumentException(StringHelper.Put(LocalizedStrings.UnknownType, new object[1]
     {
       (object) chart.GetType()
-    }), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426947));
+    }), XXX.SSS(-539426947));
   }
 
   internal static string \u0023\u003DzNsF8TrDL0ndB(this Subscription _param0)
@@ -77,7 +77,7 @@ public static class ChartHelper
   /// <returns>Chart theme.</returns>
   public static string ToChartTheme(this string appTheme)
   {
-    return !appTheme.IsDark() ? \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426954) : \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427003);
+    return !appTheme.IsDark() ? XXX.SSS(-539426954) : XXX.SSS(-539427003);
   }
 
   /// <summary>Update theme for the specified chart.</summary>
@@ -85,7 +85,7 @@ public static class ChartHelper
   public static void UpdateTheme(this IThemeableChart chart)
   {
     if (chart == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426992));
+      throw new ArgumentNullException(XXX.SSS(-539426992));
     chart.ChartTheme = ChartHelper.CurrChartTheme();
   }
 
@@ -107,7 +107,7 @@ public static class ChartHelper
     ChartHelper.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D skXz9pb7XdulaJda = new ChartHelper.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D();
     skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D = chart;
     if (skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427035));
+      throw new ArgumentNullException(XXX.SSS(-539427035));
     skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.X = skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.XValues.FirstOrDefault<IChart3DParameter>();
     skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.Y = skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.YValues.Where<IChart3DParameter>(new Func<IChart3DParameter, bool>(skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D)).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.YValues.FirstOrDefault<IChart3DParameter>();
     skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.Z = skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.ZValues.FirstOrDefault<IStatisticParameter>();
@@ -183,15 +183,15 @@ public static class ChartHelper
     IChartBandElement commission)
   {
     if (chart == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427010));
+      throw new ArgumentNullException(XXX.SSS(-539427010));
     if (strategy == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427021));
+      throw new ArgumentNullException(XXX.SSS(-539427021));
     if (pnl == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427068));
+      throw new ArgumentNullException(XXX.SSS(-539427068));
     if (unrealized == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427047));
+      throw new ArgumentNullException(XXX.SSS(-539427047));
     if (commission == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427054));
+      throw new ArgumentNullException(XXX.SSS(-539427054));
     IChartDrawData data = chart.CreateData();
     data.Group(((BaseLogSource) strategy).CurrentTime).Add(pnl, strategy.PnL).Add(unrealized, strategy.PnLManager.UnrealizedPnL).Add(commission, strategy.Commission.GetValueOrDefault());
     chart.Draw(data);
@@ -207,7 +207,7 @@ public static class ChartHelper
     CandleSeries series)
   {
     if (chart == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426841));
+      throw new ArgumentNullException(XXX.SSS(-539426841));
     chart.AddElement(area, element, new Subscription(series));
   }
 
@@ -222,7 +222,7 @@ public static class ChartHelper
     IIndicator indicator)
   {
     if (chart == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539426824));
+      throw new ArgumentNullException(XXX.SSS(-539426824));
     chart.AddElement(area, element, new Subscription(series), indicator);
   }
 

@@ -67,7 +67,7 @@ public class BubbleChart : UserControl, IComponentConnector
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431241), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539431241), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -88,9 +88,9 @@ public class BubbleChart : UserControl, IComponentConnector
     where \u0023\u003DzulcL8RA\u003D : IComparable
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431255));
+    private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539431255));
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431262));
+    private readonly Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539431262));
 
     void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(
       IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,

@@ -91,10 +91,10 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, _param2.AntiAliasing, (float) _param2.StrokeThickness, _param2.Opacity))
     {
       \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D mz4rNexJsSmCjpOm = _param2.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
-      string format = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430209) + _param2.LabelTextFormatting + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430223);
+      string format = XXX.SSS(-539430209) + _param2.LabelTextFormatting + XXX.SSS(-539430223);
       bool flag1 = this.\u0023\u003Dz4nhIf8\u0024OuuPux\u0024xOhCjDsBI\u003D(_param2.StackedGroupId);
       if (flag1)
-        format += \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539339852);
+        format += XXX.SSS(-539339852);
       bool flag2 = mz4rNexJsSmCjpOm.\u0023\u003DzDoU1CJhSUWFV();
       double num1 = _param2.\u0023\u003DzNfVFwxaLW3jC();
       double num2;

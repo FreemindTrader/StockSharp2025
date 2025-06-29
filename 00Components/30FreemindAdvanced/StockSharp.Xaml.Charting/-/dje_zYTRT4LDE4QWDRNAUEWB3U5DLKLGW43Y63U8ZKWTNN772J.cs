@@ -18,7 +18,7 @@ internal sealed class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKLGW43Y63U8ZKWTNN772J5S54KNPD
   dje_zATMENTVRQXPESZUNTMAKHBSKCWZW7V9SFA5P9LBGCE4BQBNQAPN2D_ejd
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dzi25EO4Vacs4x = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539335273), typeof (double), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKLGW43Y63U8ZKWTNN772J5S54KNPDFXK4R5Q_ejd), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003Dzi25EO4Vacs4x = DependencyProperty.Register(XXX.SSS(-539335273), typeof (double), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKLGW43Y63U8ZKWTNN772J5S54KNPDFXK4R5Q_ejd), new PropertyMetadata((object) 0.0));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private \u0023\u003DzKasBY8yFp0kHGchcdspopP7GEE2mXL2_PJ3GAzDPqEBp355x434uR\u0024Xvxl7l \u0023\u003DzvSLoDw0u_VlbzZTKzvTcOWMRVcRiYDKvgQ\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]

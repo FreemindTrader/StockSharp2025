@@ -38,7 +38,7 @@ public class ChartPanelOrderSettings : NotifiableObject, IPersistable
       if (this.\u0023\u003DzpaXnuR8\u003D == value)
         return;
       this.\u0023\u003DzpaXnuR8\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430759));
+      this.NotifyChanged(XXX.SSS(-539430759));
     }
   }
 
@@ -52,7 +52,7 @@ public class ChartPanelOrderSettings : NotifiableObject, IPersistable
       if (this.\u0023\u003Dz5M\u00246riNP6jrVzScIBQ\u003D\u003D == value)
         return;
       this.\u0023\u003Dz5M\u00246riNP6jrVzScIBQ\u003D\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430034));
+      this.NotifyChanged(XXX.SSS(-539430034));
     }
   }
 
@@ -63,8 +63,8 @@ public class ChartPanelOrderSettings : NotifiableObject, IPersistable
     get => this.\u0023\u003DzhqjqeGluToRP;
     set
     {
-      this.\u0023\u003DzhqjqeGluToRP = !(value <= 0M) ? value : throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430018), (object) value, LocalizedStrings.InvalidValue);
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430029));
+      this.\u0023\u003DzhqjqeGluToRP = !(value <= 0M) ? value : throw new ArgumentOutOfRangeException(XXX.SSS(-539430018), (object) value, LocalizedStrings.InvalidValue);
+      this.NotifyChanged(XXX.SSS(-539430029));
     }
   }
 
@@ -75,18 +75,18 @@ public class ChartPanelOrderSettings : NotifiableObject, IPersistable
     ISecurityProvider securityProvider = ServicesRegistry.TrySecurityProvider;
     if (securityProvider != null)
     {
-      string id = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430759), (string) null);
+      string id = storage.GetValue<string>(XXX.SSS(-539430759), (string) null);
       if (!StringHelper.IsEmpty(id))
         this.Security = securityProvider.LookupById(id);
     }
     IPortfolioProvider portfolioProvider = ServicesRegistry.TryPortfolioProvider;
     if (portfolioProvider != null)
     {
-      string name = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430034), (string) null);
+      string name = storage.GetValue<string>(XXX.SSS(-539430034), (string) null);
       if (!StringHelper.IsEmpty(name))
         this.Portfolio = portfolioProvider.LookupByPortfolioName(name);
     }
-    Decimal num = storage.GetValue<Decimal>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430029), this.Volume);
+    Decimal num = storage.GetValue<Decimal>(XXX.SSS(-539430029), this.Volume);
     if (num <= 0M)
       num = 1M;
     this.Volume = num;
@@ -96,8 +96,8 @@ public class ChartPanelOrderSettings : NotifiableObject, IPersistable
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430759), this.Security?.Id);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430034), this.Portfolio?.Name);
-    storage.SetValue<Decimal>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430029), this.Volume);
+    storage.SetValue<string>(XXX.SSS(-539430759), this.Security?.Id);
+    storage.SetValue<string>(XXX.SSS(-539430034), this.Portfolio?.Name);
+    storage.SetValue<Decimal>(XXX.SSS(-539430029), this.Volume);
   }
 }

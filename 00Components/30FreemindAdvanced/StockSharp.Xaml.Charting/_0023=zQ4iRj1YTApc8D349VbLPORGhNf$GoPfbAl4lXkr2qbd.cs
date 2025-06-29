@@ -23,15 +23,15 @@ internal sealed class \u0023\u003DzQ4iRj1YTApc8D349VbLPORGhNf\u0024GoPfbAl4lXkr2
     CultureInfo _param2,
     object _param3)
   {
-    string s = _param3 != null && this.CanConvertFrom(_param1, _param3.GetType()) ? ((string) _param3).Trim() : throw new FormatException(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539338258), (object) _param3?.GetType()));
+    string s = _param3 != null && this.CanConvertFrom(_param1, _param3.GetType()) ? ((string) _param3).Trim() : throw new FormatException(string.Format(XXX.SSS(-539338258), (object) _param3?.GetType()));
     double num;
     try
     {
-      num = s.Length != 1 || !(s.ToUpperInvariant() == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539338340)) ? double.Parse(s, (IFormatProvider) CultureInfo.InvariantCulture) : Math.E;
+      num = s.Length != 1 || !(s.ToUpperInvariant() == XXX.SSS(-539338340)) ? double.Parse(s, (IFormatProvider) CultureInfo.InvariantCulture) : Math.E;
     }
     catch (Exception ex)
     {
-      throw new FormatException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539338348));
+      throw new FormatException(XXX.SSS(-539338348));
     }
     return (object) num;
   }

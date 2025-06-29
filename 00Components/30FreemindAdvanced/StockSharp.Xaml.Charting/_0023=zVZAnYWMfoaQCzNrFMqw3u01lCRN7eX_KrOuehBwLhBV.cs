@@ -20,7 +20,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
     int _param1,
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param2)
   {
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) _param1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437192)).\u0023\u003DzIR3Z_Ken7pfcXCwNTw\u003D\u003D((IComparable) 2);
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) _param1, XXX.SSS(-539437192)).\u0023\u003DzIR3Z_Ken7pfcXCwNTw\u003D\u003D((IComparable) 2);
     this.\u0023\u003DzEMN\u0024erw\u003D = _param1;
     this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D = _param2;
   }
@@ -80,7 +80,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
       return this.\u0023\u003DzHGrIGwQMCG00iPvblg\u003D\u003D(_param1, _param2.Min, _param2.Max, _param3);
     if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid)
       return this.\u0023\u003DztccTtmWKXlfE6hK7TQ\u003D\u003D(_param1, _param2.Min, _param2.Max, _param3);
-    throw new Exception(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437237), (object) this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D));
+    throw new Exception(string.Format(XXX.SSS(-539437237), (object) this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D));
   }
 
   private IList \u0023\u003Dz1rpjJBfXHa0JqL21PwrWh4g\u003D(

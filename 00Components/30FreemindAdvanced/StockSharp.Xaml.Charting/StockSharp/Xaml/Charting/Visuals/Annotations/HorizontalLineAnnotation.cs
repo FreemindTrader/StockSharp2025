@@ -17,8 +17,8 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 [TemplatePart(Name = "PART_LineAnnotationRoot", Type = typeof (Grid))]
 internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
 {
-  public new static readonly DependencyProperty HorizontalAlignmentProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427475), typeof (HorizontalAlignment), typeof (HorizontalLineAnnotation), new PropertyMetadata((object) HorizontalAlignment.Left, new PropertyChangedCallback(HorizontalLineAnnotation.OnHorizontalAlignmentChanged)));
-  public static readonly DependencyProperty YDragStepProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342479), typeof (double), typeof (HorizontalLineAnnotation), new PropertyMetadata((object) 0.0));
+  public new static readonly DependencyProperty HorizontalAlignmentProperty = DependencyProperty.Register(XXX.SSS(-539427475), typeof (HorizontalAlignment), typeof (HorizontalLineAnnotation), new PropertyMetadata((object) HorizontalAlignment.Left, new PropertyChangedCallback(HorizontalLineAnnotation.OnHorizontalAlignmentChanged)));
+  public static readonly DependencyProperty YDragStepProperty = DependencyProperty.Register(XXX.SSS(-539342479), typeof (double), typeof (HorizontalLineAnnotation), new PropertyMetadata((object) 0.0));
 
   public HorizontalLineAnnotation()
   {
@@ -266,7 +266,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     public \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(HorizontalLineAnnotation _param1)
       : base(_param1)
     {
-      throw new InvalidOperationException(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539343701), (object) ((object) _param1).GetType().Name));
+      throw new InvalidOperationException(string.Format(XXX.SSS(-539343701), (object) ((object) _param1).GetType().Name));
     }
   }
 }

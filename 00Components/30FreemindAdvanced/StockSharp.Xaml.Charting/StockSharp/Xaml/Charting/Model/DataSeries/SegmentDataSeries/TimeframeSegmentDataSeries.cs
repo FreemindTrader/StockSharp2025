@@ -39,10 +39,10 @@ internal class TimeframeSegmentDataSeries :
   public TimeframeSegmentDataSeries(TimeSpan? timeframe, ChartCandleElement element)
   {
     if (timeframe.HasValue && (!(timeframe.Value > TimeSpan.Zero) || !(timeframe.Value <= TimeframeSegmentDataSeries.MaxTimeframe)))
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436989));
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539436989));
     this._yValues = new TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D(this);
     this.Timeframe = timeframe;
-    this._element = element ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436972));
+    this._element = element ?? throw new ArgumentNullException(XXX.SSS(-539436972));
   }
 
   private \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<DateTime> SegmentDates
@@ -157,7 +157,7 @@ internal class TimeframeSegmentDataSeries :
 
   public void Clear()
   {
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437015), Array.Empty<object>());
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539437015), Array.Empty<object>());
   }
 
   public void InvalidateParentSurface(
@@ -266,7 +266,7 @@ internal class TimeframeSegmentDataSeries :
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = !(range is dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd) ? range as \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D : new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(new DateTime((long) klqcJ87Zm8UwE3WEjd.Min), new DateTime((long) klqcJ87Zm8UwE3WEjd.Max));
     if (dx26vpI1xWpwwNqJw == null)
     {
-      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436818), new object[1]
+      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539436818), new object[1]
       {
         (object) range.GetType().Name
       });
@@ -296,7 +296,7 @@ internal class TimeframeSegmentDataSeries :
     }
     if (indexRange.Min.CompareTo(indexRange.Max) > 0)
       indexRange.Min = 0;
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436885), new object[2]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539436885), new object[2]
     {
       (object) indexRange.Min,
       (object) indexRange.Max
@@ -310,7 +310,7 @@ internal class TimeframeSegmentDataSeries :
     Tuple<DateTime, DateTime, long> prevPeriod = null)
   {
     if (!(period > TimeSpan.Zero) || !(period <= TimeframeSegmentDataSeries.MaxTimeframe))
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436179));
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539436179));
     if (prevPeriod != null && dt < prevPeriod.Item2 && dt >= prevPeriod.Item1)
       return prevPeriod;
     long ticks = period.Ticks;
@@ -342,9 +342,9 @@ internal class TimeframeSegmentDataSeries :
       if (period > TimeframeSegmentDataSeries.MaxTimeframe)
       {
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(42, 1);
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436186));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539436186));
         interpolatedStringHandler.AppendFormatted<TimeSpan>(TimeframeSegmentDataSeries.MaxTimeframe);
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436215));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539436215));
         throw new NotSupportedException(interpolatedStringHandler.ToStringAndClear());
       }
       DateTime dateTime3 = new DateTime(dt.Year, 1, 1);
@@ -379,7 +379,7 @@ internal class TimeframeSegmentDataSeries :
         {
           \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments = this._segments;
           if (segments[segments.Count - 1].\u0023\u003Dzg86amuQ\u003D() > this._curPeriod.Item1)
-            throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436242), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436253));
+            throw new ArgumentOutOfRangeException(XXX.SSS(-539436242), XXX.SSS(-539436253));
         }
         flag = this.AddOrUpdateSegment(this._curPeriod.Item1, price, level, true);
       }
@@ -406,7 +406,7 @@ internal class TimeframeSegmentDataSeries :
         {
           \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments = this._segments;
           if (segments[segments.Count - 1].\u0023\u003Dzg86amuQ\u003D() > this._curPeriod.Item1)
-            throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436260), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436253));
+            throw new ArgumentOutOfRangeException(XXX.SSS(-539436260), XXX.SSS(-539436253));
         }
         flag = this.AddOrUpdateSegment(this._curPeriod.Item1, price, level, false);
       }
@@ -424,7 +424,7 @@ internal class TimeframeSegmentDataSeries :
   private bool AddOrUpdateSegment(DateTime time, double price, CandlePriceLevel level, bool sum)
   {
     if (((CandlePriceLevel) ref level).TotalVolume < 0M)
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436271), (object) ((CandlePriceLevel) ref level).TotalVolume, LocalizedStrings.InvalidValue);
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539436271), (object) ((CandlePriceLevel) ref level).TotalVolume, LocalizedStrings.InvalidValue);
     if (sum && ((CandlePriceLevel) ref level).TotalVolume == 0M)
       return false;
     \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj ltdBuqAinydlZs6uj;
@@ -633,7 +633,7 @@ label_8:
     ICollection
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly TimeframeSegmentDataSeries \u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436978));
+    private readonly TimeframeSegmentDataSeries \u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539436978));
 
     public int Count => this.\u0023\u003DzU\u0024_meog\u003D._segments.Count;
 

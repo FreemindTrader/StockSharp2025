@@ -21,7 +21,7 @@ internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFI
     dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd _param2)
   {
     if (_param2.dje_z3GBAX47U_ejd < _param1.dje_z3GBAX47U_ejd || _param2.dje_zLPL6EZPA_ejd < _param1.dje_zLPL6EZPA_ejd || _param2.dje_zX8HQ8VV9_ejd < _param1.dje_zX8HQ8VV9_ejd)
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539323082));
+      throw new ArgumentException(XXX.SSS(-539323082));
     this.\u0023\u003DzI8Mw9xZs1VOkQCWXlg\u003D\u003D = _param1;
     this.\u0023\u003DzoPnP1TQ_yGZhzl0Qsg\u003D\u003D = _param2;
   }

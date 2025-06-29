@@ -82,13 +82,13 @@ public class DefaultPainter : BaseChartIndicatorPainter<IIndicator>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Line, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443181));
+    PersistableHelper.Load((IPersistable) this.Line, storage, XXX.SSS(-539443181));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443181), PersistableHelper.Save((IPersistable) this.Line));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443181), PersistableHelper.Save((IPersistable) this.Line));
   }
 }

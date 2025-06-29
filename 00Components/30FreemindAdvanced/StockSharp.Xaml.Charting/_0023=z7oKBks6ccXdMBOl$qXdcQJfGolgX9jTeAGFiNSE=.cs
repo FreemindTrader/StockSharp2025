@@ -141,7 +141,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     {
       Source = (object) _param0
     };
-    DependencyProperty dp = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439922) + _param1, typeof (object), ((object) _param0).GetType(), new PropertyMetadata(_param2));
+    DependencyProperty dp = DependencyProperty.RegisterAttached(XXX.SSS(-539439922) + _param1, typeof (object), ((object) _param0).GetType(), new PropertyMetadata(_param2));
     _param0.SetBinding(dp, (BindingBase) binding);
   }
 
@@ -167,7 +167,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     DispatcherPriority _param1,
     Action _param2)
   {
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param0, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439915));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param0, XXX.SSS(-539439915));
     if (\u0023\u003Dz_tZkxN0xSCAji6_DomQ8vhQ5FfpLq6glVuatd7w\u003D.\u0023\u003DzMNVV9_LtRFVB())
       _param2();
     else

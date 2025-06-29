@@ -24,10 +24,10 @@ internal class RulerAnnotation : AnnotationBase
 {
   public static readonly 
   #nullable disable
-  DependencyProperty RulerWidthProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328577), typeof (double), typeof (RulerAnnotation), new PropertyMetadata((object) 0.0));
-  public static readonly DependencyProperty RulerHeightProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328626), typeof (double), typeof (RulerAnnotation), new PropertyMetadata((object) 0.0));
-  public static readonly DependencyProperty Text1Property = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328616), typeof (string), typeof (RulerAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
-  public static readonly DependencyProperty Text2Property = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328916), typeof (string), typeof (RulerAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
+  DependencyProperty RulerWidthProperty = DependencyProperty.Register(XXX.SSS(-539328577), typeof (double), typeof (RulerAnnotation), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty RulerHeightProperty = DependencyProperty.Register(XXX.SSS(-539328626), typeof (double), typeof (RulerAnnotation), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty Text1Property = DependencyProperty.Register(XXX.SSS(-539328616), typeof (string), typeof (RulerAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty Text2Property = DependencyProperty.Register(XXX.SSS(-539328916), typeof (string), typeof (RulerAnnotation), new PropertyMetadata((PropertyChangedCallback) null));
   private static DispatcherTimer _timer;
   private double _priceStep;
   private bool _subscribed;
@@ -38,7 +38,7 @@ internal class RulerAnnotation : AnnotationBase
 
   static RulerAnnotation()
   {
-    Control.BackgroundProperty.OverrideMetadata(typeof (RulerAnnotation), (PropertyMetadata) new FrameworkPropertyMetadata((object) new SolidColorBrush((Color) ColorConverter.ConvertFromString(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328928)))));
+    Control.BackgroundProperty.OverrideMetadata(typeof (RulerAnnotation), (PropertyMetadata) new FrameworkPropertyMetadata((object) new SolidColorBrush((Color) ColorConverter.ConvertFromString(XXX.SSS(-539328928)))));
   }
 
   public RulerAnnotation()
@@ -85,7 +85,7 @@ internal class RulerAnnotation : AnnotationBase
     get => this._priceStep;
     set
     {
-      this._priceStep = value >= 0.0 ? value : throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328912));
+      this._priceStep = value >= 0.0 ? value : throw new ArgumentOutOfRangeException(XXX.SSS(-539328912));
       this._needToUpdate = true;
     }
   }
@@ -95,9 +95,9 @@ internal class RulerAnnotation : AnnotationBase
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328955));
-    this._rulerArea = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328977));
-    this._textBorder = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328966));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539328955));
+    this._rulerArea = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539328977));
+    this._textBorder = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(XXX.SSS(-539328966));
   }
 
   protected override Cursor GetSelectedCursor() => (Cursor) null;
@@ -215,9 +215,9 @@ internal class RulerAnnotation : AnnotationBase
     if (num8 != 0)
     {
       interpolatedStringHandler = new DefaultInterpolatedStringHandler(3, 2);
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427378));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427378));
       interpolatedStringHandler.AppendFormatted<int>(num8);
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432316));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432316));
       interpolatedStringHandler.AppendFormatted(LocalizedStrings.Pips);
       str3 = interpolatedStringHandler.ToStringAndClear();
     }
@@ -226,9 +226,9 @@ internal class RulerAnnotation : AnnotationBase
     this.Text1 = str2 + str3;
     interpolatedStringHandler = new DefaultInterpolatedStringHandler(4, 3);
     interpolatedStringHandler.AppendFormatted(LocalizedStrings.Bars);
-    interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329097));
+    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539329097));
     interpolatedStringHandler.AppendFormatted<int>(num3 - num1);
-    interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427378));
+    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427378));
     interpolatedStringHandler.AppendFormatted(str1);
     this.Text2 = interpolatedStringHandler.ToStringAndClear();
   }

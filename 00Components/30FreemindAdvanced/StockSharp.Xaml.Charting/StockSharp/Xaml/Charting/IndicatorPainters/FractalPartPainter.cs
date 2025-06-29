@@ -57,13 +57,13 @@ public class FractalPartPainter : BaseChartIndicatorPainter<FractalPart>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Part, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442972));
+    PersistableHelper.Load((IPersistable) this.Part, storage, XXX.SSS(-539442972));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442972), PersistableHelper.Save((IPersistable) this.Part));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442972), PersistableHelper.Save((IPersistable) this.Part));
   }
 }

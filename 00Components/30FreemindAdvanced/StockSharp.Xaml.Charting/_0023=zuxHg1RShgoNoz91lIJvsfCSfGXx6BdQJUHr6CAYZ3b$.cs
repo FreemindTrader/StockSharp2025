@@ -10,7 +10,7 @@ using System.Windows;
 #nullable disable
 internal sealed class \u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y
 {
-  public static readonly DependencyProperty \u0023\u003DzQUfZszk\u003D = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430291), typeof (bool), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y), new PropertyMetadata((object) false, new PropertyChangedCallback(\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.\u0023\u003Dzsw9pqJ9tAkiO)));
+  public static readonly DependencyProperty \u0023\u003DzQUfZszk\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539430291), typeof (bool), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y), new PropertyMetadata((object) false, new PropertyChangedCallback(\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.\u0023\u003Dzsw9pqJ9tAkiO)));
 
   private static void \u0023\u003Dzsw9pqJ9tAkiO(
     DependencyObject _param0,

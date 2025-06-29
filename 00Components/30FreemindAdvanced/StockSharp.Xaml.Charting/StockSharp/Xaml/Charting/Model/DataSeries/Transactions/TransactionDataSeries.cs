@@ -33,7 +33,7 @@ internal class TransactionDataSeries :
   public TransactionDataSeries(
     \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> candles)
   {
-    this._candlesSeries = candles ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436089));
+    this._candlesSeries = candles ?? throw new ArgumentNullException(XXX.SSS(-539436089));
     this._yValues = new TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D(this);
     this._candlesSeries.DataSeriesChanged += new EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X>(this.CandlesSeries_OnDataSeriesChanged);
   }
@@ -162,7 +162,7 @@ internal class TransactionDataSeries :
   private void EnsureData()
   {
     if (!this._candlesSeries.IsSorted)
-      throw new NotSupportedException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436072));
+      throw new NotSupportedException(XXX.SSS(-539436072));
     lock (this.SyncRoot)
     {
       if (this._data.Count == this._candlesSeries.Count)
@@ -173,7 +173,7 @@ internal class TransactionDataSeries :
         return;
       }
     }
-    throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436102));
+    throw new InvalidOperationException(XXX.SSS(-539436102));
   }
 
   public void InvalidateParentSurface(
@@ -239,7 +239,7 @@ internal class TransactionDataSeries :
     if ((trans != null ? (trans.\u0023\u003DzDmTtC9WghRFa().\u0023\u003DzCCMM80zDpO6N<char>() ? 1 : 0) : 1) != 0)
     {
       DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(26, 1);
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539436138));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539436138));
       interpolatedStringHandler.AppendFormatted<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(trans);
       throw new ArgumentException(interpolatedStringHandler.ToStringAndClear());
     }

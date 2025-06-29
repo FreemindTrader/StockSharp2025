@@ -49,13 +49,13 @@ internal abstract class \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbc
 
   public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003DzQ1DQeNOt4jKI()
   {
-    return this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Count != 1 ? this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Pop() : throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320851));
+    return this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Count != 1 ? this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Pop() : throw new Exception(XXX.SSS(-539320851));
   }
 
   public void \u0023\u003Dzzod5Zz3JUbgL()
   {
     if (this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Count > 1000)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320874));
+      throw new Exception(XXX.SSS(-539320874));
     this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Push(this.\u0023\u003Dz8uOLLz\u0024BAbD\u0024x13MCwqdtZE\u003D.Peek());
   }
 

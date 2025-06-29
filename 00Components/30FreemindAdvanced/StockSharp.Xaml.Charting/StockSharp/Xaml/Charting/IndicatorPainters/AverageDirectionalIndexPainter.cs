@@ -84,17 +84,17 @@ public class AverageDirectionalIndexPainter : BaseChartIndicatorPainter<AverageD
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.DiPlus, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442751));
-    PersistableHelper.Load((IPersistable) this.DiMinus, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442732));
-    PersistableHelper.Load((IPersistable) this.Adx, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442774));
+    PersistableHelper.Load((IPersistable) this.DiPlus, storage, XXX.SSS(-539442751));
+    PersistableHelper.Load((IPersistable) this.DiMinus, storage, XXX.SSS(-539442732));
+    PersistableHelper.Load((IPersistable) this.Adx, storage, XXX.SSS(-539442774));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442751), PersistableHelper.Save((IPersistable) this.DiPlus));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442732), PersistableHelper.Save((IPersistable) this.DiMinus));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442774), PersistableHelper.Save((IPersistable) this.Adx));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442751), PersistableHelper.Save((IPersistable) this.DiPlus));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442732), PersistableHelper.Save((IPersistable) this.DiMinus));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442774), PersistableHelper.Save((IPersistable) this.Adx));
   }
 }

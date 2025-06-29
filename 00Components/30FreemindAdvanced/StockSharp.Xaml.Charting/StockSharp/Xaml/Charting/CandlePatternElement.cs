@@ -46,7 +46,7 @@ public class CandlePatternElement :
     set
     {
       this.\u0023\u003DzPWHjilJVaIGi = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432591));
+      this.RaisePropertyChanged(XXX.SSS(-539432591));
     }
   }
 
@@ -58,7 +58,7 @@ public class CandlePatternElement :
     set
     {
       this.\u0023\u003DzTWnsWqFC_c4o = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432639));
+      this.RaisePropertyChanged(XXX.SSS(-539432639));
     }
   }
 
@@ -91,15 +91,15 @@ public class CandlePatternElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.DownColor = storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432591), 0).ToColor();
-    this.UpColor = storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432639), 0).ToColor();
+    this.DownColor = storage.GetValue<int>(XXX.SSS(-539432591), 0).ToColor();
+    this.UpColor = storage.GetValue<int>(XXX.SSS(-539432639), 0).ToColor();
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432591), this.DownColor.ToInt());
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432639), this.UpColor.ToInt());
+    storage.SetValue<int>(XXX.SSS(-539432591), this.DownColor.ToInt());
+    storage.SetValue<int>(XXX.SSS(-539432639), this.UpColor.ToInt());
   }
 }

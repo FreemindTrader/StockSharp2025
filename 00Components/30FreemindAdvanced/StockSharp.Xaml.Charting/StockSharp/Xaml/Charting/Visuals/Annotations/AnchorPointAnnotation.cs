@@ -23,8 +23,8 @@ internal abstract class AnchorPointAnnotation :
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
   IXmlSerializable
 {
-  public static readonly DependencyProperty HorizontalAnchorPointProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342659), typeof (dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd), typeof (AnchorPointAnnotation), new PropertyMetadata((object) dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd.Left, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
-  public static readonly DependencyProperty VerticalAnchorPointProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342719), typeof (dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd), typeof (AnchorPointAnnotation), new PropertyMetadata((object) dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd.Top, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
+  public static readonly DependencyProperty HorizontalAnchorPointProperty = DependencyProperty.Register(XXX.SSS(-539342659), typeof (dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd), typeof (AnchorPointAnnotation), new PropertyMetadata((object) dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd.Left, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
+  public static readonly DependencyProperty VerticalAnchorPointProperty = DependencyProperty.Register(XXX.SSS(-539342719), typeof (dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd), typeof (AnchorPointAnnotation), new PropertyMetadata((object) dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd.Top, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
 
   protected AnchorPointAnnotation() => this.IsResizable = false;
 

@@ -19,13 +19,13 @@ internal sealed class dje_zLDCP3GC55N3ZB534UKL3RYD8CJMU76XSLND83RQ2PUZCL3Q_ejd :
   {
     Thickness thickness = (Thickness) _param1;
     string str = (string) _param3;
-    if (str == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427181))
+    if (str == XXX.SSS(-539427181))
       return (object) thickness.Top;
-    if (str == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428487))
+    if (str == XXX.SSS(-539428487))
       return (object) thickness.Bottom;
-    if (str == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427170))
+    if (str == XXX.SSS(-539427170))
       return (object) thickness.Left;
-    return str == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428507) ? (object) thickness.Right : (object) ((thickness.Left + thickness.Right + thickness.Top + thickness.Bottom) / 4.0);
+    return str == XXX.SSS(-539428507) ? (object) thickness.Right : (object) ((thickness.Left + thickness.Right + thickness.Top + thickness.Bottom) / 4.0);
   }
 
   public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)

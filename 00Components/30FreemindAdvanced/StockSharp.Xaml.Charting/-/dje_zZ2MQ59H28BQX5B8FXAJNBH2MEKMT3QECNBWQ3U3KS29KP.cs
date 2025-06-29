@@ -18,9 +18,9 @@ internal sealed class dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT
   INotifyPropertyChanged
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzaKv9NrOuOcapF0LrKNnfOo9b1\u0024C2bSjheA\u003D\u003D = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539338101), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), typeof (dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd.\u0023\u003DzPWvFs4bMVSvB)));
+  public static readonly DependencyProperty \u0023\u003DzaKv9NrOuOcapF0LrKNnfOo9b1\u0024C2bSjheA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539338101), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), typeof (dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd.\u0023\u003DzPWvFs4bMVSvB)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428099), typeof (Orientation), typeof (dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd), new PropertyMetadata((object) Orientation.Horizontal, new PropertyChangedCallback(dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd.\u0023\u003DzcZqyvQl0j0My)));
+  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(XXX.SSS(-539428099), typeof (Orientation), typeof (dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd), new PropertyMetadata((object) Orientation.Horizontal, new PropertyChangedCallback(dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd.\u0023\u003DzcZqyvQl0j0My)));
 
   public dje_zZ2MQ59H28BQX5B8FXAJNBH2MEKMT3QECNBWQ3U3KS29KPK8C8DHPT9FEBA2Q_ejd()
   {

@@ -76,9 +76,9 @@ internal sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2r5h
     int _param8)
   {
     if (!_param7)
-      throw new NotImplementedException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321221));
+      throw new NotImplementedException(XXX.SSS(-539321221));
     if (_param5[_param6] != byte.MaxValue)
-      throw new NotImplementedException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321221));
+      throw new NotImplementedException(XXX.SSS(-539321221));
     for (int index = 0; index < _param8; ++index)
     {
       this.\u0023\u003Dz1sAbEWOIYGyA(_param1, _param2, _param3[_param4]);

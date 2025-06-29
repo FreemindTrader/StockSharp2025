@@ -56,7 +56,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd \u0023\u003DzUdabyQU\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330433), typeof (ChartAnnotationTypes), typeof (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzLJLGN_0FzU1B)));
+  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register(XXX.SSS(-539330433), typeof (ChartAnnotationTypes), typeof (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzLJLGN_0FzU1B)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -65,8 +65,8 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D _param2)
   {
     this.InitializeComponent();
-    this.\u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330159));
-    this.\u0023\u003DzfS3q6Qc\u003D = _param2 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330454));
+    this.\u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539330159));
+    this.\u0023\u003DzfS3q6Qc\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539330454));
   }
 
   private Chart \u0023\u003DzGuZ8w82B3fMJ() => this.\u0023\u003DzeckSod0\u003D.Chart as Chart;
@@ -142,7 +142,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     else
     {
       Type type = _param1.\u0023\u003Dz6wKFLhaRAAzr();
-      string key = type.Name + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382);
+      string key = type.Name + XXX.SSS(-539433382);
       if (this.Resources.Contains((object) key))
         this.AnnotationStyle = (Style) this.Resources[(object) key];
       this.AnnotationType = type;
@@ -203,14 +203,14 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     PopupMenu popupMenu1 = new PopupMenu();
     CommonBarItemCollection items1 = popupMenu1.Items;
     BarButtonItem barButtonItem1 = new BarButtonItem();
-    barButtonItem1.Glyph = ThemedIconsExtension.GetImage(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328527));
-    barButtonItem1.Content = (object) (LocalizedStrings.Properties + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330490));
+    barButtonItem1.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328527));
+    barButtonItem1.Content = (object) (LocalizedStrings.Properties + XXX.SSS(-539330490));
     barButtonItem1.Command = (ICommand) new DelegateCommand<AnnotationBase>(new Action<AnnotationBase>(jq9Llz3ahZ2LrQl4.\u0023\u003Dzn4dNgi0mxbbCP\u0024DWxprQswg\u003D));
     barButtonItem1.CommandParameter = (object) jq9Llz3ahZ2LrQl4.\u0023\u003DzLXiKo\u0024A\u003D;
     items1.Add((IBarItem) barButtonItem1);
     CommonBarItemCollection items2 = popupMenu1.Items;
     BarButtonItem barButtonItem2 = new BarButtonItem();
-    barButtonItem2.Glyph = ThemedIconsExtension.GetImage(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328570));
+    barButtonItem2.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328570));
     barButtonItem2.Content = (object) LocalizedStrings.Delete;
     barButtonItem2.Command = (ICommand) jq9Llz3ahZ2LrQl4.\u0023\u003DztKpRxYMDxV\u00243;
     barButtonItem2.CommandParameter = (object) jq9Llz3ahZ2LrQl4.\u0023\u003DzLXiKo\u0024A\u003D;
@@ -509,7 +509,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330471), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539330471), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -539,7 +539,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
         if (!(_param1.\u0023\u003DzFlkZpfJp6G9R is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D zFlkZpfJp6G9R))
           throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[1]
           {
-            (object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330305)
+            (object) XXX.SSS(-539330305)
           }));
         return (IComparable) new DateTimeOffset(zFlkZpfJp6G9R.\u0023\u003DzWZQlXHuDrnKc(num1), TimeSpan.Zero);
       case DateTime dateTime:

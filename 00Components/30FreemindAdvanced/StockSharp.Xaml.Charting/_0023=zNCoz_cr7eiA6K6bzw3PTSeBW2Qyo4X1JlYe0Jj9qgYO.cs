@@ -121,7 +121,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
     this.\u0023\u003DznaRoot_wQHeu = (float[]) null;
     this.\u0023\u003Dz6dSZRTGrExKsSL6\u0024lg\u003D\u003D();
     if (_param2 > _param4 || _param3 > _param5)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321319));
+      throw new Exception(XXX.SSS(-539321319));
     \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(_param2, _param3, _param4, _param5);
     if (!xvhBayrK2CmzoKas.\u0023\u003DzPHB5nPY\u003D(new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, _param1.Width - 1, _param1.Height - 1)))
       return false;
@@ -134,7 +134,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
   public void \u0023\u003DzQlhuVZc\u003D(byte _param1)
   {
     if (this.\u0023\u003DzHstjD51XfGa0() != 32 /*0x20*/)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321173) + this.\u0023\u003DzHstjD51XfGa0().ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320452));
+      throw new Exception(XXX.SSS(-539321173) + this.\u0023\u003DzHstjD51XfGa0().ToString() + XXX.SSS(-539320452));
     int num1 = this.Width * this.Height;
     int num2;
     float[] numArray = this.\u0023\u003Dz9b1_JhA\u003D(out num2);
@@ -151,9 +151,9 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
   public void \u0023\u003DzWIEZ7Zw\u003D(int _param1, int _param2, int _param3, int _param4)
   {
     if (_param4 != 128 /*0x80*/ && _param4 != 96 /*0x60*/ && _param4 != 32 /*0x20*/)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320537));
+      throw new Exception(XXX.SSS(-539320537));
     if (_param3 < _param1 * (_param4 / 32 /*0x20*/))
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320575));
+      throw new Exception(XXX.SSS(-539320575));
     this.\u0023\u003DzoEcAzFBHboD2PhE9QAhTock\u003D(_param1, _param2, _param3, _param4, _param4 / 32 /*0x20*/);
     this.\u0023\u003DznaRoot_wQHeu = new float[this.\u0023\u003DzZv9c5g_3yAgF3TYxUw\u003D\u003D * this.\u0023\u003Dzh_FblSMKXulX];
     this.\u0023\u003DziiJRC89LTMtY();
@@ -179,7 +179,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
     int _param4)
   {
     if (this.\u0023\u003DzaqBjqW\u00249N6vELXAC78288VQ\u003D() != this.\u0023\u003DzHstjD51XfGa0() / 32 /*0x20*/ || _param1.\u0023\u003DzaqBjqW\u00249N6vELXAC78288VQ\u003D() != _param1.\u0023\u003DzHstjD51XfGa0() / 32 /*0x20*/)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320712));
+      throw new Exception(XXX.SSS(-539320712));
     if (this.\u0023\u003DzHstjD51XfGa0() == _param1.\u0023\u003DzHstjD51XfGa0())
     {
       int num1 = _param2.Width * this.\u0023\u003DzaqBjqW\u00249N6vELXAC78288VQ\u003D();
@@ -247,7 +247,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
       else
         flag = false;
       if (!flag)
-        throw new NotImplementedException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320769) + _param1.\u0023\u003DzHstjD51XfGa0().ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320830) + this.\u0023\u003DzHstjD51XfGa0().ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320809));
+        throw new NotImplementedException(XXX.SSS(-539320769) + _param1.\u0023\u003DzHstjD51XfGa0().ToString() + XXX.SSS(-539320830) + this.\u0023\u003DzHstjD51XfGa0().ToString() + XXX.SSS(-539320809));
     }
   }
 
@@ -320,7 +320,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
   public void \u0023\u003DzgDbPoFoJnrrrHveVDA\u003D\u003D(
     \u0023\u003DzKasBY8yFp0kHGchcdspopAZazsv9Xi3W4H2ktC4tix4XTs9ceql5jwjqb5HosybZ1aLYsVs\u003D _param1)
   {
-    this.\u0023\u003Dz\u0024HQb_d5E1viweQCSKg\u003D\u003D = _param1 == null || _param1.\u0023\u003DzVAoYC\u0024MJfjKU3EUhiA\u003D\u003D() == this.\u0023\u003DzHstjD51XfGa0() ? _param1 : throw new NotSupportedException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320607));
+    this.\u0023\u003Dz\u0024HQb_d5E1viweQCSKg\u003D\u003D = _param1 == null || _param1.\u0023\u003DzVAoYC\u0024MJfjKU3EUhiA\u003D\u003D() == this.\u0023\u003DzHstjD51XfGa0() ? _param1 : throw new NotSupportedException(XXX.SSS(-539320607));
   }
 
   private void \u0023\u003DziiJRC89LTMtY()
@@ -345,7 +345,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
   public void \u0023\u003DzdrMgpSc\u003D(float[] _param1, int _param2)
   {
     if (_param1.Length < this.\u0023\u003Dzh_FblSMKXulX * this.\u0023\u003DzZv9c5g_3yAgF3TYxUw\u003D\u003D)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539320665));
+      throw new Exception(XXX.SSS(-539320665));
     this.\u0023\u003DznaRoot_wQHeu = _param1;
     this.\u0023\u003DzSNURIo8cO\u0024iR = this.\u0023\u003Dz4ohp_xe1a9WAapdZZA\u003D\u003D = _param2;
     if (this.\u0023\u003DzZv9c5g_3yAgF3TYxUw\u003D\u003D < 0)
@@ -361,16 +361,16 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
     int _param5)
   {
     if (this.\u0023\u003DznaRoot_wQHeu != null)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539322139));
+      throw new Exception(XXX.SSS(-539322139));
     this.\u0023\u003Dz9LgI12vZMy\u0024F = _param1;
     this.\u0023\u003Dzh_FblSMKXulX = _param2;
     this.\u0023\u003DzZv9c5g_3yAgF3TYxUw\u003D\u003D = _param3;
     this.\u0023\u003DzppSlQB5wmDk_ = _param4;
     if (_param5 > 4)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321496));
-    this.\u0023\u003Dz\u0024wxbMCh_3XSWn2xljEt8YDpBlP5T = _param5 >= _param4 / 32 /*0x20*/ ? _param5 : throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539322084));
+      throw new Exception(XXX.SSS(-539321496));
+    this.\u0023\u003Dz\u0024wxbMCh_3XSWn2xljEt8YDpBlP5T = _param5 >= _param4 / 32 /*0x20*/ ? _param5 : throw new Exception(XXX.SSS(-539322084));
     if (_param3 < _param5 * _param1)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321547));
+      throw new Exception(XXX.SSS(-539321547));
   }
 
   public void \u0023\u003Dz6dSZRTGrExKsSL6\u0024lg\u003D\u003D()
@@ -746,7 +746,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
     \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2)
   {
     if (_param1 == this)
-      throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539322292));
+      throw new Exception(XXX.SSS(-539322292));
     this.\u0023\u003Dz05SWyVw\u003D();
     this.\u0023\u003DzWIEZ7Zw\u003D(_param2.Width, _param2.Height, _param2.Width * _param1.\u0023\u003DzHstjD51XfGa0() / 8, _param1.\u0023\u003DzHstjD51XfGa0());
     this.\u0023\u003DzgDbPoFoJnrrrHveVDA\u003D\u003D(_param1.\u0023\u003DztvwmoyKu8oUlLP4_gA\u003D\u003D());

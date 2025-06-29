@@ -460,7 +460,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
   internal static int \u0023\u003Dz_DB895w\u003D(double _param0, Color _param1)
   {
     if (_param0 < 0.0 || _param0 > 1.0)
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539323951), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539323990));
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539323951), XXX.SSS(-539323990));
     _param1.A = (byte) ((double) _param1.A * _param0);
     return \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dz_DB895w\u003D(_param1);
   }
@@ -1243,7 +1243,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     string _param1)
   {
     string name = new AssemblyName(Assembly.GetCallingAssembly().FullName).Name;
-    return _param0.\u0023\u003Dz_YJ1GTI\u003D(name + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539324004) + _param1);
+    return _param0.\u0023\u003Dz_YJ1GTI\u003D(name + XXX.SSS(-539324004) + _param1);
   }
 
   internal static WriteableBitmap \u0023\u003Dz_YJ1GTI\u003D(
@@ -2069,9 +2069,9 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     int num1 = _param1.GetUpperBound(0) + 1;
     int num2 = _param1.GetUpperBound(1) + 1;
     if ((num2 & 1) == 0)
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539324306));
+      throw new InvalidOperationException(XXX.SSS(-539324306));
     if ((num1 & 1) == 0)
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539324338));
+      throw new InvalidOperationException(XXX.SSS(-539324338));
     int pixelWidth = _param0.PixelWidth;
     int pixelHeight = _param0.PixelHeight;
     WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelWidth, pixelHeight);

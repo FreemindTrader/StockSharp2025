@@ -22,9 +22,9 @@ internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh 
     Type _param2)
   {
     if (_param1 == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441673));
+      throw new ArgumentNullException(XXX.SSS(-539441673));
     if (!typeof (\u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D).IsAssignableFrom(_param2))
-      throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441720));
+      throw new ArgumentOutOfRangeException(XXX.SSS(-539441720));
     this.\u0023\u003DzekIeoK8\u003D = new WeakReference((object) _param1);
     this.\u0023\u003Dz0AB1VGY\u003D = _param2;
   }
@@ -33,7 +33,7 @@ internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh 
   {
     if (this.\u0023\u003DzekIeoK8\u003D.IsAlive && this.\u0023\u003DzekIeoK8\u003D.Target is \u0023\u003Dz3uoqT9PJZU9sx1O75XaUuwQPg4PJT0faCb_EEayRvBbwk\u00245OFMeEiVo\u003D target)
     {
-      MethodInfo methodInfo = typeof (\u0023\u003Dz3uoqT9PJZU9sx1O75XaUuwQPg4PJT0faCb_EEayRvBbwk\u00245OFMeEiVo\u003D).GetMethod(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441699), new Type[1]
+      MethodInfo methodInfo = typeof (\u0023\u003Dz3uoqT9PJZU9sx1O75XaUuwQPg4PJT0faCb_EEayRvBbwk\u00245OFMeEiVo\u003D).GetMethod(XXX.SSS(-539441699), new Type[1]
       {
         typeof (\u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh)
       }).MakeGenericMethod(this.\u0023\u003Dz0AB1VGY\u003D);

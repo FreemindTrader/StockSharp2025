@@ -27,7 +27,7 @@ internal sealed class \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_L
     get => this.\u0023\u003DzpVRHOdY\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzpVRHOdY\u003D, value, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437471));
+      this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzpVRHOdY\u003D, value, XXX.SSS(-539437471));
     }
   }
 

@@ -60,7 +60,7 @@ public class ChartDrawData : IChartDrawData
     IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> _param1)
   {
     if (_param1 == null)
-      throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427367));
+      throw new ArgumentNullException(XXX.SSS(-539427367));
     foreach (RefPair<DateTimeOffset, IDictionary<IChartElement, object>> refPair in _param1)
     {
       DateTimeOffset first = refPair.First;
@@ -180,7 +180,7 @@ public class ChartDrawData : IChartDrawData
   {
     Dictionary<IChartAnnotationElement, IAnnotationData> dictionary = this.\u0023\u003DzatSa84WWjykt();
     IChartAnnotationElement key = element;
-    dictionary[key] = data ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427374));
+    dictionary[key] = data ?? throw new ArgumentNullException(XXX.SSS(-539427374));
     return (IChartDrawData) this;
   }
 
@@ -203,7 +203,7 @@ public class ChartDrawData : IChartDrawData
     if (!price.HasValue)
     {
       // ISSUE: explicit non-virtual call
-      price = order != null ? new Decimal?(__nonvirtual (order.Price)) : throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427417));
+      price = order != null ? new Decimal?(__nonvirtual (order.Price)) : throw new ArgumentException(XXX.SSS(-539427417));
     }
     valueOrDefault = balance.GetValueOrDefault();
     if (!balance.HasValue)
@@ -474,16 +474,16 @@ public class ChartDrawData : IChartDrawData
     public override string ToString()
     {
       DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(16 /*0x10*/, 6);
-      interpolatedStringHandler.AppendFormatted(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427554));
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427356));
+      interpolatedStringHandler.AppendFormatted(XXX.SSS(-539427554));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427356));
       interpolatedStringHandler.AppendFormatted(this.\u0023\u003DzDmTtC9WghRFa());
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427336));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427336));
       interpolatedStringHandler.AppendFormatted<DateTime>(this.\u0023\u003Dzg86amuQ\u003D());
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427378));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427378));
       interpolatedStringHandler.AppendFormatted<Sides>(this.\u0023\u003DzUYTxG_Bgl8ih());
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432316));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432316));
       interpolatedStringHandler.AppendFormatted<long>(this.Volume);
-      interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427391));
+      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427391));
       interpolatedStringHandler.AppendFormatted<double>(this.\u0023\u003DzbH5YDNBwpnry());
       return interpolatedStringHandler.ToStringAndClear();
     }
@@ -516,7 +516,7 @@ public class ChartDrawData : IChartDrawData
       IEnumerable<CandlePriceLevel> _param7)
     {
       this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1.UtcDateTime;
-      this.\u0023\u003DzdgcgaziC7FxHmFtv9g\u003D\u003D = _param2 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427521));
+      this.\u0023\u003DzdgcgaziC7FxHmFtv9g\u003D\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539427521));
       this.\u0023\u003DziHpFjupL57O5oHu1Mw\u003D\u003D = (double) _param3;
       this.\u0023\u003DzD8EFLWLAF8etf1TLXA\u003D\u003D = (double) _param4;
       this.\u0023\u003DzByFaQYKUGa5UYX0fCQ\u003D\u003D = (double) _param5;
@@ -602,7 +602,7 @@ public class ChartDrawData : IChartDrawData
       bool _param8,
       Decimal _param9)
     {
-      Order order = _param1 != null || _param8 ? _param1 : throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434416));
+      Order order = _param1 != null || _param8 ? _param1 : throw new ArgumentException(XXX.SSS(-539434416));
       if (order == null)
         order = new Order()
         {
@@ -867,71 +867,71 @@ public class ChartDrawData : IChartDrawData
     /// <param name="storage">Settings storage.</param>
     public void Load(SettingsStorage storage)
     {
-      this.IsVisible = storage.GetValue<bool?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813), this.IsVisible);
-      this.IsEditable = storage.GetValue<bool?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434496), this.IsEditable);
-      this.X1 = ChartDrawData.AnnotationData.\u0023\u003DqS8Rz7CLyLtZi1DPj0ZEyaLSgFDmJg4JMOyHZMbcvphk\u003D(storage.GetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434477), this.X1));
-      this.Y1 = storage.GetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434262), this.Y1);
-      this.X2 = ChartDrawData.AnnotationData.\u0023\u003DqS8Rz7CLyLtZi1DPj0ZEyaLSgFDmJg4JMOyHZMbcvphk\u003D(storage.GetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434243), this.X2));
-      this.Y2 = storage.GetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434252), this.Y2);
-      SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434289), (SettingsStorage) null);
+      this.IsVisible = storage.GetValue<bool?>(XXX.SSS(-539433813), this.IsVisible);
+      this.IsEditable = storage.GetValue<bool?>(XXX.SSS(-539434496), this.IsEditable);
+      this.X1 = ChartDrawData.AnnotationData.\u0023\u003DqS8Rz7CLyLtZi1DPj0ZEyaLSgFDmJg4JMOyHZMbcvphk\u003D(storage.GetValue<IComparable>(XXX.SSS(-539434477), this.X1));
+      this.Y1 = storage.GetValue<IComparable>(XXX.SSS(-539434262), this.Y1);
+      this.X2 = ChartDrawData.AnnotationData.\u0023\u003DqS8Rz7CLyLtZi1DPj0ZEyaLSgFDmJg4JMOyHZMbcvphk\u003D(storage.GetValue<IComparable>(XXX.SSS(-539434243), this.X2));
+      this.Y2 = storage.GetValue<IComparable>(XXX.SSS(-539434252), this.Y2);
+      SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>(XXX.SSS(-539434289), (SettingsStorage) null);
       this.Stroke = settingsStorage1 != null ? settingsStorage1.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush) null;
-      SettingsStorage settingsStorage2 = storage.GetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434302), (SettingsStorage) null);
+      SettingsStorage settingsStorage2 = storage.GetValue<SettingsStorage>(XXX.SSS(-539434302), (SettingsStorage) null);
       this.Fill = settingsStorage2 != null ? settingsStorage2.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush) null;
-      SettingsStorage settingsStorage3 = storage.GetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434281), (SettingsStorage) null);
+      SettingsStorage settingsStorage3 = storage.GetValue<SettingsStorage>(XXX.SSS(-539434281), (SettingsStorage) null);
       this.Foreground = settingsStorage3 != null ? settingsStorage3.\u0023\u003DzMlbK6H8\u003D() : (System.Windows.Media.Brush) null;
       try
       {
-        SettingsStorage settingsStorage4 = storage.GetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434330), (SettingsStorage) null);
+        SettingsStorage settingsStorage4 = storage.GetValue<SettingsStorage>(XXX.SSS(-539434330), (SettingsStorage) null);
         this.Thickness = settingsStorage4 != null ? new System.Windows.Thickness?(settingsStorage4.\u0023\u003DzNnTxBiiEvu0_2NsnpA\u003D\u003D()) : new System.Windows.Thickness?();
       }
       catch
       {
       }
-      this.ShowLabel = storage.GetValue<bool?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434314), this.ShowLabel);
-      this.LabelPlacement = storage.GetValue<LabelPlacement?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434362), this.LabelPlacement);
-      this.HorizontalAlignment = storage.GetValue<System.Windows.HorizontalAlignment?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427475), this.HorizontalAlignment);
-      this.VerticalAlignment = storage.GetValue<System.Windows.VerticalAlignment?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427465), this.VerticalAlignment);
-      this.CoordinateMode = storage.GetValue<AnnotationCoordinateMode?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427489), this.CoordinateMode);
-      this.Text = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427542), this.Text);
+      this.ShowLabel = storage.GetValue<bool?>(XXX.SSS(-539434314), this.ShowLabel);
+      this.LabelPlacement = storage.GetValue<LabelPlacement?>(XXX.SSS(-539434362), this.LabelPlacement);
+      this.HorizontalAlignment = storage.GetValue<System.Windows.HorizontalAlignment?>(XXX.SSS(-539427475), this.HorizontalAlignment);
+      this.VerticalAlignment = storage.GetValue<System.Windows.VerticalAlignment?>(XXX.SSS(-539427465), this.VerticalAlignment);
+      this.CoordinateMode = storage.GetValue<AnnotationCoordinateMode?>(XXX.SSS(-539427489), this.CoordinateMode);
+      this.Text = storage.GetValue<string>(XXX.SSS(-539427542), this.Text);
     }
 
     /// <summary>Save settings.</summary>
     /// <param name="storage">Settings storage.</param>
     public void Save(SettingsStorage storage)
     {
-      storage.SetValue<bool?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813), this.IsVisible);
-      storage.SetValue<bool?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434496), this.IsEditable);
-      storage.SetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434477), ChartDrawData.AnnotationData.\u0023\u003DqQ1G3fw2s0nP9veUenvj8sEj2aOo8jkJJ5IBJj0VGllQ\u003D(this.X1));
-      storage.SetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434262), this.Y1);
-      storage.SetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434243), ChartDrawData.AnnotationData.\u0023\u003DqQ1G3fw2s0nP9veUenvj8sEj2aOo8jkJJ5IBJj0VGllQ\u003D(this.X2));
-      storage.SetValue<IComparable>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434252), this.Y2);
+      storage.SetValue<bool?>(XXX.SSS(-539433813), this.IsVisible);
+      storage.SetValue<bool?>(XXX.SSS(-539434496), this.IsEditable);
+      storage.SetValue<IComparable>(XXX.SSS(-539434477), ChartDrawData.AnnotationData.\u0023\u003DqQ1G3fw2s0nP9veUenvj8sEj2aOo8jkJJ5IBJj0VGllQ\u003D(this.X1));
+      storage.SetValue<IComparable>(XXX.SSS(-539434262), this.Y1);
+      storage.SetValue<IComparable>(XXX.SSS(-539434243), ChartDrawData.AnnotationData.\u0023\u003DqQ1G3fw2s0nP9veUenvj8sEj2aOo8jkJJ5IBJj0VGllQ\u003D(this.X2));
+      storage.SetValue<IComparable>(XXX.SSS(-539434252), this.Y2);
       SettingsStorage settingsStorage1 = storage;
-      string str1 = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434289);
+      string str1 = XXX.SSS(-539434289);
       System.Windows.Media.Brush stroke = this.Stroke;
       SettingsStorage settingsStorage2 = stroke != null ? stroke.\u0023\u003DzXzUiEzE\u003D() : (SettingsStorage) null;
       settingsStorage1.SetValue<SettingsStorage>(str1, settingsStorage2);
       SettingsStorage settingsStorage3 = storage;
-      string str2 = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434302);
+      string str2 = XXX.SSS(-539434302);
       System.Windows.Media.Brush fill = this.Fill;
       SettingsStorage settingsStorage4 = fill != null ? fill.\u0023\u003DzXzUiEzE\u003D() : (SettingsStorage) null;
       settingsStorage3.SetValue<SettingsStorage>(str2, settingsStorage4);
       SettingsStorage settingsStorage5 = storage;
-      string str3 = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434281);
+      string str3 = XXX.SSS(-539434281);
       System.Windows.Media.Brush foreground = this.Foreground;
       SettingsStorage settingsStorage6 = foreground != null ? foreground.\u0023\u003DzXzUiEzE\u003D() : (SettingsStorage) null;
       settingsStorage5.SetValue<SettingsStorage>(str3, settingsStorage6);
       SettingsStorage settingsStorage7 = storage;
-      string str4 = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434330);
+      string str4 = XXX.SSS(-539434330);
       System.Windows.Thickness? thickness = this.Thickness;
       ref System.Windows.Thickness? local = ref thickness;
       SettingsStorage settingsStorage8 = local.HasValue ? local.GetValueOrDefault().\u0023\u003DzXzUiEzE\u003D() : (SettingsStorage) null;
       settingsStorage7.SetValue<SettingsStorage>(str4, settingsStorage8);
-      storage.SetValue<bool?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434314), this.ShowLabel);
-      storage.SetValue<LabelPlacement?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434362), this.LabelPlacement);
-      storage.SetValue<System.Windows.HorizontalAlignment?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427475), this.HorizontalAlignment);
-      storage.SetValue<System.Windows.VerticalAlignment?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427465), this.VerticalAlignment);
-      storage.SetValue<AnnotationCoordinateMode?>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427489), this.CoordinateMode);
-      storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427542), this.Text);
+      storage.SetValue<bool?>(XXX.SSS(-539434314), this.ShowLabel);
+      storage.SetValue<LabelPlacement?>(XXX.SSS(-539434362), this.LabelPlacement);
+      storage.SetValue<System.Windows.HorizontalAlignment?>(XXX.SSS(-539427475), this.HorizontalAlignment);
+      storage.SetValue<System.Windows.VerticalAlignment?>(XXX.SSS(-539427465), this.VerticalAlignment);
+      storage.SetValue<AnnotationCoordinateMode?>(XXX.SSS(-539427489), this.CoordinateMode);
+      storage.SetValue<string>(XXX.SSS(-539427542), this.Text);
     }
 
     internal static IComparable \u0023\u003DqS8Rz7CLyLtZi1DPj0ZEyaLSgFDmJg4JMOyHZMbcvphk\u003D(
@@ -967,14 +967,14 @@ public class ChartDrawData : IChartDrawData
 
     internal ChartDrawDataItem(ChartDrawData _param1, DateTimeOffset _param2)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427536));
+      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539427536));
       this.\u0023\u003DzRDsdW3VoE5Y8g7uFWw\u003D\u003D = _param2;
       this.\u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D = double.NaN;
     }
 
     internal ChartDrawDataItem(ChartDrawData _param1, double _param2)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427579));
+      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539427579));
       this.\u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D = _param2;
     }
 

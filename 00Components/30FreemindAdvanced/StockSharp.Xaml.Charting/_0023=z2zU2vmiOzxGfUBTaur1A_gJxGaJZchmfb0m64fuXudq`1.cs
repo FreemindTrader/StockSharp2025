@@ -39,7 +39,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   private void \u0023\u003DzrjoFHxcyHAZx()
   {
-    throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539437616));
+    throw new InvalidOperationException(XXX.SSS(-539437616));
   }
 
   [SpecialName]

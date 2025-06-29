@@ -20,7 +20,7 @@ internal sealed class dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNN
   ContentControl
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dz32W8b1i6xoYS = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440922), typeof (Transform), typeof (dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd.\u0023\u003Dz0HuiTL\u0024SKGca)));
+  public static readonly DependencyProperty \u0023\u003Dz32W8b1i6xoYS = DependencyProperty.Register(XXX.SSS(-539440922), typeof (Transform), typeof (dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd.\u0023\u003Dz0HuiTL\u0024SKGca)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Panel \u0023\u003DzhIjAwTPpB57_;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -60,8 +60,8 @@ internal sealed class dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNN
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.\u0023\u003DzhIjAwTPpB57_ = (Panel) (this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440948)) as Grid);
-    this.\u0023\u003DzZ\u00240zMrM8YIwq = this.GetTemplateChild(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440936)) as ContentPresenter;
+    this.\u0023\u003DzhIjAwTPpB57_ = (Panel) (this.GetTemplateChild(XXX.SSS(-539440948)) as Grid);
+    this.\u0023\u003DzZ\u00240zMrM8YIwq = this.GetTemplateChild(XXX.SSS(-539440936)) as ContentPresenter;
     this.\u0023\u003DzVHHoBke2PxUh = new MatrixTransform();
     if (this.\u0023\u003DzhIjAwTPpB57_ != null)
       this.\u0023\u003DzhIjAwTPpB57_.RenderTransform = (Transform) this.\u0023\u003DzVHHoBke2PxUh;

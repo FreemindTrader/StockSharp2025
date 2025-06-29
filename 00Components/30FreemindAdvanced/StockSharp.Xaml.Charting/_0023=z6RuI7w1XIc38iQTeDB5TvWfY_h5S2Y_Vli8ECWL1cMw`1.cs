@@ -58,7 +58,7 @@ internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw
     {
       Type type = zH9Hnkng.GetType();
       _param2.WriteStartElement(type.Name);
-      _param2.WriteAttributeString(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433895), type.\u0023\u003Dzb_Ih6a0\u003D());
+      _param2.WriteAttributeString(XXX.SSS(-539433895), type.\u0023\u003Dzb_Ih6a0\u003D());
       zH9Hnkng.WriteXml(_param2);
       _param2.WriteEndElement();
     }
@@ -174,7 +174,7 @@ internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw
       }
       if (this.\u0023\u003DzYKG62\u00244\u003D.MoveToContent() == XmlNodeType.Element)
       {
-        \u0023\u003DzH9HNkng\u003D instance = (\u0023\u003DzH9HNkng\u003D) Activator.CreateInstance(Type.GetType(this.\u0023\u003DzYKG62\u00244\u003D[\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433895)]));
+        \u0023\u003DzH9HNkng\u003D instance = (\u0023\u003DzH9HNkng\u003D) Activator.CreateInstance(Type.GetType(this.\u0023\u003DzYKG62\u00244\u003D[XXX.SSS(-539433895)]));
         instance.ReadXml(this.\u0023\u003DzYKG62\u00244\u003D);
         this.\u0023\u003Dzaev1bhaFFIDX = instance;
         this.\u0023\u003Dz4fzyEZ1SsHYa = 1;

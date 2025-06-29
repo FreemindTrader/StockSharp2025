@@ -600,7 +600,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNY
     \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNYZdGkxOhAI6zOPwR _param2)
   {
     if (this == _param1 || this == _param2)
-      throw new FormatException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321445));
+      throw new FormatException(XXX.SSS(-539321445));
     for (int index1 = 0; index1 < 4; ++index1)
     {
       for (int index2 = 0; index2 < 4; ++index2)
@@ -782,9 +782,9 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNY
 
   public override string ToString()
   {
-    string str = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539321775);
+    string str = XXX.SSS(-539321775);
     for (int index = 0; index < 16 /*0x10*/; ++index)
-      str = str + this.\u0023\u003Dz\u0024CeUvME\u003D(index).ToString() + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427378);
-    return str + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432576);
+      str = str + this.\u0023\u003Dz\u0024CeUvME\u003D(index).ToString() + XXX.SSS(-539427378);
+    return str + XXX.SSS(-539432576);
   }
 }

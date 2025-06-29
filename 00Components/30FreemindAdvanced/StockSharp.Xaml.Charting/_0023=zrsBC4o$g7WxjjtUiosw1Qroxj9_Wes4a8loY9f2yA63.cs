@@ -72,7 +72,7 @@ internal sealed class \u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2y
 
   public void \u0023\u003DzDPsvCKVXcgMY07xxew\u003D\u003D(double _param1, double _param2)
   {
-    this.\u0023\u003DzBTo3X5Cbrz6FUAz8oQ\u003D\u003D = _param1 != 0.0 && _param2 != 0.0 ? _param2 : throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539322392));
+    this.\u0023\u003DzBTo3X5Cbrz6FUAz8oQ\u003D\u003D = _param1 != 0.0 && _param2 != 0.0 ? _param2 : throw new Exception(XXX.SSS(-539322392));
     this.FontSize = _param1;
     this.\u0023\u003DzBMfA6\u00247gn_MotS0z\u0024A\u003D\u003D = this.FontSize * 1.5;
   }
@@ -301,7 +301,7 @@ label_10:
           _param2 = this.\u0023\u003Dze2_ns4lBIl6l;
           return num5 != (sbyte) 0 ? (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1 : (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
         default:
-          throw new Exception(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539322462));
+          throw new Exception(XXX.SSS(-539322462));
       }
     }
     return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;

@@ -16,7 +16,7 @@ internal abstract class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOT7SaPnEBc9oZVOY9qs\u00
 
   public \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOT7SaPnEBc9oZVOY9qs\u003D(object _param1)
   {
-    this.\u0023\u003DzFSUsESM\u003D = _param1 != null ? new WeakReference(_param1) : throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539441694));
+    this.\u0023\u003DzFSUsESM\u003D = _param1 != null ? new WeakReference(_param1) : throw new ArgumentNullException(XXX.SSS(-539441694));
   }
 
   [SpecialName]

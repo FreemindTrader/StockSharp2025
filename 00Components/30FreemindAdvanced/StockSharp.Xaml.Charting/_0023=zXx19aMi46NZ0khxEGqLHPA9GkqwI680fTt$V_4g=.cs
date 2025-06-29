@@ -33,7 +33,7 @@ internal sealed class \u0023\u003DzXx19aMi46NZ0khxEGqLHPA9GkqwI680fTt\u0024V_4g\
     if (_param2 != \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZbHiFZEipPcMLCVdoP4\u003D.Cartesian)
     {
       if (_param2 != \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZbHiFZEipPcMLCVdoP4\u003D.Polar)
-        throw new InvalidOperationException(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539333867), (object) _param2));
+        throw new InvalidOperationException(string.Format(XXX.SSS(-539333867), (object) _param2));
       this.\u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J = (\u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D) new \u0023\u003DzpTBWTwmpvpgHkLhFsQhfVkmfvyhEgtzk_pKhmOxWv_a3(_param1);
     }
     else

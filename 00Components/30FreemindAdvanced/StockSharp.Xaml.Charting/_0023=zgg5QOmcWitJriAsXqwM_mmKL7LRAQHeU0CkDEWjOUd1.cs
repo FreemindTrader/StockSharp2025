@@ -13,7 +13,7 @@ using System.Windows.Media;
 #nullable disable
 internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D
 {
-  internal static DependencyProperty \u0023\u003Dz7aV0h3kX1zh\u0024 = DependencyProperty.RegisterAttached(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439161), typeof (Style), typeof (\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D), new PropertyMetadata((PropertyChangedCallback) null));
+  internal static DependencyProperty \u0023\u003Dz7aV0h3kX1zh\u0024 = DependencyProperty.RegisterAttached(XXX.SSS(-539439161), typeof (Style), typeof (\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D), new PropertyMetadata((PropertyChangedCallback) null));
 
   internal static Style GetSeriesStyle(DependencyObject _param0)
   {

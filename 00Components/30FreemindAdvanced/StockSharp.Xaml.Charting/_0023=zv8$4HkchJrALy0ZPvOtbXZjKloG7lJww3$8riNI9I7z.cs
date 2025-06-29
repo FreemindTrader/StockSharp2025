@@ -81,7 +81,7 @@ internal abstract class \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u002
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
     if (this.IsXAxis)
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539337546));
+      throw new InvalidOperationException(XXX.SSS(-539337546));
     double num1 = TimeSpan.MinValue.\u0023\u003Dzb9UCYbo\u003D();
     double num2 = TimeSpan.MaxValue.\u0023\u003Dzb9UCYbo\u003D();
     int length = _param1.\u0023\u003Dz4nxjMSnapDjJ.Length;
@@ -130,7 +130,7 @@ internal abstract class \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u002
     \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D karIzshiFbv2m5Lhw = htpuApLaHrAgLqA2lg.\u0023\u003DzyE145DTzxI8R(min, max, minorsPerMajor, (uint) num2);
     this.MajorDelta = karIzshiFbv2m5Lhw.\u0023\u003Dzgq30Jn5PclK8();
     this.MinorDelta = karIzshiFbv2m5Lhw.\u0023\u003DzZ85DqsktXJL3();
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539337785), new object[2]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539337785), new object[2]
     {
       (object) karIzshiFbv2m5Lhw.\u0023\u003Dzgq30Jn5PclK8(),
       (object) karIzshiFbv2m5Lhw.\u0023\u003DzZ85DqsktXJL3()

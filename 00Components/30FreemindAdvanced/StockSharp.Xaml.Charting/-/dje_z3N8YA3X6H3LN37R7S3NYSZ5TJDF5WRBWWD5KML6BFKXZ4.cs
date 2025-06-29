@@ -40,7 +40,7 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
   public dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKkX3SOgS26uy = (Popup) this.Resources[(object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329842)];
+    this.\u0023\u003DzKkX3SOgS26uy = (Popup) this.Resources[(object) XXX.SSS(-539329842)];
     this.\u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D = this.\u0023\u003DzKkX3SOgS26uy.FindLogicalChild<CandleDataTypeEdit>();
   }
 
@@ -89,7 +89,7 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329825), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539329825), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]

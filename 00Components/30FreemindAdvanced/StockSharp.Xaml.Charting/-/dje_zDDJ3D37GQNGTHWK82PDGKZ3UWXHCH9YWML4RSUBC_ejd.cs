@@ -52,7 +52,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd :
     get => this.\u0023\u003DzSgRFDbs\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(ref this.\u0023\u003DzSgRFDbs\u003D, value, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329115));
+      this.\u0023\u003DzwGPLgl8\u003D<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(ref this.\u0023\u003DzSgRFDbs\u003D, value, XXX.SSS(-539329115));
     }
   }
 
@@ -62,20 +62,20 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd :
     string str = this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003DzUYTxG_Bgl8ih() == null ? LocalizedStrings.Buy2 : LocalizedStrings.Sell2;
     DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(2, 3);
     interpolatedStringHandler.AppendFormatted(str);
-    interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432316));
+    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432316));
     interpolatedStringHandler.AppendFormatted<long>(this.\u0023\u003DzSgRFDbs\u003D.Volume);
-    interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427391));
+    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427391));
     interpolatedStringHandler.AppendFormatted<double>(this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003DzbH5YDNBwpnry());
     this.\u0023\u003Dz7CXThCs\u003D = interpolatedStringHandler.ToStringAndClear();
     interpolatedStringHandler = new DefaultInterpolatedStringHandler(4, 3);
     interpolatedStringHandler.AppendFormatted(LocalizedStrings.Time);
-    interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329097));
-    interpolatedStringHandler.AppendFormatted<DateTime>(this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzg86amuQ\u003D(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329138));
-    interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427378));
-    interpolatedStringHandler.AppendFormatted<DateTime>(this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzg86amuQ\u003D(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433036));
+    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539329097));
+    interpolatedStringHandler.AppendFormatted<DateTime>(this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzg86amuQ\u003D(), XXX.SSS(-539329138));
+    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539427378));
+    interpolatedStringHandler.AppendFormatted<DateTime>(this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzg86amuQ\u003D(), XXX.SSS(-539433036));
     this.\u0023\u003DzHhOSPlQ\u003D = interpolatedStringHandler.ToStringAndClear();
     if (this.\u0023\u003DzSgRFDbs\u003D.IsError)
-      this.\u0023\u003Dzi\u0024Pgiec\u003D = LocalizedStrings.Error + \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329097) + this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzj4eGSep8GqT3();
+      this.\u0023\u003Dzi\u0024Pgiec\u003D = LocalizedStrings.Error + XXX.SSS(-539329097) + this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzj4eGSep8GqT3();
     return this;
   }
 

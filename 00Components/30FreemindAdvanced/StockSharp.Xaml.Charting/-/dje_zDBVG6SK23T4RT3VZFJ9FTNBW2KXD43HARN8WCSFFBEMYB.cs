@@ -20,7 +20,7 @@ internal sealed class dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429234), typeof (dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd), typeof (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd), new PropertyMetadata((object) dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtExtents));
+  DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(XXX.SSS(-539429234), typeof (dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd), typeof (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd), new PropertyMetadata((object) dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtExtents));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Dictionary<string, \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D> \u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]

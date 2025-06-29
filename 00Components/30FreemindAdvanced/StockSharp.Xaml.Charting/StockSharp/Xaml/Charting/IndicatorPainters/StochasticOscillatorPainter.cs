@@ -71,15 +71,15 @@ public class StochasticOscillatorPainter : BaseChartIndicatorPainter<StochasticO
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.K, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442382));
-    PersistableHelper.Load((IPersistable) this.D, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442422));
+    PersistableHelper.Load((IPersistable) this.K, storage, XXX.SSS(-539442382));
+    PersistableHelper.Load((IPersistable) this.D, storage, XXX.SSS(-539442422));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442382), PersistableHelper.Save((IPersistable) this.K));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442422), PersistableHelper.Save((IPersistable) this.D));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442382), PersistableHelper.Save((IPersistable) this.K));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442422), PersistableHelper.Save((IPersistable) this.D));
   }
 }

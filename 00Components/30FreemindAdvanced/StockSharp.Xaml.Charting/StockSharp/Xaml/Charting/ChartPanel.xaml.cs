@@ -113,16 +113,16 @@ public class ChartPanel :
 
   static ChartPanel()
   {
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430413), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz9FyKEnqWZMl35lW1Mh8Pfl4\u003D), ChartCandleDrawStyles.Ohlc);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430435), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzlXKB39\u0024_RGvuXSNaoFYbUfY\u003D), ChartCandleDrawStyles.CandleStick);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz3VNaKjF0Px9ZE74bMBlf8Jc\u003D), ChartCandleDrawStyles.LineOpen);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPwX1fdUl8qrydTYdTH_dK8E\u003D), ChartCandleDrawStyles.LineClose);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzKNZn5frBPZ2lkm_QkzXTr78\u003D), ChartCandleDrawStyles.LineHigh);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzatM8lF9_VANXs9rCA\u0024nAIFo\u003D), ChartCandleDrawStyles.LineLow);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430471), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6DsZRppqVaGqhjmGQ982Snc\u003D), ChartCandleDrawStyles.Area);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430521), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzHdtpgWUYDJsY5xnfHe5\u0024iZQ\u003D), ChartCandleDrawStyles.BoxVolume);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430521), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzgUhRURp7DzSchtEQx_odDF4\u003D), ChartCandleDrawStyles.ClusterProfile);
-    ChartPanel.RegisterCandleStyle(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430506), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzBs0U8AxGBth7PQG2Cppyd9U\u003D), ChartCandleDrawStyles.PnF);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430413), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz9FyKEnqWZMl35lW1Mh8Pfl4\u003D), ChartCandleDrawStyles.Ohlc);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430435), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzlXKB39\u0024_RGvuXSNaoFYbUfY\u003D), ChartCandleDrawStyles.CandleStick);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz3VNaKjF0Px9ZE74bMBlf8Jc\u003D), ChartCandleDrawStyles.LineOpen);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPwX1fdUl8qrydTYdTH_dK8E\u003D), ChartCandleDrawStyles.LineClose);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzKNZn5frBPZ2lkm_QkzXTr78\u003D), ChartCandleDrawStyles.LineHigh);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430481), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzatM8lF9_VANXs9rCA\u0024nAIFo\u003D), ChartCandleDrawStyles.LineLow);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430471), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6DsZRppqVaGqhjmGQ982Snc\u003D), ChartCandleDrawStyles.Area);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430521), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzHdtpgWUYDJsY5xnfHe5\u0024iZQ\u003D), ChartCandleDrawStyles.BoxVolume);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430521), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzgUhRURp7DzSchtEQx_odDF4\u003D), ChartCandleDrawStyles.ClusterProfile);
+    ChartPanel.RegisterCandleStyle(XXX.SSS(-539430506), new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzBs0U8AxGBth7PQG2Cppyd9U\u003D), ChartCandleDrawStyles.PnF);
   }
 
   /// <summary>
@@ -181,7 +181,7 @@ public class ChartPanel :
     this.\u0023\u003DzW15YPW8yFbIF.SettingsChanged += new Action(this.\u0023\u003DzJ2e2vCmK2SDuOdabPwfX1Ms\u003D);
     txCngvmYeggNuKzD8.\u0023\u003DzwqcAXcxvUggD = new string[1]
     {
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432837)
+      XXX.SSS(-539432837)
     };
     ((INotifyPropertyChanged) this.\u0023\u003DzO72kpz0\u003D).PropertyChanged += new PropertyChangedEventHandler(txCngvmYeggNuKzD8.\u0023\u003DzpgDygB5ErIl1Nu7QHw\u003D\u003D);
   }
@@ -479,7 +479,7 @@ public class ChartPanel :
     {
       LogManager logManager = ServicesRegistry.LogManager;
       if (logManager != null)
-        LoggingHelper.AddInfoLog(logManager.Application, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430587), new object[1]
+        LoggingHelper.AddInfoLog(logManager.Application, XXX.SSS(-539430587), new object[1]
         {
           (object) chartPanel.ShareSettings.Period
         });
@@ -501,7 +501,7 @@ public class ChartPanel :
 
   private void \u0023\u003DzWUtxOUt4gZ3\u0024(object _param1, PropertyChangedEventArgs _param2)
   {
-    if (_param2.PropertyName == \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428020))
+    if (_param2.PropertyName == XXX.SSS(-539428020))
     {
       this.\u0023\u003DzjOHdKU9O7LKI?.Cancel();
       this.\u0023\u003DzjOHdKU9O7LKI = (CancellationTokenSource) null;
@@ -545,11 +545,11 @@ public class ChartPanel :
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430810), PersistableHelper.Save((IPersistable) this.OrderSettings));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430798), PersistableHelper.Save((IPersistable) this.ShareSettings));
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430818), this.\u0023\u003DzK0Y33rI\u003D.SaveDevExpressControl());
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430871), PersistableHelper.Save((IPersistable) this.\u0023\u003DzO72kpz0\u003D));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430851), PersistableHelper.Save((IPersistable) this.\u0023\u003DzW15YPW8yFbIF));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539430810), PersistableHelper.Save((IPersistable) this.OrderSettings));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539430798), PersistableHelper.Save((IPersistable) this.ShareSettings));
+    storage.SetValue<string>(XXX.SSS(-539430818), this.\u0023\u003DzK0Y33rI\u003D.SaveDevExpressControl());
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539430871), PersistableHelper.Save((IPersistable) this.\u0023\u003DzO72kpz0\u003D));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539430851), PersistableHelper.Save((IPersistable) this.\u0023\u003DzW15YPW8yFbIF));
   }
 
   /// <summary>Load settings.</summary>
@@ -559,13 +559,13 @@ public class ChartPanel :
     this.\u0023\u003DzMJITrmQ\u003D = true;
     try
     {
-      PersistableHelper.Load((IPersistable) this.OrderSettings, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430810));
-      PersistableHelper.Load((IPersistable) this.ShareSettings, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430798));
-      string settings = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430818), (string) null);
+      PersistableHelper.Load((IPersistable) this.OrderSettings, storage, XXX.SSS(-539430810));
+      PersistableHelper.Load((IPersistable) this.ShareSettings, storage, XXX.SSS(-539430798));
+      string settings = storage.GetValue<string>(XXX.SSS(-539430818), (string) null);
       if (settings != null)
         this.\u0023\u003DzK0Y33rI\u003D.LoadDevExpressControl(settings);
-      PersistableHelper.LoadIfNotNull((IPersistable) this.\u0023\u003DzO72kpz0\u003D, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430871));
-      PersistableHelper.LoadIfNotNull((IPersistable) this.\u0023\u003DzW15YPW8yFbIF, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430851));
+      PersistableHelper.LoadIfNotNull((IPersistable) this.\u0023\u003DzO72kpz0\u003D, storage, XXX.SSS(-539430871));
+      PersistableHelper.LoadIfNotNull((IPersistable) this.\u0023\u003DzW15YPW8yFbIF, storage, XXX.SSS(-539430851));
       if (this.\u0023\u003DzO72kpz0\u003D.Areas.Count<IChartArea>() != 1)
         return;
       IChartCandleElement[] array = ((IEnumerable) this.\u0023\u003DzO72kpz0\u003D.Areas.First<IChartArea>().Elements).OfType<IChartCandleElement>().ToArray<IChartCandleElement>();
@@ -741,10 +741,10 @@ public class ChartPanel :
   {
     DXSaveFileDialog dxSaveFileDialog = new DXSaveFileDialog();
     dxSaveFileDialog.RestoreDirectory = true;
-    dxSaveFileDialog.Filter = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430901);
-    dxSaveFileDialog.DefaultExt = \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430667);
+    dxSaveFileDialog.Filter = XXX.SSS(-539430901);
+    dxSaveFileDialog.DefaultExt = XXX.SSS(-539430667);
     DXSaveFileDialog dlg = dxSaveFileDialog;
-    if (!dlg.TryOpenWithInitialDir((DependencyObject) this, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430705)))
+    if (!dlg.TryOpenWithInitialDir((DependencyObject) this, XXX.SSS(-539430705)))
       return;
     string fileName = dlg.FileName;
     IOHelper.Save(this.\u0023\u003DzO72kpz0\u003D.SaveToImage(), fileName);
@@ -776,9 +776,9 @@ public class ChartPanel :
       if (!owner.ShareSettings.IsEnabled)
       {
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(10, 1);
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430598));
-        interpolatedStringHandler.AppendFormatted<DateTime>(DateTime.Now, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430647));
-        interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430640));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430598));
+        interpolatedStringHandler.AppendFormatted<DateTime>(DateTime.Now, XXX.SSS(-539430647));
+        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430640));
         str1 = interpolatedStringHandler.ToStringAndClear();
       }
       else
@@ -901,7 +901,7 @@ public class ChartPanel :
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430690), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539430690), UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -1270,15 +1270,15 @@ public class ChartPanel :
       Func<string> _param2,
       ChartCandleDrawStyles _param3)
     {
-      this.\u0023\u003DzPbY9ar5NYhJiWDJXAA\u003D\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430427));
-      this.\u0023\u003DzmTOWZCo\u003D = _param2 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430402));
+      this.\u0023\u003DzPbY9ar5NYhJiWDJXAA\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539430427));
+      this.\u0023\u003DzmTOWZCo\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539430402));
       this.\u0023\u003DzzSzfw_S6SqVya\u0024wNvx65bYg\u003D = _param3;
       LocalizedStrings.ActiveLanguageChanged += new Action(this.\u0023\u003DzotqVzZA_MaXV);
     }
 
     private void \u0023\u003DzotqVzZA_MaXV()
     {
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433348));
+      this.NotifyChanged(XXX.SSS(-539433348));
     }
 
     public ImageSource Image => this.\u0023\u003DzPbY9ar5NYhJiWDJXAA\u003D\u003D;
@@ -1332,7 +1332,7 @@ public class ChartPanel :
             default:
               LogManager logManager = ServicesRegistry.LogManager;
               if (logManager != null)
-                LoggingHelper.AddInfoLog(logManager.Application, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430587), new object[1]
+                LoggingHelper.AddInfoLog(logManager.Application, XXX.SSS(-539430587), new object[1]
                 {
                   (object) zRrvwDu67s9Rm.ShareSettings.Period
                 });
@@ -1452,9 +1452,9 @@ label_14:
             if (!zRrvwDu67s9Rm.ShareSettings.IsEnabled)
             {
               DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(10, 1);
-              interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430598));
-              interpolatedStringHandler.AppendFormatted<DateTime>(DateTime.Now, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430647));
-              interpolatedStringHandler.AppendLiteral(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430640));
+              interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430598));
+              interpolatedStringHandler.AppendFormatted<DateTime>(DateTime.Now, XXX.SSS(-539430647));
+              interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430640));
               str1 = interpolatedStringHandler.ToStringAndClear();
             }
             else

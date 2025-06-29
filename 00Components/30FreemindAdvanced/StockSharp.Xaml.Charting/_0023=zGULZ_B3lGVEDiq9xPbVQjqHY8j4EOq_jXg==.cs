@@ -13,11 +13,11 @@ internal static class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjqHY8j4EOq_jXg\u003D\u003
 {
   internal static Uri \u0023\u003DzLRqS25nBQaEh(string _param0)
   {
-    return new Uri(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539341108), (object) typeof (\u0023\u003DzGULZ_B3lGVEDiq9xPbVQjqHY8j4EOq_jXg\u003D\u003D).Assembly.\u0023\u003DzFARAiudukAjJ(), (object) _param0), UriKind.RelativeOrAbsolute);
+    return new Uri(string.Format(XXX.SSS(-539341108), (object) typeof (\u0023\u003DzGULZ_B3lGVEDiq9xPbVQjqHY8j4EOq_jXg\u003D\u003D).Assembly.\u0023\u003DzFARAiudukAjJ(), (object) _param0), UriKind.RelativeOrAbsolute);
   }
 
   internal static Uri \u0023\u003DzLRqS25nBQaEh(Assembly _param0, string _param1)
   {
-    return new Uri(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539341108), (object) _param0.\u0023\u003DzFARAiudukAjJ(), (object) _param1), UriKind.RelativeOrAbsolute);
+    return new Uri(string.Format(XXX.SSS(-539341108), (object) _param0.\u0023\u003DzFARAiudukAjJ(), (object) _param1), UriKind.RelativeOrAbsolute);
   }
 }

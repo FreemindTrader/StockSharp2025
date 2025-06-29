@@ -48,8 +48,8 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     base.\u0023\u003DzY0x9JtY\u003D();
     this.\u0023\u003DzXU6fBD\u0024oSmCR().\u0023\u003Dzfc4TzKM\u003D(this.\u0023\u003DzZYTLjjg\u003D = new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy(string.Empty, (INotifyPropertyChanged) this.\u0023\u003DzeaszzAAoBOY9(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
     {
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433667),
-      \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433497)
+      XXX.SSS(-539433667),
+      XXX.SSS(-539433497)
     }));
     this.\u0023\u003Dzk_r\u0024wtNtUKwJ(false);
   }
@@ -86,17 +86,17 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     });
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzCwfeuzXRdwFc converter1 = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzCwfeuzXRdwFc((Sides) 0);
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzCwfeuzXRdwFc converter2 = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzCwfeuzXRdwFc((Sides) 1);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzQOrK5fl6hpfW, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429935), BindingMode.OneWay, (IValueConverter) converter1);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzhKUgypnOH4pU, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429935), BindingMode.OneWay, (IValueConverter) converter2);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzwfm_Z9y6kr\u0024y, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429963), BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz0EuC16n_30MR, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433667), BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzRoh3GfgyQiik, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429892), BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz37lnfREBVw3J, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433497), BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz6RapS3\u0024GgFvT, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429941), BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzQOrK5fl6hpfW, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539429935), BindingMode.OneWay, (IValueConverter) converter1);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzhKUgypnOH4pU, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539429935), BindingMode.OneWay, (IValueConverter) converter2);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzwfm_Z9y6kr\u0024y, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539429963), BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz0EuC16n_30MR, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433667), BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzRoh3GfgyQiik, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539429892), BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz37lnfREBVw3J, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433497), BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz6RapS3\u0024GgFvT, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539429941), BindingMode.OneWay);
     if ((object) this.\u0023\u003DzeaszzAAoBOY9() is IChartOrderElement)
     {
-      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzS_RbfR1zd8IE, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429218), BindingMode.OneWay);
-      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzlf_sEtexhqoz, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430551), BindingMode.OneWay);
+      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzS_RbfR1zd8IE, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539429218), BindingMode.OneWay);
+      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzlf_sEtexhqoz, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539430551), BindingMode.OneWay);
     }
     return vmZznA5Vnnsp4Nd0g;
   }
@@ -126,7 +126,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     string _param2)
   {
     base.\u0023\u003Dz3u1qwgvgJlZC(_param1, _param2);
-    if (!this.\u0023\u003DzyDntgFbUTuaIjjSSeA\u003D\u003D || _param2 != \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430538))
+    if (!this.\u0023\u003DzyDntgFbUTuaIjjSSeA\u003D\u003D || _param2 != XXX.SSS(-539430538))
       return;
     this.\u0023\u003Dzip81Rn8\u003D();
   }
@@ -134,11 +134,11 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   private void \u0023\u003DzB1NfMuK_wtfq(bool _param1)
   {
     if (this.\u0023\u003DzKj7nvWQ\u003D != null)
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330621));
+      throw new InvalidOperationException(XXX.SSS(-539330621));
     if (this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D == null)
     {
       if (_param1)
-        throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330642));
+        throw new InvalidOperationException(XXX.SSS(-539330642));
     }
     else
     {
@@ -218,8 +218,8 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
       if (!(_param1 is bool flag))
         return Binding.DoNothing;
       if (flag)
-        return (object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330569);
-      return this.\u0023\u003Dzo1CPutg\u003D != null ? (object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330583) : (object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330563);
+        return (object) XXX.SSS(-539330569);
+      return this.\u0023\u003Dzo1CPutg\u003D != null ? (object) XXX.SSS(-539330583) : (object) XXX.SSS(-539330563);
     }
 
     object IValueConverter.\u0023\u003Dz7t96kV0doysI1t8U28R3TqlcxXQz(

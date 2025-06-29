@@ -73,7 +73,7 @@ public class ChartLineElement :
         return;
       this.\u0023\u003Dzfzo3Zt0\u003D = value;
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433444));
+      this.RaisePropertyChanged(XXX.SSS(-539433444));
     }
   }
 
@@ -88,7 +88,7 @@ public class ChartLineElement :
     {
       this.\u0023\u003DzqIZHmBRa0Zhe = value;
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433418));
+      this.RaisePropertyChanged(XXX.SSS(-539433418));
     }
   }
 
@@ -103,9 +103,9 @@ public class ChartLineElement :
     {
       if (this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D == value)
         return;
-      this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D = value >= 1 ? value : throw new ArgumentOutOfRangeException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428545), (object) value, LocalizedStrings.InvalidValue);
+      this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D = value >= 1 ? value : throw new ArgumentOutOfRangeException(XXX.SSS(-539428545), (object) value, LocalizedStrings.InvalidValue);
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641));
+      this.RaisePropertyChanged(XXX.SSS(-539434641));
     }
   }
 
@@ -119,7 +119,7 @@ public class ChartLineElement :
     set
     {
       this.\u0023\u003DzCGVfeT7yJc5e = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434635));
+      this.RaisePropertyChanged(XXX.SSS(-539434635));
     }
   }
 
@@ -134,10 +134,10 @@ public class ChartLineElement :
     {
       if (this.\u0023\u003DzOoq7N0E\u003D == value)
         return;
-      this.RaisePropertyValueChanging(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382), (object) value);
+      this.RaisePropertyValueChanging(XXX.SSS(-539433382), (object) value);
       this.\u0023\u003DzOoq7N0E\u003D = value;
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382));
+      this.RaisePropertyChanged(XXX.SSS(-539433382));
     }
   }
 
@@ -149,7 +149,7 @@ public class ChartLineElement :
     set
     {
       this.\u0023\u003Dzvu7bxO54zKRR = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434714));
+      this.RaisePropertyChanged(XXX.SSS(-539434714));
     }
   }
 
@@ -166,7 +166,7 @@ public class ChartLineElement :
     set
     {
       this.\u0023\u003DzR0PVnrfRD9\u0024B = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428560));
+      this.RaisePropertyChanged(XXX.SSS(-539428560));
     }
   }
 
@@ -225,12 +225,12 @@ public class ChartLineElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.Color = XamlHelper.ToColor(storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433444), this.Color.ToInt()));
-    this.AdditionalColor = XamlHelper.ToColor(storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433418), this.AdditionalColor.ToInt()));
-    this.StrokeThickness = storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641), this.StrokeThickness);
-    this.AntiAliasing = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434635), this.AntiAliasing);
-    this.Style = storage.GetValue<DrawStyles>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382), this.Style);
-    this.ShowAxisMarker = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434714), this.ShowAxisMarker);
+    this.Color = XamlHelper.ToColor(storage.GetValue<int>(XXX.SSS(-539433444), this.Color.ToInt()));
+    this.AdditionalColor = XamlHelper.ToColor(storage.GetValue<int>(XXX.SSS(-539433418), this.AdditionalColor.ToInt()));
+    this.StrokeThickness = storage.GetValue<int>(XXX.SSS(-539434641), this.StrokeThickness);
+    this.AntiAliasing = storage.GetValue<bool>(XXX.SSS(-539434635), this.AntiAliasing);
+    this.Style = storage.GetValue<DrawStyles>(XXX.SSS(-539433382), this.Style);
+    this.ShowAxisMarker = storage.GetValue<bool>(XXX.SSS(-539434714), this.ShowAxisMarker);
   }
 
   /// <summary>Save settings.</summary>
@@ -238,12 +238,12 @@ public class ChartLineElement :
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433444), this.Color.ToInt());
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433418), this.AdditionalColor.ToInt());
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641), this.StrokeThickness);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434635), this.AntiAliasing);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433382), Converter.To<string>((object) this.Style));
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434714), this.ShowAxisMarker);
+    storage.SetValue<int>(XXX.SSS(-539433444), this.Color.ToInt());
+    storage.SetValue<int>(XXX.SSS(-539433418), this.AdditionalColor.ToInt());
+    storage.SetValue<int>(XXX.SSS(-539434641), this.StrokeThickness);
+    storage.SetValue<bool>(XXX.SSS(-539434635), this.AntiAliasing);
+    storage.SetValue<string>(XXX.SSS(-539433382), Converter.To<string>((object) this.Style));
+    storage.SetValue<bool>(XXX.SSS(-539434714), this.ShowAxisMarker);
   }
 
   internal override ChartLineElement \u0023\u003Dz3MbNd8U\u003D(ChartLineElement _param1)

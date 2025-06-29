@@ -17,7 +17,7 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
   dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429583), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
+  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(XXX.SSS(-539429583), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private double \u0023\u003DzgTKlgLAfrwWL;
 
@@ -38,7 +38,7 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
     get => this.\u0023\u003DzgTKlgLAfrwWL;
     set
     {
-      \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) value, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429629)).\u0023\u003Dzc5Mtj4NgZLWC((IComparable) 0.0);
+      \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) value, XXX.SSS(-539429629)).\u0023\u003Dzc5Mtj4NgZLWC((IComparable) 0.0);
       this.\u0023\u003DzgTKlgLAfrwWL = value;
     }
   }
@@ -46,10 +46,10 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
   protected virtual void \u0023\u003DzIjNc90j5mMD8(Point _param1, double _param2, double _param3)
   {
     if (this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection || this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
-      this.\u0023\u003DzoI7ONAZ_gOY2(this.GrowFactor * _param3, _param1, this.YAxes, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429563));
+      this.\u0023\u003DzoI7ONAZ_gOY2(this.GrowFactor * _param3, _param1, this.YAxes, XXX.SSS(-539429563));
     if (this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection && this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
       return;
-    this.\u0023\u003DzoI7ONAZ_gOY2(this.GrowFactor * _param2, _param1, this.XAxes, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429585));
+    this.\u0023\u003DzoI7ONAZ_gOY2(this.GrowFactor * _param2, _param1, this.XAxes, XXX.SSS(-539429585));
   }
 
   private void \u0023\u003DzoI7ONAZ_gOY2(

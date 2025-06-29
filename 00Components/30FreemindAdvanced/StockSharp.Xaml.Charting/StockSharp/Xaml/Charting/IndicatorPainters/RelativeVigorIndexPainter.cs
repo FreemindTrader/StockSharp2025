@@ -72,15 +72,15 @@ public class RelativeVigorIndexPainter : BaseChartIndicatorPainter<RelativeVigor
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Signal, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442360));
-    PersistableHelper.Load((IPersistable) this.Average, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442372));
+    PersistableHelper.Load((IPersistable) this.Signal, storage, XXX.SSS(-539442360));
+    PersistableHelper.Load((IPersistable) this.Average, storage, XXX.SSS(-539442372));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442360), PersistableHelper.Save((IPersistable) this.Signal));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442372), PersistableHelper.Save((IPersistable) this.Average));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442360), PersistableHelper.Save((IPersistable) this.Signal));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442372), PersistableHelper.Save((IPersistable) this.Average));
   }
 }

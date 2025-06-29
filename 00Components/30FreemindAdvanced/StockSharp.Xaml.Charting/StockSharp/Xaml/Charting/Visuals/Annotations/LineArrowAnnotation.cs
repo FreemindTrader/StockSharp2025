@@ -16,8 +16,8 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal class LineArrowAnnotation : LineAnnotationBase
 {
-  public static readonly DependencyProperty HeadLengthProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440830), typeof (double), typeof (LineArrowAnnotation), new PropertyMetadata((object) 4.0, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
-  public static readonly DependencyProperty HeadWidthProperty = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539440782), typeof (double), typeof (LineArrowAnnotation), new PropertyMetadata((object) 8.0, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
+  public static readonly DependencyProperty HeadLengthProperty = DependencyProperty.Register(XXX.SSS(-539440830), typeof (double), typeof (LineArrowAnnotation), new PropertyMetadata((object) 4.0, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
+  public static readonly DependencyProperty HeadWidthProperty = DependencyProperty.Register(XXX.SSS(-539440782), typeof (double), typeof (LineArrowAnnotation), new PropertyMetadata((object) 8.0, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
   private Line _line;
   private Line _ghostLine;
   private Polygon _arrowHead;
@@ -38,10 +38,10 @@ internal class LineArrowAnnotation : LineAnnotationBase
 
   public override void OnApplyTemplate()
   {
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342889));
-    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342541));
-    this._ghostLine = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539343005));
-    this._arrowHead = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Polygon>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342928));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539342889));
+    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539342541));
+    this._ghostLine = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539343005));
+    this._arrowHead = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Polygon>(XXX.SSS(-539342928));
   }
 
   public override bool IsPointWithinBounds(Point point)

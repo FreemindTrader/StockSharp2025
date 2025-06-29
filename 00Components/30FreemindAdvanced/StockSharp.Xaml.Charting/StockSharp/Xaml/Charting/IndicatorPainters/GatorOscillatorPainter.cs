@@ -70,15 +70,15 @@ public class GatorOscillatorPainter : BaseChartIndicatorPainter<GatorOscillator>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Histogram1, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443003));
-    PersistableHelper.Load((IPersistable) this.Histogram2, storage, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442988));
+    PersistableHelper.Load((IPersistable) this.Histogram1, storage, XXX.SSS(-539443003));
+    PersistableHelper.Load((IPersistable) this.Histogram2, storage, XXX.SSS(-539442988));
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539443003), PersistableHelper.Save((IPersistable) this.Histogram1));
-    storage.SetValue<SettingsStorage>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539442988), PersistableHelper.Save((IPersistable) this.Histogram2));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539443003), PersistableHelper.Save((IPersistable) this.Histogram1));
+    storage.SetValue<SettingsStorage>(XXX.SSS(-539442988), PersistableHelper.Save((IPersistable) this.Histogram2));
   }
 }

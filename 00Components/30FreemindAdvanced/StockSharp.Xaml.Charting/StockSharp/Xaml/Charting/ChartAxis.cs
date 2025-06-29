@@ -84,7 +84,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DziM6zJqE\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431122));
+      this.NotifyChanged(XXX.SSS(-539431122));
     }
   }
 
@@ -96,7 +96,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzVf6ckz06jjnq = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813));
+      this.NotifyChanged(XXX.SSS(-539433813));
     }
   }
 
@@ -108,7 +108,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzIzRA1GQ\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431078));
+      this.NotifyChanged(XXX.SSS(-539431078));
     }
   }
 
@@ -135,7 +135,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003Dzv9FD1di4RC0T = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433797));
+      this.NotifyChanged(XXX.SSS(-539433797));
     }
   }
 
@@ -160,7 +160,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzdLTpPeMhlR6N = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433854));
+      this.NotifyChanged(XXX.SSS(-539433854));
     }
   }
 
@@ -172,7 +172,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzrhLICZ53UOoE = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433838));
+      this.NotifyChanged(XXX.SSS(-539433838));
     }
   }
 
@@ -184,7 +184,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzMoUHwSZ26s\u0024B = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433096));
+      this.NotifyChanged(XXX.SSS(-539433096));
     }
   }
 
@@ -196,7 +196,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzQX_eCV9XBE2Om3pH5A\u003D\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433145));
+      this.NotifyChanged(XXX.SSS(-539433145));
     }
   }
 
@@ -208,7 +208,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzomI8jgXvMYgj = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433170));
+      this.NotifyChanged(XXX.SSS(-539433170));
     }
   }
 
@@ -220,7 +220,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzHLFKxy_IJ02Bf4vYiQ\u003D\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433163));
+      this.NotifyChanged(XXX.SSS(-539433163));
     }
   }
 
@@ -232,7 +232,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003DzgTDrusYEVex\u0024 = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433188));
+      this.NotifyChanged(XXX.SSS(-539433188));
     }
   }
 
@@ -245,12 +245,12 @@ public class ChartAxis :
       string z5wsolu6uzY0L = this.\u0023\u003Dz5wsolu6uzY0L;
       if (z5wsolu6uzY0L != null)
         return z5wsolu6uzY0L;
-      return this.AxisType == ChartAxisType.Numeric ? \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432977) : \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432967);
+      return this.AxisType == ChartAxisType.Numeric ? XXX.SSS(-539432977) : XXX.SSS(-539432967);
     }
     set
     {
       this.\u0023\u003Dz5wsolu6uzY0L = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432975));
+      this.NotifyChanged(XXX.SSS(-539432975));
     }
   }
 
@@ -263,12 +263,12 @@ public class ChartAxis :
       string z6SqmY60jwVyp = this.\u0023\u003Dz6SqmY60jwVYP;
       if (z6SqmY60jwVyp != null)
         return z6SqmY60jwVyp;
-      return this.AxisType == ChartAxisType.Numeric ? \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432996) : \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432967);
+      return this.AxisType == ChartAxisType.Numeric ? XXX.SSS(-539432996) : XXX.SSS(-539432967);
     }
     set
     {
       this.\u0023\u003Dz6SqmY60jwVYP = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433005));
+      this.NotifyChanged(XXX.SSS(-539433005));
     }
   }
 
@@ -278,12 +278,12 @@ public class ChartAxis :
   {
     get
     {
-      return this.\u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D ?? \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433036);
+      return this.\u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D ?? XXX.SSS(-539433036);
     }
     set
     {
       this.\u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433076));
+      this.NotifyChanged(XXX.SSS(-539433076));
     }
   }
 
@@ -295,7 +295,7 @@ public class ChartAxis :
     set
     {
       this.\u0023\u003Dzlm3nxP8O1U6I = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432434));
+      this.NotifyChanged(XXX.SSS(-539432434));
     }
   }
 
@@ -309,7 +309,7 @@ public class ChartAxis :
       if (Math.Abs(this.\u0023\u003DzDtp\u00246FfBRlYq - value) < 0.3)
         return;
       this.\u0023\u003DzDtp\u00246FfBRlYq = value;
-      this.NotifyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433071));
+      this.NotifyChanged(XXX.SSS(-539433071));
     }
   }
 
@@ -317,43 +317,43 @@ public class ChartAxis :
   /// <param name="storage">Settings storage.</param>
   public void Load(SettingsStorage storage)
   {
-    this.Id = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431122), (string) null) ?? storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433348), (string) null);
-    this.Title = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431078), (string) null);
-    this.IsVisible = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813), this.IsVisible);
-    this.Group = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433359), this.Group);
-    this.AutoRange = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433854), this.AutoRange);
-    this.DrawMinorTicks = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433170), this.DrawMinorTicks);
-    this.DrawMajorTicks = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433096), this.DrawMajorTicks);
-    this.DrawMajorGridLines = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433145), this.DrawMajorGridLines);
-    this.DrawMinorGridLines = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433163), this.DrawMinorGridLines);
-    this.DrawLabels = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433188), this.DrawLabels);
-    this.TextFormatting = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432975), this.TextFormatting);
-    this.CursorTextFormatting = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433005), this.CursorTextFormatting);
-    this.SubDayTextFormatting = storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433076), this.SubDayTextFormatting);
-    this.SwitchAxisLocation = storage.GetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433797), this.SwitchAxisLocation);
-    this.AxisType = storage.GetValue<ChartAxisType>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433403), ChartAxisType.DateTime);
-    this.TimeZone = Converter.To<TimeZoneInfo>((object) storage.GetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432434), (string) null)) ?? TimeZoneInfo.Local;
+    this.Id = storage.GetValue<string>(XXX.SSS(-539431122), (string) null) ?? storage.GetValue<string>(XXX.SSS(-539433348), (string) null);
+    this.Title = storage.GetValue<string>(XXX.SSS(-539431078), (string) null);
+    this.IsVisible = storage.GetValue<bool>(XXX.SSS(-539433813), this.IsVisible);
+    this.Group = storage.GetValue<string>(XXX.SSS(-539433359), this.Group);
+    this.AutoRange = storage.GetValue<bool>(XXX.SSS(-539433854), this.AutoRange);
+    this.DrawMinorTicks = storage.GetValue<bool>(XXX.SSS(-539433170), this.DrawMinorTicks);
+    this.DrawMajorTicks = storage.GetValue<bool>(XXX.SSS(-539433096), this.DrawMajorTicks);
+    this.DrawMajorGridLines = storage.GetValue<bool>(XXX.SSS(-539433145), this.DrawMajorGridLines);
+    this.DrawMinorGridLines = storage.GetValue<bool>(XXX.SSS(-539433163), this.DrawMinorGridLines);
+    this.DrawLabels = storage.GetValue<bool>(XXX.SSS(-539433188), this.DrawLabels);
+    this.TextFormatting = storage.GetValue<string>(XXX.SSS(-539432975), this.TextFormatting);
+    this.CursorTextFormatting = storage.GetValue<string>(XXX.SSS(-539433005), this.CursorTextFormatting);
+    this.SubDayTextFormatting = storage.GetValue<string>(XXX.SSS(-539433076), this.SubDayTextFormatting);
+    this.SwitchAxisLocation = storage.GetValue<bool>(XXX.SSS(-539433797), this.SwitchAxisLocation);
+    this.AxisType = storage.GetValue<ChartAxisType>(XXX.SSS(-539433403), ChartAxisType.DateTime);
+    this.TimeZone = Converter.To<TimeZoneInfo>((object) storage.GetValue<string>(XXX.SSS(-539432434), (string) null)) ?? TimeZoneInfo.Local;
   }
 
   /// <summary>Save settings.</summary>
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431122), this.Id);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431078), this.Title);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813), this.IsVisible);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433359), this.Group);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433854), this.AutoRange);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433170), this.DrawMinorTicks);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433096), this.DrawMajorTicks);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433145), this.DrawMajorGridLines);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433163), this.DrawMinorGridLines);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433188), this.DrawLabels);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432975), this.TextFormatting);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433005), this.CursorTextFormatting);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433076), this.SubDayTextFormatting);
-    storage.SetValue<bool>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433797), this.SwitchAxisLocation);
-    storage.SetValue<ChartAxisType>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433403), this.AxisType);
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539432434), this.TimeZone?.Id);
+    storage.SetValue<string>(XXX.SSS(-539431122), this.Id);
+    storage.SetValue<string>(XXX.SSS(-539431078), this.Title);
+    storage.SetValue<bool>(XXX.SSS(-539433813), this.IsVisible);
+    storage.SetValue<string>(XXX.SSS(-539433359), this.Group);
+    storage.SetValue<bool>(XXX.SSS(-539433854), this.AutoRange);
+    storage.SetValue<bool>(XXX.SSS(-539433170), this.DrawMinorTicks);
+    storage.SetValue<bool>(XXX.SSS(-539433096), this.DrawMajorTicks);
+    storage.SetValue<bool>(XXX.SSS(-539433145), this.DrawMajorGridLines);
+    storage.SetValue<bool>(XXX.SSS(-539433163), this.DrawMinorGridLines);
+    storage.SetValue<bool>(XXX.SSS(-539433188), this.DrawLabels);
+    storage.SetValue<string>(XXX.SSS(-539432975), this.TextFormatting);
+    storage.SetValue<string>(XXX.SSS(-539433005), this.CursorTextFormatting);
+    storage.SetValue<string>(XXX.SSS(-539433076), this.SubDayTextFormatting);
+    storage.SetValue<bool>(XXX.SSS(-539433797), this.SwitchAxisLocation);
+    storage.SetValue<ChartAxisType>(XXX.SSS(-539433403), this.AxisType);
+    storage.SetValue<string>(XXX.SSS(-539432434), this.TimeZone?.Id);
   }
 }

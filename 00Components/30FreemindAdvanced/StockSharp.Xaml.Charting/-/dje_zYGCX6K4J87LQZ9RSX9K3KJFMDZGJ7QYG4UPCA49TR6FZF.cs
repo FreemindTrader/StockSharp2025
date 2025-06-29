@@ -21,17 +21,17 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
   INotifyPropertyChanged
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dzx6fa5TzXfc8S = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340723), typeof (bool), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003Dzx6fa5TzXfc8S = DependencyProperty.Register(XXX.SSS(-539340723), typeof (bool), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) false));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzzYBz11wS5ND3 = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340712), typeof (Color), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) Colors.White));
+  public static readonly DependencyProperty \u0023\u003DzzYBz11wS5ND3 = DependencyProperty.Register(XXX.SSS(-539340712), typeof (Color), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) Colors.White));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzBbalbHIs26PX = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340765), typeof (float), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) 12f));
+  public static readonly DependencyProperty \u0023\u003DzBbalbHIs26PX = DependencyProperty.Register(XXX.SSS(-539340765), typeof (float), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) 12f));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzdFeuptaClY_J = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340788), typeof (LinearGradientBrush), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.\u0023\u003Dz5AeSbygYvqoF()));
+  public static readonly DependencyProperty \u0023\u003DzdFeuptaClY_J = DependencyProperty.Register(XXX.SSS(-539340788), typeof (LinearGradientBrush), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.\u0023\u003Dz5AeSbygYvqoF()));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzyzOpBn8\u003D = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340771), typeof (double), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.\u0023\u003DzJMP38d8102Gh)));
+  public static readonly DependencyProperty \u0023\u003DzyzOpBn8\u003D = DependencyProperty.Register(XXX.SSS(-539340771), typeof (double), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.\u0023\u003DzJMP38d8102Gh)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dz2hIt0Yg\u003D = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340781), typeof (double), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.\u0023\u003DzJMP38d8102Gh)));
+  public static readonly DependencyProperty \u0023\u003Dz2hIt0Yg\u003D = DependencyProperty.Register(XXX.SSS(-539340781), typeof (double), typeof (dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.\u0023\u003DzJMP38d8102Gh)));
 
   public dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd()
   {
@@ -154,7 +154,7 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
     \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
   {
     if (_param2.\u0023\u003DzDoU1CJhSUWFV())
-      throw new NotImplementedException(string.Format(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340575), (object) ((object) this).GetType().Name));
+      throw new NotImplementedException(string.Format(XXX.SSS(-539340575), (object) ((object) this).GetType().Name));
     \u0023\u003DzPlFvps97y7rWR4vc5KUjR5Ch17PMi3H3ortKPxkjv7KR pmi3H3ortKpxkjv7Kr = this.\u0023\u003Dz3cueoAsBQpe0();
     bool drawTextInCell = this.DrawTextInCell;
     Color cellTextForeground = this.CellTextForeground;
@@ -213,7 +213,7 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
 
   protected virtual string \u0023\u003DzXMuBU\u0024yTpkCk(double _param1)
   {
-    return _param1.ToString(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340657));
+    return _param1.ToString(XXX.SSS(-539340657));
   }
 
   private void \u0023\u003Dz15moWio\u003D(string _param1)
@@ -230,6 +230,6 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
   {
     if (!(_param0 is dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd c3TqqyayanmzqEjd))
       return;
-    c3TqqyayanmzqEjd.\u0023\u003Dz15moWio\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539340666));
+    c3TqqyayanmzqEjd.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539340666));
   }
 }

@@ -61,7 +61,7 @@ public class ChartOrderElement :
       if (this.\u0023\u003DzkZyAKIN\u0024NPN3 == value)
         return;
       this.\u0023\u003DzkZyAKIN\u0024NPN3 = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429218));
+      this.RaisePropertyChanged(XXX.SSS(-539429218));
     }
   }
 
@@ -75,7 +75,7 @@ public class ChartOrderElement :
       if (this.\u0023\u003DzUAvz8ZozfnUe == value)
         return;
       this.\u0023\u003DzUAvz8ZozfnUe = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430551));
+      this.RaisePropertyChanged(XXX.SSS(-539430551));
     }
   }
 
@@ -89,7 +89,7 @@ public class ChartOrderElement :
       if (this.\u0023\u003DzMivvMSAVwLAH == value)
         return;
       this.\u0023\u003DzMivvMSAVwLAH = value;
-      this.RaisePropertyChanged(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430538));
+      this.RaisePropertyChanged(XXX.SSS(-539430538));
     }
   }
 
@@ -140,18 +140,18 @@ public class ChartOrderElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.ErrorColor = storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429218), 0).ToColor();
-    this.ErrorStrokeColor = storage.GetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430551), 0).ToColor();
-    this.Filter = storage.GetValue<ChartOrderDisplayFilter>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430538), ChartOrderDisplayFilter.All);
+    this.ErrorColor = storage.GetValue<int>(XXX.SSS(-539429218), 0).ToColor();
+    this.ErrorStrokeColor = storage.GetValue<int>(XXX.SSS(-539430551), 0).ToColor();
+    this.Filter = storage.GetValue<ChartOrderDisplayFilter>(XXX.SSS(-539430538), ChartOrderDisplayFilter.All);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539429218), this.ErrorColor.ToInt());
-    storage.SetValue<int>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430551), this.ErrorStrokeColor.ToInt());
-    storage.SetValue<string>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539430538), Converter.To<string>((object) this.Filter));
+    storage.SetValue<int>(XXX.SSS(-539429218), this.ErrorColor.ToInt());
+    storage.SetValue<int>(XXX.SSS(-539430551), this.ErrorStrokeColor.ToInt());
+    storage.SetValue<string>(XXX.SSS(-539430538), Converter.To<string>((object) this.Filter));
   }
 
   internal override ChartOrderElement \u0023\u003Dz3MbNd8U\u003D(ChartOrderElement _param1)

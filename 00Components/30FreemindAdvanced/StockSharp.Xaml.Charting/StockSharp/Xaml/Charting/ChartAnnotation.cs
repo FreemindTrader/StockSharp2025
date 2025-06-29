@@ -63,7 +63,7 @@ public class ChartAnnotation :
     \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
   {
     if (this.Type == ChartAnnotationTypes.None)
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433858));
+      throw new InvalidOperationException(XXX.SSS(-539433858));
     return (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) (this.\u0023\u003Dz2YSX_Z4\u003D = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
   }
 
@@ -108,13 +108,13 @@ public class ChartAnnotation :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.Type = storage.GetValue<ChartAnnotationTypes>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433895), this.Type);
+    this.Type = storage.GetValue<ChartAnnotationTypes>(XXX.SSS(-539433895), this.Type);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<ChartAnnotationTypes>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433895), this.Type);
+    storage.SetValue<ChartAnnotationTypes>(XXX.SSS(-539433895), this.Type);
   }
 }

@@ -91,7 +91,7 @@ internal sealed class \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nhyf2vFxdpD7yzk3jSuv
     double _param3)
   {
     if (_param2 > 1.0 || _param2 < 0.0 || _param3 > 1.0 || _param3 < 0.0)
-      throw new ArgumentException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539328509));
+      throw new ArgumentException(XXX.SSS(-539328509));
     Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D> dictionary = \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0dt0x2zghwBF1DAivUVDEn7coBcjNqBuDHl_IoPu1NHN4q\u0024VzS_q2MH.\u0023\u003DznNqOFnTOtMUM(this.\u0023\u003DzudCWNUc\u003D, this.\u0023\u003Dz8JVo7yBPEM0M);
     \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D ppsbKthY7Nkewpng1;
     dictionary.TryGetValue(_param1, out ppsbKthY7Nkewpng1);

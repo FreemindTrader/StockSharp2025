@@ -15,7 +15,7 @@ internal sealed class \u0023\u003DzyhcKXWtKNGzWjpotzZwU9whBU9Yw699_DztiM3x3Brpxy
 
   public \u0023\u003DzyhcKXWtKNGzWjpotzZwU9whBU9Yw699_DztiM3x3BrpxyflUng\u003D\u003D(Action _param1)
   {
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539439938));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, XXX.SSS(-539439938));
     this.\u0023\u003DzDPt0\u0024eo\u003D = _param1;
     CompositionTarget.Rendering += new EventHandler(this.\u0023\u003DzHr8C02XUg4o9);
   }

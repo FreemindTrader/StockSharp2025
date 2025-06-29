@@ -33,7 +33,7 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
   protected \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024(
     \u0023\u003Dzav4EkcQ\u003D _param1)
   {
-    this.\u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330019));
+    this.\u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539330019));
     this.\u0023\u003DzZcbqdpE\u003D((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this.\u0023\u003DzeaszzAAoBOY9());
   }
 
@@ -102,11 +102,11 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
     where T : dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, new()
   {
     if (_param1 != null && ((IEnumerable<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>) _param1).Any<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>(\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy, bool>(\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D))))
-      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330026) + typeof (T).Name);
+      throw new InvalidOperationException(XXX.SSS(-539330026) + typeof (T).Name);
     T obj = new T();
     if (this.\u0023\u003DzeaszzAAoBOY9().RootElement == (object) this.\u0023\u003DzeaszzAAoBOY9())
     {
-      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813));
+      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433813));
     }
     else
     {
@@ -117,24 +117,24 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
       conv.Value = true;
       Binding[] bindingArray = new Binding[2]
       {
-        new Binding(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813))
+        new Binding(XXX.SSS(-539433813))
         {
           Source = (object) this.\u0023\u003DzeaszzAAoBOY9()
         },
-        new Binding(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813))
+        new Binding(XXX.SSS(-539433813))
         {
           Source = (object) this.\u0023\u003DzeaszzAAoBOY9().RootElement
         }
       };
       local.SetMultiBinding(z8b6MqaiE8Uzn, (IMultiValueConverter) conv, bindingArray);
     }
-    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzSEAakZbtZKgY, (object) this.RootElem, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427791));
-    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DziAqnE8_\u0024SBDB, (object) this.RootElem, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427833));
+    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzSEAakZbtZKgY, (object) this.RootElem, XXX.SSS(-539427791));
+    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DziAqnE8_\u0024SBDB, (object) this.RootElem, XXX.SSS(-539427833));
     \u0023\u003Dzav4EkcQ\u003D zav4EkcQ = this.\u0023\u003DzeaszzAAoBOY9();
     if (!((object) zav4EkcQ is ChartBandElement) && !((object) zav4EkcQ is IChartTransactionElement))
     {
-      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641));
-      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434635));
+      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539434641));
+      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539434635));
     }
     obj.Tag = _param1 == null || _param1.Length == 0 ? (object) (Tuple<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>) null : (object) Tuple.Create<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>((\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) this, _param1);
     this.\u0023\u003DzXU6fBD\u0024oSmCR().\u0023\u003DzMNK339lzrtSc();

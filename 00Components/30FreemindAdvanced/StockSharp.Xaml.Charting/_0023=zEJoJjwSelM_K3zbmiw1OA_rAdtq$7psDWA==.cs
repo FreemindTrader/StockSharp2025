@@ -48,9 +48,9 @@ internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D
     get => this.\u0023\u003Dz3Y\u0024NY_pvq2mj;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003Dz3Y\u0024NY_pvq2mj, value, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431135)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003Dz3Y\u0024NY_pvq2mj, value, XXX.SSS(-539431135)))
         return;
-      this.\u0023\u003Dz15moWio\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431113));
+      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539431113));
     }
   }
 
@@ -61,7 +61,7 @@ internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D
     get => this.\u0023\u003Dz1CwHCPFpNKq7;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Point>(ref this.\u0023\u003Dz1CwHCPFpNKq7, value, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431140));
+      this.\u0023\u003DzwGPLgl8\u003D<Point>(ref this.\u0023\u003Dz1CwHCPFpNKq7, value, XXX.SSS(-539431140));
     }
   }
 

@@ -15,11 +15,11 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
   dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly DependencyProperty \u0023\u003Dzy4Y1epMcZKTS = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428834), typeof (string), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539431487), new PropertyChangedCallback(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003Dzn0IbA1m7B6Pr)));
+  private static readonly DependencyProperty \u0023\u003Dzy4Y1epMcZKTS = DependencyProperty.Register(XXX.SSS(-539428834), typeof (string), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) XXX.SSS(-539431487), new PropertyChangedCallback(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003Dzn0IbA1m7B6Pr)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzhGlyqoMEq_wf = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428627), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) \u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D.Scale));
+  public static readonly DependencyProperty \u0023\u003DzhGlyqoMEq_wf = DependencyProperty.Register(XXX.SSS(-539428627), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) \u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D.Scale));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzY3btX2_4ZgpM = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428638), typeof (double), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003DzY3btX2_4ZgpM = DependencyProperty.Register(XXX.SSS(-539428638), typeof (double), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) 0.0));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private static readonly Cursor \u0023\u003DzFl6tvxA\u003D = Cursors.Arrow;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -143,7 +143,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
     if (dynWmoFzgH4RlWB0lB.get_FlipCoordinates())
       this.\u0023\u003Dz0RQE5sVUyiev = !this.\u0023\u003Dz0RQE5sVUyiev;
     this.\u0023\u003DzeDqneUWYjgVB = _param1.\u0023\u003DztkyOk5amPcz3();
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428657), new object[3]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539428657), new object[3]
     {
       (object) ((object) this).GetType().Name,
       (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
@@ -163,7 +163,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
       return;
     base.\u0023\u003Dz11bcnbUrALaA(_param1);
     _param1.\u0023\u003DzBHH5KNloEXNR(true);
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428695), new object[3]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539428695), new object[3]
     {
       (object) ((object) this).GetType().Name,
       (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
@@ -187,7 +187,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
     this.\u0023\u003DzqGwbHdeZ8yMA = false;
     if (_param1.\u0023\u003DzCJb5Ya_8UZCR())
       this.\u0023\u003DzFLmJq0JJlr0n().ReleaseMouseCapture();
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539428725), new object[3]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539428725), new object[3]
     {
       (object) ((object) this).GetType().Name,
       (object) _param1.\u0023\u003DztkyOk5amPcz3().X,

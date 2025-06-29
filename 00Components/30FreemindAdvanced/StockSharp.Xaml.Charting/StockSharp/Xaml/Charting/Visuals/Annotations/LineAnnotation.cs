@@ -22,9 +22,9 @@ internal class LineAnnotation : LineAnnotationBase
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539343715));
-    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539342541));
-    this._ghostLine = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539343005));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539343715));
+    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539342541));
+    this._ghostLine = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539343005));
   }
 
   protected override \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq GetCurrentPlacementStrategy()
