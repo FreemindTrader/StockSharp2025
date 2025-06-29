@@ -20,11 +20,11 @@ internal struct \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539436650), (object) this.\u0023\u003DzMANe_Ig\u003D, (object) this.\u0023\u003Dz0HHYg1s\u003D);
+    return string.Format("", (object) this.\u0023\u003DzMANe_Ig\u003D, (object) this.\u0023\u003Dz0HHYg1s\u003D);
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => this.\u0023\u003DzMANe_Ig\u003D;
+  public double Property() => this.\u0023\u003DzMANe_Ig\u003D;
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D() => this.\u0023\u003Dz0HHYg1s\u003D;

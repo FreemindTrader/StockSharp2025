@@ -121,7 +121,7 @@ internal sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrum0As6lkvmcC63nlpC
       str2 = _param1.Substring(num + 1);
       str3 = _param1[num].ToString((IFormatProvider) CultureInfo.InvariantCulture);
       if (_param2 == \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a.Normalized)
-        str3 = XXX.SSS(-539337168);
+        str3 = "";
     }
     this.\u0023\u003Dzl1Fs5HIfvjWBtDBUat7Qwj0\u003D(new TextBlock()
     {
@@ -224,7 +224,7 @@ internal sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrum0As6lkvmcC63nlpC
         this.\u0023\u003DzJE\u0024BuzVbe28n(new Rect(num17, num19, num20, num21));
         break;
       default:
-        throw new InvalidOperationException(XXX.SSS(-539337206));
+        throw new InvalidOperationException("");
     }
     this.\u0023\u003DzJE\u0024BuzVbe28n(new Rect(num7, num8, num4, num5));
   }

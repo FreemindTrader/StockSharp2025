@@ -17,11 +17,11 @@ internal static class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     FileStream fileStream;
     if (\u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GEww9Us2BC2kQvpfKw4.\u0023\u003DzI9OrIVJe2vBk)
     {
-      fileStream = new FileStream(XXX.SSS(-539438858), FileMode.Append, FileAccess.Write);
+      fileStream = new FileStream("", FileMode.Append, FileAccess.Write);
     }
     else
     {
-      fileStream = new FileStream(XXX.SSS(-539438858), FileMode.Create, FileAccess.Write);
+      fileStream = new FileStream("", FileMode.Create, FileAccess.Write);
       \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GEww9Us2BC2kQvpfKw4.\u0023\u003DzI9OrIVJe2vBk = true;
     }
     StreamWriter streamWriter = new StreamWriter((Stream) fileStream);

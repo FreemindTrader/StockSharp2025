@@ -34,8 +34,8 @@ internal sealed class \u0023\u003Dz2Qv8a0HfC9ieiy4m0TM2aAzmsNDy8Fpd\u0024of18IRv
       BindingExpression bindingExpression = this.\u0023\u003Dzoem3lxBSJacx.GetBindingExpression(LineAnnotationWithLabelsBase.LabelTextFormattingProperty);
       bool flag = bindingExpression != null;
       if (flag)
-        flag = bindingExpression.ParentBinding.Path.Path == XXX.SSS(-539430181);
-      str = !flag || usedAxis == null ? string.Format(XXX.SSS(-539430209) + this.\u0023\u003Dzoem3lxBSJacx.LabelTextFormatting + XXX.SSS(-539430223), (object) comparable) : usedAxis.\u0023\u003DzRQVMnjXxoCTF(comparable, false);
+        flag = bindingExpression.ParentBinding.Path.Path == "";
+      str = !flag || usedAxis == null ? string.Format("" + this.\u0023\u003Dzoem3lxBSJacx.LabelTextFormatting + "", (object) comparable) : usedAxis.\u0023\u003DzRQVMnjXxoCTF(comparable, false);
     }
     return (object) str;
   }

@@ -35,7 +35,7 @@ internal class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B :
     {
       lqkdKbY6smnsRhNQalw.Text = text.Substring(0, num);
       lqkdKbY6smnsRhNQalw.Exponent = text.Substring(num + 1);
-      lqkdKbY6smnsRhNQalw.Separator = mrfV9Sq7FuggeEjd.ScientificNotation == \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a.Normalized ? XXX.SSS(-539337168) : text[num].ToString((IFormatProvider) CultureInfo.InvariantCulture);
+      lqkdKbY6smnsRhNQalw.Separator = mrfV9Sq7FuggeEjd.ScientificNotation == \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a.Normalized ? "" : text[num].ToString((IFormatProvider) CultureInfo.InvariantCulture);
     }
     return (\u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D) lqkdKbY6smnsRhNQalw;
   }
@@ -48,14 +48,14 @@ internal class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B :
 
   private static string \u0023\u003DzRDs3D1Q\u003D(IComparable _param0, string _param1)
   {
-    string str = string.Format(XXX.SSS(-539430209) + _param1 + XXX.SSS(-539430223), (object) _param0);
+    string str = string.Format("" + _param1 + "", (object) _param0);
     if (StringHelper.IsEmpty(str) && _param0 is double num)
-      str = ((Decimal) num).ToString(XXX.SSS(-539337869));
+      str = ((Decimal) num).ToString("");
     return str;
   }
 
   public override string \u0023\u003DzkqN2vZ4\u003D(IComparable _param1)
   {
-    return string.Format(XXX.SSS(-539430209) + this.\u0023\u003DzHZDgUSdfqmkx().get_TextFormatting() + XXX.SSS(-539430223), (object) _param1);
+    return string.Format("" + this.\u0023\u003DzHZDgUSdfqmkx().get_TextFormatting() + "", (object) _param1);
   }
 }

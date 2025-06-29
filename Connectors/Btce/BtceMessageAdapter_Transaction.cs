@@ -164,7 +164,7 @@ partial class BtceMessageAdapter
 			//if (!_unkOrds.TryGetValue(trade.Instrument, out var que) || que.Count == 0)
 			//	return;
 
-			//// последний неизвестный ордер в деке
+			//// последни?неизвестны?орде??деке
 			//var msg = que.FindLast(o => o.SecurityId == secId);
 			//if (msg == null)
 			//	return;

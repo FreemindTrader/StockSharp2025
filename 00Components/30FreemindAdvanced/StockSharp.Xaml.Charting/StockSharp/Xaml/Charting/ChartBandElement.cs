@@ -82,9 +82,9 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
         {
           (object) value
         }));
-      this.RaisePropertyValueChanging(XXX.SSS(-539433382), (object) value);
+      this.RaisePropertyValueChanging("", (object) value);
       this.\u0023\u003DzOoq7N0E\u003D = value;
-      this.RaisePropertyChanged(XXX.SSS(-539433382));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -129,7 +129,7 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.\u0023\u003DzaZ5Qc3xeNY95((IChartBandElement) this);
+    IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.GetCandleRelatedData((IChartBandElement) this);
     return ienumerableEx != null && !CollectionHelper.IsEmpty<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>) ienumerableEx) && ((IDrawableChartElement) this).StartDrawing(ienumerableEx);
   }
 
@@ -138,16 +138,16 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539433426)))
+    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(""))
     {
       this.RemoveChildElement((IChartElement) this.Line1);
-      PersistableHelper.Load((IPersistable) this.Line1, storage, XXX.SSS(-539433426));
+      PersistableHelper.Load((IPersistable) this.Line1, storage, "");
       this.AddChildElement((IChartElement) this.Line1, true);
     }
-    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539433438)))
+    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(""))
       return;
     this.RemoveChildElement((IChartElement) this.Line2);
-    PersistableHelper.Load((IPersistable) this.Line2, storage, XXX.SSS(-539433438));
+    PersistableHelper.Load((IPersistable) this.Line2, storage, "");
     this.AddChildElement((IChartElement) this.Line2, true);
   }
 
@@ -156,8 +156,8 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539433426), PersistableHelper.Save((IPersistable) this.Line1));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539433438), PersistableHelper.Save((IPersistable) this.Line2));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Line1));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Line2));
   }
 
   internal override ChartBandElement Clone(ChartBandElement _param1)
@@ -173,8 +173,8 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
     object? _param1,
     PropertyChangedEventArgs _param2)
   {
-    if (!(_param2.PropertyName == XXX.SSS(-539433418)))
+    if (!(_param2.PropertyName == ""))
       return;
-    this.RaisePropertyChanged(XXX.SSS(-539433444));
+    this.RaisePropertyChanged("");
   }
 }

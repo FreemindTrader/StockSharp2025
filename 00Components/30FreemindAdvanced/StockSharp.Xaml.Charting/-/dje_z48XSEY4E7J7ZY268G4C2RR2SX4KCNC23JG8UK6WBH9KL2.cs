@@ -17,7 +17,7 @@ internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX4KCNC23JG8UK6WBH9KL2UA_ejd :
 {
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
-    int num = string.Equals(_param3 as string, XXX.SSS(-539430952), StringComparison.InvariantCultureIgnoreCase) ? 1 : 0;
+    int num = string.Equals(_param3 as string, "", StringComparison.InvariantCultureIgnoreCase) ? 1 : 0;
     Visibility visibility1 = num != 0 ? Visibility.Visible : Visibility.Collapsed;
     Visibility visibility2 = num != 0 ? Visibility.Collapsed : Visibility.Visible;
     return (object) (Visibility) (_param1 == null ? (int) visibility1 : (int) visibility2);

@@ -31,9 +31,9 @@ internal class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D :
     get => this.\u0023\u003DzJirJ5UAoQttm;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzJirJ5UAoQttm, value, XXX.SSS(-539437170)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzJirJ5UAoQttm, value, ""))
         return;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539437154));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 

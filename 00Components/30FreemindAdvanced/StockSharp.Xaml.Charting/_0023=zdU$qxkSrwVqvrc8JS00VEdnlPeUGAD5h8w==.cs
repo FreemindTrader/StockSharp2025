@@ -34,9 +34,9 @@ internal class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D 
     get => this.\u0023\u003DzLVApXYh3wio9;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzLVApXYh3wio9, value, XXX.SSS(-539441624)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzLVApXYh3wio9, value, ""))
         return;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539441608));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 
@@ -47,9 +47,9 @@ internal class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D 
     get => this.\u0023\u003DzgW0Bx\u0024nmVR1e;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzgW0Bx\u0024nmVR1e, value, XXX.SSS(-539441661)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzgW0Bx\u0024nmVR1e, value, ""))
         return;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539441648));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 
@@ -60,9 +60,9 @@ internal class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D 
     get => this.\u0023\u003DzGnjjvSC2pUUy;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzGnjjvSC2pUUy, value, XXX.SSS(-539441416)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzGnjjvSC2pUUy, value, ""))
         return;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539441461));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 

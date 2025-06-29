@@ -21,7 +21,7 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd : ContentControl
 {
   
-  public static readonly DependencyProperty \u0023\u003DzZXWtkeeJbx_j = DependencyProperty.Register(XXX.SSS(-539332590), typeof (DataTemplate), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.\u0023\u003Dz\u0024YszLknqkUvS)));
+  public static readonly DependencyProperty \u0023\u003DzZXWtkeeJbx_j = DependencyProperty.Register("", typeof (DataTemplate), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.\u0023\u003Dz\u0024YszLknqkUvS)));
   
   private EventHandler<DragDeltaEventArgs> \u0023\u003DzKoryGH8\u003D;
   
@@ -109,9 +109,9 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.\u0023\u003DzBexXE3VONLO6 = (ContentPresenter) this.GetTemplateChild(XXX.SSS(-539332359));
-    this.\u0023\u003DzIcIt5i8Z\u0024_b2 = (Grid) this.GetTemplateChild(XXX.SSS(-539332410));
-    this.\u0023\u003DzJUyG4Ire5BiC = (Thumb) this.GetTemplateChild(XXX.SSS(-539332400));
+    this.\u0023\u003DzBexXE3VONLO6 = (ContentPresenter) this.GetTemplateChild("");
+    this.\u0023\u003DzIcIt5i8Z\u0024_b2 = (Grid) this.GetTemplateChild("");
+    this.\u0023\u003DzJUyG4Ire5BiC = (Thumb) this.GetTemplateChild("");
     if (this.\u0023\u003DzJUyG4Ire5BiC != null)
     {
       this.\u0023\u003DzJUyG4Ire5BiC.DragDelta += new DragDeltaEventHandler(this.\u0023\u003DzlMFKvzCL8Fzd);

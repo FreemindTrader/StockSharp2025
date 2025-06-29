@@ -28,7 +28,7 @@ internal sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc 
     get => this.\u0023\u003DzsQrVoaE\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<CandlePriceLevel>(ref this.\u0023\u003DzsQrVoaE\u003D, value, XXX.SSS(-539329087));
+      this.\u0023\u003DzwGPLgl8\u003D<CandlePriceLevel>(ref this.\u0023\u003DzsQrVoaE\u003D, value, "");
     }
   }
 

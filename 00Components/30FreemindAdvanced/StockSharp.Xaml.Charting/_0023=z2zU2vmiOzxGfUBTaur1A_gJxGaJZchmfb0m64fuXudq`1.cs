@@ -23,34 +23,34 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
   ICollection
 {
   
-  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzU\u0024_meog\u003D;
+  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> _drawData;
 
   public \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D(
     \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> _param1)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D = _param1;
+    this._drawData = _param1;
   }
 
   public \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D(
     \u0023\u003DzH9HNkng\u003D[] _param1)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D = \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz19UvNq0\u003D(_param1);
+    this._drawData = \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz19UvNq0\u003D(_param1);
   }
 
   private void \u0023\u003DzrjoFHxcyHAZx()
   {
-    throw new InvalidOperationException(XXX.SSS(-539437616));
+    throw new InvalidOperationException("");
   }
 
   [SpecialName]
   public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzRr4AYdnHaTxa()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzRr4AYdnHaTxa();
+    return this._drawData.\u0023\u003DzRr4AYdnHaTxa();
   }
 
   internal int \u0023\u003DzMRd_64p8E249()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzMRd_64p8E249();
+    return this._drawData.\u0023\u003DzMRd_64p8E249();
   }
 
   internal void \u0023\u003Dz2GOzd49sS99C(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
@@ -63,12 +63,12 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   object ICollection.\u0023\u003DzxSE4OX0h3nsK6ev9wi6AL7I\u003D()
   {
-    return ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D).SyncRoot;
+    return ((ICollection) this._drawData).SyncRoot;
   }
 
   object IList.\u0023\u003Dzsw6uZQAY38X4SXUVUM6sxbU\u003D(int _param1)
   {
-    return (object) this.\u0023\u003DzU\u0024_meog\u003D[_param1];
+    return (object) this._drawData[_param1];
   }
 
   void IList.\u0023\u003DzPS8zWbReapv0MVOGfNSMdFU\u003D(int _param1, object _param2)
@@ -84,17 +84,17 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
   {
-    return ((IList) this.\u0023\u003DzU\u0024_meog\u003D).Contains(_param1);
+    return ((IList) this._drawData).Contains(_param1);
   }
 
   void ICollection.\u0023\u003DzFAvqYrLd8QaQMLuvPOiGwFQ\u003D(Array _param1, int _param2)
   {
-    ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D).CopyTo(_param1, _param2);
+    ((ICollection) this._drawData).CopyTo(_param1, _param2);
   }
 
   int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
   {
-    return ((IList) this.\u0023\u003DzU\u0024_meog\u003D).IndexOf(_param1);
+    return ((IList) this._drawData).IndexOf(_param1);
   }
 
   void IList.\u0023\u003DzuxPIbwR6tOrj8Wpe9w\u003D\u003D(int _param1, object _param2)
@@ -107,7 +107,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public int Count => this.\u0023\u003DzU\u0024_meog\u003D.Count;
+  public int Count => this._drawData.Count;
 
   internal void \u0023\u003DzpFWgSog\u003D(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
 
@@ -118,7 +118,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public \u0023\u003DzH9HNkng\u003D this[int _param1]
   {
-    get => this.\u0023\u003DzU\u0024_meog\u003D[_param1];
+    get => this._drawData[_param1];
     set => this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
@@ -128,27 +128,27 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public bool Contains(\u0023\u003DzH9HNkng\u003D _param1)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.Contains(_param1);
+    return this._drawData.Contains(_param1);
   }
 
   public void CopyTo(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D.CopyTo(_param1, _param2);
+    this._drawData.CopyTo(_param1, _param2);
   }
 
   IEnumerator<\u0023\u003DzH9HNkng\u003D> IEnumerable<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
   {
-    return (IEnumerator<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzRPOJ5g0\u003D();
+    return (IEnumerator<\u0023\u003DzH9HNkng\u003D>) this._drawData.\u0023\u003DzRPOJ5g0\u003D();
   }
 
   IEnumerator IEnumerable.\u0023\u003DzSV_TZe7ftMh2SQ86i417Nok\u003D()
   {
-    return (IEnumerator) this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzRPOJ5g0\u003D();
+    return (IEnumerator) this._drawData.\u0023\u003DzRPOJ5g0\u003D();
   }
 
   public int IndexOf(\u0023\u003DzH9HNkng\u003D _param1)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.IndexOf(_param1);
+    return this._drawData.IndexOf(_param1);
   }
 
   public void Insert(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
@@ -166,12 +166,12 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public \u0023\u003DzH9HNkng\u003D \u0023\u003DzxKsmolQ\u003D()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzxKsmolQ\u003D();
+    return this._drawData.\u0023\u003DzxKsmolQ\u003D();
   }
 
   public \u0023\u003DzH9HNkng\u003D \u0023\u003DzC52X0FE\u003D()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzC52X0FE\u003D();
+    return this._drawData.\u0023\u003DzC52X0FE\u003D();
   }
 
   public void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<\u0023\u003DzH9HNkng\u003D> _param1)
@@ -181,7 +181,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public void Clone(\u0023\u003DzH9HNkng\u003D[] _param1)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D.Clone(_param1);
+    this._drawData.Clone(_param1);
   }
 
   public void Clone(
@@ -190,7 +190,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     int _param3,
     int _param4)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D.Clone(_param1, _param2, _param3, _param4);
+    this._drawData.Clone(_param1, _param2, _param3, _param4);
   }
 
   public bool \u0023\u003Dz8_bgWJ3JomKk(int _param1)
@@ -201,7 +201,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public int \u0023\u003DzttdLFAU\u003D(\u0023\u003DzH9HNkng\u003D _param1, int _param2)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzttdLFAU\u003D(_param1, _param2);
+    return this._drawData.\u0023\u003DzttdLFAU\u003D(_param1, _param2);
   }
 
   public int \u0023\u003DzttdLFAU\u003D(
@@ -209,7 +209,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     int _param2,
     int _param3)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzttdLFAU\u003D(_param1, _param2, _param3);
+    return this._drawData.\u0023\u003DzttdLFAU\u003D(_param1, _param2, _param3);
   }
 
   public void \u0023\u003DzdG5UbJ7rAsgF(
@@ -221,12 +221,12 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public int \u0023\u003DzLi0LBQXEUVc9(\u0023\u003DzH9HNkng\u003D _param1)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzLi0LBQXEUVc9(_param1);
+    return this._drawData.\u0023\u003DzLi0LBQXEUVc9(_param1);
   }
 
   public int \u0023\u003DzLi0LBQXEUVc9(\u0023\u003DzH9HNkng\u003D _param1, int _param2)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzLi0LBQXEUVc9(_param1, _param2);
+    return this._drawData.\u0023\u003DzLi0LBQXEUVc9(_param1, _param2);
   }
 
   public int \u0023\u003DzLi0LBQXEUVc9(
@@ -234,7 +234,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     int _param2,
     int _param3)
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzLi0LBQXEUVc9(_param1, _param2, _param3);
+    return this._drawData.\u0023\u003DzLi0LBQXEUVc9(_param1, _param2, _param3);
   }
 
   public void \u0023\u003DzdDirImQ\u003D(int _param1, int _param2)
@@ -244,7 +244,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzSWlLd4k\u003D()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzSWlLd4k\u003D();
+    return this._drawData.\u0023\u003DzSWlLd4k\u003D();
   }
 
   public void \u0023\u003DzFqwmAtQ6h18qSpWcIw\u003D\u003D() => this.\u0023\u003DzrjoFHxcyHAZx();

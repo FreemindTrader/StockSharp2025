@@ -69,7 +69,7 @@ public class Chart :
   
   private readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 \u0023\u003Dzu1T81HbxhQKC3OpEvw\u003D\u003D;
   
-  private readonly SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg> \u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D = new SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>();
+  private readonly SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg> _indicatorMap = new SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>();
   
   private readonly SynchronizedDictionary<IChartElement, Subscription> \u0023\u003DzvWHSaOs\u003D = new SynchronizedDictionary<IChartElement, Subscription>();
   
@@ -139,13 +139,13 @@ public class Chart :
     this.RemoveElement += new Action<IChartElement>(this.\u0023\u003Dz\u0024_wDItQvnYOy);
     ucNpCcsOdkLfs7Ks.\u0023\u003DzgE4mCHaKpzj3mF7k57tWsbQ\u003D = new string[7]
     {
-      XXX.SSS(-539432837),
-      XXX.SSS(-539432892),
-      XXX.SSS(-539432879),
-      XXX.SSS(-539432926),
-      XXX.SSS(-539432952),
-      XXX.SSS(-539432941),
-      XXX.SSS(-539432706)
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     };
     \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(new Action(ucNpCcsOdkLfs7Ks.\u0023\u003DzYqlPx6RFcqzqQlN8KA\u003D\u003D));
     if (IChartExtensions.TryIndicatorProvider == null)
@@ -179,7 +179,7 @@ public class Chart :
     get => this.\u0023\u003DzbEOGQO_Gw5r5YQ6kr3Jalls\u003D;
     set
     {
-      this.\u0023\u003DzbEOGQO_Gw5r5YQ6kr3Jalls\u003D = value ?? throw new ArgumentNullException(XXX.SSS(-539432762));
+      this.\u0023\u003DzbEOGQO_Gw5r5YQ6kr3Jalls\u003D = value ?? throw new ArgumentNullException("");
     }
   }
 
@@ -198,7 +198,7 @@ public class Chart :
     set
     {
       this.\u0023\u003DzRQNCutnxzurB = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432741));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -211,7 +211,7 @@ public class Chart :
       this.\u0023\u003Dz_hnUMt3_OcvB = value;
       foreach (IChartArea area in this.Areas)
         area.SetAutoRange(value);
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432796));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -221,8 +221,8 @@ public class Chart :
     get => this.\u0023\u003Dz9Ee3umvrluGn;
     set
     {
-      this.\u0023\u003Dz9Ee3umvrluGn = !(value <= TimeSpan.Zero) ? value : throw new ArgumentOutOfRangeException(XXX.SSS(-539432778), (object) value, LocalizedStrings.InvalidValue);
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432821));
+      this.\u0023\u003Dz9Ee3umvrluGn = !(value <= TimeSpan.Zero) ? value : throw new ArgumentOutOfRangeException("", (object) value, LocalizedStrings.InvalidValue);
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -263,7 +263,7 @@ public class Chart :
   private void \u0023\u003DzqfFsxob3ngDX(object _param1, PropertyChangedEventArgs _param2)
   {
     ChartArea chartArea = (ChartArea) _param1;
-    if (!(_param2.PropertyName == XXX.SSS(-539432499)))
+    if (!(_param2.PropertyName == ""))
       return;
     chartArea.\u0023\u003Dz3ThQNm3rQ1fp().Height = chartArea.Height;
   }
@@ -282,9 +282,9 @@ public class Chart :
     gncgo1okL0HgWiq5JrU.\u0023\u003DzRRvwDu67s9Rm = this;
     gncgo1okL0HgWiq5JrU.\u0023\u003Dzy_5REws\u003D = area;
     if (gncgo1okL0HgWiq5JrU.\u0023\u003Dzy_5REws\u003D == null)
-      throw new ArgumentNullException(XXX.SSS(-539432813));
+      throw new ArgumentNullException("");
     if (gncgo1okL0HgWiq5JrU.\u0023\u003Dz_i6sZDg\u003D == null)
-      throw new ArgumentNullException(XXX.SSS(-539432092));
+      throw new ArgumentNullException("");
     ((DispatcherObject) this).GuiSync(new Action(gncgo1okL0HgWiq5JrU.\u0023\u003Dzo0PvKPRyMKTdyL4L\u0024A\u003D\u003D));
   }
 
@@ -292,11 +292,11 @@ public class Chart :
   public void AddElement(IChartArea area, IChartCandleElement element, Subscription subscription)
   {
     if (area == null)
-      throw new ArgumentNullException(XXX.SSS(-539432071));
+      throw new ArgumentNullException("");
     if (element == null)
-      throw new ArgumentNullException(XXX.SSS(-539432078));
+      throw new ArgumentNullException("");
     if (subscription == null)
-      throw new ArgumentNullException(XXX.SSS(-539432121));
+      throw new ArgumentNullException("");
     this.\u0023\u003DzvWHSaOs\u003D.Add((IChartElement) element, subscription);
     this.AddElement(area, (IChartElement) element);
   }
@@ -309,14 +309,14 @@ public class Chart :
     IIndicator indicator)
   {
     if (area == null)
-      throw new ArgumentNullException(XXX.SSS(-539432104));
+      throw new ArgumentNullException("");
     if (element == null)
-      throw new ArgumentNullException(XXX.SSS(-539432147));
+      throw new ArgumentNullException("");
     if (indicator == null)
-      throw new ArgumentNullException(XXX.SSS(-539432154));
+      throw new ArgumentNullException("");
     if (subscription != null)
       this.\u0023\u003DzvWHSaOs\u003D.Add((IChartElement) element, subscription);
-    this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Add(element, new Chart.\u0023\u003DzZQ9Hpf12oRwg(this, element, indicator));
+    this._indicatorMap.Add(element, new Chart.\u0023\u003DzZQ9Hpf12oRwg(this, element, indicator));
     ((ChartIndicatorElement) element).\u0023\u003Dz2Afk71t1OoFdU8tQ4Q\u003D\u003D(this.IndicatorTypes, indicator);
     this.AddElement(area, (IChartElement) element);
   }
@@ -328,11 +328,11 @@ public class Chart :
   public void AddElement(IChartArea area, IChartOrderElement element, Subscription subscription)
   {
     if (area == null)
-      throw new ArgumentNullException(XXX.SSS(-539432133));
+      throw new ArgumentNullException("");
     if (element == null)
-      throw new ArgumentNullException(XXX.SSS(-539432180));
+      throw new ArgumentNullException("");
     if (subscription == null)
-      throw new ArgumentNullException(XXX.SSS(-539432191));
+      throw new ArgumentNullException("");
     this.\u0023\u003DzvWHSaOs\u003D.Add((IChartElement) element, subscription);
     this.AddElement(area, (IChartElement) element);
   }
@@ -344,11 +344,11 @@ public class Chart :
   public void AddElement(IChartArea area, IChartTradeElement element, Subscription subscription)
   {
     if (area == null)
-      throw new ArgumentNullException(XXX.SSS(-539432166));
+      throw new ArgumentNullException("");
     if (element == null)
-      throw new ArgumentNullException(XXX.SSS(-539431953));
+      throw new ArgumentNullException("");
     if (subscription == null)
-      throw new ArgumentNullException(XXX.SSS(-539431968));
+      throw new ArgumentNullException("");
     this.\u0023\u003DzvWHSaOs\u003D.Add((IChartElement) element, subscription);
     this.AddElement(area, (IChartElement) element);
   }
@@ -359,14 +359,14 @@ public class Chart :
     jyDziF55m7JqXuwJc.\u0023\u003Dzy_5REws\u003D = area;
     jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D = element;
     if (jyDziF55m7JqXuwJc.\u0023\u003Dzy_5REws\u003D == null)
-      throw new ArgumentNullException(XXX.SSS(-539431947));
+      throw new ArgumentNullException("");
     if (jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D == null)
-      throw new ArgumentNullException(XXX.SSS(-539431986));
+      throw new ArgumentNullException("");
     Chart.\u0023\u003DzZQ9Hpf12oRwg zZq9Hpf12oRwg;
-    if (jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D is IChartIndicatorElement zI6sZdg && this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.TryGetValue(zI6sZdg, ref zZq9Hpf12oRwg))
+    if (jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D is IChartIndicatorElement zI6sZdg && this._indicatorMap.TryGetValue(zI6sZdg, ref zZq9Hpf12oRwg))
     {
       zZq9Hpf12oRwg.Dispose();
-      this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Remove(zI6sZdg);
+      this._indicatorMap.Remove(zI6sZdg);
     }
     ((DispatcherObject) this).GuiSync<bool>(new Func<bool>(jyDziF55m7JqXuwJc.\u0023\u003DzRy89s7w8wbPZi21A_M2JlLqW05mnmhs8PApgiRA\u003D));
     this.\u0023\u003DzvWHSaOs\u003D.Remove(jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D);
@@ -379,7 +379,7 @@ public class Chart :
   /// <returns>Indicator.</returns>
   public IIndicator GetIndicator(IChartIndicatorElement element)
   {
-    return CollectionHelper.TryGetValue<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>((IDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>) this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D, element)?.Indicator;
+    return CollectionHelper.TryGetValue<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>((IDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>) this._indicatorMap, element)?.Indicator;
   }
 
   /// <inheritdoc />
@@ -421,7 +421,7 @@ public class Chart :
   {
     SynchronizedDictionary<IChartElement, Subscription> zvWhSaOs = this.\u0023\u003DzvWHSaOs\u003D;
     IChartElement chartElement = element;
-    zvWhSaOs[chartElement] = subscription ?? throw new ArgumentNullException(XXX.SSS(-539431997));
+    zvWhSaOs[chartElement] = subscription ?? throw new ArgumentNullException("");
     ((IfxChartElement) element).\u0023\u003DzMIAnwWQ\u003D();
   }
 
@@ -449,7 +449,7 @@ public class Chart :
       if (this.\u0023\u003DznXh8y9EGbQ7R6xXCKw\u003D\u003D == value)
         return;
       this.\u0023\u003DznXh8y9EGbQ7R6xXCKw\u003D\u003D = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539431980));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -490,7 +490,7 @@ public class Chart :
       if (this.\u0023\u003DzL6RNvETlqFx4 == value)
         return;
       this.\u0023\u003DzL6RNvETlqFx4 = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432005));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -552,7 +552,7 @@ public class Chart :
       if (this.\u0023\u003DzwuVzD4GYBhfk == value)
         return;
       this.\u0023\u003DzwuVzD4GYBhfk = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432057));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -565,7 +565,7 @@ public class Chart :
       if (this.\u0023\u003Dzi\u0024DHUvHXaw26IYcmlA\u003D\u003D == value)
         return;
       this.\u0023\u003Dzi\u0024DHUvHXaw26IYcmlA\u003D\u003D = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432041));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -578,7 +578,7 @@ public class Chart :
       if (this.\u0023\u003DzKSdoqGGT2Q0s17vWLQ\u003D\u003D == value)
         return;
       this.\u0023\u003DzKSdoqGGT2Q0s17vWLQ\u003D\u003D = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432324));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -591,7 +591,7 @@ public class Chart :
       if (this.\u0023\u003DzdrtI10riHGVN == value)
         return;
       this.\u0023\u003DzdrtI10riHGVN = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432378));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -604,7 +604,7 @@ public class Chart :
       if (this.\u0023\u003DznNCcb03RWapN == value)
         return;
       this.\u0023\u003DznNCcb03RWapN = value;
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432403));
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -616,8 +616,8 @@ public class Chart :
     {
       if (this.\u0023\u003Dzlm3nxP8O1U6I == value)
         return;
-      this.\u0023\u003Dzlm3nxP8O1U6I = value ?? throw new ArgumentNullException(XXX.SSS(-539432395));
-      NotifyPropertyChangedExHelper.Notify<Chart>(this, XXX.SSS(-539432434));
+      this.\u0023\u003Dzlm3nxP8O1U6I = value ?? throw new ArgumentNullException("");
+      NotifyPropertyChangedExHelper.Notify<Chart>(this, "");
     }
   }
 
@@ -892,7 +892,7 @@ public class Chart :
   /// <inheritdoc />
   public void Draw(IChartDrawData data)
   {
-    ChartDrawData chartDrawData = data != null ? (ChartDrawData) data : throw new ArgumentNullException(XXX.SSS(-539432417));
+    ChartDrawData chartDrawData = data != null ? (ChartDrawData) data : throw new ArgumentNullException("");
     foreach (ChartArea chartArea in this.\u0023\u003Dza1mnh6ythHbd)
       chartArea.\u0023\u003Dz3ThQNm3rQ1fp().\u0023\u003DzjgUUUJE\u003D(chartDrawData);
   }
@@ -1006,27 +1006,27 @@ public class Chart :
   /// <param name="storage">Settings storage.</param>
   public void Load(SettingsStorage storage)
   {
-    this.IsAutoScroll = storage.GetValue<bool>(XXX.SSS(-539432741), this.IsAutoScroll);
-    this.IsAutoRange = storage.GetValue<bool>(XXX.SSS(-539432796), this.IsAutoRange);
-    this.AutoRangeByAnnotations = storage.GetValue<bool>(XXX.SSS(-539431980), this.AutoRangeByAnnotations);
-    this.ShowOverview = storage.GetValue<bool>(XXX.SSS(-539432432), this.ShowOverview);
-    this.ShowLegend = storage.GetValue<bool>(XXX.SSS(-539432195), this.ShowLegend);
-    this.CrossHair = storage.GetValue<bool>(XXX.SSS(-539432057), this.CrossHair);
-    this.CrossHairTooltip = storage.GetValue<bool>(XXX.SSS(-539432041), this.CrossHairTooltip);
-    this.CrossHairAxisLabels = storage.GetValue<bool>(XXX.SSS(-539432324), this.CrossHairAxisLabels);
-    this.OrderCreationMode = storage.GetValue<bool>(XXX.SSS(-539432403), this.OrderCreationMode);
-    this.TimeZone = Converter.To<TimeZoneInfo>((object) storage.GetValue<string>(XXX.SSS(-539432434), (string) null)) ?? this.TimeZone;
-    this.ShowPerfStats = storage.GetValue<bool>(XXX.SSS(-539432005), this.ShowPerfStats);
+    this.IsAutoScroll = storage.GetValue<bool>("", this.IsAutoScroll);
+    this.IsAutoRange = storage.GetValue<bool>("", this.IsAutoRange);
+    this.AutoRangeByAnnotations = storage.GetValue<bool>("", this.AutoRangeByAnnotations);
+    this.ShowOverview = storage.GetValue<bool>("", this.ShowOverview);
+    this.ShowLegend = storage.GetValue<bool>("", this.ShowLegend);
+    this.CrossHair = storage.GetValue<bool>("", this.CrossHair);
+    this.CrossHairTooltip = storage.GetValue<bool>("", this.CrossHairTooltip);
+    this.CrossHairAxisLabels = storage.GetValue<bool>("", this.CrossHairAxisLabels);
+    this.OrderCreationMode = storage.GetValue<bool>("", this.OrderCreationMode);
+    this.TimeZone = Converter.To<TimeZoneInfo>((object) storage.GetValue<string>("", (string) null)) ?? this.TimeZone;
+    this.ShowPerfStats = storage.GetValue<bool>("", this.ShowPerfStats);
     if (!this.IsInteracted)
       return;
     this.\u0023\u003DzvWHSaOs\u003D.Clear();
-    CollectionHelper.ForEach<Chart.\u0023\u003DzZQ9Hpf12oRwg>((IEnumerable<Chart.\u0023\u003DzZQ9Hpf12oRwg>) this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Values, Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D = new Action<Chart.\u0023\u003DzZQ9Hpf12oRwg>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzd9aoFEQWycLNB5pmAWPP_1U\u003D)));
-    this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Clear();
-    object source = storage.GetValue<object>(XXX.SSS(-539432244), (object) null);
+    CollectionHelper.ForEach<Chart.\u0023\u003DzZQ9Hpf12oRwg>((IEnumerable<Chart.\u0023\u003DzZQ9Hpf12oRwg>) this._indicatorMap.Values, Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D = new Action<Chart.\u0023\u003DzZQ9Hpf12oRwg>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzd9aoFEQWycLNB5pmAWPP_1U\u003D)));
+    this._indicatorMap.Clear();
+    object source = storage.GetValue<object>("", (object) null);
     if (source == null)
       return;
     if (source is SettingsStorage settingsStorage)
-      source = (object) settingsStorage.GetValue<IEnumerable<SettingsStorage>>(XXX.SSS(-539432244), (IEnumerable<SettingsStorage>) null);
+      source = (object) settingsStorage.GetValue<IEnumerable<SettingsStorage>>("", (IEnumerable<SettingsStorage>) null);
     this.\u0023\u003DzZTljjN6ww\u0024xh(((IEnumerable) source).Cast<SettingsStorage>());
   }
 
@@ -1034,20 +1034,20 @@ public class Chart :
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<bool>(XXX.SSS(-539432741), this.IsAutoScroll);
-    storage.SetValue<bool>(XXX.SSS(-539432796), this.IsAutoRange);
-    storage.SetValue<bool>(XXX.SSS(-539431980), this.AutoRangeByAnnotations);
-    storage.SetValue<bool>(XXX.SSS(-539432432), this.ShowOverview);
-    storage.SetValue<bool>(XXX.SSS(-539432195), this.ShowLegend);
-    storage.SetValue<bool>(XXX.SSS(-539432057), this.CrossHair);
-    storage.SetValue<bool>(XXX.SSS(-539432041), this.CrossHairTooltip);
-    storage.SetValue<bool>(XXX.SSS(-539432324), this.CrossHairAxisLabels);
-    storage.SetValue<bool>(XXX.SSS(-539432403), this.OrderCreationMode);
-    storage.SetValue<string>(XXX.SSS(-539432434), this.TimeZone?.Id);
-    storage.SetValue<bool>(XXX.SSS(-539432005), this.ShowPerfStats);
+    storage.SetValue<bool>("", this.IsAutoScroll);
+    storage.SetValue<bool>("", this.IsAutoRange);
+    storage.SetValue<bool>("", this.AutoRangeByAnnotations);
+    storage.SetValue<bool>("", this.ShowOverview);
+    storage.SetValue<bool>("", this.ShowLegend);
+    storage.SetValue<bool>("", this.CrossHair);
+    storage.SetValue<bool>("", this.CrossHairTooltip);
+    storage.SetValue<bool>("", this.CrossHairAxisLabels);
+    storage.SetValue<bool>("", this.OrderCreationMode);
+    storage.SetValue<string>("", this.TimeZone?.Id);
+    storage.SetValue<bool>("", this.ShowPerfStats);
     if (!this.IsInteracted)
       return;
-    storage.SetValue<SettingsStorage[]>(XXX.SSS(-539432244), this.\u0023\u003Dza1mnh6ythHbd.Select<IChartArea, SettingsStorage>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D = new Func<IChartArea, SettingsStorage>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<SettingsStorage[]>("", this.\u0023\u003Dza1mnh6ythHbd.Select<IChartArea, SettingsStorage>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D = new Func<IChartArea, SettingsStorage>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D))).ToArray<SettingsStorage>());
   }
 
   /// <summary>To re-subscribe to getting data for all elements.</summary>
@@ -1070,7 +1070,7 @@ public class Chart :
       ChartArea area = new ChartArea();
       area.Load(storage);
       this.AddArea((IChartArea) area);
-      area.\u0023\u003Dz3ThQNm3rQ1fp().Height = storage.GetValue<double>(XXX.SSS(-539432499), double.NaN);
+      area.\u0023\u003Dz3ThQNm3rQ1fp().Height = storage.GetValue<double>("", double.NaN);
     }
   }
 
@@ -1214,7 +1214,7 @@ public class Chart :
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539432256), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -1290,7 +1290,7 @@ public class Chart :
     Chart.\u0023\u003DzCMPTGwQ4dXwYZLzYWDdBciE\u003D q4dXwYzLzYwDdBciE = new Chart.\u0023\u003DzCMPTGwQ4dXwYZLzYWDdBciE\u003D();
     ChartArea area = new ChartArea()
     {
-      Title = LocalizedStrings.Panel + XXX.SSS(-539432316) + (this.\u0023\u003Dza1mnh6ythHbd.Count + 1).ToString()
+      Title = LocalizedStrings.Panel + "" + (this.\u0023\u003Dza1mnh6ythHbd.Count + 1).ToString()
     };
     q4dXwYzLzYwDdBciE.\u0023\u003DzvZK8J1raIDr8 = this.\u0023\u003DzJp_PZYEzsJcq();
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) area.XAxises, new Action<IChartAxis>(q4dXwYzLzYwDdBciE.\u0023\u003Dzn0BxqFlrvEnaJ4F1tg\u003D\u003D));
@@ -1455,7 +1455,7 @@ public class Chart :
     internal SettingsStorage \u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D(IChartArea _param1)
     {
       SettingsStorage settingsStorage = PersistableHelper.Save((IPersistable) _param1);
-      settingsStorage.SetValue<double>(XXX.SSS(-539432499), ((ChartArea) _param1).\u0023\u003Dz3ThQNm3rQ1fp().Height);
+      settingsStorage.SetValue<double>("", ((ChartArea) _param1).\u0023\u003Dz3ThQNm3rQ1fp().Height);
       return settingsStorage;
     }
   }
@@ -1490,17 +1490,17 @@ public class Chart :
     internal void \u0023\u003Dzo0PvKPRyMKTdyL4L\u0024A\u003D\u003D()
     {
       Chart.\u0023\u003DzZQ9Hpf12oRwg zZq9Hpf12oRwg;
-      if (this.\u0023\u003Dz_i6sZDg\u003D is IChartIndicatorElement zI6sZdg && zI6sZdg.AutoAssignYAxis && this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.TryGetValue(zI6sZdg, ref zZq9Hpf12oRwg) && zZq9Hpf12oRwg.Indicator.Measure != IndicatorMeasures.Price)
+      if (this.\u0023\u003Dz_i6sZDg\u003D is IChartIndicatorElement zI6sZdg && zI6sZdg.AutoAssignYAxis && this.\u0023\u003DzRRvwDu67s9Rm._indicatorMap.TryGetValue(zI6sZdg, ref zZq9Hpf12oRwg) && zZq9Hpf12oRwg.Indicator.Measure != IndicatorMeasures.Price)
       {
         (IChartArea, IndicatorMeasures) key = (this.\u0023\u003Dzy_5REws\u003D, zZq9Hpf12oRwg.Indicator.Measure);
         string stringAndClear;
         if (!this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzDUXY6MNzkE1e.TryGetValue(key, out stringAndClear))
         {
           DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(2, 2);
-          interpolatedStringHandler.AppendFormatted(XXX.SSS(-539432528));
-          interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432568));
+          interpolatedStringHandler.AppendFormatted("");
+          interpolatedStringHandler.AppendLiteral("");
           interpolatedStringHandler.AppendFormatted<Guid>(Guid.NewGuid());
-          interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432576));
+          interpolatedStringHandler.AppendLiteral("");
           stringAndClear = interpolatedStringHandler.ToStringAndClear();
           // ISSUE: explicit non-virtual call
           IChartAxis axis = __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.CreateAxis());
@@ -1524,9 +1524,9 @@ public class Chart :
     internal void \u0023\u003DzTUl6zvo_PmQZ4TJ2ew\u003D\u003D()
     {
       if (this.\u0023\u003Dzy_5REws\u003D.Chart != null)
-        throw new ArgumentException(XXX.SSS(-539432512), XXX.SSS(-539432533));
+        throw new ArgumentException("", "");
       if (this.\u0023\u003Dzy_5REws\u003D == null || this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dza1mnh6ythHbd.Contains(this.\u0023\u003Dzy_5REws\u003D))
-        throw new ArgumentException(XXX.SSS(-539432516));
+        throw new ArgumentException("");
       ChartAxisType? xaxisType = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dza1mnh6ythHbd.FirstOrDefault<IChartArea>()?.XAxisType;
       if (xaxisType.HasValue)
       {
@@ -1612,9 +1612,9 @@ public class Chart :
       IChartIndicatorElement _param2,
       IIndicator _param3)
     {
-      this.\u0023\u003DzF\u002458l4g\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539432552));
-      this.\u0023\u003Dz2YSX_Z4\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539432851));
-      this.\u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D = _param3 ?? throw new ArgumentNullException(XXX.SSS(-539432858));
+      this.\u0023\u003DzF\u002458l4g\u003D = _param1 ?? throw new ArgumentNullException("");
+      this.\u0023\u003Dz2YSX_Z4\u003D = _param2 ?? throw new ArgumentNullException("");
+      this.\u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D = _param3 ?? throw new ArgumentNullException("");
       this.Indicator.Reseted += new Action(this.\u0023\u003Dze7c89\u0024wRkR45b80_dQ\u003D\u003D);
     }
 

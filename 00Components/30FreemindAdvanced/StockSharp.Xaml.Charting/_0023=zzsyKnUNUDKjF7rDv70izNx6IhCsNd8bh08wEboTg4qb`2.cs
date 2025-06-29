@@ -12,14 +12,14 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
-  \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
-  \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvM\u00245t3IBX9uM_BXqrtdNxSdMVJP41w\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
+internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D> : 
+  \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>,
+  \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvM\u00245t3IBX9uM_BXqrtdNxSdMVJP41w\u003D\u003D<T, \u0023\u003DzE8zkRfY\u003D>,
+  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
   \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA6LApz0w6piN5MPsjC14et6W
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+  where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
 {
   
@@ -27,11 +27,11 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   
   private \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D> \u0023\u003Dz_YpB1WqdIoXd = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzE8zkRfY\u003D>();
   
-  private readonly \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)> \u0023\u003Dz3laIKDGah\u0024Kh;
+  private readonly \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)> \u0023\u003Dz3laIKDGah\u0024Kh;
 
   public \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW()
   {
-    this.\u0023\u003Dz3laIKDGah\u0024Kh = new \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>(new Action<IList<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>>(this.\u0023\u003DzGXoUV7Q\u0024_bM\u0024));
+    this.\u0023\u003Dz3laIKDGah\u0024Kh = new \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>(new Action<IList<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>>(this.\u0023\u003DzGXoUV7Q\u0024_bM\u0024));
   }
 
   public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D YRange
@@ -78,19 +78,19 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
       if (this.FifoCapacity.HasValue)
       {
         int num = this.FifoCapacity.Value;
-        this.\u0023\u003DzmIwKipw\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzulcL8RA\u003D>(num);
+        this.\u0023\u003DzmIwKipw\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<T>(num);
         this.\u0023\u003Dz_YpB1WqdIoXd = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzE8zkRfY\u003D>(num);
         this.\u0023\u003DzyaS0FCQuIbTz = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzE8zkRfY\u003D>(num);
         this.\u0023\u003DzoEP49rI\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzE8zkRfY\u003D>(num);
       }
       else
       {
-        this.\u0023\u003DzmIwKipw\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzulcL8RA\u003D>();
+        this.\u0023\u003DzmIwKipw\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<T>();
         this.\u0023\u003Dz_YpB1WqdIoXd = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzE8zkRfY\u003D>();
         this.\u0023\u003DzyaS0FCQuIbTz = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzE8zkRfY\u003D>();
         this.\u0023\u003DzoEP49rI\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzE8zkRfY\u003D>();
       }
-      ((ICollection<\u0023\u003DzulcL8RA\u003D>) this.\u0023\u003DzmIwKipw\u003D).Clear();
+      ((ICollection<T>) this.\u0023\u003DzmIwKipw\u003D).Clear();
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003Dz_YpB1WqdIoXd).Clear();
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzyaS0FCQuIbTz).Clear();
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzoEP49rI\u003D).Clear();
@@ -126,16 +126,16 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
     }
   }
 
-  public override \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzQ8SgRgQ\u003D()
+  public override \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzQ8SgRgQ\u003D()
   {
     lock (this.SyncRoot)
     {
       this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
-      \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> nd8bh08wEboTg4qbW = new \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>();
+      \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D> nd8bh08wEboTg4qbW = new \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>();
       nd8bh08wEboTg4qbW.FifoCapacity = this.FifoCapacity;
       nd8bh08wEboTg4qbW.AcceptsUnsortedData = this.AcceptsUnsortedData;
-      nd8bh08wEboTg4qbW.\u0023\u003Dznc8esWY\u003D((IEnumerable<\u0023\u003DzulcL8RA\u003D>) this.XValues, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.YValues, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzyaS0FCQuIbTz, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003Dz_YpB1WqdIoXd);
-      return (\u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>) nd8bh08wEboTg4qbW;
+      nd8bh08wEboTg4qbW.\u0023\u003Dznc8esWY\u003D((IEnumerable<T>) this.XValues, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.YValues, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzyaS0FCQuIbTz, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003Dz_YpB1WqdIoXd);
+      return (\u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>) nd8bh08wEboTg4qbW;
     }
   }
 
@@ -154,7 +154,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D tlZqozNbfOhxiykg1 = _param1 == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None ? \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None : \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid;
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D tlZqozNbfOhxiykg2 = _param1 == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None ? \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None : \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max;
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D tlZqozNbfOhxiykg3 = _param1 == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None ? \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None : \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min;
-      \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D e94P6zz4sY0BdBIDa = _param7.\u0023\u003DzA9cE1Xcn5A4Bx3OLTNdvGuw\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>();
+      \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D e94P6zz4sY0BdBIDa = _param7.\u0023\u003DzA9cE1Xcn5A4Bx3OLTNdvGuw\u003D<T, \u0023\u003DzE8zkRfY\u003D>();
       return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) new \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5(e94P6zz4sY0BdBIDa.\u0023\u003Dzg_KsNhI\u003D(tlZqozNbfOhxiykg1, _param2, _param3, this.IsFifo, _param4, (IList) this.\u0023\u003DzmIwKipw\u003D, (IList) this.\u0023\u003DzoEP49rI\u003D, new bool?(this.DataDistributionCalculator.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D()), new bool?(this.DataDistributionCalculator.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl()), _param5, _param6), e94P6zz4sY0BdBIDa.\u0023\u003Dzg_KsNhI\u003D(tlZqozNbfOhxiykg2, _param2, _param3, this.IsFifo, _param4, (IList) this.\u0023\u003DzmIwKipw\u003D, (IList) this.\u0023\u003DzyaS0FCQuIbTz, new bool?(this.DataDistributionCalculator.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D()), new bool?(this.DataDistributionCalculator.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl()), _param5, _param6), e94P6zz4sY0BdBIDa.\u0023\u003Dzg_KsNhI\u003D(tlZqozNbfOhxiykg3, _param2, _param3, this.IsFifo, _param4, (IList) this.\u0023\u003DzmIwKipw\u003D, (IList) this.\u0023\u003Dz_YpB1WqdIoXd, new bool?(this.DataDistributionCalculator.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D()), new bool?(this.DataDistributionCalculator.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl()), _param5, _param6));
     }
   }
@@ -186,7 +186,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   }
 
   public override void Append(
-    \u0023\u003DzulcL8RA\u003D _param1,
+    T _param1,
     params \u0023\u003DzE8zkRfY\u003D[] _param2)
   {
     if (_param2.Length != 3)
@@ -195,7 +195,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   }
 
   public override void Append(
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    IEnumerable<T> _param1,
     params IEnumerable<\u0023\u003DzE8zkRfY\u003D>[] _param2)
   {
     if (_param2.Length != 3)
@@ -204,7 +204,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   }
 
   public void \u0023\u003Dznc8esWY\u003D(
-    \u0023\u003DzulcL8RA\u003D _param1,
+    T _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzE8zkRfY\u003D _param3,
     \u0023\u003DzE8zkRfY\u003D _param4)
@@ -214,14 +214,14 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   }
 
   public void \u0023\u003Dznc8esWY\u003D(
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    IEnumerable<T> _param1,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param2,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param3,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param4)
   {
-    if (_param1.\u0023\u003DzMeGSfVE\u003D<\u0023\u003DzulcL8RA\u003D>())
+    if (_param1.\u0023\u003DzMeGSfVE\u003D<T>())
       return;
-    IEnumerator<\u0023\u003DzulcL8RA\u003D> enumerator1 = _param1.GetEnumerator();
+    IEnumerator<T> enumerator1 = _param1.GetEnumerator();
     IEnumerator<\u0023\u003DzE8zkRfY\u003D> enumerator2 = _param3.GetEnumerator();
     IEnumerator<\u0023\u003DzE8zkRfY\u003D> enumerator3 = _param4.GetEnumerator();
     IEnumerator<\u0023\u003DzE8zkRfY\u003D> enumerator4 = _param2.GetEnumerator();
@@ -249,7 +249,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   }
 
   public void \u0023\u003DzFkV86a8\u003D(
-    \u0023\u003DzulcL8RA\u003D _param1,
+    T _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzE8zkRfY\u003D _param3,
     \u0023\u003DzE8zkRfY\u003D _param4)
@@ -269,7 +269,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
 
   public void \u0023\u003DzzfUM_io\u003D(
     int _param1,
-    \u0023\u003DzulcL8RA\u003D _param2,
+    T _param2,
     \u0023\u003DzE8zkRfY\u003D _param3,
     \u0023\u003DzE8zkRfY\u003D _param4,
     \u0023\u003DzE8zkRfY\u003D _param5)
@@ -288,7 +288,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
 
   public void \u0023\u003DzdG5UbJ7rAsgF(
     int _param1,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param2,
+    IEnumerable<T> _param2,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param3,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param4,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param5)
@@ -312,7 +312,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D zE8zkRfY = this.\u0023\u003DzyaS0FCQuIbTz[_param1];
-    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(_param2, zE8zkRfY);
+    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(_param2, zE8zkRfY);
   }
 
   public override \u0023\u003DzE8zkRfY\u003D GetYMinAt(
@@ -320,20 +320,20 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D zE8zkRfY = this.\u0023\u003Dz_YpB1WqdIoXd[_param1];
-    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(_param2, zE8zkRfY);
+    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(_param2, zE8zkRfY);
   }
 
   private void \u0023\u003DzGXoUV7Q\u0024_bM\u0024(
-    IList<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)> _param1)
+    IList<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)> _param1)
   {
     lock (this.SyncRoot)
     {
-      IEnumerable<\u0023\u003DzulcL8RA\u003D> zulcL8Ras = _param1.Select<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzulcL8RA\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzulcL8RA\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfddoYYqO1KoImZFToGJhFrI\u003D)));
+      IEnumerable<T> zulcL8Ras = _param1.Select<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), T>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), T>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfddoYYqO1KoImZFToGJhFrI\u003D)));
       int count = ((\u0023\u003DzJhc8WdlQgSkcniY\u0024669ans2mQMwz_VJH0HVFEk8\u003D) this.\u0023\u003DzmIwKipw\u003D).get_Count();
       this.\u0023\u003DzmIwKipw\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(zulcL8Ras);
-      this.\u0023\u003DzyaS0FCQuIbTz.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D = new Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzCqCLad1Oyqxut3k0Ci3PqQ0\u003D))));
-      this.\u0023\u003Dz_YpB1WqdIoXd.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D = new Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzoktv7lImA01wNm6Pm8nXE5c\u003D))));
-      this.\u0023\u003DzoEP49rI\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz20aK3SSF8xTLLup\u0024Hw\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz20aK3SSF8xTLLup\u0024Hw\u003D\u003D = new Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRWAZugCJ\u00242tKW4NG1jCS_rI\u003D))));
+      this.\u0023\u003DzyaS0FCQuIbTz.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D = new Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzCqCLad1Oyqxut3k0Ci3PqQ0\u003D))));
+      this.\u0023\u003Dz_YpB1WqdIoXd.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D = new Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzoktv7lImA01wNm6Pm8nXE5c\u003D))));
+      this.\u0023\u003DzoEP49rI\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz20aK3SSF8xTLLup\u0024Hw\u003D\u003D ?? (\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz20aK3SSF8xTLLup\u0024Hw\u003D\u003D = new Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRWAZugCJ\u00242tKW4NG1jCS_rI\u003D))));
       this.DataDistributionCalculator.\u0023\u003DzeU6gWqHRfREz(this.\u0023\u003DzmIwKipw\u003D, count, zulcL8Ras, this.AcceptsUnsortedData);
     }
   }
@@ -341,32 +341,32 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   [Serializable]
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
-    public static readonly \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzulcL8RA\u003D> \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
-    public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D;
-    public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D;
-    public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003Dz20aK3SSF8xTLLup\u0024Hw\u003D\u003D;
+    public static readonly \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D();
+    public static Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), T> \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
+    public static Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D;
+    public static Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D;
+    public static Func<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003Dz20aK3SSF8xTLLup\u0024Hw\u003D\u003D;
 
-    internal \u0023\u003DzulcL8RA\u003D \u0023\u003DzfddoYYqO1KoImZFToGJhFrI\u003D(
-      (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
+    internal T \u0023\u003DzfddoYYqO1KoImZFToGJhFrI\u003D(
+      (T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item1;
     }
 
     internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzCqCLad1Oyqxut3k0Ci3PqQ0\u003D(
-      (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
+      (T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item2;
     }
 
     internal \u0023\u003DzE8zkRfY\u003D \u0023\u003Dzoktv7lImA01wNm6Pm8nXE5c\u003D(
-      (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
+      (T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item3;
     }
 
     internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzRWAZugCJ\u00242tKW4NG1jCS_rI\u003D(
-      (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
+      (T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item4;
     }

@@ -18,11 +18,11 @@ internal sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAF
   dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
 {
   
-  public static readonly DependencyProperty \u0023\u003DzWsyKEigY1Lm6 = DependencyProperty.Register(XXX.SSS(-539440178), typeof (Color), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzWsyKEigY1Lm6 = DependencyProperty.Register("", typeof (Color), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzgLLxE9j2DbxR = DependencyProperty.Register(XXX.SSS(-539440366), typeof (bool), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzgLLxE9j2DbxR = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzuajeYkUJAgVf = DependencyProperty.Register(XXX.SSS(-539440131), typeof (double), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzuajeYkUJAgVf = DependencyProperty.Register("", typeof (double), typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003Dz15moWio\u003D)));
   
   private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003DzjADvNnzgrrZX;
   
@@ -102,7 +102,7 @@ internal sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAF
     \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D lvtppRwsYcyoelU8 = new \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D();
     lvtppRwsYcyoelU8.\u0023\u003DzRRvwDu67s9Rm = this;
     lvtppRwsYcyoelU8.\u0023\u003DzC8v0b7k\u003D = _param1;
-    this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6>(XXX.SSS(-539340330));
+    this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6>("");
     this.\u0023\u003DzkAaadumBrkGDUOayKw\u003D\u003D(lvtppRwsYcyoelU8.\u0023\u003DzC8v0b7k\u003D);
     lvtppRwsYcyoelU8.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = new Color?();
     this.\u0023\u003Dzaz03IrKOXb2QTOxwkg\u003D\u003D(_param2, new Action<double, double, double, Rect>(lvtppRwsYcyoelU8.\u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D));
@@ -167,7 +167,7 @@ internal sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAF
     for (int index = 0; index < num1; ++index)
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6> iwzGyvO4YaqDkpiI = b9G5KlgWkLJr7a0x[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6>;
-      double num3 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+      double num3 = iwzGyvO4YaqDkpiI.Property();
       rcCjaxEzD51YrPc6 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double d = rcCjaxEzD51YrPc6.\u0023\u003Dzu7q98_E\u003D();
       rcCjaxEzD51YrPc6 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();

@@ -17,7 +17,7 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
   dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd
 {
   
-  public static readonly DependencyProperty \u0023\u003DzIrmMBlMvjNiI = DependencyProperty.Register(XXX.SSS(-539339907), typeof (double), typeof (dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzIrmMBlMvjNiI = DependencyProperty.Register("", typeof (double), typeof (dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
 
   public dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd()
   {
@@ -61,15 +61,15 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR> iwzGyvO4YaqDkpiI = (\u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>) ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index);
       \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-      double num4 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003Dz1bwNIVeIfnJ7(r84WmWxFxQ0dZvA0kR.\u0023\u003DzolXXlhDBER_c(), xoBoxSize);
+      double num4 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003Dz1bwNIVeIfnJ7(r84WmWxFxQ0dZvA0kR.HighPrice(), xoBoxSize);
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-      double num5 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzhMBCN0mwgFw7(r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8(), xoBoxSize);
+      double num5 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzhMBCN0mwgFw7(r84WmWxFxQ0dZvA0kR.LowPrice(), xoBoxSize);
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double close1 = r84WmWxFxQ0dZvA0kR.Close;
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-      double num6 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzGze4a8XU7KvB();
+      double num6 = r84WmWxFxQ0dZvA0kR.OpenPrice();
       bool flag3 = close1 >= num6;
-      int num7 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D()).\u0023\u003DzYNd6r7dW43yr();
+      int num7 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.Property()).\u0023\u003DzYNd6r7dW43yr();
       int num8 = ((double) num7 - (double) num2 * 0.5).\u0023\u003DzYNd6r7dW43yr();
       int num9 = ((double) num7 + (double) num2 * 0.5).\u0023\u003DzYNd6r7dW43yr();
       int val2_1 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num4).\u0023\u003DzYNd6r7dW43yr();
@@ -79,13 +79,13 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
       if (paletteProvider != null)
       {
         \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D htg5ScQrmCkwmAaNyPa = paletteProvider;
-        double num10 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+        double num10 = iwzGyvO4YaqDkpiI.Property();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-        double num11 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzGze4a8XU7KvB();
+        double num11 = r84WmWxFxQ0dZvA0kR.OpenPrice();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-        double num12 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzolXXlhDBER_c();
+        double num12 = r84WmWxFxQ0dZvA0kR.HighPrice();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-        double num13 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
+        double num13 = r84WmWxFxQ0dZvA0kR.LowPrice();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double close2 = r84WmWxFxQ0dZvA0kR.Close;
         Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, num10, num11, num12, num13, close2);

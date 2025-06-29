@@ -63,7 +63,7 @@ public class ChartAnnotation :
     IScichartSurfaceVM _param1)
   {
     if (this.Type == ChartAnnotationTypes.None)
-      throw new InvalidOperationException(XXX.SSS(-539433858));
+      throw new InvalidOperationException("");
     return (UIBaseVM) (this.\u0023\u003Dz2YSX_Z4\u003D = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
   }
 
@@ -88,7 +88,7 @@ public class ChartAnnotation :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    ChartDrawData.AnnotationData annotationData = data.\u0023\u003Dzp_r3R3U\u003D((IChartAnnotationElement) this);
+    ChartDrawData.AnnotationData annotationData = data.GetAnnotation((IChartAnnotationElement) this);
     if (annotationData == null)
       return false;
     return ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>) new ChartDrawData.IDrawValue[1]
@@ -108,13 +108,13 @@ public class ChartAnnotation :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.Type = storage.GetValue<ChartAnnotationTypes>(XXX.SSS(-539433895), this.Type);
+    this.Type = storage.GetValue<ChartAnnotationTypes>("", this.Type);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<ChartAnnotationTypes>(XXX.SSS(-539433895), this.Type);
+    storage.SetValue<ChartAnnotationTypes>("", this.Type);
   }
 }

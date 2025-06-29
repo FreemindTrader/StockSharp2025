@@ -61,7 +61,7 @@ public class ChartOrderElement :
       if (this.\u0023\u003DzkZyAKIN\u0024NPN3 == value)
         return;
       this.\u0023\u003DzkZyAKIN\u0024NPN3 = value;
-      this.RaisePropertyChanged(XXX.SSS(-539429218));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -75,7 +75,7 @@ public class ChartOrderElement :
       if (this.\u0023\u003DzUAvz8ZozfnUe == value)
         return;
       this.\u0023\u003DzUAvz8ZozfnUe = value;
-      this.RaisePropertyChanged(XXX.SSS(-539430551));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -89,7 +89,7 @@ public class ChartOrderElement :
       if (this.\u0023\u003DzMivvMSAVwLAH == value)
         return;
       this.\u0023\u003DzMivvMSAVwLAH = value;
-      this.RaisePropertyChanged(XXX.SSS(-539430538));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -132,26 +132,26 @@ public class ChartOrderElement :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartOrderElement) this);
-    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((ICollection<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
+    List<ChartDrawData.sTrade> source = data.GetCandleRelatedData((IChartOrderElement) this);
+    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sTrade>((ICollection<ChartDrawData.sTrade>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
   }
 
   /// <inheritdoc />
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.ErrorColor = storage.GetValue<int>(XXX.SSS(-539429218), 0).ToColor();
-    this.ErrorStrokeColor = storage.GetValue<int>(XXX.SSS(-539430551), 0).ToColor();
-    this.Filter = storage.GetValue<ChartOrderDisplayFilter>(XXX.SSS(-539430538), ChartOrderDisplayFilter.All);
+    this.ErrorColor = storage.GetValue<int>("", 0).ToColor();
+    this.ErrorStrokeColor = storage.GetValue<int>("", 0).ToColor();
+    this.Filter = storage.GetValue<ChartOrderDisplayFilter>("", ChartOrderDisplayFilter.All);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(XXX.SSS(-539429218), this.ErrorColor.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539430551), this.ErrorStrokeColor.ToInt());
-    storage.SetValue<string>(XXX.SSS(-539430538), Converter.To<string>((object) this.Filter));
+    storage.SetValue<int>("", this.ErrorColor.ToInt());
+    storage.SetValue<int>("", this.ErrorStrokeColor.ToInt());
+    storage.SetValue<string>("", Converter.To<string>((object) this.Filter));
   }
 
   internal override ChartOrderElement Clone(ChartOrderElement _param1)

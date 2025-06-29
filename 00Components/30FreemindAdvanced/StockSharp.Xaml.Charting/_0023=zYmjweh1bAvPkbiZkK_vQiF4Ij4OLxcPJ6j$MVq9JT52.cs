@@ -47,7 +47,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c(Func<Order, bool> _param1)
   {
     if (!UIBaseVM.\u0023\u003Dz03PnGbpCXkrj())
-      throw new InvalidOperationException(XXX.SSS(-539330177));
+      throw new InvalidOperationException("");
     if (_param1 == null)
       _param1 = \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<Order, bool>(\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D));
     return ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.Where<Order>(_param1);
@@ -82,18 +82,18 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     }
     else
     {
-      z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D = z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzEbEKEpf9EiRR();
+      z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D = z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.Order();
       \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo annotationInfo;
       if (!((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).TryGetValue(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, ref annotationInfo))
       {
-        if (!\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzzTd2XsqYavfdlfkXJw\u003D\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
+        if (!\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.AutoRemoveFromChart(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.OrderStates(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
           return;
         annotationInfo = this.\u0023\u003DzWj46Xvc\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D);
         ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Add(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo);
         this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzIeZhoes\u003D(this.RootElem, (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) annotationInfo.Annotation, (object) z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D);
         z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, true);
       }
-      else if (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo.AutoRemoveFromChart, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
+      else if (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo.AutoRemoveFromChart, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.OrderStates(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
         z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, true);
       else
         z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, false);
@@ -103,37 +103,37 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   private \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo \u0023\u003DzWj46Xvc\u003D(
     ChartDrawData.sActiveOrder _param1)
   {
-    Order order = _param1.\u0023\u003DzEbEKEpf9EiRR();
+    Order order = _param1.Order();
     ActiveOrderAnnotation annotation = new ActiveOrderAnnotation();
     annotation.CoordinateMode = AnnotationCoordinateMode.RelativeX;
     annotation.DragDirections = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
     annotation.ResizeDirections = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
     annotation.OrderErrorText = LocalizedStrings.Error.ToUpperInvariant();
-    annotation.OrderText = order.Side == 1 ? XXX.SSS(-539330263) : XXX.SSS(-539330213);
+    annotation.OrderText = order.Side == 1 ? "" : "";
     annotation.X1 = (IComparable) 0.8;
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo dataObject = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo(annotation);
-    annotation.SetBindings(AnnotationBase.XAxisIdProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539427791));
-    annotation.SetBindings(AnnotationBase.YAxisIdProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539427833));
-    annotation.SetBindings(AnnotationBase.IsHiddenProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433813), converter: (IValueConverter) new InverseBooleanConverter());
-    annotation.SetBindings(AnnotationBase.IsEditableProperty, (object) dataObject, XXX.SSS(-539328853), BindingMode.OneWay, (IValueConverter) new InverseBooleanConverter());
+    annotation.SetBindings(AnnotationBase.XAxisIdProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+    annotation.SetBindings(AnnotationBase.YAxisIdProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+    annotation.SetBindings(AnnotationBase.IsHiddenProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", converter: (IValueConverter) new InverseBooleanConverter());
+    annotation.SetBindings(AnnotationBase.IsEditableProperty, (object) dataObject, "", BindingMode.OneWay, (IValueConverter) new InverseBooleanConverter());
     ColorToBrushConverter converter = new ColorToBrushConverter();
-    annotation.SetBindings(Control.ForegroundProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433591), BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.StrokeProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433591), BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonFillProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433558), BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonColorProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433534), BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.IsAnimationEnabledProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433577), BindingMode.OneWay);
-    annotation.SetBindings(ActiveOrderAnnotation.BlinkColorProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), order.Side == 1 ? XXX.SSS(-539433481) : XXX.SSS(-539433678), BindingMode.OneWay);
+    annotation.SetBindings(Control.ForegroundProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.StrokeProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonFillProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonColorProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.IsAnimationEnabledProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", BindingMode.OneWay);
+    annotation.SetBindings(ActiveOrderAnnotation.BlinkColorProperty, (object) this.\u0023\u003DzeaszzAAoBOY9(), order.Side == 1 ? "" : "", BindingMode.OneWay);
     MultiBinding binding = new MultiBinding()
     {
       Converter = (IMultiValueConverter) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz2m1NF_ZMmb7l(),
       Mode = BindingMode.OneWay
     };
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) dataObject, XXX.SSS(-539328775)));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) order, XXX.SSS(-539330242)));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433641)));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433667)));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433698)));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), XXX.SSS(-539433497)));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) dataObject, ""));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) order, ""));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), ""));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), ""));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), ""));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.\u0023\u003DzeaszzAAoBOY9(), ""));
     annotation.SetBinding(Control.BackgroundProperty, (BindingBase) binding);
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DzP\u0024rwMb8\u003D(dataObject, _param1);
     annotation.CancelClick += new Action<ActiveOrderAnnotation>(this.\u0023\u003Dzr1A_0cGwcH5c);
@@ -147,19 +147,19 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     ChartDrawData.sActiveOrder _param1)
   {
     ActiveOrderAnnotation annotation = _param0.Annotation;
-    Order order = _param1.\u0023\u003DzEbEKEpf9EiRR();
-    _param0.Balance = _param1.\u0023\u003DzP9vQqYe3EED\u0024();
-    _param0.State = _param1.\u0023\u003Dzj7Cw0iE\u003D();
-    _param0.PriceStep = _param1.\u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D();
-    _param0.IsFrozen = _param1.\u0023\u003DzOWugxxYxGyL4();
-    _param0.AutoRemoveFromChart = _param1.\u0023\u003DzzTd2XsqYavfdlfkXJw\u003D\u003D();
-    annotation.Y1 = (IComparable) (double) _param1.\u0023\u003DzbH5YDNBwpnry();
+    Order order = _param1.Order();
+    _param0.Balance = _param1.Balance();
+    _param0.State = _param1.OrderStates();
+    _param0.PriceStep = _param1.PriceStep();
+    _param0.IsFrozen = _param1.IsFrozen();
+    _param0.AutoRemoveFromChart = _param1.AutoRemoveFromChart();
+    annotation.Y1 = (IComparable) (double) _param1.Price();
     DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(1, 2);
-    interpolatedStringHandler.AppendFormatted<Decimal>(order.Volume - _param1.\u0023\u003DzP9vQqYe3EED\u0024());
-    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539330253));
+    interpolatedStringHandler.AppendFormatted<Decimal>(order.Volume - _param1.Balance());
+    interpolatedStringHandler.AppendLiteral("");
     interpolatedStringHandler.AppendFormatted<Decimal>(order.Volume);
     annotation.OrderSizeText = interpolatedStringHandler.ToStringAndClear();
-    annotation.YDragStep = (double) _param1.\u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D();
+    annotation.YDragStep = (double) _param1.PriceStep();
   }
 
   private Order \u0023\u003Dz28gLj6T_roD8(
@@ -185,7 +185,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     double ydragStep = activeOrderAnnotation.YDragStep;
     if (ydragStep > 0.0)
       num1 = num1.\u0023\u003Dzezm_VedE86O1(ydragStep);
-    Decimal num2 = num1 != 0.0 ? (Decimal) num1 : throw new InvalidOperationException(XXX.SSS(-539330293));
+    Decimal num2 = num1 != 0.0 ? (Decimal) num1 : throw new InvalidOperationException("");
     Decimal num3 = num2;
     if (price == num3)
       return;
@@ -249,7 +249,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
       if (_param1.Length != 6)
       {
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(27, 1);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539328840));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<int>(_param1.Length);
         throw new InvalidOperationException(interpolatedStringHandler.ToStringAndClear());
       }
@@ -262,19 +262,19 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
       if (!nullable1.HasValue || !nullable2.HasValue || !nullable3.HasValue || !nullable4.HasValue || !nullable5.HasValue || !nullable6.HasValue)
       {
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(26, 6);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539328870));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<OrderStates?>(nullable1);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439882));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<Sides?>(nullable2);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439882));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<Color?>(nullable3);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439882));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<Color?>(nullable4);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439882));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<Color?>(nullable5);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439882));
+        interpolatedStringHandler.AppendLiteral("");
         interpolatedStringHandler.AppendFormatted<Color?>(nullable6);
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539432576));
+        interpolatedStringHandler.AppendLiteral("");
         throw new ArgumentNullException(interpolatedStringHandler.ToStringAndClear());
       }
       OrderStates orderStates = nullable1.Value;
@@ -328,7 +328,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       ActiveOrderAnnotation annotation = _param1.Annotation;
       bool flag1 = true;
-      bool flag2 = _param1.Balance != this.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzP9vQqYe3EED\u0024();
+      bool flag2 = _param1.Balance != this.\u0023\u003DzrnGNvGY\u003D.Balance();
       \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DzP\u0024rwMb8\u003D(_param1, this.\u0023\u003DzrnGNvGY\u003D);
       if (annotation.IsAnimationEnabled)
       {
@@ -339,7 +339,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
           if (!_param2)
             annotation.IsAnimationEnabled = false;
         }
-        else if (((this.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D() != 2 ? 0 : (this.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzP9vQqYe3EED\u0024() == 0M ? 1 : 0)) | (flag2 ? 1 : 0)) != 0)
+        else if (((this.\u0023\u003DzrnGNvGY\u003D.OrderStates() != 2 ? 0 : (this.\u0023\u003DzrnGNvGY\u003D.Balance() == 0M ? 1 : 0)) | (flag2 ? 1 : 0)) != 0)
         {
           annotation.AnimateOrderFill();
           flag1 = false;
@@ -357,7 +357,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   {
     public AnnotationInfo(ActiveOrderAnnotation annotation)
     {
-      this.Annotation = annotation ?? throw new ArgumentNullException(XXX.SSS(-539329002));
+      this.Annotation = annotation ?? throw new ArgumentNullException("");
       this.AutoRemoveFromChart = true;
     }
 
@@ -367,11 +367,11 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       get
       {
-        return this.GetValue<Decimal>(XXX.SSS(-539328789));
+        return this.GetValue<Decimal>("");
       }
       set
       {
-        this.SetValue<Decimal>(value, XXX.SSS(-539328789));
+        this.SetValue<Decimal>(value, "");
       }
     }
 
@@ -379,11 +379,11 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       get
       {
-        return this.GetValue<OrderStates>(XXX.SSS(-539328775));
+        return this.GetValue<OrderStates>("");
       }
       set
       {
-        this.SetValue<OrderStates>(value, XXX.SSS(-539328775));
+        this.SetValue<OrderStates>(value, "");
       }
     }
 
@@ -391,11 +391,11 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       get
       {
-        return this.GetValue<Decimal>(XXX.SSS(-539434746));
+        return this.GetValue<Decimal>("");
       }
       set
       {
-        this.SetValue<Decimal>(value, XXX.SSS(-539434746));
+        this.SetValue<Decimal>(value, "");
       }
     }
 
@@ -403,11 +403,11 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       get
       {
-        return this.GetValue<Decimal>(XXX.SSS(-539328819));
+        return this.GetValue<Decimal>("");
       }
       set
       {
-        this.SetValue<Decimal>(value, XXX.SSS(-539328819));
+        this.SetValue<Decimal>(value, "");
       }
     }
 
@@ -415,11 +415,11 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       get
       {
-        return this.GetValue<bool>(XXX.SSS(-539328831));
+        return this.GetValue<bool>("");
       }
       set
       {
-        this.SetValue<bool>(value, XXX.SSS(-539328831));
+        this.SetValue<bool>(value, "");
       }
     }
 
@@ -427,11 +427,11 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     {
       get
       {
-        return this.GetValue<bool>(XXX.SSS(-539328853));
+        return this.GetValue<bool>("");
       }
       set
       {
-        this.SetValue<bool>(value, XXX.SSS(-539328853));
+        this.SetValue<bool>(value, "");
       }
     }
   }

@@ -16,7 +16,7 @@ internal readonly struct \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZ
   
   private readonly \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D \u0023\u003DzMwU9TFy0g\u0024NPiffJXw\u003D\u003D = _param1;
   
-  private readonly double \u0023\u003Dzi356d4J_BEO1MM1iHw\u003D\u003D = (double) _param2;
+  private readonly double _property = (double) _param2;
 
   public \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D \u0023\u003Dz2TNMZ47XeEe8()
   {
@@ -25,7 +25,7 @@ internal readonly struct \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZ
 
   [CompilerGenerated]
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => this.\u0023\u003Dzi356d4J_BEO1MM1iHw\u003D\u003D;
+  public double Property() => this._property;
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D()

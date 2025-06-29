@@ -46,7 +46,7 @@ public class CandlePatternElement :
     set
     {
       this.\u0023\u003DzPWHjilJVaIGi = value;
-      this.RaisePropertyChanged(XXX.SSS(-539432591));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -58,7 +58,7 @@ public class CandlePatternElement :
     set
     {
       this.\u0023\u003DzTWnsWqFC_c4o = value;
-      this.RaisePropertyChanged(XXX.SSS(-539432639));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -91,15 +91,15 @@ public class CandlePatternElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.DownColor = storage.GetValue<int>(XXX.SSS(-539432591), 0).ToColor();
-    this.UpColor = storage.GetValue<int>(XXX.SSS(-539432639), 0).ToColor();
+    this.DownColor = storage.GetValue<int>("", 0).ToColor();
+    this.UpColor = storage.GetValue<int>("", 0).ToColor();
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(XXX.SSS(-539432591), this.DownColor.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539432639), this.UpColor.ToInt());
+    storage.SetValue<int>("", this.DownColor.ToInt());
+    storage.SetValue<int>("", this.UpColor.ToInt());
   }
 }

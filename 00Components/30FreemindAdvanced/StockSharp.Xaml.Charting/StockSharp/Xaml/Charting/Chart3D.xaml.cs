@@ -48,7 +48,7 @@ public class Chart3D : Chart3DControl, IComponentConnector
   public void Draw(IEnumerable<SeriesPoint3D> values, string xTitle = null, string yTitle = null, string zTitle = null)
   {
     if (values == null)
-      throw new ArgumentNullException(XXX.SSS(-539432292));
+      throw new ArgumentNullException("");
     this.\u0023\u003DzedqXoAU\u003D.Points.Clear();
     this.\u0023\u003DzedqXoAU\u003D.Points.AddRange(values);
     this.\u0023\u003Dze_0mKZFnOTAk.Content = (object) xTitle;
@@ -64,7 +64,7 @@ public class Chart3D : Chart3DControl, IComponentConnector
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539432303), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]

@@ -16,7 +16,7 @@ internal sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ2
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
   {
     if (!(_param1 is \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D))
-      throw new ArgumentException(XXX.SSS(-539338386));
+      throw new ArgumentException("");
     base.\u0023\u003DzWzUaFxw\u003D(_param1);
   }
 
@@ -37,17 +37,17 @@ internal sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ2
       });
       string str1 = textFormatting.Substring(0, num1);
       string str2 = textFormatting.Substring(num1 + 1);
-      string str3 = XXX.SSS(-539338442);
+      string str3 = "";
       string str4 = str3;
-      if (str2.StartsWith(XXX.SSS(-539328743)))
-        str4 = XXX.SSS(-539328743) + str4;
-      string str5 = str4 + XXX.SSS(-539338491) + str3 + XXX.SSS(-539338468);
+      if (str2.StartsWith(""))
+        str4 = "" + str4;
+      string str5 = str4 + "" + str3 + "";
       double a = _param2.\u0023\u003Dzb9UCYbo\u003D();
       double y = Math.Log(a, tmjze8uJg3v1qUa6q9M.get_LogarithmicBase());
       double num2 = a / Math.Pow(tmjze8uJg3v1qUa6q9M.get_LogarithmicBase(), y);
       lqkdKbY6smnsRhNQalw1.HasExponent = true;
-      lqkdKbY6smnsRhNQalw1.Text = string.Format((IFormatProvider) CultureInfo.InvariantCulture, XXX.SSS(-539430209) + str1 + XXX.SSS(-539338473), (object) num2);
-      lqkdKbY6smnsRhNQalw1.Exponent = string.Format((IFormatProvider) CultureInfo.InvariantCulture, XXX.SSS(-539430209) + str5 + XXX.SSS(-539430223), (object) y);
+      lqkdKbY6smnsRhNQalw1.Text = string.Format((IFormatProvider) CultureInfo.InvariantCulture, "" + str1 + "", (object) num2);
+      lqkdKbY6smnsRhNQalw1.Exponent = string.Format((IFormatProvider) CultureInfo.InvariantCulture, "" + str5 + "", (object) y);
       \u0023\u003DzkNYFXojT3SDc_K8aE\u0024Ajg285baMQh1LqkdKbY6smnsRH\u0024nQalw\u003D\u003D lqkdKbY6smnsRhNQalw2 = lqkdKbY6smnsRhNQalw1;
       double logarithmicBase = tmjze8uJg3v1qUa6q9M.get_LogarithmicBase();
       string str6;

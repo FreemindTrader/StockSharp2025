@@ -13,7 +13,7 @@ internal sealed class \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wg
   double _param2) : \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
 {
   private readonly \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003DzV8OtoQcuwz8_Hjb5kQ\u003D\u003D = _param1;
-  private readonly double \u0023\u003Dzi356d4J_BEO1MM1iHw\u003D\u003D = _param2;
+  private readonly double _property = _param2;
 
   public \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003Dz0IPdd6wsmxZJ()
   {
@@ -22,7 +22,7 @@ internal sealed class \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wg
 
   [CompilerGenerated]
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => this.\u0023\u003Dzi356d4J_BEO1MM1iHw\u003D\u003D;
+  public double Property() => this._property;
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D()

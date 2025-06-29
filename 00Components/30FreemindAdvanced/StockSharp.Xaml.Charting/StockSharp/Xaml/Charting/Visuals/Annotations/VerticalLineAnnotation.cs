@@ -20,8 +20,8 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 [TemplatePart(Name = "PART_LineAnnotationRoot", Type = typeof (Grid))]
 internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
 {
-  public new static readonly DependencyProperty VerticalAlignmentProperty = DependencyProperty.Register(XXX.SSS(-539427465), typeof (VerticalAlignment), typeof (VerticalLineAnnotation), new PropertyMetadata((object) VerticalAlignment.Stretch, new PropertyChangedCallback(VerticalLineAnnotation.OnVerticalAlignmentChanged)));
-  public static readonly DependencyProperty LabelsOrientationProperty = DependencyProperty.Register(XXX.SSS(-539440851), typeof (Orientation), typeof (VerticalLineAnnotation), new PropertyMetadata((object) Orientation.Vertical, new PropertyChangedCallback(VerticalLineAnnotation.OnLabelsOrientationChanged)));
+  public new static readonly DependencyProperty VerticalAlignmentProperty = DependencyProperty.Register("", typeof (VerticalAlignment), typeof (VerticalLineAnnotation), new PropertyMetadata((object) VerticalAlignment.Stretch, new PropertyChangedCallback(VerticalLineAnnotation.OnVerticalAlignmentChanged)));
+  public static readonly DependencyProperty LabelsOrientationProperty = DependencyProperty.Register("", typeof (Orientation), typeof (VerticalLineAnnotation), new PropertyMetadata((object) Orientation.Vertical, new PropertyChangedCallback(VerticalLineAnnotation.OnLabelsOrientationChanged)));
 
   public VerticalLineAnnotation()
   {
@@ -334,7 +334,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     public \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(VerticalLineAnnotation _param1)
       : base(_param1)
     {
-      throw new InvalidOperationException(string.Format(XXX.SSS(-539343701), (object) ((object) _param1).GetType().Name));
+      throw new InvalidOperationException(string.Format("", (object) ((object) _param1).GetType().Name));
     }
   }
 }

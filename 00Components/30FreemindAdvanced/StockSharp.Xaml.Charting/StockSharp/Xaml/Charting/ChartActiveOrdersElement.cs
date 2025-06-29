@@ -79,7 +79,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzNB5fice33i0u;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzNB5fice33i0u, value, XXX.SSS(-539433641));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzNB5fice33i0u, value, "");
     }
   }
 
@@ -90,7 +90,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzieAJJNZ68tP_;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzieAJJNZ68tP_, value, XXX.SSS(-539433667));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzieAJJNZ68tP_, value, "");
     }
   }
 
@@ -101,7 +101,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzGxRjOLyGVgTOFE5tow\u003D\u003D;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzGxRjOLyGVgTOFE5tow\u003D\u003D, value, XXX.SSS(-539433678));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzGxRjOLyGVgTOFE5tow\u003D\u003D, value, "");
     }
   }
 
@@ -112,7 +112,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzB7fwIKZYaT0OAwSREQ\u003D\u003D;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzB7fwIKZYaT0OAwSREQ\u003D\u003D, value, XXX.SSS(-539433698));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzB7fwIKZYaT0OAwSREQ\u003D\u003D, value, "");
     }
   }
 
@@ -123,7 +123,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003Dzes2ibafgS30F;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003Dzes2ibafgS30F, value, XXX.SSS(-539433497));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003Dzes2ibafgS30F, value, "");
     }
   }
 
@@ -134,7 +134,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzXNnisOcwXbVoIrOusg\u003D\u003D;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzXNnisOcwXbVoIrOusg\u003D\u003D, value, XXX.SSS(-539433481));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzXNnisOcwXbVoIrOusg\u003D\u003D, value, "");
     }
   }
 
@@ -145,7 +145,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzVB7x7oMoIiJX;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzVB7x7oMoIiJX, value, XXX.SSS(-539433534));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzVB7x7oMoIiJX, value, "");
     }
   }
 
@@ -156,7 +156,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003DzeEJexoTVv0gn;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzeEJexoTVv0gn, value, XXX.SSS(-539433558));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003DzeEJexoTVv0gn, value, "");
     }
   }
 
@@ -167,7 +167,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003Dzwpv8VkjqZubJ;
     set
     {
-      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003Dzwpv8VkjqZubJ, value, XXX.SSS(-539433591));
+      this.SetField<System.Windows.Media.Color>(ref this.\u0023\u003Dzwpv8VkjqZubJ, value, "");
     }
   }
 
@@ -178,7 +178,7 @@ public class ChartActiveOrdersElement :
     get => this.\u0023\u003Dzzsiq00hapgVL;
     set
     {
-      this.SetField<bool>(ref this.\u0023\u003Dzzsiq00hapgVL, value, XXX.SSS(-539433577));
+      this.SetField<bool>(ref this.\u0023\u003Dzzsiq00hapgVL, value, "");
     }
   }
 
@@ -261,7 +261,7 @@ public class ChartActiveOrdersElement :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    List<ChartDrawData.sActiveOrder> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartActiveOrdersElement) this);
+    List<ChartDrawData.sActiveOrder> source = data.GetCandleRelatedData((IChartActiveOrdersElement) this);
     return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sActiveOrder>((ICollection<ChartDrawData.sActiveOrder>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
   }
 
@@ -269,23 +269,23 @@ public class ChartActiveOrdersElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.BuyColor = storage.GetValue<int>(XXX.SSS(-539433667), 0).ToColor();
-    this.BuyBlinkColor = storage.GetValue<int>(XXX.SSS(-539433678), 0).ToColor();
-    this.BuyPendingColor = storage.GetValue<int>(XXX.SSS(-539433641), 0).ToColor();
-    this.SellColor = storage.GetValue<int>(XXX.SSS(-539433497), 0).ToColor();
-    this.SellBlinkColor = storage.GetValue<int>(XXX.SSS(-539433481), 0).ToColor();
-    this.SellPendingColor = storage.GetValue<int>(XXX.SSS(-539433698), 0).ToColor();
-    this.ForegroundColor = storage.GetValue<int>(XXX.SSS(-539433591), 0).ToColor();
-    this.CancelButtonColor = storage.GetValue<int>(XXX.SSS(-539433534), 0).ToColor();
-    this.CancelButtonBackground = storage.GetValue<int>(XXX.SSS(-539433558), 0).ToColor();
-    this.IsAnimationEnabled = storage.GetValue<bool>(XXX.SSS(-539433577), false);
+    this.BuyColor = storage.GetValue<int>("", 0).ToColor();
+    this.BuyBlinkColor = storage.GetValue<int>("", 0).ToColor();
+    this.BuyPendingColor = storage.GetValue<int>("", 0).ToColor();
+    this.SellColor = storage.GetValue<int>("", 0).ToColor();
+    this.SellBlinkColor = storage.GetValue<int>("", 0).ToColor();
+    this.SellPendingColor = storage.GetValue<int>("", 0).ToColor();
+    this.ForegroundColor = storage.GetValue<int>("", 0).ToColor();
+    this.CancelButtonColor = storage.GetValue<int>("", 0).ToColor();
+    this.CancelButtonBackground = storage.GetValue<int>("", 0).ToColor();
+    this.IsAnimationEnabled = storage.GetValue<bool>("", false);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.Set<int>(XXX.SSS(-539433667), this.BuyColor.ToInt()).Set<int>(XXX.SSS(-539433678), this.BuyBlinkColor.ToInt()).Set<int>(XXX.SSS(-539433641), this.BuyPendingColor.ToInt()).Set<int>(XXX.SSS(-539433497), this.SellColor.ToInt()).Set<int>(XXX.SSS(-539433481), this.SellBlinkColor.ToInt()).Set<int>(XXX.SSS(-539433698), this.SellPendingColor.ToInt()).Set<int>(XXX.SSS(-539433534), this.CancelButtonColor.ToInt()).Set<int>(XXX.SSS(-539433591), this.ForegroundColor.ToInt()).Set<int>(XXX.SSS(-539433558), this.CancelButtonBackground.ToInt()).Set<bool>(XXX.SSS(-539433577), this.IsAnimationEnabled);
+    storage.Set<int>("", this.BuyColor.ToInt()).Set<int>("", this.BuyBlinkColor.ToInt()).Set<int>("", this.BuyPendingColor.ToInt()).Set<int>("", this.SellColor.ToInt()).Set<int>("", this.SellBlinkColor.ToInt()).Set<int>("", this.SellPendingColor.ToInt()).Set<int>("", this.CancelButtonColor.ToInt()).Set<int>("", this.ForegroundColor.ToInt()).Set<int>("", this.CancelButtonBackground.ToInt()).Set<bool>("", this.IsAnimationEnabled);
   }
 
   internal override ChartActiveOrdersElement Clone(

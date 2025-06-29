@@ -16,9 +16,9 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal abstract class LineAnnotationBase : AnnotationBase
 {
-  public static readonly DependencyProperty StrokeDashArrayProperty = DependencyProperty.Register(XXX.SSS(-539343026), typeof (DoubleCollection), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
-  public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(XXX.SSS(-539434641), typeof (double), typeof (LineAnnotationBase), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(LineAnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D)));
-  public static readonly DependencyProperty StrokeProperty = DependencyProperty.Register(XXX.SSS(-539434289), typeof (Brush), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty StrokeDashArrayProperty = DependencyProperty.Register("", typeof (DoubleCollection), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register("", typeof (double), typeof (LineAnnotationBase), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(LineAnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D)));
+  public static readonly DependencyProperty StrokeProperty = DependencyProperty.Register("", typeof (Brush), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
 
   public Brush Stroke
   {

@@ -26,9 +26,9 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzaf3Lae48WNlm = DependencyProperty.Register(XXX.SSS(-539329512), typeof (double), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd), new PropertyMetadata((object) -1.0));
+  public static readonly DependencyProperty \u0023\u003Dzaf3Lae48WNlm = DependencyProperty.Register("", typeof (double), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd), new PropertyMetadata((object) -1.0));
   
-  public static readonly DependencyProperty \u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539433076), typeof (string), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzLUQi5D4\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D = DependencyProperty.Register("", typeof (string), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzLUQi5D4\u003D)));
   
   private static readonly List<Type> \u0023\u003DzVGdWd1PKAs\u00242 = ((IEnumerable<Type>) new Type[1]
   {
@@ -90,13 +90,13 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzzMId\u0024f67Wftb(
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
-    throw new InvalidOperationException(XXX.SSS(-539337546));
+    throw new InvalidOperationException("");
   }
 
   public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzFwoMKP9juTnt()
   {
     if (!this.IsXAxis)
-      throw new InvalidOperationException(XXX.SSS(-539336862));
+      throw new InvalidOperationException("");
     \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw1 = this.VisibleRange == null || !this.VisibleRange.IsDefined ? this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D() : this.VisibleRange;
     \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw2 = this.\u0023\u003Dzd6x7lH_dQH0I();
     if (abyLt9clZggmJsWhw2 != null)
@@ -234,7 +234,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
     this.\u0023\u003DzDtp\u00246FfBRlYq = dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003Dz6Vq26Hfm2pXj((\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) visibleRange, this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzdTxNrgQ\u003D);
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003Dz_WzdhI8nAiba = this.\u0023\u003DzDtp\u00246FfBRlYq;
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzdTxNrgQ\u003D -= this.\u0023\u003DzDtp\u00246FfBRlYq;
-    this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539331530));
+    this.\u0023\u003Dz15moWio\u003D("");
   }
 
   internal double \u0023\u003DzbY7N\u0024Xk2WSr8()
@@ -267,7 +267,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D \u0023\u003DzFL7WRclCPBWI(
     \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1)
   {
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, XXX.SSS(-539336920));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D) null;
     if (this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)
       dx26vpI1xWpwwNqJw = new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Min).\u0023\u003Dzxuo5aY4wjkaI(), q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Max).\u0023\u003Dzxuo5aY4wjkaI());

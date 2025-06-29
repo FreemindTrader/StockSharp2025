@@ -269,7 +269,7 @@ internal class \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJI
     else
     {
       if (this.\u0023\u003DzrdUWPTlflDIlfgCg8w\u003D\u003D() == null)
-        throw new Exception(XXX.SSS(-539321392));
+        throw new Exception("");
       \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D af0lRdvTglyLevjU0 = _param1.\u0023\u003DzLtGfTF6UBAlmvu08d_2IGiE\u003D();
       int width = this.\u0023\u003DzrdUWPTlflDIlfgCg8w\u003D\u003D().Width;
       int height = this.\u0023\u003DzrdUWPTlflDIlfgCg8w\u003D\u003D().Height;

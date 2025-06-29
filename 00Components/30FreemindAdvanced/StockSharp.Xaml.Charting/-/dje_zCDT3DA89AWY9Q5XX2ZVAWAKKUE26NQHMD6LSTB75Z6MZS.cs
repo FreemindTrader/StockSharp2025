@@ -18,7 +18,7 @@ internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUE26NQHMD6LSTB75Z6MZSVLR87CYE
   dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd
 {
   
-  public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.Register(XXX.SSS(-539428854), typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUE26NQHMD6LSTB75Z6MZSVLR87CYEJW9FREQ_ejd), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.Register("", typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUE26NQHMD6LSTB75Z6MZSVLR87CYEJW9FREQ_ejd), new PropertyMetadata((object) 0.0));
 
   public dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUE26NQHMD6LSTB75Z6MZSVLR87CYEJW9FREQ_ejd()
   {

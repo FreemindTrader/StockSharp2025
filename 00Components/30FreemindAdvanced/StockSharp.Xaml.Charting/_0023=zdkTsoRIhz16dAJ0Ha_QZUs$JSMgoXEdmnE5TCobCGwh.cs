@@ -108,7 +108,7 @@ internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobC
     internal double \u0023\u003Dzp2\u0024EsxlIMTtWjmvGLH7fWK4\u003D(
       \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D _param1)
     {
-      return _param1.\u0023\u003Dz2_4KSTY\u003D();
+      return _param1.Property();
     }
 
     internal double \u0023\u003DzucPTYZfZR1DykS2JQTABmho\u003D(

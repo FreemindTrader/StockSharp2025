@@ -27,13 +27,13 @@ internal class TransactionDataSeries :
   private readonly \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> _candlesSeries;
   private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> _data = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>();
   private readonly TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D _yValues;
-  private List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> _transactionBuffer = new List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>();
+  private List<ChartDrawData.sTrade> _transactionBuffer = new List<ChartDrawData.sTrade>();
   private bool _flushingBufferedTransactions;
 
   public TransactionDataSeries(
     \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> candles)
   {
-    this._candlesSeries = candles ?? throw new ArgumentNullException(XXX.SSS(-539436089));
+    this._candlesSeries = candles ?? throw new ArgumentNullException("");
     this._yValues = new TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D(this);
     this._candlesSeries.DataSeriesChanged += new EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X>(this.CandlesSeries_OnDataSeriesChanged);
   }
@@ -162,7 +162,7 @@ internal class TransactionDataSeries :
   private void EnsureData()
   {
     if (!this._candlesSeries.IsSorted)
-      throw new NotSupportedException(XXX.SSS(-539436072));
+      throw new NotSupportedException("");
     lock (this.SyncRoot)
     {
       if (this._data.Count == this._candlesSeries.Count)
@@ -173,7 +173,7 @@ internal class TransactionDataSeries :
         return;
       }
     }
-    throw new InvalidOperationException(XXX.SSS(-539436102));
+    throw new InvalidOperationException("");
   }
 
   public void InvalidateParentSurface(
@@ -234,13 +234,13 @@ internal class TransactionDataSeries :
     }
   }
 
-  public void AddOrUpdateTransaction(ChartDrawData.\u0023\u003DzU3TaXFs\u003D trans)
+  public void AddOrUpdateTransaction(ChartDrawData.sTrade trans)
   {
-    if ((trans != null ? (trans.\u0023\u003DzDmTtC9WghRFa().\u0023\u003DzCCMM80zDpO6N<char>() ? 1 : 0) : 1) != 0)
+    if ((trans != null ? (trans.GetTransactionString().\u0023\u003DzCCMM80zDpO6N<char>() ? 1 : 0) : 1) != 0)
     {
       DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(26, 1);
-      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539436138));
-      interpolatedStringHandler.AppendFormatted<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(trans);
+      interpolatedStringHandler.AppendLiteral("");
+      interpolatedStringHandler.AppendFormatted<ChartDrawData.sTrade>(trans);
       throw new ArgumentException(interpolatedStringHandler.ToStringAndClear());
     }
     lock (this.SyncRoot)
@@ -271,16 +271,16 @@ internal class TransactionDataSeries :
           this._flushingBufferedTransactions = true;
           this._candlesSeries.\u0023\u003DzGXoUV7Q\u0024_bM\u0024();
           this.EnsureData();
-          List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> zU3TaXfsList = new List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>();
-          foreach (ChartDrawData.\u0023\u003DzU3TaXFs\u003D zU3TaXfs in this._transactionBuffer)
+          List<ChartDrawData.sTrade> zU3TaXfsList = new List<ChartDrawData.sTrade>();
+          foreach (ChartDrawData.sTrade zU3TaXfs in this._transactionBuffer)
           {
-            int index = this.XValues.\u0023\u003Dzk3Bi7DnEdNPh<DateTime>(zU3TaXfs.\u0023\u003Dzg86amuQ\u003D(), (IComparer<DateTime>) null);
+            int index = this.XValues.\u0023\u003Dzk3Bi7DnEdNPh<DateTime>(zU3TaXfs.UtcTime(), (IComparer<DateTime>) null);
             if (index < 0)
               index = ~index - 1;
             if (index >= 0)
             {
               DateTime date = this._dates[index];
-              if (zU3TaXfs.\u0023\u003Dzg86amuQ\u003D() >= date + valueOrDefault)
+              if (zU3TaXfs.UtcTime() >= date + valueOrDefault)
               {
                 zU3TaXfsList.Add(zU3TaXfs);
               }
@@ -500,20 +500,20 @@ internal class TransactionDataSeries :
     ICollection
   {
     
-    private readonly TransactionDataSeries \u0023\u003DzU\u0024_meog\u003D;
+    private readonly TransactionDataSeries _drawData;
 
     public \u0023\u003DzV\u0024R8yw8\u003D(TransactionDataSeries _param1)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1;
+      this._drawData = _param1;
     }
 
-    public int Count => this.\u0023\u003DzU\u0024_meog\u003D._data.Count;
+    public int Count => this._drawData._data.Count;
 
-    public object SyncRoot => ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D._data).SyncRoot;
+    public object SyncRoot => ((ICollection) this._drawData._data).SyncRoot;
 
     public bool IsSynchronized
     {
-      get => ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D._data).IsSynchronized;
+      get => ((ICollection) this._drawData._data).IsSynchronized;
     }
 
     public bool IsReadOnly => true;
@@ -527,7 +527,7 @@ internal class TransactionDataSeries :
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._drawData.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -537,7 +537,7 @@ internal class TransactionDataSeries :
 
     public bool Contains(double _param1)
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D._data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
+      return this._drawData._data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
     }
 
     int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
@@ -547,10 +547,10 @@ internal class TransactionDataSeries :
 
     public int IndexOf(double _param1)
     {
-      int count = this.\u0023\u003DzU\u0024_meog\u003D._data.Count;
+      int count = this._drawData._data.Count;
       for (int index = 0; index < count; ++index)
       {
-        if (this.\u0023\u003DzU\u0024_meog\u003D._data[index].\u0023\u003Dzu7q98_E\u003D().\u0023\u003Dz0AeaaBjWIeEn(_param1))
+        if (this._drawData._data[index].\u0023\u003Dzu7q98_E\u003D().\u0023\u003Dz0AeaaBjWIeEn(_param1))
           return index;
       }
       return -1;
@@ -558,7 +558,7 @@ internal class TransactionDataSeries :
 
     public double this[int _param1]
     {
-      get => this.\u0023\u003DzU\u0024_meog\u003D._data[_param1].\u0023\u003Dzu7q98_E\u003D();
+      get => this._drawData._data[_param1].\u0023\u003Dzu7q98_E\u003D();
       set => throw new NotImplementedException();
     }
 

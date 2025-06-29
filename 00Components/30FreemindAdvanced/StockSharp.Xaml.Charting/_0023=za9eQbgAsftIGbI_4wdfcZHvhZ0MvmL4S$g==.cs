@@ -69,8 +69,8 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   private bool \u0023\u003Dz9sq2bpQA7MkL9vtU0QFqNQU\u003D;
   private bool \u0023\u003Dzv5vEPhr33\u0024lD\u0024hy1EJpF8rrpNEYh;
   private bool \u0023\u003Dz5wl2rj9xJzaaRIuhQA9JjD3JTxoe;
-  private HorizontalAlignment \u0023\u003DzEVNVu_ZK7\u00248NZaMf6lPJDrQ\u003D;
-  private VerticalAlignment \u0023\u003DzD\u0024vImVfDGuVPRP1kiGxuWsE\u003D;
+  private HorizontalAlignment _HorizontalAlignment;
+  private VerticalAlignment _VerticalAlignment;
   private \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3 \u0023\u003Dz3roz5ID2WsvKJYjSPpMBQF4\u003D;
   private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz_emvXNgm7Xa94MS7OGNgTK0\u003D;
   private bool \u0023\u003DzxkxRfeJKyToxpPT4fWwas78\u003D;
@@ -488,14 +488,14 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public HorizontalAlignment HorizontalAlignment
   {
-    get => this.\u0023\u003DzEVNVu_ZK7\u00248NZaMf6lPJDrQ\u003D;
-    set => this.\u0023\u003DzEVNVu_ZK7\u00248NZaMf6lPJDrQ\u003D = value;
+    get => this._HorizontalAlignment;
+    set => this._HorizontalAlignment = value;
   }
 
   public VerticalAlignment VerticalAlignment
   {
-    get => this.\u0023\u003DzD\u0024vImVfDGuVPRP1kiGxuWsE\u003D;
-    set => this.\u0023\u003DzD\u0024vImVfDGuVPRP1kiGxuWsE\u003D = value;
+    get => this._VerticalAlignment;
+    set => this._VerticalAlignment = value;
   }
 
   public \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3 AxisMode

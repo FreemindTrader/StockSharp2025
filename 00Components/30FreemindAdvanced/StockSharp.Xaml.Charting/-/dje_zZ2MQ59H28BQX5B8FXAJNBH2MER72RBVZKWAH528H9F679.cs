@@ -13,7 +13,7 @@ namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd
 {
-  public static readonly DependencyProperty \u0023\u003Dz8gpJZfsjfhZY = DependencyProperty.RegisterAttached(XXX.SSS(-539430376), typeof (bool), typeof (dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd.\u0023\u003Dz9rT93zhf3BVL)));
+  public static readonly DependencyProperty \u0023\u003Dz8gpJZfsjfhZY = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd.\u0023\u003Dz9rT93zhf3BVL)));
 
   public static bool GetIsFocusable(DependencyObject _param0)
   {

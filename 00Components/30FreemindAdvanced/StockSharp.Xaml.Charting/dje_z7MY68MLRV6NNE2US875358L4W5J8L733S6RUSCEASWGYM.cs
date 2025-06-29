@@ -756,7 +756,7 @@ internal struct dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQ
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539322507), (object) this.dje_z3GBAX47U_ejd, (object) this.dje_zLPL6EZPA_ejd, (object) this.dje_zX8HQ8VV9_ejd);
+    return string.Format("", (object) this.dje_z3GBAX47U_ejd, (object) this.dje_zLPL6EZPA_ejd, (object) this.dje_zX8HQ8VV9_ejd);
   }
 
   public override int GetHashCode()

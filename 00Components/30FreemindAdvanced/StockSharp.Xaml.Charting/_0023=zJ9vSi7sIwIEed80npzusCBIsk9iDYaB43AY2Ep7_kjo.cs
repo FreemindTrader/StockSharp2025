@@ -29,14 +29,14 @@ internal struct \u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD :
   public int CompareTo(object _param1)
   {
     \u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD dyaB43Ay2Ep7KjoD = (\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD) _param1;
-    if (this.\u0023\u003Dz1iB_fGLmDWyy() > dyaB43Ay2Ep7KjoD.\u0023\u003Dzg1M\u0024G_5sXlam() || this.\u0023\u003DzZB\u0024O5xT4bzKv() > dyaB43Ay2Ep7KjoD.\u0023\u003Dzg1M\u0024G_5sXlam())
+    if (this.\u0023\u003Dz1iB_fGLmDWyy() > dyaB43Ay2Ep7KjoD.\u0023\u003Dzg1M\u0024G_5sXlam() || this.ValueOne() > dyaB43Ay2Ep7KjoD.\u0023\u003Dzg1M\u0024G_5sXlam())
       return 1;
-    return this.\u0023\u003Dz1iB_fGLmDWyy() < dyaB43Ay2Ep7KjoD.\u0023\u003DzKrTvxa8MJ66h() || this.\u0023\u003DzZB\u0024O5xT4bzKv() < dyaB43Ay2Ep7KjoD.\u0023\u003DzKrTvxa8MJ66h() ? -1 : 0;
+    return this.\u0023\u003Dz1iB_fGLmDWyy() < dyaB43Ay2Ep7KjoD.\u0023\u003DzKrTvxa8MJ66h() || this.ValueOne() < dyaB43Ay2Ep7KjoD.\u0023\u003DzKrTvxa8MJ66h() ? -1 : 0;
   }
 
   public double \u0023\u003Dz1iB_fGLmDWyy() => this.\u0023\u003Dzsaq6Yz0\u003D;
 
-  public double \u0023\u003DzZB\u0024O5xT4bzKv() => this.\u0023\u003DzHtUeg\u0024w\u003D;
+  public double ValueOne() => this.\u0023\u003DzHtUeg\u0024w\u003D;
 
   [SpecialName]
   public double \u0023\u003Dzg1M\u0024G_5sXlam()

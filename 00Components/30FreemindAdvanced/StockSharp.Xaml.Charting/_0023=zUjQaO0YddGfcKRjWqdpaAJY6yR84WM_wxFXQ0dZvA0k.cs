@@ -15,13 +15,13 @@ internal struct \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR :
   IComparable
 {
   
-  private double \u0023\u003DziHpFjupL57O5oHu1Mw\u003D\u003D;
+  private double _openPrice;
   
-  private double \u0023\u003DzD8EFLWLAF8etf1TLXA\u003D\u003D;
+  private double _highPrice;
   
-  private double \u0023\u003DzByFaQYKUGa5UYX0fCQ\u003D\u003D;
+  private double _lowPrice;
   
-  private double \u0023\u003DzIo3eteZ50RUQ\u0024tgctA\u003D\u003D;
+  private double _closePrice;
 
   public \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR(
     double _param1,
@@ -36,47 +36,47 @@ internal struct \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR :
     this.Close = _param4;
   }
 
-  public readonly double \u0023\u003DzGze4a8XU7KvB()
+  public readonly double OpenPrice()
   {
-    return this.\u0023\u003DziHpFjupL57O5oHu1Mw\u003D\u003D;
+    return this._openPrice;
   }
 
   private void \u0023\u003DzXmuA8EWhOFuv(double _param1)
   {
-    this.\u0023\u003DziHpFjupL57O5oHu1Mw\u003D\u003D = _param1;
+    this._openPrice = _param1;
   }
 
-  public readonly double \u0023\u003DzolXXlhDBER_c()
+  public readonly double HighPrice()
   {
-    return this.\u0023\u003DzD8EFLWLAF8etf1TLXA\u003D\u003D;
+    return this._highPrice;
   }
 
   private void \u0023\u003DzzKVL4DebRAZe(double _param1)
   {
-    this.\u0023\u003DzD8EFLWLAF8etf1TLXA\u003D\u003D = _param1;
+    this._highPrice = _param1;
   }
 
-  public readonly double \u0023\u003DzchuwVU\u00245sIH8()
+  public readonly double LowPrice()
   {
-    return this.\u0023\u003DzByFaQYKUGa5UYX0fCQ\u003D\u003D;
+    return this._lowPrice;
   }
 
   private void \u0023\u003DzDq2KB\u0024JgCjsx(double _param1)
   {
-    this.\u0023\u003DzByFaQYKUGa5UYX0fCQ\u003D\u003D = _param1;
+    this._lowPrice = _param1;
   }
 
   public double Close
   {
-    readonly get => this.\u0023\u003DzIo3eteZ50RUQ\u0024tgctA\u003D\u003D;
-    private set => this.\u0023\u003DzIo3eteZ50RUQ\u0024tgctA\u003D\u003D = value;
+    readonly get => this._closePrice;
+    private set => this._closePrice = value;
   }
 
   [SpecialName]
-  public double \u0023\u003Dzg1M\u0024G_5sXlam() => this.\u0023\u003DzolXXlhDBER_c();
+  public double \u0023\u003Dzg1M\u0024G_5sXlam() => this.HighPrice();
 
   [SpecialName]
-  public double \u0023\u003DzKrTvxa8MJ66h() => this.\u0023\u003DzchuwVU\u00245sIH8();
+  public double \u0023\u003DzKrTvxa8MJ66h() => this.LowPrice();
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D() => this.Close;

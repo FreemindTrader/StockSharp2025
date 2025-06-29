@@ -17,10 +17,10 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 [TemplatePart(Name = "PART_InputTextArea", Type = typeof (TextBox))]
 internal class TextAnnotation : AnchorPointAnnotation
 {
-  public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(XXX.SSS(-539343540), typeof (CornerRadius), typeof (TextAnnotation), new PropertyMetadata((object) new CornerRadius()));
-  public static readonly DependencyProperty TextProperty = DependencyProperty.Register(XXX.SSS(-539427542), typeof (string), typeof (TextAnnotation), new PropertyMetadata((object) string.Empty));
-  public static readonly DependencyProperty TextAlignmentProperty = DependencyProperty.Register(XXX.SSS(-539440794), typeof (TextAlignment), typeof (TextAnnotation), new PropertyMetadata((object) TextAlignment.Left));
-  public static readonly DependencyProperty TextStretchProperty = DependencyProperty.Register(XXX.SSS(-539342945), typeof (Stretch), typeof (TextAnnotation), new PropertyMetadata((object) Stretch.None));
+  public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register("", typeof (CornerRadius), typeof (TextAnnotation), new PropertyMetadata((object) new CornerRadius()));
+  public static readonly DependencyProperty TextProperty = DependencyProperty.Register("", typeof (string), typeof (TextAnnotation), new PropertyMetadata((object) string.Empty));
+  public static readonly DependencyProperty TextAlignmentProperty = DependencyProperty.Register("", typeof (TextAlignment), typeof (TextAnnotation), new PropertyMetadata((object) TextAlignment.Left));
+  public static readonly DependencyProperty TextStretchProperty = DependencyProperty.Register("", typeof (Stretch), typeof (TextAnnotation), new PropertyMetadata((object) Stretch.None));
   private TextBox _inputTextArea;
 
   public TextAnnotation()
@@ -59,9 +59,9 @@ internal class TextAnnotation : AnchorPointAnnotation
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>(XXX.SSS(-539343255));
-    this._inputTextArea = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBox>(XXX.SSS(-539343445));
-    Binding binding = new Binding(XXX.SSS(-539342907))
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Border>("");
+    this._inputTextArea = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBox>("");
+    Binding binding = new Binding("")
     {
       RelativeSource = RelativeSource.TemplatedParent
     };

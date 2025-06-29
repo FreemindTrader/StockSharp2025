@@ -19,21 +19,21 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
   ContentControl
 {
   
-  public static readonly DependencyProperty \u0023\u003DzYjQ2xl9o319L = DependencyProperty.Register(XXX.SSS(-539349836), typeof (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz4MpbQOLMpYtswY0tvA\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzYjQ2xl9o319L = DependencyProperty.Register("", typeof (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz4MpbQOLMpYtswY0tvA\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzkqE1t18ru2zs = DependencyProperty.Register(XXX.SSS(-539349888), typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003DzkqE1t18ru2zs = DependencyProperty.Register("", typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
   
-  public static readonly DependencyProperty \u0023\u003DzKn3156UzRCt\u0024AII4BUa9Wfw\u003D = DependencyProperty.Register(XXX.SSS(-539349865), typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003DzKn3156UzRCt\u0024AII4BUa9Wfw\u003D = DependencyProperty.Register("", typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
   
-  public static readonly DependencyProperty \u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349149), typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D = DependencyProperty.Register("", typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt = DependencyProperty.Register(XXX.SSS(-539349172), typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt = DependencyProperty.Register("", typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003Dzrh_06bSTsdjtRRWPZW671SE\u003D = DependencyProperty.Register(XXX.SSS(-539349162), typeof (int), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 20));
+  public static readonly DependencyProperty \u0023\u003Dzrh_06bSTsdjtRRWPZW671SE\u003D = DependencyProperty.Register("", typeof (int), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 20));
   
-  public static readonly DependencyProperty \u0023\u003Dzi_FN3ig480bq = DependencyProperty.Register(XXX.SSS(-539349192), typeof (int), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0));
+  public static readonly DependencyProperty \u0023\u003Dzi_FN3ig480bq = DependencyProperty.Register("", typeof (int), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0));
   
-  public static readonly DependencyProperty \u0023\u003DzT_iaUxXXWqlulr95Hw\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349242), typeof (Visibility), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) Visibility.Visible));
+  public static readonly DependencyProperty \u0023\u003DzT_iaUxXXWqlulr95Hw\u003D\u003D = DependencyProperty.Register("", typeof (Visibility), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) Visibility.Visible));
   
   private Stopwatch \u0023\u003DzWewHyEvM_sOk;
   

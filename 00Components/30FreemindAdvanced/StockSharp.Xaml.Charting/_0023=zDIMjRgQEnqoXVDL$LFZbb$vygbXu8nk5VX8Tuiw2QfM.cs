@@ -555,15 +555,15 @@ internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2Q
     out \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param4)
   {
     if (_param0 <= 0.0 || _param0 > Math.PI)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323332));
+      throw new ArgumentOutOfRangeException("");
     if (_param1 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323343));
+      throw new ArgumentOutOfRangeException("");
     if (_param2 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323388));
+      throw new ArgumentOutOfRangeException("");
     if (_param3 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323367));
+      throw new ArgumentOutOfRangeException("");
     if (_param2 >= _param3)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323374));
+      throw new ArgumentOutOfRangeException("");
     double num1 = _param2 * Math.Tan(0.5 * _param0);
     double num2 = -num1;
     \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzukEevxlwRXxb(num2 * _param1, num1 * _param1, num2, num1, _param2, _param3, out _param4);
@@ -590,11 +590,11 @@ internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2Q
     out \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param6)
   {
     if (_param4 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323161));
+      throw new ArgumentOutOfRangeException("");
     if (_param5 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323144));
+      throw new ArgumentOutOfRangeException("");
     if (_param4 >= _param5)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539323187));
+      throw new ArgumentOutOfRangeException("");
     double num1 = 2.0 * _param4 / (_param1 - _param0);
     double num2 = 2.0 * _param4 / (_param3 - _param2);
     double num3 = (_param1 + _param0) / (_param1 - _param0);
@@ -799,7 +799,7 @@ internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2Q
       numArray1[index3] = index1;
       double num4 = numArray4[index1, index1];
       if (num4 == 0.0)
-        throw new InvalidOperationException(XXX.SSS(-539323194));
+        throw new InvalidOperationException("");
       double num5 = 1.0 / num4;
       numArray4[index1, index1] = 1.0;
       for (int index7 = 0; index7 < 4; ++index7)
@@ -872,7 +872,7 @@ internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2Q
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539323215), (object) this.\u0023\u003Dzctm1rVw\u003D, (object) this.\u0023\u003Dz90ZjCUw\u003D, (object) this.\u0023\u003DzCnT1wOM\u003D, (object) this.\u0023\u003DzE3ZR8NI\u003D);
+    return string.Format("", (object) this.\u0023\u003Dzctm1rVw\u003D, (object) this.\u0023\u003Dz90ZjCUw\u003D, (object) this.\u0023\u003DzCnT1wOM\u003D, (object) this.\u0023\u003DzE3ZR8NI\u003D);
   }
 
   public override int GetHashCode()

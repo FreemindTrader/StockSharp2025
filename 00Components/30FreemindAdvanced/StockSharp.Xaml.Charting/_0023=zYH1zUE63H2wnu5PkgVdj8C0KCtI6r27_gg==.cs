@@ -66,7 +66,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     set
     {
       this.RenderableSeries.IsVisible = value;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539433813));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 
@@ -75,7 +75,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003Dz6UP\u0024hXi0MzTB;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D>(ref this.\u0023\u003Dz6UP\u0024hXi0MzTB, value, XXX.SSS(-539324365));
+      this.\u0023\u003DzwGPLgl8\u003D<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D>(ref this.\u0023\u003Dz6UP\u0024hXi0MzTB, value, "");
     }
   }
 
@@ -84,7 +84,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D, value, XXX.SSS(-539440969));
+      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D, value, "");
     }
   }
 
@@ -93,7 +93,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<string>(ref this.\u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D, value, XXX.SSS(-539435403));
+      this.\u0023\u003DzwGPLgl8\u003D<string>(ref this.\u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D, value, "");
     }
   }
 
@@ -102,7 +102,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzZn1qtjmkP\u0024rj;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzZn1qtjmkP\u0024rj, value, XXX.SSS(-539324386));
+      this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzZn1qtjmkP\u0024rj, value, "");
     }
   }
 
@@ -111,9 +111,9 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzP6QCNf4\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzP6QCNf4\u003D, value, XXX.SSS(-539324398)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzP6QCNf4\u003D, value, ""))
         return;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539324191));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 
@@ -124,9 +124,9 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzkCGMM78\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzkCGMM78\u003D, value, XXX.SSS(-539324209)))
+      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzkCGMM78\u003D, value, ""))
         return;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539324222));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 
@@ -137,7 +137,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003Dzv3mQzJ3Hs5AL;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Point>(ref this.\u0023\u003Dzv3mQzJ3Hs5AL, value, XXX.SSS(-539324248));
+      this.\u0023\u003DzwGPLgl8\u003D<Point>(ref this.\u0023\u003Dzv3mQzJ3Hs5AL, value, "");
     }
   }
 
@@ -146,7 +146,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzJvPSB6b\u0024M1Z4;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<bool>(ref this.\u0023\u003DzJvPSB6b\u0024M1Z4, value, XXX.SSS(-539324235));
+      this.\u0023\u003DzwGPLgl8\u003D<bool>(ref this.\u0023\u003DzJvPSB6b\u0024M1Z4, value, "");
     }
   }
 
@@ -155,7 +155,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzSBc7fTob32WZ;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<int>(ref this.\u0023\u003DzSBc7fTob32WZ, value, XXX.SSS(-539324279));
+      this.\u0023\u003DzwGPLgl8\u003D<int>(ref this.\u0023\u003DzSBc7fTob32WZ, value, "");
     }
   }
 
@@ -180,7 +180,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
   {
     if (_param1.RenderableSeries != this.\u0023\u003DzFHC8wYzVYCMq)
-      throw new InvalidOperationException(XXX.SSS(-539324265));
+      throw new InvalidOperationException("");
     this.SeriesName = _param1.SeriesName;
     this.YValue = _param1.YValue;
     this.XValue = _param1.XValue;

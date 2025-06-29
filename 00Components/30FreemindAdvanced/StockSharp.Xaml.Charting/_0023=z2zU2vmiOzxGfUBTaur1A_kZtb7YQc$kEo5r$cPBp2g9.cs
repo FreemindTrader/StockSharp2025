@@ -54,9 +54,9 @@ internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0
     \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
     TimeSpan _param2)
   {
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, XXX.SSS(-539337969));
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param2, XXX.SSS(-539337953));
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D(_param1.Min, XXX.SSS(-539337745)).\u0023\u003DziXfpgk1YpfgIxrtqTA\u003D\u003D(_param1.Max, XXX.SSS(-539337733));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param2, "");
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D(_param1.Min, "").\u0023\u003DziXfpgk1YpfgIxrtqTA\u003D\u003D(_param1.Max, "");
     return !_param2.\u0023\u003DzhilcjqQ\u003D() && !_param1.IsZero && _param1.Min.\u0023\u003DzutrFxOU\u003D() && _param1.Max.\u0023\u003DzutrFxOU\u003D();
   }
 

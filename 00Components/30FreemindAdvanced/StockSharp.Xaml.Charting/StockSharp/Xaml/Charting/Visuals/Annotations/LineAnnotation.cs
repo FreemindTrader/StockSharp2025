@@ -22,9 +22,9 @@ internal class LineAnnotation : LineAnnotationBase
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539343715));
-    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539342541));
-    this._ghostLine = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539343005));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>("");
+    this._line = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>("");
+    this._ghostLine = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>("");
   }
 
   protected override \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq GetCurrentPlacementStrategy()

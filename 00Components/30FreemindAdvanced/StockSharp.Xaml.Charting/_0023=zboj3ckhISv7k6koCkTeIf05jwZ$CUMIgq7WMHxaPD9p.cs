@@ -8,7 +8,7 @@
 #nullable disable
 internal abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIf05jwZ\u0024CUMIgq7WMHxaPD9pU
 {
-  private string \u0023\u003DzeThLMrnu32pVQmpVLQ\u003D\u003D;
+  private string _indicatorValue;
 
   protected \u0023\u003Dzboj3ckhISv7k6koCkTeIf05jwZ\u0024CUMIgq7WMHxaPD9pU(string _param1)
   {
@@ -25,8 +25,8 @@ internal abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIf05jwZ\u0024CUMIgq7WMHx
 
   public string Value
   {
-    get => this.\u0023\u003DzeThLMrnu32pVQmpVLQ\u003D\u003D;
-    private set => this.\u0023\u003DzeThLMrnu32pVQmpVLQ\u003D\u003D = value;
+    get => this._indicatorValue;
+    private set => this._indicatorValue = value;
   }
 
   public override bool Equals(object _param1)
@@ -36,6 +36,6 @@ internal abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIf05jwZ\u0024CUMIgq7WMHx
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539441923), (object) this.GetType().Name, (object) (this.Value ?? XXX.SSS(-539441972)));
+    return string.Format("", (object) this.GetType().Name, (object) (this.Value ?? ""));
   }
 }

@@ -54,7 +54,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
         nu9622VfydaypdeqEjd.LabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DznXVw5HITBHoBrjSOBA\u003D\u003D(_param3, d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D);
         nu9622VfydaypdeqEjd.TickProvider = (\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3tOndLKZk0aGELbzVxE4VJ9A) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dzg7H9cRyacWHB();
         ulUkgXkBneEwzP3h0_1.\u0023\u003DzCejzG6Y\u003D = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) nu9622VfydaypdeqEjd;
-        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433076));
+        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, "");
         break;
       case ChartAxisType.Numeric:
         bool flag = ((ICollection<IChartAxis>) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.ChartArea.XAxises).Contains(d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D);
@@ -63,8 +63,8 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
         dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd mrfV9Sq7FuggeEjd = new dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd();
         mrfV9Sq7FuggeEjd.GrowBy = (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double>) d295Ww4skLs1HZBq.\u0023\u003DzZBtfoxHC6iyc;
         ulUkgXkBneEwzP3h0_2.\u0023\u003DzCejzG6Y\u003D = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) mrfV9Sq7FuggeEjd;
-        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzhYW6tiLSC0eZ, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433838));
-        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzkAJ7QX7sBa0Q, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433005));
+        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzhYW6tiLSC0eZ, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzkAJ7QX7sBa0Q, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, "");
         if (!flag)
         {
           d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.MouseDoubleClick += new MouseButtonEventHandler(d295Ww4skLs1HZBq.\u0023\u003Dz4EeJ2Z9T93ppthogLg\u003D\u003D);
@@ -72,19 +72,19 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
         }
         break;
       default:
-        throw new ArgumentOutOfRangeException(XXX.SSS(-539328516), (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.AxisType, LocalizedStrings.InvalidValue);
+        throw new ArgumentOutOfRangeException("", (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.AxisType, LocalizedStrings.InvalidValue);
     }
     vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.Tag = (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D;
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzD\u0024wXQ8E\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539431122));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzKm2_RDWENeyO, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433854), converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzHNYnjAF9C6pAx9qdjQ\u003D\u003D());
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz\u0024geG9XF9qNM9, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433188));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433145));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz6E17UGyH3Hxe, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433096));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433163));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzHxEy7A8kQeb2, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433170));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzALRRz3KBB3Uz, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539432975));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzfMY988N0StOA, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433797), converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzEAflM12ss7VY(((ICollection<IChartAxis>) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D.ChartArea.XAxises).Contains(vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D)));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(UIElement.VisibilityProperty, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, XXX.SSS(-539433813), converter: (IValueConverter) new BoolToVisibilityConverter());
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzD\u0024wXQ8E\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzKm2_RDWENeyO, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "", converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzHNYnjAF9C6pAx9qdjQ\u003D\u003D());
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz\u0024geG9XF9qNM9, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz6E17UGyH3Hxe, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzHxEy7A8kQeb2, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzALRRz3KBB3Uz, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzfMY988N0StOA, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "", converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzEAflM12ss7VY(((ICollection<IChartAxis>) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D.ChartArea.XAxises).Contains(vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D)));
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(UIElement.VisibilityProperty, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "", converter: (IValueConverter) new BoolToVisibilityConverter());
     ControlTemplate controlTemplate1 = new ControlTemplate();
     controlTemplate1.VisualTree = new FrameworkElementFactory(typeof (PropertyGridEx));
     ControlTemplate controlTemplate2 = controlTemplate1;
@@ -102,7 +102,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     PopupMenu popupMenu1 = new PopupMenu();
     CommonBarItemCollection items1 = popupMenu1.Items;
     BarSplitButtonItem barSplitButtonItem = new BarSplitButtonItem();
-    barSplitButtonItem.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328527));
+    barSplitButtonItem.Glyph = ThemedIconsExtension.GetImage("");
     barSplitButtonItem.ActAsDropDown = true;
     barSplitButtonItem.Content = (object) LocalizedStrings.Properties;
     barSplitButtonItem.PopupControl = (IPopupControl) new PopupControlContainer()
@@ -115,7 +115,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     {
       CommonBarItemCollection items2 = popupMenu2.Items;
       BarButtonItem barButtonItem = new BarButtonItem();
-      barButtonItem.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328570));
+      barButtonItem.Glyph = ThemedIconsExtension.GetImage("");
       barButtonItem.Content = (object) LocalizedStrings.Delete;
       barButtonItem.Command = vbxLeArTkallkIdHg1.\u0023\u003Dzi8fyBqQ\u003D;
       barButtonItem.CommandParameter = (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D;
@@ -126,7 +126,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     {
       CommonBarItemCollection items3 = popupMenu2.Items;
       BarButtonItem barButtonItem = new BarButtonItem();
-      barButtonItem.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328556));
+      barButtonItem.Glyph = ThemedIconsExtension.GetImage("");
       barButtonItem.Content = (object) LocalizedStrings.ResetTimeZone;
       barButtonItem.Command = _param2;
       barButtonItem.CommandParameter = (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D;
@@ -319,8 +319,8 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
 
     public \u0023\u003DznXVw5HITBHoBrjSOBA\u003D\u003D(IChart _param1, IChartAxis _param2)
     {
-      this.\u0023\u003DzF\u002458l4g\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539328706));
-      this.\u0023\u003DzLXQXNXQ\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539328717));
+      this.\u0023\u003DzF\u002458l4g\u003D = _param1 ?? throw new ArgumentNullException("");
+      this.\u0023\u003DzLXQXNXQ\u003D = _param2 ?? throw new ArgumentNullException("");
       ((INotifyPropertyChanged) _param1).PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dzay2Z0OS2mqYxHjGOXg\u003D\u003D);
       _param2.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dzi\u0024H3kFzx2GWHssWxHw\u003D\u003D);
     }
@@ -351,8 +351,8 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
 
     private void \u0023\u003Dz7E45WaMjKaIP()
     {
-      this.\u0023\u003Dz0Evdh7mohgMvZAgX2A\u003D\u003D = XXX.SSS(-539430209) + this.\u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D.SubDayTextFormatting + XXX.SSS(-539430223);
-      this.\u0023\u003DzT__mYRdWRdMk = XXX.SSS(-539430209) + this.\u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D.TextFormatting + XXX.SSS(-539430223);
+      this.\u0023\u003Dz0Evdh7mohgMvZAgX2A\u003D\u003D = "" + this.\u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D.SubDayTextFormatting + "";
+      this.\u0023\u003DzT__mYRdWRdMk = "" + this.\u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D.TextFormatting + "";
     }
 
     public DateTime \u0023\u003Dz_pGtZJ\u002426fjw(IComparable _param1)
@@ -372,9 +372,9 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
       if (baseUtcOffset.HasValue)
       {
         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(4, 2);
-        interpolatedStringHandler.AppendFormatted<DateTime>(dateTime, XXX.SSS(-539426902));
-        interpolatedStringHandler.AppendLiteral(XXX.SSS(-539328764));
-        interpolatedStringHandler.AppendFormatted((baseUtcOffset.Value < TimeSpan.Zero ? XXX.SSS(-539328751) : XXX.SSS(-539328743)) + baseUtcOffset.Value.ToString(XXX.SSS(-539328535)));
+        interpolatedStringHandler.AppendFormatted<DateTime>(dateTime, "");
+        interpolatedStringHandler.AppendLiteral("");
+        interpolatedStringHandler.AppendFormatted((baseUtcOffset.Value < TimeSpan.Zero ? "" : "") + baseUtcOffset.Value.ToString(""));
         return interpolatedStringHandler.ToStringAndClear();
       }
       return $"{dateTime}";
@@ -397,7 +397,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
       object? _param1,
       PropertyChangedEventArgs _param2)
     {
-      if (!(_param2.PropertyName == XXX.SSS(-539432434)))
+      if (!(_param2.PropertyName == ""))
         return;
       this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz5q8i9C4\u003D();
     }
@@ -406,7 +406,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
       object? _param1,
       PropertyChangedEventArgs _param2)
     {
-      if (!(_param2.PropertyName == XXX.SSS(-539432434)))
+      if (!(_param2.PropertyName == ""))
         return;
       this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz5q8i9C4\u003D();
     }

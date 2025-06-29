@@ -91,10 +91,10 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, _param2.AntiAliasing, (float) _param2.StrokeThickness, _param2.Opacity))
     {
       \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D mz4rNexJsSmCjpOm = _param2.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
-      string format = XXX.SSS(-539430209) + _param2.LabelTextFormatting + XXX.SSS(-539430223);
+      string format = "" + _param2.LabelTextFormatting + "";
       bool flag1 = this.\u0023\u003Dz4nhIf8\u0024OuuPux\u0024xOhCjDsBI\u003D(_param2.StackedGroupId);
       if (flag1)
-        format += XXX.SSS(-539339852);
+        format += "";
       bool flag2 = mz4rNexJsSmCjpOm.\u0023\u003DzDoU1CJhSUWFV();
       double num1 = _param2.\u0023\u003DzNfVFwxaLW3jC();
       double num2;
@@ -107,8 +107,8 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
       {
         \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D);
         int num4;
-        int num5 = this.\u0023\u003DzhwvgGUGVRU_I((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), out num4);
-        double num6 = this.\u0023\u003Dz8iBvfApYdA9X7WlJolT1JzM\u003D(mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D()), num4, num5, num3, num2);
+        int num5 = this.\u0023\u003DzhwvgGUGVRU_I((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, kld48pAvUlrTzJ1tmfY.Property(), out num4);
+        double num6 = this.\u0023\u003Dz8iBvfApYdA9X7WlJolT1JzM\u003D(mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.Property()), num4, num5, num3, num2);
         Tuple<double, double> tuple = this.\u0023\u003DzeKx7SKdwYOP2((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D, true);
         double num7 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(tuple.Item1);
         double num8 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(tuple.Item2);
@@ -117,7 +117,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
         \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = _param2.PaletteProvider;
         if (paletteProvider != null)
         {
-          Color? nullable = paletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) _param2, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+          Color? nullable = paletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) _param2, kld48pAvUlrTzJ1tmfY.Property(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
           if (nullable.HasValue)
           {
             using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(nullable.Value))

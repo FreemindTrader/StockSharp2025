@@ -77,16 +77,16 @@ public class ChartVolatilitySmileElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539430006)))
+    if (((SynchronizedDictionary<string, object>) storage).ContainsKey(""))
     {
       this.RemoveChildElement((IChartElement) this.Values);
-      PersistableHelper.Load((IPersistable) this.Values, storage, XXX.SSS(-539430006));
+      PersistableHelper.Load((IPersistable) this.Values, storage, "");
       this.AddChildElement((IChartElement) this.Values);
     }
-    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(XXX.SSS(-539429991)))
+    if (!((SynchronizedDictionary<string, object>) storage).ContainsKey(""))
       return;
     this.RemoveChildElement((IChartElement) this.Smile);
-    PersistableHelper.Load((IPersistable) this.Smile, storage, XXX.SSS(-539429991));
+    PersistableHelper.Load((IPersistable) this.Smile, storage, "");
     this.AddChildElement((IChartElement) this.Smile);
   }
 
@@ -95,8 +95,8 @@ public class ChartVolatilitySmileElement :
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539430006), PersistableHelper.Save((IPersistable) this.Values));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539429991), PersistableHelper.Save((IPersistable) this.Smile));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Values));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Smile));
   }
 
   internal override ChartVolatilitySmileElement Clone(

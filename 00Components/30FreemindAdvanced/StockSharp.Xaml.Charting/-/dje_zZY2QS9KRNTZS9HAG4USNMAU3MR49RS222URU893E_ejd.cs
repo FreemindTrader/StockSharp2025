@@ -321,7 +321,7 @@ internal sealed class dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd :
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539333797), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]

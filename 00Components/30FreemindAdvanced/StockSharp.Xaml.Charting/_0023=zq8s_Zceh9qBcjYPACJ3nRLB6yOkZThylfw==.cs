@@ -33,7 +33,7 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
   
   private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
   
-  private bool \u0023\u003DzDVmik2Cw62ImfJj4oQ\u003D\u003D;
+  private bool _isVisible;
   
   private bool \u0023\u003DznkfEoFr8zh4Cq3PUWdbHj5k\u003D;
   
@@ -149,8 +149,8 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
 
   public bool IsVisible
   {
-    get => this.\u0023\u003DzDVmik2Cw62ImfJj4oQ\u003D\u003D;
-    set => this.\u0023\u003DzDVmik2Cw62ImfJj4oQ\u003D\u003D = value;
+    get => this._isVisible;
+    set => this._isVisible = value;
   }
 
   public bool AntiAliasing

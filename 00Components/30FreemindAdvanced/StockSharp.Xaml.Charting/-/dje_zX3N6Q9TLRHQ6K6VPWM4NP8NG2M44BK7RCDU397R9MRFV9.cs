@@ -34,7 +34,7 @@ internal class dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd :
     typeof (sbyte)
   }).ToList<Type>();
   
-  public static readonly DependencyProperty \u0023\u003DzUAJ6sU6NpGtu5h_eZK4qIhg\u003D = DependencyProperty.Register(XXX.SSS(-539338533), typeof (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a), typeof (dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd), new PropertyMetadata((object) \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a.None, new PropertyChangedCallback(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzLUQi5D4\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzUAJ6sU6NpGtu5h_eZK4qIhg\u003D = DependencyProperty.Register("", typeof (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a), typeof (dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd), new PropertyMetadata((object) \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpcGozNFuVHzTBvU7g3nrOy\u0024a.None, new PropertyChangedCallback(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzLUQi5D4\u003D)));
 
   public dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd()
   {
@@ -105,7 +105,7 @@ internal class dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd :
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> dll9dU6Qa5lGfoNjvig = (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) this.\u0023\u003Dzgy73vTR0r5jyI3j3hAgwZho\u003D().\u0023\u003DzyE145DTzxI8R((IComparable) visibleRange.Min, (IComparable) visibleRange.Max, this.MinorsPerMajor, num);
     this.MajorDelta = dll9dU6Qa5lGfoNjvig.\u0023\u003Dzgq30Jn5PclK8();
     this.MinorDelta = dll9dU6Qa5lGfoNjvig.\u0023\u003DzZ85DqsktXJL3();
-    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(XXX.SSS(-539338590), new object[5]
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("", new object[5]
     {
       (object) visibleRange.Min,
       (object) visibleRange.Max,
@@ -119,7 +119,7 @@ internal class dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd :
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
     if (this.IsXAxis)
-      throw new InvalidOperationException(XXX.SSS(-539337546));
+      throw new InvalidOperationException("");
     double num1 = double.MinValue;
     double num2 = double.MaxValue;
     Dictionary<string, dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd> dictionary = new Dictionary<string, dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd>();

@@ -75,7 +75,7 @@ internal sealed class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMd
     get => this.\u0023\u003DzChcrgRo\u003D;
     set
     {
-      this.SetField<string>(ref this.\u0023\u003DzChcrgRo\u003D, value, XXX.SSS(-539433348));
+      this.SetField<string>(ref this.\u0023\u003DzChcrgRo\u003D, value, "");
     }
   }
 
@@ -84,7 +84,7 @@ internal sealed class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMd
     get => this.\u0023\u003Dzfzo3Zt0\u003D;
     set
     {
-      this.SetField<Color>(ref this.\u0023\u003Dzfzo3Zt0\u003D, value, XXX.SSS(-539433444));
+      this.SetField<Color>(ref this.\u0023\u003Dzfzo3Zt0\u003D, value, "");
     }
   }
 
@@ -93,7 +93,7 @@ internal sealed class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMd
     get => this.\u0023\u003DzEBLPoa4\u003D;
     set
     {
-      this.SetField<string>(ref this.\u0023\u003DzEBLPoa4\u003D, value, XXX.SSS(-539324386));
+      this.SetField<string>(ref this.\u0023\u003DzEBLPoa4\u003D, value, "");
     }
   }
 

@@ -14,7 +14,7 @@ internal sealed class \u0023\u003DzK74oGPE3yyB7zop8uDdznzD7Pf89gd\u0024MAL7CReIz
   public \u0023\u003DzK74oGPE3yyB7zop8uDdznzD7Pf89gd\u0024MAL7CReIz\u0024MuBMY25ahwavpE\u003D(
     Type _param1,
     string _param2)
-    : base(string.Format(XXX.SSS(-539442164), (object) _param1, (object) _param2))
+    : base(string.Format("", (object) _param1, (object) _param2))
   {
   }
 
@@ -22,7 +22,7 @@ internal sealed class \u0023\u003DzK74oGPE3yyB7zop8uDdznzD7Pf89gd\u0024MAL7CReIz
     Type _param1,
     string _param2,
     Exception _param3)
-    : base(string.Format(XXX.SSS(-539442164), (object) _param1, (object) _param2), _param3)
+    : base(string.Format("", (object) _param1, (object) _param2), _param3)
   {
   }
 }

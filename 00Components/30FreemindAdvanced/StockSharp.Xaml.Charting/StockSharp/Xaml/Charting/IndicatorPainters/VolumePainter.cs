@@ -67,16 +67,16 @@ public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.UpVolume, storage, XXX.SSS(-539442430));
-    PersistableHelper.Load((IPersistable) this.DownVolume, storage, XXX.SSS(-539442413));
+    PersistableHelper.Load((IPersistable) this.UpVolume, storage, "");
+    PersistableHelper.Load((IPersistable) this.DownVolume, storage, "");
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442430), PersistableHelper.Save((IPersistable) this.UpVolume));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442413), PersistableHelper.Save((IPersistable) this.DownVolume));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.UpVolume));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.DownVolume));
   }
 
   internal static bool \u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(

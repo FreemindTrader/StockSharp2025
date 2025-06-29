@@ -67,7 +67,7 @@ public class BubbleChart : UserControl, IComponentConnector
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539431241), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -81,43 +81,43 @@ public class BubbleChart : UserControl, IComponentConnector
       this.\u0023\u003DzQGCmQMjHdLKS = true;
   }
 
-  private sealed class \u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>(
+  private sealed class \u0023\u003Dz3j8PT5y_w1jq<T>(
     BubbleSeries2D _param1,
-    Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> _param2) : 
-    BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>
-    where \u0023\u003DzulcL8RA\u003D : IComparable
+    Func<T, SeriesPoint> _param2) : 
+    BubbleChart.IBubbleSeries<T>
+    where T : IComparable
   {
     
-    private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539431255));
+    private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException("");
     
-    private readonly Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539431262));
+    private readonly Func<T, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException("");
 
-    void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(
-      IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    void BubbleChart.IBubbleSeries<T>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(
+      IEnumerable<T> _param1,
       IEnumerable<double> _param2,
       IEnumerable<double> _param3)
     {
-      BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
+      BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<T>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<T>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
       u5Svx6MhYdSkOpoa.\u0023\u003DzRRvwDu67s9Rm = this;
-      \u0023\u003DzulcL8RA\u003D[] array = _param1.ToArray<\u0023\u003DzulcL8RA\u003D>();
+      T[] array = _param1.ToArray<T>();
       u5Svx6MhYdSkOpoa.\u0023\u003Dzj_CDbmQ\u003D = _param2.ToArray<double>();
       u5Svx6MhYdSkOpoa.\u0023\u003Dz4PSczfw\u003D = _param3.ToArray<double>();
-      this.\u0023\u003DzlkmfHYgr1H49.Points.AddRange(((IEnumerable<\u0023\u003DzulcL8RA\u003D>) array).Select<\u0023\u003DzulcL8RA\u003D, SeriesPoint>(new Func<\u0023\u003DzulcL8RA\u003D, int, SeriesPoint>(u5Svx6MhYdSkOpoa.\u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e)));
+      this.\u0023\u003DzlkmfHYgr1H49.Points.AddRange(((IEnumerable<T>) array).Select<T, SeriesPoint>(new Func<T, int, SeriesPoint>(u5Svx6MhYdSkOpoa.\u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e)));
     }
 
-    void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPS150wdkA6rm99k00_RKpVcVh9qnoQ\u003D\u003D()
+    void BubbleChart.IBubbleSeries<T>.\u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPS150wdkA6rm99k00_RKpVcVh9qnoQ\u003D\u003D()
     {
       this.\u0023\u003DzlkmfHYgr1H49.Points.Clear();
     }
 
     private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
     {
-      public BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D> \u0023\u003DzRRvwDu67s9Rm;
+      public BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<T> \u0023\u003DzRRvwDu67s9Rm;
       public double[] \u0023\u003Dzj_CDbmQ\u003D;
       public double[] \u0023\u003Dz4PSczfw\u003D;
 
       internal SeriesPoint \u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e(
-        \u0023\u003DzulcL8RA\u003D _param1,
+        T _param1,
         int _param2)
       {
         SeriesPoint point = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzEcmsYfw\u003D(_param1);

@@ -17,7 +17,7 @@ using System.Runtime.CompilerServices;
 internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D : 
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
 {
-  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> \u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(1);
+  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.sTrade> \u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.sTrade>(1);
   private double \u0023\u003DzTLYhkIK\u0024cpPpvOmoiA\u003D\u003D = double.NaN;
   private double \u0023\u003DzC8VtIhwQeL9NZ9wdrA\u003D\u003D = double.NaN;
   private readonly DateTime _utcTime;
@@ -33,12 +33,12 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
     return this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.Count == 0;
   }
 
-  public IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> \u0023\u003DzH969P7bf3uKN()
+  public IEnumerable<ChartDrawData.sTrade> \u0023\u003DzH969P7bf3uKN()
   {
-    return (IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D;
+    return (IEnumerable<ChartDrawData.sTrade>) this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D;
   }
 
-  public DateTime \u0023\u003Dzg86amuQ\u003D()
+  public DateTime UtcTime()
   {
     return this._utcTime;
   }
@@ -56,7 +56,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => (double) this.\u0023\u003Dzg86amuQ\u003D().Ticks;
+  public double Property() => (double) this.UtcTime().Ticks;
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D()
@@ -70,15 +70,15 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
       return;
     double num1 = double.MinValue;
     double num2 = double.MaxValue;
-    using (\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.\u0023\u003DzRPOJ5g0\u003D())
+    using (\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.sTrade>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.\u0023\u003DzRPOJ5g0\u003D())
     {
       while (zdFhhG7w.MoveNext())
       {
-        ChartDrawData.\u0023\u003DzU3TaXFs\u003D current = zdFhhG7w.Current;
-        if (current.\u0023\u003DzbH5YDNBwpnry() < num2)
-          num2 = current.\u0023\u003DzbH5YDNBwpnry();
-        if (current.\u0023\u003DzbH5YDNBwpnry() > num1)
-          num1 = current.\u0023\u003DzbH5YDNBwpnry();
+        ChartDrawData.sTrade current = zdFhhG7w.Current;
+        if (current.Price() < num2)
+          num2 = current.Price();
+        if (current.Price() > num1)
+          num1 = current.Price();
       }
     }
     this.\u0023\u003DzTLYhkIK\u0024cpPpvOmoiA\u003D\u003D = num2;
@@ -90,11 +90,11 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
     this.\u0023\u003DzTLYhkIK\u0024cpPpvOmoiA\u003D\u003D = this.\u0023\u003DzC8VtIhwQeL9NZ9wdrA\u003D\u003D = double.NaN;
   }
 
-  public void \u0023\u003DzDjRgWj_juivV(ChartDrawData.\u0023\u003DzU3TaXFs\u003D _param1)
+  public void \u0023\u003DzDjRgWj_juivV(ChartDrawData.sTrade _param1)
   {
     \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DztMHJ9Rr5MdWR = _param1;
-    int num = CollectionHelper.IndexOf<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D, new Func<ChartDrawData.\u0023\u003DzU3TaXFs\u003D, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzxj7eJsGR0DW\u0024XsrR5Q\u003D\u003D));
+    int num = CollectionHelper.IndexOf<ChartDrawData.sTrade>((IEnumerable<ChartDrawData.sTrade>) this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D, new Func<ChartDrawData.sTrade, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzxj7eJsGR0DW\u0024XsrR5Q\u003D\u003D));
     if (num < 0)
       this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.Add(v4vdZv8GtEzAmB0rzFq.\u0023\u003DztMHJ9Rr5MdWR);
     else
@@ -102,23 +102,23 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
     this.\u0023\u003DzX_vlX8BvHc_c();
   }
 
-  public ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DziY1yn8o8LADVXLk8uw\u003D\u003D(
+  public ChartDrawData.sTrade \u0023\u003DziY1yn8o8LADVXLk8uw\u003D\u003D(
     double _param1,
     double _param2)
   {
     if (_param2 < 0.0)
-      throw new ArgumentException(XXX.SSS(-539436054));
+      throw new ArgumentException("");
     if (this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.Count == 0)
-      return (ChartDrawData.\u0023\u003DzU3TaXFs\u003D) null;
+      return (ChartDrawData.sTrade) null;
     this.\u0023\u003Dz2CmIkXghdxY9();
     double num1 = double.MaxValue;
-    ChartDrawData.\u0023\u003DzU3TaXFs\u003D zU3TaXfs = (ChartDrawData.\u0023\u003DzU3TaXFs\u003D) null;
-    using (\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.\u0023\u003DzRPOJ5g0\u003D())
+    ChartDrawData.sTrade zU3TaXfs = (ChartDrawData.sTrade) null;
+    using (\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<ChartDrawData.sTrade>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D.\u0023\u003DzRPOJ5g0\u003D())
     {
       while (zdFhhG7w.MoveNext())
       {
-        ChartDrawData.\u0023\u003DzU3TaXFs\u003D current = zdFhhG7w.Current;
-        double num2 = Math.Abs(current.\u0023\u003DzbH5YDNBwpnry() - _param1);
+        ChartDrawData.sTrade current = zdFhhG7w.Current;
+        double num2 = Math.Abs(current.Price() - _param1);
         if (num2 < num1)
         {
           num1 = num2;
@@ -126,7 +126,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
         }
       }
     }
-    return num1 > _param2 ? (ChartDrawData.\u0023\u003DzU3TaXFs\u003D) null : zU3TaXfs;
+    return num1 > _param2 ? (ChartDrawData.sTrade) null : zU3TaXfs;
   }
 
   public static void \u0023\u003Dz\u0024zWmmGTAbDON(
@@ -160,12 +160,12 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
 
   private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
   {
-    public ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DztMHJ9Rr5MdWR;
+    public ChartDrawData.sTrade \u0023\u003DztMHJ9Rr5MdWR;
 
     internal bool \u0023\u003Dzxj7eJsGR0DW\u0024XsrR5Q\u003D\u003D(
-      ChartDrawData.\u0023\u003DzU3TaXFs\u003D _param1)
+      ChartDrawData.sTrade _param1)
     {
-      return _param1.\u0023\u003DzDmTtC9WghRFa() == this.\u0023\u003DztMHJ9Rr5MdWR.\u0023\u003DzDmTtC9WghRFa();
+      return _param1.GetTransactionString() == this.\u0023\u003DztMHJ9Rr5MdWR.GetTransactionString();
     }
   }
 }

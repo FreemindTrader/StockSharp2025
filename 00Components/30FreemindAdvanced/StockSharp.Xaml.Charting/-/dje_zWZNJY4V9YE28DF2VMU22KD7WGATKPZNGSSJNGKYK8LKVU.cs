@@ -18,7 +18,7 @@ internal sealed class dje_zWZNJY4V9YE28DF2VMU22KD7WGATKPZNGSSJNGKYK8LKVUBGCDCCUW
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
     dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd aqkdhqsfywuD3K2Ejd = (dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd) _param1;
-    string str1 = XXX.SSS(-539430263);
+    string str1 = "";
     if (!(_param3 is string str2))
       str2 = str1;
     bool flag = str2.ToUpperInvariant().Contains(str1);

@@ -18,7 +18,7 @@ internal sealed class dje_zYYQAG9GM4ABHWMJJGCUFKMU5JVY9ALCGKTCMJJ4MD86F8U2DG7MFL
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
     double num = (double) _param1;
-    string s = (string) _param3 ?? XXX.SSS(-539430936);
+    string s = (string) _param3 ?? "";
     double result;
     if (double.TryParse(s, NumberStyles.Any, (IFormatProvider) _param4, out result))
       return (object) (num * result);

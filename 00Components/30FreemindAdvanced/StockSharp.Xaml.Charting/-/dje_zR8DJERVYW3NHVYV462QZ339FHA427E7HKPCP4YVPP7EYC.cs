@@ -61,7 +61,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE
 
   public override object ProvideValue(IServiceProvider _param1)
   {
-    if (!(_param1.GetService(typeof (IProvideValueTarget)) is IProvideValueTarget service) || service.TargetObject.GetType().Name == XXX.SSS(-539441826))
+    if (!(_param1.GetService(typeof (IProvideValueTarget)) is IProvideValueTarget service) || service.TargetObject.GetType().Name == "")
       return (object) this;
     if (service.TargetObject is Setter)
       return (object) new Binding()
@@ -73,7 +73,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE
         RelativeSource = dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003DzCtHv3OM\u003D
       };
     if (!(service.TargetObject is DependencyObject targetObject))
-      throw new Exception(XXX.SSS(-539441873));
+      throw new Exception("");
     return this.\u0023\u003DzA13mM7FCopU4(targetObject);
   }
 

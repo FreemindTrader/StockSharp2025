@@ -67,7 +67,7 @@ internal class \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D : INo
     if (Interlocked.Increment(ref this.\u0023\u003DzBSG7sit66zZH) <= 100)
       return;
     this.\u0023\u003DzBSG7sit66zZH = 0;
-    this.\u0023\u003Dz0AXa0sp7IkH8(new PropertyChangedEventArgs(XXX.SSS(-539430966)));
+    this.\u0023\u003Dz0AXa0sp7IkH8(new PropertyChangedEventArgs(""));
   }
 
   void INotifyPropertyChanged.\u0023\u003DzrlR5kckLtgr8uURxQFpsiL65kjNN(

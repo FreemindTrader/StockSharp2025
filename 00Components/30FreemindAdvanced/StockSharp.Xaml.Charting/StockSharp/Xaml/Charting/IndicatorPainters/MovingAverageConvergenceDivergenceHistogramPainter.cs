@@ -83,18 +83,18 @@ public class MovingAverageConvergenceDivergenceHistogramPainter :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Macd, storage, XXX.SSS(-539442313));
-    PersistableHelper.Load((IPersistable) this.Signal, storage, XXX.SSS(-539442360));
-    PersistableHelper.Load((IPersistable) this.Histogram, storage, XXX.SSS(-539442337));
+    PersistableHelper.Load((IPersistable) this.Macd, storage, "");
+    PersistableHelper.Load((IPersistable) this.Signal, storage, "");
+    PersistableHelper.Load((IPersistable) this.Histogram, storage, "");
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442313), PersistableHelper.Save((IPersistable) this.Macd));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442360), PersistableHelper.Save((IPersistable) this.Signal));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442337), PersistableHelper.Save((IPersistable) this.Histogram));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Macd));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Signal));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Histogram));
   }
 
   [Serializable]

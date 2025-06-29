@@ -24,7 +24,7 @@ internal sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqD
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => this.\u0023\u003DzMANe_Ig\u003D;
+  public double Property() => this.\u0023\u003DzMANe_Ig\u003D;
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D()

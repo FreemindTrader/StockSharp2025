@@ -45,7 +45,7 @@ public sealed class GeneratedInternalTypeHelper : InternalTypeHelper
 
   protected virtual Delegate CreateDelegate(Type delegateType, object target, string handler)
   {
-    return (Delegate) target.GetType().InvokeMember(XXX.SSS(-539351245), BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod, (Binder) null, target, new object[2]
+    return (Delegate) target.GetType().InvokeMember("", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod, (Binder) null, target, new object[2]
     {
       (object) delegateType,
       (object) handler

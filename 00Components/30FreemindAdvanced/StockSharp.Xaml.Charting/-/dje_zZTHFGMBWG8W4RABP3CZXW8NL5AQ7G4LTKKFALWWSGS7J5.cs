@@ -17,9 +17,9 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
   
-  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(XXX.SSS(-539427833), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) XXX.SSS(-539431487)));
+  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register("", typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) ""));
   
-  public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register(XXX.SSS(-539427791), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) XXX.SSS(-539431487)));
+  public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register("", typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) ""));
   
   private Point \u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D;
   
@@ -64,7 +64,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     get => this.\u0023\u003DzSsJ0VVqBhS6c;
     set
     {
-      this.\u0023\u003DzSsJ0VVqBhS6c = !(value != (Type) null) || typeof (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D).IsAssignableFrom(value) ? value : throw new ArgumentOutOfRangeException(XXX.SSS(-539428394), string.Format(XXX.SSS(-539428437), (object) value));
+      this.\u0023\u003DzSsJ0VVqBhS6c = !(value != (Type) null) || typeof (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D).IsAssignableFrom(value) ? value : throw new ArgumentOutOfRangeException("", string.Format("", (object) value));
     }
   }
 

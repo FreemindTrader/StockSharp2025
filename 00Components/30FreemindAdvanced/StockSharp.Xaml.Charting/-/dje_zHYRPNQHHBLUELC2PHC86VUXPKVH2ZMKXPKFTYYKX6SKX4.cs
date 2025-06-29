@@ -19,15 +19,15 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
   
   private double[] \u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M;
   
-  public static readonly DependencyProperty \u0023\u003DzSzadwTQE418Q = DependencyProperty.Register(XXX.SSS(-539339277), typeof (Color), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzSzadwTQE418Q = DependencyProperty.Register("", typeof (Color), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzwCSejucukq6W = DependencyProperty.Register(XXX.SSS(-539440168), typeof (Brush), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) new SolidColorBrush(Colors.White), new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzwCSejucukq6W = DependencyProperty.Register("", typeof (Brush), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) new SolidColorBrush(Colors.White), new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzBruSrqcl3labAODB\u0024A\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539440216), typeof (\u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzBruSrqcl3labAODB\u0024A\u003D\u003D = DependencyProperty.Register("", typeof (\u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzJ7VzUZxW9MJw = DependencyProperty.Register(XXX.SSS(-539440243), typeof (bool), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzJ7VzUZxW9MJw = DependencyProperty.Register("", typeof (bool), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(XXX.SSS(-539433071), typeof (double), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) 0.4, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register("", typeof (double), typeof (dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd), new PropertyMetadata((object) 0.4, new PropertyChangedCallback(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003Dz1t4tvhOhPRE45nv0iDpVOOk\u003D)));
   
   protected double \u0023\u003Dz7KbBA2FX9N4R;
 
@@ -222,7 +222,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     {
       int num2 = _param5 + 1;
       if (num2 < _param1.\u0023\u003DzlpVGw6E\u003D() && !double.IsNaN(_param1.\u0023\u003Dz\u0024CeUvME\u003D(num2).\u0023\u003Dzu7q98_E\u003D()))
-        num1 = (_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(_param1.\u0023\u003Dz\u0024CeUvME\u003D(num2).\u0023\u003Dz2_4KSTY\u003D()) - _param4) * this.DataPointWidth;
+        num1 = (_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(_param1.\u0023\u003Dz\u0024CeUvME\u003D(num2).Property()) - _param4) * this.DataPointWidth;
     }
     else
       num1 = (_param4 - _param3) * this.DataPointWidth;
@@ -324,7 +324,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
       if (_param8 != null)
       {
         \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = _param2.\u0023\u003Dz\u0024CeUvME\u003D(num19);
-        Color? nullable = _param8.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+        Color? nullable = _param8.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.Property(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
         if (nullable.HasValue)
         {
           \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J3 = _param9.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
@@ -354,7 +354,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     int num = double.IsNaN(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D()) ? 0 : (Math.Abs(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D() - this.ZeroLineY) >= double.Epsilon ? 1 : 0);
     if (num == 0)
       return num != 0;
-    _param4 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D());
+    _param4 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.Property());
     _param5 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
     _param6 = (double) _param3;
     if (_param5 >= _param6)
@@ -392,7 +392,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
         Point point2 = this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num4, (double) num6), flag);
         if (_param6 != null)
         {
-          Color? nullable = _param6.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+          Color? nullable = _param6.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.Property(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
           if (nullable.HasValue)
           {
             using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J3 = _param7.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?()))

@@ -40,7 +40,7 @@ public abstract class ChartElement<T> :
   where T : ChartElement<T>
 {
   
-  private IfxChartElement \u0023\u003DzU\u0024_meog\u003D;
+  private IfxChartElement _drawData;
   
   private readonly SynchronizedDictionary<Guid, string> \u0023\u003DzBhyJPYipojm7 = new SynchronizedDictionary<Guid, string>();
   
@@ -58,9 +58,9 @@ public abstract class ChartElement<T> :
   
   private bool \u0023\u003DzY_3lsXhzr\u0024rW = true;
   
-  private string \u0023\u003DztTcR7ybUS145 = XXX.SSS(-539433902);
+  private string \u0023\u003DztTcR7ybUS145 = "";
   
-  private string \u0023\u003DzXAlmdTpL5g8f = XXX.SSS(-539432528);
+  private string \u0023\u003DzXAlmdTpL5g8f = "";
   
   private Func<IComparable, System.Windows.Media.Color?> \u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D;
   
@@ -89,7 +89,7 @@ public abstract class ChartElement<T> :
       if (this.\u0023\u003Dz5A6vN_lzy9jl == value)
         return;
       this.\u0023\u003Dz5A6vN_lzy9jl = value;
-      this.RaisePropertyChanged(XXX.SSS(-539427760));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -103,7 +103,7 @@ public abstract class ChartElement<T> :
       if (this.\u0023\u003DzVf6ckz06jjnq == value)
         return;
       this.\u0023\u003DzVf6ckz06jjnq = value;
-      this.RaisePropertyChanged(XXX.SSS(-539433813));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -117,7 +117,7 @@ public abstract class ChartElement<T> :
       if (this.\u0023\u003DzY_3lsXhzr\u0024rW == value)
         return;
       this.\u0023\u003DzY_3lsXhzr\u0024rW = value;
-      this.RaisePropertyChanged(XXX.SSS(-539427808));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -132,9 +132,9 @@ public abstract class ChartElement<T> :
     {
       if (this.\u0023\u003DztTcR7ybUS145 == value)
         return;
-      this.RaisePropertyValueChanging(XXX.SSS(-539427791), (object) value);
+      this.RaisePropertyValueChanging("", (object) value);
       this.\u0023\u003DztTcR7ybUS145 = value;
-      this.RaisePropertyChanged(XXX.SSS(-539427791));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -149,9 +149,9 @@ public abstract class ChartElement<T> :
     {
       if (this.\u0023\u003DzXAlmdTpL5g8f == value)
         return;
-      this.RaisePropertyValueChanging(XXX.SSS(-539427833), (object) value);
+      this.RaisePropertyValueChanging("", (object) value);
       this.\u0023\u003DzXAlmdTpL5g8f = value;
-      this.RaisePropertyChanged(XXX.SSS(-539427833));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -161,7 +161,7 @@ public abstract class ChartElement<T> :
   {
     get
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D?.Colorer ?? this.\u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D;
+      return this._drawData?.Colorer ?? this.\u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D;
     }
     set => this.\u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D = value;
   }
@@ -183,15 +183,15 @@ public abstract class ChartElement<T> :
 
   /// <inheritdoc />
   [Browsable(false)]
-  public IChartElement ParentElement => (IChartElement) this.\u0023\u003DzU\u0024_meog\u003D;
+  public IChartElement ParentElement => (IChartElement) this._drawData;
 
   void IfxChartElement.\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqcXFVJpr_GKP9Yp3Hww\u003D(
     IChartElement _param1)
   {
-    this.\u0023\u003DzU\u0024_meog\u003D = this.\u0023\u003DzU\u0024_meog\u003D == null || _param1 == null ? (IfxChartElement) _param1 : throw new ArgumentException(LocalizedStrings.ParentElementAlreadySet);
-    if (this.\u0023\u003DzU\u0024_meog\u003D == null)
+    this._drawData = this._drawData == null || _param1 == null ? (IfxChartElement) _param1 : throw new ArgumentException(LocalizedStrings.ParentElementAlreadySet);
+    if (this._drawData == null)
       return;
-    this.\u0023\u003DzU\u0024_meog\u003D.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzSJdYbCcHBpzmYpsDytEtTkY0OpqoIhQR2IXqEAMCtmjWsFRg\u0024g\u003D\u003D);
+    this._drawData.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzSJdYbCcHBpzmYpsDytEtTkY0OpqoIhQR2IXqEAMCtmjWsFRg\u0024g\u003D\u003D);
   }
 
   int IfxChartElement.\u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5Xjl\u0024VTn26BAxExunz_I758h()
@@ -205,7 +205,7 @@ public abstract class ChartElement<T> :
 
   IfxChartElement IfxChartElement.\u0023\u003DzK74oGPE3yyB7zop8uDdzn\u0024EtAlFfparLI9VkIbQLPbt\u0024()
   {
-    return this.\u0023\u003DzU\u0024_meog\u003D != null ? this.\u0023\u003DzU\u0024_meog\u003D.RootElement : (IfxChartElement) this;
+    return this._drawData != null ? this._drawData.RootElement : (IfxChartElement) this;
   }
 
   /// <inheritdoc />
@@ -224,9 +224,9 @@ public abstract class ChartElement<T> :
   protected internal void AddChildElement(IChartElement element, bool dontDraw = false)
   {
     if (element == null)
-      throw new ArgumentNullException(XXX.SSS(-539427819));
+      throw new ArgumentNullException("");
     if (!((SynchronizedSet<IChartElement>) this.\u0023\u003DzbSEUhuE\u003D).TryAdd(element))
-      throw new InvalidOperationException(XXX.SSS(-539427602));
+      throw new InvalidOperationException("");
     ((IfxChartElement) element).SetParent((IChartElement) this);
     ((IfxChartElement) element).DontDraw = dontDraw;
   }
@@ -235,7 +235,7 @@ public abstract class ChartElement<T> :
   protected internal void RemoveChildElement(IChartElement element)
   {
     if (element == null)
-      throw new ArgumentNullException(XXX.SSS(-539427594));
+      throw new ArgumentNullException("");
     if (!((BaseCollection<IChartElement, ISet<IChartElement>>) this.\u0023\u003DzbSEUhuE\u003D).Remove(element))
       return;
     ((IfxChartElement) element).SetParent((IChartElement) null);
@@ -267,7 +267,7 @@ public abstract class ChartElement<T> :
 
   void IfxChartElement.\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSswqcr11vVhHbZb1DIg\u003D()
   {
-    this.RaisePropertyChanged(XXX.SSS(-539427760));
+    this.RaisePropertyChanged("");
   }
 
   void IfxChartElement.\u0023\u003Dz5VLaAZX2bctAcuSoajSAXiAWyCN77Q2JwvgX_JOkRsCm(
@@ -295,12 +295,12 @@ public abstract class ChartElement<T> :
 
   private void \u0023\u003Dz2oJVQ0QhyrqDOIUd1g\u003D\u003D()
   {
-    this.RaisePropertyChanged(XXX.SSS(-539427791));
+    this.RaisePropertyChanged("");
   }
 
   private void \u0023\u003Dz2DrmhCu9hZz815QBZA\u003D\u003D()
   {
-    this.RaisePropertyChanged(XXX.SSS(-539427833));
+    this.RaisePropertyChanged("");
   }
 
   bool IfxChartElement.\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKlZ3wGlucPKFCzuSkzT6xviX()
@@ -353,22 +353,22 @@ public abstract class ChartElement<T> :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.IsVisible = storage.GetValue<bool>(XXX.SSS(-539433813), this.IsVisible);
-    this.FullTitle = storage.GetValue<string>(XXX.SSS(-539427760), this.FullTitle);
-    this.IsLegend = storage.GetValue<bool>(XXX.SSS(-539427808), this.IsLegend);
-    this.XAxisId = storage.GetValue<string>(XXX.SSS(-539427791), this.XAxisId);
-    this.YAxisId = storage.GetValue<string>(XXX.SSS(-539427833), this.YAxisId);
+    this.IsVisible = storage.GetValue<bool>("", this.IsVisible);
+    this.FullTitle = storage.GetValue<string>("", this.FullTitle);
+    this.IsLegend = storage.GetValue<bool>("", this.IsLegend);
+    this.XAxisId = storage.GetValue<string>("", this.XAxisId);
+    this.YAxisId = storage.GetValue<string>("", this.YAxisId);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<bool>(XXX.SSS(-539433813), this.IsVisible);
-    storage.SetValue<string>(XXX.SSS(-539427760), this.FullTitle);
-    storage.SetValue<bool>(XXX.SSS(-539427808), this.IsLegend);
-    storage.SetValue<string>(XXX.SSS(-539427791), this.XAxisId);
-    storage.SetValue<string>(XXX.SSS(-539427833), this.YAxisId);
+    storage.SetValue<bool>("", this.IsVisible);
+    storage.SetValue<string>("", this.FullTitle);
+    storage.SetValue<bool>("", this.IsLegend);
+    storage.SetValue<string>("", this.XAxisId);
+    storage.SetValue<string>("", this.YAxisId);
   }
 
   internal override T Clone(T _param1)
@@ -382,13 +382,13 @@ public abstract class ChartElement<T> :
     IChartElement[] cache1 = this.\u0023\u003DzbSEUhuE\u003D.Cache;
     IChartElement[] cache2 = _param1.\u0023\u003DzbSEUhuE\u003D.Cache;
     if (cache1.Length != cache2.Length)
-      throw new InvalidOperationException(XXX.SSS(-539427637));
+      throw new InvalidOperationException("");
     for (int index = 0; index < cache1.Length; ++index)
     {
       IChartElement chartElement1 = cache1[index];
       IChartElement chartElement2 = cache2[index];
       if (chartElement1.GetType() != chartElement2.GetType())
-        throw new InvalidOperationException(XXX.SSS(-539427652));
+        throw new InvalidOperationException("");
       ((IfxChartElement) chartElement1).Clone((object) chartElement2);
     }
     _param1.DontDraw = ((IfxChartElement) this).DontDraw;

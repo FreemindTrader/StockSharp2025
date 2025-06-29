@@ -14,7 +14,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D
   dje_zXJSU6RS8TCQ6ZVU6XJ5NL7C4LYU27ZM5SDS8FXR9_ejd<DateTime>
 {
   
-  private static readonly string \u0023\u003Dz_wxyT_Q\u003D = XXX.SSS(-539442001);
+  private static readonly string \u0023\u003Dz_wxyT_Q\u003D = "";
 
   public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D()
   {
@@ -31,7 +31,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D
 
   public override string ToString()
   {
-    string format = XXX.SSS(-539442000);
+    string format = "";
     Type type = this.GetType();
     DateTime dateTime = this.Min;
     string str1 = dateTime.ToString(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D.\u0023\u003Dz_wxyT_Q\u003D);

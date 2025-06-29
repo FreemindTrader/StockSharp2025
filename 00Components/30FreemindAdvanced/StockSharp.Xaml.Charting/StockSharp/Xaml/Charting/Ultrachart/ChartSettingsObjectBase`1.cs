@@ -38,7 +38,7 @@ public abstract class ChartSettingsObjectBase<T> : NotifiableObject, ICustomType
   /// <param name="orig">Parent chart element or indicator.</param>
   protected ChartSettingsObjectBase(T orig)
   {
-    this.\u0023\u003DzospwsbhzrQArHP5ofw\u003D\u003D = orig ?? throw new ArgumentNullException(XXX.SSS(-539328598));
+    this.\u0023\u003DzospwsbhzrQArHP5ofw\u003D\u003D = orig ?? throw new ArgumentNullException("");
     this.\u0023\u003DzTWg19Vn1u7pTvAS8raKaWTM\u003D = CategoriesShowMode.Visible;
     // ISSUE: explicit constructor call
     base.\u002Ector();

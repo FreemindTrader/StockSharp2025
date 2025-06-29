@@ -12,22 +12,22 @@ internal static class \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbM
 {
   public static long \u0023\u003DzYDSd8XwnDBcn(long _param0)
   {
-    return _param0 >= 0L ? (long) Math.Pow(2.0, Math.Ceiling(Math.Log((double) _param0, 2.0))) : throw new ArgumentOutOfRangeException(XXX.SSS(-539322891), XXX.SSS(-539322930));
+    return _param0 >= 0L ? (long) Math.Pow(2.0, Math.Ceiling(Math.Log((double) _param0, 2.0))) : throw new ArgumentOutOfRangeException("", "");
   }
 
   public static int \u0023\u003DzYDSd8XwnDBcn(int _param0)
   {
-    return _param0 >= 0 ? (int) Math.Pow(2.0, Math.Ceiling(Math.Log((double) _param0, 2.0))) : throw new ArgumentOutOfRangeException(XXX.SSS(-539322922), XXX.SSS(-539322930));
+    return _param0 >= 0 ? (int) Math.Pow(2.0, Math.Ceiling(Math.Log((double) _param0, 2.0))) : throw new ArgumentOutOfRangeException("", "");
   }
 
   public static float \u0023\u003DzYDSd8XwnDBcn(float _param0)
   {
-    return (double) _param0 >= 0.0 ? (float) Math.Pow(2.0, Math.Ceiling(Math.Log((double) _param0, 2.0))) : throw new ArgumentOutOfRangeException(XXX.SSS(-539322965), XXX.SSS(-539322930));
+    return (double) _param0 >= 0.0 ? (float) Math.Pow(2.0, Math.Ceiling(Math.Log((double) _param0, 2.0))) : throw new ArgumentOutOfRangeException("", "");
   }
 
   public static double \u0023\u003DzYDSd8XwnDBcn(double _param0)
   {
-    return _param0 >= 0.0 ? Math.Pow(2.0, Math.Ceiling(Math.Log(_param0, 2.0))) : throw new ArgumentOutOfRangeException(XXX.SSS(-539322948), XXX.SSS(-539322930));
+    return _param0 >= 0.0 ? Math.Pow(2.0, Math.Ceiling(Math.Log(_param0, 2.0))) : throw new ArgumentOutOfRangeException("", "");
   }
 
   public static long \u0023\u003Dzp\u0024z16uPz13h6luApgA\u003D\u003D(int _param0)
@@ -62,15 +62,15 @@ internal static class \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbM
       _param0 += 6.2831854820251465;
     if (_param0 >= 6.2831854820251465)
       _param0 -= 6.2831854820251465;
-    return _param0 >= 0.0 && _param0 <= 6.2831854820251465 ? _param0 : throw new Exception(XXX.SSS(-539322959));
+    return _param0 >= 0.0 && _param0 <= 6.2831854820251465 ? _param0 : throw new Exception("");
   }
 
   public static double \u0023\u003DzAWhsryhXz5Xs(double _param0, double _param1)
   {
     if (_param0 != \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.\u0023\u003DzE1pg1ELlS2z_(_param0))
-      throw new Exception(XXX.SSS(-539322992));
+      throw new Exception("");
     if (_param1 != \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.\u0023\u003DzE1pg1ELlS2z_(_param1))
-      throw new Exception(XXX.SSS(-539323324));
+      throw new Exception("");
     double num = _param1 - _param0;
     if (num > 3.1415927410125732)
       num -= 6.2831854820251465;

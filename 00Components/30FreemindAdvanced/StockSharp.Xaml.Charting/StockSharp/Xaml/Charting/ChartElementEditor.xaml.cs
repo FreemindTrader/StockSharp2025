@@ -51,7 +51,7 @@ public class ChartElementEditor : UserControl, IComponentConnector
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539427431), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]

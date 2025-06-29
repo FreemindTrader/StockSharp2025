@@ -70,15 +70,15 @@ public class FractalsPainter : BaseChartIndicatorPainter<Fractals>
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Up, storage, XXX.SSS(-539442951));
-    PersistableHelper.Load((IPersistable) this.Down, storage, XXX.SSS(-539442960));
+    PersistableHelper.Load((IPersistable) this.Up, storage, "");
+    PersistableHelper.Load((IPersistable) this.Down, storage, "");
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442951), PersistableHelper.Save((IPersistable) this.Up));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442960), PersistableHelper.Save((IPersistable) this.Down));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Up));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.Down));
   }
 }

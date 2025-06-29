@@ -18,11 +18,11 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd : Panel
 {
   
-  public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539428854), typeof (double), typeof (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003DzASQCMKR2osYf)));
+  public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.RegisterAttached("", typeof (double), typeof (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003DzASQCMKR2osYf)));
   
-  public static readonly DependencyProperty \u0023\u003DzN6gpRZCZuo6v = DependencyProperty.RegisterAttached(XXX.SSS(-539335584), typeof (bool), typeof (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003DzN6gpRZCZuo6v = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003Dz0nBvgzfnFekE = DependencyProperty.RegisterAttached(XXX.SSS(-539335603), typeof (Point), typeof (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003DzASQCMKR2osYf)));
+  public static readonly DependencyProperty \u0023\u003Dz0nBvgzfnFekE = DependencyProperty.RegisterAttached("", typeof (Point), typeof (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003DzASQCMKR2osYf)));
 
   protected override Size MeasureOverride(Size _param1)
   {

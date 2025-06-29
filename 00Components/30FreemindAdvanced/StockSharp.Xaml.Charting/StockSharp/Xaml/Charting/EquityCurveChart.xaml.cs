@@ -69,7 +69,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     fk4QgaphfmmujdEjd.ExecuteOn = dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick;
     v7UvhxrxhaatqEjdArray[2] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) fk4QgaphfmmujdEjd;
     dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
-    dgE2H48XyyA87SEjd.AxisId = XXX.SSS(-539432528);
+    dgE2H48XyyA87SEjd.AxisId = "";
     v7UvhxrxhaatqEjdArray[3] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) dgE2H48XyyA87SEjd;
     this.\u0023\u003DzUyqHQCymOwtN = v7UvhxrxhaatqEjdArray;
     CollectionHelper.AddRange<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((ICollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers, (IEnumerable<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzUyqHQCymOwtN);
@@ -150,7 +150,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     Guid id = default (Guid))
   {
     if (title == null)
-      throw new ArgumentNullException(XXX.SSS(-539441346));
+      throw new ArgumentNullException("");
     if (style == DrawStyles.Band || style == DrawStyles.Area)
       style = DrawStyles.BandOneValue;
     ChartBandElement chartBandElement = new ChartBandElement();
@@ -165,13 +165,13 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     if (style != DrawStyles.BandOneValue)
     {
       curve.Line2.IsVisible = false;
-      curve.\u0023\u003DziQx4gl4\u003D(XXX.SSS(-539433438));
+      curve.\u0023\u003DziQx4gl4\u003D("");
       curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line1, LocalizedStrings.Line2);
     }
     else
     {
-      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line1, LocalizedStrings.Line2 + XXX.SSS(-539441357));
-      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line2, LocalizedStrings.Line2 + XXX.SSS(-539441398));
+      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line1, LocalizedStrings.Line2 + "");
+      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line2, LocalizedStrings.Line2 + "");
     }
     if (id != new Guid())
       curve.Id = id;
@@ -184,7 +184,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   public void RemoveCurve(IChartBandElement elem)
   {
     if (elem == null)
-      throw new ArgumentNullException(XXX.SSS(-539441379));
+      throw new ArgumentNullException("");
     ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Remove((IChartElement) elem);
   }
 
@@ -237,7 +237,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   public void Load(SettingsStorage storage)
   {
     this.Clear();
-    foreach (IChartElement chartElement in ((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>(XXX.SSS(-539441386), (SettingsStorage[]) null)).Select<SettingsStorage, ChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<SettingsStorage, ChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D))))
+    foreach (IChartElement chartElement in ((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>("", (SettingsStorage[]) null)).Select<SettingsStorage, ChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<SettingsStorage, ChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D))))
       ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Add(chartElement);
   }
 
@@ -245,7 +245,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<SettingsStorage[]>(XXX.SSS(-539441386), this.Elements.Select<IChartBandElement, SettingsStorage>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Func<IChartBandElement, SettingsStorage>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<SettingsStorage[]>("", this.Elements.Select<IChartBandElement, SettingsStorage>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Func<IChartBandElement, SettingsStorage>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D))).ToArray<SettingsStorage>());
   }
 
   /// <summary>InitializeComponent</summary>
@@ -256,7 +256,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539441177), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -301,7 +301,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
 
     internal void \u0023\u003DzvXldtNp6EqOzZHGiHo5vu0E\u003D(IChartAxis _param1)
     {
-      _param1.TextFormatting = XXX.SSS(-539441313);
+      _param1.TextFormatting = "";
     }
 
     internal IChartBandElement \u0023\u003DzAVykYn0F15D5Ztnzfw\u003D\u003D(
@@ -347,14 +347,14 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   private sealed class \u0023\u003DztNaqcZK2DJoq : BaseList<LineData<DateTime>>
   {
     
-    private readonly EquityCurveChart \u0023\u003DzU\u0024_meog\u003D;
+    private readonly EquityCurveChart _drawData;
     
     private readonly IChartBandElement _indicatorElement;
 
     public \u0023\u003DztNaqcZK2DJoq(EquityCurveChart _param1, IChartBandElement _param2)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539441328));
-      this._indicatorElement = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539441371));
+      this._drawData = _param1 ?? throw new ArgumentNullException("");
+      this._indicatorElement = _param2 ?? throw new ArgumentNullException("");
       // ISSUE: explicit constructor call
       base.\u002Ector();
     }
@@ -367,9 +367,9 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     protected virtual void OnAdded(LineData<DateTime> _param1)
     {
       ((BaseCollection<LineData<DateTime>, IList<LineData<DateTime>>>) this).OnAdded(_param1);
-      IChartDrawData data = this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D.CreateData();
+      IChartDrawData data = this._drawData.\u0023\u003DzO72kpz0\u003D.CreateData();
       data.Group((DateTimeOffset) _param1.X).Add(this.\u0023\u003Dzj_CyhS4\u003D(), (double) _param1.Y, 0.0);
-      this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D.Draw(data);
+      this._drawData.\u0023\u003DzO72kpz0\u003D.Draw(data);
     }
 
     protected virtual bool OnRemoving(LineData<DateTime> _param1)
@@ -379,7 +379,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
 
     protected virtual void OnCleared()
     {
-      this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D.Reset((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
+      this._drawData.\u0023\u003DzO72kpz0\u003D.Reset((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
       ((BaseCollection<LineData<DateTime>, IList<LineData<DateTime>>>) this).OnCleared();
     }
   }

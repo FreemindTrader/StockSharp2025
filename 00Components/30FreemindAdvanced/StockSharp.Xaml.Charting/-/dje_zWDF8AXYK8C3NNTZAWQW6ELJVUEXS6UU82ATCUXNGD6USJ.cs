@@ -109,13 +109,13 @@ internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM3
         \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index);
         if (!double.IsNaN(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D()))
         {
-          float num3 = (float) _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D());
+          float num3 = (float) _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.Property());
           float num4 = (float) _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
           Point point1 = this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num3, (double) num4), flag);
           Point point2 = this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num3, (double) num2), flag);
           if (paletteProvider != null)
           {
-            Color? nullable = paletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+            Color? nullable = paletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.Property(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
             if (nullable.HasValue)
             {
               \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(nullable.Value);

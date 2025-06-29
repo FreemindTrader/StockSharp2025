@@ -25,9 +25,9 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
   IXmlSerializable
 {
   
-  public static readonly DependencyProperty \u0023\u003Dz2Rta\u0024oTnlQkx = DependencyProperty.Register(XXX.SSS(-539440229), typeof (string), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd), new PropertyMetadata((object) XXX.SSS(-539339995), new PropertyChangedCallback(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd.\u0023\u003DzyGQyqAS53k26)));
+  public static readonly DependencyProperty \u0023\u003Dz2Rta\u0024oTnlQkx = DependencyProperty.Register("", typeof (string), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd), new PropertyMetadata((object) "", new PropertyChangedCallback(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd.\u0023\u003DzyGQyqAS53k26)));
   
-  public static readonly DependencyProperty \u0023\u003Dzj\u0024ZDuobq5\u0024GmruUxggpnzio\u003D = DependencyProperty.Register(XXX.SSS(-539340023), typeof (bool), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003Dzj\u0024ZDuobq5\u0024GmruUxggpnzio\u003D = DependencyProperty.Register("", typeof (bool), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd), new PropertyMetadata((object) false));
 
   public dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd()
   {
@@ -69,7 +69,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
     \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
     bool _param2)
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = _param1 != null ? this.DataSeries.GetIndicesRange(_param1) : throw new ArgumentNullException(XXX.SSS(-539339892));
+    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = _param1 != null ? this.DataSeries.GetIndicesRange(_param1) : throw new ArgumentNullException("");
     return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzzMId\u0024f67Wftb((\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D) this, g8Oq2rGx6KyfAreq);
   }
 
@@ -131,20 +131,20 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
       Tuple<double, double> tuple = this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzeKx7SKdwYOP2((\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D) this, index3, true);
       if (this.IsDigitalLine && index3 != 0)
       {
-        p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+        p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.Property();
         p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzPqsSI6C5MOOb()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index1 - 1];
         ++index1;
       }
-      p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+      p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.Property();
       p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzPqsSI6C5MOOb()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index1] = tuple.Item1;
       ++index1;
       if (_param1 && index3 != 0)
       {
-        p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+        p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.Property();
         p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2 + 1];
         --index2;
       }
-      p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+      p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.Property();
       p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2] = tuple.Item2;
       --index2;
     }

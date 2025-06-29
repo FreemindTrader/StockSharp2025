@@ -24,7 +24,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   SomeClass222
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register(XXX.SSS(-539429521), typeof (ObservableCollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>), typeof (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzMGnM8Q7UmYY2)));
+  public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register("", typeof (ObservableCollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>), typeof (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzMGnM8Q7UmYY2)));
   
   private readonly Grid \u0023\u003DzS\u0024OTg_s\u003D = new Grid();
 
@@ -36,14 +36,14 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   public dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd(
     params \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D[] _param1)
   {
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, XXX.SSS(-539428190));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     for (int index = 0; index < _param1.Length; ++index)
     {
       \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D chhAr3Kksm46Uy2Zy = _param1[index];
       DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(16 /*0x10*/, 1);
-      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539428215));
+      interpolatedStringHandler.AppendLiteral("");
       interpolatedStringHandler.AppendFormatted<int>(index);
-      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539428201));
+      interpolatedStringHandler.AppendLiteral("");
       string stringAndClear = interpolatedStringHandler.ToStringAndClear();
       \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) chhAr3Kksm46Uy2Zy, stringAndClear);
     }

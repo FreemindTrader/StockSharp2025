@@ -29,17 +29,17 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   
   private PropertyChangeNotifier \u0023\u003DzMFucnUdhtZnJ;
   
-  public static readonly DependencyProperty \u0023\u003Dzvp8Q5iyLlWID = DependencyProperty.Register(XXX.SSS(-539429850), typeof (Style), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003Dzvp8Q5iyLlWID = DependencyProperty.Register("", typeof (Style), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(XXX.SSS(-539427833), typeof (string), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) XXX.SSS(-539431487), new PropertyChangedCallback(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register("", typeof (string), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) "", new PropertyChangedCallback(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzNnZwaoee8xziVPglsg\u003D\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539429876), typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzNnZwaoee8xziVPglsg\u003D\u003D = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) true));
   
-  public static readonly DependencyProperty \u0023\u003DzEf91H67L3cmpXtvCzf\u0024fF8UYUMr2 = DependencyProperty.RegisterAttached(XXX.SSS(-539429655), typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003DzEf91H67L3cmpXtvCzf\u0024fF8UYUMr2 = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003Dz8BRRl9X\u00241GaoKzQFLQ\u003D\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539429686), typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003Dz8BRRl9X\u00241GaoKzQFLQ\u003D\u003D = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003DzRuUiUh8wem3V = DependencyProperty.RegisterAttached(XXX.SSS(-539429714), typeof (Color), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) new Color()));
+  public static readonly DependencyProperty \u0023\u003DzRuUiUh8wem3V = DependencyProperty.RegisterAttached("", typeof (Color), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) new Color()));
 
   public dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd()
   {

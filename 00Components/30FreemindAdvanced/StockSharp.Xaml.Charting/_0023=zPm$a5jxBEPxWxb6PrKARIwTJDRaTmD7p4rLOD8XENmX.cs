@@ -30,7 +30,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
   ChartArea _param1) : dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
 {
   
-  private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539331288));
+  private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException("");
   
   private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dzos6SMwAMXZ33;
   
@@ -40,7 +40,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
   
   private bool \u0023\u003DzfEYbsFOKVADr;
   
-  public static readonly DependencyProperty \u0023\u003DzISs1rY1PUWf_ = DependencyProperty.Register(XXX.SSS(-539331267), typeof (bool), typeof (\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzISs1rY1PUWf_ = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D), new PropertyMetadata((object) true));
 
   public bool ShowHorizontalLine
   {
@@ -148,7 +148,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
       line1.Stroke = (Brush) new SolidColorBrush(Colors.OrangeRed);
       line1.IsHitTestVisible = false;
       this.\u0023\u003DzujKvLh3D_ur8 = line1;
-      this.\u0023\u003DzujKvLh3D_ur8.SetBindings(UIElement.VisibilityProperty, (object) this, XXX.SSS(-539331267), BindingMode.OneWay, (IValueConverter) new BoolToVisibilityConverter()
+      this.\u0023\u003DzujKvLh3D_ur8.SetBindings(UIElement.VisibilityProperty, (object) this, "", BindingMode.OneWay, (IValueConverter) new BoolToVisibilityConverter()
       {
         FalseValue = Visibility.Hidden
       });
@@ -159,14 +159,14 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
     double num1 = (double) this.YAxis.\u0023\u003DzACwLhyc\u003D(_param1.Y);
     this.\u0023\u003DzujKvLh3D_ur8.Y1 = _param1.Y;
     this.\u0023\u003DzujKvLh3D_ur8.Y2 = _param1.Y;
-    this.\u0023\u003Dz31Z4JIE\u003D.\u0023\u003Dz0wmAX8SO\u0024zQCN\u0024Ke6Q\u003D\u003D().Text = StringHelper.Put(XXX.SSS(-539331324), new object[2]
+    this.\u0023\u003Dz31Z4JIE\u003D.\u0023\u003Dz0wmAX8SO\u0024zQCN\u0024Ke6Q\u003D\u003D().Text = StringHelper.Put("", new object[2]
     {
-      this.\u0023\u003DzieB4BQP3oCyc((Sides) 1, num1) == null ? (object) XXX.SSS(-539331104) : (object) XXX.SSS(-539331091),
+      this.\u0023\u003DzieB4BQP3oCyc((Sides) 1, num1) == null ? (object) "" : (object) "",
       (object) num1
     });
-    this.\u0023\u003Dz31Z4JIE\u003D.\u0023\u003DzLxDR0lXAxPbrXgmUDQ\u003D\u003D().Text = StringHelper.Put(XXX.SSS(-539331084), new object[2]
+    this.\u0023\u003Dz31Z4JIE\u003D.\u0023\u003DzLxDR0lXAxPbrXgmUDQ\u003D\u003D().Text = StringHelper.Put("", new object[2]
     {
-      this.\u0023\u003DzieB4BQP3oCyc((Sides) 0, num1) == null ? (object) XXX.SSS(-539331104) : (object) XXX.SSS(-539331091),
+      this.\u0023\u003DzieB4BQP3oCyc((Sides) 0, num1) == null ? (object) "" : (object) "",
       (object) num1
     });
     this.\u0023\u003Dz31Z4JIE\u003D.\u0023\u003DzJcHd2F8ayj13(this.\u0023\u003Dz31Z4JIE\u003D.IsMouseOver);
@@ -207,14 +207,14 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
     {
       this.IsHitTestVisible = false;
       TextBlock textBlock1 = new TextBlock();
-      textBlock1.Text = XXX.SSS(-539331235);
+      textBlock1.Text = "";
       textBlock1.Background = (Brush) new SolidColorBrush(Colors.Red);
       textBlock1.Foreground = (Brush) new SolidColorBrush(Colors.White);
       textBlock1.FontSize = 11.0;
       textBlock1.VerticalAlignment = VerticalAlignment.Center;
       this.\u0023\u003Dz9JyKjT\u0024p5TwcRYYQWvrjKuE\u003D = textBlock1;
       TextBlock textBlock2 = new TextBlock();
-      textBlock2.Text = XXX.SSS(-539331242);
+      textBlock2.Text = "";
       textBlock2.Background = (Brush) new SolidColorBrush(Colors.Green);
       textBlock2.Foreground = (Brush) new SolidColorBrush(Colors.White);
       textBlock2.FontSize = 11.0;

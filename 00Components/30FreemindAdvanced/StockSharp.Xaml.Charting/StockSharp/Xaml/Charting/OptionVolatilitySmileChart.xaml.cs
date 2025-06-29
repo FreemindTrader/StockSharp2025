@@ -39,7 +39,7 @@ public class OptionVolatilitySmileChart :
   IComponentConnector
 {
   /// <summary>Step size for volatility smile calculation.</summary>
-  public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register(XXX.SSS(-539438755), typeof (double), typeof (OptionVolatilitySmileChart), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(OptionVolatilitySmileChart.\u0023\u003DzcLFqfxuYYRmEBVt_YQ\u003D\u003D)));
+  public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register("", typeof (double), typeof (OptionVolatilitySmileChart), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(OptionVolatilitySmileChart.\u0023\u003DzcLFqfxuYYRmEBVt_YQ\u003D\u003D)));
   
   private readonly IScichartSurfaceVM \u0023\u003DzKj7nvWQ\u003D;
   
@@ -65,7 +65,7 @@ public class OptionVolatilitySmileChart :
     IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();
     chartAxis1.AutoRange = true;
     chartAxis2.AutoRange = true;
-    chartAxis2.TextFormatting = XXX.SSS(-539441313);
+    chartAxis2.TextFormatting = "";
     dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[] v7UvhxrxhaatqEjdArray = new dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[4];
     dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd ypbydebG6VffgcpzeEjd = new dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd();
     ypbydebG6VffgcpzeEjd.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
@@ -78,7 +78,7 @@ public class OptionVolatilitySmileChart :
     fk4QgaphfmmujdEjd.ExecuteOn = dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick;
     v7UvhxrxhaatqEjdArray[2] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) fk4QgaphfmmujdEjd;
     dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
-    dgE2H48XyyA87SEjd.AxisId = XXX.SSS(-539432528);
+    dgE2H48XyyA87SEjd.AxisId = "";
     v7UvhxrxhaatqEjdArray[3] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) dgE2H48XyyA87SEjd;
     this.\u0023\u003DzUyqHQCymOwtN = v7UvhxrxhaatqEjdArray;
     CollectionHelper.AddRange<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((ICollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers, (IEnumerable<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzUyqHQCymOwtN);
@@ -148,7 +148,7 @@ public class OptionVolatilitySmileChart :
     Guid id = default (Guid))
   {
     ChartVolatilitySmileElement volatilitySmileElement1 = new ChartVolatilitySmileElement();
-    volatilitySmileElement1.FullTitle = StringHelper.ThrowIfEmpty(title, XXX.SSS(-539438803));
+    volatilitySmileElement1.FullTitle = StringHelper.ThrowIfEmpty(title, "");
     volatilitySmileElement1.Values.Color = color.FromWpf();
     volatilitySmileElement1.Values.AdditionalColor = secondColor.FromWpf();
     volatilitySmileElement1.Values.Style = DrawStyles.Dot;
@@ -171,7 +171,7 @@ public class OptionVolatilitySmileChart :
   public void RemoveSmile(ICollection<LineData<double>> items)
   {
     if (!(items is OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA zItgG9Jh6wfpA))
-      throw new ArgumentNullException(XXX.SSS(-539438815));
+      throw new ArgumentNullException("");
     if (!this.\u0023\u003Dz1I2yIarPUD_j.Remove(zItgG9Jh6wfpA))
       return;
     zItgG9Jh6wfpA.Dispose();
@@ -208,17 +208,17 @@ public class OptionVolatilitySmileChart :
   /// <param name="storage">Settings storage.</param>
   public void Load(SettingsStorage storage)
   {
-    this.ChartTheme = storage.GetValue<string>(XXX.SSS(-539437328), this.ChartTheme);
+    this.ChartTheme = storage.GetValue<string>("", this.ChartTheme);
     this.Clear();
-    CollectionHelper.ForEach<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>(XXX.SSS(-539441386), (SettingsStorage[]) null)).Select<SettingsStorage, OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(new Func<SettingsStorage, OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(this.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D)), new Action<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(this.\u0023\u003DzXutiackwLewjRRecQA\u003D\u003D));
+    CollectionHelper.ForEach<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>("", (SettingsStorage[]) null)).Select<SettingsStorage, OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(new Func<SettingsStorage, OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(this.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D)), new Action<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(this.\u0023\u003DzXutiackwLewjRRecQA\u003D\u003D));
   }
 
   /// <summary>Save settings.</summary>
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<string>(XXX.SSS(-539437328), this.ChartTheme);
-    storage.SetValue<SettingsStorage[]>(XXX.SSS(-539441386), this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<string>("", this.ChartTheme);
+    storage.SetValue<SettingsStorage[]>("", this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D))).ToArray<SettingsStorage>());
   }
 
   /// <summary>InitializeComponent</summary>
@@ -229,7 +229,7 @@ public class OptionVolatilitySmileChart :
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539438790), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -310,7 +310,7 @@ public class OptionVolatilitySmileChart :
     IPersistable
   {
     
-    private readonly OptionVolatilitySmileChart \u0023\u003DzU\u0024_meog\u003D;
+    private readonly OptionVolatilitySmileChart _drawData;
     
     private readonly List<LineData<double>> \u0023\u003DzEEABO3tZsceL = new List<LineData<double>>();
     
@@ -322,8 +322,8 @@ public class OptionVolatilitySmileChart :
       OptionVolatilitySmileChart _param1,
       ChartVolatilitySmileElement _param2)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539438751));
-      this._indicatorElement = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539438726));
+      this._drawData = _param1 ?? throw new ArgumentNullException("");
+      this._indicatorElement = _param2 ?? throw new ArgumentNullException("");
       ((ICollection<IChartElement>) this.\u0023\u003DzASpaYkPu0U\u0024F().\u0023\u003DzigsRD8\u0024hw_SZ().Elements).Add((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D());
     }
 
@@ -334,7 +334,7 @@ public class OptionVolatilitySmileChart :
 
     private dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd \u0023\u003DzASpaYkPu0U\u0024F()
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D;
+      return this._drawData.\u0023\u003DzO72kpz0\u003D;
     }
 
     public ChartVolatilitySmileElement \u0023\u003Dzj_CyhS4\u003D()
@@ -386,7 +386,7 @@ public class OptionVolatilitySmileChart :
       this.\u0023\u003DzIMYwtfTasyYu = new PolyFit(array1, array2, 2).Coeff;
       if (this.\u0023\u003DzIMYwtfTasyYu.Length != 3)
         return;
-      double smileStep = this.\u0023\u003DzU\u0024_meog\u003D.SmileStep;
+      double smileStep = this._drawData.SmileStep;
       double num2 = Math.Min(Math.Max(0.0001, double.IsNaN(smileStep) ? 10.0 : smileStep), num1 / 2.0);
       double num3 = ((BaseCollection<LineData<double>, IList<LineData<double>>>) this)[((BaseCollection<LineData<double>, IList<LineData<double>>>) this).Count - 1].X + num2;
       for (double x = ((BaseCollection<LineData<double>, IList<LineData<double>>>) this)[0].X; x < num3; x += num2)
@@ -425,12 +425,12 @@ public class OptionVolatilitySmileChart :
 
     public void Load(SettingsStorage _param1)
     {
-      PersistableHelper.Load((IPersistable) this.\u0023\u003Dzj_CyhS4\u003D(), _param1, XXX.SSS(-539438769));
+      PersistableHelper.Load((IPersistable) this.\u0023\u003Dzj_CyhS4\u003D(), _param1, "");
     }
 
     public void Save(SettingsStorage _param1)
     {
-      _param1.SetValue<SettingsStorage>(XXX.SSS(-539438769), PersistableHelper.Save((IPersistable) this.\u0023\u003Dzj_CyhS4\u003D()));
+      _param1.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.\u0023\u003Dzj_CyhS4\u003D()));
     }
 
     [Serializable]

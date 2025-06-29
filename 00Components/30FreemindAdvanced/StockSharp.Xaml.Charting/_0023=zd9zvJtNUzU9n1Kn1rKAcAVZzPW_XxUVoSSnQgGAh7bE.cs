@@ -66,7 +66,7 @@ internal sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAVZzPW_XxUVoSSnQgGAh7bEx\
 
     internal bool \u0023\u003DzK5iFcUiP0uX6iXSUTw\u003D\u003D(PropertyDescriptor _param1)
     {
-      if (!(_param1.Name != XXX.SSS(-539433348)))
+      if (!(_param1.Name != ""))
         return false;
       BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
       return browsableAttribute == null || browsableAttribute.Browsable;

@@ -34,7 +34,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS(
     IScichartSurfaceVM _param1)
   {
-    this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539331223));
+    this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException("");
     this.Elements = (IEnumerable<ParentVM>) _param1.LegendElements;
     this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D = (ICommand) new DelegateCommand<ParentVM>(new Action<ParentVM>(this.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D), \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<ParentVM, bool>(\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D)));
   }
@@ -51,7 +51,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
     get => this.\u0023\u003DzH31vDNM\u003D;
     set
     {
-      this.SetField<IEnumerable<ParentVM>>(ref this.\u0023\u003DzH31vDNM\u003D, value, XXX.SSS(-539331230));
+      this.SetField<IEnumerable<ParentVM>>(ref this.\u0023\u003DzH31vDNM\u003D, value, "");
     }
   }
 
@@ -60,7 +60,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
     get => this.\u0023\u003DzRrbXXZfT16PhrWmykQ\u003D\u003D;
     set
     {
-      this.SetField<\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH>(ref this.\u0023\u003DzRrbXXZfT16PhrWmykQ\u003D\u003D, value, XXX.SSS(-539328641));
+      this.SetField<\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH>(ref this.\u0023\u003DzRrbXXZfT16PhrWmykQ\u003D\u003D, value, "");
     }
   }
 
@@ -69,7 +69,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
     get => this.\u0023\u003DzcMpkjcKq6\u0024YY;
     set
     {
-      this.SetField<bool>(ref this.\u0023\u003DzcMpkjcKq6\u0024YY, value, XXX.SSS(-539331213));
+      this.SetField<bool>(ref this.\u0023\u003DzcMpkjcKq6\u0024YY, value, "");
     }
   }
 

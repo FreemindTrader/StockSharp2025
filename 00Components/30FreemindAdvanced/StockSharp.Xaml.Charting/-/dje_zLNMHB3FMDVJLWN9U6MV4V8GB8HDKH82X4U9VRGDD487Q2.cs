@@ -26,7 +26,7 @@ internal sealed class dje_zLNMHB3FMDVJLWN9U6MV4V8GB8HDKH82X4U9VRGDD487Q2ESD3DZPC
     if (_param1 != null)
     {
       FieldInfo field = _param1.GetType().GetField(_param1.ToString());
-      bool flag = (string) _param3 == XXX.SSS(-539430936);
+      bool flag = (string) _param3 == "";
       if (field != (FieldInfo) null)
       {
         DescriptionAttribute[] customAttributes = (DescriptionAttribute[]) field.GetCustomAttributes(typeof (DescriptionAttribute), false);
@@ -38,6 +38,6 @@ internal sealed class dje_zLNMHB3FMDVJLWN9U6MV4V8GB8HDKH82X4U9VRGDD487Q2ESD3DZPC
 
   public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
-    throw new Exception(XXX.SSS(-539430157));
+    throw new Exception("");
   }
 }

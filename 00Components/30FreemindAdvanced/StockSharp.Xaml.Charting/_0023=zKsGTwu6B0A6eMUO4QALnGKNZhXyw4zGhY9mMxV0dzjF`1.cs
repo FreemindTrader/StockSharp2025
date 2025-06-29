@@ -9,9 +9,9 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<\u0023\u003DzulcL8RA\u003D> : 
-  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<\u0023\u003DzulcL8RA\u003D>
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<T> : 
+  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<T>
+  where T : IComparable
 {
   public \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE()
   {
@@ -37,33 +37,33 @@ internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNm
   }
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
-    \u0023\u003DzulcL8RA\u003D _param2,
+    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> _param1,
+    T _param2,
     bool _param3)
   {
   }
 
   public override void \u0023\u003DzeU6gWqHRfREz(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> _param1,
     int _param2,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param3,
+    IEnumerable<T> _param3,
     bool _param4)
   {
   }
 
   public override void \u0023\u003Dzs9WSchJIpnF0(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> _param1,
     int _param2,
-    \u0023\u003DzulcL8RA\u003D _param3,
+    T _param3,
     bool _param4)
   {
   }
 
   public override void \u0023\u003DzPY2yStN8KbO\u0024(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> _param1,
     int _param2,
     int _param3,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param4,
+    IEnumerable<T> _param4,
     bool _param5)
   {
   }

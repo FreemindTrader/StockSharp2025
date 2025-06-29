@@ -19,15 +19,15 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd : Panel
 {
   
-  public static readonly DependencyProperty \u0023\u003DzAJq6AwIY2FAx = DependencyProperty.Register(XXX.SSS(-539335173), typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003DzSmUgMtsFJvHJ)));
+  public static readonly DependencyProperty \u0023\u003DzAJq6AwIY2FAx = DependencyProperty.Register("", typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003DzSmUgMtsFJvHJ)));
   
-  public static readonly DependencyProperty \u0023\u003DzQOUi7HHVdeMg = DependencyProperty.Register(XXX.SSS(-539335225), typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003DzSmUgMtsFJvHJ)));
+  public static readonly DependencyProperty \u0023\u003DzQOUi7HHVdeMg = DependencyProperty.Register("", typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003DzSmUgMtsFJvHJ)));
   
-  public static readonly DependencyProperty \u0023\u003DzhcwQeN4Ni3tYrLZddCANtlE\u003D = DependencyProperty.Register(XXX.SSS(-539335251), typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003DzhcwQeN4Ni3tYrLZddCANtlE\u003D = DependencyProperty.Register("", typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) 0.0));
   
-  public static readonly DependencyProperty \u0023\u003DzxCZVrddkVrh_8diOJA\u003D\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539335243), typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003DzxCZVrddkVrh_8diOJA\u003D\u003D = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003Dz_FG2Iog\u003D = DependencyProperty.RegisterAttached(XXX.SSS(-539434330), typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dzt8OwNSS67lRk)));
+  public static readonly DependencyProperty \u0023\u003Dz_FG2Iog\u003D = DependencyProperty.RegisterAttached("", typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dzt8OwNSS67lRk)));
   
   private Size \u0023\u003Dzk9BUboiLgD9a;
   

@@ -20,7 +20,7 @@ internal struct \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539436650), (object) this.\u0023\u003DzwP120vA\u003D, (object) this.\u0023\u003Dzi8jDI4I\u003D);
+    return string.Format("", (object) this.\u0023\u003DzwP120vA\u003D, (object) this.\u0023\u003Dzi8jDI4I\u003D);
   }
 
   public void \u0023\u003DzBYt8raY\u003D(int _param1, int _param2)
@@ -206,15 +206,15 @@ internal struct \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG
       _param0 += 2.0 * Math.PI;
     if (_param0 >= 2.0 * Math.PI)
       _param0 -= 2.0 * Math.PI;
-    return _param0 >= 0.0 && _param0 <= 2.0 * Math.PI ? _param0 : throw new Exception(XXX.SSS(-539321821));
+    return _param0 >= 0.0 && _param0 <= 2.0 * Math.PI ? _param0 : throw new Exception("");
   }
 
   public static double \u0023\u003DzAWhsryhXz5Xs(double _param0, double _param1)
   {
     if (_param0 != \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG60QLm4BdV.\u0023\u003Dz0EYWN1hZvXCA(_param0))
-      throw new Exception(XXX.SSS(-539321825));
+      throw new Exception("");
     if (_param1 != \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG60QLm4BdV.\u0023\u003Dz0EYWN1hZvXCA(_param1))
-      throw new Exception(XXX.SSS(-539321613));
+      throw new Exception("");
     double num = _param1 - _param0;
     if (num > Math.PI)
       num -= 2.0 * Math.PI;
@@ -238,7 +238,7 @@ internal struct \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG
   {
     double num1 = this.\u0023\u003Dza6M6pj4\u003D();
     if (num1 == 0.0)
-      throw new Exception(XXX.SSS(-539321691));
+      throw new Exception("");
     if (num1 == 0.0)
       return;
     double num2 = 1.0 / num1;
@@ -249,7 +249,7 @@ internal struct \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG
   public void \u0023\u003DzC520uIs\u003D(double _param1)
   {
     if (_param1 == 0.0)
-      throw new Exception(XXX.SSS(-539321679));
+      throw new Exception("");
     if (_param1 == 0.0)
       return;
     double num = 1.0 / _param1;

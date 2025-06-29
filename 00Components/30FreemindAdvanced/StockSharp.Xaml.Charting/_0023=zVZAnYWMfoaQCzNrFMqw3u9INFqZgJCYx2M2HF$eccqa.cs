@@ -42,7 +42,7 @@ internal static class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u9INFqZgJCYx2M2HF\u0024ec
       return (BitmapEncoder) new BmpBitmapEncoder();
     if (_param0 == (\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA8xQithIyJQfPQ\u003D\u003D) 1)
       return (BitmapEncoder) new JpegBitmapEncoder();
-    throw new InvalidEnumArgumentException(XXX.SSS(-539441038));
+    throw new InvalidEnumArgumentException("");
   }
 
   private static void \u0023\u003Dzb\u0024ya79WHAcWI(

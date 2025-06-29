@@ -71,15 +71,15 @@ public class StochasticOscillatorPainter : BaseChartIndicatorPainter<StochasticO
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.K, storage, XXX.SSS(-539442382));
-    PersistableHelper.Load((IPersistable) this.D, storage, XXX.SSS(-539442422));
+    PersistableHelper.Load((IPersistable) this.K, storage, "");
+    PersistableHelper.Load((IPersistable) this.D, storage, "");
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442382), PersistableHelper.Save((IPersistable) this.K));
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539442422), PersistableHelper.Save((IPersistable) this.D));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.K));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.D));
   }
 }

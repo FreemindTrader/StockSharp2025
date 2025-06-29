@@ -9,12 +9,12 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vSJGnVw\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzPqz5cUs\u003D> : 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
+internal interface \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vSJGnVw\u003D\u003D<T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzPqz5cUs\u003D> : 
+  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
   \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhip318DMhXaWOsdXxIKq2Zfn_
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+  where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
   where \u0023\u003DzPqz5cUs\u003D : IComparable
 {
@@ -23,30 +23,30 @@ internal interface \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_
   IList<\u0023\u003DzPqz5cUs\u003D> get_ZValues();
 
   void \u0023\u003Dznc8esWY\u003D(
-    \u0023\u003DzulcL8RA\u003D _param1,
+    T _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzPqz5cUs\u003D _param3);
 
   void \u0023\u003Dznc8esWY\u003D(
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    IEnumerable<T> _param1,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param2,
     IEnumerable<\u0023\u003DzPqz5cUs\u003D> _param3);
 
   void \u0023\u003DzFkV86a8\u003D(
-    \u0023\u003DzulcL8RA\u003D _param1,
+    T _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzPqz5cUs\u003D _param3,
     int _param4);
 
   void \u0023\u003DzzfUM_io\u003D(
     int _param1,
-    \u0023\u003DzulcL8RA\u003D _param2,
+    T _param2,
     \u0023\u003DzE8zkRfY\u003D _param3,
     \u0023\u003DzPqz5cUs\u003D _param4);
 
   void \u0023\u003DzdG5UbJ7rAsgF(
     int _param1,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param2,
+    IEnumerable<T> _param2,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param3,
     IEnumerable<\u0023\u003DzPqz5cUs\u003D> _param4);
 }

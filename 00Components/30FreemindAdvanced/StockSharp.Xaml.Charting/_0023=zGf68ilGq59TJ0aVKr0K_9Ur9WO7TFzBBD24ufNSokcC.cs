@@ -36,7 +36,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D candles = this.\u0023\u003Dz\u00246aIVrHDxlRJ().CandlesCompositeElement?.Candles;
     if (candles == null & _param1)
-      throw new InvalidOperationException(XXX.SSS(-539330379));
+      throw new InvalidOperationException("");
     if (this._candleMap == candles)
       return;
     this._candleMap?.\u0023\u003DziWBXfUI\u003D(this);
@@ -62,7 +62,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
     string _param2)
   {
     base.\u0023\u003Dz3u1qwgvgJlZC(_param1, _param2);
-    if (!(_param2 == XXX.SSS(-539432639)) && !(_param2 == XXX.SSS(-539432591)) && !(_param2 == XXX.SSS(-539433813)))
+    if (!(_param2 == "") && !(_param2 == "") && !(_param2 == ""))
       return;
     this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzBCuJKIIaVAUt();
   }

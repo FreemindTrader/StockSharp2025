@@ -27,7 +27,7 @@ internal struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6W
   
   private Point \u0023\u003DzVToonYzLZ27PZbuuox\u0024zO0s\u003D;
   
-  private IComparable \u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D;
+  private IComparable _xValue;
   
   private IComparable \u0023\u003DzcKE_lqOppDz7USEg8g\u003D\u003D;
   
@@ -69,7 +69,7 @@ internal struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6W
   
   private CandlePriceLevel \u0023\u003Dzswq21RUahV_UgsbxDA\u003D\u003D;
   
-  private ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DzJ\u0024LV5GgS6hjNL4Cw\u0024A\u003D\u003D;
+  private ChartDrawData.sTrade \u0023\u003DzJ\u0024LV5GgS6hjNL4Cw\u0024A\u003D\u003D;
 
   private \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D(bool _param1)
     : this()
@@ -120,12 +120,12 @@ internal struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6W
 
   public readonly IComparable \u0023\u003DztryT5H42SVj8()
   {
-    return this.\u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D;
+    return this._xValue;
   }
 
   public void \u0023\u003Dz2Iv\u0024sxQuGDBR(IComparable _param1)
   {
-    this.\u0023\u003Dzxb_4cLfI55054x5Z\u0024g\u003D\u003D = _param1;
+    this._xValue = _param1;
   }
 
   public readonly IComparable \u0023\u003Dzd9IAScWutAfJ()
@@ -316,7 +316,7 @@ internal struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6W
     this.\u0023\u003Dzswq21RUahV_UgsbxDA\u003D\u003D = _param1;
   }
 
-  public ChartDrawData.\u0023\u003DzU3TaXFs\u003D Transaction
+  public ChartDrawData.sTrade Transaction
   {
     readonly get => this.\u0023\u003DzJ\u0024LV5GgS6hjNL4Cw\u0024A\u003D\u003D;
     set => this.\u0023\u003DzJ\u0024LV5GgS6hjNL4Cw\u0024A\u003D\u003D = value;

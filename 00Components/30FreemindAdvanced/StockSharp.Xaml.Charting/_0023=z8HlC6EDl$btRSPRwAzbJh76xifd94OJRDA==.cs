@@ -30,7 +30,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh76xifd94OJRDA\u003D
   {
     Type key = typeof (T);
     if (!this.\u0023\u003DzY9a0Q6M\u003D<T>())
-      throw new Exception(string.Format(XXX.SSS(-539323789), (object) key));
+      throw new Exception(string.Format("", (object) key));
     return (T) this.\u0023\u003Dz0AYLrTERpgx0[key];
   }
 }

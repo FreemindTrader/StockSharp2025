@@ -21,7 +21,7 @@ internal sealed class \u0023\u003Dz9jHRW\u00244hcTcRirEhLafLfKwkzeHFx2BtVDw8LCsr
   public override string \u0023\u003DzkqN2vZ4\u003D(IComparable _param1)
   {
     if (!(this.\u0023\u003DzHZDgUSdfqmkx() is dje_zW9CS5E2KYALJRMCDFUV9GBWAD6S7353K768YQ7ENY8VRCQY29QF62_ejd y8VrcqY29Qf62Ejd))
-      throw new InvalidOperationException(XXX.SSS(-539336757));
+      throw new InvalidOperationException("");
     DateTime dateTime = _param1.\u0023\u003Dzxuo5aY4wjkaI();
     return (this.\u0023\u003DzHZDgUSdfqmkx().VisibleRange as \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D).Diff.Ticks > TimeSpan.FromDays(1.0).Ticks ? dateTime.ToString(y8VrcqY29Qf62Ejd.TextFormatting) : dateTime.ToString(y8VrcqY29Qf62Ejd.SubDayTextFormatting);
   }

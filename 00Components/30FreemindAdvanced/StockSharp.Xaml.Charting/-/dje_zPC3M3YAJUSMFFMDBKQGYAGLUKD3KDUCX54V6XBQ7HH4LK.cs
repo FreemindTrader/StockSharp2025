@@ -15,7 +15,7 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd : Control
 {
   
-  public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.Register(XXX.SSS(-539428854), typeof (double), typeof (dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd), new PropertyMetadata((object) 0.0));
+  public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.Register("", typeof (double), typeof (dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd), new PropertyMetadata((object) 0.0));
 
   public dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd()
   {

@@ -31,9 +31,9 @@ internal sealed class dje_zX3YUCVJCVL7KGW8SJASMBFF766BPYEJRUYPZPQ4JCE2SM2PZQHPGZ
     if (!this.CanConvertFrom(_param1, _param3.GetType()))
     {
       DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(112 /*0x70*/, 1);
-      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430269));
+      interpolatedStringHandler.AppendLiteral("");
       interpolatedStringHandler.AppendFormatted<Type>(_param3.GetType());
-      interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439697));
+      interpolatedStringHandler.AppendLiteral("");
       throw new FormatException(interpolatedStringHandler.ToStringAndClear());
     }
     string s = (string) _param3;
@@ -47,7 +47,7 @@ internal sealed class dje_zX3YUCVJCVL7KGW8SJASMBFF766BPYEJRUYPZPQ4JCE2SM2PZQHPGZ
     }
     catch (Exception ex)
     {
-      throw new FormatException(XXX.SSS(-539440006));
+      throw new FormatException("");
     }
   }
 }

@@ -86,7 +86,7 @@ public sealed class ChartIndicatorElement :
       }
       this.IndicatorPainter.OnAttached((IChartIndicatorElement) this);
       chartArea?.\u0023\u003Dz3ThQNm3rQ1fp().\u0023\u003Dz4M_pW8k\u003D((IChartElement) this);
-      this.RaisePropertyChanged(XXX.SSS(-539428532));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -204,10 +204,10 @@ public sealed class ChartIndicatorElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>(XXX.SSS(-539428532), (SettingsStorage) null);
+    SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>("", (SettingsStorage) null);
     if (settingsStorage1 == null)
       return;
-    Type type = Type.GetType(settingsStorage1.GetValue<string>(XXX.SSS(-539428523), (string) null), false);
+    Type type = Type.GetType(settingsStorage1.GetValue<string>("", (string) null), false);
     if (type == (Type) null)
       return;
     this.IndicatorPainter.OnDetached();
@@ -219,7 +219,7 @@ public sealed class ChartIndicatorElement :
     }
     else
       this.\u0023\u003DzggYpSp2p8YZic9F7tQ\u003D\u003D = instance;
-    SettingsStorage settingsStorage2 = settingsStorage1.GetValue<SettingsStorage>(XXX.SSS(-539428562), (SettingsStorage) null);
+    SettingsStorage settingsStorage2 = settingsStorage1.GetValue<SettingsStorage>("", (SettingsStorage) null);
     try
     {
       ((IPersistable) instance).Load(settingsStorage2);
@@ -233,7 +233,7 @@ public sealed class ChartIndicatorElement :
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539428532), PersistableHelper.SaveEntire((IPersistable) this.IndicatorPainter, false));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.SaveEntire((IPersistable) this.IndicatorPainter, false));
     base.Save(storage);
   }
 

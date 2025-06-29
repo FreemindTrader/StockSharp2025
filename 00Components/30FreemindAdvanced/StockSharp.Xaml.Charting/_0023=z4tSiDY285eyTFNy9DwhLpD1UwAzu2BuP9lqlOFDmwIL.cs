@@ -18,7 +18,7 @@ internal struct \u0023\u003Dz4tSiDY285eyTFNy9DwhLpD1UwAzu2BuP9lqlOFDmwILYsPaMHR9
     double[,] _param2)
   {
     if (_param0.GetLength(0) != 4 || _param1.GetLength(0) != 4 || _param0.GetLength(1) != 4 || _param2.GetLength(0) != 4 || _param1.GetLength(1) != 2 || _param2.GetLength(1) != 2)
-      throw new FormatException(XXX.SSS(-539322799));
+      throw new FormatException("");
     int length1 = _param1.GetLength(0);
     int length2 = _param1.GetLength(1);
     double[,] numArray = new double[length1, length1 + length2];

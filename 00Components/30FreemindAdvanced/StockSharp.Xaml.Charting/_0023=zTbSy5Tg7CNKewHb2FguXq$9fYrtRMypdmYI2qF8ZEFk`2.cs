@@ -9,33 +9,33 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+internal interface \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+  where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
 {
-  IList<\u0023\u003DzulcL8RA\u003D> XValues { get; }
+  IList<T> XValues { get; }
 
-  IList<\u0023\u003DzulcL8RA\u003D> get_XValues();
+  IList<T> get_XValues();
 
   IList<\u0023\u003DzE8zkRfY\u003D> YValues { get; }
 
   IList<\u0023\u003DzE8zkRfY\u003D> get_YValues();
 
-  void Append(\u0023\u003DzulcL8RA\u003D _param1, \u0023\u003DzE8zkRfY\u003D[] _param2);
+  void Append(T _param1, \u0023\u003DzE8zkRfY\u003D[] _param2);
 
   void Append(
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    IEnumerable<T> _param1,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D>[] _param2);
 
-  void \u0023\u003Dz\u0024abmkXc\u003D(\u0023\u003DzulcL8RA\u003D _param1);
+  void \u0023\u003Dz\u0024abmkXc\u003D(T _param1);
 
   void \u0023\u003DzfEbP\u00247w\u003D(int _param1);
 
   void \u0023\u003DzdDirImQ\u003D(int _param1, int _param2);
 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzQ8SgRgQ\u003D();
+  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzQ8SgRgQ\u003D();
 
   \u0023\u003DzE8zkRfY\u003D GetYMinAt(int _param1, \u0023\u003DzE8zkRfY\u003D _param2);
 

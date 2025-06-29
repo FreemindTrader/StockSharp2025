@@ -29,13 +29,13 @@ internal abstract class dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
   IXmlSerializable
 {
   
-  public static readonly DependencyProperty \u0023\u003DzkiTDvI_Iu6kL = DependencyProperty.Register(XXX.SSS(-539427989), typeof (bool), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003DzkiTDvI_Iu6kL = DependencyProperty.Register("", typeof (bool), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003DzSLZmDSF5TsAu = DependencyProperty.RegisterAttached(XXX.SSS(-539428020), typeof (bool), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzMFI5J30qjapk)));
+  public static readonly DependencyProperty \u0023\u003DzSLZmDSF5TsAu = DependencyProperty.RegisterAttached("", typeof (bool), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzMFI5J30qjapk)));
   
-  public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register(XXX.SSS(-539428004), typeof (dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton));
+  public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register("", typeof (dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton));
   
-  public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register(XXX.SSS(-539428052), typeof (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None));
+  public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register("", typeof (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D), typeof (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd), new PropertyMetadata((object) \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None));
   
   private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
   
@@ -76,7 +76,7 @@ internal abstract class dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
   private void \u0023\u003DzBialNpcCEeGSuz54SUkHEKI\u003D()
   {
     if (!this.\u0023\u003Dz8aGSsI2FehxdngUQaLiJHus\u003D() && this.XAxis != null && this.XAxis.get_IsPolarAxis())
-      throw new NotSupportedException(((object) this).GetType().Name + XXX.SSS(-539428040));
+      throw new NotSupportedException(((object) this).GetType().Name + "");
   }
 
   public override void OnDetached()
@@ -233,7 +233,7 @@ internal abstract class dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
         z3jEwApUub0ZdjNsDq2.MouseEnter += new MouseEventHandler(this.\u0023\u003Dz1RWF4qCdwtL7iWLRBKs1AWljs19M);
         z3jEwApUub0ZdjNsDq2.SelectedRenderableSeries.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003Dz0tZIEaEc845fryC8ai9UjY4Y\u00240TT);
       }
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539428462));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 

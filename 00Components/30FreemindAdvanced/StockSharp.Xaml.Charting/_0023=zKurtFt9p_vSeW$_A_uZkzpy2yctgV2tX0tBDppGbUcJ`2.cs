@@ -8,9 +8,9 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzpy2yctgV2tX0tBDppGbUcJFQBZOSkO2kc0\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+internal sealed class \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzpy2yctgV2tX0tBDppGbUcJFQBZOSkO2kc0\u003D<T, \u0023\u003DzE8zkRfY\u003D> : 
+  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<T, \u0023\u003DzE8zkRfY\u003D>
+  where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
 {
 }

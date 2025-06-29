@@ -16,11 +16,11 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal class AxisMarkerAnnotation : AnchorPointAnnotation
 {
-  public static readonly DependencyProperty FormattedValueProperty = DependencyProperty.Register(XXX.SSS(-539343806), typeof (string), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
-  public static readonly DependencyProperty MarkerPointWidthProperty = DependencyProperty.Register(XXX.SSS(-539343831), typeof (double), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) 8.0));
-  public static readonly DependencyProperty LabelTemplateProperty = DependencyProperty.Register(XXX.SSS(-539343818), typeof (DataTemplate), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
-  public static readonly DependencyProperty PointerTemplateProperty = DependencyProperty.Register(XXX.SSS(-539343870), typeof (DataTemplate), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
-  protected internal static readonly DependencyProperty AxisInfoProperty = DependencyProperty.Register(XXX.SSS(-539427889), typeof (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty FormattedValueProperty = DependencyProperty.Register("", typeof (string), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty MarkerPointWidthProperty = DependencyProperty.Register("", typeof (double), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) 8.0));
+  public static readonly DependencyProperty LabelTemplateProperty = DependencyProperty.Register("", typeof (DataTemplate), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty PointerTemplateProperty = DependencyProperty.Register("", typeof (DataTemplate), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
+  protected internal static readonly DependencyProperty AxisInfoProperty = DependencyProperty.Register("", typeof (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
 
   public AxisMarkerAnnotation()
   {
@@ -72,7 +72,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.AnnotationRoot = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<FrameworkElement>(XXX.SSS(-539343640));
+    this.AnnotationRoot = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<FrameworkElement>("");
   }
 
   protected override void OnAxisAlignmentChanged(

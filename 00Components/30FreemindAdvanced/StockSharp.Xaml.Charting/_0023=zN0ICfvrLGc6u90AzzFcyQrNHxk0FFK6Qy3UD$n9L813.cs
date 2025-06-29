@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L
   \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzjt8sdPO9\u0024qkNnCrlQyjSA38\u003D = DependencyProperty.Register(XXX.SSS(-539338699), typeof (double), typeof (\u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(\u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8.\u0023\u003DzUSope7CyybJN14Toh8PD_14\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzjt8sdPO9\u0024qkNnCrlQyjSA38\u003D = DependencyProperty.Register("", typeof (double), typeof (\u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(\u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8.\u0023\u003DzUSope7CyybJN14Toh8PD_14\u003D)));
 
   public \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8()
   {
@@ -38,7 +38,7 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L
     if (!(_param0 is \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8 l813isRbgur3b1bKa73O8))
       return;
     if (l813isRbgur3b1bKa73O8.LogarithmicBase <= 0.0)
-      throw new InvalidOperationException(string.Format(XXX.SSS(-539338749), (object) l813isRbgur3b1bKa73O8.LogarithmicBase));
+      throw new InvalidOperationException(string.Format("", (object) l813isRbgur3b1bKa73O8.LogarithmicBase));
     dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
   }
 

@@ -84,7 +84,7 @@ public abstract class ChartTransactionElement<T> :
       if (this.\u0023\u003DzieAJJNZ68tP_ == value)
         return;
       this.\u0023\u003DzieAJJNZ68tP_ = value;
-      this.RaisePropertyChanged(XXX.SSS(-539433667));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -100,7 +100,7 @@ public abstract class ChartTransactionElement<T> :
       if (this.\u0023\u003DzGbPWR9A8cF4f == value)
         return;
       this.\u0023\u003DzGbPWR9A8cF4f = value;
-      this.RaisePropertyChanged(XXX.SSS(-539429892));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -114,7 +114,7 @@ public abstract class ChartTransactionElement<T> :
       if (this.\u0023\u003Dzes2ibafgS30F == value)
         return;
       this.\u0023\u003Dzes2ibafgS30F = value;
-      this.RaisePropertyChanged(XXX.SSS(-539433497));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -130,7 +130,7 @@ public abstract class ChartTransactionElement<T> :
       if (this.\u0023\u003Dzot9Qiz4J5vKT7sYMVQ\u003D\u003D == value)
         return;
       this.\u0023\u003Dzot9Qiz4J5vKT7sYMVQ\u003D\u003D = value;
-      this.RaisePropertyChanged(XXX.SSS(-539429941));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -144,7 +144,7 @@ public abstract class ChartTransactionElement<T> :
       if (this.\u0023\u003DzilRS6_jvjVLN == value)
         return;
       this.\u0023\u003DzilRS6_jvjVLN = value;
-      this.RaisePropertyChanged(XXX.SSS(-539429935));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -156,11 +156,11 @@ public abstract class ChartTransactionElement<T> :
     set
     {
       if (value < 0.0)
-        throw new ArgumentOutOfRangeException(XXX.SSS(-539429984));
+        throw new ArgumentOutOfRangeException("");
       if (Math.Abs(this.\u0023\u003Dzv0dodASrSZi6 - value) < 1E-05)
         return;
       this.\u0023\u003Dzv0dodASrSZi6 = value;
-      this.RaisePropertyChanged(XXX.SSS(-539429963));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -193,24 +193,24 @@ public abstract class ChartTransactionElement<T> :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.BuyColor = storage.GetValue<int>(XXX.SSS(-539433667), this.BuyColor.ToInt()).ToColor();
-    this.BuyStrokeColor = storage.GetValue<int>(XXX.SSS(-539429892), this.BuyStrokeColor.ToInt()).ToColor();
-    this.SellColor = storage.GetValue<int>(XXX.SSS(-539433497), this.SellColor.ToInt()).ToColor();
-    this.SellStrokeColor = storage.GetValue<int>(XXX.SSS(-539429941), this.SellStrokeColor.ToInt()).ToColor();
-    this.UseAltIcon = storage.GetValue<bool>(XXX.SSS(-539429935), this.UseAltIcon);
-    this.DrawSize = storage.GetValue<double>(XXX.SSS(-539429963), this.DrawSize);
+    this.BuyColor = storage.GetValue<int>("", this.BuyColor.ToInt()).ToColor();
+    this.BuyStrokeColor = storage.GetValue<int>("", this.BuyStrokeColor.ToInt()).ToColor();
+    this.SellColor = storage.GetValue<int>("", this.SellColor.ToInt()).ToColor();
+    this.SellStrokeColor = storage.GetValue<int>("", this.SellStrokeColor.ToInt()).ToColor();
+    this.UseAltIcon = storage.GetValue<bool>("", this.UseAltIcon);
+    this.DrawSize = storage.GetValue<double>("", this.DrawSize);
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(XXX.SSS(-539433667), this.BuyColor.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539429892), this.BuyStrokeColor.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539433497), this.SellColor.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539429941), this.SellStrokeColor.ToInt());
-    storage.SetValue<bool>(XXX.SSS(-539429935), this.UseAltIcon);
-    storage.SetValue<double>(XXX.SSS(-539429963), this.DrawSize);
+    storage.SetValue<int>("", this.BuyColor.ToInt());
+    storage.SetValue<int>("", this.BuyStrokeColor.ToInt());
+    storage.SetValue<int>("", this.SellColor.ToInt());
+    storage.SetValue<int>("", this.SellStrokeColor.ToInt());
+    storage.SetValue<bool>("", this.UseAltIcon);
+    storage.SetValue<double>("", this.DrawSize);
   }
 
   internal override T Clone(T _param1)

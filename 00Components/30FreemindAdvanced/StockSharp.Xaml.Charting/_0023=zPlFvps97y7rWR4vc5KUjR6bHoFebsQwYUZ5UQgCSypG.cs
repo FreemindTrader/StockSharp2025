@@ -18,7 +18,7 @@ internal static class \u0023\u003DzPlFvps97y7rWR4vc5KUjR6bHoFebsQwYUZ5UQgCSypG\u
   {
     int length = _param0.GetLength(1);
     if (_param2.GetLength(1) != length)
-      throw new FormatException(XXX.SSS(-539322774));
+      throw new FormatException("");
     for (int index = 0; index < length; ++index)
     {
       double num = _param0[(int) _param1, index];

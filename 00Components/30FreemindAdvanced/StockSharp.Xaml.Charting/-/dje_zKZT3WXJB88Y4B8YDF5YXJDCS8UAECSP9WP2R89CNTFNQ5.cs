@@ -19,7 +19,7 @@ internal sealed class dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCE
   
   private int \u0023\u003Dz3XkQnBHZj9ZA;
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(XXX.SSS(-539433071), typeof (double), typeof (dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register("", typeof (double), typeof (dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
 
   public dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd()
   {
@@ -47,7 +47,7 @@ internal sealed class dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCE
     \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
     \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
   {
-    this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>(XXX.SSS(-539340697));
+    this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>("");
     this.\u0023\u003Dz3XkQnBHZj9ZA = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI(), this.DataPointWidth);
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
     \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5 joeFg518v349a03h5 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() as \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5;
@@ -59,7 +59,7 @@ internal sealed class dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCE
       for (int index = 0; index < num1; ++index)
       {
         \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt> iwzGyvO4YaqDkpiI = joeFg518v349a03h5[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>;
-        double num3 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+        double num3 = iwzGyvO4YaqDkpiI.Property();
         double d1 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003Dz\u0024ktIt4bbVFKI();
         double d2 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003Dzasn0Azw0UwTS();
         if (!double.IsNaN(d1) && !double.IsNaN(d2))

@@ -34,25 +34,25 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register(XXX.SSS(-539349955), typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzEM7rzxveqzC2)));
+  DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register("", typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzEM7rzxveqzC2)));
   
-  public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register(XXX.SSS(-539349935), typeof (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzGbJ0qpVdAcnUICGBTQ\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register("", typeof (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzGbJ0qpVdAcnUICGBTQ\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dzu60E9d4eT7Mh = DependencyProperty.Register(XXX.SSS(-539349009), typeof (Point), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzKY6FELNu43vWrzYtTQ\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzu60E9d4eT7Mh = DependencyProperty.Register("", typeof (Point), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzKY6FELNu43vWrzYtTQ\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzC\u0024IzyRw5kNYh_iGfHw\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349002), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 10.0));
+  public static readonly DependencyProperty \u0023\u003DzC\u0024IzyRw5kNYh_iGfHw\u003D\u003D = DependencyProperty.Register("", typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 10.0));
   
-  public static readonly DependencyProperty \u0023\u003Dz34Mz8ydZLjGnc6U2iA\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349027), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) double.NaN));
+  public static readonly DependencyProperty \u0023\u003Dz34Mz8ydZLjGnc6U2iA\u003D\u003D = DependencyProperty.Register("", typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) double.NaN));
   
-  public static readonly DependencyProperty \u0023\u003DzFo\u0024BkIuazahQFPQ3fw\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349073), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003DzFo\u0024BkIuazahQFPQ3fw\u003D\u003D = DependencyProperty.Register("", typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003DzfVZZZD9CcUaj = DependencyProperty.Register(XXX.SSS(-539349058), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003DzfVZZZD9CcUaj = DependencyProperty.Register("", typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003DzSszmx5ki9KQKy3MkQQ\u003D\u003D = DependencyProperty.Register(XXX.SSS(-539349110), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003DzSszmx5ki9KQKy3MkQQ\u003D\u003D = DependencyProperty.Register("", typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(XXX.SSS(-539428099), typeof (Orientation), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) Orientation.Horizontal));
+  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register("", typeof (Orientation), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) Orientation.Horizontal));
   
-  public static readonly DependencyProperty \u0023\u003DzhdXvBNBQUywn = DependencyProperty.Register(XXX.SSS(-539349393), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 20.0, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzC5gZCRUAbdp9CTKgQg\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzhdXvBNBQUywn = DependencyProperty.Register("", typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 20.0, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzC5gZCRUAbdp9CTKgQg\u003D\u003D)));
   
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzdKNmsVR3XBR\u0024;
   
@@ -279,13 +279,13 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.\u0023\u003DzdKNmsVR3XBR\u0024 = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>(XXX.SSS(-539349377));
-    this.\u0023\u003DzpiJFhBb5bsfa = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>(XXX.SSS(-539349436));
-    this.\u0023\u003DzKbgVW2A4k9IH = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>(XXX.SSS(-539349421));
-    this.\u0023\u003DzJ8xCDlzSVvPT = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>(XXX.SSS(-539349447));
-    this.\u0023\u003Dz6P0zcFDUJreJ = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>(XXX.SSS(-539349499));
-    this.\u0023\u003DzksK80_U\u003D = this.\u0023\u003DzBxuB3iQ\u003D<Border>(XXX.SSS(-539349486));
-    this.\u0023\u003Dz91ieiKM\u003D = this.\u0023\u003DzBxuB3iQ\u003D<Path>(XXX.SSS(-539349252));
+    this.\u0023\u003DzdKNmsVR3XBR\u0024 = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>("");
+    this.\u0023\u003DzpiJFhBb5bsfa = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>("");
+    this.\u0023\u003DzKbgVW2A4k9IH = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>("");
+    this.\u0023\u003DzJ8xCDlzSVvPT = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>("");
+    this.\u0023\u003Dz6P0zcFDUJreJ = this.\u0023\u003DzBxuB3iQ\u003D<dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd>("");
+    this.\u0023\u003DzksK80_U\u003D = this.\u0023\u003DzBxuB3iQ\u003D<Border>("");
+    this.\u0023\u003Dz91ieiKM\u003D = this.\u0023\u003DzBxuB3iQ\u003D<Path>("");
     GeometryCollection geometryCollection = new GeometryCollection();
     this.\u0023\u003DzkjapkNExDEBm = new RectangleGeometry();
     RectangleGeometry rectangleGeometry = new RectangleGeometry()
@@ -441,7 +441,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     pointAnimation.EasingFunction = (IEasingFunction) exponentialEase;
     dexM3dn6RaCrlFgQ2.\u0023\u003DzXB4BRQQhi9cE = pointAnimation;
     Storyboard.SetTarget((DependencyObject) dexM3dn6RaCrlFgQ1.\u0023\u003DzXB4BRQQhi9cE, (DependencyObject) this);
-    Storyboard.SetTargetProperty((DependencyObject) dexM3dn6RaCrlFgQ1.\u0023\u003DzXB4BRQQhi9cE, new PropertyPath(XXX.SSS(-539349009), Array.Empty<object>()));
+    Storyboard.SetTargetProperty((DependencyObject) dexM3dn6RaCrlFgQ1.\u0023\u003DzXB4BRQQhi9cE, new PropertyPath("", Array.Empty<object>()));
     Storyboard storyboard = new Storyboard();
     dexM3dn6RaCrlFgQ1.\u0023\u003DzXB4BRQQhi9cE.Completed += new EventHandler(dexM3dn6RaCrlFgQ1.\u0023\u003DzUrhjvMdypVP4nr450dOZW2HHTvcf);
     storyboard.Duration = (Duration) _param2;
@@ -538,9 +538,9 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     IComparable comparable1 = this.SelectedRange.Min;
     IComparable comparable2 = this.SelectedRange.Max;
     string propertyName = _param2.PropertyName;
-    if (!(propertyName == XXX.SSS(-539442858)))
+    if (!(propertyName == ""))
     {
-      if (propertyName == XXX.SSS(-539442904))
+      if (propertyName == "")
         comparable2 = (IComparable) ((\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D) _param2).\u0023\u003DzPo6XanrX3cHa();
     }
     else

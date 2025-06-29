@@ -22,6 +22,6 @@ internal sealed class \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpN
 
   private static string \u0023\u003Dzq6AEaKs\u003D()
   {
-    return XXX.SSS(-539438281);
+    return "";
   }
 }

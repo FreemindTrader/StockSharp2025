@@ -46,7 +46,7 @@ internal sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 
     if (this.\u0023\u003DzOdcnf0c\u003D() == (Type) null)
     {
       if (string.IsNullOrWhiteSpace(this.\u0023\u003Dz1YkdysghbcyI()))
-        throw new InvalidOperationException(XXX.SSS(-539441870));
+        throw new InvalidOperationException("");
       if (_param1 == null || !(_param1.GetService(typeof (IXamlTypeResolver)) is IXamlTypeResolver service))
         return DependencyProperty.UnsetValue;
       this.\u0023\u003DzvjWtwj8\u003D(service.Resolve(this.\u0023\u003Dz1YkdysghbcyI()));

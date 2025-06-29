@@ -32,9 +32,9 @@ public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
   public ChartPanelShareSettings()
   {
     DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(10, 1);
-    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430598));
-    interpolatedStringHandler.AppendFormatted<DateTime>(DateTime.Now, XXX.SSS(-539430647));
-    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539430640));
+    interpolatedStringHandler.AppendLiteral("");
+    interpolatedStringHandler.AppendFormatted<DateTime>(DateTime.Now, "");
+    interpolatedStringHandler.AppendLiteral("");
     this.\u0023\u003DzPyzhV2NFLw\u0024q = interpolatedStringHandler.ToStringAndClear();
     this.\u0023\u003DzDra\u0024AUHGVB33 = TimeSpan.FromMinutes(5.0);
     // ISSUE: explicit constructor call
@@ -51,7 +51,7 @@ public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
       if (this.\u0023\u003Dz9amTLwDdTF0z == value)
         return;
       this.\u0023\u003Dz9amTLwDdTF0z = value;
-      this.NotifyChanged(XXX.SSS(-539428020));
+      this.NotifyChanged("");
     }
   }
 
@@ -64,11 +64,11 @@ public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
     set
     {
       if (this.\u0023\u003DzDra\u0024AUHGVB33 <= TimeSpan.Zero)
-        throw new ArgumentOutOfRangeException(XXX.SSS(-539430074), LocalizedStrings.InvalidValue);
+        throw new ArgumentOutOfRangeException("", LocalizedStrings.InvalidValue);
       if (this.\u0023\u003DzDra\u0024AUHGVB33 == value)
         return;
       this.\u0023\u003DzDra\u0024AUHGVB33 = value;
-      this.NotifyChanged(XXX.SSS(-539430053));
+      this.NotifyChanged("");
     }
   }
 
@@ -83,7 +83,7 @@ public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
         return;
       this.Published = false;
       this.\u0023\u003DzPyzhV2NFLw\u0024q = value;
-      this.NotifyChanged(XXX.SSS(-539430098));
+      this.NotifyChanged("");
     }
   }
 
@@ -97,7 +97,7 @@ public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
       if (this.\u0023\u003DzU8xSjuFGDDJuii5WcA\u003D\u003D == value)
         return;
       this.\u0023\u003DzU8xSjuFGDDJuii5WcA\u003D\u003D = value;
-      this.NotifyChanged(XXX.SSS(-539430081));
+      this.NotifyChanged("");
     }
   }
 
@@ -105,19 +105,19 @@ public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
   /// <param name="storage">Settings storage.</param>
   public void Load(SettingsStorage storage)
   {
-    this.Period = storage.GetValue<TimeSpan>(XXX.SSS(-539430053), this.Period);
-    this.FileName = storage.GetValue<string>(XXX.SSS(-539430098), this.FileName);
-    this.Published = storage.GetValue<bool>(XXX.SSS(-539430081), this.Published);
-    this.IsEnabled = storage.GetValue<bool>(XXX.SSS(-539428020), this.IsEnabled);
+    this.Period = storage.GetValue<TimeSpan>("", this.Period);
+    this.FileName = storage.GetValue<string>("", this.FileName);
+    this.Published = storage.GetValue<bool>("", this.Published);
+    this.IsEnabled = storage.GetValue<bool>("", this.IsEnabled);
   }
 
   /// <summary>Save settings.</summary>
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<bool>(XXX.SSS(-539428020), this.IsEnabled);
-    storage.SetValue<TimeSpan>(XXX.SSS(-539430053), this.Period);
-    storage.SetValue<string>(XXX.SSS(-539430098), this.FileName);
-    storage.SetValue<bool>(XXX.SSS(-539430081), this.Published);
+    storage.SetValue<bool>("", this.IsEnabled);
+    storage.SetValue<TimeSpan>("", this.Period);
+    storage.SetValue<string>("", this.FileName);
+    storage.SetValue<bool>("", this.Published);
   }
 }

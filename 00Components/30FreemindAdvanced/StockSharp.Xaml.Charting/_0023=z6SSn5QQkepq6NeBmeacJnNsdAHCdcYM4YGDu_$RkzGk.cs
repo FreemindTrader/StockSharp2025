@@ -31,7 +31,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
 
   public int \u0023\u003DzCMB4T5w\u003D() => this.\u0023\u003DzI313B3z6lrj1oSNb8A\u003D\u003D;
 
-  public DateTime \u0023\u003Dzg86amuQ\u003D()
+  public DateTime UtcTime()
   {
     return this._utcTime;
   }
@@ -77,7 +77,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => (double) this.\u0023\u003Dzg86amuQ\u003D().Ticks;
+  public double Property() => (double) this.UtcTime().Ticks;
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D()
@@ -151,7 +151,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
   public CandlePriceLevel \u0023\u003DzHH6Br74\u003D(double _param1, double _param2)
   {
     if (_param2 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539436960), (object) _param2, LocalizedStrings.InvalidValue);
+      throw new ArgumentOutOfRangeException("", (object) _param2, LocalizedStrings.InvalidValue);
     lock (this.\u0023\u003DzqaMm3lQ\u003D)
     {
       \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D ww2IeiAf0VerjZev4 = new \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D();
@@ -176,7 +176,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
     double _param1)
   {
     if (_param1 <= 0.0)
-      throw new ArgumentOutOfRangeException(XXX.SSS(-539436939), (object) _param1, LocalizedStrings.InvalidValue);
+      throw new ArgumentOutOfRangeException("", (object) _param1, LocalizedStrings.InvalidValue);
     lock (this.\u0023\u003DzqaMm3lQ\u003D)
     {
       (KeyValuePair<double, CandlePriceLevel>[], SortedDictionary<double, CandlePriceLevel>, Decimal) tuple;

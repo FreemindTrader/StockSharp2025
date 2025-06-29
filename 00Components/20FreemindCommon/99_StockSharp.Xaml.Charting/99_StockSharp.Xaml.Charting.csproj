@@ -1,0 +1,186 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\fx.packages.props" />
+	<PropertyGroup>
+		<RootNamespace>StockSharp.Xaml.Charting</RootNamespace>
+		<AssemblyName>StockSharp.Xaml.Charting</AssemblyName>
+		<PackageId>StockSharp.Xaml.Charting</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{093B5170-C467-4856-8DD1-9487A9211642}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<TargetFrameworks>net9.0-windows7</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
+		<UseWPF>true</UseWPF>
+		<NoWarn>CA1416</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<SourceRoot Include="../" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Chronos\**" />
+		<Compile Remove="Properties\**" />
+		<EmbeddedResource Remove="Chronos\**" />
+		<EmbeddedResource Remove="Properties\**" />
+		<None Remove="Chronos\**" />
+		<None Remove="Properties\**" />
+		<Page Remove="Chronos\**" />
+		<Page Remove="Properties\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="StockSharp\Xaml\Charting\Images\00Long_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\00Negative_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\00Positive_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\BearishEngulfing_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\BullishEngulfing_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\DarkcloudCover_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\EveningStar_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\GreenDoji_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\GreenHammer_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\GreenShootingStar_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\Hammer_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\MorningStar_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\Piercing_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\RedDoji_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\RedShootingStar_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Candles\TriStars_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\CircularScales\IconLondon.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\CircularScales\IconMoscow.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\CircularScales\IconNewYork.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\CircularScales\Shadow.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\ExitOverSold2_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\GreenStar16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\HiddenNegative16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\HiddenPositive16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\ImpHiddenNegative16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\ImpHiddenPositive16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\RedLight_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\RedStar16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\Refresh_16x16.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\timeFibLucas.png" />
+		<None Remove="StockSharp\Xaml\Charting\Images\TrailingStop2_16x16.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.*" />
+		<PackageReference Include="StockSharp.Xaml" Version="5.0.*" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="StockSharp\Xaml\Charting\Images\00Long_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\00Negative_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\00Positive_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\BearishEngulfing_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\BullishEngulfing_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\DarkcloudCover_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\EveningStar_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\GreenDoji_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\GreenHammer_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\GreenShootingStar_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\Hammer_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\MorningStar_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\Piercing_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\RedDoji_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\RedShootingStar_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Candles\TriStars_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\CircularScales\IconLondon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\CircularScales\IconMoscow.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\CircularScales\IconNewYork.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\CircularScales\Shadow.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\ExitOverSold2_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\GreenStar16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\HiddenNegative16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\HiddenPositive16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\ImpHiddenNegative16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\ImpHiddenPositive16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\RedLight_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\RedStar16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\Refresh_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\timeFibLucas.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="StockSharp\Xaml\Charting\Images\TrailingStop2_16x16.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="themes\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+</Project>
+

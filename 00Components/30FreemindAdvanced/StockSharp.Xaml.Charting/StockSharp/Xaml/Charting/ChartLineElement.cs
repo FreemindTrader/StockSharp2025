@@ -73,7 +73,7 @@ public class ChartLineElement :
         return;
       this.\u0023\u003Dzfzo3Zt0\u003D = value;
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(XXX.SSS(-539433444));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -88,7 +88,7 @@ public class ChartLineElement :
     {
       this.\u0023\u003DzqIZHmBRa0Zhe = value;
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(XXX.SSS(-539433418));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -103,9 +103,9 @@ public class ChartLineElement :
     {
       if (this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D == value)
         return;
-      this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D = value >= 1 ? value : throw new ArgumentOutOfRangeException(XXX.SSS(-539428545), (object) value, LocalizedStrings.InvalidValue);
+      this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D = value >= 1 ? value : throw new ArgumentOutOfRangeException("", (object) value, LocalizedStrings.InvalidValue);
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(XXX.SSS(-539434641));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -119,7 +119,7 @@ public class ChartLineElement :
     set
     {
       this.\u0023\u003DzCGVfeT7yJc5e = value;
-      this.RaisePropertyChanged(XXX.SSS(-539434635));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -134,10 +134,10 @@ public class ChartLineElement :
     {
       if (this.\u0023\u003DzOoq7N0E\u003D == value)
         return;
-      this.RaisePropertyValueChanging(XXX.SSS(-539433382), (object) value);
+      this.RaisePropertyValueChanging("", (object) value);
       this.\u0023\u003DzOoq7N0E\u003D = value;
       this.DrawTemplate = (ControlTemplate) null;
-      this.RaisePropertyChanged(XXX.SSS(-539433382));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -149,7 +149,7 @@ public class ChartLineElement :
     set
     {
       this.\u0023\u003Dzvu7bxO54zKRR = value;
-      this.RaisePropertyChanged(XXX.SSS(-539434714));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -166,7 +166,7 @@ public class ChartLineElement :
     set
     {
       this.\u0023\u003DzR0PVnrfRD9\u0024B = value;
-      this.RaisePropertyChanged(XXX.SSS(-539428560));
+      this.RaisePropertyChanged("");
     }
   }
 
@@ -216,7 +216,7 @@ public class ChartLineElement :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.\u0023\u003DzaZ5Qc3xeNY95((IChartLineElement) this);
+    IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.GetCandleRelatedData((IChartLineElement) this);
     return ienumerableEx != null && !CollectionHelper.IsEmpty<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>) ienumerableEx) && ((IDrawableChartElement) this).StartDrawing(ienumerableEx);
   }
 
@@ -225,12 +225,12 @@ public class ChartLineElement :
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    this.Color = XamlHelper.ToColor(storage.GetValue<int>(XXX.SSS(-539433444), this.Color.ToInt()));
-    this.AdditionalColor = XamlHelper.ToColor(storage.GetValue<int>(XXX.SSS(-539433418), this.AdditionalColor.ToInt()));
-    this.StrokeThickness = storage.GetValue<int>(XXX.SSS(-539434641), this.StrokeThickness);
-    this.AntiAliasing = storage.GetValue<bool>(XXX.SSS(-539434635), this.AntiAliasing);
-    this.Style = storage.GetValue<DrawStyles>(XXX.SSS(-539433382), this.Style);
-    this.ShowAxisMarker = storage.GetValue<bool>(XXX.SSS(-539434714), this.ShowAxisMarker);
+    this.Color = XamlHelper.ToColor(storage.GetValue<int>("", this.Color.ToInt()));
+    this.AdditionalColor = XamlHelper.ToColor(storage.GetValue<int>("", this.AdditionalColor.ToInt()));
+    this.StrokeThickness = storage.GetValue<int>("", this.StrokeThickness);
+    this.AntiAliasing = storage.GetValue<bool>("", this.AntiAliasing);
+    this.Style = storage.GetValue<DrawStyles>("", this.Style);
+    this.ShowAxisMarker = storage.GetValue<bool>("", this.ShowAxisMarker);
   }
 
   /// <summary>Save settings.</summary>
@@ -238,12 +238,12 @@ public class ChartLineElement :
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<int>(XXX.SSS(-539433444), this.Color.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539433418), this.AdditionalColor.ToInt());
-    storage.SetValue<int>(XXX.SSS(-539434641), this.StrokeThickness);
-    storage.SetValue<bool>(XXX.SSS(-539434635), this.AntiAliasing);
-    storage.SetValue<string>(XXX.SSS(-539433382), Converter.To<string>((object) this.Style));
-    storage.SetValue<bool>(XXX.SSS(-539434714), this.ShowAxisMarker);
+    storage.SetValue<int>("", this.Color.ToInt());
+    storage.SetValue<int>("", this.AdditionalColor.ToInt());
+    storage.SetValue<int>("", this.StrokeThickness);
+    storage.SetValue<bool>("", this.AntiAliasing);
+    storage.SetValue<string>("", Converter.To<string>((object) this.Style));
+    storage.SetValue<bool>("", this.ShowAxisMarker);
   }
 
   internal override ChartLineElement Clone(ChartLineElement _param1)

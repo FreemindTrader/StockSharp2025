@@ -44,7 +44,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   #nullable disable
   ChartArea \u0023\u003DzeckSod0\u003D;
   
-  private readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D \u0023\u003DzfS3q6Qc\u003D;
+  private readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D _annotationMap;
   
   private readonly PairSet<AnnotationBase, ChartAnnotation> \u0023\u003DzCqbxaY8TFdGX = new PairSet<AnnotationBase, ChartAnnotation>();
   
@@ -56,7 +56,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   
   private dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd \u0023\u003DzUdabyQU\u003D;
   
-  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register(XXX.SSS(-539330433), typeof (ChartAnnotationTypes), typeof (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzLJLGN_0FzU1B)));
+  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register("", typeof (ChartAnnotationTypes), typeof (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzLJLGN_0FzU1B)));
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -65,8 +65,8 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D _param2)
   {
     this.InitializeComponent();
-    this.\u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539330159));
-    this.\u0023\u003DzfS3q6Qc\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539330454));
+    this.\u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException("");
+    this._annotationMap = _param2 ?? throw new ArgumentNullException("");
   }
 
   private Chart \u0023\u003DzGuZ8w82B3fMJ() => this.\u0023\u003DzeckSod0\u003D.Chart as Chart;
@@ -135,14 +135,14 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   {
     if (_param1 == ChartAnnotationTypes.None)
     {
-      CollectionHelper.ForEach<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>((IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>) this.\u0023\u003DzfS3q6Qc\u003D, dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D ?? (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D = new Action<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzf_OX3zxNZIoqduZEY_a_\u0024gQ\u003D)));
+      CollectionHelper.ForEach<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>((IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>) this._annotationMap, dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D ?? (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D = new Action<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzf_OX3zxNZIoqduZEY_a_\u0024gQ\u003D)));
       this.AnnotationType = (Type) null;
       this.IsEnabled = false;
     }
     else
     {
       Type type = _param1.\u0023\u003Dz6wKFLhaRAAzr();
-      string key = type.Name + XXX.SSS(-539433382);
+      string key = type.Name + "";
       if (this.Resources.Contains((object) key))
         this.AnnotationStyle = (Style) this.Resources[(object) key];
       this.AnnotationType = type;
@@ -203,14 +203,14 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     PopupMenu popupMenu1 = new PopupMenu();
     CommonBarItemCollection items1 = popupMenu1.Items;
     BarButtonItem barButtonItem1 = new BarButtonItem();
-    barButtonItem1.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328527));
-    barButtonItem1.Content = (object) (LocalizedStrings.Properties + XXX.SSS(-539330490));
+    barButtonItem1.Glyph = ThemedIconsExtension.GetImage("");
+    barButtonItem1.Content = (object) (LocalizedStrings.Properties + "");
     barButtonItem1.Command = (ICommand) new DelegateCommand<AnnotationBase>(new Action<AnnotationBase>(jq9Llz3ahZ2LrQl4.\u0023\u003Dzn4dNgi0mxbbCP\u0024DWxprQswg\u003D));
     barButtonItem1.CommandParameter = (object) jq9Llz3ahZ2LrQl4.\u0023\u003DzLXiKo\u0024A\u003D;
     items1.Add((IBarItem) barButtonItem1);
     CommonBarItemCollection items2 = popupMenu1.Items;
     BarButtonItem barButtonItem2 = new BarButtonItem();
-    barButtonItem2.Glyph = ThemedIconsExtension.GetImage(XXX.SSS(-539328570));
+    barButtonItem2.Glyph = ThemedIconsExtension.GetImage("");
     barButtonItem2.Content = (object) LocalizedStrings.Delete;
     barButtonItem2.Command = (ICommand) jq9Llz3ahZ2LrQl4.\u0023\u003DztKpRxYMDxV\u00243;
     barButtonItem2.CommandParameter = (object) jq9Llz3ahZ2LrQl4.\u0023\u003DzLXiKo\u0024A\u003D;
@@ -357,7 +357,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     AnnotationBase annotationBase;
     if (!this.\u0023\u003DzCqbxaY8TFdGX.TryGetKey(_param1, ref annotationBase))
       return;
-    this.\u0023\u003DzfS3q6Qc\u003D.Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) annotationBase);
+    this._annotationMap.Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) annotationBase);
     ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzCqbxaY8TFdGX).Remove(annotationBase);
     ((ICollection<IChartElement>) this.\u0023\u003DzeckSod0\u003D.Elements).Remove((IChartElement) _param1);
     this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003DzXartur54T48t(_param1);
@@ -382,7 +382,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
       this.\u0023\u003DzbSFwQBfxHeQf(z2vouRgM, num != 0);
       this.\u0023\u003DzIehZCHK_gy_6(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D);
       ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzCqbxaY8TFdGX)[vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D] = _param1;
-      this.\u0023\u003DzfS3q6Qc\u003D.Add((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D);
+      this._annotationMap.Add((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D);
       this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003Dz49m\u0024QLWwKQs9(_param1);
     }
     vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
@@ -509,7 +509,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539330471), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
@@ -539,7 +539,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
         if (!(_param1.\u0023\u003DzFlkZpfJp6G9R is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D zFlkZpfJp6G9R))
           throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[1]
           {
-            (object) XXX.SSS(-539330305)
+            (object) ""
           }));
         return (IComparable) new DateTimeOffset(zFlkZpfJp6G9R.\u0023\u003DzWZQlXHuDrnKc(num1), TimeSpan.Zero);
       case DateTime dateTime:
@@ -663,7 +663,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     internal void \u0023\u003DqkJAvLS57TQDltohwMlvUc8ToXY9\u0024wVsEDT1RmCTmQAl1TTvH5MP818enEgRePrx8(
       AnnotationBase _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzfS3q6Qc\u003D.Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) _param1);
+      this.\u0023\u003DzRRvwDu67s9Rm._annotationMap.Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) _param1);
       ChartAnnotation chartAnnotation;
       if (!((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzCqbxaY8TFdGX).TryGetValue(_param1, ref chartAnnotation))
         return;

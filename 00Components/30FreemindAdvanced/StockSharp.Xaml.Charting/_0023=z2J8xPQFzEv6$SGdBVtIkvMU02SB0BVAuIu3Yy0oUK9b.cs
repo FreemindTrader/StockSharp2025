@@ -120,7 +120,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     }
   }
 
-  public double \u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D()
+  public double PriceStep()
   {
     return this._priceStep;
   }
@@ -183,7 +183,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     internal double \u0023\u003DzOePUav1PfFtlcVZNiBhoHIg\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
-      return _param1.\u0023\u003Dz2_4KSTY\u003D();
+      return _param1.Property();
     }
 
     internal double \u0023\u003Dz0nru\u00248Fswh\u0024ovgKXz5qhZKM\u003D(

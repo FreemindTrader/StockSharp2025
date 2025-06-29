@@ -43,8 +43,8 @@ internal sealed class ParentVM :
     IScichartSurfaceVM _param1,
     IfxChartElement _param2)
   {
-    this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException(XXX.SSS(-539329564));
-    this.\u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D = _param2 ?? throw new ArgumentNullException(XXX.SSS(-539329543));
+    this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException("");
+    this.\u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D = _param2 ?? throw new ArgumentNullException("");
     this.\u0023\u003DzltAOnz7pENYNz4RZiZiGFJ7j3MDa = _param2 is IChartCandleElement;
     \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj(new Action(this.\u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY));
     this.ChartElement.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzqKjZcEftBQYu8FctY__O05c\u003D);
@@ -101,27 +101,27 @@ internal sealed class ParentVM :
   {
     UIBaseVM[] array = _param1.ToArray<UIBaseVM>();
     if (CollectionHelper.IsEmpty<UIBaseVM>(array))
-      throw new ArgumentException(XXX.SSS(-539329550));
+      throw new ArgumentException("");
     this.\u0023\u003DzH31vDNM\u003D.AddRange((IEnumerable<UIBaseVM>) array);
     if (this.IsCandleElement && this.Candles == null)
       this.Candles = array.OfType<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D>().First<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D>();
     if (this.\u0023\u003DzH31vDNM\u003D.Count == 1)
-      this.MapPropertyChangeNotification((INotifyPropertyChanged) this.\u0023\u003DzH31vDNM\u003D[0].Element, XXX.SSS(-539433444), XXX.SSS(-539433444));
+      this.MapPropertyChangeNotification((INotifyPropertyChanged) this.\u0023\u003DzH31vDNM\u003D[0].Element, "", "");
     CollectionHelper.ForEach<UIBaseVM>((IEnumerable<UIBaseVM>) array, new Action<UIBaseVM>(this.\u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D));
   }
 
   private void \u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY()
   {
-    this.NotifyChanged(XXX.SSS(-539329580));
+    this.NotifyChanged("");
   }
 
   public void \u0023\u003Dzfc4TzKM\u003D(
     \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy _param1)
   {
     if (_param1 == null)
-      throw new ArgumentNullException(XXX.SSS(-539329632));
+      throw new ArgumentNullException("");
     if (this.\u0023\u003Dz10jqvLI\u003D.Contains(_param1))
-      throw new ArgumentException(XXX.SSS(-539329611));
+      throw new ArgumentException("");
     _param1.Parent = this;
     this.\u0023\u003Dz10jqvLI\u003D.Add(_param1);
   }
@@ -180,9 +180,9 @@ internal sealed class ParentVM :
     object? _param1,
     PropertyChangedEventArgs _param2)
   {
-    if (!(_param2.PropertyName == XXX.SSS(-539427760)))
+    if (!(_param2.PropertyName == ""))
       return;
-    this.NotifyChanged(XXX.SSS(-539431078));
+    this.NotifyChanged("");
   }
 
   private void \u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D(

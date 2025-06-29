@@ -31,21 +31,21 @@ internal abstract class AnnotationBase :
   IXmlSerializable,
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D
 {
-  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(XXX.SSS(-539427791), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) XXX.SSS(-539431487), new PropertyChangedCallback(AnnotationBase.OnXAxisIdChanged)));
-  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(XXX.SSS(-539427833), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) XXX.SSS(-539431487), new PropertyChangedCallback(AnnotationBase.OnYAxisIdChanged)));
-  public static readonly DependencyProperty X1Property = DependencyProperty.Register(XXX.SSS(-539434477), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty Y1Property = DependencyProperty.Register(XXX.SSS(-539434262), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty X2Property = DependencyProperty.Register(XXX.SSS(-539434243), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty Y2Property = DependencyProperty.Register(XXX.SSS(-539434252), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty AnnotationCanvasProperty = DependencyProperty.Register(XXX.SSS(-539341973), typeof (\u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D), typeof (AnnotationBase), new PropertyMetadata((object) \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.AboveChart, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
-  public static readonly DependencyProperty CoordinateModeProperty = DependencyProperty.Register(XXX.SSS(-539427489), typeof (AnnotationCoordinateMode), typeof (AnnotationBase), new PropertyMetadata((object) AnnotationCoordinateMode.Absolute, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
-  public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register(XXX.SSS(-539439396), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsSelectedChanged)));
-  public static readonly DependencyProperty IsEditableProperty = DependencyProperty.Register(XXX.SSS(-539434496), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsEditableChanged)));
-  public static readonly DependencyProperty IsHiddenProperty = DependencyProperty.Register(XXX.SSS(-539439409), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsHiddenChanged)));
-  public static readonly DependencyProperty DragDirectionsProperty = DependencyProperty.Register(XXX.SSS(-539341968), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (AnnotationBase), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
-  public static readonly DependencyProperty ResizeDirectionsProperty = DependencyProperty.Register(XXX.SSS(-539341985), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (AnnotationBase), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
-  public static readonly DependencyProperty CanEditTextProperty = DependencyProperty.Register(XXX.SSS(-539342044), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false));
-  public static readonly DependencyProperty ResizingGripsStyleProperty = DependencyProperty.Register(XXX.SSS(-539342026), typeof (Style), typeof (AnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register("", typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "", new PropertyChangedCallback(AnnotationBase.OnXAxisIdChanged)));
+  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register("", typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "", new PropertyChangedCallback(AnnotationBase.OnYAxisIdChanged)));
+  public static readonly DependencyProperty X1Property = DependencyProperty.Register("", typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+  public static readonly DependencyProperty Y1Property = DependencyProperty.Register("", typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+  public static readonly DependencyProperty X2Property = DependencyProperty.Register("", typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+  public static readonly DependencyProperty Y2Property = DependencyProperty.Register("", typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+  public static readonly DependencyProperty AnnotationCanvasProperty = DependencyProperty.Register("", typeof (\u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D), typeof (AnnotationBase), new PropertyMetadata((object) \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.AboveChart, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
+  public static readonly DependencyProperty CoordinateModeProperty = DependencyProperty.Register("", typeof (AnnotationCoordinateMode), typeof (AnnotationBase), new PropertyMetadata((object) AnnotationCoordinateMode.Absolute, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
+  public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register("", typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsSelectedChanged)));
+  public static readonly DependencyProperty IsEditableProperty = DependencyProperty.Register("", typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsEditableChanged)));
+  public static readonly DependencyProperty IsHiddenProperty = DependencyProperty.Register("", typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsHiddenChanged)));
+  public static readonly DependencyProperty DragDirectionsProperty = DependencyProperty.Register("", typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (AnnotationBase), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
+  public static readonly DependencyProperty ResizeDirectionsProperty = DependencyProperty.Register("", typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (AnnotationBase), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
+  public static readonly DependencyProperty CanEditTextProperty = DependencyProperty.Register("", typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty ResizingGripsStyleProperty = DependencyProperty.Register("", typeof (Style), typeof (AnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
   private bool _isAttached;
   private bool _templateApplied;
   protected FrameworkElement AnnotationRoot;
@@ -141,7 +141,7 @@ internal abstract class AnnotationBase :
     protected set
     {
       this._isResizable = value;
-      this.\u0023\u003Dz15moWio\u003D(XXX.SSS(-539342055));
+      this.\u0023\u003Dz15moWio\u003D("");
     }
   }
 
@@ -599,7 +599,7 @@ internal abstract class AnnotationBase :
       case \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.XAxis:
         return this.XAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.XAxis.get_ModifierAxisCanvas();
       default:
-        throw new InvalidOperationException(string.Format(XXX.SSS(-539341845), (object) annotationCanvas));
+        throw new InvalidOperationException(string.Format("", (object) annotationCanvas));
     }
   }
 
@@ -620,7 +620,7 @@ internal abstract class AnnotationBase :
     DependencyPropertyChangedEventArgs e)
   {
     ((AnnotationBase) d).Refresh();
-    ((\u0023\u003DzHHCBm9UpsKz28K2k\u002432Cv_vXeGtDJsjTomycKYo\u003D) d).\u0023\u003Dz15moWio\u003D(XXX.SSS(-539429164));
+    ((\u0023\u003DzHHCBm9UpsKz28K2k\u002432Cv_vXeGtDJsjTomycKYo\u003D) d).\u0023\u003Dz15moWio\u003D("");
   }
 
   public void UpdatePosition(Point point1, Point point2)
@@ -660,7 +660,7 @@ internal abstract class AnnotationBase :
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis)
   {
     if (axis == null)
-      throw new ArgumentNullException(XXX.SSS(-539341909));
+      throw new ArgumentNullException("");
     dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd ks34Z259A4NengcEjd = axis.IsHorizontalAxis ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
     return this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection ? this.FromRelativeCoordinate(coord, axis) : (!(axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0) ? axis.\u0023\u003DzACwLhyc\u003D(coord) : (IComparable) (int) q9i0MXI7Qb9c1V6c0.\u0023\u003DzACwLhyc\u003D(coord));
   }

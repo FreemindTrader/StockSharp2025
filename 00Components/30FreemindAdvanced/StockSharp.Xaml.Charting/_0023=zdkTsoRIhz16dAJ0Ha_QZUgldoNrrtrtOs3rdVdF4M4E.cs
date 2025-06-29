@@ -41,7 +41,7 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
     this.\u0023\u003DzMifOEAM\u003D = _param1;
   }
 
-  public double \u0023\u003Dz2_4KSTY\u003D() => this.\u0023\u003DzMifOEAM\u003D.dje_z3GBAX47U_ejd;
+  public double Property() => this.\u0023\u003DzMifOEAM\u003D.dje_z3GBAX47U_ejd;
 
   public void \u0023\u003Dz_3Cn97k\u003D(double _param1)
   {
@@ -185,14 +185,14 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
     double _param1,
     out \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param2)
   {
-    _param2 = new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param0.\u0023\u003Dz2_4KSTY\u003D() * _param1, _param0.\u0023\u003Dzu7q98_E\u003D() * _param1, _param0.\u0023\u003DzM49\u0024G3E\u003D() * _param1, _param0.\u0023\u003DzMFog0bw\u003D() * _param1);
+    _param2 = new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param0.Property() * _param1, _param0.\u0023\u003Dzu7q98_E\u003D() * _param1, _param0.\u0023\u003DzM49\u0024G3E\u003D() * _param1, _param0.\u0023\u003DzMFog0bw\u003D() * _param1);
   }
 
   public static \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La \u0023\u003DzQw38IaY\u003D(
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param0,
     double _param1)
   {
-    return new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param0.\u0023\u003Dz2_4KSTY\u003D() * _param1, _param0.\u0023\u003Dzu7q98_E\u003D() * _param1, _param0.\u0023\u003DzM49\u0024G3E\u003D() * _param1, _param0.\u0023\u003DzMFog0bw\u003D() * _param1);
+    return new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param0.Property() * _param1, _param0.\u0023\u003Dzu7q98_E\u003D() * _param1, _param0.\u0023\u003DzM49\u0024G3E\u003D() * _param1, _param0.\u0023\u003DzMFog0bw\u003D() * _param1);
   }
 
   public static \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La \u0023\u003DzTDh7ErbqcAK3mttFEQ\u003D\u003D(
@@ -346,7 +346,7 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
     double _param0,
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param1)
   {
-    return new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param1.\u0023\u003Dz2_4KSTY\u003D() * _param0, _param1.\u0023\u003Dzu7q98_E\u003D() * _param0, _param1.\u0023\u003DzM49\u0024G3E\u003D() * _param0, _param1.\u0023\u003DzMFog0bw\u003D() * _param0);
+    return new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param1.Property() * _param0, _param1.\u0023\u003Dzu7q98_E\u003D() * _param0, _param1.\u0023\u003DzM49\u0024G3E\u003D() * _param0, _param1.\u0023\u003DzMFog0bw\u003D() * _param0);
   }
 
   public static bool operator ==(
@@ -365,7 +365,7 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539323233), (object) this.\u0023\u003Dz9wx8aZCn12QF(), (object) this.\u0023\u003DzMFog0bw\u003D());
+    return string.Format("", (object) this.\u0023\u003Dz9wx8aZCn12QF(), (object) this.\u0023\u003DzMFog0bw\u003D());
   }
 
   public override bool Equals(object _param1)

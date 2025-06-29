@@ -112,6 +112,6 @@ internal sealed class \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8eR8oEA21xqJyoe0lH8\u003D
 
   public override string ToString()
   {
-    return string.Format(XXX.SSS(-539442031), (object) this.\u0023\u003DzZ85DqsktXJL3(), (object) this.\u0023\u003Dzgq30Jn5PclK8());
+    return string.Format("", (object) this.\u0023\u003DzZ85DqsktXJL3(), (object) this.\u0023\u003Dzgq30Jn5PclK8());
   }
 }

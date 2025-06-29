@@ -102,7 +102,7 @@ public void \u0023\u003Dzfd2adzY\u003D(
     ParentVM _param1)
   {
     if (this.GetParentVM() != null)
-      throw new InvalidOperationException(XXX.SSS(-539329988));
+      throw new InvalidOperationException("");
 this.SetParentVM(_param1);
 this.\u0023\u003DzY0x9JtY\u003D();
 this.\u0023\u003DzYI36Ggg\u003D();
@@ -141,8 +141,8 @@ protected void \u0023\u003Dz7GhHTEkMkDYT(
     AxisMarkerAnnotation markerAnnotation2 = markerAnnotation1;
     this._renderseries2AxisMarker[_param1] = markerAnnotation2;
     this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzIeZhoes\u003D(this.RootElem, (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) markerAnnotation2, (object)markerAnnotation2);
-    markerAnnotation2.SetBindings(AnnotationBase.XAxisIdProperty, (object)_param2, XXX.SSS(-539427791));
-    markerAnnotation2.SetBindings(AnnotationBase.YAxisIdProperty, (object)_param2, XXX.SSS(-539427833));
+    markerAnnotation2.SetBindings(AnnotationBase.XAxisIdProperty, (object)_param2, "");
+    markerAnnotation2.SetBindings(AnnotationBase.YAxisIdProperty, (object)_param2, "");
     AxisMarkerAnnotation markerAnnotation3 = markerAnnotation2;
     DependencyProperty isHiddenProperty = AnnotationBase.IsHiddenProperty;
     BoolAnyConverter conv = new BoolAnyConverter();

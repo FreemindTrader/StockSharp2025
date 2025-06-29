@@ -60,13 +60,13 @@ public class CandlePatternIndicatorPainter : BaseChartIndicatorPainter<CandlePat
   public override void Load(SettingsStorage storage)
   {
     base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.PatternElement, storage, XXX.SSS(-539443196));
+    PersistableHelper.Load((IPersistable) this.PatternElement, storage, "");
   }
 
   /// <inheritdoc />
   public override void Save(SettingsStorage storage)
   {
     base.Save(storage);
-    storage.SetValue<SettingsStorage>(XXX.SSS(-539443196), PersistableHelper.Save((IPersistable) this.PatternElement));
+    storage.SetValue<SettingsStorage>("", PersistableHelper.Save((IPersistable) this.PatternElement));
   }
 }

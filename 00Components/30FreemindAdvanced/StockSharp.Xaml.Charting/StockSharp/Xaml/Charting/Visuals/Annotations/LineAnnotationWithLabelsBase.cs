@@ -25,20 +25,20 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
 {
-  public static readonly DependencyProperty ShowLabelProperty = DependencyProperty.Register(XXX.SSS(-539434314), typeof (bool), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) false, new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnShowLabelChanged)));
-  protected internal static readonly DependencyProperty DefaultLabelValueProperty = DependencyProperty.Register(XXX.SSS(-539343065), typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
-  protected static readonly DependencyProperty DefaultTextFormattingProperty = DependencyProperty.Register(XXX.SSS(-539430181), typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
-  public static readonly DependencyProperty LabelPlacementProperty = DependencyProperty.Register(XXX.SSS(-539434362), typeof (LabelPlacement), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) LabelPlacement.Auto));
-  public static readonly DependencyProperty LabelValueProperty = DependencyProperty.Register(XXX.SSS(-539343020), typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) null));
-  public static readonly DependencyProperty LabelTextFormattingProperty = DependencyProperty.Register(XXX.SSS(-539343089), typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) string.Empty, new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnLabelTextFormattingChanged)));
-  public static readonly DependencyProperty FormattedLabelProperty = DependencyProperty.Register(XXX.SSS(-539343087), typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) string.Empty));
-  public static readonly DependencyProperty AnnotationLabelsProperty = DependencyProperty.Register(XXX.SSS(-539342852), typeof (ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata(new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnAnnotationLabelsChanged)));
+  public static readonly DependencyProperty ShowLabelProperty = DependencyProperty.Register("", typeof (bool), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) false, new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnShowLabelChanged)));
+  protected internal static readonly DependencyProperty DefaultLabelValueProperty = DependencyProperty.Register("", typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
+  protected static readonly DependencyProperty DefaultTextFormattingProperty = DependencyProperty.Register("", typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty LabelPlacementProperty = DependencyProperty.Register("", typeof (LabelPlacement), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) LabelPlacement.Auto));
+  public static readonly DependencyProperty LabelValueProperty = DependencyProperty.Register("", typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty LabelTextFormattingProperty = DependencyProperty.Register("", typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) string.Empty, new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnLabelTextFormattingChanged)));
+  public static readonly DependencyProperty FormattedLabelProperty = DependencyProperty.Register("", typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) string.Empty));
+  public static readonly DependencyProperty AnnotationLabelsProperty = DependencyProperty.Register("", typeof (ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata(new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnAnnotationLabelsChanged)));
   private \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h _xyValueConverter;
 
   protected LineAnnotationWithLabelsBase()
   {
     this.AnnotationLabels = new ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>();
-    Binding binding = new Binding(XXX.SSS(-539343020))
+    Binding binding = new Binding("")
     {
       Source = (object) this,
       Mode = BindingMode.OneWay,
@@ -174,7 +174,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   {
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.GetUsedAxis();
     this._xyValueConverter = this._xyValueConverter ?? (this._xyValueConverter = new \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h(this));
-    Binding binding1 = new Binding(usedAxis == null || !usedAxis.\u0023\u003DzFrVmckt\u0024NpG6() ? XXX.SSS(-539434262) : XXX.SSS(-539434477))
+    Binding binding1 = new Binding(usedAxis == null || !usedAxis.\u0023\u003DzFrVmckt\u0024NpG6() ? "" : "")
     {
       Source = (object) this,
       Converter = (IValueConverter) this._xyValueConverter
@@ -182,7 +182,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     this.SetBinding(LineAnnotationWithLabelsBase.DefaultLabelValueProperty, (BindingBase) binding1);
     if (usedAxis == null)
       return;
-    Binding binding2 = new Binding(XXX.SSS(-539433005))
+    Binding binding2 = new Binding("")
     {
       Source = (object) usedAxis
     };
@@ -227,8 +227,8 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   public override void OnApplyTemplate()
   {
     this.DetachLabels((IEnumerable<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) this.AnnotationLabels);
-    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>(XXX.SSS(-539343715));
-    this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>(XXX.SSS(-539343005));
+    this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>("");
+    this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>("");
     this.AttachLabels((IEnumerable<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) this.AnnotationLabels);
     this.Refresh();
   }
@@ -248,13 +248,13 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   public dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd AddLabel()
   {
     dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd c52EkqS76HuN2Ejd = new dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd();
-    Binding binding1 = new Binding(XXX.SSS(-539434362))
+    Binding binding1 = new Binding("")
     {
       Source = (object) this,
       Mode = BindingMode.OneWay
     };
     c52EkqS76HuN2Ejd.SetBinding(dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd.\u0023\u003DzbhlExb5p620n, (BindingBase) binding1);
-    Binding binding2 = new Binding(XXX.SSS(-539342907))
+    Binding binding2 = new Binding("")
     {
       Source = (object) this,
       Mode = BindingMode.OneWay

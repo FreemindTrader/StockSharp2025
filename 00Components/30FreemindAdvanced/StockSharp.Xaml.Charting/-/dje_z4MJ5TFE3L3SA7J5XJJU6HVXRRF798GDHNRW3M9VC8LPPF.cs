@@ -20,23 +20,23 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
   
-  public static readonly DependencyProperty \u0023\u003DzfMw6oHlwmSrk = DependencyProperty.Register(XXX.SSS(-539428268), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DzfMw6oHlwmSrk = DependencyProperty.Register("", typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty \u0023\u003Dzo\u0024LE3hIlM1nJ = DependencyProperty.Register(XXX.SSS(-539428313), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllSeries, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzo\u0024LE3hIlM1nJ = DependencyProperty.Register("", typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllSeries, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzjgUJSc8xvO\u00243 = DependencyProperty.Register(XXX.SSS(-539428340), typeof (dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd.Inside));
+  public static readonly DependencyProperty \u0023\u003DzjgUJSc8xvO\u00243 = DependencyProperty.Register("", typeof (dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd.Inside));
   
-  public static readonly DependencyProperty \u0023\u003DziGoZCH2CaVRc = DependencyProperty.Register(XXX.SSS(-539428326), typeof (DataTemplate), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DziGoZCH2CaVRc = DependencyProperty.Register("", typeof (DataTemplate), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(XXX.SSS(-539428099), typeof (Orientation), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) Orientation.Vertical));
+  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register("", typeof (Orientation), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) Orientation.Vertical));
   
-  public static readonly DependencyProperty \u0023\u003DzGEpRUSytcG_B = DependencyProperty.Register(XXX.SSS(-539428145), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzGEpRUSytcG_B = DependencyProperty.Register("", typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) true));
   
-  public static readonly DependencyProperty \u0023\u003DzR_CKkzERxHn9SGnaiYrSxEE\u003D = DependencyProperty.Register(XXX.SSS(-539434381), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzR_CKkzERxHn9SGnaiYrSxEE\u003D = DependencyProperty.Register("", typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) true));
   
-  public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register(XXX.SSS(-539432195), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dzg1\u0024yrcyUCpiA)));
+  public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register("", typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dzg1\u0024yrcyUCpiA)));
   
-  public static readonly DependencyProperty \u0023\u003DzbE0mDiZUf80q = DependencyProperty.Register(XXX.SSS(-539428137), typeof (ControlTemplate), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzdGdWMjyO6eRA)));
+  public static readonly DependencyProperty \u0023\u003DzbE0mDiZUf80q = DependencyProperty.Register("", typeof (ControlTemplate), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzdGdWMjyO6eRA)));
   
   private FrameworkElement \u0023\u003DzrA5Sb8Rte_9L;
 

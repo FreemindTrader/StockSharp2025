@@ -16,8 +16,8 @@ internal abstract class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdiEBhTvW5hdKg\u003D\u0
 {
   protected override void \u0023\u003DzC4EgRM0UvJOX(IChartElement _param1)
   {
-    this.DisplayMember = XXX.SSS(-539431078);
-    this.ValueMember = XXX.SSS(-539431122);
+    this.DisplayMember = "";
+    this.ValueMember = "";
     this.ItemsSource = _param1 == null || _param1.ChartArea == null ? (object) Array.Empty<ChartAxis>() : (object) this.\u0023\u003Dzzeb_TG_TF3qy(_param1);
   }
 

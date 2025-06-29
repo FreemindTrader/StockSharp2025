@@ -18,7 +18,7 @@ internal sealed class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvVNdIAnI5puOpYMZxG1N74NKD
     : base(_param1, _param2, _param3)
   {
     if (_param1.\u0023\u003Dz8hY71usSYcKH().\u0023\u003DzQB4v2EccUot6eT2VRw\u003D\u003D() != 3)
-      throw new NotSupportedException(XXX.SSS(-539322637));
+      throw new NotSupportedException("");
   }
 
   public override void \u0023\u003DzvJVSzbY\u003D(

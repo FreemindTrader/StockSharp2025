@@ -63,7 +63,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
       case T[] objArray:
         return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>(objArray, _param1.Min, num);
       case List<T> _:
-        return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>((T[]) typeof (List<T>).GetField(XXX.SSS(-539439957), BindingFlags.Instance | BindingFlags.NonPublic).GetValue((object) _param0), _param1.Min, num);
+        return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>((T[]) typeof (List<T>).GetField("", BindingFlags.Instance | BindingFlags.NonPublic).GetValue((object) _param0), _param1.Min, num);
       default:
         return _param2 ? new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>(_param0.ToArray<T>(), _param1.Min, num) : (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>) null;
     }
@@ -82,7 +82,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
       case T[] objArray:
         return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>(objArray);
       case List<T> _:
-        return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>((T[]) typeof (List<T>).GetField(XXX.SSS(-539439957), BindingFlags.Instance | BindingFlags.NonPublic).GetValue((object) _param0));
+        return new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>((T[]) typeof (List<T>).GetField("", BindingFlags.Instance | BindingFlags.NonPublic).GetValue((object) _param0));
       default:
         return _param1 ? new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>(_param0.ToArray<T>()) : (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T>) null;
     }
@@ -99,7 +99,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
       case \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> kcpLekFdw1PpSgxGl:
         return kcpLekFdw1PpSgxGl.\u0023\u003DzRr4AYdnHaTxa();
       case List<T> _:
-        return (T[]) typeof (List<T>).GetField(XXX.SSS(-539439957), BindingFlags.Instance | BindingFlags.NonPublic).GetValue((object) _param0);
+        return (T[]) typeof (List<T>).GetField("", BindingFlags.Instance | BindingFlags.NonPublic).GetValue((object) _param0);
       case \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<T> qbugXvGeszyTz24Jw:
         return qbugXvGeszyTz24Jw.\u0023\u003DzSWlLd4k\u003D();
       default:
@@ -133,7 +133,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
   {
     if (_param0 == null)
       return;
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, XXX.SSS(-539439938));
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     foreach (T obj in _param0)
       _param1(obj);
   }
@@ -170,7 +170,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     IComparer<T> _param2)
   {
     if (_param0 == null)
-      throw new ArgumentNullException(XXX.SSS(-539439986));
+      throw new ArgumentNullException("");
     if (_param2 == null)
       _param2 = (IComparer<T>) Comparer<T>.Default;
     int num1 = 0;
@@ -196,20 +196,20 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param3)
   {
     if (_param0 == null)
-      throw new ArgumentNullException(XXX.SSS(-539439997));
+      throw new ArgumentNullException("");
     if (_param2 == null)
-      throw new ArgumentNullException(XXX.SSS(-539439980));
+      throw new ArgumentNullException("");
     Comparer<IComparable> comparer = Comparer<IComparable>.Default;
     if (_param1)
       return _param0.\u0023\u003Dzfidg2fLfXmXy(_param2, (IComparer<IComparable>) comparer, _param3);
     if (_param3 == (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 0)
       return _param0.IndexOf((object) _param2);
     DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(145, 2);
-    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439255));
+    interpolatedStringHandler.AppendLiteral("");
     interpolatedStringHandler.AppendFormatted<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D>((\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 0);
-    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439297));
+    interpolatedStringHandler.AppendLiteral("");
     interpolatedStringHandler.AppendFormatted<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D>(_param3);
-    interpolatedStringHandler.AppendLiteral(XXX.SSS(-539439111));
+    interpolatedStringHandler.AppendLiteral("");
     throw new NotImplementedException(interpolatedStringHandler.ToStringAndClear());
   }
 

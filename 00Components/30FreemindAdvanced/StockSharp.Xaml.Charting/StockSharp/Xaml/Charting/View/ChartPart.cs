@@ -44,14 +44,14 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// </summary>
     /// <param name="storage">Settings storage.</param>
     public virtual void Load(SettingsStorage storage)
-    { this.Id = storage.GetValue<Guid>(XXX.SSS(-539431122), new Guid()); }
+    { this.Id = storage.GetValue<Guid>("", new Guid()); }
 
     /// <summary>
     /// Save settings.
     /// </summary>
     /// <param name="storage">Settings storage.</param>
     public virtual void Save(SettingsStorage storage)
-    { storage.SetValue<Guid>(XXX.SSS(-539431122), this.Id); }
+    { storage.SetValue<Guid>("", this.Id); }
 
     /// <summary>
     /// Compare <see cref="T:StockSharp.Xaml.Charting.ChartElement`1"/> on the equivalence.

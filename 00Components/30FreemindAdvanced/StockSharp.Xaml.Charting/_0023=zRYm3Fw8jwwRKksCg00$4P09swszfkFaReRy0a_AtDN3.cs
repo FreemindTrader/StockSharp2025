@@ -38,7 +38,7 @@ internal sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_At
   public void \u0023\u003Dz6wT8xpE\u003D(
     \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D _param1)
   {
-    this.\u0023\u003DzCsKlB_w\u003D.Add(_param1.\u0023\u003Dz2_4KSTY\u003D());
+    this.\u0023\u003DzCsKlB_w\u003D.Add(_param1.Property());
     this.\u0023\u003Dz91pRWIg\u003D.Add(_param1.\u0023\u003Dzu7q98_E\u003D());
   }
 

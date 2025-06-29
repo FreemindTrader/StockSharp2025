@@ -92,7 +92,7 @@ public class OptionPositionChart :
     IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();
     chartAxis1.AutoRange = false;
     chartAxis2.AutoRange = true;
-    chartAxis2.TextFormatting = XXX.SSS(-539441313);
+    chartAxis2.TextFormatting = "";
     ObservableCollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
     \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D[] chhAr3Kksm46Uy2ZyArray = new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D[5];
     dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd ypbydebG6VffgcpzeEjd = new dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd();
@@ -106,7 +106,7 @@ public class OptionPositionChart :
     fk4QgaphfmmujdEjd.ExecuteOn = dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick;
     chhAr3Kksm46Uy2ZyArray[2] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) fk4QgaphfmmujdEjd;
     dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
-    dgE2H48XyyA87SEjd.AxisId = XXX.SSS(-539432528);
+    dgE2H48XyyA87SEjd.AxisId = "";
     chhAr3Kksm46Uy2ZyArray[3] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) dgE2H48XyyA87SEjd;
     dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd jhzfqwrsvK3MyA6SqEjd = new dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
@@ -146,8 +146,8 @@ public class OptionPositionChart :
         foreach (BlackScholes innerModel in (IEnumerable<BlackScholes>) this.\u0023\u003DzN\u0024mcfM0\u003D.InnerModels)
         {
           string id = innerModel.Option.Id;
-          ChartLineElement chartLineElement1 = OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(id + XXX.SSS(-539437559), Colors.Black);
-          ChartLineElement chartLineElement2 = this.ShowExpiration ? OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(id + XXX.SSS(-539437540), Colors.SandyBrown) : (ChartLineElement) null;
+          ChartLineElement chartLineElement1 = OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(id + "", Colors.Black);
+          ChartLineElement chartLineElement2 = this.ShowExpiration ? OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(id + "", Colors.SandyBrown) : (ChartLineElement) null;
           this.\u0023\u003DzOK03jF5_2xLYbkS0rg\u003D\u003D.Add(innerModel, ((IChartLineElement) chartLineElement1, (IChartLineElement) chartLineElement2));
           ((ICollection<IChartElement>) this.\u0023\u003DzM1p2o1yl\u0024dah()).Add((IChartElement) chartLineElement1);
           if (chartLineElement2 != null)
@@ -156,8 +156,8 @@ public class OptionPositionChart :
       }
       else
       {
-        ChartLineElement chartLineElement3 = OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(XXX.SSS(-539437549), Colors.Black);
-        ChartLineElement chartLineElement4 = this.ShowExpiration ? OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(XXX.SSS(-539437339), Colors.SandyBrown) : (ChartLineElement) null;
+        ChartLineElement chartLineElement3 = OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj("", Colors.Black);
+        ChartLineElement chartLineElement4 = this.ShowExpiration ? OptionPositionChart.\u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj("", Colors.SandyBrown) : (ChartLineElement) null;
         this.\u0023\u003DzOIqSskgVDoSOBMP3Kg\u003D\u003D = ((IChartLineElement) chartLineElement3, (IChartLineElement) chartLineElement4);
         ((ICollection<IChartElement>) this.\u0023\u003DzM1p2o1yl\u0024dah()).Add((IChartElement) chartLineElement3);
         if (chartLineElement4 == null)
@@ -199,7 +199,7 @@ public class OptionPositionChart :
           func = OptionPositionChart.\u0023\u003DzVCvdqIwU8qhbnG0tEA\u003D\u003D;
           break;
         default:
-          throw new ArgumentOutOfRangeException(XXX.SSS(-539437313));
+          throw new ArgumentOutOfRangeException("");
       }
       this.\u0023\u003DzYanY0A0\u003D = func;
       this.\u0023\u003DzALCsL4AdEago = value;
@@ -336,16 +336,16 @@ public class OptionPositionChart :
   /// <param name="storage">Settings storage.</param>
   public void Load(SettingsStorage storage)
   {
-    this.ChartTheme = storage.GetValue<string>(XXX.SSS(-539437328), this.ChartTheme);
-    this.UseBlackModel = storage.GetValue<bool>(XXX.SSS(-539437373), this.UseBlackModel);
+    this.ChartTheme = storage.GetValue<string>("", this.ChartTheme);
+    this.UseBlackModel = storage.GetValue<bool>("", this.UseBlackModel);
   }
 
   /// <summary>Save settings.</summary>
   /// <param name="storage">Settings storage.</param>
   public void Save(SettingsStorage storage)
   {
-    storage.SetValue<string>(XXX.SSS(-539437328), this.ChartTheme);
-    storage.SetValue<bool>(XXX.SSS(-539437373), this.UseBlackModel);
+    storage.SetValue<string>("", this.ChartTheme);
+    storage.SetValue<bool>("", this.UseBlackModel);
   }
 
   IChartDrawData IThemeableChart.CreateData() => throw new NotSupportedException();
@@ -360,7 +360,7 @@ public class OptionPositionChart :
     if (this.\u0023\u003DzQGCmQMjHdLKS)
       return;
     this.\u0023\u003DzQGCmQMjHdLKS = true;
-    Application.LoadComponent((object) this, new Uri(XXX.SSS(-539437393), UriKind.Relative));
+    Application.LoadComponent((object) this, new Uri("", UriKind.Relative));
   }
 
   [DebuggerNonUserCode]
