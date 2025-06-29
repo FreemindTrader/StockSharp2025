@@ -1,0 +1,294 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: -.dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using Ecng.Xaml;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+
+#nullable disable
+namespace StockSharp.Xaml.Charting;
+
+internal abstract class dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd : 
+  ContentControl,
+  \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public static readonly DependencyProperty \u0023\u003DzNGe3htdX6rpV = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539339419), typeof (ControlTemplate), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzKNLry2NAzTE0YP2LWzHy77o\u003D)));
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public static readonly DependencyProperty \u0023\u003DzxglZwT0\u003D = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434289), typeof (Color), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzACYYWwoqJLWh\u0024F6GbuiAdRM\u003D)));
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public static readonly DependencyProperty \u0023\u003DzTe_gV3cWjEp7 = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641), typeof (double), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzYNHwQ174F89tEKHpFedHL4k\u003D)));
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public static readonly DependencyProperty \u0023\u003DzuzLf_8s\u003D = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434302), typeof (Color), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzvp_fMzphxDgUj7M8713t5tY\u003D)));
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public static readonly DependencyProperty \u0023\u003Dzdr5RTntdbeN7 = DependencyProperty.Register(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434635), typeof (bool), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzwwnfoUeY2t4J2Aquog1ti\u0024w\u003D)));
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J> \u0023\u003DzFoYj4ei_SpD\u0024;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D> \u0023\u003DzdLqflxMU6QH8;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private Type \u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private PropertyChangeNotifier \u0023\u003DzubSLsKkd2jzj;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private PropertyChangeNotifier \u0023\u003Dzl3E1ABn8TjRR;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private static bool \u0023\u003DzKRRDe7lSf19J3xc8SEr2Ml9bd54lopKnRkf6wFM\u003D;
+
+  protected dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd()
+  {
+    this.DefaultStyleKey = (object) ((object) this).GetType();
+    this.\u0023\u003DzubSLsKkd2jzj = new PropertyChangeNotifier((DependencyObject) this, FrameworkElement.WidthProperty);
+    this.\u0023\u003Dzl3E1ABn8TjRR = new PropertyChangeNotifier((DependencyObject) this, FrameworkElement.HeightProperty);
+    this.\u0023\u003DzubSLsKkd2jzj.ValueChanged += new Action(this.\u0023\u003DzGDG1SrCuVxZHIZFp\u00248qj2tc\u003D);
+    this.\u0023\u003Dzl3E1ABn8TjRR.ValueChanged += new Action(this.\u0023\u003Dz9iWzgKFxwwYVJdwP50lpX9c\u003D);
+  }
+
+  public static bool \u0023\u003DzQ13yAPTKb1E11CW0VICNGPOoMM38()
+  {
+    return dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzKRRDe7lSf19J3xc8SEr2Ml9bd54lopKnRkf6wFM\u003D;
+  }
+
+  public static void \u0023\u003DzdovIJ7SvqmRsYxB6f8fHLcqhVX0f(bool _param0)
+  {
+    dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzKRRDe7lSf19J3xc8SEr2Ml9bd54lopKnRkf6wFM\u003D = _param0;
+  }
+
+  public ControlTemplate PointMarkerTemplate
+  {
+    get
+    {
+      return (ControlTemplate) this.GetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzNGe3htdX6rpV);
+    }
+    set
+    {
+      this.SetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzNGe3htdX6rpV, (object) value);
+    }
+  }
+
+  public Color Stroke
+  {
+    get
+    {
+      return (Color) this.GetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzxglZwT0\u003D);
+    }
+    set
+    {
+      this.SetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzxglZwT0\u003D, (object) value);
+    }
+  }
+
+  public Color Fill
+  {
+    get
+    {
+      return (Color) this.GetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzuzLf_8s\u003D);
+    }
+    set
+    {
+      this.SetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzuzLf_8s\u003D, (object) value);
+    }
+  }
+
+  public double StrokeThickness
+  {
+    get
+    {
+      return (double) this.GetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzTe_gV3cWjEp7);
+    }
+    set
+    {
+      this.SetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) value);
+    }
+  }
+
+  public bool AntiAliasing
+  {
+    get
+    {
+      return (bool) this.GetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dzdr5RTntdbeN7);
+    }
+    set
+    {
+      this.SetValue(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) value);
+    }
+  }
+
+  public virtual void \u0023\u003DzjgUUUJE\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IEnumerable<Point> _param2)
+  {
+    this.\u0023\u003DzdL613chSNlLB(_param1, _param2, this.\u0023\u003DzFoYj4ei_SpD\u0024.\u0023\u003DzQAdOJsjJeOwf(), this.\u0023\u003DzdLqflxMU6QH8.\u0023\u003DzQAdOJsjJeOwf());
+  }
+
+  public virtual void \u0023\u003DzjgUUUJE\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    double _param2,
+    double _param3,
+    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param4,
+    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param5)
+  {
+    this.\u0023\u003DzdL613chSNlLB(_param1, _param2, _param3, this.\u0023\u003Dzc8S9rSE\u003D(_param4), this.\u0023\u003DzNryPIU0\u003D(_param5));
+  }
+
+  private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dzc8S9rSE\u003D(
+    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1)
+  {
+    return _param1 ?? this.\u0023\u003DzFoYj4ei_SpD\u0024.\u0023\u003DzQAdOJsjJeOwf();
+  }
+
+  private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzNryPIU0\u003D(
+    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1)
+  {
+    return _param1 ?? this.\u0023\u003DzdLqflxMU6QH8.\u0023\u003DzQAdOJsjJeOwf();
+  }
+
+  public virtual void \u0023\u003DzTuM3X1E\u003D()
+  {
+    this.\u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D = (Type) null;
+    if (this.\u0023\u003DzdLqflxMU6QH8 != null)
+    {
+      this.\u0023\u003DzdLqflxMU6QH8.Dispose();
+      this.\u0023\u003DzdLqflxMU6QH8 = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D>) null;
+    }
+    if (this.\u0023\u003DzFoYj4ei_SpD\u0024 == null)
+      return;
+    this.\u0023\u003DzFoYj4ei_SpD\u0024.Dispose();
+    this.\u0023\u003DzFoYj4ei_SpD\u0024 = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J>) null;
+  }
+
+  protected abstract void \u0023\u003DzdL613chSNlLB(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IEnumerable<Point> _param2,
+    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param3,
+    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param4);
+
+  protected abstract void \u0023\u003DzdL613chSNlLB(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    double _param2,
+    double _param3,
+    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param4,
+    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param5);
+
+  protected virtual void \u0023\u003Dz15moWio\u003D(
+    DependencyObject _param1,
+    DependencyPropertyChangedEventArgs _param2)
+  {
+    ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003DzTuM3X1E\u003D();
+    ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003Dzo1moqKMmSMi6();
+  }
+
+  private void \u0023\u003Dzo1moqKMmSMi6()
+  {
+    if (!(this.DataContext is dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd dataContext))
+      return;
+    dataContext.\u0023\u003Dzmf\u0024vfR3OJQU9();
+  }
+
+  private void \u0023\u003DzHns9YfFfnZla(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1)
+  {
+    if (!(_param1.GetType() != this.\u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D) && this.\u0023\u003DzFoYj4ei_SpD\u0024 != null && this.\u0023\u003DzdLqflxMU6QH8 != null)
+      return;
+    this.\u0023\u003DzTuM3X1E\u003D();
+    this.\u0023\u003DzdLqflxMU6QH8 = new \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D>(_param1.\u0023\u003Dze8WyDhI\u003D(this.Fill, 1.0, new bool?()));
+    this.\u0023\u003DzFoYj4ei_SpD\u0024 = new \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J>(_param1.\u0023\u003DzL3In9ls\u003D(this.Stroke, this.AntiAliasing, (float) this.StrokeThickness, 1.0, (double[]) null, PenLineCap.Round));
+    this.\u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D = _param1.GetType();
+  }
+
+  public virtual void \u0023\u003Dz7ZSU06M\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param2,
+    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param3)
+  {
+    _param1.\u0023\u003DzjyCoorxnWjneJ7dCR\u0024Tiiog\u003D(true);
+    this.\u0023\u003DzHns9YfFfnZla(_param1);
+  }
+
+  public virtual void \u0023\u003DzBNsE20w\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1)
+  {
+    _param1.\u0023\u003DzjyCoorxnWjneJ7dCR\u0024Tiiog\u003D(false);
+  }
+
+  double \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT.\u0023\u003Dzq8lPttT4Qpp4TSswk_CaTXYaIYE5L9RmPjgx7zUCnKHWczzViA\u003D\u003D()
+  {
+    return this.Width;
+  }
+
+  void \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT.\u0023\u003DzlV2bk__vwLQKcXFMwtbJEZ05bo9UUG86JgHRsJVb2fttPBgC1g\u003D\u003D(
+    double _param1)
+  {
+    this.Width = _param1;
+  }
+
+  double \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT.\u0023\u003DzDQ9laCDp0uqTj5f6eNPqK6lS6gvJtIQrfPWVI_dM\u00245v\u0024Olm0KA\u003D\u003D()
+  {
+    return this.Height;
+  }
+
+  void \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT.\u0023\u003Dz0KO1aCqgrzg4VgQHs26xbbW_2MHjmDKg9nVh\u0024ZzZ0noOJEFdxA\u003D\u003D(
+    double _param1)
+  {
+    this.Height = _param1;
+  }
+
+  private void \u0023\u003DzGDG1SrCuVxZHIZFp\u00248qj2tc\u003D()
+  {
+    this.\u0023\u003Dz15moWio\u003D((DependencyObject) this, new DependencyPropertyChangedEventArgs());
+  }
+
+  private void \u0023\u003Dz9iWzgKFxwwYVJdwP50lpX9c\u003D()
+  {
+    this.\u0023\u003Dz15moWio\u003D((DependencyObject) this, new DependencyPropertyChangedEventArgs());
+  }
+
+  [Serializable]
+  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  {
+    public static readonly dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.\u0023\u003Dz7qOdpi4\u003D();
+
+    internal void \u0023\u003DzKNLry2NAzTE0YP2LWzHy77o\u003D(
+      DependencyObject _param1,
+      DependencyPropertyChangedEventArgs _param2)
+    {
+      ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003Dz15moWio\u003D(_param1, _param2);
+    }
+
+    internal void \u0023\u003DzACYYWwoqJLWh\u0024F6GbuiAdRM\u003D(
+      DependencyObject _param1,
+      DependencyPropertyChangedEventArgs _param2)
+    {
+      ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003Dz15moWio\u003D(_param1, _param2);
+    }
+
+    internal void \u0023\u003DzYNHwQ174F89tEKHpFedHL4k\u003D(
+      DependencyObject _param1,
+      DependencyPropertyChangedEventArgs _param2)
+    {
+      ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003Dz15moWio\u003D(_param1, _param2);
+    }
+
+    internal void \u0023\u003Dzvp_fMzphxDgUj7M8713t5tY\u003D(
+      DependencyObject _param1,
+      DependencyPropertyChangedEventArgs _param2)
+    {
+      ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003Dz15moWio\u003D(_param1, _param2);
+    }
+
+    internal void \u0023\u003DzwwnfoUeY2t4J2Aquog1ti\u0024w\u003D(
+      DependencyObject _param1,
+      DependencyPropertyChangedEventArgs _param2)
+    {
+      ((dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) _param1).\u0023\u003Dz15moWio\u003D(_param1, _param2);
+    }
+  }
+}

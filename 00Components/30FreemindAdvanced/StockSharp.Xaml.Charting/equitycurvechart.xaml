@@ -1,0 +1,6 @@
+<l1lil:EquityCurveChart xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:llliil11="clr-namespace:-">
+  <llliil11:dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd l1llili1:Name="Chart"/>
+</l1lil:EquityCurveChart>

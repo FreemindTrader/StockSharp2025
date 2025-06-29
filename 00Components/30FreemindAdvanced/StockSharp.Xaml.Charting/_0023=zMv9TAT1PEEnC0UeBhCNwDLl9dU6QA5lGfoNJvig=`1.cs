@@ -1,0 +1,26 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig=
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+using System.Runtime.CompilerServices;
+
+#nullable disable
+internal interface \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<\u0023\u003DzH9HNkng\u003D> : 
+  \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqGwqd9HRLNiqw6g\u003D\u003D,
+  ICloneable
+  where \u0023\u003DzH9HNkng\u003D : IComparable
+{
+  [SpecialName]
+  \u0023\u003DzH9HNkng\u003D \u0023\u003Dzgq30Jn5PclK8();
+
+  void \u0023\u003DzLBsbhOSbi0NY(\u0023\u003DzH9HNkng\u003D _param1);
+
+  [SpecialName]
+  \u0023\u003DzH9HNkng\u003D \u0023\u003DzZ85DqsktXJL3();
+
+  void \u0023\u003DznbvDc7H\u0024gWhJ(\u0023\u003DzH9HNkng\u003D _param1);
+}

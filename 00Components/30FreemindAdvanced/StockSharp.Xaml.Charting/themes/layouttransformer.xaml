@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:llliil11="clr-namespace:-">
+  <Style
+         TargetType="{l1llili1:Type llliil11:dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd}">
+    <Setter Property="Control.Foreground" Value="Black"/>
+    <Setter Property="Control.Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{l1llili1:Type llliil11:dje_zBGA7CLL2G6R8CKRBPZN5X8ETRYKVVUAFH9F7EFRH9XX8TBSFHHKNNCMTL28J6PFVYW_ejd}">
+          <Grid l1llili1:Name="TransformRoot" Background="{TemplateBinding Control.Background}">
+            <ContentPresenter l1llili1:Name="Presenter" Content="{TemplateBinding ContentControl.Content}"
+                              ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,43 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zRYm3Fw8jwwRKksCg00$4P8$9VOyCNzxoI$gA$47LO3X8
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using StockSharp.Xaml.Charting.Visuals.Annotations;
+using System.Windows;
+
+#nullable disable
+internal abstract class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<\u0023\u003DzH9HNkng\u003D> : 
+  \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq
+  where \u0023\u003DzH9HNkng\u003D : AnnotationBase
+{
+  private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003DzKXEXLGY\u003D;
+
+  protected \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8(
+    \u0023\u003DzH9HNkng\u003D _param1)
+  {
+    this.\u0023\u003DzKXEXLGY\u003D = _param1;
+  }
+
+  public \u0023\u003DzH9HNkng\u003D \u0023\u003Dz_iIh83yfe01U() => this.\u0023\u003DzKXEXLGY\u003D;
+
+  public abstract void \u0023\u003DzNUoYFVRHgzxB(
+    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1);
+
+  public abstract Point[] \u0023\u003DzfJgp916l7LbX(
+    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1);
+
+  public abstract void \u0023\u003DzzNonn\u0024lG8ddm(Point _param1, int _param2);
+
+  public abstract bool \u0023\u003DzxGhbraO0gg9\u0024(
+    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2);
+
+  public abstract void \u0023\u003DzuPL3ELSPZybJ(
+    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+    double _param2,
+    double _param3,
+    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4);
+}

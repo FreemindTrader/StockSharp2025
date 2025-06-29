@@ -1,0 +1,51 @@
+<llliil11:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd xmlns:llliil11="clr-namespace:-"
+                                                            xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
+                                                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                                            xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+                                                            xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                            xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+                                                            l1llili1:Name="_self" IsEnabled="{Binding Path=IsInteracted, Converter={StaticResource booltovis}}">
+  <FrameworkElement.Resources>
+    <ll1:BoolToVisibilityConverter l1llili1:Key="booltovis"/>
+    <llliil11:dje_zZY2QS9KRNTZS9HAG4USNMAU3MWTLYLHEXJ249XML_ejd l1llili1:Key="addEllipsisConv"/>
+    <Style l1llili1:Key="btnstyle" TargetType="{l1llili1:Type li11l:BarButtonItem}">
+      <Setter Property="li11l:BarItem.CommandParameter" Value="{Binding Area, ElementName=_self, Mode=OneWay}"/>
+    </Style>
+    <Style TargetType="{l1llili1:Type li11l:BarButtonItem}" BasedOn="{StaticResource btnstyle}"/>
+  </FrameworkElement.Resources>
+  <li11l:PopupMenu.Items>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=Table}" Command="{Binding AddAreaCommand}"
+                         Content="{l1i11ii111:Localization AddPanel}"/>
+    <li11l:BarSubItem Glyph="{l1i11ii111:ThemedIcons Key=Add}" Content="{l1i11ii111:Localization AddAxis}">
+      <li11l:BarSubItem.Items>
+        <li11l:BarButtonItem Content="X" Command="{Binding AddXAxisCommand}"/>
+        <li11l:BarButtonItem Content="Y" Command="{Binding AddYAxisCommand}"/>
+      </li11l:BarSubItem.Items>
+    </li11l:BarSubItem>
+    <li11l:BarItemSeparator/>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=CandleStick}" Command="{Binding AddCandlesCommand}"
+                         Content="{l1i11ii111:Localization Candles, Converter={StaticResource addEllipsisConv}}"/>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=LineChart}" Command="{Binding AddIndicatorCommand}"
+                         Content="{l1i11ii111:Localization Indicator, Converter={StaticResource addEllipsisConv}}"/>
+    <li11l:BarItemSeparator/>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=UpDown}" Command="{Binding AddOrdersCommand}"
+                         Content="{l1i11ii111:Localization Orders, Converter={StaticResource addEllipsisConv}}"/>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=Deal}" Command="{Binding AddTradesCommand}"
+                         Content="{l1i11ii111:Localization MyTrades, Converter={StaticResource addEllipsisConv}}"/>
+    <li11l:BarItemSeparator/>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=Footer}" Command="{Binding ShowHiddenAxesCommand}"
+                         Content="{l1i11ii111:Localization ShowHiddenAxes}">
+      <FrameworkContentElement.Style>
+        <Style TargetType="{l1llili1:Type li11l:BarButtonItem}" BasedOn="{StaticResource btnstyle}">
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding Area, ElementName=_self, Mode=OneWay}" Value="{l1llili1:Null}">
+              <Setter Property="li11l:BarItem.IsVisible" Value="False"/>
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </FrameworkContentElement.Style>
+    </li11l:BarButtonItem>
+    <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=Expand}" Command="{Binding UngroupCommand}"
+                         Content="{l1i11ii111:Localization GroupUngroup}"/>
+  </li11l:PopupMenu.Items>
+</llliil11:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd>

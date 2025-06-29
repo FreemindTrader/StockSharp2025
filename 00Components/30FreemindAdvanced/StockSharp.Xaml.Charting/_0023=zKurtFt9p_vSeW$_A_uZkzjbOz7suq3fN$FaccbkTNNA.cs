@@ -1,0 +1,196 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zKurtFt9p_vSeW$_A_uZkzjbOz7suq3fN$FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM=
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+
+#nullable disable
+internal sealed class \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D
+{
+  private dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd \u0023\u003Dzqzx1WR1zN5qc;
+  private double \u0023\u003DzOkEgvNoytTkP;
+  private \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o \u0023\u003Dz1UTZJTa6DHGy;
+  private \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D \u0023\u003DzdpPvLPkKvv8t = \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzRPagJIE\u003D;
+  private \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D \u0023\u003DzkhMc4Ceh5srC = \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzRPagJIE\u003D;
+  private \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D \u0023\u003DzxDAhi5T\u0024Lrcq;
+  private dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003DzJ2k0EN0\u003D;
+  private dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003DzragwCSE\u003D;
+  private \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La \u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D = \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La.\u0023\u003DzRPagJIE\u003D;
+  private dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd \u0023\u003DzJIlKIco7KSC17rIBuw\u003D\u003D = dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd.dje_z2EADAZU3_ejd;
+
+  public \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D(
+    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1,
+    double _param2)
+  {
+    this.\u0023\u003DzJ2k0EN0\u003D = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd();
+    this.\u0023\u003DzragwCSE\u003D = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd();
+    this.\u0023\u003Dzqzx1WR1zN5qc = _param1;
+    this.\u0023\u003DzOkEgvNoytTkP = _param2;
+  }
+
+  public \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D(
+    \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D _param1)
+  {
+    this.\u0023\u003Dzqzx1WR1zN5qc = _param1.\u0023\u003Dzqzx1WR1zN5qc;
+    this.\u0023\u003DzOkEgvNoytTkP = _param1.\u0023\u003DzOkEgvNoytTkP;
+    this.\u0023\u003DzdpPvLPkKvv8t = _param1.\u0023\u003DzdpPvLPkKvv8t;
+    this.\u0023\u003DzkhMc4Ceh5srC = _param1.\u0023\u003DzkhMc4Ceh5srC;
+  }
+
+  public double \u0023\u003DzcACYDjNjIVzB()
+  {
+    return dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003DztJjTi6ViyMhY(dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_zUE7VTUP4_ejd, this.\u0023\u003DzFCqKXMgArOUx()).\u0023\u003DzxhbmvAVxpXvh();
+  }
+
+  public void \u0023\u003DzbzWWczD_ogxY(double _param1)
+  {
+    this.\u0023\u003DzkhMc4Ceh5srC *= \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzmQX7tbI\u003D(_param1 / this.\u0023\u003DzcACYDjNjIVzB());
+  }
+
+  public void \u0023\u003DzphEILio\u003D(
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd _param1)
+  {
+    this.\u0023\u003DzkhMc4Ceh5srC = \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003Dz695HvGQ\u003D(_param1) * this.\u0023\u003DzkhMc4Ceh5srC;
+  }
+
+  public \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o \u0023\u003DzNabjRKdIfuAn()
+  {
+    return this.\u0023\u003Dz1UTZJTa6DHGy;
+  }
+
+  private void \u0023\u003DzihufNOvgja8x8Zib9w\u003D\u003D(
+    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1,
+    out dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd _param2)
+  {
+    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd jnelpsqX4Q78W2Ejd = _param1 - this.\u0023\u003Dzqzx1WR1zN5qc;
+    jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd /= this.\u0023\u003DzOkEgvNoytTkP;
+    jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd /= this.\u0023\u003DzOkEgvNoytTkP;
+    double d = jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd * jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd + jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd * jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd;
+    if (d > 1.0)
+    {
+      double num = 1.0 / Math.Sqrt(d);
+      _param2.dje_z3GBAX47U_ejd = jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd * num;
+      _param2.dje_zLPL6EZPA_ejd = jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd * num;
+      _param2.dje_zX8HQ8VV9_ejd = 0.0;
+    }
+    else
+    {
+      _param2.dje_z3GBAX47U_ejd = jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd;
+      _param2.dje_zLPL6EZPA_ejd = jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd;
+      _param2.dje_zX8HQ8VV9_ejd = Math.Sqrt(1.0 - d);
+    }
+    _param2 = dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003Dz3l8SoTV1ZzAh(_param2, this.\u0023\u003DzxDAhi5T\u0024Lrcq);
+  }
+
+  public virtual void \u0023\u003DzCvxP\u0024w1lYJal(
+    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1,
+    \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param2,
+    \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o _param3)
+  {
+    if (this.\u0023\u003Dz1UTZJTa6DHGy != (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 0)
+      return;
+    this.\u0023\u003DzxDAhi5T\u0024Lrcq = \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzkRsyJTI\u003D(_param2);
+    this.\u0023\u003Dz1UTZJTa6DHGy = _param3;
+    switch (this.\u0023\u003Dz1UTZJTa6DHGy)
+    {
+      case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 1:
+        this.\u0023\u003DzJIlKIco7KSC17rIBuw\u003D\u003D = _param1;
+        break;
+      case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 2:
+        this.\u0023\u003DzihufNOvgja8x8Zib9w\u003D\u003D(_param1, out this.\u0023\u003DzJ2k0EN0\u003D);
+        break;
+      default:
+        throw new NotImplementedException();
+    }
+  }
+
+  public void \u0023\u003DzBXpSr5Z9hCGS(
+    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+  {
+    switch (this.\u0023\u003Dz1UTZJTa6DHGy)
+    {
+      case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 1:
+        dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd jnelpsqX4Q78W2Ejd = (_param1 - this.\u0023\u003DzJIlKIco7KSC17rIBuw\u003D\u003D) / this.\u0023\u003Dzqzx1WR1zN5qc.dje_z3GBAX47U_ejd * 4.75;
+        dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd1 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd, jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd, 0.0);
+        xxpaxL8AcxpW32QaEjd1 = dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003DztJjTi6ViyMhY(xxpaxL8AcxpW32QaEjd1, \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzkRsyJTI\u003D(this.\u0023\u003DzwyvcaOKDS8u6()));
+        xxpaxL8AcxpW32QaEjd1 = dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003DztJjTi6ViyMhY(xxpaxL8AcxpW32QaEjd1, this.\u0023\u003DzxDAhi5T\u0024Lrcq);
+        this.\u0023\u003DzkhMc4Ceh5srC *= \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003Dz695HvGQ\u003D(xxpaxL8AcxpW32QaEjd1);
+        this.\u0023\u003DzJIlKIco7KSC17rIBuw\u003D\u003D = _param1;
+        break;
+      case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 2:
+        this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D = \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La.\u0023\u003DzRPagJIE\u003D;
+        this.\u0023\u003DzihufNOvgja8x8Zib9w\u003D\u003D(_param1, out this.\u0023\u003DzragwCSE\u003D);
+        dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd2 = dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003Dz1jcyxnU\u003D(this.\u0023\u003DzJ2k0EN0\u003D, this.\u0023\u003DzragwCSE\u003D);
+        if (xxpaxL8AcxpW32QaEjd2.\u0023\u003DzxhbmvAVxpXvh() <= 1E-05)
+          break;
+        this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D.\u0023\u003Dz_3Cn97k\u003D(xxpaxL8AcxpW32QaEjd2.dje_z3GBAX47U_ejd);
+        this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D.\u0023\u003DzP0rPObw\u003D(xxpaxL8AcxpW32QaEjd2.dje_zLPL6EZPA_ejd);
+        this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D.\u0023\u003DzYNzPs4g\u003D(xxpaxL8AcxpW32QaEjd2.dje_zX8HQ8VV9_ejd);
+        this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D.\u0023\u003DzmOLusPM\u003D(dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003DzJkPZoNo\u003D(this.\u0023\u003DzJ2k0EN0\u003D, this.\u0023\u003DzragwCSE\u003D));
+        break;
+      default:
+        throw new NotImplementedException();
+    }
+  }
+
+  public void \u0023\u003DzpQ1KJno9rWD8()
+  {
+    switch (this.\u0023\u003Dz1UTZJTa6DHGy)
+    {
+      case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 1:
+        this.\u0023\u003Dz1UTZJTa6DHGy = (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 0;
+        break;
+      case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 2:
+        this.\u0023\u003DzdpPvLPkKvv8t *= \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzdAThiHs\u003D(this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D);
+        this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D = \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La.\u0023\u003DzRPagJIE\u003D;
+        goto case (\u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzjbOz7suq3fN\u0024FaccbkTNNABaiRYOITrM1DfVDr0pQd3UpDO8SM\u003D.\u0023\u003DzuhiJG2u0xL0o) 1;
+      default:
+        throw new NotImplementedException();
+    }
+  }
+
+  public void \u0023\u003DzeWUqgIsd7zKc(int _param1)
+  {
+    double num = 1.0;
+    if (_param1 > 0)
+      num = 1.2;
+    else if (_param1 < 0)
+      num = 0.8;
+    this.\u0023\u003DzkhMc4Ceh5srC *= \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzmQX7tbI\u003D(num);
+  }
+
+  private \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D \u0023\u003DzwyvcaOKDS8u6()
+  {
+    return this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D == \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La.\u0023\u003DzRPagJIE\u003D ? this.\u0023\u003DzdpPvLPkKvv8t : this.\u0023\u003DzdpPvLPkKvv8t * \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzdAThiHs\u003D(this.\u0023\u003Dz1I0PM\u0024UMzHM0fM28_ME5kF8\u003D);
+  }
+
+  public \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D \u0023\u003DzFCqKXMgArOUx()
+  {
+    return this.\u0023\u003DzkhMc4Ceh5srC * this.\u0023\u003DzwyvcaOKDS8u6();
+  }
+
+  public dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd \u0023\u003DzZPUd3IoJaseR()
+  {
+    return this.\u0023\u003Dzqzx1WR1zN5qc;
+  }
+
+  public void \u0023\u003DztcfLxpXmacgW(
+    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+  {
+    this.\u0023\u003Dzqzx1WR1zN5qc = _param1;
+  }
+
+  public double \u0023\u003Dz7y0HxWF_19Kz5rF7IQ\u003D\u003D() => this.\u0023\u003DzOkEgvNoytTkP;
+
+  public void \u0023\u003DzQsbr0PrI80N\u0024\u0024kHGKg\u003D\u003D(double _param1)
+  {
+    this.\u0023\u003DzOkEgvNoytTkP = _param1;
+  }
+
+  public enum \u0023\u003DzuhiJG2u0xL0o
+  {
+  }
+}

@@ -1,0 +1,18 @@
+<l1lil:BubbleChart xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1">
+  <li1:ChartControl>
+    <li1:ChartControl.Diagram>
+      <li1:XYDiagram2D l1llili1:Name="Diagram">
+        <li1:XYDiagram2D.AxisY>
+          <li1:AxisY2D GridLinesMinorVisible="True">
+            <li1:Axis.WholeRange>
+              <li1:Range SideMarginsValue="10"/>
+            </li1:Axis.WholeRange>
+          </li1:AxisY2D>
+        </li1:XYDiagram2D.AxisY>
+      </li1:XYDiagram2D>
+    </li1:ChartControl.Diagram>
+  </li1:ChartControl>
+</l1lil:BubbleChart>

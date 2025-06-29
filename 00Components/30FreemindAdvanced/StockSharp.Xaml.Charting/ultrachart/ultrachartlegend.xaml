@@ -1,0 +1,203 @@
+<llliil11:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd xmlns:llliil11="clr-namespace:-"
+                                                                                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                                                                            xmlns:ll1="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
+                                                                                            xmlns:l1li="clr-namespace:StockSharp.Xaml.Charting.Ultrachart"
+                                                                                            xmlns:l1ilillll1="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+                                                                                            xmlns:l1lll="clr-namespace:DevExpress.Xpf.Editors.Themes;assembly=DevExpress.Xpf.Core.v22.1"
+                                                                                            xmlns:l1i="clr-namespace:DevExpress.Xpf.Utils.Themes;assembly=DevExpress.Xpf.Core.v22.1"
+                                                                                            xmlns:l1lili11i="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml"
+                                                                                            xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+                                                                                            xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+                                                                                            xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                                            l1llili1:Name="Ctrl" BorderBrush="Transparent" BorderThickness="1" VerticalAlignment="Top"
+                                                                                            HorizontalAlignment="Left" Padding="5" FontSize="12" FontWeight="Bold"
+                                                                                            ItemsSource="{Binding Elements}">
+  <FrameworkElement.Resources>
+    <llliil11:dje_z6N2QS39S3KT8AENPC4W473E8S2LJVDDWX5UHK38BLR3PDJQ_ejd l1llili1:Key="BooleanToVisibilityConverter"/>
+    <ll1:ColorToBrushConverter l1llili1:Key="ColorToBrushConverter"/>
+    <llliil11:dje_zTYQED6UNCPRW4ZAGFE6CK5DWJPCS3SGKTB2MQGAM2NNWYBMEVZ992Z7LLS2PR94A8Q_ejd l1llili1:Key="UltrachartElementToSettingsObjectConverter"/>
+    <l1li:AreaAxesToBorderColorConverter l1llili1:Key="axesToBorderConv"/>
+    <l1li:AreaAxesToTooltipConverter l1llili1:Key="axesToTooltipConv"/>
+    <Popup l1llili1:Key="serPopup" VerticalOffset="0" HorizontalOffset="0" Placement="Bottom"
+           PopupAnimation="Fade" AllowsTransparency="True" Focusable="True" StaysOpen="False">
+      <l1ilillll1:BackgroundPanel>
+        <Border BorderThickness="1"
+                BorderBrush="{DynamicResource {l1lll:ColorChooserThemeKey ResourceKey=BorderBrush}}">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <l1lili11i:CandleDataTypeEdit l1llili1:Name="candleSettingsEditor" Grid.Row="0"/>
+            <l1ilillll1:SimpleButton Grid.Row="1" Padding="3,1" FontSize="12" Margin="0,3" HorizontalAlignment="Center"
+                                     Content="{l1i11ii111:Localization Change}"/>
+          </Grid>
+        </Border>
+      </l1ilillll1:BackgroundPanel>
+    </Popup>
+  </FrameworkElement.Resources>
+  <ItemsControl.ItemTemplate>
+    <DataTemplate DataType="local:UltrachartCompositeElement">
+      <Border>
+        <Border.Background>
+          <MultiBinding Converter="{StaticResource axesToBorderConv}">
+            <Binding Path="ChartElement.XAxis"/>
+            <Binding Path="ChartElement.YAxis"/>
+          </MultiBinding>
+        </Border.Background>
+        <FrameworkElement.ToolTip>
+          <MultiBinding Converter="{StaticResource axesToTooltipConv}">
+            <Binding Path="ChartElement.XAxis"/>
+            <Binding Path="ChartElement.YAxis"/>
+          </MultiBinding>
+        </FrameworkElement.ToolTip>
+        <Grid HorizontalAlignment="Left">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <CheckBox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="16"
+                    IsChecked="{Binding ChartElement.IsVisible, Mode=TwoWay}"
+                    Visibility="{Binding ElementName=Ctrl, Path=DataContext.AllowToHide, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+          <l1lil:ChartElementEditor Grid.Column="1" Width="16" Height="16">
+            <FrameworkElement.DataContext>
+              <MultiBinding Converter="{StaticResource UltrachartElementToSettingsObjectConverter}">
+                <Binding Path="ChartElement"/>
+                <Binding Path="ChartElement.IndicatorPainter" FallbackValue="{l1llili1:Null}"/>
+              </MultiBinding>
+            </FrameworkElement.DataContext>
+          </l1lil:ChartElementEditor>
+          <l1ilillll1:SimpleButton Grid.Column="2" Margin="2,0,0,0" Width="10" Height="10"
+                                   Visibility="{Binding AllowToRemove, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   CommandParameter="{Binding}"
+                                   Command="{Binding DataContext.RemoveElementCommand, RelativeSource={RelativeSource AncestorType=llliil11:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd}}">
+            <FrameworkElement.Style>
+              <Style TargetType="{l1llili1:Type l1ilillll1:SimpleButton}">
+                <Setter Property="Control.Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{l1llili1:Type l1ilillll1:SimpleButton}">
+                      <Border Background="Transparent">
+                        <ContentPresenter l1llili1:Name="PART_Content" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                                          TextElement.Foreground="{TemplateBinding Control.Foreground}"/>
+                        <FrameworkElement.Style>
+                          <Style>
+                            <Setter Property="Border.Background" Value="{l1llili1:Null}"/>
+                            <Setter Property="Border.BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                              <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" Value="Black"/>
+                                <Setter Property="Border.BorderThickness" Value="1"/>
+                              </Trigger>
+                            </Style.Triggers>
+                          </Style>
+                        </FrameworkElement.Style>
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </FrameworkElement.Style>
+            <Image Source="{l1i11ii111:ThemedIcons Key=Remove2}"/>
+          </l1ilillll1:SimpleButton>
+          <Grid Column="3" Width="10" Height="10" Margin="5,0,5,0" HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Background="{Binding Color, Converter={StaticResource ColorToBrushConverter}}"/>
+          <StackPanel Grid.Column="4" Orientation="Horizontal">
+            <TextBlock Margin="5,0,0,0" VerticalAlignment="Center">
+              <Hyperlink Foreground="{Binding Foreground, ElementName=Ctrl}">
+                <Run Text="{Binding Title, Mode=OneWay}"/>
+                <FrameworkContentElement.Style>
+                  <Style TargetType="{l1llili1:Type Hyperlink}">
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding Pane.GroupChart.IsInteracted}" Value="False">
+                        <Setter Property="TextBlock.TextDecorations" Value="{l1llili1:Null}"/>
+                        <Setter Property="FrameworkContentElement.Cursor" Value="Arrow"/>
+                      </DataTrigger>
+                      <DataTrigger Binding="{Binding IsCandleElement}" Value="False">
+                        <Setter Property="TextBlock.TextDecorations" Value="{l1llili1:Null}"/>
+                        <Setter Property="FrameworkContentElement.Cursor" Value="Arrow"/>
+                      </DataTrigger>
+                    </Style.Triggers>
+                  </Style>
+                </FrameworkContentElement.Style>
+              </Hyperlink>
+            </TextBlock>
+            <ItemsControl ItemsSource="{Binding Values}">
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
+              <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="local:UltrachartElementValue">
+                  <Grid Margin="5,0,0,0" VerticalAlignment="Center">
+                    <FrameworkElement.Style>
+                      <Style TargetType="{l1llili1:Type Grid}">
+                        <Style.Triggers>
+                          <DataTrigger Binding="{Binding Value}" Value="">
+                            <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                          </DataTrigger>
+                          <DataTrigger Binding="{Binding Value}" Value="{l1llili1:Null}">
+                            <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                          </DataTrigger>
+                        </Style.Triggers>
+                      </Style>
+                    </FrameworkElement.Style>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="Auto"/>
+                      <ColumnDefinition Width="2"/>
+                      <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0">
+                      <FrameworkElement.Style>
+                        <Style TargetType="{l1llili1:Type TextBlock}">
+                          <Style.Triggers>
+                            <DataTrigger Binding="{Binding Name}" Value="">
+                              <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Name}" Value="{l1llili1:Null}">
+                              <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                          </Style.Triggers>
+                        </Style>
+                      </FrameworkElement.Style>
+                      <Run Text="{Binding Name}"/>
+                      :
+                    </TextBlock>
+                    <TextBlock Grid.Column="2" Text="{Binding Value}"
+                               Foreground="{Binding Color, Converter={StaticResource ColorToBrushConverter}}"/>
+                  </Grid>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </Grid>
+      </Border>
+    </DataTemplate>
+  </ItemsControl.ItemTemplate>
+  <ItemsControl.ItemsPanel>
+    <ItemsPanelTemplate>
+      <StackPanel IsItemsHost="True" Orientation="Vertical"/>
+    </ItemsPanelTemplate>
+  </ItemsControl.ItemsPanel>
+  <Control.Template>
+    <ControlTemplate TargetType="{l1llili1:Type ItemsControl}">
+      <Border BorderBrush="{TemplateBinding Control.BorderBrush}"
+              BorderThickness="{TemplateBinding Control.BorderThickness}"
+              Background="{TemplateBinding Control.Background}"
+              HorizontalAlignment="{TemplateBinding FrameworkElement.HorizontalAlignment}"
+              Padding="{TemplateBinding Control.Padding}"
+              VerticalAlignment="{TemplateBinding FrameworkElement.VerticalAlignment}">
+        <ScrollViewer Focusable="False" HorizontalScrollBarVisibility="Hidden"
+                      llliil11:dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd.IsFocusable="False"
+                      VerticalScrollBarVisibility="Hidden">
+          <ItemsPresenter/>
+        </ScrollViewer>
+      </Border>
+    </ControlTemplate>
+  </Control.Template>
+</llliil11:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd>

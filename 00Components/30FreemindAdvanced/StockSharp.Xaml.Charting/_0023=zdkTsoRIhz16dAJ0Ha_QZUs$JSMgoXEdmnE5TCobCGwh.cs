@@ -1,0 +1,120 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zdkTsoRIhz16dAJ0Ha_QZUs$JSMgoXEdmnE5TCobCGwh7srNhlw==
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using \u002D;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+
+#nullable disable
+internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D : 
+  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
+{
+  private readonly \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[] \u0023\u003DzYw05nwk\u003D;
+  private readonly dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dz6w5dj1Plgc_m;
+  private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003Dz3s80TGV4qJM\u0024;
+  private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzU26lnNrA_u4g;
+  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
+  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
+
+  public \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D(
+    \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D[] _param1,
+    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3)
+  {
+    this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) _param2.Clone();
+    if (!(_param3 is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq))
+      g8Oq2rGx6KyfAreq = _param2;
+    this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D = g8Oq2rGx6KyfAreq;
+    this.\u0023\u003DzYw05nwk\u003D = new \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[_param2.Max - _param2.Min + 1];
+    int num1 = Math.Max(0, _param2.Min);
+    int num2 = Math.Min(_param1.Length - 1, _param2.Max);
+    for (int index = num1; index <= num2; ++index)
+    {
+      \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D rvIvnoSs0Uo7ic5Jw = _param1[index];
+      this.\u0023\u003DzYw05nwk\u003D[index - _param2.Min] = new \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D(rvIvnoSs0Uo7ic5Jw, index);
+    }
+    double num3 = double.MaxValue;
+    double num4 = double.MinValue;
+    foreach (\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D y0XZklPx9ZIbrBkg in this.\u0023\u003DzYw05nwk\u003D)
+    {
+      if (y0XZklPx9ZIbrBkg.\u0023\u003Dz2TNMZ47XeEe8() != null)
+      {
+        if (y0XZklPx9ZIbrBkg.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003Dz_0RMJpfkCRvPs4ToyQ\u003D\u003D() < num3)
+          num3 = y0XZklPx9ZIbrBkg.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003Dz_0RMJpfkCRvPs4ToyQ\u003D\u003D();
+        if (y0XZklPx9ZIbrBkg.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003DzFQXj8Eq5AMNn7N8nJA\u003D\u003D() > num4)
+          num4 = y0XZklPx9ZIbrBkg.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003DzFQXj8Eq5AMNn7N8nJA\u003D\u003D();
+      }
+    }
+    this.\u0023\u003Dz6w5dj1Plgc_m = new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num3, num4);
+  }
+
+  [SpecialName]
+  public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzwQnyySN6xaVC()
+  {
+    return this.\u0023\u003Dz3s80TGV4qJM\u0024 ?? (this.\u0023\u003Dz3s80TGV4qJM\u0024 = (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double>) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<double>(((IEnumerable<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D>) this.\u0023\u003DzYw05nwk\u003D).Select<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double>(\u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double>(\u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzp2\u0024EsxlIMTtWjmvGLH7fWK4\u003D)))));
+  }
+
+  [SpecialName]
+  public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzPqsSI6C5MOOb()
+  {
+    return this.\u0023\u003DzU26lnNrA_u4g ?? (this.\u0023\u003DzU26lnNrA_u4g = (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double>) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<double>(((IEnumerable<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D>) this.\u0023\u003DzYw05nwk\u003D).Select<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double>(\u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D ?? (\u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D = new Func<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double>(\u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzucPTYZfZR1DykS2JQTABmho\u003D)))));
+  }
+
+  public \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[] \u0023\u003Dz9I1m\u0024aaHezaI()
+  {
+    return this.\u0023\u003DzYw05nwk\u003D;
+  }
+
+  [SpecialName]
+  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003DzYw05nwk\u003D.Length;
+
+  [IndexerName("#=zMRIb09I=")]
+  public \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1]
+  {
+    get
+    {
+      return (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) this.\u0023\u003DzYw05nwk\u003D[_param1];
+    }
+  }
+
+  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003Dz5O4ly_BelNuL()
+  {
+    return this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
+  }
+
+  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D VisibleRange
+  {
+    get => this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
+  }
+
+  public dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2()
+  {
+    return this.\u0023\u003Dz6w5dj1Plgc_m;
+  }
+
+  [Serializable]
+  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  {
+    public static readonly \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static Func<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
+    public static Func<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double> \u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D;
+
+    internal double \u0023\u003Dzp2\u0024EsxlIMTtWjmvGLH7fWK4\u003D(
+      \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D _param1)
+    {
+      return _param1.\u0023\u003Dz2_4KSTY\u003D();
+    }
+
+    internal double \u0023\u003DzucPTYZfZR1DykS2JQTABmho\u003D(
+      \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D _param1)
+    {
+      return _param1.\u0023\u003Dzu7q98_E\u003D();
+    }
+  }
+}

@@ -1,0 +1,20 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zFphlrC3tGBVP73muJW4N1q_2sxW73iOrf5F5R5uOeyArsKkxWKfjrjccvy5N93EeCjhN2eQoOStU
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+
+#nullable disable
+internal sealed class \u0023\u003DzFphlrC3tGBVP73muJW4N1q_2sxW73iOrf5F5R5uOeyArsKkxWKfjrjccvy5N93EeCjhN2eQoOStU : 
+  \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLHE4noQv5jvPOdidvRVonqXR1_40XGWjzqTPSwaJ
+{
+  public int \u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(int _param1, int _param2, int _param3)
+  {
+    int num1 = Math.Abs(_param1);
+    int num2 = Math.Abs(_param2);
+    return num1 <= num2 ? num2 : num1;
+  }
+}

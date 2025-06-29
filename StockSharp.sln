@@ -212,6 +212,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_StockSharp.Studio.IPC", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_StockSharp.Studio.Controls", "00Components\30FreemindAdvanced\StockSharp.Studio.Controls\09_StockSharp.Studio.Controls.csproj", "{8561EA84-51A1-4F90-A3E5-7F3E5420338F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40Charting", "40Charting", "{C562CB3C-C5D8-41EE-8E5A-BD04AC85305D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockSharp.Xaml.Charting", "00Components\30FreemindAdvanced\StockSharp.Xaml.Charting\StockSharp.Xaml.Charting.csproj", "{093B5170-C467-4856-8DD1-9487A9211642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -574,6 +578,10 @@ Global
 		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8561EA84-51A1-4F90-A3E5-7F3E5420338F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093B5170-C467-4856-8DD1-9487A9211642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093B5170-C467-4856-8DD1-9487A9211642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093B5170-C467-4856-8DD1-9487A9211642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093B5170-C467-4856-8DD1-9487A9211642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -663,6 +671,8 @@ Global
 		{2EA4A450-21D4-48C0-A384-18F19F5A1346} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
 		{F4720B2A-5A9E-41D1-B28A-A47972B21CB0} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
 		{8561EA84-51A1-4F90-A3E5-7F3E5420338F} = {88129B54-7A1F-4BD5-9661-6F1C8A1AA473}
+		{C562CB3C-C5D8-41EE-8E5A-BD04AC85305D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{093B5170-C467-4856-8DD1-9487A9211642} = {C562CB3C-C5D8-41EE-8E5A-BD04AC85305D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}

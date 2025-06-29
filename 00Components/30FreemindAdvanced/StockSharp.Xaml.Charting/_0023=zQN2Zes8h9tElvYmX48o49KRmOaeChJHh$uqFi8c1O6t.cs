@@ -1,0 +1,114 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zQN2Zes8h9tElvYmX48o49KRmOaeChJHh$uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg==
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+using System.Diagnostics;
+
+#nullable disable
+internal sealed class \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D : 
+  \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX,
+  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024,
+  IDisposable
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzVxwXLcXPtvCC;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz3A_LTZ7wmTQL;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly bool \u0023\u003DzRvqe\u0024JQD4tCB;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly double \u0023\u003DzND_smWdG_akWj5FwlBOmpAc\u003D;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly bool \u0023\u003DzNDaVMmUigLMz = true;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly double \u0023\u003DztMa63GaK8TjGvEcTHw\u003D\u003D;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private double \u0023\u003Dzlj5LvFYWlD8Q;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private double \u0023\u003DziT6QOXorJxAa;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private double \u0023\u003DzFEDR40ugZMK3;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private double \u0023\u003DzGcDWpYNQwUmC;
+
+  public \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    bool _param2,
+    double _param3,
+    double _param4)
+    : this(_param1, _param2, true, _param3, _param4)
+  {
+  }
+
+  public \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    bool _param2,
+    double _param3)
+    : this(_param1, _param2, false, 0.0, _param3)
+  {
+  }
+
+  protected \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D(
+    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    bool _param2,
+    bool _param3,
+    double _param4,
+    double _param5)
+  {
+    this.\u0023\u003DzVxwXLcXPtvCC = _param1;
+    this.\u0023\u003DzRvqe\u0024JQD4tCB = _param2;
+    this.\u0023\u003DzNDaVMmUigLMz = _param3;
+    this.\u0023\u003DztMa63GaK8TjGvEcTHw\u003D\u003D = _param4;
+    this.\u0023\u003DzND_smWdG_akWj5FwlBOmpAc\u003D = _param5;
+  }
+
+  public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
+    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    double _param2,
+    double _param3)
+  {
+    this.\u0023\u003Dzlj5LvFYWlD8Q = _param2;
+    this.\u0023\u003DziT6QOXorJxAa = _param3;
+    this.\u0023\u003Dz3A_LTZ7wmTQL = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003DzD4fw8fY\u003D((\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) _param1, _param2, _param3, this.\u0023\u003DzND_smWdG_akWj5FwlBOmpAc\u003D);
+    return (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) this;
+  }
+
+  public void \u0023\u003DzBNsE20w\u003D()
+  {
+    if (this.\u0023\u003DzNDaVMmUigLMz)
+    {
+      if (this.\u0023\u003DzRvqe\u0024JQD4tCB)
+      {
+        this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzfRDRUq8\u003D(this.\u0023\u003DztMa63GaK8TjGvEcTHw\u003D\u003D, this.\u0023\u003DzGcDWpYNQwUmC);
+        this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzfRDRUq8\u003D(this.\u0023\u003DztMa63GaK8TjGvEcTHw\u003D\u003D, this.\u0023\u003DziT6QOXorJxAa);
+      }
+      else
+      {
+        this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzfRDRUq8\u003D(this.\u0023\u003DzFEDR40ugZMK3, this.\u0023\u003DztMa63GaK8TjGvEcTHw\u003D\u003D);
+        this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzfRDRUq8\u003D(this.\u0023\u003Dzlj5LvFYWlD8Q, this.\u0023\u003DztMa63GaK8TjGvEcTHw\u003D\u003D);
+      }
+    }
+    this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzfRDRUq8\u003D(this.\u0023\u003Dzlj5LvFYWlD8Q, this.\u0023\u003DziT6QOXorJxAa);
+    this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzBNsE20w\u003D();
+    this.\u0023\u003Dz3A_LTZ7wmTQL = (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) null;
+  }
+
+  public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003DzfRDRUq8\u003D(
+    double _param1,
+    double _param2)
+  {
+    this.\u0023\u003DzFEDR40ugZMK3 = _param1;
+    this.\u0023\u003DzGcDWpYNQwUmC = _param2;
+    this.\u0023\u003Dz3A_LTZ7wmTQL.\u0023\u003DzfRDRUq8\u003D(_param1, _param2);
+    return (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) this;
+  }
+
+  void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+  {
+    this.\u0023\u003DzBNsE20w\u003D();
+  }
+}

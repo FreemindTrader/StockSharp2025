@@ -1,0 +1,92 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=z9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+#nullable disable
+internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<\u0023\u003DzH9HNkng\u003D> : 
+  IList<\u0023\u003DzH9HNkng\u003D>,
+  ICollection<\u0023\u003DzH9HNkng\u003D>,
+  IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+  IEnumerable
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dz0GgNoqs\u003D;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private int \u0023\u003Dz_tkZHEs\u003D;
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private int \u0023\u003DzpxhY2Co\u003D;
+
+  internal \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
+    \u0023\u003DzH9HNkng\u003D[] _param1,
+    int _param2,
+    int _param3)
+  {
+    this.\u0023\u003Dz0GgNoqs\u003D = _param1;
+    this.\u0023\u003Dz_tkZHEs\u003D = _param2;
+    this.\u0023\u003DzpxhY2Co\u003D = _param3;
+  }
+
+  internal \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
+    \u0023\u003DzH9HNkng\u003D[] _param1)
+  {
+    this.\u0023\u003Dz0GgNoqs\u003D = _param1;
+    this.\u0023\u003DzpxhY2Co\u003D = _param1.Length;
+  }
+
+  internal \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzvsnCYl4\u003D()
+  {
+    return this.\u0023\u003Dz0GgNoqs\u003D;
+  }
+
+  internal int \u0023\u003DzOhT86Emh4umk() => this.\u0023\u003Dz_tkZHEs\u003D;
+
+  public int Count => this.\u0023\u003DzpxhY2Co\u003D;
+
+  public int IndexOf(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotImplementedException();
+
+  public void Insert(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
+  {
+    throw new NotSupportedException();
+  }
+
+  public void RemoveAt(int _param1) => throw new NotSupportedException();
+
+  public \u0023\u003DzH9HNkng\u003D this[int _param1]
+  {
+    get => this.\u0023\u003DzvsnCYl4\u003D()[_param1 + this.\u0023\u003DzOhT86Emh4umk()];
+    set => throw new NotImplementedException();
+  }
+
+  public void Add(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotSupportedException();
+
+  public void Clear() => throw new NotSupportedException();
+
+  public bool Contains(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotImplementedException();
+
+  public void CopyTo(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2)
+  {
+    throw new NotImplementedException();
+  }
+
+  public bool IsReadOnly => true;
+
+  public bool Remove(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotSupportedException();
+
+  public IEnumerator<\u0023\u003DzH9HNkng\u003D> GetEnumerator()
+  {
+    throw new NotImplementedException();
+  }
+
+  IEnumerator IEnumerable.\u0023\u003DzSV_TZe7ftMh2SQ86i417Nok\u003D()
+  {
+    throw new NotImplementedException();
+  }
+}

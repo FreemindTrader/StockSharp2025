@@ -1,0 +1,56 @@
+<llliil11:dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                                                                                            xmlns:llliil11="clr-namespace:-"
+                                                                                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                                                                            xmlns:l1lii="clr-namespace:StockSharp.Xaml.Charting.Visuals.Annotations"
+                                                                                            dje_zHHBMH6HSAJ3TGDQ_ejd="dje_zW48GVEHV99U6ZJQ_ejd" YAxisId="Y" XAxisId="X"
+                                                                                            ReceiveHandledEvents="True">
+  <FrameworkElement.Resources>
+    <Style l1llili1:Key="TextAnnotationStyle" TargetType="{l1llili1:Type l1lii:TextAnnotation}">
+      <Setter Property="Control.Background" Value="#22B22020"/>
+      <Setter Property="Control.BorderThickness" Value="0"/>
+      <Setter Property="Control.Foreground" Value="#FF666666"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+    <Style l1llili1:Key="BoxAnnotationStyle" TargetType="{l1llili1:Type l1lii:BoxAnnotation}">
+      <Setter Property="Control.BorderBrush" Value="#FF279B27"/>
+      <Setter Property="Control.Background" Value="#551964FF"/>
+      <Setter Property="Control.BorderThickness" Value="1"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+    <Style l1llili1:Key="AxisMarkerAnnotationStyle" TargetType="{l1llili1:Type l1lii:AxisMarkerAnnotation}">
+      <Setter Property="Control.Background" Value="#FFFF6600"/>
+      <Setter Property="Control.FontSize" Value="11"/>
+      <Setter Property="Control.FontWeight" Value="Bold"/>
+      <Setter Property="Control.Foreground" Value="#FFEEEEEE"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+    <Style l1llili1:Key="HorizontalLineAnnotationStyle"
+           TargetType="{l1llili1:Type l1lii:HorizontalLineAnnotation}">
+      <Setter Property="l1lii:LineAnnotationBase.Stroke" Value="#FFFF6600"/>
+      <Setter Property="l1lii:LineAnnotationBase.StrokeThickness" Value="2"/>
+      <Setter Property="l1lii:LineAnnotationWithLabelsBase.ShowLabel" Value="True"/>
+      <Setter Property="l1lii:LineAnnotationWithLabelsBase.LabelPlacement" Value="Axis"/>
+      <Setter Property="l1lii:HorizontalLineAnnotation.HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+    <Style l1llili1:Key="VerticalLineAnnotationStyle"
+           TargetType="{l1llili1:Type l1lii:VerticalLineAnnotation}">
+      <Setter Property="l1lii:LineAnnotationBase.Stroke" Value="#FFFF6600"/>
+      <Setter Property="l1lii:LineAnnotationBase.StrokeThickness" Value="2"/>
+      <Setter Property="l1lii:LineAnnotationWithLabelsBase.ShowLabel" Value="True"/>
+      <Setter Property="l1lii:LineAnnotationWithLabelsBase.LabelPlacement" Value="Axis"/>
+      <Setter Property="l1lii:VerticalLineAnnotation.VerticalAlignment" Value="Stretch"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+    <Style l1llili1:Key="LineAnnotationStyle" TargetType="{l1llili1:Type l1lii:LineAnnotation}">
+      <Setter Property="l1lii:LineAnnotationBase.Stroke" Value="#FF279B27"/>
+      <Setter Property="l1lii:LineAnnotationBase.StrokeThickness" Value="2"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+    <Style l1llili1:Key="LineArrowAnnotationStyle" TargetType="{l1llili1:Type l1lii:LineArrowAnnotation}">
+      <Setter Property="l1lii:LineAnnotationBase.Stroke" Value="#FF279B27"/>
+      <Setter Property="l1lii:LineAnnotationBase.StrokeThickness" Value="2"/>
+      <Setter Property="l1lii:AnnotationBase.XAxisId" Value="X"/>
+    </Style>
+  </FrameworkElement.Resources>
+</llliil11:dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd>

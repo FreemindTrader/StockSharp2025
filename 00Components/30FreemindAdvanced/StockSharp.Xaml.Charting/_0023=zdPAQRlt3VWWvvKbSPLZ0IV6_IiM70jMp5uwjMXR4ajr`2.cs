@@ -1,0 +1,266 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+
+#nullable disable
+internal class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+  \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
+  \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvQwvbu0Gd4Imzwk5GIfgC73<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
+  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
+  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
+  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  \u0023\u003DzExPUKZPbT0fb9dlf_qOoazVlQnP90XoMutgGcLyCRUcP
+  where \u0023\u003DzulcL8RA\u003D : IComparable
+  where \u0023\u003DzE8zkRfY\u003D : IComparable
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D)> \u0023\u003Dz3laIKDGah\u0024Kh;
+
+  public \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_()
+  {
+    this.\u0023\u003Dz3laIKDGah\u0024Kh = new \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D)>(new Action<IList<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D)>>(this.\u0023\u003DzGXoUV7Q\u0024_bM\u0024));
+  }
+
+  public override \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D DataSeriesType
+  {
+    get => (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 0;
+  }
+
+  public override bool HasValues
+  {
+    get
+    {
+      return this.\u0023\u003DzmIwKipw\u003D.\u0023\u003Dz5vfl0A4nWD8Q() && this.\u0023\u003DzoEP49rI\u003D.\u0023\u003Dz5vfl0A4nWD8Q();
+    }
+  }
+
+  public override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
+    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    int _param3,
+    bool _param4,
+    bool? _param5,
+    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param6,
+    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param7,
+    object _param8 = null)
+  {
+    lock (this.SyncRoot)
+      return _param7.\u0023\u003DzA9cE1Xcn5A4Bx3OLTNdvGuw\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>().\u0023\u003Dzg_KsNhI\u003D(_param1, _param2, _param3, this.IsFifo, _param4, (IList) this.\u0023\u003DzmIwKipw\u003D, (IList) this.\u0023\u003DzoEP49rI\u003D, new bool?(this.DataDistributionCalculator.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D()), new bool?(this.DataDistributionCalculator.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl()), _param5, _param6);
+  }
+
+  public override void OnBeginRenderPass()
+  {
+    base.OnBeginRenderPass();
+    this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+  }
+
+  protected override void \u0023\u003Dzz6J3NZIzdU\u0024X()
+  {
+    lock (this.SyncRoot)
+    {
+      if (this.FifoCapacity.HasValue)
+      {
+        int num = this.FifoCapacity.Value;
+        this.\u0023\u003DzmIwKipw\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzulcL8RA\u003D>(num);
+        this.\u0023\u003DzoEP49rI\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<\u0023\u003DzE8zkRfY\u003D>(num);
+      }
+      else
+      {
+        this.\u0023\u003DzmIwKipw\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzulcL8RA\u003D>();
+        this.\u0023\u003DzoEP49rI\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzE8zkRfY\u003D>();
+      }
+      ((ICollection<\u0023\u003DzulcL8RA\u003D>) this.\u0023\u003DzmIwKipw\u003D).Clear();
+      ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzoEP49rI\u003D).Clear();
+      this.\u0023\u003Dz3laIKDGah\u0024Kh?.\u0023\u003DzUf222sU\u003D();
+    }
+  }
+
+  public override void \u0023\u003DzfEbP\u00247w\u003D(int _param1)
+  {
+    lock (this.SyncRoot)
+    {
+      this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+      \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
+      \u0023\u003DzulcL8RA\u003D xvalue = this.XValues[_param1];
+      this.XValues.RemoveAt(_param1);
+      this.YValues.RemoveAt(_param1);
+      this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+      this.DataDistributionCalculator.\u0023\u003DzYxK_ApJhHiJi9CS2B8NjXKM\u003D();
+    }
+  }
+
+  public override void \u0023\u003DzdDirImQ\u003D(int _param1, int _param2)
+  {
+    lock (this.SyncRoot)
+    {
+      this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+      this.\u0023\u003DzmIwKipw\u003D.\u0023\u003DzdDirImQ\u003D(_param1, _param2);
+      this.\u0023\u003DzoEP49rI\u003D.\u0023\u003DzdDirImQ\u003D(_param1, _param2);
+      this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+      this.DataDistributionCalculator.\u0023\u003DzYxK_ApJhHiJi9CS2B8NjXKM\u003D();
+    }
+  }
+
+  public override \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzQ8SgRgQ\u003D()
+  {
+    lock (this.SyncRoot)
+    {
+      this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+      \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> m70jMp5uwjMxR4ajr = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>();
+      m70jMp5uwjMxR4ajr.set_FifoCapacity(this.FifoCapacity);
+      m70jMp5uwjMxR4ajr.set_AcceptsUnsortedData(this.AcceptsUnsortedData);
+      m70jMp5uwjMxR4ajr.\u0023\u003Dznc8esWY\u003D((IEnumerable<\u0023\u003DzulcL8RA\u003D>) this.XValues, (IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.YValues);
+      return (\u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>) m70jMp5uwjMxR4ajr;
+    }
+  }
+
+  public override void Append(
+    \u0023\u003DzulcL8RA\u003D _param1,
+    params \u0023\u003DzE8zkRfY\u003D[] _param2)
+  {
+    if (_param2.Length != 1)
+      this.\u0023\u003Dz2OnEmwtzurH2(1);
+    this.Append(_param1, _param2[0]);
+  }
+
+  public override void Append(
+    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    params IEnumerable<\u0023\u003DzE8zkRfY\u003D>[] _param2)
+  {
+    if (_param2.Length != 1)
+      this.\u0023\u003Dz2OnEmwtzurH2(1);
+    this.\u0023\u003Dznc8esWY\u003D(_param1, _param2[0]);
+  }
+
+  public virtual void Append(\u0023\u003DzulcL8RA\u003D _param1, \u0023\u003DzE8zkRfY\u003D _param2)
+  {
+    this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003Dznc8esWY\u003D((_param1, _param2));
+    this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+  }
+
+  public virtual void \u0023\u003Dznc8esWY\u003D(
+    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param2)
+  {
+    if (_param1.\u0023\u003DzMeGSfVE\u003D<\u0023\u003DzulcL8RA\u003D>())
+      return;
+    IEnumerator<\u0023\u003DzulcL8RA\u003D> enumerator1 = _param1.GetEnumerator();
+    IEnumerator<\u0023\u003DzE8zkRfY\u003D> enumerator2 = _param2.GetEnumerator();
+    lock (this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003Dzjatnj7TNvda7())
+    {
+      while (enumerator1.MoveNext())
+      {
+        if (enumerator2.MoveNext())
+          this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003Dznc8esWY\u003D((enumerator1.Current, enumerator2.Current));
+        else
+          break;
+      }
+    }
+    this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+  }
+
+  public virtual void \u0023\u003DzFkV86a8\u003D(
+    \u0023\u003DzulcL8RA\u003D _param1,
+    \u0023\u003DzE8zkRfY\u003D _param2)
+  {
+    lock (this.SyncRoot)
+    {
+      this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+      int index = this.\u0023\u003DzmIwKipw\u003D.\u0023\u003DzFH1yjjY\u003D(this.IsSorted, (IComparable) _param1, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 0);
+      if (index == -1)
+        return;
+      this.\u0023\u003DzoEP49rI\u003D[index] = _param2;
+      this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+    }
+  }
+
+  public virtual void \u0023\u003DzzfUM_io\u003D(
+    int _param1,
+    \u0023\u003DzulcL8RA\u003D _param2,
+    \u0023\u003DzE8zkRfY\u003D _param3)
+  {
+    lock (this.SyncRoot)
+    {
+      this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+      this.XValues.Insert(_param1, _param2);
+      this.YValues.Insert(_param1, _param3);
+      this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+      this.DataDistributionCalculator.\u0023\u003Dzs9WSchJIpnF0(this.\u0023\u003DzmIwKipw\u003D, _param1, _param2, this.AcceptsUnsortedData);
+    }
+  }
+
+  public virtual void \u0023\u003DzdG5UbJ7rAsgF(
+    int _param1,
+    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param2,
+    IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param3)
+  {
+    lock (this.SyncRoot)
+    {
+      this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
+      int count1 = ((\u0023\u003DzJhc8WdlQgSkcniY\u0024669ans2mQMwz_VJH0HVFEk8\u003D) this.\u0023\u003DzmIwKipw\u003D).get_Count();
+      this.\u0023\u003DzmIwKipw\u003D.\u0023\u003DzdG5UbJ7rAsgF(_param1, _param2);
+      int count2 = ((\u0023\u003DzJhc8WdlQgSkcniY\u0024669ans2mQMwz_VJH0HVFEk8\u003D) this.\u0023\u003DzmIwKipw\u003D).get_Count();
+      this.\u0023\u003DzoEP49rI\u003D.\u0023\u003DzdG5UbJ7rAsgF(_param1, _param3);
+      this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
+      this.DataDistributionCalculator.\u0023\u003DzPY2yStN8KbO\u0024(this.\u0023\u003DzmIwKipw\u003D, _param1, count2 - count1, _param2, this.AcceptsUnsortedData);
+    }
+  }
+
+  public override \u0023\u003DzE8zkRfY\u003D GetYMinAt(
+    int _param1,
+    \u0023\u003DzE8zkRfY\u003D _param2)
+  {
+    \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
+    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(yvalue) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(_param2, yvalue) : _param2;
+  }
+
+  public override \u0023\u003DzE8zkRfY\u003D GetYMaxAt(
+    int _param1,
+    \u0023\u003DzE8zkRfY\u003D _param2)
+  {
+    \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
+    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(yvalue) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(_param2, yvalue) : _param2;
+  }
+
+  private void \u0023\u003DzGXoUV7Q\u0024_bM\u0024(
+    IList<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D)> _param1)
+  {
+    lock (this.SyncRoot)
+    {
+      IEnumerable<\u0023\u003DzulcL8RA\u003D> zulcL8Ras = _param1.Select<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzulcL8RA\u003D>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzulcL8RA\u003D>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz01HqdUysEJn5lH\u0024ib6NXi0A\u003D)));
+      int count = ((\u0023\u003DzJhc8WdlQgSkcniY\u0024669ans2mQMwz_VJH0HVFEk8\u003D) this.\u0023\u003DzmIwKipw\u003D).get_Count();
+      this.\u0023\u003DzmIwKipw\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(zulcL8Ras);
+      this.\u0023\u003DzoEP49rI\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz1_IuEwLrYewTrhAZNPbXTd0\u003D))));
+      this.DataDistributionCalculator.\u0023\u003DzeU6gWqHRfREz(this.\u0023\u003DzmIwKipw\u003D, count, zulcL8Ras, this.AcceptsUnsortedData);
+    }
+  }
+
+  [Serializable]
+  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  {
+    public static readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dz7qOdpi4\u003D();
+    public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzulcL8RA\u003D> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
+    public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
+
+    internal \u0023\u003DzulcL8RA\u003D \u0023\u003Dz01HqdUysEJn5lH\u0024ib6NXi0A\u003D(
+      (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
+    {
+      return _param1.Item1;
+    }
+
+    internal \u0023\u003DzE8zkRfY\u003D \u0023\u003Dz1_IuEwLrYewTrhAZNPbXTd0\u003D(
+      (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
+    {
+      return _param1.Item2;
+    }
+  }
+}

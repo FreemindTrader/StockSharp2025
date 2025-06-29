@@ -1,0 +1,188 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB$
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using \u002D;
+using Ecng.Common;
+using Ecng.Xaml;
+using Ecng.Xaml.Converters;
+using StockSharp.Charting;
+using StockSharp.Localization;
+using StockSharp.Xaml.Charting;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Windows;
+using System.Windows.Data;
+
+#nullable disable
+internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D> : 
+  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D
+  where \u0023\u003Dzav4EkcQ\u003D : ChartPart<\u0023\u003Dzav4EkcQ\u003D>, \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly HashSet<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D> \u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D = new HashSet<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>();
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private readonly \u0023\u003Dzav4EkcQ\u003D \u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D;
+
+  protected \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024(
+    \u0023\u003Dzav4EkcQ\u003D _param1)
+  {
+    this.\u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D = _param1 ?? throw new ArgumentNullException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330019));
+    this.\u0023\u003DzZcbqdpE\u003D((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) this.\u0023\u003DzeaszzAAoBOY9());
+  }
+
+  public override \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X Element
+  {
+    get
+    {
+      return (\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this.\u0023\u003DzeaszzAAoBOY9();
+    }
+  }
+
+  protected \u0023\u003Dzav4EkcQ\u003D \u0023\u003DzeaszzAAoBOY9()
+  {
+    return this.\u0023\u003DzUpC1DAYavIvKAFbBxA\u003D\u003D;
+  }
+
+  public sealed override void \u0023\u003Dz\u0024abmkXc\u003D()
+  {
+    foreach (\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D ddznyiGmdRlAevOq in this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.ToArray<\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D>())
+      this.\u0023\u003DzfttffOE\u003D(ddznyiGmdRlAevOq);
+    base.\u0023\u003Dz\u0024abmkXc\u003D();
+  }
+
+  protected void \u0023\u003DzZcbqdpE\u003D(
+    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+  {
+    if (!this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.Add(_param1))
+      return;
+    _param1.PropertyValueChanging += new Action<object, string, object>(this.\u0023\u003DztQIFoT6W122c);
+    _param1.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dzn1W_trW7DSn3);
+  }
+
+  private void \u0023\u003DzfttffOE\u003D(
+    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param1)
+  {
+    if (!this.\u0023\u003DzoWo2SyTLHbq4_D3IcQ\u003D\u003D.Remove(_param1))
+      return;
+    _param1.PropertyValueChanging -= new Action<object, string, object>(this.\u0023\u003DztQIFoT6W122c);
+    _param1.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003Dzn1W_trW7DSn3);
+  }
+
+  private void \u0023\u003DztQIFoT6W122c(object _param1, string _param2, object _param3)
+  {
+    this.\u0023\u003DzfrhXX9MCW\u0024SC((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1, _param2, _param3);
+  }
+
+  private void \u0023\u003Dzn1W_trW7DSn3(object _param1, PropertyChangedEventArgs _param2)
+  {
+    this.\u0023\u003Dz3u1qwgvgJlZC((\u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D) _param1, _param2.PropertyName);
+  }
+
+  protected static void \u0023\u003Dz9tL3mkpMz5PJ<T>(
+    \u0023\u003DzK74oGPE3yyB7zop8uDdznyiGMD\u0024RlAEvOQ\u003D\u003D _param0,
+    string _param1,
+    T[] _param2)
+  {
+    _param0.PropertyValueChanging += new Action<object, string, object>(new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzoCQsx9qZ9BND33HUkljNxJY\u003D<T>()
+    {
+      \u0023\u003DzlO56\u0024U0\u003D = _param1,
+      \u0023\u003Dzl0ap9G9KAFrl = _param2
+    }.\u0023\u003Dz4Ri02UyRDgR_MM8068hswR8\u003D);
+  }
+
+  protected T \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<T>(
+    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[] _param1)
+    where T : dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, new()
+  {
+    if (_param1 != null && ((IEnumerable<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>) _param1).Any<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>(\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy, bool>(\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D))))
+      throw new InvalidOperationException(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539330026) + typeof (T).Name);
+    T obj = new T();
+    if (this.\u0023\u003DzeaszzAAoBOY9().RootElement == (object) this.\u0023\u003DzeaszzAAoBOY9())
+    {
+      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813));
+    }
+    else
+    {
+      // ISSUE: variable of a boxed type
+      __Boxed<T> local = (object) obj;
+      DependencyProperty z8b6MqaiE8Uzn = dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn;
+      BoolAllConverter conv = new BoolAllConverter();
+      conv.Value = true;
+      Binding[] bindingArray = new Binding[2]
+      {
+        new Binding(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813))
+        {
+          Source = (object) this.\u0023\u003DzeaszzAAoBOY9()
+        },
+        new Binding(\u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539433813))
+        {
+          Source = (object) this.\u0023\u003DzeaszzAAoBOY9().RootElement
+        }
+      };
+      local.SetMultiBinding(z8b6MqaiE8Uzn, (IMultiValueConverter) conv, bindingArray);
+    }
+    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzSEAakZbtZKgY, (object) this.RootElem, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427791));
+    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DziAqnE8_\u0024SBDB, (object) this.RootElem, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539427833));
+    \u0023\u003Dzav4EkcQ\u003D zav4EkcQ = this.\u0023\u003DzeaszzAAoBOY9();
+    if (!((object) zav4EkcQ is ChartBandElement) && !((object) zav4EkcQ is IChartTransactionElement))
+    {
+      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434641));
+      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) this.\u0023\u003DzeaszzAAoBOY9(), \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539434635));
+    }
+    obj.Tag = _param1 == null || _param1.Length == 0 ? (object) (Tuple<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>) null : (object) Tuple.Create<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>((\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) this, _param1);
+    this.\u0023\u003DzXU6fBD\u0024oSmCR().\u0023\u003DzMNK339lzrtSc();
+    return obj;
+  }
+
+  protected static void \u0023\u003DzpbLgaWJ0hngn(
+    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param0,
+    bool _param1)
+  {
+    dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd ls4St64EqzfbaEjd = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) _param0;
+    dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
+    dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
+    dje_zHR7NJDL95STD4SWVG26WR43JGQLXY8NHRZ7Q26829WGD2MZ_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
+    dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
+  }
+
+  [Serializable]
+  private sealed class \u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<\u0023\u003DzH9HNkng\u003D> where \u0023\u003DzH9HNkng\u003D : dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, new()
+  {
+    public static readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<\u0023\u003DzH9HNkng\u003D>();
+    public static Func<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy, bool> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+
+    internal bool \u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D(
+      \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy _param1)
+    {
+      return _param1 == null;
+    }
+  }
+
+  private sealed class \u0023\u003DzoCQsx9qZ9BND33HUkljNxJY\u003D<\u0023\u003DzH9HNkng\u003D>
+  {
+    public string \u0023\u003DzlO56\u0024U0\u003D;
+    public \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzl0ap9G9KAFrl;
+
+    internal void \u0023\u003Dz4Ri02UyRDgR_MM8068hswR8\u003D(
+      object _param1,
+      string _param2,
+      object _param3)
+    {
+      if (_param2 != this.\u0023\u003DzlO56\u0024U0\u003D)
+        return;
+      \u0023\u003DzH9HNkng\u003D zH9Hnkng = (\u0023\u003DzH9HNkng\u003D) _param3;
+      if (!((IEnumerable<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003Dzl0ap9G9KAFrl).Contains<\u0023\u003DzH9HNkng\u003D>(zH9Hnkng))
+        throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnsupportedType, new object[1]
+        {
+          (object) zH9Hnkng
+        }));
+    }
+  }
+}

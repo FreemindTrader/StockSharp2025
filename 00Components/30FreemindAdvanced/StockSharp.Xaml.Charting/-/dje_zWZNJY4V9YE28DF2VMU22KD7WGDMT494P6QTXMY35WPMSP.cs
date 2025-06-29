@@ -1,0 +1,46 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: -.dje_zWZNJY4V9YE28DF2VMU22KD7WGDMT494P6QTXMY35WPMSP5Q_ejd
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Windows;
+using System.Windows.Data;
+
+#nullable disable
+namespace StockSharp.Xaml.Charting;
+
+internal sealed class dje_zWZNJY4V9YE28DF2VMU22KD7WGDMT494P6QTXMY35WPMSP5Q_ejd : IValueConverter
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private bool \u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D;
+
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public bool dje_zCQZWVSGFTLWXJ2Q_ejd
+  {
+    get => this.\u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D;
+    set => this.\u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D = value;
+  }
+
+  public bool \u0023\u003Dz0T_we1eshhoI() => this.\u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D;
+
+  public void \u0023\u003DzB\u00245R8EsdcS2I(bool _param1)
+  {
+    this.\u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D = _param1;
+  }
+
+  public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
+  {
+    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd demydmpA2K68QEjd = (dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd) _param1;
+    return (object) (Visibility) (!this.\u0023\u003Dz0T_we1eshhoI() ? (demydmpA2K68QEjd == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Left || demydmpA2K68QEjd == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top ? 0 : 2) : (demydmpA2K68QEjd == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Left || demydmpA2K68QEjd == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top ? 2 : 0));
+  }
+
+  public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)
+  {
+    throw new NotImplementedException();
+  }
+}

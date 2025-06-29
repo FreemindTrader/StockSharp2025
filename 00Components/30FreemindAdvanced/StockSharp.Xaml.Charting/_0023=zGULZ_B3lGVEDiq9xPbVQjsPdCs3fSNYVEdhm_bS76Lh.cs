@@ -1,0 +1,41 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using StockSharp.Messages;
+using System.Diagnostics;
+
+#nullable disable
+internal sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc : 
+  \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private CandlePriceLevel \u0023\u003DzsQrVoaE\u003D;
+
+  public \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc(
+    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    : base(_param1, _param2)
+  {
+    this.Level = _param2.\u0023\u003DzsTIRngDzycAM();
+  }
+
+  public CandlePriceLevel Level
+  {
+    get => this.\u0023\u003DzsQrVoaE\u003D;
+    set
+    {
+      this.\u0023\u003DzwGPLgl8\u003D<CandlePriceLevel>(ref this.\u0023\u003DzsQrVoaE\u003D, value, \u0023\u003DzlTriv\u0024izV_y2_zQvsgEHkxJr2Ncz.\u0023\u003DzhQ0l2sE\u003D(-539329087));
+    }
+  }
+
+  public override void \u0023\u003DzCadMMgc\u003D(
+    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+  {
+    base.\u0023\u003DzCadMMgc\u003D(_param1);
+    this.Level = ((\u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc) _param1).Level;
+  }
+}

@@ -1,0 +1,72 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug==
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+using \u002D;
+using System;
+
+#nullable disable
+internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
+  \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<\u0023\u003DzH9HNkng\u003D>,
+  \u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D
+  where \u0023\u003DzH9HNkng\u003D : dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd, new()
+{
+  public \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D()
+  {
+  }
+
+  public \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D(
+    int _param1,
+    Func<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd, dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd> _param2)
+    : base(_param1, new Func<\u0023\u003DzH9HNkng\u003D, \u0023\u003DzH9HNkng\u003D>(new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzR\u0024h5gkzF2FxdwMnQnA\u003D\u003D()
+    {
+      \u0023\u003DzTeHLJLex4n7B = _param2
+    }.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D))
+  {
+  }
+
+  public dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd \u0023\u003Dza7jLYgw\u003D()
+  {
+    return (dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd) base.\u0023\u003Dza7jLYgw\u003D();
+  }
+
+  public dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd \u0023\u003Dza7jLYgw\u003D(
+    Func<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd, dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd> _param1)
+  {
+    return (dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd) this.\u0023\u003Dza7jLYgw\u003D(new Func<\u0023\u003DzH9HNkng\u003D, \u0023\u003DzH9HNkng\u003D>(new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D()
+    {
+      \u0023\u003DzTeHLJLex4n7B = _param1
+    }.\u0023\u003DzI0QPeZE4_5s\u0024));
+  }
+
+  public void \u0023\u003DzhggR\u00247o\u003D(
+    dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd _param1)
+  {
+    this.\u0023\u003DzhggR\u00247o\u003D((\u0023\u003DzH9HNkng\u003D) _param1);
+  }
+
+  private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
+  {
+    public Func<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd, dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd> \u0023\u003DzTeHLJLex4n7B;
+
+    internal \u0023\u003DzH9HNkng\u003D \u0023\u003DzI0QPeZE4_5s\u0024(
+      \u0023\u003DzH9HNkng\u003D _param1)
+    {
+      return (\u0023\u003DzH9HNkng\u003D) this.\u0023\u003DzTeHLJLex4n7B((dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd) _param1);
+    }
+  }
+
+  private sealed class \u0023\u003DzR\u0024h5gkzF2FxdwMnQnA\u003D\u003D
+  {
+    public Func<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd, dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd> \u0023\u003DzTeHLJLex4n7B;
+
+    internal \u0023\u003DzH9HNkng\u003D \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
+      \u0023\u003DzH9HNkng\u003D _param1)
+    {
+      return (\u0023\u003DzH9HNkng\u003D) this.\u0023\u003DzTeHLJLex4n7B((dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd) _param1);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2p9iuPHD6Jg$iRKO3NN$UN5aqyEPXU=
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
+// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
+
+#nullable disable
+internal sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2p9iuPHD6Jg\u0024iRKO3NN\u0024UN5aqyEPXU\u003D : 
+  \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsGW8Eo\u0024qNNchFzm6GiqJLhJL\u0024N\u0024KU\u003D
+{
+  private float[] \u0023\u003Dzz4UoRxITY5g\u0024;
+
+  public \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2p9iuPHD6Jg\u0024iRKO3NN\u0024UN5aqyEPXU\u003D(
+    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1,
+    \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param2)
+    : base(_param1)
+  {
+    this.\u0023\u003Dzz4UoRxITY5g\u0024 = new float[4];
+    this.\u0023\u003Dzz4UoRxITY5g\u0024[0] = _param2.\u0023\u003Dz4WHdt9g\u003D;
+    this.\u0023\u003Dzz4UoRxITY5g\u0024[1] = _param2.\u0023\u003DzoRsAtmfOFDZe;
+    this.\u0023\u003Dzz4UoRxITY5g\u0024[2] = _param2.\u0023\u003DzcdKuX48ZXN_S;
+    this.\u0023\u003Dzz4UoRxITY5g\u0024[3] = _param2.\u0023\u003DzKCqGEcs\u003D;
+  }
+
+  private float[] \u0023\u003Dz\u00246e75ZE\u003D(out int _param1)
+  {
+    if ((uint) this.\u0023\u003DzI6P8IpE\u003D < (uint) this.\u0023\u003DzcRozJLFRZ0BY.Width && (uint) this.\u0023\u003DzFfSb8y0\u003D < (uint) this.\u0023\u003DzcRozJLFRZ0BY.Height)
+    {
+      _param1 = this.\u0023\u003DzcRozJLFRZ0BY.\u0023\u003DzHlHGfKJZNJsq(this.\u0023\u003DzI6P8IpE\u003D, this.\u0023\u003DzFfSb8y0\u003D);
+      return this.\u0023\u003DzcRozJLFRZ0BY.\u0023\u003Dz9b1_JhA\u003D();
+    }
+    _param1 = 0;
+    return this.\u0023\u003Dzz4UoRxITY5g\u0024;
+  }
+}
