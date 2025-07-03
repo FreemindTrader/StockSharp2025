@@ -22,7 +22,7 @@ internal sealed class dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd :
   Grid,
   \u0023\u003DzlvwXE9mBO1uItIXfGGLJcGAvOm_MyInBFl6FOhs\u003D,
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
+  IHitTestable
 {
   
   private EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzzsmHSkfDouc4;
@@ -250,7 +250,7 @@ internal sealed class dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd :
 
   public Point TranslatePoint(
     Point _param1,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param2)
+    IHitTestable _param2)
   {
     return this.\u0023\u003DzaPPLsvfM_Sst(_param1, _param2);
   }
@@ -258,17 +258,17 @@ internal sealed class dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd :
   public bool IsPointWithinBounds(Point _param1) => this.\u0023\u003DzbOxVzAyGdX66(_param1);
 
   public Rect GetBoundsRelativeTo(
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param1)
+    IHitTestable _param1)
   {
     return this.\u0023\u003DzdC9whUui_gN\u0024(_param1);
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
+  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
   {
     return this.ActualWidth;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
+  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
   {
     return this.ActualHeight;
   }

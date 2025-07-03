@@ -35,7 +35,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
   }
 
   public bool \u0023\u003DzilOTiYzU6JIQ(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1,
+    IndexRange  _param1,
     int _param2)
   {
     return this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D != 0 & _param1.Max - _param1.Min + 1 > this.\u0023\u003DzEMN\u0024erw\u003D * _param2;
@@ -50,12 +50,12 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
 
   public IList \u0023\u003Dzb0NWmhityJKy(IList _param1, int _param2)
   {
-    return this.\u0023\u003Dzb0NWmhityJKy(_param1, new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, _param1.Count - 1), _param2);
+    return this.\u0023\u003Dzb0NWmhityJKy(_param1, new IndexRange (0, _param1.Count - 1), _param2);
   }
 
   public IList \u0023\u003Dzb0NWmhityJKy(
     IList _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3)
   {
     if (!this.\u0023\u003DzilOTiYzU6JIQ(_param2, _param3))
@@ -101,7 +101,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
     int num5;
     for (num5 = _param3 - num1 % num3; index1 <= num5; ++index1)
     {
-      double val2 = ((IComparable) _param1[index1]).\u0023\u003Dzb9UCYbo\u003D();
+      double val2 = ((IComparable) _param1[index1]).ToDouble();
       val1_1 = Math.Min(val1_1, val2);
       val1_2 = Math.Max(val1_2, val2);
       if (++num4 >= num3)
@@ -149,7 +149,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
     int num5 = 0;
     for (; index <= _param3; ++index)
     {
-      double num6 = ((IComparable) _param1[index]).\u0023\u003Dzb9UCYbo\u003D();
+      double num6 = ((IComparable) _param1[index]).ToDouble();
       if (num6 > num3)
         num3 = num6;
       if (++num4 >= num2)
@@ -177,7 +177,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
     int num5 = 0;
     for (; index <= _param3; ++index)
     {
-      double num6 = ((IComparable) _param1[index]).\u0023\u003Dzb9UCYbo\u003D();
+      double num6 = ((IComparable) _param1[index]).ToDouble();
       if (num6 < num3)
         num3 = num6;
       if (++num4 >= num2)
@@ -206,7 +206,7 @@ internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnx
     int num4 = 0;
     for (; index <= _param3; ++index)
     {
-      double val2 = ((IComparable) _param1[index]).\u0023\u003Dzb9UCYbo\u003D();
+      double val2 = ((IComparable) _param1[index]).ToDouble();
       val1_1 = Math.Min(val1_1, val2);
       val1_2 = Math.Max(val1_2, val2);
       if (++num3 >= num2)

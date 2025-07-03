@@ -9,26 +9,26 @@ using System;
 using System.ComponentModel;
 
 #nullable disable
-internal interface \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D,
+internal interface IRange<T> : 
+  IRange,
   ICloneable,
   INotifyPropertyChanged
-  where \u0023\u003DzH9HNkng\u003D : IComparable
+  where T : IComparable
 {
-  \u0023\u003DzH9HNkng\u003D Min { get; set; }
+  T Min { get; set; }
 
-  \u0023\u003DzH9HNkng\u003D Max { get; set; }
+  T Max { get; set; }
 
-  \u0023\u003DzH9HNkng\u003D Diff { get; }
+  T Diff { get; }
 
-  \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzzXTqVFg\u003D(
+  IRange<T> GrowBy(
     double _param1,
     double _param2);
 
-  \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz8b8KOJANG3C3(
+  IRange<T> SetMinMax(
     double _param1,
     double _param2);
 
-  \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzeiifnZI\u003D(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D> _param1);
+  IRange<T> \u0023\u003DzeiifnZI\u003D(
+    IRange<T> _param1);
 }

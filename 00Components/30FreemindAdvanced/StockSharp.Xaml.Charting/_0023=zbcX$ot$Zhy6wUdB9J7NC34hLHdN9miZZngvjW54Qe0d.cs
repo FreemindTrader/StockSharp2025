@@ -11,8 +11,8 @@ using System.Windows;
 #nullable disable
 internal interface \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7 : 
   IDisposable,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
+  IHitTestable,
+  IInvalidatableElement
 {
   void \u0023\u003DzQ_ByYlCf\u0024Kac(
     EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> _param1);

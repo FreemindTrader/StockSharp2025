@@ -12,8 +12,8 @@ using System;
 internal sealed class \u0023\u003DzYNfF0SGPMJVvgWPQnt5HEJiRtXRCnPZdCVqsqV8cmzW4e6QdAywEXAh86y0Qs6E_vMDCpvPvum5n : 
   \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D
 {
-  private readonly double \u0023\u003DzWAnvsEc\u003D;
-  private readonly double \u0023\u003DzjV9cs\u0024I\u003D;
+  private readonly double dgr;
+  private readonly double dgs;
   private double \u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D;
   private readonly double \u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D;
   private readonly double \u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D;
@@ -39,10 +39,10 @@ internal sealed class \u0023\u003DzYNfF0SGPMJVvgWPQnt5HEJiRtXRCnPZdCVqsqV8cmzW4e
     this.\u0023\u003DzeuXgfasUDyUfGmCF\u0024EtXjOjpTjP2(_param4);
     this.\u0023\u003Dz83sA3hbUFtmcF0NtN3F3NVYGbngE(_param5);
     this.\u0023\u003DziaxW5h6Fhau4h9lgdx67D0k\u003D(_param6);
-    this.\u0023\u003DzWAnvsEc\u003D = _param2;
-    this.\u0023\u003DzjV9cs\u0024I\u003D = _param3;
+    this.dgr = _param2;
+    this.dgs = _param3;
     this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D = _param1 - 1.0;
-    this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D = this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D / (this.\u0023\u003DzjV9cs\u0024I\u003D - this.\u0023\u003DzWAnvsEc\u003D);
+    this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D = this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D / (this.dgs - this.dgr);
     this.\u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D = 1.0 / this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D;
   }
 
@@ -53,12 +53,12 @@ internal sealed class \u0023\u003DzYNfF0SGPMJVvgWPQnt5HEJiRtXRCnPZdCVqsqV8cmzW4e
 
   public sealed override double \u0023\u003DzhL6gsJw\u003D(double _param1)
   {
-    return this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D - (this.\u0023\u003DzjV9cs\u0024I\u003D - _param1) * this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D + this.\u0023\u003DzV1bNkSgej_yk();
+    return this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D - (this.dgs - _param1) * this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D + this.\u0023\u003DzV1bNkSgej_yk();
   }
 
   public sealed override double \u0023\u003DzACwLhyc\u003D(double _param1)
   {
-    return (this.\u0023\u003DzjV9cs\u0024I\u003D - this.\u0023\u003DzWAnvsEc\u003D) * (_param1 - this.\u0023\u003DzV1bNkSgej_yk()) * this.\u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D + this.\u0023\u003DzWAnvsEc\u003D;
+    return (this.dgs - this.dgr) * (_param1 - this.\u0023\u003DzV1bNkSgej_yk()) * this.\u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D + this.dgr;
   }
 
   internal double \u0023\u003Dz2iMPijbZ\u00245q1()

@@ -69,7 +69,7 @@ public class ChartVolatilitySmileElement :
   /// <inheritdoc />
   protected override bool OnDraw(ChartDrawData data)
   {
-    return (0 | (((IfxChartElement) this.Values).\u0023\u003DzjgUUUJE\u003D(data) ? 1 : 0) | (((IfxChartElement) this.Smile).\u0023\u003DzjgUUUJE\u003D(data) ? 1 : 0)) != 0;
+    return (0 | (((IfxChartElement) this.Values).Draw(data) ? 1 : 0) | (((IfxChartElement) this.Smile).Draw(data) ? 1 : 0)) != 0;
   }
 
   /// <summary>Load settings.</summary>

@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 #nullable disable
 internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   private static readonly DependencyProperty \u0023\u003Dzy4Y1epMcZKTS = DependencyProperty.Register("", typeof (string), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ), new PropertyMetadata((object) "", new PropertyChangedCallback(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003Dzn0IbA1m7B6Pr)));
@@ -90,7 +90,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
 
   private void \u0023\u003DzTXojzBH7awRH(Cursor _param1)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
+    IAxis dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
     dynWmoFzgH4RlWB0lB?.\u0023\u003DzqFIyyIbnwGLq(_param1 ?? this.\u0023\u003Dzwc3e5oDhVoYg(dynWmoFzgH4RlWB0lB));
   }
 
@@ -101,7 +101,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
     this.\u0023\u003DzTXojzBH7awRH(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003DzFl6tvxA\u003D);
   }
 
-  protected abstract \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzFLmJq0JJlr0n();
+  protected abstract IAxis \u0023\u003DzFLmJq0JJlr0n();
 
   protected virtual bool \u0023\u003DzqFBxYEN\u0024frAq(Point _param1, Rect _param2, bool _param3)
   {
@@ -113,7 +113,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
   }
 
   protected virtual Cursor \u0023\u003Dzwc3e5oDhVoYg(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     Cursor cursor = _param1.IsHorizontalAxis ? Cursors.SizeWE : Cursors.SizeNS;
     return !this.IsEnabled ? \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003DzFl6tvxA\u003D : cursor;
@@ -123,10 +123,10 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
+    IAxis dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
     if (this.IsDragging || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn) || dynWmoFzgH4RlWB0lB == null)
       return;
-    Rect boundsRelativeTo = dynWmoFzgH4RlWB0lB.GetBoundsRelativeTo((\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.\u0023\u003Dzwc4Gzka23TGB());
+    Rect boundsRelativeTo = dynWmoFzgH4RlWB0lB.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB());
     if (dynWmoFzgH4RlWB0lB.IsHorizontalAxis && boundsRelativeTo.Height < this.MinTouchArea)
     {
       boundsRelativeTo.Y -= (this.MinTouchArea - boundsRelativeTo.Height) / 2.0;
@@ -199,34 +199,34 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
 
   protected virtual void \u0023\u003DzKcp02aUNjDpn(Point _param1, Point _param2, bool _param3)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = this.\u0023\u003DzFQz4aIsJtfEk(_param1, _param2, _param3, dynWmoFzgH4RlWB0lB);
+    IAxis dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
+    IRange abyLt9clZggmJsWhw = this.\u0023\u003DzFQz4aIsJtfEk(_param1, _param2, _param3, dynWmoFzgH4RlWB0lB);
     if (dynWmoFzgH4RlWB0lB.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Always)
       ((DependencyObject) dynWmoFzgH4RlWB0lB).SetValue(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz3kyPJRWoiKq0, (object) this.\u0023\u003Dz6JLjSbJbacdN(abyLt9clZggmJsWhw, dynWmoFzgH4RlWB0lB));
     else
       dynWmoFzgH4RlWB0lB.VisibleRange = abyLt9clZggmJsWhw;
   }
 
-  protected abstract \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzFQz4aIsJtfEk(
+  protected abstract IRange \u0023\u003DzFQz4aIsJtfEk(
     Point _param1,
     Point _param2,
     bool _param3,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param4);
+    IAxis _param4);
 
-  protected virtual dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dz6JLjSbJbacdN(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param2)
+  protected virtual DoubleRange \u0023\u003Dz6JLjSbJbacdN(
+    IRange _param1,
+    IAxis _param2)
   {
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd1 = _param1.\u0023\u003DzfODy_Nxn8OGy();
+    DoubleRange klqcJ87Zm8UwE3WEjd1 = _param1.AsDoubleRange();
     double max = klqcJ87Zm8UwE3WEjd1.Max;
     double min = klqcJ87Zm8UwE3WEjd1.Min;
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd2 = _param2.VisibleRange.\u0023\u003DzfODy_Nxn8OGy();
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> hgpwdgoZpprK58gKzo0gQ = _param2.get_GrowBy() ?? (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double>) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(0.0, 0.0);
+    DoubleRange klqcJ87Zm8UwE3WEjd2 = _param2.VisibleRange.AsDoubleRange();
+    IRange<double> hgpwdgoZpprK58gKzo0gQ = _param2.GrowBy ?? (IRange<double>) new DoubleRange(0.0, 0.0);
     double num1 = (klqcJ87Zm8UwE3WEjd2.Min + klqcJ87Zm8UwE3WEjd2.Min * hgpwdgoZpprK58gKzo0gQ.Max + klqcJ87Zm8UwE3WEjd2.Max * hgpwdgoZpprK58gKzo0gQ.Min) / (1.0 + hgpwdgoZpprK58gKzo0gQ.Min + hgpwdgoZpprK58gKzo0gQ.Max);
     double num2 = (klqcJ87Zm8UwE3WEjd2.Max + num1 * hgpwdgoZpprK58gKzo0gQ.Max) / (1.0 + hgpwdgoZpprK58gKzo0gQ.Max);
     double num3 = (max - num2) / (num2 - num1);
     double num4 = num1;
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd((min - num4) / (-num2 + num1), num3);
+    return new DoubleRange((min - num4) / (-num2 + num1), num3);
   }
 
   private static void \u0023\u003Dzn0IbA1m7B6Pr(

@@ -17,7 +17,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
   \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvM\u00245t3IBX9uM_BXqrtdNxSdMVJP41w\u003D\u003D<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  ISuspendable,
   \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA6LApz0w6piN5MPsjC14et6W
   where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
@@ -34,7 +34,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
     this.\u0023\u003Dz3laIKDGah\u0024Kh = new \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>(new Action<IList<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>>(this.\u0023\u003DzGXoUV7Q\u0024_bM\u0024));
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D YRange
+  public override IRange YRange
   {
     get
     {
@@ -141,11 +141,11 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
 
   public override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4,
     bool? _param5,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param6,
+    IRange _param6,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param7,
     object _param8 = null)
   {
@@ -312,7 +312,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D zE8zkRfY = this.\u0023\u003DzyaS0FCQuIbTz[_param1];
-    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(_param2, zE8zkRfY);
+    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(_param2, zE8zkRfY);
   }
 
   public override \u0023\u003DzE8zkRfY\u003D GetYMinAt(
@@ -320,7 +320,7 @@ internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izNx6IhCsNd8bh08wEboTg4qbW<
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D zE8zkRfY = this.\u0023\u003Dz_YpB1WqdIoXd[_param1];
-    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(_param2, zE8zkRfY);
+    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(_param2, zE8zkRfY);
   }
 
   private void \u0023\u003DzGXoUV7Q\u0024_bM\u0024(

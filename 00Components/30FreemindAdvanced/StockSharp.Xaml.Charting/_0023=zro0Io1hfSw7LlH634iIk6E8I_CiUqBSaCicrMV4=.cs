@@ -15,7 +15,7 @@ internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D
   
   private readonly 
   #nullable disable
-  Action \u0023\u003Dz7CXThCs\u003D;
+  Action dpoChangedEventArgs;
   
   private int \u0023\u003DzMRT_jLU\u003D = 100;
   
@@ -25,7 +25,7 @@ internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D
 
   private \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D(Action _param1)
   {
-    this.\u0023\u003Dz7CXThCs\u003D = _param1;
+    this.dpoChangedEventArgs = _param1;
   }
 
   public static \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D \u0023\u003DzEbmjWGc\u003D(
@@ -60,7 +60,7 @@ internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D
   {
     if (this.\u0023\u003DzMRT_jLU\u003D <= 0)
     {
-      this.\u0023\u003Dz7CXThCs\u003D();
+      this.dpoChangedEventArgs();
       return this;
     }
     this.\u0023\u003DzO6iOtf4\u003D = new DispatcherTimer(this.\u0023\u003Dz87uDtww\u003D);
@@ -74,7 +74,7 @@ internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D
   #nullable enable
   object? _param1, EventArgs _param2)
   {
-    this.\u0023\u003Dz7CXThCs\u003D();
+    this.dpoChangedEventArgs();
     this.\u0023\u003DzO6iOtf4\u003D.Stop();
   }
 }

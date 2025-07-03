@@ -94,16 +94,16 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6
       {
         if (this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection)
         {
-          foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xax in this.XAxes)
+          foreach (IAxis xax in this.XAxes)
           {
             int num1 = xax.IsHorizontalAxis ? 1 : 0;
             bool? isHorizontalAxis = this.XAxis?.IsHorizontalAxis;
             int num2 = isHorizontalAxis.GetValueOrDefault() ? 1 : 0;
             if (num1 == num2 & isHorizontalAxis.HasValue)
             {
-              using (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote fq05jnDg3bOrIrgCjote = xax.SuspendUpdates())
+              using (IUpdateSuspender fq05jnDg3bOrIrgCjote = xax.SuspendUpdates())
               {
-                fq05jnDg3bOrIrgCjote.\u0023\u003DzZreBqCsNdaNN(false);
+                fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose=false;
                 double num3 = zCvE85jZgqySy;
                 double num4 = z9OrFOfczTfr;
                 if (xax.get_IsCategoryAxis())
@@ -128,7 +128,7 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6
         }
         else
         {
-          foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yax in this.YAxes)
+          foreach (IAxis yax in this.YAxes)
             yax.\u0023\u003DzquLnA5Y\u003D(yax.IsHorizontalAxis ? -zCvE85jZgqySy : z9OrFOfczTfr, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
         }
       }

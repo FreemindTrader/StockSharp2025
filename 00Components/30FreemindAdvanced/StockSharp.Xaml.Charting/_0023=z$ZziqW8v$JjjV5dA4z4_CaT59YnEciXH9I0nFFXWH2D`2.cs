@@ -45,8 +45,8 @@ internal sealed class \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0
     return this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003DzUbuaVJkUy0ct();
   }
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2()
+  public override DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(this.\u0023\u003DzyoB24lWE6a_0(0).\u0023\u003Dzb9UCYbo\u003D(), this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003DzUOzVYhDwNbf3()).\u0023\u003Dzb9UCYbo\u003D());
+    return new DoubleRange(this.\u0023\u003DzyoB24lWE6a_0(0).ToDouble(), this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003DzUOzVYhDwNbf3()).ToDouble());
   }
 }

@@ -40,9 +40,9 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     set => this.SetValue(HorizontalLineAnnotation.YDragStepProperty, (object) value);
   }
 
-  public override \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB GetUsedAxis()
+  public override IAxis GetUsedAxis()
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) null;
+    IAxis usedAxis = (IAxis) null;
     if (this.XAxis != null)
       usedAxis = this.XAxis.IsHorizontalAxis ? this.YAxis : this.XAxis;
     else if (this.YAxis != null)
@@ -69,27 +69,27 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     double horizOffset,
     double vertOffset)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.GetUsedAxis();
+    IAxis usedAxis = this.GetUsedAxis();
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     double coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
-    if (!this.IsCoordinateValid(coord, canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+    if (!this.IsCoordinateValid(coord, canvas.ActualHeight))
     {
       if (coord < 0.0)
         vertOffset -= coord - 1.0;
-      if (coord > canvas.\u0023\u003Dz2kO1mtG\u0024bEUM())
-        vertOffset -= coord - (canvas.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0);
+      if (coord > canvas.ActualHeight)
+        vertOffset -= coord - (canvas.ActualHeight - 1.0);
       coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
     }
     if (this.YDragStep > 0.0 && !usedAxis.IsHorizontalAxis && !usedAxis.\u0023\u003DzFrVmckt\u0024NpG6())
     {
       IComparable comparable1 = this.FromCoordinate(coordinates.\u0023\u003Dz2J4l3QUGwZHE, usedAxis);
       IComparable comparable2 = this.FromCoordinate(coord, usedAxis);
-      int num1 = (int) (Math.Abs(comparable1.\u0023\u003Dzb9UCYbo\u003D() - comparable2.\u0023\u003Dzb9UCYbo\u003D()) / this.YDragStep);
+      int num1 = (int) (Math.Abs(comparable1.ToDouble() - comparable2.ToDouble()) / this.YDragStep);
       int num2 = !usedAxis.get_FlipCoordinates() ? -Math.Sign(vertOffset) : Math.Sign(vertOffset);
-      coord = this.ToCoordinate((IComparable) (comparable1.\u0023\u003Dzb9UCYbo\u003D() + (double) (num2 * num1) * this.YDragStep), usedAxis);
+      coord = this.ToCoordinate((IComparable) (comparable1.ToDouble() + (double) (num2 * num1) * this.YDragStep), usedAxis);
       vertOffset = coord - coordinates.\u0023\u003Dz2J4l3QUGwZHE;
     }
-    if (this.IsCoordinateValid(coord, canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+    if (this.IsCoordinateValid(coord, canvas.ActualHeight))
       base.SetBasePoint(new Point()
       {
         X = coordinates.\u0023\u003DzS2_K6sVvd5IY,
@@ -122,8 +122,8 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
   protected override void SetBasePoint(
     Point newPoint,
     int index,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xAxis,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yAxis)
+    IAxis xAxis,
+    IAxis yAxis)
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     IComparable[] comparableArray = this.FromCoordinates(newPoint);
@@ -133,7 +133,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     DependencyProperty y;
     this.GetPropertiesFromIndex(index, out x, out y);
     bool flag = !this.XAxis.IsHorizontalAxis;
-    if (!this.IsCoordinateValid(newPoint.X, canvas.\u0023\u003Dzu2ObQ3hMALTN()))
+    if (!this.IsCoordinateValid(newPoint.X, canvas.ActualWidth))
       return;
     if (flag)
       this.SetCurrentValue(y, (object) comparable2);
@@ -167,11 +167,11 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
       double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
       if (!z2J4l3QuGwZhe.\u0023\u003Dz_Bj0HmLWq3hY() || canvas == null)
         return;
-      double val1 = canvas.\u0023\u003Dzu2ObQ3hMALTN();
+      double val1 = canvas.ActualWidth;
       switch (this.\u0023\u003Dz_iIh83yfe01U().HorizontalAlignment)
       {
         case HorizontalAlignment.Left:
-          val1 = _param1.\u0023\u003DzS2_K6sVvd5IY.\u0023\u003DzutrFxOU\u003D() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
+          val1 = _param1.\u0023\u003DzS2_K6sVvd5IY.IsFiniteNumber() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
           break;
         case HorizontalAlignment.Center:
           double num2 = Math.Min(_param1.\u0023\u003DzS2_K6sVvd5IY, _param1.\u0023\u003Dz6aJoeqoqAzym);
@@ -181,7 +181,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
           val1 = num3 - num4;
           break;
         case HorizontalAlignment.Right:
-          num1 = _param1.\u0023\u003DzS2_K6sVvd5IY.\u0023\u003DzutrFxOU\u003D() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
+          num1 = _param1.\u0023\u003DzS2_K6sVvd5IY.IsFiniteNumber() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
           val1 -= num1;
           break;
       }
@@ -237,7 +237,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       bool flag = false;
-      if (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM())
+      if (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight)
       {
         flag = true;
       }
@@ -249,10 +249,10 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
             flag = _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0;
             break;
           case HorizontalAlignment.Center:
-            flag = _param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.\u0023\u003Dzu2ObQ3hMALTN() && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.\u0023\u003Dzu2ObQ3hMALTN();
+            flag = _param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.ActualWidth;
             break;
           case HorizontalAlignment.Right:
-            flag = _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.\u0023\u003Dzu2ObQ3hMALTN();
+            flag = _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth;
             break;
         }
       }

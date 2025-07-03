@@ -166,7 +166,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 
@@ -287,7 +287,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 
@@ -394,7 +394,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
       switch (this.\u0023\u003Dz4fzyEZ1SsHYa)
       {
@@ -477,7 +477,7 @@ label_22:
       }
       __fault
       {
-        this.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D();
+        this.Dispose();
       }
     }
 
@@ -565,7 +565,7 @@ label_22:
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 

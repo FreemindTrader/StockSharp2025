@@ -6,9 +6,9 @@
 // XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
 
 #nullable disable
-internal interface \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK4AkZG\u0024zeIU4wmt7QA82wUrXA\u003D\u003D<\u0023\u003DzH9HNkng\u003D>
+internal interface \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK4AkZG\u0024zeIU4wmt7QA82wUrXA\u003D\u003D<T>
 {
-  \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzvsnCYl4\u003D();
+  T[] \u0023\u003DzvsnCYl4\u003D();
 
   void \u0023\u003Dz8ClqfHs\u003D();
 }

@@ -17,20 +17,20 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
+  BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register("", typeof (bool), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register("", typeof (bool), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzV4cOZ_3w4VF7 = DependencyProperty.Register("", typeof (Color), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzV4cOZ_3w4VF7 = DependencyProperty.Register("", typeof (Color), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzqXdfa4iudfGA = DependencyProperty.Register("", typeof (Color), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzqXdfa4iudfGA = DependencyProperty.Register("", typeof (Color), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzJJDbrFb7cXV\u0024 = DependencyProperty.Register("", typeof (Color), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzJJDbrFb7cXV\u0024 = DependencyProperty.Register("", typeof (Color), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003Dz6dTf9uHwK3CQ2m0now\u003D\u003D = DependencyProperty.Register("", typeof (double[]), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz6dTf9uHwK3CQ2m0now\u003D\u003D = DependencyProperty.Register("", typeof (double[]), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzFtj5s4w63Vxye7u2Bw\u003D\u003D = DependencyProperty.Register("", typeof (double[]), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzFtj5s4w63Vxye7u2Bw\u003D\u003D = DependencyProperty.Register("", typeof (double[]), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   private FrameworkElement \u0023\u003DzYbhxxX0hEwb\u0024mbXc7A6rNBo\u003D;
 
@@ -141,17 +141,17 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
       Tuple<IComparable, IComparable> tuple = this.\u0023\u003Dzs0Y0\u0024lrpmkkQ(_param1);
       int index1 = this.DataSeries.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzFH1yjjY\u003D(this.DataSeries.get_IsSorted(), tuple.Item1, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2);
       int index2 = this.DataSeries.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzFH1yjjY\u003D(this.DataSeries.get_IsSorted(), tuple.Item1, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 3);
-      double num1 = ((IComparable) this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[index1]).\u0023\u003Dzb9UCYbo\u003D();
-      double num2 = ((IComparable) this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[index2]).\u0023\u003Dzb9UCYbo\u003D();
-      Point point1 = new Point(num1, ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[index1]).\u0023\u003Dzb9UCYbo\u003D());
-      Point point2 = new Point(num2, ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[index2]).\u0023\u003Dzb9UCYbo\u003D());
+      double num1 = ((IComparable) this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[index1]).ToDouble();
+      double num2 = ((IComparable) this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[index2]).ToDouble();
+      Point point1 = new Point(num1, ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[index1]).ToDouble());
+      Point point2 = new Point(num2, ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[index2]).ToDouble());
       int num3 = double.IsNaN(point1.Y) ? 1 : (double.IsNaN(point2.Y) ? 1 : 0);
-      Point point3 = new Point(num1, ((IComparable) ((\u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH) this.DataSeries).\u0023\u003DzxBmSWTMopfir()[index1]).\u0023\u003Dzb9UCYbo\u003D());
-      Point point4 = new Point(num2, ((IComparable) ((\u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH) this.DataSeries).\u0023\u003DzxBmSWTMopfir()[index2]).\u0023\u003Dzb9UCYbo\u003D());
+      Point point3 = new Point(num1, ((IComparable) ((\u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH) this.DataSeries).\u0023\u003DzxBmSWTMopfir()[index1]).ToDouble());
+      Point point4 = new Point(num2, ((IComparable) ((\u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH) this.DataSeries).\u0023\u003DzxBmSWTMopfir()[index2]).ToDouble());
       int num4 = double.IsNaN(point3.Y) ? (true ? 1 : 0) : (double.IsNaN(point4.Y) ? 1 : 0);
       if ((num3 | num4) != 0)
         return zldchDrVsrVyHh6WyiGy;
-      Point point5 = new Point(tuple.Item1.\u0023\u003Dzb9UCYbo\u003D(), tuple.Item2.\u0023\u003Dzb9UCYbo\u003D());
+      Point point5 = new Point(tuple.Item1.ToDouble(), tuple.Item2.ToDouble());
       Point point6;
       if (\u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003Dz_Q3WCiJm2fzt(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(point1, point2), new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(point3, point4), out point6))
         zldchDrVsrVyHh6WyiGy.\u0023\u003Dzn3o1RS9wuET8(\u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003Dz_0KJG0n18I8E(point5, point1, point3, point6) || \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003Dz_0KJG0n18I8E(point5, point2, point4, point6));
@@ -173,7 +173,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
       bool flag = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV();
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
       double num1 = flag ? zldchDrVsrVyHh6WyiGy.\u0023\u003DzxZfJER0dbHuS().Y : zldchDrVsrVyHh6WyiGy.\u0023\u003DzxZfJER0dbHuS().X;
-      double num2 = zldchDrVsrVyHh6WyiGy.\u0023\u003DzpV2MuX1Y\u0024EoN().\u0023\u003Dzb9UCYbo\u003D();
+      double num2 = zldchDrVsrVyHh6WyiGy.\u0023\u003DzpV2MuX1Y\u0024EoN().ToDouble();
       double num3 = xkzemsMs5tGkouk5w.\u0023\u003DzhL6gsJw\u003D(num2);
       Point point = this.\u0023\u003Dzop6vn0GowyiR(new Point(num1, num3), flag);
       zldchDrVsrVyHh6WyiGy.\u0023\u003Dz8RUGHczgdGF57F9Tiw\u003D\u003D(point);
@@ -211,8 +211,8 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD>("");
     using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity, (double[]) null, PenLineCap.Round))
@@ -225,12 +225,12 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
   private void \u0023\u003Dz22YRQ7A35A6I(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param2,
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param3,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param4)
+    IRenderContext2D _param3,
+    IRenderPassData _param4)
   {
-    using (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_1 = _param3.\u0023\u003Dze8WyDhI\u003D(this.BandUpColor, this.Opacity, new bool?()))
+    using (IBrush2D xrgcdFbSdWgN9GcT8_1 = _param3.\u0023\u003Dze8WyDhI\u003D(this.BandUpColor, this.Opacity, new bool?()))
     {
-      using (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_2 = _param3.\u0023\u003Dze8WyDhI\u003D(this.BandDownColor, this.Opacity, new bool?()))
+      using (IBrush2D xrgcdFbSdWgN9GcT8_2 = _param3.\u0023\u003Dze8WyDhI\u003D(this.BandDownColor, this.Opacity, new bool?()))
       {
         \u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI bxVnSKseFk9GdLpI = (\u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI) this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
         int num1 = bxVnSKseFk9GdLpI.\u0023\u003DzlpVGw6E\u003D();
@@ -251,8 +251,8 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
         bool flag = hw1ki13vvK4WxOgoljkHyInT.Fill == this.SeriesColor;
         \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = num2 != 0 ? _param1 : (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null;
         \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = num2 != 0 ? _param2 : (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null;
-        \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_3 = flag ? xrgcdFbSdWgN9GcT8_1 : (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null;
-        \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_4 = flag ? xrgcdFbSdWgN9GcT8_2 : (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null;
+        IBrush2D xrgcdFbSdWgN9GcT8_3 = flag ? xrgcdFbSdWgN9GcT8_1 : (IBrush2D) null;
+        IBrush2D xrgcdFbSdWgN9GcT8_4 = flag ? xrgcdFbSdWgN9GcT8_2 : (IBrush2D) null;
         for (int index = 0; index < num1; ++index)
         {
           \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD> iwzGyvO4YaqDkpiI = bxVnSKseFk9GdLpI[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD>;
@@ -275,12 +275,12 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
   }
 
   protected virtual IList<dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.\u0023\u003Dz71mAcyQ\u003D> \u0023\u003DzKNuqvbEQzJvP6cmJXg\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2,
+    IRenderContext2D _param1,
+    IRenderPassData _param2,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param4,
+    IBrush2D _param4,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param5,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param6)
+    IBrush2D _param6)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param3, "");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param5, "");
@@ -298,7 +298,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
       double num7 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index).Property();
       double num8 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
       double num9 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
-      if ((num8.\u0023\u003DzeNpB9guo_tur() ? 1 : (num9.\u0023\u003DzeNpB9guo_tur() ? 1 : 0)) != 0)
+      if ((num8.IsNaN() ? 1 : (num9.IsNaN() ? 1 : 0)) != 0)
       {
         this.\u0023\u003DzVyzQAuU\u003D(num3, index, _param3, _param2, pointList);
         this.\u0023\u003Dz3fxFWrVp1Ljj(num3, index, _param5, _param2, pointList);
@@ -345,11 +345,11 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
     {
       \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY1 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(num1 - 1);
       \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY2 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(num1 - 1);
-      if (!kld48pAvUlrTzJ1tmfY1.\u0023\u003Dzu7q98_E\u003D().\u0023\u003DzeNpB9guo_tur() && !kld48pAvUlrTzJ1tmfY2.\u0023\u003Dzu7q98_E\u003D().\u0023\u003DzeNpB9guo_tur())
+      if (!kld48pAvUlrTzJ1tmfY1.\u0023\u003Dzu7q98_E\u003D().IsNaN() && !kld48pAvUlrTzJ1tmfY2.\u0023\u003Dzu7q98_E\u003D().IsNaN())
       {
         this.\u0023\u003DzVyzQAuU\u003D(num3, num1, _param3, _param2, pointList);
         this.\u0023\u003Dz3fxFWrVp1Ljj(num3, num1, _param5, _param2, pointList);
-        \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8 = kld48pAvUlrTzJ1tmfY1.\u0023\u003Dzu7q98_E\u003D() > kld48pAvUlrTzJ1tmfY2.\u0023\u003Dzu7q98_E\u003D() ? _param4 : _param6;
+        IBrush2D xrgcdFbSdWgN9GcT8 = kld48pAvUlrTzJ1tmfY1.\u0023\u003Dzu7q98_E\u003D() > kld48pAvUlrTzJ1tmfY2.\u0023\u003Dzu7q98_E\u003D() ? _param4 : _param6;
         z71mAcyQList.Add(new dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.\u0023\u003Dz71mAcyQ\u003D(pointList.ToArray(), xrgcdFbSdWgN9GcT8));
       }
     }
@@ -360,7 +360,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
     int _param1,
     int _param2,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param4,
+    IRenderPassData _param4,
     List<Point> _param5)
   {
     for (int index = _param1; index < _param2; ++index)
@@ -371,7 +371,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
     int _param1,
     int _param2,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param4,
+    IRenderPassData _param4,
     List<Point> _param5)
   {
     for (int index = _param2 - 1; index >= _param1; --index)
@@ -383,7 +383,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
     \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D _param1,
     List<Point> _param2,
     bool _param3,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param4)
+    IRenderPassData _param4)
   {
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param4.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = _param4.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
@@ -429,12 +429,12 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
 
   private double \u0023\u003Dz0D9nQXfw9PS9XdbmK6BuM0s6nQRIlp3hKg\u003D\u003D(int _param1)
   {
-    return ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[_param1]).\u0023\u003Dzb9UCYbo\u003D();
+    return ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[_param1]).ToDouble();
   }
 
   private double \u0023\u003Dz_Zd\u0024WqC1Iyyk5s9eL6trPhOVda_6sRI59g\u003D\u003D(int _param1)
   {
-    return ((IComparable) ((\u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH) this.DataSeries).\u0023\u003DzxBmSWTMopfir()[_param1]).\u0023\u003Dzb9UCYbo\u003D();
+    return ((IComparable) ((\u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH) this.DataSeries).\u0023\u003DzxBmSWTMopfir()[_param1]).ToDouble();
   }
 
   protected struct \u0023\u003Dz71mAcyQ\u003D
@@ -442,18 +442,18 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ
     
     private readonly Point[] \u0023\u003DzYw05nwk\u003D;
     
-    private readonly \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzA2wbnrb_JRtA;
+    private readonly IBrush2D \u0023\u003DzA2wbnrb_JRtA;
 
     public \u0023\u003Dz71mAcyQ\u003D(
       Point[] _param1,
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2)
+      IBrush2D _param2)
       : this()
     {
       this.\u0023\u003DzYw05nwk\u003D = _param1;
       this.\u0023\u003DzA2wbnrb_JRtA = _param2;
     }
 
-    public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzRsgTSqM\u003D()
+    public IBrush2D \u0023\u003DzRsgTSqM\u003D()
     {
       return this.\u0023\u003DzA2wbnrb_JRtA;
     }

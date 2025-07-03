@@ -28,7 +28,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 #nullable enable
-internal sealed class IScichartSurfaceVM : 
+internal sealed class ScichartSurfaceMVVM : 
   ChartBaseViewModel,
   \u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D,
   IDisposable
@@ -36,7 +36,7 @@ internal sealed class IScichartSurfaceVM :
   
   private readonly 
   #nullable disable
-  IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa \u0023\u003DzH31vDNM\u003D;
+  ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa \u0023\u003DzH31vDNM\u003D;
   
   private readonly Dictionary<IfxChartElement, List<\u0023\u003DziARJyOecclYiJO5UbZqQJ_KOh9jO5RUUcFIAqLc\u003D>> \u0023\u003DzdRNWPnbCFguW;
   
@@ -46,7 +46,7 @@ internal sealed class IScichartSurfaceVM :
   
   private bool \u0023\u003Dz8Yq_VCmT46mW;
   
-  private readonly List<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd> \u0023\u003DzRHhpqbmmRLe6;
+  private readonly List<ChartModifierBase> \u0023\u003DzRHhpqbmmRLe6;
   
   private readonly dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd \u0023\u003DzMeiqVc1OFaXWhBgW\u0024A\u003D\u003D;
   
@@ -72,9 +72,9 @@ internal sealed class IScichartSurfaceVM :
   
   private readonly ObservableCollection<\u0023\u003DziARJyOecclYiJO5UbZqQJ_KOh9jO5RUUcFIAqLc\u003D> \u0023\u003DzydxgB3sqmEwSB0XxJw\u003D\u003D;
   
-  private readonly \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D \u0023\u003DzYe8QEajBkzI0US3jz3KFoMQ\u003D;
+  private readonly \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D _xAxisNotifyList;
   
-  private readonly \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D \u0023\u003DzYQqL3flRD33LHxyIdb39M1g\u003D;
+  private readonly \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D _yAxisNotifyList;
   
   private bool \u0023\u003DziDb\u0024Ig3dGddOMOYevA\u003D\u003D;
   
@@ -88,7 +88,7 @@ internal sealed class IScichartSurfaceVM :
   
   private string \u0023\u003DzZ5hHunO\u00246RUt;
   
-  private double \u0023\u003DzqcgkI5Q\u003D;
+  private double _height;
   
   private bool \u0023\u003DzL6RNvETlqFx4;
   
@@ -102,7 +102,7 @@ internal sealed class IScichartSurfaceVM :
   
   private string \u0023\u003Dz0M9ae_JEb7EN;
   
-  private double \u0023\u003DzDtp\u00246FfBRlYq;
+  private double _dataPointWidth;
   
   private ICommand \u0023\u003Dzq5MjugDE5IXE3RK5TQ\u003D\u003D;
   
@@ -110,18 +110,18 @@ internal sealed class IScichartSurfaceVM :
   
   private readonly ICommand \u0023\u003DzeL1sIZHnHYZeLeRok2aZO4tcX1iI;
 
-  public IScichartSurfaceVM(ChartArea _param1)
+  public ScichartSurfaceMVVM(ChartArea _param1)
   {
-    IScichartSurfaceVM.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new IScichartSurfaceVM.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+    ScichartSurfaceMVVM.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new ScichartSurfaceMVVM.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D = _param1;
     // ISSUE: explicit constructor call
     base.\u002Ector();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRRvwDu67s9Rm = this;
     this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D = v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D ?? throw new ArgumentNullException("");
-    this.\u0023\u003DzIYPyhdsXDIK3 = new DispatcherTimer((DispatcherPriority) 7, Application.Current.Dispatcher);
+    this.\u0023\u003DzIYPyhdsXDIK3 = new DispatcherTimer((DispatcherPriority.Render, Application.Current.Dispatcher);
     this.\u0023\u003DzIYPyhdsXDIK3.Tick += new EventHandler(this.\u0023\u003DzMXbJl7nt_k3k);
     this.\u0023\u003DzeL1sIZHnHYZeLeRok2aZO4tcX1iI = (ICommand) new DelegateCommand(new Action(this.\u0023\u003Dzf5vVcayMq7_zxBOILQ\u003D\u003D));
-    this.ResetAxisTimeZoneCommand = (ICommand) new DelegateCommand<ChartAxis>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Action<ChartAxis>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D)));
+    this.ResetAxisTimeZoneCommand = (ICommand) new DelegateCommand<ChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Action<ChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D)));
     this.Height = v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.Height;
     ((INotifyCollection<IChartElement>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.Elements).Added += new Action<IChartElement>(this.\u0023\u003Dz4M_pW8k\u003D);
     ((INotifyCollection<IChartElement>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.Elements).Removing += new Func<IChartElement, bool>(this.\u0023\u003DzmxDTmQc\u003D);
@@ -203,26 +203,26 @@ internal sealed class IScichartSurfaceVM :
     \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D qnmqCfD8UsSe9i38 = new \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D();
     qnmqCfD8UsSe9i38.\u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D(new Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>(this.\u0023\u003Dz2baZtMhFLPZu0vCzoJUPQZE\u003D));
     qnmqCfD8UsSe9i38.\u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D(new Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>(this.\u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D));
-    List<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd> zRhhpqbmmRle6 = this.\u0023\u003DzRHhpqbmmRLe6;
-    dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[] v7UvhxrxhaatqEjdArray = new dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[9];
-    v7UvhxrxhaatqEjdArray[0] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) qnmqCfD8UsSe9i38;
-    v7UvhxrxhaatqEjdArray[1] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) uGe7r60S1WuU1rGA2;
-    v7UvhxrxhaatqEjdArray[2] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) yx2796KwcrF36XmmEjd2;
+    List<ChartModifierBase> zRhhpqbmmRle6 = this.\u0023\u003DzRHhpqbmmRLe6;
+    ChartModifierBase[] v7UvhxrxhaatqEjdArray = new ChartModifierBase[9];
+    v7UvhxrxhaatqEjdArray[0] = (ChartModifierBase) qnmqCfD8UsSe9i38;
+    v7UvhxrxhaatqEjdArray[1] = (ChartModifierBase) uGe7r60S1WuU1rGA2;
+    v7UvhxrxhaatqEjdArray[2] = (ChartModifierBase) yx2796KwcrF36XmmEjd2;
     dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd wcsffbemybnM9U2CjdEjd = new dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd();
     wcsffbemybnM9U2CjdEjd.AxisId = "";
     wcsffbemybnM9U2CjdEjd.ClipModeX = dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None;
-    v7UvhxrxhaatqEjdArray[3] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) wcsffbemybnM9U2CjdEjd;
+    v7UvhxrxhaatqEjdArray[3] = (ChartModifierBase) wcsffbemybnM9U2CjdEjd;
     dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
     dgE2H48XyyA87SEjd.AxisId = "";
-    v7UvhxrxhaatqEjdArray[4] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) dgE2H48XyyA87SEjd;
-    v7UvhxrxhaatqEjdArray[5] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) new dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd();
-    v7UvhxrxhaatqEjdArray[6] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) this.\u0023\u003DzMeiqVc1OFaXWhBgW\u0024A\u003D\u003D;
+    v7UvhxrxhaatqEjdArray[4] = (ChartModifierBase) dgE2H48XyyA87SEjd;
+    v7UvhxrxhaatqEjdArray[5] = (ChartModifierBase) new dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd();
+    v7UvhxrxhaatqEjdArray[6] = (ChartModifierBase) this.\u0023\u003DzMeiqVc1OFaXWhBgW\u0024A\u003D\u003D;
     dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd fk4QgaphfmmujdEjd = new dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd();
     fk4QgaphfmmujdEjd.ExecuteOn = dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick;
-    v7UvhxrxhaatqEjdArray[7] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) fk4QgaphfmmujdEjd;
-    v7UvhxrxhaatqEjdArray[8] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) ypbydebG6VffgcpzeEjd2;
-    \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd> collection = new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd>(v7UvhxrxhaatqEjdArray);
-    zRhhpqbmmRle6.AddRange((IEnumerable<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd>) collection);
+    v7UvhxrxhaatqEjdArray[7] = (ChartModifierBase) fk4QgaphfmmujdEjd;
+    v7UvhxrxhaatqEjdArray[8] = (ChartModifierBase) ypbydebG6VffgcpzeEjd2;
+    \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<ChartModifierBase> collection = new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<ChartModifierBase>(v7UvhxrxhaatqEjdArray);
+    zRhhpqbmmRle6.AddRange((IEnumerable<ChartModifierBase>) collection);
   }
 
   private void \u0023\u003DzPHnXepkJBjde(object _param1, PropertyChangedEventArgs _param2)
@@ -243,7 +243,7 @@ internal sealed class IScichartSurfaceVM :
 
   public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c(Func<Order, bool> _param1)
   {
-    return ((IEnumerable<ParentVM>) this.\u0023\u003DzH31vDNM\u003D.CachedValues).Where<ParentVM>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<ParentVM, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242))).SelectMany<ParentVM, Order>(new Func<ParentVM, IEnumerable<Order>>(new IScichartSurfaceVM.\u0023\u003Dz0EETrg8PejletCT5YuMr1Rw\u003D()
+    return ((IEnumerable<ParentVM>) this.\u0023\u003DzH31vDNM\u003D.CachedValues).Where<ParentVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<ParentVM, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242))).SelectMany<ParentVM, Order>(new Func<ParentVM, IEnumerable<Order>>(new ScichartSurfaceMVVM.\u0023\u003Dz0EETrg8PejletCT5YuMr1Rw\u003D()
     {
       \u0023\u003DzaPd0W_M\u003D = _param1
     }.\u0023\u003Dz3ppSxBWUBHoE_OmJHdF4GT0\u003D));
@@ -255,8 +255,8 @@ internal sealed class IScichartSurfaceVM :
     if (!this.\u0023\u003Dz8Yq_VCmT46mW)
     {
       this.\u0023\u003Dz8Yq_VCmT46mW = true;
-      this.ChartModifier.ChildModifiers.Add((\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) this.LegendModifier);
-      this.ChartModifier.ChildModifiers.Add((\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) this.AnnotationModifier);
+      this.ChartModifier.ChildModifiers.Add((IChartModifier) this.LegendModifier);
+      this.ChartModifier.ChildModifiers.Add((IChartModifier) this.AnnotationModifier);
       IChartCandleElement[] array = ((SynchronizedDictionary<IfxChartElement, ParentVM>) this.\u0023\u003DzH31vDNM\u003D).Keys.OfType<IChartCandleElement>().ToArray<IChartCandleElement>();
       if (array.Length != 0)
         CollectionHelper.ForEach<IChartCandleElement>((IEnumerable<IChartCandleElement>) array, new Action<IChartCandleElement>(this.\u0023\u003Dz5QuVGogKpyDd_u\u0024czKaNHcU\u003D));
@@ -269,24 +269,24 @@ internal sealed class IScichartSurfaceVM :
     else
     {
       this.ClosePaneCommand = (ICommand) this.ParentViewModel.ClosePaneCommand;
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003DzvfWZFdhb7kc9, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D));
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003Dzw5K\u0024vsW8O9P3, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D));
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003Dz76r5\u0024wlS8ZBb, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D));
-      this.ParentViewModel.\u0023\u003DzCZHTVdsqw3mR(ChartViewModel.\u0023\u003DzeopV6tZDn4Ln, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.\u0023\u003DzvfWZFdhb7kc9, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.\u0023\u003Dzw5K\u0024vsW8O9P3, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.\u0023\u003Dz76r5\u0024wlS8ZBb, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.\u0023\u003DzeopV6tZDn4Ln, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D));
     }
     StockSharp.Xaml.Charting.Chart groupChart = this.GroupChart;
     if (groupChart != null)
     {
       this.\u0023\u003DzrvSxJoHvqJDd();
-      CollectionHelper.AddRange<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((ICollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.ChartModifier.ChildModifiers, (IEnumerable<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzRHhpqbmmRLe6);
+      CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) this.ChartModifier.ChildModifiers, (IEnumerable<IChartModifier>) this.\u0023\u003DzRHhpqbmmRLe6);
       this.AnnotationModifier.SetBindings(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzEaRzkw2Bl16I, (object) groupChart, "");
       dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd yx2796KwcrF36XmmEjd = this.ChartModifier.ChildModifiers.OfType<dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd>().Single<dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd>();
-      yx2796KwcrF36XmmEjd.SetBindings(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzSLZmDSF5TsAu, (object) this.Chart, "");
+      yx2796KwcrF36XmmEjd.SetBindings(ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu, (object) this.Chart, "");
       yx2796KwcrF36XmmEjd.SetBindings(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzCuzcJq\u0024VLiWR, (object) this.Chart, "");
       yx2796KwcrF36XmmEjd.SetBindings(dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd.\u0023\u003DztwQ4ieQ9dTof, (object) this.Chart, "");
       \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D uGe7r60S1WuU1rGA1 = this.ChartModifier.ChildModifiers.OfType<\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D>().Single<\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D>();
       \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D uGe7r60S1WuU1rGA2 = uGe7r60S1WuU1rGA1;
-      DependencyProperty zSlZmDsF5TsAu = dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzSLZmDSF5TsAu;
+      DependencyProperty zSlZmDsF5TsAu = ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu;
       BoolAllConverter conv = new BoolAllConverter();
       conv.Value = true;
       Binding[] bindingArray = new Binding[2]
@@ -302,7 +302,7 @@ internal sealed class IScichartSurfaceVM :
       };
       uGe7r60S1WuU1rGA2.SetMultiBinding(zSlZmDsF5TsAu, (IMultiValueConverter) conv, bindingArray);
       uGe7r60S1WuU1rGA1.SetBindings(\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D.\u0023\u003DzISs1rY1PUWf_, (object) this.Chart, "", BindingMode.OneWay, (IValueConverter) new InverseBooleanConverter());
-      this.ChartModifier.ChildModifiers.OfType<dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd>().Single<dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd>().SetBindings(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzSLZmDSF5TsAu, (object) this.Chart, "", BindingMode.OneWay, (IValueConverter) new EnumBooleanConverter(), (object) ChartAnnotationTypes.None.ToString());
+      this.ChartModifier.ChildModifiers.OfType<dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd>().Single<dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd>().SetBindings(ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu, (object) this.Chart, "", BindingMode.OneWay, (IValueConverter) new EnumBooleanConverter(), (object) ChartAnnotationTypes.None.ToString());
       \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SetMouseEventGroup((DependencyObject) this.ChartModifier, this.PaneGroup);
     }
     this.\u0023\u003Dzdp1hbkXJ1MkF();
@@ -314,7 +314,7 @@ internal sealed class IScichartSurfaceVM :
   {
     ((INotifyPropertyChanged) this.Chart).PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzPHnXepkJBjde);
     if (this.GroupChart != null)
-      this.\u0023\u003DzRHhpqbmmRLe6.ForEach(new Action<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd>(this.\u0023\u003DzTdIpNSu812itYYHN7lIakb6BiejkaXWFgQ\u003D\u003D));
+      this.\u0023\u003DzRHhpqbmmRLe6.ForEach(new Action<ChartModifierBase>(this.\u0023\u003DzTdIpNSu812itYYHN7lIakb6BiejkaXWFgQ\u003D\u003D));
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.XAxises, new Action<IChartAxis>(this.\u0023\u003DzrFpAakDNl3igj4xxMoWpQFW0GE4J_yze\u0024g\u003D\u003D));
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.YAxises, new Action<IChartAxis>(this.\u0023\u003DzGN9dmAg9QrR2Z7eHl8GIJrnf1RvCfrWhVA\u003D\u003D));
     this.\u0023\u003DzIYPyhdsXDIK3.Stop();
@@ -329,9 +329,9 @@ internal sealed class IScichartSurfaceVM :
 
   private void \u0023\u003DzBUrMEb8\u003D(
     IChartAxis _param1,
-    ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> _param2)
+    ICollection<IAxis> _param2)
   {
-    IScichartSurfaceVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D mpa4F4mcyQlZrFjfRi = new IScichartSurfaceVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D();
+    ScichartSurfaceMVVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D mpa4F4mcyQlZrFjfRi = new ScichartSurfaceMVVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D();
     mpa4F4mcyQlZrFjfRi.\u0023\u003DzRRvwDu67s9Rm = this;
     mpa4F4mcyQlZrFjfRi.\u0023\u003Dzfl\u0024A1s0\u003D = _param1;
     mpa4F4mcyQlZrFjfRi.\u0023\u003Dz_liTKnA\u003D = _param2;
@@ -372,9 +372,9 @@ internal sealed class IScichartSurfaceVM :
 
   private bool \u0023\u003Dz_FxkB6U\u003D(
     IChartAxis _param1,
-    ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> _param2)
+    ICollection<IAxis> _param2)
   {
-    IScichartSurfaceVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D jy0mx0yCuWlqEsh0ZdY = new IScichartSurfaceVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D();
+    ScichartSurfaceMVVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D jy0mx0yCuWlqEsh0ZdY = new ScichartSurfaceMVVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D();
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003Dz_liTKnA\u003D = _param2;
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003Dzfl\u0024A1s0\u003D = _param1;
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzRRvwDu67s9Rm = this;
@@ -403,7 +403,7 @@ internal sealed class IScichartSurfaceVM :
     _param1?.RenderSurface.\u0023\u003DzKPHSi1vgK\u0024Fx(new EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr>(this.\u0023\u003Dz0dAR\u00244WTXjQ\u0024));
   }
 
-  public void \u0023\u003DzjgUUUJE\u003D(ChartDrawData _param1)
+  public void Draw(ChartDrawData _param1)
   {
     if (this.\u0023\u003DzkSAbycE\u003D != null)
     {
@@ -420,8 +420,8 @@ internal sealed class IScichartSurfaceVM :
   {
     if (this.\u0023\u003DzkSAbycE\u003D == null)
       return;
-    CollectionHelper.ForEach<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(this.XAxises.OfType<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(), IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D = new Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ)));
-    CollectionHelper.ForEach<ParentVM>((IEnumerable<ParentVM>) ((SynchronizedDictionary<IfxChartElement, ParentVM>) this.\u0023\u003DzH31vDNM\u003D).Values, IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Action<ParentVM>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR)));
+    CollectionHelper.ForEach<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(this.XAxises.OfType<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(), ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D = new Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ)));
+    CollectionHelper.ForEach<ParentVM>((IEnumerable<ParentVM>) ((SynchronizedDictionary<IfxChartElement, ParentVM>) this.\u0023\u003DzH31vDNM\u003D).Values, ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Action<ParentVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR)));
     if (!this.ShowPerfStats || _param2.\u0023\u003DzguiAuOeZYTXy() <= 0.0)
       return;
     double num1 = 1000.0 / _param2.\u0023\u003DzguiAuOeZYTXy();
@@ -434,7 +434,7 @@ internal sealed class IScichartSurfaceVM :
     interpolatedStringHandler.AppendLiteral("");
     interpolatedStringHandler.AppendFormatted<double>(num2, "");
     interpolatedStringHandler.AppendLiteral("");
-    interpolatedStringHandler.AppendFormatted<int>(this.\u0023\u003DzkSAbycE\u003D.RenderableSeries.Where<IRenderableSeries>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D = new Func<IRenderableSeries, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY))).Sum<IRenderableSeries>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D = new Func<IRenderableSeries, int>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3))), "");
+    interpolatedStringHandler.AppendFormatted<int>(this.\u0023\u003DzkSAbycE\u003D.RenderableSeries.Where<IRenderableSeries>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D = new Func<IRenderableSeries, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY))).Sum<IRenderableSeries>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D = new Func<IRenderableSeries, int>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3))), "");
     this.PerfStats = interpolatedStringHandler.ToStringAndClear();
   }
 
@@ -442,7 +442,7 @@ internal sealed class IScichartSurfaceVM :
   {
     foreach (ParentVM a4VgOpCeDiqsTdzB in this.\u0023\u003DzH31vDNM\u003D.\u0023\u003DzcMDdc03rjKXr())
     {
-      if (a4VgOpCeDiqsTdzB.\u0023\u003DzjgUUUJE\u003D(_param1))
+      if (a4VgOpCeDiqsTdzB.Draw(_param1))
         ((BaseCollection<ParentVM, ISet<ParentVM>>) this.\u0023\u003Dz8eUBSVQEp4oP).Add(a4VgOpCeDiqsTdzB);
     }
   }
@@ -456,7 +456,7 @@ internal sealed class IScichartSurfaceVM :
       a4VgOpCeDiqsTdzB.\u0023\u003DzKy5smiO3gHXp();
   }
 
-  public void \u0023\u003DzYI36Ggg\u003D(IEnumerable<IChartElement> _param1)
+  public void Reset(IEnumerable<IChartElement> _param1)
   {
     foreach (IfxChartElement ddznyiGmdRlAevOq in _param1)
     {
@@ -464,17 +464,17 @@ internal sealed class IScichartSurfaceVM :
       if (this.\u0023\u003DzKDbpj6zM462r(ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB))
       {
         ((BaseCollection<ParentVM, ISet<ParentVM>>) this.\u0023\u003Dz8eUBSVQEp4oP).Add(a4VgOpCeDiqsTdzB);
-        a4VgOpCeDiqsTdzB.\u0023\u003DzYI36Ggg\u003D();
+        a4VgOpCeDiqsTdzB.Reset();
       }
     }
   }
 
   private void \u0023\u003Dz9VF9FI8x1QxU()
   {
-    foreach (IfxChartElement ddznyiGmdRlAevOq in ((IEnumerable<KeyValuePair<IfxChartElement, ParentVM>>) this.\u0023\u003DzH31vDNM\u003D).Where<KeyValuePair<IfxChartElement, ParentVM>>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D))).Select<KeyValuePair<IfxChartElement, ParentVM>, IfxChartElement>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, IfxChartElement>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D))).ToArray<IfxChartElement>())
+    foreach (IfxChartElement ddznyiGmdRlAevOq in ((IEnumerable<KeyValuePair<IfxChartElement, ParentVM>>) this.\u0023\u003DzH31vDNM\u003D).Where<KeyValuePair<IfxChartElement, ParentVM>>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D))).Select<KeyValuePair<IfxChartElement, ParentVM>, IfxChartElement>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, IfxChartElement>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D))).ToArray<IfxChartElement>())
     {
       ParentVM a4VgOpCeDiqsTdzB = new ParentVM(this, ddznyiGmdRlAevOq);
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IDrawableChartElement, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D)).Where<UIBaseVM>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D = new Func<UIBaseVM, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D))));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D)).Where<UIBaseVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D = new Func<UIBaseVM, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D))));
       ((SynchronizedDictionary<IfxChartElement, ParentVM>) this.\u0023\u003DzH31vDNM\u003D)[ddznyiGmdRlAevOq] = a4VgOpCeDiqsTdzB;
       if (ddznyiGmdRlAevOq.IsLegend)
         this.LegendElements.Add(a4VgOpCeDiqsTdzB);
@@ -484,7 +484,7 @@ internal sealed class IScichartSurfaceVM :
 
   private void \u0023\u003DzbLGEkvI0sqrejb5agA\u003D\u003D()
   {
-    this.CandlesCompositeElement = ((IEnumerable<KeyValuePair<IfxChartElement, ParentVM>>) this.\u0023\u003DzH31vDNM\u003D).FirstOrDefault<KeyValuePair<IfxChartElement, ParentVM>>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzOxutfFQq8iOlG6uGIIvjfQjn_lrYDZf0Gw\u003D\u003D))).Value;
+    this.CandlesCompositeElement = ((IEnumerable<KeyValuePair<IfxChartElement, ParentVM>>) this.\u0023\u003DzH31vDNM\u003D).FirstOrDefault<KeyValuePair<IfxChartElement, ParentVM>>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzOxutfFQq8iOlG6uGIIvjfQjn_lrYDZf0Gw\u003D\u003D))).Value;
     this.PaneHasCandles = this.CandlesCompositeElement != null;
   }
 
@@ -501,13 +501,13 @@ internal sealed class IScichartSurfaceVM :
     if (chart != null)
       chart.EnsureUIThread();
     IfxChartElement ddznyiGmdRlAevOq = (IfxChartElement) _param1;
-    ddznyiGmdRlAevOq.\u0023\u003DzXB7fUH9eZ9CX(this.Area);
+    ddznyiGmdRlAevOq.AddAxisesAndEventHandler(this.Area);
     if (((SynchronizedDictionary<IfxChartElement, ParentVM>) this.\u0023\u003DzH31vDNM\u003D).ContainsKey(ddznyiGmdRlAevOq))
       throw new ArgumentException("", "");
     if (this.Chart != null)
     {
       ParentVM a4VgOpCeDiqsTdzB = new ParentVM(this, ddznyiGmdRlAevOq);
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D = new Func<IDrawableChartElement, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D)).Where<UIBaseVM>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D = new Func<UIBaseVM, bool>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D))));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D)).Where<UIBaseVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D = new Func<UIBaseVM, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D))));
       ((SynchronizedDictionary<IfxChartElement, ParentVM>) this.\u0023\u003DzH31vDNM\u003D)[ddznyiGmdRlAevOq] = a4VgOpCeDiqsTdzB;
       if (ddznyiGmdRlAevOq.IsLegend)
         this.LegendElements.Add(a4VgOpCeDiqsTdzB);
@@ -532,7 +532,7 @@ internal sealed class IScichartSurfaceVM :
     ParentVM a4VgOpCeDiqsTdzB;
     if (!this.\u0023\u003DzKDbpj6zM462r(ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB))
       return false;
-    ddznyiGmdRlAevOq.\u0023\u003DzxFfzrajElFbs();
+    ddznyiGmdRlAevOq.RemoveAxisesEventHandler();
     if (ddznyiGmdRlAevOq is IChartCandleElement chartCandleElement)
       chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzzBrCMQ6JtN57pKl5fw\u003D\u003D);
     ddznyiGmdRlAevOq.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzPySg2bVDnv7y);
@@ -607,7 +607,7 @@ internal sealed class IScichartSurfaceVM :
   internal \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR \u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(
     string _param1)
   {
-    IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this.Area.XAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(new IScichartSurfaceVM.\u0023\u003DzHtYFIEI9CJAk\u0024GXG5dtCtJE\u003D()
+    IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this.Area.XAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(new ScichartSurfaceMVVM.\u0023\u003DzHtYFIEI9CJAk\u0024GXG5dtCtJE\u003D()
     {
       \u0023\u003DzABBG58cxsbcx = _param1
     }.\u0023\u003DzbSjDouuxMOmtENb1CI\u0024NfEXlBX\u0024_));
@@ -616,8 +616,8 @@ internal sealed class IScichartSurfaceVM :
 
   private void \u0023\u003Dzf5vVcayMq7_zxBOILQ\u003D\u003D()
   {
-    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.XAxises, IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D = new Action<IChartAxis>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzN_\u0024B1DcFjYnDp0by4f0KlE4uU6RB)));
-    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.YAxises, IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D = new Action<IChartAxis>(IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzWE\u0024cRelRNS67FHvvu3n4cW42dbOy)));
+    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.XAxises, ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D = new Action<IChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzN_\u0024B1DcFjYnDp0by4f0KlE4uU6RB)));
+    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.YAxises, ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D = new Action<IChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzWE\u0024cRelRNS67FHvvu3n4cW42dbOy)));
   }
 
   public string PaneGroupSuffix
@@ -656,7 +656,7 @@ internal sealed class IScichartSurfaceVM :
 
   public ChartViewModel ParentViewModel
   {
-    get => this.GroupChart?.\u0023\u003Dz3ThQNm3rQ1fp();
+    get => this.GroupChart?.ViewModel();
   }
 
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS LegendViewModel
@@ -769,17 +769,17 @@ internal sealed class IScichartSurfaceVM :
 
   public void \u0023\u003DzBCuJKIIaVAUt()
   {
-    this.\u0023\u003DzkSAbycE\u003D?.\u0023\u003Dz5q8i9C4\u003D();
+    this.\u0023\u003DzkSAbycE\u003D?.InvalidateElement();
   }
 
   public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D XAxises
   {
-    get => this.\u0023\u003DzYe8QEajBkzI0US3jz3KFoMQ\u003D;
+    get => this._xAxisNotifyList;
   }
 
   public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D YAxises
   {
-    get => this.\u0023\u003DzYQqL3flRD33LHxyIdb39M1g\u003D;
+    get => this._yAxisNotifyList;
   }
 
   public ParentVM CandlesCompositeElement
@@ -841,10 +841,10 @@ internal sealed class IScichartSurfaceVM :
 
   public double Height
   {
-    get => this.\u0023\u003DzqcgkI5Q\u003D;
+    get => this._height;
     set
     {
-      this.SetField<double>(ref this.\u0023\u003DzqcgkI5Q\u003D, value, "");
+      this.SetField<double>(ref this._height, value, "");
       this.Area.Height = value;
     }
   }
@@ -961,10 +961,10 @@ internal sealed class IScichartSurfaceVM :
 
   public double DataPointWidth
   {
-    get => this.\u0023\u003DzDtp\u00246FfBRlYq;
+    get => this._dataPointWidth;
     set
     {
-      this.SetField<double>(ref this.\u0023\u003DzDtp\u00246FfBRlYq, value, "");
+      this.SetField<double>(ref this._dataPointWidth, value, "");
     }
   }
 
@@ -1073,28 +1073,28 @@ internal sealed class IScichartSurfaceVM :
 
   private void \u0023\u003DzQVqx9924gaWX1\u0024r5THddBi0\u003D(IChartAxis _param1)
   {
-    this.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.XAxises);
+    this.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this.XAxises);
   }
 
   private void \u0023\u003DzhueGWJf3Qdd7bLHGZUE_sNY\u003D(IChartAxis _param1)
   {
-    this.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.YAxises);
+    this.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this.YAxises);
   }
 
   private void \u0023\u003DzTdIpNSu812itYYHN7lIakb6BiejkaXWFgQ\u003D\u003D(
-    dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd _param1)
+    ChartModifierBase _param1)
   {
-    this.ChartModifier.ChildModifiers.Remove((\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) _param1);
+    this.ChartModifier.ChildModifiers.Remove((IChartModifier) _param1);
   }
 
   private void \u0023\u003DzrFpAakDNl3igj4xxMoWpQFW0GE4J_yze\u0024g\u003D\u003D(IChartAxis _param1)
   {
-    this.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.XAxises);
+    this.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.XAxises);
   }
 
   private void \u0023\u003DzGN9dmAg9QrR2Z7eHl8GIJrnf1RvCfrWhVA\u003D\u003D(IChartAxis _param1)
   {
-    this.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.YAxises);
+    this.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.YAxises);
   }
 
   private UIBaseVM \u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D(
@@ -1150,9 +1150,9 @@ internal sealed class IScichartSurfaceVM :
 
   private sealed class \u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D
   {
-    public IScichartSurfaceVM \u0023\u003DzRRvwDu67s9Rm;
+    public ScichartSurfaceMVVM \u0023\u003DzRRvwDu67s9Rm;
     public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
-    public ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> \u0023\u003Dz_liTKnA\u003D;
+    public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
 
     internal void \u0023\u003DzFX_lHxlPjn56eMHQ\u0024g\u003D\u003D()
     {
@@ -1160,7 +1160,7 @@ internal sealed class IScichartSurfaceVM :
         return;
       dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz68iph80\u003D(this.\u0023\u003DzRRvwDu67s9Rm.ParentViewModel?.RemoveAxisCommand, this.\u0023\u003DzRRvwDu67s9Rm.ResetAxisTimeZoneCommand, this.\u0023\u003DzRRvwDu67s9Rm.Chart);
       axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzfi9Y8f8VaR3y);
-      this.\u0023\u003Dz_liTKnA\u003D.Add((\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) axF9ZgQ7NbH9KsEjd);
+      this.\u0023\u003Dz_liTKnA\u003D.Add((IAxis) axF9ZgQ7NbH9KsEjd);
       if (this.\u0023\u003Dz_liTKnA\u003D != this.\u0023\u003DzRRvwDu67s9Rm.XAxises)
         return;
       this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz0FfA4J7ON5133\u00246jKg\u003D\u003D();
@@ -1170,7 +1170,7 @@ internal sealed class IScichartSurfaceVM :
   [Serializable]
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
-    public static readonly IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new IScichartSurfaceVM.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D();
     public static Action<ChartAxis> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
     public static Func<ParentVM, bool> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
     public static Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd> \u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D;
@@ -1302,7 +1302,7 @@ internal sealed class IScichartSurfaceVM :
         if (a4VgOpCeDiqsTdzBArray == null)
         {
           List<ParentVM> a4VgOpCeDiqsTdzBList = new List<ParentVM>();
-          a4VgOpCeDiqsTdzBList.AddRange(((IEnumerable<KeyValuePair<IfxChartElement, ParentVM>>) this).OrderBy<KeyValuePair<IfxChartElement, ParentVM>, int>(IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, int>(IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfUnDYqsr\u0024Ej5bAJruqHN2sI\u003D))).Select<KeyValuePair<IfxChartElement, ParentVM>, ParentVM>(IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D ?? (IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, ParentVM>(IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbT5EZUEYMyUAzx5gAaXZNrw\u003D))));
+          a4VgOpCeDiqsTdzBList.AddRange(((IEnumerable<KeyValuePair<IfxChartElement, ParentVM>>) this).OrderBy<KeyValuePair<IfxChartElement, ParentVM>, int>(ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, int>(ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfUnDYqsr\u0024Ej5bAJruqHN2sI\u003D))).Select<KeyValuePair<IfxChartElement, ParentVM>, ParentVM>(ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D = new Func<KeyValuePair<IfxChartElement, ParentVM>, ParentVM>(ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbT5EZUEYMyUAzx5gAaXZNrw\u003D))));
           a4VgOpCeDiqsTdzBArray = this.\u0023\u003DzlS7dPxLH4yBm = a4VgOpCeDiqsTdzBList.ToArray();
         }
         return a4VgOpCeDiqsTdzBArray;
@@ -1318,7 +1318,7 @@ internal sealed class IScichartSurfaceVM :
     [Serializable]
     private sealed class \u0023\u003Dz7qOdpi4\u003D
     {
-      public static readonly IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new IScichartSurfaceVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D();
+      public static readonly ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ScichartSurfaceMVVM.\u0023\u003DzIR3scNVtKjHa.\u0023\u003Dz7qOdpi4\u003D();
       public static Func<KeyValuePair<IfxChartElement, ParentVM>, int> \u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D;
       public static Func<KeyValuePair<IfxChartElement, ParentVM>, ParentVM> \u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D;
 
@@ -1338,31 +1338,31 @@ internal sealed class IScichartSurfaceVM :
 
   private sealed class \u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D
   {
-    public ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> \u0023\u003Dz_liTKnA\u003D;
+    public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
     public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
-    public IScichartSurfaceVM \u0023\u003DzRRvwDu67s9Rm;
-    public Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003DzuAeZVTPDgzYE;
+    public ScichartSurfaceMVVM \u0023\u003DzRRvwDu67s9Rm;
+    public Func<IAxis, bool> \u0023\u003DzuAeZVTPDgzYE;
 
     internal void \u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D()
     {
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd target = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
+      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd target = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<IAxis>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<IAxis, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
       if (target == null)
         return;
       target.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzfi9Y8f8VaR3y);
       BindingOperations.ClearAllBindings((DependencyObject) target);
-      this.\u0023\u003Dz_liTKnA\u003D.Remove((\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) target);
+      this.\u0023\u003Dz_liTKnA\u003D.Remove((IAxis) target);
     }
 
     internal bool \u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
-      return _param1.get_Id() == this.\u0023\u003Dzfl\u0024A1s0\u003D.Id;
+      return _param1.Id == this.\u0023\u003Dzfl\u0024A1s0\u003D.Id;
     }
   }
 
   private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
   {
-    public IScichartSurfaceVM \u0023\u003DzRRvwDu67s9Rm;
+    public ScichartSurfaceMVVM \u0023\u003DzRRvwDu67s9Rm;
     public ChartArea \u0023\u003Dzy_5REws\u003D;
     public Action<IChartElement> \u0023\u003DzmkzpZPDRopSK;
 
@@ -1384,32 +1384,32 @@ internal sealed class IScichartSurfaceVM :
 
     internal void \u0023\u003DzzTy9O8Bfu2Mtf5LgWw\u003D\u003D(IChartAxis _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
+      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
     }
 
     internal bool \u0023\u003DzNMuSlzFThmIy12t4iw\u003D\u003D(IChartAxis _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
+      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
     }
 
     internal bool \u0023\u003DzFhH1jy_AOH_jnpgLnA\u003D\u003D(int _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises)[_param1], (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
+      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises)[_param1], (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
     }
 
     internal void \u0023\u003DzdMV7Kr3bkeboUtRdSw\u003D\u003D(IChartAxis _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
+      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
     }
 
     internal bool \u0023\u003DzYqlPx6RFcqzqQlN8KA\u003D\u003D(IChartAxis _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
+      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
     }
 
     internal bool \u0023\u003Dzn0BxqFlrvEnaJ4F1tg\u003D\u003D(int _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.YAxises)[_param1], (ICollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
+      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.YAxises)[_param1], (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
     }
 
     internal void \u0023\u003DzSf0sPwNIL9V4tJHvwQ\u003D\u003D(

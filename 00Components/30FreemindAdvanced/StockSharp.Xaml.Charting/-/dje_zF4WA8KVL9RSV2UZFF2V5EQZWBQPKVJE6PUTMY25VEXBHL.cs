@@ -14,12 +14,12 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
+  BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register("", typeof (double), typeof (dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register("", typeof (double), typeof (dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzoiPF1o\u0024bG_HJ = DependencyProperty.Register("", typeof (Brush), typeof (dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd), new PropertyMetadata((object) new SolidColorBrush(Color.FromArgb((byte) 0, (byte) 0, (byte) 0, (byte) 0)), new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzoiPF1o\u0024bG_HJ = DependencyProperty.Register("", typeof (Brush), typeof (dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd), new PropertyMetadata((object) new SolidColorBrush(Color.FromArgb((byte) 0, (byte) 0, (byte) 0, (byte) 0)), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   private int \u0023\u003DzmZ8\u0024YArgrhlI;
 
@@ -87,13 +87,13 @@ internal sealed class dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS
   protected override double \u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
   {
-    return _param1.Minimum.\u0023\u003Dzb9UCYbo\u003D();
+    return _param1.Minimum.ToDouble();
   }
 
   protected override double \u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
   {
-    return _param1.Maximum.\u0023\u003Dzb9UCYbo\u003D();
+    return _param1.Maximum.ToDouble();
   }
 
   protected override bool \u0023\u003DzWcglUt8A7ABL()
@@ -104,8 +104,8 @@ internal sealed class dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
     double num1 = 0.0;
@@ -117,7 +117,7 @@ internal sealed class dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS
     {
       using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) (this.StrokeThickness + 1), this.Opacity, (double[]) null, PenLineCap.Round))
       {
-        using (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D(this.BodyBrush, this.Opacity, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive))
+        using (IBrush2D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D(this.BodyBrush, this.Opacity, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive))
         {
           \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
           for (int index = 0; index < num2; ++index)

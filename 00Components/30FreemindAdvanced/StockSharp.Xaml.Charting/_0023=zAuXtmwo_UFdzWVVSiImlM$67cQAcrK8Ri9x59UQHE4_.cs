@@ -66,10 +66,10 @@ internal class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_Zykl
   }
 
   protected override void \u0023\u003DzdL613chSNlLB(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     IEnumerable<Point> _param2,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param3,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param4)
+    IBrush2D _param4)
   {
     \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D.\u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D xe6cQmBj9OjyffE7I = new \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D.\u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D();
     if (this.PointMarkerTemplate == null)
@@ -80,11 +80,11 @@ internal class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_Zykl
   }
 
   protected override void \u0023\u003DzdL613chSNlLB(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     double _param2,
     double _param3,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param4,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param5)
+    IBrush2D _param5)
   {
     if (this.PointMarkerTemplate == null)
       return;
@@ -94,7 +94,7 @@ internal class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_Zykl
   }
 
   private void \u0023\u003Dzk487PEYdjXVxoqp7ow\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1)
+    IRenderContext2D _param1)
   {
     Type type = _param1.GetType();
     if (this.\u0023\u003DzsNq\u0024KNPdtTXX != null && !(type != this.\u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D))

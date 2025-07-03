@@ -18,14 +18,14 @@ using System.Xml.Schema;
 
 #nullable disable
 internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u003D : 
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB,
-  \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D,
-  \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95
+  IAxis,
+  IAxisParams,
+  IHitTestable,
+  ISuspendable,
+  IInvalidatableElement,
+  IDrawable
 {
-  private \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzLXQXNXQ\u003D;
+  private IAxis \u0023\u003DzLXQXNXQ\u003D;
   private double \u0023\u003DzPVzRZY4RUs63fQH0UZlBwwQ\u003D;
   private double \u0023\u003DzWSKbtyDsDUrkj_6aPt4\u0024LAc\u003D;
   private bool \u0023\u003Dzu_GzT8bMWkGK5e7tIw\u003D\u003D;
@@ -33,17 +33,17 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   private EventHandler<EventArgs> \u0023\u003DzrN9MkyArV3jJ;
   private string _guid;
   private bool \u0023\u003Dzs0Z9gR9q9AhlP_Xse1ll_RE\u003D;
-  private \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3tOndLKZk0aGELbzVxE4VJ9A \u0023\u003DzjIW6bZkM3WeYBMKCvw\u003D\u003D;
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzGmZr\u0024oMYjkAL1VmdhsWq7jY\u003D;
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
+  private ITickProvider \u0023\u003DzjIW6bZkM3WeYBMKCvw\u003D\u003D;
+  private IRange \u0023\u003DzGmZr\u0024oMYjkAL1VmdhsWq7jY\u003D;
+  private IRange \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
+  private IRange \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
   private double \u0023\u003Dz\u0024F\u0024ERMIoRsdr6mT2iQ\u003D\u003D;
   private double \u0023\u003DzpNyBX\u00240Erlkj2Cvvig\u003D\u003D;
-  private \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> \u0023\u003DztXZBASMM9qIoqbN93Q\u003D\u003D;
+  private IRange<double> \u0023\u003DztXZBASMM9qIoqbN93Q\u003D\u003D;
   private IComparable \u0023\u003Dze_N82X05Vu1NIUMEb0ySPgs\u003D;
   private IComparable \u0023\u003DzcJHzh_mr6f8CMKRKsZVWY\u0024w\u003D;
   private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dz5EWufkemTvDX91A_jQ\u003D\u003D;
+  private ISciChartSurface \u0023\u003Dz5EWufkemTvDX91A_jQ\u003D\u003D;
   private Orientation \u0023\u003DzEEAnOu4SHH0UfRpYZA\u003D\u003D;
   private Brush \u0023\u003Dz54ElmcdEpyKjoyYgYbDr2BA\u003D;
   private Brush \u0023\u003DzSGGi4TgEUt5mUF3pihli_4g\u003D;
@@ -81,7 +81,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk \u0023\u003DzeBpVkMb4JTc7krWreljVw38\u003D;
   private Visibility \u0023\u003DzYst3SO_\u0024ax6JKrNE9g\u003D\u003D;
   private bool \u0023\u003Dz95Z1kAUJHBMg6bO6WMkzJg_U4AV0;
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz6D\u0024QoAqBdRidfWOtLpZV44k\u003D;
+  private IRange \u0023\u003Dz6D\u0024QoAqBdRidfWOtLpZV44k\u003D;
   private \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQBfb77y0xl0\u00246w\u003D\u003D \u0023\u003DzoCK1qsWB8frOWaD56ETphhG4QNUY;
   private IComparable \u0023\u003Dzp5XbM\u0024uN17Ek79xiOJ2Q8kg\u003D;
   private bool \u0023\u003DzRoux7W5jZAVE88YvvTzQyR6QfsrTykyeBA\u003D\u003D;
@@ -89,17 +89,17 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   private double \u0023\u003DzBZa4I2\u0024V0AAJfaHpg8DsUV4\u003D;
 
   public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     this.VisibleRange = _param1.VisibleRange;
     this.\u0023\u003DzDdpIQsZIDiEk(_param1.get_IsCategoryAxis());
-    this.Id = _param1.get_Id();
+    this.Id = _param1.Id;
     this.\u0023\u003DzLXQXNXQ\u003D = _param1;
   }
 
   [CompilerGenerated]
   [SpecialName]
-  public double \u0023\u003Dzu2ObQ3hMALTN() => this.\u0023\u003DzPVzRZY4RUs63fQH0UZlBwwQ\u003D;
+  public double ActualWidth => this.\u0023\u003DzPVzRZY4RUs63fQH0UZlBwwQ\u003D;
 
   private void \u0023\u003DzdEkXh9u7QiOB(double _param1)
   {
@@ -108,7 +108,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   [CompilerGenerated]
   [SpecialName]
-  public double \u0023\u003Dz2kO1mtG\u0024bEUM()
+  public double ActualHeight
   {
     return this.\u0023\u003DzWSKbtyDsDUrkj_6aPt4\u0024LAc\u003D;
   }
@@ -120,7 +120,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public Point TranslatePoint(
     Point _param1,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param2)
+    IHitTestable _param2)
   {
     throw new NotImplementedException();
   }
@@ -128,7 +128,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   public bool IsPointWithinBounds(Point _param1) => throw new NotImplementedException();
 
   public Rect GetBoundsRelativeTo(
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param1)
+    IHitTestable _param1)
   {
     throw new NotImplementedException();
   }
@@ -140,20 +140,20 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     this.\u0023\u003Dzu_GzT8bMWkGK5e7tIw\u003D\u003D = _param1;
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
     throw new NotImplementedException();
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote _param1)
+    IUpdateSuspender _param1)
   {
     throw new NotImplementedException();
   }
 
   public void DecrementSuspend() => throw new NotImplementedException();
 
-  public void \u0023\u003Dz5q8i9C4\u003D() => throw new NotImplementedException();
+  public void InvalidateElement() => throw new NotImplementedException();
 
   [CompilerGenerated]
   [SpecialName]
@@ -225,31 +225,31 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     set => this.\u0023\u003Dzs0Z9gR9q9AhlP_Xse1ll_RE\u003D = value;
   }
 
-  public \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3tOndLKZk0aGELbzVxE4VJ9A TickProvider
+  public ITickProvider TickProvider
   {
     get => this.\u0023\u003DzjIW6bZkM3WeYBMKCvw\u003D\u003D;
     set => this.\u0023\u003DzjIW6bZkM3WeYBMKCvw\u003D\u003D = value;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D AnimatedVisibleRange
+  public IRange AnimatedVisibleRange
   {
     get => this.\u0023\u003DzGmZr\u0024oMYjkAL1VmdhsWq7jY\u003D;
     set => this.\u0023\u003DzGmZr\u0024oMYjkAL1VmdhsWq7jY\u003D = value;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D VisibleRange
+  public IRange VisibleRange
   {
     get => this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
     set => this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D = value;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D DataRange
+  public IRange DataRange
   {
     get => this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
   }
 
   private void \u0023\u003DzfkCfEPmvv8HX(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = _param1;
   }
@@ -260,30 +260,30 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     private set => this.\u0023\u003Dz\u0024F\u0024ERMIoRsdr6mT2iQ\u003D\u003D = value;
   }
 
-  double \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ZE9YOd5sMhl\u0024Z\u0024xSADAZlqXzWzlvA\u003D\u003D()
+  double IDrawable.\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ZE9YOd5sMhl\u0024Z\u0024xSADAZlqXzWzlvA\u003D\u003D()
   {
     return this.Height;
   }
 
-  void \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntaAE_X2h6PHbsMnRBK9cYE8yLrOBvg\u003D\u003D(
+  void IDrawable.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntaAE_X2h6PHbsMnRBK9cYE8yLrOBvg\u003D\u003D(
     double _param1)
   {
     this.Height = _param1;
   }
 
-  public void \u0023\u003DzjAYqfck\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+  public void OnDraw(
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     throw new NotImplementedException();
   }
 
-  double \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003DzEa5ACpOap4rFIaHj5p9yfH70ARbSZe0FxQ0q\u00240QfMpnPN_04zQ\u003D\u003D()
+  double IDrawable.\u0023\u003DzEa5ACpOap4rFIaHj5p9yfH70ARbSZe0FxQ0q\u00240QfMpnPN_04zQ\u003D\u003D()
   {
     return this.Width;
   }
 
-  void \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI4gQW2p5XnENj22E0ug7VJ0RyC3hMw\u003D\u003D(
+  void IDrawable.\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI4gQW2p5XnENj22E0ug7VJ0RyC3hMw\u003D\u003D(
     double _param1)
   {
     this.Width = _param1;
@@ -295,7 +295,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     private set => this.\u0023\u003DzpNyBX\u00240Erlkj2Cvvig\u003D\u003D = value;
   }
 
-  public \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> GrowBy
+  public IRange<double> GrowBy
   {
     get => this.\u0023\u003DztXZBASMM9qIoqbN93Q\u003D\u003D;
     set => this.\u0023\u003DztXZBASMM9qIoqbN93Q\u003D\u003D = value;
@@ -319,7 +319,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     set => this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D = value;
   }
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D ParentSurface
+  public ISciChartSurface ParentSurface
   {
     get => this.\u0023\u003Dz5EWufkemTvDX91A_jQ\u003D\u003D;
     set => this.\u0023\u003Dz5EWufkemTvDX91A_jQ\u003D\u003D = value;
@@ -570,7 +570,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     this.\u0023\u003Dz95Z1kAUJHBMg6bO6WMkzJg_U4AV0 = _param1;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D VisibleRangeLimit
+  public IRange VisibleRangeLimit
   {
     get => this.\u0023\u003Dz6D\u0024QoAqBdRidfWOtLpZV44k\u003D;
     set => this.\u0023\u003Dz6D\u0024QoAqBdRidfWOtLpZV44k\u003D = value;
@@ -621,19 +621,19 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzzMId\u0024f67Wftb(
+  public IRange \u0023\u003DzzMId\u0024f67Wftb(
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzFwoMKP9juTnt()
+  public IRange \u0023\u003DzFwoMKP9juTnt()
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(
-    IDictionary<string, \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D> _param1)
+  public IRange \u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(
+    IDictionary<string, IRange> _param1)
   {
     throw new NotImplementedException();
   }
@@ -704,16 +704,16 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   }
 
   public void \u0023\u003DzSYETXFE\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     double _param2)
   {
     throw new NotImplementedException();
   }
 
   public void \u0023\u003DzCIPDlIJQeLiZ(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     double _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3)
+    IRange _param3)
   {
     throw new NotImplementedException();
   }
@@ -739,18 +739,18 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   }
 
   public bool \u0023\u003Dz2OKbyRBzRCBL(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzQ8SgRgQ\u003D()
+  public IAxis \u0023\u003DzQ8SgRgQ\u003D()
   {
     throw new NotImplementedException();
   }
 
   public void \u0023\u003DzwrnVUenT8f7v7FlPviBwd40\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     TimeSpan _param2)
   {
     throw new NotImplementedException();
@@ -760,12 +760,12 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public void \u0023\u003DzUf222sU\u003D() => throw new NotImplementedException();
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzspbjXJnVtbB\u0024()
+  public IRange \u0023\u003DzspbjXJnVtbB\u0024()
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
+  public IRange \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
   {
     throw new NotImplementedException();
   }

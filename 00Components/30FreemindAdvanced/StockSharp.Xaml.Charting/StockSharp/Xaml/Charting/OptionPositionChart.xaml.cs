@@ -52,7 +52,7 @@ public class OptionPositionChart :
   
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzjXbVlj0Id0BN = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D);
   
-  private readonly IScichartSurfaceVM \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
   
   private readonly Dictionary<BlackScholes, (IChartLineElement, IChartLineElement)> \u0023\u003DzOK03jF5_2xLYbkS0rg\u003D\u003D;
   
@@ -72,7 +72,7 @@ public class OptionPositionChart :
   
   private bool \u0023\u003DzJbHNSjjCv_nt;
   
-  internal dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd \u0023\u003DzO72kpz0\u003D;
+  internal Chart \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -86,34 +86,34 @@ public class OptionPositionChart :
     base.\u002Ector();
     dop2SzA2WchXh2wc.\u0023\u003DzRRvwDu67s9Rm = this;
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (IScichartSurfaceVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
     IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>();
     IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();
     chartAxis1.AutoRange = false;
     chartAxis2.AutoRange = true;
     chartAxis2.TextFormatting = "";
-    ObservableCollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
-    \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D[] chhAr3Kksm46Uy2ZyArray = new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D[5];
+    ObservableCollection<IChartModifier> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
+    IChartModifier[] chhAr3Kksm46Uy2ZyArray = new IChartModifier[5];
     dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd ypbydebG6VffgcpzeEjd = new dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd();
     ypbydebG6VffgcpzeEjd.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
     ypbydebG6VffgcpzeEjd.ClipModeX = dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None;
-    chhAr3Kksm46Uy2ZyArray[0] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) ypbydebG6VffgcpzeEjd;
+    chhAr3Kksm46Uy2ZyArray[0] = (IChartModifier) ypbydebG6VffgcpzeEjd;
     dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd kufjwuuvR4YbN3Ejd = new dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd();
     kufjwuuvR4YbN3Ejd.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
-    chhAr3Kksm46Uy2ZyArray[1] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) kufjwuuvR4YbN3Ejd;
+    chhAr3Kksm46Uy2ZyArray[1] = (IChartModifier) kufjwuuvR4YbN3Ejd;
     dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd fk4QgaphfmmujdEjd = new dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd();
     fk4QgaphfmmujdEjd.ExecuteOn = dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick;
-    chhAr3Kksm46Uy2ZyArray[2] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) fk4QgaphfmmujdEjd;
+    chhAr3Kksm46Uy2ZyArray[2] = (IChartModifier) fk4QgaphfmmujdEjd;
     dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
     dgE2H48XyyA87SEjd.AxisId = "";
-    chhAr3Kksm46Uy2ZyArray[3] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) dgE2H48XyyA87SEjd;
+    chhAr3Kksm46Uy2ZyArray[3] = (IChartModifier) dgE2H48XyyA87SEjd;
     dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd jhzfqwrsvK3MyA6SqEjd = new dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
     jhzfqwrsvK3MyA6SqEjd.UseInterpolation = false;
-    chhAr3Kksm46Uy2ZyArray[4] = (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) jhzfqwrsvK3MyA6SqEjd;
-    \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D> ynkQ1M2eiqOdEcXa = new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>(chhAr3Kksm46Uy2ZyArray);
-    CollectionHelper.AddRange<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((ICollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) childModifiers, (IEnumerable<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) ynkQ1M2eiqOdEcXa);
+    chhAr3Kksm46Uy2ZyArray[4] = (IChartModifier) jhzfqwrsvK3MyA6SqEjd;
+    \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<IChartModifier> ynkQ1M2eiqOdEcXa = new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<IChartModifier>(chhAr3Kksm46Uy2ZyArray);
+    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) childModifiers, (IEnumerable<IChartModifier>) ynkQ1M2eiqOdEcXa);
     ((ICollection<IChartElement>) this.\u0023\u003DzM1p2o1yl\u0024dah()).Add((IChartElement) this.\u0023\u003Dz_h3U\u0024zi3bxOZ5JXm\u0024A\u003D\u003D);
     dop2SzA2WchXh2wc.\u0023\u003Dz0gbwL\u00244\u003D = false;
     this.Loaded += new RoutedEventHandler(dop2SzA2WchXh2wc.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D);
@@ -369,7 +369,7 @@ public class OptionPositionChart :
   void IComponentConnector.Connect(int connectionId, object target)
   {
     if (connectionId == 1)
-      this.\u0023\u003DzO72kpz0\u003D = (dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd) target;
+      this.\u0023\u003DzO72kpz0\u003D = (Chart) target;
     else
       this.\u0023\u003DzQGCmQMjHdLKS = true;
   }

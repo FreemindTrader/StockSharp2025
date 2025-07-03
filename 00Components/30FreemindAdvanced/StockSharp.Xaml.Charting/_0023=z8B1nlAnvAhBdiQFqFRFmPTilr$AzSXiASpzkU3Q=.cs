@@ -46,7 +46,7 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
     Size _param3,
     \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5\u0024e1A7bvEMO3Uo\u0024\u0024JpKeVOZ\u0024 _param4)
   {
-    this.\u0023\u003DzYI36Ggg\u003D(_param1, _param2, _param3, _param4);
+    this.Reset(_param1, _param2, _param3, _param4);
   }
 
   internal \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D()
@@ -87,7 +87,7 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
 
   public void Reset() => throw new NotSupportedException();
 
-  internal void \u0023\u003DzYI36Ggg\u003D(
+  internal void Reset(
     Point _param1,
     Point _param2,
     Size _param3,
@@ -108,7 +108,7 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
       this.\u0023\u003Dz\u0024h_yNEs\u003D = y2 - y1;
       this.\u0023\u003DzNkjnJzE\u003D = Math.Sqrt(this.\u0023\u003DzprlB3QU\u003D * this.\u0023\u003DzprlB3QU\u003D + this.\u0023\u003Dz\u0024h_yNEs\u003D * this.\u0023\u003Dz\u0024h_yNEs\u003D);
       this.\u0023\u003Dz\u0024fZhibJjCIKj = 1.0 / this.\u0023\u003DzNkjnJzE\u003D;
-      this.\u0023\u003DzUhBHbDcVs9O8.\u0023\u003DzYI36Ggg\u003D(this.\u0023\u003DzNkjnJzE\u003D, _param4);
+      this.\u0023\u003DzUhBHbDcVs9O8.Reset(this.\u0023\u003DzNkjnJzE\u003D, _param4);
     }
     else
       this.\u0023\u003DzaH_ochogoqeB = true;
@@ -227,7 +227,7 @@ label_6:
       goto label_11;
     }
 
-    public void \u0023\u003DzYI36Ggg\u003D(
+    public void Reset(
       double _param1,
       \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5\u0024e1A7bvEMO3Uo\u0024\u0024JpKeVOZ\u0024 _param2)
     {
@@ -243,7 +243,7 @@ label_6:
       throw new NotSupportedException();
     }
 
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
   }

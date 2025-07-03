@@ -13,7 +13,7 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal interface IAnchorPointAnnotation : 
   \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
+  IHitTestable,
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
   IXmlSerializable
 {

@@ -99,20 +99,20 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
 
   protected T \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<T>(
     \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[] _param1)
-    where T : dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, new()
+    where T : BaseRenderableSeries, new()
   {
     if (_param1 != null && ((IEnumerable<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>) _param1).Any<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>(\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy, bool>(\u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D))))
       throw new InvalidOperationException("" + typeof (T).Name);
     T obj = new T();
     if (this.\u0023\u003DzeaszzAAoBOY9().RootElement == (object) this.\u0023\u003DzeaszzAAoBOY9())
     {
-      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+      obj.SetBindings(BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
     }
     else
     {
       // ISSUE: variable of a boxed type
       __Boxed<T> local = (object) obj;
-      DependencyProperty z8b6MqaiE8Uzn = dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn;
+      DependencyProperty z8b6MqaiE8Uzn = BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn;
       BoolAllConverter conv = new BoolAllConverter();
       conv.Value = true;
       Binding[] bindingArray = new Binding[2]
@@ -128,13 +128,13 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
       };
       local.SetMultiBinding(z8b6MqaiE8Uzn, (IMultiValueConverter) conv, bindingArray);
     }
-    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzSEAakZbtZKgY, (object) this.RootElem, "");
-    obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DziAqnE8_\u0024SBDB, (object) this.RootElem, "");
+    obj.SetBindings(BaseRenderableSeries.\u0023\u003DzSEAakZbtZKgY, (object) this.RootElem, "");
+    obj.SetBindings(BaseRenderableSeries.\u0023\u003DziAqnE8_\u0024SBDB, (object) this.RootElem, "");
     \u0023\u003Dzav4EkcQ\u003D zav4EkcQ = this.\u0023\u003DzeaszzAAoBOY9();
     if (!((object) zav4EkcQ is ChartBandElement) && !((object) zav4EkcQ is IChartTransactionElement))
     {
-      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
-      obj.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+      obj.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+      obj.SetBindings(BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
     }
     obj.Tag = _param1 == null || _param1.Length == 0 ? (object) (Tuple<UIBaseVM, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>) null : (object) Tuple.Create<UIBaseVM, \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[]>((UIBaseVM) this, _param1);
     this.GetParentVM().\u0023\u003DzMNK339lzrtSc();
@@ -145,7 +145,7 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
     IRenderableSeries _param0,
     bool _param1)
   {
-    dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd ls4St64EqzfbaEjd = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) _param0;
+    BaseRenderableSeries ls4St64EqzfbaEjd = (BaseRenderableSeries) _param0;
     dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
     dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
     dje_zHR7NJDL95STD4SWVG26WR43JGQLXY8NHRZ7Q26829WGD2MZ_ejd.SetIncludeSeries((DependencyObject) ls4St64EqzfbaEjd, _param1);
@@ -153,9 +153,9 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
   }
 
   [Serializable]
-  private sealed class \u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<\u0023\u003DzH9HNkng\u003D> where \u0023\u003DzH9HNkng\u003D : dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd, new()
+  private sealed class \u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T> where T : BaseRenderableSeries, new()
   {
-    public static readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<\u0023\u003DzH9HNkng\u003D>();
+    public static readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T> \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9V98qcX3BV8d1LwxB\u0024<\u0023\u003Dzav4EkcQ\u003D>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>();
     public static Func<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy, bool> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
 
     internal bool \u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D(
@@ -165,10 +165,10 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
     }
   }
 
-  private sealed class \u0023\u003DzoCQsx9qZ9BND33HUkljNxJY\u003D<\u0023\u003DzH9HNkng\u003D>
+  private sealed class \u0023\u003DzoCQsx9qZ9BND33HUkljNxJY\u003D<T>
   {
     public string \u0023\u003DzlO56\u0024U0\u003D;
-    public \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzl0ap9G9KAFrl;
+    public T[] \u0023\u003Dzl0ap9G9KAFrl;
 
     internal void \u0023\u003Dz4Ri02UyRDgR_MM8068hswR8\u003D(
       object _param1,
@@ -177,8 +177,8 @@ internal abstract class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xAm_Ca5jQWV7qTLlcbbCsg9
     {
       if (_param2 != this.\u0023\u003DzlO56\u0024U0\u003D)
         return;
-      \u0023\u003DzH9HNkng\u003D zH9Hnkng = (\u0023\u003DzH9HNkng\u003D) _param3;
-      if (!((IEnumerable<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003Dzl0ap9G9KAFrl).Contains<\u0023\u003DzH9HNkng\u003D>(zH9Hnkng))
+      T zH9Hnkng = (T) _param3;
+      if (!((IEnumerable<T>) this.\u0023\u003Dzl0ap9G9KAFrl).Contains<T>(zH9Hnkng))
         throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnsupportedType, new object[1]
         {
           (object) zH9Hnkng

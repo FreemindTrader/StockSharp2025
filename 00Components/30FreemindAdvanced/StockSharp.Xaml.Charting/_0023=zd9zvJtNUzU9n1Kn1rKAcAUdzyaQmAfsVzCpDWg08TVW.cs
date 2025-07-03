@@ -12,11 +12,11 @@ using System;
 internal sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt : 
   \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26spNs5FO8CdyTA\u003D\u003D
 {
-  private readonly \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzVxwXLcXPtvCC;
+  private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
 
   public \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt(
     object _param1,
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param2)
+    IRenderContext2D _param2)
     : base(_param1)
   {
     this.\u0023\u003DzVxwXLcXPtvCC = _param2;
@@ -24,7 +24,7 @@ internal sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt 
 
   public BitmapContext \u0023\u003DzKA4QEaMZ7I7_() => throw new NotImplementedException();
 
-  public \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzgIw5tGUfbZB5()
+  public IRenderContext2D \u0023\u003DzgIw5tGUfbZB5()
   {
     return this.\u0023\u003DzVxwXLcXPtvCC;
   }

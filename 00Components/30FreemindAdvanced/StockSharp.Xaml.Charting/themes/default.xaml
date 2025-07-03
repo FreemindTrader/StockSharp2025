@@ -454,7 +454,7 @@
         <Setter Property="s:dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.IsCenterAxis" Value="{Binding IsPolarAxis, RelativeSource={RelativeSource Self}}" />
         <Setter Property="s:dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.GrowBy">
             <Setter.Value>
-                <s:dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd Max="0.0" Min="0.0" />
+                <s:DoubleRange Max="0.0" Min="0.0" />
             </Setter.Value>
         </Setter>
         <Setter Property="s:dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.MajorTickLineStyle">
@@ -904,72 +904,72 @@
                 BorderThickness="0,1,1,1" />
         </Grid>
     </DataTemplate>
-    <Style x:Key="DefaultRenderableSeriesStyle" TargetType="{x:Type s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.RolloverMarkerTemplate">
+    <Style x:Key="DefaultRenderableSeriesStyle" TargetType="{x:Type s:BaseRenderableSeries}">
+        <Setter Property="s:BaseRenderableSeries.RolloverMarkerTemplate">
             <Setter.Value>
                 <ControlTemplate>
                     <s:dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd ContentTemplate="{StaticResource DefaultRolloverMarkerTemplate}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource DefaultLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource DefaultLegendMarkerTemplate}" />
     </Style>
-    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd}" />
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:BaseRenderableSeries}" />
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd}" />
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
         <Setter Property="s:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.UpWickColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleUpWickColor}" />
         <Setter Property="s:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.DownWickColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleDownWickColor}" />
         <Setter Property="s:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.UpBodyBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleUpBodyBrush}" />
         <Setter Property="s:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.DownBodyBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleDownBodyBrush}" />
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
         <Setter Property="s:dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.UpWickColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleUpWickColor}" />
         <Setter Property="s:dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.DownWickColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleDownWickColor}" />
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
         <Setter Property="s:dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.UpWickColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleUpWickColor}" />
         <Setter Property="s:dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.DownWickColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleDownWickColor}" />
     </Style>
-    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUZY7QRNBNLCAZF4HWQ6A3MJPY73EMQ2VAQAAB3ZH2RUU2VAK3EQE9D32HKF4_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource ColumnSeriesLegendMarkerTemplate}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColumnOutlineColor}" />
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:FastColumnRenderableSeries}">
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ColumnSeriesLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColumnOutlineColor}" />
         <Setter Property="s:dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.FillBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColumnFillBrush}" />
     </Style>
-    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zNXC69RR7GVTJT3B9825N7L2M67UQWW3U3T7CLNQCYVESFDW77UGBVTMN2R7TDSCWQ2344S4D5UC36KU2HZS32_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource ColumnSeriesLegendMarkerTemplate}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColumnOutlineColor}" />
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:StackedColumnRenderableSeries}">
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ColumnSeriesLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColumnOutlineColor}" />
         <Setter Property="s:dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.FillBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColumnFillBrush}" />
     </Style>
-    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultLineSeriesColor}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource LineSeriesLegendMarkerTemplate}" />
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:FastLineRenderableSeries}">
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultLineSeriesColor}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource LineSeriesLegendMarkerTemplate}" />
     </Style>
-    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource MountainSeriesLegendMarkerTemplate}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainLineColor}" />
-        <Setter Property="s:dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd.AreaBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainAreaBrush}" />
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:FastMountainRenderableSeries}">
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource MountainSeriesLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainLineColor}" />
+        <Setter Property="s:BaseMountainRenderableSeries.AreaBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainAreaBrush}" />
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainLineColor}" />
-        <Setter Property="s:dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd.AreaBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainAreaBrush}" />
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainLineColor}" />
+        <Setter Property="s:BaseMountainRenderableSeries.AreaBrush" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultMountainAreaBrush}" />
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd}">
         <Setter Property="s:dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd.ColorMap" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultColorMapBrush}" />
     </Style>
-    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource ScatterSeriesLegendMarkerTemplate}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.AntiAliasing" Value="False" />
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:XyScatterRenderableSeries}">
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ScatterSeriesLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.AntiAliasing" Value="False" />
     </Style>
     <Style TargetType="{x:Type s:dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd}">
         <Setter Property="s:dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.BandDownColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultDownBandFillColor}" />
         <Setter Property="s:dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.BandUpColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultUpBandFillColor}" />
         <Setter Property="s:dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.Series1Color" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultDownBandLineColor}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultUpBandLineColor}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource BandSeriesLegendMarkerTemplate}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.RolloverMarkerTemplate">
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultUpBandLineColor}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource BandSeriesLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.RolloverMarkerTemplate">
             <Setter.Value>
                 <ControlTemplate>
                     <s:dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd ContentTemplate="{StaticResource DefaultBandSeriesRolloverMarkerTemplate}" />
@@ -978,9 +978,9 @@
         </Setter>
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM33XZFQAX5LUE5RZSC236CFNLTGUDL4R63UZ85LQQ_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultLineSeriesColor}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.LegendMarkerTemplate" Value="{StaticResource ScatterSeriesLegendMarkerTemplate}" />
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.PointMarkerTemplate">
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultLineSeriesColor}" />
+        <Setter Property="s:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ScatterSeriesLegendMarkerTemplate}" />
+        <Setter Property="s:BaseRenderableSeries.PointMarkerTemplate">
             <Setter.Value>
                 <ControlTemplate>
                     <s:dje_zNQX4XNNSF3XCG399J644Z7HANV72SXDWF5F4RB3EV4JM7MZRCEPSD_ejd
@@ -992,7 +992,7 @@
         </Setter>
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd}">
-        <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultLineSeriesColor}" />
+        <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultLineSeriesColor}" />
     </Style>
     <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type s:dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd}">
         <Setter Property="s:dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.Timeframe2Color" Value="{s:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=BoxVolumeTimeframe2Color}" />
@@ -1779,14 +1779,14 @@
         <Setter Property="s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.SelectedRange" Value="{Binding RelativeSource={RelativeSource Self}, Path=Axis.VisibleRange, Mode=TwoWay}" />
         <Setter Property="s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.RenderableSeriesStyle">
             <Setter.Value>
-                <Style TargetType="{x:Type s:dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd}">
-                    <Setter Property="s:dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd.AreaBrush" Value="{Binding Path=AreaBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}, Mode=OneWay}" />
-                    <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.DataSeries" Value="{Binding DataSeries, RelativeSource={RelativeSource FindAncestor, AncestorType=s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}, Mode=OneWay}" />
-                    <Setter Property="s:dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.SeriesColor" Value="{Binding SeriesColor, RelativeSource={RelativeSource FindAncestor, AncestorType=s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}, Mode=OneWay}" />
+                <Style TargetType="{x:Type s:FastMountainRenderableSeries}">
+                    <Setter Property="s:BaseMountainRenderableSeries.AreaBrush" Value="{Binding Path=AreaBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}, Mode=OneWay}" />
+                    <Setter Property="s:BaseRenderableSeries.DataSeries" Value="{Binding DataSeries, RelativeSource={RelativeSource FindAncestor, AncestorType=s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}, Mode=OneWay}" />
+                    <Setter Property="s:BaseRenderableSeries.SeriesColor" Value="{Binding SeriesColor, RelativeSource={RelativeSource FindAncestor, AncestorType=s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}, Mode=OneWay}" />
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.RenderableSeriesType" Value="s:dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd" />
+        <Setter Property="s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.RenderableSeriesType" Value="s:FastMountainRenderableSeries" />
         <Setter Property="s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.ScrollbarStyle">
             <Setter.Value>
                 <Style TargetType="{x:Type s:dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd}">
@@ -2682,7 +2682,7 @@
                                         </Style>
                                     </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle>
                                     <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RenderableSeries>
-                                        <s:dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd
+                                        <s:FastMountainRenderableSeries
                                             AntiAliasing="False"
                                             DataSeries="{Binding WpfFpsSeries, RelativeSource={RelativeSource TemplatedParent}}"
                                             Opacity="0.5" />
@@ -2760,7 +2760,7 @@
                                         </Style>
                                     </s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle>
                                     <s:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RenderableSeries>
-                                        <s:dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd
+                                        <s:FastMountainRenderableSeries
                                             AntiAliasing="False"
                                             DataSeries="{Binding UltrachartFpsSeries, RelativeSource={RelativeSource TemplatedParent}}"
                                             Opacity="0.5" />

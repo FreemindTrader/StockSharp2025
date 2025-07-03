@@ -17,14 +17,14 @@ internal sealed class \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<
   \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vSJGnVw\u003D\u003D<T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzPqz5cUs\u003D>,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  ISuspendable,
   \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhip318DMhXaWOsdXxIKq2Zfn_
   where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
   where \u0023\u003DzPqz5cUs\u003D : IComparable
 {
   
-  public static readonly \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<\u0023\u003DzPqz5cUs\u003D> \u0023\u003DzVgDDgro\u003D = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<\u0023\u003DzPqz5cUs\u003D>();
+  public static readonly IMath<\u0023\u003DzPqz5cUs\u003D> \u0023\u003DzVgDDgro\u003D = MathHelper.GetMath<\u0023\u003DzPqz5cUs\u003D>();
   
   private readonly \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzPqz5cUs\u003D)> \u0023\u003Dz3laIKDGah\u0024Kh;
   
@@ -102,7 +102,7 @@ internal sealed class \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
-    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(yvalue) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(_param2, yvalue) : _param2;
+    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(yvalue) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(_param2, yvalue) : _param2;
   }
 
   public override \u0023\u003DzE8zkRfY\u003D GetYMaxAt(
@@ -110,16 +110,16 @@ internal sealed class \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
-    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(yvalue) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(_param2, yvalue) : _param2;
+    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(yvalue) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(_param2, yvalue) : _param2;
   }
 
   public override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4,
     bool? _param5,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param6,
+    IRange _param6,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param7,
     object _param8 = null)
   {

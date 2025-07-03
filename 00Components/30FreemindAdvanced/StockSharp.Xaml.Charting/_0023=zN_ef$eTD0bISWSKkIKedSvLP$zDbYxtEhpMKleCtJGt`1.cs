@@ -9,23 +9,23 @@ using System.Collections;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
-  IList<\u0023\u003DzH9HNkng\u003D>,
-  ICollection<\u0023\u003DzH9HNkng\u003D>,
-  IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+internal interface \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T> : 
+  IList<T>,
+  ICollection<T>,
+  IEnumerable<T>,
   IEnumerable
 {
-  \u0023\u003DzH9HNkng\u003D \u0023\u003DzxKsmolQ\u003D();
+  T \u0023\u003DzxKsmolQ\u003D();
 
-  \u0023\u003DzH9HNkng\u003D \u0023\u003DzC52X0FE\u003D();
+  T \u0023\u003DzC52X0FE\u003D();
 
-  void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<\u0023\u003DzH9HNkng\u003D> _param1);
+  void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<T> _param1);
 
-  void \u0023\u003DzdG5UbJ7rAsgF(int _param1, IEnumerable<\u0023\u003DzH9HNkng\u003D> _param2);
+  void \u0023\u003DzdG5UbJ7rAsgF(int _param1, IEnumerable<T> _param2);
 
   void \u0023\u003DzdDirImQ\u003D(int _param1, int _param2);
 
-  \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzRr4AYdnHaTxa();
+  T[] \u0023\u003DzRr4AYdnHaTxa();
 
   void \u0023\u003Dze68j\u0024gs\u003D(int _param1);
 }

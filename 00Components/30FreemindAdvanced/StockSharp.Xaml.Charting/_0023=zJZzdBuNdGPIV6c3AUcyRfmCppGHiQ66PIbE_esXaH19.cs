@@ -11,7 +11,7 @@ using System.Windows;
 internal static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfmCppGHiQ66PIbE_esXaH193jTUu8w\u003D\u003D
 {
   internal static bool \u0023\u003DzbOxVzAyGdX66(
-    this \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param0,
+    this IHitTestable _param0,
     Point _param1)
   {
     return _param0.GetBoundsRelativeTo(_param0).Contains(_param1);

@@ -19,7 +19,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
   ContentControl
 {
   
-  public static readonly DependencyProperty \u0023\u003DzYjQ2xl9o319L = DependencyProperty.Register("", typeof (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz4MpbQOLMpYtswY0tvA\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzYjQ2xl9o319L = DependencyProperty.Register("", typeof (ISciChartSurface), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz4MpbQOLMpYtswY0tvA\u003D\u003D)));
   
   public static readonly DependencyProperty \u0023\u003DzkqE1t18ru2zs = DependencyProperty.Register("", typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
   
@@ -118,11 +118,11 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
     }
   }
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D TargetSurface
+  public ISciChartSurface TargetSurface
   {
     get
     {
-      return (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) this.GetValue(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003DzYjQ2xl9o319L);
+      return (ISciChartSurface) this.GetValue(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003DzYjQ2xl9o319L);
     }
     set
     {

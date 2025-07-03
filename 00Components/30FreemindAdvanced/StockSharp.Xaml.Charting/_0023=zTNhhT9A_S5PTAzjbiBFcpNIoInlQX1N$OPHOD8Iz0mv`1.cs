@@ -9,8 +9,8 @@ using \u002D;
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<\u0023\u003DzH9HNkng\u003D>
-  where \u0023\u003DzH9HNkng\u003D : IComparable
+internal interface \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<T>
+  where T : IComparable
 {
   bool \u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t();
 
@@ -28,16 +28,16 @@ internal interface \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mv
 
   double \u0023\u003DzhL6gsJw\u003D(DateTime _param1);
 
-  double \u0023\u003DzhL6gsJw\u003D(\u0023\u003DzH9HNkng\u003D _param1);
+  double \u0023\u003DzhL6gsJw\u003D(T _param1);
 
-  \u0023\u003DzH9HNkng\u003D \u0023\u003DzACwLhyc\u003D(double _param1);
+  T \u0023\u003DzACwLhyc\u003D(double _param1);
 
-  dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd _param2);
+    DoubleRange _param2);
 
-  dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3);
+    IRange _param3);
 }

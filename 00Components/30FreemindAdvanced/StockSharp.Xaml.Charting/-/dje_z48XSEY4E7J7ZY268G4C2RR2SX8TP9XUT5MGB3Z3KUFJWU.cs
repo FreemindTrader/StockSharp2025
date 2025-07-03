@@ -61,7 +61,7 @@ internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3
         else if (_param1.\u0023\u003DzgMFxvpJd_50n() == \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift)
           this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection);
       }
-      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface), num);
+      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface), num);
       this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) xyDirection);
       this.SetCurrentValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D, (object) actionType);
     }
@@ -71,7 +71,7 @@ internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3
   {
     if (this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection || this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
     {
-      foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yax in this.YAxes)
+      foreach (IAxis yax in this.YAxes)
       {
         double num1 = this.\u0023\u003DzeuxrJCE00Q0n(yax);
         double num2 = _param2 * this.GrowFactor * num1;
@@ -84,7 +84,7 @@ internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3
     }
     if (this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection && this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
       return;
-    foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xax in this.XAxes)
+    foreach (IAxis xax in this.XAxes)
     {
       int num3 = xax.IsHorizontalAxis ? 1 : 0;
       bool? isHorizontalAxis = this.XAxis?.IsHorizontalAxis;
@@ -105,11 +105,11 @@ internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3
   }
 
   private double \u0023\u003DzeuxrJCE00Q0n(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     double num = _param1.IsHorizontalAxis ? _param1.Width : _param1.Height;
     if (Math.Abs(num) < double.Epsilon && this.ParentSurface != null && this.ParentSurface.get_RenderSurface() != null)
-      num = _param1.IsHorizontalAxis ? this.ParentSurface.get_RenderSurface().\u0023\u003Dzu2ObQ3hMALTN() : this.ParentSurface.get_RenderSurface().\u0023\u003Dz2kO1mtG\u0024bEUM();
+      num = _param1.IsHorizontalAxis ? this.ParentSurface.get_RenderSurface().ActualWidth : this.ParentSurface.get_RenderSurface().ActualHeight;
     if (_param1.get_IsPolarAxis())
       num /= 2.0;
     return num;

@@ -26,14 +26,14 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
   }
 
   internal static void \u0023\u003Dzjqa\u00243wA\u003D(
-    this dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd _param0,
+    this BaseRenderableSeries _param0,
     Style _param1)
   {
     if (_param1 == null)
       return;
     Style style = new Style()
     {
-      TargetType = typeof (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd)
+      TargetType = typeof (BaseRenderableSeries)
     };
     foreach (Setter setter in _param1.Setters.OfType<Setter>())
     {
@@ -50,8 +50,8 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
   {
     switch (_param0)
     {
-      case dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd _ when ((dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd) _param0).IsDigitalLine:
-      case dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd _ when ((dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd) _param0).IsDigitalLine:
+      case FastLineRenderableSeries _ when ((FastLineRenderableSeries) _param0).IsDigitalLine:
+      case FastMountainRenderableSeries _ when ((BaseMountainRenderableSeries) _param0).IsDigitalLine:
         return true;
       case dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd _:
         return ((dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd) _param0).IsDigitalLine;
@@ -118,7 +118,7 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
     if (_param0.get_PaletteProvider() != null)
     {
       Color? nullable1 = new Color?();
-      Color? nullable2 = _param1.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 1 ? (_param1.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 3 ? paletteProvider.\u0023\u003DzP50Orng\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().\u0023\u003Dzb9UCYbo\u003D(), _param1.\u0023\u003Dzd9IAScWutAfJ().\u0023\u003Dzb9UCYbo\u003D()) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().\u0023\u003Dzb9UCYbo\u003D(), _param1.\u0023\u003Dzd9IAScWutAfJ().\u0023\u003Dzb9UCYbo\u003D(), _param1.ZValue.\u0023\u003Dzb9UCYbo\u003D())) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().\u0023\u003Dzb9UCYbo\u003D(), _param1.\u0023\u003DzlVz0JivzQhAY().\u0023\u003Dzb9UCYbo\u003D(), _param1.\u0023\u003Dzk8BrWRwbV\u0024Y\u0024().\u0023\u003Dzb9UCYbo\u003D(), _param1.\u0023\u003Dz89dSIjCLFKC0().\u0023\u003Dzb9UCYbo\u003D(), _param1.\u0023\u003DzrRG8qdg_pzoL().\u0023\u003Dzb9UCYbo\u003D());
+      Color? nullable2 = _param1.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 1 ? (_param1.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 3 ? paletteProvider.\u0023\u003DzP50Orng\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003Dzd9IAScWutAfJ().ToDouble()) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003Dzd9IAScWutAfJ().ToDouble(), _param1.ZValue.ToDouble())) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003DzlVz0JivzQhAY().ToDouble(), _param1.\u0023\u003Dzk8BrWRwbV\u0024Y\u0024().ToDouble(), _param1.\u0023\u003Dz89dSIjCLFKC0().ToDouble(), _param1.\u0023\u003DzrRG8qdg_pzoL().ToDouble());
       color1 = nullable2.HasValue ? nullable2.Value : color1;
     }
     return color1;

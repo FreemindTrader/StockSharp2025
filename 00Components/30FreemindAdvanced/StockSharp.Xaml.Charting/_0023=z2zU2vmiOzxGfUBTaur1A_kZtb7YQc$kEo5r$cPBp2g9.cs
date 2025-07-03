@@ -14,15 +14,15 @@ internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<IComparable>
 {
   public override IComparable[] \u0023\u003Dzctqa9kMCtfQQ(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS _param1)
+    IAxisParams _param1)
   {
-    return this.\u0023\u003Dzctqa9kMCtfQQ(_param1.VisibleRange, (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan>) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(_param1.get_MinorDelta().\u0023\u003Dzto51K8pl8UAh(), _param1.get_MajorDelta().\u0023\u003Dzto51K8pl8UAh()));
+    return this.\u0023\u003Dzctqa9kMCtfQQ(_param1.VisibleRange, (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan>) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(_param1.MinorDelta.\u0023\u003Dzto51K8pl8UAh(), _param1.MajorDelta.\u0023\u003Dzto51K8pl8UAh()));
   }
 
   public override IComparable[] \u0023\u003Dz65PoZl8ZJBOc(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS _param1)
+    IAxisParams _param1)
   {
-    return this.\u0023\u003Dz65PoZl8ZJBOc(_param1.VisibleRange, (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan>) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(_param1.get_MinorDelta().\u0023\u003Dzto51K8pl8UAh(), _param1.get_MajorDelta().\u0023\u003Dzto51K8pl8UAh()));
+    return this.\u0023\u003Dz65PoZl8ZJBOc(_param1.VisibleRange, (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan>) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(_param1.MinorDelta.\u0023\u003Dzto51K8pl8UAh(), _param1.MajorDelta.\u0023\u003Dzto51K8pl8UAh()));
   }
 
   protected override double[] \u0023\u003DzzRdFGRW8MXMa(IComparable[] _param1)
@@ -33,7 +33,7 @@ internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0
   protected abstract double \u0023\u003Dz3spHJE8\u003D(IComparable _param1);
 
   private IComparable[] \u0023\u003Dzctqa9kMCtfQQ(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan> _param2)
   {
     List<IComparable> comparableList = new List<IComparable>();
@@ -51,13 +51,13 @@ internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0
   }
 
   private bool \u0023\u003Dz9qPl\u0024k2gJZsD(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     TimeSpan _param2)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param2, "");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D(_param1.Min, "").\u0023\u003DziXfpgk1YpfgIxrtqTA\u003D\u003D(_param1.Max, "");
-    return !_param2.\u0023\u003DzhilcjqQ\u003D() && !_param1.IsZero && _param1.Min.\u0023\u003DzutrFxOU\u003D() && _param1.Max.\u0023\u003DzutrFxOU\u003D();
+    return !_param2.\u0023\u003DzhilcjqQ\u003D() && !_param1.IsZero && _param1.Min.IsFiniteNumber() && _param1.Max.IsFiniteNumber();
   }
 
   protected abstract IComparable \u0023\u003Dz1bwNIVeIfnJ7(IComparable _param1, TimeSpan _param2);
@@ -69,7 +69,7 @@ internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0
   protected abstract bool \u0023\u003Dzpz5fd0zg24Kt(IComparable _param1, TimeSpan _param2);
 
   private IComparable[] \u0023\u003Dz65PoZl8ZJBOc(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan> _param2)
   {
     List<IComparable> comparableList = new List<IComparable>();

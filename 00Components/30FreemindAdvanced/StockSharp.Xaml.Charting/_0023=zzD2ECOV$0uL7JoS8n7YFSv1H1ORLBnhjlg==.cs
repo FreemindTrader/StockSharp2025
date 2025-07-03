@@ -13,7 +13,7 @@ using System.Linq;
 
 #nullable enable
 internal sealed class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D : 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D
+  BindableObject 
 {
   
   private bool \u0023\u003Dzygv7YS_IHSkLj3KwXmwDE5E\u003D;

@@ -43,7 +43,7 @@ internal sealed class dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3HBJZXEPJ6MWG6S8LQQRNW3EMECEG
   protected override double \u0023\u003Dz46iyKtU9fraN() => 0.0;
 
   protected override void \u0023\u003DzbUPOl6ZpNIOI(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     Style _param2,
     IEnumerable<float> _param3)
   {

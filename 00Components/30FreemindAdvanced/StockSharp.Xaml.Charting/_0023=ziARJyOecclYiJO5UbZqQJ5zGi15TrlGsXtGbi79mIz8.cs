@@ -16,8 +16,8 @@ using System.Windows.Shapes;
 
 #nullable disable
 internal sealed class \u0023\u003DziARJyOecclYiJO5UbZqQJ5zGi15TrlGsXtGbi79mIz8ypjHCWp1KngOnCtdn : 
-  \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D,
-  \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D,
+  IBrush2D,
+  IPathColor,
   IDisposable
 {
   
@@ -38,14 +38,14 @@ internal sealed class \u0023\u003DziARJyOecclYiJO5UbZqQJ5zGi15TrlGsXtGbi79mIz8yp
   public Color Color => throw new NotImplementedException();
 
   [SpecialName]
-  public int \u0023\u003DzjOBmdfcoOy1e() => throw new NotImplementedException();
+  public int ColorCode => throw new NotImplementedException();
 
   [SpecialName]
   public bool \u0023\u003DzZTHbSX1_i1\u0024W() => throw new NotImplementedException();
 
   [CompilerGenerated]
   [SpecialName]
-  public bool \u0023\u003Dz7zS5QbVF0tOL() => this.\u0023\u003DzxiNuzSVW5XI8jjmXxQ\u003D\u003D;
+  public bool IsTransparent => this.\u0023\u003DzxiNuzSVW5XI8jjmXxQ\u003D\u003D;
 
   private void \u0023\u003DzEJj25CVDlBfT(bool _param1)
   {

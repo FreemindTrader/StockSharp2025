@@ -9,19 +9,19 @@ using StockSharp.Xaml.Charting.Visuals.Annotations;
 using System.Windows;
 
 #nullable disable
-internal abstract class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<\u0023\u003DzH9HNkng\u003D> : 
+internal abstract class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<T> : 
   \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq
-  where \u0023\u003DzH9HNkng\u003D : AnnotationBase
+  where T : AnnotationBase
 {
-  private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003DzKXEXLGY\u003D;
+  private readonly T \u0023\u003DzKXEXLGY\u003D;
 
   protected \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8(
-    \u0023\u003DzH9HNkng\u003D _param1)
+    T _param1)
   {
     this.\u0023\u003DzKXEXLGY\u003D = _param1;
   }
 
-  public \u0023\u003DzH9HNkng\u003D \u0023\u003Dz_iIh83yfe01U() => this.\u0023\u003DzKXEXLGY\u003D;
+  public T \u0023\u003Dz_iIh83yfe01U() => this.\u0023\u003DzKXEXLGY\u003D;
 
   public abstract void \u0023\u003DzNUoYFVRHgzxB(
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1);

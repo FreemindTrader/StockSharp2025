@@ -1,0 +1,133 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: -.dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
+
+using System;
+using System.Diagnostics;
+using System.Windows;
+
+#nullable disable
+namespace \u002D;
+
+internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd : 
+  dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
+{
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  public static readonly DependencyProperty \u0023\u003Dzp3T0E8s\u003D = DependencyProperty.Register(nameof (ActionType), typeof (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd), typeof (dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd), new PropertyMetadata((object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Zoom, new PropertyChangedCallback(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D)));
+  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  private Action<Point, double> \u0023\u003DzE5Q0sUQO_NoQ;
+
+  public dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd()
+  {
+    this.GrowFactor = 0.1;
+    this.\u0023\u003DzE5Q0sUQO_NoQ = new Action<Point, double>(this.\u0023\u003DzIjNc90j5mMD8);
+  }
+
+  public dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd ActionType
+  {
+    get
+    {
+      return (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd) this.GetValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D);
+    }
+    set
+    {
+      this.SetValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D, (object) value);
+    }
+  }
+
+  private void \u0023\u003DzIjNc90j5mMD8(Point _param1, double _param2)
+  {
+    this.\u0023\u003DzIjNc90j5mMD8(_param1, _param2, _param2);
+  }
+
+  public override void \u0023\u003DzQTINWhMByBmJ(
+    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  {
+    base.\u0023\u003DzQTINWhMByBmJ(_param1);
+    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    using (this.ParentSurface.SuspendUpdates())
+    {
+      double num = (double) -_param1.\u0023\u003DzDuDuL4DDV5GL() / 120.0;
+      dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd xyDirection = this.XyDirection;
+      dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd actionType = this.ActionType;
+      if (_param1.\u0023\u003DzgMFxvpJd_50n() != \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None)
+      {
+        this.SetCurrentValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D, (object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan);
+        if (_param1.\u0023\u003DzgMFxvpJd_50n() == \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl)
+          this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection);
+        else if (_param1.\u0023\u003DzgMFxvpJd_50n() == \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift)
+          this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection);
+      }
+      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface), num);
+      this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) xyDirection);
+      this.SetCurrentValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D, (object) actionType);
+    }
+  }
+
+  private void \u0023\u003Dz6fc78SIV6E\u0024a(Point _param1, double _param2)
+  {
+    if (this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection || this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
+    {
+      foreach (IAxis yax in this.YAxes)
+      {
+        double num1 = this.\u0023\u003DzeuxrJCE00Q0n(yax);
+        double num2 = _param2 * this.GrowFactor * num1;
+        yax.\u0023\u003DzquLnA5Y\u003D(num2, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+      }
+      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("Growing YRange: {0}", new object[1]
+      {
+        (object) _param2
+      });
+    }
+    if (this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection && this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
+      return;
+    foreach (IAxis xax in this.XAxes)
+    {
+      int num3 = xax.IsHorizontalAxis ? 1 : 0;
+      bool? isHorizontalAxis = this.XAxis?.IsHorizontalAxis;
+      int num4 = isHorizontalAxis.GetValueOrDefault() ? 1 : 0;
+      if (num3 == num4 & isHorizontalAxis.HasValue)
+      {
+        double num5 = this.\u0023\u003DzeuxrJCE00Q0n(xax);
+        double num6 = -_param2 * this.GrowFactor * num5;
+        xax.\u0023\u003DzquLnA5Y\u003D(num6, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+      }
+      else
+        break;
+    }
+    \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("Growing XRange: {0}", new object[1]
+    {
+      (object) (int) _param2
+    });
+  }
+
+  private double \u0023\u003DzeuxrJCE00Q0n(
+    IAxis _param1)
+  {
+    double num = _param1.IsHorizontalAxis ? _param1.Width : _param1.Height;
+    if (Math.Abs(num) < double.Epsilon && this.ParentSurface != null && this.ParentSurface.get_RenderSurface() != null)
+      num = _param1.IsHorizontalAxis ? this.ParentSurface.get_RenderSurface().ActualWidth : this.ParentSurface.get_RenderSurface().ActualHeight;
+    if (_param1.get_IsPolarAxis())
+      num /= 2.0;
+    return num;
+  }
+
+  [Serializable]
+  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  {
+    public static readonly dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dz7qOdpi4\u003D();
+
+    internal void \u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D(
+      DependencyObject _param1,
+      DependencyPropertyChangedEventArgs _param2)
+    {
+      dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd kufjwuuvR4YbN3Ejd = _param1 as dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd;
+      dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd newValue = (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd) _param2.NewValue;
+      if (kufjwuuvR4YbN3Ejd == null)
+        return;
+      kufjwuuvR4YbN3Ejd.\u0023\u003DzE5Q0sUQO_NoQ = newValue == dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan ? new Action<Point, double>(kufjwuuvR4YbN3Ejd.\u0023\u003Dz6fc78SIV6E\u0024a) : new Action<Point, double>(kufjwuuvR4YbN3Ejd.\u0023\u003DzIjNc90j5mMD8);
+    }
+  }
+}

@@ -189,5 +189,5 @@ internal static class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D
     return flag;
   }
 
-  public static bool \u0023\u003DzeNpB9guo_tur(double _param0) => _param0 != _param0;
+  public static bool IsNaN(double _param0) => _param0 != _param0;
 }

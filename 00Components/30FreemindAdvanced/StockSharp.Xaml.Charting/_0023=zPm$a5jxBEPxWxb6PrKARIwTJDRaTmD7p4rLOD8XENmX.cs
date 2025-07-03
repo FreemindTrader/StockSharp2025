@@ -27,12 +27,12 @@ using System.Windows.Shapes;
 
 #nullable disable
 internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D(
-  ChartArea _param1) : dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartArea _param1) : ChartModifierBase
 {
   
-  private readonly ChartArea \u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException("");
+  private readonly ChartArea _chartArea = _param1 ?? throw new ArgumentNullException("");
   
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dzos6SMwAMXZ33;
+  private ISciChartSurface \u0023\u003Dzos6SMwAMXZ33;
   
   private Line \u0023\u003DzujKvLh3D_ur8;
   
@@ -67,7 +67,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
     if (this.\u0023\u003Dzos6SMwAMXZ33 != null)
     {
       ((UIElement) this.\u0023\u003Dzos6SMwAMXZ33).PreviewMouseDown -= new MouseButtonEventHandler(this.\u0023\u003DzBnA\u00249wEdNjIT);
-      this.\u0023\u003Dzos6SMwAMXZ33 = (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) null;
+      this.\u0023\u003Dzos6SMwAMXZ33 = (ISciChartSurface) null;
     }
     this.\u0023\u003DzUf222sU\u003D();
   }
@@ -110,7 +110,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
     base.\u0023\u003DzU3pYs4rYVmOS(_param1);
-    if (!(this.\u0023\u003DzeckSod0\u003D.Chart is Chart chart) || !_param1.\u0023\u003DzCJb5Ya_8UZCR() || _param1.\u0023\u003DzgMFxvpJd_50n() != \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl || _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1 && _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4)
+    if (!(this._chartArea.Chart is Chart chart) || !_param1.\u0023\u003DzCJb5Ya_8UZCR() || _param1.\u0023\u003DzgMFxvpJd_50n() != \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl || _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1 && _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4)
       return;
     _param1.\u0023\u003DzBHH5KNloEXNR(true);
     Sides sides = _param1.\u0023\u003DzwuSh61ofE2mr() == (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1 ? (Sides) 0 : (Sides) 1;
@@ -121,7 +121,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
       Price = Converter.To<Decimal>((object) num),
       Type = new OrderTypes?((OrderTypes) 0)
     };
-    chart?.\u0023\u003DzGJwj2DzYuV1h(this.\u0023\u003DzeckSod0\u003D, order);
+    chart?.\u0023\u003DzGJwj2DzYuV1h(this._chartArea, order);
   }
 
   private void \u0023\u003DzFkV86a8\u003D(Point _param1)
@@ -135,7 +135,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
         return;
       Line line1 = new Line();
       line1.X1 = 0.0;
-      line1.X2 = modifierSurface.\u0023\u003Dzu2ObQ3hMALTN();
+      line1.X2 = modifierSurface.ActualWidth;
       line1.Y1 = _param1.Y;
       line1.Y2 = _param1.Y;
       line1.StrokeThickness = 1.0;

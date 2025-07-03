@@ -35,6 +35,6 @@ internal sealed class \u0023\u003DzoiCXU3qThVGehVE_V2hzF2gARiLqsALjH5l_Kt7aKaoa 
     this.\u0023\u003DzRanwdSJnFyTa = y3;
     this.\u0023\u003Dz9SNCNR_cYKQr = (Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, y3) - 1.0) / (double) this.\u0023\u003Dz5BKXmnjcYbh2SvP6Xw\u003D\u003D;
     double num3 = Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, y1);
-    this.\u0023\u003Dzb9g4_DOjBJMx = new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num3 / Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, y2), num3);
+    this.\u0023\u003Dzb9g4_DOjBJMx = new DoubleRange(num3 / Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, y2), num3);
   }
 }

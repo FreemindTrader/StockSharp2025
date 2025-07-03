@@ -14,14 +14,14 @@ using System.Windows;
 internal sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU770SjI_XX5kyW7udt\u0024X5Q\u003D\u003D : 
   \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ
 {
-  private readonly \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzVxwXLcXPtvCC;
+  private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
   private readonly \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J;
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzeOOzRJamjmT\u0024JamVOQ\u003D\u003D;
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzLi_JesGMHfyS;
   private readonly Size \u0023\u003DzgYZhPyPIW8zq;
 
   public \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU770SjI_XX5kyW7udt\u0024X5Q\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D _param2)
   {
     this.\u0023\u003DzVxwXLcXPtvCC = _param1;
@@ -41,20 +41,20 @@ internal sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU
   public void \u0023\u003DzkpjYNfwbvIK8(
     Point _param1,
     Point _param2,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param3,
+    IBrush2D _param3,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param4,
     double _param5)
   {
-    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzeOOzRJamjmT\u0024JamVOQ\u003D\u003D.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) _param3, _param1.X, _param1.Y))
+    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzeOOzRJamjmT\u0024JamVOQ\u003D\u003D.\u0023\u003Dz7ZSU06M\u003D((IPathColor) _param3, _param1.X, _param1.Y))
     {
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param2.X, _param1.Y);
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param2.X, _param2.Y);
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param1.X, _param2.Y);
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param1.X, _param1.Y);
     }
-    if ((double) _param4.StrokeThickness <= 0.0 || _param4.get_Color().A == (byte) 0)
+    if ((double) _param4.StrokeThickness <= 0.0 || _param4.Color.A == (byte) 0)
       return;
-    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzLi_JesGMHfyS.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) _param4, _param1.X, _param1.Y))
+    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzLi_JesGMHfyS.\u0023\u003Dz7ZSU06M\u003D((IPathColor) _param4, _param1.X, _param1.Y))
     {
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param2.X, _param1.Y);
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param2.X, _param2.Y);
@@ -68,18 +68,18 @@ internal sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU
     Point _param2,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param3)
   {
-    if ((double) _param3.StrokeThickness <= 0.0 || _param3.get_Color().A == (byte) 0)
+    if ((double) _param3.StrokeThickness <= 0.0 || _param3.Color.A == (byte) 0)
       return;
-    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzLi_JesGMHfyS.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) _param3, _param1.X, _param1.Y))
+    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzLi_JesGMHfyS.\u0023\u003Dz7ZSU06M\u003D((IPathColor) _param3, _param1.X, _param1.Y))
       v1qkdyQymVhxLr4oDq.\u0023\u003DzfRDRUq8\u003D(_param2.X, _param2.Y);
   }
 
   public void \u0023\u003Dz_I15ZX7u91\u0024T(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     Point[] _param2)
   {
     Point point1 = ((IEnumerable<Point>) _param2).First<Point>();
-    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzeOOzRJamjmT\u0024JamVOQ\u003D\u003D.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) _param1, point1.X, point1.Y))
+    using (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = this.\u0023\u003DzeOOzRJamjmT\u0024JamVOQ\u003D\u003D.\u0023\u003Dz7ZSU06M\u003D((IPathColor) _param1, point1.X, point1.Y))
     {
       for (int index = 1; index < _param2.Length; ++index)
       {
@@ -92,13 +92,13 @@ internal sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU
   public void \u0023\u003DzNq_YOflx6uAn(
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT _param1,
     Point _param2,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param3,
+    IBrush2D _param3,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param4)
   {
     if (!_param2.\u0023\u003DzxGhbraO0gg9\u0024(this.\u0023\u003DzgYZhPyPIW8zq))
       return;
     _param2 = this.\u0023\u003Dzop6vn0GowyiR(_param2);
-    _param1.\u0023\u003DzjgUUUJE\u003D(this.\u0023\u003DzVxwXLcXPtvCC, _param2.X, _param2.Y, _param4, _param3);
+    _param1.Draw(this.\u0023\u003DzVxwXLcXPtvCC, _param2.X, _param2.Y, _param4, _param3);
   }
 
   public void \u0023\u003DzzNCP093OQhtA(
@@ -106,7 +106,7 @@ internal sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU
     IEnumerable<Point> _param2)
   {
     IEnumerable<Point> points = _param2.Where<Point>(new Func<Point, bool>(this.\u0023\u003Dz_40cvHyhGFMDsG477vidmxI\u003D)).Select<Point, Point>(new Func<Point, Point>(this.\u0023\u003Dzop6vn0GowyiR));
-    _param1.\u0023\u003DzjgUUUJE\u003D(this.\u0023\u003DzVxwXLcXPtvCC, points);
+    _param1.Draw(this.\u0023\u003DzVxwXLcXPtvCC, points);
   }
 
   private Point \u0023\u003Dzop6vn0GowyiR(Point _param1)

@@ -17,7 +17,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3,
     bool _param4)
   {
-    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D ?? (\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D = new Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D>(\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3, _param4, true);
+    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D ?? (\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3, _param4, true);
   }
 
   internal static void \u0023\u003DzftEp\u0024x4VdHnj(
@@ -31,21 +31,21 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
   {
     \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzR\u0024h5gkzF2FxdwMnQnA\u003D\u003D h5gkzF2FxdwMnQnA = new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzR\u0024h5gkzF2FxdwMnQnA\u003D\u003D();
     h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D = _param1;
-    if ((double) h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D.StrokeThickness <= 0.0 || h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D.get_Color().A == (byte) 0)
+    if ((double) h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D.StrokeThickness <= 0.0 || h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D.Color.A == (byte) 0)
       return;
-    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D>(h5gkzF2FxdwMnQnA.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
+    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, IPathColor>(h5gkzF2FxdwMnQnA.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
   }
 
   internal static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param4,
     bool _param5,
     bool _param6)
   {
-    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D>(new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzEIQ1d2DpkNoBum8VDQ\u003D\u003D()
+    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, IPathColor>(new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass1234()
     {
       \u0023\u003Dz_HpzU5w\u003D = _param1
     }.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
@@ -53,7 +53,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
 
   internal static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
-    Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D> _param1,
+    Func<double, double, IPathColor> _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param4,
@@ -65,7 +65,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
 
   private static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
-    Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D> _param1,
+    Func<double, double, IPathColor> _param1,
     double[] _param2,
     double[] _param3,
     int _param4,
@@ -78,7 +78,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) null;
     double num1 = _param2[0];
     double num2 = _param3[0];
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D bDPyrbD0P2noEi5c1 = _param1(num1, num2);
+    IPathColor bDPyrbD0P2noEi5c1 = _param1(num1, num2);
     double num3 = _param5.\u0023\u003DzhL6gsJw\u003D(num1);
     double num4 = _param6.\u0023\u003DzhL6gsJw\u003D(num2);
     double num5 = flag ? num4 : num3;
@@ -106,7 +106,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
       }
       else
       {
-        \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D bDPyrbD0P2noEi5c2 = _param1(num12, num13);
+        IPathColor bDPyrbD0P2noEi5c2 = _param1(num12, num13);
         if (bDPyrbD0P2noEi5c2 != bDPyrbD0P2noEi5c1)
         {
           bDPyrbD0P2noEi5c1.Dispose();
@@ -164,25 +164,25 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D> \u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D;
+    public static Func<double, double, IPathColor> \u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D;
 
-    internal \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D \u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D(
+    internal IPathColor \u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D(
       double _param1,
       double _param2)
     {
-      return (\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) null;
+      return (IPathColor) null;
     }
   }
 
-  private sealed class \u0023\u003DzEIQ1d2DpkNoBum8VDQ\u003D\u003D
+  private sealed class SomeClass1234
   {
-    public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dz_HpzU5w\u003D;
+    public IBrush2D \u0023\u003Dz_HpzU5w\u003D;
 
-    internal \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
+    internal IPathColor \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
       double _param1,
       double _param2)
     {
-      return (\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) this.\u0023\u003Dz_HpzU5w\u003D;
+      return (IPathColor) this.\u0023\u003Dz_HpzU5w\u003D;
     }
   }
 
@@ -190,11 +190,11 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
   {
     public \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzY_IgCbQ\u003D;
 
-    internal \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
+    internal IPathColor \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
       double _param1,
       double _param2)
     {
-      return (\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) this.\u0023\u003DzY_IgCbQ\u003D;
+      return (IPathColor) this.\u0023\u003DzY_IgCbQ\u003D;
     }
   }
 }

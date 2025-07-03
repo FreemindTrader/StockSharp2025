@@ -24,12 +24,12 @@ using System.Xml.Serialization;
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal abstract class AnnotationBase : 
-  \u0023\u003DzHHCBm9UpsKz28K2k\u002432Cv_vXeGtDJsjTomycKYo\u003D,
+  ApiElementBase,
   \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
+  IHitTestable,
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
   IXmlSerializable,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D
+  ISuspendable
 {
   public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register("", typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "", new PropertyChangedCallback(AnnotationBase.OnXAxisIdChanged)));
   public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register("", typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "", new PropertyChangedCallback(AnnotationBase.OnYAxisIdChanged)));
@@ -57,8 +57,8 @@ internal abstract class AnnotationBase :
   private DateTime _mouseLeftDownTimestamp;
   private \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _startDragAnnotationCoordinates;
   private IList<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x> _myAdorners = (IList<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>) new List<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>();
-  private \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _yAxis;
-  private \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _xAxis;
+  private IAxis _yAxis;
+  private IAxis _xAxis;
   private bool _isLoaded;
 
   protected AnnotationBase()
@@ -299,12 +299,12 @@ internal abstract class AnnotationBase :
     }
   }
 
-  public override \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB YAxis
+  public override IAxis YAxis
   {
     get => this._yAxis ?? (this._yAxis = this.\u0023\u003Dz4uoxB8oLWxeL(this.YAxisId));
   }
 
-  public override \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB XAxis
+  public override IAxis XAxis
   {
     get => this._xAxis ?? (this._xAxis = this.\u0023\u003DzI0EiGDjWkH8S(this.XAxisId));
   }
@@ -359,7 +359,7 @@ internal abstract class AnnotationBase :
   }
 
   protected virtual void OnAxisAlignmentChanged(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis,
+    IAxis axis,
     dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment)
   {
   }
@@ -467,9 +467,9 @@ internal abstract class AnnotationBase :
 
   public override void OnDetached()
   {
-    using (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote fq05jnDg3bOrIrgCjote = this.SuspendUpdates())
+    using (IUpdateSuspender fq05jnDg3bOrIrgCjote = this.SuspendUpdates())
     {
-      fq05jnDg3bOrIrgCjote.\u0023\u003DzZreBqCsNdaNN(false);
+      fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose=false;
       this.IsSelected = false;
       this.MakeInvisible();
       (this.Parent as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk).\u0023\u003DziYdJ\u00246cCiBha((object) this);
@@ -620,7 +620,7 @@ internal abstract class AnnotationBase :
     DependencyPropertyChangedEventArgs e)
   {
     ((AnnotationBase) d).Refresh();
-    ((\u0023\u003DzHHCBm9UpsKz28K2k\u002432Cv_vXeGtDJsjTomycKYo\u003D) d).\u0023\u003Dz15moWio\u003D("");
+    ((ApiElementBase) d).\u0023\u003Dz15moWio\u003D("");
   }
 
   public void UpdatePosition(Point point1, Point point2)
@@ -645,8 +645,8 @@ internal abstract class AnnotationBase :
 
   protected virtual IComparable[] FromCoordinates(double xCoord, double yCoord)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xaxis = this.XAxis;
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yaxis = this.YAxis;
+    IAxis xaxis = this.XAxis;
+    IAxis yaxis = this.YAxis;
     bool isHorizontalAxis = xaxis.IsHorizontalAxis;
     return new IComparable[2]
     {
@@ -657,7 +657,7 @@ internal abstract class AnnotationBase :
 
   protected virtual IComparable FromCoordinate(
     double coord,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis)
+    IAxis axis)
   {
     if (axis == null)
       throw new ArgumentNullException("");
@@ -667,21 +667,21 @@ internal abstract class AnnotationBase :
 
   protected virtual IComparable FromRelativeCoordinate(
     double coord,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis)
+    IAxis axis)
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
-    double num = axis.IsHorizontalAxis ? canvas.\u0023\u003Dzu2ObQ3hMALTN() : canvas.\u0023\u003Dz2kO1mtG\u0024bEUM();
+    double num = axis.IsHorizontalAxis ? canvas.ActualWidth : canvas.ActualHeight;
     return (IComparable) (coord / num);
   }
 
   protected double ToCoordinate(
     IComparable dataValue,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis)
+    IAxis axis)
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc = axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
-    double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.\u0023\u003Dzu2ObQ3hMALTN() : canvas.\u0023\u003Dz2kO1mtG\u0024bEUM();
+    double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
     return this.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction);
   }
 
@@ -707,7 +707,7 @@ internal abstract class AnnotationBase :
     if (coordCalc == null)
       return 0.0;
     dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
-    double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.\u0023\u003Dzu2ObQ3hMALTN() : canvas.\u0023\u003Dz2kO1mtG\u0024bEUM();
+    double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
     return this.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction);
   }
 
@@ -720,8 +720,8 @@ internal abstract class AnnotationBase :
     if (dataValue == null)
       return double.NaN;
     if (this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && direction == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && direction == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection)
-      return dataValue.\u0023\u003Dzb9UCYbo\u003D() * canvasMeasurement;
-    return coordCalc.\u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t() && dataValue is DateTime ? this.GetCategoryCoordinate(dataValue, coordCalc as \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D) : coordCalc.\u0023\u003DzhL6gsJw\u003D(dataValue.\u0023\u003Dzb9UCYbo\u003D());
+      return dataValue.ToDouble() * canvasMeasurement;
+    return coordCalc.\u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t() && dataValue is DateTime ? this.GetCategoryCoordinate(dataValue, coordCalc as \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D) : coordCalc.\u0023\u003DzhL6gsJw\u003D(dataValue.ToDouble());
   }
 
   private double GetCategoryCoordinate(
@@ -734,8 +734,8 @@ internal abstract class AnnotationBase :
     int num2 = categoryCalc.\u0023\u003DzFk6sufr\u0024co4e((DateTime) dataValue, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2);
     int num3 = categoryCalc.\u0023\u003DzFk6sufr\u0024co4e((DateTime) dataValue, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 3);
     DateTime dateTime = categoryCalc.\u0023\u003DzWZQlXHuDrnKc(num2);
-    double num4 = categoryCalc.\u0023\u003DzWZQlXHuDrnKc(num3).\u0023\u003Dzb9UCYbo\u003D() - dateTime.\u0023\u003Dzb9UCYbo\u003D();
-    double num5 = (dataValue.\u0023\u003Dzb9UCYbo\u003D() - dateTime.\u0023\u003Dzb9UCYbo\u003D()) / num4;
+    double num4 = categoryCalc.\u0023\u003DzWZQlXHuDrnKc(num3).ToDouble() - dateTime.ToDouble();
+    double num5 = (dataValue.ToDouble() - dateTime.ToDouble()) / num4;
     double val1 = categoryCalc.\u0023\u003DzhL6gsJw\u003D((double) num2);
     double num6 = categoryCalc.\u0023\u003DzhL6gsJw\u003D((double) num3) - Math.Max(val1, 0.0);
     return num6 <= 0.0 ? -1.0 : val1 + num6 * num5;
@@ -810,8 +810,8 @@ internal abstract class AnnotationBase :
   protected virtual void SetBasePoint(
     Point newPoint,
     int index,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xAxis,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yAxis)
+    IAxis xAxis,
+    IAxis yAxis)
   {
     IComparable[] comparableArray = this.FromCoordinates(newPoint);
     DependencyProperty x;
@@ -875,7 +875,7 @@ internal abstract class AnnotationBase :
 
   public virtual Point TranslatePoint(
     Point point,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z relativeTo)
+    IHitTestable relativeTo)
   {
     return this.\u0023\u003DzaPPLsvfM_Sst(point, relativeTo);
   }
@@ -883,7 +883,7 @@ internal abstract class AnnotationBase :
   public virtual bool IsPointWithinBounds(Point point) => this.\u0023\u003DzbOxVzAyGdX66(point);
 
   public virtual Rect GetBoundsRelativeTo(
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z relativeTo)
+    IHitTestable relativeTo)
   {
     return this.\u0023\u003DzdC9whUui_gN\u0024(relativeTo);
   }
@@ -1015,19 +1015,19 @@ internal abstract class AnnotationBase :
   {
     get
     {
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this);
     }
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
-    return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+    return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this);
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote updateSuspender)
+    IUpdateSuspender updateSuspender)
   {
-    if (!updateSuspender.\u0023\u003DzuWdUDFWIQOsx())
+    if (!updateSuspender.ResumeTargetOnDispose)
       return;
     this.Refresh();
   }
@@ -1067,12 +1067,12 @@ internal abstract class AnnotationBase :
     this.DataContext = value;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EIHitTestable\u002Eget_ActualWidth()
+  double IHitTestable.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EIHitTestable\u002Eget_ActualWidth()
   {
     return this.ActualWidth;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EIHitTestable\u002Eget_ActualHeight()
+  double IHitTestable.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EIHitTestable\u002Eget_ActualHeight()
   {
     return this.ActualHeight;
   }
@@ -1112,10 +1112,10 @@ internal abstract class AnnotationBase :
     }
   }
 
-  public class \u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<\u0023\u003DzH9HNkng\u003D>(
-    \u0023\u003DzH9HNkng\u003D _param1) : 
-    \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<\u0023\u003DzH9HNkng\u003D>(_param1)
-    where \u0023\u003DzH9HNkng\u003D : AnnotationBase
+  public class \u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<T>(
+    T _param1) : 
+    \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<T>(_param1)
+    where T : AnnotationBase
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
       \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
@@ -1137,7 +1137,7 @@ internal abstract class AnnotationBase :
       \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
-      return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.\u0023\u003Dzu2ObQ3hMALTN() && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.\u0023\u003Dzu2ObQ3hMALTN() || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE <= _param2.\u0023\u003Dz2kO1mtG\u0024bEUM() ? 0 : (_param1.\u0023\u003DzWp13vlQiZCJc > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM() ? 1 : 0))) == 0;
+      return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE <= _param2.ActualHeight ? 0 : (_param1.\u0023\u003DzWp13vlQiZCJc > _param2.ActualHeight ? 1 : 0))) == 0;
     }
 
     public override void \u0023\u003DzuPL3ELSPZybJ(
@@ -1159,7 +1159,7 @@ internal abstract class AnnotationBase :
       double d2 = _param1.\u0023\u003Dz6aJoeqoqAzym + _param2;
       double d3 = _param1.\u0023\u003Dz2J4l3QUGwZHE + _param3;
       double d4 = _param1.\u0023\u003DzWp13vlQiZCJc + _param3;
-      if (!this.\u0023\u003DzpTsgWlwWfZwP(d1, _param4.\u0023\u003Dzu2ObQ3hMALTN()) || !this.\u0023\u003DzpTsgWlwWfZwP(d3, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM()) || !this.\u0023\u003DzpTsgWlwWfZwP(d2, _param4.\u0023\u003Dzu2ObQ3hMALTN()) || !this.\u0023\u003DzpTsgWlwWfZwP(d4, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+      if (!this.\u0023\u003DzpTsgWlwWfZwP(d1, _param4.ActualWidth) || !this.\u0023\u003DzpTsgWlwWfZwP(d3, _param4.ActualHeight) || !this.\u0023\u003DzpTsgWlwWfZwP(d2, _param4.ActualWidth) || !this.\u0023\u003DzpTsgWlwWfZwP(d4, _param4.ActualHeight))
       {
         double val1_1 = double.IsNaN(d1) ? 0.0 : d1;
         double val2_1 = double.IsNaN(d2) ? 0.0 : d2;
@@ -1167,12 +1167,12 @@ internal abstract class AnnotationBase :
         double val2_2 = double.IsNaN(d4) ? 0.0 : d4;
         if (Math.Max(val1_1, val2_1) < 0.0)
           _param2 -= Math.Max(val1_1, val2_1);
-        if (Math.Min(val1_1, val2_1) > _param4.\u0023\u003Dzu2ObQ3hMALTN())
-          _param2 -= Math.Min(val1_1, val2_1) - (_param4.\u0023\u003Dzu2ObQ3hMALTN() - 1.0);
+        if (Math.Min(val1_1, val2_1) > _param4.ActualWidth)
+          _param2 -= Math.Min(val1_1, val2_1) - (_param4.ActualWidth - 1.0);
         if (Math.Max(val1_2, val2_2) < 0.0)
           _param3 -= Math.Max(val1_2, val2_2);
-        if (Math.Min(val1_2, val2_2) > _param4.\u0023\u003Dz2kO1mtG\u0024bEUM())
-          _param3 -= Math.Min(val1_2, val2_2) - (_param4.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0);
+        if (Math.Min(val1_2, val2_2) > _param4.ActualHeight)
+          _param3 -= Math.Min(val1_2, val2_2) - (_param4.ActualHeight - 1.0);
       }
       _param1.\u0023\u003DzS2_K6sVvd5IY += _param2;
       _param1.\u0023\u003Dz6aJoeqoqAzym += _param2;
@@ -1207,13 +1207,13 @@ internal abstract class AnnotationBase :
     }
   }
 
-  internal class \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<\u0023\u003DzH9HNkng\u003D> : 
-    \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<\u0023\u003DzH9HNkng\u003D>
-    where \u0023\u003DzH9HNkng\u003D : AnnotationBase
+  internal class \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<T> : 
+    \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<T>
+    where T : AnnotationBase
   {
     private readonly \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J;
 
-    public \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D(\u0023\u003DzH9HNkng\u003D _param1)
+    public \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D(T _param1)
       : base(_param1)
     {
       this.\u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J = _param1.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();
@@ -1252,7 +1252,7 @@ internal abstract class AnnotationBase :
     private Size \u0023\u003DzIr6xoc_4P2lw(
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param1)
     {
-      return new Size(360.0, \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D.\u0023\u003Dz62MsOEK3dnlV(_param1.\u0023\u003Dzu2ObQ3hMALTN(), _param1.\u0023\u003Dz2kO1mtG\u0024bEUM()));
+      return new Size(360.0, \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D.\u0023\u003Dz62MsOEK3dnlV(_param1.ActualWidth, _param1.ActualHeight));
     }
 
     protected virtual bool \u0023\u003DzRe9EEbV7q4ey(

@@ -17,7 +17,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSETKLDJTKTT2AG3C5RABZZAVPGTCHC3TQQYAYANMZQ_ejd : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd,
+  BaseRenderableSeries,
   INotifyPropertyChanged
 {
   
@@ -150,8 +150,8 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     if (_param2.\u0023\u003DzDoU1CJhSUWFV())
       throw new NotImplementedException(string.Format("", (object) ((object) this).GetType().Name));

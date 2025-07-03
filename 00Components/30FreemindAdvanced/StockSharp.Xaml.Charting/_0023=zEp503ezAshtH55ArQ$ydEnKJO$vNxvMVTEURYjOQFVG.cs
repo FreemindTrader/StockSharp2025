@@ -33,8 +33,8 @@ internal sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEU
     double _param1,
     \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D _param2)
   {
-    int num = (int) Math.Round(_param2.\u0023\u003DzACwLhyc\u003D(_param1).\u0023\u003Dzb9UCYbo\u003D());
-    return _param2.\u0023\u003DzWZQlXHuDrnKc(num).\u0023\u003Dzb9UCYbo\u003D();
+    int num = (int) Math.Round(_param2.\u0023\u003DzACwLhyc\u003D(_param1).ToDouble());
+    return _param2.\u0023\u003DzWZQlXHuDrnKc(num).ToDouble();
   }
 
   private sealed class \u0023\u003DzSxTkBL91\u0024nQyhjyA6w\u003D\u003D

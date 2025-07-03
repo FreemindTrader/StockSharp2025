@@ -17,7 +17,7 @@ using System.Xml.Serialization;
 
 #nullable disable
 internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D : 
-  ObservableCollection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>,
+  ObservableCollection<IAxis>,
   IXmlSerializable
 {
   public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D()
@@ -26,7 +26,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
   }
 
   public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D(
-    IEnumerable<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> _param1)
+    IEnumerable<IAxis> _param1)
     : base(_param1)
   {
     this.\u0023\u003DzhWsB8Osx9PQj();
@@ -34,23 +34,23 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
 
   protected bool \u0023\u003DzodGDG4t9ZHPr()
   {
-    return this.Any<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D)));
+    return this.Any<IAxis>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IAxis, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D)));
   }
 
-  protected \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzJ3NldqbrPhqs()
+  protected IAxis \u0023\u003DzJ3NldqbrPhqs()
   {
-    return this.FirstOrDefault<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D)));
+    return this.FirstOrDefault<IAxis>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<IAxis, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D)));
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB Default
+  public IAxis Default
   {
     get
     {
-      return this.Count <= 0 ? (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) null : this.\u0023\u003Dz\u0024YoxjvGBoa2C("", false);
+      return this.Count <= 0 ? (IAxis) null : this.\u0023\u003Dz\u0024YoxjvGBoa2C("", false);
     }
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003Dz\u0024YoxjvGBoa2C(
+  public IAxis \u0023\u003Dz\u0024YoxjvGBoa2C(
     string _param1,
     bool _param2)
   {
@@ -58,7 +58,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQ9LPsT8\u003D = _param1;
     try
     {
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB = this.SingleOrDefault<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzCrpW8JldYBwMSqUGBQ\u003D\u003D));
+      IAxis dynWmoFzgH4RlWB0lB = this.SingleOrDefault<IAxis>(new Func<IAxis, bool>(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzCrpW8JldYBwMSqUGBQ\u003D\u003D));
       return !_param2 || dynWmoFzgH4RlWB0lB != null ? dynWmoFzgH4RlWB0lB : throw new InvalidOperationException(string.Format("", (object) (z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQ9LPsT8\u003D ?? "")));
     }
     catch
@@ -71,7 +71,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
   {
     this.CollectionChanged -= new NotifyCollectionChangedEventHandler(this.\u0023\u003DzQ66aClkZo__B);
     this.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003DzQ66aClkZo__B);
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB = this.FirstOrDefault<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>();
+    IAxis dynWmoFzgH4RlWB0lB = this.FirstOrDefault<IAxis>();
     if (this.\u0023\u003DzodGDG4t9ZHPr() || dynWmoFzgH4RlWB0lB == null)
       return;
     dynWmoFzgH4RlWB0lB.set_IsPrimaryAxis(true);
@@ -81,7 +81,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
 
   public virtual void ReadXml(XmlReader _param1)
   {
-    this.\u0023\u003Dz6_E5\u0024pE\u003D<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>((IEnumerable<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DztbbHmR4\u003D(_param1));
+    this.\u0023\u003Dz6_E5\u0024pE\u003D<IAxis>((IEnumerable<IAxis>) \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DztbbHmR4\u003D(_param1));
   }
 
   public virtual void WriteXml(XmlWriter _param1)
@@ -91,17 +91,17 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
 
   private void \u0023\u003DzQ66aClkZo__B(object _param1, NotifyCollectionChangedEventArgs _param2)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB1 = _param2.NewItems != null ? _param2.NewItems.Cast<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>().FirstOrDefault<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D))) : (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) null;
+    IAxis dynWmoFzgH4RlWB0lB1 = _param2.NewItems != null ? _param2.NewItems.Cast<IAxis>().FirstOrDefault<IAxis>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<IAxis, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D))) : (IAxis) null;
     if (dynWmoFzgH4RlWB0lB1 == null)
     {
       dynWmoFzgH4RlWB0lB1 = this.\u0023\u003DzJ3NldqbrPhqs();
       if (dynWmoFzgH4RlWB0lB1 == null)
       {
-        dynWmoFzgH4RlWB0lB1 = this.FirstOrDefault<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>();
+        dynWmoFzgH4RlWB0lB1 = this.FirstOrDefault<IAxis>();
         dynWmoFzgH4RlWB0lB1?.set_IsPrimaryAxis(true);
       }
     }
-    foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB2 in (Collection<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>) this)
+    foreach (IAxis dynWmoFzgH4RlWB0lB2 in (Collection<IAxis>) this)
     {
       if (dynWmoFzgH4RlWB0lB2 != dynWmoFzgH4RlWB0lB1)
         dynWmoFzgH4RlWB0lB2.set_IsPrimaryAxis(false);
@@ -112,24 +112,24 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
-    public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
-    public static Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, bool> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+    public static Func<IAxis, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
+    public static Func<IAxis, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
+    public static Func<IAxis, bool> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
 
     internal bool \u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
     }
 
     internal bool \u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
     }
 
     internal bool \u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
     }
@@ -140,9 +140,9 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
     public string \u0023\u003DzQ9LPsT8\u003D;
 
     internal bool \u0023\u003DzCrpW8JldYBwMSqUGBQ\u003D\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
-      return _param1.get_Id() == this.\u0023\u003DzQ9LPsT8\u003D;
+      return _param1.Id == this.\u0023\u003DzQ9LPsT8\u003D;
     }
   }
 }

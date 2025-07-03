@@ -43,9 +43,9 @@ internal static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvWCpoOjEhEeJI6I2BPbX98a
       case Color color2:
         str = string.Format("", (object) color2.A, (object) color2.R, (object) color2.G, (object) color2.B);
         break;
-      case \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _:
+      case IRange _:
         Type type = _param0.GetType();
-        dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd = ((\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) _param0).\u0023\u003DzfODy_Nxn8OGy();
+        DoubleRange klqcJ87Zm8UwE3WEjd = ((IRange) _param0).AsDoubleRange();
         str = string.Format("", (object) type.FullName, (object) klqcJ87Zm8UwE3WEjd.Min, (object) klqcJ87Zm8UwE3WEjd.Max);
         break;
       case Thickness thickness:

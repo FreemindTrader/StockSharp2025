@@ -73,7 +73,7 @@ public sealed class ChartIndicatorElement :
       if (this.\u0023\u003DzggYpSp2p8YZic9F7tQ\u003D\u003D == value)
         return;
       StockSharp.Xaml.Charting.ChartArea chartArea = (StockSharp.Xaml.Charting.ChartArea) this.ChartArea;
-      chartArea?.\u0023\u003Dz3ThQNm3rQ1fp().\u0023\u003DzmxDTmQc\u003D((IChartElement) this.IndicatorPainter.Element);
+      chartArea?.ViewModel().\u0023\u003DzmxDTmQc\u003D((IChartElement) this.IndicatorPainter.Element);
       this.IndicatorPainter.OnDetached();
       if (value?.GetType() != typeof (DefaultPainter))
       {
@@ -85,7 +85,7 @@ public sealed class ChartIndicatorElement :
         this.\u0023\u003DzwZUN8k4QxNb8DrQ1IQ\u003D\u003D = (DefaultPainter) value;
       }
       this.IndicatorPainter.OnAttached((IChartIndicatorElement) this);
-      chartArea?.\u0023\u003Dz3ThQNm3rQ1fp().\u0023\u003Dz4M_pW8k\u003D((IChartElement) this);
+      chartArea?.ViewModel().\u0023\u003Dz4M_pW8k\u003D((IChartElement) this);
       this.RaisePropertyChanged("");
     }
   }

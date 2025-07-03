@@ -12,14 +12,14 @@ internal sealed class \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvkiQmxVYK9U97jOB8bGOy2PBp
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzEcmsYfw\u003D;
 
   public \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvkiQmxVYK9U97jOB8bGOy2PBp_pLd5jGNdYymoTDbRmbQA\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D _param2)
   {
     this.\u0023\u003DzEcmsYfw\u003D = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzfBnUxfO7E1olRb03IQ\u003D\u003D(_param1, _param2);
   }
 
   public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    IPathColor _param1,
     double _param2,
     double _param3)
   {

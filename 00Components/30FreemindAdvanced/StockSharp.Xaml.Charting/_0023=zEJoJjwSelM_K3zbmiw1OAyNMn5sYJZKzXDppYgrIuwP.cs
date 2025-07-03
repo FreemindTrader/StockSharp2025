@@ -9,5 +9,5 @@
 internal interface \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyNMn5sYJZKzXDppYgrIuwPB
 {
   \u0023\u003Dzgg5QOmcWitJriAsXqwM_mn\u0024OgQPZalPRDrRrx2Q\u003D \u0023\u003Dz\u0024ccLugjL4c3p(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1);
+    IRenderContext2D _param1);
 }

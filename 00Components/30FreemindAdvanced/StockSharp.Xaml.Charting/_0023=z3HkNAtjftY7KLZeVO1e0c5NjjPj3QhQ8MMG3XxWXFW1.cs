@@ -91,8 +91,8 @@ internal sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a 
   {
     foreach (TouchPoint touchPoint in _param1.\u0023\u003DzeKSkpjwaiSdieql2hyn60Uw\u003D())
     {
-      Point point = this.\u0023\u003DzOaYrn8YGTeR7(touchPoint.Position, (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface);
-      if (point.X >= 0.0 && point.X <= this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN() && point.Y >= 0.0 && point.Y <= this.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM() && !this.\u0023\u003DzYw05nwk\u003D.ContainsKey(touchPoint.TouchDevice.Id))
+      Point point = this.\u0023\u003DzOaYrn8YGTeR7(touchPoint.Position, (IHitTestable) this.ModifierSurface);
+      if (point.X >= 0.0 && point.X <= this.ModifierSurface.ActualWidth && point.Y >= 0.0 && point.Y <= this.ModifierSurface.ActualHeight && !this.\u0023\u003DzYw05nwk\u003D.ContainsKey(touchPoint.TouchDevice.Id))
       {
         this.\u0023\u003DzYw05nwk\u003D.Add(touchPoint.TouchDevice.Id, point);
         this.\u0023\u003DzdXHzI2qgXcUL.Add(touchPoint.TouchDevice.Id, point);
@@ -117,7 +117,7 @@ internal sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a 
     foreach (TouchPoint touchPoint in _param1.\u0023\u003DzeKSkpjwaiSdieql2hyn60Uw\u003D())
     {
       if (this.\u0023\u003DzYw05nwk\u003D.ContainsKey(touchPoint.TouchDevice.Id))
-        this.\u0023\u003DzYw05nwk\u003D[touchPoint.TouchDevice.Id] = this.\u0023\u003DzOaYrn8YGTeR7(touchPoint.Position, (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface);
+        this.\u0023\u003DzYw05nwk\u003D[touchPoint.TouchDevice.Id] = this.\u0023\u003DzOaYrn8YGTeR7(touchPoint.Position, (IHitTestable) this.ModifierSurface);
     }
     double num1 = this.\u0023\u003DzYw05nwk\u003D.Max<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzcxCfUXBY83pn0enPPVtErpE\u003D))) - this.\u0023\u003DzYw05nwk\u003D.Min<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzMRTIPs6OoCcj5pN\u0024xQ\u003D\u003D ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzMRTIPs6OoCcj5pN\u0024xQ\u003D\u003D = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzye0OQ99rUllFk16awFxF7ks\u003D)));
     double num2 = this.\u0023\u003DzYw05nwk\u003D.Max<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzNMIp7invDKUnL7ASHg\u003D\u003D ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzNMIp7invDKUnL7ASHg\u003D\u003D = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzi7NUn2JZ6fxgLRJ61qPMyLI\u003D))) - this.\u0023\u003DzYw05nwk\u003D.Min<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ4our6IdSBQJOV6WDQ\u003D\u003D ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ4our6IdSBQJOV6WDQ\u003D\u003D = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzmT57mKJOp6SNOj_6DrkfWfc\u003D)));

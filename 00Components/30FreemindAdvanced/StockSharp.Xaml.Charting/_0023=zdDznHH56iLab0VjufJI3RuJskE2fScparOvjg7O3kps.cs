@@ -15,7 +15,7 @@ internal interface \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96m
   \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D \u0023\u003DzCRtaRLiel\u0024uAEyXXM45e2ic\u003D();
 
   bool \u0023\u003DzilOTiYzU6JIQ(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1,
+    IndexRange  _param1,
     int _param2);
 
   \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D \u0023\u003Dz8WtlTZw\u003D(
@@ -25,6 +25,6 @@ internal interface \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96m
 
   IList \u0023\u003Dzb0NWmhityJKy(
     IList _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3);
 }

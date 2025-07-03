@@ -40,37 +40,37 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u
   [SpecialName]
   public double Property()
   {
-    return this.\u0023\u003Dzkv0SgdOPhi_0(this.\u0023\u003Dz\u0024aPzPF8\u003D).\u0023\u003Dzb9UCYbo\u003D();
+    return this.\u0023\u003Dzkv0SgdOPhi_0(this.\u0023\u003Dz\u0024aPzPF8\u003D).ToDouble();
   }
 
   [SpecialName]
   public double \u0023\u003Dzu7q98_E\u003D()
   {
-    return this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024).\u0023\u003Dzb9UCYbo\u003D();
+    return this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024).ToDouble();
   }
 
   [SpecialName]
   public double \u0023\u003Dz4UDE5UByX\u00245LtE1gJA\u003D\u003D()
   {
-    return this.\u0023\u003Dzkv0SgdOPhi_0(this.\u0023\u003Dz\u0024aPzPF8\u003D).\u0023\u003Dzb9UCYbo\u003D();
+    return this.\u0023\u003Dzkv0SgdOPhi_0(this.\u0023\u003Dz\u0024aPzPF8\u003D).ToDouble();
   }
 
   [SpecialName]
   public double \u0023\u003Dzk\u0024jdyMQeK6oiQLL\u00248w\u003D\u003D()
   {
-    return this.\u0023\u003Dzkv0SgdOPhi_0(this.\u0023\u003Dz\u0024aPzPF8\u003D + 1).\u0023\u003Dzb9UCYbo\u003D();
+    return this.\u0023\u003Dzkv0SgdOPhi_0(this.\u0023\u003Dz\u0024aPzPF8\u003D + 1).ToDouble();
   }
 
   [SpecialName]
   public double \u0023\u003DzhQUKpHOzWGMGzdOfNg\u003D\u003D()
   {
-    return this.\u0023\u003DzyoB24lWE6a_0(0).\u0023\u003Dzb9UCYbo\u003D();
+    return this.\u0023\u003DzyoB24lWE6a_0(0).ToDouble();
   }
 
   [SpecialName]
   public double \u0023\u003DzWoua01IozoKYJ1eZRw\u003D\u003D()
   {
-    return this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024).\u0023\u003Dzb9UCYbo\u003D();
+    return this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024).ToDouble();
   }
 
   public IList<int> \u0023\u003Dzv5pY0E1wS\u00245oXMKltw\u003D\u003D(

@@ -249,7 +249,7 @@ internal class RulerAnnotation : AnnotationBase
 
   protected override IComparable FromCoordinate(
     double coord,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis)
+    IAxis axis)
   {
     IComparable comparable = base.FromCoordinate(coord, axis);
     if (axis != this.YAxis)

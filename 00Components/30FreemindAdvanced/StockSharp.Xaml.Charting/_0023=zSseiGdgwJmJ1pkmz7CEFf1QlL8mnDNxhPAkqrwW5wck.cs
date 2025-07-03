@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 internal static class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFf1QlL8mnDNxhPAkqrwW5wckD
 {
   internal static \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzQCf7bpfi0DqGMauSow\u003D\u003D(
-    this \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
+    this IRenderContext2D _param0,
     Line _param1,
     bool _param2)
   {

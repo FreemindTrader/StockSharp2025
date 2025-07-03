@@ -50,7 +50,7 @@ internal sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI 
     }
   }
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2()
+  public override DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
     int num1 = this.\u0023\u003DzlpVGw6E\u003D();
     double num2 = double.MaxValue;
@@ -67,6 +67,6 @@ internal sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI 
         num3 = num3 > num7 ? num3 : num7;
       }
     }
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num2, num3);
+    return new DoubleRange(num2, num3);
   }
 }

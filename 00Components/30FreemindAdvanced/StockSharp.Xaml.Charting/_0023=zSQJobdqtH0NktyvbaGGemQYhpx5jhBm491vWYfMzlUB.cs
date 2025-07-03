@@ -25,21 +25,21 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
   
   private IEnumerable<ParentVM> \u0023\u003DzH31vDNM\u003D;
   
-  private readonly IScichartSurfaceVM \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
   
   private readonly ICommand \u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D;
   
   private Action<IChartElement> \u0023\u003DzeBeQVx4\u003D;
 
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS(
-    IScichartSurfaceVM _param1)
+    ScichartSurfaceMVVM _param1)
   {
     this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException("");
     this.Elements = (IEnumerable<ParentVM>) _param1.LegendElements;
     this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D = (ICommand) new DelegateCommand<ParentVM>(new Action<ParentVM>(this.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D), \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<ParentVM, bool>(\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D)));
   }
 
-  public IScichartSurfaceVM Pane
+  public ScichartSurfaceMVVM Pane
   {
     get => this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
   }

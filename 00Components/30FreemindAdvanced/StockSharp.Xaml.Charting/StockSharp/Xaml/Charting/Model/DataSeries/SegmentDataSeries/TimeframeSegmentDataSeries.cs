@@ -19,15 +19,15 @@ using System.Runtime.CompilerServices;
 namespace StockSharp.Xaml.Charting.Model.DataSeries.SegmentDataSeries;
 
 internal class TimeframeSegmentDataSeries : 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D,
+  BindableObject ,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  ISuspendable,
   \u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D
 {
   public const Decimal MinPriceStep = 0.000001M;
   public static readonly TimeSpan MaxTimeframe = TimeSpan.FromDays(30.0);
-  public static readonly \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<DateTime> XMath = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<DateTime>();
+  public static readonly IMath<DateTime> XMath = MathHelper.GetMath<DateTime>();
   private string _seriesName;
   private readonly \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj _volumeProfile = new \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj(new DateTime(), 0);
   private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> _segments = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>();
@@ -69,7 +69,7 @@ internal class TimeframeSegmentDataSeries :
     }
   }
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D ParentSurface { get; set; }
+  public ISciChartSurface ParentSurface { get; set; }
 
   public string SeriesName
   {
@@ -168,7 +168,7 @@ internal class TimeframeSegmentDataSeries :
     switch (rangeMode)
     {
       case (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D) 0:
-        this.ParentSurface.\u0023\u003Dz5q8i9C4\u003D();
+        this.ParentSurface.InvalidateElement();
         break;
       case (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D) 1:
         this.ParentSurface.\u0023\u003Dzn72LMZ0738BY();
@@ -179,65 +179,65 @@ internal class TimeframeSegmentDataSeries :
     }
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D GetIndicesRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleRange)
+  public IndexRange  GetIndicesRange(
+    IRange visibleRange)
   {
     return this.GetIndicesRange(visibleRange, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 3);
   }
 
-  private \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D GetIndicesRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D range,
+  private IndexRange  GetIndicesRange(
+    IRange range,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D downSearchMode,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D upSearchMode)
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indicesRange = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, -1);
+    IndexRange  indicesRange = new IndexRange (0, -1);
     if (this._segmentDates.Count == 0)
       return indicesRange;
-    if (!(range.Clone() is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indexRange))
+    if (!(range.Clone() is IndexRange  indexRange))
       indexRange = this.SearchDataIndexesOn(range, downSearchMode, upSearchMode);
     return this.NormalizeIndexRange(indexRange);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D xRange)
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IRange xRange)
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = this.SearchDataIndexesOn(xRange, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 3);
-    return !g8Oq2rGx6KyfAreq.IsDefined ? (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue) : this.GetWindowedYRange(g8Oq2rGx6KyfAreq);
+    IndexRange  g8Oq2rGx6KyfAreq = this.SearchDataIndexesOn(xRange, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 3);
+    return !g8Oq2rGx6KyfAreq.IsDefined ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(g8Oq2rGx6KyfAreq);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indexRange,
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IndexRange  indexRange,
     bool getPositiveRange)
   {
-    return !indexRange.IsDefined ? (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indexRange);
+    return !indexRange.IsDefined ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indexRange);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D xRange,
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IRange xRange,
     bool getPositiveRange)
   {
     return ((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this).\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(xRange);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D XRange
+  public IRange XRange
   {
     get
     {
       if (!this._segmentDates.Any<DateTime>())
-        return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue);
+        return (IRange) new DoubleRange(double.MinValue, double.MaxValue);
       DateTime segmentDate = this._segmentDates[0];
       \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<DateTime> segmentDates = this._segmentDates;
       DateTime dateTime = segmentDates[segmentDates.Count - 1];
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(segmentDate, dateTime).\u0023\u003DzfODy_Nxn8OGy();
+      return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(segmentDate, dateTime).AsDoubleRange();
     }
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D YRange
+  public IRange YRange
   {
     get
     {
       if (this._segments.Count == 0)
-        return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue);
+        return (IRange) new DoubleRange(double.MinValue, double.MaxValue);
       double num1 = double.MaxValue;
       double num2 = double.MinValue;
       using (\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this._segments.\u0023\u003DzRPOJ5g0\u003D())
@@ -251,19 +251,19 @@ internal class TimeframeSegmentDataSeries :
             num2 = current.\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D();
         }
       }
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num1, num2);
+      return (IRange) new DoubleRange(num1, num2);
     }
   }
 
-  private \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D SearchDataIndexesOn(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D range,
+  private IndexRange  SearchDataIndexesOn(
+    IRange range,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D downSearchMode,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D upSearchMode)
   {
-    if (range is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq)
-      return (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) g8Oq2rGx6KyfAreq.Clone();
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indexRange = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(-1, -1);
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = !(range is dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd) ? range as \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D : new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(new DateTime((long) klqcJ87Zm8UwE3WEjd.Min), new DateTime((long) klqcJ87Zm8UwE3WEjd.Max));
+    if (range is IndexRange  g8Oq2rGx6KyfAreq)
+      return (IndexRange ) g8Oq2rGx6KyfAreq.Clone();
+    IndexRange  indexRange = new IndexRange (-1, -1);
+    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = !(range is DoubleRange klqcJ87Zm8UwE3WEjd) ? range as \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D : new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(new DateTime((long) klqcJ87Zm8UwE3WEjd.Min), new DateTime((long) klqcJ87Zm8UwE3WEjd.Max));
     if (dx26vpI1xWpwwNqJw == null)
     {
       \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("", new object[1]
@@ -278,8 +278,8 @@ internal class TimeframeSegmentDataSeries :
     return this.NormalizeIndexRange(indexRange);
   }
 
-  private \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D NormalizeIndexRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indexRange)
+  private IndexRange  NormalizeIndexRange(
+    IndexRange  indexRange)
   {
     int count = this._segmentDates.Count;
     if (indexRange.IsDefined)
@@ -465,25 +465,25 @@ label_8:
     return Math.Max(this._segments[index].\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D(), existingYMax);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D GetWindowedYRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D xIndexRange)
+  public IRange GetWindowedYRange(
+    IndexRange  xIndexRange)
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) xIndexRange.Clone();
+    IndexRange  g8Oq2rGx6KyfAreq = (IndexRange ) xIndexRange.Clone();
     if (g8Oq2rGx6KyfAreq.Min < 0)
       g8Oq2rGx6KyfAreq.Min = 0;
     if (g8Oq2rGx6KyfAreq.Max >= this._segments.Count)
       g8Oq2rGx6KyfAreq.Max = this._segments.Count - 1;
     (double, double) tuple = \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003Dz\u0024zWmmGTAbDON(this._segments.Skip<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(g8Oq2rGx6KyfAreq.Min).Take<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(g8Oq2rGx6KyfAreq.Max - g8Oq2rGx6KyfAreq.Min + 1));
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(tuple.Item1, tuple.Item2);
+    return (IRange) new DoubleRange(tuple.Item1, tuple.Item2);
   }
 
   public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D pointRange,
+    IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis,
     bool? dataIsDisplayedAs2D,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleXRange,
+    IRange visibleXRange,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D factory,
     object pointSeriesArg = null)
   {
@@ -499,31 +499,31 @@ label_8:
   {
     get
     {
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this);
     }
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D parentSurface = this.ParentSurface;
+    ISciChartSurface parentSurface = this.ParentSurface;
     if (parentSurface == null)
-      return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this);
     System.Threading.Monitor.Enter(parentSurface.\u0023\u003Dzjatnj7TNvda7());
-    return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this, parentSurface.\u0023\u003Dzjatnj7TNvda7());
+    return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this, parentSurface.\u0023\u003Dzjatnj7TNvda7());
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote suspender)
+    IUpdateSuspender suspender)
   {
-    if (suspender.\u0023\u003DzuWdUDFWIQOsx())
+    if (suspender.ResumeTargetOnDispose)
     {
       EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X> dataSeriesChanged = this.DataSeriesChanged;
       if (dataSeriesChanged != null)
         dataSeriesChanged((object) this, new \u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 3));
     }
-    if (suspender.\u0023\u003DzFG_qiXECs10o() == null)
+    if (suspender.Tag == null)
       return;
-    System.Threading.Monitor.Exit(suspender.\u0023\u003DzFG_qiXECs10o());
+    System.Threading.Monitor.Exit(suspender.Tag);
   }
 
   public void DecrementSuspend()
@@ -611,7 +611,7 @@ label_8:
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D pointRange,
+    IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis)
   {

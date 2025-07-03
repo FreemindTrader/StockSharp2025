@@ -10,7 +10,7 @@ using System.Windows;
 
 #nullable disable
 internal interface \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D : 
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
+  IHitTestable
 {
   bool ClipToBounds { get; set; }
 

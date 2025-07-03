@@ -197,9 +197,9 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
     dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D kvt89B1lUeA7EdfukJs = new dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D();
     kvt89B1lUeA7EdfukJs.\u0023\u003DzRRvwDu67s9Rm = this;
     kvt89B1lUeA7EdfukJs.\u0023\u003DzvCn8oRW_i8ct = _param1;
-    IEnumerable<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> source1 = this.YAxes.Select<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(kvt89B1lUeA7EdfukJs.\u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D));
+    IEnumerable<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> source1 = this.YAxes.Select<IAxis, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(new Func<IAxis, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(kvt89B1lUeA7EdfukJs.\u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D));
     this.YAxisInfo = source1.FirstOrDefault<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>();
-    IEnumerable<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> source2 = this.XAxes.Select<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(kvt89B1lUeA7EdfukJs.\u0023\u003DzEhR4Oe23EuYwGjXUPg7SBR8\u003D));
+    IEnumerable<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> source2 = this.XAxes.Select<IAxis, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(new Func<IAxis, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(kvt89B1lUeA7EdfukJs.\u0023\u003DzEhR4Oe23EuYwGjXUPg7SBR8\u003D));
     this.XAxisInfo = source2.FirstOrDefault<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>();
     ObservableCollection<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> observableCollection = new ObservableCollection<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>();
     observableCollection.\u0023\u003Dz6_E5\u0024pE\u003D<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(source2);
@@ -209,7 +209,7 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
 
   private void \u0023\u003DzSRU73z_agnZjtPtO2Cu\u0024edM\u003D(Point _param1)
   {
-    Rect boundsRelativeTo = this.ModifierSurface.GetBoundsRelativeTo((\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.\u0023\u003Dzwc4Gzka23TGB());
+    Rect boundsRelativeTo = this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB());
     if (this.\u0023\u003DzuKhG8cvbLb0H == null || this.\u0023\u003Dzqc7rBjeXtKct == null)
     {
       Line line1 = new Line();
@@ -248,7 +248,7 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
       (object) _param1.X,
       (object) _param1.Y
     });
-    Rect boundsRelativeTo = this.ModifierSurface.GetBoundsRelativeTo((\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.\u0023\u003Dzwc4Gzka23TGB());
+    Rect boundsRelativeTo = this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB());
     if (this.\u0023\u003Dzqc7rBjeXtKct == null)
     {
       Line line = new Line();
@@ -316,7 +316,7 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
 
   private void \u0023\u003DzHi3KLf0npKDN(FrameworkElement _param1, Point _param2)
   {
-    Rect rect1 = new Rect(0.0, 0.0, this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN(), this.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM());
+    Rect rect1 = new Rect(0.0, 0.0, this.ModifierSurface.ActualWidth, this.ModifierSurface.ActualHeight);
     double length = _param2.X + 6.0;
     double num1 = _param2.Y + 6.0;
     Rect rect2 = new Rect(length, num1, _param1.ActualWidth, _param1.ActualHeight);
@@ -348,13 +348,13 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
     public Point \u0023\u003DzvCn8oRW_i8ct;
 
     internal \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
       return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
     }
 
     internal \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzEhR4Oe23EuYwGjXUPg7SBR8\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+      IAxis _param1)
     {
       return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
     }

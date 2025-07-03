@@ -107,25 +107,25 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
 
   public abstract double \u0023\u003DzhL6gsJw\u003D(double _param1);
 
-  public virtual dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  public virtual DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd _param2)
+    DoubleRange _param2)
   {
     double num1 = this.\u0023\u003DzACwLhyc\u003D(0.0);
     double num2 = this.\u0023\u003DzACwLhyc\u003D(_param1) - num1;
     if (this.\u0023\u003DzO78SU8SL\u0024EgcBFJxM_M4bKPQHMQQ())
       num2 = -num2;
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(_param2.Min.\u0023\u003Dzb9UCYbo\u003D() + num2, _param2.Max.\u0023\u003Dzb9UCYbo\u003D() + num2);
+    return new DoubleRange(_param2.Min.ToDouble() + num2, _param2.Max.ToDouble() + num2);
   }
 
   public abstract double \u0023\u003DzACwLhyc\u003D(double _param1);
 
-  public virtual dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  public virtual DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3)
+    IRange _param3)
   {
-    return ((\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) _param3.Clone()).\u0023\u003DzzXTqVFg\u003D(_param1, _param2, false, 0.0).\u0023\u003DzfODy_Nxn8OGy();
+    return ((IRange) _param3.Clone()).GrowBy(_param1, _param2, false, 0.0).AsDoubleRange();
   }
 
   protected static double \u0023\u003Dzq1wgKfc\u003D(bool _param0, double _param1, double _param2)

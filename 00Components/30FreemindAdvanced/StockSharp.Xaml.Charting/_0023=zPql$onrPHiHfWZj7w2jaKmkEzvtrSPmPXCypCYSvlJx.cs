@@ -11,12 +11,12 @@ using System;
 internal sealed class \u0023\u003DzPql\u0024onrPHiHfWZj7w2jaKmkEzvtrSPmPXCypCYSvlJxk\u0024K3oG\u0024G8T9G0Kw\u0024aeAQVBAnAZzg\u003D : 
   \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7WIKy8yFmS0qz5aG2LjQ9ZhaLqHaajO4_nAIgryYYasWa8dMpfY\u003D
 {
-  public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzfScL5aE\u003D(
+  public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> GetMath(
     \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY _param1)
   {
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w;
     if (_param1.\u0023\u003DzJqKipxOjoBSS && _param1.\u0023\u003DznUzlqIN9ReXL != null)
-      xkzemsMs5tGkouk5w = (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) new \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u0024rQqXo4LTiJvVgyCa_6Bm39_Yn25sk\u003D(_param1.\u0023\u003DzormciIUBnCr2, _param1.\u0023\u003Dz_WzdhI8nAiba, _param1.\u0023\u003DzdTxNrgQ\u003D, _param1.\u0023\u003DznUzlqIN9ReXL, new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D((int) _param1.\u0023\u003DzBeOlCgb3wUDW.\u0023\u003DzZsq6ZfbZQvsf(), (int) _param1.\u0023\u003Dzk0u64hpXv585.\u0023\u003DzZsq6ZfbZQvsf()), _param1.\u0023\u003Dz_jNjf7U\u003D, _param1.\u0023\u003Dz9jZG_9RUfbqZ, _param1.\u0023\u003DzYlmrR5WNSPuW);
+      xkzemsMs5tGkouk5w = (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) new \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u0024rQqXo4LTiJvVgyCa_6Bm39_Yn25sk\u003D(_param1.\u0023\u003DzormciIUBnCr2, _param1.\u0023\u003Dz_WzdhI8nAiba, _param1.\u0023\u003DzdTxNrgQ\u003D, _param1.\u0023\u003DznUzlqIN9ReXL, new IndexRange ((int) _param1.\u0023\u003DzBeOlCgb3wUDW.\u0023\u003DzZsq6ZfbZQvsf(), (int) _param1.\u0023\u003Dzk0u64hpXv585.\u0023\u003DzZsq6ZfbZQvsf()), _param1.\u0023\u003Dz_jNjf7U\u003D, _param1.\u0023\u003Dz9jZG_9RUfbqZ, _param1.\u0023\u003DzYlmrR5WNSPuW);
     else if (_param1.\u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D)
       xkzemsMs5tGkouk5w = (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) new \u0023\u003DzupHrUO0UFO07vWyNRguf_6ysMlGddjtXaKmYmfm7BXCbJVgPatVdTk6mYJRm2u1jf0ONCavXZ04\u0024u6e9gQ\u003D\u003D(_param1.\u0023\u003DzdTxNrgQ\u003D, _param1.\u0023\u003DzBeOlCgb3wUDW, _param1.\u0023\u003Dzk0u64hpXv585, _param1.\u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D, _param1.\u0023\u003DzFA18Bsxthn7B, _param1.\u0023\u003Dz_jNjf7U\u003D, _param1.\u0023\u003DztJAA1uMf9_P8);
     else if (_param1.\u0023\u003DzWaaoT4e35MUnXIdKsg\u003D\u003D)

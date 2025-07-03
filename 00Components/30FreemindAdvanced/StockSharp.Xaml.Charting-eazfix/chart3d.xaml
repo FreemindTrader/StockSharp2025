@@ -1,0 +1,46 @@
+<l1lil:Chart3D xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+               xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1"
+               AspectRatio="5 5 3">
+  <li1:Chart3DControl.XAxis>
+    <li1:XAxis3D>
+      <li1:Axis.Title>
+        <li1:AxisTitle l1llili1:Name="XAxisTitle"/>
+      </li1:Axis.Title>
+    </li1:XAxis3D>
+  </li1:Chart3DControl.XAxis>
+  <li1:Chart3DControl.YAxis>
+    <li1:YAxis3D>
+      <li1:Axis.Title>
+        <li1:AxisTitle l1llili1:Name="YAxisTitle"/>
+      </li1:Axis.Title>
+    </li1:YAxis3D>
+  </li1:Chart3DControl.YAxis>
+  <li1:Chart3DControl.ZAxis>
+    <li1:ZAxis3D>
+      <li1:Axis.Title>
+        <li1:AxisTitle l1llili1:Name="ZAxisTitle"/>
+      </li1:Axis.Title>
+    </li1:ZAxis3D>
+  </li1:Chart3DControl.ZAxis>
+  <li1:Series3DStorage>
+    <li1:Series3D>
+      <li1:Series3DBase.View>
+        <li1:SurfaceSeriesView>
+          <li1:SurfaceSeriesView.FillStyle>
+            <li1:GradientFillStyle LegendTextPattern="{V}">
+              <li1:GradientFillStyle.ColorStops>
+                <li1:ColorStop Color="#FF4472C4" Offset="0%"/>
+                <li1:ColorStop Color="#FF5B9BD5" Offset="25%"/>
+                <li1:ColorStop Color="#FF70AD47" Offset="50%"/>
+                <li1:ColorStop Color="#FFFFC000" Offset="75%"/>
+                <li1:ColorStop Color="#FFED7D31" Offset="100%"/>
+              </li1:GradientFillStyle.ColorStops>
+            </li1:GradientFillStyle>
+          </li1:SurfaceSeriesView.FillStyle>
+        </li1:SurfaceSeriesView>
+      </li1:Series3DBase.View>
+      <li1:SeriesPoint3DStorage l1llili1:Name="Storage"/>
+    </li1:Series3D>
+  </li1:Series3DStorage>
+</l1lil:Chart3D>

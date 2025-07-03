@@ -21,8 +21,8 @@ internal sealed class dje_zFYCV8LXGWR39M2R5WW2FCVKF529R9Q6JAUMT5WGC7MM4FFDF2V4HQ
     return (\u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D) new \u0023\u003DzQ4iRj1YTApc8D349VbLPOV89ONPzc9V3zddUgPY\u003D();
   }
 
-  public override \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003Dz1cRMfLZU4Eo2()
+  public override IRenderContext2D \u0023\u003Dz1cRMfLZU4Eo2()
   {
-    return (\u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I) this.\u0023\u003DzRIsZuY3LT4U\u0024.\u0023\u003Dz1cRMfLZU4Eo2(this.\u0023\u003DzZAw3cTjlwxct(), this.\u0023\u003DzNFOu7BeFZYda());
+    return (IRenderContext2D) this.\u0023\u003DzRIsZuY3LT4U\u0024.\u0023\u003Dz1cRMfLZU4Eo2(this.\u0023\u003DzZAw3cTjlwxct(), this.\u0023\u003DzNFOu7BeFZYda());
   }
 }

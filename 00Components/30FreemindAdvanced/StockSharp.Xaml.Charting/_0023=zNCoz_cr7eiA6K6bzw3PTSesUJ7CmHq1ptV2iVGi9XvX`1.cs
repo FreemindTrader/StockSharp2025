@@ -8,13 +8,13 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<\u0023\u003DzH9HNkng\u003D> : 
+internal interface \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<T> : 
   IComparable
-  where \u0023\u003DzH9HNkng\u003D : IComparable
+  where T : IComparable
 {
-  \u0023\u003DzH9HNkng\u003D \u0023\u003Dzg1M\u0024G_5sXlam();
+  T \u0023\u003Dzg1M\u0024G_5sXlam();
 
-  \u0023\u003DzH9HNkng\u003D \u0023\u003DzKrTvxa8MJ66h();
+  T \u0023\u003DzKrTvxa8MJ66h();
 
-  \u0023\u003DzH9HNkng\u003D \u0023\u003Dzu7q98_E\u003D();
+  T \u0023\u003Dzu7q98_E\u003D();
 }

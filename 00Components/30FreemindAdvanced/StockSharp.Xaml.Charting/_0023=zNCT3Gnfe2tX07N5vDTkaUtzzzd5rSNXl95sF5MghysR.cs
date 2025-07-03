@@ -21,5 +21,5 @@ internal interface \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyk
     \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1,
     int _param2);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dzq3MgExWxza1L(bool _param1);
+  IRange \u0023\u003Dzq3MgExWxza1L(bool _param1);
 }

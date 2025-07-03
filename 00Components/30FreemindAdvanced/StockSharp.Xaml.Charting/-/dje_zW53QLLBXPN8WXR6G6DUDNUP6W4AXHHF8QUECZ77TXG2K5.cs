@@ -18,7 +18,7 @@ namespace StockSharp.Xaml.Charting;
 
 internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd : 
   Panel,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D
+  ISuspendable
 {
   
   public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.Register("", typeof (bool), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003Dz2TPUHBqM4Vp3)));
@@ -223,23 +223,23 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
     double left = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetLeft(_param2);
     double centerLeft = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterLeft(_param2);
     double num3 = _param2.DesiredSize.Width / 2.0;
-    if (!left.\u0023\u003DzeNpB9guo_tur())
+    if (!left.IsNaN())
       num1 = left;
-    else if (!centerLeft.\u0023\u003DzeNpB9guo_tur())
+    else if (!centerLeft.IsNaN())
     {
       num1 = centerLeft - num3;
     }
     else
     {
       double right = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetRight(_param2);
-      if (!right.\u0023\u003DzeNpB9guo_tur())
+      if (!right.IsNaN())
       {
         num1 = _param1.Width - _param2.DesiredSize.Width - right;
       }
       else
       {
         double centerRight = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterRight(_param2);
-        if (!centerRight.\u0023\u003DzeNpB9guo_tur())
+        if (!centerRight.IsNaN())
           num1 = _param1.Width - num3 - centerRight;
       }
     }
@@ -247,16 +247,16 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
     double centerTop = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterTop(_param2);
     Size desiredSize = _param2.DesiredSize;
     double num4 = desiredSize.Height / 2.0;
-    if (!top.\u0023\u003DzeNpB9guo_tur())
+    if (!top.IsNaN())
       num2 = top;
-    else if (!centerTop.\u0023\u003DzeNpB9guo_tur())
+    else if (!centerTop.IsNaN())
     {
       num2 = centerTop - num4;
     }
     else
     {
       double bottom = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetBottom(_param2);
-      if (!bottom.\u0023\u003DzeNpB9guo_tur())
+      if (!bottom.IsNaN())
       {
         double height1 = _param1.Height;
         desiredSize = _param2.DesiredSize;
@@ -266,7 +266,7 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
       else
       {
         double centerBottom = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterBottom(_param2);
-        if (!centerBottom.\u0023\u003DzeNpB9guo_tur())
+        if (!centerBottom.IsNaN())
           num2 = _param1.Height - num4 - centerBottom;
       }
     }
@@ -282,15 +282,15 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
   {
     get
     {
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this);
     }
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
-    \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An f5DxplZ7U6Rxl0An = new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
-    f5DxplZ7U6Rxl0An.\u0023\u003DzZreBqCsNdaNN(false);
-    return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) f5DxplZ7U6Rxl0An;
+    UpdateSuspender f5DxplZ7U6Rxl0An = new UpdateSuspender((ISuspendable) this);
+    f5DxplZ7U6Rxl0An.ResumeTargetOnDispose=false;
+    return (IUpdateSuspender) f5DxplZ7U6Rxl0An;
   }
 
   public void DecrementSuspend()
@@ -298,9 +298,9 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote _param1)
+    IUpdateSuspender _param1)
   {
-    if (!_param1.\u0023\u003DzuWdUDFWIQOsx())
+    if (!_param1.ResumeTargetOnDispose)
       return;
     this.\u0023\u003DzEy\u0024V_bY\u003D();
   }
@@ -341,7 +341,7 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
 
     internal bool \u0023\u003DzYKvrV0JWnmDlqO_CWglp58k\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetLeft(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetLeft(_param1).IsNaN();
     }
 
     internal double \u0023\u003DzAVWvTGcAdkhBave7rMtp6yE\u003D(UIElement _param1)
@@ -351,7 +351,7 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
 
     internal bool \u0023\u003Dz\u00245m21xs\u0024cvAmnIdf2gU_Xac\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterLeft(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterLeft(_param1).IsNaN();
     }
 
     internal double \u0023\u003DzNqdo6wxMxabVyP0X1FEOxSA\u003D(UIElement _param1)
@@ -366,17 +366,17 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
 
     internal bool \u0023\u003DzgKa7Ws34VPBPBmckMDnLakc\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetRight(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetRight(_param1).IsNaN();
     }
 
     internal bool \u0023\u003DzU5vCk358B5H2CkspeunyYO0\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterRight(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterRight(_param1).IsNaN();
     }
 
     internal bool \u0023\u003DzEK3\u0024DRApfKZBLp9SFni3nxM\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetTop(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetTop(_param1).IsNaN();
     }
 
     internal double \u0023\u003Dz0bH_RR\u0024vBn9G_dk9IHgqhHs\u003D(UIElement _param1)
@@ -386,7 +386,7 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
 
     internal bool \u0023\u003DzAKOrHq8MNBCJX496ulSnUwg\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterTop(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterTop(_param1).IsNaN();
     }
 
     internal double \u0023\u003DzTUXHCNVzoXfaHk4oX\u0024dTb_s\u003D(UIElement _param1)
@@ -401,12 +401,12 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
 
     internal bool \u0023\u003DzMfPK\u0024Mkqkqf_PHvwIZvXJt0\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetBottom(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetBottom(_param1).IsNaN();
     }
 
     internal bool \u0023\u003Dz3c2h9eD2aQNit16ssTlcYSc\u003D(UIElement _param1)
     {
-      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterBottom(_param1).\u0023\u003DzeNpB9guo_tur();
+      return !dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterBottom(_param1).IsNaN();
     }
   }
 

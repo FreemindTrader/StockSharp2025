@@ -92,7 +92,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
       \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
-      return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.\u0023\u003Dzu2ObQ3hMALTN() || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM() ? 1 : 0)) == 0;
+      return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight ? 1 : 0)) == 0;
     }
 
     protected override void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
@@ -103,18 +103,18 @@ internal class CustomAnnotation : AnchorPointAnnotation
     {
       double d1 = _param1.\u0023\u003DzS2_K6sVvd5IY + _param2;
       double d2 = _param1.\u0023\u003Dz2J4l3QUGwZHE + _param3;
-      if (!this.\u0023\u003DzpTsgWlwWfZwP(d1, _param4.\u0023\u003Dzu2ObQ3hMALTN()) || !this.\u0023\u003DzpTsgWlwWfZwP(d2, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+      if (!this.\u0023\u003DzpTsgWlwWfZwP(d1, _param4.ActualWidth) || !this.\u0023\u003DzpTsgWlwWfZwP(d2, _param4.ActualHeight))
       {
         double num1 = double.IsNaN(d1) ? 0.0 : d1;
         double num2 = double.IsNaN(d2) ? 0.0 : d2;
         if (num1 < 0.0)
           _param2 -= num1;
-        if (num1 > _param4.\u0023\u003Dzu2ObQ3hMALTN())
-          _param2 -= num1 - (_param4.\u0023\u003Dzu2ObQ3hMALTN() - 1.0);
+        if (num1 > _param4.ActualWidth)
+          _param2 -= num1 - (_param4.ActualWidth - 1.0);
         if (num2 < 0.0)
           _param3 -= num2;
-        if (num2 > _param4.\u0023\u003Dz2kO1mtG\u0024bEUM())
-          _param3 -= num2 - (_param4.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0);
+        if (num2 > _param4.ActualHeight)
+          _param3 -= num2 - (_param4.ActualHeight - 1.0);
       }
       _param1.\u0023\u003DzS2_K6sVvd5IY += _param2;
       _param1.\u0023\u003Dz2J4l3QUGwZHE += _param3;

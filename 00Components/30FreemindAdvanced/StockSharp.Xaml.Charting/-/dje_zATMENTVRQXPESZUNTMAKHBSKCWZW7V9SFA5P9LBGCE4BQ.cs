@@ -18,7 +18,7 @@ internal class dje_zATMENTVRQXPESZUNTMAKHBSKCWZW7V9SFA5P9LBGCE4BQBNQAPN2D_ejd :
   dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd
 {
   
-  private readonly \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTkY8ZV9p8Yb\u0024waK\u0024JvDk6br \u0023\u003Dzxyhw1x0WHB0D = new \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTkY8ZV9p8Yb\u0024waK\u0024JvDk6br();
+  private readonly DoubleMath \u0023\u003Dzxyhw1x0WHB0D = new DoubleMath();
   
   private readonly List<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd> \u0023\u003DzYkVi0tC6ZJOZw\u00246TxQ\u003D\u003D = new List<dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd>();
   
@@ -50,15 +50,15 @@ internal class dje_zATMENTVRQXPESZUNTMAKHBSKCWZW7V9SFA5P9LBGCE4BQBNQAPN2D_ejd :
       child.Measure(availableSize);
       Size desiredSize = child.DesiredSize;
       double width1 = desiredSize.Width;
-      double num2 = this.\u0023\u003Dzxyhw1x0WHB0D.\u0023\u003DzTOKoqZw\u003D(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetLeft(child) + width1, dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterLeft(child) + width1 / 2.0);
-      if (this.\u0023\u003Dzxyhw1x0WHB0D.\u0023\u003DzeNpB9guo_tur(num2))
+      double num2 = this.\u0023\u003Dzxyhw1x0WHB0D.Max(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetLeft(child) + width1, dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterLeft(child) + width1 / 2.0);
+      if (this.\u0023\u003Dzxyhw1x0WHB0D.IsNaN(num2))
       {
         double right = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetRight(child);
         desiredSize = child.DesiredSize;
         double width2 = desiredSize.Width;
         num2 = right + width2;
       }
-      num1 = this.\u0023\u003Dzxyhw1x0WHB0D.\u0023\u003DzTOKoqZw\u003D(num2, num1);
+      num1 = this.\u0023\u003Dzxyhw1x0WHB0D.Max(num2, num1);
     }
     return new Size(num1, 0.0);
   }
@@ -72,15 +72,15 @@ internal class dje_zATMENTVRQXPESZUNTMAKHBSKCWZW7V9SFA5P9LBGCE4BQBNQAPN2D_ejd :
       child.Measure(availableSize);
       Size desiredSize = child.DesiredSize;
       double height1 = desiredSize.Height;
-      double num2 = this.\u0023\u003Dzxyhw1x0WHB0D.\u0023\u003DzTOKoqZw\u003D(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetTop(child) + height1, dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterTop(child) + height1 / 2.0);
-      if (this.\u0023\u003Dzxyhw1x0WHB0D.\u0023\u003DzeNpB9guo_tur(num2))
+      double num2 = this.\u0023\u003Dzxyhw1x0WHB0D.Max(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetTop(child) + height1, dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterTop(child) + height1 / 2.0);
+      if (this.\u0023\u003Dzxyhw1x0WHB0D.IsNaN(num2))
       {
         double bottom = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetBottom(child);
         desiredSize = child.DesiredSize;
         double height2 = desiredSize.Height;
         num2 = bottom + height2;
       }
-      num1 = this.\u0023\u003Dzxyhw1x0WHB0D.\u0023\u003DzTOKoqZw\u003D(num2, num1);
+      num1 = this.\u0023\u003Dzxyhw1x0WHB0D.Max(num2, num1);
     }
     return new Size(0.0, num1);
   }

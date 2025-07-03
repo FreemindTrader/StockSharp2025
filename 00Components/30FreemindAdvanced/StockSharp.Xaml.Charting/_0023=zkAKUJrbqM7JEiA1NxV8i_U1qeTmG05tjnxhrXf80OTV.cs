@@ -11,7 +11,7 @@ using System;
 internal interface \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH
 {
   void \u0023\u003DzWzUaFxw\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1);
+    IAxis _param1);
 
   void \u0023\u003DzI_kEht21kBsX();
 

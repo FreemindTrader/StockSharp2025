@@ -23,8 +23,8 @@ namespace StockSharp.Xaml.Charting;
 internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd : 
   Control,
   \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv1ei5a44WdHi6c16UXGWhmY1mMHOZA\u003D\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
+  ISuspendable,
+  IInvalidatableElement
 {
   
   public static readonly DependencyProperty \u0023\u003DzKrsZ\u0024JY5ZFLk = DependencyProperty.Register("", typeof (bool), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) false));
@@ -37,7 +37,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   
   private dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd \u0023\u003DzO_kDrhvLYpaX;
   
-  private readonly object \u0023\u003DzxztcSMfDuTst = new object();
+  private readonly object myLock = new object();
   
   private volatile bool \u0023\u003Dz5Q_\u0024YkuhIHbd;
   
@@ -170,7 +170,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   protected bool \u0023\u003DzNIujeQAKJfHjmKL2ONO8jgpF_OJU() => this.\u0023\u003Dz5Q_\u0024YkuhIHbd;
 
   [SpecialName]
-  public object \u0023\u003Dzjatnj7TNvda7() => this.\u0023\u003DzxztcSMfDuTst;
+  public object \u0023\u003Dzjatnj7TNvda7() => this.myLock;
 
   public string ChartTitle
   {
@@ -200,7 +200,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   {
     get
     {
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this) || !this.\u0023\u003Dzc0ALknKZKMZw;
+      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this) || !this.\u0023\u003Dzc0ALknKZKMZw;
     }
   }
 
@@ -248,17 +248,17 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
     this.\u0023\u003DzSwq\u0024W16DpTIPh6J9Mw3YqhI\u003D();
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
-    return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+    return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this);
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote _param1)
+    IUpdateSuspender _param1)
   {
-    if (!_param1.\u0023\u003DzuWdUDFWIQOsx())
+    if (!_param1.ResumeTargetOnDispose)
       return;
-    this.\u0023\u003Dz5q8i9C4\u003D();
+    this.InvalidateElement();
   }
 
   public void DecrementSuspend()
@@ -277,7 +277,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
     ((\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh76xifd94OJRDA\u003D\u003D) this.\u0023\u003Dzu\u0024P3XgkcE7BC()).\u0023\u003Dz7wSH25w\u003D<\u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D>(this.\u0023\u003DzBgWxEdRxHdEh());
   }
 
-  public virtual void \u0023\u003Dz5q8i9C4\u003D()
+  public virtual void InvalidateElement()
   {
     if (this.IsSuspended)
       \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("", Array.Empty<object>());
@@ -289,7 +289,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
     {
       if (this.\u0023\u003DzK_OtVrQnpn26 == null)
         return;
-      this.\u0023\u003DzK_OtVrQnpn26.\u0023\u003Dz5q8i9C4\u003D();
+      this.\u0023\u003DzK_OtVrQnpn26.InvalidateElement();
     }
   }
 
@@ -325,9 +325,9 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    if (!(_param0 is \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D ks0apzs3KdsLxgXg))
+    if (!(_param0 is IInvalidatableElement ks0apzs3KdsLxgXg))
       return;
-    ks0apzs3KdsLxgXg.\u0023\u003Dz5q8i9C4\u003D();
+    ks0apzs3KdsLxgXg.InvalidateElement();
   }
 
   protected T \u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<T>(string _param1) where T : class
@@ -344,7 +344,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   {
     this.\u0023\u003Dzc0ALknKZKMZw = true;
     this.\u0023\u003Dz5Q_\u0024YkuhIHbd = true;
-    this.\u0023\u003Dz5q8i9C4\u003D();
+    this.InvalidateElement();
   }
 
   protected virtual void \u0023\u003Dz4NN4xmXb4DExeo6zN7elWhI\u003D()
@@ -382,7 +382,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   {
     if (this.\u0023\u003DzQ6xddArfD502() == (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsr9VW2SiWlaFw0wjAU\u003D) 3)
       return;
-    this.\u0023\u003Dz5q8i9C4\u003D();
+    this.InvalidateElement();
   }
 
   internal static Dispatcher \u0023\u003DzjLVbM_c\u003D(DependencyObject _param0)

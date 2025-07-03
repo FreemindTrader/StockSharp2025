@@ -29,27 +29,27 @@ internal sealed class dje_zUWZK4BU846MEUQCR5WKT9QZA85UZEQW6M2YZEKBE72N8R2PVRLRQA
     this.SetCurrentValue(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u8VlgKY4UpXGtvXPXNaRp9rB());
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzspbjXJnVtbB\u0024()
+  public override IRange \u0023\u003DzspbjXJnVtbB\u0024()
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D();
+    return (IRange) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D();
   }
 
-  protected override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzsB7Y9t30CQ63(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+  protected override IRange \u0023\u003DzsB7Y9t30CQ63(
+    IRange _param1)
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D().\u0023\u003DzfODy_Nxn8OGy();
+    return (IRange) this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D().AsDoubleRange();
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
+  public override IRange \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D(TimeSpan.Zero, TimeSpan.FromSeconds(1.0));
+    return (IRange) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D(TimeSpan.Zero, TimeSpan.FromSeconds(1.0));
   }
 
-  protected override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzJMGFyjEoHSQY(
+  protected override IRange \u0023\u003DzJMGFyjEoHSQY(
     IComparable _param1,
     IComparable _param2)
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D(_param1.\u0023\u003Dzto51K8pl8UAh(), _param2.\u0023\u003Dzto51K8pl8UAh());
+    return (IRange) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D(_param1.\u0023\u003Dzto51K8pl8UAh(), _param2.\u0023\u003Dzto51K8pl8UAh());
   }
 
   protected override \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWu7vteBmpkBQwFYGp0VhHiJ5hoI4CA\u003D\u003D \u0023\u003Dzgy73vTR0r5jyI3j3hAgwZho\u003D()
@@ -63,7 +63,7 @@ internal sealed class dje_zUWZK4BU846MEUQCR5WKT9QZA85UZEQW6M2YZEKBE72N8R2PVRLRQA
   }
 
   public override bool \u0023\u003Dz9yvpaTXy3ucx(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     return _param1 is \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D;
   }

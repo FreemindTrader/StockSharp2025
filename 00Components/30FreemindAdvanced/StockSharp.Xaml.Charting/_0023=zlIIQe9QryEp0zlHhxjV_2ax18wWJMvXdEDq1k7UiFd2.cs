@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I : IDisposable
+internal interface IRenderContext2D : IDisposable
 {
   \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr \u0023\u003Dz7eGjoBhvKuFN();
 
@@ -19,12 +19,12 @@ internal interface \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I : I
 
   void \u0023\u003DzjyCoorxnWjneJ7dCR\u0024Tiiog\u003D(bool _param1);
 
-  \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
+  IBrush2D \u0023\u003Dze8WyDhI\u003D(
     Color _param1,
     double _param2,
     bool? _param3);
 
-  \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
+  IBrush2D \u0023\u003Dze8WyDhI\u003D(
     Brush _param1,
     double _param2,
     \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4 _param3);
@@ -57,17 +57,17 @@ internal interface \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I : I
     IEnumerable<Rect> _param2);
 
   void \u0023\u003DzVRUUvzhAr5SR(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     Point _param2,
     Point _param3,
     double _param4);
 
   void \u0023\u003Dz_I15ZX7u91\u0024T(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     IEnumerable<Point> _param2);
 
   void \u0023\u003DzZC71OkxY_wdX(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     IEnumerable<Tuple<Point, Point>> _param2,
     bool _param3,
     double _param4);
@@ -79,14 +79,14 @@ internal interface \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I : I
 
   void \u0023\u003DzIZCdW2WR6Rxw(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2,
+    IBrush2D _param2,
     Point _param3,
     double _param4,
     double _param5);
 
   void \u0023\u003DzoUffnI1MQnWod0s9Xg\u003D\u003D(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2,
+    IBrush2D _param2,
     IEnumerable<Point> _param3,
     double _param4,
     double _param5);
@@ -147,7 +147,7 @@ internal interface \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I : I
     double _param3);
 
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003DzD4fw8fY\u003D(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     double _param2,
     double _param3,
     double _param4);

@@ -8,6 +8,6 @@
 #nullable disable
 internal interface \u0023\u003DzExPUKZPbT0fb9dlf_qOoazVlQnP90XoMutgGcLyCRUcP : 
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D
+  ISuspendable
 {
 }

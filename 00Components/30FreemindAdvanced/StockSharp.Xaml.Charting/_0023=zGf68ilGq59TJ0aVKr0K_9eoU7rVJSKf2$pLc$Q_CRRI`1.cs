@@ -9,10 +9,10 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
-  \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK4AkZG\u0024zeIU4wmt7QA82wUrXA\u003D\u003D<\u0023\u003DzH9HNkng\u003D>
+internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<T> : 
+  \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK4AkZG\u0024zeIU4wmt7QA82wUrXA\u003D\u003D<T>
 {
-  private \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzhUUq_d4kT69A;
+  private T[] \u0023\u003DzhUUq_d4kT69A;
   private int \u0023\u003DzE8qDEoWQ1KEt;
 
   public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D()
@@ -23,14 +23,14 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u00
   public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D(
     int _param1)
   {
-    this.\u0023\u003DzhUUq_d4kT69A = new \u0023\u003DzH9HNkng\u003D[_param1];
+    this.\u0023\u003DzhUUq_d4kT69A = new T[_param1];
     this.\u0023\u003DzE8qDEoWQ1KEt = _param1;
   }
 
   public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D(
-    \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003DzH9HNkng\u003D> _param1)
+    \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<T> _param1)
   {
-    this.\u0023\u003DzhUUq_d4kT69A = (\u0023\u003DzH9HNkng\u003D[]) _param1.\u0023\u003DzhUUq_d4kT69A.Clone();
+    this.\u0023\u003DzhUUq_d4kT69A = (T[]) _param1.\u0023\u003DzhUUq_d4kT69A.Clone();
     this.\u0023\u003DzE8qDEoWQ1KEt = _param1.\u0023\u003DzE8qDEoWQ1KEt;
   }
 
@@ -40,30 +40,30 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u00
   {
     if (_param1 == this.\u0023\u003DzE8qDEoWQ1KEt)
       return;
-    this.\u0023\u003DzhUUq_d4kT69A = new \u0023\u003DzH9HNkng\u003D[_param1];
+    this.\u0023\u003DzhUUq_d4kT69A = new T[_param1];
   }
 
   public int \u0023\u003DzdTxNrgQ\u003D() => this.\u0023\u003DzE8qDEoWQ1KEt;
 
   [IndexerName("#=zMRIb09I=")]
-  public \u0023\u003DzH9HNkng\u003D this[int _param1]
+  public T this[int _param1]
   {
     get => this.\u0023\u003DzhUUq_d4kT69A[_param1];
     set => this.\u0023\u003DzhUUq_d4kT69A[_param1] = value;
   }
 
-  public \u0023\u003DzH9HNkng\u003D \u0023\u003Dz\u0024CeUvME\u003D(int _param1)
+  public T \u0023\u003Dz\u0024CeUvME\u003D(int _param1)
   {
     return this.\u0023\u003DzhUUq_d4kT69A[_param1];
   }
 
-  public void \u0023\u003DzS9gpfR4\u003D(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
+  public void \u0023\u003DzS9gpfR4\u003D(int _param1, T _param2)
   {
     this.\u0023\u003DzhUUq_d4kT69A[_param1] = _param2;
   }
 
   [SpecialName]
-  public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzvsnCYl4\u003D()
+  public T[] \u0023\u003DzvsnCYl4\u003D()
   {
     return this.\u0023\u003DzhUUq_d4kT69A;
   }

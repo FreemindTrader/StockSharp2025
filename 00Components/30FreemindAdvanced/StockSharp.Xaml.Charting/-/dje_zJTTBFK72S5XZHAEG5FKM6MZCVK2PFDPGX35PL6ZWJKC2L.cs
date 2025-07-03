@@ -13,7 +13,7 @@ using System.Windows.Input;
 namespace StockSharp.Xaml.Charting;
 
 internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   private Point \u0023\u003DzhcsKvLfw_p5c;
@@ -30,7 +30,7 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
 
   protected dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd()
   {
-    this.SetCurrentValue(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton);
+    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton);
     this.\u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(false);
   }
 
@@ -79,7 +79,7 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
   public override void \u0023\u003DzsXEfcKpqchyX(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    if (this.IsDragging || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn) || this.XAxes.\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>() || !_param1.\u0023\u003DzCJb5Ya_8UZCR() || !this.ModifierSurface.GetBoundsRelativeTo((\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.\u0023\u003Dzwc4Gzka23TGB()).Contains(_param1.\u0023\u003DztkyOk5amPcz3()))
+    if (this.IsDragging || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn) || this.XAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>() || !_param1.\u0023\u003DzCJb5Ya_8UZCR() || !this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB()).Contains(_param1.\u0023\u003DztkyOk5amPcz3()))
       return;
     Point point1 = _param1.\u0023\u003DztkyOk5amPcz3();
     base.\u0023\u003DzsXEfcKpqchyX(_param1);

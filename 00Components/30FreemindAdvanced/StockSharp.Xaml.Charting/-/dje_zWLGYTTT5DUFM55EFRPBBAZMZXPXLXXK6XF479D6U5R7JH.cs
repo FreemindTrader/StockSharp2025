@@ -140,13 +140,13 @@ internal sealed class dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK
     if (this.XAxis != null && this.XAxis.get_IsPolarAxis())
     {
       if (!(this.\u0023\u003DzGgdpvaCO8rGBSnoR3l3LJbo\u003D is \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp bu8dZ57eHrcM5HuPjp))
-        bu8dZ57eHrcM5HuPjp = new \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp((\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) this);
+        bu8dZ57eHrcM5HuPjp = new \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp((IChartModifier) this);
       jyxtBaVakvxTuthBw = (\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI84SlzGeHM63aaGG8vJyxtBAVakvxTUthBw\u003D) bu8dZ57eHrcM5HuPjp;
     }
     else
     {
       if (!(this.\u0023\u003DzGgdpvaCO8rGBSnoR3l3LJbo\u003D is \u0023\u003DzgeFvyoahWukw3bL8yZfVYtqjmhok9yjd8mH5m4kxECgD_8hOTrQuVzBMlu2MMYB2IQ\u003D\u003D quVzBmlu2MmyB2Iq))
-        quVzBmlu2MmyB2Iq = new \u0023\u003DzgeFvyoahWukw3bL8yZfVYtqjmhok9yjd8mH5m4kxECgD_8hOTrQuVzBMlu2MMYB2IQ\u003D\u003D((\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) this);
+        quVzBmlu2MmyB2Iq = new \u0023\u003DzgeFvyoahWukw3bL8yZfVYtqjmhok9yjd8mH5m4kxECgD_8hOTrQuVzBMlu2MMYB2IQ\u003D\u003D((IChartModifier) this);
       jyxtBaVakvxTuthBw = (\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI84SlzGeHM63aaGG8vJyxtBAVakvxTUthBw\u003D) quVzBmlu2MmyB2Iq;
     }
     return jyxtBaVakvxTuthBw;

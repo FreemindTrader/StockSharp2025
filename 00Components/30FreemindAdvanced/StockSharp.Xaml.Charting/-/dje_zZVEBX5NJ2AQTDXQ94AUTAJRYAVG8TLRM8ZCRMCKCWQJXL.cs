@@ -17,7 +17,7 @@ internal sealed class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAVG8TLRM8ZCRMCKCWQJXLX2_ejd :
 {
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
-    return _param1 == null ? (object) null : (object) new Thickness(((IComparable) _param1).\u0023\u003Dzb9UCYbo\u003D());
+    return _param1 == null ? (object) null : (object) new Thickness(((IComparable) _param1).ToDouble());
   }
 
   public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)

@@ -17,7 +17,7 @@ internal sealed class \u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJjBPTR5rC4Mn<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D>
 {
   public override void \u0023\u003DzNi0XCnZpx1ge(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1)
+    IRenderContext2D _param1)
   {
     if (++this.\u0023\u003DzIbVn\u0024T8\u003D != this.\u0023\u003DzaXL4UJQ\u003D.Count<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D>(\u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj0tkAQV_GK7UbDd1NY3xuBRiQqw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D ?? (\u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj0tkAQV_GK7UbDd1NY3xuBRiQqw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D = new Func<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D, bool>(\u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj0tkAQV_GK7UbDd1NY3xuBRiQqw\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzOhcojBe5GOPqzuz9bAIynZk\u003D))))
       return;
@@ -41,14 +41,14 @@ internal sealed class \u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj
     Tuple<IComparable, IComparable> _param4,
     \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D _param5)
   {
-    if (!double.IsNaN(_param2.\u0023\u003Dzd9IAScWutAfJ().\u0023\u003Dzb9UCYbo\u003D()))
+    if (!double.IsNaN(_param2.\u0023\u003Dzd9IAScWutAfJ().ToDouble()))
     {
       int index = _param2.\u0023\u003DzSkvCFWUKQ7Fw();
-      Point point1 = new Point(_param4.Item1.\u0023\u003Dzb9UCYbo\u003D(), _param4.Item2.\u0023\u003Dzb9UCYbo\u003D());
+      Point point1 = new Point(_param4.Item1.ToDouble(), _param4.Item2.ToDouble());
       Tuple<double, double> tuple1 = this.\u0023\u003DzeKx7SKdwYOP2(_param5, index, false);
       Tuple<double, double> tuple2 = this.\u0023\u003DzeKx7SKdwYOP2(_param5, index + 1, false);
-      double num1 = ((IComparable) _param5.get_DataSeries().\u0023\u003DzwQnyySN6xaVC()[index]).\u0023\u003Dzb9UCYbo\u003D();
-      double num2 = ((IComparable) _param5.get_DataSeries().\u0023\u003DzwQnyySN6xaVC()[index + 1]).\u0023\u003Dzb9UCYbo\u003D();
+      double num1 = ((IComparable) _param5.get_DataSeries().\u0023\u003DzwQnyySN6xaVC()[index]).ToDouble();
+      double num2 = ((IComparable) _param5.get_DataSeries().\u0023\u003DzwQnyySN6xaVC()[index + 1]).ToDouble();
       \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D zRklLwRo1 = new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(new Point(num1, tuple1.Item1), new Point(num2, tuple2.Item1));
       \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D zRklLwRo2 = new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(new Point(num1, tuple1.Item2), new Point(num2, tuple2.Item2));
       \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D zRklLwRo3 = new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(new Point(point1.X, Math.Min(tuple1.Item2, tuple2.Item2)), new Point(point1.X, Math.Max(tuple1.Item1, tuple2.Item1)));

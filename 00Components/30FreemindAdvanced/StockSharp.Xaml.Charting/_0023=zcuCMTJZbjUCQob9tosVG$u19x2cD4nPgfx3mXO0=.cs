@@ -42,12 +42,12 @@ internal static class \u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u19x2cD4nPgfx3mXO0\
   private static readonly TimeSpan \u0023\u003DzCxemqM9TrjL\u0024OktvQA\u003D\u003D = \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4threxLLudETYN2pgrj0XJaQz.\u0023\u003DzmlhV\u0024ev7WhIH(3);
   private static readonly TimeSpan \u0023\u003DzrbkbSSnCClrh = \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4threxLLudETYN2pgrj0XJaQz.\u0023\u003DzmlhV\u0024ev7WhIH(1);
 
-  internal static DateTime \u0023\u003DzTOKoqZw\u003D(DateTime _param0, DateTime _param1)
+  internal static DateTime Max(DateTime _param0, DateTime _param1)
   {
     return _param0.Ticks <= _param1.Ticks ? _param1 : _param0;
   }
 
-  internal static DateTime \u0023\u003DzRHWvkgM\u003D(DateTime _param0, DateTime _param1)
+  internal static DateTime Min(DateTime _param0, DateTime _param1)
   {
     return _param0.Ticks >= _param1.Ticks ? _param1 : _param0;
   }

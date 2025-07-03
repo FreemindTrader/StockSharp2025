@@ -28,6 +28,6 @@ internal sealed class \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWu21gtPs9jEttWoiDHV\u0024
     int _param3,
     uint _param4)
   {
-    return (\u0023\u003DzXMBDTJZ70yU3Te1Rk5MqGwqd9HRLNiqw6g\u003D\u003D) this.\u0023\u003DzyE145DTzxI8R(_param1.\u0023\u003Dzb9UCYbo\u003D(), _param2.\u0023\u003Dzb9UCYbo\u003D(), _param3, _param4);
+    return (\u0023\u003DzXMBDTJZ70yU3Te1Rk5MqGwqd9HRLNiqw6g\u003D\u003D) this.\u0023\u003DzyE145DTzxI8R(_param1.ToDouble(), _param2.ToDouble(), _param3, _param4);
   }
 }

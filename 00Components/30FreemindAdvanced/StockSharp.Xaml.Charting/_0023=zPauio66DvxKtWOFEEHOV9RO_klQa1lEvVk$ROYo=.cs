@@ -12,7 +12,7 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D : EventArgs
 {
   
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dzyf57hTxonZCNKHGBsGM3_ZE\u003D;
+  private IRange \u0023\u003Dzyf57hTxonZCNKHGBsGM3_ZE\u003D;
   
   private \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D \u0023\u003DzKEcDCute\u0024HaDe59alg\u003D\u003D;
 
@@ -26,19 +26,19 @@ internal sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\
   }
 
   internal \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D _param2)
     : this(_param1.Min, _param1.Max, _param2)
   {
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbEaDvZcDA_K8()
+  public IRange \u0023\u003DzbEaDvZcDA_K8()
   {
     return this.\u0023\u003Dzyf57hTxonZCNKHGBsGM3_ZE\u003D;
   }
 
   private void \u0023\u003DzO9Y96rr7OMgq(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     this.\u0023\u003Dzyf57hTxonZCNKHGBsGM3_ZE\u003D = _param1;
   }

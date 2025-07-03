@@ -22,7 +22,7 @@ internal sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAY
   {
     this.AccumulatedValue = _param2.\u0023\u003Dzd9IAScWutAfJ();
     this.YValue = _param2.\u0023\u003DzpV2MuX1Y\u0024EoN();
-    this.Value = this.YValue.\u0023\u003Dzb9UCYbo\u003D();
+    this.Value = this.YValue.ToDouble();
   }
 
   public IComparable AccumulatedValue

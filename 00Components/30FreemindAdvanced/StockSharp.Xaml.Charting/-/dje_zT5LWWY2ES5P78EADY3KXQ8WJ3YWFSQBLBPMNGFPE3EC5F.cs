@@ -22,11 +22,11 @@ using System.Windows.Threading;
 namespace StockSharp.Xaml.Charting;
 
 [TemplatePart(Name = "PART_Container", Type = typeof (Panel))]
-[TemplatePart(Name = "PART_BackgroundSurface", Type = typeof (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D))]
+[TemplatePart(Name = "PART_BackgroundSurface", Type = typeof (ISciChartSurface))]
 [TemplatePart(Name = "PART_Scrollbar", Type = typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd))]
 internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd : 
   Control,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
+  IInvalidatableElement
 {
   
   public static readonly DependencyProperty \u0023\u003DzIcVMwZBBZ1n3 = DependencyProperty.Register("", typeof (Color), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) new Color()));
@@ -35,13 +35,13 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   
   public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register("", typeof (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty \u0023\u003DzBk\u00244thlqlXdL = DependencyProperty.Register("", typeof (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzRx5RhuORvh6CP5D2Lg\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzBk\u00244thlqlXdL = DependencyProperty.Register("", typeof (ISciChartSurface), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzRx5RhuORvh6CP5D2Lg\u003D\u003D)));
   
   public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register("", typeof (string), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) "", new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register("", typeof (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register("", typeof (IRange), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register("", typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzEM7rzxveqzC2)));
+  public static readonly DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register("", typeof (IAxis), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzEM7rzxveqzC2)));
   
   public static readonly DependencyProperty \u0023\u003Dz\u0024FkvCXFCwCpX = DependencyProperty.Register("", typeof (Style), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null));
   
@@ -49,7 +49,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   
   public static readonly DependencyProperty \u0023\u003Dz7lrsbkJYllce464Io_zCCfI\u003D = DependencyProperty.Register("", typeof (Type), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzQoIGRIjEbowwBxyaQMoyp7vFf5I\u0024)));
   
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003DzVpgkPm_hKDwz;
+  private ISciChartSurface \u0023\u003DzVpgkPm_hKDwz;
   
   private PropertyChangeNotifier \u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t;
   
@@ -66,12 +66,12 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   public dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd()
   {
     this.DefaultStyleKey = (object) typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd);
-    this.\u0023\u003Dz_a7lQd926eAW = new \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJWrW04(new Action(this.\u0023\u003Dz5q8i9C4\u003D), (\u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D) new \u0023\u003Dz_tZkxN0xSCAji6_DomQ8vhQ5FfpLq6glVuatd7w\u003D(((DispatcherObject) this).Dispatcher));
+    this.\u0023\u003Dz_a7lQd926eAW = new \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJWrW04(new Action(this.InvalidateElement), (\u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D) new \u0023\u003Dz_tZkxN0xSCAji6_DomQ8vhQ5FfpLq6glVuatd7w\u003D(((DispatcherObject) this).Dispatcher));
     this.Loaded += new RoutedEventHandler(this.\u0023\u003DzYIYHxzzNpONOjcWNH_qj88E\u003D);
     this.Unloaded += new RoutedEventHandler(this.\u0023\u003Dz3l29bjkM9LKwIiF9wuOt8h8\u003D);
   }
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D()
+  public ISciChartSurface \u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D()
   {
     return this.\u0023\u003DzVpgkPm_hKDwz;
   }
@@ -148,11 +148,11 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     }
   }
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D ParentSurface
+  public ISciChartSurface ParentSurface
   {
     get
     {
-      return (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzBk\u00244thlqlXdL);
+      return (ISciChartSurface) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzBk\u00244thlqlXdL);
     }
     set
     {
@@ -160,11 +160,11 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     }
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D SelectedRange
+  public IRange SelectedRange
   {
     get
     {
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dz8z6_NTW32S6R);
+      return (IRange) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dz8z6_NTW32S6R);
     }
     set
     {
@@ -172,11 +172,11 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     }
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB Axis
+  public IAxis Axis
   {
     get
     {
-      return (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dzmtd1hks\u003D);
+      return (IAxis) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dzmtd1hks\u003D);
     }
     private set
     {
@@ -196,22 +196,22 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     }
   }
 
-  public void \u0023\u003Dz5q8i9C4\u003D()
+  public void InvalidateElement()
   {
     if (this.\u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D() == null || this.Axis == null)
       return;
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = this.Axis.get_DataRange();
+    IRange abyLt9clZggmJsWhw = this.Axis.get_DataRange();
     if (abyLt9clZggmJsWhw == null)
       return;
-    if (this.Axis.get_GrowBy() != null)
-      abyLt9clZggmJsWhw = abyLt9clZggmJsWhw.\u0023\u003DzzXTqVFg\u003D(this.Axis.get_GrowBy().Min, this.Axis.get_GrowBy().Max);
+    if (this.Axis.GrowBy != null)
+      abyLt9clZggmJsWhw = abyLt9clZggmJsWhw.GrowBy(this.Axis.GrowBy.Min, this.Axis.GrowBy.Max);
     this.\u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D().XAxis.VisibleRange = abyLt9clZggmJsWhw;
   }
 
   public override void OnApplyTemplate()
   {
     base.OnApplyTemplate();
-    this.\u0023\u003DzVpgkPm_hKDwz = this.GetTemplateChild("") as \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D;
+    this.\u0023\u003DzVpgkPm_hKDwz = this.GetTemplateChild("") as ISciChartSurface;
     this.\u0023\u003DzHZ6slBP\u0024iRnw(this.Axis);
     this.\u0023\u003Dzu1rsCACNRRdc0LZjNU6jPzI\u003D(this.RenderableSeriesStyle, this.RenderableSeriesType);
     if (!(this.GetTemplateChild("") is dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd templateChild))
@@ -220,11 +220,11 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   }
 
   private void \u0023\u003DzHZ6slBP\u0024iRnw(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     if (this.\u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D() == null || _param1 == null)
       return;
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB = _param1.\u0023\u003DzQ8SgRgQ\u003D();
+    IAxis dynWmoFzgH4RlWB0lB = _param1.\u0023\u003DzQ8SgRgQ\u003D();
     dynWmoFzgH4RlWB0lB.set_Visibility(Visibility.Collapsed);
     dynWmoFzgH4RlWB0lB.set_ParentSurface(this.\u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D());
     dynWmoFzgH4RlWB0lB.set_DrawMinorGridLines(false);
@@ -239,7 +239,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   }
 
   private bool \u0023\u003DzZips37gKJQPGLQcrTw\u003D\u003D(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1,
+    ISciChartSurface _param1,
     \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param2)
   {
     return _param1 != null && !_param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>() && _param1.get_RenderableSeries().Any<IRenderableSeries>(new Func<IRenderableSeries, bool>(new dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dzzjz1tgS0aO8fKdbpAk8DUVE\u003D()
@@ -266,7 +266,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
       this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t.ValueChanged += new Action(this.\u0023\u003Dz_sR2YBsF8Vv_kS6d84fxv3s\u003D);
       this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) newValue, dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.\u0023\u003DzDqajrUCXt2L8);
       this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D.ValueChanged += new Action(this.\u0023\u003DzgjrLoKvF7hcz9A6IKvJCiAc\u003D);
-      if (!this.\u0023\u003DzZips37gKJQPGLQcrTw\u003D\u003D((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) newValue, this.DataSeries))
+      if (!this.\u0023\u003DzZips37gKJQPGLQcrTw\u003D\u003D((ISciChartSurface) newValue, this.DataSeries))
         this.SetCurrentValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzGTMdFbtr59Hr, (object) null);
       this.\u0023\u003Dz4X8eQxjPK0LOdo2uQqSISqs\u003D(newValue.RenderableSeries);
       this.\u0023\u003DzMEAXmFgTZfXXcCqZiA\u003D\u003D(newValue.XAxes);
@@ -306,7 +306,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    this.Axis = !this.\u0023\u003DzWdeNTJKzYxQa.\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>() ? this.\u0023\u003DzWdeNTJKzYxQa.\u0023\u003Dz\u0024YoxjvGBoa2C(this.XAxisId, false) : (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) null;
+    this.Axis = !this.\u0023\u003DzWdeNTJKzYxQa.\u0023\u003DzCCMM80zDpO6N<IAxis>() ? this.\u0023\u003DzWdeNTJKzYxQa.\u0023\u003Dz\u0024YoxjvGBoa2C(this.XAxisId, false) : (IAxis) null;
   }
 
   private void \u0023\u003Dz4X8eQxjPK0LOdo2uQqSISqs\u003D(
@@ -340,9 +340,9 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     }
     if (gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D == null)
       return;
-    if (gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D is dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd)
+    if (gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D is BaseRenderableSeries)
     {
-      this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) (gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D as dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd), dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzGTMdFbtr59Hr);
+      this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) (gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D as BaseRenderableSeries), BaseRenderableSeries.\u0023\u003DzGTMdFbtr59Hr);
       this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D.ValueChanged += new Action(gncgo1okL0HgWiq5JrU.\u0023\u003Dzq5A_hw8sG0QZl737AckA8VB19QdzQUuQMw\u003D\u003D);
     }
     this.\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D.get_DataSeries());
@@ -369,9 +369,9 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   {
     if (!(_param0 is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd f696R6Da4LbdrF4QEjd))
       return;
-    if (_param1.OldValue is \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB oldValue)
+    if (_param1.OldValue is IAxis oldValue)
       oldValue.\u0023\u003DzwG_uRQ_EmTwc(new EventHandler<EventArgs>(f696R6Da4LbdrF4QEjd.\u0023\u003DzaNiYNgKj9pMk));
-    if (!(_param1.NewValue is \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB newValue))
+    if (!(_param1.NewValue is IAxis newValue))
       return;
     newValue.\u0023\u003DzF_\u0024wky5\u0024qiYa(new EventHandler<EventArgs>(f696R6Da4LbdrF4QEjd.\u0023\u003DzaNiYNgKj9pMk));
     f696R6Da4LbdrF4QEjd.\u0023\u003DzHZ6slBP\u0024iRnw(newValue);
@@ -387,7 +387,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     DependencyPropertyChangedEventArgs _param1)
   {
     Type newValue = (Type) _param1.NewValue;
-    if (!newValue.IsAssignableFrom(typeof (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd)))
+    if (!newValue.IsAssignableFrom(typeof (BaseRenderableSeries)))
       return;
     ((dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd) _param0).\u0023\u003Dzu1rsCACNRRdc0LZjNU6jPzI\u003D(((dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd) _param0).RenderableSeriesStyle, newValue);
   }
@@ -405,7 +405,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
       return;
     if (this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().\u0023\u003DzMeGSfVE\u003D<IRenderableSeries>() || this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().First<IRenderableSeries>().GetType() != _param2)
     {
-      dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd instance = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) Activator.CreateInstance(_param2);
+      BaseRenderableSeries instance = (BaseRenderableSeries) Activator.CreateInstance(_param2);
       instance.SetCurrentValue(FrameworkElement.DataContextProperty, (object) this);
       if (_param1 == null || _param1.TargetType.IsAssignableFrom(_param2))
         instance.Style = _param1;

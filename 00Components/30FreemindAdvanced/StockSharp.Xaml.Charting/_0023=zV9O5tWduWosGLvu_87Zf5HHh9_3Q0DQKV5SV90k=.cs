@@ -14,7 +14,7 @@ using System.Xml.Serialization;
 
 #nullable disable
 internal interface \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D : 
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
+  IHitTestable,
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
   IXmlSerializable
 {
@@ -86,13 +86,13 @@ internal interface \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D :
 
   void set_IsHidden(bool _param1);
 
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB YAxis { get; }
+  IAxis YAxis { get; }
 
-  IEnumerable<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> YAxes { get; }
+  IEnumerable<IAxis> YAxes { get; }
 
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB XAxis { get; }
+  IAxis XAxis { get; }
 
-  IEnumerable<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> XAxes { get; }
+  IEnumerable<IAxis> XAxes { get; }
 
   \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D Services { get; set; }
 
@@ -120,7 +120,7 @@ internal interface \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D :
 
   void set_Y2(IComparable _param1);
 
-  \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D ParentSurface { get; set; }
+  ISciChartSurface ParentSurface { get; set; }
 
   dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd DragDirections { get; set; }
 

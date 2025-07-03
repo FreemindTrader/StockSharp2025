@@ -21,21 +21,21 @@ internal sealed class dje_zU6LW4MFFH4RUUNQUBP297YJBKYUAEUKG3SLMFR7LPB76KDQ8DS5VW
   private float \u0023\u003Dzdr7IdQadikmk;
 
   protected override void \u0023\u003DzdL613chSNlLB(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     IEnumerable<Point> _param2,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param3,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param4)
+    IBrush2D _param4)
   {
     foreach (Point point in _param2)
       this.\u0023\u003DzdL613chSNlLB(_param1, point.X, point.Y, _param3, _param4);
   }
 
   protected override void \u0023\u003DzdL613chSNlLB(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     double _param2,
     double _param3,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param4,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param5)
+    IBrush2D _param5)
   {
     _param1.\u0023\u003Dzk8_eoWQ\u003D(_param4, new Point(_param2 - (double) this.\u0023\u003DzU7DqSJMJO2bJ, _param3), new Point(_param2 + (double) this.\u0023\u003DzU7DqSJMJO2bJ, _param3));
     _param1.\u0023\u003Dzk8_eoWQ\u003D(_param4, new Point(_param2, _param3 - (double) this.\u0023\u003Dzdr7IdQadikmk), new Point(_param2, _param3 + (double) this.\u0023\u003Dzdr7IdQadikmk));

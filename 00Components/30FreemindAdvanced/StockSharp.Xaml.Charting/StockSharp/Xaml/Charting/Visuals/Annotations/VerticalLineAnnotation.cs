@@ -80,9 +80,9 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     this.ApplyOrientation(label);
   }
 
-  public override \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB GetUsedAxis()
+  public override IAxis GetUsedAxis()
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) null;
+    IAxis usedAxis = (IAxis) null;
     if (this.XAxis != null)
       usedAxis = this.XAxis.IsHorizontalAxis ? this.XAxis : this.YAxis;
     else if (this.YAxis != null)
@@ -139,12 +139,12 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     double coord = coordinates.\u0023\u003DzS2_K6sVvd5IY + horizOffset;
-    if (!this.IsCoordinateValid(coord, canvas.\u0023\u003Dzu2ObQ3hMALTN()))
+    if (!this.IsCoordinateValid(coord, canvas.ActualWidth))
     {
       if (coord < 0.0)
         horizOffset -= coord - 1.0;
-      if (coord > canvas.\u0023\u003Dzu2ObQ3hMALTN())
-        horizOffset -= coord - (canvas.\u0023\u003Dzu2ObQ3hMALTN() - 1.0);
+      if (coord > canvas.ActualWidth)
+        horizOffset -= coord - (canvas.ActualWidth - 1.0);
       coord = coordinates.\u0023\u003DzS2_K6sVvd5IY + horizOffset;
     }
     base.SetBasePoint(new Point()
@@ -158,8 +158,8 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   protected override void SetBasePoint(
     Point newPoint,
     int index,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xAxis,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yAxis)
+    IAxis xAxis,
+    IAxis yAxis)
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     IComparable[] comparableArray = this.FromCoordinates(0.0, newPoint.Y);
@@ -169,7 +169,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     DependencyProperty y;
     this.GetPropertiesFromIndex(index, out x, out y);
     bool flag = !this.XAxis.IsHorizontalAxis;
-    if (!this.IsCoordinateValid(newPoint.Y, canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+    if (!this.IsCoordinateValid(newPoint.Y, canvas.ActualHeight))
       return;
     if (flag)
       this.SetCurrentValue(x, (object) comparable1);
@@ -235,11 +235,11 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
       double zS2K6sVvd5Iy = _param1.\u0023\u003DzS2_K6sVvd5IY;
       if (!zS2K6sVvd5Iy.\u0023\u003Dz_Bj0HmLWq3hY() || canvas == null)
         return;
-      double val1 = canvas.\u0023\u003Dz2kO1mtG\u0024bEUM();
+      double val1 = canvas.ActualHeight;
       switch (this.\u0023\u003Dz_iIh83yfe01U().VerticalAlignment)
       {
         case VerticalAlignment.Top:
-          val1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.\u0023\u003DzutrFxOU\u003D() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
+          val1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.IsFiniteNumber() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
           break;
         case VerticalAlignment.Center:
           double num2 = Math.Min(_param1.\u0023\u003Dz2J4l3QUGwZHE, _param1.\u0023\u003DzWp13vlQiZCJc);
@@ -249,7 +249,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
           val1 = num3 - num4;
           break;
         case VerticalAlignment.Bottom:
-          num1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.\u0023\u003DzutrFxOU\u003D() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
+          num1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.IsFiniteNumber() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
           val1 -= num1;
           break;
       }
@@ -305,7 +305,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       bool flag = false;
-      if (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.\u0023\u003Dzu2ObQ3hMALTN())
+      if (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth)
       {
         flag = true;
       }
@@ -317,10 +317,10 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
             flag = _param1.\u0023\u003DzWp13vlQiZCJc < 0.0;
             break;
           case VerticalAlignment.Center:
-            flag = _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM() && _param1.\u0023\u003DzWp13vlQiZCJc > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM();
+            flag = _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight && _param1.\u0023\u003DzWp13vlQiZCJc > _param2.ActualHeight;
             break;
           case VerticalAlignment.Bottom:
-            flag = _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM();
+            flag = _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight;
             break;
         }
       }

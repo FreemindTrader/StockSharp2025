@@ -18,7 +18,7 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
 
   internal static bool \u0023\u003DzilOTiYzU6JIQ(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param0,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1,
+    IndexRange  _param1,
     int _param2)
   {
     int num1 = _param1.Max - _param1.Min + 1;
@@ -28,7 +28,7 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
 
   public abstract \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4,
     bool _param5,
@@ -37,27 +37,27 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
     bool? _param8,
     bool? _param9,
     bool? _param10,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11);
+    IRange _param11);
 
   private static void \u0023\u003Dzq3MgExWxza1L<TX>(
     IList<TX> _param0,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param2,
+    IndexRange  _param1,
+    IRange _param2,
     out double _param3,
     out double _param4)
     where TX : IComparable
   {
-    _param3 = _param0[_param1.Min].\u0023\u003Dzb9UCYbo\u003D();
-    _param4 = _param0[_param1.Max].\u0023\u003Dzb9UCYbo\u003D();
-    if (_param2 == null || _param2 is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D)
+    _param3 = _param0[_param1.Min].ToDouble();
+    _param4 = _param0[_param1.Max].ToDouble();
+    if (_param2 == null || _param2 is IndexRange )
       return;
-    _param3 = _param2.Min.\u0023\u003Dzb9UCYbo\u003D();
-    _param4 = _param2.Max.\u0023\u003Dzb9UCYbo\u003D();
+    _param3 = _param2.Min.ToDouble();
+    _param4 = _param2.Max.ToDouble();
   }
 
   private static bool \u0023\u003DzkfeONHfyq5z2Lpu\u00241g\u003D\u003D<TX, TY>(
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TX> _param0,
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TY> _param1,
+    IMath<TX> _param0,
+    IMath<TY> _param1,
     \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<TX> _param2,
     \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<TY> _param3,
     int _param4,
@@ -69,13 +69,13 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
     where TX : IComparable
     where TY : IComparable
   {
-    double d = _param1.\u0023\u003Dzb9UCYbo\u003D(_param3[_param4]);
-    double num = _param0.\u0023\u003Dzb9UCYbo\u003D(_param2[_param4]);
+    double d = _param1.ToDouble(_param3[_param4]);
+    double num = _param0.ToDouble(_param2[_param4]);
     _param9 = 0;
     _param7 = d;
     _param8 = d;
     bool flag = false;
-    for (; num <= _param6; num = _param0.\u0023\u003Dzb9UCYbo\u003D(_param2[_param4]))
+    for (; num <= _param6; num = _param0.ToDouble(_param2[_param4]))
     {
       if (_param9 == 0)
         flag = double.IsNaN(d);
@@ -89,7 +89,7 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
       if (_param9 < _param5)
       {
         ++_param4;
-        d = _param1.\u0023\u003Dzb9UCYbo\u003D(_param3[_param4]);
+        d = _param1.ToDouble(_param3[_param4]);
       }
       else
         break;
@@ -138,10 +138,10 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
   protected static \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TX, TY>(
     IList<TX> _param0,
     IList<TY> _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param5)
+    IRange _param5)
     where TX : IComparable
     where TY : IComparable
   {
@@ -258,8 +258,8 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
     where TX : IComparable
     where TY : IComparable
   {
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TX> mijfkOcK7kdYtA2avPae1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<TX>();
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TY> mijfkOcK7kdYtA2avPae2 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<TY>();
+    IMath<TX> mijfkOcK7kdYtA2avPae1 = MathHelper.GetMath<TX>();
+    IMath<TY> mijfkOcK7kdYtA2avPae2 = MathHelper.GetMath<TY>();
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> mkleCtJgtGqo7Zpw1 = _param2.\u0023\u003DzwQnyySN6xaVC();
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> mkleCtJgtGqo7Zpw2 = _param2.\u0023\u003DzPqsSI6C5MOOb();
     int num1 = _param3;
@@ -273,13 +273,13 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
       int num6;
       if (\u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzkfeONHfyq5z2Lpu\u00241g\u003D\u003D<TX, TY>(mijfkOcK7kdYtA2avPae1, mijfkOcK7kdYtA2avPae2, _param0, _param1, num1, _param4 - num1 + 1, _param5 + num2 * (double) (num3 + 1), out num4, out num5, out num6))
         ++num3;
-      double num7 = _param8 ? (double) num1 : mijfkOcK7kdYtA2avPae1.\u0023\u003Dzb9UCYbo\u003D(_param0[num1]);
+      double num7 = _param8 ? (double) num1 : mijfkOcK7kdYtA2avPae1.ToDouble(_param0[num1]);
       if (num6 != 0)
       {
         if (flag)
         {
           mkleCtJgtGqo7Zpw1.Add(num7);
-          mkleCtJgtGqo7Zpw2.Add(mijfkOcK7kdYtA2avPae2.\u0023\u003Dzb9UCYbo\u003D(_param1[num1]));
+          mkleCtJgtGqo7Zpw2.Add(mijfkOcK7kdYtA2avPae2.ToDouble(_param1[num1]));
         }
         mkleCtJgtGqo7Zpw1.Add(num7);
         mkleCtJgtGqo7Zpw2.Add(num4);
@@ -288,8 +288,8 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
       }
       else if (!flag)
       {
-        mkleCtJgtGqo7Zpw1.Add(mijfkOcK7kdYtA2avPae1.\u0023\u003Dzb9UCYbo\u003D(_param0[num1 - 1]));
-        mkleCtJgtGqo7Zpw2.Add(mijfkOcK7kdYtA2avPae2.\u0023\u003Dzb9UCYbo\u003D(_param1[num1 - 1]));
+        mkleCtJgtGqo7Zpw1.Add(mijfkOcK7kdYtA2avPae1.ToDouble(_param0[num1 - 1]));
+        mkleCtJgtGqo7Zpw2.Add(mijfkOcK7kdYtA2avPae2.ToDouble(_param1[num1 - 1]));
       }
       num1 += num6;
       if (num1 <= _param4)
@@ -299,9 +299,9 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
     }
     if (num1 > _param4)
       return;
-    double num8 = _param8 ? (double) num1 : mijfkOcK7kdYtA2avPae1.\u0023\u003Dzb9UCYbo\u003D(_param0[num1]);
+    double num8 = _param8 ? (double) num1 : mijfkOcK7kdYtA2avPae1.ToDouble(_param0[num1]);
     mkleCtJgtGqo7Zpw1.Add(num8);
-    mkleCtJgtGqo7Zpw2.Add(mijfkOcK7kdYtA2avPae2.\u0023\u003Dzb9UCYbo\u003D(_param1[num1]));
+    mkleCtJgtGqo7Zpw2.Add(mijfkOcK7kdYtA2avPae2.ToDouble(_param1[num1]));
   }
 
   [DllImport("msvcrt.dll", EntryPoint = "memset", CallingConvention = (CallingConvention) 2)]
@@ -313,14 +313,14 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
   protected static \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TX, TY>(
     IList<TX> _param0,
     IList<TY> _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4)
     where TX : IComparable
     where TY : IComparable
   {
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TX> mijfkOcK7kdYtA2avPae1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<TX>();
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TY> mijfkOcK7kdYtA2avPae2 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<TY>();
+    IMath<TX> mijfkOcK7kdYtA2avPae1 = MathHelper.GetMath<TX>();
+    IMath<TY> mijfkOcK7kdYtA2avPae2 = MathHelper.GetMath<TY>();
     if (\u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzpQ\u0024NBSHbFmS_ == null)
     {
       \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzpQ\u0024NBSHbFmS_ = new byte[120000];
@@ -334,11 +334,11 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
     TX x1;
     TX x2;
     \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<TX>((IEnumerable<TX>) _param0, out x1, out x2);
-    double num1 = !x2.Equals((object) x1) ? 399.0 / mijfkOcK7kdYtA2avPae1.\u0023\u003DzFXH4KOE\u003D(x2, x1).\u0023\u003Dzb9UCYbo\u003D() : 0.0;
+    double num1 = !x2.Equals((object) x1) ? 399.0 / mijfkOcK7kdYtA2avPae1.Subtract(x2, x1).ToDouble() : 0.0;
     TY y1;
     TY y2;
     \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<TY>((IEnumerable<TY>) _param1, out y1, out y2);
-    double num2 = !y2.Equals((object) y1) ? 299.0 / mijfkOcK7kdYtA2avPae2.\u0023\u003DzFXH4KOE\u003D(y2, y1).\u0023\u003Dzb9UCYbo\u003D() : 0.0;
+    double num2 = !y2.Equals((object) y1) ? 299.0 / mijfkOcK7kdYtA2avPae2.Subtract(y2, y1).ToDouble() : 0.0;
     \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(100);
     TX[] xArray = _param0.\u0023\u003Dz1bvQV4SZTWpA<TX>();
     TY[] yArray = _param1.\u0023\u003Dz1bvQV4SZTWpA<TY>();
@@ -346,11 +346,11 @@ internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXV
     {
       TX x3 = xArray[index1];
       TY y3 = yArray[index1];
-      int index2 = (int) (num1 * mijfkOcK7kdYtA2avPae1.\u0023\u003DzFXH4KOE\u003D(x3, x1).\u0023\u003Dzb9UCYbo\u003D()) + (int) (num2 * mijfkOcK7kdYtA2avPae2.\u0023\u003DzFXH4KOE\u003D(y3, y1).\u0023\u003Dzb9UCYbo\u003D()) * 400;
+      int index2 = (int) (num1 * mijfkOcK7kdYtA2avPae1.Subtract(x3, x1).ToDouble()) + (int) (num2 * mijfkOcK7kdYtA2avPae2.Subtract(y3, y1).ToDouble()) * 400;
       if (\u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzpQ\u0024NBSHbFmS_[index2] == (byte) 0)
       {
         \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzpQ\u0024NBSHbFmS_[index2] = (byte) 1;
-        p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(x3.\u0023\u003Dzb9UCYbo\u003D(), y3.\u0023\u003Dzb9UCYbo\u003D()));
+        p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(x3.ToDouble(), y3.ToDouble()));
       }
     }
     p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();

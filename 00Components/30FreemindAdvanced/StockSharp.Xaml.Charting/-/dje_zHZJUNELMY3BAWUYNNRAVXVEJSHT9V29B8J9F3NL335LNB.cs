@@ -16,12 +16,12 @@ using System.Xml.Serialization;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd : 
-  dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd,
+  BaseMountainRenderableSeries,
   \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D,
   \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D,
   IRenderableSeries,
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,
-  \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95,
+  IDrawable,
   IXmlSerializable
 {
   
@@ -61,32 +61,32 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
     set
     {
       this.SetValue(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd.\u0023\u003Dzj\u0024ZDuobq5\u0024GmruUxggpnzio\u003D, (object) value);
-      this.\u0023\u003DzoXzc48\u0024TAMxP()?.\u0023\u003Dz5q8i9C4\u003D();
+      this.\u0023\u003DzoXzc48\u0024TAMxP()?.InvalidateElement();
     }
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzxNQHuqrEvxH2(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public override IRange \u0023\u003DzxNQHuqrEvxH2(
+    IRange _param1,
     bool _param2)
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = _param1 != null ? this.DataSeries.GetIndicesRange(_param1) : throw new ArgumentNullException("");
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzzMId\u0024f67Wftb((\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D) this, g8Oq2rGx6KyfAreq);
+    IndexRange  g8Oq2rGx6KyfAreq = _param1 != null ? this.DataSeries.GetIndicesRange(_param1) : throw new ArgumentNullException("");
+    return (IRange) this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzzMId\u0024f67Wftb((\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D) this, g8Oq2rGx6KyfAreq);
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzNi0XCnZpx1ge(_param1);
   }
 
   void \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D.\u0023\u003Dz\u0024a0fIHoQZ1sLP6Qvlz\u0024hlVI4rowBaJk\u0024GR\u0024PuibSCVV2Hj\u0024X0eFVzzfZX_qZB_h5wMbEtWBSbN\u0024XD38SCgpGvzGNi0mk(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     bool _param2)
   {
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
+    IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
     double num1 = this.\u0023\u003DzNfVFwxaLW3jC(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
-    using (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D(this.AreaBrush, this.Opacity, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive))
+    using (IBrush2D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D(this.AreaBrush, this.Opacity, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive))
     {
       using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity, (double[]) null, PenLineCap.Round))
       {
@@ -112,7 +112,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
     bool _param1,
     out \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2)
   {
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
+    IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
     int num1 = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D();
     int num2 = this.IsDigitalLine ? num1 * 2 - 1 : num1;
     int num3 = _param1 ? num1 * 2 - 1 : num1;
@@ -231,23 +231,23 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
     this.DataContext = _param1;
   }
 
-  double \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003DzEa5ACpOap4rFIaHj5p9yfH70ARbSZe0FxQ0q\u00240QfMpnPN_04zQ\u003D\u003D()
+  double IDrawable.\u0023\u003DzEa5ACpOap4rFIaHj5p9yfH70ARbSZe0FxQ0q\u00240QfMpnPN_04zQ\u003D\u003D()
   {
     return this.Width;
   }
 
-  void \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI4gQW2p5XnENj22E0ug7VJ0RyC3hMw\u003D\u003D(
+  void IDrawable.\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI4gQW2p5XnENj22E0ug7VJ0RyC3hMw\u003D\u003D(
     double _param1)
   {
     this.Width = _param1;
   }
 
-  double \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ZE9YOd5sMhl\u0024Z\u0024xSADAZlqXzWzlvA\u003D\u003D()
+  double IDrawable.\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ZE9YOd5sMhl\u0024Z\u0024xSADAZlqXzWzlvA\u003D\u003D()
   {
     return this.Height;
   }
 
-  void \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntaAE_X2h6PHbsMnRBK9cYE8yLrOBvg\u003D\u003D(
+  void IDrawable.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntaAE_X2h6PHbsMnRBK9cYE8yLrOBvg\u003D\u003D(
     double _param1)
   {
     this.Height = _param1;
@@ -255,7 +255,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
 
   private double \u0023\u003Dz1jiRuITB82XgYi4pJKvFW3zwohS6D_e6SQ\u003D\u003D(int _param1)
   {
-    return ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[_param1]).\u0023\u003Dzb9UCYbo\u003D();
+    return ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[_param1]).ToDouble();
   }
 
   private double \u0023\u003DzA_YtdYT9t_kjQZd6sJpjHJ0AAq9cdpYNMQ\u003D\u003D(int _param1)

@@ -1,0 +1,29 @@
+<l1lil:HeatmapChart xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:lii11lili1="clr-namespace:DevExpress.Xpf.Charts.Heatmap;assembly=DevExpress.Xpf.Charts.v22.1"
+                    xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1">
+  <lii11lili1:HeatmapControl l1llili1:Name="Heatmap">
+    <lii11lili1:HeatmapControl.ColorProvider>
+      <lii11lili1:HeatmapRangeColorProvider ApproximateColors="True">
+        <lii11lili1:HeatmapPaletteColorProvider.Palette>
+          <li1:CustomPalette>
+            <li1:CustomPalette.Colors>
+              <Color>SkyBlue</Color>
+              <Color>Yellow</Color>
+              <Color>DarkOrange</Color>
+            </li1:CustomPalette.Colors>
+          </li1:CustomPalette>
+        </lii11lili1:HeatmapPaletteColorProvider.Palette>
+        <lii11lili1:HeatmapRangeColorProvider.RangeStops>
+          <lii11lili1:HeatmapRangeStop Value="0" Type="Percentage"/>
+          <lii11lili1:HeatmapRangeStop Value="0.5" Type="Percentage"/>
+          <lii11lili1:HeatmapRangeStop Value="1" Type="Percentage"/>
+        </lii11lili1:HeatmapRangeColorProvider.RangeStops>
+      </lii11lili1:HeatmapRangeColorProvider>
+    </lii11lili1:HeatmapControl.ColorProvider>
+    <lii11lili1:HeatmapControl.Label>
+      <lii11lili1:HeatmapLabel Foreground="Black" FontWeight="Bold" Background="#70FFFFFF" Padding="2" TextPattern="{V:0.00}"/>
+    </lii11lili1:HeatmapControl.Label>
+  </lii11lili1:HeatmapControl>
+</l1lil:HeatmapChart>

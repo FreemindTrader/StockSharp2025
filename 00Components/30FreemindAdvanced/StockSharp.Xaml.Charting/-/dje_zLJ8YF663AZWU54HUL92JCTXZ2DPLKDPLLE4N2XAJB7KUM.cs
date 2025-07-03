@@ -23,7 +23,7 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd : 
   ContentControl,
   \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
+  IHitTestable
 {
   
   private readonly Canvas \u0023\u003DzF8_YcFVDbTFB = new Canvas();
@@ -63,7 +63,7 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
 
   public Point TranslatePoint(
     Point _param1,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param2)
+    IHitTestable _param2)
   {
     return this.\u0023\u003DzaPPLsvfM_Sst(_param1, _param2);
   }
@@ -71,7 +71,7 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
   public bool IsPointWithinBounds(Point _param1) => this.\u0023\u003DzbOxVzAyGdX66(_param1);
 
   public Rect GetBoundsRelativeTo(
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param1)
+    IHitTestable _param1)
   {
     return !(_param1 is Visual visual) ? Rect.Empty : this.TransformToVisual(visual).TransformBounds(LayoutInformation.GetLayoutSlot((FrameworkElement) this));
   }
@@ -99,12 +99,12 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
 
   internal Canvas \u0023\u003DzpPgLy35fsf6m() => this.\u0023\u003DzF8_YcFVDbTFB;
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
+  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
   {
     return this.ActualWidth;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
+  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
   {
     return this.ActualHeight;
   }

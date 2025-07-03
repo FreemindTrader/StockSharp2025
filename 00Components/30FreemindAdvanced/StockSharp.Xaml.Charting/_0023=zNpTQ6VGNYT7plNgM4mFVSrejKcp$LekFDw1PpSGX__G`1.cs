@@ -14,23 +14,23 @@ using System.Security;
 using System.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> : 
-  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003DzH9HNkng\u003D>,
-  IList<\u0023\u003DzH9HNkng\u003D>,
-  ICollection<\u0023\u003DzH9HNkng\u003D>,
-  IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> : 
+  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T>,
+  IList<T>,
+  ICollection<T>,
+  IEnumerable<T>,
   IEnumerable,
   IList,
   ICollection
 {
   
-  private static readonly \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzUVmXdYNPmc0z = Array.Empty<\u0023\u003DzH9HNkng\u003D>();
+  private static readonly T[] \u0023\u003DzUVmXdYNPmc0z = Array.Empty<T>();
   
-  private \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzg0gWX4E\u003D;
+  private T[] \u0023\u003Dzg0gWX4E\u003D;
   
   private int \u0023\u003DzJpbCbio\u003D;
   
-  private object \u0023\u003DzxztcSMfDuTst;
+  private object myLock;
   
   private int \u0023\u003Dzq9NR138\u003D;
 
@@ -41,34 +41,34 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
 
   public \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL(int _param1)
   {
-    this.\u0023\u003Dzg0gWX4E\u003D = _param1 >= 0 ? new \u0023\u003DzH9HNkng\u003D[_param1] : throw new ArgumentOutOfRangeException("");
+    this.\u0023\u003Dzg0gWX4E\u003D = _param1 >= 0 ? new T[_param1] : throw new ArgumentOutOfRangeException("");
   }
 
   public \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL(
-    IEnumerable<\u0023\u003DzH9HNkng\u003D> _param1)
+    IEnumerable<T> _param1)
   {
     if (_param1 == null)
       throw new ArgumentNullException("");
-    if (_param1 is ICollection<\u0023\u003DzH9HNkng\u003D> zH9Hnkngs)
+    if (_param1 is ICollection<T> zH9Hnkngs)
     {
       int count = zH9Hnkngs.Count;
-      this.\u0023\u003Dzg0gWX4E\u003D = new \u0023\u003DzH9HNkng\u003D[count];
+      this.\u0023\u003Dzg0gWX4E\u003D = new T[count];
       zH9Hnkngs.CopyTo(this.\u0023\u003Dzg0gWX4E\u003D, 0);
       this.\u0023\u003DzJpbCbio\u003D = count;
     }
     else
     {
       this.\u0023\u003DzJpbCbio\u003D = 0;
-      this.\u0023\u003Dzg0gWX4E\u003D = new \u0023\u003DzH9HNkng\u003D[128 /*0x80*/];
-      foreach (\u0023\u003DzH9HNkng\u003D zH9Hnkng in _param1)
+      this.\u0023\u003Dzg0gWX4E\u003D = new T[128 /*0x80*/];
+      foreach (T zH9Hnkng in _param1)
         this.Add(zH9Hnkng);
     }
   }
 
-  public static \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz19UvNq0\u003D(
-    \u0023\u003DzH9HNkng\u003D[] _param0)
+  public static \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> \u0023\u003Dz19UvNq0\u003D(
+    T[] _param0)
   {
-    return new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>()
+    return new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>()
     {
       \u0023\u003Dzg0gWX4E\u003D = _param0,
       \u0023\u003DzJpbCbio\u003D = _param0.Length
@@ -76,7 +76,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   }
 
   [SpecialName]
-  public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzRr4AYdnHaTxa()
+  public T[] \u0023\u003DzRr4AYdnHaTxa()
   {
     return this.\u0023\u003Dzg0gWX4E\u003D;
   }
@@ -91,13 +91,13 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       return;
     if (_param1 > 0)
     {
-      \u0023\u003DzH9HNkng\u003D[] destinationArray = new \u0023\u003DzH9HNkng\u003D[_param1];
+      T[] destinationArray = new T[_param1];
       if (this.\u0023\u003DzJpbCbio\u003D > 0)
         Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, 0, (Array) destinationArray, 0, this.\u0023\u003DzJpbCbio\u003D);
       this.\u0023\u003Dzg0gWX4E\u003D = destinationArray;
     }
     else
-      this.\u0023\u003Dzg0gWX4E\u003D = \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzUVmXdYNPmc0z;
+      this.\u0023\u003Dzg0gWX4E\u003D = \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzUVmXdYNPmc0z;
   }
 
   bool IList.\u0023\u003DzVtB9Td1HClEhKFH\u0024dUP8Pw0\u003D() => false;
@@ -108,9 +108,9 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
 
   object ICollection.\u0023\u003DzxSE4OX0h3nsK6ev9wi6AL7I\u003D()
   {
-    if (this.\u0023\u003DzxztcSMfDuTst == null)
-      Interlocked.CompareExchange<object>(ref this.\u0023\u003DzxztcSMfDuTst, new object(), (object) null);
-    return this.\u0023\u003DzxztcSMfDuTst;
+    if (this.myLock == null)
+      Interlocked.CompareExchange<object>(ref this.myLock, new object(), (object) null);
+    return this.myLock;
   }
 
   object IList.\u0023\u003Dzsw6uZQAY38X4SXUVUM6sxbU\u003D(int _param1) => (object) this[_param1];
@@ -119,7 +119,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   {
     try
     {
-      this[_param1] = (\u0023\u003DzH9HNkng\u003D) _param2;
+      this[_param1] = (T) _param2;
     }
     catch (InvalidCastException ex)
     {
@@ -133,7 +133,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       throw new ArgumentNullException("");
     try
     {
-      this.Add((\u0023\u003DzH9HNkng\u003D) _param1);
+      this.Add((T) _param1);
     }
     catch (InvalidCastException ex)
     {
@@ -145,7 +145,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   [SecuritySafeCritical]
   bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
   {
-    return \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzHPu9XX3E93EL(_param1) && this.Contains((\u0023\u003DzH9HNkng\u003D) _param1);
+    return \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzHPu9XX3E93EL(_param1) && this.Contains((T) _param1);
   }
 
   void ICollection.\u0023\u003DzFAvqYrLd8QaQMLuvPOiGwFQ\u003D(Array _param1, int _param2)
@@ -164,14 +164,14 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
 
   int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
   {
-    return \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzHPu9XX3E93EL(_param1) ? this.IndexOf((\u0023\u003DzH9HNkng\u003D) _param1) : -1;
+    return \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzHPu9XX3E93EL(_param1) ? this.IndexOf((T) _param1) : -1;
   }
 
   void IList.\u0023\u003DzuxPIbwR6tOrj8Wpe9w\u003D\u003D(int _param1, object _param2)
   {
     try
     {
-      this.Insert(_param1, (\u0023\u003DzH9HNkng\u003D) _param2);
+      this.Insert(_param1, (T) _param2);
     }
     catch (InvalidCastException ex)
     {
@@ -182,9 +182,9 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   [SecuritySafeCritical]
   void IList.\u0023\u003Dzx\u0024PvHCNWSNwq55LIBQ\u003D\u003D(object _param1)
   {
-    if (!\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzHPu9XX3E93EL(_param1))
+    if (!\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzHPu9XX3E93EL(_param1))
       return;
-    this.Remove((\u0023\u003DzH9HNkng\u003D) _param1);
+    this.Remove((T) _param1);
   }
 
   public int Count => this.\u0023\u003DzJpbCbio\u003D;
@@ -194,16 +194,16 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     this.\u0023\u003DzJpbCbio\u003D = _param1;
   }
 
-  bool ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
+  bool ICollection<T>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
   {
     return false;
   }
 
-  public \u0023\u003DzH9HNkng\u003D this[int _param1]
+  public T this[int _param1]
   {
     get
     {
-      return _param1 >= this.\u0023\u003DzJpbCbio\u003D ? default (\u0023\u003DzH9HNkng\u003D) : this.\u0023\u003Dzg0gWX4E\u003D[_param1];
+      return _param1 >= this.\u0023\u003DzJpbCbio\u003D ? default (T) : this.\u0023\u003Dzg0gWX4E\u003D[_param1];
     }
     set
     {
@@ -214,7 +214,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     }
   }
 
-  public void Add(\u0023\u003DzH9HNkng\u003D _param1)
+  public void Add(T _param1)
   {
     if (this.\u0023\u003DzJpbCbio\u003D == this.\u0023\u003Dzg0gWX4E\u003D.Length)
       this.\u0023\u003DzflETr9POPm\u0024J(this.\u0023\u003DzJpbCbio\u003D + 1);
@@ -232,7 +232,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     ++this.\u0023\u003Dzq9NR138\u003D;
   }
 
-  public bool Contains(\u0023\u003DzH9HNkng\u003D _param1)
+  public bool Contains(T _param1)
   {
     if ((object) _param1 == null)
     {
@@ -243,7 +243,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       }
       return false;
     }
-    EqualityComparer<\u0023\u003DzH9HNkng\u003D> equalityComparer = EqualityComparer<\u0023\u003DzH9HNkng\u003D>.Default;
+    EqualityComparer<T> equalityComparer = EqualityComparer<T>.Default;
     for (int index = 0; index < this.\u0023\u003DzJpbCbio\u003D; ++index)
     {
       if (equalityComparer.Equals(this.\u0023\u003Dzg0gWX4E\u003D[index], _param1))
@@ -252,27 +252,27 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     return false;
   }
 
-  public void CopyTo(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2)
+  public void CopyTo(T[] _param1, int _param2)
   {
     Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, 0, (Array) _param1, _param2, this.\u0023\u003DzJpbCbio\u003D);
   }
 
-  IEnumerator<\u0023\u003DzH9HNkng\u003D> IEnumerable<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
+  IEnumerator<T> IEnumerable<T>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
   {
-    return (IEnumerator<\u0023\u003DzH9HNkng\u003D>) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzdFhhG7w\u003D(this);
+    return (IEnumerator<T>) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzdFhhG7w\u003D(this);
   }
 
   IEnumerator IEnumerable.\u0023\u003DzSV_TZe7ftMh2SQ86i417Nok\u003D()
   {
-    return (IEnumerator) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzdFhhG7w\u003D(this);
+    return (IEnumerator) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzdFhhG7w\u003D(this);
   }
 
-  public int IndexOf(\u0023\u003DzH9HNkng\u003D _param1)
+  public int IndexOf(T _param1)
   {
-    return Array.IndexOf<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, 0, this.\u0023\u003DzJpbCbio\u003D);
+    return Array.IndexOf<T>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, 0, this.\u0023\u003DzJpbCbio\u003D);
   }
 
-  public void Insert(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
+  public void Insert(int _param1, T _param2)
   {
     if (_param1 > this.\u0023\u003DzJpbCbio\u003D)
       throw new ArgumentOutOfRangeException("");
@@ -285,7 +285,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     ++this.\u0023\u003Dzq9NR138\u003D;
   }
 
-  public bool Remove(\u0023\u003DzH9HNkng\u003D _param1)
+  public bool Remove(T _param1)
   {
     int num = this.IndexOf(_param1);
     if (num < 0)
@@ -301,45 +301,45 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     --this.\u0023\u003DzJpbCbio\u003D;
     if (_param1 < this.\u0023\u003DzJpbCbio\u003D)
       Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, _param1 + 1, (Array) this.\u0023\u003Dzg0gWX4E\u003D, _param1, this.\u0023\u003DzJpbCbio\u003D - _param1);
-    this.\u0023\u003Dzg0gWX4E\u003D[this.\u0023\u003DzJpbCbio\u003D] = default (\u0023\u003DzH9HNkng\u003D);
+    this.\u0023\u003Dzg0gWX4E\u003D[this.\u0023\u003DzJpbCbio\u003D] = default (T);
     ++this.\u0023\u003Dzq9NR138\u003D;
   }
 
   private static bool \u0023\u003DzHPu9XX3E93EL(object _param0)
   {
-    if (_param0 is \u0023\u003DzH9HNkng\u003D)
+    if (_param0 is T)
       return true;
-    return _param0 == null && (object) default (\u0023\u003DzH9HNkng\u003D) == null;
+    return _param0 == null && (object) default (T) == null;
   }
 
-  public \u0023\u003DzH9HNkng\u003D \u0023\u003DzxKsmolQ\u003D()
+  public T \u0023\u003DzxKsmolQ\u003D()
   {
-    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dzj_Gd1fY\u003D<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzg0gWX4E\u003D, 0, this.Count);
+    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dzj_Gd1fY\u003D<T>(this.\u0023\u003Dzg0gWX4E\u003D, 0, this.Count);
   }
 
-  public \u0023\u003DzH9HNkng\u003D \u0023\u003DzC52X0FE\u003D()
+  public T \u0023\u003DzC52X0FE\u003D()
   {
-    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzg0gWX4E\u003D, 0, this.Count);
+    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(this.\u0023\u003Dzg0gWX4E\u003D, 0, this.Count);
   }
 
-  public void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<\u0023\u003DzH9HNkng\u003D> _param1)
+  public void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<T> _param1)
   {
     this.\u0023\u003DzdG5UbJ7rAsgF(this.\u0023\u003DzJpbCbio\u003D, _param1);
   }
 
-  public \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dzq2zVESXBEvJM()
+  public \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<T> \u0023\u003Dzq2zVESXBEvJM()
   {
-    return (\u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<\u0023\u003DzH9HNkng\u003D>) new \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D>(this);
+    return (\u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<T>) new \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<T>(this);
   }
 
-  public void Clone(\u0023\u003DzH9HNkng\u003D[] _param1)
+  public void Clone(T[] _param1)
   {
     this.CopyTo(_param1, 0);
   }
 
   public void Clone(
     int _param1,
-    \u0023\u003DzH9HNkng\u003D[] _param2,
+    T[] _param2,
     int _param3,
     int _param4)
   {
@@ -367,20 +367,20 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     this.\u0023\u003Dz2GOzd49sS99C(num);
   }
 
-  public \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzdFhhG7w\u003D \u0023\u003DzRPOJ5g0\u003D()
+  public \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzdFhhG7w\u003D \u0023\u003DzRPOJ5g0\u003D()
   {
-    return new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzdFhhG7w\u003D(this);
+    return new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzdFhhG7w\u003D(this);
   }
 
-  public int \u0023\u003DzttdLFAU\u003D(\u0023\u003DzH9HNkng\u003D _param1, int _param2)
+  public int \u0023\u003DzttdLFAU\u003D(T _param1, int _param2)
   {
     if (_param2 > this.\u0023\u003DzJpbCbio\u003D)
       throw new ArgumentOutOfRangeException("");
-    return Array.IndexOf<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, _param2, this.\u0023\u003DzJpbCbio\u003D - _param2);
+    return Array.IndexOf<T>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, _param2, this.\u0023\u003DzJpbCbio\u003D - _param2);
   }
 
   public int \u0023\u003DzttdLFAU\u003D(
-    \u0023\u003DzH9HNkng\u003D _param1,
+    T _param1,
     int _param2,
     int _param3)
   {
@@ -388,12 +388,12 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       throw new ArgumentOutOfRangeException("");
     if (_param3 < 0 || _param2 > this.\u0023\u003DzJpbCbio\u003D - _param3)
       throw new ArgumentOutOfRangeException("");
-    return Array.IndexOf<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, _param2, _param3);
+    return Array.IndexOf<T>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, _param2, _param3);
   }
 
   public void \u0023\u003DzdG5UbJ7rAsgF(
     int _param1,
-    IEnumerable<\u0023\u003DzH9HNkng\u003D> _param2)
+    IEnumerable<T> _param2)
   {
     if (_param2 == null)
       throw new ArgumentOutOfRangeException("");
@@ -408,12 +408,12 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
         Array.Copy(sourceArray2, 0, (Array) this.\u0023\u003Dzg0gWX4E\u003D, _param1, length1);
         this.\u0023\u003DzJpbCbio\u003D += length1;
         break;
-      case IList<\u0023\u003DzH9HNkng\u003D> zH9HnkngList:
+      case IList<T> zH9HnkngList:
         int count = zH9HnkngList.Count;
-        \u0023\u003DzH9HNkng\u003D[] sourceArray1 = zH9HnkngList.\u0023\u003Dz1bvQV4SZTWpA<\u0023\u003DzH9HNkng\u003D>();
+        T[] sourceArray1 = zH9HnkngList.\u0023\u003Dz1bvQV4SZTWpA<T>();
         this.\u0023\u003DzflETr9POPm\u0024J(this.\u0023\u003DzJpbCbio\u003D + count);
         Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, _param1, (Array) this.\u0023\u003Dzg0gWX4E\u003D, _param1 + count, this.\u0023\u003DzJpbCbio\u003D - _param1);
-        \u0023\u003DzH9HNkng\u003D[] zg0gWx4E = this.\u0023\u003Dzg0gWX4E\u003D;
+        T[] zg0gWx4E = this.\u0023\u003Dzg0gWX4E\u003D;
         int destinationIndex = _param1;
         int length2 = count;
         Array.Copy((Array) sourceArray1, 0, (Array) zg0gWx4E, destinationIndex, length2);
@@ -421,10 +421,10 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
         ++this.\u0023\u003Dzq9NR138\u003D;
         break;
       default:
-        using (IEnumerator<\u0023\u003DzH9HNkng\u003D> enumerator = _param2.GetEnumerator())
+        using (IEnumerator<T> enumerator = _param2.GetEnumerator())
         {
           int length3 = this.\u0023\u003DzJpbCbio\u003D - _param1;
-          \u0023\u003DzH9HNkng\u003D[] zH9HnkngArray = new \u0023\u003DzH9HNkng\u003D[length3];
+          T[] zH9HnkngArray = new T[length3];
           Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, _param1, (Array) zH9HnkngArray, 0, length3);
           while (enumerator.MoveNext())
           {
@@ -441,18 +441,18 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     }
   }
 
-  public int \u0023\u003DzLi0LBQXEUVc9(\u0023\u003DzH9HNkng\u003D _param1)
+  public int \u0023\u003DzLi0LBQXEUVc9(T _param1)
   {
     return this.\u0023\u003DzJpbCbio\u003D == 0 ? -1 : this.\u0023\u003DzLi0LBQXEUVc9(_param1, this.\u0023\u003DzJpbCbio\u003D - 1, this.\u0023\u003DzJpbCbio\u003D);
   }
 
-  public int \u0023\u003DzLi0LBQXEUVc9(\u0023\u003DzH9HNkng\u003D _param1, int _param2)
+  public int \u0023\u003DzLi0LBQXEUVc9(T _param1, int _param2)
   {
     return _param2 < this.\u0023\u003DzJpbCbio\u003D ? this.\u0023\u003DzLi0LBQXEUVc9(_param1, _param2, _param2 + 1) : throw new ArgumentOutOfRangeException("");
   }
 
   public int \u0023\u003DzLi0LBQXEUVc9(
-    \u0023\u003DzH9HNkng\u003D _param1,
+    T _param1,
     int _param2,
     int _param3)
   {
@@ -466,7 +466,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       throw new ArgumentOutOfRangeException("");
     if (_param3 > _param2 + 1)
       throw new ArgumentOutOfRangeException("");
-    return Array.LastIndexOf<\u0023\u003DzH9HNkng\u003D>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, _param2, _param3);
+    return Array.LastIndexOf<T>(this.\u0023\u003Dzg0gWX4E\u003D, _param1, _param2, _param3);
   }
 
   public void \u0023\u003DzdDirImQ\u003D(int _param1, int _param2)
@@ -486,9 +486,9 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     ++this.\u0023\u003Dzq9NR138\u003D;
   }
 
-  public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzSWlLd4k\u003D()
+  public T[] \u0023\u003DzSWlLd4k\u003D()
   {
-    \u0023\u003DzH9HNkng\u003D[] destinationArray = new \u0023\u003DzH9HNkng\u003D[this.\u0023\u003DzJpbCbio\u003D];
+    T[] destinationArray = new T[this.\u0023\u003DzJpbCbio\u003D];
     Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, 0, (Array) destinationArray, 0, this.\u0023\u003DzJpbCbio\u003D);
     return destinationArray;
   }
@@ -500,10 +500,10 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
     this.\u0023\u003Dz2GOzd49sS99C(this.\u0023\u003DzJpbCbio\u003D);
   }
 
-  internal static IList<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz\u00247WdPho\u003D(
-    List<\u0023\u003DzH9HNkng\u003D> _param0)
+  internal static IList<T> \u0023\u003Dz\u00247WdPho\u003D(
+    List<T> _param0)
   {
-    return (IList<\u0023\u003DzH9HNkng\u003D>) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzcHSqfbQ\u003D(_param0);
+    return (IList<T>) new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003DzcHSqfbQ\u003D(_param0);
   }
 
   public void \u0023\u003Dze68j\u0024gs\u003D(int _param1)
@@ -512,17 +512,17 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   }
 
   internal sealed class \u0023\u003DzcHSqfbQ\u003D : 
-    IList<\u0023\u003DzH9HNkng\u003D>,
-    ICollection<\u0023\u003DzH9HNkng\u003D>,
-    IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+    IList<T>,
+    ICollection<T>,
+    IEnumerable<T>,
     IEnumerable
   {
     
-    private readonly List<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz5IntIgc\u003D;
+    private readonly List<T> \u0023\u003Dz5IntIgc\u003D;
     
     private readonly object \u0023\u003Dz6j0cxXE\u003D;
 
-    internal \u0023\u003DzcHSqfbQ\u003D(List<\u0023\u003DzH9HNkng\u003D> _param1)
+    internal \u0023\u003DzcHSqfbQ\u003D(List<T> _param1)
     {
       this.\u0023\u003Dz5IntIgc\u003D = _param1;
       this.\u0023\u003Dz6j0cxXE\u003D = ((ICollection) _param1).SyncRoot;
@@ -539,10 +539,10 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
 
     public bool IsReadOnly
     {
-      get => ((ICollection<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003Dz5IntIgc\u003D).IsReadOnly;
+      get => ((ICollection<T>) this.\u0023\u003Dz5IntIgc\u003D).IsReadOnly;
     }
 
-    public \u0023\u003DzH9HNkng\u003D this[int _param1]
+    public T this[int _param1]
     {
       get
       {
@@ -556,7 +556,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       }
     }
 
-    public void Add(\u0023\u003DzH9HNkng\u003D _param1)
+    public void Add(T _param1)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
         this.\u0023\u003Dz5IntIgc\u003D.Add(_param1);
@@ -568,19 +568,19 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
         this.\u0023\u003Dz5IntIgc\u003D.Clear();
     }
 
-    public bool Contains(\u0023\u003DzH9HNkng\u003D _param1)
+    public bool Contains(T _param1)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
         return this.\u0023\u003Dz5IntIgc\u003D.Contains(_param1);
     }
 
-    public void CopyTo(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2)
+    public void CopyTo(T[] _param1, int _param2)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
         this.\u0023\u003Dz5IntIgc\u003D.CopyTo(_param1, _param2);
     }
 
-    public bool Remove(\u0023\u003DzH9HNkng\u003D _param1)
+    public bool Remove(T _param1)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
         return this.\u0023\u003Dz5IntIgc\u003D.Remove(_param1);
@@ -592,19 +592,19 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
         return (IEnumerator) this.\u0023\u003Dz5IntIgc\u003D.GetEnumerator();
     }
 
-    IEnumerator<\u0023\u003DzH9HNkng\u003D> IEnumerable<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
+    IEnumerator<T> IEnumerable<T>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
-        return ((IEnumerable<\u0023\u003DzH9HNkng\u003D>) this.\u0023\u003Dz5IntIgc\u003D).GetEnumerator();
+        return ((IEnumerable<T>) this.\u0023\u003Dz5IntIgc\u003D).GetEnumerator();
     }
 
-    public int IndexOf(\u0023\u003DzH9HNkng\u003D _param1)
+    public int IndexOf(T _param1)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
         return this.\u0023\u003Dz5IntIgc\u003D.IndexOf(_param1);
     }
 
-    public void Insert(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
+    public void Insert(int _param1, T _param2)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
         this.\u0023\u003Dz5IntIgc\u003D.Insert(_param1, _param2);
@@ -618,29 +618,29 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
   }
 
   public struct \u0023\u003DzdFhhG7w\u003D : 
-    IEnumerator<\u0023\u003DzH9HNkng\u003D>,
+    IEnumerator<T>,
     IEnumerator,
     IDisposable
   {
     
-    private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> \u0023\u003Dz5IntIgc\u003D;
+    private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> \u0023\u003Dz5IntIgc\u003D;
     
     private readonly int \u0023\u003Dzq9NR138\u003D;
     
-    private \u0023\u003DzH9HNkng\u003D \u0023\u003DzCUQ2vA0\u003D;
+    private T \u0023\u003DzCUQ2vA0\u003D;
     
     private int \u0023\u003DzKx97DYo\u003D;
 
     internal \u0023\u003DzdFhhG7w\u003D(
-      \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> _param1)
+      \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> _param1)
     {
       this.\u0023\u003Dz5IntIgc\u003D = _param1;
       this.\u0023\u003DzKx97DYo\u003D = 0;
       this.\u0023\u003Dzq9NR138\u003D = _param1.\u0023\u003Dzq9NR138\u003D;
-      this.\u0023\u003DzCUQ2vA0\u003D = default (\u0023\u003DzH9HNkng\u003D);
+      this.\u0023\u003DzCUQ2vA0\u003D = default (T);
     }
 
-    public \u0023\u003DzH9HNkng\u003D Current => this.\u0023\u003DzCUQ2vA0\u003D;
+    public T Current => this.\u0023\u003DzCUQ2vA0\u003D;
 
     object IEnumerator.\u0023\u003DzmTTmbxIPszmU9qSLsSEbSqM\u003D()
     {
@@ -655,7 +655,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
 
     public bool MoveNext()
     {
-      \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> z5IntIgc = this.\u0023\u003Dz5IntIgc\u003D;
+      \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> z5IntIgc = this.\u0023\u003Dz5IntIgc\u003D;
       if (this.\u0023\u003Dzq9NR138\u003D != z5IntIgc.\u0023\u003Dzq9NR138\u003D || this.\u0023\u003DzKx97DYo\u003D >= z5IntIgc.\u0023\u003DzJpbCbio\u003D)
         return this.\u0023\u003Dz6UGGlohE7E5N();
       this.\u0023\u003DzCUQ2vA0\u003D = z5IntIgc.\u0023\u003Dzg0gWX4E\u003D[this.\u0023\u003DzKx97DYo\u003D];
@@ -668,7 +668,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       if (this.\u0023\u003Dzq9NR138\u003D != this.\u0023\u003Dz5IntIgc\u003D.\u0023\u003Dzq9NR138\u003D)
         throw new InvalidOperationException("");
       this.\u0023\u003DzKx97DYo\u003D = 0;
-      this.\u0023\u003DzCUQ2vA0\u003D = default (\u0023\u003DzH9HNkng\u003D);
+      this.\u0023\u003DzCUQ2vA0\u003D = default (T);
     }
 
     private bool \u0023\u003Dz6UGGlohE7E5N()
@@ -676,7 +676,7 @@ internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX
       if (this.\u0023\u003Dzq9NR138\u003D != this.\u0023\u003Dz5IntIgc\u003D.\u0023\u003Dzq9NR138\u003D)
         throw new InvalidOperationException("");
       this.\u0023\u003DzKx97DYo\u003D = this.\u0023\u003Dz5IntIgc\u003D.\u0023\u003DzJpbCbio\u003D + 1;
-      this.\u0023\u003DzCUQ2vA0\u003D = default (\u0023\u003DzH9HNkng\u003D);
+      this.\u0023\u003DzCUQ2vA0\u003D = default (T);
       return false;
     }
   }

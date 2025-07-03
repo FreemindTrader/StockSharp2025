@@ -47,7 +47,7 @@ internal abstract class UIBaseVM :
         get => this.GetParentVM().ChartElement;
     }
 
-    protected IScichartSurfaceVM \u0023\u003Dz\u00246aIVrHDxlRJ()
+    protected ScichartSurfaceMVVM \u0023\u003Dz\u00246aIVrHDxlRJ()
     {
         return this.GetParentVM().Pane;
     }
@@ -72,9 +72,9 @@ internal abstract class UIBaseVM :
 
 protected abstract void \u0023\u003DzXfak0jM\u003D();
 
-public abstract bool \u0023\u003DzjgUUUJE\u003D(IEnumerableEx<ChartDrawData.IDrawValue> _param1);
+public abstract bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1);
 
-public void \u0023\u003DzYI36Ggg\u003D()
+public void Reset()
   {
     this.\u0023\u003DzowR7R4A\u003D();
 this.\u0023\u003Dz4EoFHUaZg4JL(new Action(this.\u0023\u003DzAVykYn0F15D5Ztnzfw\u003D\u003D), true);
@@ -105,7 +105,7 @@ public void \u0023\u003Dzfd2adzY\u003D(
       throw new InvalidOperationException("");
 this.SetParentVM(_param1);
 this.\u0023\u003DzY0x9JtY\u003D();
-this.\u0023\u003DzYI36Ggg\u003D();
+this.Reset();
   }
 
   public virtual void \u0023\u003DzoK7PFLI\u003D()
@@ -153,7 +153,7 @@ protected void \u0023\u003Dz7GhHTEkMkDYT(
       new Binding()
       {
         Source = (object) _param1,
-        Path = new PropertyPath((object) dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn)
+        Path = new PropertyPath((object) BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn)
       }
     };
     markerAnnotation3.SetMultiBinding(isHiddenProperty, (IMultiValueConverter)conv, bindingArray);
@@ -198,7 +198,7 @@ yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D = _param2;
 
   private void \u0023\u003Dzl5v19PTUv87upojg6w\u003D\u003D()
   {
-    this.\u0023\u003DzYI36Ggg\u003D();
+    this.Reset();
     this.\u0023\u003DzXfak0jM\u003D();
   }
 

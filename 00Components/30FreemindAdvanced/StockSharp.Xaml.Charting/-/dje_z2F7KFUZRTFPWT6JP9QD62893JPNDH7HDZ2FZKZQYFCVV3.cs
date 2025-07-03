@@ -17,7 +17,7 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
   dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd
 {
   
-  public static readonly DependencyProperty \u0023\u003DzIrmMBlMvjNiI = DependencyProperty.Register("", typeof (double), typeof (dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzIrmMBlMvjNiI = DependencyProperty.Register("", typeof (double), typeof (dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
 
   public dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd()
   {
@@ -38,8 +38,8 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
   }
 
   protected override void \u0023\u003DzQcMZBOuAsfh7MaaJgQ\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2,
+    IRenderContext2D _param1,
+    IRenderPassData _param2,
     \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D _param3)
   {
     bool flag1 = _param2.\u0023\u003DzDoU1CJhSUWFV();
@@ -55,8 +55,8 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
     bool flag2 = (double) num2 < 3.0 || num3 < 3.0;
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
     \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_1 = _param1.\u0023\u003Dze8WyDhI\u003D(this.UpWickColor, this.Opacity, new bool?());
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_2 = _param1.\u0023\u003Dze8WyDhI\u003D(this.DownWickColor, this.Opacity, new bool?());
+    IBrush2D xrgcdFbSdWgN9GcT8_1 = _param1.\u0023\u003Dze8WyDhI\u003D(this.UpWickColor, this.Opacity, new bool?());
+    IBrush2D xrgcdFbSdWgN9GcT8_2 = _param1.\u0023\u003Dze8WyDhI\u003D(this.DownWickColor, this.Opacity, new bool?());
     for (int index = 0; index < num1; ++index)
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR> iwzGyvO4YaqDkpiI = (\u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>) ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index);
@@ -75,7 +75,7 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
       int val2_1 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num4).\u0023\u003DzYNd6r7dW43yr();
       int val1 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num5).\u0023\u003DzYNd6r7dW43yr();
       \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = flag3 ? this.\u0023\u003DzCuIJmYsDJgLxaAWxjg\u003D\u003D : this.\u0023\u003Dz\u0024a39MFSHPCym0Lo_LQ\u003D\u003D;
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_3 = flag3 ? xrgcdFbSdWgN9GcT8_1 : xrgcdFbSdWgN9GcT8_2;
+      IBrush2D xrgcdFbSdWgN9GcT8_3 = flag3 ? xrgcdFbSdWgN9GcT8_1 : xrgcdFbSdWgN9GcT8_2;
       if (paletteProvider != null)
       {
         \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D htg5ScQrmCkwmAaNyPa = paletteProvider;
@@ -117,7 +117,7 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
         {
           double num17 = Math.Min(num16 + num3, (double) val2_2) - num16;
           if (num17 >= 3.0)
-            _param1.\u0023\u003DzIZCdW2WR6Rxw(rhwYsZxA33iRu6Id7J, (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null, new Point((double) num7, num16 + num17 / 2.0), (double) num2, num17);
+            _param1.\u0023\u003DzIZCdW2WR6Rxw(rhwYsZxA33iRu6Id7J, (IBrush2D) null, new Point((double) num7, num16 + num17 / 2.0), (double) num2, num17);
         }
       }
     }

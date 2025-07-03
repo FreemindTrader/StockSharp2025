@@ -39,26 +39,26 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       case IList<T> objList:
         return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dzj_Gd1fY\u003D<T>(objList.\u0023\u003Dz1bvQV4SZTWpA<T>(), 0, objList.Count);
       default:
-        \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<T> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>();
-        T obj1 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+        IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
+        T obj1 = mijfkOcK7kdYtA2avPae.MinValue;
         foreach (T obj2 in _param0)
-          obj1 = mijfkOcK7kdYtA2avPae.\u0023\u003DzTOKoqZw\u003D(obj1, obj2);
+          obj1 = mijfkOcK7kdYtA2avPae.Max(obj1, obj2);
         return obj1;
     }
   }
 
   internal static T \u0023\u003Dz2wWd_ME\u003D<T>(IEnumerable<T> _param0)
   {
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<T> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>();
-    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, new Func<T, T, T>(mijfkOcK7kdYtA2avPae.\u0023\u003DzRHWvkgM\u003D));
+    IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
+    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, new Func<T, T, T>(mijfkOcK7kdYtA2avPae.Min));
   }
 
-  internal static T \u0023\u003DzBz1ADeDbIZML<T>(IEnumerable<T> _param0, T _param1)
+  internal static T MinGreaterThan<T>(IEnumerable<T> _param0, T _param1)
   {
     return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, new Func<T, T, T>(new \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzfW4bGCOhNTb68QUGf3lqU0A\u003D<T>()
     {
       \u0023\u003DzdSc1Vdr7S9Qq = _param1,
-      \u0023\u003DzIaonIBnYkmSl = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>()
+      \u0023\u003DzIaonIBnYkmSl = MathHelper.GetMath<T>()
     }.\u0023\u003DzA7K\u00242BlHitlwuKa7XBFblpY\u003D));
   }
 
@@ -71,7 +71,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       case IList<T> objList:
         return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(objList.\u0023\u003Dz1bvQV4SZTWpA<T>(), 0, objList.Count, _param1);
       default:
-        T obj1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>().\u0023\u003DzNLkUKUcMn0yy();
+        T obj1 = MathHelper.GetMath<T>().MaxValue;
         foreach (T obj2 in _param0)
           obj1 = _param1(obj1, obj2);
         return obj1;
@@ -92,16 +92,16 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
         \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<T>(objList.\u0023\u003Dz1bvQV4SZTWpA<T>(), 0, objList.Count, out _param1, out _param2);
         break;
       default:
-        \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<T> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>();
-        _param2 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-        _param1 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+        IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
+        _param2 = mijfkOcK7kdYtA2avPae.MinValue;
+        _param1 = mijfkOcK7kdYtA2avPae.MaxValue;
         using (IEnumerator<T> enumerator = _param0.GetEnumerator())
         {
           while (enumerator.MoveNext())
           {
             T current = enumerator.Current;
-            _param2 = mijfkOcK7kdYtA2avPae.\u0023\u003DzTOKoqZw\u003D(_param2, current);
-            _param1 = mijfkOcK7kdYtA2avPae.\u0023\u003DzRHWvkgM\u003D(_param1, current);
+            _param2 = mijfkOcK7kdYtA2avPae.Max(_param2, current);
+            _param1 = mijfkOcK7kdYtA2avPae.Min(_param1, current);
           }
           break;
         }
@@ -144,25 +144,25 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       case IList<T> objList:
         return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D<T>(objList.\u0023\u003Dz1bvQV4SZTWpA<T>(), 0, objList.Count, _param1, out _param2);
       default:
-        \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<T> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>();
+        IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
         IEnumerator<T> enumerator = _param0.GetEnumerator();
         if (!enumerator.MoveNext())
         {
           _param2 = 1.0;
           return true;
         }
-        double num1 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzb9UCYbo\u003D(enumerator.Current);
+        double num1 = mijfkOcK7kdYtA2avPae.ToDouble(enumerator.Current);
         if (!enumerator.MoveNext())
         {
           _param2 = 1.0;
           return true;
         }
-        double num2 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzb9UCYbo\u003D(enumerator.Current);
+        double num2 = mijfkOcK7kdYtA2avPae.ToDouble(enumerator.Current);
         double num3 = num2 - num1;
         double num4 = num2;
         while (enumerator.MoveNext())
         {
-          double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzb9UCYbo\u003D(enumerator.Current);
+          double num5 = mijfkOcK7kdYtA2avPae.ToDouble(enumerator.Current);
           double num6 = num5 - num4;
           if (Math.Abs(num3 - num6) > _param1)
           {
@@ -179,8 +179,8 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
 
   internal static T \u0023\u003Dz2wWd_ME\u003D<T>(T[] _param0, int _param1, int _param2)
   {
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<T> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>();
-    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, _param1, _param2, new Func<T, T, T>(mijfkOcK7kdYtA2avPae.\u0023\u003DzRHWvkgM\u003D));
+    IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
+    return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, _param1, _param2, new Func<T, T, T>(mijfkOcK7kdYtA2avPae.Min));
   }
 
   internal static T \u0023\u003Dz2wWd_ME\u003D<T>(
@@ -189,7 +189,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     int _param2,
     Func<T, T, T> _param3)
   {
-    T obj1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<T>().\u0023\u003DzNLkUKUcMn0yy();
+    T obj1 = MathHelper.GetMath<T>().MaxValue;
     int index1 = _param1;
     int num = _param2;
     int index2;
@@ -285,7 +285,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe byte \u0023\u003Dzj_Gd1fY\u003D(byte[] _param1, int _param2, int _param3)
     {
-      byte num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>().\u0023\u003Dzn4BdrXIKaI7E();
+      byte num1 = MathHelper.GetMath<byte>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -364,9 +364,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out byte _param4,
       out byte _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -553,7 +553,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe Decimal \u0023\u003Dzj_Gd1fY\u003D(Decimal[] _param1, int _param2, int _param3)
     {
-      Decimal num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<Decimal>().\u0023\u003Dzn4BdrXIKaI7E();
+      Decimal num1 = MathHelper.GetMath<Decimal>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -632,9 +632,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out Decimal _param4,
       out Decimal _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<Decimal> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<Decimal>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<Decimal> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<Decimal>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -822,7 +822,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe uint \u0023\u003Dzj_Gd1fY\u003D(uint[] _param1, int _param2, int _param3)
     {
-      uint num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>().\u0023\u003Dzn4BdrXIKaI7E();
+      uint num1 = MathHelper.GetMath<uint>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -901,9 +901,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out uint _param4,
       out uint _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -1091,7 +1091,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe ushort \u0023\u003Dzj_Gd1fY\u003D(ushort[] _param1, int _param2, int _param3)
     {
-      ushort num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>().\u0023\u003Dzn4BdrXIKaI7E();
+      ushort num1 = MathHelper.GetMath<ushort>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -1170,9 +1170,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out ushort _param4,
       out ushort _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -1360,7 +1360,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe float \u0023\u003Dzj_Gd1fY\u003D(float[] _param1, int _param2, int _param3)
     {
-      float num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>().\u0023\u003Dzn4BdrXIKaI7E();
+      float num1 = MathHelper.GetMath<float>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -1439,9 +1439,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out float _param4,
       out float _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -1629,7 +1629,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe double \u0023\u003Dzj_Gd1fY\u003D(double[] _param1, int _param2, int _param3)
     {
-      double num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>().\u0023\u003Dzn4BdrXIKaI7E();
+      double num1 = MathHelper.GetMath<double>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -1708,9 +1708,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out double _param4,
       out double _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -1898,7 +1898,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe int \u0023\u003Dzj_Gd1fY\u003D(int[] _param1, int _param2, int _param3)
     {
-      int num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>().\u0023\u003Dzn4BdrXIKaI7E();
+      int num1 = MathHelper.GetMath<int>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -1977,9 +1977,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out int _param4,
       out int _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -2167,7 +2167,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe ulong \u0023\u003Dzj_Gd1fY\u003D(ulong[] _param1, int _param2, int _param3)
     {
-      ulong num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>().\u0023\u003Dzn4BdrXIKaI7E();
+      ulong num1 = MathHelper.GetMath<ulong>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -2246,9 +2246,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out ulong _param4,
       out ulong _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -2436,7 +2436,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe DateTime \u0023\u003Dzj_Gd1fY\u003D(DateTime[] _param1, int _param2, int _param3)
     {
-      DateTime dateTime1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<DateTime>().\u0023\u003Dzn4BdrXIKaI7E();
+      DateTime dateTime1 = MathHelper.GetMath<DateTime>().MinValue;
       if (_param3 == 0)
         return dateTime1;
       if (_param3 == 1)
@@ -2515,9 +2515,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out DateTime _param4,
       out DateTime _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<DateTime> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<DateTime>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<DateTime> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<DateTime>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -2708,7 +2708,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe sbyte \u0023\u003Dzj_Gd1fY\u003D(sbyte[] _param1, int _param2, int _param3)
     {
-      sbyte num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>().\u0023\u003Dzn4BdrXIKaI7E();
+      sbyte num1 = MathHelper.GetMath<sbyte>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -2787,9 +2787,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out sbyte _param4,
       out sbyte _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -2971,52 +2971,52 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
   }
 
-  private interface \u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<\u0023\u003DzH9HNkng\u003D>
+  private interface \u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<T>
   {
-    \u0023\u003DzH9HNkng\u003D \u0023\u003Dzj_Gd1fY\u003D(
-      \u0023\u003DzH9HNkng\u003D[] _param1,
+    T \u0023\u003Dzj_Gd1fY\u003D(
+      T[] _param1,
       int _param2,
       int _param3);
 
     void \u0023\u003Dz\u0024zWmmGTAbDON(
-      \u0023\u003DzH9HNkng\u003D[] _param1,
+      T[] _param1,
       int _param2,
       int _param3,
-      out \u0023\u003DzH9HNkng\u003D _param4,
-      out \u0023\u003DzH9HNkng\u003D _param5);
+      out T _param4,
+      out T _param5);
 
-    bool \u0023\u003DzNe9B4H63T3gE(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2, int _param3);
+    bool \u0023\u003DzNe9B4H63T3gE(T[] _param1, int _param2, int _param3);
 
     bool \u0023\u003DzNe9B4H63T3gE(
-      IList<\u0023\u003DzH9HNkng\u003D> _param1,
+      IList<T> _param1,
       int _param2,
       int _param3);
 
     bool \u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D(
-      \u0023\u003DzH9HNkng\u003D[] _param1,
+      T[] _param1,
       int _param2,
       int _param3,
       double _param4,
       out double _param5);
 
     bool \u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D(
-      IList<\u0023\u003DzH9HNkng\u003D> _param1,
+      IList<T> _param1,
       int _param2,
       int _param3,
       double _param4,
       out double _param5);
   }
 
-  private sealed class \u0023\u003DzfW4bGCOhNTb68QUGf3lqU0A\u003D<\u0023\u003DzH9HNkng\u003D>
+  private sealed class \u0023\u003DzfW4bGCOhNTb68QUGf3lqU0A\u003D<T>
   {
-    public \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<\u0023\u003DzH9HNkng\u003D> \u0023\u003DzIaonIBnYkmSl;
-    public \u0023\u003DzH9HNkng\u003D \u0023\u003DzdSc1Vdr7S9Qq;
+    public IMath<T> \u0023\u003DzIaonIBnYkmSl;
+    public T \u0023\u003DzdSc1Vdr7S9Qq;
 
-    internal \u0023\u003DzH9HNkng\u003D \u0023\u003DzA7K\u00242BlHitlwuKa7XBFblpY\u003D(
-      \u0023\u003DzH9HNkng\u003D _param1,
-      \u0023\u003DzH9HNkng\u003D _param2)
+    internal T \u0023\u003DzA7K\u00242BlHitlwuKa7XBFblpY\u003D(
+      T _param1,
+      T _param2)
     {
-      return this.\u0023\u003DzIaonIBnYkmSl.\u0023\u003DzBz1ADeDbIZML(this.\u0023\u003DzdSc1Vdr7S9Qq, _param1, _param2);
+      return this.\u0023\u003DzIaonIBnYkmSl.MinGreaterThan(this.\u0023\u003DzdSc1Vdr7S9Qq, _param1, _param2);
     }
   }
 
@@ -3025,7 +3025,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe short \u0023\u003Dzj_Gd1fY\u003D(short[] _param1, int _param2, int _param3)
     {
-      short num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>().\u0023\u003Dzn4BdrXIKaI7E();
+      short num1 = MathHelper.GetMath<short>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -3104,9 +3104,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out short _param4,
       out short _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -3294,7 +3294,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe long \u0023\u003Dzj_Gd1fY\u003D(long[] _param1, int _param2, int _param3)
     {
-      long num1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>().\u0023\u003Dzn4BdrXIKaI7E();
+      long num1 = MathHelper.GetMath<long>().MinValue;
       if (_param3 == 0)
         return num1;
       if (_param3 == 1)
@@ -3373,9 +3373,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out long _param4,
       out long _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)
@@ -3563,7 +3563,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
   {
     public unsafe TimeSpan \u0023\u003Dzj_Gd1fY\u003D(TimeSpan[] _param1, int _param2, int _param3)
     {
-      TimeSpan timeSpan1 = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<TimeSpan>().\u0023\u003Dzn4BdrXIKaI7E();
+      TimeSpan timeSpan1 = MathHelper.GetMath<TimeSpan>().MinValue;
       if (_param3 == 0)
         return timeSpan1;
       if (_param3 == 1)
@@ -3642,9 +3642,9 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
       out TimeSpan _param4,
       out TimeSpan _param5)
     {
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TimeSpan> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<TimeSpan>();
-      _param5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
-      _param4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
+      IMath<TimeSpan> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<TimeSpan>();
+      _param5 = mijfkOcK7kdYtA2avPae.MinValue;
+      _param4 = mijfkOcK7kdYtA2avPae.MaxValue;
       if (_param3 == 0)
         return;
       if (_param3 == 1)

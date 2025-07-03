@@ -11,15 +11,15 @@ using System.Windows;
 internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc
 {
   public static \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003Dz3GCmtrCAMr5X(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1)
+    IRenderContext2D _param0,
+    IRenderPassData _param1)
   {
     return _param1.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzLoVCYl3hjZBU4crjAfWPkSLa4Y\u0024ucsDiug\u003D\u003D() ? (\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvkiQmxVYK9U97jOB8bGOy2PBp_pLd5jGNdYymoTDbRmbQA\u003D\u003D(_param0, _param1.\u0023\u003Dzy9phceyLTfoo()) : (\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003DzybqkC8coKG2MWZVsSaL09LcR6ctgqgi\u0024W6pagiihIO387\u0024ZiLuWQ_YeiOxiW((\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRP\u00247i5KjXV_EoiYpsU4SJFwyNTQgHPoau3Q\u003D(_param0), _param0.\u0023\u003Dz8DEW4l1E337F());
   }
 
   public static \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003Dztos6AjFhGj6qHx8r6Ds0ao0\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1,
+    IRenderContext2D _param0,
+    IRenderPassData _param1,
     float _param2,
     double _param3)
   {
@@ -27,30 +27,30 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60
   }
 
   public static \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzUVX2hzSJiUvkgg4NgQ6FCHrRuz_S(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1,
+    IRenderContext2D _param0,
+    IRenderPassData _param1,
     double _param2)
   {
     return _param1.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzLoVCYl3hjZBU4crjAfWPkSLa4Y\u0024ucsDiug\u003D\u003D() ? (\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003Dzrues9Ob2ahkBEptorQqptNGfI7XaNZykEEKKDZ\u0024OuavwBINRe4VAfR0RMQLAL2haQA5dxguZ_gKR(_param0, _param1.\u0023\u003Dzy9phceyLTfoo()) : (\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OSmujTRcMu3TOYSZLM_9fRh70CW1T6F62Yi4trW6QV0kf\u0024W_dfc\u003D(new \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D(_param0, _param1.\u0023\u003DzDoU1CJhSUWFV(), _param2), _param0.\u0023\u003Dz8DEW4l1E337F());
   }
 
   public static \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzmuYww2BKaMZ86Wjblw\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1,
+    IRenderContext2D _param0,
+    IRenderPassData _param1,
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT _param2)
   {
     return _param1.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzLoVCYl3hjZBU4crjAfWPkSLa4Y\u0024ucsDiug\u003D\u003D() ? (\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003DzAJ2g5KE5bawCuhjG0TamYs76HfkKpScdXMxC74ZuN1XneUaWV1gAArQ\u003D(_param0, _param1.\u0023\u003Dzy9phceyLTfoo(), _param2) : (\u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX) new \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x8MMDygc2mw\u003D\u003D(_param0, _param2);
   }
 
   public static \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ \u0023\u003DzYtr1U3NGZ0n8(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1)
+    IRenderContext2D _param0,
+    IRenderPassData _param1)
   {
     return _param1.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzLoVCYl3hjZBU4crjAfWPkSLa4Y\u0024ucsDiug\u003D\u003D() ? (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ) new \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU770SjI_XX5kyW7udt\u0024X5Q\u003D\u003D(_param0, _param1.\u0023\u003Dzy9phceyLTfoo()) : (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ) new \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSVApliVecExTEGlk7H531YmTGRKDgfgGbW31OoVL8yjU4vPp5Cc\u003D(_param0);
   }
 
   public static \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003Dz6W6QZGLrJ_xbPUC8cLFVBnmEa0aB(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
+    IRenderContext2D _param0,
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D _param1)
   {
     Size size = new Size(360.0, \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D.\u0023\u003Dz62MsOEK3dnlV(_param0.\u0023\u003Dz8DEW4l1E337F()));
@@ -58,7 +58,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60
   }
 
   public static \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzfBnUxfO7E1olRb03IQ\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param0,
+    IRenderContext2D _param0,
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D _param1)
   {
     Size size = new Size(360.0, \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D.\u0023\u003Dz62MsOEK3dnlV(_param0.\u0023\u003Dz8DEW4l1E337F()));

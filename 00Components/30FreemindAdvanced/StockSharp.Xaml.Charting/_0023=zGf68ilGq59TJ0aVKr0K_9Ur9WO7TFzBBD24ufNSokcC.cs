@@ -67,7 +67,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
     this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzBCuJKIIaVAUt();
   }
 
-  public override bool \u0023\u003DzjgUUUJE\u003D(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+  public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
     zeaY3Uu1m4CyxerxRw.\u0023\u003DzRRvwDu67s9Rm = this;

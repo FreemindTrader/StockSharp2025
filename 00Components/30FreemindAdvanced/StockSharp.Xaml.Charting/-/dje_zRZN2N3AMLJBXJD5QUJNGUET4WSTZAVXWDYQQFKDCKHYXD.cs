@@ -14,7 +14,7 @@ using System.Windows;
 namespace StockSharp.Xaml.Charting;
 
 internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register("", typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
@@ -55,20 +55,20 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
   private void \u0023\u003DzoI7ONAZ_gOY2(
     double _param1,
     Point _param2,
-    IEnumerable<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> _param3,
+    IEnumerable<IAxis> _param3,
     string _param4)
   {
-    foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB dynWmoFzgH4RlWB0lB in _param3)
-      this.\u0023\u003DzzXTqVFg\u003D(_param2, dynWmoFzgH4RlWB0lB, _param1);
+    foreach (IAxis dynWmoFzgH4RlWB0lB in _param3)
+      this.GrowBy(_param2, dynWmoFzgH4RlWB0lB, _param1);
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(_param4, new object[1]
     {
       (object) _param1
     });
   }
 
-  protected void \u0023\u003DzzXTqVFg\u003D(
+  protected void GrowBy(
     Point _param1,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param2,
+    IAxis _param2,
     double _param3)
   {
     double num1 = this.\u0023\u003Dz1f1oGj4PehI\u0024(_param2);
@@ -82,7 +82,7 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
   }
 
   private double \u0023\u003Dz1f1oGj4PehI\u0024(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     double num = _param1.IsHorizontalAxis ? _param1.Width : _param1.Height;
     dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd parentSurface = _param1.get_ParentSurface() as dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd;

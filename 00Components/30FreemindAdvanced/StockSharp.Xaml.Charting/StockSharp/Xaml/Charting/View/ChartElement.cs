@@ -27,10 +27,7 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter(typeof (ExpandableObjectConverter))]
-public abstract class ChartElement<T> : 
-  ChartPart<
-  #nullable disable
-  T>,
+public abstract class ChartElement<T> : ChartPart<T>,
   IfxChartElement,
   IChartElement,
   IChartPart<IChartElement>,
@@ -48,13 +45,13 @@ public abstract class ChartElement<T> :
   
   private readonly CachedSynchronizedSet<IChartElement> \u0023\u003DzbSEUhuE\u003D = new CachedSynchronizedSet<IChartElement>();
   
-  private IChartArea \u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D;
+  private IChartArea _chartArea;
   
   private StockSharp.Xaml.Charting.ChartArea \u0023\u003DzpvwmDngT0_MF;
   
   private string \u0023\u003Dz5A6vN_lzy9jl;
   
-  private bool \u0023\u003DzVf6ckz06jjnq = true;
+  private bool _isVisible = true;
   
   private bool \u0023\u003DzY_3lsXhzr\u0024rW = true;
   
@@ -72,8 +69,8 @@ public abstract class ChartElement<T> :
   [Browsable(false)]
   public IChartArea ChartArea
   {
-    get => this.\u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D;
-    private set => this.\u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D = value;
+    get => this._chartArea;
+    private set => this._chartArea = value;
   }
 
   IChartArea IChartElement.PersistentChartArea => (IChartArea) this.\u0023\u003DzpvwmDngT0_MF;
@@ -97,12 +94,12 @@ public abstract class ChartElement<T> :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Show", Description = "ShowDot", GroupName = "Common", Order = 1010)]
   public bool IsVisible
   {
-    get => this.\u0023\u003DzVf6ckz06jjnq;
+    get => this._isVisible;
     set
     {
-      if (this.\u0023\u003DzVf6ckz06jjnq == value)
+      if (this._isVisible == value)
         return;
-      this.\u0023\u003DzVf6ckz06jjnq = value;
+      this._isVisible = value;
       this.RaisePropertyChanged("");
     }
   }
@@ -262,7 +259,7 @@ public abstract class ChartElement<T> :
   {
     this.OnReset();
     foreach (IfxChartElement childElement in this.ChildElements)
-      childElement.\u0023\u003DzYI36Ggg\u003D();
+      childElement.Reset();
   }
 
   void IfxChartElement.\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSswqcr11vVhHbZb1DIg\u003D()
@@ -457,7 +454,7 @@ public abstract class ChartElement<T> :
 
   private sealed class \u0023\u003Dzp8Uw9yL4K8Elv3B8f_3h_PM\u003D
   {
-    public \u0023\u003DzH9HNkng\u003D \u0023\u003DzCdVlvQ8\u003D;
+    public T \u0023\u003DzCdVlvQ8\u003D;
 
     internal void \u0023\u003DzHCUE8pxyT_S0mUpBMw\u003D\u003D(KeyValuePair<Guid, string> _param1)
     {

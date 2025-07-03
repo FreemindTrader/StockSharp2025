@@ -13,12 +13,12 @@ using System.Collections.ObjectModel;
 internal interface \u0023\u003DzYB09msiytIDFpDsyaHpANNcjrPNql900yccNyuZHBUW6 : 
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7,
   IDisposable,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
+  IHitTestable,
+  IInvalidatableElement
 {
   ReadOnlyCollection<IRenderableSeries> \u0023\u003Dzvxq3X_8T\u0024Noo();
 
-  \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003Dz1cRMfLZU4Eo2();
+  IRenderContext2D \u0023\u003Dz1cRMfLZU4Eo2();
 
   bool \u0023\u003DzdBvSINdoeQWX(
     IRenderableSeries _param1);

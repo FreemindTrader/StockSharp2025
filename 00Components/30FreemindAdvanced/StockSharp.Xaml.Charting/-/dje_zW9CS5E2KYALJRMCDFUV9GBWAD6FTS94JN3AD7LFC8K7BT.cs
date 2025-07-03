@@ -15,7 +15,7 @@ using System.Windows;
 namespace StockSharp.Xaml.Charting;
 
 internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   public static readonly 
@@ -33,7 +33,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
   protected dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd()
   {
     this.SetCurrentValue(dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd.\u0023\u003DzgKwtLGQKgy\u0024Y, (object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllVisibleSeries);
-    this.SetCurrentValue(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseMove);
+    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseMove);
   }
 
   public \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D SeriesData
@@ -104,7 +104,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
     bool flag = false;
     if (num != 0)
     {
-      this.\u0023\u003DzeAqKwx8\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface);
+      this.\u0023\u003DzeAqKwx8\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
       this.\u0023\u003DzKpmBZbLVz8O6 = _param1.\u0023\u003DzCJb5Ya_8UZCR();
       flag = this.\u0023\u003DzebZge1miA2O0(this.\u0023\u003DzeAqKwx8\u003D);
     }
@@ -136,9 +136,9 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
 
   protected virtual bool \u0023\u003Dzt9d2ExuvJfVV(Point _param1)
   {
-    bool flag = _param1.X.\u0023\u003DzutrFxOU\u003D() && _param1.Y.\u0023\u003DzutrFxOU\u003D() && _param1.X >= 0.0 && _param1.X <= this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN();
+    bool flag = _param1.X.IsFiniteNumber() && _param1.Y.IsFiniteNumber() && _param1.X >= 0.0 && _param1.X <= this.ModifierSurface.ActualWidth;
     if (this.\u0023\u003DzKpmBZbLVz8O6)
-      flag = ((flag ? 1 : 0) & (_param1.Y < 0.0 ? 0 : (_param1.Y <= this.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM() ? 1 : 0))) != 0;
+      flag = ((flag ? 1 : 0) & (_param1.Y < 0.0 ? 0 : (_param1.Y <= this.ModifierSurface.ActualHeight ? 1 : 0))) != 0;
     return flag;
   }
 
@@ -147,7 +147,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
   protected abstract void \u0023\u003Dz1z_ZexRGbAiN91rPDA\u003D\u003D(Point _param1);
 
   protected \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzU0tYbfdnROi1(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1,
+    IAxis _param1,
     Point _param2)
   {
     \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D uaaCmXpj7JdmPvp0w = _param1.\u0023\u003DzjuB\u0024Pa8\u003D(_param2);
@@ -238,7 +238,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
       switch (this.\u0023\u003Dz4fzyEZ1SsHYa)
       {
@@ -300,7 +300,7 @@ label_10:
       }
       __fault
       {
-        this.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D();
+        this.Dispose();
       }
     }
 

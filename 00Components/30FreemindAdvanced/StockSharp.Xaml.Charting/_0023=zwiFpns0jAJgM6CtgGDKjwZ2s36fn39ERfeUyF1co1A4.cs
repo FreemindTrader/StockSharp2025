@@ -16,7 +16,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
+  BaseRenderableSeries
 {
   
   private static readonly Color \u0023\u003DzoJA_hWE5hCyI = Colors.Lime;
@@ -59,11 +59,11 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
   
   public static readonly DependencyProperty \u0023\u003DzS_RbfR1zd8IE = DependencyProperty.Register("", typeof (Color), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz5VPchSaAyqKI, new PropertyChangedCallback(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAlixuKzZZLKUKWSV0URsXGlstR6X)));
   
-  public static readonly DependencyProperty \u0023\u003DzGzgkxANVj0h\u0024 = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzGzgkxANVj0h\u0024 = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzfU9B0J_UC7Cc = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzfU9B0J_UC7Cc = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003Dzhmdt0NOfj9lR = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dzhmdt0NOfj9lR = DependencyProperty.Register("", typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
 
   private static \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D \u0023\u003DzodKLGEc\u003D(
     DependencyObject _param0)
@@ -260,8 +260,8 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     if (_param2.\u0023\u003DzDoU1CJhSUWFV())
       throw new NotSupportedException("");
@@ -277,10 +277,10 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
     bool showSell = this.ShowSell;
     bool showError = this.ShowError;
     this.\u0023\u003DzUoUE4C\u00245Se1kwpkguw\u003D\u003D(num1);
-    this.\u0023\u003Dzs0UU1DAP2q5Y?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null);
-    this.\u0023\u003Dz4dIQ8UJiVsfS?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null);
-    this.\u0023\u003DzgWpc\u0024ZUm4ev3?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null);
-    this.\u0023\u003DzcdlS8RJ_\u0024F0CWxVbTQ\u003D\u003D?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null);
+    this.\u0023\u003Dzs0UU1DAP2q5Y?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (IBrush2D) null);
+    this.\u0023\u003Dz4dIQ8UJiVsfS?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (IBrush2D) null);
+    this.\u0023\u003DzgWpc\u0024ZUm4ev3?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (IBrush2D) null);
+    this.\u0023\u003DzcdlS8RJ_\u0024F0CWxVbTQ\u003D\u003D?.\u0023\u003Dz7ZSU06M\u003D(_param1, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (IBrush2D) null);
     Span<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D> span = e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI().AsSpan<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D>();
     for (int index = 0; index < span.Length; ++index)
     {
@@ -313,7 +313,7 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
           if (jachadU4L5YhB24CaqEjd != null)
           {
             double num3 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(zU3TaXfs.Price());
-            jachadU4L5YhB24CaqEjd.\u0023\u003DzjgUUUJE\u003D(_param1, num2, num3, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null);
+            jachadU4L5YhB24CaqEjd.Draw(_param1, num2, num3, (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null, (IBrush2D) null);
           }
         }
       }

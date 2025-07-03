@@ -12,7 +12,7 @@ internal interface \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrX
   \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D,
   IRenderableSeries,
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,
-  \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95,
+  IDrawable,
   IXmlSerializable
 {
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELTst58YqUlllvt2EY65UXJw\u003D\u003D \u0023\u003Dz9NrWMa9\u00243uT8();
@@ -20,6 +20,6 @@ internal interface \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrX
   bool IsDigitalLine { get; set; }
 
   void \u0023\u003Dzimuduc7U8xVasEdThw\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     bool _param2);
 }

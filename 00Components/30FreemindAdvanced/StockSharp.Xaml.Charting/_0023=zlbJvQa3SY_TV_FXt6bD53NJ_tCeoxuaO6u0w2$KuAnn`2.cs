@@ -12,7 +12,7 @@ using System.Collections.Generic;
 internal interface \u0023\u003DzlbJvQa3SY_TV_FXt6bD53NJ_tCeoxuaO6u0w2\u0024KuAnng9SymwQ\u003D\u003D<T, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  ISuspendable,
   \u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH
   where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable

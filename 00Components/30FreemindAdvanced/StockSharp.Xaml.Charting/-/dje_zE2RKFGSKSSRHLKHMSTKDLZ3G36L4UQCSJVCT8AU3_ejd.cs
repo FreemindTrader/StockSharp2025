@@ -174,8 +174,8 @@ internal static class ThemeManager
     if (!(oldValue != str & DependencyPropertyHelper.GetValueSource((DependencyObject) frameworkElement, ThemeManager.\u0023\u003DzOJJsEsQ\u003D).BaseValueSource != BaseValueSource.Inherited))
       return;
     frameworkElement.\u0023\u003DzeHF6BUxLFClh(str);
-    if (!(frameworkElement is \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D ks0apzs3KdsLxgXg))
+    if (!(frameworkElement is IInvalidatableElement ks0apzs3KdsLxgXg))
       return;
-    ks0apzs3KdsLxgXg.\u0023\u003Dz5q8i9C4\u003D();
+    ks0apzs3KdsLxgXg.InvalidateElement();
   }
 }

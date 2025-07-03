@@ -693,16 +693,16 @@ internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2Q
     return \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003DzqPyk4AvuUtIM(num2 * _param1, num1 * _param1, num2, num1, _param2, _param3);
   }
 
-  public static \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D \u0023\u003Dz9_a9j8HqDt0f(
+  public static \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D Mult(
     \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param0,
     \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param1)
   {
     \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D wbczijKaygP156vtDeaE;
-    \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003Dz9_a9j8HqDt0f(ref _param0, ref _param1, out wbczijKaygP156vtDeaE);
+    \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.Mult(ref _param0, ref _param1, out wbczijKaygP156vtDeaE);
     return wbczijKaygP156vtDeaE;
   }
 
-  public static void \u0023\u003Dz9_a9j8HqDt0f(
+  public static void Mult(
     ref \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param0,
     ref \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param1,
     out \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param2)
@@ -853,7 +853,7 @@ internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2Q
     \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param0,
     \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param1)
   {
-    return \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.\u0023\u003Dz9_a9j8HqDt0f(_param0, _param1);
+    return \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D.Mult(_param0, _param1);
   }
 
   public static bool operator ==(

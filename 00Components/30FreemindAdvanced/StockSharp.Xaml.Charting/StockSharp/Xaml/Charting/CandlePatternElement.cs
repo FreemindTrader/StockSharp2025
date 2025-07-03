@@ -63,7 +63,7 @@ public class CandlePatternElement :
   }
 
   UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
-    IScichartSurfaceVM _param1)
+    ScichartSurfaceMVVM _param1)
   {
     return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(this);
   }
@@ -71,12 +71,12 @@ public class CandlePatternElement :
   bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D.\u0023\u003DzjgUUUJE\u003D(_param1);
+    return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
   }
 
   void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D.\u0023\u003DzjgUUUJE\u003D(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
+    this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
 
   /// <inheritdoc />

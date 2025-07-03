@@ -45,9 +45,9 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
   
   public static readonly DependencyProperty \u0023\u003DzcSEHQMyzEgRH = DependencyProperty.Register("", typeof (double), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) 500.0, new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzesUKUhGoyfNgYFzSJw\u003D\u003D)));
   
-  private IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>> \u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D;
+  private IEnumerable<Tuple<IAxis, FrameworkElement>> \u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D;
   
-  private IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>> \u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D;
+  private IEnumerable<Tuple<IAxis, FrameworkElement>> \u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D;
   
   internal DelayActionHelper \u0023\u003DzIxFmGbTNpwO0;
 
@@ -252,30 +252,30 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
 
   protected bool \u0023\u003DzLgNKpMJ5V7kN()
   {
-    return this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D != null && this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D.Count<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>() == this.YAxes.Count<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>() && this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D != null && this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D.Count<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>() == this.XAxes.Count<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>();
+    return this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D != null && this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D.Count<Tuple<IAxis, FrameworkElement>>() == this.YAxes.Count<IAxis>() && this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D != null && this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D.Count<Tuple<IAxis, FrameworkElement>>() == this.XAxes.Count<IAxis>();
   }
 
   protected void \u0023\u003DzqB2OzvmQT2Y9(Point _param1)
   {
-    foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xax in this.XAxes)
+    foreach (IAxis xax in this.XAxes)
     {
       dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D njbrqhpNkVkrNpKgU = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D();
       njbrqhpNkVkrNpKgU.\u0023\u003Dz4bf8Oyc\u003D = xax;
-      FrameworkElement frameworkElement = this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D.Where<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>(new Func<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, bool>(njbrqhpNkVkrNpKgU.\u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D)).Select<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D = new Func<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR))).FirstOrDefault<FrameworkElement>();
+      FrameworkElement frameworkElement = this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D.Where<Tuple<IAxis, FrameworkElement>>(new Func<Tuple<IAxis, FrameworkElement>, bool>(njbrqhpNkVkrNpKgU.\u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D)).Select<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D = new Func<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR))).FirstOrDefault<FrameworkElement>();
       this.\u0023\u003Dz0jC4zrgOWDNx(_param1, njbrqhpNkVkrNpKgU.\u0023\u003Dz4bf8Oyc\u003D, frameworkElement);
     }
-    foreach (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yax in this.YAxes)
+    foreach (IAxis yax in this.YAxes)
     {
       dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzPZHe8kTpPoA\u0024JhpeVw6ares\u003D tpPoAJhpeVw6ares = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzPZHe8kTpPoA\u0024JhpeVw6ares\u003D();
       tpPoAJhpeVw6ares.\u0023\u003DzS7JsfCE\u003D = yax;
-      FrameworkElement frameworkElement = this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D.Where<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>(new Func<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, bool>(tpPoAJhpeVw6ares.\u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D)).Select<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J))).FirstOrDefault<FrameworkElement>();
+      FrameworkElement frameworkElement = this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D.Where<Tuple<IAxis, FrameworkElement>>(new Func<Tuple<IAxis, FrameworkElement>, bool>(tpPoAJhpeVw6ares.\u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D)).Select<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J))).FirstOrDefault<FrameworkElement>();
       this.\u0023\u003Dz0jC4zrgOWDNx(_param1, tpPoAJhpeVw6ares.\u0023\u003DzS7JsfCE\u003D, frameworkElement);
     }
   }
 
   private void \u0023\u003Dz0jC4zrgOWDNx(
     Point _param1,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param2,
+    IAxis _param2,
     FrameworkElement _param3)
   {
     if (_param3 == null || _param2 == null)
@@ -283,7 +283,7 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk modifierAxisCanvas = _param2.get_ModifierAxisCanvas();
     bool isPolarAxis = _param2.get_IsPolarAxis();
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D b99xo8DgCb3haWTig = this.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();
-    Point point = isPolarAxis ? b99xo8DgCb3haWTig.\u0023\u003Dz8miGAzg\u003D(_param1) : this.ParentSurface.\u0023\u003DzBgWxEdRxHdEh().TranslatePoint(_param1, (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) _param2);
+    Point point = isPolarAxis ? b99xo8DgCb3haWTig.\u0023\u003Dz8miGAzg\u003D(_param1) : this.ParentSurface.\u0023\u003DzBgWxEdRxHdEh().TranslatePoint(_param1, (IHitTestable) _param2);
     if (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzxGhbraO0gg9\u0024(point, _param2))
     {
       _param3.DataContext = (object) this.\u0023\u003DzU0tYbfdnROi1(_param2, _param1);
@@ -304,19 +304,19 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
 
   private static bool \u0023\u003DzxGhbraO0gg9\u0024(
     Point _param0,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     double num1;
     double num2;
     if (_param1.IsHorizontalAxis)
     {
       num1 = _param0.X;
-      num2 = _param1.\u0023\u003Dzu2ObQ3hMALTN();
+      num2 = _param1.ActualWidth;
     }
     else
     {
       num1 = _param0.Y;
-      num2 = _param1.\u0023\u003Dz2kO1mtG\u0024bEUM();
+      num2 = _param1.ActualHeight;
     }
     return num1 <= num2 && num1 >= 0.0;
   }
@@ -337,11 +337,11 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
   }
 
   private void \u0023\u003DzdwXUIyhDFvIMX\u0024julBrBi\u0024c\u003D(
-    IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>> _param1)
+    IEnumerable<Tuple<IAxis, FrameworkElement>> _param1)
   {
     if (_param1 == null || this.ParentSurface == null)
       return;
-    foreach (Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement> tuple in _param1)
+    foreach (Tuple<IAxis, FrameworkElement> tuple in _param1)
       tuple.Item1.get_ModifierAxisCanvas().\u0023\u003DziYdJ\u00246cCiBha((object) tuple.Item2);
   }
 
@@ -363,16 +363,16 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
     this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D = this.\u0023\u003DzZy0RKGi5V\u0024pH(this.YAxes, this.AxisLabelTemplate);
   }
 
-  protected IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>> \u0023\u003DzZy0RKGi5V\u0024pH(
-    IEnumerable<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB> _param1,
+  protected IEnumerable<Tuple<IAxis, FrameworkElement>> \u0023\u003DzZy0RKGi5V\u0024pH(
+    IEnumerable<IAxis> _param1,
     ControlTemplate _param2)
   {
     dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzaWz8dVeBY\u0024tX1maSKMAhb14\u003D veByTX1maSkmAhb14 = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzaWz8dVeBY\u0024tX1maSKMAhb14\u003D();
     veByTX1maSkmAhb14.\u0023\u003DzRRvwDu67s9Rm = this;
     veByTX1maSkmAhb14.\u0023\u003DzcyfV7AfhGRGy = _param2;
-    IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>> tuples = (IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>) null;
+    IEnumerable<Tuple<IAxis, FrameworkElement>> tuples = (IEnumerable<Tuple<IAxis, FrameworkElement>>) null;
     if (_param1 != null)
-      tuples = (IEnumerable<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>) _param1.Select<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>(new Func<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>(veByTX1maSkmAhb14.\u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D)).ToArray<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>>();
+      tuples = (IEnumerable<Tuple<IAxis, FrameworkElement>>) _param1.Select<IAxis, Tuple<IAxis, FrameworkElement>>(new Func<IAxis, Tuple<IAxis, FrameworkElement>>(veByTX1maSkmAhb14.\u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D)).ToArray<Tuple<IAxis, FrameworkElement>>();
     return tuples;
   }
 
@@ -445,17 +445,17 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, FrameworkElement> \u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D;
-    public static Func<Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>, FrameworkElement> \u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D;
+    public static Func<Tuple<IAxis, FrameworkElement>, FrameworkElement> \u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D;
+    public static Func<Tuple<IAxis, FrameworkElement>, FrameworkElement> \u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D;
 
     internal FrameworkElement \u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR(
-      Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement> _param1)
+      Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item2;
     }
 
     internal FrameworkElement \u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J(
-      Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement> _param1)
+      Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item2;
     }
@@ -463,10 +463,10 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
 
   private sealed class \u0023\u003DzPZHe8kTpPoA\u0024JhpeVw6ares\u003D
   {
-    public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzS7JsfCE\u003D;
+    public IAxis \u0023\u003DzS7JsfCE\u003D;
 
     internal bool \u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D(
-      Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement> _param1)
+      Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item1 == this.\u0023\u003DzS7JsfCE\u003D;
     }
@@ -477,19 +477,19 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
     public dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd \u0023\u003DzRRvwDu67s9Rm;
     public ControlTemplate \u0023\u003DzcyfV7AfhGRGy;
 
-    internal Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement> \u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D(
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    internal Tuple<IAxis, FrameworkElement> \u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D(
+      IAxis _param1)
     {
-      return new Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement>(_param1, (FrameworkElement) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBv1vB\u0024LEKSF4(this.\u0023\u003DzcyfV7AfhGRGy, this.\u0023\u003DzRRvwDu67s9Rm.AxisLabelTemplateSelector, (object) null));
+      return new Tuple<IAxis, FrameworkElement>(_param1, (FrameworkElement) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBv1vB\u0024LEKSF4(this.\u0023\u003DzcyfV7AfhGRGy, this.\u0023\u003DzRRvwDu67s9Rm.AxisLabelTemplateSelector, (object) null));
     }
   }
 
   private sealed class \u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D
   {
-    public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003Dz4bf8Oyc\u003D;
+    public IAxis \u0023\u003Dz4bf8Oyc\u003D;
 
     internal bool \u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D(
-      Tuple<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB, FrameworkElement> _param1)
+      Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item1 == this.\u0023\u003Dz4bf8Oyc\u003D;
     }

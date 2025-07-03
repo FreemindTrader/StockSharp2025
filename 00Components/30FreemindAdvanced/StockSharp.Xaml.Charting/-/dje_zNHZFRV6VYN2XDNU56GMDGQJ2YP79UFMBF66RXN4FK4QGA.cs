@@ -15,7 +15,7 @@ using System.Windows.Input;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   public static readonly DependencyProperty \u0023\u003DzEiZKgbSC39dw = DependencyProperty.Register("", typeof (bool), typeof (dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd), new PropertyMetadata((object) true));
@@ -31,7 +31,7 @@ internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD
   public dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd()
   {
     this.ReceiveHandledEvents = true;
-    this.SetCurrentValue(dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick);
+    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick);
     this.DoubleTapThreshold = TimeSpan.FromMilliseconds(500.0);
   }
 

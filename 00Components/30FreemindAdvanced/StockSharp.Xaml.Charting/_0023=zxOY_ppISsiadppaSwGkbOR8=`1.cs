@@ -11,22 +11,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable enable
-internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9HNkng\u003D> : 
+internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T> : 
   IEnumerable,
   ICollection,
   IList,
   IEnumerable<
   #nullable disable
-  \u0023\u003DzH9HNkng\u003D>,
-  IReadOnlyCollection<\u0023\u003DzH9HNkng\u003D>,
-  IReadOnlyList<\u0023\u003DzH9HNkng\u003D>,
-  ICollection<\u0023\u003DzH9HNkng\u003D>,
-  IList<\u0023\u003DzH9HNkng\u003D>
+  T>,
+  IReadOnlyCollection<T>,
+  IReadOnlyList<T>,
+  ICollection<T>,
+  IList<T>
 {
   
-  private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003Dznoh6bv8\u003D;
+  private readonly T \u0023\u003Dznoh6bv8\u003D;
 
-  public \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D(\u0023\u003DzH9HNkng\u003D _param1)
+  public \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D(T _param1)
   {
     this.\u0023\u003Dznoh6bv8\u003D = _param1;
   }
@@ -34,7 +34,7 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
   #nullable enable
   IEnumerator IEnumerable.\u0023\u003DzSV_TZe7ftMh2SQ86i417Nok\u003D()
   {
-    return (IEnumerator) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
+    return (IEnumerator) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
   }
 
   int ICollection.\u0023\u003Dzl6H\u0024MU\u0024Y9eNBxHLmAI_uHK8\u003D() => 1;
@@ -76,12 +76,12 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
 
   bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object? _param1)
   {
-    return EqualityComparer<\u0023\u003DzH9HNkng\u003D>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, (\u0023\u003DzH9HNkng\u003D) _param1);
+    return EqualityComparer<T>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, (T) _param1);
   }
 
   int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object? _param1)
   {
-    return !EqualityComparer<\u0023\u003DzH9HNkng\u003D>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, (\u0023\u003DzH9HNkng\u003D) _param1) ? -1 : 0;
+    return !EqualityComparer<T>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, (T) _param1) ? -1 : 0;
   }
 
   void IList.\u0023\u003DzuxPIbwR6tOrj8Wpe9w\u003D\u003D(int _param1, object? _param2)
@@ -101,17 +101,17 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
 
   IEnumerator<
   #nullable disable
-  \u0023\u003DzH9HNkng\u003D> IEnumerable<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
+  T> IEnumerable<T>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
   {
-    return (IEnumerator<\u0023\u003DzH9HNkng\u003D>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
+    return (IEnumerator<T>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
   }
 
-  int IReadOnlyCollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzgFtIrs4ENSc_WWxv3LSeKDD\u0024hCiHOapNIw\u003D\u003D()
+  int IReadOnlyCollection<T>.\u0023\u003DzgFtIrs4ENSc_WWxv3LSeKDD\u0024hCiHOapNIw\u003D\u003D()
   {
     return 1;
   }
 
-  \u0023\u003DzH9HNkng\u003D IReadOnlyList<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzE6RKfhg7MZKfCZg03PVrQHF47QBOymO5IQ\u003D\u003D(
+  T IReadOnlyList<T>.\u0023\u003DzE6RKfhg7MZKfCZg03PVrQHF47QBOymO5IQ\u003D\u003D(
     int _param1)
   {
     if (_param1 != 0)
@@ -119,46 +119,46 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
     return this.\u0023\u003Dznoh6bv8\u003D;
   }
 
-  int ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzYUole4\u0024EZuetsIl9ck_WMrZyYkc9() => 1;
+  int ICollection<T>.\u0023\u003DzYUole4\u0024EZuetsIl9ck_WMrZyYkc9() => 1;
 
-  bool ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
+  bool ICollection<T>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
   {
     return true;
   }
 
-  void ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzGBPAZl7kD4Y_019f_JdDMabqLLf_(
-    \u0023\u003DzH9HNkng\u003D _param1)
+  void ICollection<T>.\u0023\u003DzGBPAZl7kD4Y_019f_JdDMabqLLf_(
+    T _param1)
   {
     throw new NotSupportedException();
   }
 
-  void ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzDHU7m5zeb3RDfJiTgdiSGk4T_lc2()
+  void ICollection<T>.\u0023\u003DzDHU7m5zeb3RDfJiTgdiSGk4T_lc2()
   {
     throw new NotSupportedException();
   }
 
-  bool ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz\u0024bxRf6j_TZkMx5OhZQOQ5LXVqjFT(
-    \u0023\u003DzH9HNkng\u003D _param1)
+  bool ICollection<T>.\u0023\u003Dz\u0024bxRf6j_TZkMx5OhZQOQ5LXVqjFT(
+    T _param1)
   {
-    return EqualityComparer<\u0023\u003DzH9HNkng\u003D>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, _param1);
+    return EqualityComparer<T>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, _param1);
   }
 
-  void ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzB1ZS\u002489m\u0024lCkmdGveUer9MPNc9vT(
+  void ICollection<T>.\u0023\u003DzB1ZS\u002489m\u0024lCkmdGveUer9MPNc9vT(
     #nullable enable
     #nullable disable
-    \u0023\u003DzH9HNkng\u003D[] _param1,
+    T[] _param1,
     int _param2)
   {
     _param1[_param2] = this.\u0023\u003Dznoh6bv8\u003D;
   }
 
-  bool ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzSNMbA4NBIHO6wT8LM2lfHp2KTKyC(
-    \u0023\u003DzH9HNkng\u003D _param1)
+  bool ICollection<T>.\u0023\u003DzSNMbA4NBIHO6wT8LM2lfHp2KTKyC(
+    T _param1)
   {
     throw new NotSupportedException();
   }
 
-  \u0023\u003DzH9HNkng\u003D IList<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz0AHuzVTfq\u0024d4zWGWl4gMSpIlkWpf(
+  T IList<T>.\u0023\u003Dz0AHuzVTfq\u0024d4zWGWl4gMSpIlkWpf(
     int _param1)
   {
     if (_param1 != 0)
@@ -166,27 +166,27 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
     return this.\u0023\u003Dznoh6bv8\u003D;
   }
 
-  void IList<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz_vb79EtlArV3ZdNVeByl4tQWV3O8(
+  void IList<T>.\u0023\u003Dz_vb79EtlArV3ZdNVeByl4tQWV3O8(
     int _param1,
-    \u0023\u003DzH9HNkng\u003D _param2)
+    T _param2)
   {
     throw new NotSupportedException();
   }
 
-  int IList<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzQSvgbNgfbIbolYFpnQTahdZzoVuR(
-    \u0023\u003DzH9HNkng\u003D _param1)
+  int IList<T>.\u0023\u003DzQSvgbNgfbIbolYFpnQTahdZzoVuR(
+    T _param1)
   {
-    return !EqualityComparer<\u0023\u003DzH9HNkng\u003D>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, _param1) ? -1 : 0;
+    return !EqualityComparer<T>.Default.Equals(this.\u0023\u003Dznoh6bv8\u003D, _param1) ? -1 : 0;
   }
 
-  void IList<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzZ4BzDdC48hLOGQW0MXBt3l3kXadY(
+  void IList<T>.\u0023\u003DzZ4BzDdC48hLOGQW0MXBt3l3kXadY(
     int _param1,
-    \u0023\u003DzH9HNkng\u003D _param2)
+    T _param2)
   {
     throw new NotSupportedException();
   }
 
-  void IList<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzO_7_iKfNhQVcisMnfax5R9QC0XjJ(int _param1)
+  void IList<T>.\u0023\u003DzO_7_iKfNhQVcisMnfax5R9QC0XjJ(int _param1)
   {
     throw new NotSupportedException();
   }
@@ -194,14 +194,14 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
   private sealed class \u0023\u003DzdFhhG7w\u003D : 
     IDisposable,
     IEnumerator,
-    IEnumerator<\u0023\u003DzH9HNkng\u003D>
+    IEnumerator<T>
   {
     
-    private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003Dznoh6bv8\u003D;
+    private readonly T \u0023\u003Dznoh6bv8\u003D;
     
     private bool \u0023\u003DzoTGwV7jKHTwM;
 
-    public \u0023\u003DzdFhhG7w\u003D(\u0023\u003DzH9HNkng\u003D _param1)
+    public \u0023\u003DzdFhhG7w\u003D(T _param1)
     {
       this.\u0023\u003Dznoh6bv8\u003D = _param1;
     }
@@ -211,7 +211,7 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
       return (object) this.\u0023\u003Dznoh6bv8\u003D;
     }
 
-    \u0023\u003DzH9HNkng\u003D IEnumerator<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzFPFGeOP\u0024gB895G_WoTnUqerbuUD3()
+    T IEnumerator<T>.\u0023\u003DzFPFGeOP\u0024gB895G_WoTnUqerbuUD3()
     {
       return this.\u0023\u003Dznoh6bv8\u003D;
     }
@@ -226,7 +226,7 @@ internal sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzH9
       this.\u0023\u003DzoTGwV7jKHTwM = false;
     }
 
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
   }

@@ -62,7 +62,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
     if (this.\u0023\u003DzbMH2duO6275S\u0024V7L\u0024g\u003D\u003D == count)
       return;
     this.\u0023\u003DzbMH2duO6275S\u0024V7L\u0024g\u003D\u003D = count;
-    this.\u0023\u003DzebZge1miA2O0(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY(new Point(this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN() / 2.0, this.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM() / 2.0), (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0, \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None, true, (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpOgj\u0024HEwAG4ZlfwSGT7i2APW) null));
+    this.\u0023\u003DzebZge1miA2O0(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY(new Point(this.ModifierSurface.ActualWidth / 2.0, this.ModifierSurface.ActualHeight / 2.0), (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0, \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None, true, (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpOgj\u0024HEwAG4ZlfwSGT7i2APW) null));
   }
 
   private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D

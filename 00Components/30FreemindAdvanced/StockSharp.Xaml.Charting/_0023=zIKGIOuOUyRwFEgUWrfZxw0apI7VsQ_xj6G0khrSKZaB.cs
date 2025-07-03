@@ -12,10 +12,10 @@ using System.Windows.Shapes;
 internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp : 
   \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI84SlzGeHM63aaGG8vJyxtBAVakvxTUthBw\u003D
 {
-  private readonly \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D \u0023\u003Dz0mppXFo\u003D;
+  private readonly IChartModifier \u0023\u003Dz0mppXFo\u003D;
 
   public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp(
-    \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D _param1)
+    IChartModifier _param1)
   {
     this.\u0023\u003Dz0mppXFo\u003D = _param1;
   }
@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8
   public Line \u0023\u003Dz7ftWcP9VIwGB(Point _param1, bool _param2)
   {
     Line line = (Line) null;
-    if (_param1.Y.\u0023\u003DzutrFxOU\u003D() && _param1.X.\u0023\u003DzutrFxOU\u003D())
+    if (_param1.Y.IsFiniteNumber() && _param1.X.IsFiniteNumber())
     {
       line = new Line();
       \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D b99xo8DgCb3haWTig = this.\u0023\u003Dz0mppXFo\u003D.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();

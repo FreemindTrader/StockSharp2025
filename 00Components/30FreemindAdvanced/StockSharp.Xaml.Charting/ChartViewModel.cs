@@ -73,7 +73,7 @@ internal sealed class ChartViewModel :  DependencyObject
   
   private int \u0023\u003Dzw_LOBOuAUrZC;
   
-  public static readonly DependencyProperty \u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D = DependencyProperty.Register("", typeof (ObservableCollection<IScichartSurfaceVM>), typeof (ChartViewModel));
+  public static readonly DependencyProperty \u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D = DependencyProperty.Register("", typeof (ObservableCollection<ScichartSurfaceMVVM>), typeof (ChartViewModel));
   
   private readonly ICommand \u0023\u003DzlI5Q0fMkGWsRwzw1OG_ENm_rPNsf;
   
@@ -103,7 +103,7 @@ internal sealed class ChartViewModel :  DependencyObject
 
   public ChartViewModel()
   {
-    this.ChartPaneViewModels = new ObservableCollection<IScichartSurfaceVM>();
+    this.ChartPaneViewModels = new ObservableCollection<ScichartSurfaceMVVM>();
     this.MinimumRange = 50;
     this.ShowOverview = false;
     this.ShowLegend = true;
@@ -351,7 +351,7 @@ internal sealed class ChartViewModel :  DependencyObject
     ccsreH3nwJbFwtEpkxQw.\u0023\u003DzXCEqv64\u003D = this.\u0023\u003DzmMdfCUCSnZWZ;
     if (_param1 == null)
       _param1 = ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Func<Order, bool>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzO_BIxNwmDn6VDgqOIx_JE6RwPKwP));
-    CollectionHelper.ForEach<Order>((IEnumerable<Order>) CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<IScichartSurfaceVM, Order>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D = new Func<IScichartSurfaceVM, IEnumerable<Order>>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.\u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D));
+    CollectionHelper.ForEach<Order>((IEnumerable<Order>) CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<ScichartSurfaceMVVM, Order>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D = new Func<ScichartSurfaceMVVM, IEnumerable<Order>>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.\u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D));
   }
 
   private void \u0023\u003Dz5RYhL5E\u003D() => this.SelectedTheme = ChartHelper.CurrChartTheme();
@@ -547,11 +547,11 @@ internal sealed class ChartViewModel :  DependencyObject
     }
   }
 
-  public ObservableCollection<IScichartSurfaceVM> ChartPaneViewModels
+  public ObservableCollection<ScichartSurfaceMVVM> ChartPaneViewModels
   {
     get
     {
-      return (ObservableCollection<IScichartSurfaceVM>) this.GetValue(ChartViewModel.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D);
+      return (ObservableCollection<ScichartSurfaceMVVM>) this.GetValue(ChartViewModel.\u0023\u003DzvVSpwQoXV\u0024G9i4cjOQ\u003D\u003D);
     }
     set
     {
@@ -729,10 +729,10 @@ internal sealed class ChartViewModel :  DependencyObject
     ChartArea chartArea = _param1;
     if (chartArea != null)
       return chartArea;
-    ObservableCollection<IScichartSurfaceVM> chartPaneViewModels = this.ChartPaneViewModels;
+    ObservableCollection<ScichartSurfaceMVVM> chartPaneViewModels = this.ChartPaneViewModels;
     if (chartPaneViewModels == null)
       return (ChartArea) null;
-    return chartPaneViewModels.FirstOrDefault<IScichartSurfaceVM>()?.Area;
+    return chartPaneViewModels.FirstOrDefault<ScichartSurfaceMVVM>()?.Area;
   }
 
   private void \u0023\u003DzLk5v0G8ASW9AV\u0024TMw8K1MAc\u003D(object _param1)
@@ -813,9 +813,9 @@ internal sealed class ChartViewModel :  DependencyObject
   private void \u0023\u003DzAhcQ9lSmwA8jEy1mdYi6ePg\u003D(ChartArea _param1)
   {
     if (Equatable<ChartArea>.op_Inequality((Equatable<ChartArea>) _param1, (ChartArea) null))
-      _param1.\u0023\u003Dz3ThQNm3rQ1fp().ShowHiddenAxesCommand.TryExecute((object) null);
+      _param1.ViewModel().ShowHiddenAxesCommand.TryExecute((object) null);
     else
-      CollectionHelper.ForEach<IScichartSurfaceVM>((IEnumerable<IScichartSurfaceVM>) this.ChartPaneViewModels, ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<IScichartSurfaceVM>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
+      CollectionHelper.ForEach<ScichartSurfaceMVVM>((IEnumerable<ScichartSurfaceMVVM>) this.ChartPaneViewModels, ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<ScichartSurfaceMVVM>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
   }
 
   private bool \u0023\u003DzjUJWvCc8BSpnpUc8DQ5qbx8\u003D(ChartArea _param1) => this.IsInteracted;
@@ -887,21 +887,21 @@ internal sealed class ChartViewModel :  DependencyObject
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly ChartViewModel.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartViewModel.\u0023\u003Dz7qOdpi4\u003D();
-    public static Action<IScichartSurfaceVM> \u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D;
+    public static Action<ScichartSurfaceMVVM> \u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D;
     public static Action<ChartAxis> \u0023\u003DzDiOIqlf15Sqxg5EJYQ\u003D\u003D;
     public static Action<\u0023\u003DzCp5d2Zte2oCosmmx2S7no\u0024N_5z\u0024D8zNgBQ\u003D\u003D> \u0023\u003DzXj9SS49o1J\u0024OEf0eTw\u003D\u003D;
     public static Func<Order, bool> \u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D;
     public static Func<Order, bool> \u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D;
-    public static Func<IScichartSurfaceVM, 
+    public static Func<ScichartSurfaceMVVM, 
     #nullable enable
     IEnumerable<
     #nullable disable
     Order>> \u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D;
 
     internal void \u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D(
-      IScichartSurfaceVM _param1)
+      ScichartSurfaceMVVM _param1)
     {
-      _param1.Area.\u0023\u003Dz3ThQNm3rQ1fp().ShowHiddenAxesCommand.TryExecute((object) null);
+      _param1.Area.ViewModel().ShowHiddenAxesCommand.TryExecute((object) null);
     }
 
     internal void \u0023\u003DzziKq1fCxTiR\u0024IxwE1_to_NU\u003D(ChartAxis _param1)
@@ -919,7 +919,7 @@ internal sealed class ChartViewModel :  DependencyObject
     {
       ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D();
       lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D = _param1;
-      IChart chart = ((IScichartSurfaceVM) lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D).Chart;
+      IChart chart = ((ScichartSurfaceMVVM) lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D).Chart;
       IChartArea area = chart.Areas.FirstOrDefault<IChartArea>(new Func<IChartArea, bool>(lrrNtIjstOuVg4Rro.\u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D));
       if (area == null)
         return;
@@ -933,7 +933,7 @@ internal sealed class ChartViewModel :  DependencyObject
     IEnumerable<
     #nullable disable
     Order> \u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh(
-      IScichartSurfaceVM _param1)
+      ScichartSurfaceMVVM _param1)
     {
       return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(ChartViewModel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
     }
@@ -957,7 +957,7 @@ internal sealed class ChartViewModel :  DependencyObject
 
     internal bool \u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D(IChartArea _param1)
     {
-      return ((ChartArea) _param1).\u0023\u003Dz3ThQNm3rQ1fp() == this.\u0023\u003DzsWV8_ck\u003D;
+      return ((ChartArea) _param1).ViewModel() == this.\u0023\u003DzsWV8_ck\u003D;
     }
   }
 

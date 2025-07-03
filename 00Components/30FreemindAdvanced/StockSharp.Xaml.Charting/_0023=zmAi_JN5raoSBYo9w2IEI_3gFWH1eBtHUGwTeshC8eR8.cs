@@ -17,7 +17,7 @@ internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A :
   protected readonly int \u0023\u003Dz5BKXmnjcYbh2SvP6Xw\u003D\u003D;
   protected double \u0023\u003Dz9SNCNR_cYKQr;
   protected double \u0023\u003DzRanwdSJnFyTa;
-  protected dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dzb9g4_DOjBJMx;
+  protected DoubleRange \u0023\u003Dzb9g4_DOjBJMx;
   private double \u0023\u003DzaK\u0024949c\u003D = double.NaN;
   private double \u0023\u003DzCdBe1JGiII2y;
 
@@ -41,7 +41,7 @@ internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A :
     return new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(this.\u0023\u003Dz9SNCNR_cYKQr, this.\u0023\u003DzRanwdSJnFyTa);
   }
 
-  internal dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzPgZsWHrUSHPaSw8veQ\u003D\u003D()
+  internal DoubleRange \u0023\u003DzPgZsWHrUSHPaSw8veQ\u003D\u003D()
   {
     return this.\u0023\u003Dzb9g4_DOjBJMx;
   }
@@ -55,7 +55,7 @@ internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A :
     double num3 = Math.Ceiling(this.\u0023\u003DzRanwdSJnFyTa / this.\u0023\u003DzCdBe1JGiII2y) * this.\u0023\u003DzCdBe1JGiII2y;
     this.\u0023\u003DzRanwdSJnFyTa = this.\u0023\u003DzCdBe1JGiII2y;
     this.\u0023\u003Dz9SNCNR_cYKQr = this.\u0023\u003DzCdBe1JGiII2y / (double) this.\u0023\u003Dz5BKXmnjcYbh2SvP6Xw\u003D\u003D;
-    this.\u0023\u003Dzb9g4_DOjBJMx = new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num2, num3);
+    this.\u0023\u003Dzb9g4_DOjBJMx = new DoubleRange(num2, num3);
   }
 
   protected virtual double \u0023\u003Dz_RGjpdoFyFI_(double _param1, bool _param2)

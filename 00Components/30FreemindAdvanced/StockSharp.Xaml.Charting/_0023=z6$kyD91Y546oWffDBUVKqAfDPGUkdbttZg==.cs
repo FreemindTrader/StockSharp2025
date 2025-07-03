@@ -15,10 +15,10 @@ using System.Windows.Threading;
 internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D : 
   \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D,
   \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
+  ISuspendable,
+  IInvalidatableElement
 {
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dzk8uzfa2nSBLr;
+  private ISciChartSurface \u0023\u003Dzk8uzfa2nSBLr;
   private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003DzBd9ykz0\u003D;
   private bool \u0023\u003DzbtEp1C7aVw3qdJ3knA\u003D\u003D;
 
@@ -45,7 +45,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
   }
 
   public virtual void \u0023\u003DzPA8CxqX98AVD701gF5MzwGc\u003D(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1)
+    ISciChartSurface _param1)
   {
     this.\u0023\u003Dzk8uzfa2nSBLr = _param1;
     this.\u0023\u003DzBd9ykz0\u003D = this.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dzu\u0024P3XgkcE7BC();
@@ -54,7 +54,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
 
   public virtual void \u0023\u003Dzpcs_ok3YoH9BrujbKxTSzYg\u003D()
   {
-    this.\u0023\u003Dzk8uzfa2nSBLr = (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) null;
+    this.\u0023\u003Dzk8uzfa2nSBLr = (ISciChartSurface) null;
     this.\u0023\u003DzBd9ykz0\u003D = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null;
     this.\u0023\u003Dz6YtMscjD4FqR(false);
   }
@@ -63,17 +63,17 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
   {
     get
     {
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this);
     }
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
-    return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+    return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this);
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote _param1)
+    IUpdateSuspender _param1)
   {
   }
 
@@ -81,7 +81,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
   {
   }
 
-  public void \u0023\u003Dz5q8i9C4\u003D()
+  public void InvalidateElement()
   {
     if (!this.\u0023\u003DzWNQ9StWEg__B())
       return;
@@ -144,45 +144,45 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
     this.\u0023\u003DzJhZ2ohI\u003D(new Action(doDcwiev7trI4Ny0.\u0023\u003DzxSNk7gqofrWCxdQwCG6opwzg6Kvk));
   }
 
-  public virtual \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzF9GccVo\u0024dKwo(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+  public virtual IRange \u0023\u003DzF9GccVo\u0024dKwo(
+    IAxis _param1)
   {
     if (_param1.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Always || _param1.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Once)
     {
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = _param1.\u0023\u003DzFwoMKP9juTnt();
+      IRange abyLt9clZggmJsWhw = _param1.\u0023\u003DzFwoMKP9juTnt();
       if (abyLt9clZggmJsWhw != null && abyLt9clZggmJsWhw.IsDefined)
         return abyLt9clZggmJsWhw;
     }
     return _param1.VisibleRange;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dzj78Bq7gNYueNTATr1Q\u003D\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+  public IRange \u0023\u003Dzj78Bq7gNYueNTATr1Q\u003D\u003D(
+    IAxis _param1)
   {
     return !this.IsSuspended ? this.\u0023\u003DzagcOSHrk9Og4(_param1) : _param1.VisibleRange;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzhDjoRkNuf3z7_02BMQ\u003D\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1,
+  public IRange \u0023\u003DzhDjoRkNuf3z7_02BMQ\u003D\u003D(
+    IAxis _param1,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param2)
   {
     return !this.IsSuspended ? this.\u0023\u003DzzyBAd1oR0Zv2(_param1, _param2) : _param1.VisibleRange;
   }
 
-  protected abstract \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzagcOSHrk9Og4(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1);
+  protected abstract IRange \u0023\u003DzagcOSHrk9Og4(
+    IAxis _param1);
 
-  protected abstract \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzzyBAd1oR0Zv2(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1,
+  protected abstract IRange \u0023\u003DzzyBAd1oR0Zv2(
+    IAxis _param1,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param2);
 
   public virtual void \u0023\u003Dz_0Le6I5slA7z(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
   }
 
   public virtual void \u0023\u003DzY1JcdEJm3Ryc(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1)
+    ISciChartSurface _param1)
   {
   }
 
@@ -215,7 +215,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
 
   private void \u0023\u003Dz78o1hEFvydGISDJqAgxt9Hk\u003D()
   {
-    this.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz5q8i9C4\u003D();
+    this.\u0023\u003Dzk8uzfa2nSBLr.InvalidateElement();
   }
 
   private void \u0023\u003DzdvsLwG9JnTHhDWI\u0024G3VVNhM\u003D()

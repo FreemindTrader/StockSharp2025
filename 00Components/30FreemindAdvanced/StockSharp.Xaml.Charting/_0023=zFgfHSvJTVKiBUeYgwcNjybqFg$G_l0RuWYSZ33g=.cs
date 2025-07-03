@@ -34,13 +34,13 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     return (UIElement) null;
   }
 
-  internal static dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dz1j51DAw\u003D(
+  internal static DoubleRange \u0023\u003Dz1j51DAw\u003D(
     this IList<double> _param0)
   {
     double num1;
     double num2;
     \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<double>(_param0 is \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<double> ? (IEnumerable<double>) ((\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<double>) _param0).\u0023\u003Dz3TQv53iUYmxB() : (IEnumerable<double>) _param0.\u0023\u003Dz1bvQV4SZTWpA<double>(), out num1, out num2);
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num1, num2);
+    return new DoubleRange(num1, num2);
   }
 
   internal static double[] \u0023\u003DzvczFDIa7rqI9<T>(this IList<T> _param0)
@@ -50,7 +50,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
 
   internal static \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> \u0023\u003Dz1bvQV4SZTWpA<T>(
     this IList<T> _param0,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1,
+    IndexRange  _param1,
     bool _param2)
   {
     int num = _param1.Max - _param1.Min + 1;
@@ -255,7 +255,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     int _param1,
     TX _param2,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param3,
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TX> _param4)
+    IMath<TX> _param4)
     where TX : IComparable
   {
     if (_param1 == 0)
@@ -348,9 +348,9 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     }
     _param2 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzOS5Il8E\u003D(_param2, 0, _param0.Count - 1);
     _param1 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzOS5Il8E\u003D(_param1, 0, _param0.Count - 1);
-    double num1 = ((IComparable) _param0[_param1]).\u0023\u003Dzb9UCYbo\u003D();
-    double num2 = ((IComparable) _param0[_param2]).\u0023\u003Dzb9UCYbo\u003D();
-    double num3 = _param3.\u0023\u003Dzb9UCYbo\u003D();
+    double num1 = ((IComparable) _param0[_param1]).ToDouble();
+    double num2 = ((IComparable) _param0[_param2]).ToDouble();
+    double num3 = _param3.ToDouble();
     return num3 - num1 < num2 - num3 ? _param1 : _param2;
   }
 
@@ -360,7 +360,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     int _param2,
     int _param3,
     TX _param4,
-    \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<TX> _param5)
+    IMath<TX> _param5)
     where TX : IComparable
   {
     if (_param2 > _param3)
@@ -374,7 +374,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     TX x1 = _param0[_param2];
     TX x2 = _param0[_param3];
     TX x3 = _param4;
-    return _param5.\u0023\u003DzFXH4KOE\u003D(x3, x1).CompareTo((object) _param5.\u0023\u003DzFXH4KOE\u003D(x2, x3)) < 0 ? _param2 : _param3;
+    return _param5.Subtract(x3, x1).CompareTo((object) _param5.Subtract(x2, x3)) < 0 ? _param2 : _param3;
   }
 
   internal static void \u0023\u003Dz6_E5\u0024pE\u003D<T>(
@@ -463,7 +463,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 
@@ -567,7 +567,7 @@ label_7:
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 
@@ -677,7 +677,7 @@ label_8:
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 

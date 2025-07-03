@@ -9,11 +9,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
-  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003DzH9HNkng\u003D>,
-  IList<\u0023\u003DzH9HNkng\u003D>,
-  ICollection<\u0023\u003DzH9HNkng\u003D>,
-  IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+internal interface \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<T> : 
+  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T>,
+  IList<T>,
+  ICollection<T>,
+  IEnumerable<T>,
   IEnumerable
 {
 }

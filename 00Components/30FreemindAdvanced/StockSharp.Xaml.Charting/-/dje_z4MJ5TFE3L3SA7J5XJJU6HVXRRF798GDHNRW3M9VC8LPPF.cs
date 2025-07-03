@@ -234,7 +234,7 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
     {
       foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in _param1)
       {
-        \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg = s1JolYrWoYpqmQ6ug.\u0023\u003DzZZbJdAS6fDJ\u0024(s1JolYrWoYpqmQ6ug.\u0023\u003DzjuB\u0024Pa8\u003D(new Point(this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN(), 0.0), false));
+        \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg = s1JolYrWoYpqmQ6ug.\u0023\u003DzZZbJdAS6fDJ\u0024(s1JolYrWoYpqmQ6ug.\u0023\u003DzjuB\u0024Pa8\u003D(new Point(this.ModifierSurface.ActualWidth, 0.0), false));
         observableCollection.Add(vdj8C0KctI6r27Gg);
       }
     }

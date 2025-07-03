@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEU2xBpcNhs6SzKroD6K\u0024
     for (int index = 0; index < count; ++index)
     {
       num1 += (double) index;
-      num2 += ((IComparable) _param1[index]).\u0023\u003Dzb9UCYbo\u003D();
+      num2 += ((IComparable) _param1[index]).ToDouble();
     }
     double num3 = num1 / (double) _param1.Count;
     double num4 = num2 / (double) _param1.Count;
@@ -31,7 +31,7 @@ internal sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEU2xBpcNhs6SzKroD6K\u0024
     double num6 = 0.0;
     for (int index = 0; index < count; ++index)
     {
-      num5 += ((double) index - num3) * (((IComparable) _param1[index]).\u0023\u003Dzb9UCYbo\u003D() - num4);
+      num5 += ((double) index - num3) * (((IComparable) _param1[index]).ToDouble() - num4);
       num6 += Math.Pow((double) index - num3, 2.0);
     }
     this.\u0023\u003Dz9eBGgoElCf5Wp_pFvA\u003D\u003D = num5 / num6;

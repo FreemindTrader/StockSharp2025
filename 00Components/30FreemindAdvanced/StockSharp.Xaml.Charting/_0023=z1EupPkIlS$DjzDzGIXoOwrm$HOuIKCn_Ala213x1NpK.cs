@@ -9,7 +9,7 @@
 internal interface \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA
 {
   void \u0023\u003DzWzUaFxw\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1);
+    IAxis _param1);
 
   \u0023\u003DzgeFvyoahWukw3bL8yZfVYr7JNrME_OMqiz4nIDlTZlok \u0023\u003DzU4j4bt2YhYuc(
     double[] _param1,

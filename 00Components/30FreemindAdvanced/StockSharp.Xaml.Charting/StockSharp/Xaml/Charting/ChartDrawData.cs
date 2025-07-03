@@ -855,37 +855,37 @@ public class ChartDrawData : IChartDrawData
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartCandleElement element, System.Windows.Media.Color? color)
         {
-            return (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartCandleElement, ChartDrawData.sCandleColor>(this._drawData.GetCandleColorMap(), element, new ChartDrawData.sCandleColor(this.TimeStamp, color));
+            return (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartCandleElement, ChartDrawData.sCandleColor>(this._drawData.GetCandleColorMap(), element, new ChartDrawData.sCandleColor(this.TimeStamp, color));
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartCandleElement element, DataType dataType, SecurityId secId, Decimal openPrice, Decimal highPrice, Decimal lowPrice, Decimal closePrice, CandlePriceLevel[] priceLevels, CandleStates _)
         {
-            return (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartCandleElement, ChartDrawData.sCandle>(this._drawData.GetCandleMap(), element, new ChartDrawData.sCandle(this.TimeStamp, dataType, openPrice, highPrice, lowPrice, closePrice, (IEnumerable<CandlePriceLevel>)priceLevels));
+            return (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartCandleElement, ChartDrawData.sCandle>(this._drawData.GetCandleMap(), element, new ChartDrawData.sCandle(this.TimeStamp, dataType, openPrice, highPrice, lowPrice, closePrice, (IEnumerable<CandlePriceLevel>)priceLevels));
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartIndicatorElement element, IIndicatorValue value)
         {
-            return value == null ? (IChartDrawData.IChartDrawDataItem)this : (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartIndicatorElement, ChartDrawData.IndicatorData>(this._drawData.GetIndicatorMap(), element, new ChartDrawData.IndicatorData(this.TimeStamp, value));
+            return value == null ? (IChartDrawData.IChartDrawDataItem)this : (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartIndicatorElement, ChartDrawData.IndicatorData>(this._drawData.GetIndicatorMap(), element, new ChartDrawData.IndicatorData(this.TimeStamp, value));
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartOrderElement element, long orderId, string orderStringId, Sides side, Decimal price, Decimal volume, string errorMessage = null)
         {
-            return (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartOrderElement, ChartDrawData.sTrade>(this._drawData.GetOrderMap(), element, new ChartDrawData.sTrade(this.TimeStamp, orderId, orderStringId, side, price, volume, errorMessage, true));
+            return (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartOrderElement, ChartDrawData.sTrade>(this._drawData.GetOrderMap(), element, new ChartDrawData.sTrade(this.TimeStamp, orderId, orderStringId, side, price, volume, errorMessage, true));
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartTradeElement element, long tradeId, string tradeStringId, Sides side, Decimal price, Decimal volume)
         {
-            return (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartTradeElement, ChartDrawData.sTrade>(this._drawData.GetTradeMap(), element, new ChartDrawData.sTrade(this.TimeStamp, tradeId, tradeStringId, side, price, volume, (string)null, false));
+            return (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartTradeElement, ChartDrawData.sTrade>(this._drawData.GetTradeMap(), element, new ChartDrawData.sTrade(this.TimeStamp, tradeId, tradeStringId, side, price, volume, (string)null, false));
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartLineElement element, double value1, double value2 = double.NaN)
         {
-            return !MathHelper.IsNaN(this.XValue) ? (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartLineElement, ChartDrawData.sxTuple<double>>(this._drawData.GetLineValueMap(), element, ChartDrawData.sxTuple<double>.CreateSxTuple<double>(this.XValue, value1, value2)) : (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartLineElement, ChartDrawData.sxTuple<DateTime>>(this._drawData.GetLineTimeMap(), element, ChartDrawData.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>(this.TimeStamp, value1, value2));
+            return !MathHelper.IsNaN(this.XValue) ? (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartLineElement, ChartDrawData.sxTuple<double>>(this._drawData.GetLineValueMap(), element, ChartDrawData.sxTuple<double>.CreateSxTuple<double>(this.XValue, value1, value2)) : (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartLineElement, ChartDrawData.sxTuple<DateTime>>(this._drawData.GetLineTimeMap(), element, ChartDrawData.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>(this.TimeStamp, value1, value2));
         }
 
         /// <inheritdoc />
@@ -897,10 +897,10 @@ public class ChartDrawData : IChartDrawData
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add(IChartBandElement element, double value1, double value2)
         {
-            return !MathHelper.IsNaN(this.XValue) ? (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartBandElement, ChartDrawData.sxTuple<double>>(this._drawData.GetBandValueMap(), element, ChartDrawData.sxTuple<double>.CreateSxTuple<double>(this.XValue, value1, value2)) : (IChartDrawData.IChartDrawDataItem)this.GetMap<IChartBandElement, ChartDrawData.sxTuple<DateTime>>(this._drawData.GetBandTimeMap(), element, ChartDrawData.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>(this.TimeStamp, value1, value2));
+            return !MathHelper.IsNaN(this.XValue) ? (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartBandElement, ChartDrawData.sxTuple<double>>(this._drawData.GetBandValueMap(), element, ChartDrawData.sxTuple<double>.CreateSxTuple<double>(this.XValue, value1, value2)) : (IChartDrawData.IChartDrawDataItem)this.GetMath<IChartBandElement, ChartDrawData.sxTuple<DateTime>>(this._drawData.GetBandTimeMap(), element, ChartDrawData.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>(this.TimeStamp, value1, value2));
         }
 
-        private ChartDrawData.ChartDrawDataItem GetMap<TElement, TValue>(Dictionary<TElement, List<TValue>> _param1, TElement _param2, TValue _param3)
+        private ChartDrawData.ChartDrawDataItem GetMath<TElement, TValue>(Dictionary<TElement, List<TValue>> _param1, TElement _param2, TValue _param3)
         {
             CollectionHelper.SafeAdd<TElement, List<TValue>>((IDictionary<TElement, List<TValue>>)_param1, _param2).Add(_param3);
             return this;

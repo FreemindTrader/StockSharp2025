@@ -506,7 +506,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
 
   internal static WriteableBitmap \u0023\u003DzQ8SgRgQ\u003D(this WriteableBitmap _param0)
   {
-    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(_param0.PixelWidth, _param0.PixelHeight);
+    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(_param0.PixelWidth, _param0.PixelHeight);
     using (BitmapContext bitmapContext1 = _param0.\u0023\u003DzjnjmjBtrwZM5((\u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB) 0))
     {
       using (BitmapContext bitmapContext2 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
@@ -2074,7 +2074,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       throw new InvalidOperationException("");
     int pixelWidth = _param0.PixelWidth;
     int pixelHeight = _param0.PixelHeight;
-    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelWidth, pixelHeight);
+    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(pixelWidth, pixelHeight);
     using (BitmapContext bitmapContext1 = _param0.\u0023\u003DzjnjmjBtrwZM5((\u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB) 0))
     {
       using (BitmapContext bitmapContext2 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
@@ -2132,7 +2132,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
 
   internal static unsafe WriteableBitmap \u0023\u003DzkRsyJTI\u003D(this WriteableBitmap _param0)
   {
-    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(_param0.PixelWidth, _param0.PixelHeight);
+    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(_param0.PixelWidth, _param0.PixelHeight);
     using (BitmapContext bitmapContext1 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
     {
       using (BitmapContext bitmapContext2 = _param0.\u0023\u003DzjnjmjBtrwZM5())
@@ -3788,7 +3788,7 @@ label_26:
     using (BitmapContext bitmapContext = _param0.\u0023\u003DzjnjmjBtrwZM5())
     {
       int[] numArray = \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dz7FKHKl8\u003D(bitmapContext, _param0.PixelWidth, _param0.PixelHeight, _param1, _param2, _param3);
-      WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(_param1, _param2);
+      WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(_param1, _param2);
       BitmapContext.\u0023\u003Dzk\u0024wemaJeIY7r(numArray, 0, bitmapContext, 0, 4 * numArray.Length);
       return writeableBitmap;
     }
@@ -3905,7 +3905,7 @@ label_26:
       WriteableBitmap writeableBitmap;
       if (_param1 > 0 && _param1 <= 90)
       {
-        writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelHeight, pixelWidth);
+        writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(pixelHeight, pixelWidth);
         using (BitmapContext bitmapContext2 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
         {
           int* numPtr2 = bitmapContext2.\u0023\u003DzSKG\u0024_qBsOJZc();
@@ -3922,7 +3922,7 @@ label_26:
       }
       else if (_param1 > 90 && _param1 <= 180)
       {
-        writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelWidth, pixelHeight);
+        writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(pixelWidth, pixelHeight);
         using (BitmapContext bitmapContext3 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
         {
           int* numPtr3 = bitmapContext3.\u0023\u003DzSKG\u0024_qBsOJZc();
@@ -3939,7 +3939,7 @@ label_26:
       }
       else if (_param1 > 180 && _param1 <= 270)
       {
-        writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelHeight, pixelWidth);
+        writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(pixelHeight, pixelWidth);
         using (BitmapContext bitmapContext4 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
         {
           int* numPtr4 = bitmapContext4.\u0023\u003DzSKG\u0024_qBsOJZc();
@@ -3985,7 +3985,7 @@ label_26:
     int num6 = pixelHeight / 2;
     int num7 = num2 / 2;
     int num8 = num3 / 2;
-    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(num2, num3);
+    WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(num2, num3);
     using (BitmapContext bitmapContext1 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
     {
       using (BitmapContext bitmapContext2 = _param0.\u0023\u003DzjnjmjBtrwZM5())
@@ -4081,7 +4081,7 @@ label_26:
       switch (_param1)
       {
         case (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzZSpFwmoJ\u0024y0y) 0:
-          writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelWidth, pixelHeight);
+          writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(pixelWidth, pixelHeight);
           using (BitmapContext bitmapContext2 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
           {
             int* numPtr2 = bitmapContext2.\u0023\u003DzSKG\u0024_qBsOJZc();
@@ -4097,7 +4097,7 @@ label_26:
             break;
           }
         case (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzZSpFwmoJ\u0024y0y) 1:
-          writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(pixelWidth, pixelHeight);
+          writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(pixelWidth, pixelHeight);
           using (BitmapContext bitmapContext3 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
           {
             int* numPtr3 = bitmapContext3.\u0023\u003DzSKG\u0024_qBsOJZc();

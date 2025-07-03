@@ -20,8 +20,8 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZ
     this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA = _param1;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzQdR08KQ\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003DzQdR08KQ\u003D(
+    IRange _param1,
     double _param2,
     double _param3)
   {
@@ -32,71 +32,71 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZ
     return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param1, (IComparable) num1, (IComparable) num2);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz40HnRQM\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003Dz40HnRQM\u003D(
+    IRange _param1,
     double _param2,
     double _param3)
   {
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.\u0023\u003Dznj_TkFQ\u003D(_param2, _param3, _param1);
+    DoubleRange klqcJ87Zm8UwE3WEjd = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.\u0023\u003Dznj_TkFQ\u003D(_param2, _param3, _param1);
     return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param1, (IComparable) klqcJ87Zm8UwE3WEjd.Min, (IComparable) klqcJ87Zm8UwE3WEjd.Max);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz5asXHk1unXCX(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003Dz5asXHk1unXCX(
+    IRange _param1,
     double _param2)
   {
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = this.\u0023\u003DzquLnA5Y\u003D(_param1, _param2);
+    IRange abyLt9clZggmJsWhw = this.\u0023\u003DzquLnA5Y\u003D(_param1, _param2);
     return this.\u0023\u003DzmOhokOsOspCU0xk0y9Zn7Os\u003D(_param1, abyLt9clZggmJsWhw.Min, _param1.Max);
   }
 
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzmOhokOsOspCU0xk0y9Zn7Os\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  private IRange \u0023\u003DzmOhokOsOspCU0xk0y9Zn7Os\u003D(
+    IRange _param1,
     IComparable _param2,
     IComparable _param3)
   {
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = _param1;
+    IRange abyLt9clZggmJsWhw = _param1;
     if (_param2.CompareTo((object) _param3) < 0)
       abyLt9clZggmJsWhw = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param1, _param2, _param3);
     return abyLt9clZggmJsWhw;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzMKO149dmZRdJ(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003DzMKO149dmZRdJ(
+    IRange _param1,
     double _param2)
   {
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = this.\u0023\u003DzquLnA5Y\u003D(_param1, _param2);
+    IRange abyLt9clZggmJsWhw = this.\u0023\u003DzquLnA5Y\u003D(_param1, _param2);
     return this.\u0023\u003DzmOhokOsOspCU0xk0y9Zn7Os\u003D(_param1, _param1.Min, abyLt9clZggmJsWhw.Max);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzquLnA5Y\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003DzquLnA5Y\u003D(
+    IRange _param1,
     double _param2)
   {
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.\u0023\u003Dznj_TkFQ\u003D(_param2, _param1.\u0023\u003DzfODy_Nxn8OGy());
+    DoubleRange klqcJ87Zm8UwE3WEjd = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.\u0023\u003Dznj_TkFQ\u003D(_param2, _param1.AsDoubleRange());
     return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param1, (IComparable) klqcJ87Zm8UwE3WEjd.Min, (IComparable) klqcJ87Zm8UwE3WEjd.Max);
   }
 
   [Obsolete("The ScrollBy method is Obsolete as it is only really possible to implement on Category Axis. For this axis type just update the IndexRange (visibleRange) by N to scroll the axis", true)]
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz7dXLkHs\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003Dz7dXLkHs\u003D(
+    IRange _param1,
     int _param2)
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzoaHKvRB3HZP3(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param2,
+  public IRange \u0023\u003DzoaHKvRB3HZP3(
+    IRange _param1,
+    IRange _param2,
     dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param3)
   {
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw1 = _param1;
+    IRange abyLt9clZggmJsWhw1 = _param1;
     if (_param3 != dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None)
     {
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw2 = ((\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) abyLt9clZggmJsWhw1.Clone()).\u0023\u003DzJIqIiUw\u003D(_param2);
+      IRange abyLt9clZggmJsWhw2 = ((IRange) abyLt9clZggmJsWhw1.Clone()).\u0023\u003DzJIqIiUw\u003D(_param2);
       bool flag1 = abyLt9clZggmJsWhw2.Min.CompareTo((object) abyLt9clZggmJsWhw1.Min) != 0;
       bool flag2 = abyLt9clZggmJsWhw2.Max.CompareTo((object) abyLt9clZggmJsWhw1.Max) != 0;
-      dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd1 = _param1.\u0023\u003DzfODy_Nxn8OGy();
-      dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd2 = abyLt9clZggmJsWhw2.\u0023\u003DzfODy_Nxn8OGy();
+      DoubleRange klqcJ87Zm8UwE3WEjd1 = _param1.AsDoubleRange();
+      DoubleRange klqcJ87Zm8UwE3WEjd2 = abyLt9clZggmJsWhw2.AsDoubleRange();
       double num1 = flag2 ? klqcJ87Zm8UwE3WEjd1.Max - klqcJ87Zm8UwE3WEjd2.Max : klqcJ87Zm8UwE3WEjd1.Min - klqcJ87Zm8UwE3WEjd2.Min;
       double num2 = klqcJ87Zm8UwE3WEjd1.Min - num1;
       double num3 = num2 + klqcJ87Zm8UwE3WEjd1.Diff;

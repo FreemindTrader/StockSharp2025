@@ -18,10 +18,10 @@ using System.Runtime.CompilerServices;
 namespace StockSharp.Xaml.Charting.Model.DataSeries.Transactions;
 
 internal class TransactionDataSeries : 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D,
+  BindableObject ,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D
+  ISuspendable
 {
   private string _seriesName;
   private readonly \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> _candlesSeries;
@@ -49,7 +49,7 @@ internal class TransactionDataSeries :
 
   public object SyncRoot { get; } = new object();
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D ParentSurface { get; set; }
+  public ISciChartSurface ParentSurface { get; set; }
 
   public bool AcceptsUnsortedData
   {
@@ -182,47 +182,47 @@ internal class TransactionDataSeries :
     this._candlesSeries.InvalidateParentSurface(rangeMode);
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D GetIndicesRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleRange)
+  public IndexRange  GetIndicesRange(
+    IRange visibleRange)
   {
     return this._candlesSeries.GetIndicesRange(visibleRange);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D xRange)
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IRange xRange)
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indicesRange = this.GetIndicesRange(xRange);
-    return !indicesRange.IsDefined ? (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indicesRange);
+    IndexRange  indicesRange = this.GetIndicesRange(xRange);
+    return !indicesRange.IsDefined ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indicesRange);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indexRange,
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IndexRange  indexRange,
     bool getPositiveRange)
   {
-    return !indexRange.IsDefined ? (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indexRange);
+    return !indexRange.IsDefined ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indexRange);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D xRange,
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IRange xRange,
     bool getPositiveRange)
   {
     return ((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this).\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(xRange);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D XRange
+  public IRange XRange
   {
     get
     {
-      return !this._dates.Any<DateTime>() ? (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue) : (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(this._dates[0], this._dates[this._dates.Count - 1]).\u0023\u003DzfODy_Nxn8OGy();
+      return !this._dates.Any<DateTime>() ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(this._dates[0], this._dates[this._dates.Count - 1]).AsDoubleRange();
     }
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D YRange
+  public IRange YRange
   {
     get
     {
       if (this._dates.Count == 0)
-        return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(double.MinValue, double.MaxValue);
+        return (IRange) new DoubleRange(double.MinValue, double.MaxValue);
       double num1 = double.MaxValue;
       double num2 = double.MinValue;
       foreach (\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D rvIvnoSs0Uo7ic5Jw in this._data.Where<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D ?? (TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, bool>(TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzQew5\u0024BD3XizwlemJVIlpNho\u003D))))
@@ -230,7 +230,7 @@ internal class TransactionDataSeries :
         num1 = MathHelper.Min(num1, rvIvnoSs0Uo7ic5Jw.\u0023\u003Dz_0RMJpfkCRvPs4ToyQ\u003D\u003D());
         num2 = MathHelper.Max(num2, rvIvnoSs0Uo7ic5Jw.\u0023\u003DzFQXj8Eq5AMNn7N8nJA\u003D\u003D());
       }
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num1, num2);
+      return (IRange) new DoubleRange(num1, num2);
     }
   }
 
@@ -318,11 +318,11 @@ internal class TransactionDataSeries :
     return Math.Max(this._data[index].\u0023\u003DzFQXj8Eq5AMNn7N8nJA\u003D\u003D(), existingYMax);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D GetWindowedYRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D xIndexRange)
+  public IRange GetWindowedYRange(
+    IndexRange  xIndexRange)
   {
     this.EnsureData();
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) xIndexRange.Clone();
+    IndexRange  g8Oq2rGx6KyfAreq = (IndexRange ) xIndexRange.Clone();
     if (g8Oq2rGx6KyfAreq.Min < 0)
       g8Oq2rGx6KyfAreq.Min = 0;
     if (g8Oq2rGx6KyfAreq.Max >= this._data.Count)
@@ -330,16 +330,16 @@ internal class TransactionDataSeries :
     double num1;
     double num2;
     \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.\u0023\u003Dz\u0024zWmmGTAbDON(this._data.Skip<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(g8Oq2rGx6KyfAreq.Min).Take<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(g8Oq2rGx6KyfAreq.Max - g8Oq2rGx6KyfAreq.Min + 1), out num1, out num2);
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num1, num2);
+    return (IRange) new DoubleRange(num1, num2);
   }
 
   public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D pointRange,
+    IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis,
     bool? dataIsDisplayedAs2D,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleXRange,
+    IRange visibleXRange,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D factory,
     object pointSeriesArg = null)
   {
@@ -350,27 +350,27 @@ internal class TransactionDataSeries :
   {
     get
     {
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this);
     }
   }
 
-  public \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote SuspendUpdates()
+  public IUpdateSuspender SuspendUpdates()
   {
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D parentSurface = this.ParentSurface;
+    ISciChartSurface parentSurface = this.ParentSurface;
     if (parentSurface == null)
-      return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this);
+      return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this);
     System.Threading.Monitor.Enter(parentSurface.\u0023\u003Dzjatnj7TNvda7());
-    return (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An((\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D) this, parentSurface.\u0023\u003Dzjatnj7TNvda7());
+    return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this, parentSurface.\u0023\u003Dzjatnj7TNvda7());
   }
 
   public void ResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote suspender)
+    IUpdateSuspender suspender)
   {
-    if (suspender.\u0023\u003DzuWdUDFWIQOsx())
+    if (suspender.ResumeTargetOnDispose)
       this.OnDataSeriesChanged((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 3);
-    if (suspender.\u0023\u003DzFG_qiXECs10o() == null)
+    if (suspender.Tag == null)
       return;
-    System.Threading.Monitor.Exit(suspender.\u0023\u003DzFG_qiXECs10o());
+    System.Threading.Monitor.Exit(suspender.Tag);
   }
 
   public void DecrementSuspend()
@@ -458,7 +458,7 @@ internal class TransactionDataSeries :
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D pointRange,
+    IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis)
   {

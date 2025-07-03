@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 internal sealed class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFfwuk7mZpVT219h_NwMrKXT5sYdAawRHD8Yx_rVjVyiLHpg\u003D\u003D : 
   \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D
 {
-  private readonly \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D \u0023\u003Dz0mppXFo\u003D;
+  private readonly IChartModifier \u0023\u003Dz0mppXFo\u003D;
   private Shape \u0023\u003DzmySr2zE\u003D;
 
   public \u0023\u003DzSseiGdgwJmJ1pkmz7CEFfwuk7mZpVT219h_NwMrKXT5sYdAawRHD8Yx_rVjVyiLHpg\u003D\u003D(
-    \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D _param1)
+    IChartModifier _param1)
   {
     this.\u0023\u003Dz0mppXFo\u003D = _param1;
   }
@@ -45,15 +45,15 @@ internal sealed class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFfwuk7mZpVT219h_NwMrKXT5sY
       if (this.\u0023\u003Dz0mppXFo\u003D.XAxis.IsHorizontalAxis)
       {
         _param2.Y = 0.0;
-        _param3.Y = this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM();
+        _param3.Y = this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.ActualHeight;
       }
       else
       {
         _param2.X = 0.0;
-        _param3.X = this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN();
+        _param3.X = this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.ActualWidth;
       }
     }
-    _param3 = new Rect(0.0, 0.0, this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN(), this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM()).\u0023\u003Dz2xcanLolC38g(_param3);
+    _param3 = new Rect(0.0, 0.0, this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.ActualWidth, this.\u0023\u003Dz0mppXFo\u003D.ModifierSurface.ActualHeight).\u0023\u003Dz2xcanLolC38g(_param3);
     Rect rect = new Rect(_param2, _param3);
     Canvas.SetLeft((UIElement) this.\u0023\u003DzmySr2zE\u003D, rect.X);
     Canvas.SetTop((UIElement) this.\u0023\u003DzmySr2zE\u003D, rect.Y);

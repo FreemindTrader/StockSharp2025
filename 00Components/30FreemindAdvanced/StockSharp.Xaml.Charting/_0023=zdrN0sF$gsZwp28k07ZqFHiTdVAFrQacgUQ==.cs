@@ -53,14 +53,14 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
       elwvdvgwnmJ5AjuaEjd.Unloaded += \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzUCpeCDId_uWja9GX4w\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzUCpeCDId_uWja9GX4w\u003D\u003D = new RoutedEventHandler(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz0zuDFtRKqfs9));
       if (!elwvdvgwnmJ5AjuaEjd.IsLoaded)
         return;
-      \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3IT6iI0OoT6Opi1nPzm__kSnx9aj((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) elwvdvgwnmJ5AjuaEjd, newValue);
+      \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3IT6iI0OoT6Opi1nPzm__kSnx9aj((ISciChartSurface) elwvdvgwnmJ5AjuaEjd, newValue);
     }
   }
 
   private static void \u0023\u003DzvPNhkA9WmuO0(object _param0, RoutedEventArgs _param1)
   {
     dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd = _param0 as dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd;
-    \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3IT6iI0OoT6Opi1nPzm__kSnx9aj((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) elwvdvgwnmJ5AjuaEjd, \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.GetHorizontalChartGroup((DependencyObject) elwvdvgwnmJ5AjuaEjd));
+    \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3IT6iI0OoT6Opi1nPzm__kSnx9aj((ISciChartSurface) elwvdvgwnmJ5AjuaEjd, \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.GetHorizontalChartGroup((DependencyObject) elwvdvgwnmJ5AjuaEjd));
   }
 
   private static void \u0023\u003Dz0zuDFtRKqfs9(object _param0, RoutedEventArgs _param1)
@@ -69,7 +69,7 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
   }
 
   private static void \u0023\u003Dz3IT6iI0OoT6Opi1nPzm__kSnx9aj(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param0,
+    ISciChartSurface _param0,
     string _param1)
   {
     \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D key = new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D(_param0);
@@ -88,17 +88,17 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
       if (keyValuePair.Key.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D() == _param0)
         keyValuePair.Key.\u0023\u003Dz_ub4hhw\u003D();
     }
-    \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.Remove(new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) _param0));
+    \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.Remove(new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D((ISciChartSurface) _param0));
     _param0.\u0023\u003DzrRRdxqQwy\u0024OJ(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 = new EventHandler<EventArgs>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D)));
   }
 
   private static void \u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D(object _param0, EventArgs _param1)
   {
-    \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3dE3KTgP\u0024pXw((\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) _param0);
+    \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3dE3KTgP\u0024pXw((ISciChartSurface) _param0);
   }
 
   private static void \u0023\u003Dz3dE3KTgP\u0024pXw(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param0)
+    ISciChartSurface _param0)
   {
     \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D k0hz6MwLrPm7JfgVw01g = new \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D();
     if (!\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.TryGetValue(new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D(_param0), out k0hz6MwLrPm7JfgVw01g.\u0023\u003Dzvd7k66M\u003D))
@@ -106,7 +106,7 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
     \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D[] array = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.Where<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>>(new Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, bool>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D)).Select<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzL6P38Nt3ByHiE6Ehg2GH\u00247w\u003D))).ToArray<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>();
     k0hz6MwLrPm7JfgVw01g.\u0023\u003DzmfE\u0024jucTzddtybnMGg\u003D\u003D = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Bottom);
     k0hz6MwLrPm7JfgVw01g.\u0023\u003DzHQz9fVShYfxRR3dztw\u003D\u003D = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top);
-    ((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array).Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D = new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D))).OfType<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>().\u0023\u003Dz30RSSSygABj_<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>(new Action<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D));
+    ((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array).Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D = new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D))).OfType<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>().\u0023\u003Dz30RSSSygABj_<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>(new Action<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D));
   }
 
   private static double \u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D(
@@ -154,7 +154,7 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
   {
     public static readonly \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D();
     public static Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D> \u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D;
-    public static Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D> \u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D;
+    public static Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface> \u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D;
     public static Func<double, dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double> \u0023\u003Dzj2\u0024kP85fw6FKRq7qMg\u003D\u003D;
     public static Func<IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>, double> \u0023\u003Dztw\u0024s\u0024BHvfpXoZJHcIQ\u003D\u003D;
 
@@ -164,7 +164,7 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
       return _param1.Key;
     }
 
-    internal \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D(
+    internal ISciChartSurface \u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       return _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D();

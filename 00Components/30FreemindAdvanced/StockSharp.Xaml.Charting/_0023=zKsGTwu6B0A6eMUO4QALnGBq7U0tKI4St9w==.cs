@@ -10,7 +10,7 @@ using System;
 
 #nullable disable
 internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D : 
-  dje_zXJSU6RS8TCQ6ZVU6XJ5NL7C4LYU27ZM5SDS8FXR9_ejd<long>
+  Range<long>
 {
   public \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D()
   {
@@ -30,28 +30,28 @@ internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003
 
   public override bool IsZero => this.Diff == 0L;
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzfODy_Nxn8OGy()
+  public override DoubleRange AsDoubleRange()
   {
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd((double) this.Min, (double) this.Max);
+    return new DoubleRange((double) this.Min, (double) this.Max);
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long> \u0023\u003Dz8b8KOJANG3C3(
+  public override IRange<long> SetMinMax(
     double _param1,
     double _param2)
   {
-    this.\u0023\u003DzP\u0024IlreZBEpOu((long) _param1, (long) _param2);
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long>) this;
+    this.SetMinMaxInternal((long) _param1, (long) _param2);
+    return (IRange<long>) this;
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long> \u0023\u003Dz8b8KOJANG3C3(
+  public override IRange<long> SetMinMax(
     double _param1,
     double _param2,
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long> _param3)
+    IRange<long> _param3)
   {
     throw new NotImplementedException();
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long> \u0023\u003DzzXTqVFg\u003D(
+  public override IRange<long> GrowBy(
     double _param1,
     double _param2)
   {
@@ -60,16 +60,16 @@ internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003
     {
       this.Max += (long) ((double) this.Max * _param2);
       this.Min -= (long) ((double) this.Min * _param1);
-      return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long>) this;
+      return (IRange<long>) this;
     }
     long num2 = this.Max + (long) (int) ((double) num1 * _param2);
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long>) new \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D(this.Min - (long) (int) ((double) num1 * _param1), num2);
+    return (IRange<long>) new \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D(this.Min - (long) (int) ((double) num1 * _param1), num2);
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long> \u0023\u003DzJIqIiUw\u003D(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long> _param1)
+  public override IRange<long> \u0023\u003DzJIqIiUw\u003D(
+    IRange<long> _param1)
   {
     long num = Math.Min(this.Max, _param1.Max);
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<long>) new \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D(Math.Max(this.Min, _param1.Min), num);
+    return (IRange<long>) new \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D(Math.Max(this.Min, _param1.Min), num);
   }
 }

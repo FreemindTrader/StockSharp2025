@@ -40,7 +40,7 @@ internal struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
   
   public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DznUzlqIN9ReXL;
   
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzToxB29CkMiO6;
+  public IndexRange  \u0023\u003DzToxB29CkMiO6;
   
   internal double \u0023\u003Dz_WzdhI8nAiba;
   

@@ -17,7 +17,7 @@ using System.Windows.Threading;
 #nullable disable
 internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D : 
   \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J,
-  \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D,
+  IPathColor,
   IDisposable,
   \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5\u0024e1A7bvEMO3Uo\u0024\u0024JpKeVOZ\u0024
 {
@@ -117,10 +117,10 @@ internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_Jb
   public Color Color => this.\u0023\u003Dzfzo3Zt0\u003D;
 
   [SpecialName]
-  public int \u0023\u003DzjOBmdfcoOy1e() => this.\u0023\u003DzY0hdWq2CWq89;
+  public int ColorCode => this.\u0023\u003DzY0hdWq2CWq89;
 
   [SpecialName]
-  public bool \u0023\u003Dz7zS5QbVF0tOL() => this.\u0023\u003DzPsHNvsjqIq72;
+  public bool IsTransparent => this.\u0023\u003DzPsHNvsjqIq72;
 
   [CompilerGenerated]
   [SpecialName]

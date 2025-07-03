@@ -19,7 +19,7 @@ using System.Xml.Serialization;
 internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D : 
   IRenderableSeries,
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,
-  \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95,
+  IDrawable,
   IXmlSerializable
 {
   
@@ -45,9 +45,9 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
   
   private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzQsY1\u0024NybEpjavuW8NInEKEc\u003D;
   
-  private \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzSzpQmjX3i_6OFgfsBw\u003D\u003D;
+  private IAxis \u0023\u003DzSzpQmjX3i_6OFgfsBw\u003D\u003D;
   
-  private \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DztSzcLDVAJZhbQ5yz2A\u003D\u003D;
+  private IAxis \u0023\u003DztSzcLDVAJZhbQ5yz2A\u003D\u003D;
   
   private Color \u0023\u003Dz9tBP_ZS2eU\u00247YM1NDA\u003D\u003D;
   
@@ -65,7 +65,7 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
   
   private string \u0023\u003DzHKEm8AXUqk19HDxQqw9GqLQ\u003D;
   
-  private \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D \u0023\u003Dzq_BOEKz6TP1hJ5Vkn77QRCE\u003D;
+  private IRenderPassData \u0023\u003Dzq_BOEKz6TP1hJ5Vkn77QRCE\u003D;
   
   private \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D \u0023\u003Dz4LlMqXRKgSCCgq5b0w\u003D\u003D;
   
@@ -97,11 +97,11 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
     set => this.\u0023\u003DzpNyBX\u00240Erlkj2Cvvig\u003D\u003D = value;
   }
 
-  public void \u0023\u003DzjAYqfck\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+  public void OnDraw(
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
-    this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D.\u0023\u003DzjAYqfck\u003D(_param1, _param2);
+    this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D.OnDraw(_param1, _param2);
   }
 
   [CompilerGenerated]
@@ -189,13 +189,13 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
     this.\u0023\u003DzQsY1\u0024NybEpjavuW8NInEKEc\u003D = _param1;
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB XAxis
+  public IAxis XAxis
   {
     get => this.\u0023\u003DzSzpQmjX3i_6OFgfsBw\u003D\u003D;
     set => this.\u0023\u003DzSzpQmjX3i_6OFgfsBw\u003D\u003D = value;
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB YAxis
+  public IAxis YAxis
   {
     get => this.\u0023\u003DztSzcLDVAJZhbQ5yz2A\u003D\u003D;
     set => this.\u0023\u003DztSzcLDVAJZhbQ5yz2A\u003D\u003D = value;
@@ -262,7 +262,7 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
 
   [CompilerGenerated]
   [SpecialName]
-  public \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D \u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D()
+  public IRenderPassData \u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D()
   {
     return this.\u0023\u003Dzq_BOEKz6TP1hJ5Vkn77QRCE\u003D;
   }
@@ -270,7 +270,7 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
   [CompilerGenerated]
   [SpecialName]
   public void \u0023\u003DzHZiyrsua6EwHR04JCw\u003D\u003D(
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1)
+    IRenderPassData _param1)
   {
     this.\u0023\u003Dzq_BOEKz6TP1hJ5Vkn77QRCE\u003D = _param1;
   }
@@ -335,26 +335,26 @@ internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dzq3MgExWxza1L()
+  public IRange \u0023\u003Dzq3MgExWxza1L()
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzxNQHuqrEvxH2(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+  public IRange \u0023\u003DzxNQHuqrEvxH2(
+    IRange _param1)
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzxNQHuqrEvxH2(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public IRange \u0023\u003DzxNQHuqrEvxH2(
+    IRange _param1,
     bool _param2)
   {
     throw new NotImplementedException();
   }
 
-  public virtual \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzVAnbwOJn98Ya(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1)
+  public virtual IndexRange  \u0023\u003DzVAnbwOJn98Ya(
+    IndexRange  _param1)
   {
     throw new NotImplementedException();
   }

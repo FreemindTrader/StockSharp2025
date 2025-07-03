@@ -51,7 +51,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvS
   
   private bool? \u0023\u003DzuuCm_xeHWuMy;
   
-  private \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzUuMx9G25\u0024d0f;
+  private IndexRange  \u0023\u003DzUuMx9G25\u0024d0f;
   
   private \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy \u0023\u003DzCKkTLgMyXhNP;
   
@@ -220,13 +220,13 @@ label_4:
       case ChartCandleDrawStyles.LineHigh:
       case ChartCandleDrawStyles.LineLow:
       case ChartCandleDrawStyles.LineClose:
-        return typeof (dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd);
+        return typeof (FastLineRenderableSeries);
       case ChartCandleDrawStyles.BoxVolume:
         return typeof (dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd);
       case ChartCandleDrawStyles.ClusterProfile:
         return typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd);
       case ChartCandleDrawStyles.Area:
-        return typeof (dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd);
+        return typeof (FastMountainRenderableSeries);
       case ChartCandleDrawStyles.PnF:
         return typeof (dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd);
       default:
@@ -244,13 +244,13 @@ label_4:
     this.\u0023\u003Dzk_r\u0024wtNtUKwJ();
   }
 
-  private dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D()
+  private BaseRenderableSeries \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D()
   {
-    dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd target;
+    BaseRenderableSeries target;
     switch (this.\u0023\u003DzeaszzAAoBOY9().DrawStyle)
     {
       case ChartCandleDrawStyles.CandleStick:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[4]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
@@ -261,11 +261,11 @@ label_4:
         target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzzR4yyf\u0024wfFYI, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
         target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
         target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
-        target.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
         target.PaletteProvider = (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this;
         break;
       case ChartCandleDrawStyles.Ohlc:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[4]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
@@ -275,23 +275,23 @@ label_4:
         target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
         target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
         target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
-        BindingOperations.ClearBinding((DependencyObject) target, dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7);
+        BindingOperations.ClearBinding((DependencyObject) target, BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7);
         target.PaletteProvider = (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this;
         break;
       case ChartCandleDrawStyles.LineOpen:
       case ChartCandleDrawStyles.LineHigh:
       case ChartCandleDrawStyles.LineLow:
       case ChartCandleDrawStyles.LineClose:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastLineRenderableSeries>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
         {
           this.\u0023\u003DzdaM3_c5kMuSK
         });
-        target.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzIcVMwZBBZ1n3, (object) this.\u0023\u003Dznrzap3Ru8O5U, "");
-        target.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
-        target.SetBindings(dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd.\u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", converter: (IValueConverter) new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUm_WprFxHE3GMkMYTmM5Gv6xPE1lfu86yUSurnkA());
+        target.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.\u0023\u003Dznrzap3Ru8O5U, "");
+        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+        target.SetBindings(FastLineRenderableSeries.\u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", converter: (IValueConverter) new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUm_WprFxHE3GMkMYTmM5Gv6xPE1lfu86yUSurnkA());
         break;
       case ChartCandleDrawStyles.BoxVolume:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
         {
           this.\u0023\u003DzWbY5DVo2YLuB
         });
@@ -305,7 +305,7 @@ label_4:
         target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzsXfDaxv8JwjzCERgkg\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "", BindingMode.OneWay, (IValueConverter) new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D.\u0023\u003DzBaQAMfOA0Xrd(this.CandlesTimeframe));
         break;
       case ChartCandleDrawStyles.ClusterProfile:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
         {
           this.\u0023\u003DzWbY5DVo2YLuB
         });
@@ -316,17 +316,17 @@ label_4:
         target.SetBindings(dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzcL2qfCOpQZK5, (object) this.\u0023\u003Dznrzap3Ru8O5U, "");
         break;
       case ChartCandleDrawStyles.Area:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zKEMJWHZWSE279KQB6EDEEPQJWFZTHVK3RNB3SECQBVFS2MZJVYVEKR2UZXXBEHEVGBXXDD3GV8492CURMVVPXNR5WLZA_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastMountainRenderableSeries>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
         {
           this.\u0023\u003DzdaM3_c5kMuSK
         });
         target.SeriesColor = Colors.Transparent;
-        target.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzIcVMwZBBZ1n3, (object) this.\u0023\u003Dznrzap3Ru8O5U, "");
-        target.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
-        target.SetBindings(dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd.\u0023\u003DzXc9apgJiH9mm, (object) this.\u0023\u003Dznrzap3Ru8O5U, "", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
+        target.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.\u0023\u003Dznrzap3Ru8O5U, "");
+        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+        target.SetBindings(BaseMountainRenderableSeries.\u0023\u003DzXc9apgJiH9mm, (object) this.\u0023\u003Dznrzap3Ru8O5U, "", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
         break;
       case ChartCandleDrawStyles.PnF:
-        target = (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[4]
+        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd>(new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
@@ -335,7 +335,7 @@ label_4:
         });
         target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
         target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
-        target.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
+        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.\u0023\u003DzeaszzAAoBOY9(), "");
         Decimal? zfIlpmP5Jfeem = this.\u0023\u003DzfILpmP5JFeem;
         if (zfIlpmP5Jfeem.HasValue)
         {
@@ -410,7 +410,7 @@ label_4:
     \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR g72ZksY7iW1Jk3iR = this.\u0023\u003Dz\u00246aIVrHDxlRJ().\u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(this.\u0023\u003DzeaszzAAoBOY9().XAxisId);
     if (g72ZksY7iW1Jk3iR == null)
       return;
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D categoryDateTimeRange = g72ZksY7iW1Jk3iR.CategoryDateTimeRange;
+    IndexRange  categoryDateTimeRange = g72ZksY7iW1Jk3iR.CategoryDateTimeRange;
     int count = this.OhlcSeries.Count;
     bool flag1 = count > 0 && categoryDateTimeRange.IsDefined && !this.\u0023\u003Dz\u00246aIVrHDxlRJ().Chart.IsAutoRange;
     bool flag2 = flag1 && this.\u0023\u003Dz\u00246aIVrHDxlRJ().Chart.IsAutoScroll;
@@ -419,14 +419,14 @@ label_4:
       this.\u0023\u003DzZ8C5xEdop1TJ = true;
       if (!flag2)
       {
-        \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, categoryDateTimeRange.Max - categoryDateTimeRange.Min);
+        IndexRange  g8Oq2rGx6KyfAreq = new IndexRange (0, categoryDateTimeRange.Max - categoryDateTimeRange.Min);
         g72ZksY7iW1Jk3iR.CategoryDateTimeRange = g8Oq2rGx6KyfAreq;
       }
     }
     if (!flag2)
     {
       this.\u0023\u003DzuuCm_xeHWuMy = new bool?();
-      this.\u0023\u003DzUuMx9G25\u0024d0f = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) null;
+      this.\u0023\u003DzUuMx9G25\u0024d0f = (IndexRange ) null;
     }
     else
     {
@@ -443,7 +443,7 @@ label_4:
       if (flag3 && (categoryDateTimeRange.Max < num2 || !this.\u0023\u003DzuuCm_xeHWuMy.HasValue))
       {
         int num3 = categoryDateTimeRange.Max - categoryDateTimeRange.Min + 1;
-        \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(num2 - num3 + 1, num2);
+        IndexRange  g8Oq2rGx6KyfAreq = new IndexRange (num2 - num3 + 1, num2);
         g72ZksY7iW1Jk3iR.CategoryDateTimeRange = g8Oq2rGx6KyfAreq;
         this.\u0023\u003DzUuMx9G25\u0024d0f = g8Oq2rGx6KyfAreq;
       }
@@ -453,22 +453,22 @@ label_4:
     }
   }
 
-  public override bool \u0023\u003DzjgUUUJE\u003D(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+  public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     switch (_param1 != null ? ((IEnumerable<ChartDrawData.IDrawValue>) _param1).FirstOrDefault<ChartDrawData.IDrawValue>() : (ChartDrawData.IDrawValue) null)
     {
       case null:
         return false;
       case ChartDrawData.sCandle _:
-        return this.\u0023\u003DzjgUUUJE\u003D(CollectionHelper.ToEx<ChartDrawData.sCandle>(((IEnumerable) _param1).Cast<ChartDrawData.sCandle>(), ((IEnumerableEx) _param1).Count));
+        return this.Draw(CollectionHelper.ToEx<ChartDrawData.sCandle>(((IEnumerable) _param1).Cast<ChartDrawData.sCandle>(), ((IEnumerableEx) _param1).Count));
       case ChartDrawData.sCandleColor _:
-        return this.\u0023\u003DzjgUUUJE\u003D(CollectionHelper.ToEx<ChartDrawData.sCandleColor>(((IEnumerable) _param1).Cast<ChartDrawData.sCandleColor>(), ((IEnumerableEx) _param1).Count));
+        return this.Draw(CollectionHelper.ToEx<ChartDrawData.sCandleColor>(((IEnumerable) _param1).Cast<ChartDrawData.sCandleColor>(), ((IEnumerableEx) _param1).Count));
       default:
         throw new ArgumentOutOfRangeException("");
     }
   }
 
-  private bool \u0023\u003DzjgUUUJE\u003D(
+  private bool Draw(
     IEnumerableEx<ChartDrawData.sCandleColor> _param1)
   {
     if (CollectionHelper.IsEmpty<ChartDrawData.sCandleColor>((IEnumerable<ChartDrawData.sCandleColor>) _param1))
@@ -487,17 +487,17 @@ label_4:
       else
         this.\u0023\u003DzK1tfXeY7PPNb.Remove(zs3gDb01RWCzVlS5w.UtcTime());
     }
-    this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries.\u0023\u003Dzu\u0024P3XgkcE7BC()?.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D>()?.\u0023\u003Dz5q8i9C4\u003D();
+    this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries.\u0023\u003Dzu\u0024P3XgkcE7BC()?.\u0023\u003Dz2VqWonc\u003D<ISciChartSurface>()?.InvalidateElement();
     return true;
   }
 
-  private bool \u0023\u003DzjgUUUJE\u003D(
+  private bool Draw(
     IEnumerableEx<ChartDrawData.sCandle> _param1)
   {
     if (this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D != this.\u0023\u003DzeaszzAAoBOY9().Colorer)
     {
       this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D = this.\u0023\u003DzeaszzAAoBOY9().Colorer;
-      this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries.\u0023\u003Dzu\u0024P3XgkcE7BC()?.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D>()?.\u0023\u003Dz5q8i9C4\u003D();
+      this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries.\u0023\u003Dzu\u0024P3XgkcE7BC()?.\u0023\u003Dz2VqWonc\u003D<ISciChartSurface>()?.InvalidateElement();
     }
     if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.sCandle>((IEnumerable<ChartDrawData.sCandle>) _param1))
       return false;

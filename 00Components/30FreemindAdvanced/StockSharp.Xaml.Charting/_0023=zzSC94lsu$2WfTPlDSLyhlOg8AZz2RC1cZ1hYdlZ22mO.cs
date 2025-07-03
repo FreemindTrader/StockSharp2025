@@ -13,7 +13,7 @@ internal sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ2
   \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B
 {
   public override void \u0023\u003DzWzUaFxw\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     if (!(_param1 is \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D))
       throw new ArgumentException("");
@@ -42,7 +42,7 @@ internal sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ2
       if (str2.StartsWith(""))
         str4 = "" + str4;
       string str5 = str4 + "" + str3 + "";
-      double a = _param2.\u0023\u003Dzb9UCYbo\u003D();
+      double a = _param2.ToDouble();
       double y = Math.Log(a, tmjze8uJg3v1qUa6q9M.get_LogarithmicBase());
       double num2 = a / Math.Pow(tmjze8uJg3v1qUa6q9M.get_LogarithmicBase(), y);
       lqkdKbY6smnsRhNQalw1.HasExponent = true;

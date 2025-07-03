@@ -118,14 +118,14 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
     this.\u0023\u003Dz3b1ovMxwIEKI(-this.\u0023\u003Dz9wx8aZCn12QF());
   }
 
-  public static \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La \u0023\u003Dz6wT8xpE\u003D(
+  public static \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La Add(
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param0,
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param1)
   {
     return new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param0.\u0023\u003Dz9wx8aZCn12QF() + _param1.\u0023\u003Dz9wx8aZCn12QF(), _param0.\u0023\u003DzMFog0bw\u003D() + _param1.\u0023\u003DzMFog0bw\u003D());
   }
 
-  public static void \u0023\u003Dz6wT8xpE\u003D(
+  public static void Add(
     ref \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param0,
     ref \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param1,
     out \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param2)
@@ -148,14 +148,14 @@ internal struct \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL
     _param2 = new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param0.\u0023\u003Dz9wx8aZCn12QF() - _param1.\u0023\u003Dz9wx8aZCn12QF(), _param0.\u0023\u003DzMFog0bw\u003D() - _param1.\u0023\u003DzMFog0bw\u003D());
   }
 
-  public static \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La \u0023\u003Dz9_a9j8HqDt0f(
+  public static \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La Mult(
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param0,
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param1)
   {
     return new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La(_param1.\u0023\u003DzMFog0bw\u003D() * _param0.\u0023\u003Dz9wx8aZCn12QF() + _param0.\u0023\u003DzMFog0bw\u003D() * _param1.\u0023\u003Dz9wx8aZCn12QF() + dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003Dz1jcyxnU\u003D(_param0.\u0023\u003Dz9wx8aZCn12QF(), _param1.\u0023\u003Dz9wx8aZCn12QF()), _param0.\u0023\u003DzMFog0bw\u003D() * _param1.\u0023\u003DzMFog0bw\u003D() - dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003DzJkPZoNo\u003D(_param0.\u0023\u003Dz9wx8aZCn12QF(), _param1.\u0023\u003Dz9wx8aZCn12QF()));
   }
 
-  public static void \u0023\u003Dz9_a9j8HqDt0f(
+  public static void Mult(
     ref \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param0,
     ref \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param1,
     out \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La _param2)

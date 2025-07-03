@@ -10,7 +10,7 @@ using System;
 using System.ComponentModel;
 
 #nullable disable
-internal interface \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D : 
+internal interface IRange : 
   ICloneable,
   INotifyPropertyChanged
 {
@@ -24,30 +24,30 @@ internal interface \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D :
 
   bool IsZero { get; }
 
-  dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzfODy_Nxn8OGy();
+  DoubleRange AsDoubleRange();
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzzXTqVFg\u003D(
+  IRange GrowBy(
     double _param1,
     double _param2);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz8b8KOJANG3C3(
+  IRange SetMinMax(
     double _param1,
     double _param2);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzsutwFhFKqYRf34G8vw\u003D\u003D(
+  IRange \u0023\u003DzsutwFhFKqYRf34G8vw\u003D\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3);
+    IRange _param3);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzJIqIiUw\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1);
+  IRange \u0023\u003DzJIqIiUw\u003D(
+    IRange _param1);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzJIqIiUw\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  IRange \u0023\u003DzJIqIiUw\u003D(
+    IRange _param1,
     \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQBfb77y0xl0\u00246w\u003D\u003D _param2);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzeiifnZI\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1);
+  IRange \u0023\u003DzeiifnZI\u003D(
+    IRange _param1);
 
   bool \u0023\u003DzU0feMzXFLecQ(IComparable _param1);
 }

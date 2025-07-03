@@ -117,22 +117,22 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
     ChartLineElement _param2,
     \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy _param3)
   {
-    if (!(_param1.RenderSeries is dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd mq47Z7V297V2U22Ejd))
+    if (!(_param1.RenderSeries is FastLineRenderableSeries mq47Z7V297V2U22Ejd))
     {
       \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D js00Vef8BmoZoBlhDa = _param1;
       \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[] h0icPdKkp5z7HsjcOyArray = new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy[1]
       {
         _param3
       };
-      dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd mq47Z7V297V2U22Ejd1;
-      mq47Z7V297V2U22Ejd = mq47Z7V297V2U22Ejd1 = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd>(h0icPdKkp5z7HsjcOyArray);
+      FastLineRenderableSeries mq47Z7V297V2U22Ejd1;
+      mq47Z7V297V2U22Ejd = mq47Z7V297V2U22Ejd1 = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastLineRenderableSeries>(h0icPdKkp5z7HsjcOyArray);
       js00Vef8BmoZoBlhDa.RenderSeries = (IRenderableSeries) mq47Z7V297V2U22Ejd1;
-      mq47Z7V297V2U22Ejd.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzIcVMwZBBZ1n3, (object) _param2, "");
-      mq47Z7V297V2U22Ejd.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz13qAkT\u0024eFXTPuGCUqjA\u0024Svw\u003D, (object) _param2, "");
-      mq47Z7V297V2U22Ejd.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzTe_gV3cWjEp7, (object) _param2, "");
-      mq47Z7V297V2U22Ejd.SetBindings(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzdr5RTntdbeN7, (object) _param2, "");
-      dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd mq47Z7V297V2U22Ejd2 = mq47Z7V297V2U22Ejd;
-      DependencyProperty z8b6MqaiE8Uzn = dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz8b6MQAIE8UZn;
+      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) _param2, "");
+      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003Dz13qAkT\u0024eFXTPuGCUqjA\u0024Svw\u003D, (object) _param2, "");
+      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) _param2, "");
+      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7, (object) _param2, "");
+      FastLineRenderableSeries mq47Z7V297V2U22Ejd2 = mq47Z7V297V2U22Ejd;
+      DependencyProperty z8b6MqaiE8Uzn = BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn;
       BoolAllConverter conv = new BoolAllConverter();
       conv.Value = true;
       Binding[] bindingArray = new Binding[3]
@@ -183,12 +183,12 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
     this.\u0023\u003DzFEDR40ugZMK3 = (IComparable) default (T);
   }
 
-  public override bool \u0023\u003DzjgUUUJE\u003D(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+  public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.\u0023\u003DzjgUUUJE\u003D<T>(CollectionHelper.ToEx<ChartDrawData.sxTuple<T>>(((IEnumerable) _param1).Cast<ChartDrawData.sxTuple<T>>(), ((IEnumerableEx) _param1).Count));
+    return this.Draw<T>(CollectionHelper.ToEx<ChartDrawData.sxTuple<T>>(((IEnumerable) _param1).Cast<ChartDrawData.sxTuple<T>>(), ((IEnumerableEx) _param1).Count));
   }
 
-  public bool \u0023\u003DzjgUUUJE\u003D<TX1>(
+  public bool Draw<TX1>(
     IEnumerableEx<ChartDrawData.sxTuple<TX1>> _param1)
     where TX1 : struct, IComparable
   {

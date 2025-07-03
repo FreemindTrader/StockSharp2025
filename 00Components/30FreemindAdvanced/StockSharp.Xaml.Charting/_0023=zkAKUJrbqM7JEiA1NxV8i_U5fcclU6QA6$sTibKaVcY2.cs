@@ -9,19 +9,19 @@
 internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U5fcclU6QA6\u0024sTibKaVcY2Z8FSv718InqI\u003D : 
   \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX
 {
-  private readonly \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzVxwXLcXPtvCC;
+  private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
 
   public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U5fcclU6QA6\u0024sTibKaVcY2Z8FSv718InqI\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1)
+    IRenderContext2D _param1)
   {
     this.\u0023\u003DzVxwXLcXPtvCC = _param1;
   }
 
   public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    IPathColor _param1,
     double _param2,
     double _param3)
   {
-    return this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003DzD4fw8fY\u003D((\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) _param1, _param2, _param3, 0.0);
+    return this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003DzD4fw8fY\u003D((IBrush2D) _param1, _param2, _param3, 0.0);
   }
 }

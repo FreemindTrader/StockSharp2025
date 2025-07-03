@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd
+// Type: -.XyScatterRenderableSeries
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
@@ -14,27 +14,27 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
-internal sealed class dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
+internal sealed class XyScatterRenderableSeries : 
+  BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D = DependencyProperty.Register("", typeof (bool), typeof (dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D = DependencyProperty.Register("", typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) false));
 
-  public dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd()
+  public XyScatterRenderableSeries()
   {
-    this.DefaultStyleKey = (object) typeof (dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd);
-    this.SetCurrentValue(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None);
+    this.DefaultStyleKey = (object) typeof (XyScatterRenderableSeries);
+    this.SetCurrentValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None);
   }
 
   public bool DoClusterResampling
   {
     get
     {
-      return (bool) this.GetValue(dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd.\u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D);
+      return (bool) this.GetValue(XyScatterRenderableSeries.\u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D);
     }
     set
     {
-      this.SetValue(dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd.\u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D, (object) value);
+      this.SetValue(XyScatterRenderableSeries.\u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D, (object) value);
     }
   }
 
@@ -42,13 +42,13 @@ internal sealed class dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJ
   public override bool \u0023\u003DztPaciKMZWysZOtqEskMFjk8\u003D() => true;
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
-    dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A = new dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
+    XyScatterRenderableSeries.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A = new XyScatterRenderableSeries.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
     zPKCmcad6Nxc5A8A.\u0023\u003DzRRvwDu67s9Rm = this;
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
+    IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT hw1ki13vvK4WxOgoljkHyInT = this.\u0023\u003Dz_Y6pODRV4VXF();
     if (hw1ki13vvK4WxOgoljkHyInT == null)
       return;
@@ -61,7 +61,7 @@ internal sealed class dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJ
       try
       {
         Func<double, double, \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J> func = new Func<double, double, \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J>(zPKCmcad6Nxc5A8A.\u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D);
-        \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(sgkqEcPv0Ah3hMaVex, (Func<double, double, \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D>) func, ftrixUnpTllY1PkTyq, mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D());
+        \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(sgkqEcPv0Ah3hMaVex, (Func<double, double, IPathColor>) func, ftrixUnpTllY1PkTyq, mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D());
       }
       finally
       {
@@ -83,7 +83,7 @@ internal sealed class dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJ
 
   private sealed class \u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D
   {
-    public dje_zSETLVVMH9MJSB35ALRM8GUWSBCUA8Q56ZUEXTQWTWAZ5UVJXFWEPJPAAT58X5T8AELBPRA2BLP3FXYY4GU9HTRCBRJYA_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public XyScatterRenderableSeries \u0023\u003DzRRvwDu67s9Rm;
     public Color \u0023\u003DzhFYkfW57ne2I;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
 

@@ -8,21 +8,21 @@
 #nullable disable
 internal abstract class \u0023\u003DzMDDpCIYr0KRiCa3HPMUguqs\u002454aYHA4owg\u003D\u003D
 {
-  private \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003Dzf\u0024ulexAe_9gW;
+  private IAxis \u0023\u003Dzf\u0024ulexAe_9gW;
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzHZDgUSdfqmkx()
+  public IAxis \u0023\u003DzHZDgUSdfqmkx()
   {
     return this.\u0023\u003Dzf\u0024ulexAe_9gW;
   }
 
   protected void \u0023\u003DzkF76BMTQOROh(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     this.\u0023\u003Dzf\u0024ulexAe_9gW = _param1;
   }
 
   public virtual void \u0023\u003DzWzUaFxw\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     this.\u0023\u003DzkF76BMTQOROh(_param1);
   }

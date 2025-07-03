@@ -18,12 +18,12 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd : 
   dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe6IW1TrHf1OjeIxI4VnnySGI,
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB,
-  \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D,
-  \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95
+  IAxis,
+  IAxisParams,
+  IHitTestable,
+  ISuspendable,
+  IInvalidatableElement,
+  IDrawable
 {
   
   public static readonly DependencyProperty \u0023\u003Dzaf3Lae48WNlm = DependencyProperty.Register("", typeof (double), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd), new PropertyMetadata((object) -1.0));
@@ -37,7 +37,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   
   private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003DzvScByjqid0AM;
   
-  private double \u0023\u003DzDtp\u00246FfBRlYq = double.NaN;
+  private double _dataPointWidth = double.NaN;
 
   public dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd()
   {
@@ -83,54 +83,54 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
     }
   }
 
-  public override double CurrentDatapointPixelSize => this.\u0023\u003DzDtp\u00246FfBRlYq;
+  public override double CurrentDatapointPixelSize => this._dataPointWidth;
 
   public override bool IsCategoryAxis => true;
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzzMId\u0024f67Wftb(
+  public override IRange \u0023\u003DzzMId\u0024f67Wftb(
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
     throw new InvalidOperationException("");
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzFwoMKP9juTnt()
+  public override IRange \u0023\u003DzFwoMKP9juTnt()
   {
     if (!this.IsXAxis)
       throw new InvalidOperationException("");
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw1 = this.VisibleRange == null || !this.VisibleRange.IsDefined ? this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D() : this.VisibleRange;
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw2 = this.\u0023\u003Dzd6x7lH_dQH0I();
+    IRange abyLt9clZggmJsWhw1 = this.VisibleRange == null || !this.VisibleRange.IsDefined ? this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D() : this.VisibleRange;
+    IRange abyLt9clZggmJsWhw2 = this.\u0023\u003Dzd6x7lH_dQH0I();
     if (abyLt9clZggmJsWhw2 != null)
     {
-      abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw2.\u0023\u003DzzXTqVFg\u003D(this.GrowBy.Min, this.GrowBy.Max);
+      abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw2.GrowBy(this.GrowBy.Min, this.GrowBy.Max);
       if (this.VisibleRangeLimit != null)
         abyLt9clZggmJsWhw1.\u0023\u003DzJIqIiUw\u003D(this.VisibleRangeLimit, this.VisibleRangeLimitMode);
     }
     return abyLt9clZggmJsWhw1;
   }
 
-  protected override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dzd6x7lH_dQH0I()
+  protected override IRange \u0023\u003Dzd6x7lH_dQH0I()
   {
-    return this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>() ? (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) null : (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.\u0023\u003DzrBtJ_MpEE_B5();
+    return this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>() ? (IRange) null : (IRange) this.\u0023\u003DzrBtJ_MpEE_B5();
   }
 
-  private \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzrBtJ_MpEE_B5()
+  private IndexRange  \u0023\u003DzrBtJ_MpEE_B5()
   {
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) null;
+    IndexRange  g8Oq2rGx6KyfAreq = (IndexRange ) null;
     IRenderableSeries s1JolYrWoYpqmQ6ug = this.ParentSurface.get_RenderableSeries().FirstOrDefault<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzcHRWPhoLpVN6adCW3mQzIrw\u003D));
     if (s1JolYrWoYpqmQ6ug != null)
-      g8Oq2rGx6KyfAreq = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, s1JolYrWoYpqmQ6ug.get_DataSeries().\u0023\u003DzwQnyySN6xaVC().Count - 1);
+      g8Oq2rGx6KyfAreq = new IndexRange (0, s1JolYrWoYpqmQ6ug.get_DataSeries().\u0023\u003DzwQnyySN6xaVC().Count - 1);
     return g8Oq2rGx6KyfAreq;
   }
 
-  public override \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzQ8SgRgQ\u003D()
+  public override IAxis \u0023\u003DzQ8SgRgQ\u003D()
   {
     dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd nu9622VfydaypdeqEjd = new dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd();
     if (this.VisibleRange != null)
-      nu9622VfydaypdeqEjd.VisibleRange = (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.VisibleRange.Clone();
+      nu9622VfydaypdeqEjd.VisibleRange = (IRange) this.VisibleRange.Clone();
     if (this.GrowBy != null)
-      nu9622VfydaypdeqEjd.GrowBy = (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double>) this.GrowBy.Clone();
+      nu9622VfydaypdeqEjd.GrowBy = (IRange<double>) this.GrowBy.Clone();
     nu9622VfydaypdeqEjd.BarTimeFrame = -1.0;
-    return (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) nu9622VfydaypdeqEjd;
+    return (IAxis) nu9622VfydaypdeqEjd;
   }
 
   protected override void \u0023\u003Dz2RD3F8MtvzO1()
@@ -158,7 +158,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
       return double.NaN;
     if (xkzemsMs5tGkouk5w is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0 && _param1 is DateTime)
       _param1 = (IComparable) q9i0MXI7Qb9c1V6c0.\u0023\u003DzFk6sufr\u0024co4e((DateTime) _param1);
-    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.\u0023\u003Dzb9UCYbo\u003D());
+    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.ToDouble());
   }
 
   public override IComparable \u0023\u003DzACwLhyc\u003D(double _param1)
@@ -175,19 +175,19 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   }
 
   public override bool \u0023\u003Dz9yvpaTXy3ucx(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
-    return _param1 is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D;
+    return _param1 is IndexRange ;
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzspbjXJnVtbB\u0024()
+  public override IRange \u0023\u003DzspbjXJnVtbB\u0024()
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, int.MaxValue);
+    return (IRange) new IndexRange (0, int.MaxValue);
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
+  public override IRange \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, 10);
+    return (IRange) new IndexRange (0, 10);
   }
 
   public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
@@ -214,11 +214,11 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
 
   public override void \u0023\u003Dz\u00248pSPh2nSp0Q(int _param1, TimeSpan _param2)
   {
-    if (!(this.VisibleRange is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D visibleRange))
+    if (!(this.VisibleRange is IndexRange  visibleRange))
       return;
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(visibleRange.Min + _param1, visibleRange.Max + _param1);
-    this.\u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D((\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) g8Oq2rGx6KyfAreq);
-    this.\u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D((\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) g8Oq2rGx6KyfAreq, _param2);
+    IndexRange  g8Oq2rGx6KyfAreq = new IndexRange (visibleRange.Min + _param1, visibleRange.Max + _param1);
+    this.\u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D((IRange) g8Oq2rGx6KyfAreq);
+    this.\u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D((IRange) g8Oq2rGx6KyfAreq, _param2);
   }
 
   private void \u0023\u003DzFDFY\u0024WdH2REe(
@@ -226,14 +226,14 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   {
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzJqKipxOjoBSS = true;
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003DznUzlqIN9ReXL = _param1;
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleRange = this.VisibleRange;
+    IRange visibleRange = this.VisibleRange;
     int val1 = visibleRange != null ? Math.Max((int) visibleRange.Min, 0) : 0;
     int num = visibleRange != null ? Math.Max(val1, (int) visibleRange.Max) : 0;
-    this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzToxB29CkMiO6 = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(val1, num);
+    this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzToxB29CkMiO6 = new IndexRange (val1, num);
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2 = this.\u0023\u003DzbY7N\u0024Xk2WSr8();
-    this.\u0023\u003DzDtp\u00246FfBRlYq = dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003Dz6Vq26Hfm2pXj((\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) visibleRange, this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzdTxNrgQ\u003D);
-    this.\u0023\u003DzvScByjqid0AM.\u0023\u003Dz_WzdhI8nAiba = this.\u0023\u003DzDtp\u00246FfBRlYq;
-    this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzdTxNrgQ\u003D -= this.\u0023\u003DzDtp\u00246FfBRlYq;
+    this._dataPointWidth = dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003Dz6Vq26Hfm2pXj((IndexRange ) visibleRange, this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzdTxNrgQ\u003D);
+    this.\u0023\u003DzvScByjqid0AM.\u0023\u003Dz_WzdhI8nAiba = this._dataPointWidth;
+    this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzdTxNrgQ\u003D -= this._dataPointWidth;
     this.\u0023\u003Dz15moWio\u003D("");
   }
 
@@ -247,7 +247,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
       if (z9jZg9RufbqZ != null && z9jZg9RufbqZ.Count >= 2)
       {
         int index = z9jZg9RufbqZ.Count - 1;
-        num = (((DateTime) z9jZg9RufbqZ[index]).\u0023\u003Dzb9UCYbo\u003D() - ((DateTime) z9jZg9RufbqZ[0]).\u0023\u003Dzb9UCYbo\u003D()) / (double) index;
+        num = (((DateTime) z9jZg9RufbqZ[index]).ToDouble() - ((DateTime) z9jZg9RufbqZ[0]).ToDouble()) / (double) index;
       }
       num = num > 0.0 ? num : ticks;
     }
@@ -255,7 +255,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   }
 
   internal static double \u0023\u003Dz6Vq26Hfm2pXj(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param0,
+    IndexRange  _param0,
     double _param1)
   {
     if (_param0 == null)
@@ -265,7 +265,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   }
 
   public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D \u0023\u003DzFL7WRclCPBWI(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1)
+    IndexRange  _param1)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D) null;
@@ -279,45 +279,45 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
     return dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003DzVGdWd1PKAs\u00242;
   }
 
-  HorizontalAlignment \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB.\u0023\u003Dz5VLaAZX2bctAcuSoajSAXtBWUytTwKmwegWB430RRP_iyVUjrw\u003D\u003D()
+  HorizontalAlignment IAxis.\u0023\u003Dz5VLaAZX2bctAcuSoajSAXtBWUytTwKmwegWB430RRP_iyVUjrw\u003D\u003D()
   {
     return this.HorizontalAlignment;
   }
 
-  void \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB.\u0023\u003DzTbSy5Tg7CNKewHb2FguXqzKcL0mg\u0024lar5H2OZ3W_18PGuoI1WA\u003D\u003D(
+  void IAxis.\u0023\u003DzTbSy5Tg7CNKewHb2FguXqzKcL0mg\u0024lar5H2OZ3W_18PGuoI1WA\u003D\u003D(
     HorizontalAlignment _param1)
   {
     this.HorizontalAlignment = _param1;
   }
 
-  VerticalAlignment \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB.\u0023\u003DzSseiGdgwJmJ1pkmz7CEFfx8mbOWyc1wXvn8wBzjwACKu6EY0OQ\u003D\u003D()
+  VerticalAlignment IAxis.\u0023\u003DzSseiGdgwJmJ1pkmz7CEFfx8mbOWyc1wXvn8wBzjwACKu6EY0OQ\u003D\u003D()
   {
     return this.VerticalAlignment;
   }
 
-  void \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntTNDUky6SmSb6\u0024FDWAQO1Y0HmfujBQ\u003D\u003D(
+  void IAxis.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntTNDUky6SmSb6\u0024FDWAQO1Y0HmfujBQ\u003D\u003D(
     VerticalAlignment _param1)
   {
     this.VerticalAlignment = _param1;
   }
 
-  Visibility \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB.\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRYwo3gBY9dA\u0024Mbe\u0024dG0As1jePnhZWw\u003D\u003D()
+  Visibility IAxis.\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRYwo3gBY9dA\u0024Mbe\u0024dG0As1jePnhZWw\u003D\u003D()
   {
     return this.Visibility;
   }
 
-  void \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntSyV0Rj0ibC6aIMhpwJ2VCPFsZZaBw\u003D\u003D(
+  void IAxis.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntSyV0Rj0ibC6aIMhpwJ2VCPFsZZaBw\u003D\u003D(
     Visibility _param1)
   {
     this.Visibility = _param1;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
+  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
   {
     return this.ActualWidth;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
+  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
   {
     return this.ActualHeight;
   }

@@ -11,22 +11,22 @@ using System.Windows;
 #nullable disable
 internal sealed class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D
 {
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003DzG8earjBgAwVeD46WDFvpPCJ7F4cFPTXgRw\u003D\u003D;
+  private ISciChartSurface \u0023\u003DzG8earjBgAwVeD46WDFvpPCJ7F4cFPTXgRw\u003D\u003D;
 
   public \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1)
+    ISciChartSurface _param1)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     this.\u0023\u003DzGMG72B9TIGe_\u0024devBfFI\u0024z8\u003D(_param1);
   }
 
-  internal \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D()
+  internal ISciChartSurface \u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D()
   {
     return this.\u0023\u003DzG8earjBgAwVeD46WDFvpPCJ7F4cFPTXgRw\u003D\u003D;
   }
 
   private void \u0023\u003DzGMG72B9TIGe_\u0024devBfFI\u0024z8\u003D(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1)
+    ISciChartSurface _param1)
   {
     this.\u0023\u003DzG8earjBgAwVeD46WDFvpPCJ7F4cFPTXgRw\u003D\u003D = _param1;
   }

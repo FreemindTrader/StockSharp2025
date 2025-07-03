@@ -15,16 +15,16 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x
   IDisposable
 {
   
-  private readonly \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzVxwXLcXPtvCC;
+  private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
   
   private readonly \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT \u0023\u003DzE7bFkpMkNiWA;
   
   private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzkbpZHOIN98su;
   
-  private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dznk36UXXVVS0u;
+  private IBrush2D \u0023\u003Dznk36UXXVVS0u;
 
   public \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x8MMDygc2mw\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT _param2)
   {
     this.\u0023\u003DzVxwXLcXPtvCC = _param1;
@@ -32,22 +32,22 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x
   }
 
   public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    IPathColor _param1,
     double _param2,
     double _param3)
   {
     if (_param1 != null)
     {
       this.\u0023\u003DzkbpZHOIN98su = (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) _param1;
-      this.\u0023\u003Dznk36UXXVVS0u = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003Dze8WyDhI\u003D(_param1.get_Color(), 1.0, new bool?());
+      this.\u0023\u003Dznk36UXXVVS0u = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003Dze8WyDhI\u003D(_param1.Color, 1.0, new bool?());
     }
     else
     {
       this.\u0023\u003DzkbpZHOIN98su = (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null;
-      this.\u0023\u003Dznk36UXXVVS0u = (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null;
+      this.\u0023\u003Dznk36UXXVVS0u = (IBrush2D) null;
     }
     this.\u0023\u003DzE7bFkpMkNiWA.\u0023\u003Dz7ZSU06M\u003D(this.\u0023\u003DzVxwXLcXPtvCC, this.\u0023\u003DzkbpZHOIN98su, this.\u0023\u003Dznk36UXXVVS0u);
-    this.\u0023\u003DzE7bFkpMkNiWA.\u0023\u003DzjgUUUJE\u003D(this.\u0023\u003DzVxwXLcXPtvCC, _param2, _param3, this.\u0023\u003DzkbpZHOIN98su, this.\u0023\u003Dznk36UXXVVS0u);
+    this.\u0023\u003DzE7bFkpMkNiWA.Draw(this.\u0023\u003DzVxwXLcXPtvCC, _param2, _param3, this.\u0023\u003DzkbpZHOIN98su, this.\u0023\u003Dznk36UXXVVS0u);
     return (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) this;
   }
 
@@ -55,18 +55,18 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x
     double _param1,
     double _param2)
   {
-    this.\u0023\u003DzE7bFkpMkNiWA.\u0023\u003DzjgUUUJE\u003D(this.\u0023\u003DzVxwXLcXPtvCC, _param1, _param2, this.\u0023\u003DzkbpZHOIN98su, this.\u0023\u003Dznk36UXXVVS0u);
+    this.\u0023\u003DzE7bFkpMkNiWA.Draw(this.\u0023\u003DzVxwXLcXPtvCC, _param1, _param2, this.\u0023\u003DzkbpZHOIN98su, this.\u0023\u003Dznk36UXXVVS0u);
     return (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) this;
   }
 
   public void \u0023\u003DzBNsE20w\u003D()
   {
     this.\u0023\u003DzE7bFkpMkNiWA.\u0023\u003DzBNsE20w\u003D(this.\u0023\u003DzVxwXLcXPtvCC);
-    this.\u0023\u003Dznk36UXXVVS0u = (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) null;
+    this.\u0023\u003Dznk36UXXVVS0u = (IBrush2D) null;
     this.\u0023\u003DzkbpZHOIN98su = (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null;
   }
 
-  void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+  void IDisposable.Dispose()
   {
     this.\u0023\u003DzBNsE20w\u003D();
   }

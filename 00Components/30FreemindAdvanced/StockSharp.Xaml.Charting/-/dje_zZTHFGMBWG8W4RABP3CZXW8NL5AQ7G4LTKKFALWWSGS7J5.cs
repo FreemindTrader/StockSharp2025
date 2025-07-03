@@ -14,7 +14,7 @@ using System.Windows;
 namespace StockSharp.Xaml.Charting;
 
 internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register("", typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) ""));
@@ -104,7 +104,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   {
     if (this.\u0023\u003DzSsJ0VVqBhS6c == (Type) null || this.\u0023\u003DzJu3oQ4_zae0S == null || !this.\u0023\u003DzJu3oQ4_zae0S.IsAttached || this.\u0023\u003DzJu3oQ4_zae0S.IsSelected)
       return;
-    this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D, this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface));
+    this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D, this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface));
   }
 
   private bool \u0023\u003DzYcyvKa51rB8n(Type _param1)
@@ -121,7 +121,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     _param1.\u0023\u003DzBHH5KNloEXNR(true);
     if (this.\u0023\u003DzJu3oQ4_zae0S != null && this.\u0023\u003DzJu3oQ4_zae0S.IsAttached)
       this.\u0023\u003DzJu3oQ4_zae0S.IsSelected = false;
-    this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface);
+    this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
     if (this.\u0023\u003DzYcyvKa51rB8n(this.\u0023\u003DzSsJ0VVqBhS6c))
       return;
     this.\u0023\u003DzJu3oQ4_zae0S = this.\u0023\u003DzWj46Xvc\u003D(this.\u0023\u003DzSsJ0VVqBhS6c, this.\u0023\u003DzL3qbeQTHvLZ5);
@@ -136,7 +136,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     if (this.\u0023\u003DzYcyvKa51rB8n(this.\u0023\u003DzSsJ0VVqBhS6c) && this.\u0023\u003DzJu3oQ4_zae0S == null)
     {
       this.\u0023\u003DzJu3oQ4_zae0S = this.\u0023\u003DzWj46Xvc\u003D(this.\u0023\u003DzSsJ0VVqBhS6c, this.\u0023\u003DzL3qbeQTHvLZ5);
-      Point point = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this.ModifierSurface);
+      Point point = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
       this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(point, point);
     }
     if (this.\u0023\u003DzJu3oQ4_zae0S == null)

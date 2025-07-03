@@ -50,10 +50,10 @@ internal sealed class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232
     this.\u0023\u003DzNfj_yrlKoHA\u0024.Add(_param1);
   }
 
-  public void \u0023\u003DzYI36Ggg\u003D()
+  public void Reset()
   {
     foreach (\u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D gi8m8xLSrGvDy8poU3Mw in this.\u0023\u003DzNfj_yrlKoHA\u0024)
-      gi8m8xLSrGvDy8poU3Mw.\u0023\u003DzYI36Ggg\u003D();
+      gi8m8xLSrGvDy8poU3Mw.Reset();
   }
 
   public string \u0023\u003Dzz2S8ZCo\u003D(double _param1)

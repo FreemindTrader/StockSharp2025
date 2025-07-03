@@ -8,13 +8,13 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG47w9OaqF_aMuilIfFliOpay<\u0023\u003DzH9HNkng\u003D> : 
-  \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3tOndLKZk0aGELbzVxE4VJ9A
-  where \u0023\u003DzH9HNkng\u003D : IComparable
+internal interface \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG47w9OaqF_aMuilIfFliOpay<T> : 
+  ITickProvider
+  where T : IComparable
 {
-  \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dzctqa9kMCtfQQ(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS _param1);
+  T[] \u0023\u003Dzctqa9kMCtfQQ(
+    IAxisParams _param1);
 
-  \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dz65PoZl8ZJBOc(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS _param1);
+  T[] \u0023\u003Dz65PoZl8ZJBOc(
+    IAxisParams _param1);
 }

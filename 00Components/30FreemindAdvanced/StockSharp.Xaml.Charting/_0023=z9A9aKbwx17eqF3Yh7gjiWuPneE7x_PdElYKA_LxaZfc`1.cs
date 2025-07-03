@@ -11,21 +11,21 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<\u0023\u003DzH9HNkng\u003D> : 
-  IList<\u0023\u003DzH9HNkng\u003D>,
-  ICollection<\u0023\u003DzH9HNkng\u003D>,
-  IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> : 
+  IList<T>,
+  ICollection<T>,
+  IEnumerable<T>,
   IEnumerable
 {
   
-  private \u0023\u003DzH9HNkng\u003D[] \u0023\u003Dz0GgNoqs\u003D;
+  private T[] \u0023\u003Dz0GgNoqs\u003D;
   
   private int \u0023\u003Dz_tkZHEs\u003D;
   
   private int \u0023\u003DzpxhY2Co\u003D;
 
   internal \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
-    \u0023\u003DzH9HNkng\u003D[] _param1,
+    T[] _param1,
     int _param2,
     int _param3)
   {
@@ -35,13 +35,13 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<
   }
 
   internal \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
-    \u0023\u003DzH9HNkng\u003D[] _param1)
+    T[] _param1)
   {
     this.\u0023\u003Dz0GgNoqs\u003D = _param1;
     this.\u0023\u003DzpxhY2Co\u003D = _param1.Length;
   }
 
-  internal \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzvsnCYl4\u003D()
+  internal T[] \u0023\u003DzvsnCYl4\u003D()
   {
     return this.\u0023\u003Dz0GgNoqs\u003D;
   }
@@ -50,37 +50,37 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<
 
   public int Count => this.\u0023\u003DzpxhY2Co\u003D;
 
-  public int IndexOf(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotImplementedException();
+  public int IndexOf(T _param1) => throw new NotImplementedException();
 
-  public void Insert(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
+  public void Insert(int _param1, T _param2)
   {
     throw new NotSupportedException();
   }
 
   public void RemoveAt(int _param1) => throw new NotSupportedException();
 
-  public \u0023\u003DzH9HNkng\u003D this[int _param1]
+  public T this[int _param1]
   {
     get => this.\u0023\u003DzvsnCYl4\u003D()[_param1 + this.\u0023\u003DzOhT86Emh4umk()];
     set => throw new NotImplementedException();
   }
 
-  public void Add(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotSupportedException();
+  public void Add(T _param1) => throw new NotSupportedException();
 
   public void Clear() => throw new NotSupportedException();
 
-  public bool Contains(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotImplementedException();
+  public bool Contains(T _param1) => throw new NotImplementedException();
 
-  public void CopyTo(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2)
+  public void CopyTo(T[] _param1, int _param2)
   {
     throw new NotImplementedException();
   }
 
   public bool IsReadOnly => true;
 
-  public bool Remove(\u0023\u003DzH9HNkng\u003D _param1) => throw new NotSupportedException();
+  public bool Remove(T _param1) => throw new NotSupportedException();
 
-  public IEnumerator<\u0023\u003DzH9HNkng\u003D> GetEnumerator()
+  public IEnumerator<T> GetEnumerator()
   {
     throw new NotImplementedException();
   }

@@ -110,7 +110,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   /// <summary>Request data event.</summary>
   public event Func<IChart3DParameter, IChart3DParameter, IStatisticParameter, IEnumerable<SeriesPoint3D>> DataRequested;
 
-  private void \u0023\u003DzMIAnwWQ\u003D()
+  private void ResetUI()
   {
     Action zlDokZjs = this.\u0023\u003DzlDOkZJs\u003D;
     if (zlDokZjs != null)
@@ -141,14 +141,14 @@ public class OptimizerChart3D : UserControl, IComponentConnector
     object _param1,
     EditValueChangedEventArgs _param2)
   {
-    this.\u0023\u003DzMIAnwWQ\u003D();
+    this.ResetUI();
   }
 
   private void \u0023\u003DzYI42_\u0024dcJNJaMpFzUQ\u003D\u003D(
     object _param1,
     EditValueChangedEventArgs _param2)
   {
-    this.\u0023\u003DzMIAnwWQ\u003D();
+    this.ResetUI();
   }
 
   private void \u0023\u003DznBSvX0vDvPRU(object _param1, EventArgs _param2)

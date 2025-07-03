@@ -189,7 +189,7 @@ public abstract class ChartSettingsObjectBase<T> : NotifiableObject, ICustomType
     [Serializable]
     private sealed class \u0023\u003Dz7qOdpi4\u003D
     {
-      public static readonly ChartSettingsObjectBase<\u0023\u003DzH9HNkng\u003D>.ProxyDescriptor.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartSettingsObjectBase<\u0023\u003DzH9HNkng\u003D>.ProxyDescriptor.\u0023\u003Dz7qOdpi4\u003D();
+      public static readonly ChartSettingsObjectBase<T>.ProxyDescriptor.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartSettingsObjectBase<T>.ProxyDescriptor.\u0023\u003Dz7qOdpi4\u003D();
       public static Predicate<Attribute> \u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D;
 
       internal bool \u0023\u003Dz4rQcnrkgVpOd4_6eJw\u003D\u003D(Attribute _param1)

@@ -18,7 +18,7 @@ internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u00
   private bool \u0023\u003DzOU8wceErNMhUttw6c6n4ESA\u003D;
   private IList \u0023\u003DzGQUQhOv49SbNC0pu6Ad4lKU\u003D;
   private readonly double \u0023\u003DzUJCePcfzDIqu;
-  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzbcBiY3v5phYc;
+  private readonly IndexRange  \u0023\u003DzbcBiY3v5phYc;
   private readonly double \u0023\u003Dz0AQCdKVYriX\u0024cCousg\u003D\u003D;
   private readonly double \u0023\u003Dz6_fch3qptd6X;
 
@@ -27,7 +27,7 @@ internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u00
     double _param2,
     double _param3,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param4,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param5,
+    IndexRange  _param5,
     bool _param6,
     IList _param7,
     bool _param8)
@@ -77,12 +77,12 @@ internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u00
     return ((double) (this.\u0023\u003DzbcBiY3v5phYc.Max - this.\u0023\u003DzbcBiY3v5phYc.Min) * (_param1 - this.\u0023\u003DzV1bNkSgej_yk()) / this.\u0023\u003Dz6_fch3qptd6X + (double) this.\u0023\u003DzbcBiY3v5phYc.Min).\u0023\u003DzZsq6ZfbZQvsf();
   }
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  public override DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd _param2)
+    DoubleRange _param2)
   {
     int num = (int) (-_param1 / this.\u0023\u003Dz0AQCdKVYriX\u0024cCousg\u003D\u003D);
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(_param2.Min + (double) num, _param2.Max + (double) num);
+    return new DoubleRange(_param2.Min + (double) num, _param2.Max + (double) num);
   }
 
   public DateTime \u0023\u003DzWZQlXHuDrnKc(int _param1)
@@ -135,7 +135,7 @@ internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u00
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param2)
   {
     if (!this.\u0023\u003DzpUn2Qsz7CiQS().\u0023\u003DzfFZjWlZiH0nd())
-      _param1 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(_param1.\u0023\u003Dzb9UCYbo\u003D(), this.\u0023\u003DzpUn2Qsz7CiQS()[0].GetType());
+      _param1 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(_param1.ToDouble(), this.\u0023\u003DzpUn2Qsz7CiQS()[0].GetType());
     return this.\u0023\u003DzpUn2Qsz7CiQS().\u0023\u003DzFH1yjjY\u003D(this.\u0023\u003DzpnH1hhKZYi_ClVj9VA\u003D\u003D(), _param1, _param2);
   }
 }

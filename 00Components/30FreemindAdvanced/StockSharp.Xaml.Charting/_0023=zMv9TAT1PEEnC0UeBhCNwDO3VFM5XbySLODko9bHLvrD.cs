@@ -43,12 +43,12 @@ internal class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u
 
   private double \u0023\u003DzeuxrJCE00Q0n()
   {
-    double num = this.\u0023\u003DzHZDgUSdfqmkx().IsHorizontalAxis ? this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dzu2ObQ3hMALTN() : this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz2kO1mtG\u0024bEUM();
+    double num = this.\u0023\u003DzHZDgUSdfqmkx().IsHorizontalAxis ? this.\u0023\u003DzHZDgUSdfqmkx().ActualWidth : this.\u0023\u003DzHZDgUSdfqmkx().ActualHeight;
     if (Math.Abs(num) < double.Epsilon && this.\u0023\u003DzHZDgUSdfqmkx().get_ParentSurface() != null)
     {
       \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7 renderSurface = this.\u0023\u003DzHZDgUSdfqmkx().get_ParentSurface().get_RenderSurface();
       if (renderSurface != null)
-        num = this.\u0023\u003DzHZDgUSdfqmkx().IsHorizontalAxis ? renderSurface.\u0023\u003Dzu2ObQ3hMALTN() : renderSurface.\u0023\u003Dz2kO1mtG\u0024bEUM();
+        num = this.\u0023\u003DzHZDgUSdfqmkx().IsHorizontalAxis ? renderSurface.ActualWidth : renderSurface.ActualHeight;
     }
     return num;
   }

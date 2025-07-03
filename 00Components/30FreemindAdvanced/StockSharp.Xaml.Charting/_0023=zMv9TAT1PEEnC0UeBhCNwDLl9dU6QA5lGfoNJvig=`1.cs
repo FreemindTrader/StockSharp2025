@@ -9,18 +9,18 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal interface \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<\u0023\u003DzH9HNkng\u003D> : 
+internal interface \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<T> : 
   \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqGwqd9HRLNiqw6g\u003D\u003D,
   ICloneable
-  where \u0023\u003DzH9HNkng\u003D : IComparable
+  where T : IComparable
 {
   [SpecialName]
-  \u0023\u003DzH9HNkng\u003D \u0023\u003Dzgq30Jn5PclK8();
+  T \u0023\u003Dzgq30Jn5PclK8();
 
-  void \u0023\u003DzLBsbhOSbi0NY(\u0023\u003DzH9HNkng\u003D _param1);
+  void \u0023\u003DzLBsbhOSbi0NY(T _param1);
 
   [SpecialName]
-  \u0023\u003DzH9HNkng\u003D \u0023\u003DzZ85DqsktXJL3();
+  T \u0023\u003DzZ85DqsktXJL3();
 
-  void \u0023\u003DznbvDc7H\u0024gWhJ(\u0023\u003DzH9HNkng\u003D _param1);
+  void \u0023\u003DznbvDc7H\u0024gWhJ(T _param1);
 }

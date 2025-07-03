@@ -17,7 +17,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries;
 internal sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> : 
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  ISuspendable,
   \u0023\u003Dzboj3ckhISv7k6koCkTeIfz13hju1HWdmJxf054ica0kRcYMVoV1Kpw0\u003D,
   \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D
   where TX : IComparable
@@ -31,7 +31,7 @@ internal sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
   private int[,] _cachedArgbColorArray2D;
   private \u0023\u003DzPlFvps97y7rWR4vc5KUjR5Ch17PMi3H3ortKPxkjv7KR _cachedMappingSettings;
   private readonly object _syncRoot = new object();
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _parentSurface;
+  private ISciChartSurface _parentSurface;
 
   public Heatmap2DArrayDataSeries(TZ[,] array2D, Func<int, TX> xMapping, Func<int, TY> yMapping)
   {
@@ -59,7 +59,7 @@ internal sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
 
   public bool IsEvenlySpaced => true;
 
-  \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EParentSurface
+  ISciChartSurface \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EParentSurface
   {
     get => this._parentSurface;
     set => this._parentSurface = value;
@@ -67,11 +67,11 @@ internal sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
 
   public string SeriesName { get; set; }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXRange
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXRange
   {
     get
     {
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(this._xMapping(0).\u0023\u003Dzb9UCYbo\u003D(), this._xMapping(this.ArrayWidth - 1).\u0023\u003Dzb9UCYbo\u003D());
+      return (IRange) new DoubleRange(this._xMapping(0).ToDouble(), this._xMapping(this.ArrayWidth - 1).ToDouble());
     }
   }
 
@@ -189,7 +189,7 @@ internal sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
       for (int index1 = 0; index1 < arrayHeight; ++index1)
       {
         for (int index2 = 0; index2 < arrayWidth; ++index2)
-          this._cachedArgbColorArray2D[index1, index2] = Heatmap2DArrayDataSeries<TX, TY, TZ>.DoubleToArgbColor(this._array2D[index1, index2].\u0023\u003Dzb9UCYbo\u003D(), mappingSettings);
+          this._cachedArgbColorArray2D[index1, index2] = Heatmap2DArrayDataSeries<TX, TY, TZ>.DoubleToArgbColor(this._array2D[index1, index2].ToDouble(), mappingSettings);
       }
       this._cachedMappingSettings = mappingSettings;
     }
@@ -270,7 +270,7 @@ label_9:
       for (int index1 = 0; index1 < length1; ++index1)
       {
         for (int index2 = 0; index2 < length2; ++index2)
-          this._cachedArray2D[index1, index2] = this._array2D[index1, index2].\u0023\u003Dzb9UCYbo\u003D();
+          this._cachedArray2D[index1, index2] = this._array2D[index1, index2].ToDouble();
       }
     }
     return this._cachedArray2D;
@@ -282,11 +282,11 @@ label_9:
     get => throw new NotImplementedException();
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYRange
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYRange
   {
     get
     {
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(this._yMapping(0).\u0023\u003Dzb9UCYbo\u003D(), this._yMapping(this.ArrayHeight - 1).\u0023\u003Dzb9UCYbo\u003D());
+      return (IRange) new DoubleRange(this._yMapping(0).ToDouble(), this._yMapping(this.ArrayHeight - 1).ToDouble());
     }
   }
 
@@ -383,7 +383,7 @@ label_9:
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D pointRange,
+    IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis)
   {
@@ -432,73 +432,73 @@ label_9:
   {
   }
 
-  bool \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002EIsSuspended
+  bool ISuspendable.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002EIsSuspended
   {
     get => throw new NotImplementedException();
   }
 
-  \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002ESuspendUpdates()
+  IUpdateSuspender ISuspendable.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002ESuspendUpdates()
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002EResumeUpdates(
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote suspender)
+  void ISuspendable.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002EResumeUpdates(
+    IUpdateSuspender suspender)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002EDecrementSuspend()
+  void ISuspendable.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EISuspendable\u002EDecrementSuspend()
   {
     throw new NotImplementedException();
   }
 
-  \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetIndicesRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleRange)
+  IndexRange  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetIndicesRange(
+    IRange visibleRange)
   {
-    return new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(0, this.ArrayWidth - 1);
+    return new IndexRange (0, this.ArrayWidth - 1);
   }
 
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D pointRange,
+    IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis,
     bool? dataIsDisplayedAs2D,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleXRange,
+    IRange visibleXRange,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D factory,
     object pointSeriesArg)
   {
     return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) new \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0nFFXWH2DvMJoLMw\u003D\u003D<TX, TY>((\u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D) this, this._xMapping, this._yMapping);
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D xIndexRange)
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IndexRange  xIndexRange)
   {
     return this.GetYRange();
   }
 
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D GetYRange()
+  private IRange GetYRange()
   {
-    return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(this._yMapping(0).\u0023\u003Dzb9UCYbo\u003D(), this._yMapping(this.ArrayHeight).\u0023\u003Dzb9UCYbo\u003D());
+    return (IRange) new DoubleRange(this._yMapping(0).ToDouble(), this._yMapping(this.ArrayHeight).ToDouble());
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D xIndexRange,
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IndexRange  xIndexRange,
     bool getPositiveRange)
   {
     return this.GetYRange();
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D xRange,
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IRange xRange,
     bool getPositiveRange)
   {
     return this.GetYRange();
   }
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D xRange)
+  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+    IRange xRange)
   {
     return this.GetYRange();
   }
@@ -556,7 +556,7 @@ label_9:
   {
     for (int index = 0; index < dimension; ++index)
     {
-      if (mapping(index + 1).\u0023\u003Dzb9UCYbo\u003D() >= value && mapping(index).\u0023\u003Dzb9UCYbo\u003D() < value)
+      if (mapping(index + 1).ToDouble() >= value && mapping(index).ToDouble() < value)
         return new int?(index);
     }
     return new int?();

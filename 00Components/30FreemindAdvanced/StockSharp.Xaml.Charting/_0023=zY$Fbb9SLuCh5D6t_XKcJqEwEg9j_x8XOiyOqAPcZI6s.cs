@@ -12,7 +12,7 @@ internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZ
   \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u003D\u003D
 {
   private \u0023\u003DzgeFvyoahWukw3bL8yZfVYr7JNrME_OMqiz4nIDlTZlok \u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D;
-  private \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzQpx\u0024u4Y\u0024rfZ\u0024;
+  private IRange \u0023\u003DzQpx\u0024u4Y\u0024rfZ\u0024;
   private double \u0023\u003DzwSMW5jQsRSmc;
 
   public override \u0023\u003DzgeFvyoahWukw3bL8yZfVYr7JNrME_OMqiz4nIDlTZlok \u0023\u003DzU4j4bt2YhYuc(
@@ -20,7 +20,7 @@ internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZ
     double[] _param2)
   {
     bool flag1 = !this.\u0023\u003DzHZDgUSdfqmkx().VisibleRange.Equals((object) this.\u0023\u003DzQpx\u0024u4Y\u0024rfZ\u0024);
-    bool flag2 = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dzu2ObQ3hMALTN().CompareTo(this.\u0023\u003DzwSMW5jQsRSmc) != 0;
+    bool flag2 = this.\u0023\u003DzHZDgUSdfqmkx().ActualWidth.CompareTo(this.\u0023\u003DzwSMW5jQsRSmc) != 0;
     if (this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D.\u0023\u003DzE9zGTWQAFP9k() | flag2)
       this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D = base.\u0023\u003DzU4j4bt2YhYuc(_param1, _param2);
     else if (flag1)
@@ -28,7 +28,7 @@ internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZ
     else
       this.\u0023\u003DzPQmsxQlX6LPB(this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D);
     this.\u0023\u003DzQpx\u0024u4Y\u0024rfZ\u0024 = this.\u0023\u003DzHZDgUSdfqmkx().VisibleRange;
-    this.\u0023\u003DzwSMW5jQsRSmc = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dzu2ObQ3hMALTN();
+    this.\u0023\u003DzwSMW5jQsRSmc = this.\u0023\u003DzHZDgUSdfqmkx().ActualWidth;
     return this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D;
   }
 
@@ -40,12 +40,12 @@ internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZ
     for (int index = 0; index < _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D().Length; ++index)
     {
       IComparable comparable = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003DzACwLhyc\u003D((double) _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D()[index]);
-      _param1.\u0023\u003Dza3zX1a5AAgFk()[index] = comparable.\u0023\u003Dzb9UCYbo\u003D();
+      _param1.\u0023\u003Dza3zX1a5AAgFk()[index] = comparable.ToDouble();
     }
     for (int index = 0; index < _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D().Length; ++index)
     {
       IComparable comparable = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003DzACwLhyc\u003D((double) _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D()[index]);
-      _param1.\u0023\u003Dzyqh0CrzbJnzy()[index] = comparable.\u0023\u003Dzb9UCYbo\u003D();
+      _param1.\u0023\u003Dzyqh0CrzbJnzy()[index] = comparable.ToDouble();
     }
   }
 

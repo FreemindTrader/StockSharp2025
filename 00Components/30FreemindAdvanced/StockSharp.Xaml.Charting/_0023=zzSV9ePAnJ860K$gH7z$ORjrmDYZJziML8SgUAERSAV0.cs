@@ -88,7 +88,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
       if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, _param1) ? 1 : 0) : 1) == 0)
         return false;
       IfxChartElement zLiCojrU = this.\u0023\u003DzLICojrU\u003D;
-      return zLiCojrU == null || !zLiCojrU.\u0023\u003DzpU3scm4vRLfa(_param1.Name);
+      return zLiCojrU == null || !zLiCojrU.AdditionalName(_param1.Name);
     }
 
     internal 
@@ -107,7 +107,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
         propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
       }
       else
-        propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.\u0023\u003Dzbk\u0024mfqA9iwbF((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ));
+        propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.GetName((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ));
       return propertyDescriptors;
     }
   }

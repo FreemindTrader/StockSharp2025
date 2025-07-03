@@ -1,0 +1,14 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=z5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ==
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
+
+#nullable disable
+internal interface \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D
+{
+  \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzu\u0024P3XgkcE7BC();
+
+  void \u0023\u003DzrEoWi5uPS0Yz(
+    \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D _param1);
+}

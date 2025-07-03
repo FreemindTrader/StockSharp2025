@@ -14,11 +14,11 @@ namespace StockSharp.Xaml.Charting;
 internal sealed class dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd : 
   Canvas,
   \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
+  IHitTestable
 {
   public Point TranslatePoint(
     Point _param1,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param2)
+    IHitTestable _param2)
   {
     return this.TranslatePoint(_param1, _param2);
   }
@@ -26,7 +26,7 @@ internal sealed class dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd :
   public bool IsPointWithinBounds(Point _param1) => this.IsPointWithinBounds(_param1);
 
   public Rect GetBoundsRelativeTo(
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param1)
+    IHitTestable _param1)
   {
     return this.GetBoundsRelativeTo(_param1);
   }
@@ -36,12 +36,12 @@ internal sealed class dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd :
     return this.Children;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
+  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
   {
     return this.ActualWidth;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
+  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
   {
     return this.ActualHeight;
   }

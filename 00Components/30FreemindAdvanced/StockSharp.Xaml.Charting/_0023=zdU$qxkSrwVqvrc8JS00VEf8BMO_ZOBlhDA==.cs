@@ -10,7 +10,7 @@ using System.Diagnostics;
 
 #nullable disable
 internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D : 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D,
+  BindableObject ,
   \u0023\u003DziARJyOecclYiJO5UbZqQJ_KOh9jO5RUUcFIAqLc\u003D,
   INotifyPropertyChanged
 {

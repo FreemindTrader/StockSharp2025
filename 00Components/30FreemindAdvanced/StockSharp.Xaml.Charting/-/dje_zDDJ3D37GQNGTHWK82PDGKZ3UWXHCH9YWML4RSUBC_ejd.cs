@@ -24,7 +24,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd :
   
   private string \u0023\u003DzJz0NEpw\u003D;
   
-  private string \u0023\u003Dz7CXThCs\u003D;
+  private string dpoChangedEventArgs;
   
   private string \u0023\u003DzHhOSPlQ\u003D;
   
@@ -41,7 +41,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd :
 
   public string Header => this.\u0023\u003Dzu24j_FM\u003D.Value.\u0023\u003DzJz0NEpw\u003D;
 
-  public string Action => this.\u0023\u003Dzu24j_FM\u003D.Value.\u0023\u003Dz7CXThCs\u003D;
+  public string Action => this.\u0023\u003Dzu24j_FM\u003D.Value.dpoChangedEventArgs;
 
   public string Time => this.\u0023\u003Dzu24j_FM\u003D.Value.\u0023\u003DzHhOSPlQ\u003D;
 
@@ -66,7 +66,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd :
     interpolatedStringHandler.AppendFormatted<long>(this.\u0023\u003DzSgRFDbs\u003D.Volume);
     interpolatedStringHandler.AppendLiteral("");
     interpolatedStringHandler.AppendFormatted<double>(this.\u0023\u003DzSgRFDbs\u003D.Price());
-    this.\u0023\u003Dz7CXThCs\u003D = interpolatedStringHandler.ToStringAndClear();
+    this.dpoChangedEventArgs = interpolatedStringHandler.ToStringAndClear();
     interpolatedStringHandler = new DefaultInterpolatedStringHandler(4, 3);
     interpolatedStringHandler.AppendFormatted(LocalizedStrings.Time);
     interpolatedStringHandler.AppendLiteral("");

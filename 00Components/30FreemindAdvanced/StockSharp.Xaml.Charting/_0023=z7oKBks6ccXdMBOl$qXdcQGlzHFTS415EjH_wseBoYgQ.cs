@@ -21,13 +21,13 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
   
   private static readonly Dictionary<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR> \u0023\u003DznABf_Vs\u003D = new Dictionary<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>();
   
-  public static readonly DependencyProperty \u0023\u003Dz4JhmNred6k04bHgbHA\u003D\u003D = DependencyProperty.Register("", typeof (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoRYIHBGDkf1GAn4szFFBOAk\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dz4JhmNred6k04bHgbHA\u003D\u003D = DependencyProperty.Register("", typeof (IndexRange ), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoRYIHBGDkf1GAn4szFFBOAk\u003D)));
   
-  private \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D;
+  private IndexRange  \u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D;
   
-  public static readonly DependencyProperty \u0023\u003DziUr7YgFYdbrr = DependencyProperty.Register("", typeof (dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DznDXAZ40XZkwF42e7V3ChT6E\u003D)));
+  public static readonly DependencyProperty \u0023\u003DziUr7YgFYdbrr = DependencyProperty.Register("", typeof (DoubleRange), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DznDXAZ40XZkwF42e7V3ChT6E\u003D)));
   
-  private dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dz9wn11RS5FRTj;
+  private DoubleRange \u0023\u003Dz9wn11RS5FRTj;
   
   public static readonly DependencyProperty \u0023\u003Dz8gZeLle5o5Ez = DependencyProperty.Register("", typeof (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzM4Q1JrKOrXUH_pG8e9nkfj8\u003D)));
   
@@ -43,7 +43,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     this.\u0023\u003DzoMQQ88MEiBDX(_param2);
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D CategoryDateTimeRange
+  public IndexRange  CategoryDateTimeRange
   {
     get => this.\u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D;
     set
@@ -52,7 +52,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     }
   }
 
-  public dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd NumericRange
+  public DoubleRange NumericRange
   {
     get => this.\u0023\u003Dz9wn11RS5FRTj;
     set
@@ -79,8 +79,8 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
   {
     if (!_param1.HasValue || _param1.GetValueOrDefault() <= 0)
       _param1 = new int?(50);
-    this.CategoryDateTimeRange = new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(-5, _param1.Value);
-    this.NumericRange = new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd();
+    this.CategoryDateTimeRange = new IndexRange (-5, _param1.Value);
+    this.NumericRange = new DoubleRange();
   }
 
   public static void \u0023\u003DzoMQQ88MEiBDX(object _param0)
@@ -110,7 +110,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
   {
     switch (_param0)
     {
-      case IScichartSurfaceVM tdnKj06Uu87Wzk09Wj:
+      case ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj:
         return new int?(tdnKj06Uu87Wzk09Wj.MinimumRange);
       case ChartViewModel zgziIlo367a8J0vVw6:
         return new int?(zgziIlo367a8J0vVw6.MinimumRange);
@@ -128,14 +128,14 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
-      ((\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) _param1).\u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) _param2.NewValue;
+      ((\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) _param1).\u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D = (IndexRange ) _param2.NewValue;
     }
 
     internal void \u0023\u003DznDXAZ40XZkwF42e7V3ChT6E\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
-      ((\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) _param1).\u0023\u003Dz9wn11RS5FRTj = (dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd) _param2.NewValue;
+      ((\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) _param1).\u0023\u003Dz9wn11RS5FRTj = (DoubleRange) _param2.NewValue;
     }
 
     internal void \u0023\u003DzM4Q1JrKOrXUH_pG8e9nkfj8\u003D(

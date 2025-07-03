@@ -185,7 +185,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -194,7 +194,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -233,7 +233,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -243,9 +243,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -275,8 +275,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -301,8 +301,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -330,7 +330,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -350,7 +350,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u00242BDuv7itdlocAQ5v9x29HOZV0yR.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -362,7 +362,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -382,7 +382,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u00242BDuv7itdlocAQ5v9x29HOZV0yR.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -394,7 +394,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -416,7 +416,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u00242BDuv7itdlocAQ5v9x29HOZV0yR.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -429,7 +429,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -593,7 +593,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -602,7 +602,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -641,7 +641,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -651,9 +651,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -683,8 +683,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -709,8 +709,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -738,7 +738,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -758,7 +758,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024Yt8kJjRhcWrV_hplKnNuiRBEvRU.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -770,7 +770,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -790,7 +790,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024Yt8kJjRhcWrV_hplKnNuiRBEvRU.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -802,7 +802,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -824,7 +824,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024Yt8kJjRhcWrV_hplKnNuiRBEvRU.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -837,7 +837,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -1001,7 +1001,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -1010,7 +1010,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<int> intList = _param7 as IList<int>;
@@ -1049,7 +1049,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1059,9 +1059,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -1091,8 +1091,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -1117,8 +1117,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -1146,7 +1146,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1166,7 +1166,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024bWNGDaPZX8uPsXnjTmOYi0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -1178,7 +1178,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1198,7 +1198,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024bWNGDaPZX8uPsXnjTmOYi0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -1210,7 +1210,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1232,7 +1232,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024bWNGDaPZX8uPsXnjTmOYi0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -1245,7 +1245,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -1409,7 +1409,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -1418,7 +1418,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -1457,7 +1457,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1467,9 +1467,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -1499,8 +1499,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -1525,8 +1525,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -1554,7 +1554,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1574,7 +1574,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024iVmBKrBa7aCssq7TYknqCg\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -1586,7 +1586,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1606,7 +1606,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024iVmBKrBa7aCssq7TYknqCg\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -1618,7 +1618,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1640,7 +1640,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz\u0024iVmBKrBa7aCssq7TYknqCg\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -1653,7 +1653,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -1817,7 +1817,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -1826,7 +1826,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<short> shortList = _param7 as IList<short>;
@@ -1865,7 +1865,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1875,9 +1875,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -1907,8 +1907,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -1933,8 +1933,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -1962,7 +1962,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -1982,7 +1982,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz0NmucFFR3CPW0V1zOfSx2GWq9HOc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -1994,7 +1994,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2014,7 +2014,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz0NmucFFR3CPW0V1zOfSx2GWq9HOc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -2026,7 +2026,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2048,7 +2048,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz0NmucFFR3CPW0V1zOfSx2GWq9HOc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -2061,7 +2061,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -2228,7 +2228,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -2237,7 +2237,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -2276,7 +2276,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2286,9 +2286,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -2318,8 +2318,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -2344,8 +2344,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -2373,7 +2373,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2393,7 +2393,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz3ZncGR5D5TAoZBW36gIWea8YcPlc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -2405,7 +2405,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2425,7 +2425,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz3ZncGR5D5TAoZBW36gIWea8YcPlc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -2437,7 +2437,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2459,7 +2459,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz3ZncGR5D5TAoZBW36gIWea8YcPlc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -2472,7 +2472,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -2636,7 +2636,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -2645,7 +2645,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<float> floatList = _param7 as IList<float>;
@@ -2684,7 +2684,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2694,9 +2694,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -2726,8 +2726,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -2752,8 +2752,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -2781,7 +2781,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2801,7 +2801,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz3fG20UI0Pi\u0024ZwGxKAdVozs9EcuFe.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -2813,7 +2813,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2833,7 +2833,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz3fG20UI0Pi\u0024ZwGxKAdVozs9EcuFe.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -2845,7 +2845,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -2867,7 +2867,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz3fG20UI0Pi\u0024ZwGxKAdVozs9EcuFe.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -2880,7 +2880,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -3044,7 +3044,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -3053,7 +3053,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -3092,7 +3092,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3102,9 +3102,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -3134,8 +3134,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -3160,8 +3160,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -3189,7 +3189,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3209,7 +3209,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz47veNV8n3KevYM8jcmr4Vcg707Dz.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -3221,7 +3221,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3241,7 +3241,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz47veNV8n3KevYM8jcmr4Vcg707Dz.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -3253,7 +3253,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3275,7 +3275,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz47veNV8n3KevYM8jcmr4Vcg707Dz.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -3288,7 +3288,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -3452,7 +3452,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -3461,7 +3461,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<short> shortList = _param7 as IList<short>;
@@ -3500,7 +3500,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3510,9 +3510,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -3542,8 +3542,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -3568,8 +3568,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -3597,7 +3597,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3617,7 +3617,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz4oBr09GOX48Pj8joAy6VOhvFXYec.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -3629,7 +3629,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3649,7 +3649,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz4oBr09GOX48Pj8joAy6VOhvFXYec.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -3661,7 +3661,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3683,7 +3683,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz4oBr09GOX48Pj8joAy6VOhvFXYec.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -3696,7 +3696,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -3860,7 +3860,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -3869,7 +3869,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -3908,7 +3908,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -3918,9 +3918,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -3950,8 +3950,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -3976,8 +3976,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -4005,7 +4005,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4025,7 +4025,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz51lnVGfIkQadYbDb_ahaaBa5fyF\u0024.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -4037,7 +4037,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4057,7 +4057,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz51lnVGfIkQadYbDb_ahaaBa5fyF\u0024.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -4069,7 +4069,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4091,7 +4091,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz51lnVGfIkQadYbDb_ahaaBa5fyF\u0024.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -4104,7 +4104,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -4268,7 +4268,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -4277,7 +4277,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList1 = _param6 as IList<short>;
       IList<short> shortList2 = _param7 as IList<short>;
@@ -4316,7 +4316,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4326,9 +4326,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -4358,8 +4358,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -4384,8 +4384,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -4413,7 +4413,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4433,7 +4433,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz5dJX9tQ\u0024cV\u0024MXBxM\u0024LhyO8ByLZyW.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -4445,7 +4445,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4465,7 +4465,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz5dJX9tQ\u0024cV\u0024MXBxM\u0024LhyO8ByLZyW.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -4477,7 +4477,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4499,7 +4499,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz5dJX9tQ\u0024cV\u0024MXBxM\u0024LhyO8ByLZyW.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -4512,7 +4512,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -4676,7 +4676,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -4685,7 +4685,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -4724,7 +4724,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4734,9 +4734,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -4766,8 +4766,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -4792,8 +4792,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -4821,7 +4821,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4841,7 +4841,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz66U1D7EexvY0AEohceAzMB8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -4853,7 +4853,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4873,7 +4873,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz66U1D7EexvY0AEohceAzMB8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -4885,7 +4885,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -4907,7 +4907,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz66U1D7EexvY0AEohceAzMB8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -4920,7 +4920,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -5084,7 +5084,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -5093,7 +5093,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<int> intList = _param7 as IList<int>;
@@ -5132,7 +5132,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5142,9 +5142,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -5174,8 +5174,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -5200,8 +5200,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -5229,7 +5229,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5249,7 +5249,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7SZtMXab0JKb9aC4nccPM3seuOIA.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -5261,7 +5261,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5281,7 +5281,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7SZtMXab0JKb9aC4nccPM3seuOIA.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -5293,7 +5293,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5315,7 +5315,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7SZtMXab0JKb9aC4nccPM3seuOIA.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -5328,7 +5328,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -5492,7 +5492,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -5501,7 +5501,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -5540,7 +5540,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5550,9 +5550,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -5582,8 +5582,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -5608,8 +5608,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -5637,7 +5637,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5657,7 +5657,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7bHQ9D4WIWW3_H\u0024yBxXqkE8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -5669,7 +5669,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5689,7 +5689,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7bHQ9D4WIWW3_H\u0024yBxXqkE8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -5701,7 +5701,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5723,7 +5723,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7bHQ9D4WIWW3_H\u0024yBxXqkE8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -5736,7 +5736,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -5900,7 +5900,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -5909,7 +5909,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -5948,7 +5948,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -5958,9 +5958,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -5990,8 +5990,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -6016,8 +6016,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -6045,7 +6045,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6065,7 +6065,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7zzzjxShYYvAxuOjxvGgHec\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -6077,7 +6077,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6097,7 +6097,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7zzzjxShYYvAxuOjxvGgHec\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -6109,7 +6109,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6131,7 +6131,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz7zzzjxShYYvAxuOjxvGgHec\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -6144,7 +6144,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -6311,7 +6311,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -6320,7 +6320,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<long> longList = _param7 as IList<long>;
@@ -6359,7 +6359,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6369,9 +6369,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -6401,8 +6401,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -6427,8 +6427,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -6456,7 +6456,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6476,7 +6476,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz8W4wlUKAGszsBkUP800V95BDS\u00248R.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -6488,7 +6488,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6508,7 +6508,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz8W4wlUKAGszsBkUP800V95BDS\u00248R.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -6520,7 +6520,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6542,7 +6542,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz8W4wlUKAGszsBkUP800V95BDS\u00248R.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -6555,7 +6555,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -6722,7 +6722,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -6731,7 +6731,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -6770,7 +6770,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6780,9 +6780,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -6812,8 +6812,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -6838,8 +6838,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -6867,7 +6867,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6887,7 +6887,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz8XpSGkLn1I8VBsMRtqRgJjE\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -6899,7 +6899,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6919,7 +6919,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz8XpSGkLn1I8VBsMRtqRgJjE\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -6931,7 +6931,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -6953,7 +6953,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz8XpSGkLn1I8VBsMRtqRgJjE\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -6966,7 +6966,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -7130,7 +7130,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -7139,7 +7139,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -7178,7 +7178,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7188,9 +7188,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -7220,8 +7220,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -7246,8 +7246,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -7275,7 +7275,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7295,7 +7295,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz98obwwMfV6MGfPFj4l_GAiRYCTZb.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -7307,7 +7307,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7327,7 +7327,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz98obwwMfV6MGfPFj4l_GAiRYCTZb.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -7339,7 +7339,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7361,7 +7361,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz98obwwMfV6MGfPFj4l_GAiRYCTZb.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -7374,7 +7374,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -7541,7 +7541,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -7550,7 +7550,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -7589,7 +7589,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7599,9 +7599,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -7631,8 +7631,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -7657,8 +7657,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -7686,7 +7686,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7706,7 +7706,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz9FekVkI1bNLpk7wctmAvwJk\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -7718,7 +7718,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7738,7 +7738,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz9FekVkI1bNLpk7wctmAvwJk\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -7750,7 +7750,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -7772,7 +7772,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz9FekVkI1bNLpk7wctmAvwJk\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -7785,7 +7785,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -7952,7 +7952,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -7961,7 +7961,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -8000,7 +8000,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8010,9 +8010,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -8042,8 +8042,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -8068,8 +8068,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -8097,7 +8097,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8117,7 +8117,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz9NbFNf\u0024Rc74LOnofo6vE1jM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -8129,7 +8129,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8149,7 +8149,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz9NbFNf\u0024Rc74LOnofo6vE1jM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -8161,7 +8161,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8183,7 +8183,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz9NbFNf\u0024Rc74LOnofo6vE1jM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -8196,7 +8196,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -8360,7 +8360,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -8369,7 +8369,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -8408,7 +8408,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8418,9 +8418,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -8450,8 +8450,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -8476,8 +8476,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -8505,7 +8505,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8525,7 +8525,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzAFocLestvXBVM3RZRtRpliKLl_At.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -8537,7 +8537,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8557,7 +8557,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzAFocLestvXBVM3RZRtRpliKLl_At.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -8569,7 +8569,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8591,7 +8591,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzAFocLestvXBVM3RZRtRpliKLl_At.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -8604,7 +8604,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -8771,7 +8771,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -8780,7 +8780,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -8819,7 +8819,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8829,9 +8829,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -8861,8 +8861,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -8887,8 +8887,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -8916,7 +8916,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8936,7 +8936,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzBddyWZjx5s4rOdruPhzsZ0s\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -8948,7 +8948,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -8968,7 +8968,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzBddyWZjx5s4rOdruPhzsZ0s\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -8980,7 +8980,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9002,7 +9002,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzBddyWZjx5s4rOdruPhzsZ0s\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -9015,7 +9015,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -9179,7 +9179,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -9188,7 +9188,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -9227,7 +9227,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9237,9 +9237,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -9269,8 +9269,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -9295,8 +9295,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -9324,7 +9324,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9344,7 +9344,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzBpLEJ7VnNq1m6UjokdglXtc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -9356,7 +9356,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9376,7 +9376,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzBpLEJ7VnNq1m6UjokdglXtc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -9388,7 +9388,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9410,7 +9410,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzBpLEJ7VnNq1m6UjokdglXtc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -9423,7 +9423,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -9590,7 +9590,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -9599,7 +9599,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -9638,7 +9638,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9648,9 +9648,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -9680,8 +9680,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -9706,8 +9706,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -9735,7 +9735,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9755,7 +9755,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzCIt1inXU519mleh0uRt6htyzAUr8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -9767,7 +9767,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9787,7 +9787,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzCIt1inXU519mleh0uRt6htyzAUr8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -9799,7 +9799,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -9821,7 +9821,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzCIt1inXU519mleh0uRt6htyzAUr8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -9834,7 +9834,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -9998,7 +9998,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -10007,7 +10007,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -10046,7 +10046,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10056,9 +10056,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -10088,8 +10088,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -10114,8 +10114,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -10143,7 +10143,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10163,7 +10163,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzCsvsN8m1xkp2GUMWdwpNABOjzOGy.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -10175,7 +10175,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10195,7 +10195,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzCsvsN8m1xkp2GUMWdwpNABOjzOGy.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -10207,7 +10207,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10229,7 +10229,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzCsvsN8m1xkp2GUMWdwpNABOjzOGy.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -10242,7 +10242,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -10406,7 +10406,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -10415,7 +10415,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<int> intList = _param7 as IList<int>;
@@ -10454,7 +10454,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10464,9 +10464,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -10496,8 +10496,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -10522,8 +10522,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -10551,7 +10551,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10571,7 +10571,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzDUktGyOtYATscKPzWa8TKcGnfsSc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -10583,7 +10583,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10603,7 +10603,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzDUktGyOtYATscKPzWa8TKcGnfsSc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -10615,7 +10615,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10637,7 +10637,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzDUktGyOtYATscKPzWa8TKcGnfsSc.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -10650,7 +10650,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -10814,7 +10814,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -10823,7 +10823,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<short> shortList = _param7 as IList<short>;
@@ -10862,7 +10862,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10872,9 +10872,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -10904,8 +10904,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -10930,8 +10930,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -10959,7 +10959,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -10979,7 +10979,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEbW9OerTFm3ZwCvmq5EEWzCQ7Q8_.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -10991,7 +10991,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11011,7 +11011,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEbW9OerTFm3ZwCvmq5EEWzCQ7Q8_.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -11023,7 +11023,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11045,7 +11045,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEbW9OerTFm3ZwCvmq5EEWzCQ7Q8_.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -11058,7 +11058,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -11225,7 +11225,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -11234,7 +11234,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -11273,7 +11273,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11283,9 +11283,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -11315,8 +11315,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -11341,8 +11341,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -11370,7 +11370,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11390,7 +11390,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEbYwuq2VByc10G4753uqu6kMJpbJ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -11402,7 +11402,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11422,7 +11422,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEbYwuq2VByc10G4753uqu6kMJpbJ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -11434,7 +11434,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11456,7 +11456,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEbYwuq2VByc10G4753uqu6kMJpbJ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -11469,7 +11469,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -11633,7 +11633,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -11642,7 +11642,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -11681,7 +11681,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11691,9 +11691,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -11723,8 +11723,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -11749,8 +11749,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -11778,7 +11778,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11798,7 +11798,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEs483BII40zEyY8QIqOHUaQ\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -11810,7 +11810,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11830,7 +11830,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEs483BII40zEyY8QIqOHUaQ\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -11842,7 +11842,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -11864,7 +11864,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzEs483BII40zEyY8QIqOHUaQ\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -11877,7 +11877,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -12041,7 +12041,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -12050,7 +12050,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<short> shortList = _param7 as IList<short>;
@@ -12089,7 +12089,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12099,9 +12099,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -12131,8 +12131,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -12157,8 +12157,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -12186,7 +12186,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12206,7 +12206,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzFGSMEpXckys5dOMtWJbTeqKfZ_vr.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -12218,7 +12218,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12238,7 +12238,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzFGSMEpXckys5dOMtWJbTeqKfZ_vr.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -12250,7 +12250,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12272,7 +12272,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzFGSMEpXckys5dOMtWJbTeqKfZ_vr.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -12285,7 +12285,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -12449,7 +12449,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -12458,7 +12458,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<short> shortList = _param7 as IList<short>;
@@ -12497,7 +12497,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12507,9 +12507,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -12539,8 +12539,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -12565,8 +12565,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -12594,7 +12594,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12614,7 +12614,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzG7yFi7kU4A8nU9IbcZF_RMQhlKRN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -12626,7 +12626,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12646,7 +12646,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzG7yFi7kU4A8nU9IbcZF_RMQhlKRN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -12658,7 +12658,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12680,7 +12680,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzG7yFi7kU4A8nU9IbcZF_RMQhlKRN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -12693,7 +12693,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -12857,7 +12857,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -12866,7 +12866,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList1 = _param6 as IList<sbyte>;
       IList<sbyte> sbyteList2 = _param7 as IList<sbyte>;
@@ -12905,7 +12905,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -12915,9 +12915,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -12947,8 +12947,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -12973,8 +12973,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -13002,7 +13002,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13022,7 +13022,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzGQjB6o63Iw204rt6Qgf5W5w\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -13034,7 +13034,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13054,7 +13054,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzGQjB6o63Iw204rt6Qgf5W5w\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -13066,7 +13066,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13088,7 +13088,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzGQjB6o63Iw204rt6Qgf5W5w\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -13101,7 +13101,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -13265,7 +13265,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -13274,7 +13274,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -13313,7 +13313,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13323,9 +13323,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -13355,8 +13355,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -13381,8 +13381,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -13410,7 +13410,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13430,7 +13430,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzH1fYVkc1spFpzuH\u0024dbY8FNU\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -13442,7 +13442,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13462,7 +13462,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzH1fYVkc1spFpzuH\u0024dbY8FNU\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -13474,7 +13474,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13496,7 +13496,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzH1fYVkc1spFpzuH\u0024dbY8FNU\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -13509,7 +13509,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -13676,7 +13676,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -13685,7 +13685,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<float> floatList = _param7 as IList<float>;
@@ -13724,7 +13724,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13734,9 +13734,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -13766,8 +13766,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -13792,8 +13792,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -13821,7 +13821,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13841,7 +13841,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHEDAYF5ahLF_tWts6a1ALZw\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -13853,7 +13853,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13873,7 +13873,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHEDAYF5ahLF_tWts6a1ALZw\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -13885,7 +13885,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -13907,7 +13907,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHEDAYF5ahLF_tWts6a1ALZw\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -13920,7 +13920,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -14084,7 +14084,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -14093,7 +14093,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList1 = _param6 as IList<float>;
       IList<float> floatList2 = _param7 as IList<float>;
@@ -14132,7 +14132,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14142,9 +14142,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -14174,8 +14174,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -14200,8 +14200,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -14229,7 +14229,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14249,7 +14249,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHMNWya\u00247tfiD9vVFx\u0024uNBZs\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -14261,7 +14261,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14281,7 +14281,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHMNWya\u00247tfiD9vVFx\u0024uNBZs\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -14293,7 +14293,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14315,7 +14315,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHMNWya\u00247tfiD9vVFx\u0024uNBZs\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -14328,7 +14328,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -14492,7 +14492,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -14501,7 +14501,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<float> floatList = _param7 as IList<float>;
@@ -14540,7 +14540,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14550,9 +14550,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -14582,8 +14582,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -14608,8 +14608,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -14637,7 +14637,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14657,7 +14657,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHxXOKY8ynUzEcvm5s7\u0024d_dY\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -14669,7 +14669,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14689,7 +14689,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHxXOKY8ynUzEcvm5s7\u0024d_dY\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -14701,7 +14701,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14723,7 +14723,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzHxXOKY8ynUzEcvm5s7\u0024d_dY\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -14736,7 +14736,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -14900,7 +14900,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -14909,7 +14909,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -14948,7 +14948,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -14958,9 +14958,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -14990,8 +14990,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -15016,8 +15016,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -15045,7 +15045,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15065,7 +15065,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzI6l2eyHzboJBZZIDUjdv4m74TH8T.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -15077,7 +15077,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15097,7 +15097,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzI6l2eyHzboJBZZIDUjdv4m74TH8T.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -15109,7 +15109,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15131,7 +15131,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzI6l2eyHzboJBZZIDUjdv4m74TH8T.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -15144,7 +15144,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -15308,7 +15308,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -15317,7 +15317,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<int> intList = _param7 as IList<int>;
@@ -15356,7 +15356,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15366,9 +15366,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -15398,8 +15398,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -15424,8 +15424,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -15453,7 +15453,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15473,7 +15473,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzI8Oxudy9X5vOtiMDMBexhjz1Lgct.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -15485,7 +15485,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15505,7 +15505,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzI8Oxudy9X5vOtiMDMBexhjz1Lgct.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -15517,7 +15517,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15539,7 +15539,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzI8Oxudy9X5vOtiMDMBexhjz1Lgct.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -15552,7 +15552,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -15719,7 +15719,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -15728,7 +15728,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList1 = _param6 as IList<ulong>;
       IList<ulong> ulongList2 = _param7 as IList<ulong>;
@@ -15767,7 +15767,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15777,9 +15777,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -15809,8 +15809,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -15835,8 +15835,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -15864,7 +15864,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15884,7 +15884,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJJyU_t1qk2UBI1DHNXkaGWIKbmUa.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -15896,7 +15896,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15916,7 +15916,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJJyU_t1qk2UBI1DHNXkaGWIKbmUa.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -15928,7 +15928,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -15950,7 +15950,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJJyU_t1qk2UBI1DHNXkaGWIKbmUa.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -15963,7 +15963,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -16127,7 +16127,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -16136,7 +16136,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -16175,7 +16175,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16185,9 +16185,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -16217,8 +16217,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -16243,8 +16243,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -16272,7 +16272,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16292,7 +16292,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJLbPe6jQXPo2XgEJzguNbeRh6cF0.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -16304,7 +16304,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16324,7 +16324,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJLbPe6jQXPo2XgEJzguNbeRh6cF0.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -16336,7 +16336,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16358,7 +16358,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJLbPe6jQXPo2XgEJzguNbeRh6cF0.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -16371,7 +16371,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -16535,7 +16535,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -16544,7 +16544,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -16583,7 +16583,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16593,9 +16593,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -16625,8 +16625,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -16651,8 +16651,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -16680,7 +16680,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16700,7 +16700,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJOnfyClDa1BVav\u0024AxAyXKyJcskMn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -16712,7 +16712,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16732,7 +16732,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJOnfyClDa1BVav\u0024AxAyXKyJcskMn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -16744,7 +16744,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -16766,7 +16766,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzJOnfyClDa1BVav\u0024AxAyXKyJcskMn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -16779,7 +16779,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -16943,7 +16943,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -16952,7 +16952,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -16991,7 +16991,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17001,9 +17001,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -17033,8 +17033,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -17059,8 +17059,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -17088,7 +17088,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17108,7 +17108,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKGh2u\u0024Dd6o6NN3TUTDLKakA\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -17120,7 +17120,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17140,7 +17140,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKGh2u\u0024Dd6o6NN3TUTDLKakA\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -17152,7 +17152,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17174,7 +17174,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKGh2u\u0024Dd6o6NN3TUTDLKakA\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -17187,7 +17187,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -17354,7 +17354,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -17363,7 +17363,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -17402,7 +17402,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17412,9 +17412,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -17444,8 +17444,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -17470,8 +17470,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -17499,7 +17499,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17519,7 +17519,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKKjnF8rfx\u0024Rjw0edNNG9ZQEufBv2.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -17531,7 +17531,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17551,7 +17551,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKKjnF8rfx\u0024Rjw0edNNG9ZQEufBv2.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -17563,7 +17563,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17585,7 +17585,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKKjnF8rfx\u0024Rjw0edNNG9ZQEufBv2.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -17598,7 +17598,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -17762,7 +17762,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -17771,7 +17771,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<int> intList = _param7 as IList<int>;
@@ -17810,7 +17810,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17820,9 +17820,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -17852,8 +17852,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -17878,8 +17878,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -17907,7 +17907,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17927,7 +17927,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKXk1_Mx_ZhCqkjkpvRH7CLI\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -17939,7 +17939,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17959,7 +17959,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKXk1_Mx_ZhCqkjkpvRH7CLI\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -17971,7 +17971,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -17993,7 +17993,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKXk1_Mx_ZhCqkjkpvRH7CLI\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -18006,7 +18006,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -18170,7 +18170,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -18179,7 +18179,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<short> shortList = _param7 as IList<short>;
@@ -18218,7 +18218,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18228,9 +18228,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -18260,8 +18260,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -18286,8 +18286,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -18315,7 +18315,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18335,7 +18335,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKaUkoa2q9ZIDDj3B1QX4cus\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -18347,7 +18347,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18367,7 +18367,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKaUkoa2q9ZIDDj3B1QX4cus\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -18379,7 +18379,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18401,7 +18401,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKaUkoa2q9ZIDDj3B1QX4cus\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -18414,7 +18414,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -18578,7 +18578,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -18587,7 +18587,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -18626,7 +18626,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18636,9 +18636,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -18668,8 +18668,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -18694,8 +18694,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -18723,7 +18723,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18743,7 +18743,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKhELEWAjAcDX5p4wTly\u0024ECeoJKTr.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -18755,7 +18755,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18775,7 +18775,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKhELEWAjAcDX5p4wTly\u0024ECeoJKTr.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -18787,7 +18787,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -18809,7 +18809,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKhELEWAjAcDX5p4wTly\u0024ECeoJKTr.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -18822,7 +18822,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -18986,7 +18986,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -18995,7 +18995,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -19034,7 +19034,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19044,9 +19044,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -19076,8 +19076,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -19102,8 +19102,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -19131,7 +19131,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19151,7 +19151,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKtTGDsvfJ_kiPDHYpDSG9XC_c4ED.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -19163,7 +19163,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19183,7 +19183,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKtTGDsvfJ_kiPDHYpDSG9XC_c4ED.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -19195,7 +19195,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19217,7 +19217,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzKtTGDsvfJ_kiPDHYpDSG9XC_c4ED.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -19230,7 +19230,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -19394,7 +19394,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -19403,7 +19403,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<long> longList = _param7 as IList<long>;
@@ -19442,7 +19442,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19452,9 +19452,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -19484,8 +19484,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -19510,8 +19510,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -19539,7 +19539,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19559,7 +19559,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLKXTC09XqAY9gDNlqpvfR4F5f3W8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -19571,7 +19571,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19591,7 +19591,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLKXTC09XqAY9gDNlqpvfR4F5f3W8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -19603,7 +19603,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19625,7 +19625,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLKXTC09XqAY9gDNlqpvfR4F5f3W8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -19638,7 +19638,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -19802,7 +19802,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -19811,7 +19811,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -19850,7 +19850,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19860,9 +19860,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -19892,8 +19892,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -19918,8 +19918,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -19947,7 +19947,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19967,7 +19967,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLPtrhm6H3PfzTCVFeZSSb4ivTwA5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -19979,7 +19979,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -19999,7 +19999,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLPtrhm6H3PfzTCVFeZSSb4ivTwA5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -20011,7 +20011,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20033,7 +20033,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLPtrhm6H3PfzTCVFeZSSb4ivTwA5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -20046,7 +20046,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -20210,7 +20210,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -20219,7 +20219,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<int> intList = _param7 as IList<int>;
@@ -20258,7 +20258,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20268,9 +20268,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -20300,8 +20300,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -20326,8 +20326,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -20355,7 +20355,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20375,7 +20375,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLYm690S0XqjLwz6pJG0vpohr2L\u0024d.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -20387,7 +20387,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20407,7 +20407,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLYm690S0XqjLwz6pJG0vpohr2L\u0024d.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -20419,7 +20419,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20441,7 +20441,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzLYm690S0XqjLwz6pJG0vpohr2L\u0024d.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -20454,7 +20454,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -20618,7 +20618,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -20627,7 +20627,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -20666,7 +20666,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20676,9 +20676,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -20708,8 +20708,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -20734,8 +20734,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -20763,7 +20763,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20783,7 +20783,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMBy4Q_PoufoibaILVjbbnig\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -20795,7 +20795,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20815,7 +20815,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMBy4Q_PoufoibaILVjbbnig\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -20827,7 +20827,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -20849,7 +20849,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMBy4Q_PoufoibaILVjbbnig\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -20862,7 +20862,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -21026,7 +21026,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -21035,7 +21035,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList1 = _param6 as IList<int>;
       IList<int> intList2 = _param7 as IList<int>;
@@ -21074,7 +21074,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21084,9 +21084,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -21116,8 +21116,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -21142,8 +21142,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -21171,7 +21171,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21191,7 +21191,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMJsBWEGB7ErjllOKqmy\u0024wb1d1swh.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -21203,7 +21203,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21223,7 +21223,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMJsBWEGB7ErjllOKqmy\u0024wb1d1swh.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -21235,7 +21235,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21257,7 +21257,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMJsBWEGB7ErjllOKqmy\u0024wb1d1swh.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -21270,7 +21270,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -21434,7 +21434,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -21443,7 +21443,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<long> longList = _param7 as IList<long>;
@@ -21482,7 +21482,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21492,9 +21492,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -21524,8 +21524,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -21550,8 +21550,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -21579,7 +21579,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21599,7 +21599,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMsoG1FNlGplSWlpW1_QfMrUGiwyR.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -21611,7 +21611,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21631,7 +21631,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMsoG1FNlGplSWlpW1_QfMrUGiwyR.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -21643,7 +21643,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21665,7 +21665,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzMsoG1FNlGplSWlpW1_QfMrUGiwyR.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -21678,7 +21678,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -21845,7 +21845,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -21854,7 +21854,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -21893,7 +21893,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -21903,9 +21903,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -21935,8 +21935,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -21961,8 +21961,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -21990,7 +21990,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22010,7 +22010,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNBw16R1lRV30XNeRBIx36Nc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -22022,7 +22022,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22042,7 +22042,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNBw16R1lRV30XNeRBIx36Nc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -22054,7 +22054,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22076,7 +22076,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNBw16R1lRV30XNeRBIx36Nc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -22089,7 +22089,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -22253,7 +22253,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -22262,7 +22262,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -22301,7 +22301,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22311,9 +22311,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -22343,8 +22343,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -22369,8 +22369,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -22398,7 +22398,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22418,7 +22418,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNdknVmJ7FGnovtZqKkiCIPeQvEQh.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -22430,7 +22430,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22450,7 +22450,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNdknVmJ7FGnovtZqKkiCIPeQvEQh.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -22462,7 +22462,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22484,7 +22484,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNdknVmJ7FGnovtZqKkiCIPeQvEQh.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -22497,7 +22497,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -22661,7 +22661,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -22670,7 +22670,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -22709,7 +22709,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22719,9 +22719,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -22751,8 +22751,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -22777,8 +22777,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -22806,7 +22806,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22826,7 +22826,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNkLzZX7D10QuTLEXT9NZjBAxOzFV.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -22838,7 +22838,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22858,7 +22858,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNkLzZX7D10QuTLEXT9NZjBAxOzFV.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -22870,7 +22870,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -22892,7 +22892,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzNkLzZX7D10QuTLEXT9NZjBAxOzFV.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -22905,7 +22905,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -23069,7 +23069,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -23078,7 +23078,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<long> longList = _param7 as IList<long>;
@@ -23117,7 +23117,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23127,9 +23127,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -23159,8 +23159,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -23185,8 +23185,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -23214,7 +23214,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23234,7 +23234,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzOf7GYr5UugmT3PBs3H3s4McGcDo5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -23246,7 +23246,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23266,7 +23266,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzOf7GYr5UugmT3PBs3H3s4McGcDo5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -23278,7 +23278,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23300,7 +23300,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzOf7GYr5UugmT3PBs3H3s4McGcDo5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -23313,7 +23313,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -23477,7 +23477,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -23486,7 +23486,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<int> intList = _param7 as IList<int>;
@@ -23525,7 +23525,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23535,9 +23535,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -23567,8 +23567,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -23593,8 +23593,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -23622,7 +23622,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23642,7 +23642,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzOm4OF5dacZjzNGdF4o55yNwzDSE5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -23654,7 +23654,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23674,7 +23674,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzOm4OF5dacZjzNGdF4o55yNwzDSE5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -23686,7 +23686,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23708,7 +23708,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzOm4OF5dacZjzNGdF4o55yNwzDSE5.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -23721,7 +23721,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -23885,7 +23885,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -23894,7 +23894,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<float> floatList = _param7 as IList<float>;
@@ -23933,7 +23933,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -23943,9 +23943,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -23975,8 +23975,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -24001,8 +24001,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -24030,7 +24030,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24050,7 +24050,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzPQWRY4WgD\u0024xT3wEIXGuSaRA\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -24062,7 +24062,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24082,7 +24082,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzPQWRY4WgD\u0024xT3wEIXGuSaRA\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -24094,7 +24094,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24116,7 +24116,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzPQWRY4WgD\u0024xT3wEIXGuSaRA\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -24129,7 +24129,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -24293,7 +24293,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -24302,7 +24302,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -24341,7 +24341,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24351,9 +24351,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -24383,8 +24383,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -24409,8 +24409,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -24438,7 +24438,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24458,7 +24458,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzPQu4I0RlLe9qA0Ia0dXnZV4\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -24470,7 +24470,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24490,7 +24490,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzPQu4I0RlLe9qA0Ia0dXnZV4\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -24502,7 +24502,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24524,7 +24524,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzPQu4I0RlLe9qA0Ia0dXnZV4\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -24537,7 +24537,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -24701,7 +24701,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -24710,7 +24710,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -24749,7 +24749,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24759,9 +24759,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -24791,8 +24791,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -24817,8 +24817,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -24846,7 +24846,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24866,7 +24866,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzQi8Q4ITf2IGGycqSUjUs0AljkxoN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -24878,7 +24878,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24898,7 +24898,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzQi8Q4ITf2IGGycqSUjUs0AljkxoN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -24910,7 +24910,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -24932,7 +24932,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzQi8Q4ITf2IGGycqSUjUs0AljkxoN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -24945,7 +24945,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -25109,7 +25109,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -25118,7 +25118,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList1 = _param6 as IList<byte>;
       IList<byte> byteList2 = _param7 as IList<byte>;
@@ -25157,7 +25157,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25167,9 +25167,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -25199,8 +25199,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -25225,8 +25225,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -25254,7 +25254,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25274,7 +25274,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzRUIHlEgQsu0t3tZw9IFMKMk\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -25286,7 +25286,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25306,7 +25306,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzRUIHlEgQsu0t3tZw9IFMKMk\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -25318,7 +25318,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25340,7 +25340,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzRUIHlEgQsu0t3tZw9IFMKMk\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -25353,7 +25353,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -25517,7 +25517,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -25526,7 +25526,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -25565,7 +25565,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25575,9 +25575,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -25607,8 +25607,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -25633,8 +25633,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -25662,7 +25662,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25682,7 +25682,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzS4Y9QFJf81cnz24xOub6Yk0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -25694,7 +25694,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25714,7 +25714,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzS4Y9QFJf81cnz24xOub6Yk0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -25726,7 +25726,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25748,7 +25748,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzS4Y9QFJf81cnz24xOub6Yk0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -25761,7 +25761,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -25925,7 +25925,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -25934,7 +25934,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<long> longList = _param7 as IList<long>;
@@ -25973,7 +25973,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -25983,9 +25983,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -26015,8 +26015,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -26041,8 +26041,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -26070,7 +26070,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26090,7 +26090,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzTVyPVQFq3s\u0024Z3rUom5P_BIsgZGkQ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -26102,7 +26102,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26122,7 +26122,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzTVyPVQFq3s\u0024Z3rUom5P_BIsgZGkQ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -26134,7 +26134,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26156,7 +26156,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzTVyPVQFq3s\u0024Z3rUom5P_BIsgZGkQ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -26169,7 +26169,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -26333,7 +26333,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -26342,7 +26342,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -26381,7 +26381,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26391,9 +26391,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -26423,8 +26423,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -26449,8 +26449,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -26478,7 +26478,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26498,7 +26498,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzUR0TyabgbXNWvgO3gUiCyWdfR\u0024kF.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -26510,7 +26510,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26530,7 +26530,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzUR0TyabgbXNWvgO3gUiCyWdfR\u0024kF.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -26542,7 +26542,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26564,7 +26564,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzUR0TyabgbXNWvgO3gUiCyWdfR\u0024kF.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -26577,7 +26577,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -26741,7 +26741,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -26750,7 +26750,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -26789,7 +26789,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26799,9 +26799,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -26831,8 +26831,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -26857,8 +26857,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -26886,7 +26886,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26906,7 +26906,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzWHhWI4XqT\u00241On\u00245hyW1qVkrRpNhH.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -26918,7 +26918,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26938,7 +26938,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzWHhWI4XqT\u00241On\u00245hyW1qVkrRpNhH.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -26950,7 +26950,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -26972,7 +26972,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzWHhWI4XqT\u00241On\u00245hyW1qVkrRpNhH.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -26985,7 +26985,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -27149,7 +27149,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -27158,7 +27158,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -27197,7 +27197,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27207,9 +27207,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -27239,8 +27239,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -27265,8 +27265,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -27294,7 +27294,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27314,7 +27314,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzXOw\u0024mYUyH6YZh3veBdfzDx4GrpPd.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -27326,7 +27326,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27346,7 +27346,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzXOw\u0024mYUyH6YZh3veBdfzDx4GrpPd.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -27358,7 +27358,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27380,7 +27380,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzXOw\u0024mYUyH6YZh3veBdfzDx4GrpPd.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -27393,7 +27393,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -27560,7 +27560,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -27569,7 +27569,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -27608,7 +27608,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27618,9 +27618,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -27650,8 +27650,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -27676,8 +27676,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -27705,7 +27705,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27725,7 +27725,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzYHQpq_VpkmjButHmGPcpmJLQ31_l.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -27737,7 +27737,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27757,7 +27757,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzYHQpq_VpkmjButHmGPcpmJLQ31_l.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -27769,7 +27769,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -27791,7 +27791,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzYHQpq_VpkmjButHmGPcpmJLQ31_l.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -27804,7 +27804,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -27971,7 +27971,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -27980,7 +27980,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<float> floatList = _param7 as IList<float>;
@@ -28019,7 +28019,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28029,9 +28029,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -28061,8 +28061,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -28087,8 +28087,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -28116,7 +28116,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28136,7 +28136,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzYqgIwHd_JaQqFR45_teyinXjsgra.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -28148,7 +28148,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28168,7 +28168,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzYqgIwHd_JaQqFR45_teyinXjsgra.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -28180,7 +28180,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28202,7 +28202,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzYqgIwHd_JaQqFR45_teyinXjsgra.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -28215,7 +28215,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -28379,7 +28379,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -28388,7 +28388,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -28427,7 +28427,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28437,9 +28437,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -28469,8 +28469,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -28495,8 +28495,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -28524,7 +28524,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28544,7 +28544,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZ9hPIy6KaQhaiK0ln4j20hIcYbxb.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -28556,7 +28556,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28576,7 +28576,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZ9hPIy6KaQhaiK0ln4j20hIcYbxb.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -28588,7 +28588,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28610,7 +28610,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZ9hPIy6KaQhaiK0ln4j20hIcYbxb.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -28623,7 +28623,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -28787,7 +28787,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -28796,7 +28796,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<long> longList = _param7 as IList<long>;
@@ -28835,7 +28835,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28845,9 +28845,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -28877,8 +28877,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -28903,8 +28903,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -28932,7 +28932,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28952,7 +28952,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZEZLJ2Hkudts2tbURONoGg0z8BWk.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -28964,7 +28964,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -28984,7 +28984,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZEZLJ2Hkudts2tbURONoGg0z8BWk.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -28996,7 +28996,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29018,7 +29018,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZEZLJ2Hkudts2tbURONoGg0z8BWk.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -29031,7 +29031,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -29195,7 +29195,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -29204,7 +29204,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList1 = _param6 as IList<double>;
       IList<double> doubleList2 = _param7 as IList<double>;
@@ -29243,7 +29243,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29253,9 +29253,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -29285,8 +29285,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -29311,8 +29311,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -29340,7 +29340,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29360,7 +29360,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZKjxakm_YacqM_vz11wo7z8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -29372,7 +29372,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29392,7 +29392,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZKjxakm_YacqM_vz11wo7z8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -29404,7 +29404,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29426,7 +29426,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZKjxakm_YacqM_vz11wo7z8\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -29439,7 +29439,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -29603,7 +29603,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -29612,7 +29612,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -29651,7 +29651,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29661,9 +29661,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -29693,8 +29693,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -29719,8 +29719,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -29748,7 +29748,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29768,7 +29768,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZhKHkHbtKYPCi5skn44PGXZBovae.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -29780,7 +29780,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29800,7 +29800,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZhKHkHbtKYPCi5skn44PGXZBovae.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -29812,7 +29812,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -29834,7 +29834,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzZhKHkHbtKYPCi5skn44PGXZBovae.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -29847,7 +29847,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -30011,7 +30011,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -30020,7 +30020,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList1 = _param6 as IList<uint>;
       IList<uint> uintList2 = _param7 as IList<uint>;
@@ -30059,7 +30059,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30069,9 +30069,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -30101,8 +30101,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -30127,8 +30127,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -30156,7 +30156,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30176,7 +30176,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz_DjoJ83qQwT1DRP_Ohhlp5yTtNZA.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -30188,7 +30188,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30208,7 +30208,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz_DjoJ83qQwT1DRP_Ohhlp5yTtNZA.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -30220,7 +30220,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30242,7 +30242,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dz_DjoJ83qQwT1DRP_Ohhlp5yTtNZA.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -30255,7 +30255,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -30419,7 +30419,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -30428,7 +30428,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList1 = _param6 as IList<long>;
       IList<long> longList2 = _param7 as IList<long>;
@@ -30467,7 +30467,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30477,9 +30477,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -30509,8 +30509,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -30535,8 +30535,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -30564,7 +30564,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30584,7 +30584,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaDbZbDrINhiAG7g32KEwbtLuJzdN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -30596,7 +30596,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30616,7 +30616,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaDbZbDrINhiAG7g32KEwbtLuJzdN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -30628,7 +30628,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30650,7 +30650,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaDbZbDrINhiAG7g32KEwbtLuJzdN.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -30663,7 +30663,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -30827,7 +30827,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -30836,7 +30836,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<int> intList = _param7 as IList<int>;
@@ -30875,7 +30875,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30885,9 +30885,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -30917,8 +30917,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -30943,8 +30943,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -30972,7 +30972,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -30992,7 +30992,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaNXjdZL1pgpee2ib\u0024MSZcLXrJJYJ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -31004,7 +31004,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31024,7 +31024,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaNXjdZL1pgpee2ib\u0024MSZcLXrJJYJ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -31036,7 +31036,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31058,7 +31058,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaNXjdZL1pgpee2ib\u0024MSZcLXrJJYJ.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -31071,7 +31071,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -31238,7 +31238,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -31247,7 +31247,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -31286,7 +31286,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31296,9 +31296,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -31328,8 +31328,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -31354,8 +31354,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -31383,7 +31383,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31403,7 +31403,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaXkK8MWVQrszOIFXLoBQclzihger.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -31415,7 +31415,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31435,7 +31435,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaXkK8MWVQrszOIFXLoBQclzihger.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -31447,7 +31447,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31469,7 +31469,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaXkK8MWVQrszOIFXLoBQclzihger.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -31482,7 +31482,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -31646,7 +31646,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -31655,7 +31655,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -31694,7 +31694,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31704,9 +31704,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -31736,8 +31736,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -31762,8 +31762,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -31791,7 +31791,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31811,7 +31811,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaciOdR7dHZ9SMOpuYyt1fAF1Tlgn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -31823,7 +31823,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31843,7 +31843,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaciOdR7dHZ9SMOpuYyt1fAF1Tlgn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -31855,7 +31855,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -31877,7 +31877,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzaciOdR7dHZ9SMOpuYyt1fAF1Tlgn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -31890,7 +31890,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -32054,7 +32054,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -32063,7 +32063,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -32102,7 +32102,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32112,9 +32112,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -32144,8 +32144,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -32170,8 +32170,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -32199,7 +32199,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32219,7 +32219,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzafGcZiUFYEKOBEgsNSsqhcmFSK4z.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -32231,7 +32231,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32251,7 +32251,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzafGcZiUFYEKOBEgsNSsqhcmFSK4z.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -32263,7 +32263,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32285,7 +32285,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzafGcZiUFYEKOBEgsNSsqhcmFSK4z.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -32298,7 +32298,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -32462,7 +32462,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -32471,7 +32471,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -32510,7 +32510,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32520,9 +32520,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -32552,8 +32552,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -32578,8 +32578,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -32607,7 +32607,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32627,7 +32627,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzajTbZZPjkbaQc0fqnbjaTJOlclaI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -32639,7 +32639,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32659,7 +32659,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzajTbZZPjkbaQc0fqnbjaTJOlclaI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -32671,7 +32671,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32693,7 +32693,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzajTbZZPjkbaQc0fqnbjaTJOlclaI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -32706,7 +32706,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -32870,7 +32870,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -32879,7 +32879,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -32918,7 +32918,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -32928,9 +32928,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -32960,8 +32960,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -32986,8 +32986,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -33015,7 +33015,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33035,7 +33035,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzbHtBHB8yQwqvWLJLiw4Yg2E\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -33047,7 +33047,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33067,7 +33067,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzbHtBHB8yQwqvWLJLiw4Yg2E\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -33079,7 +33079,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33101,7 +33101,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzbHtBHB8yQwqvWLJLiw4Yg2E\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -33114,7 +33114,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -33278,7 +33278,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -33287,7 +33287,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -33326,7 +33326,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33336,9 +33336,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -33368,8 +33368,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -33394,8 +33394,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -33423,7 +33423,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33443,7 +33443,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzcY9rhNdHNdQnwS\u0024OAbCbF4klF4LT.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -33455,7 +33455,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33475,7 +33475,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzcY9rhNdHNdQnwS\u0024OAbCbF4klF4LT.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -33487,7 +33487,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33509,7 +33509,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzcY9rhNdHNdQnwS\u0024OAbCbF4klF4LT.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -33522,7 +33522,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -33686,7 +33686,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -33695,7 +33695,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -33734,7 +33734,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33744,9 +33744,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -33776,8 +33776,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -33802,8 +33802,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -33831,7 +33831,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33851,7 +33851,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzca\u00244j7bUhzl20YicUy1ON08\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -33863,7 +33863,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33883,7 +33883,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzca\u00244j7bUhzl20YicUy1ON08\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -33895,7 +33895,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -33917,7 +33917,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzca\u00244j7bUhzl20YicUy1ON08\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -33930,7 +33930,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -34094,7 +34094,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -34103,7 +34103,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<long> longList = _param7 as IList<long>;
@@ -34142,7 +34142,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34152,9 +34152,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -34184,8 +34184,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -34210,8 +34210,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -34239,7 +34239,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34259,7 +34259,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzdCukxoAYeGIadgPAa_j2eNM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -34271,7 +34271,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34291,7 +34291,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzdCukxoAYeGIadgPAa_j2eNM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -34303,7 +34303,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34325,7 +34325,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzdCukxoAYeGIadgPAa_j2eNM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -34338,7 +34338,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -34502,7 +34502,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -34511,7 +34511,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<float> floatList = _param7 as IList<float>;
@@ -34550,7 +34550,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34560,9 +34560,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -34592,8 +34592,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -34618,8 +34618,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -34647,7 +34647,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34667,7 +34667,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dze1pdB7Bh8OQ7ZYXgZV8Rddo\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -34679,7 +34679,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34699,7 +34699,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dze1pdB7Bh8OQ7ZYXgZV8Rddo\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -34711,7 +34711,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34733,7 +34733,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dze1pdB7Bh8OQ7ZYXgZV8Rddo\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -34746,7 +34746,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -34910,7 +34910,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -34919,7 +34919,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<short> shortList = _param7 as IList<short>;
@@ -34958,7 +34958,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -34968,9 +34968,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -35000,8 +35000,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -35026,8 +35026,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -35055,7 +35055,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35075,7 +35075,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dze9pvPmLFYjKAgXnMrI\u0024GnMbqOkox.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -35087,7 +35087,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35107,7 +35107,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dze9pvPmLFYjKAgXnMrI\u0024GnMbqOkox.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -35119,7 +35119,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35141,7 +35141,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dze9pvPmLFYjKAgXnMrI\u0024GnMbqOkox.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -35154,7 +35154,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -35318,7 +35318,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -35327,7 +35327,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<long> longList = _param6 as IList<long>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -35366,7 +35366,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35376,9 +35376,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -35408,8 +35408,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -35434,8 +35434,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -35463,7 +35463,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35483,7 +35483,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzeWc7kmAedOMbnnWW2zklUx7gerUy.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -35495,7 +35495,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35515,7 +35515,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzeWc7kmAedOMbnnWW2zklUx7gerUy.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -35527,7 +35527,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35549,7 +35549,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzeWc7kmAedOMbnnWW2zklUx7gerUy.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -35562,7 +35562,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -35726,7 +35726,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -35735,7 +35735,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -35774,7 +35774,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35784,9 +35784,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -35816,8 +35816,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -35842,8 +35842,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -35871,7 +35871,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35891,7 +35891,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzevUU7H5azefMrJ5e6iO3Vf06aB3y.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -35903,7 +35903,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35923,7 +35923,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzevUU7H5azefMrJ5e6iO3Vf06aB3y.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -35935,7 +35935,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -35957,7 +35957,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzevUU7H5azefMrJ5e6iO3Vf06aB3y.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -35970,7 +35970,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -36134,7 +36134,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -36143,7 +36143,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -36182,7 +36182,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36192,9 +36192,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -36224,8 +36224,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -36250,8 +36250,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -36279,7 +36279,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36299,7 +36299,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzfuLDgPAOVAXkhxwX2duVAObXlyAE.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -36311,7 +36311,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36331,7 +36331,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzfuLDgPAOVAXkhxwX2duVAObXlyAE.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -36343,7 +36343,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36365,7 +36365,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzfuLDgPAOVAXkhxwX2duVAObXlyAE.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -36378,7 +36378,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -36545,7 +36545,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -36554,7 +36554,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -36593,7 +36593,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36603,9 +36603,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -36635,8 +36635,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -36661,8 +36661,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -36690,7 +36690,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36710,7 +36710,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzg7nogpm1_Owwh8Fg9BCuv3D45_Gt.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -36722,7 +36722,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36742,7 +36742,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzg7nogpm1_Owwh8Fg9BCuv3D45_Gt.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -36754,7 +36754,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -36776,7 +36776,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzg7nogpm1_Owwh8Fg9BCuv3D45_Gt.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -36789,7 +36789,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -36953,7 +36953,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -36962,7 +36962,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -37001,7 +37001,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37011,9 +37011,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -37043,8 +37043,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -37069,8 +37069,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -37098,7 +37098,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37118,7 +37118,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzgZuBvpH9B_QiK5lopLfM6RC4X3M4.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -37130,7 +37130,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37150,7 +37150,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzgZuBvpH9B_QiK5lopLfM6RC4X3M4.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -37162,7 +37162,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37184,7 +37184,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzgZuBvpH9B_QiK5lopLfM6RC4X3M4.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -37197,7 +37197,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -37361,7 +37361,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -37370,7 +37370,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<long> longList = _param7 as IList<long>;
@@ -37409,7 +37409,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37419,9 +37419,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -37451,8 +37451,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -37477,8 +37477,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -37506,7 +37506,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37526,7 +37526,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzgnJ5UiTgF8zd7JibZrDdBMlkBVBe.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -37538,7 +37538,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37558,7 +37558,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzgnJ5UiTgF8zd7JibZrDdBMlkBVBe.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -37570,7 +37570,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37592,7 +37592,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzgnJ5UiTgF8zd7JibZrDdBMlkBVBe.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -37605,7 +37605,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -37769,7 +37769,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -37778,7 +37778,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<short> shortList = _param7 as IList<short>;
@@ -37817,7 +37817,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37827,9 +37827,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -37859,8 +37859,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -37885,8 +37885,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -37914,7 +37914,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37934,7 +37934,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzhA5CBj6ts5vLNaOI6Xk6gVGHuF1U.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -37946,7 +37946,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -37966,7 +37966,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzhA5CBj6ts5vLNaOI6Xk6gVGHuF1U.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -37978,7 +37978,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38000,7 +38000,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzhA5CBj6ts5vLNaOI6Xk6gVGHuF1U.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -38013,7 +38013,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -38177,7 +38177,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -38186,7 +38186,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<short> shortList = _param7 as IList<short>;
@@ -38225,7 +38225,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38235,9 +38235,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -38267,8 +38267,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -38293,8 +38293,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -38322,7 +38322,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38342,7 +38342,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzhMl2PjMhoZ6lXX62g89Y154\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -38354,7 +38354,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38374,7 +38374,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzhMl2PjMhoZ6lXX62g89Y154\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -38386,7 +38386,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38408,7 +38408,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzhMl2PjMhoZ6lXX62g89Y154\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -38421,7 +38421,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -38585,7 +38585,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -38594,7 +38594,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<int> intList = _param7 as IList<int>;
@@ -38633,7 +38633,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38643,9 +38643,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -38675,8 +38675,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -38701,8 +38701,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -38730,7 +38730,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38750,7 +38750,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DziN8gRZqpcQ4X6\u0024suGYe_acU\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -38762,7 +38762,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38782,7 +38782,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DziN8gRZqpcQ4X6\u0024suGYe_acU\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -38794,7 +38794,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -38816,7 +38816,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DziN8gRZqpcQ4X6\u0024suGYe_acU\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -38829,7 +38829,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -38993,7 +38993,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -39002,7 +39002,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -39041,7 +39041,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39051,9 +39051,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -39083,8 +39083,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -39109,8 +39109,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -39138,7 +39138,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39158,7 +39158,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DziY9hZ7bsMjFJPJb5xCs\u0024iOlJ0eLB.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -39170,7 +39170,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39190,7 +39190,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DziY9hZ7bsMjFJPJb5xCs\u0024iOlJ0eLB.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -39202,7 +39202,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39224,7 +39224,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DziY9hZ7bsMjFJPJb5xCs\u0024iOlJ0eLB.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -39237,7 +39237,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -39401,7 +39401,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -39410,7 +39410,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<float> floatList = _param7 as IList<float>;
@@ -39449,7 +39449,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39459,9 +39459,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -39491,8 +39491,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -39517,8 +39517,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -39546,7 +39546,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39566,7 +39566,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzioh6oXg4YhVesxSK0YCJYw0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -39578,7 +39578,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39598,7 +39598,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzioh6oXg4YhVesxSK0YCJYw0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -39610,7 +39610,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39632,7 +39632,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzioh6oXg4YhVesxSK0YCJYw0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -39645,7 +39645,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -39809,7 +39809,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -39818,7 +39818,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<short> shortList = _param7 as IList<short>;
@@ -39857,7 +39857,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39867,9 +39867,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -39899,8 +39899,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -39925,8 +39925,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -39954,7 +39954,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -39974,7 +39974,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzj28DaQnut4Chts\u00247ySIyFAg0Hmcq.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -39986,7 +39986,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40006,7 +40006,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzj28DaQnut4Chts\u00247ySIyFAg0Hmcq.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -40018,7 +40018,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40040,7 +40040,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzj28DaQnut4Chts\u00247ySIyFAg0Hmcq.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -40053,7 +40053,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -40217,7 +40217,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -40226,7 +40226,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<sbyte> sbyteList = _param6 as IList<sbyte>;
       IList<ulong> ulongList = _param7 as IList<ulong>;
@@ -40265,7 +40265,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40275,9 +40275,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ulong> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ulong>();
-      ulong num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ulong num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ulong> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ulong>();
+      ulong num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ulong num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -40307,8 +40307,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -40333,8 +40333,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -40362,7 +40362,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40382,7 +40382,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzjDjFktex9lKRbPvtVye5OsfVX6yl.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -40394,7 +40394,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40414,7 +40414,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzjDjFktex9lKRbPvtVye5OsfVX6yl.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -40426,7 +40426,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40448,7 +40448,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzjDjFktex9lKRbPvtVye5OsfVX6yl.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -40461,7 +40461,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<ulong> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -40625,7 +40625,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -40634,7 +40634,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList = _param6 as IList<ushort>;
       IList<float> floatList = _param7 as IList<float>;
@@ -40673,7 +40673,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40683,9 +40683,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -40715,8 +40715,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -40741,8 +40741,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -40770,7 +40770,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40790,7 +40790,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzk3koOfs1IwDjDuLDgRgc9SnGJCpk.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -40802,7 +40802,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40822,7 +40822,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzk3koOfs1IwDjDuLDgRgc9SnGJCpk.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -40834,7 +40834,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -40856,7 +40856,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzk3koOfs1IwDjDuLDgRgc9SnGJCpk.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -40869,7 +40869,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -41033,7 +41033,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -41042,7 +41042,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -41081,7 +41081,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41091,9 +41091,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -41123,8 +41123,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -41149,8 +41149,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -41178,7 +41178,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41198,7 +41198,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzkkEvt9a_Z\u00249uNc3SxQUh241mo5gn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -41210,7 +41210,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41230,7 +41230,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzkkEvt9a_Z\u00249uNc3SxQUh241mo5gn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -41242,7 +41242,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41264,7 +41264,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzkkEvt9a_Z\u00249uNc3SxQUh241mo5gn.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -41277,7 +41277,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -41441,7 +41441,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -41450,7 +41450,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -41489,7 +41489,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41499,9 +41499,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -41531,8 +41531,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -41557,8 +41557,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -41586,7 +41586,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41606,7 +41606,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzkwF5RdUcGKVzblczLSKdsLnZGMc\u0024.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -41618,7 +41618,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41638,7 +41638,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzkwF5RdUcGKVzblczLSKdsLnZGMc\u0024.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -41650,7 +41650,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41672,7 +41672,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzkwF5RdUcGKVzblczLSKdsLnZGMc\u0024.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -41685,7 +41685,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -41849,7 +41849,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -41858,7 +41858,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<ushort> ushortList = _param7 as IList<ushort>;
@@ -41897,7 +41897,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -41907,9 +41907,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -41939,8 +41939,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -41965,8 +41965,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -41994,7 +41994,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42014,7 +42014,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzlbDAIatmKOKxdsovX1zQSgqYmoRI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -42026,7 +42026,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42046,7 +42046,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzlbDAIatmKOKxdsovX1zQSgqYmoRI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -42058,7 +42058,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42080,7 +42080,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzlbDAIatmKOKxdsovX1zQSgqYmoRI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -42093,7 +42093,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -42260,7 +42260,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -42269,7 +42269,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -42308,7 +42308,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42318,9 +42318,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -42350,8 +42350,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -42376,8 +42376,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -42405,7 +42405,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42425,7 +42425,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzlq6MxFOtg\u0024FUWGMA\u00242guv7Z\u0024_k4N.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -42437,7 +42437,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42457,7 +42457,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzlq6MxFOtg\u0024FUWGMA\u00242guv7Z\u0024_k4N.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -42469,7 +42469,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42491,7 +42491,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzlq6MxFOtg\u0024FUWGMA\u00242guv7Z\u0024_k4N.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -42504,7 +42504,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -42668,7 +42668,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -42677,7 +42677,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<long> longList = _param7 as IList<long>;
@@ -42716,7 +42716,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42726,9 +42726,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -42758,8 +42758,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -42784,8 +42784,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -42813,7 +42813,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42833,7 +42833,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzmAXPTvS\u0024DE62nZam2C6c6zE\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -42845,7 +42845,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42865,7 +42865,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzmAXPTvS\u0024DE62nZam2C6c6zE\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -42877,7 +42877,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -42899,7 +42899,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzmAXPTvS\u0024DE62nZam2C6c6zE\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -42912,7 +42912,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -43076,7 +43076,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -43085,7 +43085,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<byte> byteList = _param7 as IList<byte>;
@@ -43124,7 +43124,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43134,9 +43134,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<byte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<byte>();
-      byte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      byte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<byte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<byte>();
+      byte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      byte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -43166,8 +43166,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -43192,8 +43192,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -43221,7 +43221,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43241,7 +43241,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzmp67Wut9n9D6hvD\u0024HFHG_j0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -43253,7 +43253,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43273,7 +43273,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzmp67Wut9n9D6hvD\u0024HFHG_j0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -43285,7 +43285,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43307,7 +43307,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzmp67Wut9n9D6hvD\u0024HFHG_j0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -43320,7 +43320,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -43487,7 +43487,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -43496,7 +43496,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<int> intList = _param7 as IList<int>;
@@ -43535,7 +43535,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43545,9 +43545,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -43577,8 +43577,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -43603,8 +43603,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -43632,7 +43632,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43652,7 +43652,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznEwntj3mfGMIMkKZjj4raDVxI_a8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -43664,7 +43664,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43684,7 +43684,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznEwntj3mfGMIMkKZjj4raDVxI_a8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -43696,7 +43696,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43718,7 +43718,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznEwntj3mfGMIMkKZjj4raDVxI_a8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -43731,7 +43731,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -43895,7 +43895,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -43904,7 +43904,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -43943,7 +43943,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -43953,9 +43953,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -43985,8 +43985,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -44011,8 +44011,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -44040,7 +44040,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44060,7 +44060,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznK78LcbmPeQjvhLBcaKKee0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -44072,7 +44072,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44092,7 +44092,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznK78LcbmPeQjvhLBcaKKee0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -44104,7 +44104,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44126,7 +44126,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznK78LcbmPeQjvhLBcaKKee0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -44139,7 +44139,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -44303,7 +44303,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -44312,7 +44312,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<TimeSpan> timeSpanList = _param6 as IList<TimeSpan>;
       IList<float> floatList = _param7 as IList<float>;
@@ -44351,7 +44351,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44361,9 +44361,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -44393,8 +44393,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -44419,8 +44419,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -44448,7 +44448,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44468,7 +44468,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznR1gPcmZuenfYdeOlI7U8KM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -44480,7 +44480,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44500,7 +44500,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznR1gPcmZuenfYdeOlI7U8KM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -44512,7 +44512,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44534,7 +44534,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznR1gPcmZuenfYdeOlI7U8KM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -44547,7 +44547,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -44714,7 +44714,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -44723,7 +44723,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<short> shortList = _param7 as IList<short>;
@@ -44762,7 +44762,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44772,9 +44772,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<short> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<short>();
-      short num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      short num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<short> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<short>();
+      short num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      short num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -44804,8 +44804,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -44830,8 +44830,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -44859,7 +44859,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44879,7 +44879,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznSwJJ9isJ0W861mUNh8g0M0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -44891,7 +44891,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44911,7 +44911,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznSwJJ9isJ0W861mUNh8g0M0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -44923,7 +44923,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -44945,7 +44945,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DznSwJJ9isJ0W861mUNh8g0M0\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -44958,7 +44958,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<short> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -45122,7 +45122,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -45131,7 +45131,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<byte> byteList = _param6 as IList<byte>;
       IList<float> floatList = _param7 as IList<float>;
@@ -45170,7 +45170,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45180,9 +45180,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -45212,8 +45212,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -45238,8 +45238,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -45267,7 +45267,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45287,7 +45287,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzqs8WyeayI0d\u0024zX43Crlmmxg\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -45299,7 +45299,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45319,7 +45319,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzqs8WyeayI0d\u0024zX43Crlmmxg\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -45331,7 +45331,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45353,7 +45353,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzqs8WyeayI0d\u0024zX43Crlmmxg\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -45366,7 +45366,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -45530,7 +45530,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -45539,7 +45539,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<DateTime> dateTimeList = _param6 as IList<DateTime>;
       IList<float> floatList = _param7 as IList<float>;
@@ -45578,7 +45578,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45588,9 +45588,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<float> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<float>();
-      float num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      float num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<float> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<float>();
+      float num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      float num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -45620,8 +45620,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -45646,8 +45646,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -45675,7 +45675,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45695,7 +45695,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzs\u0024zGRICwyZubMZFbsHg9oKM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -45707,7 +45707,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45727,7 +45727,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzs\u0024zGRICwyZubMZFbsHg9oKM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -45739,7 +45739,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45761,7 +45761,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzs\u0024zGRICwyZubMZFbsHg9oKM\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -45774,7 +45774,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<float> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -45941,7 +45941,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -45950,7 +45950,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ulong> ulongList = _param6 as IList<ulong>;
       IList<long> longList = _param7 as IList<long>;
@@ -45989,7 +45989,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -45999,9 +45999,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -46031,8 +46031,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -46057,8 +46057,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -46086,7 +46086,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46106,7 +46106,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzs6GLwSd4Bv2ddgBcaJDgW7Sg4_7X.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -46118,7 +46118,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46138,7 +46138,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzs6GLwSd4Bv2ddgBcaJDgW7Sg4_7X.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -46150,7 +46150,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46172,7 +46172,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzs6GLwSd4Bv2ddgBcaJDgW7Sg4_7X.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -46185,7 +46185,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -46349,7 +46349,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -46358,7 +46358,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<int> intList = _param7 as IList<int>;
@@ -46397,7 +46397,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46407,9 +46407,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<int> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<int>();
-      int num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      int num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<int> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<int>();
+      int num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      int num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -46439,8 +46439,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -46465,8 +46465,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -46494,7 +46494,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46514,7 +46514,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzt1NfLsDULgN7a1Y2BTCZYg1gyYXV.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -46526,7 +46526,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46546,7 +46546,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzt1NfLsDULgN7a1Y2BTCZYg1gyYXV.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -46558,7 +46558,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46580,7 +46580,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzt1NfLsDULgN7a1Y2BTCZYg1gyYXV.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -46593,7 +46593,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<int> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -46757,7 +46757,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -46766,7 +46766,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<int> intList = _param6 as IList<int>;
       IList<double> doubleList = _param7 as IList<double>;
@@ -46805,7 +46805,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46815,9 +46815,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<double> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<double>();
-      double num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      double num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<double> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<double>();
+      double num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      double num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -46847,8 +46847,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add(num4);
                 mkleCtJgtGqo7Zpw2.Add(num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -46873,8 +46873,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add(num4);
             mkleCtJgtGqo7Zpw2.Add(num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -46902,7 +46902,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46922,7 +46922,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzt4KTVckKtLomSueCk3IxXkc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -46934,7 +46934,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46954,7 +46954,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzt4KTVckKtLomSueCk3IxXkc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -46966,7 +46966,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -46988,7 +46988,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzt4KTVckKtLomSueCk3IxXkc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -47001,7 +47001,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<double> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -47165,7 +47165,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -47174,7 +47174,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<float> floatList = _param6 as IList<float>;
       IList<long> longList = _param7 as IList<long>;
@@ -47213,7 +47213,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47223,9 +47223,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<long> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<long>();
-      long num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      long num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<long> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<long>();
+      long num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      long num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -47255,8 +47255,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -47281,8 +47281,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -47310,7 +47310,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47330,7 +47330,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DztdvUUFAdxvDCjBUtC7tje54\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -47342,7 +47342,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47362,7 +47362,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DztdvUUFAdxvDCjBUtC7tje54\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -47374,7 +47374,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47396,7 +47396,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DztdvUUFAdxvDCjBUtC7tje54\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -47409,7 +47409,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<long> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -47573,7 +47573,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -47582,7 +47582,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<ushort> ushortList1 = _param6 as IList<ushort>;
       IList<ushort> ushortList2 = _param7 as IList<ushort>;
@@ -47621,7 +47621,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47631,9 +47631,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<ushort> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<ushort>();
-      ushort num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      ushort num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<ushort> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<ushort>();
+      ushort num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      ushort num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -47663,8 +47663,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -47689,8 +47689,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -47718,7 +47718,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47738,7 +47738,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzuuZ4ftvb9nHOb0Dz4\u0024\u00241KxrwfeIz.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -47750,7 +47750,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47770,7 +47770,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzuuZ4ftvb9nHOb0Dz4\u0024\u00241KxrwfeIz.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -47782,7 +47782,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -47804,7 +47804,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzuuZ4ftvb9nHOb0Dz4\u0024\u00241KxrwfeIz.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -47817,7 +47817,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<ushort> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -47981,7 +47981,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -47990,7 +47990,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<double> doubleList = _param6 as IList<double>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -48029,7 +48029,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48039,9 +48039,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -48071,8 +48071,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -48097,8 +48097,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -48126,7 +48126,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48146,7 +48146,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzvKdk6eFbYrk5jPvaG3v2_bP3LULY.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -48158,7 +48158,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48178,7 +48178,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzvKdk6eFbYrk5jPvaG3v2_bP3LULY.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -48190,7 +48190,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48212,7 +48212,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzvKdk6eFbYrk5jPvaG3v2_bP3LULY.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -48225,7 +48225,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -48389,7 +48389,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -48398,7 +48398,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<uint> uintList = _param6 as IList<uint>;
       IList<sbyte> sbyteList = _param7 as IList<sbyte>;
@@ -48437,7 +48437,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48447,9 +48447,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<sbyte> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<sbyte>();
-      sbyte num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      sbyte num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<sbyte> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<sbyte>();
+      sbyte num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      sbyte num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -48479,8 +48479,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -48505,8 +48505,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -48534,7 +48534,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48554,7 +48554,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzx44Pbls_5Hb9Vg011lNnxYi8GMaI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -48566,7 +48566,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48586,7 +48586,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzx44Pbls_5Hb9Vg011lNnxYi8GMaI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -48598,7 +48598,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48620,7 +48620,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003Dzx44Pbls_5Hb9Vg011lNnxYi8GMaI.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -48633,7 +48633,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<sbyte> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;
@@ -48797,7 +48797,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
   {
     public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
       \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+      IndexRange  _param2,
       int _param3,
       bool _param4,
       bool _param5,
@@ -48806,7 +48806,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       bool? _param8,
       bool? _param9,
       bool? _param10,
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param11)
+      IRange _param11)
     {
       IList<short> shortList = _param6 as IList<short>;
       IList<uint> uintList = _param7 as IList<uint>;
@@ -48845,7 +48845,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48855,9 +48855,9 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
       int num2 = 2 * _param4;
       int num3 = num1 / num2;
       \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = new \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C(2 * num1 / num3);
-      \u0023\u003DztYZOHWyeiGLm7MH\u0024MqDS9fJgMIjfkOcK7kdYTA2avPAE<uint> mijfkOcK7kdYtA2avPae = \u0023\u003DzgZ2vtblQgV0wzuJ0wshoWkZiI6zajPlHhEQ36XDarPj3.\u0023\u003DzfScL5aE\u003D<uint>();
-      uint num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-      uint num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+      IMath<uint> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<uint>();
+      uint num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+      uint num5 = mijfkOcK7kdYtA2avPae.MinValue;
       int index = min;
       int num6 = num3;
       int val2 = max - num1 % num3;
@@ -48887,8 +48887,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
                 mkleCtJgtGqo7Zpw1.Add(num9);
                 mkleCtJgtGqo7Zpw2.Add((double) num4);
                 mkleCtJgtGqo7Zpw2.Add((double) num5);
-                num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-                num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+                num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+                num5 = mijfkOcK7kdYtA2avPae.MinValue;
                 num6 = num3;
               }
               ++index;
@@ -48913,8 +48913,8 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
             mkleCtJgtGqo7Zpw1.Add(num11);
             mkleCtJgtGqo7Zpw2.Add((double) num4);
             mkleCtJgtGqo7Zpw2.Add((double) num5);
-            num4 = mijfkOcK7kdYtA2avPae.\u0023\u003DzNLkUKUcMn0yy();
-            num5 = mijfkOcK7kdYtA2avPae.\u0023\u003Dzn4BdrXIKaI7E();
+            num4 = mijfkOcK7kdYtA2avPae.MaxValue;
+            num5 = mijfkOcK7kdYtA2avPae.MinValue;
             num6 = num3;
           }
         }
@@ -48942,7 +48942,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48962,7 +48962,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzzVlS\u0024hC0wTLFYQbIWmmBCtzjAaCu.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MinValue;
           num4 = 0;
         }
@@ -48974,7 +48974,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -48994,7 +48994,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num4 >= num2)
         {
           double num6 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzzVlS\u0024hC0wTLFYQbIWmmBCtzjAaCu.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num6, num3));
           num3 = double.MaxValue;
           num4 = 0;
         }
@@ -49006,7 +49006,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       int _param4,
       bool _param5)
     {
@@ -49028,7 +49028,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
         if (++num5 >= num2)
         {
           double num7 = _param5 ? (double) index : \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D.\u0023\u003DzzVlS\u0024hC0wTLFYQbIWmmBCtzjAaCu.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-          p09swszfkFaReRy0aAtDn3C.\u0023\u003Dz6wT8xpE\u003D(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
+          p09swszfkFaReRy0aAtDn3C.Add(new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(num7, 0.5 * (num4 + num3)));
           num3 = double.MaxValue;
           num4 = double.MinValue;
           num5 = 0;
@@ -49041,7 +49041,7 @@ internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOA
     private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<uint> _param2,
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param3,
+      IndexRange  _param3,
       bool _param4)
     {
       int max = _param3.Max;

@@ -13,8 +13,8 @@ using System.Windows;
 internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
 {
   internal static bool \u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D(
-    this \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param0,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    this IAxis _param0,
+    IRange _param1,
     TimeSpan _param2)
   {
     if (_param0.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Always || !_param0.\u0023\u003Dz2OKbyRBzRCBL(_param1) || _param1 == null || _param1.Equals((object) _param0.VisibleRange))
@@ -27,7 +27,7 @@ internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
   }
 
   internal static void \u0023\u003Dz07\u0024lhqBRmUuR(
-    this \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param0,
+    this IAxis _param0,
     FrameworkElement _param1,
     Point _param2)
   {
@@ -45,7 +45,7 @@ internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
   }
 
   internal static void \u0023\u003DzXOlF_vImljp4(
-    this \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param0,
+    this IAxis _param0,
     FrameworkElement _param1,
     Point _param2)
   {
@@ -58,7 +58,7 @@ internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
     else
     {
       DependencyProperty dependencyProperty = _param0.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Right ? dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DztX3bWaM\u003D : dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzQLHMxl4\u003D;
-      if (_param1.ActualWidth >= _param0.\u0023\u003Dzu2ObQ3hMALTN())
+      if (_param1.ActualWidth >= _param0.ActualWidth)
         dependencyProperty = dependencyProperty == dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DztX3bWaM\u003D ? dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzQLHMxl4\u003D : dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DztX3bWaM\u003D;
       _param1.SetValue(dependencyProperty, (object) 0.0);
     }

@@ -66,7 +66,7 @@ internal sealed class dje_zPC3M3YAJUSMFFMDBKQGYAGLUKJA657QM99FD5CXEJLNLNQCGTL4JQ
   }
 
   protected override void \u0023\u003DzuTwCwl07R0Mf(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     Style _param2,
     double _param3,
     float[] _param4,
@@ -82,7 +82,7 @@ internal sealed class dje_zPC3M3YAJUSMFFMDBKQGYAGLUKJA657QM99FD5CXEJLNLNQCGTL4JQ
   }
 
   private void \u0023\u003Dz3ZXzqAn7QFK6(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param2,
     float _param3,
     double _param4)

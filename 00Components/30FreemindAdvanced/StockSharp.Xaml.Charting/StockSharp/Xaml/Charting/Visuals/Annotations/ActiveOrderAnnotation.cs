@@ -182,7 +182,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     base.OnDetached();
     this._axisMarker.OnDetached();
     this._axisMarker.Services = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null;
-    this._axisMarker.ParentSurface = (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) null;
+    this._axisMarker.ParentSurface = (ISciChartSurface) null;
     this._axisMarker.IsAttached = false;
   }
 
@@ -206,8 +206,8 @@ internal class ActiveOrderAnnotation : AnnotationBase
   protected override void SetBasePoint(
     Point newPoint,
     int index,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB xAxis,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yAxis)
+    IAxis xAxis,
+    IAxis yAxis)
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     IComparable[] comparableArray = this.FromCoordinates(newPoint);
@@ -215,7 +215,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     DependencyProperty x;
     DependencyProperty y;
     this.GetPropertiesFromIndex(index, out x, out y);
-    if (this.IsCoordinateValid(newPoint.X, canvas.\u0023\u003Dzu2ObQ3hMALTN()))
+    if (this.IsCoordinateValid(newPoint.X, canvas.ActualWidth))
       this.SetCurrentValue(x, (object) comparable);
     this.SetCurrentValue(y, (object) comparableArray[1]);
   }
@@ -229,28 +229,28 @@ internal class ActiveOrderAnnotation : AnnotationBase
 
   private void ScrollTimerOnTick(object sender, EventArgs e)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yaxis = this.YAxis;
+    IAxis yaxis = this.YAxis;
     if (!this.IsDragging || !this._isOutOfBounds || yaxis == null)
       return;
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     Point position = Mouse.GetPosition((IInputElement) canvas);
-    if (position.Y >= 0.0 && position.Y < canvas.\u0023\u003Dz2kO1mtG\u0024bEUM())
+    if (position.Y >= 0.0 && position.Y < canvas.ActualHeight)
       return;
     int num1 = Math.Sign(position.Y);
-    double num2 = num1 > 0 ? Math.Min(1.0, (position.Y - canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()) / canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()) : Math.Min(1.0, -position.Y / canvas.\u0023\u003Dz2kO1mtG\u0024bEUM());
+    double num2 = num1 > 0 ? Math.Min(1.0, (position.Y - canvas.ActualHeight) / canvas.ActualHeight) : Math.Min(1.0, -position.Y / canvas.ActualHeight);
     double num3 = (double) num1 * (0.3 + num2 * 1.7);
-    double num4 = canvas.\u0023\u003Dz2kO1mtG\u0024bEUM() * num3 * this._scrollTimer.Interval.TotalMilliseconds / 1000.0;
+    double num4 = canvas.ActualHeight * num3 * this._scrollTimer.Interval.TotalMilliseconds / 1000.0;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates1 = this.GetCoordinates(canvas, xCalc, yCalc);
     if (this.YDragStep > 0.0)
     {
-      double coord = num1 > 0 ? canvas.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0 + num4 : -num4;
+      double coord = num1 > 0 ? canvas.ActualHeight - 1.0 + num4 : -num4;
       IComparable comparable1 = this.FromCoordinate(coordinates1.\u0023\u003Dz2J4l3QUGwZHE, yaxis);
       IComparable comparable2 = this.FromCoordinate(coord, yaxis);
-      int num5 = (int) Math.Round(Math.Abs(comparable1.\u0023\u003Dzb9UCYbo\u003D() - comparable2.\u0023\u003Dzb9UCYbo\u003D()) / this.YDragStep);
+      int num5 = (int) Math.Round(Math.Abs(comparable1.ToDouble() - comparable2.ToDouble()) / this.YDragStep);
       int num6 = yaxis.get_FlipCoordinates() ? num1 : -num1;
-      num4 = this.ToCoordinate((IComparable) (comparable1.\u0023\u003Dzb9UCYbo\u003D() + (double) (num6 * num5) * this.YDragStep), yaxis) - coordinates1.\u0023\u003Dz2J4l3QUGwZHE;
+      num4 = this.ToCoordinate((IComparable) (comparable1.ToDouble() + (double) (num6 * num5) * this.YDragStep), yaxis) - coordinates1.\u0023\u003Dz2J4l3QUGwZHE;
     }
     using (this.ParentSurface.SuspendUpdates())
     {
@@ -259,7 +259,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
       \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates2 = this.GetCoordinates(canvas, this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
       Point point = new Point();
       point.X = coordinates2.\u0023\u003DzS2_K6sVvd5IY;
-      point.Y = num1 > 0 ? canvas.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0 : 0.0;
+      point.Y = num1 > 0 ? canvas.ActualHeight - 1.0 : 0.0;
       Point newPoint = point;
       this.GetPropertiesFromIndex(0, out DependencyProperty _, out DependencyProperty _);
       this.SetBasePoint(newPoint, 0, this.XAxis, this.YAxis);
@@ -275,12 +275,12 @@ internal class ActiveOrderAnnotation : AnnotationBase
     double horizOffset,
     double vertOffset)
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB yaxis = this.YAxis;
+    IAxis yaxis = this.YAxis;
     if (yaxis == null)
       return (0.0, 0.0);
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     double coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
-    if (this.IsDraggingByUser && !this.IsCoordinateValid(coord, canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+    if (this.IsDraggingByUser && !this.IsCoordinateValid(coord, canvas.ActualHeight))
     {
       if (yaxis.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Always)
         ((DependencyObject) yaxis).SetCurrentValue(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzKm2_RDWENeyO, (object) dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Once);
@@ -291,8 +291,8 @@ internal class ActiveOrderAnnotation : AnnotationBase
       }
       if (coord < 0.0)
         vertOffset -= coord - 1.0;
-      if (coord > canvas.\u0023\u003Dz2kO1mtG\u0024bEUM())
-        vertOffset -= coord - (canvas.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0);
+      if (coord > canvas.ActualHeight)
+        vertOffset -= coord - (canvas.ActualHeight - 1.0);
       coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
     }
     else
@@ -305,12 +305,12 @@ internal class ActiveOrderAnnotation : AnnotationBase
     {
       IComparable comparable1 = this.FromCoordinate(coordinates.\u0023\u003Dz2J4l3QUGwZHE, yaxis);
       IComparable comparable2 = this.FromCoordinate(coord, yaxis);
-      int num1 = (int) Math.Round(Math.Abs(comparable1.\u0023\u003Dzb9UCYbo\u003D() - comparable2.\u0023\u003Dzb9UCYbo\u003D()) / this.YDragStep);
+      int num1 = (int) Math.Round(Math.Abs(comparable1.ToDouble() - comparable2.ToDouble()) / this.YDragStep);
       int num2 = !yaxis.get_FlipCoordinates() ? -Math.Sign(vertOffset) : Math.Sign(vertOffset);
-      coord = this.ToCoordinate((IComparable) (comparable1.\u0023\u003Dzb9UCYbo\u003D() + (double) (num2 * num1) * this.YDragStep), yaxis);
+      coord = this.ToCoordinate((IComparable) (comparable1.ToDouble() + (double) (num2 * num1) * this.YDragStep), yaxis);
     }
     vertOffset = coord - coordinates.\u0023\u003Dz2J4l3QUGwZHE;
-    if (!this.IsCoordinateValid(coord, canvas.\u0023\u003Dz2kO1mtG\u0024bEUM()) && this.IsDraggingByUser)
+    if (!this.IsCoordinateValid(coord, canvas.ActualHeight) && this.IsDraggingByUser)
       return (0.0, 0.0);
     this.SetBasePoint(new Point()
     {
@@ -500,7 +500,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
       if (!z2J4l3QuGwZhe.\u0023\u003Dz_Bj0HmLWq3hY() || canvas == null)
         return;
       double num1 = this.\u0023\u003Dz_iIh83yfe01U().AnnotationRoot.ActualHeight / 2.0;
-      double num2 = Math.Max(10.0, canvas.\u0023\u003Dzu2ObQ3hMALTN() - _param1.\u0023\u003DzS2_K6sVvd5IY);
+      double num2 = Math.Max(10.0, canvas.ActualWidth - _param1.\u0023\u003DzS2_K6sVvd5IY);
       Line line = this.\u0023\u003Dz_iIh83yfe01U()._line;
       if (!line.X1.\u0023\u003Dz0AeaaBjWIeEn(0.0) || !line.X2.\u0023\u003Dz0AeaaBjWIeEn(num2) || !line.Y1.\u0023\u003Dz0AeaaBjWIeEn(num1) || !line.Y2.\u0023\u003Dz0AeaaBjWIeEn(num1))
       {
@@ -510,7 +510,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
         line.UpdateLayout();
       }
       double num3 = z2J4l3QuGwZhe - num1;
-      double num4 = canvas.\u0023\u003Dzu2ObQ3hMALTN() - this.\u0023\u003Dz_iIh83yfe01U().ActualWidth;
+      double num4 = canvas.ActualWidth - this.\u0023\u003Dz_iIh83yfe01U().ActualWidth;
       this.\u0023\u003Dz_iIh83yfe01U().SetValue(Canvas.LeftProperty, (object) num4);
       this.\u0023\u003Dz_iIh83yfe01U().SetValue(Canvas.TopProperty, (object) num3);
     }
@@ -528,7 +528,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
       \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
-      return (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.\u0023\u003Dz2kO1mtG\u0024bEUM() ? 1 : (_param1.\u0023\u003DzS2_K6sVvd5IY > _param2.\u0023\u003Dzu2ObQ3hMALTN() ? 1 : 0)) == 0;
+      return (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight ? 1 : (_param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth ? 1 : 0)) == 0;
     }
   }
 

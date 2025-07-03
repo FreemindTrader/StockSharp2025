@@ -131,11 +131,11 @@ internal sealed class \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEezGJrigJfmRXcKJON_mX
 
   public override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4,
     bool? _param5,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param6,
+    IRange _param6,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param7,
     object _param8 = null)
   {
@@ -240,7 +240,7 @@ internal sealed class \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEezGJrigJfmRXcKJON_mX
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D zE8zkRfY = this.\u0023\u003DztR5HGEq8pm\u00248[_param1];
-    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(_param2, zE8zkRfY);
+    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(_param2, zE8zkRfY);
   }
 
   public override \u0023\u003DzE8zkRfY\u003D GetYMinAt(
@@ -248,6 +248,6 @@ internal sealed class \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEezGJrigJfmRXcKJON_mX
     \u0023\u003DzE8zkRfY\u003D _param2)
   {
     \u0023\u003DzE8zkRfY\u003D zE8zkRfY = this.\u0023\u003DzwrNTkEFZoB0H[_param1];
-    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(_param2, zE8zkRfY);
+    return \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(zE8zkRfY) ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(_param2, zE8zkRfY);
   }
 }

@@ -29,7 +29,7 @@ internal class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3R
   private int \u0023\u003DzTs5gEHtGGnsI;
 
   public override void \u0023\u003DzWzUaFxw\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     if (!(_param1 is dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd))
       throw new InvalidOperationException("");
@@ -40,7 +40,7 @@ internal class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3R
   {
     dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd nu9622VfydaypdeqEjd = (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd) this.\u0023\u003DzHZDgUSdfqmkx();
     double num1 = nu9622VfydaypdeqEjd.\u0023\u003DzbY7N\u0024Xk2WSr8();
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = nu9622VfydaypdeqEjd.\u0023\u003DzFL7WRclCPBWI((\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) nu9622VfydaypdeqEjd.VisibleRange);
+    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = nu9622VfydaypdeqEjd.\u0023\u003DzFL7WRclCPBWI((IndexRange ) nu9622VfydaypdeqEjd.VisibleRange);
     this.\u0023\u003DzTs5gEHtGGnsI = 3;
     if (dx26vpI1xWpwwNqJw != null && dx26vpI1xWpwwNqJw.IsDefined)
     {

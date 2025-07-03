@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D : 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg\u003D\u003D,
+  BindableObject ,
   ICloneable
 {
   
@@ -54,7 +54,7 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     this.IsHit = _param2.\u0023\u003Dzmh1LiTa467ce();
     this.XValue = _param2.\u0023\u003DztryT5H42SVj8();
     this.YValue = _param2.\u0023\u003Dzd9IAScWutAfJ();
-    this.Value = _param2.\u0023\u003Dzd9IAScWutAfJ().\u0023\u003Dzb9UCYbo\u003D();
+    this.Value = _param2.\u0023\u003Dzd9IAScWutAfJ().ToDouble();
     this.XyCoordinate = _param2.\u0023\u003DzxZfJER0dbHuS();
   }
 

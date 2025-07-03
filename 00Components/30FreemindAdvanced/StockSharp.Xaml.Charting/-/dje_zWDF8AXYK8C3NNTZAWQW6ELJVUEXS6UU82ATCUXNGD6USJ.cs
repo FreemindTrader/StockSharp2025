@@ -14,7 +14,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM33XZFQAX5LUE5RZSC236CFNLTGUDL4R63UZ85LQQ_ejd : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
+  BaseRenderableSeries
 {
   
   private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dzr7mBO7bq\u0024j8u;
@@ -24,15 +24,15 @@ internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM3
     this.DefaultStyleKey = (object) typeof (dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM33XZFQAX5LUE5RZSC236CFNLTGUDL4R63UZ85LQQ_ejd);
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzxNQHuqrEvxH2(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  public override IRange \u0023\u003DzxNQHuqrEvxH2(
+    IRange _param1,
     bool _param2)
   {
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = base.\u0023\u003DzxNQHuqrEvxH2(_param1, _param2);
+    IRange abyLt9clZggmJsWhw = base.\u0023\u003DzxNQHuqrEvxH2(_param1, _param2);
     double val2 = this.ZeroLineY;
     if (_param2 && val2 <= 0.0)
-      val2 = abyLt9clZggmJsWhw.Min.\u0023\u003Dzb9UCYbo\u003D();
-    return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) Math.Min(abyLt9clZggmJsWhw.Min.\u0023\u003Dzb9UCYbo\u003D(), val2), (IComparable) Math.Max(abyLt9clZggmJsWhw.Max.\u0023\u003Dzb9UCYbo\u003D(), val2));
+      val2 = abyLt9clZggmJsWhw.Min.ToDouble();
+    return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) Math.Min(abyLt9clZggmJsWhw.Min.ToDouble(), val2), (IComparable) Math.Max(abyLt9clZggmJsWhw.Max.ToDouble(), val2));
   }
 
   protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
@@ -47,7 +47,7 @@ internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM3
       \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, false);
       if (!zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzmh1LiTa467ce() && zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw() != -1 && this.DataSeries.\u0023\u003DzPqsSI6C5MOOb().Count != 0)
       {
-        double num2 = ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw()]).\u0023\u003Dzb9UCYbo\u003D();
+        double num2 = ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw()]).ToDouble();
         \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
         Point point = this.\u0023\u003Dzop6vn0GowyiR(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
         double y = point.Y;
@@ -76,7 +76,7 @@ internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM3
           num6 = num2;
           num7 = this.ZeroLineY;
         }
-        zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzn3o1RS9wuET8(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz99srMqSdWO6y(_param1.X, num5 - _param2, num5 + _param2) && dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dz99srMqSdWO6y(num3, num6, num7));
+        zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzn3o1RS9wuET8(BaseRenderableSeries.\u0023\u003Dz99srMqSdWO6y(_param1.X, num5 - _param2, num5 + _param2) && BaseRenderableSeries.\u0023\u003Dz99srMqSdWO6y(num3, num6, num7));
       }
       if (zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzmh1LiTa467ce())
         return zldchDrVsrVyHh6WyiGy2;
@@ -92,8 +92,8 @@ internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM3
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();

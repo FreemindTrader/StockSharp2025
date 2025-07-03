@@ -309,17 +309,17 @@ internal class dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd :
     int width = (int) size.Width;
     int height = (int) size.Height;
     if (this.\u0023\u003DzWfNK9E4egtoR == null || this.\u0023\u003DzWfNK9E4egtoR.PixelWidth != width || this.\u0023\u003DzWfNK9E4egtoR.PixelHeight != height)
-      this.\u0023\u003DzWfNK9E4egtoR = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(width, height);
+      this.\u0023\u003DzWfNK9E4egtoR = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(width, height);
     if (this.\u0023\u003DzWfNK9E4egtoR == null || this.\u0023\u003DzlbfaVnpq6N5Y == null)
       return;
     using (\u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H blRxkxWuDZv6cV0H = this.\u0023\u003DzWfNK9E4egtoR.\u0023\u003Dz1cRMfLZU4Eo2(this.\u0023\u003DzlbfaVnpq6N5Y, (\u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D) null))
     {
       blRxkxWuDZv6cV0H.\u0023\u003DzUf222sU\u003D();
       if (this.DrawMinorTicks && _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D() != null)
-        this.\u0023\u003DzuTwCwl07R0Mf((\u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I) blRxkxWuDZv6cV0H, this.MinorTickLineStyle, this.MinorTickSize, _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D(), _param2);
+        this.\u0023\u003DzuTwCwl07R0Mf((IRenderContext2D) blRxkxWuDZv6cV0H, this.MinorTickLineStyle, this.MinorTickSize, _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D(), _param2);
       if (!this.DrawMajorTicks || _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D() == null)
         return;
-      this.\u0023\u003DzuTwCwl07R0Mf((\u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I) blRxkxWuDZv6cV0H, this.MajorTickLineStyle, this.MajorTickSize, _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D(), _param2);
+      this.\u0023\u003DzuTwCwl07R0Mf((IRenderContext2D) blRxkxWuDZv6cV0H, this.MajorTickLineStyle, this.MajorTickSize, _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D(), _param2);
     }
   }
 
@@ -329,7 +329,7 @@ internal class dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd :
   }
 
   protected virtual void \u0023\u003DzuTwCwl07R0Mf(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     Style _param2,
     double _param3,
     float[] _param4,
@@ -345,7 +345,7 @@ internal class dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd :
   }
 
   private void \u0023\u003Dz3ZXzqAn7QFK6(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param2,
     float _param3,
     float _param4,

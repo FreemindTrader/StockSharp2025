@@ -28,8 +28,8 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   \u0023\u003DzYB09msiytIDFpDsyaHpANNcjrPNql900yccNyuZHBUW6,
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7,
   IDisposable,
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z,
-  \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe06Do2pQ7ReqT8Ks0apzs3KdsLXgXg\u003D\u003D
+  IHitTestable,
+  IInvalidatableElement
 {
   
   public static readonly DependencyProperty \u0023\u003DzjroGW0xeV8YH = DependencyProperty.Register("", typeof (double?), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.\u0023\u003DzL8ZRB9csVw_UcT6v5V6Hxo0\u003D)));
@@ -40,7 +40,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   
   public static readonly DependencyProperty \u0023\u003DzsKzwhvawatYW = DependencyProperty.RegisterAttached("", typeof (string), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.\u0023\u003DzV210hqnzErQ4)));
   
-  private EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> \u0023\u003DzjgUUUJE\u003D;
+  private EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> Draw;
   
   private EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> \u0023\u003DzcyGdlF8\u003D;
   
@@ -103,12 +103,12 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   public void \u0023\u003DzQ_ByYlCf\u0024Kac(
     EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> _param1)
   {
-    EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> eventHandler = this.\u0023\u003DzjgUUUJE\u003D;
+    EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> eventHandler = this.Draw;
     EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> comparand;
     do
     {
       comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy>>(ref this.\u0023\u003DzjgUUUJE\u003D, comparand + _param1, comparand);
+      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy>>(ref this.Draw, comparand + _param1, comparand);
     }
     while (eventHandler != comparand);
   }
@@ -118,12 +118,12 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   public void \u0023\u003DzvM8pYfLF8h8E(
     EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> _param1)
   {
-    EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> eventHandler = this.\u0023\u003DzjgUUUJE\u003D;
+    EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> eventHandler = this.Draw;
     EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> comparand;
     do
     {
       comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy>>(ref this.\u0023\u003DzjgUUUJE\u003D, comparand - _param1, comparand);
+      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy>>(ref this.Draw, comparand - _param1, comparand);
     }
     while (eventHandler != comparand);
   }
@@ -252,11 +252,11 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     return new ReadOnlyCollection<IRenderableSeries>((IList<IRenderableSeries>) this.\u0023\u003DzqgMiDwaFbXWy().Children.OfType<IRenderableSeries>().ToArray<IRenderableSeries>());
   }
 
-  public void \u0023\u003Dz5q8i9C4\u003D() => this.\u0023\u003DzAJ8tNFa80f45 = true;
+  public void InvalidateElement() => this.\u0023\u003DzAJ8tNFa80f45 = true;
 
   public void \u0023\u003DzUf222sU\u003D()
   {
-    using (\u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I mvXdEdq1k7UiFd2I = this.\u0023\u003Dz1cRMfLZU4Eo2())
+    using (IRenderContext2D mvXdEdq1k7UiFd2I = this.\u0023\u003Dz1cRMfLZU4Eo2())
       mvXdEdq1k7UiFd2I.\u0023\u003DzUf222sU\u003D();
   }
 
@@ -340,7 +340,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzosHqOAc\u003D<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2QRz_uGPlEIz4W0k_ThlbVRdyLkdBA\u003D\u003D>(new \u0023\u003DzE2B_RS0KvtqHnw_gRshK2QRz_uGPlEIz4W0k_ThlbVRdyLkdBA\u003D\u003D((object) this, new Size((double) _param1, (double) _param2)));
   }
 
-  public abstract \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003Dz1cRMfLZU4Eo2();
+  public abstract IRenderContext2D \u0023\u003Dz1cRMfLZU4Eo2();
 
   protected virtual void \u0023\u003Dzuq\u0024Rld84MQAH()
   {
@@ -351,12 +351,12 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     if (!this.\u0023\u003DzAJ8tNFa80f45)
       return;
     this.\u0023\u003DzAJ8tNFa80f45 = false;
-    this.\u0023\u003DzjAYqfck\u003D();
+    this.OnDraw();
   }
 
-  protected virtual void \u0023\u003DzjAYqfck\u003D()
+  protected virtual void OnDraw()
   {
-    EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> zjgUuuje = this.\u0023\u003DzjgUUUJE\u003D;
+    EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> zjgUuuje = this.Draw;
     if (zjgUuuje == null)
       return;
     Stopwatch stopwatch = Stopwatch.StartNew();
@@ -432,7 +432,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     else
     {
       this.\u0023\u003DzSgMgi9QlqY9x();
-      this.\u0023\u003Dz5q8i9C4\u003D();
+      this.InvalidateElement();
     }
   }
 
@@ -443,7 +443,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     double? newValue = (double?) _param1.NewValue;
     if (newValue.HasValue)
     {
-      if (((IComparable) newValue).\u0023\u003DzutrFxOU\u003D())
+      if (((IComparable) newValue).IsFiniteNumber())
       {
         double? nullable = newValue;
         double num1 = 0.0;
@@ -478,7 +478,7 @@ label_5:
 
   private static WriteableBitmap \u0023\u003DznU63H0xqIsmj(int _param0, int _param1)
   {
-    return \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.\u0023\u003DzfScL5aE\u003D(_param0, _param1);
+    return \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(_param0, _param1);
   }
 
   private void \u0023\u003DzFeNr2Uw\u003D()
@@ -498,7 +498,7 @@ label_5:
 
   public Point TranslatePoint(
     Point _param1,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param2)
+    IHitTestable _param2)
   {
     return this.\u0023\u003DzaPPLsvfM_Sst(_param1, _param2);
   }
@@ -506,7 +506,7 @@ label_5:
   public bool IsPointWithinBounds(Point _param1) => this.\u0023\u003DzbOxVzAyGdX66(_param1);
 
   public Rect GetBoundsRelativeTo(
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param1)
+    IHitTestable _param1)
   {
     return this.\u0023\u003DzdC9whUui_gN\u0024(_param1);
   }
@@ -522,12 +522,12 @@ label_5:
     this.Style = _param1;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
+  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
   {
     return this.ActualWidth;
   }
 
-  double \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
+  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
   {
     return this.ActualHeight;
   }
@@ -540,6 +540,6 @@ label_5:
   private void \u0023\u003Dz606jjiq_5XFxyfIiITtWCFc\u003D()
   {
     this.\u0023\u003DzSgMgi9QlqY9x();
-    this.\u0023\u003Dz5q8i9C4\u003D();
+    this.InvalidateElement();
   }
 }

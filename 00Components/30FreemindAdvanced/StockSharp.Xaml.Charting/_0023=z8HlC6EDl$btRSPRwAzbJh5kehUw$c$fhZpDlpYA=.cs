@@ -29,7 +29,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
   
   private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzg8Ufa_EMXfJU;
   
-  private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D \u0023\u003Dzos6SMwAMXZ33;
+  private ISciChartSurface \u0023\u003Dzos6SMwAMXZ33;
   
   private Delegate \u0023\u003Dzz9oqqeJpzNfoAe16JA\u003D\u003D;
   
@@ -47,12 +47,12 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
     this.\u0023\u003DzFeNr2Uw\u003D();
   }
 
-  public \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D ParentSurface
+  public ISciChartSurface ParentSurface
   {
     get => this.\u0023\u003Dzos6SMwAMXZ33;
     set
     {
-      \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D zos6SmwAmxZ33 = this.\u0023\u003Dzos6SMwAMXZ33;
+      ISciChartSurface zos6SmwAmxZ33 = this.\u0023\u003Dzos6SMwAMXZ33;
       if (zos6SmwAmxZ33 != null)
       {
         this.\u0023\u003Dzg8Ufa_EMXfJU = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null;
@@ -69,7 +69,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
   }
 
   public void \u0023\u003Dz5ClIah4mXevT(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1)
+    ISciChartSurface _param1)
   {
     this.\u0023\u003DzIDbfqzYC9gDs(_param1);
     if (!(_param1 is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd) || (object) this.\u0023\u003Dz96bk__LBZFAg2I8HPQ\u003D\u003D() != null)
@@ -79,7 +79,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
   }
 
   public void \u0023\u003DzIDbfqzYC9gDs(
-    \u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D _param1)
+    ISciChartSurface _param1)
   {
     if (!(_param1 is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd) || (object) this.\u0023\u003Dz96bk__LBZFAg2I8HPQ\u003D\u003D() == null)
       return;
@@ -126,7 +126,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
     {
       if (!hhh93Q0DqkV5Sv90k.IsAttached)
         this.\u0023\u003DzigVBoK19B\u0024jW(hhh93Q0DqkV5Sv90k);
-      this.ParentSurface.\u0023\u003Dz5q8i9C4\u003D();
+      this.ParentSurface.InvalidateElement();
     }
   }
 
@@ -138,7 +138,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
     _param1.remove_DragEnded(new EventHandler<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D>(this.\u0023\u003Dzb6pL05pO1ZwuBRQlrw\u003D\u003D));
     _param1.remove_DragDelta(new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6HbbjLeMvfhhb2s2mR8\u003D>(this.\u0023\u003Dz4Q47Joqo_tHsaan4\u0024A\u003D\u003D));
     _param1.Services = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null;
-    _param1.ParentSurface = (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd\u0024YpfetQ\u003D\u003D) null;
+    _param1.ParentSurface = (ISciChartSurface) null;
     _param1.IsAttached = false;
   }
 
@@ -198,7 +198,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
 
   public void ReadXml(XmlReader _param1)
   {
-    \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote fq05jnDg3bOrIrgCjote = (\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) null;
+    IUpdateSuspender fq05jnDg3bOrIrgCjote = (IUpdateSuspender) null;
     if (this.ParentSurface != null)
       fq05jnDg3bOrIrgCjote = this.ParentSurface.SuspendUpdates();
     this.\u0023\u003Dz6_E5\u0024pE\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>(\u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ3C42.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DztbbHmR4\u003D(_param1));

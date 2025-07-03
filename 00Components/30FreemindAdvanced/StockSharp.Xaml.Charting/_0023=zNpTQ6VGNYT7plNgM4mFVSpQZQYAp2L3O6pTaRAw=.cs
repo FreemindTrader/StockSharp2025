@@ -9,6 +9,6 @@ using \u002D;
 
 #nullable disable
 internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSpQZQYAp2L3O6pTaRAw\u003D : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
 }

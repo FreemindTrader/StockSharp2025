@@ -113,9 +113,9 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
   protected override bool \u0023\u003DzD5SquRN7M_9c(
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
   {
-    bool flag = !_param1.\u0023\u003DzMeGSfVE\u003D() && _param1.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D() && _param1.\u0023\u003DzoDOpfzdgHalT() && _param1.\u0023\u003DzxZfJER0dbHuS().X.\u0023\u003DzutrFxOU\u003D() && _param1.\u0023\u003DzxZfJER0dbHuS().Y.\u0023\u003DzutrFxOU\u003D();
+    bool flag = !_param1.\u0023\u003DzMeGSfVE\u003D() && _param1.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D() && _param1.\u0023\u003DzoDOpfzdgHalT() && _param1.\u0023\u003DzxZfJER0dbHuS().X.IsFiniteNumber() && _param1.\u0023\u003DzxZfJER0dbHuS().Y.IsFiniteNumber();
     if (_param1.\u0023\u003DzRkghOq8y7ncj() == (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 2)
-      flag &= _param1.\u0023\u003DzsTZhf2NJangnoun2zQ\u003D\u003D().Y.\u0023\u003DzutrFxOU\u003D();
+      flag &= _param1.\u0023\u003DzsTZhf2NJangnoun2zQ\u003D\u003D().Y.IsFiniteNumber();
     return flag;
   }
 
@@ -342,7 +342,7 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
     double left = Canvas.GetLeft((UIElement) _param1);
     double top = Canvas.GetTop((UIElement) _param1);
     Rect rect1 = this.\u0023\u003DzJ9n0Twkemi0Ero8oB32YtoE\u003D(_param1);
-    Rect rect2 = new Rect(0.0, 0.0, this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN(), this.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM());
+    Rect rect2 = new Rect(0.0, 0.0, this.ModifierSurface.ActualWidth, this.ModifierSurface.ActualHeight);
     this.\u0023\u003Dzd2PtoXT5k7_W.Add(this.\u0023\u003Dz7hf3biWYyl4a(new Point(left, top), frameworkElement, rect1, rect2));
   }
 
@@ -490,7 +490,7 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
 
   private sealed class \u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D
   {
-    public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003Dz4bf8Oyc\u003D;
+    public IAxis \u0023\u003Dz4bf8Oyc\u003D;
     public Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, double> \u0023\u003Dzon\u0024_RZacJIPJ;
 
     internal double \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D(

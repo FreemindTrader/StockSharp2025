@@ -53,7 +53,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     return ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.Where<Order>(_param1);
   }
 
-  public override bool \u0023\u003DzjgUUUJE\u003D(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+  public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     if (_param1 == null || ((IEnumerableEx) _param1).Count == 0)
       return false;

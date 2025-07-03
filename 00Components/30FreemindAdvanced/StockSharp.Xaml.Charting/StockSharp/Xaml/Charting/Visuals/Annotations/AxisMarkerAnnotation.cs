@@ -52,7 +52,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     set => this.SetValue(AxisMarkerAnnotation.PointerTemplateProperty, (object) value);
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB Axis
+  public IAxis Axis
   {
     get
     {
@@ -76,7 +76,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   }
 
   protected override void OnAxisAlignmentChanged(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis,
+    IAxis axis,
     dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment)
   {
     base.OnAxisAlignmentChanged(axis, oldAlignment);
@@ -116,7 +116,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   public override bool IsPointWithinBounds(Point point)
   {
     Grid annotationRoot = this.AnnotationRoot as Grid;
-    point = this.ModifierSurface.TranslatePoint(point, (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this);
+    point = this.ModifierSurface.TranslatePoint(point, (IHitTestable) this);
     Point point1 = point;
     return annotationRoot.\u0023\u003DzbOxVzAyGdX66(point1);
   }
@@ -127,7 +127,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   }
 
   private static void PlaceMarker(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis,
+    IAxis axis,
     AxisMarkerAnnotation axisMarker,
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
   {
@@ -191,7 +191,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     {
       _param0 = _param1.GetAnchorAnnotationCoordinates(_param0);
       _param1.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis = _param1.Axis;
+      IAxis axis = _param1.Axis;
       if (axis == null)
         return Array.Empty<Point>();
       \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D modifierSurface = _param1.ModifierSurface;
@@ -201,20 +201,20 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
         double zS2K6sVvd5Iy = _param0.\u0023\u003DzS2_K6sVvd5IY;
         return new Point[4]
         {
-          axis.TranslatePoint(new Point(zS2K6sVvd5Iy, 0.0), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface),
-          axis.TranslatePoint(new Point(zS2K6sVvd5Iy, axis.\u0023\u003Dz2kO1mtG\u0024bEUM()), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface),
-          axis.TranslatePoint(new Point(zS2K6sVvd5Iy + width, axis.\u0023\u003Dz2kO1mtG\u0024bEUM()), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface),
-          axis.TranslatePoint(new Point(zS2K6sVvd5Iy + width, 0.0), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface)
+          axis.TranslatePoint(new Point(zS2K6sVvd5Iy, 0.0), (IHitTestable) modifierSurface),
+          axis.TranslatePoint(new Point(zS2K6sVvd5Iy, axis.ActualHeight), (IHitTestable) modifierSurface),
+          axis.TranslatePoint(new Point(zS2K6sVvd5Iy + width, axis.ActualHeight), (IHitTestable) modifierSurface),
+          axis.TranslatePoint(new Point(zS2K6sVvd5Iy + width, 0.0), (IHitTestable) modifierSurface)
         };
       }
       double height = _param1.DesiredSize.Height;
       double z2J4l3QuGwZhe = _param0.\u0023\u003Dz2J4l3QUGwZHE;
       return new Point[4]
       {
-        axis.TranslatePoint(new Point(0.0, z2J4l3QuGwZhe), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface),
-        axis.TranslatePoint(new Point(axis.\u0023\u003Dzu2ObQ3hMALTN(), z2J4l3QuGwZhe), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface),
-        axis.TranslatePoint(new Point(axis.\u0023\u003Dzu2ObQ3hMALTN(), z2J4l3QuGwZhe + height), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface),
-        axis.TranslatePoint(new Point(0.0, z2J4l3QuGwZhe + height), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface)
+        axis.TranslatePoint(new Point(0.0, z2J4l3QuGwZhe), (IHitTestable) modifierSurface),
+        axis.TranslatePoint(new Point(axis.ActualWidth, z2J4l3QuGwZhe), (IHitTestable) modifierSurface),
+        axis.TranslatePoint(new Point(axis.ActualWidth, z2J4l3QuGwZhe + height), (IHitTestable) modifierSurface),
+        axis.TranslatePoint(new Point(0.0, z2J4l3QuGwZhe + height), (IHitTestable) modifierSurface)
       };
     }
 
@@ -234,12 +234,12 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis.IsHorizontalAxis)
       {
         double zS2K6sVvd5Iy = _param1.\u0023\u003DzS2_K6sVvd5IY;
-        flag = zS2K6sVvd5Iy >= 0.0 && zS2K6sVvd5Iy <= _param2.\u0023\u003Dzu2ObQ3hMALTN();
+        flag = zS2K6sVvd5Iy >= 0.0 && zS2K6sVvd5Iy <= _param2.ActualWidth;
       }
       else
       {
         double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
-        flag = z2J4l3QuGwZhe >= 0.0 && z2J4l3QuGwZhe <= _param2.\u0023\u003Dz2kO1mtG\u0024bEUM();
+        flag = z2J4l3QuGwZhe >= 0.0 && z2J4l3QuGwZhe <= _param2.ActualHeight;
       }
       return flag;
     }
@@ -252,7 +252,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
         return;
-      IComparable[] comparableArray = !this.\u0023\u003Dz_iIh83yfe01U().Axis.IsHorizontalAxis ? this.\u0023\u003DzvQ1aszE\u003D(0.0, AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003Dz2J4l3QUGwZHE, _param3, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM())) : this.\u0023\u003DzvQ1aszE\u003D(AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003DzS2_K6sVvd5IY, _param2, _param4.\u0023\u003Dzu2ObQ3hMALTN()), 0.0);
+      IComparable[] comparableArray = !this.\u0023\u003Dz_iIh83yfe01U().Axis.IsHorizontalAxis ? this.\u0023\u003DzvQ1aszE\u003D(0.0, AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003Dz2J4l3QUGwZHE, _param3, _param4.ActualHeight)) : this.\u0023\u003DzvQ1aszE\u003D(AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003DzS2_K6sVvd5IY, _param2, _param4.ActualWidth), 0.0);
       DependencyProperty baseProperty = this.\u0023\u003Dz_iIh83yfe01U().GetBaseProperty();
       IComparable comparable = this.\u0023\u003Dz_iIh83yfe01U().Axis.\u0023\u003DzFrVmckt\u0024NpG6() ? comparableArray[0] : comparableArray[1];
       this.\u0023\u003Dz_iIh83yfe01U().SetCurrentValue(baseProperty, (object) comparable);
@@ -300,12 +300,12 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis.IsHorizontalAxis)
       {
         double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
-        flag = z2J4l3QuGwZhe >= 0.0 && z2J4l3QuGwZhe <= _param2.\u0023\u003Dzu2ObQ3hMALTN();
+        flag = z2J4l3QuGwZhe >= 0.0 && z2J4l3QuGwZhe <= _param2.ActualWidth;
       }
       else
       {
         double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
-        flag = z2J4l3QuGwZhe >= 0.0 && z2J4l3QuGwZhe <= _param2.\u0023\u003Dz2kO1mtG\u0024bEUM();
+        flag = z2J4l3QuGwZhe >= 0.0 && z2J4l3QuGwZhe <= _param2.ActualHeight;
       }
       return flag;
     }
@@ -333,22 +333,22 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       AxisMarkerAnnotation _param1)
     {
       _param1.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis = _param1.Axis;
+      IAxis axis = _param1.Axis;
       \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D modifierSurface = _param1.ModifierSurface;
       if (axis.IsHorizontalAxis)
       {
         double num1 = _param0.\u0023\u003DzS2_K6sVvd5IY + _param1.DesiredSize.Width / 2.0;
-        double num2 = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top ? axis.\u0023\u003Dz2kO1mtG\u0024bEUM() : 0.0;
+        double num2 = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top ? axis.ActualHeight : 0.0;
         return new Point[1]
         {
-          axis.TranslatePoint(new Point(num1, num2), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface)
+          axis.TranslatePoint(new Point(num1, num2), (IHitTestable) modifierSurface)
         };
       }
-      double num3 = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Left ? axis.\u0023\u003Dzu2ObQ3hMALTN() : 0.0;
+      double num3 = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Left ? axis.ActualWidth : 0.0;
       double num4 = _param0.\u0023\u003Dz2J4l3QUGwZHE + _param1.DesiredSize.Height / 2.0;
       return new Point[1]
       {
-        axis.TranslatePoint(new Point(num3, num4), (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) modifierSurface)
+        axis.TranslatePoint(new Point(num3, num4), (IHitTestable) modifierSurface)
       };
     }
 
@@ -377,7 +377,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
     {
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis = this.\u0023\u003Dz_iIh83yfe01U().Axis;
+      IAxis axis = this.\u0023\u003Dz_iIh83yfe01U().Axis;
       if (axis.\u0023\u003DzFrVmckt\u0024NpG6())
       {
         double x = this.\u0023\u003DzQDA5x2uuH9m3(_param1, _param2, _param3).Item1.X;
@@ -386,7 +386,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       }
       else
       {
-        double coord = axis.IsHorizontalAxis ? AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003Dz2J4l3QUGwZHE, _param2, _param4.\u0023\u003Dzu2ObQ3hMALTN()) : AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003Dz2J4l3QUGwZHE, _param3, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM());
+        double coord = axis.IsHorizontalAxis ? AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003Dz2J4l3QUGwZHE, _param2, _param4.ActualWidth) : AxisMarkerAnnotation.CalculateNewPosition(this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003Dz2J4l3QUGwZHE, _param3, _param4.ActualHeight);
         IComparable comparable = this.\u0023\u003Dz_iIh83yfe01U().FromCoordinate(coord, axis);
         this.\u0023\u003Dz_iIh83yfe01U().SetCurrentValue(AnnotationBase.Y1Property, (object) comparable);
       }

@@ -16,7 +16,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D : 
-  \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I,
+  IRenderContext2D,
   IDisposable
 {
   
@@ -47,12 +47,12 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
   {
   }
 
-  public abstract \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
+  public abstract IBrush2D \u0023\u003Dze8WyDhI\u003D(
     Color _param1,
     double _param2 = 1.0,
     bool? _param3 = null);
 
-  public abstract \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
+  public abstract IBrush2D \u0023\u003Dze8WyDhI\u003D(
     Brush _param1,
     double _param2 = 1.0,
     \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4 _param3 = \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerScreen);
@@ -85,27 +85,27 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     IEnumerable<Rect> _param2);
 
   public abstract void \u0023\u003DzVRUUvzhAr5SR(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     Point _param2,
     Point _param3,
     double _param4 = 0.0);
 
   public abstract void \u0023\u003DzZC71OkxY_wdX(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     IEnumerable<Tuple<Point, Point>> _param2,
     bool _param3 = false,
     double _param4 = 0.0);
 
   public abstract void \u0023\u003DzIZCdW2WR6Rxw(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2,
+    IBrush2D _param2,
     Point _param3,
     double _param4,
     double _param5);
 
   public abstract void \u0023\u003DzoUffnI1MQnWod0s9Xg\u003D\u003D(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2,
+    IBrush2D _param2,
     IEnumerable<Point> _param3,
     double _param4,
     double _param5);
@@ -166,7 +166,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
   }
 
   public virtual void \u0023\u003Dz_I15ZX7u91\u0024T(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     IEnumerable<Point> _param2)
   {
     IEnumerator<Point> enumerator = _param2.GetEnumerator();
@@ -349,7 +349,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     double _param3);
 
   public abstract \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003DzD4fw8fY\u003D(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     double _param2,
     double _param3,
     double _param4 = 0.0);

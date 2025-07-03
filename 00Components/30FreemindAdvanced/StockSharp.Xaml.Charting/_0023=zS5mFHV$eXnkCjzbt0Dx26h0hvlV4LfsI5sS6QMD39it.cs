@@ -35,7 +35,7 @@ internal static class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD3
   public static void \u0023\u003DzzNCP093OQhtA(
     IEnumerable<Point> _param0,
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param1,
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param2)
+    IPathColor _param2)
   {
     IEnumerator<Point> enumerator = _param0.GetEnumerator();
     if (!enumerator.MoveNext())

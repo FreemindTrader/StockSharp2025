@@ -126,7 +126,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     this.ApplyPlacement(label, labelPlacement);
     label.DataContext = (object) this;
     label.\u0023\u003DzBV_vk9PuzvJU(this);
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.GetUsedAxis();
+    IAxis usedAxis = this.GetUsedAxis();
     if (label.\u0023\u003DztUuF6EohuIU9())
     {
       if (usedAxis == null)
@@ -137,7 +137,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
       (this.AnnotationRoot as Grid).\u0023\u003DzH0osWQkV_Y8_((object) label, -1);
   }
 
-  public abstract \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB GetUsedAxis();
+  public abstract IAxis GetUsedAxis();
 
   protected override void OnXAxesCollectionChanged(
     object sender,
@@ -172,7 +172,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
 
   private void BindDefaultLabelValue()
   {
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.GetUsedAxis();
+    IAxis usedAxis = this.GetUsedAxis();
     this._xyValueConverter = this._xyValueConverter ?? (this._xyValueConverter = new \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h(this));
     Binding binding1 = new Binding(usedAxis == null || !usedAxis.\u0023\u003DzFrVmckt\u0024NpG6() ? "" : "")
     {
@@ -201,7 +201,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   protected override void OnXAxisIdChanged() => this.InvalidateAnnotation();
 
   protected override void OnAxisAlignmentChanged(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis,
+    IAxis axis,
     dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment)
   {
     base.OnAxisAlignmentChanged(axis, oldAlignment);
@@ -218,7 +218,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
   {
     base.MakeVisible(coordinates);
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.GetUsedAxis();
+    IAxis usedAxis = this.GetUsedAxis();
     if (usedAxis == null || usedAxis.get_ModifierAxisCanvas() == null)
       return;
     this.AttachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D))));
@@ -276,7 +276,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   }
 
   protected virtual void PlaceAxisLabel(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB axis,
+    IAxis axis,
     dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd axisLabel,
     Point offset)
   {
@@ -341,7 +341,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   public override bool IsPointWithinBounds(Point point)
   {
     Grid annotationRoot = this.AnnotationRoot as Grid;
-    point = this.ParentSurface.\u0023\u003DzBgWxEdRxHdEh().TranslatePoint(point, (\u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z) this);
+    point = this.ParentSurface.\u0023\u003DzBgWxEdRxHdEh().TranslatePoint(point, (IHitTestable) this);
     Point point1 = point;
     return annotationRoot.\u0023\u003DzbOxVzAyGdX66(point1);
   }
@@ -442,7 +442,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   private sealed class \u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D
   {
     public LineAnnotationWithLabelsBase \u0023\u003DzRRvwDu67s9Rm;
-    public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003Dzfl\u0024A1s0\u003D;
+    public IAxis \u0023\u003Dzfl\u0024A1s0\u003D;
     public Point \u0023\u003Dzze_xX5E\u003D;
 
     internal void \u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D(

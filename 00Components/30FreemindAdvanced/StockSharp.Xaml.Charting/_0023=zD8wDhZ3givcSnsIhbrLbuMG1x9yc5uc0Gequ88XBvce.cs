@@ -30,7 +30,7 @@ internal sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8
     this.\u0023\u003DzU1bOEY1Ldlir6qBx51Rdl_k\u003D = new Dictionary<Type, string[]>()
     {
       {
-        typeof (dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLQD93DU4393K4ENMLPSZDUWE6QXAWS9WCUYMARFXHNJL76MQ47Z7V297V2U22_ejd),
+        typeof (FastLineRenderableSeries),
         new string[2]
         {
           "",
@@ -65,7 +65,7 @@ internal sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8
         }
       },
       {
-        typeof (\u0023\u003DzriJlGz16EBVXNzRMW4Dc4qQp2pUUzikJpe9JEpGuGxRAFL8yxU2NwKkB5lfOfnUo8w7EyJw\u003D),
+        typeof (FastBubbleRenderableSeries),
         new string[3]
         {
           "",
@@ -84,14 +84,14 @@ internal sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8
         }
       },
       {
-        typeof (dje_zNXC69RR7GVTJT3B9825N7L2M67UQWW3U3T7CLNQCYVESFDW77UGBVTMN2R7TDSCWQ2344S4D5UC36KU2HZS32_ejd),
+        typeof (StackedColumnRenderableSeries),
         new string[1]
         {
           ""
         }
       },
       {
-        typeof (dje_z69W49PU7FS9ADZCYETBA2JNAH33HZA6JARXFFS3478TNDWQCS56A84JEUPSV3BARVVHU59UKY87PYJ97Q4K7W5RSK8AA_ejd),
+        typeof (BaseMountainRenderableSeries),
         new string[2]
         {
           "",

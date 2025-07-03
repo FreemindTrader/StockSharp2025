@@ -11,20 +11,20 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D : 
-  dje_zXJSU6RS8TCQ6ZVU6XJ5NL7C4LYU27ZM5SDS8FXR9_ejd<int>
+internal sealed class IndexRange  : 
+  Range<int>
 {
   
   private double \u0023\u003DzeLxWL8r3I02c;
   
   private double \u0023\u003Dz8pG_zbXA5b87;
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D()
+  public IndexRange ()
   {
     this.\u0023\u003DzWzUaFxw\u003D(this.Min, this.Max);
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(int _param1, int _param2)
+  public IndexRange (int _param1, int _param2)
     : base(_param1, _param2)
   {
     this.\u0023\u003DzWzUaFxw\u003D(this.Min, this.Max);
@@ -52,7 +52,7 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
 
   public override object Clone()
   {
-    return (object) new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(this.Min, this.Max)
+    return (object) new IndexRange (this.Min, this.Max)
     {
       \u0023\u003DzeLxWL8r3I02c = this.\u0023\u003DzeLxWL8r3I02c,
       \u0023\u003Dz8pG_zbXA5b87 = this.\u0023\u003Dz8pG_zbXA5b87
@@ -63,36 +63,36 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
 
   public override bool IsZero => this.Diff == 0;
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzfODy_Nxn8OGy()
+  public override DoubleRange AsDoubleRange()
   {
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(this.\u0023\u003DzeLxWL8r3I02c, this.\u0023\u003Dz8pG_zbXA5b87);
+    return new DoubleRange(this.\u0023\u003DzeLxWL8r3I02c, this.\u0023\u003Dz8pG_zbXA5b87);
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> \u0023\u003Dz8b8KOJANG3C3(
+  public override IRange<int> SetMinMax(
     double _param1,
     double _param2)
   {
     int num1 = (int) _param1.\u0023\u003DzZsq6ZfbZQvsf();
     int num2 = (int) _param2.\u0023\u003DzZsq6ZfbZQvsf();
-    this.\u0023\u003DzP\u0024IlreZBEpOu(num1, num2);
+    this.SetMinMaxInternal(num1, num2);
     if (num1 == this.Min)
       this.\u0023\u003DzeLxWL8r3I02c = _param1;
     if (num2 == this.Max)
       this.\u0023\u003Dz8pG_zbXA5b87 = _param2;
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int>) this;
+    return (IRange<int>) this;
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> \u0023\u003Dz8b8KOJANG3C3(
+  public override IRange<int> SetMinMax(
     double _param1,
     double _param2,
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> _param3)
+    IRange<int> _param3)
   {
     this.Min = (int) Math.Max(_param1, (double) _param3.Min);
     this.Max = (int) Math.Min(_param2, (double) _param3.Max);
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int>) this;
+    return (IRange<int>) this;
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> \u0023\u003DzzXTqVFg\u003D(
+  public override IRange<int> GrowBy(
     double _param1,
     double _param2)
   {
@@ -112,7 +112,7 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
     this.Max = num1;
     this.\u0023\u003DzeLxWL8r3I02c = zeLxWl8r3I02c;
     this.\u0023\u003Dz8pG_zbXA5b87 = z8pGZbXa5b87;
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int>) new \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D(num2, num1)
+    return (IRange<int>) new IndexRange (num2, num1)
     {
       \u0023\u003DzeLxWL8r3I02c = this.\u0023\u003DzeLxWL8r3I02c,
       \u0023\u003Dz8pG_zbXA5b87 = this.\u0023\u003Dz8pG_zbXA5b87
@@ -124,8 +124,8 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
     return string.Format("", (object) this.Min, (object) this.Max, (object) this.\u0023\u003DzeLxWL8r3I02c, (object) this.\u0023\u003Dz8pG_zbXA5b87);
   }
 
-  public override \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> \u0023\u003DzJIqIiUw\u003D(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int> _param1)
+  public override IRange<int> \u0023\u003DzJIqIiUw\u003D(
+    IRange<int> _param1)
   {
     int max = this.Max;
     int min = this.Min;
@@ -140,7 +140,7 @@ internal sealed class \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003
       num2 = _param1.Min;
       num1 = _param1.Max;
     }
-    this.\u0023\u003DzP\u0024IlreZBEpOu(num2, num1);
-    return (\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<int>) this;
+    this.SetMinMaxInternal(num2, num1);
+    return (IRange<int>) this;
   }
 }

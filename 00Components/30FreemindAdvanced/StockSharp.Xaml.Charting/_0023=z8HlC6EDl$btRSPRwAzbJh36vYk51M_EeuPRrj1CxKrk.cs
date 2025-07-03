@@ -26,7 +26,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh36vYk51M_EeuPRrj1Cx
   }
 
   public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    IPathColor _param1,
     double _param2,
     double _param3)
   {

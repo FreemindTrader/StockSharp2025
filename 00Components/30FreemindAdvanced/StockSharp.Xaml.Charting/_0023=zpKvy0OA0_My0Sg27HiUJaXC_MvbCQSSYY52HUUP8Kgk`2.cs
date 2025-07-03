@@ -17,7 +17,7 @@ internal sealed class \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<
   \u0023\u003DzlbJvQa3SY_TV_FXt6bD53NJ_tCeoxuaO6u0w2\u0024KuAnng9SymwQ\u003D\u003D<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<T, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D,
+  ISuspendable,
   \u0023\u003DzlvwXE9mBO1uItIXfGGLJcJ38syr\u0024xe9jQYRhESYENuoH
   where T : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable
@@ -32,7 +32,7 @@ internal sealed class \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<
     this.\u0023\u003Dz3laIKDGah\u0024Kh = new \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>(new Action<IList<(T, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D)>>(this.\u0023\u003DzGXoUV7Q\u0024_bM\u0024));
   }
 
-  public override \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D YRange
+  public override IRange YRange
   {
     get
     {
@@ -42,7 +42,7 @@ internal sealed class \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<
       \u0023\u003DzE8zkRfY\u003D zE8zkRfY4 = default (\u0023\u003DzE8zkRfY\u003D);
       \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<\u0023\u003DzE8zkRfY\u003D>((IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzoEP49rI\u003D, out zE8zkRfY1, out zE8zkRfY2);
       \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<\u0023\u003DzE8zkRfY\u003D>((IEnumerable<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzdV7qEkhxNf5\u0024, out zE8zkRfY3, out zE8zkRfY4);
-      return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(zE8zkRfY1, zE8zkRfY3), (IComparable) \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(zE8zkRfY2, zE8zkRfY4));
+      return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(zE8zkRfY1, zE8zkRfY3), (IComparable) \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(zE8zkRfY2, zE8zkRfY4));
     }
   }
 
@@ -117,7 +117,7 @@ internal sealed class \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<
   {
     \u0023\u003DzE8zkRfY\u003D y1Value = this.Y1Values[_param1];
     \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
-    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(yvalue) && !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(y1Value) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzRHWvkgM\u003D(yvalue, y1Value), _param2) : _param2;
+    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(yvalue) && !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(y1Value) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(yvalue, y1Value), _param2) : _param2;
   }
 
   public override \u0023\u003DzE8zkRfY\u003D GetYMaxAt(
@@ -126,16 +126,16 @@ internal sealed class \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<
   {
     \u0023\u003DzE8zkRfY\u003D y1Value = this.Y1Values[_param1];
     \u0023\u003DzE8zkRfY\u003D yvalue = this.YValues[_param1];
-    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(yvalue) && !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzeNpB9guo_tur(y1Value) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.\u0023\u003DzTOKoqZw\u003D(yvalue, y1Value), _param2) : _param2;
+    return !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(yvalue) && !\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.IsNaN(y1Value) ? \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(\u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(yvalue, y1Value), _param2) : _param2;
   }
 
   public override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
+    IndexRange  _param2,
     int _param3,
     bool _param4,
     bool? _param5,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param6,
+    IRange _param6,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param7,
     object _param8 = null)
   {

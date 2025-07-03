@@ -29,7 +29,7 @@ internal sealed class ParentVM :
   
   private readonly List<UIBaseVM> \u0023\u003DzH31vDNM\u003D = new List<UIBaseVM>();
   
-  private readonly IScichartSurfaceVM \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
   
   private readonly IfxChartElement \u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D;
   
@@ -40,7 +40,7 @@ internal sealed class ParentVM :
   private bool \u0023\u003DzeOVf5rToxe0_\u0024sT_tw\u003D\u003D;
 
   public ParentVM(
-    IScichartSurfaceVM _param1,
+    ScichartSurfaceMVVM _param1,
     IfxChartElement _param2)
   {
     this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D = _param1 ?? throw new ArgumentNullException("");
@@ -50,7 +50,7 @@ internal sealed class ParentVM :
     this.ChartElement.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzqKjZcEftBQYu8FctY__O05c\u003D);
   }
 
-  public IScichartSurfaceVM Pane
+  public ScichartSurfaceMVVM Pane
   {
     get => this.\u0023\u003DznCb1THp8SgddfKhj6w\u003D\u003D;
   }
@@ -62,7 +62,7 @@ internal sealed class ParentVM :
     get => this.\u0023\u003Dz\u0024dH1b9H0ZppyjxlZ6w\u003D\u003D;
   }
 
-  public string Title => this.ChartElement.\u0023\u003DzLYR9XSrDCE6W();
+  public string Title => this.ChartElement.GetGeneratedTitle();
 
   public bool IsCandleElement => this.\u0023\u003DzltAOnz7pENYNz4RZiZiGFJ7j3MDa;
 
@@ -131,14 +131,14 @@ internal sealed class ParentVM :
     CollectionHelper.ForEach<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>((IEnumerable<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>) this.\u0023\u003Dz10jqvLI\u003D, ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZvdCgmE37pS0x\u0024GHuPMdKXH0icPdKkp5z7HSJCOy>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D)));
   }
 
-  public bool \u0023\u003DzjgUUUJE\u003D(ChartDrawData _param1)
+  public bool Draw(ChartDrawData _param1)
   {
-    return this.ChartElement.\u0023\u003DzjgUUUJE\u003D(_param1);
+    return this.ChartElement.Draw(_param1);
   }
 
-  public void \u0023\u003DzYI36Ggg\u003D()
+  public void Reset()
   {
-    this.ChartElement.\u0023\u003DzYI36Ggg\u003D();
+    this.ChartElement.Reset();
     this.\u0023\u003DzH31vDNM\u003D.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
   }
 
@@ -211,7 +211,7 @@ internal sealed class ParentVM :
     internal void \u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D(
       UIBaseVM _param1)
     {
-      _param1.\u0023\u003DzYI36Ggg\u003D();
+      _param1.Reset();
     }
 
     internal void \u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D(

@@ -47,5 +47,5 @@ internal abstract class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249
   [IndexerName("#=zMRIb09I=")]
   public abstract \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1] { get; }
 
-  public abstract dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2();
+  public abstract DoubleRange \u0023\u003DzxNQHuqrEvxH2();
 }

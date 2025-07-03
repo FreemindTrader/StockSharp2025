@@ -14,7 +14,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd : 
-  dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd
+  BaseRenderableSeries
 {
   
   private double[] \u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M;
@@ -33,7 +33,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
 
   protected dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd()
   {
-    this.SetCurrentValue(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max);
+    this.SetCurrentValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max);
   }
 
   [Obsolete("We're sorry! FastColumnRenderableSeries.FillColor is obsolete, please use FillBrush instead", true)]
@@ -95,11 +95,11 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
   {
     get
     {
-      return (double) this.GetValue(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzyfKHGV64pf8n);
+      return (double) this.GetValue(BaseRenderableSeries.\u0023\u003DzyfKHGV64pf8n);
     }
     set
     {
-      this.SetValue(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003DzyfKHGV64pf8n, (object) value);
+      this.SetValue(BaseRenderableSeries.\u0023\u003DzyfKHGV64pf8n, (object) value);
     }
   }
 
@@ -158,10 +158,10 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     if (index > 0 && !this.UseUniformWidth)
     {
       IComparable comparable1 = (IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[index];
-      if (!double.IsNaN(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(comparable1.\u0023\u003Dzb9UCYbo\u003D())))
+      if (!double.IsNaN(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(comparable1.ToDouble())))
       {
         IComparable comparable2 = this.XAxis.get_IsCategoryAxis() ? (IComparable) index : (IComparable) this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[index];
-        double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(comparable2.\u0023\u003Dzb9UCYbo\u003D());
+        double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(comparable2.ToDouble());
         num1 = Math.Abs((_param2 - num2) * this.DataPointWidth);
       }
     }
@@ -169,8 +169,8 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
@@ -178,7 +178,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     int num3 = (int) this.\u0023\u003DzySDi0_ve2vLaE3cXlA\u003D\u003D();
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity))
     {
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8 = this.\u0023\u003Dze8WyDhI\u003D(_param1, this.FillBrush, this.Opacity, this.FillBrushMappingMode);
+      IBrush2D xrgcdFbSdWgN9GcT8 = this.\u0023\u003Dze8WyDhI\u003D(_param1, this.FillBrush, this.Opacity, this.FillBrushMappingMode);
       _param1.\u0023\u003DzX6V3YcdlNDO2((IDisposable) xrgcdFbSdWgN9GcT8);
       _param1.\u0023\u003DzjyCoorxnWjneJ7dCR\u0024Tiiog\u003D(true);
       if (num2 > 1.0)
@@ -194,8 +194,8 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     }
   }
 
-  private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+  private IBrush2D \u0023\u003Dze8WyDhI\u003D(
+    IRenderContext2D _param1,
     Brush _param2,
     double _param3,
     \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4 _param4)
@@ -205,14 +205,14 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
 
   protected virtual double \u0023\u003Dz6bPMsvVWiXoq(
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderPassData _param2)
   {
     return (double) this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), _param1, this.DataPointWidth);
   }
 
   protected virtual double \u0023\u003DzD4XI0DECJD7WyZY4ig\u003D\u003D(
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2,
+    IRenderPassData _param2,
     double _param3,
     double _param4,
     int _param5)
@@ -230,13 +230,13 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
   }
 
   private void \u0023\u003DzVxZW_xnKZwWj(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
     int _param3,
     int _param4,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param5,
+    IRenderPassData _param5,
     double _param6,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param7,
+    IBrush2D _param7,
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D _param8,
     \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D _param9)
   {
@@ -249,7 +249,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     if (this.\u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M == null || this.\u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M.Length != length)
       this.\u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M = new double[length];
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = rhwYsZxA33iRu6Id7J1;
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_1 = _param7;
+    IBrush2D xrgcdFbSdWgN9GcT8_1 = _param7;
     this.\u0023\u003Dz7KbBA2FX9N4R = _param6;
     double num3;
     for (int index1 = 0; index1 < _param3; ++index1)
@@ -328,7 +328,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
         if (nullable.HasValue)
         {
           \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J3 = _param9.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
-          using (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_2 = _param1.\u0023\u003Dze8WyDhI\u003D(nullable.Value, 1.0, new bool?()))
+          using (IBrush2D xrgcdFbSdWgN9GcT8_2 = _param1.\u0023\u003Dze8WyDhI\u003D(nullable.Value, 1.0, new bool?()))
           {
             iluL6N4L8CsqVgQq.\u0023\u003DzkpjYNfwbvIK8(point1, point2, xrgcdFbSdWgN9GcT8_2, rhwYsZxA33iRu6Id7J3, num1);
             continue;
@@ -341,7 +341,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
 
   protected virtual bool \u0023\u003DzfmUIzykvHsnHF1NGMg\u003D\u003D(
     int _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2,
+    IRenderPassData _param2,
     int _param3,
     out double _param4,
     out double _param5,
@@ -364,11 +364,11 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
   }
 
   private void \u0023\u003DzpDE77vG_6Io9(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
     int _param3,
     int _param4,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param5,
+    IRenderPassData _param5,
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D _param6,
     \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D _param7)
   {
@@ -411,6 +411,6 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9(_param0, _param1);
+    BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9(_param0, _param1);
   }
 }

@@ -11,123 +11,123 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An : 
-  \u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote,
+internal sealed class UpdateSuspender : 
+  IUpdateSuspender,
   IDisposable
 {
   
   private readonly object \u0023\u003Dz3xPfSd0\u003D;
   
-  private readonly \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D \u0023\u003DzCede7bY\u003D;
+  private readonly ISuspendable \u0023\u003DzCede7bY\u003D;
   
-  private static readonly IDictionary<\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D, \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D> \u0023\u003Dz6y_gICEiE1z2 = (IDictionary<\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D, \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D>) new Dictionary<\u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D, \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D>();
+  private static readonly IDictionary<ISuspendable, UpdateSuspender.SomeStruct> \u0023\u003Dz6y_gICEiE1z2 = (IDictionary<ISuspendable, UpdateSuspender.SomeStruct>) new Dictionary<ISuspendable, UpdateSuspender.SomeStruct>();
   
-  private static readonly object \u0023\u003DzxztcSMfDuTst = new object();
+  private static readonly object myLock = new object();
   
   private bool \u0023\u003Dz9lEOT9K2_723;
 
-  internal \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An(
-    \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D _param1,
+  internal UpdateSuspender(
+    ISuspendable _param1,
     object _param2)
     : this(_param1)
   {
     this.\u0023\u003Dz3xPfSd0\u003D = _param2;
   }
 
-  internal \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An(
-    \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D _param1)
+  internal UpdateSuspender(
+    ISuspendable _param1)
   {
     this.\u0023\u003DzCede7bY\u003D = _param1;
-    lock (\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzxztcSMfDuTst)
+    lock (UpdateSuspender.myLock)
     {
-      if (!\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2.ContainsKey(this.\u0023\u003DzCede7bY\u003D))
-        \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2.Add(this.\u0023\u003DzCede7bY\u003D, new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D(0, 0));
-      this.\u0023\u003DzS\u0024BuL6M\u003D(this.\u0023\u003DzCede7bY\u003D);
-      this.\u0023\u003DzZreBqCsNdaNN(true);
+      if (!UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2.ContainsKey(this.\u0023\u003DzCede7bY\u003D))
+        UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2.Add(this.\u0023\u003DzCede7bY\u003D, new UpdateSuspender.SomeStruct(0, 0));
+      this.Inc(this.\u0023\u003DzCede7bY\u003D);
+      this.ResumeTargetOnDispose=true;
     }
   }
 
   [SpecialName]
-  public bool \u0023\u003DzeobfKiOyC8yk()
+  public bool IsSuspended
   {
-    return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzY5RcByYV3P6y(this.\u0023\u003DzCede7bY\u003D);
+    return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y(this.\u0023\u003DzCede7bY\u003D);
   }
 
   [SpecialName]
-  public bool \u0023\u003DzuWdUDFWIQOsx() => this.\u0023\u003Dz9lEOT9K2_723;
+  public bool ResumeTargetOnDispose => this.\u0023\u003Dz9lEOT9K2_723;
 
   [SpecialName]
-  public void \u0023\u003DzZreBqCsNdaNN(bool _param1)
+  public void ResumeTargetOnDispose=bool _param1)
   {
     if (this.\u0023\u003Dz9lEOT9K2_723 == _param1)
       return;
     this.\u0023\u003Dz9lEOT9K2_723 = _param1;
-    lock (\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzxztcSMfDuTst)
+    lock (UpdateSuspender.myLock)
     {
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D z2xTuPx8 = \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[this.\u0023\u003DzCede7bY\u003D];
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[this.\u0023\u003DzCede7bY\u003D] = new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D(z2xTuPx8.\u0023\u003Dzn5AczsN5xzdc(), z2xTuPx8.\u0023\u003DzP\u002410yRP1v\u0024\u0024hPS0QnA\u003D\u003D() + (_param1 ? 1 : -1));
+      UpdateSuspender.SomeStruct z2xTuPx8 = UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[this.\u0023\u003DzCede7bY\u003D];
+      UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[this.\u0023\u003DzCede7bY\u003D] = new UpdateSuspender.SomeStruct(z2xTuPx8.GetReadOnly1(), z2xTuPx8.GetReadOnly2() + (_param1 ? 1 : -1));
     }
   }
 
   public void Dispose()
   {
-    lock (\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzxztcSMfDuTst)
+    lock (UpdateSuspender.myLock)
     {
       this.\u0023\u003DzCede7bY\u003D.DecrementSuspend();
-      if (this.\u0023\u003DzpTVOY3k\u003D(this.\u0023\u003DzCede7bY\u003D) != 0)
+      if (this.Dec(this.\u0023\u003DzCede7bY\u003D) != 0)
         return;
-      this.\u0023\u003Dz9lEOT9K2_723 = \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[this.\u0023\u003DzCede7bY\u003D].\u0023\u003DzP\u002410yRP1v\u0024\u0024hPS0QnA\u003D\u003D() > 0;
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2.Remove(this.\u0023\u003DzCede7bY\u003D);
-      this.\u0023\u003DzCede7bY\u003D.ResumeUpdates((\u0023\u003DzPauio66DvxKtWOFEEHOV9VFlFQ05jnDG3bOrIrgCJote) this);
+      this.\u0023\u003Dz9lEOT9K2_723 = UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[this.\u0023\u003DzCede7bY\u003D].GetReadOnly2() > 0;
+      UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2.Remove(this.\u0023\u003DzCede7bY\u003D);
+      this.\u0023\u003DzCede7bY\u003D.ResumeUpdates((IUpdateSuspender) this);
     }
   }
 
   [SpecialName]
-  public object \u0023\u003DzFG_qiXECs10o() => this.\u0023\u003Dz3xPfSd0\u003D;
+  public object Tag => this.\u0023\u003Dz3xPfSd0\u003D;
 
   internal static bool \u0023\u003DzY5RcByYV3P6y(
-    \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D _param0)
+    ISuspendable _param0)
   {
-    lock (\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzxztcSMfDuTst)
-      return \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2.ContainsKey(_param0) && \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[_param0].\u0023\u003Dzn5AczsN5xzdc() != 0;
+    lock (UpdateSuspender.myLock)
+      return UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2.ContainsKey(_param0) && UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[_param0].GetReadOnly1() != 0;
   }
 
-  private void \u0023\u003DzS\u0024BuL6M\u003D(
-    \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D _param1)
+  private void Inc(
+    ISuspendable _param1)
   {
-    lock (\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzxztcSMfDuTst)
+    lock (UpdateSuspender.myLock)
     {
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D z2xTuPx8 = \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[_param1];
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[_param1] = new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D(z2xTuPx8.\u0023\u003Dzn5AczsN5xzdc() + 1, z2xTuPx8.\u0023\u003DzP\u002410yRP1v\u0024\u0024hPS0QnA\u003D\u003D());
+      UpdateSuspender.SomeStruct z2xTuPx8 = UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[_param1];
+      UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[_param1] = new UpdateSuspender.SomeStruct(z2xTuPx8.GetReadOnly1() + 1, z2xTuPx8.GetReadOnly2());
     }
   }
 
-  private int \u0023\u003DzpTVOY3k\u003D(
-    \u0023\u003DzExPUKZPbT0fb9dlf_qOoa7Fo_o9lZIelo\u0024_m4wTHwP6Ifze3\u0024A\u003D\u003D _param1)
+  private int Dec(
+    ISuspendable _param1)
   {
-    lock (\u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003DzxztcSMfDuTst)
+    lock (UpdateSuspender.myLock)
     {
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D z2xTuPx8 = \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[_param1];
-      \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz6y_gICEiE1z2[_param1] = new \u0023\u003DzuPRmIFUVJkGxyCE55JH19ZE5sEUdF5DXPLZ7U6Rxl0An.\u0023\u003Dz2xTuPX8\u003D(z2xTuPx8.\u0023\u003Dzn5AczsN5xzdc() - 1, z2xTuPx8.\u0023\u003DzP\u002410yRP1v\u0024\u0024hPS0QnA\u003D\u003D());
-      return z2xTuPx8.\u0023\u003Dzn5AczsN5xzdc() - 1;
+      UpdateSuspender.SomeStruct z2xTuPx8 = UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[_param1];
+      UpdateSuspender.\u0023\u003Dz6y_gICEiE1z2[_param1] = new UpdateSuspender.SomeStruct(z2xTuPx8.GetReadOnly1() - 1, z2xTuPx8.GetReadOnly2());
+      return z2xTuPx8.GetReadOnly1() - 1;
     }
   }
 
-  private struct \u0023\u003Dz2xTuPX8\u003D(int _param1, int _param2)
+  private struct SomeStruct(int _param1, int _param2)
   {
     
-    private readonly int \u0023\u003DzAbDuEyWeWQy8eEVPHg\u003D\u003D = _param1;
+    private readonly int _intReadOnly1 = _param1;
     
-    private readonly int \u0023\u003Dz7_nBfUf9fA6Ul2TWLA_yrac\u003D = _param2;
+    private readonly int _intReadOnly2 = _param2;
 
-    public readonly int \u0023\u003Dzn5AczsN5xzdc()
+    public readonly int GetReadOnly1()
     {
-      return this.\u0023\u003DzAbDuEyWeWQy8eEVPHg\u003D\u003D;
+      return this._intReadOnly1;
     }
 
-    public readonly int \u0023\u003DzP\u002410yRP1v\u0024\u0024hPS0QnA\u003D\u003D()
+    public readonly int GetReadOnly2()
     {
-      return this.\u0023\u003Dz7_nBfUf9fA6Ul2TWLA_yrac\u003D;
+      return this._intReadOnly2;
     }
   }
 }

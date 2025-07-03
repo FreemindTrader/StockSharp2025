@@ -25,7 +25,7 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_
   }
 
   protected override double[] \u0023\u003DzuAzmESJjUh9L(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     List<double> doubleList = new List<double>();
@@ -51,7 +51,7 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_
   }
 
   protected override double[] \u0023\u003DzL8F08lm_ZvZT(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     double[] numArray = this.\u0023\u003DzuAzmESJjUh9L(_param1, _param2);
@@ -59,7 +59,7 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_
   }
 
   protected override double[] \u0023\u003DzL8F08lm_ZvZT(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2,
     double[] _param3)
   {

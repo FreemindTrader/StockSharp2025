@@ -218,11 +218,11 @@ internal sealed class dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd :
 
   public override void \u0023\u003Dzn72LMZ0738BY()
   {
-    if (this.YAxes.\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>())
+    if (this.YAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>())
       return;
     using (this.SuspendUpdates())
     {
-      this.YAxis.set_GrowBy((\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double>) new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(0.1, 0.1));
+      this.YAxis.GrowBy=((IRange<double>) new DoubleRange(0.1, 0.1));
       base.\u0023\u003Dzn72LMZ0738BY();
     }
   }

@@ -28,7 +28,7 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xzi
   };
 
   internal static \u0023\u003DzgeFvyoahWukw3bL8yZfVYr7JNrME_OMqiz4nIDlTZlok \u0023\u003DzU4j4bt2YhYuc(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param0,
+    IndexRange  _param0,
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D _param1,
     \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D _param2,
     int _param3,
@@ -60,9 +60,9 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xzi
       \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D wofeehoV9Y7gefdiO2zLq = btHuGwTeshC8eR8A.\u0023\u003DzAnYO0vLQEDGX();
       karIzshiFbv2m5Lhw1 = new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(TimeSpan.FromTicks((long) wofeehoV9Y7gefdiO2zLq.\u0023\u003DzZ85DqsktXJL3()), TimeSpan.FromTicks((long) wofeehoV9Y7gefdiO2zLq.\u0023\u003Dzgq30Jn5PclK8()));
     }
-    double[] source1 = new \u0023\u003DzJhc8WdlQgSkcniY\u0024669aniHe9rfoFyUgrbTADSj0lBiy().\u0023\u003Dzctqa9kMCtfQQ((\u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS) new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4toVZhpii2xTJMHSIVk\u0024BPGa8()
+    double[] source1 = new \u0023\u003DzJhc8WdlQgSkcniY\u0024669aniHe9rfoFyUgrbTADSj0lBiy().\u0023\u003Dzctqa9kMCtfQQ((IAxisParams) new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4toVZhpii2xTJMHSIVk\u0024BPGa8()
     {
-      VisibleRange = (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) _param1,
+      VisibleRange = (IRange) _param1,
       MajorDelta = (IComparable) karIzshiFbv2m5Lhw1.\u0023\u003Dzgq30Jn5PclK8(),
       MinorDelta = (IComparable) karIzshiFbv2m5Lhw1.\u0023\u003DzZ85DqsktXJL3()
     }).\u0023\u003DzvczFDIa7rqI9<IComparable>();
@@ -75,7 +75,7 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xzi
   }
 
   private static int[] \u0023\u003DzvFWfv01C7Te8(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param0,
+    IndexRange  _param0,
     int[] _param1,
     int _param2)
   {
@@ -119,7 +119,7 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xzi
 
     internal double \u0023\u003DzE5OH4cF6TNfGbmYLEg\u003D\u003D(int _param1)
     {
-      return this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzWZQlXHuDrnKc(_param1).\u0023\u003Dzb9UCYbo\u003D();
+      return this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzWZQlXHuDrnKc(_param1).ToDouble();
     }
 
     internal float \u0023\u003Dz7BGDergfw\u0024eT9PNdMw\u003D\u003D(int _param1)

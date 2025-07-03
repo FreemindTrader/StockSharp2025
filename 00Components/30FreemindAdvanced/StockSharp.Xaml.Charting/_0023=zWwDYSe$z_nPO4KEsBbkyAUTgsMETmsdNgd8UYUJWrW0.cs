@@ -12,14 +12,14 @@ internal sealed class \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJW
 {
   private \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D \u0023\u003Dz\u0024wP7eNcNWEpx;
   private volatile bool \u0023\u003Dzqa0jMCmen76t;
-  private readonly Action \u0023\u003Dz7CXThCs\u003D;
+  private readonly Action dpoChangedEventArgs;
   private readonly \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D \u0023\u003DzVBVazrI\u003D;
 
   public \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJWrW04(
     Action _param1,
     \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D _param2)
   {
-    this.\u0023\u003Dz7CXThCs\u003D = _param1;
+    this.dpoChangedEventArgs = _param1;
     this.\u0023\u003DzVBVazrI\u003D = _param2;
   }
 
@@ -51,7 +51,7 @@ internal sealed class \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJW
       return;
     try
     {
-      this.\u0023\u003Dz7CXThCs\u003D();
+      this.dpoChangedEventArgs();
     }
     finally
     {

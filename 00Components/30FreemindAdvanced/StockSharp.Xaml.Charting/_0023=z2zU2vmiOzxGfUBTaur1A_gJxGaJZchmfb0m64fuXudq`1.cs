@@ -12,29 +12,29 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<\u0023\u003DzH9HNkng\u003D> : 
-  \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<\u0023\u003DzH9HNkng\u003D>,
-  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003DzH9HNkng\u003D>,
-  IList<\u0023\u003DzH9HNkng\u003D>,
-  ICollection<\u0023\u003DzH9HNkng\u003D>,
-  IEnumerable<\u0023\u003DzH9HNkng\u003D>,
+internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<T> : 
+  \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<T>,
+  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T>,
+  IList<T>,
+  ICollection<T>,
+  IEnumerable<T>,
   IEnumerable,
   IList,
   ICollection
 {
   
-  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> _drawData;
+  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> _drawData;
 
   public \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D(
-    \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D> _param1)
+    \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T> _param1)
   {
     this._drawData = _param1;
   }
 
   public \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D(
-    \u0023\u003DzH9HNkng\u003D[] _param1)
+    T[] _param1)
   {
-    this._drawData = \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003DzH9HNkng\u003D>.\u0023\u003Dz19UvNq0\u003D(_param1);
+    this._drawData = \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<T>.\u0023\u003Dz19UvNq0\u003D(_param1);
   }
 
   private void \u0023\u003DzrjoFHxcyHAZx()
@@ -43,7 +43,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
   }
 
   [SpecialName]
-  public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzRr4AYdnHaTxa()
+  public T[] \u0023\u003DzRr4AYdnHaTxa()
   {
     return this._drawData.\u0023\u003DzRr4AYdnHaTxa();
   }
@@ -111,34 +111,34 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   internal void \u0023\u003DzpFWgSog\u003D(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
 
-  bool ICollection<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
+  bool ICollection<T>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
   {
     return true;
   }
 
-  public \u0023\u003DzH9HNkng\u003D this[int _param1]
+  public T this[int _param1]
   {
     get => this._drawData[_param1];
     set => this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public void Add(\u0023\u003DzH9HNkng\u003D _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
+  public void Add(T _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
 
   public void Clear() => this.\u0023\u003DzrjoFHxcyHAZx();
 
-  public bool Contains(\u0023\u003DzH9HNkng\u003D _param1)
+  public bool Contains(T _param1)
   {
     return this._drawData.Contains(_param1);
   }
 
-  public void CopyTo(\u0023\u003DzH9HNkng\u003D[] _param1, int _param2)
+  public void CopyTo(T[] _param1, int _param2)
   {
     this._drawData.CopyTo(_param1, _param2);
   }
 
-  IEnumerator<\u0023\u003DzH9HNkng\u003D> IEnumerable<\u0023\u003DzH9HNkng\u003D>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
+  IEnumerator<T> IEnumerable<T>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
   {
-    return (IEnumerator<\u0023\u003DzH9HNkng\u003D>) this._drawData.\u0023\u003DzRPOJ5g0\u003D();
+    return (IEnumerator<T>) this._drawData.\u0023\u003DzRPOJ5g0\u003D();
   }
 
   IEnumerator IEnumerable.\u0023\u003DzSV_TZe7ftMh2SQ86i417Nok\u003D()
@@ -146,17 +146,17 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     return (IEnumerator) this._drawData.\u0023\u003DzRPOJ5g0\u003D();
   }
 
-  public int IndexOf(\u0023\u003DzH9HNkng\u003D _param1)
+  public int IndexOf(T _param1)
   {
     return this._drawData.IndexOf(_param1);
   }
 
-  public void Insert(int _param1, \u0023\u003DzH9HNkng\u003D _param2)
+  public void Insert(int _param1, T _param2)
   {
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public bool Remove(\u0023\u003DzH9HNkng\u003D _param1)
+  public bool Remove(T _param1)
   {
     this.\u0023\u003DzrjoFHxcyHAZx();
     return false;
@@ -164,29 +164,29 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public void RemoveAt(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
 
-  public \u0023\u003DzH9HNkng\u003D \u0023\u003DzxKsmolQ\u003D()
+  public T \u0023\u003DzxKsmolQ\u003D()
   {
     return this._drawData.\u0023\u003DzxKsmolQ\u003D();
   }
 
-  public \u0023\u003DzH9HNkng\u003D \u0023\u003DzC52X0FE\u003D()
+  public T \u0023\u003DzC52X0FE\u003D()
   {
     return this._drawData.\u0023\u003DzC52X0FE\u003D();
   }
 
-  public void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<\u0023\u003DzH9HNkng\u003D> _param1)
+  public void \u0023\u003Dz6_E5\u0024pE\u003D(IEnumerable<T> _param1)
   {
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public void Clone(\u0023\u003DzH9HNkng\u003D[] _param1)
+  public void Clone(T[] _param1)
   {
     this._drawData.Clone(_param1);
   }
 
   public void Clone(
     int _param1,
-    \u0023\u003DzH9HNkng\u003D[] _param2,
+    T[] _param2,
     int _param3,
     int _param4)
   {
@@ -199,13 +199,13 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     return false;
   }
 
-  public int \u0023\u003DzttdLFAU\u003D(\u0023\u003DzH9HNkng\u003D _param1, int _param2)
+  public int \u0023\u003DzttdLFAU\u003D(T _param1, int _param2)
   {
     return this._drawData.\u0023\u003DzttdLFAU\u003D(_param1, _param2);
   }
 
   public int \u0023\u003DzttdLFAU\u003D(
-    \u0023\u003DzH9HNkng\u003D _param1,
+    T _param1,
     int _param2,
     int _param3)
   {
@@ -214,23 +214,23 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public void \u0023\u003DzdG5UbJ7rAsgF(
     int _param1,
-    IEnumerable<\u0023\u003DzH9HNkng\u003D> _param2)
+    IEnumerable<T> _param2)
   {
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public int \u0023\u003DzLi0LBQXEUVc9(\u0023\u003DzH9HNkng\u003D _param1)
+  public int \u0023\u003DzLi0LBQXEUVc9(T _param1)
   {
     return this._drawData.\u0023\u003DzLi0LBQXEUVc9(_param1);
   }
 
-  public int \u0023\u003DzLi0LBQXEUVc9(\u0023\u003DzH9HNkng\u003D _param1, int _param2)
+  public int \u0023\u003DzLi0LBQXEUVc9(T _param1, int _param2)
   {
     return this._drawData.\u0023\u003DzLi0LBQXEUVc9(_param1, _param2);
   }
 
   public int \u0023\u003DzLi0LBQXEUVc9(
-    \u0023\u003DzH9HNkng\u003D _param1,
+    T _param1,
     int _param2,
     int _param3)
   {
@@ -242,7 +242,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public \u0023\u003DzH9HNkng\u003D[] \u0023\u003DzSWlLd4k\u003D()
+  public T[] \u0023\u003DzSWlLd4k\u003D()
   {
     return this._drawData.\u0023\u003DzSWlLd4k\u003D();
   }

@@ -23,15 +23,15 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
   \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D
 {
   
-  public static readonly DependencyProperty \u0023\u003Dz3vhKFHvmUfSR = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Color.FromArgb((byte) 50, byte.MaxValue, byte.MaxValue, byte.MaxValue), new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz3vhKFHvmUfSR = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Color.FromArgb((byte) 50, byte.MaxValue, byte.MaxValue, byte.MaxValue), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzTpSTo8U\u003D = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGray, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzTpSTo8U\u003D = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGray, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzFLdFQ9M\u003D = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Color.FromRgb((byte) 90, (byte) 90, (byte) 90), new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzFLdFQ9M\u003D = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Color.FromRgb((byte) 90, (byte) 90, (byte) 90), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzpELAaZtMaBgQ = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzpELAaZtMaBgQ = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzcL2qfCOpQZK5 = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.LimeGreen, new PropertyChangedCallback(dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzcL2qfCOpQZK5 = DependencyProperty.Register("", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.LimeGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   private dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzNgOs\u00249Qu1W4t \u0023\u003Dz1ShH2k5rZ_Qh;
 
@@ -101,8 +101,8 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
   }
 
   protected override void \u0023\u003DzKsKC4kB3l9RI(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param2)
+    IRenderContext2D _param1,
+    IRenderPassData _param2)
   {
     dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW = new dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D();
     if (!(this.DataSeries is TimeframeSegmentDataSeries))
@@ -238,12 +238,12 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
       num2 = _param6 == (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003Dz8jhANg_IhueX) 3 ? 1 : -1;
       num3 = -1;
     }
-    _param2.\u0023\u003DzYI36Ggg\u003D();
+    _param2.Reset();
     if (vqd1Qhu2nAw1nzwT0.\u0023\u003DzyHjx46Y\u003D)
     {
       bool flag = (double) vqd1Qhu2nAw1nzwT0.\u0023\u003Dzn1rOk95o\u0024Igg > 0.0 || this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dzyv\u0024EfaBUnbgQ(new Size(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003DzfuDyOX2LBzuJ, this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dz6puXp2RlkrXBtk\u0024DRw\u003D\u003D()), 1);
       AlignmentY alignmentY = _param6 == (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003Dz8jhANg_IhueX) 0 ? AlignmentY.Top : AlignmentY.Bottom;
-      double num4 = _param2.\u0023\u003DzNLkUKUcMn0yy();
+      double num4 = _param2.MaxValue;
       while (_param2.\u0023\u003DzMecBUKQ\u003D())
       {
         CandlePriceLevel candlePriceLevel = _param2.Value;
@@ -274,7 +274,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     {
       bool flag = (double) vqd1Qhu2nAw1nzwT0.\u0023\u003Dzn1rOk95o\u0024Igg > 0.0 || vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D >= this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dz6puXp2RlkrXBtk\u0024DRw\u003D\u003D() && num1 >= this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzYu4\u0024yZJXP2Ni2CKGCQ\u003D\u003D();
       AlignmentX alignmentX = _param6 == (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003Dz8jhANg_IhueX) 3 ? AlignmentX.Left : AlignmentX.Right;
-      double num10 = _param2.\u0023\u003DzNLkUKUcMn0yy();
+      double num10 = _param2.MaxValue;
       if (_param1.\u0023\u003DzJCVDIhjSn3vnyz7CPg\u003D\u003D().HasValue)
       {
         double? nullable = _param1.\u0023\u003DzJCVDIhjSn3vnyz7CPg\u003D\u003D();
@@ -417,7 +417,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
 
   private sealed class \u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D
   {
-    public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzEB3J6TW\u0024NW8A;
+    public IndexRange  \u0023\u003DzEB3J6TW\u0024NW8A;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
     public Color \u0023\u003Dz6GGz9n8\u003D;
     public Color \u0023\u003DzoVxmkd0\u003D;
@@ -464,7 +464,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     public double \u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D;
     public double \u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D;
     public Color \u0023\u003DzICsqKMvNb6xH;
-    public \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003Dzo\u0024RDoi4\u003D;
+    public IRenderContext2D \u0023\u003Dzo\u0024RDoi4\u003D;
     public \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzjvQqbJNxf61B;
   }
 
@@ -478,16 +478,16 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     private int \u0023\u003DzKx97DYo\u003D;
     private double \u0023\u003DzWYQbZV2cMJfI2mtzRyu_6hw\u003D;
     private CandlePriceLevel _indicatorValue;
-    private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzBnafa9Z1RbkKZVQGZw\u003D\u003D;
-    private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dz1uicr92vv9K656pOaQRy5pI\u003D;
-    private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzBPf324Ov6mo\u0024BLMcjrukJjM\u003D;
+    private IBrush2D \u0023\u003DzBnafa9Z1RbkKZVQGZw\u003D\u003D;
+    private IBrush2D \u0023\u003Dz1uicr92vv9K656pOaQRy5pI\u003D;
+    private IBrush2D \u0023\u003DzBPf324Ov6mo\u0024BLMcjrukJjM\u003D;
     private Color \u0023\u003DzjLQ0oTDnIKFQFtRIXg\u003D\u003D;
     private readonly double \u0023\u003Dz_Fbd0JvmfxR0BaQ2VA\u003D\u003D = _param2;
     private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dz4jeZsNFPe6\u0024QBz4C5w\u003D\u003D;
 
     public int \u0023\u003DzCMB4T5w\u003D() => this.\u0023\u003DzKx97DYo\u003D;
 
-    public void \u0023\u003DzYI36Ggg\u003D() => this.\u0023\u003DzKx97DYo\u003D = -1;
+    public void Reset() => this.\u0023\u003DzKx97DYo\u003D = -1;
 
     public bool \u0023\u003DzMecBUKQ\u003D()
     {
@@ -513,35 +513,35 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
       set => this._indicatorValue = value;
     }
 
-    public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzbkA2jkc3mMzd()
+    public IBrush2D \u0023\u003DzbkA2jkc3mMzd()
     {
       return this.\u0023\u003DzBnafa9Z1RbkKZVQGZw\u003D\u003D;
     }
 
     public void \u0023\u003DzH2mMb6hVQv8L(
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1)
+      IBrush2D _param1)
     {
       this.\u0023\u003DzBnafa9Z1RbkKZVQGZw\u003D\u003D = _param1;
     }
 
-    public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dz_RA752i\u0024ujMT()
+    public IBrush2D \u0023\u003Dz_RA752i\u0024ujMT()
     {
       return this.\u0023\u003Dz1uicr92vv9K656pOaQRy5pI\u003D;
     }
 
     public void \u0023\u003DzWc4nteoFjlK8(
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1)
+      IBrush2D _param1)
     {
       this.\u0023\u003Dz1uicr92vv9K656pOaQRy5pI\u003D = _param1;
     }
 
-    public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dz19xf9agkvSZP()
+    public IBrush2D \u0023\u003Dz19xf9agkvSZP()
     {
       return this.\u0023\u003DzBPf324Ov6mo\u0024BLMcjrukJjM\u003D;
     }
 
     public void \u0023\u003DzEzZ5jxwt3nr_(
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1)
+      IBrush2D _param1)
     {
       this.\u0023\u003DzBPf324Ov6mo\u0024BLMcjrukJjM\u003D = _param1;
     }
@@ -553,7 +553,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
       this.\u0023\u003DzjLQ0oTDnIKFQFtRIXg\u003D\u003D = _param1;
     }
 
-    public double \u0023\u003DzNLkUKUcMn0yy() => this.\u0023\u003Dz_Fbd0JvmfxR0BaQ2VA\u003D\u003D;
+    public double MaxValue => this.\u0023\u003Dz_Fbd0JvmfxR0BaQ2VA\u003D\u003D;
 
     public \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzvrdHPuKzjDX2()
     {

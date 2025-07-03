@@ -169,6 +169,10 @@
 		</Resource>
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="StockSharp\Xaml\Charting\99 - Helpers\" />
+		<Folder Include="StockSharp\Xaml\Charting\00 - Interfaces\" />
+		<Folder Include="StockSharp\Xaml\Charting\04 - ChartComponenets\" />
+		<Folder Include="StockSharp\Xaml\Charting\View\" />
 		<Folder Include="themes\" />
 	</ItemGroup>
 	<ItemGroup>

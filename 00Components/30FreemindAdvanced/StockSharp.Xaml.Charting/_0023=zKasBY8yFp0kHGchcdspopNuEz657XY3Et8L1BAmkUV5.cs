@@ -27,9 +27,9 @@ internal sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h 
 
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
-    if (_param1 == null || !this.\u0023\u003DzIqrOB76fU0aO.XAxes.Any<\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB>())
+    if (_param1 == null || !this.\u0023\u003DzIqrOB76fU0aO.XAxes.Any<IAxis>())
       return _param1;
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.\u0023\u003DzIqrOB76fU0aO.GetUsedAxis();
+    IAxis usedAxis = this.\u0023\u003DzIqrOB76fU0aO.GetUsedAxis();
     if (usedAxis == null)
       return (object) null;
     if (usedAxis is \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe6IW1TrHf1OjeIxI4VnnySGI && usedAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)

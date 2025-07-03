@@ -42,7 +42,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   
   private readonly 
   #nullable disable
-  ChartArea \u0023\u003DzeckSod0\u003D;
+  ChartArea _chartArea;
   
   private readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D _annotationMap;
   
@@ -65,11 +65,11 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D _param2)
   {
     this.InitializeComponent();
-    this.\u0023\u003DzeckSod0\u003D = _param1 ?? throw new ArgumentNullException("");
+    this._chartArea = _param1 ?? throw new ArgumentNullException("");
     this._annotationMap = _param2 ?? throw new ArgumentNullException("");
   }
 
-  private Chart \u0023\u003DzGuZ8w82B3fMJ() => this.\u0023\u003DzeckSod0\u003D.Chart as Chart;
+  private Chart \u0023\u003DzGuZ8w82B3fMJ() => this._chartArea.Chart as Chart;
 
   private dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd \u0023\u003DzqRVOnAc\u003D()
   {
@@ -108,8 +108,8 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     if (_param1 != typeof (RulerAnnotation))
       return base.\u0023\u003DzWj46Xvc\u003D(_param1, _param2);
     this.\u0023\u003Dz_I\u0024qdC0\u003D();
-    IChartCandleElement element = ((IEnumerable) this.\u0023\u003DzeckSod0\u003D.Elements).OfType<IChartCandleElement>().FirstOrDefault<IChartCandleElement>();
-    double num = (double) ((Decimal?) ((SecurityMessage) (element == null ? (SubscriptionBase<Subscription>) null : (SubscriptionBase<Subscription>) ((Chart) this.\u0023\u003DzeckSod0\u003D.Chart).TryGetSubscription((IChartElement) element))?.MarketData).PriceStep ?? 0.01M);
+    IChartCandleElement element = ((IEnumerable) this._chartArea.Elements).OfType<IChartCandleElement>().FirstOrDefault<IChartCandleElement>();
+    double num = (double) ((Decimal?) ((SecurityMessage) (element == null ? (SubscriptionBase<Subscription>) null : (SubscriptionBase<Subscription>) ((Chart) this._chartArea.Chart).TryGetSubscription((IChartElement) element))?.MarketData).PriceStep ?? 0.01M);
     RulerAnnotation rulerAnnotation1 = new RulerAnnotation();
     rulerAnnotation1.YAxisId = this.YAxisId;
     rulerAnnotation1.XAxisId = this.XAxisId;
@@ -167,7 +167,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
       Type = userAnnotationType
     };
     ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzCqbxaY8TFdGX)[annotation] = chartAnnotation;
-    ((ICollection<IChartElement>) this.\u0023\u003DzeckSod0\u003D.Elements).Add((IChartElement) chartAnnotation);
+    ((ICollection<IChartElement>) this._chartArea.Elements).Add((IChartElement) chartAnnotation);
     Chart chart = this.\u0023\u003DzGuZ8w82B3fMJ();
     if (chart != null)
     {
@@ -359,11 +359,11 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
       return;
     this._annotationMap.Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) annotationBase);
     ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzCqbxaY8TFdGX).Remove(annotationBase);
-    ((ICollection<IChartElement>) this.\u0023\u003DzeckSod0\u003D.Elements).Remove((IChartElement) _param1);
+    ((ICollection<IChartElement>) this._chartArea.Elements).Remove((IChartElement) _param1);
     this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003DzXartur54T48t(_param1);
   }
 
-  public void \u0023\u003DzjgUUUJE\u003D(
+  public void Draw(
     ChartAnnotation _param1,
     ChartDrawData.AnnotationData _param2)
   {
@@ -668,7 +668,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
       if (!((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzCqbxaY8TFdGX).TryGetValue(_param1, ref chartAnnotation))
         return;
       ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzCqbxaY8TFdGX).Remove(_param1);
-      ((ICollection<IChartElement>) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzeckSod0\u003D.Elements).Remove((IChartElement) chartAnnotation);
+      ((ICollection<IChartElement>) this.\u0023\u003DzRRvwDu67s9Rm._chartArea.Elements).Remove((IChartElement) chartAnnotation);
       this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003DzXartur54T48t(chartAnnotation);
     }
 
@@ -788,7 +788,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     #nullable disable
     DependencyProperty _param1)
     {
-      this.\u0023\u003Dz2vouRgM\u003D.\u0023\u003DzCZHTVdsqw3mR(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
+      this.\u0023\u003Dz2vouRgM\u003D.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
     }
 
     internal void \u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D(

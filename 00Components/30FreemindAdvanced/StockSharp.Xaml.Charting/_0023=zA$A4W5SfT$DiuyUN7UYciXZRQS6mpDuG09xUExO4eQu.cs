@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 #nullable disable
 internal interface IRenderableSeries : 
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,
-  \u0023\u003Dz03BSxVLolBnG92GmtCJpdmgFT25iN3r_1AVHKJDMXa95,
+  IDrawable,
   IXmlSerializable
 {
   void \u0023\u003DzhBqSd5Scc0Hy(EventHandler _param1);
@@ -54,9 +54,9 @@ internal interface IRenderableSeries :
   void set_DataSeries(
     \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1);
 
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB XAxis { get; set; }
+  IAxis XAxis { get; set; }
 
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB YAxis { get; set; }
+  IAxis YAxis { get; set; }
 
   Style SelectedSeriesStyle { get; set; }
 
@@ -88,10 +88,10 @@ internal interface IRenderableSeries :
 
   void set_XAxisId(string _param1);
 
-  \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D \u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
+  IRenderPassData \u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
 
   void \u0023\u003DzHZiyrsua6EwHR04JCw\u003D\u003D(
-    \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZaScol6ORWm4rPwbPViMZ4rNexJsSmCJpOM\u003D _param1);
+    IRenderPassData _param1);
 
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D get_PaletteProvider();
 
@@ -118,17 +118,17 @@ internal interface IRenderableSeries :
   \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dzq3MgExWxza1L();
+  IRange \u0023\u003Dzq3MgExWxza1L();
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzxNQHuqrEvxH2(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1);
+  IRange \u0023\u003DzxNQHuqrEvxH2(
+    IRange _param1);
 
-  \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzxNQHuqrEvxH2(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+  IRange \u0023\u003DzxNQHuqrEvxH2(
+    IRange _param1,
     bool _param2);
 
-  \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzVAnbwOJn98Ya(
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param1);
+  IndexRange  \u0023\u003DzVAnbwOJn98Ya(
+    IndexRange  _param1);
 
   bool \u0023\u003DzVxrZQ3k9ZBGJ(
     \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D _param1);

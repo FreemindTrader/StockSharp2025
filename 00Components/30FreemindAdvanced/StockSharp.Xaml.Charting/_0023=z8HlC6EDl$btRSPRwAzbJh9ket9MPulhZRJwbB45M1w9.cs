@@ -25,7 +25,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M
     this.\u0023\u003Dz\u00246aIVrHDxlRJ().AnnotationModifier.\u0023\u003Dz\u0024abmkXc\u003D(this.\u0023\u003DzeaszzAAoBOY9());
   }
 
-  public override bool \u0023\u003DzjgUUUJE\u003D(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+  public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D()
     {
@@ -42,7 +42,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M
 
     internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz\u00246aIVrHDxlRJ().AnnotationModifier.\u0023\u003DzjgUUUJE\u003D(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzeaszzAAoBOY9(), ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
+      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz\u00246aIVrHDxlRJ().AnnotationModifier.Draw(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzeaszzAAoBOY9(), ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
     }
   }
 }

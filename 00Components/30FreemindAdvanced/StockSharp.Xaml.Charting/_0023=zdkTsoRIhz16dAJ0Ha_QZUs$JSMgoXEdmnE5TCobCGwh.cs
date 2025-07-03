@@ -16,19 +16,19 @@ internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobC
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
 {
   private readonly \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[] \u0023\u003DzYw05nwk\u003D;
-  private readonly dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dz6w5dj1Plgc_m;
+  private readonly DoubleRange \u0023\u003Dz6w5dj1Plgc_m;
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003Dz3s80TGV4qJM\u0024;
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzU26lnNrA_u4g;
-  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
-  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
+  private readonly IndexRange  \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
+  private readonly IndexRange  \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
 
   public \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D(
     \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D[] _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3)
+    IndexRange  _param2,
+    IRange _param3)
   {
-    this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) _param2.Clone();
-    if (!(_param3 is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq))
+    this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (IndexRange ) _param2.Clone();
+    if (!(_param3 is IndexRange  g8Oq2rGx6KyfAreq))
       g8Oq2rGx6KyfAreq = _param2;
     this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D = g8Oq2rGx6KyfAreq;
     this.\u0023\u003DzYw05nwk\u003D = new \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[_param2.Max - _param2.Min + 1];
@@ -51,7 +51,7 @@ internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobC
           num4 = y0XZklPx9ZIbrBkg.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003DzFQXj8Eq5AMNn7N8nJA\u003D\u003D();
       }
     }
-    this.\u0023\u003Dz6w5dj1Plgc_m = new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num3, num4);
+    this.\u0023\u003Dz6w5dj1Plgc_m = new DoubleRange(num3, num4);
   }
 
   [SpecialName]
@@ -83,17 +83,17 @@ internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobC
     }
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003Dz5O4ly_BelNuL()
+  public IndexRange  \u0023\u003Dz5O4ly_BelNuL()
   {
     return this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D VisibleRange
+  public IndexRange  VisibleRange
   {
     get => this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
   }
 
-  public dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2()
+  public DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
     return this.\u0023\u003Dz6w5dj1Plgc_m;
   }

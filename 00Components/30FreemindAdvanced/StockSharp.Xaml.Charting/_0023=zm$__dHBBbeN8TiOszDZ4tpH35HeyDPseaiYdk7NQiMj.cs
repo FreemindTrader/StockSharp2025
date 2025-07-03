@@ -13,26 +13,26 @@ internal class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<double>
 {
   public override double[] \u0023\u003Dz65PoZl8ZJBOc(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS _param1)
+    IAxisParams _param1)
   {
-    return this.\u0023\u003Dz65PoZl8ZJBOc((\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double>) _param1.VisibleRange.\u0023\u003DzfODy_Nxn8OGy(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.get_MinorDelta().\u0023\u003Dzb9UCYbo\u003D(), _param1.get_MajorDelta().\u0023\u003Dzb9UCYbo\u003D()));
+    return this.\u0023\u003Dz65PoZl8ZJBOc((IRange<double>) _param1.VisibleRange.AsDoubleRange(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.MinorDelta.ToDouble(), _param1.MajorDelta.ToDouble()));
   }
 
   public override double[] \u0023\u003Dzctqa9kMCtfQQ(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnAoj7IAxnW4w0PxdsBxUKNwS _param1)
+    IAxisParams _param1)
   {
-    return this.\u0023\u003Dzctqa9kMCtfQQ((\u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double>) _param1.VisibleRange.\u0023\u003DzfODy_Nxn8OGy(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.get_MinorDelta().\u0023\u003Dzb9UCYbo\u003D(), _param1.get_MajorDelta().\u0023\u003Dzb9UCYbo\u003D()));
+    return this.\u0023\u003Dzctqa9kMCtfQQ((IRange<double>) _param1.VisibleRange.AsDoubleRange(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.MinorDelta.ToDouble(), _param1.MajorDelta.ToDouble()));
   }
 
   public double[] \u0023\u003Dzctqa9kMCtfQQ(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     return !this.\u0023\u003DziQ5R1esym2Y\u0024(_param1, _param2) ? Array.Empty<double>() : this.\u0023\u003DzuAzmESJjUh9L(_param1, _param2);
   }
 
   protected bool \u0023\u003DziQ5R1esym2Y\u0024(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
@@ -42,14 +42,14 @@ internal class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
   }
 
   public double[] \u0023\u003Dz65PoZl8ZJBOc(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     return !this.\u0023\u003DziQ5R1esym2Y\u0024(_param1, _param2) ? Array.Empty<double>() : this.\u0023\u003DzL8F08lm_ZvZT(_param1, _param2);
   }
 
   public double[] \u0023\u003Dz65PoZl8ZJBOc(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2,
     double[] _param3)
   {
@@ -57,14 +57,14 @@ internal class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
   }
 
   protected virtual double[] \u0023\u003DzuAzmESJjUh9L(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     return this.\u0023\u003DzyPl0NtN\u0024cLlA(_param1, _param2.\u0023\u003Dzgq30Jn5PclK8(), _param2.\u0023\u003Dzgq30Jn5PclK8());
   }
 
   private double[] \u0023\u003DzyPl0NtN\u0024cLlA(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     double _param2,
     double _param3)
   {
@@ -86,7 +86,7 @@ internal class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
   }
 
   protected virtual double[] \u0023\u003DzL8F08lm_ZvZT(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2,
     double[] _param3)
   {
@@ -94,7 +94,7 @@ internal class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
   }
 
   protected virtual double[] \u0023\u003DzL8F08lm_ZvZT(
-    \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZpprK58gKzo0gQ\u003D\u003D<double> _param1,
+    IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
     return this.\u0023\u003DzyPl0NtN\u0024cLlA(_param1, _param2.\u0023\u003DzZ85DqsktXJL3(), _param2.\u0023\u003Dzgq30Jn5PclK8());

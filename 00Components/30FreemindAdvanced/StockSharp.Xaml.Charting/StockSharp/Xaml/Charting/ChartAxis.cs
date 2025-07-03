@@ -29,50 +29,50 @@ public class ChartAxis :
   INotifyPropertyChanging
 {
   
-  private IChartArea \u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D;
+  private IChartArea _chartArea;
   
-  private string \u0023\u003DziM6zJqE\u003D;
+  private string _id;
   
-  private bool \u0023\u003DzVf6ckz06jjnq = true;
+  private bool _isVisible = true;
   
-  private string \u0023\u003DzIzRA1GQ\u003D;
+  private string _title;
   
-  private string \u0023\u003DznLJWjME\u003D;
+  private string _group;
   
-  private bool \u0023\u003Dzv9FD1di4RC0T;
+  private bool _switchAxisLocation;
   
-  private ChartAxisType \u0023\u003DzQbjuL1gVekSH;
+  private ChartAxisType _axisType;
   
-  private bool \u0023\u003DzdLTpPeMhlR6N = true;
+  private bool _autoRange = true;
   
-  private bool \u0023\u003DzrhLICZ53UOoE;
+  private bool _flipCoordinates;
   
-  private bool \u0023\u003DzMoUHwSZ26s\u0024B = true;
+  private bool _drawMajorTicks = true;
   
-  private bool \u0023\u003DzQX_eCV9XBE2Om3pH5A\u003D\u003D = true;
+  private bool _drawMajorGridLines = true;
   
-  private bool \u0023\u003DzomI8jgXvMYgj;
+  private bool _drawMinorTicks;
   
-  private bool \u0023\u003DzHLFKxy_IJ02Bf4vYiQ\u003D\u003D;
+  private bool _drawMinorGridLines;
   
-  private bool \u0023\u003DzgTDrusYEVex\u0024 = true;
+  private bool _drawLabels = true;
   
-  private string \u0023\u003Dz5wsolu6uzY0L;
+  private string _textFormatting;
   
-  private string \u0023\u003Dz6SqmY60jwVYP;
+  private string _cursorTextFormatting;
   
-  private string \u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D;
+  private string _subDayTextFormatting;
   
-  private TimeZoneInfo \u0023\u003Dzlm3nxP8O1U6I;
+  private TimeZoneInfo _timeZone;
   
-  private double \u0023\u003DzDtp\u00246FfBRlYq = double.NaN;
+  private double _dataPointWidth = double.NaN;
 
   /// <inheritdoc />
   [Browsable(false)]
   public IChartArea ChartArea
   {
-    get => this.\u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D;
-    internal set => this.\u0023\u003DzDlmrofv0iAzdkUselsApTvI\u003D = value;
+    get => this._chartArea;
+    internal set => this._chartArea = value;
   }
 
   /// <inheritdoc />
@@ -80,10 +80,10 @@ public class ChartAxis :
   [Browsable(false)]
   public string Id
   {
-    get => this.\u0023\u003DziM6zJqE\u003D;
+    get => this._id;
     set
     {
-      this.\u0023\u003DziM6zJqE\u003D = value;
+      this._id = value;
       this.NotifyChanged("");
     }
   }
@@ -92,10 +92,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Show", Description = "ShowDot", GroupName = "Parameters", Order = 15)]
   public bool IsVisible
   {
-    get => this.\u0023\u003DzVf6ckz06jjnq;
+    get => this._isVisible;
     set
     {
-      this.\u0023\u003DzVf6ckz06jjnq = value;
+      this._isVisible = value;
       this.NotifyChanged("");
     }
   }
@@ -104,10 +104,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Header", Description = "AxisHeader", GroupName = "Parameters", Order = 20)]
   public string Title
   {
-    get => this.\u0023\u003DzIzRA1GQ\u003D;
+    get => this._title;
     set
     {
-      this.\u0023\u003DzIzRA1GQ\u003D = value;
+      this._title = value;
       this.NotifyChanged("");
     }
   }
@@ -116,14 +116,14 @@ public class ChartAxis :
   [Browsable(false)]
   public string Group
   {
-    get => this.\u0023\u003DznLJWjME\u003D;
+    get => this._group;
     set
     {
-      if (this.\u0023\u003DznLJWjME\u003D == value)
+      if (this._group == value)
         return;
       if (this.ChartArea != null)
         throw new InvalidOperationException(LocalizedStrings.ErrorChangingGroupName);
-      this.\u0023\u003DznLJWjME\u003D = value;
+      this._group = value;
     }
   }
 
@@ -131,10 +131,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "SwitchAxisLocation", Description = "SwitchAxisLocation", GroupName = "Parameters", Order = 40)]
   public bool SwitchAxisLocation
   {
-    get => this.\u0023\u003Dzv9FD1di4RC0T;
+    get => this._switchAxisLocation;
     set
     {
-      this.\u0023\u003Dzv9FD1di4RC0T = value;
+      this._switchAxisLocation = value;
       this.NotifyChanged("");
     }
   }
@@ -143,12 +143,12 @@ public class ChartAxis :
   [Browsable(false)]
   public ChartAxisType AxisType
   {
-    get => this.\u0023\u003DzQbjuL1gVekSH;
+    get => this._axisType;
     set
     {
-      if (this.\u0023\u003DzQbjuL1gVekSH != value && this.ChartArea != null)
+      if (this._axisType != value && this.ChartArea != null)
         throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
-      this.\u0023\u003DzQbjuL1gVekSH = value;
+      this._axisType = value;
     }
   }
 
@@ -156,10 +156,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "AutoRange", Description = "AutoRangeDot", GroupName = "Parameters", Order = 60)]
   public bool AutoRange
   {
-    get => this.\u0023\u003DzdLTpPeMhlR6N;
+    get => this._autoRange;
     set
     {
-      this.\u0023\u003DzdLTpPeMhlR6N = value;
+      this._autoRange = value;
       this.NotifyChanged("");
     }
   }
@@ -168,10 +168,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "FlipCoords", Description = "FlipCoordsDot", GroupName = "Parameters", Order = 70)]
   public bool FlipCoordinates
   {
-    get => this.\u0023\u003DzrhLICZ53UOoE;
+    get => this._flipCoordinates;
     set
     {
-      this.\u0023\u003DzrhLICZ53UOoE = value;
+      this._flipCoordinates = value;
       this.NotifyChanged("");
     }
   }
@@ -180,10 +180,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "LinesOnAxis", Description = "MainGridLinesOnAxis", GroupName = "Parameters", Order = 80 /*0x50*/)]
   public bool DrawMajorTicks
   {
-    get => this.\u0023\u003DzMoUHwSZ26s\u0024B;
+    get => this._drawMajorTicks;
     set
     {
-      this.\u0023\u003DzMoUHwSZ26s\u0024B = value;
+      this._drawMajorTicks = value;
       this.NotifyChanged("");
     }
   }
@@ -192,10 +192,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "GridLines", Description = "ShowMainGridLines", GroupName = "Parameters", Order = 90)]
   public bool DrawMajorGridLines
   {
-    get => this.\u0023\u003DzQX_eCV9XBE2Om3pH5A\u003D\u003D;
+    get => this._drawMajorGridLines;
     set
     {
-      this.\u0023\u003DzQX_eCV9XBE2Om3pH5A\u003D\u003D = value;
+      this._drawMajorGridLines = value;
       this.NotifyChanged("");
     }
   }
@@ -204,10 +204,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "ExtraLinesOnAxis", Description = "ShowExtraLinesOnAxis", GroupName = "Parameters", Order = 100)]
   public bool DrawMinorTicks
   {
-    get => this.\u0023\u003DzomI8jgXvMYgj;
+    get => this._drawMinorTicks;
     set
     {
-      this.\u0023\u003DzomI8jgXvMYgj = value;
+      this._drawMinorTicks = value;
       this.NotifyChanged("");
     }
   }
@@ -216,10 +216,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "ExtraGridLines", Description = "ShowExtraGridLines", GroupName = "Parameters", Order = 110)]
   public bool DrawMinorGridLines
   {
-    get => this.\u0023\u003DzHLFKxy_IJ02Bf4vYiQ\u003D\u003D;
+    get => this._drawMinorGridLines;
     set
     {
-      this.\u0023\u003DzHLFKxy_IJ02Bf4vYiQ\u003D\u003D = value;
+      this._drawMinorGridLines = value;
       this.NotifyChanged("");
     }
   }
@@ -228,10 +228,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "AxisLabels", Description = "ShowAxisLabels", GroupName = "Parameters", Order = 120)]
   public bool DrawLabels
   {
-    get => this.\u0023\u003DzgTDrusYEVex\u0024;
+    get => this._drawLabels;
     set
     {
-      this.\u0023\u003DzgTDrusYEVex\u0024 = value;
+      this._drawLabels = value;
       this.NotifyChanged("");
     }
   }
@@ -242,14 +242,14 @@ public class ChartAxis :
   {
     get
     {
-      string z5wsolu6uzY0L = this.\u0023\u003Dz5wsolu6uzY0L;
+      string z5wsolu6uzY0L = this._textFormatting;
       if (z5wsolu6uzY0L != null)
         return z5wsolu6uzY0L;
       return this.AxisType == ChartAxisType.Numeric ? "" : "";
     }
     set
     {
-      this.\u0023\u003Dz5wsolu6uzY0L = value;
+      this._textFormatting = value;
       this.NotifyChanged("");
     }
   }
@@ -260,14 +260,14 @@ public class ChartAxis :
   {
     get
     {
-      string z6SqmY60jwVyp = this.\u0023\u003Dz6SqmY60jwVYP;
+      string z6SqmY60jwVyp = this._cursorTextFormatting;
       if (z6SqmY60jwVyp != null)
         return z6SqmY60jwVyp;
       return this.AxisType == ChartAxisType.Numeric ? "" : "";
     }
     set
     {
-      this.\u0023\u003Dz6SqmY60jwVYP = value;
+      this._cursorTextFormatting = value;
       this.NotifyChanged("");
     }
   }
@@ -278,11 +278,11 @@ public class ChartAxis :
   {
     get
     {
-      return this.\u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D ?? "";
+      return this._subDayTextFormatting ?? "";
     }
     set
     {
-      this.\u0023\u003DzqXX3UNR0keSIvzpxvA\u003D\u003D = value;
+      this._subDayTextFormatting = value;
       this.NotifyChanged("");
     }
   }
@@ -291,10 +291,10 @@ public class ChartAxis :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "TimeZone", Description = "TimeZoneDot", GroupName = "Parameters", Order = 133)]
   public TimeZoneInfo TimeZone
   {
-    get => this.\u0023\u003Dzlm3nxP8O1U6I;
+    get => this._timeZone;
     set
     {
-      this.\u0023\u003Dzlm3nxP8O1U6I = value;
+      this._timeZone = value;
       this.NotifyChanged("");
     }
   }
@@ -303,12 +303,12 @@ public class ChartAxis :
   [Browsable(false)]
   public double DataPointWidth
   {
-    get => this.\u0023\u003DzDtp\u00246FfBRlYq;
+    get => this._dataPointWidth;
     internal set
     {
-      if (Math.Abs(this.\u0023\u003DzDtp\u00246FfBRlYq - value) < 0.3)
+      if (Math.Abs(this._dataPointWidth - value) < 0.3)
         return;
-      this.\u0023\u003DzDtp\u00246FfBRlYq = value;
+      this._dataPointWidth = value;
       this.NotifyChanged("");
     }
   }

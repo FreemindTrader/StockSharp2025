@@ -125,7 +125,7 @@ internal static class \u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u0024
       obj = str == null || !\u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u00247WLh.\u0023\u003DzwxuTPxReUxmtqJZBWw\u003D\u003D.ContainsKey(str) ? (object) FontWeights.Normal : (object) \u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u00247WLh.\u0023\u003DzwxuTPxReUxmtqJZBWw\u003D\u003D[str];
     else if (_param2 == typeof (FontStyle))
       obj = str == null || !\u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u00247WLh.\u0023\u003DzTBZRzOW0NpnF.ContainsKey(str) ? (object) FontStyles.Normal : (object) \u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u00247WLh.\u0023\u003DzTBZRzOW0NpnF[str];
-    else if (typeof (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D).IsAssignableFrom(_param2))
+    else if (typeof (IRange).IsAssignableFrom(_param2))
     {
       if (str == null)
         return (object) null;

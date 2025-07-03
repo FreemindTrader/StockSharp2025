@@ -21,7 +21,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhivTIORxM4pFaWkWD6T7J
   private readonly \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D \u0023\u003DzyS9ysjWX7dyA;
 
   public \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhivTIORxM4pFaWkWD6T7Je4n45z8o20NaGXPXIGD_(
-    \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D _param1)
+    IChartModifier _param1)
   {
     this.\u0023\u003DzyS9ysjWX7dyA = _param1.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>();
   }

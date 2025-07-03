@@ -16,7 +16,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003
   IDisposable
 {
   
-  private readonly \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003DzVxwXLcXPtvCC;
+  private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
   
   private readonly bool \u0023\u003DzCGVfeT7yJc5e;
   
@@ -26,14 +26,14 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003
   
   private readonly Dictionary<(Color, float), \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J> \u0023\u003Dzin_8jbOXQl9a;
   
-  private readonly Dictionary<Color, \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D> \u0023\u003DzRedLM92UZkPp;
+  private readonly Dictionary<Color, IBrush2D> \u0023\u003DzRedLM92UZkPp;
   
-  private readonly Dictionary<Brush, \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D> \u0023\u003Dz15ylege7nbS\u0024;
+  private readonly Dictionary<Brush, IBrush2D> \u0023\u003Dz15ylege7nbS\u0024;
   
   private readonly double[] \u0023\u003DzuGUVW3D\u0024dHUILYV7nA\u003D\u003D;
 
   public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     bool _param2,
     float _param3,
     double _param4,
@@ -44,8 +44,8 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003
     this.\u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D = _param3;
     this.\u0023\u003DzBGuos5a1\u0024vqwiW65Dw\u003D\u003D = _param4;
     this.\u0023\u003Dzin_8jbOXQl9a = new Dictionary<(Color, float), \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J>();
-    this.\u0023\u003DzRedLM92UZkPp = new Dictionary<Color, \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D>();
-    this.\u0023\u003Dz15ylege7nbS\u0024 = new Dictionary<Brush, \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D>();
+    this.\u0023\u003DzRedLM92UZkPp = new Dictionary<Color, IBrush2D>();
+    this.\u0023\u003Dz15ylege7nbS\u0024 = new Dictionary<Brush, IBrush2D>();
     this.\u0023\u003DzuGUVW3D\u0024dHUILYV7nA\u003D\u003D = _param5;
   }
 
@@ -65,24 +65,24 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003
     return rhwYsZxA33iRu6Id7J;
   }
 
-  public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzNryPIU0\u003D(
+  public IBrush2D \u0023\u003DzNryPIU0\u003D(
     Color _param1)
   {
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_1;
+    IBrush2D xrgcdFbSdWgN9GcT8_1;
     if (this.\u0023\u003DzRedLM92UZkPp.TryGetValue(_param1, out xrgcdFbSdWgN9GcT8_1))
       return xrgcdFbSdWgN9GcT8_1;
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_2 = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003Dze8WyDhI\u003D(_param1, this.\u0023\u003DzBGuos5a1\u0024vqwiW65Dw\u003D\u003D, new bool?());
+    IBrush2D xrgcdFbSdWgN9GcT8_2 = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003Dze8WyDhI\u003D(_param1, this.\u0023\u003DzBGuos5a1\u0024vqwiW65Dw\u003D\u003D, new bool?());
     this.\u0023\u003DzRedLM92UZkPp.Add(_param1, xrgcdFbSdWgN9GcT8_2);
     return xrgcdFbSdWgN9GcT8_2;
   }
 
-  public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzNryPIU0\u003D(
+  public IBrush2D \u0023\u003DzNryPIU0\u003D(
     Brush _param1)
   {
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_1;
+    IBrush2D xrgcdFbSdWgN9GcT8_1;
     if (this.\u0023\u003Dz15ylege7nbS\u0024.TryGetValue(_param1, out xrgcdFbSdWgN9GcT8_1))
       return xrgcdFbSdWgN9GcT8_1;
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8_2 = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003Dze8WyDhI\u003D(_param1, 1.0, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive);
+    IBrush2D xrgcdFbSdWgN9GcT8_2 = this.\u0023\u003DzVxwXLcXPtvCC.\u0023\u003Dze8WyDhI\u003D(_param1, 1.0, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive);
     this.\u0023\u003Dz15ylege7nbS\u0024.Add(_param1, xrgcdFbSdWgN9GcT8_2);
     return xrgcdFbSdWgN9GcT8_2;
   }

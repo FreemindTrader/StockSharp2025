@@ -12,7 +12,7 @@ internal static class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjhE5szIVFtMAFcvWbis\u003D
 {
   internal static double \u0023\u003Dz\u0024DV3des\u003D(this double _param0, double _param1)
   {
-    return !_param0.\u0023\u003DzeNpB9guo_tur() ? _param0 : _param1;
+    return !_param0.IsNaN() ? _param0 : _param1;
   }
 
   internal static bool \u0023\u003Dz_Bj0HmLWq3hY(this double _param0)
@@ -29,7 +29,7 @@ internal static class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjhE5szIVFtMAFcvWbis\u003D
     return false;
   }
 
-  internal static bool \u0023\u003DzeNpB9guo_tur(this double _param0) => _param0 != _param0;
+  internal static bool IsNaN(this double _param0) => _param0 != _param0;
 
   internal static double \u0023\u003DzZsq6ZfbZQvsf(this double _param0) => Math.Round(_param0);
 

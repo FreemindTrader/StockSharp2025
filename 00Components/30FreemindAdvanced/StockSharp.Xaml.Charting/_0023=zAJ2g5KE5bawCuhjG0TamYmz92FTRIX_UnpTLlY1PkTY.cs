@@ -23,5 +23,5 @@ internal interface \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D \u0023\u003Dz\u0024CeUvME\u003D(
     int _param1);
 
-  dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2();
+  DoubleRange \u0023\u003DzxNQHuqrEvxH2();
 }

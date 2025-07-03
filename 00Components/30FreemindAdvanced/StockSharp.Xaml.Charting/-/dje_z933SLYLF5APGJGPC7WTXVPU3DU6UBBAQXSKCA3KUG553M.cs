@@ -20,7 +20,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd : 
-  dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd
+  ChartModifierBase
 {
   
   private ObservableCollection<IRenderableSeries> \u0023\u003Dzmhay2J9Ys\u0024BH;
@@ -238,17 +238,17 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     foreach (IRenderableSeries key in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzXKvQXbvtr98ebQ_YJw\u003D\u003D)))
     {
       AxisMarkerAnnotation markerAnnotation = (AxisMarkerAnnotation) this.\u0023\u003DzJVKVgJSKleLL[key];
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D visibleRange = key.XAxis.VisibleRange;
-      \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D indicesRange = key.get_DataSeries().GetIndicesRange(visibleRange);
+      IRange visibleRange = key.XAxis.VisibleRange;
+      IndexRange  indicesRange = key.get_DataSeries().GetIndicesRange(visibleRange);
       \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
       IComparable comparable1 = key.get_DataSeries().get_LatestYValue();
       bool isDefined = indicesRange.IsDefined;
       if (isDefined)
       {
         IComparable comparable2 = (IComparable) key.get_DataSeries().\u0023\u003DzwQnyySN6xaVC()[indicesRange.Max];
-        if (!visibleRange.\u0023\u003DzfODy_Nxn8OGy().\u0023\u003DzU0feMzXFLecQ((IComparable) comparable2.\u0023\u003Dzb9UCYbo\u003D()))
+        if (!visibleRange.AsDoubleRange().\u0023\u003DzU0feMzXFLecQ((IComparable) comparable2.ToDouble()))
         {
-          double num = this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN() - 1.0;
+          double num = this.ModifierSurface.ActualWidth - 1.0;
           Point point = this.XAxis.IsHorizontalAxis ? new Point(num, 0.0) : new Point(0.0, num);
           zldchDrVsrVyHh6WyiGy = key.\u0023\u003DznVLFa68vHPHy(point, true);
           comparable1 = zldchDrVsrVyHh6WyiGy.\u0023\u003Dzd9IAScWutAfJ();
@@ -256,7 +256,7 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
       }
       IComparable latestYvalue = key.get_DataSeries().get_LatestYValue();
       bool flag = latestYvalue != null && comparable1 != null && latestYvalue.CompareTo((object) comparable1) == 0;
-      if (key is dje_zP6VTXEU8B2YELVEGUZAJ27BBHF7M9YENVCNNCT32898EYMRSJSW3C8HB7ESPM23CV4LS4ST64EQZFBA_ejd ls4St64EqzfbaEjd)
+      if (key is BaseRenderableSeries ls4St64EqzfbaEjd)
       {
         ls4St64EqzfbaEjd.SetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzEf91H67L3cmpXtvCzf\u0024fF8UYUMr2, (object) isDefined);
         ls4St64EqzfbaEjd.SetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003Dz8BRRl9X\u00241GaoKzQFLQ\u003D\u003D, (object) flag);

@@ -22,7 +22,7 @@ internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJif
   public \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D(
     string _param1)
   {
-    this.\u0023\u003DzYI36Ggg\u003D();
+    this.Reset();
     this.\u0023\u003DzsLDTRVg\u003D = _param1;
     \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232oMfVr72yIGQA4ay.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dzh_YrSog\u003D(this);
   }
@@ -64,7 +64,7 @@ internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJif
     \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232oMfVr72yIGQA4ay.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DzJEIks4EYOgFT(this, num2);
   }
 
-  internal void \u0023\u003DzYI36Ggg\u003D()
+  internal void Reset()
   {
     this.\u0023\u003DzN0El7idsXiwE = 0L;
     this.\u0023\u003DzxhCmePtx6PYr = 0U;

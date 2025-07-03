@@ -134,7 +134,7 @@ public struct BitmapContext : IDisposable
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003DzvOds\u0024YwY7CNP(this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBuffer, 0, this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBufferStride * this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.PixelHeight);
   }
 
-  private static int \u0023\u003DzpTVOY3k\u003D(WriteableBitmap _param0)
+  private static int Dec(WriteableBitmap _param0)
   {
     int num1;
     if (!BitmapContext.\u0023\u003DzGVij5mrYWE_S.TryGetValue(_param0, out num1))
@@ -151,7 +151,7 @@ public struct BitmapContext : IDisposable
   {
     lock (BitmapContext.\u0023\u003DzGVij5mrYWE_S)
     {
-      if (BitmapContext.\u0023\u003DzpTVOY3k\u003D(this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D) != 0)
+      if (BitmapContext.Dec(this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D) != 0)
         return;
       BitmapContext.\u0023\u003DzGVij5mrYWE_S.Remove(this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D);
       if (this.\u0023\u003DztYFyZvw\u003D == (\u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB) 1)

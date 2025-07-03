@@ -133,11 +133,11 @@ internal class TextAnnotation : AnchorPointAnnotation
         \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
       double num1 = z6aJoeqoqAzym - zS2K6sVvd5Iy + 1.0;
       double num2 = zWp13vlQiZcJc - z2J4l3QuGwZhe + 1.0;
-      if (!zS2K6sVvd5Iy.\u0023\u003DzutrFxOU\u003D() || !z2J4l3QuGwZhe.\u0023\u003DzutrFxOU\u003D())
+      if (!zS2K6sVvd5Iy.IsFiniteNumber() || !z2J4l3QuGwZhe.IsFiniteNumber())
         return;
-      if (num1.\u0023\u003DzutrFxOU\u003D())
+      if (num1.IsFiniteNumber())
         this.\u0023\u003Dz_iIh83yfe01U().MinWidth = num1;
-      if (num2.\u0023\u003DzutrFxOU\u003D())
+      if (num2.IsFiniteNumber())
         this.\u0023\u003Dz_iIh83yfe01U().MinHeight = num2;
       Canvas.SetLeft((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), zS2K6sVvd5Iy);
       Canvas.SetTop((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), z2J4l3QuGwZhe);
@@ -165,7 +165,7 @@ internal class TextAnnotation : AnchorPointAnnotation
       double d2 = _param1.\u0023\u003Dz6aJoeqoqAzym + _param2;
       double d3 = _param1.\u0023\u003Dz2J4l3QUGwZHE + _param3;
       double d4 = _param1.\u0023\u003DzWp13vlQiZCJc + _param3;
-      if (!this.\u0023\u003DzpTsgWlwWfZwP(d1, _param4.\u0023\u003Dzu2ObQ3hMALTN()) || !this.\u0023\u003DzpTsgWlwWfZwP(d3, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM()) || !this.\u0023\u003DzpTsgWlwWfZwP(d2, _param4.\u0023\u003Dzu2ObQ3hMALTN()) || !this.\u0023\u003DzpTsgWlwWfZwP(d4, _param4.\u0023\u003Dz2kO1mtG\u0024bEUM()))
+      if (!this.\u0023\u003DzpTsgWlwWfZwP(d1, _param4.ActualWidth) || !this.\u0023\u003DzpTsgWlwWfZwP(d3, _param4.ActualHeight) || !this.\u0023\u003DzpTsgWlwWfZwP(d2, _param4.ActualWidth) || !this.\u0023\u003DzpTsgWlwWfZwP(d4, _param4.ActualHeight))
       {
         double val1_1 = double.IsNaN(d1) ? 0.0 : d1;
         double val2_1 = double.IsNaN(d2) ? val1_1 : d2;
@@ -173,12 +173,12 @@ internal class TextAnnotation : AnchorPointAnnotation
         double val2_2 = double.IsNaN(d4) ? val1_2 : d4;
         if (Math.Max(val1_1, val2_1) < 0.0)
           _param2 -= Math.Max(val1_1, val2_1);
-        if (Math.Min(val1_1, val2_1) > _param4.\u0023\u003Dzu2ObQ3hMALTN())
-          _param2 -= Math.Min(val1_1, val2_1) - (_param4.\u0023\u003Dzu2ObQ3hMALTN() - 1.0);
+        if (Math.Min(val1_1, val2_1) > _param4.ActualWidth)
+          _param2 -= Math.Min(val1_1, val2_1) - (_param4.ActualWidth - 1.0);
         if (Math.Max(val1_2, val2_2) < 0.0)
           _param3 -= Math.Max(val1_2, val2_2);
-        if (Math.Min(val1_2, val2_2) > _param4.\u0023\u003Dz2kO1mtG\u0024bEUM())
-          _param3 -= Math.Min(val1_2, val2_2) - (_param4.\u0023\u003Dz2kO1mtG\u0024bEUM() - 1.0);
+        if (Math.Min(val1_2, val2_2) > _param4.ActualHeight)
+          _param3 -= Math.Min(val1_2, val2_2) - (_param4.ActualHeight - 1.0);
       }
       _param1.\u0023\u003DzS2_K6sVvd5IY += _param2;
       _param1.\u0023\u003Dz6aJoeqoqAzym += _param2;

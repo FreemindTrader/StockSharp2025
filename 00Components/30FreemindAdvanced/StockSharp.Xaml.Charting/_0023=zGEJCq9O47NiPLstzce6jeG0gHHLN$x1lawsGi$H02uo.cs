@@ -25,7 +25,7 @@ internal sealed class \u0023\u003DzGEJCq9O47NiPLstzce6jeG0gHHLN\u0024x1lawsGi\u0
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzEcmsYfw\u003D;
 
   public \u0023\u003DzGEJCq9O47NiPLstzce6jeG0gHHLN\u0024x1lawsGi\u0024H02uo2h0XchZjPEs1bmCfeGhythDHVWo26UKCe(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D _param2,
     double _param3)
   {
@@ -35,7 +35,7 @@ internal sealed class \u0023\u003DzGEJCq9O47NiPLstzce6jeG0gHHLN\u0024x1lawsGi\u0
   }
 
   public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    IPathColor _param1,
     double _param2,
     double _param3)
   {
@@ -62,7 +62,7 @@ internal sealed class \u0023\u003DzGEJCq9O47NiPLstzce6jeG0gHHLN\u0024x1lawsGi\u0
     this.\u0023\u003Dze90r\u0024X6mOh6sMbwaRw\u003D\u003D.Clear();
   }
 
-  void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+  void IDisposable.Dispose()
   {
     this.\u0023\u003DzBNsE20w\u003D();
   }

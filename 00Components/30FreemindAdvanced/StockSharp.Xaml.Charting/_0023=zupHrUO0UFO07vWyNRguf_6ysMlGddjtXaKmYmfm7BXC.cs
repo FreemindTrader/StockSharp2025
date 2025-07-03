@@ -75,22 +75,22 @@ internal sealed class \u0023\u003DzupHrUO0UFO07vWyNRguf_6ysMlGddjtXaKmYmfm7BXCbJ
     return Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, (this.\u0023\u003Dz7He4cRQXQdd\u0024 - this.\u0023\u003Dzsddx1wVhEV09) * _param1 * this.\u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D + this.\u0023\u003Dzsddx1wVhEV09) * this.\u0023\u003Dzj3OllUE2noch;
   }
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  public override DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3)
+    IRange _param3)
   {
-    return ((\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) _param3.Clone()).\u0023\u003DzzXTqVFg\u003D(_param1, _param2, true, this.\u0023\u003DzMXPRhxbl7IIq).\u0023\u003DzfODy_Nxn8OGy();
+    return ((IRange) _param3.Clone()).GrowBy(_param1, _param2, true, this.\u0023\u003DzMXPRhxbl7IIq).AsDoubleRange();
   }
 
-  public override dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dznj_TkFQ\u003D(
+  public override DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd _param2)
+    DoubleRange _param2)
   {
     double a = this.\u0023\u003DzACwLhyc\u003D(0.0);
     double num = Math.Log(this.\u0023\u003DzACwLhyc\u003D(_param1), this.\u0023\u003DzMXPRhxbl7IIq) - Math.Log(a, this.\u0023\u003DzMXPRhxbl7IIq);
     if (this.\u0023\u003DzO78SU8SL\u0024EgcBFJxM_M4bKPQHMQQ())
       num = -num;
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, this.\u0023\u003Dzsddx1wVhEV09 + num), Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, this.\u0023\u003Dz7He4cRQXQdd\u0024 + num));
+    return new DoubleRange(Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, this.\u0023\u003Dzsddx1wVhEV09 + num), Math.Pow(this.\u0023\u003DzMXPRhxbl7IIq, this.\u0023\u003Dz7He4cRQXQdd\u0024 + num));
   }
 }

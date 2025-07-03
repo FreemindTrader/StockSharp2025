@@ -36,7 +36,7 @@ internal sealed class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u
   }
 
   public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-    \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+    IPathColor _param1,
     double _param2,
     double _param3)
   {
@@ -147,7 +147,7 @@ internal sealed class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
     }
 

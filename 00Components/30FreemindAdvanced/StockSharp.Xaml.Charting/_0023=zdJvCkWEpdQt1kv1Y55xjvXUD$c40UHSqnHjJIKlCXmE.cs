@@ -12,13 +12,13 @@ using System;
 internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D
 {
   private readonly double \u0023\u003DzpYI5BlRzFVM9Y0pOKA\u003D\u003D;
-  private readonly \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB \u0023\u003DzLXQXNXQ\u003D;
+  private readonly IAxis \u0023\u003DzLXQXNXQ\u003D;
   private readonly double \u0023\u003DzJpbCbio\u003D;
   private double \u0023\u003DzApIg1NM\u003D;
   private double \u0023\u003DzbYn_88U\u003D;
 
   public \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1,
+    IAxis _param1,
     double _param2,
     double _param3)
   {
@@ -29,7 +29,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
   }
 
   public \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1,
+    IAxis _param1,
     double _param2)
     : this(_param1, _param2, 0.0)
   {
@@ -50,7 +50,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
   }
 
   public void \u0023\u003Dz7dZR55k\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     if (_param1 == null)
     {
@@ -58,17 +58,17 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
     }
     else
     {
-      dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd1 = _param1.\u0023\u003DzfODy_Nxn8OGy();
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw = this.\u0023\u003DzLXQXNXQ\u003D.get_DataRange();
+      DoubleRange klqcJ87Zm8UwE3WEjd1 = _param1.AsDoubleRange();
+      IRange abyLt9clZggmJsWhw = this.\u0023\u003DzLXQXNXQ\u003D.get_DataRange();
       if (abyLt9clZggmJsWhw == null)
       {
         this.\u0023\u003DzD9Yw\u0024iTKpgBA();
       }
       else
       {
-        if (this.\u0023\u003DzLXQXNXQ\u003D.get_GrowBy() != null)
-          abyLt9clZggmJsWhw = abyLt9clZggmJsWhw.\u0023\u003DzzXTqVFg\u003D(this.\u0023\u003DzLXQXNXQ\u003D.get_GrowBy().Min, this.\u0023\u003DzLXQXNXQ\u003D.get_GrowBy().Max);
-        dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd2 = abyLt9clZggmJsWhw.\u0023\u003DzfODy_Nxn8OGy();
+        if (this.\u0023\u003DzLXQXNXQ\u003D.GrowBy != null)
+          abyLt9clZggmJsWhw = abyLt9clZggmJsWhw.GrowBy(this.\u0023\u003DzLXQXNXQ\u003D.GrowBy.Min, this.\u0023\u003DzLXQXNXQ\u003D.GrowBy.Max);
+        DoubleRange klqcJ87Zm8UwE3WEjd2 = abyLt9clZggmJsWhw.AsDoubleRange();
         double diff = klqcJ87Zm8UwE3WEjd2.Diff;
         if (diff.CompareTo(0.0) == 0)
           this.\u0023\u003DzD9Yw\u0024iTKpgBA();
@@ -85,8 +85,8 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
   }
 
   private void \u0023\u003DzmTUBEm_gfEtH(
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd _param1,
-    dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd _param2,
+    DoubleRange _param1,
+    DoubleRange _param2,
     double _param3)
   {
     double num1;
@@ -146,7 +146,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
     }
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzfRDRUq8\u003D(
+  public IRange \u0023\u003DzfRDRUq8\u003D(
     double _param1)
   {
     double num1 = (this.\u0023\u003DzApIg1NM\u003D + (this.\u0023\u003DzbYn_88U\u003D - this.\u0023\u003DzApIg1NM\u003D) / 2.0) * this.\u0023\u003DzJpbCbio\u003D;
@@ -154,7 +154,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
     return this.\u0023\u003Dz7FKHKl8\u003D(num2, num2);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003Dz7FKHKl8\u003D(
+  public IRange \u0023\u003Dz7FKHKl8\u003D(
     double _param1,
     double _param2)
   {
@@ -187,17 +187,17 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
     return _param1;
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzZByBk4zFcJKy()
+  public IRange \u0023\u003DzZByBk4zFcJKy()
   {
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw1 = (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) null;
+    IRange abyLt9clZggmJsWhw1 = (IRange) null;
     if (this.\u0023\u003DzLXQXNXQ\u003D != null && this.\u0023\u003DzLXQXNXQ\u003D.VisibleRange != null)
     {
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw2 = this.\u0023\u003DzLXQXNXQ\u003D.get_DataRange();
+      IRange abyLt9clZggmJsWhw2 = this.\u0023\u003DzLXQXNXQ\u003D.get_DataRange();
       if (abyLt9clZggmJsWhw2 != null)
       {
-        if (this.\u0023\u003DzLXQXNXQ\u003D.get_GrowBy() != null)
-          abyLt9clZggmJsWhw2 = abyLt9clZggmJsWhw2.\u0023\u003DzzXTqVFg\u003D(this.\u0023\u003DzLXQXNXQ\u003D.get_GrowBy().Min, this.\u0023\u003DzLXQXNXQ\u003D.get_GrowBy().Max);
-        dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd klqcJ87Zm8UwE3WEjd = abyLt9clZggmJsWhw2.\u0023\u003DzfODy_Nxn8OGy();
+        if (this.\u0023\u003DzLXQXNXQ\u003D.GrowBy != null)
+          abyLt9clZggmJsWhw2 = abyLt9clZggmJsWhw2.GrowBy(this.\u0023\u003DzLXQXNXQ\u003D.GrowBy.Min, this.\u0023\u003DzLXQXNXQ\u003D.GrowBy.Max);
+        DoubleRange klqcJ87Zm8UwE3WEjd = abyLt9clZggmJsWhw2.AsDoubleRange();
         double diff = klqcJ87Zm8UwE3WEjd.Diff;
         double num1;
         double num2;
@@ -228,7 +228,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
           num3 = num1 * diff + klqcJ87Zm8UwE3WEjd.Min;
           num4 = num2 * diff + klqcJ87Zm8UwE3WEjd.Min;
         }
-        if (num3 < num4 && num3.\u0023\u003DzutrFxOU\u003D() && num4.\u0023\u003DzutrFxOU\u003D())
+        if (num3 < num4 && num3.IsFiniteNumber() && num4.IsFiniteNumber())
           abyLt9clZggmJsWhw1 = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D(this.\u0023\u003DzLXQXNXQ\u003D.VisibleRange.GetType(), (IComparable) num3, (IComparable) num4);
       }
       else

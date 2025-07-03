@@ -356,7 +356,7 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     }
 
     [DebuggerHidden]
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
       switch (this.\u0023\u003Dz4fzyEZ1SsHYa)
       {
@@ -480,7 +480,7 @@ label_21:
       }
       __fault
       {
-        this.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D();
+        this.Dispose();
       }
     }
 

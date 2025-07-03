@@ -110,7 +110,7 @@ internal sealed class dje_zHR7NJDL95STD4SWVG26WR43JGQLXY8NHRZ7Q26829WGD2MZ_ejd :
 
   private void \u0023\u003DzHi3KLf0npKDN(FrameworkElement _param1, Point _param2)
   {
-    Rect rect1 = new Rect(0.0, 0.0, this.ModifierSurface.\u0023\u003Dzu2ObQ3hMALTN(), this.ModifierSurface.\u0023\u003Dz2kO1mtG\u0024bEUM());
+    Rect rect1 = new Rect(0.0, 0.0, this.ModifierSurface.ActualWidth, this.ModifierSurface.ActualHeight);
     double length1 = _param2.X + 6.0;
     double length2 = _param2.Y + 6.0;
     Rect rect2 = new Rect(length1, length2, _param1.ActualWidth, _param1.ActualHeight);

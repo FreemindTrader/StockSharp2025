@@ -12,8 +12,8 @@ using System.Windows.Media;
 
 #nullable disable
 internal struct \u0023\u003DzMLvZWaqDqEKovfY1GVv1jDvRHJm4zN8x0ttFQf_UGKPMTTL3MdOFwfA\u003D : 
-  \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D,
-  \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D,
+  IBrush2D,
+  IPathColor,
   IDisposable
 {
   
@@ -37,13 +37,13 @@ internal struct \u0023\u003DzMLvZWaqDqEKovfY1GVv1jDvRHJm4zN8x0ttFQf_UGKPMTTL3MdO
   public Color Color => this.\u0023\u003Dzfzo3Zt0\u003D;
 
   [SpecialName]
-  public int \u0023\u003DzjOBmdfcoOy1e() => -1;
+  public int ColorCode => -1;
 
   [SpecialName]
   public bool \u0023\u003DzZTHbSX1_i1\u0024W() => this.\u0023\u003Dzy_U\u00246cJFiCuB;
 
   [SpecialName]
-  public bool \u0023\u003Dz7zS5QbVF0tOL() => this.\u0023\u003DzPsHNvsjqIq72;
+  public bool IsTransparent => this.\u0023\u003DzPsHNvsjqIq72;
 
   public void Dispose()
   {

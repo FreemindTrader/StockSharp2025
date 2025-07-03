@@ -40,7 +40,7 @@ internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUE26NQHMD6LSTB75Z6MZSVLR87CYE
   public override bool IsPolarAxis => true;
 
   protected override void \u0023\u003DzbUPOl6ZpNIOI(
-    \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I _param1,
+    IRenderContext2D _param1,
     Style _param2,
     IEnumerable<float> _param3)
   {
@@ -52,7 +52,7 @@ internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUE26NQHMD6LSTB75Z6MZSVLR87CYE
         return;
       Point point = this.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8().\u0023\u003DzsTReN_n58EEf(new Point(0.0, 0.0));
       SolidColorBrush solidColorBrush = new SolidColorBrush();
-      using (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D((Brush) solidColorBrush, 1.0, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive))
+      using (IBrush2D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D((Brush) solidColorBrush, 1.0, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive))
       {
         foreach (float num in _param3)
           _param1.\u0023\u003DzIZCdW2WR6Rxw(rhwYsZxA33iRu6Id7J, xrgcdFbSdWgN9GcT8, point, (double) num * 2.0, (double) num * 2.0);

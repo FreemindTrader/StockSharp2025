@@ -24,18 +24,18 @@ internal sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_At
     this.\u0023\u003Dz91pRWIg\u003D = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<double>(_param1);
   }
 
-  public dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2()
+  public DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
     double num1;
     double num2;
     \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz\u0024zWmmGTAbDON<double>(this.\u0023\u003Dz91pRWIg\u003D.\u0023\u003DzRr4AYdnHaTxa(), 0, this.\u0023\u003Dz91pRWIg\u003D.Count, out num1, out num2);
-    return new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num1, num2);
+    return new DoubleRange(num1, num2);
   }
 
   [SpecialName]
   public int \u0023\u003Dz5ibOMK6j\u0024jfL() => 0;
 
-  public void \u0023\u003Dz6wT8xpE\u003D(
+  public void Add(
     \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D _param1)
   {
     this.\u0023\u003DzCsKlB_w\u003D.Add(_param1.Property());

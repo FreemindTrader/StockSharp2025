@@ -85,7 +85,7 @@ public class ChartPanel :
   
   private static readonly List<ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D> \u0023\u003DzoQNjsvS8x7txZ62LTQ\u003D\u003D = new List<ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D>();
   
-  private PropertyChangedEventHandler \u0023\u003DziApqnpw\u003D;
+  private PropertyChangedEventHandler PropertyChangedEvent;
   
   private bool \u0023\u003DzMJITrmQ\u003D;
   
@@ -529,13 +529,13 @@ public class ChartPanel :
 
   event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
   {
-    add => this.\u0023\u003DziApqnpw\u003D += value;
-    remove => this.\u0023\u003DziApqnpw\u003D -= value;
+    add => this.PropertyChangedEvent += value;
+    remove => this.PropertyChangedEvent -= value;
   }
 
   void INotifyPropertyChangedEx.NotifyPropertyChanged(string propertyName)
   {
-    PropertyChangedEventHandler ziApqnpw = this.\u0023\u003DziApqnpw\u003D;
+    PropertyChangedEventHandler ziApqnpw = this.PropertyChangedEvent;
     if (ziApqnpw == null)
       return;
     DelegateHelper.Invoke(ziApqnpw, (object) this, propertyName);

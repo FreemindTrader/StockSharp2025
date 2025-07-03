@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 #nullable disable
 internal interface \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk : 
-  \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z
+  IHitTestable
 {
   UIElementCollection \u0023\u003DzBDSV99pPo8hY();
 }

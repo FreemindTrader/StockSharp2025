@@ -34,9 +34,9 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register("", typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzEM7rzxveqzC2)));
+  DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register("", typeof (IAxis), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzEM7rzxveqzC2)));
   
-  public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register("", typeof (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzGbJ0qpVdAcnUICGBTQ\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register("", typeof (IRange), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzGbJ0qpVdAcnUICGBTQ\u003D\u003D)));
   
   public static readonly DependencyProperty \u0023\u003Dzu60E9d4eT7Mh = DependencyProperty.Register("", typeof (Point), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzKY6FELNu43vWrzYtTQ\u003D\u003D)));
   
@@ -121,11 +121,11 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     this.\u0023\u003DzrVPkAKI\u003D(this.SelectedRange);
   }
 
-  public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D SelectedRange
+  public IRange SelectedRange
   {
     get
     {
-      return (\u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D) this.GetValue(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003Dz8z6_NTW32S6R);
+      return (IRange) this.GetValue(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003Dz8z6_NTW32S6R);
     }
     set
     {
@@ -133,11 +133,11 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     }
   }
 
-  public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB Axis
+  public IAxis Axis
   {
     get
     {
-      return (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB) this.GetValue(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003Dzmtd1hks\u003D);
+      return (IAxis) this.GetValue(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003Dzmtd1hks\u003D);
     }
     set
     {
@@ -230,13 +230,13 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   }
 
   private void \u0023\u003DzrVPkAKI\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     this.\u0023\u003DzuT_nzto\u003D.\u0023\u003Dz7dZR55k\u003D(_param1);
     this.\u0023\u003DzMukWa4UvVPUn();
   }
 
-  private void \u0023\u003Dz5q8i9C4\u003D()
+  private void InvalidateElement()
   {
     this.\u0023\u003Dz_a7lQd926eAW.\u0023\u003DzEy\u0024V_bY\u003D();
   }
@@ -249,7 +249,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   }
 
   private void \u0023\u003DzlKgG5nJS80MM(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1,
+    IAxis _param1,
     double _param2)
   {
     double num = this.Orientation == Orientation.Horizontal ? this.ActualWidth : this.ActualHeight;
@@ -384,7 +384,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   }
 
   private void \u0023\u003DznvRv7Suy\u0024ne6(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     bool _param2)
   {
     if (this.Axis == null || this.Axis.VisibleRange == null || _param1 == null)
@@ -396,7 +396,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   }
 
   private void \u0023\u003Dz2FKbHTx8Inhh(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     bool _param2)
   {
     this.SetCurrentValue(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003Dz8z6_NTW32S6R, (object) _param1);
@@ -411,7 +411,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   }
 
   public void \u0023\u003DzJialaqnMsbTX0TJQl_fIDy4\u003D(
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1,
+    IRange _param1,
     TimeSpan _param2)
   {
     dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D dexM3dn6RaCrlFgQ1 = new dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D();
@@ -422,13 +422,13 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     if (this.Axis.get_IsLogarithmicAxis())
     {
       double logarithmicBase = ((\u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D) this.Axis).get_LogarithmicBase();
-      point1 = new Point(Math.Log(this.SelectedRange.Min.\u0023\u003Dzb9UCYbo\u003D(), logarithmicBase), Math.Log(this.SelectedRange.Max.\u0023\u003Dzb9UCYbo\u003D(), logarithmicBase));
-      point2 = new Point(Math.Log(dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Min.\u0023\u003Dzb9UCYbo\u003D(), logarithmicBase), Math.Log(dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Max.\u0023\u003Dzb9UCYbo\u003D(), logarithmicBase));
+      point1 = new Point(Math.Log(this.SelectedRange.Min.ToDouble(), logarithmicBase), Math.Log(this.SelectedRange.Max.ToDouble(), logarithmicBase));
+      point2 = new Point(Math.Log(dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Min.ToDouble(), logarithmicBase), Math.Log(dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Max.ToDouble(), logarithmicBase));
     }
     else
     {
-      point1 = new Point(this.SelectedRange.Min.\u0023\u003Dzb9UCYbo\u003D(), this.SelectedRange.Max.\u0023\u003Dzb9UCYbo\u003D());
-      point2 = new Point(dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Min.\u0023\u003Dzb9UCYbo\u003D(), dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Max.\u0023\u003Dzb9UCYbo\u003D());
+      point1 = new Point(this.SelectedRange.Min.ToDouble(), this.SelectedRange.Max.ToDouble());
+      point2 = new Point(dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Min.ToDouble(), dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D.Max.ToDouble());
     }
     dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D dexM3dn6RaCrlFgQ2 = dexM3dn6RaCrlFgQ1;
     PointAnimation pointAnimation = new PointAnimation();
@@ -465,25 +465,25 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   {
     if (!(_param0 is dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd rzxguxypaD7ZywzaEjd))
       return;
-    if (_param1.OldValue is \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB oldValue)
+    if (_param1.OldValue is IAxis oldValue)
       oldValue.\u0023\u003DzwG_uRQ_EmTwc(new EventHandler<EventArgs>(rzxguxypaD7ZywzaEjd.\u0023\u003DzaNiYNgKj9pMk));
-    if (_param1.NewValue is \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB newValue)
+    if (_param1.NewValue is IAxis newValue)
     {
       newValue.\u0023\u003DzF_\u0024wky5\u0024qiYa(new EventHandler<EventArgs>(rzxguxypaD7ZywzaEjd.\u0023\u003DzaNiYNgKj9pMk));
       rzxguxypaD7ZywzaEjd.\u0023\u003DzfDNfYoziR5Tp(newValue);
     }
     else
       rzxguxypaD7ZywzaEjd.ClearValue(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003Dz8z6_NTW32S6R);
-    rzxguxypaD7ZywzaEjd.\u0023\u003Dz5q8i9C4\u003D();
+    rzxguxypaD7ZywzaEjd.InvalidateElement();
   }
 
   private void \u0023\u003DzaNiYNgKj9pMk(object _param1, EventArgs _param2)
   {
-    this.\u0023\u003Dz5q8i9C4\u003D();
+    this.InvalidateElement();
   }
 
   private void \u0023\u003DzfDNfYoziR5Tp(
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB _param1)
+    IAxis _param1)
   {
     this.\u0023\u003DzlKgG5nJS80MM(_param1, this.ZoomLimit);
     this.\u0023\u003DzMukWa4UvVPUn();
@@ -511,8 +511,8 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     DependencyPropertyChangedEventArgs _param1)
   {
     dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd rzxguxypaD7ZywzaEjd = (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd) _param0;
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D oldValue = _param1.OldValue as \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D;
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D newValue = _param1.NewValue as \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D;
+    IRange oldValue = _param1.OldValue as IRange;
+    IRange newValue = _param1.NewValue as IRange;
     if (oldValue != null)
       oldValue.PropertyChanged -= new PropertyChangedEventHandler(rzxguxypaD7ZywzaEjd.\u0023\u003Dz2bU_9BbH19ybd6I4TQ\u003D\u003D);
     if (newValue == null)
@@ -523,7 +523,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
 
   private static void \u0023\u003DzrVPkAKI\u003D(
     dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd _param0,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param1)
+    IRange _param1)
   {
     if (_param0.Axis == null)
       return;
@@ -583,7 +583,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
 
     internal void \u0023\u003DzMcNxOaHJdA_oEv9HDTrk3bpRatP8()
     {
-      \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D abyLt9clZggmJsWhw;
+      IRange abyLt9clZggmJsWhw;
       if (this.\u0023\u003DzQc0xUQk\u003D.Axis.get_IsLogarithmicAxis())
       {
         double logarithmicBase = ((\u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D) this.\u0023\u003DzQc0xUQk\u003D.Axis).get_LogarithmicBase();
@@ -598,7 +598,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
   private sealed class \u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D
   {
     public dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd \u0023\u003DzRRvwDu67s9Rm;
-    public \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D \u0023\u003DzAHNI_S0\u003D;
+    public IRange \u0023\u003DzAHNI_S0\u003D;
     public PointAnimation \u0023\u003DzXB4BRQQhi9cE;
 
     internal void \u0023\u003DzUrhjvMdypVP4nr450dOZW2HHTvcf(

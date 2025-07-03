@@ -30,7 +30,7 @@ internal sealed class \u0023\u003Dz2Qv8a0HfC9ieiy4m0TM2aAzmsNDy8Fpd\u0024of18IRv
     string str = _param1 == null ? string.Empty : _param1.ToString();
     if (this.\u0023\u003Dzoem3lxBSJacx != null && comparable != null)
     {
-      \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ek_dynWMOFzgH4RlW\u0024\u0024B0lB usedAxis = this.\u0023\u003Dzoem3lxBSJacx.GetUsedAxis();
+      IAxis usedAxis = this.\u0023\u003Dzoem3lxBSJacx.GetUsedAxis();
       BindingExpression bindingExpression = this.\u0023\u003Dzoem3lxBSJacx.GetBindingExpression(LineAnnotationWithLabelsBase.LabelTextFormattingProperty);
       bool flag = bindingExpression != null;
       if (flag)

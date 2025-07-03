@@ -34,15 +34,15 @@ namespace StockSharp.Xaml.Charting;
 public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, IComponentConnector
 {
   
-  private readonly IScichartSurfaceVM \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
   
-  private readonly dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[] \u0023\u003DzUyqHQCymOwtN;
+  private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
   
   private bool \u0023\u003Dzlx9Rh5m0_e0t;
   
   private bool \u0023\u003DzjHU2QreifXYX = true;
   
-  internal dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd \u0023\u003DzO72kpz0\u003D;
+  internal Chart \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -52,33 +52,33 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   public EquityCurveChart()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (IScichartSurfaceVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxisType = ChartAxisType.CategoryDateTime;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
     ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>().AutoRange = true;
     ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>().AutoRange = true;
-    dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[] v7UvhxrxhaatqEjdArray = new dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd[4];
+    ChartModifierBase[] v7UvhxrxhaatqEjdArray = new ChartModifierBase[4];
     dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd ypbydebG6VffgcpzeEjd = new dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd();
     ypbydebG6VffgcpzeEjd.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
     ypbydebG6VffgcpzeEjd.ClipModeX = dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None;
-    v7UvhxrxhaatqEjdArray[0] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) ypbydebG6VffgcpzeEjd;
+    v7UvhxrxhaatqEjdArray[0] = (ChartModifierBase) ypbydebG6VffgcpzeEjd;
     dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd kufjwuuvR4YbN3Ejd = new dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd();
     kufjwuuvR4YbN3Ejd.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
-    v7UvhxrxhaatqEjdArray[1] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) kufjwuuvR4YbN3Ejd;
+    v7UvhxrxhaatqEjdArray[1] = (ChartModifierBase) kufjwuuvR4YbN3Ejd;
     dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd fk4QgaphfmmujdEjd = new dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd();
     fk4QgaphfmmujdEjd.ExecuteOn = dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick;
-    v7UvhxrxhaatqEjdArray[2] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) fk4QgaphfmmujdEjd;
+    v7UvhxrxhaatqEjdArray[2] = (ChartModifierBase) fk4QgaphfmmujdEjd;
     dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
     dgE2H48XyyA87SEjd.AxisId = "";
-    v7UvhxrxhaatqEjdArray[3] = (dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd) dgE2H48XyyA87SEjd;
+    v7UvhxrxhaatqEjdArray[3] = (ChartModifierBase) dgE2H48XyyA87SEjd;
     this.\u0023\u003DzUyqHQCymOwtN = v7UvhxrxhaatqEjdArray;
-    CollectionHelper.AddRange<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((ICollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers, (IEnumerable<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) this.\u0023\u003DzUyqHQCymOwtN);
-    ObservableCollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
+    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers, (IEnumerable<IChartModifier>) this.\u0023\u003DzUyqHQCymOwtN);
+    ObservableCollection<IChartModifier> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
     dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd jhzfqwrsvK3MyA6SqEjd = new dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
     jhzfqwrsvK3MyA6SqEjd.UseInterpolation = false;
-    \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D> issiadppaSwGkbOr8 = new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D) jhzfqwrsvK3MyA6SqEjd);
-    CollectionHelper.AddRange<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>((ICollection<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) childModifiers, (IEnumerable<\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWhChhAr3Kksm46UY2ZY\u003D>) issiadppaSwGkbOr8);
+    \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartModifier> issiadppaSwGkbOr8 = new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartModifier>((IChartModifier) jhzfqwrsvK3MyA6SqEjd);
+    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) childModifiers, (IEnumerable<IChartModifier>) issiadppaSwGkbOr8);
     this.\u0023\u003DzO72kpz0\u003D.PreviewMouseWheel += new MouseWheelEventHandler(this.\u0023\u003DzzPTbGgY94FCnML89IBWoh_E\u003D);
     this.\u0023\u003DzO72kpz0\u003D.PreviewMouseDoubleClick += new MouseButtonEventHandler(this.\u0023\u003DzihheewX0KTANlZbr4wNeex8\u003D);
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().YAxises, EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzFdH9dhR0fERarkwbZA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzFdH9dhR0fERarkwbZA\u003D\u003D = new Action<IChartAxis>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzvXldtNp6EqOzZHGiHo5vu0E\u003D)));
@@ -197,7 +197,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   /// <summary>To reset all chart elements.</summary>
   public void Reset()
   {
-    IScichartSurfaceVM zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
+    ScichartSurfaceMVVM zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
     INotifyList<IChartElement> elements = this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements;
     int index = 0;
     IChartElement[] chartElementArray = new IChartElement[((ICollection<IChartElement>) elements).Count];
@@ -206,21 +206,21 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
       chartElementArray[index] = chartElement;
       ++index;
     }
-    zKj7nvWq.\u0023\u003DzYI36Ggg\u003D((IEnumerable<IChartElement>) new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<IChartElement>(chartElementArray));
+    zKj7nvWq.Reset((IEnumerable<IChartElement>) new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<IChartElement>(chartElementArray));
   }
 
   /// <summary>To reset specified chart elements.</summary>
   /// <param name="items">Elements to reset.</param>
   public void Reset(IEnumerable<ICollection<LineData<DateTime>>> items)
   {
-    this.\u0023\u003DzKj7nvWQ\u003D.\u0023\u003DzYI36Ggg\u003D((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAVykYn0F15D5Ztnzfw\u003D\u003D))));
+    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAVykYn0F15D5Ztnzfw\u003D\u003D))));
   }
 
   /// <summary>To reset specified chart elements.</summary>
   /// <param name="elements">Elements to reset.</param>
   public void Reset(IEnumerable<IChartBandElement> elements)
   {
-    this.\u0023\u003DzKj7nvWQ\u003D.\u0023\u003DzYI36Ggg\u003D((IEnumerable<IChartElement>) elements);
+    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) elements);
   }
 
   private void \u0023\u003DzG8IJ51fy4J4_607kP0quVX8\u003D(bool _param1)
@@ -229,7 +229,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     doDcwiev7trI4Ny0.\u0023\u003DzCPrYc1Q\u003D = _param1;
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxises, new Action<IChartAxis>(doDcwiev7trI4Ny0.\u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D));
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().YAxises, new Action<IChartAxis>(doDcwiev7trI4Ny0.\u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D));
-    CollectionHelper.ForEach<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd>((IEnumerable<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd>) this.\u0023\u003DzUyqHQCymOwtN, new Action<dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd>(doDcwiev7trI4Ny0.\u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D));
+    CollectionHelper.ForEach<ChartModifierBase>((IEnumerable<ChartModifierBase>) this.\u0023\u003DzUyqHQCymOwtN, new Action<ChartModifierBase>(doDcwiev7trI4Ny0.\u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D));
   }
 
   /// <summary>Load settings.</summary>
@@ -265,7 +265,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
   void IComponentConnector.Connect(int connectionId, object target)
   {
     if (connectionId == 1)
-      this.\u0023\u003DzO72kpz0\u003D = (dje_zZY2QS9KRNTZS9HAG4USNMAU3MR49RS222URU893E_ejd) target;
+      this.\u0023\u003DzO72kpz0\u003D = (Chart) target;
     else
       this.\u0023\u003DzQGCmQMjHdLKS = true;
   }
@@ -338,7 +338,7 @@ public class EquityCurveChart : UserControl, IThemeableChart, IPersistable, ICom
     }
 
     internal void \u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D(
-      dje_zD3DVMB6QWGLYD9NXQ7JB76XAKKWUTGVEPUV7UVHXRXHAATQ_ejd _param1)
+      ChartModifierBase _param1)
     {
       _param1.IsEnabled = this.\u0023\u003DzCPrYc1Q\u003D;
     }

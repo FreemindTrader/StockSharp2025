@@ -37,8 +37,8 @@ internal sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf
     return (\u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D) new \u0023\u003DzQ4iRj1YTApc8D349VbLPOV89ONPzc9V3zddUgPY\u003D();
   }
 
-  public override \u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I \u0023\u003Dz1cRMfLZU4Eo2()
+  public override IRenderContext2D \u0023\u003Dz1cRMfLZU4Eo2()
   {
-    return (\u0023\u003DzlIIQe9QryEp0zlHhxjV_2ax18wWJMvXdEDq1k7UiFd2I) new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x(this.\u0023\u003DzZAw3cTjlwxct(), this.\u0023\u003DzRIsZuY3LT4U\u0024, this.\u0023\u003DzcNkyaHI7GTSW, this.\u0023\u003DzK3L_6jB1hKFR, this.\u0023\u003DzeUisW3maAY9U, this.\u0023\u003DzNFOu7BeFZYda());
+    return (IRenderContext2D) new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x(this.\u0023\u003DzZAw3cTjlwxct(), this.\u0023\u003DzRIsZuY3LT4U\u0024, this.\u0023\u003DzcNkyaHI7GTSW, this.\u0023\u003DzK3L_6jB1hKFR, this.\u0023\u003DzeUisW3maAY9U, this.\u0023\u003DzNFOu7BeFZYda());
   }
 }

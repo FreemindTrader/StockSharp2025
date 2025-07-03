@@ -47,7 +47,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
   internal static Point \u0023\u003DzaPPLsvfM_Sst(
     this FrameworkElement _param0,
     Point _param1,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param2)
+    IHitTestable _param2)
   {
     return _param2 is UIElement relativeTo ? _param0.TranslatePoint(_param1, relativeTo) : new Point(0.0, 0.0);
   }
@@ -60,7 +60,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
 
   internal static Rect \u0023\u003DzdC9whUui_gN\u0024(
     this FrameworkElement _param0,
-    \u0023\u003DzzF1ExzlVBfOa5IIxZ\u0024bDKBa6QBHQt0COuh5AtkBhEO3z _param1)
+    IHitTestable _param1)
   {
     UIElement uiElement = _param1 as UIElement;
     Rect? nullable = new Rect?();

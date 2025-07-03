@@ -9,15 +9,15 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzH9HNkng\u003D> : 
+internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<T> : 
   IDisposable
-  where \u0023\u003DzH9HNkng\u003D : IDisposable
+  where T : IDisposable
 {
   
-  private readonly \u0023\u003DzH9HNkng\u003D \u0023\u003DzvQeD1pE\u003D;
+  private readonly T \u0023\u003DzvQeD1pE\u003D;
 
   public \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D(
-    \u0023\u003DzH9HNkng\u003D _param1)
+    T _param1)
   {
     this.\u0023\u003DzvQeD1pE\u003D = _param1;
   }
@@ -27,7 +27,7 @@ internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\
     this.\u0023\u003DzTuM3X1E\u003D(false);
   }
 
-  internal \u0023\u003DzH9HNkng\u003D \u0023\u003DzQAdOJsjJeOwf()
+  internal T \u0023\u003DzQAdOJsjJeOwf()
   {
     return this.\u0023\u003DzvQeD1pE\u003D;
   }
@@ -45,8 +45,8 @@ internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\
     this.\u0023\u003DzvQeD1pE\u003D.Dispose();
   }
 
-  public static explicit operator \u0023\u003DzH9HNkng\u003D(
-    \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzH9HNkng\u003D> _param0)
+  public static explicit operator T(
+    \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<T> _param0)
   {
     return _param0.\u0023\u003DzvQeD1pE\u003D;
   }

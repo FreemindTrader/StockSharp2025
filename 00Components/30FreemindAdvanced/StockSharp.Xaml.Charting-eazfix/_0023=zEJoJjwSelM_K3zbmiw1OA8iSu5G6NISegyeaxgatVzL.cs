@@ -1,0 +1,271 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: #=zEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg=
+// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
+
+using System;
+using System.Runtime.CompilerServices;
+
+#nullable disable
+internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D
+{
+  private dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003DzI8Mw9xZs1VOkQCWXlg\u003D\u003D;
+  private dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003DzoPnP1TQ_yGZhzl0Qsg\u003D\u003D;
+  private double \u0023\u003DzSvHdzp8IGAbDN4U9iw\u003D\u003D;
+  private double \u0023\u003DzTKGxZWx0nYdN;
+
+  public \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D(
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd _param1,
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd _param2)
+  {
+    if (_param2.dje_z3GBAX47U_ejd < _param1.dje_z3GBAX47U_ejd || _param2.dje_zLPL6EZPA_ejd < _param1.dje_zLPL6EZPA_ejd || _param2.dje_zX8HQ8VV9_ejd < _param1.dje_zX8HQ8VV9_ejd)
+      throw new ArgumentException("All values of min must be less than all values in max.");
+    this.\u0023\u003DzI8Mw9xZs1VOkQCWXlg\u003D\u003D = _param1;
+    this.\u0023\u003DzoPnP1TQ_yGZhzl0Qsg\u003D\u003D = _param2;
+  }
+
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003Dz2lXru4I\u003D()
+  {
+    return this.\u0023\u003DzKfTtpGVPstS1() - this.\u0023\u003DzberXHCxSVmX3();
+  }
+
+  public double \u0023\u003Dz0Kf9Fp2IvXiN()
+  {
+    return this.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd;
+  }
+
+  public double \u0023\u003DzZwfposiA71s\u0024()
+  {
+    return this.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd;
+  }
+
+  public double \u0023\u003DzcxpQOK8nrqAQ()
+  {
+    return this.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd;
+  }
+
+  public \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D \u0023\u003DzWJtAfMs\u003D(
+    \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D _param1)
+  {
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray1 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[8];
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray2 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd1 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num1 = xxpaxL8AcxpW32QaEjd1.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd1 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num2 = xxpaxL8AcxpW32QaEjd1.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd1 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num3 = xxpaxL8AcxpW32QaEjd1.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd2 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num1, num2, num3);
+    xxpaxL8AcxpW32QaEjdArray2[0] = xxpaxL8AcxpW32QaEjd2;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray3 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd3 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num4 = xxpaxL8AcxpW32QaEjd3.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd3 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num5 = xxpaxL8AcxpW32QaEjd3.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd3 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num6 = xxpaxL8AcxpW32QaEjd3.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd4 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num4, num5, num6);
+    xxpaxL8AcxpW32QaEjdArray3[1] = xxpaxL8AcxpW32QaEjd4;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray4 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd5 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num7 = xxpaxL8AcxpW32QaEjd5.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd5 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num8 = xxpaxL8AcxpW32QaEjd5.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd5 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num9 = xxpaxL8AcxpW32QaEjd5.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd6 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num7, num8, num9);
+    xxpaxL8AcxpW32QaEjdArray4[2] = xxpaxL8AcxpW32QaEjd6;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray5 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd7 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num10 = xxpaxL8AcxpW32QaEjd7.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd7 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num11 = xxpaxL8AcxpW32QaEjd7.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd7 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num12 = xxpaxL8AcxpW32QaEjd7.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd8 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num10, num11, num12);
+    xxpaxL8AcxpW32QaEjdArray5[3] = xxpaxL8AcxpW32QaEjd8;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray6 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd9 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num13 = xxpaxL8AcxpW32QaEjd9.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd9 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num14 = xxpaxL8AcxpW32QaEjd9.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd9 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num15 = xxpaxL8AcxpW32QaEjd9.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd10 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num13, num14, num15);
+    xxpaxL8AcxpW32QaEjdArray6[4] = xxpaxL8AcxpW32QaEjd10;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray7 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd11 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num16 = xxpaxL8AcxpW32QaEjd11.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd11 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num17 = xxpaxL8AcxpW32QaEjd11.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd11 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num18 = xxpaxL8AcxpW32QaEjd11.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd12 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num16, num17, num18);
+    xxpaxL8AcxpW32QaEjdArray7[5] = xxpaxL8AcxpW32QaEjd12;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray8 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd13 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num19 = xxpaxL8AcxpW32QaEjd13.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd13 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num20 = xxpaxL8AcxpW32QaEjd13.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd13 = this.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    double num21 = xxpaxL8AcxpW32QaEjd13.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd14 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num19, num20, num21);
+    xxpaxL8AcxpW32QaEjdArray8[6] = xxpaxL8AcxpW32QaEjd14;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd[] xxpaxL8AcxpW32QaEjdArray9 = xxpaxL8AcxpW32QaEjdArray1;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd15 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num22 = xxpaxL8AcxpW32QaEjd15.\u0023\u003Dz\u0024CeUvME\u003D(0);
+    xxpaxL8AcxpW32QaEjd15 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num23 = xxpaxL8AcxpW32QaEjd15.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    xxpaxL8AcxpW32QaEjd15 = this.\u0023\u003Dz\u0024CeUvME\u003D(1);
+    double num24 = xxpaxL8AcxpW32QaEjd15.\u0023\u003Dz\u0024CeUvME\u003D(2);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd16 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(num22, num23, num24);
+    xxpaxL8AcxpW32QaEjdArray9[7] = xxpaxL8AcxpW32QaEjd16;
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.\u0023\u003Dz8miGAzg\u003D(xxpaxL8AcxpW32QaEjdArray1, _param1);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd17 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(double.MaxValue, double.MaxValue, double.MaxValue);
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd xxpaxL8AcxpW32QaEjd18 = new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd(double.MinValue, double.MinValue, double.MinValue);
+    for (int index = 0; index < 8; ++index)
+    {
+      xxpaxL8AcxpW32QaEjd17.dje_z3GBAX47U_ejd = Math.Min(xxpaxL8AcxpW32QaEjd17.dje_z3GBAX47U_ejd, xxpaxL8AcxpW32QaEjdArray1[index].dje_z3GBAX47U_ejd);
+      xxpaxL8AcxpW32QaEjd17.dje_zLPL6EZPA_ejd = Math.Min(xxpaxL8AcxpW32QaEjd17.dje_zLPL6EZPA_ejd, xxpaxL8AcxpW32QaEjdArray1[index].dje_zLPL6EZPA_ejd);
+      xxpaxL8AcxpW32QaEjd17.dje_zX8HQ8VV9_ejd = Math.Min(xxpaxL8AcxpW32QaEjd17.dje_zX8HQ8VV9_ejd, xxpaxL8AcxpW32QaEjdArray1[index].dje_zX8HQ8VV9_ejd);
+      xxpaxL8AcxpW32QaEjd18.dje_z3GBAX47U_ejd = Math.Max(xxpaxL8AcxpW32QaEjd18.dje_z3GBAX47U_ejd, xxpaxL8AcxpW32QaEjdArray1[index].dje_z3GBAX47U_ejd);
+      xxpaxL8AcxpW32QaEjd18.dje_zLPL6EZPA_ejd = Math.Max(xxpaxL8AcxpW32QaEjd18.dje_zLPL6EZPA_ejd, xxpaxL8AcxpW32QaEjdArray1[index].dje_zLPL6EZPA_ejd);
+      xxpaxL8AcxpW32QaEjd18.dje_zX8HQ8VV9_ejd = Math.Max(xxpaxL8AcxpW32QaEjd18.dje_zX8HQ8VV9_ejd, xxpaxL8AcxpW32QaEjdArray1[index].dje_zX8HQ8VV9_ejd);
+    }
+    return new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D(xxpaxL8AcxpW32QaEjd17, xxpaxL8AcxpW32QaEjd18);
+  }
+
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003DzberXHCxSVmX3()
+  {
+    return this.\u0023\u003DzI8Mw9xZs1VOkQCWXlg\u003D\u003D;
+  }
+
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003DzKfTtpGVPstS1()
+  {
+    return this.\u0023\u003DzoPnP1TQ_yGZhzl0Qsg\u003D\u003D;
+  }
+
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003Dz75ARjVacd8TT()
+  {
+    return (this.\u0023\u003DzberXHCxSVmX3() + this.\u0023\u003DzKfTtpGVPstS1()) / 2.0;
+  }
+
+  public static double \u0023\u003DzWodj7A526cxx() => 132.0;
+
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003Dz6Fh6_ls\u003D()
+  {
+    return (this.\u0023\u003DzberXHCxSVmX3() + this.\u0023\u003DzKfTtpGVPstS1()) * 0.5;
+  }
+
+  public double \u0023\u003DzuU2YmOxr\u002487h()
+  {
+    return (this.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd + this.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd) * 0.5;
+  }
+
+  public double \u0023\u003DzHH6Br74\u003D()
+  {
+    if (this.\u0023\u003DzSvHdzp8IGAbDN4U9iw\u003D\u003D == 0.0)
+      this.\u0023\u003DzSvHdzp8IGAbDN4U9iw\u003D\u003D = (this.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd) * (this.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd) * (this.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd);
+    return this.\u0023\u003DzSvHdzp8IGAbDN4U9iw\u003D\u003D;
+  }
+
+  public double \u0023\u003DznFchySitsuxP()
+  {
+    if (this.\u0023\u003DzTKGxZWx0nYdN == 0.0)
+      this.\u0023\u003DzTKGxZWx0nYdN = (this.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd) * (this.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd) * 2.0 + (this.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd) * (this.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd) * 2.0 + (this.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd) * (this.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd - this.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd) * 2.0;
+    return this.\u0023\u003DzTKGxZWx0nYdN;
+  }
+
+  [IndexerName("#=zMRIb09I=")]
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd this[
+    int _param1]
+  {
+    get
+    {
+      if (_param1 == 0)
+        return this.\u0023\u003DzberXHCxSVmX3();
+      if (_param1 == 1)
+        return this.\u0023\u003DzKfTtpGVPstS1();
+      throw new IndexOutOfRangeException();
+    }
+  }
+
+  public dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd \u0023\u003Dz\u0024CeUvME\u003D(
+    int _param1)
+  {
+    if (_param1 == 0)
+      return this.\u0023\u003DzberXHCxSVmX3();
+    if (_param1 == 1)
+      return this.\u0023\u003DzKfTtpGVPstS1();
+    throw new IndexOutOfRangeException();
+  }
+
+  public static \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D operator +(
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param0,
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param1)
+  {
+    return new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D(new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd()
+    {
+      dje_z3GBAX47U_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd)
+    }, new dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd()
+    {
+      dje_z3GBAX47U_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd)
+    });
+  }
+
+  public static \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D \u0023\u003DzeiifnZI\u003D(
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param0,
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param1)
+  {
+    return new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D(dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_z2EADAZU3_ejd with
+    {
+      dje_z3GBAX47U_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd)
+    }, dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_z2EADAZU3_ejd with
+    {
+      dje_z3GBAX47U_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd)
+    });
+  }
+
+  public static \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D \u0023\u003Dz8Z6DnIo\u003D(
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param0,
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param1)
+  {
+    return new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D(dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_z2EADAZU3_ejd with
+    {
+      dje_z3GBAX47U_ejd = Math.Max(_param0.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Max(_param0.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Max(_param0.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd, _param1.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd)
+    }, dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_z2EADAZU3_ejd with
+    {
+      dje_z3GBAX47U_ejd = Math.Min(_param0.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Min(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Min(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd, _param1.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd)
+    });
+  }
+
+  public static \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D \u0023\u003DzeiifnZI\u003D(
+    \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D _param0,
+    dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd _param1)
+  {
+    return new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzLFIMu1Nt7zNKtUo50iNMaV_KSd2Sg\u003D(dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_z2EADAZU3_ejd with
+    {
+      dje_z3GBAX47U_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_z3GBAX47U_ejd, _param1.dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_zLPL6EZPA_ejd, _param1.dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Min(_param0.\u0023\u003DzberXHCxSVmX3().dje_zX8HQ8VV9_ejd, _param1.dje_zX8HQ8VV9_ejd)
+    }, dje_z7MY68MLRV6NNE2US875358L4W5J8L733S6RUSCEASWGYMMMM9MUXFJSLJKQE4A5XXPAXL8ACXPW32QA_ejd.dje_z2EADAZU3_ejd with
+    {
+      dje_z3GBAX47U_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_z3GBAX47U_ejd, _param1.dje_z3GBAX47U_ejd),
+      dje_zLPL6EZPA_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zLPL6EZPA_ejd, _param1.dje_zLPL6EZPA_ejd),
+      dje_zX8HQ8VV9_ejd = Math.Max(_param0.\u0023\u003DzKfTtpGVPstS1().dje_zX8HQ8VV9_ejd, _param1.dje_zX8HQ8VV9_ejd)
+    });
+  }
+}

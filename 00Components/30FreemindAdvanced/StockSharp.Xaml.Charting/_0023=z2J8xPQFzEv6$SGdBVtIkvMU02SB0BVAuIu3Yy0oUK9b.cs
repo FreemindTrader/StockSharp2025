@@ -19,19 +19,19 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
   private readonly 
   #nullable disable
   \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB[] \u0023\u003DzJGH6M80\u003D;
-  private readonly dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003Dz6w5dj1Plgc_m;
+  private readonly DoubleRange \u0023\u003Dz6w5dj1Plgc_m;
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003Dz3s80TGV4qJM\u0024;
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzU26lnNrA_u4g;
   private readonly Dictionary<double, CandlePriceLevel> \u0023\u003DzP4lbWAj_E1MXaCiGd7U\u0024TJw\u003D;
   private readonly IEnumerable<double> \u0023\u003DzKpF8UOqXDBb3yFmWUsLipO5D2P2j;
   private readonly double _priceStep;
-  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
-  private readonly \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
+  private readonly IndexRange  \u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
+  private readonly IndexRange  \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
 
   public \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D(
     \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj[] _param1,
-    \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D _param2,
-    \u0023\u003DztyAKlj3UbIrpcOb4hAbyLt9clZggmJsWHw\u003D\u003D _param3,
+    IndexRange  _param2,
+    IRange _param3,
     double _param4)
   {
     \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D mpa4F4mcyQlZrFjfRi = new \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D();
@@ -40,8 +40,8 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     base.\u002Ector();
     mpa4F4mcyQlZrFjfRi.\u0023\u003DzRRvwDu67s9Rm = this;
     this._priceStep = mpa4F4mcyQlZrFjfRi.\u0023\u003DzgSMmZSBP2RDX;
-    this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (\u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D) _param2.Clone();
-    if (!(_param3 is \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D g8Oq2rGx6KyfAreq))
+    this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (IndexRange ) _param2.Clone();
+    if (!(_param3 is IndexRange  g8Oq2rGx6KyfAreq))
       g8Oq2rGx6KyfAreq = _param2;
     this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D = g8Oq2rGx6KyfAreq;
     this.\u0023\u003DzJGH6M80\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB[_param2.Max - _param2.Min + 1];
@@ -59,7 +59,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
       if (j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D() > num2)
         num2 = j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D();
     }
-    this.\u0023\u003Dz6w5dj1Plgc_m = new dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd(num1, num2);
+    this.\u0023\u003Dz6w5dj1Plgc_m = new DoubleRange(num1, num2);
     HashSet<double> doubleSet1 = new HashSet<double>();
     foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>) this.\u0023\u003Dz_xjf3ZVIHzP_()).Where<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>(mpa4F4mcyQlZrFjfRi.\u0023\u003Dzon\u0024_RZacJIPJ ?? (mpa4F4mcyQlZrFjfRi.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, bool>(mpa4F4mcyQlZrFjfRi.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D))).SelectMany<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, KeyValuePair<double, CandlePriceLevel>>(mpa4F4mcyQlZrFjfRi.\u0023\u003DzuAeZVTPDgzYE ?? (mpa4F4mcyQlZrFjfRi.\u0023\u003DzuAeZVTPDgzYE = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, IEnumerable<KeyValuePair<double, CandlePriceLevel>>>(mpa4F4mcyQlZrFjfRi.\u0023\u003Dzk0q47haYd4sk7HJcWw\u003D\u003D))))
     {
@@ -125,17 +125,17 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     return this._priceStep;
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D \u0023\u003Dz5O4ly_BelNuL()
+  public IndexRange  \u0023\u003Dz5O4ly_BelNuL()
   {
     return this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D;
   }
 
-  public \u0023\u003DzR2x48Sho4AxfV9DSAxG8OQ2rGx6KyfAREQ\u003D\u003D VisibleRange
+  public IndexRange  VisibleRange
   {
     get => this.\u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;
   }
 
-  public dje_zTYH4Q5AG6V7AZV2P5HXXAU5W2KLQCJ87ZM8UWE3W_ejd \u0023\u003DzxNQHuqrEvxH2()
+  public DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
     return this.\u0023\u003Dz6w5dj1Plgc_m;
   }

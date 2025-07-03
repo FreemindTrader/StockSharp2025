@@ -59,12 +59,12 @@ internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A
     _param2 = 0.0;
     double top = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetTop(_param1);
     double centerTop = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterTop(_param1);
-    if (!top.\u0023\u003DzeNpB9guo_tur())
+    if (!top.IsNaN())
     {
       num = this.\u0023\u003DzKpDdtddDPCNA - top;
       _param2 = 0.0;
     }
-    else if (!centerTop.\u0023\u003DzeNpB9guo_tur())
+    else if (!centerTop.IsNaN())
     {
       num = this.\u0023\u003DzKpDdtddDPCNA - centerTop;
       _param2 = 0.5;
@@ -72,7 +72,7 @@ internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A
     else
     {
       double bottom = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetBottom(_param1);
-      if (!bottom.\u0023\u003DzeNpB9guo_tur())
+      if (!bottom.IsNaN())
       {
         num = this.\u0023\u003Dzskk3W82lFCC7 + bottom;
         _param2 = 1.0;
@@ -80,7 +80,7 @@ internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A
       else
       {
         double centerBottom = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterBottom(_param1);
-        if (!centerBottom.\u0023\u003DzeNpB9guo_tur())
+        if (!centerBottom.IsNaN())
         {
           num = this.\u0023\u003Dzskk3W82lFCC7 + centerBottom;
           _param2 = 0.5;
@@ -96,12 +96,12 @@ internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A
     _param1 = 0.0;
     double left = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetLeft(_param0);
     double centerLeft = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterLeft(_param0);
-    if (!left.\u0023\u003DzeNpB9guo_tur())
+    if (!left.IsNaN())
     {
       num = left;
       _param1 = 0.0;
     }
-    else if (!centerLeft.\u0023\u003DzeNpB9guo_tur())
+    else if (!centerLeft.IsNaN())
     {
       num = centerLeft;
       _param1 = 0.5;
@@ -109,7 +109,7 @@ internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A
     else
     {
       double right = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetRight(_param0);
-      if (!right.\u0023\u003DzeNpB9guo_tur())
+      if (!right.IsNaN())
       {
         num = 360.0 - right;
         _param1 = 1.0;
@@ -117,7 +117,7 @@ internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A
       else
       {
         double centerRight = dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.GetCenterRight(_param0);
-        if (!centerRight.\u0023\u003DzeNpB9guo_tur())
+        if (!centerRight.IsNaN())
         {
           num = 360.0 - centerRight;
           _param1 = 0.5;

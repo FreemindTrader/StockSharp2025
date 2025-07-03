@@ -36,7 +36,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
   
   protected readonly Size \u0023\u003DzgYZhPyPIW8zq;
   
-  private object \u0023\u003DzxztcSMfDuTst = new object();
+  private object myLock = new object();
 
   public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x(
     Image _param1,
@@ -95,22 +95,22 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
       disposable.Dispose();
   }
 
-  public override \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
+  public override IBrush2D \u0023\u003Dze8WyDhI\u003D(
     Color _param1,
     double _param2 = 1.0,
     bool? _param3 = null)
   {
-    return (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jDvRHJm4zN8x0ttFQf_UGKPMTTL3MdOFwfA\u003D(_param1, true, _param2);
+    return (IBrush2D) new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jDvRHJm4zN8x0ttFQf_UGKPMTTL3MdOFwfA\u003D(_param1, true, _param2);
   }
 
-  public override \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003Dze8WyDhI\u003D(
+  public override IBrush2D \u0023\u003Dze8WyDhI\u003D(
     Brush _param1,
     double _param2 = 1.0,
     \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4 _param3 = \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerScreen)
   {
     if (_param1 == null)
       return this.\u0023\u003Dze8WyDhI\u003D(Color.FromArgb((byte) 0, (byte) 0, (byte) 0, (byte) 0), 1.0, new bool?());
-    return _param1 is SolidColorBrush ? this.\u0023\u003Dze8WyDhI\u003D(((SolidColorBrush) _param1).Color, _param2, new bool?(true)) : (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) new \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D(_param1, _param3, this.\u0023\u003DzNFOu7BeFZYda());
+    return _param1 is SolidColorBrush ? this.\u0023\u003Dze8WyDhI\u003D(((SolidColorBrush) _param1).Color, _param2, new bool?(true)) : (IBrush2D) new \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D(_param1, _param3, this.\u0023\u003DzNFOu7BeFZYda());
   }
 
   public override \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzL3In9ls\u003D(
@@ -156,7 +156,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
   }
 
   public override void \u0023\u003DzVRUUvzhAr5SR(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     Point _param2,
     Point _param3,
     double _param4 = 0.0)
@@ -200,11 +200,11 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
       new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), new Func<int, int, \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzAGjD8bO2vEL6bBEhwQ\u003D\u003D));
     }
     else
-      new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param1.get_Color()));
+      new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param1.Color));
   }
 
   public override void \u0023\u003DzZC71OkxY_wdX(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     IEnumerable<Tuple<Point, Point>> _param2,
     bool _param3 = false,
     double _param4 = 0.0)
@@ -234,7 +234,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
         new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), new Func<int, int, \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D>(wd3zPhu0dS2ZqhuzuE.\u0023\u003Dzs3XZaL28BMmdJ3BwPQ\u003D\u003D));
       }
       else
-        new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param1.get_Color()));
+        new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param1.Color));
     }
   }
 
@@ -478,33 +478,33 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
 
   public override void \u0023\u003DzIZCdW2WR6Rxw(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2,
+    IBrush2D _param2,
     Point _param3,
     double _param4,
     double _param5)
   {
     if (!this.\u0023\u003DzxGhbraO0gg9\u0024(_param3))
       return;
-    lock (this.\u0023\u003DzxztcSMfDuTst)
+    lock (this.myLock)
     {
       this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003Dzp_DWHgc\u003D();
       \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D xzwywvTcxLe07Gzsg = new \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D(_param3.X, _param3.Y, _param4 / 2.0, _param5 / 2.0);
       this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003DzR7pES1JXr5Q9((\u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D) xzwywvTcxLe07Gzsg);
-      new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param2.get_Color()));
+      new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param2.Color));
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb1WxUUMsJoFuIkNAGsBguUdsg\u003D\u003D joFuIkNaGsBguUdsg = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb1WxUUMsJoFuIkNAGsBguUdsg\u003D\u003D((\u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D) xzwywvTcxLe07Gzsg);
       joFuIkNaGsBguUdsg.\u0023\u003Dz5ZnLRPWs3dst((\u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfnUoq5_\u0024aGR\u0024QRKFQpDKpzknh8Hw\u003D\u003D) 2);
       joFuIkNaGsBguUdsg.\u0023\u003DzuvXschIwRlBB((\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSjnI7PDWlDQ3n0M0rhn3l4NM\u0024crmdnk2VIcfqI_3j4E7qw\u003D\u003D) 3);
       joFuIkNaGsBguUdsg.\u0023\u003DzVzpGJCleWxzj((\u0023\u003DzRxKCQfwuO1Ym7C1efUUjv3O1vVUi3Pf5LXL8sd0rJM7s\u0024e9YkTjxwLTTUHQO7LYUFw\u003D\u003D) 0);
       joFuIkNaGsBguUdsg.\u0023\u003DzCIN619c\u003D((double) _param1.StrokeThickness);
       this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003DzR7pES1JXr5Q9((\u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D) joFuIkNaGsBguUdsg);
-      new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param1.get_Color()));
+      new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003DzpRjqnnegg8cM(_param1.Color));
       this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003Dzp_DWHgc\u003D();
     }
   }
 
   public override void \u0023\u003DzoUffnI1MQnWod0s9Xg\u003D\u003D(
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param2,
+    IBrush2D _param2,
     IEnumerable<Point> _param3,
     double _param4,
     double _param5)
@@ -593,7 +593,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
   }
 
   public sealed override \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003DzD4fw8fY\u003D(
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+    IBrush2D _param1,
     double _param2,
     double _param3,
     double _param4 = 0.0)
@@ -819,11 +819,11 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
       this.\u0023\u003DzrZyFxk8\u003D = _param2;
       this.\u0023\u003DzgYZhPyPIW8zq = this.\u0023\u003DzrZyFxk8\u003D.\u0023\u003Dz8DEW4l1E337F();
       this.\u0023\u003Dz1l66LxWIUC10 = ((\u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GFfexjP4JI2sgmYygvp7gvAFg\u003D\u003D) this.\u0023\u003DzrZyFxk8\u003D.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf()).\u0023\u003DzJFw\u0024Meew18NY() as \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D;
-      this.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) _param1, _param3, _param4);
+      this.\u0023\u003Dz7ZSU06M\u003D((IPathColor) _param1, _param3, _param4);
     }
 
     public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-      \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+      IPathColor _param1,
       double _param2,
       double _param3)
     {
@@ -873,12 +873,12 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
       Point point2 = new Point(_param1, _param2);
       \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003Dz3XPLnJc\u003D(ref point1, ref point2, this.\u0023\u003DzgYZhPyPIW8zq);
       \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D ptilrAzSxiAspzkU3Q = this.\u0023\u003DzrZyFxk8\u003D.\u0023\u003Dz7KDv5k43c1Mo();
-      ptilrAzSxiAspzkU3Q.\u0023\u003DzYI36Ggg\u003D(point1, point2, this.\u0023\u003DzgYZhPyPIW8zq, (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5\u0024e1A7bvEMO3Uo\u0024\u0024JpKeVOZ\u0024) this.\u0023\u003DzU\u0024ZxpXE\u003D);
+      ptilrAzSxiAspzkU3Q.Reset(point1, point2, this.\u0023\u003DzgYZhPyPIW8zq, (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5\u0024e1A7bvEMO3Uo\u0024\u0024JpKeVOZ\u0024) this.\u0023\u003DzU\u0024ZxpXE\u003D);
       while (ptilrAzSxiAspzkU3Q.MoveNext())
       {
         \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5REq_FH1BSAP6ZMnJks\u003D current = ptilrAzSxiAspzkU3Q.Current;
         this.\u0023\u003DzBNsE20w\u003D();
-        this.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) this.\u0023\u003DzU\u0024ZxpXE\u003D, current.\u0023\u003DzunK60DE\u003D, current.\u0023\u003DzAcftkI4\u003D);
+        this.\u0023\u003Dz7ZSU06M\u003D((IPathColor) this.\u0023\u003DzU\u0024ZxpXE\u003D, current.\u0023\u003DzunK60DE\u003D, current.\u0023\u003DzAcftkI4\u003D);
         this.\u0023\u003DzSY9FyJkLO9on(current.\u0023\u003Dz9xgeQi0\u003D, current.\u0023\u003DzZ0gmED0\u003D);
       }
       this.\u0023\u003DzFEDR40ugZMK3 = _param1;
@@ -918,7 +918,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
         }, new int[1], 1);
     }
 
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
       this.\u0023\u003DzBNsE20w\u003D();
     }
@@ -929,7 +929,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     IDisposable
   {
     
-    private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D \u0023\u003DzPbF2kpY\u003D;
+    private IBrush2D \u0023\u003DzPbF2kpY\u003D;
     
     private readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x \u0023\u003Dzui0AS26tu5YE;
     
@@ -938,13 +938,13 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     private double \u0023\u003DzxQYZMi0S4xrwAUmlOi_ANoo\u003D;
 
     public \u0023\u003DzmJRlt6lBeKjN(
-      \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D _param1,
+      IBrush2D _param1,
       \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x _param2,
       double _param3,
       double _param4)
     {
       this.\u0023\u003Dzui0AS26tu5YE = _param2;
-      this.\u0023\u003Dz7ZSU06M\u003D((\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D) _param1, _param3, _param4);
+      this.\u0023\u003Dz7ZSU06M\u003D((IPathColor) _param1, _param3, _param4);
     }
 
     public double \u0023\u003DzIALY0EIJmzAYFffZZA\u003D\u003D()
@@ -958,11 +958,11 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     }
 
     public \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003Dz7ZSU06M\u003D(
-      \u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_bD_Pyrb\u0024d0P2noEI5c\u003D _param1,
+      IPathColor _param1,
       double _param2,
       double _param3)
     {
-      this.\u0023\u003DzPbF2kpY\u003D = (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpXRgcdFB\u0024SdWGN9GCT8\u003D) _param1;
+      this.\u0023\u003DzPbF2kpY\u003D = (IBrush2D) _param1;
       this.\u0023\u003DzC8YqVfw\u003D = new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tiESttatY\u0024KE2k2uyGV0g01vOs3xfyzYzSge7gXJQq7CWw\u003D\u003D();
       this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003Dzp_DWHgc\u003D();
       this.\u0023\u003DzC8YqVfw\u003D.\u0023\u003DzfRDRUq8\u003D(_param2, _param3);
@@ -990,10 +990,10 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
         new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), new Func<int, int, \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D>(k0hz6MwLrPm7JfgVw01g.\u0023\u003Dz8NxWWFEIxVja));
       }
       else
-        new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzpRjqnnegg8cM(this.\u0023\u003DzPbF2kpY\u003D.get_Color()));
+        new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSQOueIoti2vqJUSOrkdmZilHpP8I_E\u003D().\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzZRNA7tv6M_pf(), (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzTzTVRyr3Jkv_Tg5N2R_ARRI\u003D(), this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzpRjqnnegg8cM(this.\u0023\u003DzPbF2kpY\u003D.Color));
     }
 
-    void IDisposable.\u0023\u003DzyDgD8d_Zy8d21234Xw\u003D\u003D()
+    void IDisposable.Dispose()
     {
       this.\u0023\u003DzBNsE20w\u003D();
     }
