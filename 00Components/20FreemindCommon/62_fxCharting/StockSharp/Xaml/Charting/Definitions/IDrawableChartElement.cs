@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Media;
 
-public interface IDrawableChartElement : ICloneable<IChartElement>, INotifyPropertyChanged, IElementWithXYAxes, ICloneable, INotifyPropertyChanging, IChartElement
+public interface IDrawableChartElement : ICloneable<IChartElement>, INotifyPropertyChanged, IChartComponent, ICloneable, INotifyPropertyChanging, IChartElement
 {
     Color Color { get; }
 

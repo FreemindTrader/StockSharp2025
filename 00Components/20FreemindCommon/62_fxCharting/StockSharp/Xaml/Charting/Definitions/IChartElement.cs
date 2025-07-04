@@ -1,8 +1,10 @@
 ﻿using Ecng.Common;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.ComponentModel;
 using StockSharp.Charting;
+using System.Windows.Media;
 
 namespace fx.Charting;
 
@@ -11,56 +13,67 @@ namespace fx.Charting;
 /// </summary>
 public interface IChartElement : IChartPart<IChartElement>
 {
-    Guid Id
+    /// <summary>
+	/// The full series title.
+	/// If this property is undefined, auto-generated title will be used instead.
+	/// </summary>
+	string FullTitle
     {
-        get;
+        get; set;
     }
 
-    IChartElement ParentElement
-    {
-        get;
-    }
-
-    IEnumerable<IChartElement> ChildElements
-    {
-        get;
-    }
-
+    /// <summary>
+    /// Whether this element is visible on chart.
+    /// </summary>
     bool IsVisible
     {
-        get;
-        set;
+        get; set;
     }
 
+    /// <summary>
+    /// Should this element be shown in the legend.
+    /// </summary>
     bool IsLegend
     {
-        get;
-        set;
+        get; set;
     }
 
+    /// <summary>
+    /// X-axis.
+    /// </summary>
     string XAxisId
     {
-        get;
-        set;
+        get; set;
     }
 
+    /// <summary>
+    /// Y-axis.
+    /// </summary>
     string YAxisId
     {
-        get;
-        set;
+        get; set;
     }
 
-    IChart Chart
+    /// <summary>
+    /// Custom elements colorer.
+    /// </summary>
+    Func<IComparable, Color?> Colorer
     {
-        get;
+        get; set;
     }
 
+    /// <summary>
+    /// The chart area on which the element is drawn.
+    /// </summary>
     ChartArea ChartArea
     {
         get;
     }
 
-    ChartArea PersistantChartArea
+    /// <summary>
+    /// The chart area on which the element is drawn.
+    /// </summary>
+    ChartArea PersistentChartArea
     {
         get;
     }

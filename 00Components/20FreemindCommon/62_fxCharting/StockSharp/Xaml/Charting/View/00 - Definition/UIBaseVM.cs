@@ -38,7 +38,7 @@ public abstract class UIBaseVM : BaseVM
         get;
     }
 
-    public IElementWithXYAxes RootElem
+    public IChartComponent RootElem
     {
         get
         {
@@ -91,11 +91,11 @@ public abstract class UIBaseVM : BaseVM
         PerformUiAction( new Action( UpdateAndClear ), true );
     }
 
-    protected virtual void RootElementPropertyChanging( IElementWithXYAxes interface5_0, string string_0, object obj )
+    protected virtual void RootElementPropertyChanging( IChartComponent interface5_0, string string_0, object obj )
     {
     }
 
-    protected virtual void RootElementPropertyChanged( IElementWithXYAxes interface5_0, string string_0 )
+    protected virtual void RootElementPropertyChanged( IChartComponent interface5_0, string string_0 )
     {
     }
 
@@ -134,7 +134,7 @@ public abstract class UIBaseVM : BaseVM
     }
 
     protected void SetupAxisMarkerAndBinding( IRenderableSeries renderSeries,
-                                              IElementWithXYAxes element,
+                                              IChartComponent element,
                                               string showAxisMakerStr,
                                               string colorStr )
     {

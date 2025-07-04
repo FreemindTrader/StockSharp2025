@@ -193,7 +193,7 @@ namespace fx.Charting
                     Chart.EnsureUIThread( );
                 }
 
-                if( Elements.Cast< IElementWithXYAxes >( ).Any( i => !i.CheckAxesCompatible( new ChartAxisType?( value ), new ChartAxisType?( ) ) ) )
+                if( Elements.Cast< IChartComponent >( ).Any( i => !i.CheckAxesCompatible( new ChartAxisType?( value ), new ChartAxisType?( ) ) ) )
                 {
                     throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.ElementDontSupportAxisTypeParams, value ) );
                 }
@@ -402,50 +402,54 @@ namespace fx.Charting
 
             protected override bool OnAdding( ChartAxis axis )
             {
-                int num = GetAxisCount( _defaultId );
+                // FIXME:
 
-                if( StringHelper.IsEmpty( axis.Id ) )
-                {
-                    axis.Id = string.Format( "{0}({1})", _defaultId, Guid.NewGuid( ) );
-                }
 
-                if( this.Any( a => a.Id == axis.Id ) )
-                {
-                    throw new InvalidOperationException( "StringHelper.Put( LocalizedStrings.Str1904Params, axis.Id )" );
-                }
+                throw new NotImplementedException();
+                //int num = GetAxisCount( _defaultId );
 
-                if( this == _chartArea.XAxises && axis.AxisType != _chartArea.XAxisType )
-                {
-                    axis.AxisType = _chartArea.XAxisType;
+                //if( StringHelper.IsEmpty( axis.Id ) )
+                //{
+                //    axis.Id = string.Format( "{0}({1})", _defaultId, Guid.NewGuid( ) );
+                //}
 
-                    //throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
-                }
+                //if( this.Any( a => a.Id == axis.Id ) )
+                //{
+                //    throw new InvalidOperationException( "StringHelper.Put( LocalizedStrings.Str1904Params, axis.Id )" );
+                //}
 
-                foreach( IElementWithXYAxes axisElement in _chartArea.Elements.Cast< IElementWithXYAxes >( ) )
-                {
-                    if( axisElement.XAxis == null && this == _chartArea.XAxises && axis.Id == axisElement.XAxisId && !axisElement.CheckAxesCompatible( new ChartAxisType?( axis.AxisType ), new ChartAxisType?( ) ) )
-                    {
-                        throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
-                    }
+                //if( this == _chartArea.XAxises && axis.AxisType != _chartArea.XAxisType )
+                //{
+                //    axis.AxisType = _chartArea.XAxisType;
 
-                    if( axisElement.YAxis == null && this == _chartArea.YAxises && axis.Id == axisElement.YAxisId && !axisElement.CheckAxesCompatible( new ChartAxisType?( ), new ChartAxisType?( axis.AxisType ) ) )
-                    {
-                        throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
-                    }
-                }
+                //    //throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+                //}
 
-                if( axis.Group.IsEmpty( ) )
-                {
-                    axis.Group = _getDefaultGroupFunc( axis, num );
-                }
+                //foreach( IChartComponent axisElement in _chartArea.Elements.Cast< IChartComponent >( ) )
+                //{
+                //    if( axisElement.XAxis == null && this == _chartArea.XAxises && axis.Id == axisElement.XAxisId && !axisElement.CheckAxesCompatible( new ChartAxisType?( axis.AxisType ), new ChartAxisType?( ) ) )
+                //    {
+                //        throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+                //    }
 
-                if( axis.Title.IsEmpty( ) )
-                {
-                    axis.Title = _defaultId + num;
-                }
+                //    if( axisElement.YAxis == null && this == _chartArea.YAxises && axis.Id == axisElement.YAxisId && !axisElement.CheckAxesCompatible( new ChartAxisType?( ), new ChartAxisType?( axis.AxisType ) ) )
+                //    {
+                //        throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+                //    }
+                //}
 
-                axis.ChartArea = _chartArea;
-                return base.OnAdding( axis );
+                //if( axis.Group.IsEmpty( ) )
+                //{
+                //    axis.Group = _getDefaultGroupFunc( axis, num );
+                //}
+
+                //if( axis.Title.IsEmpty( ) )
+                //{
+                //    axis.Title = _defaultId + num;
+                //}
+
+                //axis.ChartArea = _chartArea;
+                //return base.OnAdding( axis );
             }
 
             protected override bool OnRemoving( ChartAxis axis )
@@ -639,7 +643,9 @@ namespace fx.Charting
 
             protected override bool OnAdding( IChartElement element )
             {
-                if( element.Chart != null )
+                var myChart = element.CheckOnNull( nameof( element ) ).ChartArea?.Chart;
+
+                if( myChart != null )
                 {
                     throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
                 }
@@ -649,7 +655,7 @@ namespace fx.Charting
                     throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
                 }
 
-                var elementXY = element as IElementWithXYAxes;
+                var elementXY = element as IChartComponent;
 
                 Maybe.Do( elementXY, a =>
                 {

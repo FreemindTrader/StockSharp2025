@@ -4,7 +4,8 @@ using Ecng.Serialization;
 using MoreLinq;
 using StockSharp.Localization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic;
+using fx.Collections;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,8 +14,19 @@ using System.Windows.Media;
 namespace fx.Charting
 {
     [TypeConverter( typeof( ExpandableObjectConverter ) )]
-    public abstract class ChartElement<T> : ChartPart<T>, ICloneable<IChartElement>, INotifyPropertyChanged, IElementWithXYAxes, ICloneable, INotifyPropertyChanging, IChartElement where T : ChartElement<T>
+    public abstract class ChartElement<T> : ChartPart<T>, ICloneable<IChartElement>, INotifyPropertyChanged, IChartComponent, ICloneable, INotifyPropertyChanging, IChartElement where T : ChartElement<T>
     {
+        protected virtual int Priority => int.MaxValue;
+
+        public ChartArea PersistentChartArea
+        {
+            get
+            {
+                return _persistantChartArea;
+            }
+        }
+
+
         private readonly SynchronizedDictionary<Guid, string>  _idToName = new SynchronizedDictionary<Guid, string>( );
         private readonly CachedSynchronizedList<IChartElement> _childElements = new CachedSynchronizedList<IChartElement>( );
         private readonly SynchronizedSet<string>               _extraName = new SynchronizedSet<string>( );
@@ -23,7 +35,7 @@ namespace fx.Charting
         private bool                                           _isLegend = true;
         private string                                         _xAxisId = "X";
         private string                                         _yAxisId = "Y";
-        private IElementWithXYAxes                             _parentElement;
+        private IChartComponent                             _parentElement;
         private ChartArea                                      _chartArea;
         private ChartArea                                      _persistantChartArea;
         private string                                         _fullTitle;
@@ -52,15 +64,8 @@ namespace fx.Charting
             }
         }
 
-        ChartArea IChartElement.PersistantChartArea
-        {
-            get
-            {
-                return _persistantChartArea;
-            }
-        }
-
         
+
 
         private int _fifoCapacity;
 
@@ -277,7 +282,7 @@ namespace fx.Charting
                     throw new ArgumentException( LocalizedStrings.ParentElementAlreadySet );
                 }
 
-                _parentElement = ( IElementWithXYAxes )value;
+                _parentElement = ( IChartComponent ) value;
 
                 if ( _parentElement == null )
                 {
@@ -288,13 +293,13 @@ namespace fx.Charting
             }
         }
 
-        IElementWithXYAxes IElementWithXYAxes.ElementWithXYAxes
+        IChartComponent IChartComponent.RootElement
         {
             get
             {
                 if ( _parentElement != null )
                 {
-                    return _parentElement.ElementWithXYAxes;
+                    return _parentElement.RootElement;
                 }
 
                 return this;
@@ -315,10 +320,10 @@ namespace fx.Charting
             if ( _childElements.Contains( childElement ) )
             {
                 throw new InvalidOperationException( "duplicate element" );
-            } 
-            
-            ( ( IElementWithXYAxes )childElement ).ParentElement = ( this );
-            ( ( IElementWithXYAxes )childElement ).DontDraw = dontDraw;
+            }
+
+            ( ( IChartComponent ) childElement ).SetParent( this );
+            ( ( IChartComponent ) childElement ).DontDraw = dontDraw;
             _childElements.Add( childElement );
         }
 
@@ -327,32 +332,32 @@ namespace fx.Charting
             if ( !_childElements.Remove( childElement ) )
             {
                 return;
-            } 
-            
-            ( ( IElementWithXYAxes )childElement ).ParentElement = null;
+            }
+
+            ( ( IChartComponent ) childElement ).SetParent( this );
         }
 
-        protected virtual void OnReset( )
+        protected virtual void OnReset()
         {
         }
 
         protected abstract bool OnDraw( ChartDrawDataEx data );
 
-        bool IElementWithXYAxes.Draw( ChartDrawDataEx chartDrawData_0 )
+        bool IChartComponent.Draw( ChartDrawDataEx chartDrawData_0 )
         {
             return OnDraw( chartDrawData_0 );
         }
 
-        void IElementWithXYAxes.Reset( )
+        void IChartComponent.Reset()
         {
-            OnReset( );
-            foreach ( IElementWithXYAxes childElement in ChildElements )
+            OnReset();
+            foreach ( IChartComponent childElement in ChildElements )
             {
-                childElement.Reset( );
+                childElement.Reset();
             }
         }
 
-        void IElementWithXYAxes.AddAxisesAndEventHandler( ChartArea area )
+        void IChartComponent.AddAxisesAndEventHandler( ChartArea area )
         {
             if ( ChartArea != null )
             {
@@ -364,11 +369,11 @@ namespace fx.Charting
             area.XAxises.Changed += new Action( OnXAxisChanged );
             area.YAxises.Changed += new Action( OnYAxisChanged );
 
-            OnXAxisChanged( );
-            OnYAxisChanged( );
+            OnXAxisChanged();
+            OnYAxisChanged();
         }
 
-        void IElementWithXYAxes.RemoveAxisesEventHandler( )
+        void IChartComponent.RemoveAxisesEventHandler()
         {
             if ( ChartArea != null )
             {
@@ -377,22 +382,22 @@ namespace fx.Charting
 
                 ChartArea = null;
 
-                OnXAxisChanged( );
-                OnYAxisChanged( );
-            }            
+                OnXAxisChanged();
+                OnYAxisChanged();
+            }
         }
 
-        private void OnXAxisChanged( )
+        private void OnXAxisChanged()
         {
             RaisePropertyChanged( "XAxis" );
         }
 
-        private void OnYAxisChanged( )
+        private void OnYAxisChanged()
         {
             RaisePropertyChanged( "YAxis" );
         }
 
-        bool IElementWithXYAxes.DontDraw
+        bool IChartComponent.DontDraw
         {
             get
             {
@@ -404,7 +409,9 @@ namespace fx.Charting
             }
         }
 
-        string IElementWithXYAxes.GetName( IChartElement element )
+        int IChartComponent.Priority => Priority;
+
+        string IChartComponent.GetName( IChartElement element )
         {
             return _idToName.TryGetValue( element.Id );
         }
@@ -414,7 +421,7 @@ namespace fx.Charting
             _idToName[ element.Id ] = string_3;
         }
 
-        bool IElementWithXYAxes.AdditionalName( string string_3 )
+        bool IChartComponent.AdditionalName( string string_3 )
         {
             return _extraName.Contains( string_3 );
         }
@@ -444,60 +451,60 @@ namespace fx.Charting
             storage.SetValue( "YAxisId", YAxisId );
         }
 
-        internal override T Clone( T other )
-        {
-            base.Clone( other );
-            other.IsVisible = IsVisible;
-            other.FullTitle = FullTitle;
-            other.IsLegend = IsLegend;
-            other.XAxisId = XAxisId;
-            other.YAxisId = YAxisId;
-            IChartElement[ ] cache1 = _childElements.Cache;
-            IChartElement[ ] cache2 = other._childElements.Cache;
-            if ( cache1.Length != cache2.Length )
-            {
-                throw new InvalidOperationException( "unexpected number of clones children" );
-            }
+        //internal override T Clone( T other )
+        //{
+        //    base.Clone( other );
+        //    other.IsVisible = IsVisible;
+        //    other.FullTitle = FullTitle;
+        //    other.IsLegend = IsLegend;
+        //    other.XAxisId = XAxisId;
+        //    other.YAxisId = YAxisId;
+        //    IChartElement[ ] cache1 = _childElements.Cache;
+        //    IChartElement[ ] cache2 = other._childElements.Cache;
+        //    if ( cache1.Length != cache2.Length )
+        //    {
+        //        throw new InvalidOperationException( "unexpected number of clones children" );
+        //    }
 
-            for ( int index = 0; index < cache1.Length; ++index )
-            {
-                IChartElement chartElement1 = cache1[ index ];
-                IChartElement chartElement2 = cache2[ index ];
-                if ( chartElement1.GetType( ) != chartElement2.GetType( ) )
-                {
-                    throw new InvalidOperationException( "unexpected child type" );
-                } ( ( IElementWithXYAxes )chartElement1 ).Clone( chartElement2 );
-            }
-            ( ( IDrawableChartElement )other ).DontDraw = ( ( IDrawableChartElement )this ).DontDraw;
-            return other;
+        //    for ( int index = 0 ; index < cache1.Length ; ++index )
+        //    {
+        //        IChartElement chartElement1 = cache1[ index ];
+        //        IChartElement chartElement2 = cache2[ index ];
+        //        if ( chartElement1.GetType() != chartElement2.GetType() )
+        //        {
+        //            throw new InvalidOperationException( "unexpected child type" );
+        //        } ( ( IChartComponent ) chartElement1 ).Clone( chartElement2 );
+        //    }
+        //    ( ( IDrawableChartElement ) other ).DontDraw = ( ( IDrawableChartElement ) this ).DontDraw;
+        //    return other;
+        //}
+
+        IChartElement ICloneable<IChartElement>.Clone()
+        {
+            return Clone();
         }
 
-        IChartElement ICloneable<IChartElement>.Clone( )
+        protected virtual T CreateClone()
         {
-            return Clone( );
+            return ( T ) Activator.CreateInstance( GetType() );
         }
 
-        protected virtual T CreateClone( )
-        {
-            return ( T )Activator.CreateInstance( GetType( ) );
-        }
-
-        public override sealed T Clone( )
+        public override sealed T Clone()
         {
             var myClone = CreateClone( );
             myClone._extraName.AddRange( _extraName );
 
             Ecng.Collections.CollectionHelper.ForEach( _idToName, p => myClone._idToName.Add( p.Key, p.Value ) );
-            
+
 
             Clone( myClone );
             return myClone;
         }
 
-        void IElementWithXYAxes.Clone( object other )
-        {
-            Clone( ( T )other );
-        }
+        //void IChartComponent.Clone( object other )
+        //{
+        //    Clone( ( T ) other );
+        //}
 
         public virtual bool CheckAxesCompatible( ChartAxisType? xType, ChartAxisType? yType )
         {
@@ -514,17 +521,27 @@ namespace fx.Charting
                 return true;
             }
 
-            return yType.GetValueOrDefault( ) == ChartAxisType.Numeric & yType.HasValue;
+            return yType.GetValueOrDefault() == ChartAxisType.Numeric & yType.HasValue;
         }
 
-        public virtual void ResetUI( )
+        public virtual void ResetUI()
         {
             //throw new NotImplementedException( );
         }
 
-        public string GetGeneratedTitle( )
+        public string GetGeneratedTitle()
         {
-            throw new NotImplementedException( );
+            throw new NotImplementedException();
+        }
+
+        public void SetParent( IChartElement _param1 )
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CopyTo( object _param1 )
+        {
+            throw new NotImplementedException();
         }
     }
 }

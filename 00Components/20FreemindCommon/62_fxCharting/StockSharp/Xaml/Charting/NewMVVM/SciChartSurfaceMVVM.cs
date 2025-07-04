@@ -40,10 +40,10 @@ using SciChart.Charting.Themes;
 
 public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisposable
 {
-    private readonly CachedSynchronizedDictionary<IElementWithXYAxes, ParentVM>      _vmChartUIs = new CachedSynchronizedDictionary<IElementWithXYAxes, ParentVM>( );
-    private readonly PooledDictionary<IElementWithXYAxes, PooledList<IRenderableSeries>>         _chartUIRSeries               = new PooledDictionary<IElementWithXYAxes, PooledList<IRenderableSeries>>( );
+    private readonly CachedSynchronizedDictionary<IChartComponent, ParentVM>      _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ParentVM>( );
+    private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>         _chartUIRSeries               = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>( );
 
-    private readonly PooledDictionary<IElementWithXYAxes, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap  = new PooledDictionary<IElementWithXYAxes, PooledDictionary<object, IAnnotation>>( );
+    private readonly PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap  = new PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>>( );
     private readonly PooledDictionary<string, string>                                      _axisIdToGroup                = new PooledDictionary<string, string>( );
     private readonly ObservableCollection<ParentVM>                                  _legendElements               = new ObservableCollection<ParentVM>( );
     private readonly SynchronizedSet<ParentVM>                                       _parentChartViewModelCache    = new SynchronizedSet<ParentVM>( );
@@ -561,7 +561,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
     public void Reset( IEnumerable<IChartElement> chartElements )
     {
-        foreach ( IElementWithXYAxes chartElement in chartElements )
+        foreach ( IChartComponent chartElement in chartElements )
         {
             var ParentChartViewModel = _vmChartUIs.TryGetValue( chartElement );
 
@@ -577,7 +577,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
     {
         var noParents = _vmChartUIs.Where( p => p.Value == null ).Select( p => p.Key ).ToArray( );
 
-        foreach ( IElementWithXYAxes element in noParents )
+        foreach ( IChartComponent element in noParents )
         {
             var combinedElements = MoreEnumerable.Append( element.ChildElements, element );
 
@@ -605,7 +605,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
             Chart.EnsureUIThread( );
         }
 
-        IElementWithXYAxes anyChartUiXY = ( IElementWithXYAxes )anyChartUI;
+        IChartComponent anyChartUiXY = ( IChartComponent )anyChartUI;
         anyChartUiXY.AddAxisesAndEventHandler( Area );
 
         if ( _vmChartUIs.ContainsKey( anyChartUiXY ) )
@@ -684,7 +684,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
             Chart.EnsureUIThread( );
         }
 
-        IElementWithXYAxes elementXY = ( IElementWithXYAxes )element;
+        IChartComponent elementXY = ( IChartComponent )element;
         elementXY?.RemoveAxisesEventHandler( );
 
         ParentVM ParentChartViewModel;
@@ -957,7 +957,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         }
     }
 
-    public void AddAxisMakerAnnotation( IElementWithXYAxes elementXY, IAnnotation axisMakerAnnotation, object axisMarker )
+    public void AddAxisMakerAnnotation( IChartComponent elementXY, IAnnotation axisMakerAnnotation, object axisMarker )
     {
         if ( axisMarker == null )
         {
@@ -974,7 +974,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         OnXYAxisPropertyChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
     }
 
-    public IAnnotation GetAxisMakerAnnotation( IElementWithXYAxes elementXY, object objAnnoPair )
+    public IAnnotation GetAxisMakerAnnotation( IChartComponent elementXY, object objAnnoPair )
     {
         PooledDictionary<object, IAnnotation> dict;
         if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dict ) )
@@ -985,7 +985,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         return dict.TryGetValue( objAnnoPair );
     }
 
-    public void RemoveAnnotation( IElementWithXYAxes elementXY, object objAnnoPair )
+    public void RemoveAnnotation( IChartComponent elementXY, object objAnnoPair )
     {
         PooledDictionary<object, IAnnotation> rootAnnotation;
 
@@ -1506,7 +1506,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
     #region ----------------------------- Tony's new Implementation ----------------------------- 
 
-    public void AddRenderableSeriesToChartSurface( IElementWithXYAxes elementXY, IRenderableSeries renderableSeries )
+    public void AddRenderableSeriesToChartSurface( IChartComponent elementXY, IRenderableSeries renderableSeries )
     {
         PooledList<IRenderableSeries> rSeriesList;
 
@@ -1523,7 +1523,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         OnXYAxisPropertyChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
     }
 
-    public void Remove( IElementWithXYAxes elementXY )
+    public void Remove( IChartComponent elementXY )
     {
         PooledList<IRenderableSeries> rSeriesList;
 
@@ -1543,67 +1543,71 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
     private void OnXYAxisPropertyChanged( object sender, PropertyChangedEventArgs e )
     {
-        IElementWithXYAxes elementXY = ( IElementWithXYAxes )sender;
+        // Tony 2:
 
-        if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
-        {
-            return;
-        }
+        throw new NotImplementedException();
 
-        IChart chart = Chart;
+        //IChartComponent elementXY = ( IChartComponent )sender;
 
-        if ( chart != null )
-        {
-            Ecng.Xaml.XamlHelper.EnsureUIThread( chart );
-        }
+        //if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
+        //{
+        //    return;
+        //}
 
-        PooledList<IRenderableSeries> rSeriesList;
+        //IChart chart = Chart;
 
-        if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
-        {
-            if ( elementXY.XAxis != null || elementXY.YAxis != null )
-            {
-                foreach ( var rSerie in rSeriesList )
-                {
-                    if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
-                    {
-                        _advanceChartRenderableSeries.Add( rSerie );
-                    }
-                }
-            }
-            else
-            {
-                foreach ( var rSerie in rSeriesList )
-                {
-                    _advanceChartRenderableSeries.Remove( rSerie );
-                }
-            }
-        }
+        //if ( chart != null )
+        //{
+        //    Ecng.Xaml.XamlHelper.EnsureUIThread( chart );
+        //}
 
-        PooledDictionary<object, IAnnotation> dictionary;
+        //PooledList<IRenderableSeries> rSeriesList;
 
-        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dictionary ) )
-        {
-            return;
-        }
+        //if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
+        //{
+        //    if ( elementXY.XAxis != null || elementXY.YAxis != null )
+        //    {
+        //        foreach ( var rSerie in rSeriesList )
+        //        {
+        //            if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
+        //            {
+        //                _advanceChartRenderableSeries.Add( rSerie );
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        foreach ( var rSerie in rSeriesList )
+        //        {
+        //            _advanceChartRenderableSeries.Remove( rSerie );
+        //        }
+        //    }
+        //}
 
-        if ( elementXY.XAxis != null || elementXY.YAxis != null )
-        {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
-            {
-                if ( !_annotationCollection.Contains( keyValuePair.Value ) )
-                {
-                    _annotationCollection.Add( keyValuePair.Value );
-                }
-            }
-        }
-        else
-        {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
-            {
-                _annotationCollection.Remove( keyValuePair.Value );
-            }
-        }
+        //PooledDictionary<object, IAnnotation> dictionary;
+
+        //if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dictionary ) )
+        //{
+        //    return;
+        //}
+
+        //if ( elementXY.XAxis != null || elementXY.YAxis != null )
+        //{
+        //    foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+        //    {
+        //        if ( !_annotationCollection.Contains( keyValuePair.Value ) )
+        //        {
+        //            _annotationCollection.Add( keyValuePair.Value );
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+        //    {
+        //        _annotationCollection.Remove( keyValuePair.Value );
+        //    }
+        //}
     }
 
     public bool HasMultipleBarsHighlighted

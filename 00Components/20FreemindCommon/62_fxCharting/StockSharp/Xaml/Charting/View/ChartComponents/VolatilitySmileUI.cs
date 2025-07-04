@@ -65,7 +65,7 @@ namespace fx.Charting
 
         protected override bool OnDraw( ChartDrawDataEx data )
         {
-            return ( 0 | ( ( ( IElementWithXYAxes )Values ).Draw( data ) ? 1 : 0 ) | ( ( ( IElementWithXYAxes )Smile ).Draw( data ) ? 1 : 0 ) ) != 0;
+            return ( 0 | ( ( ( IChartComponent )Values ).Draw( data ) ? 1 : 0 ) | ( ( ( IChartComponent )Smile ).Draw( data ) ? 1 : 0 ) ) != 0;
         }
 
         public override void Load( SettingsStorage storage )

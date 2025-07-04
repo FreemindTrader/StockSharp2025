@@ -55,7 +55,7 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IChartE
                     }                    
                 }
                     
-                IElementWithXYAxes elementWithAxis = e as IElementWithXYAxes;
+                IChartComponent elementWithAxis = e as IChartComponent;
                 if ( elementWithAxis == null )
                     return true;
                 return !elementWithAxis.AdditionalName( propD.Name );
@@ -104,7 +104,7 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IChartE
                             PropertyDescriptor[ ] pdArrary = new PropertyDescriptor[ 1 ];
                             int index = 0;
 
-                            IElementWithXYAxes elementWithAxis = chartElement as IElementWithXYAxes;
+                            IChartComponent elementWithAxis = chartElement as IChartComponent;
                             string name;
 
                             if ( elementWithAxis != null )

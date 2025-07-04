@@ -14,10 +14,10 @@ public sealed class ParentVM : BaseVM, IDisposable
     private readonly UIBaseVM[ ] _childElements;
     private double _minFieldWidth;
     private readonly IScichartSurfaceVM _scichartSurfaceVM;
-    private readonly IElementWithXYAxes _iRootElement;
+    private readonly IChartComponent _iRootElement;
     private bool _isDisposed;
 
-    public ParentVM( IScichartSurfaceVM pane, IElementWithXYAxes elementXY, IEnumerable< UIBaseVM > childElements )
+    public ParentVM( IScichartSurfaceVM pane, IChartComponent elementXY, IEnumerable< UIBaseVM > childElements )
     {
         if( pane == null )
         {
@@ -58,7 +58,7 @@ public sealed class ParentVM : BaseVM, IDisposable
         }
     }
 
-    public IElementWithXYAxes ChartElement
+    public IChartComponent ChartElement
     {
         get
         {

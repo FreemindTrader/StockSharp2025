@@ -25,23 +25,23 @@ namespace fx.Charting
 
         AxisCollection XAxises { get;  }
 
-        void RemoveAnnotation( IElementWithXYAxes elementXY, object objAnnoPair );
+        void RemoveAnnotation( IChartComponent elementXY, object objAnnoPair );
 
         void RemoveAnnotation( IChartElement annotation );
 
-        void AddAxisMakerAnnotation( IElementWithXYAxes elementXY, IAnnotation axisMakerAnnotation, object axisMarker );
+        void AddAxisMakerAnnotation( IChartComponent elementXY, IAnnotation axisMakerAnnotation, object axisMarker );
 
         void InvokeMoveOrderEvent( Order order, Decimal newOrderPrice );
 
         void InvokeCancelOrderEvent( Order order );
 
-        IAnnotation GetAxisMakerAnnotation( IElementWithXYAxes elementXY, object objAnnoPair );
+        IAnnotation GetAxisMakerAnnotation( IChartComponent elementXY, object objAnnoPair );
 
-        void AddRenderableSeriesToChartSurface( IElementWithXYAxes elementXY, IRenderableSeries renderableSeries );
+        void AddRenderableSeriesToChartSurface( IChartComponent elementXY, IRenderableSeries renderableSeries );
 
         void SetupAnnotation( IChartElement annotation, ChartDrawDataEx.sAnnotation data );
 
-        void Remove( IElementWithXYAxes elementXY );
+        void Remove( IChartComponent elementXY );
 
         VisbleRangeDp GetVisibleRangeDp( string axisId );
 

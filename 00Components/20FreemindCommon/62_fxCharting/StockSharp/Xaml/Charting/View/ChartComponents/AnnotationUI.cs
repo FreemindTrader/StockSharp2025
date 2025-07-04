@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {
-    public class AnnotationUI : ChartElement< AnnotationUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class AnnotationUI : ChartElement< AnnotationUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private ChartAnnotationTypes _annotatinType;
         private AnnotationVM _viewModel;
@@ -71,7 +71,7 @@ namespace fx.Charting
             _viewModel.Draw( Enumerable.Empty< ChartDrawDataEx.IDrawValue >( ).ToEx( 0 ) );
         }
 
-        bool IElementWithXYAxes.CheckAxesCompatible( ChartAxisType? axisType, ChartAxisType? axisType2 )
+        bool IChartComponent.CheckAxesCompatible( ChartAxisType? axisType, ChartAxisType? axisType2 )
         {
             if( !axisType2.HasValue )
             {

@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {
-    public sealed class QuotesUI : ChartElement<QuotesUI>, ICloneable<IChartElement>, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public sealed class QuotesUI : ChartElement<QuotesUI>, ICloneable<IChartElement>, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private ChartIndicatorDrawStyles _drawStyle = ChartIndicatorDrawStyles.Band;
         private LineUI                   _bidLine;

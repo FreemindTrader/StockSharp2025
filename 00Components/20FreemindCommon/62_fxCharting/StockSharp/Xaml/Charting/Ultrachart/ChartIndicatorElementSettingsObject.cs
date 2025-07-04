@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
 using System.Linq;
+using Ecng.Common;
 
 namespace fx.Charting.Ultrachart
 {
@@ -18,69 +19,73 @@ namespace fx.Charting.Ultrachart
 
         protected override PropertyDescriptor[ ] OnGetProperties( IChartElement element )
         {
-            PooledList< PropertyDescriptor > propertyDescriptorList = new PooledList< PropertyDescriptor >( );
+            // Tony 1:
+            throw new NotImplementedException();
+            //PooledList< PropertyDescriptor > propertyDescriptorList = new PooledList< PropertyDescriptor >( );
 
-            if( element is IndicatorUI indicatorElement )
-            {
-                IIndicator indicator = element.Chart?.GetIndicator( indicatorElement );
+            //if( element is IndicatorUI indicatorElement )
+            //{
+            //    var myChart = element.CheckOnNull( nameof( element ) ).ChartArea?.Chart;
 
-                if( indicator != null )
-                {
-                    propertyDescriptorList.Add( IndicatorChartSettings.GetPropertyDescriptor( indicator.Name, this, indicator ) );
-                }
-            }
+            //    IIndicator indicator = myChart?.GetIndicator( indicatorElement );
 
-            var myStyle = new PdSelector( ( e, p ) =>
-            {
-                BrowsableAttribute browse = p.Attributes.OfType<BrowsableAttribute>( ).FirstOrDefault( );
+            //    if( indicator != null )
+            //    {
+            //        propertyDescriptorList.Add( IndicatorChartSettings.GetPropertyDescriptor( indicator.Name, this, indicator ) );
+            //    }
+            //}
 
-                if ( ( browse != null ? ( browse.Browsable ? 1 : 0 ) : 1 ) != 0 )
-                {
-                    Attribute0 attr = p.Attributes.OfType<Attribute0>( ).FirstOrDefault( );
-                    if ( ( attr != null ? ( !attr.GetAttributeValue( ) ? 1 : 0 ) : 1 ) != 0 )
-                    {
-                        if ( e.ParentElement == null )
-                        {
-                            return !( p.Name == "IsVisible" );
-                        }
-                        return true;
-                    }
-                }
+            //var myStyle = new PdSelector( ( e, p ) =>
+            //{
+            //    BrowsableAttribute browse = p.Attributes.OfType<BrowsableAttribute>( ).FirstOrDefault( );
 
-                return false;
-            } );
+            //    if ( ( browse != null ? ( browse.Browsable ? 1 : 0 ) : 1 ) != 0 )
+            //    {
+            //        Attribute0 attr = p.Attributes.OfType<Attribute0>( ).FirstOrDefault( );
+            //        if ( ( attr != null ? ( !attr.GetAttributeValue( ) ? 1 : 0 ) : 1 ) != 0 )
+            //        {
+            //            if ( e.ParentElement == null )
+            //            {
+            //                return !( p.Name == "IsVisible" );
+            //            }
+            //            return true;
+            //        }
+            //    }
 
-            var browsableAndVisible = new PdSelector( ( e, p ) =>
-            {
-                if ( e.ParentElement != null )
-                {
-                    return false;
-                }
+            //    return false;
+            //} );
 
-                if ( p.Name == "IsVisible" )
-                {
-                    return true;
-                }
+            //var browsableAndVisible = new PdSelector( ( e, p ) =>
+            //{
+            //    if ( e.ParentElement != null )
+            //    {
+            //        return false;
+            //    }
 
-                var browse = p.Attributes.OfType<BrowsableAttribute>( ).FirstOrDefault( );
+            //    if ( p.Name == "IsVisible" )
+            //    {
+            //        return true;
+            //    }
 
-                if ( ( browse != null ? ( browse.Browsable ? 1 : 0 ) : 1 ) == 0 )
-                {
-                    return false;
-                }
-                var attribute0 = p.Attributes.OfType<Attribute0>( ).FirstOrDefault( );
+            //    var browse = p.Attributes.OfType<BrowsableAttribute>( ).FirstOrDefault( );
 
-                if ( attribute0 == null )
-                {
-                    return false;
-                }
-                return attribute0.GetAttributeValue( );
-            } );
+            //    if ( ( browse != null ? ( browse.Browsable ? 1 : 0 ) : 1 ) == 0 )
+            //    {
+            //        return false;
+            //    }
+            //    var attribute0 = p.Attributes.OfType<Attribute0>( ).FirstOrDefault( );
 
-            propertyDescriptorList.Add( ChartElementChartSetting.Create( "LocalizedStrings.Str1946", this, element, myStyle ));
-            propertyDescriptorList.Add( ChartElementChartSetting.Create( "LocalizedStrings.Str1946", this, element, browsableAndVisible ) );
+            //    if ( attribute0 == null )
+            //    {
+            //        return false;
+            //    }
+            //    return attribute0.GetAttributeValue( );
+            //} );
 
-            return propertyDescriptorList.ToArray( );
+            //propertyDescriptorList.Add( ChartElementChartSetting.Create( "LocalizedStrings.Str1946", this, element, myStyle ));
+            //propertyDescriptorList.Add( ChartElementChartSetting.Create( "LocalizedStrings.Str1946", this, element, browsableAndVisible ) );
+
+            //return propertyDescriptorList.ToArray( );
         }
 
         private void OnPropertyChanged( object sender, PropertyChangedEventArgs e )

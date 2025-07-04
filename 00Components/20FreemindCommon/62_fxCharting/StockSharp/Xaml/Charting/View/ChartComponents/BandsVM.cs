@@ -125,57 +125,61 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
 
     private FastLineRenderableSeries CreateFastLineSeriesAndBinding( IRenderableSeries lineSeries, LineUI line, ChildVM viewModel )
     {
-        var fastLineSeries = lineSeries as FastLineRenderableSeries;
+        // Tony Fix
 
-        if ( fastLineSeries == null )
-        {            
-            ChildVM[ ] childViewModels = new ChildVM[ 1 ] { viewModel };            
+        throw new NotImplementedException();
 
-            fastLineSeries = CreateRenderableSeries< FastLineRenderableSeries >( childViewModels );            
+        //var fastLineSeries = lineSeries as FastLineRenderableSeries;
 
-            fastLineSeries.SetBindings( BaseRenderableSeries.StrokeProperty                , line, "Color"          , BindingMode.TwoWay, null, null );
-            fastLineSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate"   , BindingMode.TwoWay, null, null );
-            fastLineSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty       , line, "StrokeThickness", BindingMode.TwoWay, null, null );
-            fastLineSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty          , line, "AntiAliasing"   , BindingMode.TwoWay, null, null );
+        //if ( fastLineSeries == null )
+        //{            
+        //    ChildVM[ ] childViewModels = new ChildVM[ 1 ] { viewModel };            
+
+        //    fastLineSeries = CreateRenderableSeries< FastLineRenderableSeries >( childViewModels );            
+
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.StrokeProperty                , line, "Color"          , BindingMode.TwoWay, null, null );
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate"   , BindingMode.TwoWay, null, null );
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty       , line, "StrokeThickness", BindingMode.TwoWay, null, null );
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty          , line, "AntiAliasing"   , BindingMode.TwoWay, null, null );
             
-            var isVisibleProperty   = BaseRenderableSeries.IsVisibleProperty;
-            var cnvt                = new BackgroundBorderBrushMultiConverter( );
-            cnvt.Value              = true;
+        //    var isVisibleProperty   = BaseRenderableSeries.IsVisibleProperty;
+        //    var cnvt                = new BackgroundBorderBrushMultiConverter( );
+        //    cnvt.Value              = true;
 
-            Binding[ ] bindingArray = new Binding[ 3 ]
-                                                        {
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source =    line
-                                                            },
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source =    ChartElement
-                                                            },
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source =    ( ( IElementWithXYAxes ) ChartElement ).ElementWithXYAxes
-                                                            }
-                                                        };
-            fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt, bindingArray );
-        }
+        //    Binding[ ] bindingArray = new Binding[ 3 ]
+        //                                                {
+        //                                                    new Binding( "IsVisible" )
+        //                                                    {
+        //                                                        Source =    line
+        //                                                    },
+        //                                                    new Binding( "IsVisible" )
+        //                                                    {
+        //                                                        Source =    ChartElement
+        //                                                    },
+        //                                                    new Binding( "IsVisible" )
+        //                                                    {
+        //                                                        Source =    ( ( IChartComponent ) ChartElement ).ElementWithXYAxes
+        //                                                    }
+        //                                                };
+        //    fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt, bindingArray );
+        //}
 
-        fastLineSeries.StrokeDashArray = null;
-        fastLineSeries.IsDigitalLine = false;
+        //fastLineSeries.StrokeDashArray = null;
+        //fastLineSeries.IsDigitalLine = false;
 
-        if( line.Style == ChartIndicatorDrawStyles.DashedLine )
-        {
-            fastLineSeries.StrokeDashArray = new double[ 2 ] { 5.0, 5.0 };
-        }
-        else
-        {
-            if( line.Style == ChartIndicatorDrawStyles.StepLine )
-            {
-                fastLineSeries.IsDigitalLine = true;
-            }            
-        }
+        //if( line.Style == ChartIndicatorDrawStyles.DashedLine )
+        //{
+        //    fastLineSeries.StrokeDashArray = new double[ 2 ] { 5.0, 5.0 };
+        //}
+        //else
+        //{
+        //    if( line.Style == ChartIndicatorDrawStyles.StepLine )
+        //    {
+        //        fastLineSeries.IsDigitalLine = true;
+        //    }            
+        //}
 
-        return fastLineSeries;
+        //return fastLineSeries;
     }
 
     protected override void Clear( )
@@ -269,7 +273,7 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
         return true;
     }
 
-    protected override void RootElementPropertyChanged( IElementWithXYAxes elementXY, string propName )
+    protected override void RootElementPropertyChanged( IChartComponent elementXY, string propName )
     {
         base.RootElementPropertyChanged( elementXY, propName );
 

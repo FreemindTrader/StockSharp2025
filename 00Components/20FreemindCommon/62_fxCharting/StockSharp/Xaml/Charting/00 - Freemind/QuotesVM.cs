@@ -111,45 +111,49 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
     private QuoteRenderableSeries CreateQuoteRSeriesAndBinding( IRenderableSeries lineSeries, LineUI line, ChildVM viewModel )
     {
-        var fastLineSeries = lineSeries as QuoteRenderableSeries;
+        // Tony 4:
 
-        if ( fastLineSeries == null )
-        {
-            ChildVM[ ] childViewModels = new ChildVM[ 1 ] { viewModel };
+        throw new NotImplementedException();
 
-            fastLineSeries = CreateRenderableSeries<QuoteRenderableSeries>( childViewModels );
+        //var fastLineSeries = lineSeries as QuoteRenderableSeries;
 
-            fastLineSeries.SetBindings( BaseRenderableSeries.StrokeProperty,                 line, "Color",           BindingMode.TwoWay, null, null );
-            //fastLineSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate",    BindingMode.TwoWay, null, null );
-            fastLineSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty,        line, "StrokeThickness", BindingMode.TwoWay, null, null );
-            fastLineSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty,           line, "AntiAliasing",    BindingMode.TwoWay, null, null );
+        //if ( fastLineSeries == null )
+        //{
+        //    ChildVM[ ] childViewModels = new ChildVM[ 1 ] { viewModel };
 
-            var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
-            var cnvt = new BackgroundBorderBrushMultiConverter( );
-            cnvt.Value = true;
+        //    fastLineSeries = CreateRenderableSeries<QuoteRenderableSeries>( childViewModels );
 
-            Binding[ ] bindingArray = new Binding[ 3 ]
-                                                        {
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source =    line
-                                                            },
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source =    ChartElement
-                                                            },
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source =    ( ( IElementWithXYAxes ) ChartElement ).ElementWithXYAxes
-                                                            }
-                                                        };
-            fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt,  bindingArray );
-        }
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.StrokeProperty,                 line, "Color",           BindingMode.TwoWay, null, null );
+        //    //fastLineSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate",    BindingMode.TwoWay, null, null );
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty,        line, "StrokeThickness", BindingMode.TwoWay, null, null );
+        //    fastLineSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty,           line, "AntiAliasing",    BindingMode.TwoWay, null, null );
+
+        //    var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
+        //    var cnvt = new BackgroundBorderBrushMultiConverter( );
+        //    cnvt.Value = true;
+
+        //    Binding[ ] bindingArray = new Binding[ 3 ]
+        //                                                {
+        //                                                    new Binding( "IsVisible" )
+        //                                                    {
+        //                                                        Source =    line
+        //                                                    },
+        //                                                    new Binding( "IsVisible" )
+        //                                                    {
+        //                                                        Source =    ChartElement
+        //                                                    },
+        //                                                    new Binding( "IsVisible" )
+        //                                                    {
+        //                                                        Source =    ( ( IChartComponent ) ChartElement ).ElementWithXYAxes
+        //                                                    }
+        //                                                };
+        //    fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt,  bindingArray );
+        //}
         
-        fastLineSeries.StrokeDashArray = new double[ 2 ] { 1.0, 3.0 };
+        //fastLineSeries.StrokeDashArray = new double[ 2 ] { 1.0, 3.0 };
 
 
-        return fastLineSeries;
+        //return fastLineSeries;
     }
 
     protected override void Clear( )
@@ -239,7 +243,7 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
         return true;
     }
 
-    protected override void RootElementPropertyChanged( IElementWithXYAxes elementXY, string propName )
+    protected override void RootElementPropertyChanged( IChartComponent elementXY, string propName )
     {
         base.RootElementPropertyChanged( elementXY, propName );
 

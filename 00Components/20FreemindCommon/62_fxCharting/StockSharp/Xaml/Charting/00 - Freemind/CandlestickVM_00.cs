@@ -338,7 +338,7 @@ namespace fx.Charting
             }
         }
 
-        protected override void RootElementPropertyChanged( IElementWithXYAxes elementXY, string property )
+        protected override void RootElementPropertyChanged( IChartComponent elementXY, string property )
         {
             base.RootElementPropertyChanged( elementXY, property );
 

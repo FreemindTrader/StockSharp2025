@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {
-    public sealed class BandsUI : ChartElement< BandsUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public sealed class BandsUI : ChartElement< BandsUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private ChartIndicatorDrawStyles _drawStyle = ChartIndicatorDrawStyles.Band;
         private LineUI _lineOne;

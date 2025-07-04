@@ -357,7 +357,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
         return true;
     }
 
-    protected override void RootElementPropertyChanged( IElementWithXYAxes interface5_0, string string_0 )
+    protected override void RootElementPropertyChanged( IChartComponent interface5_0, string string_0 )
     {
         base.RootElementPropertyChanged( interface5_0, string_0 );
         if( !( string_0 == "Style" ) )

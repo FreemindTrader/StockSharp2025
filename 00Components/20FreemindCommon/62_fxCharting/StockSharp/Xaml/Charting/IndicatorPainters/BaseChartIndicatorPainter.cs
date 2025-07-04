@@ -234,22 +234,25 @@ namespace fx.Charting.IndicatorPainters
 
         public void CopyTo( object obj )
         {
-            if( obj.GetType( ) != GetType( ) )
-            {
-                throw new InvalidOperationException( "Unexpected type of other painter." );
-            }
+            // Tony 3:
 
-            BaseChartIndicatorPainter indicatorPainter = ( BaseChartIndicatorPainter )obj;
+            throw new NotImplementedException();
+            //if( obj.GetType( ) != GetType( ) )
+            //{
+            //    throw new InvalidOperationException( "Unexpected type of other painter." );
+            //}
 
-            if ( _innerElements.Count != indicatorPainter._innerElements.Count )
-            {
-                throw new InvalidOperationException( "Unexpected number of inner elements on the painter clone." );
-            }
+            //BaseChartIndicatorPainter indicatorPainter = ( BaseChartIndicatorPainter )obj;
 
-            for ( int index = 0; index < _innerElements.Count; ++index )
-            {
-                ( ( IElementWithXYAxes )_innerElements[ index ] ).Clone( indicatorPainter._innerElements[ index ] );
-            }
+            //if ( _innerElements.Count != indicatorPainter._innerElements.Count )
+            //{
+            //    throw new InvalidOperationException( "Unexpected number of inner elements on the painter clone." );
+            //}
+
+            //for ( int index = 0; index < _innerElements.Count; ++index )
+            //{
+            //    ( ( IChartComponent )_innerElements[ index ] ).Clone( indicatorPainter._innerElements[ index ] );
+            //}
         }
 
         public virtual void Load( SettingsStorage storage )

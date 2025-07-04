@@ -100,7 +100,7 @@ namespace fx.Charting
 
             
 
-            ( ( IElementWithXYAxes ) candleUI ).ResetUI();
+            ( ( IChartComponent ) candleUI ).ResetUI();
             AddElement( candleArea, candleUI, series );
 
             foreach ( var indicatorPair in indicatorUiDict )
@@ -713,7 +713,7 @@ namespace fx.Charting
         public void SetSource( IChartElement element, object source )
         {
             _uiDatasource[ element ] = source;
-            ( ( IElementWithXYAxes ) element ).ResetUI();
+            ( ( IChartComponent ) element ).ResetUI();
         }
 
         public void Reset( IEnumerable<IChartElement> elements )
