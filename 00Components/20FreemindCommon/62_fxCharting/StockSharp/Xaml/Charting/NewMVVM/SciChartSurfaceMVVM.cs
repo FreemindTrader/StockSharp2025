@@ -15,7 +15,8 @@ using MoreLinq;
 using StockSharp.Localization;
 using fx.Charting;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -37,6 +38,7 @@ using SciChart.Charting.DrawingTools.TradingModifiers;
 using System.Drawing;
 using System.Windows.Media;
 using SciChart.Charting.Themes;
+using Ecng.Common;
 
 public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisposable
 {
@@ -1545,69 +1547,75 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
     {
         // Tony 2:
 
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
 
-        //IChartComponent elementXY = ( IChartComponent )sender;
+        IChartComponent elementXY = ( IChartComponent )sender;
 
-        //if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
-        //{
-        //    return;
-        //}
+        if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
+        {
+            return;
+        }
 
-        //IChart chart = Chart;
+        IChart chart = Chart;
 
-        //if ( chart != null )
-        //{
-        //    Ecng.Xaml.XamlHelper.EnsureUIThread( chart );
-        //}
+        if ( chart != null )
+        {
+            Ecng.Xaml.XamlHelper.EnsureUIThread( chart );
+        }
 
-        //PooledList<IRenderableSeries> rSeriesList;
+        PooledList<IRenderableSeries> rSeriesList;
 
-        //if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
-        //{
-        //    if ( elementXY.XAxis != null || elementXY.YAxis != null )
-        //    {
-        //        foreach ( var rSerie in rSeriesList )
-        //        {
-        //            if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
-        //            {
-        //                _advanceChartRenderableSeries.Add( rSerie );
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        foreach ( var rSerie in rSeriesList )
-        //        {
-        //            _advanceChartRenderableSeries.Remove( rSerie );
-        //        }
-        //    }
-        //}
+        ChartAxis xAxis = null;
+        ChartAxis yAxis = null;
 
-        //PooledDictionary<object, IAnnotation> dictionary;
+        if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
+        {
+            xAxis = elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.XAxises.FirstOrDefault( xa => xa.Id == elementXY.XAxisId );
+            yAxis = elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.YAxises.FirstOrDefault( xa => xa.Id == elementXY.YAxisId );
 
-        //if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dictionary ) )
-        //{
-        //    return;
-        //}
+            if ( xAxis != null || yAxis != null )
+            {
+                foreach ( var rSerie in rSeriesList )
+                {
+                    if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
+                    {
+                        _advanceChartRenderableSeries.Add( rSerie );
+                    }
+                }
+            }
+            else
+            {
+                foreach ( var rSerie in rSeriesList )
+                {
+                    _advanceChartRenderableSeries.Remove( rSerie );
+                }
+            }
+        }
 
-        //if ( elementXY.XAxis != null || elementXY.YAxis != null )
-        //{
-        //    foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
-        //    {
-        //        if ( !_annotationCollection.Contains( keyValuePair.Value ) )
-        //        {
-        //            _annotationCollection.Add( keyValuePair.Value );
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
-        //    {
-        //        _annotationCollection.Remove( keyValuePair.Value );
-        //    }
-        //}
+        PooledDictionary<object, IAnnotation> dictionary;
+
+        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dictionary ) )
+        {
+            return;
+        }
+
+        if ( xAxis != null || yAxis != null )
+        {
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            {
+                if ( !_annotationCollection.Contains( keyValuePair.Value ) )
+                {
+                    _annotationCollection.Add( keyValuePair.Value );
+                }
+            }
+        }
+        else
+        {
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            {
+                _annotationCollection.Remove( keyValuePair.Value );
+            }
+        }
     }
 
     public bool HasMultipleBarsHighlighted

@@ -507,7 +507,7 @@ public sealed class ScichartSurfaceMVVM :
       chartCandleElement.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzzBrCMQ6JtN57pKl5fw\u003D\u003D);
     }
     this.\u0023\u003DzbLGEkvI0sqrejb5agA\u003D\u003D();
-    ddznyiGmdRlAevOq.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzPySg2bVDnv7y);
+    ddznyiGmdRlAevOq.PropertyChanged += new PropertyChangedEventHandler(this.OnXYAxisPropertyChanged);
   }
 
   public bool \u0023\u003DzmxDTmQc\u003D(IChartElement _param1)
@@ -522,7 +522,7 @@ public sealed class ScichartSurfaceMVVM :
     ddznyiGmdRlAevOq.RemoveAxisesEventHandler();
     if (ddznyiGmdRlAevOq is IChartCandleElement chartCandleElement)
       chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzzBrCMQ6JtN57pKl5fw\u003D\u003D);
-    ddznyiGmdRlAevOq.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzPySg2bVDnv7y);
+    ddznyiGmdRlAevOq.PropertyChanged -= new PropertyChangedEventHandler(this.OnXYAxisPropertyChanged);
     ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements).Remove(ddznyiGmdRlAevOq);
     if (a4VgOpCeDiqsTdzB != null)
     {
@@ -534,7 +534,7 @@ public sealed class ScichartSurfaceMVVM :
     return true;
   }
 
-  private void \u0023\u003DzPySg2bVDnv7y(object _param1, PropertyChangedEventArgs _param2)
+  private void OnXYAxisPropertyChanged(object _param1, PropertyChangedEventArgs _param2)
   {
     IChartComponent ddznyiGmdRlAevOq = (IChartComponent) _param1;
     if (_param2.PropertyName != "XAxisId" && _param2.PropertyName != "YAxisId")
@@ -739,7 +739,7 @@ public sealed class ScichartSurfaceMVVM :
       this._chartUIRSeries[_param1] = koh9jO5RuUcFiAqLcList = new List<IRenderableSeries>();
     if (!koh9jO5RuUcFiAqLcList.Contains(_param2))
       koh9jO5RuUcFiAqLcList.Add(_param2);
-    this.\u0023\u003DzPySg2bVDnv7y((object) _param1, new PropertyChangedEventArgs("XAxisId"));
+    this.OnXYAxisPropertyChanged((object) _param1, new PropertyChangedEventArgs("XAxisId"));
   }
 
   public void \u0023\u003Dzwh_e_TheVZKh(
