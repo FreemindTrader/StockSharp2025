@@ -13,7 +13,7 @@ using System.Windows.Media;
 namespace fx.Charting
 {
     [TypeConverter( typeof( ExpandableObjectConverter ) )]
-    public abstract class ChartComponent<T> : ChartComponentBase<T>, ICloneable<IfxChartElement>, INotifyPropertyChanged, IElementWithXYAxes, ICloneable, INotifyPropertyChanging, IfxChartElement where T : ChartComponent<T>
+    public abstract class ChartComponent<T> : ChartPart<T>, ICloneable<IfxChartElement>, INotifyPropertyChanged, IElementWithXYAxes, ICloneable, INotifyPropertyChanging, IfxChartElement where T : ChartComponent<T>
     {
         private readonly SynchronizedDictionary<Guid, string>  _idToName = new SynchronizedDictionary<Guid, string>( );
         private readonly CachedSynchronizedList<IfxChartElement> _childElements = new CachedSynchronizedList<IfxChartElement>( );

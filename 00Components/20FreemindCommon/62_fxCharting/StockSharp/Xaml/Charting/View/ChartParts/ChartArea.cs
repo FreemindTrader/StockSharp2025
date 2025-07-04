@@ -18,7 +18,7 @@ using SciChart.Charting.ChartModifiers;
 namespace fx.Charting
 {
     
-    public class ChartArea : ChartComponentBase< ChartArea >, IDisposable
+    public class ChartArea : ChartPart< ChartArea >, IDisposable
     {
         public static readonly string XAxisId = "X";
         public static readonly string YAxisId = "Y";

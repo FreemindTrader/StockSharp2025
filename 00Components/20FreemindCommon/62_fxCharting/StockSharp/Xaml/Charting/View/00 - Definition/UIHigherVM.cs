@@ -13,7 +13,7 @@ using Ecng.Xaml.Converters;
 
 #pragma warning disable CA1416
 
-internal abstract class UIHigherVM< T > : UIBaseVM where T : ChartComponentBase< T >, IDrawableChartElement
+internal abstract class UIHigherVM< T > : UIBaseVM where T : ChartPart< T >, IDrawableChartElement
 {
     private readonly PooledSet< IElementWithXYAxes > _rootElementSet = new PooledSet< IElementWithXYAxes >( );
     private readonly T _chartElement;
