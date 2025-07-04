@@ -47,7 +47,7 @@ public class OptionPositionChart :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzjXbVlj0Id0BN = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly Dictionary<BlackScholes, (IChartLineElement, IChartLineElement)> \u0023\u003DzOK03jF5_2xLYbkS0rg\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -78,7 +78,7 @@ public class OptionPositionChart :
     base.\u002Ector();
     dop2SzA2WchXh2wc.\u0023\u003DzRRvwDu67s9Rm = this;
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
     IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>();
     IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();

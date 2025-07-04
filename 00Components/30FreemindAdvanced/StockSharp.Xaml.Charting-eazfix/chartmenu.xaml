@@ -7,7 +7,7 @@
                                                             l1llili1:Name="_self" IsEnabled="{Binding Path=IsInteracted, Converter={StaticResource booltovis}}">
   <FrameworkElement.Resources>
     <ll1:BoolToVisibilityConverter l1llili1:Key="booltovis"/>
-    <llliil11:dje_zZY2QS9KRNTZS9HAG4USNMAU3MWTLYLHEXJ249XML_ejd l1llili1:Key="addEllipsisConv"/>
+    <llliil11:addEllipsisConv l1llili1:Key="addEllipsisConv"/>
     <Style l1llili1:Key="btnstyle" TargetType="{l1llili1:Type li11l:BarButtonItem}">
       <Setter Property="li11l:BarItem.CommandParameter" Value="{Binding Area, ElementName=_self, Mode=OneWay}"/>
     </Style>

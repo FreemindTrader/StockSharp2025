@@ -242,7 +242,7 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
         double num11 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double close = r84WmWxFxQ0dZvA0kR.Close;
-        Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, num8, num9, num10, num11, close);
+        Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, num8, num9, num10, num11, close);
         if (nullable.HasValue)
           rhwYsZxA33iRu6Id7J = _param3.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
       }
@@ -288,7 +288,7 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
       IBrush2D xrgcdFbSdWgN9GcT8 = flag2 ? this.\u0023\u003Dzg8VA2CqF2xNU : this.\u0023\u003DzdX\u00241d3EiaJKH;
       if (paletteProvider != null)
       {
-        Color? nullable = paletteProvider.\u0023\u003DzLCyKrYI\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D(), num3, num4, num5, close);
+        Color? nullable = paletteProvider.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D(), num3, num4, num5, close);
         if (nullable.HasValue)
         {
           rhwYsZxA33iRu6Id7J = _param3.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
@@ -298,7 +298,7 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
       iluL6N4L8CsqVgQq.\u0023\u003Dzk8_eoWQ\u003D(this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num6, (double) num10), flag1), this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num6, (double) num9), flag1), rhwYsZxA33iRu6Id7J);
       iluL6N4L8CsqVgQq.\u0023\u003Dzk8_eoWQ\u003D(this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num6, (double) num12), flag1), this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num6, (double) num11), flag1), rhwYsZxA33iRu6Id7J);
       if (flag2)
-        \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num9, ref num12);
+        NumberUtil.Swap(ref num9, ref num12);
       iluL6N4L8CsqVgQq.\u0023\u003DzkpjYNfwbvIK8(this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num7, (double) num9), flag1), this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num8, (double) num12), flag1), xrgcdFbSdWgN9GcT8, rhwYsZxA33iRu6Id7J, num1);
     }
   }

@@ -241,9 +241,9 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
         double num7 = num5 + vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003DzfuDyOX2LBzuJ - 1.0;
         double num8 = num6 + (double) num3 * (num1 * (double) ((CandlePriceLevel) ref candlePriceLevel).TotalVolume / num4);
         if (num5 > num7)
-          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.\u0023\u003DzMv8ALVs\u003D(ref num5, ref num7);
+          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.Swap(ref num5, ref num7);
         if (num6 > num8)
-          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.\u0023\u003DzMv8ALVs\u003D(ref num6, ref num8);
+          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.Swap(ref num6, ref num8);
         if (num8 - num6 >= 0.5)
         {
           Point point1 = new Point(num5, num6);
@@ -282,9 +282,9 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
         double num16 = num14 + (num10 > 0.0 ? (double) num2 * (num1 * (double) ((CandlePriceLevel) ref candlePriceLevel).TotalVolume / num10) : 0.0);
         double num17 = num15 + (double) num3 * vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D - (double) num3;
         if (num14 > num16)
-          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.\u0023\u003DzMv8ALVs\u003D(ref num14, ref num16);
+          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.Swap(ref num14, ref num16);
         if (num15 > num17)
-          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.\u0023\u003DzMv8ALVs\u003D(ref num15, ref num17);
+          \u0023\u003DzAWpkoWPAfFQEtlAHXmXhio86vmI2XKycmgX\u0024bXbMoWy0WSCN5qTb7KX3DSGIbEK1Aw\u003D\u003D.Swap(ref num15, ref num17);
         if (num16 - num14 >= 0.5)
         {
           Point point3 = new Point(num14, num15);

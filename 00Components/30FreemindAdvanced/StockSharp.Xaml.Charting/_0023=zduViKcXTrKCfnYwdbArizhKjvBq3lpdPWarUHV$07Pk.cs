@@ -13,9 +13,9 @@ using System.Linq;
 #nullable disable
 internal static class \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024
 {
-  internal static bool IsFiniteNumber(this IComparable _param0)
+  internal static bool IsDefined(this IComparable _param0)
   {
-    return _param0 != null && \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0);
+    return _param0 != null && \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0);
   }
 
   internal static double ToDouble(this double _param0) => _param0;
@@ -36,7 +36,7 @@ internal static class \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u00240
       return dateTime;
     if (_param0 is TimeSpan timeSpan)
       return new DateTime(timeSpan.Ticks);
-    return _param0.IsFiniteNumber() ? new DateTime(\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzOS5Il8E\u003D((long) Convert.ChangeType((object) _param0, typeof (long), (IFormatProvider) CultureInfo.InvariantCulture), DateTime.MinValue.Ticks, DateTime.MaxValue.Ticks)) : new DateTime();
+    return _param0.IsDefined() ? new DateTime(\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzOS5Il8E\u003D((long) Convert.ChangeType((object) _param0, typeof (long), (IFormatProvider) CultureInfo.InvariantCulture), DateTime.MinValue.Ticks, DateTime.MaxValue.Ticks)) : new DateTime();
   }
 
   internal static TimeSpan \u0023\u003Dzto51K8pl8UAh(this IComparable _param0)
@@ -45,7 +45,7 @@ internal static class \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u00240
       return timeSpan;
     if (_param0 is DateTime dateTime)
       return new TimeSpan(dateTime.Ticks);
-    return _param0.IsFiniteNumber() ? new TimeSpan(\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzOS5Il8E\u003D((long) Convert.ChangeType((object) _param0, typeof (long), (IFormatProvider) CultureInfo.InvariantCulture), TimeSpan.MinValue.Ticks, TimeSpan.MaxValue.Ticks)) : new TimeSpan();
+    return _param0.IsDefined() ? new TimeSpan(\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzOS5Il8E\u003D((long) Convert.ChangeType((object) _param0, typeof (long), (IFormatProvider) CultureInfo.InvariantCulture), TimeSpan.MinValue.Ticks, TimeSpan.MaxValue.Ticks)) : new TimeSpan();
   }
 
   [Serializable]

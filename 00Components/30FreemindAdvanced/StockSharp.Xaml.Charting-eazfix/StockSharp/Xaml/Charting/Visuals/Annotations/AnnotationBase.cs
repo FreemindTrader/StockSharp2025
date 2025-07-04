@@ -27,7 +27,7 @@ internal abstract class AnnotationBase :
   IXmlSerializable,
   ISuspendable,
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
-  \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D,
+  IAnnotation,
   IHitTestable
 {
   public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(AnnotationBase.OnXAxisIdChanged)));
@@ -280,7 +280,7 @@ internal abstract class AnnotationBase :
   }
 
   public virtual bool CanMultiSelect(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D[] annotations)
+    IAnnotation[] annotations)
   {
     return annotations.Length == 1;
   }
@@ -324,7 +324,7 @@ internal abstract class AnnotationBase :
     }
   }
 
-  void \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnXAxesCollectionChanged(
+  void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnXAxesCollectionChanged(
     object sender,
     NotifyCollectionChangedEventArgs args)
   {
@@ -336,7 +336,7 @@ internal abstract class AnnotationBase :
     }.\u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H));
   }
 
-  void \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnYAxesCollectionChanged(
+  void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnYAxesCollectionChanged(
     object sender,
     NotifyCollectionChangedEventArgs args)
   {
@@ -694,7 +694,7 @@ internal abstract class AnnotationBase :
     double coordinate1 = this.GetCoordinate(xDataValue, canvas, xCoordCalc);
     double coordinate2 = this.GetCoordinate(yDataValue, canvas, yCoordCalc);
     if (xCoordCalc != null && !xCoordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K())
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref coordinate1, ref coordinate2);
+      NumberUtil.Swap(ref coordinate1, ref coordinate2);
     return new Point(coordinate1, coordinate2);
   }
 
@@ -862,7 +862,7 @@ internal abstract class AnnotationBase :
 
   protected virtual void AddAdorners(Canvas adornerLayer)
   {
-    \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C nqo7rKyswR861f1C = new \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) this);
+    \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C nqo7rKyswR861f1C = new \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C((IAnnotation) this);
     nqo7rKyswR861f1C.\u0023\u003Dzbw4WNWtere7d(adornerLayer);
     this._myAdorners.Add((\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x) nqo7rKyswR861f1C);
   }
@@ -889,7 +889,7 @@ internal abstract class AnnotationBase :
 
   internal bool TrySelectAnnotation()
   {
-    return this.ParentSurface != null && this.ParentSurface.get_Annotations().\u0023\u003DzaO_rUKeW5Orq((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) this);
+    return this.ParentSurface != null && this.ParentSurface.get_Annotations().\u0023\u003DzaO_rUKeW5Orq((IAnnotation) this);
   }
 
   private void OnSelected()
@@ -1041,12 +1041,12 @@ internal abstract class AnnotationBase :
   {
     if (reader.MoveToContent() != XmlNodeType.Element || !(reader.LocalName == ((object) this).GetType().Name))
       return;
-    \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ3C42.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz4EJs3pc\u003D((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) this, reader);
+    \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ3C42.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz4EJs3pc\u003D((IAnnotation) this, reader);
   }
 
   public virtual void WriteXml(XmlWriter writer)
   {
-    \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ3C42.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz7SZ\u0024Lrw\u003D((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) this, writer);
+    \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ3C42.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz7SZ\u0024Lrw\u003D((IAnnotation) this, writer);
   }
 
   internal FrameworkElement RootElement => this.AnnotationRoot;
@@ -1055,12 +1055,12 @@ internal abstract class AnnotationBase :
 
   internal bool IsDraggingByUser => this._isPrimaryDrag;
 
-  object \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eget_DataContext()
+  object IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eget_DataContext()
   {
     return this.DataContext;
   }
 
-  void \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eset_DataContext(
+  void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eset_DataContext(
     object value)
   {
     this.DataContext = value;

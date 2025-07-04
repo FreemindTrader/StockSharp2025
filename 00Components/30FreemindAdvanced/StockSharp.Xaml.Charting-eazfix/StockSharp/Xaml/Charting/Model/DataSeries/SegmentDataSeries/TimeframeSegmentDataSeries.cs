@@ -28,8 +28,8 @@ internal class TimeframeSegmentDataSeries :
   public static readonly IMath<DateTime> XMath = MathHelper.GetMath<DateTime>();
   private string _seriesName;
   private readonly \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj _volumeProfile = new \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj(new DateTime(), 0);
-  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> _segments = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>();
-  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<DateTime> _segmentDates = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<DateTime>();
+  private readonly AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> _segments = new AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>();
+  private readonly AbstractList<DateTime> _segmentDates = new AbstractList<DateTime>();
   private readonly TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D _yValues;
   private readonly ChartCandleElement _element;
   private Tuple<DateTime, DateTime, long> _curPeriod;
@@ -159,20 +159,20 @@ internal class TimeframeSegmentDataSeries :
   }
 
   public void InvalidateParentSurface(
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D rangeMode)
+    RangeMode rangeMode)
   {
     if (this.ParentSurface == null)
       return;
     switch (rangeMode)
     {
-      case (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D) 0:
+      case (RangeMode) 0:
         this.ParentSurface.InvalidateElement();
         break;
-      case (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D) 1:
-        this.ParentSurface.\u0023\u003Dzn72LMZ0738BY();
+      case (RangeMode) 1:
+        this.ParentSurface.ZoomExtents();
         break;
-      case (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D) 2:
-        this.ParentSurface.\u0023\u003Dz7mFu4O\u0024TokaR();
+      case (RangeMode) 2:
+        this.ParentSurface.ZoomExtentsY();
         break;
     }
   }
@@ -224,7 +224,7 @@ internal class TimeframeSegmentDataSeries :
       if (!this._segmentDates.Any<DateTime>())
         return (IRange) new DoubleRange(double.MinValue, double.MaxValue);
       DateTime segmentDate = this._segmentDates[0];
-      \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<DateTime> segmentDates = this._segmentDates;
+      AbstractList<DateTime> segmentDates = this._segmentDates;
       DateTime dateTime = segmentDates[segmentDates.Count - 1];
       return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(segmentDate, dateTime).AsDoubleRange();
     }
@@ -238,7 +238,7 @@ internal class TimeframeSegmentDataSeries :
         return (IRange) new DoubleRange(double.MinValue, double.MaxValue);
       double num1 = double.MaxValue;
       double num2 = double.MinValue;
-      using (\u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this._segments.\u0023\u003DzRPOJ5g0\u003D())
+      using (AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>.\u0023\u003DzdFhhG7w\u003D zdFhhG7w = this._segments.\u0023\u003DzRPOJ5g0\u003D())
       {
         while (zdFhhG7w.MoveNext())
         {
@@ -333,7 +333,7 @@ internal class TimeframeSegmentDataSeries :
     {
       dateTime1 = new DateTime(dt.Year, dt.Month, dt.Day) - TimeSpan.FromDays((double) dt.DayOfWeek);
       dateTime2 = dateTime1 + period;
-      num = (long) dateTime1.\u0023\u003DzmFqiVl_wmxhe();
+      num = (long) dateTime1.WeekNumber();
     }
     else
     {
@@ -351,11 +351,11 @@ internal class TimeframeSegmentDataSeries :
 
   internal static double[] GeneratePrices(double min, double max, double step)
   {
-    min = min.\u0023\u003Dzezm_VedE86O1(step);
-    max = max.\u0023\u003Dzezm_VedE86O1(step);
+    min = min.NormalizePrice(step);
+    max = max.NormalizePrice(step);
     double[] prices = new double[1 + (int) Math.Round((max - min) / step)];
     for (int index = 0; index < prices.Length; ++index)
-      prices[index] = (min + (double) index * step).\u0023\u003Dzezm_VedE86O1(step);
+      prices[index] = (min + (double) index * step).NormalizePrice(step);
     return prices;
   }
 
@@ -369,7 +369,7 @@ internal class TimeframeSegmentDataSeries :
         this._curPeriod = TimeframeSegmentDataSeries.GetTimeframePeriod(time, this.Timeframe.Value, this._curPeriod);
         if (this._segments.Count > 0)
         {
-          \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments = this._segments;
+          AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments = this._segments;
           if (segments[segments.Count - 1].\u0023\u003Dzg86amuQ\u003D() > this._curPeriod.Item1)
             throw new ArgumentOutOfRangeException(nameof (time), "data must be ordered by time");
         }
@@ -396,7 +396,7 @@ internal class TimeframeSegmentDataSeries :
         this._curPeriod = TimeframeSegmentDataSeries.GetTimeframePeriod(time, this.Timeframe.Value, this._curPeriod);
         if (this._segments.Count > 0)
         {
-          \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments = this._segments;
+          AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments = this._segments;
           if (segments[segments.Count - 1].\u0023\u003Dzg86amuQ\u003D() > this._curPeriod.Item1)
             throw new ArgumentOutOfRangeException(nameof (time), "data must be ordered by time");
         }
@@ -422,10 +422,10 @@ internal class TimeframeSegmentDataSeries :
     \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj ltdBuqAinydlZs6uj;
     if (this._segments.Count != 0)
     {
-      \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments1 = this._segments;
+      AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments1 = this._segments;
       if (!(segments1[segments1.Count - 1].\u0023\u003Dzg86amuQ\u003D() != time))
       {
-        \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments2 = this._segments;
+        AbstractList<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> segments2 = this._segments;
         ltdBuqAinydlZs6uj = segments2[segments2.Count - 1];
         goto label_8;
       }
@@ -625,18 +625,18 @@ label_8:
     IEnumerable<double>
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly TimeframeSegmentDataSeries \u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException("parent");
+    private readonly TimeframeSegmentDataSeries _parentElement = _param1 ?? throw new ArgumentNullException("parent");
 
-    public int Count => this.\u0023\u003DzU\u0024_meog\u003D._segments.Count;
+    public int Count => this._parentElement._segments.Count;
 
     public object SyncRoot
     {
-      get => ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D._segments).SyncRoot;
+      get => ((ICollection) this._parentElement._segments).SyncRoot;
     }
 
     public bool IsSynchronized
     {
-      get => ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D._segments).IsSynchronized;
+      get => ((ICollection) this._parentElement._segments).IsSynchronized;
     }
 
     public bool IsReadOnly => true;
@@ -650,7 +650,7 @@ label_8:
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -660,7 +660,7 @@ label_8:
 
     public bool Contains(double _param1)
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
+      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
     }
 
     int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
@@ -670,10 +670,10 @@ label_8:
 
     public int IndexOf(double _param1)
     {
-      int count = this.\u0023\u003DzU\u0024_meog\u003D._segments.Count;
+      int count = this._parentElement._segments.Count;
       for (int index = 0; index < count; ++index)
       {
-        if (this.\u0023\u003DzU\u0024_meog\u003D._segments[index].\u0023\u003Dzu7q98_E\u003D().\u0023\u003Dz0AeaaBjWIeEn(_param1))
+        if (this._parentElement._segments[index].\u0023\u003Dzu7q98_E\u003D().DoubleEquals(_param1))
           return index;
       }
       return -1;
@@ -681,7 +681,7 @@ label_8:
 
     public double this[int _param1]
     {
-      get => this.\u0023\u003DzU\u0024_meog\u003D._segments[_param1].\u0023\u003Dzu7q98_E\u003D();
+      get => this._parentElement._segments[_param1].\u0023\u003Dzu7q98_E\u003D();
       set => throw new NotImplementedException();
     }
 

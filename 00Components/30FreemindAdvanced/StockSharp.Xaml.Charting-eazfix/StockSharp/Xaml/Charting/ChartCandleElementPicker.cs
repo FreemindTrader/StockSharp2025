@@ -89,7 +89,7 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
 
     internal string \u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D(IChartCandleElement _param1)
     {
-      return ((IfxChartElement) _param1).GetGeneratedTitle();
+      return ((IChartComponent) _param1).GetGeneratedTitle();
     }
   }
 }

@@ -171,7 +171,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
       switch (this.\u0023\u003Dz_iIh83yfe01U().HorizontalAlignment)
       {
         case HorizontalAlignment.Left:
-          val1 = _param1.\u0023\u003DzS2_K6sVvd5IY.IsFiniteNumber() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
+          val1 = _param1.\u0023\u003DzS2_K6sVvd5IY.IsDefined() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
           break;
         case HorizontalAlignment.Center:
           double num2 = Math.Min(_param1.\u0023\u003DzS2_K6sVvd5IY, _param1.\u0023\u003Dz6aJoeqoqAzym);
@@ -181,7 +181,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
           val1 = num3 - num4;
           break;
         case HorizontalAlignment.Right:
-          num1 = _param1.\u0023\u003DzS2_K6sVvd5IY.IsFiniteNumber() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
+          num1 = _param1.\u0023\u003DzS2_K6sVvd5IY.IsDefined() ? _param1.\u0023\u003DzS2_K6sVvd5IY : _param1.\u0023\u003Dz6aJoeqoqAzym;
           val1 -= num1;
           break;
       }

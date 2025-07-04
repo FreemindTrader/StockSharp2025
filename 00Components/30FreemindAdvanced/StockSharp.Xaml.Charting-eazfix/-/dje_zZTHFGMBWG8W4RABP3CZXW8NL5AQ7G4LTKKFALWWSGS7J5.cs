@@ -63,7 +63,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     get => this.\u0023\u003DzSsJ0VVqBhS6c;
     set
     {
-      this.\u0023\u003DzSsJ0VVqBhS6c = !(value != (Type) null) || typeof (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D).IsAssignableFrom(value) ? value : throw new ArgumentOutOfRangeException("value", $"Type {value} does not implement IAnnotation interface.");
+      this.\u0023\u003DzSsJ0VVqBhS6c = !(value != (Type) null) || typeof (IAnnotation).IsAssignableFrom(value) ? value : throw new ArgumentOutOfRangeException("value", $"Type {value} does not implement IAnnotation interface.");
     }
   }
 
@@ -73,11 +73,11 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     set => this.\u0023\u003DzL3qbeQTHvLZ5 = value;
   }
 
-  public \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D Annotation
+  public IAnnotation Annotation
   {
     get
     {
-      return (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) this.\u0023\u003DzJu3oQ4_zae0S;
+      return (IAnnotation) this.\u0023\u003DzJu3oQ4_zae0S;
     }
   }
 
@@ -87,7 +87,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     this.\u0023\u003DzJu3oQ4_zae0S = (AnnotationBase) null;
     if (!this.IsEnabled || this.ParentSurface == null)
       return;
-    this.ParentSurface.get_Annotations().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D ?? (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D = new Action<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzLdGxEgyAELbBj1m4vj3jYKw\u003D)));
+    this.ParentSurface.get_Annotations().\u0023\u003Dz30RSSSygABj_<IAnnotation>(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D ?? (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D = new Action<IAnnotation>(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzLdGxEgyAELbBj1m4vj3jYKw\u003D)));
   }
 
   protected void \u0023\u003Dz2OXXIFQJYQ3d()
@@ -156,7 +156,7 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
       Style style = new Style(_param1) { BasedOn = _param2 };
       instance.Style = style;
     }
-    this.ParentSurface.get_Annotations().Add((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) instance);
+    this.ParentSurface.get_Annotations().Add((IAnnotation) instance);
     return instance;
   }
 
@@ -164,10 +164,10 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003Dz7qOdpi4\u003D();
-    public static Action<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D> \u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D;
+    public static Action<IAnnotation> \u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D;
 
     internal void \u0023\u003DzLdGxEgyAELbBj1m4vj3jYKw\u003D(
-      \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D _param1)
+      IAnnotation _param1)
     {
       _param1.set_IsSelected(false);
       _param1.set_IsEditable(false);

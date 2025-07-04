@@ -228,7 +228,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlC
           num3 = num1 * diff + klqcJ87Zm8UwE3WEjd.Min;
           num4 = num2 * diff + klqcJ87Zm8UwE3WEjd.Min;
         }
-        if (num3 < num4 && num3.IsFiniteNumber() && num4.IsFiniteNumber())
+        if (num3 < num4 && num3.IsDefined() && num4.IsDefined())
           abyLt9clZggmJsWhw1 = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D(this.\u0023\u003DzLXQXNXQ\u003D.VisibleRange.GetType(), (IComparable) num3, (IComparable) num4);
       }
       else

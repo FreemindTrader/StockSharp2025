@@ -125,7 +125,7 @@ internal class dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd :
     int length = _param1.\u0023\u003Dz4nxjMSnapDjJ.Length;
     for (int index = 0; index < length; ++index)
     {
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[index];
+      IRenderableSeries uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[index];
       \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = _param1.\u0023\u003Dz4nxjMSnapDjJ[index];
       if (uhIm4pSg8PxqhyA71 != null && ftrixUnpTllY1PkTyq != null && !(uhIm4pSg8PxqhyA71.get_YAxisId() != this.Id))
       {
@@ -243,6 +243,6 @@ internal class dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd :
     IComparable comparable = base.\u0023\u003DzACwLhyc\u003D(_param1);
     if (this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2 <= 0.0 || !(comparable is double num))
       return comparable;
-    return num.IsNaN() ? (IComparable) num : (IComparable) num.\u0023\u003DzhjMeblo\u003D(this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2);
+    return num.IsNaN() ? (IComparable) num : (IComparable) num.Round(this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2);
   }
 }

@@ -31,36 +31,36 @@
           </li11l:PopupMenu.Items>
         </li11l:PopupMenu>
       </li11l:BarManager.DXContextMenu>
-      <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd l1llili1:Name="Surface" ClipModifierSurface="True" ChartModifier="{Binding ChartModifier}">
-        <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
+      <llliil11:SciChartSurface l1llili1:Name="Surface" ClipModifierSurface="True" ChartModifier="{Binding ChartModifier}">
+        <llliil11:SciChartSurface.Annotations>
           <Binding Mode="OneWay">            <!-- constructor argument:
                  Annotations
             -->
 
           </Binding>
-        </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
-        <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
+        </llliil11:SciChartSurface.Annotations>
+        <llliil11:SciChartSurface.SeriesSource>
           <Binding>            <!-- constructor argument:
                  ChartSeriesViewModels
             -->
 
           </Binding>
-        </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
-        <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
+        </llliil11:SciChartSurface.SeriesSource>
+        <llliil11:SciChartSurface.XAxes>
           <Binding>            <!-- constructor argument:
                  XAxises
             -->
 
           </Binding>
-        </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
-        <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
+        </llliil11:SciChartSurface.XAxes>
+        <llliil11:SciChartSurface.YAxes>
           <Binding>            <!-- constructor argument:
                  YAxises
             -->
 
           </Binding>
-        </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
-      </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
+        </llliil11:SciChartSurface.YAxes>
+      </llliil11:SciChartSurface>
       <llliil11:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd Margin="23,23" DataContext="{Binding LegendViewModel}"
                                                                                                   Visibility="{Binding Pane.ShowLegend, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"/>
       <TextBlock Margin="0,20,70,0" VerticalAlignment="Top" HorizontalAlignment="Right"

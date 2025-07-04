@@ -54,7 +54,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private PropertyChangeNotifier \u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> \u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
+  private ObservableCollection<IRenderableSeries> \u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private PropertyChangeNotifier \u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -241,7 +241,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     ISciChartSurface _param1,
     \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param2)
   {
-    return _param1 != null && !_param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>() && _param1.get_RenderableSeries().Any<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(new dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dzzjz1tgS0aO8fKdbpAk8DUVE\u003D()
+    return _param1 != null && !_param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>() && _param1.get_RenderableSeries().Any<IRenderableSeries>(new Func<IRenderableSeries, bool>(new dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003Dzzjz1tgS0aO8fKdbpAk8DUVE\u003D()
     {
       \u0023\u003DzV4I\u00248D0bjQIn = _param2
     }.\u0023\u003DzPainzusVDvxJHbnmyWpu6OsDqQPW));
@@ -259,11 +259,11 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   private void \u0023\u003DzGRp1Ib8nhGv\u0024(DependencyPropertyChangedEventArgs _param1)
   {
     this.\u0023\u003DzAnFHa0QS7SrDykk4wg\u003D\u003D();
-    if (_param1.NewValue is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd newValue)
+    if (_param1.NewValue is SciChartSurface newValue)
     {
-      this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t = new PropertyChangeNotifier((DependencyObject) newValue, dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
+      this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t = new PropertyChangeNotifier((DependencyObject) newValue, SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
       this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t.ValueChanged += new Action(this.\u0023\u003Dz_sR2YBsF8Vv_kS6d84fxv3s\u003D);
-      this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) newValue, dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.\u0023\u003DzDqajrUCXt2L8);
+      this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) newValue, SciChartSurface.\u0023\u003DzDqajrUCXt2L8);
       this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D.ValueChanged += new Action(this.\u0023\u003DzgjrLoKvF7hcz9A6IKvJCiAc\u003D);
       if (!this.\u0023\u003DzZips37gKJQPGLQcrTw\u003D\u003D((ISciChartSurface) newValue, this.DataSeries))
         this.SetCurrentValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzGTMdFbtr59Hr, (object) null);
@@ -309,12 +309,12 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   }
 
   private void \u0023\u003Dz4X8eQxjPK0LOdo2uQqSISqs\u003D(
-    ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param1)
+    ObservableCollection<IRenderableSeries> _param1)
   {
     if (this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D != null)
     {
       this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D.CollectionChanged -= new NotifyCollectionChangedEventHandler(this.\u0023\u003Dz7srWHueCApHLwSzFbP3tcMI\u003D);
-      this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D = (ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) null;
+      this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D = (ObservableCollection<IRenderableSeries>) null;
     }
     this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D = _param1;
     if (this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D == null)
@@ -331,7 +331,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     gncgo1okL0HgWiq5JrU.\u0023\u003DzRRvwDu67s9Rm = this;
     if (this.DataSeries != null || this.ParentSurface == null)
       return;
-    gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D = this.ParentSurface.get_RenderableSeries().FirstOrDefault<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>();
+    gncgo1okL0HgWiq5JrU.\u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D = this.ParentSurface.get_RenderableSeries().FirstOrDefault<IRenderableSeries>();
     if (this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D != null)
     {
       this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D.Dispose();
@@ -402,7 +402,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   {
     if (this.\u0023\u003DzVpgkPm_hKDwz == null)
       return;
-    if (this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().\u0023\u003DzMeGSfVE\u003D<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>() || this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().First<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>().GetType() != _param2)
+    if (this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().\u0023\u003DzMeGSfVE\u003D<IRenderableSeries>() || this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().First<IRenderableSeries>().GetType() != _param2)
     {
       BaseRenderableSeries instance = (BaseRenderableSeries) Activator.CreateInstance(_param2);
       instance.SetCurrentValue(FrameworkElement.DataContextProperty, (object) this);
@@ -411,7 +411,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
       using (this.\u0023\u003DzVpgkPm_hKDwz.SuspendUpdates())
       {
         this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().Clear();
-        this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().Add((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) instance);
+        this.\u0023\u003DzVpgkPm_hKDwz.get_RenderableSeries().Add((IRenderableSeries) instance);
       }
     }
     else
@@ -438,7 +438,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
 
   private void \u0023\u003Dz_sR2YBsF8Vv_kS6d84fxv3s\u003D()
   {
-    this.\u0023\u003Dz4X8eQxjPK0LOdo2uQqSISqs\u003D((ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t.Value);
+    this.\u0023\u003Dz4X8eQxjPK0LOdo2uQqSISqs\u003D((ObservableCollection<IRenderableSeries>) this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t.Value);
   }
 
   private void \u0023\u003DzgjrLoKvF7hcz9A6IKvJCiAc\u003D()
@@ -449,7 +449,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   private sealed class \u0023\u003DzHeEbGncgo1okL0HgWiq5JrU\u003D
   {
     public dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd \u0023\u003DzRRvwDu67s9Rm;
-    public \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D \u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D;
+    public IRenderableSeries \u0023\u003Dz7r_j4hRa0\u0024iRFvyX7P8mUl8\u003D;
 
     internal void \u0023\u003Dzq5A_hw8sG0QZl737AckA8VB19QdzQUuQMw\u003D\u003D()
     {
@@ -462,7 +462,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzV4I\u00248D0bjQIn;
 
     internal bool \u0023\u003DzPainzusVDvxJHbnmyWpu6OsDqQPW(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() == this.\u0023\u003DzV4I\u00248D0bjQIn;
     }

@@ -142,7 +142,7 @@ internal class RulerAnnotation : AnnotationBase
       return;
     this._removed = true;
     ((UIElement) this.ParentSurface).PreviewMouseDown -= new MouseButtonEventHandler(this.OnSurfacePreviewMouseDown);
-    this.ParentSurface.get_Annotations().Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) this);
+    this.ParentSurface.get_Annotations().Remove((IAnnotation) this);
   }
 
   private static string FormatDimeDiff(TimeSpan ts)
@@ -192,13 +192,13 @@ internal class RulerAnnotation : AnnotationBase
     double num6 = (double) this.Y2;
     if (this._priceStep > 0.0)
     {
-      num5 = num5.\u0023\u003Dzezm_VedE86O1(this._priceStep);
-      num6 = num6.\u0023\u003Dzezm_VedE86O1(this._priceStep);
+      num5 = num5.NormalizePrice(this._priceStep);
+      num6 = num6.NormalizePrice(this._priceStep);
     }
     if (num1 > num3)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num1, ref num3);
+      NumberUtil.Swap(ref num1, ref num3);
     if (num5 > num6)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num5, ref num6);
+      NumberUtil.Swap(ref num5, ref num6);
     double num7 = num6 - num5;
     int num8 = this._priceStep > 0.0 ? (int) Math.Round(num7 / this._priceStep) : 0;
     string str1 = (string) null;
@@ -239,7 +239,7 @@ internal class RulerAnnotation : AnnotationBase
     if (axis != this.YAxis)
       return comparable;
     double num = (double) comparable;
-    return (IComparable) (this._priceStep > 0.0 ? num.\u0023\u003Dzezm_VedE86O1(this._priceStep) : num);
+    return (IComparable) (this._priceStep > 0.0 ? num.NormalizePrice(this._priceStep) : num);
   }
 
   protected override \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq GetCurrentPlacementStrategy()
@@ -257,9 +257,9 @@ internal class RulerAnnotation : AnnotationBase
     double zWp13vlQiZcJc = coord.\u0023\u003DzWp13vlQiZCJc;
     this._textBorder.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
     if (z6aJoeqoqAzym < length)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref length, ref z6aJoeqoqAzym);
+      NumberUtil.Swap(ref length, ref z6aJoeqoqAzym);
     if (zWp13vlQiZcJc < z2J4l3QuGwZhe)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
+      NumberUtil.Swap(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
     this.RulerWidth = z6aJoeqoqAzym - length;
     this.RulerHeight = zWp13vlQiZcJc - z2J4l3QuGwZhe;
     double rulerWidth = this.RulerWidth;

@@ -127,16 +127,16 @@ internal class TextAnnotation : AnchorPointAnnotation
       double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
       double zWp13vlQiZcJc = _param1.\u0023\u003DzWp13vlQiZCJc;
       if (z6aJoeqoqAzym < zS2K6sVvd5Iy)
-        \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref zS2K6sVvd5Iy, ref z6aJoeqoqAzym);
+        NumberUtil.Swap(ref zS2K6sVvd5Iy, ref z6aJoeqoqAzym);
       if (zWp13vlQiZcJc < z2J4l3QuGwZhe)
-        \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
+        NumberUtil.Swap(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
       double num1 = z6aJoeqoqAzym - zS2K6sVvd5Iy + 1.0;
       double num2 = zWp13vlQiZcJc - z2J4l3QuGwZhe + 1.0;
-      if (!zS2K6sVvd5Iy.IsFiniteNumber() || !z2J4l3QuGwZhe.IsFiniteNumber())
+      if (!zS2K6sVvd5Iy.IsDefined() || !z2J4l3QuGwZhe.IsDefined())
         return;
-      if (num1.IsFiniteNumber())
+      if (num1.IsDefined())
         this.\u0023\u003Dz_iIh83yfe01U().MinWidth = num1;
-      if (num2.IsFiniteNumber())
+      if (num2.IsDefined())
         this.\u0023\u003Dz_iIh83yfe01U().MinHeight = num2;
       Canvas.SetLeft((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), zS2K6sVvd5Iy);
       Canvas.SetTop((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), z2J4l3QuGwZhe);

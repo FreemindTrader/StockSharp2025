@@ -37,7 +37,7 @@ public class OptionVolatilitySmileChart :
 {
   public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register(nameof (SmileStep), typeof (double), typeof (OptionVolatilitySmileChart), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(OptionVolatilitySmileChart.\u0023\u003DzcLFqfxuYYRmEBVt_YQ\u003D\u003D)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -52,7 +52,7 @@ public class OptionVolatilitySmileChart :
   public OptionVolatilitySmileChart()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
     IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>();
     IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();
@@ -279,20 +279,20 @@ public class OptionVolatilitySmileChart :
     IPersistable
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly OptionVolatilitySmileChart \u0023\u003DzU\u0024_meog\u003D;
+    private readonly OptionVolatilitySmileChart _parentElement;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private readonly List<LineData<double>> \u0023\u003DzEEABO3tZsceL = new List<LineData<double>>();
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private double[] \u0023\u003DzIMYwtfTasyYu;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly ChartVolatilitySmileElement \u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+    private readonly ChartVolatilitySmileElement _indicatorElement;
 
     public \u0023\u003DzITGG9JH6wfpA(
       OptionVolatilitySmileChart _param1,
       ChartVolatilitySmileElement _param2)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException("parent");
-      this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D = _param2 ?? throw new ArgumentNullException("elem");
+      this._parentElement = _param1 ?? throw new ArgumentNullException("parent");
+      this._indicatorElement = _param2 ?? throw new ArgumentNullException("elem");
       ((ICollection<IChartElement>) this.\u0023\u003DzASpaYkPu0U\u0024F().\u0023\u003DzigsRD8\u0024hw_SZ().Elements).Add((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D());
     }
 
@@ -303,12 +303,12 @@ public class OptionVolatilitySmileChart :
 
     private Chart \u0023\u003DzASpaYkPu0U\u0024F()
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D;
+      return this._parentElement.\u0023\u003DzO72kpz0\u003D;
     }
 
     public ChartVolatilitySmileElement \u0023\u003Dzj_CyhS4\u003D()
     {
-      return this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+      return this._indicatorElement;
     }
 
     protected virtual void OnAdded(LineData<double> _param1)
@@ -355,7 +355,7 @@ public class OptionVolatilitySmileChart :
       this.\u0023\u003DzIMYwtfTasyYu = new PolyFit(array1, array2, 2).Coeff;
       if (this.\u0023\u003DzIMYwtfTasyYu.Length != 3)
         return;
-      double smileStep = this.\u0023\u003DzU\u0024_meog\u003D.SmileStep;
+      double smileStep = this._parentElement.SmileStep;
       double num2 = Math.Min(Math.Max(0.0001, double.IsNaN(smileStep) ? 10.0 : smileStep), num1 / 2.0);
       double num3 = ((BaseCollection<LineData<double>, IList<LineData<double>>>) this)[((BaseCollection<LineData<double>, IList<LineData<double>>>) this).Count - 1].X + num2;
       for (double x = ((BaseCollection<LineData<double>, IList<LineData<double>>>) this)[0].X; x < num3; x += num2)

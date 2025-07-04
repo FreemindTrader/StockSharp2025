@@ -28,8 +28,8 @@ public class ChartActiveOrdersElement :
   INotifyPropertyChanging,
   IPersistable,
   IChartActiveOrdersElement,
-  IfxChartElement,
-  \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X
+  IChartComponent,
+  IDrawableChartElement
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private System.Windows.Media.Color \u0023\u003DzNB5fice33i0u;
@@ -52,7 +52,7 @@ public class ChartActiveOrdersElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003Dzzsiq00hapgVL;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003Dz2YSX_Z4\u003D;
+  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
 
   public ChartActiveOrdersElement()
   {
@@ -161,7 +161,7 @@ public class ChartActiveOrdersElement :
     }
   }
 
-  System.Windows.Media.Color \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  System.Windows.Media.Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
   {
     return Colors.Transparent;
   }
@@ -220,19 +220,19 @@ public class ChartActiveOrdersElement :
     set => this.ForegroundColor = value.ToWpf();
   }
 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+    ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(this);
   }
 
-  bool \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
   }
 
-  void \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
   {
     this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
@@ -240,7 +240,7 @@ public class ChartActiveOrdersElement :
   protected override bool OnDraw(ChartDrawData data)
   {
     List<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartActiveOrdersElement) this);
-    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>((ICollection<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>) source) && ((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this).\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
+    return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>((ICollection<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
   }
 
   public override void Load(SettingsStorage storage)
@@ -264,10 +264,10 @@ public class ChartActiveOrdersElement :
     storage.Set<int>("BuyColor", this.BuyColor.ToInt()).Set<int>("BuyBlinkColor", this.BuyBlinkColor.ToInt()).Set<int>("BuyPendingColor", this.BuyPendingColor.ToInt()).Set<int>("SellColor", this.SellColor.ToInt()).Set<int>("SellBlinkColor", this.SellBlinkColor.ToInt()).Set<int>("SellPendingColor", this.SellPendingColor.ToInt()).Set<int>("CancelButtonColor", this.CancelButtonColor.ToInt()).Set<int>("ForegroundColor", this.ForegroundColor.ToInt()).Set<int>("CancelButtonBackground", this.CancelButtonBackground.ToInt()).Set<bool>("IsAnimationEnabled", this.IsAnimationEnabled);
   }
 
-  internal override ChartActiveOrdersElement \u0023\u003Dz3MbNd8U\u003D(
+  internal override ChartActiveOrdersElement CopyTo(
     ChartActiveOrdersElement _param1)
   {
-    _param1 = base.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    _param1 = base.CopyTo(_param1);
     _param1.BuyColor = this.BuyColor;
     _param1.SellColor = this.SellColor;
     _param1.CancelButtonColor = this.CancelButtonColor;

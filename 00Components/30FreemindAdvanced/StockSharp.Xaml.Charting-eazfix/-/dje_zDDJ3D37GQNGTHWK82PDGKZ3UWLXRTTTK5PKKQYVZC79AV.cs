@@ -148,7 +148,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
     DependencyPropertyChangedEventArgs _param1)
   {
     dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd rf7U8Nh6NmgmaEjd = (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd) _param0;
-    if (!(_param1.NewValue is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd newValue))
+    if (!(_param1.NewValue is SciChartSurface newValue))
       return;
     newValue.Loaded -= new RoutedEventHandler(rf7U8Nh6NmgmaEjd.\u0023\u003DzSwq\u0024W16DpTIPh6J9Mw3YqhI\u003D);
     newValue.Loaded += new RoutedEventHandler(rf7U8Nh6NmgmaEjd.\u0023\u003DzSwq\u0024W16DpTIPh6J9Mw3YqhI\u003D);
@@ -161,7 +161,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
 
   private void \u0023\u003Dz90WLXdWl_vULnMk6kNFZNC4\u003D(object _param1, RoutedEventArgs _param2)
   {
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd = _param1 as dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd;
+    SciChartSurface elwvdvgwnmJ5AjuaEjd = _param1 as SciChartSurface;
     CompositionTarget.Rendering -= new EventHandler(this.\u0023\u003DzzYypnyJA76yR);
     EventHandler<EventArgs> eventHandler = new EventHandler<EventArgs>(this.\u0023\u003DzAYDiRNgmrWdYtBKmdijQiGQ\u003D);
     elwvdvgwnmJ5AjuaEjd.\u0023\u003DzrRRdxqQwy\u0024OJ(eventHandler);
@@ -172,7 +172,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
     object _param1,
     RoutedEventArgs _param2)
   {
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd = _param1 as dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd;
+    SciChartSurface elwvdvgwnmJ5AjuaEjd = _param1 as SciChartSurface;
     this.\u0023\u003DzWewHyEvM_sOk = Stopwatch.StartNew();
     this.\u0023\u003Dz7DSowRM8YI8lUCePfEYzKln_4DSk = 0.0;
     this.\u0023\u003DzCc9QDFMMWYXAfyk0nA\u003D\u003D = 0.0;
@@ -195,7 +195,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
     this.\u0023\u003Dz7DSowRM8YI8lUCePfEYzKln_4DSk = (double) this.\u0023\u003DzWewHyEvM_sOk.ElapsedMilliseconds;
     this.UltrachartFpsSeries.Append(this.UltrachartFpsSeries.Count == 0 ? 0.0 : (double) (int) (this.UltrachartFpsSeries.XValues.Last<double>() + 1.0), num);
     this.UltrachartFps = this.UltrachartFpsSeries.YValues.Sum() / (double) this.UltrachartFpsSeries.Count;
-    this.TotalPointCount = this.TargetSurface.get_RenderableSeries().Sum<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, int>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D)));
+    this.TotalPointCount = this.TargetSurface.get_RenderableSeries().Sum<IRenderableSeries>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<IRenderableSeries, int>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D)));
   }
 
   private void \u0023\u003DzzYypnyJA76yR(object _param1, EventArgs _param2)
@@ -212,10 +212,10 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
   private sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, int> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
+    public static Func<IRenderableSeries, int> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
 
     internal int \u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() == null ? 0 : _param1.get_DataSeries().get_Count();
     }

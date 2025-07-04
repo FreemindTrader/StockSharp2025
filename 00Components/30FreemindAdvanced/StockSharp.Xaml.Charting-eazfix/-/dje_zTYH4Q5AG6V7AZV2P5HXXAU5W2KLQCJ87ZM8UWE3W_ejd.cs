@@ -66,7 +66,7 @@ internal sealed class DoubleRange :
     double num1 = this.Min - _param1 * (this.IsZero ? this.Min : diff);
     double num2 = this.Max + _param2 * (this.IsZero ? this.Max : diff);
     if (num1 > num2)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num1, ref num2);
+      NumberUtil.Swap(ref num1, ref num2);
     if (Math.Abs(num1 - num2) <= double.Epsilon && Math.Abs(num1) <= double.Epsilon)
     {
       num1 = -1.0;

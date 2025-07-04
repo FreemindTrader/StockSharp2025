@@ -90,7 +90,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D
     double _param1,
     double _param2)
   {
-    if (!this.Min.IsFiniteNumber() || !this.Max.IsFiniteNumber())
+    if (!this.Min.IsDefined() || !this.Max.IsDefined())
       return (IRange<DateTime>) this;
     long ticks1 = (this.Max - this.Min).Ticks;
     bool isZero = this.IsZero;

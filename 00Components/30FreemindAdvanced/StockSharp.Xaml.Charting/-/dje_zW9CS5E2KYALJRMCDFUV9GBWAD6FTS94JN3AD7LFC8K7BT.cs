@@ -136,7 +136,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
 
   protected virtual bool \u0023\u003Dzt9d2ExuvJfVV(Point _param1)
   {
-    bool flag = _param1.X.IsFiniteNumber() && _param1.Y.IsFiniteNumber() && _param1.X >= 0.0 && _param1.X <= this.ModifierSurface.ActualWidth;
+    bool flag = _param1.X.IsDefined() && _param1.Y.IsDefined() && _param1.X >= 0.0 && _param1.X <= this.ModifierSurface.ActualWidth;
     if (this.\u0023\u003DzKpmBZbLVz8O6)
       flag = ((flag ? 1 : 0) & (_param1.Y < 0.0 ? 0 : (_param1.Y <= this.ModifierSurface.ActualHeight ? 1 : 0))) != 0;
     return flag;

@@ -5,7 +5,7 @@ namespace SciChart.Data.Model;
 //
 // Summary:
 //     Defines a range of type System.Double
-public class DoubleRange : Range<double>
+public class DoubleRange : SciChart.Data.Model.Range<double>
 {
     //
     // Summary:

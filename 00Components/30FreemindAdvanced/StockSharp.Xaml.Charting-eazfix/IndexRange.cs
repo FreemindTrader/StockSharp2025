@@ -100,11 +100,11 @@ internal sealed class IndexRange  :
     this.\u0023\u003Dz8pG_zbXA5b87 += _param2 * (flag ? this.\u0023\u003Dz8pG_zbXA5b87 : (double) diff);
     this.\u0023\u003DzeLxWL8r3I02c -= _param1 * (flag ? this.\u0023\u003DzeLxWL8r3I02c : (double) diff);
     if (this.\u0023\u003Dz8pG_zbXA5b87 < this.\u0023\u003DzeLxWL8r3I02c)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref this.\u0023\u003DzeLxWL8r3I02c, ref this.\u0023\u003Dz8pG_zbXA5b87);
+      NumberUtil.Swap(ref this.\u0023\u003DzeLxWL8r3I02c, ref this.\u0023\u003Dz8pG_zbXA5b87);
     int num1 = (int) this.\u0023\u003Dz8pG_zbXA5b87.\u0023\u003DzZsq6ZfbZQvsf();
     int num2 = (int) this.\u0023\u003DzeLxWL8r3I02c.\u0023\u003DzZsq6ZfbZQvsf();
     if (num1 < num2)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num2, ref num1);
+      NumberUtil.Swap(ref num2, ref num1);
     double zeLxWl8r3I02c = this.\u0023\u003DzeLxWL8r3I02c;
     double z8pGZbXa5b87 = this.\u0023\u003Dz8pG_zbXA5b87;
     this.Min = num2;

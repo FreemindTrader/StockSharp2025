@@ -76,7 +76,7 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
     double num4 = (1.0 - num2 / num1) * _param3;
     bool flag = _param2.IsHorizontalAxis && !_param2.\u0023\u003DzFrVmckt\u0024NpG6() || !_param2.IsHorizontalAxis && _param2.\u0023\u003DzFrVmckt\u0024NpG6();
     if ((!flag || _param2.get_FlipCoordinates() ? (flag ? 0 : (_param2.get_FlipCoordinates() ? 1 : 0)) : 1) != 0)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num3, ref num4);
+      NumberUtil.Swap(ref num3, ref num4);
     _param2.\u0023\u003Dz40HnRQM\u003D(num3, num4);
   }
 
@@ -84,7 +84,7 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
     IAxis _param1)
   {
     double num = _param1.IsHorizontalAxis ? _param1.Width : _param1.Height;
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd parentSurface = _param1.get_ParentSurface() as dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd;
+    SciChartSurface parentSurface = _param1.get_ParentSurface() as SciChartSurface;
     if (_param1.get_Visibility() == Visibility.Collapsed && parentSurface != null)
       num = _param1.IsHorizontalAxis ? parentSurface.ActualWidth : parentSurface.ActualHeight;
     return num;

@@ -23,7 +23,7 @@ internal class TransactionDataSeries :
 {
   private string _seriesName;
   private readonly \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> _candlesSeries;
-  private readonly \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> _data = new \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>();
+  private readonly AbstractList<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> _data = new AbstractList<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>();
   private readonly TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D _yValues;
   private List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> _transactionBuffer = new List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>();
   private bool _flushingBufferedTransactions;
@@ -175,7 +175,7 @@ internal class TransactionDataSeries :
   }
 
   public void InvalidateParentSurface(
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D rangeMode)
+    RangeMode rangeMode)
   {
     this._candlesSeries.InvalidateParentSurface(rangeMode);
   }
@@ -279,7 +279,7 @@ internal class TransactionDataSeries :
               }
               else
               {
-                \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSrejKcp\u0024LekFDw1PpSGX__GL<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> data = this._data;
+                AbstractList<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> data = this._data;
                 int num = index;
                 if (data[num] == null)
                   data[num] = new \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D(date);
@@ -493,20 +493,20 @@ internal class TransactionDataSeries :
     IEnumerable<double>
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly TransactionDataSeries \u0023\u003DzU\u0024_meog\u003D;
+    private readonly TransactionDataSeries _parentElement;
 
     public \u0023\u003DzV\u0024R8yw8\u003D(TransactionDataSeries _param1)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1;
+      this._parentElement = _param1;
     }
 
-    public int Count => this.\u0023\u003DzU\u0024_meog\u003D._data.Count;
+    public int Count => this._parentElement._data.Count;
 
-    public object SyncRoot => ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D._data).SyncRoot;
+    public object SyncRoot => ((ICollection) this._parentElement._data).SyncRoot;
 
     public bool IsSynchronized
     {
-      get => ((ICollection) this.\u0023\u003DzU\u0024_meog\u003D._data).IsSynchronized;
+      get => ((ICollection) this._parentElement._data).IsSynchronized;
     }
 
     public bool IsReadOnly => true;
@@ -520,7 +520,7 @@ internal class TransactionDataSeries :
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._parentElement.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -530,7 +530,7 @@ internal class TransactionDataSeries :
 
     public bool Contains(double _param1)
     {
-      return this.\u0023\u003DzU\u0024_meog\u003D._data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
+      return this._parentElement._data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
     }
 
     int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
@@ -540,10 +540,10 @@ internal class TransactionDataSeries :
 
     public int IndexOf(double _param1)
     {
-      int count = this.\u0023\u003DzU\u0024_meog\u003D._data.Count;
+      int count = this._parentElement._data.Count;
       for (int index = 0; index < count; ++index)
       {
-        if (this.\u0023\u003DzU\u0024_meog\u003D._data[index].\u0023\u003Dzu7q98_E\u003D().\u0023\u003Dz0AeaaBjWIeEn(_param1))
+        if (this._parentElement._data[index].\u0023\u003Dzu7q98_E\u003D().DoubleEquals(_param1))
           return index;
       }
       return -1;
@@ -551,7 +551,7 @@ internal class TransactionDataSeries :
 
     public double this[int _param1]
     {
-      get => this.\u0023\u003DzU\u0024_meog\u003D._data[_param1].\u0023\u003Dzu7q98_E\u003D();
+      get => this._parentElement._data[_param1].\u0023\u003Dzu7q98_E\u003D();
       set => throw new NotImplementedException();
     }
 

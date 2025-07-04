@@ -113,7 +113,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     _param1.OnDetached();
     _param1.IsAttached = false;
     _param1.ParentSurface = (ISciChartSurface) null;
-    _param1.Services = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null;
+    _param1.Services = (IServiceContainer) null;
   }
 
   private void \u0023\u003DzBLgi0dgELqPs(

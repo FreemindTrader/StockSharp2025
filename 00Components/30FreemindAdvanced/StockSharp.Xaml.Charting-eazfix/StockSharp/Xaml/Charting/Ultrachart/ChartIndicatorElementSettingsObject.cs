@@ -36,8 +36,8 @@ IChartElement>
       if (indicator != null)
         propertyDescriptorList.Add(\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAVZzPW_XxUVoSSnQgGAh7bEx\u0024cYB5w\u003D\u003D.\u0023\u003DzANqI1s0\u003D(indicator.Name, (object) this, indicator));
     }
-    propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Style, (object) this, (IfxChartElement) element, new Func<IfxChartElement, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqnUZLhteM7X58WNtOFoAUCxXrehbkyL7b_5OgJmSQR7E0sLjriPtaNbpo_\u0024ilyRhu)));
-    propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Common, (object) this, (IfxChartElement) element, new Func<IfxChartElement, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqUgnHZrrykv2VtgSnmyAJ\u0024t24diQG2HPY7YrznSErRWXmOLZGnAaI\u0024eZpwOBQLLof)));
+    propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Style, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqnUZLhteM7X58WNtOFoAUCxXrehbkyL7b_5OgJmSQR7E0sLjriPtaNbpo_\u0024ilyRhu)));
+    propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Common, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqUgnHZrrykv2VtgSnmyAJ\u0024t24diQG2HPY7YrznSErRWXmOLZGnAaI\u0024eZpwOBQLLof)));
     return propertyDescriptorList.ToArray();
   }
 
@@ -51,7 +51,7 @@ IChartElement>
 
   internal static bool \u0023\u003DqnUZLhteM7X58WNtOFoAUCxXrehbkyL7b_5OgJmSQR7E0sLjriPtaNbpo_\u0024ilyRhu(
     #nullable disable
-    IfxChartElement _param0,
+    IChartComponent _param0,
     PropertyDescriptor _param1)
   {
     BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
@@ -65,7 +65,7 @@ IChartElement>
   }
 
   internal static bool \u0023\u003DqUgnHZrrykv2VtgSnmyAJ\u0024t24diQG2HPY7YrznSErRWXmOLZGnAaI\u0024eZpwOBQLLof(
-    IfxChartElement _param0,
+    IChartComponent _param0,
     PropertyDescriptor _param1)
   {
     if (_param0.ParentElement != null)

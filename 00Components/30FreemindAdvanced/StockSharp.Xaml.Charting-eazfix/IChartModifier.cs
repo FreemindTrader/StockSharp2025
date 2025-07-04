@@ -12,8 +12,8 @@ using System.Windows;
 #nullable disable
 internal interface IChartModifier : 
   INotifyPropertyChanged,
-  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSrfQ\u0024fvhBTfuaBKLOTsYHeMg,
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpOgj\u0024HEwAG4ZlfwSGT7i2APW
+  IChartModifierBase,
+  IReceiveMouseEvents 
 {
   ISciChartSurface ParentSurface { get; set; }
 

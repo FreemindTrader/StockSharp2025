@@ -323,7 +323,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
       if (_param8 != null)
       {
         \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = _param2.\u0023\u003Dz\u0024CeUvME\u003D(num19);
-        Color? nullable = _param8.\u0023\u003DzP50Orng\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+        Color? nullable = _param8.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
         if (nullable.HasValue)
         {
           \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J3 = _param9.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
@@ -358,7 +358,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
     _param6 = (double) _param3;
     if (_param5 >= _param6)
       return num != 0;
-    \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref _param6, ref _param5);
+    NumberUtil.Swap(ref _param6, ref _param5);
     return num != 0;
   }
 
@@ -391,7 +391,7 @@ internal abstract class dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDL
         Point point2 = this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num4, (double) num6), flag);
         if (_param6 != null)
         {
-          Color? nullable = _param6.\u0023\u003DzP50Orng\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+          Color? nullable = _param6.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
           if (nullable.HasValue)
           {
             using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J3 = _param7.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?()))

@@ -238,7 +238,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
       switch (this.\u0023\u003Dz_iIh83yfe01U().VerticalAlignment)
       {
         case VerticalAlignment.Top:
-          val1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.IsFiniteNumber() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
+          val1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.IsDefined() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
           break;
         case VerticalAlignment.Center:
           double num2 = Math.Min(_param1.\u0023\u003Dz2J4l3QUGwZHE, _param1.\u0023\u003DzWp13vlQiZCJc);
@@ -248,7 +248,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
           val1 = num3 - num4;
           break;
         case VerticalAlignment.Bottom:
-          num1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.IsFiniteNumber() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
+          num1 = _param1.\u0023\u003Dz2J4l3QUGwZHE.IsDefined() ? _param1.\u0023\u003Dz2J4l3QUGwZHE : _param1.\u0023\u003DzWp13vlQiZCJc;
           val1 -= num1;
           break;
       }

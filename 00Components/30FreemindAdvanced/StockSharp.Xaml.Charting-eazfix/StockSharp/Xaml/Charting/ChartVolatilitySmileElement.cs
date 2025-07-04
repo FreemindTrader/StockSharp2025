@@ -27,13 +27,13 @@ public class ChartVolatilitySmileElement :
   IChartVolatilitySmileElement
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly ChartLineElement \u0023\u003Dz10jqvLI\u003D;
+  private readonly ChartLineElement _childViewModels;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ChartLineElement \u0023\u003DzdBxDEgUJtz0N;
 
   public ChartVolatilitySmileElement()
   {
-    this.\u0023\u003Dz10jqvLI\u003D = new ChartLineElement()
+    this._childViewModels = new ChartLineElement()
     {
       Color = Colors.DarkGreen,
       AdditionalColor = Colors.DarkGreen.ToTransparent((byte) 50)
@@ -48,7 +48,7 @@ public class ChartVolatilitySmileElement :
   }
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "SourceValues", Description = "SourceValues")]
-  public IChartLineElement Values => (IChartLineElement) this.\u0023\u003Dz10jqvLI\u003D;
+  public IChartLineElement Values => (IChartLineElement) this._childViewModels;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "VolatilitySmile", Description = "VolatilitySmile")]
   public IChartLineElement Smile => (IChartLineElement) this.\u0023\u003DzdBxDEgUJtz0N;
@@ -60,7 +60,7 @@ public class ChartVolatilitySmileElement :
 
   protected override bool OnDraw(ChartDrawData data)
   {
-    return (0 | (((IfxChartElement) this.Values).Draw(data) ? 1 : 0) | (((IfxChartElement) this.Smile).Draw(data) ? 1 : 0)) != 0;
+    return (0 | (((IChartComponent) this.Values).Draw(data) ? 1 : 0) | (((IChartComponent) this.Smile).Draw(data) ? 1 : 0)) != 0;
   }
 
   public override void Load(SettingsStorage storage)
@@ -86,12 +86,12 @@ public class ChartVolatilitySmileElement :
     storage.SetValue<SettingsStorage>("Smile", PersistableHelper.Save((IPersistable) this.Smile));
   }
 
-  internal override ChartVolatilitySmileElement \u0023\u003Dz3MbNd8U\u003D(
+  internal override ChartVolatilitySmileElement CopyTo(
     ChartVolatilitySmileElement _param1)
   {
-    _param1 = base.\u0023\u003Dz3MbNd8U\u003D(_param1);
-    this.\u0023\u003Dz10jqvLI\u003D.\u0023\u003Dz3MbNd8U\u003D(_param1.\u0023\u003Dz10jqvLI\u003D);
-    this.\u0023\u003DzdBxDEgUJtz0N.\u0023\u003Dz3MbNd8U\u003D(_param1.\u0023\u003DzdBxDEgUJtz0N);
+    _param1 = base.CopyTo(_param1);
+    this._childViewModels.CopyTo(_param1._childViewModels);
+    this.\u0023\u003DzdBxDEgUJtz0N.CopyTo(_param1.\u0023\u003DzdBxDEgUJtz0N);
     return _param1;
   }
 }

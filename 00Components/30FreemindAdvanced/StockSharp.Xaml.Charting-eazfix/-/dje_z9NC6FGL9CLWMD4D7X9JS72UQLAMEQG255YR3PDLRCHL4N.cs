@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd
+// Type: -.RubberBandXyZoomModifier
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -14,23 +14,23 @@ using System.Windows.Shapes;
 #nullable disable
 namespace \u002D;
 
-internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd : 
+internal sealed class RubberBandXyZoomModifier : 
   ChartModifierBase
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzEiZKgbSC39dw = DependencyProperty.Register(nameof (IsAnimated), typeof (bool), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzEiZKgbSC39dw = DependencyProperty.Register(nameof (IsAnimated), typeof (bool), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) true));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D = DependencyProperty.Register(nameof (RubberBandFill), typeof (Brush), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D = DependencyProperty.Register(nameof (RubberBandFill), typeof (Brush), typeof (RubberBandXyZoomModifier), new PropertyMetadata((PropertyChangedCallback) null));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D = DependencyProperty.Register(nameof (RubberBandStroke), typeof (Brush), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D = DependencyProperty.Register(nameof (RubberBandStroke), typeof (Brush), typeof (RubberBandXyZoomModifier), new PropertyMetadata((PropertyChangedCallback) null));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D = DependencyProperty.Register(nameof (RubberBandStrokeDashArray), typeof (DoubleCollection), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D = DependencyProperty.Register(nameof (RubberBandStrokeDashArray), typeof (DoubleCollection), typeof (RubberBandXyZoomModifier), new PropertyMetadata((PropertyChangedCallback) null));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzfKMrdOp8PEWK = DependencyProperty.Register(nameof (IsXAxisOnly), typeof (bool), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty \u0023\u003DzfKMrdOp8PEWK = DependencyProperty.Register(nameof (IsXAxisOnly), typeof (bool), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) false));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzNWOI1oh1IMgh = DependencyProperty.Register(nameof (ZoomExtentsY), typeof (bool), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzNWOI1oh1IMgh = DependencyProperty.Register(nameof (ZoomExtentsY), typeof (bool), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) true));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dzz8hz3gmofbMT = DependencyProperty.Register(nameof (MinDragSensitivity), typeof (double), typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd), new PropertyMetadata((object) 10.0));
+  public static readonly DependencyProperty \u0023\u003Dzz8hz3gmofbMT = DependencyProperty.Register(nameof (MinDragSensitivity), typeof (double), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) 10.0));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D \u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -42,20 +42,20 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Shape \u0023\u003DztHc2gS4\u003D;
 
-  public dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd()
+  public RubberBandXyZoomModifier()
   {
-    this.DefaultStyleKey = (object) typeof (dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd);
+    this.DefaultStyleKey = (object) typeof (RubberBandXyZoomModifier);
   }
 
   public bool IsAnimated
   {
     get
     {
-      return (bool) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzEiZKgbSC39dw);
+      return (bool) this.GetValue(RubberBandXyZoomModifier.\u0023\u003DzEiZKgbSC39dw);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzEiZKgbSC39dw, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003DzEiZKgbSC39dw, (object) value);
     }
   }
 
@@ -63,11 +63,11 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   {
     get
     {
-      return (Brush) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D);
+      return (Brush) this.GetValue(RubberBandXyZoomModifier.\u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D, (object) value);
     }
   }
 
@@ -75,11 +75,11 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   {
     get
     {
-      return (Brush) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D);
+      return (Brush) this.GetValue(RubberBandXyZoomModifier.\u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D, (object) value);
     }
   }
 
@@ -87,11 +87,11 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   {
     get
     {
-      return (DoubleCollection) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D);
+      return (DoubleCollection) this.GetValue(RubberBandXyZoomModifier.\u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D, (object) value);
     }
   }
 
@@ -99,11 +99,11 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   {
     get
     {
-      return (bool) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzfKMrdOp8PEWK);
+      return (bool) this.GetValue(RubberBandXyZoomModifier.\u0023\u003DzfKMrdOp8PEWK);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzfKMrdOp8PEWK, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003DzfKMrdOp8PEWK, (object) value);
     }
   }
 
@@ -111,11 +111,11 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   {
     get
     {
-      return (bool) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzNWOI1oh1IMgh);
+      return (bool) this.GetValue(RubberBandXyZoomModifier.\u0023\u003DzNWOI1oh1IMgh);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003DzNWOI1oh1IMgh, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003DzNWOI1oh1IMgh, (object) value);
     }
   }
 
@@ -123,11 +123,11 @@ internal sealed class dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK9
   {
     get
     {
-      return (double) this.GetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003Dzz8hz3gmofbMT);
+      return (double) this.GetValue(RubberBandXyZoomModifier.\u0023\u003Dzz8hz3gmofbMT);
     }
     set
     {
-      this.SetValue(dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.\u0023\u003Dzz8hz3gmofbMT, (object) value);
+      this.SetValue(RubberBandXyZoomModifier.\u0023\u003Dzz8hz3gmofbMT, (object) value);
     }
   }
 

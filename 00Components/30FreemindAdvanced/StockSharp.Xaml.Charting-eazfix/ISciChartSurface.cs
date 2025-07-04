@@ -62,13 +62,13 @@ internal interface ISciChartSurface :
 
   \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D \u0023\u003DzTRL\u0024Xy0vYDigfJ9YNg\u003D\u003D();
 
-  ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> RenderableSeries { get; }
+  ObservableCollection<IRenderableSeries> RenderableSeries { get; }
 
-  ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> get_RenderableSeries();
+  ObservableCollection<IRenderableSeries> get_RenderableSeries();
 
-  ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> SelectedRenderableSeries { get; }
+  ObservableCollection<IRenderableSeries> SelectedRenderableSeries { get; }
 
-  ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> get_SelectedRenderableSeries();
+  ObservableCollection<IRenderableSeries> get_SelectedRenderableSeries();
 
   \u0023\u003DzlvwXE9mBO1uItIXfGGLJcGAvOm_MyInBFl6FOhs\u003D \u0023\u003Dzwc4Gzka23TGB();
 
@@ -85,12 +85,12 @@ internal interface ISciChartSurface :
 
   Canvas \u0023\u003DzjEjGZ817bm4EOO82ig\u003D\u003D();
 
-  ObservableCollection<\u0023\u003DziARJyOecclYiJO5UbZqQJ_KOh9jO5RUUcFIAqLc\u003D> SeriesSource { get; set; }
+  ObservableCollection<IRenderableSeries> SeriesSource { get; set; }
 
-  ObservableCollection<\u0023\u003DziARJyOecclYiJO5UbZqQJ_KOh9jO5RUUcFIAqLc\u003D> get_SeriesSource();
+  ObservableCollection<IRenderableSeries> get_SeriesSource();
 
   void set_SeriesSource(
-    ObservableCollection<\u0023\u003DziARJyOecclYiJO5UbZqQJ_KOh9jO5RUUcFIAqLc\u003D> _param1);
+    ObservableCollection<IRenderableSeries> _param1);
 
   void \u0023\u003Dzqtb9toLjXu0t();
 

@@ -144,7 +144,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private EventHandler<EventArgs> \u0023\u003DzrN9MkyArV3jJ;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzg8Ufa_EMXfJU;
+  private IServiceContainer \u0023\u003Dzg8Ufa_EMXfJU;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   protected \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -423,7 +423,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     }
   }
 
-  public \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D Services
+  public IServiceContainer Services
   {
     get => this.\u0023\u003Dzg8Ufa_EMXfJU;
     set => this.\u0023\u003Dzg8Ufa_EMXfJU = value;
@@ -1024,7 +1024,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
 
   protected virtual IRange \u0023\u003Dzd6x7lH_dQH0I()
   {
-    if (this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>())
+    if (this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
       return (IRange) null;
     return !this.IsXAxis ? this.\u0023\u003DzoWnNnPa93Kn8() : this.\u0023\u003DzfHPjUn3EtpHl();
   }
@@ -1032,7 +1032,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   private IRange \u0023\u003DzfHPjUn3EtpHl()
   {
     IRange abyLt9clZggmJsWhw1 = (IRange) null;
-    foreach (\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DznfjxYadwxaoyd16Alq7avE0\u003D)))
+    foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DznfjxYadwxaoyd16Alq7avE0\u003D)))
     {
       IRange abyLt9clZggmJsWhw2 = s1JolYrWoYpqmQ6ug.\u0023\u003Dzq3MgExWxza1L();
       if (abyLt9clZggmJsWhw2 != null && abyLt9clZggmJsWhw2.IsDefined)
@@ -1047,7 +1047,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   private IRange \u0023\u003DzoWnNnPa93Kn8()
   {
     IRange abyLt9clZggmJsWhw = (IRange) null;
-    foreach (\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DzApQq1pC_4pCnMbzX7sr8AII\u003D)))
+    foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzApQq1pC_4pCnMbzX7sr8AII\u003D)))
     {
       IRange yrange = s1JolYrWoYpqmQ6ug.get_DataSeries().get_YRange();
       if (yrange != null && yrange.IsDefined)
@@ -1062,7 +1062,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   public virtual IRange \u0023\u003DzFwoMKP9juTnt()
   {
     IRange abyLt9clZggmJsWhw1 = (IRange) new DoubleRange(double.NaN, double.NaN);
-    if (this.ParentSurface != null && !this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>())
+    if (this.ParentSurface != null && !this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
     {
       if (this.IsXAxis)
       {
@@ -1094,9 +1094,9 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     IDictionary<string, IRange> _param1)
   {
     IRange abyLt9clZggmJsWhw1 = (IRange) new DoubleRange(double.NaN, double.NaN);
-    if (this.ParentSurface != null && !this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>())
+    if (this.ParentSurface != null && !this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
     {
-      foreach (\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DzaUGqhuODC_LS7GO3CfQn3j4SMN4z8jTtuw\u003D\u003D)))
+      foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzaUGqhuODC_LS7GO3CfQn3j4SMN4z8jTtuw\u003D\u003D)))
       {
         IRange abyLt9clZggmJsWhw2 = _param1 == null || !_param1.ContainsKey(s1JolYrWoYpqmQ6ug.get_XAxisId()) ? (s1JolYrWoYpqmQ6ug.XAxis ?? this.ParentSurface.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(s1JolYrWoYpqmQ6ug.get_XAxisId(), false))?.VisibleRange : _param1[s1JolYrWoYpqmQ6ug.get_XAxisId()];
         if (abyLt9clZggmJsWhw2 != null && abyLt9clZggmJsWhw2.IsDefined)
@@ -1333,8 +1333,8 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   {
     if (this.ParentSurface?.get_RenderableSeries() == null)
       return (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) null;
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D[] array = this.ParentSurface.get_RenderableSeries().Where<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DzT1eqMAzRyPWuBr9AGC0GrIg\u003D)).ToArray<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>();
-    return (((IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) array).FirstOrDefault<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D ?? (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D = new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D))) ?? \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(array))?.get_DataSeries();
+    IRenderableSeries[] array = this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzT1eqMAzRyPWuBr9AGC0GrIg\u003D)).ToArray<IRenderableSeries>();
+    return (((IEnumerable<IRenderableSeries>) array).FirstOrDefault<IRenderableSeries>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D ?? (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D = new Func<IRenderableSeries, bool>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D))) ?? \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<IRenderableSeries>(array))?.get_DataSeries();
   }
 
   protected virtual void \u0023\u003Dz15moWio\u003D(string _param1)
@@ -1470,7 +1470,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
 
   private bool \u0023\u003DzG64YTDk\u003D()
   {
-    return this.ParentSurface is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd parentSurface && parentSurface.\u0023\u003DzST\u0024t7rI\u003D() && this.\u0023\u003DzST\u0024t7rI\u003D() && this.\u0023\u003DzmqmxAhIhbSX3();
+    return this.ParentSurface is SciChartSurface parentSurface && parentSurface.\u0023\u003DzST\u0024t7rI\u003D() && this.\u0023\u003DzST\u0024t7rI\u003D() && this.\u0023\u003DzmqmxAhIhbSX3();
   }
 
   private bool \u0023\u003DzwzofU1mfo8hC()
@@ -1536,7 +1536,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
       float num2 = this.IsHorizontalAxis ? 0.0f : num1 + (float) this.ActualHeight;
       float num3 = this.IsHorizontalAxis ? (float) n9miZzngvjW54Qe0d7.ActualWidth : num1;
       if (this.FlipCoordinates ^ this.IsAxisFlipped)
-        \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num2, ref num3);
+        NumberUtil.Swap(ref num2, ref num3);
       bool flag = this.\u0023\u003DzSoNtv0XsZOx0(_param2[0]) % 2M == 0M;
       for (int index = 0; index < _param3.Length; ++index)
       {
@@ -2127,7 +2127,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   }
 
   private bool \u0023\u003DznfjxYadwxaoyd16Alq7avE0\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     if (!(_param1.get_XAxisId() == this.Id) || !_param1.IsVisible)
       return false;
@@ -2136,19 +2136,19 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   }
 
   private bool \u0023\u003DzApQq1pC_4pCnMbzX7sr8AII\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     return _param1.get_YAxisId() == this.Id && _param1.IsVisible && _param1.get_DataSeries() != null;
   }
 
   private bool \u0023\u003DzaUGqhuODC_LS7GO3CfQn3j4SMN4z8jTtuw\u003D\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     return _param1.get_YAxisId() == this.Id && _param1.get_DataSeries() != null && _param1.IsVisible && _param1.get_DataSeries().get_HasValues();
   }
 
   private bool \u0023\u003DzT1eqMAzRyPWuBr9AGC0GrIg\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     if (!(this.Id == (this.IsXAxis ? _param1.get_XAxisId() : _param1.get_YAxisId())))
       return false;
@@ -2169,12 +2169,12 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   {
     public static readonly dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D();
     public static Func<Type, string> \u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D;
-    public static Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool> \u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D;
+    public static Func<IRenderableSeries, bool> \u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D;
 
     internal string \u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D(Type _param1) => _param1.Name;
 
     internal bool \u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D(
-      \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+      IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() is \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ;
     }

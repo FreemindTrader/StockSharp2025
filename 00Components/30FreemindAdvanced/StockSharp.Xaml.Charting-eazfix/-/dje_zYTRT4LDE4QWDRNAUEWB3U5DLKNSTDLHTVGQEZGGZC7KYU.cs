@@ -59,7 +59,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D \u0023\u003Dzwa3i3hwVZeqr;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
+  private IServiceContainer \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private static int \u0023\u003Dzf3Z0CZk\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -175,7 +175,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
 
   [CompilerGenerated]
   [SpecialName]
-  public \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzu\u0024P3XgkcE7BC()
+  public IServiceContainer \u0023\u003Dzu\u0024P3XgkcE7BC()
   {
     return this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
   }
@@ -183,7 +183,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   [CompilerGenerated]
   [SpecialName]
   public void \u0023\u003DzrEoWi5uPS0Yz(
-    \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D _param1)
+    IServiceContainer _param1)
   {
     this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D = _param1;
   }
@@ -246,9 +246,9 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   }
 
   [SpecialName]
-  public ReadOnlyCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> \u0023\u003Dzvxq3X_8T\u0024Noo()
+  public ReadOnlyCollection<IRenderableSeries> \u0023\u003Dzvxq3X_8T\u0024Noo()
   {
-    return new ReadOnlyCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>((IList<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) this.\u0023\u003DzqgMiDwaFbXWy().Children.OfType<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>().ToArray<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>());
+    return new ReadOnlyCollection<IRenderableSeries>((IList<IRenderableSeries>) this.\u0023\u003DzqgMiDwaFbXWy().Children.OfType<IRenderableSeries>().ToArray<IRenderableSeries>());
   }
 
   public void InvalidateElement() => this.\u0023\u003DzAJ8tNFa80f45 = true;
@@ -260,20 +260,20 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   }
 
   public bool \u0023\u003DzdBvSINdoeQWX(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     return _param1 is UIElement element && this.\u0023\u003DzS\u0024OTg_s\u003D.Children.Contains(element);
   }
 
   public void \u0023\u003DzJoneIt0\u003D(
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param1)
+    IEnumerable<IRenderableSeries> _param1)
   {
-    foreach (\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug in _param1)
+    foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in _param1)
       this.\u0023\u003DzJoneIt0\u003D(s1JolYrWoYpqmQ6ug);
   }
 
   public void \u0023\u003DzJoneIt0\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     this.\u0023\u003Dz_SCZwjM\u003D(_param1);
     _param1.\u0023\u003DzrEoWi5uPS0Yz(this.\u0023\u003Dzu\u0024P3XgkcE7BC());
@@ -284,9 +284,9 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   }
 
   public void \u0023\u003Dz_SCZwjM\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
-    _param1.\u0023\u003DzrEoWi5uPS0Yz((\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null);
+    _param1.\u0023\u003DzrEoWi5uPS0Yz((IServiceContainer) null);
     if (!(_param1 is FrameworkElement frameworkElement))
       return;
     (frameworkElement.Parent as Panel).\u0023\u003DziYdJ\u00246cCiBha((object) frameworkElement);
@@ -361,10 +361,10 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     Stopwatch stopwatch = Stopwatch.StartNew();
     zjgUuuje((object) this, new \u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy((\u0023\u003DzYB09msiytIDFpDsyaHpANNcjrPNql900yccNyuZHBUW6) this));
     stopwatch.Stop();
-    this.\u0023\u003DzoK7PFLI\u003D((double) stopwatch.ElapsedMilliseconds);
+    this.UpdateYAxisMarker((double) stopwatch.ElapsedMilliseconds);
   }
 
-  protected virtual void \u0023\u003DzoK7PFLI\u003D(double _param1)
+  protected virtual void UpdateYAxisMarker(double _param1)
   {
     EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> zcyGdlF8 = this.\u0023\u003DzcyGdlF8\u003D;
     if (zcyGdlF8 == null)
@@ -442,7 +442,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     double? newValue = (double?) _param1.NewValue;
     if (newValue.HasValue)
     {
-      if (((IComparable) newValue).IsFiniteNumber())
+      if (((IComparable) newValue).IsDefined())
       {
         double? nullable = newValue;
         double num1 = 0.0;
@@ -465,7 +465,7 @@ label_5:
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd elwvdvgwnmJ5AjuaEjd = _param0 as dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd;
+    SciChartSurface elwvdvgwnmJ5AjuaEjd = _param0 as SciChartSurface;
     string newValue = _param1.NewValue as string;
     if (elwvdvgwnmJ5AjuaEjd == null || newValue.\u0023\u003DzHHfYuvvaA57ehwCJow\u003D\u003D())
       return;

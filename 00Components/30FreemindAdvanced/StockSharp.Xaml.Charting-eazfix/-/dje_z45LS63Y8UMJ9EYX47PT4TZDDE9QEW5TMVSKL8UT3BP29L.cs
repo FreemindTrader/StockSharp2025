@@ -42,7 +42,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private volatile bool \u0023\u003DzvBK\u00248KQ\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzg8Ufa_EMXfJU;
+  private IServiceContainer \u0023\u003Dzg8Ufa_EMXfJU;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd \u0023\u003DzoaInVTVF1PK_;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -70,7 +70,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
     {
       (object) ((object) this).GetType().Name
     });
-    this.\u0023\u003Dzg8Ufa_EMXfJU = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh76xifd94OJRDA\u003D\u003D();
+    this.\u0023\u003Dzg8Ufa_EMXfJU = (IServiceContainer) new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh76xifd94OJRDA\u003D\u003D();
     this.\u0023\u003DzLIrH2H7exOOX(this.\u0023\u003Dzg8Ufa_EMXfJU);
     this.\u0023\u003DzDBof02j7wNLE = new RoutedEventHandler(this.\u0023\u003Dzu0nSxY0YBkzHs9q32EBLwew\u003D);
     this.\u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D = new RoutedEventHandler(this.\u0023\u003DzrzYTHp38TGfs9tC\u0024dk8sDH8\u003D);
@@ -153,18 +153,18 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   }
 
   [SpecialName]
-  public \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzu\u0024P3XgkcE7BC()
+  public IServiceContainer \u0023\u003Dzu\u0024P3XgkcE7BC()
   {
     return this.\u0023\u003Dzg8Ufa_EMXfJU;
   }
 
   protected internal void \u0023\u003DzrEoWi5uPS0Yz(
-    \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D _param1)
+    IServiceContainer _param1)
   {
     this.\u0023\u003Dzg8Ufa_EMXfJU = _param1;
   }
 
-  protected bool \u0023\u003Dz5OzJ0EHhtC8P() => this.\u0023\u003DzvBK\u00248KQ\u003D;
+  protected bool IsDisposed() => this.\u0023\u003DzvBK\u00248KQ\u003D;
 
   protected bool \u0023\u003DzNIujeQAKJfHjmKL2ONO8jgpF_OJU() => this.\u0023\u003Dz5Q_\u0024YkuhIHbd;
 
@@ -362,7 +362,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   }
 
   protected virtual void \u0023\u003DzLIrH2H7exOOX(
-    \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D _param1)
+    IServiceContainer _param1)
   {
     _param1.\u0023\u003Dz7wSH25w\u003D<\u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D>((\u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D) new \u0023\u003Dz_tZkxN0xSCAji6_DomQ8vhQ5FfpLq6glVuatd7w\u003D(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003DzjLVbM_c\u003D((DependencyObject) this)));
     _param1.\u0023\u003Dz7wSH25w\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>((\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D) new \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D());

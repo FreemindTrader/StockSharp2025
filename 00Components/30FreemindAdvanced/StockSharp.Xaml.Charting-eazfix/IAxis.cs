@@ -51,7 +51,7 @@ internal interface IAxis :
     ITickProvider _param1);
 
   [TypeConverter(typeof (StringToDoubleRangeTypeConverter))]
-  IRange \u0023\u003DzSIH3J5Y_lVlb { get; set; }
+  IRange VisibleRangeLimit { get; set; }
 
   IRange get_AnimatedVisibleRange();
 
@@ -62,12 +62,12 @@ internal interface IAxis :
 
   IRange DataRange { get; }
 
-  \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D get_Services();
+  IServiceContainer get_Services();
 
-  \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D Services { get; set; }
+  IServiceContainer Services { get; set; }
 
   void set_Services(
-    \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D _param1);
+    IServiceContainer _param1);
 
   ISciChartSurface ParentSurface { get; set; }
 

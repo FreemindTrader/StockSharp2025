@@ -21,7 +21,7 @@ internal sealed class dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLE
     object _param3,
     CultureInfo _param4)
   {
-    return (object) (Visibility) (!(_param1[1] is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd) || !(_param1[0] as bool?).GetValueOrDefault() ? 2 : 0);
+    return (object) (Visibility) (!(_param1[1] is SciChartSurface) || !(_param1[0] as bool?).GetValueOrDefault() ? 2 : 0);
   }
 
   object[] IMultiValueConverter.\u0023\u003DzkoCt60WyxQ8Vp2m8J8PjY8sNdWh7(

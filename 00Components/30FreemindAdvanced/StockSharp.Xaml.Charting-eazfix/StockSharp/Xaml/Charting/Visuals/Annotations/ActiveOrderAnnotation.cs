@@ -180,7 +180,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
   {
     base.OnDetached();
     this._axisMarker.OnDetached();
-    this._axisMarker.Services = (\u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D) null;
+    this._axisMarker.Services = (IServiceContainer) null;
     this._axisMarker.ParentSurface = (ISciChartSurface) null;
     this._axisMarker.IsAttached = false;
   }
@@ -327,9 +327,9 @@ internal class ActiveOrderAnnotation : AnnotationBase
   }
 
   public override bool CanMultiSelect(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D[] annotations)
+    IAnnotation[] annotations)
   {
-    return ((IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>) annotations).All<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>(ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D ?? (ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D = new Func<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D, bool>(ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D)));
+    return ((IEnumerable<IAnnotation>) annotations).All<IAnnotation>(ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D ?? (ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D = new Func<IAnnotation, bool>(ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D)));
   }
 
   public event Action<ActiveOrderAnnotation> AnimationDone;
@@ -501,7 +501,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
       double num1 = this.\u0023\u003Dz_iIh83yfe01U().AnnotationRoot.ActualHeight / 2.0;
       double num2 = Math.Max(10.0, canvas.ActualWidth - _param1.\u0023\u003DzS2_K6sVvd5IY);
       Line line = this.\u0023\u003Dz_iIh83yfe01U()._line;
-      if (!line.X1.\u0023\u003Dz0AeaaBjWIeEn(0.0) || !line.X2.\u0023\u003Dz0AeaaBjWIeEn(num2) || !line.Y1.\u0023\u003Dz0AeaaBjWIeEn(num1) || !line.Y2.\u0023\u003Dz0AeaaBjWIeEn(num1))
+      if (!line.X1.DoubleEquals(0.0) || !line.X2.DoubleEquals(num2) || !line.Y1.DoubleEquals(num1) || !line.Y2.DoubleEquals(num1))
       {
         line.X1 = 0.0;
         line.X2 = num2;
@@ -535,10 +535,10 @@ internal class ActiveOrderAnnotation : AnnotationBase
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D();
-    public static Func<\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D, bool> \u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D;
+    public static Func<IAnnotation, bool> \u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D;
 
     internal bool \u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D(
-      \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D _param1)
+      IAnnotation _param1)
     {
       return _param1 is ActiveOrderAnnotation;
     }

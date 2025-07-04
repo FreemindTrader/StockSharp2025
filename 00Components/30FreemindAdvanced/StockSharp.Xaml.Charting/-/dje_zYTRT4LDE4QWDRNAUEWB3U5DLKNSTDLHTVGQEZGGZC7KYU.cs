@@ -443,7 +443,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     double? newValue = (double?) _param1.NewValue;
     if (newValue.HasValue)
     {
-      if (((IComparable) newValue).IsFiniteNumber())
+      if (((IComparable) newValue).IsDefined())
       {
         double? nullable = newValue;
         double num1 = 0.0;

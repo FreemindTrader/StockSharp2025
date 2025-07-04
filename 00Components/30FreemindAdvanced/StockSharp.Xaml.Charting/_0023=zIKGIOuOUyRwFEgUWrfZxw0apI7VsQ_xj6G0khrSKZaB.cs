@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8
   public Line \u0023\u003Dz7ftWcP9VIwGB(Point _param1, bool _param2)
   {
     Line line = (Line) null;
-    if (_param1.Y.IsFiniteNumber() && _param1.X.IsFiniteNumber())
+    if (_param1.Y.IsDefined() && _param1.X.IsDefined())
     {
       line = new Line();
       \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D b99xo8DgCb3haWTig = this.\u0023\u003Dz0mppXFo\u003D.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();

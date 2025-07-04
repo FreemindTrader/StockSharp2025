@@ -20,7 +20,7 @@ internal sealed class FloatMath :
         return this.IsNaN( _param1 ) || !this.IsNaN( _param2 ) && ( double ) _param1 <= ( double ) _param2 ? _param2 : _param1;
     }
 
-    private bool IsFiniteNumber( float _param1 )
+    private bool IsDefined( float _param1 )
     {
         return !float.IsInfinity( _param1 ) && !float.IsNaN( _param1 );
     }

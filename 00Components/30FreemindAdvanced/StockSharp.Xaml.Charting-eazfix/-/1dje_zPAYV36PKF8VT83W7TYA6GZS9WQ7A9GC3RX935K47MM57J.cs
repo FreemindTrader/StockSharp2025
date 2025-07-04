@@ -342,7 +342,7 @@ label_11:
           \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB j9sJkRf4wMmhD3hB = j9sJkRf4wMmhD3hBArray[index];
           double num23 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz2_4KSTY\u003D()) - num4;
           (KeyValuePair<double, CandlePriceLevel>[] source2, Decimal num24) = j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dzb5KHU\u00247RutjHsWssog\u003D\u003D(num1);
-          bool flag1 = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dzyv\u0024EfaBUnbgQ(size, num24.\u0023\u003DzfAOpzpzamEKk());
+          bool flag1 = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dzyv\u0024EfaBUnbgQ(size, num24.GetDecimalLength());
           double? nullable11 = new double?();
           double num25 = 0.0;
           foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source2).Where<KeyValuePair<double, CandlePriceLevel>>(kvt89B1lUeA7EdfukJs.\u0023\u003DzoD2HtVGZvKav ?? (kvt89B1lUeA7EdfukJs.\u0023\u003DzoD2HtVGZvKav = new Func<KeyValuePair<double, CandlePriceLevel>, bool>(kvt89B1lUeA7EdfukJs.\u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D))))
@@ -368,7 +368,7 @@ label_11:
                 if (flag2)
                   _param1.\u0023\u003DzVRUUvzhAr5SR(xrgcdFbSdWgN9GcT8_4, rect2.TopLeft, rect2.BottomRight, 0.0);
                 string str = totalVolume.ToString();
-                (float, FontWeight, bool) tuple = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzwjCzmT8\u003D(size, totalVolume.\u0023\u003DzfAOpzpzamEKk(), 0.0f);
+                (float, FontWeight, bool) tuple = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzwjCzmT8\u003D(size, totalVolume.GetDecimalLength(), 0.0f);
                 float num28 = tuple.Item1;
                 FontWeight fontWeight = tuple.Item2;
                 if (tuple.Item3)

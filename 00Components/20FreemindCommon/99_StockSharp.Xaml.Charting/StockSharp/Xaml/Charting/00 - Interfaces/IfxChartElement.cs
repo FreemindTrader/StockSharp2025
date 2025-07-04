@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Windows.Media;
 
 #nullable disable
-internal interface IfxChartElement : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanging, INotifyPropertyChanged, IPersistable
+internal interface IChartComponent : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanging, INotifyPropertyChanged, IPersistable
 {
     IChartElement ParentElement
     {
@@ -33,7 +33,7 @@ internal interface IfxChartElement : IChartElement, IChartPart<IChartElement>, I
 
     void SetParent( IChartElement _param1 );
 
-    IfxChartElement RootElement
+    IChartComponent RootElement
     {
         get;
     }

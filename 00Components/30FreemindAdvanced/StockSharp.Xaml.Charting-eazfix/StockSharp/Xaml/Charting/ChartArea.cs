@@ -129,7 +129,7 @@ public class ChartArea :
                 throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
             }
         
-            _someMemebers1234.Some22343 = !( ( IEnumerable<IChartElement> ) this ).Any<IChartElement>( new Func<IChartElement, bool>( _someMemebers1234.\u0023\u003DzrnUOoaI6rwNWZtaLsg\u003D\u003D) ) ? _someMemebers1234._someChartElement as IfxChartElement : throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
+            _someMemebers1234.Some22343 = !( ( IEnumerable<IChartElement> ) this ).Any<IChartElement>( new Func<IChartElement, bool>( _someMemebers1234.\u0023\u003DzrnUOoaI6rwNWZtaLsg\u003D\u003D) ) ? _someMemebers1234._someChartElement as IChartComponent : throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
             if ( _someMemebers1234.Some22343 != null)
       {
                 IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this._chartArea.YAxises).FirstOrDefault<IChartAxis>( new Func<IChartAxis, bool>( _someMemebers1234.\u0023\u003DzYEKCeOuJjAm6Cv5GiA\u003D\u003D) );
@@ -147,7 +147,7 @@ public class ChartArea :
         private sealed class SomeClass1234
     {
       public IChartElement _someChartElement;
-      public IfxChartElement Some22343;
+      public IChartComponent Some22343;
 
       internal bool \u0023\u003DzrnUOoaI6rwNWZtaLsg\u003D\u003D(IChartElement _param1)
       {
@@ -161,7 +161,7 @@ public class ChartArea :
     }
   }
     
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _scichartSurfaceMVVM;
+  private readonly ScichartSurfaceMVVM _scichartSurfaceMVVM;
   
   private IChart _chart;
   
@@ -183,12 +183,12 @@ public class ChartArea :
     this._xAxisNotifyList = (INotifyList<IChartAxis>) new ChartArea.AxisNotifyList(this, true);
     this._yAxisNotifyList = (INotifyList<IChartAxis>) new ChartArea.AxisNotifyList(this, false);
     this.InitAxises();
-    this._scichartSurfaceMVVM = new \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj(this);
+    this._scichartSurfaceMVVM = new ScichartSurfaceMVVM(this);
     this.Height = 100.0;
     this.ViewModel().PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
   }
 
-  internal \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj ViewModel()
+  internal ScichartSurfaceMVVM ViewModel()
   {
     return this._scichartSurfaceMVVM;
   }
@@ -243,7 +243,7 @@ public class ChartArea :
       IChart chart1 = this.Chart;
       if (chart1 != null)
         chart1.EnsureUIThread();
-      if (((IEnumerable) this.Elements).Cast<IfxChartElement>().Any<IfxChartElement>(new Func<IfxChartElement, bool>(dkfA7SK9Zsjh7b7evY.\u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D)))
+      if (((IEnumerable) this.Elements).Cast<IChartComponent>().Any<IChartComponent>(new Func<IChartComponent, bool>(dkfA7SK9Zsjh7b7evY.\u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D)))
         throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.ElementDontSupportAxisTypeParams, new object[1]
         {
           (object) dkfA7SK9Zsjh7b7evY.\u0023\u003DzxGz2_8k\u003D
@@ -354,7 +354,7 @@ public class ChartArea :
 
   public virtual ChartArea Clone()
   {
-    ChartArea chartArea = this.\u0023\u003Dz3MbNd8U\u003D(new ChartArea()
+    ChartArea chartArea = this.CopyTo(new ChartArea()
     {
       Title = this.Title,
       Height = this.Height,
@@ -414,7 +414,7 @@ public class ChartArea :
 
     internal void \u0023\u003DzM30dyEF9Fb2bzYLjmLgjtiE\u003D(IChartElement _param1)
     {
-      if (!(_param1 is IfxChartElement ddznyiGmdRlAevOq))
+      if (!(_param1 is IChartComponent ddznyiGmdRlAevOq))
         return;
       ddznyiGmdRlAevOq.ResetUI();
     }
@@ -458,7 +458,7 @@ public class ChartArea :
     public ChartArea \u0023\u003DzRRvwDu67s9Rm;
 
     internal bool \u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D(
-      IfxChartElement _param1)
+      IChartComponent _param1)
     {
       return !_param1.CheckAxesCompatible(new ChartAxisType?(this.\u0023\u003DzxGz2_8k\u003D), new ChartAxisType?());
     }
@@ -506,7 +506,7 @@ public class ChartArea :
         }));
       if (this == this._chartArea.XAxises && zPKCmcad6Nxc5A8A._someChartElement.AxisType != this._chartArea.XAxisType)
         throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
-      foreach (IfxChartElement elem in ((IEnumerable) this._chartArea.Elements).Cast<IfxChartElement>())
+      foreach (IChartComponent elem in ((IEnumerable) this._chartArea.Elements).Cast<IChartComponent>())
       {
         if (elem.TryGetXAxis() == null && this == this._chartArea.XAxises && zPKCmcad6Nxc5A8A._someChartElement.Id == elem.XAxisId && !elem.CheckAxesCompatible(new ChartAxisType?(zPKCmcad6Nxc5A8A._someChartElement.AxisType), new ChartAxisType?()))
           throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);

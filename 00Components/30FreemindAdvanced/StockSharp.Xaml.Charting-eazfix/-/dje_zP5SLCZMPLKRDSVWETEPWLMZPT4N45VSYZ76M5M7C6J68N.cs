@@ -109,13 +109,13 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
 
   protected override IRange \u0023\u003Dzd6x7lH_dQH0I()
   {
-    return this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>() ? (IRange) null : (IRange) this.\u0023\u003DzrBtJ_MpEE_B5();
+    return this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>() ? (IRange) null : (IRange) this.\u0023\u003DzrBtJ_MpEE_B5();
   }
 
   private IndexRange  \u0023\u003DzrBtJ_MpEE_B5()
   {
     IndexRange  g8Oq2rGx6KyfAreq = (IndexRange ) null;
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D s1JolYrWoYpqmQ6ug = this.ParentSurface.get_RenderableSeries().FirstOrDefault<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DzcHRWPhoLpVN6adCW3mQzIrw\u003D));
+    IRenderableSeries s1JolYrWoYpqmQ6ug = this.ParentSurface.get_RenderableSeries().FirstOrDefault<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzcHRWPhoLpVN6adCW3mQzIrw\u003D));
     if (s1JolYrWoYpqmQ6ug != null)
       g8Oq2rGx6KyfAreq = new IndexRange (0, s1JolYrWoYpqmQ6ug.get_DataSeries().\u0023\u003DzwQnyySN6xaVC().Count - 1);
     return g8Oq2rGx6KyfAreq;
@@ -322,7 +322,7 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
   }
 
   private bool \u0023\u003DzcHRWPhoLpVN6adCW3mQzIrw\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     if (!(_param1.get_XAxisId() == this.Id))
       return false;

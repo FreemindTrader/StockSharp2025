@@ -469,7 +469,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
     T _param2)
   {
     T xvalue = this.XValues[_param1];
-    return !xvalue.IsFiniteNumber() ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzNvw4Cjs\u003D.Min(_param2, xvalue);
+    return !xvalue.IsDefined() ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<T, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzNvw4Cjs\u003D.Min(_param2, xvalue);
   }
 
   internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzStrzQ_NInQ8M(
@@ -520,7 +520,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
   {
     if (typeof (\u0023\u003DzE8zkRfY\u003D) == typeof (DateTime))
       return new DoubleRange((double) ((DateTime) _param1).Ticks, (double) ((DateTime) _param2).Ticks);
-    return !_param1.IsFiniteNumber() || !_param2.IsFiniteNumber() ? new DoubleRange(double.MinValue, double.MaxValue) : new DoubleRange(_param1.ToDouble(), _param2.ToDouble());
+    return !_param1.IsDefined() || !_param2.IsDefined() ? new DoubleRange(double.MinValue, double.MaxValue) : new DoubleRange(_param1.ToDouble(), _param2.ToDouble());
   }
 
   protected void \u0023\u003Dz2OnEmwtzurH2(int _param1)

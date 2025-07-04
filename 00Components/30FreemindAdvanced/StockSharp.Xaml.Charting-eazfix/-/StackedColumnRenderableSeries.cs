@@ -20,7 +20,7 @@ internal sealed class StackedColumnRenderableSeries :
   IXmlSerializable,
   \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D,
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,
-  \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D,
+  IRenderableSeries,
   \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -150,7 +150,7 @@ internal sealed class StackedColumnRenderableSeries :
   [SpecialName]
   public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyklVKg61SC2QL8 \u0023\u003Dz9NrWMa9\u00243uT8()
   {
-    return ((dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd) this.\u0023\u003DzoXzc48\u0024TAMxP())?.\u0023\u003DzGqYqkF73Z9yr0zUWMg\u003D\u003D();
+    return ((SciChartSurface) this.\u0023\u003DzoXzc48\u0024TAMxP())?.\u0023\u003DzGqYqkF73Z9yr0zUWMg\u003D\u003D();
   }
 
   public override IRange \u0023\u003Dzq3MgExWxza1L()
@@ -222,23 +222,23 @@ internal sealed class StackedColumnRenderableSeries :
     d5Uc36Ku2HzS32Ejd.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzZcYnC1z3z2MT((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) d5Uc36Ku2HzS32Ejd, (string) _param1.OldValue, (string) _param1.NewValue);
   }
 
-  Style \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV1DuKLm1V1cPvuYOQQ3vfm3CE6f2xA\u003D()
+  Style IRenderableSeries.\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV1DuKLm1V1cPvuYOQQ3vfm3CE6f2xA\u003D()
   {
     return this.Style;
   }
 
-  void \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYWJbEJRkUuJj8DgmKkp4Eq5v4nmubs\u003D(
+  void IRenderableSeries.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYWJbEJRkUuJj8DgmKkp4Eq5v4nmubs\u003D(
     Style _param1)
   {
     this.Style = _param1;
   }
 
-  object \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYUUfzfIMBKYp9sEsF_gP\u0024Pd_00evAM\u003D()
+  object IRenderableSeries.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYUUfzfIMBKYp9sEsF_gP\u0024Pd_00evAM\u003D()
   {
     return this.DataContext;
   }
 
-  void \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003DzupHrUO0UFO07vWyNRguf_0VZ\u0024qSpKkKiNQBNd6W0uxIwj8NLZZkxSgEI5esBhFlrGGFudoE\u003D(
+  void IRenderableSeries.\u0023\u003DzupHrUO0UFO07vWyNRguf_0VZ\u0024qSpKkKiNQBNd6W0uxIwj8NLZZkxSgEI5esBhFlrGGFudoE\u003D(
     object _param1)
   {
     this.DataContext = _param1;

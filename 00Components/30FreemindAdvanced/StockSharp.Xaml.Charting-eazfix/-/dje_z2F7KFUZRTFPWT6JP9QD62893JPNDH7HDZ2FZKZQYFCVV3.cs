@@ -60,9 +60,9 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR> iwzGyvO4YaqDkpiI = (\u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>) ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index);
       \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-      double num4 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003Dz1bwNIVeIfnJ7(r84WmWxFxQ0dZvA0kR.\u0023\u003DzolXXlhDBER_c(), xoBoxSize);
+      double num4 = NumberUtil.RoundUp(r84WmWxFxQ0dZvA0kR.\u0023\u003DzolXXlhDBER_c(), xoBoxSize);
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-      double num5 = \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzhMBCN0mwgFw7(r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8(), xoBoxSize);
+      double num5 = NumberUtil.RoundDown(r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8(), xoBoxSize);
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double close1 = r84WmWxFxQ0dZvA0kR.Close;
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
@@ -87,7 +87,7 @@ internal sealed class dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596
         double num13 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double close2 = r84WmWxFxQ0dZvA0kR.Close;
-        Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, num10, num11, num12, num13, close2);
+        Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, num10, num11, num12, num13, close2);
         if (nullable.HasValue)
         {
           rhwYsZxA33iRu6Id7J = _param3.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());

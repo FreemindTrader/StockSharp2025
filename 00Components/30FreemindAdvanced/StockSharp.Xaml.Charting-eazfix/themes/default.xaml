@@ -48,9 +48,9 @@
     <Setter Property="Control.Background"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=GridBackgroundBrush}"/>
     <Setter Property="Control.BorderBrush"
-            Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd}}"/>
+            Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=llliil11:SciChartSurface}}"/>
     <Setter Property="Control.BorderThickness"
-            Value="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd}}"/>
+            Value="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=llliil11:SciChartSurface}}"/>
     <Setter Property="Control.Template">
       <Setter.Value>
         <ControlTemplate TargetType="{l1llili1:Type llliil11:dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLTCNAKZHF2LCBZNSWLDVPYTWWEKD4_ejd}">
@@ -81,7 +81,7 @@
     <llliil11:dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd/>
   </ItemsPanelTemplate>
   <Style l1llili1:Key="UltrachartSurfaceBase"
-         TargetType="{l1llili1:Type llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd}">
+         TargetType="{l1llili1:Type llliil11:SciChartSurface}">
     <Setter Property="Control.Background"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=UltrachartBackground}"/>
     <Setter Property="Control.BorderBrush"
@@ -94,30 +94,30 @@
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=TickTextBrush}"/>
     <Setter Property="llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels"
             Value="True"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.ClipUnderlayAnnotations"
+    <Setter Property="llliil11:SciChartSurface.ClipUnderlayAnnotations"
             Value="True"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.ClipOverlayAnnotations"
+    <Setter Property="llliil11:SciChartSurface.ClipOverlayAnnotations"
             Value="True"/>
     <Setter Property="llliil11:dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.ClipModifierSurface"
             Value="True"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.LeftAxesPanelTemplate"
+    <Setter Property="llliil11:SciChartSurface.LeftAxesPanelTemplate"
             Value="{StaticResource DefaultYAxesPanel}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RightAxesPanelTemplate"
+    <Setter Property="llliil11:SciChartSurface.RightAxesPanelTemplate"
             Value="{StaticResource DefaultYAxesPanel}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.TopAxesPanelTemplate"
+    <Setter Property="llliil11:SciChartSurface.TopAxesPanelTemplate"
             Value="{StaticResource DefaultXAxesPanel}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.BottomAxesPanelTemplate"
+    <Setter Property="llliil11:SciChartSurface.BottomAxesPanelTemplate"
             Value="{StaticResource DefaultXAxesPanel}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.CenterXAxesPanelTemplate"
+    <Setter Property="llliil11:SciChartSurface.CenterXAxesPanelTemplate"
             Value="{StaticResource CenterXItemsPanel}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.CenterYAxesPanelTemplate"
+    <Setter Property="llliil11:SciChartSurface.CenterYAxesPanelTemplate"
             Value="{StaticResource CenterYItemsPanel}"/>
     <Setter Property="Control.IsTabStop" Value="True"/>
     <Setter Property="llliil11:dje_zZ2MQ59H28BQX5B8FXAJNBH2MER72RBVZKWAH528H9F679PZ_ejd.IsFocusable"
             Value="True"/>
     <Setter Property="Control.Template">
       <Setter.Value>
-        <ControlTemplate TargetType="{l1llili1:Type llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd}">
+        <ControlTemplate TargetType="{l1llili1:Type llliil11:SciChartSurface}">
           <Border Background="{TemplateBinding Control.Background}"
                   llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
                   Padding="{TemplateBinding Control.Padding}" ClipToBounds="True">
@@ -147,16 +147,16 @@
                                                                                        VerticalAlignment="Stretch"
                                                                                        llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
                                                                                        IsTabStop="False"
-                                                                                       Style="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle}"/>
+                                                                                       Style="{TemplateBinding llliil11:SciChartSurface.GridLinesPanelStyle}"/>
               <llliil11:dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd Grid.Row="3" Grid.Column="2"
                                                                                  llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
                                                                                  StretchToSize="{Binding IsPolarChart, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertBooleanConverter}}">
                 <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                      llliil11:dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.ClipToEllipseBounds="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.IsPolarChart}"
+                      llliil11:dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.ClipToEllipseBounds="{TemplateBinding llliil11:SciChartSurface.IsPolarChart}"
                       llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True">
                   <llliil11:dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd l1llili1:Name="PART_AnnotationsUnderlaySurface" HorizontalAlignment="Stretch"
                                                                                      VerticalAlignment="Stretch"
-                                                                                     llliil11:dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.ClipToBounds="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.ClipUnderlayAnnotations}"
+                                                                                     llliil11:dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.ClipToBounds="{TemplateBinding llliil11:SciChartSurface.ClipUnderlayAnnotations}"
                                                                                      llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"/>
                   <ContentControl HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
                                   llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
@@ -164,10 +164,10 @@
                                   IsTabStop="False"/>
                   <llliil11:dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd Name="PART_CenterYAxisArea"
                                                                                            llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
-                                                                                           ItemsPanel="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.CenterYAxesPanelTemplate}"/>
+                                                                                           ItemsPanel="{TemplateBinding llliil11:SciChartSurface.CenterYAxesPanelTemplate}"/>
                   <llliil11:dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd l1llili1:Name="PART_AnnotationsOverlaySurface" HorizontalAlignment="Stretch"
                                                                                      VerticalAlignment="Stretch"
-                                                                                     llliil11:dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.ClipToBounds="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.ClipOverlayAnnotations}"
+                                                                                     llliil11:dje_zYP2YHYT7GJH54HLZN4EKVWEKMCU8KQMHVMVATD3PKGGYCK2_ejd.ClipToBounds="{TemplateBinding llliil11:SciChartSurface.ClipOverlayAnnotations}"
                                                                                      llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"/>
                   <llliil11:dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd l1llili1:Name="PART_ChartModifierSurface" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                                                                                      ClipToBounds="{TemplateBinding llliil11:dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.ClipModifierSurface}"
@@ -255,7 +255,7 @@
                 </Grid>
                 <llliil11:dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd Name="PART_CenterXAxisArea"
                                                                                          llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
-                                                                                         ItemsPanel="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.CenterXAxesPanelTemplate}"/>
+                                                                                         ItemsPanel="{TemplateBinding llliil11:SciChartSurface.CenterXAxesPanelTemplate}"/>
               </llliil11:dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd>
               <Border Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                       llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
@@ -263,19 +263,19 @@
                       BorderThickness="{Binding ElementName=PART_GridLinesArea, Path=BorderThickness}"/>
               <llliil11:dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd l1llili1:Name="PART_TopAxisArea" Grid.Row="2" Grid.Column="2"
                                                                                        llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
-                                                                                       ItemsPanel="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.TopAxesPanelTemplate}"
+                                                                                       ItemsPanel="{TemplateBinding llliil11:SciChartSurface.TopAxesPanelTemplate}"
                                                                                        Style="{StaticResource AxisAreaStyle}"/>
               <llliil11:dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd l1llili1:Name="PART_LeftAxisArea" Grid.Row="3" Grid.Column="1"
                                                                                        llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
-                                                                                       ItemsPanel="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.LeftAxesPanelTemplate}"
+                                                                                       ItemsPanel="{TemplateBinding llliil11:SciChartSurface.LeftAxesPanelTemplate}"
                                                                                        Style="{StaticResource AxisAreaStyle}"/>
               <llliil11:dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd l1llili1:Name="PART_BottomAxisArea" Grid.Row="4" Grid.Column="2"
                                                                                        llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
-                                                                                       ItemsPanel="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.BottomAxesPanelTemplate}"
+                                                                                       ItemsPanel="{TemplateBinding llliil11:SciChartSurface.BottomAxesPanelTemplate}"
                                                                                        Style="{StaticResource AxisAreaStyle}"/>
               <llliil11:dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd l1llili1:Name="PART_RightAxisArea" Grid.Row="3" Grid.Column="3"
                                                                                        llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels="True"
-                                                                                       ItemsPanel="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RightAxesPanelTemplate}"
+                                                                                       ItemsPanel="{TemplateBinding llliil11:SciChartSurface.RightAxesPanelTemplate}"
                                                                                        Style="{StaticResource AxisAreaStyle}"/>
             </llliil11:dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd>
           </Border>
@@ -284,7 +284,7 @@
     </Setter>
   </Style>
   <Style BasedOn="{StaticResource UltrachartSurfaceBase}"
-         TargetType="{l1llili1:Type llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd}"/>
+         TargetType="{l1llili1:Type llliil11:SciChartSurface}"/>
   <Style l1llili1:Key="DefaultAxisLabelStyle"
          TargetType="{l1llili1:Type llliil11:dje_zZ5YUPHV77BRLFTBNBH6Y9HYE6YMNGXV6RBS5NJ2Y9QAJDHH6H6U9E_ejd}">
     <Setter Property="Control.IsTabStop" Value="False"/>
@@ -1298,14 +1298,14 @@
             Value="{StaticResource DefaultSeriesInfoTemplateSelectorStyle}"/>
   </Style>
   <Style l1llili1:Key="DefaultRubberBandModifierStyle"
-         TargetType="{l1llili1:Type llliil11:dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd}">
-    <Setter Property="llliil11:dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.RubberBandFill"
+         TargetType="{l1llili1:Type llliil11:RubberBandXyZoomModifier}">
+    <Setter Property="llliil11:RubberBandXyZoomModifier.RubberBandFill"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=RubberBandFillBrush}"/>
-    <Setter Property="llliil11:dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd.RubberBandStroke"
+    <Setter Property="llliil11:RubberBandXyZoomModifier.RubberBandStroke"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=RubberBandStrokeBrush}"/>
   </Style>
   <Style BasedOn="{StaticResource DefaultRubberBandModifierStyle}"
-         TargetType="{l1llili1:Type llliil11:dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd}"/>
+         TargetType="{l1llili1:Type llliil11:RubberBandXyZoomModifier}"/>
   <ControlTemplate l1llili1:Key="CursorLabelTemplate"
                    TargetType="{l1llili1:Type llliil11:dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd}">
     <Border BorderThickness="1" CornerRadius="5">
@@ -1482,7 +1482,7 @@
       <llliil11:dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd ReceiveHandledEvents="True" ShowAxisLabels="True" ShowTooltipOn="MouseHover"
                                                                                       Style="{StaticResource DefaultRolloverModifierStyle}"
                                                                                       IsEnabled="{Binding ParentSurface.IsRolloverEnabled, RelativeSource={RelativeSource Self}}"/>
-      <llliil11:dje_z9NC6FGL9CLWMD4D7X9JS72UQLAMEQG255YR3PDLRCHL4NK8Z54LK95Z3MUF7S7B6NW_ejd IsXAxisOnly="True" ReceiveHandledEvents="True"
+      <llliil11:RubberBandXyZoomModifier IsXAxisOnly="True" ReceiveHandledEvents="True"
                                                                                             Style="{StaticResource DefaultRubberBandModifierStyle}"
                                                                                             IsEnabled="{Binding ParentSurface.IsRubberBandZoomEnabled, RelativeSource={RelativeSource Self}}"/>
       <llliil11:dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd ActionType="Zoom" XyDirection="XYDirection"/>
@@ -1502,7 +1502,7 @@
   </Style>
   <Style BasedOn="{StaticResource UltrachartSurfaceBase}"
          TargetType="{l1llili1:Type llliil11:dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd}">
-    <Setter Property="llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.VerticalChartGroup"
+    <Setter Property="llliil11:SciChartGroup.VerticalChartGroup"
             Value="{Binding Path=VerticalChartGroupId, RelativeSource={RelativeSource Self}, Mode=OneWay}"/>
     <Setter Property="llliil11:dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd.IsCursorEnabled"
             Value="True"/>
@@ -1512,11 +1512,11 @@
             Value="True"/>
     <Setter Property="llliil11:dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SnapsToDevicePixels"
             Value="True"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxis"
+    <Setter Property="llliil11:SciChartSurface.XAxis"
             Value="{Binding Source={StaticResource StockChartXAxis}, Converter={StaticResource DataTemplateToObjectConverter}}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis"
+    <Setter Property="llliil11:SciChartSurface.YAxis"
             Value="{Binding Source={StaticResource StockChartYAxis}, Converter={StaticResource DataTemplateToObjectConverter}}"/>
-    <Setter Property="llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.ChartModifier"
+    <Setter Property="llliil11:SciChartSurface.ChartModifier"
             Value="{Binding Source={StaticResource StockChartModifier}, Converter={StaticResource DataTemplateToObjectConverter}}"/>
     <Setter Property="llliil11:dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd.LegendSource"
             Value="{Binding DefaultDataProvider.SeriesData, RelativeSource={RelativeSource Self}}"/>
@@ -1724,15 +1724,15 @@
       <Setter.Value>
         <ControlTemplate TargetType="{l1llili1:Type llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd}">
           <Grid Name="PART_Container">
-            <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd l1llili1:Name="PART_BackgroundSurface" Background="{TemplateBinding Control.Background}"
+            <llliil11:SciChartSurface l1llili1:Name="PART_BackgroundSurface" Background="{TemplateBinding Control.Background}"
                                                                                             BorderThickness="0" FontSize="{TemplateBinding Control.FontSize}"
                                                                                             FontWeight="{TemplateBinding Control.FontWeight}" Foreground="{TemplateBinding Control.Foreground}"
                                                                                             Padding="{TemplateBinding Control.Padding}">
-              <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis>
+              <llliil11:SciChartSurface.YAxis>
                 <llliil11:dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd AutoRange="Always" DrawMajorGridLines="False" DrawMinorGridLines="False" TextFormatting="###E+0"
                                                                                          Visibility="Collapsed"/>
-              </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis>
-            </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
+              </llliil11:SciChartSurface.YAxis>
+            </llliil11:SciChartSurface>
             <llliil11:dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd l1llili1:Name="PART_Scrollbar"
                                                                                             Axis="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.Axis}"
                                                                                             Style="{TemplateBinding llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.ScrollbarStyle}"/>
@@ -1920,7 +1920,7 @@
   <Style BasedOn="{StaticResource DefaultGroupPaneStyle}"
          TargetType="{l1llili1:Type llliil11:dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd}"/>
   <Style
-         TargetType="{l1llili1:Type llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd}">
+         TargetType="{l1llili1:Type llliil11:SciChartGroup}">
     <Setter Property="Control.Background"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=UltrachartBackground}"/>
     <Setter Property="Control.Foreground"
@@ -1928,7 +1928,7 @@
     <Setter Property="ItemsControl.ItemContainerStyle" Value="{StaticResource DefaultGroupPaneStyle}"/>
     <Setter Property="Control.Template">
       <Setter.Value>
-        <ControlTemplate TargetType="{l1llili1:Type llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd}">
+        <ControlTemplate TargetType="{l1llili1:Type llliil11:SciChartGroup}">
           <Grid l1llili1:Name="PART_MainGrid">
             <Grid.RowDefinitions>
               <RowDefinition Height="*"/>
@@ -2428,28 +2428,28 @@
                   <ColumnDefinition Width="Auto"/>
                   <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd Grid.Column="2" Margin="5,0" Background="Transparent" BorderBrush="Transparent" MaxFrameRate="20"
+                <llliil11:SciChartSurface Grid.Column="2" Margin="5,0" Background="Transparent" BorderBrush="Transparent" MaxFrameRate="20"
                                                                                                 Padding="0"
                                                                                                 Visibility="{TemplateBinding llliil11:dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.ChartsVisibility}">
                   <llliil11:dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.RenderSurface>
                     <llliil11:dje_zFYCV8LXGWR39M2R5WW2FCVKF529R9Q6JAUMT5WGC7MM4FFDF2V4HQQMUEFPET6GT7RXT7XFY_ejd/>
                   </llliil11:dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.RenderSurface>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle>
+                  <llliil11:SciChartSurface.GridLinesPanelStyle>
                     <Style TargetType="{l1llili1:Type llliil11:dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLTCNAKZHF2LCBZNSWLDVPYTWWEKD4_ejd}">
                       <Setter Property="Control.Background" Value="#11FFFFFF"/>
                     </Style>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RenderableSeries>
+                  </llliil11:SciChartSurface.GridLinesPanelStyle>
+                  <llliil11:SciChartSurface.RenderableSeries>
                     <llliil11:FastMountainRenderableSeries AntiAliasing="False" Opacity="0.5"
                                                                                                                                     DataSeries="{Binding WpfFpsSeries, RelativeSource={RelativeSource TemplatedParent}}"/>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RenderableSeries>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis>
+                  </llliil11:SciChartSurface.RenderableSeries>
+                  <llliil11:SciChartSurface.YAxis>
                     <llliil11:dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd DrawMajorGridLines="False" DrawMinorGridLines="False" Visibility="Collapsed" VisibleRange="0,62"/>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxis>
+                  </llliil11:SciChartSurface.YAxis>
+                  <llliil11:SciChartSurface.XAxis>
                     <llliil11:dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd AutoRange="Always" DrawMajorGridLines="False" DrawMinorGridLines="False" Visibility="Collapsed"/>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxis>
-                </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
+                  </llliil11:SciChartSurface.XAxis>
+                </llliil11:SciChartSurface>
                 <TextBlock Grid.Row="0" Margin="0,3" VerticalAlignment="Center" FontSize="{TemplateBinding Control.FontSize}"
                            FontWeight="{TemplateBinding Control.FontWeight}" Foreground="{TemplateBinding Control.Foreground}">
                   <Run Text="CompositionTarget:"/>
@@ -2470,28 +2470,28 @@
                   <Run Text="{Binding UltrachartFps, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=30.0, StringFormat=#0.0}"/>
                   <Run Text="FPS"/>
                 </TextBlock>
-                <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd Grid.Row="2" Grid.Column="2" Margin="5,0" Background="Transparent" BorderBrush="Transparent"
+                <llliil11:SciChartSurface Grid.Row="2" Grid.Column="2" Margin="5,0" Background="Transparent" BorderBrush="Transparent"
                                                                                                 MaxFrameRate="20" Padding="0"
                                                                                                 Visibility="{TemplateBinding llliil11:dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.ChartsVisibility}">
                   <llliil11:dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.RenderSurface>
                     <llliil11:dje_zFYCV8LXGWR39M2R5WW2FCVKF529R9Q6JAUMT5WGC7MM4FFDF2V4HQQMUEFPET6GT7RXT7XFY_ejd/>
                   </llliil11:dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.RenderSurface>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle>
+                  <llliil11:SciChartSurface.GridLinesPanelStyle>
                     <Style TargetType="{l1llili1:Type llliil11:dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLTCNAKZHF2LCBZNSWLDVPYTWWEKD4_ejd}">
                       <Setter Property="Control.Background" Value="#11FFFFFF"/>
                     </Style>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.GridLinesPanelStyle>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RenderableSeries>
+                  </llliil11:SciChartSurface.GridLinesPanelStyle>
+                  <llliil11:SciChartSurface.RenderableSeries>
                     <llliil11:FastMountainRenderableSeries AntiAliasing="False" Opacity="0.5"
                                                                                                                                     DataSeries="{Binding UltrachartFpsSeries, RelativeSource={RelativeSource TemplatedParent}}"/>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.RenderableSeries>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis>
+                  </llliil11:SciChartSurface.RenderableSeries>
+                  <llliil11:SciChartSurface.YAxis>
                     <llliil11:dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd DrawMajorGridLines="False" DrawMinorGridLines="False" Visibility="Collapsed" VisibleRange="0,62"/>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxis>
-                  <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxis>
+                  </llliil11:SciChartSurface.YAxis>
+                  <llliil11:SciChartSurface.XAxis>
                     <llliil11:dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd AutoRange="Always" DrawMajorGridLines="False" DrawMinorGridLines="False" Visibility="Collapsed"/>
-                  </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxis>
-                </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
+                  </llliil11:SciChartSurface.XAxis>
+                </llliil11:SciChartSurface>
                 <TextBlock Grid.Row="3" Margin="0,3" VerticalAlignment="Center" FontSize="{TemplateBinding Control.FontSize}"
                            FontWeight="{TemplateBinding Control.FontWeight}" Foreground="{TemplateBinding Control.Foreground}">
                   <Run Text="Chart Stats:"/>

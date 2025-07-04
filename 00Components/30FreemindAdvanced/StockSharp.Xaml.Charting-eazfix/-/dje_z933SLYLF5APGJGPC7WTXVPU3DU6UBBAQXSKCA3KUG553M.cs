@@ -22,9 +22,9 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   ChartModifierBase
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> \u0023\u003Dzmhay2J9Ys\u0024BH;
+  private ObservableCollection<IRenderableSeries> \u0023\u003Dzmhay2J9Ys\u0024BH;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly IDictionary<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D> \u0023\u003DzJVKVgJSKleLL = (IDictionary<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>) new Dictionary<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>();
+  private readonly IDictionary<IRenderableSeries, IAnnotation> \u0023\u003DzJVKVgJSKleLL = (IDictionary<IRenderableSeries, IAnnotation>) new Dictionary<IRenderableSeries, IAnnotation>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private PropertyChangeNotifier \u0023\u003DzMFucnUdhtZnJ;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -85,7 +85,7 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     _param0.SetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzRuUiUh8wem3V, (object) _param1);
   }
 
-  protected IDictionary<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D> \u0023\u003Dz09yhBaeJjdAE()
+  protected IDictionary<IRenderableSeries, IAnnotation> \u0023\u003Dz09yhBaeJjdAE()
   {
     return this.\u0023\u003DzJVKVgJSKleLL;
   }
@@ -117,9 +117,9 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   public override void OnAttached()
   {
     base.OnAttached();
-    if (this.ParentSurface is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd parentSurface)
+    if (this.ParentSurface is SciChartSurface parentSurface)
     {
-      this.\u0023\u003DzMFucnUdhtZnJ = new PropertyChangeNotifier((DependencyObject) parentSurface, dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
+      this.\u0023\u003DzMFucnUdhtZnJ = new PropertyChangeNotifier((DependencyObject) parentSurface, SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
       this.\u0023\u003DzMFucnUdhtZnJ.ValueChanged += new Action(this.\u0023\u003Dz6kEcEuixivshQn\u0024YZtma0mabmk734AF5o\u00243V64I\u003D);
     }
     this.\u0023\u003Dz6kEcEuixivshQn\u0024YZtma0mabmk734AF5o\u00243V64I\u003D();
@@ -148,8 +148,8 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     {
       if (this.ParentSurface == null || this.ParentSurface.get_Annotations() == null)
         return;
-      _param2.OldItems.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(this.\u0023\u003Dzf3E4HwK7rBYk));
-      _param2.NewItems.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(this.\u0023\u003DzkdGTy1I9DEFI));
+      _param2.OldItems.\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003Dzf3E4HwK7rBYk));
+      _param2.NewItems.\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003DzkdGTy1I9DEFI));
     }
   }
 
@@ -160,18 +160,18 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     this.\u0023\u003DzH9m5_dD9yxBB();
     if (!this.IsEnabled)
       return;
-    this.ParentSurface.get_RenderableSeries().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Action<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(this.\u0023\u003DzkdGTy1I9DEFI));
+    this.ParentSurface.get_RenderableSeries().\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003DzkdGTy1I9DEFI));
   }
 
   private void \u0023\u003DzH9m5_dD9yxBB()
   {
     if (this.ParentSurface != null && this.ParentSurface.get_Annotations() != null)
-      this.\u0023\u003DzJVKVgJSKleLL.\u0023\u003Dz30RSSSygABj_<KeyValuePair<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>>(new Action<KeyValuePair<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D>>(this.\u0023\u003DzhCihYq\u0024JqXmwHUXOAGAdQ_w\u003D));
+      this.\u0023\u003DzJVKVgJSKleLL.\u0023\u003Dz30RSSSygABj_<KeyValuePair<IRenderableSeries, IAnnotation>>(new Action<KeyValuePair<IRenderableSeries, IAnnotation>>(this.\u0023\u003DzhCihYq\u0024JqXmwHUXOAGAdQ_w\u003D));
     this.\u0023\u003DzJVKVgJSKleLL.Clear();
   }
 
   private void \u0023\u003DzkdGTy1I9DEFI(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     if (!(_param1.get_YAxisId() == this.YAxisId) || this.\u0023\u003DzJVKVgJSKleLL.ContainsKey(_param1))
       return;
@@ -182,14 +182,14 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     markerAnnotation1.XAxisId = _param1.get_XAxisId();
     markerAnnotation1.YAxisId = _param1.get_YAxisId();
     SeriesValueAxisMarkerAnnotation markerAnnotation2 = markerAnnotation1;
-    this.ParentSurface.get_Annotations().Add((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) markerAnnotation2);
-    this.\u0023\u003DzJVKVgJSKleLL.Add(_param1, (\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) markerAnnotation2);
+    this.ParentSurface.get_Annotations().Add((IAnnotation) markerAnnotation2);
+    this.\u0023\u003DzJVKVgJSKleLL.Add(_param1, (IAnnotation) markerAnnotation2);
   }
 
   private void \u0023\u003Dzf3E4HwK7rBYk(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D hhh93Q0DqkV5Sv90k;
+    IAnnotation hhh93Q0DqkV5Sv90k;
     if (!this.\u0023\u003DzJVKVgJSKleLL.TryGetValue(_param1, out hhh93Q0DqkV5Sv90k))
       return;
     this.ParentSurface.get_Annotations().Remove(hhh93Q0DqkV5Sv90k);
@@ -202,7 +202,7 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     if (this.\u0023\u003Dzmhay2J9Ys\u0024BH != null)
     {
       this.\u0023\u003Dzmhay2J9Ys\u0024BH.CollectionChanged -= new NotifyCollectionChangedEventHandler(this.\u0023\u003DzlRPtJNE7UDOTZfXPK13GjY4\u003D);
-      this.\u0023\u003Dzmhay2J9Ys\u0024BH = (ObservableCollection<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) null;
+      this.\u0023\u003Dzmhay2J9Ys\u0024BH = (ObservableCollection<IRenderableSeries>) null;
     }
     if (this.\u0023\u003DzMFucnUdhtZnJ == null)
       return;
@@ -232,9 +232,9 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     base.\u0023\u003DzY1JcdEJm3Ryc(_param1);
     if (!this.IsEnabled)
       return;
-    if (this.ParentSurface.get_RenderableSeries().Count<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DzpxgQbv1sI7jsqDO4U7na\u0024\u0024I\u003D)) != this.\u0023\u003DzJVKVgJSKleLL.Count)
+    if (this.ParentSurface.get_RenderableSeries().Count<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzpxgQbv1sI7jsqDO4U7na\u0024\u0024I\u003D)) != this.\u0023\u003DzJVKVgJSKleLL.Count)
       this.\u0023\u003DzDSeDnKxL3bvr();
-    foreach (\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D key in this.ParentSurface.get_RenderableSeries().Where<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>(new Func<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, bool>(this.\u0023\u003DzXKvQXbvtr98ebQ_YJw\u003D\u003D)))
+    foreach (IRenderableSeries key in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzXKvQXbvtr98ebQ_YJw\u003D\u003D)))
     {
       AxisMarkerAnnotation markerAnnotation = (AxisMarkerAnnotation) this.\u0023\u003DzJVKVgJSKleLL[key];
       IRange visibleRange = key.XAxis.VisibleRange;
@@ -269,14 +269,14 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   }
 
   protected virtual string \u0023\u003DzMXsY2TplcAmh(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1,
+    IRenderableSeries _param1,
     IComparable _param2)
   {
     return ((dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) _param1.YAxis).\u0023\u003DzRQVMnjXxoCTF(_param2, false);
   }
 
   private bool \u0023\u003DzXKvQXbvtr98ebQ_YJw\u003D\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     return _param1.get_DataSeries() != null && _param1.XAxis != null && _param1.get_YAxisId() == this.YAxisId;
   }
@@ -291,13 +291,13 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   }
 
   private void \u0023\u003DzhCihYq\u0024JqXmwHUXOAGAdQ_w\u003D(
-    KeyValuePair<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D, \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D> _param1)
+    KeyValuePair<IRenderableSeries, IAnnotation> _param1)
   {
     this.ParentSurface.get_Annotations().Remove(_param1.Value);
   }
 
   private bool \u0023\u003DzpxgQbv1sI7jsqDO4U7na\u0024\u0024I\u003D(
-    \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D _param1)
+    IRenderableSeries _param1)
   {
     return _param1.get_YAxisId() == this.YAxisId;
   }

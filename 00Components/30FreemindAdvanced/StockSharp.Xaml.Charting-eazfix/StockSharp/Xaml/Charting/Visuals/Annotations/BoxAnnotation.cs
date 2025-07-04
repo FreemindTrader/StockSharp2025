@@ -56,9 +56,9 @@ internal class BoxAnnotation : AnnotationBase
     double z2J4l3QuGwZhe = coordinates.\u0023\u003Dz2J4l3QUGwZHE;
     double zWp13vlQiZcJc = coordinates.\u0023\u003DzWp13vlQiZCJc;
     if (z6aJoeqoqAzym < zS2K6sVvd5Iy)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref zS2K6sVvd5Iy, ref z6aJoeqoqAzym);
+      NumberUtil.Swap(ref zS2K6sVvd5Iy, ref z6aJoeqoqAzym);
     if (zWp13vlQiZcJc < z2J4l3QuGwZhe)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
+      NumberUtil.Swap(ref z2J4l3QuGwZhe, ref zWp13vlQiZcJc);
     annotation.Width = z6aJoeqoqAzym - zS2K6sVvd5Iy + 1.0;
     annotation.Height = zWp13vlQiZcJc - z2J4l3QuGwZhe + 1.0;
     Canvas.SetLeft((UIElement) annotation, zS2K6sVvd5Iy);

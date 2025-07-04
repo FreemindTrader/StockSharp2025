@@ -18,7 +18,7 @@ internal abstract class AnchorPointAnnotation :
   AnnotationBase,
   IXmlSerializable,
   \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
-  \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D,
+  IAnnotation,
   IHitTestable,
   IAnchorPointAnnotation
 {
@@ -113,12 +113,12 @@ internal abstract class AnchorPointAnnotation :
 
   protected override Cursor GetSelectedCursor() => Cursors.SizeAll;
 
-  object \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eget_DataContext()
+  object IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eget_DataContext()
   {
     return this.DataContext;
   }
 
-  void \u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eset_DataContext(
+  void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eset_DataContext(
     object value)
   {
     this.DataContext = value;

@@ -27,14 +27,14 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly Canvas \u0023\u003DzF8_YcFVDbTFB = new Canvas();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly ObservableCollection<UIElement> \u0023\u003DzbSEUhuE\u003D;
+  private readonly ObservableCollection<UIElement> _childElements;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.Register(nameof (ClipToBounds), typeof (bool), typeof (dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd.\u0023\u003DzqcJkhvYEtK_9IQ_Dhw\u003D\u003D)));
 
   public dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd()
   {
-    this.\u0023\u003DzbSEUhuE\u003D = new ObservableCollection<UIElement>();
-    this.\u0023\u003DzbSEUhuE\u003D.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003DzPDTy9VNUu6UM);
+    this._childElements = new ObservableCollection<UIElement>();
+    this._childElements.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003DzPDTy9VNUu6UM);
     this.Content = (object) this.\u0023\u003DzF8_YcFVDbTFB;
     this.HorizontalContentAlignment = HorizontalAlignment.Stretch;
     this.VerticalContentAlignment = VerticalAlignment.Stretch;
@@ -55,7 +55,7 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
   [SpecialName]
   public ObservableCollection<UIElement> \u0023\u003DzBDSV99pPo8hY()
   {
-    return this.\u0023\u003DzbSEUhuE\u003D;
+    return this._childElements;
   }
 
   public void \u0023\u003DzUf222sU\u003D() => this.\u0023\u003DzBDSV99pPo8hY().Clear();
@@ -80,7 +80,7 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
     if (_param2.Action == NotifyCollectionChangedAction.Reset)
     {
       this.\u0023\u003DzF8_YcFVDbTFB.Children.Clear();
-      this.\u0023\u003DzbSEUhuE\u003D.\u0023\u003Dz30RSSSygABj_<UIElement>(new Action<UIElement>(this.\u0023\u003DzUOytnwv4WJ5__oZ9iQm4N8k\u003D));
+      this._childElements.\u0023\u003Dz30RSSSygABj_<UIElement>(new Action<UIElement>(this.\u0023\u003DzUOytnwv4WJ5__oZ9iQm4N8k\u003D));
     }
     if (_param2.NewItems != null)
       _param2.NewItems.Cast<UIElement>().\u0023\u003Dz30RSSSygABj_<UIElement>(new Action<UIElement>(this.\u0023\u003DzgGK3iO7YQs\u0024JAApqx5sILjM\u003D));

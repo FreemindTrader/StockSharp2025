@@ -57,7 +57,7 @@ internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param2, "");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D(_param1.Min, "").\u0023\u003DziXfpgk1YpfgIxrtqTA\u003D\u003D(_param1.Max, "");
-    return !_param2.\u0023\u003DzhilcjqQ\u003D() && !_param1.IsZero && _param1.Min.IsFiniteNumber() && _param1.Max.IsFiniteNumber();
+    return !_param2.\u0023\u003DzhilcjqQ\u003D() && !_param1.IsZero && _param1.Min.IsDefined() && _param1.Max.IsDefined();
   }
 
   protected abstract IComparable \u0023\u003Dz1bwNIVeIfnJ7(IComparable _param1, TimeSpan _param2);

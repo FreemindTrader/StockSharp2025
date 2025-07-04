@@ -31,7 +31,7 @@ namespace StockSharp.Xaml.Charting;
 public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, IThemeableChart
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -46,7 +46,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   public EquityCurveChart()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxisType = ChartAxisType.CategoryDateTime;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
     ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>().AutoRange = true;
@@ -167,7 +167,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   public void Reset()
   {
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
+    ScichartSurfaceMVVM zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
     INotifyList<IChartElement> elements = this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements;
     int index = 0;
     IChartElement[] chartElementArray = new IChartElement[((ICollection<IChartElement>) elements).Count];
@@ -181,7 +181,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   public void Reset(IEnumerable<ICollection<LineData<DateTime>>> items)
   {
-    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAVykYn0F15D5Ztnzfw\u003D\u003D))));
+    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.ResetY1Annotation))));
   }
 
   public void Reset(IEnumerable<IChartBandElement> elements)
@@ -265,7 +265,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
       _param1.TextFormatting = "0.##";
     }
 
-    internal IChartBandElement \u0023\u003DzAVykYn0F15D5Ztnzfw\u003D\u003D(
+    internal IChartBandElement ResetY1Annotation(
       EquityCurveChart.\u0023\u003DztNaqcZK2DJoq _param1)
     {
       return _param1.\u0023\u003Dzj_CyhS4\u003D();
@@ -308,29 +308,29 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   private sealed class \u0023\u003DztNaqcZK2DJoq : BaseList<LineData<DateTime>>
   {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly EquityCurveChart \u0023\u003DzU\u0024_meog\u003D;
+    private readonly EquityCurveChart _parentElement;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly IChartBandElement \u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+    private readonly IChartBandElement _indicatorElement;
 
     public \u0023\u003DztNaqcZK2DJoq(EquityCurveChart _param1, IChartBandElement _param2)
     {
-      this.\u0023\u003DzU\u0024_meog\u003D = _param1 ?? throw new ArgumentNullException("parent");
-      this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D = _param2 ?? throw new ArgumentNullException("element");
+      this._parentElement = _param1 ?? throw new ArgumentNullException("parent");
+      this._indicatorElement = _param2 ?? throw new ArgumentNullException("element");
       // ISSUE: explicit constructor call
       base.\u002Ector();
     }
 
     public IChartBandElement \u0023\u003Dzj_CyhS4\u003D()
     {
-      return this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+      return this._indicatorElement;
     }
 
     protected virtual void OnAdded(LineData<DateTime> _param1)
     {
       ((BaseCollection<LineData<DateTime>, IList<LineData<DateTime>>>) this).OnAdded(_param1);
-      IChartDrawData data = this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D.CreateData();
+      IChartDrawData data = this._parentElement.\u0023\u003DzO72kpz0\u003D.CreateData();
       data.Group((DateTimeOffset) _param1.X).Add(this.\u0023\u003Dzj_CyhS4\u003D(), (double) _param1.Y, 0.0);
-      this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D.Draw(data);
+      this._parentElement.\u0023\u003DzO72kpz0\u003D.Draw(data);
     }
 
     protected virtual bool OnRemoving(LineData<DateTime> _param1)
@@ -340,7 +340,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
     protected virtual void OnCleared()
     {
-      this.\u0023\u003DzU\u0024_meog\u003D.\u0023\u003DzO72kpz0\u003D.Reset((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
+      this._parentElement.\u0023\u003DzO72kpz0\u003D.Reset((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
       ((BaseCollection<LineData<DateTime>, IList<LineData<DateTime>>>) this).OnCleared();
     }
   }

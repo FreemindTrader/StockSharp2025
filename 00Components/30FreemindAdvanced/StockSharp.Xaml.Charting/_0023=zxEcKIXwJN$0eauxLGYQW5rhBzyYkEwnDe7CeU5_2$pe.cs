@@ -10,7 +10,7 @@ using System;
 #nullable disable
 internal static class \u0023\u003DzxEcKIXwJN\u00240eauxLGYQW5rhBzyYkEwnDe7CeU5_2\u0024pe6
 {
-  internal static bool IsFiniteNumber(this DateTime _param0)
+  internal static bool IsDefined(this DateTime _param0)
   {
     return _param0 != DateTime.MaxValue && _param0 != DateTime.MinValue;
   }

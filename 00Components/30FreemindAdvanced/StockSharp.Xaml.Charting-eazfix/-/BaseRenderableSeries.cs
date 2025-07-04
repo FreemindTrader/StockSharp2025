@@ -24,7 +24,7 @@ internal abstract class BaseRenderableSeries :
   IDrawable,
   IXmlSerializable,
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,
-  \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D
+  IRenderableSeries
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzTe_gV3cWjEp7 = DependencyProperty.Register(nameof (StrokeThickness), typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) 1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzw\u0024dhNXt0Rw_W)));
@@ -79,7 +79,7 @@ internal abstract class BaseRenderableSeries :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private IAxis \u0023\u003DzOul945NkfDSk;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
+  private IServiceContainer \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private int \u0023\u003DzA2CWfbM2026Lwfy5zat1jBh7qfwb5Ci\u0024\u0024A\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -122,7 +122,7 @@ internal abstract class BaseRenderableSeries :
 
   [CompilerGenerated]
   [SpecialName]
-  public \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzu\u0024P3XgkcE7BC()
+  public IServiceContainer \u0023\u003Dzu\u0024P3XgkcE7BC()
   {
     return this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
   }
@@ -130,7 +130,7 @@ internal abstract class BaseRenderableSeries :
   [CompilerGenerated]
   [SpecialName]
   public void \u0023\u003DzrEoWi5uPS0Yz(
-    \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D _param1)
+    IServiceContainer _param1)
   {
     this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D = _param1;
   }
@@ -600,7 +600,7 @@ internal abstract class BaseRenderableSeries :
         _param2 = 7.07;
       index = dataSeries.FindClosestPoint(tuple.Item1, tuple.Item2, num3, num1 * _param2);
     }
-    return index == -1 || !((IComparable) dataSeries.\u0023\u003DzPqsSI6C5MOOb()[index]).IsFiniteNumber() ? \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D : this.\u0023\u003Dz1i1kPH8eGFmc(index, _param1, _param2, tuple.Item1);
+    return index == -1 || !((IComparable) dataSeries.\u0023\u003DzPqsSI6C5MOOb()[index]).IsDefined() ? \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D : this.\u0023\u003Dz1i1kPH8eGFmc(index, _param1, _param2, tuple.Item1);
   }
 
   protected Tuple<IComparable, IComparable> \u0023\u003Dzs0Y0\u0024lrpmkkQ(Point _param1)
@@ -742,7 +742,7 @@ internal abstract class BaseRenderableSeries :
     double y1 = _param2.Y;
     double x2 = _param3.X;
     double y2 = _param3.Y;
-    \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003Dz9tfGzYXjAfsx(ref x1, ref x2, ref y1, ref y2);
+    NumberUtil.SortedSwap(ref x1, ref x2, ref y1, ref y2);
     double num1 = (_param1.X - x1) / (x2 - x1);
     if (num1 > 1.0)
       num1 = 1.0;
@@ -803,7 +803,7 @@ internal abstract class BaseRenderableSeries :
       double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(this.\u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(_param2));
       double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(this.\u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(_param2));
       if (num2 < num1)
-        \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num2, ref num1);
+        NumberUtil.Swap(ref num2, ref num1);
       double num3 = (double) this.StrokeThickness * 0.5 + _param3;
       double num4 = num1 - num3;
       double num5 = num2 + num3;
@@ -846,7 +846,7 @@ internal abstract class BaseRenderableSeries :
   protected static bool \u0023\u003Dz99srMqSdWO6y(double _param0, double _param1, double _param2)
   {
     if (_param1 > _param2)
-      \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref _param1, ref _param2);
+      NumberUtil.Swap(ref _param1, ref _param2);
     return _param0 >= _param1 && _param0 <= _param2;
   }
 
@@ -984,12 +984,12 @@ internal abstract class BaseRenderableSeries :
   {
     if (_param1.MoveToContent() != XmlNodeType.Element)
       return;
-    \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz4EJs3pc\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, _param1);
+    \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz4EJs3pc\u003D((IRenderableSeries) this, _param1);
   }
 
   public virtual void WriteXml(XmlWriter _param1)
   {
-    \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz7SZ\u0024Lrw\u003D((\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D) this, _param1);
+    \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz7SZ\u0024Lrw\u003D((IRenderableSeries) this, _param1);
   }
 
   private static void \u0023\u003Dzw\u0024dhNXt0Rw_W(
@@ -1115,23 +1115,23 @@ internal abstract class BaseRenderableSeries :
 
   internal double \u0023\u003Dz7qQnbobKkea3() => 7.07;
 
-  Style \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV1DuKLm1V1cPvuYOQQ3vfm3CE6f2xA\u003D()
+  Style IRenderableSeries.\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV1DuKLm1V1cPvuYOQQ3vfm3CE6f2xA\u003D()
   {
     return this.Style;
   }
 
-  void \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYWJbEJRkUuJj8DgmKkp4Eq5v4nmubs\u003D(
+  void IRenderableSeries.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYWJbEJRkUuJj8DgmKkp4Eq5v4nmubs\u003D(
     Style _param1)
   {
     this.Style = _param1;
   }
 
-  object \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYUUfzfIMBKYp9sEsF_gP\u0024Pd_00evAM\u003D()
+  object IRenderableSeries.\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEewBN21r93mO2zsz2dRPeFYUUfzfIMBKYp9sEsF_gP\u0024Pd_00evAM\u003D()
   {
     return this.DataContext;
   }
 
-  void \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D.\u0023\u003DzupHrUO0UFO07vWyNRguf_0VZ\u0024qSpKkKiNQBNd6W0uxIwj8NLZZkxSgEI5esBhFlrGGFudoE\u003D(
+  void IRenderableSeries.\u0023\u003DzupHrUO0UFO07vWyNRguf_0VZ\u0024qSpKkKiNQBNd6W0uxIwj8NLZZkxSgEI5esBhFlrGGFudoE\u003D(
     object _param1)
   {
     this.DataContext = _param1;

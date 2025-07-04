@@ -34,8 +34,8 @@ public class ChartCandleElement :
   IChartCandleElement,
   INotifyPropertyChanging,
   IPersistable,
-  IfxChartElement,
-  \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X
+  IChartComponent,
+  IDrawableChartElement
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private ChartCandleDrawStyles \u0023\u003DzC4jphaMvwp_c;
@@ -60,7 +60,7 @@ public class ChartCandleElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Decimal? \u0023\u003Dz\u0024kpsOHjyC4ZcEEkGZw\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?> \u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D;
+  private Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?> _colorer;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private int? \u0023\u003Dz7BO88sWmQOlbQ4xbNv234Vs\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -110,13 +110,13 @@ public class ChartCandleElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private System.Windows.Media.Color? \u0023\u003Dzes2ibafgS30F;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private System.Windows.Media.Color? \u0023\u003DzTWnsWqFC_c4o;
+  private System.Windows.Media.Color? _upColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private System.Windows.Media.Color? \u0023\u003DzPWHjilJVaIGi;
+  private System.Windows.Media.Color? _downColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> \u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003Dz2YSX_Z4\u003D;
+  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
 
   public ChartCandleElement()
   {
@@ -126,7 +126,7 @@ public class ChartCandleElement :
     this.DrawStyle = ChartCandleDrawStyles.CandleStick;
   }
 
-  System.Windows.Media.Color \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  System.Windows.Media.Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
   {
     return Colors.Transparent;
   }
@@ -321,10 +321,10 @@ public class ChartCandleElement :
   [Browsable(false)]
   public Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?> Colorer
   {
-    get => this.\u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D;
+    get => this._colorer;
     set
     {
-      this.\u0023\u003Dzf_mf3EOeyMmfELM_yQ\u003D\u003D = value;
+      this._colorer = value;
       this.RaisePropertyChanged(nameof (Colorer));
     }
   }
@@ -588,15 +588,15 @@ public class ChartCandleElement :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Up", Description = "UpTrend", GroupName = "VolumeSettings", Order = 26)]
   public System.Windows.Media.Color? UpColor
   {
-    get => this.\u0023\u003DzTWnsWqFC_c4o;
-    set => this.SetField<System.Windows.Media.Color?>(ref this.\u0023\u003DzTWnsWqFC_c4o, value, nameof (UpColor));
+    get => this._upColor;
+    set => this.SetField<System.Windows.Media.Color?>(ref this._upColor, value, nameof (UpColor));
   }
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Down", Description = "DownTrend", GroupName = "VolumeSettings", Order = 27)]
   public System.Windows.Media.Color? DownColor
   {
-    get => this.\u0023\u003DzPWHjilJVaIGi;
-    set => this.SetField<System.Windows.Media.Color?>(ref this.\u0023\u003DzPWHjilJVaIGi, value, nameof (DownColor));
+    get => this._downColor;
+    set => this.SetField<System.Windows.Media.Color?>(ref this._downColor, value, nameof (DownColor));
   }
 
   System.Drawing.Color IChartCandleElement.DownFillColor
@@ -1092,9 +1092,9 @@ public class ChartCandleElement :
     return settingsStorage;
   }
 
-  internal override ChartCandleElement \u0023\u003Dz3MbNd8U\u003D(ChartCandleElement _param1)
+  internal override ChartCandleElement CopyTo(ChartCandleElement _param1)
   {
-    _param1 = base.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    _param1 = base.CopyTo(_param1);
     _param1.DownFillColor = this.DownFillColor;
     _param1.UpFillColor = this.UpFillColor;
     _param1.DownBorderColor = this.DownBorderColor;
@@ -1134,19 +1134,19 @@ public class ChartCandleElement :
     return _param1;
   }
 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+    ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUmMviGnZF5zyP8Vq715pyobvSG_F30ddnEdMvAIP_dliVQ\u003D\u003D(this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new CandlestickUI(this);
   }
 
-  bool \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
   }
 
-  void \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
   {
     this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
@@ -1158,15 +1158,15 @@ public class ChartCandleElement :
     bool flag1 = source1 != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>((ICollection<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>) source1);
     bool flag2 = source2 != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>((ICollection<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>) source2);
     if (flag1 || flag2)
-      return ((!flag1 ? 0 : (((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this).\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source1.Cast<ChartDrawData.IDrawValue>(), source1.Count)) ? 1 : 0)) | (!flag2 ? (false ? 1 : 0) : (((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this).\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source2.Cast<ChartDrawData.IDrawValue>(), source2.Count)) ? 1 : 0))) != 0;
-    ((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this).\u0023\u003Dz0yXrIqwigzcF();
+      return ((!flag1 ? 0 : (((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source1.Cast<ChartDrawData.IDrawValue>(), source1.Count)) ? 1 : 0)) | (!flag2 ? (false ? 1 : 0) : (((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source2.Cast<ChartDrawData.IDrawValue>(), source2.Count)) ? 1 : 0))) != 0;
+    ((IDrawableChartElement) this).StartDrawing();
     return false;
   }
 
   protected override string GetGeneratedTitle()
   {
     Subscription subscription = this.TryGetSubscription();
-    return subscription == null ? (string) null : subscription.\u0023\u003DzNsF8TrDL0ndB();
+    return subscription == null ? (string) null : subscription.ChartSeriesTitle();
   }
 
   protected override int Priority => 0;

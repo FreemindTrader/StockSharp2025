@@ -180,7 +180,7 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
         int num5 = (int) _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(obj.\u0023\u003DzWoua01IozoKYJ1eZRw\u003D\u003D());
         IList<int> intList = obj.\u0023\u003Dzv5pY0E1wS\u00245oXMKltw\u003D\u003D(pmi3H3ortKpxkjv7Kr);
         if (flag1)
-          \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRjrsuvJB3oFJPVFS7w\u003D.\u0023\u003DzMv8ALVs\u003D(ref num2, ref num3);
+          NumberUtil.Swap(ref num2, ref num3);
         for (int index2 = (int) num2; (double) index2 < num3; ++index2)
         {
           if (index2 >= 0 && index2 < width)

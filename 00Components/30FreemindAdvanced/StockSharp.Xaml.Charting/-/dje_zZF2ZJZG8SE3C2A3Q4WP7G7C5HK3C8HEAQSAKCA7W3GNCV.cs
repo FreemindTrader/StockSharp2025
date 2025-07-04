@@ -113,9 +113,9 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
   protected override bool \u0023\u003DzD5SquRN7M_9c(
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
   {
-    bool flag = !_param1.\u0023\u003DzMeGSfVE\u003D() && _param1.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D() && _param1.\u0023\u003DzoDOpfzdgHalT() && _param1.\u0023\u003DzxZfJER0dbHuS().X.IsFiniteNumber() && _param1.\u0023\u003DzxZfJER0dbHuS().Y.IsFiniteNumber();
+    bool flag = !_param1.\u0023\u003DzMeGSfVE\u003D() && _param1.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D() && _param1.\u0023\u003DzoDOpfzdgHalT() && _param1.\u0023\u003DzxZfJER0dbHuS().X.IsDefined() && _param1.\u0023\u003DzxZfJER0dbHuS().Y.IsDefined();
     if (_param1.\u0023\u003DzRkghOq8y7ncj() == (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 2)
-      flag &= _param1.\u0023\u003DzsTZhf2NJangnoun2zQ\u003D\u003D().Y.IsFiniteNumber();
+      flag &= _param1.\u0023\u003DzsTZhf2NJangnoun2zQ\u003D\u003D().Y.IsDefined();
     return flag;
   }
 

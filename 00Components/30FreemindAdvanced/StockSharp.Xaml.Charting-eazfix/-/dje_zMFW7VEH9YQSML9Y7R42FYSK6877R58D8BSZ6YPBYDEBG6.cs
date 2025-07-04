@@ -79,7 +79,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE
       {
         if (!this.ZoomExtentsY)
           return;
-        this.ParentSurface.\u0023\u003Dz7mFu4O\u0024TokaR();
+        this.ParentSurface.ZoomExtentsY();
       }
       else
       {

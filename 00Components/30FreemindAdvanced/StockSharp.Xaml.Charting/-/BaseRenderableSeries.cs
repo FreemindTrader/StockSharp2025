@@ -601,7 +601,7 @@ internal abstract class BaseRenderableSeries :
         _param2 = 7.07;
       index = dataSeries.FindClosestPoint(tuple.Item1, tuple.Item2, num3, num1 * _param2);
     }
-    return index == -1 || !((IComparable) dataSeries.\u0023\u003DzPqsSI6C5MOOb()[index]).IsFiniteNumber() ? \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D : this.\u0023\u003Dz1i1kPH8eGFmc(index, _param1, _param2, tuple.Item1);
+    return index == -1 || !((IComparable) dataSeries.\u0023\u003DzPqsSI6C5MOOb()[index]).IsDefined() ? \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D : this.\u0023\u003Dz1i1kPH8eGFmc(index, _param1, _param2, tuple.Item1);
   }
 
   protected Tuple<IComparable, IComparable> \u0023\u003Dzs0Y0\u0024lrpmkkQ(Point _param1)

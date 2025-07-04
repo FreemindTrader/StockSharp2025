@@ -75,8 +75,8 @@ internal sealed class dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK
   }
 
   protected override void \u0023\u003Dz\u0024523lOKnSPCb(
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param1,
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param2)
+    IEnumerable<IRenderableSeries> _param1,
+    IEnumerable<IRenderableSeries> _param2)
   {
     base.\u0023\u003Dz\u0024523lOKnSPCb(_param1, _param2);
     this.\u0023\u003Dzd19tXEE\u003D();

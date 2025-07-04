@@ -136,7 +136,7 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
     this.VerticalLines.CollectionChanged -= new NotifyCollectionChangedEventHandler(this.\u0023\u003Dz5jhxd4Qlmgra);
     this.VerticalLines.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003Dz5jhxd4Qlmgra);
     foreach (VerticalLineAnnotation verticalLine in (Collection<VerticalLineAnnotation>) this.VerticalLines)
-      this.ParentSurface.get_Annotations().Add((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) verticalLine);
+      this.ParentSurface.get_Annotations().Add((IAnnotation) verticalLine);
     this.\u0023\u003DzdxKzSkmKIrvuxV2EQHfUZXc\u003D((object) null, EventArgs.Empty);
   }
 
@@ -181,7 +181,7 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
     _param1.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dz15moWio\u003D);
     if (this.ParentSurface == null || this.ParentSurface.get_Annotations() == null)
       return;
-    this.ParentSurface.get_Annotations().Add((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) _param1);
+    this.ParentSurface.get_Annotations().Add((IAnnotation) _param1);
   }
 
   private void \u0023\u003Dzmos0jX4auQ\u0024T(VerticalLineAnnotation _param1)
@@ -190,7 +190,7 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
     _param1.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003Dz15moWio\u003D);
     if (this.ParentSurface == null || this.ParentSurface.get_Annotations() == null)
       return;
-    this.ParentSurface.get_Annotations().Remove((\u0023\u003DzV9O5tWduWosGLvu_87Zf5HHh9_3Q0DQKV5SV90k\u003D) _param1);
+    this.ParentSurface.get_Annotations().Remove((IAnnotation) _param1);
   }
 
   private void \u0023\u003Dz15moWio\u003D(object _param1, PropertyChangedEventArgs _param2)

@@ -24,8 +24,8 @@ internal abstract class ChartModifierBase :
   IXmlSerializable,
   INotifyPropertyChanged,
   IChartModifier,
-  \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSrfQ\u0024fvhBTfuaBKLOTsYHeMg,
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpOgj\u0024HEwAG4ZlfwSGT7i2APW
+  IChartModifierBase,
+  IReceiveMouseEvents 
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzkiTDvI_Iu6kL = DependencyProperty.Register(nameof (ReceiveHandledEvents), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) false));
@@ -40,7 +40,7 @@ internal abstract class ChartModifierBase :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private static Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd> \u0023\u003DzKlT17PlFLc73;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003DzBd9ykz0\u003D;
+  private IServiceContainer _serviceContainer;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzNJAhntg15gAM;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -194,23 +194,23 @@ internal abstract class ChartModifierBase :
   {
   }
 
-  public override \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D Services
+  public override IServiceContainer Services
   {
-    get => this.\u0023\u003DzBd9ykz0\u003D;
+    get => this._serviceContainer;
     set
     {
-      if (this.\u0023\u003DzBd9ykz0\u003D != null)
+      if (this._serviceContainer != null)
       {
         if (this.\u0023\u003DzNJAhntg15gAM != null)
-          this.\u0023\u003DzBd9ykz0\u003D.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzfttffOE\u003D<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzNJAhntg15gAM);
+          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzfttffOE\u003D<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzNJAhntg15gAM);
         if (this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D != null)
-          this.\u0023\u003DzBd9ykz0\u003D.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzfttffOE\u003D<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D);
+          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzfttffOE\u003D<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D);
       }
-      this.\u0023\u003DzBd9ykz0\u003D = value;
-      if (this.\u0023\u003DzBd9ykz0\u003D == null)
+      this._serviceContainer = value;
+      if (this._serviceContainer == null)
         return;
-      this.\u0023\u003DzNJAhntg15gAM = this.\u0023\u003DzBd9ykz0\u003D.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzZcbqdpE\u003D<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(new Action<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzY1JcdEJm3Ryc), true);
-      this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D = this.\u0023\u003DzBd9ykz0\u003D.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzZcbqdpE\u003D<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(new Action<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzuzARK4K7AoZvKMXK2g\u003D\u003D), true);
+      this.\u0023\u003DzNJAhntg15gAM = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzZcbqdpE\u003D<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(new Action<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzY1JcdEJm3Ryc), true);
+      this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzZcbqdpE\u003D<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(new Action<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzuzARK4K7AoZvKMXK2g\u003D\u003D), true);
     }
   }
 
@@ -219,14 +219,14 @@ internal abstract class ChartModifierBase :
     get => this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
     set
     {
-      if (this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd z3jEwApUub0ZdjNsDq1)
+      if (this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D is SciChartSurface z3jEwApUub0ZdjNsDq1)
       {
         z3jEwApUub0ZdjNsDq1.MouseLeave -= new MouseEventHandler(this.\u0023\u003DziUPejVp2MwiMm3b8mjptA7lYtdq1);
         z3jEwApUub0ZdjNsDq1.MouseEnter -= new MouseEventHandler(this.\u0023\u003Dz1RWF4qCdwtL7iWLRBKs1AWljs19M);
         z3jEwApUub0ZdjNsDq1.SelectedRenderableSeries.CollectionChanged -= new NotifyCollectionChangedEventHandler(this.\u0023\u003Dz0tZIEaEc845fryC8ai9UjY4Y\u00240TT);
       }
       this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D = value;
-      if (this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D is dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd z3jEwApUub0ZdjNsDq2)
+      if (this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D is SciChartSurface z3jEwApUub0ZdjNsDq2)
       {
         z3jEwApUub0ZdjNsDq2.MouseLeave += new MouseEventHandler(this.\u0023\u003DziUPejVp2MwiMm3b8mjptA7lYtdq1);
         z3jEwApUub0ZdjNsDq2.MouseEnter += new MouseEventHandler(this.\u0023\u003Dz1RWF4qCdwtL7iWLRBKs1AWljs19M);
@@ -327,8 +327,8 @@ internal abstract class ChartModifierBase :
   }
 
   protected virtual void \u0023\u003Dz\u0024523lOKnSPCb(
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param1,
-    IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D> _param2)
+    IEnumerable<IRenderableSeries> _param1,
+    IEnumerable<IRenderableSeries> _param2)
   {
   }
 
@@ -435,15 +435,15 @@ internal abstract class ChartModifierBase :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    this.\u0023\u003Dz\u0024523lOKnSPCb(_param2.OldItems != null ? _param2.OldItems.Cast<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>() : (IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) null, _param2.NewItems != null ? _param2.NewItems.Cast<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>() : (IEnumerable<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>) null);
+    this.\u0023\u003Dz\u0024523lOKnSPCb(_param2.OldItems != null ? _param2.OldItems.Cast<IRenderableSeries>() : (IEnumerable<IRenderableSeries>) null, _param2.NewItems != null ? _param2.NewItems.Cast<IRenderableSeries>() : (IEnumerable<IRenderableSeries>) null);
   }
 
-  object \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSrfQ\u0024fvhBTfuaBKLOTsYHeMg.\u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPd7JGkEE5\u0024rDskVZayhiSyyWH46tAA\u003D\u003D()
+  object IChartModifierBase.\u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPd7JGkEE5\u0024rDskVZayhiSyyWH46tAA\u003D\u003D()
   {
     return this.DataContext;
   }
 
-  void \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSrfQ\u0024fvhBTfuaBKLOTsYHeMg.\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmgVxjV2V5TzCKPaK0aNTVee8QjFeXw\u003D\u003D(
+  void IChartModifierBase.\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmgVxjV2V5TzCKPaK0aNTVee8QjFeXw\u003D\u003D(
     object _param1)
   {
     this.DataContext = _param1;

@@ -25,41 +25,39 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
   IChartIndicatorPainter
   where TIndicator : IIndicator
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly List<IChartElement> \u0023\u003DzqFRpave0Vtab = new List<IChartElement>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private IChartIndicatorElement \u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
+  
+  private readonly List<IChartElement> _innerElements = new List<IChartElement>();
+  
+  private IChartIndicatorElement _indicatorElement;
 
   internal static IIndicatorColorProvider \u0023\u003Dzl7RImWAQVb2K()
   {
     return ChartHelper.EnsureColorProvider();
   }
 
-  [Browsable(false)]
+  
   public IChartIndicatorElement Element
   {
-    get => this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D;
-    private set => this.\u0023\u003DzqdET1btrCufwgzakJw\u003D\u003D = value;
+    get => this._indicatorElement;
+    private set => this._indicatorElement = value;
   }
 
-  [Browsable(false)]
+  
   public IReadOnlyList<IChartElement> InnerElements
   {
-    get => (IReadOnlyList<IChartElement>) this.\u0023\u003DzqFRpave0Vtab;
+    get => (IReadOnlyList<IChartElement>) this._innerElements;
   }
 
   protected bool IsAttached => this.Element != null;
 
-  private ChartIndicatorElement \u0023\u003DzcINLDhshur8x() => (ChartIndicatorElement) this.Element;
+  private ChartIndicatorElement GetIndicatorElement() => (ChartIndicatorElement) this.Element;
 
-  private void \u0023\u003Dz0yXrIqwigzcF()
+  private void StartDrawing()
   {
-    CollectionHelper.ForEach<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X>(this.\u0023\u003DzcINLDhshur8x().ChildElements.OfType<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X>(), BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Action<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X>(BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D)));
+    CollectionHelper.ForEach<IDrawableChartElement>(this.GetIndicatorElement().ChildElements.OfType<IDrawableChartElement>(), BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Action<IDrawableChartElement>(BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D)));
   }
 
-  protected abstract bool OnDraw(
-    TIndicator indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data);
+  protected abstract bool OnDraw( TIndicator indicator, IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data );
 
   public virtual bool Draw(IChartDrawData data)
   {
@@ -68,7 +66,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     List<ChartDrawData.IndicatorData> indicatorDataList = ((ChartDrawData) data).\u0023\u003DzaZ5Qc3xeNY95(this.Element);
     if (indicatorDataList == null || CollectionHelper.IsEmpty<ChartDrawData.IndicatorData>((ICollection<ChartDrawData.IndicatorData>) indicatorDataList))
     {
-      this.\u0023\u003Dz0yXrIqwigzcF();
+      this.StartDrawing();
       return false;
     }
     BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D dkfA7SK9Zsjh7b7evY;
@@ -164,9 +162,9 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     doDcwiev7trI4Ny0.\u0023\u003DzpXxsWzTWfg7d = _param3;
     doDcwiev7trI4Ny0.\u0023\u003Dz5Kb6DbUnfYSy = _param4;
     doDcwiev7trI4Ny0.\u0023\u003DzSD3FqrQ\u003D = _param5;
-    if (!(_param0 is \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X uuxsVv2V6fHz4Vm4X))
+    if (!(_param0 is IDrawableChartElement uuxsVv2V6fHz4Vm4X))
       throw new InvalidOperationException("invalid chart element");
-    return uuxsVv2V6fHz4Vm4X.\u0023\u003Dz2dQykb\u0024x9fU4(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Range(0, _param1).Select<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(new Func<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(doDcwiev7trI4Ny0.\u0023\u003DzDejq7n39xBdAUCa3_A\u003D\u003D)).Cast<ChartDrawData.IDrawValue>(), _param1));
+    return uuxsVv2V6fHz4Vm4X.StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Range(0, _param1).Select<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(new Func<int, ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime>>(doDcwiev7trI4Ny0.\u0023\u003DzDejq7n39xBdAUCa3_A\u003D\u003D)).Cast<ChartDrawData.IDrawValue>(), _param1));
   }
 
   private double \u0023\u003DzHjhGbB8\u003D(IList<ChartDrawData.IndicatorData> _param1, int _param2)
@@ -197,7 +195,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D vqd1Qhu2nAw1nzwT0 = new BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D();
     vqd1Qhu2nAw1nzwT0.\u0023\u003DzRRvwDu67s9Rm = this;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D = element;
-    if (!CollectionHelper.TryAdd<IChartElement>((ICollection<IChartElement>) this.\u0023\u003DzqFRpave0Vtab, vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D))
+    if (!CollectionHelper.TryAdd<IChartElement>((ICollection<IChartElement>) this._innerElements, vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D))
       throw new ArgumentException(nameof (element));
     if (!this.IsAttached)
       return;
@@ -206,11 +204,11 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
 
   protected void RemoveChildElement(IChartElement element)
   {
-    if (!this.\u0023\u003DzqFRpave0Vtab.Remove(element))
+    if (!this._innerElements.Remove(element))
       throw new ArgumentException(nameof (element));
     if (!this.IsAttached)
       return;
-    this.\u0023\u003DzcINLDhshur8x().RemoveChildElement(element);
+    this.GetIndicatorElement().RemoveChildElement(element);
   }
 
   public virtual void Load(SettingsStorage storage)
@@ -236,25 +234,25 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
 
   private void \u0023\u003Dz1QuGUAX1zkMSls2D\u0024DLiPPw\u003D(IChartElement _param1)
   {
-    this.\u0023\u003DzcINLDhshur8x().AddChildElement(_param1);
+    this.GetIndicatorElement().AddChildElement(_param1);
   }
 
   private void \u0023\u003DzELzX6nSZmdU0vOyq3PAcXl8\u003D(IChartElement _param1)
   {
-    this.\u0023\u003DzcINLDhshur8x().RemoveChildElement(_param1);
+    this.GetIndicatorElement().RemoveChildElement(_param1);
   }
 
   [Serializable]
   private new sealed class \u0023\u003Dz7qOdpi4\u003D
   {
     public static readonly BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.\u0023\u003Dz7qOdpi4\u003D();
-    public static Action<\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+    public static Action<IDrawableChartElement> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
     public static Func<IIndicator, IList<ChartDrawData.IndicatorData>> \u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D;
 
     internal void \u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D(
-      \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X _param1)
+      IDrawableChartElement _param1)
     {
-      _param1.\u0023\u003Dz0yXrIqwigzcF();
+      _param1.StartDrawing();
     }
 
     internal IList<ChartDrawData.IndicatorData> \u0023\u003DzEr1L4a4MYK7N\u0024OD_XA\u003D\u003D(
@@ -271,13 +269,13 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
 
     internal void \u0023\u003Dzcq6kjuER1auFcNKkPQ\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzcINLDhshur8x().AddChildElement(this.\u0023\u003Dz_i6sZDg\u003D);
+      this.\u0023\u003DzRRvwDu67s9Rm.GetIndicatorElement().AddChildElement(this.\u0023\u003Dz_i6sZDg\u003D);
       // ISSUE: explicit non-virtual call
-      \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.Element).PersistentChartArea).ViewModel();
-      \u0023\u003DzfuNSIBalvsZFtWGR3evczlu8c0hHILDz7oIFnPPdzY2A4VgOP\u0024CeDIqsTdzB a4VgOpCeDiqsTdzB;
-      if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r((IfxChartElement) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzcINLDhshur8x(), out a4VgOpCeDiqsTdzB))
+      ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.Element).PersistentChartArea).ViewModel();
+      ParentVM a4VgOpCeDiqsTdzB;
+      if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r((IChartComponent) this.\u0023\u003DzRRvwDu67s9Rm.GetIndicatorElement(), out a4VgOpCeDiqsTdzB))
         return;
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n((IEnumerable<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D>(((\u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X) this.\u0023\u003Dz_i6sZDg\u003D).\u0023\u003DzfuiyUvM\u003D(tdnKj06Uu87Wzk09Wj)));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n((IEnumerable<UIBaseVM>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<UIBaseVM>(((IDrawableChartElement) this.\u0023\u003Dz_i6sZDg\u003D).CreateViewModel(tdnKj06Uu87Wzk09Wj)));
     }
   }
 

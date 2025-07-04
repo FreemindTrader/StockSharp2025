@@ -290,14 +290,14 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Min<TComparable>(_param0, \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Min<TComparable>(_param1, \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Min<TComparable>(_param2, _param3)));
   }
 
-  internal static bool IsFiniteNumber(IComparable _param0)
+  internal static bool IsDefined(IComparable _param0)
   {
     switch (_param0)
     {
       case double num:
-        return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(num);
+        return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(num);
       case DateTime dateTime:
-        return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(dateTime);
+        return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(dateTime);
       default:
         Type type = _param0.GetType();
         if (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DznWzVE7ZJ9MLJ.ContainsKey(type))
@@ -321,95 +321,95 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     }
   }
 
-  private static bool IsFiniteNumber(short _param0) => true;
+  private static bool IsDefined(short _param0) => true;
 
-  private static bool IsFiniteNumber(sbyte _param0) => true;
+  private static bool IsDefined(sbyte _param0) => true;
 
-  private static bool IsFiniteNumber(ulong _param0) => true;
+  private static bool IsDefined(ulong _param0) => true;
 
-  private static bool IsFiniteNumber(uint _param0) => true;
+  private static bool IsDefined(uint _param0) => true;
 
-  private static bool IsFiniteNumber(ushort _param0) => true;
+  private static bool IsDefined(ushort _param0) => true;
 
-  private static bool IsFiniteNumber(byte _param0) => true;
+  private static bool IsDefined(byte _param0) => true;
 
-  private static bool IsFiniteNumber(long _param0)
+  private static bool IsDefined(long _param0)
   {
     return _param0 != long.MinValue && _param0 != long.MaxValue;
   }
 
-  private static bool IsFiniteNumber(int _param0)
+  private static bool IsDefined(int _param0)
   {
     return _param0 != int.MinValue && _param0 != int.MaxValue;
   }
 
-  private static bool IsFiniteNumber(Decimal _param0)
+  private static bool IsDefined(Decimal _param0)
   {
     return _param0 != Decimal.MinValue && _param0 != Decimal.MaxValue;
   }
 
-  private static bool IsFiniteNumber(double _param0)
+  private static bool IsDefined(double _param0)
   {
     return _param0 != double.MinValue && _param0 != double.MaxValue && !double.IsInfinity(_param0) && !double.IsNaN(_param0);
   }
 
-  private static bool IsFiniteNumber(float _param0)
+  private static bool IsDefined(float _param0)
   {
     return (double) _param0 != -3.4028234663852886E+38 && (double) _param0 != 3.4028234663852886E+38 && !float.IsNaN(_param0);
   }
 
-  private static bool IsFiniteNumber(DateTime _param0) => _param0 != DateTime.MaxValue;
+  private static bool IsDefined(DateTime _param0) => _param0 != DateTime.MaxValue;
 
-  private static bool IsFiniteNumber(TimeSpan _param0) => _param0 != TimeSpan.MaxValue;
+  private static bool IsDefined(TimeSpan _param0) => _param0 != TimeSpan.MaxValue;
 
   private static bool \u0023\u003DzNXB2CiznCXkF3oD82g\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= 0.0 && _param0 <= 1.8446744073709552E+19;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= 0.0 && _param0 <= 1.8446744073709552E+19;
   }
 
   private static bool \u0023\u003Dz92H_tkjrekXKvjxc2g\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= 0.0 && _param0 <= (double) uint.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= 0.0 && _param0 <= (double) uint.MaxValue;
   }
 
   private static bool \u0023\u003DzgPy_utObxg_Whf37zQ\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= 0.0 && _param0 <= (double) ushort.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= 0.0 && _param0 <= (double) ushort.MaxValue;
   }
 
   private static bool \u0023\u003DzVIgI312gpPWjgR0nig\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= (double) sbyte.MinValue && _param0 <= (double) sbyte.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= (double) sbyte.MinValue && _param0 <= (double) sbyte.MaxValue;
   }
 
   private static bool \u0023\u003DzmzJ3YSyp86m1(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= 0.0 && _param0 <= (double) byte.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= 0.0 && _param0 <= (double) byte.MaxValue;
   }
 
   private static bool \u0023\u003Dzio8MxTnZR5antUMVtQ\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 > (double) long.MinValue && _param0 < (double) long.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 > (double) long.MinValue && _param0 < (double) long.MaxValue;
   }
 
   private static bool \u0023\u003DzrlyIjLcnfJ3smEYhjg\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= (double) int.MinValue && _param0 <= (double) int.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= (double) int.MinValue && _param0 <= (double) int.MaxValue;
   }
 
   private static bool \u0023\u003DzECaa2MidNJ5NMwcCrQ\u003D\u003D(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= (double) short.MinValue && _param0 <= (double) short.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= (double) short.MinValue && _param0 <= (double) short.MaxValue;
   }
 
   private static bool \u0023\u003DzX1_q\u0024DReuyBA(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= -7.9228162514264338E+28 && _param0 <= 7.9228162514264338E+28;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= -7.9228162514264338E+28 && _param0 <= 7.9228162514264338E+28;
   }
 
   private static bool \u0023\u003DzjpOynZBXJ7lY(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) && _param0 >= -3.4028234663852886E+38 && _param0 <= 3.4028234663852886E+38;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) && _param0 >= -3.4028234663852886E+38 && _param0 <= 3.4028234663852886E+38;
   }
 
   private static bool \u0023\u003Dz2A1qWDVLLrd2_pM2Rw\u003D\u003D(double _param0)
@@ -419,7 +419,7 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
 
   public static DateTime \u0023\u003DzaNv7dZv\u0024_aCr(double _param0)
   {
-    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber(_param0) ? new DateTime((long) _param0) : DateTime.MaxValue;
+    return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined(_param0) ? new DateTime((long) _param0) : DateTime.MaxValue;
   }
 
   public static IComparable \u0023\u003DzsQE9ClE\u003D(double _param0, Type _param1)
@@ -494,12 +494,12 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
 
     internal bool \u0023\u003DzdWqpSQ5aR\u0024wdi4kNTq2Ly1g\u003D(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((long) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((long) _param1);
     }
 
     internal bool \u0023\u003DzAFYqqFppM3VmRfVJtnTqTvM\u003D(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((int) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((int) _param1);
     }
 
     internal bool \u0023\u003DzhQS8P2JmkAkg0DscaiBkv\u0024w\u003D(IComparable _param1) => true;
@@ -516,27 +516,27 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
 
     internal bool \u0023\u003Dz1c5AXA7hL251b7UDpdKLa5w\u003D(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((Decimal) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((Decimal) _param1);
     }
 
     internal bool \u0023\u003DzdLpDnOw91fhCRQXXD294gFw\u003D(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((double) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((double) _param1);
     }
 
     internal bool \u0023\u003Dz9dwYxb42uZsTggOhuNQdn5Ef64LL(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((float) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((float) _param1);
     }
 
     internal bool \u0023\u003DzYFW4J5OHXBkVEDYMYOrhtaiFA_hk(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((DateTime) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((DateTime) _param1);
     }
 
     internal bool \u0023\u003DzeDBaNkI_6rau6LCB3c3Mr827SXmI(IComparable _param1)
     {
-      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsFiniteNumber((TimeSpan) _param1);
+      return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((TimeSpan) _param1);
     }
   }
 }

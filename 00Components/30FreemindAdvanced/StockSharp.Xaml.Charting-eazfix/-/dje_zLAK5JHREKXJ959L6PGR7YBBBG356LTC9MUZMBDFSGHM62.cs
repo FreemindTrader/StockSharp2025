@@ -11,7 +11,7 @@ using System.Windows;
 namespace \u002D;
 
 internal sealed class dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd : 
-  dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd
+  SciChartSurface
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzJ9vZ1SlBkImj = DependencyProperty.Register(nameof (XAxisStyle), typeof (Style), typeof (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd), new PropertyMetadata((object) null));
@@ -215,14 +215,14 @@ internal sealed class dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd :
     }
   }
 
-  public override void \u0023\u003Dzn72LMZ0738BY()
+  public override void ZoomExtents()
   {
     if (this.YAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>())
       return;
     using (this.SuspendUpdates())
     {
       this.YAxis.GrowBy=((IRange<double>) new DoubleRange(0.1, 0.1));
-      base.\u0023\u003Dzn72LMZ0738BY();
+      base.ZoomExtents();
     }
   }
 

@@ -77,7 +77,7 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd l1llili1:Name="ChartGroupEx" ItemContainerStyle="{StaticResource Grpstyle}"
+    <llliil11:SciChartGroup l1llili1:Name="ChartGroupEx" ItemContainerStyle="{StaticResource Grpstyle}"
                                                                              ItemsSource="{Binding ChartPaneViewModels}">
       <ItemsControl.ItemTemplate>
         <DataTemplate DataType="local:UltrachartPaneViewModel">
@@ -86,38 +86,38 @@
               <llliil11:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding ParentViewModel}"
                                                                           Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={l1llili1:Type Grid}}}"/>
             </li11l:BarManager.DXContextMenu>
-            <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
-                                                                                            llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd.VerticalChartGroup="{Binding PaneGroup}"
+            <llliil11:SciChartSurface Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
+                                                                                            llliil11:SciChartGroup.VerticalChartGroup="{Binding PaneGroup}"
                                                                                             ChartModifier="{Binding ChartModifier}" ViewportManager="{Binding ViewportManager}">
-              <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
+              <llliil11:SciChartSurface.Annotations>
                 <Binding Mode="OneWay">                  <!-- constructor argument:
                        Annotations
                   -->
 
                 </Binding>
-              </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.Annotations>
-              <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
+              </llliil11:SciChartSurface.Annotations>
+              <llliil11:SciChartSurface.SeriesSource>
                 <Binding>                  <!-- constructor argument:
                        ChartSeriesViewModels
                   -->
 
                 </Binding>
-              </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.SeriesSource>
-              <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
+              </llliil11:SciChartSurface.SeriesSource>
+              <llliil11:SciChartSurface.XAxes>
                 <Binding>                  <!-- constructor argument:
                        XAxises
                   -->
 
                 </Binding>
-              </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.XAxes>
-              <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
+              </llliil11:SciChartSurface.XAxes>
+              <llliil11:SciChartSurface.YAxes>
                 <Binding>                  <!-- constructor argument:
                        YAxises
                   -->
 
                 </Binding>
-              </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd.YAxes>
-            </llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>
+              </llliil11:SciChartSurface.YAxes>
+            </llliil11:SciChartSurface>
             <llliil11:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd Margin="23,23" DataContext="{Binding LegendViewModel}"
                                                                                                         Visibility="{Binding Pane.ShowLegend, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"/>
             <TextBlock Margin="0,20,70,0" VerticalAlignment="Top" HorizontalAlignment="Right"
@@ -127,7 +127,7 @@
           </Grid>
         </DataTemplate>
       </ItemsControl.ItemTemplate>
-    </llliil11:dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd>
+    </llliil11:SciChartGroup>
     <llliil11:dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd Grid.Row="1" XAxisId="X" VerticalAlignment="Stretch" Height="40"
                                                                                     llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.ItemsControlParentSurface="{Binding Path=., ElementName=ChartGroupEx}">
       <UIElement.Visibility>

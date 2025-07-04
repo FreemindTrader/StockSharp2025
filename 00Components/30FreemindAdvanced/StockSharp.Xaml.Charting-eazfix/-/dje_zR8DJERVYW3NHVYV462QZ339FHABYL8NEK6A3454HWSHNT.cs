@@ -52,10 +52,10 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ6
     List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> abYiNis93iXoWaCiAList = (List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>) propertyInfo.GetValue((object) _param1, (object[]) null);
     if (abYiNis93iXoWaCiAList == null || abYiNis93iXoWaCiAList.Count == 0)
       return;
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd visualChild = abYiNis93iXoWaCiAList[0].PaneElement.FindVisualChild<dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd>();
+    SciChartSurface visualChild = abYiNis93iXoWaCiAList[0].PaneElement.FindVisualChild<SciChartSurface>();
     _param0.ParentSurface = (ISciChartSurface) visualChild;
     // ISSUE: explicit non-virtual call
-    _param0.DataSeries = visualChild != null ? __nonvirtual (visualChild.RenderableSeries).FirstOrDefault<\u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciXZRQS6mpDuG09xUExO4eQukbot9S1JOL\u0024YRWoYpqmQ6ug\u003D\u003D>()?.get_DataSeries() : (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) null;
+    _param0.DataSeries = visualChild != null ? __nonvirtual (visualChild.RenderableSeries).FirstOrDefault<IRenderableSeries>()?.get_DataSeries() : (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) null;
   }
 
   private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D

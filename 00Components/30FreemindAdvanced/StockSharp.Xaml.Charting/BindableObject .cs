@@ -1,50 +1,23 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: #=ztyAKlj3UbIrpcOb4hAbyLgMrkXYkuX1IGg==
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
-// XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
-
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq.Expressions;
-using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 using System.Threading;
 
-#nullable disable
-[DataContract]
-internal class BindableObject  : INotifyPropertyChanged
+namespace SciChart.Data.Model;
+
+//
+// Summary:
+//     Provides a base-type for classes that need to raise System.ComponentModel.INotifyPropertyChanged
+//     events
+public class BindableObject : INotifyPropertyChanged
 {
-  
-  private PropertyChangedEventHandler PropertyChangedEvent;
-  
-  private int \u0023\u003DzBSG7sit66zZH;
+    
 
-  private void \u0023\u003Dz\u0024AL3lYMid4z_(PropertyChangedEventHandler _param1)
-  {
-    PropertyChangedEventHandler changedEventHandler = this.PropertyChangedEvent;
-    PropertyChangedEventHandler comparand;
-    do
-    {
-      comparand = changedEventHandler;
-      changedEventHandler = Interlocked.CompareExchange<PropertyChangedEventHandler>(ref this.PropertyChangedEvent, comparand + _param1, comparand);
-    }
-    while (changedEventHandler != comparand);
-  }
+    public event PropertyChangedEventHandler PropertyChanged;
 
-  private void \u0023\u003DzHVseJMBq5be1(PropertyChangedEventHandler _param1)
-  {
-    PropertyChangedEventHandler changedEventHandler = this.PropertyChangedEvent;
-    PropertyChangedEventHandler comparand;
-    do
-    {
-      comparand = changedEventHandler;
-      changedEventHandler = Interlocked.CompareExchange<PropertyChangedEventHandler>(ref this.PropertyChangedEvent, comparand - _param1, comparand);
-    }
-    while (changedEventHandler != comparand);
-  }
+    private int \u0023\u003DzBSG7sit66zZH;
+
+  
 
   protected void \u0023\u003Dz15moWio\u003D(string _param1)
   {

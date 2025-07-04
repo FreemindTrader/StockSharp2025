@@ -5,7 +5,6 @@
 // Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.dll
 // XML documentation location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Xaml.Charting.xml
 
-using \u002D;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +12,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using SciChart.Core.Framework;
+using SciChart.Data.Model;
+using SciChart.Drawing.Common;
+
+namespace SciChart.Charting.Visuals.Axes;
 
 #nullable disable
-internal interface IAxis : 
-  IAxisParams,
-  IHitTestable,
-  ISuspendable,
-  IInvalidatableElement,
-  IDrawable
+internal interface IAxis :  IAxisParams, IHitTestable, ISuspendable, IInvalidatableElement, IDrawable
 {
   void \u0023\u003Dzf1TnIHLmqeNf(
     EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> _param1);
@@ -61,7 +60,7 @@ internal interface IAxis :
 
 
     [TypeConverter(typeof (StringToDoubleRangeTypeConverter))]
-  IRange \u0023\u003DzSIH3J5Y_lVlb { get; set; }
+  IRange VisibleRangeLimit { get; set; }
 
   IRange get_AnimatedVisibleRange();
 

@@ -25,7 +25,7 @@ internal abstract class Range<T> :
   
   private T dgs;
   
-  private static IMath<T> \u0023\u003DzB8wkVW0YXGlP = MathHelper.GetMath<T>();
+  private static IMath<T> _mathHelper = MathHelper.GetMath<T>();
 
   protected Range()
   {
@@ -41,10 +41,10 @@ internal abstract class Range<T> :
 
   public virtual bool IsDefined
   {
-    get => this.Max.IsFiniteNumber() && this.Min.IsFiniteNumber();
+    get => this.Max.IsDefined() && this.Min.IsDefined();
   }
 
-  IComparable IRange.\u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhPOMjAi3eSq7F9\u0024VAC0\u003D()
+  IComparable IRange.Min
   {
     return (IComparable) this.Min;
   }
@@ -175,7 +175,7 @@ internal abstract class Range<T> :
   public IRange<T> \u0023\u003DzeiifnZI\u003D(
     IRange<T> _param1)
   {
-    return (IRange<T>) \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) Range<T>.\u0023\u003DzB8wkVW0YXGlP.Min(this.Min, _param1.Min), (IComparable) Range<T>.\u0023\u003DzB8wkVW0YXGlP.Max(this.Max, _param1.Max));
+    return (IRange<T>) \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) Range<T>._mathHelper.Min(this.Min, _param1.Min), (IComparable) Range<T>._mathHelper.Max(this.Max, _param1.Max));
   }
 
   IRange IRange.\u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3L844WUagxCAVomufc\u003D(

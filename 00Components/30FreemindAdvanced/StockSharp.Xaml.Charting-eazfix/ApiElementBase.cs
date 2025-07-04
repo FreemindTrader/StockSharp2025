@@ -19,7 +19,7 @@ internal abstract class ApiElementBase :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private ISciChartSurface \u0023\u003Dzos6SMwAMXZ33;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
+  private IServiceContainer \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003DzbtEp1C7aVw3qdJ3knA\u003D\u003D;
 
@@ -83,7 +83,7 @@ internal abstract class ApiElementBase :
     }
   }
 
-  public virtual \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nUSt5OBncbXZA\u003D\u003D Services
+  public virtual IServiceContainer Services
   {
     get => this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
     set => this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D = value;

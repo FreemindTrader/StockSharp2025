@@ -135,7 +135,7 @@ internal static class dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd
 
   private static Uri \u0023\u003DzDT70eQaaSY2I(string _param0)
   {
-    return _param0.ToUpper(CultureInfo.InvariantCulture).Contains(";COMPONENT/") ? new Uri(_param0, UriKind.Relative) : new Uri($"/{typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd).Assembly.\u0023\u003DzFARAiudukAjJ()};component/Themes/{_param0}.xaml", UriKind.Relative);
+    return _param0.ToUpper(CultureInfo.InvariantCulture).Contains(";COMPONENT/") ? new Uri(_param0, UriKind.Relative) : new Uri($"/{typeof (SciChartSurface).Assembly.\u0023\u003DzFARAiudukAjJ()};component/Themes/{_param0}.xaml", UriKind.Relative);
   }
 
   private static void \u0023\u003DzeHF6BUxLFClh(this FrameworkElement _param0, string _param1)

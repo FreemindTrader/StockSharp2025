@@ -6,7 +6,7 @@
                                                                                             l1llili1:Name="Ctrl" MinWidth="250" AllowsTransparency="True" PopupAnimation="Fade"
                                                                                             Placement="Mouse">
   <FrameworkElement.Resources>
-    <llliil11:dje_zJLZUPHSEPLZTF5VGVGDZ9JUXE4R75CVWDEUZN533QFZ3KHTTF6HYKGF2MQA88KYWDX_ejd l1llili1:Key="Converter"/>
+    <llliil11:AnnotationTypeToPropertyConverter l1llili1:Key="Converter"/>
   </FrameworkElement.Resources>
   <Border BorderBrush="DimGray" BorderThickness="1" Background="WhiteSmoke" TextBlock.FontSize="12">
     <Grid Margin="2">

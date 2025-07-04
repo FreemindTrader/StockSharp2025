@@ -32,8 +32,8 @@ public abstract class ChartTransactionElement<T> :
   INotifyPropertyChanging,
   IPersistable,
   IChartTransactionElement,
-  IfxChartElement,
-  \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X
+  IChartComponent,
+  IDrawableChartElement
   where T : ChartTransactionElement<T>, new()
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -49,7 +49,7 @@ public abstract class ChartTransactionElement<T> :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private double \u0023\u003Dzv0dodASrSZi6;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003Dz2YSX_Z4\u003D;
+  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
 
   protected ChartTransactionElement()
   {
@@ -191,7 +191,7 @@ public abstract class ChartTransactionElement<T> :
     storage.SetValue<double>("DrawSize", this.DrawSize);
   }
 
-  internal override T \u0023\u003Dz3MbNd8U\u003D(T _param1)
+  internal override T CopyTo(T _param1)
   {
     _param1.BuyColor = this.BuyColor;
     _param1.BuyStrokeColor = this.BuyStrokeColor;
@@ -199,10 +199,10 @@ public abstract class ChartTransactionElement<T> :
     _param1.SellStrokeColor = this.SellStrokeColor;
     _param1.UseAltIcon = this.UseAltIcon;
     _param1.DrawSize = this.DrawSize;
-    return base.\u0023\u003Dz3MbNd8U\u003D(_param1);
+    return base.CopyTo(_param1);
   }
 
-  System.Windows.Media.Color \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  System.Windows.Media.Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
   {
     return Colors.Transparent;
   }
@@ -231,19 +231,19 @@ public abstract class ChartTransactionElement<T> :
     set => this.SellStrokeColor = value.ToWpf();
   }
 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
-    \u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj _param1)
+  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+    ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IZuSESVgU8LW8DvId9tdE7eLQoPdEDqa2l4\u003D) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
   }
 
-  bool \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
   }
 
-  void \u0023\u003DzbZGwufOdFTewaG24h4AgEiDjYj9UUxsVv2V6fHz4VM4X.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
   {
     this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }

@@ -87,7 +87,7 @@ internal sealed class \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D
     double _param1,
     double _param2)
   {
-    if (!this.Min.IsFiniteNumber() || !this.Max.IsFiniteNumber())
+    if (!this.Min.IsDefined() || !this.Max.IsDefined())
       return (IRange<TimeSpan>) this;
     long ticks1 = (this.Max - this.Min).Ticks;
     if (ticks1 == 0L)

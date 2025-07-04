@@ -397,7 +397,7 @@ label_9:
   }
 
   void \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EInvalidateParentSurface(
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_f7seBjAlONQGY47Zh8\u003D rangeMode)
+    RangeMode rangeMode)
   {
     throw new NotImplementedException();
   }

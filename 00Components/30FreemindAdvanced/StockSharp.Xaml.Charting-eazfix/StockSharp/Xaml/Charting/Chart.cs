@@ -89,7 +89,7 @@ public class Chart :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly Dictionary<(IChartArea, IndicatorMeasures), string> \u0023\u003DzDUXY6MNzkE1e = new Dictionary<(IChartArea, IndicatorMeasures), string>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private TimeSpan \u0023\u003Dz9Ee3umvrluGn = TimeSpan.FromMilliseconds(200.0);
+  private TimeSpan _autoRangeIntervalNoGroup = TimeSpan.FromMilliseconds(200.0);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly List<IChartArea> \u0023\u003Dza1mnh6ythHbd = new List<IChartArea>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -111,7 +111,7 @@ public class Chart :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private PropertyChangedEventHandler PropertyChangedEvent;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  internal dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd \u0023\u003DzxYLKFqWiCEs\u0024;
+  internal SciChartGroup \u0023\u003DzxYLKFqWiCEs\u0024;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -206,10 +206,10 @@ public class Chart :
 
   public TimeSpan AutoRangeInterval
   {
-    get => this.\u0023\u003Dz9Ee3umvrluGn;
+    get => this._autoRangeIntervalNoGroup;
     set
     {
-      this.\u0023\u003Dz9Ee3umvrluGn = !(value <= TimeSpan.Zero) ? value : throw new ArgumentOutOfRangeException(nameof (value), (object) value, LocalizedStrings.InvalidValue);
+      this._autoRangeIntervalNoGroup = !(value <= TimeSpan.Zero) ? value : throw new ArgumentOutOfRangeException(nameof (value), (object) value, LocalizedStrings.InvalidValue);
       NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof (AutoRangeInterval));
     }
   }
@@ -343,7 +343,7 @@ public class Chart :
     this.\u0023\u003DzvWHSaOs\u003D.Remove(jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D);
   }
 
-  public IIndicator GetIndicator(IChartIndicatorElement element)
+  public IIndicator GetIndicatorElement(IChartIndicatorElement element)
   {
     return CollectionHelper.TryGetValue<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>((IDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>) this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D, element)?.Indicator;
   }
@@ -386,7 +386,7 @@ public class Chart :
     SynchronizedDictionary<IChartElement, Subscription> zvWhSaOs = this.\u0023\u003DzvWHSaOs\u003D;
     IChartElement chartElement = element;
     zvWhSaOs[chartElement] = subscription ?? throw new ArgumentNullException(nameof (subscription));
-    ((IfxChartElement) element).ResetUI();
+    ((IChartComponent) element).ResetUI();
   }
 
   public void CancelOrders(Func<Order, bool> predicate = null)
@@ -880,7 +880,7 @@ public class Chart :
     Dictionary<IChartIndicatorElement, Tuple<IIndicator, IChartArea>> dictionary = ((IEnumerable<KeyValuePair<IChartElement, Subscription>>) this.\u0023\u003DzvWHSaOs\u003D).Where<KeyValuePair<IChartElement, Subscription>>(new Func<KeyValuePair<IChartElement, Subscription>, bool>(magwJg5Cu0tHrBa0.\u0023\u003Dz0h9UKK62LR3Vt49xiuMu8R9QgAUI)).Select<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D = new Func<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPMkLVMTIVacbdOnMgx5om9R8XfFp42JlLQ\u003D\u003D))).ToDictionary<IChartIndicatorElement, IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D = new Func<IChartIndicatorElement, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzuKv4rqmZgBRXOk9cL\u0024V\u0024mJZ_bYxaKSqnjQ\u003D\u003D)), new Func<IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(magwJg5Cu0tHrBa0.\u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX));
     this.\u0023\u003Dz\u0024_wDItQvnYOy((IChartElement) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D);
     CollectionHelper.ForEach<IChartIndicatorElement>((IEnumerable<IChartIndicatorElement>) dictionary.Keys, new Action<IChartIndicatorElement>(this.\u0023\u003Dz\u0024_wDItQvnYOy));
-    ((IfxChartElement) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D).ResetUI();
+    ((IChartComponent) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D).ResetUI();
     this.AddElement(chartArea, magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D, _param2);
     foreach (KeyValuePair<IChartIndicatorElement, Tuple<IIndicator, IChartArea>> keyValuePair in dictionary)
       this.AddElement(keyValuePair.Value.Item2, keyValuePair.Key, _param2, keyValuePair.Value.Item1);
@@ -984,7 +984,7 @@ public class Chart :
         Action<IChartIndicatorElement, Subscription, IIndicator> zLdfE1FxkiHdr = this.\u0023\u003DzLDFE1FXkiHDr;
         if (zLdfE1FxkiHdr == null)
           break;
-        zLdfE1FxkiHdr(element, _param2, this.GetIndicator(element));
+        zLdfE1FxkiHdr(element, _param2, this.GetIndicatorElement(element));
         break;
       case IChartOrderElement chartOrderElement:
         Action<IChartOrderElement, Subscription> zh7nXgYWoKl = this.\u0023\u003Dzh7nXgY\u0024WoKL\u0024;
@@ -1057,7 +1057,7 @@ public class Chart :
   }
 
   internal static void \u0023\u003Dz370H8OFDsNyA(
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd _param0)
+    SciChartSurface _param0)
   {
     Chart.\u0023\u003DziYslZOQka25erb85NfEM3z4\u003D qka25erb85NfEm3z4 = new Chart.\u0023\u003DziYslZOQka25erb85NfEM3z4\u003D();
     qka25erb85NfEm3z4.\u0023\u003Dz6x1I8qQ\u003D = _param0;
@@ -1069,14 +1069,14 @@ public class Chart :
 
   private void dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd(object _param1, EventArgs _param2)
   {
-    Chart.\u0023\u003Dz370H8OFDsNyA((dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd) _param1);
+    Chart.\u0023\u003Dz370H8OFDsNyA((SciChartSurface) _param1);
   }
 
   private void \u0023\u003Dzs2PvqlQSy\u002401UuUfTA\u003D\u003D(
     IChartIndicatorElement _param1,
     IIndicator _param2)
   {
-    ((IfxChartElement) _param1).ResetUI();
+    ((IChartComponent) _param1).ResetUI();
     this.\u0023\u003DzEm4mXfg\u003D((IChartElement) _param1, true);
   }
 
@@ -1117,7 +1117,7 @@ public class Chart :
   void IComponentConnector.Connect(int connectionId, object target)
   {
     if (connectionId == 1)
-      this.\u0023\u003DzxYLKFqWiCEs\u0024 = (dje_zCNSBRP7GPP9KUVX64FWNJCMERJEQNDDYNP68U92NYNLX7ULAMWXZ2_ejd) target;
+      this.\u0023\u003DzxYLKFqWiCEs\u0024 = (SciChartGroup) target;
     else
       this.\u0023\u003DzQGCmQMjHdLKS = true;
   }
@@ -1453,7 +1453,7 @@ public class Chart :
     internal Tuple<IIndicator, IChartArea> \u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX(
       IChartIndicatorElement _param1)
     {
-      return Tuple.Create<IIndicator, IChartArea>(this.\u0023\u003DzRRvwDu67s9Rm.GetIndicator(_param1), _param1.ChartArea);
+      return Tuple.Create<IIndicator, IChartArea>(this.\u0023\u003DzRRvwDu67s9Rm.GetIndicatorElement(_param1), _param1.ChartArea);
     }
   }
 
@@ -1530,11 +1530,11 @@ public class Chart :
 
   private sealed class \u0023\u003DziYslZOQka25erb85NfEM3z4\u003D
   {
-    public dje_zT5LWWY2ES5P78EADY3KXQ8WJ3WLKKMBZV5NL8KM7QST7ELWVDVGWNMJ5AJUA_ejd \u0023\u003Dz6x1I8qQ\u003D;
+    public SciChartSurface \u0023\u003Dz6x1I8qQ\u003D;
 
     internal void \u0023\u003Dqtx1KXraU1keT0uiySlEVOOB5PnDLulwyMJjyjX7rsVjruD1DZyrc16lnN0h2\u0024q6Q()
     {
-      ((\u0023\u003DzJ9vSi7sIwIEed80npzusCHkUgplLrVxmg1iWODdl3TDNKj06Uu87_wzk09Wj) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).\u0023\u003Dz3p2JBPVHDEUh(this.\u0023\u003Dz6x1I8qQ\u003D);
+      ((ScichartSurfaceMVVM) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).\u0023\u003Dz3p2JBPVHDEUh(this.\u0023\u003Dz6x1I8qQ\u003D);
     }
 
     internal void \u0023\u003DzvrcTIvo4QYO6VIoIYgtMLK0\u003D(
