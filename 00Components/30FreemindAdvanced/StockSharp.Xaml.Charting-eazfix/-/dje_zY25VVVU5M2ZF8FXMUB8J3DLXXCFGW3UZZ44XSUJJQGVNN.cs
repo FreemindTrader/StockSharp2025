@@ -260,14 +260,14 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
     {
       dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D njbrqhpNkVkrNpKgU = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D();
       njbrqhpNkVkrNpKgU.\u0023\u003Dz4bf8Oyc\u003D = xax;
-      FrameworkElement frameworkElement = this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D.Where<Tuple<IAxis, FrameworkElement>>(new Func<Tuple<IAxis, FrameworkElement>, bool>(njbrqhpNkVkrNpKgU.\u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D)).Select<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D = new Func<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR))).FirstOrDefault<FrameworkElement>();
+      FrameworkElement frameworkElement = this.\u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D.Where<Tuple<IAxis, FrameworkElement>>(new Func<Tuple<IAxis, FrameworkElement>, bool>(njbrqhpNkVkrNpKgU.\u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D)).Select<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D = new Func<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR))).FirstOrDefault<FrameworkElement>();
       this.\u0023\u003Dz0jC4zrgOWDNx(_param1, njbrqhpNkVkrNpKgU.\u0023\u003Dz4bf8Oyc\u003D, frameworkElement);
     }
     foreach (IAxis yax in this.YAxes)
     {
       dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzPZHe8kTpPoA\u0024JhpeVw6ares\u003D tpPoAJhpeVw6ares = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzPZHe8kTpPoA\u0024JhpeVw6ares\u003D();
       tpPoAJhpeVw6ares.\u0023\u003DzS7JsfCE\u003D = yax;
-      FrameworkElement frameworkElement = this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D.Where<Tuple<IAxis, FrameworkElement>>(new Func<Tuple<IAxis, FrameworkElement>, bool>(tpPoAJhpeVw6ares.\u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D)).Select<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J))).FirstOrDefault<FrameworkElement>();
+      FrameworkElement frameworkElement = this.\u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D.Where<Tuple<IAxis, FrameworkElement>>(new Func<Tuple<IAxis, FrameworkElement>, bool>(tpPoAJhpeVw6ares.\u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D)).Select<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<Tuple<IAxis, FrameworkElement>, FrameworkElement>(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J))).FirstOrDefault<FrameworkElement>();
       this.\u0023\u003Dz0jC4zrgOWDNx(_param1, tpPoAJhpeVw6ares.\u0023\u003DzS7JsfCE\u003D, frameworkElement);
     }
   }
@@ -441,9 +441,9 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383 SomeMethond0343 = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.SomeClass34343383();
     public static Func<Tuple<IAxis, FrameworkElement>, FrameworkElement> \u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D;
     public static Func<Tuple<IAxis, FrameworkElement>, FrameworkElement> \u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D;
 

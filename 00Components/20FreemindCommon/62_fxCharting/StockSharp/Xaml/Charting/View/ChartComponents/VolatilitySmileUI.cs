@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {
-    public sealed class VolatilitySmileUI : ChartComponent< VolatilitySmileUI >
+    public sealed class VolatilitySmileUI : ChartElement< VolatilitySmileUI >
     {
         private LineUI chartLineElement_0;
         private LineUI chartLineElement_1;

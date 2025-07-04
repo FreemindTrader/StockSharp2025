@@ -47,7 +47,7 @@ internal abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bF
 
   protected virtual double[] \u0023\u003DzzRdFGRW8MXMa(T[] _param1)
   {
-    return ((IEnumerable<T>) _param1).Select<T, double>(\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D ?? (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D = new Func<T, double>(\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzjr185UPePXNseau9xK_z_0g\u003D))).ToArray<double>();
+    return ((IEnumerable<T>) _param1).Select<T, double>(\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D ?? (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D = new Func<T, double>(\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383.SomeMethond0343.\u0023\u003Dzjr185UPePXNseau9xK_z_0g\u003D))).ToArray<double>();
   }
 
   public abstract T[] \u0023\u003Dzctqa9kMCtfQQ(
@@ -57,9 +57,9 @@ internal abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bF
     IAxisParams _param1);
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383();
     public static Func<T, double> \u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D;
 
     internal double \u0023\u003Dzjr185UPePXNseau9xK_z_0g\u003D(T _param1)

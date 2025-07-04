@@ -88,7 +88,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
           else
           {
             List<DateTime> dateTimeList = new List<DateTime>();
-            dateTimeList.AddRange(((IEnumerable<DateTimeOffset>) patternIndicatorValue.CandleOpenTimes).Select<DateTimeOffset, DateTime>(\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D ?? (\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D = new Func<DateTimeOffset, DateTime>(\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzp5FLMdUoOF2aJ6NLRw\u003D\u003D))));
+            dateTimeList.AddRange(((IEnumerable<DateTimeOffset>) patternIndicatorValue.CandleOpenTimes).Select<DateTimeOffset, DateTime>(\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383.\u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D ?? (\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383.\u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D = new Func<DateTimeOffset, DateTime>(\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dzp5FLMdUoOF2aJ6NLRw\u003D\u003D))));
             this.\u0023\u003Dzn6iWmQ_uwD0z = dateTimeList.ToArray();
             zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1ZKXBqs\u003D = true;
           }
@@ -121,9 +121,9 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383();
     public static Func<DateTimeOffset, DateTime> \u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D;
 
     internal DateTime \u0023\u003Dzp5FLMdUoOF2aJ6NLRw\u003D\u003D(DateTimeOffset _param1)

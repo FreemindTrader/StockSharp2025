@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {
-    public class AnnotationUI : ChartComponent< AnnotationUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class AnnotationUI : ChartElement< AnnotationUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private ChartAnnotationTypes _annotatinType;
         private AnnotationVM _viewModel;

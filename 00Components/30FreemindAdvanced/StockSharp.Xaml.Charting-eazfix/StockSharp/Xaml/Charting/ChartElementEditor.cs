@@ -33,7 +33,7 @@ public class ChartElementEditor : UserControl, IComponentConnector
   {
     if (!_param2.IsInitializing)
       return;
-    int num = _param2.Row.FullPath.Count<char>(ChartElementEditor.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D ?? (ChartElementEditor.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D = new Func<char, bool>(ChartElementEditor.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAaU0cZFSAtN99pV5BtGNHjfrUBPr)));
+    int num = _param2.Row.FullPath.Count<char>(ChartElementEditor.SomeClass34343383.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D ?? (ChartElementEditor.SomeClass34343383.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D = new Func<char, bool>(ChartElementEditor.SomeClass34343383.SomeMethond0343.\u0023\u003DzAaU0cZFSAtN99pV5BtGNHjfrUBPr)));
     _param2.IsExpanded = num < 5;
   }
 
@@ -64,9 +64,9 @@ public class ChartElementEditor : UserControl, IComponentConnector
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly ChartElementEditor.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartElementEditor.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ChartElementEditor.SomeClass34343383 SomeMethond0343 = new ChartElementEditor.SomeClass34343383();
     public static Func<char, bool> \u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D;
 
     internal bool \u0023\u003DzAaU0cZFSAtN99pV5BtGNHjfrUBPr(char _param1) => _param1 == '.';

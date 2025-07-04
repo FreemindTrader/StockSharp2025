@@ -167,7 +167,7 @@ internal class TransactionDataSeries :
         return;
       if (this._data.Count < this._candlesSeries.Count)
       {
-        this._data.\u0023\u003Dz6_E5\u0024pE\u003D(Enumerable.Range(0, this._candlesSeries.Count - this._data.Count).Select<int, \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzLuwuNd6jgC14H9fckQ\u003D\u003D ?? (TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzLuwuNd6jgC14H9fckQ\u003D\u003D = new Func<int, \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzNUWylnO6KRBGmmAdIYVLLt0\u003D))));
+        this._data.\u0023\u003Dz6_E5\u0024pE\u003D(Enumerable.Range(0, this._candlesSeries.Count - this._data.Count).Select<int, \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.SomeClass34343383.\u0023\u003DzLuwuNd6jgC14H9fckQ\u003D\u003D ?? (TransactionDataSeries.SomeClass34343383.\u0023\u003DzLuwuNd6jgC14H9fckQ\u003D\u003D = new Func<int, \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzNUWylnO6KRBGmmAdIYVLLt0\u003D))));
         return;
       }
     }
@@ -223,7 +223,7 @@ internal class TransactionDataSeries :
         return (IRange) new DoubleRange(double.MinValue, double.MaxValue);
       double num1 = double.MaxValue;
       double num2 = double.MinValue;
-      foreach (\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D rvIvnoSs0Uo7ic5Jw in this._data.Where<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D ?? (TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, bool>(TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzQew5\u0024BD3XizwlemJVIlpNho\u003D))))
+      foreach (\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D rvIvnoSs0Uo7ic5Jw in this._data.Where<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>(TransactionDataSeries.SomeClass34343383.\u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D ?? (TransactionDataSeries.SomeClass34343383.\u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, bool>(TransactionDataSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzQew5\u0024BD3XizwlemJVIlpNho\u003D))))
       {
         num1 = MathHelper.Min(num1, rvIvnoSs0Uo7ic5Jw.\u0023\u003Dz_0RMJpfkCRvPs4ToyQ\u003D\u003D());
         num2 = MathHelper.Max(num2, rvIvnoSs0Uo7ic5Jw.\u0023\u003DzFQXj8Eq5AMNn7N8nJA\u003D\u003D());
@@ -465,9 +465,9 @@ internal class TransactionDataSeries :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new TransactionDataSeries.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly TransactionDataSeries.SomeClass34343383 SomeMethond0343 = new TransactionDataSeries.SomeClass34343383();
     public static Func<int, \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> \u0023\u003DzLuwuNd6jgC14H9fckQ\u003D\u003D;
     public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, bool> \u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D;
 
@@ -520,7 +520,7 @@ internal class TransactionDataSeries :
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this._parentElement.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._parentElement.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -530,7 +530,7 @@ internal class TransactionDataSeries :
 
     public bool Contains(double _param1)
     {
-      return this._parentElement._data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
+      return this._parentElement._data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
     }
 
     int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
@@ -613,9 +613,9 @@ internal class TransactionDataSeries :
     public void RemoveAt(int _param1) => throw new NotImplementedException();
 
     [Serializable]
-    private sealed class \u0023\u003Dz7qOdpi4\u003D
+    private sealed class SomeClass34343383
     {
-      public static readonly TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D();
+      public static readonly TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383 SomeMethond0343 = new TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383();
       public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
       public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
 

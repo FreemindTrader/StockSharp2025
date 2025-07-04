@@ -124,7 +124,7 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
 
   public void \u0023\u003DzMNK339lzrtSc()
   {
-    CollectionHelper.ForEach<ChildVM>((IEnumerable<ChildVM>) this._childViewModels, ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<ChildVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D)));
+    CollectionHelper.ForEach<ChildVM>((IEnumerable<ChildVM>) this._childViewModels, ParentVM.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<ChildVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D)));
   }
 
   public bool Draw(ChartDrawData _param1)
@@ -135,22 +135,22 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
   public void Reset()
   {
     this.ChartElement.Reset();
-    this._childElements.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
   }
 
   public void UpdateYAxisMarker()
   {
-    this._childElements.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D)));
   }
 
   public void PerformPeriodicalAction()
   {
-    this._childElements.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D)));
   }
 
   public void GuiUpdateAndClear()
   {
-    this._childElements.ForEach(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D)));
   }
 
   internal Subscription \u0023\u003DzZ0VU1NABDfD8(
@@ -189,9 +189,9 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly ParentVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ParentVM.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ParentVM.SomeClass34343383 SomeMethond0343 = new ParentVM.SomeClass34343383();
     public static Action<ChildVM> \u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D;
     public static Action<UIBaseVM> \u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D;
     public static Action<UIBaseVM> \u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D;

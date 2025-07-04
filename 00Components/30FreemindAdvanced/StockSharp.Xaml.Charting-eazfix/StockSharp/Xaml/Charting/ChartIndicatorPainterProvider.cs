@@ -30,12 +30,12 @@ public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
   {
     this.\u0023\u003Dz0V3sNk6VlgMEn3N7jg\u003D\u003D.Clear();
     ((BaseCollection<Type, ISet<Type>>) this.\u0023\u003Dz7ZD7v4sUpcCA).Clear();
-    CollectionHelper.AddRange<KeyValuePair<Type, Type>>((ICollection<KeyValuePair<Type, Type>>) this.\u0023\u003Dz0V3sNk6VlgMEn3N7jg\u003D\u003D, (IEnumerable<KeyValuePair<Type, Type>>) ReflectionHelper.FindImplementations<IChartIndicatorPainter>(typeof (Chart).Assembly, false, true, false, ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<Type, bool>(ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5asnRK5rGUthI4cnRr6Nsv9Y7RblZqNI_ZEQdD64t3w80s3ITSK1ib4\u003D))).ToDictionary<Type, Type>(ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D ?? (ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D = new Func<Type, Type>(ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5FZ\u00244BIsIsAaqWN6lCcgsOOOj5nnrBHKQS4sngXST_VQqJ1o0fhN4z4\u003D))));
+    CollectionHelper.AddRange<KeyValuePair<Type, Type>>((ICollection<KeyValuePair<Type, Type>>) this.\u0023\u003Dz0V3sNk6VlgMEn3N7jg\u003D\u003D, (IEnumerable<KeyValuePair<Type, Type>>) ReflectionHelper.FindImplementations<IChartIndicatorPainter>(typeof (Chart).Assembly, false, true, false, ChartIndicatorPainterProvider.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (ChartIndicatorPainterProvider.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<Type, bool>(ChartIndicatorPainterProvider.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5asnRK5rGUthI4cnRr6Nsv9Y7RblZqNI_ZEQdD64t3w80s3ITSK1ib4\u003D))).ToDictionary<Type, Type>(ChartIndicatorPainterProvider.SomeClass34343383.\u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D ?? (ChartIndicatorPainterProvider.SomeClass34343383.\u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D = new Func<Type, Type>(ChartIndicatorPainterProvider.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5FZ\u00244BIsIsAaqWN6lCcgsOOOj5nnrBHKQS4sngXST_VQqJ1o0fhN4z4\u003D))));
   }
 
   Type IChartIndicatorPainterProvider.TryGetPainter(Type type)
   {
-    ChartIndicatorPainterProvider.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg = new ChartIndicatorPainterProvider.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
+    ChartIndicatorPainterProvider.SomeWheireosoe vbxLeArTkallkIdHg = new ChartIndicatorPainterProvider.SomeWheireosoe();
     vbxLeArTkallkIdHg.\u0023\u003DzLLebWNY\u003D = type;
     Type painter;
     if (!this.\u0023\u003Dz0V3sNk6VlgMEn3N7jg\u003D\u003D.TryGetValue(vbxLeArTkallkIdHg.\u0023\u003DzLLebWNY\u003D, ref painter) && this.\u0023\u003Dz7ZD7v4sUpcCA.TryAdd(vbxLeArTkallkIdHg.\u0023\u003DzLLebWNY\u003D))
@@ -53,7 +53,7 @@ public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
     return painter;
   }
 
-  private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D
+  private sealed class SomeWheireosoe
   {
     public Type \u0023\u003DzLLebWNY\u003D;
     public Func<Type, bool> \u0023\u003DzuAeZVTPDgzYE;
@@ -72,9 +72,9 @@ public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartIndicatorPainterProvider.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ChartIndicatorPainterProvider.SomeClass34343383 SomeMethond0343 = new ChartIndicatorPainterProvider.SomeClass34343383();
     public static Func<Type, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
     public static Func<Type, 
     #nullable enable

@@ -25,7 +25,7 @@ internal static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKd
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param2,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3)
   {
-    \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(_param0, \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D ?? (\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzJu67dK0kkhLjQsBBw\u00245SnFg\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3);
+    \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(_param0, \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D ?? (\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzJu67dK0kkhLjQsBBw\u00245SnFg\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3);
   }
 
   private static void \u0023\u003DzjBmQkSQ797ct(
@@ -78,9 +78,9 @@ internal static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKd
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383();
     public static Func<double, double, IPathColor> \u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D;
 
     internal IPathColor \u0023\u003DzJu67dK0kkhLjQsBBw\u00245SnFg\u003D(

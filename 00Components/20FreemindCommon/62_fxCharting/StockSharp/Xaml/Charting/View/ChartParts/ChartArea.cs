@@ -309,12 +309,12 @@ namespace fx.Charting
             SaveChartElments< OrdersUI >( storage, "Orders" );
         }
 
-        private void LoadChartElements< T >( SettingsStorage settings, string name ) where T : ChartComponent< T >, new()
+        private void LoadChartElements< T >( SettingsStorage settings, string name ) where T : ChartElement< T >, new()
         {
             Elements.AddRange( settings.GetValue< IEnumerable< SettingsStorage > >( name, null ).Select( s => s.Load< T >( ) ) );
         }
 
-        private void SaveChartElments< T >( SettingsStorage settings, string name ) where T : ChartComponent< T >
+        private void SaveChartElments< T >( SettingsStorage settings, string name ) where T : ChartElement< T >
         {
             settings.SetValue( name, Elements.OfType< T >( ).Select( s => s.Save( ) ).ToArray( ) );
         }

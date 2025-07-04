@@ -15,7 +15,7 @@ using System.Windows.Media;
 namespace fx.Charting
 {
     
-    public class ActiveOrdersUI : ChartComponent< ActiveOrdersUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class ActiveOrdersUI : ChartElement< ActiveOrdersUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private INotifyList< ChartActiveOrderInfo > _activeOrderInfoList =   new CachedSynchronizedSet< ChartActiveOrderInfo >( );
         private Color _buyPendingColor;

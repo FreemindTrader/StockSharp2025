@@ -15,7 +15,7 @@ using System.Windows.Media;
 namespace fx.Charting
 {
     
-    public partial class CandlestickUI : ChartComponent<CandlestickUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IChartElement
+    public partial class CandlestickUI : ChartElement<CandlestickUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IChartElement
     {
         private Func<DateTimeOffset, bool, bool, Color?> _colorer;
         private CandlestickVM _viewModel;

@@ -36,7 +36,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     ICommand _param2,
     IChart _param3)
   {
-    \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg1 = new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
+    \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg1 = new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe();
     vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D = _param0;
     vbxLeArTkallkIdHg1.\u0023\u003Dzi8fyBqQ\u003D = _param1;
     \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D d295Ww4skLs1HZBq = new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D();
@@ -47,7 +47,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
         d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) new dje_zW9CS5E2KYALJRMCDFUV9GBWAD6S7353K768YQ7ENY8VRCQY29QF62_ejd();
         break;
       case ChartAxisType.CategoryDateTime:
-        \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D ulUkgXkBneEwzP3h0_1 = d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+        \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe ulUkgXkBneEwzP3h0_1 = d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
         dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd nu9622VfydaypdeqEjd = new dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd();
         nu9622VfydaypdeqEjd.LabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DznXVw5HITBHoBrjSOBA\u003D\u003D(_param3, d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D);
         nu9622VfydaypdeqEjd.TickProvider = (ITickProvider) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dzg7H9cRyacWHB();
@@ -57,7 +57,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
       case ChartAxisType.Numeric:
         bool flag = ((ICollection<IChartAxis>) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.ChartArea.XAxises).Contains(d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D);
         d295Ww4skLs1HZBq.\u0023\u003DzZBtfoxHC6iyc = new DoubleRange(0.0, flag ? 0.0 : 0.05);
-        \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D ulUkgXkBneEwzP3h0_2 = d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+        \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe ulUkgXkBneEwzP3h0_2 = d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
         dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd mrfV9Sq7FuggeEjd = new dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd();
         mrfV9Sq7FuggeEjd.GrowBy = (IRange<double>) d295Ww4skLs1HZBq.\u0023\u003DzZBtfoxHC6iyc;
         ulUkgXkBneEwzP3h0_2.\u0023\u003DzCejzG6Y\u003D = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) mrfV9Sq7FuggeEjd;
@@ -93,7 +93,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     controlTemplate2.VisualTree.SetValue(PropertyGridControl.ShowToolPanelProperty, (object) false);
     controlTemplate2.VisualTree.SetValue(PropertyGridControl.ShowSearchBoxProperty, (object) false);
     controlTemplate2.VisualTree.SetValue(PropertyGridControl.SelectedObjectProperty, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D);
-    \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg2 = vbxLeArTkallkIdHg1;
+    \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg2 = vbxLeArTkallkIdHg1;
     ContentControl contentControl = new ContentControl();
     contentControl.Template = controlTemplate2;
     vbxLeArTkallkIdHg2.\u0023\u003Dzs1tPnmG2z8D2 = contentControl;
@@ -137,7 +137,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     return vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D;
   }
 
-  private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D
+  private sealed class SomeWheireosoe
   {
     public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
     public dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd \u0023\u003DzCejzG6Y\u003D;
@@ -289,7 +289,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
   private sealed class \u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D
   {
     public DoubleRange \u0023\u003DzZBtfoxHC6iyc;
-    public \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+    public \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
     internal void \u0023\u003Dz4EeJ2Z9T93ppthogLg\u003D\u003D(
       object _param1,

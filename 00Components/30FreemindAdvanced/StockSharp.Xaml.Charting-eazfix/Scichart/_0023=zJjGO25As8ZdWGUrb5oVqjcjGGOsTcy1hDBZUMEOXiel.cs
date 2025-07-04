@@ -26,7 +26,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   public override void \u0023\u003Dz11bcnbUrALaA(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
+    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeWheireosoe();
     vbxLeArTkallkIdHg.\u0023\u003Dz1BK01YA\u003D = _param1;
     try
     {
@@ -186,7 +186,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
     }
   }
 
-  private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D
+  private sealed class SomeWheireosoe
   {
     public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
 

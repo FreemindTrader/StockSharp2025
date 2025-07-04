@@ -30,7 +30,7 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzwRBYwhc7zDyy = DependencyProperty.Register(nameof (ChartTitle), typeof (string), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz8nrTMdEZLwbciOTO7Vi3t9Y\u003D)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzZlWtNzRQ4OYQ = DependencyProperty.Register(nameof (RenderSurface), typeof (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzZlWtNzRQ4OYQ = DependencyProperty.Register(nameof (RenderSurface), typeof (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzjroGW0xeV8YH = DependencyProperty.Register(nameof (MaxFrameRate), typeof (double?), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -439,9 +439,9 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.SomeClass34343383 SomeMethond0343 = new dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.SomeClass34343383();
 
     internal void \u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D(
       DependencyObject _param1,

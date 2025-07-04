@@ -42,7 +42,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
     this.SeriesData.UpdateSeries(this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1));
-    CollectionHelper.ForEach<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
+    CollectionHelper.ForEach<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
   }
 
   protected override void \u0023\u003Dz1z_ZexRGbAiN91rPDA\u003D\u003D(Point _param1)
@@ -64,7 +64,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
     this.\u0023\u003DzebZge1miA2O0(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY(new Point(this.ModifierSurface.ActualWidth / 2.0, this.ModifierSurface.ActualHeight / 2.0), (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0, \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None, true, (IReceiveMouseEvents ) null));
   }
 
-  private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D
+  private sealed class SomeWheireosoe
   {
     public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dz\u00246gChyc\u003D;
 
@@ -76,9 +76,9 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383();
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Func<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
     public static Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
@@ -99,13 +99,13 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
     internal void \u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D(
       IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
     {
-      CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
+      CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
     }
 
     internal void \u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
-      \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
+      \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeWheireosoe();
       vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D = _param1;
       if (!(((FrameworkElement) vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D.RenderableSeries).Tag is Tuple<UIBaseVM, ChildVM[]> tag))
         return;

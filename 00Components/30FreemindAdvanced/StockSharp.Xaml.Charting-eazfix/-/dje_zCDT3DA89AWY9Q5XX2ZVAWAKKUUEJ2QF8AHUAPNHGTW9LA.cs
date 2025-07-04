@@ -114,7 +114,7 @@ internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd :
 
   private IEnumerable<UIElement> \u0023\u003DzL8atuyQ\u003D()
   {
-    IEnumerable<UIElement> source = this.Children.OfType<UIElement>().Where<UIElement>(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<UIElement, bool>(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D)));
+    IEnumerable<UIElement> source = this.Children.OfType<UIElement>().Where<UIElement>(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<UIElement, bool>(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D)));
     return !this.IsReversedOrder ? source : source.Reverse<UIElement>();
   }
 
@@ -217,9 +217,9 @@ internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.SomeClass34343383 SomeMethond0343 = new dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.SomeClass34343383();
     public static Func<UIElement, bool> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
 
     internal bool \u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D(UIElement _param1)

@@ -19,7 +19,7 @@ internal sealed class dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5Y
   \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Lazy<ControlTemplate> \u0023\u003Dzvoot7Cph1AG8 = new Lazy<ControlTemplate>(new Func<ControlTemplate>(dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D));
+  private static readonly Lazy<ControlTemplate> \u0023\u003Dzvoot7Cph1AG8 = new Lazy<ControlTemplate>(new Func<ControlTemplate>(dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly Point \u0023\u003DzNJ8EGFEgy8EH;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -68,9 +68,9 @@ internal sealed class dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5Y
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.SomeClass34343383 SomeMethond0343 = new dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.SomeClass34343383();
 
     internal ControlTemplate \u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D()
     {

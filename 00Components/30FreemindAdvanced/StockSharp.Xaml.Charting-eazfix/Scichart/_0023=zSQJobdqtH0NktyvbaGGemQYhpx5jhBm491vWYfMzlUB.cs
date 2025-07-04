@@ -35,7 +35,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
   {
     this._scichartSurfaceVM; = _param1 ?? throw new ArgumentNullException("pane");
     this.Elements = (IEnumerable<ParentVM>) _param1.LegendElements;
-    this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D = (ICommand) new DelegateCommand<ParentVM>(new Action<ParentVM>(this.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D), \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<ParentVM, bool>(\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D)));
+    this.\u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D = (ICommand) new DelegateCommand<ParentVM>(new Action<ParentVM>(this.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D), \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<ParentVM, bool>(\u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.SomeClass34343383.SomeMethond0343.\u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D)));
   }
 
   public ScichartSurfaceMVVM Pane
@@ -106,9 +106,9 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS.SomeClass34343383();
     public static Func<ParentVM, bool> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
     internal bool \u0023\u003DzarIPT2hM\u0024qUQo3Kg7yhEyJY\u003D(

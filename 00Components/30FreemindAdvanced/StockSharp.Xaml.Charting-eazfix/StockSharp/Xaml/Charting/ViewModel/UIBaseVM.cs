@@ -197,7 +197,7 @@ else
 
 private void ResetY1Annotation()
 {
-	CollectionHelper.ForEach<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( ( IEnumerable<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> ) this._renderseries2AxisMarker, UIBaseVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? ( UIBaseVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( UIBaseVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D) ));
+	CollectionHelper.ForEach<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( ( IEnumerable<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> ) this._renderseries2AxisMarker, UIBaseVM.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? ( UIBaseVM.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( UIBaseVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D) ));
 }
 
 private void UpdateAndClear()
@@ -207,10 +207,10 @@ private void UpdateAndClear()
 }
 
 [Serializable]
-private new sealed class \u0023\u003Dz7qOdpi4\u003D
+private new sealed class SomeClass34343383
   {
 
-	public static readonly UIBaseVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new UIBaseVM.\u0023\u003Dz7qOdpi4\u003D();
+	public static readonly UIBaseVM.SomeClass34343383 SomeMethond0343 = new UIBaseVM.SomeClass34343383();
 public static Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
 internal void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(

@@ -41,12 +41,12 @@ public class BubbleChart : UserControl, IComponentConnector
 
   public BubbleChart.IBubbleSeries<DateTime> CreateTimeSeries(Color? color)
   {
-    return (BubbleChart.IBubbleSeries<DateTime>) new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<DateTime>(this.\u0023\u003Dz_wRpn38\u003D(color), BubbleChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (BubbleChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<DateTime, SeriesPoint>(BubbleChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzpXJS7zsG3ayStA6Cv3aiwRc\u003D)));
+    return (BubbleChart.IBubbleSeries<DateTime>) new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<DateTime>(this.\u0023\u003Dz_wRpn38\u003D(color), BubbleChart.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (BubbleChart.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<DateTime, SeriesPoint>(BubbleChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzpXJS7zsG3ayStA6Cv3aiwRc\u003D)));
   }
 
   public BubbleChart.IBubbleSeries<double> CreateDoubleSeries(Color? color)
   {
-    return (BubbleChart.IBubbleSeries<double>) new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<double>(this.\u0023\u003Dz_wRpn38\u003D(color), BubbleChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (BubbleChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<double, SeriesPoint>(BubbleChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzlSVLoTzOi9mOI2TX7beRTB8\u003D)));
+    return (BubbleChart.IBubbleSeries<double>) new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<double>(this.\u0023\u003Dz_wRpn38\u003D(color), BubbleChart.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (BubbleChart.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<double, SeriesPoint>(BubbleChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzlSVLoTzOi9mOI2TX7beRTB8\u003D)));
   }
 
   [DebuggerNonUserCode]
@@ -118,9 +118,9 @@ public class BubbleChart : UserControl, IComponentConnector
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly BubbleChart.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new BubbleChart.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly BubbleChart.SomeClass34343383 SomeMethond0343 = new BubbleChart.SomeClass34343383();
     public static Func<DateTime, SeriesPoint> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Func<double, SeriesPoint> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
 

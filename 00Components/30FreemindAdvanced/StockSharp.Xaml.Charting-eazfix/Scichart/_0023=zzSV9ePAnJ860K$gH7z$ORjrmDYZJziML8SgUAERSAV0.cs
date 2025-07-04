@@ -44,14 +44,14 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   protected override PropertyDescriptor[] OnGetProperties(
     IChartComponent _param1)
   {
-    \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
+    \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeWheireosoe();
     vbxLeArTkallkIdHg.\u0023\u003DzRRvwDu67s9Rm = this;
     vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D = _param1;
     vbxLeArTkallkIdHg.\u0023\u003DzaEWfwlo\u003D = new HashSet<string>();
     if (vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D == null)
       return (PropertyDescriptor[]) null;
     List<PropertyDescriptor> propertyDescriptorList = new List<PropertyDescriptor>();
-    propertyDescriptorList.AddRange(TypeDescriptor.GetProperties((object) vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(new Func<PropertyDescriptor, bool>(vbxLeArTkallkIdHg.\u0023\u003Dz3OKSSmcreu7R3ztl\u0024g\u003D\u003D)).SelectMany<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, IEnumerable<PropertyDescriptor>>(vbxLeArTkallkIdHg.\u0023\u003Dz7Ouzu6Mg\u0024YJrs1NoTA\u003D\u003D)));
+    propertyDescriptorList.AddRange(TypeDescriptor.GetProperties((object) vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(new Func<PropertyDescriptor, bool>(vbxLeArTkallkIdHg.SomeMethod383)).SelectMany<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, IEnumerable<PropertyDescriptor>>(vbxLeArTkallkIdHg.\u0023\u003Dz7Ouzu6Mg\u0024YJrs1NoTA\u003D\u003D)));
     return propertyDescriptorList.ToArray();
   }
 
@@ -63,7 +63,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
     this.NotifyChanged(_param2.PropertyName);
   }
 
-  private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D
+  private sealed class SomeWheireosoe
   {
     public 
     #nullable disable
@@ -81,13 +81,13 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
       return str;
     }
 
-    internal bool \u0023\u003Dz3OKSSmcreu7R3ztl\u0024g\u003D\u003D(PropertyDescriptor _param1)
+    internal bool SomeMethod383(PropertyDescriptor p)
     {
       Func<IChartComponent, PropertyDescriptor, bool> zZdxZpcbMfueq = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ;
-      if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, _param1) ? 1 : 0) : 1) == 0)
+      if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, p) ? 1 : 0) : 1) == 0)
         return false;
       IChartComponent zLiCojrU = this.\u0023\u003DzLICojrU\u003D;
-      return zLiCojrU == null || !zLiCojrU.AdditionalName(_param1.Name);
+      return zLiCojrU == null || !zLiCojrU.AdditionalName(p.Name);
     }
 
     internal 
@@ -103,7 +103,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
       if (!(obj is IChartComponent ddznyiGmdRlAevOq))
       {
         d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D = obj as IChartIndicatorPainter;
-        propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
+        propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
       }
       else
         propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.GetName((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ));
@@ -112,9 +112,9 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383();
     public static Func<PropertyDescriptor, bool> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
 
     internal bool \u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D(PropertyDescriptor _param1)
@@ -127,7 +127,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   private sealed class \u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D
   {
     public IChartIndicatorPainter \u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D;
-    public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
+    public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeWheireosoe \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
 
     internal PropertyDescriptor \u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D(
       PropertyDescriptor _param1)

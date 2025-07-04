@@ -57,7 +57,7 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
     double num4 = 0.0;
     IList<T> source = this.\u0023\u003DzaqOTdcE2Qrcnms5YPQ\u003D\u003D(_param1.get_StackedGroupId());
     bool flag = this.\u0023\u003Dz4nhIf8\u0024OuuPux\u0024xOhCjDsBI\u003D(_param1.get_StackedGroupId());
-    Func<T, bool> predicate = \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D ?? (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D = new Func<T, bool>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzLZvPTS5COc90bGo0i3aY9EE\u003D));
+    Func<T, bool> predicate = \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.\u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D ?? (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.\u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D = new Func<T, bool>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.SomeMethond0343.\u0023\u003DzLZvPTS5COc90bGo0i3aY9EE\u003D));
     foreach (T zH9Hnkng in source.Where<T>(predicate))
     {
       double num5 = _param3 ? zH9Hnkng.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzPqsSI6C5MOOb()[_param2].ToDouble() : ((IComparable) zH9Hnkng.get_DataSeries().\u0023\u003DzPqsSI6C5MOOb()[_param2]).ToDouble();
@@ -97,7 +97,7 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
   {
     double num1 = 0.0;
     double num2 = 0.0;
-    foreach (T zH9Hnkng in this.\u0023\u003DzaqOTdcE2Qrcnms5YPQ\u003D\u003D(_param1.get_StackedGroupId()).Where<T>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D ?? (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D = new Func<T, bool>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz9Z5iGcTB1hN7ZnRz61x\u0024KhY\u003D))))
+    foreach (T zH9Hnkng in this.\u0023\u003DzaqOTdcE2Qrcnms5YPQ\u003D\u003D(_param1.get_StackedGroupId()).Where<T>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D ?? (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D = new Func<T, bool>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz9Z5iGcTB1hN7ZnRz61x\u0024KhY\u003D))))
     {
       double num3 = _param2(zH9Hnkng);
       if (!NumberUtil.IsNaN(num3))
@@ -127,7 +127,7 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
       double x = point1.X;
       double num = point1.Y;
       bool flag2 = this.\u0023\u003Dz4nhIf8\u0024OuuPux\u0024xOhCjDsBI\u003D(_param4.get_StackedGroupId());
-      if (this.\u0023\u003DzaqOTdcE2Qrcnms5YPQ\u003D\u003D(_param4.get_StackedGroupId()).Count<T>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Func<T, bool>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzTGuhZLTU3_PDZ4NVc9Rm2zk\u003D))) > 1 | flag2)
+      if (this.\u0023\u003DzaqOTdcE2Qrcnms5YPQ\u003D\u003D(_param4.get_StackedGroupId()).Count<T>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Func<T, bool>(\u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383.SomeMethond0343.\u0023\u003DzTGuhZLTU3_PDZ4NVc9Rm2zk\u003D))) > 1 | flag2)
       {
         \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D k0hz6MwLrPm7JfgVw01g = new \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D();
         k0hz6MwLrPm7JfgVw01g.\u0023\u003Dzay7IytM\u003D = _param2.\u0023\u003DzSkvCFWUKQ7Fw();
@@ -251,9 +251,9 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T>.SomeClass34343383();
     public static Func<T, bool> \u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D;
     public static Func<T, bool> \u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D;
     public static Func<T, bool> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;

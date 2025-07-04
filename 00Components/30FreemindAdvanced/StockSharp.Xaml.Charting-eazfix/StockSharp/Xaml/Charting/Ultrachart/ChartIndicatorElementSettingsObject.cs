@@ -16,15 +16,13 @@ using System.Linq;
 #nullable enable
 namespace StockSharp.Xaml.Charting.Ultrachart;
 
-public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<
-#nullable disable
-IChartElement>
+public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChartElement>
 {
   public ChartIndicatorElementSettingsObject(IChartElement element)
     : base(element)
   {
     this.CategoriesMode = CategoriesShowMode.Hidden;
-    this.Orig.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzzgN9T5XSXDaBdSK82A\u003D\u003D);
+    this.Orig.PropertyChanged += new PropertyChangedEventHandler(this.OnPropertyChanged);
   }
 
   protected override PropertyDescriptor[] OnGetProperties(IChartElement element)
@@ -34,14 +32,14 @@ IChartElement>
     {
       IIndicator indicator = element1.TryGetIndicator();
       if (indicator != null)
-        propertyDescriptorList.Add(\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAVZzPW_XxUVoSSnQgGAh7bEx\u0024cYB5w\u003D\u003D.\u0023\u003DzANqI1s0\u003D(indicator.Name, (object) this, indicator));
+        propertyDescriptorList.Add(IndicatorUISettingsObject.\u0023\u003DzANqI1s0\u003D(indicator.Name, (object) this, indicator));
     }
     propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Style, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqnUZLhteM7X58WNtOFoAUCxXrehbkyL7b_5OgJmSQR7E0sLjriPtaNbpo_\u0024ilyRhu)));
     propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Common, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqUgnHZrrykv2VtgSnmyAJ\u0024t24diQG2HPY7YrznSErRWXmOLZGnAaI\u0024eZpwOBQLLof)));
     return propertyDescriptorList.ToArray();
   }
 
-  private void \u0023\u003DzzgN9T5XSXDaBdSK82A\u003D\u003D(
+  private void OnPropertyChanged(
     #nullable enable
     object? _param1,
     PropertyChangedEventArgs _param2)

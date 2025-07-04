@@ -168,55 +168,55 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
   {
     {
       typeof (long),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdWqpSQ5aR\u0024wdi4kNTq2Ly1g\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzdWqpSQ5aR\u0024wdi4kNTq2Ly1g\u003D)
     },
     {
       typeof (int),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAFYqqFppM3VmRfVJtnTqTvM\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzAFYqqFppM3VmRfVJtnTqTvM\u003D)
     },
     {
       typeof (short),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzhQS8P2JmkAkg0DscaiBkv\u0024w\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzhQS8P2JmkAkg0DscaiBkv\u0024w\u003D)
     },
     {
       typeof (sbyte),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzORRhiV7KckN\u0024qpfjLBpseZc\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzORRhiV7KckN\u0024qpfjLBpseZc\u003D)
     },
     {
       typeof (ulong),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzuQWKLTJPQXlcKEAUWLJou6I\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzuQWKLTJPQXlcKEAUWLJou6I\u003D)
     },
     {
       typeof (uint),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz2G7PnVv6Ma0mK0TX8kpc1T8\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2G7PnVv6Ma0mK0TX8kpc1T8\u003D)
     },
     {
       typeof (ushort),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzBG2tXBnpgEjKgVbTvJ6lNZ4\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzBG2tXBnpgEjKgVbTvJ6lNZ4\u003D)
     },
     {
       typeof (byte),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzCVXCw3hnAwSy3jS_mpkxFtU\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzCVXCw3hnAwSy3jS_mpkxFtU\u003D)
     },
     {
       typeof (Decimal),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz1c5AXA7hL251b7UDpdKLa5w\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz1c5AXA7hL251b7UDpdKLa5w\u003D)
     },
     {
       typeof (double),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdLpDnOw91fhCRQXXD294gFw\u003D)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzdLpDnOw91fhCRQXXD294gFw\u003D)
     },
     {
       typeof (float),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz9dwYxb42uZsTggOhuNQdn5Ef64LL)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz9dwYxb42uZsTggOhuNQdn5Ef64LL)
     },
     {
       typeof (DateTime),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzYFW4J5OHXBkVEDYMYOrhtaiFA_hk)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzYFW4J5OHXBkVEDYMYOrhtaiFA_hk)
     },
     {
       typeof (TimeSpan),
-      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzeDBaNkI_6rau6LCB3c3Mr827SXmI)
+      new Func<IComparable, bool>(\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzeDBaNkI_6rau6LCB3c3Mr827SXmI)
     }
   };
 
@@ -487,9 +487,9 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383();
 
     internal bool \u0023\u003DzdWqpSQ5aR\u0024wdi4kNTq2Ly1g\u003D(IComparable _param1)
     {

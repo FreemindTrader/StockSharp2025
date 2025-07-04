@@ -447,7 +447,7 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
   {
     if (this.ParentSurface == null || this.ParentSurface.get_RenderableSeries() == null)
       return;
-    this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<IRenderableSeries, bool>(dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228))).\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003Dzw9s7TrZ4QMkFRbgXlOyM52Lqlxec));
+    this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<IRenderableSeries, bool>(dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228))).\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003Dzw9s7TrZ4QMkFRbgXlOyM52Lqlxec));
   }
 
   protected override void \u0023\u003Dz9otdS\u0024TJZ4U8t8zXqw\u003D\u003D()
@@ -475,9 +475,9 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.SomeClass34343383 SomeMethond0343 = new dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27YZ_ejd.SomeClass34343383();
     public static Func<IRenderableSeries, bool> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
 
     internal bool \u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228(

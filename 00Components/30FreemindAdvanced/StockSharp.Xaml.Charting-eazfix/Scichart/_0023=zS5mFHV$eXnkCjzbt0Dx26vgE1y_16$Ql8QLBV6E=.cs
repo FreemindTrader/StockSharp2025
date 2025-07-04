@@ -330,7 +330,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
           };
       }
       else
-        ag4ZlfwSgT7i2Apws = \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003DzcSUkDEet8fvl[_param1.get_MouseEventGroup()].Where<IReceiveMouseEvents >(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D ?? (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D = new Func<IReceiveMouseEvents , bool>(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRB7XSdoQ2eSQJafyp0e69aQ\u003D)));
+        ag4ZlfwSgT7i2Apws = \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003DzcSUkDEet8fvl[_param1.get_MouseEventGroup()].Where<IReceiveMouseEvents >(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D ?? (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D = new Func<IReceiveMouseEvents , bool>(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzRB7XSdoQ2eSQJafyp0e69aQ\u003D)));
     }
     return ag4ZlfwSgT7i2Apws;
   }
@@ -563,9 +563,9 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383();
     public static Func<IReceiveMouseEvents , bool> \u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D;
 
     internal bool \u0023\u003DzRB7XSdoQ2eSQJafyp0e69aQ\u003D(

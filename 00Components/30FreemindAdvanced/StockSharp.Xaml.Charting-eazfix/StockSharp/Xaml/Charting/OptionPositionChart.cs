@@ -35,17 +35,17 @@ public class OptionPositionChart :
   IOptionPositionChart
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzVCvdqIwU8qhbnG0tEA\u003D\u003D = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzZJejL2kCbBNrH7yrDJLH0IA\u003D);
+  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzVCvdqIwU8qhbnG0tEA\u003D\u003D = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzZJejL2kCbBNrH7yrDJLH0IA\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003Dz6natRAM\u003D = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzHFmSM0O81iuL\u00243kqxN3iCIg\u003D);
+  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003Dz6natRAM\u003D = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzHFmSM0O81iuL\u00243kqxN3iCIg\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003Dzc9HoyPSZYlUh = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzDsINFHGl_6n9RUocpTfki6I\u003D);
+  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003Dzc9HoyPSZYlUh = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzDsINFHGl_6n9RUocpTfki6I\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzUULrPCW3R3I5 = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz1wU8wJ6WYCgtx6fHgEzunFw\u003D);
+  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzUULrPCW3R3I5 = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003Dz1wU8wJ6WYCgtx6fHgEzunFw\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzfQoP7vvuCMpC = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzG9O0TpbzkV\u00248x69T63\u0024Ti64\u003D);
+  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzfQoP7vvuCMpC = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzG9O0TpbzkV\u00248x69T63\u0024Ti64\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzjXbVlj0Id0BN = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D);
+  private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzjXbVlj0Id0BN = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D);
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -390,9 +390,9 @@ public class OptionPositionChart :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new OptionPositionChart.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly OptionPositionChart.SomeClass34343383 SomeMethond0343 = new OptionPositionChart.SomeClass34343383();
 
     internal Decimal? \u0023\u003DzZJejL2kCbBNrH7yrDJLH0IA\u003D(
       BlackScholes _param1,

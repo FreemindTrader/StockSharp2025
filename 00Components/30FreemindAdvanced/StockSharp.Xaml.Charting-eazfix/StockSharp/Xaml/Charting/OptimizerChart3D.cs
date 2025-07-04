@@ -304,32 +304,32 @@ public class OptimizerChart3D : UserControl, IComponentConnector
 
   private void \u0023\u003Dzvsv0ozPERJCLH7Qlj2XfYJ33Rsql()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9)), -1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9)), -1.0);
   }
 
   private void \u0023\u003DzVbbb3fC3vb43rF4KU9TEZE6hLOjw()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzokVMWQ5tUWySX0ZAO5zdCjaws8Kc)), 1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzokVMWQ5tUWySX0ZAO5zdCjaws8Kc)), 1.0);
   }
 
   private void \u0023\u003Dz05DsYeE9TArwoxHfhj9ipSrE0a0z()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.Method05 ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.Method05 = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5EW_l2nSTjbBKuuG93AZ7v1j7TCk)), -1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.Method05 ?? (OptimizerChart3D.SomeClass34343383.Method05 = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5EW_l2nSTjbBKuuG93AZ7v1j7TCk)), -1.0);
   }
 
   private void \u0023\u003DzT\u0024EjzudU2cP__EuN4ALEHHqZ7xSI()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzgtt8BV5qq\u0024eBi5JtnA\u003D\u003D ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzgtt8BV5qq\u0024eBi5JtnA\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzvMpUCbGMw4\u0024YcvOPecSimkLobYoM)), 1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003Dzgtt8BV5qq\u0024eBi5JtnA\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003Dzgtt8BV5qq\u0024eBi5JtnA\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzvMpUCbGMw4\u0024YcvOPecSimkLobYoM)), 1.0);
   }
 
   private void \u0023\u003Dz2k7_5qrtOkXy0eZDlvgLHhnNDAga()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRg6HPHFitFsySR6nRP24a_mwKHUh)), -1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzRg6HPHFitFsySR6nRP24a_mwKHUh)), -1.0);
   }
 
   private void \u0023\u003DzSc1IksKKMcH8jWMVaFYUjseX8E\u0024W()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzVXnwkZoqTYs1ICn7IXdhIyV4W7mI)), 1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzVXnwkZoqTYs1ICn7IXdhIyV4W7mI)), 1.0);
   }
 
   private void \u0023\u003DqAtrU_jTo9D0lec9ogBVYMlm__npgKE9u30Mc4eGhMQjQRc08XuZ5mQooBrD_B3Sy(
@@ -342,9 +342,9 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly OptimizerChart3D.SomeClass34343383 SomeMethond0343 = new OptimizerChart3D.SomeClass34343383();
     public static Func<Vector3D, bool> \u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D;
     public static Func<Vector3D, bool> \u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D;
     public static Func<Vector3D, bool> Method05;

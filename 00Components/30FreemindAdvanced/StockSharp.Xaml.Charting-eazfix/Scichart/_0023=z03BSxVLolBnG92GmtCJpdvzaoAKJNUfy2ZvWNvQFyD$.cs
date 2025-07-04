@@ -14,7 +14,7 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
   dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dzp3T0E8s\u003D = DependencyProperty.Register(nameof (ActionType), typeof (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd), typeof (\u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D), new PropertyMetadata((object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan, new PropertyChangedCallback(\u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz80RJIH_dDgLn7Di7fNcKxH8\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzp3T0E8s\u003D = DependencyProperty.Register(nameof (ActionType), typeof (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd), typeof (\u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D), new PropertyMetadata((object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan, new PropertyChangedCallback(\u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz80RJIH_dDgLn7Di7fNcKxH8\u003D)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Action<Point, double> \u0023\u003DzE5Q0sUQO_NoQ;
 
@@ -115,9 +115,9 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.SomeClass34343383();
 
     internal void \u0023\u003Dz80RJIH_dDgLn7Di7fNcKxH8\u003D(
       DependencyObject _param1,

@@ -195,7 +195,7 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
     this.\u0023\u003Dz7DSowRM8YI8lUCePfEYzKln_4DSk = (double) this.\u0023\u003DzWewHyEvM_sOk.ElapsedMilliseconds;
     this.UltrachartFpsSeries.Append(this.UltrachartFpsSeries.Count == 0 ? 0.0 : (double) (int) (this.UltrachartFpsSeries.XValues.Last<double>() + 1.0), num);
     this.UltrachartFps = this.UltrachartFpsSeries.YValues.Sum() / (double) this.UltrachartFpsSeries.Count;
-    this.TotalPointCount = this.TargetSurface.get_RenderableSeries().Sum<IRenderableSeries>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<IRenderableSeries, int>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D)));
+    this.TotalPointCount = this.TargetSurface.get_RenderableSeries().Sum<IRenderableSeries>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<IRenderableSeries, int>(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D)));
   }
 
   private void \u0023\u003DzzYypnyJA76yR(object _param1, EventArgs _param2)
@@ -209,9 +209,9 @@ internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8N
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.SomeClass34343383 SomeMethond0343 = new dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.SomeClass34343383();
     public static Func<IRenderableSeries, int> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
 
     internal int \u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D(

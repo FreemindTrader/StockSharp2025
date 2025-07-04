@@ -26,7 +26,7 @@ internal static class \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u00240
 
   internal static double[] \u0023\u003DzvczFDIa7rqI9<T>(this T[] _param0) where T : IComparable
   {
-    return ((IEnumerable<T>) _param0).Select<T, double>(\u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<T, double>(\u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzGBBVR4\u0024_hO74jzC_CeEppVE\u003D))).ToArray<double>();
+    return ((IEnumerable<T>) _param0).Select<T, double>(\u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<T, double>(\u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>.SomeMethond0343.\u0023\u003DzGBBVR4\u0024_hO74jzC_CeEppVE\u003D))).ToArray<double>();
   }
 
   internal static DateTime \u0023\u003Dzxuo5aY4wjkaI(this IComparable _param0)
@@ -50,7 +50,7 @@ internal static class \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u00240
   [Serializable]
   private sealed class \u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T> where T : IComparable
   {
-    public static readonly \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T> \u0023\u003DzhxV_97w\u003D = new \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>();
+    public static readonly \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T> SomeMethond0343 = new \u0023\u003DzduViKcXTrKCfnYwdbArizhKjvBq3lpdPWarUHV\u002407Pk\u0024.\u0023\u003DzHKPvivPHfuGd30DNcQ\u003D\u003D<T>();
     public static Func<T, double> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
 
     internal double \u0023\u003DzGBBVR4\u0024_hO74jzC_CeEppVE\u003D(

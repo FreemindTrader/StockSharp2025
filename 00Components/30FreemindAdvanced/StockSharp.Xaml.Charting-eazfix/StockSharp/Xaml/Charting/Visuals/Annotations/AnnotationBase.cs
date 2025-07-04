@@ -566,7 +566,7 @@ internal abstract class AnnotationBase :
     Canvas adornerLayer = this.GetAdornerLayer();
     if (adornerLayer == null)
       return;
-    this.GetUsedAdorners<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(adornerLayer).\u0023\u003Dz30RSSSygABj_<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(AnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D ?? (AnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D = new Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(AnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D)));
+    this.GetUsedAdorners<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(adornerLayer).\u0023\u003Dz30RSSSygABj_<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(AnnotationBase.SomeClass34343383.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D ?? (AnnotationBase.SomeClass34343383.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D = new Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(AnnotationBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D)));
   }
 
   protected virtual bool IsInBounds(
@@ -869,7 +869,7 @@ internal abstract class AnnotationBase :
 
   protected virtual void RemoveAdorners(Canvas adornerLayer)
   {
-    this.GetUsedAdorners<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D>(adornerLayer).\u0023\u003Dz30RSSSygABj_<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D>(AnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D ?? (AnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D = new Action<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D>(AnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzmwmE1Rru1D_mRmp3V7zIKTM\u003D)));
+    this.GetUsedAdorners<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D>(adornerLayer).\u0023\u003Dz30RSSSygABj_<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D>(AnnotationBase.SomeClass34343383.\u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D ?? (AnnotationBase.SomeClass34343383.\u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D = new Action<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D>(AnnotationBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzmwmE1Rru1D_mRmp3V7zIKTM\u003D)));
   }
 
   public virtual Point TranslatePoint(
@@ -1077,9 +1077,9 @@ internal abstract class AnnotationBase :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly AnnotationBase.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new AnnotationBase.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly AnnotationBase.SomeClass34343383 SomeMethond0343 = new AnnotationBase.SomeClass34343383();
     public static Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x> \u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D;
     public static Action<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D> \u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D;
 

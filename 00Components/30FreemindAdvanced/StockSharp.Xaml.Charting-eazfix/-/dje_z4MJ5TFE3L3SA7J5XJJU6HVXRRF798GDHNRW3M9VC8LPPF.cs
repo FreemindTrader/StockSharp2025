@@ -21,7 +21,7 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzfMw6oHlwmSrk = DependencyProperty.Register(nameof (LegendData), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003Dzo\u0024LE3hIlM1nJ = DependencyProperty.Register(nameof (GetLegendDataFor), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllSeries, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzo\u0024LE3hIlM1nJ = DependencyProperty.Register(nameof (GetLegendDataFor), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllSeries, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzjgUJSc8xvO\u00243 = DependencyProperty.Register(nameof (LegendPlacement), typeof (dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd.Inside));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -197,7 +197,7 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
     dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzSomy1CqId_K1JNYi\u0024vmePXs\u003D cqIdK1JnYiVmePxs = new dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzSomy1CqId_K1JNYi\u0024vmePXs\u003D();
     ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> source = this.\u0023\u003DzZZbJdAS6fDJ\u0024(this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzaBvGZQmHUOsn)));
     ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> seriesInfo = this.SeriesData.SeriesInfo;
-    cqIdK1JnYiVmePxs.\u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D = source.Select<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries>(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries>(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D))).ToArray<IRenderableSeries>();
+    cqIdK1JnYiVmePxs.\u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D = source.Select<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries>(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries>(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D))).ToArray<IRenderableSeries>();
     seriesInfo.\u0023\u003DzmFyFyI4\u003D<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Predicate<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(cqIdK1JnYiVmePxs.\u0023\u003DzO1RhVl4gz8WF6_dF6w\u003D\u003D));
     foreach (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg1 in (Collection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) source)
     {
@@ -281,9 +281,9 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383 SomeMethond0343 = new dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383();
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
 
     internal IRenderableSeries \u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D(

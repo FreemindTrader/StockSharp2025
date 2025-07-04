@@ -16,7 +16,7 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 internal abstract class LineAnnotationBase : AnnotationBase
 {
   public static readonly DependencyProperty StrokeDashArrayProperty = DependencyProperty.Register(nameof (StrokeDashArray), typeof (DoubleCollection), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
-  public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(nameof (StrokeThickness), typeof (double), typeof (LineAnnotationBase), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(LineAnnotationBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D)));
+  public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(nameof (StrokeThickness), typeof (double), typeof (LineAnnotationBase), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(LineAnnotationBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D)));
   public static readonly DependencyProperty StrokeProperty = DependencyProperty.Register(nameof (Stroke), typeof (Brush), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
 
   public Brush Stroke
@@ -79,9 +79,9 @@ internal abstract class LineAnnotationBase : AnnotationBase
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly LineAnnotationBase.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new LineAnnotationBase.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly LineAnnotationBase.SomeClass34343383 SomeMethond0343 = new LineAnnotationBase.SomeClass34343383();
 
     internal void \u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D(
       DependencyObject _param1,

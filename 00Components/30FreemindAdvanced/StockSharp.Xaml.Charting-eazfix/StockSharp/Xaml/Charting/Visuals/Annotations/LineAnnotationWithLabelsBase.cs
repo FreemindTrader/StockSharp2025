@@ -154,7 +154,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   private void InvalidateAxisLabels()
   {
     using (this.SuspendUpdates())
-      this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D ?? (LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D))).\u0023\u003Dz30RSSSygABj_<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>((Action<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) (label =>
+      this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D))).\u0023\u003Dz30RSSSygABj_<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>((Action<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) (label =>
       {
         this.Detach(label);
         this.InvalidateLabel(label);
@@ -210,7 +210,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   protected override void MakeInvisible()
   {
     base.MakeInvisible();
-    this.DetachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D ?? (LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D))));
+    this.DetachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D))));
   }
 
   protected override void MakeVisible(
@@ -220,7 +220,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     IAxis usedAxis = this.GetUsedAxis();
     if (usedAxis == null || usedAxis.get_ModifierAxisCanvas() == null)
       return;
-    this.AttachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D))));
+    this.AttachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D))));
   }
 
   public override void OnApplyTemplate()
@@ -271,7 +271,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D = this.GetUsedAxis();
     if (dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D == null || dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D.get_ModifierAxisCanvas() == null)
       return;
-    this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D ?? (LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY))).\u0023\u003Dz30RSSSygABj_<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(new Action<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(dltbvS8bNvezolg25s.\u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D));
+    this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY))).\u0023\u003Dz30RSSSygABj_<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(new Action<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(dltbvS8bNvezolg25s.\u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D));
   }
 
   protected virtual void PlaceAxisLabel(
@@ -405,9 +405,9 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new LineAnnotationWithLabelsBase.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly LineAnnotationWithLabelsBase.SomeClass34343383 SomeMethond0343 = new LineAnnotationWithLabelsBase.SomeClass34343383();
     public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D;
     public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D;
     public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;

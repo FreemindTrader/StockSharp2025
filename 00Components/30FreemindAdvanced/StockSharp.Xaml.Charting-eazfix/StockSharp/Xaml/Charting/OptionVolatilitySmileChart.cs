@@ -103,7 +103,7 @@ public class OptionVolatilitySmileChart :
     get
     {
       List<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>> keyValuePairList = new List<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>();
-      keyValuePairList.AddRange(this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzWW8oopirOPrw56aXJ46tTLo\u003D))));
+      keyValuePairList.AddRange(this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(OptionVolatilitySmileChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzWW8oopirOPrw56aXJ46tTLo\u003D))));
       return (IEnumerable<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>) new \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(keyValuePairList);
     }
   }
@@ -162,7 +162,7 @@ public class OptionVolatilitySmileChart :
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    ((OptionVolatilitySmileChart) _param0).\u0023\u003Dz1I2yIarPUD_j.ForEach(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyvA5_ZcIGt2EBuRCvA\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzyvA5_ZcIGt2EBuRCvA\u003D\u003D = new Action<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzfx9JP\u0024zTFhplZv0Th91qjYeBvcL3)));
+    ((OptionVolatilitySmileChart) _param0).\u0023\u003Dz1I2yIarPUD_j.ForEach(OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003DzyvA5_ZcIGt2EBuRCvA\u003D\u003D ?? (OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003DzyvA5_ZcIGt2EBuRCvA\u003D\u003D = new Action<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>(OptionVolatilitySmileChart.SomeClass34343383.SomeMethond0343.\u0023\u003Dzfx9JP\u0024zTFhplZv0Th91qjYeBvcL3)));
   }
 
   private void \u0023\u003DzG8IJ51fy4J4_607kP0quVX8\u003D(bool _param1)
@@ -188,7 +188,7 @@ public class OptionVolatilitySmileChart :
   public void Save(SettingsStorage storage)
   {
     storage.SetValue<string>("ChartTheme", this.ChartTheme);
-    storage.SetValue<SettingsStorage[]>("elements", this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<SettingsStorage[]>("elements", this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage>(OptionVolatilitySmileChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D))).ToArray<SettingsStorage>());
   }
 
   [DebuggerNonUserCode]
@@ -247,9 +247,9 @@ public class OptionVolatilitySmileChart :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new OptionVolatilitySmileChart.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly OptionVolatilitySmileChart.SomeClass34343383 SomeMethond0343 = new OptionVolatilitySmileChart.SomeClass34343383();
     public static Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
     public static Action<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA> \u0023\u003DzyvA5_ZcIGt2EBuRCvA\u003D\u003D;
     public static Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage> \u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D;
@@ -347,10 +347,10 @@ public class OptionVolatilitySmileChart :
         return;
       double num1 = this.\u0023\u003DzQFEcYv_sDNlA();
       List<double> doubleList1 = new List<double>();
-      doubleList1.AddRange(((IEnumerable<LineData<double>>) this).Select<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D = new Func<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzRYrdyX\u0024NtiJBVs4ggQ\u003D\u003D))));
+      doubleList1.AddRange(((IEnumerable<LineData<double>>) this).Select<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D = new Func<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383.SomeMethond0343.\u0023\u003DzRYrdyX\u0024NtiJBVs4ggQ\u003D\u003D))));
       double[] array1 = doubleList1.ToArray();
       List<double> doubleList2 = new List<double>();
-      doubleList2.AddRange(((IEnumerable<LineData<double>>) this).Select<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQHsHz_ktErkb7vgTPQ\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzQHsHz_ktErkb7vgTPQ\u003D\u003D = new Func<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzMAaHV4k3kfGyBjSv1w\u003D\u003D))));
+      doubleList2.AddRange(((IEnumerable<LineData<double>>) this).Select<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383.\u0023\u003DzQHsHz_ktErkb7vgTPQ\u003D\u003D ?? (OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383.\u0023\u003DzQHsHz_ktErkb7vgTPQ\u003D\u003D = new Func<LineData<double>, double>(OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383.SomeMethond0343.\u0023\u003DzMAaHV4k3kfGyBjSv1w\u003D\u003D))));
       double[] array2 = doubleList2.ToArray();
       this.\u0023\u003DzIMYwtfTasyYu = new PolyFit(array1, array2, 2).Coeff;
       if (this.\u0023\u003DzIMYwtfTasyYu.Length != 3)
@@ -403,9 +403,9 @@ public class OptionVolatilitySmileChart :
     }
 
     [Serializable]
-    private sealed class \u0023\u003Dz7qOdpi4\u003D
+    private sealed class SomeClass34343383
     {
-      public static readonly OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.\u0023\u003Dz7qOdpi4\u003D();
+      public static readonly OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383 SomeMethond0343 = new OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA.SomeClass34343383();
       public static Func<LineData<double>, double> \u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D;
       public static Func<LineData<double>, double> \u0023\u003DzQHsHz_ktErkb7vgTPQ\u003D\u003D;
 

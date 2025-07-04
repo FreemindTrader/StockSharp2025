@@ -102,16 +102,16 @@ public class ChartPanel :
 
   static ChartPanel()
   {
-    ChartPanel.RegisterCandleStyle("CandlesBars", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz9FyKEnqWZMl35lW1Mh8Pfl4\u003D), ChartCandleDrawStyles.Ohlc);
-    ChartPanel.RegisterCandleStyle("CandleStick", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzlXKB39\u0024_RGvuXSNaoFYbUfY\u003D), ChartCandleDrawStyles.CandleStick);
-    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz3VNaKjF0Px9ZE74bMBlf8Jc\u003D), ChartCandleDrawStyles.LineOpen);
-    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPwX1fdUl8qrydTYdTH_dK8E\u003D), ChartCandleDrawStyles.LineClose);
-    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzKNZn5frBPZ2lkm_QkzXTr78\u003D), ChartCandleDrawStyles.LineHigh);
-    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzatM8lF9_VANXs9rCA\u0024nAIFo\u003D), ChartCandleDrawStyles.LineLow);
-    ChartPanel.RegisterCandleStyle("CandlesLineArea", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz6DsZRppqVaGqhjmGQ982Snc\u003D), ChartCandleDrawStyles.Area);
-    ChartPanel.RegisterCandleStyle("GanttChart", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzHdtpgWUYDJsY5xnfHe5\u0024iZQ\u003D), ChartCandleDrawStyles.BoxVolume);
-    ChartPanel.RegisterCandleStyle("GanttChart", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzgUhRURp7DzSchtEQx_odDF4\u003D), ChartCandleDrawStyles.ClusterProfile);
-    ChartPanel.RegisterCandleStyle("CandlesXo", new Func<string>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzBs0U8AxGBth7PQG2Cppyd9U\u003D), ChartCandleDrawStyles.PnF);
+    ChartPanel.RegisterCandleStyle("CandlesBars", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz9FyKEnqWZMl35lW1Mh8Pfl4\u003D), ChartCandleDrawStyles.Ohlc);
+    ChartPanel.RegisterCandleStyle("CandleStick", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzlXKB39\u0024_RGvuXSNaoFYbUfY\u003D), ChartCandleDrawStyles.CandleStick);
+    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz3VNaKjF0Px9ZE74bMBlf8Jc\u003D), ChartCandleDrawStyles.LineOpen);
+    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzPwX1fdUl8qrydTYdTH_dK8E\u003D), ChartCandleDrawStyles.LineClose);
+    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzKNZn5frBPZ2lkm_QkzXTr78\u003D), ChartCandleDrawStyles.LineHigh);
+    ChartPanel.RegisterCandleStyle("CandlesLine", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzatM8lF9_VANXs9rCA\u0024nAIFo\u003D), ChartCandleDrawStyles.LineLow);
+    ChartPanel.RegisterCandleStyle("CandlesLineArea", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz6DsZRppqVaGqhjmGQ982Snc\u003D), ChartCandleDrawStyles.Area);
+    ChartPanel.RegisterCandleStyle("GanttChart", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzHdtpgWUYDJsY5xnfHe5\u0024iZQ\u003D), ChartCandleDrawStyles.BoxVolume);
+    ChartPanel.RegisterCandleStyle("GanttChart", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzgUhRURp7DzSchtEQx_odDF4\u003D), ChartCandleDrawStyles.ClusterProfile);
+    ChartPanel.RegisterCandleStyle("CandlesXo", new Func<string>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzBs0U8AxGBth7PQG2Cppyd9U\u003D), ChartCandleDrawStyles.PnF);
   }
 
   public ChartPanel()
@@ -657,7 +657,7 @@ public class ChartPanel :
       this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzvqeJB240RXk9(g6juy8sz5xvXs9gnmpIa.\u0023\u003DzgQgmhv4\u003D.DrawStyle);
     if (this.\u0023\u003DzMJITrmQ\u003D)
       return;
-    CollectionHelper.ForEach<IChartCandleElement>(this.\u0023\u003DzO72kpz0\u003D.Areas.SelectMany<IChartArea, IChartElement>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D ?? (ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D = new Func<IChartArea, IEnumerable<IChartElement>>(ChartPanel.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzYvkVKOh6kY\u0024W7ARAS\u0024RZ2ZLc6Hzq3nufL5x4rb8\u003D))).OfType<IChartCandleElement>(), new Action<IChartCandleElement>(g6juy8sz5xvXs9gnmpIa.\u0023\u003DzhCrYxgzXy5_i82jHuEXWBKhZOVBJFTHN\u0024A\u003D\u003D));
+    CollectionHelper.ForEach<IChartCandleElement>(this.\u0023\u003DzO72kpz0\u003D.Areas.SelectMany<IChartArea, IChartElement>(ChartPanel.SomeClass34343383.\u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D ?? (ChartPanel.SomeClass34343383.\u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D = new Func<IChartArea, IEnumerable<IChartElement>>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzYvkVKOh6kY\u0024W7ARAS\u0024RZ2ZLc6Hzq3nufL5x4rb8\u003D))).OfType<IChartCandleElement>(), new Action<IChartCandleElement>(g6juy8sz5xvXs9gnmpIa.\u0023\u003DzhCrYxgzXy5_i82jHuEXWBKhZOVBJFTHN\u0024A\u003D\u003D));
   }
 
   private async void \u0023\u003DzQRGEhax_Ac2y(object _param1, ExecutedRoutedEventArgs _param2)
@@ -1088,9 +1088,9 @@ public class ChartPanel :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly ChartPanel.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartPanel.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ChartPanel.SomeClass34343383 SomeMethond0343 = new ChartPanel.SomeClass34343383();
     public static Func<IChartArea, 
     #nullable enable
     IEnumerable<

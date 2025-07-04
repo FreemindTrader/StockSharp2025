@@ -29,7 +29,7 @@ internal sealed class dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd :
     availableSize.Width /= 2.0;
     availableSize.Height /= 2.0;
     double val1 = 0.0;
-    foreach (UIElement uiElement in this.Children.OfType<UIElement>().Where<UIElement>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<UIElement, bool>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzAXvWjuOKFfot_ecaioqcTKc\u003D))))
+    foreach (UIElement uiElement in this.Children.OfType<UIElement>().Where<UIElement>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<UIElement, bool>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzAXvWjuOKFfot_ecaioqcTKc\u003D))))
     {
       uiElement.Measure(availableSize);
       val1 = Math.Max(val1, Math.Max(uiElement.DesiredSize.Width, uiElement.DesiredSize.Height));
@@ -48,7 +48,7 @@ internal sealed class dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd :
   protected override Size ArrangeOverride(Size _param1)
   {
     Point point1 = new Point(_param1.Width / 2.0, _param1.Height / 2.0);
-    foreach (UIElement uiElement in this.Children.OfType<UIElement>().Where<UIElement>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<UIElement, bool>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz__7MkXHypl\u0024neQctv2M9Xq4\u003D))))
+    foreach (UIElement uiElement in this.Children.OfType<UIElement>().Where<UIElement>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<UIElement, bool>(dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz__7MkXHypl\u0024neQctv2M9Xq4\u003D))))
     {
       Size desiredSize;
       Size size1;
@@ -123,9 +123,9 @@ internal sealed class dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383 SomeMethond0343 = new dje_zS8DQG4ZCL94VWP74EUWPSHVZ68RLCBGFGHYQ8T7EA9EPYUQ_ejd.SomeClass34343383();
     public static Func<UIElement, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
     public static Func<UIElement, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
 

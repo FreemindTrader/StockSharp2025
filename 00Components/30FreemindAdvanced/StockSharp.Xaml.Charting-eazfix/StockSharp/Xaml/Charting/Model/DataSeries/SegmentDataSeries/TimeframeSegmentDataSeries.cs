@@ -650,7 +650,7 @@ label_8:
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -660,7 +660,7 @@ label_8:
 
     public bool Contains(double _param1)
     {
-      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
+      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D))).Contains<double>(_param1);
     }
 
     int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
@@ -722,9 +722,9 @@ label_8:
     }
 
     [Serializable]
-    private sealed class \u0023\u003Dz7qOdpi4\u003D
+    private sealed class SomeClass34343383
     {
-      public static readonly TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.\u0023\u003Dz7qOdpi4\u003D();
+      public static readonly TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383 SomeMethond0343 = new TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383();
       public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
       public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
 

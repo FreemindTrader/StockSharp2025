@@ -1206,7 +1206,7 @@ internal class SciChartSurface :
     IRange abyLt9clZggmJsWhw1 = zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.\u0023\u003DzFwoMKP9juTnt();
     if (!source.Any<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>())
       return zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange != null && !zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange.IsDefined ? abyLt9clZggmJsWhw1 : zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange;
-    IRange[] array = source.Select<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(new Func<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(zq1a0vCkinf2sWxYoWqM.\u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz)).Where<IRange>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D ?? (SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D = new Func<IRange, bool>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D))).ToArray<IRange>();
+    IRange[] array = source.Select<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(new Func<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(zq1a0vCkinf2sWxYoWqM.\u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz)).Where<IRange>(SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D = new Func<IRange, bool>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D))).ToArray<IRange>();
     IRange abyLt9clZggmJsWhw2 = \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<IRange>(array);
     if (abyLt9clZggmJsWhw2 != null)
     {
@@ -1262,7 +1262,7 @@ internal class SciChartSurface :
   {
     if (this.\u0023\u003Dz1mGpFN8tTa5PB1b5eA\u003D\u003D == null || this.\u0023\u003DzkW\u0024qJVeNKX1VtemTog\u003D\u003D == null)
       return;
-    this.IsPolarChart = this.\u0023\u003Dz1mGpFN8tTa5PB1b5eA\u003D\u003D.Items.OfType<IAxis>().Any<IAxis>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DziZ6WqO9c0bLyreXcPw\u003D\u003D ?? (SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DziZ6WqO9c0bLyreXcPw\u003D\u003D = new Func<IAxis, bool>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzHqCL4TMIgkX9lgbfbVwoLztjktmcnH1IkQ\u003D\u003D))) || this.\u0023\u003DzkW\u0024qJVeNKX1VtemTog\u003D\u003D.Items.OfType<IAxis>().Any<IAxis>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2u81qtV0w4N3y6_wTA\u003D\u003D ?? (SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz2u81qtV0w4N3y6_wTA\u003D\u003D = new Func<IAxis, bool>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzqleqgxOwnD86h0g7xgV6jwj2FfjN9XQ2Tw\u003D\u003D)));
+    this.IsPolarChart = this.\u0023\u003Dz1mGpFN8tTa5PB1b5eA\u003D\u003D.Items.OfType<IAxis>().Any<IAxis>(SciChartSurface.SomeClass34343383.\u0023\u003DziZ6WqO9c0bLyreXcPw\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003DziZ6WqO9c0bLyreXcPw\u003D\u003D = new Func<IAxis, bool>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzHqCL4TMIgkX9lgbfbVwoLztjktmcnH1IkQ\u003D\u003D))) || this.\u0023\u003DzkW\u0024qJVeNKX1VtemTog\u003D\u003D.Items.OfType<IAxis>().Any<IAxis>(SciChartSurface.SomeClass34343383.\u0023\u003Dz2u81qtV0w4N3y6_wTA\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003Dz2u81qtV0w4N3y6_wTA\u003D\u003D = new Func<IAxis, bool>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzqleqgxOwnD86h0g7xgV6jwj2FfjN9XQ2Tw\u003D\u003D)));
   }
 
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003Dz5v44edx1gaaI(
@@ -1356,7 +1356,7 @@ internal class SciChartSurface :
     this.ApplyTemplate();
     this.\u0023\u003DznV0cpNo\u003D();
     if (this.Annotations != null)
-      this.Annotations.OfType<FrameworkElement>().\u0023\u003Dz30RSSSygABj_<FrameworkElement>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzkVHywpw3evyESZQ1iA\u003D\u003D ?? (SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzkVHywpw3evyESZQ1iA\u003D\u003D = new Action<FrameworkElement>(SciChartSurface.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzSnploAESTvQvxQJvSegWmmQ\u003D)));
+      this.Annotations.OfType<FrameworkElement>().\u0023\u003Dz30RSSSygABj_<FrameworkElement>(SciChartSurface.SomeClass34343383.\u0023\u003DzkVHywpw3evyESZQ1iA\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003DzkVHywpw3evyESZQ1iA\u003D\u003D = new Action<FrameworkElement>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzSnploAESTvQvxQJvSegWmmQ\u003D)));
     this.Measure(availableSize);
     this.Arrange(new Rect(new Point(0.0, 0.0), availableSize));
     this.UpdateLayout();
@@ -1905,9 +1905,9 @@ internal class SciChartSurface :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly SciChartSurface.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new SciChartSurface.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly SciChartSurface.SomeClass34343383 SomeMethond0343 = new SciChartSurface.SomeClass34343383();
     public static Func<IRange, bool> \u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003DziZ6WqO9c0bLyreXcPw\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003Dz2u81qtV0w4N3y6_wTA\u003D\u003D;

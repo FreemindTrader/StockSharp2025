@@ -32,7 +32,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Delegate \u0023\u003Dzz9oqqeJpzNfoAe16JA\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  internal Action \u0023\u003Dzpc1\u0024iG76MVacUIlTZA\u003D\u003D = \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Action(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D));
+  internal Action \u0023\u003Dzpc1\u0024iG76MVacUIlTZA\u003D\u003D = \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Action(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D));
 
   public \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D()
   {
@@ -100,7 +100,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
 
   public void \u0023\u003DzS__l_ifl50tN()
   {
-    this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzi1mryHm_34LaAslQH6vheC4\u003D)));
+    this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dzi1mryHm_34LaAslQH6vheC4\u003D)));
   }
 
   protected override void ClearItems()
@@ -163,7 +163,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
     qws5VcJaSLcUcBty.\u0023\u003Dz2vouRgM\u003D = _param1 as IAnnotation;
     if (qws5VcJaSLcUcBty.\u0023\u003Dz2vouRgM\u003D == null)
       return;
-    CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(qws5VcJaSLcUcBty.\u0023\u003DzohWX52bl44U09jwJQRRBQCc\u003D)).ToArray<IAnnotation>(), \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzWLL21j0cIbtvfyx1n7j_L3p5Tj3r)));
+    CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(qws5VcJaSLcUcBty.\u0023\u003DzohWX52bl44U09jwJQRRBQCc\u003D)).ToArray<IAnnotation>(), \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzWLL21j0cIbtvfyx1n7j_L3p5Tj3r)));
   }
 
   private void \u0023\u003Dzb6pL05pO1ZwuBRQlrw\u003D\u003D(
@@ -176,7 +176,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
     uuovZyvmyeAqC2gog8.\u0023\u003Dz2vouRgM\u003D = _param1 as IAnnotation;
     if (uuovZyvmyeAqC2gog8.\u0023\u003Dz2vouRgM\u003D == null)
       return;
-    CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(uuovZyvmyeAqC2gog8.\u0023\u003Dzxqad0J2WdWQXWHM7O24\u0024gAw\u003D)).ToArray<IAnnotation>(), \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DznHZdoyT\u0024EEaTkfWvQEMXoEih2Miy)));
+    CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(uuovZyvmyeAqC2gog8.\u0023\u003Dzxqad0J2WdWQXWHM7O24\u0024gAw\u003D)).ToArray<IAnnotation>(), \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DznHZdoyT\u0024EEaTkfWvQEMXoEih2Miy)));
   }
 
   private void \u0023\u003Dz4Q47Joqo_tHsaan4\u0024A\u003D\u003D(
@@ -247,7 +247,7 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
     if (!_param1.get_IsEditable() || _param1.get_IsSelected() || !_param1.IsAttached)
       return false;
     if (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk() != \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift || !this.\u0023\u003DzbjRX\u0024PUuuOXT(_param1))
-      this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D)));
+      this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IAnnotation>(\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D)));
     this.\u0023\u003DzdkkvQAq7ppeh(_param1);
     return true;
   }
@@ -299,9 +299,9 @@ internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D.SomeClass34343383();
     public static Action \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
     public static Action \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Action<IAnnotation> \u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D;

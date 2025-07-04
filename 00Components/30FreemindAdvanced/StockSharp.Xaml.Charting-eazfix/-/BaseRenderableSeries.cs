@@ -33,7 +33,7 @@ internal abstract class BaseRenderableSeries :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003DzxWzRxjX3V8Eh = DependencyProperty.Register("DataSeriesIndex", typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) -1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD)));
+  public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   public static readonly DependencyProperty \u0023\u003Dz8b6MQAIE8UZn = DependencyProperty.Register(nameof (IsVisible), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzNhd_wqx65hB\u0024)));
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -1165,9 +1165,9 @@ internal abstract class BaseRenderableSeries :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly BaseRenderableSeries.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new BaseRenderableSeries.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly BaseRenderableSeries.SomeClass34343383 SomeMethond0343 = new BaseRenderableSeries.SomeClass34343383();
 
     internal void \u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD(
       DependencyObject _param1,

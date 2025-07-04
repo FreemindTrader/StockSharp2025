@@ -52,7 +52,7 @@ public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
     VolumeIndicator indicator,
     IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
   {
-    return (0 | (this.DrawValues(data[(IIndicator) indicator], (IChartElement) this.UpVolume, VolumePainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D ?? (VolumePainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D = new Func<ChartDrawData.IndicatorData, double>(VolumePainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzCqJJ\u0024wgpxEVd_TJWqw\u003D\u003D))) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator], (IChartElement) this.DownVolume, VolumePainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D ?? (VolumePainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D = new Func<ChartDrawData.IndicatorData, double>(VolumePainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz2dmg6iDJoRoCFC4spg\u003D\u003D))) ? 1 : 0)) != 0;
+    return (0 | (this.DrawValues(data[(IIndicator) indicator], (IChartElement) this.UpVolume, VolumePainter.SomeClass34343383.\u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D ?? (VolumePainter.SomeClass34343383.\u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D = new Func<ChartDrawData.IndicatorData, double>(VolumePainter.SomeClass34343383.SomeMethond0343.\u0023\u003DzCqJJ\u0024wgpxEVd_TJWqw\u003D\u003D))) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator], (IChartElement) this.DownVolume, VolumePainter.SomeClass34343383.\u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D ?? (VolumePainter.SomeClass34343383.\u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D = new Func<ChartDrawData.IndicatorData, double>(VolumePainter.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2dmg6iDJoRoCFC4spg\u003D\u003D))) ? 1 : 0)) != 0;
   }
 
   public override void Load(SettingsStorage storage)
@@ -79,9 +79,9 @@ public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly VolumePainter.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new VolumePainter.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly VolumePainter.SomeClass34343383 SomeMethond0343 = new VolumePainter.SomeClass34343383();
     public static Func<ChartDrawData.IndicatorData, double> \u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D;
     public static Func<ChartDrawData.IndicatorData, double> \u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D;
 

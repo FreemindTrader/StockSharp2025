@@ -61,7 +61,7 @@ public class MovingAverageConvergenceDivergenceHistogramPainter :
     MovingAverageConvergenceDivergenceHistogram indicator,
     IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
   {
-    return (0 | (this.DrawValues(data[(IIndicator) indicator.Macd], (IChartElement) this.Macd) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.SignalMa], (IChartElement) this.Signal) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.Macd], data[(IIndicator) indicator.SignalMa], (IChartElement) this.Histogram, MovingAverageConvergenceDivergenceHistogramPainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? (MovingAverageConvergenceDivergenceHistogramPainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Func<double, double, double>(MovingAverageConvergenceDivergenceHistogramPainter.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D))) ? 1 : 0)) != 0;
+    return (0 | (this.DrawValues(data[(IIndicator) indicator.Macd], (IChartElement) this.Macd) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.SignalMa], (IChartElement) this.Signal) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.Macd], data[(IIndicator) indicator.SignalMa], (IChartElement) this.Histogram, MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? (MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Func<double, double, double>(MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.SomeMethond0343.\u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D))) ? 1 : 0)) != 0;
   }
 
   public override void Load(SettingsStorage storage)
@@ -81,9 +81,9 @@ public class MovingAverageConvergenceDivergenceHistogramPainter :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly MovingAverageConvergenceDivergenceHistogramPainter.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new MovingAverageConvergenceDivergenceHistogramPainter.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383 SomeMethond0343 = new MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383();
     public static Func<double, double, double> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
     internal double \u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D(double _param1, double _param2)

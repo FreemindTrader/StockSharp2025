@@ -329,7 +329,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
   public override bool CanMultiSelect(
     IAnnotation[] annotations)
   {
-    return ((IEnumerable<IAnnotation>) annotations).All<IAnnotation>(ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D ?? (ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D = new Func<IAnnotation, bool>(ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D)));
+    return ((IEnumerable<IAnnotation>) annotations).All<IAnnotation>(ActiveOrderAnnotation.SomeClass34343383.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D ?? (ActiveOrderAnnotation.SomeClass34343383.\u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D = new Func<IAnnotation, bool>(ActiveOrderAnnotation.SomeClass34343383.SomeMethond0343.\u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D)));
   }
 
   public event Action<ActiveOrderAnnotation> AnimationDone;
@@ -532,9 +532,9 @@ internal class ActiveOrderAnnotation : AnnotationBase
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ActiveOrderAnnotation.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ActiveOrderAnnotation.SomeClass34343383 SomeMethond0343 = new ActiveOrderAnnotation.SomeClass34343383();
     public static Func<IAnnotation, bool> \u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D;
 
     internal bool \u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D(

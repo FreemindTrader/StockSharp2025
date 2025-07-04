@@ -35,7 +35,7 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
     get => throw new NotSupportedException();
     set
     {
-      this.\u0023\u003DzjQEUHP_xvugS.SetItemsSource<IChartCandleElement>(value, ChartCandleElementPicker.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (ChartCandleElementPicker.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IChartCandleElement, string>(ChartCandleElementPicker.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D)));
+      this.\u0023\u003DzjQEUHP_xvugS.SetItemsSource<IChartCandleElement>(value, ChartCandleElementPicker.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (ChartCandleElementPicker.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IChartCandleElement, string>(ChartCandleElementPicker.SomeClass34343383.SomeMethond0343.\u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D)));
     }
   }
 
@@ -82,9 +82,9 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly ChartCandleElementPicker.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartCandleElementPicker.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ChartCandleElementPicker.SomeClass34343383 SomeMethond0343 = new ChartCandleElementPicker.SomeClass34343383();
     public static Func<IChartCandleElement, string> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
 
     internal string \u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D(IChartCandleElement _param1)

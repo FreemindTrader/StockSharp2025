@@ -355,7 +355,7 @@ public class Chart :
 
   private (IChartCandleElement, Subscription) \u0023\u003DzmqXWWh6oQVIEJrU2Pw\u003D\u003D()
   {
-    foreach (IChartElement chartElement in this.Areas.SelectMany<IChartArea, IChartElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzv\u002455fO77Mn0JronfvA\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzv\u002455fO77Mn0JronfvA\u003D\u003D = new Func<IChartArea, IEnumerable<IChartElement>>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPJeLPTCgYwdmBIJASFbIA_hFSy_8))))
+    foreach (IChartElement chartElement in this.Areas.SelectMany<IChartArea, IChartElement>(Chart.SomeClass34343383.\u0023\u003Dzv\u002455fO77Mn0JronfvA\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003Dzv\u002455fO77Mn0JronfvA\u003D\u003D = new Func<IChartArea, IEnumerable<IChartElement>>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzPJeLPTCgYwdmBIJASFbIA_hFSy_8))))
     {
       if (chartElement is IChartCandleElement element)
       {
@@ -852,7 +852,7 @@ public class Chart :
 
   internal TimeZoneInfo \u0023\u003DzJp_PZYEzsJcq()
   {
-    return this.Areas.Select<IChartArea, IChartAxis>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzUgb1mArEMRFvFA4YrQ\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzUgb1mArEMRFvFA4YrQ\u003D\u003D = new Func<IChartArea, IChartAxis>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzqN6a1mvRk0j592xRhqiAxD4ES8KX))).LastOrDefault<IChartAxis>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHbIKsCHhb08DRHHYMg\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHbIKsCHhb08DRHHYMg\u003D\u003D = new Func<IChartAxis, bool>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzOCtOMr4FFxWKTTRmm0dMrehqCY9f)))?.TimeZone;
+    return this.Areas.Select<IChartArea, IChartAxis>(Chart.SomeClass34343383.\u0023\u003DzUgb1mArEMRFvFA4YrQ\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzUgb1mArEMRFvFA4YrQ\u003D\u003D = new Func<IChartArea, IChartAxis>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzqN6a1mvRk0j592xRhqiAxD4ES8KX))).LastOrDefault<IChartAxis>(Chart.SomeClass34343383.\u0023\u003DzHbIKsCHhb08DRHHYMg\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzHbIKsCHhb08DRHHYMg\u003D\u003D = new Func<IChartAxis, bool>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzOCtOMr4FFxWKTTRmm0dMrehqCY9f)))?.TimeZone;
   }
 
   internal void \u0023\u003DzBF\u0024LAMIgiEWk(TimeSpan _param1)
@@ -877,7 +877,7 @@ public class Chart :
       return;
     IChartArea chartArea = magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D.ChartArea;
     magwJg5Cu0tHrBa0.\u0023\u003DzlRZ9MD8\u003D = this.TryGetSubscription((IChartElement) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D);
-    Dictionary<IChartIndicatorElement, Tuple<IIndicator, IChartArea>> dictionary = ((IEnumerable<KeyValuePair<IChartElement, Subscription>>) this.\u0023\u003DzvWHSaOs\u003D).Where<KeyValuePair<IChartElement, Subscription>>(new Func<KeyValuePair<IChartElement, Subscription>, bool>(magwJg5Cu0tHrBa0.\u0023\u003Dz0h9UKK62LR3Vt49xiuMu8R9QgAUI)).Select<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D = new Func<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzPMkLVMTIVacbdOnMgx5om9R8XfFp42JlLQ\u003D\u003D))).ToDictionary<IChartIndicatorElement, IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D = new Func<IChartIndicatorElement, IChartIndicatorElement>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzuKv4rqmZgBRXOk9cL\u0024V\u0024mJZ_bYxaKSqnjQ\u003D\u003D)), new Func<IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(magwJg5Cu0tHrBa0.\u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX));
+    Dictionary<IChartIndicatorElement, Tuple<IIndicator, IChartArea>> dictionary = ((IEnumerable<KeyValuePair<IChartElement, Subscription>>) this.\u0023\u003DzvWHSaOs\u003D).Where<KeyValuePair<IChartElement, Subscription>>(new Func<KeyValuePair<IChartElement, Subscription>, bool>(magwJg5Cu0tHrBa0.\u0023\u003Dz0h9UKK62LR3Vt49xiuMu8R9QgAUI)).Select<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.SomeClass34343383.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzW6pqQQ9lqKPZfyTXDw\u003D\u003D = new Func<KeyValuePair<IChartElement, Subscription>, IChartIndicatorElement>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzPMkLVMTIVacbdOnMgx5om9R8XfFp42JlLQ\u003D\u003D))).ToDictionary<IChartIndicatorElement, IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(Chart.SomeClass34343383.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzBCXPyDZYNZgQeoOs4Q\u003D\u003D = new Func<IChartIndicatorElement, IChartIndicatorElement>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzuKv4rqmZgBRXOk9cL\u0024V\u0024mJZ_bYxaKSqnjQ\u003D\u003D)), new Func<IChartIndicatorElement, Tuple<IIndicator, IChartArea>>(magwJg5Cu0tHrBa0.\u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX));
     this.\u0023\u003Dz\u0024_wDItQvnYOy((IChartElement) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D);
     CollectionHelper.ForEach<IChartIndicatorElement>((IEnumerable<IChartIndicatorElement>) dictionary.Keys, new Action<IChartIndicatorElement>(this.\u0023\u003Dz\u0024_wDItQvnYOy));
     ((IChartComponent) magwJg5Cu0tHrBa0.\u0023\u003Dz_i6sZDg\u003D).ResetUI();
@@ -911,7 +911,7 @@ public class Chart :
     if (!this.IsInteracted)
       return;
     this.\u0023\u003DzvWHSaOs\u003D.Clear();
-    CollectionHelper.ForEach<Chart.\u0023\u003DzZQ9Hpf12oRwg>((IEnumerable<Chart.\u0023\u003DzZQ9Hpf12oRwg>) this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Values, Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D = new Action<Chart.\u0023\u003DzZQ9Hpf12oRwg>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzd9aoFEQWycLNB5pmAWPP_1U\u003D)));
+    CollectionHelper.ForEach<Chart.\u0023\u003DzZQ9Hpf12oRwg>((IEnumerable<Chart.\u0023\u003DzZQ9Hpf12oRwg>) this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Values, Chart.SomeClass34343383.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D = new Action<Chart.\u0023\u003DzZQ9Hpf12oRwg>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003Dzd9aoFEQWycLNB5pmAWPP_1U\u003D)));
     this.\u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D.Clear();
     object source = storage.GetValue<object>("Areas", (object) null);
     if (source == null)
@@ -936,7 +936,7 @@ public class Chart :
     storage.SetValue<bool>("ShowPerfStats", this.ShowPerfStats);
     if (!this.IsInteracted)
       return;
-    storage.SetValue<SettingsStorage[]>("Areas", this.\u0023\u003Dza1mnh6ythHbd.Select<IChartArea, SettingsStorage>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D = new Func<IChartArea, SettingsStorage>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D))).ToArray<SettingsStorage>());
+    storage.SetValue<SettingsStorage[]>("Areas", this.\u0023\u003Dza1mnh6ythHbd.Select<IChartArea, SettingsStorage>(Chart.SomeClass34343383.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D = new Func<IChartArea, SettingsStorage>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D))).ToArray<SettingsStorage>());
   }
 
   public void ReSubscribeElements()
@@ -1278,9 +1278,9 @@ public class Chart :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly Chart.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new Chart.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly Chart.SomeClass34343383 SomeMethond0343 = new Chart.SomeClass34343383();
     public static Func<IChartArea, 
     #nullable enable
     IEnumerable<
@@ -1309,7 +1309,7 @@ public class Chart :
 
     internal IChartAxis \u0023\u003DzqN6a1mvRk0j592xRhqiAxD4ES8KX(IChartArea _param1)
     {
-      return ((IEnumerable<IChartAxis>) _param1.XAxises).FirstOrDefault<IChartAxis>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJWBwcSmmMYm95T_4EA\u003D\u003D ?? (Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzJWBwcSmmMYm95T_4EA\u003D\u003D = new Func<IChartAxis, bool>(Chart.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzVVB4LH1KsMwAYfJoLw4TOG6pJ6Nk)));
+      return ((IEnumerable<IChartAxis>) _param1.XAxises).FirstOrDefault<IChartAxis>(Chart.SomeClass34343383.\u0023\u003DzJWBwcSmmMYm95T_4EA\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzJWBwcSmmMYm95T_4EA\u003D\u003D = new Func<IChartAxis, bool>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzVVB4LH1KsMwAYfJoLw4TOG6pJ6Nk)));
     }
 
     internal bool \u0023\u003DzVVB4LH1KsMwAYfJoLw4TOG6pJ6Nk(IChartAxis _param1)
@@ -1497,7 +1497,7 @@ public class Chart :
       this._chart = _param1 ?? throw new ArgumentNullException("parent");
       this.\u0023\u003Dz2YSX_Z4\u003D = _param2 ?? throw new ArgumentNullException("element");
       this.\u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D = _param3 ?? throw new ArgumentNullException("indicator");
-      this.Indicator.Reseted += new Action(this.\u0023\u003Dze7c89\u0024wRkR45b80_dQ\u003D\u003D);
+      this.Indicator.Reseted += new Action(this.OnResetCallback);
     }
 
     public IIndicator Indicator => this.\u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D;
@@ -1505,10 +1505,10 @@ public class Chart :
     protected virtual void DisposeManaged()
     {
       base.DisposeManaged();
-      this.Indicator.Reseted -= new Action(this.\u0023\u003Dze7c89\u0024wRkR45b80_dQ\u003D\u003D);
+      this.Indicator.Reseted -= new Action(this.OnResetCallback);
     }
 
-    private void \u0023\u003Dze7c89\u0024wRkR45b80_dQ\u003D\u003D()
+    private void OnResetCallback()
     {
       if (this._chart.DisableIndicatorReset)
         return;

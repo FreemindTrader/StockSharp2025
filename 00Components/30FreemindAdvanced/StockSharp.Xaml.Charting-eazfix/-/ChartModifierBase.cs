@@ -61,7 +61,7 @@ internal abstract class ChartModifierBase :
   protected ChartModifierBase()
   {
     this.\u0023\u003DzM\u0024iyCHU\u003D();
-    this.DataContextChanged += ChartModifierBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D ?? (ChartModifierBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D = new DependencyPropertyChangedEventHandler(ChartModifierBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzGHSYN_3KV4orJNfNmStVzRA\u003D));
+    this.DataContextChanged += ChartModifierBase.SomeClass34343383.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D ?? (ChartModifierBase.SomeClass34343383.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D = new DependencyPropertyChangedEventHandler(ChartModifierBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzGHSYN_3KV4orJNfNmStVzRA\u003D));
     this.\u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(true);
   }
 
@@ -450,9 +450,9 @@ internal abstract class ChartModifierBase :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly ChartModifierBase.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ChartModifierBase.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ChartModifierBase.SomeClass34343383 SomeMethond0343 = new ChartModifierBase.SomeClass34343383();
     public static DependencyPropertyChangedEventHandler \u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D;
 
     internal void \u0023\u003DzGHSYN_3KV4orJNfNmStVzRA\u003D(

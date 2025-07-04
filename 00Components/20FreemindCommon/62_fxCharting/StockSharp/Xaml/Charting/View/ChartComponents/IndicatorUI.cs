@@ -15,7 +15,7 @@ using StockSharp.Charting;
 namespace fx.Charting
 {
     
-    public sealed class IndicatorUI : ChartComponent< IndicatorUI >
+    public sealed class IndicatorUI : ChartElement< IndicatorUI >
     {
         private DefaultPainter _defaultPainter;
         private IChartIndicatorPainter _chartIndicatorPainter;

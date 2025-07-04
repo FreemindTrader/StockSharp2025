@@ -58,7 +58,7 @@ internal abstract class \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u002
     int _param3,
     uint _param4)
   {
-    \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D vbxLeArTkallkIdHg = new \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D.\u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D();
+    \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D.SomeWheireosoe();
     vbxLeArTkallkIdHg.\u0023\u003DzCPSuI41d8esj = _param4;
     if (_param1 >= _param2)
       return new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(TimeSpan.Zero, TimeSpan.Zero);
@@ -98,7 +98,7 @@ internal abstract class \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u002
     return (\u0023\u003DzXMBDTJZ70yU3Te1Rk5MqGwqd9HRLNiqw6g\u003D\u003D) this.\u0023\u003DzyE145DTzxI8R(_param1, _param2, _param3, _param4);
   }
 
-  private sealed class \u0023\u003Dz5VBxLeARTkallkIDHg\u003D\u003D
+  private sealed class SomeWheireosoe
   {
     public uint \u0023\u003DzCPSuI41d8esj;
     public TimeSpan \u0023\u003DzFYPaJVU_4gr3;

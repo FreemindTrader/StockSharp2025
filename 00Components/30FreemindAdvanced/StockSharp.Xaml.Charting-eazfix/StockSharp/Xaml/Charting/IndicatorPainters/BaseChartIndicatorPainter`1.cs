@@ -54,7 +54,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
 
   private void StartDrawing()
   {
-    CollectionHelper.ForEach<IDrawableChartElement>(this.GetIndicatorElement().ChildElements.OfType<IDrawableChartElement>(), BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Action<IDrawableChartElement>(BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D)));
+    CollectionHelper.ForEach<IDrawableChartElement>(this.GetIndicatorElement().ChildElements.OfType<IDrawableChartElement>(), BaseChartIndicatorPainter<TIndicator>.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Action<IDrawableChartElement>(BaseChartIndicatorPainter<TIndicator>.SomeClass34343383.SomeMethond0343.\u0023\u003DzwjAYs6wFYWgvI8xvaRDrrWE\u003D)));
   }
 
   protected abstract bool OnDraw( TIndicator indicator, IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data );
@@ -225,7 +225,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     IIndicatorValue _param2,
     ref BaseChartIndicatorPainter<TIndicator>.\u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D _param3)
   {
-    CollectionHelper.SafeAdd<IIndicator, IList<ChartDrawData.IndicatorData>>((IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>>) _param3.\u0023\u003DzQGpA0P4\u003D, _param0, BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D = new Func<IIndicator, IList<ChartDrawData.IndicatorData>>(BaseChartIndicatorPainter<TIndicator>.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzEr1L4a4MYK7N\u0024OD_XA\u003D\u003D))).Add(new ChartDrawData.IndicatorData(_param1, _param2));
+    CollectionHelper.SafeAdd<IIndicator, IList<ChartDrawData.IndicatorData>>((IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>>) _param3.\u0023\u003DzQGpA0P4\u003D, _param0, BaseChartIndicatorPainter<TIndicator>.SomeClass34343383.\u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D ?? (BaseChartIndicatorPainter<TIndicator>.SomeClass34343383.\u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D = new Func<IIndicator, IList<ChartDrawData.IndicatorData>>(BaseChartIndicatorPainter<TIndicator>.SomeClass34343383.SomeMethond0343.\u0023\u003DzEr1L4a4MYK7N\u0024OD_XA\u003D\u003D))).Add(new ChartDrawData.IndicatorData(_param1, _param2));
     if (!(_param2 is ComplexIndicatorValue complexIndicatorValue))
       return;
     foreach (KeyValuePair<IIndicator, IIndicatorValue> innerValue in (IEnumerable<KeyValuePair<IIndicator, IIndicatorValue>>) complexIndicatorValue.InnerValues)
@@ -243,9 +243,9 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.SomeClass34343383 SomeMethond0343 = new BaseChartIndicatorPainter<\u0023\u003Dzt3swxfw\u003D>.SomeClass34343383();
     public static Action<IDrawableChartElement> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
     public static Func<IIndicator, IList<ChartDrawData.IndicatorData>> \u0023\u003DzWz\u0024_6kj_uLxgW8Fq3Q\u003D\u003D;
 

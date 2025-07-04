@@ -1249,7 +1249,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   {
     List<Type> source = this.\u0023\u003DzvwDcRtQA0c4T();
     if (!source.Contains(_param1))
-      throw new InvalidOperationException($"{((object) this).GetType().Name} does not support the type {_param1}. Supported types include {string.Join(", ", source.Select<Type, string>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D ?? (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D = new Func<Type, string>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D))).ToArray<string>())}");
+      throw new InvalidOperationException($"{((object) this).GetType().Name} does not support the type {_param1}. Supported types include {string.Join(", ", source.Select<Type, string>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383.\u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D ?? (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383.\u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D = new Func<Type, string>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D))).ToArray<string>())}");
   }
 
   protected abstract List<Type> \u0023\u003DzvwDcRtQA0c4T();
@@ -1334,7 +1334,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     if (this.ParentSurface?.get_RenderableSeries() == null)
       return (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) null;
     IRenderableSeries[] array = this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzT1eqMAzRyPWuBr9AGC0GrIg\u003D)).ToArray<IRenderableSeries>();
-    return (((IEnumerable<IRenderableSeries>) array).FirstOrDefault<IRenderableSeries>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D ?? (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D = new Func<IRenderableSeries, bool>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D))) ?? \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<IRenderableSeries>(array))?.get_DataSeries();
+    return (((IEnumerable<IRenderableSeries>) array).FirstOrDefault<IRenderableSeries>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D ?? (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D = new Func<IRenderableSeries, bool>(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D))) ?? \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<IRenderableSeries>(array))?.get_DataSeries();
   }
 
   protected virtual void \u0023\u003Dz15moWio\u003D(string _param1)
@@ -2165,9 +2165,9 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383 SomeMethond0343 = new dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.SomeClass34343383();
     public static Func<Type, string> \u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D;
     public static Func<IRenderableSeries, bool> \u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D;
 

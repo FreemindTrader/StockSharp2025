@@ -49,7 +49,7 @@ internal class RulerAnnotation : AnnotationBase
       Interval = TimeSpan.FromMilliseconds(200.0)
     };
     RulerAnnotation._timer.Start();
-    RulerAnnotation._timer.Tick += RulerAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (RulerAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new EventHandler(RulerAnnotation.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzgD6Rh__eqnmCn0m__iG5ses\u003D));
+    RulerAnnotation._timer.Tick += RulerAnnotation.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (RulerAnnotation.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new EventHandler(RulerAnnotation.SomeClass34343383.SomeMethond0343.\u0023\u003DzgD6Rh__eqnmCn0m__iG5ses\u003D));
   }
 
   public double RulerWidth
@@ -287,9 +287,9 @@ internal class RulerAnnotation : AnnotationBase
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly RulerAnnotation.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new RulerAnnotation.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly RulerAnnotation.SomeClass34343383 SomeMethond0343 = new RulerAnnotation.SomeClass34343383();
     public static EventHandler \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
 
     internal void \u0023\u003DzgD6Rh__eqnmCn0m__iG5ses\u003D(

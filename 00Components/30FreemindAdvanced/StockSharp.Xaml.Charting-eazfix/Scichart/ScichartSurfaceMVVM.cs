@@ -119,7 +119,7 @@ public sealed class ScichartSurfaceMVVM :
     this._dispatcherTimer = new DispatcherTimer((DispatcherPriority) 7, Application.Current.Dispatcher);
     this._dispatcherTimer.Tick += new EventHandler(this.\u0023\u003DzMXbJl7nt_k3k);
     this._showHiddenAxesCommand = (ICommand) new DelegateCommand(new Action(this.\u0023\u003Dzf5vVcayMq7_zxBOILQ\u003D\u003D));
-    this.ResetAxisTimeZoneCommand = (ICommand) new DelegateCommand<ChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Action<ChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D)));
+    this.ResetAxisTimeZoneCommand = (ICommand) new DelegateCommand<ChartAxis>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Action<ChartAxis>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzB6IuSPwhBuqMEjjiXTaDcdI\u003D)));
     this.Height = v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.Height;
     ((INotifyCollection<IChartElement>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.Elements).Added += new Action<IChartElement>(this.\u0023\u003Dz4M_pW8k\u003D);
     ((INotifyCollection<IChartElement>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.Elements).Removing += new Func<IChartElement, bool>(this.\u0023\u003DzmxDTmQc\u003D);
@@ -239,7 +239,7 @@ public sealed class ScichartSurfaceMVVM :
 
   public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c(Func<Order, bool> _param1)
   {
-    return ((IEnumerable<ParentVM>) this._childElements.CachedValues).Where<ParentVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<ParentVM, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242))).SelectMany<ParentVM, Order>(new Func<ParentVM, IEnumerable<Order>>(new ScichartSurfaceMVVM.\u0023\u003Dz0EETrg8PejletCT5YuMr1Rw\u003D()
+    return ((IEnumerable<ParentVM>) this._childElements.CachedValues).Where<ParentVM>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<ParentVM, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242))).SelectMany<ParentVM, Order>(new Func<ParentVM, IEnumerable<Order>>(new ScichartSurfaceMVVM.\u0023\u003Dz0EETrg8PejletCT5YuMr1Rw\u003D()
     {
       \u0023\u003DzaPd0W_M\u003D = _param1
     }.\u0023\u003Dz3ppSxBWUBHoE_OmJHdF4GT0\u003D));
@@ -413,8 +413,8 @@ public sealed class ScichartSurfaceMVVM :
   {
     if (this._sciChartSurface == null)
       return;
-    CollectionHelper.ForEach<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(this.XAxises.OfType<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(), ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D = new Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ)));
-    CollectionHelper.ForEach<ParentVM>((IEnumerable<ParentVM>) ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements).Values, ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Action<ParentVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR)));
+    CollectionHelper.ForEach<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(this.XAxises.OfType<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(), ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D = new Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ)));
+    CollectionHelper.ForEach<ParentVM>((IEnumerable<ParentVM>) ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements).Values, ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Action<ParentVM>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR)));
     if (!this.ShowPerfStats || _param2.\u0023\u003DzguiAuOeZYTXy() <= 0.0)
       return;
     double num = 1000.0 / _param2.\u0023\u003DzguiAuOeZYTXy();
@@ -422,7 +422,7 @@ public sealed class ScichartSurfaceMVVM :
       this.\u0023\u003DzqX5ow2rh1c9U -= this._queue.Dequeue();
     this._queue.Enqueue(num);
     this.\u0023\u003DzqX5ow2rh1c9U += num;
-    this.PerfStats = $"FPS: {this.\u0023\u003DzqX5ow2rh1c9U / (double) this._queue.Count:0}   Count: {this._sciChartSurface.RenderableSeries.Where<IRenderableSeries>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D = new Func<IRenderableSeries, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY))).Sum<IRenderableSeries>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D = new Func<IRenderableSeries, int>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3))):n0}";
+    this.PerfStats = $"FPS: {this.\u0023\u003DzqX5ow2rh1c9U / (double) this._queue.Count:0}   Count: {this._sciChartSurface.RenderableSeries.Where<IRenderableSeries>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D = new Func<IRenderableSeries, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY))).Sum<IRenderableSeries>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D = new Func<IRenderableSeries, int>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3))):n0}";
   }
 
   private void \u0023\u003DzKrKnCxVCz6us(ChartDrawData _param1)
@@ -458,10 +458,10 @@ public sealed class ScichartSurfaceMVVM :
 
   private void \u0023\u003Dz9VF9FI8x1QxU()
   {
-    foreach (IChartComponent ddznyiGmdRlAevOq in ((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this._childElements).Where<KeyValuePair<IChartComponent, ParentVM>>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D))).Select<KeyValuePair<IChartComponent, ParentVM>, IChartComponent>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, IChartComponent>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D))).ToArray<IChartComponent>())
+    foreach (IChartComponent ddznyiGmdRlAevOq in ((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this._childElements).Where<KeyValuePair<IChartComponent, ParentVM>>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D))).Select<KeyValuePair<IChartComponent, ParentVM>, IChartComponent>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, IChartComponent>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D))).ToArray<IChartComponent>())
     {
       ParentVM a4VgOpCeDiqsTdzB = new ParentVM(this, ddznyiGmdRlAevOq);
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D)).Where<UIBaseVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D = new Func<UIBaseVM, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D))));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D)).Where<UIBaseVM>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D = new Func<UIBaseVM, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D))));
       ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements)[ddznyiGmdRlAevOq] = a4VgOpCeDiqsTdzB;
       if (ddznyiGmdRlAevOq.IsLegend)
         this.LegendElements.Add(a4VgOpCeDiqsTdzB);
@@ -471,7 +471,7 @@ public sealed class ScichartSurfaceMVVM :
 
   private void \u0023\u003DzbLGEkvI0sqrejb5agA\u003D\u003D()
   {
-    this.CandlesCompositeElement = ((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this._childElements).FirstOrDefault<KeyValuePair<IChartComponent, ParentVM>>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzOxutfFQq8iOlG6uGIIvjfQjn_lrYDZf0Gw\u003D\u003D))).Value;
+    this.CandlesCompositeElement = ((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this._childElements).FirstOrDefault<KeyValuePair<IChartComponent, ParentVM>>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzOxutfFQq8iOlG6uGIIvjfQjn_lrYDZf0Gw\u003D\u003D))).Value;
     this.PaneHasCandles = this.CandlesCompositeElement != null;
   }
 
@@ -494,7 +494,7 @@ public sealed class ScichartSurfaceMVVM :
     if (this.Chart != null)
     {
       ParentVM a4VgOpCeDiqsTdzB = new ParentVM(this, ddznyiGmdRlAevOq);
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D)).Where<UIBaseVM>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D = new Func<UIBaseVM, bool>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D))));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D))).Select<IDrawableChartElement, UIBaseVM>(new Func<IDrawableChartElement, UIBaseVM>(this.\u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D)).Where<UIBaseVM>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D = new Func<UIBaseVM, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D))));
       ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements)[ddznyiGmdRlAevOq] = a4VgOpCeDiqsTdzB;
       if (ddznyiGmdRlAevOq.IsLegend)
         this.LegendElements.Add(a4VgOpCeDiqsTdzB);
@@ -603,8 +603,8 @@ public sealed class ScichartSurfaceMVVM :
 
   private void \u0023\u003Dzf5vVcayMq7_zxBOILQ\u003D\u003D()
   {
-    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.XAxises, ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D = new Action<IChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzN_\u0024B1DcFjYnDp0by4f0KlE4uU6RB)));
-    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.YAxises, ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D ?? (ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D = new Action<IChartAxis>(ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzWE\u0024cRelRNS67FHvvu3n4cW42dbOy)));
+    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.XAxises, ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D = new Action<IChartAxis>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzN_\u0024B1DcFjYnDp0by4f0KlE4uU6RB)));
+    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.YAxises, ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D = new Action<IChartAxis>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzWE\u0024cRelRNS67FHvvu3n4cW42dbOy)));
   }
 
   public string PaneGroupSuffix
@@ -1154,9 +1154,9 @@ public sealed class ScichartSurfaceMVVM :
   }
 
   [Serializable]
-  private new sealed class \u0023\u003Dz7qOdpi4\u003D
+  private new sealed class SomeClass34343383
   {
-    public static readonly ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ScichartSurfaceMVVM.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ScichartSurfaceMVVM.SomeClass34343383 SomeMethond0343 = new ScichartSurfaceMVVM.SomeClass34343383();
     public static Action<ChartAxis> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
     public static Func<ParentVM, bool> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
     public static Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd> \u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D;
@@ -1287,7 +1287,7 @@ public sealed class ScichartSurfaceMVVM :
         if (a4VgOpCeDiqsTdzBArray == null)
         {
           List<ParentVM> a4VgOpCeDiqsTdzBList = new List<ParentVM>();
-          a4VgOpCeDiqsTdzBList.AddRange(((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this).OrderBy<KeyValuePair<IChartComponent, ParentVM>, int>(ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, int>(ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzfUnDYqsr\u0024Ej5bAJruqHN2sI\u003D))).Select<KeyValuePair<IChartComponent, ParentVM>, ParentVM>(ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D ?? (ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, ParentVM>(ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzbT5EZUEYMyUAzx5gAaXZNrw\u003D))));
+          a4VgOpCeDiqsTdzBList.AddRange(((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this).OrderBy<KeyValuePair<IChartComponent, ParentVM>, int>(ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, int>(ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzfUnDYqsr\u0024Ej5bAJruqHN2sI\u003D))).Select<KeyValuePair<IChartComponent, ParentVM>, ParentVM>(ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D ?? (ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, ParentVM>(ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzbT5EZUEYMyUAzx5gAaXZNrw\u003D))));
           a4VgOpCeDiqsTdzBArray = this.\u0023\u003DzlS7dPxLH4yBm = a4VgOpCeDiqsTdzBList.ToArray();
         }
         return a4VgOpCeDiqsTdzBArray;
@@ -1301,9 +1301,9 @@ public sealed class ScichartSurfaceMVVM :
     }
 
     [Serializable]
-    private sealed class \u0023\u003Dz7qOdpi4\u003D
+    private sealed class SomeClass34343383
     {
-      public static readonly ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ScichartSurfaceMVVM.ChartComponentParentVM.\u0023\u003Dz7qOdpi4\u003D();
+      public static readonly ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383 SomeMethond0343 = new ScichartSurfaceMVVM.ChartComponentParentVM.SomeClass34343383();
       public static Func<KeyValuePair<IChartComponent, ParentVM>, int> \u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D;
       public static Func<KeyValuePair<IChartComponent, ParentVM>, ParentVM> \u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D;
 

@@ -61,7 +61,7 @@ internal abstract class ApiElementBase :
       {
         yaxis = parentSurface.YAxis;
         if (yaxis == null && !parentSurface.get_YAxes().\u0023\u003DzCCMM80zDpO6N<IAxis>())
-          yaxis = parentSurface.get_YAxes().FirstOrDefault<IAxis>(ApiElementBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D ?? (ApiElementBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D = new Func<IAxis, bool>(ApiElementBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz40hF903Z7W1MLFKRgtpttIg\u003D)));
+          yaxis = parentSurface.get_YAxes().FirstOrDefault<IAxis>(ApiElementBase.SomeClass34343383.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D ?? (ApiElementBase.SomeClass34343383.\u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D = new Func<IAxis, bool>(ApiElementBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dz40hF903Z7W1MLFKRgtpttIg\u003D)));
       }
       return yaxis;
     }
@@ -77,7 +77,7 @@ internal abstract class ApiElementBase :
       {
         xaxis = parentSurface.XAxis;
         if (xaxis == null && !parentSurface.get_XAxes().\u0023\u003DzCCMM80zDpO6N<IAxis>())
-          xaxis = parentSurface.get_XAxes().FirstOrDefault<IAxis>(ApiElementBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D ?? (ApiElementBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D = new Func<IAxis, bool>(ApiElementBase.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003DzQY8WNqpkffjul30yEBWakgc\u003D)));
+          xaxis = parentSurface.get_XAxes().FirstOrDefault<IAxis>(ApiElementBase.SomeClass34343383.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D ?? (ApiElementBase.SomeClass34343383.\u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D = new Func<IAxis, bool>(ApiElementBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzQY8WNqpkffjul30yEBWakgc\u003D)));
       }
       return xaxis;
     }
@@ -145,9 +145,9 @@ internal abstract class ApiElementBase :
   }
 
   [Serializable]
-  private sealed class \u0023\u003Dz7qOdpi4\u003D
+  private sealed class SomeClass34343383
   {
-    public static readonly ApiElementBase.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new ApiElementBase.\u0023\u003Dz7qOdpi4\u003D();
+    public static readonly ApiElementBase.SomeClass34343383 SomeMethond0343 = new ApiElementBase.SomeClass34343383();
     public static Func<IAxis, bool> \u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D;
 
