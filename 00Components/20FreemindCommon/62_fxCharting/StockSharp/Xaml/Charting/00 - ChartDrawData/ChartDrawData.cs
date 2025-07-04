@@ -185,19 +185,19 @@ namespace fx.Charting
             return _annotationMap ?? ( _annotationMap = new PooledDictionary<AnnotationUI, sAnnotation>( ) );
         }
 
-        //public ChartDrawDataEx( IEnumerable<RefPair<DateTimeOffset, IDictionary<IfxChartElement, object>>> values )
+        //public ChartDrawDataEx( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> values )
         //{
         //    if ( values == null )
         //    {
         //        throw new ArgumentNullException( "values" );
         //    }
 
-        //    foreach ( RefPair<DateTimeOffset, IDictionary<IfxChartElement, object>> refPair in values )
+        //    foreach ( RefPair<DateTimeOffset, IDictionary<IChartElement, object>> refPair in values )
         //    {
         //        DateTimeOffset first = refPair.First;
-        //        foreach ( KeyValuePair<IfxChartElement, object> keyValuePair in refPair.Second )
+        //        foreach ( KeyValuePair<IChartElement, object> keyValuePair in refPair.Second )
         //        {
-        //            IfxChartElement uiElement = keyValuePair.Key;
+        //            IChartElement uiElement = keyValuePair.Key;
         //            object obj = keyValuePair.Value;
         //            CandlestickUI candleUI = uiElement as CandlestickUI;
         //            if ( candleUI != null )

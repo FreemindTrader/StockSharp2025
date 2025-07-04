@@ -271,7 +271,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
     {
       this.\u0023\u003DzRRvwDu67s9Rm.GetIndicatorElement().AddChildElement(this.\u0023\u003Dz_i6sZDg\u003D);
       // ISSUE: explicit non-virtual call
-      ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.Element).PersistentChartArea).ViewModel();
+      ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.Element).PersistentChartArea).ChartSurfaceViewModel;
       ParentVM a4VgOpCeDiqsTdzB;
       if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r((IChartComponent) this.\u0023\u003DzRRvwDu67s9Rm.GetIndicatorElement(), out a4VgOpCeDiqsTdzB))
         return;

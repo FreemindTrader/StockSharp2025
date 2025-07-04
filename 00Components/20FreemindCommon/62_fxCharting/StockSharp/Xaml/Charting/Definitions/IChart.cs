@@ -27,14 +27,14 @@ namespace fx.Charting
         
         IIndicator GetIndicator( IndicatorUI element );
 
-        object GetSource( IfxChartElement element );
+        object GetSource( IChartElement element );
 
-        void Reset( IEnumerable<IfxChartElement> elements );
+        void Reset( IEnumerable<IChartElement> elements );
 
         void Draw( ChartDrawDataEx data );
 
 
-        void AddElement   ( ChartArea area, IfxChartElement element );
+        void AddElement   ( ChartArea area, IChartElement element );
 
         void AddElement   ( ChartArea area, OrdersUI      element, Security security );
 
@@ -44,7 +44,7 @@ namespace fx.Charting
 
         void AddElement   ( ChartArea area, IndicatorUI   element, CandleSeries candleSeries, IIndicator indicator );
 
-        void RemoveElement( ChartArea area, IfxChartElement element );
+        void RemoveElement( ChartArea area, IChartElement element );
 
         void InvokeAnnotationCreatedEvent ( AnnotationUI annotation );
 

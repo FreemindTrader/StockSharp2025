@@ -7,13 +7,13 @@ namespace fx.Charting
     public class UltraChartCustomAnnotation : CustomAnnotation
     {
         private readonly string _text;
-        private readonly IfxChartElement _element;
+        private readonly IChartElement _element;
 
         public UltraChartCustomAnnotation( )
         {
         }
 
-        public UltraChartCustomAnnotation( string text, IfxChartElement chartElement )
+        public UltraChartCustomAnnotation( string text, IChartElement chartElement )
         {
             if( StringHelper.IsEmpty( text ) )
             {
@@ -37,7 +37,7 @@ namespace fx.Charting
             }
         }
 
-        public IfxChartElement Element
+        public IChartElement Element
         {
             get
             {

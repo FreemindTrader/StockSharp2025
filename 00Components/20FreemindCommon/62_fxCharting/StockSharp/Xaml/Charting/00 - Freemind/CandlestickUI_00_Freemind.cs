@@ -13,7 +13,7 @@ using fx.Definitions;
 
 namespace fx.Charting
 {
-    public partial class CandlestickUI : ChartComponent<CandlestickUI>, ICloneable<IfxChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IfxChartElement
+    public partial class CandlestickUI : ChartComponent<CandlestickUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IChartElement
     {
         [Display( Description = "CandlePattern", GroupName = "StyleString", Name = "TechnicalAnalysis", Order = 32, ResourceType = typeof( LocalizedStrings ) )]
         public bool ShowCandlePattern

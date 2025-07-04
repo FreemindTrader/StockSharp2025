@@ -18,14 +18,14 @@ namespace fx.Charting.CustomAnnotations
         {
         }
 
-        public UltrachartSignalAnnotationBase( string text, IfxChartElement element, bool isError )
+        public UltrachartSignalAnnotationBase( string text, IChartElement element, bool isError )
         {
             if ( StringHelper.IsEmpty( text ) )
             {
                 throw new ArgumentNullException( nameof( text ) );
             }
                 
-            IfxChartElement chartElement = element;
+            IChartElement chartElement = element;
             if ( chartElement == null )
                 throw new ArgumentNullException( nameof( chartElement ) );
             Element = chartElement;
@@ -49,6 +49,6 @@ namespace fx.Charting.CustomAnnotations
 
         public string Text { get; }
 
-        public IfxChartElement Element { get; }
+        public IChartElement Element { get; }
     }
 }

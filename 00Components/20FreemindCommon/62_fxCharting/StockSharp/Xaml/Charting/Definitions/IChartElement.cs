@@ -5,13 +5,13 @@ using System.ComponentModel;
 
 namespace fx.Charting
 {
-    public interface IfxChartElement : ICloneable< IfxChartElement >, INotifyPropertyChanged, ICloneable, INotifyPropertyChanging
+    public interface IChartElement : ICloneable< IChartElement >, INotifyPropertyChanged, ICloneable, INotifyPropertyChanging
     {
         Guid Id { get; }
 
-        IfxChartElement ParentElement { get; }
+        IChartElement ParentElement { get; }
 
-        IEnumerable< IfxChartElement > ChildElements { get; }
+        IEnumerable< IChartElement > ChildElements { get; }
 
         bool IsVisible { get; set; }
 

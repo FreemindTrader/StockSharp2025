@@ -20,7 +20,7 @@ internal abstract class AxisesComboBoxEditSettingsBase : ComboBoxEditSettings
             return base.CreateEditor( assignEditorSettings, defaultViewInfo, optimizationMode );
         }
 
-        IfxChartElement element = GetChartElement( editorColumn.Owner );
+        IChartElement element = GetChartElement( editorColumn.Owner );
         if ( element == null )
         {
             return base.CreateEditor( assignEditorSettings, defaultViewInfo, optimizationMode );
@@ -30,15 +30,15 @@ internal abstract class AxisesComboBoxEditSettingsBase : ComboBoxEditSettings
         return base.CreateEditor( assignEditorSettings, defaultViewInfo, optimizationMode );
     }
 
-    protected abstract void SetItemSource( IfxChartElement element );
+    protected abstract void SetItemSource( IChartElement element );
 
-    private IfxChartElement GetChartElement( RowData data )
+    private IChartElement GetChartElement( RowData data )
     {
         IndicatorUISettingsObject elementSettingsObject;
         for ( ; ( elementSettingsObject = data.Value as IndicatorUISettingsObject ) == null; data = data.Parent )
         {
-            IfxChartElement chartElement;
-            if ( ( chartElement = data.Value as IfxChartElement ) != null )
+            IChartElement chartElement;
+            if ( ( chartElement = data.Value as IChartElement ) != null )
             {
                 return chartElement;
             }

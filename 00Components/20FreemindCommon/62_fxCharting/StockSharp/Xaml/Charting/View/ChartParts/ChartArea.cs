@@ -5,7 +5,8 @@ using Ecng.Xaml;
 using SciChart.Charting.Common;
 using StockSharp.Localization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -14,11 +15,12 @@ using System.Threading;
 using fx.Charting.ATony;
 using fx.Charting.Definitions;
 using SciChart.Charting.ChartModifiers;
+using StockSharp.Charting;
 
 namespace fx.Charting
 {
     
-    public class ChartArea : ChartPart< ChartArea >, IDisposable
+    public class ChartArea : ChartPart< ChartArea >, IDisposable, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable
     {
         public static readonly string XAxisId = "X";
         public static readonly string YAxisId = "Y";
@@ -29,7 +31,7 @@ namespace fx.Charting
         private IChart                                _chart;
         private string                                _title;
         private float                                 _height;
-        private readonly INotifyList< IfxChartElement > _chartElementNotifyList;
+        private readonly INotifyList< IChartElement > _chartElementNotifyList;
         private readonly INotifyList< ChartAxis >        _xAxisNotifyList;
         private readonly INotifyList< ChartAxis >        _yAxisNotifyList;
         private int _indicatorCount = 0;
@@ -253,7 +255,7 @@ namespace fx.Charting
         }
 
         [Browsable( false )]
-        public INotifyList< IfxChartElement > Elements
+        public INotifyList< IChartElement > Elements
         {
             get
             {
@@ -621,7 +623,7 @@ namespace fx.Charting
             }
         }
 
-        private sealed class ChartElementNotifyList : PropertiesNotifyList< IfxChartElement >
+        private sealed class ChartElementNotifyList : PropertiesNotifyList< IChartElement >
         {
             private readonly ChartArea _area;
 
@@ -635,7 +637,7 @@ namespace fx.Charting
                 _area = chartArea;
             }
 
-            protected override bool OnAdding( IfxChartElement element )
+            protected override bool OnAdding( IChartElement element )
             {
                 if( element.Chart != null )
                 {

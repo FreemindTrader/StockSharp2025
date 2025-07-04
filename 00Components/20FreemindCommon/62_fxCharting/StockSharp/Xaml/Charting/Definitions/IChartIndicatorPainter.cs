@@ -8,7 +8,7 @@ namespace fx.Charting
     {
         IndicatorUI Element { get; }
 
-        IEnumerable< IfxChartElement > InnerElements { get; }
+        IEnumerable< IChartElement > InnerElements { get; }
 
         bool Draw( ChartDrawDataEx data );
 

@@ -131,9 +131,9 @@ namespace fx.Charting
 
         public event Action<TradesUI, Security> SubscribeTradeElement;
 
-        public event Action<IfxChartElement> UnSubscribeElement;
+        public event Action<IChartElement> UnSubscribeElement;
 
-        public IEnumerable<IfxChartElement> Elements
+        public IEnumerable<IChartElement> Elements
         {
             get
             {
@@ -220,7 +220,7 @@ namespace fx.Charting
             Chart.ClearAreas( );
         }
 
-        public void AddElement( ChartArea area, IfxChartElement element )
+        public void AddElement( ChartArea area, IChartElement element )
         {
             Chart.AddElement( area, element );
         }
@@ -245,7 +245,7 @@ namespace fx.Charting
             Chart.AddElement( area, element );
         }
 
-        public void RemoveElement( ChartArea area, IfxChartElement element )
+        public void RemoveElement( ChartArea area, IChartElement element )
         {
             ( ( IChart )Chart ).RemoveElement( area, element );
         }
@@ -255,12 +255,12 @@ namespace fx.Charting
             return Chart.GetIndicator( element );
         }
 
-        public object GetSource( IfxChartElement element )
+        public object GetSource( IChartElement element )
         {
             return Chart.GetSource( element );
         }
 
-        public void SetSource( IfxChartElement element, object source )
+        public void SetSource( IChartElement element, object source )
         {
             Chart.SetSource( element, source );
         }
@@ -412,7 +412,7 @@ namespace fx.Charting
             }
         }
 
-        public void Reset( IEnumerable<IfxChartElement> elements )
+        public void Reset( IEnumerable<IChartElement> elements )
         {
             Chart.Reset( elements );
         }

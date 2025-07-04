@@ -7,7 +7,7 @@ namespace fx.Charting
     /// </summary>
     public partial class UltrachartSellmarkerAnnotation : UltraChartCustomAnnotation
     {
-        public UltrachartSellmarkerAnnotation( string text, IfxChartElement chartElement ) : base( text, chartElement )
+        public UltrachartSellmarkerAnnotation( string text, IChartElement chartElement ) : base( text, chartElement )
         {
             InitializeComponent( );
         }

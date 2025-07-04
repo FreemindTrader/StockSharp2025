@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 
 internal abstract class AxisesComboBoxEditSettings : AxisesComboBoxEditSettingsBase
 {
-    protected override void SetItemSource( IfxChartElement element )
+    protected override void SetItemSource( IChartElement element )
     {
         DisplayMember = "Title";
         ValueMember = "Id";
@@ -12,5 +12,5 @@ internal abstract class AxisesComboBoxEditSettings : AxisesComboBoxEditSettingsB
     }
 
     protected abstract INotifyCollectionChanged GetAxisesArray(
-      IfxChartElement element );
+      IChartElement element );
 }

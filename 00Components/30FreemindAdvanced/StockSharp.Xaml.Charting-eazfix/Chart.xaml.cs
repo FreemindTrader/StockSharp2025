@@ -52,7 +52,7 @@ internal sealed class Chart :
       XAxisType = ChartAxisType.Numeric,
       Chart = (IChart) this
     };
-    this.DataContext = (object) this.\u0023\u003DzigsRD8\u0024hw_SZ().ViewModel();
+    this.DataContext = (object) this.\u0023\u003DzigsRD8\u0024hw_SZ().ChartSurfaceViewModel;
     this.\u0023\u003Dza1mnh6ythHbd = new IChartArea[1]
     {
       (IChartArea) this.\u0023\u003DzigsRD8\u0024hw_SZ()
@@ -144,12 +144,12 @@ internal sealed class Chart :
 
   public void Draw(IChartDrawData _param1)
   {
-    this.\u0023\u003DzigsRD8\u0024hw_SZ().ViewModel().Draw((ChartDrawData) _param1);
+    this.\u0023\u003DzigsRD8\u0024hw_SZ().ChartSurfaceViewModel.Draw((ChartDrawData) _param1);
   }
 
   public void Reset(IEnumerable<IChartElement> _param1)
   {
-    this.\u0023\u003DzigsRD8\u0024hw_SZ().ViewModel().Reset(_param1);
+    this.\u0023\u003DzigsRD8\u0024hw_SZ().ChartSurfaceViewModel.Reset(_param1);
   }
 
   IList<IndicatorType> IChart.\u0023\u003DzsYGC0kqvnZauoBk\u0024NilgO_TQ8VINJ8nwedZpIJc\u003D()

@@ -8,15 +8,15 @@ using System.Linq;
 
 namespace fx.Charting.Ultrachart
 {
-    public class IndicatorUISettingsObject : ChartSettingsObjectBase< IfxChartElement >
+    public class IndicatorUISettingsObject : ChartSettingsObjectBase< IChartElement >
     {
-        public IndicatorUISettingsObject( IfxChartElement element ) : base( element )
+        public IndicatorUISettingsObject( IChartElement element ) : base( element )
         {
             CategoriesMode = CategoriesShowMode.Hidden;
             Orig.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
         }
 
-        protected override PropertyDescriptor[ ] OnGetProperties( IfxChartElement element )
+        protected override PropertyDescriptor[ ] OnGetProperties( IChartElement element )
         {
             PooledList< PropertyDescriptor > propertyDescriptorList = new PooledList< PropertyDescriptor >( );
 

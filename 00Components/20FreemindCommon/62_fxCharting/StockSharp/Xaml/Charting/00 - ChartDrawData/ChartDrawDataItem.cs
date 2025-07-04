@@ -228,7 +228,7 @@ namespace fx.Charting
             /// <param name="value">The chart value.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( IfxChartElement element, object value )
+            public ChartDrawDataItem Add( IChartElement element, object value )
             {
                 if ( element == null )
                 {

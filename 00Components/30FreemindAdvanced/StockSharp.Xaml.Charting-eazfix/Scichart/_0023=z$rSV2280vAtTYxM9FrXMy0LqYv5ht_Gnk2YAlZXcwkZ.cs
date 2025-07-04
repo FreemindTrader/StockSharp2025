@@ -813,7 +813,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
   private void \u0023\u003DzAhcQ9lSmwA8jEy1mdYi6ePg\u003D(ChartArea _param1)
   {
     if (Equatable<ChartArea>.op_Inequality((Equatable<ChartArea>) _param1, (ChartArea) null))
-      _param1.ViewModel().ShowHiddenAxesCommand.TryExecute((object) null);
+      _param1.ChartSurfaceViewModel.ShowHiddenAxesCommand.TryExecute((object) null);
     else
       CollectionHelper.ForEach<ScichartSurfaceMVVM>((IEnumerable<ScichartSurfaceMVVM>) this.ChartPaneViewModels, \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D ?? (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D = new Action<ScichartSurfaceMVVM>(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D)));
   }
@@ -901,7 +901,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
     internal void \u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D(
       ScichartSurfaceMVVM _param1)
     {
-      _param1.Area.ViewModel().ShowHiddenAxesCommand.TryExecute((object) null);
+      _param1.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.TryExecute((object) null);
     }
 
     internal void \u0023\u003DzziKq1fCxTiR\u0024IxwE1_to_NU\u003D(ChartAxis _param1)
@@ -957,7 +957,7 @@ internal sealed class \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXc
 
     internal bool \u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D(IChartArea _param1)
     {
-      return ((ChartArea) _param1).ViewModel() == this.\u0023\u003DzsWV8_ck\u003D;
+      return ((ChartArea) _param1).ChartSurfaceViewModel == this.\u0023\u003DzsWV8_ck\u003D;
     }
   }
 

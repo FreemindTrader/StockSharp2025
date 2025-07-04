@@ -366,7 +366,7 @@ namespace fx.Charting
 
         public event Action<ChartArea>                            AddIndicatorEvent;
 
-        public event Action< IfxChartElement, CandleSeries > RebuildCandles;
+        public event Action< IChartElement, CandleSeries > RebuildCandles;
 
         
 
@@ -374,7 +374,7 @@ namespace fx.Charting
 
         public event Action<ChartArea> AddTradesEvent;
 
-        public event Action<IfxChartElement> RemoveElementEvent;
+        public event Action<IChartElement> RemoveElementEvent;
 
         public event Action SettingsChanged;
 
@@ -402,13 +402,13 @@ namespace fx.Charting
 
         public event Action<TradesUI, Security> SubscribeTradeElement;
 
-        public event Action<IfxChartElement> UnSubscribeElement;
+        public event Action<IChartElement> UnSubscribeElement;
 
         public static event Action RefreshEvent;
 
         private Action<Order> CancelActiveOrderEvent = null;
 
-        public void InvokeRemoveElementEvent( IfxChartElement element )
+        public void InvokeRemoveElementEvent( IChartElement element )
         {
             RemoveElementEvent?.Invoke( element );
         }
@@ -654,7 +654,7 @@ namespace fx.Charting
                 }
             }
 
-            public void ResetChartAreas( IfxChartElement[ ] element )
+            public void ResetChartAreas( IChartElement[ ] element )
             {
                 foreach ( ChartArea chartArea in this )
                 {
@@ -682,7 +682,7 @@ namespace fx.Charting
 
                     chartArea.Load( storage );
 
-                    foreach ( IfxChartElement element in chartArea.Elements )
+                    foreach ( IChartElement element in chartArea.Elements )
                     {
                         object candle = Ecng.Collections.CollectionHelper.TryGetValue( candleSeries, element.Id );
                         if ( candle != null )
@@ -748,7 +748,7 @@ namespace fx.Charting
             DispatcherService.BeginInvoke( ( ) => _chartAreas.Clear( ) );            
         }
 
-        void IChart.RemoveElement( ChartArea area, IfxChartElement element )
+        void IChart.RemoveElement( ChartArea area, IChartElement element )
         {
             if ( area == null )
             {

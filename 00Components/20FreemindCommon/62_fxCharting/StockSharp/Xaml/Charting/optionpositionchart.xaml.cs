@@ -109,7 +109,7 @@ namespace fx.Charting
             };
         }
 
-        private INotifyList<IfxChartElement> GetChartAreaElments( )
+        private INotifyList<IChartElement> GetChartAreaElments( )
         {
             return Chart.Area.Elements;
         }

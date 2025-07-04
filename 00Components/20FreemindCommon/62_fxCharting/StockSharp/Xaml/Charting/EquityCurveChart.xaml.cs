@@ -264,7 +264,7 @@ namespace fx.Charting
         {
             Clear( );
 
-            foreach ( IfxChartElement chartElement in ( storage.GetValue<SettingsStorage[ ]>( "elements", null ) ).Select( s => s.Load<BandsUI>( ) ) )
+            foreach ( IChartElement chartElement in ( storage.GetValue<SettingsStorage[ ]>( "elements", null ) ).Select( s => s.Load<BandsUI>( ) ) )
             {
                 _paneViewModel.Area.Elements.Add( chartElement );
             }

@@ -11,7 +11,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {
-    public abstract class TransactionUI< T > : ChartComponent< T >, ICloneable< IfxChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IfxChartElement
+    public abstract class TransactionUI< T > : ChartComponent< T >, ICloneable< IChartElement >, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
         where T : TransactionUI< T >, new()
     {
         private string _title;

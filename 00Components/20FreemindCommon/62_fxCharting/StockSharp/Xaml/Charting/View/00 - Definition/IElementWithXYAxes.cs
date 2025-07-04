@@ -4,7 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Media;
 
-public interface IElementWithXYAxes : ICloneable< IfxChartElement >, INotifyPropertyChanged, ICloneable, INotifyPropertyChanging, IfxChartElement
+public interface IElementWithXYAxes : ICloneable< IChartElement >, INotifyPropertyChanged, ICloneable, INotifyPropertyChanging, IChartElement
 {
     event Action< object, string, object > PropertyValueChanging;
 
@@ -24,7 +24,7 @@ public interface IElementWithXYAxes : ICloneable< IfxChartElement >, INotifyProp
         get;
     }
 
-    new IfxChartElement ParentElement
+    new IChartElement ParentElement
     {
         get;
         set;
@@ -56,7 +56,7 @@ public interface IElementWithXYAxes : ICloneable< IfxChartElement >, INotifyProp
 
     string GetGeneratedTitle( );
 
-    string GetName( IfxChartElement element );
+    string GetName( IChartElement element );
 
     bool AdditionalName( string string_0 );
 }

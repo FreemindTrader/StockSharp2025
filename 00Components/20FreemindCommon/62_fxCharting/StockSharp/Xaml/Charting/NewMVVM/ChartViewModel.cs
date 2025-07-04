@@ -244,9 +244,9 @@ public sealed partial class ChartViewModel : DependencyObject
         }
     }
 
-    internal void RaiseRebuildCandlesEvent( IfxChartElement chartUI, CandleSeries candleSeries )
+    internal void RaiseRebuildCandlesEvent( IChartElement chartUI, CandleSeries candleSeries )
     {
-        Action<IfxChartElement, CandleSeries> rebuildEvent = RebuildCandlesEvent;
+        Action<IChartElement, CandleSeries> rebuildEvent = RebuildCandlesEvent;
         if ( rebuildEvent == null )
             return;
         rebuildEvent( chartUI, candleSeries );
@@ -313,7 +313,7 @@ public sealed partial class ChartViewModel : DependencyObject
         VisbleRangeDp.InitRangeDepProperty( this );
     }
 
-    public void InvokeRemoveElementEvent( IfxChartElement element )
+    public void InvokeRemoveElementEvent( IChartElement element )
     {
         RemoveElementEvent?.Invoke( element );
     }

@@ -83,7 +83,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   public override void \u0023\u003DzU3pYs4rYVmOS(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
+    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeClass34343 zPKCmcad6Nxc5A8A = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeClass34343();
     zPKCmcad6Nxc5A8A.\u0023\u003Dz1BK01YA\u003D = _param1;
     try
     {
@@ -219,7 +219,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
     }
   }
 
-  private sealed class \u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D
+  private sealed class SomeClass34343
   {
     public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
 

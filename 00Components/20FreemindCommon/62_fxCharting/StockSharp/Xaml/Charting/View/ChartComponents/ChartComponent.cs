@@ -13,10 +13,10 @@ using System.Windows.Media;
 namespace fx.Charting
 {
     [TypeConverter( typeof( ExpandableObjectConverter ) )]
-    public abstract class ChartComponent<T> : ChartPart<T>, ICloneable<IfxChartElement>, INotifyPropertyChanged, IElementWithXYAxes, ICloneable, INotifyPropertyChanging, IfxChartElement where T : ChartComponent<T>
+    public abstract class ChartComponent<T> : ChartPart<T>, ICloneable<IChartElement>, INotifyPropertyChanged, IElementWithXYAxes, ICloneable, INotifyPropertyChanging, IChartElement where T : ChartComponent<T>
     {
         private readonly SynchronizedDictionary<Guid, string>  _idToName = new SynchronizedDictionary<Guid, string>( );
-        private readonly CachedSynchronizedList<IfxChartElement> _childElements = new CachedSynchronizedList<IfxChartElement>( );
+        private readonly CachedSynchronizedList<IChartElement> _childElements = new CachedSynchronizedList<IChartElement>( );
         private readonly SynchronizedSet<string>               _extraName = new SynchronizedSet<string>( );
 
         private bool                                           _isVisible = true;
@@ -52,7 +52,7 @@ namespace fx.Charting
             }
         }
 
-        ChartArea IfxChartElement.PersistantChartArea
+        ChartArea IChartElement.PersistantChartArea
         {
             get
             {
@@ -132,7 +132,7 @@ namespace fx.Charting
         {
             get
             {
-                IfxChartElement parentElement = ParentElement;
+                IChartElement parentElement = ParentElement;
                 string id;
 
                 if ( parentElement == null )
@@ -171,7 +171,7 @@ namespace fx.Charting
         {
             get
             {
-                IfxChartElement parentElement = ParentElement;
+                IChartElement parentElement = ParentElement;
                 string id;
 
                 if ( parentElement == null )
@@ -264,7 +264,7 @@ namespace fx.Charting
         }
 
         [Browsable( false )]
-        public IfxChartElement ParentElement
+        public IChartElement ParentElement
         {
             get
             {
@@ -302,7 +302,7 @@ namespace fx.Charting
         }
 
         [Browsable( false )]
-        public IEnumerable<IfxChartElement> ChildElements
+        public IEnumerable<IChartElement> ChildElements
         {
             get
             {
@@ -310,7 +310,7 @@ namespace fx.Charting
             }
         }
 
-        protected internal void AddChildElement( IfxChartElement childElement, bool dontDraw = false )
+        protected internal void AddChildElement( IChartElement childElement, bool dontDraw = false )
         {
             if ( _childElements.Contains( childElement ) )
             {
@@ -322,7 +322,7 @@ namespace fx.Charting
             _childElements.Add( childElement );
         }
 
-        protected internal void RemoveChildElement( IfxChartElement childElement )
+        protected internal void RemoveChildElement( IChartElement childElement )
         {
             if ( !_childElements.Remove( childElement ) )
             {
@@ -404,12 +404,12 @@ namespace fx.Charting
             }
         }
 
-        string IElementWithXYAxes.GetName( IfxChartElement element )
+        string IElementWithXYAxes.GetName( IChartElement element )
         {
             return _idToName.TryGetValue( element.Id );
         }
 
-        internal void AddName( IfxChartElement element, string string_3 )
+        internal void AddName( IChartElement element, string string_3 )
         {
             _idToName[ element.Id ] = string_3;
         }
@@ -452,8 +452,8 @@ namespace fx.Charting
             other.IsLegend = IsLegend;
             other.XAxisId = XAxisId;
             other.YAxisId = YAxisId;
-            IfxChartElement[ ] cache1 = _childElements.Cache;
-            IfxChartElement[ ] cache2 = other._childElements.Cache;
+            IChartElement[ ] cache1 = _childElements.Cache;
+            IChartElement[ ] cache2 = other._childElements.Cache;
             if ( cache1.Length != cache2.Length )
             {
                 throw new InvalidOperationException( "unexpected number of clones children" );
@@ -461,8 +461,8 @@ namespace fx.Charting
 
             for ( int index = 0; index < cache1.Length; ++index )
             {
-                IfxChartElement chartElement1 = cache1[ index ];
-                IfxChartElement chartElement2 = cache2[ index ];
+                IChartElement chartElement1 = cache1[ index ];
+                IChartElement chartElement2 = cache2[ index ];
                 if ( chartElement1.GetType( ) != chartElement2.GetType( ) )
                 {
                     throw new InvalidOperationException( "unexpected child type" );
@@ -472,7 +472,7 @@ namespace fx.Charting
             return other;
         }
 
-        IfxChartElement ICloneable<IfxChartElement>.Clone( )
+        IChartElement ICloneable<IChartElement>.Clone( )
         {
             return Clone( );
         }

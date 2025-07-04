@@ -8,23 +8,23 @@ using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
 using System.Linq;
 
-internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IfxChartElement>
+internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IChartElement>
 {
     private readonly PdSelector _propertyDescSelector;
 
-    public ChartElementChartSetting( IfxChartElement chartElement, PdSelector selector = null )
+    public ChartElementChartSetting( IChartElement chartElement, PdSelector selector = null )
       : base( chartElement )
     {
         _propertyDescSelector = selector;
         Orig.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
     }
 
-    public static PropertyDescriptor Create( string string_0, object obj, IfxChartElement element, PdSelector pdSelector_1 )
+    public static PropertyDescriptor Create( string string_0, object obj, IChartElement element, PdSelector pdSelector_1 )
     {
         return new ProxyDescriptorEx( string_0, obj, element, pdSelector_1 );
     }
 
-    protected override PropertyDescriptor[ ] OnGetProperties( IfxChartElement element )
+    protected override PropertyDescriptor[ ] OnGetProperties( IChartElement element )
     {
         var hashSet_0 = new PooledSet<string>( );
 
@@ -69,7 +69,7 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IfxChar
 
                     if ( prop != null )
                     {
-                        IfxChartElement chartElement = prop as IfxChartElement;
+                        IChartElement chartElement = prop as IChartElement;
 
                         if ( chartElement == null )
                         {
@@ -90,10 +90,10 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IfxChar
                                                                                                                              (
                                                                                                                                         pd =>
                                                                                                                                         {
-                                                                                                                                            if ( !typeof( IfxChartElement ).IsAssignableFrom( pd.PropertyType ) )
+                                                                                                                                            if ( !typeof( IChartElement ).IsAssignableFrom( pd.PropertyType ) )
                                                                                                                                                 return pd;
 
-                                                                                                                                            return Create( getCountString( pd.GetDisplayName( ) ), indicatorPainter, ( IfxChartElement )pd.GetValue( indicatorPainter ), _propertyDescSelector );
+                                                                                                                                            return Create( getCountString( pd.GetDisplayName( ) ), indicatorPainter, ( IChartElement )pd.GetValue( indicatorPainter ), _propertyDescSelector );
                                                                                                                                         }
                                                                                                                              );
                             }
@@ -150,12 +150,12 @@ internal sealed class ChartElementChartSetting : ChartSettingsObjectBase<IfxChar
 
     private sealed class ProxyDescriptorEx : ProxyDescriptor
     {
-        public ProxyDescriptorEx( string string_0, object object_1, IfxChartElement element, PdSelector pdSelector_0 )
+        public ProxyDescriptorEx( string string_0, object object_1, IChartElement element, PdSelector pdSelector_0 )
           : base( string_0, object_1, element, TypeDescriptor.GetAttributes( element, false ).Cast<Attribute>( ), pdSelector_0 )
         {
         }
 
-        protected override ChartSettingsObjectBase<IfxChartElement> CreateWrapper( IfxChartElement obj, PdSelector selector = null )
+        protected override ChartSettingsObjectBase<IChartElement> CreateWrapper( IChartElement obj, PdSelector selector = null )
         {
             return new ChartElementChartSetting( obj, selector );
         }

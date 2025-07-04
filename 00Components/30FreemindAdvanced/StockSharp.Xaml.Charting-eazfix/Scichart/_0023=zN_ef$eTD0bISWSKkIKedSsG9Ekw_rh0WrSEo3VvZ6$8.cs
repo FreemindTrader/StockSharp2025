@@ -157,13 +157,13 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     ISciChartSurface _param0,
     Size _param1)
   {
-    \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A1 = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
+    \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343 zPKCmcad6Nxc5A8A1 = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343();
     zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D = _param0;
     ObservableCollection<IRenderableSeries> renderableSeries = zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.get_RenderableSeries();
     List<IRenderableSeries> list = renderableSeries != null ? renderableSeries.Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(zPKCmcad6Nxc5A8A1.\u0023\u003DzFJV4yCyS4GkfcIY8Kg\u003D\u003D)).ToList<IRenderableSeries>() : (List<IRenderableSeries>) null;
     // ISSUE: explicit non-virtual call
     int count = list != null ? __nonvirtual (list.Count) : 0;
-    \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A2 = zPKCmcad6Nxc5A8A1;
+    \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343 zPKCmcad6Nxc5A8A2 = zPKCmcad6Nxc5A8A1;
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D ji3RvrDhjH0IDtfw1 = new \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D();
     ji3RvrDhjH0IDtfw1.\u0023\u003Dz_li6Ttc\u003D = _param1;
     ji3RvrDhjH0IDtfw1.\u0023\u003DzKBMzFep0KndT(new List<string>());
@@ -496,7 +496,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     }
   }
 
-  private sealed class \u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D
+  private sealed class SomeClass34343
   {
     public ISciChartSurface \u0023\u003Dzyyh4GZw\u003D;
     public \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D \u0023\u003Dz7Pgaal_fKVBn;

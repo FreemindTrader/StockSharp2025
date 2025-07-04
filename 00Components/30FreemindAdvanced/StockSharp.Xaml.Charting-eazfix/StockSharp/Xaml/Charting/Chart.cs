@@ -63,7 +63,7 @@ public class Chart :
     DataType2 = Extensions.TimeFrame(TimeSpan.FromMinutes(5.0))
   };
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 _scichartSurfaceMVVM;
+  private readonly \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 _chartSurfaceVM;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg> \u0023\u003Dz\u0024IReF1JUpHYmGa845Q\u003D\u003D = new SynchronizedDictionary<IChartIndicatorElement, Chart.\u0023\u003DzZQ9Hpf12oRwg>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -120,9 +120,9 @@ public class Chart :
     Chart.\u0023\u003DzRgOqXl_UCNpCcsODKLfs7Ks\u003D ucNpCcsOdkLfs7Ks = new Chart.\u0023\u003DzRgOqXl_UCNpCcsODKLfs7Ks\u003D();
     ucNpCcsOdkLfs7Ks.\u0023\u003DzRRvwDu67s9Rm = this;
     this.InitializeComponent();
-    this.DataContext = (object) (this._scichartSurfaceMVVM = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6());
-    this.ViewModel().\u0023\u003DzgNd4ReliYq4x(new Action<Order>(this.\u0023\u003DzrMNjBJFuBLP3));
-    this.ViewModel().\u0023\u003DzqMcw8k8QHzu3(new Action<ChartArea>(this.\u0023\u003DzYhCvVp5ZsuEOxZPGgrZ6vLQ\u003D));
+    this.DataContext = (object) (this._chartSurfaceVM = new \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6());
+    this.ChartSurfaceViewModel.\u0023\u003DzgNd4ReliYq4x(new Action<Order>(this.\u0023\u003DzrMNjBJFuBLP3));
+    this.ChartSurfaceViewModel.\u0023\u003DzqMcw8k8QHzu3(new Action<ChartArea>(this.\u0023\u003DzYhCvVp5ZsuEOxZPGgrZ6vLQ\u003D));
     this.AreaAdding += new Action(this.\u0023\u003DzA\u0024Wg8llSgKSoO3igMVHuEmE\u003D);
     this.AddCandles += new Action<ChartArea>(this.\u0023\u003DzlPurC69wnp3kb0Gv9WCPMD0\u003D);
     this.RebuildCandles += new Action<IChartElement, Subscription>(this.\u0023\u003DzBU1c7i4ydZiUB8ivBA\u003D\u003D);
@@ -175,9 +175,9 @@ public class Chart :
     }
   }
 
-  internal \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 ViewModel()
+  internal \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 ChartSurfaceViewModel
   {
-    return this._scichartSurfaceMVVM;
+    return this._chartSurfaceVM;
   }
 
   public IEnumerable<IChartArea> Areas => (IEnumerable<IChartArea>) this.\u0023\u003Dza1mnh6ythHbd;
@@ -249,7 +249,7 @@ public class Chart :
     ChartArea chartArea = (ChartArea) _param1;
     if (!(_param2.PropertyName == "Height"))
       return;
-    chartArea.ViewModel().Height = chartArea.Height;
+    chartArea.ChartSurfaceViewModel.Height = chartArea.Height;
   }
 
   public event Action<IChartArea> AreaAdded;
@@ -412,26 +412,26 @@ public class Chart :
 
   public int MinimumRange
   {
-    get => this.ViewModel().MinimumRange;
-    set => this.ViewModel().MinimumRange = value;
+    get => this.ChartSurfaceViewModel.MinimumRange;
+    set => this.ChartSurfaceViewModel.MinimumRange = value;
   }
 
   public string ChartTheme
   {
-    get => this.ViewModel().SelectedTheme;
-    set => this.ViewModel().SelectedTheme = value;
+    get => this.ChartSurfaceViewModel.SelectedTheme;
+    set => this.ChartSurfaceViewModel.SelectedTheme = value;
   }
 
   public bool ShowLegend
   {
-    get => this.ViewModel().ShowLegend;
-    set => this.ViewModel().ShowLegend = value;
+    get => this.ChartSurfaceViewModel.ShowLegend;
+    set => this.ChartSurfaceViewModel.ShowLegend = value;
   }
 
   public bool ShowOverview
   {
-    get => this.ViewModel().ShowOverview;
-    set => this.ViewModel().ShowOverview = value;
+    get => this.ChartSurfaceViewModel.ShowOverview;
+    set => this.ChartSurfaceViewModel.ShowOverview = value;
   }
 
   public bool ShowPerfStats
@@ -448,44 +448,44 @@ public class Chart :
 
   public bool IsInteracted
   {
-    get => this.ViewModel().IsInteracted;
-    set => this.ViewModel().IsInteracted = value;
+    get => this.ChartSurfaceViewModel.IsInteracted;
+    set => this.ChartSurfaceViewModel.IsInteracted = value;
   }
 
   public bool AllowAddArea
   {
-    get => this.ViewModel().AllowAddArea;
-    set => this.ViewModel().AllowAddArea = value;
+    get => this.ChartSurfaceViewModel.AllowAddArea;
+    set => this.ChartSurfaceViewModel.AllowAddArea = value;
   }
 
   public bool AllowAddAxis
   {
-    get => this.ViewModel().AllowAddAxis;
-    set => this.ViewModel().AllowAddAxis = value;
+    get => this.ChartSurfaceViewModel.AllowAddAxis;
+    set => this.ChartSurfaceViewModel.AllowAddAxis = value;
   }
 
   public bool AllowAddCandles
   {
-    get => this.ViewModel().AllowAddCandles;
-    set => this.ViewModel().AllowAddCandles = value;
+    get => this.ChartSurfaceViewModel.AllowAddCandles;
+    set => this.ChartSurfaceViewModel.AllowAddCandles = value;
   }
 
   public bool AllowAddIndicators
   {
-    get => this.ViewModel().AllowAddIndicators;
-    set => this.ViewModel().AllowAddIndicators = value;
+    get => this.ChartSurfaceViewModel.AllowAddIndicators;
+    set => this.ChartSurfaceViewModel.AllowAddIndicators = value;
   }
 
   public bool AllowAddOrders
   {
-    get => this.ViewModel().AllowAddOrders;
-    set => this.ViewModel().AllowAddOrders = value;
+    get => this.ChartSurfaceViewModel.AllowAddOrders;
+    set => this.ChartSurfaceViewModel.AllowAddOrders = value;
   }
 
   public bool AllowAddOwnTrades
   {
-    get => this.ViewModel().AllowAddOwnTrades;
-    set => this.ViewModel().AllowAddOwnTrades = value;
+    get => this.ChartSurfaceViewModel.AllowAddOwnTrades;
+    set => this.ChartSurfaceViewModel.AllowAddOwnTrades = value;
   }
 
   public bool CrossHair
@@ -568,7 +568,7 @@ public class Chart :
 
   public IList<IndicatorType> IndicatorTypes
   {
-    get => (IList<IndicatorType>) this.ViewModel().IndicatorTypes;
+    get => (IList<IndicatorType>) this.ChartSurfaceViewModel.IndicatorTypes;
   }
 
   internal Security \u0023\u003Dz3OPaBTitYMD\u0024()
@@ -598,47 +598,47 @@ public class Chart :
 
   public event Action AreaAdding
   {
-    add => this.ViewModel().\u0023\u003Dz1plbqKAfOGgT(value);
-    remove => this.ViewModel().\u0023\u003DzBJGq\u0024rZnxcA9(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003Dz1plbqKAfOGgT(value);
+    remove => this.ChartSurfaceViewModel.\u0023\u003DzBJGq\u0024rZnxcA9(value);
   }
 
   public event Action<ChartArea> AddCandles
   {
-    add => this.ViewModel().\u0023\u003DzVpi0shdst7Eq3GZ4Qg\u003D\u003D(value);
-    remove => this.ViewModel().\u0023\u003DzPasrMn3CLYCfaNBSBw\u003D\u003D(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003DzVpi0shdst7Eq3GZ4Qg\u003D\u003D(value);
+    remove => this.ChartSurfaceViewModel.\u0023\u003DzPasrMn3CLYCfaNBSBw\u003D\u003D(value);
   }
 
   public event Action<ChartArea> AddIndicator
   {
-    add => this.ViewModel().\u0023\u003DzhyKCJLidU6\u0024W(value);
-    remove => this.ViewModel().\u0023\u003DzXebVtC3nhhOK(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003DzhyKCJLidU6\u0024W(value);
+    remove => this.ChartSurfaceViewModel.\u0023\u003DzXebVtC3nhhOK(value);
   }
 
   public event Action<ChartArea> AddOrders
   {
-    add => this.ViewModel().\u0023\u003DzXNNsPD0jD0Pq1irRnA\u003D\u003D(value);
-    remove => this.ViewModel().\u0023\u003DzDVmEWtkWkTPwviOp6w\u003D\u003D(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003DzXNNsPD0jD0Pq1irRnA\u003D\u003D(value);
+    remove => this.ChartSurfaceViewModel.\u0023\u003DzDVmEWtkWkTPwviOp6w\u003D\u003D(value);
   }
 
   public event Action<ChartArea> AddTrades
   {
-    add => this.ViewModel().\u0023\u003Dzs2NcPz2K5a8svDuiBw\u003D\u003D(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003Dzs2NcPz2K5a8svDuiBw\u003D\u003D(value);
     remove
     {
-      this.ViewModel().\u0023\u003DzjUn\u0024ppBdqy2Pyk\u002445A\u003D\u003D(value);
+      this.ChartSurfaceViewModel.\u0023\u003DzjUn\u0024ppBdqy2Pyk\u002445A\u003D\u003D(value);
     }
   }
 
   public event Action<IChartElement> RemoveElement
   {
-    add => this.ViewModel().\u0023\u003DzPvEital2M7gh(value);
-    remove => this.ViewModel().\u0023\u003Dzfj2KEivrD_Sr(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003DzPvEital2M7gh(value);
+    remove => this.ChartSurfaceViewModel.\u0023\u003Dzfj2KEivrD_Sr(value);
   }
 
   public event Action<IChartElement, Subscription> RebuildCandles
   {
-    add => this.ViewModel().\u0023\u003DzVZkENKDodIoaG_WJsg\u003D\u003D(value);
-    remove => this.ViewModel().\u0023\u003Dztqxgxb_i07gVijmTJw\u003D\u003D(value);
+    add => this.ChartSurfaceViewModel.\u0023\u003DzVZkENKDodIoaG_WJsg\u003D\u003D(value);
+    remove => this.ChartSurfaceViewModel.\u0023\u003Dztqxgxb_i07gVijmTJw\u003D\u003D(value);
   }
 
   public event Action<ChartArea, Order> CreateOrder;
@@ -787,7 +787,7 @@ public class Chart :
   {
     ChartDrawData chartDrawData = data != null ? (ChartDrawData) data : throw new ArgumentNullException(nameof (data));
     foreach (ChartArea chartArea in this.\u0023\u003Dza1mnh6ythHbd)
-      chartArea.ViewModel().Draw(chartDrawData);
+      chartArea.ChartSurfaceViewModel.Draw(chartDrawData);
   }
 
   internal void \u0023\u003DzGJwj2DzYuV1h(ChartArea _param1, Order _param2)
@@ -958,7 +958,7 @@ public class Chart :
       ChartArea area = new ChartArea();
       area.Load(storage);
       this.AddArea((IChartArea) area);
-      area.ViewModel().Height = storage.GetValue<double>("Height", double.NaN);
+      area.ChartSurfaceViewModel.Height = storage.GetValue<double>("Height", double.NaN);
     }
   }
 
@@ -1342,7 +1342,7 @@ public class Chart :
     internal SettingsStorage \u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D(IChartArea _param1)
     {
       SettingsStorage settingsStorage = PersistableHelper.Save((IPersistable) _param1);
-      settingsStorage.SetValue<double>("Height", ((ChartArea) _param1).ViewModel().Height);
+      settingsStorage.SetValue<double>("Height", ((ChartArea) _param1).ChartSurfaceViewModel.Height);
       return settingsStorage;
     }
   }
@@ -1364,7 +1364,7 @@ public class Chart :
 
     internal void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.ViewModel().\u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(this.\u0023\u003DzaPd0W_M\u003D);
+      this.\u0023\u003DzRRvwDu67s9Rm.ChartSurfaceViewModel.\u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(this.\u0023\u003DzaPd0W_M\u003D);
     }
   }
 
@@ -1423,7 +1423,7 @@ public class Chart :
       ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Removed += new Action<IChartElement>(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzW\u0024jq94I\u003D);
       this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dza1mnh6ythHbd.Add(this.\u0023\u003Dzy_5REws\u003D);
       this.\u0023\u003Dzy_5REws\u003D.Chart = (IChart) this.\u0023\u003DzRRvwDu67s9Rm;
-      this.\u0023\u003DzRRvwDu67s9Rm.ViewModel().ChartPaneViewModels.Add(((ChartArea) this.\u0023\u003Dzy_5REws\u003D).ViewModel());
+      this.\u0023\u003DzRRvwDu67s9Rm.ChartSurfaceViewModel.ChartPaneViewModels.Add(((ChartArea) this.\u0023\u003Dzy_5REws\u003D).ChartSurfaceViewModel);
       CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements, new Action<IChartElement>(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzVpu_ST0\u003D));
       Action<IChartArea> zk8cjLwfRrDki = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzk8cjLWfRrDKI;
       if (zk8cjLwfRrDki == null)
@@ -1524,7 +1524,7 @@ public class Chart :
     internal void \u0023\u003DzD1ojw__0StW8WOcIEQ\u003D\u003D()
     {
       foreach (ChartArea chartArea in this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dza1mnh6ythHbd)
-        chartArea.ViewModel().Reset(this.\u0023\u003DzDqgUu38\u003D);
+        chartArea.ChartSurfaceViewModel.Reset(this.\u0023\u003DzDqgUu38\u003D);
     }
   }
 
@@ -1568,7 +1568,7 @@ public class Chart :
       this.\u0023\u003Dzy_5REws\u003D.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzqfFsxob3ngDX);
       ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Added -= new Action<IChartElement>(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzVpu_ST0\u003D);
       ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Removed -= new Action<IChartElement>(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzW\u0024jq94I\u003D);
-      this.\u0023\u003DzRRvwDu67s9Rm.ViewModel().ChartPaneViewModels.Remove(((ChartArea) this.\u0023\u003Dzy_5REws\u003D).ViewModel());
+      this.\u0023\u003DzRRvwDu67s9Rm.ChartSurfaceViewModel.ChartPaneViewModels.Remove(((ChartArea) this.\u0023\u003Dzy_5REws\u003D).ChartSurfaceViewModel);
       CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements, new Action<IChartElement>(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzW\u0024jq94I\u003D));
       this.\u0023\u003Dzy_5REws\u003D.Chart = (IChart) null;
       TypeHelper.DoDispose<IChartArea>(this.\u0023\u003Dzy_5REws\u003D);
@@ -1577,7 +1577,7 @@ public class Chart :
         z0aBkRs4Mkj0a(this.\u0023\u003Dzy_5REws\u003D);
       if (!CollectionHelper.IsEmpty<IChartArea>((ICollection<IChartArea>) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dza1mnh6ythHbd))
         return;
-      this.\u0023\u003DzRRvwDu67s9Rm.ViewModel().\u0023\u003DzoMQQ88MEiBDX();
+      this.\u0023\u003DzRRvwDu67s9Rm.ChartSurfaceViewModel.\u0023\u003DzoMQQ88MEiBDX();
     }
   }
 }

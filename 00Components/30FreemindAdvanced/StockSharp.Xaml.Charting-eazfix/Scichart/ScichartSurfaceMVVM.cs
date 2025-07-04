@@ -29,7 +29,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 #nullable enable
-internal sealed class ScichartSurfaceMVVM : 
+public sealed class ScichartSurfaceMVVM : 
   ChartBaseViewModel,
   IDisposable,
   IScichartSurfaceVM
@@ -245,7 +245,7 @@ internal sealed class ScichartSurfaceMVVM :
     }.\u0023\u003Dz3ppSxBWUBHoE_OmJHdF4GT0\u003D));
   }
 
-  public void \u0023\u003DzLHZzmaP3Zzon()
+  public void InitPropertiesEventHandlers()
   {
     ((INotifyPropertyChanged) this.Chart).PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzPHnXepkJBjde);
     if (!this._doneInitialization)
@@ -303,7 +303,7 @@ internal sealed class ScichartSurfaceMVVM :
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.Area.YAxises, new Action<IChartAxis>(this.\u0023\u003DzhueGWJf3Qdd7bLHGZUE_sNY\u003D));
   }
 
-  public void \u0023\u003DzfzUoR7Shr0zN2v5f65kznZY\u003D()
+  public void Release()
   {
     ((INotifyPropertyChanged) this.Chart).PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzPHnXepkJBjde);
     if (this.GroupChart != null)
@@ -642,7 +642,7 @@ internal sealed class ScichartSurfaceMVVM :
 
   public \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 ParentViewModel
   {
-    get => this.GroupChart?.ViewModel();
+    get => this.GroupChart?.ChartSurfaceViewModel;
   }
 
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS LegendViewModel

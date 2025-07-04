@@ -42,8 +42,8 @@ namespace fx.Charting
         #region Variables
 
         private readonly SynchronizedDictionary<IndicatorUI, IIndicator> _indicators   = new SynchronizedDictionary<IndicatorUI, IIndicator>( );
-        private readonly SynchronizedDictionary<IfxChartElement, object> _uiDatasource = new SynchronizedDictionary<IfxChartElement, object>( );
-        private readonly CachedSynchronizedList<IfxChartElement>         _uiList       = new CachedSynchronizedList<IfxChartElement>( );
+        private readonly SynchronizedDictionary<IChartElement, object> _uiDatasource = new SynchronizedDictionary<IChartElement, object>( );
+        private readonly CachedSynchronizedList<IChartElement>         _uiList       = new CachedSynchronizedList<IChartElement>( );
 
         private CandleSeries                                             _candleSeries;
         

@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace fx.Charting
 {    
-    public partial class CandlestickUI : ChartComponent<CandlestickUI>, ICloneable<IfxChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IfxChartElement
+    public partial class CandlestickUI : ChartComponent<CandlestickUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IChartElement
     {
         public void ShowLessWaves( )
         {

@@ -13,7 +13,7 @@ namespace fx.Charting
         private IEnumerable<ParentVM> _elements;
         private readonly IScichartSurfaceVM _chartPaneViewModel;
         private readonly ICommand _removeElementCommand;
-        public event Action<IfxChartElement> RemoveElmentEvent;
+        public event Action<IChartElement> RemoveElmentEvent;
 
         public LegendModifierVM( IScichartSurfaceVM surfaceVM )
         {

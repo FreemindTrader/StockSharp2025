@@ -64,7 +64,7 @@ namespace fx.Charting
         }
 
 
-        private void OnRebuildCandles( IfxChartElement element, CandleSeries series )
+        private void OnRebuildCandles( IChartElement element, CandleSeries series )
         {
             var candleUI = element as CandlestickUI;
             if ( candleUI == null )
@@ -84,7 +84,7 @@ namespace fx.Charting
                                                                      * 
                                                                      * ------------------------------------------------------------------------------------------------------------------------------------------- */
                                                                      
-                                                                    return p.Key != ( IfxChartElement ) candleUI;
+                                                                    return p.Key != ( IChartElement ) candleUI;
                                                                 }
 
                                                                 return false;
@@ -157,8 +157,8 @@ namespace fx.Charting
         * -------------------------------------------------------------------------------------------------------------------------------------------------- */
         private void OnNewAreaAddedToChartArea( ChartArea area )
         {
-            area.Elements.Added += new Action<IfxChartElement>( Step3b_OnNewChartAreaAdded );
-            area.Elements.Removed += new Action<IfxChartElement>( OnUIRemovedFromArea );
+            area.Elements.Added += new Action<IChartElement>( Step3b_OnNewChartAreaAdded );
+            area.Elements.Removed += new Action<IChartElement>( OnUIRemovedFromArea );
 
             area.Chart = this;
 
@@ -171,8 +171,8 @@ namespace fx.Charting
 
         private void OnAreaRemovedFromChartArea( ChartArea area )
         {
-            area.Elements.Added -= new Action<IfxChartElement>( Step3b_OnNewChartAreaAdded );
-            area.Elements.Removed -= new Action<IfxChartElement>( OnUIRemovedFromArea );
+            area.Elements.Added -= new Action<IChartElement>( Step3b_OnNewChartAreaAdded );
+            area.Elements.Removed -= new Action<IChartElement>( OnUIRemovedFromArea );
 
             ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ChartSurfaceViewModel );
 
@@ -422,7 +422,7 @@ namespace fx.Charting
 
             var candleSeries = ( CandleSeries )sender;
 
-            foreach ( IfxChartElement element in Elements.Where( x => GetSource( x ) == candleSeries ).ToArray() )
+            foreach ( IChartElement element in Elements.Where( x => GetSource( x ) == candleSeries ).ToArray() )
             {
                 var CandlestickUI = element as CandlestickUI;
 
@@ -481,7 +481,7 @@ namespace fx.Charting
 
 
         #region Remove Element
-        private void OnRemoveElement( IfxChartElement element )
+        private void OnRemoveElement( IChartElement element )
         {
             if ( element is IndicatorUI indicator && indicator.ParentElement != null )
             {
@@ -498,7 +498,7 @@ namespace fx.Charting
 
         #region Common Add Area
 
-        public void AddElement( ChartArea area, IfxChartElement element )
+        public void AddElement( ChartArea area, IChartElement element )
         {
             if ( area == null )
             {
@@ -523,7 +523,7 @@ namespace fx.Charting
         * 
         * ------------------------------------------------------------------------------------------------------------------------------------------- 
         */
-        private void Step3b_OnNewChartAreaAdded( IfxChartElement element )
+        private void Step3b_OnNewChartAreaAdded( IChartElement element )
         {
             RefreshView();
 
@@ -535,7 +535,7 @@ namespace fx.Charting
             AddElement( element );
         }
 
-        private void AddElement( IfxChartElement element )
+        private void AddElement( IChartElement element )
         {
             if ( GetSource( element ) == null )
             {
@@ -546,7 +546,7 @@ namespace fx.Charting
             RaiseChartElementSubscribedEvent( element );
         }
 
-        private void RaiseChartElementSubscribedEvent( IfxChartElement chartElement )
+        private void RaiseChartElementSubscribedEvent( IChartElement chartElement )
         {
             switch ( chartElement )
             {
@@ -605,14 +605,14 @@ namespace fx.Charting
                 return;
             }
 
-            foreach ( IfxChartElement chartElement in Elements )
+            foreach ( IChartElement chartElement in Elements )
             {
                 RemoveAndRaiseUnsubscribeElementEvent( chartElement );
                 AddElement( chartElement );
             }
         }
 
-        private void OnUIRemovedFromArea( IfxChartElement element )
+        private void OnUIRemovedFromArea( IChartElement element )
         {
             RefreshView();
             ResetElement( element, false );
@@ -624,7 +624,7 @@ namespace fx.Charting
             ResetElement( indicatorElement, true );
         }
 
-        public IEnumerable<IfxChartElement> Elements
+        public IEnumerable<IChartElement> Elements
         {
             get
             {
@@ -632,16 +632,16 @@ namespace fx.Charting
             }
         }
 
-        private void ResetElement( IfxChartElement element, bool needAddElement )
+        private void ResetElement( IChartElement element, bool needAddElement )
         {
-            IfxChartElement[ ] elementArray;
+            IChartElement[ ] elementArray;
             if ( element is CandlestickUI )
             {
                 elementArray = Elements.Where( e => GetSource( e ) == GetSeries<CandleSeries>( element ) ).ToArray();
             }
             else
             {
-                elementArray = new IfxChartElement[ 1 ]
+                elementArray = new IChartElement[ 1 ]
                 {
                     element
                 };
@@ -651,7 +651,7 @@ namespace fx.Charting
             {
                 if ( IsInteracted )
                 {
-                    Ecng.Collections.CollectionHelper.ForEach( elementArray, new Action<IfxChartElement>( RaiseUnsubscribeElementEvent ) );
+                    Ecng.Collections.CollectionHelper.ForEach( elementArray, new Action<IChartElement>( RaiseUnsubscribeElementEvent ) );
                     
                 }
 
@@ -663,7 +663,7 @@ namespace fx.Charting
                 }
 
 
-                Ecng.Collections.CollectionHelper.ForEach( elementArray, new Action<IfxChartElement>( RaiseChartElementSubscribedEvent ) );
+                Ecng.Collections.CollectionHelper.ForEach( elementArray, new Action<IChartElement>( RaiseChartElementSubscribedEvent ) );
                 
             }
             else
@@ -673,17 +673,17 @@ namespace fx.Charting
                     return;
                 }
 
-                Ecng.Collections.CollectionHelper.ForEach( elementArray, new Action<IfxChartElement>( RemoveAndRaiseUnsubscribeElementEvent ) );                
+                Ecng.Collections.CollectionHelper.ForEach( elementArray, new Action<IChartElement>( RemoveAndRaiseUnsubscribeElementEvent ) );                
             }
         }
 
-        private void RaiseUnsubscribeElementEvent( IfxChartElement element )
+        private void RaiseUnsubscribeElementEvent( IChartElement element )
         {
             UnSubscribeElement?.Invoke( element );
         }
 
 
-        private void RemoveAndRaiseUnsubscribeElementEvent( IfxChartElement element )
+        private void RemoveAndRaiseUnsubscribeElementEvent( IChartElement element )
         {
             if ( GetSource( element ) == null )
             {
@@ -700,36 +700,36 @@ namespace fx.Charting
             return _indicators.TryGetValue( element );
         }
 
-        private T GetSource<T>( IfxChartElement _param1 ) where T : class
+        private T GetSource<T>( IChartElement _param1 ) where T : class
         {
             return ( T ) GetSource( _param1 );
         }
 
-        public object GetSource( IfxChartElement element )
+        public object GetSource( IChartElement element )
         {
             return _uiDatasource.TryGetValue( element );
         }
 
-        public void SetSource( IfxChartElement element, object source )
+        public void SetSource( IChartElement element, object source )
         {
             _uiDatasource[ element ] = source;
             ( ( IElementWithXYAxes ) element ).ResetUI();
         }
 
-        public void Reset( IEnumerable<IfxChartElement> elements )
+        public void Reset( IEnumerable<IChartElement> elements )
         {
             _chartAreas.ResetChartAreas( elements.ToArray() );
         }
 
 
 
-        private T GetSeries<T>( IfxChartElement element ) where T : class
+        private T GetSeries<T>( IChartElement element ) where T : class
         {
             return ( T ) GetSource( element );
         }
 
 
-        void RemoveElement( ChartArea area, IfxChartElement element )
+        void RemoveElement( ChartArea area, IChartElement element )
         {
             if ( area == null )
             {

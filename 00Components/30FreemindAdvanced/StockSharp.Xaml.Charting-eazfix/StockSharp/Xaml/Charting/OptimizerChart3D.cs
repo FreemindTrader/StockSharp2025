@@ -314,7 +314,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
 
   private void \u0023\u003Dz05DsYeE9TArwoxHfhj9ipSrE0a0z()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5EW_l2nSTjbBKuuG93AZ7v1j7TCk)), -1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.Method05 ?? (OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.Method05 = new Func<Vector3D, bool>(OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D.\u0023\u003DzhxV_97w\u003D.\u0023\u003Dz5EW_l2nSTjbBKuuG93AZ7v1j7TCk)), -1.0);
   }
 
   private void \u0023\u003DzT\u0024EjzudU2cP__EuN4ALEHHqZ7xSI()
@@ -347,7 +347,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
     public static readonly OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D \u0023\u003DzhxV_97w\u003D = new OptimizerChart3D.\u0023\u003Dz7qOdpi4\u003D();
     public static Func<Vector3D, bool> \u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D;
     public static Func<Vector3D, bool> \u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D;
-    public static Func<Vector3D, bool> \u0023\u003Dz\u00247pvGNKBwldamQkwwQ\u003D\u003D;
+    public static Func<Vector3D, bool> Method05;
     public static Func<Vector3D, bool> \u0023\u003Dzgtt8BV5qq\u0024eBi5JtnA\u003D\u003D;
     public static Func<Vector3D, bool> \u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D;
     public static Func<Vector3D, bool> \u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D;

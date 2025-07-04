@@ -130,7 +130,7 @@ namespace fx.Charting
             Area.ChartSurfaceViewModel.Draw( data );
         }
 
-        public void Reset( IEnumerable<IfxChartElement> elements )
+        public void Reset( IEnumerable<IChartElement> elements )
         {
             Area.ChartSurfaceViewModel.Reset( elements );
         }
@@ -194,7 +194,7 @@ namespace fx.Charting
             throw new NotSupportedException( );
         }
 
-        object IChart.GetSource( IfxChartElement element )
+        object IChart.GetSource( IChartElement element )
         {
             throw new NotSupportedException( );
         }
@@ -214,7 +214,7 @@ namespace fx.Charting
             throw new NotSupportedException( );
         }
 
-        void IChart.AddElement( ChartArea area, IfxChartElement element )
+        void IChart.AddElement( ChartArea area, IChartElement element )
         {
             throw new NotSupportedException( );
         }
@@ -246,7 +246,7 @@ namespace fx.Charting
             throw new NotSupportedException( );
         }
 
-        void IChart.RemoveElement( ChartArea area, IfxChartElement element )
+        void IChart.RemoveElement( ChartArea area, IChartElement element )
         {
             throw new NotSupportedException( );
         }

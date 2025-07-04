@@ -12,7 +12,7 @@ namespace fx.Charting
                                              object parameter,
                                              CultureInfo culture )
         {
-            if( !( values[ 0 ] is IfxChartElement element ) )
+            if( !( values[ 0 ] is IChartElement element ) )
             {
                 return null;
             }

@@ -75,7 +75,7 @@ namespace fx.Charting
         //[Obsolete( "Use the Draw method instead." )]
         //public static void Draw( this IChart chart,
         //                         DateTimeOffset time,
-        //                         IfxChartElement element,
+        //                         IChartElement element,
         //                         object value )
         //{
         //    if( chart == null )
@@ -83,7 +83,7 @@ namespace fx.Charting
         //        throw new ArgumentNullException( nameof( chart ) );
         //    }
         //    chart.Draw( time,
-        //                  new PooledDictionary<IfxChartElement, object>( )
+        //                  new PooledDictionary<IChartElement, object>( )
         //    {
         //        {
         //            element,
@@ -95,20 +95,20 @@ namespace fx.Charting
         //[Obsolete( "Use the Draw method instead." )]
         //public static void Draw( this IChart chart,
         //                         DateTimeOffset time,
-        //                         IDictionary< IfxChartElement, object > values )
+        //                         IDictionary< IChartElement, object > values )
         //{
         //    if( chart == null )
         //    {
         //        throw new ArgumentNullException( nameof( chart ) );
         //    }
-        //    chart.Draw( new RefPair<DateTimeOffset, IDictionary<IfxChartElement, object>>[ 1 ]
+        //    chart.Draw( new RefPair<DateTimeOffset, IDictionary<IChartElement, object>>[ 1 ]
         //    {
         //        RefTuple.Create( time, values )
         //    } );
         //}
 
         //[Obsolete( "Use the Draw method instead." )]
-        //public static void Draw( this IChart chart, IEnumerable< RefPair< DateTimeOffset, IDictionary< IfxChartElement, object > > > values )
+        //public static void Draw( this IChart chart, IEnumerable< RefPair< DateTimeOffset, IDictionary< IChartElement, object > > > values )
         //{
         //    chart.Draw( new ChartDrawDataEx( values ) );
         //}

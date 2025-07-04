@@ -27,7 +27,7 @@ namespace fx.Charting
 
         void RemoveAnnotation( IElementWithXYAxes elementXY, object objAnnoPair );
 
-        void RemoveAnnotation( IfxChartElement annotation );
+        void RemoveAnnotation( IChartElement annotation );
 
         void AddAxisMakerAnnotation( IElementWithXYAxes elementXY, IAnnotation axisMakerAnnotation, object axisMarker );
 
@@ -39,7 +39,7 @@ namespace fx.Charting
 
         void AddRenderableSeriesToChartSurface( IElementWithXYAxes elementXY, IRenderableSeries renderableSeries );
 
-        void SetupAnnotation( IfxChartElement annotation, ChartDrawDataEx.sAnnotation data );
+        void SetupAnnotation( IChartElement annotation, ChartDrawDataEx.sAnnotation data );
 
         void Remove( IElementWithXYAxes elementXY );
 
@@ -59,13 +59,13 @@ namespace fx.Charting
 
         void UpdateQuote( DateTime offerTime, double bid, double ask );
 
-        void Reset( IEnumerable< IfxChartElement > chartElements );
+        void Reset( IEnumerable< IChartElement > chartElements );
 
         void InitPropertiesEventHandlers( );
 
-        bool OnChartAreaElementsRemoving( IfxChartElement element );
+        bool OnChartAreaElementsRemoving( IChartElement element );
 
-        void OnChartAreaElementsAdded( IfxChartElement anyChartUI );
+        void OnChartAreaElementsAdded( IChartElement anyChartUI );
 
         ICommand ShowHiddenAxesCommand { get;  }
 

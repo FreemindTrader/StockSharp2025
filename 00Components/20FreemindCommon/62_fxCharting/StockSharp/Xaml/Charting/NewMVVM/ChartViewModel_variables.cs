@@ -38,8 +38,8 @@ public sealed partial class ChartViewModel
 
     public event Action< ChartArea >                AddTradesEvent;
 
-    public event Action< IfxChartElement >          RemoveElementEvent;
-    private Action<IfxChartElement, CandleSeries>   RebuildCandlesEvent = null;
+    public event Action< IChartElement >          RemoveElementEvent;
+    private Action<IChartElement, CandleSeries>   RebuildCandlesEvent = null;
     private Action<Order>                           CancelActiveOrderEvent = null;
     private static Action                           InteractedEvent = null;
     #endregion

@@ -52,7 +52,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
     private ObservableCollection<IRenderableSeries>                                  _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>( );
     //private fxTradingAnnotationCreationModifier _tradingAPI;
 
-    private Action<IfxChartElement> RemoveElementEvent = null;
+    private Action<IChartElement> RemoveElementEvent = null;
 
     private SciChartSurface                   _sciChartSurface;
     private bool                              _doneInitialization;
@@ -119,7 +119,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += ( d, e ) => SetSelectedTheme( );
         SetSelectedTheme( );
 
-        foreach ( IfxChartElement chartElement in Area.Elements )
+        foreach ( IChartElement chartElement in Area.Elements )
         {
             OnChartAreaElementsAdded( chartElement );
         }
@@ -559,7 +559,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         }
     }
 
-    public void Reset( IEnumerable<IfxChartElement> chartElements )
+    public void Reset( IEnumerable<IChartElement> chartElements )
     {
         foreach ( IElementWithXYAxes chartElement in chartElements )
         {
@@ -598,7 +598,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         }
     }
 
-    public void OnChartAreaElementsAdded( IfxChartElement anyChartUI )
+    public void OnChartAreaElementsAdded( IChartElement anyChartUI )
     {
         if ( Chart != null )
         {
@@ -677,7 +677,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         anyChartUiXY.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
     }
 
-    public bool OnChartAreaElementsRemoving( IfxChartElement element )
+    public bool OnChartAreaElementsRemoving( IChartElement element )
     {
         if ( Chart != null )
         {
@@ -1448,7 +1448,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
 
 
-    private void OnRemoveElementEvent( IfxChartElement element )
+    private void OnRemoveElementEvent( IChartElement element )
     {
         ChartExViewModel?.InvokeRemoveElementEvent( element );
         RemoveElementEvent?.Invoke( element );
@@ -1456,7 +1456,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
 
 
-    public void SetupAnnotation( IfxChartElement annotation, ChartDrawDataEx.sAnnotation data )
+    public void SetupAnnotation( IChartElement annotation, ChartDrawDataEx.sAnnotation data )
     {
         if ( _annotationModifier != null )
         {
@@ -1467,7 +1467,7 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
         }
     }
 
-    public void RemoveAnnotation( IfxChartElement annotation )
+    public void RemoveAnnotation( IChartElement annotation )
     {
         if ( _annotationModifier != null )
         {

@@ -44,7 +44,7 @@ internal sealed class XyScatterRenderableSeries :
     IRenderContext2D _param1,
     IRenderPassData _param2)
   {
-    XyScatterRenderableSeries.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D zPKCmcad6Nxc5A8A = new XyScatterRenderableSeries.\u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D();
+    XyScatterRenderableSeries.SomeClass34343 zPKCmcad6Nxc5A8A = new XyScatterRenderableSeries.SomeClass34343();
     zPKCmcad6Nxc5A8A.\u0023\u003DzRRvwDu67s9Rm = this;
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
@@ -80,7 +80,7 @@ internal sealed class XyScatterRenderableSeries :
     return base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2), false);
   }
 
-  private sealed class \u0023\u003DzP\u0024K\u0024cmcad6NXc5A8\u0024A\u003D\u003D
+  private sealed class SomeClass34343
   {
     public XyScatterRenderableSeries \u0023\u003DzRRvwDu67s9Rm;
     public Color \u0023\u003DzhFYkfW57ne2I;

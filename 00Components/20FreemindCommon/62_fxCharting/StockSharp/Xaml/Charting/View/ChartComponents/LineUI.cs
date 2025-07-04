@@ -21,7 +21,7 @@ using System.Windows.Shapes;
 
 namespace fx.Charting
 {
-    public class LineUI : ChartComponent<LineUI>, ICloneable<IfxChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IfxChartElement
+    public class LineUI : ChartComponent<LineUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IElementWithXYAxes, IDrawableChartElement, IChartElement
     {
         private TASignalSymbol           _signalType;
         private ChartIndicatorDrawStyles _indicatorDrawStyle;

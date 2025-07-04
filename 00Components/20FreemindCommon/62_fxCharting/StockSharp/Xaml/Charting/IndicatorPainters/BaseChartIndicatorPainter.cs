@@ -15,7 +15,7 @@ namespace fx.Charting.IndicatorPainters
 {
     public abstract class BaseChartIndicatorPainter : BaseVM, ICloneable, IPersistable, IChartIndicatorPainter
     {
-        private readonly PooledList< IfxChartElement >  _innerElements    = new PooledList< IfxChartElement >( );
+        private readonly PooledList< IChartElement >  _innerElements    = new PooledList< IChartElement >( );
         private readonly IndicatorPainterHelper _indicatorPainter = new IndicatorPainterHelper( );
         private IndicatorUI                     _indicatorElement;
 
@@ -33,7 +33,7 @@ namespace fx.Charting.IndicatorPainters
         }
 
         [Browsable( false )]
-        public IEnumerable< IfxChartElement > InnerElements
+        public IEnumerable< IChartElement > InnerElements
         {
             get
             {
@@ -107,7 +107,7 @@ namespace fx.Charting.IndicatorPainters
         {
             Element = element;
 
-            foreach ( IfxChartElement chartElement in InnerElements )
+            foreach ( IChartElement chartElement in InnerElements )
             {
                 Element.AddChildElement( chartElement, false );
             }
@@ -120,7 +120,7 @@ namespace fx.Charting.IndicatorPainters
                 return;
             }
 
-            foreach ( IfxChartElement chartElement in InnerElements )
+            foreach ( IChartElement chartElement in InnerElements )
             {
                 Element.RemoveChildElement( chartElement );
             }
@@ -128,7 +128,7 @@ namespace fx.Charting.IndicatorPainters
             Element = null;
         }
 
-        protected bool DrawValues( IIndicator ind, IfxChartElement element, Func<IIndicatorValue, double> getValue )
+        protected bool DrawValues( IIndicator ind, IChartElement element, Func<IIndicatorValue, double> getValue )
         {
             var result = _indicatorPainter.GetIndicatorValueList( ind );
 
@@ -145,7 +145,7 @@ namespace fx.Charting.IndicatorPainters
             return GetIndicatorValuesAndDraw( element, indicatorValueFunc, null );
         }
 
-        protected bool DrawValues( IIndicator ind, IfxChartElement element )
+        protected bool DrawValues( IIndicator ind, IChartElement element )
         {
             var result = _indicatorPainter.GetIndicatorValueList( ind );
 
@@ -154,7 +154,7 @@ namespace fx.Charting.IndicatorPainters
             return GetIndicatorValuesAndDraw( element, indicatorValueFunc, null );
         }
 
-        protected bool DrawValues( IIndicator ind1, IIndicator ind2, IfxChartElement element )
+        protected bool DrawValues( IIndicator ind1, IIndicator ind2, IChartElement element )
         {
             var result1 = _indicatorPainter.GetIndicatorValueList( ind1 );
             var result2 = _indicatorPainter.GetIndicatorValueList( ind2 );
@@ -165,7 +165,7 @@ namespace fx.Charting.IndicatorPainters
             return GetIndicatorValuesAndDraw( element, myFunc1, myFunc2 );
         }
 
-        protected bool DrawValues( IIndicator ind1, IIndicator ind2, IfxChartElement element, Func<double, double, double> op )
+        protected bool DrawValues( IIndicator ind1, IIndicator ind2, IChartElement element, Func<double, double, double> op )
         {
             var result1 = _indicatorPainter.GetIndicatorValueList( ind1 );
             var result2 = _indicatorPainter.GetIndicatorValueList( ind2 );
@@ -175,7 +175,7 @@ namespace fx.Charting.IndicatorPainters
             return GetIndicatorValuesAndDraw( element, indicatorValueFunc, null );
         }
 
-        private bool GetIndicatorValuesAndDraw( IfxChartElement chartElement, Func< int, double > myFunc1, Func< int, double > myFunc2 )
+        private bool GetIndicatorValuesAndDraw( IChartElement chartElement, Func< int, double > myFunc1, Func< int, double > myFunc2 )
         {
             var drawableElement = chartElement as IDrawableChartElement;
 
@@ -216,7 +216,7 @@ namespace fx.Charting.IndicatorPainters
             return double.NaN;
         }
 
-        protected void AddChildElement( IfxChartElement element )
+        protected void AddChildElement( IChartElement element )
         {
             if( InnerElements.Contains( element ) )
             {
