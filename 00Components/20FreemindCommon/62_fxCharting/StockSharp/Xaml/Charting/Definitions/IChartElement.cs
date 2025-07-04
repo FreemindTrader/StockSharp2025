@@ -2,29 +2,66 @@
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
+using StockSharp.Charting;
 
-namespace fx.Charting
+namespace fx.Charting;
+
+/// <summary>
+/// The interface that describes the chart element (indicator, candle, etc.).
+/// </summary>
+public interface IChartElement : IChartPart<IChartElement>
 {
-    public interface IChartElement : ICloneable< IChartElement >, INotifyPropertyChanged, ICloneable, INotifyPropertyChanging
+    Guid Id
     {
-        Guid Id { get; }
+        get;
+    }
 
-        IChartElement ParentElement { get; }
+    IChartElement ParentElement
+    {
+        get;
+    }
 
-        IEnumerable< IChartElement > ChildElements { get; }
+    IEnumerable<IChartElement> ChildElements
+    {
+        get;
+    }
 
-        bool IsVisible { get; set; }
+    bool IsVisible
+    {
+        get;
+        set;
+    }
 
-        bool IsLegend { get; set; }
+    bool IsLegend
+    {
+        get;
+        set;
+    }
 
-        string XAxisId { get; set; }
+    string XAxisId
+    {
+        get;
+        set;
+    }
 
-        string YAxisId { get; set; }
+    string YAxisId
+    {
+        get;
+        set;
+    }
 
-        IChart Chart { get; }
+    IChart Chart
+    {
+        get;
+    }
 
-        ChartArea ChartArea { get; }
+    ChartArea ChartArea
+    {
+        get;
+    }
 
-        ChartArea PersistantChartArea { get; }
+    ChartArea PersistantChartArea
+    {
+        get;
     }
 }
