@@ -1543,12 +1543,15 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
     }
 
 
+    /// <summary>
+    /// Handles the PropertyChanged event of the XYAxis element.
+    ///     
+    /// Directly copy the code from StockSharp.Charting.IChartExtensions because I still haven't change my namespace from fx.Charting to Stocksharp.xaml.Charting
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void OnXYAxisPropertyChanged( object sender, PropertyChangedEventArgs e )
-    {
-        // Tony 2:
-
-        //throw new NotImplementedException();
-
+    {        
         IChartComponent elementXY = ( IChartComponent )sender;
 
         if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
@@ -1570,7 +1573,10 @@ public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisp
 
         if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
         {
+            // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
             xAxis = elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.XAxises.FirstOrDefault( xa => xa.Id == elementXY.XAxisId );
+            
+            // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
             yAxis = elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.YAxises.FirstOrDefault( xa => xa.Id == elementXY.YAxisId );
 
             if ( xAxis != null || yAxis != null )
