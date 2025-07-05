@@ -677,7 +677,7 @@ namespace fx.Charting
             _viewModel.CheckAndShowFibonacci( );
         }
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new CandlestickVM( this );
         }

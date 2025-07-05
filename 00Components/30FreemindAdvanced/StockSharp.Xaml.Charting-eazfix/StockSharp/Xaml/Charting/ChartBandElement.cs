@@ -41,7 +41,7 @@ public sealed class ChartBandElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ChartLineElement \u0023\u003Dzt\u0024HuscgmJGKgSzXy9g\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
 
   public ChartBandElement()
   {
@@ -97,10 +97,10 @@ public sealed class ChartBandElement :
     return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
   }
 
-  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
     ScichartSurfaceMVVM _param1)
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIBaseVM) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<double>(this) : (UIBaseVM) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<DateTime>(this);
+    this.\u0023\u003Dz2YSX_Z4\u003D = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIChartBaseViewModel) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<double>(this) : (UIChartBaseViewModel) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<DateTime>(this);
     return this.\u0023\u003Dz2YSX_Z4\u003D;
   }
 

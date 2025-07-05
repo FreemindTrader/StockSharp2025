@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 namespace fx.Charting
 {
-    public sealed class LegendModifierVM : BaseVM
+    public sealed class LegendModifierVM : ChartBaseViewModel
     {
         private bool _allowToHide = true;
         private LegendModifierEx _legendModifier;

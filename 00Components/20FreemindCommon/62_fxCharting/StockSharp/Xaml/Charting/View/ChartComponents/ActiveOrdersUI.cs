@@ -28,7 +28,7 @@ namespace fx.Charting
         private Color _cancelButtonBackground;
         private Color _foregroundColor;
         private bool _isAnimationEnabled;
-        private UIBaseVM _viewModel;
+        private UIChartBaseViewModel _viewModel;
 
         public ActiveOrdersUI( )
         {
@@ -195,7 +195,7 @@ namespace fx.Charting
             }
         }
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new ChartActiveOrdersVM( this );
         }

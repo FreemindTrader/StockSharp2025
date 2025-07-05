@@ -52,7 +52,7 @@ public class ChartActiveOrdersElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003Dzzsiq00hapgVL;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
 
   public ChartActiveOrdersElement()
   {
@@ -220,10 +220,10 @@ public class ChartActiveOrdersElement :
     set => this.ForegroundColor = value.ToWpf();
   }
 
-  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
     ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIChartBaseViewModel) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(this);
   }
 
   bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(

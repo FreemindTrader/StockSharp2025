@@ -8,16 +8,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Media;
 
-public sealed class ParentVM : BaseVM, IDisposable
+public sealed class ParentVM : ChartBaseViewModel, IDisposable
 {
     private readonly ObservableCollection< ChildVM > _childViewModels = new ObservableCollection< ChildVM >( );
-    private readonly UIBaseVM[ ] _childElements;
+    private readonly UIChartBaseViewModel[ ] _childElements;
     private double _minFieldWidth;
     private readonly IScichartSurfaceVM _scichartSurfaceVM;
     private readonly IChartComponent _iRootElement;
     private bool _isDisposed;
 
-    public ParentVM( IScichartSurfaceVM pane, IChartComponent elementXY, IEnumerable< UIBaseVM > childElements )
+    public ParentVM( IScichartSurfaceVM pane, IChartComponent elementXY, IEnumerable< UIChartBaseViewModel > childElements )
     {
         if( pane == null )
         {
@@ -44,7 +44,7 @@ public sealed class ParentVM : BaseVM, IDisposable
             MapPropertyChangeNotification( _childElements[ 0 ].Element, nameof( Color ), nameof( Color ) );
         }
 
-        foreach( UIBaseVM childElement in _childElements )
+        foreach( UIChartBaseViewModel childElement in _childElements )
         {
             childElement.Init( this );
         }
@@ -66,7 +66,7 @@ public sealed class ParentVM : BaseVM, IDisposable
         }
     }
 
-    public IEnumerable< UIBaseVM > Elements
+    public IEnumerable< UIChartBaseViewModel > Elements
     {
         get
         {
@@ -149,7 +149,7 @@ public sealed class ParentVM : BaseVM, IDisposable
     {
         ChartElement.Reset( );
 
-        foreach( UIBaseVM child in _childElements )
+        foreach( UIChartBaseViewModel child in _childElements )
         {
             child.Update( );
         }
@@ -157,7 +157,7 @@ public sealed class ParentVM : BaseVM, IDisposable
 
     public void UpdateChildElementYAxisMarker( )
     {
-        foreach( UIBaseVM child in _childElements )
+        foreach( UIChartBaseViewModel child in _childElements )
         {
             child.UpdateYAxisMarker( );
         }
@@ -165,7 +165,7 @@ public sealed class ParentVM : BaseVM, IDisposable
 
     public void ChildElementPeriodicalAction( )
     {
-        foreach( UIBaseVM child in _childElements )
+        foreach( UIChartBaseViewModel child in _childElements )
         {
             child.PerformPeriodicalAction( );
         }
@@ -173,7 +173,7 @@ public sealed class ParentVM : BaseVM, IDisposable
 
     public void ChildElementUpdateAndClear( )
     {
-        foreach( UIBaseVM child in _childElements )
+        foreach( UIChartBaseViewModel child in _childElements )
         {
             child.GuiUpdateAndClear( );
         }

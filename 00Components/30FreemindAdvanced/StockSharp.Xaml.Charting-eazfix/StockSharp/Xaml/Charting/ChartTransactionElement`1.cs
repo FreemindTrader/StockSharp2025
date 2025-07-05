@@ -49,7 +49,7 @@ public abstract class ChartTransactionElement<T> :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private double \u0023\u003Dzv0dodASrSZi6;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
 
   protected ChartTransactionElement()
   {
@@ -231,10 +231,10 @@ public abstract class ChartTransactionElement<T> :
     set => this.SellStrokeColor = value.ToWpf();
   }
 
-  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
     ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIChartBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
   }
 
   bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(

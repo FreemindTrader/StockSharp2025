@@ -10,7 +10,7 @@ public interface IDrawableChartElement : ICloneable<IChartElement>, INotifyPrope
 {
     Color Color { get; }
 
-    UIBaseVM CreateViewModel( IScichartSurfaceVM viewModel );
+    UIChartBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel );
 
     bool StartDrawing( IEnumerableEx<ChartDrawDataEx.IDrawValue> data );
 

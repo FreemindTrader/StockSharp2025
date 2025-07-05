@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Media;
 
-public sealed class ChildVM : BaseVM
+public sealed class ChildVM : ChartBaseViewModel
 {
     private readonly Func< SeriesInfo, Color > _colorFunction;
     private readonly Func< SeriesInfo, string > _valueFunction;

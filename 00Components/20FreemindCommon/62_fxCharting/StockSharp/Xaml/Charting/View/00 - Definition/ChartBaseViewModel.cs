@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace fx.Charting
 {
-    public class BaseVM : NotifiableObject
+    public class ChartBaseViewModel : NotifiableObject
     {
         private readonly SynchronizedDictionary< INotifyPropertyChanged, PooledDictionary< string, PooledSet< string > > > _propertyChangedMap = new SynchronizedDictionary< INotifyPropertyChanged, PooledDictionary< string, PooledSet< string > > >( );
 

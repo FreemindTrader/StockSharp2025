@@ -133,7 +133,7 @@ internal sealed class CandlestickUI(
 
   private void \u0023\u003Dzk_r\u0024wtNtUKwJ()
   {
-    if (!UIBaseVM.IsUiThread())
+    if (!UIChartBaseViewModel.IsUiThread())
     {
       this.PerformUiAction(new Action(this.\u0023\u003Dzk_r\u0024wtNtUKwJ), true);
     }

@@ -25,7 +25,7 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
   #nullable disable
   ObservableCollection<ChildVM> _childViewModels = new ObservableCollection<ChildVM>();
   
-  private readonly List<UIBaseVM> _childElements = new List<UIBaseVM>();
+  private readonly List<UIChartBaseViewModel> _childElements = new List<UIChartBaseViewModel>();
   
   private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
   
@@ -68,11 +68,11 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
     private set => this.\u0023\u003Dz\u0024j34drxVvrdumV_HyGybhvc\u003D = value;
   }
 
-  public IEnumerable<UIBaseVM> Elements
+  public IEnumerable<UIChartBaseViewModel> Elements
   {
     get
     {
-      return (IEnumerable<UIBaseVM>) this._childElements;
+      return (IEnumerable<UIChartBaseViewModel>) this._childElements;
     }
   }
 
@@ -93,17 +93,17 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
   }
 
   public void \u0023\u003DzkFJdjYoyxP8n(
-    IEnumerable<UIBaseVM> _param1)
+    IEnumerable<UIChartBaseViewModel> _param1)
   {
-    UIBaseVM[] array = _param1.ToArray<UIBaseVM>();
-    if (CollectionHelper.IsEmpty<UIBaseVM>(array))
+    UIChartBaseViewModel[] array = _param1.ToArray<UIChartBaseViewModel>();
+    if (CollectionHelper.IsEmpty<UIChartBaseViewModel>(array))
       throw new ArgumentException("zero child elements");
-    this._childElements.AddRange((IEnumerable<UIBaseVM>) array);
+    this._childElements.AddRange((IEnumerable<UIChartBaseViewModel>) array);
     if (this.IsCandleElement && this.Candles == null)
       this.Candles = array.OfType<CandlestickUI>().First<CandlestickUI>();
     if (this._childElements.Count == 1)
       this.MapPropertyChangeNotification((INotifyPropertyChanged) this._childElements[0].Element, "Color", "Color");
-    CollectionHelper.ForEach<UIBaseVM>((IEnumerable<UIBaseVM>) array, new Action<UIBaseVM>(this.\u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D));
+    CollectionHelper.ForEach<UIChartBaseViewModel>((IEnumerable<UIChartBaseViewModel>) array, new Action<UIChartBaseViewModel>(this.\u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D));
   }
 
   private void \u0023\u003DzJRKin3dIscU4TEH\u0024FkxyZyjDceEY()
@@ -135,22 +135,22 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
   public void Reset()
   {
     this.ChartElement.Reset();
-    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<UIChartBaseViewModel>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D)));
   }
 
   public void UpdateYAxisMarker()
   {
-    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<UIChartBaseViewModel>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D)));
   }
 
   public void PerformPeriodicalAction()
   {
-    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D = new Action<UIChartBaseViewModel>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D)));
   }
 
   public void GuiUpdateAndClear()
   {
-    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Action<UIBaseVM>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D)));
+    this._childElements.ForEach(ParentVM.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D ?? (ParentVM.SomeClass34343383.\u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D = new Action<UIChartBaseViewModel>(ParentVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D)));
   }
 
   internal Subscription \u0023\u003DzZ0VU1NABDfD8(
@@ -183,7 +183,7 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
 
   private void \u0023\u003Dz7x6SlCXIp8hAJNVeAefGj\u0024I\u003D(
     #nullable disable
-    UIBaseVM _param1)
+    UIChartBaseViewModel _param1)
   {
     _param1.Init(this);
   }
@@ -193,10 +193,10 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
   {
     public static readonly ParentVM.SomeClass34343383 SomeMethond0343 = new ParentVM.SomeClass34343383();
     public static Action<ChildVM> \u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D;
-    public static Action<UIBaseVM> \u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D;
-    public static Action<UIBaseVM> \u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D;
-    public static Action<UIBaseVM> \u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D;
-    public static Action<UIBaseVM> \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
+    public static Action<UIChartBaseViewModel> \u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D;
+    public static Action<UIChartBaseViewModel> \u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D;
+    public static Action<UIChartBaseViewModel> \u0023\u003Dzh2rq1rNuTua1OY6e3Q\u003D\u003D;
+    public static Action<UIChartBaseViewModel> \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
 
     internal void \u0023\u003Dz\u0024Y0CRLvNGz\u0024QVOp_KD9Goz0\u003D(
       ChildVM _param1)
@@ -205,25 +205,25 @@ public sealed class ParentVM :  ChartBaseViewModel, IDisposable
     }
 
     internal void \u0023\u003Dz78guPox9d5EyKS2_DA\u003D\u003D(
-      UIBaseVM _param1)
+      UIChartBaseViewModel _param1)
     {
       _param1.Reset();
     }
 
     internal void \u0023\u003Dzy8xbdOhlUdYc9J3lehtuYeU\u003D(
-      UIBaseVM _param1)
+      UIChartBaseViewModel _param1)
     {
       _param1.UpdateYAxisMarker();
     }
 
     internal void \u0023\u003Dz8jVsNNt6XUrYulKMVzGRKbI\u003D(
-      UIBaseVM _param1)
+      UIChartBaseViewModel _param1)
     {
       _param1.PerformPeriodicalAction();
     }
 
     internal void \u0023\u003DzIFx97lVTaAg3xg6hNg\u003D\u003D(
-      UIBaseVM _param1)
+      UIChartBaseViewModel _param1)
     {
       _param1.GuiUpdateAndClear();
     }

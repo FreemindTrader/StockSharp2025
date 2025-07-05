@@ -20,7 +20,7 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-internal abstract class ChartElementUI<T> : UIBaseVM where T : ChartPart<T>, IDrawableChartElement
+internal abstract class ChartElementUI<T> : UIChartBaseViewModel where T : ChartPart<T>, IDrawableChartElement
 {
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
     private readonly HashSet<IChartComponent> _chartComponentsHashSet = new HashSet<IChartComponent>();
@@ -131,7 +131,7 @@ if ( !( ( object ) zav4EkcQ is ChartBandElement ) && !( ( object ) zav4EkcQ is I
     obj.SetBindings( BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, ( object ) this.GetDrawableChartElement(), "StrokeThickness" );
     obj.SetBindings( BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7, ( object ) this.GetDrawableChartElement(), "AntiAliasing" );
 }
-obj.Tag = _param1 == null || _param1.Length == 0 ? ( object ) ( Tuple<UIBaseVM, ChildVM[ ]> ) null : ( object ) Tuple.Create<UIBaseVM, ChildVM[ ]>( ( UIBaseVM ) this, _param1 );
+obj.Tag = _param1 == null || _param1.Length == 0 ? ( object ) ( Tuple<UIChartBaseViewModel, ChildVM[ ]> ) null : ( object ) Tuple.Create<UIChartBaseViewModel, ChildVM[ ]>( ( UIChartBaseViewModel ) this, _param1 );
 this.ChartViewModel.\u0023\u003DzMNK339lzrtSc();
 return obj;
   }

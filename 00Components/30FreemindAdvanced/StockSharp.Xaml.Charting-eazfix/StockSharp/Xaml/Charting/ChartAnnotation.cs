@@ -57,12 +57,12 @@ public class ChartAnnotation :
     return Colors.Transparent;
   }
 
-  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
     ScichartSurfaceMVVM _param1)
   {
     if (this.Type == ChartAnnotationTypes.None)
       throw new InvalidOperationException("annotation type is not set");
-    return (UIBaseVM) (this.\u0023\u003Dz2YSX_Z4\u003D = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
+    return (UIChartBaseViewModel) (this.\u0023\u003Dz2YSX_Z4\u003D = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
   }
 
   bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(

@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace fx.Charting.IndicatorPainters
 {
-    public abstract class BaseChartIndicatorPainter : BaseVM, ICloneable, IPersistable, IChartIndicatorPainter
+    public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable, IPersistable, IChartIndicatorPainter
     {
         private readonly PooledList< IChartElement >  _innerElements    = new PooledList< IChartElement >( );
         private readonly IndicatorPainterHelper _indicatorPainter = new IndicatorPainterHelper( );

@@ -15,7 +15,7 @@ namespace fx.Charting
         private ChartIndicatorDrawStyles _drawStyle = ChartIndicatorDrawStyles.Band;
         private LineUI _lineOne;
         private LineUI _lineTwo;
-        private UIBaseVM _viewModel;
+        private UIChartBaseViewModel _viewModel;
 
         public BandsUI( )
         {
@@ -99,9 +99,9 @@ namespace fx.Charting
             return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
         }
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
-            _viewModel = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new BandViewModel<double>( this ) : ( UIBaseVM )new BandViewModel< DateTime >( this );
+            _viewModel = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new BandViewModel<double>( this ) : ( UIChartBaseViewModel )new BandViewModel< DateTime >( this );
             return _viewModel;
         }
 

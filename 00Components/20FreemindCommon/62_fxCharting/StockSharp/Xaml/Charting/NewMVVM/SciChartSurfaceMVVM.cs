@@ -40,7 +40,7 @@ using System.Windows.Media;
 using SciChart.Charting.Themes;
 using Ecng.Common;
 
-public class ScichartSurfaceMVVM : BaseVM, IChildPane, IScichartSurfaceVM, IDisposable
+public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurfaceVM, IDisposable
 {
     private readonly CachedSynchronizedDictionary<IChartComponent, ParentVM>      _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ParentVM>( );
     private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>         _chartUIRSeries               = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>( );

@@ -17,7 +17,7 @@ namespace fx.Charting
         private ChartIndicatorDrawStyles _drawStyle = ChartIndicatorDrawStyles.Band;
         private LineUI                   _bidLine;
         private LineUI                   _askLine;
-        private UIBaseVM                 _viewModel;
+        private UIChartBaseViewModel                 _viewModel;
 
         public QuotesUI( )
         {
@@ -106,7 +106,7 @@ namespace fx.Charting
             return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
         }
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _viewModel = new QuotesVM( this );
             return _viewModel;

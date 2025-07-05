@@ -41,12 +41,12 @@ namespace fx.Charting
         private bool                     _showAxisMarker;
         private ControlTemplate          _drawTemplate;
         private IPointMarker             _pointMarker;
-        private UIBaseVM                 _lineViewModel;
+        private UIChartBaseViewModel                 _lineViewModel;
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _scichartSurfaceVM = viewModel;
-            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new LineVM<double>( this ) : ( UIBaseVM )new LineVM<DateTime>( this );
+            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new LineVM<double>( this ) : ( UIChartBaseViewModel )new LineVM<DateTime>( this );
 
             var xAxis = _scichartSurfaceVM.XAxises.FirstOrDefault( );
 

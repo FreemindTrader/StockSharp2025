@@ -44,7 +44,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
 
   public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c(Func<Order, bool> _param1)
   {
-    if (!UIBaseVM.IsUiThread())
+    if (!UIChartBaseViewModel.IsUiThread())
       throw new InvalidOperationException("must be called from ui thread");
     if (_param1 == null)
       _param1 = \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<Order, bool>(\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D));
@@ -74,7 +74,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRRvwDu67s9Rm = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D = _param1;
-    if (!UIBaseVM.IsUiThread())
+    if (!UIChartBaseViewModel.IsUiThread())
     {
       this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D), true);
     }

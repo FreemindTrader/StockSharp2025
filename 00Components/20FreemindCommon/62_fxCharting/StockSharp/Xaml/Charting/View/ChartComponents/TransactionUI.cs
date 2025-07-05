@@ -19,7 +19,7 @@ namespace fx.Charting
         private Color _buyStrokeColor;
         private Color _sellColor;
         private Color _sellStrokeColor;
-        private UIBaseVM _viewModel;
+        private UIChartBaseViewModel _viewModel;
 
         protected TransactionUI( )
         {
@@ -173,7 +173,7 @@ namespace fx.Charting
             }
         }
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new TransactionVM<T>( ( T ) this );
         }

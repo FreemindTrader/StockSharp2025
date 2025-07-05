@@ -58,7 +58,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRRvwDu67s9Rm = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D = _param1;
-    if (!UIBaseVM.IsUiThread())
+    if (!UIChartBaseViewModel.IsUiThread())
     {
       this.PerformUiAction(new Action(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D), true);
     }

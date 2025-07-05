@@ -51,7 +51,7 @@ public class ChartLineElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private ControlTemplate \u0023\u003DzR0PVnrfRD9\u0024B;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
 
   public ChartLineElement() => this.AdditionalColor = this.Color.ToTransparent((byte) 50);
 
@@ -171,10 +171,10 @@ public class ChartLineElement :
     return controlTemplate;
   }
 
-  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
     ScichartSurfaceMVVM _param1)
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIBaseVM) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<double>(this) : (UIBaseVM) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<DateTime>(this);
+    this.\u0023\u003Dz2YSX_Z4\u003D = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIChartBaseViewModel) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<double>(this) : (UIChartBaseViewModel) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<DateTime>(this);
     return this.\u0023\u003Dz2YSX_Z4\u003D;
   }
 

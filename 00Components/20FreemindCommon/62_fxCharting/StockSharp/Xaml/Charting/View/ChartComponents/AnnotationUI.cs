@@ -51,7 +51,7 @@ namespace fx.Charting
             }
         }
 
-        UIBaseVM IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             if( Type == ChartAnnotationTypes.None )
             {

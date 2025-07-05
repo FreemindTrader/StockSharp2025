@@ -116,7 +116,7 @@ public class ChartCandleElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> \u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIBaseVM \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
 
   public ChartCandleElement()
   {
@@ -1134,10 +1134,10 @@ public class ChartCandleElement :
     return _param1;
   }
 
-  UIBaseVM IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
     ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIBaseVM) new CandlestickUI(this);
+    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIChartBaseViewModel) new CandlestickUI(this);
   }
 
   bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(

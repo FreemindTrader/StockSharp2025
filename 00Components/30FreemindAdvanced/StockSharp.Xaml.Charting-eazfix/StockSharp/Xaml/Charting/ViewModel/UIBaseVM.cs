@@ -14,7 +14,7 @@ using Ecng.Xaml.Converters;
 
 namespace StockSharp.Xaml.Charting;
 #nullable disable
-internal abstract class UIBaseVM : ChartBaseViewModel
+internal abstract class UIChartBaseViewModel : ChartBaseViewModel
 {
 	
 	private readonly Dictionary<IRenderableSeries, AxisMarkerAnnotation> _renderseries2AxisMarker = new Dictionary<IRenderableSeries, AxisMarkerAnnotation>();
@@ -172,12 +172,12 @@ internal abstract class UIBaseVM : ChartBaseViewModel
 
 	protected void \u0023\u003DzY_lPK_VP\u0024B7_( Action _param1, bool _param2 )
 	{
-		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) UIBaseVM.GetDispatcher() ).GuiAsync ), _param1, _param2);
+		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) UIChartBaseViewModel.GetDispatcher() ).GuiAsync ), _param1, _param2);
 	}
 
 	protected void PerformUiAction( Action _param1, bool _param2 )
 	{
-		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) UIBaseVM.GetDispatcher() ).GuiSync ), _param1, _param2);
+		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) UIChartBaseViewModel.GetDispatcher() ).GuiSync ), _param1, _param2);
 	}
 
 	private void \u0023\u003DztwYEX\u0024c\u003D(
@@ -185,11 +185,11 @@ internal abstract class UIBaseVM : ChartBaseViewModel
 		Action _param2,
 		bool _param3)
   {
-    UIBaseVM.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D yeuvfbi2ga1Q3dva4g = new UIBaseVM.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D();
+    UIChartBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D yeuvfbi2ga1Q3dva4g = new UIChartBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D();
 yeuvfbi2ga1Q3dva4g.\u0023\u003DzRRvwDu67s9Rm = this;
 yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D = _param2;
 Action action = _param3 ? new Action(yeuvfbi2ga1Q3dva4g.\u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D) : yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D;
-if (UIBaseVM.IsUiThread() )
+if (UIChartBaseViewModel.IsUiThread() )
 	action();
 else
 	_param1( action );
@@ -197,7 +197,7 @@ else
 
 private void ResetY1Annotation()
 {
-	CollectionHelper.ForEach<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( ( IEnumerable<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> ) this._renderseries2AxisMarker, UIBaseVM.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? ( UIBaseVM.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( UIBaseVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D) ));
+	CollectionHelper.ForEach<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( ( IEnumerable<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> ) this._renderseries2AxisMarker, UIChartBaseViewModel.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? ( UIChartBaseViewModel.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( UIChartBaseViewModel.SomeClass34343383.SomeMethond0343.\u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D) ));
 }
 
 private void UpdateAndClear()
@@ -210,7 +210,7 @@ private void UpdateAndClear()
 private new sealed class SomeClass34343383
   {
 
-	public static readonly UIBaseVM.SomeClass34343383 SomeMethond0343 = new UIBaseVM.SomeClass34343383();
+	public static readonly UIChartBaseViewModel.SomeClass34343383 SomeMethond0343 = new UIChartBaseViewModel.SomeClass34343383();
 public static Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
 internal void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
@@ -223,7 +223,7 @@ internal void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
   private sealed class \u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D
   {
 
-	public UIBaseVM \u0023\u003DzRRvwDu67s9Rm;
+	public UIChartBaseViewModel \u0023\u003DzRRvwDu67s9Rm;
 public Action \u0023\u003Dz07PQx44\u003D;
 
 internal void \u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D()

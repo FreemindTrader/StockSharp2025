@@ -87,9 +87,9 @@ namespace fx.Charting
 
 
 
-            Func<SeriesInfo, UIBaseVM> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<UIBaseVM, ChildVM[ ]> )?.Item1 );
+            Func<SeriesInfo, UIChartBaseViewModel> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<UIChartBaseViewModel, ChildVM[ ]> )?.Item1 );
 
-            Func<IGrouping<UIBaseVM, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
+            Func<IGrouping<UIChartBaseViewModel, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
 
             var groupDatas = SeriesData.SeriesInfo.GroupBy( groupByCondition ).Where( whereCondition );
 
@@ -97,7 +97,7 @@ namespace fx.Charting
             {
                 foreach ( SeriesInfo info in myGroup )
                 {
-                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<UIBaseVM, ChildVM[ ]>;
+                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<UIChartBaseViewModel, ChildVM[ ]>;
 
                     if ( tag == null )
                     {

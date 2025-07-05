@@ -15,7 +15,7 @@ using Ecng.Xaml.Converters;
 
 #pragma warning disable CA1416
 
-public abstract class UIBaseVM : BaseVM
+public abstract class UIChartBaseViewModel : ChartBaseViewModel
 {
     private readonly PooledDictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new PooledDictionary< IRenderableSeries, AxisMarkerAnnotation >( );
     private ParentVM _parentChartViewModel;    

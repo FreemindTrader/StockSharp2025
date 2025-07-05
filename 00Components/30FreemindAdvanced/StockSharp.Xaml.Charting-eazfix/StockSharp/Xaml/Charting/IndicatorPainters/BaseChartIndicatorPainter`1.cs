@@ -275,7 +275,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
       ParentVM a4VgOpCeDiqsTdzB;
       if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r((IChartComponent) this.\u0023\u003DzRRvwDu67s9Rm.GetIndicatorElement(), out a4VgOpCeDiqsTdzB))
         return;
-      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n((IEnumerable<UIBaseVM>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<UIBaseVM>(((IDrawableChartElement) this.\u0023\u003Dz_i6sZDg\u003D).CreateViewModel(tdnKj06Uu87Wzk09Wj)));
+      a4VgOpCeDiqsTdzB.\u0023\u003DzkFJdjYoyxP8n((IEnumerable<UIChartBaseViewModel>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<UIChartBaseViewModel>(((IDrawableChartElement) this.\u0023\u003Dz_i6sZDg\u003D).CreateViewModel(tdnKj06Uu87Wzk09Wj)));
     }
   }
 

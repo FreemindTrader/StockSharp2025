@@ -42,7 +42,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
     this.SeriesData.UpdateSeries(this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1));
-    CollectionHelper.ForEach<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
+    CollectionHelper.ForEach<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
   }
 
   protected override void \u0023\u003Dz1z_ZexRGbAiN91rPDA\u003D\u003D(Point _param1)
@@ -79,25 +79,25 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
   private new sealed class SomeClass34343383
   {
     public static readonly \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383();
-    public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIBaseVM> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
-    public static Func<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
+    public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
+    public static Func<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
     public static Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
-    public static Action<IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>> \u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D;
+    public static Action<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>> \u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D;
 
-    internal UIBaseVM \u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D(
+    internal UIChartBaseViewModel \u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
-      return !(((FrameworkElement) _param1.RenderableSeries).Tag is Tuple<UIBaseVM, ChildVM[]> tag) ? (UIBaseVM) null : tag.Item1;
+      return !(((FrameworkElement) _param1.RenderableSeries).Tag is Tuple<UIChartBaseViewModel, ChildVM[]> tag) ? (UIChartBaseViewModel) null : tag.Item1;
     }
 
     internal bool \u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D(
-      IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
+      IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
     {
       return _param1.Key != null;
     }
 
     internal void \u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D(
-      IGrouping<UIBaseVM, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
+      IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
     {
       CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
     }
@@ -107,7 +107,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
     {
       \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeWheireosoe();
       vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D = _param1;
-      if (!(((FrameworkElement) vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D.RenderableSeries).Tag is Tuple<UIBaseVM, ChildVM[]> tag))
+      if (!(((FrameworkElement) vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D.RenderableSeries).Tag is Tuple<UIChartBaseViewModel, ChildVM[]> tag))
         return;
       CollectionHelper.ForEach<ChildVM>((IEnumerable<ChildVM>) tag.Item2, new Action<ChildVM>(vbxLeArTkallkIdHg.\u0023\u003Dzrmvrnfo5nmhUy3uWog0cspw\u003D));
     }
