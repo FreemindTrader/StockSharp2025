@@ -32,10 +32,10 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     {
       IIndicator indicator = element1.TryGetIndicator();
       if (indicator != null)
-        propertyDescriptorList.Add(IndicatorSettingsObject.\u0023\u003DzANqI1s0\u003D(indicator.Name, (object) this, indicator));
+        propertyDescriptorList.Add(IndicatorSettingsObject.GetPropertyDescriptor(indicator.Name, (object) this, indicator));
     }
-    propertyDescriptorList.Add(ChartComponentElementSettings.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Style, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.StaticMethod0348)));
-    propertyDescriptorList.Add(ChartComponentElementSettings.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Common, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.StaticMethod0983)));
+    propertyDescriptorList.Add(ChartComponentElementSettings.GetPropertyDescriptor(LocalizedStrings.Style, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.StaticMethod0348)));
+    propertyDescriptorList.Add(ChartComponentElementSettings.GetPropertyDescriptor(LocalizedStrings.Common, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.StaticMethod0983)));
     return propertyDescriptorList.ToArray();
   }
 

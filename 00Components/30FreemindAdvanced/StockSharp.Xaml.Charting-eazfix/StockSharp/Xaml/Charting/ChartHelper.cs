@@ -30,7 +30,7 @@ public static class ChartHelper
 
     private static readonly Lazy<IndicatorColorProvider> _indicatorColorProviders = new Lazy<IndicatorColorProvider>();
 
-  public static Stream SaveToImage( this IChart chart )
+    public static Stream SaveToImage( this IChart chart )
     {
         if ( chart == null )
             throw new ArgumentNullException( nameof( chart ) );
@@ -85,13 +85,13 @@ public static class ChartHelper
 
     public static void FillDefaultValues( this OptimizerChart3D chart )
     {
-        ChartHelper.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D skXz9pb7XdulaJda = new ChartHelper.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D();
-        skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D = chart;
-        if ( skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D == null)
-      throw new ArgumentNullException( nameof( chart ) );
-        skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.X = skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.XValues.FirstOrDefault<IChart3DParameter>();
-        skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.Y = skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.YValues.FirstOrDefault<IChart3DParameter>();
-        skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.Z = skXz9pb7XdulaJda.\u0023\u003Dz_3vetAU\u003D.ZValues.FirstOrDefault<IStatisticParameter>();
+        ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
+        skXz9pb7XdulaJda._optimizerChart3d = chart;
+        if ( skXz9pb7XdulaJda._optimizerChart3d == null )
+            throw new ArgumentNullException( nameof( chart ) );
+        skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
+        skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
+        skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
     }
 
     internal static Chart GetDrawingChart( this IChartElement _param0 )
@@ -166,13 +166,13 @@ public static class ChartHelper
         chart.AddElement( area, element, new Subscription( series ), indicator );
     }
 
-    private sealed class \u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D
-  {
-    public OptimizerChart3D \u0023\u003Dz_3vetAU\u003D;
-
-    internal bool \u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D(IChart3DParameter _param1)
+    private sealed class SealClass034
     {
-      return _param1 != this.\u0023\u003Dz_3vetAU\u003D.X;
+        public OptimizerChart3D _optimizerChart3d;
+
+        internal bool \u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D(IChart3DParameter _param1)
+    {
+      return _param1 != this._optimizerChart3d.X;
     }
-  }
+}
 }
