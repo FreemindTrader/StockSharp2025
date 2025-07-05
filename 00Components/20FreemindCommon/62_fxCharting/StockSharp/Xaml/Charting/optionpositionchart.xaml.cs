@@ -102,8 +102,8 @@ namespace fx.Charting
                 }
 
                 init = true;
-                var annoData = new ChartDrawDataEx.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new LabelPlacement?( ( LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
-                var drawData = new ChartDrawDataEx( );
+                var annoData = new ChartDrawData.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new LabelPlacement?( ( LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
+                var drawData = new ChartDrawData( );
                 drawData.Add( _chartAnnotation, annoData );
                 Chart.Draw( drawData );
             };
@@ -375,7 +375,7 @@ namespace fx.Charting
             }
 
             Chart.Reset( GetChartAreaElments( ) );
-            ChartDrawDataEx drawData = new ChartDrawDataEx( );
+            ChartDrawData drawData = new ChartDrawData( );
 
             if ( ShowSeparated )
             {
@@ -427,7 +427,7 @@ namespace fx.Charting
                 }
             }
 
-            drawData.Add( _chartAnnotation, new ChartDrawDataEx.sAnnotation( ) { X1 = assetPrice, Y1 = 0.0 } );
+            drawData.Add( _chartAnnotation, new ChartDrawData.sAnnotation( ) { X1 = assetPrice, Y1 = 0.0 } );
             Chart.Draw( drawData );
         }
 

@@ -168,12 +168,12 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
         _lastDrawValueObject = TimeSpan.Zero;
     }
 
-    public override bool Draw( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
+    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
     {
-        return UpdateDataSeries( drawValues.Cast<ChartDrawDataEx.sxTuple<TimeSpan>>( ).ToEx( drawValues.Count ) );
+        return UpdateDataSeries( drawValues.Cast<ChartDrawData.sxTuple<TimeSpan>>( ).ToEx( drawValues.Count ) );
     }
 
-    public bool UpdateDataSeries<TX1>( IEnumerableEx<ChartDrawDataEx.sxTuple<TX1>> drawValues ) where TX1 : struct, IComparable
+    public bool UpdateDataSeries<TX1>( IEnumerableEx<ChartDrawData.sxTuple<TX1>> drawValues ) where TX1 : struct, IComparable
     {
         if ( drawValues == null )
         {
@@ -187,7 +187,7 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
         double[ ] bandOne = new double[ count ];
         double[ ] bandTwo = new double[ count ];
 
-        foreach ( ChartDrawDataEx.sxTuple<TX1> band in drawValues )
+        foreach ( ChartDrawData.sxTuple<TX1> band in drawValues )
         {
             DateTime x = ( DateTime )( ValueType )band.GetProperty( );
 

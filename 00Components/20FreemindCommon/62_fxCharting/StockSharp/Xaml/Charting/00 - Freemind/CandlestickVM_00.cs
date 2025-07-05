@@ -63,7 +63,7 @@ namespace fx.Charting
         public double Low { get; set; }    // Low (the smallest price) of the time period
         public double Close { get; set; }    // Close (the latest price) of the time period
 
-        public NullBar( ChartDrawDataEx.sCandle bar )
+        public NullBar( ChartDrawData.sCandle bar )
         {
             BarTime = bar.UtcTime( );
             Period = ( TimeSpan ) bar.CandleArg( );
@@ -480,7 +480,7 @@ namespace fx.Charting
             _setMinMax = false;
         }
 
-        public override bool Draw( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
+        public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -488,10 +488,10 @@ namespace fx.Charting
             *                           
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */
-            return UpdateDataSeries( drawValues.Cast<ChartDrawDataEx.sCandle>( ).ToEx( drawValues.Count ) );
+            return UpdateDataSeries( drawValues.Cast<ChartDrawData.sCandle>( ).ToEx( drawValues.Count ) );
         }
 
-        public bool TonyDrawSeries( ChartDrawDataEx.sCandleEx candleRangeData )
+        public bool TonyDrawSeries( ChartDrawData.sCandleEx candleRangeData )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -502,7 +502,7 @@ namespace fx.Charting
             return UpdateDataSeries( candleRangeData );
         }
 
-        public bool UpdateDataSeries( ChartDrawDataEx.sCandleEx barRange )
+        public bool UpdateDataSeries( ChartDrawData.sCandleEx barRange )
         {
             if ( _colorerFunction != ChartElement.Colorer )
             {
@@ -671,7 +671,7 @@ namespace fx.Charting
 
         
 
-        public bool UpdateDataSeries( IEnumerableEx<ChartDrawDataEx.sCandle> candles )
+        public bool UpdateDataSeries( IEnumerableEx<ChartDrawData.sCandle> candles )
         {
             if ( _colorerFunction != ChartElement.Colorer )
             {
@@ -698,7 +698,7 @@ namespace fx.Charting
             double[ ] closeArray                   = new double[ count ];
             IPointMetadata[] advancedTAInfo        = new IPointMetadata[ count ];
 
-            foreach ( ChartDrawDataEx.sCandle bar in candles )
+            foreach ( ChartDrawData.sCandle bar in candles )
             {
                 SetPnfBoxSize( bar.CandleArg( ) );
 
@@ -718,7 +718,7 @@ namespace fx.Charting
 
                         //if ( bar.PriceLevels( ) != null /* && _timeframeSegmentDataSeries != null */ )
                         //{
-                        //    foreach ( ChartDrawDataEx.sCandle.sPriceVolume priceVol in bar.PriceLevels( ) )
+                        //    foreach ( ChartDrawData.sCandle.sPriceVolume priceVol in bar.PriceLevels( ) )
                         //    {
                         //        _timeframeSegmentDataSeries.Update( bar.UtcTime( ), priceVol.Price( ), priceVol.Volume( ) );
                         //    }
@@ -741,7 +741,7 @@ namespace fx.Charting
                          
                         //if ( bar.PriceLevels( ) != null /* && _timeframeSegmentDataSeries != null */ )
                         //{
-                        //    foreach ( ChartDrawDataEx.sCandle.sPriceVolume priceVol in bar.PriceLevels( ) )
+                        //    foreach ( ChartDrawData.sCandle.sPriceVolume priceVol in bar.PriceLevels( ) )
                         //    {
                         //        // _timeframeSegmentDataSeries.Append( bar.UtcTime( ), priceVol.Price( ), priceVol.Volume( ) );
                         //    }

@@ -53,7 +53,7 @@ public interface IChartComponent : IChartElement, IChartPart<IChartElement>, INo
 
     void CopyTo( object _param1 );
 
-    bool Draw( ChartDrawDataEx _param1 );
+    bool Draw( ChartDrawData _param1 );
 
     void Reset();
 

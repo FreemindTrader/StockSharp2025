@@ -67,7 +67,7 @@ namespace fx.Charting
             {
                 throw new ArgumentNullException( nameof( candle ) );
             }
-            ChartDrawDataEx data = new ChartDrawDataEx( );
+            ChartDrawData data = new ChartDrawData( );
             data.Group( candle.OpenTime ).Add( element, candle );
             chart.Draw( data );
         }
@@ -110,7 +110,7 @@ namespace fx.Charting
         //[Obsolete( "Use the Draw method instead." )]
         //public static void Draw( this IChart chart, IEnumerable< RefPair< DateTimeOffset, IDictionary< IChartElement, object > > > values )
         //{
-        //    chart.Draw( new ChartDrawDataEx( values ) );
+        //    chart.Draw( new ChartDrawData( values ) );
         //}
 
         public static Stream SaveToImage( this IChart chart )

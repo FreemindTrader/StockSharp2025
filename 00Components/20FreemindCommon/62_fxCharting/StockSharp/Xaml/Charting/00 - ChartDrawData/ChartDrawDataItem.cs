@@ -22,24 +22,24 @@ using fx.Bars;
 
 namespace fx.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         public sealed class ChartDrawDataItem
         {
-            public ChartDrawDataItem( ChartDrawDataEx data, DateTimeOffset timestamp )
+            public ChartDrawDataItem( ChartDrawData data, DateTimeOffset timestamp )
             {
                 if ( data == null )
-                    throw new ArgumentNullException( "ChartDrawDataEx is null" );
+                    throw new ArgumentNullException( "ChartDrawData is null" );
                 
                 _drawData  = data;
                 _timeStamp = timestamp;
                 _xValue    = double.NaN;
             }
 
-            public ChartDrawDataItem( ChartDrawDataEx data, double xValue )
+            public ChartDrawDataItem( ChartDrawData data, double xValue )
             {
                 if ( data == null )
-                    throw new ArgumentNullException( "ChartDrawDataEx is null" );
+                    throw new ArgumentNullException( "ChartDrawData is null" );
 
                 _drawData = data;
                 _xValue   = xValue;
@@ -69,7 +69,7 @@ namespace fx.Charting
                 }
             }
 
-            private readonly ChartDrawDataEx _drawData;
+            private readonly ChartDrawData _drawData;
 
             private ChartDrawDataItem Add<TElement, TValue>( PooledDictionary<TElement, PooledList<TValue>> _param1, TElement _param2, TValue _param3 )
             {
@@ -82,7 +82,7 @@ namespace fx.Charting
             /// <param name="element">The chart element representing a candle.</param>
             /// <param name="color">Candle draw color.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( CandlestickUI candleUI, Color? color )
             {
                 _drawData.GetCandleColorMap().SafeAdd( candleUI ).Add( new sCandleColor( TimeStamp, color ) );
@@ -94,7 +94,7 @@ namespace fx.Charting
             /// <param name="element">The chart element representing a candle.</param>
             /// <param name="color">Candle draw color.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( CandlestickUI candleUI, fxHistoricBarsRepo barList, uint barIndex )
             {
                 _drawData.GetCandleMap().SafeAdd( candleUI ).Add( barList, barIndex );
@@ -107,7 +107,7 @@ namespace fx.Charting
             /// <param name="element">The chart element representing the indicator.</param>
             /// <param name="value">The indicator value.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( IndicatorUI indicatorUI, IIndicator indicator, IIndicatorValue value )
             {
                 if ( value == null )
@@ -135,7 +135,7 @@ namespace fx.Charting
             /// <param name="order">The order value.</param>
             /// <param name="errorMessage">Error registering/cancelling order.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( OrdersUI element, Order order, string errorMessage = null )
             {
                 if ( order == null )
@@ -154,7 +154,7 @@ namespace fx.Charting
             /// <param name="volume">Number of contracts in the order.</param>
             /// <param name="errorMessage">Error registering/cancelling order.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( OrdersUI element, long orderId, string orderStringId, Sides side, Decimal price, Decimal volume, string errorMessage = null )
             {
                 return Add( _drawData.GetOrderMap(), element, new sTrade( TimeStamp, orderId, orderStringId, side, price, volume, errorMessage ) );
@@ -164,7 +164,7 @@ namespace fx.Charting
             /// <param name="element">The chart element representing trades.</param>
             /// <param name="trade">The trade value.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( TradesUI element, MyTrade trade )
             {
                 if ( trade == null )
@@ -181,7 +181,7 @@ namespace fx.Charting
             /// <param name="price">Trade price.</param>
             /// <param name="volume">Number of contracts in the trade.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( TradesUI element, long tradeId, string tradeStringId, Sides side, Decimal price, Decimal volume )
             {
                 return Add( _drawData.GetTradeMap(), element, new sTrade( TimeStamp, tradeId, tradeStringId, side, price, volume, null ) );
@@ -192,7 +192,7 @@ namespace fx.Charting
             /// <param name="value1">The value1.</param>
             /// <param name="value2">The value2.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( LineUI element, double value1, double value2 = double.NaN )
             {
                 if ( !XValue.IsNaN() )
@@ -204,7 +204,7 @@ namespace fx.Charting
             /// <param name="element">The chart element representing a band.</param>
             /// <param name="value">The value.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( BandsUI element, Decimal value )
             {
                 return Add( element, ( double ) value, 0.0 );
@@ -215,7 +215,7 @@ namespace fx.Charting
             /// <param name="value1">The value1.</param>
             /// <param name="value2">The value2.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( BandsUI element, double value1, double value2 )
             {
                 if ( !XValue.IsNaN() )
@@ -227,7 +227,7 @@ namespace fx.Charting
             /// <param name="element">The chart element.</param>
             /// <param name="value">The chart value.</param>
             /// <returns>
-            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+            /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
             public ChartDrawDataItem Add( IChartElement element, object value )
             {
                 if ( element == null )

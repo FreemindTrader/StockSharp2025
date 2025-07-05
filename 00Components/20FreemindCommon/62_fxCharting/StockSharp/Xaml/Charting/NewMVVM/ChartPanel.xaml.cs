@@ -117,11 +117,11 @@ namespace fx.Charting
 
         public event Action<AnnotationUI> AnnotationCreated;
 
-        public event Action<AnnotationUI, ChartDrawDataEx.sAnnotation> AnnotationModified;
+        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationModified;
 
         public event Action<AnnotationUI> AnnotationDeleted;
 
-        public event Action<AnnotationUI, ChartDrawDataEx.sAnnotation> AnnotationSelected;
+        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationSelected;
 
         public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;
 
@@ -417,7 +417,7 @@ namespace fx.Charting
             Chart.Reset( elements );
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             Chart.Draw( data );
         }
@@ -587,7 +587,7 @@ namespace fx.Charting
             AnnotationCreated?.Invoke( annotation );
         }
 
-        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         {
             AnnotationModified?.Invoke( annotation, aData );
         }
@@ -597,7 +597,7 @@ namespace fx.Charting
             AnnotationDeleted?.Invoke( annotation );
         }
 
-        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         {
             AnnotationSelected?.Invoke( annotation, aData );
         }
@@ -608,12 +608,12 @@ namespace fx.Charting
         //    ( ( IChart )Chart ).InvokeAnnotationCreatedEvent( annotation );
         //}
 
-        //public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        //public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         //{
         //    ( ( IChart )Chart ).InvokeAnnotationModifiedEvent( annotation, aData );
         //}
 
-        //public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        //public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         //{
         //    ( ( IChart )Chart ).InvokeAnnotationSelectedEvent( annotation, aData );
         //}

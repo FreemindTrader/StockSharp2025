@@ -508,7 +508,7 @@ namespace fx.Charting
             }
         }
 
-        public void SetupAnnotation( AnnotationUI annotation, ChartDrawDataEx.sAnnotation data )
+        public void SetupAnnotation( AnnotationUI annotation, ChartDrawData.sAnnotation data )
         {
             Struct0 s;
             //bool? nullable;
@@ -646,12 +646,12 @@ namespace fx.Charting
             }
         }
 
-        private ChartDrawDataEx.sAnnotation GetAnnotationData( AnnotationBase anno )
+        private ChartDrawData.sAnnotation GetAnnotationData( AnnotationBase anno )
         {
             Struct1 s;
 
             s.b = anno;
-            var data            = new ChartDrawDataEx.sAnnotation( );
+            var data            = new ChartDrawData.sAnnotation( );
             s.sCalc = s.b.XAxis?.GetCurrentCoordinateCalculator( );
 
             data.IsVisible = new bool?( !s.b.IsHidden );

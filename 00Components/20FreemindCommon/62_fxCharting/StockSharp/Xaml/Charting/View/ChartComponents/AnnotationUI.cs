@@ -61,14 +61,14 @@ namespace fx.Charting
             return _viewModel = new AnnotationVM( this );
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawDataEx.IDrawValue > data )
+        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > data )
         {
             return _viewModel.Draw( data );
         }
 
         void IDrawableChartElement.StartDrawing( )
         {
-            _viewModel.Draw( Enumerable.Empty< ChartDrawDataEx.IDrawValue >( ).ToEx( 0 ) );
+            _viewModel.Draw( Enumerable.Empty< ChartDrawData.IDrawValue >( ).ToEx( 0 ) );
         }
 
         bool IChartComponent.CheckAxesCompatible( ChartAxisType? axisType, ChartAxisType? axisType2 )
@@ -81,15 +81,15 @@ namespace fx.Charting
             return axisType2.GetValueOrDefault( ) == ChartAxisType.Numeric & axisType2.HasValue;
         }
 
-        protected override bool OnDraw( ChartDrawDataEx data )
+        protected override bool OnDraw( ChartDrawData data )
         {
-            ChartDrawDataEx.sAnnotation annotationData = data.GetAnnotation( this );
+            ChartDrawData.sAnnotation annotationData = data.GetAnnotation( this );
             if( annotationData == null )
             {
                 return false;
             }
 
-            return ( ( IDrawableChartElement )this ).StartDrawing(  new ChartDrawDataEx.IDrawValue[ 1 ] { annotationData } .ToEx( 1 ) );
+            return ( ( IDrawableChartElement )this ).StartDrawing(  new ChartDrawData.IDrawValue[ 1 ] { annotationData } .ToEx( 1 ) );
         }
 
         internal override AnnotationUI Clone( AnnotationUI annotation )

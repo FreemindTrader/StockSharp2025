@@ -111,7 +111,7 @@ namespace fx.Charting
             }
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             Chart.Draw( data );
         }
@@ -323,7 +323,7 @@ namespace fx.Charting
             protected override void OnAdded( LineData<DateTime> lineData )
             {
                 base.OnAdded( lineData );
-                ChartDrawDataEx data = new ChartDrawDataEx( );
+                ChartDrawData data = new ChartDrawData( );
                 data.Group( lineData.X ).Add( Element, Decimal.ToDouble( lineData.Y ), 0.0 );
                 _equityCurveChart.Chart.Draw( data );
             }

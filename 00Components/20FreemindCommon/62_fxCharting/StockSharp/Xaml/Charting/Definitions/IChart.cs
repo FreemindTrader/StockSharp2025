@@ -31,7 +31,7 @@ namespace fx.Charting
 
         void Reset( IEnumerable<IChartElement> elements );
 
-        void Draw( ChartDrawDataEx data );
+        void Draw( ChartDrawData data );
 
 
         void AddElement   ( ChartArea area, IChartElement element );
@@ -48,9 +48,9 @@ namespace fx.Charting
 
         void InvokeAnnotationCreatedEvent ( AnnotationUI annotation );
 
-        void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData );
+        void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData );
 
-        void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData );
+        void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData );
 
         void InvokeAnnotationDeletedEvent ( AnnotationUI annotation );
     }

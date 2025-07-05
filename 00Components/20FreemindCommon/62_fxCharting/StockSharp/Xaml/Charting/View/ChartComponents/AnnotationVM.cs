@@ -18,9 +18,9 @@ internal sealed class AnnotationVM : UIHigherVM< AnnotationUI >
         ScichartSurfaceMVVM.RemoveAnnotation( ChartElement );
     }
 
-    public override bool Draw( IEnumerableEx< ChartDrawDataEx.IDrawValue > e )
+    public override bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > e )
     {
-        PerformUIAction2( () => ScichartSurfaceMVVM.SetupAnnotation( ChartElement, e.Cast<ChartDrawDataEx.sAnnotation>( ).Single( ) ), true );
+        PerformUIAction2( () => ScichartSurfaceMVVM.SetupAnnotation( ChartElement, e.Cast<ChartDrawData.sAnnotation>( ).Single( ) ), true );
 
         return true;
     }    

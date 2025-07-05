@@ -18,12 +18,12 @@ using fx.Bars;
 
 namespace fx.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx" />.
+        /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" />.
         /// </summary>
-        public ChartDrawDataEx()
+        public ChartDrawData()
         {
         }
 
@@ -185,7 +185,7 @@ namespace fx.Charting
             return _annotationMap ?? ( _annotationMap = new PooledDictionary<AnnotationUI, sAnnotation>( ) );
         }
 
-        //public ChartDrawDataEx( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> values )
+        //public ChartDrawData( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> values )
         //{
         //    if ( values == null )
         //    {
@@ -260,11 +260,11 @@ namespace fx.Charting
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" />.
+        /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" />.
         /// </summary>
         /// <param name="timeStamp">The time stamp of the new data generation.</param>
         /// <returns>
-        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
         public ChartDrawDataItem Group( DateTimeOffset timeStamp )
         {
             return new ChartDrawDataItem( this, timeStamp );
@@ -274,7 +274,7 @@ namespace fx.Charting
         /// <param name="element">The chart element representing an annotation.</param>
         /// <param name="data">Annotation draw data.</param>
         /// <returns>
-        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
         public void Add( AnnotationUI element, sAnnotation data )
         {
             PooledDictionary<AnnotationUI, sAnnotation> dictionary = GetAnnotationMap( );
@@ -296,8 +296,8 @@ namespace fx.Charting
         /// <param name="balance">Balance.</param>
         /// <param name="state">Use this state to draw the order.</param>
         /// <returns>
-        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx" /> instance.</returns>
-        public ChartDrawDataEx Add( ActiveOrdersUI element,
+        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" /> instance.</returns>
+        public ChartDrawData Add( ActiveOrdersUI element,
                                     Order order,
                                     bool? isFrozen = null,
                                     bool autoRemoveFromChart = true,
@@ -360,11 +360,11 @@ namespace fx.Charting
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" />.
+        /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" />.
         /// </summary>
         /// <param name="xValue">Value of X coordinate for the data.</param>
         /// <returns>
-        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx.ChartDrawDataItem" /> instance.</returns>
+        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
         public ChartDrawDataItem Group( double xValue )
         {
             return new ChartDrawDataItem( this, xValue );

@@ -200,22 +200,22 @@ namespace fx.Charting
             return _viewModel = new ChartActiveOrdersVM( this );
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawDataEx.IDrawValue > drawValue )
+        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > drawValue )
         {
             return _viewModel.Draw( drawValue );
         }
 
         void IDrawableChartElement.StartDrawing( )
         {
-            _viewModel.Draw( Enumerable.Empty<ChartDrawDataEx.IDrawValue>( ).ToEx( 0 ) );
+            _viewModel.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
         }
 
-        protected override bool OnDraw( ChartDrawDataEx data )
+        protected override bool OnDraw( ChartDrawData data )
         {
-            PooledList < ChartDrawDataEx.sActiveOrder > source = data.GetActiveOrders( this );
+            PooledList < ChartDrawData.sActiveOrder > source = data.GetActiveOrders( this );
             if ( source == null || source.IsEmpty( ) )
                 return false;
-            return ( ( IDrawableChartElement ) this ).StartDrawing( source.Cast<ChartDrawDataEx.IDrawValue>( ).ToEx( source.Count ) );
+            return ( ( IDrawableChartElement ) this ).StartDrawing( source.Cast<ChartDrawData.IDrawValue>( ).ToEx( source.Count ) );
         }
 
         public override void Load( SettingsStorage storage )

@@ -12,9 +12,9 @@ public interface IDrawableChartElement : ICloneable<IChartElement>, INotifyPrope
 
     UIChartBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel );
 
-    bool StartDrawing( IEnumerableEx<ChartDrawDataEx.IDrawValue> data );
+    bool StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> data );
 
-    //bool StartDrawing<T>( IEnumerableEx<ChartDrawDataEx.IDrawValue< T > > data );
+    //bool StartDrawing<T>( IEnumerableEx<ChartDrawData.IDrawValue< T > > data );
 
     void StartDrawing( );
 }

@@ -341,9 +341,9 @@ namespace fx.Charting
         {
         }
 
-        protected abstract bool OnDraw( ChartDrawDataEx data );
+        protected abstract bool OnDraw( ChartDrawData data );
 
-        bool IChartComponent.Draw( ChartDrawDataEx chartDrawData_0 )
+        bool IChartComponent.Draw( ChartDrawData chartDrawData_0 )
         {
             return OnDraw( chartDrawData_0 );
         }

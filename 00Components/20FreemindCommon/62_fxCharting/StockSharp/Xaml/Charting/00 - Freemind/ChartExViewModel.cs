@@ -388,11 +388,11 @@ namespace fx.Charting
 
         public event Action<AnnotationUI> AnnotationCreated;
 
-        public event Action<AnnotationUI, ChartDrawDataEx.sAnnotation> AnnotationModified;
+        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationModified;
 
         public event Action<AnnotationUI> AnnotationDeleted;
 
-        public event Action<AnnotationUI, ChartDrawDataEx.sAnnotation> AnnotationSelected;
+        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationSelected;
 
         public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;        
 
@@ -627,7 +627,7 @@ namespace fx.Charting
                 chartArea.ChartSurfaceViewModel.Height = chartArea.Height;
             }
 
-            public void DrawChartAreas( ChartDrawDataEx drawData )
+            public void DrawChartAreas( ChartDrawData drawData )
             {
                 if ( drawData == null )
                 {
@@ -786,7 +786,7 @@ namespace fx.Charting
             
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -989,7 +989,7 @@ namespace fx.Charting
             AnnotationCreated?.Invoke( annotation );
         }
 
-        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         {
             AnnotationModified?.Invoke( annotation, aData );
         }
@@ -999,7 +999,7 @@ namespace fx.Charting
             AnnotationDeleted?.Invoke( annotation );
         }
 
-        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         {
             AnnotationSelected?.Invoke( annotation, aData );
         }

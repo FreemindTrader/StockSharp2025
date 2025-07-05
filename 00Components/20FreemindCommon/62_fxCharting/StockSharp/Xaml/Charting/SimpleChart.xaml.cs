@@ -125,7 +125,7 @@ namespace fx.Charting
             }
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             Area.ChartSurfaceViewModel.Draw( data );
         }
@@ -266,12 +266,12 @@ namespace fx.Charting
             throw new NotImplementedException( );
         }
 
-        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         {
             throw new NotImplementedException( );
         }
 
-        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
         {
             throw new NotImplementedException( );
         }

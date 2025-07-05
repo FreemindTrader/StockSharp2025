@@ -753,11 +753,11 @@ namespace fx.Charting
 
         public event Action<AnnotationUI> AnnotationCreated;
 
-        public event Action<AnnotationUI, ChartDrawDataEx.sAnnotation> AnnotationModified;
+        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationModified;
 
         public event Action<AnnotationUI> AnnotationDeleted;
 
-        public event Action<AnnotationUI, ChartDrawDataEx.sAnnotation> AnnotationSelected;
+        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationSelected;
 
         public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;
 
@@ -774,7 +774,7 @@ namespace fx.Charting
             _chartAreas.ResetChartAreas( elements.ToArray( ) );
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -1359,12 +1359,12 @@ namespace fx.Charting
             AnnotationCreated?.Invoke( annotation );
         }
 
-        void IChart.InvokeAnnotationModifiedEvent( AnnotationUI a, ChartDrawDataEx.sAnnotation d )
+        void IChart.InvokeAnnotationModifiedEvent( AnnotationUI a, ChartDrawData.sAnnotation d )
         {
             AnnotationModified?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationSelectedEvent( AnnotationUI a, ChartDrawDataEx.sAnnotation d )
+        void IChart.InvokeAnnotationSelectedEvent( AnnotationUI a, ChartDrawData.sAnnotation d )
         {
             AnnotationSelected?.Invoke( a, d );
         }
@@ -1448,7 +1448,7 @@ namespace fx.Charting
                 chartArea.ChartSurfaceViewModel.Height = chartArea.Height;
             }
 
-            public void DrawChartAreas( ChartDrawDataEx drawData )
+            public void DrawChartAreas( ChartDrawData drawData )
             {
                 if ( drawData == null )
                 {

@@ -22,7 +22,7 @@ using fx.Bars;
 
 namespace fx.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         public struct sCandleColor : IDrawValue
         {

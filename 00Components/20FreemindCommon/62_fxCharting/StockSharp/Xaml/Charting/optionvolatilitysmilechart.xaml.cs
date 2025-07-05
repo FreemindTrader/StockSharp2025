@@ -313,7 +313,7 @@ namespace fx.Charting
             private void GetDataAndDraw( )
             {
                 GetSimpleChart( ).Reset( new VolatilitySmileUI[ 1 ] { Element } );
-                ChartDrawDataEx data = new ChartDrawDataEx( );
+                ChartDrawData data = new ChartDrawData( );
 
                 using ( IEnumerator<LineData<double>> enumerator = GetEnumerator( ) )
                 {

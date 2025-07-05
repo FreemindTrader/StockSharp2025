@@ -77,8 +77,8 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
 
     protected abstract void Clear( );
 
-    public abstract bool Draw( IEnumerableEx< ChartDrawDataEx.IDrawValue > data );
-    //public abstract bool Draw<T>( IEnumerableEx< ChartDrawDataEx.IDrawValue<T> > data );
+    public abstract bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > data );
+    //public abstract bool Draw<T>( IEnumerableEx< ChartDrawData.IDrawValue<T> > data );
 
     public void Update( )
     {

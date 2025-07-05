@@ -140,7 +140,7 @@ public sealed class ParentVM : ChartBaseViewModel, IDisposable
         MinFieldWidth = minFieldWith;
     }
 
-    public bool DrawChartData( ChartDrawDataEx data )
+    public bool DrawChartData( ChartDrawData data )
     {
         return ChartElement.Draw( data );
     }

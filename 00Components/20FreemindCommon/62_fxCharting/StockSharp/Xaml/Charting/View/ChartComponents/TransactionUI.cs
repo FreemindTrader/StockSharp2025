@@ -178,14 +178,14 @@ namespace fx.Charting
             return _viewModel = new TransactionVM<T>( ( T ) this );
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawDataEx.IDrawValue > ienumerableEx_0 )
+        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > ienumerableEx_0 )
         {
             return _viewModel.Draw( ienumerableEx_0 );
         }
 
         void IDrawableChartElement.StartDrawing( )
         {
-            _viewModel.Draw( Enumerable.Empty< ChartDrawDataEx.IDrawValue >( ).ToEx( 0 ) );
+            _viewModel.Draw( Enumerable.Empty< ChartDrawData.IDrawValue >( ).ToEx( 0 ) );
         }
     }
 }
