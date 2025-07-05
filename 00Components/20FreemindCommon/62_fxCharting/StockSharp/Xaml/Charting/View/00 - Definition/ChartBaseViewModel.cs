@@ -1,126 +1,113 @@
 ﻿using Ecng.Collections;
 using Ecng.ComponentModel;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 
-namespace fx.Charting
+#nullable disable
+namespace fx.Charting;
+
+/// <summary>
+/// Base class for chart related view models.
+/// </summary>
+public class ChartBaseViewModel : NotifiableObject
 {
-    public class ChartBaseViewModel : NotifiableObject
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    private readonly SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>> _propertyChangedMap = new SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>(
+        );
+
+    /// <summary>
+    /// Raised before property value is changed.
+    /// </summary>
+    public event Action<object, string, object> PropertyValueChanging;
+
+    private void OnPropertyChanging(string propertyName, object propertyValue)
     {
-        private readonly SynchronizedDictionary< INotifyPropertyChanged, PooledDictionary< string, PooledSet< string > > > _propertyChangedMap = new SynchronizedDictionary< INotifyPropertyChanged, PooledDictionary< string, PooledSet< string > > >( );
+        PropertyValueChanging?.Invoke(this, propertyName, propertyValue);
+    }
 
-        public event Action< object, string, object > PropertyValueChanging;
+    /// <summary>
+    /// Set property value and raise events.
+    /// </summary>
+    /// <typeparam name="T">Value type.</typeparam>
+    /// <param name="field">Property backing field.</param>
+    /// <param name="value">New value.</param>
+    /// <param name="propertyName">Name of the property.</param>
+    protected bool SetField<T>(ref T field, T value, string propertyName)
+    {
+        if(EqualityComparer<T>.Default.Equals(field, value))
+            return false;
+        this.OnPropertyChanging(propertyName, (object) value);
+        field = value;
+        this.NotifyChanged(propertyName);
+        return true;
+    }
 
-        protected void OnPropertyChanging( string propertyName, object propertyValue )
+    /// <summary>
+    /// Helper method to raise property change notifications on this object if the event was raised on another object
+    /// <paramref name="source"/>.
+    /// </summary>
+    /// <param name="source">
+    ///
+    /// </param>
+    /// <param name="nameFrom">
+    ///
+    /// </param>
+    /// <param name="namesTo">
+    ///
+    /// </param>
+    protected void MapPropertyChangeNotification(
+        INotifyPropertyChanged source,
+        string nameFrom,
+        params string[ ] namesTo)
+    {
+        if(namesTo != null && namesTo.Length == 0)
         {
-            PropertyValueChanging?.Invoke( this, propertyName, propertyValue );
+            namesTo = new string[ 1 ] { nameFrom };
         }
 
-        protected void SetField< T >( ref T field, T value, string propertyName )
-        {
-            if( EqualityComparer< T >.Default.Equals( field, value ) )
-            {
-                return;
-            }
+        string[] toArray = namesTo;
 
-            OnPropertyChanging( propertyName, value );
-            field = value;
-            NotifyChanged( propertyName );
-        }
-
-        protected void MapPropertyChangeNotification( INotifyPropertyChanged source, string nameFrom, params string[ ] namesTo )
-        {
-            if( namesTo != null && namesTo.Length == 0 )
-            {
-                namesTo = new string[ 1 ] { nameFrom };
-            }
-
-            if( _propertyChangedMap == null )
-            {
-                throw new ArgumentNullException( nameof( _propertyChangedMap ) );
-            }
-
-            PooledDictionary< string, PooledSet< string > > mapping = null;
-
-            if( !_propertyChangedMap.TryGetValue( source, out mapping ) )
-            {
-                lock( ( ( ISynchronizedCollection )_propertyChangedMap ).SyncRoot )
+        CollectionHelper.SyncDo(
+            this._propertyChangedMap,
+            new Action<SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>>(
+                p =>
                 {
-                    if( !_propertyChangedMap.TryGetValue( source, out mapping ) )
-                    {
-                        source.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
-                        mapping = new PooledDictionary< string, PooledSet< string > >( );
+                    CollectionHelper.AddRange(
+                        CollectionHelper.SafeAdd(
+                                    CollectionHelper.SafeAdd(
+                                        p,
+                                        source,
+                                        pd =>
+                                        {
+                                            pd.PropertyChanged += new PropertyChangedEventHandler(OnPropertyChanged);
+                                            return new Dictionary<string, HashSet<string>>();
+                                        }),
 
-                        _propertyChangedMap.Add( source, mapping );
-                    }
-                }
-            }
+                                    nameFrom,
+                                    p => new HashSet<string>()),
+                        toArray);
+                }));
+    }
 
-            if( mapping == null )
-            {
-                throw new ArgumentNullException( nameof( mapping ) );
-            }
-
-            PooledSet< string > fromToMapping = null;
-
-            if( !mapping.TryGetValue( nameFrom, out fromToMapping ) )
-            {
-                lock( mapping )
+    private void OnPropertyChanged(object _param1, PropertyChangedEventArgs _param2)
+    {
+        CollectionHelper.SyncDo(
+            this._propertyChangedMap,
+            new Action<SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>>(
+                p =>
                 {
-                    if( !mapping.TryGetValue( nameFrom, out fromToMapping ) )
+                    Dictionary<string, HashSet<string>> dictionary;
+                    HashSet<string> stringSet;
+                    if(!p.TryGetValue((INotifyPropertyChanged) p, out dictionary) ||
+                        !dictionary.TryGetValue(_param2.PropertyName, out stringSet))
+                        return;
+
+                    foreach(string str in stringSet)
                     {
-                        fromToMapping = new PooledSet< string >( );
-
-                        mapping.Add( nameFrom, fromToMapping );
+                        NotifyChanged(str);
                     }
-                }
-            }
-
-            fromToMapping.AddRange( namesTo );
-
-            //Action< SynchronizedDictionary< INotifyPropertyChanged, PooledDictionary< string, PooledSet< string > > > > toBeDone = ( d =>
-            //{
-            //    CollectionHelper.AddRange( d.SafeAdd( source,
-            //                                          p =>
-            //                                                {
-            //                                                    p.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
-            //                                                    return new PooledDictionary< string, PooledSet< string > >( );
-            //                                                } )
-            //                                .SafeAdd( nameFrom, s => new PooledSet< string >( ) ), namesTo );
-            //} );
-
-            //_propertyChangedMap.SyncDo( toBeDone );
-        }
-
-        protected void OnPropertyChanged( object sender, PropertyChangedEventArgs e )
-        {
-            if( _propertyChangedMap == null )
-            {
-                throw new ArgumentNullException( nameof( _propertyChangedMap ) );
-            }
-
-            var source = ( INotifyPropertyChanged )sender;
-
-            PooledDictionary< string, PooledSet< string > > mapping = null;
-            PooledSet< string > propertiesSet;
-
-            if( !_propertyChangedMap.TryGetValue( source, out mapping ) )
-            {
-                return;
-            }
-
-            if( !mapping.TryGetValue( e.PropertyName, out propertiesSet ) )
-            {
-                return;
-            }
-
-            foreach( string property in propertiesSet )
-            {
-                NotifyChanged( property );
-            }
-
-           
-        }
+                }));
     }
 }
