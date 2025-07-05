@@ -34,8 +34,8 @@ internal abstract class AxisesComboBoxEditSettingsBase : ComboBoxEditSettings
 
     private IChartElement GetChartElement( RowData data )
     {
-        IndicatorUISettingsObject elementSettingsObject;
-        for ( ; ( elementSettingsObject = data.Value as IndicatorUISettingsObject ) == null; data = data.Parent )
+        ChartIndicatorElementSettingsObject elementSettingsObject;
+        for ( ; ( elementSettingsObject = data.Value as ChartIndicatorElementSettingsObject ) == null; data = data.Parent )
         {
             IChartElement chartElement;
             if ( ( chartElement = data.Value as IChartElement ) != null )

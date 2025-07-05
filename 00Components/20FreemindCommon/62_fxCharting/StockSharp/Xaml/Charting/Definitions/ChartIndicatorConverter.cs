@@ -20,7 +20,7 @@ namespace fx.Charting
             {
                 return element;
             }
-            return new IndicatorUISettingsObject( element );
+            return new ChartIndicatorElementSettingsObject( element );
         }
 
         object[ ] IMultiValueConverter.ConvertBack( object value,

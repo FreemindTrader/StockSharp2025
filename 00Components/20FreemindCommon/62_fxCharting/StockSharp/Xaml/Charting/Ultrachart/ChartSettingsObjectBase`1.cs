@@ -1,210 +1,178 @@
 ﻿using DevExpress.Xpf.PropertyGrid;
 using Ecng.ComponentModel;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic;
+using fx.Collections;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace fx.Charting.Ultrachart
+namespace fx.Charting.Ultrachart;
+
+/// <summary>
+/// Base proxy object to edit chart element in property grid.
+/// </summary>
+/// <typeparam name="T">Value type.</typeparam>
+/// <remarks>Create instance.</remarks>
+/// <param name="orig">Parent chart element or indicator.</param>
+public abstract class ChartSettingsObjectBase<T> : NotifiableObject, ICustomTypeDescriptor where T : class
 {
-    public abstract class ChartSettingsObjectBase< T > : NotifiableObject, ICustomTypeDescriptor
-        where T : class
+
+    private readonly T _chartElement;
+
+    private CategoriesShowMode _categoriesShowMode;
+
+    /// <summary>
+    /// Base proxy object to edit chart element in property grid.
+    /// </summary>
+    /// <typeparam name="T">Value type.</typeparam>
+    /// <remarks>Create instance.</remarks>
+    /// <param name="orig">Parent chart element or indicator.</param>
+    protected ChartSettingsObjectBase( T orig )
     {
-        private CategoriesShowMode _categoriesShowMode = CategoriesShowMode.Visible;
-        private PropertyDescriptorCollection _propertyDescriptorCollection;
-        private readonly T _chartElement;
+        _chartElement = orig ?? throw new ArgumentNullException( nameof( orig ) );
+        _categoriesShowMode = CategoriesShowMode.Visible;
+    }
 
-        protected ChartSettingsObjectBase( T orig )
+    /// <summary>Parent chart element or indicator.</summary>
+    public T Orig => _chartElement;
+
+    /// <summary>Categories mode of property grid.</summary>
+    public CategoriesShowMode CategoriesMode
+    {
+        get => _categoriesShowMode;
+        protected set => _categoriesShowMode = value;
+    }
+
+    object ICustomTypeDescriptor.GetPropertyOwner( PropertyDescriptor pd ) => ( object ) Orig;
+
+    AttributeCollection ICustomTypeDescriptor.GetAttributes()
+    {
+        return TypeDescriptor.GetAttributes( ( object ) Orig, true );
+    }
+
+    string ICustomTypeDescriptor.GetClassName()
+    {
+        return TypeDescriptor.GetClassName( ( object ) Orig, true );
+    }
+
+    string ICustomTypeDescriptor.GetComponentName()
+    {
+        return TypeDescriptor.GetComponentName( ( object ) Orig, true );
+    }
+
+    TypeConverter ICustomTypeDescriptor.GetConverter()
+    {
+        return TypeDescriptor.GetConverter( ( object ) Orig, true );
+    }
+
+    EventDescriptor ICustomTypeDescriptor.GetDefaultEvent()
+    {
+        return TypeDescriptor.GetDefaultEvent( ( object ) Orig, true );
+    }
+
+    PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty()
+    {
+        return TypeDescriptor.GetDefaultProperty( ( object ) Orig, true );
+    }
+
+    object ICustomTypeDescriptor.GetEditor( Type editorBaseType )
+    {
+        return TypeDescriptor.GetEditor( ( object ) Orig, editorBaseType, true );
+    }
+
+    EventDescriptorCollection ICustomTypeDescriptor.GetEvents( Attribute[ ] attributes )
+    {
+        return TypeDescriptor.GetEvents( ( object ) Orig, attributes, true );
+    }
+
+    EventDescriptorCollection ICustomTypeDescriptor.GetEvents()
+    {
+        return TypeDescriptor.GetEvents( ( object ) Orig, true );
+    }
+
+    PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties( Attribute[ ] attributes )
+    {
+        return ( ( ICustomTypeDescriptor ) this ).GetProperties();
+    }
+
+    /// <summary>Get property list from wrapped object.</summary>
+    protected abstract PropertyDescriptor[ ] OnGetProperties( T obj );
+
+    PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties()
+    {
+        IEnumerable<PropertyDescriptor> collection = (IEnumerable<PropertyDescriptor>) OnGetProperties(Orig) ?? Enumerable.Empty<PropertyDescriptor>();
+        List<PropertyDescriptor> propertyDescriptorList = new List<PropertyDescriptor>();
+        propertyDescriptorList.AddRange( collection );
+        return new PropertyDescriptorCollection( propertyDescriptorList.ToArray() );
+    }
+
+    /// <inheritdoc />
+    public override string ToString() => string.Empty;
+
+
+    /// <summary>
+    /// Specialization of <see cref="T:System.ComponentModel.PropertyDescriptor" /> class for chart element properties.
+    /// </summary>
+    protected abstract class ProxyDescriptor : NamedPropertyDescriptor
+    {
+
+        private readonly ChartSettingsObjectBase<T> _chartElementSetting;
+
+        private readonly object _owner;
+
+        private readonly AttributeCollection _attributes;
+
+        /// <summary>Create instance.</summary>
+        protected ProxyDescriptor( string name, object owner, T origObj, IEnumerable<Attribute> attributes, Func<T, PropertyDescriptor, bool> selector = null )
+          : base( name, ( Attribute[ ] ) null )
         {
-            T obj = orig;
-            if( obj == null )
-            {
-                throw new ArgumentNullException( nameof( orig ) );
-            }
-            _chartElement = obj;
+            _owner = owner;
+            _chartElementSetting = CreateWrapper( origObj, selector );
+
+            var list = attributes.ToList<Attribute>();
+            list.RemoveAll( p => p is DisplayNameAttribute || p is DisplayAttribute );
+            _attributes = new AttributeCollection( list.ToArray() );
         }
 
-        public T Orig
+        /// <summary>Create chart settings object wrapper for an object.</summary>
+        protected abstract ChartSettingsObjectBase<T> CreateWrapper(
+          T obj,
+          Func<T, PropertyDescriptor, bool> selector = null );
+
+        /// <summary>Parent object.</summary>
+        public object Owner => _owner;
+
+        /// <inheritdoc />
+        public override object GetValue( object c ) => ( object ) _chartElementSetting;
+
+        /// <inheritdoc />
+        public override void SetValue( object c, object value ) => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override bool CanResetValue( object c ) => false;
+
+        /// <inheritdoc />
+        public override void ResetValue( object c ) => throw new NotSupportedException();
+
+        /// <inheritdoc />
+        public override bool ShouldSerializeValue( object c ) => false;
+
+        /// <inheritdoc />
+        public override AttributeCollection Attributes
         {
-            get
-            {
-                return _chartElement;
-            }
+            get => _attributes;
         }
 
-        public CategoriesShowMode CategoriesMode
-        {
-            get
-            {
-                return _categoriesShowMode;
-            }
-            protected set
-            {
-                _categoriesShowMode = value;
-            }
-        }
+        /// <inheritdoc />
+        public override Type ComponentType => Owner.GetType();
 
-        object ICustomTypeDescriptor.GetPropertyOwner( PropertyDescriptor pd )
-        {
-            return Orig;
-        }
+        /// <inheritdoc />
+        public override bool IsReadOnly => false;
 
-        AttributeCollection ICustomTypeDescriptor.GetAttributes( )
-        {
-            return TypeDescriptor.GetAttributes( Orig, true );
-        }
+        /// <inheritdoc />
+        public override Type PropertyType => ( ( object ) _chartElementSetting ).GetType();
 
-        string ICustomTypeDescriptor.GetClassName( )
-        {
-            return TypeDescriptor.GetClassName( Orig, true );
-        }
 
-        string ICustomTypeDescriptor.GetComponentName( )
-        {
-            return TypeDescriptor.GetComponentName( Orig, true );
-        }
-
-        TypeConverter ICustomTypeDescriptor.GetConverter( )
-        {
-            return TypeDescriptor.GetConverter( Orig, true );
-        }
-
-        EventDescriptor ICustomTypeDescriptor.GetDefaultEvent( )
-        {
-            return TypeDescriptor.GetDefaultEvent( Orig, true );
-        }
-
-        PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty( )
-        {
-            return TypeDescriptor.GetDefaultProperty( Orig, true );
-        }
-
-        object ICustomTypeDescriptor.GetEditor( Type editorBaseType )
-        {
-            return TypeDescriptor.GetEditor( Orig, editorBaseType, true );
-        }
-
-        EventDescriptorCollection ICustomTypeDescriptor.GetEvents( Attribute[ ] attributes )
-        {
-            return TypeDescriptor.GetEvents( Orig, attributes, true );
-        }
-
-        EventDescriptorCollection ICustomTypeDescriptor.GetEvents( )
-        {
-            return TypeDescriptor.GetEvents( Orig, true );
-        }
-
-        PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties( Attribute[ ] attributes )
-        {
-            return ( ( ICustomTypeDescriptor )this ).GetProperties( );
-        }
-
-        protected abstract PropertyDescriptor[ ] OnGetProperties( T obj );
-
-        PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties( )
-        {
-            return _propertyDescriptorCollection = new PropertyDescriptorCollection( ( OnGetProperties( Orig ) ?? Enumerable.Empty< PropertyDescriptor >( ) ).ToArray( ) );
-        }
-
-        public override string ToString( )
-        {
-            return string.Empty;
-        }
-
-        public delegate bool PdSelector( T obj, PropertyDescriptor pd );
-
-        protected abstract class ProxyDescriptor : PropertyDescriptor
-        {
-            private readonly ChartSettingsObjectBase< T > _chartElementSetting;
-            private readonly object _owner;
-            private readonly AttributeCollection _attributeCollection;
-
-            protected ProxyDescriptor( string name, object owner, T origObj, IEnumerable< Attribute > attributes, PdSelector selector = null ) : base( name, null )
-            {
-                _owner = owner;
-                _chartElementSetting = CreateWrapper( origObj, selector );
-
-                var list = attributes.ToList( );
-                list.RemoveAll( a =>
-                {
-                    if( !( a is DisplayNameAttribute ) )
-                    {
-                        return a is DisplayAttribute;
-                    }
-
-                    return true;
-                } );
-
-                _attributeCollection = new AttributeCollection( list.ToArray( ) );
-            }
-
-            protected abstract ChartSettingsObjectBase< T > CreateWrapper( T obj, PdSelector selector = null );
-
-            public object Owner
-            {
-                get
-                {
-                    return _owner;
-                }
-            }
-
-            public override object GetValue( object component )
-            {
-                return _chartElementSetting;
-            }
-
-            public override void SetValue( object component, object value )
-            {
-                throw new NotSupportedException( );
-            }
-
-            public override bool CanResetValue( object component )
-            {
-                return false;
-            }
-
-            public override void ResetValue( object component )
-            {
-                throw new NotSupportedException( );
-            }
-
-            public override bool ShouldSerializeValue( object component )
-            {
-                return false;
-            }
-
-            public override AttributeCollection Attributes
-            {
-                get
-                {
-                    return _attributeCollection;
-                }
-            }
-
-            public override Type ComponentType
-            {
-                get
-                {
-                    return Owner.GetType( );
-                }
-            }
-
-            public override bool IsReadOnly
-            {
-                get
-                {
-                    return false;
-                }
-            }
-
-            public override Type PropertyType
-            {
-                get
-                {
-                    return _chartElementSetting.GetType( );
-                }
-            }
-        }
     }
 }

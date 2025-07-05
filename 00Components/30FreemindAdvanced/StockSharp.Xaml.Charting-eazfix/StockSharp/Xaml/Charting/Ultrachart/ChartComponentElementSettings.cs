@@ -15,7 +15,7 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable enable
-internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D : 
+internal sealed class ChartComponentElementSettings : 
   ChartSettingsObjectBase<
   #nullable disable
   IChartComponent>
@@ -23,7 +23,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly Func<IChartComponent, PropertyDescriptor, bool> \u0023\u003DzZdxZPcbMFUEQ;
 
-  public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D(
+  public ChartComponentElementSettings(
     IChartComponent _param1,
     Func<IChartComponent, PropertyDescriptor, bool> _param2 = null)
     : base(_param1)
@@ -38,13 +38,13 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
     IChartComponent _param2,
     Func<IChartComponent, PropertyDescriptor, bool> _param3)
   {
-    return (PropertyDescriptor) new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzxnJZ3YUHC\u00248n(_param0, _param1, _param2, _param3);
+    return (PropertyDescriptor) new ChartComponentElementSettings.\u0023\u003DzxnJZ3YUHC\u00248n(_param0, _param1, _param2, _param3);
   }
 
   protected override PropertyDescriptor[] OnGetProperties(
     IChartComponent _param1)
   {
-    \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeWheireosoe();
+    ChartComponentElementSettings.SomeWheireosoe vbxLeArTkallkIdHg = new ChartComponentElementSettings.SomeWheireosoe();
     vbxLeArTkallkIdHg.\u0023\u003DzRRvwDu67s9Rm = this;
     vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D = _param1;
     vbxLeArTkallkIdHg.\u0023\u003DzaEWfwlo\u003D = new HashSet<string>();
@@ -68,7 +68,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
     public 
     #nullable disable
     HashSet<string> \u0023\u003DzaEWfwlo\u003D;
-    public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public ChartComponentElementSettings \u0023\u003DzRRvwDu67s9Rm;
     public IChartComponent \u0023\u003DzLICojrU\u003D;
 
     internal string \u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(
@@ -97,16 +97,16 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
     PropertyDescriptor> \u0023\u003Dz7Ouzu6Mg\u0024YJrs1NoTA\u003D\u003D(PropertyDescriptor _param1)
     {
       object obj = _param1.GetValue((object) this.\u0023\u003DzLICojrU\u003D);
-      \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D d295Ww4skLs1HZBq = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D();
+      ChartComponentElementSettings.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D d295Ww4skLs1HZBq = new ChartComponentElementSettings.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D();
       d295Ww4skLs1HZBq.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D = this;
       IEnumerable<PropertyDescriptor> propertyDescriptors;
       if (!(obj is IChartComponent ddznyiGmdRlAevOq))
       {
         d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D = obj as IChartIndicatorPainter;
-        propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
+        propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(ChartComponentElementSettings.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (ChartComponentElementSettings.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(ChartComponentElementSettings.SomeClass34343383.SomeMethond0343.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
       }
       else
-        propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.GetName((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ));
+        propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(ChartComponentElementSettings.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.GetName((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ));
       return propertyDescriptors;
     }
   }
@@ -114,7 +114,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   [Serializable]
   private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeClass34343383();
+    public static readonly ChartComponentElementSettings.SomeClass34343383 SomeMethond0343 = new ChartComponentElementSettings.SomeClass34343383();
     public static Func<PropertyDescriptor, bool> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
 
     internal bool \u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D(PropertyDescriptor _param1)
@@ -127,12 +127,12 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
   private sealed class \u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D
   {
     public IChartIndicatorPainter \u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D;
-    public \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.SomeWheireosoe \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
+    public ChartComponentElementSettings.SomeWheireosoe \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
 
     internal PropertyDescriptor \u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D(
       PropertyDescriptor _param1)
     {
-      return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (IChartComponent) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ);
+      return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : ChartComponentElementSettings.\u0023\u003DzANqI1s0\u003D(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (IChartComponent) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ);
     }
   }
 
@@ -147,7 +147,7 @@ internal sealed class \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8Sg
       IChartComponent _param1,
       Func<IChartComponent, PropertyDescriptor, bool> _param2 = null)
     {
-      return (ChartSettingsObjectBase<IChartComponent>) new \u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D(_param1, _param2);
+      return (ChartSettingsObjectBase<IChartComponent>) new ChartComponentElementSettings(_param1, _param2);
     }
   }
 }

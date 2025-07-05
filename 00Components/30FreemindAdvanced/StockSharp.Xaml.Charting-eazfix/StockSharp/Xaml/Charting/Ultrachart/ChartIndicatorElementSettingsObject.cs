@@ -32,10 +32,10 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     {
       IIndicator indicator = element1.TryGetIndicator();
       if (indicator != null)
-        propertyDescriptorList.Add(IndicatorUISettingsObject.\u0023\u003DzANqI1s0\u003D(indicator.Name, (object) this, indicator));
+        propertyDescriptorList.Add(IndicatorSettingsObject.\u0023\u003DzANqI1s0\u003D(indicator.Name, (object) this, indicator));
     }
-    propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Style, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqnUZLhteM7X58WNtOFoAUCxXrehbkyL7b_5OgJmSQR7E0sLjriPtaNbpo_\u0024ilyRhu)));
-    propertyDescriptorList.Add(\u0023\u003DzzSV9ePAnJ860K\u0024gH7z\u0024ORjrmDYZJziML8SgUAERSAV0\u0024lfQskg\u003D\u003D.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Common, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.\u0023\u003DqUgnHZrrykv2VtgSnmyAJ\u0024t24diQG2HPY7YrznSErRWXmOLZGnAaI\u0024eZpwOBQLLof)));
+    propertyDescriptorList.Add(ChartComponentElementSettings.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Style, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.StaticMethod0348)));
+    propertyDescriptorList.Add(ChartComponentElementSettings.\u0023\u003DzANqI1s0\u003D(LocalizedStrings.Common, (object) this, (IChartComponent) element, new Func<IChartComponent, PropertyDescriptor, bool>(ChartIndicatorElementSettingsObject.StaticMethod0983)));
     return propertyDescriptorList.ToArray();
   }
 
@@ -47,7 +47,7 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     this.NotifyChanged(_param2.PropertyName);
   }
 
-  internal static bool \u0023\u003DqnUZLhteM7X58WNtOFoAUCxXrehbkyL7b_5OgJmSQR7E0sLjriPtaNbpo_\u0024ilyRhu(
+  internal static bool StaticMethod0348(
     #nullable disable
     IChartComponent _param0,
     PropertyDescriptor _param1)
@@ -62,7 +62,7 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     return false;
   }
 
-  internal static bool \u0023\u003DqUgnHZrrykv2VtgSnmyAJ\u0024t24diQG2HPY7YrznSErRWXmOLZGnAaI\u0024eZpwOBQLLof(
+  internal static bool StaticMethod0983(
     IChartComponent _param0,
     PropertyDescriptor _param1)
   {

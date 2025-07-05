@@ -13,10 +13,10 @@ using System.ComponentModel;
 using System.Linq;
 
 #nullable disable
-internal sealed class IndicatorUISettingsObject :
+internal sealed class IndicatorSettingsObject :
   ChartSettingsObjectBase<IIndicator>
 {
-    public IndicatorUISettingsObject( IIndicator _param1 )
+    public IndicatorSettingsObject( IIndicator _param1 )
       : base( _param1 )
     {
         this.Orig.Reseted += new Action( this.OnResetCallback );
@@ -27,7 +27,7 @@ internal sealed class IndicatorUISettingsObject :
       object _param1,
       IIndicator _param2 )
     {
-        return ( PropertyDescriptor ) new IndicatorUISettingsObject.SomeClass434343( _param0, _param1, _param2 );
+        return ( PropertyDescriptor ) new IndicatorSettingsObject.SomeClass434343( _param0, _param1, _param2 );
     }
 
     private void OnResetCallback()
@@ -57,7 +57,7 @@ internal sealed class IndicatorUISettingsObject :
                     {
                         return !( p.GetValue( ind ) is IIndicator indicator )
                             ? p
-                            : IndicatorUISettingsObject.FuncBool(
+                            : IndicatorSettingsObject.FuncBool(
                                         Extensions.GetDisplayName( p, indicator.Name ),
                                         ind,
                                         indicator );
@@ -73,14 +73,14 @@ internal sealed class IndicatorUISettingsObject :
         internal PropertyDescriptor SomeMethod383(
           PropertyDescriptor p )
         {
-            return !( p.GetValue( this.SomeEthmoed ) is IIndicator indicator ) ? p : IndicatorUISettingsObject.FuncBool( Extensions.GetDisplayName( p, indicator.Name ), ( object ) this.SomeEthmoed, indicator );
+            return !( p.GetValue( this.SomeEthmoed ) is IIndicator indicator ) ? p : IndicatorSettingsObject.FuncBool( Extensions.GetDisplayName( p, indicator.Name ), ( object ) this.SomeEthmoed, indicator );
         }
     }
 
     [Serializable]
     private sealed class SomeClass34343383
     {
-        public static readonly IndicatorUISettingsObject.SomeClass34343383 SomeMethond0343 = new IndicatorUISettingsObject.SomeClass34343383();
+        public static readonly IndicatorSettingsObject.SomeClass34343383 SomeMethond0343 = new IndicatorSettingsObject.SomeClass34343383();
         public static Func<PropertyDescriptor, bool> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
 
 internal bool Abcd343( PropertyDescriptor p )
@@ -101,7 +101,7 @@ internal bool Abcd343( PropertyDescriptor p )
           IIndicator _param1,
           Func<IIndicator, PropertyDescriptor, bool> _param2 = null )
         {
-            return ( ChartSettingsObjectBase<IIndicator> ) new IndicatorUISettingsObject( _param1 );
+            return ( ChartSettingsObjectBase<IIndicator> ) new IndicatorSettingsObject( _param1 );
         }
     }
 }
