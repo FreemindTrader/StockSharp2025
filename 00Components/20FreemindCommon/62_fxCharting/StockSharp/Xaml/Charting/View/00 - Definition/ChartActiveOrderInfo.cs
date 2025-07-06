@@ -22,7 +22,7 @@ namespace StockSharp.Xaml.Charting
         private Decimal _price;
         private Decimal _priceStep;
         private bool _isFrozen;
-        private ActiveOrdersUI _activeOrders;
+        private ChartActiveOrdersElement _activeOrders;
 
         public event Action< ChartActiveOrderInfo, bool, bool > OrderStateChanged;
 
@@ -150,7 +150,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public ActiveOrdersUI Element
+        public ChartActiveOrdersElement Element
         {
             get
             {

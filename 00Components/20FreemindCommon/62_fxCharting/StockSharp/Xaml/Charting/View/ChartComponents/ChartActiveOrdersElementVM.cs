@@ -29,7 +29,7 @@ using Ecng.ComponentModel;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal sealed class ChartActiveOrdersVM : UIHigherVM<ActiveOrdersUI>
+    internal sealed class ChartActiveOrdersElementVM : UIHigherVM<ChartActiveOrdersElement>
     {
         internal static Binding CreateBinding( object obj, string propertyName )
         {
@@ -172,7 +172,7 @@ namespace StockSharp.Xaml.Charting
 
         private readonly PairSet<Order, ChartActiveOrderInfo> _orderInfoAnnotation = new PairSet<Order, ChartActiveOrderInfo>();
 
-        public ChartActiveOrdersVM( ActiveOrdersUI _param1 )
+        public ChartActiveOrdersElementVM( ChartActiveOrdersElement _param1 )
           : base( _param1 )
         {
         }

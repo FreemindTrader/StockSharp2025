@@ -1499,7 +1499,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         var orders = parentVM.Where( p => p != null )
                              .SelectMany( x => 
                                              {
-                                                return x.Elements.OfType<ChartActiveOrdersVM>( ).SelectMany( ao => ao.GetActiveOrders( _param1 ) );
+                                                return x.Elements.OfType<ChartActiveOrdersElementVM>( ).SelectMany( ao => ao.GetActiveOrders( _param1 ) );
                                              } 
                                         );
 

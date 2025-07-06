@@ -128,7 +128,7 @@ namespace StockSharp.Xaml.Charting
 
         private PooledDictionary<TradesUI, PooledList<sTrade>> _tradeMap;
 
-        private PooledDictionary<ActiveOrdersUI, PooledList<sActiveOrder>> _activeOrdersMap;
+        private PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>> _activeOrdersMap;
 
         private PooledDictionary<LineUI, PooledList<sxTuple<DateTime>>>_lineTimeMap;
 
@@ -155,9 +155,9 @@ namespace StockSharp.Xaml.Charting
             return _tradeMap ?? ( _tradeMap = new PooledDictionary<TradesUI, PooledList<sTrade>>( ) );
         }
 
-        public PooledDictionary<ActiveOrdersUI, PooledList<sActiveOrder>> GetActiveOrderMa( )
+        public PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>> GetActiveOrderMa( )
         {
-            return _activeOrdersMap ?? ( _activeOrdersMap = new PooledDictionary<ActiveOrdersUI, PooledList<sActiveOrder>>( ) );
+            return _activeOrdersMap ?? ( _activeOrdersMap = new PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>>( ) );
         }
 
         public PooledDictionary<LineUI, PooledList<sxTuple<DateTime>>> GetLineTimeMap( )
@@ -244,7 +244,7 @@ namespace StockSharp.Xaml.Charting
         //                        }
         //                        else
         //                        {
-        //                            ActiveOrdersUI key6 = uiElement as ActiveOrdersUI;
+        //                            ChartActiveOrdersElement key6 = uiElement as ChartActiveOrdersElement;
         //                            if ( key6 != null )
         //                                GetActiveOrderMa( ).SafeAdd( key6 ).Add( ( sActiveOrder ) obj );
         //                            else
@@ -297,7 +297,7 @@ namespace StockSharp.Xaml.Charting
         /// <param name="state">Use this state to draw the order.</param>
         /// <returns>
         /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" /> instance.</returns>
-        public ChartDrawData Add( ActiveOrdersUI element,
+        public ChartDrawData Add( ChartActiveOrdersElement element,
                                     Order order,
                                     bool? isFrozen = null,
                                     bool autoRemoveFromChart = true,
@@ -408,9 +408,9 @@ namespace StockSharp.Xaml.Charting
             return tradeMap.TryGetValue( _param1 );
         }
 
-        public PooledList<sActiveOrder> GetActiveOrders( ActiveOrdersUI _param1 )
+        public PooledList<sActiveOrder> GetActiveOrders( ChartActiveOrdersElement _param1 )
         {
-            PooledDictionary<ActiveOrdersUI, PooledList<sActiveOrder>> activeOrders = _activeOrdersMap;
+            PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>> activeOrders = _activeOrdersMap;
             if ( activeOrders == null )
                 return null;
             return activeOrders.TryGetValue( _param1 );

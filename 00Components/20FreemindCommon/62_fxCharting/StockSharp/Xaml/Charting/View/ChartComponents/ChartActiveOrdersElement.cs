@@ -15,7 +15,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting
 {
     
-    public class ActiveOrdersUI : ChartElement< ActiveOrdersUI >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class ChartActiveOrdersElement : ChartElement< ChartActiveOrdersElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private INotifyList< ChartActiveOrderInfo > _activeOrderInfoList =   new CachedSynchronizedSet< ChartActiveOrderInfo >( );
         private Color _buyPendingColor;
@@ -30,7 +30,7 @@ namespace StockSharp.Xaml.Charting
         private bool _isAnimationEnabled;
         private UIChartBaseViewModel _viewModel;
 
-        public ActiveOrdersUI( )
+        public ChartActiveOrdersElement( )
         {
             SellColor              = Colors.DarkRed;
             SellBlinkColor         = Color.FromRgb( byte.MaxValue, 151, 50 );
@@ -197,7 +197,7 @@ namespace StockSharp.Xaml.Charting
 
         UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
-            return _viewModel = new ChartActiveOrdersVM( this );
+            return _viewModel = new ChartActiveOrdersElementVM( this );
         }
 
         bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > drawValue )
@@ -265,7 +265,7 @@ namespace StockSharp.Xaml.Charting
             storage.SetValue( "Orders", Orders.Select( i => i.Save( ) ).ToArray( ) );
         }
 
-        internal override ActiveOrdersUI Clone( ActiveOrdersUI other )
+        internal override ChartActiveOrdersElement Clone( ChartActiveOrdersElement other )
         {
             other                        = base.Clone( other );
             other.BuyColor               = BuyColor;
