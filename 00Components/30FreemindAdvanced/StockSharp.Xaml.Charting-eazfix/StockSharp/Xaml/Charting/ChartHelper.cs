@@ -38,7 +38,8 @@ public static class ChartHelper
         if ( chart is Chart elem )
         {
             MemoryStream file = new MemoryStream();
-            elem.GetImage().SaveImage( ( Stream ) file );
+            var image = Ecng.Xaml.XamlHelper.GetImage(elem);
+            Ecng.Xaml.XamlHelper.SaveImage( image, ( Stream ) file );
             file.Position = 0L;
             return ( Stream ) file;
         }

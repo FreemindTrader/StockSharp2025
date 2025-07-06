@@ -11,409 +11,416 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
-namespace fx.Charting.IndicatorPainters
+namespace fx.Charting.IndicatorPainters;
+
+public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable, IPersistable, IChartIndicatorPainter
 {
-    public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable, IPersistable, IChartIndicatorPainter
+    private readonly PooledList<IChartElement>  _innerElements = new PooledList<IChartElement>();
+    private readonly IndicatorPainterHelper _indicatorPainter = new IndicatorPainterHelper();
+    private IndicatorUI                     _indicatorElement;
+
+    [Browsable(false)]
+    public IndicatorUI Element
     {
-        private readonly PooledList< IChartElement >  _innerElements    = new PooledList< IChartElement >( );
-        private readonly IndicatorPainterHelper _indicatorPainter = new IndicatorPainterHelper( );
-        private IndicatorUI                     _indicatorElement;
-
-        [Browsable( false )]
-        public IndicatorUI Element
+        get
         {
-            get
-            {
-                return _indicatorElement;
-            }
-            private set
-            {
-                _indicatorElement = value;
-            }
+            return _indicatorElement;
         }
-
-        [Browsable( false )]
-        public IEnumerable< IChartElement > InnerElements
+        private set
         {
-            get
-            {
-                return _innerElements;
-            }
+            _indicatorElement = value;
         }
+    }
 
-        protected IIndicator Indicator
+    [Browsable(false)]
+    public IEnumerable<IChartElement> InnerElements
+    {
+        get
         {
-            get
-            {
-                return _indicatorPainter.Indicator;
-            }
+            return _innerElements;
         }
+    }
 
-        protected bool IsAttached
+    protected IIndicator Indicator
+    {
+        get
         {
-            get
-            {
-                return Element != null;
-            }
+            return _indicatorPainter.Indicator;
         }
+    }
 
-        private void ChildElementsStartDrawing( )
+    protected bool IsAttached
+    {
+        get
         {
-            var elements = Element.ChildElements.OfType<IDrawableChartElement>( );
-
-            foreach ( var element in elements )
-            {
-                element.StartDrawing( );
-            }
+            return Element != null;
         }
+    }
 
-        protected abstract bool OnDraw( );
+    private void ChildElementsStartDrawing()
+    {
+        var elements = Element.ChildElements.OfType<IDrawableChartElement>();
 
-        public virtual bool Draw( ChartDrawData data )
+        foreach(var element in elements)
         {
-            if( !IsAttached )
-            {
-                return false;
-            }
+            element.StartDrawing();
+        }
+    }
 
-            var indicatorDataList = data.GetIndicator( Element );
+    protected abstract bool OnDraw();
 
-            if( indicatorDataList != null && !indicatorDataList.IsEmpty( ) )
-            {
-                _indicatorPainter.Reset( false );
-
-                foreach( var indicatorData in indicatorDataList )
-                {
-                    _indicatorPainter.UpdateIndicator( indicatorData.Value, indicatorData.Time );
-                }
-
-                if ( _indicatorPainter.GetCount( ) > 0 )
-                {
-                    return OnDraw( );
-                }
-
-                return false;
-            }
-            ChildElementsStartDrawing( );
+    public virtual bool Draw(ChartDrawData data)
+    {
+        if(!IsAttached)
+        {
             return false;
         }
 
-        public virtual void Reset( )
-        {
-            _indicatorPainter.Reset( true );
-        }
+        var indicatorDataList = data.GetIndicator(Element);
 
-        public void OnAttached( IndicatorUI element )
+        if(indicatorDataList != null && !indicatorDataList.IsEmpty())
         {
-            Element = element;
+            _indicatorPainter.Reset(false);
 
-            foreach ( IChartElement chartElement in InnerElements )
+            foreach(var indicatorData in indicatorDataList)
             {
-                Element.AddChildElement( chartElement, false );
-            }
-        }
-
-        public void OnDetached( )
-        {
-            if( Element == null )
-            {
-                return;
+                _indicatorPainter.UpdateIndicator(indicatorData.Value, indicatorData.Time);
             }
 
-            foreach ( IChartElement chartElement in InnerElements )
+            if(_indicatorPainter.GetCount() > 0)
             {
-                Element.RemoveChildElement( chartElement );
+                return OnDraw();
             }
 
-            Element = null;
+            return false;
+        }
+        ChildElementsStartDrawing();
+        return false;
+    }
+
+    public virtual void Reset()
+    {
+        _indicatorPainter.Reset(true);
+    }
+
+    public void OnAttached(IndicatorUI element)
+    {
+        Element = element;
+
+        foreach(IChartElement chartElement in InnerElements)
+        {
+            Element.AddChildElement(chartElement, false);
+        }
+    }
+
+    public void OnDetached()
+    {
+        if(Element == null)
+        {
+            return;
         }
 
-        protected bool DrawValues( IIndicator ind, IChartElement element, Func<IIndicatorValue, double> getValue )
+        foreach(IChartElement chartElement in InnerElements)
         {
-            var result = _indicatorPainter.GetIndicatorValueList( ind );
-
-            Func<int, double> indicatorValueFunc = ( i =>
-            {
-                if ( !_indicatorPainter.IsIndicatorFormed( i ) )
-                {
-                    return double.NaN;
-                }
-
-                return getValue( result?[ i ] );
-            } );
-
-            return GetIndicatorValuesAndDraw( element, indicatorValueFunc, null );
+            Element.RemoveChildElement(chartElement);
         }
 
-        protected bool DrawValues( IIndicator ind, IChartElement element )
+        Element = null;
+    }
+
+    protected bool DrawValues(IIndicator ind, IChartElement element, Func<IIndicatorValue, double> getValue)
+    {
+        var result = _indicatorPainter.GetIndicatorValueList(ind);
+
+        Func<int, double> indicatorValueFunc = (i =>
         {
-            var result = _indicatorPainter.GetIndicatorValueList( ind );
-
-            Func<int, double> indicatorValueFunc = ( i => GetIndicatorValueAtIndex( result, i ) );
-
-            return GetIndicatorValuesAndDraw( element, indicatorValueFunc, null );
-        }
-
-        protected bool DrawValues( IIndicator ind1, IIndicator ind2, IChartElement element )
-        {
-            var result1 = _indicatorPainter.GetIndicatorValueList( ind1 );
-            var result2 = _indicatorPainter.GetIndicatorValueList( ind2 );
-
-            Func<int, double> myFunc1 = ( i => GetIndicatorValueAtIndex( result1, i ) );
-            Func<int, double> myFunc2 = ( i => GetIndicatorValueAtIndex( result2, i ) );
-
-            return GetIndicatorValuesAndDraw( element, myFunc1, myFunc2 );
-        }
-
-        protected bool DrawValues( IIndicator ind1, IIndicator ind2, IChartElement element, Func<double, double, double> op )
-        {
-            var result1 = _indicatorPainter.GetIndicatorValueList( ind1 );
-            var result2 = _indicatorPainter.GetIndicatorValueList( ind2 );
-
-            Func<int, double> indicatorValueFunc = ( i => ( op( GetIndicatorValueAtIndex( result1, i ), GetIndicatorValueAtIndex( result2, i ) ) ) );
-
-            return GetIndicatorValuesAndDraw( element, indicatorValueFunc, null );
-        }
-
-        private bool GetIndicatorValuesAndDraw( IChartElement chartElement, Func< int, double > myFunc1, Func< int, double > myFunc2 )
-        {
-            var drawableElement = chartElement as IDrawableChartElement;
-
-            if ( drawableElement == null )
-            {
-                throw new InvalidOperationException( "invalid chart element" );
-            }
-
-            var drawValues = Enumerable.Range( 0, _indicatorPainter.GetCount( ) ) .Select( i =>
-                                                                                                {
-                                                                                                    DateTime dateTime = _indicatorPainter.DateTimeList[ i ];
-                                                                                                    double value1 = myFunc1( i );
-                                                                                                    double value2 = myFunc2 != null ? myFunc2( i ) : double.NaN;
-
-                                                                                                    return ChartDrawData.sxTuple< DateTime >.CreateSxTuple( dateTime, value1, value2 );
-                                                                                                } 
-                                                                                          )
-                                                                                    .Cast< ChartDrawData.IDrawValue >( )
-                                                                                    .ToEx( _indicatorPainter.GetCount( ) );
-
-            return drawableElement.StartDrawing( drawValues );
-        }
-
-        private double GetIndicatorValueAtIndex( ReadOnlyCollection< IIndicatorValue > indicatorValues, int index )
-        {
-            if( indicatorValues == null || index >= indicatorValues.Count )
+            if(!_indicatorPainter.IsIndicatorFormed(i))
             {
                 return double.NaN;
             }
 
-            IIndicatorValue iindicatorValue = indicatorValues[ index ];
+            return getValue(result?[i]);
+        });
 
-            if ( iindicatorValue != null && !iindicatorValue.IsEmpty && _indicatorPainter.IsIndicatorFormed( index ) )
-            {
-                return Decimal.ToDouble( iindicatorValue.GetValue< Decimal >( ) );
-            }
+        return GetIndicatorValuesAndDraw(element, indicatorValueFunc, null);
+    }
 
+    protected bool DrawValues(IIndicator ind, IChartElement element)
+    {
+        var result = _indicatorPainter.GetIndicatorValueList(ind);
+
+        Func<int, double> indicatorValueFunc = (i => GetIndicatorValueAtIndex(result, i));
+
+        return GetIndicatorValuesAndDraw(element, indicatorValueFunc, null);
+    }
+
+    protected bool DrawValues(IIndicator ind1, IIndicator ind2, IChartElement element)
+    {
+        var result1 = _indicatorPainter.GetIndicatorValueList(ind1);
+        var result2 = _indicatorPainter.GetIndicatorValueList(ind2);
+
+        Func<int, double> myFunc1 = (i => GetIndicatorValueAtIndex(result1, i));
+        Func<int, double> myFunc2 = (i => GetIndicatorValueAtIndex(result2, i));
+
+        return GetIndicatorValuesAndDraw(element, myFunc1, myFunc2);
+    }
+
+    protected bool DrawValues(IIndicator ind1, IIndicator ind2, IChartElement element, Func<double, double, double> op)
+    {
+        var result1 = _indicatorPainter.GetIndicatorValueList(ind1);
+        var result2 = _indicatorPainter.GetIndicatorValueList(ind2);
+
+        Func<int, double> indicatorValueFunc = (i => (op(
+            GetIndicatorValueAtIndex(result1, i),
+            GetIndicatorValueAtIndex(result2, i))));
+
+        return GetIndicatorValuesAndDraw(element, indicatorValueFunc, null);
+    }
+
+    private bool GetIndicatorValuesAndDraw(
+        IChartElement chartElement,
+        Func<int, double> myFunc1,
+        Func<int, double> myFunc2)
+    {
+        var drawableElement = chartElement as IDrawableChartElement;
+
+        if(drawableElement == null)
+        {
+            throw new InvalidOperationException("invalid chart element");
+        }
+
+        var drawValues = Enumerable.Range(0, _indicatorPainter.GetCount())
+            .Select(
+                i =>
+                {
+                    DateTime dateTime = _indicatorPainter.DateTimeList[i];
+                    double value1 = myFunc1(i);
+                    double value2 = myFunc2 != null ? myFunc2(i) : double.NaN;
+
+                    return ChartDrawData.sxTuple<DateTime>.CreateSxTuple(dateTime, value1, value2);
+                })
+            .Cast<ChartDrawData.IDrawValue>()
+            .ToEx(_indicatorPainter.GetCount());
+
+        return drawableElement.StartDrawing(drawValues);
+    }
+
+    private double GetIndicatorValueAtIndex(ReadOnlyCollection<IIndicatorValue> indicatorValues, int index)
+    {
+        if(indicatorValues == null || index >= indicatorValues.Count)
+        {
             return double.NaN;
         }
 
-        protected void AddChildElement( IChartElement element )
+        IIndicatorValue iindicatorValue = indicatorValues[index];
+
+        if(iindicatorValue != null && !iindicatorValue.IsEmpty && _indicatorPainter.IsIndicatorFormed(index))
         {
-            if( InnerElements.Contains( element ) )
-            {
-                throw new ArgumentException( nameof( element ) );
-            }
-            _innerElements.Add( element );
+            return Decimal.ToDouble(iindicatorValue.GetValue<Decimal>());
         }
 
-        public object Clone( )
+        return double.NaN;
+    }
+
+    protected void AddChildElement(IChartElement element)
+    {
+        if(InnerElements.Contains(element))
         {
-            BaseChartIndicatorPainter instance = ( BaseChartIndicatorPainter )Activator.CreateInstance( GetType( ) );
-            CopyTo( instance );
-            return instance;
+            throw new ArgumentException(nameof(element));
+        }
+        _innerElements.Add(element);
+    }
+
+    public object Clone()
+    {
+        BaseChartIndicatorPainter instance = (BaseChartIndicatorPainter)Activator.CreateInstance(GetType());
+        CopyTo(instance);
+        return instance;
+    }
+
+    public void CopyTo(object obj)
+    {
+        // Tony 3:
+
+        throw new NotImplementedException();
+        //if( obj.GetType( ) != GetType( ) )
+        //{
+        //    throw new InvalidOperationException( "Unexpected type of other painter." );
+        //}
+
+        //BaseChartIndicatorPainter indicatorPainter = ( BaseChartIndicatorPainter )obj;
+
+        //if ( _innerElements.Count != indicatorPainter._innerElements.Count )
+        //{
+        //    throw new InvalidOperationException( "Unexpected number of inner elements on the painter clone." );
+        //}
+
+        //for ( int index = 0; index < _innerElements.Count; ++index )
+        //{
+        //    ( ( IChartComponent )_innerElements[ index ] ).Clone( indicatorPainter._innerElements[ index ] );
+        //}
+    }
+
+    public virtual void Load(SettingsStorage storage)
+    {
+    }
+
+    public virtual void Save(SettingsStorage storage)
+    {
+    }
+
+    private sealed class IndicatorPainterHelper
+    {
+        private readonly PooledDictionary<IIndicator, PooledList<IIndicatorValue>> _indicatorToValueMap = new PooledDictionary<IIndicator, PooledList<IIndicatorValue>>(
+            );
+        private readonly PooledList<DateTime>                                  _dateTimeList = new PooledList<DateTime>(
+            );
+        private ReadOnlyCollection<IIndicatorValue>                      _indicatorValueCollection;
+        private IIndicator                                                 _indicator;
+
+        public PooledList<DateTime> DateTimeList
+        {
+            get
+
+            {
+                return _dateTimeList;
+            }
         }
 
-        public void CopyTo( object obj )
+        public int GetCount()
         {
-            // Tony 3:
-
-            throw new NotImplementedException();
-            //if( obj.GetType( ) != GetType( ) )
-            //{
-            //    throw new InvalidOperationException( "Unexpected type of other painter." );
-            //}
-
-            //BaseChartIndicatorPainter indicatorPainter = ( BaseChartIndicatorPainter )obj;
-
-            //if ( _innerElements.Count != indicatorPainter._innerElements.Count )
-            //{
-            //    throw new InvalidOperationException( "Unexpected number of inner elements on the painter clone." );
-            //}
-
-            //for ( int index = 0; index < _innerElements.Count; ++index )
-            //{
-            //    ( ( IChartComponent )_innerElements[ index ] ).Clone( indicatorPainter._innerElements[ index ] );
-            //}
+            return DateTimeList.Count;
         }
 
-        public virtual void Load( SettingsStorage storage )
+        public bool IsIndicatorFormed(int index)
         {
+            if(index >= DateTimeList.Count)
+            {
+                return false;
+            }
+
+            var indicatorValueCol = _indicatorValueCollection;
+
+            if(indicatorValueCol == null)
+            {
+                return false;
+            }
+
+            return indicatorValueCol[index].IsFormed;
         }
 
-        public virtual void Save( SettingsStorage storage )
+        public IIndicator Indicator
         {
-        }        
+            get
+            {
+                return _indicator;
+            }
 
-        private sealed class IndicatorPainterHelper
+            set
+            {
+                _indicator = value;
+            }
+        }
+
+        public void Reset(bool clearAll)
         {
-            private readonly PooledDictionary< IIndicator, PooledList< IIndicatorValue > > _indicatorToValueMap = new PooledDictionary< IIndicator, PooledList< IIndicatorValue > >( );
-            private readonly PooledList< DateTime >                                  _dateTimeList        = new PooledList< DateTime >( );
-            private ReadOnlyCollection< IIndicatorValue >                      _indicatorValueCollection;
-            private IIndicator                                                 _indicator;
+            DateTimeList.Clear();
 
-            public PooledList<DateTime> DateTimeList
+            if(clearAll)
             {
-                get
-
-                {
-                    return _dateTimeList;
-                }
-            }
-
-            public int GetCount( )
+                _indicatorToValueMap.Clear();
+                Indicator = null;
+                _indicatorValueCollection = null;
+            } else
             {
-                return DateTimeList.Count;
-            }
-
-            public bool IsIndicatorFormed( int index )
-            {
-                if( index >= DateTimeList.Count )
+                foreach(KeyValuePair<IIndicator, PooledList<IIndicatorValue>> pair in _indicatorToValueMap)
                 {
-                    return false;
+                    pair.Value.Clear();
                 }
 
-                var indicatorValueCol = _indicatorValueCollection;
-
-                if ( indicatorValueCol == null )
-                {
-                    return false;
-                }
-
-                return indicatorValueCol[ index ].IsFormed;
-            }
-
-            public IIndicator Indicator
-            {
-                get
-                {
-                    return _indicator;
-                }
-
-                set
-                {
-                    _indicator = value;
-                }
-            }
-
-            public void Reset( bool clearAll )
-            {
-                DateTimeList.Clear( );
-
-                if( clearAll )
-                {
-                    _indicatorToValueMap.Clear( );
-                    Indicator = null;
-                    _indicatorValueCollection = null;
-                }
-                else
-                {
-                    foreach ( KeyValuePair<IIndicator, PooledList<IIndicatorValue>> pair in _indicatorToValueMap )
-                    {
-                        pair.Value.Clear( );
-                    }
-
-                    if ( GetCount( ) <= 4096 )
-                    {
-                        return;
-                    }
-
-                    foreach ( KeyValuePair<IIndicator, PooledList<IIndicatorValue>> pair in _indicatorToValueMap )
-                    {
-                        pair.Value.TrimExcess( );
-                    }
-                }
-            }
-
-            private void UpdateIndicatorValue( IIndicator indicator, IIndicatorValue indicatorValue )
-            {
-                AppendIndicatorValue( indicator, GetCount( ), indicatorValue );
-
-                if( !( indicatorValue is ComplexIndicatorValue complexIndicatorValue ) )
+                if(GetCount() <= 4096)
                 {
                     return;
                 }
 
-                using( IEnumerator< KeyValuePair< IIndicator, IIndicatorValue > > enumerator = complexIndicatorValue.InnerValues.GetEnumerator( ) )
+                foreach(KeyValuePair<IIndicator, PooledList<IIndicatorValue>> pair in _indicatorToValueMap)
                 {
-                    while( enumerator.MoveNext( ) )
-                    {
-                        KeyValuePair< IIndicator, IIndicatorValue > current = enumerator.Current;
-                        UpdateIndicatorValue( current.Key, current.Value );
-                    }
+                    pair.Value.TrimExcess();
                 }
             }
+        }
 
-            public void UpdateIndicator( IIndicatorValue indicator, DateTime datetimeUtc )
+        private void UpdateIndicatorValue(IIndicator indicator, IIndicatorValue indicatorValue)
+        {
+            AppendIndicatorValue(indicator, GetCount(), indicatorValue);
+
+            if(!(indicatorValue is ComplexIndicatorValue complexIndicatorValue))
             {
-                AddIndicator( indicator.Indicator );
-                UpdateIndicatorValue( indicator.Indicator, indicator );
-                DateTimeList.Add( datetimeUtc );
+                return;
             }
 
-            private void AppendIndicatorValue( IIndicator indicator, int count, IIndicatorValue newIndicatorValue )
+            using(IEnumerator<KeyValuePair<IIndicator, IIndicatorValue>> enumerator = complexIndicatorValue.InnerValues
+                .GetEnumerator())
             {
-                PooledList< IIndicatorValue > valueList;
-
-                if( !_indicatorToValueMap.TryGetValue( indicator, out valueList ) )
+                while(enumerator.MoveNext())
                 {
-                    _indicatorToValueMap[ indicator ] = valueList = new PooledList< IIndicatorValue >( );
+                    KeyValuePair<IIndicator, IIndicatorValue> current = enumerator.Current;
+                    UpdateIndicatorValue(current.Key, current.Value);
                 }
+            }
+        }
 
-                if( valueList.Count < count )
-                {
-                    valueList.AddRange( Enumerable.Range( 0, count - valueList.Count ).Select<int, IIndicatorValue>( i => null ) );
-                }
+        public void UpdateIndicator(IIndicatorValue indicator, DateTime datetimeUtc)
+        {
+            AddIndicator(indicator.Indicator);
+            UpdateIndicatorValue(indicator.Indicator, indicator);
+            DateTimeList.Add(datetimeUtc);
+        }
 
-                valueList.Add( newIndicatorValue );
+        private void AppendIndicatorValue(IIndicator indicator, int count, IIndicatorValue newIndicatorValue)
+        {
+            PooledList<IIndicatorValue> valueList;
+
+            if(!_indicatorToValueMap.TryGetValue(indicator, out valueList))
+            {
+                _indicatorToValueMap[indicator] = valueList = new PooledList<IIndicatorValue>();
             }
 
-            private void AddIndicator( IIndicator addedIndicator )
+            if(valueList.Count < count)
             {
-                if( addedIndicator == Indicator )
-                {
-                    return;
-                }
-
-                if( Indicator != null )
-                {
-                    throw new InvalidOperationException( LocalizedStrings.NewIndicatorNoReset );
-                }
-
-                Indicator = addedIndicator;
-                
-                PooledList< IIndicatorValue > valueList;
-
-                if( !_indicatorToValueMap.TryGetValue( addedIndicator, out valueList ) )
-                {
-                    _indicatorToValueMap[ addedIndicator ] = valueList = new PooledList< IIndicatorValue >( );
-                }
-
-                _indicatorValueCollection = valueList.AsReadOnly( );
+                valueList.AddRange(Enumerable.Range(0, count - valueList.Count).Select<int, IIndicatorValue>(i => null));
             }
 
-            public ReadOnlyCollection< IIndicatorValue > GetIndicatorValueList( IIndicator indicator )
+            valueList.Add(newIndicatorValue);
+        }
+
+        private void AddIndicator(IIndicator addedIndicator)
+        {
+            if(addedIndicator == Indicator)
             {
-                return _indicatorToValueMap.TryGetValue( indicator )?.AsReadOnly( );
-            }            
+                return;
+            }
+
+            if(Indicator != null)
+            {
+                throw new InvalidOperationException(LocalizedStrings.NewIndicatorNoReset);
+            }
+
+            Indicator = addedIndicator;
+
+            PooledList<IIndicatorValue> valueList;
+
+            if(!_indicatorToValueMap.TryGetValue(addedIndicator, out valueList))
+            {
+                _indicatorToValueMap[addedIndicator] = valueList = new PooledList<IIndicatorValue>();
+            }
+
+            _indicatorValueCollection = valueList.AsReadOnly();
+        }
+
+        public ReadOnlyCollection<IIndicatorValue> GetIndicatorValueList(IIndicator indicator)
+        {
+            return _indicatorToValueMap.TryGetValue(indicator)?.AsReadOnly();
         }
     }
 }

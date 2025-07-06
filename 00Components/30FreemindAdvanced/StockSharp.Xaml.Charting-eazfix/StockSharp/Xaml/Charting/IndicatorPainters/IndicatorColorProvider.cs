@@ -18,13 +18,13 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 public class IndicatorColorProvider : IIndicatorColorProvider
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly IndicatorColorProviderSeed \u0023\u003Dz4Q3sa\u0024gsAL0q = new IndicatorColorProviderSeed();
+  private static readonly IndicatorColorProviderSeed _indicatorColorProviderSeed = new IndicatorColorProviderSeed();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private readonly SynchronizedDictionary<IndicatorColorProviderSeed, int> \u0023\u003Dzy4fXhVU\u003D = new SynchronizedDictionary<IndicatorColorProviderSeed, int>();
+  private readonly SynchronizedDictionary<IndicatorColorProviderSeed, int> _indicatorColorProviderSeedMap = new SynchronizedDictionary<IndicatorColorProviderSeed, int>();
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private bool \u0023\u003Dz9IwAea1R8vuk;
+  private bool _isDarkTheme;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Color[] \u0023\u003DzpJ1HExkWqXSv = new Color[14]
+  private static readonly Color[] _darkColorMap = new Color[14]
   {
     Colors.Blue,
     Colors.DarkGoldenrod,
@@ -42,7 +42,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
     Colors.MediumVioletRed
   };
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private static readonly Color[] \u0023\u003DzwVHfLaDc921YiCH_fw\u003D\u003D = new Color[15]
+  private static readonly Color[] _lightColorMap = new Color[15]
   {
     Colors.Gold,
     Colors.Cyan,
@@ -63,39 +63,39 @@ public class IndicatorColorProvider : IIndicatorColorProvider
 
   public IndicatorColorProvider()
   {
-    this.\u0023\u003Dz9IwAea1R8vuk = ThemeExtensions.IsCurrDark();
-    ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler(this.\u0023\u003DzAEKOL3_JGd58TKQC0w\u003D\u003D);
+    this._isDarkTheme = ThemeExtensions.IsCurrDark();
+    ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler(this.OnApplicationThemeChanged);
   }
 
   public Color GetNextColor()
   {
-    int num = CollectionHelper.SyncGet<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(this.\u0023\u003Dzy4fXhVU\u003D, new Func<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(new IndicatorColorProvider.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D()
+    int num = CollectionHelper.SyncGet<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(this._indicatorColorProviderSeedMap, new Func<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(new IndicatorColorProvider.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D()
     {
       \u0023\u003DzRRvwDu67s9Rm = this,
-      \u0023\u003Dzi2Vlbjk\u003D = Scope<IndicatorColorProviderSeed>.Current?.Value ?? IndicatorColorProvider.\u0023\u003Dz4Q3sa\u0024gsAL0q
-    }.\u0023\u003Dz2tz5mWTr\u0024r523Symdw\u003D\u003D));
-    Color[] colorArray = this.\u0023\u003Dz9IwAea1R8vuk ? IndicatorColorProvider.\u0023\u003DzwVHfLaDc921YiCH_fw\u003D\u003D : IndicatorColorProvider.\u0023\u003DzpJ1HExkWqXSv;
+      _IndicatorColorProviderSeed = Scope<IndicatorColorProviderSeed>.Current?.Value ?? IndicatorColorProvider._indicatorColorProviderSeed
+    }.SomeSealedClassMethod03845));
+    Color[] colorArray = this._isDarkTheme ? IndicatorColorProvider._lightColorMap : IndicatorColorProvider._darkColorMap;
     return colorArray[num % colorArray.Length];
   }
 
-  private void \u0023\u003DzAEKOL3_JGd58TKQC0w\u003D\u003D(
+  private void OnApplicationThemeChanged(
     DependencyObject _param1,
     ThemeChangedRoutedEventArgs _param2)
   {
-    this.\u0023\u003Dz9IwAea1R8vuk = ThemeExtensions.IsCurrDark();
+    this._isDarkTheme = ThemeExtensions.IsCurrDark();
   }
 
   private sealed class \u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D
   {
     public IndicatorColorProvider \u0023\u003DzRRvwDu67s9Rm;
-    public IndicatorColorProviderSeed \u0023\u003Dzi2Vlbjk\u003D;
+    public IndicatorColorProviderSeed _IndicatorColorProviderSeed;
 
-    internal int \u0023\u003Dz2tz5mWTr\u0024r523Symdw\u003D\u003D(
+    internal int SomeSealedClassMethod03845(
       SynchronizedDictionary<IndicatorColorProviderSeed, int> _param1)
     {
       int num;
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzy4fXhVU\u003D.TryGetValue(this.\u0023\u003Dzi2Vlbjk\u003D, ref num);
-      return (this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzy4fXhVU\u003D[this.\u0023\u003Dzi2Vlbjk\u003D] = num + 1) - 1;
+      this.\u0023\u003DzRRvwDu67s9Rm._indicatorColorProviderSeedMap.TryGetValue(this._IndicatorColorProviderSeed, ref num);
+      return (this.\u0023\u003DzRRvwDu67s9Rm._indicatorColorProviderSeedMap[this._IndicatorColorProviderSeed] = num + 1) - 1;
     }
   }
 }
