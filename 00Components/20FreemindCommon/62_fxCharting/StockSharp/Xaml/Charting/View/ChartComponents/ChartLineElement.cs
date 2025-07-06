@@ -21,7 +21,7 @@ using System.Windows.Shapes;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class LineUI : ChartElement<LineUI>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public class ChartLineElement : ChartElement<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private TASignalSymbol           _signalType;
         private DrawStyles _indicatorDrawStyle;
@@ -46,7 +46,7 @@ namespace StockSharp.Xaml.Charting
         UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _scichartSurfaceVM = viewModel;
-            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new LineVM<double>( this ) : ( UIChartBaseViewModel )new LineVM<DateTime>( this );
+            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( UIChartBaseViewModel )new ChartLineElementVM<DateTime>( this );
 
             var xAxis = _scichartSurfaceVM.XAxises.FirstOrDefault( );
 
@@ -80,7 +80,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public LineUI( )
+        public ChartLineElement( )
         {
             DrawTemplate    = GetControlTemplate( );
             PointMarker     = CreatePointMarker( );
@@ -506,7 +506,7 @@ namespace StockSharp.Xaml.Charting
             storage.SetValue( "ShowAxisMarker", ( ShowAxisMarker ) );
         }
 
-        internal override LineUI Clone( LineUI other )
+        internal override ChartLineElement Clone( ChartLineElement other )
         {
             other = base.Clone( other );
 

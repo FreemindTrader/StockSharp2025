@@ -10,21 +10,21 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     
     public class AlligatorPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _lips;
-        private readonly LineUI _teeth;
-        private readonly LineUI _jaw;
+        private readonly ChartLineElement _lips;
+        private readonly ChartLineElement _teeth;
+        private readonly ChartLineElement _jaw;
 
         public AlligatorPainter( )
         {
-            _lips = new LineUI( )
+            _lips = new ChartLineElement( )
             {
                 Color = Colors.Green
             };
-            _teeth = new LineUI( )
+            _teeth = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
-            _jaw = new LineUI( )
+            _jaw = new ChartLineElement( )
             {
                 Color = Colors.Blue
             };
@@ -34,7 +34,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str840", Name = "Str840", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Lips
+        public ChartLineElement Lips
         {
             get
             {
@@ -43,7 +43,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str839", Name = "Str839", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Teeth
+        public ChartLineElement Teeth
         {
             get
             {
@@ -52,7 +52,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str838", Name = "Str838", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Jaw
+        public ChartLineElement Jaw
         {
             get
             {

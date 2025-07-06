@@ -9,17 +9,17 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( StochasticOscillator ) )]
     public class StochasticOscillatorPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _kline;
-        private readonly LineUI _dline;
+        private readonly ChartLineElement _kline;
+        private readonly ChartLineElement _dline;
 
         public StochasticOscillatorPainter( )
         {
-            _kline = new LineUI( )
+            _kline = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
 
-            _dline = new LineUI( )
+            _dline = new ChartLineElement( )
             {
                 Color = Colors.Blue
             };
@@ -29,7 +29,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "SOK", Name = "SOK", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI KLine
+        public ChartLineElement KLine
         {
             get
             {
@@ -38,7 +38,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "SOD", Name = "SOD", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI DLine
+        public ChartLineElement DLine
         {
             get
             {

@@ -9,16 +9,16 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( MovingAverageConvergenceDivergenceSignal ) )]
     public class MovingAverageConvergenceDivergenceSignalPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI chartLineElement_0;
-        private readonly LineUI chartLineElement_1;
+        private readonly ChartLineElement chartLineElement_0;
+        private readonly ChartLineElement chartLineElement_1;
 
         public MovingAverageConvergenceDivergenceSignalPainter( )
         {
-            chartLineElement_0 = new LineUI( )
+            chartLineElement_0 = new ChartLineElement( )
             {
                 Color = Colors.Green
             };
-            chartLineElement_1 = new LineUI( )
+            chartLineElement_1 = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
@@ -28,7 +28,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
 
         [DisplayName( "MACD" )]
         
-        public LineUI Macd
+        public ChartLineElement Macd
         {
             get
             {
@@ -36,7 +36,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
             }
         }
 
-        public LineUI SignalMa
+        public ChartLineElement SignalMa
         {
             get
             {

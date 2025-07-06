@@ -8,21 +8,21 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( AverageDirectionalIndex ) )]
     public class AverageDirectionalIndexPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI chartLineElement_0;
-        private readonly LineUI chartLineElement_1;
-        private readonly LineUI chartLineElement_2;
+        private readonly ChartLineElement chartLineElement_0;
+        private readonly ChartLineElement chartLineElement_1;
+        private readonly ChartLineElement chartLineElement_2;
 
         public AverageDirectionalIndexPainter( )
         {
-            chartLineElement_0 = new LineUI( )
+            chartLineElement_0 = new ChartLineElement( )
             {
                 Color = Colors.Green
             };
-            chartLineElement_1 = new LineUI( )
+            chartLineElement_1 = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
-            chartLineElement_2 = new LineUI( )
+            chartLineElement_2 = new ChartLineElement( )
             {
                 Color = Colors.Blue
             };
@@ -32,7 +32,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [DisplayName( "DI+" )]
-        public LineUI DiPlus
+        public ChartLineElement DiPlus
         {
             get
             {
@@ -41,7 +41,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [DisplayName( "DI-" )]
-        public LineUI DiMinus
+        public ChartLineElement DiMinus
         {
             get
             {
@@ -50,7 +50,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [DisplayName( "ADX" )]
-        public LineUI Adx
+        public ChartLineElement Adx
         {
             get
             {

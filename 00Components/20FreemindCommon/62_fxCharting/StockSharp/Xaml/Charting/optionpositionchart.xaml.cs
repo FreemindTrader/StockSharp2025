@@ -452,9 +452,9 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        internal static LineUI CreateChartLineElement( string title, Color color )
+        internal static ChartLineElement CreateChartLineElement( string title, Color color )
         {
-            var lineElment = new LineUI( );
+            var lineElment = new ChartLineElement( );
             lineElment.FullTitle = title;
             lineElment.Color = color;
 

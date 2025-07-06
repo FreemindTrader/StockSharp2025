@@ -10,16 +10,16 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     
     public class RelativeVigorIndexPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI chartLineElement_0;
-        private readonly LineUI chartLineElement_1;
+        private readonly ChartLineElement chartLineElement_0;
+        private readonly ChartLineElement chartLineElement_1;
 
         public RelativeVigorIndexPainter( )
         {
-            chartLineElement_0 = new LineUI( )
+            chartLineElement_0 = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
-            chartLineElement_1 = new LineUI( )
+            chartLineElement_1 = new ChartLineElement( )
             {
                 Color = Colors.Green
             };
@@ -28,7 +28,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str773", Name = "Signal", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Signal
+        public ChartLineElement Signal
         {
             get
             {
@@ -37,7 +37,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str772", Name = "Average", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Average
+        public ChartLineElement Average
         {
             get
             {

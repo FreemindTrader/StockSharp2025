@@ -15,19 +15,19 @@ namespace StockSharp.Xaml.Charting
     public sealed class QuotesUI : ChartElement<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
-        private LineUI                   _bidLine;
-        private LineUI                   _askLine;
+        private ChartLineElement                   _bidLine;
+        private ChartLineElement                   _askLine;
         private UIChartBaseViewModel                 _viewModel;
 
         public QuotesUI( )
         {
-            BidLine = new LineUI( )
+            BidLine = new ChartLineElement( )
             {
                 Color           = Colors.BlueViolet,
                 AdditionalColor = Colors.BlueViolet.ToTransparent( 50 )
             };
 
-            AskLine = new LineUI( )
+            AskLine = new ChartLineElement( )
             {
                 Color           = Colors.BlueViolet,
                 AdditionalColor = Colors.BlueViolet.ToTransparent( 50 )
@@ -72,7 +72,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public LineUI BidLine
+        public ChartLineElement BidLine
         {
             get
             {
@@ -84,7 +84,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public LineUI AskLine
+        public ChartLineElement AskLine
         {
             get
             {

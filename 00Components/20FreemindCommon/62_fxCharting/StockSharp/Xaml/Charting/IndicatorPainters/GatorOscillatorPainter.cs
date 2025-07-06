@@ -9,23 +9,23 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( GatorOscillator ) )]
     public class GatorOscillatorPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI chartLineElement_0;
-        private readonly LineUI chartLineElement_1;
+        private readonly ChartLineElement chartLineElement_0;
+        private readonly ChartLineElement chartLineElement_1;
 
         public GatorOscillatorPainter( )
         {
-            chartLineElement_0 = new LineUI( )
+            chartLineElement_0 = new ChartLineElement( )
             {
                 Color = Colors.Green
             };
-            chartLineElement_1 = new LineUI( )
+            chartLineElement_1 = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
-            LineUI histogram1_1 = Histogram1;
+            ChartLineElement histogram1_1 = Histogram1;
             Histogram2.Style = DrawStyles.Histogram;
             histogram1_1.Style = DrawStyles.Histogram;
-            LineUI histogram1_2 = Histogram1;
+            ChartLineElement histogram1_2 = Histogram1;
             Histogram2.StrokeThickness = 4;
             histogram1_2.StrokeThickness = 4;
             AddChildElement( Histogram1 );
@@ -33,7 +33,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str851", Name = "Str3564", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Histogram1
+        public ChartLineElement Histogram1
         {
             get
             {
@@ -42,7 +42,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str852", Name = "Str3565", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Histogram2
+        public ChartLineElement Histogram2
         {
             get
             {

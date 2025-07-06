@@ -11,14 +11,14 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     public class BollingerBandsPainter : BaseChartIndicatorPainter
     {
         private readonly ChartBandElement BandsUI_0;
-        private readonly LineUI chartLineElement_0;
+        private readonly ChartLineElement chartLineElement_0;
 
         public BollingerBandsPainter( )
         {
             BandsUI_0 = new ChartBandElement( );
             Band.Line1.AdditionalColor = Band.Line2.AdditionalColor = Colors.Blue.ToTransparent( 50 );
             Band.Line1.Color = Band.Line2.Color = Colors.Blue;
-            chartLineElement_0 = new LineUI( )
+            chartLineElement_0 = new ChartLineElement( )
             {
                 Color = Colors.Red,
                 AdditionalColor = Colors.Red.ToTransparent( 50 )
@@ -40,7 +40,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str731", Name = "Str731", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI MovingAverage
+        public ChartLineElement MovingAverage
         {
             get
             {

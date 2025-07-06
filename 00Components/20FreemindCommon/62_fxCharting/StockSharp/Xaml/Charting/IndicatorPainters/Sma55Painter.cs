@@ -7,11 +7,11 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     public class Sma55Painter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _line;
+        private readonly ChartLineElement _line;
 
         public Sma55Painter()
         {
-            _line = new LineUI()
+            _line = new ChartLineElement()
             {
                 Color = Colors.Red
             };
@@ -21,7 +21,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
 
         public Sma55Painter(int fifoCapacity)
         {
-            _line = new LineUI()
+            _line = new ChartLineElement()
             {
                 FifoCapacity = fifoCapacity,
                 Color = Colors.Red
@@ -31,7 +31,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display(Description = "Str1898", Name = "Str1898", ResourceType = typeof(LocalizedStrings))]
-        public LineUI Line
+        public ChartLineElement Line
         {
             get
             {

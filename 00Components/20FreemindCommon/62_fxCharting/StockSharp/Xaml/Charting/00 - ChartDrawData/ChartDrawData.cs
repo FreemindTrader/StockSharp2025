@@ -130,9 +130,9 @@ namespace StockSharp.Xaml.Charting
 
         private PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>> _activeOrdersMap;
 
-        private PooledDictionary<LineUI, PooledList<sxTuple<DateTime>>>_lineTimeMap;
+        private PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>>_lineTimeMap;
 
-        private PooledDictionary<LineUI, PooledList<sxTuple<double>>> _lineValueMap;
+        private PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>> _lineValueMap;
 
         private PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> _bandTimeMap;
 
@@ -160,14 +160,14 @@ namespace StockSharp.Xaml.Charting
             return _activeOrdersMap ?? ( _activeOrdersMap = new PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>>( ) );
         }
 
-        public PooledDictionary<LineUI, PooledList<sxTuple<DateTime>>> GetLineTimeMap( )
+        public PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>> GetLineTimeMap( )
         {
-            return _lineTimeMap ?? ( _lineTimeMap = new PooledDictionary<LineUI, PooledList<sxTuple<DateTime>>>( ) );
+            return _lineTimeMap ?? ( _lineTimeMap = new PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>>( ) );
         }
 
-        public PooledDictionary<LineUI, PooledList<sxTuple<double>>> GetLineValueMap( )
+        public PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>> GetLineValueMap( )
         {
-            return _lineValueMap ?? ( _lineValueMap = new PooledDictionary<LineUI, PooledList<sxTuple<double>>>( ) );
+            return _lineValueMap ?? ( _lineValueMap = new PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>>( ) );
         }
 
         public PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> GetBandTimeMap( )
@@ -416,17 +416,17 @@ namespace StockSharp.Xaml.Charting
             return activeOrders.TryGetValue( _param1 );
         }
 
-        public PooledList<sxTuple<DateTime>> GetLineTime( LineUI _param1 )
+        public PooledList<sxTuple<DateTime>> GetLineTime( ChartLineElement _param1 )
         {
-            PooledDictionary<LineUI, PooledList<sxTuple<DateTime>>> lineTime = _lineTimeMap;
+            PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>> lineTime = _lineTimeMap;
             if ( lineTime == null )
                 return null;
             return lineTime.TryGetValue( _param1 );
         }
 
-        public PooledList<sxTuple<double>> GetLineValue( LineUI _param1 )
+        public PooledList<sxTuple<double>> GetLineValue( ChartLineElement _param1 )
         {
-            PooledDictionary<LineUI, PooledList<sxTuple<double>>> lineValue = _lineValueMap;
+            PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>> lineValue = _lineValueMap;
 
             if ( lineValue == null )
                 return null;
@@ -451,7 +451,7 @@ namespace StockSharp.Xaml.Charting
 
             return bandValue.TryGetValue( _param1 );
         }
-        public IEnumerableEx<IDrawValue> GetLineDrawValues( LineUI line )
+        public IEnumerableEx<IDrawValue> GetLineDrawValues( ChartLineElement line )
         {
             var lineTime = GetLineTime( line );
 

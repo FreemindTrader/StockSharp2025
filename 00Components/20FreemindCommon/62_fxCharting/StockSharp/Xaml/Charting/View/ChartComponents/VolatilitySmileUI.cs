@@ -8,17 +8,17 @@ namespace StockSharp.Xaml.Charting
 {
     public sealed class VolatilitySmileUI : ChartElement< VolatilitySmileUI >
     {
-        private LineUI chartLineElement_0;
-        private LineUI chartLineElement_1;
+        private ChartLineElement chartLineElement_0;
+        private ChartLineElement chartLineElement_1;
 
         public VolatilitySmileUI( )
         {
-            Values = new LineUI( )
+            Values = new ChartLineElement( )
             {
                 Color = Colors.DarkGreen,
                 AdditionalColor = Colors.DarkGreen.ToTransparent( 50 )
             };
-            Smile = new LineUI( )
+            Smile = new ChartLineElement( )
             {
                 Color = Colors.DarkGreen,
                 AdditionalColor = Colors.DarkGreen.ToTransparent( 50 )
@@ -28,7 +28,7 @@ namespace StockSharp.Xaml.Charting
         }
 
         [Display( Description = "SourceValues", Name = "SourceValues", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Values
+        public ChartLineElement Values
         {
             get
             {
@@ -41,7 +41,7 @@ namespace StockSharp.Xaml.Charting
         }
 
         [Display( Description = "VolatilitySmile", Name = "VolatilitySmile", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Smile
+        public ChartLineElement Smile
         {
             get
             {

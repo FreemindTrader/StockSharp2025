@@ -109,7 +109,7 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
         SetIncludeSeries( _bidLineRSerie, false );        
     }    
 
-    private QuoteRenderableSeries CreateQuoteRSeriesAndBinding( IRenderableSeries lineSeries, LineUI line, ChildVM viewModel )
+    private QuoteRenderableSeries CreateQuoteRSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChildVM viewModel )
     {
         // Tony 4:
 

@@ -57,7 +57,7 @@ namespace StockSharp.Xaml.Charting
             }
 
             /// <summary>
-            /// Value of X coordinate for <see cref="T:StockSharp.Xaml.Charting.LineUI" />.
+            /// Value of X coordinate for <see cref="T:StockSharp.Xaml.Charting.ChartLineElement" />.
             /// </summary>
             private readonly double _xValue;
 
@@ -193,7 +193,7 @@ namespace StockSharp.Xaml.Charting
             /// <param name="value2">The value2.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( LineUI element, double value1, double value2 = double.NaN )
+            public ChartDrawDataItem Add( ChartLineElement element, double value1, double value2 = double.NaN )
             {
                 if ( !XValue.IsNaN() )
                     return Add( _drawData.GetLineValueMap(), element, sxTuple<double>.CreateSxTuple( XValue, value1, value2 ) );
@@ -260,7 +260,7 @@ namespace StockSharp.Xaml.Charting
                     TradesUI element4 = element as TradesUI;
                     if ( element4 != null )
                         return Add( element4, ( MyTrade ) value );
-                    LineUI element5 = element as LineUI;
+                    ChartLineElement element5 = element as ChartLineElement;
                     if ( element5 == null )
                     {
                         ChartBandElement element6 = element as ChartBandElement;

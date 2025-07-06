@@ -123,7 +123,7 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
         _wholeBandRSerie.SetBindings( FastBandRenderableSeries.StrokeY1Property, ChartElement.Line2, "AdditionalColor", BindingMode.TwoWay, null, null );
     }
 
-    private FastLineRenderableSeries CreateFastLineSeriesAndBinding( IRenderableSeries lineSeries, LineUI line, ChildVM viewModel )
+    private FastLineRenderableSeries CreateFastLineSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChildVM viewModel )
     {
         // Tony Fix
 

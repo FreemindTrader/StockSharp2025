@@ -3,7 +3,7 @@
 namespace StockSharp.Xaml.Charting
 {
     
-    public class BubbleLineUI : LineUI
+    public class BubbleLineUI : ChartLineElement
     {
         public BubbleLineUI( )
         {

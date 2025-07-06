@@ -11,17 +11,17 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( VolumeIndicator ) )]
     public class VolumePainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _upVolume;
-        private readonly LineUI _downVolume;
+        private readonly ChartLineElement _upVolume;
+        private readonly ChartLineElement _downVolume;
 
         public VolumePainter( )
         {
-            _upVolume = new LineUI( )
+            _upVolume = new ChartLineElement( )
             {
                 Color = Colors.Green
             };
 
-            _downVolume = new LineUI( )
+            _downVolume = new ChartLineElement( )
             {
                 Color = Colors.Red
             };
@@ -34,7 +34,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str2049", Name = "Str2035", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI UpVolume
+        public ChartLineElement UpVolume
         {
             get
             {
@@ -43,7 +43,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str2050", Name = "Str2037", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI DownVolume
+        public ChartLineElement DownVolume
         {
             get
             {

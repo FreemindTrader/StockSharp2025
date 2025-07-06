@@ -19,7 +19,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where T : struct, IComparable
+internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, IPaletteProvider where T : struct, IComparable
 {
     //private ChartSeriesViewModel                        _chartSeriesViewModel;
 
@@ -30,7 +30,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
     private IDataSeries                                 _lineData;
     private IRenderableSeries                           _lineSeries;
 
-    public LineVM( LineUI myLineUI ) : base( myLineUI )
+    public ChartLineElementVM( ChartLineElement myLineUI ) : base( myLineUI )
     {
         Type type = typeof( T );
         

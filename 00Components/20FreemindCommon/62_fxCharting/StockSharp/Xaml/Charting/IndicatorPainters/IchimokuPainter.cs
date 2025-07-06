@@ -12,17 +12,17 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( Ichimoku ) )]
     public class IchimokuPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _tenKan;
-        private readonly LineUI _kijun;
-        private readonly LineUI _chinkou;
+        private readonly ChartLineElement _tenKan;
+        private readonly ChartLineElement _kijun;
+        private readonly ChartLineElement _chinkou;
         private readonly ChartBandElement _senkou;
 
         public IchimokuPainter( )
         {
             _senkou                      = new ChartBandElement( );
-            _tenKan                      = new LineUI( );
-            _kijun                       = new LineUI( );
-            _chinkou                     = new LineUI( );
+            _tenKan                      = new ChartLineElement( );
+            _kijun                       = new ChartLineElement( );
+            _chinkou                     = new ChartLineElement( );
             Senkou.Line1.Color           = Colors.SandyBrown;
             Senkou.Line2.Color           = Colors.Thistle;
             Senkou.Line1.AdditionalColor = Senkou.Line2.AdditionalColor = Colors.Thistle.ToTransparent( 50 );
@@ -42,7 +42,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str764", Name = "Str764", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Tenkan
+        public ChartLineElement Tenkan
         {
             get
             {
@@ -51,7 +51,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str765", Name = "Str765", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Kijun
+        public ChartLineElement Kijun
         {
             get
             {
@@ -60,7 +60,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str768", Name = "Str768", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Chinkou
+        public ChartLineElement Chinkou
         {
             get
             {

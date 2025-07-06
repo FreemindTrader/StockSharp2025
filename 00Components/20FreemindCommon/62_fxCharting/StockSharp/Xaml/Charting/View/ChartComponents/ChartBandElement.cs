@@ -13,18 +13,18 @@ namespace StockSharp.Xaml.Charting
     public sealed class ChartBandElement : ChartElement< ChartBandElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
-        private LineUI _lineOne;
-        private LineUI _lineTwo;
+        private ChartLineElement _lineOne;
+        private ChartLineElement _lineTwo;
         private UIChartBaseViewModel _viewModel;
 
         public ChartBandElement( )
         {
-            Line1 = new LineUI( )
+            Line1 = new ChartLineElement( )
             {
                 Color = Colors.DarkGreen,
                 AdditionalColor = Colors.DarkGreen.ToTransparent( 50 )
             };
-            Line2 = new LineUI( )
+            Line2 = new ChartLineElement( )
             {
                 Color = Colors.DarkGreen,
                 AdditionalColor = Colors.DarkGreen.ToTransparent( 50 )
@@ -65,7 +65,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public LineUI Line1
+        public ChartLineElement Line1
         {
             get
             {
@@ -77,7 +77,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public LineUI Line2
+        public ChartLineElement Line2
         {
             get
             {

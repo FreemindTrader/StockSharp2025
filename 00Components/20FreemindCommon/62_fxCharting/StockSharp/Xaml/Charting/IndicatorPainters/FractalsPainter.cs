@@ -9,13 +9,13 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( Fractals ) )]
     public class FractalsPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _upUI;
-        private readonly LineUI _downUI;
+        private readonly ChartLineElement _upUI;
+        private readonly ChartLineElement _downUI;
 
         public FractalsPainter( )
         {
-            _upUI           = new LineUI( ) { Color = Colors.Green };
-            _downUI         = new LineUI( ) { Color = Colors.Red };
+            _upUI           = new ChartLineElement( ) { Color = Colors.Green };
+            _downUI         = new ChartLineElement( ) { Color = Colors.Red };
             
             Down.Style      = DrawStyles.Dot;
             Down.SignalType = TASignalSymbol.PositiveDivergence;
@@ -30,7 +30,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str2036", Name = "Str2035", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Up
+        public ChartLineElement Up
         {
             get
             {
@@ -39,7 +39,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str2038", Name = "Str2037", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI Down
+        public ChartLineElement Down
         {
             get
             {

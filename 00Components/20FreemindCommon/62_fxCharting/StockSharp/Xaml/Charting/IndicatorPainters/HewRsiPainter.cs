@@ -12,23 +12,23 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     [Indicator( typeof( HewRsiComplex ) )]
     public class HewRsiPainter : BaseChartIndicatorPainter
     {
-        private readonly LineUI _overBought;
-        private readonly LineUI _hewRsi;
-        private readonly LineUI _overSold;
+        private readonly ChartLineElement _overBought;
+        private readonly ChartLineElement _hewRsi;
+        private readonly ChartLineElement _overSold;
 
         public HewRsiPainter()
         {
-            _overBought = new LineUI()
+            _overBought = new ChartLineElement()
             {
                 Color = Colors.Green
             };
 
-            _hewRsi = new LineUI()
+            _hewRsi = new ChartLineElement()
             {
                 Color = Colors.Blue
             };
 
-            _overSold = new LineUI()
+            _overSold = new ChartLineElement()
             {
                 Color = Colors.Red
             };
@@ -39,7 +39,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [DisplayName( "OverBought" )]
-        public LineUI OverBought
+        public ChartLineElement OverBought
         {
             get
             {
@@ -48,7 +48,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "Str805", Name = "Str804", ResourceType = typeof( LocalizedStrings ) )]
-        public LineUI HewRsi
+        public ChartLineElement HewRsi
         {
             get
             {
@@ -57,7 +57,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [DisplayName( "OverSold" )]
-        public LineUI OverSold
+        public ChartLineElement OverSold
         {
             get
             {
