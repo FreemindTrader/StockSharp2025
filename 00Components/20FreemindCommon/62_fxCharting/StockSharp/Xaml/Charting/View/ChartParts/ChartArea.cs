@@ -12,12 +12,12 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading;
-using fx.Charting.ATony;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.ATony;
+using StockSharp.Xaml.Charting.Definitions;
 using SciChart.Charting.ChartModifiers;
 using StockSharp.Charting;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     
     public class ChartArea : ChartPart< ChartArea >, IDisposable, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable

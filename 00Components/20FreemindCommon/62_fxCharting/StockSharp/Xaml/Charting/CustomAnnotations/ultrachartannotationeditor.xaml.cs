@@ -5,7 +5,7 @@ using System.Collections.Generic; using fx.Collections;
 using System.Windows;
 
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     /// <summary>
     /// Interaction logic for UltrachartAnnotationEditor.xaml

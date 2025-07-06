@@ -1,4 +1,4 @@
-﻿using fx.Charting;
+﻿using StockSharp.Xaml.Charting;
 
 internal sealed class OptionNowExpLines
 {

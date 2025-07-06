@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     [DataContract]
     [Serializable]

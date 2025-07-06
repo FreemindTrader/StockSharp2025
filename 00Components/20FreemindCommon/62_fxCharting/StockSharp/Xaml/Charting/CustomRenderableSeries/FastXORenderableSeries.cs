@@ -3,12 +3,12 @@ using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Charting.Visuals.PaletteProviders;
 using SciChart.Charting.Visuals.RenderableSeries;
 using SciChart.Drawing.Common;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.Linq;
 using System.Windows;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class FastXORenderableSeries : FastCandlestickRenderableSeries
     {

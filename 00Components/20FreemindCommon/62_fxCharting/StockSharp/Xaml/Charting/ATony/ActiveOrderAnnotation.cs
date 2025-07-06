@@ -8,7 +8,7 @@ using SciChart.Charting.Visuals.Axes;
 using SciChart.Charting.Visuals.Events;
 using SciChart.Core.Extensions;
 using SciChart.Core.Utility;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
@@ -23,7 +23,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace fx.Charting.ATony
+namespace StockSharp.Xaml.Charting.ATony
 {
     public class ActiveOrderAnnotation : AnnotationBase
     {

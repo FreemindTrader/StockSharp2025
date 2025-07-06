@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-namespace fx.Charting;
+namespace StockSharp.Xaml.Charting;
 
 /// <summary>
 /// Base class for chart related view models.

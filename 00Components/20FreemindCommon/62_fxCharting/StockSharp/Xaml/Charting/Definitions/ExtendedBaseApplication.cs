@@ -1,6 +1,6 @@
 ﻿using StockSharp.Xaml;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public abstract class ExtendedBaseApplication : BaseApplication
     {

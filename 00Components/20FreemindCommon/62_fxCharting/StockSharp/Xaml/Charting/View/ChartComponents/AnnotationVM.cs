@@ -1,5 +1,5 @@
 ﻿using Ecng.Collections;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Linq;
 

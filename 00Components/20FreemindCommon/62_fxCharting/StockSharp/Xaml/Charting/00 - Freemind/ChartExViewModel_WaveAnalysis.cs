@@ -14,7 +14,7 @@ using StockSharp.Algo.Candles;
 using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Collections.ObjectModel;
@@ -24,19 +24,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DevExpress.Mvvm.UI;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System.Windows;
 using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
 using fx.Common;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using fx.Definitions;
 using SciChart.Core.Extensions;
 using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Data.Model;
 
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IChart, IPersistable, IThemeableChart
     {

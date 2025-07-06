@@ -3,7 +3,7 @@ using Ecng.Xaml;
 using SciChart.Charting.ChartModifiers;
 using SciChart.Charting.Visuals.RenderableSeries;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;

@@ -13,7 +13,7 @@ using Ecng.Xaml.Converters;
 using MoreLinq;
 
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; 
 using fx.Collections;
@@ -31,7 +31,7 @@ using SciChart.Charting.Model;
 using SciChart.Charting.Common.Helpers;
 using SciChart.Drawing.Common;
 using SciChart.Core.Utility.Mouse;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using StockSharp.Xaml;
 using StockSharp.BusinessEntities;
 using SciChart.Charting.DrawingTools.TradingModifiers;
@@ -1546,7 +1546,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     /// <summary>
     /// Handles the PropertyChanged event of the XYAxis element.
     ///     
-    /// Directly copy the code from StockSharp.Charting.IChartExtensions because I still haven't change my namespace from fx.Charting to Stocksharp.xaml.Charting
+    /// Directly copy the code from StockSharp.Charting.IChartExtensions because I still haven't change my namespace from StockSharp.Xaml.Charting to Stocksharp.xaml.Charting
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

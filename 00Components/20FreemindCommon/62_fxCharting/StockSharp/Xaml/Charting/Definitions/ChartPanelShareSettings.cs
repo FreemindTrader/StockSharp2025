@@ -7,7 +7,7 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
     {

@@ -10,7 +10,7 @@ using Ecng.Common;
 using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 using StockSharp.Charting;
 
-namespace fx.Charting.Ultrachart;
+namespace StockSharp.Xaml.Charting.Ultrachart;
 
 /// <summary>
 /// Proxy object to edit chart indicator element in property grid.

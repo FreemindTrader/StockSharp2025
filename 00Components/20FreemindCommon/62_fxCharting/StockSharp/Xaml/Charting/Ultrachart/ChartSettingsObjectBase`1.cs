@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace fx.Charting.Ultrachart;
+namespace StockSharp.Xaml.Charting.Ultrachart;
 
 /// <summary>
 /// Base proxy object to edit chart element in property grid.

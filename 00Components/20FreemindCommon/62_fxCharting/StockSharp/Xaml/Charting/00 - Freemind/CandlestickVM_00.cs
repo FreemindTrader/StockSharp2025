@@ -15,9 +15,9 @@ using SciChart.Charting.Visuals.RenderableSeries;
 using SciChart.Data.Model;
 using StockSharp.Localization;
 using StockSharp.Messages;
-using fx.Charting;
-using fx.Charting.ATony;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting;
+using StockSharp.Xaml.Charting.ATony;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
@@ -33,7 +33,7 @@ using fx.Base;
 
 #pragma warning disable 067
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class DefaultSelectableMetadata : IPointMetadata
     {
@@ -382,7 +382,7 @@ namespace fx.Charting
             _candlestickSeries.DataSeries = _candlestickData;
 
             var rd = new ResourceDictionary( );
-            rd.Source = new Uri( "pack://application:,,,/fx.Charting;component/ChartExViewRes.xaml" );
+            rd.Source = new Uri( "pack://application:,,,/StockSharp.Xaml.Charting;component/ChartExViewRes.xaml" );
 
 
             CursorModifier.SetTooltipTemplate( rSeries, ( DataTemplate ) rd[ "CursorTooltipTemplate" ] );

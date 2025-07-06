@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal interface IPenManager : IDisposable
     {

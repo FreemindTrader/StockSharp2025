@@ -4,8 +4,8 @@ using SciChart.Charting.Visuals.RenderableSeries;
 using SciChart.Data.Model;
 using SciChart.Drawing.Common;
 using fx.Definitions;
-using fx.Charting.ATony;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.ATony;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
@@ -18,15 +18,15 @@ using SciChart.Charting.Visuals.PointMarkers;
 using SciChart.Core.Extensions;
 using System.Windows.Controls;
 using StockSharp.BusinessEntities;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using SciChart.Charting.Visuals.Annotations;
 using SciChart.Charting.Numerics.CoordinateCalculators;
 using fx.Indicators;
 using fx.Common;
-using fx.Charting.CustomAnnotations;
+using StockSharp.Xaml.Charting.CustomAnnotations;
 using fx.Bars;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class FreemindCandlestickRenderableSeries : FastCandlestickRenderableSeries
     {

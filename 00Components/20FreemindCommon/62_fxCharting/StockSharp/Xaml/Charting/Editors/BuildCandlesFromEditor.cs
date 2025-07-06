@@ -3,7 +3,7 @@
 //using StockSharp.Messages;
 //using System.Linq;
 
-//namespace fx.Charting.Editors
+//namespace StockSharp.Xaml.Charting.Editors
 //{
 //    public sealed class BuildCandlesFromEditor : BaseCustomEnumEditor< MarketDataTypes >
 //    {

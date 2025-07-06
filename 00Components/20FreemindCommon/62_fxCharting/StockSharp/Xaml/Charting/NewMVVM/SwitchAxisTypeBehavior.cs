@@ -2,7 +2,7 @@
 using SciChart.Charting.Visuals;
 using SciChart.Charting.Visuals.Axes;
 
-namespace fx.Charting.NewMVVM
+namespace StockSharp.Xaml.Charting.NewMVVM
 {
     // This is an example class showing how attached properties can be created simply to 
     // change behaviour on a SciChartSurface. This is not part of SciChart API and is not supported

@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic; using fx.Collections;
 using System.Windows.Controls;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class CandlestickUIPicker : DXWindow
     {

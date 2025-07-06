@@ -1,9 +1,9 @@
-﻿using fx.Charting.Ultrachart;
+﻿using StockSharp.Xaml.Charting.Ultrachart;
 using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal sealed class ChartIndicatorConverter : IMultiValueConverter
     {

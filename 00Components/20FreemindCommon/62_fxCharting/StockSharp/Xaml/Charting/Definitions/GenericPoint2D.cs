@@ -4,7 +4,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace fx.Charting.Definitions
+//namespace StockSharp.Xaml.Charting.Definitions
 //{
 //    public class GenericPoint2D<TY> : IPoint where TY : ISeriesPoint<double>
 //    {

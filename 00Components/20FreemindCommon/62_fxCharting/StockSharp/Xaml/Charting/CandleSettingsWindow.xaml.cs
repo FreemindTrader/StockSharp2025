@@ -15,7 +15,7 @@ using System.Windows.Markup;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class CandleSettingsWindow : DXWindow, IComponentConnector
     {

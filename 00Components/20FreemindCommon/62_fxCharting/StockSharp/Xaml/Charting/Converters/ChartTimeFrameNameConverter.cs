@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     
     public class ChartTimeFrameNameConverter : IValueConverter

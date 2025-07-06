@@ -19,7 +19,7 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class LineUI : ChartElement<LineUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {

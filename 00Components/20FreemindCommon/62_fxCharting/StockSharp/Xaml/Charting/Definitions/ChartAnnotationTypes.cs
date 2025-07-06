@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     [Serializable]
     public enum ChartAnnotationTypes

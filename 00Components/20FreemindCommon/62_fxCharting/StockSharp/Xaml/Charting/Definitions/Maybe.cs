@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fx.Charting.Definitions
+namespace StockSharp.Xaml.Charting.Definitions
 {
     public static class Maybe
     {

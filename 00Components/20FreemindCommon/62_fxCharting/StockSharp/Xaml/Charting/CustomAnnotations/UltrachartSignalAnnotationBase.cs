@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Ecng.Common;
 
-namespace fx.Charting.CustomAnnotations
+namespace StockSharp.Xaml.Charting.CustomAnnotations
 {
     internal class UltrachartSignalAnnotationBase : CustomAnnotation
     {

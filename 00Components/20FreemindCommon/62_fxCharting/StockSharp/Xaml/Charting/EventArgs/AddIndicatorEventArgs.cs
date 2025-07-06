@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StockSharp.Algo.Indicators;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class AddIndicatorFifoEventArgs : EventArgs
     {

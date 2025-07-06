@@ -5,7 +5,7 @@ using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
 using StockSharp.Charting;
 
-namespace fx.Charting;
+namespace StockSharp.Xaml.Charting;
 
 /// <summary>
 /// The base class that describes the part of the chart.

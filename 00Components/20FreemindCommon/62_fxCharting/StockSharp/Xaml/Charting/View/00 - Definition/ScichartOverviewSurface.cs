@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal sealed class ScichartOverviewSurface
     {

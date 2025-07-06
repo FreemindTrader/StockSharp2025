@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 
 #pragma warning disable 168
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal static class LicenseManager
     {

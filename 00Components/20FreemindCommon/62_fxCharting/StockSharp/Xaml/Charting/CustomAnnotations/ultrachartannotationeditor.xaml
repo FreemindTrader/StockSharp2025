@@ -1,11 +1,11 @@
 ﻿<egXaml:NonTopmostPopup
     xmlns:egXaml="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
-    x:Class="fx.Charting.UltrachartAnnotationEditor"
+    x:Class="StockSharp.Xaml.Charting.UltrachartAnnotationEditor"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
     
-    xmlns:local="clr-namespace:fx.Charting"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
     x:Name="Ctrl"
     FrameworkElement.MinWidth="250"
     Popup.AllowsTransparency="true"

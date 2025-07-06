@@ -1,4 +1,4 @@
-﻿using fx.Charting;
+﻿using StockSharp.Xaml.Charting;
 using StockSharp.Algo.Indicators;
 using System;
 using System.Globalization;

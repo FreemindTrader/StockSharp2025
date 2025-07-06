@@ -1,6 +1,6 @@
 ﻿using SciChart.Charting.Visuals.Annotations;
 
-namespace fx.Charting.CustomAnnotations
+namespace StockSharp.Xaml.Charting.CustomAnnotations
 {
     public partial class SellMarkerAnnotation : CustomAnnotation
     {

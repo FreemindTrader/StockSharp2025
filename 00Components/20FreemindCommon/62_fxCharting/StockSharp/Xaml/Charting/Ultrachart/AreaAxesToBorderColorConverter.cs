@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace fx.Charting.Ultrachart
+namespace StockSharp.Xaml.Charting.Ultrachart
 {
     public class AreaAxesToBorderColorConverter : IMultiValueConverter
     {

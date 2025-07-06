@@ -7,7 +7,7 @@
 //using System.Windows;
 //using System.Windows.Media;
 
-//namespace fx.Charting
+//namespace StockSharp.Xaml.Charting
 //{
 //    /// <summary>
 //    /// Fibbonacci retracement object draws line on the chart at specific fibonacci levels.

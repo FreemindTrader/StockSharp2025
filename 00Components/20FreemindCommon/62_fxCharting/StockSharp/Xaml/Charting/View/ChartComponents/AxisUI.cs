@@ -3,13 +3,13 @@ using Ecng.ComponentModel;
 using Ecng.Serialization;
 using SciChart.Charting.Common;
 using StockSharp.Localization;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using DevExpress.Mvvm.Native;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     [TypeConverter( typeof( ExpandableObjectConverter ) )]
     public class ChartAxis : NotifiableObject, IPersistable

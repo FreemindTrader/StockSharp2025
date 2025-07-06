@@ -14,7 +14,7 @@ using StockSharp.Algo.Candles;
 using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; 
 using fx.Collections;
@@ -25,7 +25,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DevExpress.Mvvm.UI;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System.Windows;
 using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
@@ -40,7 +40,7 @@ using DevExpress.Xpf.Charts;
 
 #pragma warning disable 067
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ChartExViewModel : ViewModelBase, IChart, IPersistable, IThemeableChart
     {
@@ -102,7 +102,7 @@ namespace fx.Charting
             
 
             var rd = new ResourceDictionary( );
-            rd.Source = new Uri( "pack://application:,,,/fx.Charting;component/ChartExViewRes.xaml" );
+            rd.Source = new Uri( "pack://application:,,,/StockSharp.Xaml.Charting;component/ChartExViewRes.xaml" );
 
             if ( rd.Contains( "GripStyle" ) )
             {
@@ -165,7 +165,7 @@ namespace fx.Charting
 
                 //var indicatorPainter         = ( object )painter != null ? painter.CreateInstance<IChartIndicatorPainter>( ) : null;
 
-                indicatorUI.IndicatorPainter = ( fx.Charting.IChartIndicatorPainter ) indicatorPainter;
+                indicatorUI.IndicatorPainter = ( StockSharp.Xaml.Charting.IChartIndicatorPainter ) indicatorPainter;
 
                 
 

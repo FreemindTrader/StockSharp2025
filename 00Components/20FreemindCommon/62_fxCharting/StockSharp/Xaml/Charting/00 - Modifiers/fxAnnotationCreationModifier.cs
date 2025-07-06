@@ -4,7 +4,7 @@ using SciChart.Charting.Visuals.Annotations;
 using SciChart.Core.Extensions;
 using SciChart.Core.Framework;
 using SciChart.Core.Utility.Mouse;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class fxAnnotationCreationModifier : ChartModifierBase
     {

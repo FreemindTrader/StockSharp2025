@@ -3,7 +3,7 @@ using StockSharp.Localization;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
 
-namespace fx.Charting.IndicatorPainters
+namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     public class DefaultPainter : BaseChartIndicatorPainter
     {

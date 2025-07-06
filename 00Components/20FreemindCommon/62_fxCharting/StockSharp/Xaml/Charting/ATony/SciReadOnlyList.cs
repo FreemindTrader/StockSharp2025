@@ -1,11 +1,11 @@
 ﻿//using SciChart.Data.Model;
-//using fx.Charting.ATony;
+//using StockSharp.Xaml.Charting.ATony;
 //using System;
 //using System.Collections;
 //using System.Collections.Generic; using fx.Collections;
 //using System.Linq;
 
-//namespace fx.Charting.ATony
+//namespace StockSharp.Xaml.Charting.ATony
 //{
 //    internal class SciReadOnlyList<T> : ISciReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
 //    {

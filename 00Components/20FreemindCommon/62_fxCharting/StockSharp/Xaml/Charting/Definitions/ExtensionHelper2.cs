@@ -3,12 +3,12 @@ using SciChart.Charting.DrawingTools.TradingAnnotations;
 using SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation;
 using SciChart.Charting.Visuals.Annotations;
 using StockSharp.Localization;
-using fx.Charting;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
-using fx.Charting.CustomAnnotations;
+using StockSharp.Xaml.Charting.CustomAnnotations;
 
 internal static class ExtensionHelper2
 {

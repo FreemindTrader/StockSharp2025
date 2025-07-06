@@ -1,5 +1,5 @@
 ﻿using Ecng.Common;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System.Collections.Specialized;
 
 internal abstract class AxisesComboBoxEditSettings : AxisesComboBoxEditSettingsBase

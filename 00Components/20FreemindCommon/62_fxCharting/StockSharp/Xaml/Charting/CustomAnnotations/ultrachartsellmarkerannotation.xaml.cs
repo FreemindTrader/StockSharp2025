@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     /// <summary>
     /// Interaction logic for UltrachartBuymakerAnnotation.xaml

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class SRlevelLineAnnotationBase : LineAnnotation, IFibLevel
     {

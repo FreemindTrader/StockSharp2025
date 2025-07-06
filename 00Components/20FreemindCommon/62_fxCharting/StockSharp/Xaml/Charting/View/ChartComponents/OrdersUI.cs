@@ -4,7 +4,7 @@ using System.Collections.Generic; using fx.Collections;
 using System.Linq;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     
     public class OrdersUI : TransactionUI< OrdersUI >

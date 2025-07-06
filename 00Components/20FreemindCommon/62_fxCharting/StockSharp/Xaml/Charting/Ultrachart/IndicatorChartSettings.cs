@@ -1,6 +1,6 @@
 ﻿using Ecng.ComponentModel;
 using StockSharp.Algo.Indicators;
-using fx.Charting.Ultrachart;
+using StockSharp.Xaml.Charting.Ultrachart;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,12 +64,12 @@ internal sealed class IndicatorChartSettings : ChartSettingsObjectBase<IIndicato
 //using SciChart.Charting.Common;
 //using MoreLinq;
 //using StockSharp.Algo.Indicators;
-//using fx.Charting.Ultrachart;
+//using StockSharp.Xaml.Charting.Ultrachart;
 //using System;
 //using System.Collections.Generic; using fx.Collections;
 //using System.ComponentModel;
 //using System.Linq;
-//using fx.Charting.Definitions;
+//using StockSharp.Xaml.Charting.Definitions;
 
 //internal sealed class IndicatorChartSettings : ChartSettingsObjectBase<IIndicator>
 //{

@@ -8,7 +8,7 @@ using SciChart.Charting.Model.ChartSeries;
 using SciChart.Charting.Model.DataSeries;
 using SciChart.Charting.Visuals.RenderableSeries;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;

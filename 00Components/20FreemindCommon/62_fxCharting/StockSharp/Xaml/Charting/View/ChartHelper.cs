@@ -16,7 +16,7 @@ using StockSharp.Configuration;
 
 using StockSharp.Algo.Indicators;
 using System.Linq;
-using fx.Charting.IndicatorPainters;
+using StockSharp.Xaml.Charting.IndicatorPainters;
 using System.ComponentModel;
 using Ecng.Collections;
 using StockSharp.Xaml;
@@ -25,7 +25,7 @@ using Ecng.Logging;
 using StockSharp.Charting;
 using StockSharp.BusinessEntities;
 
-namespace fx.Charting;
+namespace StockSharp.Xaml.Charting;
 
 public static class ChartHelper
 {

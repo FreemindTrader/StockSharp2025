@@ -8,7 +8,7 @@ using SciChart.Charting.Visuals.Annotations;
 using SciChart.Charting.Visuals.Axes;
 using SciChart.Data.Model;
 using StockSharp.Xaml;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;

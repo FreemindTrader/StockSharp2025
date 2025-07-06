@@ -6,7 +6,7 @@ using System.ComponentModel;
 using StockSharp.Charting;
 using System.Windows.Media;
 
-namespace fx.Charting;
+namespace StockSharp.Xaml.Charting;
 
 /// <summary>
 /// The interface that describes the chart element (indicator, candle, etc.).

@@ -1,15 +1,15 @@
 ﻿<UserControl
-    x:Class="fx.Charting.ChartExView"
+    x:Class="StockSharp.Xaml.Charting.ChartExView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
-    xmlns:VM="clr-namespace:fx.Charting"
-    xmlns:View="clr-namespace:fx.Charting"
+    xmlns:VM="clr-namespace:StockSharp.Xaml.Charting"
+    xmlns:View="clr-namespace:StockSharp.Xaml.Charting"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
     xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
     
     
-    xmlns:local="clr-namespace:fx.Charting"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
     xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
     xmlns:s3D="http://schemas.abtsoftware.co.uk/scichart3D"
     xmlns:sysXaml="clr-namespace:System.Windows.Markup;assembly=System.Xaml" xmlns:cnvt="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"

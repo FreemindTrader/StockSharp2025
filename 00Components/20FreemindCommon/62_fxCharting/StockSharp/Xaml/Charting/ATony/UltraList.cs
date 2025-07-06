@@ -8,7 +8,7 @@
 //using System.Threading;
 //using System.Threading.Tasks;
 
-//namespace fx.Charting.ATony
+//namespace StockSharp.Xaml.Charting.ATony
 //{
 //    public interface IUltraList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
 //    {

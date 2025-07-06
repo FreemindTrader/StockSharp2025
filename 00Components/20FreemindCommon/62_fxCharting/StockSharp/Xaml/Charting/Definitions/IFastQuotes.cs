@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public interface IFastQuotes
     {

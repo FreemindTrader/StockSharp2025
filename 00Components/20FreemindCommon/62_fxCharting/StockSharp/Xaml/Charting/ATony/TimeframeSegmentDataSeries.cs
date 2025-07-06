@@ -8,15 +8,15 @@
 //using SciChart.Data.Numerics;
 //using SciChart.Data.Numerics.GenericMath;
 //using SciChart.Data.Numerics.PointResamplers;
-//using fx.Charting.AUtils;
-//using fx.Charting.Definitions;
+//using StockSharp.Xaml.Charting.AUtils;
+//using StockSharp.Xaml.Charting.Definitions;
 //using System;
 //using System.Collections;
 //using System.Collections.Generic; using fx.Collections;
 //using System.Linq;
 //using System.Reflection;
 
-//namespace fx.Charting.ATony
+//namespace StockSharp.Xaml.Charting.ATony
 //{
 //    [Obfuscation( ApplyToMembers = true, Exclude = true )]
 //    public class TimeframeSegmentDataSeries : BindableObject, IDataSeries< DateTime, double >, IDataSeries, ISuspendable

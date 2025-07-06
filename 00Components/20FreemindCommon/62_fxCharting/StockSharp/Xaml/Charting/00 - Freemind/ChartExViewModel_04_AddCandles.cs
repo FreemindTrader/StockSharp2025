@@ -14,7 +14,7 @@ using StockSharp.Algo.Candles;
 using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic;
 using fx.Collections;
@@ -25,7 +25,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DevExpress.Mvvm.UI;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System.Windows;
 using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
@@ -33,12 +33,12 @@ using fx.Common;
 using StockSharp.Xaml;
 using StockSharp.Messages;
 using fx.Indicators;
-using fx.Charting.IndicatorPainters;
+using StockSharp.Xaml.Charting.IndicatorPainters;
 
 
 #pragma warning disable 067
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ChartExViewModel
     {

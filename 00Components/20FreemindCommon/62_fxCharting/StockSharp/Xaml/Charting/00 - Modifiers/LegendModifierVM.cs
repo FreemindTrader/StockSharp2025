@@ -1,9 +1,9 @@
 ﻿using SciChart.Charting.Common.Helpers;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public sealed class LegendModifierVM : ChartBaseViewModel
     {

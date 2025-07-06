@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     [TemplatePart( Name = "PART_InputTextBlockArea", Type = typeof( TextBlock ) )]    
     public partial class SRlevelTextAnnotation : TextAnnotation

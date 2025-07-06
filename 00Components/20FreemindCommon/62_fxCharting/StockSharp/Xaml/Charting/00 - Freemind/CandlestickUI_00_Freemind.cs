@@ -11,7 +11,7 @@ using System.Linq;
 using System.Windows.Media;
 using fx.Definitions;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class CandlestickUI : ChartElement<CandlestickUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {

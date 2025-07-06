@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class AnnotationUI : ChartElement< AnnotationUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {

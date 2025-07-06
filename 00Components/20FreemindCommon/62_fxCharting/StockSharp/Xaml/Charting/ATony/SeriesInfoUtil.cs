@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace fx.Charting.ATony
+namespace StockSharp.Xaml.Charting.ATony
 {
     public enum Modifier : byte
     {

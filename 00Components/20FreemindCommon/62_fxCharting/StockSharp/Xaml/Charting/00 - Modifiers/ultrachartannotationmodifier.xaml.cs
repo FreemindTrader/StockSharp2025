@@ -21,23 +21,23 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
 using SciChart.Core.Utility.Mouse;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using SciChart.Charting.Common.Helpers;
 using SciChart.Charting.DrawingTools.TradingModifiers;
 using SciChart.Charting.DrawingTools.TradingAnnotations;
 using SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using DevExpress.Mvvm;
 using fx.Definitions;
-using fx.Charting.CustomAnnotations;
+using StockSharp.Xaml.Charting.CustomAnnotations;
 using StockSharp.Algo.Candles;
 using DevExpress.Xpf.Bars;
 using StockSharp.Xaml;
 using System.Windows.Media;
-using fx.Charting.Xaml;
+using StockSharp.Xaml.Charting.Xaml;
 using DevExpress.Mvvm.Native;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ultrachartannotationmodifier : fxAnnotationCreationModifier
     {

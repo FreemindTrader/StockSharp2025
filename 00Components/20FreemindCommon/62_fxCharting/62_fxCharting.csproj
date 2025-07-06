@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <Import Project="..\..\..\fx.packages.props" />
     <PropertyGroup>
-        <RootNamespace>fx.Charting</RootNamespace>
-        <AssemblyName>fx.Charting</AssemblyName>
-        <PackageId>fx.Charting</PackageId>
+        <RootNamespace>StockSharp.Xaml.Charting</RootNamespace>
+        <AssemblyName>StockSharp.Xaml.Charting</AssemblyName>
+        <PackageId>StockSharp.Xaml.Charting</PackageId>
     </PropertyGroup>
 
     <PropertyGroup>

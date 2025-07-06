@@ -1,4 +1,4 @@
-﻿using fx.Charting.ATony;
+﻿using StockSharp.Xaml.Charting.ATony;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 //using TracerAttributes;
 
-namespace fx.Charting.Definitions
+namespace StockSharp.Xaml.Charting.Definitions
 {
     //[NoTrace]
     internal static class DoubleExtensions

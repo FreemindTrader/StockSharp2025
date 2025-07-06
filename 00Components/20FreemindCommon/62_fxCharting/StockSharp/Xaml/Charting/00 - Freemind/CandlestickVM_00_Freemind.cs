@@ -15,9 +15,9 @@ using SciChart.Charting.Visuals.RenderableSeries;
 using SciChart.Data.Model;
 using StockSharp.Localization;
 using StockSharp.Messages;
-using fx.Charting;
-using fx.Charting.ATony;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting;
+using StockSharp.Xaml.Charting.ATony;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
@@ -28,7 +28,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using fx.Bars;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal partial class CandlestickVM : UIHigherVM<CandlestickUI>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {

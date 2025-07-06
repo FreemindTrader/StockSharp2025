@@ -14,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
-namespace fx.Charting.CustomAnnotations
+namespace StockSharp.Xaml.Charting.CustomAnnotations
 {
     public class RulerAnnotation : CustomAnnotation
     {

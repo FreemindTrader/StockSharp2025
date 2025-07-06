@@ -1,7 +1,7 @@
 ﻿using Ecng.Collections;
 using SciChart.Charting;
 using MoreLinq;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;

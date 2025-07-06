@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     /// <summary>
     /// Interaction logic for HeatmapChart.xaml

@@ -7,7 +7,7 @@ using MathNet.Numerics;
 using MoreLinq;
 using StockSharp.Algo;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic; using fx.Collections;
@@ -22,7 +22,7 @@ using System.Windows.Markup;
 using System.Windows.Media;
 
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class OptionVolatilitySmileChartDx : UserControl, IComponentConnector, IPersistable, IThemeableChart
     {

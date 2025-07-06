@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     
     public class ActiveOrdersUI : ChartElement< ActiveOrdersUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement

@@ -16,7 +16,7 @@ using System.Windows;
 using System.Windows.Media;
 using fx.Bars;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ChartDrawData
     {

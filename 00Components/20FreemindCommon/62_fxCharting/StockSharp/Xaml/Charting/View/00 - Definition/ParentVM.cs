@@ -1,6 +1,6 @@
 ﻿using Ecng.Collections;
 using StockSharp.Xaml;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Collections.ObjectModel;

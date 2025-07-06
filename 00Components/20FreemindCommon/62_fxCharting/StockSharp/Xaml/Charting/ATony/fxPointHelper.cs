@@ -2,7 +2,7 @@
 using System.Collections.Generic; using fx.Collections;
 using System.Windows;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal static class fxPointHelper
     {

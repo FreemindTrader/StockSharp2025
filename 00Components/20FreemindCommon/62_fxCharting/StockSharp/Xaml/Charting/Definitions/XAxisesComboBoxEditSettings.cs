@@ -1,4 +1,4 @@
-﻿using fx.Charting;
+﻿using StockSharp.Xaml.Charting;
 using System.Collections.Specialized;
 
 internal sealed class XAxisesComboBoxEditSettings : AxisesComboBoxEditSettings

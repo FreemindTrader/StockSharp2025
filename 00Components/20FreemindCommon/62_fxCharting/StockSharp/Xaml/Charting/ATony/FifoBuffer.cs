@@ -3,7 +3,7 @@
 //using System.Collections.Generic; using fx.Collections;
 //using System.Linq;
 
-//namespace fx.Charting.ATony
+//namespace StockSharp.Xaml.Charting.ATony
 //{
 //    internal class FifoBuffer< T > : AbstractList< T >
 //    {

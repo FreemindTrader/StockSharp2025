@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public abstract class TransactionUI< T > : ChartElement< T >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
         where T : TransactionUI< T >, new()

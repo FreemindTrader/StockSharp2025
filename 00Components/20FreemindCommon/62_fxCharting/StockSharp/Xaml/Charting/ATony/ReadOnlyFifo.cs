@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
 
-namespace fx.Charting.ATony
+namespace StockSharp.Xaml.Charting.ATony
 {
     internal sealed class ReadOnlyFifo< T > : IList< T >, ICollection< T >, IEnumerable< T >, IEnumerable
     {

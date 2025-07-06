@@ -1,7 +1,7 @@
 ﻿//
 //using StockSharp.Messages;
 
-//namespace fx.Charting.Editors
+//namespace StockSharp.Xaml.Charting.Editors
 //{
 //    public sealed class BuildCandlesFieldEditor : BaseCustomEnumEditor< Level1Fields >
 //    {

@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace fx.Charting.Ultrachart
+namespace StockSharp.Xaml.Charting.Ultrachart
 {
     public class AreaAxesToTooltipConverter : IMultiValueConverter
     {

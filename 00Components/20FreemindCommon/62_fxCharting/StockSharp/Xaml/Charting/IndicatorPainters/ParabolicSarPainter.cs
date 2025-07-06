@@ -1,6 +1,6 @@
 ﻿using StockSharp.Algo.Indicators;
 
-namespace fx.Charting.IndicatorPainters
+namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     [Indicator( typeof( ParabolicSar ) )]
     public class ParabolicSarPainter : DefaultPainter

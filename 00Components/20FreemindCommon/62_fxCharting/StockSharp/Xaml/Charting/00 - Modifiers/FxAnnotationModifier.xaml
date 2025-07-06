@@ -1,9 +1,9 @@
 ﻿<charting:fxAnnotationCreationModifier
-    x:Class="fx.Charting.FxAnnotationModifier"
+    x:Class="StockSharp.Xaml.Charting.FxAnnotationModifier"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:ann="clr-namespace:fx.Charting.CustomAnnotations"
-    xmlns:charting="clr-namespace:fx.Charting"
+    xmlns:ann="clr-namespace:StockSharp.Xaml.Charting.CustomAnnotations"
+    xmlns:charting="clr-namespace:StockSharp.Xaml.Charting"
     xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
     AnnotationCreated="fxAnnotationCreationModifier_AnnotationCreated"
     charting:fxAnnotationCreationModifier.XAxisId="X"

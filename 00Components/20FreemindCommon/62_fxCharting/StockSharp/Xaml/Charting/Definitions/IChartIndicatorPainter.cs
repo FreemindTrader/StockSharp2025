@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic; using fx.Collections;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public interface IChartIndicatorPainter : ICloneable, IPersistable
     {

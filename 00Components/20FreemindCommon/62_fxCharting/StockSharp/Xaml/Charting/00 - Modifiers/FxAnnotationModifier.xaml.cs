@@ -4,11 +4,11 @@ using SciChart.Charting.Visuals.Annotations;
 using SciChart.Core.Extensions;
 using SciChart.Core.Framework;
 using SciChart.Core.Utility.Mouse;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
 using System.Windows;
 using MoreLinq;
-using fx.Charting.CustomAnnotations;
+using StockSharp.Xaml.Charting.CustomAnnotations;
 using System.Windows.Media;
 using Ecng.Xaml;
 using SciChart.Charting.Numerics.CoordinateCalculators;
@@ -27,7 +27,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using SciChart.Charting.Common.Helpers;
 using SciChart.Charting.DrawingTools.TradingModifiers;
 using SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation;
@@ -37,10 +37,10 @@ using StockSharp.Algo.Candles;
 using DevExpress.Xpf.Bars;
 using StockSharp.Xaml;
 using SciChart.Charting.Visuals.Axes;
-using fx.Charting.Xaml;
+using StockSharp.Xaml.Charting.Xaml;
 using DevExpress.Mvvm.Native;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     /// <summary>
     /// Interaction logic for FxAnnotationModifier.xaml

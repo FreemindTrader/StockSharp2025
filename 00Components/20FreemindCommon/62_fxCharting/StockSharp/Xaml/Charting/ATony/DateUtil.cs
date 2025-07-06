@@ -1,4 +1,4 @@
-﻿using fx.Charting.ATony;
+﻿using StockSharp.Xaml.Charting.ATony;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Globalization;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fx.Charting.AUtils
+namespace StockSharp.Xaml.Charting.AUtils
 {
     internal static class TimeSpanExtensions
     {

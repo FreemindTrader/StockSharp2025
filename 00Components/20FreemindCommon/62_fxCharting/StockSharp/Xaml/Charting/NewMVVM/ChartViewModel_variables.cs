@@ -6,7 +6,7 @@ using SciChart.Charting.Common.Helpers;
 using SciChart.Charting.Visuals.TradeChart;
 using StockSharp.Algo.Candles;
 using StockSharp.Xaml;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;

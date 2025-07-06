@@ -21,7 +21,7 @@ using fx.Bars;
 
 #pragma warning disable 414
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     /// <summary>
     /// Interaction logic for PivotPointLevelsAnnotation.xaml

@@ -1,8 +1,8 @@
 ﻿using DevExpress.Xpf.PropertyGrid;
 using SciChart.Charting.Common;
 using SciChart.Charting.Visuals.Annotations;
-using fx.Charting;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting;
+using StockSharp.Xaml.Charting.Definitions;
 using StockSharp.Xaml.PropertyGrid;
 using System;
 using System.Collections;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal sealed class AnnotationTypeToPropertyConverter : IValueConverter
     {

@@ -8,7 +8,7 @@ using System;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class ChartActiveOrderInfo : ViewModelBase, IPersistable
     {

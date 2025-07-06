@@ -1,12 +1,12 @@
 ﻿<UserControl
-    x:Class="fx.Charting.ChartPanelEx"
+    x:Class="StockSharp.Xaml.Charting.ChartPanelEx"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
     xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid"
     xmlns:loc="clr-namespace:StockSharp.Localization;assembly=StockSharp.Localization"
-    xmlns:local="clr-namespace:fx.Charting"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
     
     xmlns:sxpg="clr-namespace:StockSharp.Xaml.PropertyGrid;assembly=StockSharp.Xaml"
     

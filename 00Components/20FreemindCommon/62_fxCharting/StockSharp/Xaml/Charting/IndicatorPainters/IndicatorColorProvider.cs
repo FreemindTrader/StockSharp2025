@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace fx.Charting.IndicatorPainters;
+namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
 /// <inheritdoc />
 public class IndicatorColorProvider : IIndicatorColorProvider

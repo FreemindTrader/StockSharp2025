@@ -15,7 +15,7 @@ using System.Windows;
 using System.Windows.Controls;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class fxFibonacciExtensionAnnotationBase : MyTradingAnnotationBase, ITradingAnnotation, IfxFibonacciAnnotation
     {                

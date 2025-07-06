@@ -13,7 +13,7 @@ using DevExpress.Xpf.Bars;
 using fx.Common;
 using Ecng.ComponentModel;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class TradingEventSmallViewModel : DevExpress.Mvvm.ViewModelBase
     {

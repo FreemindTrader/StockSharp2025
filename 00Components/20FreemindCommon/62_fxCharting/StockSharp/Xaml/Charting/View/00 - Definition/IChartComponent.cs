@@ -1,13 +1,13 @@
 ﻿using Ecng.Common;
 using Ecng.Serialization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using StockSharp.Charting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Media;
 
-namespace fx.Charting;
+namespace StockSharp.Xaml.Charting;
 
 public interface IChartComponent : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable
 {

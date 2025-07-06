@@ -3,7 +3,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class UltrachartCursormodifier : CursorModifier
     {

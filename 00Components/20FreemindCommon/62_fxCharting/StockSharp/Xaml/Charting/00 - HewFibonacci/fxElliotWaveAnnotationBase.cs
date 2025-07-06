@@ -13,7 +13,7 @@ using System.Windows.Media;
 using fx.Algorithm;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class fxElliotWaveAnnotationBase : MyTradingAnnotationBase
     {

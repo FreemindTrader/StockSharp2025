@@ -1,6 +1,6 @@
 ﻿using SciChart.Charting;
 using SciChart.Charting.Model.ChartData;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.ComponentModel;
 using System.Linq;

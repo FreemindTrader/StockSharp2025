@@ -1,7 +1,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:li1="clr-namespace:fx.Charting.CustomAnnotations"
+    xmlns:li1="clr-namespace:StockSharp.Xaml.Charting.CustomAnnotations"
     xmlns:sysXaml="clr-namespace:System.Windows.Markup;assembly=System.Xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SciChart.Charting;component/Themes/Default.xaml" />

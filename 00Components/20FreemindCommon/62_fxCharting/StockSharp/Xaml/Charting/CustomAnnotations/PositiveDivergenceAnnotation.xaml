@@ -1,11 +1,11 @@
 ﻿<!--  CustomAnnotation, allows placing any UIElement inside an annotation with placement via a single X1 Y1 coordinate  -->
 <!--  The BuyMarkerAnnotation displays a green arrow pointing up, with tooltip to bind to Trade data object  -->
 <ss:UltraChartCustomAnnotation
-    x:Class="fx.Charting.CustomAnnotations.PositiveDivergenceAnnotation"
+    x:Class="StockSharp.Xaml.Charting.CustomAnnotations.PositiveDivergenceAnnotation"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
-    xmlns:ss="clr-namespace:fx.Charting"
+    xmlns:ss="clr-namespace:StockSharp.Xaml.Charting"
     Margin="0,0,0,0"
     HorizontalAnchorPoint="Center"
     VerticalAnchorPoint="Bottom"

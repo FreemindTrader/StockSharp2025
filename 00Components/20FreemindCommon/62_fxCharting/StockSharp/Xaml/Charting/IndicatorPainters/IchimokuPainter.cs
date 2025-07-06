@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting.IndicatorPainters
+namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     [Indicator( typeof( Ichimoku ) )]
     public class IchimokuPainter : BaseChartIndicatorPainter

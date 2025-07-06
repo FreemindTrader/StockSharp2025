@@ -4,7 +4,7 @@ using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
 using System.Linq;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     [TypeConverter( typeof( ExpandableObjectConverter ) )]
     

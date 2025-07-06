@@ -8,7 +8,7 @@ using SciChart.Charting.Common;
 using SciChart.Core.Extensions;
 using System.Collections.Generic; using fx.Collections;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class FxSpritePointMarker : BasePointMarker, IPointMarker
     {

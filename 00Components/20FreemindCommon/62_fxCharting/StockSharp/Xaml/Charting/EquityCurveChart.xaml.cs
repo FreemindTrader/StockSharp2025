@@ -16,7 +16,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class EquityCurveChartEx : UserControl, IComponentConnector, IPersistable, IThemeableChart
     {

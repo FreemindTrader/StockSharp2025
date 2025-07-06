@@ -1,8 +1,8 @@
 ﻿<UserControl
-    x:Class="fx.Charting.HistogramChart"
+    x:Class="StockSharp.Xaml.Charting.HistogramChart"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:fx.Charting"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting"
     xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
     xmlns:s3D="http://schemas.abtsoftware.co.uk/scichart3D">
     <Grid>

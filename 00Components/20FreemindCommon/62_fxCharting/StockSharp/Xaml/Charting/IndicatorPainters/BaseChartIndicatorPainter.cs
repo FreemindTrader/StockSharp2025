@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
-namespace fx.Charting.IndicatorPainters;
+namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
 public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable, IPersistable, IChartIndicatorPainter
 {

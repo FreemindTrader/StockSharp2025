@@ -8,7 +8,7 @@ using SciChart.Charting.Visuals;
 using SciChart.Charting.Visuals.Axes;
 using Ecng.Xaml.Converters;
 using StockSharp.Localization;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using StockSharp.Xaml.PropertyGrid;
 using System;
 using System.Collections.Generic; using fx.Collections;

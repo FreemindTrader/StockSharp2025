@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ChartElementEditor : UserControl, IComponentConnector
     {

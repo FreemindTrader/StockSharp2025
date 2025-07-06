@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class QuoteRenderableSeries : CustomRenderableSeries
     {

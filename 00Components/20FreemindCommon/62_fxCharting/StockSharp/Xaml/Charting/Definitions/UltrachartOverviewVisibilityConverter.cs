@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public sealed class UltrachartOverviewVisibilityConverter : IMultiValueConverter
     {

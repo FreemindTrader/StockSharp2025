@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fx.Charting.ATony
+namespace StockSharp.Xaml.Charting.ATony
 {
     public class TimeframeSegmentSeriesInfo : SeriesInfo
     {

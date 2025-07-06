@@ -2,7 +2,7 @@
 using SciChart.Charting.Visuals.Annotations;
 using System;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class UltraChartCustomAnnotation : CustomAnnotation
     {

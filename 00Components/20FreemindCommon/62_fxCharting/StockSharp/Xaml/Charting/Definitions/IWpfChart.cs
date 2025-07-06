@@ -5,7 +5,7 @@ using StockSharp.Charting;
 using System.Collections.Generic;
 
 #nullable disable
-namespace fx.Charting;
+namespace StockSharp.Xaml.Charting;
 
 public interface IWpfChart : IChart, IPersistable, IChartBuilder, IThemeableChart
 {

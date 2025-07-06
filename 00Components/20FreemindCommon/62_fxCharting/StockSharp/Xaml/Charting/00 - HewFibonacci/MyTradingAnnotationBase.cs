@@ -26,7 +26,7 @@ using System.Windows.Media;
 using System.Xml;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class MyTradingAnnotationBase : CompositeAnnotation, ITradingAnnotationEx, IfxImportantLevel
     {

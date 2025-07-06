@@ -17,7 +17,7 @@ using fx.Bars;
 
 #pragma warning disable 219
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {    
     public class fxElliotWaveAnnotation : fxElliotWaveAnnotationBase
     {        

@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class HistogramChart : UserControl, IComponentConnector, IPersistable, IThemeableChart
     {

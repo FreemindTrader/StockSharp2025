@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic; using fx.Collections;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public interface IfxImportantLevel
     {

@@ -1,6 +1,6 @@
 ﻿using StockSharp.Localization;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     
     public class BubbleLineUI : LineUI

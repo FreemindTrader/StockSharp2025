@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public enum TASignalSymbol : byte
     {

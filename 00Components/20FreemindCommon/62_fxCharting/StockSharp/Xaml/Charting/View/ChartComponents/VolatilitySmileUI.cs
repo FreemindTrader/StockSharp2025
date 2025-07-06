@@ -4,7 +4,7 @@ using StockSharp.Localization;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public sealed class VolatilitySmileUI : ChartElement< VolatilitySmileUI >
     {

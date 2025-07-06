@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     [TypeConverter( typeof( ExpandableObjectConverter ) )]
     public abstract class ChartElement<T> : ChartPart<T>, ICloneable<IChartElement>, INotifyPropertyChanged, IChartComponent, ICloneable, INotifyPropertyChanging, IChartElement where T : ChartElement<T>

@@ -1,4 +1,4 @@
-﻿namespace fx.Charting
+﻿namespace StockSharp.Xaml.Charting
 {
     public static class ChartThemes
     {

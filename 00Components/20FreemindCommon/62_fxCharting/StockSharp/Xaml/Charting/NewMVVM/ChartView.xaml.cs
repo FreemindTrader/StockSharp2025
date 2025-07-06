@@ -21,14 +21,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using StockSharp.Xaml;
 using DevExpress.Mvvm.Native;
 using StockSharp.Charting;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class Chart : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChart, IThemeableChart
     {
@@ -1290,7 +1290,7 @@ namespace fx.Charting
                 
                 var indicatorPainter                  = indicatorPicker.SelectedIndicatorType.CreatePainter();                               
 
-                indicatorUI.IndicatorPainter = (fx.Charting.IChartIndicatorPainter) indicatorPainter;
+                indicatorUI.IndicatorPainter = (StockSharp.Xaml.Charting.IChartIndicatorPainter) indicatorPainter;
 
                 var tonyCandleSeries         = GetSeries< CandleSeries >( CandlestickUI );
 

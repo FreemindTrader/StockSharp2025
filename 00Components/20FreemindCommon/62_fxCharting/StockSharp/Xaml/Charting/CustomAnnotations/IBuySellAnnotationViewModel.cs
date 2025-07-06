@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fx.Charting.CustomAnnotations
+namespace StockSharp.Xaml.Charting.CustomAnnotations
 {   
     public interface IBuySellAnnotationViewModel : IAnnotationViewModel
     {

@@ -12,7 +12,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class fxZoomPanModifier : ZoomPanModifierBase
     {

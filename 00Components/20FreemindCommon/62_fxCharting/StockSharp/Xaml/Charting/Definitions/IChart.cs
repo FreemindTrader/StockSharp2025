@@ -5,7 +5,7 @@ using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using System.Collections.Generic; using fx.Collections;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public interface IChart : IPersistable, IThemeableChart
     {

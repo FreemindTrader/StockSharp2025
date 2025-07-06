@@ -13,7 +13,7 @@ using System.Windows;
 using System.Windows.Controls;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class fxFibonacciExtensionAnnotation : fxFibonacciExtensionAnnotationBase
     {
@@ -23,7 +23,7 @@ namespace fx.Charting.HewFibonacci
             Unselected += new EventHandler( OnUnselected );
 
             var rd = new ResourceDictionary( );
-            rd.Source = new Uri( "pack://application:,,,/fx.Charting;component/ChartExViewRes.xaml" );
+            rd.Source = new Uri( "pack://application:,,,/StockSharp.Xaml.Charting;component/ChartExViewRes.xaml" );
 
             if ( rd.Contains( "GripStyle" ) )
             {
@@ -80,7 +80,7 @@ namespace fx.Charting.HewFibonacci
             Unselected += new EventHandler( OnUnselected );
 
             var rd = new ResourceDictionary( );
-            rd.Source = new Uri( "pack://application:,,,/fx.Charting;component/ChartExViewRes.xaml" );
+            rd.Source = new Uri( "pack://application:,,,/StockSharp.Xaml.Charting;component/ChartExViewRes.xaml" );
 
             if ( rd.Contains( "GripStyle" ) )
             {
@@ -154,7 +154,7 @@ namespace fx.Charting.HewFibonacci
             Unselected += new EventHandler( OnUnselected );
 
             var rd = new ResourceDictionary( );
-            rd.Source = new Uri( "pack://application:,,,/fx.Charting;component/ChartExViewRes.xaml" );
+            rd.Source = new Uri( "pack://application:,,,/StockSharp.Xaml.Charting;component/ChartExViewRes.xaml" );
 
             if ( rd.Contains( "GripStyle" ) )
             {

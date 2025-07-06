@@ -1,10 +1,10 @@
 ﻿using SciChart.Charting.Common;
-using fx.Charting.Definitions;
+using StockSharp.Xaml.Charting.Definitions;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ultrachartlegend : ItemsControl
     {

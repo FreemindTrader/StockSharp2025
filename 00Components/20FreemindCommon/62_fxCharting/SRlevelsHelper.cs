@@ -9,7 +9,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace fx.Charting
+//namespace StockSharp.Xaml.Charting
 //{
 //    public static class SRlevelsHelper
 //    {

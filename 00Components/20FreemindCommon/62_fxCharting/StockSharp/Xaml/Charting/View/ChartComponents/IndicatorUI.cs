@@ -2,7 +2,7 @@
 using Ecng.Serialization;
 using StockSharp.Algo.Indicators;
 using StockSharp.Localization;
-using fx.Charting.IndicatorPainters;
+using StockSharp.Xaml.Charting.IndicatorPainters;
 using System;
 using System.Collections.Generic; 
 using fx.Collections;
@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using StockSharp.Charting;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     
     public sealed class IndicatorUI : ChartElement< IndicatorUI >
@@ -204,7 +204,7 @@ namespace fx.Charting
             }
             else
             {
-                myPainter = (fx.Charting.IChartIndicatorPainter ) indicatorType.CreatePainter();
+                myPainter = (StockSharp.Xaml.Charting.IChartIndicatorPainter ) indicatorType.CreatePainter();
                 
             }
 

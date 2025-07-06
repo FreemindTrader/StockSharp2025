@@ -1,6 +1,6 @@
 ﻿using Ecng.Serialization;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public interface IThemeableChart : IPersistable
     {

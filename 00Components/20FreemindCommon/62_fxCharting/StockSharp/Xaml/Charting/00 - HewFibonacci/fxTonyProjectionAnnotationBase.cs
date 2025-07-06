@@ -16,7 +16,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class fxTonyProjectionAnnotationBase : MyTradingAnnotationBase, ITradingAnnotation, IfxFibonacciAnnotation
     {

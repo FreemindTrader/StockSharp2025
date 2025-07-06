@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
 
-namespace fx.Charting.ATony
+namespace StockSharp.Xaml.Charting.ATony
 {
     internal abstract class AbstractList< T > : IList< T >, ICollection< T >, IEnumerable< T >, ISciList< T >, IEnumerable, IList, ICollection
     {

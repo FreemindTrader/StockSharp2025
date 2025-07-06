@@ -26,7 +26,7 @@ using System.Windows.Threading;
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public partial class ChartPanelEx : UserControl, IPersistable, IChart, IThemeableChart
     {

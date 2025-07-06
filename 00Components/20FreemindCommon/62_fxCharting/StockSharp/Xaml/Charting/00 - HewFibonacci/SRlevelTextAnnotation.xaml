@@ -1,8 +1,8 @@
 ﻿<s:TextAnnotation
-    x:Class="fx.Charting.HewFibonacci.SRlevelTextAnnotation"
+    x:Class="StockSharp.Xaml.Charting.HewFibonacci.SRlevelTextAnnotation"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:hewfibonacci="clr-namespace:fx.Charting.HewFibonacci"
+    xmlns:hewfibonacci="clr-namespace:StockSharp.Xaml.Charting.HewFibonacci"
     xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
     Padding="-3,-4,-3,-3"
     HorizontalAlignment="Center"

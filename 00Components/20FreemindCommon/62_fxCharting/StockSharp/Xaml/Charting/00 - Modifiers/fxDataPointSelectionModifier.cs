@@ -10,7 +10,7 @@ using SciChart.Core.Extensions;
 using SciChart.Core.Utility.Mouse;
 using SciChart.Data.Model;
 using fx.Definitions;
-using fx.Charting.HewFibonacci;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Collections.ObjectModel;
@@ -22,7 +22,7 @@ using System.Windows.Input;
 using fx.Bars;
 using System.Windows.Threading;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class fxDataPointSelectionModifier : DataPointSelectionModifier
     {

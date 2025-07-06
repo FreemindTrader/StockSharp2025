@@ -2,7 +2,7 @@
 //using System.Linq;
 //using System.Reflection;
 
-//namespace fx.Charting.ATony
+//namespace StockSharp.Xaml.Charting.ATony
 //{
 //    public static class ListExtensions
 //    {

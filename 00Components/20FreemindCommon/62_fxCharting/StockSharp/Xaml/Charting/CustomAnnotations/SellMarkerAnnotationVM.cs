@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace fx.Charting.CustomAnnotations
+namespace StockSharp.Xaml.Charting.CustomAnnotations
 {
     // https://github.com/ElinamLLC/SharpVectors
     // The SharpVectors is a .NET 4.0 or up library and applications. The library can be used in WPF and Windows Forms applications.

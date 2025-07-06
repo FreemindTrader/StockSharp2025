@@ -9,7 +9,7 @@ using MoreLinq;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Messages;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Collections.ObjectModel;
@@ -20,14 +20,14 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-using fx.Charting.ATony;
+using StockSharp.Xaml.Charting.ATony;
 using StockSharp.Algo;
 using Ecng.ComponentModel;
 
 
 #pragma warning disable CA1416
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal sealed class ChartActiveOrdersVM : UIHigherVM<ActiveOrdersUI>
     {

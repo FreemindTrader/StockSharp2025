@@ -8,7 +8,7 @@ using Ecng.Xaml.Converters;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Messages;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections;
 using System.Collections.Generic; using fx.Collections;

@@ -8,7 +8,7 @@ using StockSharp.Localization;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public class ChartPanelOrderSettings : NotifiableObject, IPersistable
     {

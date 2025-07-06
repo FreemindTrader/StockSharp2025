@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     public class SRlevelLineAnnotationViewModel
     {

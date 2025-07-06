@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 
-namespace fx.Charting.Xaml
+namespace StockSharp.Xaml.Charting.Xaml
 {
     public static class DoHelper
     {

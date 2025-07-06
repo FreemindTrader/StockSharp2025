@@ -14,7 +14,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Markup;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public sealed partial class SimpleChartDx : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChart, IThemeableChart
     {

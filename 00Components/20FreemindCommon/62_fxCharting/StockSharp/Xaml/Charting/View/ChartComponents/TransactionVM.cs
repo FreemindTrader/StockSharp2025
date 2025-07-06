@@ -6,7 +6,7 @@ using SciChart.Charting.Visuals.Annotations;
 using Ecng.Xaml.Converters;
 using StockSharp.Localization;
 using StockSharp.Messages;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections;
 using System.Collections.Concurrent;

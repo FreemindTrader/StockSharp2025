@@ -1,7 +1,7 @@
 ﻿using Ecng.Collections;
 using Ecng.Common;
 using StockSharp.Xaml;
-using fx.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.ComponentModel;
 using System.Windows.Media;

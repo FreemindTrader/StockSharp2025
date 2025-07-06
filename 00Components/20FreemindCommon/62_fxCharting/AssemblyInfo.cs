@@ -18,5 +18,5 @@ using System.Windows.Markup;
 [assembly: AssemblyCopyright( "Copyright @ StockSharp 2019" )]
 [assembly: AssemblyTrademark( "StockSharp" )]
 [assembly: AssemblyConfiguration( "Release" )]
-[assembly: XmlnsDefinition( "http://schemas.stocksharp.com/xaml", "fx.Charting" )]
+[assembly: XmlnsDefinition( "http://schemas.stocksharp.com/xaml", "StockSharp.Xaml.Charting" )]
 [assembly: AssemblyVersion( "4.4.16.0" )]

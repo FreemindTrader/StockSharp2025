@@ -12,7 +12,7 @@ using SciChart.Core.Utility.Mouse;
 using Ecng.Collections;
 using System.Collections.ObjectModel;
 using SciChart.Charting.Visuals;
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     internal static class ChartDataObjectExHelper
     {

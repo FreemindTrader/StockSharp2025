@@ -16,7 +16,7 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using fx.Bars;
 
-namespace fx.Charting.HewFibonacci
+namespace StockSharp.Xaml.Charting.HewFibonacci
 {
     /// <summary>
     /// Interaction logic for fxFibonacciTableAnnotation.xaml

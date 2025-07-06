@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
 
-namespace fx.Charting.IndicatorPainters
+namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     [Indicator( typeof( MovingAverageConvergenceDivergenceHistogram ) )]
     public class MovingAverageConvergenceDivergenceHistogramPainter : BaseChartIndicatorPainter

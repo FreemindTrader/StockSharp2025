@@ -1,7 +1,7 @@
 ﻿using StockSharp.Algo.Indicators;
 using System;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     [AttributeUsage( AttributeTargets.Class )]
     public class IndicatorAttribute : Attribute

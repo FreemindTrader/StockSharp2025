@@ -4,7 +4,7 @@
 //using StockSharp.Algo.Indicators;
 //using System;
 
-//namespace fx.Charting
+//namespace StockSharp.Xaml.Charting
 //{
 //    public class IndicatorType : Equatable< IndicatorType >, IPersistable
 //    {

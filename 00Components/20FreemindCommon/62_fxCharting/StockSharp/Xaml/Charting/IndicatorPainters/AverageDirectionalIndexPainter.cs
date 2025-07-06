@@ -3,7 +3,7 @@ using StockSharp.Algo.Indicators;
 using System.ComponentModel;
 using System.Windows.Media;
 
-namespace fx.Charting.IndicatorPainters
+namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     [Indicator( typeof( AverageDirectionalIndex ) )]
     public class AverageDirectionalIndexPainter : BaseChartIndicatorPainter

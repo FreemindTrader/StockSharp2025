@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Media;
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     public sealed class BandsUI : ChartElement< BandsUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {

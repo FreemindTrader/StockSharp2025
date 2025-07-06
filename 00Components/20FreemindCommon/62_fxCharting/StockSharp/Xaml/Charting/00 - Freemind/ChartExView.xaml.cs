@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace fx.Charting
+namespace StockSharp.Xaml.Charting
 {
     /// <summary>
     /// Interaction logic for ChartExView.xaml
