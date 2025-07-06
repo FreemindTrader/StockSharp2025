@@ -27,7 +27,7 @@ namespace StockSharp.Xaml.Charting
         {
         }
 
-        public IndicatorValuesList SetIndicatorSource( IndicatorUI indicatorUI, int capacity )
+        public IndicatorValuesList SetIndicatorSource( ChartIndicatorElement indicatorUI, int capacity )
         {
             var indicatorMap = GetIndicatorMap();
 
@@ -45,11 +45,11 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public bool SetCandleSource( CandlestickUI candleUI, fxHistoricBarsRepo bars, uint begin, uint end )
+        public bool SetCandleSource( ChartCandleElement candleUI, fxHistoricBarsRepo bars, uint begin, uint end )
         {
             if ( end - begin + 1 > 0 )
             {
-                _candleMap = new PooledDictionary<CandlestickUI, sCandleEx>();
+                _candleMap = new PooledDictionary<ChartCandleElement, sCandleEx>();
 
                 var candleEx = new sCandleEx( bars, begin, end );
 
@@ -62,11 +62,11 @@ namespace StockSharp.Xaml.Charting
         }
 
 
-        public bool SetCandleSource( CandlestickUI candleUI, fxHistoricBarsRepo bars, (uint begin, uint end) range )
+        public bool SetCandleSource( ChartCandleElement candleUI, fxHistoricBarsRepo bars, (uint begin, uint end) range )
         {
             if ( range != default )
             {
-                _candleMap = new PooledDictionary<CandlestickUI, sCandleEx>();
+                _candleMap = new PooledDictionary<ChartCandleElement, sCandleEx>();
 
                 var candleEx = new sCandleEx( bars, range.begin, range.end );
 
@@ -78,9 +78,9 @@ namespace StockSharp.Xaml.Charting
             return false;
         }
 
-        public bool SetCandleSource( CandlestickUI candleUI, fxHistoricBarsRepo bars, ref SBar singleBar )
+        public bool SetCandleSource( ChartCandleElement candleUI, fxHistoricBarsRepo bars, ref SBar singleBar )
         {
-            _candleMap = new PooledDictionary<CandlestickUI, sCandleEx>();
+            _candleMap = new PooledDictionary<ChartCandleElement, sCandleEx>();
 
             var candleEx = new sCandleEx( bars, singleBar.BarIndex, singleBar.BarIndex );
 
@@ -96,17 +96,17 @@ namespace StockSharp.Xaml.Charting
 
         //public struct sCandleColor : IDrawValue<sCandleColor>
         
-        private PooledDictionary<CandlestickUI, sCandleEx > _candleMap;
+        private PooledDictionary<ChartCandleElement, sCandleEx > _candleMap;
 
-        private PooledDictionary<CandlestickUI, PooledList<sCandleColor>> _candleColorMap;
+        private PooledDictionary<ChartCandleElement, PooledList<sCandleColor>> _candleColorMap;
 
 
 
         
 
-        public PooledDictionary<CandlestickUI, sCandleEx > GetCandleMap( )
+        public PooledDictionary<ChartCandleElement, sCandleEx > GetCandleMap( )
         {
-            return _candleMap ?? ( _candleMap = new PooledDictionary<CandlestickUI, sCandleEx>() );
+            return _candleMap ?? ( _candleMap = new PooledDictionary<ChartCandleElement, sCandleEx>() );
         }
 
         public bool HasCandleData
@@ -117,12 +117,12 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public PooledDictionary<CandlestickUI, PooledList<sCandleColor>> GetCandleColorMap( )
+        public PooledDictionary<ChartCandleElement, PooledList<sCandleColor>> GetCandleColorMap( )
         {
-            return _candleColorMap ?? ( _candleColorMap = new PooledDictionary<CandlestickUI, PooledList<sCandleColor>>( ) );
+            return _candleColorMap ?? ( _candleColorMap = new PooledDictionary<ChartCandleElement, PooledList<sCandleColor>>( ) );
         }
 
-        private PooledDictionary<IndicatorUI, IndicatorValuesList > _indicatorMap;
+        private PooledDictionary<ChartIndicatorElement, IndicatorValuesList > _indicatorMap;
 
         private PooledDictionary<OrdersUI, PooledList<sTrade>> _orderMap;
 
@@ -134,15 +134,15 @@ namespace StockSharp.Xaml.Charting
 
         private PooledDictionary<LineUI, PooledList<sxTuple<double>>> _lineValueMap;
 
-        private PooledDictionary<BandsUI, PooledList<sxTuple<DateTime>>> _bandTimeMap;
+        private PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> _bandTimeMap;
 
-        private PooledDictionary<BandsUI, PooledList<sxTuple<double>>> _bandValueMap;
+        private PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>> _bandValueMap;
 
         private PooledDictionary<ChartAnnotation, sAnnotation> _annotationMap;
 
-        public PooledDictionary<IndicatorUI, IndicatorValuesList> GetIndicatorMap( )
+        public PooledDictionary<ChartIndicatorElement, IndicatorValuesList> GetIndicatorMap( )
         {
-            return _indicatorMap ?? ( _indicatorMap = new PooledDictionary<IndicatorUI, IndicatorValuesList>( ) );
+            return _indicatorMap ?? ( _indicatorMap = new PooledDictionary<ChartIndicatorElement, IndicatorValuesList>( ) );
         }
 
         public PooledDictionary<OrdersUI, PooledList<sTrade>> GetOrderMap( )
@@ -170,14 +170,14 @@ namespace StockSharp.Xaml.Charting
             return _lineValueMap ?? ( _lineValueMap = new PooledDictionary<LineUI, PooledList<sxTuple<double>>>( ) );
         }
 
-        public PooledDictionary<BandsUI, PooledList<sxTuple<DateTime>>> GetBandTimeMap( )
+        public PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> GetBandTimeMap( )
         {
-            return _bandTimeMap ?? ( _bandTimeMap = new PooledDictionary<BandsUI, PooledList<sxTuple<DateTime>>>( ) );
+            return _bandTimeMap ?? ( _bandTimeMap = new PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>>( ) );
         }
 
-        public PooledDictionary<BandsUI, PooledList<sxTuple<double>>> GetBandValueMap( )
+        public PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>> GetBandValueMap( )
         {
-            return _bandValueMap ?? ( _bandValueMap = new PooledDictionary<BandsUI, PooledList<sxTuple<double>>>( ) );
+            return _bandValueMap ?? ( _bandValueMap = new PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>>( ) );
         }
 
         public PooledDictionary<ChartAnnotation, sAnnotation> GetAnnotationMap( )
@@ -199,7 +199,7 @@ namespace StockSharp.Xaml.Charting
         //        {
         //            IChartElement uiElement = keyValuePair.Key;
         //            object obj = keyValuePair.Value;
-        //            CandlestickUI candleUI = uiElement as CandlestickUI;
+        //            ChartCandleElement candleUI = uiElement as ChartCandleElement;
         //            if ( candleUI != null )
         //            {
         //                Candle candle = obj as Candle;
@@ -219,7 +219,7 @@ namespace StockSharp.Xaml.Charting
         //            }
         //            else
         //            {
-        //                IndicatorUI key3 = uiElement as IndicatorUI;
+        //                ChartIndicatorElement key3 = uiElement as ChartIndicatorElement;
         //                if ( key3 != null )
         //                {
         //                    IIndicatorValue val = (IIndicatorValue) obj;
@@ -370,23 +370,23 @@ namespace StockSharp.Xaml.Charting
             return new ChartDrawDataItem( this, xValue );
         }
 
-        public sCandleEx GetCandle( CandlestickUI ui )
+        public sCandleEx GetCandle( ChartCandleElement ui )
         {
             return _candleMap.TryGetValue( ui );
         }
 
-        public PooledList<sCandleColor> GetCandleColor( CandlestickUI _param1 )
+        public PooledList<sCandleColor> GetCandleColor( ChartCandleElement _param1 )
         {
-            PooledDictionary<CandlestickUI, PooledList<sCandleColor>> candleColor = _candleColorMap;
+            PooledDictionary<ChartCandleElement, PooledList<sCandleColor>> candleColor = _candleColorMap;
             if ( candleColor == null )
                 return null;
 
             return candleColor.TryGetValue( _param1 );
         }
 
-        public IndicatorValuesList GetIndicator( IndicatorUI _param1 )
+        public IndicatorValuesList GetIndicator( ChartIndicatorElement _param1 )
         {
-            PooledDictionary<IndicatorUI, IndicatorValuesList > indicator = _indicatorMap;
+            PooledDictionary<ChartIndicatorElement, IndicatorValuesList > indicator = _indicatorMap;
             if ( indicator == null )
                 return null;
             return indicator.TryGetValue( _param1 );
@@ -434,17 +434,17 @@ namespace StockSharp.Xaml.Charting
             return lineValue.TryGetValue( _param1 );
         }
 
-        public PooledList<sxTuple<DateTime>> GetBandTime( BandsUI _param1 )
+        public PooledList<sxTuple<DateTime>> GetBandTime( ChartBandElement _param1 )
         {
-            PooledDictionary<BandsUI, PooledList<sxTuple<DateTime>>> bandTime = _bandTimeMap;
+            PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> bandTime = _bandTimeMap;
             if ( bandTime == null )
                 return null;
             return bandTime.TryGetValue( _param1 );
         }
 
-        public PooledList<sxTuple<double>> GetBandValue( BandsUI _param1 )
+        public PooledList<sxTuple<double>> GetBandValue( ChartBandElement _param1 )
         {
-            PooledDictionary<BandsUI, PooledList<sxTuple<double>>> bandValue = _bandValueMap;
+            PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>> bandValue = _bandValueMap;
 
             if ( bandValue == null )
                 return null;
@@ -470,7 +470,7 @@ namespace StockSharp.Xaml.Charting
             return lineValue.Cast<IDrawValue>( ).ToEx( lineValue.Count );
         }
 
-        public IEnumerableEx<IDrawValue> GetBandDrawValues( BandsUI band )
+        public IEnumerableEx<IDrawValue> GetBandDrawValues( ChartBandElement band )
         {
             PooledList<sxTuple<DateTime>> bandTime = GetBandTime( band );
 

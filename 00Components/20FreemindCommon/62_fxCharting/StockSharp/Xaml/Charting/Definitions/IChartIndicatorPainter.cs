@@ -6,7 +6,7 @@ namespace StockSharp.Xaml.Charting
 {
     public interface IChartIndicatorPainter : ICloneable, IPersistable
     {
-        IndicatorUI Element { get; }
+        ChartIndicatorElement Element { get; }
 
         IEnumerable< IChartElement > InnerElements { get; }
 
@@ -14,7 +14,7 @@ namespace StockSharp.Xaml.Charting
 
         void Reset( );
 
-        void OnAttached( IndicatorUI element );
+        void OnAttached( ChartIndicatorElement element );
 
         void OnDetached( );
     }

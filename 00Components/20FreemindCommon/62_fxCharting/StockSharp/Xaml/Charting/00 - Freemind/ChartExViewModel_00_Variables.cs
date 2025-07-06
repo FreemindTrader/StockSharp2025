@@ -41,13 +41,13 @@ namespace StockSharp.Xaml.Charting
     {
         #region Variables
 
-        private readonly SynchronizedDictionary<IndicatorUI, IIndicator> _indicators   = new SynchronizedDictionary<IndicatorUI, IIndicator>( );
+        private readonly SynchronizedDictionary<ChartIndicatorElement, IIndicator> _indicators   = new SynchronizedDictionary<ChartIndicatorElement, IIndicator>( );
         private readonly SynchronizedDictionary<IChartElement, object> _uiDatasource = new SynchronizedDictionary<IChartElement, object>( );
         private readonly CachedSynchronizedList<IChartElement>         _uiList       = new CachedSynchronizedList<IChartElement>( );
 
         private CandleSeries                                             _candleSeries;
         
-        private CandlestickUI                                            _candleStickUI;
+        private ChartCandleElement                                            _candleStickUI;
         
         private ScichartSurfaceMVVM _drawSurface;
 

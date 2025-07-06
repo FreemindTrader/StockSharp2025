@@ -13,7 +13,7 @@ using fx.Definitions;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class CandlestickUI : ChartElement<CandlestickUI>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElement : ChartElement<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         [Display( Description = "CandlePattern", GroupName = "StyleString", Name = "TechnicalAnalysis", Order = 32, ResourceType = typeof( LocalizedStrings ) )]
         public bool ShowCandlePattern

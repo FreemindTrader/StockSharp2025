@@ -18,7 +18,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struct, IComparable
+internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > where T : struct, IComparable
 {
     private readonly XyyDataSeries< T, double > _bandData;
     private readonly XyDataSeries< T, double >  _lineOneData;
@@ -33,7 +33,7 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
     private ChildVM                             _lineTwoViewModel;
     private IComparable                         _lastDrawValueObject;
 
-    public BandViewModel( BandsUI bandElement ) : base( bandElement )
+    public ChartBandElementVM( ChartBandElement bandElement ) : base( bandElement )
     {
         Type type = typeof( T );
         

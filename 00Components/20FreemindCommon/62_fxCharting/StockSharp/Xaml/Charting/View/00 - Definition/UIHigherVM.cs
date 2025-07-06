@@ -144,7 +144,7 @@ internal abstract class UIHigherVM< T > : UIChartBaseViewModel where T : ChartPa
         //instance.SetBindings( BaseRenderableSeries.XAxisIdProperty, RootElem, "XAxisId", BindingMode.TwoWay, null, null );
         //instance.SetBindings( BaseRenderableSeries.YAxisIdProperty, RootElem, "YAxisId", BindingMode.TwoWay, null, null );
 
-        //if( !( ChartElement is BandsUI ) )
+        //if( !( ChartElement is ChartBandElement ) )
         //{
         //    instance.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );
         //    instance.SetBindings( BaseRenderableSeries.AntiAliasingProperty, ChartElement, "AntiAliasing", BindingMode.TwoWay, null, null );

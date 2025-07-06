@@ -15,11 +15,11 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         private readonly LineUI _tenKan;
         private readonly LineUI _kijun;
         private readonly LineUI _chinkou;
-        private readonly BandsUI _senkou;
+        private readonly ChartBandElement _senkou;
 
         public IchimokuPainter( )
         {
-            _senkou                      = new BandsUI( );
+            _senkou                      = new ChartBandElement( );
             _tenKan                      = new LineUI( );
             _kijun                       = new LineUI( );
             _chinkou                     = new LineUI( );
@@ -69,7 +69,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
         }
 
         [Display( Description = "SenkouRange", Name = "SenkouRange", ResourceType = typeof( LocalizedStrings ) )]
-        public BandsUI Senkou
+        public ChartBandElement Senkou
         {
             get
             {

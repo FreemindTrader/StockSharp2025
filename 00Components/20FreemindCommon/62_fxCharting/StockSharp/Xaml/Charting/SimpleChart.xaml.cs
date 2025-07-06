@@ -189,7 +189,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        IIndicator IChart.GetIndicator( IndicatorUI element )
+        IIndicator IChart.GetIndicator( ChartIndicatorElement element )
         {
             throw new NotSupportedException( );
         }
@@ -221,7 +221,7 @@ namespace StockSharp.Xaml.Charting
 
         void IChart.AddElement(
           ChartArea area,
-          CandlestickUI element,
+          ChartCandleElement element,
           CandleSeries candleSeries )
         {
             throw new NotSupportedException( );
@@ -229,7 +229,7 @@ namespace StockSharp.Xaml.Charting
 
         void IChart.AddElement(
           ChartArea area,
-          IndicatorUI element,
+          ChartIndicatorElement element,
           CandleSeries candleSeries,
           IIndicator indicator )
         {

@@ -123,9 +123,9 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
 
-        public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;
+        public event Action<ChartCandleElement, CandleSeries> SubscribeCandleElement;
 
-        public event Action<IndicatorUI, CandleSeries, IIndicator> SubscribeIndicatorElement;
+        public event Action<ChartIndicatorElement, CandleSeries, IIndicator> SubscribeIndicatorElement;
 
         public event Action<OrdersUI, Security> SubscribeOrderElement;
 
@@ -225,12 +225,12 @@ namespace StockSharp.Xaml.Charting
             Chart.AddElement( area, element );
         }
 
-        public void AddElement( ChartArea area, CandlestickUI element, CandleSeries candleSeries )
+        public void AddElement( ChartArea area, ChartCandleElement element, CandleSeries candleSeries )
         {
             Chart.AddElement( area, element, candleSeries );
         }
 
-        public void AddElement( ChartArea area, IndicatorUI element, CandleSeries candleSeries, IIndicator indicator )
+        public void AddElement( ChartArea area, ChartIndicatorElement element, CandleSeries candleSeries, IIndicator indicator )
         {
             Chart.AddElement( area, element, candleSeries, indicator );
         }
@@ -250,7 +250,7 @@ namespace StockSharp.Xaml.Charting
             ( ( IChart )Chart ).RemoveElement( area, element );
         }
 
-        public IIndicator GetIndicator( IndicatorUI element )
+        public IIndicator GetIndicator( ChartIndicatorElement element )
         {
             return Chart.GetIndicator( element );
         }
@@ -517,7 +517,7 @@ namespace StockSharp.Xaml.Charting
 
         private void CandleStyles_EditValueChanged( object sender, RoutedEventArgs e )
         {
-            var candleElements = Chart.ChartAreas.SelectMany( a => a.Elements.OfType<CandlestickUI>( ) );
+            var candleElements = Chart.ChartAreas.SelectMany( a => a.Elements.OfType<ChartCandleElement>( ) );
 
             foreach ( var candleElment in candleElements )
             {
@@ -557,7 +557,7 @@ namespace StockSharp.Xaml.Charting
                     OrderSettings.Portfolio = wnd.SelectedPortfolio;
             }
 
-            var array       = area.Elements.OfType<CandlestickUI>( ).ToArray( );
+            var array       = area.Elements.OfType<ChartCandleElement>( ).ToArray( );
             order.Security  = ( array.Length == 1 ? ( ( CandleSeries )GetSource( array[ 0 ] ) )?.Security : OrderSettings.Security );
             order.Portfolio = ( OrderSettings.Portfolio );
             order.Volume    = ( OrderSettings.Volume );

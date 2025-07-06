@@ -17,10 +17,10 @@ public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable
 {
     private readonly PooledList<IChartElement>  _innerElements = new PooledList<IChartElement>();
     private readonly IndicatorPainterHelper _indicatorPainter = new IndicatorPainterHelper();
-    private IndicatorUI                     _indicatorElement;
+    private ChartIndicatorElement                     _indicatorElement;
 
     [Browsable(false)]
-    public IndicatorUI Element
+    public ChartIndicatorElement Element
     {
         get
         {
@@ -103,7 +103,7 @@ public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable
         _indicatorPainter.Reset(true);
     }
 
-    public void OnAttached(IndicatorUI element)
+    public void OnAttached(ChartIndicatorElement element)
     {
         Element = element;
 

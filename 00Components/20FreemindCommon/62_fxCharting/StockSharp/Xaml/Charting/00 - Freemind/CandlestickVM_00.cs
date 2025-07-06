@@ -74,7 +74,7 @@ namespace StockSharp.Xaml.Charting
         }
     }
 
-    internal partial class CandlestickVM : UIHigherVM<CandlestickUI>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
+    internal partial class CandlestickVM : UIHigherVM<ChartCandleElement>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {
         private double                                      _pnfBoxSize = 0.2;
         private readonly OhlcDataSeries< DateTime, double > _ohlcDataSeries;
@@ -105,7 +105,7 @@ namespace StockSharp.Xaml.Charting
 
         private int _fifoCapacity;
 
-        public CandlestickVM( CandlestickUI element ) : base( element )
+        public CandlestickVM( ChartCandleElement element ) : base( element )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
              * 

@@ -16,7 +16,7 @@ namespace StockSharp.Xaml.Charting
             {
                 return null;
             }
-            if( !( element is IndicatorUI ) && !( element is BandsUI ) && ( !( element is LineUI ) && !( element is VolatilitySmileUI ) ) )
+            if( !( element is ChartIndicatorElement ) && !( element is ChartBandElement ) && ( !( element is LineUI ) && !( element is VolatilitySmileUI ) ) )
             {
                 return element;
             }

@@ -32,7 +32,7 @@ namespace StockSharp.Xaml.Charting
 {
     public partial class Chart : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChart, IThemeableChart
     {
-        private readonly SynchronizedDictionary<IndicatorUI, IIndicator> _indicators   = new SynchronizedDictionary<IndicatorUI, IIndicator>( );
+        private readonly SynchronizedDictionary<ChartIndicatorElement, IIndicator> _indicators   = new SynchronizedDictionary<ChartIndicatorElement, IIndicator>( );
         private readonly SynchronizedDictionary<IChartElement, object>   _uiDatasource = new SynchronizedDictionary<IChartElement, object>( );
         private readonly CachedSynchronizedList<IChartElement>           _uiList       = new CachedSynchronizedList<IChartElement>( );
 
@@ -94,7 +94,7 @@ namespace StockSharp.Xaml.Charting
          */
         private void OnAddCandlesArea( ChartArea candleArea )
         {
-            CandlestickUI candleUI = new CandlestickUI( );
+            ChartCandleElement candleUI = new ChartCandleElement( );
 
             if ( _candleSeries == null )
             {
@@ -129,14 +129,14 @@ namespace StockSharp.Xaml.Charting
 
         private void OnCodingAddCandles( object sender, AddCandlesEventArgs e )
         {
-            CandlestickUI candleUI = null;
+            ChartCandleElement candleUI = null;
             if ( e.UseFifo )
             {
-                candleUI = new CandlestickUI() { FifoCapacity = e.FifoCapcity };
+                candleUI = new ChartCandleElement() { FifoCapacity = e.FifoCapcity };
             }
             else
             {
-                candleUI = new CandlestickUI();
+                candleUI = new ChartCandleElement();
             }
 
             
@@ -317,7 +317,7 @@ namespace StockSharp.Xaml.Charting
             this.GuiAsync( ( ) => area.Elements.Add( element ) );
         }
 
-        public void AddElement( ChartArea area, CandlestickUI element, CandleSeries candleSeries )
+        public void AddElement( ChartArea area, ChartCandleElement element, CandleSeries candleSeries )
         {
             if ( area == null )
             {
@@ -344,7 +344,7 @@ namespace StockSharp.Xaml.Charting
             AddElement( area, element );
         }
 
-        public void AddElement( ChartArea area, IndicatorUI indicatorUI, CandleSeries candleSeries, IIndicator indicator )
+        public void AddElement( ChartArea area, ChartIndicatorElement indicatorUI, CandleSeries candleSeries, IIndicator indicator )
         {
             if ( area == null )
             {
@@ -450,7 +450,7 @@ namespace StockSharp.Xaml.Charting
                 throw new ArgumentNullException( nameof( element ) );
             }
 
-            IndicatorUI indicator = element as IndicatorUI;
+            ChartIndicatorElement indicator = element as ChartIndicatorElement;
             if ( indicator != null )
             {
                 _indicators.Remove( indicator );
@@ -461,7 +461,7 @@ namespace StockSharp.Xaml.Charting
             _uiDatasource.Remove( element );
         }
 
-        public IIndicator GetIndicator( IndicatorUI element )
+        public IIndicator GetIndicator( ChartIndicatorElement element )
         {
             return Ecng.Collections.CollectionHelper.TryGetValue( _indicators, element );
             
@@ -759,9 +759,9 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
 
-        public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;
+        public event Action<ChartCandleElement, CandleSeries> SubscribeCandleElement;
 
-        public event Action<IndicatorUI, CandleSeries, IIndicator> SubscribeIndicatorElement;
+        public event Action<ChartIndicatorElement, CandleSeries, IIndicator> SubscribeIndicatorElement;
 
         public event Action<OrdersUI, Security> SubscribeOrderElement;
 
@@ -886,11 +886,11 @@ namespace StockSharp.Xaml.Charting
 
             foreach ( IChartElement element in Elements.Where( x => GetSource( x ) == candleSeries ).ToArray( ) )
             {
-                var CandlestickUI = element as CandlestickUI;
+                var ChartCandleElement = element as ChartCandleElement;
 
-                if ( CandlestickUI != null )
+                if ( ChartCandleElement != null )
                 {
-                    CandlestickUI.Title = candleSeries.Title( );
+                    ChartCandleElement.Title = candleSeries.Title( );
                 }
 
                 ResetElement( element, true );
@@ -1020,7 +1020,7 @@ namespace StockSharp.Xaml.Charting
         {
             switch ( chartElement )
             {
-                case CandlestickUI CandlestickUI:
+                case ChartCandleElement ChartCandleElement:
                 {
                     /* -------------------------------------------------------------------------------------------------------------------------------------------
                     *  When we clicked on the Add Candle Command from the context menu, the following function get executed.
@@ -1029,11 +1029,11 @@ namespace StockSharp.Xaml.Charting
                     * 
                     * ------------------------------------------------------------------------------------------------------------------------------------------- 
                     */
-                    SubscribeCandleElement?.Invoke( CandlestickUI, GetSeries<CandleSeries>( CandlestickUI ) );
+                    SubscribeCandleElement?.Invoke( ChartCandleElement, GetSeries<CandleSeries>( ChartCandleElement ) );
                 }                
                 break;
 
-                case IndicatorUI element:
+                case ChartIndicatorElement element:
                 {
                     SubscribeIndicatorElement?.Invoke( element, GetSeries<CandleSeries>( element ), GetIndicator( element ) );
                 }                
@@ -1127,7 +1127,7 @@ namespace StockSharp.Xaml.Charting
         private void ResetElement( IChartElement element, bool needAddElement )
         {
             IChartElement[ ] elementArray;
-            if ( element is CandlestickUI )
+            if ( element is ChartCandleElement )
             {
                 elementArray = Elements.Where( e => GetSource( e ) == GetSeries<CandleSeries>( element ) ).ToArray( );
             }
@@ -1192,7 +1192,7 @@ namespace StockSharp.Xaml.Charting
             SetupScichartSurface( ( SciChartSurface )sender );
         }
 
-        private void OnIndicatorReset( IndicatorUI indicatorElement, IIndicator indicator )
+        private void OnIndicatorReset( ChartIndicatorElement indicatorElement, IIndicator indicator )
         {
             indicatorElement.FullTitle = indicator.ToString( );
             ResetElement( indicatorElement, true );
@@ -1254,10 +1254,10 @@ namespace StockSharp.Xaml.Charting
                 return;
             }
 
-            CandlestickUI[ ] array = Elements.OfType<CandlestickUI>( ).ToArray( );
-            CandlestickUI CandlestickUI = area.Elements.OfType<CandlestickUI>( ).Concat( array ).FirstOrDefault( );
+            ChartCandleElement[ ] array = Elements.OfType<ChartCandleElement>( ).ToArray( );
+            ChartCandleElement ChartCandleElement = area.Elements.OfType<ChartCandleElement>( ).Concat( array ).FirstOrDefault( );
             
-            if ( CandlestickUI == null )
+            if ( ChartCandleElement == null )
             {
                 new MessageBoxBuilder( ).Error( ).Text( LocalizedStrings.CandleStick ).Owner( this ).Show( );
             }
@@ -1268,7 +1268,7 @@ namespace StockSharp.Xaml.Charting
                     CandlestickUIPicker wnd2 = new CandlestickUIPicker( )
                     {
                         Elements = array,
-                        SelectedElement = CandlestickUI
+                        SelectedElement = ChartCandleElement
                     };
 
                     if ( !wnd2.ShowModal( this ) )
@@ -1276,7 +1276,7 @@ namespace StockSharp.Xaml.Charting
                         return;
                     }
 
-                    CandlestickUI = wnd2.SelectedElement;
+                    ChartCandleElement = wnd2.SelectedElement;
                 }
 
                 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1286,13 +1286,13 @@ namespace StockSharp.Xaml.Charting
                  *                  
                  * ---------------------------------------------------------------------------------------------------------------------------------------------------------------------                 
                  */
-                var indicatorUI              = new IndicatorUI( );
+                var indicatorUI              = new ChartIndicatorElement( );
                 
                 var indicatorPainter                  = indicatorPicker.SelectedIndicatorType.CreatePainter();                               
 
                 indicatorUI.IndicatorPainter = (StockSharp.Xaml.Charting.IChartIndicatorPainter) indicatorPainter;
 
-                var tonyCandleSeries         = GetSeries< CandleSeries >( CandlestickUI );
+                var tonyCandleSeries         = GetSeries< CandleSeries >( ChartCandleElement );
 
 
                 AddElement( area, indicatorUI, tonyCandleSeries, indicatorPicker.Indicator );
@@ -1339,7 +1339,7 @@ namespace StockSharp.Xaml.Charting
 
         private void OnRemoveElement( IChartElement element )
         {
-            if ( element is IndicatorUI indicator && indicator.ParentElement != null )
+            if ( element is ChartIndicatorElement indicator && indicator.ParentElement != null )
             {
                 element = indicator.ParentElement;
             }
@@ -1504,7 +1504,7 @@ namespace StockSharp.Xaml.Charting
                             _chart._uiDatasource.Add( element, candle );
                         }
 
-                        if ( element is IndicatorUI key )
+                        if ( element is ChartIndicatorElement key )
                         {
 
                             IIndicator iindicator = Ecng.Collections.CollectionHelper.TryGetValue( indicatorSeries, key.Id );

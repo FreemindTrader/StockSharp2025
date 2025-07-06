@@ -142,7 +142,7 @@ namespace StockSharp.Xaml.Charting
             }
 
             RemoveRulerAnnotation( );
-            double num = (double) ( ( ( _chartArea.Chart.GetSource( _chartArea.Elements.OfType<CandlestickUI>().FirstOrDefault() ) as CandleSeries )?.Security?.PriceStep ) ?? new Decimal( 1, 0, 0, false, 2 ) );
+            double num = (double) ( ( ( _chartArea.Chart.GetSource( _chartArea.Elements.OfType<ChartCandleElement>().FirstOrDefault() ) as CandleSeries )?.Security?.PriceStep ) ?? new Decimal( 1, 0, 0, false, 2 ) );
             RulerAnnotation ruler = new RulerAnnotation();
             ruler.YAxisId = YAxisId;
             ruler.XAxisId = XAxisId;

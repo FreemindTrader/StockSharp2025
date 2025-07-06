@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {    
-    public partial class CandlestickUI : ChartElement<CandlestickUI>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElement : ChartElement<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         public void ShowLessWaves( )
         {

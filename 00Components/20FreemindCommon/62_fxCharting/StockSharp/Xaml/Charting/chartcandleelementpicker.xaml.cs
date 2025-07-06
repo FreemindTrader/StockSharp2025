@@ -16,11 +16,11 @@ namespace StockSharp.Xaml.Charting
             InitializeComponent( );
         }
 
-        public IEnumerable<CandlestickUI> Elements
+        public IEnumerable<ChartCandleElement> Elements
         {
             get
             {
-                return ( IEnumerable<CandlestickUI> )ElementsCtrl.ItemsSource;
+                return ( IEnumerable<ChartCandleElement> )ElementsCtrl.ItemsSource;
             }
             set
             {
@@ -28,11 +28,11 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public CandlestickUI SelectedElement
+        public ChartCandleElement SelectedElement
         {
             get
             {
-                return ( CandlestickUI )ElementsCtrl.SelectedItem;
+                return ( ChartCandleElement )ElementsCtrl.SelectedItem;
             }
             set
             {

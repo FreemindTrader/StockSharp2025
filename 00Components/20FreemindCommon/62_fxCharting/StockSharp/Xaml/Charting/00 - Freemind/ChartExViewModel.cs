@@ -116,8 +116,8 @@ namespace StockSharp.Xaml.Charting
         {                        
             var indicatorPicker = CustomShowWindowService.ShowIndicatorWindow( true, IndicatorTypes );
 
-            var array   = Elements.OfType<CandlestickUI>( ).ToArray( );
-            var chartUi = e.ChartArea.Elements.OfType<CandlestickUI>( ).Concat( array ).FirstOrDefault( );
+            var array   = Elements.OfType<ChartCandleElement>( ).ToArray( );
+            var chartUi = e.ChartArea.Elements.OfType<ChartCandleElement>( ).Concat( array ).FirstOrDefault( );
 
             if ( chartUi == null )
             {
@@ -149,16 +149,16 @@ namespace StockSharp.Xaml.Charting
 
                 
 
-                IndicatorUI indicatorUI = null;
+                ChartIndicatorElement indicatorUI = null;
 
                 if ( e.UseFifo )
                 {
                     var capacity = ChartHelper.GetFifoCapcity( period );
-                    indicatorUI = new IndicatorUI( capacity );
+                    indicatorUI = new ChartIndicatorElement( capacity );
                 }
                 else
                 {
-                    indicatorUI = new IndicatorUI();
+                    indicatorUI = new ChartIndicatorElement();
                 }
 
                 var indicatorPainter                  = indicatorPicker.SelectedIndicatorType.CreatePainter();
@@ -394,9 +394,9 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
 
-        public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;        
+        public event Action<ChartCandleElement, CandleSeries> SubscribeCandleElement;        
 
-        public event Action<IndicatorUI, CandleSeries, IIndicator> SubscribeIndicatorElement;
+        public event Action<ChartIndicatorElement, CandleSeries, IIndicator> SubscribeIndicatorElement;
 
         public event Action<OrdersUI, Security> SubscribeOrderElement;
 
@@ -690,7 +690,7 @@ namespace StockSharp.Xaml.Charting
                             _chartExViewModel._uiDatasource.Add( element, candle );
                         }
 
-                        if ( element is IndicatorUI key )
+                        if ( element is ChartIndicatorElement key )
                         {
                             IIndicator iindicator = Ecng.Collections.CollectionHelper.TryGetValue(indicatorSeries, key.Id );
                             if ( candle != null )
@@ -760,7 +760,7 @@ namespace StockSharp.Xaml.Charting
                 throw new ArgumentNullException( nameof( element ) );
             }
 
-            IndicatorUI indicator = element as IndicatorUI;
+            ChartIndicatorElement indicator = element as ChartIndicatorElement;
             if ( indicator != null )
             {
                 _indicators.Remove( indicator );
@@ -1052,7 +1052,7 @@ namespace StockSharp.Xaml.Charting
 
         IndicatorPickerWindow ShowIndicatorWindow( bool autoSelectCandles, IList< IndicatorType > indicatorTypes );
 
-        CandlestickUI ShowCandlestickUIPicker( CandlestickUI[ ] array, CandlestickUI CandlestickUI );
+        ChartCandleElement ShowCandlestickUIPicker( ChartCandleElement[ ] array, ChartCandleElement ChartCandleElement );
 
         Security ShowSecurityPickerWindow( MultiSelectMode SelectionMode );
     }
@@ -1090,12 +1090,12 @@ namespace StockSharp.Xaml.Charting
             return w;
         }
 
-        public CandlestickUI ShowCandlestickUIPicker( CandlestickUI[ ] array, CandlestickUI CandlestickUI )
+        public ChartCandleElement ShowCandlestickUIPicker( ChartCandleElement[ ] array, ChartCandleElement ChartCandleElement )
         {
             CandlestickUIPicker w = new CandlestickUIPicker( )
             {
                 Elements = array,
-                SelectedElement = CandlestickUI
+                SelectedElement = ChartCandleElement
             };
 
             w.WindowStartupLocation = WindowStartupLocation.CenterOwner;

@@ -267,7 +267,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             ChartModifier.ChildModifiers.Add( LegendModifier );
             ChartModifier.ChildModifiers.Add( AnnotationModifier );
 
-            CandlestickUI[ ] candles = _vmChartUIs.Keys.OfType<CandlestickUI>( ).ToArray( );
+            ChartCandleElement[ ] candles = _vmChartUIs.Keys.OfType<ChartCandleElement>( ).ToArray( );
 
             if ( candles.Length != 0 )
             {
@@ -278,7 +278,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
                     order.IsEnabled = true;
                 }
 
-                foreach ( CandlestickUI candle in candles )
+                foreach ( ChartCandleElement candle in candles )
                 {
                     OnDrawStylePropertyChanged( candle );
                     candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
@@ -662,7 +662,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             _vmChartUIs[ anyChartUiXY ] = null;
         }
 
-        if ( _modifierGroup != null && anyChartUiXY is CandlestickUI candle )
+        if ( _modifierGroup != null && anyChartUiXY is ChartCandleElement candle )
         {
             var orderModifier = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>( ).FirstOrDefault( );
 
@@ -695,7 +695,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             return false;
         }
 
-        if ( elementXY is CandlestickUI candle )
+        if ( elementXY is ChartCandleElement candle )
         {
             candle.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
         }
@@ -720,10 +720,10 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             return;
         }
 
-        OnDrawStylePropertyChanged( ( CandlestickUI )sender );
+        OnDrawStylePropertyChanged( ( ChartCandleElement )sender );
     }
 
-    private void OnDrawStylePropertyChanged( CandlestickUI element )
+    private void OnDrawStylePropertyChanged( ChartCandleElement element )
     {
         var isVolumeProfileChart = element.DrawStyle.IsVolumeProfileChart( );
 

@@ -10,14 +10,14 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public sealed class BandsUI : ChartElement< BandsUI >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public sealed class ChartBandElement : ChartElement< ChartBandElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
         private LineUI _lineOne;
         private LineUI _lineTwo;
         private UIChartBaseViewModel _viewModel;
 
-        public BandsUI( )
+        public ChartBandElement( )
         {
             Line1 = new LineUI( )
             {
@@ -101,7 +101,7 @@ namespace StockSharp.Xaml.Charting
 
         UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
-            _viewModel = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new BandViewModel<double>( this ) : ( UIChartBaseViewModel )new BandViewModel< DateTime >( this );
+            _viewModel = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( UIChartBaseViewModel )new ChartBandElementVM< DateTime >( this );
             return _viewModel;
         }
 
@@ -146,7 +146,7 @@ namespace StockSharp.Xaml.Charting
             storage.SetValue( "Line2", Line2.Save( ) );
         }
 
-        internal override BandsUI Clone( BandsUI BandsUI_0 )
+        internal override ChartBandElement Clone( ChartBandElement BandsUI_0 )
         {
             BandsUI_0 = base.Clone( BandsUI_0 );
             Line1.Clone( BandsUI_0.Line1 );

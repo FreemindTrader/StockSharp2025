@@ -116,20 +116,20 @@ namespace StockSharp.Xaml.Charting
             Chart.Draw( data );
         }
 
-        public IEnumerable<BandsUI> Elements
+        public IEnumerable<ChartBandElement> Elements
         {
             get
             {
-                return _paneViewModel.Area.Elements.Cast<BandsUI>( ).ToArray( );
+                return _paneViewModel.Area.Elements.Cast<ChartBandElement>( ).ToArray( );
             }
         }
 
-        public BandsUI CreateCurve( string title, Color color, DrawStyles style, Guid id = default( Guid ) )
+        public ChartBandElement CreateCurve( string title, Color color, DrawStyles style, Guid id = default( Guid ) )
         {
             return CreateCurve( title, color, color, style, id );
         }
 
-        public BandsUI CreateCurve( string title, Color color, Color secondColor, DrawStyles style, Guid id = default( Guid ) )
+        public ChartBandElement CreateCurve( string title, Color color, Color secondColor, DrawStyles style, Guid id = default( Guid ) )
         {
             if ( title == null )
             {
@@ -141,7 +141,7 @@ namespace StockSharp.Xaml.Charting
                 style = DrawStyles.BandOneValue;
             }
                 
-            var band = new BandsUI( );
+            var band = new ChartBandElement( );
 
             band.FullTitle             = title;
             band.Style                 = DrawStyles.BandOneValue;
@@ -174,7 +174,7 @@ namespace StockSharp.Xaml.Charting
             return band;
         }
 
-        [Obsolete( "Use CreateCurve() methods which return BandsUI." )]
+        [Obsolete( "Use CreateCurve() methods which return ChartBandElement." )]
         public ICollection<LineData<DateTime>> CreateCurve( string title, Color color, Color secondColor, LineChartStyles style = LineChartStyles.Line, Guid id = default( Guid ) )
         {
             if ( title == null )
@@ -182,20 +182,20 @@ namespace StockSharp.Xaml.Charting
             return new EquityCurveList( this, CreateCurve( title, color, secondColor, GetDrawStylesByLineStyle( style ), id ) );
         }
 
-        [Obsolete( "Use CreateCurve() methods which returns BandsUI." )]
+        [Obsolete( "Use CreateCurve() methods which returns ChartBandElement." )]
         public ICollection<LineData<DateTime>> CreateCurve( string title, Color color, LineChartStyles style = LineChartStyles.Line, Guid id = default( Guid ) )
         {
             return CreateCurve( title, color, color, style, id );
         }
 
-        public void RemoveCurve( BandsUI elem )
+        public void RemoveCurve( ChartBandElement elem )
         {
             if ( elem == null )
                 throw new ArgumentNullException( nameof( elem ) );
             _paneViewModel.Area.Elements.Remove( elem );
         }
 
-        [Obsolete( "Use RemoveCurve(BandsUI) instead." )]
+        [Obsolete( "Use RemoveCurve(ChartBandElement) instead." )]
         public void RemoveCurve( ICollection<LineData<DateTime>> items )
         {
             if ( items == null )
@@ -218,7 +218,7 @@ namespace StockSharp.Xaml.Charting
             _paneViewModel.Reset( items.Cast<EquityCurveList>( ).Select( a => a.Element ) );
         }
 
-        public void Reset( IEnumerable<BandsUI> elements )
+        public void Reset( IEnumerable<ChartBandElement> elements )
         {
             _paneViewModel.Reset( elements );
         }
@@ -264,7 +264,7 @@ namespace StockSharp.Xaml.Charting
         {
             Clear( );
 
-            foreach ( IChartElement chartElement in ( storage.GetValue<SettingsStorage[ ]>( "elements", null ) ).Select( s => s.Load<BandsUI>( ) ) )
+            foreach ( IChartElement chartElement in ( storage.GetValue<SettingsStorage[ ]>( "elements", null ) ).Select( s => s.Load<ChartBandElement>( ) ) )
             {
                 _paneViewModel.Area.Elements.Add( chartElement );
             }
@@ -304,15 +304,15 @@ namespace StockSharp.Xaml.Charting
         private sealed class EquityCurveList : BaseList<LineData<DateTime>>
         {
             private readonly EquityCurveChartEx _equityCurveChart;
-            private readonly BandsUI _element;
+            private readonly ChartBandElement _element;
 
-            public EquityCurveList( EquityCurveChartEx equityCurveChart_1, BandsUI BandsUI_1 )
+            public EquityCurveList( EquityCurveChartEx equityCurveChart_1, ChartBandElement BandsUI_1 )
             {
                 _equityCurveChart = equityCurveChart_1;
                 _element = BandsUI_1;
             }
 
-            public BandsUI Element
+            public ChartBandElement Element
             {
                 get
                 {
@@ -335,7 +335,7 @@ namespace StockSharp.Xaml.Charting
 
             protected override void OnCleared( )
             {
-                _equityCurveChart.Chart.Reset( new BandsUI[ 1 ] { Element } );
+                _equityCurveChart.Chart.Reset( new ChartBandElement[ 1 ] { Element } );
 
                 base.OnCleared( );
             }

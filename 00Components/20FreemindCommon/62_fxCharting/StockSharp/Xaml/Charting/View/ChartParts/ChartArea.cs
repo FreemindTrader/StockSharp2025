@@ -289,8 +289,8 @@ namespace StockSharp.Xaml.Charting
             //XAxisType = storage.GetValue<ChartAxisType>( "XAxisType", ChartAxisType.CategoryDateTime );
             LoadAxises( storage, "XAxises", XAxises );
             LoadAxises( storage, "YAxises", YAxises );
-            LoadChartElements< CandlestickUI >( storage, "Candles" );
-            LoadChartElements< IndicatorUI >( storage, "Indicators" );
+            LoadChartElements< ChartCandleElement >( storage, "Candles" );
+            LoadChartElements< ChartIndicatorElement >( storage, "Indicators" );
             LoadChartElements< TradesUI >( storage, "Trades" );
             LoadChartElements< OrdersUI >( storage, "Orders" );
         }
@@ -303,8 +303,8 @@ namespace StockSharp.Xaml.Charting
             storage.SetValue( "XAxisType", XAxisType );
             storage.SetValue( "XAxises", XAxises.Select( x => x.Save( ) ).ToArray( ) );
             storage.SetValue( "YAxises", YAxises.Select( y => y.Save( ) ).ToArray( ) );
-            SaveChartElments< CandlestickUI >( storage, "Candles" );
-            SaveChartElments< IndicatorUI >( storage, "Indicators" );
+            SaveChartElments< ChartCandleElement >( storage, "Candles" );
+            SaveChartElments< ChartIndicatorElement >( storage, "Indicators" );
             SaveChartElments< TradesUI >( storage, "Trades" );
             SaveChartElments< OrdersUI >( storage, "Orders" );
         }

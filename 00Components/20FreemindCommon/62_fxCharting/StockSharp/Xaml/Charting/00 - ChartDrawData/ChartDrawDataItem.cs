@@ -83,7 +83,7 @@ namespace StockSharp.Xaml.Charting
             /// <param name="color">Candle draw color.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( CandlestickUI candleUI, Color? color )
+            public ChartDrawDataItem Add( ChartCandleElement candleUI, Color? color )
             {
                 _drawData.GetCandleColorMap().SafeAdd( candleUI ).Add( new sCandleColor( TimeStamp, color ) );
 
@@ -95,7 +95,7 @@ namespace StockSharp.Xaml.Charting
             /// <param name="color">Candle draw color.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( CandlestickUI candleUI, fxHistoricBarsRepo barList, uint barIndex )
+            public ChartDrawDataItem Add( ChartCandleElement candleUI, fxHistoricBarsRepo barList, uint barIndex )
             {
                 _drawData.GetCandleMap().SafeAdd( candleUI ).Add( barList, barIndex );
 
@@ -108,7 +108,7 @@ namespace StockSharp.Xaml.Charting
             /// <param name="value">The indicator value.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( IndicatorUI indicatorUI, IIndicator indicator, IIndicatorValue value )
+            public ChartDrawDataItem Add( ChartIndicatorElement indicatorUI, IIndicator indicator, IIndicatorValue value )
             {
                 if ( value == null )
                     return this;
@@ -125,7 +125,7 @@ namespace StockSharp.Xaml.Charting
                     throw new InvalidCastException();
                 }
 
-                //return Add<IndicatorUI, sIndicator>( , element, new sIndicator( TimeStamp, value ) );
+                //return Add<ChartIndicatorElement, sIndicator>( , element, new sIndicator( TimeStamp, value ) );
 
                 return this;
             }
@@ -205,7 +205,7 @@ namespace StockSharp.Xaml.Charting
             /// <param name="value">The value.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( BandsUI element, Decimal value )
+            public ChartDrawDataItem Add( ChartBandElement element, Decimal value )
             {
                 return Add( element, ( double ) value, 0.0 );
             }
@@ -216,7 +216,7 @@ namespace StockSharp.Xaml.Charting
             /// <param name="value2">The value2.</param>
             /// <returns>
             /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-            public ChartDrawDataItem Add( BandsUI element, double value1, double value2 )
+            public ChartDrawDataItem Add( ChartBandElement element, double value1, double value2 )
             {
                 if ( !XValue.IsNaN() )
                     return Add( _drawData.GetBandValueMap(), element, sxTuple<double>.CreateSxTuple( XValue, value1, value2 ) );
@@ -235,7 +235,7 @@ namespace StockSharp.Xaml.Charting
                     throw new ArgumentNullException( nameof( element ) );
                 }
 
-                CandlestickUI candleUi = element as CandlestickUI;
+                ChartCandleElement candleUi = element as ChartCandleElement;
 
                 if ( candleUi != null )
                 {
@@ -251,7 +251,7 @@ namespace StockSharp.Xaml.Charting
                     }
                 }
 
-                IndicatorUI element2 = element as IndicatorUI;
+                ChartIndicatorElement element2 = element as ChartIndicatorElement;
                 if ( element2 != null )
                     return Add( element2, ( IIndicatorValue ) value );
                 OrdersUI element3 = element as OrdersUI;
@@ -263,7 +263,7 @@ namespace StockSharp.Xaml.Charting
                     LineUI element5 = element as LineUI;
                     if ( element5 == null )
                     {
-                        BandsUI element6 = element as BandsUI;
+                        ChartBandElement element6 = element as ChartBandElement;
                         if ( element6 != null )
                         {
                             if ( value == null )

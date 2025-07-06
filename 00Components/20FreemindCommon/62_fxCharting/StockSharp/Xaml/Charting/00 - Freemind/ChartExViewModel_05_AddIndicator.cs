@@ -113,8 +113,8 @@ namespace StockSharp.Xaml.Charting
 
         private void Step06_OnCodingAddIndicators(object sender, AddIndicatorEventArgs e)
         {
-            var array = Elements.OfType<CandlestickUI>().ToArray();
-            var chartUi = e.ChartArea.Elements.OfType<CandlestickUI>().Concat(array).FirstOrDefault();
+            var array = Elements.OfType<ChartCandleElement>().ToArray();
+            var chartUi = e.ChartArea.Elements.OfType<ChartCandleElement>().Concat(array).FirstOrDefault();
 
             var tonyCandleSeries = GetSeries<CandleSeries>(chartUi);
 
@@ -136,7 +136,7 @@ namespace StockSharp.Xaml.Charting
              * 
              * ----------------------------------------------------------------------------------------------------------------------------------------
              */
-            var sma55indicatorUI = new IndicatorUI();
+            var sma55indicatorUI = new ChartIndicatorElement();
 
             sma55indicatorUI.IndicatorPainter = new Sma55Painter();
 
@@ -154,7 +154,7 @@ namespace StockSharp.Xaml.Charting
                 Step07_AddIndicatorElement( _mainChartArea, sma55indicatorUI, tonyCandleSeries, sma55indicator);
             }
 
-            var indicatorUI = new IndicatorUI();
+            var indicatorUI = new ChartIndicatorElement();
 
             indicatorUI.IndicatorPainter = null;
 
@@ -196,7 +196,7 @@ namespace StockSharp.Xaml.Charting
         }
 
 
-        public void Step07_AddIndicatorElement(ChartArea area, IndicatorUI indicatorUI, CandleSeries candleSeries, IIndicator indicator)
+        public void Step07_AddIndicatorElement(ChartArea area, ChartIndicatorElement indicatorUI, CandleSeries candleSeries, IIndicator indicator)
         {
             if (area == null)
             {

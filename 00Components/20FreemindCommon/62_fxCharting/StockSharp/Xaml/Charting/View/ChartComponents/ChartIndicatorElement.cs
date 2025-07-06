@@ -15,19 +15,19 @@ using StockSharp.Charting;
 namespace StockSharp.Xaml.Charting
 {
     
-    public sealed class IndicatorUI : ChartElement< IndicatorUI >
+    public sealed class ChartIndicatorElement : ChartElement< ChartIndicatorElement >
     {
         private DefaultPainter _defaultPainter;
         private IChartIndicatorPainter _chartIndicatorPainter;
 
-        public IndicatorUI( )
+        public ChartIndicatorElement( )
         {
             _defaultPainter = new DefaultPainter( );
 
             _defaultPainter.OnAttached( this );
         }
 
-        public IndicatorUI( int fifoCapacity )
+        public ChartIndicatorElement( int fifoCapacity )
         {
             _defaultPainter = new DefaultPainter( fifoCapacity );
             FifoCapacity    = fifoCapacity;
@@ -216,9 +216,9 @@ namespace StockSharp.Xaml.Charting
             IndicatorPainter = myPainter;
         }
 
-        protected override IndicatorUI CreateClone( )
+        protected override ChartIndicatorElement CreateClone( )
         {
-            IndicatorUI clone = base.CreateClone( );
+            ChartIndicatorElement clone = base.CreateClone( );
             clone.IndicatorPainter = ( IChartIndicatorPainter )IndicatorPainter.Clone( );
             return clone;
         }
