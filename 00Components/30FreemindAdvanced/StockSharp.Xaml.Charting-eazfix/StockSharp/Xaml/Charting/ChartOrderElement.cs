@@ -123,7 +123,7 @@ public class ChartOrderElement :
 
   protected override bool OnDraw(ChartDrawData data)
   {
-    List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> source = data.\u0023\u003DzaZ5Qc3xeNY95((IChartOrderElement) this);
+    List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> source = data.GetActiveOrders((IChartOrderElement) this);
     return source != null && !CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((ICollection<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) source) && ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source.Cast<ChartDrawData.IDrawValue>(), source.Count));
   }
 

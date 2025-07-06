@@ -41,7 +41,7 @@ public sealed class ChartBandElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private readonly ChartLineElement \u0023\u003Dzt\u0024HuscgmJGKgSzXy9g\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel _baseViewModel;
 
   public ChartBandElement()
   {
@@ -60,7 +60,7 @@ public sealed class ChartBandElement :
     this.AddChildElement((IChartElement) this.Line2, true);
   }
 
-  Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  Color IDrawableChartElement.Color
   {
     return this.Line1.AdditionalColor;
   }
@@ -97,27 +97,27 @@ public sealed class ChartBandElement :
     return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
   }
 
-  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIChartBaseViewModel) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<double>(this) : (UIChartBaseViewModel) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<DateTime>(this);
-    return this.\u0023\u003Dz2YSX_Z4\u003D;
+    this._baseViewModel = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIChartBaseViewModel) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<double>(this) : (UIChartBaseViewModel) new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<DateTime>(this);
+    return this._baseViewModel;
   }
 
-  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.StartDrawing(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
+    return this._baseViewModel.Draw(_param1);
   }
 
-  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.StartDrawing()
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
+    this._baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
 
   protected override bool OnDraw(ChartDrawData data)
   {
-    IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.\u0023\u003DzaZ5Qc3xeNY95((IChartBandElement) this);
+    IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.GetActiveOrders((IChartBandElement) this);
     return ienumerableEx != null && !CollectionHelper.IsEmpty<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>) ienumerableEx) && ((IDrawableChartElement) this).StartDrawing(ienumerableEx);
   }
 

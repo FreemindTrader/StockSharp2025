@@ -13,7 +13,7 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 public interface IDrawableChartElement : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartComponent
 {
-    public Color Color
+    public System.Windows.Media.Color Color
     {
         get;
     }

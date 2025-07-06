@@ -63,7 +63,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> :
   {
     if (!this.IsAttached)
       return false;
-    List<ChartDrawData.IndicatorData> indicatorDataList = ((ChartDrawData) data).\u0023\u003DzaZ5Qc3xeNY95(this.Element);
+    List<ChartDrawData.IndicatorData> indicatorDataList = ((ChartDrawData) data).GetActiveOrders(this.Element);
     if (indicatorDataList == null || CollectionHelper.IsEmpty<ChartDrawData.IndicatorData>((ICollection<ChartDrawData.IndicatorData>) indicatorDataList))
     {
       this.StartDrawing();

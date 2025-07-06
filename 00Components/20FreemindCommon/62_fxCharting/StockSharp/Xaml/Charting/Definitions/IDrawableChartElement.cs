@@ -15,7 +15,7 @@ public interface IDrawableChartElement : IChartComponent,
   INotifyPropertyChanged,
   IPersistable
 {
-    Color Color { get; }
+    System.Windows.Media.Color Color { get; }
 
     UIChartBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel );
 

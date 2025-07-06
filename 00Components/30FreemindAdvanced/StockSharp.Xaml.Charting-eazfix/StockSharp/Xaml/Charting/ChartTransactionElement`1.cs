@@ -37,11 +37,11 @@ public abstract class ChartTransactionElement<T> :
   where T : ChartTransactionElement<T>, new()
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private System.Windows.Media.Color \u0023\u003DzieAJJNZ68tP_;
+  private System.Windows.Media.Color _buyColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private System.Windows.Media.Color \u0023\u003DzGbPWR9A8cF4f;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private System.Windows.Media.Color \u0023\u003Dzes2ibafgS30F;
+  private System.Windows.Media.Color _sellColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private System.Windows.Media.Color \u0023\u003Dzot9Qiz4J5vKT7sYMVQ\u003D\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -49,7 +49,7 @@ public abstract class ChartTransactionElement<T> :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private double \u0023\u003Dzv0dodASrSZi6;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel _baseViewModel;
 
   protected ChartTransactionElement()
   {
@@ -68,12 +68,12 @@ public abstract class ChartTransactionElement<T> :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "BuyColor", Description = "BuyColorDesc", GroupName = "Style", Order = 30)]
   public System.Windows.Media.Color BuyColor
   {
-    get => this.\u0023\u003DzieAJJNZ68tP_;
+    get => this._buyColor;
     set
     {
-      if (this.\u0023\u003DzieAJJNZ68tP_ == value)
+      if (this._buyColor == value)
         return;
-      this.\u0023\u003DzieAJJNZ68tP_ = value;
+      this._buyColor = value;
       this.RaisePropertyChanged(nameof (BuyColor));
     }
   }
@@ -94,12 +94,12 @@ public abstract class ChartTransactionElement<T> :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "SellColor", Description = "SellColorDesc", GroupName = "Style", Order = 50)]
   public System.Windows.Media.Color SellColor
   {
-    get => this.\u0023\u003Dzes2ibafgS30F;
+    get => this._sellColor;
     set
     {
-      if (this.\u0023\u003Dzes2ibafgS30F == value)
+      if (this._sellColor == value)
         return;
-      this.\u0023\u003Dzes2ibafgS30F = value;
+      this._sellColor = value;
       this.RaisePropertyChanged(nameof (SellColor));
     }
   }
@@ -202,7 +202,7 @@ public abstract class ChartTransactionElement<T> :
     return base.Clone(_param1);
   }
 
-  System.Windows.Media.Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  System.Windows.Media.Color IDrawableChartElement.Color
   {
     return Colors.Transparent;
   }
@@ -231,20 +231,20 @@ public abstract class ChartTransactionElement<T> :
     set => this.SellStrokeColor = value.ToWpf();
   }
 
-  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIChartBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
+    return this._baseViewModel = (UIChartBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
   }
 
-  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.StartDrawing(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
+    return this._baseViewModel.Draw(_param1);
   }
 
-  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.StartDrawing()
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
+    this._baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
 }

@@ -36,7 +36,7 @@ public class ChartAnnotation :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private ChartAnnotationTypes \u0023\u003Dzl4Zvkho\u003D;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY \u0023\u003Dz2YSX_Z4\u003D;
+  private \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY _baseViewModel;
 
   public ChartAnnotation() => this.IsLegend = false;
 
@@ -52,28 +52,28 @@ public class ChartAnnotation :
     }
   }
 
-  Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  Color IDrawableChartElement.Color
   {
     return Colors.Transparent;
   }
 
-  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
     if (this.Type == ChartAnnotationTypes.None)
       throw new InvalidOperationException("annotation type is not set");
-    return (UIChartBaseViewModel) (this.\u0023\u003Dz2YSX_Z4\u003D = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
+    return (UIChartBaseViewModel) (this._baseViewModel = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
   }
 
-  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.StartDrawing(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
+    return this._baseViewModel.Draw(_param1);
   }
 
-  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.StartDrawing()
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
+    this._baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
 
   bool IChartComponent.\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_eaJHoQjhAXNN2tnYbe19cEa5grTJw\u003D\u003D(

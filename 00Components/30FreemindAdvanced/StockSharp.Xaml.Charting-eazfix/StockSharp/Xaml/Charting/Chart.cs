@@ -1485,7 +1485,7 @@ public class Chart :
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private readonly Chart _chart;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly IChartIndicatorElement \u0023\u003Dz2YSX_Z4\u003D;
+    private readonly IChartIndicatorElement _baseViewModel;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private readonly IIndicator \u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D;
 
@@ -1495,7 +1495,7 @@ public class Chart :
       IIndicator _param3)
     {
       this._chart = _param1 ?? throw new ArgumentNullException("parent");
-      this.\u0023\u003Dz2YSX_Z4\u003D = _param2 ?? throw new ArgumentNullException("element");
+      this._baseViewModel = _param2 ?? throw new ArgumentNullException("element");
       this.\u0023\u003Dz5re6lC2j05\u0024MW0IM5w\u003D\u003D = _param3 ?? throw new ArgumentNullException("indicator");
       this.Indicator.Reseted += new Action(this.OnResetCallback);
     }
@@ -1512,7 +1512,7 @@ public class Chart :
     {
       if (this._chart.DisableIndicatorReset)
         return;
-      this._chart.\u0023\u003Dzs2PvqlQSy\u002401UuUfTA\u003D\u003D(this.\u0023\u003Dz2YSX_Z4\u003D, this.Indicator);
+      this._chart.\u0023\u003Dzs2PvqlQSy\u002401UuUfTA\u003D\u003D(this._baseViewModel, this.Indicator);
     }
   }
 

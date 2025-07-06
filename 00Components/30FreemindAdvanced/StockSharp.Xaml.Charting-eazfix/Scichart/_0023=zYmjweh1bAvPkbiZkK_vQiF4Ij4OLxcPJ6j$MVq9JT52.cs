@@ -55,7 +55,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   {
     if (_param1 == null || ((IEnumerableEx) _param1).Count == 0)
       return false;
-    foreach (ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D k4Ek4jWvUoemvcOq in ((IEnumerable) _param1).Cast<ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D>())
+    foreach (ChartDrawData.sActiveOrder k4Ek4jWvUoemvcOq in ((IEnumerable) _param1).Cast<ChartDrawData.sActiveOrder>())
       this.\u0023\u003Dz4ka8DEp6gsYz(k4Ek4jWvUoemvcOq);
     return true;
   }
@@ -69,7 +69,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   }
 
   private void \u0023\u003Dz4ka8DEp6gsYz(
-    ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D _param1)
+    ChartDrawData.sActiveOrder _param1)
   {
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRRvwDu67s9Rm = this;
@@ -99,7 +99,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   }
 
   private \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo \u0023\u003DzWj46Xvc\u003D(
-    ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D _param1)
+    ChartDrawData.sActiveOrder _param1)
   {
     Order order = _param1.\u0023\u003DzEbEKEpf9EiRR();
     ActiveOrderAnnotation annotation = new ActiveOrderAnnotation();
@@ -142,7 +142,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
 
   private static void \u0023\u003DzP\u0024rwMb8\u003D(
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _param0,
-    ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D _param1)
+    ChartDrawData.sActiveOrder _param1)
   {
     ActiveOrderAnnotation annotation = _param0.Annotation;
     Order order = _param1.\u0023\u003DzEbEKEpf9EiRR();
@@ -192,7 +192,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     Order order = this.\u0023\u003Dz28gLj6T_roD8(_param1, out annotationInfo);
     if (order == null || \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(order, annotationInfo.AutoRemoveFromChart, annotationInfo.State, false))
       return;
-    this.\u0023\u003Dz4ka8DEp6gsYz(new ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D(order, annotationInfo.Balance, annotationInfo.State, annotationInfo.PriceStep, annotationInfo.AutoRemoveFromChart, false, false, false, order.Price));
+    this.\u0023\u003Dz4ka8DEp6gsYz(new ChartDrawData.sActiveOrder(order, annotationInfo.Balance, annotationInfo.State, annotationInfo.PriceStep, annotationInfo.AutoRemoveFromChart, false, false, false, order.Price));
   }
 
   private void \u0023\u003Dzr1A_0cGwcH5c(ActiveOrderAnnotation _param1)
@@ -285,7 +285,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
   {
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
-    public ChartDrawData.\u0023\u003Dzz3K4Ek4jWvUOemvcOQ\u003D\u003D \u0023\u003DzrnGNvGY\u003D;
+    public ChartDrawData.sActiveOrder \u0023\u003DzrnGNvGY\u003D;
     public Order \u0023\u003Dz54\u0024be\u0024c\u003D;
 
     internal void \u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D()

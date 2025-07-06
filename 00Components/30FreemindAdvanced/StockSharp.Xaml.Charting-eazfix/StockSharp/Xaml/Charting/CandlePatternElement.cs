@@ -34,7 +34,7 @@ public class CandlePatternElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private Color _upColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
+  private UIChartBaseViewModel _baseViewModel;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30)]
   public Color DownColor
@@ -58,26 +58,26 @@ public class CandlePatternElement :
     }
   }
 
-  UIChartBaseViewModel IDrawableChartElement.\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy2NIVeJ\u0024WEKCPOgxige9iqo_yKcrMQ\u003D\u003D(
+  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D = (UIChartBaseViewModel) new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(this);
+    return this._baseViewModel = (UIChartBaseViewModel) new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(this);
   }
 
-  bool IDrawableChartElement.\u0023\u003DzJXDjnZfs8tGoFCupfSBAn4fwfCXfeCPpi\u0024rZmqxbRCtxRCyVSA\u003D\u003D(
+  bool IDrawableChartElement.StartDrawing(
     IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.\u0023\u003Dz2YSX_Z4\u003D.Draw(_param1);
+    return this._baseViewModel.Draw(_param1);
   }
 
-  void IDrawableChartElement.\u0023\u003DzolvWmzKCnovSLB\u0024fEd65U8XPmuyOBlZpMiNagFIxa3issk4ACmj9rvI\u003D()
+  void IDrawableChartElement.StartDrawing()
   {
-    this.\u0023\u003Dz2YSX_Z4\u003D.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
+    this._baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
   }
 
   protected override bool OnDraw(ChartDrawData data) => throw new NotSupportedException();
 
-  Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()
+  Color IDrawableChartElement.Color
   {
     return Colors.Transparent;
   }
