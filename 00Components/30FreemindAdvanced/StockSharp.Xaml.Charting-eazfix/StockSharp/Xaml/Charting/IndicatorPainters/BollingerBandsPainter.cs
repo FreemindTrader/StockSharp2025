@@ -40,9 +40,9 @@ public class BollingerBandsPainter : BaseChartIndicatorPainter<BollingerBands>
     };
     this.AddChildElement((IChartElement) (this.\u0023\u003DzyDIAbxWLefjyyLjECw\u003D\u003D = (IChartBandElement) chartBandElement));
     this.AddChildElement((IChartElement) (this.\u0023\u003DzwZGesrtF1zqkW0dOkS\u0024KEVs\u003D = (IChartLineElement) chartLineElement));
-    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) chartBandElement.Line1, LocalizedStrings.UpperLine);
-    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) chartBandElement.Line2, LocalizedStrings.LowerLine);
-    chartBandElement.Line2.\u0023\u003DziQx4gl4\u003D("AdditionalColor");
+    chartBandElement.SetName((IChartElement) chartBandElement.Line1, LocalizedStrings.UpperLine);
+    chartBandElement.SetName((IChartElement) chartBandElement.Line2, LocalizedStrings.LowerLine);
+    chartBandElement.Line2.AddExtraName("AdditionalColor");
   }
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Band", Description = "Band")]

@@ -692,9 +692,9 @@ label_8:
       throw new NotImplementedException();
     }
 
-    public void CopyTo(double[] _param1, int _param2) => throw new NotImplementedException();
+    public void Clone(double[] _param1, int _param2) => throw new NotImplementedException();
 
-    public void CopyTo(Array _param1, int _param2) => throw new NotImplementedException();
+    public void Clone(Array _param1, int _param2) => throw new NotImplementedException();
 
     public void Add(double _param1) => throw new NotImplementedException();
 

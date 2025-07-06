@@ -86,12 +86,12 @@ public class ChartVolatilitySmileElement :
     storage.SetValue<SettingsStorage>("Smile", PersistableHelper.Save((IPersistable) this.Smile));
   }
 
-  internal override ChartVolatilitySmileElement CopyTo(
+  internal override ChartVolatilitySmileElement Clone(
     ChartVolatilitySmileElement _param1)
   {
-    _param1 = base.CopyTo(_param1);
-    this._childViewModels.CopyTo(_param1._childViewModels);
-    this.\u0023\u003DzdBxDEgUJtz0N.CopyTo(_param1.\u0023\u003DzdBxDEgUJtz0N);
+    _param1 = base.Clone(_param1);
+    this._childViewModels.Clone(_param1._childViewModels);
+    this.\u0023\u003DzdBxDEgUJtz0N.Clone(_param1.\u0023\u003DzdBxDEgUJtz0N);
     return _param1;
   }
 }

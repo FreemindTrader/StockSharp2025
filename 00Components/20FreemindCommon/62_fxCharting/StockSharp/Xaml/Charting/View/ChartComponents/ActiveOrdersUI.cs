@@ -15,7 +15,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting
 {
     
-    public class ActiveOrdersUI : ChartElement< ActiveOrdersUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class ActiveOrdersUI : ChartElement< ActiveOrdersUI >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private INotifyList< ChartActiveOrderInfo > _activeOrderInfoList =   new CachedSynchronizedSet< ChartActiveOrderInfo >( );
         private Color _buyPendingColor;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using fx.Collections;
 using System.ComponentModel;
 using StockSharp.Charting;
-using System.Windows.Media;
+
 
 namespace StockSharp.Xaml.Charting;
 
@@ -57,7 +57,7 @@ public interface IChartElement : IChartPart<IChartElement>
     /// <summary>
     /// Custom elements colorer.
     /// </summary>
-    Func<IComparable, Color?> Colorer
+    Func<IComparable, System.Drawing.Color?> Colorer
     {
         get; set;
     }
@@ -65,7 +65,7 @@ public interface IChartElement : IChartPart<IChartElement>
     /// <summary>
     /// The chart area on which the element is drawn.
     /// </summary>
-    ChartArea ChartArea
+    IChartArea ChartArea
     {
         get;
     }
@@ -73,7 +73,7 @@ public interface IChartElement : IChartPart<IChartElement>
     /// <summary>
     /// The chart area on which the element is drawn.
     /// </summary>
-    ChartArea PersistentChartArea
+    IChartArea PersistentChartArea
     {
         get;
     }

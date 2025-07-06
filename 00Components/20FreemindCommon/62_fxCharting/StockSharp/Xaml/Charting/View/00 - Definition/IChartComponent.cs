@@ -51,7 +51,7 @@ public interface IChartComponent : IChartElement, IChartPart<IChartElement>, INo
 
     bool CheckAxesCompatible( ChartAxisType? _param1, ChartAxisType? _param2 );
 
-    void CopyTo( object _param1 );
+    void Clone( object _param1 );
 
     bool Draw( ChartDrawData _param1 );
 
@@ -63,5 +63,5 @@ public interface IChartComponent : IChartElement, IChartPart<IChartElement>, INo
 
     string GetName( IChartElement _param1 );
 
-    bool AdditionalName( string _param1 );
+    bool HasExtraName( string _param1 );
 }

@@ -21,7 +21,7 @@ using System.Windows.Shapes;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class LineUI : ChartElement<LineUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public class LineUI : ChartElement<LineUI>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private TASignalSymbol           _signalType;
         private DrawStyles _indicatorDrawStyle;

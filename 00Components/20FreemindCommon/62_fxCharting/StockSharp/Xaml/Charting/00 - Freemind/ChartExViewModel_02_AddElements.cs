@@ -101,7 +101,7 @@ namespace StockSharp.Xaml.Charting
             
 
             ( ( IChartComponent ) candleUI ).ResetUI();
-            AddElement( candleArea, candleUI, series );
+            AddElement( ( ChartArea ) candleArea, candleUI, series );
 
             foreach ( var indicatorPair in indicatorUiDict )
             {
@@ -109,7 +109,7 @@ namespace StockSharp.Xaml.Charting
                 var ui    = indicatorPair.Key;
                 var val   = indicatorPair.Value.Item1;
 
-                AddElement( area, ui, series, val );
+                AddElement( ( ChartArea ) area, ui, series, val );
             }
 
             RefreshView();
@@ -488,7 +488,7 @@ namespace StockSharp.Xaml.Charting
                 element = indicator.ParentElement;
             }
 
-            ( ( IChart ) this ).RemoveElement( element.ChartArea, element );
+            ( ( IChart ) this ).RemoveElement( ( ChartArea ) element.ChartArea, element );
 
             RefreshView();
         }

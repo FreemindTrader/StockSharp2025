@@ -72,9 +72,9 @@ internal abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis
     return this.\u0023\u003DzkELV\u0024GPsC83d.Contains(_param1);
   }
 
-  public void CopyTo(T[] _param1, int _param2)
+  public void Clone(T[] _param1, int _param2)
   {
-    this.\u0023\u003DzkELV\u0024GPsC83d.CopyTo(_param1, _param2);
+    this.\u0023\u003DzkELV\u0024GPsC83d.Clone(_param1, _param2);
   }
 
   bool ICollection<T>.\u0023\u003DzSNMbA4NBIHO6wT8LM2lfHp2KTKyC(
@@ -143,9 +143,9 @@ internal abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis
     set => this.\u0023\u003DzkELV\u0024GPsC83d[_param1] = value;
   }
 
-  public void CopyTo(Array _param1, int _param2)
+  public void Clone(Array _param1, int _param2)
   {
-    ((ICollection) this.\u0023\u003DzkELV\u0024GPsC83d).CopyTo(_param1, _param2);
+    ((ICollection) this.\u0023\u003DzkELV\u0024GPsC83d).Clone(_param1, _param2);
   }
 
   public int Count => this.\u0023\u003DzkELV\u0024GPsC83d.Count;

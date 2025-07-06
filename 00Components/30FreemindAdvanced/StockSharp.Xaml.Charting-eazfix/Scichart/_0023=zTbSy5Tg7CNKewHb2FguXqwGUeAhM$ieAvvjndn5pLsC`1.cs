@@ -205,7 +205,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     return Array.IndexOf<T>(this.\u0023\u003DzkELV\u0024GPsC83d, _param1, 0, this.\u0023\u003DzJpbCbio\u003D) != -1;
   }
 
-  public void CopyTo(T[] _param1, int _param2)
+  public void Clone(T[] _param1, int _param2)
   {
     int sourceIndex = this.\u0023\u003Dz0EJ0DjSA4vke + 1;
     int length1 = _param1.Length - sourceIndex;
@@ -216,7 +216,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     Array.Copy((Array) this.\u0023\u003DzkELV\u0024GPsC83d, 0, (Array) _param1, length1 + _param2, length2);
   }
 
-  internal void CopyTo(
+  internal void Clone(
     int _param1,
     T[] _param2,
     int _param3,

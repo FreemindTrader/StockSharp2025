@@ -1574,10 +1574,10 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
         {
             // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
-            xAxis = elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.XAxises.FirstOrDefault( xa => xa.Id == elementXY.XAxisId );
+            xAxis = (ChartAxis)elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.XAxises.FirstOrDefault( xa => xa.Id == elementXY.XAxisId );
             
             // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
-            yAxis = elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.YAxises.FirstOrDefault( xa => xa.Id == elementXY.YAxisId );
+            yAxis = ( ChartAxis ) elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.YAxises.FirstOrDefault( xa => xa.Id == elementXY.YAxisId );
 
             if ( xAxis != null || yAxis != null )
             {

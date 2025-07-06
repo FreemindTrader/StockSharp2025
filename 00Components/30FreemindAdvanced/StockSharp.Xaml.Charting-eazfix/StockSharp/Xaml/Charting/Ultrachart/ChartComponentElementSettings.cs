@@ -87,7 +87,7 @@ internal sealed class ChartComponentElementSettings :
       if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, p) ? 1 : 0) : 1) == 0)
         return false;
       IChartComponent zLiCojrU = this.\u0023\u003DzLICojrU\u003D;
-      return zLiCojrU == null || !zLiCojrU.AdditionalName(p.Name);
+      return zLiCojrU == null || !zLiCojrU.HasExtraName(p.Name);
     }
 
     internal 

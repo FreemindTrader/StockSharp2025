@@ -155,7 +155,7 @@ namespace StockSharp.Xaml.Charting
             if ( style != DrawStyles.BandOneValue )
             {
                 band.Line2.IsVisible = false;
-                band.AdditionalName( "Line2" );
+                band.AddExtraName( "Line2" );
                 band.AddName( band.Line1, "LocalizedStrings.Str1898" );
             }
             else

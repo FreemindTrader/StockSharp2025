@@ -47,7 +47,7 @@ internal sealed class \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<T> :
 
   void ICollection.\u0023\u003DzFAvqYrLd8QaQMLuvPOiGwFQ\u003D(Array _param1, int _param2)
   {
-    ((ICollection) this.\u0023\u003Dzg0gWX4E\u003D).CopyTo(_param1, _param2);
+    ((ICollection) this.\u0023\u003Dzg0gWX4E\u003D).Clone(_param1, _param2);
   }
 
   object? IList.\u0023\u003Dzsw6uZQAY38X4SXUVUM6sxbU\u003D(int _param1)
@@ -150,7 +150,7 @@ internal sealed class \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<T> :
     T[] _param1,
     int _param2)
   {
-    this.\u0023\u003Dzg0gWX4E\u003D.CopyTo(_param1, _param2);
+    this.\u0023\u003Dzg0gWX4E\u003D.Clone(_param1, _param2);
   }
 
   bool ICollection<T>.\u0023\u003DzSNMbA4NBIHO6wT8LM2lfHp2KTKyC(

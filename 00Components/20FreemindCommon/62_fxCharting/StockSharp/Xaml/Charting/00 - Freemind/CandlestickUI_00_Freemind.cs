@@ -13,7 +13,7 @@ using fx.Definitions;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class CandlestickUI : ChartElement<CandlestickUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class CandlestickUI : ChartElement<CandlestickUI>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         [Display( Description = "CandlePattern", GroupName = "StyleString", Name = "TechnicalAnalysis", Order = 32, ResourceType = typeof( LocalizedStrings ) )]
         public bool ShowCandlePattern
@@ -276,7 +276,7 @@ namespace StockSharp.Xaml.Charting
             _viewModel.DeleteAllLockFibLevels( );
         }
 
-        public override void ResetUI( )
+        public void ResetUI( )
         {
             _viewModel.ResetUI( );
         }

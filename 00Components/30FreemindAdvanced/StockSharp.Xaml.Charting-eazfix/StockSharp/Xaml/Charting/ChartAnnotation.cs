@@ -94,9 +94,9 @@ public class ChartAnnotation :
     }, 1));
   }
 
-  internal override ChartAnnotation CopyTo(ChartAnnotation _param1)
+  internal override ChartAnnotation Clone(ChartAnnotation _param1)
   {
-    base.CopyTo(_param1);
+    base.Clone(_param1);
     _param1.Type = _param1.Type;
     return _param1;
   }

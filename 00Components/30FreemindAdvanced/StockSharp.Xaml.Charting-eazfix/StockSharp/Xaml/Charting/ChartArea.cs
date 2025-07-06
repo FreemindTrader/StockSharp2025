@@ -505,7 +505,7 @@ public override void Load( SettingsStorage storage )
 
   public virtual ChartArea Clone()
   {
-    ChartArea chartArea = this.CopyTo(new ChartArea()
+    ChartArea chartArea = this.Clone(new ChartArea()
     {
       Title = this.Title,
       Height = this.Height,

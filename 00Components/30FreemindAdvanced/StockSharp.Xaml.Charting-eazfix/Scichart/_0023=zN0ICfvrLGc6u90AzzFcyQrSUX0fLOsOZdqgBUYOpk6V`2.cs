@@ -121,7 +121,7 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u
 
     public bool Contains(double _param1) => throw new NotImplementedException();
 
-    public void CopyTo(double[] _param1, int _param2) => throw new NotImplementedException();
+    public void Clone(double[] _param1, int _param2) => throw new NotImplementedException();
 
     public int Count => this.\u0023\u003DztUQ677I\u003D;
 
@@ -178,7 +178,7 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u
 
     public bool Contains(int _param1) => throw new NotImplementedException();
 
-    public void CopyTo(int[] _param1, int _param2) => throw new NotImplementedException();
+    public void Clone(int[] _param1, int _param2) => throw new NotImplementedException();
 
     public int Count => this.\u0023\u003DztUQ677I\u003D;
 

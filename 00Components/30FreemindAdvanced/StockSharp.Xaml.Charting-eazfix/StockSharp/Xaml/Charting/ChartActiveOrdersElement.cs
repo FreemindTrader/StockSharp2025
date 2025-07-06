@@ -264,10 +264,10 @@ public class ChartActiveOrdersElement :
     storage.Set<int>("BuyColor", this.BuyColor.ToInt()).Set<int>("BuyBlinkColor", this.BuyBlinkColor.ToInt()).Set<int>("BuyPendingColor", this.BuyPendingColor.ToInt()).Set<int>("SellColor", this.SellColor.ToInt()).Set<int>("SellBlinkColor", this.SellBlinkColor.ToInt()).Set<int>("SellPendingColor", this.SellPendingColor.ToInt()).Set<int>("CancelButtonColor", this.CancelButtonColor.ToInt()).Set<int>("ForegroundColor", this.ForegroundColor.ToInt()).Set<int>("CancelButtonBackground", this.CancelButtonBackground.ToInt()).Set<bool>("IsAnimationEnabled", this.IsAnimationEnabled);
   }
 
-  internal override ChartActiveOrdersElement CopyTo(
+  internal override ChartActiveOrdersElement Clone(
     ChartActiveOrdersElement _param1)
   {
-    _param1 = base.CopyTo(_param1);
+    _param1 = base.Clone(_param1);
     _param1.BuyColor = this.BuyColor;
     _param1.SellColor = this.SellColor;
     _param1.CancelButtonColor = this.CancelButtonColor;

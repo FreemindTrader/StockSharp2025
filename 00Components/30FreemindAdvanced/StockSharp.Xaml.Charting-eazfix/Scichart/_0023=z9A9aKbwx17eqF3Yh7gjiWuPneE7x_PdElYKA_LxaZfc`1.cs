@@ -70,7 +70,7 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<
 
   public bool Contains(T _param1) => throw new NotImplementedException();
 
-  public void CopyTo(T[] _param1, int _param2)
+  public void Clone(T[] _param1, int _param2)
   {
     throw new NotImplementedException();
   }

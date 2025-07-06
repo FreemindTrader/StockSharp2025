@@ -1,12 +1,19 @@
 ﻿using Ecng.Collections;
 using Ecng.Common;
+using Ecng.Serialization;
+using StockSharp.Charting;
 using StockSharp.Xaml;
 using StockSharp.Xaml.Charting;
 using System;
 using System.ComponentModel;
 using System.Windows.Media;
 
-public interface IDrawableChartElement : ICloneable<IChartElement>, INotifyPropertyChanged, IChartComponent, ICloneable, INotifyPropertyChanging, IChartElement
+public interface IDrawableChartElement : IChartComponent,
+  StockSharp.Xaml.Charting.IChartElement,
+  IChartPart<StockSharp.Xaml.Charting.IChartElement>,
+  INotifyPropertyChanging,
+  INotifyPropertyChanged,
+  IPersistable
 {
     Color Color { get; }
 

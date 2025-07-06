@@ -55,7 +55,7 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
     if ((browsableAttribute != null ? (browsableAttribute.Browsable ? 1 : 0) : 1) != 0)
     {
-      \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D iybwdMa94Ybky5Phw = _param1.Attributes.OfType<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D>().FirstOrDefault<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D>();
+      Attribute0 iybwdMa94Ybky5Phw = _param1.Attributes.OfType<Attribute0>().FirstOrDefault<Attribute0>();
       if ((iybwdMa94Ybky5Phw != null ? (!iybwdMa94Ybky5Phw.\u0023\u003DzOJt8kfGtb6vl() ? 1 : 0) : 1) != 0)
         return _param0.ParentElement != null || !(_param1.Name == "IsVisible");
     }
@@ -73,7 +73,7 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
     if ((browsableAttribute != null ? (browsableAttribute.Browsable ? 1 : 0) : 1) == 0)
       return false;
-    \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D iybwdMa94Ybky5Phw = _param1.Attributes.OfType<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D>().FirstOrDefault<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D>();
+    Attribute0 iybwdMa94Ybky5Phw = _param1.Attributes.OfType<Attribute0>().FirstOrDefault<Attribute0>();
     return iybwdMa94Ybky5Phw != null && iybwdMa94Ybky5Phw.\u0023\u003DzOJt8kfGtb6vl();
   }
 }

@@ -114,7 +114,7 @@ public class ChartCandleElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private System.Windows.Media.Color? _downColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> \u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D;
+  private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _drawingColor;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private UIChartBaseViewModel \u0023\u003Dz2YSX_Z4\u003D;
 
@@ -849,13 +849,13 @@ public class ChartCandleElement :
 
   Func<DateTimeOffset, bool, bool, System.Drawing.Color?> IChartCandleElement.Colorer
   {
-    get => this.\u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D;
+    get => this._drawingColor;
     set
     {
       ChartCandleElement.\u0023\u003Dzpm0QOV89qiXJFj7EloQMSS0\u003D v89qiXjFj7EloQmsS0 = new ChartCandleElement.\u0023\u003Dzpm0QOV89qiXJFj7EloQMSS0\u003D();
       v89qiXjFj7EloQmsS0.\u0023\u003DzxGz2_8k\u003D = value;
-      this.\u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D = v89qiXjFj7EloQmsS0.\u0023\u003DzxGz2_8k\u003D;
-      if (this.\u0023\u003DzihbAyecvYexTGyVxgQ\u003D\u003D == null)
+      this._drawingColor = v89qiXjFj7EloQmsS0.\u0023\u003DzxGz2_8k\u003D;
+      if (this._drawingColor == null)
         this.Colorer = (Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?>) null;
       else
         this.Colorer = new Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?>(v89qiXjFj7EloQmsS0.\u0023\u003DzhES9R3GcxsFNnB11gQcoe_qNslLr6z0WiGpRi_CHokEXxcRuYqcRWK9R6Cn8);
@@ -1092,9 +1092,9 @@ public class ChartCandleElement :
     return settingsStorage;
   }
 
-  internal override ChartCandleElement CopyTo(ChartCandleElement _param1)
+  internal override ChartCandleElement Clone(ChartCandleElement _param1)
   {
-    _param1 = base.CopyTo(_param1);
+    _param1 = base.Clone(_param1);
     _param1.DownFillColor = this.DownFillColor;
     _param1.UpFillColor = this.UpFillColor;
     _param1.DownBorderColor = this.DownBorderColor;

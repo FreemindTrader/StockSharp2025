@@ -63,7 +63,7 @@ internal class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJ
     this.\u0023\u003DzWIEZ7Zw\u003D(_param1.\u0023\u003DzGupBQuw\u003D);
     if (_param1.\u0023\u003DzGupBQuw\u003D == 0)
       return;
-    _param1.\u0023\u003Dz\u0024XVulME\u003D.CopyTo((Array) this.\u0023\u003Dz\u0024XVulME\u003D, 0);
+    _param1.\u0023\u003Dz\u0024XVulME\u003D.Clone((Array) this.\u0023\u003Dz\u0024XVulME\u003D, 0);
   }
 
   public void \u0023\u003Dz0WRhgbw\u003D(int _param1)

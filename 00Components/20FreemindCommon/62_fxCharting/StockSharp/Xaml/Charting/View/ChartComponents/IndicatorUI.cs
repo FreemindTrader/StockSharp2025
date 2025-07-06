@@ -66,7 +66,7 @@ namespace StockSharp.Xaml.Charting
                 {
                     return;
                 }
-                ChartArea chartArea = ChartArea;
+                ChartArea chartArea = (ChartArea) ChartArea;
                 chartArea?.ChartSurfaceViewModel.OnChartAreaElementsRemoving( IndicatorPainter.Element );
                 IndicatorPainter.OnDetached( );
                 

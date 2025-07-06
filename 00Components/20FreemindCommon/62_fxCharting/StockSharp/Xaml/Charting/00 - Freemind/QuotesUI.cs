@@ -12,7 +12,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public sealed class QuotesUI : ChartElement<QuotesUI>, ICloneable<IChartElement>, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public sealed class QuotesUI : ChartElement<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
         private LineUI                   _bidLine;

@@ -139,13 +139,13 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     if (style != DrawStyles.BandOneValue)
     {
       curve.Line2.IsVisible = false;
-      curve.\u0023\u003DziQx4gl4\u003D("Line2");
-      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line1, LocalizedStrings.Line2);
+      curve.AddExtraName("Line2");
+      curve.SetName((IChartElement) curve.Line1, LocalizedStrings.Line2);
     }
     else
     {
-      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line1, LocalizedStrings.Line2 + " 1");
-      curve.\u0023\u003Dz9i5WbtNpD44L((IChartElement) curve.Line2, LocalizedStrings.Line2 + " 2");
+      curve.SetName((IChartElement) curve.Line1, LocalizedStrings.Line2 + " 1");
+      curve.SetName((IChartElement) curve.Line2, LocalizedStrings.Line2 + " 2");
     }
     if (id != new Guid())
       curve.Id = id;

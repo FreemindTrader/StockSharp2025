@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_94__ybky5PHw\u003D\u003D(bool _param1 = true) : 
+internal sealed class Attribute0(bool _param1 = true) : 
   Attribute
 {
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]

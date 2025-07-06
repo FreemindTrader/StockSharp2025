@@ -88,7 +88,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   void ICollection.\u0023\u003DzFAvqYrLd8QaQMLuvPOiGwFQ\u003D(Array _param1, int _param2)
   {
-    ((ICollection) this._parentElement).CopyTo(_param1, _param2);
+    ((ICollection) this._parentElement).Clone(_param1, _param2);
   }
 
   int IList.\u0023\u003DzRqsurumTDWAgVqHVtg\u003D\u003D(object _param1)
@@ -130,9 +130,9 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     return this._parentElement.Contains(_param1);
   }
 
-  public void CopyTo(T[] _param1, int _param2)
+  public void Clone(T[] _param1, int _param2)
   {
-    this._parentElement.CopyTo(_param1, _param2);
+    this._parentElement.Clone(_param1, _param2);
   }
 
   IEnumerator<T> IEnumerable<T>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
@@ -178,18 +178,18 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     this.\u0023\u003DzrjoFHxcyHAZx();
   }
 
-  public void CopyTo(T[] _param1)
+  public void Clone(T[] _param1)
   {
-    this._parentElement.CopyTo(_param1);
+    this._parentElement.Clone(_param1);
   }
 
-  public void CopyTo(
+  public void Clone(
     int _param1,
     T[] _param2,
     int _param3,
     int _param4)
   {
-    this._parentElement.CopyTo(_param1, _param2, _param3, _param4);
+    this._parentElement.Clone(_param1, _param2, _param3, _param4);
   }
 
   public bool \u0023\u003Dz8_bgWJ3JomKk(int _param1)

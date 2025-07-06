@@ -48,8 +48,8 @@ public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
     this.AddChildElement((IChartElement) (this.\u0023\u003DzTNYUJPFxGP2E98LvqJ2ne4I\u003D = (IChartLineElement) chartLineElement2));
     this.AddChildElement((IChartElement) (this.\u0023\u003Dzzxu0w2zkh6XPS0WbXgPV3KE\u003D = (IChartLineElement) chartLineElement3));
     this.AddChildElement((IChartElement) (this.\u0023\u003Dz0S4of5OfSeLaWsWJ2rBaurI\u003D = (IChartBandElement) chartBandElement));
-    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) this.Senkou.Line1, "SenkouA");
-    chartBandElement.\u0023\u003Dz9i5WbtNpD44L((IChartElement) this.Senkou.Line2, "SenkouB");
+    chartBandElement.SetName((IChartElement) this.Senkou.Line1, "SenkouA");
+    chartBandElement.SetName((IChartElement) this.Senkou.Line2, "SenkouB");
   }
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "TenkanLine", Description = "TenkanLine")]

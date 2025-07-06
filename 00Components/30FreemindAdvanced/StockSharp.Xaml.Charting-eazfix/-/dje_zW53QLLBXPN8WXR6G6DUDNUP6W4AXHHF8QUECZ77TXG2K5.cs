@@ -175,7 +175,7 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
 
   protected override Size MeasureOverride(Size _param1)
   {
-    dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003Dz85OtBH9U8Jor1ugvGeCVjho\u003D u8Jor1ugvGeCvjho = new dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003Dz85OtBH9U8Jor1ugvGeCVjho\u003D();
+    dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.SomePrivateSealedClass u8Jor1ugvGeCvjho = new dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.SomePrivateSealedClass();
     Size availableSize = new Size(double.PositiveInfinity, double.PositiveInfinity);
     foreach (UIElement child in this.Children)
       child.Measure(availableSize);
@@ -409,7 +409,7 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
     }
   }
 
-  private sealed class \u0023\u003Dz85OtBH9U8Jor1ugvGeCVjho\u003D
+  private sealed class SomePrivateSealedClass
   {
     public double \u0023\u003Dz5ns\u0024beLh7Lq6;
     public double \u0023\u003DzVJWwwbsqQzla;

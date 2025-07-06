@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class AnnotationUI : ChartElement< AnnotationUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class AnnotationUI : ChartElement< AnnotationUI >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private ChartAnnotationTypes _annotatinType;
         private AnnotationVM _viewModel;

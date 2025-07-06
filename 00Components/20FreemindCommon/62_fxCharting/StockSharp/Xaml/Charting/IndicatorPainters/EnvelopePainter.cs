@@ -26,7 +26,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
             AddChildElement( MovingAverage );
             Band.AddName( Band.Line1, LocalizedStrings.UpperLine );
             Band.AddName( Band.Line2, LocalizedStrings.LowerLine );
-            Band.Line2.AdditionalName( "AdditionalColor" );
+            Band.Line2.AddExtraName( "AdditionalColor" );
         }
 
         [Display( Description = "Str1974", Name = "Str1974", ResourceType = typeof( LocalizedStrings ) )]

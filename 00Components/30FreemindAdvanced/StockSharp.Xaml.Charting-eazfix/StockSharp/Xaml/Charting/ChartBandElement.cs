@@ -144,11 +144,11 @@ public sealed class ChartBandElement :
     storage.SetValue<SettingsStorage>("Line2", PersistableHelper.Save((IPersistable) this.Line2));
   }
 
-  internal override ChartBandElement CopyTo(ChartBandElement _param1)
+  internal override ChartBandElement Clone(ChartBandElement _param1)
   {
-    _param1 = base.CopyTo(_param1);
-    this.Line1.CopyTo(_param1.Line1);
-    this.Line2.CopyTo(_param1.Line2);
+    _param1 = base.Clone(_param1);
+    this.Line1.Clone(_param1.Line1);
+    this.Line2.Clone(_param1.Line2);
     return _param1;
   }
 

@@ -149,7 +149,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
         this.\u0023\u003DzpaXnuR8\u003D = value;
         if (value == null)
           return;
-        ((BaseSubscriptionIdMessage<SecurityMessage>) value.ToMessage()).CopyTo((SecurityMessage) this.\u0023\u003Dz7LtG0SkMrvA7);
+        ((BaseSubscriptionIdMessage<SecurityMessage>) value.ToMessage()).Clone((SecurityMessage) this.\u0023\u003Dz7LtG0SkMrvA7);
       }
     }
 

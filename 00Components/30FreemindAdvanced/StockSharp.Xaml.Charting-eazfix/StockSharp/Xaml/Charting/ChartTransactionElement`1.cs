@@ -191,7 +191,7 @@ public abstract class ChartTransactionElement<T> :
     storage.SetValue<double>("DrawSize", this.DrawSize);
   }
 
-  internal override T CopyTo(T _param1)
+  internal override T Clone(T _param1)
   {
     _param1.BuyColor = this.BuyColor;
     _param1.BuyStrokeColor = this.BuyStrokeColor;
@@ -199,7 +199,7 @@ public abstract class ChartTransactionElement<T> :
     _param1.SellStrokeColor = this.SellStrokeColor;
     _param1.UseAltIcon = this.UseAltIcon;
     _param1.DrawSize = this.DrawSize;
-    return base.CopyTo(_param1);
+    return base.Clone(_param1);
   }
 
   System.Windows.Media.Color IDrawableChartElement.\u0023\u003Dz1qjZGbvRwQyP7Hs8e\u00243Q87Cexh3FHl_dIyWPqRctd8v9ZEu\u00241w\u003D\u003D()

@@ -225,7 +225,7 @@ internal sealed class ChartComponentChartSettings : ChartSettingsObjectBase<ICha
             if ( ( sel != null ? ( sel( this._component, _param1 ) ? 1 : 0 ) : 1 ) == 0 )
                 return false;
             IChartComponent zLiCojrU = this._component;
-            return zLiCojrU == null || !zLiCojrU.AdditionalName( _param1.Name );
+            return zLiCojrU == null || !zLiCojrU.HasExtraName( _param1.Name );
         }
 
         internal IEnumerable<PropertyDescriptor> SelectManyConditions( PropertyDescriptor propDesc )

@@ -52,7 +52,7 @@ internal sealed class AbstractList<T> :
     {
       int count = zH9Hnkngs.Count;
       this.\u0023\u003Dzg0gWX4E\u003D = new T[count];
-      zH9Hnkngs.CopyTo(this.\u0023\u003Dzg0gWX4E\u003D, 0);
+      zH9Hnkngs.Clone(this.\u0023\u003Dzg0gWX4E\u003D, 0);
       this.\u0023\u003DzJpbCbio\u003D = count;
     }
     else
@@ -251,7 +251,7 @@ internal sealed class AbstractList<T> :
     return false;
   }
 
-  public void CopyTo(T[] _param1, int _param2)
+  public void Clone(T[] _param1, int _param2)
   {
     Array.Copy((Array) this.\u0023\u003Dzg0gWX4E\u003D, 0, (Array) _param1, _param2, this.\u0023\u003DzJpbCbio\u003D);
   }
@@ -331,12 +331,12 @@ internal sealed class AbstractList<T> :
     return (\u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<T>) new \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<T>(this);
   }
 
-  public void CopyTo(T[] _param1)
+  public void Clone(T[] _param1)
   {
-    this.CopyTo(_param1, 0);
+    this.Clone(_param1, 0);
   }
 
-  public void CopyTo(
+  public void Clone(
     int _param1,
     T[] _param2,
     int _param3,
@@ -573,10 +573,10 @@ internal sealed class AbstractList<T> :
         return this.\u0023\u003Dz5IntIgc\u003D.Contains(_param1);
     }
 
-    public void CopyTo(T[] _param1, int _param2)
+    public void Clone(T[] _param1, int _param2)
     {
       lock (this.\u0023\u003Dz6j0cxXE\u003D)
-        this.\u0023\u003Dz5IntIgc\u003D.CopyTo(_param1, _param2);
+        this.\u0023\u003Dz5IntIgc\u003D.Clone(_param1, _param2);
     }
 
     public bool Remove(T _param1)
