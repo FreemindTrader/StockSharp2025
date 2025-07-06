@@ -86,28 +86,37 @@ public static class ChartHelper
 
     public static void FillDefaultValues( this OptimizerChart3D chart )
     {
-        ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
-        skXz9pb7XdulaJda._optimizerChart3d = chart;
-        if ( skXz9pb7XdulaJda._optimizerChart3d == null )
-            throw new ArgumentNullException( nameof( chart ) );
-        skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
-        skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
-        skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
+        // TONYFIXME 01
+
+        throw new NotImplementedException();
+
+        //ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
+        //skXz9pb7XdulaJda._optimizerChart3d = chart;
+        //if ( skXz9pb7XdulaJda._optimizerChart3d == null )
+        //    throw new ArgumentNullException( nameof( chart ) );
+        //skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
+        //skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
+        //skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
     }
 
     internal static Chart GetDrawingChart( this IChartElement _param0 )
     {
+        StockSharp.Charting.
         return ( Chart ) _param0.TryGetChart();
     }
 
     public static IIndicator TryGetIndicator( this IChartIndicatorElement element )
     {
-        return element.GetDrawingChart()?.GetIndicatorElement( element );
+        // TONYFIXME 01
+        throw new NotImplementedException();
+        //return element.GetDrawingChart()?.GetIndicatorElement( element );
     }
 
     public static Subscription TryGetSubscription( this IChartElement element )
     {
-        return element.GetDrawingChart()?.TryGetSubscription( element );
+        // TONYFIXME 02
+        throw new NotImplementedException();
+        //return element.GetDrawingChart()?.TryGetSubscription( element );
     }
 
     public static IIndicatorColorProvider TryColorProvider
@@ -167,13 +176,13 @@ public static class ChartHelper
         chart.AddElement( area, element, new Subscription( series ), indicator );
     }
 
-    private sealed class SealClass034
-    {
-        public OptimizerChart3D _optimizerChart3d;
+    //private sealed class SealClass034
+    //{
+    //    public OptimizerChart3D _optimizerChart3d;
 
-        internal bool \u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D(IChart3DParameter _param1)
-    {
-      return _param1 != this._optimizerChart3d.X;
-    }
+    //    internal bool \u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D(IChart3DParameter _param1)
+    //{
+    //  return _param1 != this._optimizerChart3d.X;
+    //}
 }
-}
+
