@@ -7,7 +7,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
     {
         public ParabolicSarPainter( )
         {
-            Line.Style = ChartIndicatorDrawStyles.Dot;
+            Line.Style = DrawStyles.Dot;
             Line.StrokeThickness = 4;
         }
     }

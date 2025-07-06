@@ -54,16 +54,16 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
     protected override void Init( )
     {
         base.Init( );
-        AddStylePropertyChanging( ChartElement, "Style", new ChartIndicatorDrawStyles[ 9 ]  {
-                                                                                                ChartIndicatorDrawStyles.Line,
-                                                                                                ChartIndicatorDrawStyles.NoGapLine,
-                                                                                                ChartIndicatorDrawStyles.StepLine,
-                                                                                                ChartIndicatorDrawStyles.DashedLine,
-                                                                                                ChartIndicatorDrawStyles.Dot,
-                                                                                                ChartIndicatorDrawStyles.Histogram,
-                                                                                                ChartIndicatorDrawStyles.Bubble,
-                                                                                                ChartIndicatorDrawStyles.StackedBar,
-                                                                                                ChartIndicatorDrawStyles.Area
+        AddStylePropertyChanging( ChartElement, "Style", new DrawStyles[ 9 ]  {
+                                                                                                DrawStyles.Line,
+                                                                                                DrawStyles.NoGapLine,
+                                                                                                DrawStyles.StepLine,
+                                                                                                DrawStyles.DashedLine,
+                                                                                                DrawStyles.Dot,
+                                                                                                DrawStyles.Histogram,
+                                                                                                DrawStyles.Bubble,
+                                                                                                DrawStyles.StackedBar,
+                                                                                                DrawStyles.Area
                                                                                             } );
         string[ ] strArray = new string[ 2 ]
         {
@@ -73,7 +73,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
 
         Func< SeriesInfo, Color > getColorFunc = s =>
         {
-            if( ChartElement.Style != ChartIndicatorDrawStyles.StackedBar && ChartElement.Style != ChartIndicatorDrawStyles.Area )
+            if( ChartElement.Style != DrawStyles.StackedBar && ChartElement.Style != DrawStyles.Area )
             {
                 return ChartElement.Color;
             }
@@ -97,36 +97,36 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
     {
         switch( ChartElement.Style )
         {
-            case ChartIndicatorDrawStyles.Line:
-            case ChartIndicatorDrawStyles.NoGapLine:
-            case ChartIndicatorDrawStyles.StepLine:
-            case ChartIndicatorDrawStyles.DashedLine:
+            case DrawStyles.Line:
+            case DrawStyles.NoGapLine:
+            case DrawStyles.StepLine:
+            case DrawStyles.DashedLine:
             {
                 return typeof( FastLineRenderableSeries );
             }
                 
             // Tony: To Draw my wave Importance, I have to use Dot and draw the dot with SpritePointMarker
-            case ChartIndicatorDrawStyles.Dot:
+            case DrawStyles.Dot:
             {
                 return typeof( XyScatterRenderableSeries );
             }
                 
-            case ChartIndicatorDrawStyles.Histogram:
+            case DrawStyles.Histogram:
             {
                 return typeof( FastColumnRenderableSeries );
             }
                 
-            case ChartIndicatorDrawStyles.Bubble:
+            case DrawStyles.Bubble:
             {
                 return typeof( FastBubbleRenderableSeries );
             }
                 
-            case ChartIndicatorDrawStyles.StackedBar:
+            case DrawStyles.StackedBar:
             {
                 return typeof( StackedColumnRenderableSeries );
             }
                 
-            case ChartIndicatorDrawStyles.Area:
+            case DrawStyles.Area:
             {
                 return typeof( FastMountainRenderableSeries );
             }
@@ -150,10 +150,10 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
         
         switch( ChartElement.Style )
         {
-            case ChartIndicatorDrawStyles.Line:
-            case ChartIndicatorDrawStyles.NoGapLine:
-            case ChartIndicatorDrawStyles.StepLine:
-            case ChartIndicatorDrawStyles.DashedLine:
+            case DrawStyles.Line:
+            case DrawStyles.NoGapLine:
+            case DrawStyles.StepLine:
+            case DrawStyles.DashedLine:
             {
                 visualSereis = CreateRenderableSeries<FastLineRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
                 visualSereis.DrawNaNAs = LineDrawMode.Gaps;
@@ -161,7 +161,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             }
             break;
 
-            case ChartIndicatorDrawStyles.Dot:
+            case DrawStyles.Dot:
             {
                 visualSereis = CreateRenderableSeries<XyScatterRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty            , ChartElement, "Color", BindingMode.TwoWay, null, null );
@@ -169,7 +169,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             }
             break;
 
-            case ChartIndicatorDrawStyles.Sprite:
+            case DrawStyles.Sprite:
             {
                 visualSereis = CreateRenderableSeries<XyScatterRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty, ChartElement, "Color", BindingMode.TwoWay, null, null );
@@ -177,7 +177,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             }
             break;
 
-            case ChartIndicatorDrawStyles.Histogram:
+            case DrawStyles.Histogram:
             {
                 
                 visualSereis =  CreateRenderableSeries<FastColumnRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
@@ -185,7 +185,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty            , ChartElement, "Color", BindingMode.TwoWay, null, null );
             } 
             break;
-            case ChartIndicatorDrawStyles.Bubble:
+            case DrawStyles.Bubble:
             {                
                 visualSereis =  CreateRenderableSeries<FastBubbleRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
                 visualSereis.ResamplingMode = ResamplingMode.None;
@@ -194,7 +194,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             }
             break;
 
-            case ChartIndicatorDrawStyles.StackedBar:
+            case DrawStyles.StackedBar:
             {
                 StackedColumnRenderableSeries stackSeris;
                 visualSereis = stackSeris = CreateRenderableSeries<StackedColumnRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
@@ -205,7 +205,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             }
             break;
 
-            case ChartIndicatorDrawStyles.Area:
+            case DrawStyles.Area:
             {
                 FastMountainRenderableSeries mountainSeries;
                 visualSereis = mountainSeries = CreateRenderableSeries<FastMountainRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
@@ -255,7 +255,7 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
             fastLine.IsDigitalLine   = false;
             fastLine.DrawNaNAs       = LineDrawMode.Gaps;
             
-            if( ChartElement.Style == ChartIndicatorDrawStyles.DashedLine )
+            if( ChartElement.Style == DrawStyles.DashedLine )
             {
                 fastLine.StrokeDashArray = new double[ 2 ]
                 {
@@ -263,13 +263,13 @@ internal sealed class LineVM< T > : UIHigherVM< LineUI >, IPaletteProvider where
                     5.0
                 };
             }
-            else if( ChartElement.Style == ChartIndicatorDrawStyles.StepLine )
+            else if( ChartElement.Style == DrawStyles.StepLine )
             {
                 fastLine.IsDigitalLine = true;
             }
             else
             {
-                if( ChartElement.Style != ChartIndicatorDrawStyles.NoGapLine )
+                if( ChartElement.Style != DrawStyles.NoGapLine )
                 {
                     return;
                 }

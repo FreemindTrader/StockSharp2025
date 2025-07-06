@@ -121,12 +121,12 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public ICollection<LineData<double>> CreateSmile( string title, Color color, ChartIndicatorDrawStyles style = ChartIndicatorDrawStyles.Line, Guid id = default( Guid ) )
+        public ICollection<LineData<double>> CreateSmile( string title, Color color, DrawStyles style = DrawStyles.Line, Guid id = default( Guid ) )
         {
             return CreateSmile( title, color, color, style, id );
         }
 
-        public ICollection<LineData<double>> CreateSmile( string title, Color color, Color secondColor, ChartIndicatorDrawStyles style = ChartIndicatorDrawStyles.Line, Guid id = default( Guid ) )
+        public ICollection<LineData<double>> CreateSmile( string title, Color color, Color secondColor, DrawStyles style = DrawStyles.Line, Guid id = default( Guid ) )
         {
             if ( title == null )
             {
@@ -137,7 +137,7 @@ namespace StockSharp.Xaml.Charting
             element.FullTitle = title;
             element.Values.Color = color;
             element.Values.AdditionalColor = secondColor;
-            element.Values.Style = ChartIndicatorDrawStyles.Dot;
+            element.Values.Style = DrawStyles.Dot;
             element.Values.StrokeThickness = 8;
             element.Values.ShowAxisMarker = false;
             element.Smile.Color = color;

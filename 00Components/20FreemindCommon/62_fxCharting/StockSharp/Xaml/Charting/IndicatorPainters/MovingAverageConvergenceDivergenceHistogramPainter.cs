@@ -29,7 +29,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
 
             _histogram = new LineUI( )
             {
-                Style = ChartIndicatorDrawStyles.Histogram,
+                Style = DrawStyles.Histogram,
                 Color = Colors.LightGray
             };
 

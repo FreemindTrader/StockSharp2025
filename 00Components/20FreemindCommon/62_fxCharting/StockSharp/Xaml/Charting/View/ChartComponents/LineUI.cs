@@ -24,7 +24,7 @@ namespace StockSharp.Xaml.Charting
     public class LineUI : ChartElement<LineUI>, ICloneable<IChartElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private TASignalSymbol           _signalType;
-        private ChartIndicatorDrawStyles _indicatorDrawStyle;
+        private DrawStyles _indicatorDrawStyle;
         private double                   _dataPointWidth = double.NaN;
 
         private IScichartSurfaceVM _scichartSurfaceVM;
@@ -72,7 +72,7 @@ namespace StockSharp.Xaml.Charting
                 {
                     _pointSize = currentDatapointWidth;
 
-                    if ( _indicatorDrawStyle == ChartIndicatorDrawStyles.Dot )
+                    if ( _indicatorDrawStyle == DrawStyles.Dot )
                     {
                         PointMarker = CreatePointMarker( );
                     }
@@ -169,7 +169,7 @@ namespace StockSharp.Xaml.Charting
         }
 
         [Display( Description = "Str1992", Name = "Str1946", Order = 70, ResourceType = typeof( LocalizedStrings ) )]
-        public ChartIndicatorDrawStyles Style
+        public DrawStyles Style
         {
             get
             {
@@ -278,9 +278,9 @@ namespace StockSharp.Xaml.Charting
         {
             IPointMarker point = null;
 
-            var dimension = Style == ChartIndicatorDrawStyles.Dot ? StrokeThickness : Math.Max( 8.0, 2.0 * StrokeThickness );
+            var dimension = Style == DrawStyles.Dot ? StrokeThickness : Math.Max( 8.0, 2.0 * StrokeThickness );
 
-            if ( Style == ChartIndicatorDrawStyles.Dot )
+            if ( Style == DrawStyles.Dot )
             {
                 if ( SignalType == TASignalSymbol.Ellipse )
                 {
@@ -450,7 +450,7 @@ namespace StockSharp.Xaml.Charting
         {
             ControlTemplate templ = new ControlTemplate( );
             templ.VisualTree = new FrameworkElementFactory( typeof( Ellipse ) );
-            double num = Style == ChartIndicatorDrawStyles.Dot ?   StrokeThickness : Math.Max( 8.0, 2.0 *   StrokeThickness );
+            double num = Style == DrawStyles.Dot ?   StrokeThickness : Math.Max( 8.0, 2.0 *   StrokeThickness );
             templ.VisualTree.SetValue( Shape.FillProperty, new SolidColorBrush( XamlHelper.ToTransparent( Color, 150 ) ) );
             templ.VisualTree.SetValue( FrameworkElement.WidthProperty, num );
             templ.VisualTree.SetValue( FrameworkElement.HeightProperty, num );
@@ -491,7 +491,7 @@ namespace StockSharp.Xaml.Charting
             AdditionalColor = storage.GetValue( "AdditionalColor", 0 ).ToColor( );
             StrokeThickness = storage.GetValue( "StrokeThickness", 0 );
             AntiAliasing    = storage.GetValue( "AntiAliasing", false );
-            Style           = storage.GetValue<ChartIndicatorDrawStyles>( "Style", 0 );
+            Style           = storage.GetValue<DrawStyles>( "Style", 0 );
             ShowAxisMarker  = storage.GetValue( "ShowAxisMarker", false );
         }
 

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StockSharp.Xaml.Charting
 {
-    public enum ChartIndicatorDrawStyles
+    public enum DrawStyles
     {
         [Display( Name = "Str1898"   , ResourceType = typeof( LocalizedStrings ) )] Line,
         [Display( Name = "Str1972"   , ResourceType = typeof( LocalizedStrings ) )] NoGapLine,

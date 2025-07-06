@@ -124,35 +124,35 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public BandsUI CreateCurve( string title, Color color, ChartIndicatorDrawStyles style, Guid id = default( Guid ) )
+        public BandsUI CreateCurve( string title, Color color, DrawStyles style, Guid id = default( Guid ) )
         {
             return CreateCurve( title, color, color, style, id );
         }
 
-        public BandsUI CreateCurve( string title, Color color, Color secondColor, ChartIndicatorDrawStyles style, Guid id = default( Guid ) )
+        public BandsUI CreateCurve( string title, Color color, Color secondColor, DrawStyles style, Guid id = default( Guid ) )
         {
             if ( title == null )
             {
                 throw new ArgumentNullException( nameof( title ) );
             }
                 
-            if ( style == ChartIndicatorDrawStyles.Band || style == ChartIndicatorDrawStyles.Area )
+            if ( style == DrawStyles.Band || style == DrawStyles.Area )
             {
-                style = ChartIndicatorDrawStyles.BandOneValue;
+                style = DrawStyles.BandOneValue;
             }
                 
             var band = new BandsUI( );
 
             band.FullTitle             = title;
-            band.Style                 = ChartIndicatorDrawStyles.BandOneValue;
+            band.Style                 = DrawStyles.BandOneValue;
             band.Line1.ShowAxisMarker  = true;
             band.Line1.Color           = color;
-            band.Line1.AdditionalColor = style != ChartIndicatorDrawStyles.BandOneValue ? Colors.Transparent : color.ToTransparent( 50 );
+            band.Line1.AdditionalColor = style != DrawStyles.BandOneValue ? Colors.Transparent : color.ToTransparent( 50 );
             band.Line2.Color           = secondColor;
-            band.Line2.AdditionalColor = style != ChartIndicatorDrawStyles.BandOneValue ? Colors.Transparent : secondColor.ToTransparent( 50 );
+            band.Line2.AdditionalColor = style != DrawStyles.BandOneValue ? Colors.Transparent : secondColor.ToTransparent( 50 );
             
 
-            if ( style != ChartIndicatorDrawStyles.BandOneValue )
+            if ( style != DrawStyles.BandOneValue )
             {
                 band.Line2.IsVisible = false;
                 band.AdditionalName( "Line2" );
@@ -245,16 +245,16 @@ namespace StockSharp.Xaml.Charting
             
         }
 
-        private static ChartIndicatorDrawStyles GetDrawStylesByLineStyle( LineChartStyles lineStyles )
+        private static DrawStyles GetDrawStylesByLineStyle( LineChartStyles lineStyles )
         {
             switch ( lineStyles )
             {
                 case LineChartStyles.Area:
-                    return ChartIndicatorDrawStyles.BandOneValue;
+                    return DrawStyles.BandOneValue;
                 case LineChartStyles.Line:
-                    return ChartIndicatorDrawStyles.Line;
+                    return DrawStyles.Line;
                 case LineChartStyles.DashedLine:
-                    return ChartIndicatorDrawStyles.DashedLine;
+                    return DrawStyles.DashedLine;
                 default:
                     throw new ArgumentException( "style" );
             }

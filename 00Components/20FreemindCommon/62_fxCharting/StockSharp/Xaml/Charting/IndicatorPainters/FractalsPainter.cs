@@ -17,9 +17,9 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
             _upUI           = new LineUI( ) { Color = Colors.Green };
             _downUI         = new LineUI( ) { Color = Colors.Red };
             
-            Down.Style      = ChartIndicatorDrawStyles.Dot;
+            Down.Style      = DrawStyles.Dot;
             Down.SignalType = TASignalSymbol.PositiveDivergence;
-            Up.Style        = ChartIndicatorDrawStyles.Dot;
+            Up.Style        = DrawStyles.Dot;
             Up.SignalType   = TASignalSymbol.NegativeDivergence;
 
             Down.StrokeThickness = 4;

@@ -7,7 +7,7 @@ namespace StockSharp.Xaml.Charting
     {
         public BubbleLineUI( )
         {
-            Style = ChartIndicatorDrawStyles.Bubble;
+            Style = DrawStyles.Bubble;
         }
     }
 }

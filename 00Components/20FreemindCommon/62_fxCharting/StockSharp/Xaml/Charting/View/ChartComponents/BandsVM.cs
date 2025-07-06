@@ -50,12 +50,12 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
     protected override void Init( )
     {
         base.Init( );
-        ChartIndicatorDrawStyles[ ] lineStyle = new ChartIndicatorDrawStyles[ 4 ]
+        DrawStyles[ ] lineStyle = new DrawStyles[ 4 ]
                                                                                 {
-                                                                                    ChartIndicatorDrawStyles.Line,
-                                                                                    ChartIndicatorDrawStyles.NoGapLine,
-                                                                                    ChartIndicatorDrawStyles.StepLine,
-                                                                                    ChartIndicatorDrawStyles.DashedLine
+                                                                                    DrawStyles.Line,
+                                                                                    DrawStyles.NoGapLine,
+                                                                                    DrawStyles.StepLine,
+                                                                                    DrawStyles.DashedLine
                                                                                 };
         AddStylePropertyChanging( ChartElement.Line1, "Style", lineStyle );
         AddStylePropertyChanging( ChartElement.Line2, "Style", lineStyle );
@@ -105,7 +105,7 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
     {
         SetIncludeSeries( _lineOneRSerie, false );
         SetIncludeSeries( _lineTwoRSerie, true );
-        SetIncludeSeries( _wholeBandRSerie, ChartElement.Style == ChartIndicatorDrawStyles.Band );
+        SetIncludeSeries( _wholeBandRSerie, ChartElement.Style == DrawStyles.Band );
     }
 
     private void SetupFastBandSeriesAndBinding( )
@@ -167,13 +167,13 @@ internal sealed class BandViewModel< T > : UIHigherVM< BandsUI > where T : struc
         //fastLineSeries.StrokeDashArray = null;
         //fastLineSeries.IsDigitalLine = false;
 
-        //if( line.Style == ChartIndicatorDrawStyles.DashedLine )
+        //if( line.Style == DrawStyles.DashedLine )
         //{
         //    fastLineSeries.StrokeDashArray = new double[ 2 ] { 5.0, 5.0 };
         //}
         //else
         //{
-        //    if( line.Style == ChartIndicatorDrawStyles.StepLine )
+        //    if( line.Style == DrawStyles.StepLine )
         //    {
         //        fastLineSeries.IsDigitalLine = true;
         //    }            

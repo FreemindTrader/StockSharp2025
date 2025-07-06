@@ -139,7 +139,7 @@ namespace StockSharp.Xaml.Charting
         }
 
         [Browsable( false )]
-        public ChartIndicatorDrawStyles DrawStyle
+        public DrawStyles DrawStyle
         {
             get
             {

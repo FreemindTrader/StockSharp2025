@@ -26,8 +26,8 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
                 Color = Colors.Red
             };
 
-            DownVolume.Style = ChartIndicatorDrawStyles.Histogram;
-            UpVolume.Style = ChartIndicatorDrawStyles.Histogram;
+            DownVolume.Style = DrawStyles.Histogram;
+            UpVolume.Style = DrawStyles.Histogram;
 
             AddChildElement( UpVolume );
             AddChildElement( DownVolume );

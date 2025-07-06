@@ -23,8 +23,8 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
                 Color = Colors.Red
             };
             LineUI histogram1_1 = Histogram1;
-            Histogram2.Style = ChartIndicatorDrawStyles.Histogram;
-            histogram1_1.Style = ChartIndicatorDrawStyles.Histogram;
+            Histogram2.Style = DrawStyles.Histogram;
+            histogram1_1.Style = DrawStyles.Histogram;
             LineUI histogram1_2 = Histogram1;
             Histogram2.StrokeThickness = 4;
             histogram1_2.StrokeThickness = 4;

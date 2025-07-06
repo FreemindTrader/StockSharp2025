@@ -56,11 +56,11 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
     protected override void Init( )
     {
         base.Init( );
-        ChartIndicatorDrawStyles[ ] lineStyle = new ChartIndicatorDrawStyles[ 4 ] {
-                                                                                    ChartIndicatorDrawStyles.Line,
-                                                                                    ChartIndicatorDrawStyles.NoGapLine,
-                                                                                    ChartIndicatorDrawStyles.StepLine,
-                                                                                    ChartIndicatorDrawStyles.DashedLine
+        DrawStyles[ ] lineStyle = new DrawStyles[ 4 ] {
+                                                                                    DrawStyles.Line,
+                                                                                    DrawStyles.NoGapLine,
+                                                                                    DrawStyles.StepLine,
+                                                                                    DrawStyles.DashedLine
                                                                                   };
         AddStylePropertyChanging( ChartElement.BidLine, "Style", lineStyle );
         AddStylePropertyChanging( ChartElement.AskLine, "Style", lineStyle );

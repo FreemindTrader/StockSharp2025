@@ -12,7 +12,7 @@ namespace StockSharp.Xaml.Charting
 {
     public sealed class BandsUI : ChartElement< BandsUI >, ICloneable< IChartElement >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
-        private ChartIndicatorDrawStyles _drawStyle = ChartIndicatorDrawStyles.Band;
+        private DrawStyles _drawStyle = DrawStyles.Band;
         private LineUI _lineOne;
         private LineUI _lineTwo;
         private UIChartBaseViewModel _viewModel;
@@ -43,7 +43,7 @@ namespace StockSharp.Xaml.Charting
         }
 
         [Browsable( false )]
-        public ChartIndicatorDrawStyles Style
+        public DrawStyles Style
         {
             get
             {
@@ -55,7 +55,7 @@ namespace StockSharp.Xaml.Charting
                 {
                     return;
                 }
-                if( value != ChartIndicatorDrawStyles.Band && value != ChartIndicatorDrawStyles.BandOneValue )
+                if( value != DrawStyles.Band && value != DrawStyles.BandOneValue )
                 {
                     throw new InvalidOperationException( "LocalizedStrings.Str2063Params.Put( value )" );
                 }
