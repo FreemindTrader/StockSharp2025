@@ -8,12 +8,14 @@ using StockSharp.Algo.Storages;
 using StockSharp.BusinessEntities;
 using StockSharp.Messages;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Media;
+using StockSharp.Charting;
 
 
 namespace StockSharp.Xaml.Charting
@@ -102,7 +104,7 @@ namespace StockSharp.Xaml.Charting
                 }
 
                 init = true;
-                var annoData = new ChartDrawData.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new LabelPlacement?( ( LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
+                var annoData = new ChartDrawData.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( ( SciChart.Charting.Visuals.Annotations.LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
                 var drawData = new ChartDrawData( );
                 drawData.Add( _chartAnnotation, annoData );
                 Chart.Draw( drawData );

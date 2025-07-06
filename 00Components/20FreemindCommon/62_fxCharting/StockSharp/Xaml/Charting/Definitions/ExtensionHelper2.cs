@@ -6,12 +6,15 @@ using StockSharp.Localization;
 using StockSharp.Xaml.Charting;
 using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Linq;
 using StockSharp.Xaml.Charting.CustomAnnotations;
+using StockSharp.Charting;
 
 internal static class ExtensionHelper2
 {
+    // BUG:
     private static readonly IDictionary<ChartAnnotationTypes, Type> _chartAnnotationTypesToType = new PooledDictionary<ChartAnnotationTypes, Type>( )
     {
         { ChartAnnotationTypes.None                             , null },

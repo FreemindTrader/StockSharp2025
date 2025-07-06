@@ -40,7 +40,7 @@ public interface IChartComponent : IChartElement, IChartPart<IChartElement>, INo
         get;
     }
 
-    Func<IComparable, Color?> Colorer
+    Func<IComparable, Color?> WinColorer
     {
         get;
     }

@@ -53,4 +53,20 @@ public enum ChartAnnotationTypes
 	/// </summary>
 	[Display(ResourceType = typeof(LocalizedStrings), Name = LocalizedStrings.RulerKey)]
 	RulerAnnotation,
+
+    /// <summary>
+    /// Fibonacci Retracement 
+    /// </summary>
+    [Display( Name = "FibRetracement", ResourceType = typeof( LocalizedStrings ) )] fxFibonacciRetracementAnnotation,
+
+    /// <summary>
+    /// Fibonacci Extension 
+    /// </summary>
+    [Display( Name = "FibExpansion",   ResourceType = typeof( LocalizedStrings ) )] fxFibonacciExtensionAnnotation,
+
+    /// <summary>
+    /// ElliottWave
+    /// </summary>
+    [Display( Name = "ElliottWave",    ResourceType = typeof( LocalizedStrings ) )] fxElliotWaveAnnotation,
+
 }

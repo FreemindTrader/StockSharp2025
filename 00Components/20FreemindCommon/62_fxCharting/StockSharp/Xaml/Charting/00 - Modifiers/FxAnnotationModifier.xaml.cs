@@ -39,6 +39,7 @@ using StockSharp.Xaml;
 using SciChart.Charting.Visuals.Axes;
 using StockSharp.Xaml.Charting.Xaml;
 using DevExpress.Mvvm.Native;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
@@ -656,7 +657,7 @@ namespace StockSharp.Xaml.Charting
 
             data.IsVisible = new bool?( !s.b.IsHidden );
             data.IsEditable = new bool?( HasAnnotation( s.b ) );
-            data.CoordinateMode = new AnnotationCoordinateMode?( s.b.CoordinateMode );
+            data.CoordinateMode = new SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode?( s.b.CoordinateMode );
 
             data.X1 = IndexToData( s.b.X1, ref s );
             data.X2 = IndexToData( s.b.X2, ref s );
@@ -671,13 +672,13 @@ namespace StockSharp.Xaml.Charting
             else if ( s.b is HorizontalLineAnnotation hLine )
             {
                 data.HorizontalAlignment = new HorizontalAlignment?( hLine.HorizontalAlignment );
-                data.LabelPlacement = new LabelPlacement?( hLine.LabelPlacement );
+                data.LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( hLine.LabelPlacement );
                 data.ShowLabel = new bool?( hLine.ShowLabel );
             }
             else if ( s.b is VerticalLineAnnotation vLine )
             {
                 data.VerticalAlignment = new VerticalAlignment?( vLine.VerticalAlignment );
-                data.LabelPlacement = new LabelPlacement?( vLine.LabelPlacement );
+                data.LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( vLine.LabelPlacement );
                 data.ShowLabel = new bool?( vLine.ShowLabel );
             }
             else if ( s.b is BoxAnnotation box )
@@ -761,7 +762,7 @@ namespace StockSharp.Xaml.Charting
             {
                 double output = ( double )input;
 
-                if ( s.b.CoordinateMode != AnnotationCoordinateMode.Relative && s.b.CoordinateMode != AnnotationCoordinateMode.RelativeY )
+                if ( s.b.CoordinateMode != SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.Relative && s.b.CoordinateMode != SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeY )
                 {
                     return output.To<Decimal>( );
                 }
@@ -784,7 +785,7 @@ namespace StockSharp.Xaml.Charting
                 return ( ( DateTimeOffset ) input ).UtcDateTime;
             }
 
-            if ( s.sCalc is ICategoryCoordinateCalculator && ( s.b.CoordinateMode == AnnotationCoordinateMode.Absolute || s.b.CoordinateMode == AnnotationCoordinateMode.RelativeY ) )
+            if ( s.sCalc is ICategoryCoordinateCalculator && ( s.b.CoordinateMode == SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.Absolute || s.b.CoordinateMode == SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeY ) )
             {
                 throw new InvalidOperationException( LocalizedStrings.UnexpectedCoordTypeParams.Put( input.GetType().Name ) );
             }

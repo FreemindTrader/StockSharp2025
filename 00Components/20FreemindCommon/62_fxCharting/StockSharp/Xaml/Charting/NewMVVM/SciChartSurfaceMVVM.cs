@@ -40,6 +40,7 @@ using System.Windows.Media;
 using SciChart.Charting.Themes;
 using Ecng.Common;
 
+
 public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurfaceVM, IDisposable
 {
     private readonly CachedSynchronizedDictionary<IChartComponent, ParentVM>      _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ParentVM>( );
@@ -1443,7 +1444,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         order.SetBindings( ChartOrderModifier.CanCreateOrdersProperty, Chart, "OrderCreationMode", BindingMode.TwoWay, null, null );
         order.SetBindings( ChartOrderModifier.ShowHorizontalLineProperty, Chart, "CrossHair", BindingMode.OneWay, new InverseBooleanConverter( ), null );
 
-        zoom.SetBindings( ChartModifierBase.IsEnabledProperty, Chart, "AnnotationType", BindingMode.OneWay, new EnumBooleanConverter( ), ChartAnnotationTypes.None.ToString( ) );
+        zoom.SetBindings( ChartModifierBase.IsEnabledProperty, Chart, "AnnotationType", BindingMode.OneWay, new EnumBooleanConverter( ), "None" );
 
         MouseManager.SetMouseEventGroup( ChartModifier, PaneGroup );
     }

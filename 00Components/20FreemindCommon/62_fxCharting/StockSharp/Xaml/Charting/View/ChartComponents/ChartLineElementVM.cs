@@ -296,9 +296,9 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
 
     public bool UpdateDataSeries< TX1 >( IEnumerableEx< ChartDrawData.sxTuple< TX1 > > drawValues ) where TX1 : struct, IComparable
     {
-        if( _lineColorFunction != ChartElement.Colorer )
+        if( _lineColorFunction != ChartElement.WinColorer )
         {
-            _lineColorFunction = ChartElement.Colorer;
+            _lineColorFunction = ChartElement.WinColorer;
             
             _lineSeries.Services?.GetService< ISciChartSurface >( )?.InvalidateElement( );
         }

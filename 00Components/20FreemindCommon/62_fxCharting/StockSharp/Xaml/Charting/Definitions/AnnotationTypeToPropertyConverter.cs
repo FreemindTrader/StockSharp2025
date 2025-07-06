@@ -6,12 +6,14 @@ using StockSharp.Xaml.Charting.Definitions;
 using StockSharp.Xaml.PropertyGrid;
 using System;
 using System.Collections;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Data;
 using System.Windows.Media;
+using StockSharp.Charting;
 
 #pragma warning disable CA1416
 

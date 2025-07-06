@@ -22,7 +22,7 @@ namespace StockSharp.Xaml.Charting;
 //
 // ICloneable<ChartAnnotation>, ICloneable, IEquatable<ChartAnnotation>, IComparable<ChartAnnotation>, IComparable, IChartPart<ChartAnnotation>, , , , , 
 
-public class ChartAnnotation : 
+public class ChartAnnotation :
   ChartElement<ChartAnnotation>,
   IChartElement,
   IChartPart<IChartElement>,
@@ -33,83 +33,83 @@ public class ChartAnnotation :
   IChartComponent,
   IDrawableChartElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private ChartAnnotationTypes \u0023\u003Dzl4Zvkho\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY _baseViewModel;
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    private ChartAnnotationTypes _chartAnnotationTypes;
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    private ChartAnnotationVM _baseViewModel;
 
-  public ChartAnnotation() => this.IsLegend = false;
+    public ChartAnnotation() => this.IsLegend = false;
 
-  [Browsable(false)]
-  public ChartAnnotationTypes Type
-  {
-    get => this.\u0023\u003Dzl4Zvkho\u003D;
-    set
+    [Browsable( false )]
+    public ChartAnnotationTypes Type
     {
-      if (this.\u0023\u003Dzl4Zvkho\u003D == value)
-        return;
-      this.\u0023\u003Dzl4Zvkho\u003D = this.\u0023\u003Dzl4Zvkho\u003D == ChartAnnotationTypes.None ? value : throw new InvalidOperationException(LocalizedStrings.AnnotationTypeCantBeChanged);
+        get => this._chartAnnotationTypes;
+        set
+        {
+            if ( this._chartAnnotationTypes == value )
+                return;
+            this._chartAnnotationTypes = this._chartAnnotationTypes == ChartAnnotationTypes.None ? value : throw new InvalidOperationException( LocalizedStrings.AnnotationTypeCantBeChanged );
+        }
     }
-  }
 
-  Color IDrawableChartElement.Color
-  {
-    return Colors.Transparent;
-  }
-
-  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
-    ScichartSurfaceMVVM _param1)
-  {
-    if (this.Type == ChartAnnotationTypes.None)
-      throw new InvalidOperationException("annotation type is not set");
-    return (UIChartBaseViewModel) (this._baseViewModel = new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh9ket9MPulhZRJwbB45M1w92HjAe5qWGx_96jzkY(this));
-  }
-
-  bool IDrawableChartElement.StartDrawing(
-    IEnumerableEx<ChartDrawData.IDrawValue> _param1)
-  {
-    return this._baseViewModel.Draw(_param1);
-  }
-
-  void IDrawableChartElement.StartDrawing()
-  {
-    this._baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
-  }
-
-  bool IChartComponent.\u0023\u003Dzo13esGCwfQJn\u0024h2kOXY\u0024_eaJHoQjhAXNN2tnYbe19cEa5grTJw\u003D\u003D(
-    ChartAxisType? _param1,
-    ChartAxisType? _param2)
-  {
-    return !_param2.HasValue || _param2.GetValueOrDefault() == ChartAxisType.Numeric;
-  }
-
-  protected override bool OnDraw(ChartDrawData data)
-  {
-    ChartDrawData.AnnotationData annotationData = data.\u0023\u003Dzp_r3R3U\u003D((IChartAnnotationElement) this);
-    if (annotationData == null)
-      return false;
-    return ((IDrawableChartElement) this).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>) new ChartDrawData.IDrawValue[1]
+    Color IDrawableChartElement.Color
     {
+    return Colors.Transparent;
+    }
+
+    UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+      ScichartSurfaceMVVM _param1 )
+    {
+        if ( this.Type == ChartAnnotationTypes.None )
+            throw new InvalidOperationException( "annotation type is not set" );
+        return ( UIChartBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
+    }
+
+    bool IDrawableChartElement.StartDrawing(
+      IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+    {
+        return this._baseViewModel.Draw( _param1 );
+    }
+
+    void IDrawableChartElement.StartDrawing()
+    {
+        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+    }
+
+    bool IChartComponent.CheckAxesCompatible(
+      ChartAxisType? _param1,
+      ChartAxisType? _param2)
+    {
+        return !_param2.HasValue || _param2.GetValueOrDefault() == ChartAxisType.Numeric;
+    }
+
+    protected override bool OnDraw( ChartDrawData data )
+    {
+        ChartDrawData.AnnotationData annotationData = data.GetAnnotation( ( IChartAnnotationElement ) this );
+        if ( annotationData == null )
+            return false;
+        return ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( ( IEnumerable<ChartDrawData.IDrawValue> ) new ChartDrawData.IDrawValue[ 1 ]
+        {
       (ChartDrawData.IDrawValue) annotationData
-    }, 1));
-  }
+        }, 1 ) );
+    }
 
-  internal override ChartAnnotation Clone(ChartAnnotation _param1)
-  {
-    base.Clone(_param1);
-    _param1.Type = _param1.Type;
-    return _param1;
-  }
+    internal override ChartAnnotation Clone( ChartAnnotation _param1 )
+    {
+        base.Clone( _param1 );
+        _param1.Type = _param1.Type;
+        return _param1;
+    }
 
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    this.Type = storage.GetValue<ChartAnnotationTypes>("Type", this.Type);
-  }
+    public override void Load( SettingsStorage storage )
+    {
+        base.Load( storage );
+        this.Type = storage.GetValue<ChartAnnotationTypes>( "Type", this.Type );
+    }
 
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<ChartAnnotationTypes>("Type", this.Type);
-  }
+    public override void Save( SettingsStorage storage )
+    {
+        base.Save( storage );
+        storage.SetValue<ChartAnnotationTypes>( "Type", this.Type );
+    }
 }

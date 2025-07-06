@@ -73,7 +73,7 @@ public abstract class ChartElement<T> :
         private set => this._chartArea = value;
     }
 
-    IChartArea IChartElement.PersistentChartArea => ( IChartArea ) this._persistentChartArea;
+    public IChartArea PersistentChartArea => ( IChartArea ) this._persistentChartArea;
 
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "Name", Description = "NameDot", GroupName = "Common", Order = 1000 )]
     [Attribute0( true )]
@@ -147,28 +147,37 @@ public abstract class ChartElement<T> :
         }
     }
 
-    [Browsable( false )]
-    public Func<IComparable, System.Windows.Media.Color?> Colorer
+    
+    public Func<IComparable, System.Windows.Media.Color?> WinColorer
     {
         get
         {
-            return this._parentElement?.Colorer ?? this._mediaColor;
+            return this._parentElement?.WinColorer ?? this._mediaColor;
         }
         set => this._mediaColor = value;
     }
 
-    Func<IComparable, System.Drawing.Color?> IChartElement.Colorer
+    public Func<IComparable, System.Drawing.Color?> Colorer
     {
         get => this._drawingColor;
         set
-        {
-            ChartElement<T>.SomePrivateSealedClass u8Jor1ugvGeCvjho = new ChartElement<T>.SomePrivateSealedClass();
-            u8Jor1ugvGeCvjho._IComparable = value;
-            this._drawingColor = u8Jor1ugvGeCvjho._IComparable;
+        {            
+            this._drawingColor = value;
             if ( this._drawingColor == null )
-                this.Colorer = ( Func<IComparable, System.Windows.Media.Color?> ) null;
+            {
+                this.WinColorer = null;
+            }
+
             else
-                this.Colorer = new Func<IComparable, System.Windows.Media.Color?>( u8Jor1ugvGeCvjho.SomeMethod034 );
+            {
+                this.WinColorer = new Func<IComparable, System.Windows.Media.Color?>( p =>
+                {
+
+
+                    return !value( p ).HasValue ? new System.Windows.Media.Color?() : new System.Windows.Media.Color?( value( p ).GetValueOrDefault().ToWpf() );
+
+                } );
+            }            
         }
     }
 
@@ -437,9 +446,9 @@ public abstract class ChartElement<T> :
         Func<IComparable, System.Drawing.Color?> _IComparable;
 
         internal System.Windows.Media.Color? SomeMethod034(
-          IComparable _param1 )
+          IComparable p )
         {
-            System.Drawing.Color? nullable = this._IComparable(_param1);
+            System.Drawing.Color? nullable = this._IComparable(p);
             ref System.Drawing.Color? local = ref nullable;
             return !local.HasValue ? new System.Windows.Media.Color?() : new System.Windows.Media.Color?( local.GetValueOrDefault().ToWpf() );
         }

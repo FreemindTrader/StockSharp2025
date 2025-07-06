@@ -8,6 +8,7 @@ using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
 using System.Windows;
 using MoreLinq;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
