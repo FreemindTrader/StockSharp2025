@@ -1462,9 +1462,9 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         if ( _annotationModifier != null )
         {
-            if ( annotation is AnnotationUI )
+            if ( annotation is ChartAnnotation )
             {
-                _annotationModifier.SetupAnnotation( ( AnnotationUI )annotation, data );
+                _annotationModifier.SetupAnnotation( ( ChartAnnotation )annotation, data );
             }
         }
     }
@@ -1473,10 +1473,10 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         if ( _annotationModifier != null )
         {
-            if ( annotation is AnnotationUI )
+            if ( annotation is ChartAnnotation )
             {
                 
-                _annotationModifier.RemoveAnnotation( ( AnnotationUI )annotation );
+                _annotationModifier.RemoveAnnotation( ( ChartAnnotation )annotation );
             }
         }
     }

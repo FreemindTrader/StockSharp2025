@@ -46,12 +46,12 @@ namespace StockSharp.Xaml.Charting
 
         void RemoveElement( ChartArea area, IChartElement element );
 
-        void InvokeAnnotationCreatedEvent ( AnnotationUI annotation );
+        void InvokeAnnotationCreatedEvent ( ChartAnnotation annotation );
 
-        void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData );
+        void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData );
 
-        void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData );
+        void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData );
 
-        void InvokeAnnotationDeletedEvent ( AnnotationUI annotation );
+        void InvokeAnnotationDeletedEvent ( ChartAnnotation annotation );
     }
 }

@@ -115,13 +115,13 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<Order> CancelOrder;
 
-        public event Action<AnnotationUI> AnnotationCreated;
+        public event Action<ChartAnnotation> AnnotationCreated;
 
-        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationModified;
+        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationModified;
 
-        public event Action<AnnotationUI> AnnotationDeleted;
+        public event Action<ChartAnnotation> AnnotationDeleted;
 
-        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationSelected;
+        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
 
         public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;
 
@@ -582,43 +582,43 @@ namespace StockSharp.Xaml.Charting
             Upload( ShareSettings.FileName, !ShareSettings.Published );
         }
 
-        public void InvokeAnnotationCreatedEvent( AnnotationUI annotation )
+        public void InvokeAnnotationCreatedEvent( ChartAnnotation annotation )
         {
             AnnotationCreated?.Invoke( annotation );
         }
 
-        public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
+        public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
         {
             AnnotationModified?.Invoke( annotation, aData );
         }
 
-        public void InvokeAnnotationDeletedEvent( AnnotationUI annotation )
+        public void InvokeAnnotationDeletedEvent( ChartAnnotation annotation )
         {
             AnnotationDeleted?.Invoke( annotation );
         }
 
-        public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
+        public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
         {
             AnnotationSelected?.Invoke( annotation, aData );
         }
 
 
-        //public void InvokeAnnotationCreatedEvent( AnnotationUI annotation )
+        //public void InvokeAnnotationCreatedEvent( ChartAnnotation annotation )
         //{
         //    ( ( IChart )Chart ).InvokeAnnotationCreatedEvent( annotation );
         //}
 
-        //public void InvokeAnnotationModifiedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
+        //public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
         //{
         //    ( ( IChart )Chart ).InvokeAnnotationModifiedEvent( annotation, aData );
         //}
 
-        //public void InvokeAnnotationSelectedEvent( AnnotationUI annotation, ChartDrawData.sAnnotation aData )
+        //public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
         //{
         //    ( ( IChart )Chart ).InvokeAnnotationSelectedEvent( annotation, aData );
         //}
 
-        //public void InvokeAnnotationDeletedEvent( AnnotationUI annotation )
+        //public void InvokeAnnotationDeletedEvent( ChartAnnotation annotation )
         //{
         //    ( ( IChart )Chart ).InvokeAnnotationDeletedEvent( annotation );
         //}

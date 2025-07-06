@@ -10,12 +10,12 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class AnnotationUI : ChartElement< AnnotationUI >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public class ChartAnnotation : ChartElement< ChartAnnotation >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private ChartAnnotationTypes _annotatinType;
-        private AnnotationVM _viewModel;
+        private ChartAnnotationVM _viewModel;
 
-        public AnnotationUI( )
+        public ChartAnnotation( )
         {
             IsLegend = false;
         }
@@ -58,7 +58,7 @@ namespace StockSharp.Xaml.Charting
                 throw new InvalidOperationException( "annotation type is not set" );
             }
 
-            return _viewModel = new AnnotationVM( this );
+            return _viewModel = new ChartAnnotationVM( this );
         }
 
         bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > data )
@@ -92,7 +92,7 @@ namespace StockSharp.Xaml.Charting
             return ( ( IDrawableChartElement )this ).StartDrawing(  new ChartDrawData.IDrawValue[ 1 ] { annotationData } .ToEx( 1 ) );
         }
 
-        internal override AnnotationUI Clone( AnnotationUI annotation )
+        internal override ChartAnnotation Clone( ChartAnnotation annotation )
         {
             base.Clone( annotation );
             annotation.Type = annotation.Type;

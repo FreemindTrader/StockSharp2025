@@ -45,7 +45,7 @@ namespace StockSharp.Xaml.Charting
 
         public static readonly DependencyProperty UserAnnotationTypeProperty = DependencyProperty.Register( nameof( UserAnnotationType ), typeof( ChartAnnotationTypes ), typeof( ultrachartannotationmodifier ), new PropertyMetadata( ChartAnnotationTypes.None, new PropertyChangedCallback( OnUserAnnotationTypePropertyChanged ) ) );
 
-        private readonly PairSet<AnnotationBase, AnnotationUI> _baseToAnnotationPair = new PairSet<AnnotationBase, AnnotationUI>( );
+        private readonly PairSet<AnnotationBase, ChartAnnotation> _baseToAnnotationPair = new PairSet<AnnotationBase, ChartAnnotation>( );
         private readonly UltrachartAnnotationEditor _annotationEditor = new UltrachartAnnotationEditor( );
         private readonly PooledSet<AnnotationBase> _annotationBaseSet = new PooledSet<AnnotationBase>( );
         private readonly ChartArea _chartArea;
@@ -269,7 +269,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-            var chartAnnotation = new AnnotationUI( )
+            var chartAnnotation = new ChartAnnotation( )
             {
                 Type = justAddedAnnoType
             };
@@ -329,7 +329,7 @@ namespace StockSharp.Xaml.Charting
                                                                         {
                                                                             _annotationCollection.Remove( b );
 
-                                                                            AnnotationUI annotation;
+                                                                            ChartAnnotation annotation;
                                                                             if ( !_baseToAnnotationPair.TryGetValue( b, out annotation ) )
                                                                             {
                                                                                 return;
@@ -577,7 +577,7 @@ namespace StockSharp.Xaml.Charting
             return data;
         }
 
-        public void RemoveAnnotation( AnnotationUI annotation )
+        public void RemoveAnnotation( ChartAnnotation annotation )
         {
             AnnotationBase annotationBase;
             if ( !_baseToAnnotationPair.TryGetKey( annotation, out annotationBase ) )
@@ -592,7 +592,7 @@ namespace StockSharp.Xaml.Charting
             ChartArea?.InvokeAnnotationDeletedEvent( annotation );
         }
 
-        public void SetupAnnotation( AnnotationUI annotation, ChartDrawData.sAnnotation data )
+        public void SetupAnnotation( ChartAnnotation annotation, ChartDrawData.sAnnotation data )
         {
             Struct0 s;
             //bool? nullable;
@@ -882,7 +882,7 @@ namespace StockSharp.Xaml.Charting
             {
                 _annotationCollection.Remove( b );
 
-                AnnotationUI annotation;
+                ChartAnnotation annotation;
                 if ( !_baseToAnnotationPair.TryGetValue( b, out annotation ) )
                 {
                     return;

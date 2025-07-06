@@ -3,9 +3,9 @@ using StockSharp.Xaml.Charting;
 using System;
 using System.Linq;
 
-internal sealed class AnnotationVM : UIHigherVM< AnnotationUI >
+internal sealed class ChartAnnotationVM : UIHigherVM< ChartAnnotation >
 {
-    public AnnotationVM( AnnotationUI annotation ) : base( annotation )
+    public ChartAnnotationVM( ChartAnnotation annotation ) : base( annotation )
     {
     }
 

@@ -138,7 +138,7 @@ namespace StockSharp.Xaml.Charting
 
         private PooledDictionary<BandsUI, PooledList<sxTuple<double>>> _bandValueMap;
 
-        private PooledDictionary<AnnotationUI, sAnnotation> _annotationMap;
+        private PooledDictionary<ChartAnnotation, sAnnotation> _annotationMap;
 
         public PooledDictionary<IndicatorUI, IndicatorValuesList> GetIndicatorMap( )
         {
@@ -180,9 +180,9 @@ namespace StockSharp.Xaml.Charting
             return _bandValueMap ?? ( _bandValueMap = new PooledDictionary<BandsUI, PooledList<sxTuple<double>>>( ) );
         }
 
-        public PooledDictionary<AnnotationUI, sAnnotation> GetAnnotationMap( )
+        public PooledDictionary<ChartAnnotation, sAnnotation> GetAnnotationMap( )
         {
-            return _annotationMap ?? ( _annotationMap = new PooledDictionary<AnnotationUI, sAnnotation>( ) );
+            return _annotationMap ?? ( _annotationMap = new PooledDictionary<ChartAnnotation, sAnnotation>( ) );
         }
 
         //public ChartDrawData( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> values )
@@ -275,10 +275,10 @@ namespace StockSharp.Xaml.Charting
         /// <param name="data">Annotation draw data.</param>
         /// <returns>
         /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
-        public void Add( AnnotationUI element, sAnnotation data )
+        public void Add( ChartAnnotation element, sAnnotation data )
         {
-            PooledDictionary<AnnotationUI, sAnnotation> dictionary = GetAnnotationMap( );
-            AnnotationUI index = element;
+            PooledDictionary<ChartAnnotation, sAnnotation> dictionary = GetAnnotationMap( );
+            ChartAnnotation index = element;
             sAnnotation annotationData = data;
             if ( annotationData == null )
                 throw new ArgumentNullException( "annotationData is null" );
@@ -489,7 +489,7 @@ namespace StockSharp.Xaml.Charting
         }
 
 
-        public sAnnotation GetAnnotation( AnnotationUI annotation )
+        public sAnnotation GetAnnotation( ChartAnnotation annotation )
         {
             if ( _annotationMap == null )
             {

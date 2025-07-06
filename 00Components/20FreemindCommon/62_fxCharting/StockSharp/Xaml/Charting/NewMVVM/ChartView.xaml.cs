@@ -751,13 +751,13 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<Order> CancelOrder;
 
-        public event Action<AnnotationUI> AnnotationCreated;
+        public event Action<ChartAnnotation> AnnotationCreated;
 
-        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationModified;
+        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationModified;
 
-        public event Action<AnnotationUI> AnnotationDeleted;
+        public event Action<ChartAnnotation> AnnotationDeleted;
 
-        public event Action<AnnotationUI, ChartDrawData.sAnnotation> AnnotationSelected;
+        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
 
         public event Action<CandlestickUI, CandleSeries> SubscribeCandleElement;
 
@@ -1354,22 +1354,22 @@ namespace StockSharp.Xaml.Charting
             UnSubscribeElement?.Invoke( element );
         }
 
-        void IChart.InvokeAnnotationCreatedEvent( AnnotationUI annotation )
+        void IChart.InvokeAnnotationCreatedEvent( ChartAnnotation annotation )
         {
             AnnotationCreated?.Invoke( annotation );
         }
 
-        void IChart.InvokeAnnotationModifiedEvent( AnnotationUI a, ChartDrawData.sAnnotation d )
+        void IChart.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawData.sAnnotation d )
         {
             AnnotationModified?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationSelectedEvent( AnnotationUI a, ChartDrawData.sAnnotation d )
+        void IChart.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawData.sAnnotation d )
         {
             AnnotationSelected?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationDeletedEvent( AnnotationUI a )
+        void IChart.InvokeAnnotationDeletedEvent( ChartAnnotation a )
         {
             AnnotationDeleted?.Invoke( a );
         }

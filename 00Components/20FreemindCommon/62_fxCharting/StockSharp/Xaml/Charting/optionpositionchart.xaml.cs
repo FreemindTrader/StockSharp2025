@@ -22,7 +22,7 @@ namespace StockSharp.Xaml.Charting
     {
         private readonly PooledDictionary<Security, OptionNowExpLines> _securityOptionLines = new PooledDictionary<Security, OptionNowExpLines>( );
         private Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> _chartParamFunc = _premiumFunc;
-        private readonly AnnotationUI _chartAnnotation = new AnnotationUI( ) { Type = ChartAnnotationTypes.VerticalLineAnnotation };
+        private readonly ChartAnnotation _chartAnnotation = new ChartAnnotation( ) { Type = ChartAnnotationTypes.VerticalLineAnnotation };
         private readonly CachedSynchronizedSet<Security> _options = new CachedSynchronizedSet<Security>( );
         private bool _showExpiration = true;
         private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> _premiumFunc = ( b, d, t ) => b.Premium( t, null, d );
@@ -433,7 +433,7 @@ namespace StockSharp.Xaml.Charting
 
         private void Clear( )
         {
-            GetChartAreaElments( ).RemoveRange( GetChartAreaElments( ).Where( e => ( ( AnnotationUI )e ) != _chartAnnotation ).ToArray( ) );
+            GetChartAreaElments( ).RemoveRange( GetChartAreaElments( ).Where( e => ( ( ChartAnnotation )e ) != _chartAnnotation ).ToArray( ) );
             _securityOptionLines.Clear( );
             _optionNowExpLines = null;
         }
