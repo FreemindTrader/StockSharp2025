@@ -12,35 +12,28 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
-public class ChartAnnotation :
-  ChartElement<ChartAnnotation>,
-  IChartElement,
-  IChartPart<IChartElement>,
-  INotifyPropertyChanged,
-  INotifyPropertyChanging,
-  IPersistable,
-  IChartAnnotationElement,
-  IChartComponent,
-  IDrawableChartElement
+/// <summary>Annotation.</summary>
+public class ChartAnnotation : ChartElement<ChartAnnotation>,
+                                  IChartElement,
+                                  IChartPart<IChartElement>,
+                                  INotifyPropertyChanged,
+                                  INotifyPropertyChanging,
+                                  IPersistable,
+                                  IChartAnnotationElement,
+                                  IChartComponent,
+                                  IDrawableChartElement
 {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private ChartAnnotationTypes _chartAnnotationTypes;
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private ChartAnnotationVM _baseViewModel;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartAnnotation" />.
+    /// </summary>
     public ChartAnnotation() => this.IsLegend = false;
 
-    //[Browsable( false )]
-    //public ChartAnnotationTypes Type
-    //{
-    //    get => this._chartAnnotationTypes;
-    //    set
-    //    {
-    //        if ( this._chartAnnotationTypes == value )
-    //            return;
-    //        this._chartAnnotationTypes = this._chartAnnotationTypes == ChartAnnotationTypes.None ? value : throw new InvalidOperationException( LocalizedStrings.AnnotationTypeCantBeChanged );
-    //    }
-    //}
+    
 
     public Color Color
     {

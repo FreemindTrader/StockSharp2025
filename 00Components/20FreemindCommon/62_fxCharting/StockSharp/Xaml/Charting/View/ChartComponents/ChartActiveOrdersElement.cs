@@ -16,9 +16,18 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting;
 
+/// <summary>The chart element representing active orders.</summary>
 
 [Display( ResourceType = typeof( LocalizedStrings ), Name = "ActiveOrders" )]
-public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartActiveOrdersElement, IChartComponent, IDrawableChartElement
+public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
+                                        IChartElement, 
+                                        IChartPart<IChartElement>, 
+                                        INotifyPropertyChanged, 
+                                        INotifyPropertyChanging, 
+                                        IPersistable, 
+                                        IChartActiveOrdersElement, 
+                                        IChartComponent, 
+                                        IDrawableChartElement
 {
     
     private System.Windows.Media.Color _buyPendingColor;
@@ -43,6 +52,9 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
     
     private UIChartBaseViewModel _baseViewModel;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartActiveOrdersElement" />.
+    /// </summary>
     public ChartActiveOrdersElement()
     {
         this.SellColor = Colors.DarkRed;
@@ -56,6 +68,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         this.IsAnimationEnabled = true;
     }
 
+    /// <summary>Color of Buy order in non-active state.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "BuyPendingColor", Description = "BuyPendingColorDot", Order = 1 )]
     public System.Windows.Media.Color BuyPendingColor
     {
@@ -66,6 +79,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+    /// <summary>Color of Buy order in active state.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "BuyColor", Description = "BuyColorDot", Order = 2 )]
     public System.Windows.Media.Color BuyColor
     {
@@ -73,6 +87,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         set => this.SetField<System.Windows.Media.Color>( ref this._buyColor, value, nameof( BuyColor ) );
     }
 
+    /// <summary>Color of blinking in partially filled state (Buy).</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "BuyBlinkColor", Description = "BuyBlinkColorDot", Order = 3 )]
     public System.Windows.Media.Color BuyBlinkColor
     {
@@ -83,6 +98,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+    /// <summary>Color of Sell order in non-active state.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "SellPendingColor", Description = "SellPendingColorDot", Order = 4 )]
     public System.Windows.Media.Color SellPendingColor
     {
@@ -93,6 +109,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+    /// <summary>Color of Sell order in active state.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "SellColor", Description = "SellColorDot", Order = 5 )]
     public System.Windows.Media.Color SellColor
     {
@@ -100,6 +117,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         set => this.SetField<System.Windows.Media.Color>( ref this._sellColor, value, nameof( SellColor ) );
     }
 
+    /// <summary>Color of blinking in partially filled state (Sell).</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "SellBlinkColor", Description = "SellBlinkColorDot", Order = 6 )]
     public System.Windows.Media.Color SellBlinkColor
     {
@@ -110,6 +128,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+    /// <summary>Cancel order button color.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "CancelButtonColor", Description = "CancelButtonColorDot", Order = 7 )]
     public System.Windows.Media.Color CancelButtonColor
     {
@@ -120,6 +139,8 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+
+    /// <summary>Cancel order button background color.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "CancelButtonBgColor", Description = "CancelButtonBgColorDot", Order = 8 )]
     public System.Windows.Media.Color CancelButtonBackground
     {
@@ -130,6 +151,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+    /// <summary>Text color.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "FontColor", Description = "FontColorDot", Order = 9 )]
     public System.Windows.Media.Color ForegroundColor
     {
@@ -140,6 +162,8 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
         }
     }
 
+
+    /// <summary>Show chart element.</summary>
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "Animation", Description = "AnimationDot", Order = 10 )]
     public bool IsAnimationEnabled
     {

@@ -45,7 +45,7 @@ public class ChartLineElement :
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003DzCGVfeT7yJc5e = true;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  private DrawStyles \u0023\u003DzOoq7N0E\u003D;
+  private DrawStyles _drawStyle;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
   private bool \u0023\u003Dzvu7bxO54zKRR;
   [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -109,13 +109,13 @@ public class ChartLineElement :
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Style", Description = "StyleRender", Order = 70)]
   public DrawStyles Style
   {
-    get => this.\u0023\u003DzOoq7N0E\u003D;
+    get => this._drawStyle;
     set
     {
-      if (this.\u0023\u003DzOoq7N0E\u003D == value)
+      if (this._drawStyle == value)
         return;
       this.RaisePropertyValueChanging(nameof (Style), (object) value);
-      this.\u0023\u003DzOoq7N0E\u003D = value;
+      this._drawStyle = value;
       this.DrawTemplate = (ControlTemplate) null;
       this.RaisePropertyChanged(nameof (Style));
     }
