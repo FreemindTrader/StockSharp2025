@@ -35,7 +35,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\00FreemindBase\Ecng.Data\Ecng.Data.csproj" />
       <ProjectReference Include="..\30_fxBars\30_fxBars.csproj" />
     </ItemGroup>
 

@@ -14,8 +14,7 @@ namespace fx.Database
     using System.IO;
     //using StockSharp.Hydra.Core;
     using System.Linq;
-    using Ecng.Data;
-
+    
     public partial class ForexDatabars : DbContext
     {
         static ForexDatabars( )
