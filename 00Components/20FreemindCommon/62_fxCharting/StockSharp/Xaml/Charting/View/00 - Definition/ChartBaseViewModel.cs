@@ -13,7 +13,7 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 public class ChartBaseViewModel : NotifiableObject
 {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+
     private readonly SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>> _propertyChangedMap = new SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>(
         );
 
@@ -22,9 +22,9 @@ public class ChartBaseViewModel : NotifiableObject
     /// </summary>
     public event Action<object, string, object> PropertyValueChanging;
 
-    private void OnPropertyChanging(string propertyName, object propertyValue)
+    private void OnPropertyChanging( string propertyName, object propertyValue )
     {
-        PropertyValueChanging?.Invoke(this, propertyName, propertyValue);
+        PropertyValueChanging?.Invoke( this, propertyName, propertyValue );
     }
 
     /// <summary>
@@ -34,13 +34,13 @@ public class ChartBaseViewModel : NotifiableObject
     /// <param name="field">Property backing field.</param>
     /// <param name="value">New value.</param>
     /// <param name="propertyName">Name of the property.</param>
-    protected bool SetField<T>(ref T field, T value, string propertyName)
+    protected bool SetField<T>( ref T field, T value, string propertyName )
     {
-        if(EqualityComparer<T>.Default.Equals(field, value))
+        if ( EqualityComparer<T>.Default.Equals( field, value ) )
             return false;
-        this.OnPropertyChanging(propertyName, (object) value);
+        this.OnPropertyChanging( propertyName, ( object ) value );
         field = value;
-        this.NotifyChanged(propertyName);
+        this.NotifyChanged( propertyName );
         return true;
     }
 
@@ -60,9 +60,9 @@ public class ChartBaseViewModel : NotifiableObject
     protected void MapPropertyChangeNotification(
         INotifyPropertyChanged source,
         string nameFrom,
-        params string[ ] namesTo)
+        params string[ ] namesTo )
     {
-        if(namesTo != null && namesTo.Length == 0)
+        if ( namesTo != null && namesTo.Length == 0 )
         {
             namesTo = new string[ 1 ] { nameFrom };
         }
@@ -81,17 +81,17 @@ public class ChartBaseViewModel : NotifiableObject
                                         source,
                                         pd =>
                                         {
-                                            pd.PropertyChanged += new PropertyChangedEventHandler(OnPropertyChanged);
+                                            pd.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
                                             return new Dictionary<string, HashSet<string>>();
-                                        }),
+                                        } ),
 
                                     nameFrom,
-                                    p => new HashSet<string>()),
-                        toArray);
-                }));
+                                    p => new HashSet<string>() ),
+                        toArray );
+                } ) );
     }
 
-    private void OnPropertyChanged(object _param1, PropertyChangedEventArgs _param2)
+    private void OnPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
     {
         CollectionHelper.SyncDo(
             this._propertyChangedMap,
@@ -100,14 +100,14 @@ public class ChartBaseViewModel : NotifiableObject
                 {
                     Dictionary<string, HashSet<string>> dictionary;
                     HashSet<string> stringSet;
-                    if(!p.TryGetValue((INotifyPropertyChanged) p, out dictionary) ||
-                        !dictionary.TryGetValue(_param2.PropertyName, out stringSet))
+                    if ( !p.TryGetValue( ( INotifyPropertyChanged ) p, out dictionary ) ||
+                        !dictionary.TryGetValue( _param2.PropertyName, out stringSet ) )
                         return;
 
-                    foreach(string str in stringSet)
+                    foreach ( string str in stringSet )
                     {
-                        NotifyChanged(str);
+                        NotifyChanged( str );
                     }
-                }));
+                } ) );
     }
 }

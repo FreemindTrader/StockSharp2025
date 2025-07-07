@@ -8,6 +8,9 @@ using StockSharp.Xaml.Charting;
 
 namespace StockSharp.Xaml.Charting;
 
+/// <summary>
+/// 
+/// </summary>
 public sealed class ChildVM : ChartBaseViewModel
 {
     private readonly Func< SeriesInfo, Color > _colorFunction;
