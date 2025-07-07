@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using LinqToDB.Tools;
+
 
 #nullable disable
 internal sealed class IndicatorChartSettings : ChartSettingsObjectBase<IIndicator>

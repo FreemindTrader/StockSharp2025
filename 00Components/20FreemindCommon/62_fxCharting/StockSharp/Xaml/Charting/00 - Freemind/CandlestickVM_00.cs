@@ -19,7 +19,8 @@ using StockSharp.Xaml.Charting;
 using StockSharp.Xaml.Charting.ATony;
 using StockSharp.Xaml.Charting.Definitions;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
@@ -30,6 +31,7 @@ using fx.Bars;
 using fx.Algorithm;
 using fx.Indicators;
 using fx.Base;
+using StockSharp.Charting;
 
 #pragma warning disable 067
 

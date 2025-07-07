@@ -16,7 +16,8 @@ using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Xaml.Charting;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -31,6 +32,7 @@ using SciChart.Charting.Visuals;
 using fx.Common;
 using StockSharp.Xaml;
 using StockSharp.Messages;
+using StockSharp.Charting;
 
 
 #pragma warning disable 067
@@ -247,7 +249,7 @@ namespace StockSharp.Xaml.Charting
 
         private void ExecuteRemoveAxisCommand( ChartAxis axis )
         {
-            ChartArea area = axis.ChartArea;
+            IChartArea area = axis.ChartArea;
 
             if ( area.XAxises.Contains( axis ) )
             {
@@ -264,7 +266,8 @@ namespace StockSharp.Xaml.Charting
 
         private bool CanExecuteRemoveAxisCommand( ChartAxis a )
         {
-            if ( IsInteracted && ( a?.ChartArea != null ) && !a.IsDefault )
+            //BUG:
+            if ( IsInteracted && ( a?.ChartArea != null ) /*&& !a.IsDefault*/ )
             {
                 return AllowAddAxis;
             }

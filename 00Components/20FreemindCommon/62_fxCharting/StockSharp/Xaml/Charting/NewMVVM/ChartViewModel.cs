@@ -15,8 +15,10 @@ using System.Windows.Input;
 using MoreLinq;
 using StockSharp.BusinessEntities;
 using StockSharp.Messages;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using StockSharp.Algo.Indicators;
+using StockSharp.Charting;
 
 public sealed partial class ChartViewModel : DependencyObject
 {
@@ -127,7 +129,7 @@ public sealed partial class ChartViewModel : DependencyObject
 
     internal void ExecuteRemoveAxisCommand( ChartAxis axis )
     {
-        ChartArea area = axis.ChartArea;
+        var area = axis.ChartArea;
 
         if ( area.XAxises.Contains( axis ) )
         {
@@ -144,7 +146,7 @@ public sealed partial class ChartViewModel : DependencyObject
 
     private bool CanExecuteRemoveAxisCommand( ChartAxis a )
     {
-        if ( IsInteracted && ( a?.ChartArea != null ) && !a.IsDefault )
+        if ( IsInteracted && ( a?.ChartArea != null ) /*&& !a.IsDefault*/ )
         {
             return AllowAddAxis;
         }
@@ -244,9 +246,9 @@ public sealed partial class ChartViewModel : DependencyObject
         }
     }
 
-    internal void RaiseRebuildCandlesEvent( IChartElement chartUI, CandleSeries candleSeries )
+    internal void RaiseRebuildCandlesEvent( StockSharp.Xaml.Charting.IChartElement chartUI, CandleSeries candleSeries )
     {
-        Action<IChartElement, CandleSeries> rebuildEvent = RebuildCandlesEvent;
+        var rebuildEvent = RebuildCandlesEvent;
         if ( rebuildEvent == null )
             return;
         rebuildEvent( chartUI, candleSeries );
@@ -313,7 +315,7 @@ public sealed partial class ChartViewModel : DependencyObject
         VisbleRangeDp.InitRangeDepProperty( this );
     }
 
-    public void InvokeRemoveElementEvent( IChartElement element )
+    public void InvokeRemoveElementEvent( StockSharp.Xaml.Charting.IChartElement element )
     {
         RemoveElementEvent?.Invoke( element );
     }

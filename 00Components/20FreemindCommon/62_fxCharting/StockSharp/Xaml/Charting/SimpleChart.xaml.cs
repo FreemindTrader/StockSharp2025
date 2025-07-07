@@ -8,11 +8,13 @@ using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Markup;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

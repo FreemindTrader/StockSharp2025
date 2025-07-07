@@ -17,6 +17,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using Ecng.Drawing;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

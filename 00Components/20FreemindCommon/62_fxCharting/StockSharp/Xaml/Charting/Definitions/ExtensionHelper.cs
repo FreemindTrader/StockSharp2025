@@ -11,7 +11,8 @@ using StockSharp.Localization;
 using StockSharp.Xaml.Charting;
 using StockSharp.Xaml.PropertyGrid;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
@@ -24,6 +25,7 @@ using SciChart.Charting.Common.Helpers;
 using SciChart.Core.Framework;
 using SciChart.Charting.Numerics.TickProviders;
 using SciChart.Charting.ChartModifiers;
+using StockSharp.Charting;
 
 internal static class ExtensionHelper
 {
@@ -51,7 +53,7 @@ internal static class ExtensionHelper
         }
     }
 
-    public static AxisBase InitAndSetBinding( this ChartAxis axis, VisbleRangeDp visibleRangeProp, ICommand removeAxisCommand, ICommand resetAxisTimeZoneCommand, IChart theChart )
+    public static AxisBase InitAndSetBinding( this ChartAxis axis, VisbleRangeDp visibleRangeProp, ICommand removeAxisCommand, ICommand resetAxisTimeZoneCommand, StockSharp.Xaml.Charting.IChart theChart )
     {
         AxisBase newAxis = null;
 
@@ -194,7 +196,7 @@ internal static class ExtensionHelper
 
     public sealed class CategoryDateTimeAxisLabelProvider : TradeChartAxisLabelProvider
     {
-        private readonly IChart      _chart;
+        private readonly StockSharp.Xaml.Charting.IChart      _chart;
         private readonly ChartAxis      _chartAxis;
         private CategoryDateTimeAxis _dateTimeAxis;
         private string               _subDayFormat;
@@ -205,7 +207,7 @@ internal static class ExtensionHelper
 
         }
 
-        public CategoryDateTimeAxisLabelProvider( IChart chart, ChartAxis axis )
+        public CategoryDateTimeAxisLabelProvider( StockSharp.Xaml.Charting.IChart chart, ChartAxis axis )
         {
             if ( chart == null )
             {

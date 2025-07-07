@@ -3,10 +3,12 @@ using SciChart.Charting;
 using MoreLinq;
 using StockSharp.Xaml.Charting;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Linq;
 using System.Windows;
 using SciChart.Data.Model;
+using StockSharp.Charting;
 
 public sealed class VisbleRangeDp : DependencyObject
 {

@@ -3,6 +3,7 @@ using Ecng.Common;
 using Ecng.Drawing;
 using Ecng.Serialization;
 using Ecng.Xaml;
+using StockSharp.Charting;
 using StockSharp.Localization;
 using System;
 using System.ComponentModel;

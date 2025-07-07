@@ -3,7 +3,9 @@ using Ecng.Serialization;
 using StockSharp.Algo.Candles;
 using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

@@ -14,7 +14,8 @@ using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Xaml;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -23,6 +24,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using StockSharp.Charting;
 
 #pragma warning disable CA1416
 

@@ -456,7 +456,7 @@ namespace StockSharp.Xaml.Charting
             {
                 bool hasAxis = Contains( axis );
 
-                if( hasAxis && _chartArea.Chart != null && axis.IsDefault )
+                if( hasAxis && _chartArea.Chart != null /*&& axis.IsDefault*/ )
                 {
                     throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
                 }
@@ -475,7 +475,7 @@ namespace StockSharp.Xaml.Charting
             {
                 ChartAxis chartAxis = this[ index ];
 
-                if( chartAxis.IsDefault && _chartArea.Chart != null )
+                if( /*chartAxis.IsDefault &&*/ _chartArea.Chart != null )
                 {
                     throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
                 }

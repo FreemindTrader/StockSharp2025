@@ -1,5 +1,6 @@
 ﻿using Ecng.Serialization;
 using Ecng.Xaml;
+using StockSharp.Charting;
 using StockSharp.Localization;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
