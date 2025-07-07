@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
 using System.Linq;
-using System.Windows;
+using Ecng.Drawing;
 using System.Windows.Data;
 using System.Windows.Media;
 

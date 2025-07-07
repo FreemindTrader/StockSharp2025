@@ -1,4 +1,5 @@
-﻿using StockSharp.Algo.Indicators;
+﻿using Ecng.Drawing;
+using StockSharp.Algo.Indicators;
 
 namespace StockSharp.Xaml.Charting.IndicatorPainters
 {

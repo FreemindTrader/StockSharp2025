@@ -129,8 +129,12 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
 
     protected override bool OnDraw( ChartDrawData data )
     {
-        IEnumerableEx<ChartDrawData.IDrawValue> ienumerableEx = data.GetActiveOrders((IChartBandElement) this);
-        return ienumerableEx != null && !CollectionHelper.IsEmpty<ChartDrawData.IDrawValue>( ( IEnumerable<ChartDrawData.IDrawValue> ) ienumerableEx ) && ( ( IDrawableChartElement ) this ).StartDrawing( ienumerableEx );
+        var drawValue = data.GetBandDrawValues( this );
+        if ( drawValue != null && !drawValue.IsEmpty() )
+        {
+            return ( ( IDrawableChartElement ) this ).StartDrawing( drawValue );
+        }
+        return false;
     }
 
 

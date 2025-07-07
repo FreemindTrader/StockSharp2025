@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic; using fx.Collections;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
+using Ecng.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows;

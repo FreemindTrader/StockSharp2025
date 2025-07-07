@@ -1,5 +1,6 @@
 ﻿using Ecng.Collections;
 using Ecng.Common;
+using Ecng.Drawing;
 using Ecng.Serialization;
 using Ecng.Xaml;
 using StockSharp.Localization;

@@ -8,13 +8,15 @@ using MoreLinq;
 
 using StockSharp.Localization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
+using Ecng.Drawing;
 
 namespace StockSharp.Xaml.Charting
 {

@@ -1,4 +1,5 @@
-﻿using Ecng.Serialization;
+﻿using Ecng.Drawing;
+using Ecng.Serialization;
 using StockSharp.Algo.Indicators;
 using StockSharp.Localization;
 using System.ComponentModel.DataAnnotations;

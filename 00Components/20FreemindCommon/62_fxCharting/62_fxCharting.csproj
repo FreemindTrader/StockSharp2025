@@ -170,6 +170,7 @@
         <Folder Include="themes\" />
     </ItemGroup>
     <ItemGroup>
+        <ProjectReference Include="..\..\00FreemindBase\50_Ecng.Drawing\50_Ecng.Drawing.csproj" />
         <ProjectReference Include="..\56_fxIndicators\56_fxIndicators.csproj" />
     </ItemGroup>
     <ItemGroup>

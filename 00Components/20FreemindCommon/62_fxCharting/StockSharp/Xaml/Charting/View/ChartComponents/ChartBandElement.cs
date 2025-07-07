@@ -1,172 +1,190 @@
-﻿using Ecng.Collections;
+﻿using Ecng.Drawing;
+using DevExpress.Dialogs.Core.View;
+using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
 using Ecng.Xaml;
+using StockSharp.Charting;
 using StockSharp.Localization;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Media;
 
-namespace StockSharp.Xaml.Charting
+#nullable enable
+namespace StockSharp.Xaml.Charting;
+
+/// <summary>The chart element representing a band.</summary>
+public sealed class ChartBandElement : ChartElement<ChartBandElement>,
+                                          IChartElement,
+                                          IChartPart<IChartElement>,
+                                          INotifyPropertyChanged,
+                                          INotifyPropertyChanging,
+                                          IPersistable,
+                                          IChartBandElement,
+                                          IChartComponent,
+                                          IDrawableChartElement
 {
-    public sealed class ChartBandElement : ChartElement< ChartBandElement >, 
-                                            INotifyPropertyChanged, 
-                                            IChartComponent, 
-                                            IDrawableChartElement, 
-                                            ICloneable, 
-                                            INotifyPropertyChanging, 
-                                            IChartElement
+
+    private DrawStyles _drawStyle = DrawStyles.Band;
+
+    private readonly ChartLineElement _lineOne;
+
+    private readonly ChartLineElement _lineTwo;
+
+    private UIChartBaseViewModel _baseViewModel;
+
+    /// <summary>Create instance.</summary>
+    public ChartBandElement()
     {
-        private DrawStyles _drawStyle = DrawStyles.Band;
-        private ChartLineElement _lineOne;
-        private ChartLineElement _lineTwo;
-        private UIChartBaseViewModel _viewModel;
-
-        public ChartBandElement( )
+        this._lineOne = new ChartLineElement()
         {
-            Line1 = new ChartLineElement( )
-            {
-                Color = Colors.DarkGreen,
-                AdditionalColor = Colors.DarkGreen.ToTransparent( 50 )
-            };
-            Line2 = new ChartLineElement( )
-            {
-                Color = Colors.DarkGreen,
-                AdditionalColor = Colors.DarkGreen.ToTransparent( 50 )
-            };
-            Line1.PropertyChanged += new PropertyChangedEventHandler( OnLineOnePropertyChanged );
-            AddChildElement( Line1, true );
-            AddChildElement( Line2, true );
+            Color = Colors.DarkGreen,
+            AdditionalColor = Colors.DarkGreen.ToTransparent( ( byte ) 50 )
+        };
+        this._lineTwo = new ChartLineElement()
+        {
+            Color = Colors.DarkGreen,
+            AdditionalColor = Colors.DarkGreen.ToTransparent( ( byte ) 50 )
+        };
+        this.Line1.PropertyChanged += new PropertyChangedEventHandler( this.OnLineOnePropertyChanged );
+        this.AddChildElement( ( IChartElement ) this.Line1, true );
+        this.AddChildElement( ( IChartElement ) this.Line2, true );
+    }
+
+    Color IDrawableChartElement.Color
+    {
+        get
+        {
+            return this.Line1.AdditionalColor;
         }
+    }
 
-        Color IDrawableChartElement.Color
+    /// <summary>
+    /// The band drawing style. The default is <see cref="F:Ecng.Drawing.DrawStyles.Band" />. Can also be <see cref="F:Ecng.Drawing.DrawStyles.BandOneValue" />.
+    /// </summary>
+    [Browsable( false )]
+    public DrawStyles Style
+    {
+        get => this._drawStyle;
+        set
         {
-            get
-            {
-                return Line1.AdditionalColor;
-            }
-        }
-
-        [Browsable( false )]
-        public DrawStyles Style
-        {
-            get
-            {
-                return _drawStyle;
-            }
-            set
-            {
-                if( _drawStyle == value )
-                {
-                    return;
-                }
-                if( value != DrawStyles.Band && value != DrawStyles.BandOneValue )
-                {
-                    throw new InvalidOperationException( "LocalizedStrings.Str2063Params.Put( value )" );
-                }
-                RaisePropertyValueChanging( nameof( Style ), value );
-                _drawStyle = value;
-                RaisePropertyChanged( nameof( Style ) );
-            }
-        }
-
-        public ChartLineElement Line1
-        {
-            get
-            {
-                return _lineOne;
-            }
-            private set
-            {
-                _lineOne = value;
-            }
-        }
-
-        public ChartLineElement Line2
-        {
-            get
-            {
-                return _lineTwo;
-            }
-            private set
-            {
-                _lineTwo = value;
-            }
-        }
-
-        public override bool CheckAxesCompatible( ChartAxisType? xType, ChartAxisType? yType )
-        {
-            if( !yType.HasValue )
-            {
-                return true;
-            }
-            ChartAxisType? nullable = yType;
-            return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
-        }
-
-        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
-        {
-            _viewModel = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( UIChartBaseViewModel )new ChartBandElementVM< DateTime >( this );
-            return _viewModel;
-        }
-
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > drawValues )
-        {
-            return _viewModel.Draw( drawValues );
-        }
-
-        void IDrawableChartElement.StartDrawing( )
-        {
-            _viewModel.Draw( Enumerable.Empty< ChartDrawData.IDrawValue >( ).ToEx( 0 ) );
-        }
-
-        protected override bool OnDraw( ChartDrawData data )
-        {
-            IEnumerableEx< ChartDrawData.IDrawValue > enumerableEx = data.GetBandDrawValues( this );
-            if( enumerableEx != null && !enumerableEx.IsEmpty( ) )
-            {
-                return ( ( IDrawableChartElement )this ).StartDrawing( enumerableEx );
-            }
-            return false;
-        }
-
-        public override void Load( SettingsStorage storage )
-        {
-            base.Load( storage );
-            if( storage.ContainsKey( "Line1" ) )
-            {
-                Line1.Load( storage.GetValue( "Line1", ( SettingsStorage )null ) );
-            }
-            if( !storage.ContainsKey( "Line2" ) )
-            {
+            if ( this._drawStyle == value )
                 return;
-            }
-            Line2.Load( storage.GetValue( "Line2", ( SettingsStorage )null ) );
+            if ( value != DrawStyles.Band && value != DrawStyles.BandOneValue )
+                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnsupportedType, new object[ 1 ]
+                {
+          (object) value
+                } ) );
+            this.RaisePropertyValueChanging( nameof( Style ), ( object ) value );
+            this._drawStyle = value;
+            this.RaisePropertyChanged( nameof( Style ) );
         }
+    }
 
-        public override void Save( SettingsStorage storage )
-        {
-            base.Save( storage );
-            storage.SetValue( "Line1", Line1.Save( ) );
-            storage.SetValue( "Line2", Line2.Save( ) );
-        }
+    Ecng.Drawing.DrawStyles IChartBandElement.Style
+    {
+        get => throw new NotImplementedException();
+        set => throw new NotImplementedException();
+    }
 
-        internal override ChartBandElement Clone( ChartBandElement BandsUI_0 )
-        {
-            BandsUI_0 = base.Clone( BandsUI_0 );
-            Line1.Clone( BandsUI_0.Line1 );
-            Line2.Clone( BandsUI_0.Line2 );
-            return BandsUI_0;
-        }
+    /// <summary>
+    /// <see cref="P:StockSharp.Xaml.Charting.ChartBandElement.Line1" />.
+    /// </summary>
+    public ChartLineElement Line1 => this._lineOne;
 
-        private void OnLineOnePropertyChanged( object sender, PropertyChangedEventArgs e )
+    /// <summary>
+    /// <see cref="P:StockSharp.Xaml.Charting.ChartBandElement.Line2" />.
+    /// </summary>
+    public ChartLineElement Line2 => this._lineTwo;
+
+    IChartLineElement IChartBandElement.Line1 => ( IChartLineElement ) this.Line1;
+
+    IChartLineElement IChartBandElement.Line2 => ( IChartLineElement ) this.Line2;
+
+    
+
+    public override bool CheckAxesCompatible( ChartAxisType? xType, ChartAxisType? yType )
+    {
+        return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
+    }
+
+    UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM _param1 )
+    {
+        // BUG: need to Decode ScichartSurfaceMVVM.cs first
+
+        throw new NotImplementedException();
+        
+        //this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( UIChartBaseViewModel ) new ChartBandElementVM<DateTime>( this );
+        //return _baseViewModel;
+    }
+
+    bool IDrawableChartElement.StartDrawing(
+      IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+    {
+        return this._baseViewModel.Draw( _param1 );
+    }
+
+    void IDrawableChartElement.StartDrawing()
+    {
+        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+    }
+
+    protected override bool OnDraw( ChartDrawData data )
+    {
+        var drawValue = data.GetBandDrawValues( this );
+        if ( drawValue != null && !drawValue.IsEmpty() )
         {
-            if( !( e.PropertyName == "AdditionalColor" ) )
-            {
-                return;
-            }
-            RaisePropertyChanged( "Color" );
+            return ( ( IDrawableChartElement ) this ).StartDrawing( drawValue );
         }
+        return false;
+    }
+
+
+    /// <summary>Load settings.</summary>
+    /// <param name="storage">Settings storage.</param>
+    public override void Load( SettingsStorage storage )
+    {
+        base.Load( storage );
+        if ( ( ( SynchronizedDictionary<string, object> ) storage ).ContainsKey( "Line1" ) )
+        {
+            this.RemoveChildElement( ( IChartElement ) this.Line1 );
+            PersistableHelper.Load( ( IPersistable ) this.Line1, storage, "Line1" );
+            this.AddChildElement( ( IChartElement ) this.Line1, true );
+        }
+        if ( !( ( SynchronizedDictionary<string, object> ) storage ).ContainsKey( "Line2" ) )
+            return;
+        this.RemoveChildElement( ( IChartElement ) this.Line2 );
+        PersistableHelper.Load( ( IPersistable ) this.Line2, storage, "Line2" );
+        this.AddChildElement( ( IChartElement ) this.Line2, true );
+    }
+
+    /// <summary>Save settings.</summary>
+    /// <param name="storage">Settings storage.</param>
+    public override void Save( SettingsStorage storage )
+    {
+        base.Save( storage );
+        storage.SetValue<SettingsStorage>( "Line1", PersistableHelper.Save( ( IPersistable ) this.Line1 ) );
+        storage.SetValue<SettingsStorage>( "Line2", PersistableHelper.Save( ( IPersistable ) this.Line2 ) );
+    }
+
+    internal override ChartBandElement Clone( ChartBandElement _param1 )
+    {
+        _param1 = base.Clone( _param1 );
+        this.Line1.Clone( _param1.Line1 );
+        this.Line2.Clone( _param1.Line2 );
+        return _param1;
+    }
+
+    private void OnLineOnePropertyChanged(
+#nullable enable
+      object? _param1,
+      PropertyChangedEventArgs _param2 )
+    {
+        if ( !( _param2.PropertyName == "AdditionalColor" ) )
+            return;
+        this.RaisePropertyChanged( "Color" );
     }
 }

@@ -5,6 +5,7 @@ using StockSharp.Localization;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
+using Ecng.Drawing;
 
 namespace StockSharp.Xaml.Charting.IndicatorPainters
 {

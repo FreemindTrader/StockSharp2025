@@ -1,7 +1,7 @@
 ﻿using Ecng.Common;
 using Ecng.Serialization;
 using StockSharp.Algo.Indicators;
-using StockSharp.Localization;
+using Ecng.Drawing;
 using StockSharp.Xaml.Charting.IndicatorPainters;
 using System;
 using System.Collections.Generic; 

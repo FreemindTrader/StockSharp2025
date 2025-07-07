@@ -15,6 +15,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
+using Ecng.Drawing;
 
 #pragma warning disable CA1416
 
