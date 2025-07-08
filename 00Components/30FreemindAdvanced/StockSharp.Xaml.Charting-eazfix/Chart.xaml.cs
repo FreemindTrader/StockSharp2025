@@ -33,7 +33,7 @@ internal sealed class Chart :
   INotifyPropertyChangedEx
 {
   
-  private readonly ChartArea \u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
+  private readonly ChartArea _chartArea;
   
   private PropertyChangedEventHandler PropertyChangedEvent;
   
@@ -47,7 +47,7 @@ internal sealed class Chart :
   {
     this.InitializeComponent();
     Chart.\u0023\u003Dz370H8OFDsNyA(this.\u0023\u003Dz_PI_EIE\u003D);
-    this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D = new ChartArea()
+    this._chartArea = new ChartArea()
     {
       XAxisType = ChartAxisType.Numeric,
       Chart = (IChart) this
@@ -61,7 +61,7 @@ internal sealed class Chart :
 
   internal ChartArea \u0023\u003DzigsRD8\u0024hw_SZ()
   {
-    return this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
+    return this._chartArea;
   }
 
   void INotifyPropertyChanged.\u0023\u003DzEv9LVlkJvUjy\u0024TeZl6vNKqTVYPst(

@@ -617,7 +617,7 @@ public class ChartPanel :
     object _param1,
     CanExecuteRoutedEventArgs _param2)
   {
-    bool flag = this.\u0023\u003DzmMdfCUCSnZWZ != null && this.IsInteracted;
+    bool flag = this.CancelActiveOrderEvent  != null && this.IsInteracted;
     _param2.CanExecute = flag;
   }
 
@@ -953,7 +953,7 @@ public class ChartPanel :
 
   private void \u0023\u003Dzg1OGYvQtC93XdkFX1\u002444hrw\u003D(Order _param1)
   {
-    Action<Order> zmMdfCucSnZwz = this.\u0023\u003DzmMdfCUCSnZWZ;
+    Action<Order> zmMdfCucSnZwz = this.CancelActiveOrderEvent ;
     if (zmMdfCucSnZwz == null)
       return;
     zmMdfCucSnZwz(_param1);

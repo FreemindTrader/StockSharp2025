@@ -55,17 +55,17 @@ public sealed class ScichartSurfaceMVVM :
   
   private readonly Queue<double> _queue;
   
-  private double \u0023\u003DzqX5ow2rh1c9U;
+  private double _fpsTotal;
   
   private readonly ObservableCollection<ParentVM> _legendElements;
   
-  private Action<IChartElement> \u0023\u003DzeBeQVx4\u003D;
+  private Action<IChartElement> RemoveElementEvent;
   
-  private string \u0023\u003DzvYBXWbYr6HUf;
+  private string _paneGroupSuffix;
   
-  private readonly ChartArea \u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
+  private readonly ChartArea _chartArea;
   
-  private \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS \u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D;
+  private LegendModifierVM \u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D;
   
   private dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd \u0023\u003DzIfS1UPijEYCX;
   
@@ -115,7 +115,7 @@ public sealed class ScichartSurfaceMVVM :
     v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D = _param1;
     
     v4vdZv8GtEzAmB0rzFq._variableSome3535 = this;
-    this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D = v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D ?? throw new ArgumentNullException("area");
+    this._chartArea = v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D ?? throw new ArgumentNullException("area");
     this._dispatcherTimer = new DispatcherTimer((DispatcherPriority) 7, Application.Current.Dispatcher);
     this._dispatcherTimer.Tick += new EventHandler(this.\u0023\u003DzMXbJl7nt_k3k);
     this._showHiddenAxesCommand = (ICommand) new DelegateCommand(new Action(this.\u0023\u003Dzf5vVcayMq7_zxBOILQ\u003D\u003D));
@@ -151,24 +151,24 @@ public sealed class ScichartSurfaceMVVM :
 
   public void RemoveElementEvent(Action<IChartElement> _param1)
   {
-    Action<IChartElement> action = this.\u0023\u003DzeBeQVx4\u003D;
+    Action<IChartElement> action = this.RemoveElementEvent;
     Action<IChartElement> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<IChartElement>>(ref this.\u0023\u003DzeBeQVx4\u003D, comparand + _param1, comparand);
+      action = Interlocked.CompareExchange<Action<IChartElement>>(ref this.RemoveElementEvent, comparand + _param1, comparand);
     }
     while (action != comparand);
   }
 
   public void RemoveElementEvent(Action<IChartElement> _param1)
   {
-    Action<IChartElement> action = this.\u0023\u003DzeBeQVx4\u003D;
+    Action<IChartElement> action = this.RemoveElementEvent;
     Action<IChartElement> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<IChartElement>>(ref this.\u0023\u003DzeBeQVx4\u003D, comparand - _param1, comparand);
+      action = Interlocked.CompareExchange<Action<IChartElement>>(ref this.RemoveElementEvent, comparand - _param1, comparand);
     }
     while (action != comparand);
   }
@@ -419,10 +419,10 @@ public sealed class ScichartSurfaceMVVM :
       return;
     double num = 1000.0 / _param2.\u0023\u003DzguiAuOeZYTXy();
     while (this._queue.Count >= 10)
-      this.\u0023\u003DzqX5ow2rh1c9U -= this._queue.Dequeue();
+      this._fpsTotal -= this._queue.Dequeue();
     this._queue.Enqueue(num);
-    this.\u0023\u003DzqX5ow2rh1c9U += num;
-    this.PerfStats = $"FPS: {this.\u0023\u003DzqX5ow2rh1c9U / (double) this._queue.Count:0}   Count: {this._sciChartSurface.RenderableSeries.Where<IRenderableSeries>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D = new Func<IRenderableSeries, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY))).Sum<IRenderableSeries>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D = new Func<IRenderableSeries, int>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3))):n0}";
+    this._fpsTotal += num;
+    this.PerfStats = $"FPS: {this._fpsTotal / (double) this._queue.Count:0}   Count: {this._sciChartSurface.RenderableSeries.Where<IRenderableSeries>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D = new Func<IRenderableSeries, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY))).Sum<IRenderableSeries>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D = new Func<IRenderableSeries, int>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3))):n0}";
   }
 
   private void \u0023\u003DzKrKnCxVCz6us(ChartDrawData _param1)
@@ -609,11 +609,11 @@ public sealed class ScichartSurfaceMVVM :
 
   public string PaneGroupSuffix
   {
-    get => this.\u0023\u003DzvYBXWbYr6HUf;
+    get => this._paneGroupSuffix;
     set
     {
       value = value?.Trim() ?? string.Empty;
-      if (!this.SetField<string>(ref this.\u0023\u003DzvYBXWbYr6HUf, value, nameof (PaneGroupSuffix)))
+      if (!this.SetField<string>(ref this._paneGroupSuffix, value, nameof (PaneGroupSuffix)))
         return;
       this.NotifyChanged("PaneGroup");
       if (this.GroupChart == null)
@@ -629,7 +629,7 @@ public sealed class ScichartSurfaceMVVM :
     {
       object[] objArray = new object[2];
       objArray[0] = (object) (this.GroupChart ?? throw new NotSupportedException()).GetInstanceCount();
-      objArray[1] = (object) this.\u0023\u003DzvYBXWbYr6HUf;
+      objArray[1] = (object) this._paneGroupSuffix;
       return StringHelper.Put("ssharpultrachart{0}_{1}", objArray);
     }
   }
@@ -638,22 +638,22 @@ public sealed class ScichartSurfaceMVVM :
 
   public StockSharp.Xaml.Charting.Chart GroupChart => this.Chart as StockSharp.Xaml.Charting.Chart;
 
-  public ChartArea Area => this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
+  public ChartArea Area => this._chartArea;
 
   public ChartViewModel ParentViewModel
   {
     get => this.GroupChart?.ViewModel;
   }
 
-  public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS LegendViewModel
+  public LegendModifierVM LegendViewModel
   {
     get
     {
       if (this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D != null)
         return this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D;
-      this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D = new \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS(this)
+      this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D = new LegendModifierVM(this)
       {
-        LegendModifier = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH()
+        LegendModifier = new LegendModifier()
       };
       this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D.RemoveElementEvent(new Action<IChartElement>(this.\u0023\u003DzPtxNDyntmL6NTRG9Qk\u00249wEg\u003D));
       return this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D;
@@ -805,7 +805,7 @@ public sealed class ScichartSurfaceMVVM :
     get => this.\u0023\u003Dz2wrgvLmSMxAy\u0024vli6w\u003D\u003D;
   }
 
-  public \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH LegendModifier
+  public LegendModifier LegendModifier
   {
     get => this.LegendViewModel.LegendModifier;
   }
@@ -1098,7 +1098,7 @@ public sealed class ScichartSurfaceMVVM :
   private void \u0023\u003DzPtxNDyntmL6NTRG9Qk\u00249wEg\u003D(IChartElement _param1)
   {
     this.ParentViewModel?.\u0023\u003DzzXq5ccDMuPZc(_param1);
-    Action<IChartElement> zeBeQvx4 = this.\u0023\u003DzeBeQVx4\u003D;
+    Action<IChartElement> zeBeQvx4 = this.RemoveElementEvent;
     if (zeBeQvx4 == null)
       return;
     zeBeQvx4(_param1);

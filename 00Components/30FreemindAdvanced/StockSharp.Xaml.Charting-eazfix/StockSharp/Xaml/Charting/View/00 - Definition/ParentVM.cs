@@ -37,11 +37,11 @@ public sealed class ParentVM : ChartBaseViewModel, IDisposable
 
     public ParentVM( ScichartSurfaceMVVM _param1, IChartComponent _param2 )
     {
-        this._scichartSurfaceVM; = _param1 ?? throw new ArgumentNullException( "pane" );
+        this._scichartSurfaceVM = _param1 ?? throw new ArgumentNullException( "pane" );
         this._chartElement = _param2 ?? throw new ArgumentNullException( "element" );
         this._isCandleElement = _param2 is IChartCandleElement;
         ChartViewModel.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj( new Action( this.OnAllowToRemove ) );
-        this.ChartElement.PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003DzqKjZcEftBQYu8FctY__O05c\u003D);
+        this.ChartElement.PropertyChanged += new PropertyChangedEventHandler( this.OnPropertyChanged);
     }
 
     public ScichartSurfaceMVVM Pane
@@ -169,7 +169,7 @@ public void Dispose()
     this.IsDisposed = true;
 }
 
-private void \u0023\u003DzqKjZcEftBQYu8FctY__O05c\u003D(
+private void OnPropertyChanged(
 #nullable enable
   object? _param1,
   PropertyChangedEventArgs _param2)

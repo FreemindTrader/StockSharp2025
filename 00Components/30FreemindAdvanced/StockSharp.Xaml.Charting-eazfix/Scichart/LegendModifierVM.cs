@@ -1,5 +1,4 @@
 ﻿using Ecng.Xaml;
-using SciChart.Charting.ChartModifiers;
 using SciChart.Charting.Common.Helpers;
 using StockSharp.Charting;
 using StockSharp.Xaml.Charting;
@@ -17,9 +16,9 @@ namespace StockSharp.Xaml.Charting;
 /// 
 /// I don't remember why I did that, will update the document later.
 /// </summary>
-public sealed class LegendModifierVM : ChartBaseViewModel
+internal sealed class LegendModifierVM : ChartBaseViewModel
 {
-    private LegendModifierEx _legendModifier;
+    private LegendModifier _legendModifier;
 
     private bool _allowToHide = true;
 
@@ -31,15 +30,13 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     public event Action<IChartElement> RemoveElmentEvent;
 
-    public LegendModifierVM( ScichartSurfaceMVVM vm )
+    public LegendModifierVM(ScichartSurfaceMVVM vm)
     {
-        this._scichartSurfaceVM = vm ?? throw new ArgumentNullException( "pane" );
-        this.Elements = ( IEnumerable<ParentVM> ) vm.LegendElements;
-
-        // BUG: need to work on ParentVM first
-        //this._removeElementCommand = new ActionCommand<ParentVM>(
-        //    vm => RemoveElmentEvent?.Invoke( vm.ChartElement ),
-        //    p => p.AllowToRemove );
+        this._scichartSurfaceVM = vm ?? throw new ArgumentNullException("pane");
+        this.Elements = (IEnumerable<ParentVM>) vm.LegendElements;
+        this._removeElementCommand = new ActionCommand<ParentVM>(
+            vm => RemoveElmentEvent?.Invoke(vm.ChartElement),
+            p => p.AllowToRemove);
     }
 
     public ScichartSurfaceMVVM Pane
@@ -54,16 +51,16 @@ public sealed class LegendModifierVM : ChartBaseViewModel
         get => this._childElements;
         set
         {
-            this.SetField<IEnumerable<ParentVM>>( ref this._childElements, value, nameof( Elements ) );
+            this.SetField<IEnumerable<ParentVM>>(ref this._childElements, value, nameof(Elements));
         }
     }
 
-    public LegendModifierEx LegendModifier
+    public LegendModifier LegendModifier
     {
         get => this._legendModifier;
         set
         {
-            this.SetField<LegendModifierEx>( ref this._legendModifier, value, nameof( LegendModifier ) );
+            this.SetField<LegendModifier>(ref this._legendModifier, value, nameof(LegendModifier));
         }
     }
 
@@ -72,7 +69,7 @@ public sealed class LegendModifierVM : ChartBaseViewModel
         get => this._allowToHide;
         set
         {
-            this.SetField<bool>( ref this._allowToHide, value, nameof( AllowToHide ) );
+            this.SetField<bool>(ref this._allowToHide, value, nameof(AllowToHide));
         }
     }
 }

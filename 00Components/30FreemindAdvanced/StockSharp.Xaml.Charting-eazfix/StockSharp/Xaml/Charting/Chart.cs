@@ -929,7 +929,7 @@ public class Chart :
 
   internal void \u0023\u003DzrMNjBJFuBLP3(Order _param1)
   {
-    Action<Order> zmMdfCucSnZwz = this.\u0023\u003DzmMdfCUCSnZWZ;
+    Action<Order> zmMdfCucSnZwz = this.CancelActiveOrderEvent ;
     if (zmMdfCucSnZwz == null)
       return;
     zmMdfCucSnZwz(_param1);

@@ -13,13 +13,13 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH : 
+internal sealed class LegendModifier : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
   
   private int \u0023\u003DzbMH2duO6275S\u0024V7L\u0024g\u003D\u003D;
 
-  public \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH()
+  public LegendModifier()
   {
     this.SourceMode = \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllSeries;
     this.ReceiveHandledEvents = true;
@@ -42,7 +42,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
     this.SeriesData.UpdateSeries(this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1));
-    CollectionHelper.ForEach<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
+    CollectionHelper.ForEach<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel>(LegendModifier.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(LegendModifier.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), LegendModifier.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
   }
 
   protected override void \u0023\u003Dz1z_ZexRGbAiN91rPDA\u003D\u003D(Point _param1)
@@ -78,7 +78,7 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
   [Serializable]
   private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383();
+    public static readonly LegendModifier.SomeClass34343383 SomeMethond0343 = new LegendModifier.SomeClass34343383();
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, UIChartBaseViewModel> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Func<IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
     public static Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
@@ -99,13 +99,13 @@ internal sealed class \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R
     internal void \u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D(
       IGrouping<UIChartBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
     {
-      CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
+      CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
     }
 
     internal void \u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
-      \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH.SomeWheireosoe();
+      LegendModifier.SomeWheireosoe vbxLeArTkallkIdHg = new LegendModifier.SomeWheireosoe();
       vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D = _param1;
       if (!(((FrameworkElement) vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D.RenderableSeries).Tag is Tuple<UIChartBaseViewModel, ChildVM[]> tag))
         return;
