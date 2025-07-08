@@ -17,13 +17,13 @@ namespace StockSharp.Xaml.Charting;
 
 public sealed class ChartPanelShareSettings : NotifiableObject, IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzPyzhV2NFLw\u0024q = $"Chart_{DateTime.Now:yyyyMMdd_HHmmssfff}.png";
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeSpan \u0023\u003DzDra\u0024AUHGVB33 = TimeSpan.FromMinutes(5.0);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz9amTLwDdTF0z;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzU8xSjuFGDDJuii5WcA\u003D\u003D;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "AutoPublish", Description = "AutoPublishDesc", GroupName = "General", Order = 10)]

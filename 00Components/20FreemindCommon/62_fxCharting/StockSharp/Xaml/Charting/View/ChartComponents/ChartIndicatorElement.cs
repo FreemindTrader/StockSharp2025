@@ -67,7 +67,7 @@ namespace StockSharp.Xaml.Charting
                     return;
                 }
                 ChartArea chartArea = (ChartArea) ChartArea;
-                chartArea?.ChartSurfaceViewModel.OnChartAreaElementsRemoving( IndicatorPainter.Element );
+                chartArea?.ViewModel.OnChartAreaElementsRemoving( IndicatorPainter.Element );
                 IndicatorPainter.OnDetached( );
                 
                 if( value?.GetType( ) != typeof( DefaultPainter ) )
@@ -81,7 +81,7 @@ namespace StockSharp.Xaml.Charting
                 }
                 
                 IndicatorPainter.OnAttached( this );
-                chartArea?.ChartSurfaceViewModel.OnChartAreaElementsAdded( this );
+                chartArea?.ViewModel.OnChartAreaElementsAdded( this );
                 RaisePropertyChanged( nameof( IndicatorPainter ) );
             }
         }

@@ -89,11 +89,11 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u
     ICollection<double>,
     IEnumerable<double>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003DztUQ677I\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int _xAxisCount;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly double[,] \u0023\u003DzYum_He4MtIHN;
 
     public \u0023\u003DzabwcW4v2z9DE(int _param1, double[,] _param2, int _param3)
@@ -143,11 +143,11 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u
     ICollection<int>,
     IEnumerable<int>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003DztUQ677I\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int _xAxisCount;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int[,] \u0023\u003DzgRliYKKJGYe4hNlN8A\u003D\u003D;
 
     public \u0023\u003Dzlzy8GZzVmC8F(int _param1, int[,] _param2, int _param3)

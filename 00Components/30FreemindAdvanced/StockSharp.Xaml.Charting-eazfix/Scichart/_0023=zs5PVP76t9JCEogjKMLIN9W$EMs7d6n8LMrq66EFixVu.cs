@@ -13,15 +13,15 @@ internal struct \u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy :
   IComparable,
   \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<double>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz0l_MAVnDIhTXzSrgSQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzDCfWmR0vZYs4WpYtuQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzXD61jixfGgmLDHbt\u0024g\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzDHDlJxajbDV8R32sjaxre4plJcRn;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzh9XQVAGTpNHkJqUbOQRcgTTFKGK1;
 
   public \u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy(

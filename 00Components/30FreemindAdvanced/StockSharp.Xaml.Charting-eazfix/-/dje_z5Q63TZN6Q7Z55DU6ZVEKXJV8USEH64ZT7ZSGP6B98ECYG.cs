@@ -14,9 +14,9 @@ namespace \u002D;
 internal sealed class dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd : 
   dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzEuuv4pc\u003D = DependencyProperty.Register(nameof (Selector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd.\u0023\u003DzYfWGIYVgG9Om)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz2CuHKWI5gsAP = DependencyProperty.Register(nameof (SelectorContext), typeof (object), typeof (dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd.\u0023\u003DzqdCmf9pyTS3icOrrZA\u003D\u003D)));
 
   public dje_z5Q63TZN6Q7Z55DU6ZVEKXJV8USEH64ZT7ZSGP6B98ECYG24PF5CNJED6UPTHJB96FA_ejd()

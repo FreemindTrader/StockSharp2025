@@ -12,11 +12,11 @@ using System.Windows;
 internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D : 
   \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003Dz3Y\u0024NY_pvq2mj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003Dz1CwHCPFpNKq7;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzu7RI_Cg\u0024p83F;
 
   public \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D(

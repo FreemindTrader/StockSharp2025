@@ -17,11 +17,11 @@ namespace \u002D;
 internal sealed class FastLineRenderableSeries : 
   BaseRenderableSeries
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (FastLineRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzTLzzX5iDcGuj = DependencyProperty.Register(nameof (StrokeDashArray), typeof (double[]), typeof (FastLineRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D = DependencyProperty.Register(nameof (OhlcDrawMode), typeof (\u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym), typeof (FastLineRenderableSeries), new PropertyMetadata((object) \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym.Close, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
 
   public FastLineRenderableSeries()
@@ -113,7 +113,7 @@ internal sealed class FastLineRenderableSeries :
     IRenderPassData _param2)
   {
     FastLineRenderableSeries.\u0023\u003Dz_e22hQeYq_jf714K2eMYR9I\u003D qeYqJf714K2eMyR9I = new FastLineRenderableSeries.\u0023\u003Dz_e22hQeYq_jf714K2eMYR9I\u003D();
-    qeYqJf714K2eMyR9I.\u0023\u003DzRRvwDu67s9Rm = this;
+    qeYqJf714K2eMyR9I._variableSome3535 = this;
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num = this.PaletteProvider != null ? 1 : 0;
     qeYqJf714K2eMyR9I.\u0023\u003DzxS8dq0E\u003D = this.SeriesColor;
@@ -145,7 +145,7 @@ internal sealed class FastLineRenderableSeries :
 
   private sealed class \u0023\u003Dz_e22hQeYq_jf714K2eMYR9I\u003D
   {
-    public FastLineRenderableSeries \u0023\u003DzRRvwDu67s9Rm;
+    public FastLineRenderableSeries _variableSome3535;
     public Color \u0023\u003DzxS8dq0E\u003D;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
 
@@ -153,7 +153,7 @@ internal sealed class FastLineRenderableSeries :
       double _param1,
       double _param2)
     {
-      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
+      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
     }
   }
 }

@@ -11,7 +11,7 @@ using System.Diagnostics;
 internal class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D : 
   \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzJirJ5UAoQttm;
 
   public \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D(

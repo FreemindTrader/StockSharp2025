@@ -13,9 +13,9 @@ internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D
   INotifyPropertyChanged,
   IRenderableSeries
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzXfO9DgaVRj7B;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IRenderableSeries \u0023\u003Dzaoo30gtEU_6B;
 
   public \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D(

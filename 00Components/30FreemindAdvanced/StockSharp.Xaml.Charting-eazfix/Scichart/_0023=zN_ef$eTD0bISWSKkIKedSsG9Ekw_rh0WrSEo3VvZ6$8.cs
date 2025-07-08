@@ -124,7 +124,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     ISciChartSurface _param1)
   {
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D zryEzCccXGdHkstU1g = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D();
-    zryEzCccXGdHkstU1g.\u0023\u003DzRRvwDu67s9Rm = this;
+    zryEzCccXGdHkstU1g._variableSome3535 = this;
     zryEzCccXGdHkstU1g.\u0023\u003Dzyyh4GZw\u003D = _param1;
     using (IUpdateSuspender fq05jnDg3bOrIrgCjote = zryEzCccXGdHkstU1g.\u0023\u003Dzyyh4GZw\u003D.SuspendUpdates())
     {
@@ -522,19 +522,19 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
 
   private sealed class \u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D
   {
-    public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y _variableSome3535;
     public ISciChartSurface \u0023\u003Dzyyh4GZw\u003D;
 
     internal void \u0023\u003DzYoUR26ISw2UpoBPdXNwkaJzrEw2s(
       IAxis _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(_param1, this.\u0023\u003Dzyyh4GZw\u003D);
+      this._variableSome3535.\u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(_param1, this.\u0023\u003Dzyyh4GZw\u003D);
     }
 
     internal void \u0023\u003Dz0tlnCwc6fL_hMd81kJD8Xf8mm6KC(
       IAxis _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(_param1, this.\u0023\u003Dzyyh4GZw\u003D);
+      this._variableSome3535.\u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(_param1, this.\u0023\u003Dzyyh4GZw\u003D);
     }
   }
 }

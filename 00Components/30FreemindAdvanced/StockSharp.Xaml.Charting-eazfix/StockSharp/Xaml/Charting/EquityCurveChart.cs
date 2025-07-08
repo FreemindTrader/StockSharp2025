@@ -30,17 +30,17 @@ namespace StockSharp.Xaml.Charting;
 
 public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, IThemeableChart
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzlx9Rh5m0_e0t;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzjHU2QreifXYX = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal Chart \u0023\u003DzO72kpz0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public EquityCurveChart()
@@ -191,7 +191,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   private void \u0023\u003DzG8IJ51fy4J4_607kP0quVX8\u003D(bool _param1)
   {
-    EquityCurveChart.\u0023\u003DzpcA\u0024d1dDoDCwiev7trI4NY0\u003D doDcwiev7trI4Ny0 = new EquityCurveChart.\u0023\u003DzpcA\u0024d1dDoDCwiev7trI4NY0\u003D();
+    EquityCurveChart.SomeClass7237 doDcwiev7trI4Ny0 = new EquityCurveChart.SomeClass7237();
     doDcwiev7trI4Ny0.\u0023\u003DzCPrYc1Q\u003D = _param1;
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxises, new Action<IChartAxis>(doDcwiev7trI4Ny0.\u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D));
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().YAxises, new Action<IChartAxis>(doDcwiev7trI4Ny0.\u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D));
@@ -284,7 +284,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     }
   }
 
-  private sealed class \u0023\u003DzpcA\u0024d1dDoDCwiev7trI4NY0\u003D
+  private sealed class SomeClass7237
   {
     public bool \u0023\u003DzCPrYc1Q\u003D;
 
@@ -307,9 +307,9 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   private sealed class \u0023\u003DztNaqcZK2DJoq : BaseList<LineData<DateTime>>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly EquityCurveChart _parentElement;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly IChartBandElement _indicatorElement;
 
     public \u0023\u003DztNaqcZK2DJoq(EquityCurveChart _param1, IChartBandElement _param2)

@@ -20,17 +20,17 @@ namespace \u002D;
 internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd : 
   \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz3vhKFHvmUfSR = DependencyProperty.Register(nameof (SeparatorLineColor), typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Color.FromArgb((byte) 50, byte.MaxValue, byte.MaxValue, byte.MaxValue), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzTpSTo8U\u003D = DependencyProperty.Register(nameof (LineColor), typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGray, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzFLdFQ9M\u003D = DependencyProperty.Register(nameof (TextColor), typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Color.FromRgb((byte) 90, (byte) 90, (byte) 90), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzpELAaZtMaBgQ = DependencyProperty.Register(nameof (ClusterColor), typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzcL2qfCOpQZK5 = DependencyProperty.Register(nameof (ClusterMaxColor), typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.LimeGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzNgOs\u00249Qu1W4t \u0023\u003Dz1ShH2k5rZ_Qh;
 
   public dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd()
@@ -203,8 +203,8 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param9,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param10)
   {
-    dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D vqd1Qhu2nAw1nzwT0;
-    vqd1Qhu2nAw1nzwT0.\u0023\u003DzRRvwDu67s9Rm = this;
+    dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.SomeClass343 vqd1Qhu2nAw1nzwT0;
+    vqd1Qhu2nAw1nzwT0._variableSome3535 = this;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dzn1rOk95o\u0024Igg = _param7;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D = _param3;
     if (_param5 <= 1.0)
@@ -326,7 +326,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     Point _param4,
     AlignmentX _param5,
     AlignmentY _param6,
-    ref dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D _param7)
+    ref dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.SomeClass343 _param7)
   {
     string str = ((CandlePriceLevel) ref _param2).TotalVolume.ToString();
     Rect rect = new Rect(_param3, _param4);
@@ -342,7 +342,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     Point _param1,
     Point _param2,
     dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzZk\u00246lEW\u0024ffR3 _param3,
-    ref dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D _param4)
+    ref dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.SomeClass343 _param4)
   {
     CandlePriceLevel candlePriceLevel1 = _param3.Value;
     Decimal totalVolume = ((CandlePriceLevel) ref candlePriceLevel1).TotalVolume;
@@ -392,15 +392,15 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
   }
 
   [StructLayout(LayoutKind.Auto)]
-  private struct \u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D
+  private struct SomeClass343
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    public dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd _variableSome3535;
+    
     public float \u0023\u003Dzn1rOk95o\u0024Igg;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzNgOs\u00249Qu1W4t \u0023\u003Dz7pohrFs\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public bool \u0023\u003DzyHjx46Y\u003D;
   }
 

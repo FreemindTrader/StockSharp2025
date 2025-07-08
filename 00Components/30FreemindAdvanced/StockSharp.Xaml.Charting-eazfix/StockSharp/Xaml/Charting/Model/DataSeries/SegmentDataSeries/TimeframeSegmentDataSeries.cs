@@ -624,7 +624,7 @@ label_8:
     ICollection<double>,
     IEnumerable<double>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TimeframeSegmentDataSeries _parentElement = _param1 ?? throw new ArgumentNullException("parent");
 
     public int Count => this._parentElement._segments.Count;
@@ -650,7 +650,7 @@ label_8:
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._parentElement._segments.Select<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeIntenalMethod003D ?? (TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeIntenalMethod003D = new Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double>(TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -725,7 +725,7 @@ label_8:
     private sealed class SomeClass34343383
     {
       public static readonly TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383 SomeMethond0343 = new TimeframeSegmentDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383();
-      public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+      public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> SomeIntenalMethod003D;
       public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
 
       internal double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(

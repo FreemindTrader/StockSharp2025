@@ -21,39 +21,39 @@ internal class dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd :
   INotifyPropertyChanged,
   \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P7\u00243UKiUGVR88DR8huM\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz\u0024geG9XF9qNM9 = DependencyProperty.Register(nameof (DrawLabels), typeof (bool), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzHxEy7A8kQeb2 = DependencyProperty.Register(nameof (DrawMinorTicks), typeof (bool), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz6E17UGyH3Hxe = DependencyProperty.Register(nameof (DrawMajorTicks), typeof (bool), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D = DependencyProperty.Register(nameof (MajorTickLineStyle), typeof (Style), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd.\u0023\u003DzFgrLJbyJ32zlIW9T7fzjuLs\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D = DependencyProperty.Register(nameof (MinorTickLineStyle), typeof (Style), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd.\u0023\u003DzF9xGIyZlaqWjOY1DXnVnofg\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzfMY988N0StOA = DependencyProperty.Register(nameof (AxisAlignment), typeof (dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Default, new PropertyChangedCallback(dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd.\u0023\u003DzOPvUPixjU\u00244Y)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzQcEu5YLH6ffYkobAOQ\u003D\u003D = DependencyProperty.Register(nameof (AxisLabelToTickIndent), typeof (double), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) 2.0, new PropertyChangedCallback(dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd.\u0023\u003Dz8hrSVP3SyudTZXJD6w\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D = DependencyProperty.Register(nameof (IsLabelCullingEnabled), typeof (bool), typeof (dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected Line \u0023\u003DzeEl93ifUiK4P = new Line();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected Grid \u0023\u003DzDLF9sbNKzh9k;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected Image \u0023\u003DzlbfaVnpq6N5Y;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected dje_zP5SLCZMPLKRDSVWETEPWLMZPT8NQNZEUTFPNMF7298TT2H3CX8DZZ_ejd \u0023\u003DzNdw5dH7x9p9X;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private WriteableBitmap \u0023\u003DzWfNK9E4egtoR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzn_2sUEoYYgva;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzC4ZArHFLRr_I;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzORNmLYbynHFH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd> \u0023\u003DzLumisCMIlbJuLqsFBA\u003D\u003D;
 
   public event PropertyChangedEventHandler PropertyChanged;

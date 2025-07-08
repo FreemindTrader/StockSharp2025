@@ -27,23 +27,23 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
   ChartElementUI<ChartBandElement>
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<\u0023\u003DzulcL8RA\u003D, double> \u0023\u003DzDh1lJfFlHUWk;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, double> \u0023\u003Dzva\u002460XCiLL2n;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\u003DzulcL8RA\u003D, double> \u0023\u003DzRSDkBpQ1QWG0;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzYirGqB2gXz09;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzIHjxTqC159pe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzRm0WUjzJSu8n;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003Dzh0ozsIDILK5b;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzXNWLRaQhQW_0;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzFEDR40ugZMK3;
 
   public \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm(

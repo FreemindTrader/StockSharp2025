@@ -11,19 +11,19 @@ using System.Diagnostics;
 internal struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D : 
   \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static double \u0023\u003Dz1eyFhpSMTHm_HD8RuWbOOmQ\u003D = 1E-14;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DznfnGDE0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzAfkM2pE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dz7H3Feas\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dz9HVnJ6Q\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzHye39Qw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dz97j43Ok\u003D;
 
   public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(

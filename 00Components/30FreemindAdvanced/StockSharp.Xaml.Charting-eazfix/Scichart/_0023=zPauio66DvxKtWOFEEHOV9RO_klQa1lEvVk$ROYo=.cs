@@ -10,9 +10,9 @@ using System.Diagnostics;
 #nullable disable
 internal sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D : EventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IRange \u0023\u003Dzyf57hTxonZCNKHGBsGM3_ZE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D \u0023\u003DzKEcDCute\u0024HaDe59alg\u003D\u003D;
 
   internal \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D(

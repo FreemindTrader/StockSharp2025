@@ -33,11 +33,11 @@ public sealed class ChartIndicatorElement :
   IPersistable,
   IChartIndicatorElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DefaultPainter \u0023\u003DzwZUN8k4QxNb8DrQ1IQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IChartIndicatorPainter \u0023\u003DzggYpSp2p8YZic9F7tQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzi6QomveZ37NV\u0024lKbXjNgtwc\u003D;
 
   public ChartIndicatorElement()
@@ -65,7 +65,7 @@ public sealed class ChartIndicatorElement :
       if (this.\u0023\u003DzggYpSp2p8YZic9F7tQ\u003D\u003D == value)
         return;
       StockSharp.Xaml.Charting.ChartArea chartArea = (StockSharp.Xaml.Charting.ChartArea) this.ChartArea;
-      chartArea?.ChartSurfaceViewModel.\u0023\u003DzmxDTmQc\u003D((IChartElement) this.IndicatorPainter.Element);
+      chartArea?.ViewModel.\u0023\u003DzmxDTmQc\u003D((IChartElement) this.IndicatorPainter.Element);
       this.IndicatorPainter.OnDetached();
       if (value?.GetType() != typeof (DefaultPainter))
       {
@@ -77,7 +77,7 @@ public sealed class ChartIndicatorElement :
         this.\u0023\u003DzwZUN8k4QxNb8DrQ1IQ\u003D\u003D = (DefaultPainter) value;
       }
       this.IndicatorPainter.OnAttached((IChartIndicatorElement) this);
-      chartArea?.ChartSurfaceViewModel.\u0023\u003Dz4M_pW8k\u003D((IChartElement) this);
+      chartArea?.ViewModel.\u0023\u003Dz4M_pW8k\u003D((IChartElement) this);
       this.RaisePropertyChanged(nameof (IndicatorPainter));
     }
   }

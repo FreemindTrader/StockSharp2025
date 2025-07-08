@@ -13,15 +13,15 @@ internal sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuKct8NoZCS\u0024m_m9lLkmV
   IDisposable,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzEcmsYfw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Size \u0023\u003DzgYZhPyPIW8zq;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003DzXZq\u0024gjyIo\u00244n;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IPathColor \u0023\u003DzQWU4skw9ivrJ;
 
   public \u0023\u003Dz59_koqr2EQdapDcFKycZuKct8NoZCS\u0024m_m9lLkmVzSm3TrzIUE_fBok\u003D(

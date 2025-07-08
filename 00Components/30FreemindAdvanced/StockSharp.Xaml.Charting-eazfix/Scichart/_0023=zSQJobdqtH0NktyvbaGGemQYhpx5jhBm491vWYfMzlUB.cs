@@ -17,17 +17,17 @@ using System.Windows.Input;
 internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS : 
   ChartBaseViewModel
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH \u0023\u003DzRrbXXZfT16PhrWmykQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzcMpkjcKq6\u0024YY = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IEnumerable<ParentVM> _childElements;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ScichartSurfaceMVVM _scichartSurfaceVM;;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ICommand \u0023\u003DzEOuQIBJYN0WfTnKFnA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<IChartElement> \u0023\u003DzeBeQVx4\u003D;
 
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS(
@@ -72,7 +72,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
     }
   }
 
-  public void \u0023\u003DzPvEital2M7gh(Action<IChartElement> _param1)
+  public void RemoveElementEvent(Action<IChartElement> _param1)
   {
     Action<IChartElement> action = this.\u0023\u003DzeBeQVx4\u003D;
     Action<IChartElement> comparand;
@@ -84,7 +84,7 @@ internal sealed class \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK
     while (action != comparand);
   }
 
-  public void \u0023\u003Dzfj2KEivrD_Sr(Action<IChartElement> _param1)
+  public void RemoveElementEvent(Action<IChartElement> _param1)
   {
     Action<IChartElement> action = this.\u0023\u003DzeBeQVx4\u003D;
     Action<IChartElement> comparand;

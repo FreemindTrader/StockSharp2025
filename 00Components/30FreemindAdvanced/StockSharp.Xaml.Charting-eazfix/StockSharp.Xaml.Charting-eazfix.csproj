@@ -166,7 +166,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Properties\" />
-		<Folder Include="StockSharp\Xaml\00 - Done\" />
 		<Folder Include="themes\" />
 	</ItemGroup>
 	<ItemGroup>

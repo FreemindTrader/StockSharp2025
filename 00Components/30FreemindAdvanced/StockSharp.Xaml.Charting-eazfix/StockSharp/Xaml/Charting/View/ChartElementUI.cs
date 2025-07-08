@@ -96,7 +96,7 @@ protected T \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<T>(
     ChildVM[] _param1)
     where T : BaseRenderableSeries, new()
   {
-    if (_param1 != null && ((IEnumerable<ChildVM>) _param1).Any<ChildVM>(ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<ChildVM, bool>(ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.SomeMethond0343.\u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D))))
+    if (_param1 != null && ((IEnumerable<ChildVM>) _param1).Any<ChildVM>(ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.SomeIntenalMethod003D ?? (ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.SomeIntenalMethod003D = new Func<ChildVM, bool>(ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>.SomeMethond0343.\u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D))))
       throw new InvalidOperationException("value is null during creation of " + typeof (T).Name);
     T obj = new T();
     if (this.GetDrawableChartElement().RootElement == (object) this.GetDrawableChartElement())
@@ -151,7 +151,7 @@ return obj;
 private sealed class \u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T> where T : BaseRenderableSeries, new()
 {
     public static readonly ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T> SomeMethond0343 = new ChartElementUI<T>.\u0023\u003DzCYFmgQJxXjskITDYkg\u003D\u003D<T>();
-public static Func<ChildVM, bool> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+public static Func<ChildVM, bool> SomeIntenalMethod003D;
 
 internal bool \u0023\u003DzG0_RV0031CU\u0024Q\u00241ZckMpFgXIR2zjjeMsCA\u003D\u003D(
       ChildVM _param1)

@@ -19,12 +19,12 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (ZigZag))]
 public class ZigZagPainter : BaseChartIndicatorPainter<ZigZag>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzMcMPnDfns7teZ8Zf3Q\u003D\u003D;
 
   public ZigZagPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<ZigZag>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<ZigZag>.GetColorProvider();
     this.\u0023\u003DzMcMPnDfns7teZ8Zf3Q\u003D\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor(),

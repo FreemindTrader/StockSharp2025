@@ -29,11 +29,11 @@ public class CandlePatternElement :
   IChartComponent,
   IDrawableChartElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color _downColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color _upColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private UIChartBaseViewModel _baseViewModel;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30)]

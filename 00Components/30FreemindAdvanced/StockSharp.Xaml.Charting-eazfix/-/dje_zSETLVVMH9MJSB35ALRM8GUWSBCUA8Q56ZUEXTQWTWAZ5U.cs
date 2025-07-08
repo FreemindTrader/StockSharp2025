@@ -16,7 +16,7 @@ namespace \u002D;
 internal sealed class XyScatterRenderableSeries : 
   BaseRenderableSeries
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzLAfsTxKYUsTns9NHKhkyIU0\u003D = DependencyProperty.Register(nameof (DoClusterResampling), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) false));
 
   public XyScatterRenderableSeries()
@@ -45,7 +45,7 @@ internal sealed class XyScatterRenderableSeries :
     IRenderPassData _param2)
   {
     XyScatterRenderableSeries.SomeClass34343 zPKCmcad6Nxc5A8A = new XyScatterRenderableSeries.SomeClass34343();
-    zPKCmcad6Nxc5A8A.\u0023\u003DzRRvwDu67s9Rm = this;
+    zPKCmcad6Nxc5A8A._variableSome3535 = this;
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT hw1ki13vvK4WxOgoljkHyInT = this.\u0023\u003Dz_Y6pODRV4VXF();
@@ -82,7 +82,7 @@ internal sealed class XyScatterRenderableSeries :
 
   private sealed class SomeClass34343
   {
-    public XyScatterRenderableSeries \u0023\u003DzRRvwDu67s9Rm;
+    public XyScatterRenderableSeries _variableSome3535;
     public Color \u0023\u003DzhFYkfW57ne2I;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
 
@@ -90,7 +90,7 @@ internal sealed class XyScatterRenderableSeries :
       double _param1,
       double _param2)
     {
-      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2) ?? this.\u0023\u003DzhFYkfW57ne2I);
+      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzhFYkfW57ne2I);
     }
   }
 }

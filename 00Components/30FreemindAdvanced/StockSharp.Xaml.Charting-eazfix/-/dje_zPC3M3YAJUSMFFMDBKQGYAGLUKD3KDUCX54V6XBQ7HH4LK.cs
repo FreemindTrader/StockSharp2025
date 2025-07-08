@@ -13,7 +13,7 @@ namespace \u002D;
 
 internal sealed class dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd : Control
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.Register(nameof (Angle), typeof (double), typeof (dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd), new PropertyMetadata((object) 0.0));
 
   public dje_zPC3M3YAJUSMFFMDBKQGYAGLUKD3KDUCX54V6XBQ7HH4LKV662D8AE_ejd()

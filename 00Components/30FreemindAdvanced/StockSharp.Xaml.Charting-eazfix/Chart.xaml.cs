@@ -32,15 +32,15 @@ internal sealed class Chart :
   IThemeableChart,
   INotifyPropertyChangedEx
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartArea \u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangedEventHandler PropertyChangedEvent;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartArea[] \u0023\u003Dza1mnh6ythHbd;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal SciChartSurface \u0023\u003Dz_PI_EIE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public Chart()
@@ -52,7 +52,7 @@ internal sealed class Chart :
       XAxisType = ChartAxisType.Numeric,
       Chart = (IChart) this
     };
-    this.DataContext = (object) this.\u0023\u003DzigsRD8\u0024hw_SZ().ChartSurfaceViewModel;
+    this.DataContext = (object) this.\u0023\u003DzigsRD8\u0024hw_SZ().ViewModel;
     this.\u0023\u003Dza1mnh6ythHbd = new IChartArea[1]
     {
       (IChartArea) this.\u0023\u003DzigsRD8\u0024hw_SZ()
@@ -144,12 +144,12 @@ internal sealed class Chart :
 
   public void Draw(IChartDrawData _param1)
   {
-    this.\u0023\u003DzigsRD8\u0024hw_SZ().ChartSurfaceViewModel.Draw((ChartDrawData) _param1);
+    this.\u0023\u003DzigsRD8\u0024hw_SZ().ViewModel.Draw((ChartDrawData) _param1);
   }
 
   public void Reset(IEnumerable<IChartElement> _param1)
   {
-    this.\u0023\u003DzigsRD8\u0024hw_SZ().ChartSurfaceViewModel.Reset(_param1);
+    this.\u0023\u003DzigsRD8\u0024hw_SZ().ViewModel.Reset(_param1);
   }
 
   IList<IndicatorType> IChart.\u0023\u003DzsYGC0kqvnZauoBk\u0024NilgO_TQ8VINJ8nwedZpIJc\u003D()

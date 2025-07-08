@@ -120,11 +120,11 @@ internal class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYt
 
   internal struct \u0023\u003DzafZj3dT3iE_e
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public double \u0023\u003DzwP120vA\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public double \u0023\u003Dzi8jDI4I\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz6NUrJ5Q\u003D;
   }
 }

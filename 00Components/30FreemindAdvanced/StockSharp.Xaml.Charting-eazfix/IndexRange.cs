@@ -13,9 +13,9 @@ using System.Diagnostics;
 internal sealed class IndexRange  : 
   Range<int>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzeLxWL8r3I02c;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz8pG_zbXA5b87;
 
   public IndexRange ()

@@ -27,13 +27,13 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
   IComponentConnector,
   IStyleConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Popup \u0023\u003DzKkX3SOgS26uy;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly CandleDataTypeEdit \u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd \u0023\u003Dzv4BS1WQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd()

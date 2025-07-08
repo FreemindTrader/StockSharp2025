@@ -15,19 +15,19 @@ namespace StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer.WBX;
 
 public struct BitmapContext : IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly WriteableBitmap \u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzvuxzmOyMmMi2;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzLbUfdCC4TeZU;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly IDictionary<WriteableBitmap, int> \u0023\u003DzGVij5mrYWE_S = (IDictionary<WriteableBitmap, int>) new Dictionary<WriteableBitmap, int>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB \u0023\u003DztYFyZvw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly unsafe int* \u0023\u003DzwoNHM0hR9QC1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzNkjnJzE\u003D;
 
   internal unsafe BitmapContext(WriteableBitmap _param1)

@@ -12,9 +12,9 @@ internal struct \u0023\u003Dz6XUxHRwFxnCP5tzqYbRSvmEt044gG5_8eZqkIGMQktFxmldI9KG
   int _param1,
   int _param2)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzwP120vA\u003D = _param1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzi8jDI4I\u003D = _param2;
 
   public override string ToString()

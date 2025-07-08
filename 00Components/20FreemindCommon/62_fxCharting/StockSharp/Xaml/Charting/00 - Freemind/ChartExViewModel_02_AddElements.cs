@@ -162,7 +162,7 @@ namespace StockSharp.Xaml.Charting
 
             area.Chart = this;
 
-            ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ChartSurfaceViewModel );
+            ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ViewModel );
 
             Ecng.Collections.CollectionHelper.ForEach( area.Elements, Step3b_OnNewChartAreaAdded );
 
@@ -174,7 +174,7 @@ namespace StockSharp.Xaml.Charting
             area.Elements.Added -= new Action<IChartElement>( Step3b_OnNewChartAreaAdded );
             area.Elements.Removed -= new Action<IChartElement>( OnUIRemovedFromArea );
 
-            ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ChartSurfaceViewModel );
+            ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ViewModel );
 
             Ecng.Collections.CollectionHelper.ForEach( area.Elements, OnUIRemovedFromArea );
             

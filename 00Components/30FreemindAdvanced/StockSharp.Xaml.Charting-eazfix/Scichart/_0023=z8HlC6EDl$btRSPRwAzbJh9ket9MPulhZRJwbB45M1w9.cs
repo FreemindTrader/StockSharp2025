@@ -28,7 +28,7 @@ internal sealed class ChartAnnotationVM(
   {
     this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(new ChartAnnotationVM.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D()
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       \u0023\u003Dzor6OKKQ\u003D = _param1
     }.\u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D), true);
     return true;
@@ -36,12 +36,12 @@ internal sealed class ChartAnnotationVM(
 
   private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
   {
-    public ChartAnnotationVM \u0023\u003DzRRvwDu67s9Rm;
+    public ChartAnnotationVM _variableSome3535;
     public IEnumerableEx<ChartDrawData.IDrawValue> \u0023\u003Dzor6OKKQ\u003D;
 
     internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.ScichartSurfaceMVVM.AnnotationModifier.Draw(this.\u0023\u003DzRRvwDu67s9Rm.GetDrawableChartElement(), ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
+      this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw(this._variableSome3535.GetDrawableChartElement(), ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
     }
   }
 }

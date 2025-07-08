@@ -115,20 +115,21 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 return;
             
             if ( value == null )
-                this.ChartSurfaceViewModel.Release();
+                this.ViewModel.Release();
 
             this._chart = value;
             
             if ( value == null )
                 return;
 
-            this.ChartSurfaceViewModel.InitPropertiesEventHandlers();
+            this.ViewModel.InitPropertiesEventHandlers();
+
             Elements.ForEach( x =>
-                {
-                    if(!(x is IChartComponent elem))
-                        return;
-                    elem.ResetUI();
-                } );
+            {
+                if(!(x is IChartComponent elem))
+                    return;
+                elem.ResetUI();
+            } );
         }
     }
     
@@ -153,7 +154,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
 
     public INotifyList<IChartAxis> YAxises => this._yAxisNotifyList;
 
-    public ScichartSurfaceMVVM ChartSurfaceViewModel
+    public ScichartSurfaceMVVM ViewModel
     {
         get
         {
@@ -171,6 +172,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     public ChartAxisType XAxisType
     {
         get => this._xAxisType;
+
         set
         {
             if ( _xAxisType == value )
@@ -183,9 +185,9 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             }
 
 
-            ChartArea.\u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D dkfA7SK9Zsjh7b7evY = new ChartArea.\u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D();
+            ChartArea.DictionaryStruct03894 dkfA7SK9Zsjh7b7evY = new ChartArea.DictionaryStruct03894();
             dkfA7SK9Zsjh7b7evY.\u0023\u003DzxGz2_8k\u003D = value;
-            dkfA7SK9Zsjh7b7evY.\u0023\u003DzRRvwDu67s9Rm = this;
+            dkfA7SK9Zsjh7b7evY._variableSome3535 = this;
             
             if ( ( ( IEnumerable ) this.Elements ).Cast<IChartComponent>().Any<IChartComponent>( new Func<IChartComponent, bool>( dkfA7SK9Zsjh7b7evY.\u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D) ) )
                 throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.ElementDontSupportAxisTypeParams, new object[ 1 ]
@@ -402,10 +404,10 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     this.InitAxises();
     this._chartSurfaceVM = new ScichartSurfaceMVVM( this );
     this.Height = 100.0;
-    this.ChartSurfaceViewModel.PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
+    this.ViewModel.PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
 }
 
-internal ScichartSurfaceMVVM ChartSurfaceViewModel
+internal ScichartSurfaceMVVM ViewModel
 {
     return this._chartSurfaceVM;
 }
@@ -523,7 +525,7 @@ public override void Load( SettingsStorage storage )
 
   public void Dispose()
   {
-    this.ChartSurfaceViewModel.Dispose();
+    this.ViewModel.Dispose();
     GC.SuppressFinalize((object) false);
   }
 
@@ -603,10 +605,10 @@ public override void Load( SettingsStorage storage )
 
   
 
-  private sealed class \u0023\u003DzbMZ4DKfA7S\u0024k9ZSjh7b7evY\u003D
+  private sealed class DictionaryStruct03894
   {
     public ChartAxisType \u0023\u003DzxGz2_8k\u003D;
-    public ChartArea \u0023\u003DzRRvwDu67s9Rm;
+    public ChartArea _variableSome3535;
 
     internal bool \u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D(
       IChartComponent _param1)
@@ -616,7 +618,7 @@ public override void Load( SettingsStorage storage )
 
     internal bool \u0023\u003DzCaHczB6Zuyll\u0024N6TY3bDRZc\u003D(IChartArea _param1)
     {
-      return _param1 != this.\u0023\u003DzRRvwDu67s9Rm && _param1.XAxisType != this.\u0023\u003DzxGz2_8k\u003D;
+      return _param1 != this._variableSome3535 && _param1.XAxisType != this.\u0023\u003DzxGz2_8k\u003D;
     }
   }
 

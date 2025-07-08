@@ -13,9 +13,9 @@ using System.Diagnostics;
 internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D : 
   ChartModifierBase
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ObservableCollection<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D> \u0023\u003DzZNAgUYDk4vJL = new ObservableCollection<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzXlWnMnklB5lP;
 
   private ObservableCollection<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D> \u0023\u003DzpaNSEZReLxVMfaY4Xg\u003D\u003D()

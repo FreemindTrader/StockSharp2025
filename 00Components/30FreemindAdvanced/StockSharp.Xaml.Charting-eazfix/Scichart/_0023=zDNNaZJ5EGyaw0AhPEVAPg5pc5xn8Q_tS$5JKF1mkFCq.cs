@@ -142,19 +142,19 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     IEnumerator,
     IEnumerator<DependencyObject>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dz_i6sZDg\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public DependencyObject \u0023\u003DzU1yXtTruEocq;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Queue<DependencyObject> \u0023\u003Dzz66MIjVparq3tYlmvw\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003DzsyOLmZDmw7UD;
 
     [DebuggerHidden]
@@ -265,17 +265,17 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     IEnumerator,
     IEnumerator<DependencyObject>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dz_i6sZDg\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public DependencyObject \u0023\u003DzU1yXtTruEocq;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dz3\u00249alDp1vu9\u0024;
 
     [DebuggerHidden]
@@ -368,21 +368,21 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     FrameworkElement>,
     IEnumerator<FrameworkElement>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private FrameworkElement \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private FrameworkElement \u0023\u003DzuYRe9bI\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public FrameworkElement \u0023\u003Dz_FUndZIVOkQ4;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D \u0023\u003DzOJxP0TlBhTNH;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Queue<FrameworkElement> \u0023\u003Dz7_j_BbPG0xc\u0024TWbVcA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerator<FrameworkElement> \u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D;
 
     [DebuggerHidden]
@@ -541,19 +541,19 @@ label_22:
     IEnumerator,
     IEnumerator<DependencyObject>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private DependencyObject \u0023\u003Dz_i6sZDg\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public DependencyObject \u0023\u003DzU1yXtTruEocq;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzL\u0024Xr64NSxnt6F6ntkg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzMZLB9Gb5m9U_;
 
     [DebuggerHidden]

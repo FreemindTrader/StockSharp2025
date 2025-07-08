@@ -136,7 +136,7 @@ public static class ChartHelper
             };
 
             var viewModel = new ScichartSurfaceMVVM(chartArea);
-            chartArea.ChartSurfaceViewModel = viewModel;
+            chartArea.ViewModel = viewModel;
 
             chart.ChartAreas.Add(chartArea);
         }

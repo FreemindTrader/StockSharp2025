@@ -15,9 +15,9 @@ namespace \u002D;
 internal sealed class dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd : 
   BaseRenderableSeries
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz3XkQnBHZj9ZA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
 
   public dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd()

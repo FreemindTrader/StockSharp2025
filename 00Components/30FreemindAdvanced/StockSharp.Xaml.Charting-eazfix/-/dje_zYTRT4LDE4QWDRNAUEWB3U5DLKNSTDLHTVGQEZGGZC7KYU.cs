@@ -30,39 +30,39 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7,
   IHitTestable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzjroGW0xeV8YH = DependencyProperty.Register(nameof (MaxFrameRate), typeof (double?), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.\u0023\u003DzL8ZRB9csVw_UcT6v5V6Hxo0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzU3sbyS2_qQyl = DependencyProperty.Register(nameof (UseResizeThrottle), typeof (bool), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzB\u0024niq80SYDhY = DependencyProperty.Register(nameof (ResizeThrottleMs), typeof (int), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) 50));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzsKzwhvawatYW = DependencyProperty.RegisterAttached("RenderSurfaceType", typeof (string), typeof (dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd.\u0023\u003DzV210hqnzErQ4)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> Draw;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> \u0023\u003DzcyGdlF8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal static readonly string \u0023\u003Dz8UAGL9e3cOCn = Guid.NewGuid().ToString();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003DzAJ8tNFa80f45;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D \u0023\u003Dz\u0024wP7eNcNWEpx;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzvBK\u00248KQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Grid \u0023\u003DzS\u0024OTg_s\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Image \u0023\u003Dz2TNhyDg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected WriteableBitmap \u0023\u003DzRIsZuY3LT4U\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D \u0023\u003Dzwa3i3hwVZeqr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IServiceContainer \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static int \u0023\u003Dzf3Z0CZk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D \u0023\u003DzJMDWU3P\u0024MwfW43PZdrim0N0\u003D;
 
   protected dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd()

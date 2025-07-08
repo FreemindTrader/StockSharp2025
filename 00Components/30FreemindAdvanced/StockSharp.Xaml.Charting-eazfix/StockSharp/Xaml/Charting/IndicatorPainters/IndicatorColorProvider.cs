@@ -17,13 +17,13 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
 public class IndicatorColorProvider : IIndicatorColorProvider
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly IndicatorColorProviderSeed _indicatorColorProviderSeed = new IndicatorColorProviderSeed();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedDictionary<IndicatorColorProviderSeed, int> _indicatorColorProviderSeedMap = new SynchronizedDictionary<IndicatorColorProviderSeed, int>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool _isDarkTheme;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Color[] _darkColorMap = new Color[14]
   {
     Colors.Blue,
@@ -41,7 +41,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
     Colors.Teal,
     Colors.MediumVioletRed
   };
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Color[] _lightColorMap = new Color[15]
   {
     Colors.Gold,
@@ -71,7 +71,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
   {
     int num = CollectionHelper.SyncGet<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(this._indicatorColorProviderSeedMap, new Func<SynchronizedDictionary<IndicatorColorProviderSeed, int>, int>(new IndicatorColorProvider.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D()
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       _IndicatorColorProviderSeed = Scope<IndicatorColorProviderSeed>.Current?.Value ?? IndicatorColorProvider._indicatorColorProviderSeed
     }.SomeSealedClassMethod03845));
     Color[] colorArray = this._isDarkTheme ? IndicatorColorProvider._lightColorMap : IndicatorColorProvider._darkColorMap;
@@ -87,15 +87,15 @@ public class IndicatorColorProvider : IIndicatorColorProvider
 
   private sealed class \u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D
   {
-    public IndicatorColorProvider \u0023\u003DzRRvwDu67s9Rm;
+    public IndicatorColorProvider _variableSome3535;
     public IndicatorColorProviderSeed _IndicatorColorProviderSeed;
 
     internal int SomeSealedClassMethod03845(
       SynchronizedDictionary<IndicatorColorProviderSeed, int> _param1)
     {
       int num;
-      this.\u0023\u003DzRRvwDu67s9Rm._indicatorColorProviderSeedMap.TryGetValue(this._IndicatorColorProviderSeed, ref num);
-      return (this.\u0023\u003DzRRvwDu67s9Rm._indicatorColorProviderSeedMap[this._IndicatorColorProviderSeed] = num + 1) - 1;
+      this._variableSome3535._indicatorColorProviderSeedMap.TryGetValue(this._IndicatorColorProviderSeed, ref num);
+      return (this._variableSome3535._indicatorColorProviderSeedMap[this._IndicatorColorProviderSeed] = num + 1) - 1;
     }
   }
 }

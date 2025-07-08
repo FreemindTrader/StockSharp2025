@@ -17,27 +17,27 @@ namespace \u002D;
 internal sealed class dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd : 
   ContentControl
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzYjQ2xl9o319L = DependencyProperty.Register(nameof (TargetSurface), typeof (ISciChartSurface), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd.\u0023\u003Dz4MpbQOLMpYtswY0tvA\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzkqE1t18ru2zs = DependencyProperty.Register(nameof (WpfFps), typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzKn3156UzRCt\u0024AII4BUa9Wfw\u003D = DependencyProperty.Register(nameof (UltrachartFps), typeof (double), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D = DependencyProperty.Register(nameof (WpfFpsSeries), typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt = DependencyProperty.Register(nameof (UltrachartFpsSeries), typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzrh_06bSTsdjtRRWPZW671SE\u003D = DependencyProperty.Register(nameof (SmoothingWindowSize), typeof (int), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 20));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzi_FN3ig480bq = DependencyProperty.Register(nameof (TotalPointCount), typeof (int), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) 0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzT_iaUxXXWqlulr95Hw\u003D\u003D = DependencyProperty.Register(nameof (ChartsVisibility), typeof (Visibility), typeof (dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd), new PropertyMetadata((object) Visibility.Visible));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Stopwatch \u0023\u003DzWewHyEvM_sOk;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz7DSowRM8YI8lUCePfEYzKln_4DSk;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzCc9QDFMMWYXAfyk0nA\u003D\u003D;
 
   public dje_zDDJ3D37GQNGTHWK82PDGKZ3UWLXRTTTK5PKKQYVZC79AVF7RF7U8NH6NMGMA_ejd()

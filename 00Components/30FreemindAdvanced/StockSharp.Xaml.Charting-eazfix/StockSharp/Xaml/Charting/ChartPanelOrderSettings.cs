@@ -19,11 +19,11 @@ namespace StockSharp.Xaml.Charting;
 
 public class ChartPanelOrderSettings : NotifiableObject, IPersistable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Security \u0023\u003DzpaXnuR8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Portfolio \u0023\u003Dz5M\u00246riNP6jrVzScIBQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Decimal \u0023\u003DzhqjqeGluToRP = 1M;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Security", Description = "ChartPanelSecurity", GroupName = "General", Order = 1)]

@@ -186,7 +186,7 @@ internal abstract class UIChartBaseViewModel : ChartBaseViewModel
 		bool _param3)
   {
     UIChartBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D yeuvfbi2ga1Q3dva4g = new UIChartBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D();
-yeuvfbi2ga1Q3dva4g.\u0023\u003DzRRvwDu67s9Rm = this;
+yeuvfbi2ga1Q3dva4g._variableSome3535 = this;
 yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D = _param2;
 Action action = _param3 ? new Action(yeuvfbi2ga1Q3dva4g.\u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D) : yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D;
 if (UIChartBaseViewModel.IsUiThread() )
@@ -223,12 +223,12 @@ internal void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
   private sealed class \u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D
   {
 
-	public UIChartBaseViewModel \u0023\u003DzRRvwDu67s9Rm;
+	public UIChartBaseViewModel _variableSome3535;
 public Action \u0023\u003Dz07PQx44\u003D;
 
 internal void \u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D()
     {
-      if (this.\u0023\u003DzRRvwDu67s9Rm.IsDisposed())
+      if (this._variableSome3535.IsDisposed())
         return;
 this.\u0023\u003Dz07PQx44\u003D();
     }

@@ -36,17 +36,17 @@ public class OptionVolatilitySmileChart :
   IThemeableChart
 {
   public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register(nameof (SmileStep), typeof (double), typeof (OptionVolatilitySmileChart), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(OptionVolatilitySmileChart.\u0023\u003DzcLFqfxuYYRmEBVt_YQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA> \u0023\u003Dz1I2yIarPUD_j = new List<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzlx9Rh5m0_e0t;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal Chart \u0023\u003DzO72kpz0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public OptionVolatilitySmileChart()
@@ -167,7 +167,7 @@ public class OptionVolatilitySmileChart :
 
   private void \u0023\u003DzG8IJ51fy4J4_607kP0quVX8\u003D(bool _param1)
   {
-    OptionVolatilitySmileChart.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new OptionVolatilitySmileChart.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+    OptionVolatilitySmileChart.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new OptionVolatilitySmileChart.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzCPrYc1Q\u003D = _param1;
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxises, new Action<IChartAxis>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D));
     CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().YAxises, new Action<IChartAxis>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D));
@@ -278,13 +278,13 @@ public class OptionVolatilitySmileChart :
     IDisposable,
     IPersistable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly OptionVolatilitySmileChart _parentElement;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly List<LineData<double>> \u0023\u003DzEEABO3tZsceL = new List<LineData<double>>();
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double[] \u0023\u003DzIMYwtfTasyYu;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartVolatilitySmileElement _indicatorElement;
 
     public \u0023\u003DzITGG9JH6wfpA(
@@ -421,7 +421,7 @@ public class OptionVolatilitySmileChart :
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
     public bool \u0023\u003DzCPrYc1Q\u003D;
 

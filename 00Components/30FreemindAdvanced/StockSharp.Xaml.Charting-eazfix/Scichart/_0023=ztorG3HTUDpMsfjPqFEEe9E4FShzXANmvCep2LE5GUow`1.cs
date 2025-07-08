@@ -14,11 +14,11 @@ internal class \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T> :
   IDisposable
   where T : new()
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly object \u0023\u003Dzw9f4RaU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Queue<T> \u0023\u003Dz4FCMJWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DztUQ677I\u003D;
 
   public \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown()

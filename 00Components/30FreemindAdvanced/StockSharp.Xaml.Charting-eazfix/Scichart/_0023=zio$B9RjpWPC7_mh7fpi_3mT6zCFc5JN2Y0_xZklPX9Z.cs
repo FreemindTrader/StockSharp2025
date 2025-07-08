@@ -12,9 +12,9 @@ internal readonly struct \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZ
   \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1,
   int _param2) : \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D \u0023\u003DzMwU9TFy0g\u0024NPiffJXw\u003D\u003D = _param1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003Dzi356d4J_BEO1MM1iHw\u003D\u003D = (double) _param2;
 
   public \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D \u0023\u003Dz2TNMZ47XeEe8()

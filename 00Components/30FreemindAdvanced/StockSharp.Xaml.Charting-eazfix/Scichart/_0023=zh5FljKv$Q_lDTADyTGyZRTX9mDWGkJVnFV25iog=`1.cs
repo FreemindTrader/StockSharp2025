@@ -12,7 +12,7 @@ internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\
   IDisposable
   where T : IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly T \u0023\u003DzvQeD1pE\u003D;
 
   public \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D(

@@ -16,11 +16,11 @@ using System.Windows;
 internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzigzndanwPIFY = DependencyProperty.Register(nameof (SelectedSeriesStyle), typeof (Style), typeof (\u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L.\u0023\u003DzBLNrrTpkTSKCvEflkQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<EventArgs> \u0023\u003DzDpzMqzE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz5h4MErOTnNi_;
 
   public \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L()

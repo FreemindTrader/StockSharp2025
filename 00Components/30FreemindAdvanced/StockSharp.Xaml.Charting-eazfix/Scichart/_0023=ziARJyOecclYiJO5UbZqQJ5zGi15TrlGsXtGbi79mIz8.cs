@@ -19,13 +19,13 @@ internal sealed class \u0023\u003DziARJyOecclYiJO5UbZqQJ5zGi15TrlGsXtGbi79mIz8yp
   IBrush2D,
   IPathColor
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Brush \u0023\u003DzPbF2kpY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzxiNuzSVW5XI8jjmXxQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Size \u0023\u003Dz8FHweBCuOlUf = Size.Empty;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private byte[] \u0023\u003Dz2IFpKD3PCrRb;
 
   public \u0023\u003DziARJyOecclYiJO5UbZqQJ5zGi15TrlGsXtGbi79mIz8ypjHCWp1KngOnCtdn(Brush _param1)

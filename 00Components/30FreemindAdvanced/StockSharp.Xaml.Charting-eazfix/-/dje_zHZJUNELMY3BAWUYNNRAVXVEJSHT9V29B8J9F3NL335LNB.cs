@@ -23,9 +23,9 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLY
   IRenderableSeries,
   \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz2Rta\u0024oTnlQkx = DependencyProperty.Register(nameof (StackedGroupId), typeof (string), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd), new PropertyMetadata((object) "DefaultStackedGroupId", new PropertyChangedCallback(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd.\u0023\u003DzyGQyqAS53k26)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzj\u0024ZDuobq5\u0024GmruUxggpnzio\u003D = DependencyProperty.Register(nameof (IsOneHundredPercent), typeof (bool), typeof (dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd), new PropertyMetadata((object) false));
 
   public dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NLYZEGBR7SRGPPHQJR5J8932SBPK8SBYLR2E2AEEWA_ejd()

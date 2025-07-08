@@ -18,23 +18,23 @@ using System.Windows.Media.Imaging;
 internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x : 
   \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly WriteableBitmap \u0023\u003DzpnLYJ1Q\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly uint[] \u0023\u003DzcNkyaHI7GTSW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected readonly \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq \u0023\u003DzeUisW3maAY9U;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Image \u0023\u003Dz2TNhyDg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D \u0023\u003DzK3L_6jB1hKFR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr \u0023\u003Dzdp7hSzeBLlAo = new \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<IDisposable> \u0023\u003DzBzoKzORE1dsQ = new List<IDisposable>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected readonly Size \u0023\u003DzgYZhPyPIW8zq;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private object myLock = new object();
 
   public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x(
@@ -160,7 +160,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     Point _param3,
     double _param4 = 0.0)
   {
-    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D = _param4;
     if (_param2.X < 0.0 && _param3.X < 0.0 || _param2.Y < 0.0 && _param3.Y < 0.0)
       return;
@@ -208,7 +208,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     bool _param3 = false,
     double _param4 = 0.0)
   {
-    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D jq9Llz3ahZ2LrQl4 = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D();
+    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeClass398 jq9Llz3ahZ2LrQl4 = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeClass398();
     jq9Llz3ahZ2LrQl4.\u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D = _param4;
     foreach (IEnumerable<Tuple<Point, Point>> tuples in _param2.\u0023\u003Dz4tVt5y5Hyap1kzcfrQ\u003D\u003D())
     {
@@ -742,7 +742,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     }
   }
 
-  private sealed class \u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D
+  private sealed class SomeClass398
   {
     public double \u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D;
   }
@@ -757,7 +757,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
   {
     public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D \u0023\u003Dz32bgjTM\u003D;
     public byte[] \u0023\u003DzVIwEApk\u003D;
-    public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+    public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeClass398 \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
     internal \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzs3XZaL28BMmdJ3BwPQ\u003D\u003D(
       int _param1,
@@ -768,7 +768,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
     public double \u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D;
     public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D \u0023\u003Dz32bgjTM\u003D;
@@ -788,25 +788,25 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     IDisposable,
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x \u0023\u003DzrZyFxk8\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D \u0023\u003DzU\u0024ZxpXE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzFEDR40ugZMK3;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzGcDWpYNQwUmC;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Size \u0023\u003DzgYZhPyPIW8zq;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D \u0023\u003Dz1l66LxWIUC10;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool \u0023\u003DzfhO7iL9Vfl9R;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tiESttatY\u0024KE2k2uyGV0g01vOs3xfyzYzSge7gXJQq7CWw\u003D\u003D \u0023\u003DzC8YqVfw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_uBH616IqY6gSsYWlIWivPoFS9LlNAtJDMWElzgA\u003D\u003D \u0023\u003DzUWgGpuy5HIAmEgbqgQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb1WxUUMsJoFuIkNAGsBguUdsg\u003D\u003D _propertyGridEx;
 
     public \u0023\u003DziSg2yR0Zst8P(
@@ -927,13 +927,13 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     IDisposable,
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IBrush2D \u0023\u003DzPbF2kpY\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x \u0023\u003Dzui0AS26tu5YE;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tiESttatY\u0024KE2k2uyGV0g01vOs3xfyzYzSge7gXJQq7CWw\u003D\u003D \u0023\u003DzC8YqVfw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzxQYZMi0S4xrwAUmlOi_ANoo\u003D;
 
     public \u0023\u003DzmJRlt6lBeKjN(
@@ -979,7 +979,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     public void \u0023\u003DzBNsE20w\u003D()
     {
       \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzmJRlt6lBeKjN.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D k0hz6MwLrPm7JfgVw01g = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzmJRlt6lBeKjN.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D();
-      k0hz6MwLrPm7JfgVw01g.\u0023\u003DzRRvwDu67s9Rm = this;
+      k0hz6MwLrPm7JfgVw01g._variableSome3535 = this;
       this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003DzR7pES1JXr5Q9((\u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D) this.\u0023\u003DzC8YqVfw\u003D);
       this.\u0023\u003Dzui0AS26tu5YE.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003DzsRNLsf05Xrz4fphw7Q\u003D\u003D();
       k0hz6MwLrPm7JfgVw01g.\u0023\u003Dz32bgjTM\u003D = this.\u0023\u003DzPbF2kpY\u003D as \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D;
@@ -1000,14 +1000,14 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     private sealed class \u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D
     {
       public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D \u0023\u003Dz32bgjTM\u003D;
-      public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzmJRlt6lBeKjN \u0023\u003DzRRvwDu67s9Rm;
+      public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzmJRlt6lBeKjN _variableSome3535;
       public byte[] \u0023\u003DzVIwEApk\u003D;
 
       internal \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz8NxWWFEIxVja(
         int _param1,
         int _param2)
       {
-        int index = this.\u0023\u003Dz32bgjTM\u003D.\u0023\u003DzsWL8AoDV5hOplPUdrMxd1H\u0024DVzcEoR95WA\u003D\u003D(_param1, _param2, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzIALY0EIJmzAYFffZZA\u003D\u003D());
+        int index = this.\u0023\u003Dz32bgjTM\u003D.\u0023\u003DzsWL8AoDV5hOplPUdrMxd1H\u0024DVzcEoR95WA\u003D\u003D(_param1, _param2, this._variableSome3535.\u0023\u003DzIALY0EIJmzAYFffZZA\u003D\u003D());
         return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) this.\u0023\u003DzVIwEApk\u003D[index + 2], (int) this.\u0023\u003DzVIwEApk\u003D[index + 1], (int) this.\u0023\u003DzVIwEApk\u003D[index], (int) this.\u0023\u003DzVIwEApk\u003D[index + 3]);
       }
     }

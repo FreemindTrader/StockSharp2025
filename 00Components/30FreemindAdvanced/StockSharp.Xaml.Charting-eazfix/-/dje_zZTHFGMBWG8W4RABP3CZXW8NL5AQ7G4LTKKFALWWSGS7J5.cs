@@ -15,17 +15,17 @@ namespace \u002D;
 internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd : 
   ChartModifierBase
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) "DefaultAxisId"));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) "DefaultAxisId"));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private AnnotationBase \u0023\u003DzJu3oQ4_zae0S;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Type \u0023\u003DzSsJ0VVqBhS6c;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Style \u0023\u003DzL3qbeQTHvLZ5;
 
   public event EventHandler dje_zHHBMH6HSAJ3TGDQ_ejd;

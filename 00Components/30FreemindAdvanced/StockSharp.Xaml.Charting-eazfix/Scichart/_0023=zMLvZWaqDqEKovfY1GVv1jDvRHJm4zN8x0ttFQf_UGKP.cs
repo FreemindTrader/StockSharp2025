@@ -15,11 +15,11 @@ internal struct \u0023\u003DzMLvZWaqDqEKovfY1GVv1jDvRHJm4zN8x0ttFQf_UGKPMTTL3MdO
   IBrush2D,
   IPathColor
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dzfzo3Zt0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzy_U\u00246cJFiCuB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzPsHNvsjqIq72;
 
   internal \u0023\u003DzMLvZWaqDqEKovfY1GVv1jDvRHJm4zN8x0ttFQf_UGKPMTTL3MdOFwfA\u003D(

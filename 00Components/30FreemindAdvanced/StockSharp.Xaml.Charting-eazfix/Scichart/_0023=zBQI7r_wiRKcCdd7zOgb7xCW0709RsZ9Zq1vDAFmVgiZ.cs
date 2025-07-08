@@ -379,9 +379,9 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot
 
   private struct \u0023\u003DzdnsGX6fk3n0H
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     internal int \u0023\u003DzCVPVJaY\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     internal int \u0023\u003Dzzm\u0024Pe00\u003D;
   }
 

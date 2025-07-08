@@ -31,11 +31,11 @@ public class ChartOrderElement :
   IChartOrderElement,
   IChartTransactionElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzkZyAKIN\u0024NPN3;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzUAvz8ZozfnUe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartOrderDisplayFilter \u0023\u003DzMivvMSAVwLAH;
 
   public ChartOrderElement()

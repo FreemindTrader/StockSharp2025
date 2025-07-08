@@ -28,7 +28,7 @@ public class AlligatorPainter : BaseChartIndicatorPainter<Alligator>
 
   public AlligatorPainter()
     {
-        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Alligator>.\u0023\u003Dzl7RImWAQVb2K();
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Alligator>.GetColorProvider();
         this._lips = ( IChartLineElement ) new ChartLineElement()
         {
             Color = indicatorColorProvider.GetNextColor()

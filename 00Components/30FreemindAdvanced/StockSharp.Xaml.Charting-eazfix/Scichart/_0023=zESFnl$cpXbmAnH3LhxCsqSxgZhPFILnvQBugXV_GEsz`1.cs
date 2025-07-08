@@ -13,9 +13,9 @@ using System.Linq;
 internal sealed class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<T> : 
   \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis\u0024<T>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly T[] \u0023\u003Dzy04c1jB0PxOy;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzfwiqU6ROP8\u0024k;
 
   public \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D(

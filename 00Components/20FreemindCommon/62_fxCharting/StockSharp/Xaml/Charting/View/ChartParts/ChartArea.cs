@@ -57,7 +57,7 @@ namespace StockSharp.Xaml.Charting
         }
 
 
-        public IScichartSurfaceVM ChartSurfaceViewModel
+        public IScichartSurfaceVM ViewModel
         {
             get
             {
@@ -140,7 +140,7 @@ namespace StockSharp.Xaml.Charting
 
                 if( value == null )
                 {
-                    ChartSurfaceViewModel.Release( );
+                    ViewModel.Release( );
                 }
 
                 _chart = value;
@@ -169,7 +169,7 @@ namespace StockSharp.Xaml.Charting
                 }
                 
 
-                ChartSurfaceViewModel.InitPropertiesEventHandlers( );
+                ViewModel.InitPropertiesEventHandlers( );
             }
         }
 
@@ -358,7 +358,7 @@ namespace StockSharp.Xaml.Charting
 
         public void Dispose( )
         {
-            ChartSurfaceViewModel.Dispose( );
+            ViewModel.Dispose( );
         }
 
         private sealed class AxisNotifyList : PropertiesNotifyList< ChartAxis >

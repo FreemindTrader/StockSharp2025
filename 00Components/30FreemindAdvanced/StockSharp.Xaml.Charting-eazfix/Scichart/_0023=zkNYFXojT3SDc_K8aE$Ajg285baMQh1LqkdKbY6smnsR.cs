@@ -10,11 +10,11 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzkNYFXojT3SDc_K8aE\u0024Ajg285baMQh1LqkdKbY6smnsRH\u0024nQalw\u003D\u003D : 
   \u0023\u003DzeHqydGt1MYwtwPKPfmmWnLJ77ByVH81gaeQU2i00qjI8QhelTQ\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzvEWdpLc\u0024gZvh;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dzd865j7U\u003D = string.Empty;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dz3dV4yOVvBOEZr20ovA\u003D\u003D = string.Empty;
 
   public override bool HasExponent

@@ -14,15 +14,15 @@ using System.Windows.Threading;
 internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6mv5sY8awUAMrmsk\u003D : 
   dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly DispatcherTimer \u0023\u003DzO6iOtf4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzCvE85jZgqySy;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz9OR_fOFczTfr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz6kKPJacULkFJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzt9nF\u0024JMVAHGK;
 
   public \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6mv5sY8awUAMrmsk\u003D()

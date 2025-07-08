@@ -492,7 +492,7 @@ internal class TransactionDataSeries :
     ICollection<double>,
     IEnumerable<double>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TransactionDataSeries _parentElement;
 
     public \u0023\u003DzV\u0024R8yw8\u003D(TransactionDataSeries _param1)
@@ -520,7 +520,7 @@ internal class TransactionDataSeries :
 
     public IEnumerator<double> GetEnumerator()
     {
-      return this._parentElement.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.\u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
+      return this._parentElement.Data.Select<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeIntenalMethod003D ?? (TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeIntenalMethod003D = new Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double>(TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D))).GetEnumerator();
     }
 
     bool IList.\u0023\u003Dz07_U1xKJVCxa7bIf\u0024A\u003D\u003D(object _param1)
@@ -616,7 +616,7 @@ internal class TransactionDataSeries :
     private sealed class SomeClass34343383
     {
       public static readonly TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383 SomeMethond0343 = new TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D.SomeClass34343383();
-      public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> \u0023\u003Dz6FRqMaLO3vZJA57SJw\u003D\u003D;
+      public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> SomeIntenalMethod003D;
       public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
 
       internal double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(

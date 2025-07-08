@@ -27,35 +27,35 @@ internal abstract class ChartModifierBase :
   IChartModifierBase,
   IReceiveMouseEvents 
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzkiTDvI_Iu6kL = DependencyProperty.Register(nameof (ReceiveHandledEvents), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSLZmDSF5TsAu = DependencyProperty.RegisterAttached(nameof (IsEnabled), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartModifierBase.\u0023\u003DzMFI5J30qjapk)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register(nameof (ExecuteOn), typeof (dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd), typeof (ChartModifierBase), new PropertyMetadata((object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register(nameof (MouseModifier), typeof (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D), typeof (ChartModifierBase), new PropertyMetadata((object) \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ISciChartSurface \u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd> \u0023\u003DzKlT17PlFLc73;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IServiceContainer _serviceContainer;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzNJAhntg15gAM;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzgBeNpsZ8d\u0024uI;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzIp\u0024m94zfWIDB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzO10ORkEELARh;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dzp3bx1gz2PPH2VRct1w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzIOF\u0024pM4fvIzk4nVUyHULhOk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz2PHh1f4YKRbtmShpA\u0024Kym4A1qOUa;
 
   protected ChartModifierBase()

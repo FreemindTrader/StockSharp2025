@@ -21,7 +21,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (CandlePatternIndicator))]
 public class CandlePatternIndicatorPainter : BaseChartIndicatorPainter<CandlePatternIndicator>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly CandlePatternElement \u0023\u003DzAiwJX\u0024zIPQsrx2qUGA\u003D\u003D;
 
   public CandlePatternIndicatorPainter()

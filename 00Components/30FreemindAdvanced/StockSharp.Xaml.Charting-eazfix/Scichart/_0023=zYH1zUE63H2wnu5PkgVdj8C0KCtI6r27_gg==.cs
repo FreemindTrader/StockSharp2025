@@ -14,25 +14,25 @@ internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
   BindableObject ,
   ICloneable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IRenderableSeries \u0023\u003DzFHC8wYzVYCMq;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzP6QCNf4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzkCGMM78\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D \u0023\u003Dz6UP\u0024hXi0MzTB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzZn1qtjmkP\u0024rj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003Dzv3mQzJ3Hs5AL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzJvPSB6b\u0024M1Z4;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzSBc7fTob32WZ;
 
   public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D(

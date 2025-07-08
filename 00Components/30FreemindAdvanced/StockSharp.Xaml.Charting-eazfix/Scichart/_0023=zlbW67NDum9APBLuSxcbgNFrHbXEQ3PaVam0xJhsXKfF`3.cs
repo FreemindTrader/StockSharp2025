@@ -22,11 +22,11 @@ internal sealed class \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<
   where \u0023\u003DzE8zkRfY\u003D : IComparable
   where \u0023\u003DzPqz5cUs\u003D : IComparable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly IMath<\u0023\u003DzPqz5cUs\u003D> \u0023\u003DzVgDDgro\u003D = MathHelper.GetMath<\u0023\u003DzPqz5cUs\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzPqz5cUs\u003D)> \u0023\u003Dz3laIKDGah\u0024Kh;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzPqz5cUs\u003D> \u0023\u003Dz9QqJzD0\u003D = (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzPqz5cUs\u003D>) new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqI7mlakqGSWX9govxQ\u0024cni0A<\u0023\u003DzPqz5cUs\u003D>();
 
   public \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7()

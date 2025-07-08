@@ -89,7 +89,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
         SetupLineExtraProperties( );
 
         //_chartSeriesViewModel = new ChartSeriesViewModel( _xyzDataSeries, null );
-        //ChartSurfaceViewModel.AddSeriesViewModelsToRoot( RootElem, _chartSeriesViewModel );
+        //ViewModel.AddSeriesViewModelsToRoot( RootElem, _chartSeriesViewModel );
 
     }
 

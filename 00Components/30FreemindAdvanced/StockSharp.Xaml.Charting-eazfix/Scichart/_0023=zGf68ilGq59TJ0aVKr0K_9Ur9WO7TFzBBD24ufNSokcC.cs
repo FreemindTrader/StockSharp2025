@@ -18,11 +18,11 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   CandlePatternElement _param1) : 
   ChartElementUI<CandlePatternElement>(_param1)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly HashSet<DateTime> \u0023\u003DzcU\u0024Li0iEvziI = new HashSet<DateTime>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DateTime[] \u0023\u003Dzn6iWmQ_uwD0z = Array.Empty<DateTime>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private CandlestickUI \u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D;
 
   protected override void Init()
@@ -69,7 +69,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
     \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
-    zeaY3Uu1m4CyxerxRw.\u0023\u003DzRRvwDu67s9Rm = this;
+    zeaY3Uu1m4CyxerxRw._variableSome3535 = this;
     if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>) _param1))
       return false;
     this.\u0023\u003Dzsinxw0lApF067xCcMw\u003D\u003D(true);
@@ -135,12 +135,12 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
   private sealed class \u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D
   {
     public bool \u0023\u003Dz1ZKXBqs\u003D;
-    public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D _variableSome3535;
     public Action<DateTimeOffset> \u0023\u003Dzon\u0024_RZacJIPJ;
 
     internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D(DateTimeOffset _param1)
     {
-      this.\u0023\u003Dz1ZKXBqs\u003D |= this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzcU\u0024Li0iEvziI.Add(_param1.UtcDateTime);
+      this.\u0023\u003Dz1ZKXBqs\u003D |= this._variableSome3535.\u0023\u003DzcU\u0024Li0iEvziI.Add(_param1.UtcDateTime);
     }
   }
 }

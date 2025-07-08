@@ -11,15 +11,15 @@ using System.Windows.Threading;
 #nullable enable
 internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D : IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly 
   #nullable disable
   Action dpoChangedEventArgs;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzMRT_jLU\u003D = 100;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DispatcherTimer \u0023\u003DzO6iOtf4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DispatcherPriority \u0023\u003Dz87uDtww\u003D = (DispatcherPriority) 4;
 
   private \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D(Action _param1)

@@ -28,15 +28,15 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<\u0023\u003DzulcL8RA\u003D, double, double> \u0023\u003DzlkmfHYgr1H49;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzZYTLjjg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IComparable \u0023\u003DzFEDR40ugZMK3;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<IComparable, Color?> \u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D;
 
   public \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF(

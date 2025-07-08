@@ -19,13 +19,13 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
   IEnumerable<T>,
   IEnumerable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private T[] \u0023\u003DzkELV\u0024GPsC83d;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz0EJ0DjSA4vke = -1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly int \u0023\u003DzJpbCbio\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzdJFp_7vu05Ks;
 
   public \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI(int _param1)
@@ -149,7 +149,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     this.\u0023\u003DzwDCWXBFSmFxV(_param1, _param2);
   }
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   [IndexerName("#=zMRIb09I=")]
   public T this[int _param1]
   {
@@ -268,7 +268,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
   {
     return (IEnumerator<T>) new \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T>.\u0023\u003Dzo9CreWbON5RL5AeMow\u003D\u003D(0)
     {
-      \u0023\u003DzRRvwDu67s9Rm = this
+      _variableSome3535 = this
     };
   }
 
@@ -297,13 +297,13 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     IDisposable,
     IEnumerator
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private T \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T> \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    public \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T> _variableSome3535;
+    
     private int \u0023\u003DzWloIRY4kF_0P;
 
     [DebuggerHidden]
@@ -320,7 +320,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     bool IEnumerator.MoveNext()
     {
       int z4fzyEz1SsHya = this.\u0023\u003Dz4fzyEZ1SsHYa;
-      \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T> zRrvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+      \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T> zRrvwDu67s9Rm = this._variableSome3535;
       switch (z4fzyEz1SsHya)
       {
         case 0:

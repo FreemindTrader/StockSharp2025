@@ -55,7 +55,7 @@ namespace StockSharp.Xaml.Charting
             var indicatorArea = new ChartArea(ChartCount) { Title = "MACD", XAxisType = XAxisType };
             var indicatorSurface = new ScichartSurfaceMVVM(indicatorArea, true);
 
-            indicatorArea.ChartSurfaceViewModel = indicatorSurface;
+            indicatorArea.ViewModel = indicatorSurface;
 
             var timeZoneInfo = GetTimeZone();
 
@@ -83,7 +83,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-            indicatorArea.ChartSurfaceViewModel = indicatorSurface;
+            indicatorArea.ViewModel = indicatorSurface;
 
             timeZoneInfo = GetTimeZone();
 

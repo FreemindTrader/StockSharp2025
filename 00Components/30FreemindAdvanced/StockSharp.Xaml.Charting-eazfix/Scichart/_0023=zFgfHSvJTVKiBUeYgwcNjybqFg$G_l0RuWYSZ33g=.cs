@@ -434,17 +434,17 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     IEnumerable<IEnumerable<Tuple<Point, Point>>>,
     IEnumerator<IEnumerable<Tuple<Point, Point>>>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerable<Tuple<Point, Point>> \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerable<Tuple<Point, Point>> \u0023\u003DzGB9Q4U0\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public IEnumerable<Tuple<Point, Point>> \u0023\u003DziwMdY_txwoDC;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerator<Tuple<Point, Point>> \u0023\u003DzQ4y6uPO8vKMGT9eMZA\u003D\u003D;
 
     [DebuggerHidden]
@@ -540,15 +540,15 @@ label_7:
     Tuple<Point, Point>>,
     IEnumerator<Tuple<Point, Point>>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Tuple<Point, Point> \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerator<Tuple<Point, Point>> \u0023\u003DzDQL0BA0\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public IEnumerator<Tuple<Point, Point>> \u0023\u003DzUG8TIoNNA_H_;
 
     [DebuggerHidden]
@@ -648,17 +648,17 @@ label_8:
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>,
     IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dzw\u0024Dv7kw\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzkJE8qXgCdeO6;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzezsfKEm_Vb7b\u0024HR11w\u003D\u003D;
 
     [DebuggerHidden]

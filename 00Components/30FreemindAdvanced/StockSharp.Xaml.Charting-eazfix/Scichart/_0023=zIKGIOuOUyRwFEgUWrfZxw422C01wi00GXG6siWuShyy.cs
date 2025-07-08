@@ -11,9 +11,9 @@ using System.Reflection;
 #nullable disable
 internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh : IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private WeakReference \u0023\u003DzekIeoK8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Type \u0023\u003Dz0AB1VGY\u003D;
 
   public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh(

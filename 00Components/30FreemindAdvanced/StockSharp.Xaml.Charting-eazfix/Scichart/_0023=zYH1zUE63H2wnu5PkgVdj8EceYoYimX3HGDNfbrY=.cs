@@ -10,9 +10,9 @@ using System.Diagnostics;
 #nullable disable
 internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D : EventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly bool \u0023\u003DzmW9liOCGZ1ILE0kxQQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly bool \u0023\u003DzxygydNpQNQcML\u00242bPw\u003D\u003D;
 
   public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D(bool _param1, bool _param2)

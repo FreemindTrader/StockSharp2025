@@ -55,11 +55,11 @@ public class ChartPanel :
   INotifyPropertyChangedEx,
   IWpfChart
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private 
   #nullable disable
   CancellationTokenSource \u0023\u003DzjOHdKU9O7LKI;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ObservableCollection<TimeSpan> \u0023\u003DzMtehrzRObGK8;
   public static readonly RoutedCommand RegisterOrderCommand = new RoutedCommand();
   public static readonly RoutedCommand AddAreaCommand = new RoutedCommand();
@@ -67,37 +67,37 @@ public class ChartPanel :
   public static readonly RoutedCommand AddIndicatorCommand = new RoutedCommand();
   public static readonly RoutedCommand ShareCommand = new RoutedCommand();
   public static readonly RoutedCommand PatternCommand = new RoutedCommand();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartPanelOrderSettings \u0023\u003Dzu4SEH0UpBFYOJH\u0024CgC7r4Rg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartPanelShareSettings \u0023\u003DzxpZbe5MLm\u0024yDXxXOLgO2QY0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly List<ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D> \u0023\u003DzoQNjsvS8x7txZ62LTQ\u003D\u003D = new List<ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangedEventHandler PropertyChangedEvent;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzMJITrmQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzCm\u0024a_RJSIzjb8Je3X21wN90\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ChartPanel \u0023\u003Dzv4BS1WQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal QuickOrderPanel \u0023\u003DzW15YPW8yFbIF;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal BarManager \u0023\u003DzK0Y33rI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal BarEditItem \u0023\u003DzAWra9\u0024_YgvQ6QTggug\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEditSettings \u0023\u003Dz5wj51j\u0024m7KHERsE\u0024DA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal BarEditItem \u0023\u003Dzb98_9e4umo9R;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEditSettings \u0023\u003Dz1jt7bIJr0f0_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal BarCheckItem \u0023\u003DzVzfMDsVHAcU9;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal Chart \u0023\u003DzO72kpz0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   static ChartPanel()
@@ -117,7 +117,7 @@ public class ChartPanel :
   public ChartPanel()
   {
     ChartPanel.\u0023\u003DzMwuV1aTxCngvmYEggNUKzD8\u003D txCngvmYeggNuKzD8 = new ChartPanel.\u0023\u003DzMwuV1aTxCngvmYEggNUKzD8\u003D();
-    txCngvmYeggNuKzD8.\u0023\u003DzRRvwDu67s9Rm = this;
+    txCngvmYeggNuKzD8._variableSome3535 = this;
     this.InitializeComponent();
     if (this.IsDesignMode())
       return;
@@ -298,7 +298,7 @@ public class ChartPanel :
   {
     ((DispatcherObject) this).GuiAsync(new Action(new ChartPanel.\u0023\u003Dzfi7\u0024520U3d1pGN5XKVeQxF4\u003D()
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       \u0023\u003DzaPd0W_M\u003D = predicate
     }.\u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D));
   }
@@ -654,7 +654,7 @@ public class ChartPanel :
     ChartPanel.\u0023\u003Dz9avG6juy8sz5xvXs9gnmpIA\u003D g6juy8sz5xvXs9gnmpIa = new ChartPanel.\u0023\u003Dz9avG6juy8sz5xvXs9gnmpIA\u003D();
     g6juy8sz5xvXs9gnmpIa.\u0023\u003DzgQgmhv4\u003D = (ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D) this.\u0023\u003DzAWra9\u0024_YgvQ6QTggug\u003D\u003D.EditValue;
     if (g6juy8sz5xvXs9gnmpIa.\u0023\u003DzgQgmhv4\u003D != null)
-      this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzvqeJB240RXk9(g6juy8sz5xvXs9gnmpIa.\u0023\u003DzgQgmhv4\u003D.DrawStyle);
+      this.\u0023\u003DzO72kpz0\u003D.CandleDrawStyles(g6juy8sz5xvXs9gnmpIa.\u0023\u003DzgQgmhv4\u003D.DrawStyle);
     if (this.\u0023\u003DzMJITrmQ\u003D)
       return;
     CollectionHelper.ForEach<IChartCandleElement>(this.\u0023\u003DzO72kpz0\u003D.Areas.SelectMany<IChartArea, IChartElement>(ChartPanel.SomeClass34343383.\u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D ?? (ChartPanel.SomeClass34343383.\u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D = new Func<IChartArea, IEnumerable<IChartElement>>(ChartPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzYvkVKOh6kY\u0024W7ARAS\u0024RZ2ZLc6Hzq3nufL5x4rb8\u003D))).OfType<IChartCandleElement>(), new Action<IChartCandleElement>(g6juy8sz5xvXs9gnmpIa.\u0023\u003DzhCrYxgzXy5_i82jHuEXWBKhZOVBJFTHN\u0024A\u003D\u003D));
@@ -1144,11 +1144,11 @@ public class ChartPanel :
 
   private sealed class \u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D : NotifiableObject
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Func<string> \u0023\u003DzmTOWZCo\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ImageSource \u0023\u003DzPbY9ar5NYhJiWDJXAA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartCandleDrawStyles \u0023\u003DzzSzfw_S6SqVya\u0024wNvx65bYg\u003D;
 
     public \u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D(
@@ -1174,21 +1174,21 @@ public class ChartPanel :
   [StructLayout(LayoutKind.Auto)]
   private struct \u0023\u003DzI7z_8L99LsAlFQfWVphsFdc\u003D : IAsyncStateMachine
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public AsyncTaskMethodBuilder \u0023\u003DzvW8JtmzNnvTa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public ChartPanel \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    public ChartPanel _variableSome3535;
+    
     public CancellationToken \u0023\u003Dzf32vx1Q\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private TaskAwaiter \u0023\u003DzS68_TbFJ1FlN;
 
     void IAsyncStateMachine.MoveNext()
     {
       int z4fzyEz1SsHya = this.\u0023\u003Dz4fzyEZ1SsHYa;
-      ChartPanel zRrvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+      ChartPanel zRrvwDu67s9Rm = this._variableSome3535;
       try
       {
         try
@@ -1292,7 +1292,7 @@ label_14:
   private sealed class \u0023\u003DzMwuV1aTxCngvmYEggNUKzD8\u003D
   {
     public string[] \u0023\u003DzwqcAXcxvUggD;
-    public ChartPanel \u0023\u003DzRRvwDu67s9Rm;
+    public ChartPanel _variableSome3535;
 
     internal void \u0023\u003DzpgDygB5ErIl1Nu7QHw\u003D\u003D(
       #nullable enable
@@ -1301,28 +1301,28 @@ label_14:
     {
       if (!((IEnumerable<string>) this.\u0023\u003DzwqcAXcxvUggD).Contains<string>(_param2.PropertyName))
         return;
-      ((INotifyPropertyChangedEx) this.\u0023\u003DzRRvwDu67s9Rm).NotifyPropertyChanged(_param2.PropertyName);
+      ((INotifyPropertyChangedEx) this._variableSome3535).NotifyPropertyChanged(_param2.PropertyName);
     }
   }
 
   [StructLayout(LayoutKind.Auto)]
   private struct \u0023\u003DzTcq_yS5TSFVn96767oyYZ8s\u003D : IAsyncStateMachine
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public AsyncVoidMethodBuilder \u0023\u003DzvW8JtmzNnvTa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public 
     #nullable disable
-    ChartPanel \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    ChartPanel _variableSome3535;
+    
     private TaskAwaiter \u0023\u003DzS68_TbFJ1FlN;
 
     void IAsyncStateMachine.MoveNext()
     {
       int z4fzyEz1SsHya = this.\u0023\u003Dz4fzyEZ1SsHYa;
-      ChartPanel zRrvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+      ChartPanel zRrvwDu67s9Rm = this._variableSome3535;
       try
       {
         try
@@ -1378,27 +1378,27 @@ label_14:
   [StructLayout(LayoutKind.Auto)]
   private struct \u0023\u003DzZgO8RIPoYDQT9H_pgQ\u003D\u003D : IAsyncStateMachine
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public AsyncTaskMethodBuilder \u0023\u003DzvW8JtmzNnvTa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public 
     #nullable disable
-    ChartPanel \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    ChartPanel _variableSome3535;
+    
     public bool \u0023\u003Dz5kxxfgM\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public string \u0023\u003DznVxnqZE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public CancellationToken \u0023\u003Dzf32vx1Q\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private TaskAwaiter \u0023\u003DzS68_TbFJ1FlN;
 
     void IAsyncStateMachine.MoveNext()
     {
       int z4fzyEz1SsHya = this.\u0023\u003Dz4fzyEZ1SsHYa;
-      ChartPanel zRrvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+      ChartPanel zRrvwDu67s9Rm = this._variableSome3535;
       try
       {
         TaskAwaiter awaiter;
@@ -1442,12 +1442,12 @@ label_14:
   {
     public 
     #nullable disable
-    ChartPanel \u0023\u003DzRRvwDu67s9Rm;
+    ChartPanel _variableSome3535;
     public Func<Order, bool> \u0023\u003DzaPd0W_M\u003D;
 
     internal void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzO72kpz0\u003D.CancelOrders(this.\u0023\u003DzaPd0W_M\u003D);
+      this._variableSome3535.\u0023\u003DzO72kpz0\u003D.CancelOrders(this.\u0023\u003DzaPd0W_M\u003D);
     }
   }
 }

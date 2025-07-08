@@ -34,43 +34,43 @@ internal sealed class CandlestickUI(
   ChartElementUI<ChartCandleElement>(_param1),
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> \u0023\u003DzbqAj1u4yWHJPaYS4vgV_85Q\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<DateTime, double> \u0023\u003DzVtuwsFJcSHit;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedList<\u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D> \u0023\u003DzSi1nzfdLoJWYKewDlw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TimeframeSegmentDataSeries \u0023\u003DzQ73Ei9NuGdXX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DateTime \u0023\u003DzTqpoRUfBxm2O;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool? \u0023\u003DzuuCm_xeHWuMy;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IndexRange  \u0023\u003DzUuMx9G25\u0024d0f;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzCKkTLgMyXhNP;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzfR8j2PM1RBui;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzjAnzC1Gk9\u0024VP;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzKCOaMdzTEc8\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzdaM3_c5kMuSK;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzWbY5DVo2YLuB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Decimal? \u0023\u003DzfILpmP5JFeem;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<DateTimeOffset, bool, bool, Color?> \u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedDictionary<DateTime, Color> \u0023\u003DzK1tfXeY7PPNb;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly CandlestickUI.\u0023\u003Dzqyx1Pxv3orWX \u0023\u003Dznrzap3Ru8O5U = new CandlestickUI.\u0023\u003Dzqyx1Pxv3orWX(_param1);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzZ8C5xEdop1TJ;
 
   public \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> OhlcSeries
@@ -702,7 +702,7 @@ label_4:
 
   private sealed class \u0023\u003DzBaQAMfOA0Xrd(TimeSpan? _param1) : IValueConverter
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly TimeSpan? \u0023\u003DzIijA5WEGKapy9Yb82g\u003D\u003D = _param1;
 
     object IValueConverter.Convert(
@@ -726,11 +726,11 @@ label_4:
 
   private sealed class \u0023\u003Dzqyx1Pxv3orWX : NotifiableObject, IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly ChartCandleElement \u0023\u003DzpojClAU\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D \u0023\u003DziWrrroE\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool \u0023\u003DzfEd754vMvBRgdJ4LHw\u003D\u003D;
 
     public \u0023\u003Dzqyx1Pxv3orWX(ChartCandleElement _param1)

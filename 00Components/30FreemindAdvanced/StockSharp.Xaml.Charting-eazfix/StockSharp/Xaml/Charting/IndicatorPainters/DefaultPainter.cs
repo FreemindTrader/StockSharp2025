@@ -19,12 +19,12 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
 public class DefaultPainter : BaseChartIndicatorPainter<IIndicator>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003Dzc5oaf3eKyon\u00249mHymQ\u003D\u003D;
 
   public DefaultPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.GetColorProvider();
     this.\u0023\u003Dzc5oaf3eKyon\u00249mHymQ\u003D\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()
@@ -48,7 +48,7 @@ public class DefaultPainter : BaseChartIndicatorPainter<IIndicator>
     int num2 = count1 - num1;
     if (num2 > 0)
     {
-      IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.\u0023\u003Dzl7RImWAQVb2K();
+      IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.GetColorProvider();
       for (int index = 0; index < num2; ++index)
       {
         IIndicator indicator1 = innerIndicators[count2 + index];

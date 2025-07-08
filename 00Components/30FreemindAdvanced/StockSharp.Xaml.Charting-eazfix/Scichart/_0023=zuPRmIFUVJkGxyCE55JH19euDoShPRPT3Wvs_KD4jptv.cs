@@ -10,7 +10,7 @@ using System.Diagnostics;
 #nullable disable
 internal sealed class \u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr : EventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003DzcrBdqBo\u003D;
 
   public \u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr(double _param1)

@@ -18,15 +18,15 @@ namespace \u002D;
 internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd : 
   MarkupExtension
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly IValueConverter \u0023\u003DzMeh\u0024Scs\u003D = (IValueConverter) new dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd.\u0023\u003Dza2zbQRRjMsrw();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly RelativeSource \u0023\u003DzCtHv3OM\u003D = RelativeSource.Self;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly object[] \u0023\u003Dz6VPkvJI\u003D = Array.Empty<object>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzcKkMkrPBYL5xXPBm5Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private BindingMode \u0023\u003DzQDtv5lyKsEt_C2MmGg\u003D\u003D;
 
   public dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd()
@@ -34,7 +34,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE
     this.\u0023\u003DzWsF8IZXUPckE(BindingMode.OneWay);
   }
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public string dje_zMW6EZHW5_ejd
   {
     get => this.\u0023\u003DzcKkMkrPBYL5xXPBm5Q\u003D\u003D;

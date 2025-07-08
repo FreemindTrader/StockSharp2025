@@ -37,85 +37,85 @@ public class ChartCandleElement :
   IChartComponent,
   IDrawableChartElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChartCandleDrawStyles \u0023\u003DzC4jphaMvwp_c;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzOt6VQIXEz6wR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzxQUcdBzqU1tV;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzaEdb48\u0024dPZb2;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzXmtPZlntnnIF;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzCGVfeT7yJc5e;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzgRuR77srSeQQ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003Dz1qvt9yuVxTg7;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzvu7bxO54zKRR = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Decimal? \u0023\u003Dz\u0024kpsOHjyC4ZcEEkGZw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?> _colorer;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int? \u0023\u003Dz7BO88sWmQOlbQ4xbNv234Vs\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int? \u0023\u003DzCchKc9p6e3eASDI7XtYEcSE\u003D = new int?(15);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzuE0IT92bNDWj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzxziNvK2z\u0024KKtYX2QOUItAIE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzLXxRNLflkZg1QXO9GQ5mbEA\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzYVRqs8SxcIG3\u0024Cmab528k0c\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzVyz_X4QJeeZe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzhpjhCeO6qVIc;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DztG76ml9LT4Fefpo49w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzlcMNLwJnh3U0GIQLv6ifbn8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzRZlnxFq_dA8bpVucvA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003Dzm_rCsdjvIme82gDcwg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzlHGQ7vhyms9RRIMG4Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzNDBg1nu512sWNcpi3IGLK7I\u003D = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzgHhE3eSOYhXCYO0MnRxti4g\u003D = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzo3fyW\u0024yqm7aFTjI2Oe\u00245mKM\u003D = 0.15;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003DzHdBmlsMAGJRI;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? \u0023\u003Dz8kh4LIBZUlf_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DztSljFjtK7JnB = "Segoe UI";
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Decimal \u0023\u003DzItQGboHj57Hj = 14M;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private FontWeight \u0023\u003DzVykjiWPdJqgM = FontWeights.Bold;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzl6q7_ptbSx3A8sqdX2gH1ls\u003D = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? _buyColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? _sellColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? _upColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color? _downColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _drawingColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private UIChartBaseViewModel _baseViewModel;
 
   public ChartCandleElement()

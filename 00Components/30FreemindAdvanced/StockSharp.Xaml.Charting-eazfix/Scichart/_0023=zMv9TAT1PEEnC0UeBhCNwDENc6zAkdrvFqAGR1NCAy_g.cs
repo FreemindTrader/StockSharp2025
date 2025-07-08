@@ -127,11 +127,11 @@ internal sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4
 
   private struct \u0023\u003DzdbdSPUs\u003D(int _param1, int _param2, int _param3)
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dz7UoMioA\u003D = _param1;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dz4WWfe0A\u003D = _param2;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public int \u0023\u003Dzi8jDI4I\u003D = _param3;
   }
 

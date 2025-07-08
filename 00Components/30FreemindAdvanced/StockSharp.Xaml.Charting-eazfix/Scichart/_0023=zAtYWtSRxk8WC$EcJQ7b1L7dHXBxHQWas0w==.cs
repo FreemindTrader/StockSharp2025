@@ -12,7 +12,7 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D : 
   Range<TimeSpan>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly string \u0023\u003Dz_wxyT_Q\u003D = "hh\\:mm\\:ss";
 
   public \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D()

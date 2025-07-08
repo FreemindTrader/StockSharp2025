@@ -11,7 +11,7 @@ using System.Diagnostics;
 internal sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc : 
   \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private CandlePriceLevel \u0023\u003DzsQrVoaE\u003D;
 
   public \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc(

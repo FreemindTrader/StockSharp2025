@@ -15,15 +15,15 @@ internal sealed class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u
   IDisposable,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private 
   #nullable disable
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 \u0023\u003DzXZq\u0024gjyIo\u00244n;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzEcmsYfw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzeDqneUWYjgVB;
 
   public \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u0024y9xNKaNytRdYOY23(
@@ -111,31 +111,31 @@ internal sealed class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u
     IEnumerable,
     IEnumerator
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Point \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Point \u0023\u003Dzul3UIvg\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public Point \u0023\u003DzoXFq90nEuXYCONAPdA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private Point \u0023\u003Dz1fZcCSo\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public Point \u0023\u003DzTyFgSrmTCJ3_JX2iEQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz\u0024Jq4fjsW911sBo9e1Q\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzjyrSHEwsQBDE1gpEMQ\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzQOIJ1TmGwKzjJrbq6w\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003DzTRfI0oIcNk2wEFLNvA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private double \u0023\u003Dz49G2_dDCjGlwZUZ7pg\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz85Hyxf6MHzOS;
 
     [DebuggerHidden]

@@ -22,7 +22,7 @@ internal sealed class \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<T> :
   IReadOnlyCollection<T>,
   IReadOnlyList<T>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<T> \u0023\u003Dzg0gWX4E\u003D;
 
   public \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D(List<T> _param1)

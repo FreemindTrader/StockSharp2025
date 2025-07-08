@@ -33,9 +33,9 @@ public class ChartAnnotation :
   IChartComponent,
   IDrawableChartElement
 {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private ChartAnnotationTypes _chartAnnotationTypes;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private ChartAnnotationVM _baseViewModel;
 
     public ChartAnnotation() => this.IsLegend = false;

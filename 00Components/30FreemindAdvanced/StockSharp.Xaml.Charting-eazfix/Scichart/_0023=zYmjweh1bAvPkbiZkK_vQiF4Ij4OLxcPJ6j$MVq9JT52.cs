@@ -30,7 +30,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   ChartActiveOrdersElement _param1) : 
   ChartElementUI<ChartActiveOrdersElement>(_param1)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> \u0023\u003DzS1WBvIHjLsHj = new PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>();
 
   protected override void UpdateUi()
@@ -72,7 +72,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     ChartDrawData.sActiveOrder _param1)
   {
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
-    z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRRvwDu67s9Rm = this;
+    z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D = _param1;
     if (!UIChartBaseViewModel.IsUiThread())
     {
@@ -284,13 +284,13 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
 
   private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
   {
-    public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D _variableSome3535;
     public ChartDrawData.sActiveOrder \u0023\u003DzrnGNvGY\u003D;
     public Order \u0023\u003Dz54\u0024be\u0024c\u003D;
 
     internal void \u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz4ka8DEp6gsYz(this.\u0023\u003DzrnGNvGY\u003D);
+      this._variableSome3535.\u0023\u003Dz4ka8DEp6gsYz(this.\u0023\u003DzrnGNvGY\u003D);
     }
 
     internal void \u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(
@@ -320,7 +320,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
       }
       if (!(!_param2 & flag1))
         return;
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzu72g2gQaaQQ2(this.\u0023\u003Dz54\u0024be\u0024c\u003D);
+      this._variableSome3535.\u0023\u003Dzu72g2gQaaQQ2(this.\u0023\u003Dz54\u0024be\u0024c\u003D);
     }
   }
 

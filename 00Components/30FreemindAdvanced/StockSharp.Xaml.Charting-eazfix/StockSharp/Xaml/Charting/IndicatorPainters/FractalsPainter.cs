@@ -19,14 +19,14 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (Fractals))]
 public class FractalsPainter : BaseChartIndicatorPainter<Fractals>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzwcwvWrMgvug7eh60CA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003Dz46TP2F\u0024kN_M\u0024pspP\u0024g\u003D\u003D;
 
   public FractalsPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Fractals>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Fractals>.GetColorProvider();
     this.\u0023\u003DzwcwvWrMgvug7eh60CA\u003D\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()

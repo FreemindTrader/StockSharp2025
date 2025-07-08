@@ -13,9 +13,9 @@ internal sealed class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D
   FrameworkElement _param1,
   string _param2) : EventArgs
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly FrameworkElement \u0023\u003Dz9hbzaz0\u003D = _param1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly string \u0023\u003DzMsXYJtqIEWGv = _param2;
 
   public FrameworkElement \u0023\u003DzZct5ndI\u003D() => this.\u0023\u003Dz9hbzaz0\u003D;

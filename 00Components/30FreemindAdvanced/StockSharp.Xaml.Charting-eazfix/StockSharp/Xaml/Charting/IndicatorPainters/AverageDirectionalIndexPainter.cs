@@ -18,16 +18,16 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 [Indicator(typeof (AverageDirectionalIndex))]
 public class AverageDirectionalIndexPainter : BaseChartIndicatorPainter<AverageDirectionalIndex>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzVMUE9pivzG3g3vV8wlSj5XA\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzjH1IaGlfmFp\u0024VdbCE5Sqc5w\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IChartLineElement \u0023\u003DzzFD5DAgXC8w5n5O1Xw\u003D\u003D;
 
   public AverageDirectionalIndexPainter()
   {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<AverageDirectionalIndex>.\u0023\u003Dzl7RImWAQVb2K();
+    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<AverageDirectionalIndex>.GetColorProvider();
     this.\u0023\u003DzVMUE9pivzG3g3vV8wlSj5XA\u003D = (IChartLineElement) new ChartLineElement()
     {
       Color = indicatorColorProvider.GetNextColor()

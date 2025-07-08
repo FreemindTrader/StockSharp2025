@@ -16,17 +16,17 @@ using System.Windows.Shapes;
 internal sealed class FastBubbleRenderableSeries : 
   BaseRenderableSeries
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzWsyKEigY1Lm6 = DependencyProperty.Register(nameof (BubbleColor), typeof (Color), typeof (FastBubbleRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(FastBubbleRenderableSeries.\u0023\u003Dz15moWio\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzgLLxE9j2DbxR = DependencyProperty.Register(nameof (AutoZRange), typeof (bool), typeof (FastBubbleRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(FastBubbleRenderableSeries.\u0023\u003Dz15moWio\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzuajeYkUJAgVf = DependencyProperty.Register(nameof (ZScaleFactor), typeof (double), typeof (FastBubbleRenderableSeries), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(FastBubbleRenderableSeries.\u0023\u003Dz15moWio\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003DzjADvNnzgrrZX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Type \u0023\u003DzOHJ1xBv\u0024k2wEJE7MOQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DztqN4q7SP3Lir;
 
   public FastBubbleRenderableSeries()
@@ -98,8 +98,8 @@ internal sealed class FastBubbleRenderableSeries :
     IRenderContext2D _param1,
     IRenderPassData _param2)
   {
-    FastBubbleRenderableSeries.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D lvtppRwsYcyoelU8 = new FastBubbleRenderableSeries.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D();
-    lvtppRwsYcyoelU8.\u0023\u003DzRRvwDu67s9Rm = this;
+    FastBubbleRenderableSeries.SomeClass7654 lvtppRwsYcyoelU8 = new FastBubbleRenderableSeries.SomeClass7654();
+    lvtppRwsYcyoelU8._variableSome3535 = this;
     lvtppRwsYcyoelU8.\u0023\u003DzC8v0b7k\u003D = _param1;
     this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6>("XyzDataSeries");
     this.\u0023\u003DzkAaadumBrkGDUOayKw\u003D\u003D(lvtppRwsYcyoelU8.\u0023\u003DzC8v0b7k\u003D);
@@ -198,9 +198,9 @@ internal sealed class FastBubbleRenderableSeries :
     b5lfOfnUo8w7EyJw.\u0023\u003Dzmf\u0024vfR3OJQU9();
   }
 
-  private sealed class \u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D
+  private sealed class SomeClass7654
   {
-    public FastBubbleRenderableSeries \u0023\u003DzRRvwDu67s9Rm;
+    public FastBubbleRenderableSeries _variableSome3535;
     public Color? \u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D;
     public IRenderContext2D \u0023\u003DzC8v0b7k\u003D;
 
@@ -210,18 +210,18 @@ internal sealed class FastBubbleRenderableSeries :
       double _param3,
       Rect _param4)
     {
-      if (this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider != null)
-        this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2, _param3);
+      if (this._variableSome3535.PaletteProvider != null)
+        this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = this._variableSome3535.PaletteProvider.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2, _param3);
       if (this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.HasValue)
       {
-        using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzL3In9ls\u003D(this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.Value, this.\u0023\u003DzRRvwDu67s9Rm.AntiAliasing, (float) this.\u0023\u003DzRRvwDu67s9Rm.StrokeThickness, this.\u0023\u003DzRRvwDu67s9Rm.Opacity, (double[]) null, PenLineCap.Round))
+        using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzL3In9ls\u003D(this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.Value, this._variableSome3535.AntiAliasing, (float) this._variableSome3535.StrokeThickness, this._variableSome3535.Opacity, (double[]) null, PenLineCap.Round))
         {
-          using (IBrush2D xrgcdFbSdWgN9GcT8 = this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003Dze8WyDhI\u003D(this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.Value, this.\u0023\u003DzRRvwDu67s9Rm.Opacity, new bool?()))
+          using (IBrush2D xrgcdFbSdWgN9GcT8 = this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003Dze8WyDhI\u003D(this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.Value, this._variableSome3535.Opacity, new bool?()))
             this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzIZCdW2WR6Rxw(rhwYsZxA33iRu6Id7J, xrgcdFbSdWgN9GcT8, new Point(_param4.X + _param4.Width * 0.5, _param4.Y + _param4.Height * 0.5), _param4.Width, _param4.Height);
         }
       }
       else
-        this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzjADvNnzgrrZX.\u0023\u003DzQAdOJsjJeOwf(), (IEnumerable<Rect>) new Rect[1]
+        this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(this._variableSome3535.\u0023\u003DzjADvNnzgrrZX.\u0023\u003DzQAdOJsjJeOwf(), (IEnumerable<Rect>) new Rect[1]
         {
           _param4
         });

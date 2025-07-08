@@ -16,17 +16,17 @@ namespace \u002D;
 internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd : 
   ChartModifierBase
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly 
   #nullable disable
   DependencyProperty \u0023\u003DzG8iU0LHRhO7j = DependencyProperty.Register(nameof (UseInterpolation), typeof (bool), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzgKwtLGQKgy\u0024Y = DependencyProperty.Register(nameof (SourceMode), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllVisibleSeries));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzE7h5hUE7Vu4g = DependencyProperty.Register(nameof (SeriesData), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected Point \u0023\u003DzeAqKwx8\u003D = new Point(double.NaN, double.NaN);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzKpmBZbLVz8O6;
 
   protected dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd()
@@ -158,10 +158,10 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
   protected virtual IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd.\u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd.SomeClass343()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
-      \u0023\u003DzRRvwDu67s9Rm = this
+      _variableSome3535 = this
     }.\u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D));
   }
 
@@ -173,7 +173,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       \u0023\u003DzADxu\u00246OzU_cF = _param2,
-      \u0023\u003DzRRvwDu67s9Rm = this
+      _variableSome3535 = this
     }.\u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D));
   }
 
@@ -182,7 +182,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
   {
     return (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) new dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd.\u0023\u003Dz89RgnopV4nZgv5NePKVh5qU\u003D(-2)
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       \u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D = _param1
     };
   }
@@ -214,19 +214,19 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
     IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>,
     IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    public dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd _variableSome3535;
+    
     private Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D> \u0023\u003DzMYNk\u0024KRnKslk;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D> \u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerator<IRenderableSeries> \u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D;
 
     [DebuggerHidden]
@@ -260,7 +260,7 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
       try
       {
         int z4fzyEz1SsHya = this.\u0023\u003Dz4fzyEZ1SsHYa;
-        dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd zRrvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+        dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd zRrvwDu67s9Rm = this._variableSome3535;
         switch (z4fzyEz1SsHya)
         {
           case 0:
@@ -344,7 +344,7 @@ label_10:
       else
       {
         v4nZgv5NePkVh5qU = new dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd.\u0023\u003Dz89RgnopV4nZgv5NePKVh5qU\u003D(0);
-        v4nZgv5NePkVh5qU.\u0023\u003DzRRvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+        v4nZgv5NePkVh5qU._variableSome3535 = this._variableSome3535;
       }
       v4nZgv5NePkVh5qU.\u0023\u003DzMYNk\u0024KRnKslk = this.\u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D;
       return (IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) v4nZgv5NePkVh5qU;
@@ -358,17 +358,17 @@ label_10:
     }
   }
 
-  private sealed class \u0023\u003DzIcUXbzVqd1QHu2nAW1nzwT0\u003D
+  private sealed class SomeClass343
   {
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public 
     #nullable disable
-    dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd \u0023\u003DzRRvwDu67s9Rm;
+    dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd _variableSome3535;
 
     internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
-      return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this.\u0023\u003DzRRvwDu67s9Rm.UseInterpolation);
+      return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);
     }
   }
 
@@ -376,12 +376,12 @@ label_10:
   {
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public double \u0023\u003DzADxu\u00246OzU_cF;
-    public dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd _variableSome3535;
 
     internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
-      return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this.\u0023\u003DzADxu\u00246OzU_cF, this.\u0023\u003DzRRvwDu67s9Rm.UseInterpolation);
+      return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this.\u0023\u003DzADxu\u00246OzU_cF, this._variableSome3535.UseInterpolation);
     }
   }
 }

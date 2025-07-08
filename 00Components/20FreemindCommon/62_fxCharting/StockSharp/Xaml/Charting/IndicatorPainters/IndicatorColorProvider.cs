@@ -12,16 +12,16 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 /// <inheritdoc />
 public class IndicatorColorProvider : IIndicatorColorProvider
 {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static readonly IndicatorColorProviderSeed _indicatorColorProviderSeed = new IndicatorColorProviderSeed();
 
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly SynchronizedDictionary<IndicatorColorProviderSeed, int> _indicatorColorProviderSeedMap = new SynchronizedDictionary<IndicatorColorProviderSeed, int>();
 
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool _isDarkTheme;
 
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static readonly Color[] _darkColorMap = new Color[14]
                                                         {
                                                             Colors.Blue,
@@ -40,7 +40,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
                                                             Colors.MediumVioletRed
                                                         };
 
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static readonly Color[] _lightColorMap = new Color[15]
                                                         {
                                                             Colors.Gold,

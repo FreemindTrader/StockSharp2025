@@ -76,7 +76,7 @@ namespace StockSharp.Xaml.Charting
             _mainChartArea = new ChartArea() { Title = LocalizedStrings.Panel + " " + (ChartAreas.Count + 1), XAxisType = XAxisType };
             _drawSurface = new ScichartSurfaceMVVM(_mainChartArea, true);
 
-            _mainChartArea.ChartSurfaceViewModel = _drawSurface;
+            _mainChartArea.ViewModel = _drawSurface;
 
             var timeZoneInfo = GetTimeZone();
 

@@ -28,13 +28,13 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   ChartElementUI<T>(_param1)
   where T : ChartTransactionElement<T>, new()
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly bool \u0023\u003DzyDntgFbUTuaIjjSSeA\u003D\u003D = (object) _param1 is ChartOrderElement;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private CandlestickUI \u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ChildVM \u0023\u003DzZYTLjjg\u003D;
 
   private TransactionDataSeries \u0023\u003DzcSPUTHNE35Wc()
@@ -56,7 +56,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   private void \u0023\u003Dzk_r\u0024wtNtUKwJ(bool _param1)
   {
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
-    z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRRvwDu67s9Rm = this;
+    z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D = _param1;
     if (!UIChartBaseViewModel.IsUiThread())
     {
@@ -194,18 +194,18 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
 
   private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
   {
-    public \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T> \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T> _variableSome3535;
     public bool \u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D;
 
     internal void \u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzk_r\u0024wtNtUKwJ(this.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D);
+      this._variableSome3535.\u0023\u003Dzk_r\u0024wtNtUKwJ(this.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D);
     }
   }
 
   private sealed class \u0023\u003DzCwfeuzXRdwFc(Sides _param1) : IValueConverter
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Sides \u0023\u003Dzo1CPutg\u003D = _param1;
 
     object IValueConverter.Convert(

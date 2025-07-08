@@ -13,10 +13,10 @@ namespace \u002D;
 internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX85Q8AXBJCY6XYUGLZVGNW2_ejd : 
   dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DataTemplate \u0023\u003DzzOBVI_vgcMJc;
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public DataTemplate dje_zNJTCVXYXEFW8ZZQ_ejd
   {
     get => this.\u0023\u003DzzOBVI_vgcMJc;

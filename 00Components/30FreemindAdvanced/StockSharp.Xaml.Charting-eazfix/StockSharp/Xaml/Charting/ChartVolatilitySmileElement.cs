@@ -26,9 +26,9 @@ public class ChartVolatilitySmileElement :
   IPersistable,
   IChartVolatilitySmileElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartLineElement _childViewModels;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartLineElement \u0023\u003DzdBxDEgUJtz0N;
 
   public ChartVolatilitySmileElement()

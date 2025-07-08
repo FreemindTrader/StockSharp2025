@@ -15,11 +15,11 @@ namespace \u002D;
 internal sealed class dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd : 
   BaseRenderableSeries
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzoiPF1o\u0024bG_HJ = DependencyProperty.Register(nameof (BodyBrush), typeof (Brush), typeof (dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd), new PropertyMetadata((object) new SolidColorBrush(Color.FromArgb((byte) 0, (byte) 0, (byte) 0, (byte) 0)), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzmZ8\u0024YArgrhlI;
 
   public dje_zF4WA8KVL9RSV2UZFF2V5EQZWBQPKVJE6PUTMY25VEXBHLUR354YKS5CBBMMNFT3Q9T2FQ9MGAU42NRHTNUCHXYFAV93Q_ejd()

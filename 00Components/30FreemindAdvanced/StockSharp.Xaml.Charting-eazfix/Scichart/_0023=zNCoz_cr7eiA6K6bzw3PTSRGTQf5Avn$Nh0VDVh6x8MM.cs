@@ -13,13 +13,13 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024,
   \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT \u0023\u003DzE7bFkpMkNiWA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzkbpZHOIN98su;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IBrush2D \u0023\u003Dznk36UXXVVS0u;
 
   public \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSRGTQf5Avn\u0024Nh0VDVh6x8MMDygc2mw\u003D\u003D(

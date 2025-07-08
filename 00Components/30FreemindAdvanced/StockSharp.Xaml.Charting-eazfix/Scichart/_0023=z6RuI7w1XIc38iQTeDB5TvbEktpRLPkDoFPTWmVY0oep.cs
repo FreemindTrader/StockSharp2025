@@ -13,9 +13,9 @@ internal sealed class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvbEktpRLPkDoFPTWmVY0oepT(
   IAnnotation _param1) : 
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D(_param1)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzqGwbHdeZ8yMA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzhcsKvLfw_p5c;
 
   public override void \u0023\u003DzFeNr2Uw\u003D()

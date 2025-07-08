@@ -14,13 +14,13 @@ namespace \u002D;
 internal sealed class dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd : 
   ItemsControl
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzfMw6oHlwmSrk = DependencyProperty.Register(nameof (LegendData), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd.\u0023\u003DzlsjS\u0024q6k1db3)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzR_CKkzERxHn9SGnaiYrSxEE\u003D = DependencyProperty.Register(nameof (ShowVisibilityCheckboxes), typeof (bool), typeof (dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd.\u0023\u003Dz4yJK3ICfHaOEZ3fKD9DbViIosNdN)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzGEpRUSytcG_B = DependencyProperty.Register(nameof (ShowSeriesMarkers), typeof (bool), typeof (dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(nameof (Orientation), typeof (Orientation), typeof (dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd), new PropertyMetadata((object) Orientation.Vertical));
 
   public dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd()

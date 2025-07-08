@@ -89,7 +89,7 @@ public sealed class ScichartSurfaceMVVM :
   
   private double _height;
   
-  private bool \u0023\u003DzL6RNvETlqFx4;
+  private bool _showPerfStats;
   
   private TimeSpan _autoRangeIntervalNoGroup;
   
@@ -97,7 +97,7 @@ public sealed class ScichartSurfaceMVVM :
   
   private bool \u0023\u003Dzp9yX6hrHRIBY;
   
-  private int \u0023\u003Dzw_LOBOuAUrZC;
+  private int _minimumRange;
   
   private string \u0023\u003Dz0M9ae_JEb7EN;
   
@@ -111,10 +111,10 @@ public sealed class ScichartSurfaceMVVM :
 
   public ScichartSurfaceMVVM(ChartArea _param1) : base()
     {
-    ScichartSurfaceMVVM.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new ScichartSurfaceMVVM.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+    ScichartSurfaceMVVM.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new ScichartSurfaceMVVM.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D = _param1;
     
-    v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRRvwDu67s9Rm = this;
+    v4vdZv8GtEzAmB0rzFq._variableSome3535 = this;
     this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D = v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D ?? throw new ArgumentNullException("area");
     this._dispatcherTimer = new DispatcherTimer((DispatcherPriority) 7, Application.Current.Dispatcher);
     this._dispatcherTimer.Tick += new EventHandler(this.\u0023\u003DzMXbJl7nt_k3k);
@@ -129,10 +129,10 @@ public sealed class ScichartSurfaceMVVM :
     ((INotifyCollection<IChartAxis>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.XAxises).Removing += new Func<IChartAxis, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzNMuSlzFThmIy12t4iw\u003D\u003D);
     ((INotifyCollection<IChartAxis>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.XAxises).RemovingAt += new Func<int, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzFhH1jy_AOH_jnpgLnA\u003D\u003D);
     ((INotifyCollection<IChartAxis>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.YAxises).Added += new Action<IChartAxis>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzdMV7Kr3bkeboUtRdSw\u003D\u003D);
-    ((INotifyCollection<IChartAxis>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.YAxises).Removing += new Func<IChartAxis, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzYqlPx6RFcqzqQlN8KA\u003D\u003D);
+    ((INotifyCollection<IChartAxis>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.YAxises).Removing += new Func<IChartAxis, bool>(v4vdZv8GtEzAmB0rzFq.SomeInternalVoidFunction30439);
     ((INotifyCollection<IChartAxis>) v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzy_5REws\u003D.YAxises).RemovingAt += new Func<int, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzn0BxqFlrvEnaJ4F1tg\u003D\u003D);
     ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzSf0sPwNIL9V4tJHvwQ\u003D\u003D);
-    this.\u0023\u003Dz5RYhL5E\u003D();
+    this.ChangeApplicationTheme();
     CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.Area.Elements, new Action<IChartElement>(this.\u0023\u003Dz4M_pW8k\u003D));
     this.Area.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzCGMYersHFBBf);
     RubberBandXyZoomModifier lk95Z3MuF7S7B6NwEjd = new RubberBandXyZoomModifier();
@@ -149,7 +149,7 @@ public sealed class ScichartSurfaceMVVM :
     get => this._legendElements;
   }
 
-  public void \u0023\u003DzPvEital2M7gh(Action<IChartElement> _param1)
+  public void RemoveElementEvent(Action<IChartElement> _param1)
   {
     Action<IChartElement> action = this.\u0023\u003DzeBeQVx4\u003D;
     Action<IChartElement> comparand;
@@ -161,7 +161,7 @@ public sealed class ScichartSurfaceMVVM :
     while (action != comparand);
   }
 
-  public void \u0023\u003Dzfj2KEivrD_Sr(Action<IChartElement> _param1)
+  public void RemoveElementEvent(Action<IChartElement> _param1)
   {
     Action<IChartElement> action = this.\u0023\u003DzeBeQVx4\u003D;
     Action<IChartElement> comparand;
@@ -265,10 +265,10 @@ public sealed class ScichartSurfaceMVVM :
     else
     {
       this.ClosePaneCommand = (ICommand) this.ParentViewModel.ClosePaneCommand;
-      this.ParentViewModel.AddPropertyListener(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzvfWZFdhb7kc9, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D));
-      this.ParentViewModel.AddPropertyListener(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dzw5K\u0024vsW8O9P3, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D));
-      this.ParentViewModel.AddPropertyListener(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003Dz76r5\u0024wlS8ZBb, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D));
-      this.ParentViewModel.AddPropertyListener(\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6.\u0023\u003DzeopV6tZDn4Ln, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.ShowLegendProperty, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.ShowOverviewProperty, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.MinimumRangeProperty, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D));
+      this.ParentViewModel.AddPropertyListener(ChartViewModel.SelectedThemeProperty, new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D));
     }
     StockSharp.Xaml.Charting.Chart groupChart = this.GroupChart;
     if (groupChart != null)
@@ -325,7 +325,7 @@ public sealed class ScichartSurfaceMVVM :
     ICollection<IAxis> _param2)
   {
     ScichartSurfaceMVVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D mpa4F4mcyQlZrFjfRi = new ScichartSurfaceMVVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D();
-    mpa4F4mcyQlZrFjfRi.\u0023\u003DzRRvwDu67s9Rm = this;
+    mpa4F4mcyQlZrFjfRi._variableSome3535 = this;
     mpa4F4mcyQlZrFjfRi.\u0023\u003Dzfl\u0024A1s0\u003D = _param1;
     mpa4F4mcyQlZrFjfRi.\u0023\u003Dz_liTKnA\u003D = _param2;
     FrameworkElement chart = (FrameworkElement) this.Chart;
@@ -370,7 +370,7 @@ public sealed class ScichartSurfaceMVVM :
     ScichartSurfaceMVVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D jy0mx0yCuWlqEsh0ZdY = new ScichartSurfaceMVVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D();
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003Dz_liTKnA\u003D = _param2;
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003Dzfl\u0024A1s0\u003D = _param1;
-    jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzRRvwDu67s9Rm = this;
+    jy0mx0yCuWlqEsh0ZdY._variableSome3535 = this;
     FrameworkElement chart = (FrameworkElement) this.Chart;
     if (chart != null)
       ((DispatcherObject) chart).GuiAsync(new Action(jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D));
@@ -628,7 +628,7 @@ public sealed class ScichartSurfaceMVVM :
     get
     {
       object[] objArray = new object[2];
-      objArray[0] = (object) (this.GroupChart ?? throw new NotSupportedException()).\u0023\u003DzSnq_a37UvF_W();
+      objArray[0] = (object) (this.GroupChart ?? throw new NotSupportedException()).GetInstanceCount();
       objArray[1] = (object) this.\u0023\u003DzvYBXWbYr6HUf;
       return StringHelper.Put("ssharpultrachart{0}_{1}", objArray);
     }
@@ -640,9 +640,9 @@ public sealed class ScichartSurfaceMVVM :
 
   public ChartArea Area => this.\u0023\u003Dziba1o7rsmwUplkyAdQ\u003D\u003D;
 
-  public \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 ParentViewModel
+  public ChartViewModel ParentViewModel
   {
-    get => this.GroupChart?.ChartSurfaceViewModel;
+    get => this.GroupChart?.ViewModel;
   }
 
   public \u0023\u003DzSQJobdqtH0NktyvbaGGemQYhpx5jhBm491vWYfMzlUBNK7y2\u0024onauDvAOLeS LegendViewModel
@@ -655,7 +655,7 @@ public sealed class ScichartSurfaceMVVM :
       {
         LegendModifier = new \u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW5x6MiZPUGnTgOL0aAa0R0UReQBJAyQUw5cjprelH()
       };
-      this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D.\u0023\u003DzPvEital2M7gh(new Action<IChartElement>(this.\u0023\u003DzPtxNDyntmL6NTRG9Qk\u00249wEg\u003D));
+      this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D.RemoveElementEvent(new Action<IChartElement>(this.\u0023\u003DzPtxNDyntmL6NTRG9Qk\u00249wEg\u003D));
       return this.\u0023\u003DzrqALM6ELXjuaZXtSJw\u003D\u003D;
     }
   }
@@ -840,7 +840,7 @@ public sealed class ScichartSurfaceMVVM :
     get
     {
       StockSharp.Xaml.Charting.Chart groupChart = this.GroupChart;
-      return groupChart == null ? this.\u0023\u003DzL6RNvETlqFx4 : __nonvirtual (groupChart.ShowPerfStats);
+      return groupChart == null ? this._showPerfStats : __nonvirtual (groupChart.ShowPerfStats);
     }
     set
     {
@@ -850,7 +850,7 @@ public sealed class ScichartSurfaceMVVM :
         this.NotifyChanged(nameof (ShowPerfStats));
       }
       else
-        this.SetField<bool>(ref this.\u0023\u003DzL6RNvETlqFx4, value, nameof (ShowPerfStats));
+        this.SetField<bool>(ref this._showPerfStats, value, nameof (ShowPerfStats));
     }
   }
 
@@ -877,7 +877,7 @@ public sealed class ScichartSurfaceMVVM :
   {
     get
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 parentViewModel = this.ParentViewModel;
+      ChartViewModel parentViewModel = this.ParentViewModel;
       return parentViewModel == null ? this.\u0023\u003Dz_BSxov_qh\u0024r8 : parentViewModel.ShowLegend;
     }
     set
@@ -896,7 +896,7 @@ public sealed class ScichartSurfaceMVVM :
   {
     get
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 parentViewModel = this.ParentViewModel;
+      ChartViewModel parentViewModel = this.ParentViewModel;
       return parentViewModel == null ? this.\u0023\u003Dzp9yX6hrHRIBY : parentViewModel.ShowOverview;
     }
     set
@@ -915,8 +915,8 @@ public sealed class ScichartSurfaceMVVM :
   {
     get
     {
-      \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 parentViewModel = this.ParentViewModel;
-      return parentViewModel == null ? this.\u0023\u003Dzw_LOBOuAUrZC : parentViewModel.MinimumRange;
+      ChartViewModel parentViewModel = this.ParentViewModel;
+      return parentViewModel == null ? this._minimumRange : parentViewModel.MinimumRange;
     }
     set
     {
@@ -926,7 +926,7 @@ public sealed class ScichartSurfaceMVVM :
         this.NotifyChanged(nameof (MinimumRange));
       }
       else
-        this.SetField<int>(ref this.\u0023\u003Dzw_LOBOuAUrZC, value, nameof (MinimumRange));
+        this.SetField<int>(ref this._minimumRange, value, nameof (MinimumRange));
     }
   }
 
@@ -976,7 +976,7 @@ public sealed class ScichartSurfaceMVVM :
     throw new NotSupportedException();
   }
 
-  private void \u0023\u003Dz5RYhL5E\u003D() => this.SelectedTheme = ChartHelper.CurrChartTheme();
+  private void ChangeApplicationTheme() => this.SelectedTheme = ChartHelper.CurrChartTheme();
 
   public void Dispose()
   {
@@ -1136,20 +1136,20 @@ public sealed class ScichartSurfaceMVVM :
 
   private sealed class \u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D
   {
-    public ScichartSurfaceMVVM \u0023\u003DzRRvwDu67s9Rm;
+    public ScichartSurfaceMVVM _variableSome3535;
     public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
     public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
 
     internal void \u0023\u003DzFX_lHxlPjn56eMHQ\u0024g\u003D\u003D()
     {
-      if (this.\u0023\u003DzRRvwDu67s9Rm.Chart == null)
+      if (this._variableSome3535.Chart == null)
         return;
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz68iph80\u003D(this.\u0023\u003DzRRvwDu67s9Rm.ParentViewModel?.RemoveAxisCommand, this.\u0023\u003DzRRvwDu67s9Rm.ResetAxisTimeZoneCommand, this.\u0023\u003DzRRvwDu67s9Rm.Chart);
-      axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzfi9Y8f8VaR3y);
+      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz68iph80\u003D(this._variableSome3535.ParentViewModel?.RemoveAxisCommand, this._variableSome3535.ResetAxisTimeZoneCommand, this._variableSome3535.Chart);
+      axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003Dzfi9Y8f8VaR3y);
       this.\u0023\u003Dz_liTKnA\u003D.Add((IAxis) axF9ZgQ7NbH9KsEjd);
-      if (this.\u0023\u003Dz_liTKnA\u003D != this.\u0023\u003DzRRvwDu67s9Rm.XAxises)
+      if (this.\u0023\u003Dz_liTKnA\u003D != this._variableSome3535.XAxises)
         return;
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz0FfA4J7ON5133\u00246jKg\u003D\u003D();
+      this._variableSome3535.\u0023\u003Dz0FfA4J7ON5133\u00246jKg\u003D\u003D();
     }
   }
 
@@ -1325,7 +1325,7 @@ public sealed class ScichartSurfaceMVVM :
   {
     public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
     public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
-    public ScichartSurfaceMVVM \u0023\u003DzRRvwDu67s9Rm;
+    public ScichartSurfaceMVVM _variableSome3535;
     public Func<IAxis, bool> \u0023\u003DzuAeZVTPDgzYE;
 
     internal void \u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D()
@@ -1333,7 +1333,7 @@ public sealed class ScichartSurfaceMVVM :
       dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd target = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<IAxis>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<IAxis, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
       if (target == null)
         return;
-      target.PropertyChanged -= new PropertyChangedEventHandler(this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzfi9Y8f8VaR3y);
+      target.PropertyChanged -= new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003Dzfi9Y8f8VaR3y);
       BindingOperations.ClearAllBindings((DependencyObject) target);
       this.\u0023\u003Dz_liTKnA\u003D.Remove((IAxis) target);
     }
@@ -1345,15 +1345,15 @@ public sealed class ScichartSurfaceMVVM :
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
-    public ScichartSurfaceMVVM \u0023\u003DzRRvwDu67s9Rm;
+    public ScichartSurfaceMVVM _variableSome3535;
     public ChartArea \u0023\u003Dzy_5REws\u003D;
     public Action<IChartElement> \u0023\u003DzmkzpZPDRopSK;
 
     internal bool \u0023\u003Dzk0q47haYd4sk7HJcWw\u003D\u003D(int _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzmxDTmQc\u003D(((IList<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements)[_param1]);
+      return this._variableSome3535.\u0023\u003DzmxDTmQc\u003D(((IList<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements)[_param1]);
     }
 
     internal bool \u0023\u003DzvwGmGW0txy637Xwc2g\u003D\u003D()
@@ -1364,44 +1364,44 @@ public sealed class ScichartSurfaceMVVM :
 
     internal void \u0023\u003Dzr5cnmYeOtMU0QUibOQ\u003D\u003D(IChartElement _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzmxDTmQc\u003D(_param1);
+      this._variableSome3535.\u0023\u003DzmxDTmQc\u003D(_param1);
     }
 
     internal void \u0023\u003DzzTy9O8Bfu2Mtf5LgWw\u003D\u003D(IChartAxis _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
+      this._variableSome3535.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
     internal bool \u0023\u003DzNMuSlzFThmIy12t4iw\u003D\u003D(IChartAxis _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
+      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
     internal bool \u0023\u003DzFhH1jy_AOH_jnpgLnA\u003D\u003D(int _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises)[_param1], (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.XAxises);
+      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
     internal void \u0023\u003DzdMV7Kr3bkeboUtRdSw\u003D\u003D(IChartAxis _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
+      this._variableSome3535.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
-    internal bool \u0023\u003DzYqlPx6RFcqzqQlN8KA\u003D\u003D(IChartAxis _param1)
+    internal bool SomeInternalVoidFunction30439(IChartAxis _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
+      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
     internal bool \u0023\u003Dzn0BxqFlrvEnaJ4F1tg\u003D\u003D(int _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.YAxises)[_param1], (ICollection<IAxis>) this.\u0023\u003DzRRvwDu67s9Rm.YAxises);
+      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.YAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
     internal void \u0023\u003DzSf0sPwNIL9V4tJHvwQ\u003D\u003D(
       DependencyObject _param1,
       ThemeChangedRoutedEventArgs _param2)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz5RYhL5E\u003D();
+      this._variableSome3535.ChangeApplicationTheme();
     }
   }
 }

@@ -16,13 +16,13 @@ namespace \u002D;
 
 internal sealed class dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd : Control
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzqGwbHdeZ8yMA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzMznVIhtVfrf4;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzEJSs\u0024dHmxP7mLneAlg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DragDeltaEventHandler \u0023\u003Dz3ZgR3o1uqquxhzhHEQ\u003D\u003D;
 
   public dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd()

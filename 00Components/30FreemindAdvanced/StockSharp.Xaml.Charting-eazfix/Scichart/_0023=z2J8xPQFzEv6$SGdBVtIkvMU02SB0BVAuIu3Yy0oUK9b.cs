@@ -37,7 +37,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     mpa4F4mcyQlZrFjfRi.\u0023\u003DzgSMmZSBP2RDX = _param4;
     // ISSUE: explicit constructor call
     base.\u002Ector();
-    mpa4F4mcyQlZrFjfRi.\u0023\u003DzRRvwDu67s9Rm = this;
+    mpa4F4mcyQlZrFjfRi._variableSome3535 = this;
     this.\u0023\u003Dz97RDdiI3O4NqwPctSvrh_bI\u003D = mpa4F4mcyQlZrFjfRi.\u0023\u003DzgSMmZSBP2RDX;
     this.\u0023\u003DzcnAqvT\u0024_SnI6ZnmDtg\u003D\u003D = (IndexRange ) _param2.Clone();
     if (!(_param3 is IndexRange  g8Oq2rGx6KyfAreq))
@@ -148,7 +148,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
 
   private sealed class \u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D
   {
-    public \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D _variableSome3535;
     public double \u0023\u003DzgSMmZSBP2RDX;
     public Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, bool> \u0023\u003Dzon\u0024_RZacJIPJ;
     public Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, 
@@ -159,7 +159,7 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
       #nullable disable
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
-      return _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() >= this.\u0023\u003DzRRvwDu67s9Rm.VisibleRange.Min && _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() <= this.\u0023\u003DzRRvwDu67s9Rm.VisibleRange.Max;
+      return _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() >= this._variableSome3535.VisibleRange.Min && _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() <= this._variableSome3535.VisibleRange.Max;
     }
 
     internal 

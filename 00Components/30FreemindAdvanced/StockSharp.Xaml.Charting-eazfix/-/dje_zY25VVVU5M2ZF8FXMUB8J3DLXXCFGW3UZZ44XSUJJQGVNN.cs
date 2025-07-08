@@ -19,35 +19,35 @@ namespace \u002D;
 internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzEhUv091lUjuk = DependencyProperty.Register(nameof (ShowTooltipOn), typeof (dje_zW5MLMFCCFHVWSRGZD77RWP95DJXJ342SYK8Q3LCSNM5MWZXH4Q2GW_ejd), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) dje_zW5MLMFCCFHVWSRGZD77RWP95DJXJ342SYK8Q3LCSNM5MWZXH4Q2GW_ejd.MouseOver));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzefJvv3CZ5BIx = DependencyProperty.Register(nameof (LineOverlayStyle), typeof (Style), typeof (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzdz6MkOePVs4t = DependencyProperty.Register(nameof (AxisLabelTemplate), typeof (ControlTemplate), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzbVg\u0024qRIz823IPqWt\u0024A\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzCuzcJq\u0024VLiWR = DependencyProperty.Register(nameof (ShowAxisLabels), typeof (bool), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) true, (PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzwbBEIdM\u0024iIcr = DependencyProperty.Register(nameof (TooltipLabelTemplate), typeof (ControlTemplate), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dzwur\u0024mqt3kPJHpkPRjQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DztS0SV\u0024h_UR9naBBpPQ\u003D\u003D = DependencyProperty.Register(nameof (AxisLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzbVg\u0024qRIz823IPqWt\u0024A\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzvNytNs_0PVAQNrNseA\u003D\u003D = DependencyProperty.Register(nameof (TooltipLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dzwur\u0024mqt3kPJHpkPRjQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz6XQECdaYmU1_GuzwGA\u003D\u003D = DependencyProperty.Register(nameof (DefaultAxisLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzClmcjSK4Qv_TawDQNPNUv5c\u003D = DependencyProperty.Register(nameof (DefaultAxisLabelTemplateSelectorStyle), typeof (Style), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzbxLNaq5ZjEofA\u0024XB3WbNaIs\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz5dHn3Ygiw7f44dBolw\u003D\u003D = DependencyProperty.Register(nameof (DefaultTooltipLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz3WEQAsiyFGgPCmpeo4Tp7eU\u003D = DependencyProperty.Register(nameof (DefaultTooltipLabelTemplateSelectorStyle), typeof (Style), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003Dz8WfI5kqsN6kmTe6TXhhzlCo\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzcSEHQMyzEgRH = DependencyProperty.Register("HoverDelay", typeof (double), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd), new PropertyMetadata((object) 500.0, new PropertyChangedCallback(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzesUKUhGoyfNgYFzSJw\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IEnumerable<Tuple<IAxis, FrameworkElement>> \u0023\u003DzJ9TR0V6N30XqYK5Fsg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IEnumerable<Tuple<IAxis, FrameworkElement>> \u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal DelayActionHelper \u0023\u003DzIxFmGbTNpwO0;
 
   protected dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd()
@@ -367,7 +367,7 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
     ControlTemplate _param2)
   {
     dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzaWz8dVeBY\u0024tX1maSKMAhb14\u003D veByTX1maSkmAhb14 = new dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzaWz8dVeBY\u0024tX1maSKMAhb14\u003D();
-    veByTX1maSkmAhb14.\u0023\u003DzRRvwDu67s9Rm = this;
+    veByTX1maSkmAhb14._variableSome3535 = this;
     veByTX1maSkmAhb14.\u0023\u003DzcyfV7AfhGRGy = _param2;
     IEnumerable<Tuple<IAxis, FrameworkElement>> tuples = (IEnumerable<Tuple<IAxis, FrameworkElement>>) null;
     if (_param1 != null)
@@ -473,13 +473,13 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
 
   private sealed class \u0023\u003DzaWz8dVeBY\u0024tX1maSKMAhb14\u003D
   {
-    public dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd _variableSome3535;
     public ControlTemplate \u0023\u003DzcyfV7AfhGRGy;
 
     internal Tuple<IAxis, FrameworkElement> \u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D(
       IAxis _param1)
     {
-      return new Tuple<IAxis, FrameworkElement>(_param1, (FrameworkElement) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzBv1vB\u0024LEKSF4(this.\u0023\u003DzcyfV7AfhGRGy, this.\u0023\u003DzRRvwDu67s9Rm.AxisLabelTemplateSelector, (object) null));
+      return new Tuple<IAxis, FrameworkElement>(_param1, (FrameworkElement) this._variableSome3535.\u0023\u003DzBv1vB\u0024LEKSF4(this.\u0023\u003DzcyfV7AfhGRGy, this._variableSome3535.AxisLabelTemplateSelector, (object) null));
     }
   }
 

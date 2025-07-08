@@ -20,7 +20,7 @@ internal sealed class ChartComponentElementSettings :
   #nullable disable
   IChartComponent>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Func<IChartComponent, PropertyDescriptor, bool> \u0023\u003DzZdxZPcbMFUEQ;
 
   public ChartComponentElementSettings(
@@ -45,7 +45,7 @@ internal sealed class ChartComponentElementSettings :
     IChartComponent _param1)
   {
     ChartComponentElementSettings.SomeWheireosoe vbxLeArTkallkIdHg = new ChartComponentElementSettings.SomeWheireosoe();
-    vbxLeArTkallkIdHg.\u0023\u003DzRRvwDu67s9Rm = this;
+    vbxLeArTkallkIdHg._variableSome3535 = this;
     vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D = _param1;
     vbxLeArTkallkIdHg.\u0023\u003DzaEWfwlo\u003D = new HashSet<string>();
     if (vbxLeArTkallkIdHg.\u0023\u003DzLICojrU\u003D == null)
@@ -68,7 +68,7 @@ internal sealed class ChartComponentElementSettings :
     public 
     #nullable disable
     HashSet<string> \u0023\u003DzaEWfwlo\u003D;
-    public ChartComponentElementSettings \u0023\u003DzRRvwDu67s9Rm;
+    public ChartComponentElementSettings _variableSome3535;
     public IChartComponent \u0023\u003DzLICojrU\u003D;
 
     internal string \u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(
@@ -83,7 +83,7 @@ internal sealed class ChartComponentElementSettings :
 
     internal bool SomeMethod383(PropertyDescriptor p)
     {
-      Func<IChartComponent, PropertyDescriptor, bool> zZdxZpcbMfueq = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ;
+      Func<IChartComponent, PropertyDescriptor, bool> zZdxZpcbMfueq = this._variableSome3535.\u0023\u003DzZdxZPcbMFUEQ;
       if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, p) ? 1 : 0) : 1) == 0)
         return false;
       IChartComponent zLiCojrU = this.\u0023\u003DzLICojrU\u003D;
@@ -106,7 +106,7 @@ internal sealed class ChartComponentElementSettings :
         propertyDescriptors = d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D != null ? TypeDescriptor.GetProperties((object) d295Ww4skLs1HZBq.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(ChartComponentElementSettings.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (ChartComponentElementSettings.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Func<PropertyDescriptor, bool>(ChartComponentElementSettings.SomeClass34343383.SomeMethond0343.\u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D))).Select<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, PropertyDescriptor>(d295Ww4skLs1HZBq.\u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D)) : (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(_param1);
       }
       else
-        propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(ChartComponentElementSettings.GetPropertyDescriptor(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.GetName((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ));
+        propertyDescriptors = (IEnumerable<PropertyDescriptor>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<PropertyDescriptor>(ChartComponentElementSettings.GetPropertyDescriptor(this.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(this.\u0023\u003DzLICojrU\u003D?.GetName((IChartElement) ddznyiGmdRlAevOq) ?? Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzLICojrU\u003D, ddznyiGmdRlAevOq, this._variableSome3535.\u0023\u003DzZdxZPcbMFUEQ));
       return propertyDescriptors;
     }
   }
@@ -132,7 +132,7 @@ internal sealed class ChartComponentElementSettings :
     internal PropertyDescriptor \u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D(
       PropertyDescriptor _param1)
     {
-      return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : ChartComponentElementSettings.GetPropertyDescriptor(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (IChartComponent) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzZdxZPcbMFUEQ);
+      return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : ChartComponentElementSettings.GetPropertyDescriptor(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (IChartComponent) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D._variableSome3535.\u0023\u003DzZdxZPcbMFUEQ);
     }
   }
 

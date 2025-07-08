@@ -18,11 +18,11 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
   IDisposable,
   IRenderContext2D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   protected readonly \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D \u0023\u003Dzwa3i3hwVZeqr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D \u0023\u003Dzvix_YyOZ9Wo4 = new \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Dictionary<string, FontFamily> \u0023\u003DzuF0tResk6jHB = new Dictionary<string, FontFamily>();
 
   protected \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D(
@@ -242,7 +242,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
   public Size \u0023\u003DzM2zC99cVJOSN(float _param1, string _param2 = null, FontWeight _param3 = default (FontWeight))
   {
     \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D yeuvfbi2ga1Q3dva4g = new \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D();
-    yeuvfbi2ga1Q3dva4g.\u0023\u003DzRRvwDu67s9Rm = this;
+    yeuvfbi2ga1Q3dva4g._variableSome3535 = this;
     yeuvfbi2ga1Q3dva4g.\u0023\u003Dzz3d39DAyibKX = _param2;
     yeuvfbi2ga1Q3dva4g.\u0023\u003DzyvmR52E\u003D = _param1;
     yeuvfbi2ga1Q3dva4g.\u0023\u003Dz_xu4jb2w_ISy = _param3;
@@ -291,7 +291,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     FontWeight _param7)
   {
     \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003DzOZhF6r12fDpdxPyyP9aETuM\u003D f6r12fDpdxPyyP9aEtuM = new \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003DzOZhF6r12fDpdxPyyP9aETuM\u003D();
-    f6r12fDpdxPyyP9aEtuM.\u0023\u003DzRRvwDu67s9Rm = this;
+    f6r12fDpdxPyyP9aEtuM._variableSome3535 = this;
     f6r12fDpdxPyyP9aEtuM.\u0023\u003Dzz3d39DAyibKX = _param6;
     f6r12fDpdxPyyP9aEtuM.\u0023\u003DzyvmR52E\u003D = _param2;
     f6r12fDpdxPyyP9aEtuM.\u0023\u003Dz_xu4jb2w_ISy = _param7;
@@ -566,7 +566,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
 
   private sealed class \u0023\u003DzOZhF6r12fDpdxPyyP9aETuM\u003D
   {
-    public \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D _variableSome3535;
     public string \u0023\u003Dzz3d39DAyibKX;
     public float \u0023\u003DzyvmR52E\u003D;
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
@@ -575,13 +575,13 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     internal \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D(
       char _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, this.\u0023\u003Dz9GKNZpE\u003D);
+      return this._variableSome3535.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, this.\u0023\u003Dz9GKNZpE\u003D);
     }
   }
 
   private sealed class \u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D
   {
-    public \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D _variableSome3535;
     public string \u0023\u003Dzz3d39DAyibKX;
     public float \u0023\u003DzyvmR52E\u003D;
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
@@ -590,7 +590,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     internal \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D(
       char _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, Colors.White);
+      return this._variableSome3535.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, Colors.White);
     }
   }
 }

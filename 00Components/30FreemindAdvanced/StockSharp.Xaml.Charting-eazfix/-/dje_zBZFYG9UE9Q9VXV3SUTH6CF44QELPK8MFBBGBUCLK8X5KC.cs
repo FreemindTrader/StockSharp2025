@@ -13,9 +13,9 @@ namespace \u002D;
 internal sealed class dje_zBZFYG9UE9Q9VXV3SUTH6CF44QELPK8MFBBGBUCLK8X5KCN2_ejd : 
   dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzp\u0024K\u00240nqsvNAg = DependencyProperty.Register(nameof (YAxisDataTemplate), typeof (DataTemplate), typeof (dje_zBZFYG9UE9Q9VXV3SUTH6CF44QELPK8MFBBGBUCLK8X5KCN2_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzs6wiQBsd7qIb = DependencyProperty.Register(nameof (XAxisDataTemplate), typeof (DataTemplate), typeof (dje_zBZFYG9UE9Q9VXV3SUTH6CF44QELPK8MFBBGBUCLK8X5KCN2_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
 
   public DataTemplate YAxisDataTemplate

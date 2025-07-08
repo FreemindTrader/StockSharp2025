@@ -266,7 +266,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   protected void TryPlaceAxisLabels(Point offset)
   {
     LineAnnotationWithLabelsBase.\u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D dltbvS8bNvezolg25s = new LineAnnotationWithLabelsBase.\u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D();
-    dltbvS8bNvezolg25s.\u0023\u003DzRRvwDu67s9Rm = this;
+    dltbvS8bNvezolg25s._variableSome3535 = this;
     dltbvS8bNvezolg25s.\u0023\u003Dzze_xX5E\u003D = offset;
     dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D = this.GetUsedAxis();
     if (dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D == null || dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D.get_ModifierAxisCanvas() == null)
@@ -440,14 +440,14 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
 
   private sealed class \u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D
   {
-    public LineAnnotationWithLabelsBase \u0023\u003DzRRvwDu67s9Rm;
+    public LineAnnotationWithLabelsBase _variableSome3535;
     public IAxis \u0023\u003Dzfl\u0024A1s0\u003D;
     public Point \u0023\u003Dzze_xX5E\u003D;
 
     internal void \u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D(
       dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.PlaceAxisLabel(this.\u0023\u003Dzfl\u0024A1s0\u003D, _param1, this.\u0023\u003Dzze_xX5E\u003D);
+      this._variableSome3535.PlaceAxisLabel(this.\u0023\u003Dzfl\u0024A1s0\u003D, _param1, this.\u0023\u003Dzze_xX5E\u003D);
     }
   }
 }

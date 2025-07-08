@@ -16,7 +16,7 @@ namespace \u002D;
 internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd : 
   dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private 
   #nullable disable
   Dictionary<string, IRange> \u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D;

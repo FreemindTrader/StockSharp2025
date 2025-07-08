@@ -17,29 +17,29 @@ namespace \u002D;
 internal sealed class RubberBandXyZoomModifier : 
   ChartModifierBase
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzEiZKgbSC39dw = DependencyProperty.Register(nameof (IsAnimated), typeof (bool), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz3W_EWQ2DR449GpXhFw\u003D\u003D = DependencyProperty.Register(nameof (RubberBandFill), typeof (Brush), typeof (RubberBandXyZoomModifier), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzOtFah0x3lVGit4IaPQ\u003D\u003D = DependencyProperty.Register(nameof (RubberBandStroke), typeof (Brush), typeof (RubberBandXyZoomModifier), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz1YLfO3AlYAqEWcDv5Z_lkpc\u003D = DependencyProperty.Register(nameof (RubberBandStrokeDashArray), typeof (DoubleCollection), typeof (RubberBandXyZoomModifier), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzfKMrdOp8PEWK = DependencyProperty.Register(nameof (IsXAxisOnly), typeof (bool), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzNWOI1oh1IMgh = DependencyProperty.Register(nameof (ZoomExtentsY), typeof (bool), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzz8hz3gmofbMT = DependencyProperty.Register(nameof (MinDragSensitivity), typeof (double), typeof (RubberBandXyZoomModifier), new PropertyMetadata((object) 10.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D \u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003DzhcsKvLfw_p5c;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Point \u0023\u003Dzm1SIm_yjNDHz;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzqGwbHdeZ8yMA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Shape \u0023\u003DztHc2gS4\u003D;
 
   public RubberBandXyZoomModifier()

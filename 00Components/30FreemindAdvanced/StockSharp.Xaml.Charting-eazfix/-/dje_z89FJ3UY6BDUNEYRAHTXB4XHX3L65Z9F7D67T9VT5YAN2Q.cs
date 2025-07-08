@@ -19,27 +19,27 @@ internal abstract class dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGH
   ContentControl,
   \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzNGe3htdX6rpV = DependencyProperty.Register(nameof (PointMarkerTemplate), typeof (ControlTemplate), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzKNLry2NAzTE0YP2LWzHy77o\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzxglZwT0\u003D = DependencyProperty.Register(nameof (Stroke), typeof (Color), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzACYYWwoqJLWh\u0024F6GbuiAdRM\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzTe_gV3cWjEp7 = DependencyProperty.Register(nameof (StrokeThickness), typeof (double), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzYNHwQ174F89tEKHpFedHL4k\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzuzLf_8s\u003D = DependencyProperty.Register(nameof (Fill), typeof (Color), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dzvp_fMzphxDgUj7M8713t5tY\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzdr5RTntdbeN7 = DependencyProperty.Register(nameof (AntiAliasing), typeof (bool), typeof (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzwwnfoUeY2t4J2Aquog1ti\u0024w\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J> \u0023\u003DzFoYj4ei_SpD\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<IBrush2D> \u0023\u003DzdLqflxMU6QH8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Type \u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangeNotifier \u0023\u003DzubSLsKkd2jzj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangeNotifier \u0023\u003Dzl3E1ABn8TjRR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static bool \u0023\u003DzKRRDe7lSf19J3xc8SEr2Ml9bd54lopKnRkf6wFM\u003D;
 
   protected dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd()

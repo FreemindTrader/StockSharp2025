@@ -10,9 +10,9 @@ using System.Diagnostics;
 internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6HbbjLeMvfhhb2s2mR8\u003D : 
   \u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003DzvRfWPr63KvuHTrAJzzhlOpY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003DzcSeESbebAeG4quX3EIHoCnA\u003D;
 
   public \u0023\u003Dzro0Io1hfSw7LlH634iIk6HbbjLeMvfhhb2s2mR8\u003D(

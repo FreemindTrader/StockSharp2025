@@ -21,23 +21,23 @@ namespace \u002D;
 internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd : 
   ChartModifierBase
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ObservableCollection<IRenderableSeries> \u0023\u003Dzmhay2J9Ys\u0024BH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IDictionary<IRenderableSeries, IAnnotation> \u0023\u003DzJVKVgJSKleLL = (IDictionary<IRenderableSeries, IAnnotation>) new Dictionary<IRenderableSeries, IAnnotation>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private PropertyChangeNotifier \u0023\u003DzMFucnUdhtZnJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzvp8Q5iyLlWID = DependencyProperty.Register(nameof (AxisMarkerStyle), typeof (Style), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzNnZwaoee8xziVPglsg\u003D\u003D = DependencyProperty.RegisterAttached("IsSeriesValueModifierEnabled", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzEf91H67L3cmpXtvCzf\u0024fF8UYUMr2 = DependencyProperty.RegisterAttached("IsRenderableSeriesInViewport", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8BRRl9X\u00241GaoKzQFLQ\u003D\u003D = DependencyProperty.RegisterAttached("IsLastPointInViewport", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzRuUiUh8wem3V = DependencyProperty.RegisterAttached("SeriesMarkerColor", typeof (Color), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) new Color()));
 
   public dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd()

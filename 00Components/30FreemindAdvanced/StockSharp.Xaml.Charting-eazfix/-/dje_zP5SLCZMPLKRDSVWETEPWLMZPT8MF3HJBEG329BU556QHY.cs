@@ -19,21 +19,21 @@ namespace \u002D;
 [TemplatePart(Name = "PART_TopSplitter", Type = typeof (Thumb))]
 internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd : ContentControl
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzZXWtkeeJbx_j = DependencyProperty.Register(nameof (HeaderTemplate), typeof (DataTemplate), typeof (dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd.\u0023\u003Dz\u0024YszLknqkUvS)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<DragDeltaEventArgs> \u0023\u003DzKoryGH8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<DragCompletedEventArgs> \u0023\u003DzsVjPoH0ZQke5;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ContentPresenter \u0023\u003DzBexXE3VONLO6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Thumb \u0023\u003DzJUyG4Ire5BiC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Grid \u0023\u003DzIcIt5i8Z\u0024_b2;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzpVA9oSWG8tMHnyyPMQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dz6JKKH2a32fJ1lVqWOA\u003D\u003D;
 
   public dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd()

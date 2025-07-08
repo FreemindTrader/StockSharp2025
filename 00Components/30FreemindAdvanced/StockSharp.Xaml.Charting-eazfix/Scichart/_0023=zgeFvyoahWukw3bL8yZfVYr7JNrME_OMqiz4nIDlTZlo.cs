@@ -13,13 +13,13 @@ internal struct \u0023\u003DzgeFvyoahWukw3bL8yZfVYr7JNrME_OMqiz4nIDlTZlok(
   float[] _param3,
   float[] _param4)
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double[] \u0023\u003Dz4E7y\u0024prFV3fy = _param1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double[] \u0023\u003DzlBZQ9Hda4_JM = _param2;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly float[] \u0023\u003DzyzRsCEZdJFtY = _param3;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly float[] \u0023\u003DzWtvbe4EYMUk_ = _param4;
 
   public bool \u0023\u003DzE9zGTWQAFP9k()

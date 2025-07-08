@@ -20,23 +20,23 @@ namespace \u002D;
 internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd : 
   dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzNRygy3vTBpTh = DependencyProperty.RegisterAttached("IncludeSeries", typeof (bool), typeof (dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzzEpwYL7p2H9x = DependencyProperty.Register(nameof (ShowTooltip), typeof (bool), typeof (dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd), new PropertyMetadata((object) false, (PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Line \u0023\u003DzuKhG8cvbLb0H;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Line \u0023\u003Dzqc7rBjeXtKct;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Ellipse \u0023\u003DzatysOTiD_AK_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zWLGYTTT5DUFM55EFRPBBAZMZXPMVBQNX4VDZEWMJLU768RLDDSRVTC6SXVJQ2DSMRBMWZUQJ5VY6CVZ_ejd \u0023\u003DzafnecPyU9x6l;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ObservableCollection<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> \u0023\u003DzfaDgy7Wexasn = new ObservableCollection<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003Dzp00PUT7ntZP8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzCIhlnYjUSxNN;
 
   public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd()
@@ -134,7 +134,7 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
     dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D jy0mx0yCuWlqEsh0ZdY = new dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D();
-    jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzRRvwDu67s9Rm = this;
+    jy0mx0yCuWlqEsh0ZdY._variableSome3535 = this;
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzvCn8oRW_i8ct = _param1;
     this.\u0023\u003DzSRU73z_agnZjtPtO2Cu\u0024edM\u003D(jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzvCn8oRW_i8ct);
     if (this.ShowTooltip || this.ShowAxisLabels)
@@ -187,14 +187,14 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
     return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
-      \u0023\u003DzRRvwDu67s9Rm = this
+      _variableSome3535 = this
     }.\u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D));
   }
 
   protected virtual void \u0023\u003Dz4\u0024ey2dUrFu2c(Point _param1)
   {
     dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D kvt89B1lUeA7EdfukJs = new dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.\u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D();
-    kvt89B1lUeA7EdfukJs.\u0023\u003DzRRvwDu67s9Rm = this;
+    kvt89B1lUeA7EdfukJs._variableSome3535 = this;
     kvt89B1lUeA7EdfukJs.\u0023\u003DzvCn8oRW_i8ct = _param1;
     IEnumerable<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D> source1 = this.YAxes.Select<IAxis, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(new Func<IAxis, \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>(kvt89B1lUeA7EdfukJs.\u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D));
     this.YAxisInfo = source1.FirstOrDefault<\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D>();
@@ -343,42 +343,42 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
 
   private sealed class \u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D
   {
-    public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd _variableSome3535;
     public Point \u0023\u003DzvCn8oRW_i8ct;
 
     internal \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D(
       IAxis _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
+      return this._variableSome3535.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
     }
 
     internal \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzEhR4Oe23EuYwGjXUPg7SBR8\u003D(
       IAxis _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
+      return this._variableSome3535.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
     }
   }
 
   private sealed class \u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D
   {
     public Point \u0023\u003Dz_hWqBbI\u003D;
-    public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd _variableSome3535;
 
     internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
-      return _param1.\u0023\u003DznVLFa68vHPHy(this.\u0023\u003Dz_hWqBbI\u003D, this.\u0023\u003DzRRvwDu67s9Rm.UseInterpolation);
+      return _param1.\u0023\u003DznVLFa68vHPHy(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);
     }
   }
 
   private sealed class \u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D
   {
-    public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd _variableSome3535;
     public Point \u0023\u003DzvCn8oRW_i8ct;
 
     internal void \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzcWFGFMbg0iEM(this.\u0023\u003DzvCn8oRW_i8ct);
+      this._variableSome3535.\u0023\u003DzcWFGFMbg0iEM(this.\u0023\u003DzvCn8oRW_i8ct);
     }
   }
 }

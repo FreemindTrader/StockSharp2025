@@ -19,27 +19,27 @@ internal class dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd :
   Panel,
   ISuspendable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.Register(nameof (ClipToBounds), typeof (bool), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003Dz2TPUHBqM4Vp3)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzo60DLAgevG_S = DependencyProperty.Register(nameof (SizeWidthToContent), typeof (bool), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzp58eziJQD8M\u0024 = DependencyProperty.Register(nameof (SizeHeightToContent), typeof (bool), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DztX3bWaM\u003D = DependencyProperty.RegisterAttached("Left", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzQLHMxl4\u003D = DependencyProperty.RegisterAttached("Right", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzZpWLYz8\u003D = DependencyProperty.RegisterAttached("Top", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzasJeVgQ\u003D = DependencyProperty.RegisterAttached("Bottom", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzHEgPKfijwe68 = DependencyProperty.RegisterAttached("CenterLeft", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzJFNIkcI_P8j8 = DependencyProperty.RegisterAttached("CenterRight", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzLd8ENL0vP3HT = DependencyProperty.RegisterAttached("CenterTop", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzIetIZ2A\u00246GdH = DependencyProperty.RegisterAttached("CenterBottom", typeof (double), typeof (dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd), new PropertyMetadata((object) double.NaN, new PropertyChangedCallback(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzYiJHpLwOzite2sjmO4Xe9w0\u003D)));
 
   public static double GetLeft(UIElement _param0)

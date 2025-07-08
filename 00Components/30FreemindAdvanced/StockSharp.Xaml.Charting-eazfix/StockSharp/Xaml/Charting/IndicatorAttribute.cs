@@ -15,7 +15,7 @@ namespace StockSharp.Xaml.Charting;
 [AttributeUsage(AttributeTargets.Class)]
 public class IndicatorAttribute : Attribute
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Type \u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
 
   public IndicatorAttribute(Type type)

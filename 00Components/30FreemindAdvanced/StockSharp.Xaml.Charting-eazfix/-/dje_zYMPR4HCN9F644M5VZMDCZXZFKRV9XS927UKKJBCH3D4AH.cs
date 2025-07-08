@@ -14,9 +14,9 @@ namespace \u002D;
 internal sealed class dje_zYMPR4HCN9F644M5VZMDCZXZFKRV9XS927UKKJBCH3D4AHFK66TNJA_ejd : 
   dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003Dz39nD3feKm878;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003DzynwqZ7\u00241dLS6;
 
   protected override void \u0023\u003DzdL613chSNlLB(

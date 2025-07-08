@@ -9,16 +9,16 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzS2_K6sVvd5IY;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dz6aJoeqoqAzym;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003Dz2J4l3QUGwZHE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzWp13vlQiZCJc;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzjAUs6E8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public double \u0023\u003DzN0WZcqs\u003D;
 }

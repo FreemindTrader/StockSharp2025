@@ -21,9 +21,9 @@ namespace \u002D;
 internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd : 
   \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register(nameof (ChildModifiers), typeof (ObservableCollection<IChartModifier>), typeof (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzMGnM8Q7UmYY2)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Grid \u0023\u003DzS\u0024OTg_s\u003D = new Grid();
 
   public dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd()
@@ -126,7 +126,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D lvtppRwsYcyoelU8 = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D();
+    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass7654 lvtppRwsYcyoelU8 = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass7654();
     lvtppRwsYcyoelU8.\u0023\u003DzwM8aRUE\u003D = _param1;
     lvtppRwsYcyoelU8.\u0023\u003DzTi2kmf4\u003D = _param2;
     if (this.ChildModifiers == null)
@@ -138,7 +138,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D kiaDl76b0Nyu42rxJq = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D();
+    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass5555 kiaDl76b0Nyu42rxJq = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass5555();
     kiaDl76b0Nyu42rxJq.\u0023\u003DzwM8aRUE\u003D = _param1;
     kiaDl76b0Nyu42rxJq.\u0023\u003DzTi2kmf4\u003D = _param2;
     if (this.ChildModifiers == null)
@@ -150,7 +150,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzwM8aRUE\u003D = _param1;
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzTi2kmf4\u003D = _param2;
     if (this.ChildModifiers == null)
@@ -419,7 +419,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     }
   }
 
-  private sealed class \u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D
+  private sealed class SomeClass7654
   {
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
@@ -431,7 +431,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
@@ -454,7 +454,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     }
   }
 
-  private sealed class \u0023\u003DzzKVd_KIaDl76b0Nyu42rxJQ\u003D
+  private sealed class SomeClass5555
   {
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;

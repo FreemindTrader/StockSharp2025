@@ -25,43 +25,43 @@ internal abstract class dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GM
   \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv1ei5a44WdHi6c16UXGWhmY1mMHOZA\u003D\u003D,
   IInvalidatableElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzKrsZ\u0024JY5ZFLk = DependencyProperty.Register(nameof (ClipModifierSurface), typeof (bool), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzwRBYwhc7zDyy = DependencyProperty.Register(nameof (ChartTitle), typeof (string), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003Dz8nrTMdEZLwbciOTO7Vi3t9Y\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzZlWtNzRQ4OYQ = DependencyProperty.Register(nameof (RenderSurface), typeof (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzjroGW0xeV8YH = DependencyProperty.Register(nameof (MaxFrameRate), typeof (double?), typeof (dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd \u0023\u003DzO_kDrhvLYpaX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly object myLock = new object();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003Dz5Q_\u0024YkuhIHbd;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003DzvBK\u00248KQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IServiceContainer \u0023\u003Dzg8Ufa_EMXfJU;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd \u0023\u003DzoaInVTVF1PK_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW54Qe0d7 \u0023\u003DzK_OtVrQnpn26;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly RoutedEventHandler \u0023\u003DzDBof02j7wNLE;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly RoutedEventHandler \u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SizeChangedEventHandler \u0023\u003DzY4g995NuThV1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly DependencyPropertyChangedEventHandler \u0023\u003DzvhtXLpDgYpSt;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003Dzc0ALknKZKMZw;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<EventArgs> \u0023\u003DzcyGdlF8\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHCK5HNRZ8B\u0024Asrf4ngfS7R9rAu5kGLnFo5b5v7I\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsr9VW2SiWlaFw0wjAU\u003D \u0023\u003DzQ7ziF8hV1\u0024a0lbi4RKafaLI\u003D;
 
   protected dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd()

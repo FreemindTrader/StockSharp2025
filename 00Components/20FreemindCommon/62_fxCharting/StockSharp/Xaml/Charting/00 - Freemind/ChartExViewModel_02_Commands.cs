@@ -167,11 +167,11 @@ namespace StockSharp.Xaml.Charting
         {
             if ( area != null )
             {
-                area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null );
+                area.ViewModel.ShowHiddenAxesCommand.Execute( null );
             }
             else
             {
-                Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p => p.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null ) );
+                Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p => p.Area.ViewModel.ShowHiddenAxesCommand.Execute( null ) );
                 
             }
 
@@ -285,7 +285,7 @@ namespace StockSharp.Xaml.Charting
             var sciMvvm = ( ( IScichartSurfaceVM )pane );
 
             var areas = sciMvvm.Chart.ChartAreas;
-            var chartArea = areas.FirstOrDefault( a => a.ChartSurfaceViewModel == pane );
+            var chartArea = areas.FirstOrDefault( a => a.ViewModel == pane );
 
             if ( chartArea == null )
             {

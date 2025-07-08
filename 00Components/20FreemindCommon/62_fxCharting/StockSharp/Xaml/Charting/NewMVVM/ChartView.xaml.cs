@@ -1072,7 +1072,7 @@ namespace StockSharp.Xaml.Charting
             
             area.Chart = ( this );
             
-            ViewModel.ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ChartSurfaceViewModel );
+            ViewModel.ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ViewModel );
 
             Ecng.Collections.CollectionHelper.ForEach( area.Elements, new Action<IChartElement>( OnNewUIAddedToArea ) );
             
@@ -1082,7 +1082,7 @@ namespace StockSharp.Xaml.Charting
         {
             area.Elements.Added   -= new Action<IChartElement>( OnNewUIAddedToArea );
             area.Elements.Removed -= new Action<IChartElement>( OnUIRemovedFromArea );
-            ViewModel.ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ChartSurfaceViewModel );
+            ViewModel.ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ViewModel );
 
             Ecng.Collections.CollectionHelper.ForEach( area.Elements, new Action<IChartElement>( OnUIRemovedFromArea ) );
 
@@ -1228,7 +1228,7 @@ namespace StockSharp.Xaml.Charting
         {
             ChartArea area             = new ChartArea( ) { Title = LocalizedStrings.Panel + " " +   ( ChartAreas .Count + 1 ), XAxisType = XAxisType };
             var viewModel              = new ScichartSurfaceMVVM( area );
-            area.ChartSurfaceViewModel = viewModel;
+            area.ViewModel = viewModel;
 
             var timeZoneInfo = GetTimeZone( );
 
@@ -1445,7 +1445,7 @@ namespace StockSharp.Xaml.Charting
                     return;
                 }
 
-                chartArea.ChartSurfaceViewModel.Height = chartArea.Height;
+                chartArea.ViewModel.Height = chartArea.Height;
             }
 
             public void DrawChartAreas( ChartDrawData drawData )
@@ -1463,7 +1463,7 @@ namespace StockSharp.Xaml.Charting
                 */
                 foreach ( ChartArea chartArea in this )
                 {
-                    chartArea.ChartSurfaceViewModel.Draw( drawData );
+                    chartArea.ViewModel.Draw( drawData );
                 }
             }
 
@@ -1471,7 +1471,7 @@ namespace StockSharp.Xaml.Charting
             {
                 foreach ( ChartArea chartArea in this )
                 {
-                    chartArea.ChartSurfaceViewModel.Reset( element );
+                    chartArea.ViewModel.Reset( element );
                 }
             }
 
@@ -1491,7 +1491,7 @@ namespace StockSharp.Xaml.Charting
                 {
                     ChartArea chartArea             = new ChartArea( );
                     var viewModel                   = new ScichartSurfaceMVVM( chartArea );
-                    chartArea.ChartSurfaceViewModel = viewModel;
+                    chartArea.ViewModel = viewModel;
 
                     chartArea.Load( storage );
 
@@ -1516,7 +1516,7 @@ namespace StockSharp.Xaml.Charting
                         }
                     }
                     Add( chartArea );
-                    chartArea.ChartSurfaceViewModel.Height = storage.GetValue( "Height", double.NaN );
+                    chartArea.ViewModel.Height = storage.GetValue( "Height", double.NaN );
                 }
             }
 
@@ -1530,7 +1530,7 @@ namespace StockSharp.Xaml.Charting
                 settings.SetValue( "Areas", this.Select( a =>
                 {
                     var s = a.Save( );
-                    s.SetValue( "Height", a.ChartSurfaceViewModel.Height );
+                    s.SetValue( "Height", a.ViewModel.Height );
                     return s;
                 } ).ToArray( ) );
             }

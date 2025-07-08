@@ -14,11 +14,11 @@ namespace \u002D;
 internal sealed class dje_zUTTWYHVMUS8G93MS4LKZ375YU8GTCWJNKQWWN8HJ3ZVEDUZEZJK5A_ejd : 
   dje_zCCKWRE6ZAZTUZM9ZU5ZMRRYMRCBJV5TT9Z7CKVUJYFUMMKZ_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzKasBY8yFp0kHGchcdspopP7GEE2mXL2_PJ3GAzDPqEBp355x434uR\u0024Xvxl7l \u0023\u003DziAttZBhsZA0vFhELFvwoTIOB_Klb;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzKpDdtddDPCNA;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzskk3W82lFCC7;
 
   protected override Size ArrangeOverride(Size _param1)

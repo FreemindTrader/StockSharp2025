@@ -14,21 +14,21 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003
   IDisposable,
   \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly bool \u0023\u003DzCGVfeT7yJc5e;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly float \u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003DzBGuos5a1\u0024vqwiW65Dw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<(Color, float), \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J> \u0023\u003Dzin_8jbOXQl9a;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<Color, IBrush2D> \u0023\u003DzRedLM92UZkPp;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<Brush, IBrush2D> \u0023\u003Dz15ylege7nbS\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double[] \u0023\u003DzuGUVW3D\u0024dHUILYV7nA\u003D\u003D;
 
   public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(

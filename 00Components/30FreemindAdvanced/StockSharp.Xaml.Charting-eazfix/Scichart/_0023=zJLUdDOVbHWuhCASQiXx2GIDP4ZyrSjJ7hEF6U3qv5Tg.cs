@@ -12,9 +12,9 @@ using System.Windows.Markup;
 #nullable disable
 internal sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : MarkupExtension
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Type \u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzpTdlR6mowfjqyUqFZA\u003D\u003D;
 
   public \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2()

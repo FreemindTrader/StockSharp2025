@@ -31,7 +31,7 @@ internal sealed class FastMountainRenderableSeries :
     IRenderPassData _param2)
   {
     FastMountainRenderableSeries.SomeClass1234 _someMemebers1234 = new FastMountainRenderableSeries.SomeClass1234();
-    _someMemebers1234.\u0023\u003DzRRvwDu67s9Rm = this;
+    _someMemebers1234._variableSome3535 = this;
     double num1 = this.\u0023\u003DzNfVFwxaLW3jC(_param2);
     float num2 = (float) this.\u0023\u003DzySDi0_ve2vLaE3cXlA\u003D\u003D();
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
@@ -97,7 +97,7 @@ internal sealed class FastMountainRenderableSeries :
 
   private sealed class SomeClass1234
   {
-    public FastMountainRenderableSeries \u0023\u003DzRRvwDu67s9Rm;
+    public FastMountainRenderableSeries _variableSome3535;
     public Color \u0023\u003DzxS8dq0E\u003D;
     public IBrush2D \u0023\u003DzWQetKrw\u003D;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
@@ -106,14 +106,14 @@ internal sealed class FastMountainRenderableSeries :
       double _param1,
       double _param2)
     {
-      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
+      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
     }
 
     internal IBrush2D \u0023\u003DzFAoPfkrtOCx4PY1ldA\u003D\u003D(
       double _param1,
       double _param2)
     {
-      Color? nullable = this.\u0023\u003DzRRvwDu67s9Rm.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this.\u0023\u003DzRRvwDu67s9Rm, _param1, _param2);
+      Color? nullable = this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2);
       return !nullable.HasValue ? this.\u0023\u003DzWQetKrw\u003D : this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003DzNryPIU0\u003D(nullable.Value);
     }
   }

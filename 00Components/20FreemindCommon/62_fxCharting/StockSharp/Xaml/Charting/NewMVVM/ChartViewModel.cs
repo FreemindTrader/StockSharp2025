@@ -157,7 +157,7 @@ public sealed partial class ChartViewModel : DependencyObject
     internal void ExecuteClosePaneCommand( IChildPane c )
     {
         var areas     = ( ( ScichartSurfaceMVVM )c ).Chart.ChartAreas;
-        var chartArea = areas.FirstOrDefault( a => a.ChartSurfaceViewModel == c );
+        var chartArea = areas.FirstOrDefault( a => a.ViewModel == c );
 
         if ( chartArea == null )
         {
@@ -396,11 +396,11 @@ public sealed partial class ChartViewModel : DependencyObject
     {
         if ( area != null )
         {
-            area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null );
+            area.ViewModel.ShowHiddenAxesCommand.Execute( null );
         }
         else
         {
-            Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p => p.Area.ChartSurfaceViewModel.ShowHiddenAxesCommand.Execute( null ) );
+            Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p => p.Area.ViewModel.ShowHiddenAxesCommand.Execute( null ) );
             
         }
 

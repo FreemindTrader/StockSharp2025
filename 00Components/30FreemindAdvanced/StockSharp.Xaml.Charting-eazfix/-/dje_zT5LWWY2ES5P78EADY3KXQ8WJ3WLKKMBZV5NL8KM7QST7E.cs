@@ -47,107 +47,107 @@ internal class SciChartSurface :
   ISciChartSurface,
   IInvalidatableElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly 
   #nullable disable
   DependencyProperty \u0023\u003DzOEM9rkU52IaaaYckycathxI\u003D = DependencyProperty.Register(nameof (ClipUnderlayAnnotations), typeof (bool), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8254dnHLdRCy = DependencyProperty.Register(nameof (ClipOverlayAnnotations), typeof (bool), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzTX0a9G8VrfoD = DependencyProperty.Register(nameof (ZoomExtentsCommand), typeof (ICommand), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzzGCMRya8OoUTRsROAEXfFVg\u003D = DependencyProperty.Register(nameof (AnimateZoomExtentsCommand), typeof (ICommand), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DztnODn3Lbw9gQ = DependencyProperty.Register(nameof (XAxis), typeof (IAxis), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dz2xH_KOTJk1FH)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz1Eyckd4j0Nvq = DependencyProperty.Register(nameof (YAxis), typeof (IAxis), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzUYXUmgjXHZra)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzp4pbuj2W1yJe = DependencyProperty.Register(nameof (YAxes), typeof (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dzw83elPE6IaNqQIYgfw\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzDqajrUCXt2L8 = DependencyProperty.Register(nameof (XAxes), typeof (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dz6cV0sTdoa0aXB7oEvg\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzCQBWGrk\u003D = DependencyProperty.Register(nameof (Annotations), typeof (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D), typeof (SciChartSurface), new PropertyMetadata(new PropertyChangedCallback(SciChartSurface.\u0023\u003DzTwHOANN3ITOI)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzrq3jmpc2lTWmgU1xYQ\u003D\u003D = DependencyProperty.Register(nameof (AutoRangeOnStartup), typeof (bool), typeof (SciChartSurface), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzj87lYSja1JrB = DependencyProperty.Register(nameof (ChartModifier), typeof (IChartModifier), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzD3CxC6LQYAec)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz9lYVM5L3vWhgRCkiGg\u003D\u003D = DependencyProperty.Register(nameof (LeftAxesPanelTemplate), typeof (ItemsPanelTemplate), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzC8eGbYU38ZOhQsYmkg\u003D\u003D = DependencyProperty.Register(nameof (RightAxesPanelTemplate), typeof (ItemsPanelTemplate), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzUKDFpV7tPYmw\u0024i2jGg\u003D\u003D = DependencyProperty.Register(nameof (TopAxesPanelTemplate), typeof (ItemsPanelTemplate), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzkPeQninQ1wHrCZ6TRw\u003D\u003D = DependencyProperty.Register(nameof (BottomAxesPanelTemplate), typeof (ItemsPanelTemplate), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzhAlxcjWzGbAtV5gIOEJX7LQ\u003D = DependencyProperty.Register(nameof (CenterXAxesPanelTemplate), typeof (ItemsPanelTemplate), typeof (SciChartSurface), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz3Igx8jH2JowbGxnbosZfY9g\u003D = DependencyProperty.Register(nameof (CenterYAxesPanelTemplate), typeof (ItemsPanelTemplate), typeof (SciChartSurface), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzKIR3fEiw\u0024nx0X6LDLQ\u003D\u003D = DependencyProperty.Register(nameof (GridLinesPanelStyle), typeof (Style), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzYXVDCElLYMeX)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz9HyEohEm8\u0024tx = DependencyProperty.Register(nameof (RenderSurfaceStyle), typeof (Style), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzYXVDCElLYMeX)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D = DependencyProperty.Register(nameof (RenderableSeries), typeof (ObservableCollection<IRenderableSeries>), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzqAA3vS5ME5QQOVXt1JQV8cO54LGA)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzQFsR0tDPWyoiatb3P7odRD8\u003D = DependencyProperty.Register(nameof (SelectedRenderableSeries), typeof (ObservableCollection<IRenderableSeries>), typeof (SciChartSurface), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8o0yiN0I55Gm = DependencyProperty.Register(nameof (ViewportManager), typeof (\u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dz2I6m3INvNdYt)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzhi6ewyq0WHcz = DependencyProperty.Register(nameof (SeriesSource), typeof (ObservableCollection<IRenderableSeries>), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzURlSYmINpP\u0024HWseZpg\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzgbpAybKiYbKbKG238g\u003D\u003D = DependencyProperty.Register(nameof (IsPolarChart), typeof (bool), typeof (SciChartSurface), new PropertyMetadata((object) false, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzEXdV0ADnLt07AffGX3qcEdc\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLTCNAKZHF2LCBZNSWLDVPYTWWEKD4_ejd \u0023\u003Dz21FrxnEmUmBR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003Dz0YK5mfh0G_wP;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003DzGFGsUr_xxE4H;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003DzK\u0024t4oL\u0024CAaKU;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003DztKgn6GxCcL\u0024B;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003Dz1mGpFN8tTa5PB1b5eA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zCK22KM22D3NQP9CPE8LK3RM7LVMDSW44P9Q363YG78KM6T7DKNGTA_ejd \u0023\u003DzkW\u0024qJVeNKX1VtemTog\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D \u0023\u003DzlisSOG7yPz_K;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyNMn5sYJZKzXDppYgrIuwPB \u0023\u003DzKPDuUZmOc92KysMGPQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzwRf5PdbT802y;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd \u0023\u003DzJCSLrMbWu3xb\u00240pkXO0DnxY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_zL3F4JFPFYA57TDFR6E5RGMBJ4VYTG4UGR3GC8GM6BQ3B9PA_ejd \u0023\u003Dzm\u0024RjME9m9HW8iNSk3pzjUqs\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Canvas \u0023\u003Dzn_X_okoYEhwx;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzYB09msiytIDFpDsyaHpANNcjrPNql900yccNyuZHBUW6 \u0023\u003DzMZpCUE8eL2X8;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly object myLock = new object();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzL79ssDGYe7GX = new HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private SciChartSurface.\u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D \u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D> \u0023\u003Dzpet4TiFkmcjB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler \u0023\u003Dz7YsCgRH0e3NJ7eTEsg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler \u0023\u003DzEA6vcLlqH_FFzckuMg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler \u0023\u003DzqsL83n7r4oZ4;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static int \u0023\u003DziUTIXAQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static char \u0023\u003DzndAvyl4\u003D = 'a';
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dz\u0024RzuU0A\u003D = SciChartSurface.\u0023\u003DzndAvyl4\u003D++.ToString();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyklVKg61SC2QL8 \u0023\u003DzBF9EFrE8iOBKBpnp2YeZjCs\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELTst58YqUlllvt2EY65UXJw\u003D\u003D \u0023\u003DzUpDNoiuyFkQgKnG1rLeDiyFufOOLPECfpQ\u003D\u003D;
 
   public SciChartSurface()
@@ -840,7 +840,7 @@ internal class SciChartSurface :
     \u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy _param2)
   {
     SciChartSurface.\u0023\u003Dz041D7jmffErIs2Wft03rpCc\u003D d7jmffErIs2Wft03rpCc = new SciChartSurface.\u0023\u003Dz041D7jmffErIs2Wft03rpCc\u003D();
-    d7jmffErIs2Wft03rpCc.\u0023\u003DzRRvwDu67s9Rm = this;
+    d7jmffErIs2Wft03rpCc._variableSome3535 = this;
     if (!this.IsLoaded || this.\u0023\u003DzQ6xddArfD502() == (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsr9VW2SiWlaFw0wjAU\u003D) 0 || this.\u0023\u003DzwRf5PdbT802y)
       return;
     this.\u0023\u003DzwRf5PdbT802y = true;
@@ -1376,7 +1376,7 @@ internal class SciChartSurface :
   public void \u0023\u003Dz90p4sVE\u003D(string _param1)
   {
     SciChartSurface.\u0023\u003DzafpfrngHfftFzifQOwPtvqY\u003D hfftFzifQowPtvqY = new SciChartSurface.\u0023\u003DzafpfrngHfftFzifQOwPtvqY\u003D();
-    hfftFzifQowPtvqY.\u0023\u003DzRRvwDu67s9Rm = this;
+    hfftFzifQowPtvqY._variableSome3535 = this;
     hfftFzifQowPtvqY.\u0023\u003Dzop4x1aU\u003D = _param1;
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsr9VW2SiWlaFw0wjAU\u003D ssr9Vw2SiWlaFw0wjAu = this.\u0023\u003DzQ6xddArfD502();
     try
@@ -1640,7 +1640,7 @@ internal class SciChartSurface :
   {
     return (IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>) new SciChartSurface.\u0023\u003Dz_Echccw8OyZAdo96L0cd918\u003D(-2)
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       \u0023\u003Dz62suKlK33zDjzYMs3Q\u003D\u003D = _param1
     };
   }
@@ -1874,17 +1874,17 @@ internal class SciChartSurface :
 
   private sealed class \u0023\u003Dz041D7jmffErIs2Wft03rpCc\u003D
   {
-    public SciChartSurface \u0023\u003DzRRvwDu67s9Rm;
+    public SciChartSurface _variableSome3535;
     public Action \u0023\u003Dz5vxB7hs\u003D;
 
     internal void \u0023\u003DzPEXAppbcaBgnas\u00248pco9O5Y\u003D()
     {
       // ISSUE: explicit non-virtual call
-      object obj = __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzjatnj7TNvda7());
+      object obj = __nonvirtual (this._variableSome3535.\u0023\u003Dzjatnj7TNvda7());
       Monitor.Enter(obj);
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzOB4dXYeIFfiB();
+      this._variableSome3535.\u0023\u003DzOB4dXYeIFfiB();
       Monitor.Exit(obj);
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzwRf5PdbT802y = false;
+      this._variableSome3535.\u0023\u003DzwRf5PdbT802y = false;
     }
 
     internal void \u0023\u003Dz7n\u0024Gp4RnkI3hGyrPb7eAGT0\u003D()
@@ -1944,19 +1944,19 @@ internal class SciChartSurface :
     IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>,
     IEnumerator<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003Dz4fzyEZ1SsHYa;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003Dzaev1bhaFFIDX;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public SciChartSurface \u0023\u003DzRRvwDu67s9Rm;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
+    public SciChartSurface _variableSome3535;
+    
     private string \u0023\u003Dzb0xKp\u0024w\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     public string \u0023\u003Dz62suKlK33zDjzYMs3Q\u003D\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private IEnumerator<IRenderableSeries> \u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D;
 
     [DebuggerHidden]
@@ -1990,7 +1990,7 @@ internal class SciChartSurface :
       try
       {
         int z4fzyEz1SsHya = this.\u0023\u003Dz4fzyEZ1SsHYa;
-        SciChartSurface zRrvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+        SciChartSurface zRrvwDu67s9Rm = this._variableSome3535;
         switch (z4fzyEz1SsHya)
         {
           case 0:
@@ -2073,7 +2073,7 @@ internal class SciChartSurface :
       else
       {
         echccw8OyZado96L0cd918 = new SciChartSurface.\u0023\u003Dz_Echccw8OyZAdo96L0cd918\u003D(0);
-        echccw8OyZado96L0cd918.\u0023\u003DzRRvwDu67s9Rm = this.\u0023\u003DzRRvwDu67s9Rm;
+        echccw8OyZado96L0cd918._variableSome3535 = this._variableSome3535;
       }
       echccw8OyZado96L0cd918.\u0023\u003Dzb0xKp\u0024w\u003D = this.\u0023\u003Dz62suKlK33zDjzYMs3Q\u003D\u003D;
       return (IEnumerator<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>) echccw8OyZado96L0cd918;
@@ -2091,13 +2091,13 @@ internal class SciChartSurface :
   {
     public 
     #nullable disable
-    SciChartSurface \u0023\u003DzRRvwDu67s9Rm;
+    SciChartSurface _variableSome3535;
     public string \u0023\u003Dzop4x1aU\u003D;
     public PrintDialog \u0023\u003Dzk1hW\u0024Z4\u003D;
 
     internal void \u0023\u003DzwAbd934jQU3AcJ7xVQ\u003D\u003D()
     {
-      this.\u0023\u003Dzk1hW\u0024Z4\u003D.PrintVisual((Visual) this.\u0023\u003DzRRvwDu67s9Rm, this.\u0023\u003Dzop4x1aU\u003D);
+      this.\u0023\u003Dzk1hW\u0024Z4\u003D.PrintVisual((Visual) this._variableSome3535, this.\u0023\u003Dzop4x1aU\u003D);
     }
   }
 
@@ -2122,7 +2122,7 @@ internal class SciChartSurface :
   internal sealed class \u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D : 
     ObservableCollection<IRenderableSeries>
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly SciChartSurface \u0023\u003Dzos6SMwAMXZ33;
 
     public \u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D(

@@ -13,9 +13,9 @@ internal struct \u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6 :
   IComparable,
   \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<double>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003Dz0HHYg1s\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly double \u0023\u003DzN7MEa5Q\u003D;
 
   public \u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6(double _param1, double _param2)

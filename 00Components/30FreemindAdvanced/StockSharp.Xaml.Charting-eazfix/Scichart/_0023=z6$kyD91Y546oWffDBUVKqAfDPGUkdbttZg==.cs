@@ -101,8 +101,8 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
 
   public void \u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(TimeSpan _param1)
   {
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D lvtppRwsYcyoelU8 = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.\u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D();
-    lvtppRwsYcyoelU8.\u0023\u003DzRRvwDu67s9Rm = this;
+    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7654 lvtppRwsYcyoelU8 = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7654();
+    lvtppRwsYcyoelU8._variableSome3535 = this;
     lvtppRwsYcyoelU8.\u0023\u003DzXOURnwA\u003D = _param1;
     if (!this.\u0023\u003DzWNQ9StWEg__B())
       return;
@@ -118,8 +118,8 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
 
   public void \u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(TimeSpan _param1)
   {
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
-    v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRRvwDu67s9Rm = this;
+    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass6409();
+    v4vdZv8GtEzAmB0rzFq._variableSome3535 = this;
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzXOURnwA\u003D = _param1;
     if (!this.\u0023\u003DzWNQ9StWEg__B())
       return;
@@ -135,8 +135,8 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
 
   public void \u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(TimeSpan _param1)
   {
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.\u0023\u003DzpcA\u0024d1dDoDCwiev7trI4NY0\u003D doDcwiev7trI4Ny0 = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.\u0023\u003DzpcA\u0024d1dDoDCwiev7trI4NY0\u003D();
-    doDcwiev7trI4Ny0.\u0023\u003DzRRvwDu67s9Rm = this;
+    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7237 doDcwiev7trI4Ny0 = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7237();
+    doDcwiev7trI4Ny0._variableSome3535 = this;
     doDcwiev7trI4Ny0.\u0023\u003DzXOURnwA\u003D = _param1;
     if (!this.\u0023\u003DzWNQ9StWEg__B())
       return;
@@ -232,36 +232,36 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
     this.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz8zwqAzdRsuc\u0024();
   }
 
-  private sealed class \u0023\u003DzWDeT\u0024CyLvtppRwsYCyoelU8\u003D
+  private sealed class SomeClass7654
   {
-    public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D _variableSome3535;
     public TimeSpan \u0023\u003DzXOURnwA\u003D;
 
     internal void \u0023\u003Dz5cvR57bCJ\u0024icEF_PguV3F8KMaVLt()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(this.\u0023\u003DzXOURnwA\u003D);
+      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(this.\u0023\u003DzXOURnwA\u003D);
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
-    public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D _variableSome3535;
     public TimeSpan \u0023\u003DzXOURnwA\u003D;
 
     internal void \u0023\u003DzRQvEFcONmUBT2PTwERTtLDbqy8es()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(this.\u0023\u003DzXOURnwA\u003D);
+      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(this.\u0023\u003DzXOURnwA\u003D);
     }
   }
 
-  private sealed class \u0023\u003DzpcA\u0024d1dDoDCwiev7trI4NY0\u003D
+  private sealed class SomeClass7237
   {
-    public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D _variableSome3535;
     public TimeSpan \u0023\u003DzXOURnwA\u003D;
 
     internal void \u0023\u003DzxSNk7gqofrWCxdQwCG6opwzg6Kvk()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(this.\u0023\u003DzXOURnwA\u003D);
+      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(this.\u0023\u003DzXOURnwA\u003D);
     }
   }
 }

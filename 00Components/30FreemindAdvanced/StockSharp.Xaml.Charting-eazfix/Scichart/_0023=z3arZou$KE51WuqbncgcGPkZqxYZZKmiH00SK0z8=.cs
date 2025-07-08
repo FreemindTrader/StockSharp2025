@@ -12,15 +12,15 @@ using System.Windows.Threading;
 #nullable disable
 internal sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D : IDisposable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D \u0023\u003DzVBVazrI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Action \u0023\u003DzNQY2Q7mG9LR5;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DispatcherTimer \u0023\u003DzO6iOtf4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003DzmHM_et\u0024F5OBc;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private volatile bool \u0023\u003DzvBK\u00248KQ\u003D;
 
   internal \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D(

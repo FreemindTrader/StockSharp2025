@@ -12,29 +12,29 @@ using System.Runtime.CompilerServices;
 internal struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D : 
   \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public float \u0023\u003Dz4WHdt9g\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public float \u0023\u003DzoRsAtmfOFDZe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public float \u0023\u003DzcdKuX48ZXN_S;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public float \u0023\u003DzKCqGEcs\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DziT5e12c\u003D = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(1f, 1f, 1f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzXMsQczM\u003D = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 0.0f, 0.0f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003Dzr\u0024CAwAU\u003D = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(1f, 0.0f, 0.0f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003Dz8Nx8mZ4\u003D = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 1f, 0.0f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzCfZb6Vg\u003D = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 0.0f, 1f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzokZEel\u0024u0c1N = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 1f, 1f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzeoCalpffM4n8 = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(1f, 0.0f, 1f, 1f);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzD0g4s6O4aQOc = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(1f, 1f, 0.0f, 1f);
 
   public \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(

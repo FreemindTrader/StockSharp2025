@@ -29,37 +29,37 @@ internal sealed class SciChartGroup :
   ItemsControl,
   INotifyPropertyChanged
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSQ9PALvdLOX4 = DependencyProperty.RegisterAttached("VerticalChartGroup", typeof (string), typeof (SciChartGroup), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartGroup.\u0023\u003DznWImvCruq8sQ)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz3Y_OZ80lXJkE = DependencyProperty.Register(nameof (IsTabbed), typeof (bool), typeof (SciChartGroup), new PropertyMetadata((object) false, new PropertyChangedCallback(SciChartGroup.\u0023\u003Dzgxjo2OnorrBU)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzenwCc\u0024sVGsge = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ContentPresenter \u0023\u003DzBexXE3VONLO6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TabControl \u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private StackPanel \u0023\u003DzhUaBLeEcnz4yciN\u0024Mw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Canvas \u0023\u003DzF8_YcFVDbTFB;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzrSLETkwHQoH38mnTuw\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzerqhc5X832JL;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003DzVi6cjZRqUP3j;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzu9zFAJU\u00246XS3lPkdqi1iVcE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzi1vdbCxOaDS\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzzXyefThIl4Ak;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzBq2lcgtVrsr_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Action<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> \u0023\u003DzSp5oAkvK2sET;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> \u0023\u003Dzg0gWX4E\u003D = new List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>();
 
   public SciChartGroup()
@@ -258,7 +258,7 @@ internal sealed class SciChartGroup :
     IScichartSurfaceVM _param1)
   {
     SciChartGroup.\u0023\u003DzbQEIVhBRscvmjvQLdNZzKp4\u003D brscvmjvQldNzzKp4 = new SciChartGroup.\u0023\u003DzbQEIVhBRscvmjvQLdNZzKp4\u003D();
-    brscvmjvQldNzzKp4.\u0023\u003DzRRvwDu67s9Rm = this;
+    brscvmjvQldNzzKp4._variableSome3535 = this;
     FrameworkElement frameworkElement = this.\u0023\u003DzAy0v9i5A19lM();
     brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D = new \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D()
     {
@@ -345,7 +345,7 @@ internal sealed class SciChartGroup :
   private void \u0023\u003DztNo2m0eYh0OW(object _param1, DragDeltaEventArgs _param2)
   {
     SciChartGroup.\u0023\u003DzgEL8Rs_dn1ebi1vn37xdjks\u003D dn1ebi1vn37xdjks = new SciChartGroup.\u0023\u003DzgEL8Rs_dn1ebi1vn37xdjks\u003D();
-    dn1ebi1vn37xdjks.\u0023\u003DzRRvwDu67s9Rm = this;
+    dn1ebi1vn37xdjks._variableSome3535 = this;
     if (this.\u0023\u003DzzXyefThIl4Ak == null)
     {
       this.\u0023\u003DzzXyefThIl4Ak = dn1ebi1vn37xdjks.\u0023\u003Dq1qGQwgs_F6ae19p24dqRj6GgdRzMrVsVc3m6iIKHPR2xR8NNZoxf3Wma3slxNuB2((UIElement) _param1);
@@ -717,12 +717,12 @@ internal sealed class SciChartGroup :
 
   private sealed class \u0023\u003DzbQEIVhBRscvmjvQLdNZzKp4\u003D
   {
-    public SciChartGroup \u0023\u003DzRRvwDu67s9Rm;
+    public SciChartGroup _variableSome3535;
     public \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzKveAMLo\u003D;
 
     internal void \u0023\u003DzJeMUirilpUA5DzmAPQ\u003D\u003D()
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzjSk6Jvc\u003D(this.\u0023\u003DzKveAMLo\u003D);
+      this._variableSome3535.\u0023\u003DzjSk6Jvc\u003D(this.\u0023\u003DzKveAMLo\u003D);
     }
   }
 
@@ -747,13 +747,13 @@ internal sealed class SciChartGroup :
 
   private sealed class \u0023\u003DzgEL8Rs_dn1ebi1vn37xdjks\u003D
   {
-    public SciChartGroup \u0023\u003DzRRvwDu67s9Rm;
+    public SciChartGroup _variableSome3535;
     public double \u0023\u003DzniV7Bbk\u003D;
 
     internal \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003Dq1qGQwgs_F6ae19p24dqRj6GgdRzMrVsVc3m6iIKHPR2xR8NNZoxf3Wma3slxNuB2(
       UIElement _param1)
     {
-      return this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dzg0gWX4E\u003D.First<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>(new Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool>(new SciChartGroup.\u0023\u003DzBsvr5yEJlfn\u0024m5gyTVsnSFo\u003D()
+      return this._variableSome3535.\u0023\u003Dzg0gWX4E\u003D.First<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>(new Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool>(new SciChartGroup.\u0023\u003DzBsvr5yEJlfn\u0024m5gyTVsnSFo\u003D()
       {
         \u0023\u003Dzs1FLlYI\u003D = _param1
       }.\u0023\u003DzyS1WpzHcC2OUisDR6XFERGQ\u003D));

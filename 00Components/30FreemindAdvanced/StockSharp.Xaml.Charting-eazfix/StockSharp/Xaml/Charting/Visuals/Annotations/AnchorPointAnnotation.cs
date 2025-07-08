@@ -95,7 +95,7 @@ internal abstract class AnchorPointAnnotation :
 
   private static void OnAnchorPointChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
   {
-    AnchorPointAnnotation.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D jq9Llz3ahZ2LrQl4 = new AnchorPointAnnotation.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D();
+    AnchorPointAnnotation.SomeClass398 jq9Llz3ahZ2LrQl4 = new AnchorPointAnnotation.SomeClass398();
     jq9Llz3ahZ2LrQl4.\u0023\u003Dz6iFJYho\u003D = d;
     jq9Llz3ahZ2LrQl4.\u0023\u003Dz1BK01YA\u003D = e;
     ((DispatcherObject) jq9Llz3ahZ2LrQl4.\u0023\u003Dz6iFJYho\u003D).Dispatcher.BeginInvoke((Delegate) new Action(jq9Llz3ahZ2LrQl4.\u0023\u003DzqD_p60kW19tqQsYC8u0B0xg\u003D), (DispatcherPriority) 8, Array.Empty<object>());
@@ -134,7 +134,7 @@ internal abstract class AnchorPointAnnotation :
     return this.ActualHeight;
   }
 
-  private sealed class \u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D
+  private sealed class SomeClass398
   {
     public DependencyObject \u0023\u003Dz6iFJYho\u003D;
     public DependencyPropertyChangedEventArgs \u0023\u003Dz1BK01YA\u003D;

@@ -18,25 +18,25 @@ namespace \u002D;
 internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzfMw6oHlwmSrk = DependencyProperty.Register(nameof (LegendData), typeof (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzo\u0024LE3hIlM1nJ = DependencyProperty.Register(nameof (GetLegendDataFor), typeof (\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.AllSeries, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzjgUJSc8xvO\u00243 = DependencyProperty.Register(nameof (LegendPlacement), typeof (dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) dje_z5SKW2EFDH6HACNTXE6B7JUCG8CMX3VV2AQKDHQSFYWUD3K2_ejd.Inside));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DziGoZCH2CaVRc = DependencyProperty.Register(nameof (LegendItemTemplate), typeof (DataTemplate), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(nameof (Orientation), typeof (Orientation), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) Orientation.Vertical));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzGEpRUSytcG_B = DependencyProperty.Register(nameof (ShowSeriesMarkers), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzR_CKkzERxHn9SGnaiYrSxEE\u003D = DependencyProperty.Register(nameof (ShowVisibilityCheckboxes), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) true));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-  public static readonly DependencyProperty \u0023\u003DzvfWZFdhb7kc9 = DependencyProperty.Register(nameof (ShowLegend), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dzg1\u0024yrcyUCpiA)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
+  public static readonly DependencyProperty ShowLegendProperty = DependencyProperty.Register(nameof (ShowLegend), typeof (bool), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003Dzg1\u0024yrcyUCpiA)));
+  
   public static readonly DependencyProperty \u0023\u003DzbE0mDiZUf80q = DependencyProperty.Register(nameof (LegendTemplate), typeof (ControlTemplate), typeof (dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzdGdWMjyO6eRA)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private FrameworkElement \u0023\u003DzrA5Sb8Rte_9L;
 
   public dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd()
@@ -121,11 +121,11 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
   {
     get
     {
-      return (bool) this.GetValue(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzvfWZFdhb7kc9);
+      return (bool) this.GetValue(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.ShowLegendProperty);
     }
     set
     {
-      this.SetValue(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.\u0023\u003DzvfWZFdhb7kc9, (object) value);
+      this.SetValue(dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd.ShowLegendProperty, (object) value);
     }
   }
 

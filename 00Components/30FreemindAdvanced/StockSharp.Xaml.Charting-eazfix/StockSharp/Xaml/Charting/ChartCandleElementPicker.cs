@@ -21,11 +21,11 @@ namespace StockSharp.Xaml.Charting;
 
 public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal ComboBoxEditEx \u0023\u003DzjQEUHP_xvugS;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal SimpleButton \u0023\u003Dzs4BdTaM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public ChartCandleElementPicker() => this.InitializeComponent();

@@ -441,7 +441,7 @@ namespace StockSharp.Xaml.Charting
             };
 
             var viewModel = new ScichartSurfaceMVVM( area );
-            area.ChartSurfaceViewModel = viewModel;
+            area.ViewModel = viewModel;
 
             var timeZoneInfo = Chart.GetTimeZone( );
 

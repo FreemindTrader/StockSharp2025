@@ -330,7 +330,7 @@ internal abstract class AnnotationBase :
   {
     this.\u0023\u003DzHGGuFpQ\u003D((DispatcherPriority) 8, new Action(new AnnotationBase.\u0023\u003Dzffg\u0024YXBnGm7H\u0024PCqlQv7PCc\u003D()
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       \u0023\u003DzwM8aRUE\u003D = sender,
       \u0023\u003DzTi2kmf4\u003D = args
     }.\u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H));
@@ -342,7 +342,7 @@ internal abstract class AnnotationBase :
   {
     this.\u0023\u003DzHGGuFpQ\u003D((DispatcherPriority) 8, new Action(new AnnotationBase.\u0023\u003DzPDNKpHuRG7yCW5JW8_EOM4E\u003D()
     {
-      \u0023\u003DzRRvwDu67s9Rm = this,
+      _variableSome3535 = this,
       \u0023\u003DzwM8aRUE\u003D = sender,
       \u0023\u003DzTi2kmf4\u003D = args
     }.\u0023\u003DzIOaiByPzcFm0hgjIqRsFUKJzOnbT2YChDvFyp8X_Z2t0giSUkPjoyzwmi0T_));
@@ -1098,7 +1098,7 @@ internal abstract class AnnotationBase :
 
   private sealed class \u0023\u003DzPDNKpHuRG7yCW5JW8_EOM4E\u003D
   {
-    public AnnotationBase \u0023\u003DzRRvwDu67s9Rm;
+    public AnnotationBase _variableSome3535;
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
@@ -1106,8 +1106,8 @@ internal abstract class AnnotationBase :
     {
       // ISSUE: explicit non-virtual call
       // ISSUE: explicit non-virtual call
-      this.\u0023\u003DzRRvwDu67s9Rm._yAxis = __nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz4uoxB8oLWxeL(__nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.YAxisId)));
-      this.\u0023\u003DzRRvwDu67s9Rm.OnYAxesCollectionChanged(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
+      this._variableSome3535._yAxis = __nonvirtual (this._variableSome3535.\u0023\u003Dz4uoxB8oLWxeL(__nonvirtual (this._variableSome3535.YAxisId)));
+      this._variableSome3535.OnYAxesCollectionChanged(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
     }
   }
 
@@ -1194,15 +1194,15 @@ internal abstract class AnnotationBase :
 
   private sealed class \u0023\u003Dzffg\u0024YXBnGm7H\u0024PCqlQv7PCc\u003D
   {
-    public AnnotationBase \u0023\u003DzRRvwDu67s9Rm;
+    public AnnotationBase _variableSome3535;
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
     internal void \u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H()
     {
       // ISSUE: explicit non-virtual call
-      this.\u0023\u003DzRRvwDu67s9Rm._xAxis = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzI0EiGDjWkH8S(__nonvirtual (this.\u0023\u003DzRRvwDu67s9Rm.XAxisId));
-      this.\u0023\u003DzRRvwDu67s9Rm.OnXAxesCollectionChanged(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
+      this._variableSome3535._xAxis = this._variableSome3535.\u0023\u003DzI0EiGDjWkH8S(__nonvirtual (this._variableSome3535.XAxisId));
+      this._variableSome3535.OnXAxesCollectionChanged(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
     }
   }
 

@@ -36,21 +36,21 @@ public class ChartLineElement :
   IChartComponent,
   IDrawableChartElement
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003Dzfzo3Zt0\u003D = Colors.DarkBlue;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzqIZHmBRa0Zhe;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dz9g4LKqGb_N_KCf\u0024R6Q\u003D\u003D = 1;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzCGVfeT7yJc5e = true;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DrawStyles _drawStyle;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzvu7bxO54zKRR;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ControlTemplate \u0023\u003DzR0PVnrfRD9\u0024B;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private UIChartBaseViewModel _baseViewModel;
 
   public ChartLineElement() => this.AdditionalColor = this.Color.ToTransparent((byte) 50);

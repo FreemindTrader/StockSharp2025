@@ -16,13 +16,13 @@ internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u00
   \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x,
   IReceiveMouseEvents 
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Canvas \u0023\u003DzZ_bY0tT8hlGH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IAnnotation \u0023\u003DzJ3FH5kAFy7GH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IServiceContainer _serviceContainer;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003DzIOF\u0024pM4fvIzk4nVUyHULhOk\u003D;
 
   protected \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D(

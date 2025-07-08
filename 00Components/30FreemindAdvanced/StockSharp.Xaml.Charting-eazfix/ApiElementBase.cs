@@ -16,11 +16,11 @@ internal abstract class ApiElementBase :
   ContentControl,
   INotifyPropertyChanged
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ISciChartSurface \u0023\u003Dzos6SMwAMXZ33;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IServiceContainer \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzbtEp1C7aVw3qdJ3knA\u003D\u003D;
 
   public event PropertyChangedEventHandler PropertyChanged;

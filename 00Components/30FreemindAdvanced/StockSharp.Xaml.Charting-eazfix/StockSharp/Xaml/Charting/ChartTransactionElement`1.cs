@@ -36,19 +36,19 @@ public abstract class ChartTransactionElement<T> :
   IDrawableChartElement
   where T : ChartTransactionElement<T>, new()
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color _buyColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003DzGbPWR9A8cF4f;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color _sellColor;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private System.Windows.Media.Color \u0023\u003Dzot9Qiz4J5vKT7sYMVQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzilRS6_jvjVLN;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private double \u0023\u003Dzv0dodASrSZi6;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private UIChartBaseViewModel _baseViewModel;
 
   protected ChartTransactionElement()

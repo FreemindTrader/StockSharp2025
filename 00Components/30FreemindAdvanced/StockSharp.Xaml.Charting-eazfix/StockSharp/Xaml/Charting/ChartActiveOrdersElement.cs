@@ -31,11 +31,11 @@ public class ChartActiveOrdersElement :
   IChartComponent,
   IDrawableChartElement
 {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Media.Color _buyPendingColor;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Media.Color _buyColor;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private System.Windows.Media.Color _buyBlinkColor;
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
     private System.Windows.Media.Color _sellPendingColor;

@@ -91,7 +91,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
 
   public void \u0023\u003DzDjRgWj_juivV(ChartDrawData.\u0023\u003DzU3TaXFs\u003D _param1)
   {
-    \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D();
+    \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DztMHJ9Rr5MdWR = _param1;
     int num = CollectionHelper.IndexOf<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D, new Func<ChartDrawData.\u0023\u003DzU3TaXFs\u003D, bool>(v4vdZv8GtEzAmB0rzFq.\u0023\u003Dzxj7eJsGR0DW\u0024XsrR5Q\u003D\u003D));
     if (num < 0)
@@ -157,7 +157,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
     public ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DztMHJ9Rr5MdWR;
 

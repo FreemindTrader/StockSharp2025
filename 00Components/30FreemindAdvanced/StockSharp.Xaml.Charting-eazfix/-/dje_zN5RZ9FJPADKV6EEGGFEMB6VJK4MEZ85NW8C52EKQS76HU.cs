@@ -18,25 +18,25 @@ namespace \u002D;
 [TemplatePart(Name = "PART_InputTextArea", Type = typeof (TextBox))]
 internal sealed class dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd : Control
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzrXSFm_E\u003D = DependencyProperty.Register(nameof (Text), typeof (string), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) string.Empty));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzbhlExb5p620n = DependencyProperty.Register(nameof (LabelPlacement), typeof (LabelPlacement), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) LabelPlacement.Auto, new PropertyChangedCallback(dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd.\u0023\u003DzXXEXIlUNtjM5)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzOjRqbPmhsyO_ = DependencyProperty.Register(nameof (LabelStyle), typeof (Style), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd.\u0023\u003DzXXEXIlUNtjM5)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzcXOoBjH4oSyy = DependencyProperty.Register(nameof (AxisLabelStyle), typeof (Style), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd.\u0023\u003DzXXEXIlUNtjM5)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz2k8rcqz_ESAS = DependencyProperty.Register(nameof (CornerRadius), typeof (CornerRadius), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) new CornerRadius()));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzkSbs6pXjW8dc = DependencyProperty.Register(nameof (RotationAngle), typeof (double), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) 0.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzGHSiJVJNBzic = DependencyProperty.Register(nameof (CanEditText), typeof (bool), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzALRRz3KBB3Uz = DependencyProperty.Register(nameof (TextFormatting), typeof (string), typeof (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd), new PropertyMetadata((object) string.Empty));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private LineAnnotationWithLabelsBase \u0023\u003Dzoem3lxBSJacx;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TextBox \u0023\u003DzA5cpUiCtbnuj;
 
   public dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd()

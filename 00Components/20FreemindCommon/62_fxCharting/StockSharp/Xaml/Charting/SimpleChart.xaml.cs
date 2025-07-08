@@ -37,10 +37,10 @@ namespace StockSharp.Xaml.Charting
 
             _area = new ChartArea( );
             var viewModel = new ScichartSurfaceMVVM( _area );
-            _area.ChartSurfaceViewModel = viewModel;
+            _area.ViewModel = viewModel;
 
 
-            DataContext = Area.ChartSurfaceViewModel;
+            DataContext = Area.ViewModel;
 
             _area.XAxisType = XAxisType;
 
@@ -129,12 +129,12 @@ namespace StockSharp.Xaml.Charting
 
         public void Draw( ChartDrawData data )
         {
-            Area.ChartSurfaceViewModel.Draw( data );
+            Area.ViewModel.Draw( data );
         }
 
         public void Reset( IEnumerable<IChartElement> elements )
         {
-            Area.ChartSurfaceViewModel.Reset( elements );
+            Area.ViewModel.Reset( elements );
         }
 
         IList<IndicatorType> IChart.IndicatorTypes

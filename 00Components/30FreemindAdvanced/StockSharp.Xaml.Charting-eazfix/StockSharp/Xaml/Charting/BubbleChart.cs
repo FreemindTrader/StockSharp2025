@@ -21,9 +21,9 @@ namespace StockSharp.Xaml.Charting;
 
 public class BubbleChart : UserControl, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal XYDiagram2D \u0023\u003DzC0s2qwQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public BubbleChart() => this.InitializeComponent();
@@ -76,9 +76,9 @@ public class BubbleChart : UserControl, IComponentConnector
     BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>
     where \u0023\u003DzulcL8RA\u003D : IComparable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException("series");
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException("factory");
 
     void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(
@@ -87,7 +87,7 @@ public class BubbleChart : UserControl, IComponentConnector
       IEnumerable<double> _param3)
     {
       BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
-      u5Svx6MhYdSkOpoa.\u0023\u003DzRRvwDu67s9Rm = this;
+      u5Svx6MhYdSkOpoa._variableSome3535 = this;
       \u0023\u003DzulcL8RA\u003D[] array = _param1.ToArray<\u0023\u003DzulcL8RA\u003D>();
       u5Svx6MhYdSkOpoa.\u0023\u003Dzj_CDbmQ\u003D = _param2.ToArray<double>();
       u5Svx6MhYdSkOpoa.\u0023\u003Dz4PSczfw\u003D = _param3.ToArray<double>();
@@ -101,7 +101,7 @@ public class BubbleChart : UserControl, IComponentConnector
 
     private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
     {
-      public BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D> \u0023\u003DzRRvwDu67s9Rm;
+      public BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D> _variableSome3535;
       public double[] \u0023\u003Dzj_CDbmQ\u003D;
       public double[] \u0023\u003Dz4PSczfw\u003D;
 
@@ -109,7 +109,7 @@ public class BubbleChart : UserControl, IComponentConnector
         \u0023\u003DzulcL8RA\u003D _param1,
         int _param2)
       {
-        SeriesPoint point = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzEcmsYfw\u003D(_param1);
+        SeriesPoint point = this._variableSome3535.\u0023\u003DzEcmsYfw\u003D(_param1);
         point.Value = this.\u0023\u003Dzj_CDbmQ\u003D[_param2];
         BubbleSeries2D.SetWeight(point, this.\u0023\u003Dz4PSczfw\u003D[_param2]);
         return point;

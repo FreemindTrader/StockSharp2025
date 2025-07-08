@@ -170,11 +170,11 @@ internal static class \u0023\u003DzPlFvps97y7rWR4vc5KUjRzGzgtl\u0024Ea14Eg\u003D
 
   private sealed class ProxyDependencyPropertyClass : DependencyObject, IDisposable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private static readonly DependencyProperty ProxyProperty = DependencyProperty.Register("Proxy", typeof (object), typeof (\u0023\u003DzPlFvps97y7rWR4vc5KUjRzGzgtl\u0024Ea14Eg\u003D\u003D.ProxyDependencyPropertyClass), new PropertyMetadata((object) null, new PropertyChangedCallback(\u0023\u003DzPlFvps97y7rWR4vc5KUjRzGzgtl\u0024Ea14Eg\u003D\u003D.ProxyDependencyPropertyClass.DpoChangedEventArgsCallBack)));
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly Action<DependencyPropertyChangedEventArgs> dpoChangedEventArgs;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private bool _disposing;
 
     public ProxyDependencyPropertyClass(

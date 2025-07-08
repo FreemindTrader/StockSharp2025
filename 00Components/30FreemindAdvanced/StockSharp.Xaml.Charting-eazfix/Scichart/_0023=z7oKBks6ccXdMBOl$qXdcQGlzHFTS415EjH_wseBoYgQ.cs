@@ -17,21 +17,21 @@ using System.Windows;
 internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR : 
   DependencyObject
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Dictionary<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR> \u0023\u003DznABf_Vs\u003D = new Dictionary<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz4JhmNred6k04bHgbHA\u003D\u003D = DependencyProperty.Register(nameof (CategoryDateTimeRange), typeof (IndexRange ), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass34343383.SomeMethond0343.\u0023\u003DzoRYIHBGDkf1GAn4szFFBOAk\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IndexRange  \u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DziUr7YgFYdbrr = DependencyProperty.Register(nameof (NumericRange), typeof (DoubleRange), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass34343383.SomeMethond0343.\u0023\u003DznDXAZ40XZkwF42e7V3ChT6E\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private DoubleRange \u0023\u003Dz9wn11RS5FRTj;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8gZeLle5o5Ez = DependencyProperty.Register(nameof (DateTimeRange), typeof (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR), new PropertyMetadata(new PropertyChangedCallback(\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass34343383.SomeMethond0343.\u0023\u003DzM4Q1JrKOrXUH_pG8e9nkfj8\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D \u0023\u003DzBg6bVfITudAr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartAxisType \u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
 
   public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR(
@@ -39,7 +39,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     int? _param2)
   {
     this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D = _param1;
-    this.\u0023\u003DzoMQQ88MEiBDX(_param2);
+    this.InitRangeDepProperty(_param2);
   }
 
   public IndexRange  CategoryDateTimeRange
@@ -74,7 +74,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     return this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
   }
 
-  private void \u0023\u003DzoMQQ88MEiBDX(int? _param1)
+  private void InitRangeDepProperty(int? _param1)
   {
     if (!_param1.HasValue || _param1.GetValueOrDefault() <= 0)
       _param1 = new int?(50);
@@ -82,9 +82,9 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     this.NumericRange = new DoubleRange();
   }
 
-  public static void \u0023\u003DzoMQQ88MEiBDX(object _param0)
+  public static void InitRangeDepProperty(object _param0)
   {
-    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D()
+    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass6409()
     {
       \u0023\u003Dz6pqZ7di4NkHd = _param0
     };
@@ -98,7 +98,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     string _param2,
     ChartAxisType _param3)
   {
-    return CollectionHelper.SafeAdd<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>((IDictionary<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>) \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003DznABf_Vs\u003D, (_param1, _param2, _param0), new Func<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>(new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D()
+    return CollectionHelper.SafeAdd<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>((IDictionary<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>) \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003DznABf_Vs\u003D, (_param1, _param2, _param0), new Func<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR>(new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass398()
     {
       \u0023\u003DzAak5C46IF1W8 = _param3,
       \u0023\u003Dzf2JqWCjCPVfE = \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003DzI4Rp2x5f98qv(_param0)
@@ -111,7 +111,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     {
       case ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj:
         return new int?(tdnKj06Uu87Wzk09Wj.MinimumRange);
-      case \u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6 zgziIlo367a8J0vVw6:
+      case ChartViewModel zgziIlo367a8J0vVw6:
         return new int?(zgziIlo367a8J0vVw6.MinimumRange);
       default:
         return new int?();
@@ -145,7 +145,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     }
   }
 
-  private sealed class \u0023\u003DzNwXxhkJq9Llz3ah\u0024z2LRQl4\u003D
+  private sealed class SomeClass398
   {
     public ChartAxisType \u0023\u003DzAak5C46IF1W8;
     public int? \u0023\u003Dzf2JqWCjCPVfE;
@@ -157,7 +157,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     }
   }
 
-  private sealed class \u0023\u003Dzg5oaV4vdZV8GtEzAmB0rzFQ\u003D
+  private sealed class SomeClass6409
   {
     public object \u0023\u003Dz6pqZ7di4NkHd;
     public int? \u0023\u003Dzf2JqWCjCPVfE;
@@ -171,7 +171,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     internal void \u0023\u003DzWv5\u0024RXM3VgWIFlyt9X5W\u0024eE\u003D(
       KeyValuePair<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR> _param1)
     {
-      _param1.Value.\u0023\u003DzoMQQ88MEiBDX(this.\u0023\u003Dzf2JqWCjCPVfE);
+      _param1.Value.InitRangeDepProperty(this.\u0023\u003Dzf2JqWCjCPVfE);
     }
   }
 }

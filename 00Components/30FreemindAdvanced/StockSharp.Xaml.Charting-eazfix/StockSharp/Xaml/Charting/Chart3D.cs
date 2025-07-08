@@ -18,15 +18,15 @@ namespace StockSharp.Xaml.Charting;
 
 public class Chart3D : Chart3DControl, IComponentConnector
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal AxisTitle \u0023\u003Dze_0mKZFnOTAk;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal AxisTitle \u0023\u003DzQvGu9aka9P32;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal AxisTitle \u0023\u003DzRC0RyhMpSlb_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal SeriesPoint3DStorage \u0023\u003DzedqXoAU\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public Chart3D() => this.InitializeComponent();

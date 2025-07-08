@@ -14,9 +14,9 @@ using System.Linq;
 internal sealed class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D : 
   BindableObject 
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dzygv7YS_IHSkLj3KwXmwDE5E\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly 
   #nullable disable
   ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzPiaejQzkkg8uKkxanA\u003D\u003D;
@@ -54,7 +54,7 @@ internal sealed class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D
     IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
   {
     \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
-    zeaY3Uu1m4CyxerxRw.\u0023\u003DzRRvwDu67s9Rm = this;
+    zeaY3Uu1m4CyxerxRw._variableSome3535 = this;
     zeaY3Uu1m4CyxerxRw.\u0023\u003Dzd3kkxiSFcqxV = _param1.ToDictionary<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object>(\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.SomeClass34343383.\u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D ?? (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.SomeClass34343383.\u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object>(\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dzg3gXt6RMJk2x1FMZfT6hIQc\u003D)));
     this.SeriesInfo.\u0023\u003DzmFyFyI4\u003D<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Predicate<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(zeaY3Uu1m4CyxerxRw.\u0023\u003DzchsRCAqrMg_cr9ky\u0024g\u003D\u003D));
     zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1dyCf38wKj4H = this.SeriesInfo.ToDictionary<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object>(\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.SomeClass34343383.\u0023\u003DzF_8vAguXfXCE93sYlA\u003D\u003D ?? (\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.SomeClass34343383.\u0023\u003DzF_8vAguXfXCE93sYlA\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object>(\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzVtDGUfbNhdPEkXMB0l4QNck\u003D)));
@@ -104,7 +104,7 @@ internal sealed class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D
     object, 
     #nullable disable
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz1dyCf38wKj4H;
-    public \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D \u0023\u003DzRRvwDu67s9Rm;
+    public \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D\u003D _variableSome3535;
 
     internal bool \u0023\u003DzchsRCAqrMg_cr9ky\u0024g\u003D\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
@@ -122,7 +122,7 @@ internal sealed class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSv1H1ORLBnhjlg\u003D
     internal void \u0023\u003Dz0ZpLxUa1ABde5RD4rQ\u003D\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.SeriesInfo.Add(_param1);
+      this._variableSome3535.SeriesInfo.Add(_param1);
     }
 
     internal void \u0023\u003DzoSMdeq4fpECViR\u00245EA\u003D\u003D(

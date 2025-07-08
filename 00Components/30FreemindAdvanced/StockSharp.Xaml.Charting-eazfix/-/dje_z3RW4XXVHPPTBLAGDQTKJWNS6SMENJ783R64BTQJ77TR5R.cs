@@ -30,51 +30,51 @@ namespace \u002D;
 [TemplatePart(Name = "PART_RightThumb", Type = typeof (dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd))]
 internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd : Control
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly 
   #nullable disable
   DependencyProperty \u0023\u003Dzmtd1hks\u003D = DependencyProperty.Register(nameof (Axis), typeof (IAxis), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzEM7rzxveqzC2)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register(nameof (SelectedRange), typeof (IRange), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata(new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzGbJ0qpVdAcnUICGBTQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzu60E9d4eT7Mh = DependencyProperty.Register("SelectedRangePoint", typeof (Point), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) new Point(), new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzKY6FELNu43vWrzYtTQ\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzC\u0024IzyRw5kNYh_iGfHw\u003D\u003D = DependencyProperty.Register(nameof (GripsThickness), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 10.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz34Mz8ydZLjGnc6U2iA\u003D\u003D = DependencyProperty.Register(nameof (GripsLength), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) double.NaN));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzFo\u0024BkIuazahQFPQ3fw\u003D\u003D = DependencyProperty.Register(nameof (GripsStyle), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzfVZZZD9CcUaj = DependencyProperty.Register(nameof (ViewportStyle), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzSszmx5ki9KQKy3MkQQ\u003D\u003D = DependencyProperty.Register(nameof (NonSelectedAreaStyle), typeof (Style), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) null));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(nameof (Orientation), typeof (Orientation), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) Orientation.Horizontal));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzhdXvBNBQUywn = DependencyProperty.Register(nameof (ZoomLimit), typeof (double), typeof (dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd), new PropertyMetadata((object) 20.0, new PropertyChangedCallback(dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzC5gZCRUAbdp9CTKgQg\u003D\u003D)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzdKNmsVR3XBR\u0024;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzpiJFhBb5bsfa;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzKbgVW2A4k9IH;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003DzJ8xCDlzSVvPT;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private dje_z8RH94H793M8R5KETVHK5JQ8YP5CJUPZ44TZM36TAZ3EKY2A_ejd \u0023\u003Dz6P0zcFDUJreJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Border \u0023\u003DzksK80_U\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Path \u0023\u003Dz91ieiKM\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private RectangleGeometry \u0023\u003DzkjapkNExDEBm;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D \u0023\u003DzuT_nzto\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJWrW04 \u0023\u003Dz_a7lQd926eAW;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D \u0023\u003Dz7GpEACzVt3nC;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private EventHandler<\u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D> \u0023\u003DzMrFyXitt9QAh;
 
   public dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd()
@@ -414,7 +414,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     TimeSpan _param2)
   {
     dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D dexM3dn6RaCrlFgQ1 = new dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd.\u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D();
-    dexM3dn6RaCrlFgQ1.\u0023\u003DzRRvwDu67s9Rm = this;
+    dexM3dn6RaCrlFgQ1._variableSome3535 = this;
     dexM3dn6RaCrlFgQ1.\u0023\u003DzAHNI_S0\u003D = _param1;
     Point point1;
     Point point2;
@@ -597,7 +597,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
 
   private sealed class \u0023\u003DzzrbNmh9DEXM3dn6RaCRlFgQ\u003D
   {
-    public dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd \u0023\u003DzRRvwDu67s9Rm;
+    public dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPAD7ZYWZA_ejd _variableSome3535;
     public IRange \u0023\u003DzAHNI_S0\u003D;
     public PointAnimation \u0023\u003DzXB4BRQQhi9cE;
 
@@ -605,7 +605,7 @@ internal sealed class dje_z3RW4XXVHPPTBLAGDQTKJWNS6SMENJ783R64BTQJ77TR5RZXGUXYPA
     #nullable enable
     object? _param1, EventArgs _param2)
     {
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz2FKbHTx8Inhh(this.\u0023\u003DzAHNI_S0\u003D, true);
+      this._variableSome3535.\u0023\u003Dz2FKbHTx8Inhh(this.\u0023\u003DzAHNI_S0\u003D, true);
       Storyboard.SetTarget((DependencyObject) this.\u0023\u003DzXB4BRQQhi9cE, (DependencyObject) null);
       this.\u0023\u003DzXB4BRQQhi9cE.FillBehavior = FillBehavior.Stop;
     }

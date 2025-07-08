@@ -14,13 +14,13 @@ internal sealed class \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8SdIi_C9Lvav1Ed7oTs5GQpxX
   IDisposable,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly List<Point> \u0023\u003DzYw05nwk\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IPathColor \u0023\u003DzQWU4skw9ivrJ;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzEcmsYfw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Size \u0023\u003DzgYZhPyPIW8zq;
 
   public \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8SdIi_C9Lvav1Ed7oTs5GQpxXEw4iX9XQzY\u003D(

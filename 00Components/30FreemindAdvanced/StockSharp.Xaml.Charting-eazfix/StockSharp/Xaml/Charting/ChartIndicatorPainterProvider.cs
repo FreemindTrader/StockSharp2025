@@ -19,11 +19,11 @@ namespace StockSharp.Xaml.Charting;
 
 public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly 
   #nullable disable
   SynchronizedDictionary<Type, Type> \u0023\u003Dz0V3sNk6VlgMEn3N7jg\u003D\u003D = new SynchronizedDictionary<Type, Type>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly SynchronizedSet<Type> \u0023\u003Dz7ZD7v4sUpcCA = new SynchronizedSet<Type>();
 
   void IChartIndicatorPainterProvider.Init()

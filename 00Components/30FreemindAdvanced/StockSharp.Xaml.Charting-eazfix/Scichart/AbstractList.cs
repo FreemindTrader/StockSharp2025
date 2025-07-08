@@ -22,15 +22,15 @@ internal sealed class AbstractList<T> :
   IEnumerable,
   ICollection
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly T[] \u0023\u003DzUVmXdYNPmc0z = Array.Empty<T>();
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private T[] \u0023\u003Dzg0gWX4E\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003DzJpbCbio\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private object myLock;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private int \u0023\u003Dzq9NR138\u003D;
 
   public AbstractList()
@@ -516,9 +516,9 @@ internal sealed class AbstractList<T> :
     IEnumerable<T>,
     IEnumerable
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly List<T> \u0023\u003Dz5IntIgc\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly object \u0023\u003Dz6j0cxXE\u003D;
 
     internal \u0023\u003DzcHSqfbQ\u003D(List<T> _param1)
@@ -621,13 +621,13 @@ internal sealed class AbstractList<T> :
     IDisposable,
     IEnumerator
   {
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly AbstractList<T> \u0023\u003Dz5IntIgc\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private readonly int \u0023\u003Dzq9NR138\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private T \u0023\u003DzCUQ2vA0\u003D;
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+    
     private int \u0023\u003DzKx97DYo\u003D;
 
     internal \u0023\u003DzdFhhG7w\u003D(

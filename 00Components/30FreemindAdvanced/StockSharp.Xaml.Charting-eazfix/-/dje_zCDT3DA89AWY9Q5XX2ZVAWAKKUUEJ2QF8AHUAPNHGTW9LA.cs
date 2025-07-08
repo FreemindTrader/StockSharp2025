@@ -17,21 +17,21 @@ namespace \u002D;
 
 internal sealed class dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd : Panel
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzAJq6AwIY2FAx = DependencyProperty.Register(nameof (StretchToSize), typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003DzSmUgMtsFJvHJ)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzQOUi7HHVdeMg = DependencyProperty.Register(nameof (IsReversedOrder), typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003DzSmUgMtsFJvHJ)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzhcwQeN4Ni3tYrLZddCANtlE\u003D = DependencyProperty.Register(nameof (MinimimalItemSize), typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) 0.0));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003DzxCZVrddkVrh_8diOJA\u003D\u003D = DependencyProperty.RegisterAttached("ShouldCopyThicknessToParent", typeof (bool), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) false));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dz_FG2Iog\u003D = DependencyProperty.RegisterAttached("Thickness", typeof (double), typeof (dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd.\u0023\u003Dzt8OwNSS67lRk)));
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Size \u0023\u003Dzk9BUboiLgD9a;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private UIElement \u0023\u003Dz8RF1NqwMBMye;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz5Q_\u0024YkuhIHbd;
 
   public dje_zCDT3DA89AWY9Q5XX2ZVAWAKKUUEJ2QF8AHUAPNHGTW9LABZ_ejd()

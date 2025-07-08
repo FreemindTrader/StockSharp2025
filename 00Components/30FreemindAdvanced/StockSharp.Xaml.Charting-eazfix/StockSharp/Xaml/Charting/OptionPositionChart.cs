@@ -34,41 +34,41 @@ public class OptionPositionChart :
   IThemeableChart,
   IOptionPositionChart
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzVCvdqIwU8qhbnG0tEA\u003D\u003D = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzZJejL2kCbBNrH7yrDJLH0IA\u003D);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003Dz6natRAM\u003D = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzHFmSM0O81iuL\u00243kqxN3iCIg\u003D);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003Dzc9HoyPSZYlUh = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzDsINFHGl_6n9RUocpTfki6I\u003D);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzUULrPCW3R3I5 = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003Dz1wU8wJ6WYCgtx6fHgEzunFw\u003D);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzfQoP7vvuCMpC = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzG9O0TpbzkV\u00248x69T63\u0024Ti64\u003D);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzjXbVlj0Id0BN = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D);
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly Dictionary<BlackScholes, (IChartLineElement, IChartLineElement)> \u0023\u003DzOK03jF5_2xLYbkS0rg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private (IChartLineElement, IChartLineElement) \u0023\u003DzOIqSskgVDoSOBMP3Kg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzYanY0A0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly ChartAnnotation \u0023\u003Dz_h3U\u0024zi3bxOZ5JXm\u0024A\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private BasketBlackScholes \u0023\u003DzN\u0024mcfM0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private BlackScholesGreeks \u0023\u003DzALCsL4AdEago;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz6qr7HB8qT1c_;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzISImIRIGaVrr;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzJbHNSjjCv_nt;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   internal Chart \u0023\u003DzO72kpz0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
   public OptionPositionChart()
@@ -76,7 +76,7 @@ public class OptionPositionChart :
     OptionPositionChart.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new OptionPositionChart.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
     // ISSUE: explicit constructor call
     base.\u002Ector();
-    dop2SzA2WchXh2wc.\u0023\u003DzRRvwDu67s9Rm = this;
+    dop2SzA2WchXh2wc._variableSome3535 = this;
     this.InitializeComponent();
     this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
@@ -363,7 +363,7 @@ public class OptionPositionChart :
 
   private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
   {
-    public OptionPositionChart \u0023\u003DzRRvwDu67s9Rm;
+    public OptionPositionChart _variableSome3535;
     public bool \u0023\u003Dz0gbwL\u00244\u003D;
 
     internal void \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
@@ -383,9 +383,9 @@ public class OptionPositionChart :
         Thickness = new Thickness?(new Thickness(2.0)),
         VerticalAlignment = new VerticalAlignment?(VerticalAlignment.Stretch)
       };
-      IChartDrawData data2 = this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzO72kpz0\u003D.CreateData();
-      data2.Add((IChartAnnotationElement) this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003Dz_h3U\u0024zi3bxOZ5JXm\u0024A\u003D\u003D, (IAnnotationData) data1);
-      this.\u0023\u003DzRRvwDu67s9Rm.\u0023\u003DzO72kpz0\u003D.Draw(data2);
+      IChartDrawData data2 = this._variableSome3535.\u0023\u003DzO72kpz0\u003D.CreateData();
+      data2.Add((IChartAnnotationElement) this._variableSome3535.\u0023\u003Dz_h3U\u0024zi3bxOZ5JXm\u0024A\u003D\u003D, (IAnnotationData) data1);
+      this._variableSome3535.\u0023\u003DzO72kpz0\u003D.Draw(data2);
     }
   }
 

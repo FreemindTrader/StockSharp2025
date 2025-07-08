@@ -21,7 +21,7 @@ internal sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L
   IAxis,
   IHitTestable
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static readonly DependencyProperty \u0023\u003Dzjt8sdPO9\u0024qkNnCrlQyjSA38\u003D = DependencyProperty.Register(nameof (LogarithmicBase), typeof (double), typeof (\u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(\u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8.\u0023\u003DzUSope7CyybJN14Toh8PD_14\u003D)));
 
   public \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8()

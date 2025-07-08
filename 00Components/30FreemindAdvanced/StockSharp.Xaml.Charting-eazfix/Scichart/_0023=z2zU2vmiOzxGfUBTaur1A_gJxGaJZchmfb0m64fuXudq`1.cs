@@ -21,7 +21,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
   IEnumerable,
   ICollection
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private readonly AbstractList<T> _parentElement;
 
   public \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D(

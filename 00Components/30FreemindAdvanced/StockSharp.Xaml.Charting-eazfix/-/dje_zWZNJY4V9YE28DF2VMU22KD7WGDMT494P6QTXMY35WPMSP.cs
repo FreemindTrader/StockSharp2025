@@ -15,10 +15,10 @@ namespace \u002D;
 
 internal sealed class dje_zWZNJY4V9YE28DF2VMU22KD7WGDMT494P6QTXMY35WPMSP5Q_ejd : IValueConverter
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D;
 
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public bool dje_zCQZWVSGFTLWXJ2Q_ejd
   {
     get => this.\u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D;

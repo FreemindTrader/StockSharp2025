@@ -16,7 +16,7 @@ namespace \u002D;
 
 internal sealed class dje_zHRCSWK4ZNLJHREKZYGF3XQ6G39RRTFP4GZDJWS9Z6DQ5AUA_ejd : IValueConverter
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private TextBlock \u0023\u003Dza54w02Q\u003D = new TextBlock();
 
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)

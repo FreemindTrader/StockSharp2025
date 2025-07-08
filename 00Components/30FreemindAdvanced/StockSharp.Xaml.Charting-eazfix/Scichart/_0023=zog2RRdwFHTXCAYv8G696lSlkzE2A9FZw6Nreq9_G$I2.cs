@@ -13,15 +13,15 @@ using System.Windows.Media;
 internal sealed class \u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L : 
   IEquatable<\u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L>
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private Color \u0023\u003Dz3r6jbzmLus0miFTvtA\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private char \u0023\u003DzBKq7DHDJX9M_\u00241uWlg\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private string \u0023\u003Dz\u0024FtDSFPymyy8nwXpCkEGtF4\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private FontWeight \u0023\u003Dz1O5theycM5GnI\u0024n9Uf0pl6c\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private float \u0023\u003DzBRCWtDn5nuSwxqXxOA\u003D\u003D;
 
   public Color \u0023\u003DzWR\u0024VcnfG1_Vk() => this.\u0023\u003Dz3r6jbzmLus0miFTvtA\u003D\u003D;

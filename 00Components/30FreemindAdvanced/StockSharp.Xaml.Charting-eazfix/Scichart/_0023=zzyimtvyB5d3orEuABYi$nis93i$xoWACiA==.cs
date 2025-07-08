@@ -13,17 +13,17 @@ using System.Windows.Input;
 internal sealed class \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D : 
   INotifyPropertyChanged
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzObK1Pto6RdIX;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private FrameworkElement \u0023\u003Dz_dXR314ooINCiWuf9w\u003D\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private IScichartSurfaceVM \u0023\u003DzdVKUBCrO0g2K1\u0024i0ZAryqfw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private bool \u0023\u003DzHUAO9zJM6Q65Zm\u00244E38Q24E\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ICommand \u0023\u003Dz4NBeGvQbp33yF1kDgvO7vGE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   private ICommand _closePaneCommand;
 
   public event PropertyChangedEventHandler PropertyChanged;

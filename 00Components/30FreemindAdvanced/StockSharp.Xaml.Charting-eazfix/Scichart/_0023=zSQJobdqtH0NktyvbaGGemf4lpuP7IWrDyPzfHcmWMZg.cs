@@ -10,31 +10,31 @@ using System.Diagnostics;
 #nullable disable
 internal struct \u0023\u003DzSQJobdqtH0NktyvbaGGemf4lpuP7IWrDyPzfHcmWMZgPGDmCBoWgpkV6Fnoq
 {
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzLNbWazE\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzrS5XlCc\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzxpGWEWQ\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dz3MxuAfw\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzOTSgnUI\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dz5QE1hBg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DznfnGDE0\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dz9HVnJ6Q\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public bool \u0023\u003DzsSA0E44\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzdeLhDzg\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003Dzeids9mY\u003D;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public int \u0023\u003DzcTlKzwLym0ae;
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static byte[] \u0023\u003Dze5IoM_Jn6uMJVz6mAr6qc3MOgvlvgi_Yiw\u003D\u003D = new byte[8]
   {
     (byte) 0,
@@ -46,7 +46,7 @@ internal struct \u0023\u003DzSQJobdqtH0NktyvbaGGemf4lpuP7IWrDyPzfHcmWMZgPGDmCBoW
     (byte) 2,
     (byte) 2
   };
-  [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+  
   public static byte[] \u0023\u003DzACGNfqPcnCR58sAQlVn18cQ3r7fW = new byte[8]
   {
     (byte) 0,
