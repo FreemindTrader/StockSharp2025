@@ -45,7 +45,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   protected override void Init()
   {
     base.Init();
-    this.ChartViewModel.\u0023\u003Dzfc4TzKM\u003D(this.\u0023\u003DzZYTLjjg\u003D = new ChildVM(string.Empty, (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
+    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChildVM(string.Empty, (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
     {
       "BuyColor",
       "SellColor"

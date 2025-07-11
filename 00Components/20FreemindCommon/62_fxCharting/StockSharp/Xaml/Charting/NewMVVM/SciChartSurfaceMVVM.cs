@@ -512,7 +512,8 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         foreach ( var vm in parentVms )
         {
-            vm.UpdateChildElementYAxisMarker( );
+            // BUG
+            //vm.UpdateChildElementYAxisMarker( );
         }
 
         if ( !ShowPerfStats || e.Duration <= 0.0 )
@@ -538,13 +539,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
     private void StartRenderingChartUIs( ChartDrawData drawData )
     {
-        foreach ( var vmChartUI in _vmChartUIs.CachedValues )
-        {
-            if ( vmChartUI.DrawChartData( drawData ) )
-            {
-                _parentChartViewModelCache.Add( vmChartUI );
-            }
-        }
+        //foreach ( var vmChartUI in _vmChartUIs.CachedValues )
+        //{
+        //    if ( vmChartUI.DrawChartData( drawData ) )
+        //    {
+        //        _parentChartViewModelCache.Add( vmChartUI );
+        //    }
+        //}
     }
 
     private void OnTimer( object sender, EventArgs e )
@@ -556,10 +557,10 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             vms = _parentChartViewModelCache.CopyAndClear( );
         }
 
-        foreach ( ParentVM ParentChartViewModel in vms )
-        {
-            ParentChartViewModel.ChildElementPeriodicalAction( );
-        }
+        //foreach ( ParentVM ParentChartViewModel in vms )
+        //{
+        //    ParentChartViewModel.ChildElementPeriodicalAction( );
+        //}
     }
 
     public void Reset( IEnumerable<IChartElement> chartElements )
@@ -570,8 +571,8 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
             if ( ParentChartViewModel != null )
             {
-                _parentChartViewModelCache.Add( ParentChartViewModel );
-                ParentChartViewModel.UpdateChildElements( );
+                //_parentChartViewModelCache.Add( ParentChartViewModel );
+                //ParentChartViewModel.UpdateChildElements( );
             }
         }
     }
@@ -582,22 +583,22 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         foreach ( IChartComponent element in noParents )
         {
-            var combinedElements = MoreEnumerable.Append( element.ChildElements, element );
+            //var combinedElements = MoreEnumerable.Append( element.ChildElements, element );
 
-            var childElements = combinedElements
-                                                .OfType<IDrawableChartElement>( )
-                                                .Where( e => !e.DontDraw )
-                                                .Select( e => e.CreateViewModel( this ) )
-                                                .Where( e => e != null );
+            //var childElements = combinedElements
+            //                                    .OfType<IDrawableChartElement>( )
+            //                                    .Where( e => !e.DontDraw )
+            //                                    .Select( e => e.CreateViewModel( this ) )
+            //                                    .Where( e => e != null );
 
-            ParentVM parentVm = new ParentVM( this, element, childElements );
+            //ParentVM parentVm = new ParentVM( this, element, childElements );
 
-            _vmChartUIs[ element ] = parentVm;
+            //_vmChartUIs[ element ] = parentVm;
 
-            if ( element.IsLegend )
-            {
-                LegendElements.Add( parentVm );
-            }
+            //if ( element.IsLegend )
+            //{
+            //    LegendElements.Add( parentVm );
+            //}
         }
     }
 
@@ -608,108 +609,108 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             Chart.EnsureUIThread( );
         }
 
-        IChartComponent anyChartUiXY = ( IChartComponent )anyChartUI;
-        anyChartUiXY.AddAxisesAndEventHandler( Area );
+        //IChartComponent anyChartUiXY = ( IChartComponent )anyChartUI;
+        //anyChartUiXY.AddAxisesAndEventHandler( Area );
 
-        if ( _vmChartUIs.ContainsKey( anyChartUiXY ) )
-        {
-            throw new ArgumentException( "duplicate chart element", "elem" );
-        }
+        //if ( _vmChartUIs.ContainsKey( anyChartUiXY ) )
+        //{
+        //    throw new ArgumentException( "duplicate chart element", "elem" );
+        //}
 
-        bool foundFastQuotes = false;
-        bool foundCandle = false;
+        //bool foundFastQuotes = false;
+        //bool foundCandle = false;
 
-        if ( Chart != null )
-        {
-            var combinedElements = MoreEnumerable.Append( anyChartUiXY.ChildElements, anyChartUiXY );
-            var childElements = combinedElements.OfType<IDrawableChartElement>( ).Where( e => !e.DontDraw ).Select( e => e.CreateViewModel( this ) ).Where( e => e != null );
+        //if ( Chart != null )
+        //{
+        //    var combinedElements = MoreEnumerable.Append( anyChartUiXY.ChildElements, anyChartUiXY );
+        //    var childElements = combinedElements.OfType<IDrawableChartElement>( ).Where( e => !e.DontDraw ).Select( e => e.CreateViewModel( this ) ).Where( e => e != null );
 
-            foreach ( var child in childElements )
-            {
-                if ( child is IFastQuotes )
-                {
-                    foundFastQuotes = true;                    
-                }
+        //    foreach ( var child in childElements )
+        //    {
+        //        if ( child is IFastQuotes )
+        //        {
+        //            foundFastQuotes = true;                    
+        //        }
 
-                if ( child is INullBar )
-                {
-                    foundCandle = true;
-                }
-            }
+        //        if ( child is INullBar )
+        //        {
+        //            foundCandle = true;
+        //        }
+        //    }
 
-            ParentVM ParentChartViewModel = new ParentVM( this, anyChartUiXY, childElements );
+        //    ParentVM ParentChartViewModel = new ParentVM( this, anyChartUiXY, childElements );
 
-            if ( foundFastQuotes )
-            {
-                _quotesVM = ( IFastQuotes )  ParentChartViewModel.Elements.ElementAt( 0 );
-                _quotesVM.CanUpdateQuotes = true;
-            }
+        //    if ( foundFastQuotes )
+        //    {
+        //        _quotesVM = ( IFastQuotes )  ParentChartViewModel.Elements.ElementAt( 0 );
+        //        _quotesVM.CanUpdateQuotes = true;
+        //    }
 
-            if ( foundCandle )
-            {
-                _candleStickVM = ( INullBar )ParentChartViewModel.Elements.ElementAt( 0 );
-                _candleStickVM.CanUpdateNullBar = true;
-            }
+        //    if ( foundCandle )
+        //    {
+        //        _candleStickVM = ( INullBar )ParentChartViewModel.Elements.ElementAt( 0 );
+        //        _candleStickVM.CanUpdateNullBar = true;
+        //    }
 
-            _vmChartUIs[ anyChartUiXY ] = ParentChartViewModel;
+        //    _vmChartUIs[ anyChartUiXY ] = ParentChartViewModel;
 
-            if ( anyChartUiXY.IsLegend )
-            {
-                LegendElements.Add( ParentChartViewModel );
-            }
-        }
-        else
-        {
-            _vmChartUIs[ anyChartUiXY ] = null;
-        }
+        //    if ( anyChartUiXY.IsLegend )
+        //    {
+        //        LegendElements.Add( ParentChartViewModel );
+        //    }
+        //}
+        //else
+        //{
+        //    _vmChartUIs[ anyChartUiXY ] = null;
+        //}
 
-        if ( _modifierGroup != null && anyChartUiXY is ChartCandleElement candle )
-        {
-            var orderModifier = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>( ).FirstOrDefault( );
+        //if ( _modifierGroup != null && anyChartUiXY is ChartCandleElement candle )
+        //{
+        //    var orderModifier = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>( ).FirstOrDefault( );
 
-            if ( orderModifier != null )
-            {
-                orderModifier.IsEnabled = true;
-            }
+        //    if ( orderModifier != null )
+        //    {
+        //        orderModifier.IsEnabled = true;
+        //    }
 
-            OnDrawStylePropertyChanged( candle );
+        //    OnDrawStylePropertyChanged( candle );
 
-            candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
-        }
+        //    candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
+        //}
 
-        anyChartUiXY.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        //anyChartUiXY.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
     }
 
     public bool OnChartAreaElementsRemoving( IChartElement element )
     {
-        if ( Chart != null )
-        {
-            Chart.EnsureUIThread( );
-        }
+        //if ( Chart != null )
+        //{
+        //    Chart.EnsureUIThread( );
+        //}
 
-        IChartComponent elementXY = ( IChartComponent )element;
-        elementXY?.RemoveAxisesEventHandler( );
+        //IChartComponent elementXY = ( IChartComponent )element;
+        //elementXY?.RemoveAxisesEventHandler( );
 
-        ParentVM ParentChartViewModel;
-        if ( !_vmChartUIs.TryGetValue( elementXY, out ParentChartViewModel ) )
-        {
-            return false;
-        }
+        //ParentVM ParentChartViewModel;
+        //if ( !_vmChartUIs.TryGetValue( elementXY, out ParentChartViewModel ) )
+        //{
+        //    return false;
+        //}
 
-        if ( elementXY is ChartCandleElement candle )
-        {
-            candle.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
-        }
+        //if ( elementXY is ChartCandleElement candle )
+        //{
+        //    candle.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
+        //}
 
-        elementXY.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
-        _vmChartUIs.Remove( elementXY );
+        //elementXY.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        //_vmChartUIs.Remove( elementXY );
 
-        if ( ParentChartViewModel != null )
-        {
-            ParentChartViewModel.ChildElementUpdateAndClear( );
-            ParentChartViewModel.Dispose( );
-            LegendElements.Remove( ParentChartViewModel );
-        }
+        //if ( ParentChartViewModel != null )
+        //{
+        //    ParentChartViewModel.ChildElementUpdateAndClear( );
+        //    ParentChartViewModel.Dispose( );
+        //    LegendElements.Remove( ParentChartViewModel );
+        //}
 
         return true;
     }

@@ -132,7 +132,7 @@ if ( !( ( object ) zav4EkcQ is ChartBandElement ) && !( ( object ) zav4EkcQ is I
     obj.SetBindings( BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7, ( object ) this.GetDrawableChartElement(), "AntiAliasing" );
 }
 obj.Tag = _param1 == null || _param1.Length == 0 ? ( object ) ( Tuple<UIChartBaseViewModel, ChildVM[ ]> ) null : ( object ) Tuple.Create<UIChartBaseViewModel, ChildVM[ ]>( ( UIChartBaseViewModel ) this, _param1 );
-this.ChartViewModel.\u0023\u003DzMNK339lzrtSc();
+this.ChartViewModel.ClearChildViewModels();
 return obj;
   }
 

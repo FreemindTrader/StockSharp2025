@@ -50,7 +50,7 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
     {
         get
         {
-            return ChartViewModel.ScichartSurface;
+            return ChartViewModel.Pane;
         }
     }    
 
@@ -80,7 +80,7 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
     public abstract bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > data );
     //public abstract bool Draw<T>( IEnumerableEx< ChartDrawData.IDrawValue<T> > data );
 
-    public void Update( )
+    public void Reset( )
     {
         UpdateUi( );
         PerformUiAction( new Action( ResetY1Annotation ), true );
@@ -107,7 +107,7 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
         }
         ChartViewModel = ( parentVM );
         Init( );
-        Update( );
+        Reset( );
     }
 
     public virtual void UpdateYAxisMarker( )
@@ -220,7 +220,7 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
 
     private void UpdateAndClear( )
     {
-        Update( );
+        Reset( );
         Clear( );
     }
 }

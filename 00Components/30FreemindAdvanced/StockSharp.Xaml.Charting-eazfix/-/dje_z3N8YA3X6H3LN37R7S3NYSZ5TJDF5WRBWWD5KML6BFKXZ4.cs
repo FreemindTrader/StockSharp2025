@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd
+// Type: -.ultrachartlegend
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -22,7 +22,7 @@ using System.Windows.Markup;
 #nullable disable
 namespace \u002D;
 
-internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd : 
+internal sealed class ultrachartlegend : 
   ItemsControl,
   IComponentConnector,
   IStyleConnector
@@ -32,11 +32,11 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
   
   private readonly CandleDataTypeEdit \u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D;
   
-  internal dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd \u0023\u003Dzv4BS1WQ\u003D;
+  internal ultrachartlegend \u0023\u003Dzv4BS1WQ\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
-  public dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd()
+  public ultrachartlegend()
   {
     this.InitializeComponent();
     this.\u0023\u003DzKkX3SOgS26uy = (Popup) this.Resources[(object) "serPopup"];
@@ -49,7 +49,7 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
     if (!(hyperlink.DataContext is ParentVM dataContext) || !(dataContext.ChartElement is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
-    Subscription subscription = dataContext.\u0023\u003DzZ0VU1NABDfD8(dataContext.ChartElement);
+    Subscription subscription = dataContext.GetSubscription(dataContext.ChartElement);
     if (subscription == null || !subscription.SecurityId.HasValue)
       return;
     this.\u0023\u003DzKkX3SOgS26uy.DataContext = (object) dataContext;
@@ -58,12 +58,12 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = true;
   }
 
-  private void \u0023\u003DzOdlcCH3I2dRH(object _param1, RoutedEventArgs _param2)
+  private void OnButtonClicked(object _param1, RoutedEventArgs _param2)
   {
     if (!((_param1 is FrameworkElement frameworkElement ? frameworkElement.DataContext : (object) null) is ParentVM dataContext))
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
-    Subscription subscription1 = dataContext.\u0023\u003DzZ0VU1NABDfD8(dataContext.ChartElement);
+    Subscription subscription1 = dataContext.GetSubscription(dataContext.ChartElement);
     if (subscription1 == null)
       return;
     DataType dataType = this.\u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D.DataType;
@@ -99,12 +99,12 @@ internal sealed class dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6B
     if (_param1 != 1)
     {
       if (_param1 == 2)
-        ((ButtonBase) _param2).Click += new RoutedEventHandler(this.\u0023\u003DzOdlcCH3I2dRH);
+        ((ButtonBase) _param2).Click += new RoutedEventHandler(this.OnButtonClicked);
       else
         this.\u0023\u003DzQGCmQMjHdLKS = true;
     }
     else
-      this.\u0023\u003Dzv4BS1WQ\u003D = (dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd) _param2;
+      this.\u0023\u003Dzv4BS1WQ\u003D = (ultrachartlegend) _param2;
   }
 
   [DebuggerNonUserCode]

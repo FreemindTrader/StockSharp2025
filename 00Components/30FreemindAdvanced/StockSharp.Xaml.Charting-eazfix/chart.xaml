@@ -118,7 +118,7 @@
                 </Binding>
               </llliil11:SciChartSurface.YAxes>
             </llliil11:SciChartSurface>
-            <llliil11:dje_z3N8YA3X6H3LN37R7S3NYSZ5TJDF5WRBWWD5KML6BFKXZ44S823J6BQY3A87QVC3HBBYCP4RA_ejd Margin="23,23" DataContext="{Binding LegendViewModel}"
+            <llliil11:ultrachartlegend Margin="23,23" DataContext="{Binding LegendViewModel}"
                                                                                                         Visibility="{Binding Pane.ShowLegend, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"/>
             <TextBlock Margin="0,20,70,0" VerticalAlignment="Top" HorizontalAlignment="Right"
                        Style="{StaticResource PerfStatsStyle}"

@@ -145,6 +145,22 @@ internal sealed class ChartViewModel : DependencyObject
         }
     }
 
+    private static void OnAllowAddAreaCallback( DependencyObject _param0, DependencyPropertyChangedEventArgs _param1 )
+    {
+        ( ( ChartViewModel ) _param0 ).AllowAddXPropertyChanged();
+    }
+
+    private void AllowAddXPropertyChanged()
+    {
+        CommandManager.InvalidateRequerySuggested();
+        this.ClosePaneCommand.RaiseCanExecuteChanged();
+        Action izKc6jG0gptPuO01M = ChartViewModel.AllowToRemoveEvent;
+        if ( izKc6jG0gptPuO01M == null )
+            return;
+        izKc6jG0gptPuO01M();
+    }
+
+
 
     public event Action AreaAddingEvent;
 
@@ -160,9 +176,9 @@ internal sealed class ChartViewModel : DependencyObject
 
     public Action<IChartElement, Subscription> RebuildCandlesEvent;
 
-    private Action<Order> CancelActiveOrderEvent;
+    public Action<Order> CancelActiveOrderEvent;
 
-    private Action<ChartArea> UngroupEvent;
+    public Action<ChartArea> UngroupEvent;
 
     public static readonly DependencyProperty SelectedThemeProperty = DependencyProperty.Register(nameof (SelectedTheme), typeof (string), typeof (ChartViewModel));
 
@@ -170,7 +186,7 @@ internal sealed class ChartViewModel : DependencyObject
 
     public static readonly DependencyProperty ShowLegendProperty = DependencyProperty.Register(nameof (ShowLegend), typeof (bool), typeof (ChartViewModel));
 
-    private static Action AllowToRemoveEvent;
+    public static Action AllowToRemoveEvent;
 
     public static readonly DependencyProperty IsInteractedProperty = DependencyProperty.Register(nameof (IsInteracted), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnIsInteractedCallback)));
 
@@ -274,22 +290,6 @@ private void ChangeApplicationTheme() => this.SelectedTheme = ChartHelper.CurrCh
 
 
 
-private static void OnAllowAddAreaCallback(
-  DependencyObject _param0,
-  DependencyPropertyChangedEventArgs _param1 )
-{
-    ( ( ChartViewModel ) _param0 ).AllowAddXPropertyChanged();
-}
-
-private void AllowAddXPropertyChanged()
-  {
-    CommandManager.InvalidateRequerySuggested();
-    this.ClosePaneCommand.RaiseCanExecuteChanged();
-    Action izKc6jG0gptPuO01M = ChartViewModel.AllowToRemoveEvent;
-    if ( izKc6jG0gptPuO01M == null )
-        return;
-    izKc6jG0gptPuO01M();
-}
 
 
 

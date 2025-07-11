@@ -15,9 +15,12 @@ namespace StockSharp.Xaml.Charting
 
         private void OnSizeChanged( object sender, SizeChangedEventArgs e )
         {
-            var mySender = ( ( ( FrameworkElement )sender ).DataContext as ChildVM );
+            // BUG:
+            throw new NotImplementedException();
 
-            mySender.Do( vm => vm.Parent.UpdateMinFieldWidth( ( ( FrameworkElement )sender ).ActualWidth ) );
+            //var mySender = ( ( ( FrameworkElement )sender ).DataContext as ChildVM );
+
+            //mySender.Do( vm => vm.Parent.UpdateMinFieldWidth( ( ( FrameworkElement )sender ).ActualWidth ) );
         }        
     }
 }

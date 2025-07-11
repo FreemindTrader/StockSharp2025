@@ -14,6 +14,7 @@ using System.Windows;
 using System.Windows.Input;
 using StockSharp.BusinessEntities;
 using StockSharp.Algo.Indicators;
+using System.Threading;
 
 public sealed partial class ChartViewModel 
 {
@@ -142,6 +143,29 @@ public sealed partial class ChartViewModel
         {
             SetValue( IsInteractedProperty, value );
         }
+    }
+
+    public event Action InteractedEventPublic
+    {
+        add
+        {
+            InteractedEvent += value;
+        }
+
+        remove
+        {
+            InteractedEvent -= value;
+        }
+    }
+
+    internal static void AddInteractedEvent( Action _param0 )
+    {
+        InteractedEvent += _param0;
+    }
+
+    internal static void RemoveInteractedEvent( Action _param0 )
+    {
+        InteractedEvent -= _param0;
     }
 
     public bool IsProgrammable
