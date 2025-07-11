@@ -43,13 +43,13 @@ using Ecng.Common;
 
 public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurfaceVM, IDisposable
 {
-    private readonly CachedSynchronizedDictionary<IChartComponent, ParentVM>      _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ParentVM>( );
+    private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>      _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>( );
     private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>         _chartUIRSeries               = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>( );
 
     private readonly PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap  = new PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>>( );
     private readonly PooledDictionary<string, string>                                      _axisIdToGroup                = new PooledDictionary<string, string>( );
-    private readonly ObservableCollection<ParentVM>                                  _legendElements               = new ObservableCollection<ParentVM>( );
-    private readonly SynchronizedSet<ParentVM>                                       _parentChartViewModelCache    = new SynchronizedSet<ParentVM>( );
+    private readonly ObservableCollection<ChartCompentViewModel>                                  _legendElements               = new ObservableCollection<ChartCompentViewModel>( );
+    private readonly SynchronizedSet<ChartCompentViewModel>                                       _parentChartViewModelCache    = new SynchronizedSet<ChartCompentViewModel>( );
 
     private readonly PooledList<ChartModifierBase>                                         _chartModifiers        = new PooledList<ChartModifierBase>( );
     private ObservableCollection<IRenderableSeries>                                  _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>( );
@@ -149,7 +149,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         return ChartExViewModel ?? ( object )this;
     }
 
-    public ObservableCollection<ParentVM> LegendElements
+    public ObservableCollection<ChartCompentViewModel> LegendElements
     {
         get
         {
@@ -550,14 +550,14 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
     private void OnTimer( object sender, EventArgs e )
     {
-        ParentVM[ ] vms;
+        ChartCompentViewModel[ ] vms;
 
         lock ( _parentChartViewModelCache.SyncRoot )
         {
             vms = _parentChartViewModelCache.CopyAndClear( );
         }
 
-        //foreach ( ParentVM ParentChartViewModel in vms )
+        //foreach ( ChartCompentViewModel ParentChartViewModel in vms )
         //{
         //    ParentChartViewModel.ChildElementPeriodicalAction( );
         //}
@@ -591,7 +591,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             //                                    .Select( e => e.CreateViewModel( this ) )
             //                                    .Where( e => e != null );
 
-            //ParentVM parentVm = new ParentVM( this, element, childElements );
+            //ChartCompentViewModel parentVm = new ChartCompentViewModel( this, element, childElements );
 
             //_vmChartUIs[ element ] = parentVm;
 
@@ -638,7 +638,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //        }
         //    }
 
-        //    ParentVM ParentChartViewModel = new ParentVM( this, anyChartUiXY, childElements );
+        //    ChartCompentViewModel ParentChartViewModel = new ChartCompentViewModel( this, anyChartUiXY, childElements );
 
         //    if ( foundFastQuotes )
         //    {
@@ -691,7 +691,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //IChartComponent elementXY = ( IChartComponent )element;
         //elementXY?.RemoveAxisesEventHandler( );
 
-        //ParentVM ParentChartViewModel;
+        //ChartCompentViewModel ParentChartViewModel;
         //if ( !_vmChartUIs.TryGetValue( elementXY, out ParentChartViewModel ) )
         //{
         //    return false;

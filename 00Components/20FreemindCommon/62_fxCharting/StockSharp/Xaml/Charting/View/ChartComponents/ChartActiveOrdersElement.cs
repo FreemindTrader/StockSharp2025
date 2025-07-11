@@ -50,7 +50,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>,
     
     private bool _isAnimationEnabled;
     
-    private UIChartBaseViewModel _baseViewModel;
+    private DrawableChartElementBaseViewModel _baseViewModel;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartActiveOrdersElement" />.
@@ -245,12 +245,12 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>,
 
     public IChartArea PersistentChartArea => throw new NotImplementedException();
 
-    //UIChartBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
+    //DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
     //{
-    //    return this._baseViewModel = ( UIChartBaseViewModel ) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D( this );
+    //    return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D( this );
     //}
 
-    UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
     {
         return _baseViewModel = new ChartActiveOrdersElementVM( this );
     }

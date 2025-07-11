@@ -15,21 +15,33 @@ using Ecng.Xaml.Converters;
 
 #pragma warning disable CA1416
 
-public abstract class UIChartBaseViewModel : ChartBaseViewModel
+/// <summary>
+/// This class mainly take care of the drawing of the Chart Elment.
+/// 
+/// It defines the abstract drawing methods for the Chart Elements or Chart components
+/// 
+///     1) UpdateUi
+///     2) Init
+///     3) Draw
+///     4) PerformPeriodicalAction
+///     
+/// It provides the basic abstract functions for the dervied class to implement.
+/// </summary>
+public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 {
     private readonly PooledDictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new PooledDictionary< IRenderableSeries, AxisMarkerAnnotation >( );
-    private ParentVM _parentChartViewModel;    
+    private ChartCompentViewModel _chartComponentViewModel;    
 
-    protected ParentVM ChartViewModel
+    protected ChartCompentViewModel ChartViewModel
     {
         get
         {
-            return _parentChartViewModel;
+            return _chartComponentViewModel;
         }
 
         set
         {
-            _parentChartViewModel = value;
+            _chartComponentViewModel = value;
         }
     }
 
@@ -42,11 +54,15 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
     {
         get
         {
-            return ChartViewModel.ChartElement;
+            return ChartViewModel.RootChartComponent;
         }
     }
 
-    protected IScichartSurfaceVM ScichartSurfaceMVVM
+
+    /// <summary>
+    /// This is the Scichart Drawing Surface
+    /// </summary>
+    protected IScichartSurfaceVM DrawingSurface
     {
         get
         {
@@ -77,6 +93,11 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
 
     protected abstract void Clear( );
 
+    /// <summary>
+    /// Abstract method that the inherited class need to implement for drawing of the chart component.
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
     public abstract bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > data );
     //public abstract bool Draw<T>( IEnumerableEx< ChartDrawData.IDrawValue<T> > data );
 
@@ -99,13 +120,13 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
     {
     }
 
-    public void Init( ParentVM parentVM )
+    public void Init( ChartCompentViewModel parentVM )
     {
         if( ChartViewModel != null )
         {
             throw new InvalidOperationException( "parent was already addded" );
         }
-        ChartViewModel = ( parentVM );
+        ChartViewModel =  parentVM;
         Init( );
         Reset( );
     }
@@ -129,7 +150,7 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
             p.Value.IsHidden = true;
             BindingOperations.ClearAllBindings( p.Value );
         }
-        ScichartSurfaceMVVM.RemoveAnnotation( RootElem, null );
+        DrawingSurface.RemoveAnnotation( RootElem, null );
         _renderseries2AxisMarker.Clear( );
     }
 
@@ -143,7 +164,7 @@ public abstract class UIChartBaseViewModel : ChartBaseViewModel
         axisMarker.Foreground = Brushes.White;
         
         _renderseries2AxisMarker[ renderSeries ] = axisMarker;
-        ScichartSurfaceMVVM.AddAxisMakerAnnotation( RootElem, axisMarker, axisMarker );
+        DrawingSurface.AddAxisMakerAnnotation( RootElem, axisMarker, axisMarker );
 
         axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, element, "XAxisId", BindingMode.TwoWay, null, null );
         axisMarker.SetBindings( AnnotationBase.YAxisIdProperty, element, "YAxisId", BindingMode.TwoWay, null, null );

@@ -19,9 +19,9 @@ internal abstract class UIChartBaseViewModel : ChartBaseViewModel
 	
 	private readonly Dictionary<IRenderableSeries, AxisMarkerAnnotation> _renderseries2AxisMarker = new Dictionary<IRenderableSeries, AxisMarkerAnnotation>();
 	
-	private ParentVM _parentChartViewModel;
+	private ChartCompentViewModel _parentChartViewModel;
 
-	protected ParentVM ChartViewModel
+	protected ChartCompentViewModel ChartViewModel
 	{
 		get
 		{
@@ -101,7 +101,7 @@ internal abstract class UIChartBaseViewModel : ChartBaseViewModel
 	}
 
 	public void Init(
-		ParentVM _param1 )
+		ChartCompentViewModel _param1 )
 	{
 		if ( this.ChartViewModel != null )
 			throw new InvalidOperationException( "parent was already added" );

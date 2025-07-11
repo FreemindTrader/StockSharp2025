@@ -677,7 +677,7 @@ namespace StockSharp.Xaml.Charting
             _viewModel.CheckAndShowFibonacci( );
         }
 
-        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new CandlestickVM( this );
         }

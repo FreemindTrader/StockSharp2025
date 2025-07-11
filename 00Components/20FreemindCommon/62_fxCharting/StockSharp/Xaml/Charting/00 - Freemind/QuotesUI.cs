@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting
         private DrawStyles _drawStyle = DrawStyles.Band;
         private ChartLineElement                   _bidLine;
         private ChartLineElement                   _askLine;
-        private UIChartBaseViewModel                 _viewModel;
+        private DrawableChartElementBaseViewModel                 _viewModel;
 
         public QuotesUI( )
         {
@@ -108,7 +108,7 @@ namespace StockSharp.Xaml.Charting
             return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
         }
 
-        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _viewModel = new QuotesVM( this );
             return _viewModel;

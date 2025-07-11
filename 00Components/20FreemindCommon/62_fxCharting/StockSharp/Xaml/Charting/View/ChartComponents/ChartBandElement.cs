@@ -34,7 +34,7 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
 
     private readonly ChartLineElement _lineTwo;
 
-    private UIChartBaseViewModel _baseViewModel;
+    private DrawableChartElementBaseViewModel _baseViewModel;
 
     /// <summary>Create instance.</summary>
     public ChartBandElement()
@@ -111,13 +111,13 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM _param1 )
+    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM _param1 )
     {
         // BUG: need to Decode ScichartSurfaceMVVM.cs first
 
         throw new NotImplementedException();
         
-        //this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( UIChartBaseViewModel ) new ChartBandElementVM<DateTime>( this );
+        //this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( DrawableChartElementBaseViewModel ) new ChartBandElementVM<DateTime>( this );
         //return _baseViewModel;
     }
 

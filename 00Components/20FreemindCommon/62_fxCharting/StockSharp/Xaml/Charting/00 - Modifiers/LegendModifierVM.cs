@@ -23,7 +23,7 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     private bool _allowToHide = true;
 
-    private IEnumerable<ParentVM> _childElements;
+    private IEnumerable<ChartCompentViewModel> _childElements;
 
     private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
@@ -34,10 +34,10 @@ public sealed class LegendModifierVM : ChartBaseViewModel
     public LegendModifierVM( ScichartSurfaceMVVM vm )
     {
         this._scichartSurfaceVM = vm ?? throw new ArgumentNullException( "pane" );
-        this.Elements = ( IEnumerable<ParentVM> ) vm.LegendElements;
+        this.Elements = ( IEnumerable<ChartCompentViewModel> ) vm.LegendElements;
 
-        // BUG: need to work on ParentVM first
-        //this._removeElementCommand = new ActionCommand<ParentVM>(
+        // BUG: need to work on ChartCompentViewModel first
+        //this._removeElementCommand = new ActionCommand<ChartCompentViewModel>(
         //    vm => RemoveElmentEvent?.Invoke( vm.ChartElement ),
         //    p => p.AllowToRemove );
     }
@@ -49,12 +49,12 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     public ICommand RemoveElementCommand => this._removeElementCommand;
 
-    public IEnumerable<ParentVM> Elements
+    public IEnumerable<ChartCompentViewModel> Elements
     {
         get => this._childElements;
         set
         {
-            this.SetField<IEnumerable<ParentVM>>( ref this._childElements, value, nameof( Elements ) );
+            this.SetField<IEnumerable<ChartCompentViewModel>>( ref this._childElements, value, nameof( Elements ) );
         }
     }
 

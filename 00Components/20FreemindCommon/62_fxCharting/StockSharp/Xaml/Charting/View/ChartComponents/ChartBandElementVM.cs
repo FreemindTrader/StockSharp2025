@@ -30,8 +30,8 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
     private FastBandRenderableSeries            _wholeBandRSerie;
 
     
-    private ChildVM                             _lineOneViewModel;
-    private ChildVM                             _lineTwoViewModel;
+    private ChartElementViewModel                             _lineOneViewModel;
+    private ChartElementViewModel                             _lineTwoViewModel;
     private IComparable                         _lastDrawValueObject;
 
     public ChartBandElementVM( ChartBandElement bandElement ) : base( bandElement )
@@ -67,8 +67,8 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
                                                 "AdditionalColor"
                                             };
 
-        ChartViewModel.AddChild( _lineOneViewModel = new ChildVM( ChartElement.Line1, new Func< SeriesInfo, Color >( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
-        ChartViewModel.AddChild( _lineTwoViewModel = new ChildVM( ChartElement.Line2, new Func< SeriesInfo, Color >( LowerAlphaColor ),  ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _lineOneViewModel = new ChartElementViewModel( ChartElement.Line1, new Func< SeriesInfo, Color >( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _lineTwoViewModel = new ChartElementViewModel( ChartElement.Line2, new Func< SeriesInfo, Color >( LowerAlphaColor ),  ( s => s.FormattedYValue ), strArray ) );
 
         AddPropertyEvents( ChartElement.Line1 );
         AddPropertyEvents( ChartElement.Line2 );
@@ -95,9 +95,9 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
             _lineTwoRSerie.DataSeries = _lineTwoData;
         }
 
-        ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _lineOneRSerie );
-        ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _lineTwoRSerie );
-        ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _wholeBandRSerie );
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineOneRSerie );
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineTwoRSerie );
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _wholeBandRSerie );
 
         SetIncludeSeries( );
     }
@@ -116,7 +116,7 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
             return;
         }
 
-        _wholeBandRSerie = CreateRenderableSeries< FastBandRenderableSeries >( new ChildVM[ 0 ] );
+        _wholeBandRSerie = CreateRenderableSeries< FastBandRenderableSeries >( new ChartElementViewModel[ 0 ] );
 
         _wholeBandRSerie.Fill = _wholeBandRSerie.Fill = Colors.Transparent;
 
@@ -124,7 +124,7 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
         _wholeBandRSerie.SetBindings( FastBandRenderableSeries.StrokeY1Property, ChartElement.Line2, "AdditionalColor", BindingMode.TwoWay, null, null );
     }
 
-    private FastLineRenderableSeries CreateFastLineSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChildVM viewModel )
+    private FastLineRenderableSeries CreateFastLineSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChartElementViewModel viewModel )
     {
         // Tony Fix
 
@@ -134,7 +134,7 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
 
         //if ( fastLineSeries == null )
         //{            
-        //    ChildVM[ ] childViewModels = new ChildVM[ 1 ] { viewModel };            
+        //    ChartElementViewModel[ ] childViewModels = new ChartElementViewModel[ 1 ] { viewModel };            
 
         //    fastLineSeries = CreateRenderableSeries< FastLineRenderableSeries >( childViewModels );            
 
@@ -185,7 +185,7 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
 
     protected override void Clear( )
     {
-        ScichartSurfaceMVVM.Remove( RootElem );
+        DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )
@@ -293,11 +293,11 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
 
     private Color HigherAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChildVM.GetHigherAlphaColor( ChartElement.Line1.Color, ChartElement.Line1.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.Line1.Color, ChartElement.Line1.AdditionalColor );
     }
 
     private Color LowerAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChildVM.GetHigherAlphaColor( ChartElement.Line2.Color, ChartElement.Line2.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.Line2.Color, ChartElement.Line2.AdditionalColor );
     }   
 }

@@ -233,7 +233,7 @@ namespace StockSharp.Xaml.Charting
 
                     activeOrderInfo = SetupAnnotationBinding( order );
                     _orderInfoAnnotation.Add( myOrder, activeOrderInfo );
-                    ScichartSurfaceMVVM.AddAxisMakerAnnotation( RootElem, activeOrderInfo.Annotation, myOrder );
+                    DrawingSurface.AddAxisMakerAnnotation( RootElem, activeOrderInfo.Annotation, myOrder );
                     OrderAnimation( activeOrderInfo, order, true );
                 }
                 else if ( IsValidOrder( myOrder, activeOrderInfo.AutoRemoveFromChart, order.OrderStates( ), order.IsError ) )
@@ -301,7 +301,7 @@ namespace StockSharp.Xaml.Charting
                 return;
 
             _orderInfoAnnotation.Remove( orderInfo );
-            ScichartSurfaceMVVM.RemoveAnnotation( RootElem, orderInfo );
+            DrawingSurface.RemoveAnnotation( RootElem, orderInfo );
         }
 
 
@@ -406,7 +406,7 @@ namespace StockSharp.Xaml.Charting
             Decimal num4 = num3;
             if ( price == num4 )
                 return;
-            ScichartSurfaceMVVM.GroupChartEx.InvokeMoveOrderEvent( order, num3 );
+            DrawingSurface.GroupChartEx.InvokeMoveOrderEvent( order, num3 );
         }
 
         private void OnAnimationDone( ActiveOrderAnnotation _param1 )
@@ -424,7 +424,7 @@ namespace StockSharp.Xaml.Charting
             Order order = GetActiveOrderInfo( _param1, out activeOrderInfo );
             if ( order == null )
                 return;
-            ScichartSurfaceMVVM.GroupChartEx.InvokeCancelOrderEvent( order );
+            DrawingSurface.GroupChartEx.InvokeCancelOrderEvent( order );
         }
     }
 }

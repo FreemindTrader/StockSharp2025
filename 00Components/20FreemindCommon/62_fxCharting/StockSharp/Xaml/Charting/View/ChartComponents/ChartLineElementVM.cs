@@ -24,7 +24,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
     //private ChartSeriesViewModel                        _chartSeriesViewModel;
 
     private readonly XyzDataSeries< T, double, double > _xyzDataSeries;    
-    private ChildVM                                     _childrenChartViewModels;
+    private ChartElementViewModel                                     _childrenChartViewModels;
     private IComparable                                 _lastDrawValueObject;
     private Func< IComparable, Color? >                 _lineColorFunction;
     private IDataSeries                                 _lineData;
@@ -78,10 +78,10 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
                 return ChartElement.Color;
             }
 
-            return ChildVM.GetHigherAlphaColor( ChartElement.Color, ChartElement.AdditionalColor );
+            return ChartElementViewModel.GetHigherAlphaColor( ChartElement.Color, ChartElement.AdditionalColor );
         };
 
-        _childrenChartViewModels = new ChildVM( ChartElement, getColorFunc, s => s.FormattedYValue, strArray );
+        _childrenChartViewModels = new ChartElementViewModel( ChartElement, getColorFunc, s => s.FormattedYValue, strArray );
 
         ChartViewModel.AddChild( _childrenChartViewModels );
 
@@ -155,7 +155,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
             case DrawStyles.StepLine:
             case DrawStyles.DashedLine:
             {
-                visualSereis = CreateRenderableSeries<FastLineRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis = CreateRenderableSeries<FastLineRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 visualSereis.DrawNaNAs = LineDrawMode.Gaps;
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty            , ChartElement, "Color", BindingMode.TwoWay, null, null );
             }
@@ -163,7 +163,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
 
             case DrawStyles.Dot:
             {
-                visualSereis = CreateRenderableSeries<XyScatterRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis = CreateRenderableSeries<XyScatterRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty            , ChartElement, "Color", BindingMode.TwoWay, null, null );
                 visualSereis.SetBindings( BaseRenderableSeries.PointMarkerProperty       , ChartElement, "PointMarker", BindingMode.TwoWay, null, null );
             }
@@ -171,7 +171,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
 
             case DrawStyles.Sprite:
             {
-                visualSereis = CreateRenderableSeries<XyScatterRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis = CreateRenderableSeries<XyScatterRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty, ChartElement, "Color", BindingMode.TwoWay, null, null );
                 visualSereis.SetBindings( BaseRenderableSeries.PointMarkerProperty, ChartElement, "SpritePointMarker", BindingMode.TwoWay, null, null );
             }
@@ -180,14 +180,14 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
             case DrawStyles.Histogram:
             {
                 
-                visualSereis =  CreateRenderableSeries<FastColumnRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis =  CreateRenderableSeries<FastColumnRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 visualSereis.SetBindings( BaseColumnRenderableSeries.FillProperty        , ChartElement, "Color", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
                 visualSereis.SetBindings( BaseRenderableSeries.StrokeProperty            , ChartElement, "Color", BindingMode.TwoWay, null, null );
             } 
             break;
             case DrawStyles.Bubble:
             {                
-                visualSereis =  CreateRenderableSeries<FastBubbleRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis =  CreateRenderableSeries<FastBubbleRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 visualSereis.ResamplingMode = ResamplingMode.None;
                 visualSereis.SetBindings( FastBubbleRenderableSeries.BubbleColorProperty , ChartElement, "Color", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
                 visualSereis.SetBindings( FastBubbleRenderableSeries.AutoZRangeProperty  , ChartElement, "StrokeThickness", BindingMode.TwoWay, new StockThicknessToRangeConverter( ), null );
@@ -197,7 +197,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
             case DrawStyles.StackedBar:
             {
                 StackedColumnRenderableSeries stackSeris;
-                visualSereis = stackSeris = CreateRenderableSeries<StackedColumnRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis = stackSeris = CreateRenderableSeries<StackedColumnRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 stackSeris.UseUniformWidth = true;
                 stackSeris.SetBindings( BaseRenderableSeries.StrokeProperty              , ChartElement, "Color", BindingMode.TwoWay, new ColorToSeriesColorConverter( ), 51 );
                 stackSeris.SetBindings( BaseColumnRenderableSeries.FillProperty          , ChartElement, "Color", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
@@ -208,7 +208,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
             case DrawStyles.Area:
             {
                 FastMountainRenderableSeries mountainSeries;
-                visualSereis = mountainSeries = CreateRenderableSeries<FastMountainRenderableSeries>( new ChildVM[ 1 ] { _childrenChartViewModels } );
+                visualSereis = mountainSeries = CreateRenderableSeries<FastMountainRenderableSeries>( new ChartElementViewModel[ 1 ] { _childrenChartViewModels } );
                 mountainSeries.SetBindings( BaseRenderableSeries.StrokeProperty          , ChartElement, "Color", BindingMode.TwoWay, null, null );
                 mountainSeries.SetBindings( BaseMountainRenderableSeries.FillProperty    , ChartElement, "AdditionalColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
             }
@@ -228,7 +228,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
         if ( _lineData != null )
         {
             _lineSeries.DataSeries = _lineData;
-            ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _lineSeries );
+            DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineSeries );
         }
 
         SetupLineExtraProperties( );
@@ -280,7 +280,7 @@ internal sealed class ChartLineElementVM< T > : UIHigherVM< ChartLineElement >, 
 
     protected override void Clear( )
     {
-        ScichartSurfaceMVVM.Remove( RootElem );
+        DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )

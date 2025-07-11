@@ -90,11 +90,11 @@ namespace StockSharp.Xaml.Charting
         private IndexRange                                  _indexRange;
         private int                                         _totalMinutes;
         private double                                      _priceStep;
-        private ChildVM                                     _openViewModel;
-        private ChildVM                                     _highViewModel;
-        private ChildVM                                     _lowViewModel;
-        private ChildVM                                     _closeViewModel;
-        private ChildVM                                     _lineViewModel;
+        private ChartElementViewModel                                     _openViewModel;
+        private ChartElementViewModel                                     _highViewModel;
+        private ChartElementViewModel                                     _lowViewModel;
+        private ChartElementViewModel                                     _closeViewModel;
+        private ChartElementViewModel                                     _lineViewModel;
         private bool                                        _isPnfBoxSizeSet;
         private Func< DateTimeOffset, bool, bool, Color? >  _colorerFunction;
         private IDataSeries                                 _candlestickData;
@@ -155,11 +155,11 @@ namespace StockSharp.Xaml.Charting
                 "DownFillColor"
             };
 
-            ChartViewModel.AddChild( _openViewModel = new ChildVM( "O", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
-            ChartViewModel.AddChild( _highViewModel = new ChildVM( "H", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
-            ChartViewModel.AddChild( _lowViewModel = new ChildVM( "L", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
-            ChartViewModel.AddChild( _closeViewModel = new ChildVM( "C", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
-            ChartViewModel.AddChild( _lineViewModel = new ChildVM( "Line", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
+            ChartViewModel.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
+            ChartViewModel.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
+            ChartViewModel.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
+            ChartViewModel.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
+            ChartViewModel.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
             //ChartViewModel.AddChild( _volumeViewModel = new ChildrenChartViewModel( "Vol", ChartElement, new Func< SeriesInfo, Color >( GetCandleColor ), ( s => ( s as TimeframeSegmentSeriesInfo )?.Volume.ToString( ) ), strArray ) );
 
             GuiInitSeries( );
@@ -395,7 +395,7 @@ namespace StockSharp.Xaml.Charting
 
             SetupAxisMarkerAndBinding( _candlestickSeries, ChartElement, "ShowAxisMarker", null );
 
-            ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _candlestickSeries );
+            DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _candlestickSeries );
 
 
         }
@@ -406,7 +406,7 @@ namespace StockSharp.Xaml.Charting
             {
                 return;
             }
-            ScichartSurfaceMVVM.Remove( RootElem );
+            DrawingSurface.Remove( RootElem );
 
             _candlestickSeries = null;
         }
@@ -421,7 +421,7 @@ namespace StockSharp.Xaml.Charting
         public override void PerformPeriodicalAction( )
         {
             base.PerformPeriodicalAction( );
-            VisbleRangeDp xAxisVisibleRange = ScichartSurfaceMVVM.GetVisibleRangeDp( ChartElement.XAxisId );
+            VisbleRangeDp xAxisVisibleRange = DrawingSurface.GetVisibleRangeDp( ChartElement.XAxisId );
 
             if ( xAxisVisibleRange == null )
             {
@@ -433,13 +433,13 @@ namespace StockSharp.Xaml.Charting
 
             if ( _needToCenterOnBar )
             {
-                var xAxis = ScichartSurfaceMVVM.XAxises.FirstOrDefault( );
+                var xAxis = DrawingSurface.XAxises.FirstOrDefault( );
                 ICategoryCoordinateCalculator<DateTime> coordinateCalculator = xAxis.GetCurrentCoordinateCalculator( ) as ICategoryCoordinateCalculator<DateTime>;
                 if ( coordinateCalculator != null )
                 {
                     int x = ( coordinateCalculator.TransformDataToIndex( _centerBarTime ) );
-                    int minX = Math.Max( x - ScichartSurfaceMVVM.MinimumRange / 2, 0 );
-                    int maxX = x + ScichartSurfaceMVVM.MinimumRange / 2;
+                    int minX = Math.Max( x - DrawingSurface.MinimumRange / 2, 0 );
+                    int maxX = x + DrawingSurface.MinimumRange / 2;
 
                     categoryDateTimeRange.SetMinMax( minX, maxX );
 
@@ -451,14 +451,14 @@ namespace StockSharp.Xaml.Charting
 
             if ( _setMinMax )
             {
-                categoryDateTimeRange.SetMinMax( 0.0, ScichartSurfaceMVVM.MinimumRange );
+                categoryDateTimeRange.SetMinMax( 0.0, DrawingSurface.MinimumRange );
             }
 
             bool autoScroll      = false;
 
-            bool cantSrcoll      = ( count <= 0 || ( !categoryDateTimeRange.IsDefined || ScichartSurfaceMVVM.IsAutoRange ) );
+            bool cantSrcoll      = ( count <= 0 || ( !categoryDateTimeRange.IsDefined || DrawingSurface.IsAutoRange ) );
 
-            bool chartAutoScroll = ScichartSurfaceMVVM.IsAutoScroll;
+            bool chartAutoScroll = DrawingSurface.IsAutoScroll;
 
             bool condition3      = _setNewRange && _indexRange == categoryDateTimeRange || !_setNewRange && categoryDateTimeRange.Max >= count;
 
@@ -469,7 +469,7 @@ namespace StockSharp.Xaml.Charting
             if ( autoScroll && categoryDateTimeRange.Max < max )
             {
                 int showBarCount                   = categoryDateTimeRange.Max - categoryDateTimeRange.Min + 1;
-                var indexRange                     = new IndexRange( max - showBarCount + 1, max+ ScichartSurfaceMVVM.RightMarginBars );
+                var indexRange                     = new IndexRange( max - showBarCount + 1, max+ DrawingSurface.RightMarginBars );
                 xAxisVisibleRange.CategoryDateTimeRange = indexRange;
                 _indexRange = indexRange;
             }
@@ -540,7 +540,7 @@ namespace StockSharp.Xaml.Charting
                 _barEventsSubscribed = true;
             }
 
-            var xAxisIdRange     = ScichartSurfaceMVVM.GetVisibleRangeDp( ChartElement.XAxisId );
+            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartElement.XAxisId );
             bool xAxisIsDateTime = xAxisIdRange != null && xAxisIdRange.GetAxisType( ) == ChartAxisType.CategoryDateTime;
             int count            = barRange.Count;
             var lastBarTime      = _dateTimeUtc;
@@ -610,7 +610,7 @@ namespace StockSharp.Xaml.Charting
 
             if ( lastBarTime > _dateTimeUtc )
             {
-                _setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !ScichartSurfaceMVVM.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= ScichartSurfaceMVVM.MinimumRange ? 1 : 0 ) ) ) != 0;
+                _setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !DrawingSurface.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= DrawingSurface.MinimumRange ? 1 : 0 ) ) ) != 0;
             }
 
             Array.Resize( ref timeArray, index + 1 );
@@ -687,7 +687,7 @@ namespace StockSharp.Xaml.Charting
                 return false;
             }
 
-            var xAxisIdRange     = ScichartSurfaceMVVM.GetVisibleRangeDp( ChartElement.XAxisId );
+            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartElement.XAxisId );
             bool xAxisIsDateTime = xAxisIdRange != null && xAxisIdRange.GetAxisType( ) == ChartAxisType.CategoryDateTime;
             int count            = candles.Count;
             var lastBarTime      = _dateTimeUtc;
@@ -765,7 +765,7 @@ namespace StockSharp.Xaml.Charting
 
             if ( lastBarTime > _dateTimeUtc )
             {
-                _setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !ScichartSurfaceMVVM.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= ScichartSurfaceMVVM.MinimumRange ? 1 : 0 ) ) ) != 0;
+                _setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !DrawingSurface.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= DrawingSurface.MinimumRange ? 1 : 0 ) ) ) != 0;
             }
 
             Array.Resize( ref timeArray, index + 1 );

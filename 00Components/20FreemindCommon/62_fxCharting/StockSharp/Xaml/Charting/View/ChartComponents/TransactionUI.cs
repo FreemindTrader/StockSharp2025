@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting
         private Color _buyStrokeColor;
         private Color _sellColor;
         private Color _sellStrokeColor;
-        private UIChartBaseViewModel _viewModel;
+        private DrawableChartElementBaseViewModel _viewModel;
 
         protected TransactionUI( )
         {
@@ -173,7 +173,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new TransactionVM<T>( ( T ) this );
         }

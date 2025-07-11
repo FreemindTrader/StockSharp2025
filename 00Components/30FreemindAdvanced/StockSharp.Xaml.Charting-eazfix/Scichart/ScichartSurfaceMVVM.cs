@@ -51,13 +51,13 @@ public sealed class ScichartSurfaceMVVM :
   
   private readonly DispatcherTimer _dispatcherTimer;
   
-  private readonly SynchronizedSet<ParentVM> _parentChartViewModelCache;
+  private readonly SynchronizedSet<ChartCompentViewModel> _parentChartViewModelCache;
   
   private readonly Queue<double> _queue;
   
   private double _fpsTotal;
   
-  private readonly ObservableCollection<ParentVM> _legendElements;
+  private readonly ObservableCollection<ChartCompentViewModel> _legendElements;
   
   private Action<IChartElement> RemoveElementEvent;
   
@@ -77,7 +77,7 @@ public sealed class ScichartSurfaceMVVM :
   
   private bool \u0023\u003DziDb\u0024Ig3dGddOMOYevA\u003D\u003D;
   
-  private ParentVM \u0023\u003Dz9wKViCODW1Ii2tIsob2\u0024JVIp5Szh;
+  private ChartCompentViewModel \u0023\u003Dz9wKViCODW1Ii2tIsob2\u0024JVIp5Szh;
   
   private readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D \u0023\u003DzFDPZeiB0vr7jQ9JhGA\u003D\u003D;
   
@@ -144,7 +144,7 @@ public sealed class ScichartSurfaceMVVM :
 
   private object \u0023\u003DzVNHlJWAgfVxe() => (object) this.ParentViewModel ?? (object) this;
 
-  public ObservableCollection<ParentVM> LegendElements
+  public ObservableCollection<ChartCompentViewModel> LegendElements
   {
     get => this._legendElements;
   }

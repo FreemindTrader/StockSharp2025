@@ -9,7 +9,8 @@ using System.Diagnostics;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>
-/// Base class for chart related view models.
+/// Base class for chart related view models. It mainly contains methods for the properties including Setting property value and the event that get triggered
+/// when the property is changed.
 /// </summary>
 public class ChartBaseViewModel : NotifiableObject
 {
@@ -57,10 +58,7 @@ public class ChartBaseViewModel : NotifiableObject
     /// <param name="namesTo">
     ///
     /// </param>
-    protected void MapPropertyChangeNotification(
-        INotifyPropertyChanged source,
-        string nameFrom,
-        params string[ ] namesTo )
+    protected void MapPropertyChangeNotification( INotifyPropertyChanged source, string nameFrom, params string[ ] namesTo )
     {
         if ( namesTo != null && namesTo.Length == 0 )
         {

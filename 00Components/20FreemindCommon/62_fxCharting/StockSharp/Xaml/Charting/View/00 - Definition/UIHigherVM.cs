@@ -13,7 +13,7 @@ using Ecng.Xaml.Converters;
 
 #pragma warning disable CA1416
 
-internal abstract class UIHigherVM< T > : UIChartBaseViewModel where T : ChartPart< T >, IDrawableChartElement
+internal abstract class UIHigherVM< T > : DrawableChartElementBaseViewModel where T : ChartPart< T >, IDrawableChartElement
 {
     private readonly PooledSet< IChartComponent > _rootElementSet = new PooledSet< IChartComponent >( );
     private readonly T _chartElement;
@@ -103,7 +103,7 @@ internal abstract class UIHigherVM< T > : UIChartBaseViewModel where T : ChartPa
 
     
 
-    protected U CreateRenderableSeries< U >( ChildVM[ ] childViewModel ) where U : BaseRenderableSeries, new()
+    protected U CreateRenderableSeries< U >( ChartElementViewModel[ ] childViewModel ) where U : BaseRenderableSeries, new()
     {
         //Tony
 
@@ -150,7 +150,7 @@ internal abstract class UIHigherVM< T > : UIChartBaseViewModel where T : ChartPa
         //    instance.SetBindings( BaseRenderableSeries.AntiAliasingProperty, ChartElement, "AntiAliasing", BindingMode.TwoWay, null, null );
         //}
 
-        //instance.Tag = childViewModel == null || childViewModel.Length == 0 ? null : Tuple.Create< UIChartBaseViewModel, ChildVM[ ] >( this, childViewModel );
+        //instance.Tag = childViewModel == null || childViewModel.Length == 0 ? null : Tuple.Create< DrawableChartElementBaseViewModel, ChartElementViewModel[ ] >( this, childViewModel );
 
         //ChartViewModel.ClearChildViewModels( );
 

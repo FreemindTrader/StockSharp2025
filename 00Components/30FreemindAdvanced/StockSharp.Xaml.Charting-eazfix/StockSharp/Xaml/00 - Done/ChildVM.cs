@@ -19,7 +19,7 @@ public sealed class ChildVM : ChartBaseViewModel
     private string _value;
     private Color _color;
     private SeriesInfo _seriesInfo;
-    private ParentVM _parent;
+    private ChartCompentViewModel _parent;
 
     public ChildVM( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this( null, mypropertyOwner, getColorFunc, getValueFunc, string_2 )
     {
@@ -47,7 +47,7 @@ public sealed class ChildVM : ChartBaseViewModel
         };
     }
 
-    public ParentVM Parent
+    public ChartCompentViewModel Parent
     {
         get
         {

@@ -17,7 +17,7 @@ public interface IDrawableChartElement : IChartComponent,
 {
     System.Windows.Media.Color Color { get; }
 
-    UIChartBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel );
+    DrawableChartElementBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel );
 
     bool StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> data );
 

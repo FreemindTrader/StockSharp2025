@@ -29,8 +29,8 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
     private bool _doneInit = false;
 
-    private ChildVM _bidLineVM;
-    private ChildVM _askLineVM;
+    private ChartElementViewModel _bidLineVM;
+    private ChartElementViewModel _askLineVM;
     private IComparable _lastDrawValueObject;
 
     public QuotesVM( QuotesUI bandElement ) : base( bandElement )
@@ -67,8 +67,8 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
         string[ ] strArray = new string[ 2 ] { "Color", "AdditionalColor" };
 
-        ChartViewModel.AddChild( _bidLineVM = new ChildVM( ChartElement.BidLine, new Func<SeriesInfo, Color>( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
-        ChartViewModel.AddChild( _askLineVM = new ChildVM( ChartElement.AskLine, new Func<SeriesInfo, Color>( LowerAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _bidLineVM = new ChartElementViewModel( ChartElement.BidLine, new Func<SeriesInfo, Color>( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _askLineVM = new ChartElementViewModel( ChartElement.AskLine, new Func<SeriesInfo, Color>( LowerAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
 
         AddPropertyEvents( ChartElement.BidLine );
         AddPropertyEvents( ChartElement.AskLine );
@@ -92,8 +92,8 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
             _bidLineRSerie.DataSeries = _bidLine;
         }
 
-        ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _askLineRSerie );
-        ScichartSurfaceMVVM.AddRenderableSeriesToChartSurface( RootElem, _bidLineRSerie );        
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _askLineRSerie );
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _bidLineRSerie );        
 
         SetIncludeSeries( );        
     }
@@ -109,7 +109,7 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
         SetIncludeSeries( _bidLineRSerie, false );        
     }    
 
-    private QuoteRenderableSeries CreateQuoteRSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChildVM viewModel )
+    private QuoteRenderableSeries CreateQuoteRSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChartElementViewModel viewModel )
     {
         // Tony 4:
 
@@ -119,7 +119,7 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
         //if ( fastLineSeries == null )
         //{
-        //    ChildVM[ ] childViewModels = new ChildVM[ 1 ] { viewModel };
+        //    ChartElementViewModel[ ] childViewModels = new ChartElementViewModel[ 1 ] { viewModel };
 
         //    fastLineSeries = CreateRenderableSeries<QuoteRenderableSeries>( childViewModels );
 
@@ -158,7 +158,7 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
     protected override void Clear( )
     {
-        ScichartSurfaceMVVM.Remove( RootElem );
+        DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )
@@ -261,12 +261,12 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
     private Color HigherAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChildVM.GetHigherAlphaColor( ChartElement.BidLine.Color, ChartElement.BidLine.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.BidLine.Color, ChartElement.BidLine.AdditionalColor );
     }
 
     private Color LowerAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChildVM.GetHigherAlphaColor( ChartElement.AskLine.Color, ChartElement.AskLine.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.AskLine.Color, ChartElement.AskLine.AdditionalColor );
     }
 
     

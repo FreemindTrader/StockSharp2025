@@ -357,7 +357,7 @@ private new sealed class SomeClass34343383
       this._variableSome3535.GetIndicatorElement().AddChildElement( this.\u0023\u003Dz_i6sZDg\u003D);
     // ISSUE: explicit non-virtual call
     ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual (this._variableSome3535.Element).PersistentChartArea).ViewModel;
-    ParentVM a4VgOpCeDiqsTdzB;
+    ChartCompentViewModel a4VgOpCeDiqsTdzB;
       if (!tdnKj06Uu87Wzk09Wj.\u0023\u003DzKDbpj6zM462r( (IChartComponent) this._variableSome3535.GetIndicatorElement(), out a4VgOpCeDiqsTdzB))
         return;
       a4VgOpCeDiqsTdzB.InitializeChildElements( (IEnumerable<UIChartBaseViewModel>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<UIChartBaseViewModel>(((IDrawableChartElement) this.\u0023\u003Dz_i6sZDg\u003D).CreateViewModel(tdnKj06Uu87Wzk09Wj)));

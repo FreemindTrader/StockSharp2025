@@ -107,7 +107,7 @@ namespace StockSharp.Xaml.Charting
             {
                 case ChartCandleDrawStyles.CandleStick:
                 {
-                    series = CreateRenderableSeries<FreemindCandlestickRenderableSeries>( new ChildVM[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
+                    series = CreateRenderableSeries<FreemindCandlestickRenderableSeries>( new ChartElementViewModel[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
                         
 
                     series.SetBindings( FastCandlestickRenderableSeries.FillUpProperty,              ChartElement, "UpFillColor",         BindingMode.TwoWay, new ColorToBrushConverter( ), null );
@@ -140,7 +140,7 @@ namespace StockSharp.Xaml.Charting
 
                 case ChartCandleDrawStyles.Ohlc:
                 {
-                    series = CreateRenderableSeries<FastOhlcRenderableSeries>( new ChildVM[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
+                    series = CreateRenderableSeries<FastOhlcRenderableSeries>( new ChartElementViewModel[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
 
                     series.SetBindings( FastOhlcRenderableSeries.StrokeUpProperty, ChartElement, "UpBorderColor", BindingMode.TwoWay, null, null );
                     series.SetBindings( FastOhlcRenderableSeries.StrokeDownProperty, ChartElement, "DownBorderColor", BindingMode.TwoWay, null, null );
@@ -156,7 +156,7 @@ namespace StockSharp.Xaml.Charting
                 case ChartCandleDrawStyles.LineLow:
                 case ChartCandleDrawStyles.LineClose:
                 {
-                    series = CreateRenderableSeries<FastLineRenderableSeries>( new ChildVM[ 1 ] { _lineViewModel } );
+                    series = CreateRenderableSeries<FastLineRenderableSeries>( new ChartElementViewModel[ 1 ] { _lineViewModel } );
 
                     series.SetBindings( BaseRenderableSeries.StrokeProperty, ChartElement, "LineColor", BindingMode.TwoWay, null, null );
                     series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );
@@ -200,7 +200,7 @@ namespace StockSharp.Xaml.Charting
 
                 case ChartCandleDrawStyles.Area:
                 {
-                    series = CreateRenderableSeries<FastMountainRenderableSeries>( new ChildVM[ 1 ] { _lineViewModel } );
+                    series = CreateRenderableSeries<FastMountainRenderableSeries>( new ChartElementViewModel[ 1 ] { _lineViewModel } );
                     series.Stroke = Colors.Transparent;
                     series.SetBindings( BaseRenderableSeries.StrokeProperty, ChartElement, "LineColor", BindingMode.TwoWay, null, null );
                     series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );
@@ -210,7 +210,7 @@ namespace StockSharp.Xaml.Charting
 
                 case ChartCandleDrawStyles.PnF:
                 {
-                    series = CreateRenderableSeries<FastXORenderableSeries>( new ChildVM[ 0 ] );
+                    series = CreateRenderableSeries<FastXORenderableSeries>( new ChartElementViewModel[ 0 ] );
                     series.SetBindings( FastOhlcRenderableSeries.StrokeUpProperty, ChartElement, "UpBorderColor", BindingMode.TwoWay, null, null );
                     series.SetBindings( FastOhlcRenderableSeries.StrokeDownProperty, ChartElement, "DownBorderColor", BindingMode.TwoWay, null, null );
                     series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );

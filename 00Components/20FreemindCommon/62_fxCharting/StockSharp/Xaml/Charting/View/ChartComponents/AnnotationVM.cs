@@ -15,12 +15,12 @@ internal sealed class ChartAnnotationVM : UIHigherVM< ChartAnnotation >
 
     protected override void Clear( )
     {
-        ScichartSurfaceMVVM.RemoveAnnotation( ChartElement );
+        DrawingSurface.RemoveAnnotation( ChartElement );
     }
 
     public override bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > e )
     {
-        PerformUIAction2( () => ScichartSurfaceMVVM.SetupAnnotation( ChartElement, e.Cast<ChartDrawData.sAnnotation>( ).Single( ) ), true );
+        PerformUIAction2( () => DrawingSurface.SetupAnnotation( ChartElement, e.Cast<ChartDrawData.sAnnotation>( ).Single( ) ), true );
 
         return true;
     }    

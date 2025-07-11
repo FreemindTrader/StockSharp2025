@@ -20,7 +20,7 @@ namespace StockSharp.Xaml.Charting
 
         ChartViewModel ChartViewModel { get; }
         ChartExViewModel ChartExViewModel { get; }
-        ObservableCollection<ParentVM> LegendElements { get; }
+        ObservableCollection<ChartCompentViewModel> LegendElements { get; }
         ChartArea Area { get; }
 
         AxisCollection XAxises { get;  }

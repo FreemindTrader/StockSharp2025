@@ -87,9 +87,9 @@ namespace StockSharp.Xaml.Charting
 
 
 
-            Func<SeriesInfo, UIChartBaseViewModel> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<UIChartBaseViewModel, ChildVM[ ]> )?.Item1 );
+            Func<SeriesInfo, DrawableChartElementBaseViewModel> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[ ]> )?.Item1 );
 
-            Func<IGrouping<UIChartBaseViewModel, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
+            Func<IGrouping<DrawableChartElementBaseViewModel, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
 
             var groupDatas = SeriesData.SeriesInfo.GroupBy( groupByCondition ).Where( whereCondition );
 
@@ -97,27 +97,27 @@ namespace StockSharp.Xaml.Charting
             {
                 foreach ( SeriesInfo info in myGroup )
                 {
-                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<UIChartBaseViewModel, ChildVM[ ]>;
+                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[ ]>;
 
                     if ( tag == null )
                     {
                         return;
                     }
 
-                    ParentVM parentVm = null;
+                    ChartCompentViewModel parentVm = null;
 
-                    foreach ( ChildVM vm in tag.Item2 )
+                    foreach ( ChartElementViewModel vm in tag.Item2 )
                     {
                         vm.UpdateSeries( info );
 
-                        parentVm = vm.Parent;
+                        parentVm = vm.ChartComponent;
                     }
 
                     if ( parentVm != null )
                     {
                         if ( ViewModel.Elements != null )
                         {
-                            var e = ( ObservableCollection<ParentVM> )ViewModel.Elements;
+                            var e = ( ObservableCollection<ChartCompentViewModel> )ViewModel.Elements;
                             //e.Add( parentVm );
                         }
 

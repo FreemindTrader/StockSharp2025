@@ -60,14 +60,14 @@ internal sealed class TransactionVM<T> : UIHigherVM<T> where T : TransactionUI<T
     {
         Tuple<long, string> tuple = Tuple.Create( strade.TradeId, strade.TradeStringId );
 
-        if ( ( UltraChartCustomAnnotation )ScichartSurfaceMVVM.GetAxisMakerAnnotation( RootElem, tuple ) != null )
+        if ( ( UltraChartCustomAnnotation )DrawingSurface.GetAxisMakerAnnotation( RootElem, tuple ) != null )
         {
             if ( !CompareHelper.IsDefault( strade.UtcTime ) )
             {
                 return;
             }
 
-            ScichartSurfaceMVVM.RemoveAnnotation( RootElem, tuple );
+            DrawingSurface.RemoveAnnotation( RootElem, tuple );
         }
         else
         {
@@ -85,7 +85,7 @@ internal sealed class TransactionVM<T> : UIHigherVM<T> where T : TransactionUI<T
             custom.SetBindings( AnnotationBase.YAxisIdProperty,  ChartElement, "YAxisId", BindingMode.TwoWay, null, null );
             custom.SetBindings( AnnotationBase.IsHiddenProperty, ChartElement, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
 
-            ScichartSurfaceMVVM.AddAxisMakerAnnotation( RootElem, custom, tuple );
+            DrawingSurface.AddAxisMakerAnnotation( RootElem, custom, tuple );
         }
     }
 
@@ -112,7 +112,7 @@ internal sealed class TransactionVM<T> : UIHigherVM<T> where T : TransactionUI<T
 
     private void Remove( )
     {
-        ScichartSurfaceMVVM.RemoveAnnotation( RootElem, null );
+        DrawingSurface.RemoveAnnotation( RootElem, null );
     }
 
 

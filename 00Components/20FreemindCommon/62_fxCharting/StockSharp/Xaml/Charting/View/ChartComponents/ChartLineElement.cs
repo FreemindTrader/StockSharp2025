@@ -43,12 +43,12 @@ namespace StockSharp.Xaml.Charting
         private bool                     _showAxisMarker;
         private ControlTemplate          _drawTemplate;
         private IPointMarker             _pointMarker;
-        private UIChartBaseViewModel                 _lineViewModel;
+        private DrawableChartElementBaseViewModel                 _lineViewModel;
 
-        UIChartBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _scichartSurfaceVM = viewModel;
-            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( UIChartBaseViewModel )new ChartLineElementVM<DateTime>( this );
+            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( DrawableChartElementBaseViewModel )new ChartLineElementVM<DateTime>( this );
 
             var xAxis = _scichartSurfaceVM.XAxises.FirstOrDefault( );
 

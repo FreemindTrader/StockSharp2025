@@ -61,11 +61,11 @@ public class ChartAnnotation : ChartElement<ChartAnnotation>,
     //}
         
 
-    public UIChartBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel )
+    public DrawableChartElementBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel )
     {
         if ( this.Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );
-        return ( UIChartBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
+        return ( DrawableChartElementBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
     }
 
     bool IDrawableChartElement.StartDrawing(

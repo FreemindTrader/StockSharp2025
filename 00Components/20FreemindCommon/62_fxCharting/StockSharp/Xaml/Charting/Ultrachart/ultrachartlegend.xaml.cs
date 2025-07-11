@@ -18,7 +18,7 @@ namespace StockSharp.Xaml.Charting
             //BUG
             throw new NotImplementedException();
 
-            //var mySender = ( ( ( FrameworkElement )sender ).DataContext as ChildVM );
+            //var mySender = ( ( ( FrameworkElement )sender ).DataContext as ChartElementViewModel );
 
             //mySender.Do( vm => vm.Parent.UpdateMinFieldWidth( ( ( FrameworkElement )sender ).ActualWidth ) );
         }        
