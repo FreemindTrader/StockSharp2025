@@ -24,7 +24,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D> : 
-  ChartCompentView<ChartLineElement>,
+  ChartCompentWpfBaseViewModel<ChartLineElement>,
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
@@ -64,7 +64,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
       DrawStyles.StackedBar,
       DrawStyles.Area
     };
-    ChartCompentView<ChartLineElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView, "Style", drawStylesArray);
+    ChartCompentWpfBaseViewModel<ChartLineElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView, "Style", drawStylesArray);
     string[] strArray = new string[2]
     {
       "Color",

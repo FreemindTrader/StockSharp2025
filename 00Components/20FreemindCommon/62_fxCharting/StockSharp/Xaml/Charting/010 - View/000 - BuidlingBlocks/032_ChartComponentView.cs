@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ChartComponent`1
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using Ecng.Collections;
+﻿using Ecng.Collections;
 using Ecng.Common;
 using Ecng.ComponentModel;
 using Ecng.Serialization;
@@ -27,15 +21,14 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
-public abstract class ChartComponent<T> :
-  ChartPart<T>,
-  IChartElement,
-  IChartPart<IChartElement>,
-  INotifyPropertyChanged,
-  INotifyPropertyChanging,
-  IPersistable,
-  IChartComponent
-  where T : ChartComponent<T>
+public abstract class ChartComponentView<T> : ChartPart<T>,
+                                          IChartElement,
+                                          IChartPart<IChartElement>,
+                                          INotifyPropertyChanged,
+                                          INotifyPropertyChanging,
+                                          IPersistable,
+                                          IChartComponent
+  where T : ChartComponentView<T>
 {
 
     private IChartComponent _parentElement;
@@ -410,7 +403,7 @@ public abstract class ChartComponent<T> :
 
     public override T Clone()
     {
-        ChartComponent<T>.SomePrivateSealedClass034 uw9yL4K8Elv3B8f3hPm = new ChartComponent<T>.SomePrivateSealedClass034();
+        ChartComponentView<T>.SomePrivateSealedClass034 uw9yL4K8Elv3B8f3hPm = new ChartComponentView<T>.SomePrivateSealedClass034();
         uw9yL4K8Elv3B8f3hPm._SomeMethod034098 = this.CreateClone();
         uw9yL4K8Elv3B8f3hPm._SomeMethod034098._extraName.AddRange( ( IEnumerable<string> ) this._extraName );
         CollectionHelper.ForEach<KeyValuePair<Guid, string>>( ( IEnumerable<KeyValuePair<Guid, string>> ) this._idToName, new Action<KeyValuePair<Guid, string>>( uw9yL4K8Elv3B8f3hPm.SomeShitNow ) );

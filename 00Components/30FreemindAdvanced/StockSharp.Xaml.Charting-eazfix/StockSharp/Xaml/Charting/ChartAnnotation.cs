@@ -36,7 +36,7 @@ public class ChartAnnotation :
     
     private ChartAnnotationTypes _chartAnnotationTypes;
     
-    private ChartAnnotationVM _baseViewModel;
+    private ChartAnnotationViewModel _baseViewModel;
 
     public ChartAnnotation() => this.IsLegend = false;
 
@@ -62,7 +62,7 @@ public class ChartAnnotation :
     {
         if ( this.Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );
-        return ( DrawableChartElementBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
+        return ( DrawableChartElementBaseViewModel ) ( this._baseViewModel = new ChartAnnotationViewModel( this ) );
     }
 
     bool IDrawableChartElement.StartDrawing(

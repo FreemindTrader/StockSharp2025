@@ -23,7 +23,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class ChartLineElement : ChartComponent<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public class ChartLineElement : ChartComponentView<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private TASignalSymbol           _signalType;
         private DrawStyles _indicatorDrawStyle;

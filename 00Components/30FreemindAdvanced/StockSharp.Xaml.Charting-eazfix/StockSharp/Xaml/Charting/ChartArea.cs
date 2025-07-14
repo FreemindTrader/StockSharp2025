@@ -102,17 +102,17 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     public IChart Chart
     {
         get => this._chart;
-        
+
         set
         {
             if ( this._chart == value )
                 return;
-            
+
             if ( value == null )
                 this.ViewModel.Release();
 
             this._chart = value;
-            
+
             if ( value == null )
                 return;
 
@@ -120,15 +120,15 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
 
             Elements.ForEach( x =>
             {
-                if(!(x is IChartComponent elem))
+                if ( !( x is IChartComponent elem ) )
                     return;
                 elem.ResetUI();
             } );
         }
     }
-    
+
     public INotifyList<IChartElement> Elements => this._chartElementNotifyList;
-    
+
 
     private IChart _chart;
 
@@ -162,6 +162,23 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
 
     }
 
+    private sealed class DictionaryStruct03894
+    {
+        public ChartAxisType _someChartAxisType;
+        public ChartArea _variableSome3535;
+
+        internal bool SomeLinqFunction3596(
+          IChartComponent _param1 )
+        {
+            return !_param1.CheckAxesCompatible( new ChartAxisType?( this._someChartAxisType ), new ChartAxisType?() );
+        }
+
+        internal bool AnotherSomeLinqFunction3596( IChartArea a )
+        {
+            return a != this._variableSome3535 && a.XAxisType != this._someChartAxisType;
+        }
+    }
+
     [Browsable( false )]
     public ChartAxisType XAxisType
     {
@@ -173,24 +190,28 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             {
                 return;
             }
+
             if ( Chart != null )
             {
                 Chart.EnsureUIThread();
             }
 
+            if ( Elements.Cast<IChartComponent>().Any( i => !i.CheckAxesCompatible( new ChartAxisType?( value ), new ChartAxisType?() ) ) )
+            {
+                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.ElementDontSupportAxisTypeParams, value ) );
+            }
 
             ChartArea.DictionaryStruct03894 dkfA7SK9Zsjh7b7evY = new ChartArea.DictionaryStruct03894();
-            dkfA7SK9Zsjh7b7evY.\u0023\u003DzxGz2_8k\u003D = value;
+            dkfA7SK9Zsjh7b7evY._someChartAxisType = value;
             dkfA7SK9Zsjh7b7evY._variableSome3535 = this;
-            
-            if ( ( ( IEnumerable ) this.Elements ).Cast<IChartComponent>().Any<IChartComponent>( new Func<IChartComponent, bool>( dkfA7SK9Zsjh7b7evY.\u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D) ) )
-                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.ElementDontSupportAxisTypeParams, new object[ 1 ]
-                {
-          (object) dkfA7SK9Zsjh7b7evY.\u0023\u003DzxGz2_8k\u003D
-        } ) );
-            if ( this.Chart != null && this.Chart.Areas.Any<IChartArea>( new Func<IChartArea, bool>( dkfA7SK9Zsjh7b7evY.\u0023\u003DzCaHczB6Zuyll\u0024N6TY3bDRZc\u003D) ) )
+
+
+            if ( this.Chart != null && this.Chart.Areas.Any( a => a != this && a.XAxisType != value ) )
+            {
                 throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
-            this._xAxisType = dkfA7SK9Zsjh7b7evY.\u0023\u003DzxGz2_8k\u003D;
+            }
+                
+            this._xAxisType = dkfA7SK9Zsjh7b7evY._someChartAxisType;
             List<ChartAxis> chartAxisList = new List<ChartAxis>();
             foreach ( IChartAxis xaxise in ( IEnumerable<IChartAxis> ) this.XAxises )
             {
@@ -248,10 +269,10 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         {
             ChartArea.AxisNotifyList.SomeClass34343 zPKCmcad6Nxc5A8A = new ChartArea.AxisNotifyList.SomeClass34343();
             zPKCmcad6Nxc5A8A._someChartElement = axis;
-            
+
 
             string str = this.GetIsX() ? "X" : "Y";
-            
+
             int yCount;
 
             if ( !this.GetIsX() )
@@ -337,21 +358,21 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
 
         [Serializable]
         private sealed class SomeShittyClass33434
-    {
-      public static readonly ChartArea.AxisNotifyList.SomeShittyClass33434 _someMemberOfShittyClass = new ChartArea.AxisNotifyList.SomeShittyClass33434();
-      public static Action<IChartAxis> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
+        {
+            public static readonly ChartArea.AxisNotifyList.SomeShittyClass33434 _someMemberOfShittyClass = new ChartArea.AxisNotifyList.SomeShittyClass33434();
+            public static Action<IChartAxis> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
       internal void \u0023\u003DzE70qt2sPjBBv095jMVMFSaY\u003D(IChartAxis _param1)
       {
         ((ChartAxis) _param1).ChartArea = (IChartArea) null;
       }
+    }
+
+
 }
 
 
-  }
-    
-
-    private sealed class ChartElementNotifyList( ChartArea area ) : ChartArea.PropertiesNotifyList<IChartElement>
+private sealed class ChartElementNotifyList( ChartArea area ) : ChartArea.PropertiesNotifyList<IChartElement>
 {
 
     private readonly ChartArea _area = area ?? throw new ArgumentNullException("area");
@@ -391,101 +412,101 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
   
 
   public ChartArea()
-{
-    this._chartElementNotifyList; = ( INotifyList<IChartElement> ) new ChartArea.ChartElementNotifyList( this );
-    this._xAxisNotifyList = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, true );
-    this._yAxisNotifyList = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, false );
-    this.InitAxises();
-    this._chartSurfaceVM = new ScichartSurfaceMVVM( this );
-    this.Height = 100.0;
-    this.ViewModel.PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
-}
+    {
+        this._chartElementNotifyList; = ( INotifyList<IChartElement> ) new ChartArea.ChartElementNotifyList( this );
+        this._xAxisNotifyList = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, true );
+        this._yAxisNotifyList = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, false );
+        this.InitAxises();
+        this._chartSurfaceVM = new ScichartSurfaceMVVM( this );
+        this.Height = 100.0;
+        this.ViewModel.PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
+    }
 
-internal ScichartSurfaceMVVM ViewModel
-{
+    internal ScichartSurfaceMVVM ViewModel
+    {
     return this._chartSurfaceVM;
-}
-
-private void InitAxises()
-{
-    if ( !( ( IEnumerable<IChartAxis> ) this.XAxises ).Any<IChartAxis>( ChartArea.SomeShittyClass33434.method01 ?? ( ChartArea.SomeShittyClass33434.method01 = new Func<IChartAxis, bool>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D) ) ))
-      ( ( ICollection<IChartAxis> ) this.XAxises ).Add( ( IChartAxis ) new ChartAxis()
-      {
-          Id = "X",
-          AutoRange = false,
-          AxisType = ChartAxisType.CategoryDateTime
-      } );
-    if ( ( ( IEnumerable<IChartAxis> ) this.YAxises ).Any<IChartAxis>( ChartArea.SomeShittyClass33434.method02 ?? ( ChartArea.SomeShittyClass33434.method02 = new Func<IChartAxis, bool>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D) ) ))
-      return;
-    ( ( ICollection<IChartAxis> ) this.YAxises ).Add( ( IChartAxis ) new ChartAxis()
-    {
-        Id = "Y",
-        AxisType = ChartAxisType.Numeric
-    } );
-}
-
-[Browsable( false )]
-
-
-
-
-[Display( ResourceType = typeof( LocalizedStrings ), Name = "Name", Description = "ChartAreaName", GroupName = "Common", Order = 0 )]
-public string Title
-{
-    get => this._title;
-    set
-    {
-        this._title = value;
-        this.RaisePropertyChanged( nameof( Title ) );
     }
-}
 
-[Display( ResourceType = typeof( LocalizedStrings ), Name = "GroupId", Description = "ChartPaneGroupDescription", GroupName = "Common", Order = 1 )]
-public string GroupId
-{
-    get => this._groupId;
-    set => this._groupId = value;
-}
-
-[Browsable( false )]
-public double Height
-{
-    get => this._height;
-    set
+    private void InitAxises()
     {
-        if ( Math.Abs( this._height - value ) < double.Epsilon )
+        if ( !( ( IEnumerable<IChartAxis> ) this.XAxises ).Any<IChartAxis>( ChartArea.SomeShittyClass33434.method01 ?? ( ChartArea.SomeShittyClass33434.method01 = new Func<IChartAxis, bool>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D) ) ) )
+            ( ( ICollection<IChartAxis> ) this.XAxises ).Add( ( IChartAxis ) new ChartAxis()
+            {
+                Id = "X",
+                AutoRange = false,
+                AxisType = ChartAxisType.CategoryDateTime
+            } );
+        if ( ( ( IEnumerable<IChartAxis> ) this.YAxises ).Any<IChartAxis>( ChartArea.SomeShittyClass33434.method02 ?? ( ChartArea.SomeShittyClass33434.method02 = new Func<IChartAxis, bool>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D) ) ) )
             return;
-        this._height = value;
-        this.RaisePropertyChanged( nameof( Height ) );
+        ( ( ICollection<IChartAxis> ) this.YAxises ).Add( ( IChartAxis ) new ChartAxis()
+        {
+            Id = "Y",
+            AxisType = ChartAxisType.Numeric
+        } );
     }
-}
+
+    [Browsable( false )]
+
+
+
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Name", Description = "ChartAreaName", GroupName = "Common", Order = 0 )]
+    public string Title
+    {
+        get => this._title;
+        set
+        {
+            this._title = value;
+            this.RaisePropertyChanged( nameof( Title ) );
+        }
+    }
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "GroupId", Description = "ChartPaneGroupDescription", GroupName = "Common", Order = 1 )]
+    public string GroupId
+    {
+        get => this._groupId;
+        set => this._groupId = value;
+    }
+
+    [Browsable( false )]
+    public double Height
+    {
+        get => this._height;
+        set
+        {
+            if ( Math.Abs( this._height - value ) < double.Epsilon )
+                return;
+            this._height = value;
+            this.RaisePropertyChanged( nameof( Height ) );
+        }
+    }
 
 
 
 
 
-public override void Load( SettingsStorage storage )
-{
-    ( ( ICollection<IChartElement> ) this.Elements ).Clear();
-    base.Load( storage );
-    this.Title = storage.GetValue<string>( "Title", ( string ) null );
-    this.Height = storage.GetValue<double>( "Height", 0.0 );
-    this.XAxisType = storage.GetValue<ChartAxisType>( "XAxisType", this.XAxisType );
-    this.GroupId = storage.GetValue<string>( "GroupId", this.GroupId );
-    ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, "XAxises", ( ICollection<IChartAxis> ) this.XAxises);
-    ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, "YAxises", (ICollection<IChartAxis>) this.YAxises);
-  }
+    public override void Load( SettingsStorage storage )
+    {
+        ( ( ICollection<IChartElement> ) this.Elements ).Clear();
+        base.Load( storage );
+        this.Title = storage.GetValue<string>( "Title", ( string ) null );
+        this.Height = storage.GetValue<double>( "Height", 0.0 );
+        this.XAxisType = storage.GetValue<ChartAxisType>( "XAxisType", this.XAxisType );
+        this.GroupId = storage.GetValue<string>( "GroupId", this.GroupId );
+        ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, "XAxises", ( ICollection<IChartAxis> ) this.XAxises);
+        ChartArea.\u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(storage, "YAxises", ( ICollection<IChartAxis> ) this.YAxises);
+    }
 
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<string>("Title", this.Title);
-    storage.SetValue<double>("Height", this.Height);
-    storage.SetValue<ChartAxisType>("XAxisType", this.XAxisType);
-    storage.SetValue<string>("GroupId", this.GroupId);
-    storage.SetValue<SettingsStorage[]>("XAxises", ((IEnumerable<IChartAxis>) this.XAxises).Select<IChartAxis, SettingsStorage>(ChartArea.SomeShittyClass33434.Method04 ?? (ChartArea.SomeShittyClass33434.Method04 = new Func<IChartAxis, SettingsStorage>(ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzxv2ll83UBK_RmlktVQ\u003D\u003D))).ToArray<SettingsStorage>());
-    storage.SetValue<SettingsStorage[]>("YAxises", ((IEnumerable<IChartAxis>) this.YAxises).Select<IChartAxis, SettingsStorage>(ChartArea.SomeShittyClass33434.Method05 ?? (ChartArea.SomeShittyClass33434.Method05 = new Func<IChartAxis, SettingsStorage>(ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzx2FJ4suusAb7GDyK1w\u003D\u003D))).ToArray<SettingsStorage>());
-  }
+    public override void Save( SettingsStorage storage )
+    {
+        base.Save( storage );
+        storage.SetValue<string>( "Title", this.Title );
+        storage.SetValue<double>( "Height", this.Height );
+        storage.SetValue<ChartAxisType>( "XAxisType", this.XAxisType );
+        storage.SetValue<string>( "GroupId", this.GroupId );
+        storage.SetValue<SettingsStorage[ ]>( "XAxises", ( ( IEnumerable<IChartAxis> ) this.XAxises ).Select<IChartAxis, SettingsStorage>( ChartArea.SomeShittyClass33434.Method04 ?? ( ChartArea.SomeShittyClass33434.Method04 = new Func<IChartAxis, SettingsStorage>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzxv2ll83UBK_RmlktVQ\u003D\u003D) ) ).ToArray<SettingsStorage>() );
+        storage.SetValue<SettingsStorage[ ]>( "YAxises", ( ( IEnumerable<IChartAxis> ) this.YAxises ).Select<IChartAxis, SettingsStorage>( ChartArea.SomeShittyClass33434.Method05 ?? ( ChartArea.SomeShittyClass33434.Method05 = new Func<IChartAxis, SettingsStorage>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzx2FJ4suusAb7GDyK1w\u003D\u003D) ) ).ToArray<SettingsStorage>() );
+    }
 
   private static void \u0023\u003Dz4w\u0024DGYrkGMNXjRkcgg\u003D\u003D(
     SettingsStorage _param0,
@@ -500,42 +521,42 @@ public override void Load( SettingsStorage storage )
   }
 
   public virtual ChartArea Clone()
-  {
+{
     ChartArea chartArea = this.Clone(new ChartArea()
     {
-      Title = this.Title,
-      Height = this.Height,
-      XAxisType = this.XAxisType
+        Title = this.Title,
+        Height = this.Height,
+        XAxisType = this.XAxisType
     });
-    CollectionHelper.AddRange<IChartElement>((ICollection<IChartElement>) chartArea.Elements, ((IEnumerable<IChartElement>) this.Elements).Select<IChartElement, IChartElement>(ChartArea.SomeShittyClass33434.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (ChartArea.SomeShittyClass33434.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<IChartElement, IChartElement>(ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzLhPQ\u0024JfQhEkyu0vUWg\u003D\u003D))));
-    ((ICollection<IChartAxis>) chartArea.XAxises).Clear();
-    CollectionHelper.AddRange<IChartAxis>((ICollection<IChartAxis>) chartArea.XAxises, ((IEnumerable<IChartAxis>) this.XAxises).Select<IChartAxis, IChartAxis>(ChartArea.SomeShittyClass33434.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (ChartArea.SomeShittyClass33434.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<IChartAxis, IChartAxis>(ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzGeF_1AAuPyWwDbL_iA\u003D\u003D))));
-    ((ICollection<IChartAxis>) chartArea.YAxises).Clear();
-    CollectionHelper.AddRange<IChartAxis>((ICollection<IChartAxis>) chartArea.YAxises, ((IEnumerable<IChartAxis>) this.YAxises).Select<IChartAxis, IChartAxis>(ChartArea.SomeShittyClass33434.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (ChartArea.SomeShittyClass33434.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IChartAxis, IChartAxis>(ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzf4yIUkrz2a0As47tiA\u003D\u003D))));
+    CollectionHelper.AddRange<IChartElement>( ( ICollection<IChartElement> ) chartArea.Elements, ( ( IEnumerable<IChartElement> ) this.Elements ).Select<IChartElement, IChartElement>( ChartArea.SomeShittyClass33434.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? ( ChartArea.SomeShittyClass33434.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<IChartElement, IChartElement>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzLhPQ\u0024JfQhEkyu0vUWg\u003D\u003D) ) ));
+    ( ( ICollection<IChartAxis> ) chartArea.XAxises ).Clear();
+    CollectionHelper.AddRange<IChartAxis>( ( ICollection<IChartAxis> ) chartArea.XAxises, ( ( IEnumerable<IChartAxis> ) this.XAxises ).Select<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? ( ChartArea.SomeShittyClass33434.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzGeF_1AAuPyWwDbL_iA\u003D\u003D) ) ));
+    ( ( ICollection<IChartAxis> ) chartArea.YAxises ).Clear();
+    CollectionHelper.AddRange<IChartAxis>( ( ICollection<IChartAxis> ) chartArea.YAxises, ( ( IEnumerable<IChartAxis> ) this.YAxises ).Select<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? ( ChartArea.SomeShittyClass33434.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzf4yIUkrz2a0As47tiA\u003D\u003D) ) ));
     return chartArea;
-  }
+}
 
-  public virtual string ToString() => this.Title;
+public virtual string ToString() => this.Title;
 
-  public void Dispose()
-  {
+public void Dispose()
+{
     this.ViewModel.Dispose();
-    GC.SuppressFinalize((object) false);
-  }
+    GC.SuppressFinalize( ( object ) false );
+}
 
-  private void \u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D(
+private void \u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D(
     #nullable enable
     object? _param1,
     PropertyChangedEventArgs isX)
   {
     if (!(isX.PropertyName == "PaneGroupSuffix"))
       return;
-    this.RaisePropertyChanged("GroupId");
+this.RaisePropertyChanged( "GroupId" );
   }
 
   [Serializable]
-  private sealed class SomeShittyClass33434
-  {
+private sealed class SomeShittyClass33434
+{
     public static readonly 
     #nullable disable
     ChartArea.SomeShittyClass33434 _someMemberOfShittyClass = new ChartArea.SomeShittyClass33434();
@@ -554,7 +575,7 @@ public override void Load( SettingsStorage storage )
       return _param1.Id == "X";
     }
 
-    internal bool \u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D(IChartAxis _param1)
+internal bool \u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D(IChartAxis _param1)
     {
       return _param1.Id == "Y";
     }
@@ -599,22 +620,7 @@ public override void Load( SettingsStorage storage )
 
   
 
-  private sealed class DictionaryStruct03894
-  {
-    public ChartAxisType \u0023\u003DzxGz2_8k\u003D;
-    public ChartArea _variableSome3535;
-
-    internal bool \u0023\u003Dz6AGy\u0024GSay7_DCrT8g6JJYhI\u003D(
-      IChartComponent _param1)
-    {
-      return !_param1.CheckAxesCompatible(new ChartAxisType?(this.\u0023\u003DzxGz2_8k\u003D), new ChartAxisType?());
-    }
-
-    internal bool \u0023\u003DzCaHczB6Zuyll\u0024N6TY3bDRZc\u003D(IChartArea _param1)
-    {
-      return _param1 != this._variableSome3535 && _param1.XAxisType != this.\u0023\u003DzxGz2_8k\u003D;
-    }
-  }
+  
 
   
 

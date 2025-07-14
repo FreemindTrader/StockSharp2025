@@ -3,9 +3,16 @@ using StockSharp.Xaml.Charting;
 using System;
 using System.Linq;
 
-internal sealed class ChartAnnotationVM : ChartCompentWpfBaseViewModel< ChartAnnotation >
+
+/// <summary>
+/// 
+/// NOT DONE YET
+/// 
+/// </summary>
+
+internal sealed class ChartAnnotationViewModel : ChartCompentWpfBaseViewModel< ChartAnnotation >
 {
-    public ChartAnnotationVM( ChartAnnotation annotation ) : base( annotation )
+    public ChartAnnotationViewModel( ChartAnnotation annotation ) : base( annotation )
     {
     }
 

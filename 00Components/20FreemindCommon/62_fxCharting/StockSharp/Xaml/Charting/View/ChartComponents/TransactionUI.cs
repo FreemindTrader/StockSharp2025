@@ -11,7 +11,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public abstract class TransactionUI< T > : ChartComponent< T >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public abstract class TransactionUI< T > : ChartComponentView< T >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
         where T : TransactionUI< T >, new()
     {
         private string _title;

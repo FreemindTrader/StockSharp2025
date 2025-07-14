@@ -31,7 +31,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class CandlestickUI(
   ChartCandleElement _param1) : 
-  ChartCompentView<ChartCandleElement>(_param1),
+  ChartCompentWpfBaseViewModel<ChartCandleElement>(_param1),
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
 {
   
@@ -116,7 +116,7 @@ internal sealed class CandlestickUI(
     this.ChartViewModel.AddChild(this.\u0023\u003DzdaM3_c5kMuSK = new ChartElementViewModel("Line", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(this.\u0023\u003DqTIcmF95twR2vB7L3I\u0024trXELaSG5nNQSTgo5LhClfL2U\u003D), strArray));
     this.ChartViewModel.AddChild(this.\u0023\u003DzWbY5DVo2YLuB = new ChartElementViewModel("Vol", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dzu0cWRPhAEXPa2F76HfbtuFw\u003D)), strArray));
     this.\u0023\u003Dzk_r\u0024wtNtUKwJ();
-    ChartCompentView<ChartCandleElement>.AddStylePropertyChanging<ChartCandleDrawStyles>((IChartComponent) this.ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
+    ChartCompentWpfBaseViewModel<ChartCandleElement>.AddStylePropertyChanging<ChartCandleDrawStyles>((IChartComponent) this.ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
     {
       ChartCandleDrawStyles.CandleStick,
       ChartCandleDrawStyles.Ohlc,

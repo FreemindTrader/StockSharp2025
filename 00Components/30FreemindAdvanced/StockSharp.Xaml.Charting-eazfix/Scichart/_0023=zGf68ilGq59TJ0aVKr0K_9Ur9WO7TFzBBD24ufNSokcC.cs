@@ -16,7 +16,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(
   CandlePatternElement _param1) : 
-  ChartCompentView<CandlePatternElement>(_param1)
+  ChartCompentWpfBaseViewModel<CandlePatternElement>(_param1)
 {
   
   private readonly HashSet<DateTime> \u0023\u003DzcU\u0024Li0iEvziI = new HashSet<DateTime>();

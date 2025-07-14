@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>The chart element representing active orders.</summary>
 
 [Display( ResourceType = typeof( LocalizedStrings ), Name = "ActiveOrders" )]
-public class ChartActiveOrdersElement : ChartComponent<ChartActiveOrdersElement>, 
+public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElement>, 
                                         IChartElement, 
                                         IChartPart<IChartElement>, 
                                         INotifyPropertyChanged, 

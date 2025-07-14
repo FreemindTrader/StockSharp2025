@@ -24,7 +24,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D> : 
-  ChartCompentView<ChartBandElement>
+  ChartCompentWpfBaseViewModel<ChartBandElement>
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
   
@@ -68,8 +68,8 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
       DrawStyles.StepLine,
       DrawStyles.DashedLine
     };
-    ChartCompentView<ChartBandElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView.Line1, "Style", drawStylesArray);
-    ChartCompentView<ChartBandElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView.Line2, "Style", drawStylesArray);
+    ChartCompentWpfBaseViewModel<ChartBandElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView.Line1, "Style", drawStylesArray);
+    ChartCompentWpfBaseViewModel<ChartBandElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView.Line2, "Style", drawStylesArray);
     string[] strArray = new string[2]
     {
       "Color",
@@ -95,9 +95,9 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
 
   private void \u0023\u003DzJGn0U4ESy8cx()
   {
-    ChartCompentView<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzRm0WUjzJSu8n.RenderSeries, false);
-    ChartCompentView<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, true);
-    ChartCompentView<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, this.ChartComponentView.Style == DrawStyles.Band);
+    ChartCompentWpfBaseViewModel<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzRm0WUjzJSu8n.RenderSeries, false);
+    ChartCompentWpfBaseViewModel<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, true);
+    ChartCompentWpfBaseViewModel<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, this.ChartComponentView.Style == DrawStyles.Band);
   }
 
   private void \u0023\u003DzcIqdE4oVd9lsrOCnFSgflME\u003D()

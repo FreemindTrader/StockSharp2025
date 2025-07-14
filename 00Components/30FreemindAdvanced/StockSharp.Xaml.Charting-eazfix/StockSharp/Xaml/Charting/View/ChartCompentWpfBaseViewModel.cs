@@ -22,14 +22,14 @@ using System.Windows.Data;
 
 namespace StockSharp.Xaml.Charting;
 
-internal abstract class ChartCompentView<T> : DrawableChartElementBaseViewModel where T : ChartPart<T>, IDrawableChartElement
+internal abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartElementBaseViewModel where T : ChartPart<T>, IDrawableChartElement
 {
 
     private readonly HashSet<IChartComponent> _componentUIMap = new HashSet<IChartComponent>();
 
     private readonly T _drawableChartElement;
 
-    protected ChartCompentView( T _param1 )
+    protected ChartCompentWpfBaseViewModel( T _param1 )
     {
         _drawableChartElement = _param1 ?? throw new ArgumentNullException( "elem" );
         AddPropertyEvents( ChartComponentView );
@@ -87,7 +87,7 @@ internal abstract class ChartCompentView<T> : DrawableChartElementBaseViewModel 
 
     protected static void AddStylePropertyChanging<T>( IChartComponent _param0, string _param1, T[ ] _param2 )
     {
-        _param0.PropertyValueChanging += new Action<object, string, object>( new ChartCompentView<T>.SomeInternalSealClass0836<T>()
+        _param0.PropertyValueChanging += new Action<object, string, object>( new ChartCompentWpfBaseViewModel<T>.SomeInternalSealClass0836<T>()
         {
             _someString08353 = _param1,
             _someTArray = _param2
@@ -153,7 +153,7 @@ internal abstract class ChartCompentView<T> : DrawableChartElementBaseViewModel 
     [Serializable]
     private sealed class SomeInternalSealClass0835<T> where T : BaseRenderableSeries, new()
     {
-        public static readonly ChartCompentView<T>.SomeInternalSealClass0835<T> SomeMethond0343 = new ChartCompentView<T>.SomeInternalSealClass0835<T>();
+        public static readonly ChartCompentWpfBaseViewModel<T>.SomeInternalSealClass0835<T> SomeMethond0343 = new ChartCompentWpfBaseViewModel<T>.SomeInternalSealClass0835<T>();
         public static Func<ChartElementViewModel, bool> SomeIntenalMethod003D;
 
         internal bool SomeStuff034803(

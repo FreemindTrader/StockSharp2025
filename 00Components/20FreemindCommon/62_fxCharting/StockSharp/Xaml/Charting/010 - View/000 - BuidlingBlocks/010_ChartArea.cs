@@ -301,12 +301,12 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
         SaveChartElments<OrdersUI>(storage, "Orders");
     }
 
-    private void LoadChartElements<T>(SettingsStorage settings, string name) where T : ChartComponent<T>, new()
+    private void LoadChartElements<T>(SettingsStorage settings, string name) where T : ChartComponentView<T>, new()
     {
         Elements.AddRange(settings.GetValue<IEnumerable<SettingsStorage>>(name, null).Select(s => s.Load<T>()));
     }
 
-    private void SaveChartElments<T>(SettingsStorage settings, string name) where T : ChartComponent<T>
+    private void SaveChartElments<T>(SettingsStorage settings, string name) where T : ChartComponentView<T>
     {
         settings.SetValue(name, Elements.OfType<T>().Select(s => s.Save()).ToArray());
     }

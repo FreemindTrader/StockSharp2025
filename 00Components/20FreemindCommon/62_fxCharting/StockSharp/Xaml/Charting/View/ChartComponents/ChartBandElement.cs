@@ -17,7 +17,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>The chart element representing a band.</summary>
-public sealed class ChartBandElement : ChartComponent<ChartBandElement>,
+public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
                                           IChartElement,
                                           IChartPart<IChartElement>,
                                           INotifyPropertyChanged,

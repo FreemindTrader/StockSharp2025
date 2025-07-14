@@ -13,7 +13,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>Annotation.</summary>
-public class ChartAnnotation : ChartComponent<ChartAnnotation>,
+public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
                                   IChartElement,
                                   IChartPart<IChartElement>,
                                   INotifyPropertyChanged,
@@ -26,7 +26,7 @@ public class ChartAnnotation : ChartComponent<ChartAnnotation>,
     
     private ChartAnnotationTypes _chartAnnotationTypes;
     
-    private ChartAnnotationVM _baseViewModel;
+    private ChartAnnotationViewModel _baseViewModel;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartAnnotation" />.
@@ -65,7 +65,7 @@ public class ChartAnnotation : ChartComponent<ChartAnnotation>,
     {
         if ( this.Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );
-        return ( DrawableChartComponentBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
+        return ( DrawableChartComponentBaseViewModel ) ( this._baseViewModel = new ChartAnnotationViewModel( this ) );
     }
 
     bool IDrawableChartElement.StartDrawing(

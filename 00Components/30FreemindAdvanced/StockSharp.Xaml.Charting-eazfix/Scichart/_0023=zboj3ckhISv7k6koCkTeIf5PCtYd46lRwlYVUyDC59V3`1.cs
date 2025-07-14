@@ -25,7 +25,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>(
   T _param1) : 
-  ChartCompentView<T>(_param1)
+  ChartCompentWpfBaseViewModel<T>(_param1)
   where T : ChartTransactionElement<T>, new()
 {
   

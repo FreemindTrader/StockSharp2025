@@ -9,11 +9,9 @@ using StockSharp.Xaml.Charting;
 using System;
 using System.Collections;
 using System.Linq;
-
+namespace StockSharp.Xaml.Charting;
 #nullable disable
-internal sealed class ChartAnnotationVM(
-  ChartAnnotation _param1) : 
-  ChartCompentView<ChartAnnotation>(_param1)
+internal sealed class ChartAnnotationViewModel( ChartAnnotation annotation) :  ChartCompentWpfBaseViewModel<ChartAnnotation>(annotation)
 {
   protected override void UpdateUi()
   {
@@ -26,7 +24,7 @@ internal sealed class ChartAnnotationVM(
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(new ChartAnnotationVM.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D()
+    this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(new ChartAnnotationViewModel.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D()
     {
       _variableSome3535 = this,
       \u0023\u003Dzor6OKKQ\u003D = _param1
@@ -36,7 +34,7 @@ internal sealed class ChartAnnotationVM(
 
   private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
   {
-    public ChartAnnotationVM _variableSome3535;
+    public ChartAnnotationViewModel _variableSome3535;
     public IEnumerableEx<ChartDrawData.IDrawValue> \u0023\u003Dzor6OKKQ\u003D;
 
     internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D()

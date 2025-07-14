@@ -28,7 +28,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(
   ChartActiveOrdersElement _param1) : 
-  ChartCompentView<ChartActiveOrdersElement>(_param1)
+  ChartCompentWpfBaseViewModel<ChartActiveOrdersElement>(_param1)
 {
   
   private readonly PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> \u0023\u003DzS1WBvIHjLsHj = new PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>();
