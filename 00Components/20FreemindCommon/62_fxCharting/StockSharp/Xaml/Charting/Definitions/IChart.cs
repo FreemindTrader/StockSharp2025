@@ -50,9 +50,9 @@ namespace StockSharp.Xaml.Charting
 
         void InvokeAnnotationCreatedEvent ( ChartAnnotation annotation );
 
-        void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData );
+        void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.AnnotationData aData );
 
-        void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData );
+        void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.AnnotationData aData );
 
         void InvokeAnnotationDeletedEvent ( ChartAnnotation annotation );
     }

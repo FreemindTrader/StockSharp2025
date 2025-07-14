@@ -59,7 +59,7 @@ public static class ChartHelper
     private static readonly IndicatorType[ ] _customIndicators = Array.Empty<IndicatorType>();
     private static IndicatorType[ ] _indicatorTypes;
 
-    public static void Draw(this IChart chart, ChartCandleElement element, Candle candle)
+    public static void Draw(this IChart chart, IChartCandleElement element, Candle candle)
     {
         if(element == null)
         {

@@ -317,7 +317,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfBaseViewModel< Ch
         
         foreach( var lineValue in drawValues )
         {
-            T x = ( T )( ValueType )lineValue.GetProperty( );
+            T x = ( T )( ValueType )lineValue.Property( );
             switch( x.CompareTo( lastLine ) )
             {
                 case -1:

@@ -475,14 +475,15 @@ namespace StockSharp.Xaml.Charting
 
         protected override bool OnDraw( ChartDrawData data )
         {
-            var drawValues = data.GetLineDrawValues( this );
+            throw new NotImplementedException();
+            //var drawValues = data.GetLineDrawValues( this );
 
-            if ( drawValues != null && !drawValues.IsEmpty( ) )
-            {
-                return ( ( IDrawableChartElement )this ).StartDrawing( drawValues );
-            }
+            //if ( drawValues != null && !drawValues.IsEmpty( ) )
+            //{
+            //    return ( ( IDrawableChartElement )this ).StartDrawing( drawValues );
+            //}
 
-            return false;
+            //return false;
         }
 
         public override void Load( SettingsStorage storage )

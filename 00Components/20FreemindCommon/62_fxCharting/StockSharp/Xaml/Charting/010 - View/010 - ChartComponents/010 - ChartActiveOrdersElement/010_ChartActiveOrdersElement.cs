@@ -268,7 +268,7 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
 
     protected override bool OnDraw( ChartDrawData data )
     {
-        var source = data.GetActiveOrders( this );
+        var source = data.GetActiveOrderMap( );
         return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sActiveOrder>( ( ICollection<ChartDrawData.sActiveOrder> ) source ) && ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source.Cast<ChartDrawData.IDrawValue>(), source.Count ) );
     }
 

@@ -71,31 +71,32 @@ public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable
 
     public virtual bool Draw(ChartDrawData data)
     {
-        if(!IsAttached)
-        {
-            return false;
-        }
+        throw new NotImplementedException();
+        //if(!IsAttached)
+        //{
+        //    return false;
+        //}
 
-        var indicatorDataList = data.GetIndicator(Element);
+        //var indicatorDataList = data.GetIndicator(Element);
 
-        if(indicatorDataList != null && !indicatorDataList.IsEmpty())
-        {
-            _indicatorPainter.Reset(false);
+        //if(indicatorDataList != null && !indicatorDataList.IsEmpty())
+        //{
+        //    _indicatorPainter.Reset(false);
 
-            foreach(var indicatorData in indicatorDataList)
-            {
-                _indicatorPainter.UpdateIndicator(indicatorData.Value, indicatorData.Time);
-            }
+        //    foreach(var indicatorData in indicatorDataList)
+        //    {
+        //        _indicatorPainter.UpdateIndicator(indicatorData.Value, indicatorData.Time);
+        //    }
 
-            if(_indicatorPainter.GetCount() > 0)
-            {
-                return OnDraw();
-            }
+        //    if(_indicatorPainter.GetCount() > 0)
+        //    {
+        //        return OnDraw();
+        //    }
 
-            return false;
-        }
-        ChildElementsStartDrawing();
-        return false;
+        //    return false;
+        //}
+        //ChildElementsStartDrawing();
+        //return false;
     }
 
     public virtual void Reset()

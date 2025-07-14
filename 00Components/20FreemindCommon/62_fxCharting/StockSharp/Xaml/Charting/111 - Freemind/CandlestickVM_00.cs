@@ -56,7 +56,7 @@ namespace StockSharp.Xaml.Charting
         }
     }
 
-    public class NullBar
+    internal class NullBar
     {
         public DateTime BarTime { get; set; }    // Open (the first price) of the time period        
         public TimeSpan Period { get; set; }    // Open (the first price) of the time period        
@@ -700,7 +700,7 @@ namespace StockSharp.Xaml.Charting
             double[ ] closeArray                   = new double[ count ];
             IPointMetadata[] advancedTAInfo        = new IPointMetadata[ count ];
 
-            foreach ( ChartDrawData.sCandle bar in candles )
+            foreach ( var bar in candles )
             {
                 SetPnfBoxSize( bar.CandleArg( ) );
 

@@ -268,12 +268,12 @@ namespace StockSharp.Xaml.Charting
             throw new NotImplementedException( );
         }
 
-        public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
+        public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.AnnotationData aData )
         {
             throw new NotImplementedException( );
         }
 
-        public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
+        public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.AnnotationData aData )
         {
             throw new NotImplementedException( );
         }

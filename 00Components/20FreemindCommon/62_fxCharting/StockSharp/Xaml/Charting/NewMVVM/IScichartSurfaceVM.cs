@@ -39,7 +39,7 @@ namespace StockSharp.Xaml.Charting
 
         void AddRenderableSeriesToChartSurface( IChartComponent elementXY, IRenderableSeries renderableSeries );
 
-        void SetupAnnotation( IChartElement annotation, ChartDrawData.sAnnotation data );
+        void SetupAnnotation( IChartElement annotation, ChartDrawData.AnnotationData data );
 
         void Remove( IChartComponent elementXY );
 

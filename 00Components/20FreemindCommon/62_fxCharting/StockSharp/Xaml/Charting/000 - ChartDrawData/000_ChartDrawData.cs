@@ -4,6 +4,7 @@ using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
 using Ecng.Xaml;
+using fx.Bars;
 using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using StockSharp.Charting;
@@ -20,7 +21,7 @@ using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>Chart drawing data.</summary>
-public partial class ChartDrawDataEx : IChartDrawData
+public partial class ChartDrawData : IChartDrawData
 {
     /// <summary>Interface which represents all chart draw data types.</summary>
     /// <summary>Indicator values to draw on chart.</summary>
@@ -29,54 +30,54 @@ public partial class ChartDrawDataEx : IChartDrawData
     {
     }
 
-    private Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandle>> GetCandleMap()
+    private Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>> GetCandleMap()
     {
-        return _candleMap ?? ( _candleMap = new Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandle>>() );
+        return _candleMap ?? ( _candleMap = new Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>>() );
     }
 
-    private Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>> GetCandleColorMap()
+    private Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> GetCandleColorMap()
     {
-        return _candleColorMap ?? ( _candleColorMap = new Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>>() );
+        return _candleColorMap ?? ( _candleColorMap = new Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>>() );
     }
 
-    private Dictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>> GetIndicatorMap()
+    private Dictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>> GetIndicatorMap()
     {
-        return _indicatorMap ?? ( _indicatorMap = new Dictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>>() );
+        return _indicatorMap ?? ( _indicatorMap = new Dictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>>() );
     }
 
-    private Dictionary<IChartOrderElement, List<ChartDrawDataEx.sTrade>> GetOrderMap()
+    private Dictionary<IChartOrderElement, List<ChartDrawData.sTrade>> GetOrderMap()
     {
-        return _orderMap ?? ( _orderMap = new Dictionary<IChartOrderElement, List<ChartDrawDataEx.sTrade>>() );
+        return _orderMap ?? ( _orderMap = new Dictionary<IChartOrderElement, List<ChartDrawData.sTrade>>() );
     }
 
-    private Dictionary<IChartTradeElement, List<ChartDrawDataEx.sTrade>> GetTradeMap()
+    private Dictionary<IChartTradeElement, List<ChartDrawData.sTrade>> GetTradeMap()
     {
-        return _tradeMap ?? ( _tradeMap = new Dictionary<IChartTradeElement, List<ChartDrawDataEx.sTrade>>() );
+        return _tradeMap ?? ( _tradeMap = new Dictionary<IChartTradeElement, List<ChartDrawData.sTrade>>() );
     }
 
-    private Dictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>> GetActiveOrderMap()
+    internal Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> GetActiveOrderMap()
     {
-        return _activeOrdersMap ?? ( _activeOrdersMap = new Dictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>>() );
+        return _activeOrdersMap ?? ( _activeOrdersMap = new Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>() );
     }
 
-    private Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<DateTime>>> GetLineTimeMap()
+    private Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<DateTime>>> GetLineTimeMap()
     {
-        return _lineTimeMap ?? ( _lineTimeMap = new Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<DateTime>>>() );
+        return _lineTimeMap ?? ( _lineTimeMap = new Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<DateTime>>>() );
     }
 
-    private Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<double>>> GetLineValueMap()
+    private Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<double>>> GetLineValueMap()
     {
-        return _lineValueMap ?? ( _lineValueMap = new Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<double>>>() );
+        return _lineValueMap ?? ( _lineValueMap = new Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<double>>>() );
     }
 
-    private Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<DateTime>>> GetBandTimeMap()
+    private Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<DateTime>>> GetBandTimeMap()
     {
-        return _bandTimeMap ?? ( _bandTimeMap = new Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<DateTime>>>() );
+        return _bandTimeMap ?? ( _bandTimeMap = new Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<DateTime>>>() );
     }
 
-    private Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<double>>> GetBandValueMap()
+    private Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<double>>> GetBandValueMap()
     {
-        return _bandValueMap ?? ( _bandValueMap = new Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<double>>>() );
+        return _bandValueMap ?? ( _bandValueMap = new Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<double>>>() );
     }
 
     private Dictionary<IChartAnnotationElement, IAnnotationData> GetAnnotationMap()
@@ -86,56 +87,56 @@ public partial class ChartDrawDataEx : IChartDrawData
 
 
 
-    internal readonly struct sCandle : ChartDrawDataEx.IDrawValue
-    {
-        private readonly DateTime _utcTime;
-        private readonly DataType _candleArg;
-        private readonly double _openPrice;
-        private readonly double _highPrice;
+    //internal readonly struct sCandle : ChartDrawData.IDrawValue
+    //{
+    //    private readonly DateTime _utcTime;
+    //    private readonly DataType _candleArg;
+    //    private readonly double _openPrice;
+    //    private readonly double _highPrice;
 
-        private readonly double _lowPrice;
+    //    private readonly double _lowPrice;
 
-        private readonly double _closePrice;
+    //    private readonly double _closePrice;
 
-        private readonly CandlePriceLevel[] _candlePriceLevel;
+    //    private readonly CandlePriceLevel[] _candlePriceLevel;
 
-        public sCandle( DateTimeOffset _param1, DataType _param2, Decimal _param3, Decimal _param4, Decimal _param5, Decimal _param6, IEnumerable<CandlePriceLevel> _param7 )
-        {
-            _utcTime = _param1.UtcDateTime;
-            _candleArg = _param2 ?? throw new ArgumentNullException( "dataType" );
-            _openPrice = ( double ) _param3;
-            _highPrice = ( double ) _param4;
-            _lowPrice = ( double ) _param5;
-            _closePrice = ( double ) _param6;
-            _candlePriceLevel = _param7 != null ? _param7.ToArray<CandlePriceLevel>() : ( CandlePriceLevel[ ] ) null;
-        }
+    //    public sCandle( DateTimeOffset _param1, DataType _param2, Decimal _param3, Decimal _param4, Decimal _param5, Decimal _param6, IEnumerable<CandlePriceLevel> _param7 )
+    //    {
+    //        _utcTime = _param1.UtcDateTime;
+    //        _candleArg = _param2 ?? throw new ArgumentNullException( "dataType" );
+    //        _openPrice = ( double ) _param3;
+    //        _highPrice = ( double ) _param4;
+    //        _lowPrice = ( double ) _param5;
+    //        _closePrice = ( double ) _param6;
+    //        _candlePriceLevel = _param7 != null ? _param7.ToArray<CandlePriceLevel>() : ( CandlePriceLevel[ ] ) null;
+    //    }
 
-        public DateTime UtcTime()
-        {
-            return _utcTime;
-        }
+    //    public DateTime UtcTime()
+    //    {
+    //        return _utcTime;
+    //    }
 
-        public DataType CandleDataType() => _candleArg;
+    //    public DataType CandleDataType() => _candleArg;
 
-        public double OpenPrice() => _openPrice;
+    //    public double OpenPrice() => _openPrice;
 
-        public double HighPrice() => _highPrice;
+    //    public double HighPrice() => _highPrice;
 
-        public double LowPrice()
-        {
-            return _lowPrice;
-        }
+    //    public double LowPrice()
+    //    {
+    //        return _lowPrice;
+    //    }
 
-        public double Close => _closePrice;
+    //    public double Close => _closePrice;
 
-        public CandlePriceLevel[ ] CandlePriceLevel()
-        {
-            return _candlePriceLevel;
-        }
-    }
+    //    public CandlePriceLevel[ ] CandlePriceLevel()
+    //    {
+    //        return _candlePriceLevel;
+    //    }
+    //}
 
     internal readonly struct sCandleColor :
-    ChartDrawDataEx.IDrawValue
+    ChartDrawData.IDrawValue
     {
 
         private readonly DateTime _utcTime;
@@ -156,7 +157,7 @@ public partial class ChartDrawDataEx : IChartDrawData
         public System.Windows.Media.Color? Color => _candleColor;
     }
 
-    internal readonly struct sActiveOrder : ChartDrawDataEx.IDrawValue
+    internal readonly struct sActiveOrder : ChartDrawData.IDrawValue
     {
 
         private readonly Order _order;
@@ -232,7 +233,7 @@ public partial class ChartDrawDataEx : IChartDrawData
         public Decimal Price() => _price;
     }
 
-    public readonly struct IndicatorData : ChartDrawDataEx.IDrawValue
+    public readonly struct IndicatorData : ChartDrawData.IDrawValue
     {
 
         private readonly DateTime _utcTime;
@@ -260,7 +261,7 @@ public partial class ChartDrawDataEx : IChartDrawData
         public IIndicatorValue Value => _indicatorValue;
     }
 
-    internal sealed class sTrade : ChartDrawDataEx.IDrawValue
+    internal sealed class sTrade : ChartDrawData.IDrawValue
     {
 
         private string _transactionString;
@@ -296,6 +297,17 @@ public partial class ChartDrawDataEx : IChartDrawData
             return _utcTime;
         }
 
+        /// <summary>
+        /// Tony Added
+        /// </summary>
+        public long TradeId
+        {
+            get
+            {
+                return _transactionId;
+            }
+        }
+
         public string GetTransactionString()
         {
             return _transactionString ?? ( _transactionString = _transactionId.ToString() );
@@ -322,7 +334,7 @@ public partial class ChartDrawDataEx : IChartDrawData
         }
     }
 
-    public struct sxTuple<T> : ChartDrawDataEx.IDrawValue where T : struct, IComparable
+    public struct sxTuple<T> : ChartDrawData.IDrawValue where T : struct, IComparable
     {
 
         private readonly T _property;
@@ -376,32 +388,32 @@ public partial class ChartDrawDataEx : IChartDrawData
             _integerValue = _param1;
         }
 
-        public static ChartDrawDataEx.sxTuple<T> CreateSxTuple<TXOrig>( TXOrig _param0, double _param1, double _param2 ) where TXOrig : struct, IComparable
+        public static ChartDrawData.sxTuple<T> CreateSxTuple<TXOrig>( TXOrig _param0, double _param1, double _param2 ) where TXOrig : struct, IComparable
         {
             if ( ( ValueType ) _param0 is DateTimeOffset )
-                return new ChartDrawDataEx.sxTuple<T>( Converter.To<DateTimeOffset>( _param0 ).UtcDateTime, _param1, _param2 );
+                return new ChartDrawData.sxTuple<T>( Converter.To<DateTimeOffset>( _param0 ).UtcDateTime, _param1, _param2 );
             if ( ( ValueType ) _param0 is double )
-                return new ChartDrawDataEx.sxTuple<T>( Converter.To<double>( ( object ) _param0 ), _param1, _param2 );
+                return new ChartDrawData.sxTuple<T>( Converter.To<double>( ( object ) _param0 ), _param1, _param2 );
             throw new NotSupportedException( StringHelper.Put( LocalizedStrings.UnsupportedType, new object[ 1 ]
             {
                  typeof (TXOrig).Name
             } ) );
         }
 
-        public static ChartDrawDataEx.sxTuple<T> CreateSxTuple( T _param0 )
+        public static ChartDrawData.sxTuple<T> CreateSxTuple( T _param0 )
         {
-            return new ChartDrawDataEx.sxTuple<T>( _param0, double.NaN, double.NaN );
+            return new ChartDrawData.sxTuple<T>( _param0, double.NaN, double.NaN );
         }
 
-        public static ChartDrawDataEx.sxTuple<T> CreateSxTuple( T _param0, double _param1, double _param2, int _param3 )
+        public static ChartDrawData.sxTuple<T> CreateSxTuple( T _param0, double _param1, double _param2, int _param3 )
         {
-            ChartDrawDataEx.sxTuple<T> z6MdlWkBsH4 = new ChartDrawDataEx.sxTuple<T>(_param0, _param1, _param2);
+            ChartDrawData.sxTuple<T> z6MdlWkBsH4 = new ChartDrawData.sxTuple<T>(_param0, _param1, _param2);
             z6MdlWkBsH4.SetIntegerValue( _param3 );
             return z6MdlWkBsH4;
         }
     }
 
-    public class AnnotationData : ChartDrawDataEx.IDrawValue, IPersistable, IAnnotationData
+    public class AnnotationData : ChartDrawData.IDrawValue, IPersistable, IAnnotationData
     {
 
         private bool? _isVisible = new bool?(true);
@@ -632,9 +644,9 @@ public partial class ChartDrawDataEx : IChartDrawData
         {
             IsVisible = storage.GetValue<bool?>( "IsVisible", IsVisible );
             IsEditable = storage.GetValue<bool?>( "IsEditable", IsEditable );
-            X1 = ChartDrawDataEx.AnnotationData.ConvertToUTC( storage.GetValue<IComparable>( "X1", X1 ) );
+            X1 = ChartDrawData.AnnotationData.ConvertToUTC( storage.GetValue<IComparable>( "X1", X1 ) );
             Y1 = storage.GetValue<IComparable>( "Y1", Y1 );
-            X2 = ChartDrawDataEx.AnnotationData.ConvertToUTC( storage.GetValue<IComparable>( ".X2", X2 ) );
+            X2 = ChartDrawData.AnnotationData.ConvertToUTC( storage.GetValue<IComparable>( ".X2", X2 ) );
             Y2 = storage.GetValue<IComparable>( "Y2", Y2 );
             SettingsStorage settingsStorage1 = storage.GetValue<SettingsStorage>("Stroke", (SettingsStorage)null);
             Stroke = settingsStorage1 != null ? settingsStorage1.GetBrush() : ( System.Windows.Media.Brush ) null;
@@ -666,9 +678,9 @@ public partial class ChartDrawDataEx : IChartDrawData
         {
             storage.SetValue<bool?>( "IsVisible", IsVisible );
             storage.SetValue<bool?>( "IsEditable", IsEditable );
-            storage.SetValue<IComparable>( "X1", ChartDrawDataEx.AnnotationData.ConvertToUniversalTime( X1 ) );
+            storage.SetValue<IComparable>( "X1", ChartDrawData.AnnotationData.ConvertToUniversalTime( X1 ) );
             storage.SetValue<IComparable>( "Y1", Y1 );
-            storage.SetValue<IComparable>( "X2", ChartDrawDataEx.AnnotationData.ConvertToUniversalTime( X2 ) );
+            storage.SetValue<IComparable>( "X2", ChartDrawData.AnnotationData.ConvertToUniversalTime( X2 ) );
             storage.SetValue<IComparable>( "Y2", Y2 );
             SettingsStorage settingsStorage1 = storage;
 
@@ -699,36 +711,36 @@ public partial class ChartDrawDataEx : IChartDrawData
         }
     }
 
-    private Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandle>> _candleMap;
+    private Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>> _candleMap;
 
-    private Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>> _candleColorMap;
+    private Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> _candleColorMap;
 
-    private Dictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>> _indicatorMap;
+    private Dictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>> _indicatorMap;
 
-    private Dictionary<IChartOrderElement, List<ChartDrawDataEx.sTrade>> _orderMap;
+    private Dictionary<IChartOrderElement, List<ChartDrawData.sTrade>> _orderMap;
 
-    private Dictionary<IChartTradeElement, List<ChartDrawDataEx.sTrade>> _tradeMap;
+    private Dictionary<IChartTradeElement, List<ChartDrawData.sTrade>> _tradeMap;
 
-    private Dictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>> _activeOrdersMap;
+    private Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> _activeOrdersMap;
 
-    private Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<DateTime>>> _lineTimeMap;
+    private Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<DateTime>>> _lineTimeMap;
 
-    private Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<double>>> _lineValueMap;
+    private Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<double>>> _lineValueMap;
 
-    private Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<DateTime>>> _bandTimeMap;
+    private Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<DateTime>>> _bandTimeMap;
 
-    private Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<double>>> _bandValueMap;
+    private Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<double>>> _bandValueMap;
 
     private Dictionary<IChartAnnotationElement, IAnnotationData> _annotationMap;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawDataEx" />.
     /// </summary>
-    public ChartDrawDataEx()
+    public ChartDrawData()
     {
     }
 
-    internal ChartDrawDataEx( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> _param1 )
+    internal ChartDrawData( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> _param1 )
     {
         if ( _param1 == null )
             throw new ArgumentNullException( "" );
@@ -744,30 +756,30 @@ public partial class ChartDrawDataEx : IChartDrawData
                     case IChartCandleElement chartCandleElement:
                         if ( obj is ICandleMessage icandleMessage )
                         {
-                            CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawDataEx.sCandle>>( ( IDictionary<IChartCandleElement, List<ChartDrawDataEx.sCandle>> ) GetCandleMap(), chartCandleElement ).Add( new ChartDrawDataEx.sCandle( first, icandleMessage.DataType, icandleMessage.OpenPrice, icandleMessage.HighPrice, icandleMessage.LowPrice, icandleMessage.ClosePrice, icandleMessage.PriceLevels ) );
+                            CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawData.sCandle>>( ( IDictionary<IChartCandleElement, List<ChartDrawData.sCandle>> ) GetCandleMap(), chartCandleElement ).Add( new ChartDrawData.sCandle( first, icandleMessage.DataType, icandleMessage.OpenPrice, icandleMessage.HighPrice, icandleMessage.LowPrice, icandleMessage.ClosePrice, icandleMessage.PriceLevels ) );
                             continue;
                         }
                         if ( obj is System.Windows.Media.Color color )
                         {
-                            CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>>( ( IDictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>> ) GetCandleColorMap(), chartCandleElement ).Add( new ChartDrawDataEx.sCandleColor( first, new System.Windows.Media.Color?( color ) ) );
+                            CollectionHelper.SafeAdd<IChartCandleElement, List<ChartDrawData.sCandleColor>>( ( IDictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> ) GetCandleColorMap(), chartCandleElement ).Add( new ChartDrawData.sCandleColor( first, new System.Windows.Media.Color?( color ) ) );
                             continue;
                         }
                         continue;
                     case IChartIndicatorElement indicatorElement:
                         IIndicatorValue val = (IIndicatorValue)obj;
-                        CollectionHelper.SafeAdd<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>>( ( IDictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>> ) GetIndicatorMap(), indicatorElement ).Add( new ChartDrawDataEx.IndicatorData( first, val ) );
+                        CollectionHelper.SafeAdd<IChartIndicatorElement, List<ChartDrawData.IndicatorData>>( ( IDictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>> ) GetIndicatorMap(), indicatorElement ).Add( new ChartDrawData.IndicatorData( first, val ) );
                         continue;
                     case IChartOrderElement chartOrderElement:
                         Order order = (Order)obj;
-                        CollectionHelper.SafeAdd<IChartOrderElement, List<ChartDrawDataEx.sTrade>>( ( IDictionary<IChartOrderElement, List<ChartDrawDataEx.sTrade>> ) GetOrderMap(), chartOrderElement ).Add( new ChartDrawDataEx.sTrade( first, order.TransactionId, ( string ) null, order.Side, order.Price, order.Volume, order.State != OrderStates.Failed ? ( string ) null : LocalizedStrings.Failed, true ) );
+                        CollectionHelper.SafeAdd<IChartOrderElement, List<ChartDrawData.sTrade>>( ( IDictionary<IChartOrderElement, List<ChartDrawData.sTrade>> ) GetOrderMap(), chartOrderElement ).Add( new ChartDrawData.sTrade( first, order.TransactionId, ( string ) null, order.Side, order.Price, order.Volume, order.State != OrderStates.Failed ? ( string ) null : LocalizedStrings.Failed, true ) );
                         continue;
                     case IChartTradeElement chartTradeElement:
                         MyTrade myTrade = (MyTrade)obj;
                         var trade = myTrade.Trade;
-                        CollectionHelper.SafeAdd<IChartTradeElement, List<ChartDrawDataEx.sTrade>>( ( IDictionary<IChartTradeElement, List<ChartDrawDataEx.sTrade>> ) GetTradeMap(), chartTradeElement ).Add( new ChartDrawDataEx.sTrade( first, trade.Id.GetValueOrDefault(), trade.StringId, myTrade.Order.Side, trade.Price, trade.Volume, ( string ) null, false ) );
+                        CollectionHelper.SafeAdd<IChartTradeElement, List<ChartDrawData.sTrade>>( ( IDictionary<IChartTradeElement, List<ChartDrawData.sTrade>> ) GetTradeMap(), chartTradeElement ).Add( new ChartDrawData.sTrade( first, trade.Id.GetValueOrDefault(), trade.StringId, myTrade.Order.Side, trade.Price, trade.Volume, ( string ) null, false ) );
                         continue;
                     case IChartActiveOrdersElement activeOrdersElement:
-                        CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>>( ( IDictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>> ) GetActiveOrderMap(), activeOrdersElement ).Add( ( ChartDrawDataEx.sActiveOrder ) obj );
+                        CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>( ( IDictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> ) GetActiveOrderMap(), activeOrdersElement ).Add( ( ChartDrawData.sActiveOrder ) obj );
                         continue;
                     default:
                         throw new ArgumentException( StringHelper.Put( LocalizedStrings.UnknownType, new object[ 1 ]
@@ -782,20 +794,20 @@ public partial class ChartDrawDataEx : IChartDrawData
     public sealed class ChartDrawDataItem : IChartDrawData.IChartDrawDataItem
     {
 
-        private readonly ChartDrawDataEx _drawData;
+        private readonly ChartDrawData _drawData;
 
         private readonly DateTimeOffset _timeStamp;
 
         private readonly double _xValue;
 
-        internal ChartDrawDataItem( ChartDrawDataEx _param1, DateTimeOffset _param2 )
+        internal ChartDrawDataItem( ChartDrawData _param1, DateTimeOffset _param2 )
         {
             _drawData = _param1 ?? throw new ArgumentNullException( "" );
             _timeStamp = _param2;
             _xValue = double.NaN;
         }
 
-        internal ChartDrawDataItem( ChartDrawDataEx _param1, double _param2 )
+        internal ChartDrawDataItem( ChartDrawData _param1, double _param2 )
         {
             _drawData = _param1 ?? throw new ArgumentNullException( "" );
             _xValue = _param2;
@@ -818,37 +830,77 @@ public partial class ChartDrawDataEx : IChartDrawData
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartCandleElement element, System.Windows.Media.Color? color )
         {
-            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartCandleElement, ChartDrawDataEx.sCandleColor>( _drawData.GetCandleColorMap(), element, new ChartDrawDataEx.sCandleColor( TimeStamp, color ) );
+            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartCandleElement, ChartDrawData.sCandleColor>( _drawData.GetCandleColorMap(), element, new ChartDrawData.sCandleColor( TimeStamp, color ) );
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartCandleElement element, DataType dataType, SecurityId secId, Decimal openPrice, Decimal highPrice, Decimal lowPrice, Decimal closePrice, CandlePriceLevel[ ] priceLevels, CandleStates _ )
         {
-            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartCandleElement, ChartDrawDataEx.sCandle>( _drawData.GetCandleMap(), element, new ChartDrawDataEx.sCandle( TimeStamp, dataType, openPrice, highPrice, lowPrice, closePrice, ( IEnumerable<CandlePriceLevel> ) priceLevels ) );
+            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartCandleElement, ChartDrawData.sCandle>( _drawData.GetCandleMap(), element, new ChartDrawData.sCandle( TimeStamp, dataType, openPrice, highPrice, lowPrice, closePrice, ( IEnumerable<CandlePriceLevel> ) priceLevels ) );
+        }
+
+        /// <summary>Put candle color data.</summary>
+        /// <param name="element">The chart element representing a candle.</param>
+        /// <param name="color">Candle draw color.</param>
+        /// <returns>
+        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
+        public ChartDrawDataItem Add( IChartCandleElement candleUI, fxHistoricBarsRepo barList, uint barIndex )
+        {
+            _drawData.GetMyCandleMap().SafeAdd( candleUI ).Add( barList, barIndex );
+
+            return this;
+        }
+
+
+        /// <summary>Put the indicator data.</summary>
+        /// <param name="element">The chart element representing the indicator.</param>
+        /// <param name="value">The indicator value.</param>
+        /// <returns>
+        /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData.ChartDrawDataItem" /> instance.</returns>
+        public ChartDrawDataItem Add( IChartIndicatorElement indicatorUI, IIndicator indicator, IIndicatorValue value )
+        {
+            if ( value == null )
+                return this;
+
+            var indicatorMap = _drawData.GetMyIndicatorMap();
+
+            if ( indicatorMap.ContainsKey( indicatorUI ) )
+            {
+                var indicatorList = indicatorMap[ indicatorUI ];
+                indicatorList.SetIndicatorValue( TimeStamp, value );
+            }
+            else
+            {
+                throw new InvalidCastException();
+            }
+
+            //return Add<ChartIndicatorElement, sIndicator>( , element, new sIndicator( TimeStamp, value ) );
+
+            return this;
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartIndicatorElement element, IIndicatorValue value )
         {
-            return value == null ? this : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartIndicatorElement, ChartDrawDataEx.IndicatorData>( _drawData.GetIndicatorMap(), element, new ChartDrawDataEx.IndicatorData( TimeStamp, value ) );
+            return value == null ? this : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartIndicatorElement, ChartDrawData.IndicatorData>( _drawData.GetIndicatorMap(), element, new ChartDrawData.IndicatorData( TimeStamp, value ) );
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartOrderElement element, long orderId, string orderStringId, Sides side, Decimal price, Decimal volume, string errorMessage = null )
         {
-            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartOrderElement, ChartDrawDataEx.sTrade>( _drawData.GetOrderMap(), element, new ChartDrawDataEx.sTrade( TimeStamp, orderId, orderStringId, side, price, volume, errorMessage, true ) );
+            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartOrderElement, ChartDrawData.sTrade>( _drawData.GetOrderMap(), element, new ChartDrawData.sTrade( TimeStamp, orderId, orderStringId, side, price, volume, errorMessage, true ) );
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartTradeElement element, long tradeId, string tradeStringId, Sides side, Decimal price, Decimal volume )
         {
-            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartTradeElement, ChartDrawDataEx.sTrade>( _drawData.GetTradeMap(), element, new ChartDrawDataEx.sTrade( TimeStamp, tradeId, tradeStringId, side, price, volume, ( string ) null, false ) );
+            return ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartTradeElement, ChartDrawData.sTrade>( _drawData.GetTradeMap(), element, new ChartDrawData.sTrade( TimeStamp, tradeId, tradeStringId, side, price, volume, ( string ) null, false ) );
         }
 
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartLineElement element, double value1, double value2 = double.NaN )
         {
-            return !MathHelper.IsNaN( XValue ) ? ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartLineElement, ChartDrawDataEx.sxTuple<double>>( _drawData.GetLineValueMap(), element, ChartDrawDataEx.sxTuple<double>.CreateSxTuple<double>( XValue, value1, value2 ) ) : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartLineElement, ChartDrawDataEx.sxTuple<DateTime>>( _drawData.GetLineTimeMap(), element, ChartDrawDataEx.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>( TimeStamp, value1, value2 ) );
+            return !MathHelper.IsNaN( XValue ) ? ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartLineElement, ChartDrawData.sxTuple<double>>( _drawData.GetLineValueMap(), element, ChartDrawData.sxTuple<double>.CreateSxTuple<double>( XValue, value1, value2 ) ) : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartLineElement, ChartDrawData.sxTuple<DateTime>>( _drawData.GetLineTimeMap(), element, ChartDrawData.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>( TimeStamp, value1, value2 ) );
         }
 
         /// <inheritdoc />
@@ -860,10 +912,10 @@ public partial class ChartDrawDataEx : IChartDrawData
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartBandElement element, double value1, double value2 )
         {
-            return !MathHelper.IsNaN( XValue ) ? ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartBandElement, ChartDrawDataEx.sxTuple<double>>( _drawData.GetBandValueMap(), element, ChartDrawDataEx.sxTuple<double>.CreateSxTuple<double>( XValue, value1, value2 ) ) : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartBandElement, ChartDrawDataEx.sxTuple<DateTime>>( _drawData.GetBandTimeMap(), element, ChartDrawDataEx.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>( TimeStamp, value1, value2 ) );
+            return !MathHelper.IsNaN( XValue ) ? ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartBandElement, ChartDrawData.sxTuple<double>>( _drawData.GetBandValueMap(), element, ChartDrawData.sxTuple<double>.CreateSxTuple<double>( XValue, value1, value2 ) ) : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartBandElement, ChartDrawData.sxTuple<DateTime>>( _drawData.GetBandTimeMap(), element, ChartDrawData.sxTuple<DateTime>.CreateSxTuple<DateTimeOffset>( TimeStamp, value1, value2 ) );
         }
 
-        private ChartDrawDataEx.ChartDrawDataItem GetMap<TElement, TValue>( Dictionary<TElement, List<TValue>> _param1, TElement _param2, TValue _param3 )
+        private ChartDrawData.ChartDrawDataItem GetMap<TElement, TValue>( Dictionary<TElement, List<TValue>> _param1, TElement _param2, TValue _param3 )
         {
             CollectionHelper.SafeAdd<TElement, List<TValue>>( ( IDictionary<TElement, List<TValue>> ) _param1, _param2 ).Add( _param3 );
             return this;
@@ -873,13 +925,13 @@ public partial class ChartDrawDataEx : IChartDrawData
     /// <inheritdoc />
     public IChartDrawData.IChartDrawDataItem Group( DateTimeOffset timeStamp )
     {
-        return ( IChartDrawData.IChartDrawDataItem ) new ChartDrawDataEx.ChartDrawDataItem( this, timeStamp );
+        return ( IChartDrawData.IChartDrawDataItem ) new ChartDrawData.ChartDrawDataItem( this, timeStamp );
     }
 
     /// <inheritdoc />
     public IChartDrawData.IChartDrawDataItem Group( double xValue )
     {
-        return ( IChartDrawData.IChartDrawDataItem ) new ChartDrawDataEx.ChartDrawDataItem( this, xValue );
+        return ( IChartDrawData.IChartDrawDataItem ) new ChartDrawData.ChartDrawDataItem( this, xValue );
     }
 
     /// <inheritdoc />
@@ -913,102 +965,102 @@ public partial class ChartDrawDataEx : IChartDrawData
             OrderStates orderStates = OrderStates.None;
             isFrozen = new bool?( nullable.GetValueOrDefault() == orderStates & nullable.HasValue || state.GetValueOrDefault() == OrderStates.Pending );
         }
-        CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>>( ( IDictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>> ) GetActiveOrderMap(), element ).Add( new ChartDrawDataEx.sActiveOrder( order, balance.Value, state.Value, ( Decimal? ) order?.Security?.PriceStep ?? 0.01M, autoRemoveFromChart, isFrozen.Value, isHidden, ( isError ?? ( state.GetValueOrDefault() == OrderStates.Failed ? true : false ) ) != false, price.Value ) );
+        CollectionHelper.SafeAdd<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>( ( IDictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> ) GetActiveOrderMap(), element ).Add( new ChartDrawData.sActiveOrder( order, balance.Value, state.Value, ( Decimal? ) order?.Security?.PriceStep ?? 0.01M, autoRemoveFromChart, isFrozen.Value, isHidden, ( isError ?? ( state.GetValueOrDefault() == OrderStates.Failed ? true : false ) ) != false, price.Value ) );
         return ( IChartDrawData ) this;
     }
 
-    internal List<ChartDrawDataEx.sCandle> GetCandleRelatedData(
+    internal List<ChartDrawData.sCandle> GetCandleRelatedData(
       IChartCandleElement _param1 )
     {
-        Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandle>> a4BPs40sQtxmCo6Ew = _candleMap;
-        return a4BPs40sQtxmCo6Ew == null ? ( List<ChartDrawDataEx.sCandle> ) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawDataEx.sCandle>>( ( IDictionary<IChartCandleElement, List<ChartDrawDataEx.sCandle>> ) a4BPs40sQtxmCo6Ew, _param1 );
+        Dictionary<IChartCandleElement, List<ChartDrawData.sCandle>> a4BPs40sQtxmCo6Ew = _candleMap;
+        return a4BPs40sQtxmCo6Ew == null ? ( List<ChartDrawData.sCandle> ) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawData.sCandle>>( ( IDictionary<IChartCandleElement, List<ChartDrawData.sCandle>> ) a4BPs40sQtxmCo6Ew, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sCandleColor> GetCandleColor(
+    internal List<ChartDrawData.sCandleColor> GetCandleColor(
       IChartCandleElement _param1 )
     {
-        Dictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>> z3mmVbunXgsFqZ9EtJw = _candleColorMap;
-        return z3mmVbunXgsFqZ9EtJw == null ? ( List<ChartDrawDataEx.sCandleColor> ) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>>( ( IDictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>> ) z3mmVbunXgsFqZ9EtJw, _param1 );
+        Dictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> z3mmVbunXgsFqZ9EtJw = _candleColorMap;
+        return z3mmVbunXgsFqZ9EtJw == null ? ( List<ChartDrawData.sCandleColor> ) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawData.sCandleColor>>( ( IDictionary<IChartCandleElement, List<ChartDrawData.sCandleColor>> ) z3mmVbunXgsFqZ9EtJw, _param1 );
     }
 
-    internal List<ChartDrawDataEx.IndicatorData> GetCandleRelatedData( IChartIndicatorElement _param1 )
+    internal List<ChartDrawData.IndicatorData> GetCandleRelatedData( IChartIndicatorElement _param1 )
     {
         var ireF1JupHymGa845Q = _indicatorMap;
-        return ireF1JupHymGa845Q == null ? ( List<ChartDrawDataEx.IndicatorData> ) null : CollectionHelper.TryGetValue<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>>( ( IDictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>> ) ireF1JupHymGa845Q, _param1 );
+        return ireF1JupHymGa845Q == null ? ( List<ChartDrawData.IndicatorData> ) null : CollectionHelper.TryGetValue<IChartIndicatorElement, List<ChartDrawData.IndicatorData>>( ( IDictionary<IChartIndicatorElement, List<ChartDrawData.IndicatorData>> ) ireF1JupHymGa845Q, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sTrade> GetCandleRelatedData(
+    internal List<ChartDrawData.sTrade> GetCandleRelatedData(
       IChartOrderElement _param1 )
     {
-        Dictionary<IChartOrderElement, List<ChartDrawDataEx.sTrade>> zFl6oOk7l7AmA = _orderMap;
-        return zFl6oOk7l7AmA == null ? ( List<ChartDrawDataEx.sTrade> ) null : CollectionHelper.TryGetValue<IChartOrderElement, List<ChartDrawDataEx.sTrade>>( ( IDictionary<IChartOrderElement, List<ChartDrawDataEx.sTrade>> ) zFl6oOk7l7AmA, _param1 );
+        Dictionary<IChartOrderElement, List<ChartDrawData.sTrade>> zFl6oOk7l7AmA = _orderMap;
+        return zFl6oOk7l7AmA == null ? ( List<ChartDrawData.sTrade> ) null : CollectionHelper.TryGetValue<IChartOrderElement, List<ChartDrawData.sTrade>>( ( IDictionary<IChartOrderElement, List<ChartDrawData.sTrade>> ) zFl6oOk7l7AmA, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sTrade> GetCandleRelatedData(
+    internal List<ChartDrawData.sTrade> GetCandleRelatedData(
       IChartTradeElement _param1 )
     {
-        Dictionary<IChartTradeElement, List<ChartDrawDataEx.sTrade>> zW6DkSpcRysL = _tradeMap;
-        return zW6DkSpcRysL == null ? ( List<ChartDrawDataEx.sTrade> ) null : CollectionHelper.TryGetValue<IChartTradeElement, List<ChartDrawDataEx.sTrade>>( ( IDictionary<IChartTradeElement, List<ChartDrawDataEx.sTrade>> ) zW6DkSpcRysL, _param1 );
+        Dictionary<IChartTradeElement, List<ChartDrawData.sTrade>> zW6DkSpcRysL = _tradeMap;
+        return zW6DkSpcRysL == null ? ( List<ChartDrawData.sTrade> ) null : CollectionHelper.TryGetValue<IChartTradeElement, List<ChartDrawData.sTrade>>( ( IDictionary<IChartTradeElement, List<ChartDrawData.sTrade>> ) zW6DkSpcRysL, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sActiveOrder> GetCandleRelatedData(
+    internal List<ChartDrawData.sActiveOrder> GetCandleRelatedData(
       IChartActiveOrdersElement _param1 )
     {
-        Dictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>> z4fpZvTfoaMgNvfE8Ng = _activeOrdersMap;
-        return z4fpZvTfoaMgNvfE8Ng == null ? ( List<ChartDrawDataEx.sActiveOrder> ) null : CollectionHelper.TryGetValue<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>>( ( IDictionary<IChartActiveOrdersElement, List<ChartDrawDataEx.sActiveOrder>> ) z4fpZvTfoaMgNvfE8Ng, _param1 );
+        Dictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> z4fpZvTfoaMgNvfE8Ng = _activeOrdersMap;
+        return z4fpZvTfoaMgNvfE8Ng == null ? ( List<ChartDrawData.sActiveOrder> ) null : CollectionHelper.TryGetValue<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>>( ( IDictionary<IChartActiveOrdersElement, List<ChartDrawData.sActiveOrder>> ) z4fpZvTfoaMgNvfE8Ng, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sxTuple<DateTime>> GetLineTime(
+    internal List<ChartDrawData.sxTuple<DateTime>> GetLineTime(
     IChartLineElement _param1 )
     {
-        Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<DateTime>>> z6XWSk2oHkW = _lineTimeMap;
-        return z6XWSk2oHkW == null ? ( List<ChartDrawDataEx.sxTuple<DateTime>> ) null : CollectionHelper.TryGetValue<IChartLineElement, List<ChartDrawDataEx.sxTuple<DateTime>>>( ( IDictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<DateTime>>> ) z6XWSk2oHkW, _param1 );
+        Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<DateTime>>> z6XWSk2oHkW = _lineTimeMap;
+        return z6XWSk2oHkW == null ? ( List<ChartDrawData.sxTuple<DateTime>> ) null : CollectionHelper.TryGetValue<IChartLineElement, List<ChartDrawData.sxTuple<DateTime>>>( ( IDictionary<IChartLineElement, List<ChartDrawData.sxTuple<DateTime>>> ) z6XWSk2oHkW, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sxTuple<double>> GetLineValue(
+    internal List<ChartDrawData.sxTuple<double>> GetLineValue(
       IChartLineElement _param1 )
     {
-        Dictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<double>>> zPfyjopyhj6ky = _lineValueMap;
-        return zPfyjopyhj6ky == null ? ( List<ChartDrawDataEx.sxTuple<double>> ) null : CollectionHelper.TryGetValue<IChartLineElement, List<ChartDrawDataEx.sxTuple<double>>>( ( IDictionary<IChartLineElement, List<ChartDrawDataEx.sxTuple<double>>> ) zPfyjopyhj6ky, _param1 );
+        Dictionary<IChartLineElement, List<ChartDrawData.sxTuple<double>>> zPfyjopyhj6ky = _lineValueMap;
+        return zPfyjopyhj6ky == null ? ( List<ChartDrawData.sxTuple<double>> ) null : CollectionHelper.TryGetValue<IChartLineElement, List<ChartDrawData.sxTuple<double>>>( ( IDictionary<IChartLineElement, List<ChartDrawData.sxTuple<double>>> ) zPfyjopyhj6ky, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sxTuple<DateTime>> GetLineTime(
+    internal List<ChartDrawData.sxTuple<DateTime>> GetLineTime(
       IChartBandElement _param1 )
     {
-        Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<DateTime>>> hrT3IuXyJaPuaHpg = _bandTimeMap;
-        return hrT3IuXyJaPuaHpg == null ? ( List<ChartDrawDataEx.sxTuple<DateTime>> ) null : CollectionHelper.TryGetValue<IChartBandElement, List<ChartDrawDataEx.sxTuple<DateTime>>>( ( IDictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<DateTime>>> ) hrT3IuXyJaPuaHpg, _param1 );
+        Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<DateTime>>> hrT3IuXyJaPuaHpg = _bandTimeMap;
+        return hrT3IuXyJaPuaHpg == null ? ( List<ChartDrawData.sxTuple<DateTime>> ) null : CollectionHelper.TryGetValue<IChartBandElement, List<ChartDrawData.sxTuple<DateTime>>>( ( IDictionary<IChartBandElement, List<ChartDrawData.sxTuple<DateTime>>> ) hrT3IuXyJaPuaHpg, _param1 );
     }
 
-    internal List<ChartDrawDataEx.sxTuple<double>> GetLineValue(
+    internal List<ChartDrawData.sxTuple<double>> GetLineValue(
           IChartBandElement _param1 )
     {
-        Dictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<double>>> kpa3YtJh2v6Rs3Joq = _bandValueMap;
-        return kpa3YtJh2v6Rs3Joq == null ? ( List<ChartDrawDataEx.sxTuple<double>> ) null : CollectionHelper.TryGetValue<IChartBandElement, List<ChartDrawDataEx.sxTuple<double>>>( ( IDictionary<IChartBandElement, List<ChartDrawDataEx.sxTuple<double>>> ) kpa3YtJh2v6Rs3Joq, _param1 );
+        Dictionary<IChartBandElement, List<ChartDrawData.sxTuple<double>>> kpa3YtJh2v6Rs3Joq = _bandValueMap;
+        return kpa3YtJh2v6Rs3Joq == null ? ( List<ChartDrawData.sxTuple<double>> ) null : CollectionHelper.TryGetValue<IChartBandElement, List<ChartDrawData.sxTuple<double>>>( ( IDictionary<IChartBandElement, List<ChartDrawData.sxTuple<double>>> ) kpa3YtJh2v6Rs3Joq, _param1 );
     }
 
-    internal IEnumerableEx<ChartDrawDataEx.IDrawValue> GetCandleRelatedData( IChartLineElement _param1 )
+    internal IEnumerableEx<ChartDrawData.IDrawValue> GetCandleRelatedData( IChartLineElement _param1 )
     {
-        List<ChartDrawDataEx.sxTuple<DateTime>> source1 = GetLineTime(_param1);
+        List<ChartDrawData.sxTuple<DateTime>> source1 = GetLineTime(_param1);
         if ( source1 != null && source1.Count > 0 )
-            return CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( source1.Cast<ChartDrawDataEx.IDrawValue>(), source1.Count );
-        List<ChartDrawDataEx.sxTuple<double>> source2 = GetLineValue(_param1);
-        return source2 == null ? ( IEnumerableEx<ChartDrawDataEx.IDrawValue> ) null : CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( source2.Cast<ChartDrawDataEx.IDrawValue>(), source2.Count );
+            return CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source1.Cast<ChartDrawData.IDrawValue>(), source1.Count );
+        List<ChartDrawData.sxTuple<double>> source2 = GetLineValue(_param1);
+        return source2 == null ? ( IEnumerableEx<ChartDrawData.IDrawValue> ) null : CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source2.Cast<ChartDrawData.IDrawValue>(), source2.Count );
     }
 
-    internal IEnumerableEx<ChartDrawDataEx.IDrawValue> GetCandleRelatedData(
+    internal IEnumerableEx<ChartDrawData.IDrawValue> GetCandleRelatedData(
       IChartBandElement _param1 )
     {
-        List<ChartDrawDataEx.sxTuple<DateTime>> source1 = GetLineTime(_param1);
+        List<ChartDrawData.sxTuple<DateTime>> source1 = GetLineTime(_param1);
         if ( source1 != null && source1.Count > 0 )
-            return CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( source1.Cast<ChartDrawDataEx.IDrawValue>(), source1.Count );
-        List<ChartDrawDataEx.sxTuple<double>> source2 = GetLineValue(_param1);
-        return source2 == null ? ( IEnumerableEx<ChartDrawDataEx.IDrawValue> ) null : CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( source2.Cast<ChartDrawDataEx.IDrawValue>(), source2.Count );
+            return CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source1.Cast<ChartDrawData.IDrawValue>(), source1.Count );
+        List<ChartDrawData.sxTuple<double>> source2 = GetLineValue(_param1);
+        return source2 == null ? ( IEnumerableEx<ChartDrawData.IDrawValue> ) null : CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source2.Cast<ChartDrawData.IDrawValue>(), source2.Count );
     }
 
-    internal ChartDrawDataEx.AnnotationData GetAnnotation( IChartAnnotationElement _param1 )
+    internal ChartDrawData.AnnotationData GetAnnotation( IChartAnnotationElement _param1 )
     {
         Dictionary<IChartAnnotationElement, IAnnotationData> zfS3q6Qc = _annotationMap;
-        return zfS3q6Qc != null ? ( ChartDrawDataEx.AnnotationData ) CollectionHelper.TryGetValue<IChartAnnotationElement, IAnnotationData>( ( IDictionary<IChartAnnotationElement, IAnnotationData> ) zfS3q6Qc, _param1 ) : ( ChartDrawDataEx.AnnotationData ) null;
+        return zfS3q6Qc != null ? ( ChartDrawData.AnnotationData ) CollectionHelper.TryGetValue<IChartAnnotationElement, IAnnotationData>( ( IDictionary<IChartAnnotationElement, IAnnotationData> ) zfS3q6Qc, _param1 ) : ( ChartDrawData.AnnotationData ) null;
     }
 
 }

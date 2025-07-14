@@ -189,7 +189,7 @@ internal sealed class QuotesVM : ChartCompentWpfBaseViewModel<QuotesUI>, IFastQu
 
         foreach ( ChartDrawData.sxTuple<TX1> band in drawValues )
         {
-            DateTime x = ( DateTime )( ValueType )band.GetProperty( );
+            DateTime x = ( DateTime )( ValueType )band.Property( );
 
             switch ( x.CompareTo( lastBand ) )
             {

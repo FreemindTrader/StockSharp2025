@@ -134,12 +134,14 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
 
     protected override bool OnDraw( ChartDrawData data )
     {
-        var drawValue = data.GetBandDrawValues( this );
-        if ( drawValue != null && !drawValue.IsEmpty() )
-        {
-            return ( ( IDrawableChartElement ) this ).StartDrawing( drawValue );
-        }
-        return false;
+        throw new NotImplementedException();
+
+        //var drawValue = data.GetBandDrawValues( this );
+        //if ( drawValue != null && !drawValue.IsEmpty() )
+        //{
+        //    return ( ( IDrawableChartElement ) this ).StartDrawing( drawValue );
+        //}
+        //return false;
     }
 
 

@@ -527,17 +527,17 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        private ChartDrawData.sAnnotation GetAnnotationData( AnnotationBase anno )
+        private ChartDrawData.AnnotationData GetAnnotationData( AnnotationBase anno )
         {
             Struct1 s;
 
             s.b = anno;
-            var data            = new ChartDrawData.sAnnotation( );
+            var data            = new ChartDrawData.AnnotationData( );
             s.sCalc = s.b.XAxis?.GetCurrentCoordinateCalculator( );
 
             data.IsVisible = new bool?( !s.b.IsHidden );
             data.IsEditable = new bool?( HasAnnotation( s.b ) );
-            data.CoordinateMode = new AnnotationCoordinateMode?( s.b.CoordinateMode );
+            data.CoordinateMode = ( StockSharp.Charting.AnnotationCoordinateMode ) ( s.b.CoordinateMode );
 
             data.X1 = IndexToData( s.b.X1, ref s );
             data.X2 = IndexToData( s.b.X2, ref s );
@@ -552,13 +552,13 @@ namespace StockSharp.Xaml.Charting
             else if ( s.b is HorizontalLineAnnotation hLine )
             {
                 data.HorizontalAlignment = new HorizontalAlignment?( hLine.HorizontalAlignment );
-                data.LabelPlacement = new LabelPlacement?( hLine.LabelPlacement );
+                data.LabelPlacement = ( StockSharp.Charting.LabelPlacement ) ( hLine.LabelPlacement );
                 data.ShowLabel = new bool?( hLine.ShowLabel );
             }
             else if ( s.b is VerticalLineAnnotation vLine )
             {
                 data.VerticalAlignment = new VerticalAlignment?( vLine.VerticalAlignment );
-                data.LabelPlacement = new LabelPlacement?( vLine.LabelPlacement );
+                data.LabelPlacement = ( StockSharp.Charting.LabelPlacement ) ( vLine.LabelPlacement );
                 data.ShowLabel = new bool?( vLine.ShowLabel );
             }
             else if ( s.b is BoxAnnotation box )
@@ -595,7 +595,7 @@ namespace StockSharp.Xaml.Charting
             ChartArea?.InvokeAnnotationDeletedEvent( annotation );
         }
 
-        public void SetupAnnotation( ChartAnnotation annotation, ChartDrawData.sAnnotation data )
+        public void SetupAnnotation( ChartAnnotation annotation, ChartDrawData.AnnotationData data )
         {
             Struct0 s;
             //bool? nullable;
@@ -638,7 +638,7 @@ namespace StockSharp.Xaml.Charting
 
                 if ( data.CoordinateMode.HasValue )
                 {
-                    s.b.CoordinateMode = data.CoordinateMode.Value;
+                    s.b.CoordinateMode = (SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode) data.CoordinateMode.Value;
                 }
 
                 IComparable x1 = GetYCoordinate( data.X1, ref s );
@@ -671,7 +671,7 @@ namespace StockSharp.Xaml.Charting
                         
                     if ( data.LabelPlacement.HasValue )
                     {
-                        hLine.LabelPlacement = data.LabelPlacement.Value;
+                        hLine.LabelPlacement = ( SciChart.Charting.Visuals.Annotations.LabelPlacement )  data.LabelPlacement.Value;
                     }
                         
                     if ( !data.ShowLabel.HasValue )
@@ -684,7 +684,7 @@ namespace StockSharp.Xaml.Charting
                     if ( data.VerticalAlignment.HasValue )
                         vLine.VerticalAlignment = data.VerticalAlignment.Value;
                     if ( data.LabelPlacement.HasValue )
-                        vLine.LabelPlacement = data.LabelPlacement.Value;
+                        vLine.LabelPlacement = ( SciChart.Charting.Visuals.Annotations.LabelPlacement ) data.LabelPlacement.Value;
 
                     if ( !data.ShowLabel.HasValue )
                         return;

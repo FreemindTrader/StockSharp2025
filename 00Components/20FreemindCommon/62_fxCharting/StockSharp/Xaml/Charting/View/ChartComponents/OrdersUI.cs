@@ -3,6 +3,7 @@ using StockSharp.Localization;
 using System.Collections.Generic; using fx.Collections;
 using System.Linq;
 using System.Windows.Media;
+using System;
 
 namespace StockSharp.Xaml.Charting
 {
@@ -17,12 +18,13 @@ namespace StockSharp.Xaml.Charting
 
         protected override bool OnDraw( ChartDrawData data )
         {
-            PooledList< ChartDrawData.sTrade > source = data.GetOrder( this );
-            if( source != null && !source.IsEmpty( ) )
-            {
-                return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
-            }
-            return false;
+            throw new NotImplementedException();
+            //PooledList< ChartDrawData.sTrade > source = data.GetOrder( this );
+            //if( source != null && !source.IsEmpty( ) )
+            //{
+            //    return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
+            //}
+            //return false;
         }
     }
 }

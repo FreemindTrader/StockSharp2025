@@ -217,7 +217,7 @@ internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< Ch
 
         foreach( ChartDrawData.sxTuple< TX1 > band in drawValues )
         {
-            T x = ( T )( ValueType )band.GetProperty( );
+            T x = ( T )( ValueType )band.Property( );
             
             switch( x.CompareTo( lastBand ) )
             {

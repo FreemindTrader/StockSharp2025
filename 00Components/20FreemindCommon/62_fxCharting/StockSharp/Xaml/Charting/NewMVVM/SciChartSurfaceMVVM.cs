@@ -1460,7 +1460,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
 
 
-    public void SetupAnnotation( IChartElement annotation, ChartDrawData.sAnnotation data )
+    public void SetupAnnotation( IChartElement annotation, ChartDrawData.AnnotationData data )
     {
         if ( _annotationModifier != null )
         {

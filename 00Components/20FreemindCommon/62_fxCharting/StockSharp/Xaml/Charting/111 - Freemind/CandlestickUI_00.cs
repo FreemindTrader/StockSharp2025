@@ -4,11 +4,13 @@ using Ecng.Serialization;
 using Ecng.Xaml;
 using StockSharp.Localization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Media;
+using StockSharp.Charting;
 
 #pragma warning disable CA1416
 
@@ -701,7 +703,7 @@ namespace StockSharp.Xaml.Charting
             */
             if ( data.HasCandleData )
             {
-                var canlesData = data.GetCandle( this );
+                var canlesData = data.GetCandle( (IChartCandleElement) this );
 
                 if ( canlesData.IsSet )
                 {

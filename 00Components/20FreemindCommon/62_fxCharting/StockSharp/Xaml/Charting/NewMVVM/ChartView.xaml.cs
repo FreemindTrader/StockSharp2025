@@ -753,11 +753,11 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<ChartAnnotation> AnnotationCreated;
 
-        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationModified;
+        public event Action<ChartAnnotation, ChartDrawData.AnnotationData> AnnotationModified;
 
         public event Action<ChartAnnotation> AnnotationDeleted;
 
-        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
+        public event Action<ChartAnnotation, ChartDrawData.AnnotationData> AnnotationSelected;
 
         public event Action<ChartCandleElement, CandleSeries> SubscribeCandleElement;
 
@@ -1359,12 +1359,12 @@ namespace StockSharp.Xaml.Charting
             AnnotationCreated?.Invoke( annotation );
         }
 
-        void IChart.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawData.sAnnotation d )
+        void IChart.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawData.AnnotationData d )
         {
             AnnotationModified?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawData.sAnnotation d )
+        void IChart.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawData.AnnotationData d )
         {
             AnnotationSelected?.Invoke( a, d );
         }

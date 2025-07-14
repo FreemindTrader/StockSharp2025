@@ -96,19 +96,20 @@ namespace StockSharp.Xaml.Charting
             GetChartAreaElments( ).Add( _chartAnnotation );
             bool init = false;
 
-            Loaded += ( s, e ) =>
-            {
-                if ( init )
-                {
-                    return;
-                }
+            throw new NotImplementedException();
+            //Loaded += ( s, e ) =>
+            //{
+            //    if ( init )
+            //    {
+            //        return;
+            //    }
 
-                init = true;
-                var annoData = new ChartDrawData.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( ( SciChart.Charting.Visuals.Annotations.LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
-                var drawData = new ChartDrawData( );
-                drawData.Add( _chartAnnotation, annoData );
-                Chart.Draw( drawData );
-            };
+            //    init = true;
+            //    var annoData = new ChartDrawData.AnnotationData( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( ( SciChart.Charting.Visuals.Annotations.LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
+            //    var drawData = new ChartDrawData( );
+            //    drawData.Add( _chartAnnotation, annoData );
+            //    Chart.Draw( drawData );
+            //};
         }
 
         private INotifyList<IChartElement> GetChartAreaElments( )
@@ -302,135 +303,137 @@ namespace StockSharp.Xaml.Charting
 
         public void Refresh( Decimal? assetPrice = null, DateTimeOffset? currentTime = null, DateTimeOffset? expiryDate = null )
         {
-            if ( SecurityProvider == null || MarketDataProvider == null || ( UnderlyingAsset == null || PositionProvider == null ) )
-            {
-                return;
-            }
+            throw new NotImplementedException();
 
-            if ( _basketBlackScholes == null )
-            {
-                _basketBlackScholes = new BasketBlackScholes( UnderlyingAsset, MarketDataProvider, ExchangeInfoProvider, PositionProvider );
-                Clear( );
+            //if ( SecurityProvider == null || MarketDataProvider == null || ( UnderlyingAsset == null || PositionProvider == null ) )
+            //{
+            //    return;
+            //}
 
-                foreach ( Security key in Options.Cache )
-                {
-                    _basketBlackScholes.InnerModels.Add( UseBlackModel ? new Black( key, SecurityProvider, MarketDataProvider, ExchangeInfoProvider ) : new BlackScholes( key, SecurityProvider, MarketDataProvider, ExchangeInfoProvider ) );
+            //if ( _basketBlackScholes == null )
+            //{
+            //    _basketBlackScholes = new BasketBlackScholes( UnderlyingAsset, MarketDataProvider, ExchangeInfoProvider, PositionProvider );
+            //    Clear( );
 
-                    if ( ShowSeparated )
-                    {
-                        string id = key.Id;
-                        var optionLines = new OptionNowExpLines( );
-                        optionLines.Now( CreateChartLineElement( id + " (NOW)", Colors.Black ) );
-                        optionLines.Expiration( ShowExpiration ? CreateChartLineElement( id + " (EXP)", Colors.SandyBrown ) : null );
+            //    foreach ( Security key in Options.Cache )
+            //    {
+            //        _basketBlackScholes.InnerModels.Add( UseBlackModel ? new Black( key, SecurityProvider, MarketDataProvider, ExchangeInfoProvider ) : new BlackScholes( key, SecurityProvider, MarketDataProvider, ExchangeInfoProvider ) );
 
-                        _securityOptionLines.Add( key, optionLines );
+            //        if ( ShowSeparated )
+            //        {
+            //            string id = key.Id;
+            //            var optionLines = new OptionNowExpLines( );
+            //            optionLines.Now( CreateChartLineElement( id + " (NOW)", Colors.Black ) );
+            //            optionLines.Expiration( ShowExpiration ? CreateChartLineElement( id + " (EXP)", Colors.SandyBrown ) : null );
 
-                        GetChartAreaElments( ).Add( optionLines.GetNowChartLine( ) );
+            //            _securityOptionLines.Add( key, optionLines );
 
-                        if ( ShowExpiration )
-                        {
-                            GetChartAreaElments( ).Add( optionLines.GetExpirationChartLine( ) );
-                        }
-                    }
-                }
-                if ( !ShowSeparated )
-                {
-                    var optionLines = new OptionNowExpLines( );
-                    optionLines.Now( CreateChartLineElement( "NOW", Colors.Black ) );
-                    optionLines.Expiration( ShowExpiration ? CreateChartLineElement( "EXP", Colors.SandyBrown ) : null );
-                    _optionNowExpLines = optionLines;
+            //            GetChartAreaElments( ).Add( optionLines.GetNowChartLine( ) );
 
-                    GetChartAreaElments( ).Add( _optionNowExpLines.GetNowChartLine( ) );
+            //            if ( ShowExpiration )
+            //            {
+            //                GetChartAreaElments( ).Add( optionLines.GetExpirationChartLine( ) );
+            //            }
+            //        }
+            //    }
+            //    if ( !ShowSeparated )
+            //    {
+            //        var optionLines = new OptionNowExpLines( );
+            //        optionLines.Now( CreateChartLineElement( "NOW", Colors.Black ) );
+            //        optionLines.Expiration( ShowExpiration ? CreateChartLineElement( "EXP", Colors.SandyBrown ) : null );
+            //        _optionNowExpLines = optionLines;
 
-                    if ( ShowExpiration )
-                    {
-                        GetChartAreaElments( ).Add( _optionNowExpLines.GetExpirationChartLine( ) );
-                    }
-                }
-            }
-            if ( !assetPrice.HasValue )
-            {
-                assetPrice = ( Decimal? )MarketDataProvider.GetSecurityValue( UnderlyingAsset, ( Level1Fields )28 );
-            }
+            //        GetChartAreaElments( ).Add( _optionNowExpLines.GetNowChartLine( ) );
 
-            Unit unitPrice = assetPrice.Value;
+            //        if ( ShowExpiration )
+            //        {
+            //            GetChartAreaElments( ).Add( _optionNowExpLines.GetExpirationChartLine( ) );
+            //        }
+            //    }
+            //}
+            //if ( !assetPrice.HasValue )
+            //{
+            //    assetPrice = ( Decimal? )MarketDataProvider.GetSecurityValue( UnderlyingAsset, ( Level1Fields )28 );
+            //}
 
-            Decimal twentyMinus = !assetPrice.HasValue ? Decimal.Zero : ( decimal )( unitPrice - UnitHelper.Percents( 20 ) );
-            Decimal twentyPlus = !assetPrice.HasValue ? Decimal.Zero : ( decimal )( unitPrice + UnitHelper.Percents( 20 ) );
+            //Unit unitPrice = assetPrice.Value;
 
-            if ( !currentTime.HasValue )
-            {
-                currentTime = new DateTimeOffset?( DateTimeOffset.Now );
-            }
+            //Decimal twentyMinus = !assetPrice.HasValue ? Decimal.Zero : ( decimal )( unitPrice - UnitHelper.Percents( 20 ) );
+            //Decimal twentyPlus = !assetPrice.HasValue ? Decimal.Zero : ( decimal )( unitPrice + UnitHelper.Percents( 20 ) );
 
-            if ( !expiryDate.HasValue )
-            {
-                expiryDate = new DateTimeOffset?( UnderlyingAsset.ExpiryDate ?? DateTimeOffset.Now );
-            }
+            //if ( !currentTime.HasValue )
+            //{
+            //    currentTime = new DateTimeOffset?( DateTimeOffset.Now );
+            //}
 
-            Decimal? priceStep = UnderlyingAsset.PriceStep;
-            Decimal num3 = priceStep ?? new Decimal( 1, 0, 0, false,   2 );
+            //if ( !expiryDate.HasValue )
+            //{
+            //    expiryDate = new DateTimeOffset?( UnderlyingAsset.ExpiryDate ?? DateTimeOffset.Now );
+            //}
 
-            if ( num3 < Decimal.Zero )
-            {
-                throw new InvalidOperationException( );
-            }
+            //Decimal? priceStep = UnderlyingAsset.PriceStep;
+            //Decimal num3 = priceStep ?? new Decimal( 1, 0, 0, false,   2 );
 
-            Chart.Reset( GetChartAreaElments( ) );
-            ChartDrawData drawData = new ChartDrawData( );
+            //if ( num3 < Decimal.Zero )
+            //{
+            //    throw new InvalidOperationException( );
+            //}
 
-            if ( ShowSeparated )
-            {
-                foreach ( Security index in Options.Cache )
-                {
-                    OptionNowExpLines optionLines = _securityOptionLines[ index ];
-                    BlackScholes blackScholes = _basketBlackScholes.InnerModels[ index ];
-                    Decimal d = twentyMinus;
+            //Chart.Reset( GetChartAreaElments( ) );
+            //ChartDrawData drawData = new ChartDrawData( );
 
-                    while ( d < twentyPlus )
-                    {
-                        var drawDataItems = drawData.Group( Decimal.ToDouble( d ) );
-                        Decimal? optionFuncValue = _chartParamFunc( blackScholes, d, currentTime.Value );
+            //if ( ShowSeparated )
+            //{
+            //    foreach ( Security index in Options.Cache )
+            //    {
+            //        OptionNowExpLines optionLines = _securityOptionLines[ index ];
+            //        BlackScholes blackScholes = _basketBlackScholes.InnerModels[ index ];
+            //        Decimal d = twentyMinus;
 
-                        drawDataItems.Add( optionLines.GetNowChartLine( ), optionFuncValue.HasValue ? Ecng.Common.Converter.To<double>( optionFuncValue.GetValueOrDefault( ) ) : double.NaN, double.NaN );
+            //        while ( d < twentyPlus )
+            //        {
+            //            var drawDataItems = drawData.Group( Decimal.ToDouble( d ) );
+            //            Decimal? optionFuncValue = _chartParamFunc( blackScholes, d, currentTime.Value );
 
-                        if ( optionLines.GetExpirationChartLine( ) != null )
-                        {
-                            var element = optionLines.GetExpirationChartLine( );
-                            priceStep = _chartParamFunc( blackScholes, d, expiryDate.Value );
-                            var priceStepD = priceStep.HasValue ? Ecng.Common.Converter.To<double>( priceStep.GetValueOrDefault( ) ) : double.NaN;
+            //            drawDataItems.Add( optionLines.GetNowChartLine( ), optionFuncValue.HasValue ? Ecng.Common.Converter.To<double>( optionFuncValue.GetValueOrDefault( ) ) : double.NaN, double.NaN );
 
-                            drawDataItems.Add( element, priceStepD, double.NaN );
-                        }
-                        d += num3;
-                    }
-                }
-            }
-            else
-            {
-                Decimal d = twentyMinus;
+            //            if ( optionLines.GetExpirationChartLine( ) != null )
+            //            {
+            //                var element = optionLines.GetExpirationChartLine( );
+            //                priceStep = _chartParamFunc( blackScholes, d, expiryDate.Value );
+            //                var priceStepD = priceStep.HasValue ? Ecng.Common.Converter.To<double>( priceStep.GetValueOrDefault( ) ) : double.NaN;
 
-                while ( d < twentyPlus )
-                {
-                    var drawDataItems = drawData.Group( Decimal.ToDouble( d ) );
-                    var optionFuncValue = _chartParamFunc(   _basketBlackScholes, d, currentTime.Value );
+            //                drawDataItems.Add( element, priceStepD, double.NaN );
+            //            }
+            //            d += num3;
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    Decimal d = twentyMinus;
 
-                    drawDataItems.Add( _optionNowExpLines.GetNowChartLine( ), optionFuncValue.HasValue ? Ecng.Common.Converter.To<double>( optionFuncValue.GetValueOrDefault( ) ) : double.NaN, double.NaN );
+            //    while ( d < twentyPlus )
+            //    {
+            //        var drawDataItems = drawData.Group( Decimal.ToDouble( d ) );
+            //        var optionFuncValue = _chartParamFunc(   _basketBlackScholes, d, currentTime.Value );
 
-                    if ( _optionNowExpLines.GetExpirationChartLine( ) != null )
-                    {
-                        var expLine = _optionNowExpLines.GetExpirationChartLine( );
-                        priceStep = _chartParamFunc( _basketBlackScholes, d, expiryDate.Value );
-                        var priceStepD = priceStep.HasValue ? Ecng.Common.Converter.To<double>( priceStep.GetValueOrDefault( ) ) : double.NaN;
+            //        drawDataItems.Add( _optionNowExpLines.GetNowChartLine( ), optionFuncValue.HasValue ? Ecng.Common.Converter.To<double>( optionFuncValue.GetValueOrDefault( ) ) : double.NaN, double.NaN );
 
-                        drawDataItems.Add( expLine, priceStepD, double.NaN );
-                    }
-                    d += num3;
-                }
-            }
+            //        if ( _optionNowExpLines.GetExpirationChartLine( ) != null )
+            //        {
+            //            var expLine = _optionNowExpLines.GetExpirationChartLine( );
+            //            priceStep = _chartParamFunc( _basketBlackScholes, d, expiryDate.Value );
+            //            var priceStepD = priceStep.HasValue ? Ecng.Common.Converter.To<double>( priceStep.GetValueOrDefault( ) ) : double.NaN;
 
-            drawData.Add( _chartAnnotation, new ChartDrawData.sAnnotation( ) { X1 = assetPrice, Y1 = 0.0 } );
-            Chart.Draw( drawData );
+            //            drawDataItems.Add( expLine, priceStepD, double.NaN );
+            //        }
+            //        d += num3;
+            //    }
+            //}
+
+            //drawData.Add( _chartAnnotation, new ChartDrawData.sAnnotation( ) { X1 = assetPrice, Y1 = 0.0 } );
+            //Chart.Draw( drawData );
         }
 
         private void Clear( )

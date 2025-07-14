@@ -310,24 +310,24 @@ namespace StockSharp.Xaml.Charting
 
             private void GetDataAndDraw( )
             {
-                GetSimpleChart( ).Reset( new VolatilitySmileUI[ 1 ] { Element } );
-                ChartDrawData data = new ChartDrawData( );
+                //GetSimpleChart( ).Reset( new VolatilitySmileUI[ 1 ] { Element } );
+                //ChartDrawData data = new ChartDrawData( );
 
-                using ( IEnumerator<LineData<double>> enumerator = GetEnumerator( ) )
-                {
-                    while ( enumerator.MoveNext( ) )
-                    {
-                        LineData<double> current = enumerator.Current;
-                        data.Group( current.X ).Add( Element.Values, Decimal.ToDouble( current.Y ), double.NaN );
-                    }
-                }
+                //using ( IEnumerator<LineData<double>> enumerator = GetEnumerator( ) )
+                //{
+                //    while ( enumerator.MoveNext( ) )
+                //    {
+                //        LineData<double> current = enumerator.Current;
+                //        data.Group( current.X ).Add( Element.Values, Decimal.ToDouble( current.Y ), double.NaN );
+                //    }
+                //}
 
-                foreach ( LineData<double> lineData in _lineDataList )
-                {
-                    data.Group( lineData.X ).Add( Element.Smile, Decimal.ToDouble( lineData.Y ), double.NaN );
-                }
+                //foreach ( LineData<double> lineData in _lineDataList )
+                //{
+                //    data.Group( lineData.X ).Add( Element.Smile, Decimal.ToDouble( lineData.Y ), double.NaN );
+                //}
 
-                GetSimpleChart( ).Draw( data );
+                //GetSimpleChart( ).Draw( data );
             }
 
             public void PopulateLineDataList( )
