@@ -22,7 +22,7 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         public struct sCandleColor : IDrawValue
         {
@@ -144,7 +144,7 @@ namespace StockSharp.Xaml.Charting
                     return new sxTuple<T>( _param0.To<DateTimeOffset>().UtcDateTime, _param1, _param2 );
                 if ( ( ValueType ) _param0 is double )
                     return new sxTuple<T>( _param0.To<double>(), _param1, _param2 );
-                
+
                 throw new NotSupportedException( "LocalizedStrings.Param.Put( typeof( TXOrig ).Name )" );
             }
 
@@ -473,11 +473,14 @@ namespace StockSharp.Xaml.Charting
 
         public class sCandleEx : IDrawValue
         {
-            public fxHistoricBarsRepo BarRepo { get; set; }
-            public uint StartIndex  { get; set; } = uint.MaxValue;
-            public uint EndIndex    { get; set; } = 0;
+            public fxHistoricBarsRepo BarRepo
+            {
+                get; set;
+            }
+            public uint StartIndex { get; set; } = uint.MaxValue;
+            public uint EndIndex { get; set; } = 0;
 
-            public sCandleEx( )
+            public sCandleEx()
             {
                 BarRepo = null;
 
@@ -511,7 +514,7 @@ namespace StockSharp.Xaml.Charting
                 {
                     return BarRepo != null;
                 }
-                
+
             }
 
             public int Count
@@ -519,7 +522,7 @@ namespace StockSharp.Xaml.Charting
                 get
                 {
                     if ( EndIndex == 0 ) return 0;
-                    return (int)( EndIndex - StartIndex + 1 );
+                    return ( int ) ( EndIndex - StartIndex + 1 );
                 }
             }
         }
@@ -548,42 +551,42 @@ namespace StockSharp.Xaml.Charting
                               Decimal? priceStep
                          )
             {
-                _utcTime          = barTime.UtcDateTime;
-                _candleArg        = arg;
-                _openPrice        = ( double ) open;
-                _highPrice        = ( double ) high;
-                _lowPrice         = ( double ) low;
-                _closePrice       = ( double ) close;
+                _utcTime = barTime.UtcDateTime;
+                _candleArg = arg;
+                _openPrice = ( double ) open;
+                _highPrice = ( double ) high;
+                _lowPrice = ( double ) low;
+                _closePrice = ( double ) close;
                 _candlePriceLevel = priceLvls != null ? priceLvls.ToArray() : null;
-                _priceStep        = priceStep.HasValue ? new double?( ( double ) priceStep.GetValueOrDefault() ) : new double?();
-                _advancedTAinfo   = null;
+                _priceStep = priceStep.HasValue ? new double?( ( double ) priceStep.GetValueOrDefault() ) : new double?();
+                _advancedTAinfo = null;
             }
 
             //_lastBarTime, bar.Candle.Arg, bar.Open, bar.High, bar.Low, bar.Close, bar.Candle.PriceLevels, ( double )bar.Candle.Security.PriceStep, ( IPointMetadata )bar
             public sCandle( ref SBar bar )
             {
-                _utcTime          = bar.BarTime;
-                _candleArg        = bar.SymbolEx.Period;
-                _openPrice        = bar.Open;
-                _highPrice        = bar.High;
-                _lowPrice         = bar.Low;
-                _closePrice       = bar.Close;
+                _utcTime = bar.BarTime;
+                _candleArg = bar.SymbolEx.Period;
+                _openPrice = bar.Open;
+                _highPrice = bar.High;
+                _lowPrice = bar.Low;
+                _closePrice = bar.Close;
                 _candlePriceLevel = null;
-                _priceStep        = bar.SymbolEx.PriceStep;
-                _advancedTAinfo   = bar;
+                _priceStep = bar.SymbolEx.PriceStep;
+                _advancedTAinfo = bar;
             }
 
             public sCandle( DateTimeOffset utcTime, object candleArg, double openPrice, double highPrice, double lowPrice, double closePrice, IEnumerable<CandlePriceLevel> priceLvls, double? priceStep, IPointMetadata advancedTAInfo )
             {
-                _utcTime          = utcTime.UtcDateTime;
-                _candleArg        = candleArg;
-                _openPrice        = openPrice;
-                _highPrice        = highPrice;
-                _lowPrice         = lowPrice;
-                _closePrice       = closePrice;
+                _utcTime = utcTime.UtcDateTime;
+                _candleArg = candleArg;
+                _openPrice = openPrice;
+                _highPrice = highPrice;
+                _lowPrice = lowPrice;
+                _closePrice = closePrice;
                 _candlePriceLevel = priceLvls != null ? priceLvls.ToArray() : null;
-                _priceStep        = priceStep;
-                _advancedTAinfo   = advancedTAInfo;
+                _priceStep = priceStep;
+                _advancedTAinfo = advancedTAInfo;
             }
 
 

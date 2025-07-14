@@ -127,7 +127,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             Area.ViewModel.Draw( data );
         }
@@ -268,12 +268,12 @@ namespace StockSharp.Xaml.Charting
             throw new NotImplementedException( );
         }
 
-        public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
         {
             throw new NotImplementedException( );
         }
 
-        public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawDataEx.sAnnotation aData )
+        public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData )
         {
             throw new NotImplementedException( );
         }

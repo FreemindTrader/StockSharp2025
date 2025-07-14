@@ -33,7 +33,7 @@ namespace StockSharp.Xaml.Charting
 
         void Reset( IEnumerable<IChartElement> elements );
 
-        void Draw( ChartDrawDataEx data );
+        void Draw( ChartDrawData data );
 
 
         void AddElement   ( ChartArea area, IChartElement element );
@@ -50,9 +50,9 @@ namespace StockSharp.Xaml.Charting
 
         void InvokeAnnotationCreatedEvent ( ChartAnnotation annotation );
 
-        void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawDataEx.sAnnotation aData );
+        void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData );
 
-        void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawDataEx.sAnnotation aData );
+        void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.sAnnotation aData );
 
         void InvokeAnnotationDeletedEvent ( ChartAnnotation annotation );
     }

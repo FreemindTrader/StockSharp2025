@@ -64,7 +64,7 @@ namespace StockSharp.Xaml.Charting
             return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
         }
 
-        protected override bool OnDraw( ChartDrawDataEx data )
+        protected override bool OnDraw( ChartDrawData data )
         {
             return ( 0 | ( ( ( IChartComponent )Values ).Draw( data ) ? 1 : 0 ) | ( ( ( IChartComponent )Smile ).Draw( data ) ? 1 : 0 ) ) != 0;
         }

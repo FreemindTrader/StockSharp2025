@@ -753,11 +753,11 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<ChartAnnotation> AnnotationCreated;
 
-        public event Action<ChartAnnotation, ChartDrawDataEx.sAnnotation> AnnotationModified;
+        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationModified;
 
         public event Action<ChartAnnotation> AnnotationDeleted;
 
-        public event Action<ChartAnnotation, ChartDrawDataEx.sAnnotation> AnnotationSelected;
+        public event Action<ChartAnnotation, ChartDrawData.sAnnotation> AnnotationSelected;
 
         public event Action<ChartCandleElement, CandleSeries> SubscribeCandleElement;
 
@@ -774,7 +774,7 @@ namespace StockSharp.Xaml.Charting
             _chartAreas.ResetChartAreas( elements.ToArray( ) );
         }
 
-        public void Draw( ChartDrawDataEx data )
+        public void Draw( ChartDrawData data )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -1359,12 +1359,12 @@ namespace StockSharp.Xaml.Charting
             AnnotationCreated?.Invoke( annotation );
         }
 
-        void IChart.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawDataEx.sAnnotation d )
+        void IChart.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawData.sAnnotation d )
         {
             AnnotationModified?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawDataEx.sAnnotation d )
+        void IChart.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawData.sAnnotation d )
         {
             AnnotationSelected?.Invoke( a, d );
         }
@@ -1448,7 +1448,7 @@ namespace StockSharp.Xaml.Charting
                 chartArea.ViewModel.Height = chartArea.Height;
             }
 
-            public void DrawChartAreas( ChartDrawDataEx drawData )
+            public void DrawChartAreas( ChartDrawData drawData )
             {
                 if ( drawData == null )
                 {

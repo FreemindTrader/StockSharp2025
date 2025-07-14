@@ -196,12 +196,12 @@ internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< Ch
         _lastDrawValueObject = default( T );
     }
 
-    public override bool Draw( IEnumerableEx< ChartDrawDataEx.IDrawValue > ienumerableEx_0 )
+    public override bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > ienumerableEx_0 )
     {
-        return UpdateDataSeries( ienumerableEx_0.Cast< ChartDrawDataEx.sxTuple< T > >( ).ToEx( ienumerableEx_0.Count ) );
+        return UpdateDataSeries( ienumerableEx_0.Cast< ChartDrawData.sxTuple< T > >( ).ToEx( ienumerableEx_0.Count ) );
     }
 
-    public bool UpdateDataSeries< TX1 >( IEnumerableEx< ChartDrawDataEx.sxTuple< TX1 > > drawValues ) where TX1 : struct, IComparable
+    public bool UpdateDataSeries< TX1 >( IEnumerableEx< ChartDrawData.sxTuple< TX1 > > drawValues ) where TX1 : struct, IComparable
     {
         if( drawValues == null )
         {
@@ -215,7 +215,7 @@ internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< Ch
         double[ ] bandOne = new double[ count ];
         double[ ] bandTwo = new double[ count ];
 
-        foreach( ChartDrawDataEx.sxTuple< TX1 > band in drawValues )
+        foreach( ChartDrawData.sxTuple< TX1 > band in drawValues )
         {
             T x = ( T )( ValueType )band.GetProperty( );
             

@@ -256,20 +256,20 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
     }
 
     bool IDrawableChartElement.StartDrawing(
-      IEnumerableEx<ChartDrawDataEx.IDrawValue> _param1 )
+      IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
     {
         return this._baseViewModel.Draw( _param1 );
     }
 
     void IDrawableChartElement.StartDrawing()
     {
-        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( Enumerable.Empty<ChartDrawDataEx.IDrawValue>(), 0 ) );
+        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
-    protected override bool OnDraw( ChartDrawDataEx data )
+    protected override bool OnDraw( ChartDrawData data )
     {
         var source = data.GetActiveOrders( this );
-        return source != null && !CollectionHelper.IsEmpty<ChartDrawDataEx.sActiveOrder>( ( ICollection<ChartDrawDataEx.sActiveOrder> ) source ) && ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( source.Cast<ChartDrawDataEx.IDrawValue>(), source.Count ) );
+        return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sActiveOrder>( ( ICollection<ChartDrawData.sActiveOrder> ) source ) && ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source.Cast<ChartDrawData.IDrawValue>(), source.Count ) );
     }
 
     public override void Load( SettingsStorage storage )

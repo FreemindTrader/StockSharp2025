@@ -18,7 +18,7 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         public struct sActiveOrder : IDrawValue
         {

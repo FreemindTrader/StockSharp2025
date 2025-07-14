@@ -69,7 +69,7 @@ public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable
 
     protected abstract bool OnDraw();
 
-    public virtual bool Draw(ChartDrawDataEx data)
+    public virtual bool Draw(ChartDrawData data)
     {
         if(!IsAttached)
         {
@@ -197,9 +197,9 @@ public abstract class BaseChartIndicatorPainter : ChartBaseViewModel, ICloneable
                     double value1 = myFunc1(i);
                     double value2 = myFunc2 != null ? myFunc2(i) : double.NaN;
 
-                    return ChartDrawDataEx.sxTuple<DateTime>.CreateSxTuple(dateTime, value1, value2);
+                    return ChartDrawData.sxTuple<DateTime>.CreateSxTuple(dateTime, value1, value2);
                 })
-            .Cast<ChartDrawDataEx.IDrawValue>()
+            .Cast<ChartDrawData.IDrawValue>()
             .ToEx(_indicatorPainter.GetCount());
 
         return drawableElement.StartDrawing(drawValues);

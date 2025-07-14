@@ -10,7 +10,7 @@ namespace StockSharp.Xaml.Charting
 
         IEnumerable< IChartElement > InnerElements { get; }
 
-        bool Draw( ChartDrawDataEx data );
+        bool Draw( ChartDrawData data );
 
         void Reset( );
 

@@ -9,7 +9,8 @@ using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Messages;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic;
+using fx.Collections;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -18,12 +19,12 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" />.
         /// </summary>
-        public ChartDrawDataEx()
+        public ChartDrawData()
         {
         }
 
@@ -89,22 +90,24 @@ namespace StockSharp.Xaml.Charting
             return true;
         }
 
-        public interface IDrawValue { }
+        public interface IDrawValue
+        {
+        }
         /// <summary>Interface which represents all chart draw data types.</summary>
         //public interface IDrawValue<T> where T : struct, IDrawValue<T> { }
 
 
         //public struct sCandleColor : IDrawValue<sCandleColor>
-        
+
         private PooledDictionary<ChartCandleElement, sCandleEx > _candleMap;
 
         private PooledDictionary<ChartCandleElement, PooledList<sCandleColor>> _candleColorMap;
 
 
 
-        
 
-        public PooledDictionary<ChartCandleElement, sCandleEx > GetCandleMap( )
+
+        public PooledDictionary<ChartCandleElement, sCandleEx> GetCandleMap()
         {
             return _candleMap ?? ( _candleMap = new PooledDictionary<ChartCandleElement, sCandleEx>() );
         }
@@ -117,9 +120,9 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public PooledDictionary<ChartCandleElement, PooledList<sCandleColor>> GetCandleColorMap( )
+        public PooledDictionary<ChartCandleElement, PooledList<sCandleColor>> GetCandleColorMap()
         {
-            return _candleColorMap ?? ( _candleColorMap = new PooledDictionary<ChartCandleElement, PooledList<sCandleColor>>( ) );
+            return _candleColorMap ?? ( _candleColorMap = new PooledDictionary<ChartCandleElement, PooledList<sCandleColor>>() );
         }
 
         private PooledDictionary<ChartIndicatorElement, IndicatorValuesList > _indicatorMap;
@@ -140,49 +143,49 @@ namespace StockSharp.Xaml.Charting
 
         private PooledDictionary<ChartAnnotation, sAnnotation> _annotationMap;
 
-        public PooledDictionary<ChartIndicatorElement, IndicatorValuesList> GetIndicatorMap( )
+        public PooledDictionary<ChartIndicatorElement, IndicatorValuesList> GetIndicatorMap()
         {
-            return _indicatorMap ?? ( _indicatorMap = new PooledDictionary<ChartIndicatorElement, IndicatorValuesList>( ) );
+            return _indicatorMap ?? ( _indicatorMap = new PooledDictionary<ChartIndicatorElement, IndicatorValuesList>() );
         }
 
-        public PooledDictionary<OrdersUI, PooledList<sTrade>> GetOrderMap( )
+        public PooledDictionary<OrdersUI, PooledList<sTrade>> GetOrderMap()
         {
-            return _orderMap ?? ( _orderMap = new PooledDictionary<OrdersUI, PooledList<sTrade>>( ) );
+            return _orderMap ?? ( _orderMap = new PooledDictionary<OrdersUI, PooledList<sTrade>>() );
         }
 
-        public PooledDictionary<TradesUI, PooledList<sTrade>> GetTradeMap( )
+        public PooledDictionary<TradesUI, PooledList<sTrade>> GetTradeMap()
         {
-            return _tradeMap ?? ( _tradeMap = new PooledDictionary<TradesUI, PooledList<sTrade>>( ) );
+            return _tradeMap ?? ( _tradeMap = new PooledDictionary<TradesUI, PooledList<sTrade>>() );
         }
 
-        public PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>> GetActiveOrderMa( )
+        public PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>> GetActiveOrderMa()
         {
-            return _activeOrdersMap ?? ( _activeOrdersMap = new PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>>( ) );
+            return _activeOrdersMap ?? ( _activeOrdersMap = new PooledDictionary<ChartActiveOrdersElement, PooledList<sActiveOrder>>() );
         }
 
-        public PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>> GetLineTimeMap( )
+        public PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>> GetLineTimeMap()
         {
-            return _lineTimeMap ?? ( _lineTimeMap = new PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>>( ) );
+            return _lineTimeMap ?? ( _lineTimeMap = new PooledDictionary<ChartLineElement, PooledList<sxTuple<DateTime>>>() );
         }
 
-        public PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>> GetLineValueMap( )
+        public PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>> GetLineValueMap()
         {
-            return _lineValueMap ?? ( _lineValueMap = new PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>>( ) );
+            return _lineValueMap ?? ( _lineValueMap = new PooledDictionary<ChartLineElement, PooledList<sxTuple<double>>>() );
         }
 
-        public PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> GetBandTimeMap( )
+        public PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>> GetBandTimeMap()
         {
-            return _bandTimeMap ?? ( _bandTimeMap = new PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>>( ) );
+            return _bandTimeMap ?? ( _bandTimeMap = new PooledDictionary<ChartBandElement, PooledList<sxTuple<DateTime>>>() );
         }
 
-        public PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>> GetBandValueMap( )
+        public PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>> GetBandValueMap()
         {
-            return _bandValueMap ?? ( _bandValueMap = new PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>>( ) );
+            return _bandValueMap ?? ( _bandValueMap = new PooledDictionary<ChartBandElement, PooledList<sxTuple<double>>>() );
         }
 
-        public PooledDictionary<ChartAnnotation, sAnnotation> GetAnnotationMap( )
+        public PooledDictionary<ChartAnnotation, sAnnotation> GetAnnotationMap()
         {
-            return _annotationMap ?? ( _annotationMap = new PooledDictionary<ChartAnnotation, sAnnotation>( ) );
+            return _annotationMap ?? ( _annotationMap = new PooledDictionary<ChartAnnotation, sAnnotation>() );
         }
 
         //public ChartDrawData( IEnumerable<RefPair<DateTimeOffset, IDictionary<IChartElement, object>>> values )
@@ -297,7 +300,7 @@ namespace StockSharp.Xaml.Charting
         /// <param name="state">Use this state to draw the order.</param>
         /// <returns>
         /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" /> instance.</returns>
-        public ChartDrawDataEx Add( ChartActiveOrdersElement element,
+        public ChartDrawData Add( ChartActiveOrdersElement element,
                                     Order order,
                                     bool? isFrozen = null,
                                     bool autoRemoveFromChart = true,
@@ -307,7 +310,7 @@ namespace StockSharp.Xaml.Charting
                                     Decimal? balance = null,
                                     OrderStates? state = null )
         {
-            state.GetValueOrDefault( );
+            state.GetValueOrDefault();
             if ( !state.HasValue )
                 state = new OrderStates?( order != null ? order.State : OrderStates.None );
             Decimal valueOrDefault = price.GetValueOrDefault();
@@ -317,21 +320,21 @@ namespace StockSharp.Xaml.Charting
                     throw new ArgumentException( "Order is null" );
                 price = new Decimal?( order.Price );
             }
-            valueOrDefault = balance.GetValueOrDefault( );
+            valueOrDefault = balance.GetValueOrDefault();
             if ( !balance.HasValue )
                 balance = new Decimal?( order != null ? order.Balance : Decimal.Zero );
-            isFrozen.GetValueOrDefault( );
+            isFrozen.GetValueOrDefault();
             OrderStates? nullable1;
             if ( !isFrozen.HasValue )
             {
                 nullable1 = state;
                 OrderStates orderStates1 = OrderStates.None;
                 int num;
-                if ( !( nullable1.GetValueOrDefault( ) == orderStates1 & nullable1.HasValue ) )
+                if ( !( nullable1.GetValueOrDefault() == orderStates1 & nullable1.HasValue ) )
                 {
                     nullable1 = state;
                     OrderStates orderStates2 = OrderStates.Pending;
-                    num = nullable1.GetValueOrDefault( ) == orderStates2 & nullable1.HasValue ? 1 : 0;
+                    num = nullable1.GetValueOrDefault() == orderStates2 & nullable1.HasValue ? 1 : 0;
                 }
                 else
                     num = 1;
@@ -347,11 +350,11 @@ namespace StockSharp.Xaml.Charting
             bool weHaveError;
             if ( !isError.HasValue )
             {
-                weHaveError = state.GetValueOrDefault( ) == OrderStates.Failed & state.HasValue;
+                weHaveError = state.GetValueOrDefault() == OrderStates.Failed & state.HasValue;
             }
             else
             {
-                weHaveError = isError.GetValueOrDefault( );
+                weHaveError = isError.GetValueOrDefault();
             }
 
             sActiveOrder activeOrder = new sActiveOrder(order1, balance.Value, (OrderStates) orderState, priceStep, autoRemove != 0, isFrozen.Value, isHidden, weHaveError, price.Value );
@@ -457,7 +460,7 @@ namespace StockSharp.Xaml.Charting
 
             if ( lineTime != null && lineTime.Count > 0 )
             {
-                return lineTime.Cast<IDrawValue>( ).ToEx( lineTime.Count );
+                return lineTime.Cast<IDrawValue>().ToEx( lineTime.Count );
             }
 
             var lineValue = GetLineValue( line );
@@ -467,7 +470,7 @@ namespace StockSharp.Xaml.Charting
                 return null;
             }
 
-            return lineValue.Cast<IDrawValue>( ).ToEx( lineValue.Count );
+            return lineValue.Cast<IDrawValue>().ToEx( lineValue.Count );
         }
 
         public IEnumerableEx<IDrawValue> GetBandDrawValues( ChartBandElement band )
@@ -476,7 +479,7 @@ namespace StockSharp.Xaml.Charting
 
             if ( bandTime != null && bandTime.Count > 0 )
             {
-                return bandTime.Cast<IDrawValue>( ).ToEx( bandTime.Count );
+                return bandTime.Cast<IDrawValue>().ToEx( bandTime.Count );
             }
 
             PooledList<sxTuple<double>> bandValue = GetBandValue( band );
@@ -485,7 +488,7 @@ namespace StockSharp.Xaml.Charting
                 return null;
             }
 
-            return bandValue.Cast<IDrawValue>( ).ToEx( bandValue.Count );
+            return bandValue.Cast<IDrawValue>().ToEx( bandValue.Count );
         }
 
 

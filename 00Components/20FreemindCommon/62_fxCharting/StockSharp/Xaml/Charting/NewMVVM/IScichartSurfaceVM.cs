@@ -39,7 +39,7 @@ namespace StockSharp.Xaml.Charting
 
         void AddRenderableSeriesToChartSurface( IChartComponent elementXY, IRenderableSeries renderableSeries );
 
-        void SetupAnnotation( IChartElement annotation, ChartDrawDataEx.sAnnotation data );
+        void SetupAnnotation( IChartElement annotation, ChartDrawData.sAnnotation data );
 
         void Remove( IChartComponent elementXY );
 
@@ -55,7 +55,7 @@ namespace StockSharp.Xaml.Charting
 
         void Dispose( );
 
-        void Draw( ChartDrawDataEx data );
+        void Draw( ChartDrawData data );
 
         void UpdateQuote( DateTime offerTime, double bid, double ask );
 

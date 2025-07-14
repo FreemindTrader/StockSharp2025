@@ -22,27 +22,27 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawDataEx
+    public partial class ChartDrawData
     {
         public sealed class ChartDrawDataItem
         {
-            public ChartDrawDataItem( ChartDrawDataEx data, DateTimeOffset timestamp )
-            {
-                if ( data == null )
-                    throw new ArgumentNullException( "ChartDrawData is null" );
-                
-                _drawData  = data;
-                _timeStamp = timestamp;
-                _xValue    = double.NaN;
-            }
-
-            public ChartDrawDataItem( ChartDrawDataEx data, double xValue )
+            public ChartDrawDataItem( ChartDrawData data, DateTimeOffset timestamp )
             {
                 if ( data == null )
                     throw new ArgumentNullException( "ChartDrawData is null" );
 
                 _drawData = data;
-                _xValue   = xValue;
+                _timeStamp = timestamp;
+                _xValue = double.NaN;
+            }
+
+            public ChartDrawDataItem( ChartDrawData data, double xValue )
+            {
+                if ( data == null )
+                    throw new ArgumentNullException( "ChartDrawData is null" );
+
+                _drawData = data;
+                _xValue = xValue;
             }
 
             /// <summary>The time stamp of the new data generation.</summary>
@@ -69,7 +69,7 @@ namespace StockSharp.Xaml.Charting
                 }
             }
 
-            private readonly ChartDrawDataEx _drawData;
+            private readonly ChartDrawData _drawData;
 
             private ChartDrawDataItem Add<TElement, TValue>( PooledDictionary<TElement, PooledList<TValue>> _param1, TElement _param2, TValue _param3 )
             {
@@ -77,7 +77,7 @@ namespace StockSharp.Xaml.Charting
                 return this;
             }
 
-            
+
             /// <summary>Put candle color data.</summary>
             /// <param name="element">The chart element representing a candle.</param>
             /// <param name="color">Candle draw color.</param>
@@ -102,7 +102,7 @@ namespace StockSharp.Xaml.Charting
                 return this;
             }
 
-            
+
             /// <summary>Put the indicator data.</summary>
             /// <param name="element">The chart element representing the indicator.</param>
             /// <param name="value">The indicator value.</param>

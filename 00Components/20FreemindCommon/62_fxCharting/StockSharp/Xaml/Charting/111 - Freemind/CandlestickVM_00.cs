@@ -65,7 +65,7 @@ namespace StockSharp.Xaml.Charting
         public double Low { get; set; }    // Low (the smallest price) of the time period
         public double Close { get; set; }    // Close (the latest price) of the time period
 
-        public NullBar( ChartDrawDataEx.sCandle bar )
+        public NullBar( ChartDrawData.sCandle bar )
         {
             BarTime = bar.UtcTime( );
             Period = ( TimeSpan ) bar.CandleArg( );
@@ -482,7 +482,7 @@ namespace StockSharp.Xaml.Charting
             _setMinMax = false;
         }
 
-        public override bool Draw( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
+        public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -490,10 +490,10 @@ namespace StockSharp.Xaml.Charting
             *                           
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */
-            return UpdateDataSeries( drawValues.Cast<ChartDrawDataEx.sCandle>( ).ToEx( drawValues.Count ) );
+            return UpdateDataSeries( drawValues.Cast<ChartDrawData.sCandle>( ).ToEx( drawValues.Count ) );
         }
 
-        public bool TonyDrawSeries( ChartDrawDataEx.sCandleEx candleRangeData )
+        public bool TonyDrawSeries( ChartDrawData.sCandleEx candleRangeData )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -504,7 +504,7 @@ namespace StockSharp.Xaml.Charting
             return UpdateDataSeries( candleRangeData );
         }
 
-        public bool UpdateDataSeries( ChartDrawDataEx.sCandleEx barRange )
+        public bool UpdateDataSeries( ChartDrawData.sCandleEx barRange )
         {
             if ( _colorerFunction != ChartComponentView.Colorer )
             {
@@ -673,7 +673,7 @@ namespace StockSharp.Xaml.Charting
 
         
 
-        public bool UpdateDataSeries( IEnumerableEx<ChartDrawDataEx.sCandle> candles )
+        public bool UpdateDataSeries( IEnumerableEx<ChartDrawData.sCandle> candles )
         {
             if ( _colorerFunction != ChartComponentView.Colorer )
             {
@@ -700,7 +700,7 @@ namespace StockSharp.Xaml.Charting
             double[ ] closeArray                   = new double[ count ];
             IPointMetadata[] advancedTAInfo        = new IPointMetadata[ count ];
 
-            foreach ( ChartDrawDataEx.sCandle bar in candles )
+            foreach ( ChartDrawData.sCandle bar in candles )
             {
                 SetPnfBoxSize( bar.CandleArg( ) );
 

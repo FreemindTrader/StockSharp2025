@@ -289,12 +289,12 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfBaseViewModel< Ch
         _lastDrawValueObject = default( T );
     }
 
-    public override bool Draw( IEnumerableEx< ChartDrawDataEx.IDrawValue > drawValue )
+    public override bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > drawValue )
     {
-        return UpdateDataSeries( drawValue.Cast< ChartDrawDataEx.sxTuple< T > >( ).ToEx( drawValue.Count ) );
+        return UpdateDataSeries( drawValue.Cast< ChartDrawData.sxTuple< T > >( ).ToEx( drawValue.Count ) );
     }
 
-    public bool UpdateDataSeries< TX1 >( IEnumerableEx< ChartDrawDataEx.sxTuple< TX1 > > drawValues ) where TX1 : struct, IComparable
+    public bool UpdateDataSeries< TX1 >( IEnumerableEx< ChartDrawData.sxTuple< TX1 > > drawValues ) where TX1 : struct, IComparable
     {
         if( _lineColorFunction != ChartComponentView.WinColorer )
         {

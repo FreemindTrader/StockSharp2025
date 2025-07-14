@@ -69,7 +69,7 @@ public static class ChartHelper
         {
             throw new ArgumentNullException(nameof(candle));
         }
-        ChartDrawDataEx data = new ChartDrawDataEx();
+        ChartDrawData data = new ChartDrawData();
         data.Group(candle.OpenTime).Add(element, candle);
         chart.Draw(data);
     }

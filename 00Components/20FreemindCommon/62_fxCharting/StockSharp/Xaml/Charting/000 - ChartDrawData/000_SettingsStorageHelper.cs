@@ -70,7 +70,7 @@ internal static class SettingsStorageHelper
             if ( !( myBrush is LinearGradientBrush linear ) )
             {
                 if ( !( myBrush is RadialGradientBrush radial ) )
-                    throw new ArgumentOutOfRangeException( "brush", ( object ) myBrush, LocalizedStrings.InvalidValue );
+                    throw new ArgumentOutOfRangeException( "brush",  myBrush, LocalizedStrings.InvalidValue );
                 store.SetValue<string>( "Type", TypeHelper.GetTypeName( typeof( RadialGradientBrush ), true ) );
                 store.SetValue<ColorInterpolationMode>( "ColorInterpolationMode", radial.ColorInterpolationMode );
                 store.SetValue<double>( "Opacity", radial.Opacity );
@@ -123,19 +123,19 @@ internal static class SettingsStorageHelper
     public static Brush GetBrush( this SettingsStorage store )
     {
         Type actualValue = store != null ? Converter.To<Type>( store.GetValue<string>("Type", (string) null)) : throw new ArgumentNullException("storage");
-        if ( ( object ) actualValue == null )
+        if (  actualValue == null )
             return ( Brush ) null;
         if ( actualValue == typeof( SolidColorBrush ) )
         {
-            SolidColorBrush solidColorBrush = new SolidColorBrush();
-            solidColorBrush.Color = store.GetValue<object>( "Color", ( object ) null ).ToColor();
+            var solidColorBrush = new SolidColorBrush();
+            solidColorBrush.Color = store.GetValue<object>( "Color",  null ).ToColor();
             solidColorBrush.Opacity = store.GetValue<double>( "Opacity", 0.0 );
             return ( Brush ) solidColorBrush;
         }
 
         if ( actualValue == typeof( LinearGradientBrush ) )
         {
-            LinearGradientBrush linear = new LinearGradientBrush();
+            var linear = new LinearGradientBrush();
             linear.ColorInterpolationMode = store.GetValue<ColorInterpolationMode>( "ColorInterpolationMode", linear.ColorInterpolationMode );
             linear.Opacity = store.GetValue<double>( "Opacity", linear.Opacity );
             linear.StartPoint = store.GetValue<Point>( "StartPoint", linear.StartPoint );
@@ -146,9 +146,9 @@ internal static class SettingsStorageHelper
         }
 
         if ( !( actualValue == typeof( RadialGradientBrush ) ) )
-            throw new ArgumentOutOfRangeException( "storage", ( object ) actualValue, LocalizedStrings.InvalidValue );
+            throw new ArgumentOutOfRangeException( "storage",  actualValue, LocalizedStrings.InvalidValue );
 
-        RadialGradientBrush radial = new RadialGradientBrush();
+        var radial = new RadialGradientBrush();
         radial.ColorInterpolationMode = store.GetValue<ColorInterpolationMode>( "ColorInterpolationMode", radial.ColorInterpolationMode );
         radial.Opacity = store.GetValue<double>( "Opacity", radial.Opacity );
         radial.Center = store.GetValue<Point>( "Center", radial.Center );

@@ -98,7 +98,7 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public abstract bool Draw( IEnumerableEx< ChartDrawDataEx.IDrawValue > data );
+    public abstract bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > data );
     //public abstract bool Draw<T>( IEnumerableEx< ChartDrawData.IDrawValue<T> > data );
 
     public void Reset( )

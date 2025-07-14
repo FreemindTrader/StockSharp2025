@@ -167,7 +167,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         }
     }
 
-    public bool Draw( ChartDrawDataEx _param1 )
+    public bool Draw( ChartDrawData _param1 )
     {
         return RootChartComponent.Draw( _param1 );
     }

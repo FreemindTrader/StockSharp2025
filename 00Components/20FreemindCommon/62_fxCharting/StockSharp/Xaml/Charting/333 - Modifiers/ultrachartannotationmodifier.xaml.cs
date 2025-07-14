@@ -527,12 +527,12 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        private ChartDrawDataEx.sAnnotation GetAnnotationData( AnnotationBase anno )
+        private ChartDrawData.sAnnotation GetAnnotationData( AnnotationBase anno )
         {
             Struct1 s;
 
             s.b = anno;
-            var data            = new ChartDrawDataEx.sAnnotation( );
+            var data            = new ChartDrawData.sAnnotation( );
             s.sCalc = s.b.XAxis?.GetCurrentCoordinateCalculator( );
 
             data.IsVisible = new bool?( !s.b.IsHidden );
@@ -595,7 +595,7 @@ namespace StockSharp.Xaml.Charting
             ChartArea?.InvokeAnnotationDeletedEvent( annotation );
         }
 
-        public void SetupAnnotation( ChartAnnotation annotation, ChartDrawDataEx.sAnnotation data )
+        public void SetupAnnotation( ChartAnnotation annotation, ChartDrawData.sAnnotation data )
         {
             Struct0 s;
             //bool? nullable;

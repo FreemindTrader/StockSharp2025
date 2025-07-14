@@ -691,7 +691,7 @@ namespace StockSharp.Xaml.Charting
         }
 
         
-        protected override bool OnDraw( ChartDrawDataEx data )
+        protected override bool OnDraw( ChartDrawData data )
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
@@ -713,19 +713,19 @@ namespace StockSharp.Xaml.Charting
             return false;
         }
 
-        bool StartDrawing( ChartDrawDataEx.sCandleEx drawValues )
+        bool StartDrawing( ChartDrawData.sCandleEx drawValues )
         {
             return _viewModel.TonyDrawSeries( drawValues );
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
+        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
             return _viewModel.Draw( drawValues );
         }
 
         void IDrawableChartElement.StartDrawing()
         {
-            _viewModel.Draw( Enumerable.Empty<ChartDrawDataEx.IDrawValue>().ToEx( 0 ) );
+            _viewModel.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>().ToEx( 0 ) );
         }
 
 

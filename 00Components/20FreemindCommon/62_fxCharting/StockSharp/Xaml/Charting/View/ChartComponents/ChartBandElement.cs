@@ -122,17 +122,17 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
     }
 
     bool IDrawableChartElement.StartDrawing(
-      IEnumerableEx<ChartDrawDataEx.IDrawValue> _param1 )
+      IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
     {
         return this._baseViewModel.Draw( _param1 );
     }
 
     void IDrawableChartElement.StartDrawing()
     {
-        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( Enumerable.Empty<ChartDrawDataEx.IDrawValue>(), 0 ) );
+        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
-    protected override bool OnDraw( ChartDrawDataEx data )
+    protected override bool OnDraw( ChartDrawData data )
     {
         var drawValue = data.GetBandDrawValues( this );
         if ( drawValue != null && !drawValue.IsEmpty() )
