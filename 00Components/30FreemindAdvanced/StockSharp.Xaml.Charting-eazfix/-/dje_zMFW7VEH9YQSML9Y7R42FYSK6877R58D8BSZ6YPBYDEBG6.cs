@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd
+// Type: -.fxZoomPanModifier
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -13,7 +13,7 @@ using System.Windows;
 #nullable enable
 namespace \u002D;
 
-internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd : 
+internal sealed class fxZoomPanModifier : 
   dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd
 {
   
@@ -25,7 +25,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
-    this.\u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D = this.XAxes.Where<IAxis>(dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<IAxis, bool>(dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DztdZxHXQvl0jLk18eWYDLqRE\u003D))).ToDictionary<IAxis, string, IRange>(dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D ?? (dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D = new Func<IAxis, string>(dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzDdBD4\u0024viao9m95yVI0EJ1GE\u003D)), dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D ?? (dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D = new Func<IAxis, IRange>(dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzzdOSOlF3qFksNQn1piaenHc\u003D)));
+    this.\u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D = this.XAxes.Where<IAxis>(fxZoomPanModifier.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (fxZoomPanModifier.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<IAxis, bool>(fxZoomPanModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DztdZxHXQvl0jLk18eWYDLqRE\u003D))).ToDictionary<IAxis, string, IRange>(fxZoomPanModifier.SomeClass34343383.somemoerehoer ?? (fxZoomPanModifier.SomeClass34343383.somemoerehoer = new Func<IAxis, string>(fxZoomPanModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzDdBD4\u0024viao9m95yVI0EJ1GE\u003D)), fxZoomPanModifier.SomeClass34343383.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D ?? (fxZoomPanModifier.SomeClass34343383.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D = new Func<IAxis, IRange>(fxZoomPanModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzzdOSOlF3qFksNQn1piaenHc\u003D)));
   }
 
   public override void \u0023\u003DzHcrX_TM\u003D(Point _param1, Point _param2, Point _param3)
@@ -84,7 +84,7 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE
       else
       {
         foreach (IAxis yax in this.YAxes)
-          yax.\u0023\u003DzquLnA5Y\u003D(yax.IsHorizontalAxis ? -num1 : num2, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+          yax.\u0023\u003DzquLnA5Y\u003D(yax.IsHorizontalAxis ? -num1 : num2, ClipMode.None);
       }
     }
   }
@@ -92,11 +92,11 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE
   [Serializable]
   private new sealed class SomeClass34343383
   {
-    public static readonly dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383 SomeMethond0343 = new dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd.SomeClass34343383();
+    public static readonly fxZoomPanModifier.SomeClass34343383 SomeMethond0343 = new fxZoomPanModifier.SomeClass34343383();
     public static Func<IAxis, bool> \u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D;
     public static Func<IAxis, 
     #nullable enable
-    string> \u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D;
+    string> somemoerehoer;
     public static 
     #nullable disable
     Func<IAxis, IRange> \u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D;

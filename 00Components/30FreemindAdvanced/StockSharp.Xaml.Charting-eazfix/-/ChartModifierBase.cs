@@ -32,13 +32,13 @@ internal abstract class ChartModifierBase :
   
   public static readonly DependencyProperty \u0023\u003DzSLZmDSF5TsAu = DependencyProperty.RegisterAttached(nameof (IsEnabled), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartModifierBase.\u0023\u003DzMFI5J30qjapk)));
   
-  public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register(nameof (ExecuteOn), typeof (dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd), typeof (ChartModifierBase), new PropertyMetadata((object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton));
+  public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register(nameof (ExecuteOn), typeof (ExecuteOn), typeof (ChartModifierBase), new PropertyMetadata((object) ExecuteOn.MouseLeftButton));
   
   public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register(nameof (MouseModifier), typeof (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D), typeof (ChartModifierBase), new PropertyMetadata((object) \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None));
   
   private ISciChartSurface \u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
   
-  private static Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd> \u0023\u003DzKlT17PlFLc73;
+  private static Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, ExecuteOn> \u0023\u003DzKlT17PlFLc73;
   
   private IServiceContainer _serviceContainer;
   
@@ -94,11 +94,11 @@ internal abstract class ChartModifierBase :
     }
   }
 
-  public dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd ExecuteOn
+  public ExecuteOn ExecuteOn
   {
     get
     {
-      return (dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd) this.GetValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_);
+      return (ExecuteOn) this.GetValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_);
     }
     set
     {
@@ -334,27 +334,27 @@ internal abstract class ChartModifierBase :
 
   protected bool \u0023\u003DzK46Xo3q3PoYX(
     \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D _param1,
-    dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd _param2)
+    ExecuteOn _param2)
   {
     \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D nijb7bojGmWzLupPhdCYfw = \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk();
     if (ChartModifierBase.\u0023\u003DzKlT17PlFLc73 == null)
-      ChartModifierBase.\u0023\u003DzKlT17PlFLc73 = new Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd>()
+      ChartModifierBase.\u0023\u003DzKlT17PlFLc73 = new Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, ExecuteOn>()
       {
         {
           (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0,
-          dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseMove
+          ExecuteOn.MouseMove
         },
         {
           (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1,
-          dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton
+          ExecuteOn.MouseLeftButton
         },
         {
           (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 2,
-          dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseMiddleButton
+          ExecuteOn.MouseMiddleButton
         },
         {
           (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4,
-          dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseRightButton
+          ExecuteOn.MouseRightButton
         }
       };
     return ChartModifierBase.\u0023\u003DzKlT17PlFLc73.ContainsKey(_param1) && ChartModifierBase.\u0023\u003DzKlT17PlFLc73[_param1] == _param2 && (this.MouseModifier & nijb7bojGmWzLupPhdCYfw) == nijb7bojGmWzLupPhdCYfw;

@@ -662,14 +662,14 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public void \u0023\u003DzquLnA5Y\u003D(
     double _param1,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param2)
+    ClipMode _param2)
   {
     throw new NotImplementedException();
   }
 
   public void \u0023\u003DzquLnA5Y\u003D(
     double _param1,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param2,
+    ClipMode _param2,
     TimeSpan _param3)
   {
     throw new NotImplementedException();

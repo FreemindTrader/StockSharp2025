@@ -254,7 +254,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     using (this.ParentSurface.SuspendUpdates())
     {
       this._totalScrollOffset += num4;
-      yaxis.\u0023\u003DzquLnA5Y\u003D(num4, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+      yaxis.\u0023\u003DzquLnA5Y\u003D(num4, ClipMode.None);
       \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates2 = this.GetCoordinates(canvas, this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
       Point point = new Point();
       point.X = coordinates2.\u0023\u003DzS2_K6sVvd5IY;

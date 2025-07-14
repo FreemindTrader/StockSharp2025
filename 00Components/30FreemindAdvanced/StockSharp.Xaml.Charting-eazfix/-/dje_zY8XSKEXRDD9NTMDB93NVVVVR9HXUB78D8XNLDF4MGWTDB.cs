@@ -47,7 +47,7 @@ internal sealed class dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd :
     this.PreviewMouseUp += new MouseButtonEventHandler(this.\u0023\u003DznkUq71oWHpDplx3htA\u003D\u003D);
     jq9Llz3ahZ2LrQl4.\u0023\u003DzZla_cGQ\u003D = new TouchFrameEventHandler(this.\u0023\u003Dzf8Py\u0024SRf1KtV);
     this.\u0023\u003DzDBof02j7wNLE = new RoutedEventHandler(jq9Llz3ahZ2LrQl4.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D);
-    this.\u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D = new RoutedEventHandler(jq9Llz3ahZ2LrQl4.\u0023\u003Dzk0q47haYd4sk7HJcWw\u003D\u003D);
+    this.\u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D = new RoutedEventHandler(jq9Llz3ahZ2LrQl4.OnChartAreaElementsRemovingAt);
     this.Loaded += this.\u0023\u003DzDBof02j7wNLE;
     this.Unloaded += this.\u0023\u003DzCulyDmxVeDrERKl9OA\u003D\u003D;
   }
@@ -284,7 +284,7 @@ internal sealed class dje_zY8XSKEXRDD9NTMDB93NVVVVR9HXUB78D8XNLDF4MGWTDBTZ_ejd :
       Touch.FrameReported += this.\u0023\u003DzZla_cGQ\u003D;
     }
 
-    internal void \u0023\u003Dzk0q47haYd4sk7HJcWw\u003D\u003D(
+    internal void OnChartAreaElementsRemovingAt(
       object _param1,
       RoutedEventArgs _param2)
     {

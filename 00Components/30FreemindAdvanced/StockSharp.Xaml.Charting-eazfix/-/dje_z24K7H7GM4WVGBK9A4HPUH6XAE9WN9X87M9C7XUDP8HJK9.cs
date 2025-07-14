@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd
+// Type: -.ModifierGroup
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -18,38 +18,38 @@ using System.Xml;
 namespace \u002D;
 
 [System.Windows.Markup.ContentProperty("ChildModifiers")]
-internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd : 
+internal sealed class ModifierGroup : 
   \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register(nameof (ChildModifiers), typeof (ObservableCollection<IChartModifier>), typeof (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzMGnM8Q7UmYY2)));
+  public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register(nameof (ChildModifiers), typeof (ObservableCollection<IChartModifier>), typeof (ModifierGroup), new PropertyMetadata((object) null, new PropertyChangedCallback(ModifierGroup.\u0023\u003DzMGnM8Q7UmYY2)));
   
   private readonly Grid \u0023\u003DzS\u0024OTg_s\u003D = new Grid();
 
-  public dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd()
+  public ModifierGroup()
     : this(Array.Empty<IChartModifier>())
   {
   }
 
-  public dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd(
+  public ModifierGroup(
     params IChartModifier[] _param1)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "childModifiers");
     for (int index = 0; index < _param1.Length; ++index)
       \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1[index], $"childModifiers[{index}]");
     this.Content = (object) this.\u0023\u003DzS\u0024OTg_s\u003D;
-    this.SetCurrentValue(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003Dzmf0Yyi0vkYuX, (object) new ObservableCollection<IChartModifier>((IEnumerable<IChartModifier>) _param1));
+    this.SetCurrentValue(ModifierGroup.\u0023\u003Dzmf0Yyi0vkYuX, (object) new ObservableCollection<IChartModifier>((IEnumerable<IChartModifier>) _param1));
   }
 
   public ObservableCollection<IChartModifier> ChildModifiers
   {
     get
     {
-      return (ObservableCollection<IChartModifier>) this.GetValue(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003Dzmf0Yyi0vkYuX);
+      return (ObservableCollection<IChartModifier>) this.GetValue(ModifierGroup.\u0023\u003Dzmf0Yyi0vkYuX);
     }
     set
     {
-      this.SetValue(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003Dzmf0Yyi0vkYuX, (object) value);
+      this.SetValue(ModifierGroup.\u0023\u003Dzmf0Yyi0vkYuX, (object) value);
     }
   }
 
@@ -126,7 +126,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass7654 lvtppRwsYcyoelU8 = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass7654();
+    ModifierGroup.SomeClass7654 lvtppRwsYcyoelU8 = new ModifierGroup.SomeClass7654();
     lvtppRwsYcyoelU8.\u0023\u003DzwM8aRUE\u003D = _param1;
     lvtppRwsYcyoelU8.\u0023\u003DzTi2kmf4\u003D = _param2;
     if (this.ChildModifiers == null)
@@ -138,7 +138,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass5555 kiaDl76b0Nyu42rxJq = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass5555();
+    ModifierGroup.SomeClass5555 kiaDl76b0Nyu42rxJq = new ModifierGroup.SomeClass5555();
     kiaDl76b0Nyu42rxJq.\u0023\u003DzwM8aRUE\u003D = _param1;
     kiaDl76b0Nyu42rxJq.\u0023\u003DzTi2kmf4\u003D = _param2;
     if (this.ChildModifiers == null)
@@ -150,7 +150,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass6409();
+    ModifierGroup.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new ModifierGroup.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzwM8aRUE\u003D = _param1;
     v4vdZv8GtEzAmB0rzFq.\u0023\u003DzTi2kmf4\u003D = _param2;
     if (this.ChildModifiers == null)
@@ -166,7 +166,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   public override void \u0023\u003Dz5y8F1YNwkhnW(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dzgc4SCis4HjHyynhFkS9uoNrJlYYn)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dzgc4SCis4HjHyynhFkS9uoNrJlYYn)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   private void \u0023\u003DziTCeMLw\u003D(
@@ -175,7 +175,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   {
     if (this.ChildModifiers == null)
       return;
-    foreach (IChartModifier chhAr3Kksm46Uy2Zy in this.ChildModifiers.Where<IChartModifier>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D = new Func<IChartModifier, bool>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzxqzF6jTaY9lVLxHYg5yFLN0\u003D))))
+    foreach (IChartModifier chhAr3Kksm46Uy2Zy in this.ChildModifiers.Where<IChartModifier>(ModifierGroup.SomeClass34343383.\u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D = new Func<IChartModifier, bool>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzxqzF6jTaY9lVLxHYg5yFLN0\u003D))))
     {
       if (chhAr3Kksm46Uy2Zy.ReceiveHandledEvents || !_param2.\u0023\u003Dz882B0y3Ue8fl())
         _param1(chhAr3Kksm46Uy2Zy, _param2);
@@ -185,54 +185,54 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   public override void \u0023\u003DzsXEfcKpqchyX(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003Dz11bcnbUrALaA(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz3eP\u0024F06Do2Yqw5911Phrm\u0024c\u003D)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dz3eP\u0024F06Do2Yqw5911Phrm\u0024c\u003D)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003DzU3pYs4rYVmOS(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzZSMUtK9zaXNAI8WwDGKJ3XDLzVv8)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzZSMUtK9zaXNAI8WwDGKJ3XDLzVv8)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003DzQTINWhMByBmJ(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzZ\u0024KRLvh2qpiaoFfyVxWBpgmJh\u0024ZU)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzZ\u0024KRLvh2qpiaoFfyVxWBpgmJh\u0024ZU)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003Dz3RBcoKAPKSIX(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzVYORBuxvOyw39HzBaLE20tNlRtHr)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzVYORBuxvOyw39HzBaLE20tNlRtHr)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003Dz0yya794Z8OaI(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzZ4U93QQjpDamF3o9CQ\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzZ4U93QQjpDamF3o9CQ\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzT6V9kc7Cfg601etpFH8cUK\u0024ZsXar)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzZ4U93QQjpDamF3o9CQ\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzZ4U93QQjpDamF3o9CQ\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzT6V9kc7Cfg601etpFH8cUK\u0024ZsXar)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003DzpmQpuKvOtHIk(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzbHvqWKMkbu6LA9m3wYK0Das\u003D)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzbHvqWKMkbu6LA9m3wYK0Das\u003D)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003DzsSwjrBzrsGPJ(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzdWZmB5uhdY2tAn7ZmG_SSuItHoU_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzdWZmB5uhdY2tAn7ZmG_SSuItHoU_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public bool \u0023\u003DzG9Tzlq4\u003D(Type _param1)
   {
-    return this.ChildModifiers.Any<IChartModifier>(new Func<IChartModifier, bool>(new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzupKvug2uTOcTyk52k2urQQw\u003D()
+    return this.ChildModifiers.Any<IChartModifier>(new Func<IChartModifier, bool>(new ModifierGroup.\u0023\u003DzupKvug2uTOcTyk52k2urQQw\u003D()
     {
       \u0023\u003DzCN8ZMQU\u003D = _param1
     }.\u0023\u003DzFNBE1DOFc1Eu9K4xOQ\u003D\u003D));
@@ -242,7 +242,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     object _param1,
     DependencyPropertyChangedEventArgs _param2)
   {
-    this.ChildModifiers.\u0023\u003Dz30RSSSygABj_<IChartModifier>(new Action<IChartModifier>(new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzOZhF6r12fDpdxPyyP9aETuM\u003D()
+    this.ChildModifiers.\u0023\u003Dz30RSSSygABj_<IChartModifier>(new Action<IChartModifier>(new ModifierGroup.\u0023\u003DzOZhF6r12fDpdxPyyP9aETuM\u003D()
     {
       \u0023\u003Dz1BK01YA\u003D = _param2
     }.\u0023\u003Dzq9_03GhVOxezkFFX0w\u003D\u003D));
@@ -251,7 +251,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   private IChartModifier \u0023\u003DzxRGD7v40sdKc(
     string _param1)
   {
-    return this.ChildModifiers.FirstOrDefault<IChartModifier>(new Func<IChartModifier, bool>(new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D()
+    return this.ChildModifiers.FirstOrDefault<IChartModifier>(new Func<IChartModifier, bool>(new ModifierGroup.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D()
     {
       \u0023\u003DzM_vMnac\u003D = _param1
     }.\u0023\u003DzDUlFPKVc44hNw\u0024Hpo\u0024G0dFo\u003D));
@@ -280,7 +280,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    if (!(_param0 is dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd c7XudP8HjK96ZEjd))
+    if (!(_param0 is ModifierGroup c7XudP8HjK96ZEjd))
       return;
     ObservableCollection<IChartModifier> oldValue = _param1.OldValue as ObservableCollection<IChartModifier>;
     ObservableCollection<IChartModifier> newValue = _param1.NewValue as ObservableCollection<IChartModifier>;
@@ -315,7 +315,7 @@ internal sealed class dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd :
   [Serializable]
   private new sealed class SomeClass34343383
   {
-    public static readonly dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383 SomeMethond0343 = new dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd.SomeClass34343383();
+    public static readonly ModifierGroup.SomeClass34343383 SomeMethond0343 = new ModifierGroup.SomeClass34343383();
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D;
     public static Func<IChartModifier, bool> \u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D;
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;

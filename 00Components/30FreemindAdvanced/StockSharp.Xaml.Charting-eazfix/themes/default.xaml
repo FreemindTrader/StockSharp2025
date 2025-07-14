@@ -1468,10 +1468,10 @@
     <llliil11:dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd Style="{Binding ParentSurface.YAxisStyle, RelativeSource={RelativeSource Self}}"/>
   </DataTemplate>
   <DataTemplate l1llili1:Key="StockChartModifier">
-    <llliil11:dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd l1llili1:Name="ModifierGroup">
+    <llliil11:ModifierGroup l1llili1:Name="ModifierGroup">
       <llliil11:dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd/>
       <llliil11:dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd/>
-      <llliil11:dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd ClipModeX="ClipAtMin" ReceiveHandledEvents="True"
+      <llliil11:fxZoomPanModifier ClipModeX="ClipAtMin" ReceiveHandledEvents="True"
                                                                                IsEnabled="{Binding ParentSurface.IsPanEnabled, RelativeSource={RelativeSource Self}}"/>
       <llliil11:dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd LegendData="{Binding ParentSurface.LegendSource, RelativeSource={RelativeSource Self}}"
                                                                          ShowLegend="{Binding ParentSurface.ShowLegend, RelativeSource={RelativeSource Self}}"
@@ -1488,7 +1488,7 @@
       <llliil11:dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd ActionType="Zoom" XyDirection="XYDirection"/>
       <llliil11:dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd ExecuteOn="MouseDoubleClick"/>
       <llliil11:dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd IsEnabled="{Binding ParentSurface.IsAxisMarkersEnabled, RelativeSource={RelativeSource Self}}"/>
-    </llliil11:dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd>
+    </llliil11:ModifierGroup>
   </DataTemplate>
   <Style l1llili1:Key="DefaultStockChartLegendStyle"
          TargetType="{l1llili1:Type llliil11:dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd}">

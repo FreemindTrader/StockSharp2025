@@ -30,7 +30,7 @@ internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD
   public dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd()
   {
     this.ReceiveHandledEvents = true;
-    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick);
+    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) ExecuteOn.MouseDoubleClick);
     this.DoubleTapThreshold = TimeSpan.FromMilliseconds(500.0);
   }
 
@@ -61,7 +61,7 @@ internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD
   public override void \u0023\u003Dz5y8F1YNwkhnW(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    if (this.ExecuteOn != dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick)
+    if (this.ExecuteOn != ExecuteOn.MouseDoubleClick)
       return;
     base.\u0023\u003Dz5y8F1YNwkhnW(_param1);
     _param1.\u0023\u003DzBHH5KNloEXNR(true);
@@ -71,7 +71,7 @@ internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD
   public override void \u0023\u003DzU3pYs4rYVmOS(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
   {
-    if (this.ExecuteOn != dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseRightButton || _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4)
+    if (this.ExecuteOn != ExecuteOn.MouseRightButton || _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4)
       return;
     base.\u0023\u003DzU3pYs4rYVmOS(_param1);
     _param1.\u0023\u003DzBHH5KNloEXNR(true);
@@ -111,7 +111,7 @@ internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD
     DateTime now = DateTime.Now;
     Point position = touchPoint.Position;
     DateTime z9OuWpvEvl2Gw = this.\u0023\u003Dz9OUWpvEvl2GW;
-    if (!(now - z9OuWpvEvl2Gw < this.DoubleTapThreshold) || \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzwAiTZQA\u003D(position, this.\u0023\u003Dzp3Spc6AS_Moc) >= 10.0 || !this.ParentSurface.\u0023\u003Dzwc4Gzka23TGB().IsPointWithinBounds(position) || this.ExecuteOn != dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseDoubleClick)
+    if (!(now - z9OuWpvEvl2Gw < this.DoubleTapThreshold) || \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzwAiTZQA\u003D(position, this.\u0023\u003Dzp3Spc6AS_Moc) >= 10.0 || !this.ParentSurface.\u0023\u003Dzwc4Gzka23TGB().IsPointWithinBounds(position) || this.ExecuteOn != ExecuteOn.MouseDoubleClick)
       return;
     this.\u0023\u003DzIjNc90j5mMD8();
   }

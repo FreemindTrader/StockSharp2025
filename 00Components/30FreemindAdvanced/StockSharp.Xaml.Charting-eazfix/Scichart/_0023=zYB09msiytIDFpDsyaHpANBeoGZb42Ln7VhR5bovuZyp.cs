@@ -29,7 +29,7 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANBeoGZb42Ln7VhR5bovuZyp_7
         new string[1]{ "YAxisId" }
       },
       {
-        typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK6877R58D8BSZ6YPBYDEBG6VFFGCPZE_ejd),
+        typeof (fxZoomPanModifier),
         new string[3]{ "ZoomExtentsY", "XyDirection", "ClipModeX" }
       },
       {

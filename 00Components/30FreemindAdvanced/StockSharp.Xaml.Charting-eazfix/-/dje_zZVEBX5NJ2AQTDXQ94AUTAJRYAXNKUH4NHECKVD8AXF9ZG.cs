@@ -1121,14 +1121,14 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
 
   public void \u0023\u003DzquLnA5Y\u003D(
     double _param1,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param2)
+    ClipMode _param2)
   {
     this.\u0023\u003DzquLnA5Y\u003D(_param1, _param2, TimeSpan.Zero);
   }
 
   public void \u0023\u003DzquLnA5Y\u003D(
     double _param1,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param2,
+    ClipMode _param2,
     TimeSpan _param3)
   {
     \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c txZaHyXliZ9wXjzC = this.\u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0();
@@ -1136,7 +1136,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
       return;
     IRange abyLt9clZggmJsWhw1 = txZaHyXliZ9wXjzC.\u0023\u003DzquLnA5Y\u003D(this.VisibleRange, _param1);
     IRange abyLt9clZggmJsWhw2 = abyLt9clZggmJsWhw1;
-    if (_param2 != dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None)
+    if (_param2 != ClipMode.None)
     {
       IRange abyLt9clZggmJsWhw3 = this.\u0023\u003DzFwoMKP9juTnt();
       abyLt9clZggmJsWhw2 = txZaHyXliZ9wXjzC.\u0023\u003DzoaHKvRB3HZP3(abyLt9clZggmJsWhw1, abyLt9clZggmJsWhw3, _param2);

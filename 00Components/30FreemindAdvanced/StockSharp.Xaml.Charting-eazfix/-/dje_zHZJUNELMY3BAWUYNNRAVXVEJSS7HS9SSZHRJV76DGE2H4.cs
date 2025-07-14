@@ -38,7 +38,7 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S
     IAxis dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
     double num1 = _param1.X - _param2.X;
     double num2 = _param2.Y - _param1.Y;
-    dynWmoFzgH4RlWB0lB.\u0023\u003DzquLnA5Y\u003D(dynWmoFzgH4RlWB0lB.IsHorizontalAxis ? -num1 : num2, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+    dynWmoFzgH4RlWB0lB.\u0023\u003DzquLnA5Y\u003D(dynWmoFzgH4RlWB0lB.IsHorizontalAxis ? -num1 : num2, ClipMode.None);
   }
 
   protected override IRange \u0023\u003DzFQz4aIsJtfEk(

@@ -38,5 +38,5 @@ internal interface \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0
   IRange \u0023\u003DzoaHKvRB3HZP3(
     IRange _param1,
     IRange _param2,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param3);
+    ClipMode _param3);
 }

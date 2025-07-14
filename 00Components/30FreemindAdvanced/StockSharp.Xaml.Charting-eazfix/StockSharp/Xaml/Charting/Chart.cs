@@ -52,7 +52,7 @@ public class Chart :
 		public string[ ] _someStringArray03843;
 		public Chart _variableSome3535;
 
-		internal void SomeInternalVoidFunction30439()
+		internal void OnAreaYAxisesRemoving()
 		{
 			CollectionHelper.ForEach<string>( ( IEnumerable<string> ) this._someStringArray03843, new Action<string>( this._variableSome3535.SomeInternalFunction34382084 ) );
 		}
@@ -187,7 +187,7 @@ public class Chart :
 			  nameof (AllowAddOrders),
 			  nameof (AllowAddOwnTrades)
 		};
-		ChartViewModel.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj( new Action( ucNpCcsOdkLfs7Ks.SomeInternalVoidFunction30439 ) );
+		ChartViewModel.\u0023\u003DztwqF4KBjQLI4w4fkq\u0024UNEzaV82mj( new Action( ucNpCcsOdkLfs7Ks.OnAreaYAxisesRemoving ) );
 		if ( IChartExtensions.TryIndicatorProvider == null )
 		{
 			IndicatorProvider indicatorProvider = new IndicatorProvider();
@@ -1301,7 +1301,7 @@ public class Chart :
       Title = $"{LocalizedStrings.Panel} {(this.\u0023\u003Dza1mnh6ythHbd.Count + 1).ToString()}"
     };
     q4dXwYzLzYwDdBciE.\u0023\u003DzvZK8J1raIDr8 = this.\u0023\u003DzJp_PZYEzsJcq();
-    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) area.XAxises, new Action<IChartAxis>(q4dXwYzLzYwDdBciE.\u0023\u003Dzn0BxqFlrvEnaJ4F1tg\u003D\u003D));
+    CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) area.XAxises, new Action<IChartAxis>(q4dXwYzLzYwDdBciE.OnAreaYAxisesRemovingAt));
     this.AddArea((IChartArea) area);
   }
 
@@ -1472,7 +1472,7 @@ public class Chart :
   {
     public TimeZoneInfo \u0023\u003DzvZK8J1raIDr8;
 
-    internal void \u0023\u003Dzn0BxqFlrvEnaJ4F1tg\u003D\u003D(IChartAxis _param1)
+    internal void OnAreaYAxisesRemovingAt(IChartAxis _param1)
     {
       _param1.TimeZone = this.\u0023\u003DzvZK8J1raIDr8;
     }

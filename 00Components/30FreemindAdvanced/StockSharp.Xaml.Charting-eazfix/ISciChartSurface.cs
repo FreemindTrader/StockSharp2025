@@ -44,21 +44,21 @@ internal interface ISciChartSurface :
   void set_ChartModifier(
     IChartModifier _param1);
 
-  \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D get_Annotations();
+  AnnotationCollection get_Annotations();
 
-  \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D Annotations { get; }
+  AnnotationCollection Annotations { get; }
 
   IAxis XAxis { get; set; }
 
   IAxis YAxis { get; set; }
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D get_YAxes();
+  AxisCollection get_YAxes();
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D YAxes { get; }
+  AxisCollection YAxes { get; }
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D get_XAxes();
+  AxisCollection get_XAxes();
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D XAxes { get; }
+  AxisCollection XAxes { get; }
 
   \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D \u0023\u003DzTRL\u0024Xy0vYDigfJ9YNg\u003D\u003D();
 

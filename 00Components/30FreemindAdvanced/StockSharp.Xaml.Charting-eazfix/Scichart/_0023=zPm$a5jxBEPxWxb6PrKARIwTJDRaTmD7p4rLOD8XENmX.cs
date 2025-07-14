@@ -25,7 +25,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D(
+internal sealed class ChartOrderModifier(
   ChartArea _param1) : ChartModifierBase
 {
   
@@ -35,21 +35,21 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
   
   private Line \u0023\u003DzujKvLh3D_ur8;
   
-  private \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D.\u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D \u0023\u003Dz31Z4JIE\u003D;
+  private ChartOrderModifier.\u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D \u0023\u003Dz31Z4JIE\u003D;
   
   private bool \u0023\u003DzfEYbsFOKVADr;
   
-  public static readonly DependencyProperty \u0023\u003DzISs1rY1PUWf_ = DependencyProperty.Register(nameof (ShowHorizontalLine), typeof (bool), typeof (\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzISs1rY1PUWf_ = DependencyProperty.Register(nameof (ShowHorizontalLine), typeof (bool), typeof (ChartOrderModifier), new PropertyMetadata((object) true));
 
   public bool ShowHorizontalLine
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D.\u0023\u003DzISs1rY1PUWf_);
+      return (bool) this.GetValue(ChartOrderModifier.\u0023\u003DzISs1rY1PUWf_);
     }
     set
     {
-      this.SetValue(\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D.\u0023\u003DzISs1rY1PUWf_, (object) value);
+      this.SetValue(ChartOrderModifier.\u0023\u003DzISs1rY1PUWf_, (object) value);
     }
   }
 
@@ -152,7 +152,7 @@ internal sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XE
         FalseValue = Visibility.Hidden
       });
       modifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DzujKvLh3D_ur8);
-      this.\u0023\u003Dz31Z4JIE\u003D = new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIwTJDRaTmD7p4rLOD8XENmXciu1eU_Ge7r60S1WUU1r\u0024gA\u003D\u003D.\u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D((UIElement) this.\u0023\u003DzujKvLh3D_ur8);
+      this.\u0023\u003Dz31Z4JIE\u003D = new ChartOrderModifier.\u0023\u003Dz959Vc91YOIMItx\u00244vg\u003D\u003D((UIElement) this.\u0023\u003DzujKvLh3D_ur8);
       AdornerLayer.GetAdornerLayer((Visual) this.\u0023\u003DzujKvLh3D_ur8).Add((Adorner) this.\u0023\u003Dz31Z4JIE\u003D);
     }
     double num1 = (double) this.YAxis.\u0023\u003DzACwLhyc\u003D(_param1.Y);

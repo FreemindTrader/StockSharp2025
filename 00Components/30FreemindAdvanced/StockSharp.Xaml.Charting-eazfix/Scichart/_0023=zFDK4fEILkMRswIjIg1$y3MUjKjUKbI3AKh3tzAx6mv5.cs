@@ -128,7 +128,7 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6
         else
         {
           foreach (IAxis yax in this.YAxes)
-            yax.\u0023\u003DzquLnA5Y\u003D(yax.IsHorizontalAxis ? -zCvE85jZgqySy : z9OrFOfczTfr, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+            yax.\u0023\u003DzquLnA5Y\u003D(yax.IsHorizontalAxis ? -zCvE85jZgqySy : z9OrFOfczTfr, ClipMode.None);
         }
       }
     }

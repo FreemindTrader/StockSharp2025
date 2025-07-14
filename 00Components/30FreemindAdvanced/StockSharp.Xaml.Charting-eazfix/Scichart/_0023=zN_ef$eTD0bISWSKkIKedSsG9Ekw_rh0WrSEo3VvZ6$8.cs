@@ -30,7 +30,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     if (!this.\u0023\u003DzsGkoBP41VLI4((ISciChartSurface) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, out ogQpZalPrDrRrx2Q))
     {
       this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.XAxes.\u0023\u003Dz30RSSSygABj_<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Action<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.SomeMethond0343.\u0023\u003DzIQem3qD8jTxU5SNvvnOyq\u0024w\u003D)));
-      this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.YAxes.\u0023\u003Dz30RSSSygABj_<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.\u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D = new Action<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024Fzx1KPXiYDq5k3tb2H1uRc\u003D)));
+      this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.YAxes.\u0023\u003Dz30RSSSygABj_<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.somemoerehoer ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.somemoerehoer = new Action<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024Fzx1KPXiYDq5k3tb2H1uRc\u003D)));
       _param1.\u0023\u003DzUf222sU\u003D();
       return ogQpZalPrDrRrx2Q;
     }
@@ -211,7 +211,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   }
 
   private static void \u0023\u003Dz2iW_UgNEfXLUkWrnJw\u003D\u003D(
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D _param0,
+    AxisCollection _param0,
     IRenderableSeries _param1,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param2,
     \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param3,
@@ -421,7 +421,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   {
     public static readonly \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383();
     public static Action<IAxis> \u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D;
-    public static Action<IAxis> \u0023\u003Dz4cfR9WtX1fuK0AziEg\u003D\u003D;
+    public static Action<IAxis> somemoerehoer;
     public static Action<IRenderableSeries> \u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;

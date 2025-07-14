@@ -86,10 +86,10 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZ
   public IRange \u0023\u003DzoaHKvRB3HZP3(
     IRange _param1,
     IRange _param2,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param3)
+    ClipMode _param3)
   {
     IRange abyLt9clZggmJsWhw1 = _param1;
-    if (_param3 != dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None)
+    if (_param3 != ClipMode.None)
     {
       IRange abyLt9clZggmJsWhw2 = ((IRange) abyLt9clZggmJsWhw1.Clone()).\u0023\u003DzJIqIiUw\u003D(_param2);
       bool flag1 = abyLt9clZggmJsWhw2.Min.CompareTo((object) abyLt9clZggmJsWhw1.Min) != 0;
@@ -111,13 +111,13 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZ
       }
       switch (_param3)
       {
-        case dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.StretchAtExtents:
+        case ClipMode.StretchAtExtents:
           abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw2;
           break;
-        case dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtMin:
+        case ClipMode.ClipAtMin:
           abyLt9clZggmJsWhw1 = flag1 ? \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param2, num2, num3, _param2) : \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param2, abyLt9clZggmJsWhw2.Min, abyLt9clZggmJsWhw1.Max);
           break;
-        case dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtExtents:
+        case ClipMode.ClipAtExtents:
           if (flag1 & flag2)
           {
             abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw2;

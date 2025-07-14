@@ -15,16 +15,16 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D : 
+internal sealed class AxisCollection : 
   ObservableCollection<IAxis>,
   IXmlSerializable
 {
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D()
+  public AxisCollection()
   {
     this.\u0023\u003DzhWsB8Osx9PQj();
   }
 
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D(
+  public AxisCollection(
     IEnumerable<IAxis> _param1)
     : base(_param1)
   {
@@ -33,12 +33,12 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
 
   protected bool \u0023\u003DzodGDG4t9ZHPr()
   {
-    return this.Any<IAxis>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IAxis, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D)));
+    return this.Any<IAxis>(AxisCollection.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (AxisCollection.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IAxis, bool>(AxisCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D)));
   }
 
   protected IAxis \u0023\u003DzJ3NldqbrPhqs()
   {
-    return this.FirstOrDefault<IAxis>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<IAxis, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D)));
+    return this.FirstOrDefault<IAxis>(AxisCollection.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (AxisCollection.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<IAxis, bool>(AxisCollection.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D)));
   }
 
   public IAxis Default
@@ -53,7 +53,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
     string _param1,
     bool _param2)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
+    AxisCollection.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new AxisCollection.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQ9LPsT8\u003D = _param1;
     try
     {
@@ -90,7 +90,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
 
   private void \u0023\u003DzQ66aClkZo__B(object _param1, NotifyCollectionChangedEventArgs _param2)
   {
-    IAxis dynWmoFzgH4RlWB0lB1 = _param2.NewItems != null ? _param2.NewItems.Cast<IAxis>().FirstOrDefault<IAxis>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.SomeIntenalMethod003D ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.SomeIntenalMethod003D = new Func<IAxis, bool>(\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D))) : (IAxis) null;
+    IAxis dynWmoFzgH4RlWB0lB1 = _param2.NewItems != null ? _param2.NewItems.Cast<IAxis>().FirstOrDefault<IAxis>(AxisCollection.SomeClass34343383.SomeIntenalMethod003D ?? (AxisCollection.SomeClass34343383.SomeIntenalMethod003D = new Func<IAxis, bool>(AxisCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D))) : (IAxis) null;
     if (dynWmoFzgH4RlWB0lB1 == null)
     {
       dynWmoFzgH4RlWB0lB1 = this.\u0023\u003DzJ3NldqbrPhqs();
@@ -110,7 +110,7 @@ internal sealed class \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003
   [Serializable]
   private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D.SomeClass34343383();
+    public static readonly AxisCollection.SomeClass34343383 SomeMethond0343 = new AxisCollection.SomeClass34343383();
     public static Func<IAxis, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
     public static Func<IAxis, bool> SomeIntenalMethod003D;

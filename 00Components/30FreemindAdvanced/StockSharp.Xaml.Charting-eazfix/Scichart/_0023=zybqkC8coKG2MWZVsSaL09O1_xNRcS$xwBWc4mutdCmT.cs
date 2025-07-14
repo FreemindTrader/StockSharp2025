@@ -47,9 +47,9 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
     if (renderSurfaceType != null)
       _param2.WriteAttributeString("RenderSurfaceType", renderSurfaceType);
     \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003DzLq2ODtDmwh8XhlieTRcobzhsPRrHR7GqyQ\u003D\u003D((IEnumerable<IRenderableSeries>) _param1.RenderableSeries, _param2);
-    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D>(_param1.XAxes, "XAxes", _param2);
-    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D>(_param1.YAxes, "YAxes", _param2);
-    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D>(_param1.Annotations, "Annotations", _param2);
+    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<AxisCollection>(_param1.XAxes, "XAxes", _param2);
+    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<AxisCollection>(_param1.YAxes, "YAxes", _param2);
+    \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<AnnotationCollection>(_param1.Annotations, "Annotations", _param2);
     \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzysp\u0024M4k\u003D<ChartModifierBase>((ChartModifierBase) _param1.ChartModifier, "ChartModifier", _param2);
   }
 

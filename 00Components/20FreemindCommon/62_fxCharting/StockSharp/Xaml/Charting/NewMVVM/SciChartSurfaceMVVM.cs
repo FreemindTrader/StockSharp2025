@@ -40,91 +40,96 @@ using System.Windows.Media;
 using SciChart.Charting.Themes;
 using Ecng.Common;
 
+namespace StockSharp.Xaml.Charting;
 
 public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurfaceVM, IDisposable
 {
-    private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>      _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>( );
-    private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>         _chartUIRSeries               = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>( );
+    private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel> _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>();
+    private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>> _chartUIRSeries = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>();
 
-    private readonly PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap  = new PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>>( );
-    private readonly PooledDictionary<string, string>                                      _axisIdToGroup                = new PooledDictionary<string, string>( );
-    private readonly ObservableCollection<ChartCompentViewModel>                                  _legendElements               = new ObservableCollection<ChartCompentViewModel>( );
-    private readonly SynchronizedSet<ChartCompentViewModel>                                       _parentChartViewModelCache    = new SynchronizedSet<ChartCompentViewModel>( );
+    private readonly PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap = new PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>>();
+    private readonly PooledDictionary<string, string> _axisIdToGroup = new PooledDictionary<string, string>();
+    private readonly ObservableCollection<ChartCompentViewModel> _legendElements = new ObservableCollection<ChartCompentViewModel>();
+    private readonly SynchronizedSet<ChartCompentViewModel> _parentChartViewModelCache = new SynchronizedSet<ChartCompentViewModel>();
 
-    private readonly PooledList<ChartModifierBase>                                         _chartModifiers        = new PooledList<ChartModifierBase>( );
-    private ObservableCollection<IRenderableSeries>                                  _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>( );
+    private readonly PooledList<ChartModifierBase> _chartModifiers = new PooledList<ChartModifierBase>( );
+    private ObservableCollection<IRenderableSeries> _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>();
     //private fxTradingAnnotationCreationModifier _tradingAPI;
 
     private Action<IChartElement> RemoveElementEvent = null;
 
-    private SciChartSurface                   _sciChartSurface;
-    private bool                              _doneInitialization;
+    private SciChartSurface _sciChartSurface;
+    private bool _doneInitialization;
 
-    private readonly DispatcherTimer          _dispatcherTimer;
+    private readonly DispatcherTimer _dispatcherTimer;
 
-    private readonly Queue<double>            _queue                    = new Queue<double>( );
-    private double                            _fpsTotal;
+    private readonly Queue<double> _queue = new Queue<double>();
+    private double _fpsTotal;
 
     private IFastQuotes _quotesVM = null;
     private INullBar _candleStickVM = null;
 
-    private readonly ChartArea                _chartArea;
-    private LegendModifierVM                  _legendViewModel;
-    private FxAnnotationModifier      _annotationModifier;
-    
-    private readonly AxisCollection           _xAxises                  = new AxisCollection( );
-    private readonly AxisCollection           _yAxises                  = new AxisCollection( );
-    private AnnotationCollection              _annotationCollection     = new AnnotationCollection( );
-    private ModifierGroup                     _modifierGroup;
-    private readonly ViewportManager          _viewPortManager          = new ViewportManager( );
-    private string                            _title;
-    private string                            _perfStats;
-    private double                            _height                   = double.NaN;
-    private bool                              _showPerfStats;
-    private TimeSpan                          _autoRangeIntervalNoGroup = TimeSpan.FromMilliseconds( 200 );
-    private bool                              _showLegendNoParent;
-    private bool                              _showOverviewNoParent;
-    private int                               _minimumRangeNoParent;
-    private string                            _selectThemeNoParent;
-    private ICommand                          _resetAxisTimeZoneCommand;
-    private ICommand                          _closePaneCommand;
-    private readonly ICommand                 _showHiddenAxesCommand;
-    private fxDataPointSelectionModifier      _dataPointSelector;
+    private readonly ChartArea _chartArea;
+    private LegendModifierVM _legendViewModel;
+    private FxAnnotationModifier _annotationModifier;
 
-    public ScichartSurfaceMVVM( ChartArea area, bool isViewModel = false ) : base( )
+    private readonly AxisCollection _xAxises = new AxisCollection();
+    private readonly AxisCollection _yAxises = new AxisCollection();
+    private AnnotationCollection _annotationCollection = new AnnotationCollection();
+    private ModifierGroup _modifierGroup;
+    private readonly ViewportManager _viewPortManager = new ViewportManager();
+    private string _title;
+    private string _perfStats;
+    private double _height = double.NaN;
+    private bool _showPerfStats;
+    private TimeSpan _autoRangeIntervalNoGroup = TimeSpan.FromMilliseconds(200);
+    private bool _showLegendNoParent;
+    private bool _showOverviewNoParent;
+    private int _minimumRangeNoParent;
+    private string _selectThemeNoParent;
+    private ICommand _resetAxisTimeZoneCommand;
+    private ICommand _closePaneCommand;
+    private readonly ICommand _showHiddenAxesCommand;
+    private fxDataPointSelectionModifier _dataPointSelector;
+
+    public ScichartSurfaceMVVM(ChartArea area, bool isViewModel = false) : base()
     {
-        if ( area == null )
+        if(area == null)
         {
-            throw new ArgumentNullException( "area" );
+            throw new ArgumentNullException("area");
         }
-        
-        _chartArea                          = area;
-        _dispatcherTimer                    = new DispatcherTimer( DispatcherPriority.Render, Application.Current.Dispatcher );
-        _dispatcherTimer.Tick              += new EventHandler( OnTimer );
-        _showHiddenAxesCommand              = new ActionCommand( new Action( OnShowHiddenAxes ) );
-        ResetAxisTimeZoneCommand            = new ActionCommand<ChartAxis>( a => a.TimeZone = null );
 
-        Title                               = area.Title;
-        Height                              = area.Height;
+        _chartArea = area;
+        _dispatcherTimer = new DispatcherTimer(DispatcherPriority.Render, Application.Current.Dispatcher);
+        _dispatcherTimer.Tick += new EventHandler(OnTimer);
+        _showHiddenAxesCommand = new ActionCommand(new Action(OnShowHiddenAxes));
+        ResetAxisTimeZoneCommand = new ActionCommand<ChartAxis>(a => a.TimeZone = null);
+
+        Title = area.Title;
+        Height = area.Height;
 
 
-        area.Elements.Added      += OnChartAreaElementsAdded;
-        area.Elements.Removing   += OnChartAreaElementsRemoving;
-        area.Elements.RemovingAt += ( i => OnChartAreaElementsRemoving( ( area.Elements )[ i ] ) );
-        area.Elements.Clearing   += ( ( ) => { MoreEnumerable.ForEach( area.Elements, ( i => OnChartAreaElementsRemoving( i ) ) ); return true; } );
-        area.XAxises.Added                 += ( x => AddAxis( x, XAxises ) );
-        area.XAxises.Removing              += ( a => RemoveAxis( a, area.XAxises, XAxises ) );
-        area.XAxises.RemovingAt            += ( i => RemoveAxis( area.XAxises[ i ], area.XAxises, XAxises ) );
-        area.YAxises.Added                 += ( y => AddAxis( y, YAxises ) );
-        area.YAxises.Removing              += ( y => RemoveAxis( y, area.YAxises, YAxises ) );
-        area.YAxises.RemovingAt            += ( i => RemoveAxis( area.YAxises[ i ], area.YAxises, YAxises ) );
-
-        DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += ( d, e ) => SetSelectedTheme( );
-        SetSelectedTheme( );
-
-        foreach ( IChartElement chartElement in Area.Elements )
+        area.Elements.Added += OnChartAreaElementsAdded;
+        area.Elements.Removing += OnChartAreaElementsRemoving;
+        area.Elements.RemovingAt += (i => OnChartAreaElementsRemoving((area.Elements)[i]));
+        area.Elements.Clearing += (() =>
         {
-            OnChartAreaElementsAdded( chartElement );
+            MoreEnumerable.ForEach(area.Elements, (i => OnChartAreaElementsRemoving(i)));
+            return true;
+        });
+        area.XAxises.Added += (x => AddAxis(x, XAxises));
+        area.XAxises.Removing += (a => RemoveAxis(a, area.XAxises, XAxises));
+        area.XAxises.RemovingAt += (i => RemoveAxis(area.XAxises[i], area.XAxises, XAxises));
+        area.YAxises.Added += (y => AddAxis(y, YAxises));
+        area.YAxises.Removing += (y => RemoveAxis(y, area.YAxises, YAxises));
+        area.YAxises.RemovingAt += (i => RemoveAxis(area.YAxises[i], area.YAxises, YAxises));
+
+        DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += (d, e) => SetSelectedTheme();
+        SetSelectedTheme();
+
+        foreach(IChartElement chartElement in Area.Elements)
+        {
+            OnChartAreaElementsAdded(chartElement);
         }
     }
 
@@ -144,9 +149,9 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
     }
 
-    private object GetViewModel( )
+    private object GetViewModel()
     {
-        return ChartExViewModel ?? ( object )this;
+        return ChartExViewModel ?? (object)this;
     }
 
     public ObservableCollection<ChartCompentViewModel> LegendElements
@@ -158,57 +163,56 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     }
 
 
-
-    private void SetupModifiers( )
+    private void SetupModifiers()
     {
-        if ( _chartModifiers.Count > 0 )
+        if(_chartModifiers.Count > 0)
         {
             return;
         }
 
-        var cursor                              = new UltrachartCursormodifier( );
-        cursor.ShowTooltip                      = true;
-        cursor.ReceiveHandledEvents             = true;
-        cursor.ShowTooltipOn                    = ShowTooltipOptions.MouseHover;
+        var cursor = new UltrachartCursormodifier();
+        cursor.ShowTooltip = true;
+        cursor.ReceiveHandledEvents = true;
+        cursor.ShowTooltipOn = ShowTooltipOptions.MouseHover;
         cursor.HoverDelay = 1000;
 
-        var orderLines                          = new ChartOrderModifier( Area );
-        orderLines.IsEnabled                    = true;
-        orderLines.CanCreateOrders              = true;
+        var orderLines = new ChartOrderModifier(Area);
+        orderLines.IsEnabled = true;
+        orderLines.CanCreateOrders = true;
 
-        _dataPointSelector                      = new fxDataPointSelectionModifier( );
-        _dataPointSelector.ExecuteOn            = ExecuteOn.MouseMiddleButton;
+        _dataPointSelector = new fxDataPointSelectionModifier();
+        _dataPointSelector.ExecuteOn = ExecuteOn.MouseMiddleButton;
         _dataPointSelector.ReceiveHandledEvents = true;
-        _dataPointSelector.XAxisId              = "X";
-        _dataPointSelector.IsEnabled            = true;
+        _dataPointSelector.XAxisId = "X";
+        _dataPointSelector.IsEnabled = true;
         _dataPointSelector.AllowsMultiSelection = true;
-        
 
-        var zoomPan                             = new fxZoomPanModifier( );
-        zoomPan.ExecuteOn                       = ExecuteOn.MouseLeftButton;
-        zoomPan.ReceiveHandledEvents            = true;
-        
-        zoomPan.ClipModeX                       = ClipMode.None;
-        zoomPan.XyDirection                     = XyDirection.XYDirection;
-        
 
-        var xaxisDragModifier                   = new XAxisDragModifier( );
-        xaxisDragModifier.AxisId                = "X";
-        xaxisDragModifier.ClipModeX             = ClipMode.None;
+        var zoomPan = new fxZoomPanModifier();
+        zoomPan.ExecuteOn = ExecuteOn.MouseLeftButton;
+        zoomPan.ReceiveHandledEvents = true;
 
-        var yaxisDragModifier                   = new YAxisDragModifier( );
-        yaxisDragModifier.AxisId                = "Y";
+        zoomPan.ClipModeX = ClipMode.None;
+        zoomPan.XyDirection = XyDirection.XYDirection;
 
-        var bandXyZoomModifier                  = new RubberBandXyZoomModifier( );
-        bandXyZoomModifier.IsXAxisOnly          = true;
-        bandXyZoomModifier.ExecuteOn            = ExecuteOn.MouseRightButton;
+
+        var xaxisDragModifier = new XAxisDragModifier();
+        xaxisDragModifier.AxisId = "X";
+        xaxisDragModifier.ClipModeX = ClipMode.None;
+
+        var yaxisDragModifier = new YAxisDragModifier();
+        yaxisDragModifier.AxisId = "Y";
+
+        var bandXyZoomModifier = new RubberBandXyZoomModifier();
+        bandXyZoomModifier.IsXAxisOnly = true;
+        bandXyZoomModifier.ExecuteOn = ExecuteOn.MouseRightButton;
         bandXyZoomModifier.ReceiveHandledEvents = true;
 
-        var zoomExtentsModifier                 = new ZoomExtentsModifier( );
-        zoomExtentsModifier.ExecuteOn           = ExecuteOn.MouseDoubleClick;
-        zoomExtentsModifier.XyDirection         = XyDirection.YDirection;
+        var zoomExtentsModifier = new ZoomExtentsModifier();
+        zoomExtentsModifier.ExecuteOn = ExecuteOn.MouseDoubleClick;
+        zoomExtentsModifier.XyDirection = XyDirection.YDirection;
 
-        var seriesValueModifer                  = new SeriesValueModifier( );
+        var seriesValueModifer = new SeriesValueModifier();
 
         //_tradingAPI                             = new fxTradingAnnotationCreationModifier( );
         //_tradingAPI.XAxisId                     = "X";
@@ -218,82 +222,78 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         //_annotationModifier.TradingAPI          = _tradingAPI;
 
-        
-        var chartModifierBaseArray              = new ChartModifierBase[ 10 ];
-        chartModifierBaseArray[ 0 ]             = orderLines;
-        chartModifierBaseArray[ 1 ]             = cursor;
-        chartModifierBaseArray[ 2 ]             = xaxisDragModifier;
-        chartModifierBaseArray[ 3 ]             = yaxisDragModifier;
-        chartModifierBaseArray[ 4 ]             = new MouseWheelZoomModifier( );
-        chartModifierBaseArray[ 5 ]             = bandXyZoomModifier;
-        chartModifierBaseArray[ 6 ]             = zoomExtentsModifier;
-        chartModifierBaseArray[ 7 ]             = zoomPan;
-        chartModifierBaseArray[ 8 ]             = _dataPointSelector;
-        chartModifierBaseArray[ 9 ]             = seriesValueModifer;
-        
+
+        var chartModifierBaseArray = new ChartModifierBase[ 10 ];
+        chartModifierBaseArray[0] = orderLines;
+        chartModifierBaseArray[1] = cursor;
+        chartModifierBaseArray[2] = xaxisDragModifier;
+        chartModifierBaseArray[3] = yaxisDragModifier;
+        chartModifierBaseArray[4] = new MouseWheelZoomModifier();
+        chartModifierBaseArray[5] = bandXyZoomModifier;
+        chartModifierBaseArray[6] = zoomExtentsModifier;
+        chartModifierBaseArray[7] = zoomPan;
+        chartModifierBaseArray[8] = _dataPointSelector;
+        chartModifierBaseArray[9] = seriesValueModifer;
 
 
-
-        _chartModifiers.AddRange( chartModifierBaseArray );
+        _chartModifiers.AddRange(chartModifierBaseArray);
     }
 
-    private void OnChartPropertyChanged( object sender, PropertyChangedEventArgs e )
+    private void OnChartPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
         string propertyName = e.PropertyName;
 
-        if ( !( propertyName == "AutoRangeInterval" ) )
+        if(!(propertyName == "AutoRangeInterval"))
         {
-            if ( !( propertyName == "ShowPerfStats" ) )
+            if(!(propertyName == "ShowPerfStats"))
             {
                 return;
             }
 
-            NotifyChanged( e.PropertyName );
-        }
-        else
+            NotifyChanged(e.PropertyName);
+        } else
         {
-            RestartTimer( );
-            NotifyChanged( e.PropertyName );
+            RestartTimer();
+            NotifyChanged(e.PropertyName);
         }
     }
 
-    public void InitPropertiesEventHandlers( )
+    public void InitPropertiesEventHandlers()
     {
-        ( ( INotifyPropertyChanged )Chart ).PropertyChanged += new PropertyChangedEventHandler( OnChartPropertyChanged );
+        ((INotifyPropertyChanged)Chart).PropertyChanged += new PropertyChangedEventHandler(OnChartPropertyChanged);
 
-        if ( !_doneInitialization )
+        if(!_doneInitialization)
         {
             _doneInitialization = true;
 
-            ChartModifier.ChildModifiers.Add( LegendModifier );
-            ChartModifier.ChildModifiers.Add( AnnotationModifier );
+            ChartModifier.ChildModifiers.Add(LegendModifier);
+            ChartModifier.ChildModifiers.Add(AnnotationModifier);
 
-            ChartCandleElement[ ] candles = _vmChartUIs.Keys.OfType<ChartCandleElement>( ).ToArray( );
+            ChartCandleElement[ ] candles = _vmChartUIs.Keys.OfType<ChartCandleElement>().ToArray();
 
-            if ( candles.Length != 0 )
+            if(candles.Length != 0)
             {
-                var order = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>( ).FirstOrDefault( );
+                var order = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>().FirstOrDefault();
 
-                if ( order != null )
+                if(order != null)
                 {
                     order.IsEnabled = true;
                 }
 
-                foreach ( ChartCandleElement candle in candles )
+                foreach(ChartCandleElement candle in candles)
                 {
-                    OnDrawStylePropertyChanged( candle );
-                    candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
+                    OnDrawStylePropertyChanged(candle);
+                    candle.PropertyChanged += new PropertyChangedEventHandler(Candle_PropertyChanged);
                 }
             }
         }
 
-        AssignOrphanedChildElementsWithParent( );
+        AssignOrphanedChildElementsWithParent();
 
-        if ( ChartExViewModel == null )
+        if(ChartExViewModel == null)
         {
             ClosePaneCommand = null;
-        }
-        else
+        } else
         {
             ClosePaneCommand = ChartExViewModel.ClosePaneCommand;
             //ChartExViewModel.AddPropertyListener( ChartViewModel.ShowLegendProperty, e => NotifyChanged( "ShowLegend" ) );
@@ -302,141 +302,145 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             //ChartExViewModel.AddPropertyListener( ChartViewModel.SelectedThemeProperty, e => NotifyChanged( "SelectedTheme" ) );
         }
 
-        GroupChartEx.Do( new Action<ChartExViewModel>( SetupModifiersAndBindingMVVM ) );
+        GroupChartEx.Do(new Action<ChartExViewModel>(SetupModifiersAndBindingMVVM));
 
-        RestartTimer( );
+        RestartTimer();
 
-        foreach ( ChartAxis xAxis in Area.XAxises )
+        foreach(ChartAxis xAxis in Area.XAxises)
         {
-            AddAxis( xAxis, XAxises );
+            AddAxis(xAxis, XAxises);
         }
 
-        foreach ( ChartAxis yAxis in Area.YAxises )
+        foreach(ChartAxis yAxis in Area.YAxises)
         {
-            AddAxis( yAxis, YAxises );
+            AddAxis(yAxis, YAxises);
         }
     }
 
-    public void Release( )
+    public void Release()
     {
-        ( ( INotifyPropertyChanged )Chart ).PropertyChanged -= OnChartPropertyChanged;
+        ((INotifyPropertyChanged)Chart).PropertyChanged -= OnChartPropertyChanged;
 
 
-        if ( GroupChartEx != null )
+        if(GroupChartEx != null)
         {
-            foreach ( ChartModifierBase moidifier in _chartModifiers )
+            foreach(ChartModifierBase moidifier in _chartModifiers)
             {
-                ChartModifier.ChildModifiers.Remove( moidifier );
+                ChartModifier.ChildModifiers.Remove(moidifier);
             }
         }
 
-        foreach ( ChartAxis xAxis in Area.XAxises )
+        foreach(ChartAxis xAxis in Area.XAxises)
         {
-            RemoveAxis( xAxis, Area.XAxises, XAxises );
+            RemoveAxis(xAxis, Area.XAxises, XAxises);
         }
 
-        foreach ( ChartAxis yAxis in Area.YAxises )
+        foreach(ChartAxis yAxis in Area.YAxises)
         {
-            RemoveAxis( yAxis, Area.YAxises, YAxises );
+            RemoveAxis(yAxis, Area.YAxises, YAxises);
         }
 
-        _dispatcherTimer.Stop( );
+        _dispatcherTimer.Stop();
     }
 
-    private void RestartTimer( )
+    private void RestartTimer()
     {
-        _dispatcherTimer.Stop( );
+        _dispatcherTimer.Stop();
         _dispatcherTimer.Interval = AutoRangeInterval;
-        _dispatcherTimer.Start( );
+        _dispatcherTimer.Start();
     }
 
-    private void AddAxis( ChartAxis axis, ICollection<IAxis> axises )
+    private void AddAxis(ChartAxis axis, ICollection<IAxis> axises)
     {
-        if ( Chart == null )
+        if(Chart == null)
         {
             return;
         }
 
-        VisbleRangeDp rangeProp = VisbleRangeDp.AddRangeProperty( GetViewModel( ), axis.Group, axis.AxisType );
-        _axisIdToGroup[ axis.Id ] = axis.Group;
+        VisbleRangeDp rangeProp = VisbleRangeDp.AddRangeProperty(GetViewModel(), axis.Group, axis.AxisType);
+        _axisIdToGroup[axis.Id] = axis.Group;
 
-        axis.PropertyChanged += ( s, e ) =>
+        axis.PropertyChanged += (s, e) =>
         {
-            if ( !( e.PropertyName == "Group" ) )
+            if(!(e.PropertyName == "Group"))
                 return;
 
-            _axisIdToGroup[ axis.Id ] = axis.Group;
+            _axisIdToGroup[axis.Id] = axis.Group;
         };
-        axises.Add( axis.InitAndSetBinding( rangeProp, ChartExViewModel?.RemoveAxisCommand, ResetAxisTimeZoneCommand, Chart ) );
+        axises.Add(
+            axis.InitAndSetBinding(rangeProp, ChartExViewModel?.RemoveAxisCommand, ResetAxisTimeZoneCommand, Chart));
     }
 
-    private bool RemoveAxis( ChartAxis axis, INotifyList<ChartAxis> axisesNotifyList, ICollection<IAxis> axisesCollection )
+    private bool RemoveAxis(
+        ChartAxis axis,
+        INotifyList<ChartAxis> axisesNotifyList,
+        ICollection<IAxis> axisesCollection)
     {
-        if ( !axisesNotifyList.Contains( axis ) )
+        if(!axisesNotifyList.Contains(axis))
         {
             return false;
         }
 
-        if ( Chart == null )
+        if(Chart == null)
         {
             return true;
         }
 
-        var axisBase = ( AxisBase )axisesCollection.FirstOrDefault( a => a.Id == axis.Id );
-        if ( axisBase == null )
+        var axisBase = (AxisBase)axisesCollection.FirstOrDefault(a => a.Id == axis.Id);
+        if(axisBase == null)
         {
             return true;
         }
 
-        _axisIdToGroup.Remove( axis.Id );
-        BindingOperations.ClearAllBindings( axisBase );
-        axisesCollection.Remove( axisBase );
+        _axisIdToGroup.Remove(axis.Id);
+        BindingOperations.ClearAllBindings(axisBase);
+        axisesCollection.Remove(axisBase);
         return true;
     }
 
-    public void SetScichartSurface( SciChartSurface scichart )
+    public void SetScichartSurface(SciChartSurface scichart)
     {
-        if ( _sciChartSurface == scichart )
+        if(_sciChartSurface == scichart)
         {
             return;
         }
 
-        if ( _sciChartSurface != null && scichart != null )
+        if(_sciChartSurface != null && scichart != null)
         {
-            throw new InvalidOperationException( "got unexpected chart surface" );
+            throw new InvalidOperationException("got unexpected chart surface");
         }
 
         _sciChartSurface = scichart;
 
-        if ( _sciChartSurface != null )
+        if(_sciChartSurface != null)
         {
             _sciChartSurface.RenderSurface.Rendered += OnRenderSurfaceRendered;
         }
 
-        UpdateBackgroundColor( );
+        UpdateBackgroundColor();
     }
 
     public void Refresh()
     {
-        _sciChartSurface?.InvalidateElement( );
+        _sciChartSurface?.InvalidateElement();
     }
 
-    public void Draw( ChartDrawData data )
+    public void Draw(ChartDrawData data)
     {
-        if ( _sciChartSurface != null )
+        if(_sciChartSurface != null)
         {
-            using ( _sciChartSurface.SuspendUpdates( ) )
+            using(_sciChartSurface.SuspendUpdates())
             {
-                StartRenderingChartUIs( data );
+                StartRenderingChartUIs(data);
             }
-        }
-        else
+        } else
         {
-            StartRenderingChartUIs( data );
+            StartRenderingChartUIs(data);
         }
     }
 
     private bool _isActive;
+
     public bool IsActive
     {
         get
@@ -450,56 +454,53 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
     }
 
-    public void UpdateQuote( DateTime barTime, double bid, double ask )
+    public void UpdateQuote(DateTime barTime, double bid, double ask)
     {
-        if ( ( _quotesVM == null ) || ( _candleStickVM == null ) )
+        if((_quotesVM == null) || (_candleStickVM == null))
         {
             return;
         }
-            
 
-        if ( _quotesVM.CanUpdateQuotes )
+
+        if(_quotesVM.CanUpdateQuotes)
         {
-            if ( _sciChartSurface != null )
+            if(_sciChartSurface != null)
             {
-                using ( _sciChartSurface.SuspendUpdates( ) )
+                using(_sciChartSurface.SuspendUpdates())
                 {
-                    _quotesVM?.UpdateQuotes( bid, ask );
+                    _quotesVM?.UpdateQuotes(bid, ask);
 
-                    if ( _candleStickVM.CanUpdateNullBar)
+                    if(_candleStickVM.CanUpdateNullBar)
                     {
-                        _candleStickVM?.UpdateNullBar( barTime, bid, ask );
+                        _candleStickVM?.UpdateNullBar(barTime, bid, ask);
                     }
-                    
                 }
-            }
-            else
+            } else
             {
-                _quotesVM.UpdateQuotes( bid, ask );
+                _quotesVM.UpdateQuotes(bid, ask);
 
-                if ( _candleStickVM.CanUpdateNullBar )
+                if(_candleStickVM.CanUpdateNullBar)
                 {
-                    _candleStickVM?.UpdateNullBar( barTime, bid, ask );
+                    _candleStickVM?.UpdateNullBar(barTime, bid, ask);
                 }
-                
             }
-        }                 
+        }
     }
 
-    private void OnRenderSurfaceRendered( object sender, RenderedEventArgs e )
+    private void OnRenderSurfaceRendered(object sender, RenderedEventArgs e)
     {
-        if ( _sciChartSurface == null )
+        if(_sciChartSurface == null)
         {
             return;
         }
 
-        var dateTimeAxises = XAxises.OfType<CategoryDateTimeAxis>( );
+        var dateTimeAxises = XAxises.OfType<CategoryDateTimeAxis>();
 
-        foreach ( var axis in dateTimeAxises )
+        foreach(var axis in dateTimeAxises)
         {
             var tag = axis.Tag as ChartAxis;
 
-            if ( tag == null )
+            if(tag == null)
             {
                 return;
             }
@@ -510,34 +511,34 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         var parentVms = _vmChartUIs.Values;
 
-        foreach ( var vm in parentVms )
+        foreach(var vm in parentVms)
         {
             // BUG
             //vm.UpdateChildElementYAxisMarker( );
         }
 
-        if ( !ShowPerfStats || e.Duration <= 0.0 )
+        if(!ShowPerfStats || e.Duration <= 0.0)
         {
             return;
         }
 
         double num = 1000.0 / e.Duration;
-        while ( _queue.Count >= 10 )
+        while(_queue.Count >= 10)
         {
-            _fpsTotal -= _queue.Dequeue( );
+            _fpsTotal -= _queue.Dequeue();
         }
 
-        _queue.Enqueue( num );
+        _queue.Enqueue(num);
         _fpsTotal += num;
 
         var someValue = _sciChartSurface.RenderableSeries
-                        .Where( s => s.IsVisible )
-                        .Sum( y => y.DataSeries.Return( x => x.Count, 0 ) );
+            .Where(s => s.IsVisible)
+            .Sum(y => y.DataSeries.Return(x => x.Count, 0));
 
-        PerfStats = string.Format( "FPS: {0:0}   Count: {1:n0}", _fpsTotal / _queue.Count, someValue );
+        PerfStats = string.Format("FPS: {0:0}   Count: {1:n0}", _fpsTotal / _queue.Count, someValue);
     }
 
-    private void StartRenderingChartUIs( ChartDrawData drawData )
+    private void StartRenderingChartUIs(ChartDrawData drawData)
     {
         //foreach ( var vmChartUI in _vmChartUIs.CachedValues )
         //{
@@ -548,13 +549,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //}
     }
 
-    private void OnTimer( object sender, EventArgs e )
+    private void OnTimer(object sender, EventArgs e)
     {
         ChartCompentViewModel[ ] vms;
 
-        lock ( _parentChartViewModelCache.SyncRoot )
+        lock(_parentChartViewModelCache.SyncRoot)
         {
-            vms = _parentChartViewModelCache.CopyAndClear( );
+            vms = _parentChartViewModelCache.CopyAndClear();
         }
 
         //foreach ( ChartCompentViewModel ParentChartViewModel in vms )
@@ -563,13 +564,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //}
     }
 
-    public void Reset( IEnumerable<IChartElement> chartElements )
+    public void Reset(IEnumerable<IChartElement> chartElements)
     {
-        foreach ( IChartComponent chartElement in chartElements )
+        foreach(IChartComponent chartElement in chartElements)
         {
-            var ParentChartViewModel = _vmChartUIs.TryGetValue( chartElement );
+            var ParentChartViewModel = _vmChartUIs.TryGetValue(chartElement);
 
-            if ( ParentChartViewModel != null )
+            if(ParentChartViewModel != null)
             {
                 //_parentChartViewModelCache.Add( ParentChartViewModel );
                 //ParentChartViewModel.UpdateChildElements( );
@@ -577,11 +578,11 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
     }
 
-    private void AssignOrphanedChildElementsWithParent( )
+    private void AssignOrphanedChildElementsWithParent()
     {
-        var noParents = _vmChartUIs.Where( p => p.Value == null ).Select( p => p.Key ).ToArray( );
+        var noParents = _vmChartUIs.Where(p => p.Value == null).Select(p => p.Key).ToArray();
 
-        foreach ( IChartComponent element in noParents )
+        foreach(IChartComponent element in noParents)
         {
             //var combinedElements = MoreEnumerable.Append( element.ChildElements, element );
 
@@ -602,11 +603,11 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
     }
 
-    public void OnChartAreaElementsAdded( IChartElement anyChartUI )
+    public void OnChartAreaElementsAdded(IChartElement anyChartUI)
     {
-        if ( Chart != null )
+        if(Chart != null)
         {
-            Chart.EnsureUIThread( );
+            Chart.EnsureUIThread();
         }
 
         //IChartComponent anyChartUiXY = ( IChartComponent )anyChartUI;
@@ -681,7 +682,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //anyChartUiXY.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
     }
 
-    public bool OnChartAreaElementsRemoving( IChartElement element )
+    public bool OnChartAreaElementsRemoving(IChartElement element)
     {
         //if ( Chart != null )
         //{
@@ -715,19 +716,19 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         return true;
     }
 
-    private void Candle_PropertyChanged( object sender, PropertyChangedEventArgs e )
+    private void Candle_PropertyChanged(object sender, PropertyChangedEventArgs e)
     {
-        if ( !( e.PropertyName == "DrawStyle" ) )
+        if(!(e.PropertyName == "DrawStyle"))
         {
             return;
         }
 
-        OnDrawStylePropertyChanged( ( ChartCandleElement )sender );
+        OnDrawStylePropertyChanged((ChartCandleElement)sender);
     }
 
-    private void OnDrawStylePropertyChanged( ChartCandleElement element )
+    private void OnDrawStylePropertyChanged(ChartCandleElement element)
     {
-        var isVolumeProfileChart = element.DrawStyle.IsVolumeProfileChart( );
+        var isVolumeProfileChart = element.DrawStyle.IsVolumeProfileChart();
 
         //foreach ( var XAxis in XAxises )
         //{
@@ -742,47 +743,48 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //}
 
 
-        var bandXyZoomModifier = ChartModifier.ChildModifiers.OfType<RubberBandXyZoomModifier>( ).FirstOrDefault( );
+        var bandXyZoomModifier = ChartModifier.ChildModifiers.OfType<RubberBandXyZoomModifier>().FirstOrDefault();
 
-        if ( bandXyZoomModifier == null )
+        if(bandXyZoomModifier == null)
         {
-            bandXyZoomModifier = new RubberBandXyZoomModifier( );
-            ChartModifier.ChildModifiers.Add( bandXyZoomModifier );
+            bandXyZoomModifier = new RubberBandXyZoomModifier();
+            ChartModifier.ChildModifiers.Add(bandXyZoomModifier);
         }
 
-        bandXyZoomModifier.IsXAxisOnly          = !isVolumeProfileChart;
-        bandXyZoomModifier.ExecuteOn            = ExecuteOn.MouseRightButton;
+        bandXyZoomModifier.IsXAxisOnly = !isVolumeProfileChart;
+        bandXyZoomModifier.ExecuteOn = ExecuteOn.MouseRightButton;
         bandXyZoomModifier.ReceiveHandledEvents = true;
     }
 
-    public VisbleRangeDp GetVisibleRangeDp( string axisId )
+    public VisbleRangeDp GetVisibleRangeDp(string axisId)
     {
-        ChartAxis chartAxis = Area.XAxises.FirstOrDefault( a => a.Id == axisId );
+        ChartAxis chartAxis = Area.XAxises.FirstOrDefault(a => a.Id == axisId);
 
-        if ( chartAxis == null )
+        if(chartAxis == null)
         {
             return null;
         }
 
-        string group =   _axisIdToGroup.TryGetValue( axisId );
+        string group = _axisIdToGroup.TryGetValue(axisId);
 
-        if ( group == null )
+        if(group == null)
         {
             //return null;
-            throw new InvalidOperationException( "Ecng.Common.StringHelper.Put( LocalizedStrings.Str2071Params, axisId )" );
+            throw new InvalidOperationException(
+                "Ecng.Common.StringHelper.Put( LocalizedStrings.Str2071Params, axisId )");
         }
 
-        return VisbleRangeDp.AddRangeProperty( GetViewModel( ), group, chartAxis.AxisType );
-    }    
+        return VisbleRangeDp.AddRangeProperty(GetViewModel(), group, chartAxis.AxisType);
+    }
 
-    private void OnShowHiddenAxes( )
+    private void OnShowHiddenAxes()
     {
-        foreach ( ChartAxis xAxis in Area.XAxises )
+        foreach(ChartAxis xAxis in Area.XAxises)
         {
             xAxis.IsVisible = true;
         }
 
-        foreach ( ChartAxis yAxis in Area.YAxises )
+        foreach(ChartAxis yAxis in Area.YAxises)
         {
             yAxis.IsVisible = true;
         }
@@ -791,15 +793,14 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     public string PaneGroup
     {
         get
-        {            
-            if ( GroupChartEx != null )
+        {
+            if(GroupChartEx != null)
             {
-                return Ecng.Common.StringHelper.Put( "ssharpultrachart{0}", GroupChartEx.InstanceCount( ) );
+                return Ecng.Common.StringHelper.Put("ssharpultrachart{0}", GroupChartEx.InstanceCount());
+            } else
+            {
+                throw new NotImplementedException();
             }
-            else
-            {
-                throw new NotImplementedException( );
-            }            
         }
     }
 
@@ -872,15 +873,12 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         get
         {
-            if ( _legendViewModel != null )
+            if(_legendViewModel != null)
             {
                 return _legendViewModel;
             }
 
-            _legendViewModel = new LegendModifierVM( this )
-            {
-                LegendModifier = new LegendModifierEx( )
-            };
+            _legendViewModel = new LegendModifierVM(this) { LegendModifier = new LegendModifierEx() };
 
             LegendModifier.ViewModel = _legendViewModel;
 
@@ -893,12 +891,12 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         get
         {
-            if ( _annotationModifier != null )
+            if(_annotationModifier != null)
             {
                 return _annotationModifier;
             }
 
-            var annotation = new FxAnnotationModifier( Area, Annotations );
+            var annotation = new FxAnnotationModifier(Area, Annotations);
             annotation.IsEnabled = false;
             _annotationModifier = annotation;
 
@@ -910,21 +908,21 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         get
         {
-            if ( _dataPointSelector != null )
+            if(_dataPointSelector != null)
             {
                 return _dataPointSelector;
             }
 
-            var dpSelector             = new fxDataPointSelectionModifier( );
-            dpSelector.IsEnabled       = true;
-            dpSelector.SelectionFill   = new SolidColorBrush( System.Windows.Media.Color.FromArgb( 0xB1, 0xB5, 0xB2, 0xB2 ) );
-            dpSelector.SelectionStroke = new SolidColorBrush( System.Windows.Media.Color.FromArgb( 0x00, 0x9E, 0x9C, 0x9C ) );
-            _dataPointSelector         = dpSelector;
+            var dpSelector = new fxDataPointSelectionModifier();
+            dpSelector.IsEnabled = true;
+            dpSelector.SelectionFill = new SolidColorBrush(System.Windows.Media.Color.FromArgb(0xB1, 0xB5, 0xB2, 0xB2));
+            dpSelector.SelectionStroke = new SolidColorBrush(
+                System.Windows.Media.Color.FromArgb(0x00, 0x9E, 0x9C, 0x9C));
+            _dataPointSelector = dpSelector;
 
             return dpSelector;
         }
     }
-
 
 
     //public TradingAnnotationCreationModifier TradingModifer
@@ -957,66 +955,65 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         {
             _advanceChartRenderableSeries = value;
 
-            NotifyChanged( "AdvanceChartRenderableSeries" );
+            NotifyChanged("AdvanceChartRenderableSeries");
         }
     }
 
-    public void AddAxisMakerAnnotation( IChartComponent elementXY, IAnnotation axisMakerAnnotation, object axisMarker )
+    public void AddAxisMakerAnnotation(IChartComponent elementXY, IAnnotation axisMakerAnnotation, object axisMarker)
     {
-        if ( axisMarker == null )
+        if(axisMarker == null)
         {
-            throw new ArgumentNullException( "key" );
+            throw new ArgumentNullException("key");
         }
 
         PooledDictionary<object, IAnnotation> dictionary;
-        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dictionary ) )
+        if(!_topChartElmentAnnotationMap.TryGetValue(elementXY, out dictionary))
         {
-            _topChartElmentAnnotationMap[ elementXY ] = dictionary = new PooledDictionary<object, IAnnotation>( );
+            _topChartElmentAnnotationMap[elementXY] = dictionary = new PooledDictionary<object, IAnnotation>();
         }
 
-        dictionary.Add( axisMarker, axisMakerAnnotation );
-        OnXYAxisPropertyChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
+        dictionary.Add(axisMarker, axisMakerAnnotation);
+        OnXYAxisPropertyChanged(elementXY, new PropertyChangedEventArgs("XAxis"));
     }
 
-    public IAnnotation GetAxisMakerAnnotation( IChartComponent elementXY, object objAnnoPair )
+    public IAnnotation GetAxisMakerAnnotation(IChartComponent elementXY, object objAnnoPair)
     {
         PooledDictionary<object, IAnnotation> dict;
-        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dict ) )
+        if(!_topChartElmentAnnotationMap.TryGetValue(elementXY, out dict))
         {
             return null;
         }
 
-        return dict.TryGetValue( objAnnoPair );
+        return dict.TryGetValue(objAnnoPair);
     }
 
-    public void RemoveAnnotation( IChartComponent elementXY, object objAnnoPair )
+    public void RemoveAnnotation(IChartComponent elementXY, object objAnnoPair)
     {
         PooledDictionary<object, IAnnotation> rootAnnotation;
 
-        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out rootAnnotation ) )
+        if(!_topChartElmentAnnotationMap.TryGetValue(elementXY, out rootAnnotation))
         {
             return;
         }
 
-        if ( objAnnoPair == null )
+        if(objAnnoPair == null)
         {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in rootAnnotation )
+            foreach(KeyValuePair<object, IAnnotation> keyValuePair in rootAnnotation)
             {
-                _annotationCollection.Remove( keyValuePair.Value );
+                _annotationCollection.Remove(keyValuePair.Value);
             }
 
-            _topChartElmentAnnotationMap.Remove( elementXY );
-        }
-        else
+            _topChartElmentAnnotationMap.Remove(elementXY);
+        } else
         {
             IAnnotation annotation;
-            if ( !rootAnnotation.TryGetValue( objAnnoPair, out annotation ) )
+            if(!rootAnnotation.TryGetValue(objAnnoPair, out annotation))
             {
                 return;
             }
 
-            _annotationCollection.Remove( annotation );
-            rootAnnotation.Remove( objAnnoPair );
+            _annotationCollection.Remove(annotation);
+            rootAnnotation.Remove(objAnnoPair);
         }
     }
 
@@ -1062,7 +1059,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            SetField( ref _annotationCollection, value, nameof( Annotations ) );
+            SetField(ref _annotationCollection, value, nameof(Annotations));
         }
     }
 
@@ -1070,11 +1067,11 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         get
         {
-            return _modifierGroup ?? ( _modifierGroup = new ModifierGroup( ) );
+            return _modifierGroup ?? (_modifierGroup = new ModifierGroup());
         }
         set
         {
-            SetField( ref _modifierGroup, value, nameof( ChartModifier ) );
+            SetField(ref _modifierGroup, value, nameof(ChartModifier));
         }
     }
 
@@ -1102,7 +1099,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            SetField( ref _title, value, nameof( Title ) );
+            SetField(ref _title, value, nameof(Title));
         }
     }
 
@@ -1114,7 +1111,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            SetField( ref _perfStats, value, nameof( PerfStats ) );
+            SetField(ref _perfStats, value, nameof(PerfStats));
         }
     }
 
@@ -1126,7 +1123,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            SetField( ref _height, value, nameof( Height ) );
+            SetField(ref _height, value, nameof(Height));
         }
     }
 
@@ -1135,7 +1132,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         get
         {
             var groupChart = GroupChartEx;
-            if ( groupChart == null )
+            if(groupChart == null)
             {
                 return _showPerfStats;
             }
@@ -1144,14 +1141,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            if ( Chart is ChartExViewModel vm )
+            if(Chart is ChartExViewModel vm)
             {
                 vm.ShowPerfStats = value;
-                NotifyChanged( nameof( ShowPerfStats ) );
-            }
-            else
+                NotifyChanged(nameof(ShowPerfStats));
+            } else
             {
-                SetField( ref _showPerfStats, value, nameof( ShowPerfStats ) );
+                SetField(ref _showPerfStats, value, nameof(ShowPerfStats));
             }
         }
     }
@@ -1163,35 +1159,33 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             TimeSpan output = TimeSpan.Zero;
 
             var vm = GroupChartEx;
-            if ( vm == null )
+            if(vm == null)
             {
                 // Tony: This is so fucked up. The UI is tied up big time because this value doesn't have default value and the timer keeps triggering without stopping.
                 // and it took up all the CPU time as a result.
                 // TRIPLE FUCK. Can't believe this.
                 output = _autoRangeIntervalNoGroup;
-            }
-            else
+            } else
             {
                 output = vm.AutoRangeInterval;
             }
 
-            if ( output == TimeSpan.Zero )
+            if(output == TimeSpan.Zero)
             {
-                output = TimeSpan.FromSeconds( 1 );
+                output = TimeSpan.FromSeconds(1);
             }
 
             return output;
         }
         set
         {
-            if ( Chart is ChartExViewModel vm )
+            if(Chart is ChartExViewModel vm)
             {
                 vm.AutoRangeInterval = value;
-                NotifyChanged( nameof( AutoRangeInterval ) );
-            }
-            else
+                NotifyChanged(nameof(AutoRangeInterval));
+            } else
             {
-                SetField( ref _autoRangeIntervalNoGroup, value, nameof( AutoRangeInterval ) );
+                SetField(ref _autoRangeIntervalNoGroup, value, nameof(AutoRangeInterval));
             }
         }
     }
@@ -1202,7 +1196,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         {
             var vm = ChartExViewModel;
 
-            if ( vm == null )
+            if(vm == null)
             {
                 return _showLegendNoParent;
             }
@@ -1211,14 +1205,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            if ( ChartExViewModel != null )
+            if(ChartExViewModel != null)
             {
                 ChartExViewModel.ShowLegend = value;
-                NotifyChanged( nameof( ShowLegend ) );
-            }
-            else
+                NotifyChanged(nameof(ShowLegend));
+            } else
             {
-                SetField( ref _showLegendNoParent, value, nameof( ShowLegend ) );
+                SetField(ref _showLegendNoParent, value, nameof(ShowLegend));
             }
         }
     }
@@ -1228,7 +1221,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         get
         {
             var vm = ChartExViewModel;
-            if ( vm == null )
+            if(vm == null)
             {
                 return _showOverviewNoParent;
             }
@@ -1238,14 +1231,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         set
         {
-            if ( ChartExViewModel != null )
+            if(ChartExViewModel != null)
             {
                 ChartExViewModel.ShowOverview = value;
-                NotifyChanged( nameof( ShowOverview ) );
-            }
-            else
+                NotifyChanged(nameof(ShowOverview));
+            } else
             {
-                SetField( ref _showOverviewNoParent, value, nameof( ShowOverview ) );
+                SetField(ref _showOverviewNoParent, value, nameof(ShowOverview));
             }
         }
     }
@@ -1255,7 +1247,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         get
         {
             var parentViewModel = ChartExViewModel;
-            if ( parentViewModel == null )
+            if(parentViewModel == null)
             {
                 return _minimumRangeNoParent;
             }
@@ -1264,25 +1256,25 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            if ( ChartExViewModel != null )
+            if(ChartExViewModel != null)
             {
                 ChartExViewModel.MinimumRange = value;
-                NotifyChanged( nameof( MinimumRange ) );
-            }
-            else
+                NotifyChanged(nameof(MinimumRange));
+            } else
             {
-                SetField( ref _minimumRangeNoParent, value, nameof( MinimumRange ) );
+                SetField(ref _minimumRangeNoParent, value, nameof(MinimumRange));
             }
         }
     }
 
     private int _rightMarginBars;
+
     public int RightMarginBars
     {
         get
         {
             var parentViewModel = ChartExViewModel;
-            if ( parentViewModel == null )
+            if(parentViewModel == null)
             {
                 return _rightMarginBars;
             }
@@ -1291,14 +1283,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            if ( ChartExViewModel != null )
+            if(ChartExViewModel != null)
             {
                 ChartExViewModel.RightMarginBars = value;
-                NotifyChanged( nameof( RightMarginBars ) );
-            }
-            else
+                NotifyChanged(nameof(RightMarginBars));
+            } else
             {
-                SetField( ref _rightMarginBars, value, nameof( RightMarginBars ) );
+                SetField(ref _rightMarginBars, value, nameof(RightMarginBars));
             }
         }
     }
@@ -1308,15 +1299,14 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         get
         {
             string str;
-            if ( ChartExViewModel == null )
+            if(ChartExViewModel == null)
             {
                 str = null;
-            }
-            else
+            } else
             {
                 str = ChartExViewModel.SelectedTheme;
 
-                if ( str != null )
+                if(str != null)
                 {
                     return str;
                 }
@@ -1327,14 +1317,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         set
         {
-            if ( ChartExViewModel != null )
+            if(ChartExViewModel != null)
             {
                 ChartExViewModel.SelectedTheme = value;
-                NotifyChanged( nameof( SelectedTheme ) );
-            }
-            else
+                NotifyChanged(nameof(SelectedTheme));
+            } else
             {
-                SetField( ref _selectThemeNoParent, value, nameof( SelectedTheme ) );
+                SetField(ref _selectThemeNoParent, value, nameof(SelectedTheme));
             }
         }
     }
@@ -1347,7 +1336,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
         set
         {
-            SetField( ref _resetAxisTimeZoneCommand, value, nameof( ResetAxisTimeZoneCommand ) );
+            SetField(ref _resetAxisTimeZoneCommand, value, nameof(ResetAxisTimeZoneCommand));
         }
     }
 
@@ -1371,201 +1360,226 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         }
     }
 
-    
 
-    
-
-
-    void IChildPane.ZoomExtents( )
+    void IChildPane.ZoomExtents()
     {
-        throw new NotSupportedException( );
+        throw new NotSupportedException();
     }
 
-    private void SetSelectedTheme( )
+    private void SetSelectedTheme()
     {
         // Tony: Change the background to not have gradient color.       
 
-        SelectedTheme = ApplicationThemeHelper.ApplicationThemeName.ToChartTheme( );
+        SelectedTheme = ApplicationThemeHelper.ApplicationThemeName.ToChartTheme();
     }
 
 
-    private void UpdateBackgroundColor( )
+    private void UpdateBackgroundColor()
     {
         var sciChartName = SelectedTheme;
 
-        if ( sciChartName == "Chrome" )
+        if(sciChartName == "Chrome")
         {
-            IThemeProvider tcp = SciChart.Charting.ThemeManager.GetThemeProvider( "Chrome" );
+            IThemeProvider tcp = SciChart.Charting.ThemeManager.GetThemeProvider("Chrome");
 
-            System.Windows.Media.Brush brush = new SolidColorBrush( Colors.White );
+            System.Windows.Media.Brush brush = new SolidColorBrush(Colors.White);
 
             tcp.SciChartBackground = brush;
 
-            if ( _sciChartSurface != null )
+            if(_sciChartSurface != null)
             {
                 _sciChartSurface.Background = brush;
             }
-        }
-        else if ( sciChartName == "ExpressionDark" )
+        } else if(sciChartName == "ExpressionDark")
         {
+            IThemeProvider tcp = SciChart.Charting.ThemeManager.GetThemeProvider("ExpressionDark");
 
-            IThemeProvider tcp = SciChart.Charting.ThemeManager.GetThemeProvider( "ExpressionDark" );
-
-            System.Windows.Media.Brush brush = new SolidColorBrush( System.Windows.Media.Color.FromRgb( 0x33, 0x33, 0x33 ) );
+            System.Windows.Media.Brush brush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x33, 0x33, 0x33));
 
             tcp.SciChartBackground = brush;
-            if ( _sciChartSurface != null )
+            if(_sciChartSurface != null)
             {
                 _sciChartSurface.Background = brush;
             }
         }
     }
 
-    public void Dispose( )
+    public void Dispose()
     {
-        _sciChartSurface?.Dispose( );
+        _sciChartSurface?.Dispose();
         _sciChartSurface = null;
     }
-    
 
-    private void SetupModifiersAndBindingMVVM( ChartExViewModel chart )
+
+    private void SetupModifiersAndBindingMVVM(ChartExViewModel chart)
     {
-        SetupModifiers( );
-        ChartModifier.ChildModifiers.AddRange( _chartModifiers );
-        AnnotationModifier.SetBindings( FxAnnotationModifier.UserAnnotationTypeProperty, chart, "AnnotationType", BindingMode.TwoWay, null, null );
+        SetupModifiers();
+        ChartModifier.ChildModifiers.AddRange(_chartModifiers);
+        AnnotationModifier.SetBindings(
+            FxAnnotationModifier.UserAnnotationTypeProperty,
+            chart,
+            "AnnotationType",
+            BindingMode.TwoWay,
+            null,
+            null);
 
-        var cursor = ChartModifier.ChildModifiers.OfType<UltrachartCursormodifier>( ).First( );
-        var order  = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>( ).First( );
-        var zoom   = ChartModifier.ChildModifiers.OfType<fxZoomPanModifier>( ).First( );
+        var cursor = ChartModifier.ChildModifiers.OfType<UltrachartCursormodifier>().First();
+        var order = ChartModifier.ChildModifiers.OfType<ChartOrderModifier>().First();
+        var zoom = ChartModifier.ChildModifiers.OfType<fxZoomPanModifier>().First();
 
-        cursor.SetBindings( ChartModifierBase.IsEnabledProperty, Chart, "CrossHair", BindingMode.TwoWay, null, null );
-        cursor.SetBindings( TooltipModifierBase.ShowAxisLabelsProperty, Chart, "CrossHairAxisLabels", BindingMode.TwoWay, null, null );
-        cursor.SetBindings( UltrachartCursormodifier.InPlaceTooltipProperty, Chart, "CrossHairTooltip", BindingMode.TwoWay, null, null );
+        cursor.SetBindings(ChartModifierBase.IsEnabledProperty, Chart, "CrossHair", BindingMode.TwoWay, null, null);
+        cursor.SetBindings(
+            TooltipModifierBase.ShowAxisLabelsProperty,
+            Chart,
+            "CrossHairAxisLabels",
+            BindingMode.TwoWay,
+            null,
+            null);
+        cursor.SetBindings(
+            UltrachartCursormodifier.InPlaceTooltipProperty,
+            Chart,
+            "CrossHairTooltip",
+            BindingMode.TwoWay,
+            null,
+            null);
 
-        order.SetBindings( ChartOrderModifier.CanCreateOrdersProperty, Chart, "OrderCreationMode", BindingMode.TwoWay, null, null );
-        order.SetBindings( ChartOrderModifier.ShowHorizontalLineProperty, Chart, "CrossHair", BindingMode.OneWay, new InverseBooleanConverter( ), null );
+        order.SetBindings(
+            ChartOrderModifier.CanCreateOrdersProperty,
+            Chart,
+            "OrderCreationMode",
+            BindingMode.TwoWay,
+            null,
+            null);
+        order.SetBindings(
+            ChartOrderModifier.ShowHorizontalLineProperty,
+            Chart,
+            "CrossHair",
+            BindingMode.OneWay,
+            new InverseBooleanConverter(),
+            null);
 
-        zoom.SetBindings( ChartModifierBase.IsEnabledProperty, Chart, "AnnotationType", BindingMode.OneWay, new EnumBooleanConverter( ), "None" );
+        zoom.SetBindings(
+            ChartModifierBase.IsEnabledProperty,
+            Chart,
+            "AnnotationType",
+            BindingMode.OneWay,
+            new EnumBooleanConverter(),
+            "None");
 
-        MouseManager.SetMouseEventGroup( ChartModifier, PaneGroup );
+        MouseManager.SetMouseEventGroup(ChartModifier, PaneGroup);
     }
 
 
-
-    private void OnRemoveElementEvent( IChartElement element )
+    private void OnRemoveElementEvent(IChartElement element)
     {
-        ChartExViewModel?.InvokeRemoveElementEvent( element );
-        RemoveElementEvent?.Invoke( element );
+        ChartExViewModel?.InvokeRemoveElementEvent(element);
+        RemoveElementEvent?.Invoke(element);
     }
 
 
-
-    public void SetupAnnotation( IChartElement annotation, ChartDrawData.AnnotationData data )
+    public void SetupAnnotation(IChartElement annotation, ChartDrawData.AnnotationData data)
     {
-        if ( _annotationModifier != null )
+        if(_annotationModifier != null)
         {
-            if ( annotation is ChartAnnotation )
+            if(annotation is ChartAnnotation)
             {
-                _annotationModifier.SetupAnnotation( ( ChartAnnotation )annotation, data );
+                _annotationModifier.SetupAnnotation((ChartAnnotation)annotation, data);
             }
         }
     }
 
-    public void RemoveAnnotation( IChartElement annotation )
+    public void RemoveAnnotation(IChartElement annotation)
     {
-        if ( _annotationModifier != null )
+        if(_annotationModifier != null)
         {
-            if ( annotation is ChartAnnotation )
+            if(annotation is ChartAnnotation)
             {
-                
-                _annotationModifier.RemoveAnnotation( ( ChartAnnotation )annotation );
+                _annotationModifier.RemoveAnnotation((ChartAnnotation)annotation);
             }
         }
     }
 
-    public void InvokeMoveOrderEvent( Order order, Decimal newOrderPrice )
+    public void InvokeMoveOrderEvent(Order order, Decimal newOrderPrice)
     {
-        GroupChartEx?.InvokeMoveOrderEvent( order, newOrderPrice );
-
+        GroupChartEx?.InvokeMoveOrderEvent(order, newOrderPrice);
     }
 
-    public void InvokeCancelOrderEvent( Order order )
+    public void InvokeCancelOrderEvent(Order order)
     {
-        GroupChartEx?.InvokeCancelOrderEvent( order );
+        GroupChartEx?.InvokeCancelOrderEvent(order);
     }
 
-    public IEnumerable<Order> GetActiveOrders( Func<Order, bool> _param1 )
+    public IEnumerable<Order> GetActiveOrders(Func<Order, bool> _param1)
     {
         var parentVM = _vmChartUIs.CachedValues;
 
-        var orders = parentVM.Where( p => p != null )
-                             .SelectMany( x => 
-                                             {
-                                                return x.Elements.OfType<ChartActiveOrdersElementVM>( ).SelectMany( ao => ao.GetActiveOrders( _param1 ) );
-                                             } 
-                                        );
+        var orders = parentVM.Where(p => p != null)
+            .SelectMany(
+                x =>
+                {
+                    return x.Elements.OfType<ChartActiveOrdersElementVM>().SelectMany(ao => ao.GetActiveOrders(_param1));
+                });
 
-        return ( orders );
+        return (orders);
     }
 
     #region ----------------------------- Tony's new Implementation ----------------------------- 
-
-    public void AddRenderableSeriesToChartSurface( IChartComponent elementXY, IRenderableSeries renderableSeries )
+    public void AddRenderableSeriesToChartSurface(IChartComponent elementXY, IRenderableSeries renderableSeries)
     {
         PooledList<IRenderableSeries> rSeriesList;
 
-        if ( !_chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
+        if(!_chartUIRSeries.TryGetValue(elementXY, out rSeriesList))
         {
-            _chartUIRSeries[ elementXY ] = rSeriesList = new PooledList<IRenderableSeries>( );
+            _chartUIRSeries[elementXY] = rSeriesList = new PooledList<IRenderableSeries>();
         }
 
-        if ( !rSeriesList.Contains( renderableSeries ) )
+        if(!rSeriesList.Contains(renderableSeries))
         {
-            rSeriesList.Add( renderableSeries );
+            rSeriesList.Add(renderableSeries);
         }
 
-        OnXYAxisPropertyChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
+        OnXYAxisPropertyChanged(elementXY, new PropertyChangedEventArgs("XAxis"));
     }
 
-    public void Remove( IChartComponent elementXY )
+    public void Remove(IChartComponent elementXY)
     {
         PooledList<IRenderableSeries> rSeriesList;
 
-        if ( !_chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
+        if(!_chartUIRSeries.TryGetValue(elementXY, out rSeriesList))
         {
             return;
         }
 
-        foreach ( var rSerie in rSeriesList )
+        foreach(var rSerie in rSeriesList)
         {
-            _advanceChartRenderableSeries.Remove( rSerie );
+            _advanceChartRenderableSeries.Remove(rSerie);
         }
 
-        _chartUIRSeries.Remove( elementXY );
+        _chartUIRSeries.Remove(elementXY);
     }
 
 
     /// <summary>
-    /// Handles the PropertyChanged event of the XYAxis element.
-    ///     
-    /// Directly copy the code from StockSharp.Charting.IChartExtensions because I still haven't change my namespace from StockSharp.Xaml.Charting to Stocksharp.xaml.Charting
+    /// Handles the PropertyChanged event of the XYAxis element.  Directly copy the code from
+    /// StockSharp.Charting.IChartExtensions because I still haven't change my namespace from StockSharp.Xaml.Charting
+    /// to Stocksharp.xaml.Charting
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void OnXYAxisPropertyChanged( object sender, PropertyChangedEventArgs e )
-    {        
-        IChartComponent elementXY = ( IChartComponent )sender;
+    private void OnXYAxisPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        IChartComponent elementXY = (IChartComponent)sender;
 
-        if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
+        if(e.PropertyName != "XAxis" && e.PropertyName != "YAxis")
         {
             return;
         }
 
         IChart chart = Chart;
 
-        if ( chart != null )
+        if(chart != null)
         {
-            Ecng.Xaml.XamlHelper.EnsureUIThread( chart );
+            Ecng.Xaml.XamlHelper.EnsureUIThread(chart);
         }
 
         PooledList<IRenderableSeries> rSeriesList;
@@ -1573,55 +1587,55 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         ChartAxis xAxis = null;
         ChartAxis yAxis = null;
 
-        if ( _chartUIRSeries.TryGetValue( elementXY, out rSeriesList ) )
+        if(_chartUIRSeries.TryGetValue(elementXY, out rSeriesList))
         {
             // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
-            xAxis = (ChartAxis)elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.XAxises.FirstOrDefault( xa => xa.Id == elementXY.XAxisId );
-            
-            // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
-            yAxis = ( ChartAxis ) elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.YAxises.FirstOrDefault( xa => xa.Id == elementXY.YAxisId );
+            xAxis = (ChartAxis)elementXY.CheckOnNull(nameof(elementXY)).ChartArea?.XAxises.FirstOrDefault(
+                xa => xa.Id == elementXY.XAxisId);
 
-            if ( xAxis != null || yAxis != null )
+            // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
+            yAxis = (ChartAxis) elementXY.CheckOnNull(nameof(elementXY)).ChartArea?.YAxises.FirstOrDefault(
+                xa => xa.Id == elementXY.YAxisId);
+
+            if(xAxis != null || yAxis != null)
             {
-                foreach ( var rSerie in rSeriesList )
+                foreach(var rSerie in rSeriesList)
                 {
-                    if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
+                    if(!_advanceChartRenderableSeries.Contains(rSerie))
                     {
-                        _advanceChartRenderableSeries.Add( rSerie );
+                        _advanceChartRenderableSeries.Add(rSerie);
                     }
                 }
-            }
-            else
+            } else
             {
-                foreach ( var rSerie in rSeriesList )
+                foreach(var rSerie in rSeriesList)
                 {
-                    _advanceChartRenderableSeries.Remove( rSerie );
+                    _advanceChartRenderableSeries.Remove(rSerie);
                 }
             }
         }
 
         PooledDictionary<object, IAnnotation> dictionary;
 
-        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out dictionary ) )
+        if(!_topChartElmentAnnotationMap.TryGetValue(elementXY, out dictionary))
         {
             return;
         }
 
-        if ( xAxis != null || yAxis != null )
+        if(xAxis != null || yAxis != null)
         {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            foreach(KeyValuePair<object, IAnnotation> keyValuePair in dictionary)
             {
-                if ( !_annotationCollection.Contains( keyValuePair.Value ) )
+                if(!_annotationCollection.Contains(keyValuePair.Value))
                 {
-                    _annotationCollection.Add( keyValuePair.Value );
+                    _annotationCollection.Add(keyValuePair.Value);
                 }
             }
-        }
-        else
+        } else
         {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            foreach(KeyValuePair<object, IAnnotation> keyValuePair in dictionary)
             {
-                _annotationCollection.Remove( keyValuePair.Value );
+                _annotationCollection.Remove(keyValuePair.Value);
             }
         }
     }
@@ -1636,12 +1650,11 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
     public PooledList<long> HighlightedBarLinxTime
     {
-        get { return _dataPointSelector.HighlightedBarLinuxTime; }
+        get
+        {
+            return _dataPointSelector.HighlightedBarLinuxTime;
+        }
     }
-
-    
-
-
     #endregion
 }
 

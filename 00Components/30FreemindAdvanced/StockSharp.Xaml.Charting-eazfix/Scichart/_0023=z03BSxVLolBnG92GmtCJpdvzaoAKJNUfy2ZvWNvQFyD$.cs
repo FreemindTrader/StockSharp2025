@@ -85,7 +85,7 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
       {
         double num1 = yax.IsHorizontalAxis ? yax.Width : yax.Height;
         double num2 = _param2 * this.GrowFactor * num1;
-        yax.\u0023\u003DzquLnA5Y\u003D(num2, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+        yax.\u0023\u003DzquLnA5Y\u003D(num2, ClipMode.None);
       }
       \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("Growing YRange: {0}", new object[1]
       {
@@ -103,7 +103,7 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
       {
         double num5 = xax.IsHorizontalAxis ? xax.Width : xax.Height;
         double num6 = -_param2 * this.GrowFactor * num5;
-        xax.\u0023\u003DzquLnA5Y\u003D(num6, dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None);
+        xax.\u0023\u003DzquLnA5Y\u003D(num6, ClipMode.None);
       }
       else
         break;

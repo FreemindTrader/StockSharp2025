@@ -339,11 +339,11 @@ internal interface IAxis :
 
   void \u0023\u003DzquLnA5Y\u003D(
     double _param1,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param2);
+    ClipMode _param2);
 
   void \u0023\u003DzquLnA5Y\u003D(
     double _param1,
-    dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd _param2,
+    ClipMode _param2,
     TimeSpan _param3);
 
   void \u0023\u003Dz\u00248pSPh2nSp0Q(int _param1);

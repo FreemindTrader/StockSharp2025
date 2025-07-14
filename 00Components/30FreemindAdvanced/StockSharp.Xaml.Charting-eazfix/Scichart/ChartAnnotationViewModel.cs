@@ -24,22 +24,22 @@ internal sealed class ChartAnnotationViewModel( ChartAnnotation annotation) :  C
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(new ChartAnnotationViewModel.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D()
+    this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(new ChartAnnotationViewModel.SomeShit333()
     {
       _variableSome3535 = this,
-      \u0023\u003Dzor6OKKQ\u003D = _param1
-    }.\u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D), true);
+      _drawValue0384 = _param1
+    }.SomeMethod0333), true);
     return true;
   }
 
-  private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
+  private sealed class SomeShit333
   {
     public ChartAnnotationViewModel _variableSome3535;
-    public IEnumerableEx<ChartDrawData.IDrawValue> \u0023\u003Dzor6OKKQ\u003D;
+    public IEnumerableEx<ChartDrawData.IDrawValue> _drawValue0384;
 
-    internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D()
+    internal void SomeMethod0333()
     {
-      this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw(this._variableSome3535.ChartComponentView, ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
+      this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw(this._variableSome3535.ChartComponentView, ((IEnumerable) this._drawValue0384).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
     }
   }
 }

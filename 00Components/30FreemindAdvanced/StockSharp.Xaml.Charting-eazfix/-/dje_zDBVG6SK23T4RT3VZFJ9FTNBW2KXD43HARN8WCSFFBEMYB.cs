@@ -19,7 +19,7 @@ internal sealed class dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD
   
   public static readonly 
   #nullable disable
-  DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(nameof (ClipModeX), typeof (dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd), typeof (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd), new PropertyMetadata((object) dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtExtents));
+  DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(nameof (ClipModeX), typeof (ClipMode), typeof (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd), new PropertyMetadata((object) ClipMode.ClipAtExtents));
   
   private Dictionary<string, IRange> \u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D;
   
@@ -30,11 +30,11 @@ internal sealed class dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD
     this.\u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(false);
   }
 
-  public dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd ClipModeX
+  public ClipMode ClipModeX
   {
     get
     {
-      return (dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd) this.GetValue(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.\u0023\u003DzxJ9WluMHlZpH);
+      return (ClipMode) this.GetValue(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.\u0023\u003DzxJ9WluMHlZpH);
     }
     set
     {
@@ -106,7 +106,7 @@ internal sealed class dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD
     bool _param3,
     IAxis _param4)
   {
-    if (this.ClipModeX != dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.None)
+    if (this.ClipModeX != ClipMode.None)
     {
       \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c txZaHyXliZ9wXjzC = _param4.\u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0();
       IRange abyLt9clZggmJsWhw1 = _param4.\u0023\u003DzFwoMKP9juTnt();
@@ -117,17 +117,17 @@ internal sealed class dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD
       {
         if (flag2)
         {
-          if (this.ClipModeX != dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtMin)
+          if (this.ClipModeX != ClipMode.ClipAtMin)
             _param1 = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param4.VisibleRange, _param1.Min, abyLt9clZggmJsWhw2.Max);
-          if (this.ClipModeX == dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.StretchAtExtents)
+          if (this.ClipModeX == ClipMode.StretchAtExtents)
             _param1 = txZaHyXliZ9wXjzC.\u0023\u003Dz5asXHk1unXCX(_param4.VisibleRange, _param2);
         }
       }
       else if (flag1)
       {
-        if (this.ClipModeX != dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.ClipAtMax)
+        if (this.ClipModeX != ClipMode.ClipAtMax)
           _param1 = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param4.VisibleRange, abyLt9clZggmJsWhw2.Min, _param1.Max);
-        if (this.ClipModeX == dje_z2ZZ2J3MC6TQVDLKAL45CSJLJJGW9K8Z7DFRDFNMP_ejd.StretchAtExtents)
+        if (this.ClipModeX == ClipMode.StretchAtExtents)
           _param1 = txZaHyXliZ9wXjzC.\u0023\u003DzMKO149dmZRdJ(_param4.VisibleRange, _param2);
       }
     }

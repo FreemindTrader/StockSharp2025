@@ -7,7 +7,7 @@
 using \u002D;
 
 #nullable disable
-internal sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBKWzr\u0024H44WFj\u0024d8XySFFwpGZ8_Hs5A\u003D\u003D : 
+internal sealed class ViewportManager : 
   \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D
 {
   protected override IRange \u0023\u003DzagcOSHrk9Og4(

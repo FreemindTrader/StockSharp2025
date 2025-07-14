@@ -26,7 +26,7 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
   public \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L()
   {
     this.SetCurrentValue(dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd.\u0023\u003DzG8iU0LHRhO7j, (object) true);
-    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) dje_zKVLMQAQ8PVF9ES7S7RS764GN625CPCY4KFZRJDNDGVHGXXQ_ejd.MouseLeftButton);
+    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) ExecuteOn.MouseLeftButton);
   }
 
   public void \u0023\u003DzhBqSd5Scc0Hy(EventHandler<EventArgs> _param1)

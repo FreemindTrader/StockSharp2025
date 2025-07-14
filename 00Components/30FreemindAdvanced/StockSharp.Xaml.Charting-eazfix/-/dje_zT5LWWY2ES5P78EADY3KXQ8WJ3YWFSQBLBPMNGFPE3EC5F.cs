@@ -58,7 +58,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   
   private PropertyChangeNotifier \u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D;
   
-  private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D \u0023\u003DzWdeNTJKzYxQa;
+  private AxisCollection \u0023\u003DzWdeNTJKzYxQa;
   
   private readonly \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAUTgsMETmsdNgd8UYUJWrW04 \u0023\u003Dz_a7lQd926eAW;
 
@@ -291,7 +291,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   }
 
   private void \u0023\u003DzMEAXmFgTZfXXcCqZiA\u003D\u003D(
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D _param1)
+    AxisCollection _param1)
   {
     if (this.\u0023\u003DzWdeNTJKzYxQa != null)
       this.\u0023\u003DzWdeNTJKzYxQa.CollectionChanged -= new NotifyCollectionChangedEventHandler(this.\u0023\u003DzMQsNWQqev3ol8vdG1w\u003D\u003D);
@@ -443,7 +443,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
 
   private void \u0023\u003DzgjrLoKvF7hcz9A6IKvJCiAc\u003D()
   {
-    this.\u0023\u003DzMEAXmFgTZfXXcCqZiA\u003D\u003D((\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D) this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D.Value);
+    this.\u0023\u003DzMEAXmFgTZfXXcCqZiA\u003D\u003D((AxisCollection) this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D.Value);
   }
 
   private sealed class SomeInternalSealedClass3578512

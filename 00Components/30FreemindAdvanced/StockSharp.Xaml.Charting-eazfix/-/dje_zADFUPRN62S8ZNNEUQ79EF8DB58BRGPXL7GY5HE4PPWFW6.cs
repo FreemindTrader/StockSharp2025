@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd
+// Type: -.FxAnnotationModifier
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -34,7 +34,7 @@ using System.Windows.Media;
 #nullable enable
 namespace \u002D;
 
-internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd : 
+internal sealed class FxAnnotationModifier : 
   dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd,
   IComponentConnector
 {
@@ -43,7 +43,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   #nullable disable
   ChartArea _chartArea;
   
-  private readonly \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D \u0023\u003DzfS3q6Qc\u003D;
+  private readonly AnnotationCollection \u0023\u003DzfS3q6Qc\u003D;
   
   private readonly PairSet<AnnotationBase, ChartAnnotation> \u0023\u003DzCqbxaY8TFdGX = new PairSet<AnnotationBase, ChartAnnotation>();
   
@@ -55,13 +55,13 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   
   private dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd \u0023\u003DzUdabyQU\u003D;
   
-  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register(nameof (UserAnnotationType), typeof (ChartAnnotationTypes), typeof (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzLJLGN_0FzU1B)));
+  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register(nameof (UserAnnotationType), typeof (ChartAnnotationTypes), typeof (FxAnnotationModifier), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(FxAnnotationModifier.\u0023\u003DzLJLGN_0FzU1B)));
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
-  public dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd(
+  public FxAnnotationModifier(
     ChartArea _param1,
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D _param2)
+    AnnotationCollection _param2)
   {
     this.InitializeComponent();
     this._chartArea = _param1 ?? throw new ArgumentNullException("area");
@@ -79,18 +79,18 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    ((dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd) _param0).\u0023\u003DzNJ7MG_c\u0024k1K0((ChartAnnotationTypes) _param1.NewValue);
+    ((FxAnnotationModifier) _param0).\u0023\u003DzNJ7MG_c\u0024k1K0((ChartAnnotationTypes) _param1.NewValue);
   }
 
   public ChartAnnotationTypes UserAnnotationType
   {
     get
     {
-      return (ChartAnnotationTypes) this.GetValue(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzEaRzkw2Bl16I);
+      return (ChartAnnotationTypes) this.GetValue(FxAnnotationModifier.\u0023\u003DzEaRzkw2Bl16I);
     }
     set
     {
-      this.SetValue(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzEaRzkw2Bl16I, (object) value);
+      this.SetValue(FxAnnotationModifier.\u0023\u003DzEaRzkw2Bl16I, (object) value);
     }
   }
 
@@ -134,7 +134,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   {
     if (_param1 == ChartAnnotationTypes.None)
     {
-      CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.\u0023\u003DzfS3q6Qc\u003D, dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D ?? (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D = new Action<IAnnotation>(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dzf_OX3zxNZIoqduZEY_a_\u0024gQ\u003D)));
+      CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.\u0023\u003DzfS3q6Qc\u003D, FxAnnotationModifier.SomeClass34343383.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D ?? (FxAnnotationModifier.SomeClass34343383.\u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D = new Action<IAnnotation>(FxAnnotationModifier.SomeClass34343383.SomeMethond0343.\u0023\u003Dzf_OX3zxNZIoqduZEY_a_\u0024gQ\u003D)));
       this.AnnotationType = (Type) null;
       this.IsEnabled = false;
     }
@@ -186,7 +186,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   private void \u0023\u003DzbSFwQBfxHeQf(AnnotationBase _param1, bool _param2)
   {
-    dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass398 jq9Llz3ahZ2LrQl4 = new dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass398();
+    FxAnnotationModifier.SomeClass398 jq9Llz3ahZ2LrQl4 = new FxAnnotationModifier.SomeClass398();
     jq9Llz3ahZ2LrQl4._variableSome3535 = this;
     jq9Llz3ahZ2LrQl4.\u0023\u003DzLXiKo\u0024A\u003D = _param1;
     if (_param2 == this.\u0023\u003DztnHdtisTy1nl(jq9Llz3ahZ2LrQl4.\u0023\u003DzLXiKo\u0024A\u003D))
@@ -239,7 +239,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   private void \u0023\u003DzIehZCHK_gy_6(AnnotationBase _param1)
   {
-    dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass7237 doDcwiev7trI4Ny0 = new dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass7237();
+    FxAnnotationModifier.SomeClass7237 doDcwiev7trI4Ny0 = new FxAnnotationModifier.SomeClass7237();
     doDcwiev7trI4Ny0._variableSome3535 = this;
     doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D = _param1;
     if (this.\u0023\u003DzGuZ8w82B3fMJ() == null)
@@ -297,17 +297,17 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   private ChartDrawData.AnnotationData \u0023\u003DzCVYc\u0024mw923hM(AnnotationBase _param1)
   {
-    dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW;
+    FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW;
     vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D = _param1;
     ChartDrawData.AnnotationData annotationData = new ChartDrawData.AnnotationData();
     vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     annotationData.IsVisible = new bool?(!vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.IsHidden);
     annotationData.IsEditable = new bool?(this.\u0023\u003DztnHdtisTy1nl(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D));
     annotationData.CoordinateMode = new AnnotationCoordinateMode?(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.CoordinateMode);
-    annotationData.X1 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.X1, ref vm6DexIkyzzokCaW);
-    annotationData.X2 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.X2, ref vm6DexIkyzzokCaW);
-    annotationData.Y1 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.Y1, ref vm6DexIkyzzokCaW);
-    annotationData.Y2 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.Y2, ref vm6DexIkyzzokCaW);
+    annotationData.X1 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.X1, ref vm6DexIkyzzokCaW);
+    annotationData.X2 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.X2, ref vm6DexIkyzzokCaW);
+    annotationData.Y1 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.Y1, ref vm6DexIkyzzokCaW);
+    annotationData.Y2 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.Y2, ref vm6DexIkyzzokCaW);
     if (vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D is LineAnnotationBase z2vouRgM1)
     {
       annotationData.Stroke = z2vouRgM1.Stroke;
@@ -366,7 +366,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
     ChartAnnotation _param1,
     ChartDrawData.AnnotationData _param2)
   {
-    dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass343 vqd1Qhu2nAw1nzwT0;
+    FxAnnotationModifier.SomeClass343 vqd1Qhu2nAw1nzwT0;
     bool? nullable;
     if (!this.\u0023\u003DzCqbxaY8TFdGX.TryGetKey(_param1, ref vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D))
     {
@@ -406,10 +406,10 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
       }
       if (_param2.CoordinateMode.HasValue)
         vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.CoordinateMode = _param2.CoordinateMode.Value;
-      IComparable comparable1 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
-      IComparable comparable2 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
-      IComparable comparable3 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(_param2.Y1);
-      IComparable comparable4 = dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(_param2.Y2);
+      IComparable comparable1 = FxAnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
+      IComparable comparable2 = FxAnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
+      IComparable comparable3 = FxAnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(_param2.Y1);
+      IComparable comparable4 = FxAnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(_param2.Y2);
       if (comparable1 != null)
         vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.X1 = comparable1;
       if (comparable2 != null)
@@ -528,7 +528,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   internal static IComparable \u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(
     IComparable _param0,
-    ref dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
+    ref FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
   {
     switch (_param0)
     {
@@ -555,7 +555,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   internal static IComparable \u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(
     IComparable _param0,
-    ref dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
+    ref FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
   {
     if (_param0 == null)
       return (IComparable) null;
@@ -569,7 +569,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   internal static IComparable \u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(
     IComparable _param0,
-    ref dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass343 _param1)
+    ref FxAnnotationModifier.SomeClass343 _param1)
   {
     if (_param0 == null)
       return (IComparable) null;
@@ -618,7 +618,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
   [Serializable]
   private new sealed class SomeClass34343383
   {
-    public static readonly dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383 SomeMethond0343 = new dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383();
+    public static readonly FxAnnotationModifier.SomeClass34343383 SomeMethond0343 = new FxAnnotationModifier.SomeClass34343383();
     public static Action<IAnnotation> \u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D;
     public static Action<IAnnotation> \u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D;
 
@@ -655,7 +655,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   private sealed class SomeClass398
   {
-    public dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd _variableSome3535;
+    public FxAnnotationModifier _variableSome3535;
     public AnnotationBase \u0023\u003DzLXiKo\u0024A\u003D;
     public DelegateCommand<AnnotationBase> \u0023\u003DztKpRxYMDxV\u00243;
 
@@ -673,11 +673,11 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
     internal void \u0023\u003Dzn4dNgi0mxbbCP\u0024DWxprQswg\u003D(AnnotationBase _param1)
     {
-      dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D();
+      FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D();
       wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D = _param1;
       dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd m53T5BwgtpbkV9ZEjd = this._variableSome3535.\u0023\u003DzqRVOnAc\u003D();
       m53T5BwgtpbkV9ZEjd.IsOpen = false;
-      CollectionHelper.ForEach<IAnnotation>(this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>(new Func<IAnnotation, bool>(wd3zPhu0dS2ZqhuzuE.\u0023\u003DzJdTk1tU_hZdMZEOQ7Sdo5JQ\u003D)), dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D ?? (dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D = new Action<IAnnotation>(dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1)));
+      CollectionHelper.ForEach<IAnnotation>(this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>(new Func<IAnnotation, bool>(wd3zPhu0dS2ZqhuzuE.\u0023\u003DzJdTk1tU_hZdMZEOQ7Sdo5JQ\u003D)), FxAnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D ?? (FxAnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D = new Action<IAnnotation>(FxAnnotationModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1)));
       wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D.IsSelected = true;
       m53T5BwgtpbkV9ZEjd.PlacementTarget = (UIElement) wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D;
       m53T5BwgtpbkV9ZEjd.IsOpen = true;
@@ -765,7 +765,7 @@ internal sealed class dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6
 
   private sealed class SomeClass7237
   {
-    public dje_zADFUPRN62S8ZNNEUQ79EF8DB58BRGPXL7GY5HE4PPWFW6CDHKBAB6HP6FKG7AAUPM52GHWGQ_ejd _variableSome3535;
+    public FxAnnotationModifier _variableSome3535;
     public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
     public Action<DependencyPropertyChangedEventArgs> \u0023\u003DzDg_APFfs\u0024qGS;
 

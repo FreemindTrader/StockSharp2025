@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd
+// Type: -.UltrachartCursormodifier
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -15,18 +15,18 @@ using System.Windows.Markup;
 #nullable disable
 namespace \u002D;
 
-internal sealed class dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd : 
+internal sealed class UltrachartCursormodifier : 
   dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd,
   IComponentConnector
 {
   
   private readonly ControlTemplate \u0023\u003Dzh\u0024ZLVlTJ\u0024Noh;
   
-  public static readonly DependencyProperty \u0023\u003DztwQ4ieQ9dTof = DependencyProperty.Register(nameof (InPlaceTooltip), typeof (bool), typeof (dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd.\u0023\u003Dzuc47VriCXw3z)));
+  public static readonly DependencyProperty \u0023\u003DztwQ4ieQ9dTof = DependencyProperty.Register(nameof (InPlaceTooltip), typeof (bool), typeof (UltrachartCursormodifier), new PropertyMetadata((object) true, new PropertyChangedCallback(UltrachartCursormodifier.\u0023\u003Dzuc47VriCXw3z)));
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
-  public dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd()
+  public UltrachartCursormodifier()
   {
     this.InitializeComponent();
     this.\u0023\u003Dzh\u0024ZLVlTJ\u0024Noh = this.TooltipLabelTemplate;
@@ -37,18 +37,18 @@ internal sealed class dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXT
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    ((dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd) _param0).\u0023\u003DzvSVAzF\u0024\u0024QePr((bool) _param1.NewValue);
+    ((UltrachartCursormodifier) _param0).\u0023\u003DzvSVAzF\u0024\u0024QePr((bool) _param1.NewValue);
   }
 
   public bool InPlaceTooltip
   {
     get
     {
-      return (bool) this.GetValue(dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd.\u0023\u003DztwQ4ieQ9dTof);
+      return (bool) this.GetValue(UltrachartCursormodifier.\u0023\u003DztwQ4ieQ9dTof);
     }
     set
     {
-      this.SetValue(dje_z3Z8T7U2SE2UJT59CTNY3TET7JDFJC5MSG29WF6RDGAYU7XFY5TNXTAC5YX2796KWCRF36XMM_ejd.\u0023\u003DztwQ4ieQ9dTof, (object) value);
+      this.SetValue(UltrachartCursormodifier.\u0023\u003DztwQ4ieQ9dTof, (object) value);
     }
   }
 

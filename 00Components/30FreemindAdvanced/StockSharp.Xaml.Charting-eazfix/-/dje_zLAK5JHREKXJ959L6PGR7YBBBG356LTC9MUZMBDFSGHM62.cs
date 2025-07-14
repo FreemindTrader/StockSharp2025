@@ -242,7 +242,7 @@ internal sealed class dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd :
     DependencyPropertyChangedEventArgs _param1)
   {
     dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd muzmbdfsghM62BaEjd = (dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd) _param0;
-    if (muzmbdfsghM62BaEjd == null || !(muzmbdfsghM62BaEjd.ChartModifier is dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd chartModifier))
+    if (muzmbdfsghM62BaEjd == null || !(muzmbdfsghM62BaEjd.ChartModifier is ModifierGroup chartModifier))
       return;
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SetMouseEventGroup((DependencyObject) chartModifier, _param1.NewValue as string);
   }
@@ -253,7 +253,7 @@ internal sealed class dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd :
   {
     if (!(_param0 is dje_zLAK5JHREKXJ959L6PGR7YBBBG356LTC9MUZMBDFSGHM62BA_ejd muzmbdfsghM62BaEjd))
       return;
-    dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd chartModifier = (dje_z24K7H7GM4WVGBK9A4HPUH6XAE9WN9X87M9C7XUDP8HJK96Z_ejd) muzmbdfsghM62BaEjd.ChartModifier;
+    ModifierGroup chartModifier = (ModifierGroup) muzmbdfsghM62BaEjd.ChartModifier;
     if (chartModifier == null)
       return;
     dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd c8K7BtmrprxtexEjd = (dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd) chartModifier["LegendModifier"];

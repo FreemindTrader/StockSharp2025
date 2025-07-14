@@ -62,11 +62,11 @@ internal class SciChartSurface :
   
   public static readonly DependencyProperty \u0023\u003Dz1Eyckd4j0Nvq = DependencyProperty.Register(nameof (YAxis), typeof (IAxis), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003DzUYXUmgjXHZra)));
   
-  public static readonly DependencyProperty \u0023\u003Dzp4pbuj2W1yJe = DependencyProperty.Register(nameof (YAxes), typeof (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dzw83elPE6IaNqQIYgfw\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzp4pbuj2W1yJe = DependencyProperty.Register(nameof (YAxes), typeof (AxisCollection), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dzw83elPE6IaNqQIYgfw\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzDqajrUCXt2L8 = DependencyProperty.Register(nameof (XAxes), typeof (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dz6cV0sTdoa0aXB7oEvg\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzDqajrUCXt2L8 = DependencyProperty.Register(nameof (XAxes), typeof (AxisCollection), typeof (SciChartSurface), new PropertyMetadata((object) null, new PropertyChangedCallback(SciChartSurface.\u0023\u003Dz6cV0sTdoa0aXB7oEvg\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzCQBWGrk\u003D = DependencyProperty.Register(nameof (Annotations), typeof (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D), typeof (SciChartSurface), new PropertyMetadata(new PropertyChangedCallback(SciChartSurface.\u0023\u003DzTwHOANN3ITOI)));
+  public static readonly DependencyProperty \u0023\u003DzCQBWGrk\u003D = DependencyProperty.Register(nameof (Annotations), typeof (AnnotationCollection), typeof (SciChartSurface), new PropertyMetadata(new PropertyChangedCallback(SciChartSurface.\u0023\u003DzTwHOANN3ITOI)));
   
   public static readonly DependencyProperty \u0023\u003Dzrq3jmpc2lTWmgU1xYQ\u003D\u003D = DependencyProperty.Register(nameof (AutoRangeOnStartup), typeof (bool), typeof (SciChartSurface), new PropertyMetadata((object) true));
   
@@ -156,9 +156,9 @@ internal class SciChartSurface :
     this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D = new SciChartSurface.\u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D(this);
     this.SelectedRenderableSeries = new ObservableCollection<IRenderableSeries>();
     this.SetCurrentValue(SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D, (object) new ObservableCollection<IRenderableSeries>());
-    this.SetCurrentValue(SciChartSurface.\u0023\u003Dzp4pbuj2W1yJe, (object) new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D());
-    this.SetCurrentValue(SciChartSurface.\u0023\u003DzDqajrUCXt2L8, (object) new \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D());
-    this.SetCurrentValue(SciChartSurface.\u0023\u003DzCQBWGrk\u003D, (object) new \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D());
+    this.SetCurrentValue(SciChartSurface.\u0023\u003Dzp4pbuj2W1yJe, (object) new AxisCollection());
+    this.SetCurrentValue(SciChartSurface.\u0023\u003DzDqajrUCXt2L8, (object) new AxisCollection());
+    this.SetCurrentValue(SciChartSurface.\u0023\u003DzCQBWGrk\u003D, (object) new AnnotationCollection());
     this.SetCurrentValue(SciChartSurface.\u0023\u003Dz8o0yiN0I55Gm, (object) new \u0023\u003DzmAi_JN5raoSBYo9w2IEI_2WWX\u0024OoiqaMIQ\u003D\u003D());
     this.SetCurrentValue(dje_z45LS63Y8UMJ9EYX47PT4TZDDE9QEW5TMVSKL8UT3BP29L4PX7GMR67GCPGCQ_ejd.\u0023\u003DzZlWtNzRQ4OYQ, (object) new dje_zFYCV8LXGWR39M2R5WW2FCVKF529R9Q6JAUMT5WGC7MM4FFDF2V4HQQMUEFPET6GT7RXT7XFY_ejd());
     this.ZoomExtentsCommand = (ICommand) new DelegateCommand(new Action(this.ZoomExtents));
@@ -474,11 +474,11 @@ internal class SciChartSurface :
     }
   }
 
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D YAxes
+  public AxisCollection YAxes
   {
     get
     {
-      return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D) this.GetValue(SciChartSurface.\u0023\u003Dzp4pbuj2W1yJe);
+      return (AxisCollection) this.GetValue(SciChartSurface.\u0023\u003Dzp4pbuj2W1yJe);
     }
     set
     {
@@ -486,11 +486,11 @@ internal class SciChartSurface :
     }
   }
 
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D XAxes
+  public AxisCollection XAxes
   {
     get
     {
-      return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D) this.GetValue(SciChartSurface.\u0023\u003DzDqajrUCXt2L8);
+      return (AxisCollection) this.GetValue(SciChartSurface.\u0023\u003DzDqajrUCXt2L8);
     }
     set
     {
@@ -498,11 +498,11 @@ internal class SciChartSurface :
     }
   }
 
-  public \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D Annotations
+  public AnnotationCollection Annotations
   {
     get
     {
-      return (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D) this.GetValue(SciChartSurface.\u0023\u003DzCQBWGrk\u003D);
+      return (AnnotationCollection) this.GetValue(SciChartSurface.\u0023\u003DzCQBWGrk\u003D);
     }
     set
     {
@@ -1430,8 +1430,8 @@ internal class SciChartSurface :
     DependencyPropertyChangedEventArgs _param1)
   {
     SciChartSurface elwvdvgwnmJ5AjuaEjd = (SciChartSurface) _param0;
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D newValue = _param1.NewValue as \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D;
-    if (_param1.OldValue is \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D oldValue)
+    AnnotationCollection newValue = _param1.NewValue as AnnotationCollection;
+    if (_param1.OldValue is AnnotationCollection oldValue)
     {
       oldValue.ParentSurface = (ISciChartSurface) null;
       oldValue.CollectionChanged -= SciChartSurface.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzyRWKaHIr4Mj4SoYRZA\u003D\u003D ?? (SciChartSurface.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzyRWKaHIr4Mj4SoYRZA\u003D\u003D = new NotifyCollectionChangedEventHandler(SciChartSurface.\u0023\u003Dzdb4OQr1\u0024A5Qg));
@@ -1451,7 +1451,7 @@ internal class SciChartSurface :
     object _param0,
     NotifyCollectionChangedEventArgs _param1)
   {
-    ISciChartSurface ii8u0KoV3jCaMdYpfetQ = _param0 is \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh5kehUw\u0024c\u0024fhZpDlpYA\u003D jh5kehUwCFhZpDlpYa ? jh5kehUwCFhZpDlpYa.ParentSurface : _param0 as ISciChartSurface;
+    ISciChartSurface ii8u0KoV3jCaMdYpfetQ = _param0 is AnnotationCollection jh5kehUwCFhZpDlpYa ? jh5kehUwCFhZpDlpYa.ParentSurface : _param0 as ISciChartSurface;
     if (ii8u0KoV3jCaMdYpfetQ == null || ii8u0KoV3jCaMdYpfetQ.get_ChartModifier() == null)
       return;
     ii8u0KoV3jCaMdYpfetQ.get_ChartModifier().\u0023\u003Dzok6jmLaiH5ai(_param0, _param1);
@@ -1480,8 +1480,8 @@ internal class SciChartSurface :
     DependencyPropertyChangedEventArgs _param1)
   {
     SciChartSurface elwvdvgwnmJ5AjuaEjd = (SciChartSurface) _param0;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D newValue = _param1.NewValue as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D;
-    if (_param1.OldValue is \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D oldValue)
+    AxisCollection newValue = _param1.NewValue as AxisCollection;
+    if (_param1.OldValue is AxisCollection oldValue)
     {
       foreach (IAxis dynWmoFzgH4RlWB0lB in (Collection<IAxis>) oldValue)
         elwvdvgwnmJ5AjuaEjd.\u0023\u003Dzy9wEH1BYapxA(dynWmoFzgH4RlWB0lB);
@@ -1505,8 +1505,8 @@ internal class SciChartSurface :
     DependencyPropertyChangedEventArgs _param1)
   {
     SciChartSurface elwvdvgwnmJ5AjuaEjd = (SciChartSurface) _param0;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D newValue = _param1.NewValue as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D;
-    if (_param1.OldValue is \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUrpBxQ9IN4CBXg\u003D\u003D oldValue)
+    AxisCollection newValue = _param1.NewValue as AxisCollection;
+    if (_param1.OldValue is AxisCollection oldValue)
     {
       foreach (IAxis dynWmoFzgH4RlWB0lB in (Collection<IAxis>) oldValue)
         elwvdvgwnmJ5AjuaEjd.\u0023\u003Dzy9wEH1BYapxA(dynWmoFzgH4RlWB0lB);

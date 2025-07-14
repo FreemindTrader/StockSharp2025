@@ -76,7 +76,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNY
     this.\u0023\u003DzNnNx0_c\u003D[_param1 * 4 + _param2] = _param3;
   }
 
-  public void \u0023\u003Dz4M_pW8k\u003D(int _param1, int _param2, double _param3)
+  public void OnAreaElementsAdded(int _param1, int _param2, double _param3)
   {
     this.\u0023\u003DzNnNx0_c\u003D[_param1 * 4 + _param2] += _param3;
   }
@@ -606,7 +606,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNY
       {
         this.\u0023\u003DzWv0\u0024a14\u003D(index1, index2, 0.0);
         for (int index3 = 0; index3 < 4; ++index3)
-          this.\u0023\u003Dz4M_pW8k\u003D(index1, index2, _param1.\u0023\u003DzR8apb4E\u003D(index1, index3) * _param2.\u0023\u003DzR8apb4E\u003D(index3, index2));
+          this.OnAreaElementsAdded(index1, index2, _param1.\u0023\u003DzR8apb4E\u003D(index1, index3) * _param2.\u0023\u003DzR8apb4E\u003D(index3, index2));
       }
     }
   }
