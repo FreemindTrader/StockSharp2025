@@ -20,7 +20,7 @@ using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>Chart drawing data.</summary>
-public class ChartDrawDataEx : IChartDrawData
+public partial class ChartDrawDataEx : IChartDrawData
 {
     /// <summary>Interface which represents all chart draw data types.</summary>
     /// <summary>Indicator values to draw on chart.</summary>
@@ -830,7 +830,7 @@ public class ChartDrawDataEx : IChartDrawData
         /// <inheritdoc />
         public IChartDrawData.IChartDrawDataItem Add( IChartIndicatorElement element, IIndicatorValue value )
         {
-            return value == null ? ( IChartDrawData.IChartDrawDataItem ) this : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartIndicatorElement, ChartDrawDataEx.IndicatorData>( _drawData.GetIndicatorMap(), element, new ChartDrawDataEx.IndicatorData( TimeStamp, value ) );
+            return value == null ? this : ( IChartDrawData.IChartDrawDataItem ) GetMap<IChartIndicatorElement, ChartDrawDataEx.IndicatorData>( _drawData.GetIndicatorMap(), element, new ChartDrawDataEx.IndicatorData( TimeStamp, value ) );
         }
 
         /// <inheritdoc />
@@ -931,10 +931,9 @@ public class ChartDrawDataEx : IChartDrawData
         return z3mmVbunXgsFqZ9EtJw == null ? ( List<ChartDrawDataEx.sCandleColor> ) null : CollectionHelper.TryGetValue<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>>( ( IDictionary<IChartCandleElement, List<ChartDrawDataEx.sCandleColor>> ) z3mmVbunXgsFqZ9EtJw, _param1 );
     }
 
-    internal List<ChartDrawDataEx.IndicatorData> GetCandleRelatedData(
-      IChartIndicatorElement _param1 )
+    internal List<ChartDrawDataEx.IndicatorData> GetCandleRelatedData( IChartIndicatorElement _param1 )
     {
-        Dictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>> ireF1JupHymGa845Q = _indicatorMap;
+        var ireF1JupHymGa845Q = _indicatorMap;
         return ireF1JupHymGa845Q == null ? ( List<ChartDrawDataEx.IndicatorData> ) null : CollectionHelper.TryGetValue<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>>( ( IDictionary<IChartIndicatorElement, List<ChartDrawDataEx.IndicatorData>> ) ireF1JupHymGa845Q, _param1 );
     }
 
