@@ -177,7 +177,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        protected override bool OnDraw( ChartDrawData data )
+        protected override bool OnDraw( ChartDrawDataEx data )
         {
             return IndicatorPainter.Draw( data );
         }

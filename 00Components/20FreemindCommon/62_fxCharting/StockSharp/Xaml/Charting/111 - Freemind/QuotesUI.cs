@@ -114,17 +114,17 @@ namespace StockSharp.Xaml.Charting
             return _viewModel;
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
+        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
         {
             return _viewModel.Draw( drawValues );
         }
 
         void IDrawableChartElement.StartDrawing( )
         {
-            _viewModel.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
+            _viewModel.Draw( Enumerable.Empty<ChartDrawDataEx.IDrawValue>( ).ToEx( 0 ) );
         }
 
-        protected override bool OnDraw( ChartDrawData data )
+        protected override bool OnDraw( ChartDrawDataEx data )
         {
             //IEnumerableEx<ChartDrawData.IDrawValue> enumerableEx = data.GetBandDrawValues( this );
             //if ( enumerableEx != null && !enumerableEx.IsEmpty<ChartDrawData.IDrawValue>( ) )

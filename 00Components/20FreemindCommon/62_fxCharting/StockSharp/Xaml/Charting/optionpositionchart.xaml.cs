@@ -104,8 +104,8 @@ namespace StockSharp.Xaml.Charting
                 }
 
                 init = true;
-                var annoData = new ChartDrawData.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( ( SciChart.Charting.Visuals.Annotations.LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
-                var drawData = new ChartDrawData( );
+                var annoData = new ChartDrawDataEx.sAnnotation( ) { IsVisible = new bool?( true ), IsEditable = new bool?( false ), ShowLabel = new bool?( true ), LabelPlacement = new SciChart.Charting.Visuals.Annotations.LabelPlacement?( ( SciChart.Charting.Visuals.Annotations.LabelPlacement )8 ), Stroke =   Brushes.Orange, Thickness = new Thickness?( new Thickness( 2.0 ) ), VerticalAlignment = new VerticalAlignment?( VerticalAlignment.Stretch ) };
+                var drawData = new ChartDrawDataEx( );
                 drawData.Add( _chartAnnotation, annoData );
                 Chart.Draw( drawData );
             };
@@ -377,7 +377,7 @@ namespace StockSharp.Xaml.Charting
             }
 
             Chart.Reset( GetChartAreaElments( ) );
-            ChartDrawData drawData = new ChartDrawData( );
+            ChartDrawDataEx drawData = new ChartDrawDataEx( );
 
             if ( ShowSeparated )
             {
@@ -429,7 +429,7 @@ namespace StockSharp.Xaml.Charting
                 }
             }
 
-            drawData.Add( _chartAnnotation, new ChartDrawData.sAnnotation( ) { X1 = assetPrice, Y1 = 0.0 } );
+            drawData.Add( _chartAnnotation, new ChartDrawDataEx.sAnnotation( ) { X1 = assetPrice, Y1 = 0.0 } );
             Chart.Draw( drawData );
         }
 

@@ -22,7 +22,7 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawData
+    public partial class ChartDrawDataEx
     {
         public struct sCandleColor : IDrawValue
         {
@@ -457,9 +457,9 @@ namespace StockSharp.Xaml.Charting
                 storage.SetValue( "Y1", Y1 );
                 storage.SetValue( "X2", X2 );
                 storage.SetValue( "Y2", Y2 );
-                storage.SetValue( "Stroke", Stroke.SaveBrush() );
-                storage.SetValue( "Fill", Fill.SaveBrush() );
-                storage.SetValue( "Foreground", Foreground.SaveBrush() );
+                storage.SetValue( "Stroke", Stroke.SaveSettings() );
+                storage.SetValue( "Fill", Fill.SaveSettings() );
+                storage.SetValue( "Foreground", Foreground.SaveSettings() );
                 storage.SetValue( "Thickness", Thickness );
                 storage.SetValue( "ShowLabel", ShowLabel );
                 storage.SetValue( "LabelPlacement", LabelPlacement );

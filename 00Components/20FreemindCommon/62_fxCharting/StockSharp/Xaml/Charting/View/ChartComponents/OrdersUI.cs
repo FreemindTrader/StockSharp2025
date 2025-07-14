@@ -15,12 +15,12 @@ namespace StockSharp.Xaml.Charting
             BuyColor  = Colors.Transparent;
         }
 
-        protected override bool OnDraw( ChartDrawData data )
+        protected override bool OnDraw( ChartDrawDataEx data )
         {
-            PooledList< ChartDrawData.sTrade > source = data.GetOrder( this );
+            PooledList< ChartDrawDataEx.sTrade > source = data.GetOrder( this );
             if( source != null && !source.IsEmpty( ) )
             {
-                return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
+                return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawDataEx.IDrawValue >( ).ToEx( source.Count ) );
             }
             return false;
         }

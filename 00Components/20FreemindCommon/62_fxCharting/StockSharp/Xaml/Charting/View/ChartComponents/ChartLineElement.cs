@@ -463,17 +463,17 @@ namespace StockSharp.Xaml.Charting
 
         
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
+        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
         {
             return _lineViewModel.Draw( drawValues );
         }
 
         void IDrawableChartElement.StartDrawing( )
         {
-            _lineViewModel.Draw(   Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
+            _lineViewModel.Draw(   Enumerable.Empty<ChartDrawDataEx.IDrawValue>( ).ToEx( 0 ) );
         }
 
-        protected override bool OnDraw( ChartDrawData data )
+        protected override bool OnDraw( ChartDrawDataEx data )
         {
             var drawValues = data.GetLineDrawValues( this );
 

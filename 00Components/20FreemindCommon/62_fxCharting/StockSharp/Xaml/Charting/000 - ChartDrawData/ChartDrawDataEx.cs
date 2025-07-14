@@ -18,12 +18,12 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawData
+    public partial class ChartDrawDataEx
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" />.
         /// </summary>
-        public ChartDrawData()
+        public ChartDrawDataEx()
         {
         }
 
@@ -297,7 +297,7 @@ namespace StockSharp.Xaml.Charting
         /// <param name="state">Use this state to draw the order.</param>
         /// <returns>
         /// <see cref="T:StockSharp.Xaml.Charting.ChartDrawData" /> instance.</returns>
-        public ChartDrawData Add( ChartActiveOrdersElement element,
+        public ChartDrawDataEx Add( ChartActiveOrdersElement element,
                                     Order order,
                                     bool? isFrozen = null,
                                     bool autoRemoveFromChart = true,

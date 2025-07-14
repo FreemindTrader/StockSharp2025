@@ -421,7 +421,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         _sciChartSurface?.InvalidateElement( );
     }
 
-    public void Draw( ChartDrawData data )
+    public void Draw( ChartDrawDataEx data )
     {
         if ( _sciChartSurface != null )
         {
@@ -537,7 +537,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         PerfStats = string.Format( "FPS: {0:0}   Count: {1:n0}", _fpsTotal / _queue.Count, someValue );
     }
 
-    private void StartRenderingChartUIs( ChartDrawData drawData )
+    private void StartRenderingChartUIs( ChartDrawDataEx drawData )
     {
         //foreach ( var vmChartUI in _vmChartUIs.CachedValues )
         //{
@@ -1460,7 +1460,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
 
 
-    public void SetupAnnotation( IChartElement annotation, ChartDrawData.sAnnotation data )
+    public void SetupAnnotation( IChartElement annotation, ChartDrawDataEx.sAnnotation data )
     {
         if ( _annotationModifier != null )
         {

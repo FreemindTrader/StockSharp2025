@@ -114,7 +114,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public void Draw( ChartDrawData data )
+        public void Draw( ChartDrawDataEx data )
         {
             Chart.Draw( data );
         }
@@ -326,7 +326,7 @@ namespace StockSharp.Xaml.Charting
             protected override void OnAdded( LineData<DateTime> lineData )
             {
                 base.OnAdded( lineData );
-                ChartDrawData data = new ChartDrawData( );
+                ChartDrawDataEx data = new ChartDrawDataEx( );
                 data.Group( lineData.X ).Add( Element, Decimal.ToDouble( lineData.Y ), 0.0 );
                 _equityCurveChart.Chart.Draw( data );
             }

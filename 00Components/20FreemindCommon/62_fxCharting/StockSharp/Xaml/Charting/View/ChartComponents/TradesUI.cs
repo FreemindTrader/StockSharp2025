@@ -10,13 +10,13 @@ namespace StockSharp.Xaml.Charting
     
     public class TradesUI : TransactionUI< TradesUI >
     {
-        protected override bool OnDraw( ChartDrawData data )
+        protected override bool OnDraw( ChartDrawDataEx data )
         {
-            PooledList< ChartDrawData.sTrade > source = data.GetTrade( this );
+            PooledList< ChartDrawDataEx.sTrade > source = data.GetTrade( this );
 
             if( source != null && !source.IsEmpty( ) )
             {
-                return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
+                return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawDataEx.IDrawValue >( ).ToEx( source.Count ) );
             }
             return false;
         }

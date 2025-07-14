@@ -214,7 +214,7 @@ namespace StockSharp.Xaml.Charting
             return _orderInfoAnnotation.Keys.Where( _param1 );
         }
 
-        private void DrawActiveOrder( ChartDrawData.sActiveOrder order )
+        private void DrawActiveOrder( ChartDrawDataEx.sActiveOrder order )
         {
             if ( !IsUiThread( ) )
             {
@@ -248,7 +248,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        private void OrderAnimation( ChartActiveOrderInfo orderInfo, ChartDrawData.sActiveOrder order, bool _param2 )
+        private void OrderAnimation( ChartActiveOrderInfo orderInfo, ChartDrawDataEx.sActiveOrder order, bool _param2 )
         {
             ActiveOrderAnnotation annotation = orderInfo.Annotation;
             bool flag1 = true;
@@ -278,14 +278,14 @@ namespace StockSharp.Xaml.Charting
             RemoveActiveOrderInfo( order.Order( ) );
         }
 
-        public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+        public override bool Draw( IEnumerableEx<ChartDrawDataEx.IDrawValue> _param1 )
         {
             if ( _param1 == null || _param1.Count == 0 )
                 return false;
 
             //return this.Draw<T>( _param1.Cast<ChartDrawData.sxTuple<T>>( ).ToEx<ChartDrawData.sxTuple<T>>( _param1.Count ) );
 
-            foreach ( var order in _param1.Cast<ChartDrawData.sActiveOrder>( ) )
+            foreach ( var order in _param1.Cast<ChartDrawDataEx.sActiveOrder>( ) )
             {
                 DrawActiveOrder( order );
             }
@@ -307,7 +307,7 @@ namespace StockSharp.Xaml.Charting
 
 
         private ChartActiveOrderInfo SetupAnnotationBinding(
-          ChartDrawData.sActiveOrder _param1 )
+          ChartDrawDataEx.sActiveOrder _param1 )
         {
             Order order                  = _param1.Order();
             var activeOrder              = new ActiveOrderAnnotation();
@@ -351,7 +351,7 @@ namespace StockSharp.Xaml.Charting
 
         private static void PopulateAnnotationWithOrderInfo(
           ChartActiveOrderInfo _param0,
-          ChartDrawData.sActiveOrder _param1 )
+          ChartDrawDataEx.sActiveOrder _param1 )
         {
             ActiveOrderAnnotation annotation = _param0.Annotation;
             Order order = _param1.Order();
@@ -415,7 +415,7 @@ namespace StockSharp.Xaml.Charting
             Order order = GetActiveOrderInfo( _param1, out zb8sIius );
             if ( order == null || IsValidOrder( order, zb8sIius.AutoRemoveFromChart, zb8sIius.State, false ) )
                 return;
-            DrawActiveOrder( new ChartDrawData.sActiveOrder( order, zb8sIius.Balance, zb8sIius.State, zb8sIius.PriceStep, zb8sIius.AutoRemoveFromChart, false, false, false, order.Price ) );
+            DrawActiveOrder( new ChartDrawDataEx.sActiveOrder( order, zb8sIius.Balance, zb8sIius.State, zb8sIius.PriceStep, zb8sIius.AutoRemoveFromChart, false, false, false, order.Price ) );
         }
 
         private void OnCancelClicked( ActiveOrderAnnotation _param1 )

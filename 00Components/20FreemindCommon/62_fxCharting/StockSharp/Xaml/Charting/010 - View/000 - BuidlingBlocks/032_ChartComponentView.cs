@@ -263,9 +263,9 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     /// <param name="data">Chart drawing data.</param>
     /// <returns>
     /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
-    protected abstract bool OnDraw( ChartDrawData data );
+    protected abstract bool OnDraw( ChartDrawDataEx data );
 
-    bool IChartComponent.Draw( ChartDrawData _param1 )
+    bool IChartComponent.Draw( ChartDrawDataEx _param1 )
     {
         return this.OnDraw( _param1 );
     }

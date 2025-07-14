@@ -69,14 +69,14 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
     }
 
     bool IDrawableChartElement.StartDrawing(
-      IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+      IEnumerableEx<ChartDrawDataEx.IDrawValue> _param1 )
     {
         return this._baseViewModel.Draw( _param1 );
     }
 
     void IDrawableChartElement.StartDrawing()
     {
-        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+        this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( Enumerable.Empty<ChartDrawDataEx.IDrawValue>(), 0 ) );
     }
 
     bool IChartComponent.CheckAxesCompatible(
@@ -86,14 +86,14 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
         return !_param2.HasValue || _param2.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    protected override bool OnDraw( ChartDrawData data )
+    protected override bool OnDraw( ChartDrawDataEx data )
     {
         var annotationData = data.GetAnnotation( this );
         if ( annotationData == null )
             return false;
-        return ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( ( IEnumerable<ChartDrawData.IDrawValue> ) new ChartDrawData.IDrawValue[ 1 ]
+        return ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawDataEx.IDrawValue>( ( IEnumerable<ChartDrawDataEx.IDrawValue> ) new ChartDrawDataEx.IDrawValue[ 1 ]
         {
-      (ChartDrawData.IDrawValue) annotationData
+      (ChartDrawDataEx.IDrawValue) annotationData
         }, 1 ) );
     }
 

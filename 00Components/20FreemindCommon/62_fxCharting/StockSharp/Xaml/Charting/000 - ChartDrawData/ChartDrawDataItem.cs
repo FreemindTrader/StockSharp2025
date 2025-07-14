@@ -22,11 +22,11 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartDrawData
+    public partial class ChartDrawDataEx
     {
         public sealed class ChartDrawDataItem
         {
-            public ChartDrawDataItem( ChartDrawData data, DateTimeOffset timestamp )
+            public ChartDrawDataItem( ChartDrawDataEx data, DateTimeOffset timestamp )
             {
                 if ( data == null )
                     throw new ArgumentNullException( "ChartDrawData is null" );
@@ -36,7 +36,7 @@ namespace StockSharp.Xaml.Charting
                 _xValue    = double.NaN;
             }
 
-            public ChartDrawDataItem( ChartDrawData data, double xValue )
+            public ChartDrawDataItem( ChartDrawDataEx data, double xValue )
             {
                 if ( data == null )
                     throw new ArgumentNullException( "ChartDrawData is null" );
@@ -69,7 +69,7 @@ namespace StockSharp.Xaml.Charting
                 }
             }
 
-            private readonly ChartDrawData _drawData;
+            private readonly ChartDrawDataEx _drawData;
 
             private ChartDrawDataItem Add<TElement, TValue>( PooledDictionary<TElement, PooledList<TValue>> _param1, TElement _param2, TValue _param3 )
             {

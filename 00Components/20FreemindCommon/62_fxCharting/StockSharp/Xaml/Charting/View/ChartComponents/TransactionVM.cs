@@ -18,7 +18,7 @@ using System.Windows.Data;
 
 internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T : TransactionUI<T>, new()
 {
-    private readonly ConcurrentQueue<ChartDrawData.sTrade> _concurrentQueue = new ConcurrentQueue<ChartDrawData.sTrade>( );
+    private readonly ConcurrentQueue<ChartDrawDataEx.sTrade> _concurrentQueue = new ConcurrentQueue<ChartDrawDataEx.sTrade>( );
 
     public TransactionVM( T chartElment ) : base( chartElment )
     {
@@ -33,14 +33,14 @@ internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T
         PerformUiAction( new Action( Remove ), true );
     }
 
-    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
+    public override bool Draw( IEnumerableEx<ChartDrawDataEx.IDrawValue> drawValues )
     {
-        return EnqueDrawData( drawValues.Cast<ChartDrawData.sTrade>( ).ToEx( drawValues.Count ) );
+        return EnqueDrawData( drawValues.Cast<ChartDrawDataEx.sTrade>( ).ToEx( drawValues.Count ) );
     }
 
 
 
-    public bool EnqueDrawData( IEnumerableEx<ChartDrawData.sTrade> strades )
+    public bool EnqueDrawData( IEnumerableEx<ChartDrawDataEx.sTrade> strades )
     {
         if ( strades == null )
         {
@@ -48,7 +48,7 @@ internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T
         }
 
         bool flag = false;
-        foreach ( ChartDrawData.sTrade strade in strades )
+        foreach ( ChartDrawDataEx.sTrade strade in strades )
         {
             flag = true;
             _concurrentQueue.Enqueue( strade );
@@ -56,7 +56,7 @@ internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T
         return flag;
     }
 
-    private void AddTradeCustomAnnotation( ref ChartDrawData.sTrade strade )
+    private void AddTradeCustomAnnotation( ref ChartDrawDataEx.sTrade strade )
     {
         Tuple<long, string> tuple = Tuple.Create( strade.TradeId, strade.TradeStringId );
 
@@ -102,7 +102,7 @@ internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T
 
         for ( int index = 0; index < count; ++index )
         {
-            ChartDrawData.sTrade result;
+            ChartDrawDataEx.sTrade result;
             if ( _concurrentQueue.TryDequeue( out result ) )
             {
                 AddTradeCustomAnnotation( ref result );

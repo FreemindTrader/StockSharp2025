@@ -311,7 +311,7 @@ namespace StockSharp.Xaml.Charting
             private void GetDataAndDraw( )
             {
                 GetSimpleChart( ).Reset( new VolatilitySmileUI[ 1 ] { Element } );
-                ChartDrawData data = new ChartDrawData( );
+                ChartDrawDataEx data = new ChartDrawDataEx( );
 
                 using ( IEnumerator<LineData<double>> enumerator = GetEnumerator( ) )
                 {
