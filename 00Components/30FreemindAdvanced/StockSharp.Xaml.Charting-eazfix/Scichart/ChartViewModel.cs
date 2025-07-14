@@ -160,6 +160,59 @@ internal sealed class ChartViewModel : DependencyObject
         izKc6jG0gptPuO01M();
     }
 
+    public ICommand AddXAxisCommand
+    {
+        get
+        {
+            return ( ICommand ) this.GetValue( ChartViewModel.AddXAxisCommandProperty );
+        }
+        set
+        {
+            this.SetValue( ChartViewModel.AddXAxisCommandProperty, ( object ) value );
+        }
+    }
+
+    public ICommand AddYAxisCommand
+    {
+        get
+        {
+            return ( ICommand ) this.GetValue( ChartViewModel.AddYAxisCommandProperty );
+        }
+        set
+        {
+            this.SetValue( ChartViewModel.AddYAxisCommandProperty, ( object ) value );
+        }
+    }
+
+    public ICommand RemoveAxisCommand
+    {
+        get
+        {
+            return ( ICommand ) this.GetValue( ChartViewModel.RemoveAxisCommandProperty );
+        }
+        set
+        {
+            this.SetValue( ChartViewModel.RemoveAxisCommandProperty, ( object ) value );
+        }
+    }
+
+    public ObservableCollection<IndicatorType> IndicatorTypes
+    {
+        get
+        {
+            return ( ObservableCollection<IndicatorType> ) this.GetValue( ChartViewModel.RemoveAxisCommandProperty );
+        }
+        set
+        {
+            this.SetValue( ChartViewModel.RemoveAxisCommandProperty, ( object ) value );
+        }
+    }
+
+    public DelegateCommand<IScichartSurfaceVM> ClosePaneCommand
+    {
+        get => this._closePaneCommand;
+    }
+
 
 
     public event Action AreaAddingEvent;
@@ -202,25 +255,13 @@ internal sealed class ChartViewModel : DependencyObject
         ( ( ChartViewModel ) d ).AllowAddXPropertyChanged();
     }
 
-    public static readonly DependencyProperty AllowAddAreaProperty = DependencyProperty.Register(nameof (AllowAddArea), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
-
-    public static readonly DependencyProperty AllowAddAxisProperty = DependencyProperty.Register(nameof (AllowAddAxis), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
-
-    public static readonly DependencyProperty AllowAddCandlesProperty = DependencyProperty.Register(nameof (AllowAddCandles), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
-
-    public static readonly DependencyProperty AllowAddIndicatorsProperty = DependencyProperty.Register(nameof (AllowAddIndicators), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
-
-    public static readonly DependencyProperty AllowAddOrdersProperty = DependencyProperty.Register(nameof (AllowAddOrders), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
-
-    public static readonly DependencyProperty AllowAddOwnTradesProperty = DependencyProperty.Register(nameof (AllowAddOwnTrades), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
-
-    public static readonly DependencyProperty MinimumRangeProperty = DependencyProperty.Register(nameof (MinimumRange), typeof (int), typeof (ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
+    private readonly ICommand CancelActiveOrdersCommand;
 
     private int _minimumRange;
 
     public static readonly DependencyProperty ChartPaneViewModelProperty = DependencyProperty.Register(nameof (ChartPaneViewModels), typeof (ObservableCollection<ScichartSurfaceMVVM>), typeof (ChartViewModel));
 
-    private readonly ICommand CancelActiveOrdersCommand;
+    
 
     public static readonly DependencyProperty ShowHiddenAxesCommandProperty = DependencyProperty.Register(nameof (ShowHiddenAxesCommand), typeof (ICommand), typeof (ChartViewModel));
 
@@ -243,6 +284,21 @@ internal sealed class ChartViewModel : DependencyObject
     public static readonly DependencyProperty RemoveAxisCommandProperty = DependencyProperty.Register(nameof (RemoveAxisCommand), typeof (ICommand), typeof (ChartViewModel));
 
     public static readonly DependencyProperty RemoveAxisCommandProperty = DependencyProperty.Register(nameof (IndicatorTypes), typeof (ObservableCollection<IndicatorType>), typeof (ChartViewModel));
+
+    public static readonly DependencyProperty AllowAddAreaProperty = DependencyProperty.Register(nameof (AllowAddArea), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
+
+    public static readonly DependencyProperty AllowAddAxisProperty = DependencyProperty.Register(nameof (AllowAddAxis), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
+
+    public static readonly DependencyProperty AllowAddCandlesProperty = DependencyProperty.Register(nameof (AllowAddCandles), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
+
+    public static readonly DependencyProperty AllowAddIndicatorsProperty = DependencyProperty.Register(nameof (AllowAddIndicators), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
+
+    public static readonly DependencyProperty AllowAddOrdersProperty = DependencyProperty.Register(nameof (AllowAddOrders), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
+
+    public static readonly DependencyProperty AllowAddOwnTradesProperty = DependencyProperty.Register(nameof (AllowAddOwnTrades), typeof (bool), typeof (ChartViewModel), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartViewModel.OnAllowAddAreaCallback), new CoerceValueCallback(ChartViewModel.\u0023\u003DzgQVt7i8Rpksb)));
+
+    public static readonly DependencyProperty MinimumRangeProperty = DependencyProperty.Register(nameof (MinimumRange), typeof (int), typeof (ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
+
 
     private readonly DelegateCommand<IScichartSurfaceVM> _closePaneCommand;
 
@@ -418,58 +474,7 @@ if ( zu6zyxyyj5lOwEolg == null )
 zu6zyxyyj5lOwEolg( _param1, _param2 );
   }
 
-  public ICommand AddXAxisCommand
-{
-    get
-    {
-        return ( ICommand ) this.GetValue( ChartViewModel.AddXAxisCommandProperty );
-    }
-    set
-    {
-        this.SetValue( ChartViewModel.AddXAxisCommandProperty, ( object ) value );
-    }
-}
-
-public ICommand AddYAxisCommand
-{
-    get
-    {
-        return ( ICommand ) this.GetValue( ChartViewModel.AddYAxisCommandProperty );
-    }
-    set
-    {
-        this.SetValue( ChartViewModel.AddYAxisCommandProperty, ( object ) value );
-    }
-}
-
-public ICommand RemoveAxisCommand
-{
-    get
-    {
-        return ( ICommand ) this.GetValue( ChartViewModel.RemoveAxisCommandProperty );
-    }
-    set
-    {
-        this.SetValue( ChartViewModel.RemoveAxisCommandProperty, ( object ) value );
-    }
-}
-
-public ObservableCollection<IndicatorType> IndicatorTypes
-{
-    get
-    {
-        return ( ObservableCollection<IndicatorType> ) this.GetValue( ChartViewModel.RemoveAxisCommandProperty );
-    }
-    set
-    {
-        this.SetValue( ChartViewModel.RemoveAxisCommandProperty, ( object ) value );
-    }
-}
-
-public DelegateCommand<IScichartSurfaceVM> ClosePaneCommand
-{
-    get => this._closePaneCommand;
-}
+  
 
 public void InitRangeDepProperty()
 {

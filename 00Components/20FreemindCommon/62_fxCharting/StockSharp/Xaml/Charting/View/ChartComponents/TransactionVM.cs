@@ -16,7 +16,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-internal sealed class TransactionVM<T> : UIHigherVM<T> where T : TransactionUI<T>, new()
+internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T : TransactionUI<T>, new()
 {
     private readonly ConcurrentQueue<ChartDrawData.sTrade> _concurrentQueue = new ConcurrentQueue<ChartDrawData.sTrade>( );
 
@@ -74,16 +74,16 @@ internal sealed class TransactionVM<T> : UIHigherVM<T> where T : TransactionUI<T
             string str = strade.TradeId == 0L ? strade.TradeStringId : strade.TradeId.To<string>( );
             string msg = string.Format( "{0} N{1}\r\n{2} = {3}\r\n{4} = {5}\r\n{6} = {7}", strade.OrderSide.GetDisplayName( ), str, LocalizedStrings.Price, strade.Price, LocalizedStrings.Volume, strade.Volume, LocalizedStrings.Time, strade.UtcTime );
 
-            var custom = strade.OrderSide == Sides.Buy ? new UltrachartBuymakerAnnotation( msg, ChartElement ) : ( UltraChartCustomAnnotation )new UltrachartSellmarkerAnnotation( msg, ChartElement );
+            var custom = strade.OrderSide == Sides.Buy ? new UltrachartBuymakerAnnotation( msg, ChartComponentView ) : ( UltraChartCustomAnnotation )new UltrachartSellmarkerAnnotation( msg, ChartComponentView );
 
             custom.X1 = strade.UtcTime;
             custom.Y1 = strade.Price;
 
-            custom.SetBindings( Control.BackgroundProperty,      ChartElement, strade.OrderSide == Sides.Buy ? "BuyColor" : "SellColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-            custom.SetBindings( Control.ForegroundProperty,      ChartElement, strade.OrderSide == Sides.Buy ? "BuyStrokeColor" : "SellStrokeColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-            custom.SetBindings( AnnotationBase.XAxisIdProperty,  ChartElement, "XAxisId", BindingMode.TwoWay, null, null );
-            custom.SetBindings( AnnotationBase.YAxisIdProperty,  ChartElement, "YAxisId", BindingMode.TwoWay, null, null );
-            custom.SetBindings( AnnotationBase.IsHiddenProperty, ChartElement, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
+            custom.SetBindings( Control.BackgroundProperty,      ChartComponentView, strade.OrderSide == Sides.Buy ? "BuyColor" : "SellColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+            custom.SetBindings( Control.ForegroundProperty,      ChartComponentView, strade.OrderSide == Sides.Buy ? "BuyStrokeColor" : "SellStrokeColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+            custom.SetBindings( AnnotationBase.XAxisIdProperty,  ChartComponentView, "XAxisId", BindingMode.TwoWay, null, null );
+            custom.SetBindings( AnnotationBase.YAxisIdProperty,  ChartComponentView, "YAxisId", BindingMode.TwoWay, null, null );
+            custom.SetBindings( AnnotationBase.IsHiddenProperty, ChartComponentView, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
 
             DrawingSurface.AddAxisMakerAnnotation( RootElem, custom, tuple );
         }

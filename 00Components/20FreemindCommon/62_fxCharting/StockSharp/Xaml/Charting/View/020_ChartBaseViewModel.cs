@@ -15,8 +15,7 @@ namespace StockSharp.Xaml.Charting;
 public class ChartBaseViewModel : NotifiableObject
 {
 
-    private readonly SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>> _propertyChangedMap = new SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>(
-        );
+    private readonly SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>> _propertyChangedMap = new SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>();
 
     /// <summary>
     /// Raised before property value is changed.

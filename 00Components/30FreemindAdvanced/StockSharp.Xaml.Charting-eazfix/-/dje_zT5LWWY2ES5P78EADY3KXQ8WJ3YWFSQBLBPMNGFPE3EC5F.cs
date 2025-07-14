@@ -36,7 +36,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   
   public static readonly DependencyProperty \u0023\u003DzBk\u00244thlqlXdL = DependencyProperty.Register(nameof (ParentSurface), typeof (ISciChartSurface), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzRx5RhuORvh6CP5D2Lg\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
+  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
   
   public static readonly DependencyProperty \u0023\u003Dz8z6_NTW32S6R = DependencyProperty.Register(nameof (SelectedRange), typeof (IRange), typeof (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd), new PropertyMetadata((object) null));
   
@@ -139,11 +139,11 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
   {
     get
     {
-      return (string) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzSEAakZbtZKgY);
+      return (string) this.GetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.XAxisIdProperty);
     }
     set
     {
-      this.SetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.\u0023\u003DzSEAakZbtZKgY, (object) value);
+      this.SetValue(dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd.XAxisIdProperty, (object) value);
     }
   }
 

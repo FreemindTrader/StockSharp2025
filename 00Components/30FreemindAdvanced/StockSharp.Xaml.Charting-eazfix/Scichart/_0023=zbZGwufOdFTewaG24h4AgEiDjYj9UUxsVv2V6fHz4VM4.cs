@@ -19,7 +19,7 @@ public interface IDrawableChartElement : IChartElement, IChartPart<IChartElement
     }
 
     //
-    public UIChartBaseViewModel CreateViewModel( ScichartSurfaceMVVM _param1 );
+    public DrawableChartElementBaseViewModel CreateViewModel( ScichartSurfaceMVVM _param1 );
 
     public bool StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> _param1 );
 

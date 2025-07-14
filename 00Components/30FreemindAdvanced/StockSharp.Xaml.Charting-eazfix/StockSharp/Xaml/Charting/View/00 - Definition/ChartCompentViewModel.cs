@@ -21,9 +21,9 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     private readonly 
   #nullable disable
-  ObservableCollection<ChildVM> _childViewModels = new ObservableCollection<ChildVM>();
+  ObservableCollection<ChartElementViewModel> _childViewModels = new ObservableCollection<ChartElementViewModel>();
 
-    private readonly List<UIChartBaseViewModel> _childElements = new List<UIChartBaseViewModel>();
+    private readonly List<DrawableChartElementBaseViewModel> _childElements = new List<DrawableChartElementBaseViewModel>();
 
     private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
@@ -41,7 +41,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         this._chartElement = _param2 ?? throw new ArgumentNullException( "element" );
         this._isCandleElement = _param2 is IChartCandleElement;
         ChartViewModel.AllowToRemoveEvent += OnAllowToRemove;
-        this.ChartElement.PropertyChanged += OnPropertyChanged;
+        this.ChartComponent.PropertyChanged += OnPropertyChanged;
     }
 
     public ScichartSurfaceMVVM Pane
@@ -51,12 +51,12 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public bool AllowToRemove => this.Pane.AllowElementToBeRemoved( this );
 
-    public IChartComponent ChartElement
+    public IChartComponent ChartComponent
     {
         get => this._chartElement;
     }
 
-    public string Title => this.ChartElement.GetGeneratedTitle();
+    public string Title => this.ChartComponent.GetGeneratedTitle();
 
     public bool IsCandleElement => this._isCandleElement;
 
@@ -66,19 +66,19 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         private set => this._candleStickUI = value;
     }
 
-    public IEnumerable<UIChartBaseViewModel> Elements
+    public IEnumerable<DrawableChartElementBaseViewModel> Elements
     {
         get
         {
-            return ( IEnumerable<UIChartBaseViewModel> ) this._childElements;
+            return ( IEnumerable<DrawableChartElementBaseViewModel> ) this._childElements;
         }
     }
 
-    public IEnumerable<ChildVM> Values
+    public IEnumerable<ChartElementViewModel> Values
     {
         get
         {
-            return ( IEnumerable<ChildVM> ) this._childViewModels;
+            return ( IEnumerable<ChartElementViewModel> ) this._childViewModels;
         }
     }
 
@@ -90,19 +90,19 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         }
     }
 
-    public void InitializeChildElements( IEnumerable<UIChartBaseViewModel> vms )
+    public void InitializeChildElements( IEnumerable<DrawableChartElementBaseViewModel> vms )
     {
-        UIChartBaseViewModel[] childElementArray = vms.ToArray<UIChartBaseViewModel>();
-        if ( CollectionHelper.IsEmpty<UIChartBaseViewModel>( childElementArray ) )
+        DrawableChartElementBaseViewModel[] childElementArray = vms.ToArray<DrawableChartElementBaseViewModel>();
+        if ( CollectionHelper.IsEmpty<DrawableChartElementBaseViewModel>( childElementArray ) )
             throw new ArgumentException( "zero child elements" );
 
-        this._childElements.AddRange( ( IEnumerable<UIChartBaseViewModel> ) childElementArray );
+        this._childElements.AddRange( ( IEnumerable<DrawableChartElementBaseViewModel> ) childElementArray );
         if ( this.IsCandleElement && this.Candles == null )
             this.Candles = childElementArray.OfType<CandlestickUI>().First<CandlestickUI>();
         if ( this._childElements.Count == 1 )
             this.MapPropertyChangeNotification( this._childElements[ 0 ].Element, "Color", "Color" );
 
-        CollectionHelper.ForEach<UIChartBaseViewModel>( ( IEnumerable<UIChartBaseViewModel> ) childElementArray, new Action<UIChartBaseViewModel>( this.OnSomethingMethod0934 ) );
+        CollectionHelper.ForEach<DrawableChartElementBaseViewModel>( ( IEnumerable<DrawableChartElementBaseViewModel> ) childElementArray, new Action<DrawableChartElementBaseViewModel>( this.OnSomethingMethod0934 ) );
     }
 
     private void OnAllowToRemove()
@@ -110,7 +110,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         this.NotifyChanged( "AllowToRemove" );
     }
 
-    public void AddChild( ChildVM childViewModel )
+    public void AddChild( ChartElementViewModel childViewModel )
     {
         if ( childViewModel == null )
             throw new ArgumentNullException( "val" );
@@ -122,7 +122,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public void ClearChildViewModels()
     {
-        foreach ( ChildVM childViewModel in _childViewModels )
+        foreach ( ChartElementViewModel childViewModel in _childViewModels )
         {
             childViewModel.Value = null;
         }
@@ -130,12 +130,12 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public bool Draw( ChartDrawData _param1 )
     {
-        return this.ChartElement.Draw( _param1 );
+        return this.ChartComponent.Draw( _param1 );
     }
 
     public void Reset()
     {
-        this.ChartElement.Reset();
+        this.ChartComponent.Reset();
 
         foreach ( var child in _childElements )
         {
@@ -161,7 +161,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public void GuiUpdateAndClear()
     {
-        foreach ( UIChartBaseViewModel child in _childElements )
+        foreach ( DrawableChartElementBaseViewModel child in _childElements )
         {
             child.GuiUpdateAndClear();
         }
@@ -199,7 +199,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     private void OnSomethingMethod0934(
 #nullable disable
-      UIChartBaseViewModel _param1 )
+      DrawableChartElementBaseViewModel _param1 )
     {
         _param1.Init( this );
     }

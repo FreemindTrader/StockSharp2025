@@ -35,7 +35,7 @@ internal sealed class LegendModifierVM : ChartBaseViewModel
         this._scichartSurfaceVM = vm ?? throw new ArgumentNullException("pane");
         this.Elements = (IEnumerable<ChartCompentViewModel>) vm.LegendElements;
         this._removeElementCommand = new ActionCommand<ChartCompentViewModel>(
-            vm => RemoveElmentEvent?.Invoke(vm.ChartElement),
+            vm => RemoveElmentEvent?.Invoke(vm.ChartComponent),
             p => p.AllowToRemove);
     }
 

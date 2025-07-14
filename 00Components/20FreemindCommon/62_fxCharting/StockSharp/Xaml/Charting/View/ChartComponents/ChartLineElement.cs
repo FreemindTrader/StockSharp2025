@@ -23,7 +23,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class ChartLineElement : ChartElement<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public class ChartLineElement : ChartComponent<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private TASignalSymbol           _signalType;
         private DrawStyles _indicatorDrawStyle;
@@ -43,12 +43,12 @@ namespace StockSharp.Xaml.Charting
         private bool                     _showAxisMarker;
         private ControlTemplate          _drawTemplate;
         private IPointMarker             _pointMarker;
-        private DrawableChartElementBaseViewModel                 _lineViewModel;
+        private DrawableChartComponentBaseViewModel                 _lineViewModel;
 
-        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _scichartSurfaceVM = viewModel;
-            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( DrawableChartElementBaseViewModel )new ChartLineElementVM<DateTime>( this );
+            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( DrawableChartComponentBaseViewModel )new ChartLineElementVM<DateTime>( this );
 
             var xAxis = _scichartSurfaceVM.XAxises.FirstOrDefault( );
 

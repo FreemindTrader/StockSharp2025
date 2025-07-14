@@ -19,7 +19,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes 
+internal sealed class QuotesVM : ChartCompentWpfBaseViewModel<QuotesUI>, IFastQuotes 
 {
     private readonly XyDataSeries<DateTime, double> _askLine;
     private readonly XyDataSeries<DateTime, double> _bidLine;
@@ -62,25 +62,25 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
                                                                                     DrawStyles.StepLine,
                                                                                     DrawStyles.DashedLine
                                                                                   };
-        AddStylePropertyChanging( ChartElement.BidLine, "Style", lineStyle );
-        AddStylePropertyChanging( ChartElement.AskLine, "Style", lineStyle );
+        AddStylePropertyChanging( ChartComponentView.BidLine, "Style", lineStyle );
+        AddStylePropertyChanging( ChartComponentView.AskLine, "Style", lineStyle );
 
         string[ ] strArray = new string[ 2 ] { "Color", "AdditionalColor" };
 
-        ChartViewModel.AddChild( _bidLineVM = new ChartElementViewModel( ChartElement.BidLine, new Func<SeriesInfo, Color>( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
-        ChartViewModel.AddChild( _askLineVM = new ChartElementViewModel( ChartElement.AskLine, new Func<SeriesInfo, Color>( LowerAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _bidLineVM = new ChartElementViewModel( ChartComponentView.BidLine, new Func<SeriesInfo, Color>( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _askLineVM = new ChartElementViewModel( ChartComponentView.AskLine, new Func<SeriesInfo, Color>( LowerAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
 
-        AddPropertyEvents( ChartElement.BidLine );
-        AddPropertyEvents( ChartElement.AskLine );
+        AddPropertyEvents( ChartComponentView.BidLine );
+        AddPropertyEvents( ChartComponentView.AskLine );
         
-        _askLineRSerie = CreateQuoteRSeriesAndBinding( _askLineRSerie, ChartElement.BidLine, _bidLineVM );
-        _bidLineRSerie = CreateQuoteRSeriesAndBinding( _bidLineRSerie, ChartElement.AskLine, _askLineVM );
+        _askLineRSerie = CreateQuoteRSeriesAndBinding( _askLineRSerie, ChartComponentView.BidLine, _bidLineVM );
+        _bidLineRSerie = CreateQuoteRSeriesAndBinding( _bidLineRSerie, ChartComponentView.AskLine, _askLineVM );
 
-        ChartElement.BidLine.ShowAxisMarker = true;
+        ChartComponentView.BidLine.ShowAxisMarker = true;
 
 
-        SetupAxisMarkerAndBinding( _askLineRSerie, ChartElement.AskLine, "ShowAxisMarker", "Color" );
-        SetupAxisMarkerAndBinding( _bidLineRSerie, ChartElement.BidLine, "ShowAxisMarker", "Color" );        
+        SetupAxisMarkerAndBinding( _askLineRSerie, ChartComponentView.AskLine, "ShowAxisMarker", "Color" );
+        SetupAxisMarkerAndBinding( _bidLineRSerie, ChartComponentView.BidLine, "ShowAxisMarker", "Color" );        
 
         if ( _askLineRSerie != null )
         {
@@ -140,11 +140,11 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
         //                                                    },
         //                                                    new Binding( "IsVisible" )
         //                                                    {
-        //                                                        Source =    ChartElement
+        //                                                        Source =    ChartComponent
         //                                                    },
         //                                                    new Binding( "IsVisible" )
         //                                                    {
-        //                                                        Source =    ( ( IChartComponent ) ChartElement ).ElementWithXYAxes
+        //                                                        Source =    ( ( IChartComponent ) ChartComponent ).ElementWithXYAxes
         //                                                    }
         //                                                };
         //    fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt,  bindingArray );
@@ -249,8 +249,8 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
         if ( propName == "Style" )
         {            
-            _askLineRSerie = CreateQuoteRSeriesAndBinding( _askLineRSerie, ChartElement.BidLine, _bidLineVM );
-            _bidLineRSerie = CreateQuoteRSeriesAndBinding( _bidLineRSerie, ChartElement.AskLine, _askLineVM );
+            _askLineRSerie = CreateQuoteRSeriesAndBinding( _askLineRSerie, ChartComponentView.BidLine, _bidLineVM );
+            _bidLineRSerie = CreateQuoteRSeriesAndBinding( _bidLineRSerie, ChartComponentView.AskLine, _askLineVM );
         }
         if ( !( propName == "Style" ) )
         {
@@ -261,12 +261,12 @@ internal sealed class QuotesVM : UIHigherVM<QuotesUI>, IFastQuotes
 
     private Color HigherAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.BidLine.Color, ChartElement.BidLine.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.BidLine.Color, ChartComponentView.BidLine.AdditionalColor );
     }
 
     private Color LowerAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.AskLine.Color, ChartElement.AskLine.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.AskLine.Color, ChartComponentView.AskLine.AdditionalColor );
     }
 
     

@@ -30,7 +30,7 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal partial class CandlestickVM : UIHigherVM<ChartCandleElement>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
+    internal partial class CandlestickVM : ChartCompentWpfBaseViewModel<ChartCandleElement>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {
         public long SelectedCandleBarTime
         {
@@ -103,37 +103,37 @@ namespace StockSharp.Xaml.Charting
         private BaseRenderableSeries CreateRenderableSeries( )
         {
             BaseRenderableSeries series;
-            switch ( ChartElement.DrawStyle )
+            switch ( ChartComponentView.DrawStyle )
             {
                 case ChartCandleDrawStyles.CandleStick:
                 {
                     series = CreateRenderableSeries<FreemindCandlestickRenderableSeries>( new ChartElementViewModel[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
                         
 
-                    series.SetBindings( FastCandlestickRenderableSeries.FillUpProperty,              ChartElement, "UpFillColor",         BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-                    series.SetBindings( FastCandlestickRenderableSeries.FillDownProperty,            ChartElement, "DownFillColor",       BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-                    series.SetBindings( FastCandlestickRenderableSeries.StrokeUpProperty,            ChartElement, "UpBorderColor",       BindingMode.TwoWay, null, null );
-                    series.SetBindings( FastCandlestickRenderableSeries.StrokeDownProperty,          ChartElement, "DownBorderColor",     BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowCandlePatternProperty,   ChartElement, "ShowCandlePattern",   BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowIndicatorResultProperty, ChartElement, "ShowIndicatorResult", BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowExtremesProperty,        ChartElement, "ShowExtremes",        BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowMacdExtremesProperty,    ChartElement, "ShowMacdExtremes",    BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowTradingTimeProperty,     ChartElement, "ShowTradingTime",     BindingMode.TwoWay, null, null );                    
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowElliottWaveProperty,     ChartElement, "ShowElliottWave",     BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.IsSimulationProperty,        ChartElement, "IsSimulation",        BindingMode.TwoWay, null, null);
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowMonoWaveProperty,        ChartElement, "ShowMonoWave",        BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowHewDetectionProperty,    ChartElement, "ShowHewDetection",    BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowPriceTimeSignalProperty, ChartElement, "ShowPriceTimeSignal", BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowDivergenceProperty,      ChartElement, "ShowDivergence",      BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.SignalMarginProperty,        ChartElement, "SignalMargin",        BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.FifoCapacityProperty,        ChartElement, "FifoCapacity",        BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.WaveScenarioNoProperty,      ChartElement, "WaveScenarioNo",      BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.WaveImportanceProperty,      ChartElement, "WaveImportance",      BindingMode.TwoWay, null, null );
-                    series.SetBindings( FreemindCandlestickRenderableSeries.WaveCycleProperty,           ChartElement, "WaveCycle",           BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastCandlestickRenderableSeries.FillUpProperty,              ChartComponentView, "UpFillColor",         BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+                    series.SetBindings( FastCandlestickRenderableSeries.FillDownProperty,            ChartComponentView, "DownFillColor",       BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+                    series.SetBindings( FastCandlestickRenderableSeries.StrokeUpProperty,            ChartComponentView, "UpBorderColor",       BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastCandlestickRenderableSeries.StrokeDownProperty,          ChartComponentView, "DownBorderColor",     BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowCandlePatternProperty,   ChartComponentView, "ShowCandlePattern",   BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowIndicatorResultProperty, ChartComponentView, "ShowIndicatorResult", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowExtremesProperty,        ChartComponentView, "ShowExtremes",        BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowMacdExtremesProperty,    ChartComponentView, "ShowMacdExtremes",    BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowTradingTimeProperty,     ChartComponentView, "ShowTradingTime",     BindingMode.TwoWay, null, null );                    
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowElliottWaveProperty,     ChartComponentView, "ShowElliottWave",     BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.IsSimulationProperty,        ChartComponentView, "IsSimulation",        BindingMode.TwoWay, null, null);
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowMonoWaveProperty,        ChartComponentView, "ShowMonoWave",        BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowHewDetectionProperty,    ChartComponentView, "ShowHewDetection",    BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowPriceTimeSignalProperty, ChartComponentView, "ShowPriceTimeSignal", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.ShowDivergenceProperty,      ChartComponentView, "ShowDivergence",      BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.SignalMarginProperty,        ChartComponentView, "SignalMargin",        BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.FifoCapacityProperty,        ChartComponentView, "FifoCapacity",        BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.WaveScenarioNoProperty,      ChartComponentView, "WaveScenarioNo",      BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.WaveImportanceProperty,      ChartComponentView, "WaveImportance",      BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.WaveCycleProperty,           ChartComponentView, "WaveCycle",           BindingMode.TwoWay, null, null );
 
-                    series.SetBindings( FreemindCandlestickRenderableSeries.HighQualityWaveTextProperty, ChartElement, "HighQualityWaveText", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FreemindCandlestickRenderableSeries.HighQualityWaveTextProperty, ChartComponentView, "HighQualityWaveText", BindingMode.TwoWay, null, null );
 
-                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness",                        BindingMode.TwoWay, null, null );
+                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness",                        BindingMode.TwoWay, null, null );
                     series.PaletteProvider = ( this );
                 }
                 break;
@@ -142,9 +142,9 @@ namespace StockSharp.Xaml.Charting
                 {
                     series = CreateRenderableSeries<FastOhlcRenderableSeries>( new ChartElementViewModel[ 4 ] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
 
-                    series.SetBindings( FastOhlcRenderableSeries.StrokeUpProperty, ChartElement, "UpBorderColor", BindingMode.TwoWay, null, null );
-                    series.SetBindings( FastOhlcRenderableSeries.StrokeDownProperty, ChartElement, "DownBorderColor", BindingMode.TwoWay, null, null );
-                    series.SetBindings( FastOhlcRenderableSeries.DataPointWidthProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, new StrokeThickToPointWidthConverter( ), null );
+                    series.SetBindings( FastOhlcRenderableSeries.StrokeUpProperty, ChartComponentView, "UpBorderColor", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastOhlcRenderableSeries.StrokeDownProperty, ChartComponentView, "DownBorderColor", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastOhlcRenderableSeries.DataPointWidthProperty, ChartComponentView, "StrokeThickness", BindingMode.TwoWay, new StrokeThickToPointWidthConverter( ), null );
 
                     BindingOperations.ClearBinding( series, BaseRenderableSeries.StrokeThicknessProperty );
                     series.PaletteProvider = ( this );
@@ -158,9 +158,9 @@ namespace StockSharp.Xaml.Charting
                 {
                     series = CreateRenderableSeries<FastLineRenderableSeries>( new ChartElementViewModel[ 1 ] { _lineViewModel } );
 
-                    series.SetBindings( BaseRenderableSeries.StrokeProperty, ChartElement, "LineColor", BindingMode.TwoWay, null, null );
-                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );
-                    //series.SetBindings( FastLineRenderableSeries.OhlcDrawModeProperty   , ChartElement, "DrawStyle"      , BindingMode.TwoWay, new DrawStylesToModeConverter( ), null );
+                    series.SetBindings( BaseRenderableSeries.StrokeProperty, ChartComponentView, "LineColor", BindingMode.TwoWay, null, null );
+                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness", BindingMode.TwoWay, null, null );
+                    //series.SetBindings( FastLineRenderableSeries.OhlcDrawModeProperty   , ChartComponent, "DrawStyle"      , BindingMode.TwoWay, new DrawStylesToModeConverter( ), null );
                 }
                 break;
 
@@ -172,13 +172,13 @@ namespace StockSharp.Xaml.Charting
                 ////    series.FontSize = 28.0;
                 ////    series.FontWeight = FontWeights.SemiBold;
 
-                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe2ColorProperty     , ChartElement, "Timeframe2Color"     , BindingMode.TwoWay, null, null );
-                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe2FrameColorProperty, ChartElement, "Timeframe2FrameColor", BindingMode.TwoWay, null, null );
-                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe3ColorProperty     , ChartElement, "Timeframe3Color"     , BindingMode.TwoWay, null, null );
-                ////    series.SetBindings( BoxVolumeRenderableSeries.CellFontColorProperty       , ChartElement, "FontColor"           , BindingMode.TwoWay, null, null );
-                ////    series.SetBindings( BoxVolumeRenderableSeries.HighVolColorProperty        , ChartElement, "MaxVolumeColor"      , BindingMode.TwoWay, null, null );
-                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe2Property          , ChartElement, "Timeframe2Multiplier", BindingMode.OneWay, new CandleViewModel.TimeframeMultiplierConverter( _totalMinutes ), null );
-                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe3Property          , ChartElement, "Timeframe3Multiplier", BindingMode.OneWay, new CandleViewModel.TimeframeMultiplierConverter( _totalMinutes ), null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe2ColorProperty     , ChartComponent, "Timeframe2Color"     , BindingMode.TwoWay, null, null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe2FrameColorProperty, ChartComponent, "Timeframe2FrameColor", BindingMode.TwoWay, null, null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe3ColorProperty     , ChartComponent, "Timeframe3Color"     , BindingMode.TwoWay, null, null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.CellFontColorProperty       , ChartComponent, "FontColor"           , BindingMode.TwoWay, null, null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.HighVolColorProperty        , ChartComponent, "MaxVolumeColor"      , BindingMode.TwoWay, null, null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe2Property          , ChartComponent, "Timeframe2Multiplier", BindingMode.OneWay, new CandleViewModel.TimeframeMultiplierConverter( _totalMinutes ), null );
+                ////    series.SetBindings( BoxVolumeRenderableSeries.Timeframe3Property          , ChartComponent, "Timeframe3Multiplier", BindingMode.OneWay, new CandleViewModel.TimeframeMultiplierConverter( _totalMinutes ), null );
                 ////}
 
                 //    break;
@@ -190,10 +190,10 @@ namespace StockSharp.Xaml.Charting
                 //    series.FontFamily = new FontFamily( "Tahoma" );
                 //    series.FontSize = 28.0;
                 //    series.FontWeight = FontWeights.SemiBold;
-                //    series.SetBindings( ClusterProfileRenderableSeries.LineColorProperty      , ChartElement, "ClusterLineColor", BindingMode.TwoWay, null, null );
-                //    series.SetBindings( ClusterProfileRenderableSeries.TextColorProperty      , ChartElement, "ClusterTextColor", BindingMode.TwoWay, null, null );
-                //    series.SetBindings( ClusterProfileRenderableSeries.ClusterColorProperty   , ChartElement, "ClusterColor"    , BindingMode.TwoWay, null, null );
-                //    series.SetBindings( ClusterProfileRenderableSeries.ClusterMaxColorProperty, ChartElement, "ClusterMaxColor" , BindingMode.TwoWay, null, null );
+                //    series.SetBindings( ClusterProfileRenderableSeries.LineColorProperty      , ChartComponent, "ClusterLineColor", BindingMode.TwoWay, null, null );
+                //    series.SetBindings( ClusterProfileRenderableSeries.TextColorProperty      , ChartComponent, "ClusterTextColor", BindingMode.TwoWay, null, null );
+                //    series.SetBindings( ClusterProfileRenderableSeries.ClusterColorProperty   , ChartComponent, "ClusterColor"    , BindingMode.TwoWay, null, null );
+                //    series.SetBindings( ClusterProfileRenderableSeries.ClusterMaxColorProperty, ChartComponent, "ClusterMaxColor" , BindingMode.TwoWay, null, null );
                 //}
 
                 //    break;
@@ -202,18 +202,18 @@ namespace StockSharp.Xaml.Charting
                 {
                     series = CreateRenderableSeries<FastMountainRenderableSeries>( new ChartElementViewModel[ 1 ] { _lineViewModel } );
                     series.Stroke = Colors.Transparent;
-                    series.SetBindings( BaseRenderableSeries.StrokeProperty, ChartElement, "LineColor", BindingMode.TwoWay, null, null );
-                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );
-                    series.SetBindings( BaseMountainRenderableSeries.FillProperty, ChartElement, "AreaColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+                    series.SetBindings( BaseRenderableSeries.StrokeProperty, ChartComponentView, "LineColor", BindingMode.TwoWay, null, null );
+                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness", BindingMode.TwoWay, null, null );
+                    series.SetBindings( BaseMountainRenderableSeries.FillProperty, ChartComponentView, "AreaColor", BindingMode.TwoWay, new ColorToBrushConverter( ), null );
                 }
                 break;
 
                 case ChartCandleDrawStyles.PnF:
                 {
                     series = CreateRenderableSeries<FastXORenderableSeries>( new ChartElementViewModel[ 0 ] );
-                    series.SetBindings( FastOhlcRenderableSeries.StrokeUpProperty, ChartElement, "UpBorderColor", BindingMode.TwoWay, null, null );
-                    series.SetBindings( FastOhlcRenderableSeries.StrokeDownProperty, ChartElement, "DownBorderColor", BindingMode.TwoWay, null, null );
-                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartElement, "StrokeThickness", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastOhlcRenderableSeries.StrokeUpProperty, ChartComponentView, "UpBorderColor", BindingMode.TwoWay, null, null );
+                    series.SetBindings( FastOhlcRenderableSeries.StrokeDownProperty, ChartComponentView, "DownBorderColor", BindingMode.TwoWay, null, null );
+                    series.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness", BindingMode.TwoWay, null, null );
 
                     if ( !_pnfBoxSize.DoubleEquals( 0.0 ) )
                     {
@@ -224,16 +224,16 @@ namespace StockSharp.Xaml.Charting
                 break;
 
                 default:
-                    throw new InvalidOperationException( "LocalizedStrings.Str2063Params.Put( ChartElement.DrawStyle )" );
+                    throw new InvalidOperationException( "LocalizedStrings.Str2063Params.Put( ChartComponent.DrawStyle )" );
             }
 
-            //if( ChartElement.DrawStyle.IsVolumeProfileChart( ) )
+            //if( ChartComponent.DrawStyle.IsVolumeProfileChart( ) )
             //{
-            //    series.SetBindings( TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty        , ChartElement, "ShowHorizontalVolumes", BindingMode.TwoWay, null, null );
-            //    series.SetBindings( TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty       , ChartElement, "LocalHorizontalVolumes", BindingMode.TwoWay, null, null );
-            //    series.SetBindings( TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, ChartElement, "HorizontalVolumeWidthFraction", BindingMode.TwoWay, null, null );
-            //    series.SetBindings( TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty              , ChartElement, "HorizontalVolumeColor", BindingMode.OneWay, new ColorToBrushConverter( ), null );
-            //    series.SetBindings( TimeframeSegmentRenderableSeries.VolBarsFontColorProperty             , ChartElement, "HorizontalVolumeFontColor", BindingMode.TwoWay, null, null );
+            //    series.SetBindings( TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty        , ChartComponent, "ShowHorizontalVolumes", BindingMode.TwoWay, null, null );
+            //    series.SetBindings( TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty       , ChartComponent, "LocalHorizontalVolumes", BindingMode.TwoWay, null, null );
+            //    series.SetBindings( TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, ChartComponent, "HorizontalVolumeWidthFraction", BindingMode.TwoWay, null, null );
+            //    series.SetBindings( TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty              , ChartComponent, "HorizontalVolumeColor", BindingMode.OneWay, new ColorToBrushConverter( ), null );
+            //    series.SetBindings( TimeframeSegmentRenderableSeries.VolBarsFontColorProperty             , ChartComponent, "HorizontalVolumeFontColor", BindingMode.TwoWay, null, null );
             //}
             return series;
         }

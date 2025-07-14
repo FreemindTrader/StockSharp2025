@@ -461,7 +461,7 @@ public sealed class ScichartSurfaceMVVM :
     foreach (IChartComponent ddznyiGmdRlAevOq in ((IEnumerable<KeyValuePair<IChartComponent, ParentVM>>) this._childElements).Where<KeyValuePair<IChartComponent, ParentVM>>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D))).Select<KeyValuePair<IChartComponent, ParentVM>, IChartComponent>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<KeyValuePair<IChartComponent, ParentVM>, IChartComponent>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D))).ToArray<IChartComponent>())
     {
       ParentVM a4VgOpCeDiqsTdzB = new ParentVM(this, ddznyiGmdRlAevOq);
-      a4VgOpCeDiqsTdzB.InitializeChildElements(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D))).Select<IDrawableChartElement, UIChartBaseViewModel>(new Func<IDrawableChartElement, UIChartBaseViewModel>(this.\u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D)).Where<UIChartBaseViewModel>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D = new Func<UIChartBaseViewModel, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D))));
+      a4VgOpCeDiqsTdzB.InitializeChildElements(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D))).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>(new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>(this.\u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D)).Where<DrawableChartElementBaseViewModel>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D = new Func<DrawableChartElementBaseViewModel, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D))));
       ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements)[ddznyiGmdRlAevOq] = a4VgOpCeDiqsTdzB;
       if (ddznyiGmdRlAevOq.IsLegend)
         this.LegendElements.Add(a4VgOpCeDiqsTdzB);
@@ -494,7 +494,7 @@ public sealed class ScichartSurfaceMVVM :
     if (this.Chart != null)
     {
       ParentVM a4VgOpCeDiqsTdzB = new ParentVM(this, ddznyiGmdRlAevOq);
-      a4VgOpCeDiqsTdzB.InitializeChildElements(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D))).Select<IDrawableChartElement, UIChartBaseViewModel>(new Func<IDrawableChartElement, UIChartBaseViewModel>(this.\u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D)).Where<UIChartBaseViewModel>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D = new Func<UIChartBaseViewModel, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D))));
+      a4VgOpCeDiqsTdzB.InitializeChildElements(CollectionHelper.Append2<IChartElement>(ddznyiGmdRlAevOq.ChildElements, (IChartElement) ddznyiGmdRlAevOq).OfType<IDrawableChartElement>().Where<IDrawableChartElement>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D = new Func<IDrawableChartElement, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D))).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>(new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>(this.\u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D)).Where<DrawableChartElementBaseViewModel>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D = new Func<DrawableChartElementBaseViewModel, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D))));
       ((SynchronizedDictionary<IChartComponent, ParentVM>) this._childElements)[ddznyiGmdRlAevOq] = a4VgOpCeDiqsTdzB;
       if (ddznyiGmdRlAevOq.IsLegend)
         this.LegendElements.Add(a4VgOpCeDiqsTdzB);
@@ -989,7 +989,7 @@ public sealed class ScichartSurfaceMVVM :
     if (this.ParentViewModel == null || !this.ParentViewModel.IsInteracted)
       return false;
     bool flag;
-    switch (_param1.ChartElement)
+    switch (_param1.ChartComponent)
     {
       case IChartCandleElement _:
         flag = this.ParentViewModel.AllowAddCandles;
@@ -1082,13 +1082,13 @@ public sealed class ScichartSurfaceMVVM :
     this.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this.YAxises);
   }
 
-  private UIChartBaseViewModel \u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D(
+  private DrawableChartElementBaseViewModel \u0023\u003DzMp9uGWCNEHILZjWmNYJHfvM\u003D(
     IDrawableChartElement _param1)
   {
     return _param1.CreateViewModel(this);
   }
 
-  private UIChartBaseViewModel \u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D(
+  private DrawableChartElementBaseViewModel \u0023\u003DzufB92GEzbUD3B9FSng\u003D\u003D(
     IDrawableChartElement _param1)
   {
     return _param1.CreateViewModel(this);
@@ -1165,10 +1165,10 @@ public sealed class ScichartSurfaceMVVM :
     public static Func<KeyValuePair<IChartComponent, ParentVM>, bool> \u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D;
     public static Func<KeyValuePair<IChartComponent, ParentVM>, IChartComponent> \u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D;
     public static Func<IDrawableChartElement, bool> \u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D;
-    public static Func<UIChartBaseViewModel, bool> \u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D;
+    public static Func<DrawableChartElementBaseViewModel, bool> \u0023\u003DzKOhc8XoZrBjayO3KMw\u003D\u003D;
     public static Func<KeyValuePair<IChartComponent, ParentVM>, bool> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
     public static Func<IDrawableChartElement, bool> \u0023\u003Dz9cuH_vUOZn8pPBtNwQ\u003D\u003D;
-    public static Func<UIChartBaseViewModel, bool> \u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D;
+    public static Func<DrawableChartElementBaseViewModel, bool> \u0023\u003DzesHJJr9lkjwYzxQD2g\u003D\u003D;
     public static Action<IChartAxis> \u0023\u003DzI2W424KLtiP8cORvLQ\u003D\u003D;
     public static Action<IChartAxis> \u0023\u003Dz9Q2dCF9HzV_29jrgkQ\u003D\u003D;
 
@@ -1229,7 +1229,7 @@ public sealed class ScichartSurfaceMVVM :
     }
 
     internal bool \u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D(
-      UIChartBaseViewModel _param1)
+      DrawableChartElementBaseViewModel _param1)
     {
       return _param1 != null;
     }
@@ -1247,7 +1247,7 @@ public sealed class ScichartSurfaceMVVM :
     }
 
     internal bool \u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D(
-      UIChartBaseViewModel _param1)
+      DrawableChartElementBaseViewModel _param1)
     {
       return _param1 != null;
     }

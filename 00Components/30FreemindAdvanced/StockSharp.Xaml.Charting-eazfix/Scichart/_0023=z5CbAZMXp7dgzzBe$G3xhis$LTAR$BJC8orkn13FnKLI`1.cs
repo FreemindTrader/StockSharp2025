@@ -24,7 +24,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D> : 
-  ChartElementUI<ChartLineElement>,
+  ChartCompentView<ChartLineElement>,
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
@@ -33,7 +33,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
   
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzKj7nvWQ\u003D;
   
-  private ChildVM \u0023\u003DzZYTLjjg\u003D;
+  private ChartElementViewModel \u0023\u003DzZYTLjjg\u003D;
   
   private IComparable \u0023\u003DzFEDR40ugZMK3;
   
@@ -64,13 +64,13 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
       DrawStyles.StackedBar,
       DrawStyles.Area
     };
-    ChartElementUI<ChartLineElement>.\u0023\u003Dz9tL3mkpMz5PJ<DrawStyles>((IChartComponent) this.GetDrawableChartElement(), "Style", drawStylesArray);
+    ChartCompentView<ChartLineElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView, "Style", drawStylesArray);
     string[] strArray = new string[2]
     {
       "Color",
       "AdditionalColor"
     };
-    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChildVM((INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003DzQiS8RB0xqqQL6lh\u0024nA\u003D\u003D), \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DziezdSvgFTxAlfqI9CA\u003D\u003D ?? (\u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DziezdSvgFTxAlfqI9CA\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.SomeMethond0343.\u0023\u003DzHJXYrcAe2iQ0KKyLTQ\u003D\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003DzQiS8RB0xqqQL6lh\u0024nA\u003D\u003D), \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DziezdSvgFTxAlfqI9CA\u003D\u003D ?? (\u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DziezdSvgFTxAlfqI9CA\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.SomeMethond0343.\u0023\u003DzHJXYrcAe2iQ0KKyLTQ\u003D\u003D)), strArray));
     this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzlkmfHYgr1H49, (IRenderableSeries) null);
     this.\u0023\u003DzAKENEAn7IdgA5685VZNYI6E\u003D();
     this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzKj7nvWQ\u003D);
@@ -78,7 +78,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
 
   private Type \u0023\u003Dzq1K_twB2qI4CAVGTXkCEBpY\u003D()
   {
-    switch (this.GetDrawableChartElement().Style)
+    switch (this.ChartComponentView.Style)
     {
       case DrawStyles.Line:
       case DrawStyles.NoGapLine:
@@ -108,75 +108,75 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
       this.ClearAll();
     }
     BaseRenderableSeries ls4St64EqzfbaEjd;
-    switch (this.GetDrawableChartElement().Style)
+    switch (this.ChartComponentView.Style)
     {
       case DrawStyles.Line:
       case DrawStyles.NoGapLine:
       case DrawStyles.StepLine:
       case DrawStyles.DashedLine:
-        ls4St64EqzfbaEjd = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastLineRenderableSeries>(new ChildVM[1]
+        ls4St64EqzfbaEjd = (BaseRenderableSeries) this.CreateRenderableSeries<FastLineRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzZYTLjjg\u003D
         });
-        ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.GetDrawableChartElement(), "Color");
+        ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.ChartComponentView, "Color");
         break;
       case DrawStyles.Dot:
-        ls4St64EqzfbaEjd = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<XyScatterRenderableSeries>(new ChildVM[1]
+        ls4St64EqzfbaEjd = (BaseRenderableSeries) this.CreateRenderableSeries<XyScatterRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzZYTLjjg\u003D
         });
-        ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.GetDrawableChartElement(), "Color");
-        ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzNGe3htdX6rpV, (object) this.GetDrawableChartElement(), "DrawTemplate");
+        ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.ChartComponentView, "Color");
+        ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzNGe3htdX6rpV, (object) this.ChartComponentView, "DrawTemplate");
         break;
       case DrawStyles.Histogram:
         FastColumnRenderableSeries k3EqE9D32HkF4Ejd;
-        ls4St64EqzfbaEjd = (BaseRenderableSeries) (k3EqE9D32HkF4Ejd = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastColumnRenderableSeries>(new ChildVM[1]
+        ls4St64EqzfbaEjd = (BaseRenderableSeries) (k3EqE9D32HkF4Ejd = this.CreateRenderableSeries<FastColumnRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzZYTLjjg\u003D
         }));
-        k3EqE9D32HkF4Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzwCSejucukq6W, (object) this.GetDrawableChartElement(), "Color", converter: (IValueConverter) new ColorToBrushConverter());
-        k3EqE9D32HkF4Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.GetDrawableChartElement(), "Color");
+        k3EqE9D32HkF4Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzwCSejucukq6W, (object) this.ChartComponentView, "Color", converter: (IValueConverter) new ColorToBrushConverter());
+        k3EqE9D32HkF4Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.ChartComponentView, "Color");
         break;
       case DrawStyles.Bubble:
         FastBubbleRenderableSeries b5lfOfnUo8w7EyJw;
-        ls4St64EqzfbaEjd = (BaseRenderableSeries) (b5lfOfnUo8w7EyJw = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastBubbleRenderableSeries>(new ChildVM[1]
+        ls4St64EqzfbaEjd = (BaseRenderableSeries) (b5lfOfnUo8w7EyJw = this.CreateRenderableSeries<FastBubbleRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzZYTLjjg\u003D
         }));
         b5lfOfnUo8w7EyJw.ResamplingMode = \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None;
-        b5lfOfnUo8w7EyJw.SetBindings(FastBubbleRenderableSeries.\u0023\u003DzWsyKEigY1Lm6, (object) this.GetDrawableChartElement(), "Color", converter: (IValueConverter) new ColorToBrushConverter());
-        b5lfOfnUo8w7EyJw.SetBindings(FastBubbleRenderableSeries.\u0023\u003DzgLLxE9j2DbxR, (object) this.GetDrawableChartElement(), "StrokeThickness", converter: (IValueConverter) new \u0023\u003DzQ4iRj1YTApc8D349VbLPOcYfVH1n3cgfJefIZNttPgl056hG45kULRE\u003D());
+        b5lfOfnUo8w7EyJw.SetBindings(FastBubbleRenderableSeries.\u0023\u003DzWsyKEigY1Lm6, (object) this.ChartComponentView, "Color", converter: (IValueConverter) new ColorToBrushConverter());
+        b5lfOfnUo8w7EyJw.SetBindings(FastBubbleRenderableSeries.\u0023\u003DzgLLxE9j2DbxR, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new \u0023\u003DzQ4iRj1YTApc8D349VbLPOcYfVH1n3cgfJefIZNttPgl056hG45kULRE\u003D());
         break;
       case DrawStyles.StackedBar:
         StackedColumnRenderableSeries d5Uc36Ku2HzS32Ejd;
-        ls4St64EqzfbaEjd = (BaseRenderableSeries) (d5Uc36Ku2HzS32Ejd = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<StackedColumnRenderableSeries>(new ChildVM[1]
+        ls4St64EqzfbaEjd = (BaseRenderableSeries) (d5Uc36Ku2HzS32Ejd = this.CreateRenderableSeries<StackedColumnRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzZYTLjjg\u003D
         }));
         d5Uc36Ku2HzS32Ejd.UseUniformWidth = true;
-        d5Uc36Ku2HzS32Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.GetDrawableChartElement(), "Color", converter: (IValueConverter) new \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqKuhsUbi2xjkbRlj6EVaEl1lCbDsuw\u003D\u003D(), parameter: (object) 51);
-        d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzwCSejucukq6W, (object) this.GetDrawableChartElement(), "Color", converter: (IValueConverter) new ColorToBrushConverter());
-        d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.GetDrawableChartElement(), "StrokeThickness", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
+        d5Uc36Ku2HzS32Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.ChartComponentView, "Color", converter: (IValueConverter) new \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqKuhsUbi2xjkbRlj6EVaEl1lCbDsuw\u003D\u003D(), parameter: (object) 51);
+        d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzwCSejucukq6W, (object) this.ChartComponentView, "Color", converter: (IValueConverter) new ColorToBrushConverter());
+        d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
         break;
       case DrawStyles.Area:
         FastMountainRenderableSeries curmvvpxnR5WlzaEjd;
-        ls4St64EqzfbaEjd = (BaseRenderableSeries) (curmvvpxnR5WlzaEjd = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastMountainRenderableSeries>(new ChildVM[1]
+        ls4St64EqzfbaEjd = (BaseRenderableSeries) (curmvvpxnR5WlzaEjd = this.CreateRenderableSeries<FastMountainRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzZYTLjjg\u003D
         }));
-        curmvvpxnR5WlzaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.GetDrawableChartElement(), "Color");
-        curmvvpxnR5WlzaEjd.SetBindings(BaseMountainRenderableSeries.\u0023\u003DzXc9apgJiH9mm, (object) this.GetDrawableChartElement(), "AdditionalColor", converter: (IValueConverter) new ColorToBrushConverter());
+        curmvvpxnR5WlzaEjd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.ChartComponentView, "Color");
+        curmvvpxnR5WlzaEjd.SetBindings(BaseMountainRenderableSeries.\u0023\u003DzXc9apgJiH9mm, (object) this.ChartComponentView, "AdditionalColor", converter: (IValueConverter) new ColorToBrushConverter());
         break;
       default:
         throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnsupportedType, new object[1]
         {
-          (object) this.GetDrawableChartElement().Style
+          (object) this.ChartComponentView.Style
         }));
     }
-    ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003Dz13qAkT\u0024eFXTPuGCUqjA\u0024Svw\u003D, (object) this.GetDrawableChartElement(), "DrawTemplate");
+    ls4St64EqzfbaEjd.SetBindings(BaseRenderableSeries.\u0023\u003Dz13qAkT\u0024eFXTPuGCUqjA\u0024Svw\u003D, (object) this.ChartComponentView, "DrawTemplate");
     ls4St64EqzfbaEjd.PaletteProvider = (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this;
     this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries = (IRenderableSeries) ls4St64EqzfbaEjd;
-    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.GetDrawableChartElement(), "ShowAxisMarker", "Color");
+    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.ChartComponentView, "ShowAxisMarker", "Color");
     this.\u0023\u003DzAKENEAn7IdgA5685VZNYI6E\u003D();
   }
 
@@ -194,19 +194,19 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
       renderSeries.StrokeDashArray = (double[]) null;
       renderSeries.IsDigitalLine = false;
       renderSeries.DrawNaNAs = \u0023\u003DzV9O5tWduWosGLvu_87Zf5KIXjvA0HjqD6negDKigZjec_mB\u0024hq2WcZE\u003D.Gaps;
-      if (this.GetDrawableChartElement().Style == DrawStyles.DashedLine)
+      if (this.ChartComponentView.Style == DrawStyles.DashedLine)
         renderSeries.StrokeDashArray = new double[2]
         {
           5.0,
           5.0
         };
-      else if (this.GetDrawableChartElement().Style == DrawStyles.StepLine)
+      else if (this.ChartComponentView.Style == DrawStyles.StepLine)
       {
         renderSeries.IsDigitalLine = true;
       }
       else
       {
-        if (this.GetDrawableChartElement().Style != DrawStyles.NoGapLine)
+        if (this.ChartComponentView.Style != DrawStyles.NoGapLine)
           return;
         renderSeries.DrawNaNAs = \u0023\u003DzV9O5tWduWosGLvu_87Zf5KIXjvA0HjqD6negDKigZjec_mB\u0024hq2WcZE\u003D.ClosedLines;
       }
@@ -233,9 +233,9 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
     IEnumerableEx<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>> _param1)
     where TX1 : struct, IComparable
   {
-    if (this.\u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D != this.GetDrawableChartElement().Colorer)
+    if (this.\u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D != this.ChartComponentView.Colorer)
     {
-      this.\u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D = this.GetDrawableChartElement().Colorer;
+      this.\u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D = this.ChartComponentView.Colorer;
       this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries.\u0023\u003Dzu\u0024P3XgkcE7BC()?.\u0023\u003Dz2VqWonc\u003D<ISciChartSurface>()?.InvalidateElement();
     }
     if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>((IEnumerable<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>) _param1))
@@ -345,7 +345,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
   private Color \u0023\u003DzQiS8RB0xqqQL6lh\u0024nA\u003D\u003D(
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
   {
-    return this.GetDrawableChartElement().Style == DrawStyles.StackedBar || this.GetDrawableChartElement().Style == DrawStyles.Area ? ChildVM.GetHigherAlphaColor(this.GetDrawableChartElement().Color, this.GetDrawableChartElement().AdditionalColor) : this.GetDrawableChartElement().Color;
+    return this.ChartComponentView.Style == DrawStyles.StackedBar || this.ChartComponentView.Style == DrawStyles.Area ? ChartElementViewModel.GetHigherAlphaColor(this.ChartComponentView.Color, this.ChartComponentView.AdditionalColor) : this.ChartComponentView.Color;
   }
 
   [Serializable]

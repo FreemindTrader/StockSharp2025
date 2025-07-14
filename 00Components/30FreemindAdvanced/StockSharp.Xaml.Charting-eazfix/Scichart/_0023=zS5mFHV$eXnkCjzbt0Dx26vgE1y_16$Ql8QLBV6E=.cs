@@ -46,7 +46,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     return (string) _param0.GetValue(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzsbmsx7t0O6Lr);
   }
 
-  public void \u0023\u003DzZcbqdpE\u003D(
+  public void AddPropertyEvents(
     \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV _param1,
     IReceiveMouseEvents  _param2)
   {
@@ -55,7 +55,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     dop2SzA2WchXh2wc.\u0023\u003DzL2OrHlw\u003D = _param1;
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) dop2SzA2WchXh2wc.\u0023\u003DzL2OrHlw\u003D, "element");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param2, "receiveMouseEvents");
-    this.\u0023\u003DzfttffOE\u003D(_param2);
+    this.RemovePropertyEvents(_param2);
     dop2SzA2WchXh2wc.\u0023\u003DzqvJkfbGyJf\u0024_ = new \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\u003D();
     dop2SzA2WchXh2wc.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003Dz9koqASE\u003D(_param2);
     this.\u0023\u003DzXdSN34o\u003D(_param2);
@@ -113,7 +113,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     dependencyObject.SetCurrentValue(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzsbmsx7t0O6Lr, (object) str);
   }
 
-  public void \u0023\u003DzfttffOE\u003D(
+  public void RemovePropertyEvents(
     \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV _param1)
   {
     if (_param1 == null)
@@ -151,7 +151,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     }
   }
 
-  public void \u0023\u003DzfttffOE\u003D(
+  public void RemovePropertyEvents(
     IReceiveMouseEvents  _param1)
   {
     if (_param1 == null || !this.\u0023\u003DzPmsN62CuaNQ5kbur20HKcgQ\u003D.ContainsKey(_param1))

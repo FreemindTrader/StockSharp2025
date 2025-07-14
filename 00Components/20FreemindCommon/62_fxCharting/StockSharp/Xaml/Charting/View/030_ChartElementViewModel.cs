@@ -70,7 +70,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
     /// <summary>
     /// This is the ChartCompent that contains this Chart Elment.
     /// 
-    /// eg. CandleStickUI is the ChartCompent and the childrens are the High ChartElement, Low ChartElement, Open ChartElement, Close ChartElement
+    /// eg. CandleStickUI is the ChartCompent and the childrens are the High ChartComponent, Low ChartComponent, Open ChartComponent, Close ChartComponent
     /// </summary>
     public ChartCompentViewModel ChartComponent
     {

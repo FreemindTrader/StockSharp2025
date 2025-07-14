@@ -20,7 +20,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 public class CandlePatternElement : 
-  ChartElement<CandlePatternElement>,
+  ChartComponent<CandlePatternElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
@@ -34,7 +34,7 @@ public class CandlePatternElement :
   
   private Color _upColor;
   
-  private UIChartBaseViewModel _baseViewModel;
+  private DrawableChartElementBaseViewModel _baseViewModel;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30)]
   public Color DownColor
@@ -58,10 +58,10 @@ public class CandlePatternElement :
     }
   }
 
-  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+  DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this._baseViewModel = (UIChartBaseViewModel) new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(this);
+    return this._baseViewModel = (DrawableChartElementBaseViewModel) new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(this);
   }
 
   bool IDrawableChartElement.StartDrawing(

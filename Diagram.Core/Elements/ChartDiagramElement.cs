@@ -62,7 +62,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 		private static readonly Type _invalidPainterType = typeof(object);
 		private Type _cachedPainterType = _invalidPainterType;
 
-		public IChartElement ChartElement { get; private set; }
+		public IChartElement ChartComponent { get; private set; }
 		public TChartIndicatorElementWrapper IndicatorWrapper { get; private set; }
 
 		private readonly ChartDiagramElement<TChartIndicatorElementWrapper> _parent = parent ?? throw new ArgumentNullException(nameof(parent));
@@ -94,7 +94,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 			var elType = _typesList.FirstOrDefault(p => p.socketType == sourceSocket.Type).elementType
 				?? throw new InvalidOperationException(LocalizedStrings.UnsupportedType.Put(sourceSocket.Type.Name));
 
-			if (ChartElement != null && elType != null)
+			if (ChartComponent != null && elType != null)
 				throw new InvalidOperationException("unexpected state: chart element already exists");
 
 			var builder = _parent._chartBuilder;
@@ -113,7 +113,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 
 		public void TrySetName(string name)
 		{
-			var element = ChartElement;
+			var element = ChartComponent;
 
 			if (name == null || name == element.FullTitle)
 				return;
@@ -123,7 +123,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 
 		public void TrySetPainter(Type painterType)
 		{
-			var element = (IChartIndicatorElement)ChartElement;
+			var element = (IChartIndicatorElement)ChartComponent;
 
 			if (_cachedPainterType == painterType)
 				return;
@@ -144,19 +144,19 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 
 			element ??= wrapper?.Element;
 
-			if (ChartElement == element && !force)
+			if (ChartComponent == element && !force)
 				return;
 
-			if (ChartElement != null)
+			if (ChartComponent != null)
 			{
-				ChartElement.PropertyChanging -= OnElementPropertyChanging;
-				ChartElement.PropertyChanged -= OnElementPropertyChanged;
+				ChartComponent.PropertyChanging -= OnElementPropertyChanging;
+				ChartComponent.PropertyChanged -= OnElementPropertyChanged;
 			}
 
-			ChartElement = element;
+			ChartComponent = element;
 			IndicatorWrapper = wrapper;
 
-			if (ChartElement is IChartIndicatorElement indElement)
+			if (ChartComponent is IChartIndicatorElement indElement)
 			{
 				if (IndicatorWrapper == null)
 				{
@@ -168,7 +168,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 
 			AvailableTypes.Clear();
 
-			if (ChartElement == null)
+			if (ChartComponent == null)
 			{
 				//Id = GenerateSocketId(Parent, null);
 				Type = DiagramSocketType.Any;
@@ -176,16 +176,16 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 			}
 			else
 			{
-				Id = GenerateSocketId(ChartElement.Id);
-				Type = ChartElementToSocketType(ChartElement, true);
+				Id = GenerateSocketId(ChartComponent.Id);
+				Type = ChartElementToSocketType(ChartComponent, true);
 
 				AvailableTypes.Add(Type);
 
 				if (Type == DiagramSocketType.IndicatorValue)
 					AvailableTypes.Add(DiagramSocketType.Unit);
 
-				ChartElement.PropertyChanging += OnElementPropertyChanging;
-				ChartElement.PropertyChanged += OnElementPropertyChanged;
+				ChartComponent.PropertyChanging += OnElementPropertyChanging;
+				ChartComponent.PropertyChanged += OnElementPropertyChanged;
 			}
 		}
 
@@ -381,7 +381,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 	/// </summary>
 	public ICollection<IChartAxis> YAxes => _yAxes;
 
-	private IEnumerable<IChartElement> ChartElements => InputSockets.OfType<ChartElementSocket>().Where(s => s.ChartElement != null).Select(s => s.ChartElement);
+	private IEnumerable<IChartElement> ChartElements => InputSockets.OfType<ChartElementSocket>().Where(s => s.ChartComponent != null).Select(s => s.ChartComponent);
 
 	/// <inheritdoc />
 	protected override void OnStart(DateTimeOffset time)
@@ -579,7 +579,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 			if (time == default)
 				time = value.Time;
 
-			_chartValues.SafeAdd(time, _ => [])[socket.ChartElement] = v;
+			_chartValues.SafeAdd(time, _ => [])[socket.ChartComponent] = v;
 			FlushPriority = int.MaxValue;
 		}
 
@@ -663,7 +663,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 
 		var socket = (ChartElementSocket)s;
 
-		if (socket.ChartElement != null)
+		if (socket.ChartComponent != null)
 			return; // can be when the model is loading
 
 		if (socket != _emptySocket)
@@ -718,14 +718,14 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 	{
 		var socket = o as ChartElementSocket;
 		var wrapper = socket?.IndicatorWrapper ?? o as TChartIndicatorElementWrapper;
-		var element = socket?.ChartElement ?? wrapper?.Element ?? o as IChartElement;
+		var element = socket?.ChartComponent ?? wrapper?.Element ?? o as IChartElement;
 		var isEmptySocket = element == null;
 
 		if (isEmptySocket && _emptySocket != null)
 			return; // empty socket already exists
 
 		if (element != null)
-			socket ??= InputSockets.OfType<ChartElementSocket>().FirstOrDefault(s => s.ChartElement == element);
+			socket ??= InputSockets.OfType<ChartElementSocket>().FirstOrDefault(s => s.ChartComponent == element);
 
 		if (socket == null)
 		{
@@ -782,7 +782,7 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 	{
 		var socket = o as ChartElementSocket;
 		var wrapper = socket?.IndicatorWrapper ?? o as TChartIndicatorElementWrapper;
-		var element = socket?.ChartElement ?? wrapper?.Element ?? o as IChartElement;
+		var element = socket?.ChartComponent ?? wrapper?.Element ?? o as IChartElement;
 
 		var socketId = ChartElementSocket.GenerateSocketId(element?.Id);
 
@@ -865,10 +865,10 @@ public abstract class ChartDiagramElement<TChartIndicatorElementWrapper> : Diagr
 
 		foreach (var e in newElements.Values.ToArray())
 		{
-			var socket = InputSockets.OfType<ChartElementSocket>().FirstOrDefault(s => s.ChartElement?.Id == e.Id);
+			var socket = InputSockets.OfType<ChartElementSocket>().FirstOrDefault(s => s.ChartComponent?.Id == e.Id);
 			if (socket != null)
 			{
-				socket.ChartElement.Load(e.Save());
+				socket.ChartComponent.Load(e.Save());
 				newElements.Remove(e.Id);
 			}
 		}

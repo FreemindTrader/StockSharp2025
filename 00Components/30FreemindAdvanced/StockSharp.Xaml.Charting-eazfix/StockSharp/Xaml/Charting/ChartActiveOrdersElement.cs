@@ -21,7 +21,7 @@ namespace StockSharp.Xaml.Charting;
 
 [Display( ResourceType = typeof( LocalizedStrings ), Name = "ActiveOrders" )]
 public class ChartActiveOrdersElement :
-  ChartElement<ChartActiveOrdersElement>,
+  ChartComponent<ChartActiveOrdersElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
@@ -52,7 +52,7 @@ public class ChartActiveOrdersElement :
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
     private bool _isAnimationEnabled;
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
-    private UIChartBaseViewModel _baseViewModel;
+    private DrawableChartElementBaseViewModel _baseViewModel;
 
     public ChartActiveOrdersElement()
     {
@@ -233,9 +233,9 @@ public class ChartActiveOrdersElement :
 
     
 
-    UIChartBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
+    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
     {
-        return this._baseViewModel = ( UIChartBaseViewModel ) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D( this );
+        return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D( this );
     }
 
     bool IDrawableChartElement.StartDrawing(

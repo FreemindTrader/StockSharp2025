@@ -13,7 +13,7 @@ using System.Linq;
 #nullable disable
 internal sealed class ChartAnnotationVM(
   ChartAnnotation _param1) : 
-  ChartElementUI<ChartAnnotation>(_param1)
+  ChartCompentView<ChartAnnotation>(_param1)
 {
   protected override void UpdateUi()
   {
@@ -21,7 +21,7 @@ internal sealed class ChartAnnotationVM(
 
   protected override void Clear()
   {
-    this.ScichartSurfaceMVVM.AnnotationModifier.GuiUpdateAndClear(this.GetDrawableChartElement());
+    this.ScichartSurfaceMVVM.AnnotationModifier.GuiUpdateAndClear(this.ChartComponentView);
   }
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
@@ -41,7 +41,7 @@ internal sealed class ChartAnnotationVM(
 
     internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D()
     {
-      this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw(this._variableSome3535.GetDrawableChartElement(), ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
+      this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw(this._variableSome3535.ChartComponentView, ((IEnumerable) this.\u0023\u003Dzor6OKKQ\u003D).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
     }
   }
 }

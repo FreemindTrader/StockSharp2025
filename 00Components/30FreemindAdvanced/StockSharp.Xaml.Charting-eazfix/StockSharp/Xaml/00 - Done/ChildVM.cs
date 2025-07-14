@@ -11,7 +11,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// 
 /// </summary>
-public sealed class ChildVM : ChartBaseViewModel
+public sealed class ChartElementViewModel : ChartBaseViewModel
 {
     private readonly Func< SeriesInfo, Color > _colorFunction;
     private readonly Func< SeriesInfo, string > _valueFunction;
@@ -21,11 +21,11 @@ public sealed class ChildVM : ChartBaseViewModel
     private SeriesInfo _seriesInfo;
     private ChartCompentViewModel _parent;
 
-    public ChildVM( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this( null, mypropertyOwner, getColorFunc, getValueFunc, string_2 )
+    public ChartElementViewModel( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this( null, mypropertyOwner, getColorFunc, getValueFunc, string_2 )
     {
     }
 
-    public ChildVM( string name, INotifyPropertyChanged propertyOwner, Func<SeriesInfo, Color> getColor, Func<SeriesInfo, string> getValue, params string[ ] upDownFillColorName ) : base()
+    public ChartElementViewModel( string name, INotifyPropertyChanged propertyOwner, Func<SeriesInfo, Color> getColor, Func<SeriesInfo, string> getValue, params string[ ] upDownFillColorName ) : base()
     {
         Name = name;
         _colorFunction = getColor;

@@ -15,7 +15,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting
 {
     
-    public partial class ChartCandleElement : ChartElement<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElement : ChartComponent<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private Func<DateTimeOffset, bool, bool, Color?> _colorer;
         private CandlestickVM _viewModel;
@@ -677,7 +677,7 @@ namespace StockSharp.Xaml.Charting
             _viewModel.CheckAndShowFibonacci( );
         }
 
-        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new CandlestickVM( this );
         }

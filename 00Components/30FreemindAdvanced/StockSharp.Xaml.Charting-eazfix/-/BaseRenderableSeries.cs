@@ -27,7 +27,7 @@ internal abstract class BaseRenderableSeries :
   IRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzTe_gV3cWjEp7 = DependencyProperty.Register(nameof (StrokeThickness), typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) 1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzw\u0024dhNXt0Rw_W)));
+  public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(nameof (StrokeThickness), typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) 1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzw\u0024dhNXt0Rw_W)));
   
   public static readonly DependencyProperty \u0023\u003DzHttRjYlEOUXJ = DependencyProperty.Register(nameof (IsSelected), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata(new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzBSmu2cMVk0Wk)));
   
@@ -35,7 +35,7 @@ internal abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD)));
   
-  public static readonly DependencyProperty \u0023\u003Dz8b6MQAIE8UZn = DependencyProperty.Register(nameof (IsVisible), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzNhd_wqx65hB\u0024)));
+  public static readonly DependencyProperty IsVisibleProperty = DependencyProperty.Register(nameof (IsVisible), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzNhd_wqx65hB\u0024)));
   
   public static readonly DependencyProperty \u0023\u003DzIcVMwZBBZ1n3 = DependencyProperty.Register(nameof (SeriesColor), typeof (Color), typeof (BaseRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzCBwgUnYQspPj)));
   
@@ -43,7 +43,7 @@ internal abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D = DependencyProperty.Register(nameof (ResamplingMode), typeof (\u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dz865pKWj8QZ5WemB7jgEn5T0\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dzdr5RTntdbeN7 = DependencyProperty.Register(nameof (AntiAliasing), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty AntiAliasingProperty = DependencyProperty.Register(nameof (AntiAliasing), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   public static readonly DependencyProperty \u0023\u003DzNGe3htdX6rpV = DependencyProperty.Register(nameof (PointMarkerTemplate), typeof (ControlTemplate), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzakQhJ14btXMjqycMlg\u003D\u003D)));
   
@@ -53,9 +53,9 @@ internal abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003Dzcmph5bg8kibh = DependencyProperty.Register(nameof (LegendMarkerTemplate), typeof (DataTemplate), typeof (BaseRenderableSeries), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   public static readonly DependencyProperty \u0023\u003Dz2NzoEVHQO1PF = DependencyProperty.Register(nameof (PaletteProvider), typeof (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
@@ -151,11 +151,11 @@ internal abstract class BaseRenderableSeries :
   {
     get
     {
-      return (bool) this.GetValue(BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn);
+      return (bool) this.GetValue(BaseRenderableSeries.IsVisibleProperty);
     }
     set
     {
-      this.SetValue(BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn, (object) value);
+      this.SetValue(BaseRenderableSeries.IsVisibleProperty, (object) value);
     }
   }
 
@@ -163,11 +163,11 @@ internal abstract class BaseRenderableSeries :
   {
     get
     {
-      return (int) this.GetValue(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7);
+      return (int) this.GetValue(BaseRenderableSeries.StrokeThicknessProperty);
     }
     set
     {
-      this.SetValue(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) value);
+      this.SetValue(BaseRenderableSeries.StrokeThicknessProperty, (object) value);
     }
   }
 
@@ -251,11 +251,11 @@ internal abstract class BaseRenderableSeries :
   {
     get
     {
-      return (string) this.GetValue(BaseRenderableSeries.\u0023\u003DziAqnE8_\u0024SBDB);
+      return (string) this.GetValue(BaseRenderableSeries.YAxisIdProperty);
     }
     set
     {
-      this.SetValue(BaseRenderableSeries.\u0023\u003DziAqnE8_\u0024SBDB, (object) value);
+      this.SetValue(BaseRenderableSeries.YAxisIdProperty, (object) value);
     }
   }
 
@@ -263,11 +263,11 @@ internal abstract class BaseRenderableSeries :
   {
     get
     {
-      return (string) this.GetValue(BaseRenderableSeries.\u0023\u003DzSEAakZbtZKgY);
+      return (string) this.GetValue(BaseRenderableSeries.XAxisIdProperty);
     }
     set
     {
-      this.SetValue(BaseRenderableSeries.\u0023\u003DzSEAakZbtZKgY, (object) value);
+      this.SetValue(BaseRenderableSeries.XAxisIdProperty, (object) value);
     }
   }
 
@@ -275,11 +275,11 @@ internal abstract class BaseRenderableSeries :
   {
     get
     {
-      return (bool) this.GetValue(BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7);
+      return (bool) this.GetValue(BaseRenderableSeries.AntiAliasingProperty);
     }
     set
     {
-      this.SetValue(BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7, (object) value);
+      this.SetValue(BaseRenderableSeries.AntiAliasingProperty, (object) value);
     }
   }
 

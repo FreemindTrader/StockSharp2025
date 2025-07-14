@@ -76,7 +76,7 @@ namespace StockSharp.Xaml.Charting
         }
     }
 
-    internal partial class CandlestickVM : UIHigherVM<ChartCandleElement>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
+    internal partial class CandlestickVM : ChartCompentWpfBaseViewModel<ChartCandleElement>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {
         private double                                      _pnfBoxSize = 0.2;
         private readonly OhlcDataSeries< DateTime, double > _ohlcDataSeries;
@@ -133,12 +133,12 @@ namespace StockSharp.Xaml.Charting
 
         private IDataSeries GetDataSeriesByDrawStyle( )
         {
-            //if( ChartElement.DrawStyle.IsVolumeProfileChart( ) )
+            //if( ChartComponent.DrawStyle.IsVolumeProfileChart( ) )
             //{
             //    return _timeframeSegmentDataSeries;
             //}
 
-            if ( ChartElement.DrawStyle != ChartCandleDrawStyles.Area )
+            if ( ChartComponentView.DrawStyle != ChartCandleDrawStyles.Area )
             {
                 return _ohlcDataSeries;
             }
@@ -155,15 +155,15 @@ namespace StockSharp.Xaml.Charting
                 "DownFillColor"
             };
 
-            ChartViewModel.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
-            ChartViewModel.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
-            ChartViewModel.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
-            ChartViewModel.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
-            ChartViewModel.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartElement, new Func<SeriesInfo, Color>( GetLegendColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
-            //ChartViewModel.AddChild( _volumeViewModel = new ChildrenChartViewModel( "Vol", ChartElement, new Func< SeriesInfo, Color >( GetCandleColor ), ( s => ( s as TimeframeSegmentSeriesInfo )?.Volume.ToString( ) ), strArray ) );
+            ChartViewModel.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
+            ChartViewModel.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
+            ChartViewModel.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
+            ChartViewModel.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
+            ChartViewModel.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
+            //ChartViewModel.AddChild( _volumeViewModel = new ChildrenChartViewModel( "Vol", ChartComponent, new Func< SeriesInfo, Color >( GetCandleColor ), ( s => ( s as TimeframeSegmentSeriesInfo )?.Volume.ToString( ) ), strArray ) );
 
             GuiInitSeries( );
-            AddStylePropertyChanging( ChartElement, "DrawStyle", new ChartCandleDrawStyles[ 10 ]
+            AddStylePropertyChanging( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[ 10 ]
                                                                                                                         {
                                                                                                                             ChartCandleDrawStyles.CandleStick,
                                                                                                                             ChartCandleDrawStyles.Ohlc,
@@ -216,7 +216,7 @@ namespace StockSharp.Xaml.Charting
 
                         ClearAll( );
 
-                        SetupAxisMarkerAndBinding( _candlestickSeries, ChartElement, "ShowAxisMarker", null );
+                        SetupAxisMarkerAndBinding( _candlestickSeries, ChartComponentView, "ShowAxisMarker", null );
                     }
                     else
                     {
@@ -309,7 +309,7 @@ namespace StockSharp.Xaml.Charting
 
         private Type GetRenderingSeriesByType( )
         {
-            switch ( ChartElement.DrawStyle )
+            switch ( ChartComponentView.DrawStyle )
             {
                 case ChartCandleDrawStyles.CandleStick:
                     return typeof( FreemindCandlestickRenderableSeries );
@@ -393,7 +393,7 @@ namespace StockSharp.Xaml.Charting
 
             ClearAll( );
 
-            SetupAxisMarkerAndBinding( _candlestickSeries, ChartElement, "ShowAxisMarker", null );
+            SetupAxisMarkerAndBinding( _candlestickSeries, ChartComponentView, "ShowAxisMarker", null );
 
             DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _candlestickSeries );
 
@@ -421,7 +421,7 @@ namespace StockSharp.Xaml.Charting
         public override void PerformPeriodicalAction( )
         {
             base.PerformPeriodicalAction( );
-            VisbleRangeDp xAxisVisibleRange = DrawingSurface.GetVisibleRangeDp( ChartElement.XAxisId );
+            VisbleRangeDp xAxisVisibleRange = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
 
             if ( xAxisVisibleRange == null )
             {
@@ -506,9 +506,9 @@ namespace StockSharp.Xaml.Charting
 
         public bool UpdateDataSeries( ChartDrawData.sCandleEx barRange )
         {
-            if ( _colorerFunction != ChartElement.Colorer )
+            if ( _colorerFunction != ChartComponentView.Colorer )
             {
-                _colorerFunction = ChartElement.Colorer;
+                _colorerFunction = ChartComponentView.Colorer;
 
                 _candlestickSeries.Services?.GetService<ISciChartSurface>()?.InvalidateElement();
             }
@@ -540,7 +540,7 @@ namespace StockSharp.Xaml.Charting
                 _barEventsSubscribed = true;
             }
 
-            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartElement.XAxisId );
+            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
             bool xAxisIsDateTime = xAxisIdRange != null && xAxisIdRange.GetAxisType( ) == ChartAxisType.CategoryDateTime;
             int count            = barRange.Count;
             var lastBarTime      = _dateTimeUtc;
@@ -675,9 +675,9 @@ namespace StockSharp.Xaml.Charting
 
         public bool UpdateDataSeries( IEnumerableEx<ChartDrawData.sCandle> candles )
         {
-            if ( _colorerFunction != ChartElement.Colorer )
+            if ( _colorerFunction != ChartComponentView.Colorer )
             {
-                _colorerFunction = ChartElement.Colorer;
+                _colorerFunction = ChartComponentView.Colorer;
 
                 _candlestickSeries.Services?.GetService<ISciChartSurface>( )?.InvalidateElement( );
             }
@@ -687,7 +687,7 @@ namespace StockSharp.Xaml.Charting
                 return false;
             }
 
-            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartElement.XAxisId );
+            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
             bool xAxisIsDateTime = xAxisIdRange != null && xAxisIdRange.GetAxisType( ) == ChartAxisType.CategoryDateTime;
             int count            = candles.Count;
             var lastBarTime      = _dateTimeUtc;
@@ -810,9 +810,9 @@ namespace StockSharp.Xaml.Charting
         {
             if ( !IsRising( series ) )
             {
-                return ChartElement.DownFillColor;
+                return ChartComponentView.DownFillColor;
             }
-            return ChartElement.UpFillColor;
+            return ChartComponentView.UpFillColor;
         }
 
         private Color GetLegendColor( SeriesInfo series )
@@ -830,7 +830,7 @@ namespace StockSharp.Xaml.Charting
             {
                 return null;
             }
-            switch ( ChartElement.DrawStyle )
+            switch ( ChartComponentView.DrawStyle )
             {
                 case ChartCandleDrawStyles.LineOpen:
                     _lineViewModel.Name = "O";

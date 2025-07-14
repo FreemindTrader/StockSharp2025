@@ -27,7 +27,7 @@ namespace StockSharp.Xaml.Charting;
 
 [Display(ResourceType = typeof (LocalizedStrings), Name = "CandleSettings")]
 public class ChartCandleElement : 
-  ChartElement<ChartCandleElement>,
+  ChartComponent<ChartCandleElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
@@ -116,7 +116,7 @@ public class ChartCandleElement :
   
   private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _drawingColor;
   
-  private UIChartBaseViewModel _baseViewModel;
+  private DrawableChartElementBaseViewModel _baseViewModel;
 
   public ChartCandleElement()
   {
@@ -1134,10 +1134,10 @@ public class ChartCandleElement :
     return _param1;
   }
 
-  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+  DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this._baseViewModel = (UIChartBaseViewModel) new CandlestickUI(this);
+    return this._baseViewModel = (DrawableChartElementBaseViewModel) new CandlestickUI(this);
   }
 
   bool IDrawableChartElement.StartDrawing(

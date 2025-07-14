@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>The chart element representing active orders.</summary>
 
 [Display( ResourceType = typeof( LocalizedStrings ), Name = "ActiveOrders" )]
-public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>, 
+public class ChartActiveOrdersElement : ChartComponent<ChartActiveOrdersElement>, 
                                         IChartElement, 
                                         IChartPart<IChartElement>, 
                                         INotifyPropertyChanged, 
@@ -50,7 +50,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>,
     
     private bool _isAnimationEnabled;
     
-    private DrawableChartElementBaseViewModel _baseViewModel;
+    private DrawableChartComponentBaseViewModel _baseViewModel;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartActiveOrdersElement" />.
@@ -250,7 +250,7 @@ public class ChartActiveOrdersElement : ChartElement<ChartActiveOrdersElement>,
     //    return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D( this );
     //}
 
-    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
     {
         return _baseViewModel = new ChartActiveOrdersElementVM( this );
     }

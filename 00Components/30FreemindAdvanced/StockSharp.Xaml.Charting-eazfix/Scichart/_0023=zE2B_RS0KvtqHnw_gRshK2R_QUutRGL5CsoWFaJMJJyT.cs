@@ -17,14 +17,14 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
   private readonly object \u0023\u003Dz5guLcZd3eEjWwMkn3Q\u003D\u003D = new object();
   private readonly Dictionary<Type, List<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzdryKO5c\u003D>> \u0023\u003DzsSLB\u0024C0\u003D = new Dictionary<Type, List<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzdryKO5c\u003D>>();
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1)
     where TMessage : class, \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D
   {
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzAwqOFECzAlTlARdjGg\u003D\u003D<TMessage>.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzAwqOFECzAlTlARdjGg\u003D\u003D<TMessage>.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<TMessage, bool>(\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzAwqOFECzAlTlARdjGg\u003D\u003D<TMessage>.SomeMethond0343.\u0023\u003Dz1ZUflAN9mNpNRNWbRw\u003D\u003D)), true, (\u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd) \u0023\u003DzjNe7SfDO8SBEP\u0024saMPXw3skInDo_ukElBLSreEmTrz6N.\u0023\u003DzFvAsfEI\u003D());
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd _param2)
     where TMessage : class, \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D
@@ -32,7 +32,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzTwHzHJJefejgS\u0024wgiA\u003D\u003D<TMessage>.\u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D ?? (\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzTwHzHJJefejgS\u0024wgiA\u003D\u003D<TMessage>.\u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D = new Func<TMessage, bool>(\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzTwHzHJJefejgS\u0024wgiA\u003D\u003D<TMessage>.SomeMethond0343.\u0023\u003Dzi20E2o6duyFH0mjJBQ\u003D\u003D)), true, _param2);
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     bool _param2)
     where TMessage : class, \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D
@@ -40,7 +40,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzJgVLqKtaDviJ3ext\u0024g\u003D\u003D<TMessage>.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D ?? (\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzJgVLqKtaDviJ3ext\u0024g\u003D\u003D<TMessage>.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D = new Func<TMessage, bool>(\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzJgVLqKtaDviJ3ext\u0024g\u003D\u003D<TMessage>.SomeMethond0343.\u0023\u003DziYvima9jnqeLSJFkjg\u003D\u003D)), _param2, (\u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd) \u0023\u003DzjNe7SfDO8SBEP\u0024saMPXw3skInDo_ukElBLSreEmTrz6N.\u0023\u003DzFvAsfEI\u003D());
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     bool _param2,
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd _param3)
@@ -49,7 +49,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzCpOez5mSlMK5V9XuSw\u003D\u003D<TMessage>.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D ?? (\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzCpOez5mSlMK5V9XuSw\u003D\u003D<TMessage>.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D = new Func<TMessage, bool>(\u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzCpOez5mSlMK5V9XuSw\u003D\u003D<TMessage>.SomeMethond0343.\u0023\u003Dzm3aAJBqSWF8Pun5amQ\u003D\u003D)), _param2, _param3);
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     Func<TMessage, bool> _param2)
     where TMessage : class, \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D
@@ -57,7 +57,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, _param2, true, (\u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd) \u0023\u003DzjNe7SfDO8SBEP\u0024saMPXw3skInDo_ukElBLSreEmTrz6N.\u0023\u003DzFvAsfEI\u003D());
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     Func<TMessage, bool> _param2,
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd _param3)
@@ -66,7 +66,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, _param2, true, _param3);
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     Func<TMessage, bool> _param2,
     bool _param3)
@@ -75,7 +75,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, _param2, _param3, (\u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd) \u0023\u003DzjNe7SfDO8SBEP\u0024saMPXw3skInDo_ukElBLSreEmTrz6N.\u0023\u003DzFvAsfEI\u003D());
   }
 
-  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh \u0023\u003DzZcbqdpE\u003D<TMessage>(
+  public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1,
     Func<TMessage, bool> _param2,
     bool _param3,
@@ -85,7 +85,7 @@ internal sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1
     return this.\u0023\u003Dza\u0024BrJrqBcVVX<TMessage>(_param1, _param2, _param3, _param4);
   }
 
-  public void \u0023\u003DzfttffOE\u003D<TMessage>(
+  public void RemovePropertyEvents<TMessage>(
     \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh _param1)
     where TMessage : class, \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D
   {

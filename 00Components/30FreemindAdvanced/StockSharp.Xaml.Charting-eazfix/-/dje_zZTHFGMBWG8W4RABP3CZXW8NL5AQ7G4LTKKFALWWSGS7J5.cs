@@ -16,9 +16,9 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   ChartModifierBase
 {
   
-  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) "DefaultAxisId"));
+  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) "DefaultAxisId"));
   
-  public static readonly DependencyProperty \u0023\u003DzSEAakZbtZKgY = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) "DefaultAxisId"));
+  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd), new PropertyMetadata((object) "DefaultAxisId"));
   
   private Point \u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D;
   
@@ -38,11 +38,11 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   {
     get
     {
-      return (string) this.GetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003DziAqnE8_\u0024SBDB);
+      return (string) this.GetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.YAxisIdProperty);
     }
     set
     {
-      this.SetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003DziAqnE8_\u0024SBDB, (object) value);
+      this.SetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.YAxisIdProperty, (object) value);
     }
   }
 
@@ -50,11 +50,11 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   {
     get
     {
-      return (string) this.GetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003DzSEAakZbtZKgY);
+      return (string) this.GetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.XAxisIdProperty);
     }
     set
     {
-      this.SetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.\u0023\u003DzSEAakZbtZKgY, (object) value);
+      this.SetValue(dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd.XAxisIdProperty, (object) value);
     }
   }
 

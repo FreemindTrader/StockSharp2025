@@ -26,7 +26,7 @@ using System.Windows.Shapes;
 namespace StockSharp.Xaml.Charting;
 
 public class ChartLineElement : 
-  ChartElement<ChartLineElement>,
+  ChartComponent<ChartLineElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
@@ -51,7 +51,7 @@ public class ChartLineElement :
   
   private ControlTemplate \u0023\u003DzR0PVnrfRD9\u0024B;
   
-  private UIChartBaseViewModel _baseViewModel;
+  private DrawableChartElementBaseViewModel _baseViewModel;
 
   public ChartLineElement() => this.AdditionalColor = this.Color.ToTransparent((byte) 50);
 
@@ -171,10 +171,10 @@ public class ChartLineElement :
     return controlTemplate;
   }
 
-  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+  DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    this._baseViewModel = _param1.Area.XAxisType == ChartAxisType.Numeric ? (UIChartBaseViewModel) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<double>(this) : (UIChartBaseViewModel) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<DateTime>(this);
+    this._baseViewModel = _param1.Area.XAxisType == ChartAxisType.Numeric ? (DrawableChartElementBaseViewModel) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<double>(this) : (DrawableChartElementBaseViewModel) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<DateTime>(this);
     return this._baseViewModel;
   }
 

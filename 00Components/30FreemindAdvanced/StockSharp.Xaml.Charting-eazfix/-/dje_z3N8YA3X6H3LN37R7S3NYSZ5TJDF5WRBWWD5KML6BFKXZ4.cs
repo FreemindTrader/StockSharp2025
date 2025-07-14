@@ -46,10 +46,10 @@ internal sealed class ultrachartlegend :
   private void \u0023\u003DzFEhTVIBjIbf8(object _param1, RoutedEventArgs _param2)
   {
     Hyperlink hyperlink = (Hyperlink) _param1;
-    if (!(hyperlink.DataContext is ParentVM dataContext) || !(dataContext.ChartElement is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
+    if (!(hyperlink.DataContext is ParentVM dataContext) || !(dataContext.ChartComponent is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
-    Subscription subscription = dataContext.GetSubscription(dataContext.ChartElement);
+    Subscription subscription = dataContext.GetSubscription(dataContext.ChartComponent);
     if (subscription == null || !subscription.SecurityId.HasValue)
       return;
     this.\u0023\u003DzKkX3SOgS26uy.DataContext = (object) dataContext;
@@ -63,7 +63,7 @@ internal sealed class ultrachartlegend :
     if (!((_param1 is FrameworkElement frameworkElement ? frameworkElement.DataContext : (object) null) is ParentVM dataContext))
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
-    Subscription subscription1 = dataContext.GetSubscription(dataContext.ChartElement);
+    Subscription subscription1 = dataContext.GetSubscription(dataContext.ChartComponent);
     if (subscription1 == null)
       return;
     DataType dataType = this.\u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D.DataType;
@@ -78,7 +78,7 @@ internal sealed class ultrachartlegend :
       DataType2 = dataType,
       IsSubscribe = true
     }, (SecurityMessage) subscription1.MarketData);
-    dataContext.Pane.ParentViewModel.\u0023\u003Dzld7tWxZuooQ2UzOmtQ\u003D\u003D((IChartElement) dataContext.ChartElement, subscription2);
+    dataContext.Pane.ParentViewModel.\u0023\u003Dzld7tWxZuooQ2UzOmtQ\u003D\u003D((IChartElement) dataContext.ChartComponent, subscription2);
   }
 
   [DebuggerNonUserCode]

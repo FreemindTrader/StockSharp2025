@@ -25,7 +25,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>(
   T _param1) : 
-  ChartElementUI<T>(_param1)
+  ChartCompentView<T>(_param1)
   where T : ChartTransactionElement<T>, new()
 {
   
@@ -35,7 +35,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzKj7nvWQ\u003D;
   
-  private ChildVM \u0023\u003DzZYTLjjg\u003D;
+  private ChartElementViewModel \u0023\u003DzZYTLjjg\u003D;
 
   private TransactionDataSeries \u0023\u003DzcSPUTHNE35Wc()
   {
@@ -45,7 +45,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   protected override void Init()
   {
     base.Init();
-    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChildVM(string.Empty, (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
+    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChartElementViewModel(string.Empty, (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
     {
       "BuyColor",
       "SellColor"
@@ -58,7 +58,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D = _param1;
-    if (!UIChartBaseViewModel.IsUiThread())
+    if (!DrawableChartElementBaseViewModel.IsUiThread())
     {
       this.PerformUiAction(new Action(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D), true);
     }
@@ -77,25 +77,25 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     }
   }
 
-  private \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D()
+  private \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D CreateRenderableSeries()
   {
-    \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D vmZznA5Vnnsp4Nd0g = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D>(new ChildVM[1]
+    \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D vmZznA5Vnnsp4Nd0g = this.CreateRenderableSeries<\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D>(new ChartElementViewModel[1]
     {
       this.\u0023\u003DzZYTLjjg\u003D
     });
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DzCwfeuzXRdwFc converter1 = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DzCwfeuzXRdwFc((Sides) 0);
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DzCwfeuzXRdwFc converter2 = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DzCwfeuzXRdwFc((Sides) 1);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzQOrK5fl6hpfW, (object) this.GetDrawableChartElement(), "UseAltIcon", BindingMode.OneWay, (IValueConverter) converter1);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzhKUgypnOH4pU, (object) this.GetDrawableChartElement(), "UseAltIcon", BindingMode.OneWay, (IValueConverter) converter2);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzwfm_Z9y6kr\u0024y, (object) this.GetDrawableChartElement(), "DrawSize", BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz0EuC16n_30MR, (object) this.GetDrawableChartElement(), "BuyColor", BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzRoh3GfgyQiik, (object) this.GetDrawableChartElement(), "BuyStrokeColor", BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz37lnfREBVw3J, (object) this.GetDrawableChartElement(), "SellColor", BindingMode.OneWay);
-    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz6RapS3\u0024GgFvT, (object) this.GetDrawableChartElement(), "SellStrokeColor", BindingMode.OneWay);
-    if ((object) this.GetDrawableChartElement() is IChartOrderElement)
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzQOrK5fl6hpfW, (object) this.ChartComponentView, "UseAltIcon", BindingMode.OneWay, (IValueConverter) converter1);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzhKUgypnOH4pU, (object) this.ChartComponentView, "UseAltIcon", BindingMode.OneWay, (IValueConverter) converter2);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzwfm_Z9y6kr\u0024y, (object) this.ChartComponentView, "DrawSize", BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz0EuC16n_30MR, (object) this.ChartComponentView, "BuyColor", BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzRoh3GfgyQiik, (object) this.ChartComponentView, "BuyStrokeColor", BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz37lnfREBVw3J, (object) this.ChartComponentView, "SellColor", BindingMode.OneWay);
+    vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz6RapS3\u0024GgFvT, (object) this.ChartComponentView, "SellStrokeColor", BindingMode.OneWay);
+    if ((object) this.ChartComponentView is IChartOrderElement)
     {
-      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzS_RbfR1zd8IE, (object) this.GetDrawableChartElement(), "ErrorColor", BindingMode.OneWay);
-      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzlf_sEtexhqoz, (object) this.GetDrawableChartElement(), "ErrorStrokeColor", BindingMode.OneWay);
+      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzS_RbfR1zd8IE, (object) this.ChartComponentView, "ErrorColor", BindingMode.OneWay);
+      vmZznA5Vnnsp4Nd0g.SetBindings(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dzlf_sEtexhqoz, (object) this.ChartComponentView, "ErrorStrokeColor", BindingMode.OneWay);
     }
     return vmZznA5Vnnsp4Nd0g;
   }
@@ -112,7 +112,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   {
     if (!this.\u0023\u003DzyDntgFbUTuaIjjSSeA\u003D\u003D)
       return;
-    ChartOrderDisplayFilter filter = ((IChartOrderElement) (object) this.GetDrawableChartElement()).Filter;
+    ChartOrderDisplayFilter filter = ((IChartOrderElement) (object) this.ChartComponentView).Filter;
     if (!(this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries is \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D renderSeries))
       return;
     renderSeries.ShowError = filter != ChartOrderDisplayFilter.NoErrorsOnly;
@@ -141,7 +141,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     }
     else
     {
-      this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) new TransactionDataSeries(this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D.OhlcSeries), (IRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D());
+      this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) new TransactionDataSeries(this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D.OhlcSeries), (IRenderableSeries) this.CreateRenderableSeries());
       this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzKj7nvWQ\u003D);
       this.\u0023\u003Dzip81Rn8\u003D();
     }
@@ -177,7 +177,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
   {
     if (!(_param1 is dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd uwxhcH9YwmL4RsubcEjd))
       return Colors.Transparent;
-    return uwxhcH9YwmL4RsubcEjd.Transaction.\u0023\u003DzUYTxG_Bgl8ih() != null ? this.GetDrawableChartElement().SellColor : this.GetDrawableChartElement().BuyColor;
+    return uwxhcH9YwmL4RsubcEjd.Transaction.\u0023\u003DzUYTxG_Bgl8ih() != null ? this.ChartComponentView.SellColor : this.ChartComponentView.BuyColor;
   }
 
   internal static string \u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D(

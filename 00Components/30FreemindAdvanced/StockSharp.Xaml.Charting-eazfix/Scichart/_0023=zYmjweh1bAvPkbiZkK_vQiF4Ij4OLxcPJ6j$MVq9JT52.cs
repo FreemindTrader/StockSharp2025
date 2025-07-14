@@ -28,7 +28,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(
   ChartActiveOrdersElement _param1) : 
-  ChartElementUI<ChartActiveOrdersElement>(_param1)
+  ChartCompentView<ChartActiveOrdersElement>(_param1)
 {
   
   private readonly PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> \u0023\u003DzS1WBvIHjLsHj = new PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>();
@@ -44,7 +44,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
 
   public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c(Func<Order, bool> _param1)
   {
-    if (!UIChartBaseViewModel.IsUiThread())
+    if (!DrawableChartElementBaseViewModel.IsUiThread())
       throw new InvalidOperationException("must be called from ui thread");
     if (_param1 == null)
       _param1 = \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<Order, bool>(\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D));
@@ -74,7 +74,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D = _param1;
-    if (!UIChartBaseViewModel.IsUiThread())
+    if (!DrawableChartElementBaseViewModel.IsUiThread())
     {
       this.\u0023\u003DzY_lPK_VP\u0024B7_(new Action(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D), true);
     }
@@ -110,17 +110,17 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     annotation.OrderText = order.Side == 1 ? "SELL LMT" : "BUY LMT";
     annotation.X1 = (IComparable) 0.8;
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo dataObject = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo(annotation);
-    annotation.SetBindings(AnnotationBase.XAxisIdProperty, (object) this.GetDrawableChartElement(), "XAxisId");
-    annotation.SetBindings(AnnotationBase.YAxisIdProperty, (object) this.GetDrawableChartElement(), "YAxisId");
-    annotation.SetBindings(AnnotationBase.IsHiddenProperty, (object) this.GetDrawableChartElement(), "IsVisible", converter: (IValueConverter) new InverseBooleanConverter());
+    annotation.SetBindings(AnnotationBase.XAxisIdProperty, (object) this.ChartComponentView, "XAxisId");
+    annotation.SetBindings(AnnotationBase.YAxisIdProperty, (object) this.ChartComponentView, "YAxisId");
+    annotation.SetBindings(AnnotationBase.IsHiddenProperty, (object) this.ChartComponentView, "IsVisible", converter: (IValueConverter) new InverseBooleanConverter());
     annotation.SetBindings(AnnotationBase.IsEditableProperty, (object) dataObject, "IsFrozen", BindingMode.OneWay, (IValueConverter) new InverseBooleanConverter());
     ColorToBrushConverter converter = new ColorToBrushConverter();
-    annotation.SetBindings(Control.ForegroundProperty, (object) this.GetDrawableChartElement(), "ForegroundColor", BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.StrokeProperty, (object) this.GetDrawableChartElement(), "ForegroundColor", BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonFillProperty, (object) this.GetDrawableChartElement(), "CancelButtonBackground", BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonColorProperty, (object) this.GetDrawableChartElement(), "CancelButtonColor", BindingMode.OneWay, (IValueConverter) converter);
-    annotation.SetBindings(ActiveOrderAnnotation.IsAnimationEnabledProperty, (object) this.GetDrawableChartElement(), "IsAnimationEnabled", BindingMode.OneWay);
-    annotation.SetBindings(ActiveOrderAnnotation.BlinkColorProperty, (object) this.GetDrawableChartElement(), order.Side == 1 ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay);
+    annotation.SetBindings(Control.ForegroundProperty, (object) this.ChartComponentView, "ForegroundColor", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.StrokeProperty, (object) this.ChartComponentView, "ForegroundColor", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonFillProperty, (object) this.ChartComponentView, "CancelButtonBackground", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.CancelButtonColorProperty, (object) this.ChartComponentView, "CancelButtonColor", BindingMode.OneWay, (IValueConverter) converter);
+    annotation.SetBindings(ActiveOrderAnnotation.IsAnimationEnabledProperty, (object) this.ChartComponentView, "IsAnimationEnabled", BindingMode.OneWay);
+    annotation.SetBindings(ActiveOrderAnnotation.BlinkColorProperty, (object) this.ChartComponentView, order.Side == 1 ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay);
     MultiBinding binding = new MultiBinding()
     {
       Converter = (IMultiValueConverter) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz2m1NF_ZMmb7l(),
@@ -128,10 +128,10 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     };
     binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) dataObject, "State"));
     binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) order, "Side"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.GetDrawableChartElement(), "BuyPendingColor"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.GetDrawableChartElement(), "BuyColor"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.GetDrawableChartElement(), "SellPendingColor"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.GetDrawableChartElement(), "SellColor"));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "BuyPendingColor"));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "BuyColor"));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "SellPendingColor"));
+    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "SellColor"));
     annotation.SetBinding(Control.BackgroundProperty, (BindingBase) binding);
     \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DzP\u0024rwMb8\u003D(dataObject, _param1);
     annotation.CancelClick += new Action<ActiveOrderAnnotation>(this.\u0023\u003Dzr1A_0cGwcH5c);

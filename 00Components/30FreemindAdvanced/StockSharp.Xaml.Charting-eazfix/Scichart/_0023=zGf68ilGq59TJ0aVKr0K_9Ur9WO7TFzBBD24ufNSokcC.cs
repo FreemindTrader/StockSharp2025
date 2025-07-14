@@ -16,7 +16,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(
   CandlePatternElement _param1) : 
-  ChartElementUI<CandlePatternElement>(_param1)
+  ChartCompentView<CandlePatternElement>(_param1)
 {
   
   private readonly HashSet<DateTime> \u0023\u003DzcU\u0024Li0iEvziI = new HashSet<DateTime>();
@@ -107,7 +107,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
 
   public Color? \u0023\u003Dzj4w_lAs\u003D(DateTime _param1, bool _param2)
   {
-    if (!this.RootElem.IsVisible || !this.GetDrawableChartElement().IsVisible)
+    if (!this.RootElem.IsVisible || !this.ChartComponentView.IsVisible)
       return new Color?();
     lock (this.\u0023\u003DzcU\u0024Li0iEvziI)
     {
@@ -117,7 +117,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
           return new Color?();
       }
     }
-    return new Color?(_param2 ? this.GetDrawableChartElement().UpColor : this.GetDrawableChartElement().DownColor);
+    return new Color?(_param2 ? this.ChartComponentView.UpColor : this.ChartComponentView.DownColor);
   }
 
   [Serializable]

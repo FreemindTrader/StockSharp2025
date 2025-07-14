@@ -18,7 +18,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 public class ChartVolatilitySmileElement : 
-  ChartElement<ChartVolatilitySmileElement>,
+  ChartComponent<ChartVolatilitySmileElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,

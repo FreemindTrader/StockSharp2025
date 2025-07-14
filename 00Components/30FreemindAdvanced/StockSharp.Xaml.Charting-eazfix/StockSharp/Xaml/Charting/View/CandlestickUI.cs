@@ -31,7 +31,7 @@ using System.Windows.Media;
 #nullable disable
 internal sealed class CandlestickUI(
   ChartCandleElement _param1) : 
-  ChartElementUI<ChartCandleElement>(_param1),
+  ChartCompentView<ChartCandleElement>(_param1),
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
 {
   
@@ -51,17 +51,17 @@ internal sealed class CandlestickUI(
   
   private IndexRange  \u0023\u003DzUuMx9G25\u0024d0f;
   
-  private ChildVM \u0023\u003DzCKkTLgMyXhNP;
+  private ChartElementViewModel \u0023\u003DzCKkTLgMyXhNP;
   
-  private ChildVM \u0023\u003DzfR8j2PM1RBui;
+  private ChartElementViewModel \u0023\u003DzfR8j2PM1RBui;
   
-  private ChildVM \u0023\u003DzjAnzC1Gk9\u0024VP;
+  private ChartElementViewModel \u0023\u003DzjAnzC1Gk9\u0024VP;
   
-  private ChildVM \u0023\u003DzKCOaMdzTEc8\u0024;
+  private ChartElementViewModel \u0023\u003DzKCOaMdzTEc8\u0024;
   
-  private ChildVM \u0023\u003DzdaM3_c5kMuSK;
+  private ChartElementViewModel \u0023\u003DzdaM3_c5kMuSK;
   
-  private ChildVM \u0023\u003DzWbY5DVo2YLuB;
+  private ChartElementViewModel \u0023\u003DzWbY5DVo2YLuB;
   
   private Decimal? \u0023\u003DzfILpmP5JFeem;
   
@@ -82,9 +82,9 @@ internal sealed class CandlestickUI(
 
   private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003Dz8bZd_lILC\u0024Y\u0024()
   {
-    if (this.GetDrawableChartElement().DrawStyle.IsVolumeProfileChart())
+    if (this.ChartComponentView.DrawStyle.IsVolumeProfileChart())
       return (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzQ73Ei9NuGdXX;
-    return this.GetDrawableChartElement().DrawStyle != ChartCandleDrawStyles.Area ? (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.OhlcSeries : (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzVtuwsFJcSHit;
+    return this.ChartComponentView.DrawStyle != ChartCandleDrawStyles.Area ? (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.OhlcSeries : (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzVtuwsFJcSHit;
   }
 
   public void \u0023\u003DznX2LIYg\u003D(
@@ -109,14 +109,14 @@ internal sealed class CandlestickUI(
       "UpFillColor",
       "DownFillColor"
     };
-    this.ChartViewModel.AddChild(this.\u0023\u003DzCKkTLgMyXhNP = new ChildVM("O", (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003DziVMtGB3eskawtnyDEBGppGQ\u003D)), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzfR8j2PM1RBui = new ChildVM("H", (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003Dzv7x3aq5xjFNkgWHCPg\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003Dzv7x3aq5xjFNkgWHCPg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003DzyboOJPrkbYbHrtK_jYxCKz0\u003D)), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzjAnzC1Gk9\u0024VP = new ChildVM("L", (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003Dz3QgfRT\u0024GTbbdeFCZLg\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003Dz3QgfRT\u0024GTbbdeFCZLg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_F9udS\u0024bvXmu7p7kNM2l1tM\u003D)), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzKCOaMdzTEc8\u0024 = new ChildVM("C", (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003Dz3XWQ58Tacl3uxVgGiw\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003Dz3XWQ58Tacl3uxVgGiw\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_2ZdaKSEm\u0024dowilMRXDN0r4\u003D)), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzdaM3_c5kMuSK = new ChildVM("Line", (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(this.\u0023\u003DqTIcmF95twR2vB7L3I\u0024trXELaSG5nNQSTgo5LhClfL2U\u003D), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzWbY5DVo2YLuB = new ChildVM("Vol", (INotifyPropertyChanged) this.GetDrawableChartElement(), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dzu0cWRPhAEXPa2F76HfbtuFw\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzCKkTLgMyXhNP = new ChartElementViewModel("O", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003DziVMtGB3eskawtnyDEBGppGQ\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzfR8j2PM1RBui = new ChartElementViewModel("H", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003Dzv7x3aq5xjFNkgWHCPg\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003Dzv7x3aq5xjFNkgWHCPg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003DzyboOJPrkbYbHrtK_jYxCKz0\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzjAnzC1Gk9\u0024VP = new ChartElementViewModel("L", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003Dz3QgfRT\u0024GTbbdeFCZLg\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003Dz3QgfRT\u0024GTbbdeFCZLg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_F9udS\u0024bvXmu7p7kNM2l1tM\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzKCOaMdzTEc8\u0024 = new ChartElementViewModel("C", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003Dz3XWQ58Tacl3uxVgGiw\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003Dz3XWQ58Tacl3uxVgGiw\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_2ZdaKSEm\u0024dowilMRXDN0r4\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzdaM3_c5kMuSK = new ChartElementViewModel("Line", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(this.\u0023\u003DqTIcmF95twR2vB7L3I\u0024trXELaSG5nNQSTgo5LhClfL2U\u003D), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzWbY5DVo2YLuB = new ChartElementViewModel("Vol", (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dqo12wao\u0024ehitMzQgoNEdrsjKxeleFvrK0RDpR\u0024y51Ghs\u003D), CandlestickUI.SomeClass34343383.\u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D ?? (CandlestickUI.SomeClass34343383.\u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(CandlestickUI.SomeClass34343383.SomeMethond0343.\u0023\u003Dzu0cWRPhAEXPa2F76HfbtuFw\u003D)), strArray));
     this.\u0023\u003Dzk_r\u0024wtNtUKwJ();
-    ChartElementUI<ChartCandleElement>.\u0023\u003Dz9tL3mkpMz5PJ<ChartCandleDrawStyles>((IChartComponent) this.GetDrawableChartElement(), "DrawStyle", new ChartCandleDrawStyles[10]
+    ChartCompentView<ChartCandleElement>.AddStylePropertyChanging<ChartCandleDrawStyles>((IChartComponent) this.ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
     {
       ChartCandleDrawStyles.CandleStick,
       ChartCandleDrawStyles.Ohlc,
@@ -133,7 +133,7 @@ internal sealed class CandlestickUI(
 
   private void \u0023\u003Dzk_r\u0024wtNtUKwJ()
   {
-    if (!UIChartBaseViewModel.IsUiThread())
+    if (!DrawableChartElementBaseViewModel.IsUiThread())
     {
       this.PerformUiAction(new Action(this.\u0023\u003Dzk_r\u0024wtNtUKwJ), true);
     }
@@ -161,9 +161,9 @@ internal sealed class CandlestickUI(
         }
         else
         {
-          this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries = (IRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D();
+          this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries = (IRenderableSeries) this.CreateRenderableSeries();
           this.ClearAll();
-          this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.GetDrawableChartElement(), "ShowAxisMarker", (string) null);
+          this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.ChartComponentView, "ShowAxisMarker", (string) null);
         }
       }
     }
@@ -201,14 +201,14 @@ internal sealed class CandlestickUI(
         goto label_4;
       }
     }
-    segmentDataSeries = new TimeframeSegmentDataSeries(candlesTimeframe, this.GetDrawableChartElement());
+    segmentDataSeries = new TimeframeSegmentDataSeries(candlesTimeframe, this.ChartComponentView);
 label_4:
     this.\u0023\u003DzQ73Ei9NuGdXX = segmentDataSeries;
   }
 
   private Type \u0023\u003Dzq1K_twB2qI4CAVGTXkCEBpY\u003D()
   {
-    switch (this.GetDrawableChartElement().DrawStyle)
+    switch (this.ChartComponentView.DrawStyle)
     {
       case ChartCandleDrawStyles.CandleStick:
         return typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd);
@@ -242,54 +242,54 @@ label_4:
     this.\u0023\u003Dzk_r\u0024wtNtUKwJ();
   }
 
-  private BaseRenderableSeries \u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D()
+  private BaseRenderableSeries CreateRenderableSeries()
   {
     BaseRenderableSeries target;
-    switch (this.GetDrawableChartElement().DrawStyle)
+    switch (this.ChartComponentView.DrawStyle)
     {
       case ChartCandleDrawStyles.CandleStick:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd>(new ChildVM[4]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd>(new ChartElementViewModel[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
           this.\u0023\u003DzjAnzC1Gk9\u0024VP,
           this.\u0023\u003DzKCOaMdzTEc8\u0024
         });
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzQE5RIB4g32gf, (object) this.GetDrawableChartElement(), "UpFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzzR4yyf\u0024wfFYI, (object) this.GetDrawableChartElement(), "DownFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.GetDrawableChartElement(), "UpBorderColor");
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.GetDrawableChartElement(), "DownBorderColor");
-        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.GetDrawableChartElement(), "StrokeThickness");
+        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzQE5RIB4g32gf, (object) this.ChartComponentView, "UpFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
+        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzzR4yyf\u0024wfFYI, (object) this.ChartComponentView, "DownFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
+        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.ChartComponentView, "UpBorderColor");
+        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.ChartComponentView, "DownBorderColor");
+        target.SetBindings(BaseRenderableSeries.StrokeThicknessProperty, (object) this.ChartComponentView, "StrokeThickness");
         target.PaletteProvider = (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this;
         break;
       case ChartCandleDrawStyles.Ohlc:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd>(new ChildVM[4]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd>(new ChartElementViewModel[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
           this.\u0023\u003DzjAnzC1Gk9\u0024VP,
           this.\u0023\u003DzKCOaMdzTEc8\u0024
         });
-        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.GetDrawableChartElement(), "UpBorderColor");
-        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.GetDrawableChartElement(), "DownBorderColor");
-        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.GetDrawableChartElement(), "StrokeThickness", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
-        BindingOperations.ClearBinding((DependencyObject) target, BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7);
+        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.ChartComponentView, "UpBorderColor");
+        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.ChartComponentView, "DownBorderColor");
+        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
+        BindingOperations.ClearBinding((DependencyObject) target, BaseRenderableSeries.StrokeThicknessProperty);
         target.PaletteProvider = (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this;
         break;
       case ChartCandleDrawStyles.LineOpen:
       case ChartCandleDrawStyles.LineHigh:
       case ChartCandleDrawStyles.LineLow:
       case ChartCandleDrawStyles.LineClose:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastLineRenderableSeries>(new ChildVM[1]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<FastLineRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzdaM3_c5kMuSK
         });
         target.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.\u0023\u003Dznrzap3Ru8O5U, "LineColor");
-        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.GetDrawableChartElement(), "StrokeThickness");
-        target.SetBindings(FastLineRenderableSeries.\u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D, (object) this.GetDrawableChartElement(), "DrawStyle", converter: (IValueConverter) new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUm_WprFxHE3GMkMYTmM5Gv6xPE1lfu86yUSurnkA());
+        target.SetBindings(BaseRenderableSeries.StrokeThicknessProperty, (object) this.ChartComponentView, "StrokeThickness");
+        target.SetBindings(FastLineRenderableSeries.\u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D, (object) this.ChartComponentView, "DrawStyle", converter: (IValueConverter) new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUm_WprFxHE3GMkMYTmM5Gv6xPE1lfu86yUSurnkA());
         break;
       case ChartCandleDrawStyles.BoxVolume:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd>(new ChildVM[1]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzWbY5DVo2YLuB
         });
@@ -299,11 +299,11 @@ label_4:
         target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzJmV2YqfjqzBN, (object) this.\u0023\u003Dznrzap3Ru8O5U, "FontColor");
         target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003Dz\u0024pEkT\u0024GyBsLd, (object) this.\u0023\u003Dznrzap3Ru8O5U, "MaxVolumeColor");
         target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzeOkHtL891mol_E40\u0024w\u003D\u003D, (object) this.\u0023\u003Dznrzap3Ru8O5U, "MaxVolumeBackground");
-        target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzY\u0024hEpvHX6SG5MENm\u0024w\u003D\u003D, (object) this.GetDrawableChartElement(), "Timeframe2Multiplier", BindingMode.OneWay, (IValueConverter) new CandlestickUI.\u0023\u003DzBaQAMfOA0Xrd(this.CandlesTimeframe));
-        target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzsXfDaxv8JwjzCERgkg\u003D\u003D, (object) this.GetDrawableChartElement(), "Timeframe3Multiplier", BindingMode.OneWay, (IValueConverter) new CandlestickUI.\u0023\u003DzBaQAMfOA0Xrd(this.CandlesTimeframe));
+        target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzY\u0024hEpvHX6SG5MENm\u0024w\u003D\u003D, (object) this.ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, (IValueConverter) new CandlestickUI.\u0023\u003DzBaQAMfOA0Xrd(this.CandlesTimeframe));
+        target.SetBindings(dje_zPAYV36PKF8VT83W7TYA6GZS9WQ7A9GC3RX935K47MM57JXW4GNVYASU299URDR9BJTW9S4P5GLA76LMRLQ4YZ_ejd.\u0023\u003DzsXfDaxv8JwjzCERgkg\u003D\u003D, (object) this.ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, (IValueConverter) new CandlestickUI.\u0023\u003DzBaQAMfOA0Xrd(this.CandlesTimeframe));
         break;
       case ChartCandleDrawStyles.ClusterProfile:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd>(new ChildVM[1]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzWbY5DVo2YLuB
         });
@@ -314,26 +314,26 @@ label_4:
         target.SetBindings(dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd.\u0023\u003DzcL2qfCOpQZK5, (object) this.\u0023\u003Dznrzap3Ru8O5U, "ClusterMaxColor");
         break;
       case ChartCandleDrawStyles.Area:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastMountainRenderableSeries>(new ChildVM[1]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<FastMountainRenderableSeries>(new ChartElementViewModel[1]
         {
           this.\u0023\u003DzdaM3_c5kMuSK
         });
         target.SeriesColor = Colors.Transparent;
         target.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.\u0023\u003Dznrzap3Ru8O5U, "LineColor");
-        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.GetDrawableChartElement(), "StrokeThickness");
+        target.SetBindings(BaseRenderableSeries.StrokeThicknessProperty, (object) this.ChartComponentView, "StrokeThickness");
         target.SetBindings(BaseMountainRenderableSeries.\u0023\u003DzXc9apgJiH9mm, (object) this.\u0023\u003Dznrzap3Ru8O5U, "AreaColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
         break;
       case ChartCandleDrawStyles.PnF:
-        target = (BaseRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd>(new ChildVM[4]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<dje_z2F7KFUZRTFPWT6JP9QD62893JPNDH7HDZ2FZKZQYFCVV32D7MT596XGT8S3KNWNR57LVXU8TJABWGARB6RDEX_ejd>(new ChartElementViewModel[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
           this.\u0023\u003DzjAnzC1Gk9\u0024VP,
           this.\u0023\u003DzKCOaMdzTEc8\u0024
         });
-        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.GetDrawableChartElement(), "UpBorderColor");
-        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.GetDrawableChartElement(), "DownBorderColor");
-        target.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) this.GetDrawableChartElement(), "StrokeThickness");
+        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.ChartComponentView, "UpBorderColor");
+        target.SetBindings(dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.ChartComponentView, "DownBorderColor");
+        target.SetBindings(BaseRenderableSeries.StrokeThicknessProperty, (object) this.ChartComponentView, "StrokeThickness");
         Decimal? zfIlpmP5Jfeem = this.\u0023\u003DzfILpmP5JFeem;
         if (zfIlpmP5Jfeem.HasValue)
         {
@@ -345,21 +345,21 @@ label_4:
       default:
         throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnsupportedType, new object[1]
         {
-          (object) this.GetDrawableChartElement().DrawStyle
+          (object) this.ChartComponentView.DrawStyle
         }));
     }
-    if (this.GetDrawableChartElement().DrawStyle.IsVolumeProfileChart())
+    if (this.ChartComponentView.DrawStyle.IsVolumeProfileChart())
     {
-      target.SetBindings(Control.FontFamilyProperty, (object) this.GetDrawableChartElement(), "FontFamily", converter: (IValueConverter) new FontFamilyValueConverter());
-      target.SetBindings(Control.FontSizeProperty, (object) this.GetDrawableChartElement(), "FontSize", converter: (IValueConverter) new TypeCastConverter());
-      target.SetBindings(Control.FontWeightProperty, (object) this.GetDrawableChartElement(), "FontWeight");
-      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object) this.GetDrawableChartElement(), "PriceStep");
-      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object) this.GetDrawableChartElement(), "ShowHorizontalVolumes");
-      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object) this.GetDrawableChartElement(), "LocalHorizontalVolumes");
-      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object) this.GetDrawableChartElement(), "HorizontalVolumeWidthFraction");
+      target.SetBindings(Control.FontFamilyProperty, (object) this.ChartComponentView, "FontFamily", converter: (IValueConverter) new FontFamilyValueConverter());
+      target.SetBindings(Control.FontSizeProperty, (object) this.ChartComponentView, "FontSize", converter: (IValueConverter) new TypeCastConverter());
+      target.SetBindings(Control.FontWeightProperty, (object) this.ChartComponentView, "FontWeight");
+      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object) this.ChartComponentView, "PriceStep");
+      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object) this.ChartComponentView, "ShowHorizontalVolumes");
+      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object) this.ChartComponentView, "LocalHorizontalVolumes");
+      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object) this.ChartComponentView, "HorizontalVolumeWidthFraction");
       target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzkZL83tvq\u0024ktX, (object) this.\u0023\u003Dznrzap3Ru8O5U, "HorizontalVolumeColor", BindingMode.OneWay, (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
       target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D, (object) this.\u0023\u003Dznrzap3Ru8O5U, "HorizontalVolumeFontColor");
-      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object) this.GetDrawableChartElement(), "DrawSeparateVolumes");
+      target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object) this.ChartComponentView, "DrawSeparateVolumes");
       target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzsiwadMWumB4q, (object) this.\u0023\u003Dznrzap3Ru8O5U, "BuyColor");
       target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzyQkELvBo\u002432H, (object) this.\u0023\u003Dznrzap3Ru8O5U, "SellColor");
       target.SetBindings(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzd0DbwufxB45U, (object) this.\u0023\u003Dznrzap3Ru8O5U, "UpColor");
@@ -388,10 +388,10 @@ label_4:
 
   private void \u0023\u003DztzYeKaM\u003D()
   {
-    this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D(this.\u0023\u003Dz8bZd_lILC\u0024Y\u0024(), (IRenderableSeries) this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D());
+    this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D(this.\u0023\u003Dz8bZd_lILC\u0024Y\u0024(), (IRenderableSeries) this.CreateRenderableSeries());
     this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzKj7nvWQ\u003D);
     this.ClearAll();
-    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.GetDrawableChartElement(), "ShowAxisMarker", (string) null);
+    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.ChartComponentView, "ShowAxisMarker", (string) null);
   }
 
   private void \u0023\u003Dz_JPQrgU\u003D()
@@ -405,7 +405,7 @@ label_4:
   public override void PerformPeriodicalAction()
   {
     base.PerformPeriodicalAction();
-    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR g72ZksY7iW1Jk3iR = this.ScichartSurfaceMVVM.\u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(this.GetDrawableChartElement().XAxisId);
+    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR g72ZksY7iW1Jk3iR = this.ScichartSurfaceMVVM.\u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(this.ChartComponentView.XAxisId);
     if (g72ZksY7iW1Jk3iR == null)
       return;
     IndexRange  categoryDateTimeRange = g72ZksY7iW1Jk3iR.CategoryDateTimeRange;
@@ -492,9 +492,9 @@ label_4:
   private bool Draw(
     IEnumerableEx<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D> _param1)
   {
-    if (this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D != this.GetDrawableChartElement().Colorer)
+    if (this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D != this.ChartComponentView.Colorer)
     {
-      this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D = this.GetDrawableChartElement().Colorer;
+      this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D = this.ChartComponentView.Colorer;
       this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries.\u0023\u003Dzu\u0024P3XgkcE7BC()?.\u0023\u003Dz2VqWonc\u003D<ISciChartSurface>()?.InvalidateElement();
     }
     if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>((IEnumerable<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>) _param1))
@@ -624,7 +624,7 @@ label_4:
   {
     if (!(_param1 is \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciTIXSve_YM8UPQ\u003D\u003D uyciTixSveYm8Upq))
       return (string) null;
-    switch (this.GetDrawableChartElement().DrawStyle)
+    switch (this.ChartComponentView.DrawStyle)
     {
       case ChartCandleDrawStyles.LineOpen:
         this.\u0023\u003DzdaM3_c5kMuSK.Name = "O";

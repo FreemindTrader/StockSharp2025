@@ -17,7 +17,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>The chart element representing a band.</summary>
-public sealed class ChartBandElement : ChartElement<ChartBandElement>,
+public sealed class ChartBandElement : ChartComponent<ChartBandElement>,
                                           IChartElement,
                                           IChartPart<IChartElement>,
                                           INotifyPropertyChanged,
@@ -34,7 +34,7 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
 
     private readonly ChartLineElement _lineTwo;
 
-    private DrawableChartElementBaseViewModel _baseViewModel;
+    private DrawableChartComponentBaseViewModel _baseViewModel;
 
     /// <summary>Create instance.</summary>
     public ChartBandElement()
@@ -111,7 +111,7 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM _param1 )
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM _param1 )
     {
         // BUG: need to Decode ScichartSurfaceMVVM.cs first
 

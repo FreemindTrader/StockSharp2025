@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public sealed class VolatilitySmileUI : ChartElement< VolatilitySmileUI >
+    public sealed class VolatilitySmileUI : ChartComponent< VolatilitySmileUI >
     {
         private ChartLineElement chartLineElement_0;
         private ChartLineElement chartLineElement_1;

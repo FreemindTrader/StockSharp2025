@@ -187,7 +187,7 @@ internal sealed class SciChartGroup :
       return;
     if (!_param1.\u0023\u003DzR8SPjvFW2FAx())
     {
-      this.\u0023\u003DzfttffOE\u003D(_param1.PaneElement as dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd);
+      this.RemovePropertyEvents(_param1.PaneElement as dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd);
       this.\u0023\u003Dzg0gWX4E\u003D.Remove(_param1);
       if (_param1.IsTabbed)
         this.\u0023\u003DzyMYzZrp0NM6I(_param1);
@@ -274,7 +274,7 @@ internal sealed class SciChartGroup :
     bu556QhykV4MlT6VEjd1.Style = this.ItemContainerStyle;
     dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd bu556QhykV4MlT6VEjd2 = bu556QhykV4MlT6VEjd1;
     brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D.PaneElement = (FrameworkElement) bu556QhykV4MlT6VEjd2;
-    this.\u0023\u003DzZcbqdpE\u003D(bu556QhykV4MlT6VEjd2);
+    this.AddPropertyEvents(bu556QhykV4MlT6VEjd2);
     this.\u0023\u003DzSp5oAkvK2sET(brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D);
     this.\u0023\u003Dzg0gWX4E\u003D.Add(brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D);
   }
@@ -328,14 +328,14 @@ internal sealed class SciChartGroup :
     }
   }
 
-  private void \u0023\u003DzZcbqdpE\u003D(
+  private void AddPropertyEvents(
     dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd _param1)
   {
     _param1.\u0023\u003Dz0hN6sXzm\u0024hNI(new EventHandler<DragDeltaEventArgs>(this.\u0023\u003DztNo2m0eYh0OW));
     _param1.\u0023\u003Dzl15u7RiCXQ5Z\u0024LD2pw\u003D\u003D(new EventHandler<DragCompletedEventArgs>(this.\u0023\u003Dzfjq0gu2RlSgRNsm3XA\u003D\u003D));
   }
 
-  private void \u0023\u003DzfttffOE\u003D(
+  private void RemovePropertyEvents(
     dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd _param1)
   {
     _param1.\u0023\u003DztDKfd8Um6eoX(new EventHandler<DragDeltaEventArgs>(this.\u0023\u003DztNo2m0eYh0OW));

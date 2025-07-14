@@ -27,7 +27,7 @@ using Ecng.Xaml.Converters;
 ///     
 /// It provides the basic abstract functions for the dervied class to implement.
 /// </summary>
-public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
+public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
 {
     private readonly PooledDictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new PooledDictionary< IRenderableSeries, AxisMarkerAnnotation >( );
     private ChartCompentViewModel _chartComponentViewModel;    

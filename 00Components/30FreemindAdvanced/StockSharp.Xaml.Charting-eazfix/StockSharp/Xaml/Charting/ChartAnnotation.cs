@@ -18,12 +18,12 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
-// ChartElement<ChartAnnotation>,
+// ChartComponent<ChartAnnotation>,
 //
 // ICloneable<ChartAnnotation>, ICloneable, IEquatable<ChartAnnotation>, IComparable<ChartAnnotation>, IComparable, IChartPart<ChartAnnotation>, , , , , 
 
 public class ChartAnnotation :
-  ChartElement<ChartAnnotation>,
+  ChartComponent<ChartAnnotation>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
@@ -57,12 +57,12 @@ public class ChartAnnotation :
     return Colors.Transparent;
     }
 
-    UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
       ScichartSurfaceMVVM _param1 )
     {
         if ( this.Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );
-        return ( UIChartBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
+        return ( DrawableChartElementBaseViewModel ) ( this._baseViewModel = new ChartAnnotationVM( this ) );
     }
 
     bool IDrawableChartElement.StartDrawing(

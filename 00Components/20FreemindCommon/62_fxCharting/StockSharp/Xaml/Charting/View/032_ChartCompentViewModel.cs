@@ -1,4 +1,246 @@
-﻿//using Ecng.Collections;
+﻿using Ecng.Collections;
+using StockSharp.BusinessEntities;
+using StockSharp.Charting;
+using StockSharp.Xaml.Charting;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Windows.Media;
+using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
+
+namespace StockSharp.Xaml.Charting;
+
+
+/// <summary>
+/// Represents an view model for a chart Component.
+/// 
+/// In CandleStickVM, the CandleStick is a Component, and that Candlestick UI has 4 different viusal elements
+///     1) High
+///     2) Low
+///     3) Open
+///     4) Close 
+/// All of them are represented as a ChartComponent.
+/// 
+/// 
+/// For the quote UI, it should be made up of 2 lines. The QuoteUI should be a ChartComponent. And it is made up of 2 Children's
+/// 
+///     1) Ask Line - Children one, AskLine
+///     2) Bid Line - Children two, BidLine
+/// 
+/// </summary>
+public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
+{
+
+    // This is the View Model of the Chart Component
+    private readonly ObservableCollection<ChartElementViewModel> _chartElementsViewModel = new ObservableCollection<ChartElementViewModel>();
+
+    // This is the View of the Chart Component
+    private readonly List<DrawableChartComponentBaseViewModel> _chartElementsView = new List<DrawableChartComponentBaseViewModel>();
+
+    private readonly ScichartSurfaceMVVM _drawingSurface;
+
+    private readonly IChartComponent _chartComponent;
+
+    private readonly bool _isCandleElement;
+
+    private ChartCandleElement _candleStickUI;
+
+    private bool _isDisposed;
+
+    public ChartCompentViewModel( ScichartSurfaceMVVM drawingSurface, IChartComponent component )
+    {
+        _drawingSurface = drawingSurface ?? throw new ArgumentNullException( "pane" );
+        _chartComponent = component ?? throw new ArgumentNullException( "element" );
+        _isCandleElement = component is IChartCandleElement;
+        ChartViewModel.AddInteractedEvent( OnAllowToRemove );
+        RootChartComponent.PropertyChanged += OnPropertyChanged;
+    }
+
+    public ScichartSurfaceMVVM Pane
+    {
+        get => _drawingSurface;
+    }
+
+    public bool AllowToRemove
+    {
+        get
+        {
+            // BUG: 
+            throw new NotImplementedException();
+            // return Pane.AllowElementToBeRemoved(this);
+        }
+    }
+
+
+    public IChartComponent RootChartComponent
+    {
+        get => _chartComponent;
+    }
+
+    public string Title => RootChartComponent.GetGeneratedTitle();
+
+    public bool IsCandleElement => _isCandleElement;
+
+    public ChartCandleElement Candles
+    {
+        get => _candleStickUI;
+        private set => _candleStickUI = value;
+    }
+
+    public IEnumerable<DrawableChartComponentBaseViewModel> Elements
+    {
+        get
+        {
+            return ( IEnumerable<DrawableChartComponentBaseViewModel> ) _chartElementsView;
+        }
+    }
+
+    public IEnumerable<ChartElementViewModel> Values
+    {
+        get
+        {
+            return ( IEnumerable<ChartElementViewModel> ) _chartElementsViewModel;
+        }
+    }
+
+    public Color Color
+    {
+        get
+        {
+            return _chartElementsView.Count == 1 ? _chartElementsView[ 0 ].Element.Color : Colors.Transparent;
+        }
+    }
+
+    /// <summary>
+    /// In the Initialization of the ChartComponet, we need to initialize the child elements of the ChartComponent.
+    /// 
+    /// eg. The CandlestickUI contains High, low, open, close and each of them need to be initialized. 
+    /// 
+    /// </summary>
+    /// <param name="children"></param>
+    /// <exception cref="ArgumentException"></exception>
+    public void InitializeChildElements( IEnumerable<DrawableChartComponentBaseViewModel> children )
+    {
+        var childElements = children.ToArray();
+        if ( childElements.IsEmpty() )
+            throw new ArgumentException( "zero child elements" );
+
+        _chartElementsView.AddRange( childElements );
+
+        if ( IsCandleElement && Candles == null )
+        {
+            Candles = childElements.OfType<ChartCandleElement>().First<ChartCandleElement>();
+        }
+
+        if ( _chartElementsView.Count == 1 )
+        {
+            MapPropertyChangeNotification( _chartElementsView[ 0 ].Element, "Color", "Color" );
+        }
+            
+
+        childElements.ForEach<DrawableChartComponentBaseViewModel>( p => p.Init( this ) );
+    }
+
+    private void OnAllowToRemove()
+    {
+        NotifyChanged( "AllowToRemove" );
+    }
+
+    public void AddChild( ChartElementViewModel childViewModel )
+    {
+        if ( childViewModel == null )
+            throw new ArgumentNullException( "val" );
+        if ( _chartElementsViewModel.Contains( childViewModel ) )
+            throw new ArgumentException( "val" );
+        childViewModel.ChartComponent = this;
+        _chartElementsViewModel.Add( childViewModel );
+    }
+
+    public void ClearChildViewModels()
+    {
+        foreach ( ChartElementViewModel childViewModel in _chartElementsViewModel )
+        {
+            childViewModel.Value = null;
+        }
+    }
+
+    public bool Draw( ChartDrawData _param1 )
+    {
+        return RootChartComponent.Draw( _param1 );
+    }
+
+    public void Reset()
+    {
+        RootChartComponent.Reset();
+
+        foreach ( var child in _chartElementsView )
+        {
+            child.Reset();
+        }
+    }
+
+    public void UpdateYAxisMarker()
+    {
+        foreach ( var child in _chartElementsView )
+        {
+            child.UpdateYAxisMarker();
+        }
+    }
+
+    public void PerformPeriodicalAction()
+    {
+        foreach ( var child in _chartElementsView )
+        {
+            child.PerformPeriodicalAction();
+        }
+    }
+
+    public void GuiUpdateAndClear()
+    {
+        foreach ( var child in _chartElementsView )
+        {
+            child.GuiUpdateAndClear();
+        }
+    }
+
+    internal Subscription GetSubscription( IChartComponent _param1 )
+    {
+        throw new NotImplementedException();
+
+        // BUG: Wait till Chart Code has been upgrade to uncomment the following code.
+
+        // return ( ( Chart ) Pane.Chart ).TryGetSubscription( ( IChartElement ) _param1 );
+    }
+
+    public bool IsDisposed
+    {
+        get => _isDisposed;
+        private set => _isDisposed = value;
+    }
+
+    public void Dispose()
+    {
+        // BUG: I believe there is a problem here. Doesn't look like OnAllToRemove should be binded to InteractedEvent
+        //      Should probably be linked to AllowToRemoveEvent
+        ChartViewModel.RemoveInteractedEvent( new Action( OnAllowToRemove ) );
+        IsDisposed = true;
+    }
+
+    private void OnPropertyChanged( object? _param1, PropertyChangedEventArgs _param2 )
+    {
+        if ( _param2.PropertyName != "FullTitle" ) 
+            return;
+
+        NotifyChanged( "Title" );
+    }    
+}
+
+
+
+//using Ecng.Collections;
 //using StockSharp.Xaml;
 //using StockSharp.Xaml.Charting;
 //using System;
@@ -58,7 +300,7 @@
 //        }
 //    }
 
-//    public IChartComponent ChartElement
+//    public IChartComponent ChartComponent
 //    {
 //        get
 //        {
@@ -142,12 +384,12 @@
 
 //    public bool DrawChartData( ChartDrawData data )
 //    {
-//        return ChartElement.Draw( data );
+//        return ChartComponent.Draw( data );
 //    }
 
 //    public void UpdateChildElements( )
 //    {
-//        ChartElement.Reset( );
+//        ChartComponent.Reset( );
 
 //        foreach( DrawableChartElementBaseViewModel child in _childElements )
 //        {
@@ -196,242 +438,4 @@
 //        IsDisposed = true;
 //    }
 //}
-
-using Ecng.Collections;
-using StockSharp.BusinessEntities;
-using StockSharp.Charting;
-using StockSharp.Xaml.Charting;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Windows.Media;
-using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
-
-namespace StockSharp.Xaml.Charting;
-
-
-/// <summary>
-/// Represents an view model for a chart Component.
-/// 
-/// In CandleStickVM, the CandleStick is a Component, and that Candlestick UI has 4 different viusal elements
-///     1) High
-///     2) Low
-///     3) Open
-///     4) Close 
-/// All of them are represented as a ChartElement.
-/// 
-/// 
-/// For the quote UI, it should be made up of 2 lines. The QuoteUI should be a ChartComponent. And it is made up of 2 Children's
-/// 
-///     1) Ask Line - Children one, AskLine
-///     2) Bid Line - Children two, BidLine
-/// 
-/// </summary>
-public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
-{
-
-    // This is the View Model of the Chart Component
-    private readonly ObservableCollection<ChartElementViewModel> _chartElementsViewModel = new ObservableCollection<ChartElementViewModel>();
-
-    // This is the View of the Chart Component
-    private readonly List<DrawableChartElementBaseViewModel> _chartElementsView = new List<DrawableChartElementBaseViewModel>();
-
-    private readonly ScichartSurfaceMVVM _drawingSurface;
-
-    private readonly IChartComponent _chartComponent;
-
-    private readonly bool _isCandleElement;
-
-    private ChartCandleElement _candleStickUI;
-
-    private bool _isDisposed;
-
-    public ChartCompentViewModel( ScichartSurfaceMVVM drawingSurface, IChartComponent component )
-    {
-        _drawingSurface = drawingSurface ?? throw new ArgumentNullException( "pane" );
-        _chartComponent = component ?? throw new ArgumentNullException( "element" );
-        _isCandleElement = component is IChartCandleElement;
-        ChartViewModel.AddInteractedEvent( OnAllowToRemove ) ;
-        RootChartComponent.PropertyChanged += OnPropertyChanged;
-    }
-
-    public ScichartSurfaceMVVM Pane
-    {
-        get => _drawingSurface;
-    }
-
-    public bool AllowToRemove
-    {
-        get
-        {
-            // BUG: 
-            throw new NotImplementedException();
-            // return Pane.AllowElementToBeRemoved(this);
-        }
-    }
-        
-
-    public IChartComponent RootChartComponent
-    {
-        get => _chartComponent;
-    }
-
-    public string Title => RootChartComponent.GetGeneratedTitle();
-
-    public bool IsCandleElement => _isCandleElement;
-
-    public ChartCandleElement Candles
-    {
-        get => _candleStickUI;
-        private set => _candleStickUI = value;
-    }
-
-    public IEnumerable<DrawableChartElementBaseViewModel> Elements
-    {
-        get
-        {
-            return ( IEnumerable<DrawableChartElementBaseViewModel> ) _chartElementsView;
-        }
-    }
-
-    public IEnumerable<ChartElementViewModel> Values
-    {
-        get
-        {
-            return ( IEnumerable<ChartElementViewModel> ) _chartElementsViewModel;
-        }
-    }
-
-    public Color Color
-    {
-        get
-        {
-            return _chartElementsView.Count == 1 ? _chartElementsView[ 0 ].Element.Color : Colors.Transparent;
-        }
-    }
-
-    /// <summary>
-    /// In the Initialization of the ChartComponet, we need to initialize the child elements of the ChartComponent.
-    /// 
-    /// eg. The CandlestickUI contains High, low, open, close and each of them need to be initialized. 
-    /// 
-    /// </summary>
-    /// <param name="children"></param>
-    /// <exception cref="ArgumentException"></exception>
-    public void InitializeChildElements( IEnumerable<DrawableChartElementBaseViewModel> children )
-    {
-        var childElements = children.ToArray();
-        if ( childElements.IsEmpty(  ) )
-            throw new ArgumentException( "zero child elements" );
-
-        _chartElementsView.AddRange( childElements );
-        if ( IsCandleElement && Candles == null )
-            Candles = childElements.OfType<ChartCandleElement>().First<ChartCandleElement>();
-        if ( _chartElementsView.Count == 1 )
-            MapPropertyChangeNotification( _chartElementsView[ 0 ].Element, "Color", "Color" );
-
-        childElements.ForEach<DrawableChartElementBaseViewModel>(  p => p.Init( this ) );
-    }
-
-    private void OnAllowToRemove()
-    {
-        NotifyChanged( "AllowToRemove" );
-    }
-
-    public void AddChild( ChartElementViewModel childViewModel )
-    {
-        if ( childViewModel == null )
-            throw new ArgumentNullException( "val" );
-        if ( _chartElementsViewModel.Contains( childViewModel ) )
-            throw new ArgumentException( "val" );
-        childViewModel.ChartComponent = this;
-        _chartElementsViewModel.Add( childViewModel );
-    }
-
-    public void ClearChildViewModels()
-    {
-        foreach ( ChartElementViewModel childViewModel in _chartElementsViewModel )
-        {
-            childViewModel.Value = null;
-        }
-    }
-
-    public bool Draw( ChartDrawData _param1 )
-    {
-        return RootChartComponent.Draw( _param1 );
-    }
-
-    public void Reset()
-    {
-        RootChartComponent.Reset();
-
-        foreach ( var child in _chartElementsView )
-        {
-            child.Reset();
-        }
-    }
-
-    public void UpdateYAxisMarker()
-    {
-        foreach ( var child in _chartElementsView )
-        {
-            child.UpdateYAxisMarker();
-        }
-    }
-
-    public void PerformPeriodicalAction()
-    {
-        foreach ( var child in _chartElementsView )
-        {
-            child.PerformPeriodicalAction();
-        }
-    }
-
-    public void GuiUpdateAndClear()
-    {
-        foreach ( DrawableChartElementBaseViewModel child in _chartElementsView )
-        {
-            child.GuiUpdateAndClear();
-        }
-    }
-
-    internal Subscription GetSubscription( IChartComponent _param1 )
-    {
-        throw new NotImplementedException();
-
-        // BUG: Wait till Chart Code has been upgrade to uncomment the following code.
-
-        // return ( ( Chart ) Pane.Chart ).TryGetSubscription( ( IChartElement ) _param1 );
-    }
-
-    public bool IsDisposed
-    {
-        get => _isDisposed;
-        private set => _isDisposed = value;
-    }
-
-    public void Dispose()
-    {
-        // BUG: I believe there is a problem here. Doesn't look like OnAllToRemove should be binded to InteractedEvent
-        //      Should probably be linked to AllowToRemoveEvent
-        ChartViewModel.RemoveInteractedEvent( new Action( OnAllowToRemove ) );
-        IsDisposed = true;
-    }
-
-    private void OnPropertyChanged( object? _param1, PropertyChangedEventArgs _param2 )
-    {
-        if ( !( _param2.PropertyName == "FullTitle" ) )
-            return;
-        NotifyChanged( "Title" );
-    }
-
-    private void OnSomethingMethod0934( DrawableChartElementBaseViewModel _param1 )
-    {
-        _param1.Init( this );
-    }
-
-}
 

@@ -25,7 +25,7 @@ namespace StockSharp.Xaml.Charting;
 
 [Display(ResourceType = typeof (LocalizedStrings), Name = "IndicatorSettings")]
 public sealed class ChartIndicatorElement : 
-  ChartElement<ChartIndicatorElement>,
+  ChartComponent<ChartIndicatorElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,

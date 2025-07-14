@@ -24,7 +24,7 @@ using System.Windows.Media;
 
 #nullable disable
 internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D> : 
-  ChartElementUI<ChartBandElement>
+  ChartCompentView<ChartBandElement>
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
   
@@ -40,9 +40,9 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
   
   private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzRm0WUjzJSu8n;
   
-  private ChildVM \u0023\u003Dzh0ozsIDILK5b;
+  private ChartElementViewModel \u0023\u003Dzh0ozsIDILK5b;
   
-  private ChildVM \u0023\u003DzXNWLRaQhQW_0;
+  private ChartElementViewModel \u0023\u003DzXNWLRaQhQW_0;
   
   private IComparable \u0023\u003DzFEDR40ugZMK3;
 
@@ -68,25 +68,25 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
       DrawStyles.StepLine,
       DrawStyles.DashedLine
     };
-    ChartElementUI<ChartBandElement>.\u0023\u003Dz9tL3mkpMz5PJ<DrawStyles>((IChartComponent) this.GetDrawableChartElement().Line1, "Style", drawStylesArray);
-    ChartElementUI<ChartBandElement>.\u0023\u003Dz9tL3mkpMz5PJ<DrawStyles>((IChartComponent) this.GetDrawableChartElement().Line2, "Style", drawStylesArray);
+    ChartCompentView<ChartBandElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView.Line1, "Style", drawStylesArray);
+    ChartCompentView<ChartBandElement>.AddStylePropertyChanging<DrawStyles>((IChartComponent) this.ChartComponentView.Line2, "Style", drawStylesArray);
     string[] strArray = new string[2]
     {
       "Color",
       "AdditionalColor"
     };
-    this.ChartViewModel.AddChild(this.\u0023\u003Dzh0ozsIDILK5b = new ChildVM((INotifyPropertyChanged) this.GetDrawableChartElement().Line1, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dzgl15kO2PtK5giK8GzTIwj08\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D)), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzXNWLRaQhQW_0 = new ChildVM((INotifyPropertyChanged) this.GetDrawableChartElement().Line2, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dz7GRJChTRxjdOfay3RCW2oqs\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.SomeMethond0343.\u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D)), strArray));
-    this.\u0023\u003DzZcbqdpE\u003D((IChartComponent) this.GetDrawableChartElement().Line1);
-    this.\u0023\u003DzZcbqdpE\u003D((IChartComponent) this.GetDrawableChartElement().Line2);
+    this.ChartViewModel.AddChild(this.\u0023\u003Dzh0ozsIDILK5b = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView.Line1, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dzgl15kO2PtK5giK8GzTIwj08\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzXNWLRaQhQW_0 = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView.Line2, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dz7GRJChTRxjdOfay3RCW2oqs\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383.SomeMethond0343.\u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D)), strArray));
+    this.AddPropertyEvents((IChartComponent) this.ChartComponentView.Line1);
+    this.AddPropertyEvents((IChartComponent) this.ChartComponentView.Line2);
     this.\u0023\u003DzYirGqB2gXz09 = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003Dzva\u002460XCiLL2n, (IRenderableSeries) null);
     this.\u0023\u003DzIHjxTqC159pe = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzRSDkBpQ1QWG0, (IRenderableSeries) null);
     this.\u0023\u003DzRm0WUjzJSu8n = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzDh1lJfFlHUWk, (IRenderableSeries) null);
     this.\u0023\u003DzcIqdE4oVd9lsrOCnFSgflME\u003D();
-    this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzYirGqB2gXz09, this.GetDrawableChartElement().Line1, this.\u0023\u003Dzh0ozsIDILK5b);
-    this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzIHjxTqC159pe, this.GetDrawableChartElement().Line2, this.\u0023\u003DzXNWLRaQhQW_0);
-    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, (IChartComponent) this.GetDrawableChartElement().Line1, "ShowAxisMarker", "Color");
-    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, (IChartComponent) this.GetDrawableChartElement().Line2, "ShowAxisMarker", "Color");
+    this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzYirGqB2gXz09, this.ChartComponentView.Line1, this.\u0023\u003Dzh0ozsIDILK5b);
+    this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzIHjxTqC159pe, this.ChartComponentView.Line2, this.\u0023\u003DzXNWLRaQhQW_0);
+    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, (IChartComponent) this.ChartComponentView.Line1, "ShowAxisMarker", "Color");
+    this.SetupAxisMarkerAndBinding(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, (IChartComponent) this.ChartComponentView.Line2, "ShowAxisMarker", "Color");
     this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzYirGqB2gXz09);
     this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzIHjxTqC159pe);
     this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzRm0WUjzJSu8n);
@@ -95,43 +95,43 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
 
   private void \u0023\u003DzJGn0U4ESy8cx()
   {
-    ChartElementUI<ChartBandElement>.\u0023\u003DzpbLgaWJ0hngn(this.\u0023\u003DzRm0WUjzJSu8n.RenderSeries, false);
-    ChartElementUI<ChartBandElement>.\u0023\u003DzpbLgaWJ0hngn(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, true);
-    ChartElementUI<ChartBandElement>.\u0023\u003DzpbLgaWJ0hngn(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, this.GetDrawableChartElement().Style == DrawStyles.Band);
+    ChartCompentView<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzRm0WUjzJSu8n.RenderSeries, false);
+    ChartCompentView<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, true);
+    ChartCompentView<ChartBandElement>.SetIncludeSeries(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, this.ChartComponentView.Style == DrawStyles.Band);
   }
 
   private void \u0023\u003DzcIqdE4oVd9lsrOCnFSgflME\u003D()
   {
     if (this.\u0023\u003DzRm0WUjzJSu8n.RenderSeries is dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd)
       return;
-    dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd xc8MfylkhywkcxaEjd = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd>(Array.Empty<ChildVM>());
+    dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd xc8MfylkhywkcxaEjd = this.CreateRenderableSeries<dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd>(Array.Empty<ChartElementViewModel>());
     this.\u0023\u003DzRm0WUjzJSu8n.RenderSeries = (IRenderableSeries) xc8MfylkhywkcxaEjd;
     xc8MfylkhywkcxaEjd.SeriesColor = xc8MfylkhywkcxaEjd.Series1Color = Colors.Transparent;
-    xc8MfylkhywkcxaEjd.SetBindings(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.\u0023\u003DzqXdfa4iudfGA, (object) this.GetDrawableChartElement().Line1, "AdditionalColor");
-    xc8MfylkhywkcxaEjd.SetBindings(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.\u0023\u003DzJJDbrFb7cXV\u0024, (object) this.GetDrawableChartElement().Line2, "AdditionalColor");
+    xc8MfylkhywkcxaEjd.SetBindings(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.\u0023\u003DzqXdfa4iudfGA, (object) this.ChartComponentView.Line1, "AdditionalColor");
+    xc8MfylkhywkcxaEjd.SetBindings(dje_zHZJUNELMY3BAWUYNNRAVXVEJSHT9V29B8J9F3NL335LNBX9S38NTQ32RC2TS5VYKTNJEX9XC8MFYLKHYWKCXA_ejd.\u0023\u003DzJJDbrFb7cXV\u0024, (object) this.ChartComponentView.Line2, "AdditionalColor");
   }
 
   private void \u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(
     \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D _param1,
     ChartLineElement _param2,
-    ChildVM _param3)
+    ChartElementViewModel _param3)
   {
     if (!(_param1.RenderSeries is FastLineRenderableSeries mq47Z7V297V2U22Ejd))
     {
       \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D js00Vef8BmoZoBlhDa = _param1;
-      ChildVM[] h0icPdKkp5z7HsjcOyArray = new ChildVM[1]
+      ChartElementViewModel[] h0icPdKkp5z7HsjcOyArray = new ChartElementViewModel[1]
       {
         _param3
       };
       FastLineRenderableSeries mq47Z7V297V2U22Ejd1;
-      mq47Z7V297V2U22Ejd = mq47Z7V297V2U22Ejd1 = this.\u0023\u003Dzj4cwTqTBSZ3fAaZzTX46uig\u003D<FastLineRenderableSeries>(h0icPdKkp5z7HsjcOyArray);
+      mq47Z7V297V2U22Ejd = mq47Z7V297V2U22Ejd1 = this.CreateRenderableSeries<FastLineRenderableSeries>(h0icPdKkp5z7HsjcOyArray);
       js00Vef8BmoZoBlhDa.RenderSeries = (IRenderableSeries) mq47Z7V297V2U22Ejd1;
       mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) _param2, "Color");
       mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003Dz13qAkT\u0024eFXTPuGCUqjA\u0024Svw\u003D, (object) _param2, "DrawTemplate");
-      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzTe_gV3cWjEp7, (object) _param2, "StrokeThickness");
-      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.\u0023\u003Dzdr5RTntdbeN7, (object) _param2, "AntiAliasing");
+      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.StrokeThicknessProperty, (object) _param2, "StrokeThickness");
+      mq47Z7V297V2U22Ejd.SetBindings(BaseRenderableSeries.AntiAliasingProperty, (object) _param2, "AntiAliasing");
       FastLineRenderableSeries mq47Z7V297V2U22Ejd2 = mq47Z7V297V2U22Ejd;
-      DependencyProperty z8b6MqaiE8Uzn = BaseRenderableSeries.\u0023\u003Dz8b6MQAIE8UZn;
+      DependencyProperty z8b6MqaiE8Uzn = BaseRenderableSeries.IsVisibleProperty;
       BoolAllConverter conv = new BoolAllConverter();
       conv.Value = true;
       Binding[] bindingArray = new Binding[3]
@@ -139,11 +139,11 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
         new Binding("IsVisible") { Source = (object) _param2 },
         new Binding("IsVisible")
         {
-          Source = (object) this.GetDrawableChartElement()
+          Source = (object) this.ChartComponentView
         },
         new Binding("IsVisible")
         {
-          Source = (object) ((IChartComponent) this.GetDrawableChartElement()).RootElement
+          Source = (object) ((IChartComponent) this.ChartComponentView).RootElement
         }
       };
       mq47Z7V297V2U22Ejd2.SetMultiBinding(z8b6MqaiE8Uzn, (IMultiValueConverter) conv, bindingArray);
@@ -242,8 +242,8 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
     if (_param2 == "Style")
     {
       this.\u0023\u003DzcIqdE4oVd9lsrOCnFSgflME\u003D();
-      this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzYirGqB2gXz09, this.GetDrawableChartElement().Line1, this.\u0023\u003Dzh0ozsIDILK5b);
-      this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzIHjxTqC159pe, this.GetDrawableChartElement().Line2, this.\u0023\u003DzXNWLRaQhQW_0);
+      this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzYirGqB2gXz09, this.ChartComponentView.Line1, this.\u0023\u003Dzh0ozsIDILK5b);
+      this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzIHjxTqC159pe, this.ChartComponentView.Line2, this.\u0023\u003DzXNWLRaQhQW_0);
     }
     if (!(_param2 == "Style"))
       return;
@@ -253,13 +253,13 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
   private Color \u0023\u003Dzgl15kO2PtK5giK8GzTIwj08\u003D(
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
   {
-    return ChildVM.GetHigherAlphaColor(this.GetDrawableChartElement().Line1.Color, this.GetDrawableChartElement().Line1.AdditionalColor);
+    return ChartElementViewModel.GetHigherAlphaColor(this.ChartComponentView.Line1.Color, this.ChartComponentView.Line1.AdditionalColor);
   }
 
   private Color \u0023\u003Dz7GRJChTRxjdOfay3RCW2oqs\u003D(
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
   {
-    return ChildVM.GetHigherAlphaColor(this.GetDrawableChartElement().Line2.Color, this.GetDrawableChartElement().Line2.AdditionalColor);
+    return ChartElementViewModel.GetHigherAlphaColor(this.ChartComponentView.Line2.Color, this.ChartComponentView.Line2.AdditionalColor);
   }
 
   [Serializable]

@@ -23,7 +23,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>The chart element representing a band.</summary>
-public sealed class ChartBandElement : ChartElement<ChartBandElement>,
+public sealed class ChartBandElement : ChartComponent<ChartBandElement>,
                                           IChartElement,
                                           IChartPart<IChartElement>,
                                           INotifyPropertyChanged,
@@ -40,7 +40,7 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
 
     private readonly ChartLineElement _lineTwo;
 
-    private UIChartBaseViewModel _baseViewModel;
+    private DrawableChartElementBaseViewModel _baseViewModel;
 
     /// <summary>Create instance.</summary>
     public ChartBandElement()
@@ -109,10 +109,10 @@ public sealed class ChartBandElement : ChartElement<ChartBandElement>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
       ScichartSurfaceMVVM _param1 )
     {
-        this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( UIChartBaseViewModel ) new ChartBandElementVM<DateTime>( this );
+        this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( DrawableChartElementBaseViewModel ) new ChartBandElementVM<DateTime>( this );
         return _baseViewModel;
     }
 

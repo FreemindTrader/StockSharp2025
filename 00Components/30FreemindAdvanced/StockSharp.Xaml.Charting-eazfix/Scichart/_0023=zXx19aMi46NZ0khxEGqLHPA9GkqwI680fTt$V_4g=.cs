@@ -21,8 +21,8 @@ internal sealed class \u0023\u003DzXx19aMi46NZ0khxEGqLHPA9GkqwI680fTt\u0024V_4g\
     this.\u0023\u003DzOB_PnyTvM_Xa = _param1.IsPolarChart ? \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZbHiFZEipPcMLCVdoP4\u003D.Polar : \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZbHiFZEipPcMLCVdoP4\u003D.Cartesian;
     this.\u0023\u003Dz_OQFJIM58KqxfIoBBA\u003D\u003D(new Size(), this.\u0023\u003DzOB_PnyTvM_Xa);
     \u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D qob9tosVgUIiwaqHr9Eoq = _param1.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>();
-    qob9tosVgUIiwaqHr9Eoq.\u0023\u003DzZcbqdpE\u003D<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2QRz_uGPlEIz4W0k_ThlbVRdyLkdBA\u003D\u003D>(new Action<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2QRz_uGPlEIz4W0k_ThlbVRdyLkdBA\u003D\u003D>(this.\u0023\u003DznkNo55DLKuFRxtnbV98i2OE\u003D), true);
-    qob9tosVgUIiwaqHr9Eoq.\u0023\u003DzZcbqdpE\u003D<\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMyyFQ23l9dmBE_BFsxBElcEz4>(new Action<\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMyyFQ23l9dmBE_BFsxBElcEz4>(this.\u0023\u003Dz\u0024H0c0aFia0lU), true);
+    qob9tosVgUIiwaqHr9Eoq.AddPropertyEvents<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2QRz_uGPlEIz4W0k_ThlbVRdyLkdBA\u003D\u003D>(new Action<\u0023\u003DzE2B_RS0KvtqHnw_gRshK2QRz_uGPlEIz4W0k_ThlbVRdyLkdBA\u003D\u003D>(this.\u0023\u003DznkNo55DLKuFRxtnbV98i2OE\u003D), true);
+    qob9tosVgUIiwaqHr9Eoq.AddPropertyEvents<\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMyyFQ23l9dmBE_BFsxBElcEz4>(new Action<\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMyyFQ23l9dmBE_BFsxBElcEz4>(this.\u0023\u003Dz\u0024H0c0aFia0lU), true);
   }
 
   private void \u0023\u003Dz_OQFJIM58KqxfIoBBA\u003D\u003D(

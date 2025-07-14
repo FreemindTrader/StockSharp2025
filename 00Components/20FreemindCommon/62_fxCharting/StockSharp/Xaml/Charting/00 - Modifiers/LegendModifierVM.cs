@@ -38,7 +38,7 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
         // BUG: need to work on ChartCompentViewModel first
         //this._removeElementCommand = new ActionCommand<ChartCompentViewModel>(
-        //    vm => RemoveElmentEvent?.Invoke( vm.ChartElement ),
+        //    vm => RemoveElmentEvent?.Invoke( vm.ChartComponent ),
         //    p => p.AllowToRemove );
     }
 

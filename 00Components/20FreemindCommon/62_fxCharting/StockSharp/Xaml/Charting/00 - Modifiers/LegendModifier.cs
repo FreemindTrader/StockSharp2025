@@ -87,9 +87,9 @@ namespace StockSharp.Xaml.Charting
 
 
 
-            Func<SeriesInfo, DrawableChartElementBaseViewModel> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[ ]> )?.Item1 );
+            Func<SeriesInfo, DrawableChartComponentBaseViewModel> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[ ]> )?.Item1 );
 
-            Func<IGrouping<DrawableChartElementBaseViewModel, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
+            Func<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
 
             var groupDatas = SeriesData.SeriesInfo.GroupBy( groupByCondition ).Where( whereCondition );
 
@@ -97,7 +97,7 @@ namespace StockSharp.Xaml.Charting
             {
                 foreach ( SeriesInfo info in myGroup )
                 {
-                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[ ]>;
+                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[ ]>;
 
                     if ( tag == null )
                     {

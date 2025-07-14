@@ -14,12 +14,12 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public sealed class QuotesUI : ChartElement<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public sealed class QuotesUI : ChartComponent<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
         private ChartLineElement                   _bidLine;
         private ChartLineElement                   _askLine;
-        private DrawableChartElementBaseViewModel                 _viewModel;
+        private DrawableChartComponentBaseViewModel                 _viewModel;
 
         public QuotesUI( )
         {
@@ -108,7 +108,7 @@ namespace StockSharp.Xaml.Charting
             return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
         }
 
-        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             _viewModel = new QuotesVM( this );
             return _viewModel;

@@ -56,7 +56,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     }
 
     /// <summary>
-    /// Compare <see cref="T:StockSharp.Xaml.Charting.ChartElement`1"/> on the equivalence.
+    /// Compare <see cref="T:StockSharp.Xaml.Charting.ChartComponent`1"/> on the equivalence.
     /// </summary>
     /// <param name="other">Another value with which to compare.</param>
     /// <returns>
@@ -66,7 +66,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     protected override bool OnEquals( T other ) => other.Id == this.Id;
 
     /// <summary>
-    /// Get the hash code of the object <see cref="T:StockSharp.Xaml.Charting.ChartElement`1"/>.
+    /// Get the hash code of the object <see cref="T:StockSharp.Xaml.Charting.ChartComponent`1"/>.
     /// </summary>
     /// <returns>A hash code.</returns>
     public override int GetHashCode() => this.Id.GetHashCode();

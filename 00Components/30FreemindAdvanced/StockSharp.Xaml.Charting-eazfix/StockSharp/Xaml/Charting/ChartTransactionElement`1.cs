@@ -25,7 +25,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 public abstract class ChartTransactionElement<T> : 
-  ChartElement<T>,
+  ChartComponent<T>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
@@ -49,7 +49,7 @@ public abstract class ChartTransactionElement<T> :
   
   private double \u0023\u003Dzv0dodASrSZi6;
   
-  private UIChartBaseViewModel _baseViewModel;
+  private DrawableChartElementBaseViewModel _baseViewModel;
 
   protected ChartTransactionElement()
   {
@@ -231,10 +231,10 @@ public abstract class ChartTransactionElement<T> :
     set => this.SellStrokeColor = value.ToWpf();
   }
 
-  UIChartBaseViewModel IDrawableChartElement.CreateViewModel(
+  DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this._baseViewModel = (UIChartBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
+    return this._baseViewModel = (DrawableChartElementBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
   }
 
   bool IDrawableChartElement.StartDrawing(

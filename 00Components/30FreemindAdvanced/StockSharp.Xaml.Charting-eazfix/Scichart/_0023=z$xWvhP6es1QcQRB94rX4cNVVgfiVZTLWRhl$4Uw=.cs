@@ -7,13 +7,13 @@
 #nullable disable
 internal interface \u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D
 {
-  void \u0023\u003DzZcbqdpE\u003D(
+  void AddPropertyEvents(
     \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV _param1,
     IReceiveMouseEvents  _param2);
 
-  void \u0023\u003DzfttffOE\u003D(
+  void RemovePropertyEvents(
     \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV _param1);
 
-  void \u0023\u003DzfttffOE\u003D(
+  void RemovePropertyEvents(
     IReceiveMouseEvents  _param1);
 }

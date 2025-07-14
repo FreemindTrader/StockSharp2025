@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ChartElement`1
+// Type: StockSharp.Xaml.Charting.ChartComponent`1
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -27,7 +27,7 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
-public abstract class ChartElement<T> :
+public abstract class ChartComponent<T> :
   ChartPart<T>,
   IChartElement,
   IChartPart<IChartElement>,
@@ -35,7 +35,7 @@ public abstract class ChartElement<T> :
   INotifyPropertyChanging,
   IPersistable,
   IChartComponent
-  where T : ChartElement<T>
+  where T : ChartComponent<T>
 {
 
     private IChartComponent _parentElement;
@@ -162,7 +162,7 @@ public abstract class ChartElement<T> :
         get => this._drawingColor;
         set
         {
-            ChartElement<T>.SomePrivateSealedClass u8Jor1ugvGeCvjho = new ChartElement<T>.SomePrivateSealedClass();
+            ChartComponent<T>.SomePrivateSealedClass u8Jor1ugvGeCvjho = new ChartComponent<T>.SomePrivateSealedClass();
             u8Jor1ugvGeCvjho._IComparable = value;
             this._drawingColor = u8Jor1ugvGeCvjho._IComparable;
             if ( this._drawingColor == null )
@@ -401,7 +401,7 @@ public abstract class ChartElement<T> :
 
     public override T Clone()
     {
-        ChartElement<T>.SomePrivateSealedClass034 uw9yL4K8Elv3B8f3hPm = new ChartElement<T>.SomePrivateSealedClass034();
+        ChartComponent<T>.SomePrivateSealedClass034 uw9yL4K8Elv3B8f3hPm = new ChartComponent<T>.SomePrivateSealedClass034();
         uw9yL4K8Elv3B8f3hPm._SomeMethod034098 = this.CreateClone();
         uw9yL4K8Elv3B8f3hPm._SomeMethod034098._extraName.AddRange( ( IEnumerable<string> ) this._extraName );
         CollectionHelper.ForEach<KeyValuePair<Guid, string>>( ( IEnumerable<KeyValuePair<Guid, string>> ) this._idToName, new Action<KeyValuePair<Guid, string>>( uw9yL4K8Elv3B8f3hPm.SomeShitNow) );

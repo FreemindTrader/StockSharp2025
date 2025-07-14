@@ -3,7 +3,7 @@ using StockSharp.Xaml.Charting;
 using System;
 using System.Linq;
 
-internal sealed class ChartAnnotationVM : UIHigherVM< ChartAnnotation >
+internal sealed class ChartAnnotationVM : ChartCompentWpfBaseViewModel< ChartAnnotation >
 {
     public ChartAnnotationVM( ChartAnnotation annotation ) : base( annotation )
     {
@@ -15,12 +15,12 @@ internal sealed class ChartAnnotationVM : UIHigherVM< ChartAnnotation >
 
     protected override void Clear( )
     {
-        DrawingSurface.RemoveAnnotation( ChartElement );
+        DrawingSurface.RemoveAnnotation( ChartComponentView );
     }
 
     public override bool Draw( IEnumerableEx< ChartDrawData.IDrawValue > e )
     {
-        PerformUIAction2( () => DrawingSurface.SetupAnnotation( ChartElement, e.Cast<ChartDrawData.sAnnotation>( ).Single( ) ), true );
+        PerformUIAction2( () => DrawingSurface.SetupAnnotation( ChartComponentView, e.Cast<ChartDrawData.sAnnotation>( ).Single( ) ), true );
 
         return true;
     }    

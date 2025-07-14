@@ -41,14 +41,14 @@
       <Border>
         <Border.Background>
           <MultiBinding Converter="{StaticResource axesToBorderConv}">
-            <Binding Path="ChartElement.XAxis"/>
-            <Binding Path="ChartElement.YAxis"/>
+            <Binding Path="ChartComponent.XAxis"/>
+            <Binding Path="ChartComponent.YAxis"/>
           </MultiBinding>
         </Border.Background>
         <FrameworkElement.ToolTip>
           <MultiBinding Converter="{StaticResource axesToTooltipConv}">
-            <Binding Path="ChartElement.XAxis"/>
-            <Binding Path="ChartElement.YAxis"/>
+            <Binding Path="ChartComponent.XAxis"/>
+            <Binding Path="ChartComponent.YAxis"/>
           </MultiBinding>
         </FrameworkElement.ToolTip>
         <Grid HorizontalAlignment="Left">
@@ -60,13 +60,13 @@
             <ColumnDefinition Width="Auto"/>
           </Grid.ColumnDefinitions>
           <CheckBox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="16"
-                    IsChecked="{Binding ChartElement.IsVisible, Mode=TwoWay}"
+                    IsChecked="{Binding ChartComponent.IsVisible, Mode=TwoWay}"
                     Visibility="{Binding ElementName=Ctrl, Path=DataContext.AllowToHide, Converter={StaticResource BooleanToVisibilityConverter}}"/>
           <l1lil:ChartElementEditor Grid.Column="1" Width="16" Height="16">
             <FrameworkElement.DataContext>
               <MultiBinding Converter="{StaticResource UltrachartElementToSettingsObjectConverter}">
-                <Binding Path="ChartElement"/>
-                <Binding Path="ChartElement.IndicatorPainter" FallbackValue="{l1llili1:Null}"/>
+                <Binding Path="ChartComponent"/>
+                <Binding Path="ChartComponent.IndicatorPainter" FallbackValue="{l1llili1:Null}"/>
               </MultiBinding>
             </FrameworkElement.DataContext>
           </l1lil:ChartElementEditor>

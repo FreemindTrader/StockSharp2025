@@ -30,7 +30,7 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   
   public static readonly DependencyProperty \u0023\u003Dzvp8Q5iyLlWID = DependencyProperty.Register(nameof (AxisMarkerStyle), typeof (Style), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty \u0023\u003DziAqnE8_\u0024SBDB = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
+  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DzdXB_wQ4DNB7BU25L6g\u003D\u003D)));
   
   public static readonly DependencyProperty \u0023\u003DzNnZwaoee8xziVPglsg\u003D\u003D = DependencyProperty.RegisterAttached("IsSeriesValueModifierEnabled", typeof (bool), typeof (dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd), new PropertyMetadata((object) true));
   
@@ -106,11 +106,11 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
   {
     get
     {
-      return (string) this.GetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DziAqnE8_\u0024SBDB);
+      return (string) this.GetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.YAxisIdProperty);
     }
     set
     {
-      this.SetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.\u0023\u003DziAqnE8_\u0024SBDB, (object) value);
+      this.SetValue(dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd.YAxisIdProperty, (object) value);
     }
   }
 

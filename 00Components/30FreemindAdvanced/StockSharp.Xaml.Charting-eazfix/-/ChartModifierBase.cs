@@ -202,15 +202,15 @@ internal abstract class ChartModifierBase :
       if (this._serviceContainer != null)
       {
         if (this.\u0023\u003DzNJAhntg15gAM != null)
-          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzfttffOE\u003D<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzNJAhntg15gAM);
+          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().RemovePropertyEvents<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzNJAhntg15gAM);
         if (this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D != null)
-          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzfttffOE\u003D<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D);
+          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().RemovePropertyEvents<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D);
       }
       this._serviceContainer = value;
       if (this._serviceContainer == null)
         return;
-      this.\u0023\u003DzNJAhntg15gAM = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzZcbqdpE\u003D<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(new Action<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzY1JcdEJm3Ryc), true);
-      this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzZcbqdpE\u003D<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(new Action<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzuzARK4K7AoZvKMXK2g\u003D\u003D), true);
+      this.\u0023\u003DzNJAhntg15gAM = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().AddPropertyEvents<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(new Action<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzY1JcdEJm3Ryc), true);
+      this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().AddPropertyEvents<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(new Action<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzuzARK4K7AoZvKMXK2g\u003D\u003D), true);
     }
   }
 

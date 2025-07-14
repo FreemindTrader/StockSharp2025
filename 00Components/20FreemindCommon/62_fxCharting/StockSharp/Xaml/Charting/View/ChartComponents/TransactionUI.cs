@@ -11,7 +11,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public abstract class TransactionUI< T > : ChartElement< T >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public abstract class TransactionUI< T > : ChartComponent< T >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
         where T : TransactionUI< T >, new()
     {
         private string _title;
@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting
         private Color _buyStrokeColor;
         private Color _sellColor;
         private Color _sellStrokeColor;
-        private DrawableChartElementBaseViewModel _viewModel;
+        private DrawableChartComponentBaseViewModel _viewModel;
 
         protected TransactionUI( )
         {
@@ -173,7 +173,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
         {
             return _viewModel = new TransactionVM<T>( ( T ) this );
         }

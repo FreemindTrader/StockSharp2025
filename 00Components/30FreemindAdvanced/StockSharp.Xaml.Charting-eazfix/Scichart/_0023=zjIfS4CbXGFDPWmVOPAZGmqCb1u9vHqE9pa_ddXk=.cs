@@ -41,11 +41,11 @@ internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u00
     IServiceContainer _param1)
   {
     if (this._serviceContainer != null)
-      this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().\u0023\u003DzfttffOE\u003D((IReceiveMouseEvents ) this);
+      this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().RemovePropertyEvents((IReceiveMouseEvents ) this);
     this._serviceContainer = _param1;
     if (this._serviceContainer == null)
       return;
-    this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().\u0023\u003DzZcbqdpE\u003D((\u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV) this.\u0023\u003DzJ3FH5kAFy7GH, (IReceiveMouseEvents ) this);
+    this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().AddPropertyEvents((\u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV) this.\u0023\u003DzJ3FH5kAFy7GH, (IReceiveMouseEvents ) this);
   }
 
   public Canvas \u0023\u003DzVuf430fCLR2l() => this.\u0023\u003DzZ_bY0tT8hlGH;

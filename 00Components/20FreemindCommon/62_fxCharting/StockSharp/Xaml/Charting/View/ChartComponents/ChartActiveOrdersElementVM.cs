@@ -29,7 +29,7 @@ using Ecng.ComponentModel;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal sealed class ChartActiveOrdersElementVM : UIHigherVM<ChartActiveOrdersElement>
+    internal sealed class ChartActiveOrdersElementVM : ChartCompentWpfBaseViewModel<ChartActiveOrdersElement>
     {
         internal static Binding CreateBinding( object obj, string propertyName )
         {
@@ -318,28 +318,28 @@ namespace StockSharp.Xaml.Charting
             activeOrder.OrderText = order.Direction == Sides.Sell ? "Sell" : "Buy";
             activeOrder.X1 = 0.8;
             ChartActiveOrderInfo orderInfo = new ChartActiveOrderInfo(activeOrder);
-            activeOrder.SetBindings( AnnotationBase.XAxisIdProperty, ChartElement, "XAxisId", BindingMode.TwoWay, null, null );
-            activeOrder.SetBindings( AnnotationBase.YAxisIdProperty, ChartElement, "YAxisId", BindingMode.TwoWay, null, null );
-            activeOrder.SetBindings( AnnotationBase.IsHiddenProperty, ChartElement, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
+            activeOrder.SetBindings( AnnotationBase.XAxisIdProperty, ChartComponentView, "XAxisId", BindingMode.TwoWay, null, null );
+            activeOrder.SetBindings( AnnotationBase.YAxisIdProperty, ChartComponentView, "YAxisId", BindingMode.TwoWay, null, null );
+            activeOrder.SetBindings( AnnotationBase.IsHiddenProperty, ChartComponentView, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
             activeOrder.SetBindings( AnnotationBase.IsEditableProperty, orderInfo, "IsFrozen", BindingMode.OneWay, new InverseBooleanConverter( ), null );
 
             var toBrushConverter       = new ColorToBrushConverter( );
 
 
-            activeOrder.SetBindings( Control.ForegroundProperty, ChartElement, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.StrokeProperty, ChartElement, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.CancelButtonFillProperty, ChartElement, "CancelButtonBackground", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.CancelButtonColorProperty, ChartElement, "CancelButtonColor", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.IsAnimationEnabledProperty, ChartElement, "IsAnimationEnabled", BindingMode.OneWay, null, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.BlinkColorProperty, ChartElement, order.Direction == Sides.Sell ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay, null, null );
+            activeOrder.SetBindings( Control.ForegroundProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
+            activeOrder.SetBindings( ActiveOrderAnnotation.StrokeProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
+            activeOrder.SetBindings( ActiveOrderAnnotation.CancelButtonFillProperty, ChartComponentView, "CancelButtonBackground", BindingMode.OneWay, toBrushConverter, null );
+            activeOrder.SetBindings( ActiveOrderAnnotation.CancelButtonColorProperty, ChartComponentView, "CancelButtonColor", BindingMode.OneWay, toBrushConverter, null );
+            activeOrder.SetBindings( ActiveOrderAnnotation.IsAnimationEnabledProperty, ChartComponentView, "IsAnimationEnabled", BindingMode.OneWay, null, null );
+            activeOrder.SetBindings( ActiveOrderAnnotation.BlinkColorProperty, ChartComponentView, order.Direction == Sides.Sell ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay, null, null );
 
             MultiBinding multiBinding = new MultiBinding( ) { Converter = new OrderStatesToColorConverter( ), Mode = BindingMode.OneWay };
             multiBinding.Bindings.Add( CreateBinding( orderInfo, "State" ) );
             multiBinding.Bindings.Add( CreateBinding( orderInfo, "Direction" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartElement, "BuyPendingColor" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartElement, "BuyColor" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartElement, "SellPendingColor" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartElement, "SellColor" ) );
+            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "BuyPendingColor" ) );
+            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "BuyColor" ) );
+            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "SellPendingColor" ) );
+            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "SellColor" ) );
 
             activeOrder.SetBinding( Control.BackgroundProperty, multiBinding );
             PopulateAnnotationWithOrderInfo( orderInfo, _param1 );

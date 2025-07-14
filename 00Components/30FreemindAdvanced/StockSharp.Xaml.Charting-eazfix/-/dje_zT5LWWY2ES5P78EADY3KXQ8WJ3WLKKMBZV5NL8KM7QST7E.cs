@@ -1656,8 +1656,8 @@ internal class SciChartSurface :
     _param1.\u0023\u003Dz7wSH25w\u003D<ISciChartSurface>((ISciChartSurface) this);
     _param1.\u0023\u003Dz7wSH25w\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>((\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D) new \u0023\u003DzXx19aMi46NZ0khxEGqLHPA9GkqwI680fTt\u0024V_4g\u003D(this));
     this.\u0023\u003DzlisSOG7yPz_K = _param1.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>();
-    this.\u0023\u003DzlisSOG7yPz_K.\u0023\u003DzZcbqdpE\u003D<\u0023\u003DzAuXtmwo_UFdzWVVSiImlM2m3\u0024u6KUwtD4Q\u003D\u003D>(new Action<\u0023\u003DzAuXtmwo_UFdzWVVSiImlM2m3\u0024u6KUwtD4Q\u003D\u003D>(this.\u0023\u003DzlsbMLWTG6\u0024uOBbAnnH_p7Wc\u003D), true);
-    this.\u0023\u003DzlisSOG7yPz_K.\u0023\u003DzZcbqdpE\u003D<\u0023\u003DzFphlrC3tGBVP73muJW4N1gQtGNrHdTMuWgCKGfUfH93B>(new Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1gQtGNrHdTMuWgCKGfUfH93B>(this.\u0023\u003DzUXod0Df2Zg_aX3wExpLQ2\u0024Y\u003D), true);
+    this.\u0023\u003DzlisSOG7yPz_K.AddPropertyEvents<\u0023\u003DzAuXtmwo_UFdzWVVSiImlM2m3\u0024u6KUwtD4Q\u003D\u003D>(new Action<\u0023\u003DzAuXtmwo_UFdzWVVSiImlM2m3\u0024u6KUwtD4Q\u003D\u003D>(this.\u0023\u003DzlsbMLWTG6\u0024uOBbAnnH_p7Wc\u003D), true);
+    this.\u0023\u003DzlisSOG7yPz_K.AddPropertyEvents<\u0023\u003DzFphlrC3tGBVP73muJW4N1gQtGNrHdTMuWgCKGfUfH93B>(new Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1gQtGNrHdTMuWgCKGfUfH93B>(this.\u0023\u003DzUXod0Df2Zg_aX3wExpLQ2\u0024Y\u003D), true);
     this.\u0023\u003DzKPDuUZmOc92KysMGPQ\u003D\u003D = _param1.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyNMn5sYJZKzXDppYgrIuwPB>();
   }
 
@@ -1674,7 +1674,7 @@ internal class SciChartSurface :
     _param1.ParentSurface = (ISciChartSurface) this;
     _param1.Services = this.\u0023\u003Dzu\u0024P3XgkcE7BC();
     if (this.\u0023\u003Dzwc4Gzka23TGB() != null)
-      this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().\u0023\u003DzZcbqdpE\u003D((\u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV) this.\u0023\u003Dzwc4Gzka23TGB(), (IReceiveMouseEvents ) _param1);
+      this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().AddPropertyEvents((\u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV) this.\u0023\u003Dzwc4Gzka23TGB(), (IReceiveMouseEvents ) _param1);
     _param1.DataContext = this.DataContext;
     _param1.IsAttached = true;
     _param1.OnAttached();
@@ -1718,7 +1718,7 @@ internal class SciChartSurface :
   {
     if (this.\u0023\u003Dzwc4Gzka23TGB() == null || this.\u0023\u003Dzu\u0024P3XgkcE7BC() == null)
       return;
-    this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().\u0023\u003DzfttffOE\u003D((\u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV) this.\u0023\u003Dzwc4Gzka23TGB());
+    this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().RemovePropertyEvents((\u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV) this.\u0023\u003Dzwc4Gzka23TGB());
   }
 
   private void \u0023\u003Dz_2Z37e3SOi5eNmQj2g\u003D\u003D(

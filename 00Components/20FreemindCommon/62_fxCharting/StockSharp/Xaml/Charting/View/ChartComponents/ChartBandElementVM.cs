@@ -19,7 +19,7 @@ using Ecng.Drawing;
 
 #pragma warning disable CA1416
 
-internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > where T : struct, IComparable
+internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< ChartBandElement > where T : struct, IComparable
 {
     private readonly XyyDataSeries< T, double > _bandData;
     private readonly XyDataSeries< T, double >  _lineOneData;
@@ -58,8 +58,8 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
                                                                                     DrawStyles.StepLine,
                                                                                     DrawStyles.DashedLine
                                                                                 };
-        AddStylePropertyChanging( ChartElement.Line1, "Style", lineStyle );
-        AddStylePropertyChanging( ChartElement.Line2, "Style", lineStyle );
+        AddStylePropertyChanging( ChartComponentView.Line1, "Style", lineStyle );
+        AddStylePropertyChanging( ChartComponentView.Line2, "Style", lineStyle );
 
         string[ ] strArray = new string[ 2 ]
                                             {
@@ -67,18 +67,18 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
                                                 "AdditionalColor"
                                             };
 
-        ChartViewModel.AddChild( _lineOneViewModel = new ChartElementViewModel( ChartElement.Line1, new Func< SeriesInfo, Color >( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
-        ChartViewModel.AddChild( _lineTwoViewModel = new ChartElementViewModel( ChartElement.Line2, new Func< SeriesInfo, Color >( LowerAlphaColor ),  ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _lineOneViewModel = new ChartElementViewModel( ChartComponentView.Line1, new Func< SeriesInfo, Color >( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartViewModel.AddChild( _lineTwoViewModel = new ChartElementViewModel( ChartComponentView.Line2, new Func< SeriesInfo, Color >( LowerAlphaColor ),  ( s => s.FormattedYValue ), strArray ) );
 
-        AddPropertyEvents( ChartElement.Line1 );
-        AddPropertyEvents( ChartElement.Line2 );
+        AddPropertyEvents( ChartComponentView.Line1 );
+        AddPropertyEvents( ChartComponentView.Line2 );
         
         SetupFastBandSeriesAndBinding( );
-        _lineOneRSerie = CreateFastLineSeriesAndBinding( _lineOneRSerie, ChartElement.Line1, _lineOneViewModel );
-        _lineTwoRSerie = CreateFastLineSeriesAndBinding( _lineTwoRSerie,  ChartElement.Line2, _lineTwoViewModel );
+        _lineOneRSerie = CreateFastLineSeriesAndBinding( _lineOneRSerie, ChartComponentView.Line1, _lineOneViewModel );
+        _lineTwoRSerie = CreateFastLineSeriesAndBinding( _lineTwoRSerie,  ChartComponentView.Line2, _lineTwoViewModel );
 
-        SetupAxisMarkerAndBinding( _lineOneRSerie, ChartElement.Line1, "ShowAxisMarker", "Color" );
-        SetupAxisMarkerAndBinding( _lineTwoRSerie, ChartElement.Line2, "ShowAxisMarker", "Color" );
+        SetupAxisMarkerAndBinding( _lineOneRSerie, ChartComponentView.Line1, "ShowAxisMarker", "Color" );
+        SetupAxisMarkerAndBinding( _lineTwoRSerie, ChartComponentView.Line2, "ShowAxisMarker", "Color" );
 
         if ( _wholeBandRSerie != null )
         {
@@ -106,7 +106,7 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
     {
         SetIncludeSeries( _lineOneRSerie, false );
         SetIncludeSeries( _lineTwoRSerie, true );
-        SetIncludeSeries( _wholeBandRSerie, ChartElement.Style == DrawStyles.Band );
+        SetIncludeSeries( _wholeBandRSerie, ChartComponentView.Style == DrawStyles.Band );
     }
 
     private void SetupFastBandSeriesAndBinding( )
@@ -120,8 +120,8 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
 
         _wholeBandRSerie.Fill = _wholeBandRSerie.Fill = Colors.Transparent;
 
-        _wholeBandRSerie.SetBindings( BaseRenderableSeries.StrokeProperty,   ChartElement.Line1, "AdditionalColor", BindingMode.TwoWay, null, null );
-        _wholeBandRSerie.SetBindings( FastBandRenderableSeries.StrokeY1Property, ChartElement.Line2, "AdditionalColor", BindingMode.TwoWay, null, null );
+        _wholeBandRSerie.SetBindings( BaseRenderableSeries.StrokeProperty,   ChartComponentView.Line1, "AdditionalColor", BindingMode.TwoWay, null, null );
+        _wholeBandRSerie.SetBindings( FastBandRenderableSeries.StrokeY1Property, ChartComponentView.Line2, "AdditionalColor", BindingMode.TwoWay, null, null );
     }
 
     private FastLineRenderableSeries CreateFastLineSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChartElementViewModel viewModel )
@@ -155,11 +155,11 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
         //                                                    },
         //                                                    new Binding( "IsVisible" )
         //                                                    {
-        //                                                        Source =    ChartElement
+        //                                                        Source =    ChartComponent
         //                                                    },
         //                                                    new Binding( "IsVisible" )
         //                                                    {
-        //                                                        Source =    ( ( IChartComponent ) ChartElement ).ElementWithXYAxes
+        //                                                        Source =    ( ( IChartComponent ) ChartComponent ).ElementWithXYAxes
         //                                                    }
         //                                                };
         //    fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt, bindingArray );
@@ -281,8 +281,8 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
         if( propName == "Style" )
         {
             SetupFastBandSeriesAndBinding( );
-            _lineOneRSerie = CreateFastLineSeriesAndBinding( _lineOneRSerie, ChartElement.Line1, _lineOneViewModel );
-            _lineTwoRSerie = CreateFastLineSeriesAndBinding( _lineTwoRSerie, ChartElement.Line2, _lineTwoViewModel );
+            _lineOneRSerie = CreateFastLineSeriesAndBinding( _lineOneRSerie, ChartComponentView.Line1, _lineOneViewModel );
+            _lineTwoRSerie = CreateFastLineSeriesAndBinding( _lineTwoRSerie, ChartComponentView.Line2, _lineTwoViewModel );
         }
         if( !( propName == "Style" ) )
         {
@@ -293,11 +293,11 @@ internal sealed class ChartBandElementVM< T > : UIHigherVM< ChartBandElement > w
 
     private Color HigherAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.Line1.Color, ChartElement.Line1.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.Line1.Color, ChartComponentView.Line1.AdditionalColor );
     }
 
     private Color LowerAlphaColor( SeriesInfo seriesInfo_0 )
     {
-        return ChartElementViewModel.GetHigherAlphaColor( ChartElement.Line2.Color, ChartElement.Line2.AdditionalColor );
+        return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.Line2.Color, ChartComponentView.Line2.AdditionalColor );
     }   
 }

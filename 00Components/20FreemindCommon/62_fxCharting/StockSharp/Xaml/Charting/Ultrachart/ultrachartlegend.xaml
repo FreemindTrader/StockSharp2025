@@ -30,14 +30,14 @@
             <Border>
                 <Border.Background>
                     <MultiBinding Converter="{StaticResource axesToBorderConv}">
-                        <Binding Path="ChartElement.XAxis" />
-                        <Binding Path="ChartElement.YAxis" />
+                        <Binding Path="ChartComponent.XAxis" />
+                        <Binding Path="ChartComponent.YAxis" />
                     </MultiBinding>
                 </Border.Background>
                 <FrameworkElement.ToolTip>
                     <MultiBinding Converter="{StaticResource axesToTooltipConv}">
-                        <Binding Path="ChartElement.XAxis" />
-                        <Binding Path="ChartElement.YAxis" />
+                        <Binding Path="ChartComponent.XAxis" />
+                        <Binding Path="ChartComponent.YAxis" />
                     </MultiBinding>
                 </FrameworkElement.ToolTip>
                 <Grid HorizontalAlignment="Left">
@@ -53,7 +53,7 @@
                         Width="16"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        IsChecked="{Binding ChartElement.IsVisible, Mode=TwoWay}"
+                        IsChecked="{Binding ChartComponent.IsVisible, Mode=TwoWay}"
                         Visibility="{Binding ElementName=Ctrl, Path=DataContext.AllowToHide, Converter={StaticResource BooleanToVisibilityConverter}}" />
                     <local:ChartElementEditor
                         Grid.Column="1"
@@ -61,8 +61,8 @@
                         Height="16">
                         <FrameworkElement.DataContext>
                             <MultiBinding Converter="{StaticResource UltrachartElementToSettingsObjectConverter}">
-                                <Binding Path="ChartElement" />
-                                <Binding FallbackValue="{x:Null}" Path="ChartElement.IndicatorPainter" />
+                                <Binding Path="ChartComponent" />
+                                <Binding FallbackValue="{x:Null}" Path="ChartComponent.IndicatorPainter" />
                             </MultiBinding>
                         </FrameworkElement.DataContext>
                     </local:ChartElementEditor>
@@ -117,7 +117,7 @@
                         <TextBlock
                             Margin="5,0,0,0"
                             VerticalAlignment="Center"
-                            Text="{Binding ChartElement.FullTitle}" />
+                            Text="{Binding ChartComponent.FullTitle}" />
                         <ItemsControl ItemsSource="{Binding Values}">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
