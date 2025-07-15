@@ -97,12 +97,12 @@ internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jh
   {
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
-    this.\u0023\u003Dz5h4MErOTnNi_ = _param1.\u0023\u003DzgMFxvpJd_50n() == \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl;
-    this.\u0023\u003DzebZge1miA2O0(_param1);
+    base.OnModifierMouseUp(e);
+    this.\u0023\u003Dz5h4MErOTnNi_ = e.Modifier() == MouseModifier.Ctrl;
+    this.\u0023\u003DzebZge1miA2O0(e);
   }
 
   protected override void \u0023\u003Dz1z_ZexRGbAiN91rPDA\u003D\u003D(Point _param1)

@@ -29,7 +29,7 @@ internal interface \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mv
 
   double \u0023\u003DzhL6gsJw\u003D(T _param1);
 
-  T \u0023\u003DzACwLhyc\u003D(double _param1);
+  T GetDataValue(double _param1);
 
   DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,

@@ -10,5 +10,5 @@ using System.Windows.Controls;
 internal interface \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk : 
   IHitTestable
 {
-  UIElementCollection \u0023\u003DzBDSV99pPo8hY();
+  UIElementCollection Children();
 }

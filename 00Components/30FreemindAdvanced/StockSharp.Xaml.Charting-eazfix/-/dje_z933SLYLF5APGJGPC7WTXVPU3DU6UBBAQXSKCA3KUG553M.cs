@@ -210,9 +210,9 @@ internal sealed class dje_z933SLYLF5APGJGPC7WTXVPU3DU6UBBAQXSKCA3KUG553MXZ_ejd :
     this.\u0023\u003DzMFucnUdhtZnJ = (PropertyChangeNotifier) null;
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf()
+  protected override void OnIsEnabledChanged()
   {
-    base.\u0023\u003DzCM2UQyuakisf();
+    base.OnIsEnabledChanged();
     this.\u0023\u003DzDSeDnKxL3bvr();
   }
 

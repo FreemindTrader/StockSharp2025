@@ -40,7 +40,7 @@ internal sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhczba5zYMYvDVCey2E5itTCW
     return \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D.\u0023\u003Dzq1wgKfc\u003D(this.\u0023\u003DzTlJPop1Rus3dbxPf\u0024iJeyAQ\u003D(), _param1, 361.0);
   }
 
-  public override double \u0023\u003DzACwLhyc\u003D(double _param1)
+  public override double GetDataValue(double _param1)
   {
     _param1 = \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D.\u0023\u003Dzq1wgKfc\u003D(this.\u0023\u003DzTlJPop1Rus3dbxPf\u0024iJeyAQ\u003D(), _param1, 361.0);
     return this.dgr + _param1 * this.\u0023\u003DzUKOfIBTUfhak;

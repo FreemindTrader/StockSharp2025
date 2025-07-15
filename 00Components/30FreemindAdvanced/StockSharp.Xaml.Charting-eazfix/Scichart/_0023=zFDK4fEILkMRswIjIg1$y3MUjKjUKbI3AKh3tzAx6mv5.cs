@@ -57,12 +57,12 @@ internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6
     this.\u0023\u003DzO6iOtf4\u003D.Start();
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs e)
   {
     if (!this.IsDragging)
       return;
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(e);
   }
 
   public override void \u0023\u003DzIc5ifvVNpnRzFbQNeA\u003D\u003D()

@@ -129,7 +129,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     return (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D) new \u0023\u003DzPauio66DvxKtWOFEEHOV9SoX2tFlIoBYnTAx1kMIl2000aB2dZP5Hp06qfODZ0uWlg\u003D\u003D(this.\u0023\u003DzNFOu7BeFZYda().\u0023\u003DzuAOGltcBIMXJ(_param1));
   }
 
-  public override void \u0023\u003DzUf222sU\u003D()
+  public override void Clear()
   {
     int num1 = 0;
     while (true)

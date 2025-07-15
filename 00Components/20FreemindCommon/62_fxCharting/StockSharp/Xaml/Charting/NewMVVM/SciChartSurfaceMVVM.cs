@@ -178,7 +178,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
         var orderLines = new ChartOrderModifier(Area);
         orderLines.IsEnabled = true;
-        orderLines.CanCreateOrders = true;
+        //orderLines.CanCreateOrders = true;
 
         _dataPointSelector = new fxDataPointSelectionModifier();
         _dataPointSelector.ExecuteOn = ExecuteOn.MouseMiddleButton;
@@ -1443,13 +1443,13 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             null,
             null);
 
-        order.SetBindings(
-            ChartOrderModifier.CanCreateOrdersProperty,
-            Chart,
-            "OrderCreationMode",
-            BindingMode.TwoWay,
-            null,
-            null);
+        //order.SetBindings(
+        //    ChartOrderModifier.CanCreateOrdersProperty,
+        //    Chart,
+        //    "OrderCreationMode",
+        //    BindingMode.TwoWay,
+        //    null,
+        //    null);
         order.SetBindings(
             ChartOrderModifier.ShowHorizontalLineProperty,
             Chart,

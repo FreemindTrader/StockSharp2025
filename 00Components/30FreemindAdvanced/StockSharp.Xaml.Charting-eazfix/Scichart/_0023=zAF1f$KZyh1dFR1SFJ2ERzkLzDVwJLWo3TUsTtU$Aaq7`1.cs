@@ -22,7 +22,7 @@ internal sealed class \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u
 
   public object \u0023\u003Dzjatnj7TNvda7() => this.\u0023\u003DzFfdu1N5nM9V1by\u0024JCXnlPq0\u003D;
 
-  public void \u0023\u003DzUf222sU\u003D()
+  public void Clear()
   {
     lock (this.\u0023\u003Dzjatnj7TNvda7())
       this.\u0023\u003DzYw05nwk\u003D.Clear();

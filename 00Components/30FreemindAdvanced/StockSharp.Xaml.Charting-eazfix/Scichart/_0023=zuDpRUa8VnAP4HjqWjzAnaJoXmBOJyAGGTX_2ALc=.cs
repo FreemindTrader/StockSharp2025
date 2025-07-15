@@ -67,7 +67,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
   public abstract \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzC1WFQPaV7rDp(
     FrameworkElement _param1);
 
-  public abstract void \u0023\u003DzUf222sU\u003D();
+  public abstract void Clear();
 
   public abstract void \u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(
     \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,

@@ -58,26 +58,26 @@ internal sealed class dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
-    if (!_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (!_param1.IsMaster())
       return;
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
-    if (!_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (!_param1.IsMaster())
       return;
-    base.\u0023\u003Dz11bcnbUrALaA(_param1);
+    base.OnModifierMouseMove(_param1);
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    if (!_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (!_param1.IsMaster())
       return;
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(_param1);
   }
 }

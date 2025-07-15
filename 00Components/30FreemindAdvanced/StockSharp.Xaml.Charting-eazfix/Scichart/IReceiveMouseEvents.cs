@@ -22,19 +22,19 @@ internal interface IReceiveMouseEvents
   bool \u0023\u003Dzo7mdr1Y1DFNe();
 
   void \u0023\u003Dz5y8F1YNwkhnW(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1);
+    ModifierMouseArgs _param1);
 
   void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1);
+    ModifierMouseArgs _param1);
 
-  void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1);
+  void OnModifierMouseMove(
+    ModifierMouseArgs _param1);
 
-  void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1);
+  void OnModifierMouseUp(
+    ModifierMouseArgs _param1);
 
   void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1);
+    ModifierMouseArgs _param1);
 
   void \u0023\u003Dz0yya794Z8OaI(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf _param1);
@@ -45,6 +45,6 @@ internal interface IReceiveMouseEvents
   void \u0023\u003DzsSwjrBzrsGPJ(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf _param1);
 
-  void \u0023\u003Dz3RBcoKAPKSIX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1);
+  void OnMasterMouseLeave(
+    ModifierMouseArgs _param1);
 }

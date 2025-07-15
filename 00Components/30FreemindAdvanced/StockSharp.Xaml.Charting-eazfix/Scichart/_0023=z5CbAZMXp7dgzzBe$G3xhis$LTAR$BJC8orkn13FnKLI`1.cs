@@ -260,7 +260,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
           }));
         case 0:
           if (z6MdlWkBsH4.\u0023\u003Dz6qkMxm4QKemy() == 0)
-            this.\u0023\u003DzlkmfHYgr1H49.\u0023\u003DzFkV86a8\u003D(zulcL8Ra, z6MdlWkBsH4.\u0023\u003DzZB\u0024O5xT4bzKv(), z6MdlWkBsH4.\u0023\u003Dzggdh\u0024\u00245CXRMA(), 0);
+            this.\u0023\u003DzlkmfHYgr1H49.UpdateOrderAdornerLayer(zulcL8Ra, z6MdlWkBsH4.\u0023\u003DzZB\u0024O5xT4bzKv(), z6MdlWkBsH4.\u0023\u003Dzggdh\u0024\u00245CXRMA(), 0);
           --count;
           break;
         default:
@@ -289,7 +289,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
     if (z6MdlWkBsH4List.Count > 0)
     {
       foreach (ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1> z6MdlWkBsH4 in z6MdlWkBsH4List)
-        this.\u0023\u003DzlkmfHYgr1H49.\u0023\u003DzFkV86a8\u003D((\u0023\u003DzulcL8RA\u003D) (ValueType) z6MdlWkBsH4.\u0023\u003Dz2_4KSTY\u003D(), z6MdlWkBsH4.\u0023\u003DzZB\u0024O5xT4bzKv(), z6MdlWkBsH4.\u0023\u003Dzggdh\u0024\u00245CXRMA(), z6MdlWkBsH4.\u0023\u003Dz6qkMxm4QKemy());
+        this.\u0023\u003DzlkmfHYgr1H49.UpdateOrderAdornerLayer((\u0023\u003DzulcL8RA\u003D) (ValueType) z6MdlWkBsH4.\u0023\u003Dz2_4KSTY\u003D(), z6MdlWkBsH4.\u0023\u003DzZB\u0024O5xT4bzKv(), z6MdlWkBsH4.\u0023\u003Dzggdh\u0024\u00245CXRMA(), z6MdlWkBsH4.\u0023\u003Dz6qkMxm4QKemy());
     }
     this.\u0023\u003DzFEDR40ugZMK3 = comparable;
     return true;

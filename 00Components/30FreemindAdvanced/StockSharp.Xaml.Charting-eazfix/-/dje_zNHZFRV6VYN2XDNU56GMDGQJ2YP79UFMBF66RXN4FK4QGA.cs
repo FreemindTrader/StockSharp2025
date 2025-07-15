@@ -59,22 +59,22 @@ internal sealed class dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD
   }
 
   public override void \u0023\u003Dz5y8F1YNwkhnW(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     if (this.ExecuteOn != ExecuteOn.MouseDoubleClick)
       return;
     base.\u0023\u003Dz5y8F1YNwkhnW(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    _param1.Handled(true);
     this.\u0023\u003DzIjNc90j5mMD8();
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    if (this.ExecuteOn != ExecuteOn.MouseRightButton || _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4)
+    if (this.ExecuteOn != ExecuteOn.MouseRightButton || _param1.MouseButtons() != (MouseButtons) 4)
       return;
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    base.OnModifierMouseUp(_param1);
+    _param1.Handled(true);
     this.\u0023\u003DzIjNc90j5mMD8();
   }
 

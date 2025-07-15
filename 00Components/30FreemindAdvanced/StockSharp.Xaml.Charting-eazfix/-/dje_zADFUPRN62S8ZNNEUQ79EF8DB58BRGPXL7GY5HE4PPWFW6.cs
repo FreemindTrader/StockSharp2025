@@ -122,9 +122,9 @@ internal sealed class FxAnnotationModifier :
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
-    if (MathHelper.IsNaN((double) this.YAxis.\u0023\u003DzACwLhyc\u003D(_param1.\u0023\u003DztkyOk5amPcz3().Y)))
+    if (MathHelper.IsNaN((double) this.YAxis.GetDataValue(_param1.MousePoint().Y)))
       this.UserAnnotationType = ChartAnnotationTypes.None;
     else
       base.\u0023\u003DzsXEfcKpqchyX(_param1);

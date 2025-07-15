@@ -313,7 +313,7 @@ internal class dje_zQ43M2FZJBSFAUZ6Y8GRTX9AEYABXJZFQPFJ76J7ED3DXEXQ_ejd :
       return;
     using (\u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H blRxkxWuDZv6cV0H = this.\u0023\u003DzWfNK9E4egtoR.\u0023\u003Dz1cRMfLZU4Eo2(this.\u0023\u003DzlbfaVnpq6N5Y, (\u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D) null))
     {
-      blRxkxWuDZv6cV0H.\u0023\u003DzUf222sU\u003D();
+      blRxkxWuDZv6cV0H.Clear();
       if (this.DrawMinorTicks && _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D() != null)
         this.\u0023\u003DzuTwCwl07R0Mf((IRenderContext2D) blRxkxWuDZv6cV0H, this.MinorTickLineStyle, this.MinorTickSize, _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D(), _param2);
       if (!this.DrawMajorTicks || _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D() == null)

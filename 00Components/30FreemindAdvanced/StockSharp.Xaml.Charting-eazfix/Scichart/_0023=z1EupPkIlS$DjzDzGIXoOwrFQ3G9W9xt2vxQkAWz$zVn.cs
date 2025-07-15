@@ -7,7 +7,7 @@
 using System.Collections;
 
 #nullable disable
-internal interface \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ : 
+internal interface IOhlcDataSeries : 
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
 {
@@ -17,5 +17,5 @@ internal interface \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u00
 
   IList \u0023\u003DzvY\u0024FGDHksWU9();
 
-  IList \u0023\u003Dz5xgdlG8Htgc7();
+  IList CloseValues();
 }

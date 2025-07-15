@@ -48,17 +48,17 @@ internal sealed class dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
-    this.\u0023\u003DzhcsKvLfw_p5c = _param1.\u0023\u003DztkyOk5amPcz3();
+    this.\u0023\u003DzhcsKvLfw_p5c = _param1.MousePoint();
     this.\u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D = this.XAxes.Where<IAxis>(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D ?? (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.\u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D = new Func<IAxis, bool>(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzxsT5eH8ST5wURnPDRSExaUI\u003D))).ToDictionary<IAxis, string, IRange>(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.\u0023\u003DzyrbJPDSEp4QjajjhiA\u003D\u003D ?? (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.\u0023\u003DzyrbJPDSEp4QjajjhiA\u003D\u003D = new Func<IAxis, string>(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003Dz42dJuYUoRwO2twIy\u0024zPWSEE\u003D)), dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.\u0023\u003DzBXy6HataguDyrzDt9g\u003D\u003D ?? (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.\u0023\u003DzBXy6HataguDyrzDt9g\u003D\u003D = new Func<IAxis, IRange>(dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DzDdeB7QUmKNmVJObfmPxXrUc\u003D)));
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(_param1);
     this.\u0023\u003DzhcsKvLfw_p5c = new Point();
     this.\u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D = new Dictionary<string, IRange>();
   }

@@ -646,7 +646,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public double \u0023\u003Dz4wEfDhMr\u0024V6c() => throw new NotImplementedException();
 
-  public IComparable \u0023\u003DzACwLhyc\u003D(double _param1)
+  public IComparable GetDataValue(double _param1)
   {
     throw new NotImplementedException();
   }
@@ -757,7 +757,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
 
   public void \u0023\u003DzpTR8\u0024ECbZOHX() => throw new NotImplementedException();
 
-  public void \u0023\u003DzUf222sU\u003D() => throw new NotImplementedException();
+  public void Clear() => throw new NotImplementedException();
 
   public IRange \u0023\u003DzspbjXJnVtbB\u0024()
   {

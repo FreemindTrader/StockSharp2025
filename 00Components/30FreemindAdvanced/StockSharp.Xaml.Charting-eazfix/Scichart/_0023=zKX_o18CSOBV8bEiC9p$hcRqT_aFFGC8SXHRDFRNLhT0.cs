@@ -472,7 +472,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return (int) _param0.A << 24 | (int) (byte) ((int) _param0.R * num >> 8) << 16 /*0x10*/ | (int) (byte) ((int) _param0.G * num >> 8) << 8 | (int) (byte) ((int) _param0.B * num >> 8);
   }
 
-  internal static unsafe void \u0023\u003DzUf222sU\u003D(
+  internal static unsafe void Clear(
     this WriteableBitmap _param0,
     Color _param1)
   {
@@ -497,10 +497,10 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzUf222sU\u003D(this WriteableBitmap _param0)
+  internal static void Clear(this WriteableBitmap _param0)
   {
     using (BitmapContext bitmapContext = _param0.\u0023\u003DzjnjmjBtrwZM5())
-      bitmapContext.\u0023\u003DzUf222sU\u003D();
+      bitmapContext.Clear();
   }
 
   internal static WriteableBitmap \u0023\u003DzQ8SgRgQ\u003D(this WriteableBitmap _param0)

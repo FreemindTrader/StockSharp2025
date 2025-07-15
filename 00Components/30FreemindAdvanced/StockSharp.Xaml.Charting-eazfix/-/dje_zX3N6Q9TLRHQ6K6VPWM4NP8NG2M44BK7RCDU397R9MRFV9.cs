@@ -238,9 +238,9 @@ internal class dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd :
     return this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2 <= 0.0 || klqcJ87Zm8UwE3WEjd == null ? base.\u0023\u003DzsB7Y9t30CQ63(_param1) : (IRange) new DoubleRange(klqcJ87Zm8UwE3WEjd.Min - this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2, klqcJ87Zm8UwE3WEjd.Min + this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2);
   }
 
-  public override IComparable \u0023\u003DzACwLhyc\u003D(double _param1)
+  public override IComparable GetDataValue(double _param1)
   {
-    IComparable comparable = base.\u0023\u003DzACwLhyc\u003D(_param1);
+    IComparable comparable = base.GetDataValue(_param1);
     if (this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2 <= 0.0 || !(comparable is double num))
       return comparable;
     return num.IsNaN() ? (IComparable) num : (IComparable) num.Round(this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzormciIUBnCr2);

@@ -69,7 +69,7 @@ internal abstract class \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0
     \u0023\u003DzulcL8RA\u003D _param3,
     bool _param4);
 
-  public virtual void \u0023\u003DzUf222sU\u003D()
+  public virtual void Clear()
   {
     this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(true);
     this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(true);

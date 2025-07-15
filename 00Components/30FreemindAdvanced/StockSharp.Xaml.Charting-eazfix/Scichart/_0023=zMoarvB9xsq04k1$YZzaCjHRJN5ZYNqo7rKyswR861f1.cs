@@ -34,7 +34,7 @@ internal sealed class \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR86
 
   public override void \u0023\u003DzFeNr2Uw\u003D()
   {
-    this.\u0023\u003DzUf222sU\u003D();
+    this.Clear();
     this.\u0023\u003DzGDdLHa8\u003D();
   }
 
@@ -66,7 +66,7 @@ internal sealed class \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR86
     annotationBase.RaiseAnnotationDragStarted(true, true);
   }
 
-  public override void \u0023\u003DzUf222sU\u003D()
+  public override void Clear()
   {
     this.\u0023\u003Dzg87ZCkaztoO1.\u0023\u003Dz30RSSSygABj_<Thumb>(new Action<Thumb>(this.\u0023\u003DzdvueoYNiS7F4));
     this.\u0023\u003Dzg87ZCkaztoO1.Clear();
@@ -100,7 +100,7 @@ internal sealed class \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR86
       this.\u0023\u003DzYw05nwk\u003D = this.\u0023\u003Dzy2oKVLXXOFmI().GetBasePoints() ?? Array.Empty<Point>();
       if (this.\u0023\u003DzYw05nwk\u003D.Length != this.\u0023\u003Dzg87ZCkaztoO1.Count)
       {
-        this.\u0023\u003DzUf222sU\u003D();
+        this.Clear();
         ((IEnumerable<Point>) this.\u0023\u003DzYw05nwk\u003D).\u0023\u003Dz30RSSSygABj_<Point>(new Action<Point>(this.\u0023\u003DzNOLDMwoM8cQu));
       }
       this.\u0023\u003DzGDdLHa8\u003D(this.\u0023\u003DzYw05nwk\u003D);

@@ -24,8 +24,8 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZ
     double _param2,
     double _param3)
   {
-    double num1 = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.\u0023\u003DzACwLhyc\u003D(_param2);
-    double num2 = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.\u0023\u003DzACwLhyc\u003D(_param3);
+    double num1 = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.GetDataValue(_param2);
+    double num2 = this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA.GetDataValue(_param3);
     if (num1 >= num2)
       NumberUtil.Swap(ref num1, ref num2);
     return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(_param1, (IComparable) num1, (IComparable) num2);

@@ -23,8 +23,8 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
     return this.\u0023\u003DzZNAgUYDk4vJL;
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
     \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeWheireosoe();
     vbxLeArTkallkIdHg.\u0023\u003Dz1BK01YA\u003D = _param1;
@@ -33,7 +33,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
       if (this.\u0023\u003DzXlWnMnklB5lP)
         return;
       this.\u0023\u003DzXlWnMnklB5lP = true;
-      base.\u0023\u003Dz11bcnbUrALaA(vbxLeArTkallkIdHg.\u0023\u003Dz1BK01YA\u003D);
+      base.OnModifierMouseMove(vbxLeArTkallkIdHg.\u0023\u003Dz1BK01YA\u003D);
       this.\u0023\u003DzpaNSEZReLxVMfaY4Xg\u003D\u003D().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D>(new Action<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D>(vbxLeArTkallkIdHg.\u0023\u003DzFO_QFsMMv3T4avua1zSqfuQ\u003D));
     }
     finally
@@ -43,7 +43,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   }
 
   public override void \u0023\u003Dz5y8F1YNwkhnW(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D zryEzCccXGdHkstU1g = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D();
     zryEzCccXGdHkstU1g.\u0023\u003Dz1BK01YA\u003D = _param1;
@@ -62,7 +62,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D skXz9pb7XdulaJda = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D();
     skXz9pb7XdulaJda.\u0023\u003Dz1BK01YA\u003D = _param1;
@@ -80,17 +80,17 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
     }
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
     \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeClass34343 zPKCmcad6Nxc5A8A = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.SomeClass34343();
-    zPKCmcad6Nxc5A8A.\u0023\u003Dz1BK01YA\u003D = _param1;
+    zPKCmcad6Nxc5A8A.\u0023\u003Dz1BK01YA\u003D = e;
     try
     {
       if (this.\u0023\u003DzXlWnMnklB5lP)
         return;
       this.\u0023\u003DzXlWnMnklB5lP = true;
-      base.\u0023\u003DzU3pYs4rYVmOS(zPKCmcad6Nxc5A8A.\u0023\u003Dz1BK01YA\u003D);
+      base.OnModifierMouseUp(zPKCmcad6Nxc5A8A.\u0023\u003Dz1BK01YA\u003D);
       this.\u0023\u003DzpaNSEZReLxVMfaY4Xg\u003D\u003D().\u0023\u003Dz30RSSSygABj_<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D>(new Action<\u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D>(zPKCmcad6Nxc5A8A.\u0023\u003DzJNzKLhVBhB8V0jFFfaqciuM\u003D));
     }
     finally
@@ -100,7 +100,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   }
 
   public override void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz1BK01YA\u003D = _param1;
@@ -188,18 +188,18 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
 
   private sealed class SomeWheireosoe
   {
-    public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
+    public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
     internal void \u0023\u003DzFO_QFsMMv3T4avua1zSqfuQ\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
-      _param1.\u0023\u003Dz11bcnbUrALaA(this.\u0023\u003Dz1BK01YA\u003D);
+      _param1.OnModifierMouseMove(this.\u0023\u003Dz1BK01YA\u003D);
     }
   }
 
   private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
   {
-    public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
+    public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
     internal void \u0023\u003DzhuznkMQPOxftlXSZ8zSfUF4\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
@@ -221,12 +221,12 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
 
   private sealed class SomeClass34343
   {
-    public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
+    public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
     internal void \u0023\u003DzJNzKLhVBhB8V0jFFfaqciuM\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
-      _param1.\u0023\u003DzU3pYs4rYVmOS(this.\u0023\u003Dz1BK01YA\u003D);
+      _param1.OnModifierMouseUp(this.\u0023\u003Dz1BK01YA\u003D);
     }
   }
 
@@ -243,7 +243,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
 
   private sealed class \u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D
   {
-    public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
+    public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
     internal void \u0023\u003DzJV4NrUzfYPGnbAVItdfqjdc\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
@@ -254,7 +254,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
 
   private sealed class \u0023\u003DzxSk_xz9pb7XDulaJDA\u003D\u003D
   {
-    public \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY \u0023\u003Dz1BK01YA\u003D;
+    public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
     internal void \u0023\u003DzMRoV981IuFZcGKI1F3DxVjI\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)

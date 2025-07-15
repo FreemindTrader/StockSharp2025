@@ -67,9 +67,9 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
     this.\u0023\u003DzleRWWIS9Sb_X();
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf()
+  protected override void OnIsEnabledChanged()
   {
-    base.\u0023\u003DzCM2UQyuakisf();
+    base.OnIsEnabledChanged();
     base.OnDetached();
     this.\u0023\u003DzCTuuQt0\u003D(false);
   }
@@ -90,7 +90,7 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
 
   protected virtual void \u0023\u003DzpWd3bhexNgJne_G3pk5QQoE\u003D(FrameworkElement _param1)
   {
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) _param1);
+    this.ModifierSurface.Children().Remove((UIElement) _param1);
     if (this.\u0023\u003Dz1lxFA46cCdxI())
       return;
     _param1.MouseMove -= new MouseEventHandler(this.\u0023\u003Dzh9KvuS_jLUYL93sI\u0024BP6nio\u003D);
@@ -104,9 +104,9 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
     if (frameworkElement == null)
       return;
     this.\u0023\u003Dzd2PtoXT5k7_W.Remove(frameworkElement);
-    if (!this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) frameworkElement))
+    if (!this.ModifierSurface.Children().Contains((UIElement) frameworkElement))
       return;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) frameworkElement);
+    this.ModifierSurface.Children().Remove((UIElement) frameworkElement);
   }
 
   protected override bool \u0023\u003DzD5SquRN7M_9c(
@@ -221,7 +221,7 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
       _param1.MouseLeave += new MouseEventHandler(this.\u0023\u003DzJNHp\u0024bXt4L5qmQ5ozPuXdks\u003D);
       _param1.MouseLeftButtonDown += new MouseButtonEventHandler(this.\u0023\u003DzJNHp\u0024bXt4L5qmQ5ozPuXdks\u003D);
     }
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) _param1);
+    this.ModifierSurface.Children().Add((UIElement) _param1);
     this.\u0023\u003Dzy9FxkpTkktj_\u0024CSRiA\u003D\u003D.Add(_param1);
   }
 
@@ -272,8 +272,8 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
       return;
     foreach (FrameworkElement frameworkElement in this.\u0023\u003Dzd2PtoXT5k7_W)
     {
-      if (this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) frameworkElement))
-        this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) frameworkElement);
+      if (this.ModifierSurface.Children().Contains((UIElement) frameworkElement))
+        this.ModifierSurface.Children().Remove((UIElement) frameworkElement);
     }
     this.\u0023\u003Dzd2PtoXT5k7_W.Clear();
     foreach (FrameworkElement frameworkElement in this.\u0023\u003Dzy9FxkpTkktj_\u0024CSRiA\u003D\u003D)
@@ -325,10 +325,10 @@ internal abstract class dje_zZF2ZJZG8SE3C2A3Q4WP7G7C5HK3C8HEAQSAKCA7W3GNCVWR3A27
       this.\u0023\u003DzG0IVNFBi26Bw(frameworkElement);
     foreach (FrameworkElement frameworkElement in this.\u0023\u003Dzd2PtoXT5k7_W)
     {
-      if (!this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) frameworkElement))
+      if (!this.ModifierSurface.Children().Contains((UIElement) frameworkElement))
       {
         (frameworkElement.Parent as Panel).\u0023\u003DziYdJ\u00246cCiBha((object) frameworkElement);
-        this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) frameworkElement);
+        this.ModifierSurface.Children().Add((UIElement) frameworkElement);
       }
     }
   }

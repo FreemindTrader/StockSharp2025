@@ -22,7 +22,7 @@ internal sealed class fxZoomPanModifier :
   Dictionary<string, IRange> \u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D;
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
     this.\u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D = this.XAxes.Where<IAxis>(fxZoomPanModifier.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (fxZoomPanModifier.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Func<IAxis, bool>(fxZoomPanModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DztdZxHXQvl0jLk18eWYDLqRE\u003D))).ToDictionary<IAxis, string, IRange>(fxZoomPanModifier.SomeClass34343383.somemoerehoer ?? (fxZoomPanModifier.SomeClass34343383.somemoerehoer = new Func<IAxis, string>(fxZoomPanModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzDdBD4\u0024viao9m95yVI0EJ1GE\u003D)), fxZoomPanModifier.SomeClass34343383.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D ?? (fxZoomPanModifier.SomeClass34343383.\u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D = new Func<IAxis, IRange>(fxZoomPanModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzzdOSOlF3qFksNQn1piaenHc\u003D)));
@@ -33,12 +33,12 @@ internal sealed class fxZoomPanModifier :
     this.\u0023\u003Dz6fc78SIV6E\u0024a(_param1, _param2, _param3);
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
     if (!this.IsDragging)
       return;
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(_param1);
     this.\u0023\u003DzlmAnsLYRHYNHzCBTWw\u003D\u003D = new Dictionary<string, IRange>();
   }
 

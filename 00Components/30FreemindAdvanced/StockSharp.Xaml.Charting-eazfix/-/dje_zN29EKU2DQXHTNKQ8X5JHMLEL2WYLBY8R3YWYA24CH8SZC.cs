@@ -126,7 +126,7 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
     this.\u0023\u003DzleRWWIS9Sb_X();
   }
 
-  protected override void \u0023\u003DzRhCP\u0024yGKAqZwVyg1vA\u003D\u003D()
+  protected override void OnParentSurfaceMouseEnter()
   {
     this.\u0023\u003DzleRWWIS9Sb_X();
   }
@@ -227,8 +227,8 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
         ellipse.Height = 5.0;
         this.\u0023\u003DzatysOTiD_AK_ = ellipse;
       }
-      this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DzuKhG8cvbLb0H);
-      this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003Dzqc7rBjeXtKct);
+      this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003DzuKhG8cvbLb0H);
+      this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003Dzqc7rBjeXtKct);
     }
     this.\u0023\u003DzuKhG8cvbLb0H.X1 = 0.0;
     this.\u0023\u003DzuKhG8cvbLb0H.X2 = boundsRelativeTo.Width - 1.0;
@@ -254,7 +254,7 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
       line.Style = this.LineOverlayStyle;
       line.IsHitTestVisible = false;
       this.\u0023\u003Dzqc7rBjeXtKct = line;
-      this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003Dzqc7rBjeXtKct);
+      this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003Dzqc7rBjeXtKct);
     }
     this.\u0023\u003Dzqc7rBjeXtKct.X1 = _param1.X;
     this.\u0023\u003Dzqc7rBjeXtKct.X2 = _param1.X;
@@ -266,14 +266,14 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
   {
     if (this.ModifierSurface != null)
     {
-      if (this.\u0023\u003DzuKhG8cvbLb0H != null && this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzuKhG8cvbLb0H))
+      if (this.\u0023\u003DzuKhG8cvbLb0H != null && this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzuKhG8cvbLb0H))
       {
-        this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003DzuKhG8cvbLb0H);
+        this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003DzuKhG8cvbLb0H);
         this.\u0023\u003DzuKhG8cvbLb0H = (Line) null;
       }
-      if (this.\u0023\u003Dzqc7rBjeXtKct != null && this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003Dzqc7rBjeXtKct))
+      if (this.\u0023\u003Dzqc7rBjeXtKct != null && this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003Dzqc7rBjeXtKct))
       {
-        this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003Dzqc7rBjeXtKct);
+        this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003Dzqc7rBjeXtKct);
         this.\u0023\u003Dzqc7rBjeXtKct = (Line) null;
       }
     }
@@ -292,11 +292,11 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
   {
     if (this.\u0023\u003DzafnecPyU9x6l == null || this.ModifierSurface == null)
       return;
-    if (this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzafnecPyU9x6l))
-      this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003DzafnecPyU9x6l);
-    if (!this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzatysOTiD_AK_))
+    if (this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzafnecPyU9x6l))
+      this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003DzafnecPyU9x6l);
+    if (!this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzatysOTiD_AK_))
       return;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003DzatysOTiD_AK_);
+    this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003DzatysOTiD_AK_);
   }
 
   private void \u0023\u003DzC4voZ0Pb0Ark(Point _param1)
@@ -306,11 +306,11 @@ internal class dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd :
     this.\u0023\u003DzHi3KLf0npKDN((FrameworkElement) this.\u0023\u003DzafnecPyU9x6l, _param1);
     Canvas.SetLeft((UIElement) this.\u0023\u003DzatysOTiD_AK_, _param1.X - this.\u0023\u003DzatysOTiD_AK_.ActualWidth * 0.5);
     Canvas.SetTop((UIElement) this.\u0023\u003DzatysOTiD_AK_, _param1.Y - this.\u0023\u003DzatysOTiD_AK_.ActualHeight * 0.5);
-    if (!this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzafnecPyU9x6l))
-      this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DzafnecPyU9x6l);
-    if (this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzatysOTiD_AK_))
+    if (!this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzafnecPyU9x6l))
+      this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003DzafnecPyU9x6l);
+    if (this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzatysOTiD_AK_))
       return;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DzatysOTiD_AK_);
+    this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003DzatysOTiD_AK_);
   }
 
   private void \u0023\u003DzHi3KLf0npKDN(FrameworkElement _param1, Point _param2)

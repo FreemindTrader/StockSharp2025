@@ -146,21 +146,21 @@ internal sealed class RubberBandXyZoomModifier :
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
-    if (this.\u0023\u003DzqGwbHdeZ8yMA || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn))
+    if (this.\u0023\u003DzqGwbHdeZ8yMA || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.MouseButtons(), this.ExecuteOn))
       return;
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
-    if (!(_param1.\u0023\u003DzRo7rSFU\u003D() is IChartModifier) || !this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB()).Contains(_param1.\u0023\u003DztkyOk5amPcz3()))
+    _param1.Handled(true);
+    if (!(_param1.\u0023\u003DzRo7rSFU\u003D() is IChartModifier) || !this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB()).Contains(_param1.MousePoint()))
       return;
-    if (_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (_param1.IsMaster())
       this.ModifierSurface.CaptureMouse();
-    this.\u0023\u003DzhcsKvLfw_p5c = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
+    this.\u0023\u003DzhcsKvLfw_p5c = this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface);
     this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D = this.\u0023\u003DzsuPwLoadtv7J();
     this.\u0023\u003DztHc2gS4\u003D = this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D.\u0023\u003Dz5G3eIQ8\u003D(this.RubberBandFill, this.RubberBandStroke, this.RubberBandStrokeDashArray);
     this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D.\u0023\u003Dzz11HY86OhYRe(this.IsXAxisOnly, this.\u0023\u003DzhcsKvLfw_p5c, this.\u0023\u003DzhcsKvLfw_p5c);
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DztHc2gS4\u003D);
+    this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003DztHc2gS4\u003D);
     this.\u0023\u003DzqGwbHdeZ8yMA = true;
   }
 
@@ -182,35 +182,35 @@ internal sealed class RubberBandXyZoomModifier :
     return yRvxOxiUgZkGoAaE;
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
     if (!this.\u0023\u003DzqGwbHdeZ8yMA)
       return;
-    base.\u0023\u003Dz11bcnbUrALaA(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    base.OnModifierMouseMove(_param1);
+    _param1.Handled(true);
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("{0} MouseMove: x={1}, y={2}", new object[3]
     {
       (object) ((object) this).GetType().Name,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().Y
+      (object) _param1.MousePoint().X,
+      (object) _param1.MousePoint().Y
     });
-    this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D.\u0023\u003DzuPC9WaE\u003D(this.IsXAxisOnly, this.\u0023\u003DzhcsKvLfw_p5c, this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface));
+    this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D.\u0023\u003DzuPC9WaE\u003D(this.IsXAxisOnly, this.\u0023\u003DzhcsKvLfw_p5c, this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface));
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
     if (!this.\u0023\u003DzqGwbHdeZ8yMA)
       return;
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(_param1);
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("{0} MouseUp: x={1}, y={2}", new object[3]
     {
       (object) ((object) this).GetType().Name,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().Y
+      (object) _param1.MousePoint().X,
+      (object) _param1.MousePoint().Y
     });
-    Point point1 = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
+    Point point1 = this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface);
     this.\u0023\u003Dzm1SIm_yjNDHz = this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D.\u0023\u003DzuPC9WaE\u003D(this.IsXAxisOnly, this.\u0023\u003DzhcsKvLfw_p5c, point1);
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D b99xo8DgCb3haWTig = this.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();
     Point point2 = b99xo8DgCb3haWTig.\u0023\u003Dz8miGAzg\u003D(this.\u0023\u003DzhcsKvLfw_p5c);
@@ -219,12 +219,12 @@ internal sealed class RubberBandXyZoomModifier :
     if (this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D.\u0023\u003DzBBczPQeswUUn(point2, point4) > this.MinDragSensitivity)
     {
       this.\u0023\u003DzIjNc90j5mMD8(point2, point3);
-      _param1.\u0023\u003DzBHH5KNloEXNR(true);
+      _param1.Handled(true);
     }
     else
       this.\u0023\u003DzIew7YFe_5nHVEkzlrQ\u003D\u003D();
     this.\u0023\u003DzqGwbHdeZ8yMA = false;
-    if (!_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (!_param1.IsMaster())
       return;
     this.ModifierSurface.ReleaseMouseCapture();
   }
@@ -233,7 +233,7 @@ internal sealed class RubberBandXyZoomModifier :
   {
     if (this.ModifierSurface == null || this.\u0023\u003DztHc2gS4\u003D == null)
       return;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003DztHc2gS4\u003D);
+    this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003DztHc2gS4\u003D);
     this.\u0023\u003DztHc2gS4\u003D = (Shape) null;
     this.\u0023\u003DzqGwbHdeZ8yMA = false;
   }

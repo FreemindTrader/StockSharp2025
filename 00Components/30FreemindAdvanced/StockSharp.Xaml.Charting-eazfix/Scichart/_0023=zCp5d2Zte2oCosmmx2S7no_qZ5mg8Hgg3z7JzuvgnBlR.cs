@@ -94,9 +94,9 @@ internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXk
     return (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D) new \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK3Nco\u0024rbGeT_23aNGi1tfLTsAtQ\u003D\u003D(this.\u0023\u003DzNFOu7BeFZYda().\u0023\u003DzuAOGltcBIMXJ(_param1));
   }
 
-  public override void \u0023\u003DzUf222sU\u003D()
+  public override void Clear()
   {
-    this.\u0023\u003DzNhq58rfMvbBc.\u0023\u003DzUf222sU\u003D();
+    this.\u0023\u003DzNhq58rfMvbBc.Clear();
   }
 
   public override void \u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(

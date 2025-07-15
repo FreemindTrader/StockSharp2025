@@ -93,7 +93,7 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
     dynWmoFzgH4RlWB0lB?.\u0023\u003DzqFIyyIbnwGLq(_param1 ?? this.\u0023\u003Dzwc3e5oDhVoYg(dynWmoFzgH4RlWB0lB));
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf()
+  protected override void OnIsEnabledChanged()
   {
     if (this.IsEnabled)
       return;
@@ -119,11 +119,11 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
     IAxis dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
-    if (this.IsDragging || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn) || dynWmoFzgH4RlWB0lB == null)
+    if (this.IsDragging || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.MouseButtons(), this.ExecuteOn) || dynWmoFzgH4RlWB0lB == null)
       return;
     Rect boundsRelativeTo = dynWmoFzgH4RlWB0lB.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB());
     if (dynWmoFzgH4RlWB0lB.IsHorizontalAxis && boundsRelativeTo.Height < this.MinTouchArea)
@@ -136,39 +136,39 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
       boundsRelativeTo.X -= (this.MinTouchArea - boundsRelativeTo.Width) / 2.0;
       boundsRelativeTo.Width = this.MinTouchArea;
     }
-    if (!boundsRelativeTo.Contains(_param1.\u0023\u003DztkyOk5amPcz3()))
+    if (!boundsRelativeTo.Contains(_param1.MousePoint()))
       return;
-    this.\u0023\u003Dz0RQE5sVUyiev = this.\u0023\u003DzqFBxYEN\u0024frAq(_param1.\u0023\u003DztkyOk5amPcz3(), boundsRelativeTo, dynWmoFzgH4RlWB0lB.IsHorizontalAxis);
+    this.\u0023\u003Dz0RQE5sVUyiev = this.\u0023\u003DzqFBxYEN\u0024frAq(_param1.MousePoint(), boundsRelativeTo, dynWmoFzgH4RlWB0lB.IsHorizontalAxis);
     if (dynWmoFzgH4RlWB0lB.get_FlipCoordinates())
       this.\u0023\u003Dz0RQE5sVUyiev = !this.\u0023\u003Dz0RQE5sVUyiev;
-    this.\u0023\u003DzeDqneUWYjgVB = _param1.\u0023\u003DztkyOk5amPcz3();
+    this.\u0023\u003DzeDqneUWYjgVB = _param1.MousePoint();
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("{0} MouseDown: x={1}, y={2}", new object[3]
     {
       (object) ((object) this).GetType().Name,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().Y
+      (object) _param1.MousePoint().X,
+      (object) _param1.MousePoint().Y
     });
-    if (_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (_param1.IsMaster())
       dynWmoFzgH4RlWB0lB.CaptureMouse();
     this.\u0023\u003DzqGwbHdeZ8yMA = true;
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    _param1.Handled(true);
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DzTXojzBH7awRH((Cursor) null);
     if (!this.IsDragging)
       return;
-    base.\u0023\u003Dz11bcnbUrALaA(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    base.OnModifierMouseMove(_param1);
+    _param1.Handled(true);
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("{0} MouseMove: x={1}, y={2}", new object[3]
     {
       (object) ((object) this).GetType().Name,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().Y
+      (object) _param1.MousePoint().X,
+      (object) _param1.MousePoint().Y
     });
-    Point point = _param1.\u0023\u003DztkyOk5amPcz3();
+    Point point = _param1.MousePoint();
     if (this.DragMode == \u0023\u003DzuxHg1RShgoNoz91lIJvsfKlLGFv49zadlg\u003D\u003D.Scale)
       this.\u0023\u003DzKcp02aUNjDpn(point, this.\u0023\u003DzeDqneUWYjgVB, this.\u0023\u003Dz0RQE5sVUyiev);
     else
@@ -176,21 +176,21 @@ internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIY
     this.\u0023\u003DzeDqneUWYjgVB = point;
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
     if (!this.IsDragging)
       return;
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    base.OnModifierMouseUp(_param1);
+    _param1.Handled(true);
     this.\u0023\u003DzqGwbHdeZ8yMA = false;
-    if (_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (_param1.IsMaster())
       this.\u0023\u003DzFLmJq0JJlr0n().ReleaseMouseCapture();
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("{0} MouseUp: x={1}, y={2}", new object[3]
     {
       (object) ((object) this).GetType().Name,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().X,
-      (object) _param1.\u0023\u003DztkyOk5amPcz3().Y
+      (object) _param1.MousePoint().X,
+      (object) _param1.MousePoint().Y
     });
   }
 

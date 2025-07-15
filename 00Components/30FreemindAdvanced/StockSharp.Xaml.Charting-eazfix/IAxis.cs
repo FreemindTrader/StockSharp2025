@@ -329,7 +329,7 @@ internal interface IAxis :
 
   double \u0023\u003DzhL6gsJw\u003D(IComparable _param1);
 
-  IComparable \u0023\u003DzACwLhyc\u003D(double _param1);
+  IComparable GetDataValue(double _param1);
 
   double \u0023\u003Dz4wEfDhMr\u0024V6c();
 
@@ -386,7 +386,7 @@ internal interface IAxis :
 
   void \u0023\u003DzpTR8\u0024ECbZOHX();
 
-  void \u0023\u003DzUf222sU\u003D();
+  void Clear();
 
   IRange \u0023\u003DzspbjXJnVtbB\u0024();
 

@@ -267,8 +267,8 @@ label_11:
     double num2 = Math.Abs(xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D()) - xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D() + num1));
     double num3 = num2 / 2.0;
     double num4 = val1_1 / 2.0;
-    kvt89B1lUeA7EdfukJs.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D = xkzemsMs5tGkouk5w2.\u0023\u003DzACwLhyc\u003D(-num2);
-    kvt89B1lUeA7EdfukJs.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D = xkzemsMs5tGkouk5w2.\u0023\u003DzACwLhyc\u003D(height + num2);
+    kvt89B1lUeA7EdfukJs.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D = xkzemsMs5tGkouk5w2.GetDataValue(-num2);
+    kvt89B1lUeA7EdfukJs.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D = xkzemsMs5tGkouk5w2.GetDataValue(height + num2);
     long? ticks1 = nullable3?.Ticks;
     long? ticks2 = nullable1?.Ticks;
     long? nullable8 = ticks1.HasValue & ticks2.HasValue ? new long?(ticks1.GetValueOrDefault() / ticks2.GetValueOrDefault()) : new long?();

@@ -53,12 +53,12 @@ internal sealed class dje_zLJ8YF663AZWU54HUL92JCTXZ2DPLKDPLLE4N2XAJB7KUMPA_ejd :
   }
 
   [SpecialName]
-  public ObservableCollection<UIElement> \u0023\u003DzBDSV99pPo8hY()
+  public ObservableCollection<UIElement> Children()
   {
     return this._childElements;
   }
 
-  public void \u0023\u003DzUf222sU\u003D() => this.\u0023\u003DzBDSV99pPo8hY().Clear();
+  public void Clear() => this.Children().Clear();
 
   public Point TranslatePoint(
     Point _param1,

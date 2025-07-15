@@ -81,9 +81,9 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     }
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf()
+  protected override void OnIsEnabledChanged()
   {
-    base.\u0023\u003DzCM2UQyuakisf();
+    base.OnIsEnabledChanged();
     this.\u0023\u003DzJu3oQ4_zae0S = (AnnotationBase) null;
     if (!this.IsEnabled || this.ParentSurface == null)
       return;
@@ -98,12 +98,12 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
     z6KsbJRt22Hb((object) this, EventArgs.Empty);
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
     if (this.\u0023\u003DzSsJ0VVqBhS6c == (Type) null || this.\u0023\u003DzJu3oQ4_zae0S == null || !this.\u0023\u003DzJu3oQ4_zae0S.IsAttached || this.\u0023\u003DzJu3oQ4_zae0S.IsSelected)
       return;
-    this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D, this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface));
+    this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D, this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface));
   }
 
   private bool \u0023\u003DzYcyvKa51rB8n(Type _param1)
@@ -112,30 +112,30 @@ internal class dje_zZTHFGMBWG8W4RABP3CZXW8NL5AQ7G4LTKKFALWWSGS7J5ARQQP83C_ejd :
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
-    if (this.\u0023\u003DzSsJ0VVqBhS6c == (Type) null || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn) || !_param1.\u0023\u003DzCJb5Ya_8UZCR() || this.\u0023\u003DzJu3oQ4_zae0S != null && !this.\u0023\u003DzJu3oQ4_zae0S.IsSelected)
+    if (this.\u0023\u003DzSsJ0VVqBhS6c == (Type) null || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.MouseButtons(), this.ExecuteOn) || !_param1.IsMaster() || this.\u0023\u003DzJu3oQ4_zae0S != null && !this.\u0023\u003DzJu3oQ4_zae0S.IsSelected)
       return;
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    _param1.Handled(true);
     if (this.\u0023\u003DzJu3oQ4_zae0S != null && this.\u0023\u003DzJu3oQ4_zae0S.IsAttached)
       this.\u0023\u003DzJu3oQ4_zae0S.IsSelected = false;
-    this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
+    this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface);
     if (this.\u0023\u003DzYcyvKa51rB8n(this.\u0023\u003DzSsJ0VVqBhS6c))
       return;
     this.\u0023\u003DzJu3oQ4_zae0S = this.\u0023\u003DzWj46Xvc\u003D(this.\u0023\u003DzSsJ0VVqBhS6c, this.\u0023\u003DzL3qbeQTHvLZ5);
     this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D, this.\u0023\u003DzxMlGl5jnCfhrWW4I2Vp56HE\u003D);
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    if (this.\u0023\u003DzSsJ0VVqBhS6c == (Type) null || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn) || !_param1.\u0023\u003DzCJb5Ya_8UZCR())
+    if (this.\u0023\u003DzSsJ0VVqBhS6c == (Type) null || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.MouseButtons(), this.ExecuteOn) || !_param1.IsMaster())
       return;
     if (this.\u0023\u003DzYcyvKa51rB8n(this.\u0023\u003DzSsJ0VVqBhS6c) && this.\u0023\u003DzJu3oQ4_zae0S == null)
     {
       this.\u0023\u003DzJu3oQ4_zae0S = this.\u0023\u003DzWj46Xvc\u003D(this.\u0023\u003DzSsJ0VVqBhS6c, this.\u0023\u003DzL3qbeQTHvLZ5);
-      Point point = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
+      Point point = this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface);
       this.\u0023\u003DzJu3oQ4_zae0S.UpdatePosition(point, point);
     }
     if (this.\u0023\u003DzJu3oQ4_zae0S == null)

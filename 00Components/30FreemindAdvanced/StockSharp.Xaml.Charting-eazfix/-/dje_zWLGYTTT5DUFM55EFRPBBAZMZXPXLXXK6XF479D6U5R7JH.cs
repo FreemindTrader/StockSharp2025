@@ -99,7 +99,7 @@ internal sealed class dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK
   {
     if (this.ModifierSurface == null || this.\u0023\u003DzSh5iKSo\u003D == null)
       return;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003DzSh5iKSo\u003D);
+    this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003DzSh5iKSo\u003D);
   }
 
   protected override void \u0023\u003DzBmyEynplQR0mx3c8kg\u003D\u003D(Point _param1)
@@ -129,7 +129,7 @@ internal sealed class dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK
       return num != 0;
     this.\u0023\u003DzSh5iKSo\u003D.Style = this.LineOverlayStyle;
     this.\u0023\u003DzSh5iKSo\u003D.IsHitTestVisible = false;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DzSh5iKSo\u003D);
+    this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003DzSh5iKSo\u003D);
     return num != 0;
   }
 

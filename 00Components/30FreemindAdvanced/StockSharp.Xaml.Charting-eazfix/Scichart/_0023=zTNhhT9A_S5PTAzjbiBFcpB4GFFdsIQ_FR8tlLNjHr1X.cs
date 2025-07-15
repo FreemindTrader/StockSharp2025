@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 #nullable disable
 internal interface \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D
 {
-  void \u0023\u003DzUf222sU\u003D(
+  void Clear(
     dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd _param1);
 
   void \u0023\u003DzZjpn7dI\u003D(

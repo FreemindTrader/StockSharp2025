@@ -178,8 +178,8 @@ internal sealed class dje_z4MJ5TFE3L3SA7J5XJJU6HVXRRF798GDHNRW3M9VC8LPPFQQ_ejd :
   {
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
   }
 

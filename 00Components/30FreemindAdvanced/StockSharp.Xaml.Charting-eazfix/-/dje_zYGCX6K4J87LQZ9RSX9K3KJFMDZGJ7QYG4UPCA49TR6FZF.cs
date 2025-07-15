@@ -140,8 +140,8 @@ internal sealed class dje_zYGCX6K4J87LQZ9RSX9K3KJFMDZGJ7QYG4UPCA49TR6FZFYAEDRSET
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
     if (this.DataSeries is \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D dataSeries)
     {
-      double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzACwLhyc\u003D(_param1.X);
-      double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzACwLhyc\u003D(_param1.Y);
+      double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().GetDataValue(_param1.X);
+      double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().GetDataValue(_param1.Y);
       zldchDrVsrVyHh6WyiGy = dataSeries.ToHitTestInfo(num1, num2, _param3);
       zldchDrVsrVyHh6WyiGy.\u0023\u003Dzo2ftAfxjqC04(_param1);
     }

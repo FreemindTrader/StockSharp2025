@@ -79,7 +79,7 @@ internal class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\
       }
       ((ICollection<\u0023\u003DzulcL8RA\u003D>) this.\u0023\u003DzmIwKipw\u003D).Clear();
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzoEP49rI\u003D).Clear();
-      this.\u0023\u003Dz3laIKDGah\u0024Kh?.\u0023\u003DzUf222sU\u003D();
+      this.\u0023\u003Dz3laIKDGah\u0024Kh?.Clear();
     }
   }
 
@@ -167,7 +167,7 @@ internal class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<\u0023\
     this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
   }
 
-  public virtual void \u0023\u003DzFkV86a8\u003D(
+  public virtual void UpdateOrderAdornerLayer(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2)
   {

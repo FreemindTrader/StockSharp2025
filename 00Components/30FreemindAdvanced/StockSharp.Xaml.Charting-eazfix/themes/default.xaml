@@ -823,16 +823,16 @@
   <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}"
          TargetType="{l1llili1:Type llliil11:dje_zKZT3WXJB88Y4B8YDF5YXJDCS8UAECSP9WP2R89CNTFNQ56MJ57BCEWMLZP7GGZKZW3FLL2CGJXGZ6HVHEM77S_ejd}"/>
   <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}"
-         TargetType="{l1llili1:Type llliil11:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd}">
+         TargetType="{l1llili1:Type llliil11:FastCandlestickRenderableSeries}">
     <Setter Property="llliil11:BaseRenderableSeries.LegendMarkerTemplate"
             Value="{StaticResource OhlcLegendMarkerTemplate}"/>
-    <Setter Property="llliil11:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.UpWickColor"
+    <Setter Property="llliil11:FastCandlestickRenderableSeries.UpWickColor"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleUpWickColor}"/>
-    <Setter Property="llliil11:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.DownWickColor"
+    <Setter Property="llliil11:FastCandlestickRenderableSeries.DownWickColor"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleDownWickColor}"/>
-    <Setter Property="llliil11:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.UpBodyBrush"
+    <Setter Property="llliil11:FastCandlestickRenderableSeries.UpBodyBrush"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleUpBodyBrush}"/>
-    <Setter Property="llliil11:dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.DownBodyBrush"
+    <Setter Property="llliil11:FastCandlestickRenderableSeries.DownBodyBrush"
             Value="{llliil11:dje_zR8DJERVYW3NHVYV462QZ339FHA427E7HKPCP4YVPP7EYCT45YZDYE_ejd dje_zMW6EZHW5_ejd=DefaultCandleDownBodyBrush}"/>
   </Style>
   <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}"

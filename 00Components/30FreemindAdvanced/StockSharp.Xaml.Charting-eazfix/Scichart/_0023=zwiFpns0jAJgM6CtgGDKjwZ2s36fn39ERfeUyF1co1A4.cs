@@ -333,8 +333,8 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
       return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
-    int num1 = (int) xkzemsMs5tGkouk5w1.\u0023\u003DzACwLhyc\u003D(_param1.X);
-    double num2 = xkzemsMs5tGkouk5w2.\u0023\u003DzACwLhyc\u003D(_param1.Y);
+    int num1 = (int) xkzemsMs5tGkouk5w1.GetDataValue(_param1.X);
+    double num2 = xkzemsMs5tGkouk5w2.GetDataValue(_param1.Y);
     if (num1 < 0 || num1 >= dataSeries.Count || e5TcobCgwh7srNhlw.\u0023\u003DzlpVGw6E\u003D() <= 0)
       return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
     int index = num1 - (int) e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI()[0].\u0023\u003Dz2_4KSTY\u003D();

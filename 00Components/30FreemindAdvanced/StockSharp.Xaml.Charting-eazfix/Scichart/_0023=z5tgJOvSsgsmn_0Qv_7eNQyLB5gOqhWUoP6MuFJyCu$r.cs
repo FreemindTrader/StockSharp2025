@@ -71,7 +71,7 @@ internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u00
     return this.\u0023\u003Dz6_fch3qptd6X * (_param1.\u0023\u003DzZsq6ZfbZQvsf() - (double) this.\u0023\u003DzbcBiY3v5phYc.Min) / (double) (this.\u0023\u003DzbcBiY3v5phYc.Max - this.\u0023\u003DzbcBiY3v5phYc.Min) + this.\u0023\u003DzV1bNkSgej_yk();
   }
 
-  public sealed override double \u0023\u003DzACwLhyc\u003D(double _param1)
+  public sealed override double GetDataValue(double _param1)
   {
     return ((double) (this.\u0023\u003DzbcBiY3v5phYc.Max - this.\u0023\u003DzbcBiY3v5phYc.Min) * (_param1 - this.\u0023\u003DzV1bNkSgej_yk()) / this.\u0023\u003Dz6_fch3qptd6X + (double) this.\u0023\u003DzbcBiY3v5phYc.Min).\u0023\u003DzZsq6ZfbZQvsf();
   }

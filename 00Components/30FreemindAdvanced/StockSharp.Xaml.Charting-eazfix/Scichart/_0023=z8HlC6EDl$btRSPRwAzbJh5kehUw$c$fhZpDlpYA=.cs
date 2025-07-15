@@ -246,7 +246,7 @@ internal sealed class AnnotationCollection :
   {
     if (!_param1.get_IsEditable() || _param1.get_IsSelected() || !_param1.IsAttached)
       return false;
-    if (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk() != \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift || !this.\u0023\u003DzbjRX\u0024PUuuOXT(_param1))
+    if (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk() != MouseModifier.Shift || !this.\u0023\u003DzbjRX\u0024PUuuOXT(_param1))
       this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(AnnotationCollection.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (AnnotationCollection.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IAnnotation>(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D)));
     this.\u0023\u003DzdkkvQAq7ppeh(_param1);
     return true;

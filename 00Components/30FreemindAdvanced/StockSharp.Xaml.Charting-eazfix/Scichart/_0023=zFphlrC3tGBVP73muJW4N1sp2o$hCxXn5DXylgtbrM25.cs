@@ -9,7 +9,7 @@ internal interface \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25
 {
   void \u0023\u003DzFeNr2Uw\u003D();
 
-  void \u0023\u003DzUf222sU\u003D();
+  void Clear();
 
   void \u0023\u003DzGDdLHa8\u003D();
 

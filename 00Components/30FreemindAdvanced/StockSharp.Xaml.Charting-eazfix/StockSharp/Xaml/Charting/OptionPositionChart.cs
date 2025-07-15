@@ -128,7 +128,7 @@ public class OptionPositionChart :
     set
     {
       this.\u0023\u003DzN\u0024mcfM0\u003D = value;
-      this.\u0023\u003DzUf222sU\u003D();
+      this.Clear();
       if (this.\u0023\u003DzN\u0024mcfM0\u003D == null)
         return;
       if (this.ShowSeparated)
@@ -301,7 +301,7 @@ public class OptionPositionChart :
     this.\u0023\u003DzO72kpz0\u003D.Draw(data1);
   }
 
-  private void \u0023\u003DzUf222sU\u003D()
+  private void Clear()
   {
     IChartElement[] array = ((IEnumerable<IChartElement>) this.\u0023\u003DzM1p2o1yl\u0024dah()).Where<IChartElement>(new Func<IChartElement, bool>(this.\u0023\u003DzbeCle_i43QHS_HZk\u0024A\u003D\u003D)).ToArray<IChartElement>();
     CollectionHelper.RemoveRange<IChartElement>((ICollection<IChartElement>) this.\u0023\u003DzM1p2o1yl\u0024dah(), (IEnumerable<IChartElement>) array);

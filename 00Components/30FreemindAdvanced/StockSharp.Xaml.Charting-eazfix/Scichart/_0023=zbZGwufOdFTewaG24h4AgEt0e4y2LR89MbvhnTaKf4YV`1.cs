@@ -41,5 +41,5 @@ internal interface \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8h
 
   void \u0023\u003DzYxK_ApJhHiJi9CS2B8NjXKM\u003D();
 
-  void \u0023\u003DzUf222sU\u003D();
+  void Clear();
 }

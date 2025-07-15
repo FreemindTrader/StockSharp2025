@@ -61,7 +61,7 @@ internal sealed class LegendModifier :
     if (this.\u0023\u003DzbMH2duO6275S\u0024V7L\u0024g\u003D\u003D == count)
       return;
     this.\u0023\u003DzbMH2duO6275S\u0024V7L\u0024g\u003D\u003D = count;
-    this.\u0023\u003DzebZge1miA2O0(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY(new Point(this.ModifierSurface.ActualWidth / 2.0, this.ModifierSurface.ActualHeight / 2.0), (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0, \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None, true, (IReceiveMouseEvents ) null));
+    this.\u0023\u003DzebZge1miA2O0(new ModifierMouseArgs(new Point(this.ModifierSurface.ActualWidth / 2.0, this.ModifierSurface.ActualHeight / 2.0), (MouseButtons) 0, MouseModifier.None, true, (IReceiveMouseEvents ) null));
   }
 
   private sealed class SomeWheireosoe

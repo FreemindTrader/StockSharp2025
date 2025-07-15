@@ -581,8 +581,8 @@ internal abstract class BaseRenderableSeries :
       throw new ArgumentException("hitTestRadiusInPixels is NAN");
     Tuple<IComparable, IComparable> tuple = this.\u0023\u003Dzs0Y0\u0024lrpmkkQ(_param1);
     Point point = this.\u0023\u003Dzop6vn0GowyiR(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
-    double num1 = Math.Abs(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzACwLhyc\u003D(point.X + 1.0) - this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzACwLhyc\u003D(point.X));
-    double num2 = Math.Abs(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzACwLhyc\u003D(point.Y + 1.0) - this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzACwLhyc\u003D(point.Y));
+    double num1 = Math.Abs(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().GetDataValue(point.X + 1.0) - this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().GetDataValue(point.X));
+    double num2 = Math.Abs(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().GetDataValue(point.Y + 1.0) - this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().GetDataValue(point.Y));
     double num3 = _param4 ? num1 / num2 : 0.0;
     \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = this.DataSeries;
     if (dataSeries.get_Count() < 2)
@@ -608,7 +608,7 @@ internal abstract class BaseRenderableSeries :
     _param1 = this.\u0023\u003Dzop6vn0GowyiR(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
-    double num1 = xkzemsMs5tGkouk5w1.\u0023\u003DzACwLhyc\u003D(_param1.X);
+    double num1 = xkzemsMs5tGkouk5w1.GetDataValue(_param1.X);
     IComparable comparable1 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(num1, this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[0].GetType());
     if (xkzemsMs5tGkouk5w1 is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)
     {
@@ -624,7 +624,7 @@ internal abstract class BaseRenderableSeries :
         comparable1 = (IComparable) new DateTime((long) (Math.Min(val1_2, comparable1.ToDouble()) + Math.Abs(val1_2 - comparable1.ToDouble()) * num4));
       }
     }
-    IComparable comparable2 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(xkzemsMs5tGkouk5w2.\u0023\u003DzACwLhyc\u003D(_param1.Y), this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[0].GetType());
+    IComparable comparable2 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(xkzemsMs5tGkouk5w2.GetDataValue(_param1.Y), this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[0].GetType());
     return new Tuple<IComparable, IComparable>(comparable1, comparable2);
   }
 

@@ -10,7 +10,7 @@ using System.Collections.Generic;
 #nullable disable
 internal interface \u0023\u003DzDH5EtXmKZCpH30z_eydhO42Ygtxj0A9MtVBlpvd5g5Ii2CglZA\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
-  \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ,
+  IOhlcDataSeries,
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
   where \u0023\u003DzulcL8RA\u003D : IComparable
@@ -46,7 +46,7 @@ internal interface \u0023\u003DzDH5EtXmKZCpH30z_eydhO42Ygtxj0A9MtVBlpvd5g5Ii2Cgl
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param4,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param5);
 
-  void \u0023\u003DzFkV86a8\u003D(
+  void UpdateOrderAdornerLayer(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzE8zkRfY\u003D _param3,

@@ -125,8 +125,8 @@ internal sealed class dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7
     vm6DexIkyzzokCaW.\u0023\u003DzoVxmkd0\u003D = this.ClusterColor;
     vm6DexIkyzzokCaW.\u0023\u003Dz6GGz9n8\u003D = this.ClusterMaxColor;
     Color textColor = this.TextColor;
-    double num2 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzACwLhyc\u003D(zNgOs9Qu1W4t3.\u0023\u003DzvTWpIBJwyiW8 + zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D);
-    double num3 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzACwLhyc\u003D(-zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D);
+    double num2 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.GetDataValue(zNgOs9Qu1W4t3.\u0023\u003DzvTWpIBJwyiW8 + zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D);
+    double num3 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.GetDataValue(-zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D);
     vm6DexIkyzzokCaW.\u0023\u003DzEB3J6TW\u0024NW8A = anaOdfaeo1Ed4fSw.VisibleRange;
     vm6DexIkyzzokCaW.\u0023\u003DzYGnDwpm8DuE5 = this.\u0023\u003DzdOa9LxKWm9_R();
     vm6DexIkyzzokCaW.\u0023\u003Dz2f9hyDdoCC2j = this.\u0023\u003DzMGEDv1J2E_VL();

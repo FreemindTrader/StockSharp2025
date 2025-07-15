@@ -3,6 +3,7 @@ using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Xaml;
 using Ecng.Xaml.Converters;
+using SciChart.Charting;
 using SciChart.Charting.ChartModifiers;
 using SciChart.Charting.Common.Helpers;
 using SciChart.Charting.Visuals;
@@ -80,7 +81,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private readonly ObservableCollection<ChartCompentViewModel> _legendElements = new ObservableCollection<ChartCompentViewModel>();
 
-    private Action<IChartElement> RemoveElementEvent;
+    public event Action<IChartElement> RemoveElementEvent;
 
     private string _paneGroupSuffix;
 
@@ -171,36 +172,20 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         get => this._legendElements;
     }
 
-    public void RemoveElementEvent( Action<IChartElement> _param1 )
-    {
-        Action<IChartElement> action = this.RemoveElementEvent;
-        Action<IChartElement> comparand;
-        do
-        {
-            comparand = action;
-            action = Interlocked.CompareExchange<Action<IChartElement>>( ref this.RemoveElementEvent, comparand + _param1, comparand );
-        }
-        while ( action != comparand );
-    }
+    
 
-    public void RemoveElementEvent( Action<IChartElement> _param1 )
+    private void OnAreaPropertyChanged( object obj, PropertyChangedEventArgs e )
     {
-        Action<IChartElement> action = this.RemoveElementEvent;
-        Action<IChartElement> comparand;
-        do
+        if ( e.PropertyName == "Height" )
         {
-            comparand = action;
-            action = Interlocked.CompareExchange<Action<IChartElement>>( ref this.RemoveElementEvent, comparand - _param1, comparand );
-        }
-        while ( action != comparand );
-    }
-
-    private void OnAreaPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
-    {
-        if ( _param2.PropertyName == "Height" )
             this.Height = this.Area.Height;
-        if ( !( _param2.PropertyName == "Title" ) )
+        }
+
+        if ( e.PropertyName != "Title" )
+        {
             return;
+        }
+            
         this.NotifyChanged( "Title" );
     }
 
@@ -208,26 +193,26 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     {
         if ( this._chartModifiers.Count > 0 )
             return;
-        UltrachartCursormodifier cursor = new UltrachartCursormodifier();
+        var cursor = new UltrachartCursormodifier();
         cursor.ShowTooltip = true;
         cursor.ReceiveHandledEvents = true;
-        UltrachartCursormodifier yx2796KwcrF36XmmEjd2 = cursor;
-        ChartOrderModifier uGe7r60S1WuU1rGA1 = new ChartOrderModifier( this.Area );
-        uGe7r60S1WuU1rGA1.IsEnabled = false;
-        ChartOrderModifier uGe7r60S1WuU1rGA2 = uGe7r60S1WuU1rGA1;
-        fxZoomPanModifier ypbydebG6VffgcpzeEjd1 = new fxZoomPanModifier();
-        ypbydebG6VffgcpzeEjd1.ExecuteOn = ExecuteOn.MouseLeftButton;
-        ypbydebG6VffgcpzeEjd1.ReceiveHandledEvents = true;
-        ypbydebG6VffgcpzeEjd1.ClipModeX = ClipMode.None;
-        fxZoomPanModifier ypbydebG6VffgcpzeEjd2 = ypbydebG6VffgcpzeEjd1;
+        
+        ChartOrderModifier orderLines = new ChartOrderModifier( this.Area );
+        orderLines.IsEnabled = false;
+        
+        var zoomPan = new fxZoomPanModifier();
+        zoomPan.ExecuteOn = ExecuteOn.MouseLeftButton;
+        zoomPan.ReceiveHandledEvents = true;
+        zoomPan.ClipModeX = ClipMode.None;
+        
         ChartOrderModifier orderLines = new ChartOrderModifier();
-        orderLines.\u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D( new Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>( this.\u0023\u003Dz2baZtMhFLPZu0vCzoJUPQZE\u003D) );
-        orderLines.\u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D( new Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>( this.\u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D) );
+        orderLines.\u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D( new Action<ModifierMouseArgs>( this.\u0023\u003Dz2baZtMhFLPZu0vCzoJUPQZE\u003D) );
+        orderLines.\u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D( new Action<ModifierMouseArgs>( this.\u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D) );
         List<ChartModifierBase> zRhhpqbmmRle6 = this._chartModifiers;
         ChartModifierBase[] v7UvhxrxhaatqEjdArray = new ChartModifierBase[9];
         v7UvhxrxhaatqEjdArray[ 0 ] = ( ChartModifierBase ) orderLines;
-        v7UvhxrxhaatqEjdArray[ 1 ] = ( ChartModifierBase ) uGe7r60S1WuU1rGA2;
-        v7UvhxrxhaatqEjdArray[ 2 ] = ( ChartModifierBase ) yx2796KwcrF36XmmEjd2;
+        v7UvhxrxhaatqEjdArray[ 1 ] = ( ChartModifierBase ) orderLines;
+        v7UvhxrxhaatqEjdArray[ 2 ] = ( ChartModifierBase ) cursor;
         dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd wcsffbemybnM9U2CjdEjd = new dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd();
         wcsffbemybnM9U2CjdEjd.AxisId = "X";
         wcsffbemybnM9U2CjdEjd.ClipModeX = ClipMode.None;
@@ -240,7 +225,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd fk4QgaphfmmujdEjd = new dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd();
         fk4QgaphfmmujdEjd.ExecuteOn = ExecuteOn.MouseDoubleClick;
         v7UvhxrxhaatqEjdArray[ 7 ] = ( ChartModifierBase ) fk4QgaphfmmujdEjd;
-        v7UvhxrxhaatqEjdArray[ 8 ] = ( ChartModifierBase ) ypbydebG6VffgcpzeEjd2;
+        v7UvhxrxhaatqEjdArray[ 8 ] = ( ChartModifierBase ) zoomPan;
     \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D< ChartModifierBase > collection = new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D< ChartModifierBase > ( v7UvhxrxhaatqEjdArray );
         zRhhpqbmmRle6.AddRange( ( IEnumerable<ChartModifierBase> ) collection );
     }
@@ -302,8 +287,8 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
             yx2796KwcrF36XmmEjd.SetBindings( ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu, ( object ) this.Chart, "CrossHair" );
             yx2796KwcrF36XmmEjd.SetBindings( dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzCuzcJq\u0024VLiWR, ( object ) this.Chart, "CrossHairAxisLabels" );
             yx2796KwcrF36XmmEjd.SetBindings( UltrachartCursormodifier.\u0023\u003DztwQ4ieQ9dTof, ( object ) this.Chart, "CrossHairTooltip" );
-            ChartOrderModifier uGe7r60S1WuU1rGA1 = this.ChartModifier.ChildModifiers.OfType <ChartOrderModifier> ().Single <ChartOrderModifier> ();
-            ChartOrderModifier uGe7r60S1WuU1rGA2 = uGe7r60S1WuU1rGA1;
+            ChartOrderModifier orderLines = this.ChartModifier.ChildModifiers.OfType <ChartOrderModifier> ().Single <ChartOrderModifier> ();
+            ChartOrderModifier orderLines = orderLines;
             DependencyProperty zSlZmDsF5TsAu = ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu;
             BoolAllConverter conv = new BoolAllConverter();
             conv.Value = true;
@@ -315,8 +300,8 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         },
         new Binding("PaneHasCandles") { Source = (object) this }
       };
-            uGe7r60S1WuU1rGA2.SetMultiBinding( zSlZmDsF5TsAu, ( IMultiValueConverter ) conv, bindingArray );
-            uGe7r60S1WuU1rGA1.SetBindings( ChartOrderModifier.\u0023\u003DzISs1rY1PUWf_, ( object ) this.Chart, "CrossHair", BindingMode.OneWay, ( IValueConverter ) new InverseBooleanConverter() );
+            orderLines.SetMultiBinding( zSlZmDsF5TsAu, ( IMultiValueConverter ) conv, bindingArray );
+            orderLines.SetBindings( ChartOrderModifier.ShowHorizontalLineProperty, ( object ) this.Chart, "CrossHair", BindingMode.OneWay, ( IValueConverter ) new InverseBooleanConverter() );
             this.ChartModifier.ChildModifiers.OfType<fxZoomPanModifier>().Single<fxZoomPanModifier>().SetBindings( ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu, ( object ) this.Chart, "AnnotationType", BindingMode.OneWay, ( IValueConverter ) new EnumBooleanConverter(), ( object ) ChartAnnotationTypes.None.ToString() );
       \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SetMouseEventGroup( ( DependencyObject ) this.ChartModifier, this.PaneGroup );
         }
@@ -677,7 +662,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
       {
         LegendModifier = new LegendModifier()
       };
-      this._legendViewModel.RemoveElementEvent(new Action<IChartElement>(this.\u0023\u003DzPtxNDyntmL6NTRG9Qk\u00249wEg\u003D));
+      this._legendViewModel.RemoveElementEvent(new Action<IChartElement>(this.OnRemoveElementEvent));
       return this._legendViewModel;
     }
   }
@@ -1033,7 +1018,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   }
 
   private void \u0023\u003Dz2baZtMhFLPZu0vCzoJUPQZE\u003D(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     IChart chart = this.Chart;
     if (chart == null)
@@ -1042,7 +1027,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   }
 
   private void \u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     IChart chart = this.Chart;
     if (chart == null)
@@ -1116,7 +1101,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     return _param1.CreateViewModel(this);
   }
 
-  private void \u0023\u003DzPtxNDyntmL6NTRG9Qk\u00249wEg\u003D(IChartElement _param1)
+  private void OnRemoveElementEvent(IChartElement _param1)
   {
     this.ParentViewModel?.\u0023\u003DzzXq5ccDMuPZc(_param1);
     Action<IChartElement> zeBeQvx4 = this.RemoveElementEvent;

@@ -124,7 +124,7 @@ public struct BitmapContext : IDisposable
       \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003Dz8YbqsoQ7EyhA((byte*) _param0.\u0023\u003DzSKG\u0024_qBsOJZc(), _param1, (byte*) numPtr, _param3, _param4);
   }
 
-  internal void \u0023\u003DzUf222sU\u003D()
+  internal void Clear()
   {
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003DzvOds\u0024YwY7CNP(this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBuffer, 0, this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBufferStride * this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.PixelHeight);
   }

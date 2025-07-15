@@ -14,79 +14,79 @@ internal sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D
   ChartModifierBase
 {
   
-  private Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> \u0023\u003Dz0oGDcgXNO1Ze;
+  private Action<ModifierMouseArgs> \u0023\u003Dz0oGDcgXNO1Ze;
   
-  private Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> \u0023\u003DzrmlvxkfuVPe1;
+  private Action<ModifierMouseArgs> \u0023\u003DzrmlvxkfuVPe1;
 
   public void \u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D(
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> _param1)
+    Action<ModifierMouseArgs> _param1)
   {
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> action = this.\u0023\u003Dz0oGDcgXNO1Ze;
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> comparand;
+    Action<ModifierMouseArgs> action = this.\u0023\u003Dz0oGDcgXNO1Ze;
+    Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>>(ref this.\u0023\u003Dz0oGDcgXNO1Ze, comparand + _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003Dz0oGDcgXNO1Ze, comparand + _param1, comparand);
     }
     while (action != comparand);
   }
 
   public void \u0023\u003DzKMNJUrebJ6bHfEfMgg\u003D\u003D(
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> _param1)
+    Action<ModifierMouseArgs> _param1)
   {
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> action = this.\u0023\u003Dz0oGDcgXNO1Ze;
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> comparand;
+    Action<ModifierMouseArgs> action = this.\u0023\u003Dz0oGDcgXNO1Ze;
+    Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>>(ref this.\u0023\u003Dz0oGDcgXNO1Ze, comparand - _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003Dz0oGDcgXNO1Ze, comparand - _param1, comparand);
     }
     while (action != comparand);
   }
 
   public void \u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D(
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> _param1)
+    Action<ModifierMouseArgs> _param1)
   {
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> action = this.\u0023\u003DzrmlvxkfuVPe1;
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> comparand;
+    Action<ModifierMouseArgs> action = this.\u0023\u003DzrmlvxkfuVPe1;
+    Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>>(ref this.\u0023\u003DzrmlvxkfuVPe1, comparand + _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003DzrmlvxkfuVPe1, comparand + _param1, comparand);
     }
     while (action != comparand);
   }
 
   public void \u0023\u003DzcMDiaOXtryw1mZGXQA\u003D\u003D(
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> _param1)
+    Action<ModifierMouseArgs> _param1)
   {
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> action = this.\u0023\u003DzrmlvxkfuVPe1;
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> comparand;
+    Action<ModifierMouseArgs> action = this.\u0023\u003DzrmlvxkfuVPe1;
+    Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY>>(ref this.\u0023\u003DzrmlvxkfuVPe1, comparand - _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003DzrmlvxkfuVPe1, comparand - _param1, comparand);
     }
     while (action != comparand);
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
-    if (_param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1)
+    if (_param1.MouseButtons() != (MouseButtons) 1)
       return;
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> zrmlvxkfuVpe1 = this.\u0023\u003DzrmlvxkfuVPe1;
+    Action<ModifierMouseArgs> zrmlvxkfuVpe1 = this.\u0023\u003DzrmlvxkfuVPe1;
     if (zrmlvxkfuVpe1 == null)
       return;
     zrmlvxkfuVpe1(_param1);
   }
 
   public override void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzQTINWhMByBmJ(_param1);
-    Action<\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY> z0oGdcgXnO1Ze = this.\u0023\u003Dz0oGDcgXNO1Ze;
+    Action<ModifierMouseArgs> z0oGdcgXnO1Ze = this.\u0023\u003Dz0oGDcgXNO1Ze;
     if (z0oGdcgXnO1Ze == null)
       return;
     z0oGdcgXnO1Ze(_param1);

@@ -111,9 +111,9 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
     }.\u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D));
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf()
+  protected override void OnIsEnabledChanged()
   {
-    base.\u0023\u003DzCM2UQyuakisf();
+    base.OnIsEnabledChanged();
     if (this.IsEnabled)
       this.OnAttached();
     else
@@ -248,8 +248,8 @@ internal sealed class dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V
     newValue.\u0023\u003Dz30RSSSygABj_<VerticalLineAnnotation>(new Action<VerticalLineAnnotation>(fljuaR85WhV6Rm45VEjd.\u0023\u003DzP42\u0024FaFVbvo7));
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
   }
 

@@ -88,32 +88,32 @@ internal abstract class dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXT
 
   protected abstract void \u0023\u003DzleRWWIS9Sb_X();
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
-    base.\u0023\u003Dz11bcnbUrALaA(_param1);
+    base.OnModifierMouseMove(_param1);
     this.\u0023\u003DzebZge1miA2O0(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(false);
+    _param1.Handled(false);
   }
 
   protected void \u0023\u003DzebZge1miA2O0(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     int num = this.\u0023\u003DziEIgi1dpKb6j(_param1) ? 1 : 0;
     bool flag = false;
     if (num != 0)
     {
-      this.\u0023\u003DzeAqKwx8\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface);
-      this.\u0023\u003DzKpmBZbLVz8O6 = _param1.\u0023\u003DzCJb5Ya_8UZCR();
+      this.\u0023\u003DzeAqKwx8\u003D = this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface);
+      this.\u0023\u003DzKpmBZbLVz8O6 = _param1.IsMaster();
       flag = this.\u0023\u003DzebZge1miA2O0(this.\u0023\u003DzeAqKwx8\u003D);
     }
-    _param1.\u0023\u003DzBHH5KNloEXNR(flag);
+    _param1.Handled(flag);
   }
 
   private bool \u0023\u003DziEIgi1dpKb6j(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
-    return this.ModifierSurface != null && this.IsEnabled && this.\u0023\u003DzK46Xo3q3PoYX(_param1.\u0023\u003DzwuSh61ofE2mr(), this.ExecuteOn);
+    return this.ModifierSurface != null && this.IsEnabled && this.\u0023\u003DzK46Xo3q3PoYX(_param1.MouseButtons(), this.ExecuteOn);
   }
 
   private bool \u0023\u003DzebZge1miA2O0(Point _param1)

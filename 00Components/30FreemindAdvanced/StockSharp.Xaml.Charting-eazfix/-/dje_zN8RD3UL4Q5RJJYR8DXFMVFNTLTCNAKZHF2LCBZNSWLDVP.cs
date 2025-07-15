@@ -32,7 +32,7 @@ internal sealed class dje_zN8RD3UL4Q5RJJYR8DXFMVFNTLTCNAKZHF2LCBZNSWLDVPYTWWEKD4
     this.\u0023\u003DzlisSOG7yPz_K = _param1;
   }
 
-  public void \u0023\u003DzUf222sU\u003D(
+  public void Clear(
     dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd _param1)
   {
     throw new InvalidOperationException("GridLinesPanel no longer draws gridlines. These are now added to the RenderSurfaceBase instance instead for performance. ");

@@ -24,7 +24,7 @@ internal sealed class ModifierGroup :
   
   public static readonly DependencyProperty \u0023\u003Dzmf0Yyi0vkYuX = DependencyProperty.Register(nameof (ChildModifiers), typeof (ObservableCollection<IChartModifier>), typeof (ModifierGroup), new PropertyMetadata((object) null, new PropertyChangedCallback(ModifierGroup.\u0023\u003DzMGnM8Q7UmYY2)));
   
-  private readonly Grid \u0023\u003DzS\u0024OTg_s\u003D = new Grid();
+  private readonly Grid _grid = new Grid();
 
   public ModifierGroup()
     : this(Array.Empty<IChartModifier>())
@@ -37,7 +37,7 @@ internal sealed class ModifierGroup :
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "childModifiers");
     for (int index = 0; index < _param1.Length; ++index)
       \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1[index], $"childModifiers[{index}]");
-    this.Content = (object) this.\u0023\u003DzS\u0024OTg_s\u003D;
+    this.Content = (object) this._grid;
     this.SetCurrentValue(ModifierGroup.\u0023\u003Dzmf0Yyi0vkYuX, (object) new ObservableCollection<IChartModifier>((IEnumerable<IChartModifier>) _param1));
   }
 
@@ -97,7 +97,7 @@ internal sealed class ModifierGroup :
   private void \u0023\u003DztqcafrnOGvWC(
     IChartModifier _param1)
   {
-    this.\u0023\u003DzS\u0024OTg_s\u003D.\u0023\u003DzH0osWQkV_Y8_((object) _param1, -1);
+    this._grid.\u0023\u003DzH0osWQkV_Y8_((object) _param1, -1);
   }
 
   private void \u0023\u003DzHs2cDCMHYNdU(
@@ -119,7 +119,7 @@ internal sealed class ModifierGroup :
   private void \u0023\u003DzBLgi0dgELqPs(
     IChartModifier _param1)
   {
-    this.\u0023\u003DzS\u0024OTg_s\u003D.\u0023\u003DziYdJ\u00246cCiBha((object) _param1);
+    this._grid.\u0023\u003DziYdJ\u00246cCiBha((object) _param1);
   }
 
   protected override void \u0023\u003DzMQsNWQqev3ol8vdG1w\u003D\u003D(
@@ -158,13 +158,13 @@ internal sealed class ModifierGroup :
     this.ChildModifiers.\u0023\u003Dz30RSSSygABj_<IChartModifier>(new Action<IChartModifier>(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzSNWKb\u0024dBOE2a0JlR9g\u003D\u003D));
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf()
+  protected override void OnIsEnabledChanged()
   {
     this.ChildModifiers.\u0023\u003Dz30RSSSygABj_<IChartModifier>(new Action<IChartModifier>(this.\u0023\u003DzHKDu2R4\u0024lFIb58vAYGbiULo\u003D));
   }
 
   public override void \u0023\u003Dz5y8F1YNwkhnW(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dzgc4SCis4HjHyynhFkS9uoNrJlYYn)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
@@ -183,31 +183,31 @@ internal sealed class ModifierGroup :
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dz3eP\u0024F06Do2Yqw5911Phrm\u0024c\u003D)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzZSMUtK9zaXNAI8WwDGKJ3XDLzVv8)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzZ\u0024KRLvh2qpiaoFfyVxWBpgmJh\u0024ZU)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
-  public override void \u0023\u003Dz3RBcoKAPKSIX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnMasterMouseLeave(
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003Dzxza6M2rQ\u0024\u0024Ygg7l8sg\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzVYORBuxvOyw39HzBaLE20tNlRtHr)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
@@ -331,7 +331,7 @@ internal sealed class ModifierGroup :
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
-      _param1.\u0023\u003Dz5y8F1YNwkhnW((\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY) _param2);
+      _param1.\u0023\u003Dz5y8F1YNwkhnW((ModifierMouseArgs) _param2);
     }
 
     internal bool \u0023\u003DzxqzF6jTaY9lVLxHYg5yFLN0\u003D(
@@ -344,35 +344,35 @@ internal sealed class ModifierGroup :
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
-      _param1.\u0023\u003DzsXEfcKpqchyX((\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY) _param2);
+      _param1.\u0023\u003DzsXEfcKpqchyX((ModifierMouseArgs) _param2);
     }
 
     internal void \u0023\u003Dz3eP\u0024F06Do2Yqw5911Phrm\u0024c\u003D(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
-      _param1.\u0023\u003Dz11bcnbUrALaA((\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY) _param2);
+      _param1.OnModifierMouseMove((ModifierMouseArgs) _param2);
     }
 
     internal void \u0023\u003DzZSMUtK9zaXNAI8WwDGKJ3XDLzVv8(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
-      _param1.\u0023\u003DzU3pYs4rYVmOS((\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY) _param2);
+      _param1.OnModifierMouseUp((ModifierMouseArgs) _param2);
     }
 
     internal void \u0023\u003DzZ\u0024KRLvh2qpiaoFfyVxWBpgmJh\u0024ZU(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
-      _param1.\u0023\u003DzQTINWhMByBmJ((\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY) _param2);
+      _param1.\u0023\u003DzQTINWhMByBmJ((ModifierMouseArgs) _param2);
     }
 
     internal void \u0023\u003DzVYORBuxvOyw39HzBaLE20tNlRtHr(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
-      _param1.\u0023\u003Dz3RBcoKAPKSIX((\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY) _param2);
+      _param1.OnMasterMouseLeave((ModifierMouseArgs) _param2);
     }
 
     internal void \u0023\u003DzT6V9kc7Cfg601etpFH8cUK\u0024ZsXar(

@@ -136,9 +136,9 @@ internal abstract class \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u002
     });
   }
 
-  public override IComparable \u0023\u003DzACwLhyc\u003D(double _param1)
+  public override IComparable GetDataValue(double _param1)
   {
-    return this.\u0023\u003Dz3ZiX3E6vqtLl(base.\u0023\u003DzACwLhyc\u003D(_param1));
+    return this.\u0023\u003Dz3ZiX3E6vqtLl(base.GetDataValue(_param1));
   }
 
   public override IAxis \u0023\u003DzQ8SgRgQ\u003D()

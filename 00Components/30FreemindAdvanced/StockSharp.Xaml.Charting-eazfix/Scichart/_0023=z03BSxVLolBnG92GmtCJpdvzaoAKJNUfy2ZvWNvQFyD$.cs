@@ -42,7 +42,7 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
   }
 
   public override void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzQTINWhMByBmJ(_param1);
     using (this.ParentSurface.SuspendUpdates())
@@ -50,28 +50,28 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
       double num = (double) -_param1.\u0023\u003DzDuDuL4DDV5GL() / 120.0;
       dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd xyDirection = this.XyDirection;
       dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd actionType = this.ActionType;
-      switch (_param1.\u0023\u003DzgMFxvpJd_50n())
+      switch (_param1.Modifier())
       {
-        case \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None:
+        case MouseModifier.None:
           this.ActionType = dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan;
           this.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
           break;
-        case \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift:
+        case MouseModifier.Shift:
           return;
-        case \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl:
+        case MouseModifier.Ctrl:
           this.ActionType = dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Zoom;
           break;
-        case \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift | \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl:
+        case MouseModifier.Shift | MouseModifier.Ctrl:
           return;
-        case \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Alt:
+        case MouseModifier.Alt:
           this.ActionType = dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan;
           this.XyDirection = dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection;
           break;
         default:
           return;
       }
-      _param1.\u0023\u003DzBHH5KNloEXNR(true);
-      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface), num);
+      _param1.Handled(true);
+      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface), num);
       this.XyDirection = xyDirection;
       this.ActionType = actionType;
     }

@@ -82,7 +82,7 @@ internal sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8
         new string[1]{ "StackedGroupId" }
       },
       {
-        typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd),
+        typeof (FastCandlestickRenderableSeries),
         new string[5]
         {
           "UpWickColor",

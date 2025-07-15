@@ -249,7 +249,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
       this.\u0023\u003Dzz6J3NZIzdU\u0024X();
       this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 3);
       this.DataDistributionCalculator = \u0023\u003DzzsyKnUNUDKjF7rDv70izNy4bx\u0024saGFs108aHH7lGphGuZX7JpGJEopE\u003D.\u0023\u003DzpxJeWbQ\u003D<\u0023\u003DzulcL8RA\u003D>(this.IsFifo);
-      this.DataDistributionCalculator.\u0023\u003DzUf222sU\u003D();
+      this.DataDistributionCalculator.Clear();
     }
   }
 

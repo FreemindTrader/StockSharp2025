@@ -40,7 +40,7 @@ internal interface \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC34hLHdN9miZZngvjW5
 
   void \u0023\u003Dzqtb9toLjXu0t();
 
-  void \u0023\u003DzUf222sU\u003D();
+  void Clear();
 
   void \u0023\u003DzSgMgi9QlqY9x();
 }

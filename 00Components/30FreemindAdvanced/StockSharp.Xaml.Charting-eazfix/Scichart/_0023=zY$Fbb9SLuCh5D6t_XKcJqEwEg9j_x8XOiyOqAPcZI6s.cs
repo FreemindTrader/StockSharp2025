@@ -38,12 +38,12 @@ internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZ
       return;
     for (int index = 0; index < _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D().Length; ++index)
     {
-      IComparable comparable = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003DzACwLhyc\u003D((double) _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D()[index]);
+      IComparable comparable = this.\u0023\u003DzHZDgUSdfqmkx().GetDataValue((double) _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D()[index]);
       _param1.\u0023\u003Dza3zX1a5AAgFk()[index] = comparable.ToDouble();
     }
     for (int index = 0; index < _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D().Length; ++index)
     {
-      IComparable comparable = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003DzACwLhyc\u003D((double) _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D()[index]);
+      IComparable comparable = this.\u0023\u003DzHZDgUSdfqmkx().GetDataValue((double) _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D()[index]);
       _param1.\u0023\u003Dzyqh0CrzbJnzy()[index] = comparable.ToDouble();
     }
   }

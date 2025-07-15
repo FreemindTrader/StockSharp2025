@@ -14,7 +14,7 @@ using System.Linq;
 internal sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
-  \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ,
+  IOhlcDataSeries,
   \u0023\u003DzDH5EtXmKZCpH30z_eydhO42Ygtxj0A9MtVBlpvd5g5Ii2CglZA\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
@@ -114,7 +114,7 @@ internal sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjr
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzyaS0FCQuIbTz).Clear();
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003Dz_YpB1WqdIoXd).Clear();
       ((ICollection<\u0023\u003DzE8zkRfY\u003D>) this.\u0023\u003DzHO8H7X_wl7Th).Clear();
-      this.\u0023\u003Dz3laIKDGah\u0024Kh?.\u0023\u003DzUf222sU\u003D();
+      this.\u0023\u003Dz3laIKDGah\u0024Kh?.Clear();
     }
   }
 
@@ -194,22 +194,22 @@ internal sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjr
     this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
   }
 
-  IList \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ.\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW54c2mwiNc4WXjSzSlwdUwXKQKZNJW2jstDg\u003D()
+  IList IOhlcDataSeries.\u0023\u003DzrpPm1cz_Nb\u0024M5ipgR3sW54c2mwiNc4WXjSzSlwdUwXKQKZNJW2jstDg\u003D()
   {
     return (IList) this.\u0023\u003DzjCADV9yqxvmI;
   }
 
-  IList \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ.\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c_eUQoh_jqpYInpgSOLXu1sQAZZdp6te1No\u003D()
+  IList IOhlcDataSeries.\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c_eUQoh_jqpYInpgSOLXu1sQAZZdp6te1No\u003D()
   {
     return (IList) this.\u0023\u003DzyaS0FCQuIbTz;
   }
 
-  IList \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ.\u0023\u003DzMDDpCIYr0KRiCa3HPMUguoY\u0024wcyLX59pC88CVEuKYg4H1EPmKVNTo5E\u003D()
+  IList IOhlcDataSeries.\u0023\u003DzMDDpCIYr0KRiCa3HPMUguoY\u0024wcyLX59pC88CVEuKYg4H1EPmKVNTo5E\u003D()
   {
     return (IList) this.\u0023\u003Dz_YpB1WqdIoXd;
   }
 
-  IList \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ.\u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3TgDIMagtqnJdtgozQMeO8\u0024E4Q0xJhgxck\u003D()
+  IList IOhlcDataSeries.\u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3TgDIMagtqnJdtgozQMeO8\u0024E4Q0xJhgxck\u003D()
   {
     return (IList) this.\u0023\u003DzHO8H7X_wl7Th;
   }
@@ -305,7 +305,7 @@ internal sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjr
     this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 1);
   }
 
-  public void \u0023\u003DzFkV86a8\u003D(
+  public void UpdateOrderAdornerLayer(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzE8zkRfY\u003D _param3,

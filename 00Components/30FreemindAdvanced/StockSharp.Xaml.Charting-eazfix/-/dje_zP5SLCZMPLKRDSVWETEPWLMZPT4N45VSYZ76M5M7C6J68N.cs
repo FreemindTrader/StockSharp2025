@@ -160,11 +160,11 @@ internal sealed class dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFY
     return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.ToDouble());
   }
 
-  public override IComparable \u0023\u003DzACwLhyc\u003D(double _param1)
+  public override IComparable GetDataValue(double _param1)
   {
     if (this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D == null)
       return (IComparable) int.MaxValue;
-    double num = this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzACwLhyc\u003D(_param1);
+    double num = this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.GetDataValue(_param1);
     return (IComparable) (this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0 ? q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc((int) num) : num.\u0023\u003Dzxuo5aY4wjkaI());
   }
 

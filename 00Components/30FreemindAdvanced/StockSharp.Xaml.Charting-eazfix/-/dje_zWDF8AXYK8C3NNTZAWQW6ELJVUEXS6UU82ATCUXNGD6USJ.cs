@@ -50,7 +50,7 @@ internal sealed class dje_zWDF8AXYK8C3NNTZAWQW6ELJVUEXS6UU82ATCUXNGD6USJ79V72QM3
         \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
         Point point = this.\u0023\u003Dzop6vn0GowyiR(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
         double y = point.Y;
-        double num3 = xkzemsMs5tGkouk5w.\u0023\u003DzACwLhyc\u003D(y);
+        double num3 = xkzemsMs5tGkouk5w.GetDataValue(y);
         double num4;
         if (!this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV())
         {

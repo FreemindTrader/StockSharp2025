@@ -34,11 +34,11 @@ internal abstract class ChartModifierBase :
   
   public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register(nameof (ExecuteOn), typeof (ExecuteOn), typeof (ChartModifierBase), new PropertyMetadata((object) ExecuteOn.MouseLeftButton));
   
-  public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register(nameof (MouseModifier), typeof (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D), typeof (ChartModifierBase), new PropertyMetadata((object) \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None));
+  public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register(nameof (MouseModifier), typeof (MouseModifier), typeof (ChartModifierBase), new PropertyMetadata((object) MouseModifier.None));
   
   private ISciChartSurface \u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
   
-  private static Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, ExecuteOn> \u0023\u003DzKlT17PlFLc73;
+  private static Dictionary<MouseButtons, ExecuteOn> \u0023\u003DzKlT17PlFLc73;
   
   private IServiceContainer _serviceContainer;
   
@@ -106,11 +106,11 @@ internal abstract class ChartModifierBase :
     }
   }
 
-  public \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D MouseModifier
+  public MouseModifier MouseModifier
   {
     get
     {
-      return (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D) this.GetValue(ChartModifierBase.\u0023\u003DzuabWX4LvY\u0024qS);
+      return (MouseModifier) this.GetValue(ChartModifierBase.\u0023\u003DzuabWX4LvY\u0024qS);
     }
     set
     {
@@ -149,33 +149,33 @@ internal abstract class ChartModifierBase :
   }
 
   public virtual void \u0023\u003Dz5y8F1YNwkhnW(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
   }
 
   public virtual void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
-    this.\u0023\u003DzgBeNpsZ8d\u0024uI = _param1.\u0023\u003DzwuSh61ofE2mr() == (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1;
-    this.\u0023\u003DzO10ORkEELARh = _param1.\u0023\u003DzwuSh61ofE2mr() == (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4;
-    this.\u0023\u003DzIp\u0024m94zfWIDB = _param1.\u0023\u003DzwuSh61ofE2mr() == (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 2;
+    this.\u0023\u003DzgBeNpsZ8d\u0024uI = _param1.MouseButtons() == (MouseButtons) 1;
+    this.\u0023\u003DzO10ORkEELARh = _param1.MouseButtons() == (MouseButtons) 4;
+    this.\u0023\u003DzIp\u0024m94zfWIDB = _param1.MouseButtons() == (MouseButtons) 2;
   }
 
-  public virtual void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public virtual void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
   }
 
-  public virtual void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public virtual void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    this.\u0023\u003DzgBeNpsZ8d\u0024uI = _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1 && this.\u0023\u003DzgBeNpsZ8d\u0024uI;
-    this.\u0023\u003DzO10ORkEELARh = _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4 && this.\u0023\u003DzO10ORkEELARh;
-    this.\u0023\u003DzIp\u0024m94zfWIDB = _param1.\u0023\u003DzwuSh61ofE2mr() != (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 2 && this.\u0023\u003DzIp\u0024m94zfWIDB;
+    this.\u0023\u003DzgBeNpsZ8d\u0024uI = e.MouseButtons() != (MouseButtons) 1 && this.\u0023\u003DzgBeNpsZ8d\u0024uI;
+    this.\u0023\u003DzO10ORkEELARh = e.MouseButtons() != (MouseButtons) 4 && this.\u0023\u003DzO10ORkEELARh;
+    this.\u0023\u003DzIp\u0024m94zfWIDB = _param1.MouseButtons() != (MouseButtons) 2 && this.\u0023\u003DzIp\u0024m94zfWIDB;
   }
 
   public virtual void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
   }
 
@@ -308,12 +308,12 @@ internal abstract class ChartModifierBase :
   {
   }
 
-  protected virtual void \u0023\u003DzCM2UQyuakisf()
+  protected virtual void OnIsEnabledChanged()
   {
   }
 
-  public virtual void \u0023\u003Dz3RBcoKAPKSIX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public virtual void OnMasterMouseLeave(
+    ModifierMouseArgs _param1)
   {
     this.\u0023\u003DzAX8eceNZBdIhNPOcDA\u003D\u003D();
   }
@@ -322,7 +322,7 @@ internal abstract class ChartModifierBase :
   {
   }
 
-  protected virtual void \u0023\u003DzRhCP\u0024yGKAqZwVyg1vA\u003D\u003D()
+  protected virtual void OnParentSurfaceMouseEnter()
   {
   }
 
@@ -333,27 +333,27 @@ internal abstract class ChartModifierBase :
   }
 
   protected bool \u0023\u003DzK46Xo3q3PoYX(
-    \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D _param1,
+    MouseButtons _param1,
     ExecuteOn _param2)
   {
-    \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D nijb7bojGmWzLupPhdCYfw = \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk();
+    MouseModifier nijb7bojGmWzLupPhdCYfw = \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk();
     if (ChartModifierBase.\u0023\u003DzKlT17PlFLc73 == null)
-      ChartModifierBase.\u0023\u003DzKlT17PlFLc73 = new Dictionary<\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D, ExecuteOn>()
+      ChartModifierBase.\u0023\u003DzKlT17PlFLc73 = new Dictionary<MouseButtons, ExecuteOn>()
       {
         {
-          (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0,
+          (MouseButtons) 0,
           ExecuteOn.MouseMove
         },
         {
-          (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 1,
+          (MouseButtons) 1,
           ExecuteOn.MouseLeftButton
         },
         {
-          (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 2,
+          (MouseButtons) 2,
           ExecuteOn.MouseMiddleButton
         },
         {
-          (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 4,
+          (MouseButtons) 4,
           ExecuteOn.MouseRightButton
         }
       };
@@ -411,7 +411,7 @@ internal abstract class ChartModifierBase :
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    ((ChartModifierBase) _param0).\u0023\u003DzCM2UQyuakisf();
+    ((ChartModifierBase) _param0).OnIsEnabledChanged();
   }
 
   private void \u0023\u003DzM\u0024iyCHU\u003D()
@@ -428,7 +428,7 @@ internal abstract class ChartModifierBase :
 
   private void \u0023\u003Dz1RWF4qCdwtL7iWLRBKs1AWljs19M(object _param1, MouseEventArgs _param2)
   {
-    this.\u0023\u003DzRhCP\u0024yGKAqZwVyg1vA\u003D\u003D();
+    this.OnParentSurfaceMouseEnter();
   }
 
   private void \u0023\u003Dz0tZIEaEc845fryC8ai9UjY4Y\u00240TT(

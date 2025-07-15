@@ -254,11 +254,11 @@ internal class dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJC
     switch (_param2)
     {
       case null:
-      case \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ _:
+      case IOhlcDataSeries _:
         base.\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(_param1, _param2);
         break;
       default:
-        throw new InvalidOperationException($"{((object) this).GetType().Name} expects a DataSeries of type {typeof (\u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ)}. Please ensure the correct data has been bound to the Renderable Series");
+        throw new InvalidOperationException($"{((object) this).GetType().Name} expects a DataSeries of type {typeof (IOhlcDataSeries)}. Please ensure the correct data has been bound to the Renderable Series");
     }
   }
 }

@@ -26,7 +26,7 @@ internal sealed class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvbEktpRLPkDoFPTWmVY0oepT(
   {
   }
 
-  public override void \u0023\u003DzUf222sU\u003D()
+  public override void Clear()
   {
   }
 
@@ -34,41 +34,41 @@ internal sealed class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvbEktpRLPkDoFPTWmVY0oepT(
   {
   }
 
-  public override void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
-    base.\u0023\u003Dz11bcnbUrALaA(_param1);
+    base.OnModifierMouseMove(_param1);
     IAnnotation hhh93Q0DqkV5Sv90k = this.\u0023\u003Dzy2oKVLXXOFmI();
     if (!this.\u0023\u003DzqGwbHdeZ8yMA)
       return;
-    Point point = this.\u0023\u003DzUTaLYgNA\u00243iO25vv\u0024g\u003D\u003D(_param1.\u0023\u003DztkyOk5amPcz3());
+    Point point = this.\u0023\u003DzUTaLYgNA\u00243iO25vv\u0024g\u003D\u003D(_param1.MousePoint());
     double num1 = point.X < 0.0 || point.X > this.\u0023\u003DzVuf430fCLR2l().ActualWidth ? 0.0 : point.X - this.\u0023\u003DzhcsKvLfw_p5c.X;
     double num2 = point.Y < 0.0 || point.Y > this.\u0023\u003DzVuf430fCLR2l().ActualHeight ? 0.0 : point.Y - this.\u0023\u003DzhcsKvLfw_p5c.Y;
     double num3 = hhh93Q0DqkV5Sv90k.get_DragDirections() == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection ? 0.0 : num1;
     double num4 = hhh93Q0DqkV5Sv90k.get_DragDirections() == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection ? 0.0 : num2;
     hhh93Q0DqkV5Sv90k.MoveAnnotation(num3, num4);
     this.\u0023\u003DzhcsKvLfw_p5c = point;
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    _param1.Handled(true);
     this.\u0023\u003DzGDdLHa8\u003D();
   }
 
   public new void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
     IAnnotation hhh93Q0DqkV5Sv90k = this.\u0023\u003Dzy2oKVLXXOFmI();
     if (!hhh93Q0DqkV5Sv90k.get_IsEditable())
       return;
     this.\u0023\u003DzqGwbHdeZ8yMA = true;
-    this.\u0023\u003DzhcsKvLfw_p5c = this.\u0023\u003DzUTaLYgNA\u00243iO25vv\u0024g\u003D\u003D(_param1.\u0023\u003DztkyOk5amPcz3());
+    this.\u0023\u003DzhcsKvLfw_p5c = this.\u0023\u003DzUTaLYgNA\u00243iO25vv\u0024g\u003D\u003D(_param1.MousePoint());
     hhh93Q0DqkV5Sv90k.CaptureMouse();
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    _param1.Handled(true);
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(e);
     IAnnotation hhh93Q0DqkV5Sv90k = this.\u0023\u003Dzy2oKVLXXOFmI();
     if (!this.\u0023\u003DzqGwbHdeZ8yMA)
       return;

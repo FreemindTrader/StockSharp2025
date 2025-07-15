@@ -30,7 +30,7 @@ internal interface \u0023\u003DzlbJvQa3SY_TV_FXt6bD53NJ_tCeoxuaO6u0w2\u0024KuAnn
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param2,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param3);
 
-  void \u0023\u003DzFkV86a8\u003D(
+  void UpdateOrderAdornerLayer(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003DzE8zkRfY\u003D _param3);

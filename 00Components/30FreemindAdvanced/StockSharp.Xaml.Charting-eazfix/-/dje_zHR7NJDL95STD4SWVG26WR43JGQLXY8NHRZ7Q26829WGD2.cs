@@ -55,8 +55,8 @@ internal sealed class dje_zHR7NJDL95STD4SWVG26WR43JGQLXY8NHRZ7Q26829WGD2MZ_ejd :
   {
     if (this.\u0023\u003DzKBqDaxX8NlWc == null || this.ModifierSurface == null)
       return;
-    if (this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzKBqDaxX8NlWc))
-      this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Remove((UIElement) this.\u0023\u003DzKBqDaxX8NlWc);
+    if (this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzKBqDaxX8NlWc))
+      this.ModifierSurface.Children().Remove((UIElement) this.\u0023\u003DzKBqDaxX8NlWc);
     this.\u0023\u003DzeAqKwx8\u003D = new Point(double.NaN, double.NaN);
   }
 
@@ -102,9 +102,9 @@ internal sealed class dje_zHR7NJDL95STD4SWVG26WR43JGQLXY8NHRZ7Q26829WGD2MZ_ejd :
     if (this.\u0023\u003DzKBqDaxX8NlWc == null)
       return;
     this.\u0023\u003DzHi3KLf0npKDN((FrameworkElement) this.\u0023\u003DzKBqDaxX8NlWc, _param1);
-    if (this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Contains((UIElement) this.\u0023\u003DzKBqDaxX8NlWc))
+    if (this.ModifierSurface.Children().Contains((UIElement) this.\u0023\u003DzKBqDaxX8NlWc))
       return;
-    this.ModifierSurface.\u0023\u003DzBDSV99pPo8hY().Add((UIElement) this.\u0023\u003DzKBqDaxX8NlWc);
+    this.ModifierSurface.Children().Add((UIElement) this.\u0023\u003DzKBqDaxX8NlWc);
   }
 
   private void \u0023\u003DzHi3KLf0npKDN(FrameworkElement _param1, Point _param2)

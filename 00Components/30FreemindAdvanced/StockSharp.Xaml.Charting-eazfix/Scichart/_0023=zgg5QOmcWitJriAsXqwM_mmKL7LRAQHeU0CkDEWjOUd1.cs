@@ -106,12 +106,12 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
   {
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = _param0.get_PaletteProvider();
     Color color1 = _param0.SeriesColor;
-    dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd eemgnbdtcxdA2A3Ejd = _param0 as dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd;
+    FastCandlestickRenderableSeries renderableSeries = _param0 as FastCandlestickRenderableSeries;
     dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd fyrzxrpaxM3VuD4LqEjd = _param0 as dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd;
-    if (eemgnbdtcxdA2A3Ejd != null || fyrzxrpaxM3VuD4LqEjd != null)
+    if (renderableSeries != null || fyrzxrpaxM3VuD4LqEjd != null)
     {
-      Color color2 = eemgnbdtcxdA2A3Ejd != null ? eemgnbdtcxdA2A3Ejd.UpWickColor : fyrzxrpaxM3VuD4LqEjd.UpWickColor;
-      Color color3 = eemgnbdtcxdA2A3Ejd != null ? eemgnbdtcxdA2A3Ejd.DownWickColor : fyrzxrpaxM3VuD4LqEjd.DownWickColor;
+      Color color2 = renderableSeries != null ? renderableSeries.UpWickColor : fyrzxrpaxM3VuD4LqEjd.UpWickColor;
+      Color color3 = renderableSeries != null ? renderableSeries.DownWickColor : fyrzxrpaxM3VuD4LqEjd.DownWickColor;
       color1 = _param1.\u0023\u003DzrRG8qdg_pzoL().CompareTo((object) _param1.\u0023\u003DzlVz0JivzQhAY()) >= 0 ? color2 : color3;
     }
     if (_param0.get_PaletteProvider() != null)

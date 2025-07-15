@@ -51,7 +51,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
   
   private bool \u0023\u003DzvBK\u00248KQ\u003D;
   
-  private Grid \u0023\u003DzS\u0024OTg_s\u003D;
+  private Grid _grid;
   
   private readonly Image \u0023\u003Dz2TNhyDg\u003D;
   
@@ -190,7 +190,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
 
   internal Image \u0023\u003DzZAw3cTjlwxct() => this.\u0023\u003Dz2TNhyDg\u003D;
 
-  public Grid \u0023\u003DzqgMiDwaFbXWy() => this.\u0023\u003DzS\u0024OTg_s\u003D;
+  public Grid \u0023\u003DzqgMiDwaFbXWy() => this._grid;
 
   protected \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D \u0023\u003DzNFOu7BeFZYda()
   {
@@ -253,16 +253,16 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
 
   public void InvalidateElement() => this.\u0023\u003DzAJ8tNFa80f45 = true;
 
-  public void \u0023\u003DzUf222sU\u003D()
+  public void Clear()
   {
     using (IRenderContext2D mvXdEdq1k7UiFd2I = this.\u0023\u003Dz1cRMfLZU4Eo2())
-      mvXdEdq1k7UiFd2I.\u0023\u003DzUf222sU\u003D();
+      mvXdEdq1k7UiFd2I.Clear();
   }
 
   public bool \u0023\u003DzdBvSINdoeQWX(
     IRenderableSeries _param1)
   {
-    return _param1 is UIElement element && this.\u0023\u003DzS\u0024OTg_s\u003D.Children.Contains(element);
+    return _param1 is UIElement element && this._grid.Children.Contains(element);
   }
 
   public void \u0023\u003DzJoneIt0\u003D(
@@ -280,7 +280,7 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
     if (!(_param1 is FrameworkElement element))
       return;
     element.Visibility = Visibility.Collapsed;
-    this.\u0023\u003DzS\u0024OTg_s\u003D.Children.Add((UIElement) element);
+    this._grid.Children.Add((UIElement) element);
   }
 
   public void \u0023\u003Dz_SCZwjM\u003D(
@@ -294,10 +294,10 @@ internal abstract class dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4M
 
   public virtual void \u0023\u003Dzqtb9toLjXu0t()
   {
-    for (int index = this.\u0023\u003DzS\u0024OTg_s\u003D.Children.Count - 1; index >= 0; --index)
+    for (int index = this._grid.Children.Count - 1; index >= 0; --index)
     {
-      if (this.\u0023\u003DzS\u0024OTg_s\u003D.Children[index] is \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D)
-        this.\u0023\u003DzS\u0024OTg_s\u003D.Children.RemoveAt(index);
+      if (this._grid.Children[index] is \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D)
+        this._grid.Children.RemoveAt(index);
     }
   }
 
@@ -487,12 +487,12 @@ label_5:
     this.HorizontalContentAlignment = HorizontalAlignment.Stretch;
     this.VerticalAlignment = VerticalAlignment.Stretch;
     this.VerticalContentAlignment = VerticalAlignment.Stretch;
-    this.\u0023\u003DzS\u0024OTg_s\u003D = new Grid();
+    this._grid = new Grid();
     dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SetSnapsToDevicePixels((DependencyObject) this, true);
-    dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SetSnapsToDevicePixels((DependencyObject) this.\u0023\u003DzS\u0024OTg_s\u003D, true);
+    dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SetSnapsToDevicePixels((DependencyObject) this._grid, true);
     dje_z954PATE5TUJNHSK3W94VJPWKHW35D9D2BDJTZW9B_ejd.SetSnapsToDevicePixels((DependencyObject) this.\u0023\u003Dz2TNhyDg\u003D, true);
-    this.\u0023\u003DzS\u0024OTg_s\u003D.Children.Add((UIElement) this.\u0023\u003Dz2TNhyDg\u003D);
-    this.Content = (object) this.\u0023\u003DzS\u0024OTg_s\u003D;
+    this._grid.Children.Add((UIElement) this.\u0023\u003Dz2TNhyDg\u003D);
+    this.Content = (object) this._grid;
   }
 
   public Point TranslatePoint(

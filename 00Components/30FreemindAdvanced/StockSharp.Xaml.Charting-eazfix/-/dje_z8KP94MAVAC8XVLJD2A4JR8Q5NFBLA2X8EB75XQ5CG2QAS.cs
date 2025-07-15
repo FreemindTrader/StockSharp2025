@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd
+// Type: -.FastCandlestickRenderableSeries
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -12,23 +12,23 @@ using System.Windows.Media;
 #nullable disable
 namespace \u002D;
 
-internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd : 
+internal sealed class FastCandlestickRenderableSeries : 
   BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D = DependencyProperty.Register(nameof (UpWickColor), typeof (Color), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D = DependencyProperty.Register(nameof (UpWickColor), typeof (Color), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D = DependencyProperty.Register(nameof (DownWickColor), typeof (Color), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) Colors.SteelBlue, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D = DependencyProperty.Register(nameof (DownWickColor), typeof (Color), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) Colors.SteelBlue, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzQE5RIB4g32gf = DependencyProperty.Register(nameof (UpBodyBrush), typeof (Brush), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) new SolidColorBrush(Colors.Transparent), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzQE5RIB4g32gf = DependencyProperty.Register(nameof (UpBodyBrush), typeof (Brush), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) new SolidColorBrush(Colors.Transparent), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzzR4yyf\u0024wfFYI = DependencyProperty.Register(nameof (DownBodyBrush), typeof (Brush), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) new SolidColorBrush(Colors.SteelBlue), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzzR4yyf\u0024wfFYI = DependencyProperty.Register(nameof (DownBodyBrush), typeof (Brush), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) new SolidColorBrush(Colors.SteelBlue), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) 0.8, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) 0.8, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzV9_siG4mU9CA = DependencyProperty.Register(nameof (UpBodyColor), typeof (Color), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) Colors.Transparent, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzV9_siG4mU9CA = DependencyProperty.Register(nameof (UpBodyColor), typeof (Color), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) Colors.Transparent, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzvQM2q1v\u0024pfQc = DependencyProperty.Register(nameof (DownBodyColor), typeof (Color), typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd), new PropertyMetadata((object) Colors.SteelBlue, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzvQM2q1v\u0024pfQc = DependencyProperty.Register(nameof (DownBodyColor), typeof (Color), typeof (FastCandlestickRenderableSeries), new PropertyMetadata((object) Colors.SteelBlue, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzCuIJmYsDJgLxaAWxjg\u003D\u003D;
   
@@ -40,9 +40,9 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
   
   private int \u0023\u003Dz3tYwy\u0024y50OE3nZjFGg\u003D\u003D;
 
-  public dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd()
+  public FastCandlestickRenderableSeries()
   {
-    this.DefaultStyleKey = (object) typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd);
+    this.DefaultStyleKey = (object) typeof (FastCandlestickRenderableSeries);
     this.ResamplingMode = \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid;
   }
 
@@ -50,11 +50,11 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
   {
     get
     {
-      return (double) this.GetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzVvc2lVdKTrj8);
+      return (double) this.GetValue(FastCandlestickRenderableSeries.\u0023\u003DzVvc2lVdKTrj8);
     }
     set
     {
-      this.SetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) value);
+      this.SetValue(FastCandlestickRenderableSeries.\u0023\u003DzVvc2lVdKTrj8, (object) value);
     }
   }
 
@@ -62,11 +62,11 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
   {
     get
     {
-      return (Color) this.GetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D);
+      return (Color) this.GetValue(FastCandlestickRenderableSeries.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D);
     }
     set
     {
-      this.SetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) value);
+      this.SetValue(FastCandlestickRenderableSeries.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) value);
     }
   }
 
@@ -74,11 +74,11 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
   {
     get
     {
-      return (Color) this.GetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D);
+      return (Color) this.GetValue(FastCandlestickRenderableSeries.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D);
     }
     set
     {
-      this.SetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) value);
+      this.SetValue(FastCandlestickRenderableSeries.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) value);
     }
   }
 
@@ -93,11 +93,11 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
   {
     get
     {
-      return (Brush) this.GetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzQE5RIB4g32gf);
+      return (Brush) this.GetValue(FastCandlestickRenderableSeries.\u0023\u003DzQE5RIB4g32gf);
     }
     set
     {
-      this.SetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzQE5RIB4g32gf, (object) value);
+      this.SetValue(FastCandlestickRenderableSeries.\u0023\u003DzQE5RIB4g32gf, (object) value);
     }
   }
 
@@ -112,11 +112,11 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
   {
     get
     {
-      return (Brush) this.GetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzzR4yyf\u0024wfFYI);
+      return (Brush) this.GetValue(FastCandlestickRenderableSeries.\u0023\u003DzzR4yyf\u0024wfFYI);
     }
     set
     {
-      this.SetValue(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzzR4yyf\u0024wfFYI, (object) value);
+      this.SetValue(FastCandlestickRenderableSeries.\u0023\u003DzzR4yyf\u0024wfFYI, (object) value);
     }
   }
 
@@ -310,11 +310,11 @@ internal sealed class dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQM
     switch (_param2)
     {
       case null:
-      case \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ _:
+      case IOhlcDataSeries _:
         base.\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(_param1, _param2);
         break;
       default:
-        throw new InvalidOperationException($"{((object) this).GetType().Name} expects a DataSeries of type {typeof (\u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ)}. Please ensure the correct data has been bound to the Renderable Series");
+        throw new InvalidOperationException($"{((object) this).GetType().Name} expects a DataSeries of type {typeof (IOhlcDataSeries)}. Please ensure the correct data has been bound to the Renderable Series");
     }
   }
 }

@@ -110,14 +110,14 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     double _param1,
     DoubleRange _param2)
   {
-    double num1 = this.\u0023\u003DzACwLhyc\u003D(0.0);
-    double num2 = this.\u0023\u003DzACwLhyc\u003D(_param1) - num1;
+    double num1 = this.GetDataValue(0.0);
+    double num2 = this.GetDataValue(_param1) - num1;
     if (this.\u0023\u003DzO78SU8SL\u0024EgcBFJxM_M4bKPQHMQQ())
       num2 = -num2;
     return new DoubleRange(_param2.Min.ToDouble() + num2, _param2.Max.ToDouble() + num2);
   }
 
-  public abstract double \u0023\u003DzACwLhyc\u003D(double _param1);
+  public abstract double GetDataValue(double _param1);
 
   public virtual DoubleRange \u0023\u003Dznj_TkFQ\u003D(
     double _param1,

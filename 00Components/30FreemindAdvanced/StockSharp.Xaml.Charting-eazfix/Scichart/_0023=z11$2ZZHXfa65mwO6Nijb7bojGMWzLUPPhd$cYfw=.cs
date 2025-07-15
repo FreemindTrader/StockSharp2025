@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 [Flags]
-internal enum \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D
+internal enum MouseModifier
 {
   None = 0,
   Shift = 1,

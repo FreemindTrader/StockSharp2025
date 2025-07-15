@@ -211,7 +211,7 @@ label_4:
     switch (this.ChartComponentView.DrawStyle)
     {
       case ChartCandleDrawStyles.CandleStick:
-        return typeof (dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd);
+        return typeof (FastCandlestickRenderableSeries);
       case ChartCandleDrawStyles.Ohlc:
         return typeof (dje_zXLPLNSHM7QU5GA2T5S4C4SHVF6L8PVAPMBCTY5WFUGN8USCF94BEQYVU9VJCT4CGFWU4FYRZXRPAXM3VUD4LQ_ejd);
       case ChartCandleDrawStyles.LineOpen:
@@ -248,17 +248,17 @@ label_4:
     switch (this.ChartComponentView.DrawStyle)
     {
       case ChartCandleDrawStyles.CandleStick:
-        target = (BaseRenderableSeries) this.CreateRenderableSeries<dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd>(new ChartElementViewModel[4]
+        target = (BaseRenderableSeries) this.CreateRenderableSeries<FastCandlestickRenderableSeries>(new ChartElementViewModel[4]
         {
           this.\u0023\u003DzCKkTLgMyXhNP,
           this.\u0023\u003DzfR8j2PM1RBui,
           this.\u0023\u003DzjAnzC1Gk9\u0024VP,
           this.\u0023\u003DzKCOaMdzTEc8\u0024
         });
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzQE5RIB4g32gf, (object) this.ChartComponentView, "UpFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzzR4yyf\u0024wfFYI, (object) this.ChartComponentView, "DownFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.ChartComponentView, "UpBorderColor");
-        target.SetBindings(dje_z8KP94MAVAC8XVLJD2A4JR8Q5NFBLA2X8EB75XQ5CG2QAS7W8ZPHQMTXMAE3XE28M8857AH3KGB5ERBMZUQ2EEMGNBDTCXDA2A3_ejd.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.ChartComponentView, "DownBorderColor");
+        target.SetBindings(FastCandlestickRenderableSeries.\u0023\u003DzQE5RIB4g32gf, (object) this.ChartComponentView, "UpFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
+        target.SetBindings(FastCandlestickRenderableSeries.\u0023\u003DzzR4yyf\u0024wfFYI, (object) this.ChartComponentView, "DownFillColor", converter: (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
+        target.SetBindings(FastCandlestickRenderableSeries.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.ChartComponentView, "UpBorderColor");
+        target.SetBindings(FastCandlestickRenderableSeries.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.ChartComponentView, "DownBorderColor");
         target.SetBindings(BaseRenderableSeries.StrokeThicknessProperty, (object) this.ChartComponentView, "StrokeThickness");
         target.PaletteProvider = (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this;
         break;
@@ -525,8 +525,8 @@ label_4:
           }));
         case 0:
           flag = true;
-          this.OhlcSeries.\u0023\u003DzFkV86a8\u003D(zbzWrwPExZ6TzuVkEg.\u0023\u003Dzg86amuQ\u003D(), zbzWrwPExZ6TzuVkEg.\u0023\u003DzGze4a8XU7KvB(), zbzWrwPExZ6TzuVkEg.\u0023\u003DzolXXlhDBER_c(), zbzWrwPExZ6TzuVkEg.\u0023\u003DzchuwVU\u00245sIH8(), zbzWrwPExZ6TzuVkEg.Close);
-          this.\u0023\u003DzVtuwsFJcSHit.\u0023\u003DzFkV86a8\u003D(zbzWrwPExZ6TzuVkEg.\u0023\u003Dzg86amuQ\u003D(), zbzWrwPExZ6TzuVkEg.Close);
+          this.OhlcSeries.UpdateOrderAdornerLayer(zbzWrwPExZ6TzuVkEg.\u0023\u003Dzg86amuQ\u003D(), zbzWrwPExZ6TzuVkEg.\u0023\u003DzGze4a8XU7KvB(), zbzWrwPExZ6TzuVkEg.\u0023\u003DzolXXlhDBER_c(), zbzWrwPExZ6TzuVkEg.\u0023\u003DzchuwVU\u00245sIH8(), zbzWrwPExZ6TzuVkEg.Close);
+          this.\u0023\u003DzVtuwsFJcSHit.UpdateOrderAdornerLayer(zbzWrwPExZ6TzuVkEg.\u0023\u003Dzg86amuQ\u003D(), zbzWrwPExZ6TzuVkEg.Close);
           if (zbzWrwPExZ6TzuVkEg.\u0023\u003Dzeu8tE1P9bfD8() != null && this.\u0023\u003DzQ73Ei9NuGdXX != null)
           {
             foreach (CandlePriceLevel level in zbzWrwPExZ6TzuVkEg.\u0023\u003Dzeu8tE1P9bfD8())

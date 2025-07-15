@@ -540,7 +540,7 @@ internal abstract class AnnotationBase :
   protected void HideAdornerMarkers()
   {
     foreach (\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x adorner in (IEnumerable<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>) this._myAdorners)
-      adorner.\u0023\u003DzUf222sU\u003D();
+      adorner.Clear();
   }
 
   protected IEnumerable<T> GetUsedAdorners<T>(Canvas adornerLayer) where T : \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x
@@ -661,7 +661,7 @@ internal abstract class AnnotationBase :
     if (axis == null)
       throw new ArgumentNullException(nameof (axis));
     dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd ks34Z259A4NengcEjd = axis.IsHorizontalAxis ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
-    return this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection ? this.FromRelativeCoordinate(coord, axis) : (!(axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0) ? axis.\u0023\u003DzACwLhyc\u003D(coord) : (IComparable) (int) q9i0MXI7Qb9c1V6c0.\u0023\u003DzACwLhyc\u003D(coord));
+    return this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection ? this.FromRelativeCoordinate(coord, axis) : (!(axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0) ? axis.GetDataValue(coord) : (IComparable) (int) q9i0MXI7Qb9c1V6c0.GetDataValue(coord));
   }
 
   protected virtual IComparable FromRelativeCoordinate(

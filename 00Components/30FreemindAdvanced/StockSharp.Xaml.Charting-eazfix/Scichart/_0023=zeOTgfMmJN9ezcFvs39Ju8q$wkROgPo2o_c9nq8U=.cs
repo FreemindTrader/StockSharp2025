@@ -17,9 +17,9 @@ internal interface \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u00
 
   void set_ClipToBounds(bool _param1);
 
-  ObservableCollection<UIElement> \u0023\u003DzBDSV99pPo8hY();
+  ObservableCollection<UIElement> Children();
 
-  void \u0023\u003DzUf222sU\u003D();
+  void Clear();
 
   bool CaptureMouse();
 

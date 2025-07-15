@@ -43,24 +43,24 @@ internal sealed class dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3
   }
 
   public override void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzQTINWhMByBmJ(_param1);
-    _param1.\u0023\u003DzBHH5KNloEXNR(true);
+    _param1.Handled(true);
     using (this.ParentSurface.SuspendUpdates())
     {
       double num = (double) -_param1.\u0023\u003DzDuDuL4DDV5GL() / 120.0;
       dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd xyDirection = this.XyDirection;
       dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd actionType = this.ActionType;
-      if (_param1.\u0023\u003DzgMFxvpJd_50n() != \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.None)
+      if (_param1.Modifier() != MouseModifier.None)
       {
         this.SetCurrentValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D, (object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan);
-        if (_param1.\u0023\u003DzgMFxvpJd_50n() == \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Ctrl)
+        if (_param1.Modifier() == MouseModifier.Ctrl)
           this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection);
-        else if (_param1.\u0023\u003DzgMFxvpJd_50n() == \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7bojGMWzLUPPhd\u0024cYfw\u003D.Shift)
+        else if (_param1.Modifier() == MouseModifier.Shift)
           this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection);
       }
-      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.\u0023\u003DztkyOk5amPcz3(), (IHitTestable) this.ModifierSurface), num);
+      this.\u0023\u003DzE5Q0sUQO_NoQ(this.\u0023\u003DzOaYrn8YGTeR7(_param1.MousePoint(), (IHitTestable) this.ModifierSurface), num);
       this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) xyDirection);
       this.SetCurrentValue(dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd.\u0023\u003Dzp3T0E8s\u003D, (object) actionType);
     }

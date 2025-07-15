@@ -23,7 +23,7 @@ internal abstract class \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kC
     this.\u0023\u003Dz3P2dgUJ\u0024csBH(_param2);
   }
 
-  public bool \u0023\u003DzCJb5Ya_8UZCR() => this.\u0023\u003DzW8xTrvhMhhoJiSvCyQ\u003D\u003D;
+  public bool IsMaster() => this.\u0023\u003DzW8xTrvhMhhoJiSvCyQ\u003D\u003D;
 
   public void \u0023\u003Dz3P2dgUJ\u0024csBH(bool _param1)
   {
@@ -35,7 +35,7 @@ internal abstract class \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kC
     return this.\u0023\u003Dzfng7Rt8gvrt\u0024\u0024cPAXg\u003D\u003D;
   }
 
-  public void \u0023\u003DzBHH5KNloEXNR(bool _param1)
+  public void Handled(bool _param1)
   {
     this.\u0023\u003Dzfng7Rt8gvrt\u0024\u0024cPAXg\u003D\u003D = _param1;
   }

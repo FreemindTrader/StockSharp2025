@@ -27,7 +27,7 @@ internal sealed class \u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK 
     return this.\u0023\u003Dzfng7Rt8gvrt\u0024\u0024cPAXg\u003D\u003D;
   }
 
-  public void \u0023\u003DzBHH5KNloEXNR(bool _param1)
+  public void Handled(bool _param1)
   {
     this.\u0023\u003Dzfng7Rt8gvrt\u0024\u0024cPAXg\u003D\u003D = _param1;
   }

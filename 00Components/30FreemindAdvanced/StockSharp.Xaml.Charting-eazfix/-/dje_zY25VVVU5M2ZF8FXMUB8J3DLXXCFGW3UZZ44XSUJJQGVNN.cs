@@ -193,31 +193,31 @@ internal abstract class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd
   }
 
   public override void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzsXEfcKpqchyX(_param1);
     this.\u0023\u003DzzleyEI9UNcP_(_param1);
   }
 
-  public override void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public override void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
-    base.\u0023\u003DzU3pYs4rYVmOS(_param1);
+    base.OnModifierMouseUp(_param1);
     this.\u0023\u003DzzleyEI9UNcP_(_param1);
   }
 
-  protected override void \u0023\u003DzCM2UQyuakisf() => this.\u0023\u003DzleRWWIS9Sb_X();
+  protected override void OnIsEnabledChanged() => this.\u0023\u003DzleRWWIS9Sb_X();
 
   private void \u0023\u003DzzleyEI9UNcP_(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
     if (this.ShowTooltipOn != dje_zW5MLMFCCFHVWSRGZD77RWP95DJXJ342SYK8Q3LCSNM5MWZXH4Q2GW_ejd.MouseLeftButtonDown && this.ShowTooltipOn != dje_zW5MLMFCCFHVWSRGZD77RWP95DJXJ342SYK8Q3LCSNM5MWZXH4Q2GW_ejd.MouseMiddleButtonDown && this.ShowTooltipOn != dje_zW5MLMFCCFHVWSRGZD77RWP95DJXJ342SYK8Q3LCSNM5MWZXH4Q2GW_ejd.MouseRightButtonDown)
       return;
-    \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D erzu9wDbQvIh5Wwg9Ebw = _param1.\u0023\u003DzwuSh61ofE2mr();
-    _param1.\u0023\u003DzhWBaoH4TqLHj((\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0);
+    MouseButtons erzu9wDbQvIh5Wwg9Ebw = _param1.MouseButtons();
+    _param1.\u0023\u003DzhWBaoH4TqLHj((MouseButtons) 0);
     this.\u0023\u003DzebZge1miA2O0(_param1);
     _param1.\u0023\u003DzhWBaoH4TqLHj(erzu9wDbQvIh5Wwg9Ebw);
-    _param1.\u0023\u003DzBHH5KNloEXNR(false);
+    _param1.Handled(false);
   }
 
   protected bool \u0023\u003Dz1lxFA46cCdxI()

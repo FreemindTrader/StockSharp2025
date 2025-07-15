@@ -753,7 +753,7 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
       return;
     \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, _param2.Width, _param2.Height);
     \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq yrnYmqhSbkIjQ8lsq = this.\u0023\u003Dz9Yt\u0024vKcgxNiu();
-    yrnYmqhSbkIjQ8lsq.\u0023\u003DzUf222sU\u003D((\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI) new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 0.0f, 0.0f, 0.0f));
+    yrnYmqhSbkIjQ8lsq.Clear((\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI) new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 0.0f, 0.0f, 0.0f));
     int num1 = -_param2.\u0023\u003DzP4R7yU0\u003D - (int) _param1.\u0023\u003DzSm8CGbTqdI1U().dje_z3GBAX47U_ejd;
     int num2 = -_param2.\u0023\u003DzRNV_Dpk\u003D - (int) _param1.\u0023\u003DzSm8CGbTqdI1U().dje_zLPL6EZPA_ejd;
     yrnYmqhSbkIjQ8lsq.\u0023\u003DzLDS6T7I\u003D((\u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D) _param1, (double) num1, (double) num2, 0.0, 1.0, 1.0);

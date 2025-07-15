@@ -55,7 +55,7 @@ internal sealed class \u0023\u003DzYNfF0SGPMJVvgWPQnt5HEJiRtXRCnPZdCVqsqV8cmzW4e
     return this.\u0023\u003DzUziyuwJyQ831Mi1yVQ\u003D\u003D - (this.dgs - _param1) * this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D + this.\u0023\u003DzV1bNkSgej_yk();
   }
 
-  public sealed override double \u0023\u003DzACwLhyc\u003D(double _param1)
+  public sealed override double GetDataValue(double _param1)
   {
     return (this.dgs - this.dgr) * (_param1 - this.\u0023\u003DzV1bNkSgej_yk()) * this.\u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D + this.dgr;
   }

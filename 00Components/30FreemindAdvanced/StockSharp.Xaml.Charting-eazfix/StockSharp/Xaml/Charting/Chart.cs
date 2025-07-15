@@ -911,7 +911,7 @@ public class Chart :
       chartArea.ViewModel.Draw(chartDrawData);
   }
 
-  internal void \u0023\u003DzGJwj2DzYuV1h(ChartArea _param1, Order _param2)
+  internal void InvokeCreateOrderEvent(ChartArea _param1, Order _param2)
   {
     Action<ChartArea, Order> zlaBqx5E = this.\u0023\u003DzlaBQx5E\u003D;
     if (zlaBqx5E == null)

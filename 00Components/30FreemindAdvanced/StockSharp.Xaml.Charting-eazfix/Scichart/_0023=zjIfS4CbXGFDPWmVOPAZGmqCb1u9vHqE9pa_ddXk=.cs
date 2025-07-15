@@ -85,7 +85,7 @@ internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u00
 
   public virtual void \u0023\u003DzcNW2KR8\u003D()
   {
-    this.\u0023\u003DzUf222sU\u003D();
+    this.Clear();
     this.\u0023\u003DzVuf430fCLR2l().Children.Remove((UIElement) this);
     this.\u0023\u003DzrEoWi5uPS0Yz((IServiceContainer) null);
   }
@@ -99,27 +99,27 @@ internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u00
   }
 
   public virtual void \u0023\u003Dz5y8F1YNwkhnW(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
   }
 
   public virtual void \u0023\u003DzsXEfcKpqchyX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
   }
 
-  public virtual void \u0023\u003Dz11bcnbUrALaA(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public virtual void OnModifierMouseMove(
+    ModifierMouseArgs _param1)
   {
   }
 
-  public virtual void \u0023\u003DzU3pYs4rYVmOS(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public virtual void OnModifierMouseUp(
+    ModifierMouseArgs _param1)
   {
   }
 
   public virtual void \u0023\u003DzQTINWhMByBmJ(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+    ModifierMouseArgs _param1)
   {
   }
 
@@ -141,8 +141,8 @@ internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u00
     throw new NotImplementedException();
   }
 
-  public void \u0023\u003Dz3RBcoKAPKSIX(
-    \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY _param1)
+  public void OnMasterMouseLeave(
+    ModifierMouseArgs _param1)
   {
   }
 
@@ -156,5 +156,5 @@ internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u00
 
   public abstract void \u0023\u003DzGDdLHa8\u003D();
 
-  public abstract void \u0023\u003DzUf222sU\u003D();
+  public abstract void Clear();
 }

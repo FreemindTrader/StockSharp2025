@@ -51,7 +51,7 @@ internal sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h 
     }
 label_10:
     double num1 = usedAxis.\u0023\u003DzhL6gsJw\u003D((IComparable) _param1);
-    _param1 = (object) usedAxis.\u0023\u003DzACwLhyc\u003D(num1);
+    _param1 = (object) usedAxis.GetDataValue(num1);
     return _param1;
   }
 

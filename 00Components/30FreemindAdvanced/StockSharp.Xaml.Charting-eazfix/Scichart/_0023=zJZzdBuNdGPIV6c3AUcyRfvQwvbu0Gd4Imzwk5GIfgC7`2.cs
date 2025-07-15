@@ -22,7 +22,7 @@ internal interface \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvQwvbu0Gd4Imzwk5GIfgC73<\u0
     IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
     IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param2);
 
-  void \u0023\u003DzFkV86a8\u003D(
+  void UpdateOrderAdornerLayer(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2);
 

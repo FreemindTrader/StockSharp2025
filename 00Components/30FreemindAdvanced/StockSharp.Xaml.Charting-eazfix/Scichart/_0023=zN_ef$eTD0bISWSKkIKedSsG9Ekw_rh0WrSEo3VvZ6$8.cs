@@ -31,7 +31,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     {
       this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.XAxes.\u0023\u003Dz30RSSSygABj_<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.\u0023\u003DzxLUmJTOQFZstXBxKkg\u003D\u003D = new Action<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.SomeMethond0343.\u0023\u003DzIQem3qD8jTxU5SNvvnOyq\u0024w\u003D)));
       this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.YAxes.\u0023\u003Dz30RSSSygABj_<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.somemoerehoer ?? (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.somemoerehoer = new Action<IAxis>(\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024Fzx1KPXiYDq5k3tb2H1uRc\u003D)));
-      _param1.\u0023\u003DzUf222sU\u003D();
+      _param1.Clear();
       return ogQpZalPrDrRrx2Q;
     }
     using (IUpdateSuspender fq05jnDg3bOrIrgCjote = this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D.SuspendUpdates())
@@ -43,7 +43,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
       if (this.\u0023\u003DzsGkoBP41VLI4((ISciChartSurface) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, size, out ogQpZalPrDrRrx2Q))
       {
         \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D ji3RvrDhjH0IDtfw = \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dztbp\u0024Gkvr2KbJ((ISciChartSurface) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, size);
-        _param1.\u0023\u003DzUf222sU\u003D();
+        _param1.Clear();
         \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzXkIFuR87leFI((ISciChartSurface) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, ji3RvrDhjH0IDtfw, _param1);
         \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz\u0024jjEdE7fySXB((ISciChartSurface) this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, ji3RvrDhjH0IDtfw, _param1);
         \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzMr2eR\u0024whaAA_(this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D, ji3RvrDhjH0IDtfw);
@@ -433,13 +433,13 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     internal void \u0023\u003DzIQem3qD8jTxU5SNvvnOyq\u0024w\u003D(
       IAxis _param1)
     {
-      _param1.\u0023\u003DzUf222sU\u003D();
+      _param1.Clear();
     }
 
     internal void \u0023\u003Dz\u0024Fzx1KPXiYDq5k3tb2H1uRc\u003D(
       IAxis _param1)
     {
-      _param1.\u0023\u003DzUf222sU\u003D();
+      _param1.Clear();
     }
 
     internal void \u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D(

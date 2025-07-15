@@ -1265,7 +1265,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     this.SetCurrentValue(FrameworkElement.CursorProperty, (object) _param1);
   }
 
-  public void \u0023\u003DzUf222sU\u003D()
+  public void Clear()
   {
     if (this.\u0023\u003DzhFAmpLNTPh4n() == null)
       return;
@@ -1374,7 +1374,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
   public virtual \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1)
   {
-    return this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() == null ? (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D) null : this.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003DzACwLhyc\u003D(this.IsHorizontalAxis ? _param1.X : _param1.Y));
+    return this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() == null ? (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D) null : this.\u0023\u003DzjuB\u0024Pa8\u003D(this.GetDataValue(this.IsHorizontalAxis ? _param1.X : _param1.Y));
   }
 
   public virtual \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
@@ -1411,9 +1411,9 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     return this.LabelProvider == null ? _param1.ToString() : this.LabelProvider.\u0023\u003Dz\u0024WinkXTLMGVP(_param1, _param2);
   }
 
-  public virtual IComparable \u0023\u003DzACwLhyc\u003D(double _param1)
+  public virtual IComparable GetDataValue(double _param1)
   {
-    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D == null ? (IComparable) double.NaN : (IComparable) this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzACwLhyc\u003D(_param1);
+    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D == null ? (IComparable) double.NaN : (IComparable) this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.GetDataValue(_param1);
   }
 
   public virtual double \u0023\u003DzhL6gsJw\u003D(IComparable _param1)
@@ -1607,7 +1607,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     this.\u0023\u003DzRwEA_2Y\u003D = (float) this.\u0023\u003Dz46iyKtU9fraN();
     this.\u0023\u003DzhFAmpLNTPh4n().\u0023\u003DzuTwCwl07R0Mf(_param1, this.\u0023\u003DzRwEA_2Y\u003D);
     if (!this.DrawLabels)
-      this.\u0023\u003DzUf222sU\u003D();
+      this.Clear();
     this.\u0023\u003DzhFAmpLNTPh4n().\u0023\u003DzEy\u0024V_bY\u003D();
   }
 
@@ -2176,7 +2176,7 @@ internal abstract class dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9
     internal bool \u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D(
       IRenderableSeries _param1)
     {
-      return _param1.get_DataSeries() is \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrFQ3G9W9xt2vxQkAWz\u0024zVnJ;
+      return _param1.get_DataSeries() is IOhlcDataSeries;
     }
   }
 

@@ -433,7 +433,7 @@ internal sealed class dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4
     MouseWheelEventArgs _param2)
   {
     Point position = _param2.GetPosition((IInputElement) this.ParentSurface.\u0023\u003Dzwc4Gzka23TGB());
-    this.ParentSurface?.get_ChartModifier()?.\u0023\u003DzQTINWhMByBmJ(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk2pVig_avtdU95\u0024saf5kXBsY(position, (\u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzu9w\u0024DbQvIH5WWg9Ebw\u003D) 0, \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk(), _param2.Delta, true));
+    this.ParentSurface?.get_ChartModifier()?.\u0023\u003DzQTINWhMByBmJ(new ModifierMouseArgs(position, (MouseButtons) 0, \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk(), _param2.Delta, true));
   }
 
   private void \u0023\u003Dz_sR2YBsF8Vv_kS6d84fxv3s\u003D()
