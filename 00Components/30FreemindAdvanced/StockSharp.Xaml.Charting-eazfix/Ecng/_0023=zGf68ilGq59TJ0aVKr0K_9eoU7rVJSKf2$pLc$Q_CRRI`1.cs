@@ -8,7 +8,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<T> : 
+public sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<T> : 
   \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK4AkZG\u0024zeIU4wmt7QA82wUrXA\u003D\u003D<T>
 {
   private T[] \u0023\u003DzhUUq_d4kT69A;

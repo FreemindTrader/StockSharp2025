@@ -7,7 +7,7 @@
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
+public interface \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
 {
   Color? \u0023\u003DzP50Orng\u003D(
     IRenderableSeries _param1,

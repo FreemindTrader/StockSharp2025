@@ -1,7 +1,7 @@
 ﻿using DevExpress.Xpf.Core;
 using Ecng.Collections;
 using Ecng.Xaml;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Common.Helpers;
 using SciChart.Charting.Visuals.TradeChart;
 using StockSharp.Algo.Candles;

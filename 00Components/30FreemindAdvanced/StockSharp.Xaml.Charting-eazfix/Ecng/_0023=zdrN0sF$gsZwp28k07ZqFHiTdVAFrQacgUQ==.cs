@@ -11,10 +11,10 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D
+public sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D
 {
   public static readonly DependencyProperty \u0023\u003DzvwIiO5ko1yGZ = DependencyProperty.RegisterAttached("HorizontalChartGroup", typeof (string), typeof (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D), new PropertyMetadata((object) null, new PropertyChangedCallback(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzGDCsRX7fHtlf)));
-  internal static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzovkpR0EIGwzr = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
+  public static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzovkpR0EIGwzr = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
 
   public static void SetHorizontalChartGroup(DependencyObject _param0, string _param1)
   {
@@ -134,14 +134,14 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
     public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz0V69zGwQUFh\u0024;
     public Func<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, bool> \u0023\u003DzoD2HtVGZvKav;
 
-    internal IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
+    public IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       AxisCollection yaxes = _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D().get_YAxes();
       return yaxes == null ? (IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>) null : yaxes.OfType<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>().Where<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
     }
 
-    internal bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(
+    public bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(
       dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd _param1)
     {
       return _param1.AxisAlignment == this.\u0023\u003Dz0V69zGwQUFh\u0024;
@@ -157,25 +157,25 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
     public static Func<double, dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double> \u0023\u003Dzj2\u0024kP85fw6FKRq7qMg\u003D\u003D;
     public static Func<IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>, double> \u0023\u003Dztw\u0024s\u0024BHvfpXoZJHcIQ\u003D\u003D;
 
-    internal \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D \u0023\u003DzL6P38Nt3ByHiE6Ehg2GH\u00247w\u003D(
+    public \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D \u0023\u003DzL6P38Nt3ByHiE6Ehg2GH\u00247w\u003D(
       KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> _param1)
     {
       return _param1.Key;
     }
 
-    internal ISciChartSurface \u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D(
+    public ISciChartSurface \u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       return _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D();
     }
 
-    internal double \u0023\u003DzCr_bnXqDdnc8Ycd6c8ZKxzmQ8\u0024AS(
+    public double \u0023\u003DzCr_bnXqDdnc8Ycd6c8ZKxzmQ8\u0024AS(
       IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd> _param1)
     {
       return _param1.Aggregate<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double>(0.0, \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.\u0023\u003Dzj2\u0024kP85fw6FKRq7qMg\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.\u0023\u003Dzj2\u0024kP85fw6FKRq7qMg\u003D\u003D = new Func<double, dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DztDWSJwWERpu\u0024zyFsZsOUqftqxQN3)));
     }
 
-    internal double \u0023\u003DztDWSJwWERpu\u0024zyFsZsOUqftqxQN3(
+    public double \u0023\u003DztDWSJwWERpu\u0024zyFsZsOUqftqxQN3(
       double _param1,
       dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd _param2)
     {
@@ -189,13 +189,13 @@ internal sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D
     public double \u0023\u003DzmfE\u0024jucTzddtybnMGg\u003D\u003D;
     public double \u0023\u003DzHQz9fVShYfxRR3dztw\u003D\u003D;
 
-    internal bool \u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D(
+    public bool \u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D(
       KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> _param1)
     {
       return _param1.Value == this.\u0023\u003Dzvd7k66M\u003D;
     }
 
-    internal void \u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D(
+    public void \u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D(
       SciChartSurface _param1)
     {
       if (_param1.\u0023\u003DzTUFNh6E2QDAjxphyfw\u003D\u003D() != null)

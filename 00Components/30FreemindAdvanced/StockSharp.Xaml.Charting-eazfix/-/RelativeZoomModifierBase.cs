@@ -10,9 +10,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class RelativeZoomModifierBase : 
+public abstract class RelativeZoomModifierBase : 
   ChartModifierBase
 {
   

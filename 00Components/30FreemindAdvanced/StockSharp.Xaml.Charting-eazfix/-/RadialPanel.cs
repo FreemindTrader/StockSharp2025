@@ -12,9 +12,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class RadialPanel : Panel
+public sealed class RadialPanel : Panel
 {
   
   public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.RegisterAttached("Angle", typeof (double), typeof (RadialPanel), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(RadialPanel.\u0023\u003DzASQCMKR2osYf)));
@@ -129,12 +129,12 @@ internal sealed class RadialPanel : Panel
     public static Func<UIElement, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
     public static Func<UIElement, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
 
-    internal bool \u0023\u003DzAXvWjuOKFfot_ecaioqcTKc\u003D(UIElement _param1)
+    public bool \u0023\u003DzAXvWjuOKFfot_ecaioqcTKc\u003D(UIElement _param1)
     {
       return _param1.\u0023\u003DzST\u0024t7rI\u003D();
     }
 
-    internal bool \u0023\u003Dz__7MkXHypl\u0024neQctv2M9Xq4\u003D(UIElement _param1)
+    public bool \u0023\u003Dz__7MkXHypl\u0024neQctv2M9Xq4\u003D(UIElement _param1)
     {
       return _param1.\u0023\u003DzST\u0024t7rI\u003D();
     }

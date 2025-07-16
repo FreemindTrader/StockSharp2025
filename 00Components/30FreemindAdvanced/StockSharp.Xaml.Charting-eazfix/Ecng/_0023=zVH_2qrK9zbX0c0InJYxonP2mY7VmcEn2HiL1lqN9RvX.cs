@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D : 
+public sealed class \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D : 
   \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D
 {
   private static \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D \u0023\u003Dzj9RABVg\u003D;
@@ -16,7 +16,7 @@ internal sealed class \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlR
   {
   }
 
-  internal static \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D \u0023\u003DzFvAsfEI\u003D()
+  public static \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D \u0023\u003DzFvAsfEI\u003D()
   {
     return \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D.\u0023\u003Dzj9RABVg\u003D ?? (\u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D.\u0023\u003Dzj9RABVg\u003D = new \u0023\u003DzVH_2qrK9zbX0c0InJYxonP2mY7VmcEn2HiL1lqN9RvXlRNSInA\u003D\u003D());
   }

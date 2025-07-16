@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8HLVZa82jmIxAK\u0024iEjE\u003D
+public static class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8HLVZa82jmIxAK\u0024iEjE\u003D
 {
   public static string \u0023\u003Dzb_Ih6a0\u003D(this Type _param0)
   {

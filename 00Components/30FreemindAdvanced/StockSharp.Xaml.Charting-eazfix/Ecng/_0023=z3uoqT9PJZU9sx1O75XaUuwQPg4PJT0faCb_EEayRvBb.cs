@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003Dz3uoqT9PJZU9sx1O75XaUuwQPg4PJT0faCb_EEayRvBbwk\u00245OFMeEiVo\u003D
+public interface \u0023\u003Dz3uoqT9PJZU9sx1O75XaUuwQPg4PJT0faCb_EEayRvBbwk\u00245OFMeEiVo\u003D
 {
   \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh AddPropertyEvents<TMessage>(
     Action<TMessage> _param1)

@@ -15,9 +15,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ClusterProfileRenderableSeries : 
+public sealed class ClusterProfileRenderableSeries : 
   \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D
 {
   
@@ -413,7 +413,7 @@ internal sealed class ClusterProfileRenderableSeries :
     public Color \u0023\u003DzYGnDwpm8DuE5;
     public Color \u0023\u003Dz2f9hyDdoCC2j;
 
-    internal bool \u0023\u003DzkaVrqD4ggnSfmpwokg\u003D\u003D(
+    public bool \u0023\u003DzkaVrqD4ggnSfmpwokg\u003D\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() >= this.\u0023\u003DzEB3J6TW\u0024NW8A.Min && _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() <= this.\u0023\u003DzEB3J6TW\u0024NW8A.Max;
@@ -426,7 +426,7 @@ internal sealed class ClusterProfileRenderableSeries :
     public Decimal \u0023\u003DztZE33alm_OfT;
     public ClusterProfileRenderableSeries.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
-    internal void \u0023\u003DzKQDGlIy9KhTj9Lexow\u003D\u003D(
+    public void \u0023\u003DzKQDGlIy9KhTj9Lexow\u003D\u003D(
       ClusterProfileRenderableSeries.\u0023\u003DzZk\u00246lEW\u0024ffR3 _param1)
     {
       KeyValuePair<double, CandlePriceLevel> keyValuePair = this.\u0023\u003DzVx\u0024XeSiQ8z2B[_param1.\u0023\u003DzCMB4T5w\u003D()];

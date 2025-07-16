@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 
 #nullable disable
-internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf : 
+public sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf : 
   \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD
 {
   private IEnumerable<TouchPoint> \u0023\u003DzxMjbiRhrmaKtw\u0024dRA1dXk5gnJ9ofr7SrKw\u003D\u003D;

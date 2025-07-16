@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal interface \u0023\u003Dzoab8u_ljQms67cycUNvVixWA22bWp\u0024IRliT1Tbo\u003D
+public interface \u0023\u003Dzoab8u_ljQms67cycUNvVixWA22bWp\u0024IRliT1Tbo\u003D
 {
   \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D \u0023\u003DzAnYO0vLQEDGX();
 

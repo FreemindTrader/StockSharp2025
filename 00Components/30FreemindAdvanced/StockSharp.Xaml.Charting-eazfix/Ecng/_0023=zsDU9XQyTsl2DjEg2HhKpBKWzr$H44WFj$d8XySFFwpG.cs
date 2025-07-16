@@ -7,7 +7,7 @@
 using \u002D;
 
 #nullable disable
-internal sealed class ViewportManager : 
+public sealed class ViewportManager : 
   \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D
 {
   protected override IRange \u0023\u003DzagcOSHrk9Og4(

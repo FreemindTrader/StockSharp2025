@@ -1,5 +1,5 @@
 ﻿using Ecng.Collections;
-using SciChart.Charting;
+using StockSharp.Charting;
 using MoreLinq;
 using StockSharp.Xaml.Charting;
 using System;

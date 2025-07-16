@@ -1,7 +1,7 @@
 ﻿using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Xaml;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Model.ChartData;
 using SciChart.Charting.Model.ChartSeries;
 using SciChart.Charting.Model.DataSeries;

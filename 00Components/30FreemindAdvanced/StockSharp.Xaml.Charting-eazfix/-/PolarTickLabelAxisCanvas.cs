@@ -11,9 +11,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class PolarTickLabelAxisCanvas : 
+public sealed class PolarTickLabelAxisCanvas : 
   TickLabelAxisCanvas
 {
   
@@ -85,7 +85,7 @@ internal sealed class PolarTickLabelAxisCanvas :
     public static readonly PolarTickLabelAxisCanvas.SomeClass34343383 SomeMethond0343 = new PolarTickLabelAxisCanvas.SomeClass34343383();
     public static Func<UIElement, double> \u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D;
 
-    internal double \u0023\u003Dzp9tEXoUc\u0024I1ve1Eq\u0024dbvW4E\u003D(UIElement _param1)
+    public double \u0023\u003Dzp9tEXoUc\u0024I1ve1Eq\u0024dbvW4E\u003D(UIElement _param1)
     {
       return _param1.DesiredSize.Height;
     }

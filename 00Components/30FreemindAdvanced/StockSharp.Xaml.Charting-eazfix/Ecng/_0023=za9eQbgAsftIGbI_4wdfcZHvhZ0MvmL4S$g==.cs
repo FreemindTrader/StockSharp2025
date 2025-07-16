@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Xml.Schema;
 
 #nullable disable
-internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u003D : 
+public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u003D : 
   IDrawable,
   IAxisParams,
   ISuspendable,
@@ -77,7 +77,7 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
   private bool \u0023\u003DzE8wAOIfSLDbe62ukKlhboN5j5Pb3;
   private bool \u0023\u003DzmugSdmHGd\u00241nPW6PJdIoa0A\u003D;
   private bool \u0023\u003DzU4h9CnMMJpfE\u0024Yp9vRVQDl4\u003D;
-  private \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk \u0023\u003DzeBpVkMb4JTc7krWreljVw38\u003D;
+  private IAnnotationCanvas \u0023\u003DzeBpVkMb4JTc7krWreljVw38\u003D;
   private Visibility \u0023\u003DzYst3SO_\u0024ax6JKrNE9g\u003D\u003D;
   private bool \u0023\u003Dz95Z1kAUJHBMg6bO6WMkzJg_U4AV0;
   private IRange \u0023\u003Dz6D\u0024QoAqBdRidfWOtLpZV44k\u003D;
@@ -545,13 +545,13 @@ internal sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D
     set => this.\u0023\u003DzU4h9CnMMJpfE\u0024Yp9vRVQDl4\u003D = value;
   }
 
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk ModifierAxisCanvas
+  public IAnnotationCanvas ModifierAxisCanvas
   {
     get => this.\u0023\u003DzeBpVkMb4JTc7krWreljVw38\u003D;
   }
 
   private void \u0023\u003DzUphMuHrYNIWehkx3pA\u003D\u003D(
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param1)
+    IAnnotationCanvas _param1)
   {
     this.\u0023\u003DzeBpVkMb4JTc7krWreljVw38\u003D = _param1;
   }

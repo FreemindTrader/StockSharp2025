@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal enum ExecuteOn
+public enum ExecuteOn
 {
   MouseLeftButton,
   MouseMiddleButton,

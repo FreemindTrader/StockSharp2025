@@ -7,7 +7,7 @@
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class AnnotationDragDeltaEventArgs : 
+public sealed class AnnotationDragDeltaEventArgs : 
   EventArgs
 {
   

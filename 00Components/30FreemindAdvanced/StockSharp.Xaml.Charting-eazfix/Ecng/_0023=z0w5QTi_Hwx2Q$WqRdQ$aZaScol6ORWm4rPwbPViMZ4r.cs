@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal interface IRenderPassData
+public interface IRenderPassData
 {
   IndexRange  \u0023\u003DzDVJjfdbDF74N();
 

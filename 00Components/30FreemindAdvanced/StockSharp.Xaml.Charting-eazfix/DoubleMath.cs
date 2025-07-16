@@ -4,7 +4,7 @@ using Ecng.Common;
 namespace SciChart.Data.Numerics.GenericMath;
 
 #nullable disable
-internal sealed class DoubleMath :
+public sealed class DoubleMath :
   IMath<double>
 {
 

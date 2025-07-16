@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZI6sx0QNvBw\u003D\u003D : 
+public sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZI6sx0QNvBw\u003D\u003D : 
   \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u003D\u003D
 {
   private TickCoordinates \u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D;

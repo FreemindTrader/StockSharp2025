@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class LineArrowAnnotation : LineAnnotationBase
+public class LineArrowAnnotation : LineAnnotationBase
 {
   public static readonly DependencyProperty HeadLengthProperty = DependencyProperty.Register(nameof (HeadLength), typeof (double), typeof (LineArrowAnnotation), new PropertyMetadata((object) 4.0, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
   public static readonly DependencyProperty HeadWidthProperty = DependencyProperty.Register(nameof (HeadWidth), typeof (double), typeof (LineArrowAnnotation), new PropertyMetadata((object) 8.0, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
@@ -45,7 +45,7 @@ internal class LineArrowAnnotation : LineAnnotationBase
 
   public override bool IsPointWithinBounds(Point point)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (this.XAxis == null || this.YAxis == null)
       return false;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
@@ -57,7 +57,7 @@ internal class LineArrowAnnotation : LineAnnotationBase
     return base.IsPointWithinBounds(point) || \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003Dz_0KJG0n18I8E(point, headPoints[0], headPoints[1], pt2);
   }
 
-  internal Point[] GetHeadPoints(Point pt1, Point pt2, double headLength, double headWidth)
+  public Point[] GetHeadPoints(Point pt1, Point pt2, double headLength, double headWidth)
   {
     double num1 = Math.Atan2(pt1.Y - pt2.Y, pt1.X - pt2.X);
     double num2 = Math.Sin(num1);
@@ -104,13 +104,13 @@ internal class LineArrowAnnotation : LineAnnotationBase
     };
   }
 
-  internal Line Line => this._line;
+  public Line Line => this._line;
 
-  internal Line GhostLine => this._ghostLine;
+  public Line GhostLine => this._ghostLine;
 
-  internal Polygon ArrowHead => this._arrowHead;
+  public Polygon ArrowHead => this._arrowHead;
 
-  internal sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(LineArrowAnnotation _param1) : 
+  public sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(LineArrowAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<LineArrowAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
@@ -126,7 +126,7 @@ internal class LineArrowAnnotation : LineAnnotationBase
     }
   }
 
-  internal sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(LineArrowAnnotation _param1) : 
+  public sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(LineArrowAnnotation _param1) : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<LineArrowAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(

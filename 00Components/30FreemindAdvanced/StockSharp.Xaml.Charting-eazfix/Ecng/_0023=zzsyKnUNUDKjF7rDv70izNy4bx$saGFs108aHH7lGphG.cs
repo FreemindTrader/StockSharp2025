@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzzsyKnUNUDKjF7rDv70izNy4bx\u0024saGFs108aHH7lGphGuZX7JpGJEopE\u003D
+public static class \u0023\u003DzzsyKnUNUDKjF7rDv70izNy4bx\u0024saGFs108aHH7lGphGuZX7JpGJEopE\u003D
 {
-  internal static \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<TX> \u0023\u003DzpxJeWbQ\u003D<TX>(
+  public static \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<TX> \u0023\u003DzpxJeWbQ\u003D<TX>(
     bool _param0)
     where TX : IComparable
   {

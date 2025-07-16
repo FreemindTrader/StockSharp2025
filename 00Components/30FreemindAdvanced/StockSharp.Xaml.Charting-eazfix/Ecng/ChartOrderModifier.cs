@@ -19,7 +19,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class ChartOrderModifier( ChartArea _param1 ) : ChartModifierBase
+public sealed class ChartOrderModifier( ChartArea _param1 ) : ChartModifierBase
 {
 
     private readonly ChartArea _chartArea = _param1 ?? throw new ArgumentNullException("area");

@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<T> : 
+public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<T> : 
   IDisposable
   where T : IDisposable
 {
@@ -26,7 +26,7 @@ internal sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\
     this.\u0023\u003DzTuM3X1E\u003D(false);
   }
 
-  internal T \u0023\u003DzQAdOJsjJeOwf()
+  public T \u0023\u003DzQAdOJsjJeOwf()
   {
     return this.\u0023\u003DzvQeD1pE\u003D;
   }

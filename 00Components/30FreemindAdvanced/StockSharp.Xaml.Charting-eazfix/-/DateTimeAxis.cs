@@ -11,9 +11,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class DateTimeAxis : 
+public sealed class DateTimeAxis : 
   \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u00248riNI9I7z_
 {
   
@@ -129,6 +129,6 @@ internal sealed class DateTimeAxis :
     public static readonly DateTimeAxis.SomeClass34343383 SomeMethond0343 = new DateTimeAxis.SomeClass34343383();
     public static Func<Type, string> \u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D;
 
-    internal string \u0023\u003Dzxhk169PwYjC0CfRyZh2qvME\u003D(Type _param1) => _param1.Name;
+    public string \u0023\u003Dzxhk169PwYjC0CfRyZh2qvME\u003D(Type _param1) => _param1.Name;
   }
 }

@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class DoubleRange : 
+public sealed class DoubleRange : 
   Range<double>
 {
   public DoubleRange()

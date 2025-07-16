@@ -7,7 +7,7 @@
 using System.Diagnostics;
 
 #nullable disable
-internal struct \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ
+public struct \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ
 {
   
   public double \u0023\u003DzP4R7yU0\u003D;

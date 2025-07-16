@@ -8,7 +8,7 @@ using System;
 using System.Windows.Input;
 
 #nullable disable
-internal sealed class \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\u003D
+public sealed class \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\u003D
 {
   private IReceiveMouseEvents  \u0023\u003Dz\u0024lz3uNxed1yoyyvUuQ\u003D\u003D;
   private \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC \u0023\u003Dz0OCPJ43fZ1jN7CcKuJXcb1c\u003D;
@@ -36,12 +36,12 @@ internal sealed class \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\
     this.\u0023\u003Dz\u0024lz3uNxed1yoyyvUuQ\u003D\u003D = _param1;
   }
 
-  internal \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC \u0023\u003DzRmjYaUJz_hkD()
+  public \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC \u0023\u003DzRmjYaUJz_hkD()
   {
     return this.\u0023\u003Dz0OCPJ43fZ1jN7CcKuJXcb1c\u003D;
   }
 
-  internal void \u0023\u003Dz4e25HYK1p2WX(
+  public void \u0023\u003Dz4e25HYK1p2WX(
     \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC _param1)
   {
     this.\u0023\u003Dz0OCPJ43fZ1jN7CcKuJXcb1c\u003D = _param1;

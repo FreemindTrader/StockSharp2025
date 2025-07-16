@@ -9,7 +9,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal abstract class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D<\u0023\u003DzE8zkRfY\u003D> : 
+public abstract class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D<\u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<\u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
   where \u0023\u003DzE8zkRfY\u003D : IComparable

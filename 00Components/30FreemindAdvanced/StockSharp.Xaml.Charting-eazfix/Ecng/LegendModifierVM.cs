@@ -16,7 +16,7 @@ namespace StockSharp.Xaml.Charting;
 /// 
 /// I don't remember why I did that, will update the document later.
 /// </summary>
-internal sealed class LegendModifierVM : ChartBaseViewModel
+public sealed class LegendModifierVM : ChartBaseViewModel
 {
     private LegendModifier _legendModifier;
 

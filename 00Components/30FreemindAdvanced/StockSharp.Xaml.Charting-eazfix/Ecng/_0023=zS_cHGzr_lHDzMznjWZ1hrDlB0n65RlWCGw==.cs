@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D
+public static class \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D
 {
   public static IRange \u0023\u003Dzo7udA0u6sNJJ(
     IRange _param0,

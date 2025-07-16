@@ -7,7 +7,7 @@
 using System.Windows;
 
 #nullable disable
-internal interface \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D
+public interface \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D
 {
   Point \u0023\u003Dz8miGAzg\u003D(Point _param1);
 

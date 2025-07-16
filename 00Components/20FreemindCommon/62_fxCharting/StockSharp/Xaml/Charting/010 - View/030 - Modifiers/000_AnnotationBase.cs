@@ -2,7 +2,7 @@
 using SciChart.Charting.Visuals.Annotations;
 using SciChart.Charting.Visuals.Axes;
 using SciChart.Charting.Visuals.Events;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Core.Framework;
 using StockSharp.Charting;
 using System;
@@ -314,19 +314,19 @@ internal abstract class AnnotationBase : ApiElementBase,
         get => _xAxis ?? ( _xAxis = \u0023\u003DzI0EiGDjWkH8S(XAxisId));
     }
 
-    protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationOverlaySurface
+    protected IAnnotationCanvas AnnotationOverlaySurface
 {
     get
     {
-        return ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+        return ParentSurface == null ? (IAnnotationCanvas) null : ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
     }
 }
 
-protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationUnderlaySurface
+protected IAnnotationCanvas AnnotationUnderlaySurface
 {
     get
     {
-        return ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+        return ParentSurface == null ? (IAnnotationCanvas) null : ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
     }
 }
 
@@ -477,7 +477,7 @@ public override void OnDetached()
         fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose = false;
         IsSelected = false;
         MakeInvisible();
-        ( Parent as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk).\u0023\u003DziYdJ\u00246cCiBha( this );
+        ( Parent as IAnnotationCanvas).\u0023\u003DziYdJ\u00246cCiBha( this );
         DetachInteractionHandlersFrom( ( FrameworkElement ) this );
         if ( ParentSurface != null )
             ParentSurface.\u0023\u003Dz38JNnebwqLph( new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D>( OnAxisAlignmentChanged ) );
@@ -509,7 +509,7 @@ public virtual void Update(
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordinateCalculator,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator)
 {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = GetCanvas(AnnotationCanvas);
+    IAnnotationCanvas canvas = GetCanvas(AnnotationCanvas);
     if ( canvas == null )
         return;
     canvas.\u0023\u003DzH0osWQkV_Y8_( this, -1 );
@@ -577,7 +577,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
 
   protected virtual bool IsInBounds(
     AnnotationCoordinates coordinates,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas)
+    IAnnotationCanvas canvas)
   {
     return GetCurrentPlacementStrategy().\u0023\u003DzxGhbraO0gg9\u0024(coordinates, canvas);
   }
@@ -588,11 +588,11 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
     GetCurrentPlacementStrategy().\u0023\u003DzNUoYFVRHgzxB(coordinates);
   }
 
-  protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk GetCanvas(
+  protected IAnnotationCanvas GetCanvas(
     AnnotationCanvas annotationCanvas)
   {
     if (ParentSurface == null)
-      return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null;
+      return (IAnnotationCanvas) null;
     switch (annotationCanvas)
     {
       case AnnotationCanvas.AboveChart:
@@ -600,9 +600,9 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
       case AnnotationCanvas.BelowChart:
         return ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
       case AnnotationCanvas.YAxis:
-        return YAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : YAxis.get_ModifierAxisCanvas();
+        return YAxis == null ? (IAnnotationCanvas) null : YAxis.get_ModifierAxisCanvas();
       case AnnotationCanvas.XAxis:
-        return XAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : XAxis.get_ModifierAxisCanvas();
+        return XAxis == null ? (IAnnotationCanvas) null : XAxis.get_ModifierAxisCanvas();
       default:
         throw new InvalidOperationException($"Cannot get an annotation surface for AnnotationCanvas.{annotationCanvas}");
     }
@@ -674,7 +674,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
     double coord,
     IAxis axis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = GetCanvas(AnnotationCanvas);
+    IAnnotationCanvas canvas = GetCanvas(AnnotationCanvas);
     double num = axis.IsHorizontalAxis ? canvas.ActualWidth : canvas.ActualHeight;
     return (IComparable) (coord / num);
   }
@@ -683,7 +683,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
     IComparable dataValue,
     IAxis axis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = GetCanvas(AnnotationCanvas);
+    IAnnotationCanvas canvas = GetCanvas(AnnotationCanvas);
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc = axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     XyDirection direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? XyDirection.XDirection : XyDirection.YDirection;
     double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
@@ -693,7 +693,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
   protected virtual Point ToCoordinates(
     IComparable xDataValue,
     IComparable yDataValue,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
+    IAnnotationCanvas canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordCalc,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordCalc)
   {
@@ -706,7 +706,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
 
   private double GetCoordinate(
     IComparable dataValue,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
+    IAnnotationCanvas canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc)
   {
     if (coordCalc == null)
@@ -747,7 +747,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
   }
 
   protected AnnotationCoordinates GetCoordinates(
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
+    IAnnotationCanvas canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc)
   {
@@ -769,7 +769,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
   {
     if (!IsEditable)
       return;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = GetCanvas(AnnotationCanvas);
+    IAnnotationCanvas canvas = GetCanvas(AnnotationCanvas);
     if (XAxis == null || YAxis == null)
       return;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
@@ -783,7 +783,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
     double horizOffset,
     double vertOffset)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = GetCanvas(AnnotationCanvas);
+    IAnnotationCanvas canvas = GetCanvas(AnnotationCanvas);
     GetCurrentPlacementStrategy().\u0023\u003DzuPL3ELSPZybJ(coordinates, horizOffset, vertOffset, canvas);
     return (horizOffset, vertOffset);
   }
@@ -988,7 +988,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
     {
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = annotationBase.XAxis != null ? annotationBase.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = annotationBase.YAxis != null ? annotationBase.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = annotationBase.GetCanvas(annotationBase.AnnotationCanvas);
+      IAnnotationCanvas canvas = annotationBase.GetCanvas(annotationBase.AnnotationCanvas);
       AnnotationCoordinates coordinates = new AnnotationCoordinates();
       if (xCalc != null && yCalc != null && canvas != null)
         coordinates = annotationBase.GetCoordinates(canvas, xCalc, yCalc);
@@ -1140,7 +1140,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE <= _param2.ActualHeight ? 0 : (_param1.\u0023\u003DzWp13vlQiZCJc > _param2.ActualHeight ? 1 : 0))) == 0;
     }
@@ -1149,7 +1149,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
       AnnotationCoordinates _param1,
       double _param2,
       double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(_param1, ref _param2, ref _param3, _param4);
     }
@@ -1158,7 +1158,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
       AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       double d1 = _param1.\u0023\u003DzS2_K6sVvd5IY + _param2;
       double d2 = _param1.\u0023\u003Dz6aJoeqoqAzym + _param2;
@@ -1248,14 +1248,14 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       Size size = \u0023\u003DzIr6xoc_4P2lw(_param2);
       return \u0023\u003DzRe9EEbV7q4ey(_param1, size);
     }
 
     private Size \u0023\u003DzIr6xoc_4P2lw(
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param1)
+      IAnnotationCanvas _param1)
     {
       return new Size(360.0, \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D.\u0023\u003Dz62MsOEK3dnlV(_param1.ActualWidth, _param1.ActualHeight));
     }
@@ -1271,7 +1271,7 @@ protected IEnumerable<T> GetUsedAdorners<T>( Canvas adornerLayer ) where T : IAn
       AnnotationCoordinates _param1,
       double _param2,
       double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       Tuple<Point, Point> tuple = \u0023\u003DzQDA5x2uuH9m3(_param1, _param2, _param3);
       Size size = \u0023\u003DzIr6xoc_4P2lw(_param4);

@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D : 
+public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D : 
   \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>,
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJjBPTR5rC4Mn<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>,
   \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyklVKg61SC2QL8
@@ -205,7 +205,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
     return this.\u0023\u003DzDU4_kVHHUbzB(_param1.get_StackedGroupId(), out double _);
   }
 
-  internal int \u0023\u003DzhwvgGUGVRU_I(
+  public int \u0023\u003DzhwvgGUGVRU_I(
     \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1,
     double _param2,
     out int _param3)
@@ -285,31 +285,31 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
     public static Func<Tuple<string, List<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>>, bool> \u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D;
     public static Func<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D, bool> \u0023\u003DzVCaCeyhgY8BAMJLqvA\u003D\u003D;
 
-    internal bool \u0023\u003Dz7rvFQvphQXMzAdVd7mS9GvM\u003D(
+    public bool \u0023\u003Dz7rvFQvphQXMzAdVd7mS9GvM\u003D(
       \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1)
     {
       return _param1.IsVisible;
     }
 
-    internal bool \u0023\u003DzFJKhK_8K_KsZYjuINPEC_Hg\u003D(
+    public bool \u0023\u003DzFJKhK_8K_KsZYjuINPEC_Hg\u003D(
       \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1)
     {
       return _param1.IsVisible;
     }
 
-    internal bool \u0023\u003Dzr6rwulxKWCKDx0ka48fqluw\u003D(
+    public bool \u0023\u003Dzr6rwulxKWCKDx0ka48fqluw\u003D(
       Tuple<string, List<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>> _param1)
     {
       return _param1.Item2.Any<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>(\u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343383.\u0023\u003DzDG61YjmCpqL3k8mhvg\u003D\u003D ?? (\u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343383.\u0023\u003DzDG61YjmCpqL3k8mhvg\u003D\u003D = new Func<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D, bool>(\u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2DLUwa0gtntxz_LmLoPnqd0\u003D)));
     }
 
-    internal bool \u0023\u003Dz2DLUwa0gtntxz_LmLoPnqd0\u003D(
+    public bool \u0023\u003Dz2DLUwa0gtntxz_LmLoPnqd0\u003D(
       \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1)
     {
       return _param1.IsVisible;
     }
 
-    internal bool \u0023\u003DzKvZiVbfxf45ElrF4TNmmFrQ\u003D(
+    public bool \u0023\u003DzKvZiVbfxf45ElrF4TNmmFrQ\u003D(
       \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1)
     {
       return _param1.IsVisible;
@@ -320,7 +320,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFl
   {
     public int \u0023\u003DzoKRocJE\u003D;
 
-    internal double \u0023\u003Dz1BpDS766bygi71RsZA\u003D\u003D(
+    public double \u0023\u003Dz1BpDS766bygi71RsZA\u003D\u003D(
       \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param1)
     {
       return _param1.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzPqsSI6C5MOOb()[this.\u0023\u003DzoKRocJE\u003D];

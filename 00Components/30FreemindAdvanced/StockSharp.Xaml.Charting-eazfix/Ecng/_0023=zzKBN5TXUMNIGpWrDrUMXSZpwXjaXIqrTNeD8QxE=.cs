@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D(
+public sealed class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D(
   FrameworkElement _param1,
   string _param2) : EventArgs
 {

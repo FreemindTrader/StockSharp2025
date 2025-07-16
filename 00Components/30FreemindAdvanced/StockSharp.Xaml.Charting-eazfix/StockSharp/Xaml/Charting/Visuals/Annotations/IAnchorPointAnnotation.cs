@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal interface IAnchorPointAnnotation : 
+public interface IAnchorPointAnnotation : 
   IXmlSerializable,
   IPublishMouseEvents,
   IAnnotation,

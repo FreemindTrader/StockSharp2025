@@ -8,7 +8,7 @@ using System;
 using System.Windows.Media;
 
 #nullable disable
-internal interface IPathColor : 
+public interface IPathColor : 
   IDisposable
 {
   Color Color { get; }

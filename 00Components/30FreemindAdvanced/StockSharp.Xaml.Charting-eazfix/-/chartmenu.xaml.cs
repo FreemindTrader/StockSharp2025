@@ -14,16 +14,16 @@ using System.Windows;
 using System.Windows.Markup;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class chartmenu : 
+public sealed class chartmenu : 
   PopupMenu,
   IComponentConnector
 {
   
   public static readonly DependencyProperty \u0023\u003DzqU86l1s\u003D = DependencyProperty.Register(nameof (Area), typeof (ChartArea), typeof (chartmenu), new PropertyMetadata((PropertyChangedCallback) null));
   
-  internal chartmenu \u0023\u003Dz8PNYF8U\u003D;
+  public chartmenu \u0023\u003Dz8PNYF8U\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 

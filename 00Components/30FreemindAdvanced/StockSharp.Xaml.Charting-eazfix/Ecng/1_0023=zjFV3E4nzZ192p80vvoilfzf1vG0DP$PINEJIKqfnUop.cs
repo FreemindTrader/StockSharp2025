@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal sealed class \u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfnUopKfI8OT5_BZ8JPFd9ajk0SArLBIIs\u003D : 
+public sealed class \u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfnUopKfI8OT5_BZ8JPFd9ajk0SArLBIIs\u003D : 
   \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D
 {
   private double[,] \u0023\u003DzE_Rfjp377uwj = new double[4, 2];
@@ -110,7 +110,7 @@ internal sealed class \u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfn
     return new \u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfnUopKfI8OT5_BZ8JPFd9ajk0SArLBIIs\u003D.\u0023\u003DzBOORYnnbiC2X(_param1, _param2, _param3, this.\u0023\u003DzE_Rfjp377uwj);
   }
 
-  internal sealed class \u0023\u003DzBOORYnnbiC2X
+  public sealed class \u0023\u003DzBOORYnnbiC2X
   {
     private double \u0023\u003DzgyMj__wzNkSr;
     private double \u0023\u003DzwefICal7Dcfa;

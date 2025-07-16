@@ -19,13 +19,13 @@ namespace StockSharp.Xaml.Charting;
 public class Chart3D : Chart3DControl, IComponentConnector
 {
   
-  internal AxisTitle \u0023\u003Dze_0mKZFnOTAk;
+  public AxisTitle \u0023\u003Dze_0mKZFnOTAk;
   
-  internal AxisTitle \u0023\u003DzQvGu9aka9P32;
+  public AxisTitle \u0023\u003DzQvGu9aka9P32;
   
-  internal AxisTitle \u0023\u003DzRC0RyhMpSlb_;
+  public AxisTitle \u0023\u003DzRC0RyhMpSlb_;
   
-  internal SeriesPoint3DStorage \u0023\u003DzedqXoAU\u003D;
+  public SeriesPoint3DStorage \u0023\u003DzedqXoAU\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 

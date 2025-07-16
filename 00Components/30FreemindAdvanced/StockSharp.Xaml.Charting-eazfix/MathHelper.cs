@@ -4,7 +4,7 @@ using Ecng.Common;
 
 namespace SciChart.Data.Numerics.GenericMath;
 #nullable disable
-internal static class MathHelper
+public static class MathHelper
 {
     private static readonly FloatMath _floatMath = new FloatMath();
     private static readonly DoubleMath _doubleMath = new DoubleMath();
@@ -76,12 +76,12 @@ internal static class MathHelper
     }
   };
 
-    internal static IMath<T> GetMath<T>()
+    public static IMath<T> GetMath<T>()
     {
         return MathHelper.TryGetMath<T>() ?? throw new NotSupportedException( "GenericMath does not support Type " + typeof( T )?.ToString() );
     }
 
-    internal static IMath<T> TryGetMath<T>()
+    public static IMath<T> TryGetMath<T>()
     {
         Type key = typeof (T);
         object obj;

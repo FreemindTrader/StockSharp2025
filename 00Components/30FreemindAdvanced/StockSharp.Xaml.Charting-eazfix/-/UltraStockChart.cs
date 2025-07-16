@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltraStockChart : 
+public sealed class UltraStockChart : 
   SciChartSurface
 {
   

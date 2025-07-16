@@ -15,13 +15,13 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class VerticalSliceModifierBase : 
+public abstract class VerticalSliceModifierBase : 
   TooltipModifierBase
 {
   
-  internal static readonly DependencyProperty \u0023\u003Dzj5rVXg3E650t0FU9dw\u003D\u003D = DependencyProperty.RegisterAttached("RolloverLabel", typeof (TemplatableControl), typeof (RolloverModifier), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003Dzj5rVXg3E650t0FU9dw\u003D\u003D = DependencyProperty.RegisterAttached("RolloverLabel", typeof (TemplatableControl), typeof (RolloverModifier), new PropertyMetadata((PropertyChangedCallback) null));
   
   private List<FrameworkElement> \u0023\u003Dzy9FxkpTkktj_\u0024CSRiA\u003D\u003D = new List<FrameworkElement>();
   
@@ -37,12 +37,12 @@ internal abstract class VerticalSliceModifierBase :
     };
   }
 
-  internal static Control \u0023\u003DzZGWrXySsGWItNMGOow\u003D\u003D(DependencyObject _param0)
+  public static Control \u0023\u003DzZGWrXySsGWItNMGOow\u003D\u003D(DependencyObject _param0)
   {
     return (Control) _param0.GetValue(VerticalSliceModifierBase.\u0023\u003Dzj5rVXg3E650t0FU9dw\u003D\u003D);
   }
 
-  internal static void \u0023\u003Dz4xEz6kzuJnZA5QZEVA\u003D\u003D(
+  public static void \u0023\u003Dz4xEz6kzuJnZA5QZEVA\u003D\u003D(
     DependencyObject _param0,
     Control _param1)
   {
@@ -480,7 +480,7 @@ internal abstract class VerticalSliceModifierBase :
     public static readonly VerticalSliceModifierBase.SomeClass34343383 SomeMethond0343 = new VerticalSliceModifierBase.SomeClass34343383();
     public static Func<IRenderableSeries, bool> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
 
-    internal bool \u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228(
+    public bool \u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003Dz4VQla1xp7uAzX0hWwB5XAZw\u003D() != null && _param1.\u0023\u003Dz4VQla1xp7uAzX0hWwB5XAZw\u003D().DataContext != null;
@@ -492,7 +492,7 @@ internal abstract class VerticalSliceModifierBase :
     public IAxis \u0023\u003Dz4bf8Oyc\u003D;
     public Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, double> \u0023\u003Dzon\u0024_RZacJIPJ;
 
-    internal double \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D(
+    public double \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !this.\u0023\u003Dz4bf8Oyc\u003D.IsHorizontalAxis ? _param1.XyCoordinate.X : _param1.XyCoordinate.Y;
@@ -503,7 +503,7 @@ internal abstract class VerticalSliceModifierBase :
   {
     public Rect \u0023\u003DzHxqHejRJ3zna;
 
-    internal bool \u0023\u003DzL4Rz\u0024NK6CSO_4VDHiA\u003D\u003D(FrameworkElement _param1)
+    public bool \u0023\u003DzL4Rz\u0024NK6CSO_4VDHiA\u003D\u003D(FrameworkElement _param1)
     {
       return new Rect(Canvas.GetLeft((UIElement) _param1), Canvas.GetTop((UIElement) _param1), _param1.ActualWidth, _param1.ActualHeight).IntersectsWith(this.\u0023\u003DzHxqHejRJ3zna);
     }
@@ -514,7 +514,7 @@ internal abstract class VerticalSliceModifierBase :
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public VerticalSliceModifierBase _variableSome3535;
 
-    internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DznVLFa68vHPHy(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);

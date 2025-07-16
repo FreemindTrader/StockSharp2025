@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable enable
-internal sealed class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u0024y9xNKaNytRdYOY23 : 
+public sealed class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdT9dyz7oMs24P2Fx4JrIgV\u0024y9xNKaNytRdYOY23 : 
   IDisposable,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
 {

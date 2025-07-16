@@ -11,7 +11,7 @@ using System.Windows.Input;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class BoxAnnotation : AnnotationBase
+public class BoxAnnotation : AnnotationBase
 {
   public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof (CornerRadius), typeof (CornerRadius), typeof (BoxAnnotation), new PropertyMetadata((object) new CornerRadius()));
 
@@ -33,7 +33,7 @@ internal class BoxAnnotation : AnnotationBase
 
   public override bool IsPointWithinBounds(Point point)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (this.XAxis == null || this.YAxis == null)
       return false;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
@@ -65,7 +65,7 @@ internal class BoxAnnotation : AnnotationBase
     Canvas.SetTop((UIElement) annotation, z2J4l3QuGwZhe);
   }
 
-  internal sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(BoxAnnotation _param1) : 
+  public sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(BoxAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<BoxAnnotation>(_param1)
   {
     public override Point[] \u0023\u003DzfJgp916l7LbX(
@@ -87,7 +87,7 @@ internal class BoxAnnotation : AnnotationBase
     }
   }
 
-  internal sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(BoxAnnotation _param1) : 
+  public sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(BoxAnnotation _param1) : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<BoxAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(

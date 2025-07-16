@@ -9,7 +9,7 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzXx19aMi46NZ0khxEGqLHPA9GkqwI680fTt\u0024V_4g\u003D : 
+public sealed class \u0023\u003DzXx19aMi46NZ0khxEGqLHPA9GkqwI680fTt\u0024V_4g\u003D : 
   \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D
 {
   private \u0023\u003Dz0w5QTi_Hwx2Q\u0024WqRdQ\u0024aZbHiFZEipPcMLCVdoP4\u003D \u0023\u003DzOB_PnyTvM_Xa;

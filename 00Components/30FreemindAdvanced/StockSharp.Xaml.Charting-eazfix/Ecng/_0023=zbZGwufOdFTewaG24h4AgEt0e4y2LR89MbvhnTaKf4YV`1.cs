@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<\u0023\u003DzulcL8RA\u003D>
+public interface \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<\u0023\u003DzulcL8RA\u003D>
   where \u0023\u003DzulcL8RA\u003D : IComparable
 {
   bool \u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D();

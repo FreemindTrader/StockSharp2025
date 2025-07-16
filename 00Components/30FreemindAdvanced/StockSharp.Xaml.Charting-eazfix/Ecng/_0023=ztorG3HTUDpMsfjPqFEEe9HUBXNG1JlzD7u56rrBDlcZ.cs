@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D
+public interface \u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D
 {
   TimeSpan? Timeframe { get; }
 

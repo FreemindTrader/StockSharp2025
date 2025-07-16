@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Markup;
 
 #nullable disable
-internal sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : MarkupExtension
+public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : MarkupExtension
 {
   
   private Type \u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;

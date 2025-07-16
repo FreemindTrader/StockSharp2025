@@ -15,9 +15,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class MainGrid : 
+public sealed class MainGrid : 
   Grid,
   IPublishMouseEvents,
   \u0023\u003DzlvwXE9mBO1uItIXfGGLJcGAvOm_MyInBFl6FOhs\u003D,
@@ -276,7 +276,7 @@ internal sealed class MainGrid :
   {
     public TouchFrameEventHandler \u0023\u003DzZla_cGQ\u003D;
 
-    internal void \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
+    public void \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
       object _param1,
       RoutedEventArgs _param2)
     {
@@ -284,7 +284,7 @@ internal sealed class MainGrid :
       Touch.FrameReported += this.\u0023\u003DzZla_cGQ\u003D;
     }
 
-    internal void OnChartAreaElementsRemovingAt(
+    public void OnChartAreaElementsRemovingAt(
       object _param1,
       RoutedEventArgs _param2)
     {

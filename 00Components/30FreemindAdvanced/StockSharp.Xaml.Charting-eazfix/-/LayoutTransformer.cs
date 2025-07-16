@@ -11,11 +11,11 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "TransformRoot", Type = typeof (Grid))]
 [TemplatePart(Name = "Presenter", Type = typeof (ContentPresenter))]
-internal sealed class LayoutTransformer : 
+public sealed class LayoutTransformer : 
   ContentControl
 {
   

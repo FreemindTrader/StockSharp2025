@@ -4,7 +4,7 @@
     xmlns:li1="clr-namespace:StockSharp.Xaml.Charting.CustomAnnotations"
     xmlns:sysXaml="clr-namespace:System.Windows.Markup;assembly=System.Xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/SciChart.Charting;component/Themes/Default.xaml" />
+        <ResourceDictionary Source="/StockSharp.Charting;component/Themes/Default.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type li1:RulerAnnotation}">
         <Setter Property="Control.Template">

@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D
+public sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvXUD\u0024c40UHSqnHjJIKlCXmEZS_a9vc2bs90\u003D
 {
   private readonly double \u0023\u003DzpYI5BlRzFVM9Y0pOKA\u003D\u003D;
   private readonly IAxis \u0023\u003DzLXQXNXQ\u003D;

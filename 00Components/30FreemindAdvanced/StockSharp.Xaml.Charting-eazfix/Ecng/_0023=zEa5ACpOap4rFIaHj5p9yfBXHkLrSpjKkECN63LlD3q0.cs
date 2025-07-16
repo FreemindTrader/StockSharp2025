@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal sealed class \u0023\u003DzEa5ACpOap4rFIaHj5p9yfBXHkLrSpjKkECN63LlD3q0NQ7YuqbrWmwnkh1lphV2PvRok2vPGT0BXaveXSW9mXjk\u003D : 
+public sealed class \u0023\u003DzEa5ACpOap4rFIaHj5p9yfBXHkLrSpjKkECN63LlD3q0NQ7YuqbrWmwnkh1lphV2PvRok2vPGT0BXaveXSW9mXjk\u003D : 
   \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLHE4noQv5jvPOdidvRVonqXR1_40XGWjzqTPSwaJ
 {
   private \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLHE4noQv5jvPOdidvRVonqXR1_40XGWjzqTPSwaJ \u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D;

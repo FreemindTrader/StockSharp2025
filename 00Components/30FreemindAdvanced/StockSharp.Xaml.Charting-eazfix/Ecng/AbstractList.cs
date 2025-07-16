@@ -13,7 +13,7 @@ using System.Security;
 using System.Threading;
 
 #nullable disable
-internal sealed class AbstractList<T> : 
+public sealed class AbstractList<T> : 
   \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T>,
   IList<T>,
   ICollection<T>,
@@ -80,9 +80,9 @@ internal sealed class AbstractList<T> :
     return this.\u0023\u003Dzg0gWX4E\u003D;
   }
 
-  internal int \u0023\u003DzMRd_64p8E249() => this.\u0023\u003Dzg0gWX4E\u003D.Length;
+  public int \u0023\u003DzMRd_64p8E249() => this.\u0023\u003Dzg0gWX4E\u003D.Length;
 
-  internal void \u0023\u003Dz2GOzd49sS99C(int _param1)
+  public void \u0023\u003Dz2GOzd49sS99C(int _param1)
   {
     if (_param1 < this.\u0023\u003DzJpbCbio\u003D)
       throw new ArgumentOutOfRangeException("value");
@@ -188,7 +188,7 @@ internal sealed class AbstractList<T> :
 
   public int Count => this.\u0023\u003DzJpbCbio\u003D;
 
-  internal void \u0023\u003DzpFWgSog\u003D(int _param1)
+  public void \u0023\u003DzpFWgSog\u003D(int _param1)
   {
     this.\u0023\u003DzJpbCbio\u003D = _param1;
   }
@@ -499,7 +499,7 @@ internal sealed class AbstractList<T> :
     this.\u0023\u003Dz2GOzd49sS99C(this.\u0023\u003DzJpbCbio\u003D);
   }
 
-  internal static IList<T> \u0023\u003Dz\u00247WdPho\u003D(
+  public static IList<T> \u0023\u003Dz\u00247WdPho\u003D(
     List<T> _param0)
   {
     return (IList<T>) new AbstractList<T>.\u0023\u003DzcHSqfbQ\u003D(_param0);
@@ -510,7 +510,7 @@ internal sealed class AbstractList<T> :
     this.\u0023\u003DzJpbCbio\u003D = _param1;
   }
 
-  internal sealed class \u0023\u003DzcHSqfbQ\u003D : 
+  public sealed class \u0023\u003DzcHSqfbQ\u003D : 
     IList<T>,
     ICollection<T>,
     IEnumerable<T>,
@@ -521,7 +521,7 @@ internal sealed class AbstractList<T> :
     
     private readonly object \u0023\u003Dz6j0cxXE\u003D;
 
-    internal \u0023\u003DzcHSqfbQ\u003D(List<T> _param1)
+    public \u0023\u003DzcHSqfbQ\u003D(List<T> _param1)
     {
       this.\u0023\u003Dz5IntIgc\u003D = _param1;
       this.\u0023\u003Dz6j0cxXE\u003D = ((ICollection) _param1).SyncRoot;
@@ -630,7 +630,7 @@ internal sealed class AbstractList<T> :
     
     private int \u0023\u003DzKx97DYo\u003D;
 
-    internal \u0023\u003DzdFhhG7w\u003D(
+    public \u0023\u003DzdFhhG7w\u003D(
       AbstractList<T> _param1)
     {
       this.\u0023\u003Dz5IntIgc\u003D = _param1;

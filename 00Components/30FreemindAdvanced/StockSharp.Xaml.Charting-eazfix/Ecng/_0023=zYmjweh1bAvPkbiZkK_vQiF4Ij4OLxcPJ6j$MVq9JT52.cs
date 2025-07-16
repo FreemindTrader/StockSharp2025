@@ -26,7 +26,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(
+public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(
   ChartActiveOrdersElement _param1) : 
   ChartCompentWpfBaseViewModel<ChartActiveOrdersElement>(_param1)
 {
@@ -221,7 +221,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     CollectionHelper.ForEach<Order>((IEnumerable<Order>) ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.ToArray<Order>(), new Action<Order>(this.\u0023\u003Dzu72g2gQaaQQ2));
   }
 
-  internal static Binding \u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd(
+  public static Binding \u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd(
     object _param0,
     string _param1)
   {
@@ -266,7 +266,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
   {
     public ActiveOrderAnnotation \u0023\u003Dz2vouRgM\u003D;
 
-    internal bool \u0023\u003Dzus90X13c0dQNK8NugoaejT0\u003D(
+    public bool \u0023\u003Dzus90X13c0dQNK8NugoaejT0\u003D(
       KeyValuePair<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> _param1)
     {
       return _param1.Value.Annotation == this.\u0023\u003Dz2vouRgM\u003D;
@@ -279,7 +279,7 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     public static readonly \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383();
     public static Func<Order, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
 
-    internal bool \u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D(Order _param1) => true;
+    public bool \u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D(Order _param1) => true;
   }
 
   private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
@@ -288,12 +288,12 @@ internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9J
     public ChartDrawData.sActiveOrder \u0023\u003DzrnGNvGY\u003D;
     public Order \u0023\u003Dz54\u0024be\u0024c\u003D;
 
-    internal void \u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D()
+    public void \u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D()
     {
       this._variableSome3535.\u0023\u003Dz4ka8DEp6gsYz(this.\u0023\u003DzrnGNvGY\u003D);
     }
 
-    internal void \u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(
+    public void \u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(
       \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _param1,
       bool _param2)
     {

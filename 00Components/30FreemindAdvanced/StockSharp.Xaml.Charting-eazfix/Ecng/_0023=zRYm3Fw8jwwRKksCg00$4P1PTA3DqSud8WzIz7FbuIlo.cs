@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIlooN_p__NkwlEdlyT\u0024342dv_HVBZ72oDCymVTQ57Q\u003D\u003D : 
+public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIlooN_p__NkwlEdlyT\u0024342dv_HVBZ72oDCymVTQ57Q\u003D\u003D : 
   \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM,
   \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W
 {
@@ -186,7 +186,7 @@ internal sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7Fbu
   {
   }
 
-  internal struct \u0023\u003Dziujnni9rN792sAZFhw\u003D\u003D
+  public struct \u0023\u003Dziujnni9rN792sAZFhw\u003D\u003D
   {
     
     public double \u0023\u003DzrQGe4cfoOivd;

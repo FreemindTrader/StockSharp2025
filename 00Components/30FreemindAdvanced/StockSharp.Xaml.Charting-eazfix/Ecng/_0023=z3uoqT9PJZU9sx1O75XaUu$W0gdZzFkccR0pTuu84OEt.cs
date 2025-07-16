@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC : IDisposable
+public sealed class \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC : IDisposable
 {
   
   private bool \u0023\u003Dzwt21uMVBOpMf;
@@ -20,14 +20,14 @@ internal sealed class \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84
   
   private MouseEventHandler \u0023\u003DzMv6aNgkbDCcS;
 
-  internal \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC(
+  public \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84OEtC(
     IPublishMouseEvents _param1)
   {
     this.\u0023\u003DzwhoPcC4\u003D = _param1;
     _param1.add_MouseMove(new MouseEventHandler(this.\u0023\u003DztQrG6UkAcwQR));
   }
 
-  internal void \u0023\u003Dz5v7amar0n_e8(MouseEventHandler _param1)
+  public void \u0023\u003Dz5v7amar0n_e8(MouseEventHandler _param1)
   {
     MouseEventHandler mouseEventHandler = this.\u0023\u003DzMv6aNgkbDCcS;
     MouseEventHandler comparand;
@@ -39,7 +39,7 @@ internal sealed class \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84
     while (mouseEventHandler != comparand);
   }
 
-  internal void \u0023\u003DzOzRhiTCfaCeW(MouseEventHandler _param1)
+  public void \u0023\u003DzOzRhiTCfaCeW(MouseEventHandler _param1)
   {
     MouseEventHandler mouseEventHandler = this.\u0023\u003DzMv6aNgkbDCcS;
     MouseEventHandler comparand;
@@ -72,7 +72,7 @@ internal sealed class \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu\u0024W0gdZzFkccR0pTuu84
     CompositionTarget.Rendering -= new EventHandler(this.\u0023\u003Dzq1hBQp\u0024VOhGm);
   }
 
-  internal void \u0023\u003DzOcPDGUuqguUQ(MouseEventArgs _param1)
+  public void \u0023\u003DzOcPDGUuqguUQ(MouseEventArgs _param1)
   {
     MouseEventHandler zMv6aNgkbDccS = this.\u0023\u003DzMv6aNgkbDCcS;
     if (zMv6aNgkbDccS == null)

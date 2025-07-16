@@ -23,7 +23,7 @@ using System.Xml.Serialization;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal abstract class AnnotationBase :
+public abstract class AnnotationBase :
   ApiElementBase,
   IXmlSerializable,
   ISuspendable,
@@ -61,11 +61,11 @@ internal abstract class AnnotationBase :
     private IAxis _xAxis;
     private bool _isLoaded;
 
-    protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk GetCanvas(
+    protected IAnnotationCanvas GetCanvas(
     AnnotationCanvas annotationCanvas )
     {
         if ( this.ParentSurface == null )
-            return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null;
+            return (IAnnotationCanvas) null;
         switch ( annotationCanvas )
         {
             case AnnotationCanvas.AboveChart:
@@ -73,9 +73,9 @@ internal abstract class AnnotationBase :
             case AnnotationCanvas.BelowChart:
                 return this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
             case AnnotationCanvas.YAxis:
-                return this.YAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.YAxis.ModifierAxisCanvas;
+                return this.YAxis == null ? (IAnnotationCanvas) null : this.YAxis.ModifierAxisCanvas;
             case AnnotationCanvas.XAxis:
-                return this.XAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.XAxis.ModifierAxisCanvas;
+                return this.XAxis == null ? (IAnnotationCanvas) null : this.XAxis.ModifierAxisCanvas;
             default:
                 throw new InvalidOperationException( $"Cannot get an annotation surface for AnnotationCanvas.{annotationCanvas}" );
         }
@@ -274,7 +274,7 @@ public void StartDrag( bool isPrimaryDrag )
 {
     this._isDragging = true;
     this._isPrimaryDrag = isPrimaryDrag;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D< double > yCalc = this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D< double > xCalc = this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     this._startDragAnnotationCoordinates = this.GetCoordinates( canvas, xCalc, yCalc );
@@ -329,19 +329,19 @@ public override IAxis XAxis
     get => this._xAxis ?? ( this._xAxis = this.\u0023\u003DzI0EiGDjWkH8S(this.XAxisId));
 }
 
-protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationOverlaySurface
+protected IAnnotationCanvas AnnotationOverlaySurface
 {
     get
     {
-        return this.ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+        return this.ParentSurface == null ? (IAnnotationCanvas) null : this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
     }
 }
 
-protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationUnderlaySurface
+protected IAnnotationCanvas AnnotationUnderlaySurface
 {
     get
     {
-        return this.ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+        return this.ParentSurface == null ? (IAnnotationCanvas) null : this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
     }
 }
 
@@ -492,7 +492,7 @@ public override void OnDetached()
         fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose = false;
         this.IsSelected = false;
         this.MakeInvisible();
-        ( this.Parent as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk).\u0023\u003DziYdJ\u00246cCiBha( ( object ) this );
+        ( this.Parent as IAnnotationCanvas).\u0023\u003DziYdJ\u00246cCiBha( ( object ) this );
         this.DetachInteractionHandlersFrom( ( FrameworkElement ) this );
         if ( this.ParentSurface != null )
             this.ParentSurface.\u0023\u003Dz38JNnebwqLph( new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D>( this.OnAxisAlignmentChanged ) );
@@ -524,7 +524,7 @@ public bool Refresh()
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordinateCalculator,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (canvas == null)
       return;
     canvas.\u0023\u003DzH0osWQkV_Y8_((object) this, -1);
@@ -582,7 +582,7 @@ public bool Refresh()
     this.UpdateAdorners();
   }
 
-  internal void UpdateAdorners()
+  public void UpdateAdorners()
   {
     Canvas adornerLayer = this.GetAdornerLayer();
     if (adornerLayer == null)
@@ -592,7 +592,7 @@ public bool Refresh()
 
   protected virtual bool IsInBounds(
     AnnotationCoordinates coordinates,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas)
+    IAnnotationCanvas canvas)
   {
     return this.GetCurrentPlacementStrategy().\u0023\u003DzxGhbraO0gg9\u0024(coordinates, canvas);
   }
@@ -671,7 +671,7 @@ public bool Refresh()
     double coord,
     IAxis axis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     double num = axis.IsHorizontalAxis ? canvas.ActualWidth : canvas.ActualHeight;
     return (IComparable) (coord / num);
   }
@@ -680,7 +680,7 @@ public bool Refresh()
     IComparable dataValue,
     IAxis axis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc = axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     XyDirection direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? XyDirection.XDirection : XyDirection.YDirection;
     double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
@@ -690,7 +690,7 @@ public bool Refresh()
   protected virtual Point ToCoordinates(
     IComparable xDataValue,
     IComparable yDataValue,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
+    IAnnotationCanvas canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordCalc,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordCalc)
   {
@@ -703,7 +703,7 @@ public bool Refresh()
 
   private double GetCoordinate(
     IComparable dataValue,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
+    IAnnotationCanvas canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc)
   {
     if (coordCalc == null)
@@ -744,7 +744,7 @@ public bool Refresh()
   }
 
   protected AnnotationCoordinates GetCoordinates(
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
+    IAnnotationCanvas canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc)
   {
@@ -766,7 +766,7 @@ public bool Refresh()
   {
     if (!this.IsEditable)
       return;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (this.XAxis == null || this.YAxis == null)
       return;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
@@ -780,7 +780,7 @@ public bool Refresh()
     double horizOffset,
     double vertOffset)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     this.GetCurrentPlacementStrategy().\u0023\u003DzuPL3ELSPZybJ(coordinates, horizOffset, vertOffset, canvas);
     return (horizOffset, vertOffset);
   }
@@ -890,7 +890,7 @@ public bool Refresh()
     return this.\u0023\u003DzdC9whUui_gN\u0024(relativeTo);
   }
 
-  internal bool TrySelectAnnotation()
+  public bool TrySelectAnnotation()
   {
     return this.ParentSurface != null && this.ParentSurface.get_Annotations().\u0023\u003DzaO_rUKeW5Orq((IAnnotation) this);
   }
@@ -919,7 +919,7 @@ public bool Refresh()
     isHiddenChanged((object) this, EventArgs.Empty);
   }
 
-  internal void RaiseAnnotationDragStarted(bool isPrimaryDrag, bool isResize)
+  public void RaiseAnnotationDragStarted(bool isPrimaryDrag, bool isResize)
   {
     EventHandler<EventArgs> dragStarted = this.DragStarted;
     if (dragStarted == null)
@@ -927,7 +927,7 @@ public bool Refresh()
     dragStarted((object) this, new EventArgs(isPrimaryDrag, isResize));
   }
 
-  internal void RaiseAnnotationDragEnded(bool isPrimaryDrag, bool isResize)
+  public void RaiseAnnotationDragEnded(bool isPrimaryDrag, bool isResize)
   {
     EventHandler<EventArgs> dragEnded = this.DragEnded;
     if (dragEnded == null)
@@ -935,7 +935,7 @@ public bool Refresh()
     dragEnded((object) this, new EventArgs(isPrimaryDrag, isResize));
   }
 
-  internal void RaiseAnnotationDragging(
+  public void RaiseAnnotationDragging(
     double hOffset,
     double vOffset,
     bool isPrimaryDrag,
@@ -985,7 +985,7 @@ public bool Refresh()
     {
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = annotationBase.XAxis != null ? annotationBase.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = annotationBase.YAxis != null ? annotationBase.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = annotationBase.GetCanvas(annotationBase.AnnotationCanvas);
+      IAnnotationCanvas canvas = annotationBase.GetCanvas(annotationBase.AnnotationCanvas);
       AnnotationCoordinates coordinates = new AnnotationCoordinates();
       if (xCalc != null && yCalc != null && canvas != null)
         coordinates = annotationBase.GetCoordinates(canvas, xCalc, yCalc);
@@ -1052,11 +1052,11 @@ public bool Refresh()
     \u0023\u003Dza9eQbgAsftIGbI_4wdfcZPOeT4St0p3lrdcxd\u0024cQ3C42.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz7SZ\u0024Lrw\u003D((IAnnotation) this, writer);
   }
 
-  internal FrameworkElement RootElement => this.AnnotationRoot;
+  public FrameworkElement RootElement => this.AnnotationRoot;
 
-  internal bool IsDragging => this._isDragging;
+  public bool IsDragging => this._isDragging;
 
-  internal bool IsDraggingByUser => this._isPrimaryDrag;
+  public bool IsDraggingByUser => this._isPrimaryDrag;
 
   object IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002Eget_DataContext()
   {
@@ -1086,13 +1086,13 @@ public bool Refresh()
     public static Action<IAnnotationAdorner> \u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D;
     public static Action<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D> \u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D;
 
-    internal void \u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D(
+    public void \u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D(
       IAnnotationAdorner _param1)
     {
       _param1.\u0023\u003DzGDdLHa8\u003D();
     }
 
-    internal void \u0023\u003DzmwmE1Rru1D_mRmp3V7zIKTM\u003D(
+    public void \u0023\u003DzmwmE1Rru1D_mRmp3V7zIKTM\u003D(
       \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D _param1)
     {
       _param1.\u0023\u003DzcNW2KR8\u003D();
@@ -1105,7 +1105,7 @@ public bool Refresh()
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
-    internal void \u0023\u003DzIOaiByPzcFm0hgjIqRsFUKJzOnbT2YChDvFyp8X_Z2t0giSUkPjoyzwmi0T_()
+    public void \u0023\u003DzIOaiByPzcFm0hgjIqRsFUKJzOnbT2YChDvFyp8X_Z2t0giSUkPjoyzwmi0T_()
     {
       // ISSUE: explicit non-virtual call
       // ISSUE: explicit non-virtual call
@@ -1137,7 +1137,7 @@ public bool Refresh()
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE <= _param2.ActualHeight ? 0 : (_param1.\u0023\u003DzWp13vlQiZCJc > _param2.ActualHeight ? 1 : 0))) == 0;
     }
@@ -1146,7 +1146,7 @@ public bool Refresh()
       AnnotationCoordinates _param1,
       double _param2,
       double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       this.\u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(_param1, ref _param2, ref _param3, _param4);
     }
@@ -1155,7 +1155,7 @@ public bool Refresh()
       AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       double d1 = _param1.\u0023\u003DzS2_K6sVvd5IY + _param2;
       double d2 = _param1.\u0023\u003Dz6aJoeqoqAzym + _param2;
@@ -1201,7 +1201,7 @@ public bool Refresh()
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
-    internal void \u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H()
+    public void \u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H()
     {
       // ISSUE: explicit non-virtual call
       this._variableSome3535._xAxis = this._variableSome3535.\u0023\u003DzI0EiGDjWkH8S(__nonvirtual (this._variableSome3535.XAxisId));
@@ -1209,7 +1209,7 @@ public bool Refresh()
     }
   }
 
-  internal class \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<T> : 
+  public class \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<T> : 
     \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P8\u00249VOyCNzxoI\u0024gA\u002447LO3X8<T>
     where T : AnnotationBase
   {
@@ -1245,14 +1245,14 @@ public bool Refresh()
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       Size size = this.\u0023\u003DzIr6xoc_4P2lw(_param2);
       return this.\u0023\u003DzRe9EEbV7q4ey(_param1, size);
     }
 
     private Size \u0023\u003DzIr6xoc_4P2lw(
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param1)
+      IAnnotationCanvas _param1)
     {
       return new Size(360.0, \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D.\u0023\u003Dz62MsOEK3dnlV(_param1.ActualWidth, _param1.ActualHeight));
     }
@@ -1268,7 +1268,7 @@ public bool Refresh()
       AnnotationCoordinates _param1,
       double _param2,
       double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       Tuple<Point, Point> tuple = this.\u0023\u003DzQDA5x2uuH9m3(_param1, _param2, _param3);
       Size size = this.\u0023\u003DzIr6xoc_4P2lw(_param4);

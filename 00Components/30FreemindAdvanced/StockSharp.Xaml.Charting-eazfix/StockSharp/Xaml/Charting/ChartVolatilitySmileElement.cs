@@ -86,7 +86,7 @@ public class ChartVolatilitySmileElement :
     storage.SetValue<SettingsStorage>("Smile", PersistableHelper.Save((IPersistable) this.Smile));
   }
 
-  internal override ChartVolatilitySmileElement Clone(
+  public override ChartVolatilitySmileElement Clone(
     ChartVolatilitySmileElement _param1)
   {
     _param1 = base.Clone(_param1);

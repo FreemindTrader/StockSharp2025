@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal static class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAdKN9rpOuxmxHM2c\u00242gpc4ND3AkP5K8\u003D
+public static class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAdKN9rpOuxmxHM2c\u00242gpc4ND3AkP5K8\u003D
 {
   public static int \u0023\u003DziL6rhu76I9knzlgj8g\u003D\u003D(
     int _param0,

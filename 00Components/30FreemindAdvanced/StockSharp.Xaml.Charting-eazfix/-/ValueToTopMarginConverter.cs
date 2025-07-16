@@ -14,9 +14,9 @@ using SciChart.Charting.Visuals.Axes.LabelProviders;
 using SciChart.Core.Extensions;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ValueToTopMarginConverter : IValueConverter
+public sealed class ValueToTopMarginConverter : IValueConverter
 {
 
     private TextBlock _measurement = new TextBlock();

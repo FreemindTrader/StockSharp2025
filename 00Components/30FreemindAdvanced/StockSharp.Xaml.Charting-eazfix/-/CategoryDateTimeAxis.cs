@@ -12,9 +12,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class CategoryDateTimeAxis : 
+public sealed class CategoryDateTimeAxis : 
   AxisBase,
   IDrawable,
   IAxisParams,
@@ -236,7 +236,7 @@ internal sealed class CategoryDateTimeAxis :
     this.OnPropertyChanged("CurrentDatapointPixelSize");
   }
 
-  internal double \u0023\u003DzbY7N\u0024Xk2WSr8()
+  public double \u0023\u003DzbY7N\u0024Xk2WSr8()
   {
     IList z9jZg9RufbqZ = this.\u0023\u003DzvScByjqid0AM.\u0023\u003Dz9jZG_9RUfbqZ;
     double num = (double) TimeSpan.FromSeconds(this.BarTimeFrame).Ticks;
@@ -253,7 +253,7 @@ internal sealed class CategoryDateTimeAxis :
     return num;
   }
 
-  internal static double \u0023\u003Dz6Vq26Hfm2pXj(
+  public static double \u0023\u003Dz6Vq26Hfm2pXj(
     IndexRange  _param0,
     double _param1)
   {

@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp : 
+public sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0apI7VsQ_xj6G0khrSKZaBu8dZ57eHRCM5HUPjp : 
   \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI84SlzGeHM63aaGG8vJyxtBAVakvxTUthBw\u003D
 {
   private readonly IChartModifier \u0023\u003Dz0mppXFo\u003D;

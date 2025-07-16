@@ -9,9 +9,9 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
+public static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
 {
-  internal static bool \u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D(
+  public static bool \u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D(
     this IAxis _param0,
     IRange _param1,
     TimeSpan _param2)
@@ -25,7 +25,7 @@ internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
     return true;
   }
 
-  internal static void \u0023\u003Dz07\u0024lhqBRmUuR(
+  public static void \u0023\u003Dz07\u0024lhqBRmUuR(
     this IAxis _param0,
     FrameworkElement _param1,
     Point _param2)
@@ -43,7 +43,7 @@ internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
       AxisCanvas.SetCenterTop((UIElement) _param1, _param2.Y);
   }
 
-  internal static void \u0023\u003DzXOlF_vImljp4(
+  public static void \u0023\u003DzXOlF_vImljp4(
     this IAxis _param0,
     FrameworkElement _param1,
     Point _param2)

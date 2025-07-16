@@ -11,9 +11,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class NumericAxis : 
+public class NumericAxis : 
   AxisBase
 {
   

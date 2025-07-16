@@ -12,7 +12,7 @@ using StockSharp.Charting;
 using StockSharp.Xaml.Charting.Ultrachart;
 
 #nullable disable
-internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4doIUbD\u0024mKpPwQ\u003D\u003D : 
+public abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4doIUbD\u0024mKpPwQ\u003D\u003D : 
   ComboBoxEditSettings
 {
   public override IBaseEdit CreateEditor(

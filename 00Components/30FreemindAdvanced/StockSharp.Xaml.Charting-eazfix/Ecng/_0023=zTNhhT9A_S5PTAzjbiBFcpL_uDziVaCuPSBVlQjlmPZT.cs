@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpL_uDziVaCuPSBVlQjlmPZT8 : 
+public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpL_uDziVaCuPSBVlQjlmPZT8 : 
   IDisposable,
   IRenderContext2D
 {

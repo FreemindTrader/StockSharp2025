@@ -9,7 +9,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 #nullable disable
-internal sealed class \u0023\u003DzQ4iRj1YTApc8D349VbLPOcYfVH1n3cgfJefIZNttPgl056hG45kULRE\u003D : 
+public sealed class \u0023\u003DzQ4iRj1YTApc8D349VbLPOcYfVH1n3cgfJefIZNttPgl056hG45kULRE\u003D : 
   IValueConverter
 {
   object IValueConverter.Convert(

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 #nullable disable
-internal sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBBvHsFJHy2zfRF5KcRE\u003D : TaskScheduler
+public sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBBvHsFJHy2zfRF5KcRE\u003D : TaskScheduler
 {
   protected override void QueueTask(Task _param1) => this.TryExecuteTask(_param1);
 

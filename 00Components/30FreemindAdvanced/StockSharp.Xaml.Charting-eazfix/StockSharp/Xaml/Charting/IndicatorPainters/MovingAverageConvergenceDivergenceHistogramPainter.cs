@@ -86,7 +86,7 @@ public class MovingAverageConvergenceDivergenceHistogramPainter :
     public static readonly MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383 SomeMethond0343 = new MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383();
     public static Func<double, double, double> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
-    internal double \u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D(double _param1, double _param2)
+    public double \u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D(double _param1, double _param2)
     {
       return _param1 - _param2;
     }

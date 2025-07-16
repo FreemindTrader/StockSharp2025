@@ -13,9 +13,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class FastBandRenderableSeries : 
+public sealed class FastBandRenderableSeries : 
   BaseRenderableSeries
 {
   

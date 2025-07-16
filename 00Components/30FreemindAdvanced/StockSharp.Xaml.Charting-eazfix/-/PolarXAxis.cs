@@ -10,9 +10,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class PolarXAxis : 
+public sealed class PolarXAxis : 
   NumericAxis
 {
   public PolarXAxis()

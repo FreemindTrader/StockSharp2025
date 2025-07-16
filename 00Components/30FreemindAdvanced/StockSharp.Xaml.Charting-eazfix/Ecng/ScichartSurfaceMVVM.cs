@@ -3,7 +3,7 @@ using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Xaml;
 using Ecng.Xaml.Converters;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.ChartModifiers;
 using SciChart.Charting.Common.Helpers;
 using SciChart.Charting.Visuals;
@@ -598,7 +598,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     this._rubberBandXyZoomModifier.IsXAxisOnly = !_param1.DrawStyle.IsVolumeProfileChart();
   }
 
-  internal \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR \u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(
+  public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR \u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(
     string _param1)
   {
     IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this.Area.XAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(new ScichartSurfaceMVVM.\u0023\u003DzHtYFIEI9CJAk\u0024GXG5dtCtJE\u003D()
@@ -1119,7 +1119,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     #nullable disable
     Order>> \u0023\u003DzoD2HtVGZvKav;
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -1129,7 +1129,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
       return _param1.Elements.OfType<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D>().SelectMany<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D, Order>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D, IEnumerable<Order>>(this.\u0023\u003Dz2Yv1Pu_wdWkdbu34jskJTTE\u003D)));
     }
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -1146,7 +1146,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
     public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
 
-    internal void \u0023\u003DzFX_lHxlPjn56eMHQ\u0024g\u003D\u003D()
+    public void \u0023\u003DzFX_lHxlPjn56eMHQ\u0024g\u003D\u003D()
     {
       if (this._variableSome3535.Chart == null)
         return;
@@ -1181,13 +1181,13 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     
 
-    internal bool \u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242(
+    public bool \u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242(
       ChartCompentViewModel _param1)
     {
       return _param1 != null;
     }
 
-    internal void \u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ(
+    public void \u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ(
       dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd _param1)
     {
       if (!(_param1.Tag is ChartAxis tag))
@@ -1195,73 +1195,73 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
       tag.DataPointWidth = _param1.CurrentDatapointPixelSize;
     }
 
-    internal void \u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR(
+    public void \u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR(
       ChartCompentViewModel _param1)
     {
       _param1.UpdateYAxisMarker();
     }
 
-    internal bool \u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY(
+    public bool \u0023\u003DzxrTS_1cNsfx\u0024XLYpPvCkhwAicVIY(
       IRenderableSeries _param1)
     {
       return _param1.IsVisible;
     }
 
-    internal int \u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3(
+    public int \u0023\u003DzXPeSs80bTGyLZbXyn71KBILsfXa3(
       IRenderableSeries _param1)
     {
       \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = _param1.get_DataSeries();
       return dataSeries == null ? 0 : dataSeries.get_Count();
     }
 
-    internal bool \u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D(
+    public bool \u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D(
       KeyValuePair<IChartComponent, ChartCompentViewModel> _param1)
     {
       return _param1.Value == null;
     }
 
-    internal IChartComponent \u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D(
+    public IChartComponent \u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D(
       KeyValuePair<IChartComponent, ChartCompentViewModel> _param1)
     {
       return _param1.Key;
     }
 
-    internal bool \u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D(
+    public bool \u0023\u003DzihU1OXxWIdi3ASgjwqQi3aM\u003D(
       IDrawableChartElement _param1)
     {
       return !_param1.DontDraw;
     }
 
-    internal bool \u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D(
+    public bool \u0023\u003DzDP46TP6OWYLlok7K1AlOaIg\u003D(
       DrawableChartElementBaseViewModel _param1)
     {
       return _param1 != null;
     }
 
-    internal bool \u0023\u003DzOxutfFQq8iOlG6uGIIvjfQjn_lrYDZf0Gw\u003D\u003D(
+    public bool \u0023\u003DzOxutfFQq8iOlG6uGIIvjfQjn_lrYDZf0Gw\u003D\u003D(
       KeyValuePair<IChartComponent, ChartCompentViewModel> _param1)
     {
       return _param1.Key is IChartCandleElement;
     }
 
-    internal bool \u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D(
+    public bool \u0023\u003DzZItGYEiEFtH3fOWMCA\u003D\u003D(
       IDrawableChartElement _param1)
     {
       return !_param1.DontDraw;
     }
 
-    internal bool \u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D(
+    public bool \u0023\u003DzmUdptvPaqZAvZEWcjQ\u003D\u003D(
       DrawableChartElementBaseViewModel _param1)
     {
       return _param1 != null;
     }
 
-    internal void \u0023\u003DzN_\u0024B1DcFjYnDp0by4f0KlE4uU6RB(IChartAxis _param1)
+    public void \u0023\u003DzN_\u0024B1DcFjYnDp0by4f0KlE4uU6RB(IChartAxis _param1)
     {
       _param1.IsVisible = true;
     }
 
-    internal void \u0023\u003DzWE\u0024cRelRNS67FHvvu3n4cW42dbOy(IChartAxis _param1)
+    public void \u0023\u003DzWE\u0024cRelRNS67FHvvu3n4cW42dbOy(IChartAxis _param1)
     {
       _param1.IsVisible = true;
     }
@@ -1271,7 +1271,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   {
     public string \u0023\u003DzABBG58cxsbcx;
 
-    internal bool \u0023\u003DzbSjDouuxMOmtENb1CI\u0024NfEXlBX\u0024_(IChartAxis _param1)
+    public bool \u0023\u003DzbSjDouuxMOmtENb1CI\u0024NfEXlBX\u0024_(IChartAxis _param1)
     {
       return _param1.Id == this.\u0023\u003DzABBG58cxsbcx;
     }
@@ -1286,7 +1286,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     public ScichartSurfaceMVVM _variableSome3535;
     public Func<IAxis, bool> \u0023\u003DzuAeZVTPDgzYE;
 
-    internal void \u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D()
+    public void \u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D()
     {
       dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd target = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<IAxis>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<IAxis, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
       if (target == null)
@@ -1296,7 +1296,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
       this.\u0023\u003Dz_liTKnA\u003D.Remove((IAxis) target);
     }
 
-    internal bool \u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D(
+    public bool \u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D(
       IAxis _param1)
     {
       return _param1.Id == this.\u0023\u003Dzfl\u0024A1s0\u003D.Id;
@@ -1309,53 +1309,53 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     public ChartArea \u0023\u003Dzy_5REws\u003D;
     public Action<IChartElement> \u0023\u003DzmkzpZPDRopSK;
 
-    internal bool OnChartAreaElementsRemovingAt(int _param1)
+    public bool OnChartAreaElementsRemovingAt(int _param1)
     {
       return this._variableSome3535.OnChartAreaElementsRemoving(((IList<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements)[_param1]);
     }
 
-    internal bool OnChartAreaElementsClearing()
+    public bool OnChartAreaElementsClearing()
     {
       CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements, this.\u0023\u003DzmkzpZPDRopSK ?? (this.\u0023\u003DzmkzpZPDRopSK = new Action<IChartElement>(this.\u0023\u003Dzr5cnmYeOtMU0QUibOQ\u003D\u003D)));
       return true;
     }
 
-    internal void \u0023\u003Dzr5cnmYeOtMU0QUibOQ\u003D\u003D(IChartElement _param1)
+    public void \u0023\u003Dzr5cnmYeOtMU0QUibOQ\u003D\u003D(IChartElement _param1)
     {
       this._variableSome3535.OnChartAreaElementsRemoving(_param1);
     }
 
-    internal void OnAreaXAxisesAdded(IChartAxis _param1)
+    public void OnAreaXAxisesAdded(IChartAxis _param1)
     {
       this._variableSome3535.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
-    internal bool OnAreaXAxisesRemoving(IChartAxis _param1)
+    public bool OnAreaXAxisesRemoving(IChartAxis _param1)
     {
       return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
-    internal bool OnArea.XAxisesRemovingAt(int _param1)
+    public bool OnArea.XAxisesRemovingAt(int _param1)
     {
       return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
-    internal void OnAreaYAxisesAdded(IChartAxis _param1)
+    public void OnAreaYAxisesAdded(IChartAxis _param1)
     {
       this._variableSome3535.\u0023\u003DzBUrMEb8\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
-    internal bool OnAreaYAxisesRemoving(IChartAxis _param1)
+    public bool OnAreaYAxisesRemoving(IChartAxis _param1)
     {
       return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(_param1, (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
-    internal bool OnAreaYAxisesRemovingAt(int _param1)
+    public bool OnAreaYAxisesRemovingAt(int _param1)
     {
       return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.YAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
-    internal void OnApplicationThemeChanged(
+    public void OnApplicationThemeChanged(
       DependencyObject _param1,
       ThemeChangedRoutedEventArgs _param2)
     {

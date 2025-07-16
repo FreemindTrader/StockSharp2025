@@ -4,9 +4,9 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class GrayscaleColorBrushConverter :
+public sealed class GrayscaleColorBrushConverter :
   IValueConverter
 {
     public object Convert( object value, Type targetType, object parameter, CultureInfo culture )

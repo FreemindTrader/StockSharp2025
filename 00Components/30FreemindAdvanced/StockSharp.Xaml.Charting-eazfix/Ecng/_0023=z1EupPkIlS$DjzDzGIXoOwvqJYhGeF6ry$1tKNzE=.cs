@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal static class \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwvqJYhGeF6ry\u00241tKNzE\u003D
+public static class \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwvqJYhGeF6ry\u00241tKNzE\u003D
 {
   public static IRange GrowBy(
     this IRange _param0,

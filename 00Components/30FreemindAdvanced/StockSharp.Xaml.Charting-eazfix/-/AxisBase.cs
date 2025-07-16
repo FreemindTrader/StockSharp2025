@@ -30,7 +30,7 @@ namespace StockSharp.Charting.Visuals.Axes;
 [TemplatePart(Name = "PART_ModifierAxisCanvas", Type = typeof(AxisCanvas))]
 [TemplatePart(Name = "PART_AxisContainer", Type = typeof(StackPanel))]
 [TemplatePart(Name = "PART_AxisRenderSurface", Type = typeof(HighSpeedRenderSurface))]
-internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, INotifyPropertyChanged, IAxisParams, ISuspendable, IInvalidatableElement, IAxis, IHitTestable
+public abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, INotifyPropertyChanged, IAxisParams, ISuspendable, IInvalidatableElement, IAxis, IHitTestable
 {
     public static readonly 
   #nullable disable
@@ -302,7 +302,7 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     this.SizeChanged += new SizeChangedEventHandler(this.\u0023\u003DzyYNf6TD2aRpOQ6mbk8EVPH8\u003D);
   }
 
-  internal AxisBase(
+  public AxisBase(
     IAxisPanel _param1)
     : this()
   {
@@ -1007,11 +1007,11 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     }
   }
 
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk ModifierAxisCanvas
+  public IAnnotationCanvas ModifierAxisCanvas
   {
     get
     {
-      return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) this.\u0023\u003DzoN4RYgKqEhkM;
+      return (IAnnotationCanvas) this.\u0023\u003DzoN4RYgKqEhkM;
     }
   }
 
@@ -1099,14 +1099,14 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     get => this.\u0023\u003Dzd6x7lH_dQH0I();
   }
 
-  internal IAxisPanel \u0023\u003DzhFAmpLNTPh4n()
+  public IAxisPanel \u0023\u003DzhFAmpLNTPh4n()
   {
     return this.\u0023\u003DzdEt8bikGsITl;
   }
 
-  internal StackPanel \u0023\u003DzMUpWftuaeZ8o() => this.\u0023\u003DzgTtVLFnthbIz;
+  public StackPanel \u0023\u003DzMUpWftuaeZ8o() => this.\u0023\u003DzgTtVLFnthbIz;
 
-  internal \u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D \u0023\u003Dzjk5IewFx\u0024KZ81I_BPQ\u003D\u003D()
+  public \u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D \u0023\u003Dzjk5IewFx\u0024KZ81I_BPQ\u003D\u003D()
   {
     return this.\u0023\u003DzPfs\u0024IokVcdkx;
   }
@@ -1931,7 +1931,7 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     z7F6WbE57tL8z((object) this, _param1);
   }
 
-  internal static void \u0023\u003Dz2KWD3lC7hdm1(
+  public static void \u0023\u003Dz2KWD3lC7hdm1(
     IAxis _param0)
   {
     if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd))
@@ -2275,9 +2275,9 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     public static Func<Type, string> \u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D;
     public static Func<IRenderableSeries, bool> \u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D;
 
-    internal string \u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D(Type _param1) => _param1.Name;
+    public string \u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D(Type _param1) => _param1.Name;
 
-    internal bool \u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D(
+    public bool \u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D(
       IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() is IOhlcDataSeries;
@@ -2290,18 +2290,18 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     public IRenderContext2D \u0023\u003DzC8v0b7k\u003D;
     public TickCoordinates \u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D;
 
-    internal void \u0023\u003Dzdp_WMa5ZvPOgWUt9DZr6s8k\u003D()
+    public void \u0023\u003Dzdp_WMa5ZvPOgWUt9DZr6s8k\u003D()
     {
       // ISSUE: explicit non-virtual call
       this._variableSome3535.\u0023\u003DzbUPOl6ZpNIOI(this.\u0023\u003DzC8v0b7k\u003D, __nonvirtual (this._variableSome3535.MinorGridLineStyle), (IEnumerable<float>) this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D());
     }
 
-    internal void \u0023\u003Dze0viRyfissfKu5\u0024vH3bBkCo\u003D()
+    public void \u0023\u003Dze0viRyfissfKu5\u0024vH3bBkCo\u003D()
     {
       this._variableSome3535.\u0023\u003DzShVkWbecUrbY(this.\u0023\u003DzC8v0b7k\u003D, this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dzyqh0CrzbJnzy(), this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D());
     }
 
-    internal void \u0023\u003DzBzNUoyJKShhwpK03iuRmUkw\u003D()
+    public void \u0023\u003DzBzNUoyJKShhwpK03iuRmUkw\u003D()
     {
       // ISSUE: explicit non-virtual call
       this._variableSome3535.\u0023\u003DzbUPOl6ZpNIOI(this.\u0023\u003DzC8v0b7k\u003D, __nonvirtual (this._variableSome3535.MajorGridLineStyle), (IEnumerable<float>) this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D());
@@ -2313,7 +2313,7 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     public DependencyObject \u0023\u003Dz6iFJYho\u003D;
     public DependencyPropertyChangedEventArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzXQKZS2jF76TH5rkf7ZqHY2c\u003D()
+    public void \u0023\u003DzXQKZS2jF76TH5rkf7ZqHY2c\u003D()
     {
       AxisBase.\u0023\u003DziB9pY7CleJnqmfAdVQ\u003D\u003D(this.\u0023\u003Dz6iFJYho\u003D, this.\u0023\u003Dz1BK01YA\u003D);
     }
@@ -2324,7 +2324,7 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     public AxisBase \u0023\u003Dzfl\u0024A1s0\u003D;
     public Point \u0023\u003DzSygYxus\u003D;
 
-    internal void \u0023\u003DzIE9AdC6Gxka684aXOhGqScGsymGy()
+    public void \u0023\u003DzIE9AdC6Gxka684aXOhGqScGsymGy()
     {
       if (this.\u0023\u003Dzfl\u0024A1s0\u003D.VisibleRange == null)
         return;
@@ -2348,7 +2348,7 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
     public PointAnimation \u0023\u003DzXB4BRQQhi9cE;
     public IRange \u0023\u003Dz\u00245UhFnPQKjzF;
 
-    internal void \u0023\u003Dz90gMLvcCBhHezcHa8o6j4QFx83AR(
+    public void \u0023\u003Dz90gMLvcCBhHezcHa8o6j4QFx83AR(
     #nullable enable
     object? _param1, EventArgs _param2)
     {
@@ -2364,7 +2364,7 @@ internal abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, 
   {
     public Decimal \u0023\u003DzvQ3M6iJZUC74;
 
-    internal bool \u0023\u003DzzR02vPcj7iEpCu37cNMcNoyJfLDl(int _param1)
+    public bool \u0023\u003DzzR02vPcj7iEpCu37cNMcNoyJfLDl(int _param1)
     {
       return this.\u0023\u003DzvQ3M6iJZUC74 % (Decimal) _param1 == 0M;
     }

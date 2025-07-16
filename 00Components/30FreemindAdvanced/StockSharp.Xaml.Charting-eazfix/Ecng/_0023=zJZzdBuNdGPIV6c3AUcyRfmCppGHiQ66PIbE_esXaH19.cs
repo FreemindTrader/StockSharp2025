@@ -7,9 +7,9 @@
 using System.Windows;
 
 #nullable disable
-internal static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfmCppGHiQ66PIbE_esXaH193jTUu8w\u003D\u003D
+public static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfmCppGHiQ66PIbE_esXaH193jTUu8w\u003D\u003D
 {
-  internal static bool \u0023\u003DzbOxVzAyGdX66(
+  public static bool \u0023\u003DzbOxVzAyGdX66(
     this IHitTestable _param0,
     Point _param1)
   {

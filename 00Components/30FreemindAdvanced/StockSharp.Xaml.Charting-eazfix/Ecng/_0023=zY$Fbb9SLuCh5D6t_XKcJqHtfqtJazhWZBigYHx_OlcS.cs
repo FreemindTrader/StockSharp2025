@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal abstract class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqHtfqtJazhWZBigYHx_OlcSfAmDhFjqopC1alblq1qI3TQ\u003D\u003D : 
+public abstract class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqHtfqtJazhWZBigYHx_OlcSfAmDhFjqopC1alblq1qI3TQ\u003D\u003D : 
   \u0023\u003DzK11CXzkQ3m66hjsjmkZfa0IWmA\u00243ulgdIko0_SngtdwYu9Bqqu0Oiz8B0NcmOMpUiw\u003D\u003D,
   \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D
 {

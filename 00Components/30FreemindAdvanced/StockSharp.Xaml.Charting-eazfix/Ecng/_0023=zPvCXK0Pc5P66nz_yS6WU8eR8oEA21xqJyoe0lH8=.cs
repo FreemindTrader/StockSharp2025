@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8eR8oEA21xqJyoe0lH8\u003D : 
+public sealed class \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8eR8oEA21xqJyoe0lH8\u003D : 
   \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<int>,
   IEquatable<\u0023\u003DzPvCXK0Pc5P66nz_yS6WU8eR8oEA21xqJyoe0lH8\u003D>,
   ICloneable,

@@ -5,9 +5,9 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal static class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw5BwS3o6APqzS_5xWbo\u003D
+public static class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw5BwS3o6APqzS_5xWbo\u003D
 {
-  internal static string \u0023\u003DzPrH2XD0\u003D(
+  public static string \u0023\u003DzPrH2XD0\u003D(
     this string _param0,
     string _param1,
     string _param2)
@@ -17,7 +17,7 @@ internal static class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw5BwS3o6APqzS_5xWbo\u003D
     return _param0.Substring(startIndex, length);
   }
 
-  internal static bool \u0023\u003DzHHfYuvvaA57ehwCJow\u003D\u003D(this string _param0)
+  public static bool \u0023\u003DzHHfYuvvaA57ehwCJow\u003D\u003D(this string _param0)
   {
     return string.IsNullOrEmpty(_param0) || string.Equals(_param0, new string(' ', _param0.Length));
   }

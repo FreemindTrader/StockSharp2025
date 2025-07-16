@@ -8,7 +8,7 @@ using System;
 using System.Windows.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003Dz_tZkxN0xSCAji6_DomQ8vhQ5FfpLq6glVuatd7w\u003D : 
+public sealed class \u0023\u003Dz_tZkxN0xSCAji6_DomQ8vhQ5FfpLq6glVuatd7w\u003D : 
   \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D
 {
   private Dispatcher \u0023\u003DzoOQOCHaSepYx;

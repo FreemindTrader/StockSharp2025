@@ -13,7 +13,7 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Model.DataSeries;
 
-internal sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> : 
+public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> : 
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>,
   ISuspendable,
   \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D,

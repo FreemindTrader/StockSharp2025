@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzQN2Zes8h9tElvYmX48o49BUYcGhHuBjHtpu_APLaHrAgLQA2lg\u003D\u003D : 
+public interface \u0023\u003DzQN2Zes8h9tElvYmX48o49BUYcGhHuBjHtpu_APLaHrAgLQA2lg\u003D\u003D : 
   \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWu7vteBmpkBQwFYGp0VhHiJ5hoI4CA\u003D\u003D
 {
   \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D \u0023\u003DzyE145DTzxI8R(

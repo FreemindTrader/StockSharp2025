@@ -9,9 +9,9 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal static class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKrD9Ax5htQGGIYqEJQ\u0024jxzvAfzA2lou4DctgD6EYpc8vkQ\u003D\u003D
+public static class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKrD9Ax5htQGGIYqEJQ\u0024jxzvAfzA2lou4DctgD6EYpc8vkQ\u003D\u003D
 {
-  internal static \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H \u0023\u003Dz1cRMfLZU4Eo2(
+  public static \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H \u0023\u003Dz1cRMfLZU4Eo2(
     this WriteableBitmap _param0,
     Image _param1,
     \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D _param2)

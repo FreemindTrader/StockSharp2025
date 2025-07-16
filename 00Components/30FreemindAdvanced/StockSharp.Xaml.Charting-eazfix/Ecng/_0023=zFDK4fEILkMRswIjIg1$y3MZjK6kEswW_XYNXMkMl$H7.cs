@@ -7,7 +7,7 @@
 using \u002D;
 
 #nullable disable
-internal interface \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c
+public interface \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c
 {
   IRange \u0023\u003DzQdR08KQ\u003D(
     IRange _param1,

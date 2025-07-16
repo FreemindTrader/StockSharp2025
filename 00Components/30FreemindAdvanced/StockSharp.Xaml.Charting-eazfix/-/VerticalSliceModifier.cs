@@ -16,9 +16,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class VerticalSliceModifier : 
+public sealed class VerticalSliceModifier : 
   VerticalSliceModifierBase
 {
   
@@ -266,7 +266,7 @@ internal sealed class VerticalSliceModifier :
     public static readonly VerticalSliceModifier.SomeClass34343383 SomeMethond0343 = new VerticalSliceModifier.SomeClass34343383();
     public static Func<VerticalLineAnnotation, bool> \u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D;
 
-    internal bool \u0023\u003DzjmBi8jZjC\u0024j95EOhgQaK4bU\u003D(VerticalLineAnnotation _param1)
+    public bool \u0023\u003DzjmBi8jZjC\u0024j95EOhgQaK4bU\u003D(VerticalLineAnnotation _param1)
     {
       return !_param1.IsHidden && _param1.IsAttached && _param1.XAxis != null && _param1.XAxis.IsHorizontalAxis;
     }
@@ -277,7 +277,7 @@ internal sealed class VerticalSliceModifier :
     public BaseRenderableSeries _IRenderableSeries334;
     public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzxhPyxntvLsMx;
 
-    internal TemplatableControl \u0023\u003DzfwAthCM9gFRqdQgGSqHIvpSD28CW()
+    public TemplatableControl \u0023\u003DzfwAthCM9gFRqdQgGSqHIvpSD28CW()
     {
       return (TemplatableControl) PointMarker.\u0023\u003DzBv1vB\u0024LEKSF4(this._IRenderableSeries334.RolloverMarkerTemplate, (object) this.\u0023\u003DzxhPyxntvLsMx);
     }
@@ -287,7 +287,7 @@ internal sealed class VerticalSliceModifier :
   {
     public \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00249CwG0Zwlkee45cZ96xFA\u0024Wy \u0023\u003DzcY2SqgU\u003D;
 
-    internal void \u0023\u003DzcH88MchroZVRhx9qkQ\u003D\u003D(VerticalLineAnnotation _param1)
+    public void \u0023\u003DzcH88MchroZVRhx9qkQ\u003D\u003D(VerticalLineAnnotation _param1)
     {
       this.\u0023\u003DzcY2SqgU\u003D.Remove(_param1);
     }
@@ -297,7 +297,7 @@ internal sealed class VerticalSliceModifier :
   {
     public ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
 
-    internal void \u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D(
+    public void \u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       if (!_param1.RenderableSeries.\u0023\u003DzVxrZQ3k9ZBGJ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 3))

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 #nullable disable
 [StructLayout(LayoutKind.Sequential, Size = 1)]
-internal struct \u0023\u003Dz4tSiDY285eyTFNy9DwhLpD1UwAzu2BuP9lqlOFDmwILYsPaMHR9_6vDu77nAwU3HyQ\u003D\u003D
+public struct \u0023\u003Dz4tSiDY285eyTFNy9DwhLpD1UwAzu2BuP9lqlOFDmwILYsPaMHR9_6vDu77nAwU3HyQ\u003D\u003D
 {
   public static bool \u0023\u003Dz2weMuqtP1bYM(
     double[,] _param0,

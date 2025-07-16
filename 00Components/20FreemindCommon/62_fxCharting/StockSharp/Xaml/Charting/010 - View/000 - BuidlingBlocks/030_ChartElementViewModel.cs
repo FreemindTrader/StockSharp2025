@@ -1,4 +1,4 @@
-﻿using SciChart.Charting;
+﻿using StockSharp.Charting;
 using SciChart.Charting.Model.ChartData;
 using StockSharp.Xaml.Charting;
 using System;

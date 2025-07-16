@@ -15,10 +15,10 @@ using System.Windows.Controls;
 using System.Xml;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [System.Windows.Markup.ContentProperty("ChildModifiers")]
-internal sealed class ModifierGroup : 
+public sealed class ModifierGroup : 
   MasterSlaveChartModifier
 {
   
@@ -327,69 +327,69 @@ internal sealed class ModifierGroup :
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzujJHoXZ3YoJgJW6Elg\u003D\u003D;
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003Dza6ES3WKQ8eKYsVbcqw\u003D\u003D;
 
-    internal void \u0023\u003Dzgc4SCis4HjHyynhFkS9uoNrJlYYn(
+    public void \u0023\u003Dzgc4SCis4HjHyynhFkS9uoNrJlYYn(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.\u0023\u003Dz5y8F1YNwkhnW((ModifierMouseArgs) _param2);
     }
 
-    internal bool \u0023\u003DzxqzF6jTaY9lVLxHYg5yFLN0\u003D(
+    public bool \u0023\u003DzxqzF6jTaY9lVLxHYg5yFLN0\u003D(
       IChartModifier _param1)
     {
       return _param1.get_IsEnabled();
     }
 
-    internal void \u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_(
+    public void \u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.OnModifierMouseDown((ModifierMouseArgs) _param2);
     }
 
-    internal void \u0023\u003Dz3eP\u0024F06Do2Yqw5911Phrm\u0024c\u003D(
+    public void \u0023\u003Dz3eP\u0024F06Do2Yqw5911Phrm\u0024c\u003D(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.OnModifierMouseMove((ModifierMouseArgs) _param2);
     }
 
-    internal void \u0023\u003DzZSMUtK9zaXNAI8WwDGKJ3XDLzVv8(
+    public void \u0023\u003DzZSMUtK9zaXNAI8WwDGKJ3XDLzVv8(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.OnModifierMouseUp((ModifierMouseArgs) _param2);
     }
 
-    internal void \u0023\u003DzZ\u0024KRLvh2qpiaoFfyVxWBpgmJh\u0024ZU(
+    public void \u0023\u003DzZ\u0024KRLvh2qpiaoFfyVxWBpgmJh\u0024ZU(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.\u0023\u003DzQTINWhMByBmJ((ModifierMouseArgs) _param2);
     }
 
-    internal void \u0023\u003DzVYORBuxvOyw39HzBaLE20tNlRtHr(
+    public void \u0023\u003DzVYORBuxvOyw39HzBaLE20tNlRtHr(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.OnMasterMouseLeave((ModifierMouseArgs) _param2);
     }
 
-    internal void \u0023\u003DzT6V9kc7Cfg601etpFH8cUK\u0024ZsXar(
+    public void \u0023\u003DzT6V9kc7Cfg601etpFH8cUK\u0024ZsXar(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.\u0023\u003Dz0yya794Z8OaI((\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf) _param2);
     }
 
-    internal void \u0023\u003DzbHvqWKMkbu6LA9m3wYK0Das\u003D(
+    public void \u0023\u003DzbHvqWKMkbu6LA9m3wYK0Das\u003D(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
       _param1.\u0023\u003DzpmQpuKvOtHIk((\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf) _param2);
     }
 
-    internal void \u0023\u003DzdWZmB5uhdY2tAn7ZmG_SSuItHoU_(
+    public void \u0023\u003DzdWZmB5uhdY2tAn7ZmG_SSuItHoU_(
       IChartModifier _param1,
       \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD _param2)
     {
@@ -401,7 +401,7 @@ internal sealed class ModifierGroup :
   {
     public string \u0023\u003DzM_vMnac\u003D;
 
-    internal bool \u0023\u003DzDUlFPKVc44hNw\u0024Hpo\u0024G0dFo\u003D(
+    public bool \u0023\u003DzDUlFPKVc44hNw\u0024Hpo\u0024G0dFo\u003D(
       IChartModifier _param1)
     {
       return this.\u0023\u003DzM_vMnac\u003D == _param1.ModifierName;
@@ -412,7 +412,7 @@ internal sealed class ModifierGroup :
   {
     public DependencyPropertyChangedEventArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003Dzq9_03GhVOxezkFFX0w\u003D\u003D(
+    public void \u0023\u003Dzq9_03GhVOxezkFFX0w\u003D\u003D(
       IChartModifier _param1)
     {
       _param1.DataContext = this.\u0023\u003Dz1BK01YA\u003D.NewValue;
@@ -424,7 +424,7 @@ internal sealed class ModifierGroup :
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
-    internal void \u0023\u003DzDlxN3i6L\u0024bBQoRc5kCBdWWQ\u003D(
+    public void \u0023\u003DzDlxN3i6L\u0024bBQoRc5kCBdWWQ\u003D(
       IChartModifier _param1)
     {
       _param1.\u0023\u003DzMQsNWQqev3ol8vdG1w\u003D\u003D(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
@@ -436,7 +436,7 @@ internal sealed class ModifierGroup :
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
-    internal void \u0023\u003DzSNWKb\u0024dBOE2a0JlR9g\u003D\u003D(
+    public void \u0023\u003DzSNWKb\u0024dBOE2a0JlR9g\u003D\u003D(
       IChartModifier _param1)
     {
       _param1.\u0023\u003Dzok6jmLaiH5ai(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
@@ -447,7 +447,7 @@ internal sealed class ModifierGroup :
   {
     public Type \u0023\u003DzCN8ZMQU\u003D;
 
-    internal bool \u0023\u003DzFNBE1DOFc1Eu9K4xOQ\u003D\u003D(
+    public bool \u0023\u003DzFNBE1DOFc1Eu9K4xOQ\u003D\u003D(
       IChartModifier _param1)
     {
       return _param1.GetType() == this.\u0023\u003DzCN8ZMQU\u003D;
@@ -459,7 +459,7 @@ internal sealed class ModifierGroup :
     public object \u0023\u003DzwM8aRUE\u003D;
     public NotifyCollectionChangedEventArgs \u0023\u003DzTi2kmf4\u003D;
 
-    internal void \u0023\u003Dz\u0024UXNSD6YJPnU9jHAajxBjjg\u003D(
+    public void \u0023\u003Dz\u0024UXNSD6YJPnU9jHAajxBjjg\u003D(
       IChartModifier _param1)
     {
       _param1.\u0023\u003DzBwMZf3Z18v_xRgVWSw\u003D\u003D(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);

@@ -1,7 +1,7 @@
 ﻿#nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal enum LegendPlacement
+public enum LegendPlacement
 {
     TopLeft,
     TopRight,

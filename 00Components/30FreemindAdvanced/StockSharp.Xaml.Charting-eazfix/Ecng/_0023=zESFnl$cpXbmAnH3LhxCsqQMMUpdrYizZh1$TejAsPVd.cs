@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D
+public static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D
 {
-  internal static void \u0023\u003DzftEp\u0024x4VdHnj(
+  public static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param2,
@@ -19,7 +19,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
     \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D ?? (\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3, _param4, true);
   }
 
-  internal static void \u0023\u003DzftEp\u0024x4VdHnj(
+  public static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
@@ -35,7 +35,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
     \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, IPathColor>(h5gkzF2FxdwMnQnA.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
   }
 
-  internal static void \u0023\u003DzftEp\u0024x4VdHnj(
+  public static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     IBrush2D _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
@@ -50,7 +50,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
     }.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
   }
 
-  internal static void \u0023\u003DzftEp\u0024x4VdHnj(
+  public static void \u0023\u003DzftEp\u0024x4VdHnj(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     Func<double, double, IPathColor> _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
@@ -165,7 +165,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
     public static readonly \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383();
     public static Func<double, double, IPathColor> \u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D;
 
-    internal IPathColor \u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D(
+    public IPathColor \u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D(
       double _param1,
       double _param2)
     {
@@ -177,7 +177,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
   {
     public IBrush2D \u0023\u003Dz_HpzU5w\u003D;
 
-    internal IPathColor \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
+    public IPathColor \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
       double _param1,
       double _param2)
     {
@@ -189,7 +189,7 @@ internal static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024
   {
     public \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzY_IgCbQ\u003D;
 
-    internal IPathColor \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
+    public IPathColor \u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D(
       double _param1,
       double _param2)
     {

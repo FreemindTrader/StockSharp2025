@@ -17,9 +17,9 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class ChartModifierBase : 
+public abstract class ChartModifierBase : 
   ApiElementBase,
   IXmlSerializable,
   INotifyPropertyChanged,
@@ -236,12 +236,12 @@ internal abstract class ChartModifierBase :
     }
   }
 
-  internal bool \u0023\u003Dz8aGSsI2FehxdngUQaLiJHus\u003D()
+  public bool \u0023\u003Dz8aGSsI2FehxdngUQaLiJHus\u003D()
   {
     return this.\u0023\u003Dz2PHh1f4YKRbtmShpA\u0024Kym4A1qOUa;
   }
 
-  internal void \u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(bool _param1)
+  public void \u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(bool _param1)
   {
     this.\u0023\u003Dz2PHh1f4YKRbtmShpA\u0024Kym4A1qOUa = _param1;
   }
@@ -455,7 +455,7 @@ internal abstract class ChartModifierBase :
     public static readonly ChartModifierBase.SomeClass34343383 SomeMethond0343 = new ChartModifierBase.SomeClass34343383();
     public static DependencyPropertyChangedEventHandler \u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D;
 
-    internal void \u0023\u003DzGHSYN_3KV4orJNfNmStVzRA\u003D(
+    public void \u0023\u003DzGHSYN_3KV4orJNfNmStVzRA\u003D(
       object _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

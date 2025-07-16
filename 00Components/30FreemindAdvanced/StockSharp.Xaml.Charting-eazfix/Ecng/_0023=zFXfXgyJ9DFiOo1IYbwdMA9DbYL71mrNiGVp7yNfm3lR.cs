@@ -8,7 +8,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA9DbYL71mrNiGVp7yNfm3lRrJ\u0024_9ARNHClEAMQDp6\u0024\u0024h\u0024NI4AuXmaCJb : 
+public sealed class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA9DbYL71mrNiGVp7yNfm3lRrJ\u0024_9ARNHClEAMQDp6\u0024\u0024h\u0024NI4AuXmaCJb : 
   \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D
 {
   private static int[] \u0023\u003Dzj0UOcNgA12GrmdK3Yl_cpR5KTgS6 = new int[512 /*0x0200*/];

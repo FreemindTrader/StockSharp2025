@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH
+public interface \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH
 {
   void \u0023\u003DzWzUaFxw\u003D(
     IAxis _param1);

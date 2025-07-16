@@ -10,7 +10,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class IndexRange  : 
+public sealed class IndexRange  : 
   Range<int>
 {
   

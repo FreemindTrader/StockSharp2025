@@ -8,9 +8,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 #nullable disable
-internal static class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPqIAlVoKLppDhkPhwMk\u003D
+public static class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPqIAlVoKLppDhkPhwMk\u003D
 {
-  internal static Binding \u0023\u003DzskQgoNbhmIMD(this Binding _param0)
+  public static Binding \u0023\u003DzskQgoNbhmIMD(this Binding _param0)
   {
     Binding binding1 = new Binding();
     binding1.Path = _param0.Path;

@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Media;
 
 #nullable disable
-internal struct \u0023\u003DzMDDpCIYr0KRiCa3HPMUgujf7HNK4iKZmDV3at90jxS3JM0NsILRb5TM\u003D : 
+public struct \u0023\u003DzMDDpCIYr0KRiCa3HPMUgujf7HNK4iKZmDV3at90jxS3JM0NsILRb5TM\u003D : 
   IDisposable,
   IBrush2D,
   IPathColor
@@ -24,7 +24,7 @@ internal struct \u0023\u003DzMDDpCIYr0KRiCa3HPMUgujf7HNK4iKZmDV3at90jxS3JM0NsILR
   
   private bool \u0023\u003DzPsHNvsjqIq72;
 
-  internal \u0023\u003DzMDDpCIYr0KRiCa3HPMUgujf7HNK4iKZmDV3at90jxS3JM0NsILRb5TM\u003D(
+  public \u0023\u003DzMDDpCIYr0KRiCa3HPMUgujf7HNK4iKZmDV3at90jxS3JM0NsILRb5TM\u003D(
     Color _param1,
     int _param2,
     bool _param3)

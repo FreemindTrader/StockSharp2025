@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nhyf2vFxdpD7yzk3jSuvaC4SjCnmZxFhnUntq4SU38DaaqYCd08\u003D
+public sealed class \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nhyf2vFxdpD7yzk3jSuvaC4SjCnmZxFhnUntq4SU38DaaqYCd08\u003D
 {
   private \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D \u0023\u003DzudCWNUc\u003D;
   private double \u0023\u003Dz8JVo7yBPEM0M;

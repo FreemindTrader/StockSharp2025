@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface IBrush2D : 
+public interface IBrush2D : 
   IDisposable,
   IPathColor
 {

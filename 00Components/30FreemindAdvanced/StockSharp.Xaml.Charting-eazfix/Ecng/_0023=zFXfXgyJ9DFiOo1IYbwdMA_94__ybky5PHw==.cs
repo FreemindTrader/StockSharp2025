@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class Attribute0(bool _param1 = true) : 
+public sealed class Attribute0(bool _param1 = true) : 
   Attribute
 {
   

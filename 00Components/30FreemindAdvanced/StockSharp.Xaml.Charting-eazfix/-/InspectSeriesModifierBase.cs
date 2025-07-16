@@ -11,9 +11,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class InspectSeriesModifierBase : 
+public abstract class InspectSeriesModifierBase : 
   ChartModifierBase
 {
   
@@ -365,7 +365,7 @@ label_10:
     #nullable disable
     InspectSeriesModifierBase _variableSome3535;
 
-    internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);
@@ -378,7 +378,7 @@ label_10:
     public double \u0023\u003DzADxu\u00246OzU_cF;
     public InspectSeriesModifierBase _variableSome3535;
 
-    internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this.\u0023\u003DzADxu\u00246OzU_cF, this._variableSome3535.UseInterpolation);

@@ -7,7 +7,7 @@
 using System.Windows;
 
 #nullable disable
-internal sealed class ModifierMouseArgs : 
+public sealed class ModifierMouseArgs : 
   \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD
 {
   private int \u0023\u003DzFgTWW01mCjPdtdHq\u0024w\u003D\u003D;

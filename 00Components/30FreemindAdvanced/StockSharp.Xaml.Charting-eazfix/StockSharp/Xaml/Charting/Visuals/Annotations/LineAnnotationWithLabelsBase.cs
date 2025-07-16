@@ -22,10 +22,10 @@ using System.Windows.Shapes;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
+public abstract class LineAnnotationWithLabelsBase : LineAnnotation
 {
   public static readonly DependencyProperty ShowLabelProperty = DependencyProperty.Register(nameof (ShowLabel), typeof (bool), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) false, new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnShowLabelChanged)));
-  protected internal static readonly DependencyProperty DefaultLabelValueProperty = DependencyProperty.Register(nameof (DefaultLabelValue), typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
+  protected public static readonly DependencyProperty DefaultLabelValueProperty = DependencyProperty.Register(nameof (DefaultLabelValue), typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
   protected static readonly DependencyProperty DefaultTextFormattingProperty = DependencyProperty.Register(nameof (DefaultTextFormatting), typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((PropertyChangedCallback) null));
   public static readonly DependencyProperty LabelPlacementProperty = DependencyProperty.Register(nameof (LabelPlacement), typeof (LabelPlacement), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) LabelPlacement.Auto));
   public static readonly DependencyProperty LabelValueProperty = DependencyProperty.Register(nameof (LabelValue), typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) null));
@@ -252,7 +252,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
       Source = (object) this,
       Mode = BindingMode.OneWay
     };
-    c52EkqS76HuN2Ejd.SetBinding(AnnotationLabel.\u0023\u003DzbhlExb5p620n, (BindingBase) binding1);
+    c52EkqS76HuN2Ejd.SetBinding(AnnotationLabel.LabelPlacementProperty, (BindingBase) binding1);
     Binding binding2 = new Binding("ContextMenu")
     {
       Source = (object) this,
@@ -293,7 +293,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   {
     label.\u0023\u003DzBV_vk9PuzvJU((LineAnnotationWithLabelsBase) null);
     Grid annotationRoot = this.AnnotationRoot as Grid;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk uxEichh7AgNdmShk = this.GetUsedAxis()?.get_ModifierAxisCanvas() ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) (label.Parent as ModifierAxisCanvas);
+    IAnnotationCanvas uxEichh7AgNdmShk = this.GetUsedAxis()?.get_ModifierAxisCanvas() ?? (IAnnotationCanvas) (label.Parent as ModifierAxisCanvas);
     annotationRoot.\u0023\u003DziYdJ\u00246cCiBha((object) label);
     uxEichh7AgNdmShk.\u0023\u003DziYdJ\u00246cCiBha((object) label);
   }
@@ -327,9 +327,9 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     }
   }
 
-  internal virtual LabelPlacement ResolveAutoPlacement() => LabelPlacement.Top;
+  public virtual LabelPlacement ResolveAutoPlacement() => LabelPlacement.Top;
 
-  internal LabelPlacement GetLabelPlacement(
+  public LabelPlacement GetLabelPlacement(
     AnnotationLabel label)
   {
     return label.LabelPlacement == LabelPlacement.Auto ? this.ResolveAutoPlacement() : label.LabelPlacement;
@@ -413,25 +413,25 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     public static Func<AnnotationLabel, bool> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
     public static Func<AnnotationLabel, bool> \u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D;
 
-    internal bool \u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D(
+    public bool \u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D(
       AnnotationLabel _param1)
     {
       return _param1.\u0023\u003DztUuF6EohuIU9();
     }
 
-    internal bool \u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D(
+    public bool \u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D(
       AnnotationLabel _param1)
     {
       return _param1.\u0023\u003DztUuF6EohuIU9();
     }
 
-    internal bool \u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D(
+    public bool \u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D(
       AnnotationLabel _param1)
     {
       return _param1.Parent == null;
     }
 
-    internal bool \u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY(
+    public bool \u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY(
       AnnotationLabel _param1)
     {
       return _param1.\u0023\u003DztUuF6EohuIU9() && _param1.\u0023\u003DzLtJnA4CR3Exc() != null;
@@ -444,7 +444,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     public IAxis \u0023\u003Dzfl\u0024A1s0\u003D;
     public Point \u0023\u003Dzze_xX5E\u003D;
 
-    internal void \u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D(
+    public void \u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D(
       AnnotationLabel _param1)
     {
       this._variableSome3535.PlaceAxisLabel(this.\u0023\u003Dzfl\u0024A1s0\u003D, _param1, this.\u0023\u003Dzze_xX5E\u003D);

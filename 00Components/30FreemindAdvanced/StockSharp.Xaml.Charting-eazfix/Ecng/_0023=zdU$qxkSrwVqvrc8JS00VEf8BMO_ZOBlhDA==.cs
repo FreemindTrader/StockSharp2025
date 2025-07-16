@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D : 
+public sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D : 
   BindableObject ,
   INotifyPropertyChanged,
   IRenderableSeries

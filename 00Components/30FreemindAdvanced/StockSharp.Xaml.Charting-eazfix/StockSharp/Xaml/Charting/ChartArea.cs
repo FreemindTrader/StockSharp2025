@@ -167,13 +167,13 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         public ChartAxisType _someChartAxisType;
         public ChartArea _variableSome3535;
 
-        internal bool SomeLinqFunction3596(
+        public bool SomeLinqFunction3596(
           IChartComponent _param1 )
         {
             return !_param1.CheckAxesCompatible( new ChartAxisType?( this._someChartAxisType ), new ChartAxisType?() );
         }
 
-        internal bool AnotherSomeLinqFunction3596( IChartArea a )
+        public bool AnotherSomeLinqFunction3596( IChartArea a )
         {
             return a != this._variableSome3535 && a.XAxisType != this._someChartAxisType;
         }
@@ -246,7 +246,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         {
             public IChartAxis _someChartElement;
 
-            internal bool SomeClass34343Method01( IChartAxis _param1 )
+            public bool SomeClass34343Method01( IChartAxis _param1 )
             {
                 return _param1.Id == this._someChartElement.Id;
             }
@@ -362,7 +362,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             public static readonly ChartArea.AxisNotifyList.SomeShittyClass33434 _someMemberOfShittyClass = new ChartArea.AxisNotifyList.SomeShittyClass33434();
             public static Action<IChartAxis> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
-      internal void \u0023\u003DzE70qt2sPjBBv095jMVMFSaY\u003D(IChartAxis _param1)
+      public void \u0023\u003DzE70qt2sPjBBv095jMVMFSaY\u003D(IChartAxis _param1)
       {
         ((ChartAxis) _param1).ChartArea = (IChartArea) null;
       }
@@ -422,7 +422,7 @@ private sealed class ChartElementNotifyList( ChartArea area ) : ChartArea.Proper
         this.ViewModel.PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003Dzg7PFOA2RIl9h1rTv9w\u003D\u003D);
     }
 
-    internal ScichartSurfaceMVVM ViewModel
+    public ScichartSurfaceMVVM ViewModel
     {
     return this._chartSurfaceVM;
     }
@@ -570,49 +570,49 @@ private sealed class SomeShittyClass33434
     public static Func<IChartAxis, IChartAxis> \u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D;
     public static Func<IChartAxis, IChartAxis> \u0023\u003DzrUb4sQiSyo1cFneMgA\u003D\u003D;
 
-    internal bool \u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D(IChartAxis _param1)
+    public bool \u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D(IChartAxis _param1)
     {
       return _param1.Id == "X";
     }
 
-internal bool \u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D(IChartAxis _param1)
+public bool \u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D(IChartAxis _param1)
     {
       return _param1.Id == "Y";
     }
 
-    internal void \u0023\u003DzM30dyEF9Fb2bzYLjmLgjtiE\u003D(IChartElement _param1)
+    public void \u0023\u003DzM30dyEF9Fb2bzYLjmLgjtiE\u003D(IChartElement _param1)
     {
       if (!(_param1 is IChartComponent ddznyiGmdRlAevOq))
         return;
       ddznyiGmdRlAevOq.ResetUI();
     }
 
-    internal SettingsStorage \u0023\u003Dzxv2ll83UBK_RmlktVQ\u003D\u003D(IChartAxis _param1)
+    public SettingsStorage \u0023\u003Dzxv2ll83UBK_RmlktVQ\u003D\u003D(IChartAxis _param1)
     {
       return PersistableHelper.Save((IPersistable) _param1);
     }
 
-    internal SettingsStorage \u0023\u003Dzx2FJ4suusAb7GDyK1w\u003D\u003D(IChartAxis _param1)
+    public SettingsStorage \u0023\u003Dzx2FJ4suusAb7GDyK1w\u003D\u003D(IChartAxis _param1)
     {
       return PersistableHelper.Save((IPersistable) _param1);
     }
 
-    internal ChartAxis \u0023\u003Dzr2ViHsE5u5Iy0l8GPqzpBAb_0ZNf(SettingsStorage _param1)
+    public ChartAxis \u0023\u003Dzr2ViHsE5u5Iy0l8GPqzpBAb_0ZNf(SettingsStorage _param1)
     {
       return PersistableHelper.Load<ChartAxis>(_param1);
     }
 
-    internal IChartElement \u0023\u003DzLhPQ\u0024JfQhEkyu0vUWg\u003D\u003D(IChartElement _param1)
+    public IChartElement \u0023\u003DzLhPQ\u0024JfQhEkyu0vUWg\u003D\u003D(IChartElement _param1)
     {
       return PersistableHelper.Clone<IChartElement>(_param1);
     }
 
-    internal IChartAxis \u0023\u003DzGeF_1AAuPyWwDbL_iA\u003D\u003D(IChartAxis _param1)
+    public IChartAxis \u0023\u003DzGeF_1AAuPyWwDbL_iA\u003D\u003D(IChartAxis _param1)
     {
       return PersistableHelper.Clone<IChartAxis>(_param1);
     }
 
-    internal IChartAxis \u0023\u003Dzf4yIUkrz2a0As47tiA\u003D\u003D(IChartAxis _param1)
+    public IChartAxis \u0023\u003Dzf4yIUkrz2a0As47tiA\u003D\u003D(IChartAxis _param1)
     {
       return PersistableHelper.Clone<IChartAxis>(_param1);
     }

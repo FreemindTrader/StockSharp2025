@@ -14,7 +14,7 @@ using System.Threading;
 
 #nullable disable
 [DataContract]
-internal class BindableObject : INotifyPropertyChanged
+public class BindableObject : INotifyPropertyChanged
 {
     
     private PropertyChangedEventHandler PropertyChangedEvent;

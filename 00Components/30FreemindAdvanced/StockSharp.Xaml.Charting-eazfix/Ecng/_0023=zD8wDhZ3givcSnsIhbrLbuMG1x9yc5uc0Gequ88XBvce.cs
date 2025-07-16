@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D : 
+public sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D : 
   \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<IRenderableSeries>
 {
   private static \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D \u0023\u003Dzj9RABVg\u003D;
@@ -99,7 +99,7 @@ internal sealed class \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8
     };
   }
 
-  internal static \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D \u0023\u003DzFvAsfEI\u003D()
+  public static \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D \u0023\u003DzFvAsfEI\u003D()
   {
     return \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003Dzj9RABVg\u003D ?? (\u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D.\u0023\u003Dzj9RABVg\u003D = new \u0023\u003DzD8wDhZ3givcSnsIhbrLbuMG1x9yc5uc0Gequ88XBvceJ8sddSTrltYg\u003D());
   }

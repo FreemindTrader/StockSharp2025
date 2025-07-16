@@ -28,9 +28,9 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
   
   private Subscription \u0023\u003Dzh4DsglU\u003D;
   
-  internal PropertyGridEx \u0023\u003DzSBQp\u0024Vhxv74c;
+  public PropertyGridEx \u0023\u003DzSBQp\u0024Vhxv74c;
   
-  internal SimpleButton \u0023\u003DzR8YHGiJOGNl5;
+  public SimpleButton \u0023\u003DzR8YHGiJOGNl5;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 

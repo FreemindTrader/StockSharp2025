@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 
 #nullable disable
-internal interface IChartModifierSurface : 
+public interface IChartModifierSurface : 
   IHitTestable
 {
   bool ClipToBounds { get; set; }

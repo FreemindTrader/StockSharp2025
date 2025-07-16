@@ -16,7 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H : 
+public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H : 
   \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
 {
   
@@ -323,7 +323,7 @@ internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXk
     public double \u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D;
   }
 
-  internal sealed class \u0023\u003DzRNsui8dDaHHMSxiNgA\u003D\u003D : 
+  public sealed class \u0023\u003DzRNsui8dDaHHMSxiNgA\u003D\u003D : 
     IDisposable,
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
   {
@@ -402,7 +402,7 @@ internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXk
       public \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H.\u0023\u003DzRNsui8dDaHHMSxiNgA\u003D\u003D _variableSome3535;
       public int[] \u0023\u003Dzjzt0LxM\u003D;
 
-      internal int \u0023\u003Dz8NxWWFEIxVja(int _param1, int _param2)
+      public int \u0023\u003Dz8NxWWFEIxVja(int _param1, int _param2)
       {
         return this.\u0023\u003Dzjzt0LxM\u003D[this.\u0023\u003Dz32bgjTM\u003D.\u0023\u003Dz3JSOgExMLPL4MzHkFlni7xSDFMvwvbrIEQ\u003D\u003D(_param1, _param2, this._variableSome3535.\u0023\u003DzIALY0EIJmzAYFffZZA\u003D\u003D())];
       }
@@ -415,7 +415,7 @@ internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXk
     public int[] \u0023\u003Dzjzt0LxM\u003D;
     public \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H.SomeClass398 \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
-    internal int \u0023\u003Dzs3XZaL28BMmdJ3BwPQ\u003D\u003D(int _param1, int _param2)
+    public int \u0023\u003Dzs3XZaL28BMmdJ3BwPQ\u003D\u003D(int _param1, int _param2)
     {
       return this.\u0023\u003Dzjzt0LxM\u003D[this.\u0023\u003Dz32bgjTM\u003D.\u0023\u003Dz3JSOgExMLPL4MzHkFlni7xSDFMvwvbrIEQ\u003D\u003D(_param1, _param2, this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D)];
     }
@@ -428,7 +428,7 @@ internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXk
     public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D \u0023\u003Dz32bgjTM\u003D;
     public int[] \u0023\u003Dzjzt0LxM\u003D;
 
-    internal int \u0023\u003DzAGjD8bO2vEL6bBEhwQ\u003D\u003D(int _param1, int _param2)
+    public int \u0023\u003DzAGjD8bO2vEL6bBEhwQ\u003D\u003D(int _param1, int _param2)
     {
       return this.\u0023\u003Dzjzt0LxM\u003D[this.\u0023\u003Dz32bgjTM\u003D.\u0023\u003Dz\u0024xczSuty0EvqUf4ZL1LMev_qjFEtd6bSBQ\u003D\u003D(_param1, _param2, this.\u0023\u003Dzr7d9o3c_cuwg, this.\u0023\u003DzO4I1OIcddZko_wb\u00241LSFM2c\u003D)];
     }

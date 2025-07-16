@@ -9,7 +9,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D : 
+public sealed class \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D : 
   Range<TimeSpan>
 {
   

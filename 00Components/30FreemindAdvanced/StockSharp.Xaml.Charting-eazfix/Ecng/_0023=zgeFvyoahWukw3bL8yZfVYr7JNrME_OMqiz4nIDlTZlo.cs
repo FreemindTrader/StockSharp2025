@@ -7,7 +7,7 @@
 using System.Diagnostics;
 
 #nullable disable
-internal struct TickCoordinates(
+public struct TickCoordinates(
   double[ ] minorTicks,
   double[ ] majorTicks,
   float[ ] minorCoords,

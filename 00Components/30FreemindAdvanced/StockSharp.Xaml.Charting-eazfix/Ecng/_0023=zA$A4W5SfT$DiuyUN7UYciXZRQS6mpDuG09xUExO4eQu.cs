@@ -10,7 +10,7 @@
 //using System.Xml.Serialization;
 
 //#nullable disable
-//internal interface IRenderableSeries : 
+//public interface IRenderableSeries : 
 //  IDrawable,
 //  IXmlSerializable,
 //  \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D

@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal interface ITickProvider
+public interface ITickProvider
 {
   void \u0023\u003DzWzUaFxw\u003D(
     IAxis _param1);

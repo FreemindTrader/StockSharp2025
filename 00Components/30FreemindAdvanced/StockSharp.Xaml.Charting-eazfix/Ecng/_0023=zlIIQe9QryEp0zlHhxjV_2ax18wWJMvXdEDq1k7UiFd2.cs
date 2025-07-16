@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal interface IRenderContext2D : IDisposable
+public interface IRenderContext2D : IDisposable
 {
   \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr \u0023\u003Dz7eGjoBhvKuFN();
 

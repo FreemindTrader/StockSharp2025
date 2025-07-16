@@ -7,7 +7,7 @@
 using System.Windows;
 
 #nullable disable
-internal interface \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq
+public interface \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq
 {
   void \u0023\u003DzNUoYFVRHgzxB(
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1);
@@ -19,11 +19,11 @@ internal interface \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq
 
   bool \u0023\u003DzxGhbraO0gg9\u0024(
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2);
+    IAnnotationCanvas _param2);
 
   void \u0023\u003DzuPL3ELSPZybJ(
     \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
     double _param2,
     double _param3,
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4);
+    IAnnotationCanvas _param4);
 }

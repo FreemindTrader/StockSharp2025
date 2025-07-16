@@ -14,7 +14,7 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR : 
+public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR : 
   DependencyObject
 {
   
@@ -123,21 +123,21 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
   {
     public static readonly \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass34343383 SomeMethond0343 = new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.SomeClass34343383();
 
-    internal void \u0023\u003DzoRYIHBGDkf1GAn4szFFBOAk\u003D(
+    public void \u0023\u003DzoRYIHBGDkf1GAn4szFFBOAk\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       ((\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) _param1).\u0023\u003DzrHc3qGwDWR8ZLE0hMQ\u003D\u003D = (IndexRange ) _param2.NewValue;
     }
 
-    internal void \u0023\u003DznDXAZ40XZkwF42e7V3ChT6E\u003D(
+    public void \u0023\u003DznDXAZ40XZkwF42e7V3ChT6E\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       ((\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) _param1).\u0023\u003Dz9wn11RS5FRTj = (DoubleRange) _param2.NewValue;
     }
 
-    internal void \u0023\u003DzM4Q1JrKOrXUH_pG8e9nkfj8\u003D(
+    public void \u0023\u003DzM4Q1JrKOrXUH_pG8e9nkfj8\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
@@ -150,7 +150,7 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     public ChartAxisType \u0023\u003DzAak5C46IF1W8;
     public int? \u0023\u003Dzf2JqWCjCPVfE;
 
-    internal \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR \u0023\u003DzVyROSASk7JNM_TzPWA\u003D\u003D(
+    public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR \u0023\u003DzVyROSASk7JNM_TzPWA\u003D\u003D(
       (string, string, object) _param1)
     {
       return new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR(this.\u0023\u003DzAak5C46IF1W8, this.\u0023\u003Dzf2JqWCjCPVfE);
@@ -162,13 +162,13 @@ internal sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBo
     public object \u0023\u003Dz6pqZ7di4NkHd;
     public int? \u0023\u003Dzf2JqWCjCPVfE;
 
-    internal bool \u0023\u003DznhcJw0QjS9iS6EreCve\u0024qxI\u003D(
+    public bool \u0023\u003DznhcJw0QjS9iS6EreCve\u0024qxI\u003D(
       KeyValuePair<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR> _param1)
     {
       return _param1.Key.Item3 == this.\u0023\u003Dz6pqZ7di4NkHd;
     }
 
-    internal void \u0023\u003DzWv5\u0024RXM3VgWIFlyt9X5W\u0024eE\u003D(
+    public void \u0023\u003DzWv5\u0024RXM3VgWIFlyt9X5W\u0024eE\u003D(
       KeyValuePair<(string, string, object), \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR> _param1)
     {
       _param1.Value.InitRangeDepProperty(this.\u0023\u003Dzf2JqWCjCPVfE);

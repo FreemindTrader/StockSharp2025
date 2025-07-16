@@ -47,7 +47,7 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     this.NotifyChanged(_param2.PropertyName);
   }
 
-  internal static bool StaticMethod0348(
+  public static bool StaticMethod0348(
     #nullable disable
     IChartComponent _param0,
     PropertyDescriptor _param1)
@@ -62,7 +62,7 @@ public class ChartIndicatorElementSettingsObject : ChartSettingsObjectBase<IChar
     return false;
   }
 
-  internal static bool StaticMethod0983(
+  public static bool StaticMethod0983(
     IChartComponent _param0,
     PropertyDescriptor _param1)
   {

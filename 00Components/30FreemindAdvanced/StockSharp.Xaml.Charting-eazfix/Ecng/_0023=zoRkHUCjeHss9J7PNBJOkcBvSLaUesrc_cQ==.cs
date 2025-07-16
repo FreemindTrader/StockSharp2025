@@ -8,7 +8,7 @@ using StockSharp.Charting;
 using System.Collections.Specialized;
 
 #nullable disable
-internal sealed class XAxisesComboBoxEditSettings : 
+public sealed class XAxisesComboBoxEditSettings : 
   \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdiEBhTvW5hdKg\u003D\u003D
 {
   protected override INotifyCollectionChanged \u0023\u003Dzzeb_TG_TF3qy(IChartElement _param1)

@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D : 
+public interface \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D : 
   IDisposable
 {
   float Width { get; }

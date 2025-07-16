@@ -58,13 +58,13 @@ public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
     public Type \u0023\u003DzLLebWNY\u003D;
     public Func<Type, bool> \u0023\u003DzuAeZVTPDgzYE;
 
-    internal Type[] \u0023\u003DzqS88LfGdBd2ottAmeg9CBAy31ox5mLVAGiw_boMZnQSurxls6ar_INuSczI\u0024(
+    public Type[] \u0023\u003DzqS88LfGdBd2ottAmeg9CBAy31ox5mLVAGiw_boMZnQSurxls6ar_INuSczI\u0024(
       SynchronizedDictionary<Type, Type> _param1)
     {
       return _param1.Keys.Where<Type>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<Type, bool>(this.\u0023\u003DzVqZqWbcdJe5mMlLpr_IsrBFwuF8WCc_56\u0024iJ5R2frCg4R0zx1QRrGNkntn_r))).ToArray<Type>();
     }
 
-    internal bool \u0023\u003DzVqZqWbcdJe5mMlLpr_IsrBFwuF8WCc_56\u0024iJ5R2frCg4R0zx1QRrGNkntn_r(
+    public bool \u0023\u003DzVqZqWbcdJe5mMlLpr_IsrBFwuF8WCc_56\u0024iJ5R2frCg4R0zx1QRrGNkntn_r(
       Type _param1)
     {
       return this.\u0023\u003DzLLebWNY\u003D.IsSubclassOf(_param1);
@@ -80,14 +80,14 @@ public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
     #nullable enable
     Type> \u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D;
 
-    internal bool \u0023\u003Dz5asnRK5rGUthI4cnRr6Nsv9Y7RblZqNI_ZEQdD64t3w80s3ITSK1ib4\u003D(
+    public bool \u0023\u003Dz5asnRK5rGUthI4cnRr6Nsv9Y7RblZqNI_ZEQdD64t3w80s3ITSK1ib4\u003D(
       #nullable disable
       Type _param1)
     {
       return AttributeHelper.GetAttribute<IndicatorAttribute>((ICustomAttributeProvider) _param1, true) != null;
     }
 
-    internal 
+    public 
     #nullable enable
     Type \u0023\u003Dz5FZ\u00244BIsIsAaqWN6lCcgsOOOj5nnrBHKQS4sngXST_VQqJ1o0fhN4z4\u003D(
       #nullable disable

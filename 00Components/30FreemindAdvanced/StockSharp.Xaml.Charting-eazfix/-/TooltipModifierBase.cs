@@ -14,9 +14,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class TooltipModifierBase : 
+public abstract class TooltipModifierBase : 
   InspectSeriesModifierBase
 {
   
@@ -48,7 +48,7 @@ internal abstract class TooltipModifierBase :
   
   private IEnumerable<Tuple<IAxis, FrameworkElement>> \u0023\u003Dzlpam1C6zshu\u0024hyb5gg\u003D\u003D;
   
-  internal DelayActionHelper \u0023\u003DzIxFmGbTNpwO0;
+  public DelayActionHelper \u0023\u003DzIxFmGbTNpwO0;
 
   protected TooltipModifierBase()
   {
@@ -279,7 +279,7 @@ internal abstract class TooltipModifierBase :
   {
     if (_param3 == null || _param2 == null)
       return;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk modifierAxisCanvas = _param2.get_ModifierAxisCanvas();
+    IAnnotationCanvas modifierAxisCanvas = _param2.get_ModifierAxisCanvas();
     bool isPolarAxis = _param2.get_IsPolarAxis();
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D b99xo8DgCb3haWTig = this.Services.GetService<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();
     Point point = isPolarAxis ? b99xo8DgCb3haWTig.\u0023\u003Dz8miGAzg\u003D(_param1) : this.ParentSurface.\u0023\u003DzBgWxEdRxHdEh().TranslatePoint(_param1, (IHitTestable) _param2);
@@ -447,13 +447,13 @@ internal abstract class TooltipModifierBase :
     public static Func<Tuple<IAxis, FrameworkElement>, FrameworkElement> \u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D;
     public static Func<Tuple<IAxis, FrameworkElement>, FrameworkElement> \u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D;
 
-    internal FrameworkElement \u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR(
+    public FrameworkElement \u0023\u003Dz\u0024J5BAtSL9mu4zONFt126S5i5D4WR(
       Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item2;
     }
 
-    internal FrameworkElement \u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J(
+    public FrameworkElement \u0023\u003DzddQllHN_1gETercjTb3EPMwlFP4J(
       Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item2;
@@ -464,7 +464,7 @@ internal abstract class TooltipModifierBase :
   {
     public IAxis \u0023\u003DzS7JsfCE\u003D;
 
-    internal bool \u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D(
+    public bool \u0023\u003DzFOzwFNi9b6vX6jZHz0MsrcI\u003D(
       Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item1 == this.\u0023\u003DzS7JsfCE\u003D;
@@ -476,7 +476,7 @@ internal abstract class TooltipModifierBase :
     public TooltipModifierBase _variableSome3535;
     public ControlTemplate \u0023\u003DzcyfV7AfhGRGy;
 
-    internal Tuple<IAxis, FrameworkElement> \u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D(
+    public Tuple<IAxis, FrameworkElement> \u0023\u003Dz3skGe7kidRzYfBsijg\u003D\u003D(
       IAxis _param1)
     {
       return new Tuple<IAxis, FrameworkElement>(_param1, (FrameworkElement) this._variableSome3535.\u0023\u003DzBv1vB\u0024LEKSF4(this.\u0023\u003DzcyfV7AfhGRGy, this._variableSome3535.AxisLabelTemplateSelector, (object) null));
@@ -487,7 +487,7 @@ internal abstract class TooltipModifierBase :
   {
     public IAxis \u0023\u003Dz4bf8Oyc\u003D;
 
-    internal bool \u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D(
+    public bool \u0023\u003DzftM36zmTSR2NGmsCOruf4V4\u003D(
       Tuple<IAxis, FrameworkElement> _param1)
     {
       return _param1.Item1 == this.\u0023\u003Dz4bf8Oyc\u003D;

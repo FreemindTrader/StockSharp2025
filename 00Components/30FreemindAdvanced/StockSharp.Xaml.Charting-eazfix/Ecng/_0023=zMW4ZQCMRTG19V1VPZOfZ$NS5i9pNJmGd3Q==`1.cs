@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal interface \u0023\u003DzMW4ZQCMRTG19V1VPZOfZ\u0024NS5i9pNJmGd3Q\u003D\u003D<\u0023\u003DziNfFVIA\u003D> : 
+public interface \u0023\u003DzMW4ZQCMRTG19V1VPZOfZ\u0024NS5i9pNJmGd3Q\u003D\u003D<\u0023\u003DziNfFVIA\u003D> : 
   \u0023\u003DzGBvtL94gI0X6a9p0Hb38j9zQ7c7MFR2fpA\u003D\u003D
 {
   \u0023\u003Dzd6r5LVm59JJMRzqbH7tZtFJnrMecH5UKDA\u003D\u003D<\u0023\u003DziNfFVIA\u003D> GetEnumerator();

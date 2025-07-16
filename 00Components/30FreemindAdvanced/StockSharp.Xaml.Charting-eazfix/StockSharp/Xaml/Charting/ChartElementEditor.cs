@@ -21,7 +21,7 @@ namespace StockSharp.Xaml.Charting;
 public class ChartElementEditor : UserControl, IComponentConnector
 {
   
-  internal CheckEdit \u0023\u003DzW4kuZJQvOGhM;
+  public CheckEdit \u0023\u003DzW4kuZJQvOGhM;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -69,6 +69,6 @@ public class ChartElementEditor : UserControl, IComponentConnector
     public static readonly ChartElementEditor.SomeClass34343383 SomeMethond0343 = new ChartElementEditor.SomeClass34343383();
     public static Func<char, bool> \u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D;
 
-    internal bool \u0023\u003DzAaU0cZFSAtN99pV5BtGNHjfrUBPr(char _param1) => _param1 == '.';
+    public bool \u0023\u003DzAaU0cZFSAtN99pV5BtGNHjfrUBPr(char _param1) => _param1 == '.';
   }
 }

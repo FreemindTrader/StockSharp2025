@@ -14,7 +14,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 [TemplatePart(Name = "PART_InputTextArea", Type = typeof (TextBox))]
-internal class TextAnnotation : AnchorPointAnnotation
+public class TextAnnotation : AnchorPointAnnotation
 {
   public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof (CornerRadius), typeof (CornerRadius), typeof (TextAnnotation), new PropertyMetadata((object) new CornerRadius()));
   public static readonly DependencyProperty TextProperty = DependencyProperty.Register(nameof (Text), typeof (string), typeof (TextAnnotation), new PropertyMetadata((object) string.Empty));
@@ -115,7 +115,7 @@ internal class TextAnnotation : AnchorPointAnnotation
     return this.XAxis != null && this.XAxis.get_IsPolarAxis() ? (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new TextAnnotation.\u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(this) : (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new TextAnnotation.\u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(this);
   }
 
-  internal sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(TextAnnotation _param1) : 
+  public sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(TextAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<TextAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
@@ -158,7 +158,7 @@ internal class TextAnnotation : AnchorPointAnnotation
       AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       double d1 = _param1.\u0023\u003DzS2_K6sVvd5IY + _param2;
       double d2 = _param1.\u0023\u003Dz6aJoeqoqAzym + _param2;
@@ -192,7 +192,7 @@ internal class TextAnnotation : AnchorPointAnnotation
     }
   }
 
-  internal sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(TextAnnotation _param1) : 
+  public sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(TextAnnotation _param1) : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<TextAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(

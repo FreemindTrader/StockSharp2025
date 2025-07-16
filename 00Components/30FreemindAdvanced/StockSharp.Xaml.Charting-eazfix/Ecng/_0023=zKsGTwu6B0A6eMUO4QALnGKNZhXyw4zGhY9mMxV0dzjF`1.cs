@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<\u0023\u003DzulcL8RA\u003D> : 
+public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<\u0023\u003DzulcL8RA\u003D> : 
   \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<\u0023\u003DzulcL8RA\u003D>
   where \u0023\u003DzulcL8RA\u003D : IComparable
 {

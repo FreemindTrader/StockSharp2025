@@ -10,7 +10,7 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj0tkAQV_GK7UbDd1NY3xuBRiQqw\u003D\u003D : 
+public sealed class \u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj0tkAQV_GK7UbDd1NY3xuBRiQqw\u003D\u003D : 
   \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D>,
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJjBPTR5rC4Mn<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D>,
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELTst58YqUlllvt2EY65UXJw\u003D\u003D
@@ -73,13 +73,13 @@ internal sealed class \u0023\u003Dz8b2iwQyC3tYOGumtm_saeEnFs\u0024SRQLEosv4pfSjj
     public static Func<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D, bool> \u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D;
     public static Func<\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D, bool> \u0023\u003DzE\u0024tf7JQTZ55qH__blw\u003D\u003D;
 
-    internal bool \u0023\u003DzOhcojBe5GOPqzuz9bAIynZk\u003D(
+    public bool \u0023\u003DzOhcojBe5GOPqzuz9bAIynZk\u003D(
       \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D _param1)
     {
       return _param1.IsVisible;
     }
 
-    internal bool \u0023\u003DzBpu1ZHaKtx1si_vcPcjXh0c\u003D(
+    public bool \u0023\u003DzBpu1ZHaKtx1si_vcPcjXh0c\u003D(
       \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D _param1)
     {
       return _param1.IsVisible;

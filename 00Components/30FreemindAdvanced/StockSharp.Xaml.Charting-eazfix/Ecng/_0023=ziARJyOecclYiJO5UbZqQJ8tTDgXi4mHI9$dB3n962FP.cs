@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal abstract class \u0023\u003DziARJyOecclYiJO5UbZqQJ8tTDgXi4mHI9\u0024dB3n962FPd : 
+public abstract class \u0023\u003DziARJyOecclYiJO5UbZqQJ8tTDgXi4mHI9\u0024dB3n962FPd : 
   \u0023\u003DzMDDpCIYr0KRiCa3HPMUguqs\u002454aYHA4owg\u003D\u003D,
   \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH
 {

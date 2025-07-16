@@ -143,7 +143,7 @@ public class ChartOrderElement :
     storage.SetValue<string>("Filter", Converter.To<string>((object) this.Filter));
   }
 
-  internal override ChartOrderElement Clone(ChartOrderElement _param1)
+  public override ChartOrderElement Clone(ChartOrderElement _param1)
   {
     _param1.ErrorColor = this.ErrorColor;
     _param1.ErrorStrokeColor = this.ErrorStrokeColor;

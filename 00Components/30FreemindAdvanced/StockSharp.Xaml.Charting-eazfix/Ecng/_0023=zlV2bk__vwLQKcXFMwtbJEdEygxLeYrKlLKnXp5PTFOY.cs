@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEdEygxLeYrKlLKnXp5PTFOYh4EoztDxd13pyqFa6 : 
+public sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEdEygxLeYrKlLKnXp5PTFOYh4EoztDxd13pyqFa6 : 
   \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<sbyte>
 {
   private double \u0023\u003DzT\u0024kqKKwnFTS7 = 1.0;
@@ -37,7 +37,7 @@ internal sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEdEygxLeYrKlLKnXp5PTFOYh4
     this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(_param1);
   }
 
-  internal double \u0023\u003Dz\u0024rRwq4PtSMIR() => this.\u0023\u003DzT\u0024kqKKwnFTS7;
+  public double \u0023\u003Dz\u0024rRwq4PtSMIR() => this.\u0023\u003DzT\u0024kqKKwnFTS7;
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<sbyte> _param1,

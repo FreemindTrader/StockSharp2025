@@ -13,7 +13,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D : 
+public sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D : 
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
 {
   private readonly AbstractList<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> \u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D = new AbstractList<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(1);
@@ -150,7 +150,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
     public static readonly \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D.SomeClass34343383();
     public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, bool> \u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D;
 
-    internal bool \u0023\u003DzpYOQEE2WuwrooUwCYwN0rbw\u003D(
+    public bool \u0023\u003DzpYOQEE2WuwrooUwCYwN0rbw\u003D(
       \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1)
     {
       return _param1 != null;
@@ -161,7 +161,7 @@ internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7
   {
     public ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DztMHJ9Rr5MdWR;
 
-    internal bool \u0023\u003Dzxj7eJsGR0DW\u0024XsrR5Q\u003D\u003D(
+    public bool \u0023\u003Dzxj7eJsGR0DW\u0024XsrR5Q\u003D\u003D(
       ChartDrawData.\u0023\u003DzU3TaXFs\u003D _param1)
     {
       return _param1.\u0023\u003DzDmTtC9WghRFa() == this.\u0023\u003DztMHJ9Rr5MdWR.\u0023\u003DzDmTtC9WghRFa();

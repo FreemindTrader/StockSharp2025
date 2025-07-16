@@ -1,7 +1,7 @@
 ﻿using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.ChartModifiers;
 using MathNet.Numerics;
 using MoreLinq;

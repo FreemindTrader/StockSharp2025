@@ -7,7 +7,7 @@
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzPlFvps97y7rWR4vc5KUjR5Ch17PMi3H3ortKPxkjv7KR
+public sealed class \u0023\u003DzPlFvps97y7rWR4vc5KUjR5Ch17PMi3H3ortKPxkjv7KR
 {
   public GradientStop[] \u0023\u003DzHu4tBcuxUMVL;
   public double \u0023\u003Dz2wWd_ME\u003D;

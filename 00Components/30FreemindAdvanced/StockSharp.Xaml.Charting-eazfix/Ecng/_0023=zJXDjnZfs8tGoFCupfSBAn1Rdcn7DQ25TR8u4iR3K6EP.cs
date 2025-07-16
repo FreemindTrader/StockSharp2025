@@ -10,7 +10,7 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU770SjI_XX5kyW7udt\u0024X5Q\u003D\u003D : 
+public sealed class \u0023\u003DzJXDjnZfs8tGoFCupfSBAn1Rdcn7DQ25TR8u4iR3K6EPAU770SjI_XX5kyW7udt\u0024X5Q\u003D\u003D : 
   \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ
 {
   private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;

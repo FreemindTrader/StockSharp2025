@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal abstract class \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<\u0023\u003DzulcL8RA\u003D> : 
+public abstract class \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<\u0023\u003DzulcL8RA\u003D> : 
   \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<\u0023\u003DzulcL8RA\u003D>
   where \u0023\u003DzulcL8RA\u003D : IComparable
 {

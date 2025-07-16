@@ -5,9 +5,9 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class NumericTickLabel : 
+public sealed class NumericTickLabel : 
   DefaultTickLabel
 {
   public NumericTickLabel()

@@ -8,7 +8,7 @@ using System;
 using System.Windows.Input;
 
 #nullable disable
-internal interface \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv1ei5a44WdHi6c16UXGWhmY1mMHOZA\u003D\u003D : 
+public interface \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv1ei5a44WdHi6c16UXGWhmY1mMHOZA\u003D\u003D : 
   ISuspendable,
   IInvalidatableElement
 {

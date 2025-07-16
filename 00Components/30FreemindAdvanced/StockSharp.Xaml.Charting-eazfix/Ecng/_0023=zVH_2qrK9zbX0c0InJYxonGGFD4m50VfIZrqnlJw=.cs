@@ -7,19 +7,19 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzVH_2qrK9zbX0c0InJYxonGGFD4m50VfIZrqnlJw\u003D
+public static class \u0023\u003DzVH_2qrK9zbX0c0InJYxonGGFD4m50VfIZrqnlJw\u003D
 {
-  internal static Decimal \u0023\u003DzZsq6ZfbZQvsf(this Decimal _param0)
+  public static Decimal \u0023\u003DzZsq6ZfbZQvsf(this Decimal _param0)
   {
     return Decimal.Round(_param0, 0);
   }
 
-  internal static Decimal \u0023\u003DzZsq6ZfbZQvsf(this Decimal _param0, MidpointRounding _param1)
+  public static Decimal \u0023\u003DzZsq6ZfbZQvsf(this Decimal _param0, MidpointRounding _param1)
   {
     return _param0.\u0023\u003DzZsq6ZfbZQvsf(0, _param1);
   }
 
-  internal static Decimal \u0023\u003DzZsq6ZfbZQvsf(
+  public static Decimal \u0023\u003DzZsq6ZfbZQvsf(
     this Decimal _param0,
     int _param1,
     MidpointRounding _param2)
@@ -31,7 +31,7 @@ internal static class \u0023\u003DzVH_2qrK9zbX0c0InJYxonGGFD4m50VfIZrqnlJw\u003D
     return Decimal.Truncate(_param0 * num1 + 0.5M * (Decimal) num2) / num1;
   }
 
-  internal static DateTime \u0023\u003Dzxuo5aY4wjkaI(this Decimal _param0)
+  public static DateTime \u0023\u003Dzxuo5aY4wjkaI(this Decimal _param0)
   {
     return new DateTime((long) _param0.\u0023\u003DzZsq6ZfbZQvsf(MidpointRounding.AwayFromZero));
   }

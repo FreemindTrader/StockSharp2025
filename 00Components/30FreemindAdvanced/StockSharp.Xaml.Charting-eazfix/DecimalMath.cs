@@ -3,7 +3,7 @@
 namespace SciChart.Data.Numerics.GenericMath;
 
 #nullable disable
-internal sealed class DecimalMath :
+public sealed class DecimalMath :
   IMath<Decimal>
 {
 

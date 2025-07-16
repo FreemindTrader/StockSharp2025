@@ -8,7 +8,7 @@ using System;
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D : IDisposable
+public interface \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D : IDisposable
 {
   \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dzc8S9rSE\u003D(
     Color _param1,

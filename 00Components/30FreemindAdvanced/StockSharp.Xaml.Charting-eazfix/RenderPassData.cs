@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class RenderPassData  : 
+public sealed class RenderPassData  : 
   IRenderPassData
 {
   private readonly IndexRange  \u0023\u003DzbP\u0024wPAKWrqQo;

@@ -1,5 +1,5 @@
 ﻿using Ecng.Common;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Charting.Services;
 using SciChart.Charting.ViewportManagers;

@@ -7,9 +7,9 @@
 using System.Windows;
 
 #nullable disable
-internal static class \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bRr6r5ISfrnuCkXnfns\u003D
+public static class \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bRr6r5ISfrnuCkXnfns\u003D
 {
-  internal static Point \u0023\u003Dz0lUatTkkbf_v(this Point _param0)
+  public static Point \u0023\u003Dz0lUatTkkbf_v(this Point _param0)
   {
     return new Point((double) (int) _param0.X, (double) (int) _param0.Y);
   }

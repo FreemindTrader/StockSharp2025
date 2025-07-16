@@ -13,9 +13,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class BasePointMarker : 
+public abstract class BasePointMarker : 
   ContentControl,
   \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
 {
@@ -255,35 +255,35 @@ internal abstract class BasePointMarker :
   {
     public static readonly BasePointMarker.SomeClass34343383 SomeMethond0343 = new BasePointMarker.SomeClass34343383();
 
-    internal void \u0023\u003DzKNLry2NAzTE0YP2LWzHy77o\u003D(
+    public void \u0023\u003DzKNLry2NAzTE0YP2LWzHy77o\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       ((BasePointMarker) _param1).OnPropertyChanged(_param1, _param2);
     }
 
-    internal void \u0023\u003DzACYYWwoqJLWh\u0024F6GbuiAdRM\u003D(
+    public void \u0023\u003DzACYYWwoqJLWh\u0024F6GbuiAdRM\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       ((BasePointMarker) _param1).OnPropertyChanged(_param1, _param2);
     }
 
-    internal void \u0023\u003DzYNHwQ174F89tEKHpFedHL4k\u003D(
+    public void \u0023\u003DzYNHwQ174F89tEKHpFedHL4k\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       ((BasePointMarker) _param1).OnPropertyChanged(_param1, _param2);
     }
 
-    internal void \u0023\u003Dzvp_fMzphxDgUj7M8713t5tY\u003D(
+    public void \u0023\u003Dzvp_fMzphxDgUj7M8713t5tY\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       ((BasePointMarker) _param1).OnPropertyChanged(_param1, _param2);
     }
 
-    internal void \u0023\u003DzwwnfoUeY2t4J2Aquog1ti\u0024w\u003D(
+    public void \u0023\u003DzwwnfoUeY2t4J2Aquog1ti\u0024w\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

@@ -22,7 +22,7 @@ using System.Windows.Data;
 
 namespace StockSharp.Xaml.Charting;
 
-internal abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartElementBaseViewModel where T : ChartPart<T>, IDrawableChartElement
+public abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartElementBaseViewModel where T : ChartPart<T>, IDrawableChartElement
 {
 
     private readonly HashSet<IChartComponent> _componentUIMap = new HashSet<IChartComponent>();
@@ -156,7 +156,7 @@ internal abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartElementBa
         public static readonly ChartCompentWpfBaseViewModel<T>.SomeInternalSealClass0835<T> SomeMethond0343 = new ChartCompentWpfBaseViewModel<T>.SomeInternalSealClass0835<T>();
         public static Func<ChartElementViewModel, bool> SomeIntenalMethod003D;
 
-        internal bool SomeStuff034803(
+        public bool SomeStuff034803(
               ChartElementViewModel _param1 )
         {
             return _param1 == null;

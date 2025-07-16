@@ -11,7 +11,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D : 
+public sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D : 
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
 {
   private readonly \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[] \u0023\u003DzYw05nwk\u003D;
@@ -104,13 +104,13 @@ internal sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobC
     public static Func<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
     public static Func<\u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D, double> \u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D;
 
-    internal double \u0023\u003Dzp2\u0024EsxlIMTtWjmvGLH7fWK4\u003D(
+    public double \u0023\u003Dzp2\u0024EsxlIMTtWjmvGLH7fWK4\u003D(
       \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D _param1)
     {
       return _param1.\u0023\u003Dz2_4KSTY\u003D();
     }
 
-    internal double \u0023\u003DzucPTYZfZR1DykS2JQTABmho\u003D(
+    public double \u0023\u003DzucPTYZfZR1DykS2JQTABmho\u003D(
       \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D _param1)
     {
       return _param1.\u0023\u003Dzu7q98_E\u003D();

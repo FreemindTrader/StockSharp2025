@@ -9,7 +9,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D : 
+public sealed class \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D : 
   BindableObject 
 {
   

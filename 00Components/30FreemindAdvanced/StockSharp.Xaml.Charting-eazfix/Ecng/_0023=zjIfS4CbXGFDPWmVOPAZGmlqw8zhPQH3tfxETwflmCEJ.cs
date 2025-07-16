@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Media.Animation;
 
 #nullable disable
-internal sealed class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmlqw8zhPQH3tfxETwflmCEJq30zQcQ\u003D\u003D
+public sealed class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmlqw8zhPQH3tfxETwflmCEJq30zQcQ\u003D\u003D
 {
   private TimeSpan \u0023\u003DzXOURnwA\u003D;
   private UIElement \u0023\u003DzkP4vjPw\u003D;

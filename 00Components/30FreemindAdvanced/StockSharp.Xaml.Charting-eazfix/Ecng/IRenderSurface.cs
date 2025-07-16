@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal interface IRenderSurface : 
+public interface IRenderSurface : 
   IDisposable,
   IInvalidatableElement,
   IHitTestable

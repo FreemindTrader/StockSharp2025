@@ -11,9 +11,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class XAxisDragModifier : 
+public sealed class XAxisDragModifier : 
   \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ
 {
   
@@ -146,13 +146,13 @@ internal sealed class XAxisDragModifier :
     #nullable disable
     Func<IAxis, IRange> \u0023\u003DzBXy6HataguDyrzDt9g\u003D\u003D;
 
-    internal bool \u0023\u003DzxsT5eH8ST5wURnPDRSExaUI\u003D(
+    public bool \u0023\u003DzxsT5eH8ST5wURnPDRSExaUI\u003D(
       IAxis _param1)
     {
       return _param1.get_IsCategoryAxis();
     }
 
-    internal 
+    public 
     #nullable enable
     string \u0023\u003Dz42dJuYUoRwO2twIy\u0024zPWSEE\u003D(
       #nullable disable
@@ -161,7 +161,7 @@ internal sealed class XAxisDragModifier :
       return _param1.Id;
     }
 
-    internal IRange \u0023\u003DzDdeB7QUmKNmVJObfmPxXrUc\u003D(
+    public IRange \u0023\u003DzDdeB7QUmKNmVJObfmPxXrUc\u003D(
       IAxis _param1)
     {
       return _param1.VisibleRange;

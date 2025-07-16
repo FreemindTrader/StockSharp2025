@@ -8,7 +8,7 @@ using System;
 using System.Globalization;
 
 #nullable disable
-internal sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22mOTs6M1Rc5MHAxGSwybk_pTjg\u003D\u003D : 
+public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22mOTs6M1Rc5MHAxGSwybk_pTjg\u003D\u003D : 
   \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B
 {
   public override void \u0023\u003DzWzUaFxw\u003D(

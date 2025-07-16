@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izN0tWzkIzz0JM4yPz3ydodySc : 
+public sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izN0tWzkIzz0JM4yPz3ydodySc : 
   \u0023\u003DziARJyOecclYiJO5UbZqQJ8tTDgXi4mHI9\u0024dB3n962FPd
 {
   public override string \u0023\u003Dz\u0024WinkXTLMGVP(IComparable _param1, bool _param2)

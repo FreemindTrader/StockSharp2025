@@ -14,9 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class AxisPanel : 
+public class AxisPanel : 
   Panel,
   INotifyPropertyChanged,
   IAxisPanel
@@ -439,9 +439,9 @@ internal class AxisPanel :
     j76J7Ed3DxexqEjd.OnPropertyChanged("LabelToTickIndent");
   }
 
-  internal Image \u0023\u003DzdjbuiJBxjZ2I() => this.\u0023\u003DzlbfaVnpq6N5Y;
+  public Image \u0023\u003DzdjbuiJBxjZ2I() => this.\u0023\u003DzlbfaVnpq6N5Y;
 
-  internal Grid \u0023\u003Dz8aaJHyxY6f5I() => this.\u0023\u003DzDLF9sbNKzh9k;
+  public Grid \u0023\u003Dz8aaJHyxY6f5I() => this.\u0023\u003DzDLF9sbNKzh9k;
 
   [Serializable]
   private sealed class SomeClass34343383
@@ -449,7 +449,7 @@ internal class AxisPanel :
     public static readonly AxisPanel.SomeClass34343383 SomeMethond0343 = new AxisPanel.SomeClass34343383();
     public static Action<TickLabelAxisCanvas> \u0023\u003DzUirRmBtkgu2ct\u0024h0\u0024w\u003D\u003D;
 
-    internal void \u0023\u003DzYyZ8uO9pMJ7PWhNDjIGZikE\u003D(
+    public void \u0023\u003DzYyZ8uO9pMJ7PWhNDjIGZikE\u003D(
       TickLabelAxisCanvas _param1)
     {
       _param1.Children.Clear();

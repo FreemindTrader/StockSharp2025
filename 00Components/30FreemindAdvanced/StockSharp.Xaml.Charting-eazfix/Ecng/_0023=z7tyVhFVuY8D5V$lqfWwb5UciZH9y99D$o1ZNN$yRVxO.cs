@@ -9,7 +9,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal interface \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D
+public interface \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D
 {
   double \u0023\u003DzBBczPQeswUUn(Point _param1, Point _param2);
 

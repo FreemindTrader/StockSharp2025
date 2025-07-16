@@ -14,7 +14,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D : 
+public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D : 
   BaseRenderableSeries
 {
   
@@ -415,7 +415,7 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
     return new dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd(_param1, _param2, _param3, _param4, this.\u0023\u003DzsXnk1Ge0vmwXlGltqTJiJRA\u003D);
   }
 
-  internal static void \u0023\u003Dq9nBEzuU3ebCkK5uZZ55L7V9_AmeqchegfX26qrySdaw3bTMIdnqBvxQTgH1KCFly(
+  public static void \u0023\u003Dq9nBEzuU3ebCkK5uZZ55L7V9_AmeqchegfX26qrySdaw3bTMIdnqBvxQTgH1KCFly(
     ref dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd _param0)
   {
     _param0?.\u0023\u003DzTuM3X1E\u003D();
@@ -427,84 +427,84 @@ internal sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4Xo
   {
     public static readonly \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.SomeClass34343383();
 
-    internal void \u0023\u003Dzl\u0024Kbhp6AKIbEt6Ioga_FS7s\u003D(
+    public void \u0023\u003Dzl\u0024Kbhp6AKIbEt6Ioga_FS7s\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(true, true, true, true);
     }
 
-    internal void \u0023\u003DzFJsTS9rrP1NG8prpLAZCU0c\u003D(
+    public void \u0023\u003DzFJsTS9rrP1NG8prpLAZCU0c\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(true, true, true, true);
     }
 
-    internal void \u0023\u003DzrRonNHUfLFhb4a41GprE0NY\u003D(
+    public void \u0023\u003DzrRonNHUfLFhb4a41GprE0NY\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(true, false, false, true);
     }
 
-    internal void \u0023\u003DzW\u00246g_nb4ex3EfzpOPtx5xIg\u003D(
+    public void \u0023\u003DzW\u00246g_nb4ex3EfzpOPtx5xIg\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(false, true, false, true);
     }
 
-    internal void \u0023\u003DzalZtutxg4KH3vd_PJK9h5UE\u003D(
+    public void \u0023\u003DzalZtutxg4KH3vd_PJK9h5UE\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(true, false, false, true);
     }
 
-    internal void \u0023\u003Dzpe2M20RJiCSySSy\u0024xZKaDAc\u003D(
+    public void \u0023\u003Dzpe2M20RJiCSySSy\u0024xZKaDAc\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(false, true, false, true);
     }
 
-    internal void \u0023\u003DzUnOGCiaNXtcM0vo5GSlRa7k\u003D(
+    public void \u0023\u003DzUnOGCiaNXtcM0vo5GSlRa7k\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(true, false, false, true);
     }
 
-    internal void \u0023\u003DzX10ujeMROYIpoC_F8TLUKCc\u003D(
+    public void \u0023\u003DzX10ujeMROYIpoC_F8TLUKCc\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(true, false, false, true);
     }
 
-    internal void \u0023\u003DzzW0LcDTPK3TD_\u0024fEM32aP2c\u003D(
+    public void \u0023\u003DzzW0LcDTPK3TD_\u0024fEM32aP2c\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(false, true, false, true);
     }
 
-    internal void \u0023\u003Dz6Hbm26xFvZOY2Dt9myu_M4A\u003D(
+    public void \u0023\u003Dz6Hbm26xFvZOY2Dt9myu_M4A\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(false, true, false, true);
     }
 
-    internal void \u0023\u003Dz4iilVTo6OBDebjdZixfsY2Lat22R(
+    public void \u0023\u003Dz4iilVTo6OBDebjdZixfsY2Lat22R(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003DzodKLGEc\u003D(_param1).\u0023\u003DzLkKw\u00249Ck8kmeY_ktow\u003D\u003D(false, false, true, true);
     }
 
-    internal void \u0023\u003DzAlixuKzZZLKUKWSV0URsXGlstR6X(
+    public void \u0023\u003DzAlixuKzZZLKUKWSV0URsXGlstR6X(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

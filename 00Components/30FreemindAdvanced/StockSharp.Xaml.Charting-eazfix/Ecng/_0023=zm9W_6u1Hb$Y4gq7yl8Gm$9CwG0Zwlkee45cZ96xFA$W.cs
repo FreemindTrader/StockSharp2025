@@ -10,11 +10,11 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00249CwG0Zwlkee45cZ96xFA\u0024Wy : 
+public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00249CwG0Zwlkee45cZ96xFA\u0024Wy : 
   ObservableCollection<VerticalLineAnnotation>
 {
   
-  internal IList<VerticalLineAnnotation> \u0023\u003DzqSDPyRh2Gp9P;
+  public IList<VerticalLineAnnotation> \u0023\u003DzqSDPyRh2Gp9P;
 
   protected override void ClearItems()
   {

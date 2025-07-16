@@ -1,47 +1,55 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.AnnotationSurface
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
+﻿using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using StockSharp.Charting.Visuals;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AnnotationSurface : 
-  Canvas,
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk,
-  IHitTestable
+public class AnnotationSurface : Canvas, StockSharp.Charting.Visuals.IAnnotationCanvas, IHitTestable
 {
-  public Point TranslatePoint(
-    Point _param1,
-    IHitTestable _param2)
-  {
-    return this.TranslatePoint(_param1, _param2);
-  }
+    public Point TranslatePoint( Point point, IHitTestable relativeTo )
+    {
+        return this.TranslatePoint( point, relativeTo );
+    }
 
-  public bool IsPointWithinBounds(Point _param1) => this.IsPointWithinBounds(_param1);
+    public bool IsPointWithinBounds( Point point )
+    {
+        return this.IsPointWithinBounds( point );
+    }
 
-  public Rect GetBoundsRelativeTo(
-    IHitTestable _param1)
-  {
-    return this.GetBoundsRelativeTo(_param1);
-  }
+    public Rect GetBoundsRelativeTo( IHitTestable relativeTo )
+    {
+        return this.GetBoundsRelativeTo( relativeTo );
+    }
 
-  UIElementCollection \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk.\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxEd_WVrGrYRkgPcNsetxgTjiPcBUJA\u003D\u003D()
-  {
-    return this.Children;
-  }
+    
 
-  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
-  {
-    return this.ActualWidth;
-  }
+    [SpecialName]
+    double IHitTestable.ActualWidth
+    {
+        get
+        {
+            return this.ActualWidth;
+        }
 
-  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
-  {
-    return this.ActualHeight;
-  }
+    }
+
+    [SpecialName]
+    double IHitTestable.ActualHeight
+    {
+        get
+        {
+            return this.ActualHeight;
+        }
+    }
+
+    [SpecialName]
+    UIElementCollection StockSharp.Charting.Visuals.IAnnotationCanvas.Children
+    {
+        get
+        {
+            return this.Children;
+        }
+    }
 }

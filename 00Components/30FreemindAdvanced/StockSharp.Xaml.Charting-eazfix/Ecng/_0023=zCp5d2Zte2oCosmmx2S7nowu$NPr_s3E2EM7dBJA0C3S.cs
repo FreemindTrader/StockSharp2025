@@ -7,7 +7,7 @@
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7nowu\u0024NPr_s3E2EM7dBJA0C3SmohLs\u0024g\u003D\u003D(
+public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7nowu\u0024NPr_s3E2EM7dBJA0C3SmohLs\u0024g\u003D\u003D(
   Size _param1) : \u0023\u003DzduViKcXTrKCfnYwdbArizj2eJHoGDKKVMxo9P3U\u003D(_param1)
 {
   public override Point \u0023\u003Dz8miGAzg\u003D(Point _param1) => _param1;

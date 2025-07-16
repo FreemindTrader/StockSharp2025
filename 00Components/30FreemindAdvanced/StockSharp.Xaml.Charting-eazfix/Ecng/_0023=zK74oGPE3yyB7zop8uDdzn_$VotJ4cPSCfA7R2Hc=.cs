@@ -8,7 +8,7 @@ using System;
 using System.Windows.Threading;
 
 #nullable disable
-internal interface \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D
+public interface \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D
 {
   void \u0023\u003DzbMTrUAQ\u003D(Action _param1, DispatcherPriority _param2);
 

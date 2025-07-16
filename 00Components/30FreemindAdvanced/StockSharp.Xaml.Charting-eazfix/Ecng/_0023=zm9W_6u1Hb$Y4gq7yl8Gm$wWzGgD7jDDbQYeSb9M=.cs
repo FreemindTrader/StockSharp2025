@@ -8,24 +8,24 @@ using System;
 using System.Xml.Linq;
 
 #nullable disable
-internal static class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u0024wWzGgD7jDDbQYeSb9M\u003D
+public static class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u0024wWzGgD7jDDbQYeSb9M\u003D
 {
-  internal static string \u0023\u003DzhQSajDAhtIuy(this XElement _param0, string _param1)
+  public static string \u0023\u003DzhQSajDAhtIuy(this XElement _param0, string _param1)
   {
     return _param0.Attribute((XName) _param1)?.Value;
   }
 
-  internal static string \u0023\u003Dzy58aQkWRKw6y(this XElement _param0, string _param1)
+  public static string \u0023\u003Dzy58aQkWRKw6y(this XElement _param0, string _param1)
   {
     return (_param0.Attribute((XName) _param1) ?? throw new InvalidOperationException($"Expected attribute <{_param1}/>")).Value;
   }
 
-  internal static string \u0023\u003DzOezjA\u0024ae5BcS(this XElement _param0, string _param1)
+  public static string \u0023\u003DzOezjA\u0024ae5BcS(this XElement _param0, string _param1)
   {
     return (_param0.Element((XName) _param1) ?? throw new InvalidOperationException($"Expected element <{_param1}/>")).Value;
   }
 
-  internal static string \u0023\u003DzH_WszwPLeBDF(this XElement _param0, string _param1)
+  public static string \u0023\u003DzH_WszwPLeBDF(this XElement _param0, string _param1)
   {
     return _param0.Element((XName) _param1)?.Value;
   }

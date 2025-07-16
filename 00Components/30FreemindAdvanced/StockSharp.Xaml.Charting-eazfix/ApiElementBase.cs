@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Controls;
 
 #nullable disable
-internal abstract class ApiElementBase : ContentControl, INotifyPropertyChanged
+public abstract class ApiElementBase : ContentControl, INotifyPropertyChanged
 {
 
     private ISciChartSurface _parentSurface;
@@ -141,13 +141,13 @@ private sealed class SomeClass34343383
     public static Func<IAxis, bool> \u0023\u003DzcFhfCcBLh7a_pKoCqw\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D;
 
-    internal bool \u0023\u003Dz40hF903Z7W1MLFKRgtpttIg\u003D(
+    public bool \u0023\u003Dz40hF903Z7W1MLFKRgtpttIg\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
     }
 
-internal bool \u0023\u003DzQY8WNqpkffjul30yEBWakgc\u003D(
+public bool \u0023\u003DzQY8WNqpkffjul30yEBWakgc\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();

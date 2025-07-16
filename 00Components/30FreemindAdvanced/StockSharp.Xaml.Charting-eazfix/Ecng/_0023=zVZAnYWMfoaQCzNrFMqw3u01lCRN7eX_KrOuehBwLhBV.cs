@@ -9,13 +9,13 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxjpqw\u003D\u003D : 
+public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxjpqw\u003D\u003D : 
   \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D
 {
   private readonly int \u0023\u003DzEMN\u0024erw\u003D;
   private \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D \u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D;
 
-  internal \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxjpqw\u003D\u003D(
+  public \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxjpqw\u003D\u003D(
     int _param1,
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param2)
   {

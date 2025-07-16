@@ -15,7 +15,7 @@ using System.Linq;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Model.DataSeries.Transactions;
 
-internal class TransactionDataSeries : 
+public class TransactionDataSeries : 
   BindableObject ,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>,
   ISuspendable,
@@ -91,7 +91,7 @@ internal class TransactionDataSeries :
 
   public bool IsSorted => true;
 
-  internal \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> Data
+  public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> Data
   {
     get
     {
@@ -471,13 +471,13 @@ internal class TransactionDataSeries :
     public static Func<int, \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> \u0023\u003DzLuwuNd6jgC14H9fckQ\u003D\u003D;
     public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, bool> \u0023\u003DzGnRvVl1tJI2ALnJuvg\u003D\u003D;
 
-    internal \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D \u0023\u003DzNUWylnO6KRBGmmAdIYVLLt0\u003D(
+    public \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D \u0023\u003DzNUWylnO6KRBGmmAdIYVLLt0\u003D(
       int _param1)
     {
       return (\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D) null;
     }
 
-    internal bool \u0023\u003DzQew5\u0024BD3XizwlemJVIlpNho\u003D(
+    public bool \u0023\u003DzQew5\u0024BD3XizwlemJVIlpNho\u003D(
       \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1)
     {
       return _param1 != null;
@@ -619,13 +619,13 @@ internal class TransactionDataSeries :
       public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> SomeIntenalMethod003D;
       public static Func<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D, double> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
 
-      internal double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(
+      public double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(
         \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1)
       {
         return _param1.\u0023\u003Dzu7q98_E\u003D();
       }
 
-      internal double \u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D(
+      public double \u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D(
         \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1)
       {
         return _param1.\u0023\u003Dzu7q98_E\u003D();

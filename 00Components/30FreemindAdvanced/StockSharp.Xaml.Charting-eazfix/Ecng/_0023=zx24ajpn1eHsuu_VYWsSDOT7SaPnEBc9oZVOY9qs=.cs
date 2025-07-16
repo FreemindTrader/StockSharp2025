@@ -8,7 +8,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal abstract class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOT7SaPnEBc9oZVOY9qs\u003D : 
+public abstract class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOT7SaPnEBc9oZVOY9qs\u003D : 
   \u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D
 {
   private WeakReference \u0023\u003DzFSUsESM\u003D;

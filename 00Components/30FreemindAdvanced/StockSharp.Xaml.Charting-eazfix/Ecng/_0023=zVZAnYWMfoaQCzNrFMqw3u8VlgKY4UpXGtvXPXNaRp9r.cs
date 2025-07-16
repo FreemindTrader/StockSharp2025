@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u8VlgKY4UpXGtvXPXNaRp9rB : 
+public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u8VlgKY4UpXGtvXPXNaRp9rB : 
   \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0024cPBp2g91_YdMug\u003D\u003D
 {
   protected override double \u0023\u003Dz3spHJE8\u003D(IComparable _param1)

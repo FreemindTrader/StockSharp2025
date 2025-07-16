@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal class \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T> : 
+public class \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T> : 
   IDisposable
   where T : new()
 {
@@ -95,7 +95,7 @@ internal class \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T> :
   {
     public Func<T, T> \u0023\u003DzTeHLJLex4n7B;
 
-    internal T \u0023\u003DzI0QPeZE4_5s\u0024()
+    public T \u0023\u003DzI0QPeZE4_5s\u0024()
     {
       return this.\u0023\u003DzTeHLJLex4n7B(new T());
     }
@@ -107,7 +107,7 @@ internal class \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T> :
     public static readonly \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T>.SomeClass34343383();
     public static Func<T, T> \u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D;
 
-    internal T \u0023\u003Dzl\u0024kq8n59APwXalx4TQ\u003D\u003D(
+    public T \u0023\u003Dzl\u0024kq8n59APwXalx4TQ\u003D\u003D(
       T _param1)
     {
       return _param1;

@@ -15,9 +15,9 @@ using System.Windows.Controls;
 using System.Windows.Shapes;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class CursorModifier : 
+public class CursorModifier : 
   TooltipModifierBase
 {
   
@@ -346,13 +346,13 @@ internal class CursorModifier :
     public CursorModifier _variableSome3535;
     public Point \u0023\u003DzvCn8oRW_i8ct;
 
-    internal \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D(
+    public \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzTAW\u0024IBjKDuezcG8tkoBGo1Q\u003D(
       IAxis _param1)
     {
       return this._variableSome3535.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
     }
 
-    internal \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzEhR4Oe23EuYwGjXUPg7SBR8\u003D(
+    public \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzEhR4Oe23EuYwGjXUPg7SBR8\u003D(
       IAxis _param1)
     {
       return this._variableSome3535.\u0023\u003DzU0tYbfdnROi1(_param1, this.\u0023\u003DzvCn8oRW_i8ct);
@@ -364,7 +364,7 @@ internal class CursorModifier :
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public CursorModifier _variableSome3535;
 
-    internal \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DznVLFa68vHPHy(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);
@@ -376,7 +376,7 @@ internal class CursorModifier :
     public CursorModifier _variableSome3535;
     public Point \u0023\u003DzvCn8oRW_i8ct;
 
-    internal void \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D()
+    public void \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D()
     {
       this._variableSome3535.\u0023\u003DzcWFGFMbg0iEM(this.\u0023\u003DzvCn8oRW_i8ct);
     }

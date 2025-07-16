@@ -14,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a : 
+public sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a : 
   dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
 {
   
@@ -194,52 +194,52 @@ internal sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a 
     public static Func<KeyValuePair<int, Point>, double> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
     public static Func<KeyValuePair<int, Point>, double> \u0023\u003DzFrKZ2idkhLzP6ElHlg\u003D\u003D;
 
-    internal double \u0023\u003DzqcNouvrU0rNE8lSQc4iox31rT88n(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003DzqcNouvrU0rNE8lSQc4iox31rT88n(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.X;
     }
 
-    internal double \u0023\u003Dz3ChMpBd_JR\u0024N6HzWsq2YTOPbtXVI(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003Dz3ChMpBd_JR\u0024N6HzWsq2YTOPbtXVI(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.X;
     }
 
-    internal double \u0023\u003Dz6K97g7WdwUvNgOQFjTclH7nc2WEF(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003Dz6K97g7WdwUvNgOQFjTclH7nc2WEF(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.Y;
     }
 
-    internal double \u0023\u003Dze1wjt0BHA\u00246YkLoAv3w2IUygSs45(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003Dze1wjt0BHA\u00246YkLoAv3w2IUygSs45(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.Y;
     }
 
-    internal double \u0023\u003DzcxCfUXBY83pn0enPPVtErpE\u003D(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003DzcxCfUXBY83pn0enPPVtErpE\u003D(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.X;
     }
 
-    internal double \u0023\u003Dzye0OQ99rUllFk16awFxF7ks\u003D(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003Dzye0OQ99rUllFk16awFxF7ks\u003D(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.X;
     }
 
-    internal double \u0023\u003Dzi7NUn2JZ6fxgLRJ61qPMyLI\u003D(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003Dzi7NUn2JZ6fxgLRJ61qPMyLI\u003D(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.Y;
     }
 
-    internal double \u0023\u003DzmT57mKJOp6SNOj_6DrkfWfc\u003D(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003DzmT57mKJOp6SNOj_6DrkfWfc\u003D(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.Y;
     }
 
-    internal double \u0023\u003DzRMoXG\u0024QaQ7qrkIPxk3zAzyc\u003D(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003DzRMoXG\u0024QaQ7qrkIPxk3zAzyc\u003D(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.X;
     }
 
-    internal double \u0023\u003DzQb1UTA78853CAcRtIcxw1T4\u003D(KeyValuePair<int, Point> _param1)
+    public double \u0023\u003DzQb1UTA78853CAcRtIcxw1T4\u003D(KeyValuePair<int, Point> _param1)
     {
       return _param1.Value.Y;
     }

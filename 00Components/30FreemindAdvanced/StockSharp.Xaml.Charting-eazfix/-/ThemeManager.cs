@@ -12,9 +12,9 @@ using System.Threading;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal static class ThemeManager
+public static class ThemeManager
 {
   public static readonly DependencyProperty \u0023\u003DzOJJsEsQ\u003D = DependencyProperty.RegisterAttached("Theme", typeof (string), typeof (ThemeManager), (PropertyMetadata) new FrameworkPropertyMetadata((object) string.Empty, FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(ThemeManager.\u0023\u003Dzb3YxwRaSuvYM)));
   private static EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> \u0023\u003Dz8Fi7DbieAZ0u;

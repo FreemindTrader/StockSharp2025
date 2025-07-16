@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal static class ClipToBoundsHelper
+public static class ClipToBoundsHelper
 {
   public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.RegisterAttached("ClipToBounds", typeof (bool), typeof (ClipToBoundsHelper), new PropertyMetadata((object) false, new PropertyChangedCallback(ClipToBoundsHelper.\u0023\u003DzqcJkhvYEtK_9IQ_Dhw\u003D\u003D)));
   public static readonly DependencyProperty \u0023\u003DziVSP6OFqTkR8hihgtQ\u003D\u003D = DependencyProperty.RegisterAttached("ClipToEllipseBounds", typeof (bool), typeof (ClipToBoundsHelper), new PropertyMetadata((object) false, new PropertyChangedCallback(ClipToBoundsHelper.\u0023\u003DzGMStW6rixIDeThlHSw\u003D\u003D)));
@@ -91,12 +91,12 @@ internal static class ClipToBoundsHelper
     public static RoutedEventHandler \u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D;
     public static SizeChangedEventHandler \u0023\u003DzyrbJPDSEp4QjajjhiA\u003D\u003D;
 
-    internal void \u0023\u003Dzey4uj458pf56Oqw2JddifQGfxNx1(object _param1, RoutedEventArgs _param2)
+    public void \u0023\u003Dzey4uj458pf56Oqw2JddifQGfxNx1(object _param1, RoutedEventArgs _param2)
     {
       ClipToBoundsHelper.\u0023\u003DzvgmToiciTxzW(_param1 as FrameworkElement);
     }
 
-    internal void \u0023\u003DzIdjSw7XvQEG2GMw8R94pNFvcNUgD(
+    public void \u0023\u003DzIdjSw7XvQEG2GMw8R94pNFvcNUgD(
       object _param1,
       SizeChangedEventArgs _param2)
     {

@@ -16,9 +16,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable enable
-internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D
+public static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D
 {
-  internal static 
+  public static 
   #nullable disable
   UIElement \u0023\u003DzjgOr4ajGBpa0(
     this UIElementCollection _param0,
@@ -32,7 +32,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     return (UIElement) null;
   }
 
-  internal static DoubleRange \u0023\u003Dz1j51DAw\u003D(
+  public static DoubleRange \u0023\u003Dz1j51DAw\u003D(
     this IList<double> _param0)
   {
     double num1;
@@ -41,12 +41,12 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     return new DoubleRange(num1, num2);
   }
 
-  internal static double[] \u0023\u003DzvczFDIa7rqI9<T>(this IList<T> _param0)
+  public static double[] \u0023\u003DzvczFDIa7rqI9<T>(this IList<T> _param0)
   {
     return _param0.\u0023\u003Dz1bvQV4SZTWpA<T>() as double[];
   }
 
-  internal static \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> \u0023\u003Dz1bvQV4SZTWpA<T>(
+  public static \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> \u0023\u003Dz1bvQV4SZTWpA<T>(
     this IList<T> _param0,
     IndexRange  _param1,
     bool _param2)
@@ -67,7 +67,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     }
   }
 
-  internal static \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> \u0023\u003Dz1bvQV4SZTWpA<T>(
+  public static \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> \u0023\u003Dz1bvQV4SZTWpA<T>(
     this IList<T> _param0,
     bool _param1)
   {
@@ -86,7 +86,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     }
   }
 
-  internal static T[] \u0023\u003Dz1bvQV4SZTWpA<T>(this IList<T> _param0)
+  public static T[] \u0023\u003Dz1bvQV4SZTWpA<T>(this IList<T> _param0)
   {
     switch (_param0)
     {
@@ -105,29 +105,29 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     }
   }
 
-  internal static bool \u0023\u003DzfFZjWlZiH0nd(this IList _param0)
+  public static bool \u0023\u003DzfFZjWlZiH0nd(this IList _param0)
   {
     return _param0 == null || _param0.Count == 0;
   }
 
-  internal static bool \u0023\u003DzCCMM80zDpO6N<T>(this IEnumerable<T> _param0)
+  public static bool \u0023\u003DzCCMM80zDpO6N<T>(this IEnumerable<T> _param0)
   {
     return _param0 == null || !_param0.Any<T>();
   }
 
-  internal static bool \u0023\u003DzMeGSfVE\u003D<T>(this IEnumerable<T> _param0)
+  public static bool \u0023\u003DzMeGSfVE\u003D<T>(this IEnumerable<T> _param0)
   {
     return !_param0.Any<T>();
   }
 
-  internal static void \u0023\u003Dz30RSSSygABj_<T>(this IEnumerable _param0, Action<T> _param1)
+  public static void \u0023\u003Dz30RSSSygABj_<T>(this IEnumerable _param0, Action<T> _param1)
   {
     if (_param0 == null)
       return;
     ((IEnumerable<T>) _param0.OfType<IRenderableSeries>()).\u0023\u003Dz30RSSSygABj_<T>(_param1);
   }
 
-  internal static void \u0023\u003Dz30RSSSygABj_<T>(this IEnumerable<T> _param0, Action<T> _param1)
+  public static void \u0023\u003Dz30RSSSygABj_<T>(this IEnumerable<T> _param0, Action<T> _param1)
   {
     if (_param0 == null)
       return;
@@ -136,7 +136,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
       _param1(obj);
   }
 
-  internal static void \u0023\u003DzmFyFyI4\u003D<T>(this IList<T> _param0, Predicate<T> _param1)
+  public static void \u0023\u003DzmFyFyI4\u003D<T>(this IList<T> _param0, Predicate<T> _param1)
   {
     for (int index = 0; index < _param0.Count; ++index)
     {
@@ -145,7 +145,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     }
   }
 
-  internal static void \u0023\u003Dzfhu56zPTf8It<T>(this IList<T> _param0, T _param1)
+  public static void \u0023\u003Dzfhu56zPTf8It<T>(this IList<T> _param0, T _param1)
   {
     if (_param0.Contains(_param1))
       return;
@@ -242,7 +242,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     return _param3 != (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2 ? num4 + 1 : num4;
   }
 
-  internal static int \u0023\u003Dzfidg2fLfXmXy<TX>(
+  public static int \u0023\u003Dzfidg2fLfXmXy<TX>(
     this TX[] _param0,
     int _param1,
     TX _param2,
@@ -369,7 +369,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     return _param5.Subtract(x3, x1).CompareTo((object) _param5.Subtract(x2, x3)) < 0 ? _param2 : _param3;
   }
 
-  internal static void \u0023\u003Dz6_E5\u0024pE\u003D<T>(
+  public static void \u0023\u003Dz6_E5\u0024pE\u003D<T>(
     this ObservableCollection<T> _param0,
     IEnumerable<T> _param1)
   {
@@ -377,7 +377,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
       _param0.Add(obj);
   }
 
-  internal static IEnumerable<IEnumerable<Tuple<Point, Point>>> \u0023\u003Dz4tVt5y5Hyap1kzcfrQ\u003D\u003D(
+  public static IEnumerable<IEnumerable<Tuple<Point, Point>>> \u0023\u003Dz4tVt5y5Hyap1kzcfrQ\u003D\u003D(
     this IEnumerable<Tuple<Point, Point>> _param0)
   {
     return (IEnumerable<IEnumerable<Tuple<Point, Point>>>) new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D.\u0023\u003Dz\u0024gu2ELXOMdDr0DdMZBFIY6iwkWU5(-2)
@@ -408,7 +408,7 @@ internal static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\
     };
   }
 
-  internal static IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzcxxcgCCxILAWoUgLzQ\u003D\u003D(
+  public static IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzcxxcgCCxILAWoUgLzQ\u003D\u003D(
     this IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param0)
   {
     return (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D.\u0023\u003DzHEaN982cjGylL4EpsyeBIP4\u003D(-2)

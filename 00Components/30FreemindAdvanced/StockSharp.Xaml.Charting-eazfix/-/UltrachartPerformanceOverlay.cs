@@ -12,9 +12,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltrachartPerformanceOverlay : 
+public sealed class UltrachartPerformanceOverlay : 
   ContentControl
 {
   
@@ -214,7 +214,7 @@ internal sealed class UltrachartPerformanceOverlay :
     public static readonly UltrachartPerformanceOverlay.SomeClass34343383 SomeMethond0343 = new UltrachartPerformanceOverlay.SomeClass34343383();
     public static Func<IRenderableSeries, int> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
 
-    internal int \u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D(
+    public int \u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D(
       IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() == null ? 0 : _param1.get_DataSeries().get_Count();

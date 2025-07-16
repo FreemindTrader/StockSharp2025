@@ -7,9 +7,9 @@
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ScrollbarViewport : 
+public sealed class ScrollbarViewport : 
   Control
 {
   public ScrollbarViewport()

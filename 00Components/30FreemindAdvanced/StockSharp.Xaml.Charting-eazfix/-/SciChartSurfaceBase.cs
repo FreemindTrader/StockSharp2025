@@ -15,11 +15,11 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "PART_ChartModifierSurface", Type = typeof (ChartModifierSurface))]
 [TemplatePart(Name = "PART_MainGrid", Type = typeof (Grid))]
-internal abstract class SciChartSurfaceBase : 
+public abstract class SciChartSurfaceBase : 
   Control,
   ISuspendable,
   IUltrachartSurfaceBase,
@@ -158,7 +158,7 @@ internal abstract class SciChartSurfaceBase :
     return this.\u0023\u003Dzg8Ufa_EMXfJU;
   }
 
-  protected internal void Services(
+  protected public void Services(
     IServiceContainer _param1)
   {
     this.\u0023\u003Dzg8Ufa_EMXfJU = _param1;
@@ -370,21 +370,21 @@ internal abstract class SciChartSurfaceBase :
 
   protected abstract void \u0023\u003DzOB4dXYeIFfiB();
 
-  protected internal void \u0023\u003DzVjhvGWo3fUWc(Exception _param1)
+  protected public void \u0023\u003DzVjhvGWo3fUWc(Exception _param1)
   {
     string str = $" {((object) this).GetType().Name} didn't render, because an exception was thrown:\n  Message: {_param1.Message}\n  Stack Trace: {_param1.StackTrace}";
     Console.WriteLine(str);
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D(str, Array.Empty<object>());
   }
 
-  internal void \u0023\u003Dz\u0024YPacLjgy1DJ(object _param1, EventArgs _param2)
+  public void \u0023\u003Dz\u0024YPacLjgy1DJ(object _param1, EventArgs _param2)
   {
     if (this.\u0023\u003DzQ6xddArfD502() == (\u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsr9VW2SiWlaFw0wjAU\u003D) 3)
       return;
     this.InvalidateElement();
   }
 
-  internal static Dispatcher \u0023\u003DzjLVbM_c\u003D(DependencyObject _param0)
+  public static Dispatcher \u0023\u003DzjLVbM_c\u003D(DependencyObject _param0)
   {
     return ((DispatcherObject) _param0).Dispatcher;
   }
@@ -443,7 +443,7 @@ internal abstract class SciChartSurfaceBase :
   {
     public static readonly SciChartSurface.SomeClass34343383 SomeMethond0343 = new SciChartSurface.SomeClass34343383();
 
-    internal void \u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D(
+    public void \u0023\u003DzbbUGr_yR96RPK_DtNktUUF8\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

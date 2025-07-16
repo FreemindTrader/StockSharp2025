@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdjQ2_iFE7GeQXQiaDXkJcgDkWOKV\u0024A\u003D\u003D : 
+public sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdjQ2_iFE7GeQXQiaDXkJcgDkWOKV\u0024A\u003D\u003D : 
   \u0023\u003Dze6FIYkiP3oZN9Jh5iL6yAQD0ZiryKZtmvP3CdQL6Zy_U21JigQ\u003D\u003D
 {
   private static \u0023\u003Dze6FIYkiP3oZN9Jh5iL6yAQD0ZiryKZtmvP3CdQL6Zy_U21JigQ\u003D\u003D \u0023\u003Dzj9RABVg\u003D;
@@ -14,7 +14,7 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdjQ2_iFE7GeQXQiaDXkJcgDkW
   {
   }
 
-  internal static \u0023\u003Dze6FIYkiP3oZN9Jh5iL6yAQD0ZiryKZtmvP3CdQL6Zy_U21JigQ\u003D\u003D \u0023\u003DzFvAsfEI\u003D()
+  public static \u0023\u003Dze6FIYkiP3oZN9Jh5iL6yAQD0ZiryKZtmvP3CdQL6Zy_U21JigQ\u003D\u003D \u0023\u003DzFvAsfEI\u003D()
   {
     return \u0023\u003Dz03BSxVLolBnG92GmtCJpdjQ2_iFE7GeQXQiaDXkJcgDkWOKV\u0024A\u003D\u003D.\u0023\u003Dzj9RABVg\u003D ?? (\u0023\u003Dz03BSxVLolBnG92GmtCJpdjQ2_iFE7GeQXQiaDXkJcgDkWOKV\u0024A\u003D\u003D.\u0023\u003Dzj9RABVg\u003D = (\u0023\u003Dze6FIYkiP3oZN9Jh5iL6yAQD0ZiryKZtmvP3CdQL6Zy_U21JigQ\u003D\u003D) new \u0023\u003Dz03BSxVLolBnG92GmtCJpdjQ2_iFE7GeQXQiaDXkJcgDkWOKV\u0024A\u003D\u003D());
   }

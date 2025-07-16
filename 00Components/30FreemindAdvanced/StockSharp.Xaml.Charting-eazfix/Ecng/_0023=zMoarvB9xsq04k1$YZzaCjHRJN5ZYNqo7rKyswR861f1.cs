@@ -15,7 +15,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
 #nullable disable
-internal sealed class \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C(
+public sealed class \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C(
   IAnnotation _param1) : 
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D(_param1),
   \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x,

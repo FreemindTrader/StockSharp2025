@@ -14,7 +14,7 @@ using System.Xml.Serialization;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal abstract class AnchorPointAnnotation : 
+public abstract class AnchorPointAnnotation : 
   AnnotationBase,
   IXmlSerializable,
   IPublishMouseEvents,
@@ -139,7 +139,7 @@ internal abstract class AnchorPointAnnotation :
     public DependencyObject \u0023\u003Dz6iFJYho\u003D;
     public DependencyPropertyChangedEventArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzqD_p60kW19tqQsYC8u0B0xg\u003D()
+    public void \u0023\u003DzqD_p60kW19tqQsYC8u0B0xg\u003D()
     {
       AnnotationBase.OnRenderablePropertyChanged(this.\u0023\u003Dz6iFJYho\u003D, this.\u0023\u003Dz1BK01YA\u003D);
     }

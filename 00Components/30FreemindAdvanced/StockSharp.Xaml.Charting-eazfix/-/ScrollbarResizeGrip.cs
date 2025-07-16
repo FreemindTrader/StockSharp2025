@@ -7,9 +7,9 @@
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ScrollbarResizeGrip : 
+public sealed class ScrollbarResizeGrip : 
   Control
 {
   public ScrollbarResizeGrip()

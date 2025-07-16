@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal static class TimeSpanExtensions
+    public static class TimeSpanExtensions
     {
-        internal const double DaysInYear = 365.2425;
-        internal const double DaysInMonth = 30.436875;
+        public const double DaysInYear = 365.2425;
+        public const double DaysInMonth = 30.436875;
 
-        internal static bool IsZero( this TimeSpan timeSpan )
+        public static bool IsZero( this TimeSpan timeSpan )
         {
             return timeSpan == TimeSpan.Zero;
         }
 
-        internal static TimeSpan FromMonths( int numberMonths )
+        public static TimeSpan FromMonths( int numberMonths )
         {
             return TimeSpan.FromDays( numberMonths * 30.436875 );
         }
 
-        internal static TimeSpan FromWeeks( int numberWeeks )
+        public static TimeSpan FromWeeks( int numberWeeks )
         {
             return TimeSpan.FromDays( numberWeeks * 7 );
         }
@@ -37,7 +37,7 @@ namespace StockSharp.Xaml.Charting
             return NumberUtil.IsDivisibleBy( current.Ticks, ( double ) other.Ticks );
         }
 
-        internal static bool IsAdditionValid( this TimeSpan current, TimeSpan delta )
+        public static bool IsAdditionValid( this TimeSpan current, TimeSpan delta )
         {
             bool flag = false;
             if ( current + delta < TimeSpan.MaxValue )
@@ -48,7 +48,7 @@ namespace StockSharp.Xaml.Charting
             return flag;
         }
     }
-    internal static class DateUtil
+    public static class DateUtil
     {
         private static readonly List<int> QuarterMonths = new List<int>(   new int[ 5 ]
         {
@@ -82,7 +82,7 @@ namespace StockSharp.Xaml.Charting
         private static readonly TimeSpan ThreeMonths = TimeSpanExtensions.FromMonths( 3 );
         private static readonly TimeSpan OneMonth = TimeSpanExtensions.FromMonths( 1 );
 
-        internal static DateTime Max( DateTime a, DateTime b )
+        public static DateTime Max( DateTime a, DateTime b )
         {
             if ( a.Ticks <= b.Ticks )
             {
@@ -92,7 +92,7 @@ namespace StockSharp.Xaml.Charting
             return a;
         }
 
-        internal static DateTime Min( DateTime a, DateTime b )
+        public static DateTime Min( DateTime a, DateTime b )
         {
             if ( a.Ticks >= b.Ticks )
             {
@@ -102,7 +102,7 @@ namespace StockSharp.Xaml.Charting
             return a;
         }
 
-        internal static bool IsDivisibleBy( DateTime current, TimeSpan dateSpan )
+        public static bool IsDivisibleBy( DateTime current, TimeSpan dateSpan )
         {
             if ( dateSpan.Ticks % OneYear.Ticks == 0L && current.Day == 1 && current.Month == 1 || dateSpan.Ticks % TimeSpanExtensions.FromMonths( 1 ).Ticks == 0L && current.Day == 1 )
             {
@@ -112,7 +112,7 @@ namespace StockSharp.Xaml.Charting
             return RoundUp( current, dateSpan ).Equals( current );
         }
 
-        internal static DateTime RoundUp( DateTime current, TimeSpan dateSpan )
+        public static DateTime RoundUp( DateTime current, TimeSpan dateSpan )
         {
             if ( dateSpan.IsDivisibleBy( OneYear ) )
             {

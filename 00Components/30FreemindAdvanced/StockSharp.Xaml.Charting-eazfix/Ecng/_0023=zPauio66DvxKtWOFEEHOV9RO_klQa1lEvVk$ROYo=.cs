@@ -8,14 +8,14 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D : EventArgs
+public sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D : EventArgs
 {
   
   private IRange \u0023\u003Dzyf57hTxonZCNKHGBsGM3_ZE\u003D;
   
   private \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D \u0023\u003DzKEcDCute\u0024HaDe59alg\u003D\u003D;
 
-  internal \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D(
+  public \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D(
     IComparable _param1,
     IComparable _param2,
     \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D _param3)
@@ -24,7 +24,7 @@ internal sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\
     this.\u0023\u003Dzj4L72E7lKmim(_param3);
   }
 
-  internal \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D(
+  public \u0023\u003DzPauio66DvxKtWOFEEHOV9RO_klQa1lEvVk\u0024ROYo\u003D(
     IRange _param1,
     \u0023\u003DzPMVhs2rsXmQ8bFDDzjWvxwSDkEh3cCAq4Q\u003D\u003D _param2)
     : this(_param1.Min, _param1.Max, _param2)

@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
+public interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
 {
   Brush GridBorderBrush { get; set; }
 

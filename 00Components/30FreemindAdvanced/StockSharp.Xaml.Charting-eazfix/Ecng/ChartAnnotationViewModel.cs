@@ -11,7 +11,7 @@ using System.Collections;
 using System.Linq;
 namespace StockSharp.Xaml.Charting;
 #nullable disable
-internal sealed class ChartAnnotationViewModel( ChartAnnotation annotation) :  ChartCompentWpfBaseViewModel<ChartAnnotation>(annotation)
+public sealed class ChartAnnotationViewModel( ChartAnnotation annotation) :  ChartCompentWpfBaseViewModel<ChartAnnotation>(annotation)
 {
   protected override void UpdateUi()
   {
@@ -37,7 +37,7 @@ internal sealed class ChartAnnotationViewModel( ChartAnnotation annotation) :  C
     public ChartAnnotationViewModel _variableSome3535;
     public IEnumerableEx<ChartDrawData.IDrawValue> _drawValue0384;
 
-    internal void SomeMethod0333()
+    public void SomeMethod0333()
     {
       this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw(this._variableSome3535.ChartComponentView, ((IEnumerable) this._drawValue0384).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>());
     }

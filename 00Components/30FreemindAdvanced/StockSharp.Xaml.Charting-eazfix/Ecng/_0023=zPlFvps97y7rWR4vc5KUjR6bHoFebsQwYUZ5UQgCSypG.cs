@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzPlFvps97y7rWR4vc5KUjR6bHoFebsQwYUZ5UQgCSypG\u0024EAe\u0024qwEXvbmW31ox
+public static class \u0023\u003DzPlFvps97y7rWR4vc5KUjR6bHoFebsQwYUZ5UQgCSypG\u0024EAe\u0024qwEXvbmW31ox
 {
   private static void \u0023\u003Dz\u0024qTWKsG3dS\u00241hxzQkkwNIls\u003D(
     double[,] _param0,

@@ -11,9 +11,9 @@ using System.Globalization;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltrachartElementToSettingsObjectConverter :
+public sealed class UltrachartElementToSettingsObjectConverter :
   IMultiValueConverter
 {
     object IMultiValueConverter.Convert(

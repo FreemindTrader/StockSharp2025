@@ -217,7 +217,7 @@ public class ChartLineElement :
     storage.SetValue<bool>("ShowAxisMarker", this.ShowAxisMarker);
   }
 
-  internal override ChartLineElement Clone(ChartLineElement _param1)
+  public override ChartLineElement Clone(ChartLineElement _param1)
   {
     _param1 = base.Clone(_param1);
     _param1.Color = this.Color;

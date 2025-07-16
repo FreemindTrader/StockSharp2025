@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsRO4mNdwpK5PEsZ4TiQv37AC0sHCE\u003D
+public sealed class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsRO4mNdwpK5PEsZ4TiQv37AC0sHCE\u003D
 {
   private double[] \u0023\u003DzNXgs0N0\u003D = new double[8];
 

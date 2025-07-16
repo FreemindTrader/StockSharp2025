@@ -16,10 +16,10 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [System.Windows.Markup.ContentProperty("PointMarker")]
-internal abstract class BaseRenderableSeries : 
+public abstract class BaseRenderableSeries : 
   ContentControl,
   IDrawable,
   IXmlSerializable,
@@ -417,7 +417,7 @@ internal abstract class BaseRenderableSeries :
     this.\u0023\u003DzxZnVF9e_Olw9LuFVWAjGc3e_XlJ2yyzlwQ\u003D\u003D = _param1;
   }
 
-  internal virtual bool \u0023\u003Dz_2ANtA3ZTojx\u00243R38A\u003D\u003D()
+  public virtual bool \u0023\u003Dz_2ANtA3ZTojx\u00243R38A\u003D\u003D()
   {
     return this.\u0023\u003DzWcglUt8A7ABL();
   }
@@ -850,7 +850,7 @@ internal abstract class BaseRenderableSeries :
     return _param0 >= _param1 && _param0 <= _param2;
   }
 
-  internal \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+  public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
     Point _param1)
   {
     return this.\u0023\u003DzZZbJdAS6fDJ\u0024(this.\u0023\u003DzjuB\u0024Pa8\u003D(_param1));
@@ -968,7 +968,7 @@ internal abstract class BaseRenderableSeries :
     this.\u0023\u003Dzmf\u0024vfR3OJQU9();
   }
 
-  protected internal ISciChartSurface \u0023\u003DzoXzc48\u0024TAMxP()
+  protected public ISciChartSurface \u0023\u003DzoXzc48\u0024TAMxP()
   {
     return this.Services() == null ? (ISciChartSurface) null : this.Services().GetService<ISciChartSurface>();
   }
@@ -1113,7 +1113,7 @@ internal abstract class BaseRenderableSeries :
     ls4St64EqzfbaEjd.\u0023\u003Dzmf\u0024vfR3OJQU9();
   }
 
-  internal double \u0023\u003Dz7qQnbobKkea3() => 7.07;
+  public double \u0023\u003Dz7qQnbobKkea3() => 7.07;
 
   Style IRenderableSeries.\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV1DuKLm1V1cPvuYOQQ3vfm3CE6f2xA\u003D()
   {
@@ -1169,7 +1169,7 @@ internal abstract class BaseRenderableSeries :
   {
     public static readonly BaseRenderableSeries.SomeClass34343383 SomeMethond0343 = new BaseRenderableSeries.SomeClass34343383();
 
-    internal void \u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD(
+    public void \u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

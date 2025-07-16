@@ -12,7 +12,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 #nullable disable
-internal static class SettingsStorageHelper
+public static class SettingsStorageHelper
 {
     private static readonly List<IDisposable> _myList = new List<IDisposable>();
 

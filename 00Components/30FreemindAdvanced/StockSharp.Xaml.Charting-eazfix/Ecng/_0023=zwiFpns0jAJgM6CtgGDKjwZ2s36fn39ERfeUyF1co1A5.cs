@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows;
 
 #nullable disable
-internal interface \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ
+public interface \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ
 {
   void \u0023\u003DzkpjYNfwbvIK8(
     Point _param1,

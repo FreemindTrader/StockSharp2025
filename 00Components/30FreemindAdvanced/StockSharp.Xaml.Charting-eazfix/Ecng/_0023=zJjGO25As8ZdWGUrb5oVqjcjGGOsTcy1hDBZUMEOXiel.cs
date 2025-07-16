@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 
 #nullable disable
-internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D : 
+public abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D : 
   ChartModifierBase
 {
   
@@ -179,7 +179,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzewO6Ul9K\u0024SLpuJ4OGKNfCa8\u003D(
+    public void \u0023\u003DzewO6Ul9K\u0024SLpuJ4OGKNfCa8\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.\u0023\u003DzsSwjrBzrsGPJ(this.\u0023\u003Dz1BK01YA\u003D);
@@ -190,7 +190,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzFO_QFsMMv3T4avua1zSqfuQ\u003D(
+    public void \u0023\u003DzFO_QFsMMv3T4avua1zSqfuQ\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.OnModifierMouseMove(this.\u0023\u003Dz1BK01YA\u003D);
@@ -201,7 +201,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzhuznkMQPOxftlXSZ8zSfUF4\u003D(
+    public void \u0023\u003DzhuznkMQPOxftlXSZ8zSfUF4\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.\u0023\u003DzQTINWhMByBmJ(this.\u0023\u003Dz1BK01YA\u003D);
@@ -212,7 +212,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003Dz0DsmJVUXfhPhpZmtoFnVk74\u003D(
+    public void \u0023\u003Dz0DsmJVUXfhPhpZmtoFnVk74\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.\u0023\u003DzpmQpuKvOtHIk(this.\u0023\u003Dz1BK01YA\u003D);
@@ -223,7 +223,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzJNzKLhVBhB8V0jFFfaqciuM\u003D(
+    public void \u0023\u003DzJNzKLhVBhB8V0jFFfaqciuM\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.OnModifierMouseUp(this.\u0023\u003Dz1BK01YA\u003D);
@@ -234,7 +234,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzS6kC7gBPEQYPF\u0024O997exx0w\u003D(
+    public void \u0023\u003DzS6kC7gBPEQYPF\u0024O997exx0w\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.\u0023\u003Dz0yya794Z8OaI(this.\u0023\u003Dz1BK01YA\u003D);
@@ -245,7 +245,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzJV4NrUzfYPGnbAVItdfqjdc\u003D(
+    public void \u0023\u003DzJV4NrUzfYPGnbAVItdfqjdc\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.\u0023\u003Dz5y8F1YNwkhnW(this.\u0023\u003Dz1BK01YA\u003D);
@@ -256,7 +256,7 @@ internal abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXiel
   {
     public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal void \u0023\u003DzMRoV981IuFZcGKI1F3DxVjI\u003D(
+    public void \u0023\u003DzMRoV981IuFZcGKI1F3DxVjI\u003D(
       \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D _param1)
     {
       _param1.OnModifierMouseDown(this.\u0023\u003Dz1BK01YA\u003D);

@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AxisDragCursor : Control
+public sealed class AxisDragCursor : Control
 {
   
   public static readonly DependencyProperty \u0023\u003DzyrnkYrk\u003D = DependencyProperty.Register(nameof (Angle), typeof (double), typeof (AxisDragCursor), new PropertyMetadata((object) 0.0));

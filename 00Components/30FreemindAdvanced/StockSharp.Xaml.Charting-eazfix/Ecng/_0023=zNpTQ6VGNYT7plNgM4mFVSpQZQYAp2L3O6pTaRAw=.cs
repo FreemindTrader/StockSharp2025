@@ -7,7 +7,7 @@
 using \u002D;
 
 #nullable disable
-internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSpQZQYAp2L3O6pTaRAw\u003D : 
+public sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSpQZQYAp2L3O6pTaRAw\u003D : 
   ChartModifierBase
 {
 }

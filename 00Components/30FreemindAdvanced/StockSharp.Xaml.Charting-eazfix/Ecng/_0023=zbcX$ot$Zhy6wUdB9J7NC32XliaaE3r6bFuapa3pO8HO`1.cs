@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T> : 
+public abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T> : 
   \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG47w9OaqF_aMuilIfFliOpay<T>,
   ITickProvider
   where T : IComparable
@@ -62,7 +62,7 @@ internal abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bF
     public static readonly \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383();
     public static Func<T, double> \u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D;
 
-    internal double \u0023\u003Dzjr185UPePXNseau9xK_z_0g\u003D(T _param1)
+    public double \u0023\u003Dzjr185UPePXNseau9xK_z_0g\u003D(T _param1)
     {
       return _param1.ToDouble();
     }

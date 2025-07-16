@@ -7,7 +7,7 @@
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y
+public sealed class \u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y
 {
   public static readonly DependencyProperty \u0023\u003DzQUfZszk\u003D = DependencyProperty.RegisterAttached("Freeze", typeof (bool), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y), new PropertyMetadata((object) false, new PropertyChangedCallback(\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.\u0023\u003Dzsw9pqJ9tAkiO)));
 

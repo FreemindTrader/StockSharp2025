@@ -32,9 +32,9 @@ using System.Windows.Markup;
 using System.Windows.Media;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class FxAnnotationModifier : 
+public sealed class FxAnnotationModifier : 
   fxAnnotationCreationModifier,
   IComponentConnector
 {
@@ -513,7 +513,7 @@ internal sealed class FxAnnotationModifier :
 
   [DebuggerNonUserCode]
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
-  internal Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
+  public Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
   {
     return Delegate.CreateDelegate(_param1, (object) this, _param2);
   }
@@ -526,7 +526,7 @@ internal sealed class FxAnnotationModifier :
     this.\u0023\u003DzQGCmQMjHdLKS = true;
   }
 
-  internal static IComparable \u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(
+  public static IComparable \u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(
     IComparable _param0,
     ref FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
   {
@@ -553,7 +553,7 @@ internal sealed class FxAnnotationModifier :
     }
   }
 
-  internal static IComparable \u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(
+  public static IComparable \u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(
     IComparable _param0,
     ref FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
   {
@@ -567,7 +567,7 @@ internal sealed class FxAnnotationModifier :
     }));
   }
 
-  internal static IComparable \u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(
+  public static IComparable \u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(
     IComparable _param0,
     ref FxAnnotationModifier.SomeClass343 _param1)
   {
@@ -596,7 +596,7 @@ internal sealed class FxAnnotationModifier :
     }
   }
 
-  internal static IComparable \u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(
+  public static IComparable \u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(
     IComparable _param0)
   {
     switch (_param0)
@@ -622,13 +622,13 @@ internal sealed class FxAnnotationModifier :
     public static Action<IAnnotation> \u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D;
     public static Action<IAnnotation> \u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D;
 
-    internal void \u0023\u003Dzf_OX3zxNZIoqduZEY_a_\u0024gQ\u003D(
+    public void \u0023\u003Dzf_OX3zxNZIoqduZEY_a_\u0024gQ\u003D(
       IAnnotation _param1)
     {
       _param1.set_IsEditable(true);
     }
 
-    internal void \u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1(
+    public void \u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1(
       IAnnotation _param1)
     {
       _param1.set_IsSelected(false);
@@ -659,7 +659,7 @@ internal sealed class FxAnnotationModifier :
     public AnnotationBase \u0023\u003DzLXiKo\u0024A\u003D;
     public DelegateCommand<AnnotationBase> \u0023\u003DztKpRxYMDxV\u00243;
 
-    internal void \u0023\u003DqkJAvLS57TQDltohwMlvUc8ToXY9\u0024wVsEDT1RmCTmQAl1TTvH5MP818enEgRePrx8(
+    public void \u0023\u003DqkJAvLS57TQDltohwMlvUc8ToXY9\u0024wVsEDT1RmCTmQAl1TTvH5MP818enEgRePrx8(
       AnnotationBase _param1)
     {
       this._variableSome3535.\u0023\u003DzfS3q6Qc\u003D.Remove((IAnnotation) _param1);
@@ -671,7 +671,7 @@ internal sealed class FxAnnotationModifier :
       this._variableSome3535.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003DzXartur54T48t(chartAnnotation);
     }
 
-    internal void \u0023\u003Dzn4dNgi0mxbbCP\u0024DWxprQswg\u003D(AnnotationBase _param1)
+    public void \u0023\u003Dzn4dNgi0mxbbCP\u0024DWxprQswg\u003D(AnnotationBase _param1)
     {
       FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D();
       wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D = _param1;
@@ -683,7 +683,7 @@ internal sealed class FxAnnotationModifier :
       m53T5BwgtpbkV9ZEjd.IsOpen = true;
     }
 
-    internal void \u0023\u003Dq7mcVfPvAB3Y4duXTm_bwIHboyLUu0\u0024G63ba4grB5MsPr1uOUJsYns2NOLvS5EdHu_qwqq\u0024dzh7uvWZ_cRJz2Qw\u003D\u003D(
+    public void \u0023\u003Dq7mcVfPvAB3Y4duXTm_bwIHboyLUu0\u0024G63ba4grB5MsPr1uOUJsYns2NOLvS5EdHu_qwqq\u0024dzh7uvWZ_cRJz2Qw\u003D\u003D(
       object _param1,
       KeyEventArgs _param2)
     {
@@ -701,35 +701,35 @@ internal sealed class FxAnnotationModifier :
       }
     }
 
-    internal void \u0023\u003DqsO0aV2_u3gwC4_hwIR4BeABhYV_7m2A\u0024ZOJFQhD2VppSu5lNDzXhb76mKBs5qy0DljWs2YahWqjBYAlTloZS5Q\u003D\u003D(
+    public void \u0023\u003DqsO0aV2_u3gwC4_hwIR4BeABhYV_7m2A\u0024ZOJFQhD2VppSu5lNDzXhb76mKBs5qy0DljWs2YahWqjBYAlTloZS5Q\u003D\u003D(
       object _param1,
       EventArgs _param2)
     {
       Keyboard.Focus((IInputElement) this.\u0023\u003DzLXiKo\u0024A\u003D);
     }
 
-    internal void \u0023\u003DqdGbJy3AROhfZcOB8qLyu\u0024jJUN5YXrNmxgUQMxhoWOUyOvmpRAlpHEMxwLY7VT_bNf7h7A1Gpy0sisqLkbC4SE1lJB8L2p27M0jUbIyr1qsE\u003D(
+    public void \u0023\u003DqdGbJy3AROhfZcOB8qLyu\u0024jJUN5YXrNmxgUQMxhoWOUyOvmpRAlpHEMxwLY7VT_bNf7h7A1Gpy0sisqLkbC4SE1lJB8L2p27M0jUbIyr1qsE\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
       Keyboard.Focus((IInputElement) this.\u0023\u003DzLXiKo\u0024A\u003D);
     }
 
-    internal void \u0023\u003DqwGFSEwECiuHXXjEFGHe8QY\u00247phLKFc6Uur2mC93l2Vt3u_d_e1\u00246awwFvq85QGOeUttMmP5CScJ0f9g25CtXrQ\u003D\u003D(
+    public void \u0023\u003DqwGFSEwECiuHXXjEFGHe8QY\u00247phLKFc6Uur2mC93l2Vt3u_d_e1\u00246awwFvq85QGOeUttMmP5CScJ0f9g25CtXrQ\u003D\u003D(
       object _param1,
       EventArgs _param2)
     {
       this._variableSome3535.\u0023\u003DzqRVOnAc\u003D().IsOpen = false;
     }
 
-    internal void \u0023\u003DqyB2RaLDacQfKp3hzEOo9jtCYmWI0NuQIdJ1OucO7P2ZS1UNCupBPv2q788ONhBifj7\u00242eFsTAo3xcpoGsx2qiA\u003D\u003D(
+    public void \u0023\u003DqyB2RaLDacQfKp3hzEOo9jtCYmWI0NuQIdJ1OucO7P2ZS1UNCupBPv2q788ONhBifj7\u00242eFsTAo3xcpoGsx2qiA\u003D\u003D(
       object _param1,
       EventArgs _param2)
     {
       this._variableSome3535.\u0023\u003DzmHijKtV8bKDY = true;
     }
 
-    internal void \u0023\u003DqxZFddEyfLMrUR0cfuiIOvt2\u0024\u0024WepGdv1wxLS58FfD260\u0024X298XW8T6e3WebsLZDqwhKx85FubKoFI64m1eByJA\u003D\u003D(
+    public void \u0023\u003DqxZFddEyfLMrUR0cfuiIOvt2\u0024\u0024WepGdv1wxLS58FfD260\u0024X298XW8T6e3WebsLZDqwhKx85FubKoFI64m1eByJA\u003D\u003D(
       object _param1,
       EventArgs _param2)
     {
@@ -756,7 +756,7 @@ internal sealed class FxAnnotationModifier :
   {
     public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
 
-    internal bool \u0023\u003DzJdTk1tU_hZdMZEOQ7Sdo5JQ\u003D(
+    public bool \u0023\u003DzJdTk1tU_hZdMZEOQ7Sdo5JQ\u003D(
       IAnnotation _param1)
     {
       return _param1 != this.\u0023\u003Dz2vouRgM\u003D;
@@ -769,7 +769,7 @@ internal sealed class FxAnnotationModifier :
     public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
     public Action<DependencyPropertyChangedEventArgs> \u0023\u003DzDg_APFfs\u0024qGS;
 
-    internal void \u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D(
+    public void \u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D(
     #nullable enable
     object? _param1, EventArgs _param2)
     {
@@ -778,19 +778,19 @@ internal sealed class FxAnnotationModifier :
       this._variableSome3535.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003DzSZqzgFQySfHr(chartAnnotation, Equatable<ChartAnnotation>.op_Equality((Equatable<ChartAnnotation>) chartAnnotation, (ChartAnnotation) null) ? (ChartDrawData.AnnotationData) null : this._variableSome3535.\u0023\u003DzCVYc\u0024mw923hM(annotationBase));
     }
 
-    internal void \u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D(object? _param1, EventArgs _param2)
+    public void \u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D(object? _param1, EventArgs _param2)
     {
       this._variableSome3535.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003DzSZqzgFQySfHr((ChartAnnotation) null, (ChartDrawData.AnnotationData) null);
     }
 
-    internal void \u0023\u003Dz2YagnOQq\u0024fEh5b7gci8gwU8\u003D(
+    public void \u0023\u003Dz2YagnOQq\u0024fEh5b7gci8gwU8\u003D(
     #nullable disable
     DependencyProperty _param1)
     {
       this.\u0023\u003Dz2vouRgM\u003D.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
     }
 
-    internal void \u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D(
+    public void \u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D(
       DependencyPropertyChangedEventArgs _param1)
     {
       ChartAnnotation chartAnnotation;

@@ -9,9 +9,9 @@ using System.Diagnostics;
 using System.Threading;
 
 #nullable disable
-internal static class \u0023\u003DzNG2uawy2NTYfqbxmZc0c9q2vK6fv9fAKfw\u003D\u003D
+public static class \u0023\u003DzNG2uawy2NTYfqbxmZc0c9q2vK6fv9fAKfw\u003D\u003D
 {
-  internal sealed class \u0023\u003DzBtFFDFo\u003D : 
+  public sealed class \u0023\u003DzBtFFDFo\u003D : 
     \u0023\u003Dz4W7JYRMsBPlBwymwCeSutVEBWj4hc9Bzog\u003D\u003D,
     \u0023\u003DzMW4ZQCMRTG19V1VPZOfZ\u0024NS5i9pNJmGd3Q\u003D\u003D<int>,
     \u0023\u003Dzd6r5LVm59JJMRzqbH7tZtFJnrMecH5UKDA\u003D\u003D<int>,
@@ -99,7 +99,7 @@ internal static class \u0023\u003DzNG2uawy2NTYfqbxmZc0c9q2vK6fv9fAKfw\u003D\u003
     }
   }
 
-  internal sealed class \u0023\u003Dze2ZNMQU\u003D : 
+  public sealed class \u0023\u003Dze2ZNMQU\u003D : 
     \u0023\u003Dz4W7JYRMsBPlBwymwCeSutVEBWj4hc9Bzog\u003D\u003D,
     \u0023\u003DzMW4ZQCMRTG19V1VPZOfZ\u0024NS5i9pNJmGd3Q\u003D\u003D<int>,
     \u0023\u003Dzd6r5LVm59JJMRzqbH7tZtFJnrMecH5UKDA\u003D\u003D<int>,
@@ -245,7 +245,7 @@ label_13:
     }
   }
 
-  internal sealed class \u0023\u003DziNfFVIA\u003D : 
+  public sealed class \u0023\u003DziNfFVIA\u003D : 
     \u0023\u003Dz4W7JYRMsBPlBwymwCeSutVEBWj4hc9Bzog\u003D\u003D,
     \u0023\u003DzMW4ZQCMRTG19V1VPZOfZ\u0024NS5i9pNJmGd3Q\u003D\u003D<int>,
     \u0023\u003Dzd6r5LVm59JJMRzqbH7tZtFJnrMecH5UKDA\u003D\u003D<int>,

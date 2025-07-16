@@ -5,7 +5,7 @@ namespace SciChart.Data.Numerics.GenericMath;
 
 
 #nullable disable
-internal sealed class UIntMath : IMath<uint>
+public sealed class UIntMath : IMath<uint>
 {
 
     public uint MinValue => 0;

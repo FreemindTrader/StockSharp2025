@@ -16,7 +16,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-internal abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D : 
+public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D : 
   BaseRenderableSeries
 {
   
@@ -597,7 +597,7 @@ internal abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc
       public int \u0023\u003DzZFj5Dy0\u003D;
       public \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
-      internal bool OnChartAreaElementsRemovingAt(
+      public bool OnChartAreaElementsRemovingAt(
         \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D _param1)
       {
         return _param1.\u0023\u003Dz8OGuO4J3wG6m().Width <= (double) this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dze2ZNMQU\u003D && _param1.\u0023\u003Dz8OGuO4J3wG6m().Height <= (double) this.\u0023\u003DzZFj5Dy0\u003D;
@@ -634,17 +634,17 @@ internal abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc
     public static Func<double, double> \u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D;
     public static Func<KeyValuePair<double, CandlePriceLevel>, Decimal> \u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D;
 
-    internal double \u0023\u003DzKBZNHp1oDCmRkKG885kIhLueFZ1lDhX69w\u003D\u003D(double _param1)
+    public double \u0023\u003DzKBZNHp1oDCmRkKG885kIhLueFZ1lDhX69w\u003D\u003D(double _param1)
     {
       return _param1;
     }
 
-    internal double \u0023\u003DzetzA7_VqP5PPGCJmkZk73EvpkDxRjOED9w\u003D\u003D(double _param1)
+    public double \u0023\u003DzetzA7_VqP5PPGCJmkZk73EvpkDxRjOED9w\u003D\u003D(double _param1)
     {
       return _param1;
     }
 
-    internal Decimal \u0023\u003DzysAJjFChL7t5jDsdHzdXQkULmvNn67k19w\u003D\u003D(
+    public Decimal \u0023\u003DzysAJjFChL7t5jDsdHzdXQkULmvNn67k19w\u003D\u003D(
       KeyValuePair<double, CandlePriceLevel> _param1)
     {
       CandlePriceLevel candlePriceLevel = _param1.Value;
@@ -659,17 +659,17 @@ internal abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc
     public TimeframeSegmentDataSeries \u0023\u003DzPBKNgzqH_\u0024\u0024_;
     public double \u0023\u003DzgSMmZSBP2RDX;
 
-    internal bool \u0023\u003DzaRGXRoZmlum1ArFUPdKhN1HIdaER(double _param1)
+    public bool \u0023\u003DzaRGXRoZmlum1ArFUPdKhN1HIdaER(double _param1)
     {
       return _param1 > this.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D && _param1 < this.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D;
     }
 
-    internal CandlePriceLevel \u0023\u003DzAo1\u0024ndOCIEmE3q7iVa0gqqG3ZEgh(double _param1)
+    public CandlePriceLevel \u0023\u003DzAo1\u0024ndOCIEmE3q7iVa0gqqG3ZEgh(double _param1)
     {
       return this.\u0023\u003DzPBKNgzqH_\u0024\u0024_.GetVolumeByPrice(_param1, this.\u0023\u003DzgSMmZSBP2RDX);
     }
 
-    internal bool \u0023\u003DzTxCbbIqjlYqMrkZh9\u00249pC9BqtVdY(
+    public bool \u0023\u003DzTxCbbIqjlYqMrkZh9\u00249pC9BqtVdY(
       KeyValuePair<double, CandlePriceLevel> _param1)
     {
       if (_param1.Key <= this.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D || _param1.Key >= this.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D)

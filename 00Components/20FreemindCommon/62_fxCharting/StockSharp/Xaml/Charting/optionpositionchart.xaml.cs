@@ -1,6 +1,6 @@
 ﻿using Ecng.Collections;
 using Ecng.Serialization;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.ChartModifiers;
 using SciChart.Charting.Visuals.Annotations;
 using StockSharp.Algo.Derivatives;

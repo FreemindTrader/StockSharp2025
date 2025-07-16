@@ -1,7 +1,7 @@
 ﻿#nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal enum ClipMode
+public enum ClipMode
 {
     None,
     StretchAtExtents,

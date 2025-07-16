@@ -7,9 +7,9 @@
 using System.Windows;
 
 #nullable disable
-internal static class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3N4WH8Xv4Js0cFdhBIo\u003D
+public static class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3N4WH8Xv4Js0cFdhBIo\u003D
 {
-  internal static Point \u0023\u003Dz2xcanLolC38g(this Rect _param0, Point _param1)
+  public static Point \u0023\u003Dz2xcanLolC38g(this Rect _param0, Point _param1)
   {
     double right = _param0.Right;
     double left = _param0.Left;
@@ -22,7 +22,7 @@ internal static class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3N4WH8Xv4Js0cFdhBIo\
     return _param1;
   }
 
-  internal static Rect \u0023\u003DzZqkixZQ\u003D(this Rect _param0, double _param1)
+  public static Rect \u0023\u003DzZqkixZQ\u003D(this Rect _param0, double _param1)
   {
     return new Rect(_param0.X - _param1, _param0.Y - _param1, _param0.Width + 2.0 * _param1, _param0.Height + 2.0 * _param1);
   }

@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D : 
+public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D : 
   IDisposable,
   \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D
 {

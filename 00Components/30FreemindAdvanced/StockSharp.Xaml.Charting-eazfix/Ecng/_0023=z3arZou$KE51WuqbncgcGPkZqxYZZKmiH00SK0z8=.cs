@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D : IDisposable
+public sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D : IDisposable
 {
   
   private readonly \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D \u0023\u003DzVBVazrI\u003D;
@@ -23,7 +23,7 @@ internal sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\
   
   private volatile bool \u0023\u003DzvBK\u00248KQ\u003D;
 
-  internal \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D(
+  public \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPkZqxYZZKmiH00SK0z8\u003D(
     double? _param1,
     \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D _param2,
     Action _param3)

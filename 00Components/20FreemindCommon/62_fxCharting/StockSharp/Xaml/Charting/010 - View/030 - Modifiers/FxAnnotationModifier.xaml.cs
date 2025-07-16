@@ -16,7 +16,7 @@ using StockSharp.Localization;
 using Ecng.Common;
 using System.Runtime.InteropServices;
 using Ecng.Collections;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Common;
 using System.CodeDom.Compiler;
 using System.Collections.Generic; 

@@ -21,7 +21,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-internal sealed class AnnotationCollection : 
+public sealed class AnnotationCollection : 
   ObservableCollection<IAnnotation>,
   IXmlSerializable
 {
@@ -32,7 +32,7 @@ internal sealed class AnnotationCollection :
   
   private Delegate \u0023\u003Dzz9oqqeJpzNfoAe16JA\u003D\u003D;
   
-  internal Action \u0023\u003Dzpc1\u0024iG76MVacUIlTZA\u003D\u003D = AnnotationCollection.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (AnnotationCollection.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Action(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D));
+  public Action \u0023\u003Dzpc1\u0024iG76MVacUIlTZA\u003D\u003D = AnnotationCollection.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (AnnotationCollection.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Action(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D));
 
   public AnnotationCollection()
   {
@@ -110,7 +110,7 @@ internal sealed class AnnotationCollection :
     base.ClearItems();
   }
 
-  internal void \u0023\u003Dzdb4OQr1\u0024A5Qg(
+  public void \u0023\u003Dzdb4OQr1\u0024A5Qg(
     object _param1,
     NotifyCollectionChangedEventArgs _param2)
   {
@@ -272,12 +272,12 @@ internal sealed class AnnotationCollection :
     return ((IEnumerable<IAnnotation>) lrrNtIjstOuVg4Rro.\u0023\u003DzAG7Twks\u003D).All<IAnnotation>(new Func<IAnnotation, bool>(lrrNtIjstOuVg4Rro.\u0023\u003DzfZsZRxWRaYq2NFL\u0024VzVo6bw\u003D));
   }
 
-  internal Delegate \u0023\u003Dz96bk__LBZFAg2I8HPQ\u003D\u003D()
+  public Delegate \u0023\u003Dz96bk__LBZFAg2I8HPQ\u003D\u003D()
   {
     return this.\u0023\u003Dzz9oqqeJpzNfoAe16JA\u003D\u003D;
   }
 
-  internal void \u0023\u003DztYN0Jd9msFURcCzgfw\u003D\u003D(Delegate _param1)
+  public void \u0023\u003DztYN0Jd9msFURcCzgfw\u003D\u003D(Delegate _param1)
   {
     this.\u0023\u003Dzz9oqqeJpzNfoAe16JA\u003D\u003D = _param1;
   }
@@ -309,33 +309,33 @@ internal sealed class AnnotationCollection :
     public static Action<IAnnotation> \u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D;
     public static Action<IAnnotation> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
 
-    internal void \u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D()
+    public void \u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D()
     {
     }
 
-    internal void \u0023\u003Dzmu94CYIyRXEFBQQPPw\u003D\u003D()
+    public void \u0023\u003Dzmu94CYIyRXEFBQQPPw\u003D\u003D()
     {
     }
 
-    internal void \u0023\u003Dzi1mryHm_34LaAslQH6vheC4\u003D(
+    public void \u0023\u003Dzi1mryHm_34LaAslQH6vheC4\u003D(
       IAnnotation _param1)
     {
       _param1.set_IsSelected(false);
     }
 
-    internal void \u0023\u003DzWLL21j0cIbtvfyx1n7j_L3p5Tj3r(
+    public void \u0023\u003DzWLL21j0cIbtvfyx1n7j_L3p5Tj3r(
       IAnnotation _param1)
     {
       _param1.StartDrag(false);
     }
 
-    internal void \u0023\u003DznHZdoyT\u0024EEaTkfWvQEMXoEih2Miy(
+    public void \u0023\u003DznHZdoyT\u0024EEaTkfWvQEMXoEih2Miy(
       IAnnotation _param1)
     {
       _param1.EndDrag();
     }
 
-    internal void \u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D(
+    public void \u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D(
       IAnnotation _param1)
     {
       _param1.set_IsSelected(false);
@@ -346,7 +346,7 @@ internal sealed class AnnotationCollection :
   {
     public IAnnotation \u0023\u003Dz2vouRgM\u003D;
 
-    internal bool \u0023\u003Dzxqad0J2WdWQXWHM7O24\u0024gAw\u003D(
+    public bool \u0023\u003Dzxqad0J2WdWQXWHM7O24\u0024gAw\u003D(
       IAnnotation _param1)
     {
       return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
@@ -358,13 +358,13 @@ internal sealed class AnnotationCollection :
     public IAnnotation \u0023\u003Dz2vouRgM\u003D;
     public IAnnotation[] \u0023\u003DzAG7Twks\u003D;
 
-    internal bool \u0023\u003Dzv2EVeGQzvOiLkeQ6I1bYc_s\u003D(
+    public bool \u0023\u003Dzv2EVeGQzvOiLkeQ6I1bYc_s\u003D(
       IAnnotation _param1)
     {
       return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
     }
 
-    internal bool \u0023\u003DzfZsZRxWRaYq2NFL\u0024VzVo6bw\u003D(
+    public bool \u0023\u003DzfZsZRxWRaYq2NFL\u0024VzVo6bw\u003D(
       IAnnotation _param1)
     {
       return _param1.CanMultiSelect(this.\u0023\u003DzAG7Twks\u003D);
@@ -375,7 +375,7 @@ internal sealed class AnnotationCollection :
   {
     public IAnnotation \u0023\u003Dz2vouRgM\u003D;
 
-    internal bool \u0023\u003DzohWX52bl44U09jwJQRRBQCc\u003D(
+    public bool \u0023\u003DzohWX52bl44U09jwJQRRBQCc\u003D(
       IAnnotation _param1)
     {
       return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
@@ -387,13 +387,13 @@ internal sealed class AnnotationCollection :
     public IAnnotation \u0023\u003Dz2vouRgM\u003D;
     public AnnotationDragDeltaEventArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal bool \u0023\u003DzauLrVnHgfyr3yQ0vEFCCM5c\u003D(
+    public bool \u0023\u003DzauLrVnHgfyr3yQ0vEFCCM5c\u003D(
       IAnnotation _param1)
     {
       return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
     }
 
-    internal void \u0023\u003Dz_njip1a1ig5klNz6gwSkhfw\u003D(
+    public void \u0023\u003Dz_njip1a1ig5klNz6gwSkhfw\u003D(
       IAnnotation _param1)
     {
       _param1.Drag(this.\u0023\u003Dz1BK01YA\u003D.\u0023\u003Dz06oxr0QggddI(), this.\u0023\u003Dz1BK01YA\u003D.\u0023\u003Dz7Pq57plSf4mj());

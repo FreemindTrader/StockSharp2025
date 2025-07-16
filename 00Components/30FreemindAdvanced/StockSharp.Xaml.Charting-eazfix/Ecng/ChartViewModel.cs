@@ -23,7 +23,7 @@ using System.Windows;
 using System.Windows.Input;
 
 
-internal sealed class ChartViewModel : DependencyObject
+public sealed class ChartViewModel : DependencyObject
 {
     public string SelectedTheme
     {
@@ -464,7 +464,7 @@ public ICommand UngroupCommand
     }
 }
 
-internal void \u0023\u003Dzld7tWxZuooQ2UzOmtQ\u003D\u003D(
+public void \u0023\u003Dzld7tWxZuooQ2UzOmtQ\u003D\u003D(
     IChartElement _param1,
     Subscription _param2)
   {
@@ -651,13 +651,13 @@ private sealed class SomeClass34343383
 #nullable disable
     Order>> \u0023\u003DzKeRpc1y1\u0024C\u0024IWjYsyQ\u003D\u003D;
 
-    internal void \u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D(
+    public void \u0023\u003Dz0sbMZcoPgn7DQ3i\u0024I2emR\u00244\u003D(
       ScichartSurfaceMVVM _param1)
     {
       _param1.Area.ViewModel.ShowHiddenAxesCommand.TryExecute((object) null);
     }
 
-internal void ExecuteRemoveAxisCommand2( ChartAxis _param1 )
+public void ExecuteRemoveAxisCommand2( ChartAxis _param1 )
 {
     IChartArea chartArea = _param1.ChartArea;
     if ( ( ( ICollection<IChartAxis> ) chartArea.XAxises ).Contains( ( IChartAxis ) _param1 ) )
@@ -667,7 +667,7 @@ internal void ExecuteRemoveAxisCommand2( ChartAxis _param1 )
     ( ( ICollection<IChartAxis> ) chartArea.YAxises ).Remove( ( IChartAxis ) _param1 );
 }
 
-internal void ExecuteClosePaneCommand2(
+public void ExecuteClosePaneCommand2(
   IScichartSurfaceVM _param1 )
 {
     ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D();
@@ -679,9 +679,9 @@ internal void ExecuteClosePaneCommand2(
       chart.RemoveArea(area);
     }
 
-    internal bool \u0023\u003DzO_BIxNwmDn6VDgqOIx_JE6RwPKwP(Order _param1) => true;
+    public bool \u0023\u003DzO_BIxNwmDn6VDgqOIx_JE6RwPKwP(Order _param1) => true;
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -691,12 +691,12 @@ internal void ExecuteClosePaneCommand2(
       return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(ChartViewModel.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (ChartViewModel.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(ChartViewModel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
     }
 
-    internal bool \u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t(Order _param1)
+    public bool \u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t(Order _param1)
     {
       return _param1.State == 1 || _param1.State == 4;
     }
 
-    internal void OnMinimumRangeCallback(
+    public void OnMinimumRangeCallback(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
@@ -708,7 +708,7 @@ internal void ExecuteClosePaneCommand2(
   {
     public IScichartSurfaceVM \u0023\u003DzsWV8_ck\u003D;
 
-    internal bool \u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D(IChartArea _param1)
+    public bool \u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D(IChartArea _param1)
     {
       return ((ChartArea) _param1).ViewModel == this.\u0023\u003DzsWV8_ck\u003D;
     }
@@ -718,7 +718,7 @@ internal void ExecuteClosePaneCommand2(
   {
     public Action<Order> \u0023\u003DzXCEqv64\u003D;
 
-    internal void \u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D(Order _param1)
+    public void \u0023\u003Dz69cIxDaENs3AtcYRgfOovNI\u003D(Order _param1)
     {
       Action<Order> zXcEqv64 = this.\u0023\u003DzXCEqv64\u003D;
       if (zXcEqv64 == null)

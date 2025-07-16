@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D : 
+public struct \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D : 
   IEquatable<\u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb\u0024vygbXu8nk5VX8Tuiw2QfMqU6inn4WBczij_KAygP156vtDeaE\u003D>
 {
   

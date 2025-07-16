@@ -7,7 +7,7 @@
 using System.ComponentModel;
 
 #nullable disable
-internal interface IRenderableSeries : 
+public interface IRenderableSeries : 
   INotifyPropertyChanged
 {
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries { get; set; }

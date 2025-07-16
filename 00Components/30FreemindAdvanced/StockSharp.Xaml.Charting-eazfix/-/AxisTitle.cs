@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AxisTitle : ContentControl
+public sealed class AxisTitle : ContentControl
 {
   
   public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(nameof (Orientation), typeof (Orientation), typeof (AxisTitle), new PropertyMetadata((object) Orientation.Horizontal));

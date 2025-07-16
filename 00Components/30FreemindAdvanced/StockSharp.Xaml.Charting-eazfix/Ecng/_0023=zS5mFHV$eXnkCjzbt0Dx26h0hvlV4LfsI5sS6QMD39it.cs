@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows;
 
 #nullable disable
-internal static class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD39it_JzJq2Auui18\u003D
+public static class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD39it_JzJq2Auui18\u003D
 {
   public static Point \u0023\u003Dzop6vn0GowyiR(float _param0, float _param1, bool _param2)
   {

@@ -24,7 +24,7 @@ public class HeatmapChart : UserControl, IComponentConnector
   
   private static readonly double[,] \u0023\u003DzpYNJSsBLV187 = new double[0, 0];
   
-  internal HeatmapControl \u0023\u003Dz5ZPAD\u0024Ikyftb;
+  public HeatmapControl \u0023\u003Dz5ZPAD\u0024Ikyftb;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 

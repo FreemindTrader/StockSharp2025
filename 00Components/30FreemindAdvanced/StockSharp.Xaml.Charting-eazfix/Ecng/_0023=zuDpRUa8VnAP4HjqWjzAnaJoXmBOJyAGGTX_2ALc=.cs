@@ -14,7 +14,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D : 
+public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D : 
   IDisposable,
   IRenderContext2D
 {
@@ -31,7 +31,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     this.\u0023\u003Dzwa3i3hwVZeqr = _param1;
   }
 
-  internal \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D \u0023\u003Dz7KDv5k43c1Mo()
+  public \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D \u0023\u003Dz7KDv5k43c1Mo()
   {
     return this.\u0023\u003Dzvix_YyOZ9Wo4;
   }
@@ -353,7 +353,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     double _param3,
     double _param4 = 0.0);
 
-  internal static bool \u0023\u003Dz3XPLnJc\u003D(
+  public static bool \u0023\u003Dz3XPLnJc\u003D(
     ref Point _param0,
     ref Point _param1,
     Size _param2)
@@ -541,24 +541,24 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     public static Func<Tuple<Point, Point>, Point> \u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D;
     public static Func<Tuple<Point, Point>, Point> \u0023\u003DzyemWZ3TsoGdbt2LrKg\u003D\u003D;
 
-    internal float \u0023\u003DzzDoSKNsCWFOBbkjLQ9gARTDb9OQE(
+    public float \u0023\u003DzzDoSKNsCWFOBbkjLQ9gARTDb9OQE(
       \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1)
     {
       return _param1.Width;
     }
 
-    internal float \u0023\u003DzAu4dE94x3JUra9eOoSaMbA41EWq5(
+    public float \u0023\u003DzAu4dE94x3JUra9eOoSaMbA41EWq5(
       \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1)
     {
       return _param1.Height;
     }
 
-    internal Point \u0023\u003DzDg6mo2MEiaYNMCHzJKIJl5w\u003D(Tuple<Point, Point> _param1)
+    public Point \u0023\u003DzDg6mo2MEiaYNMCHzJKIJl5w\u003D(Tuple<Point, Point> _param1)
     {
       return _param1.Item2;
     }
 
-    internal Point \u0023\u003DzXC7FT3ts2hCp609BBf5\u0024NGQ\u003D(Tuple<Point, Point> _param1)
+    public Point \u0023\u003DzXC7FT3ts2hCp609BBf5\u0024NGQ\u003D(Tuple<Point, Point> _param1)
     {
       return _param1.Item1;
     }
@@ -572,7 +572,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
     public Color \u0023\u003Dz9GKNZpE\u003D;
 
-    internal \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D(
+    public \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D(
       char _param1)
     {
       return this._variableSome3535.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, this.\u0023\u003Dz9GKNZpE\u003D);
@@ -587,7 +587,7 @@ internal abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u00
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
     public Func<char, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003Dzon\u0024_RZacJIPJ;
 
-    internal \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D(
+    public \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D(
       char _param1)
     {
       return this._variableSome3535.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, Colors.White);

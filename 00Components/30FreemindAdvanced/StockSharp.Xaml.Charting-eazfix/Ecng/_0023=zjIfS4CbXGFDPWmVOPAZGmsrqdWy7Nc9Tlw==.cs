@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Controls.Primitives;
 
 #nullable disable
-internal sealed class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003D : DependencyObject
+public sealed class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmsrqdWy7Nc9Tlw\u003D\u003D : DependencyObject
 {
   
   private static Dictionary<string, List<ToggleButton>> \u0023\u003Dz4zWJLHVc016J = new Dictionary<string, List<ToggleButton>>();

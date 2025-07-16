@@ -5,7 +5,7 @@ namespace SciChart.Data.Numerics.GenericMath;
 
 
 #nullable disable
-internal sealed class ByteMath :
+public sealed class ByteMath :
   IMath<byte>
 {
 

@@ -8,7 +8,7 @@ using System;
 using System.ComponentModel;
 
 #nullable disable
-internal interface IRange<T> : 
+public interface IRange<T> : 
   INotifyPropertyChanged,
   ICloneable,
   IRange

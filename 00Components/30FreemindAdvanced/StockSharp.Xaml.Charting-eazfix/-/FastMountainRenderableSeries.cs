@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class FastMountainRenderableSeries : 
+public sealed class FastMountainRenderableSeries : 
   BaseMountainRenderableSeries
 {
   public FastMountainRenderableSeries()
@@ -102,14 +102,14 @@ internal sealed class FastMountainRenderableSeries :
     public IBrush2D \u0023\u003DzWQetKrw\u003D;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
 
-    internal \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D(
+    public \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D(
       double _param1,
       double _param2)
     {
       return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
     }
 
-    internal IBrush2D \u0023\u003DzFAoPfkrtOCx4PY1ldA\u003D\u003D(
+    public IBrush2D \u0023\u003DzFAoPfkrtOCx4PY1ldA\u003D\u003D(
       double _param1,
       double _param2)
     {

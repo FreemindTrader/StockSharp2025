@@ -14,7 +14,7 @@ using System.Linq;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(
+public sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(
   CandlePatternElement _param1) : 
   ChartCompentWpfBaseViewModel<CandlePatternElement>(_param1)
 {
@@ -126,7 +126,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
     public static readonly \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D.SomeClass34343383();
     public static Func<DateTimeOffset, DateTime> \u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D;
 
-    internal DateTime \u0023\u003Dzp5FLMdUoOF2aJ6NLRw\u003D\u003D(DateTimeOffset _param1)
+    public DateTime \u0023\u003Dzp5FLMdUoOF2aJ6NLRw\u003D\u003D(DateTimeOffset _param1)
     {
       return _param1.UtcDateTime;
     }
@@ -138,7 +138,7 @@ internal sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRp
     public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D _variableSome3535;
     public Action<DateTimeOffset> \u0023\u003Dzon\u0024_RZacJIPJ;
 
-    internal void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D(DateTimeOffset _param1)
+    public void \u0023\u003DzgXmWJEIKFwdJ3WKiTA\u003D\u003D(DateTimeOffset _param1)
     {
       this.\u0023\u003Dz1ZKXBqs\u003D |= this._variableSome3535.\u0023\u003DzcU\u0024Li0iEvziI.Add(_param1.UtcDateTime);
     }

@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-internal interface \u0023\u003DzmAi_JN5raoSBYo9w2IEI_6oXJj6XJW84s7KCJRXjmNCv
+public interface \u0023\u003DzmAi_JN5raoSBYo9w2IEI_6oXJj6XJW84s7KCJRXjmNCv
 {
   Point \u0023\u003DzBp9oXZI\u003D(
     IPublishMouseEvents _param1,

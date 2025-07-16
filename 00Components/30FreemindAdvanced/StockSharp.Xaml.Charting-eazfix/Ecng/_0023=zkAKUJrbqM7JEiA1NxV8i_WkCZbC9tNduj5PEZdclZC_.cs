@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D : 
+public sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D : 
   IDisposable,
   IPathColor,
   \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J,
@@ -43,7 +43,7 @@ internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_Jb
   
   private bool \u0023\u003DzHmVpviN0HpGru\u0024NZJ3VStlg\u003D;
 
-  internal \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D(
+  public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D(
     Color _param1,
     int _param2,
     float _param3,
@@ -54,7 +54,7 @@ internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_Jb
   {
   }
 
-  internal \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D(
+  public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D(
     Color _param1,
     int _param2,
     float _param3,
@@ -101,7 +101,7 @@ internal sealed class \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_Jb
     this.\u0023\u003DzCBcNvb2NmGvS53uRbQFOJpZFb2Ia = _param1;
   }
 
-  internal BitmapContext \u0023\u003DzvrdHPuKzjDX2() => this.\u0023\u003DzU\u0024ZxpXE\u003D;
+  public BitmapContext \u0023\u003DzvrdHPuKzjDX2() => this.\u0023\u003DzU\u0024ZxpXE\u003D;
 
   public double[] StrokeDashArray => this.\u0023\u003DzuGUVW3D\u0024dHUILYV7nA\u003D\u003D;
 

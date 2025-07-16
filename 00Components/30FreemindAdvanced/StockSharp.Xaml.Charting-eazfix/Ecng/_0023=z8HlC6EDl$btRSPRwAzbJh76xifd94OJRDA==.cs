@@ -8,12 +8,12 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh76xifd94OJRDA\u003D\u003D : 
+public sealed class \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh76xifd94OJRDA\u003D\u003D : 
   IServiceContainer
 {
   private readonly IDictionary<Type, object> \u0023\u003Dz0AYLrTERpgx0 = (IDictionary<Type, object>) new Dictionary<Type, object>();
 
-  internal bool \u0023\u003DzY9a0Q6M\u003D<T>()
+  public bool \u0023\u003DzY9a0Q6M\u003D<T>()
   {
     return this.\u0023\u003Dz0AYLrTERpgx0.ContainsKey(typeof (T));
   }

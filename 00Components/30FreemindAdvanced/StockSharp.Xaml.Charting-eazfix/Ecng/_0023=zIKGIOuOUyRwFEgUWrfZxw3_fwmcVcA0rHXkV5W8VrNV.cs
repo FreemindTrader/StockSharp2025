@@ -8,42 +8,42 @@ using System.Collections;
 using System.Diagnostics;
 
 #nullable disable
-internal struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
+public struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
 {
   
-  internal bool \u0023\u003DztJAA1uMf9_P8;
+  public bool \u0023\u003DztJAA1uMf9_P8;
   
-  internal double \u0023\u003DzdTxNrgQ\u003D;
+  public double \u0023\u003DzdTxNrgQ\u003D;
   
-  internal double \u0023\u003DznR9\u00242Eg\u003D;
+  public double \u0023\u003DznR9\u00242Eg\u003D;
   
-  internal double \u0023\u003Dzk0u64hpXv585;
+  public double \u0023\u003Dzk0u64hpXv585;
   
-  internal double \u0023\u003DzBeOlCgb3wUDW;
+  public double \u0023\u003DzBeOlCgb3wUDW;
   
-  internal bool \u0023\u003DzWaaoT4e35MUnXIdKsg\u003D\u003D;
+  public bool \u0023\u003DzWaaoT4e35MUnXIdKsg\u003D\u003D;
   
-  internal bool \u0023\u003DzJqKipxOjoBSS;
+  public bool \u0023\u003DzJqKipxOjoBSS;
   
-  internal bool \u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D;
+  public bool \u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D;
   
-  internal double \u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D;
+  public double \u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D;
   
-  internal bool \u0023\u003DzFA18Bsxthn7B;
+  public bool \u0023\u003DzFA18Bsxthn7B;
   
-  internal bool \u0023\u003Dz_jNjf7U\u003D;
+  public bool \u0023\u003Dz_jNjf7U\u003D;
   
-  internal bool \u0023\u003DzYlmrR5WNSPuW;
+  public bool \u0023\u003DzYlmrR5WNSPuW;
   
-  internal IList \u0023\u003Dz9jZG_9RUfbqZ;
+  public IList \u0023\u003Dz9jZG_9RUfbqZ;
   
   public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DznUzlqIN9ReXL;
   
   public IndexRange  \u0023\u003DzToxB29CkMiO6;
   
-  internal double \u0023\u003Dz_WzdhI8nAiba;
+  public double \u0023\u003Dz_WzdhI8nAiba;
   
-  internal double \u0023\u003DzormciIUBnCr2;
+  public double \u0023\u003DzormciIUBnCr2;
 
   public override bool Equals(object _param1)
   {

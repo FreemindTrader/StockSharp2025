@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "PART_NonSelectedArea", Type = typeof (Path))]
 [TemplatePart(Name = "PART_Border", Type = typeof (Border))]
@@ -28,7 +28,7 @@ namespace SciChart.Charting;
 [TemplatePart(Name = "PART_LeftThumb", Type = typeof (UltraThumb))]
 [TemplatePart(Name = "PART_MiddleThumb", Type = typeof (UltraThumb))]
 [TemplatePart(Name = "PART_RightThumb", Type = typeof (UltraThumb))]
-internal sealed class UltrachartScrollbar : Control
+public sealed class UltrachartScrollbar : Control
 {
   
   public static readonly 
@@ -581,7 +581,7 @@ internal sealed class UltrachartScrollbar : Control
     public UltrachartScrollbar \u0023\u003DzQc0xUQk\u003D;
     public Point \u0023\u003DzSygYxus\u003D;
 
-    internal void \u0023\u003DzMcNxOaHJdA_oEv9HDTrk3bpRatP8()
+    public void \u0023\u003DzMcNxOaHJdA_oEv9HDTrk3bpRatP8()
     {
       IRange abyLt9clZggmJsWhw;
       if (this.\u0023\u003DzQc0xUQk\u003D.Axis.get_IsLogarithmicAxis())
@@ -601,7 +601,7 @@ internal sealed class UltrachartScrollbar : Control
     public IRange \u0023\u003DzAHNI_S0\u003D;
     public PointAnimation \u0023\u003DzXB4BRQQhi9cE;
 
-    internal void \u0023\u003DzUrhjvMdypVP4nr450dOZW2HHTvcf(
+    public void \u0023\u003DzUrhjvMdypVP4nr450dOZW2HHTvcf(
     #nullable enable
     object? _param1, EventArgs _param2)
     {

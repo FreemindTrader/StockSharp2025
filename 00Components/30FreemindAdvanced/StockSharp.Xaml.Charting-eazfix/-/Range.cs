@@ -5,7 +5,7 @@ using SciChart.Data.Numerics.GenericMath;
 
 namespace SciChart.Data.Model;
 
-internal abstract class Range<T> :
+public abstract class Range<T> :
   BindableObject,
   INotifyPropertyChanged,
   ICloneable,
@@ -276,7 +276,7 @@ zH9Hnkng = _param1.Max;
     return zH9Hnkng.Equals((object) this.Max);
 }
 
-internal void \u0023\u003DzIECuo1rstuxex\u0024WBruVMWlw\u003D()
+public void \u0023\u003DzIECuo1rstuxex\u0024WBruVMWlw\u003D()
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) this.Min, "Min").\u0023\u003DziXfpgk1YpfgIxrtqTA\u003D\u003D((IComparable) this.Max, "Max");
 }

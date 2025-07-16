@@ -30,7 +30,7 @@ public struct BitmapContext : IDisposable
   
   private readonly int \u0023\u003DzNkjnJzE\u003D;
 
-  internal unsafe BitmapContext(WriteableBitmap _param1)
+  public unsafe BitmapContext(WriteableBitmap _param1)
   {
     this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D = _param1;
     this.\u0023\u003DzvuxzmOyMmMi2 = this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.PixelWidth;
@@ -49,7 +49,7 @@ public struct BitmapContext : IDisposable
     this.\u0023\u003DzNkjnJzE\u003D = (int) ((double) (this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBufferStride / 4) * (double) this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.PixelHeight);
   }
 
-  internal BitmapContext(
+  public BitmapContext(
     WriteableBitmap _param1,
     \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB _param2)
     : this(_param1)
@@ -57,20 +57,20 @@ public struct BitmapContext : IDisposable
     this.\u0023\u003DztYFyZvw\u003D = _param2;
   }
 
-  internal WriteableBitmap \u0023\u003DzZin35e8ltnFe()
+  public WriteableBitmap \u0023\u003DzZin35e8ltnFe()
   {
     return this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D;
   }
 
-  internal int \u0023\u003DzOc4Ixb6AQPL8() => this.\u0023\u003DzvuxzmOyMmMi2;
+  public int \u0023\u003DzOc4Ixb6AQPL8() => this.\u0023\u003DzvuxzmOyMmMi2;
 
-  internal int \u0023\u003DzeaNYBEDp1wgD() => this.\u0023\u003DzLbUfdCC4TeZU;
+  public int \u0023\u003DzeaNYBEDp1wgD() => this.\u0023\u003DzLbUfdCC4TeZU;
 
-  internal unsafe int* \u0023\u003DzSKG\u0024_qBsOJZc() => this.\u0023\u003DzwoNHM0hR9QC1;
+  public unsafe int* \u0023\u003DzSKG\u0024_qBsOJZc() => this.\u0023\u003DzwoNHM0hR9QC1;
 
-  internal int \u0023\u003DzxhbmvAVxpXvh() => this.\u0023\u003DzNkjnJzE\u003D;
+  public int \u0023\u003DzxhbmvAVxpXvh() => this.\u0023\u003DzNkjnJzE\u003D;
 
-  internal static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
+  public static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
     BitmapContext _param0,
     int _param1,
     BitmapContext _param2,
@@ -80,7 +80,7 @@ public struct BitmapContext : IDisposable
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003Dz8YbqsoQ7EyhA((byte*) _param0.\u0023\u003DzSKG\u0024_qBsOJZc(), _param1, (byte*) _param2.\u0023\u003DzSKG\u0024_qBsOJZc(), _param3, _param4);
   }
 
-  internal static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
+  public static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
     int[] _param0,
     int _param1,
     BitmapContext _param2,
@@ -91,7 +91,7 @@ public struct BitmapContext : IDisposable
       \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003Dz8YbqsoQ7EyhA((byte*) numPtr, _param1, (byte*) _param2.\u0023\u003DzSKG\u0024_qBsOJZc(), _param3, _param4);
   }
 
-  internal static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
+  public static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
     byte[] _param0,
     int _param1,
     BitmapContext _param2,
@@ -102,7 +102,7 @@ public struct BitmapContext : IDisposable
       \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003Dz8YbqsoQ7EyhA(numPtr, _param1, (byte*) _param2.\u0023\u003DzSKG\u0024_qBsOJZc(), _param3, _param4);
   }
 
-  internal static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
+  public static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
     BitmapContext _param0,
     int _param1,
     byte[] _param2,
@@ -113,7 +113,7 @@ public struct BitmapContext : IDisposable
       \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003Dz8YbqsoQ7EyhA((byte*) _param0.\u0023\u003DzSKG\u0024_qBsOJZc(), _param1, numPtr, _param3, _param4);
   }
 
-  internal static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
+  public static unsafe void \u0023\u003Dzk\u0024wemaJeIY7r(
     BitmapContext _param0,
     int _param1,
     int[] _param2,
@@ -124,7 +124,7 @@ public struct BitmapContext : IDisposable
       \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003Dz8YbqsoQ7EyhA((byte*) _param0.\u0023\u003DzSKG\u0024_qBsOJZc(), _param1, (byte*) numPtr, _param3, _param4);
   }
 
-  internal void Clear()
+  public void Clear()
   {
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.\u0023\u003DzvOds\u0024YwY7CNP(this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBuffer, 0, this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.BackBufferStride * this.\u0023\u003DzJaGAb17LF3w6rjuFVgYtzFM\u003D.PixelHeight);
   }

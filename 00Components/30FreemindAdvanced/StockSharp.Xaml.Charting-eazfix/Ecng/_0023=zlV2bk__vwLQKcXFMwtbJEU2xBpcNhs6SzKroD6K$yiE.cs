@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 
 #nullable disable
-internal sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEU2xBpcNhs6SzKroD6K\u0024yiEmA1ED1g\u003D\u003D
+public sealed class \u0023\u003DzlV2bk__vwLQKcXFMwtbJEU2xBpcNhs6SzKroD6K\u0024yiEmA1ED1g\u003D\u003D
 {
   private readonly double \u0023\u003Dz9eBGgoElCf5Wp_pFvA\u003D\u003D;
   private readonly double \u0023\u003DztoR9ymdsO7mZWEiavA\u003D\u003D;

@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZwWE9pxbJ0DUw_\u0024fe3jeL_uz4nXi9f : 
+public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZwWE9pxbJ0DUw_\u0024fe3jeL_uz4nXi9f : 
   \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D
 {
   private \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20XZZLU_SBymsgRVXpM61Ax5QggCbu8 \u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D;
@@ -471,10 +471,10 @@ internal sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66
   private struct \u0023\u003Dzh7UcPPSzOf\u0024r
   {
     
-    internal int \u0023\u003Dz7D88q7f7iugS;
+    public int \u0023\u003Dz7D88q7f7iugS;
     
-    internal int \u0023\u003DzJ_uAqhdJETQX;
+    public int \u0023\u003DzJ_uAqhdJETQX;
     
-    internal int \u0023\u003DzH64ouBYJK6cR;
+    public int \u0023\u003DzH64ouBYJK6cR;
   }
 }

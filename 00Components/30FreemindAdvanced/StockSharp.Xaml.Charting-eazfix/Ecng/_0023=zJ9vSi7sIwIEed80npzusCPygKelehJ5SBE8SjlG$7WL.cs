@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Xml;
 
 #nullable disable
-internal static class \u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u00247WLh
+public static class \u0023\u003DzJ9vSi7sIwIEed80npzusCPygKelehJ5SBE8SjlG\u00247WLh
 {
   private static readonly FontFamily \u0023\u003Dz02dEDD\u0024fu7S8 = new TextBlock().FontFamily;
   private static readonly IDictionary<string, FontWeight> \u0023\u003DzwxuTPxReUxmtqJZBWw\u003D\u003D = (IDictionary<string, FontWeight>) new Dictionary<string, FontWeight>()

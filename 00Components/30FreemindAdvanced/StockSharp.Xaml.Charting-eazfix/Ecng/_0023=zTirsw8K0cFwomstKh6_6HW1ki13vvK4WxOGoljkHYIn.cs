@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal interface \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
+public interface \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
 {
   void Draw(
     IRenderContext2D _param1,

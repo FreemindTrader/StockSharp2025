@@ -7,16 +7,16 @@
 using System.Windows.Media;
 
 #nullable disable
-internal static class \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTbl6M_5aJglX8Dk9y1o\u003D
+public static class \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTbl6M_5aJglX8Dk9y1o\u003D
 {
-  internal static bool \u0023\u003Dzprl3UX8\u003D(this Brush _param0)
+  public static bool \u0023\u003Dzprl3UX8\u003D(this Brush _param0)
   {
     if (_param0.Opacity == 0.0)
       return true;
     return _param0 is SolidColorBrush solidColorBrush && solidColorBrush.Color.A == (byte) 0;
   }
 
-  internal static Color \u0023\u003DzTI4bfbI\u003D(this Brush _param0)
+  public static Color \u0023\u003DzTI4bfbI\u003D(this Brush _param0)
   {
     switch (_param0)
     {

@@ -8,7 +8,7 @@ using System;
 using System.Reflection;
 
 #nullable disable
-internal static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D
+public static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D
 {
   public static void \u0023\u003DzBZeItLeUMY2I<T>(T _param0, T _param1)
   {

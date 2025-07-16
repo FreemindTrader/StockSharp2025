@@ -17,7 +17,7 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 [System.Windows.Markup.ContentProperty("AnnotationLabels")]
 [TemplatePart(Name = "PART_LineAnnotationRoot", Type = typeof (Grid))]
-internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
+public class VerticalLineAnnotation : LineAnnotationWithLabelsBase
 {
   public new static readonly DependencyProperty VerticalAlignmentProperty = DependencyProperty.Register(nameof (VerticalAlignment), typeof (VerticalAlignment), typeof (VerticalLineAnnotation), new PropertyMetadata((object) VerticalAlignment.Stretch, new PropertyChangedCallback(VerticalLineAnnotation.OnVerticalAlignmentChanged)));
   public static readonly DependencyProperty LabelsOrientationProperty = DependencyProperty.Register(nameof (LabelsOrientation), typeof (Orientation), typeof (VerticalLineAnnotation), new PropertyMetadata((object) Orientation.Vertical, new PropertyChangedCallback(VerticalLineAnnotation.OnLabelsOrientationChanged)));
@@ -117,7 +117,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     }
   }
 
-  internal override LabelPlacement ResolveAutoPlacement()
+  public override LabelPlacement ResolveAutoPlacement()
   {
     LabelPlacement labelPlacement = LabelPlacement.Axis;
     if (this.VerticalAlignment == VerticalAlignment.Top)
@@ -136,7 +136,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     double horizOffset,
     double vertOffset)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     double coord = coordinates.\u0023\u003DzS2_K6sVvd5IY + horizOffset;
     if (!this.IsCoordinateValid(coord, canvas.ActualWidth))
     {
@@ -160,7 +160,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     IAxis xAxis,
     IAxis yAxis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     IComparable[] comparableArray = this.FromCoordinates(0.0, newPoint.Y);
     IComparable comparable1 = comparableArray[0];
     IComparable comparable2 = comparableArray[1];
@@ -222,14 +222,14 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     return this.XAxis != null && this.XAxis.get_IsPolarAxis() ? (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new VerticalLineAnnotation.\u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(this) : (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new VerticalLineAnnotation.\u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(this);
   }
 
-  internal new sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(
+  public new sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(
     VerticalLineAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<VerticalLineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
       AnnotationCoordinates _param1)
     {
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
+      IAnnotationCanvas canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
       double num1 = 0.0;
       double zS2K6sVvd5Iy = _param1.\u0023\u003DzS2_K6sVvd5IY;
       if (!zS2K6sVvd5Iy.\u0023\u003Dz_Bj0HmLWq3hY() || canvas == null)
@@ -301,7 +301,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       bool flag = false;
       if (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth)
@@ -327,7 +327,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     }
   }
 
-  internal new sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D : 
+  public new sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<VerticalLineAnnotation>
   {
     public \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(VerticalLineAnnotation _param1)

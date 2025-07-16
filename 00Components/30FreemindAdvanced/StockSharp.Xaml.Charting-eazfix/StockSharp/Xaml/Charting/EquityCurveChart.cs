@@ -39,7 +39,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   
   private bool \u0023\u003DzjHU2QreifXYX = true;
   
-  internal Chart \u0023\u003DzO72kpz0\u003D;
+  public Chart \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -260,24 +260,24 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     public static Func<SettingsStorage, ChartBandElement> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
     public static Func<IChartBandElement, SettingsStorage> \u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D;
 
-    internal void \u0023\u003DzvXldtNp6EqOzZHGiHo5vu0E\u003D(IChartAxis _param1)
+    public void \u0023\u003DzvXldtNp6EqOzZHGiHo5vu0E\u003D(IChartAxis _param1)
     {
       _param1.TextFormatting = "0.##";
     }
 
-    internal IChartBandElement ResetY1Annotation(
+    public IChartBandElement ResetY1Annotation(
       EquityCurveChart.\u0023\u003DztNaqcZK2DJoq _param1)
     {
       return _param1.\u0023\u003Dzj_CyhS4\u003D();
     }
 
-    internal ChartBandElement \u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D(
+    public ChartBandElement \u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D(
       SettingsStorage _param1)
     {
       return PersistableHelper.Load<ChartBandElement>(_param1);
     }
 
-    internal SettingsStorage \u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D(
+    public SettingsStorage \u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D(
       IChartBandElement _param1)
     {
       return PersistableHelper.Save((IPersistable) _param1);
@@ -288,17 +288,17 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   {
     public bool \u0023\u003DzCPrYc1Q\u003D;
 
-    internal void \u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D(IChartAxis _param1)
+    public void \u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D(IChartAxis _param1)
     {
       _param1.AutoRange = !this.\u0023\u003DzCPrYc1Q\u003D;
     }
 
-    internal void \u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D(IChartAxis _param1)
+    public void \u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D(IChartAxis _param1)
     {
       _param1.AutoRange = !this.\u0023\u003DzCPrYc1Q\u003D;
     }
 
-    internal void \u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D(
+    public void \u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D(
       ChartModifierBase _param1)
     {
       _param1.IsEnabled = this.\u0023\u003DzCPrYc1Q\u003D;

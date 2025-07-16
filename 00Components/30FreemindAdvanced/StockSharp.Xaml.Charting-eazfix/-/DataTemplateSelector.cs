@@ -13,9 +13,9 @@ using System.Windows.Controls;
 using SciChart.Charting.Common.Helpers;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class DataTemplateSelector : 
+public abstract class DataTemplateSelector : 
   ContentControl,
   IDataTemplateSelector
 {

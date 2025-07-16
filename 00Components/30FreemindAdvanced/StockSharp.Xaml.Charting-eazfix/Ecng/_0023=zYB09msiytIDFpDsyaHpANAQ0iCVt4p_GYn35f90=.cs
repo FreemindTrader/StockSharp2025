@@ -8,9 +8,9 @@ using System;
 using System.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANAQ0iCVt4p_GYn35f90\u003D
+public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANAQ0iCVt4p_GYn35f90\u003D
 {
-  internal static void \u0023\u003Dz6OctssU\u003D(int _param0, int _param1, Action<int> _param2)
+  public static void \u0023\u003Dz6OctssU\u003D(int _param0, int _param1, Action<int> _param2)
   {
     \u0023\u003DzYB09msiytIDFpDsyaHpANAQ0iCVt4p_GYn35f90\u003D.\u0023\u003DzSxTkBL91\u0024nQyhjyA6w\u003D\u003D sxTkBl91NQyhjyA6w = new \u0023\u003DzYB09msiytIDFpDsyaHpANAQ0iCVt4p_GYn35f90\u003D.\u0023\u003DzSxTkBL91\u0024nQyhjyA6w\u003D\u003D();
     sxTkBl91NQyhjyA6w.\u0023\u003Dz07PQx44\u003D = _param2;
@@ -32,7 +32,7 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANAQ0iCVt4p_GYn35f90\u003D
     public int \u0023\u003Dzay7IytM\u003D;
     public int \u0023\u003DzhsBTSIjM0aOk;
 
-    internal void \u0023\u003DzQI9NbGJrbM1\u0024()
+    public void \u0023\u003DzQI9NbGJrbM1\u0024()
     {
       int num;
       while ((num = Interlocked.Increment(ref this.\u0023\u003Dzay7IytM\u003D)) < this.\u0023\u003DzhsBTSIjM0aOk)

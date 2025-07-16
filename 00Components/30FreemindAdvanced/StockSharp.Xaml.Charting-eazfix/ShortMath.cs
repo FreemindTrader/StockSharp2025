@@ -4,7 +4,7 @@ using Ecng.Common;
 namespace SciChart.Data.Numerics.GenericMath;
 
 #nullable disable
-internal sealed class ShortMath :
+public sealed class ShortMath :
   IMath<short>
 {
 

@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class FastColumnRenderableSeries : 
+public sealed class FastColumnRenderableSeries : 
   BaseColumnRenderableSeries
 {
   public FastColumnRenderableSeries()

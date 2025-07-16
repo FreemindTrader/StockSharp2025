@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG4NeX6nMgPydnA\u003D\u003D
+public sealed class \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG4NeX6nMgPydnA\u003D\u003D
 {
   private readonly Brush \u0023\u003DzPbF2kpY\u003D;
   private readonly FrameworkElement \u0023\u003DzKz9ivOvkpx2X;

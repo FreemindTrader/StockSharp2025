@@ -8,9 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal static class \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB
+public static class \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB
 {
-  internal static WriteableBitmap GetMath(int _param0, int _param1)
+  public static WriteableBitmap GetMath(int _param0, int _param1)
   {
     if (_param1 < 1)
       _param1 = 1;

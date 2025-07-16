@@ -2,7 +2,7 @@
 using Ecng.Common;
 using Ecng.Xaml;
 using SciChart.Charting.Themes;
-using SciChart.Charting;
+using StockSharp.Charting;
 using StockSharp.Algo.Candles;
 using StockSharp.Algo.Strategies;
 using StockSharp.Localization;

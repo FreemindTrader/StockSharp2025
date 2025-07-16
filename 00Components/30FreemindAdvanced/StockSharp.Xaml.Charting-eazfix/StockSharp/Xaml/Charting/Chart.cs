@@ -52,7 +52,7 @@ public class Chart :
 		public string[ ] _someStringArray03843;
 		public Chart _variableSome3535;
 
-		internal void OnAreaYAxisesRemoving()
+		public void OnAreaYAxisesRemoving()
 		{
 			CollectionHelper.ForEach<string>( ( IEnumerable<string> ) this._someStringArray03843, new Action<string>( this._variableSome3535.SomeInternalFunction34382084 ) );
 		}
@@ -158,7 +158,7 @@ public class Chart :
   
 	private PropertyChangedEventHandler PropertyChangedEvent;
 
-	internal SciChartGroup \u0023\u003DzxYLKFqWiCEs\u0024;
+	public SciChartGroup \u0023\u003DzxYLKFqWiCEs\u0024;
   
 	private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -201,7 +201,7 @@ public class Chart :
 		ConfigManager.RegisterService<IChartIndicatorPainterProvider>( ( IChartIndicatorPainterProvider ) indicatorPainterProvider );
 	}
 
-	internal int GetInstanceCount() => this._instanceCount;
+	public int GetInstanceCount() => this._instanceCount;
 
 
 	public ChartCandleDrawStyles CandleDrawStyles
@@ -227,7 +227,7 @@ public class Chart :
 		}
 	}
 
-	internal ChartViewModel ViewModel
+	public ChartViewModel ViewModel
 	{
     return this._chartSurfaceVM;
 	}
@@ -337,7 +337,7 @@ public class Chart :
     public Chart _variableSome3535;
 		public IChartArea \u0023\u003Dzy_5REws\u003D;
 
-    internal void SomeMethod03843()
+    public void SomeMethod03843()
     {
       Chart.SomeInternalSealedClass897634 zZq9Hpf12oRwg;
       if (this.\u0023\u003Dz_i6sZDg\u003D is IChartIndicatorElement zI6sZdg && zI6sZdg.AutoAssignYAxis && this._variableSome3535._indicatorElementMap.TryGetValue(zI6sZdg, ref zZq9Hpf12oRwg) && zZq9Hpf12oRwg.Indicator.Measure != IndicatorMeasures.Price)
@@ -664,7 +664,7 @@ public class Chart :
     get => (IList<IndicatorType>) this.ViewModel.IndicatorTypes;
   }
 
-  internal Security \u0023\u003Dz3OPaBTitYMD\u0024()
+  public Security \u0023\u003Dz3OPaBTitYMD\u0024()
   {
     return this.\u0023\u003DzCeIks\u0024kpJtyCA0n_Hg\u003D\u003D;
   }
@@ -674,7 +674,7 @@ public class Chart :
     this.\u0023\u003DzCeIks\u0024kpJtyCA0n_Hg\u003D\u003D = _param1;
   }
 
-  internal Subscription \u0023\u003DzgDVjqFRN8sR7()
+  public Subscription \u0023\u003DzgDVjqFRN8sR7()
   {
     return this.\u0023\u003DzAFpdFZRw72NT1DPyxQ\u003D\u003D;
   }
@@ -786,7 +786,7 @@ public class Chart :
 
   public event Action<IChartElement> UnSubscribeElement;
 
-  internal void \u0023\u003DzTWNYl4Ujpxot(Action<IChartArea> _param1)
+  public void \u0023\u003DzTWNYl4Ujpxot(Action<IChartArea> _param1)
   {
     Action<IChartArea> action = this.\u0023\u003DzcHtgn6mNhxMM;
     Action<IChartArea> comparand;
@@ -798,7 +798,7 @@ public class Chart :
     while (action != comparand);
   }
 
-  internal void \u0023\u003DzLw8k9fjIsyhB(Action<IChartArea> _param1)
+  public void \u0023\u003DzLw8k9fjIsyhB(Action<IChartArea> _param1)
   {
     Action<IChartArea> action = this.\u0023\u003DzcHtgn6mNhxMM;
     Action<IChartArea> comparand;
@@ -810,7 +810,7 @@ public class Chart :
     while (action != comparand);
   }
 
-  internal void \u0023\u003Dzz6Byf1ItRSMq(Action _param1)
+  public void \u0023\u003Dzz6Byf1ItRSMq(Action _param1)
   {
     Action action = this.\u0023\u003DzKGKj0Lc\u003D;
     Action comparand;
@@ -822,7 +822,7 @@ public class Chart :
     while (action != comparand);
   }
 
-  internal void \u0023\u003DzhaPIHSD4gMQ9(Action _param1)
+  public void \u0023\u003DzhaPIHSD4gMQ9(Action _param1)
   {
     Action action = this.\u0023\u003DzKGKj0Lc\u003D;
     Action comparand;
@@ -911,7 +911,7 @@ public class Chart :
       chartArea.ViewModel.Draw(chartDrawData);
   }
 
-  internal void InvokeCreateOrderEvent(ChartArea _param1, Order _param2)
+  public void InvokeCreateOrderEvent(ChartArea _param1, Order _param2)
   {
     Action<ChartArea, Order> zlaBqx5E = this.\u0023\u003DzlaBQx5E\u003D;
     if (zlaBqx5E == null)
@@ -919,7 +919,7 @@ public class Chart :
     zlaBqx5E(_param1, _param2);
   }
 
-  internal void \u0023\u003DzoSyIfjNKL9Ta(Order _param1, Decimal _param2)
+  public void \u0023\u003DzoSyIfjNKL9Ta(Order _param1, Decimal _param2)
   {
     Action<Order, Decimal> zJiM5nvc = this.\u0023\u003DzJIM5nvc\u003D;
     if (zJiM5nvc == null)
@@ -927,7 +927,7 @@ public class Chart :
     zJiM5nvc(_param1, _param2);
   }
 
-  internal void \u0023\u003DzrMNjBJFuBLP3(Order _param1)
+  public void \u0023\u003DzrMNjBJFuBLP3(Order _param1)
   {
     Action<Order> zmMdfCucSnZwz = this.CancelActiveOrderEvent ;
     if (zmMdfCucSnZwz == null)
@@ -935,7 +935,7 @@ public class Chart :
     zmMdfCucSnZwz(_param1);
   }
 
-  internal void \u0023\u003Dz49m\u0024QLWwKQs9(ChartAnnotation _param1)
+  public void \u0023\u003Dz49m\u0024QLWwKQs9(ChartAnnotation _param1)
   {
     Action<IChartAnnotationElement> z6KsbJRt22Hb = this.\u0023\u003Dz6KSbJ_RT22HB;
     if (z6KsbJRt22Hb == null)
@@ -943,7 +943,7 @@ public class Chart :
     z6KsbJRt22Hb((IChartAnnotationElement) _param1);
   }
 
-  internal void \u0023\u003Dz5mEkRaZSEt9m(
+  public void \u0023\u003Dz5mEkRaZSEt9m(
     ChartAnnotation _param1,
     ChartDrawData.AnnotationData _param2)
   {
@@ -953,7 +953,7 @@ public class Chart :
     zygdSp72uKvhL((IChartAnnotationElement) _param1, _param2);
   }
 
-  internal void \u0023\u003DzXartur54T48t(ChartAnnotation _param1)
+  public void \u0023\u003DzXartur54T48t(ChartAnnotation _param1)
   {
     Action<IChartAnnotationElement> z53l3VmDrGxpJ = this.\u0023\u003Dz53l3VMDrGxpJ;
     if (z53l3VmDrGxpJ == null)
@@ -961,7 +961,7 @@ public class Chart :
     z53l3VmDrGxpJ((IChartAnnotationElement) _param1);
   }
 
-  internal void \u0023\u003DzSZqzgFQySfHr(
+  public void \u0023\u003DzSZqzgFQySfHr(
     ChartAnnotation _param1,
     ChartDrawData.AnnotationData _param2)
   {
@@ -971,12 +971,12 @@ public class Chart :
     zxVqsLo94Ea68((IChartAnnotationElement) _param1, _param2);
   }
 
-  internal TimeZoneInfo \u0023\u003DzJp_PZYEzsJcq()
+  public TimeZoneInfo \u0023\u003DzJp_PZYEzsJcq()
   {
     return this.Areas.Select<IChartArea, IChartAxis>(Chart.SomeClass34343383.\u0023\u003DzUgb1mArEMRFvFA4YrQ\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzUgb1mArEMRFvFA4YrQ\u003D\u003D = new Func<IChartArea, IChartAxis>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzqN6a1mvRk0j592xRhqiAxD4ES8KX))).LastOrDefault<IChartAxis>(Chart.SomeClass34343383.\u0023\u003DzHbIKsCHhb08DRHHYMg\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzHbIKsCHhb08DRHHYMg\u003D\u003D = new Func<IChartAxis, bool>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzOCtOMr4FFxWKTTRmm0dMrehqCY9f)))?.TimeZone;
   }
 
-  internal void \u0023\u003DzBF\u0024LAMIgiEWk(TimeSpan _param1)
+  public void \u0023\u003DzBF\u0024LAMIgiEWk(TimeSpan _param1)
   {
     (IChartCandleElement chartCandleElement, Subscription subscription) = this.\u0023\u003DzmqXWWh6oQVIEJrU2Pw\u003D\u003D();
     if (chartCandleElement == null)
@@ -1177,7 +1177,7 @@ public class Chart :
     }
   }
 
-  internal static void \u0023\u003Dz370H8OFDsNyA(
+  public static void \u0023\u003Dz370H8OFDsNyA(
     SciChartSurface _param0)
   {
     Chart.\u0023\u003DziYslZOQka25erb85NfEM3z4\u003D qka25erb85NfEm3z4 = new Chart.\u0023\u003DziYslZOQka25erb85NfEM3z4\u003D();
@@ -1227,7 +1227,7 @@ public class Chart :
 
   [DebuggerNonUserCode]
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
-  internal Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
+  public Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
   {
     return Delegate.CreateDelegate(_param1, (object) this, _param2);
   }
@@ -1419,7 +1419,7 @@ public class Chart :
     Action<Chart.SomeInternalSealedClass897634> \u0023\u003Dzosc1BoJdGH8Feib98w\u003D\u003D;
     public static Func<IChartArea, SettingsStorage> \u0023\u003DzIUod_Wcpx0QRK1tJ1g\u003D\u003D;
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -1428,25 +1428,25 @@ public class Chart :
       return (IEnumerable<IChartElement>) _param1.Elements;
     }
 
-    internal IChartAxis \u0023\u003DzqN6a1mvRk0j592xRhqiAxD4ES8KX(IChartArea _param1)
+    public IChartAxis \u0023\u003DzqN6a1mvRk0j592xRhqiAxD4ES8KX(IChartArea _param1)
     {
       return ((IEnumerable<IChartAxis>) _param1.XAxises).FirstOrDefault<IChartAxis>(Chart.SomeClass34343383.\u0023\u003DzJWBwcSmmMYm95T_4EA\u003D\u003D ?? (Chart.SomeClass34343383.\u0023\u003DzJWBwcSmmMYm95T_4EA\u003D\u003D = new Func<IChartAxis, bool>(Chart.SomeClass34343383.SomeMethond0343.\u0023\u003DzVVB4LH1KsMwAYfJoLw4TOG6pJ6Nk)));
     }
 
-    internal bool \u0023\u003DzVVB4LH1KsMwAYfJoLw4TOG6pJ6Nk(IChartAxis _param1)
+    public bool \u0023\u003DzVVB4LH1KsMwAYfJoLw4TOG6pJ6Nk(IChartAxis _param1)
     {
       return _param1.TimeZone != null;
     }
 
-    internal bool \u0023\u003DzOCtOMr4FFxWKTTRmm0dMrehqCY9f(IChartAxis _param1) => _param1 != null;
+    public bool \u0023\u003DzOCtOMr4FFxWKTTRmm0dMrehqCY9f(IChartAxis _param1) => _param1 != null;
 
-    internal IChartIndicatorElement \u0023\u003DzPMkLVMTIVacbdOnMgx5om9R8XfFp42JlLQ\u003D\u003D(
+    public IChartIndicatorElement \u0023\u003DzPMkLVMTIVacbdOnMgx5om9R8XfFp42JlLQ\u003D\u003D(
       KeyValuePair<IChartElement, Subscription> _param1)
     {
       return (IChartIndicatorElement) _param1.Key;
     }
 
-    internal 
+    public 
     #nullable enable
     IChartIndicatorElement \u0023\u003DzuKv4rqmZgBRXOk9cL\u0024V\u0024mJZ_bYxaKSqnjQ\u003D\u003D(
       #nullable disable
@@ -1455,12 +1455,12 @@ public class Chart :
       return _param1;
     }
 
-    internal void \u0023\u003Dzd9aoFEQWycLNB5pmAWPP_1U\u003D(Chart.SomeInternalSealedClass897634 _param1)
+    public void \u0023\u003Dzd9aoFEQWycLNB5pmAWPP_1U\u003D(Chart.SomeInternalSealedClass897634 _param1)
     {
       _param1.Dispose();
     }
 
-    internal SettingsStorage \u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D(IChartArea _param1)
+    public SettingsStorage \u0023\u003Dzi3wYC00Rk5VQyB\u00247dTCZE2Q\u003D(IChartArea _param1)
     {
       SettingsStorage settingsStorage = PersistableHelper.Save((IPersistable) _param1);
       settingsStorage.SetValue<double>("Height", ((ChartArea) _param1).ViewModel.Height);
@@ -1472,7 +1472,7 @@ public class Chart :
   {
     public TimeZoneInfo \u0023\u003DzvZK8J1raIDr8;
 
-    internal void OnAreaYAxisesRemovingAt(IChartAxis _param1)
+    public void OnAreaYAxisesRemovingAt(IChartAxis _param1)
     {
       _param1.TimeZone = this.\u0023\u003DzvZK8J1raIDr8;
     }
@@ -1483,7 +1483,7 @@ public class Chart :
     public Chart _variableSome3535;
     public Func<Order, bool> \u0023\u003DzaPd0W_M\u003D;
 
-    internal void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
+    public void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
       this._variableSome3535.ViewModel.\u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(this.\u0023\u003DzaPd0W_M\u003D);
     }
@@ -1497,7 +1497,7 @@ public class Chart :
     public Chart _variableSome3535;
     public Action<IChartAxis> \u0023\u003DzuAeZVTPDgzYE;
 
-    internal void \u0023\u003DzTUl6zvo_PmQZ4TJ2ew\u003D\u003D()
+    public void \u0023\u003DzTUl6zvo_PmQZ4TJ2ew\u003D\u003D()
     {
       if (this.\u0023\u003Dzy_5REws\u003D.Chart != null)
         throw new ArgumentException("area.Chart != null", "area");
@@ -1525,7 +1525,7 @@ public class Chart :
       zk8cjLwfRrDki(this.\u0023\u003Dzy_5REws\u003D);
     }
 
-    internal void \u0023\u003Dz_CddBmgHU5hqO5sw1g\u003D\u003D(IChartAxis _param1)
+    public void \u0023\u003Dz_CddBmgHU5hqO5sw1g\u003D\u003D(IChartAxis _param1)
     {
       // ISSUE: explicit non-virtual call
       _param1.AutoRange = __nonvirtual (this._variableSome3535.IsAutoRange);
@@ -1538,13 +1538,13 @@ public class Chart :
     public IChartCandleElement \u0023\u003Dz_i6sZDg\u003D;
     public Chart _variableSome3535;
 
-    internal bool \u0023\u003Dz0h9UKK62LR3Vt49xiuMu8R9QgAUI(
+    public bool \u0023\u003Dz0h9UKK62LR3Vt49xiuMu8R9QgAUI(
       KeyValuePair<IChartElement, Subscription> _param1)
     {
       return _param1.Value == this.\u0023\u003DzlRZ9MD8\u003D && _param1.Key != this.\u0023\u003Dz_i6sZDg\u003D;
     }
 
-    internal Tuple<IIndicator, IChartArea> \u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX(
+    public Tuple<IIndicator, IChartArea> \u0023\u003Dzw1Y8PN8Ihy08dhHsTYoW7TH7dWHX(
       IChartIndicatorElement _param1)
     {
       return Tuple.Create<IIndicator, IChartArea>(this._variableSome3535.GetIndicatorElement(_param1), _param1.ChartArea);
@@ -1558,7 +1558,7 @@ public class Chart :
     public Subscription \u0023\u003DzgZ3Boxc\u003D;
     public Chart _variableSome3535;
 
-    internal bool \u0023\u003Dzdtmu9eDzQDfVd61b8w\u003D\u003D(IChartElement _param1)
+    public bool \u0023\u003Dzdtmu9eDzQDfVd61b8w\u003D\u003D(IChartElement _param1)
     {
       // ISSUE: explicit non-virtual call
       return __nonvirtual (this._variableSome3535.TryGetSubscription(_param1)) == this.\u0023\u003DzgZ3Boxc\u003D;
@@ -1572,7 +1572,7 @@ public class Chart :
     public Chart _variableSome3535;
     public IEnumerable<IChartElement> \u0023\u003DzDqgUu38\u003D;
 
-    internal void \u0023\u003DzD1ojw__0StW8WOcIEQ\u003D\u003D()
+    public void \u0023\u003DzD1ojw__0StW8WOcIEQ\u003D\u003D()
     {
       foreach (ChartArea chartArea in this._variableSome3535.\u0023\u003Dza1mnh6ythHbd)
         chartArea.ViewModel.Reset(this.\u0023\u003DzDqgUu38\u003D);
@@ -1583,12 +1583,12 @@ public class Chart :
   {
     public SciChartSurface \u0023\u003Dz6x1I8qQ\u003D;
 
-    internal void \u0023\u003Dqtx1KXraU1keT0uiySlEVOOB5PnDLulwyMJjyjX7rsVjruD1DZyrc16lnN0h2\u0024q6Q()
+    public void \u0023\u003Dqtx1KXraU1keT0uiySlEVOOB5PnDLulwyMJjyjX7rsVjruD1DZyrc16lnN0h2\u0024q6Q()
     {
       ((ScichartSurfaceMVVM) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).\u0023\u003Dz3p2JBPVHDEUh(this.\u0023\u003Dz6x1I8qQ\u003D);
     }
 
-    internal void \u0023\u003DzvrcTIvo4QYO6VIoIYgtMLK0\u003D(
+    public void \u0023\u003DzvrcTIvo4QYO6VIoIYgtMLK0\u003D(
       object _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
@@ -1601,7 +1601,7 @@ public class Chart :
     public IChartArea \u0023\u003Dzy_5REws\u003D;
     public IChartElement \u0023\u003Dz_i6sZDg\u003D;
 
-    internal bool \u0023\u003DzRy89s7w8wbPZi21A_M2JlLqW05mnmhs8PApgiRA\u003D()
+    public bool \u0023\u003DzRy89s7w8wbPZi21A_M2JlLqW05mnmhs8PApgiRA\u003D()
     {
       return ((ICollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Remove(this.\u0023\u003Dz_i6sZDg\u003D);
     }
@@ -1612,7 +1612,7 @@ public class Chart :
     public Chart _variableSome3535;
     public IChartArea \u0023\u003Dzy_5REws\u003D;
 
-    internal void \u0023\u003DzJiDIwzXuOcws4Nsgtg\u003D\u003D()
+    public void \u0023\u003DzJiDIwzXuOcws4Nsgtg\u003D\u003D()
     {
       if (!this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Remove(this.\u0023\u003Dzy_5REws\u003D))
         return;

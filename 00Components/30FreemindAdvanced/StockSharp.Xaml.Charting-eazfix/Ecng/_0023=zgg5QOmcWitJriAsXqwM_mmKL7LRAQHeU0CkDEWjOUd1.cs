@@ -10,21 +10,21 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D
+public static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D
 {
-  internal static DependencyProperty \u0023\u003Dz7aV0h3kX1zh\u0024 = DependencyProperty.RegisterAttached("SeriesStyle", typeof (Style), typeof (\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D), new PropertyMetadata((PropertyChangedCallback) null));
+  public static DependencyProperty \u0023\u003Dz7aV0h3kX1zh\u0024 = DependencyProperty.RegisterAttached("SeriesStyle", typeof (Style), typeof (\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D), new PropertyMetadata((PropertyChangedCallback) null));
 
-  internal static Style GetSeriesStyle(DependencyObject _param0)
+  public static Style GetSeriesStyle(DependencyObject _param0)
   {
     return (Style) _param0.GetValue(\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D.\u0023\u003Dz7aV0h3kX1zh\u0024);
   }
 
-  internal static void SetSeriesStyle(DependencyObject _param0, Style _param1)
+  public static void SetSeriesStyle(DependencyObject _param0, Style _param1)
   {
     _param0.SetValue(\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D.\u0023\u003Dz7aV0h3kX1zh\u0024, (object) _param1);
   }
 
-  internal static void \u0023\u003Dzjqa\u00243wA\u003D(
+  public static void \u0023\u003Dzjqa\u00243wA\u003D(
     this BaseRenderableSeries _param0,
     Style _param1)
   {
@@ -44,7 +44,7 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
     \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D.SetSeriesStyle((DependencyObject) _param0, style);
   }
 
-  internal static bool \u0023\u003DzLDwF88FLhD9n2pkW3Q\u003D\u003D(
+  public static bool \u0023\u003DzLDwF88FLhD9n2pkW3Q\u003D\u003D(
     this IRenderableSeries _param0)
   {
     switch (_param0)
@@ -59,7 +59,7 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
     }
   }
 
-  internal static \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+  public static \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
     this IRenderableSeries _param0,
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
   {
@@ -100,7 +100,7 @@ internal static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11E
     return vdj8C0KctI6r27Gg;
   }
 
-  internal static Color \u0023\u003Dz3_4\u0024b5dxRhLlXyFK3Q\u003D\u003D(
+  public static Color \u0023\u003Dz3_4\u0024b5dxRhLlXyFK3Q\u003D\u003D(
     this IRenderableSeries _param0,
     \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
   {

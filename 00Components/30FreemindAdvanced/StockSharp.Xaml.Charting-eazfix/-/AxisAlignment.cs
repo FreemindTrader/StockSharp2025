@@ -1,7 +1,7 @@
 ﻿#nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal enum AxisAlignment
+public enum AxisAlignment
 {
     Right,
     Left,

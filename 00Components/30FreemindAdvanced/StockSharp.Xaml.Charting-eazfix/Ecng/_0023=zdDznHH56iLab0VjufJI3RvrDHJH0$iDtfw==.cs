@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-internal struct \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D
+public struct \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D
 {
   
   public Size \u0023\u003Dz_li6Ttc\u003D;

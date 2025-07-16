@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 
 #nullable disable
-internal class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D : 
+public class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D : 
   dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd,
   \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
 {
@@ -108,7 +108,7 @@ internal class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_Zykl
   {
     public Point \u0023\u003DzwCTZ2IFMZxZ\u0024;
 
-    internal Point \u0023\u003Dze3Ut5tEvVMseXp_Xpg\u003D\u003D(Point _param1)
+    public Point \u0023\u003Dze3Ut5tEvVMseXp_Xpg\u003D\u003D(Point _param1)
     {
       return new Point(_param1.X - this.\u0023\u003DzwCTZ2IFMZxZ\u0024.X, _param1.Y - this.\u0023\u003DzwCTZ2IFMZxZ\u0024.Y);
     }

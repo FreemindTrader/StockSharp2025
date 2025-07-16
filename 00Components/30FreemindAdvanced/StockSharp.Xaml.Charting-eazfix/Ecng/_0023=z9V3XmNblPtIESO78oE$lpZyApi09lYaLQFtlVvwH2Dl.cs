@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L : 
+public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L : 
   \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D
 {
   public static double \u0023\u003Dz1eyFhpSMTHm_HD8RuWbOOmQ\u003D = 1E-14;
@@ -615,7 +615,7 @@ internal sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH
     return new \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L.\u0023\u003DzBOORYnnbiC2X(_param1, _param2, _param3, this);
   }
 
-  internal sealed class \u0023\u003DzBOORYnnbiC2X
+  public sealed class \u0023\u003DzBOORYnnbiC2X
   {
     private double \u0023\u003DzjA6DaoA\u003D;
     private double \u0023\u003DzIanXUuBywxCX;

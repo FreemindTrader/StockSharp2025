@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D
+public static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D
 {
-  internal static void \u0023\u003DzjBmQkSQ797ct(
+  public static void \u0023\u003DzjBmQkSQ797ct(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     Func<double, double, IPathColor> _param1,
     \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
@@ -83,7 +83,7 @@ internal static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKd
     public static readonly \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383();
     public static Func<double, double, IPathColor> \u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D;
 
-    internal IPathColor \u0023\u003DzJu67dK0kkhLjQsBBw\u00245SnFg\u003D(
+    public IPathColor \u0023\u003DzJu67dK0kkhLjQsBBw\u00245SnFg\u003D(
       double _param1,
       double _param2)
     {

@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3RMYA\u003D : 
+public class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3RMYA\u003D : 
   \u0023\u003DziARJyOecclYiJO5UbZqQJ8tTDgXi4mHI9\u0024dB3n962FPd
 {
   private readonly string[] \u0023\u003Dz4HfK1guJY2ey = new string[4]

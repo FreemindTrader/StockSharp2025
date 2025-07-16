@@ -9,7 +9,7 @@ using System.ComponentModel;
 using System.Globalization;
 
 #nullable disable
-internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9Ofk2uEDAGTcKLRwQVg\u003D : TypeConverter
+public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9Ofk2uEDAGTcKLRwQVg\u003D : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext _param1, Type _param2)
   {

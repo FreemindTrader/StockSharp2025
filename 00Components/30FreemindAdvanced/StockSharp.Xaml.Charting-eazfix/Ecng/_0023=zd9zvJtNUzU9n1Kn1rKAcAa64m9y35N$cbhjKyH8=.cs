@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAa64m9y35N\u0024cbhjKyH8\u003D
+public static class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAa64m9y35N\u0024cbhjKyH8\u003D
 {
-  internal static DateTime \u0023\u003Dzxuo5aY4wjkaI(this long _param0) => new DateTime(_param0);
+  public static DateTime \u0023\u003Dzxuo5aY4wjkaI(this long _param0) => new DateTime(_param0);
 }

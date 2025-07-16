@@ -11,7 +11,7 @@ using System.Diagnostics;
 #nullable disable
 [AttributeUsage(AttributeTargets.Module, AllowMultiple = false, Inherited = false)]
 [Embedded]
-internal sealed class \u0023\u003DzKE0r2hIg2KLh1o1cw1CSCRyIx1ca : Attribute
+public sealed class \u0023\u003DzKE0r2hIg2KLh1o1cw1CSCRyIx1ca : Attribute
 {
   
   public readonly int \u0023\u003DzJZxbLsk\u003D;

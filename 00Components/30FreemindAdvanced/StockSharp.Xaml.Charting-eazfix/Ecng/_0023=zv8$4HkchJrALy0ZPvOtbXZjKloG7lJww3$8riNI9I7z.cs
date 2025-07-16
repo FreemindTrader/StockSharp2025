@@ -9,7 +9,7 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal abstract class \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u00248riNI9I7z_ : 
+public abstract class \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u00248riNI9I7z_ : 
   dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd,
   IDrawable,
   IAxisParams,

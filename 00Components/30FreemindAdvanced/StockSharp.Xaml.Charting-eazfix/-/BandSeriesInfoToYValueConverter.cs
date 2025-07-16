@@ -4,9 +4,9 @@ using System.Windows.Data;
 using SciChart.Charting.Model.ChartData;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class BandSeriesInfoToYValueConverter : IValueConverter
+public sealed class BandSeriesInfoToYValueConverter : IValueConverter
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
     {

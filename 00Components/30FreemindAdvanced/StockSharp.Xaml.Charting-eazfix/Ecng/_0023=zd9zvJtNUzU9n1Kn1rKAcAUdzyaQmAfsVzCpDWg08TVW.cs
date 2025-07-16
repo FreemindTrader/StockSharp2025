@@ -8,7 +8,7 @@ using StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer.WBX;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt : 
+public sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt : 
   \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26spNs5FO8CdyTA\u003D\u003D
 {
   private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;

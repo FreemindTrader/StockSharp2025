@@ -10,9 +10,9 @@ using System.Linq;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class TestConverter : 
+public sealed class TestConverter : 
   IMultiValueConverter
 {
   public object Convert(object[] _param1, Type _param2, object _param3, CultureInfo _param4)
@@ -31,6 +31,6 @@ internal sealed class TestConverter :
     public static readonly TestConverter.SomeClass34343383 SomeMethond0343 = new TestConverter.SomeClass34343383();
     public static Func<bool, bool> \u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D;
 
-    internal bool \u0023\u003DzsYV7b2N1RLymHLqTEQ\u003D\u003D(bool _param1) => !_param1;
+    public bool \u0023\u003DzsYV7b2N1RLymHLqTEQ\u003D\u003D(bool _param1) => !_param1;
   }
 }

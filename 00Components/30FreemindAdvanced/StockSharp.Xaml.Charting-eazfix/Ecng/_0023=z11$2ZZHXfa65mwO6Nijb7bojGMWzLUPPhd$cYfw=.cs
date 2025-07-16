@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 [Flags]
-internal enum MouseModifier
+public enum MouseModifier
 {
   None = 0,
   Shift = 1,

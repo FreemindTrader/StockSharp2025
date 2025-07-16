@@ -20,9 +20,9 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class RenderSurfaceBase : 
+public abstract class RenderSurfaceBase : 
   ContentControl,
   IDisposable,
   \u0023\u003DzYB09msiytIDFpDsyaHpANNcjrPNql900yccNyuZHBUW6,
@@ -43,7 +43,7 @@ internal abstract class RenderSurfaceBase :
   
   private EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> \u0023\u003DzcyGdlF8\u003D;
   
-  internal static readonly string \u0023\u003Dz8UAGL9e3cOCn = Guid.NewGuid().ToString();
+  public static readonly string \u0023\u003Dz8UAGL9e3cOCn = Guid.NewGuid().ToString();
   
   private volatile bool \u0023\u003DzAJ8tNFa80f45;
   
@@ -188,7 +188,7 @@ internal abstract class RenderSurfaceBase :
     this._serviceContainer = _param1;
   }
 
-  internal Image \u0023\u003DzZAw3cTjlwxct() => this.\u0023\u003Dz2TNhyDg\u003D;
+  public Image \u0023\u003DzZAw3cTjlwxct() => this.\u0023\u003Dz2TNhyDg\u003D;
 
   public Grid \u0023\u003DzqgMiDwaFbXWy() => this._grid;
 

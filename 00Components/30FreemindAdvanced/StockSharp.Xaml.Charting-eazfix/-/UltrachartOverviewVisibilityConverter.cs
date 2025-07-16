@@ -10,9 +10,9 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltrachartOverviewVisibilityConverter : 
+public sealed class UltrachartOverviewVisibilityConverter : 
   IMultiValueConverter
 {
   object IMultiValueConverter.Convert(

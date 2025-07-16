@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xziSGfNI1uko0FFh3E\u003D
+public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xziSGfNI1uko0FFh3E\u003D
 {
   private static readonly IList<TimeSpan> \u0023\u003Dz3yhjwpbyTKgX = (IList<TimeSpan>) new TimeSpan[11]
   {
@@ -26,7 +26,7 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xzi
     TimeSpanExtensions.FromYears(10)
   };
 
-  internal static TickCoordinates \u0023\u003DzU4j4bt2YhYuc(
+  public static TickCoordinates \u0023\u003DzU4j4bt2YhYuc(
     IndexRange  _param0,
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D _param1,
     \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D _param2,
@@ -101,27 +101,27 @@ internal sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xzi
     public TimeSpan \u0023\u003DzFYPaJVU_4gr3;
     public \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D \u0023\u003DzK1JYTZ7MRwYt;
 
-    internal bool \u0023\u003DzB\u0024jkKCKwnbgrDLw6QA\u003D\u003D(TimeSpan _param1)
+    public bool \u0023\u003DzB\u0024jkKCKwnbgrDLw6QA\u003D\u003D(TimeSpan _param1)
     {
       return new TimeSpan(_param1.Ticks * (long) this.\u0023\u003DzkDUgQT\u0024Ndmp3) > this.\u0023\u003DzFYPaJVU_4gr3;
     }
 
-    internal int \u0023\u003DzlriQv7fIybq6O\u0024QXyQ\u003D\u003D(double _param1)
+    public int \u0023\u003DzlriQv7fIybq6O\u0024QXyQ\u003D\u003D(double _param1)
     {
       return this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzFk6sufr\u0024co4e(_param1.\u0023\u003Dzxuo5aY4wjkaI());
     }
 
-    internal float \u0023\u003DzbgKwWFXmHUKxbeGw\u0024g\u003D\u003D(double _param1)
+    public float \u0023\u003DzbgKwWFXmHUKxbeGw\u0024g\u003D\u003D(double _param1)
     {
       return (float) this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzhL6gsJw\u003D((double) this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzFk6sufr\u0024co4e(_param1.\u0023\u003Dzxuo5aY4wjkaI()));
     }
 
-    internal double \u0023\u003DzE5OH4cF6TNfGbmYLEg\u003D\u003D(int _param1)
+    public double \u0023\u003DzE5OH4cF6TNfGbmYLEg\u003D\u003D(int _param1)
     {
       return this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzWZQlXHuDrnKc(_param1).ToDouble();
     }
 
-    internal float \u0023\u003Dz7BGDergfw\u0024eT9PNdMw\u003D\u003D(int _param1)
+    public float \u0023\u003Dz7BGDergfw\u0024eT9PNdMw\u003D\u003D(int _param1)
     {
       return (float) this.\u0023\u003DzK1JYTZ7MRwYt.\u0023\u003DzhL6gsJw\u003D((double) _param1);
     }

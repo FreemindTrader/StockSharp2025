@@ -10,9 +10,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class PointMarker : 
+public sealed class PointMarker : 
   TemplatableControl
 {
   

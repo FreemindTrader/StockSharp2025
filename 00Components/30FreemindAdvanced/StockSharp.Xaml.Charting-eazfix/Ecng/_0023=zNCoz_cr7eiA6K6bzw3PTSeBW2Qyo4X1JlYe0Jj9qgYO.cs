@@ -8,7 +8,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm6qHjj4mAclInlkopAShpw\u003D\u003D : 
+public sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm6qHjj4mAclInlkopAShpw\u003D\u003D : 
   \u0023\u003DzK11CXzkQ3m66hjsjmkZfa0IWmA\u00243ulgdIko0_SngtdwYu9Bqqu0Oiz8B0NcmOMpUiw\u003D\u003D,
   \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D
 {
@@ -759,12 +759,12 @@ internal sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm
     yrnYmqhSbkIjQ8lsq.\u0023\u003DzLDS6T7I\u003D((\u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D) _param1, (double) num1, (double) num2, 0.0, 1.0, 1.0);
   }
 
-  internal sealed class \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D : 
+  public sealed class \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D : 
     \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqHYmQyGOu0d1gzQea9g\u003D\u003D
   {
     private \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm6qHjj4mAclInlkopAShpw\u003D\u003D \u0023\u003Dz97TAMb15TLEN;
 
-    internal \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D(
+    public \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D(
       \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm6qHjj4mAclInlkopAShpw\u003D\u003D _param1)
     {
       this.\u0023\u003Dz97TAMb15TLEN = _param1;

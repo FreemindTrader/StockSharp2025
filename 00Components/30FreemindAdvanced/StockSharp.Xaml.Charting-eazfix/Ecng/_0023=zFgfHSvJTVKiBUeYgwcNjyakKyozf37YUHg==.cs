@@ -8,7 +8,7 @@ using \u002D;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D
+public sealed class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D
 {
   private ISciChartSurface \u0023\u003DzG8earjBgAwVeD46WDFvpPCJ7F4cFPTXgRw\u003D\u003D;
 
@@ -19,7 +19,7 @@ internal sealed class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003
     this.\u0023\u003DzGMG72B9TIGe_\u0024devBfFI\u0024z8\u003D(_param1);
   }
 
-  internal ISciChartSurface \u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D()
+  public ISciChartSurface \u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D()
   {
     return this.\u0023\u003DzG8earjBgAwVeD46WDFvpPCJ7F4cFPTXgRw\u003D\u003D;
   }
@@ -40,7 +40,7 @@ internal sealed class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003
     return this.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D().GetHashCode();
   }
 
-  internal void \u0023\u003Dz_ub4hhw\u003D()
+  public void \u0023\u003Dz_ub4hhw\u003D()
   {
     if (!(this.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D() is SciChartSurface elwvdvgwnmJ5AjuaEjd))
       return;

@@ -67,7 +67,7 @@ public class OptionPositionChart :
   
   private bool \u0023\u003DzJbHNSjjCv_nt;
   
-  internal Chart \u0023\u003DzO72kpz0\u003D;
+  public Chart \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -346,7 +346,7 @@ public class OptionPositionChart :
       this.\u0023\u003DzQGCmQMjHdLKS = true;
   }
 
-  internal static ChartLineElement \u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(
+  public static ChartLineElement \u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(
     string _param0,
     Color _param1)
   {
@@ -366,7 +366,7 @@ public class OptionPositionChart :
     public OptionPositionChart _variableSome3535;
     public bool \u0023\u003Dz0gbwL\u00244\u003D;
 
-    internal void \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
+    public void \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
       object _param1,
       RoutedEventArgs _param2)
     {
@@ -394,7 +394,7 @@ public class OptionPositionChart :
   {
     public static readonly OptionPositionChart.SomeClass34343383 SomeMethond0343 = new OptionPositionChart.SomeClass34343383();
 
-    internal Decimal? \u0023\u003DzZJejL2kCbBNrH7yrDJLH0IA\u003D(
+    public Decimal? \u0023\u003DzZJejL2kCbBNrH7yrDJLH0IA\u003D(
       BlackScholes _param1,
       Decimal _param2,
       DateTimeOffset _param3)
@@ -407,7 +407,7 @@ public class OptionPositionChart :
       return blackScholes.Premium(currentTime, deviation, assetPrice);
     }
 
-    internal Decimal? \u0023\u003DzHFmSM0O81iuL\u00243kqxN3iCIg\u003D(
+    public Decimal? \u0023\u003DzHFmSM0O81iuL\u00243kqxN3iCIg\u003D(
       BlackScholes _param1,
       Decimal _param2,
       DateTimeOffset _param3)
@@ -420,7 +420,7 @@ public class OptionPositionChart :
       return blackScholes.Delta(currentTime, deviation, assetPrice);
     }
 
-    internal Decimal? \u0023\u003DzDsINFHGl_6n9RUocpTfki6I\u003D(
+    public Decimal? \u0023\u003DzDsINFHGl_6n9RUocpTfki6I\u003D(
       BlackScholes _param1,
       Decimal _param2,
       DateTimeOffset _param3)
@@ -433,7 +433,7 @@ public class OptionPositionChart :
       return blackScholes.Gamma(currentTime, deviation, assetPrice);
     }
 
-    internal Decimal? \u0023\u003Dz1wU8wJ6WYCgtx6fHgEzunFw\u003D(
+    public Decimal? \u0023\u003Dz1wU8wJ6WYCgtx6fHgEzunFw\u003D(
       BlackScholes _param1,
       Decimal _param2,
       DateTimeOffset _param3)
@@ -446,7 +446,7 @@ public class OptionPositionChart :
       return blackScholes.Theta(currentTime, deviation, assetPrice);
     }
 
-    internal Decimal? \u0023\u003DzG9O0TpbzkV\u00248x69T63\u0024Ti64\u003D(
+    public Decimal? \u0023\u003DzG9O0TpbzkV\u00248x69T63\u0024Ti64\u003D(
       BlackScholes _param1,
       Decimal _param2,
       DateTimeOffset _param3)
@@ -459,7 +459,7 @@ public class OptionPositionChart :
       return blackScholes.Vega(currentTime, deviation, assetPrice);
     }
 
-    internal Decimal? \u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D(
+    public Decimal? \u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D(
       BlackScholes _param1,
       Decimal _param2,
       DateTimeOffset _param3)

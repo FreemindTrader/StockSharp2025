@@ -12,7 +12,7 @@
 //using System.Xml.Serialization;
 
 //#nullable disable
-//internal interface IAnnotation : 
+//public interface IAnnotation : 
 //  IXmlSerializable,
 //  IPublishMouseEvents,
 //  IHitTestable

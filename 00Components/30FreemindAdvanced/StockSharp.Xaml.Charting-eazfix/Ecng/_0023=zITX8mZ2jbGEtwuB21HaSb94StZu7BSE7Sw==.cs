@@ -7,21 +7,21 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D
+public static class \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D
 {
-  internal static void \u0023\u003DzUuEJfBE\u003D(bool _param0, string _param1)
+  public static void \u0023\u003DzUuEJfBE\u003D(bool _param0, string _param1)
   {
     if (!_param0)
       throw new ArgumentException(_param1);
   }
 
-  internal static void \u0023\u003DzVDzEWto\u003D(object _param0, string _param1)
+  public static void \u0023\u003DzVDzEWto\u003D(object _param0, string _param1)
   {
     if (_param0 == null)
       throw new ArgumentNullException(_param1, $"The Argument {_param1} cannot be null");
   }
 
-  internal static void \u0023\u003DzsmufvA2pkwpA(
+  public static void \u0023\u003DzsmufvA2pkwpA(
     int _param0,
     string _param1,
     int _param2,

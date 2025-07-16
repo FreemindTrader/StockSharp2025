@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvQwvbu0Gd4Imzwk5GIfgC73<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+public interface \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvQwvbu0Gd4Imzwk5GIfgC73<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
   ISuspendable,
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoazVlQnP90XoMutgGcLyCRUcP,

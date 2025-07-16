@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuKct8NoZCS\u0024m_m9lLkmVzSm3TrzIUE_fBok\u003D : 
+public sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuKct8NoZCS\u0024m_m9lLkmVzSm3TrzIUE_fBok\u003D : 
   IDisposable,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
 {

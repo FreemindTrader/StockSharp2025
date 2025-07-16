@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D : 
+public sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D : 
   dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
 {
   
@@ -119,7 +119,7 @@ internal sealed class \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0
   {
     public static readonly \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003Dz03BSxVLolBnG92GmtCJpdvzaoAKJNUfy2ZvWNvQFyD\u0024SAQu\u0024H2DU4Co\u003D.SomeClass34343383();
 
-    internal void \u0023\u003Dz80RJIH_dDgLn7Di7fNcKxH8\u003D(
+    public void \u0023\u003Dz80RJIH_dDgLn7Di7fNcKxH8\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

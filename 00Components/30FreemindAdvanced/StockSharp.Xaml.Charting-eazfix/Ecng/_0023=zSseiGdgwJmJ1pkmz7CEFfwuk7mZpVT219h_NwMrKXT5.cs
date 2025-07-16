@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFfwuk7mZpVT219h_NwMrKXT5sYdAawRHD8Yx_rVjVyiLHpg\u003D\u003D : 
+public sealed class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFfwuk7mZpVT219h_NwMrKXT5sYdAawRHD8Yx_rVjVyiLHpg\u003D\u003D : 
   \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D
 {
   private readonly IChartModifier \u0023\u003Dz0mppXFo\u003D;

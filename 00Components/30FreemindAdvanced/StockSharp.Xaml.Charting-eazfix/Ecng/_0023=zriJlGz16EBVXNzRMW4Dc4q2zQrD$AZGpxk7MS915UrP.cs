@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT
+public sealed class \u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT
 {
   private readonly List<Action> \u0023\u003Dz0KTv89o\u003D = new List<Action>();
 

@@ -9,9 +9,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class SquarePointMarker : 
+public sealed class SquarePointMarker : 
   BasePointMarker
 {
   

@@ -14,7 +14,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj(
+public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj(
   DateTime _param1,
   int _param2) : \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
 {
@@ -228,7 +228,7 @@ internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024Rk
     public double \u0023\u003DzHRqMWo6vWNAR;
     public Func<KeyValuePair<double, CandlePriceLevel>, bool> \u0023\u003Dzon\u0024_RZacJIPJ;
 
-    internal bool \u0023\u003DzXf_ZBuKDXxtPns8flw\u003D\u003D(
+    public bool \u0023\u003DzXf_ZBuKDXxtPns8flw\u003D\u003D(
       KeyValuePair<double, CandlePriceLevel> _param1)
     {
       return _param1.Key >= this.\u0023\u003DzyGPsrAMWMEta && _param1.Key < this.\u0023\u003DzHRqMWo6vWNAR;

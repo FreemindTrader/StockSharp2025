@@ -18,14 +18,14 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "PART_MainGrid")]
 [TemplatePart(Name = "PART_TabbedContent")]
 [TemplatePart(Name = "PART_StackedContent")]
 [TemplatePart(Name = "PART_MainPane")]
 [TemplatePart(Name = "PART_UltrachartGroupModifierCanvas")]
-internal sealed class SciChartGroup : 
+public sealed class SciChartGroup : 
   ItemsControl,
   INotifyPropertyChanged
 {
@@ -34,7 +34,7 @@ internal sealed class SciChartGroup :
   
   public static readonly DependencyProperty \u0023\u003Dz3Y_OZ80lXJkE = DependencyProperty.Register(nameof (IsTabbed), typeof (bool), typeof (SciChartGroup), new PropertyMetadata((object) false, new PropertyChangedCallback(SciChartGroup.\u0023\u003Dzgxjo2OnorrBU)));
   
-  internal static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzenwCc\u0024sVGsge = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
+  public static Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> \u0023\u003DzenwCc\u0024sVGsge = new Dictionary<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>();
   
   private ContentPresenter \u0023\u003DzBexXE3VONLO6;
   
@@ -554,7 +554,7 @@ internal sealed class SciChartGroup :
     zUapFgog((object) this, new PropertyChangedEventArgs(_param1));
   }
 
-  internal List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> Panes
+  public List<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D> Panes
   {
     get => this.\u0023\u003Dzg0gWX4E\u003D;
   }
@@ -580,62 +580,62 @@ internal sealed class SciChartGroup :
     public static Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool> \u0023\u003DzR3CtsoKLWrgHqpJ9ew\u003D\u003D;
     public static Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool> \u0023\u003DzF5CGbn39w_V5rzPhsg\u003D\u003D;
 
-    internal bool \u0023\u003DzAVi2aBRehqWFfXq9jYMUhjI\u003D(
+    public bool \u0023\u003DzAVi2aBRehqWFfXq9jYMUhjI\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.\u0023\u003DzR8SPjvFW2FAx();
     }
 
-    internal bool \u0023\u003DzxWddT5im7KmgxOritgrWWVg\u003D(
+    public bool \u0023\u003DzxWddT5im7KmgxOritgrWWVg\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.\u0023\u003DzR8SPjvFW2FAx();
     }
 
-    internal bool \u0023\u003DzzupMWLepPkF5bY0sYR2kaSM\u003D(
+    public bool \u0023\u003DzzupMWLepPkF5bY0sYR2kaSM\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.IsTabbed;
     }
 
-    internal bool \u0023\u003Dzaqpe\u0024pact917Eb9JueaUdBE\u003D(
+    public bool \u0023\u003Dzaqpe\u0024pact917Eb9JueaUdBE\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.IsTabbed;
     }
 
-    internal \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D \u0023\u003DzlOy_tGKXOJafqoVpt8CsMEw\u003D(
+    public \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D \u0023\u003DzlOy_tGKXOJafqoVpt8CsMEw\u003D(
       KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> _param1)
     {
       return _param1.Key;
     }
 
-    internal ISciChartSurface \u0023\u003DzBwZlGEvrpkB3v5dyRDot93k\u003D(
+    public ISciChartSurface \u0023\u003DzBwZlGEvrpkB3v5dyRDot93k\u003D(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       return _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D();
     }
 
-    internal double \u0023\u003DzdSRIGGNb5qdTUBnzqEYOgPwXxk0F(
+    public double \u0023\u003DzdSRIGGNb5qdTUBnzqEYOgPwXxk0F(
       IEnumerable<AxisBase> _param1)
     {
       return _param1 == null ? 0.0 : _param1.Aggregate<AxisBase, double>(0.0, SciChartGroup.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<double, AxisBase, double>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzfNlexRlqK5oJ_TYB1GyrgH8eZql\u0024)));
     }
 
-    internal double \u0023\u003DzfNlexRlqK5oJ_TYB1GyrgH8eZql\u0024(
+    public double \u0023\u003DzfNlexRlqK5oJ_TYB1GyrgH8eZql\u0024(
       double _param1,
       AxisBase _param2)
     {
       return _param1 + _param2.ActualWidth;
     }
 
-    internal bool \u0023\u003Dzi1C5NiFzS8NjdGIJdFBfuaE\u003D(
+    public bool \u0023\u003Dzi1C5NiFzS8NjdGIJdFBfuaE\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return !_param1.IsTabbed && !_param1.\u0023\u003DzR8SPjvFW2FAx();
     }
 
-    internal bool \u0023\u003DzP2L\u0024nb5keqxbUbKBSg38m\u0024w\u003D(
+    public bool \u0023\u003DzP2L\u0024nb5keqxbUbKBSg38m\u0024w\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.IsTabbed && !_param1.\u0023\u003DzR8SPjvFW2FAx();
@@ -646,7 +646,7 @@ internal sealed class SciChartGroup :
   {
     public UIElement \u0023\u003Dzs1FLlYI\u003D;
 
-    internal bool \u0023\u003DzyS1WpzHcC2OUisDR6XFERGQ\u003D(
+    public bool \u0023\u003DzyS1WpzHcC2OUisDR6XFERGQ\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.PaneElement == this.\u0023\u003Dzs1FLlYI\u003D;
@@ -657,7 +657,7 @@ internal sealed class SciChartGroup :
   {
     public UltrachartGroupPane \u0023\u003Dz7Ewohnc\u003D;
 
-    internal bool \u0023\u003Dzqz62RfBr9ikUsn4dPlrHnzM\u003D(
+    public bool \u0023\u003Dzqz62RfBr9ikUsn4dPlrHnzM\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.IsTabbed && _param1.PaneElement != this.\u0023\u003Dz7Ewohnc\u003D;
@@ -670,13 +670,13 @@ internal sealed class SciChartGroup :
     public double \u0023\u003DzvoLRTxfFcUlmr5yAvA\u003D\u003D;
     public double \u0023\u003Dz\u0024cOTYk2PrdR148H8pg\u003D\u003D;
 
-    internal bool \u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D(
+    public bool \u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D(
       KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string> _param1)
     {
       return _param1.Value == this.\u0023\u003DzUI\u0024BHyM\u003D;
     }
 
-    internal void \u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D(
+    public void \u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D(
       SciChartSurface _param1)
     {
       if (_param1.\u0023\u003Dz7jQDxh7oPk4IxxFHHA\u003D\u003D() != null)
@@ -691,7 +691,7 @@ internal sealed class SciChartGroup :
   {
     public \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzKveAMLo\u003D;
 
-    internal bool \u0023\u003Dz240YAiB2jNus8hcG9w\u003D\u003D(TabItem _param1)
+    public bool \u0023\u003Dz240YAiB2jNus8hcG9w\u003D\u003D(TabItem _param1)
     {
       return _param1.Content.Equals((object) this.\u0023\u003DzKveAMLo\u003D.PaneElement);
     }
@@ -702,13 +702,13 @@ internal sealed class SciChartGroup :
     public UltrachartGroupPane \u0023\u003Dz7Ewohnc\u003D;
     public SizeChangedEventArgs \u0023\u003Dz1BK01YA\u003D;
 
-    internal bool \u0023\u003DzINTieIN7VYUpT8jxmoHH8es\u003D(
+    public bool \u0023\u003DzINTieIN7VYUpT8jxmoHH8es\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.PaneElement == this.\u0023\u003Dz7Ewohnc\u003D && _param1.IsTabbed;
     }
 
-    internal void \u0023\u003Dz7gcI5zh4waHqxV9qVl00zsE\u003D(
+    public void \u0023\u003Dz7gcI5zh4waHqxV9qVl00zsE\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       _param1.PaneElement.Height = this.\u0023\u003Dz1BK01YA\u003D.NewSize.Height;
@@ -720,7 +720,7 @@ internal sealed class SciChartGroup :
     public SciChartGroup _variableSome3535;
     public \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003DzKveAMLo\u003D;
 
-    internal void \u0023\u003DzJeMUirilpUA5DzmAPQ\u003D\u003D()
+    public void \u0023\u003DzJeMUirilpUA5DzmAPQ\u003D\u003D()
     {
       this._variableSome3535.\u0023\u003DzjSk6Jvc\u003D(this.\u0023\u003DzKveAMLo\u003D);
     }
@@ -731,14 +731,14 @@ internal sealed class SciChartGroup :
     public AxisAlignment \u0023\u003Dz0V69zGwQUFh\u0024;
     public Func<AxisBase, bool> \u0023\u003DzoD2HtVGZvKav;
 
-    internal IEnumerable<AxisBase> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
+    public IEnumerable<AxisBase> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       AxisCollection yaxes = _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D().get_YAxes();
       return yaxes == null ? (IEnumerable<AxisBase>) null : yaxes.OfType<AxisBase>().Where<AxisBase>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<AxisBase, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
     }
 
-    internal bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(
+    public bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(
       AxisBase _param1)
     {
       return _param1.AxisAlignment == this.\u0023\u003Dz0V69zGwQUFh\u0024;
@@ -750,7 +750,7 @@ internal sealed class SciChartGroup :
     public SciChartGroup _variableSome3535;
     public double \u0023\u003DzniV7Bbk\u003D;
 
-    internal \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003Dq1qGQwgs_F6ae19p24dqRj6GgdRzMrVsVc3m6iIKHPR2xR8NNZoxf3Wma3slxNuB2(
+    public \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003Dq1qGQwgs_F6ae19p24dqRj6GgdRzMrVsVc3m6iIKHPR2xR8NNZoxf3Wma3slxNuB2(
       UIElement _param1)
     {
       return this._variableSome3535.\u0023\u003Dzg0gWX4E\u003D.First<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>(new Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool>(new SciChartGroup.\u0023\u003DzBsvr5yEJlfn\u0024m5gyTVsnSFo\u003D()
@@ -759,7 +759,7 @@ internal sealed class SciChartGroup :
       }.\u0023\u003DzyS1WpzHcC2OUisDR6XFERGQ\u003D));
     }
 
-    internal void \u0023\u003DzhMGwLkEu9NzHL8WMqBTXqNM\u003D(
+    public void \u0023\u003DzhMGwLkEu9NzHL8WMqBTXqNM\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       _param1.PaneElement.Height = this.\u0023\u003DzniV7Bbk\u003D;
@@ -777,7 +777,7 @@ internal sealed class SciChartGroup :
   {
     public IScichartSurfaceVM _someChartElement;
 
-    internal bool \u0023\u003Dz_0lW5QtpqHwetfa5Xg\u003D\u003D(
+    public bool \u0023\u003Dz_0lW5QtpqHwetfa5Xg\u003D\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
     {
       return _param1.PaneViewModel.Equals((object) this._someChartElement);

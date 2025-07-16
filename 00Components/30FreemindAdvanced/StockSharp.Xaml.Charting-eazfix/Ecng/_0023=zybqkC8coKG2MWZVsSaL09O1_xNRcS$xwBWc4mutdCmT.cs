@@ -13,7 +13,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 #nullable disable
-internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D : 
+public sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D : 
   \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<SciChartSurface>
 {
   private static \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D \u0023\u003Dzj9RABVg\u003D;
@@ -30,7 +30,7 @@ internal sealed class \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutd
     };
   }
 
-  internal static \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D \u0023\u003DzFvAsfEI\u003D()
+  public static \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D \u0023\u003DzFvAsfEI\u003D()
   {
     return \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzj9RABVg\u003D ?? (\u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D.\u0023\u003Dzj9RABVg\u003D = new \u0023\u003DzybqkC8coKG2MWZVsSaL09O1_xNRcS\u0024xwBWc4mutdCmTdKj2X3QJ3_KQ\u003D());
   }

@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-internal sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrum0As6lkvmcC63nlpCpixc
+public sealed class \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrum0As6lkvmcC63nlpCpixc
 {
   private bool \u0023\u003DzvEWdpLc\u0024gZvh;
   private TextBlock \u0023\u003DzW7z__AO00I_xgQP3P9j\u0024itfsbPpa;

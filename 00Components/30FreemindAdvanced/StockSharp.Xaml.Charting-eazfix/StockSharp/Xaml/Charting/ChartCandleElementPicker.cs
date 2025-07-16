@@ -22,9 +22,9 @@ namespace StockSharp.Xaml.Charting;
 public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
 {
   
-  internal ComboBoxEditEx \u0023\u003DzjQEUHP_xvugS;
+  public ComboBoxEditEx \u0023\u003DzjQEUHP_xvugS;
   
-  internal SimpleButton \u0023\u003Dzs4BdTaM\u003D;
+  public SimpleButton \u0023\u003Dzs4BdTaM\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -87,7 +87,7 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
     public static readonly ChartCandleElementPicker.SomeClass34343383 SomeMethond0343 = new ChartCandleElementPicker.SomeClass34343383();
     public static Func<IChartCandleElement, string> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
 
-    internal string \u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D(IChartCandleElement _param1)
+    public string \u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D(IChartCandleElement _param1)
     {
       return ((IChartComponent) _param1).GetGeneratedTitle();
     }

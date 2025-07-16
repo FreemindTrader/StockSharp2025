@@ -8,7 +8,7 @@ using System;
 namespace SciChart.Data.Numerics.GenericMath;
 
 #nullable disable
-internal sealed class FloatMath : 
+public sealed class FloatMath : 
   IMath<float>
 {
   

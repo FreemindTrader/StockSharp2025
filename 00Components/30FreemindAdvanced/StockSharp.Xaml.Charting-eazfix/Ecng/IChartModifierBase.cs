@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 
 #nullable disable
-internal interface IChartModifierBase :
+public interface IChartModifierBase :
   INotifyPropertyChanged,
   IReceiveMouseEvents
 {

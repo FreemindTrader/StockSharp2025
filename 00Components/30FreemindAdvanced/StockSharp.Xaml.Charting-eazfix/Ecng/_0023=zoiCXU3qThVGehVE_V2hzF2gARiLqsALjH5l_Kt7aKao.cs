@@ -8,12 +8,12 @@ using \u002D;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzoiCXU3qThVGehVE_V2hzF2gARiLqsALjH5l_Kt7aKaoa : 
+public sealed class \u0023\u003DzoiCXU3qThVGehVE_V2hzF2gARiLqsALjH5l_Kt7aKaoa : 
   \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A
 {
   private readonly double \u0023\u003DzMXPRhxbl7IIq;
 
-  internal \u0023\u003DzoiCXU3qThVGehVE_V2hzF2gARiLqsALjH5l_Kt7aKaoa(
+  public \u0023\u003DzoiCXU3qThVGehVE_V2hzF2gARiLqsALjH5l_Kt7aKaoa(
     double _param1,
     double _param2,
     double _param3,

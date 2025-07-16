@@ -9,22 +9,22 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class ModifierAxisCanvas : 
+public class ModifierAxisCanvas : 
   AxisCanvas,
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk,
+  IAnnotationCanvas,
   IHitTestable
 {
   
   private AxisBase \u0023\u003Dz_HMHLf7iUOmptZScZA\u003D\u003D;
 
-  internal AxisBase \u0023\u003DzHZDgUSdfqmkx()
+  public AxisBase \u0023\u003DzHZDgUSdfqmkx()
   {
     return this.\u0023\u003Dz_HMHLf7iUOmptZScZA\u003D\u003D;
   }
 
-  internal void \u0023\u003DzkF76BMTQOROh(
+  public void \u0023\u003DzkF76BMTQOROh(
     AxisBase _param1)
   {
     this.\u0023\u003Dz_HMHLf7iUOmptZScZA\u003D\u003D = _param1;
@@ -45,7 +45,7 @@ internal class ModifierAxisCanvas :
     return this.GetBoundsRelativeTo(_param1);
   }
 
-  UIElementCollection \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk.\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxEd_WVrGrYRkgPcNsetxgTjiPcBUJA\u003D\u003D()
+  UIElementCollection IAnnotationCanvas.\u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxEd_WVrGrYRkgPcNsetxgTjiPcBUJA\u003D\u003D()
   {
     return this.Children;
   }

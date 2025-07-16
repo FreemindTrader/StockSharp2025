@@ -165,7 +165,7 @@ public sealed class ChartBandElement : ChartComponent<ChartBandElement>,
         storage.SetValue<SettingsStorage>( "Line2", PersistableHelper.Save( ( IPersistable ) this.Line2 ) );
     }
 
-    internal override ChartBandElement Clone( ChartBandElement _param1 )
+    public override ChartBandElement Clone( ChartBandElement _param1 )
     {
         _param1 = base.Clone( _param1 );
         this.Line1.Clone( _param1.Line1 );

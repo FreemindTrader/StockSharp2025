@@ -10,9 +10,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class DefaultTickLabel : 
+public class DefaultTickLabel : 
   TemplatableControl,
   INotifyPropertyChanged
 {
@@ -102,22 +102,22 @@ internal class DefaultTickLabel :
     }
   }
 
-  internal int \u0023\u003DzcWxBLkct8Sd5yemMlw\u003D\u003D()
+  public int \u0023\u003DzcWxBLkct8Sd5yemMlw\u003D\u003D()
   {
     return this.\u0023\u003DzBNy9S01NVbGvmR7R9hW7nc86d\u0024wh;
   }
 
-  internal void \u0023\u003Dz9ak5jfg0CSsoUX9AxQ\u003D\u003D(int _param1)
+  public void \u0023\u003Dz9ak5jfg0CSsoUX9AxQ\u003D\u003D(int _param1)
   {
     this.\u0023\u003DzBNy9S01NVbGvmR7R9hW7nc86d\u0024wh = _param1;
   }
 
-  internal Rect \u0023\u003DzLqLOI4\u0024kbsVKm2XaOGI9Rw8\u003D()
+  public Rect \u0023\u003DzLqLOI4\u0024kbsVKm2XaOGI9Rw8\u003D()
   {
     return this.\u0023\u003Dz3HMfWnIqbAEXG_WP0A2BwLE9JmwR;
   }
 
-  internal void \u0023\u003DzT3xod7VLFT46Za\u0024kcJyM7Jw\u003D(Rect _param1)
+  public void \u0023\u003DzT3xod7VLFT46Za\u0024kcJyM7Jw\u003D(Rect _param1)
   {
     this.\u0023\u003Dz3HMfWnIqbAEXG_WP0A2BwLE9JmwR = _param1;
   }

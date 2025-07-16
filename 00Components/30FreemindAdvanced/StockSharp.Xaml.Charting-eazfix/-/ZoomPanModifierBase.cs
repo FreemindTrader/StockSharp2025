@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class ZoomPanModifierBase : 
+public abstract class ZoomPanModifierBase : 
   ChartModifierBase
 {
   

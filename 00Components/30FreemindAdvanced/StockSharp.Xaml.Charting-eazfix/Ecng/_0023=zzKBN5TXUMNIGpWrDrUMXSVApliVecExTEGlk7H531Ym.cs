@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSVApliVecExTEGlk7H531YmTGRKDgfgGbW31OoVL8yjU4vPp5Cc\u003D : 
+public sealed class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSVApliVecExTEGlk7H531YmTGRKDgfgGbW31OoVL8yjU4vPp5Cc\u003D : 
   \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ
 {
   private readonly IRenderContext2D \u0023\u003DzVxwXLcXPtvCC;

@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<\u0023\u003DzE8zkRfY\u003D> : 
+public interface \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<\u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
   where \u0023\u003DzE8zkRfY\u003D : IComparable
 {

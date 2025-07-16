@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEezGJrigJfmRXcKJON_mXNNQFlZ3CVw\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+public sealed class \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEezGJrigJfmRXcKJON_mXNNQFlZ3CVw\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>
   where \u0023\u003DzulcL8RA\u003D : IComparable
   where \u0023\u003DzE8zkRfY\u003D : IComparable

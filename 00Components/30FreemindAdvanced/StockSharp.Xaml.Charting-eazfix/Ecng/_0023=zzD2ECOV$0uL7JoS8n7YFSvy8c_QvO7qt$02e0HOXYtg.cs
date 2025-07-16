@@ -7,7 +7,7 @@
 using System.Diagnostics;
 
 #nullable disable
-internal class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM : 
+public class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM : 
   \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D
 {
   private \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM.\u0023\u003DzafZj3dT3iE_e[] \u0023\u003DzAomBaIYGIk3J = new \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM.\u0023\u003DzafZj3dT3iE_e[3];
@@ -118,7 +118,7 @@ internal class \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYt
     _param1[1] = zafZj3dT3iEE1;
   }
 
-  internal struct \u0023\u003DzafZj3dT3iE_e
+  public struct \u0023\u003DzafZj3dT3iE_e
   {
     
     public double \u0023\u003DzwP120vA\u003D;

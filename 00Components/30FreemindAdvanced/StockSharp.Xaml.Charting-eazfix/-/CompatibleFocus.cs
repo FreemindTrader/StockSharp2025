@@ -8,9 +8,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class CompatibleFocus
+public sealed class CompatibleFocus
 {
   public static readonly DependencyProperty \u0023\u003Dz8gpJZfsjfhZY = DependencyProperty.RegisterAttached("IsFocusable", typeof (bool), typeof (CompatibleFocus), new PropertyMetadata((object) true, new PropertyChangedCallback(CompatibleFocus.\u0023\u003Dz9rT93zhf3BVL)));
 

@@ -14,9 +14,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class BoxVolumeRenderableSeries : 
+public sealed class BoxVolumeRenderableSeries : 
   \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D
 {
   
@@ -417,13 +417,13 @@ label_11:
     public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> \u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D;
     public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> \u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D;
 
-    internal \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D(
+    public \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz0IPdd6wsmxZJ();
     }
 
-    internal \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D(
+    public \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz0IPdd6wsmxZJ();
@@ -436,7 +436,7 @@ label_11:
     public double \u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D;
     public Func<KeyValuePair<double, CandlePriceLevel>, bool> \u0023\u003DzoD2HtVGZvKav;
 
-    internal bool \u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D(
+    public bool \u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D(
       KeyValuePair<double, CandlePriceLevel> _param1)
     {
       return _param1.Key > this.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D && _param1.Key < this.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D;

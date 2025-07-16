@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6mv5sY8awUAMrmsk\u003D : 
+public sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MUjKjUKbI3AKh3tzAx6mv5sY8awUAMrmsk\u003D : 
   dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd
 {
   

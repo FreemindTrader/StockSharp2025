@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Shapes;
 
 #nullable disable
-internal interface \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI84SlzGeHM63aaGG8vJyxtBAVakvxTUthBw\u003D
+public interface \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI84SlzGeHM63aaGG8vJyxtBAVakvxTUthBw\u003D
 {
   Line \u0023\u003Dz7ftWcP9VIwGB(Point _param1, bool _param2);
 }

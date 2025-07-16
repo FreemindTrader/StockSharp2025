@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr : 
+public sealed class \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOa9PbMTlFJUwDxIT7iKoZ2Lr : 
   IEnumerable,
   IEnumerable<\u0023\u003DzriJlGz16EBVXNzRMW4Dc4q2zQrD\u0024AZGpxk7MS915UrPT>
 {

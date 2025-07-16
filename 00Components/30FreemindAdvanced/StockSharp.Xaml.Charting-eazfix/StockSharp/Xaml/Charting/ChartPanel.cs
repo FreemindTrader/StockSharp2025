@@ -80,23 +80,23 @@ public class ChartPanel :
   
   private bool \u0023\u003DzCm\u0024a_RJSIzjb8Je3X21wN90\u003D;
   
-  internal ChartPanel \u0023\u003Dzv4BS1WQ\u003D;
+  public ChartPanel \u0023\u003Dzv4BS1WQ\u003D;
   
-  internal QuickOrderPanel \u0023\u003DzW15YPW8yFbIF;
+  public QuickOrderPanel \u0023\u003DzW15YPW8yFbIF;
   
-  internal BarManager \u0023\u003DzK0Y33rI\u003D;
+  public BarManager \u0023\u003DzK0Y33rI\u003D;
   
-  internal BarEditItem \u0023\u003DzAWra9\u0024_YgvQ6QTggug\u003D\u003D;
+  public BarEditItem \u0023\u003DzAWra9\u0024_YgvQ6QTggug\u003D\u003D;
   
-  internal ComboBoxEditSettings \u0023\u003Dz5wj51j\u0024m7KHERsE\u0024DA\u003D\u003D;
+  public ComboBoxEditSettings \u0023\u003Dz5wj51j\u0024m7KHERsE\u0024DA\u003D\u003D;
   
-  internal BarEditItem \u0023\u003Dzb98_9e4umo9R;
+  public BarEditItem \u0023\u003Dzb98_9e4umo9R;
   
-  internal ComboBoxEditSettings \u0023\u003Dz1jt7bIJr0f0_;
+  public ComboBoxEditSettings \u0023\u003Dz1jt7bIJr0f0_;
   
-  internal BarCheckItem \u0023\u003DzVzfMDsVHAcU9;
+  public BarCheckItem \u0023\u003DzVzfMDsVHAcU9;
   
-  internal Chart \u0023\u003DzO72kpz0\u003D;
+  public Chart \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -792,7 +792,7 @@ public class ChartPanel :
 
   [DebuggerNonUserCode]
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
-  internal Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
+  public Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
   {
     return Delegate.CreateDelegate(_param1, (object) this, _param2);
   }
@@ -1097,30 +1097,30 @@ public class ChartPanel :
     #nullable disable
     IChartElement>> \u0023\u003DzA23GjvIGUxigab9gDw\u003D\u003D;
 
-    internal string \u0023\u003Dz9FyKEnqWZMl35lW1Mh8Pfl4\u003D() => LocalizedStrings.Bars;
+    public string \u0023\u003Dz9FyKEnqWZMl35lW1Mh8Pfl4\u003D() => LocalizedStrings.Bars;
 
-    internal string \u0023\u003DzlXKB39\u0024_RGvuXSNaoFYbUfY\u003D()
+    public string \u0023\u003DzlXKB39\u0024_RGvuXSNaoFYbUfY\u003D()
     {
       return LocalizedStrings.CandleStick;
     }
 
-    internal string \u0023\u003Dz3VNaKjF0Px9ZE74bMBlf8Jc\u003D() => LocalizedStrings.LineOpen;
+    public string \u0023\u003Dz3VNaKjF0Px9ZE74bMBlf8Jc\u003D() => LocalizedStrings.LineOpen;
 
-    internal string \u0023\u003DzPwX1fdUl8qrydTYdTH_dK8E\u003D() => LocalizedStrings.LineClose;
+    public string \u0023\u003DzPwX1fdUl8qrydTYdTH_dK8E\u003D() => LocalizedStrings.LineClose;
 
-    internal string \u0023\u003DzKNZn5frBPZ2lkm_QkzXTr78\u003D() => LocalizedStrings.LineHigh;
+    public string \u0023\u003DzKNZn5frBPZ2lkm_QkzXTr78\u003D() => LocalizedStrings.LineHigh;
 
-    internal string \u0023\u003DzatM8lF9_VANXs9rCA\u0024nAIFo\u003D() => LocalizedStrings.LineLow;
+    public string \u0023\u003DzatM8lF9_VANXs9rCA\u0024nAIFo\u003D() => LocalizedStrings.LineLow;
 
-    internal string \u0023\u003Dz6DsZRppqVaGqhjmGQ982Snc\u003D() => LocalizedStrings.Area;
+    public string \u0023\u003Dz6DsZRppqVaGqhjmGQ982Snc\u003D() => LocalizedStrings.Area;
 
-    internal string \u0023\u003DzHdtpgWUYDJsY5xnfHe5\u0024iZQ\u003D() => LocalizedStrings.BoxChart;
+    public string \u0023\u003DzHdtpgWUYDJsY5xnfHe5\u0024iZQ\u003D() => LocalizedStrings.BoxChart;
 
-    internal string \u0023\u003DzgUhRURp7DzSchtEQx_odDF4\u003D() => LocalizedStrings.ClusterProfile;
+    public string \u0023\u003DzgUhRURp7DzSchtEQx_odDF4\u003D() => LocalizedStrings.ClusterProfile;
 
-    internal string \u0023\u003DzBs0U8AxGBth7PQG2Cppyd9U\u003D() => LocalizedStrings.PnFCandle;
+    public string \u0023\u003DzBs0U8AxGBth7PQG2Cppyd9U\u003D() => LocalizedStrings.PnFCandle;
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -1135,7 +1135,7 @@ public class ChartPanel :
   {
     public ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D \u0023\u003DzgQgmhv4\u003D;
 
-    internal void \u0023\u003DzhCrYxgzXy5_i82jHuEXWBKhZOVBJFTHN\u0024A\u003D\u003D(
+    public void \u0023\u003DzhCrYxgzXy5_i82jHuEXWBKhZOVBJFTHN\u0024A\u003D\u003D(
       IChartCandleElement _param1)
     {
       _param1.DrawStyle = this.\u0023\u003DzgQgmhv4\u003D.DrawStyle;
@@ -1281,7 +1281,7 @@ label_14:
   {
     public ChartCandleDrawStyles \u0023\u003DzgQgmhv4\u003D;
 
-    internal bool \u0023\u003DzyBox3lu1IEaSzP_YYQ\u003D\u003D(
+    public bool \u0023\u003DzyBox3lu1IEaSzP_YYQ\u003D\u003D(
       #nullable disable
       ChartPanel.\u0023\u003DzDvqdDoIQ0lWXMU6f7Q\u003D\u003D _param1)
     {
@@ -1294,7 +1294,7 @@ label_14:
     public string[] \u0023\u003DzwqcAXcxvUggD;
     public ChartPanel _variableSome3535;
 
-    internal void \u0023\u003DzpgDygB5ErIl1Nu7QHw\u003D\u003D(
+    public void \u0023\u003DzpgDygB5ErIl1Nu7QHw\u003D\u003D(
       #nullable enable
       object? _param1,
       PropertyChangedEventArgs _param2)
@@ -1445,7 +1445,7 @@ label_14:
     ChartPanel _variableSome3535;
     public Func<Order, bool> \u0023\u003DzaPd0W_M\u003D;
 
-    internal void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
+    public void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
       this._variableSome3535.\u0023\u003DzO72kpz0\u003D.CancelOrders(this.\u0023\u003DzaPd0W_M\u003D);
     }

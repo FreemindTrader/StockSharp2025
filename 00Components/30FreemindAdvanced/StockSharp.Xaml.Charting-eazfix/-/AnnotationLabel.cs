@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.AnnotationLabel
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using StockSharp.Charting;
+﻿using StockSharp.Charting;
 using StockSharp.Xaml.Charting.Visuals.Annotations;
 using System;
 using System.Diagnostics;
@@ -13,208 +7,207 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-[TemplatePart(Name = "PART_InputTextArea", Type = typeof (TextBox))]
-internal sealed class AnnotationLabel : Control
+[TemplatePart( Name = "PART_InputTextArea", Type = typeof( TextBox ) )]
+public class AnnotationLabel : Control
 {
-  
-  public static readonly DependencyProperty \u0023\u003DzrXSFm_E\u003D = DependencyProperty.Register(nameof (Text), typeof (string), typeof (AnnotationLabel), new PropertyMetadata((object) string.Empty));
-  
-  public static readonly DependencyProperty \u0023\u003DzbhlExb5p620n = DependencyProperty.Register(nameof (LabelPlacement), typeof (LabelPlacement), typeof (AnnotationLabel), new PropertyMetadata((object) LabelPlacement.Auto, new PropertyChangedCallback(AnnotationLabel.\u0023\u003DzXXEXIlUNtjM5)));
-  
-  public static readonly DependencyProperty \u0023\u003DzOjRqbPmhsyO_ = DependencyProperty.Register(nameof (LabelStyle), typeof (Style), typeof (AnnotationLabel), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationLabel.\u0023\u003DzXXEXIlUNtjM5)));
-  
-  public static readonly DependencyProperty \u0023\u003DzcXOoBjH4oSyy = DependencyProperty.Register(nameof (AxisLabelStyle), typeof (Style), typeof (AnnotationLabel), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationLabel.\u0023\u003DzXXEXIlUNtjM5)));
-  
-  public static readonly DependencyProperty \u0023\u003Dz2k8rcqz_ESAS = DependencyProperty.Register(nameof (CornerRadius), typeof (CornerRadius), typeof (AnnotationLabel), new PropertyMetadata((object) new CornerRadius()));
-  
-  public static readonly DependencyProperty \u0023\u003DzkSbs6pXjW8dc = DependencyProperty.Register(nameof (RotationAngle), typeof (double), typeof (AnnotationLabel), new PropertyMetadata((object) 0.0));
-  
-  public static readonly DependencyProperty \u0023\u003DzGHSiJVJNBzic = DependencyProperty.Register(nameof (CanEditText), typeof (bool), typeof (AnnotationLabel), new PropertyMetadata((object) false));
-  
-  public static readonly DependencyProperty \u0023\u003DzALRRz3KBB3Uz = DependencyProperty.Register(nameof (TextFormatting), typeof (string), typeof (AnnotationLabel), new PropertyMetadata((object) string.Empty));
-  
-  private LineAnnotationWithLabelsBase \u0023\u003Dzoem3lxBSJacx;
-  
-  private TextBox \u0023\u003DzA5cpUiCtbnuj;
+    public static readonly DependencyProperty TextProperty = DependencyProperty.Register(nameof (Text), typeof (string), typeof (AnnotationLabel), new PropertyMetadata((object) string.Empty));
+    public static readonly DependencyProperty LabelPlacementProperty = DependencyProperty.Register(nameof (LabelPlacement), typeof (LabelPlacement), typeof (AnnotationLabel), new PropertyMetadata((object) LabelPlacement.Auto, new PropertyChangedCallback(AnnotationLabel.OnLabelPlacementChanged)));
+    public static readonly DependencyProperty LabelStyleProperty = DependencyProperty.Register(nameof (LabelStyle), typeof (Style), typeof (AnnotationLabel), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationLabel.OnLabelPlacementChanged)));
+    public static readonly DependencyProperty AxisLabelStyleProperty = DependencyProperty.Register(nameof (AxisLabelStyle), typeof (Style), typeof (AnnotationLabel), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationLabel.OnLabelPlacementChanged)));
+    public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof (CornerRadius), typeof (CornerRadius), typeof (AnnotationLabel), new PropertyMetadata((object) new CornerRadius()));
+    public static readonly DependencyProperty RotationAngleProperty = DependencyProperty.Register(nameof (RotationAngle), typeof (double), typeof (AnnotationLabel), new PropertyMetadata((object) 0.0));
+    public static readonly DependencyProperty CanEditTextProperty = DependencyProperty.Register(nameof (CanEditText), typeof (bool), typeof (AnnotationLabel), new PropertyMetadata((object) false));
+    [Obsolete("We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding.")]
+    public static readonly DependencyProperty TextFormattingProperty = DependencyProperty.Register(nameof (TextFormatting), typeof (string), typeof (AnnotationLabel), new PropertyMetadata((object) string.Empty));
+    private LineAnnotationWithLabelsBase _parentAnnotation;
+    private TextBox _inputTextArea;
 
-  public AnnotationLabel()
-  {
-    this.DefaultStyleKey = (object) typeof (AnnotationLabel);
-    this.MouseLeftButtonDown += new MouseButtonEventHandler(this.\u0023\u003DzGDG1SrCuVxZHIZFp\u00248qj2tc\u003D);
-  }
-
-  internal bool \u0023\u003DztUuF6EohuIU9()
-  {
-    if (this.LabelPlacement == LabelPlacement.Axis)
-      return true;
-    return this.\u0023\u003DzLtJnA4CR3Exc() != null && this.\u0023\u003DzLtJnA4CR3Exc().GetLabelPlacement(this) == LabelPlacement.Axis;
-  }
-
-  public bool CanEditText
-  {
-    get
+    public AnnotationLabel()
     {
-      return (bool) this.GetValue(AnnotationLabel.\u0023\u003DzGHSiJVJNBzic);
+        this.DefaultStyleKey = ( object ) typeof( AnnotationLabel );
+        this.MouseLeftButtonDown += ( MouseButtonEventHandler ) ( ( s, e ) =>
+        {
+            this.TryFocusInputTextArea();
+            this.ParentAnnotation.TrySelectAnnotation();
+        } );
     }
-    set
+
+    public bool IsAxisLabel
     {
-      this.SetValue(AnnotationLabel.\u0023\u003DzGHSiJVJNBzic, (object) value);
+        get
+        {
+            if ( this.LabelPlacement == LabelPlacement.Axis )
+                return true;
+            if ( this.ParentAnnotation != null )
+                return this.ParentAnnotation.GetLabelPlacement( this ) == LabelPlacement.Axis;
+            return false;
+        }
     }
-  }
 
-  public double RotationAngle
-  {
-    get
+    public bool CanEditText
     {
-      return (double) this.GetValue(AnnotationLabel.\u0023\u003DzkSbs6pXjW8dc);
+        get
+        {
+            return ( bool ) this.GetValue( AnnotationLabel.CanEditTextProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.CanEditTextProperty, ( object ) value );
+        }
     }
-    set
+
+    public double RotationAngle
     {
-      this.SetValue(AnnotationLabel.\u0023\u003DzkSbs6pXjW8dc, (object) value);
+        get
+        {
+            return ( double ) this.GetValue( AnnotationLabel.RotationAngleProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.RotationAngleProperty, ( object ) value );
+        }
     }
-  }
 
-  public LineAnnotationWithLabelsBase \u0023\u003DzLtJnA4CR3Exc() => this.\u0023\u003Dzoem3lxBSJacx;
-
-  public void \u0023\u003DzBV_vk9PuzvJU(LineAnnotationWithLabelsBase _param1)
-  {
-    if (this.\u0023\u003Dzoem3lxBSJacx != null)
-      this.\u0023\u003Dzoem3lxBSJacx.Unselected -= new EventHandler(this.\u0023\u003Dzdb7_FucBsCsx);
-    this.\u0023\u003Dzoem3lxBSJacx = _param1;
-    if (this.\u0023\u003Dzoem3lxBSJacx == null)
-      return;
-    this.\u0023\u003Dzoem3lxBSJacx.Unselected += new EventHandler(this.\u0023\u003Dzdb7_FucBsCsx);
-    this.\u0023\u003DzxKKlOa0jEDmy();
-  }
-
-  public string Text
-  {
-    get
+    public LineAnnotationWithLabelsBase ParentAnnotation
     {
-      return (string) this.GetValue(AnnotationLabel.\u0023\u003DzrXSFm_E\u003D);
+        get
+        {
+            return this._parentAnnotation;
+        }
+        set
+        {
+            if ( this._parentAnnotation != null )
+                this._parentAnnotation.Unselected -= new EventHandler( this.OnParentAnnotationUnselected );
+            this._parentAnnotation = value;
+            if ( this._parentAnnotation == null )
+                return;
+            this._parentAnnotation.Unselected += new EventHandler( this.OnParentAnnotationUnselected );
+            this.ApplyStyle();
+        }
     }
-    set
+
+    public string Text
     {
-      this.SetValue(AnnotationLabel.\u0023\u003DzrXSFm_E\u003D, (object) value);
+        get
+        {
+            return ( string ) this.GetValue( AnnotationLabel.TextProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.TextProperty, ( object ) value );
+        }
     }
-  }
 
-  public LabelPlacement LabelPlacement
-  {
-    get
+    public LabelPlacement LabelPlacement
     {
-      return (LabelPlacement) this.GetValue(AnnotationLabel.\u0023\u003DzbhlExb5p620n);
+        get
+        {
+            return ( LabelPlacement ) this.GetValue( AnnotationLabel.LabelPlacementProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.LabelPlacementProperty, ( object ) value );
+        }
     }
-    set
+
+    [Obsolete( "We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding.", true )]
+    public string TextFormatting
     {
-      this.SetValue(AnnotationLabel.\u0023\u003DzbhlExb5p620n, (object) value);
+        get
+        {
+            throw new Exception( "We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding." );
+        }
+        set
+        {
+            throw new Exception( "We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding." );
+        }
     }
-  }
 
-  [Obsolete("We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding.", true)]
-  public string TextFormatting
-  {
-    get
+    public Style LabelStyle
     {
-      throw new Exception("We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding.");
+        get
+        {
+            return ( Style ) this.GetValue( AnnotationLabel.LabelStyleProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.LabelStyleProperty, ( object ) value );
+        }
     }
-    set
+
+    public Style AxisLabelStyle
     {
-      throw new Exception("We're sorry! AnnotationLabel.TextFormatting is obsolete. Please use a value converter or set StringFormat on a binding.");
+        get
+        {
+            return ( Style ) this.GetValue( AnnotationLabel.AxisLabelStyleProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.AxisLabelStyleProperty, ( object ) value );
+        }
     }
-  }
 
-  public Style LabelStyle
-  {
-    get
+    public CornerRadius CornerRadius
     {
-      return (Style) this.GetValue(AnnotationLabel.\u0023\u003DzOjRqbPmhsyO_);
+        get
+        {
+            return ( CornerRadius ) this.GetValue( AnnotationLabel.CornerRadiusProperty );
+        }
+        set
+        {
+            this.SetValue( AnnotationLabel.CornerRadiusProperty, ( object ) value );
+        }
     }
-    set
+
+    public override void OnApplyTemplate()
     {
-      this.SetValue(AnnotationLabel.\u0023\u003DzOjRqbPmhsyO_, (object) value);
+        base.OnApplyTemplate();
+        if ( this._inputTextArea != null )
+            this._inputTextArea.ClearValue( TextBox.TextProperty );
+        this._inputTextArea = this.GetAndAssertTemplateChild<TextBox>( "PART_InputTextArea" );
     }
-  }
 
-  public Style AxisLabelStyle
-  {
-    get
+    protected T GetAndAssertTemplateChild<T>( string childName ) where T : class
     {
-      return (Style) this.GetValue(AnnotationLabel.\u0023\u003DzcXOoBjH4oSyy);
+        T templateChild = this.GetTemplateChild(childName) as T;
+        if ( ( object ) templateChild == null )
+            throw new InvalidOperationException( string.Format( "Unable to Apply the Control Template. {0} is missing or of the wrong type", ( object ) childName ) );
+        return templateChild;
     }
-    set
+
+    private void TryFocusInputTextArea()
     {
-      this.SetValue(AnnotationLabel.\u0023\u003DzcXOoBjH4oSyy, (object) value);
+        if ( !this.CanEditText || !this.ParentAnnotation.CanEditText || !this.ParentAnnotation.IsSelected )
+            return;
+        this._inputTextArea.IsEnabled = true;
+        this._inputTextArea.Focus();
     }
-  }
 
-  public CornerRadius CornerRadius
-  {
-    get
+    private void RemoveFocusInputTextArea()
     {
-      return (CornerRadius) this.GetValue(AnnotationLabel.\u0023\u003Dz2k8rcqz_ESAS);
+        if ( this._inputTextArea == null )
+            return;
+        this._inputTextArea.IsEnabled = false;
     }
-    set
+
+    private void ApplyStyle()
     {
-      this.SetValue(AnnotationLabel.\u0023\u003Dz2k8rcqz_ESAS, (object) value);
+        this.Style = this.IsAxisLabel ? this.AxisLabelStyle : this.LabelStyle;
     }
-  }
 
-  public override void OnApplyTemplate()
-  {
-    base.OnApplyTemplate();
-    if (this.\u0023\u003DzA5cpUiCtbnuj != null)
-      this.\u0023\u003DzA5cpUiCtbnuj.ClearValue(TextBox.TextProperty);
-    this.\u0023\u003DzA5cpUiCtbnuj = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<TextBox>("PART_InputTextArea");
-  }
+    private static void OnLabelPlacementChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AnnotationLabel annotationLabel = d as AnnotationLabel;
+        if ( annotationLabel == null || annotationLabel.ParentAnnotation == null )
+            return;
+        annotationLabel.ApplyStyle();
+        annotationLabel.ParentAnnotation.InvalidateLabel( annotationLabel );
+    }
 
-  protected T \u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<T>(string _param1) where T : class
-  {
-    return this.GetTemplateChild(_param1) is T templateChild ? templateChild : throw new InvalidOperationException($"Unable to Apply the Control Template. {_param1} is missing or of the wrong type");
-  }
-
-  private void \u0023\u003DzktbQ8VbB8fkZOpg\u0024LQ\u003D\u003D()
-  {
-    if (!this.CanEditText || !this.\u0023\u003DzLtJnA4CR3Exc().CanEditText || !this.\u0023\u003DzLtJnA4CR3Exc().IsSelected)
-      return;
-    this.\u0023\u003DzA5cpUiCtbnuj.IsEnabled = true;
-    this.\u0023\u003DzA5cpUiCtbnuj.Focus();
-  }
-
-  private void \u0023\u003DzBjc4\u0024DEtqblaECuCQg\u003D\u003D()
-  {
-    if (this.\u0023\u003DzA5cpUiCtbnuj == null)
-      return;
-    this.\u0023\u003DzA5cpUiCtbnuj.IsEnabled = false;
-  }
-
-  private void \u0023\u003DzxKKlOa0jEDmy()
-  {
-    this.Style = this.\u0023\u003DztUuF6EohuIU9() ? this.AxisLabelStyle : this.LabelStyle;
-  }
-
-  private static void \u0023\u003DzXXEXIlUNtjM5(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AnnotationLabel annotationLabel) || annotationLabel.\u0023\u003DzLtJnA4CR3Exc() == null)
-      return;
-    annotationLabel.\u0023\u003DzxKKlOa0jEDmy();
-    annotationLabel.\u0023\u003DzLtJnA4CR3Exc().InvalidateLabel(annotationLabel);
-  }
-
-  private void \u0023\u003Dzdb7_FucBsCsx(object _param1, EventArgs _param2)
-  {
-    this.\u0023\u003DzBjc4\u0024DEtqblaECuCQg\u003D\u003D();
-  }
-
-  private void \u0023\u003DzGDG1SrCuVxZHIZFp\u00248qj2tc\u003D(
-    object _param1,
-    MouseButtonEventArgs _param2)
-  {
-    this.\u0023\u003DzktbQ8VbB8fkZOpg\u0024LQ\u003D\u003D();
-    this.\u0023\u003DzLtJnA4CR3Exc().TrySelectAnnotation();
-  }
+    private void OnParentAnnotationUnselected( object sender, EventArgs e )
+    {
+        this.RemoveFocusInputTextArea();
+    }
 }

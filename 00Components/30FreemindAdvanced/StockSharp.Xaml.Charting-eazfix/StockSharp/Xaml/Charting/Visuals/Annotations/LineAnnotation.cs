@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class LineAnnotation : LineAnnotationBase
+public class LineAnnotation : LineAnnotationBase
 {
   private Line _line;
   private Line _ghostLine;
@@ -55,11 +55,11 @@ internal class LineAnnotation : LineAnnotationBase
     };
   }
 
-  internal Line Line => this._line;
+  public Line Line => this._line;
 
-  internal Line GhostLine => this._ghostLine;
+  public Line GhostLine => this._ghostLine;
 
-  internal sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(LineAnnotation _param1) : 
+  public sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(LineAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<LineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
@@ -75,7 +75,7 @@ internal class LineAnnotation : LineAnnotationBase
     }
   }
 
-  internal sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(LineAnnotation _param1) : 
+  public sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(LineAnnotation _param1) : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<LineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(

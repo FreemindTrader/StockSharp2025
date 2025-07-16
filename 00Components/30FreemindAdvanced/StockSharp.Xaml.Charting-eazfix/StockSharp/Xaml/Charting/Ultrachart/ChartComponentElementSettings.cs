@@ -15,7 +15,7 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable enable
-internal sealed class ChartComponentElementSettings : 
+public sealed class ChartComponentElementSettings : 
   ChartSettingsObjectBase<
   #nullable disable
   IChartComponent>
@@ -71,7 +71,7 @@ internal sealed class ChartComponentElementSettings :
     public ChartComponentElementSettings _variableSome3535;
     public IChartComponent \u0023\u003DzLICojrU\u003D;
 
-    internal string \u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(
+    public string \u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(
       string _param1)
     {
       string str = _param1;
@@ -81,7 +81,7 @@ internal sealed class ChartComponentElementSettings :
       return str;
     }
 
-    internal bool SomeMethod383(PropertyDescriptor p)
+    public bool SomeMethod383(PropertyDescriptor p)
     {
       Func<IChartComponent, PropertyDescriptor, bool> zZdxZpcbMfueq = this._variableSome3535.\u0023\u003DzZdxZPcbMFUEQ;
       if ((zZdxZpcbMfueq != null ? (zZdxZpcbMfueq(this.\u0023\u003DzLICojrU\u003D, p) ? 1 : 0) : 1) == 0)
@@ -90,7 +90,7 @@ internal sealed class ChartComponentElementSettings :
       return zLiCojrU == null || !zLiCojrU.HasExtraName(p.Name);
     }
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -117,7 +117,7 @@ internal sealed class ChartComponentElementSettings :
     public static readonly ChartComponentElementSettings.SomeClass34343383 SomeMethond0343 = new ChartComponentElementSettings.SomeClass34343383();
     public static Func<PropertyDescriptor, bool> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
 
-    internal bool \u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D(PropertyDescriptor _param1)
+    public bool \u0023\u003DzAlVcETnEQ\u0024a0RzdLig\u003D\u003D(PropertyDescriptor _param1)
     {
       BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
       return browsableAttribute == null || browsableAttribute.Browsable;
@@ -129,7 +129,7 @@ internal sealed class ChartComponentElementSettings :
     public IChartIndicatorPainter \u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D;
     public ChartComponentElementSettings.SomeWheireosoe \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
 
-    internal PropertyDescriptor \u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D(
+    public PropertyDescriptor \u0023\u003DzGOsnTXDdP0nJN43aQA\u003D\u003D(
       PropertyDescriptor _param1)
     {
       return !TypeHelper.Is<IChartElement>(_param1.PropertyType, true) ? _param1 : ChartComponentElementSettings.GetPropertyDescriptor(this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DqXZI6v4OexM03brYrnueLBCm8b848g80JJ6Fxnx4QkFKHFME4ysV0qdDrSmWCfxM2(Extensions.GetDisplayName(_param1, (string) null)), (object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D, (IChartComponent) _param1.GetValue((object) this.\u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D), this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D._variableSome3535.\u0023\u003DzZdxZPcbMFUEQ);

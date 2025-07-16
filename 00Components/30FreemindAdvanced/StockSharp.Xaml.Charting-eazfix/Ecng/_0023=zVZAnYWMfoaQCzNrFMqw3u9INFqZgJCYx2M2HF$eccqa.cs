@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal static class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u9INFqZgJCYx2M2HF\u0024eccqaxUkBriA\u003D\u003D
+public static class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u9INFqZgJCYx2M2HF\u0024eccqaxUkBriA\u003D\u003D
 {
   public static BitmapSource \u0023\u003Dz12fMuw\u0024m\u002480t(this UIElement _param0)
   {

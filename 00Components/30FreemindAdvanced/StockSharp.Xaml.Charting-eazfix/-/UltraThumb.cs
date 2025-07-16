@@ -12,9 +12,9 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltraThumb : Control
+public sealed class UltraThumb : Control
 {
   
   private bool \u0023\u003DzqGwbHdeZ8yMA;

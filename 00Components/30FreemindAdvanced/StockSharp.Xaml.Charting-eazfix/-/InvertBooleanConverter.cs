@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class InvertBooleanConverter : IValueConverter
+public sealed class InvertBooleanConverter : IValueConverter
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
     {

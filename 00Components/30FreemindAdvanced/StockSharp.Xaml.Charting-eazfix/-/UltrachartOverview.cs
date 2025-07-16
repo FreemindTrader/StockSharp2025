@@ -18,12 +18,12 @@ using System.Windows.Media;
 using System.Windows.Threading;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "PART_Container", Type = typeof (Panel))]
 [TemplatePart(Name = "PART_BackgroundSurface", Type = typeof (ISciChartSurface))]
 [TemplatePart(Name = "PART_Scrollbar", Type = typeof (UltrachartScrollbar))]
-internal sealed class UltrachartOverview : 
+public sealed class UltrachartOverview : 
   Control,
   IInvalidatableElement
 {
@@ -451,7 +451,7 @@ internal sealed class UltrachartOverview :
     public UltrachartOverview _variableSome3535;
     public IRenderableSeries _IRenderableSeries334;
 
-    internal void \u0023\u003Dzq5A_hw8sG0QZl737AckA8VB19QdzQUuQMw\u003D\u003D()
+    public void \u0023\u003Dzq5A_hw8sG0QZl737AckA8VB19QdzQUuQMw\u003D\u003D()
     {
       this._variableSome3535.\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(this._IRenderableSeries334.get_DataSeries());
     }
@@ -461,7 +461,7 @@ internal sealed class UltrachartOverview :
   {
     public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzV4I\u00248D0bjQIn;
 
-    internal bool \u0023\u003DzPainzusVDvxJHbnmyWpu6OsDqQPW(
+    public bool \u0023\u003DzPainzusVDvxJHbnmyWpu6OsDqQPW(
       IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() == this.\u0023\u003DzV4I\u00248D0bjQIn;

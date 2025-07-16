@@ -13,9 +13,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class AxisCanvas : 
+public class AxisCanvas : 
   Panel,
   ISuspendable
 {
@@ -338,72 +338,72 @@ internal class AxisCanvas :
     public static Func<UIElement, bool> \u0023\u003Dz_mJ1o44751\u0024zYSNI1g\u003D\u003D;
     public static Func<UIElement, bool> \u0023\u003DzDTNH\u0024s4BMtuReELE\u0024g\u003D\u003D;
 
-    internal bool \u0023\u003DzYKvrV0JWnmDlqO_CWglp58k\u003D(UIElement _param1)
+    public bool \u0023\u003DzYKvrV0JWnmDlqO_CWglp58k\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetLeft(_param1).IsNaN();
     }
 
-    internal double \u0023\u003DzAVWvTGcAdkhBave7rMtp6yE\u003D(UIElement _param1)
+    public double \u0023\u003DzAVWvTGcAdkhBave7rMtp6yE\u003D(UIElement _param1)
     {
       return AxisCanvas.GetLeft(_param1) + _param1.DesiredSize.Width;
     }
 
-    internal bool \u0023\u003Dz\u00245m21xs\u0024cvAmnIdf2gU_Xac\u003D(UIElement _param1)
+    public bool \u0023\u003Dz\u00245m21xs\u0024cvAmnIdf2gU_Xac\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetCenterLeft(_param1).IsNaN();
     }
 
-    internal double \u0023\u003DzNqdo6wxMxabVyP0X1FEOxSA\u003D(UIElement _param1)
+    public double \u0023\u003DzNqdo6wxMxabVyP0X1FEOxSA\u003D(UIElement _param1)
     {
       return AxisCanvas.GetCenterLeft(_param1) + _param1.DesiredSize.Width / 2.0;
     }
 
-    internal double \u0023\u003DzFbpefW3HjUWuukZ1ttNNd8E\u003D(UIElement _param1)
+    public double \u0023\u003DzFbpefW3HjUWuukZ1ttNNd8E\u003D(UIElement _param1)
     {
       return _param1.DesiredSize.Width;
     }
 
-    internal bool \u0023\u003DzgKa7Ws34VPBPBmckMDnLakc\u003D(UIElement _param1)
+    public bool \u0023\u003DzgKa7Ws34VPBPBmckMDnLakc\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetRight(_param1).IsNaN();
     }
 
-    internal bool \u0023\u003DzU5vCk358B5H2CkspeunyYO0\u003D(UIElement _param1)
+    public bool \u0023\u003DzU5vCk358B5H2CkspeunyYO0\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetCenterRight(_param1).IsNaN();
     }
 
-    internal bool \u0023\u003DzEK3\u0024DRApfKZBLp9SFni3nxM\u003D(UIElement _param1)
+    public bool \u0023\u003DzEK3\u0024DRApfKZBLp9SFni3nxM\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetTop(_param1).IsNaN();
     }
 
-    internal double \u0023\u003Dz0bH_RR\u0024vBn9G_dk9IHgqhHs\u003D(UIElement _param1)
+    public double \u0023\u003Dz0bH_RR\u0024vBn9G_dk9IHgqhHs\u003D(UIElement _param1)
     {
       return AxisCanvas.GetTop(_param1) + _param1.DesiredSize.Height;
     }
 
-    internal bool \u0023\u003DzAKOrHq8MNBCJX496ulSnUwg\u003D(UIElement _param1)
+    public bool \u0023\u003DzAKOrHq8MNBCJX496ulSnUwg\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetCenterTop(_param1).IsNaN();
     }
 
-    internal double \u0023\u003DzTUXHCNVzoXfaHk4oX\u0024dTb_s\u003D(UIElement _param1)
+    public double \u0023\u003DzTUXHCNVzoXfaHk4oX\u0024dTb_s\u003D(UIElement _param1)
     {
       return AxisCanvas.GetCenterTop(_param1) + _param1.DesiredSize.Height / 2.0;
     }
 
-    internal double \u0023\u003DzeWUo84FcnBqVep84N3UETx8\u003D(UIElement _param1)
+    public double \u0023\u003DzeWUo84FcnBqVep84N3UETx8\u003D(UIElement _param1)
     {
       return _param1.DesiredSize.Height;
     }
 
-    internal bool \u0023\u003DzMfPK\u0024Mkqkqf_PHvwIZvXJt0\u003D(UIElement _param1)
+    public bool \u0023\u003DzMfPK\u0024Mkqkqf_PHvwIZvXJt0\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetBottom(_param1).IsNaN();
     }
 
-    internal bool \u0023\u003Dz3c2h9eD2aQNit16ssTlcYSc\u003D(UIElement _param1)
+    public bool \u0023\u003Dz3c2h9eD2aQNit16ssTlcYSc\u003D(UIElement _param1)
     {
       return !AxisCanvas.GetCenterBottom(_param1).IsNaN();
     }
@@ -414,22 +414,22 @@ internal class AxisCanvas :
     public double \u0023\u003Dz5ns\u0024beLh7Lq6;
     public double \u0023\u003DzVJWwwbsqQzla;
 
-    internal double \u0023\u003DzEkHlMyEAYNsEFyQhmw\u003D\u003D(UIElement _param1)
+    public double \u0023\u003DzEkHlMyEAYNsEFyQhmw\u003D\u003D(UIElement _param1)
     {
       return this.\u0023\u003Dz5ns\u0024beLh7Lq6 - AxisCanvas.GetRight(_param1) - _param1.DesiredSize.Width;
     }
 
-    internal double \u0023\u003Dz9C1di3PQnmzjSxkueA\u003D\u003D(UIElement _param1)
+    public double \u0023\u003Dz9C1di3PQnmzjSxkueA\u003D\u003D(UIElement _param1)
     {
       return this.\u0023\u003Dz5ns\u0024beLh7Lq6 - AxisCanvas.GetCenterRight(_param1) - _param1.DesiredSize.Width / 2.0;
     }
 
-    internal double \u0023\u003DzIWa4EBPGhhWapsUzDA\u003D\u003D(UIElement _param1)
+    public double \u0023\u003DzIWa4EBPGhhWapsUzDA\u003D\u003D(UIElement _param1)
     {
       return this.\u0023\u003DzVJWwwbsqQzla - AxisCanvas.GetBottom(_param1) - _param1.DesiredSize.Height;
     }
 
-    internal double \u0023\u003Dz5gqPXwewFyEp00w4Kg\u003D\u003D(UIElement _param1)
+    public double \u0023\u003Dz5gqPXwewFyEp00w4Kg\u003D\u003D(UIElement _param1)
     {
       return this.\u0023\u003DzVJWwwbsqQzla - AxisCanvas.GetCenterBottom(_param1) - _param1.DesiredSize.Height / 2.0;
     }

@@ -5,6 +5,6 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal enum \u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfnUoq5_\u0024aGR\u0024QRKFQpDKpzknh8Hw\u003D\u003D
+public enum \u0023\u003DzjFV3E4nzZ192p80vvoilfzf1vG0DP\u0024PINEJIKqfnUoq5_\u0024aGR\u0024QRKFQpDKpzknh8Hw\u003D\u003D
 {
 }

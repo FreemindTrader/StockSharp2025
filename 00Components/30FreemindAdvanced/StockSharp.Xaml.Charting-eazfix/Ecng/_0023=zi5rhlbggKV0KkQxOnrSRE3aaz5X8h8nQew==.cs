@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSRE3aaz5X8h8nQew\u003D\u003D : 
+public sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSRE3aaz5X8h8nQew\u003D\u003D : 
   Range<Decimal>
 {
   public \u0023\u003Dzi5rhlbggKV0KkQxOnrSRE3aaz5X8h8nQew\u003D\u003D()

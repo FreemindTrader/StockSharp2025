@@ -30,13 +30,13 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   
   private Action \u0023\u003DzTsL\u0024ygfSgp6i;
   
-  internal ComboBoxEdit \u0023\u003Dz7qmq9F8\u003D;
+  public ComboBoxEdit \u0023\u003Dz7qmq9F8\u003D;
   
-  internal ComboBoxEdit \u0023\u003DzRBR31Bw\u003D;
+  public ComboBoxEdit \u0023\u003DzRBR31Bw\u003D;
   
-  internal ComboBoxEdit \u0023\u003DzlFT\u00249og\u003D;
+  public ComboBoxEdit \u0023\u003DzlFT\u00249og\u003D;
   
-  internal Chart3D \u0023\u003DzO72kpz0\u003D;
+  public Chart3D \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -245,7 +245,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
 
   [DebuggerNonUserCode]
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
-  internal Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
+  public Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
   {
     return Delegate.CreateDelegate(_param1, (object) this, _param2);
   }
@@ -352,20 +352,20 @@ public class OptimizerChart3D : UserControl, IComponentConnector
     public static Func<Vector3D, bool> \u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D;
     public static Func<Vector3D, bool> \u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D;
 
-    internal bool \u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9(Vector3D _param1) => _param1.X == 1.0;
+    public bool \u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9(Vector3D _param1) => _param1.X == 1.0;
 
-    internal bool \u0023\u003DzokVMWQ5tUWySX0ZAO5zdCjaws8Kc(Vector3D _param1) => _param1.X == 1.0;
+    public bool \u0023\u003DzokVMWQ5tUWySX0ZAO5zdCjaws8Kc(Vector3D _param1) => _param1.X == 1.0;
 
-    internal bool \u0023\u003Dz5EW_l2nSTjbBKuuG93AZ7v1j7TCk(Vector3D _param1) => _param1.Y == 1.0;
+    public bool \u0023\u003Dz5EW_l2nSTjbBKuuG93AZ7v1j7TCk(Vector3D _param1) => _param1.Y == 1.0;
 
-    internal bool \u0023\u003DzvMpUCbGMw4\u0024YcvOPecSimkLobYoM(Vector3D _param1)
+    public bool \u0023\u003DzvMpUCbGMw4\u0024YcvOPecSimkLobYoM(Vector3D _param1)
     {
       return _param1.Y == 1.0;
     }
 
-    internal bool \u0023\u003DzRg6HPHFitFsySR6nRP24a_mwKHUh(Vector3D _param1) => _param1.Z == 1.0;
+    public bool \u0023\u003DzRg6HPHFitFsySR6nRP24a_mwKHUh(Vector3D _param1) => _param1.Z == 1.0;
 
-    internal bool \u0023\u003DzVXnwkZoqTYs1ICn7IXdhIyV4W7mI(Vector3D _param1) => _param1.Z == 1.0;
+    public bool \u0023\u003DzVXnwkZoqTYs1ICn7IXdhIyV4W7mI(Vector3D _param1) => _param1.Z == 1.0;
   }
 
   [StructLayout(LayoutKind.Auto)]

@@ -7,19 +7,19 @@
 using System;
 
 #nullable disable
-internal static class TimeSpanExtensions
+public static class TimeSpanExtensions
 {
-  internal static bool \u0023\u003DzhilcjqQ\u003D(this TimeSpan _param0)
+  public static bool \u0023\u003DzhilcjqQ\u003D(this TimeSpan _param0)
   {
     return _param0 == TimeSpan.Zero;
   }
 
-  internal static TimeSpan FromMonths(int _param0)
+  public static TimeSpan FromMonths(int _param0)
   {
     return TimeSpan.FromDays((double) _param0 * 30.436875);
   }
 
-  internal static TimeSpan \u0023\u003Dzop7Mb7nz1Slh(int _param0)
+  public static TimeSpan \u0023\u003Dzop7Mb7nz1Slh(int _param0)
   {
     return TimeSpan.FromDays((double) (_param0 * 7));
   }
@@ -34,7 +34,7 @@ internal static class TimeSpanExtensions
     return NumberUtil.IsDivisibleBy((double) _param0.Ticks, (double) _param1.Ticks);
   }
 
-  internal static bool \u0023\u003Dzl5VrLhRrr5CB(this TimeSpan _param0, TimeSpan _param1)
+  public static bool \u0023\u003Dzl5VrLhRrr5CB(this TimeSpan _param0, TimeSpan _param1)
   {
     bool flag = false;
     if (_param0 + _param1 < TimeSpan.MaxValue)

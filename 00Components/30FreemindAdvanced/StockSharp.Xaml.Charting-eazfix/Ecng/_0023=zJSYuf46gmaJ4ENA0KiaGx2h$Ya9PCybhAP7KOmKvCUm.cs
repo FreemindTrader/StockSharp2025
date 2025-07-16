@@ -7,7 +7,7 @@
 using System.Windows.Input;
 
 #nullable disable
-internal interface \u0023\u003DzJSYuf46gmaJ4ENA0KiaGx2h\u0024Ya9PCybhAP7KOmKvCUmh
+public interface \u0023\u003DzJSYuf46gmaJ4ENA0KiaGx2h\u0024Ya9PCybhAP7KOmKvCUmh
 {
   TouchPointCollection \u0023\u003DzBp9oXZI\u003D(
     IPublishMouseEvents _param1,

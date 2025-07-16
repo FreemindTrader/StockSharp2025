@@ -10,7 +10,7 @@ using System;
 using System.Collections.Specialized;
 
 #nullable disable
-internal abstract class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdiEBhTvW5hdKg\u003D\u003D : 
+public abstract class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IdiEBhTvW5hdKg\u003D\u003D : 
   \u0023\u003DzawTMm83sNsuVHdgLsihy4doIUbD\u0024mKpPwQ\u003D\u003D
 {
   protected override void \u0023\u003DzC4EgRM0UvJOX(IChartElement _param1)

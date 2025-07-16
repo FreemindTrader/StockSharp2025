@@ -21,7 +21,7 @@ using System.Windows.Threading;
 #nullable enable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class ActiveOrderAnnotation : AnnotationBase
+public class ActiveOrderAnnotation : AnnotationBase
 {
   public static readonly 
   #nullable disable
@@ -208,7 +208,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     IAxis xAxis,
     IAxis yAxis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     IComparable[] comparableArray = this.FromCoordinates(newPoint);
     IComparable comparable = comparableArray[0];
     DependencyProperty x;
@@ -231,7 +231,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     IAxis yaxis = this.YAxis;
     if (!this.IsDragging || !this._isOutOfBounds || yaxis == null)
       return;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     Point position = Mouse.GetPosition((IInputElement) canvas);
     if (position.Y >= 0.0 && position.Y < canvas.ActualHeight)
       return;
@@ -277,7 +277,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     IAxis yaxis = this.YAxis;
     if (yaxis == null)
       return (0.0, 0.0);
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     double coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
     if (this.IsDraggingByUser && !this.IsCoordinateValid(coord, canvas.ActualHeight))
     {
@@ -494,7 +494,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     public override void \u0023\u003DzNUoYFVRHgzxB(
       AnnotationCoordinates _param1)
     {
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
+      IAnnotationCanvas canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
       double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
       if (!z2J4l3QuGwZhe.\u0023\u003Dz_Bj0HmLWq3hY() || canvas == null)
         return;
@@ -525,7 +525,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       return (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight ? 1 : (_param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth ? 1 : 0)) == 0;
     }
@@ -537,7 +537,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     public static readonly ActiveOrderAnnotation.SomeClass34343383 SomeMethond0343 = new ActiveOrderAnnotation.SomeClass34343383();
     public static Func<IAnnotation, bool> \u0023\u003DznzFgTdlItmhQVnVTUQ\u003D\u003D;
 
-    internal bool \u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D(
+    public bool \u0023\u003DzdM_Hrfu\u0024qp11xw0hbj1NIyE\u003D(
       IAnnotation _param1)
     {
       return _param1 is ActiveOrderAnnotation;

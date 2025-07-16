@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Threading;
 
 #nullable disable
-internal sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D : 
+public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D : 
   ChartModifierBase
 {
   

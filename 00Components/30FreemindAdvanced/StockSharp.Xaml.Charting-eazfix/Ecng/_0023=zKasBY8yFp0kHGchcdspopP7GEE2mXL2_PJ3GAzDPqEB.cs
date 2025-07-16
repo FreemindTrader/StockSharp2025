@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopP7GEE2mXL2_PJ3GAzDPqEBp355x434uR\u0024Xvxl7l
+public sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopP7GEE2mXL2_PJ3GAzDPqEBp355x434uR\u0024Xvxl7l
 {
   private readonly Point \u0023\u003DzaW71LKQ\u003D;
 

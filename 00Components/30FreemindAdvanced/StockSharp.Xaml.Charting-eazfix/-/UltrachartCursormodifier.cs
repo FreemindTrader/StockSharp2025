@@ -13,9 +13,9 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltrachartCursormodifier : 
+public sealed class UltrachartCursormodifier : 
   CursorModifier,
   IComponentConnector
 {

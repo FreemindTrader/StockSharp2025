@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSmVXa75ENDZ2yd0DZz0\u003D
+public sealed class \u0023\u003DzNpTQ6VGNYT7plNgM4mFVSmVXa75ENDZ2yd0DZz0\u003D
 {
   private readonly IComparable \u0023\u003DzEBLPoa4\u003D;
   private readonly string \u0023\u003DzRpCB0alVLwOC;

@@ -13,9 +13,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class PolarPanel : Panel
+public sealed class PolarPanel : Panel
 {
   
   public static readonly DependencyProperty \u0023\u003DzAJq6AwIY2FAx = DependencyProperty.Register(nameof (StretchToSize), typeof (bool), typeof (PolarPanel), new PropertyMetadata((object) false, new PropertyChangedCallback(PolarPanel.\u0023\u003DzSmUgMtsFJvHJ)));
@@ -222,7 +222,7 @@ internal sealed class PolarPanel : Panel
     public static readonly PolarPanel.SomeClass34343383 SomeMethond0343 = new PolarPanel.SomeClass34343383();
     public static Func<UIElement, bool> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
 
-    internal bool \u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D(UIElement _param1)
+    public bool \u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D(UIElement _param1)
     {
       return _param1.\u0023\u003DzST\u0024t7rI\u003D();
     }

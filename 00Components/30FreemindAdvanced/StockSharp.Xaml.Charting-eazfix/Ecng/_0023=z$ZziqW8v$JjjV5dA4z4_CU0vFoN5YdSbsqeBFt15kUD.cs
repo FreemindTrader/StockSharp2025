@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-internal sealed class \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CU0vFoN5YdSbsqeBFt15kUDVaNXbig\u003D\u003D : 
+public sealed class \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CU0vFoN5YdSbsqeBFt15kUDVaNXbig\u003D\u003D : 
   IValueConverter
 {
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)

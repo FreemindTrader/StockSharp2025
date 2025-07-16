@@ -15,94 +15,99 @@ using StockSharp.Xaml.Charting.Visuals.Annotations;
 
 #pragma warning disable CA1416
 
-namespace StockSharp.Charting
+namespace StockSharp.Charting;
+
+public sealed class AnnotationTypeToPropertyConverter : IValueConverter
 {
-    internal sealed class AnnotationTypeToPropertyConverter : IValueConverter
+    private static readonly PropertyGridEx _propertyGridEx = new PropertyGridEx();
+    private readonly Dictionary<ChartAnnotationTypes, List<PropertyDefinition>> _annotationTypesToProperty = new Dictionary<ChartAnnotationTypes, List<PropertyDefinition>>(
+        );
+
+    private List<PropertyDefinition> GetPropertyDefinitionList(ChartAnnotationTypes annotationType)
     {
-        private static readonly PropertyGridEx _propertyGridEx = new PropertyGridEx( );
-        private readonly Dictionary<ChartAnnotationTypes, List<PropertyDefinition>> _annotationTypesToProperty = new Dictionary<ChartAnnotationTypes, List<PropertyDefinition>>( );
+        PropertyDefinitionStruct definitionStruct;
+        definitionStruct.PropertyDefinitionList = new List<PropertyDefinition>();
+        AddPropertyDefinition("Stroke", typeof(Brush), ref definitionStruct);
+        AddPropertyDefinition("StrokeThickness", typeof(double), ref definitionStruct);
+        AddPropertyDefinition("ShowLabel", null, ref definitionStruct);
+        AddPropertyDefinition("LabelPlacement", typeof(Enum), ref definitionStruct);
 
-        private List<PropertyDefinition> GetPropertyDefinitionList( ChartAnnotationTypes annotationType )
+        switch(annotationType)
         {
-            PropertyDefinitionStruct definitionStruct;
-            definitionStruct.PropertyDefinitionList = new List<PropertyDefinition>();
-            AddPropertyDefinition( "Stroke", typeof( Brush ), ref definitionStruct );
-            AddPropertyDefinition( "StrokeThickness", typeof( double ), ref definitionStruct );
-            AddPropertyDefinition( "ShowLabel", null, ref definitionStruct );
-            AddPropertyDefinition( "LabelPlacement", typeof( Enum ), ref definitionStruct );
+            case ChartAnnotationTypes.TextAnnotation:
+                AddPropertyDefinition("Text", null, ref definitionStruct);
+                AddPropertyDefinition("Foreground", typeof(Brush), ref definitionStruct);
+                AddPropertyDefinition("Background", typeof(Brush), ref definitionStruct);
+                AddPropertyDefinition("BorderBrush", typeof(Brush), ref definitionStruct);
+                AddPropertyDefinition("BorderThickness", null, ref definitionStruct);
+                break;
+            case ChartAnnotationTypes.BoxAnnotation:
+                AddPropertyDefinition("BorderBrush", typeof(Brush), ref definitionStruct);
+                AddPropertyDefinition("BorderThickness", null, ref definitionStruct);
+                AddPropertyDefinition("Background", typeof(Brush), ref definitionStruct);
+                break;
+            case ChartAnnotationTypes.HorizontalLineAnnotation:
+                AddPropertyDefinition("HorizontalAlignment", typeof(Enum), ref definitionStruct);
+                break;
+            case ChartAnnotationTypes.VerticalLineAnnotation:
+                AddPropertyDefinition("VerticalAlignment", typeof(Enum), ref definitionStruct);
+                break;
+        }
+        return definitionStruct.PropertyDefinitionList;
+    }
 
-            switch ( annotationType )
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        AnnotationBase annotation = value as AnnotationBase;
+
+        if(annotation == null)
+        {
+            return null;
+        }
+
+        var annotationType = annotation.GetAnnotationType();
+
+        List<PropertyDefinition> propertyDefinitionList;
+
+        if(!_annotationTypesToProperty.TryGetValue(annotationType, out propertyDefinitionList))
+        {
+            _annotationTypesToProperty[annotationType] = propertyDefinitionList =
+                GetPropertyDefinitionList(annotationType);
+        }
+
+        return propertyDefinitionList;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotSupportedException();
+    }
+
+    public static void AddPropertyDefinition( string propertyName, Type propertyType, ref PropertyDefinitionStruct definitionStruct )
+    {
+        var definition = new PropertyDefinition();
+        definition.Path = propertyName;
+        definition.PostOnEditValueChanged = true;
+
+        if(propertyType != null)
+        {
+            if(propertyType == typeof(double))
             {
-                case ChartAnnotationTypes.TextAnnotation:
-                    AddPropertyDefinition( "Text", null, ref definitionStruct );
-                    AddPropertyDefinition( "Foreground", typeof( Brush ), ref definitionStruct );
-                    AddPropertyDefinition( "Background", typeof( Brush ), ref definitionStruct );
-                    AddPropertyDefinition( "BorderBrush", typeof( Brush ), ref definitionStruct );
-                    AddPropertyDefinition( "BorderThickness", null, ref definitionStruct );
-                    break;
-                case ChartAnnotationTypes.BoxAnnotation:
-                    AddPropertyDefinition( "BorderBrush", typeof( Brush ), ref definitionStruct );
-                    AddPropertyDefinition( "BorderThickness", null, ref definitionStruct );
-                    AddPropertyDefinition( "Background", typeof( Brush ), ref definitionStruct );
-                    break;
-                case ChartAnnotationTypes.HorizontalLineAnnotation:
-                    AddPropertyDefinition( "HorizontalAlignment", typeof( Enum ), ref definitionStruct );
-                    break;
-                case ChartAnnotationTypes.VerticalLineAnnotation:
-                    AddPropertyDefinition( "VerticalAlignment", typeof( Enum ), ref definitionStruct );
-                    break;
-            }
-            return definitionStruct.PropertyDefinitionList;
-        }
-
-        public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
-        {
-            AnnotationBase annotation = value as AnnotationBase;
-
-            if ( annotation == null )
-            {
-                return null;
+                propertyType = typeof(Decimal);
             }
 
-            var annotationType = annotation.GetAnnotationType( );
-
-            List<PropertyDefinition> propertyDefinitionList;
-
-            if ( !_annotationTypesToProperty.TryGetValue( annotationType, out propertyDefinitionList ) )
-            {
-                _annotationTypesToProperty[ annotationType ] = propertyDefinitionList = GetPropertyDefinitionList( annotationType );
-            }
-
-            return propertyDefinitionList;
+            Maybe.Do(
+                _propertyGridEx.PropertyDefinitions
+                    .OfType<PropertyDefinition>()
+                    .FirstOrDefault(p => p.Type == propertyType),
+                d => definition.CellTemplate = d.CellTemplate);
         }
+        definitionStruct.PropertyDefinitionList.Add(definition);
+    }
 
-        public object ConvertBack( object value, Type targetType, object parameter, CultureInfo culture )
-        {
-            throw new NotSupportedException();
-        }
-
-        internal static void AddPropertyDefinition( string propertyName, Type propertyType, ref PropertyDefinitionStruct definitionStruct )
-        {
-            var definition = new PropertyDefinition( );
-            definition.Path = propertyName;
-            definition.PostOnEditValueChanged = true;
-
-            if ( propertyType != null )
-            {
-                if ( propertyType == typeof( double ) )
-                {
-                    propertyType = typeof( Decimal );
-                }
-
-                Maybe.Do( _propertyGridEx.PropertyDefinitions.OfType<PropertyDefinition>().FirstOrDefault( p => p.Type == propertyType ), d => definition.CellTemplate = d.CellTemplate );
-            }
-            definitionStruct.PropertyDefinitionList.Add( definition );
-        }
-
-        [StructLayout( LayoutKind.Auto )]
-        public struct PropertyDefinitionStruct
-        {
-            public List<PropertyDefinition> PropertyDefinitionList;
-        }
+    [StructLayout(LayoutKind.Auto)]
+    public struct PropertyDefinitionStruct
+    {
+        public List<PropertyDefinition> PropertyDefinitionList;
     }
 }

@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv3O1vVUi3Pf5LXL8sd0rJM6z2sXOfdVyBoG70yPzUmVGknO_tSQ\u003D
+public sealed class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv3O1vVUi3Pf5LXL8sd0rJM6z2sXOfdVyBoG70yPzUmVGknO_tSQ\u003D
 {
   private \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<int> \u0023\u003DzhUUq_d4kT69A;
   private int \u0023\u003Dzd7Ch78N2\u0024CEF;

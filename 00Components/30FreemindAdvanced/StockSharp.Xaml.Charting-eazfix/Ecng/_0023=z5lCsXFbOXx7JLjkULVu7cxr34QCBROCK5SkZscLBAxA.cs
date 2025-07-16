@@ -7,7 +7,7 @@
 using System.Windows.Media;
 
 #nullable disable
-internal abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA8Xo9zyrg5yvc\u003D : 
+public abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA8Xo9zyrg5yvc\u003D : 
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
 {
   public virtual Color? \u0023\u003DzP50Orng\u003D(

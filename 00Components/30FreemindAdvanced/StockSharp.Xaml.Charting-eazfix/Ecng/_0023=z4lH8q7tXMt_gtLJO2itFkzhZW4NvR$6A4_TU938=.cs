@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable enable
-internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D
+public static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D
 {
   public static bool \u0023\u003Dz_Q3WCiJm2fzt(
     \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D _param0,
@@ -108,7 +108,7 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     return \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzAX\u0024lol1aDgYQ(point1, point2, point3, true).CompareTo(0.0) == 0;
   }
 
-  internal static double \u0023\u003DzAX\u0024lol1aDgYQ(
+  public static double \u0023\u003DzAX\u0024lol1aDgYQ(
     Point _param0,
     Point _param1,
     Point _param2,
@@ -189,7 +189,7 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     };
   }
 
-  internal static bool \u0023\u003DzFP5XPYppz8kpYCPP8A\u003D\u003D(
+  public static bool \u0023\u003DzFP5XPYppz8kpYCPP8A\u003D\u003D(
     Point _param0,
     Point _param1,
     Point _param2)
@@ -197,7 +197,7 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     return \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003Dzkgl9_iCbsQoM(_param1, _param2, _param0) > 0.0;
   }
 
-  internal static bool \u0023\u003Dz_0KJG0n18I8E(
+  public static bool \u0023\u003Dz_0KJG0n18I8E(
     Point _param0,
     Point _param1,
     Point _param2,
@@ -222,12 +222,12 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     return Math.Abs(_param0.\u0023\u003DzunK60DE\u003D - _param0.\u0023\u003Dz9xgeQi0\u003D) < double.Epsilon && Math.Abs(_param0.\u0023\u003DzAcftkI4\u003D - _param0.\u0023\u003DzZ0gmED0\u003D) < double.Epsilon;
   }
 
-  internal static bool \u0023\u003DzxGhbraO0gg9\u0024(this Point _param0, Size _param1)
+  public static bool \u0023\u003DzxGhbraO0gg9\u0024(this Point _param0, Size _param1)
   {
     return _param0.X >= 0.0 && _param0.X <= _param1.Width && _param0.Y >= 0.0 && _param0.Y <= _param1.Height;
   }
 
-  internal static bool \u0023\u003Dzv0egX3NE\u0024EiJR4qnZA\u003D\u003D(
+  public static bool \u0023\u003Dzv0egX3NE\u0024EiJR4qnZA\u003D\u003D(
     Point _param0,
     Point _param1,
     Point _param2)
@@ -235,7 +235,7 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     return (_param0.X * (_param1.Y - _param2.Y) + _param1.X * (_param2.Y - _param0.Y) + _param2.X * (_param0.Y - _param1.Y)).Equals(0.0);
   }
 
-  internal static Point \u0023\u003DzrLjTTj5p96o9(
+  public static Point \u0023\u003DzrLjTTj5p96o9(
     this Point _param0,
     Size _param1,
     int _param2,
@@ -254,7 +254,7 @@ internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\
     return _param0;
   }
 
-  internal static IEnumerable<Point> \u0023\u003DzUIfyPrQYBsuR(
+  public static IEnumerable<Point> \u0023\u003DzUIfyPrQYBsuR(
     IEnumerable<Point> _param0,
     Size _param1,
     int _param2,

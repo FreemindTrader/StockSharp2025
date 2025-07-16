@@ -11,9 +11,9 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ZoomExtentsModifier : 
+public sealed class ZoomExtentsModifier : 
   ChartModifierBase
 {
   

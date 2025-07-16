@@ -27,7 +27,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "PART_GridLinesArea", Type = typeof (GridLinesPanel))]
 [TemplatePart(Name = "PART_LeftAxisArea", Type = typeof (AxisArea))]
@@ -37,7 +37,7 @@ namespace SciChart.Charting;
 [TemplatePart(Name = "PART_AnnotationsOverlaySurface", Type = typeof (AnnotationSurface))]
 [TemplatePart(Name = "PART_AnnotationsUnderlaySurface", Type = typeof (AnnotationSurface))]
 [TemplatePart(Name = "PART_ChartAdornerLayer", Type = typeof (Canvas))]
-internal class SciChartSurface : 
+public class SciChartSurface : 
   SciChartSurface,
   IDisposable,
   IXmlSerializable,
@@ -165,7 +165,7 @@ internal class SciChartSurface :
     this.AnimateZoomExtentsCommand = (ICommand) new DelegateCommand(new Action<object>(this.\u0023\u003DzS2ufUgCmj4iLhzxXcG9wL_0\u003D));
   }
 
-  internal SciChartSurface(
+  public SciChartSurface(
     IServiceContainer _param1)
     : this()
   {
@@ -288,7 +288,7 @@ internal class SciChartSurface :
     while (eventHandler != comparand);
   }
 
-  internal \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D \u0023\u003Dz\u00245MUffYz41yl()
+  public \u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D \u0023\u003Dz\u00245MUffYz41yl()
   {
     return this.Services().GetService<\u0023\u003DzK74oGPE3yyB7zop8uDdzn_\u0024VotJ4cPSCfA7R2Hc\u003D>();
   }
@@ -523,15 +523,15 @@ internal class SciChartSurface :
   }
 
   [SpecialName]
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk \u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D()
+  public IAnnotationCanvas \u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D()
   {
-    return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) this.\u0023\u003DzJCSLrMbWu3xb\u00240pkXO0DnxY\u003D;
+    return (IAnnotationCanvas) this.\u0023\u003DzJCSLrMbWu3xb\u00240pkXO0DnxY\u003D;
   }
 
   [SpecialName]
-  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk \u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D()
+  public IAnnotationCanvas \u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D()
   {
-    return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) this.\u0023\u003Dzm\u0024RjME9m9HW8iNSk3pzjUqs\u003D;
+    return (IAnnotationCanvas) this.\u0023\u003Dzm\u0024RjME9m9HW8iNSk3pzjUqs\u003D;
   }
 
   [SpecialName]
@@ -1629,13 +1629,13 @@ internal class SciChartSurface :
     elwvdvgwnmJ5AjuaEjd.InvalidateElement();
   }
 
-  internal \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzlwAvJczjNvUE(
+  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzlwAvJczjNvUE(
     IRenderableSeries _param1)
   {
     throw new NotImplementedException("GetDataSeriesFor is obsolete. Please call RenderableSeries.DataSeries to get the DataSeries");
   }
 
-  internal IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzlwAvJczjNvUE(
+  public IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzlwAvJczjNvUE(
     string _param1)
   {
     return (IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>) new SciChartSurface.\u0023\u003Dz_Echccw8OyZAdo96L0cd918\u003D(-2)
@@ -1797,34 +1797,34 @@ internal class SciChartSurface :
     return this.\u0023\u003DzkW\u0024qJVeNKX1VtemTog\u003D\u003D;
   }
 
-  internal \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyklVKg61SC2QL8 \u0023\u003DzGqYqkF73Z9yr0zUWMg\u003D\u003D()
+  public \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyklVKg61SC2QL8 \u0023\u003DzGqYqkF73Z9yr0zUWMg\u003D\u003D()
   {
     return this.\u0023\u003DzBF9EFrE8iOBKBpnp2YeZjCs\u003D;
   }
 
-  internal void \u0023\u003DzB\u0024taTl5OHzRG5U3QXw\u003D\u003D(
+  public void \u0023\u003DzB\u0024taTl5OHzRG5U3QXw\u003D\u003D(
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUtzzzd5rSNXl95sF5MghysRDMZyklVKg61SC2QL8 _param1)
   {
     this.\u0023\u003DzBF9EFrE8iOBKBpnp2YeZjCs\u003D = _param1;
   }
 
-  internal \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELTst58YqUlllvt2EY65UXJw\u003D\u003D \u0023\u003DzZ5VDq\u0024Vzik5LlJ4Fd5jKuBg\u003D()
+  public \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELTst58YqUlllvt2EY65UXJw\u003D\u003D \u0023\u003DzZ5VDq\u0024Vzik5LlJ4Fd5jKuBg\u003D()
   {
     return this.\u0023\u003DzUpDNoiuyFkQgKnG1rLeDiyFufOOLPECfpQ\u003D\u003D;
   }
 
-  internal void \u0023\u003DzPUfITvj9OihLWDW1T8K_pLs\u003D(
+  public void \u0023\u003DzPUfITvj9OihLWDW1T8K_pLs\u003D(
     \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELTst58YqUlllvt2EY65UXJw\u003D\u003D _param1)
   {
     this.\u0023\u003DzUpDNoiuyFkQgKnG1rLeDiyFufOOLPECfpQ\u003D\u003D = _param1;
   }
 
-  internal SciChartSurface.\u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D \u0023\u003DzkUqP45_cbI3uaDDcHzV3Yqclunb3()
+  public SciChartSurface.\u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D \u0023\u003DzkUqP45_cbI3uaDDcHzV3Yqclunb3()
   {
     return this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
   }
 
-  internal HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzMdHN\u0024fr78SvYPfTQ5A\u003D\u003D()
+  public HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzMdHN\u0024fr78SvYPfTQ5A\u003D\u003D()
   {
     return this.\u0023\u003DzL79ssDGYe7GX;
   }
@@ -1877,7 +1877,7 @@ internal class SciChartSurface :
     public SciChartSurface _variableSome3535;
     public Action \u0023\u003Dz5vxB7hs\u003D;
 
-    internal void \u0023\u003DzPEXAppbcaBgnas\u00248pco9O5Y\u003D()
+    public void \u0023\u003DzPEXAppbcaBgnas\u00248pco9O5Y\u003D()
     {
       // ISSUE: explicit non-virtual call
       object obj = __nonvirtual (this._variableSome3535.\u0023\u003Dzjatnj7TNvda7());
@@ -1887,7 +1887,7 @@ internal class SciChartSurface :
       this._variableSome3535.\u0023\u003DzwRf5PdbT802y = false;
     }
 
-    internal void \u0023\u003Dz7n\u0024Gp4RnkI3hGyrPb7eAGT0\u003D()
+    public void \u0023\u003Dz7n\u0024Gp4RnkI3hGyrPb7eAGT0\u003D()
     {
       \u0023\u003DzyhcKXWtKNGzWjpotzZwU9whBU9Yw699_DztiM3x3BrpxyflUng\u003D\u003D dztiM3x3BrpxyflUng = new \u0023\u003DzyhcKXWtKNGzWjpotzZwU9whBU9Yw699_DztiM3x3BrpxyflUng\u003D\u003D(this.\u0023\u003Dz5vxB7hs\u003D);
     }
@@ -1897,7 +1897,7 @@ internal class SciChartSurface :
   {
     public bool \u0023\u003DzPhfEcNQm65OS;
 
-    internal bool \u0023\u003Dzn\u0024oF_i5RJAgifiBFYicprPI\u003D(
+    public bool \u0023\u003Dzn\u0024oF_i5RJAgifiBFYicprPI\u003D(
       IAxis _param1)
     {
       return _param1.\u0023\u003DzFrVmckt\u0024NpG6() == this.\u0023\u003DzPhfEcNQm65OS;
@@ -1913,25 +1913,25 @@ internal class SciChartSurface :
     public static Func<IAxis, bool> \u0023\u003Dz2u81qtV0w4N3y6_wTA\u003D\u003D;
     public static Action<FrameworkElement> \u0023\u003DzkVHywpw3evyESZQ1iA\u003D\u003D;
 
-    internal bool \u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D(
+    public bool \u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D(
       IRange _param1)
     {
       return _param1.IsDefined;
     }
 
-    internal bool \u0023\u003DzHqCL4TMIgkX9lgbfbVwoLztjktmcnH1IkQ\u003D\u003D(
+    public bool \u0023\u003DzHqCL4TMIgkX9lgbfbVwoLztjktmcnH1IkQ\u003D\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPolarAxis();
     }
 
-    internal bool \u0023\u003DzqleqgxOwnD86h0g7xgV6jwj2FfjN9XQ2Tw\u003D\u003D(
+    public bool \u0023\u003DzqleqgxOwnD86h0g7xgV6jwj2FfjN9XQ2Tw\u003D\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPolarAxis();
     }
 
-    internal void \u0023\u003DzSnploAESTvQvxQJvSegWmmQ\u003D(FrameworkElement _param1)
+    public void \u0023\u003DzSnploAESTvQvxQJvSegWmmQ\u003D(FrameworkElement _param1)
     {
       _param1.RaiseEvent(new RoutedEventArgs(FrameworkElement.LoadedEvent));
     }
@@ -2095,7 +2095,7 @@ internal class SciChartSurface :
     public string \u0023\u003Dzop4x1aU\u003D;
     public PrintDialog \u0023\u003Dzk1hW\u0024Z4\u003D;
 
-    internal void \u0023\u003DzwAbd934jQU3AcJ7xVQ\u003D\u003D()
+    public void \u0023\u003DzwAbd934jQU3AcJ7xVQ\u003D\u003D()
     {
       this.\u0023\u003Dzk1hW\u0024Z4\u003D.PrintVisual((Visual) this._variableSome3535, this.\u0023\u003Dzop4x1aU\u003D);
     }
@@ -2112,14 +2112,14 @@ internal class SciChartSurface :
     public IRange \u0023\u003DzMM5Kl1w\u003D;
     public IAxis \u0023\u003DzS7JsfCE\u003D;
 
-    internal IRange \u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz(
+    public IRange \u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz(
       \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
     {
       return _param1.\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(this.\u0023\u003DzMM5Kl1w\u003D, this.\u0023\u003DzS7JsfCE\u003D.get_IsLogarithmicAxis());
     }
   }
 
-  internal sealed class \u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D : 
+  public sealed class \u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D : 
     ObservableCollection<IRenderableSeries>
   {
     

@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 #nullable disable
-internal sealed class \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQ0MVv_50dAytWw\u003D\u003D : 
+public sealed class \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQ0MVv_50dAytWw\u003D\u003D : 
   IMultiValueConverter
 {
   public object Convert(object[] _param1, Type _param2, object _param3, CultureInfo _param4)

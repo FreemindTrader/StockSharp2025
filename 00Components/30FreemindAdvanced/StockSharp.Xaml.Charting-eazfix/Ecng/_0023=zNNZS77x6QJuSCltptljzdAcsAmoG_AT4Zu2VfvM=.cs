@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal static class \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D
+public static class \u0023\u003DzNNZS77x6QJuSCltptljzdAcsAmoG_AT4Zu2VfvM\u003D
 {
   public static double \u0023\u003Dz62MsOEK3dnlV(Size _param0)
   {

@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AxisLayoutHelper
+public sealed class AxisLayoutHelper
 {
   public static readonly DependencyProperty \u0023\u003DzfMY988N0StOA = DependencyProperty.RegisterAttached("AxisAlignment", typeof (AxisAlignment), typeof (AxisLayoutHelper), new PropertyMetadata((object) AxisAlignment.Default, new PropertyChangedCallback(AxisLayoutHelper.\u0023\u003DzOPvUPixjU\u00244Y)));
   public static readonly DependencyProperty \u0023\u003DzleqM3VUz5r6I = DependencyProperty.RegisterAttached("IsInsideItem", typeof (bool), typeof (AxisLayoutHelper), new PropertyMetadata((object) false, new PropertyChangedCallback(AxisLayoutHelper.SomeClass34343383.SomeMethond0343.\u0023\u003DzkyaUoNb3_wZaUlrnAd4Di9o\u003D)));
@@ -59,7 +59,7 @@ internal sealed class AxisLayoutHelper
     AxisLayoutHelper.\u0023\u003DzZyQWE_89kzT_(stackPanel);
   }
 
-  internal static void \u0023\u003DzZyQWE_89kzT_(StackPanel _param0)
+  public static void \u0023\u003DzZyQWE_89kzT_(StackPanel _param0)
   {
     if (_param0.FlowDirection == FlowDirection.RightToLeft)
       return;
@@ -90,24 +90,24 @@ internal sealed class AxisLayoutHelper
     public static Predicate<UIElement> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
     public static Predicate<UIElement> \u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D;
 
-    internal bool \u0023\u003Dz2eauhM7lKjDd6QTC\u0024t7yLig\u003D(UIElement _param1)
+    public bool \u0023\u003Dz2eauhM7lKjDd6QTC\u0024t7yLig\u003D(UIElement _param1)
     {
       return (bool) _param1.GetValue(AxisLayoutHelper.\u0023\u003DzleqM3VUz5r6I);
     }
 
-    internal bool \u0023\u003Dzm8PPAS0ZnW6qP8J6jTtdPT0\u003D(UIElement _param1)
+    public bool \u0023\u003Dzm8PPAS0ZnW6qP8J6jTtdPT0\u003D(UIElement _param1)
     {
       return (bool) _param1.GetValue(AxisLayoutHelper.\u0023\u003Dzux6qwNDX3dIn);
     }
 
-    internal void \u0023\u003DzkyaUoNb3_wZaUlrnAd4Di9o\u003D(
+    public void \u0023\u003DzkyaUoNb3_wZaUlrnAd4Di9o\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
       AxisLayoutHelper.\u0023\u003DzOPvUPixjU\u00244Y(((FrameworkElement) _param1).Parent, _param2);
     }
 
-    internal void \u0023\u003DzpY7n52ahyqAxE3pQLbGjA5w\u003D(
+    public void \u0023\u003DzpY7n52ahyqAxE3pQLbGjA5w\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

@@ -20,9 +20,9 @@ using System.Windows.Documents;
 using System.Windows.Markup;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ultrachartlegend : 
+public sealed class ultrachartlegend : 
   ItemsControl,
   IComponentConnector,
   IStyleConnector
@@ -32,7 +32,7 @@ internal sealed class ultrachartlegend :
   
   private readonly CandleDataTypeEdit \u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D;
   
-  internal ultrachartlegend \u0023\u003Dzv4BS1WQ\u003D;
+  public ultrachartlegend \u0023\u003Dzv4BS1WQ\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 

@@ -7,8 +7,8 @@
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class TabControlCompatible : TabControl
+public sealed class TabControlCompatible : TabControl
 {
 }

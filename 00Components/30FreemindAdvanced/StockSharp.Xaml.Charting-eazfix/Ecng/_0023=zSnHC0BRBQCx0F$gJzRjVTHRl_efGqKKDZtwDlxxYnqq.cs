@@ -7,7 +7,7 @@
 using \u002D;
 
 #nullable disable
-internal sealed class \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTHRl_efGqKKDZtwDlxxYnqqMb7DaZbRwMz4yL7MeGIO4yQ\u003D\u003D : 
+public sealed class \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTHRl_efGqKKDZtwDlxxYnqqMb7DaZbRwMz4yL7MeGIO4yQ\u003D\u003D : 
   BaseRenderableSeries
 {
   protected sealed override void \u0023\u003Dz_mrkCOu7iZTY(

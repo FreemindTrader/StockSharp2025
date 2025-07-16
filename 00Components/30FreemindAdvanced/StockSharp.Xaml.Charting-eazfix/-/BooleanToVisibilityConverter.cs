@@ -11,9 +11,9 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class BooleanToVisibilityConverter : IValueConverter
+public sealed class BooleanToVisibilityConverter : IValueConverter
 {
   
   private Visibility \u0023\u003Dzuuu0n2mobAynoPMTh6dB4JY\u003D;

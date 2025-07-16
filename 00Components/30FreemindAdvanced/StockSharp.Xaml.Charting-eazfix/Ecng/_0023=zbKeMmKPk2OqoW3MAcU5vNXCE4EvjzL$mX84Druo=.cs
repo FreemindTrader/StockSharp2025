@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 #nullable disable
-internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D
+public sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D
 {
   private static readonly IDictionary<Type, IComparable> \u0023\u003DzNrJT2xRrWB5X = (IDictionary<Type, IComparable>) new Dictionary<Type, IComparable>()
   {
@@ -220,13 +220,13 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     }
   };
 
-  internal static TComparable \u0023\u003Dz9S54PDM\u003D<TComparable>() where TComparable : IComparable
+  public static TComparable \u0023\u003Dz9S54PDM\u003D<TComparable>() where TComparable : IComparable
   {
     Type key = typeof (TComparable);
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzYe9rug7OW0WK.ContainsKey(key) ? (TComparable) \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzYe9rug7OW0WK[key] : throw new InvalidOperationException($"Cannot get the MaxValue of Type {key}");
   }
 
-  internal static TComparable \u0023\u003DzUplxldM\u003D<TComparable>()
+  public static TComparable \u0023\u003DzUplxldM\u003D<TComparable>()
   {
     Type key = typeof (TComparable);
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzYe9rug7OW0WK.ContainsKey(key) ? (TComparable) \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzNrJT2xRrWB5X[key] : throw new InvalidOperationException($"Cannot get the Zero Value of Type {key}");
@@ -237,23 +237,23 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz9VYxRcwRbRLE.ContainsKey(_param0) ? \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz9VYxRcwRbRLE[_param0] : throw new InvalidOperationException($"Cannot get the MinValue of Type {_param0}");
   }
 
-  internal static TComparable \u0023\u003DzAGURk2c\u003D<TComparable>() where TComparable : IComparable
+  public static TComparable \u0023\u003DzAGURk2c\u003D<TComparable>() where TComparable : IComparable
   {
     Type key = typeof (TComparable);
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz9VYxRcwRbRLE.ContainsKey(key) ? (TComparable) \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz9VYxRcwRbRLE[key] : throw new InvalidOperationException($"Cannot get the MinValue of Type {key}");
   }
 
-  internal static bool \u0023\u003DzePd8o9X2fXKb<TComparable>() where TComparable : IComparable
+  public static bool \u0023\u003DzePd8o9X2fXKb<TComparable>() where TComparable : IComparable
   {
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzePd8o9X2fXKb(typeof (TComparable));
   }
 
-  internal static bool \u0023\u003DzePd8o9X2fXKb(Type _param0)
+  public static bool \u0023\u003DzePd8o9X2fXKb(Type _param0)
   {
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003Dz9VYxRcwRbRLE.ContainsKey(_param0);
   }
 
-  internal static TComparable Max<TComparable>(
+  public static TComparable Max<TComparable>(
     TComparable _param0,
     TComparable _param1)
     where TComparable : IComparable
@@ -261,7 +261,7 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return _param0.CompareTo((object) _param1) <= 0 ? _param1 : _param0;
   }
 
-  internal static TComparable Min<TComparable>(
+  public static TComparable Min<TComparable>(
     TComparable _param0,
     TComparable _param1)
     where TComparable : IComparable
@@ -269,7 +269,7 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return _param1.CompareTo((object) _param0) <= 0 ? _param1 : _param0;
   }
 
-  internal static TComparable Max<TComparable>(
+  public static TComparable Max<TComparable>(
     TComparable _param0,
     TComparable _param1,
     TComparable _param2,
@@ -279,7 +279,7 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Max<TComparable>(_param0, \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Max<TComparable>(_param1, \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Max<TComparable>(_param2, _param3)));
   }
 
-  internal static TComparable Min<TComparable>(
+  public static TComparable Min<TComparable>(
     TComparable _param0,
     TComparable _param1,
     TComparable _param2,
@@ -289,7 +289,7 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Min<TComparable>(_param0, \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Min<TComparable>(_param1, \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.Min<TComparable>(_param2, _param3)));
   }
 
-  internal static bool IsDefined(IComparable _param0)
+  public static bool IsDefined(IComparable _param0)
   {
     switch (_param0)
     {
@@ -305,9 +305,9 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     }
   }
 
-  internal static double ToDouble(DateTime _param0) => (double) _param0.Ticks;
+  public static double ToDouble(DateTime _param0) => (double) _param0.Ticks;
 
-  internal static double ToDouble(IComparable _param0)
+  public static double ToDouble(IComparable _param0)
   {
     switch (_param0)
     {
@@ -429,7 +429,7 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
     return comparable;
   }
 
-  internal static bool \u0023\u003DzqTvaP5_jkdL8(double _param0, Type _param1)
+  public static bool \u0023\u003DzqTvaP5_jkdL8(double _param0, Type _param1)
   {
     bool flag = false;
     switch (Type.GetTypeCode(_param1))
@@ -491,49 +491,49 @@ internal sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\
   {
     public static readonly \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.SomeClass34343383();
 
-    internal bool \u0023\u003DzdWqpSQ5aR\u0024wdi4kNTq2Ly1g\u003D(IComparable _param1)
+    public bool \u0023\u003DzdWqpSQ5aR\u0024wdi4kNTq2Ly1g\u003D(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((long) _param1);
     }
 
-    internal bool \u0023\u003DzAFYqqFppM3VmRfVJtnTqTvM\u003D(IComparable _param1)
+    public bool \u0023\u003DzAFYqqFppM3VmRfVJtnTqTvM\u003D(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((int) _param1);
     }
 
-    internal bool \u0023\u003DzhQS8P2JmkAkg0DscaiBkv\u0024w\u003D(IComparable _param1) => true;
+    public bool \u0023\u003DzhQS8P2JmkAkg0DscaiBkv\u0024w\u003D(IComparable _param1) => true;
 
-    internal bool \u0023\u003DzORRhiV7KckN\u0024qpfjLBpseZc\u003D(IComparable _param1) => true;
+    public bool \u0023\u003DzORRhiV7KckN\u0024qpfjLBpseZc\u003D(IComparable _param1) => true;
 
-    internal bool \u0023\u003DzuQWKLTJPQXlcKEAUWLJou6I\u003D(IComparable _param1) => true;
+    public bool \u0023\u003DzuQWKLTJPQXlcKEAUWLJou6I\u003D(IComparable _param1) => true;
 
-    internal bool \u0023\u003Dz2G7PnVv6Ma0mK0TX8kpc1T8\u003D(IComparable _param1) => true;
+    public bool \u0023\u003Dz2G7PnVv6Ma0mK0TX8kpc1T8\u003D(IComparable _param1) => true;
 
-    internal bool \u0023\u003DzBG2tXBnpgEjKgVbTvJ6lNZ4\u003D(IComparable _param1) => true;
+    public bool \u0023\u003DzBG2tXBnpgEjKgVbTvJ6lNZ4\u003D(IComparable _param1) => true;
 
-    internal bool \u0023\u003DzCVXCw3hnAwSy3jS_mpkxFtU\u003D(IComparable _param1) => true;
+    public bool \u0023\u003DzCVXCw3hnAwSy3jS_mpkxFtU\u003D(IComparable _param1) => true;
 
-    internal bool \u0023\u003Dz1c5AXA7hL251b7UDpdKLa5w\u003D(IComparable _param1)
+    public bool \u0023\u003Dz1c5AXA7hL251b7UDpdKLa5w\u003D(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((Decimal) _param1);
     }
 
-    internal bool \u0023\u003DzdLpDnOw91fhCRQXXD294gFw\u003D(IComparable _param1)
+    public bool \u0023\u003DzdLpDnOw91fhCRQXXD294gFw\u003D(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((double) _param1);
     }
 
-    internal bool \u0023\u003Dz9dwYxb42uZsTggOhuNQdn5Ef64LL(IComparable _param1)
+    public bool \u0023\u003Dz9dwYxb42uZsTggOhuNQdn5Ef64LL(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((float) _param1);
     }
 
-    internal bool \u0023\u003DzYFW4J5OHXBkVEDYMYOrhtaiFA_hk(IComparable _param1)
+    public bool \u0023\u003DzYFW4J5OHXBkVEDYMYOrhtaiFA_hk(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((DateTime) _param1);
     }
 
-    internal bool \u0023\u003DzeDBaNkI_6rau6LCB3c3Mr827SXmI(IComparable _param1)
+    public bool \u0023\u003DzeDBaNkI_6rau6LCB3c3Mr827SXmI(IComparable _param1)
     {
       return \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.IsDefined((TimeSpan) _param1);
     }

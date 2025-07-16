@@ -15,7 +15,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-internal sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D : 
+public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D : 
   IDrawable,
   IXmlSerializable,
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXvZYOg6JAbLCIgQvZp9odw6FSOKg1daH3vPLNHtT2ZG4iQ\u003D\u003D,

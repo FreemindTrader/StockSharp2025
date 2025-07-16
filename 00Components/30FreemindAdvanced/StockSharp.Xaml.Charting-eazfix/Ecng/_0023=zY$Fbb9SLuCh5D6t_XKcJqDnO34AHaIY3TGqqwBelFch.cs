@@ -13,7 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 #nullable disable
-internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqDnO34AHaIY3TGqqwBelFchkgkTjgg\u003D\u003D : 
+public sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqDnO34AHaIY3TGqqwBelFchkgkTjgg\u003D\u003D : 
   IValueConverter
 {
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
@@ -32,7 +32,7 @@ internal sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqDnO34AHaIY3TGqqwBel
     public static readonly \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqDnO34AHaIY3TGqqwBelFchkgkTjgg\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqDnO34AHaIY3TGqqwBelFchkgkTjgg\u003D\u003D.SomeClass34343383();
     public static Func<DependencyObject, bool> \u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D;
 
-    internal bool \u0023\u003DzsYV7b2N1RLymHLqTEQ\u003D\u003D(DependencyObject _param1)
+    public bool \u0023\u003DzsYV7b2N1RLymHLqTEQ\u003D\u003D(DependencyObject _param1)
     {
       return _param1 is dje_zCGM8V4K8D6LD55V4P3QH566RVL3AKPFBLK6D9BVPTE2P4K6R886FTPJVSUVA_ejd;
     }

@@ -10,9 +10,9 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class TransactionSeriesRolloverLabel : 
+public sealed class TransactionSeriesRolloverLabel : 
   \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
 {
   

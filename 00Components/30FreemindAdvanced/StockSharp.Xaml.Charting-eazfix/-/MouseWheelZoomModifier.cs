@@ -9,9 +9,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class MouseWheelZoomModifier : 
+public sealed class MouseWheelZoomModifier : 
   RelativeZoomModifierBase
 {
   
@@ -119,7 +119,7 @@ internal sealed class MouseWheelZoomModifier :
   {
     public static readonly MouseWheelZoomModifier.SomeClass34343383 SomeMethond0343 = new MouseWheelZoomModifier.SomeClass34343383();
 
-    internal void \u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D(
+    public void \u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

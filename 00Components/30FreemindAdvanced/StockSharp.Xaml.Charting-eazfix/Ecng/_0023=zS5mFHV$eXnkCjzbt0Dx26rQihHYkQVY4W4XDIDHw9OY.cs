@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal static class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26rQihHYkQVY4W4XDIDHw9OYR
+public static class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26rQihHYkQVY4W4XDIDHw9OYR
 {
   public static T \u0023\u003DzD_LPZWnSn3m1<T>(this DependencyObject _param0) where T : DependencyObject
   {

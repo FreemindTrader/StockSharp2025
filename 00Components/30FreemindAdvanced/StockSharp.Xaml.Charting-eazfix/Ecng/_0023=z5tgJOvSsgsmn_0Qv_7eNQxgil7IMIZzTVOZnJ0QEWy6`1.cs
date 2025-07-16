@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 #nullable disable
-internal interface \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> : 
+public interface \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> : 
   IList<T>,
   ICollection<T>,
   IEnumerable<T>,

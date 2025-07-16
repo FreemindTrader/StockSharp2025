@@ -14,11 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D
+public static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D
 {
   private static readonly int[] \u0023\u003Dz_FUsyObExE8N = new int[8192 /*0x2000*/];
   private static readonly int[] \u0023\u003DzLmHTXF__p5pA = new int[8192 /*0x2000*/];
-  internal static int[,] \u0023\u003DzysGNeXLGQrTFa4zixuE1sQiZOAav = new int[5, 5]
+  public static int[,] \u0023\u003DzysGNeXLGQrTFa4zixuE1sQiZOAav = new int[5, 5]
   {
     {
       1,
@@ -56,7 +56,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       1
     }
   };
-  internal static int[,] \u0023\u003Dzo8w5Q2KsNK7CZqCtd5fWpQSr7pnh = new int[3, 3]
+  public static int[,] \u0023\u003Dzo8w5Q2KsNK7CZqCtd5fWpQSr7pnh = new int[3, 3]
   {
     {
       16 /*0x10*/,
@@ -74,7 +74,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       16 /*0x10*/
     }
   };
-  internal static int[,] \u0023\u003DzpCqOIxgfWQQUkjhy62T6b1Q\u003D = new int[3, 3]
+  public static int[,] \u0023\u003DzpCqOIxgfWQQUkjhy62T6b1Q\u003D = new int[3, 3]
   {
     {
       0,
@@ -411,7 +411,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzbuqTyk9tDHwh(
+  public static void \u0023\u003DzbuqTyk9tDHwh(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -425,7 +425,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzFun0vYqvUTLh(_param1, _param2, _param0, (float) _param3, (float) _param4, (float) _param5, (float) _param6, (float) _param8, _param7);
   }
 
-  internal static void \u0023\u003DzbuqTyk9tDHwh(
+  public static void \u0023\u003DzbuqTyk9tDHwh(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -441,7 +441,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzFun0vYqvUTLh(_param1, _param2, _param0, (float) _param3, (float) _param4, (float) _param5, (float) _param6, (float) _param8, num2);
   }
 
-  internal static void \u0023\u003DzbuqTyk9tDHwh(
+  public static void \u0023\u003DzbuqTyk9tDHwh(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -456,7 +456,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzFun0vYqvUTLh(_param0.PixelWidth, _param0.PixelHeight, bitmapContext, (float) _param1, (float) _param2, (float) _param3, (float) _param4, (float) _param6, num2);
   }
 
-  internal static int \u0023\u003Dz_DB895w\u003D(double _param0, Color _param1)
+  public static int \u0023\u003Dz_DB895w\u003D(double _param0, Color _param1)
   {
     if (_param0 < 0.0 || _param0 > 1.0)
       throw new ArgumentOutOfRangeException("opacity", "Opacity must be between 0.0 and 1.0");
@@ -464,7 +464,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dz_DB895w\u003D(_param1);
   }
 
-  internal static int \u0023\u003Dz_DB895w\u003D(Color _param0)
+  public static int \u0023\u003Dz_DB895w\u003D(Color _param0)
   {
     if (_param0.A == (byte) 0)
       return 0;
@@ -472,7 +472,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return (int) _param0.A << 24 | (int) (byte) ((int) _param0.R * num >> 8) << 16 /*0x10*/ | (int) (byte) ((int) _param0.G * num >> 8) << 8 | (int) (byte) ((int) _param0.B * num >> 8);
   }
 
-  internal static unsafe void Clear(
+  public static unsafe void Clear(
     this WriteableBitmap _param0,
     Color _param1)
   {
@@ -497,13 +497,13 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void Clear(this WriteableBitmap _param0)
+  public static void Clear(this WriteableBitmap _param0)
   {
     using (BitmapContext bitmapContext = _param0.\u0023\u003DzjnjmjBtrwZM5())
       bitmapContext.Clear();
   }
 
-  internal static WriteableBitmap \u0023\u003DzQ8SgRgQ\u003D(this WriteableBitmap _param0)
+  public static WriteableBitmap \u0023\u003DzQ8SgRgQ\u003D(this WriteableBitmap _param0)
   {
     WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(_param0.PixelWidth, _param0.PixelHeight);
     using (BitmapContext bitmapContext1 = _param0.\u0023\u003DzjnjmjBtrwZM5((\u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB) 0))
@@ -514,7 +514,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return writeableBitmap;
   }
 
-  internal static unsafe void \u0023\u003Dzq7Bcrww\u003D(
+  public static unsafe void \u0023\u003Dzq7Bcrww\u003D(
     this WriteableBitmap _param0,
     Func<int, int, Color> _param1)
   {
@@ -536,7 +536,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003Dzq7Bcrww\u003D(
+  public static unsafe void \u0023\u003Dzq7Bcrww\u003D(
     this WriteableBitmap _param0,
     Func<int, int, Color, Color> _param1)
   {
@@ -559,7 +559,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe int \u0023\u003DzRjQ8n0MoBfAr(
+  public static unsafe int \u0023\u003DzRjQ8n0MoBfAr(
     this WriteableBitmap _param0,
     int _param1,
     int _param2)
@@ -568,7 +568,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       return bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param2 * _param0.PixelWidth + _param1];
   }
 
-  internal static unsafe Color \u0023\u003DzFiIk5SM\u003D(
+  public static unsafe Color \u0023\u003DzFiIk5SM\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2)
@@ -588,7 +588,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe byte \u0023\u003Dz38DsZAXIb6Woq\u0024n_xQ\u003D\u003D(
+  public static unsafe byte \u0023\u003Dz38DsZAXIb6Woq\u0024n_xQ\u003D\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2)
@@ -600,7 +600,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003Dzwu8zArYH4KUt(
+  public static unsafe void \u0023\u003Dzwu8zArYH4KUt(
     this WriteableBitmap _param0,
     int _param1,
     byte _param2,
@@ -611,7 +611,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param1] = -16777216 /*0xFF000000*/ | (int) _param2 << 16 /*0x10*/ | (int) _param3 << 8 | (int) _param4;
   }
 
-  internal static unsafe void \u0023\u003DzR2zHA_0\u003D(
+  public static unsafe void \u0023\u003DzR2zHA_0\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -623,7 +623,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param2 * _param0.PixelWidth + _param1] = -16777216 /*0xFF000000*/ | (int) _param3 << 16 /*0x10*/ | (int) _param4 << 8 | (int) _param5;
   }
 
-  internal static unsafe void \u0023\u003Dzwu8zArYH4KUt(
+  public static unsafe void \u0023\u003Dzwu8zArYH4KUt(
     this WriteableBitmap _param0,
     int _param1,
     byte _param2,
@@ -635,7 +635,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param1] = (int) _param2 << 24 | (int) _param3 << 16 /*0x10*/ | (int) _param4 << 8 | (int) _param5;
   }
 
-  internal static unsafe void \u0023\u003DzR2zHA_0\u003D(
+  public static unsafe void \u0023\u003DzR2zHA_0\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -648,7 +648,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param2 * _param0.PixelWidth + _param1] = (int) _param3 << 24 | (int) _param4 << 16 /*0x10*/ | (int) _param5 << 8 | (int) _param6;
   }
 
-  internal static unsafe void \u0023\u003Dzwu8zArYH4KUt(
+  public static unsafe void \u0023\u003Dzwu8zArYH4KUt(
     this WriteableBitmap _param0,
     int _param1,
     Color _param2)
@@ -660,7 +660,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003DzR2zHA_0\u003D(
+  public static unsafe void \u0023\u003DzR2zHA_0\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -673,7 +673,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003Dzwu8zArYH4KUt(
+  public static unsafe void \u0023\u003Dzwu8zArYH4KUt(
     this WriteableBitmap _param0,
     int _param1,
     byte _param2,
@@ -686,7 +686,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003DzR2zHA_0\u003D(
+  public static unsafe void \u0023\u003DzR2zHA_0\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -700,7 +700,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003Dzwu8zArYH4KUt(
+  public static unsafe void \u0023\u003Dzwu8zArYH4KUt(
     this WriteableBitmap _param0,
     int _param1,
     int _param2)
@@ -709,7 +709,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param1] = _param2;
   }
 
-  internal static unsafe void \u0023\u003DzR2zHA_0\u003D(
+  public static unsafe void \u0023\u003DzR2zHA_0\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -719,7 +719,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       bitmapContext.\u0023\u003DzSKG\u0024_qBsOJZc()[_param2 * _param0.PixelWidth + _param1] = _param3;
   }
 
-  internal static unsafe void \u0023\u003DztJb5\u0024zF1SLeC(
+  public static unsafe void \u0023\u003DztJb5\u0024zF1SLeC(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -779,7 +779,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzSyuZtKbRCpVU(
+  public static void \u0023\u003DzSyuZtKbRCpVU(
     this WriteableBitmap _param0,
     Rect _param1,
     WriteableBitmap _param2,
@@ -789,7 +789,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzSyuZtKbRCpVU(_param1, _param2, _param3, Colors.White, _param4);
   }
 
-  internal static void \u0023\u003DzSyuZtKbRCpVU(
+  public static void \u0023\u003DzSyuZtKbRCpVU(
     this WriteableBitmap _param0,
     Rect _param1,
     WriteableBitmap _param2,
@@ -798,7 +798,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzSyuZtKbRCpVU(_param1, _param2, _param3, Colors.White, (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzEzdVAvx1gj20) 0);
   }
 
-  internal static void \u0023\u003DzSyuZtKbRCpVU(
+  public static void \u0023\u003DzSyuZtKbRCpVU(
     this WriteableBitmap _param0,
     Point _param1,
     WriteableBitmap _param2,
@@ -810,7 +810,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzSyuZtKbRCpVU(rect, _param2, _param3, _param4, _param5);
   }
 
-  internal static unsafe void \u0023\u003DzSyuZtKbRCpVU(
+  public static unsafe void \u0023\u003DzSyuZtKbRCpVU(
     this WriteableBitmap _param0,
     Rect _param1,
     WriteableBitmap _param2,
@@ -986,7 +986,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003DzSyuZtKbRCpVU(
+  public static unsafe void \u0023\u003DzSyuZtKbRCpVU(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -1139,7 +1139,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static byte[] \u0023\u003DzRSAv_naMs3YT(
+  public static byte[] \u0023\u003DzRSAv_naMs3YT(
     this WriteableBitmap _param0,
     int _param1,
     int _param2)
@@ -1155,17 +1155,17 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static byte[] \u0023\u003DzRSAv_naMs3YT(this WriteableBitmap _param0, int _param1)
+  public static byte[] \u0023\u003DzRSAv_naMs3YT(this WriteableBitmap _param0, int _param1)
   {
     return _param0.\u0023\u003DzRSAv_naMs3YT(0, _param1);
   }
 
-  internal static byte[] \u0023\u003DzRSAv_naMs3YT(this WriteableBitmap _param0)
+  public static byte[] \u0023\u003DzRSAv_naMs3YT(this WriteableBitmap _param0)
   {
     return _param0.\u0023\u003DzRSAv_naMs3YT(0, -1);
   }
 
-  internal static WriteableBitmap \u0023\u003DztnwaPREJn5PW(
+  public static WriteableBitmap \u0023\u003DztnwaPREJn5PW(
     this WriteableBitmap _param0,
     byte[] _param1,
     int _param2,
@@ -1178,7 +1178,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static WriteableBitmap \u0023\u003DztnwaPREJn5PW(
+  public static WriteableBitmap \u0023\u003DztnwaPREJn5PW(
     this WriteableBitmap _param0,
     byte[] _param1,
     int _param2)
@@ -1186,14 +1186,14 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return _param0.\u0023\u003DztnwaPREJn5PW(_param1, 0, _param2);
   }
 
-  internal static WriteableBitmap \u0023\u003DztnwaPREJn5PW(
+  public static WriteableBitmap \u0023\u003DztnwaPREJn5PW(
     this WriteableBitmap _param0,
     byte[] _param1)
   {
     return _param0.\u0023\u003DztnwaPREJn5PW(_param1, 0, _param1.Length);
   }
 
-  internal static unsafe void \u0023\u003Dz7wT8YaG6TYLJ(
+  public static unsafe void \u0023\u003Dz7wT8YaG6TYLJ(
     this WriteableBitmap _param0,
     Stream _param1)
   {
@@ -1237,7 +1237,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static WriteableBitmap \u0023\u003Dz50Ym0LI\u003D(
+  public static WriteableBitmap \u0023\u003Dz50Ym0LI\u003D(
     this WriteableBitmap _param0,
     string _param1)
   {
@@ -1245,7 +1245,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return _param0.\u0023\u003Dz_YJ1GTI\u003D($"{name};component/{_param1}");
   }
 
-  internal static WriteableBitmap \u0023\u003Dz_YJ1GTI\u003D(
+  public static WriteableBitmap \u0023\u003Dz_YJ1GTI\u003D(
     this WriteableBitmap _param0,
     string _param1)
   {
@@ -1259,7 +1259,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzVRUUvzhAr5SR(
+  public static void \u0023\u003DzVRUUvzhAr5SR(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1272,7 +1272,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzVRUUvzhAr5SR(_param1, _param2, _param3, _param4, num2, (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzEzdVAvx1gj20) 0);
   }
 
-  internal static unsafe void \u0023\u003DzVRUUvzhAr5SR(
+  public static unsafe void \u0023\u003DzVRUUvzhAr5SR(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1356,7 +1356,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return _param1 + (num2 * ((int) byte.MaxValue - _param1) * 32897 >> 23) << 24 | _param2 + (num3 * ((int) byte.MaxValue - _param1) * 32897 >> 23) << 16 /*0x10*/ | _param3 + (num4 * ((int) byte.MaxValue - _param1) * 32897 >> 23) << 8 | _param4 + (num5 * ((int) byte.MaxValue - _param1) * 32897 >> 23);
   }
 
-  internal static unsafe void \u0023\u003DzVRUUvzhAr5SR(
+  public static unsafe void \u0023\u003DzVRUUvzhAr5SR(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1422,7 +1422,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003Dz\u0024cz\u0024mtm8DTUg(
+  public static void \u0023\u003Dz\u0024cz\u0024mtm8DTUg(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1435,7 +1435,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003Dz\u0024cz\u0024mtm8DTUg(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static void \u0023\u003Dz\u0024cz\u0024mtm8DTUg(
+  public static void \u0023\u003Dz\u0024cz\u0024mtm8DTUg(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1450,7 +1450,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(num3, num4, num1, num2, _param5);
   }
 
-  internal static void \u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(
+  public static void \u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1463,7 +1463,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static void \u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(
+  public static void \u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1475,7 +1475,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
       \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(bitmapContext, _param1, _param2, _param3, _param4, _param5, (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzEzdVAvx1gj20) 0);
   }
 
-  internal static unsafe void \u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(
+  public static unsafe void \u0023\u003DzFUd3PqlNUK45_oOAYlinHKM\u003D(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -1606,7 +1606,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003Dz_I15ZX7u91\u0024T(
+  public static void \u0023\u003Dz_I15ZX7u91\u0024T(
     this WriteableBitmap _param0,
     int[] _param1,
     Color _param2)
@@ -1616,7 +1616,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003Dz_I15ZX7u91\u0024T(_param1, num2, (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzEzdVAvx1gj20) 0);
   }
 
-  internal static unsafe void \u0023\u003Dz_I15ZX7u91\u0024T(
+  public static unsafe void \u0023\u003Dz_I15ZX7u91\u0024T(
     this WriteableBitmap _param0,
     int[] _param1,
     int _param2,
@@ -1691,7 +1691,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe void \u0023\u003Dz_I15ZX7u91\u0024T(
+  public static unsafe void \u0023\u003Dz_I15ZX7u91\u0024T(
     this WriteableBitmap _param0,
     int[] _param1,
     Func<int, int, int> _param2,
@@ -1767,7 +1767,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzbULVDJzEYzHX(
+  public static void \u0023\u003DzbULVDJzEYzHX(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1784,7 +1784,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzbULVDJzEYzHX(_param1, _param2, _param3, _param4, _param5, _param6, _param7, _param8, num2);
   }
 
-  internal static void \u0023\u003DzbULVDJzEYzHX(
+  public static void \u0023\u003DzbULVDJzEYzHX(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1811,7 +1811,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }, _param9, (\u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzEzdVAvx1gj20) 0);
   }
 
-  internal static void \u0023\u003DzcwowdvolC4hP(
+  public static void \u0023\u003DzcwowdvolC4hP(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1826,7 +1826,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzcwowdvolC4hP(_param1, _param2, _param3, _param4, _param5, _param6, num2);
   }
 
-  internal static void \u0023\u003DzcwowdvolC4hP(
+  public static void \u0023\u003DzcwowdvolC4hP(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -1893,7 +1893,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return intList;
   }
 
-  internal static void \u0023\u003DzpdAyoZT4N1vyMUFYKg\u003D\u003D(
+  public static void \u0023\u003DzpdAyoZT4N1vyMUFYKg\u003D\u003D(
     this WriteableBitmap _param0,
     int[] _param1,
     Color _param2)
@@ -1903,7 +1903,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzpdAyoZT4N1vyMUFYKg\u003D\u003D(_param1, num2);
   }
 
-  internal static void \u0023\u003DzpdAyoZT4N1vyMUFYKg\u003D\u003D(
+  public static void \u0023\u003DzpdAyoZT4N1vyMUFYKg\u003D\u003D(
     this WriteableBitmap _param0,
     int[] _param1,
     int _param2)
@@ -1978,7 +1978,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return intList;
   }
 
-  internal static void \u0023\u003DzQsuJMLPbAICl(
+  public static void \u0023\u003DzQsuJMLPbAICl(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -1989,7 +1989,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzQsuJMLPbAICl(_param1, _param2, num2);
   }
 
-  internal static void \u0023\u003DzQsuJMLPbAICl(
+  public static void \u0023\u003DzQsuJMLPbAICl(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -2008,7 +2008,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzRbwdQ0iQbY1k(
+  public static void \u0023\u003DzRbwdQ0iQbY1k(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -2019,7 +2019,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     _param0.\u0023\u003DzRbwdQ0iQbY1k(_param1, _param2, num2);
   }
 
-  internal static void \u0023\u003DzRbwdQ0iQbY1k(
+  public static void \u0023\u003DzRbwdQ0iQbY1k(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -2040,7 +2040,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static WriteableBitmap \u0023\u003DzMxv7fx65tV1yUOcJ1g\u003D\u003D(
+  public static WriteableBitmap \u0023\u003DzMxv7fx65tV1yUOcJ1g\u003D\u003D(
     this WriteableBitmap _param0,
     int[,] _param1)
   {
@@ -2059,7 +2059,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return _param0.\u0023\u003DzMxv7fx65tV1yUOcJ1g\u003D\u003D(_param1, num1, 0);
   }
 
-  internal static unsafe WriteableBitmap \u0023\u003DzMxv7fx65tV1yUOcJ1g\u003D\u003D(
+  public static unsafe WriteableBitmap \u0023\u003DzMxv7fx65tV1yUOcJ1g\u003D\u003D(
     this WriteableBitmap _param0,
     int[,] _param1,
     int _param2,
@@ -2129,7 +2129,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static unsafe WriteableBitmap \u0023\u003DzkRsyJTI\u003D(this WriteableBitmap _param0)
+  public static unsafe WriteableBitmap \u0023\u003DzkRsyJTI\u003D(this WriteableBitmap _param0)
   {
     WriteableBitmap writeableBitmap = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(_param0.PixelWidth, _param0.PixelHeight);
     using (BitmapContext bitmapContext1 = writeableBitmap.\u0023\u003DzjnjmjBtrwZM5())
@@ -2156,7 +2156,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     }
   }
 
-  internal static void \u0023\u003DzzWEiifkWFV4ENgL9xQ\u003D\u003D(
+  public static void \u0023\u003DzzWEiifkWFV4ENgL9xQ\u003D\u003D(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -2256,7 +2256,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return num;
   }
 
-  internal static bool \u0023\u003DzQp4pqbouH0zcIVdt44meiLSWy5T3TxEdb52woaw\u003D(
+  public static bool \u0023\u003DzQp4pqbouH0zcIVdt44meiLSWy5T3TxEdb52woaw\u003D(
     Rect _param0,
     ref float _param1,
     ref float _param2,
@@ -2267,7 +2267,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(new Rect(_param0.X - (double) _param5, _param0.Y - (double) _param5, _param0.Width + (double) (2 * _param5), _param0.Height + (double) (2 * _param5)), ref _param1, ref _param2, ref _param3, ref _param4);
   }
 
-  internal static bool \u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(
+  public static bool \u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(
     Rect _param0,
     ref float _param1,
     ref float _param2,
@@ -2286,7 +2286,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return num5 != 0;
   }
 
-  internal static bool \u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(
+  public static bool \u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(
     Rect _param0,
     ref int _param1,
     ref int _param2,
@@ -2305,7 +2305,7 @@ internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNL
     return num5 != 0;
   }
 
-  internal static bool \u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(
+  public static bool \u0023\u003DzNk8cBLuXAKp15HT5R2aU3iOBWzr8(
     Rect _param0,
     ref double _param1,
     ref double _param2,
@@ -2494,7 +2494,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(
+  public static void \u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2507,7 +2507,7 @@ label_26:
     _param0.\u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static void \u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(
+  public static void \u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2523,7 +2523,7 @@ label_26:
     }
   }
 
-  internal static unsafe void \u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(
+  public static unsafe void \u0023\u003Dz5EjP9MXm9qR7g3KHo8lWFwg\u003D(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -2609,7 +2609,7 @@ label_26:
     }
   }
 
-  internal static unsafe void \u0023\u003DzVUQzlzp_K4Dd(
+  public static unsafe void \u0023\u003DzVUQzlzp_K4Dd(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -2622,7 +2622,7 @@ label_26:
     _param0.\u0023\u003DzSKG\u0024_qBsOJZc()[_param4 * _param1 + _param3] = _param5;
   }
 
-  internal static void \u0023\u003Dz802y6ee\u00246psQ(
+  public static void \u0023\u003Dz802y6ee\u00246psQ(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2635,7 +2635,7 @@ label_26:
     _param0.\u0023\u003Dz802y6ee\u00246psQ(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static unsafe void \u0023\u003Dz802y6ee\u00246psQ(
+  public static unsafe void \u0023\u003Dz802y6ee\u00246psQ(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2670,7 +2670,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003Dzk8_eoWQ\u003D(
+  public static void \u0023\u003Dzk8_eoWQ\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2683,7 +2683,7 @@ label_26:
     _param0.\u0023\u003Dzk8_eoWQ\u003D(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static void \u0023\u003Dzk8_eoWQ\u003D(
+  public static void \u0023\u003Dzk8_eoWQ\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2695,7 +2695,7 @@ label_26:
       \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dzk8_eoWQ\u003D(bitmapContext, _param0.PixelWidth, _param0.PixelHeight, _param1, _param2, _param3, _param4, _param5);
   }
 
-  internal static unsafe void \u0023\u003Dzk8_eoWQ\u003D(
+  public static unsafe void \u0023\u003Dzk8_eoWQ\u003D(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -2856,7 +2856,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003DztpcxZUcHpycq(
+  public static void \u0023\u003DztpcxZUcHpycq(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2869,7 +2869,7 @@ label_26:
     _param0.\u0023\u003DztpcxZUcHpycq(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static void \u0023\u003DztpcxZUcHpycq(
+  public static void \u0023\u003DztpcxZUcHpycq(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -2881,7 +2881,7 @@ label_26:
       \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DztpcxZUcHpycq(bitmapContext, _param0.PixelWidth, _param0.PixelHeight, _param1, _param2, _param3, _param4, _param5, false);
   }
 
-  internal static unsafe void \u0023\u003DztpcxZUcHpycq(
+  public static unsafe void \u0023\u003DztpcxZUcHpycq(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -3022,7 +3022,7 @@ label_26:
     _param0[_param1] = (int) ((long) _param2 + ((long) num2 * (long) ((int) byte.MaxValue - _param2) * 32897L >> 23) << 24 | (long) (_param4 - num3) * (long) _param2 + (long) (num3 << 8) & 4294967040L | ((long) (_param3 - num4) * (long) _param2 >> 8) + (long) num4 & 16711935L);
   }
 
-  internal static void \u0023\u003DztpSn45GESJ8upYzdDQ\u003D\u003D(
+  public static void \u0023\u003DztpSn45GESJ8upYzdDQ\u003D\u003D(
     this WriteableBitmap _param0,
     int[] _param1,
     Color _param2)
@@ -3032,7 +3032,7 @@ label_26:
     _param0.\u0023\u003DztpSn45GESJ8upYzdDQ\u003D\u003D(_param1, num2);
   }
 
-  internal static void \u0023\u003DztpSn45GESJ8upYzdDQ\u003D\u003D(
+  public static void \u0023\u003DztpSn45GESJ8upYzdDQ\u003D\u003D(
     this WriteableBitmap _param0,
     int[] _param1,
     int _param2)
@@ -3070,7 +3070,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003DzTNCC1vWt\u0024o04(
+  public static void \u0023\u003DzTNCC1vWt\u0024o04(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3085,7 +3085,7 @@ label_26:
     _param0.\u0023\u003DzTNCC1vWt\u0024o04(_param1, _param2, _param3, _param4, _param5, _param6, num2);
   }
 
-  internal static void \u0023\u003DzTNCC1vWt\u0024o04(
+  public static void \u0023\u003DzTNCC1vWt\u0024o04(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3105,7 +3105,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003Dz7zUbWtTKc3tA(
+  public static void \u0023\u003Dz7zUbWtTKc3tA(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3122,7 +3122,7 @@ label_26:
     _param0.\u0023\u003Dz7zUbWtTKc3tA(_param1, _param2, _param3, _param4, _param5, _param6, _param7, _param8, num2);
   }
 
-  internal static void \u0023\u003Dz7zUbWtTKc3tA(
+  public static void \u0023\u003Dz7zUbWtTKc3tA(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3145,7 +3145,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003DzoetbnPCAjix1(
+  public static void \u0023\u003DzoetbnPCAjix1(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3158,7 +3158,7 @@ label_26:
     _param0.\u0023\u003DzoetbnPCAjix1(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static unsafe void \u0023\u003DzoetbnPCAjix1(
+  public static unsafe void \u0023\u003DzoetbnPCAjix1(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3210,7 +3210,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003DzIZCdW2WR6Rxw(
+  public static void \u0023\u003DzIZCdW2WR6Rxw(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3226,7 +3226,7 @@ label_26:
     _param0.\u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(num3, num4, num1, num2, _param5, _param6);
   }
 
-  internal static void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
+  public static void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3239,7 +3239,7 @@ label_26:
     _param0.\u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(_param1, _param2, _param3, _param4, num2);
   }
 
-  internal static unsafe void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
+  public static unsafe void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3365,7 +3365,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
+  public static void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3378,7 +3378,7 @@ label_26:
       \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(bitmapContext, _param1, _param2, _param3, _param4, _param5, _param6);
   }
 
-  internal static unsafe void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
+  public static unsafe void \u0023\u003Dzi0gT5tAUKCgY7FXpsS29Z3U\u003D(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -3580,7 +3580,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003DzFtF5uXJldIW8(
+  public static void \u0023\u003DzFtF5uXJldIW8(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3597,7 +3597,7 @@ label_26:
     _param0.\u0023\u003DzFtF5uXJldIW8(_param1, _param2, _param3, _param4, _param5, _param6, _param7, _param8, num2);
   }
 
-  internal static void \u0023\u003DzFtF5uXJldIW8(
+  public static void \u0023\u003DzFtF5uXJldIW8(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3642,7 +3642,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003DzSlXpINdDaUagL2yPOQ\u003D\u003D(
+  public static void \u0023\u003DzSlXpINdDaUagL2yPOQ\u003D\u003D(
     this WriteableBitmap _param0,
     int[] _param1,
     Color _param2)
@@ -3652,7 +3652,7 @@ label_26:
     _param0.\u0023\u003DzSlXpINdDaUagL2yPOQ\u003D\u003D(_param1, num2);
   }
 
-  internal static void \u0023\u003DzSlXpINdDaUagL2yPOQ\u003D\u003D(
+  public static void \u0023\u003DzSlXpINdDaUagL2yPOQ\u003D\u003D(
     this WriteableBitmap _param0,
     int[] _param1,
     int _param2)
@@ -3718,7 +3718,7 @@ label_26:
     \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dzk8_eoWQ\u003D(_param10, _param11, _param12, num9, num10, _param4, _param5, _param9);
   }
 
-  internal static void \u0023\u003DzJwP1eeijr15N(
+  public static void \u0023\u003DzJwP1eeijr15N(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -3729,7 +3729,7 @@ label_26:
     _param0.\u0023\u003DzJwP1eeijr15N(_param1, _param2, num2);
   }
 
-  internal static void \u0023\u003DzJwP1eeijr15N(
+  public static void \u0023\u003DzJwP1eeijr15N(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -3747,7 +3747,7 @@ label_26:
     }
   }
 
-  internal static void \u0023\u003Dz_JvuZMkAPzoM(
+  public static void \u0023\u003Dz_JvuZMkAPzoM(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -3758,7 +3758,7 @@ label_26:
     _param0.\u0023\u003Dz_JvuZMkAPzoM(_param1, _param2, num2);
   }
 
-  internal static void \u0023\u003Dz_JvuZMkAPzoM(
+  public static void \u0023\u003Dz_JvuZMkAPzoM(
     this WriteableBitmap _param0,
     int[] _param1,
     float _param2,
@@ -3778,7 +3778,7 @@ label_26:
     }
   }
 
-  internal static WriteableBitmap \u0023\u003Dz7FKHKl8\u003D(
+  public static WriteableBitmap \u0023\u003Dz7FKHKl8\u003D(
     this WriteableBitmap _param0,
     int _param1,
     int _param2,
@@ -3793,7 +3793,7 @@ label_26:
     }
   }
 
-  internal static unsafe int[] \u0023\u003Dz7FKHKl8\u003D(
+  public static unsafe int[] \u0023\u003Dz7FKHKl8\u003D(
     BitmapContext _param0,
     int _param1,
     int _param2,
@@ -3890,7 +3890,7 @@ label_26:
     return numArray;
   }
 
-  internal static unsafe WriteableBitmap \u0023\u003Dz1zxzaac\u003D(
+  public static unsafe WriteableBitmap \u0023\u003Dz1zxzaac\u003D(
     this WriteableBitmap _param0,
     int _param1)
   {
@@ -3959,7 +3959,7 @@ label_26:
     }
   }
 
-  internal static unsafe WriteableBitmap \u0023\u003Dz9CcvHZvl4d5\u0024(
+  public static unsafe WriteableBitmap \u0023\u003Dz9CcvHZvl4d5\u0024(
     this WriteableBitmap _param0,
     double _param1,
     bool _param2)
@@ -4066,7 +4066,7 @@ label_26:
     }
   }
 
-  internal static unsafe WriteableBitmap \u0023\u003Dzq1wgKfc\u003D(
+  public static unsafe WriteableBitmap \u0023\u003Dzq1wgKfc\u003D(
     this WriteableBitmap _param0,
     \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003DzZSpFwmoJ\u0024y0y _param1)
   {
@@ -4116,15 +4116,15 @@ label_26:
     }
   }
 
-  internal enum \u0023\u003DzEzdVAvx1gj20
+  public enum \u0023\u003DzEzdVAvx1gj20
   {
   }
 
-  internal enum \u0023\u003DzZSpFwmoJ\u0024y0y
+  public enum \u0023\u003DzZSpFwmoJ\u0024y0y
   {
   }
 
-  internal enum \u0023\u003DzeruYkaM\u003D
+  public enum \u0023\u003DzeruYkaM\u003D
   {
   }
 }

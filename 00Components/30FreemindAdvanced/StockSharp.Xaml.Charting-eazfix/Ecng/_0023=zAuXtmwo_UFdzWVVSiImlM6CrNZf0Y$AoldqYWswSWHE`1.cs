@@ -11,7 +11,7 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T> : 
+public abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswSWHE1DEHxuAfkMq_BMaE9<T> : 
   \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJjBPTR5rC4Mn<T>
   where T : \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D
 {
@@ -224,17 +224,17 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
     return num;
   }
 
-  internal List<T> \u0023\u003DzH11Fih5tNn7B()
+  public List<T> \u0023\u003DzH11Fih5tNn7B()
   {
     return this.\u0023\u003DzaXL4UJQ\u003D;
   }
 
-  internal List<Tuple<string, List<T>>> \u0023\u003DzqvFydN90W9_IRDrgUQ\u003D\u003D()
+  public List<Tuple<string, List<T>>> \u0023\u003DzqvFydN90W9_IRDrgUQ\u003D\u003D()
   {
     return this.\u0023\u003DzSgM2QmPFjPGL;
   }
 
-  internal int \u0023\u003Dz8KqszcpQGXCdDZj_BA\u003D\u003D()
+  public int \u0023\u003Dz8KqszcpQGXCdDZj_BA\u003D\u003D()
   {
     return this.\u0023\u003DzIbVn\u0024T8\u003D;
   }
@@ -243,7 +243,7 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
   {
     public string \u0023\u003Dz1hrVQH8\u003D;
 
-    internal bool \u0023\u003Dz4AK2Bl06EBCuZNGG\u0024A\u003D\u003D(
+    public bool \u0023\u003Dz4AK2Bl06EBCuZNGG\u0024A\u003D\u003D(
       Tuple<string, List<T>> _param1)
     {
       return _param1.Item1 == this.\u0023\u003Dz1hrVQH8\u003D;
@@ -258,17 +258,17 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
     public static Func<T, bool> \u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D;
     public static Func<T, bool> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
-    internal bool \u0023\u003DzLZvPTS5COc90bGo0i3aY9EE\u003D(T _param1)
+    public bool \u0023\u003DzLZvPTS5COc90bGo0i3aY9EE\u003D(T _param1)
     {
       return _param1.IsVisible;
     }
 
-    internal bool \u0023\u003Dz9Z5iGcTB1hN7ZnRz61x\u0024KhY\u003D(T _param1)
+    public bool \u0023\u003Dz9Z5iGcTB1hN7ZnRz61x\u0024KhY\u003D(T _param1)
     {
       return _param1.IsVisible && _param1.get_DataSeries() != null;
     }
 
-    internal bool \u0023\u003DzTGuhZLTU3_PDZ4NVc9Rm2zk\u003D(T _param1)
+    public bool \u0023\u003DzTGuhZLTU3_PDZ4NVc9Rm2zk\u003D(T _param1)
     {
       return _param1.IsVisible;
     }
@@ -278,7 +278,7 @@ internal abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWs
   {
     public int \u0023\u003Dzay7IytM\u003D;
 
-    internal double \u0023\u003DzA7RktUSISABNMw2sUfBVsa8\u003D(T _param1)
+    public double \u0023\u003DzA7RktUSISABNMw2sUfBVsa8\u003D(T _param1)
     {
       return ((IComparable) _param1.get_DataSeries().\u0023\u003DzPqsSI6C5MOOb()[this.\u0023\u003Dzay7IytM\u003D]).ToDouble();
     }

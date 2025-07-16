@@ -10,7 +10,7 @@ using System.ComponentModel;
 using System.Windows;
 
 #nullable disable
-internal interface IChartModifier : 
+public interface IChartModifier : 
   INotifyPropertyChanged,
   IChartModifierBase,
   IReceiveMouseEvents 

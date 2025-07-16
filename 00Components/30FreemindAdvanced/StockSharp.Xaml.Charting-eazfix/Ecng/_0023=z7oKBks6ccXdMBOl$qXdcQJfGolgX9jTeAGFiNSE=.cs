@@ -12,26 +12,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 #nullable disable
-internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\u003D
+public static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\u003D
 {
-  internal static void \u0023\u003DzI0WdlDcUgrX_(this UIElement _param0)
+  public static void \u0023\u003DzI0WdlDcUgrX_(this UIElement _param0)
   {
     _param0.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
     _param0.Arrange(new Rect(new Point(0.0, 0.0), _param0.DesiredSize));
   }
 
-  internal static bool \u0023\u003DzST\u0024t7rI\u003D(this UIElement _param0)
+  public static bool \u0023\u003DzST\u0024t7rI\u003D(this UIElement _param0)
   {
     return _param0.Visibility == Visibility.Visible;
   }
 
-  internal static bool \u0023\u003DzBqQ1kl1\u0024w5oI(this DependencyObject _param0)
+  public static bool \u0023\u003DzBqQ1kl1\u0024w5oI(this DependencyObject _param0)
   {
     Window mainWindow = Application.Current.MainWindow;
     return _param0.\u0023\u003DzBqQ1kl1\u0024w5oI((DependencyObject) mainWindow);
   }
 
-  internal static bool \u0023\u003DzBqQ1kl1\u0024w5oI(
+  public static bool \u0023\u003DzBqQ1kl1\u0024w5oI(
     this DependencyObject _param0,
     DependencyObject _param1)
   {
@@ -43,7 +43,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     return false;
   }
 
-  internal static Point \u0023\u003DzaPPLsvfM_Sst(
+  public static Point \u0023\u003DzaPPLsvfM_Sst(
     this FrameworkElement _param0,
     Point _param1,
     IHitTestable _param2)
@@ -51,13 +51,13 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     return _param2 is UIElement relativeTo ? _param0.TranslatePoint(_param1, relativeTo) : new Point(0.0, 0.0);
   }
 
-  internal static bool \u0023\u003DzbOxVzAyGdX66(this FrameworkElement _param0, Point _param1)
+  public static bool \u0023\u003DzbOxVzAyGdX66(this FrameworkElement _param0, Point _param1)
   {
     Point point = _param0.TranslatePoint(_param1, (UIElement) _param0);
     return point.X <= _param0.ActualWidth && point.X >= 0.0 && point.Y <= _param0.ActualHeight && point.Y >= 0.0;
   }
 
-  internal static Rect \u0023\u003DzdC9whUui_gN\u0024(
+  public static Rect \u0023\u003DzdC9whUui_gN\u0024(
     this FrameworkElement _param0,
     IHitTestable _param1)
   {
@@ -68,7 +68,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     return !nullable.HasValue ? Rect.Empty : nullable.Value;
   }
 
-  internal static Rect? \u0023\u003DzdC9whUui_gN\u0024(
+  public static Rect? \u0023\u003DzdC9whUui_gN\u0024(
     this FrameworkElement _param0,
     UIElement _param1)
   {
@@ -144,7 +144,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     _param0.SetBinding(dp, (BindingBase) binding);
   }
 
-  internal static void \u0023\u003DzEYsWXVUJ8mGX(
+  public static void \u0023\u003DzEYsWXVUJ8mGX(
     this FrameworkElement _param0,
     DependencyProperty _param1,
     object _param2)
@@ -161,7 +161,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
       dispatcher.BeginInvoke((Delegate) action, Array.Empty<object>());
   }
 
-  internal static void \u0023\u003DzHGGuFpQ\u003D(
+  public static void \u0023\u003DzHGGuFpQ\u003D(
     this FrameworkElement _param0,
     DispatcherPriority _param1,
     Action _param2)
@@ -179,7 +179,7 @@ internal static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\
     public DependencyProperty \u0023\u003Dz89jjF1s\u003D;
     public object \u0023\u003DzxGz2_8k\u003D;
 
-    internal void \u0023\u003DzjX0s_IsrHsVW2ijiPdnNHq0\u003D()
+    public void \u0023\u003DzjX0s_IsrHsVW2ijiPdnNHq0\u003D()
     {
       this.\u0023\u003Dz_i6sZDg\u003D.SetValue(this.\u0023\u003Dz89jjF1s\u003D, this.\u0023\u003DzxGz2_8k\u003D);
     }

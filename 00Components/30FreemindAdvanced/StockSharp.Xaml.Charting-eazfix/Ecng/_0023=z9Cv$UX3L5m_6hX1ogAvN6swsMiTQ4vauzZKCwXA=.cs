@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D : EventArgs
+public sealed class \u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D : EventArgs
 {
   
   private IRange \u0023\u003Dz2uFiGn_cNtM_t\u0024Ix1Yo7PL4\u003D;

@@ -7,7 +7,7 @@
 using System.IO;
 
 #nullable disable
-internal static class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GEww9Us2BC2kQvpfKw4
+public static class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GEww9Us2BC2kQvpfKw4
 {
   private static bool \u0023\u003DzI9OrIVJe2vBk;
 

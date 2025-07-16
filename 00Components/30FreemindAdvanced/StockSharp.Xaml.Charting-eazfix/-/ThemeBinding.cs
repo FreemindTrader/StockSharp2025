@@ -13,9 +13,9 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ThemeBinding : 
+public sealed class ThemeBinding : 
   MarkupExtension
 {
   
@@ -82,7 +82,7 @@ internal sealed class ThemeBinding :
     return typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetValue((object) ThemeManager.\u0023\u003DzrILtKW7bADnV(theme), ThemeBinding.\u0023\u003Dz6VPkvJI\u003D);
   }
 
-  internal sealed class \u0023\u003Dza2zbQRRjMsrw : IValueConverter
+  public sealed class \u0023\u003Dza2zbQRRjMsrw : IValueConverter
   {
     public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
     {

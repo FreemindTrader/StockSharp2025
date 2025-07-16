@@ -10,7 +10,7 @@ using System.IO;
 using System.Text;
 
 #nullable disable
-internal sealed class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232oMfVr72yIGQA4ay
+public sealed class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232oMfVr72yIGQA4ay
 {
   private List<\u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D> \u0023\u003Dzg6tcvbbqgix\u0024;
   private List<\u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D> \u0023\u003DzNfj_yrlKoHA\u0024;
@@ -27,13 +27,13 @@ internal sealed class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232
     return \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232oMfVr72yIGQA4ay.\u0023\u003DzWzbCnInuP5_S;
   }
 
-  internal void \u0023\u003Dzp3SSAhg\u003D(
+  public void \u0023\u003Dzp3SSAhg\u003D(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D _param1)
   {
     this.\u0023\u003Dzg6tcvbbqgix\u0024.Add(_param1);
   }
 
-  internal void \u0023\u003DzJEIks4EYOgFT(
+  public void \u0023\u003DzJEIks4EYOgFT(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D _param1,
     double _param2)
   {
@@ -43,7 +43,7 @@ internal sealed class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232
     this.\u0023\u003Dzg6tcvbbqgix\u0024.RemoveAt(count - 1);
   }
 
-  internal void \u0023\u003Dzh_YrSog\u003D(
+  public void \u0023\u003Dzh_YrSog\u003D(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D _param1)
   {
     this.\u0023\u003DzNfj_yrlKoHA\u0024.Add(_param1);

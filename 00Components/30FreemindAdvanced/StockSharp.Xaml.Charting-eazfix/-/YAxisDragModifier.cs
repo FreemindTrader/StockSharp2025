@@ -8,9 +8,9 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class YAxisDragModifier : 
+public sealed class YAxisDragModifier : 
   \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ
 {
   protected override IAxis \u0023\u003DzFLmJq0JJlr0n()

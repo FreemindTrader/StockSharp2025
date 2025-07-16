@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcTh97Xh9lnW7va3j9jm7azLp\u0024XO11LbiRMMEHGmBEYuhHw\u003D\u003D
+public static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcTh97Xh9lnW7va3j9jm7azLp\u0024XO11LbiRMMEHGmBEYuhHw\u003D\u003D
 {
   public static ushort[] \u0023\u003DzqCkasbr_T3x4CdU_tQ\u003D\u003D = new ushort[1024 /*0x0400*/]
   {

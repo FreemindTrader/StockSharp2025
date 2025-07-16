@@ -13,9 +13,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class LegendModifier : 
+public sealed class LegendModifier : 
   InspectSeriesModifierBase
 {
   
@@ -286,13 +286,13 @@ internal sealed class LegendModifier :
     public static readonly LegendModifier.SomeClass34343383 SomeMethond0343 = new LegendModifier.SomeClass34343383();
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
 
-    internal IRenderableSeries \u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D(
+    public IRenderableSeries \u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return _param1.RenderableSeries;
     }
 
-    internal void \u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D(
+    public void \u0023\u003DziRnnm2fvgSGDVB\u0024GmpSBXaY\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
@@ -304,7 +304,7 @@ internal sealed class LegendModifier :
   {
     public IRenderableSeries[] \u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D;
 
-    internal bool \u0023\u003DzO1RhVl4gz8WF6_dF6w\u003D\u003D(
+    public bool \u0023\u003DzO1RhVl4gz8WF6_dF6w\u003D\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !((IEnumerable<IRenderableSeries>) this.\u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D).Contains<IRenderableSeries>(_param1.RenderableSeries);
@@ -315,7 +315,7 @@ internal sealed class LegendModifier :
   {
     public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzpZB0nPaJCOgn;
 
-    internal bool \u0023\u003Dz5ZRAyNj\u0024d5\u0024CpBRWyQ\u003D\u003D(
+    public bool \u0023\u003Dz5ZRAyNj\u0024d5\u0024CpBRWyQ\u003D\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return _param1.RenderableSeries.Equals((object) this.\u0023\u003DzpZB0nPaJCOgn.RenderableSeries);

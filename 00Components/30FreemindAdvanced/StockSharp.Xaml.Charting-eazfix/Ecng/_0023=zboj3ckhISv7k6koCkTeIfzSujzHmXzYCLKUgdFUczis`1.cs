@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis\u0024<T> : 
+public abstract class \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis\u0024<T> : 
   IList<T>,
   ICollection<T>,
   IEnumerable<T>,

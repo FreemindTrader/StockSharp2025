@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 
 #nullable disable
-internal abstract class \u0023\u003DzduViKcXTrKCfnYwdbArizj2eJHoGDKKVMxo9P3U\u003D : 
+public abstract class \u0023\u003DzduViKcXTrKCfnYwdbArizj2eJHoGDKKVMxo9P3U\u003D : 
   \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D
 {
   private Size \u0023\u003Dzsm4Nw\u0024NcRPFv0UK3ow\u003D\u003D;

@@ -4,9 +4,9 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AxisAlignmentToFlowDirectionConverter :
+public sealed class AxisAlignmentToFlowDirectionConverter :
   IValueConverter
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )

@@ -14,7 +14,7 @@ using Ecng.Xaml.Converters;
 
 namespace StockSharp.Xaml.Charting;
 #nullable disable
-internal abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
+public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 {
 	
 	private readonly Dictionary<IRenderableSeries, AxisMarkerAnnotation> _renderseries2AxisMarker = new Dictionary<IRenderableSeries, AxisMarkerAnnotation>();
@@ -213,7 +213,7 @@ private new sealed class SomeClass34343383
 	public static readonly DrawableChartElementBaseViewModel.SomeClass34343383 SomeMethond0343 = new DrawableChartElementBaseViewModel.SomeClass34343383();
 public static Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
-internal void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
+public void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
       KeyValuePair<IRenderableSeries, AxisMarkerAnnotation> _param1)
     {
       _param1.Value.Y1 = (IComparable) null;
@@ -226,7 +226,7 @@ internal void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
 	public DrawableChartElementBaseViewModel _variableSome3535;
 public Action \u0023\u003Dz07PQx44\u003D;
 
-internal void \u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D()
+public void \u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D()
     {
       if (this._variableSome3535.IsDisposed())
         return;

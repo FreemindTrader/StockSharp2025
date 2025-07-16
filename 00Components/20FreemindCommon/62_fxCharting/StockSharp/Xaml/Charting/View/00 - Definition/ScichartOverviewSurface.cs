@@ -1,5 +1,5 @@
 ﻿using Ecng.Xaml;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Model.DataSeries;
 using SciChart.Charting.Visuals;
 using SciChart.Charting.Visuals.RenderableSeries;

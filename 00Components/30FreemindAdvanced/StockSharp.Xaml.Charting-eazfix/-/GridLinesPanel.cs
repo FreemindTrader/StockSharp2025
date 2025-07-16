@@ -11,9 +11,9 @@ using System.Windows.Controls;
 using System.Windows.Shapes;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class GridLinesPanel : 
+public sealed class GridLinesPanel : 
   ContentControl,
   \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D
 {

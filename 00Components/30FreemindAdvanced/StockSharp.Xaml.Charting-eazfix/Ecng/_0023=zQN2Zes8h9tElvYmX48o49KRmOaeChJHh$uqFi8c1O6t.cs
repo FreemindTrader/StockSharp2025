@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D : 
+public sealed class \u0023\u003DzQN2Zes8h9tElvYmX48o49KRmOaeChJHh\u0024uqFi8c1O6tzvwgXZcckW9tFEg5MxkJ1sg\u003D\u003D : 
   IDisposable,
   \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024,
   \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX

@@ -45,7 +45,7 @@ public class OptionVolatilitySmileChart :
   
   private bool \u0023\u003Dzlx9Rh5m0_e0t;
   
-  internal Chart \u0023\u003DzO72kpz0\u003D;
+  public Chart \u0023\u003DzO72kpz0\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -254,19 +254,19 @@ public class OptionVolatilitySmileChart :
     public static Action<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA> \u0023\u003DzyvA5_ZcIGt2EBuRCvA\u003D\u003D;
     public static Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, SettingsStorage> \u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D;
 
-    internal KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement> \u0023\u003DzWW8oopirOPrw56aXJ46tTLo\u003D(
+    public KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement> \u0023\u003DzWW8oopirOPrw56aXJ46tTLo\u003D(
       OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA _param1)
     {
       return new KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>((ICollection<LineData<double>>) _param1, (IChartVolatilitySmileElement) _param1.\u0023\u003Dzj_CyhS4\u003D());
     }
 
-    internal void \u0023\u003Dzfx9JP\u0024zTFhplZv0Th91qjYeBvcL3(
+    public void \u0023\u003Dzfx9JP\u0024zTFhplZv0Th91qjYeBvcL3(
       OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA _param1)
     {
       _param1.Reset();
     }
 
-    internal SettingsStorage \u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D(
+    public SettingsStorage \u0023\u003DzoBMFm\u0024eaw3nqoL0onA\u003D\u003D(
       OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA _param1)
     {
       return PersistableHelper.Save((IPersistable) _param1);
@@ -409,12 +409,12 @@ public class OptionVolatilitySmileChart :
       public static Func<LineData<double>, double> \u0023\u003Dz74JLo6CIZR_cYr0qvA\u003D\u003D;
       public static Func<LineData<double>, double> \u0023\u003DzQHsHz_ktErkb7vgTPQ\u003D\u003D;
 
-      internal double \u0023\u003DzRYrdyX\u0024NtiJBVs4ggQ\u003D\u003D(LineData<double> _param1)
+      public double \u0023\u003DzRYrdyX\u0024NtiJBVs4ggQ\u003D\u003D(LineData<double> _param1)
       {
         return _param1.X;
       }
 
-      internal double \u0023\u003DzMAaHV4k3kfGyBjSv1w\u003D\u003D(LineData<double> _param1)
+      public double \u0023\u003DzMAaHV4k3kfGyBjSv1w\u003D\u003D(LineData<double> _param1)
       {
         return (double) _param1.Y;
       }
@@ -425,17 +425,17 @@ public class OptionVolatilitySmileChart :
   {
     public bool \u0023\u003DzCPrYc1Q\u003D;
 
-    internal void \u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D(IChartAxis _param1)
+    public void \u0023\u003DzVqnnRFG05Ih7j0uGvs43D9hVOdQZ9EhNOA\u003D\u003D(IChartAxis _param1)
     {
       _param1.AutoRange = !this.\u0023\u003DzCPrYc1Q\u003D;
     }
 
-    internal void \u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D(IChartAxis _param1)
+    public void \u0023\u003DziehXVo6PTkPmH7RBZ7Cax0tsQSrlFTQJ4Q\u003D\u003D(IChartAxis _param1)
     {
       _param1.AutoRange = !this.\u0023\u003DzCPrYc1Q\u003D;
     }
 
-    internal void \u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D(
+    public void \u0023\u003DznlibN4a3alLRqIFZIAoGE2VjjgqY\u0024QcKlA\u003D\u003D(
       ChartModifierBase _param1)
     {
       _param1.IsEnabled = this.\u0023\u003DzCPrYc1Q\u003D;

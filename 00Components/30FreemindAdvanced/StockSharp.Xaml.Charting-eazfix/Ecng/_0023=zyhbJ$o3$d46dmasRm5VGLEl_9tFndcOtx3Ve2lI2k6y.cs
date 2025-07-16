@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLEl_9tFndcOtx3Ve2lI2k6yumdGOSKr1pMGF0iLxfTWtzvstXMk\u003D : 
+public sealed class \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLEl_9tFndcOtx3Ve2lI2k6yumdGOSKr1pMGF0iLxfTWtzvstXMk\u003D : 
   \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D
 {
   private readonly double \u0023\u003Dz6_fch3qptd6X;
@@ -61,12 +61,12 @@ internal sealed class \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLEl_9tFndcOtx3V
     return (this.dgs - this.dgr) * _param1 * this.\u0023\u003DzwJz9\u0024v\u0024HJzZW6awGLQ\u003D\u003D + this.dgr;
   }
 
-  internal double \u0023\u003Dz2iMPijbZ\u00245q1()
+  public double \u0023\u003Dz2iMPijbZ\u00245q1()
   {
     return this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D;
   }
 
-  internal void \u0023\u003DzXcUa1KEkAu53(double _param1)
+  public void \u0023\u003DzXcUa1KEkAu53(double _param1)
   {
     this.\u0023\u003DzTs14_FMipJuw5PQcuw\u003D\u003D = _param1;
   }

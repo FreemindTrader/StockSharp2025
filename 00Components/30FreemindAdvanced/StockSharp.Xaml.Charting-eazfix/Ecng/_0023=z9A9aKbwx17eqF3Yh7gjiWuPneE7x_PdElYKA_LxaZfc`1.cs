@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> : 
+public sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<T> : 
   IList<T>,
   ICollection<T>,
   IEnumerable<T>,
@@ -23,7 +23,7 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<
   
   private int \u0023\u003DzpxhY2Co\u003D;
 
-  internal \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
+  public \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
     T[] _param1,
     int _param2,
     int _param3)
@@ -33,19 +33,19 @@ internal sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ<
     this.\u0023\u003DzpxhY2Co\u003D = _param3;
   }
 
-  internal \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
+  public \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWuPneE7x_PdElYKA_LxaZfcJ(
     T[] _param1)
   {
     this.\u0023\u003Dz0GgNoqs\u003D = _param1;
     this.\u0023\u003DzpxhY2Co\u003D = _param1.Length;
   }
 
-  internal T[] \u0023\u003DzvsnCYl4\u003D()
+  public T[] \u0023\u003DzvsnCYl4\u003D()
   {
     return this.\u0023\u003Dz0GgNoqs\u003D;
   }
 
-  internal int \u0023\u003DzOhT86Emh4umk() => this.\u0023\u003Dz_tkZHEs\u003D;
+  public int \u0023\u003DzOhT86Emh4umk() => this.\u0023\u003Dz_tkZHEs\u003D;
 
   public int Count => this.\u0023\u003DzpxhY2Co\u003D;
 

@@ -13,7 +13,7 @@ using System.ComponentModel;
 using System.Linq;
 
 #nullable disable
-internal sealed class IndicatorSettingsObject :
+public sealed class IndicatorSettingsObject :
   ChartSettingsObjectBase<IIndicator>
 {
     public IndicatorSettingsObject( IIndicator _param1 )
@@ -70,7 +70,7 @@ internal sealed class IndicatorSettingsObject :
     {
         public IIndicator SomeEthmoed;
 
-        internal PropertyDescriptor SomeMethod383(
+        public PropertyDescriptor SomeMethod383(
           PropertyDescriptor p )
         {
             return !( p.GetValue( this.SomeEthmoed ) is IIndicator indicator ) ? p : IndicatorSettingsObject.FuncBool( Extensions.GetDisplayName( p, indicator.Name ), ( object ) this.SomeEthmoed, indicator );
@@ -83,7 +83,7 @@ internal sealed class IndicatorSettingsObject :
         public static readonly IndicatorSettingsObject.SomeClass34343383 SomeMethond0343 = new IndicatorSettingsObject.SomeClass34343383();
         public static Func<PropertyDescriptor, bool> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
 
-internal bool Abcd343( PropertyDescriptor p )
+public bool Abcd343( PropertyDescriptor p )
         {
             if ( !( p.Name != "Name" ) )
                 return false;

@@ -12,12 +12,12 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y : 
+public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y : 
   \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyNMn5sYJZKzXDppYgrIuwPB
 {
   private readonly SciChartSurface \u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
 
-  internal \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y(
+  public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y(
     SciChartSurface _param1)
   {
     this.\u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D = _param1;
@@ -120,7 +120,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     return (num & (flag1 ? 1 : 0) & (flag2 ? 1 : 0)) != 0;
   }
 
-  internal Size \u0023\u003DzMRPYrFQxdo1UO1h10rB90f8\u003D(
+  public Size \u0023\u003DzMRPYrFQxdo1UO1h10rB90f8\u003D(
     ISciChartSurface _param1)
   {
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D zryEzCccXGdHkstU1g = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003DzryEzCCc\u0024xGDHkstU1g\u003D\u003D();
@@ -137,7 +137,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     return zryEzCccXGdHkstU1g.\u0023\u003Dzyyh4GZw\u003D.\u0023\u003DzBr6p5Qw\u0024W6BFNGQPNFOKrj0\u003D();
   }
 
-  internal void \u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(
+  public void \u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(
     IAxis _param1,
     ISciChartSurface _param2)
   {
@@ -153,7 +153,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     }
   }
 
-  internal static \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D \u0023\u003Dztbp\u0024Gkvr2KbJ(
+  public static \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D \u0023\u003Dztbp\u0024Gkvr2KbJ(
     ISciChartSurface _param0,
     Size _param1)
   {
@@ -244,7 +244,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     _param6 = _param4.ToPointSeries(_param1.get_ResamplingMode(), _param5, (int) _param2.\u0023\u003Dz_li6Ttc\u003D.Width, isCategoryAxis, new bool?(flag), visibleRange, _param3, _param1.\u0023\u003DzQavr9eonlwL7DeqLQA\u003D\u003D());
   }
 
-  internal static void \u0023\u003Dz4ASrz8c\u0024JOa7(
+  public static void \u0023\u003Dz4ASrz8c\u0024JOa7(
     ISciChartSurface _param0)
   {
     foreach (IAxis xax in (Collection<IAxis>) _param0.get_XAxes())
@@ -262,7 +262,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     }
   }
 
-  internal static void \u0023\u003Dz4ASrz8c\u0024JOa7(
+  public static void \u0023\u003Dz4ASrz8c\u0024JOa7(
     ISciChartSurface _param0,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
@@ -314,7 +314,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) null;
   }
 
-  internal static void \u0023\u003DzXkIFuR87leFI(
+  public static void \u0023\u003DzXkIFuR87leFI(
     ISciChartSurface _param0,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1,
     IRenderContext2D _param2)
@@ -332,7 +332,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     _param2.\u0023\u003Dz7eGjoBhvKuFN().\u0023\u003DzY9qzIPY\u003D();
   }
 
-  internal static void \u0023\u003Dz\u0024jjEdE7fySXB(
+  public static void \u0023\u003Dz\u0024jjEdE7fySXB(
     ISciChartSurface _param0,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1,
     IRenderContext2D _param2)
@@ -373,7 +373,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     uhIm4pSg8PxqhyA71.OnDraw(_param2, (IRenderPassData) euujfPtWyKeLacKm);
   }
 
-  internal static void \u0023\u003DzMr2eR\u0024whaAA_(
+  public static void \u0023\u003DzMr2eR\u0024whaAA_(
     SciChartSurface _param0,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1)
   {
@@ -386,7 +386,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   {
     public Func<IRenderableSeries, bool> \u0023\u003Dzm6bkhTMv4TGS;
 
-    internal bool \u0023\u003DzEQtawKU0gsYICcBClTLrWSc\u003D(
+    public bool \u0023\u003DzEQtawKU0gsYICcBClTLrWSc\u003D(
       IRenderableSeries _param1)
     {
       if (!this.\u0023\u003Dzm6bkhTMv4TGS(_param1))
@@ -395,7 +395,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
       return dataSeries != null && dataSeries.get_HasValues() && !dataSeries.get_IsSecondary();
     }
 
-    internal bool \u0023\u003Dz\u0024MTmBniphw3al5MgNQIrqkg\u003D(
+    public bool \u0023\u003Dz\u0024MTmBniphw3al5MgNQIrqkg\u003D(
       IRenderableSeries _param1)
     {
       if (!this.\u0023\u003Dzm6bkhTMv4TGS(_param1))
@@ -409,7 +409,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   {
     public IAxis \u0023\u003DzS7JsfCE\u003D;
 
-    internal bool \u0023\u003DzelRiTdR9_Z_W9jMgDc061as\u003D(
+    public bool \u0023\u003DzelRiTdR9_Z_W9jMgDc061as\u003D(
       IRenderableSeries _param1)
     {
       return _param1.get_YAxisId() == this.\u0023\u003DzS7JsfCE\u003D.Id && _param1.IsVisible;
@@ -430,55 +430,55 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public static Func<IRenderableSeries, bool> \u0023\u003Dz\u0024by00HMkgfLkjvi3Lg\u003D\u003D;
     public static Func<IAxis, bool> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
-    internal void \u0023\u003DzIQem3qD8jTxU5SNvvnOyq\u0024w\u003D(
+    public void \u0023\u003DzIQem3qD8jTxU5SNvvnOyq\u0024w\u003D(
       IAxis _param1)
     {
       _param1.Clear();
     }
 
-    internal void \u0023\u003Dz\u0024Fzx1KPXiYDq5k3tb2H1uRc\u003D(
+    public void \u0023\u003Dz\u0024Fzx1KPXiYDq5k3tb2H1uRc\u003D(
       IAxis _param1)
     {
       _param1.Clear();
     }
 
-    internal void \u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D(
+    public void \u0023\u003Dz12PmAHE\u0024tD8BqW7x3ljg98Q\u003D(
       IRenderableSeries _param1)
     {
       _param1.get_DataSeries()?.OnBeginRenderPass();
     }
 
-    internal bool \u0023\u003DzSjEALlyd467CDZCTsTwMrbo\u003D(
+    public bool \u0023\u003DzSjEALlyd467CDZCTsTwMrbo\u003D(
       IAxis _param1)
     {
       return !_param1.get_HasValidVisibleRange() && _param1.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Never;
     }
 
-    internal bool \u0023\u003Dz5TYzsFNMIz7uGfzQgeU3D4E\u003D(
+    public bool \u0023\u003Dz5TYzsFNMIz7uGfzQgeU3D4E\u003D(
       IAxis _param1)
     {
       return !_param1.get_HasValidVisibleRange() && _param1.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Never;
     }
 
-    internal bool \u0023\u003DzRViYxWKLBIrrEXdSy3aN0E0\u003D(
+    public bool \u0023\u003DzRViYxWKLBIrrEXdSy3aN0E0\u003D(
       IAxis _param1)
     {
       return _param1.TickProvider == null;
     }
 
-    internal bool \u0023\u003Dzqo9jwlb7htkBZP\u0024kf2q4SPc\u003D(
+    public bool \u0023\u003Dzqo9jwlb7htkBZP\u0024kf2q4SPc\u003D(
       IAxis _param1)
     {
       return _param1.TickProvider == null;
     }
 
-    internal bool \u0023\u003Dz6hBTksUWEhZTQqEktRG1x1Q\u003D(
+    public bool \u0023\u003Dz6hBTksUWEhZTQqEktRG1x1Q\u003D(
       IRenderableSeries _param1)
     {
       return _param1.get_DataSeries() != null;
     }
 
-    internal bool \u0023\u003DzdGNaXcajdlqJiD2ISykIIuZo69wW(
+    public bool \u0023\u003DzdGNaXcajdlqJiD2ISykIIuZo69wW(
       IAxis _param1)
     {
       return _param1 != null;
@@ -489,7 +489,7 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
   {
     public IAxis \u0023\u003Dz4bf8Oyc\u003D;
 
-    internal bool \u0023\u003DzF3QfbV0ybHhoavXSPCz09zI\u003D(
+    public bool \u0023\u003DzF3QfbV0ybHhoavXSPCz09zI\u003D(
       IRenderableSeries _param1)
     {
       return _param1.get_XAxisId() == this.\u0023\u003Dz4bf8Oyc\u003D.Id && _param1.IsVisible;
@@ -501,19 +501,19 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public ISciChartSurface \u0023\u003Dzyyh4GZw\u003D;
     public \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D \u0023\u003Dz7Pgaal_fKVBn;
 
-    internal bool \u0023\u003DzFJV4yCyS4GkfcIY8Kg\u003D\u003D(
+    public bool \u0023\u003DzFJV4yCyS4GkfcIY8Kg\u003D\u003D(
       IRenderableSeries _param1)
     {
       return this.\u0023\u003Dzyyh4GZw\u003D.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(_param1.get_XAxisId(), false) != null && this.\u0023\u003Dzyyh4GZw\u003D.get_YAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(_param1.get_YAxisId(), false) != null;
     }
 
-    internal void \u0023\u003Dzk_1CgJv47CJNqo8WAA\u003D\u003D(
+    public void \u0023\u003Dzk_1CgJv47CJNqo8WAA\u003D\u003D(
       IAxis _param1)
     {
       this.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D.Add(_param1.Id, _param1.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
     }
 
-    internal void \u0023\u003DzpCJ3SPiIlRwAd0naiA\u003D\u003D(
+    public void \u0023\u003DzpCJ3SPiIlRwAd0naiA\u003D\u003D(
       IAxis _param1)
     {
       this.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D.Add(_param1.Id, _param1.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
@@ -525,13 +525,13 @@ internal sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ
     public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y _variableSome3535;
     public ISciChartSurface \u0023\u003Dzyyh4GZw\u003D;
 
-    internal void \u0023\u003DzYoUR26ISw2UpoBPdXNwkaJzrEw2s(
+    public void \u0023\u003DzYoUR26ISw2UpoBPdXNwkaJzrEw2s(
       IAxis _param1)
     {
       this._variableSome3535.\u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(_param1, this.\u0023\u003Dzyyh4GZw\u003D);
     }
 
-    internal void \u0023\u003Dz0tlnCwc6fL_hMd81kJD8Xf8mm6KC(
+    public void \u0023\u003Dz0tlnCwc6fL_hMd81kJD8Xf8mm6KC(
       IAxis _param1)
     {
       this._variableSome3535.\u0023\u003DzM6kifusZQQ4QQbVaepuobjg\u003D(_param1, this.\u0023\u003Dzyyh4GZw\u003D);

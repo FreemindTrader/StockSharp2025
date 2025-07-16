@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw_VCdMZ55IvngQ\u003D\u003D : 
+public sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw_VCdMZ55IvngQ\u003D\u003D : 
   Range<float>
 {
   public \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw_VCdMZ55IvngQ\u003D\u003D()

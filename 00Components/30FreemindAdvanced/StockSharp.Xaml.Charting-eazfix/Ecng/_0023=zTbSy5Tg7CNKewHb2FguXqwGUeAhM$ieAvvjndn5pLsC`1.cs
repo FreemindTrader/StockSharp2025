@@ -12,7 +12,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T> : 
+public sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5pLsCI<T> : 
   \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T>,
   IList<T>,
   ICollection<T>,
@@ -38,7 +38,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
 
   public int Count => this.\u0023\u003DzdJFp_7vu05Ks;
 
-  internal void \u0023\u003DzpFWgSog\u003D(int _param1) => this.\u0023\u003DzdJFp_7vu05Ks = _param1;
+  public void \u0023\u003DzpFWgSog\u003D(int _param1) => this.\u0023\u003DzdJFp_7vu05Ks = _param1;
 
   public T Add(T _param1)
   {
@@ -171,12 +171,12 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     return this.\u0023\u003Dz0EJ0DjSA4vke;
   }
 
-  internal int \u0023\u003DzfjN0veBoVRBI(int _param1)
+  public int \u0023\u003DzfjN0veBoVRBI(int _param1)
   {
     return this.\u0023\u003Dz0EJ0DjSA4vke < 0 ? _param1 : (_param1 - this.\u0023\u003Dz0EJ0DjSA4vke + this.\u0023\u003DzdJFp_7vu05Ks - 1) % this.\u0023\u003DzdJFp_7vu05Ks;
   }
 
-  internal int \u0023\u003Dzh4Not7Y\u003D(int _param1)
+  public int \u0023\u003Dzh4Not7Y\u003D(int _param1)
   {
     return this.\u0023\u003Dz0EJ0DjSA4vke < 0 ? _param1 : (this.\u0023\u003Dz0EJ0DjSA4vke + 1 + _param1) % this.\u0023\u003DzdJFp_7vu05Ks;
   }
@@ -216,7 +216,7 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     Array.Copy((Array) this.\u0023\u003DzkELV\u0024GPsC83d, 0, (Array) _param1, length1 + _param2, length2);
   }
 
-  internal void Clone(
+  public void Clone(
     int _param1,
     T[] _param2,
     int _param3,
@@ -277,9 +277,9 @@ internal sealed class \u0023\u003DzTbSy5Tg7CNKewHb2FguXqwGUeAhM\u0024ieAvvjndn5p
     return (IEnumerator) this.GetEnumerator();
   }
 
-  internal int \u0023\u003Dz8rmtah183uns() => this.\u0023\u003Dz0EJ0DjSA4vke;
+  public int \u0023\u003Dz8rmtah183uns() => this.\u0023\u003Dz0EJ0DjSA4vke;
 
-  internal void \u0023\u003Dz0MUs9D0LKoXa(int _param1) => this.\u0023\u003Dz0EJ0DjSA4vke = _param1;
+  public void \u0023\u003Dz0MUs9D0LKoXa(int _param1) => this.\u0023\u003Dz0EJ0DjSA4vke = _param1;
 
   [SpecialName]
   public T[] \u0023\u003DzRr4AYdnHaTxa()

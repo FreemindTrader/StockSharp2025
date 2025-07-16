@@ -12,9 +12,9 @@ using System.Reflection;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class EnumToStrConverter : IValueConverter
+public sealed class EnumToStrConverter : IValueConverter
 {
 
     public static readonly EnumToStrConverter _converter = new EnumToStrConverter();

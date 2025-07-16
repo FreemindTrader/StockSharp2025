@@ -8,7 +8,7 @@ using System;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzyhcKXWtKNGzWjpotzZwU9whBU9Yw699_DztiM3x3BrpxyflUng\u003D\u003D
+public sealed class \u0023\u003DzyhcKXWtKNGzWjpotzZwU9whBU9Yw699_DztiM3x3BrpxyflUng\u003D\u003D
 {
   private readonly Action \u0023\u003DzDPt0\u0024eo\u003D;
 

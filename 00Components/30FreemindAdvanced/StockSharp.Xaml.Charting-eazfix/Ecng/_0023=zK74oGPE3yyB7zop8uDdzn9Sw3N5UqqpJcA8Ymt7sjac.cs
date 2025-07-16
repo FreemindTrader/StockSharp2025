@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-internal sealed class \u0023\u003DzK74oGPE3yyB7zop8uDdzn9Sw3N5UqqpJcA8Ymt7sjac\u0024 : 
+public sealed class \u0023\u003DzK74oGPE3yyB7zop8uDdzn9Sw3N5UqqpJcA8Ymt7sjac\u0024 : 
   \u0023\u003DzmAi_JN5raoSBYo9w2IEI_6oXJj6XJW84s7KCJRXjmNCv
 {
   public Point \u0023\u003DzBp9oXZI\u003D(

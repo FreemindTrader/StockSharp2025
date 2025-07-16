@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+public sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
   \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
   IOhlcDataSeries,
@@ -418,31 +418,31 @@ internal sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjr
     public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzZ56xLcbG8XBu52\u0024XtQ\u003D\u003D;
     public static Func<(\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D), \u0023\u003DzE8zkRfY\u003D> \u0023\u003Dz\u0024i0ZdiXPWL4LNqdRiw\u003D\u003D;
 
-    internal \u0023\u003DzulcL8RA\u003D \u0023\u003DzmIPZEwgchz\u0024sCHTuGwrsJTY\u003D(
+    public \u0023\u003DzulcL8RA\u003D \u0023\u003DzmIPZEwgchz\u0024sCHTuGwrsJTY\u003D(
       (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item1;
     }
 
-    internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzzYZOLRwyB3XEoUeK\u0024G2I14A\u003D(
+    public \u0023\u003DzE8zkRfY\u003D \u0023\u003DzzYZOLRwyB3XEoUeK\u0024G2I14A\u003D(
       (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item2;
     }
 
-    internal \u0023\u003DzE8zkRfY\u003D \u0023\u003Dz3WdUimM4quneZzxXPVH0AMs\u003D(
+    public \u0023\u003DzE8zkRfY\u003D \u0023\u003Dz3WdUimM4quneZzxXPVH0AMs\u003D(
       (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item3;
     }
 
-    internal \u0023\u003DzE8zkRfY\u003D \u0023\u003Dzv7wB\u0024Xs8LHaA0XIEpOZO7Mk\u003D(
+    public \u0023\u003DzE8zkRfY\u003D \u0023\u003Dzv7wB\u0024Xs8LHaA0XIEpOZO7Mk\u003D(
       (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item4;
     }
 
-    internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzX54OEBE42FtywkH4BPLC8ew\u003D(
+    public \u0023\u003DzE8zkRfY\u003D \u0023\u003DzX54OEBE42FtywkH4BPLC8ew\u003D(
       (\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzE8zkRfY\u003D) _param1)
     {
       return _param1.Item5;

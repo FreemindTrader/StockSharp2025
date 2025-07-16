@@ -8,7 +8,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal class \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D : 
+public class \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D : 
   \u0023\u003DzK11CXzkQ3m66hjsjmkZfa0IWmA\u00243ulgdIko0_SngtdwYu9Bqqu0Oiz8B0NcmOMpUiw\u003D\u003D,
   \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D
 {
@@ -1046,10 +1046,10 @@ internal class \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A
     while (--_param3 != 0);
   }
 
-  internal sealed class \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D : 
+  public sealed class \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D : 
     \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqHYmQyGOu0d1gzQea9g\u003D\u003D
   {
-    internal \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D(
+    public \u0023\u003Dzo5XZ2jPFuNIh5iLb1w\u003D\u003D(
       \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D _param1)
     {
       \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5cSIEExO0Gz6ZxLt_FRFNLJV2Xwd3iZoJUs8OqJAgj8X8ZOxZ8e2v_j5pzF77A\u003D\u003D zoxZ8e2vJ5pzF77A = new \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5cSIEExO0Gz6ZxLt_FRFNLJV2Xwd3iZoJUs8OqJAgj8X8ZOxZ8e2v_j5pzF77A\u003D\u003D();

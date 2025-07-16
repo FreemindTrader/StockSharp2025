@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D : 
+public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D : 
   PropertyChangedEventArgs
 {
   

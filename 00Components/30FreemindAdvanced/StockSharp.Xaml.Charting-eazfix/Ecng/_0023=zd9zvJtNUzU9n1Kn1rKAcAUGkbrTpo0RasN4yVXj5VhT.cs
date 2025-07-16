@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUGkbrTpo0RasN4yVXj5VhTA0420sE3wqYZZ8SLRoBt_43I8mE41BKsQ : 
+public sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUGkbrTpo0RasN4yVXj5VhTA0420sE3wqYZZ8SLRoBt_43I8mE41BKsQ : 
   \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<\u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D>
 {
   public override void \u0023\u003DzObQSsmE\u003D(
@@ -37,19 +37,19 @@ internal sealed class \u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUGkbrTpo0RasN4yVXj5VhTA0
       this.\u0023\u003Dz8ClqfHs\u003D();
   }
 
-  internal \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D \u0023\u003Dz9JbQ4jY\u003D(
+  public \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D \u0023\u003Dz9JbQ4jY\u003D(
     int _param1)
   {
     return this[(_param1 + this.\u0023\u003DzGupBQuw\u003D - 1) % this.\u0023\u003DzGupBQuw\u003D];
   }
 
-  internal \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D \u0023\u003DzLCJuIho\u003D(
+  public \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D \u0023\u003DzLCJuIho\u003D(
     int _param1)
   {
     return this[_param1];
   }
 
-  internal \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D \u0023\u003Dz2zQMp9I\u003D(
+  public \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D \u0023\u003Dz2zQMp9I\u003D(
     int _param1)
   {
     return this[(_param1 + 1) % this.\u0023\u003DzGupBQuw\u003D];

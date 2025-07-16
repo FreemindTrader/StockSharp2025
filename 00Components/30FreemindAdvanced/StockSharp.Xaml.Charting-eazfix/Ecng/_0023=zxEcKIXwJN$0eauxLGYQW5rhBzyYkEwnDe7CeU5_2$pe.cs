@@ -7,14 +7,14 @@
 using System;
 
 #nullable disable
-internal static class \u0023\u003DzxEcKIXwJN\u00240eauxLGYQW5rhBzyYkEwnDe7CeU5_2\u0024pe6
+public static class \u0023\u003DzxEcKIXwJN\u00240eauxLGYQW5rhBzyYkEwnDe7CeU5_2\u0024pe6
 {
-  internal static bool IsDefined(this DateTime _param0)
+  public static bool IsDefined(this DateTime _param0)
   {
     return _param0 != DateTime.MaxValue && _param0 != DateTime.MinValue;
   }
 
-  internal static bool \u0023\u003Dzl5VrLhRrr5CB(this DateTime _param0, TimeSpan _param1)
+  public static bool \u0023\u003Dzl5VrLhRrr5CB(this DateTime _param0, TimeSpan _param1)
   {
     bool flag = false;
     if ((double) _param0.Year + _param1.TotalDays / 365.0 < (double) DateTime.MaxValue.Year)
@@ -22,14 +22,14 @@ internal static class \u0023\u003DzxEcKIXwJN\u00240eauxLGYQW5rhBzyYkEwnDe7CeU5_2
     return flag;
   }
 
-  internal static DateTime \u0023\u003Dz8ly0q7w\u003D(this DateTime _param0, TimeSpan _param1)
+  public static DateTime \u0023\u003Dz8ly0q7w\u003D(this DateTime _param0, TimeSpan _param1)
   {
     if (_param1.IsDivisibleBy(TimeSpanExtensions.FromYears(1)))
       return _param0.AddYears((int) (_param1.Ticks / TimeSpanExtensions.FromYears(1).Ticks));
     return _param1.IsDivisibleBy(TimeSpanExtensions.FromMonths(1)) ? _param0.AddMonths((int) (_param1.Ticks / TimeSpanExtensions.FromMonths(1).Ticks)) : _param0.Add(_param1);
   }
 
-  internal static DateTime \u0023\u003DzK2E9JHa8v0UT(this DateTime _param0, int _param1)
+  public static DateTime \u0023\u003DzK2E9JHa8v0UT(this DateTime _param0, int _param1)
   {
     int num1 = 0;
     int num2;
@@ -38,7 +38,7 @@ internal static class \u0023\u003DzxEcKIXwJN\u00240eauxLGYQW5rhBzyYkEwnDe7CeU5_2
     return new DateTime(_param0.Year + num1, _param0.Month + num2, _param0.Day, _param0.Hour, _param0.Minute, _param0.Second, _param0.Millisecond);
   }
 
-  internal static DateTime \u0023\u003Dzx5OwI1M\u003D(this DateTime _param0, int _param1)
+  public static DateTime \u0023\u003Dzx5OwI1M\u003D(this DateTime _param0, int _param1)
   {
     return new DateTime(_param0.Year + _param1, _param0.Month, _param0.Day, _param0.Hour, _param0.Minute, _param0.Second, _param0.Millisecond);
   }

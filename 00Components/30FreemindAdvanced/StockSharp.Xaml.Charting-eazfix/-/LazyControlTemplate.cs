@@ -13,9 +13,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class LazyControlTemplate : 
+public sealed class LazyControlTemplate : 
   \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D
 {
   
@@ -72,7 +72,7 @@ internal sealed class LazyControlTemplate :
   {
     public static readonly LazyControlTemplate.SomeClass34343383 SomeMethond0343 = new LazyControlTemplate.SomeClass34343383();
 
-    internal ControlTemplate \u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D()
+    public ControlTemplate \u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D()
     {
       return (ControlTemplate) Application.Current.FindResource((object) LazyControlTemplate.\u0023\u003Dz7UtwOMpZAQNPO3pYAw\u003D\u003D());
     }
@@ -84,7 +84,7 @@ internal sealed class LazyControlTemplate :
     public Color \u0023\u003DzRh5qfIg\u003D;
     public Color \u0023\u003Dz7eGAqyQ\u003D;
 
-    internal ImageSource \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D()
+    public ImageSource \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D()
     {
       return this.\u0023\u003Dz7Hkd0ns\u003D.GetImage(new SolidColorBrush(this.\u0023\u003DzRh5qfIg\u003D), new SolidColorBrush(this.\u0023\u003Dz7eGAqyQ\u003D));
     }

@@ -14,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 #nullable disable
-internal interface IAxis : 
+public interface IAxis : 
   IDrawable,
   IAxisParams,
   ISuspendable,
@@ -265,9 +265,9 @@ internal interface IAxis :
 
   void set_IsPrimaryAxis(bool _param1);
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk get_ModifierAxisCanvas();
+  IAnnotationCanvas get_ModifierAxisCanvas();
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk ModifierAxisCanvas { get; }
+  IAnnotationCanvas ModifierAxisCanvas { get; }
 
   Visibility get_Visibility();
 

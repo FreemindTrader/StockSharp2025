@@ -4,7 +4,7 @@ using Ecng.Common;
 namespace SciChart.Data.Numerics.GenericMath;
 
 #nullable disable
-internal sealed class DateTimeMath :
+public sealed class DateTimeMath :
   IMath<DateTime>
 {
     

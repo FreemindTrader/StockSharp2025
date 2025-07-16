@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal abstract class \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D : 
+public abstract class \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u0024MA7GxfHzLZh5MbP3ARzok\u003D : 
   \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWu7vteBmpkBQwFYGp0VhHiJ5hoI4CA\u003D\u003D,
   \u0023\u003DzQN2Zes8h9tElvYmX48o49BUYcGhHuBjHtpu_APLaHrAgLQA2lg\u003D\u003D
 {
@@ -103,7 +103,7 @@ internal abstract class \u0023\u003DzDIMjRgQEnqoXVDL\u0024LFZbb9dRGvB_L4PhR\u002
     public uint \u0023\u003DzCPSuI41d8esj;
     public TimeSpan \u0023\u003DzFYPaJVU_4gr3;
 
-    internal bool \u0023\u003Dz9sc_qdKdGUGYrwVgpcN5kd0\u003D(TimeSpan _param1)
+    public bool \u0023\u003Dz9sc_qdKdGUGYrwVgpcN5kd0\u003D(TimeSpan _param1)
     {
       return new TimeSpan(_param1.Ticks * (long) this.\u0023\u003DzCPSuI41d8esj) > this.\u0023\u003DzFYPaJVU_4gr3;
     }

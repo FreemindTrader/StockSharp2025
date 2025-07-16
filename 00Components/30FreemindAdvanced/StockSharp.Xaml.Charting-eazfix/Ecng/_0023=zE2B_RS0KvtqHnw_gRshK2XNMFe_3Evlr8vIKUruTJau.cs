@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
+public static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
 {
   private static readonly IDictionary<Type, object> \u0023\u003DzO\u0024eVQuIS9pHq = (IDictionary<Type, object>) new Dictionary<Type, object>();
 
@@ -29,7 +29,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzO\u0024eVQuIS9pHq.Add(typeof (TimeSpan), (object) new \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dzxd5aKNYBQhxcFSTvow\u003D\u003D());
   }
 
-  internal static T \u0023\u003Dzj_Gd1fY\u003D<T>(IEnumerable<T> _param0)
+  public static T \u0023\u003Dzj_Gd1fY\u003D<T>(IEnumerable<T> _param0)
   {
     switch (_param0)
     {
@@ -46,13 +46,13 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     }
   }
 
-  internal static T \u0023\u003Dz2wWd_ME\u003D<T>(IEnumerable<T> _param0)
+  public static T \u0023\u003Dz2wWd_ME\u003D<T>(IEnumerable<T> _param0)
   {
     IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
     return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, new Func<T, T, T>(mijfkOcK7kdYtA2avPae.Min));
   }
 
-  internal static T MinGreaterThan<T>(IEnumerable<T> _param0, T _param1)
+  public static T MinGreaterThan<T>(IEnumerable<T> _param0, T _param1)
   {
     return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, new Func<T, T, T>(new \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzfW4bGCOhNTb68QUGf3lqU0A\u003D<T>()
     {
@@ -61,7 +61,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     }.\u0023\u003DzA7K\u00242BlHitlwuKa7XBFblpY\u003D));
   }
 
-  internal static T \u0023\u003Dz2wWd_ME\u003D<T>(IEnumerable<T> _param0, Func<T, T, T> _param1)
+  public static T \u0023\u003Dz2wWd_ME\u003D<T>(IEnumerable<T> _param0, Func<T, T, T> _param1)
   {
     switch (_param0)
     {
@@ -176,13 +176,13 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     }
   }
 
-  internal static T \u0023\u003Dz2wWd_ME\u003D<T>(T[] _param0, int _param1, int _param2)
+  public static T \u0023\u003Dz2wWd_ME\u003D<T>(T[] _param0, int _param1, int _param2)
   {
     IMath<T> mijfkOcK7kdYtA2avPae = MathHelper.GetMath<T>();
     return \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003Dz2wWd_ME\u003D<T>(_param0, _param1, _param2, new Func<T, T, T>(mijfkOcK7kdYtA2avPae.Min));
   }
 
-  internal static T \u0023\u003Dz2wWd_ME\u003D<T>(
+  public static T \u0023\u003Dz2wWd_ME\u003D<T>(
     T[] _param0,
     int _param1,
     int _param2,
@@ -234,12 +234,12 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     return obj1;
   }
 
-  internal static T \u0023\u003Dzj_Gd1fY\u003D<T>(T[] _param0, int _param1, int _param2)
+  public static T \u0023\u003Dzj_Gd1fY\u003D<T>(T[] _param0, int _param1, int _param2)
   {
     return ((\u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<T>) \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzO\u0024eVQuIS9pHq[typeof (T)]).\u0023\u003Dzj_Gd1fY\u003D(_param0, _param1, _param2);
   }
 
-  internal static void \u0023\u003Dz\u0024zWmmGTAbDON<T>(
+  public static void \u0023\u003Dz\u0024zWmmGTAbDON<T>(
     T[] _param0,
     int _param1,
     int _param2,
@@ -249,17 +249,17 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     ((\u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<T>) \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzO\u0024eVQuIS9pHq[typeof (T)]).\u0023\u003Dz\u0024zWmmGTAbDON(_param0, _param1, _param2, out _param3, out _param4);
   }
 
-  internal static bool \u0023\u003DzNe9B4H63T3gE<T>(T[] _param0, int _param1, int _param2)
+  public static bool \u0023\u003DzNe9B4H63T3gE<T>(T[] _param0, int _param1, int _param2)
   {
     return ((\u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<T>) \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzO\u0024eVQuIS9pHq[typeof (T)]).\u0023\u003DzNe9B4H63T3gE(_param0, _param1, _param2);
   }
 
-  internal static bool \u0023\u003DzNe9B4H63T3gE<T>(IList<T> _param0, int _param1, int _param2)
+  public static bool \u0023\u003DzNe9B4H63T3gE<T>(IList<T> _param0, int _param1, int _param2)
   {
     return ((\u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<T>) \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzO\u0024eVQuIS9pHq[typeof (T)]).\u0023\u003DzNe9B4H63T3gE(_param0, _param1, _param2);
   }
 
-  internal static bool \u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D<T>(
+  public static bool \u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D<T>(
     T[] _param0,
     int _param1,
     int _param2,
@@ -269,7 +269,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     return ((\u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzZuIACtFdc6Ph4hgjKw\u003D\u003D<T>) \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum.\u0023\u003DzO\u0024eVQuIS9pHq[typeof (T)]).\u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D(_param0, _param1, _param2, _param3, out _param4);
   }
 
-  internal static bool \u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D<T>(
+  public static bool \u0023\u003DzScZFqV8CJEMRehn4FqDXCME\u003D<T>(
     IList<T> _param0,
     int _param1,
     int _param2,
@@ -3011,7 +3011,7 @@ internal static class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2XNMFe_3Evlr8vIKUruTJaum
     public IMath<T> \u0023\u003DzIaonIBnYkmSl;
     public T \u0023\u003DzdSc1Vdr7S9Qq;
 
-    internal T \u0023\u003DzA7K\u00242BlHitlwuKa7XBFblpY\u003D(
+    public T \u0023\u003DzA7K\u00242BlHitlwuKa7XBFblpY\u003D(
       T _param1,
       T _param2)
     {

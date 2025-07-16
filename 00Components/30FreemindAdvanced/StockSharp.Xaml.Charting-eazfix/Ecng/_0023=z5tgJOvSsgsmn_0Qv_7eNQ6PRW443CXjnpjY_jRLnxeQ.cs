@@ -11,7 +11,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 
 #nullable disable
-internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D
+public sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D
 {
   private string \u0023\u003DzmNYaxFg\u003D;
   private int \u0023\u003DzahUZ_5b_Y\u0024Z0qG5Yow\u003D\u003D;
@@ -265,20 +265,20 @@ internal sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQe
     }
   }
 
-  internal \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D \u0023\u003DzNERJc2ZTLWjF(
+  public \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D \u0023\u003DzNERJc2ZTLWjF(
     char _param1)
   {
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D.\u0023\u003DzBajRNyc\u003D zBajRnyc;
     return this.\u0023\u003DzBiidJptRYuVL.TryGetValue((int) _param1, out zBajRnyc) ? (\u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D) zBajRnyc.\u0023\u003DzY3eILVU\u003D : (\u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D) null;
   }
 
-  internal double \u0023\u003DzKFEh56TZQDn_(char _param1, char _param2)
+  public double \u0023\u003DzKFEh56TZQDn_(char _param1, char _param2)
   {
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D.\u0023\u003DzBajRNyc\u003D zBajRnyc;
     return this.\u0023\u003DzBiidJptRYuVL.TryGetValue((int) _param1, out zBajRnyc) ? (double) zBajRnyc.\u0023\u003DzahUZ_5b_Y\u0024Z0qG5Yow\u003D\u003D : 0.0;
   }
 
-  internal double \u0023\u003DzKFEh56TZQDn_(char _param1)
+  public double \u0023\u003DzKFEh56TZQDn_(char _param1)
   {
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D.\u0023\u003DzBajRNyc\u003D zBajRnyc;
     return this.\u0023\u003DzBiidJptRYuVL.TryGetValue((int) _param1, out zBajRnyc) ? (double) zBajRnyc.\u0023\u003DzahUZ_5b_Y\u0024Z0qG5Yow\u003D\u003D : 0.0;

@@ -11,7 +11,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzDH5EtXmKZCpH30z_eydhO1YIouSN24uXhAXGmdy\u0024oOmKDNxH1w\u003D\u003D : 
+public sealed class \u0023\u003DzDH5EtXmKZCpH30z_eydhO1YIouSN24uXhAXGmdy\u0024oOmKDNxH1w\u003D\u003D : 
   IValueConverter
 {
   object IValueConverter.Convert(

@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-internal class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D : 
+public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D : 
   BindableObject ,
   ICloneable
 {

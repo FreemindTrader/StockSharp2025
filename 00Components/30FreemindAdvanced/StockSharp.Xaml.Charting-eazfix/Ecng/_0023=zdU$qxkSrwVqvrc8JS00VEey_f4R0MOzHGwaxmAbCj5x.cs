@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D : 
+public sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D : 
   IDisposable,
   IPathColor,
   \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J,
@@ -35,7 +35,7 @@ internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbC
   
   private PenLineCap \u0023\u003DzCGem0PExVYDPR4B2GzA75a4\u003D;
 
-  internal \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D(
+  public \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D(
     Color _param1,
     float _param2,
     bool _param3,
@@ -45,7 +45,7 @@ internal sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbC
   {
   }
 
-  internal \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D(
+  public \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEey_f4R0MOzHGwaxmAbCj5xs5RE\u0024YGqvsZ4\u003D(
     Color _param1,
     float _param2,
     PenLineCap _param3,

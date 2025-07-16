@@ -23,7 +23,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D> : 
+public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<\u0023\u003DzulcL8RA\u003D> : 
   ChartCompentWpfBaseViewModel<ChartBandElement>
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
 {
@@ -269,13 +269,13 @@ internal sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D;
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D;
 
-    internal string \u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D(
+    public string \u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return _param1.FormattedYValue;
     }
 
-    internal string \u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D(
+    public string \u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return _param1.FormattedYValue;

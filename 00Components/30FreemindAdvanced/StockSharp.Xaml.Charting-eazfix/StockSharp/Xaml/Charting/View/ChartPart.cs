@@ -33,7 +33,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
         {
             return _guid;
         }
-        internal set
+        public set
         {
             _guid = value;
         }
@@ -73,7 +73,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     /// <returns>A hash code.</returns>
     public override int GetHashCode() => this.Id.GetHashCode();
 
-    internal virtual T Clone( T other )
+    public virtual T Clone( T other )
     {
         if ( other == default( T ) )
         {

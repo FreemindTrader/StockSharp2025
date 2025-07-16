@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows.Controls.Primitives;
 
 #nullable disable
-internal interface \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTZNhZ9vYpqD7krOMbM3CC9ny : 
+public interface \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTZNhZ9vYpqD7krOMbM3CC9ny : 
   \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x
 {
   IEnumerable<Thumb> \u0023\u003Dzcm6MlqCRXg0F();

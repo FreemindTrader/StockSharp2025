@@ -12,9 +12,9 @@ using System.Windows;
 using System.Windows.Shapes;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class RolloverModifier : 
+public sealed class RolloverModifier : 
   VerticalSliceModifierBase
 {
   
@@ -155,7 +155,7 @@ internal sealed class RolloverModifier :
   {
     public ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
 
-    internal void \u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D(
+    public void \u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       if (!_param1.RenderableSeries.\u0023\u003DzVxrZQ3k9ZBGJ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 0))

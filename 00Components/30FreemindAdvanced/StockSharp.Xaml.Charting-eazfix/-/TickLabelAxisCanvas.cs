@@ -11,9 +11,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal class TickLabelAxisCanvas : 
+public class TickLabelAxisCanvas : 
   AxisCanvas
 {
   
@@ -144,13 +144,13 @@ internal class TickLabelAxisCanvas :
     public static Func<DefaultTickLabel, int> \u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D;
     public static Func<IGrouping<int, DefaultTickLabel>, int> \u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D;
 
-    internal int \u0023\u003DzBxO6u\u0024HlVKKWbdOt3RMd_j8\u003D(
+    public int \u0023\u003DzBxO6u\u0024HlVKKWbdOt3RMd_j8\u003D(
       DefaultTickLabel _param1)
     {
       return _param1.\u0023\u003DzcWxBLkct8Sd5yemMlw\u003D\u003D();
     }
 
-    internal int \u0023\u003Dzug\u0024q6sWpYdaQHtVbrSZZtJw\u003D(
+    public int \u0023\u003Dzug\u0024q6sWpYdaQHtVbrSZZtJw\u003D(
       IGrouping<int, DefaultTickLabel> _param1)
     {
       return _param1.Key;
@@ -161,7 +161,7 @@ internal class TickLabelAxisCanvas :
   {
     public Rect \u0023\u003Dz1Nrh7CPGtaPVGj6s\u0024g\u003D\u003D;
 
-    internal bool \u0023\u003Dz9Wax66ks0XlfNwfslg\u003D\u003D(
+    public bool \u0023\u003Dz9Wax66ks0XlfNwfslg\u003D\u003D(
       DefaultTickLabel _param1)
     {
       return _param1.\u0023\u003DzLqLOI4\u0024kbsVKm2XaOGI9Rw8\u003D().IntersectsWith(this.\u0023\u003Dz1Nrh7CPGtaPVGj6s\u0024g\u003D\u003D);

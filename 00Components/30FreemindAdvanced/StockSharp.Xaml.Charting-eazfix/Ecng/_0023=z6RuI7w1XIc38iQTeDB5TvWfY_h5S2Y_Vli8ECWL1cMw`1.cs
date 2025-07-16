@@ -13,7 +13,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 #nullable enable
-internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>
+public abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>
   where T : 
   #nullable disable
   IXmlSerializable
@@ -75,7 +75,7 @@ internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw
   {
     public T \u0023\u003Dz_i6sZDg\u003D;
 
-    internal bool \u0023\u003Dz6QPdyiLfsgITxtjnxQ\u003D\u003D(KeyValuePair<Type, string[]> _param1)
+    public bool \u0023\u003Dz6QPdyiLfsgITxtjnxQ\u003D\u003D(KeyValuePair<Type, string[]> _param1)
     {
       return _param1.Key.IsInstanceOfType((object) this.\u0023\u003Dz_i6sZDg\u003D);
     }
@@ -96,7 +96,7 @@ internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw
     #nullable disable
     string>> \u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D;
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -105,7 +105,7 @@ internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw
       return (IEnumerable<string>) _param1.Value;
     }
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -119,7 +119,7 @@ internal abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw
   {
     public T \u0023\u003Dz_i6sZDg\u003D;
 
-    internal bool \u0023\u003DztbYFMhd9VetwIFGIeQ\u003D\u003D(KeyValuePair<Type, string[]> _param1)
+    public bool \u0023\u003DztbYFMhd9VetwIFGIeQ\u003D\u003D(KeyValuePair<Type, string[]> _param1)
     {
       return _param1.Key.IsInstanceOfType((object) this.\u0023\u003Dz_i6sZDg\u003D);
     }

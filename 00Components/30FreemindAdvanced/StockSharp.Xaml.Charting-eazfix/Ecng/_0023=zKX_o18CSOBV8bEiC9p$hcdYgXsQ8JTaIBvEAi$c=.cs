@@ -7,29 +7,29 @@
 using StockSharp.Charting;
 
 #nullable disable
-internal static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcdYgXsQ8JTaIBvEAi\u0024c\u003D
+public static class \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcdYgXsQ8JTaIBvEAi\u0024c\u003D
 {
-  internal static bool \u0023\u003DzEiJTKKs\u003D(this LabelPlacement _param0)
+  public static bool \u0023\u003DzEiJTKKs\u003D(this LabelPlacement _param0)
   {
     return _param0 == LabelPlacement.Top || _param0 == LabelPlacement.TopLeft || _param0 == LabelPlacement.TopRight;
   }
 
-  internal static bool \u0023\u003DzHnHjVLw\u003D(this LabelPlacement _param0)
+  public static bool \u0023\u003DzHnHjVLw\u003D(this LabelPlacement _param0)
   {
     return _param0 == LabelPlacement.Bottom || _param0 == LabelPlacement.BottomLeft || _param0 == LabelPlacement.BottomRight;
   }
 
-  internal static bool \u0023\u003DzsJ2ryUw\u003D(this LabelPlacement _param0)
+  public static bool \u0023\u003DzsJ2ryUw\u003D(this LabelPlacement _param0)
   {
     return _param0 == LabelPlacement.Right || _param0 == LabelPlacement.TopRight || _param0 == LabelPlacement.BottomRight;
   }
 
-  internal static bool \u0023\u003DzY_J1ez4\u003D(this LabelPlacement _param0)
+  public static bool \u0023\u003DzY_J1ez4\u003D(this LabelPlacement _param0)
   {
     return _param0 == LabelPlacement.Left || _param0 == LabelPlacement.TopLeft || _param0 == LabelPlacement.BottomLeft;
   }
 
-  internal static bool \u0023\u003DzyylSSJc\u003D(this LabelPlacement _param0)
+  public static bool \u0023\u003DzyylSSJc\u003D(this LabelPlacement _param0)
   {
     return _param0 == LabelPlacement.Axis;
   }

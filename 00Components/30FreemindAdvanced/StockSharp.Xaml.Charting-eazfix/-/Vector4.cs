@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 #nullable disable
-internal struct Vector4 : 
+public struct Vector4 : 
   IEquatable<Vector4>
 {
   

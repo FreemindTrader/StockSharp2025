@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Windows;
 
 #nullable disable
-internal interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJjBPTR5rC4Mn<T>
+public interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJjBPTR5rC4Mn<T>
   where T : \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D
 {
   bool \u0023\u003Dz4nhIf8\u0024OuuPux\u0024xOhCjDsBI\u003D(string _param1);

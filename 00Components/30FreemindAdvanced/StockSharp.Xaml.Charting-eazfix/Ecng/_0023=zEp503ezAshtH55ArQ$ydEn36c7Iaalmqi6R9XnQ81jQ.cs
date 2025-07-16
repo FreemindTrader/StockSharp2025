@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal static class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEn36c7Iaalmqi6R9XnQ81jQ0rEZqUPodXoc4\u00240_B
+public static class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEn36c7Iaalmqi6R9XnQ81jQ0rEZqUPodXoc4\u00240_B
 {
   private static readonly IDictionary<ChartAnnotationTypes, Type> \u0023\u003DzuIb\u0024MT5vuNxR = (IDictionary<ChartAnnotationTypes, Type>) new Dictionary<ChartAnnotationTypes, Type>()
   {
@@ -82,7 +82,7 @@ internal static class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEn36c7Iaalmqi6R9XnQ8
   {
     public Type \u0023\u003DzLLebWNY\u003D;
 
-    internal bool \u0023\u003DzSBgb6xDzEUsSoiug1w\u003D\u003D(
+    public bool \u0023\u003DzSBgb6xDzEUsSoiug1w\u003D\u003D(
       KeyValuePair<ChartAnnotationTypes, Type> _param1)
     {
       return _param1.Value == this.\u0023\u003DzLLebWNY\u003D;

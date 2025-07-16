@@ -5,7 +5,7 @@ using SciChart.Data.Model;
 
 namespace SciChart.Charting.Common.Databinding;
 
-internal sealed class StringToDoubleRangeTypeConverter :
+public sealed class StringToDoubleRangeTypeConverter :
   TypeConverter
 {
     public override bool CanConvertFrom( ITypeDescriptorContext _param1, Type _param2 )

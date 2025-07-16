@@ -16,10 +16,10 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [System.Windows.Markup.ContentProperty("Children")]
-internal sealed class ChartModifierSurface : 
+public sealed class ChartModifierSurface : 
   ContentControl,
   IChartModifierSurface,
   IHitTestable
@@ -96,7 +96,7 @@ internal sealed class ChartModifierSurface :
     ClipToBoundsHelper.SetClipToBounds((DependencyObject) ((ChartModifierSurface) _param0).\u0023\u003DzF8_YcFVDbTFB, (bool) _param1.NewValue);
   }
 
-  internal Canvas \u0023\u003DzpPgLy35fsf6m() => this.\u0023\u003DzF8_YcFVDbTFB;
+  public Canvas \u0023\u003DzpPgLy35fsf6m() => this.\u0023\u003DzF8_YcFVDbTFB;
 
   double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
   {

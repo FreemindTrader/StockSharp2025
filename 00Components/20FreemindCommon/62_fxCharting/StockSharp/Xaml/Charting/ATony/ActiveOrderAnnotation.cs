@@ -1,5 +1,5 @@
 ﻿using Ecng.Xaml;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Charting.StrategyManager;
 using SciChart.Charting.Visuals;

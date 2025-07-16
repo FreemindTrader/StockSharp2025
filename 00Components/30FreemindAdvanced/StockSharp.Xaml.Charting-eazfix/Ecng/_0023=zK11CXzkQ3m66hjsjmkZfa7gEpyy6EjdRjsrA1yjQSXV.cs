@@ -10,12 +10,12 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 #nullable disable
-internal abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D : 
+public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D : 
   \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D
 {
   private static byte[] \u0023\u003DzpQ\u0024NBSHbFmS_;
 
-  internal static bool \u0023\u003DzilOTiYzU6JIQ(
+  public static bool \u0023\u003DzilOTiYzU6JIQ(
     \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param0,
     IndexRange  _param1,
     int _param2)

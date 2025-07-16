@@ -1,5 +1,5 @@
 ﻿#nullable disable
-internal enum AnnotationCanvas
+public enum AnnotationCanvas
 {
     AboveChart,
     BelowChart,

@@ -13,13 +13,13 @@ using System.Windows.Input;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class AxisMarkerAnnotation : AnchorPointAnnotation
+public class AxisMarkerAnnotation : AnchorPointAnnotation
 {
   public static readonly DependencyProperty FormattedValueProperty = DependencyProperty.Register(nameof (FormattedValue), typeof (string), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
   public static readonly DependencyProperty MarkerPointWidthProperty = DependencyProperty.Register(nameof (MarkerPointWidth), typeof (double), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) 8.0));
   public static readonly DependencyProperty LabelTemplateProperty = DependencyProperty.Register(nameof (LabelTemplate), typeof (DataTemplate), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
   public static readonly DependencyProperty PointerTemplateProperty = DependencyProperty.Register(nameof (PointerTemplate), typeof (DataTemplate), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
-  protected internal static readonly DependencyProperty AxisInfoProperty = DependencyProperty.Register(nameof (AxisInfo), typeof (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
+  protected public static readonly DependencyProperty AxisInfoProperty = DependencyProperty.Register(nameof (AxisInfo), typeof (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
 
   public AxisMarkerAnnotation()
   {
@@ -175,7 +175,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     return coord;
   }
 
-  internal sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(AxisMarkerAnnotation _param1) : 
+  public sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(AxisMarkerAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<AxisMarkerAnnotation>(_param1)
   {
     public override Point[] \u0023\u003DzfJgp916l7LbX(
@@ -225,7 +225,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
         return false;
@@ -247,7 +247,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
         return;
@@ -258,7 +258,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
   }
 
-  internal sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D : 
+  public sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<AxisMarkerAnnotation>
   {
     private readonly double \u0023\u003DzYklHyyiv14LN;
@@ -289,7 +289,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
         return false;
@@ -374,7 +374,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       AnnotationCoordinates _param1,
       double _param2,
       double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       IAxis axis = this.\u0023\u003Dz_iIh83yfe01U().Axis;
       if (axis.\u0023\u003DzFrVmckt\u0024NpG6())

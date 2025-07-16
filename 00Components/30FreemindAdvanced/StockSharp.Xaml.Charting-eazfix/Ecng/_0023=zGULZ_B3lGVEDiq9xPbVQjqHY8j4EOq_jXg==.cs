@@ -8,14 +8,14 @@ using System;
 using System.Reflection;
 
 #nullable disable
-internal static class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjqHY8j4EOq_jXg\u003D\u003D
+public static class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjqHY8j4EOq_jXg\u003D\u003D
 {
-  internal static Uri \u0023\u003DzLRqS25nBQaEh(string _param0)
+  public static Uri \u0023\u003DzLRqS25nBQaEh(string _param0)
   {
     return new Uri($"pack://application:,,,/{typeof (\u0023\u003DzGULZ_B3lGVEDiq9xPbVQjqHY8j4EOq_jXg\u003D\u003D).Assembly.\u0023\u003DzFARAiudukAjJ()};component/{_param0}", UriKind.RelativeOrAbsolute);
   }
 
-  internal static Uri \u0023\u003DzLRqS25nBQaEh(Assembly _param0, string _param1)
+  public static Uri \u0023\u003DzLRqS25nBQaEh(Assembly _param0, string _param1)
   {
     return new Uri($"pack://application:,,,/{_param0.\u0023\u003DzFARAiudukAjJ()};component/{_param1}", UriKind.RelativeOrAbsolute);
   }

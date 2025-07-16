@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class UltrachartLegend : 
+public sealed class UltrachartLegend : 
   ItemsControl
 {
   

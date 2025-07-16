@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 #nullable disable
 [StructLayout(LayoutKind.Sequential, Size = 1)]
-internal struct \u0023\u003DzoRkHUCjeHss9J7PNBJOkcP1acRumzxA8ODkb7VecTGKC1AepJq1l3oE38MIhC_i6ew\u003D\u003D
+public struct \u0023\u003DzoRkHUCjeHss9J7PNBJOkcP1acRumzxA8ODkb7VecTGKC1AepJq1l3oE38MIhC_i6ew\u003D\u003D
 {
   private enum \u0023\u003DzPTqOj6Vsl94b
   {

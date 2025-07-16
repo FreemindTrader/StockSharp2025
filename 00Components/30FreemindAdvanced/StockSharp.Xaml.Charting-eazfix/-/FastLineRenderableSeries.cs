@@ -12,9 +12,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class FastLineRenderableSeries : 
+public sealed class FastLineRenderableSeries : 
   BaseRenderableSeries
 {
   
@@ -149,7 +149,7 @@ internal sealed class FastLineRenderableSeries :
     public Color \u0023\u003DzxS8dq0E\u003D;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
 
-    internal \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D(
+    public \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D(
       double _param1,
       double _param2)
     {

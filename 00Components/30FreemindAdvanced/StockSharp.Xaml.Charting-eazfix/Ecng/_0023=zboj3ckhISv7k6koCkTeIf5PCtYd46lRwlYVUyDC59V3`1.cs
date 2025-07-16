@@ -23,7 +23,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>(
+public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>(
   T _param1) : 
   ChartCompentWpfBaseViewModel<T>(_param1)
   where T : ChartTransactionElement<T>, new()
@@ -180,7 +180,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     return uwxhcH9YwmL4RsubcEjd.Transaction.\u0023\u003DzUYTxG_Bgl8ih() != null ? this.ChartComponentView.SellColor : this.ChartComponentView.BuyColor;
   }
 
-  internal static string \u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D(
+  public static string \u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D(
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param0)
   {
     return _param0 is dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd uwxhcH9YwmL4RsubcEjd ? uwxhcH9YwmL4RsubcEjd.Action : string.Empty;
@@ -197,7 +197,7 @@ internal sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pk
     public \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T> _variableSome3535;
     public bool \u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D;
 
-    internal void \u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D()
+    public void \u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D()
     {
       this._variableSome3535.\u0023\u003Dzk_r\u0024wtNtUKwJ(this.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D);
     }

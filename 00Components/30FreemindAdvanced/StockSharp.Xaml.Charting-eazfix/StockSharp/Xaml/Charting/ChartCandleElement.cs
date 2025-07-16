@@ -1092,7 +1092,7 @@ public class ChartCandleElement :
     return settingsStorage;
   }
 
-  internal override ChartCandleElement Clone(ChartCandleElement _param1)
+  public override ChartCandleElement Clone(ChartCandleElement _param1)
   {
     _param1 = base.Clone(_param1);
     _param1.DownFillColor = this.DownFillColor;
@@ -1175,7 +1175,7 @@ public class ChartCandleElement :
   {
     public Func<DateTimeOffset, bool, bool, System.Drawing.Color?> \u0023\u003DzxGz2_8k\u003D;
 
-    internal System.Windows.Media.Color? \u0023\u003DzhES9R3GcxsFNnB11gQcoe_qNslLr6z0WiGpRi_CHokEXxcRuYqcRWK9R6Cn8(
+    public System.Windows.Media.Color? \u0023\u003DzhES9R3GcxsFNnB11gQcoe_qNslLr6z0WiGpRi_CHokEXxcRuYqcRWK9R6Cn8(
       DateTimeOffset _param1,
       bool _param2,
       bool _param3)

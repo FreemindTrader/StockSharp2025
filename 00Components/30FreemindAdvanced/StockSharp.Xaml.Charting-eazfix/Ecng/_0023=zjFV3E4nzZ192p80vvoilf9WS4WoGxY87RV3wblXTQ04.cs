@@ -26,7 +26,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 
 #nullable enable
-internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D
+public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D
 {
   public static 
   #nullable disable
@@ -145,7 +145,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     public ContentControl \u0023\u003Dzs1tPnmG2z8D2;
     public ICommand \u0023\u003Dzi8fyBqQ\u003D;
 
-    internal void \u0023\u003DzQGBHhFhQ7lQdReeBKA\u003D\u003D(
+    public void \u0023\u003DzQGBHhFhQ7lQdReeBKA\u003D\u003D(
       #nullable enable
       object? _param1,
       CancelEventArgs _param2)
@@ -291,7 +291,7 @@ internal static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iA
     public DoubleRange \u0023\u003DzZBtfoxHC6iyc;
     public \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
-    internal void \u0023\u003Dz4EeJ2Z9T93ppthogLg\u003D\u003D(
+    public void \u0023\u003Dz4EeJ2Z9T93ppthogLg\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {

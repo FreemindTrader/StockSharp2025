@@ -20,9 +20,9 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class Chart : 
+public sealed class Chart : 
   UserControl,
   INotifyPropertyChanged,
   IChart,
@@ -39,7 +39,7 @@ internal sealed class Chart :
   
   private readonly IChartArea[] \u0023\u003Dza1mnh6ythHbd;
   
-  internal SciChartSurface \u0023\u003Dz_PI_EIE\u003D;
+  public SciChartSurface \u0023\u003Dz_PI_EIE\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -59,7 +59,7 @@ internal sealed class Chart :
     };
   }
 
-  internal ChartArea \u0023\u003DzigsRD8\u0024hw_SZ()
+  public ChartArea \u0023\u003DzigsRD8\u0024hw_SZ()
   {
     return this._chartArea;
   }
@@ -325,7 +325,7 @@ internal sealed class Chart :
 
   [DebuggerNonUserCode]
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
-  internal Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
+  public Delegate \u0023\u003DzciIj4U627yBM(Type _param1, string _param2)
   {
     return Delegate.CreateDelegate(_param1, (object) this, _param2);
   }

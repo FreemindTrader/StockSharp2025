@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0024cPBp2g91_YdMug\u003D\u003D : 
+public abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0024cPBp2g91_YdMug\u003D\u003D : 
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<IComparable>
 {
   public override IComparable[] \u0023\u003Dzctqa9kMCtfQQ(

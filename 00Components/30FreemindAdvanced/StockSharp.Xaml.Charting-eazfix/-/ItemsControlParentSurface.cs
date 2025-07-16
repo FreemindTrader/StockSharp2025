@@ -14,9 +14,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class ItemsControlParentSurface
+public sealed class ItemsControlParentSurface
 {
   public static readonly 
   #nullable disable
@@ -64,7 +64,7 @@ internal sealed class ItemsControlParentSurface
     public UltrachartOverview \u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D;
     public NotifyCollectionChangedEventHandler \u0023\u003DzuAeZVTPDgzYE;
 
-    internal void \u0023\u003Dz0xfb5\u0024uSJ4miTqDRzdsXVbY\u003D(
+    public void \u0023\u003Dz0xfb5\u0024uSJ4miTqDRzdsXVbY\u003D(
       object _param1,
       RoutedEventArgs _param2)
     {
@@ -76,7 +76,7 @@ internal sealed class ItemsControlParentSurface
       ItemsControlParentSurface.\u0023\u003DzgCXh\u0024GcoJtLk(this.\u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D, this.\u0023\u003Dzki8twMk\u003D);
     }
 
-    internal void \u0023\u003DzlOmNQalRcYS04kULyvkLsQQ\u003D(
+    public void \u0023\u003DzlOmNQalRcYS04kULyvkLsQQ\u003D(
       #nullable enable
       object? _param1,
       NotifyCollectionChangedEventArgs _param2)
@@ -93,7 +93,7 @@ internal sealed class ItemsControlParentSurface
     ItemsControlParentSurface.SomeClass34343383 SomeMethond0343 = new ItemsControlParentSurface.SomeClass34343383();
     public static Func<PropertyInfo, bool> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
 
-    internal bool \u0023\u003DznZr9nJa8\u00246cBEfGURUqenkw\u003D(PropertyInfo _param1)
+    public bool \u0023\u003DznZr9nJa8\u00246cBEfGURUqenkw\u003D(PropertyInfo _param1)
     {
       return _param1.Name == "Panes";
     }

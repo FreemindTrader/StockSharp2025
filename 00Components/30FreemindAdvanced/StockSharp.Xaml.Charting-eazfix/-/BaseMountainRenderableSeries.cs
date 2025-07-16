@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal abstract class BaseMountainRenderableSeries :
+public abstract class BaseMountainRenderableSeries :
   BaseRenderableSeries
 {
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]

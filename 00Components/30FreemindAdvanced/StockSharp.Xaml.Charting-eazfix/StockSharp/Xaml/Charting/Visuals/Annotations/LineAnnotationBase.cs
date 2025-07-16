@@ -13,7 +13,7 @@ using System.Windows.Threading;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal abstract class LineAnnotationBase : AnnotationBase
+public abstract class LineAnnotationBase : AnnotationBase
 {
   public static readonly DependencyProperty StrokeDashArrayProperty = DependencyProperty.Register(nameof (StrokeDashArray), typeof (DoubleCollection), typeof (LineAnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
   public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(nameof (StrokeThickness), typeof (double), typeof (LineAnnotationBase), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(LineAnnotationBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D)));
@@ -69,7 +69,7 @@ internal abstract class LineAnnotationBase : AnnotationBase
 
   public override bool IsPointWithinBounds(Point point)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (this.XAxis == null || this.YAxis == null)
       return false;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
@@ -83,7 +83,7 @@ internal abstract class LineAnnotationBase : AnnotationBase
   {
     public static readonly LineAnnotationBase.SomeClass34343383 SomeMethond0343 = new LineAnnotationBase.SomeClass34343383();
 
-    internal void \u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D(
+    public void \u0023\u003DzbxsQzTgivoh40ZJSBEuA2TI\u003D(
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {

@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class RubberBandXyZoomModifier : 
+public sealed class RubberBandXyZoomModifier : 
   ChartModifierBase
 {
   
@@ -238,7 +238,7 @@ internal sealed class RubberBandXyZoomModifier :
     this.\u0023\u003DzqGwbHdeZ8yMA = false;
   }
 
-  internal void \u0023\u003DzIjNc90j5mMD8(Point _param1, Point _param2)
+  public void \u0023\u003DzIjNc90j5mMD8(Point _param1, Point _param2)
   {
     this.\u0023\u003DzIew7YFe_5nHVEkzlrQ\u003D\u003D();
     if (Math.Abs(_param1.X - _param2.X) < double.Epsilon || Math.Abs(_param1.Y - _param2.Y) < double.Epsilon || this.XAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>() || this.YAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>())
@@ -283,7 +283,7 @@ internal sealed class RubberBandXyZoomModifier :
     return this.\u0023\u003Dzz5GxOuxHkE8Y(_param1, num1, num2);
   }
 
-  internal IRange \u0023\u003Dzz5GxOuxHkE8Y(
+  public IRange \u0023\u003Dzz5GxOuxHkE8Y(
     IAxis _param1,
     double _param2,
     double _param3)
@@ -302,7 +302,7 @@ internal sealed class RubberBandXyZoomModifier :
   {
   }
 
-  internal \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D \u0023\u003Dz1Ie6c4NvtQ\u00248()
+  public \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D \u0023\u003Dz1Ie6c4NvtQ\u00248()
   {
     return this.\u0023\u003DztZ_Bn6fiXvhgUvyZicnn4\u00244\u003D;
   }

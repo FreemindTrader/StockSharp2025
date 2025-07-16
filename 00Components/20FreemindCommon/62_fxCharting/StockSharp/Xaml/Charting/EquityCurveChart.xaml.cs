@@ -2,7 +2,7 @@
 using Ecng.Common;
 using Ecng.Serialization;
 using Ecng.Xaml;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.ChartModifiers;
 using MoreLinq;
 

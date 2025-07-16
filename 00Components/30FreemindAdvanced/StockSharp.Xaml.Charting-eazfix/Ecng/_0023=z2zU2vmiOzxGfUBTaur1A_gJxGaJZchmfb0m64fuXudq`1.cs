@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<T> : 
+public sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUOLrxxQ\u003D\u003D<T> : 
   \u0023\u003Dzro0Io1hfSw7LlH634iIk6DImkX90fd6hXMUYrBvYe4GoWtElsg\u003D\u003D<T>,
   \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<T>,
   IList<T>,
@@ -47,12 +47,12 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
     return this._parentElement.\u0023\u003DzRr4AYdnHaTxa();
   }
 
-  internal int \u0023\u003DzMRd_64p8E249()
+  public int \u0023\u003DzMRd_64p8E249()
   {
     return this._parentElement.\u0023\u003DzMRd_64p8E249();
   }
 
-  internal void \u0023\u003Dz2GOzd49sS99C(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
+  public void \u0023\u003Dz2GOzd49sS99C(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
 
   bool IList.\u0023\u003DzVtB9Td1HClEhKFH\u0024dUP8Pw0\u003D() => false;
 
@@ -108,7 +108,7 @@ internal sealed class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_gJxGaJZchmfb0m64fuXudqUO
 
   public int Count => this._parentElement.Count;
 
-  internal void \u0023\u003DzpFWgSog\u003D(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
+  public void \u0023\u003DzpFWgSog\u003D(int _param1) => this.\u0023\u003DzrjoFHxcyHAZx();
 
   bool ICollection<T>.\u0023\u003DzUq2KM6jl3UCUrxQEdcWSy1EsGjzi\u0024m061w\u003D\u003D()
   {

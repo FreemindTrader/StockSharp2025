@@ -7,7 +7,7 @@
 using \u002D;
 
 #nullable disable
-internal sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_2WWX\u0024OoiqaMIQ\u003D\u003D : 
+public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_2WWX\u0024OoiqaMIQ\u003D\u003D : 
   \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D
 {
   public override void \u0023\u003Dz_0Le6I5slA7z(

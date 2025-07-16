@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 #nullable disable
-internal sealed class \u0023\u003Dz2Qv8a0HfC9ieiy4m0TM2aAzmsNDy8Fpd\u0024of18IRv__L_ : 
+public sealed class \u0023\u003Dz2Qv8a0HfC9ieiy4m0TM2aAzmsNDy8Fpd\u0024of18IRv__L_ : 
   IValueConverter
 {
   

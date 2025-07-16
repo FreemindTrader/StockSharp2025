@@ -7,7 +7,7 @@
 using System.Collections;
 
 #nullable disable
-internal interface \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D
+public interface \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D
 {
   int \u0023\u003Dz4EvVhZjEuLza();
 

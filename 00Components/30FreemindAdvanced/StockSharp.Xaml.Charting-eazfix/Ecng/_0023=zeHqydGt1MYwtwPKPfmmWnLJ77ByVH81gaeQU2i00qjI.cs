@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-internal class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnLJ77ByVH81gaeQU2i00qjI8QhelTQ\u003D\u003D : 
+public class \u0023\u003DzeHqydGt1MYwtwPKPfmmWnLJ77ByVH81gaeQU2i00qjI8QhelTQ\u003D\u003D : 
   INotifyPropertyChanged,
   \u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D
 {

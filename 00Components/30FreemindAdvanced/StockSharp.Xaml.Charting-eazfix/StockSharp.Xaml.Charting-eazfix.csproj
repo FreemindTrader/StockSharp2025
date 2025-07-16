@@ -66,6 +66,7 @@
 		<None Remove="StockSharp\Xaml\Charting\Images\TrailingStop2_16x16.png" />
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="Ecng.Common" Version="1.0.202" />
 		<PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.*" />
 		<PackageReference Include="StockSharp.Xaml" Version="5.0.*" />
 	</ItemGroup>

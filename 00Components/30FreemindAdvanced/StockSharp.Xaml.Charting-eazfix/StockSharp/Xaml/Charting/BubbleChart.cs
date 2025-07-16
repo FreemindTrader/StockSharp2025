@@ -22,7 +22,7 @@ namespace StockSharp.Xaml.Charting;
 public class BubbleChart : UserControl, IComponentConnector
 {
   
-  internal XYDiagram2D \u0023\u003DzC0s2qwQ\u003D;
+  public XYDiagram2D \u0023\u003DzC0s2qwQ\u003D;
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -105,7 +105,7 @@ public class BubbleChart : UserControl, IComponentConnector
       public double[] \u0023\u003Dzj_CDbmQ\u003D;
       public double[] \u0023\u003Dz4PSczfw\u003D;
 
-      internal SeriesPoint \u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e(
+      public SeriesPoint \u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e(
         \u0023\u003DzulcL8RA\u003D _param1,
         int _param2)
       {
@@ -124,12 +124,12 @@ public class BubbleChart : UserControl, IComponentConnector
     public static Func<DateTime, SeriesPoint> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
     public static Func<double, SeriesPoint> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
 
-    internal SeriesPoint \u0023\u003DzpXJS7zsG3ayStA6Cv3aiwRc\u003D(DateTime _param1)
+    public SeriesPoint \u0023\u003DzpXJS7zsG3ayStA6Cv3aiwRc\u003D(DateTime _param1)
     {
       return new SeriesPoint(_param1);
     }
 
-    internal SeriesPoint \u0023\u003DzlSVLoTzOi9mOI2TX7beRTB8\u003D(double _param1)
+    public SeriesPoint \u0023\u003DzlSVLoTzOi9mOI2TX7beRTB8\u003D(double _param1)
     {
       return new SeriesPoint(_param1);
     }

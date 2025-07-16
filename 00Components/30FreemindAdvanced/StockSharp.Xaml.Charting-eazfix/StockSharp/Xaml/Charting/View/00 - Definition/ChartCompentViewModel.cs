@@ -167,7 +167,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         }
     }
 
-    internal Subscription GetSubscription(
+    public Subscription GetSubscription(
       IChartComponent _param1 )
     {
         return ( ( Chart ) this.Pane.Chart ).TryGetSubscription( ( IChartElement ) _param1 );

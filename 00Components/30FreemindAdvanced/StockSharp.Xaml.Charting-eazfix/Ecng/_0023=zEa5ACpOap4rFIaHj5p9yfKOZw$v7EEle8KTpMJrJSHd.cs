@@ -8,9 +8,9 @@ using System;
 using System.Runtime.InteropServices;
 
 #nullable disable
-internal static class \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY
+public static class \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY
 {
-  internal static unsafe void \u0023\u003Dz8YbqsoQ7EyhA(
+  public static unsafe void \u0023\u003Dz8YbqsoQ7EyhA(
     byte* _param0,
     int _param1,
     byte* _param2,
@@ -22,12 +22,12 @@ internal static class \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJ
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.dje_zGUAM84XM8WU9682_ejd(_param2, _param0, _param4);
   }
 
-  internal static unsafe void \u0023\u003Dz8YbqsoQ7EyhA(int* _param0, int* _param1, int _param2)
+  public static unsafe void \u0023\u003Dz8YbqsoQ7EyhA(int* _param0, int* _param1, int _param2)
   {
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.dje_zGUAM84XM8WU9682_ejd((byte*) _param1, (byte*) _param0, _param2 * 4);
   }
 
-  internal static void \u0023\u003DzvOds\u0024YwY7CNP(IntPtr _param0, int _param1, int _param2)
+  public static void \u0023\u003DzvOds\u0024YwY7CNP(IntPtr _param0, int _param1, int _param2)
   {
     \u0023\u003DzEa5ACpOap4rFIaHj5p9yfKOZw\u0024v7EEle8KTpMJrJSHdUYMMMqiLDrUZC4IkY.dje_zFX4HDMPMMWSHFCA_ejd(_param0, _param1, _param2);
   }

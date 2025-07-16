@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC
+public sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC
 {
   private static uint \u0023\u003DzmbQYIoVdQhkN;
   private readonly long dgr;
@@ -16,7 +16,7 @@ internal sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC
   private long \u0023\u003DzCdBe1JGiII2y;
   private Tuple<long, long> \u0023\u003Dzb9g4_DOjBJMx;
 
-  internal \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC(
+  public \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC(
     long _param1,
     long _param2,
     int _param3,
@@ -36,7 +36,7 @@ internal sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg7gMG_aprhZVUUZ2rxA901RC
     return new Tuple<long, long>(this.\u0023\u003DzCdBe1JGiII2y / (long) this.\u0023\u003Dz5BKXmnjcYbh2SvP6Xw\u003D\u003D, this.\u0023\u003DzCdBe1JGiII2y);
   }
 
-  internal Tuple<long, long> \u0023\u003DzPgZsWHrUSHPaSw8veQ\u003D\u003D()
+  public Tuple<long, long> \u0023\u003DzPgZsWHrUSHPaSw8veQ\u003D\u003D()
   {
     return this.\u0023\u003Dzb9g4_DOjBJMx;
   }

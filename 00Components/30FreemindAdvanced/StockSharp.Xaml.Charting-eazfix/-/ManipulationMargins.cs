@@ -5,9 +5,9 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal static class ManipulationMargins
+public static class ManipulationMargins
 {
   private static double \u0023\u003DzQg3DodNxoPSmGOJgOQ\u003D\u003D = 20.0;
   private static double \u0023\u003DzQXKmWnBMngxU = 11.0;

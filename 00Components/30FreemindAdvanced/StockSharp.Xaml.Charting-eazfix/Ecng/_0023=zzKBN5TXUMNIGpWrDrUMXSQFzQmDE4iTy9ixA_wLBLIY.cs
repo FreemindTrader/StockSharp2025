@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-internal abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ : 
+public abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ : 
   ChartModifierBase
 {
   

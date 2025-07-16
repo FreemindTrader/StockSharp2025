@@ -12,7 +12,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 #nullable enable
-internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D : 
+public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D : 
   \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
 {
   private readonly 
@@ -155,14 +155,14 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     #nullable enable
     IEnumerable<KeyValuePair<double, CandlePriceLevel>>> \u0023\u003DzuAeZVTPDgzYE;
 
-    internal bool \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
+    public bool \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
       #nullable disable
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() >= this._variableSome3535.VisibleRange.Min && _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() <= this._variableSome3535.VisibleRange.Max;
     }
 
-    internal 
+    public 
     #nullable enable
     IEnumerable<KeyValuePair<double, CandlePriceLevel>> OnChartAreaElementsRemovingAt(
       #nullable disable
@@ -179,13 +179,13 @@ internal sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oU
     public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, double> \u0023\u003Dzbt6wp4trpUeqHhxsrQ\u003D\u003D;
     public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, double> \u0023\u003DzjJ3vlfxVH92KtuUzew\u003D\u003D;
 
-    internal double \u0023\u003DzOePUav1PfFtlcVZNiBhoHIg\u003D(
+    public double \u0023\u003DzOePUav1PfFtlcVZNiBhoHIg\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz2_4KSTY\u003D();
     }
 
-    internal double \u0023\u003Dz0nru\u00248Fswh\u0024ovgKXz5qhZKM\u003D(
+    public double \u0023\u003Dz0nru\u00248Fswh\u0024ovgKXz5qhZKM\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dzu7q98_E\u003D();

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Reflection;
 
 #nullable disable
-internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh : IDisposable
+public sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw422C01wi00GXG6siWuShyyh : IDisposable
 {
   
   private WeakReference \u0023\u003DzekIeoK8\u003D;

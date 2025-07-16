@@ -191,7 +191,7 @@ public abstract class ChartTransactionElement<T> :
     storage.SetValue<double>("DrawSize", this.DrawSize);
   }
 
-  internal override T Clone(T _param1)
+  public override T Clone(T _param1)
   {
     _param1.BuyColor = this.BuyColor;
     _param1.BuyStrokeColor = this.BuyStrokeColor;

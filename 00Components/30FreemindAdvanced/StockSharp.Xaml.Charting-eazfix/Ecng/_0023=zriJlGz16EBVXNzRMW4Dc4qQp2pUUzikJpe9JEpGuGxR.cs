@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class FastBubbleRenderableSeries : 
+public sealed class FastBubbleRenderableSeries : 
   BaseRenderableSeries
 {
   
@@ -204,7 +204,7 @@ internal sealed class FastBubbleRenderableSeries :
     public Color? \u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D;
     public IRenderContext2D \u0023\u003DzC8v0b7k\u003D;
 
-    internal void \u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D(
+    public void \u0023\u003Dz9WeCEzhdx4LBOIEZGg\u003D\u003D(
       double _param1,
       double _param2,
       double _param3,

@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Threading;
 
 #nullable disable
-internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D : 
+public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D : 
   \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D,
   ISuspendable,
   \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
@@ -237,7 +237,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
     public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D _variableSome3535;
     public TimeSpan \u0023\u003DzXOURnwA\u003D;
 
-    internal void \u0023\u003Dz5cvR57bCJ\u0024icEF_PguV3F8KMaVLt()
+    public void \u0023\u003Dz5cvR57bCJ\u0024icEF_PguV3F8KMaVLt()
     {
       this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(this.\u0023\u003DzXOURnwA\u003D);
     }
@@ -248,7 +248,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
     public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D _variableSome3535;
     public TimeSpan \u0023\u003DzXOURnwA\u003D;
 
-    internal void \u0023\u003DzRQvEFcONmUBT2PTwERTtLDbqy8es()
+    public void \u0023\u003DzRQvEFcONmUBT2PTwERTtLDbqy8es()
     {
       this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(this.\u0023\u003DzXOURnwA\u003D);
     }
@@ -259,7 +259,7 @@ internal abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u00
     public \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D _variableSome3535;
     public TimeSpan \u0023\u003DzXOURnwA\u003D;
 
-    internal void \u0023\u003DzxSNk7gqofrWCxdQwCG6opwzg6Kvk()
+    public void \u0023\u003DzxSNk7gqofrWCxdQwCG6opwzg6Kvk()
     {
       this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(this.\u0023\u003DzXOURnwA\u003D);
     }

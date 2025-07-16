@@ -13,7 +13,7 @@ using System.Linq;
 using System.Windows;
 
 #nullable disable
-internal sealed class LegendModifier : 
+public sealed class LegendModifier : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
   
@@ -68,7 +68,7 @@ internal sealed class LegendModifier :
   {
     public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dz\u00246gChyc\u003D;
 
-    internal void \u0023\u003Dzrmvrnfo5nmhUy3uWog0cspw\u003D(
+    public void \u0023\u003Dzrmvrnfo5nmhUy3uWog0cspw\u003D(
       ChartElementViewModel _param1)
     {
       _param1.UpdateSeries(this.\u0023\u003Dz\u00246gChyc\u003D);
@@ -84,25 +84,25 @@ internal sealed class LegendModifier :
     public static Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
     public static Action<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>> \u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D;
 
-    internal DrawableChartElementBaseViewModel \u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D(
+    public DrawableChartElementBaseViewModel \u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !(((FrameworkElement) _param1.RenderableSeries).Tag is Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[]> tag) ? (DrawableChartElementBaseViewModel) null : tag.Item1;
     }
 
-    internal bool \u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D(
+    public bool \u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D(
       IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
     {
       return _param1.Key != null;
     }
 
-    internal void \u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D(
+    public void \u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D(
       IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
     {
       CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
     }
 
-    internal void \u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D(
+    public void \u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       LegendModifier.SomeWheireosoe vbxLeArTkallkIdHg = new LegendModifier.SomeWheireosoe();

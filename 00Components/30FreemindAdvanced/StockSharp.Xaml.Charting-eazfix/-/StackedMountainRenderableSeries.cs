@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Xml.Serialization;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class StackedMountainRenderableSeries : 
+public sealed class StackedMountainRenderableSeries : 
   BaseMountainRenderableSeries,
   IDrawable,
   IXmlSerializable,

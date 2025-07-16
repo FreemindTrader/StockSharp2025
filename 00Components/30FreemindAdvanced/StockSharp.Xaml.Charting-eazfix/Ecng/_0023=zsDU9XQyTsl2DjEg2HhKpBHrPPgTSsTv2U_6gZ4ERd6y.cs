@@ -8,7 +8,7 @@ using \u002D;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf\u0024lpnbFo5CpvYH_k : 
+public sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf\u0024lpnbFo5CpvYH_k : 
   RenderSurfaceBase
 {
   
@@ -16,7 +16,7 @@ internal sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf
   
   private \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq \u0023\u003DzeUisW3maAY9U;
   
-  protected internal uint[] \u0023\u003DzcNkyaHI7GTSW;
+  protected public uint[] \u0023\u003DzcNkyaHI7GTSW;
 
   public \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf\u0024lpnbFo5CpvYH_k()
   {

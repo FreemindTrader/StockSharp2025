@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4toVZhpii2xTJMHSIVk\u0024BPGa8 : 
+public sealed class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4toVZhpii2xTJMHSIVk\u0024BPGa8 : 
   IAxisParams
 {
   private IRange \u0023\u003DzoWUjTMpdJ7oG_NEfGcn_NZw\u003D;

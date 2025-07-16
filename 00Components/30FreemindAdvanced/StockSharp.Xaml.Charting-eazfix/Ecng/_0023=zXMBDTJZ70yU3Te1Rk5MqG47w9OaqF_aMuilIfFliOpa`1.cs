@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal interface \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG47w9OaqF_aMuilIfFliOpay<T> : 
+public interface \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG47w9OaqF_aMuilIfFliOpay<T> : 
   ITickProvider
   where T : IComparable
 {

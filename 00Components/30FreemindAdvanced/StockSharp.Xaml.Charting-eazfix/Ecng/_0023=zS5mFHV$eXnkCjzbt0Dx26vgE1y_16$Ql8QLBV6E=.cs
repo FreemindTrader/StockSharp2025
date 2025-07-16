@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable enable
-internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D : 
+public sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D : 
   \u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D
 {
   public static readonly 
@@ -315,7 +315,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     _param2.\u0023\u003DzQTINWhMByBmJ(_param1);
   }
 
-  internal IEnumerable<IReceiveMouseEvents > \u0023\u003Dzwp8c1z8\u003D(
+  public IEnumerable<IReceiveMouseEvents > \u0023\u003Dzwp8c1z8\u003D(
     IReceiveMouseEvents  _param1)
   {
     IEnumerable<IReceiveMouseEvents > ag4ZlfwSgT7i2Apws = Enumerable.Empty<IReceiveMouseEvents >();
@@ -335,44 +335,44 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     return ag4ZlfwSgT7i2Apws;
   }
 
-  internal \u0023\u003DzmAi_JN5raoSBYo9w2IEI_6oXJj6XJW84s7KCJRXjmNCv \u0023\u003DzUpBQCesOHau3()
+  public \u0023\u003DzmAi_JN5raoSBYo9w2IEI_6oXJj6XJW84s7KCJRXjmNCv \u0023\u003DzUpBQCesOHau3()
   {
     return this.\u0023\u003DzRVmhoRM9XqGEVYcGQ0iUEic\u003D;
   }
 
-  internal void \u0023\u003DzjAp2mS0rML6_(
+  public void \u0023\u003DzjAp2mS0rML6_(
     \u0023\u003DzmAi_JN5raoSBYo9w2IEI_6oXJj6XJW84s7KCJRXjmNCv _param1)
   {
     this.\u0023\u003DzRVmhoRM9XqGEVYcGQ0iUEic\u003D = _param1;
   }
 
-  internal \u0023\u003DzJSYuf46gmaJ4ENA0KiaGx2h\u0024Ya9PCybhAP7KOmKvCUmh \u0023\u003DzrUC99bjY9Cf_()
+  public \u0023\u003DzJSYuf46gmaJ4ENA0KiaGx2h\u0024Ya9PCybhAP7KOmKvCUmh \u0023\u003DzrUC99bjY9Cf_()
   {
     return this.\u0023\u003DzxtFxjlXMliXLsTTuZoMzF38\u003D;
   }
 
-  internal void \u0023\u003DzqG472mq10NeC(
+  public void \u0023\u003DzqG472mq10NeC(
     \u0023\u003DzJSYuf46gmaJ4ENA0KiaGx2h\u0024Ya9PCybhAP7KOmKvCUmh _param1)
   {
     this.\u0023\u003DzxtFxjlXMliXLsTTuZoMzF38\u003D = _param1;
   }
 
-  internal IDictionary<IReceiveMouseEvents , \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\u003D> \u0023\u003DzneYoHAvBJ0sq()
+  public IDictionary<IReceiveMouseEvents , \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\u003D> \u0023\u003DzneYoHAvBJ0sq()
   {
     return this.\u0023\u003DzgeoglfeTtj59KhwCiNbQIv4\u003D;
   }
 
-  internal IDictionary<object, Point> \u0023\u003Dzs1I8bOaKHdCgrtnv7Q\u003D\u003D()
+  public IDictionary<object, Point> \u0023\u003Dzs1I8bOaKHdCgrtnv7Q\u003D\u003D()
   {
     return this.\u0023\u003DzPyqsKFbJsmS\u0024;
   }
 
-  internal IDictionary<string, IList<IReceiveMouseEvents >> \u0023\u003Dz8gAksnYQptna()
+  public IDictionary<string, IList<IReceiveMouseEvents >> \u0023\u003Dz8gAksnYQptna()
   {
     return \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003DzcSUkDEet8fvl;
   }
 
-  internal IDictionary<IReceiveMouseEvents , IPublishMouseEvents> \u0023\u003Dzk7_2WsyQK3mJ()
+  public IDictionary<IReceiveMouseEvents , IPublishMouseEvents> \u0023\u003Dzk7_2WsyQK3mJ()
   {
     return this.\u0023\u003DzPmsN62CuaNQ5kbur20HKcgQ\u003D;
   }
@@ -384,7 +384,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public Action<object, TouchManipulationEventArgs, Action<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf, IReceiveMouseEvents , bool>> \u0023\u003DzsBPNicmZmzb8;
     public IPublishMouseEvents \u0023\u003DzL2OrHlw\u003D;
 
-    internal void \u0023\u003DzBtRRdr52eoJt6EWpBA\u003D\u003D(
+    public void \u0023\u003DzBtRRdr52eoJt6EWpBA\u003D\u003D(
       object _param1,
       TouchManipulationEventArgs _param2,
       Action<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf, IReceiveMouseEvents , bool> _param3)
@@ -399,7 +399,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled(utbOy2shIbrNvKi5De.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl());
     }
 
-    internal void \u0023\u003DzKOy9SUIIrqQcIPL95A\u003D\u003D(
+    public void \u0023\u003DzKOy9SUIIrqQcIPL95A\u003D\u003D(
       #nullable enable
       object? _param1,
       #nullable disable
@@ -408,7 +408,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       this.\u0023\u003DzsBPNicmZmzb8(_param1, _param2, \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003Dzc8pv9GVxdmtKAl\u00241BQ\u003D\u003D ?? (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003Dzc8pv9GVxdmtKAl\u00241BQ\u003D\u003D = new Action<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf, IReceiveMouseEvents , bool>(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003DzW4ZNNlNDLXpa)));
     }
 
-    internal void \u0023\u003DzcqqPjA6Dqci6x1tXwQ\u003D\u003D(
+    public void \u0023\u003DzcqqPjA6Dqci6x1tXwQ\u003D\u003D(
       #nullable enable
       object? _param1,
       #nullable disable
@@ -417,7 +417,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       this.\u0023\u003DzsBPNicmZmzb8(_param1, _param2, \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzfA7Srqxog6G14gu2Jw\u003D\u003D ?? (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzfA7Srqxog6G14gu2Jw\u003D\u003D = new Action<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf, IReceiveMouseEvents , bool>(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003DzgBSk0UBueez\u0024)));
     }
 
-    internal void \u0023\u003DzD2qDzNj7gd61W9WmDA\u003D\u003D(
+    public void \u0023\u003DzD2qDzNj7gd61W9WmDA\u003D\u003D(
       #nullable enable
       object? _param1,
       #nullable disable
@@ -426,7 +426,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       this.\u0023\u003DzsBPNicmZmzb8(_param1, _param2, \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzUtAWjYDhFPs8QavWmQ\u003D\u003D ?? (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzUtAWjYDhFPs8QavWmQ\u003D\u003D = new Action<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf, IReceiveMouseEvents , bool>(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzg_TIY4pICjHa)));
     }
 
-    internal void \u0023\u003Dzz5fp6K8uMqseHnw\u0024UQ\u003D\u003D(
+    public void \u0023\u003Dzz5fp6K8uMqseHnw\u0024UQ\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
@@ -449,7 +449,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       }
     }
 
-    internal void \u0023\u003DzM8sFm9kPnycJtnC_Xg\u003D\u003D(
+    public void \u0023\u003DzM8sFm9kPnycJtnC_Xg\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
@@ -463,7 +463,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = aulOlSg92isdmlY08.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003DzzqIDni8VJCH37noJWg\u003D\u003D(
+    public void \u0023\u003DzzqIDni8VJCH37noJWg\u003D\u003D(
       object _param1,
       MouseEventArgs _param2)
     {
@@ -477,7 +477,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = go7q3hZGnypm8UbRs.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003DzZnnbh0m5An\u0024F1Uadug\u003D\u003D(
+    public void \u0023\u003DzZnnbh0m5An\u0024F1Uadug\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
@@ -491,7 +491,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = uhbvzN9jqX8KauJiyM.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003Dz5fPIvWoN_1Tou0ljEQ\u003D\u003D(
+    public void \u0023\u003Dz5fPIvWoN_1Tou0ljEQ\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
@@ -505,7 +505,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = cfI1ikWlftxh2eQ7U.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003DzdvuVqJx4Gky8\u0024mb6Zg\u003D\u003D(
+    public void \u0023\u003DzdvuVqJx4Gky8\u0024mb6Zg\u003D\u003D(
       object _param1,
       MouseWheelEventArgs _param2)
     {
@@ -519,7 +519,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = zgjkVziIbbBvq7Bwpc.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003Dz3KMXnZMECV2OkUL8vw\u003D\u003D(
+    public void \u0023\u003Dz3KMXnZMECV2OkUL8vw\u003D\u003D(
       object _param1,
       MouseEventArgs _param2)
     {
@@ -533,7 +533,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = aiumYy10dpF2ltto0w8.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003DzTKjwLjWI6l9WjUYx9g\u003D\u003D(
+    public void \u0023\u003DzTKjwLjWI6l9WjUYx9g\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
@@ -547,7 +547,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
       _param2.Handled = cgtzQjF07XvwBpz4.\u0023\u003DzTi2kmf4\u003D.\u0023\u003Dz882B0y3Ue8fl();
     }
 
-    internal void \u0023\u003DzOKxMOPGH8TAVrjNYXw\u003D\u003D(
+    public void \u0023\u003DzOKxMOPGH8TAVrjNYXw\u003D\u003D(
       object _param1,
       MouseButtonEventArgs _param2)
     {
@@ -568,7 +568,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public static readonly \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SomeClass34343383();
     public static Func<IReceiveMouseEvents , bool> \u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D;
 
-    internal bool \u0023\u003DzRB7XSdoQ2eSQJafyp0e69aQ\u003D(
+    public bool \u0023\u003DzRB7XSdoQ2eSQJafyp0e69aQ\u003D(
       IReceiveMouseEvents  _param1)
     {
       return _param1.\u0023\u003Dzo7mdr1Y1DFNe();
@@ -580,13 +580,13 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
 
-    internal void \u0023\u003DzWAuFYQDtZFB9v3VPYQ\u003D\u003D(
+    public void \u0023\u003DzWAuFYQDtZFB9v3VPYQ\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D._variableSome3535.\u0023\u003Dzzk9Obv44lrydFcInoQ\u003D\u003D(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
     }
 
-    internal void \u0023\u003DzUxQ2tKFJyEjKZs3bnA\u003D\u003D(
+    public void \u0023\u003DzUxQ2tKFJyEjKZs3bnA\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzvn1sWKwdu6R4(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -598,7 +598,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dq\u0024uKyDGtJtqwdqW0OlZQOaisIsBBEZn9KuuA4WX6kbxA\u003D;
 
-    internal void \u0023\u003DzTO8kgirXuwiDLDodow\u003D\u003D(
+    public void \u0023\u003DzTO8kgirXuwiDLDodow\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003Dq\u0024uKyDGtJtqwdqW0OlZQOaisIsBBEZn9KuuA4WX6kbxA\u003D._variableSome3535.\u0023\u003DzzGr9tanIYzso(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003Dq\u0024uKyDGtJtqwdqW0OlZQOaisIsBBEZn9KuuA4WX6kbxA\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -610,7 +610,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dqyaob7ZmPRWRFRSYWBmEDoAiypRnMSzJDCIc0XzNtSqo\u003D;
 
-    internal void \u0023\u003DzGFMMAqOoeHDnRrvhow\u003D\u003D(
+    public void \u0023\u003DzGFMMAqOoeHDnRrvhow\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003Dqyaob7ZmPRWRFRSYWBmEDoAiypRnMSzJDCIc0XzNtSqo\u003D._variableSome3535.\u0023\u003Dz6ICnkaskXJ9U(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003Dqyaob7ZmPRWRFRSYWBmEDoAiypRnMSzJDCIc0XzNtSqo\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -622,7 +622,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqviizWS0uYlNRyOw9oXk1JmvnJzBswMLEUzlTrRzThKA\u003D;
 
-    internal void \u0023\u003Dzzbp47HAC77wwCj4mqw\u003D\u003D(
+    public void \u0023\u003Dzzbp47HAC77wwCj4mqw\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003DqviizWS0uYlNRyOw9oXk1JmvnJzBswMLEUzlTrRzThKA\u003D._variableSome3535.\u0023\u003Dzs9W6JdpZ_79\u0024(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003DqviizWS0uYlNRyOw9oXk1JmvnJzBswMLEUzlTrRzThKA\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -634,7 +634,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqDGS82oTBZ\u0024CkKsNfUVM9XxR6WPEu4uyPJgSIUBBKyWs\u003D;
 
-    internal void \u0023\u003Dzi3lac9zHQwZ94EQd\u0024g\u003D\u003D(
+    public void \u0023\u003Dzi3lac9zHQwZ94EQd\u0024g\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003DqDGS82oTBZ\u0024CkKsNfUVM9XxR6WPEu4uyPJgSIUBBKyWs\u003D._variableSome3535.\u0023\u003DzzGr9tanIYzso(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003DqDGS82oTBZ\u0024CkKsNfUVM9XxR6WPEu4uyPJgSIUBBKyWs\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -646,7 +646,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqFkNKRpbJGcPo6KdRUdjYgV32QrpnUdNLLzRVdhdnQvA\u003D;
 
-    internal void \u0023\u003DzdbgJTyl0_Z5NId2bow\u003D\u003D(
+    public void \u0023\u003DzdbgJTyl0_Z5NId2bow\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzvn1sWKwdu6R4(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003DqFkNKRpbJGcPo6KdRUdjYgV32QrpnUdNLLzRVdhdnQvA\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -658,7 +658,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqVLPFUC1wnpGY7Zl3JTxkXnU2TIEt8CuV\u0024PKiDG\u0024bMmk\u003D;
 
-    internal void \u0023\u003Dz6WIAV5vso4Y6vPf5VA\u003D\u003D(
+    public void \u0023\u003Dz6WIAV5vso4Y6vPf5VA\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dzvn1sWKwdu6R4(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003DqVLPFUC1wnpGY7Zl3JTxkXnU2TIEt8CuV\u0024PKiDG\u0024bMmk\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -670,7 +670,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqhIKxx2Fgk_utZ5064cd0qNYlbflZp5kXmNVaqrMla8Q\u003D;
 
-    internal void \u0023\u003DzolnDW1Cyh39ARqLnFg\u003D\u003D(
+    public void \u0023\u003DzolnDW1Cyh39ARqLnFg\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003DqhIKxx2Fgk_utZ5064cd0qNYlbflZp5kXmNVaqrMla8Q\u003D._variableSome3535.\u0023\u003DzzGr9tanIYzso(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003DqhIKxx2Fgk_utZ5064cd0qNYlbflZp5kXmNVaqrMla8Q\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -690,7 +690,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
-    internal void \u0023\u003Dz9O7cRibjOuApTwUuGA\u003D\u003D(
+    public void \u0023\u003Dz9O7cRibjOuApTwUuGA\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003DzaY_8iBE\u003D(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));
@@ -702,7 +702,7 @@ internal sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QL
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
     public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqtAzlqurTc5We1ZAU3ovVrx43Z68HZcrCMXu4\u0024g\u002481qA\u003D;
 
-    internal void \u0023\u003DzwgN4FHGLnJhwzv26BQ\u003D\u003D(
+    public void \u0023\u003DzwgN4FHGLnJhwzv26BQ\u003D\u003D(
       IReceiveMouseEvents  _param1)
     {
       this.\u0023\u003DqtAzlqurTc5We1ZAU3ovVrx43Z68HZcrCMXu4\u0024g\u002481qA\u003D._variableSome3535.\u0023\u003DzuGCrm3cpH5KI(this.\u0023\u003DzTi2kmf4\u003D, _param1, _param1.Equals((object) this.\u0023\u003DqtAzlqurTc5We1ZAU3ovVrx43Z68HZcrCMXu4\u0024g\u002481qA\u003D.\u0023\u003DzqvJkfbGyJf\u0024_.\u0023\u003DzY2vUSRo\u003D()));

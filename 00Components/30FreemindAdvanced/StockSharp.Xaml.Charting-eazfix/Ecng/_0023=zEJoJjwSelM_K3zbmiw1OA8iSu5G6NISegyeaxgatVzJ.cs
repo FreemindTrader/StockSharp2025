@@ -8,14 +8,14 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D
+public sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D
 {
-  internal long \u0023\u003DzN0El7idsXiwE;
-  internal uint \u0023\u003DzxhCmePtx6PYr;
-  internal uint \u0023\u003DzM8YvCqdng9uO;
-  internal string \u0023\u003DzsLDTRVg\u003D;
-  internal double \u0023\u003DzAwVoCztpd7ox;
-  internal double \u0023\u003DzKmatSefqd0TeJb4URLTZELU\u003D;
+  public long \u0023\u003DzN0El7idsXiwE;
+  public uint \u0023\u003DzxhCmePtx6PYr;
+  public uint \u0023\u003DzM8YvCqdng9uO;
+  public string \u0023\u003DzsLDTRVg\u003D;
+  public double \u0023\u003DzAwVoCztpd7ox;
+  public double \u0023\u003DzKmatSefqd0TeJb4URLTZELU\u003D;
   private static Stopwatch \u0023\u003DzUx3FRH0EnNc_;
 
   public \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJifGI8m8xL_SrGvDY8poU3Mw\u003D\u003D(
@@ -63,7 +63,7 @@ internal sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA8iSu5G6NISegyeaxgatVzJif
     \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY232oMfVr72yIGQA4ay.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DzJEIks4EYOgFT(this, num2);
   }
 
-  internal void Reset()
+  public void Reset()
   {
     this.\u0023\u003DzN0El7idsXiwE = 0L;
     this.\u0023\u003DzxhCmePtx6PYr = 0U;

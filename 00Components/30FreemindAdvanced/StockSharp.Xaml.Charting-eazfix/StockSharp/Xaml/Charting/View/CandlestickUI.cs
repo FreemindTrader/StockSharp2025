@@ -29,7 +29,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class CandlestickUI(
+public sealed class CandlestickUI(
   ChartCandleElement _param1) : 
   ChartCompentWpfBaseViewModel<ChartCandleElement>(_param1),
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
@@ -604,7 +604,7 @@ label_4:
     return qjskTkReJlfF5mAk == null ? new Color?() : qjskTkReJlfF5mAk(TimeHelper.ToDateTimeOffset(xvalue, TimeZoneInfo.Utc), _param6 >= _param3, index == this.OhlcSeries.Count - 1);
   }
 
-  internal static bool \u0023\u003DqUITHEHars91eFjENoL1ls59z\u0024GzJCXEyQkVMXaxFgmo\u003D(
+  public static bool \u0023\u003DqUITHEHars91eFjENoL1ls59z\u0024GzJCXEyQkVMXaxFgmo\u003D(
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param0)
   {
     return _param0 is \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D vo1e0c8c41pWqbDkntdB13Yg && vo1e0c8c41pWqbDkntdB13Yg.CloseValue > vo1e0c8c41pWqbDkntdB13Yg.OpenValue;
@@ -664,31 +664,31 @@ label_4:
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003Dz3XWQ58Tacl3uxVgGiw\u003D\u003D;
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D;
 
-    internal string \u0023\u003DziVMtGB3eskawtnyDEBGppGQ\u003D(
+    public string \u0023\u003DziVMtGB3eskawtnyDEBGppGQ\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !(_param1 is \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedOpenValue;
     }
 
-    internal string \u0023\u003DzyboOJPrkbYbHrtK_jYxCKz0\u003D(
+    public string \u0023\u003DzyboOJPrkbYbHrtK_jYxCKz0\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !(_param1 is \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedHighValue;
     }
 
-    internal string \u0023\u003Dz_F9udS\u0024bvXmu7p7kNM2l1tM\u003D(
+    public string \u0023\u003Dz_F9udS\u0024bvXmu7p7kNM2l1tM\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !(_param1 is \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedLowValue;
     }
 
-    internal string \u0023\u003Dz_2ZdaKSEm\u0024dowilMRXDN0r4\u003D(
+    public string \u0023\u003Dz_2ZdaKSEm\u0024dowilMRXDN0r4\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return !(_param1 is \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedCloseValue;
     }
 
-    internal string \u0023\u003Dzu0cWRPhAEXPa2F76HfbtuFw\u003D(
+    public string \u0023\u003Dzu0cWRPhAEXPa2F76HfbtuFw\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       if (!(_param1 is \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc cs3fSnyvEdhmBS76Lhc))

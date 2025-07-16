@@ -14,7 +14,7 @@ using System.Threading;
 using System.Windows;
 
 #nullable disable
-internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+public abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
   BindableObject ,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
   ISuspendable,
@@ -471,7 +471,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
     return !xvalue.IsDefined() ? _param2 : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzNvw4Cjs\u003D.Min(_param2, xvalue);
   }
 
-  internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzStrzQ_NInQ8M(
+  public \u0023\u003DzE8zkRfY\u003D \u0023\u003DzStrzQ_NInQ8M(
     \u0023\u003DzE8zkRfY\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D> _param3)
@@ -479,7 +479,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
     return this.IsFifo ? _param3.\u0023\u003DzC52X0FE\u003D() : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Min(_param1, _param2);
   }
 
-  internal \u0023\u003DzE8zkRfY\u003D \u0023\u003DzB0YQXW9xZ973(
+  public \u0023\u003DzE8zkRfY\u003D \u0023\u003DzB0YQXW9xZ973(
     \u0023\u003DzE8zkRfY\u003D _param1,
     \u0023\u003DzE8zkRfY\u003D _param2,
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzE8zkRfY\u003D> _param3)
@@ -487,7 +487,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
     return this.IsFifo ? _param3.\u0023\u003DzxKsmolQ\u003D() : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzkNQuj6U\u003D.Max(_param1, _param2);
   }
 
-  internal \u0023\u003DzulcL8RA\u003D \u0023\u003DzStrzQ_NInQ8M(
+  public \u0023\u003DzulcL8RA\u003D \u0023\u003DzStrzQ_NInQ8M(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzulcL8RA\u003D _param2,
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param3)
@@ -495,7 +495,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
     return this.IsFifo ? _param3.\u0023\u003DzC52X0FE\u003D() : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzNvw4Cjs\u003D.Min(_param1, _param2);
   }
 
-  internal \u0023\u003DzulcL8RA\u003D \u0023\u003DzB0YQXW9xZ973(
+  public \u0023\u003DzulcL8RA\u003D \u0023\u003DzB0YQXW9xZ973(
     \u0023\u003DzulcL8RA\u003D _param1,
     \u0023\u003DzulcL8RA\u003D _param2,
     \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param3)
@@ -503,7 +503,7 @@ internal abstract class \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg
     return this.IsFifo ? _param3.\u0023\u003DzxKsmolQ\u003D() : \u0023\u003DzawTMm83sNsuVHdgLsihy4d2BjT37wAANIYiDnU4YaDg5<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzNvw4Cjs\u003D.Max(_param1, _param2);
   }
 
-  internal void \u0023\u003DztwHsLGWnHCVU(
+  public void \u0023\u003DztwHsLGWnHCVU(
     \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D _param1)
   {
     this.OnPropertyChanged("LatestYValue");

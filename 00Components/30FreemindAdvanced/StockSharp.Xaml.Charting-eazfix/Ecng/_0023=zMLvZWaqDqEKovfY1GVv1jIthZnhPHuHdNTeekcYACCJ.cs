@@ -9,7 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 #nullable disable
-internal sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D : 
+public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D : 
   \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D
 {
   private static readonly Dictionary<Type, Dictionary<Type, \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D>> \u0023\u003Dznl_Lbq9eCNm0DjL0BA\u003D\u003D = new Dictionary<Type, Dictionary<Type, \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D>>();

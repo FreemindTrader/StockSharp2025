@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-internal struct \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D(
+public struct \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWxk20wjU4Dw\u0024eNHICc2N3v3PZtDYjg\u003D(
   int _param1,
   int _param2)
 {

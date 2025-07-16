@@ -7,11 +7,11 @@
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AxisArea : ItemsControl
+public sealed class AxisArea : ItemsControl
 {
-  internal void \u0023\u003DzXp3QEOzPyMYR(object _param1)
+  public void \u0023\u003DzXp3QEOzPyMYR(object _param1)
   {
     try
     {

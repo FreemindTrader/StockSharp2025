@@ -23,7 +23,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D> : 
+public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D> : 
   ChartCompentWpfBaseViewModel<ChartLineElement>,
   \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
   where \u0023\u003DzulcL8RA\u003D : struct, IComparable
@@ -354,7 +354,7 @@ internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJ
     public static readonly \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383 SomeMethond0343 = new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8orkn13FnKLIfi3A9i\u00246SqEijqyQF<\u0023\u003DzulcL8RA\u003D>.SomeClass34343383();
     public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DziezdSvgFTxAlfqI9CA\u003D\u003D;
 
-    internal string \u0023\u003DzHJXYrcAe2iQ0KKyLTQ\u003D\u003D(
+    public string \u0023\u003DzHJXYrcAe2iQ0KKyLTQ\u003D\u003D(
       \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
     {
       return _param1.FormattedYValue;

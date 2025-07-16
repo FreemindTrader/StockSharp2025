@@ -12,12 +12,12 @@ using System.Linq;
 using System.Windows.Data;
 
 #nullable disable
-internal sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h : IValueConverter
+public sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h : IValueConverter
 {
   
   private readonly LineAnnotationWithLabelsBase \u0023\u003DzIqrOB76fU0aO;
 
-  internal \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h(
+  public \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h(
     LineAnnotationWithLabelsBase _param1)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "annotationSource");

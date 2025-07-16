@@ -50,7 +50,7 @@ public static class ChartHelper
         } ), nameof( chart ) );
     }
 
-    internal static string ChartSeriesTitle( this Subscription sub )
+    public static string ChartSeriesTitle( this Subscription sub )
     {
         if ( sub == null )
             return string.Empty;
@@ -99,7 +99,7 @@ public static class ChartHelper
         //skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
     }
 
-    internal static Chart GetDrawingChart( this IChartElement _param0 )
+    public static Chart GetDrawingChart( this IChartElement _param0 )
     {
         StockSharp.Charting.
         return ( Chart ) _param0.TryGetChart();
@@ -180,7 +180,7 @@ public static class ChartHelper
     //{
     //    public OptimizerChart3D _optimizerChart3d;
 
-    //    internal bool \u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D(IChart3DParameter _param1)
+    //    public bool \u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D(IChart3DParameter _param1)
     //{
     //  return _param1 != this._optimizerChart3d.X;
     //}

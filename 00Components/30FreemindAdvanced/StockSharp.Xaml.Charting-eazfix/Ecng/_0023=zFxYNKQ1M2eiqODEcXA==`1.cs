@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable enable
-internal sealed class \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<T> : 
+public sealed class \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D<T> : 
   IList<
   #nullable disable
   T>,

@@ -7,7 +7,7 @@
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class SeriesValueAxisMarkerAnnotation : AxisMarkerAnnotation
+public class SeriesValueAxisMarkerAnnotation : AxisMarkerAnnotation
 {
   public SeriesValueAxisMarkerAnnotation()
   {

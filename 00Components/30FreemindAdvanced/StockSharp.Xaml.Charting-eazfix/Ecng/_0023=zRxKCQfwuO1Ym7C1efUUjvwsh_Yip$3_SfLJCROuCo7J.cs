@@ -9,7 +9,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D : 
+public abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D : 
   \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>
 {
   private bool \u0023\u003DzTa0f7MrlqCnyuqCeoen4IP4EvkLiOGRl9w\u003D\u003D;
@@ -27,7 +27,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     return this.\u0023\u003DzTa0f7MrlqCnyuqCeoen4IP4EvkLiOGRl9w\u003D\u003D;
   }
 
-  internal void \u0023\u003DzvDM5VNsRq\u0024n4O3LH\u0024gcgFYuzm5ek(bool _param1)
+  public void \u0023\u003DzvDM5VNsRq\u0024n4O3LH\u0024gcgFYuzm5ek(bool _param1)
   {
     this.\u0023\u003DzTa0f7MrlqCnyuqCeoen4IP4EvkLiOGRl9w\u003D\u003D = _param1;
   }
@@ -39,7 +39,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     return this.\u0023\u003Dzz_LHUZxT_rMe71OlvhDNxiqtKZSAXGhlBFHX3kAQA\u0024Ep2O7_SA\u003D\u003D;
   }
 
-  internal void \u0023\u003Dz8\u0024GxD\u0024g_M8S4JyO6aGfp2x9x4OjeFZJQ9v\u0024BibU\u003D(
+  public void \u0023\u003Dz8\u0024GxD\u0024g_M8S4JyO6aGfp2x9x4OjeFZJQ9v\u0024BibU\u003D(
     bool _param1)
   {
     this.\u0023\u003Dzz_LHUZxT_rMe71OlvhDNxiqtKZSAXGhlBFHX3kAQA\u0024Ep2O7_SA\u003D\u003D = _param1;
@@ -52,7 +52,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     return this.\u0023\u003DzHyEm95nC7mawyGdyolUlUBdsGB\u0024h2WqPng\u003D\u003D;
   }
 
-  internal void \u0023\u003Dz83sA3hbUFtmcF0NtN3F3NVYGbngE(bool _param1)
+  public void \u0023\u003Dz83sA3hbUFtmcF0NtN3F3NVYGbngE(bool _param1)
   {
     this.\u0023\u003DzHyEm95nC7mawyGdyolUlUBdsGB\u0024h2WqPng\u003D\u003D = _param1;
   }
@@ -64,7 +64,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     return this.\u0023\u003DzdQUhq\u00248JLdmalYjqW4toVhvmRhf2mqXpgg\u003D\u003D;
   }
 
-  internal void \u0023\u003DzeuXgfasUDyUfGmCF\u0024EtXjOjpTjP2(bool _param1)
+  public void \u0023\u003DzeuXgfasUDyUfGmCF\u0024EtXjOjpTjP2(bool _param1)
   {
     this.\u0023\u003DzdQUhq\u00248JLdmalYjqW4toVhvmRhf2mqXpgg\u003D\u003D = _param1;
   }
@@ -73,7 +73,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
   [SpecialName]
   public double \u0023\u003DzV1bNkSgej_yk() => this.\u0023\u003DzYMbThGUIa7pQqr_lucPZwV4\u003D;
 
-  internal void \u0023\u003DziN73Y5R\u0024YhUD(double _param1)
+  public void \u0023\u003DziN73Y5R\u0024YhUD(double _param1)
   {
     this.\u0023\u003DzYMbThGUIa7pQqr_lucPZwV4\u003D = _param1;
   }
@@ -85,7 +85,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     return this.\u0023\u003Dz9a1FBKB1wfoZrj1v5PDm2HyLxN2h;
   }
 
-  internal void \u0023\u003DziaxW5h6Fhau4h9lgdx67D0k\u003D(bool _param1)
+  public void \u0023\u003DziaxW5h6Fhau4h9lgdx67D0k\u003D(bool _param1)
   {
     this.\u0023\u003Dz9a1FBKB1wfoZrj1v5PDm2HyLxN2h = _param1;
   }
@@ -97,7 +97,7 @@ internal abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCRO
     return this.\u0023\u003DzVqzsurRNsopSviLqgIl\u0024s8cckQpwvyFpSS\u0024EJU8\u003D;
   }
 
-  internal void \u0023\u003Dzhet6CtWmLQNbmL8WEVPAyc7tK3nVhjf9rg\u003D\u003D(bool _param1)
+  public void \u0023\u003Dzhet6CtWmLQNbmL8WEVPAyc7tK3nVhjf9rg\u003D\u003D(bool _param1)
   {
     this.\u0023\u003DzVqzsurRNsopSviLqgIl\u0024s8cckQpwvyFpSS\u0024EJU8\u003D = _param1;
   }

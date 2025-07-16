@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal interface ISciChartSurface : 
+public interface ISciChartSurface : 
   IDisposable,
   ISuspendable,
   IUltrachartSurfaceBase,
@@ -79,9 +79,9 @@ internal interface ISciChartSurface :
   void set_ViewportManager(
     \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D _param1);
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk \u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+  IAnnotationCanvas \u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
 
-  \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk \u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+  IAnnotationCanvas \u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
 
   Canvas \u0023\u003DzjEjGZ817bm4EOO82ig\u003D\u003D();
 

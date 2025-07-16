@@ -7,9 +7,9 @@
 using System.Windows.Input;
 
 #nullable disable
-internal static class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D
+public static class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D
 {
-  internal static MouseModifier \u0023\u003DzNFIr3TSkl0uk()
+  public static MouseModifier \u0023\u003DzNFIr3TSkl0uk()
   {
     MouseModifier nijb7bojGmWzLupPhdCYfw = MouseModifier.None;
     switch (Keyboard.Modifiers - 1)

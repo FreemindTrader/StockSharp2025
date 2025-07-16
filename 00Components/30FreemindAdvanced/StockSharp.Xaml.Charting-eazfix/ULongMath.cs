@@ -4,7 +4,7 @@ using Ecng.Common;
 namespace SciChart.Data.Numerics.GenericMath;
 
 #nullable disable
-internal sealed class ULongMath : 
+public sealed class ULongMath : 
   IMath<ulong>
 {
   public ulong MinValue => 0;

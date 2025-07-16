@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class Device : FrameworkElement
+public sealed class Device : FrameworkElement
 {
   
   public static readonly DependencyProperty \u0023\u003DzKpMjgglc9VTa5MTZvA\u003D\u003D = DependencyProperty.RegisterAttached("SnapsToDevicePixels", typeof (bool), typeof (Device), new PropertyMetadata((object) false, new PropertyChangedCallback(Device.\u0023\u003Dz8k9aaPizAFciBJYAVA\u003D\u003D)));

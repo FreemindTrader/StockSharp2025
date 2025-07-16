@@ -18,7 +18,7 @@ using System.Windows.Threading;
 #nullable enable
 namespace StockSharp.Xaml.Charting.Ultrachart;
 
-internal class RulerAnnotation : AnnotationBase
+public class RulerAnnotation : AnnotationBase
 {
   public static readonly 
   #nullable disable
@@ -292,7 +292,7 @@ internal class RulerAnnotation : AnnotationBase
     public static readonly RulerAnnotation.SomeClass34343383 SomeMethond0343 = new RulerAnnotation.SomeClass34343383();
     public static EventHandler \u0023\u003Dzc_JZPYTnozknjOo_1Q\u003D\u003D;
 
-    internal void \u0023\u003DzgD6Rh__eqnmCn0m__iG5ses\u003D(
+    public void \u0023\u003DzgD6Rh__eqnmCn0m__iG5ses\u003D(
     #nullable enable
     object? _param1, EventArgs _param2)
     {

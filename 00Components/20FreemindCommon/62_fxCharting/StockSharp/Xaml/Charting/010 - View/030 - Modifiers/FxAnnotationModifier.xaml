@@ -12,7 +12,7 @@
     <FrameworkElement.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/SciChart.Charting;component/Themes/Default.xaml" />
+                <ResourceDictionary Source="/StockSharp.Charting;component/Themes/Default.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type ann:RulerAnnotation}">
                 <Setter Property="Control.Template">

@@ -11,7 +11,7 @@ using System.Windows.Controls;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal class CustomAnnotation : AnchorPointAnnotation
+public class CustomAnnotation : AnchorPointAnnotation
 {
   public CustomAnnotation()
   {
@@ -72,7 +72,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
     };
   }
 
-  internal sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(CustomAnnotation _param1) : 
+  public sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(CustomAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<CustomAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
@@ -89,7 +89,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight ? 1 : 0)) == 0;
     }
@@ -98,7 +98,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
       AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
+      IAnnotationCanvas _param4)
     {
       double d1 = _param1.\u0023\u003DzS2_K6sVvd5IY + _param2;
       double d2 = _param1.\u0023\u003Dz2J4l3QUGwZHE + _param3;
@@ -123,7 +123,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
     }
   }
 
-  internal sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(CustomAnnotation _param1) : 
+  public sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(CustomAnnotation _param1) : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<CustomAnnotation>(_param1)
   {
     protected override bool \u0023\u003DzRe9EEbV7q4ey(

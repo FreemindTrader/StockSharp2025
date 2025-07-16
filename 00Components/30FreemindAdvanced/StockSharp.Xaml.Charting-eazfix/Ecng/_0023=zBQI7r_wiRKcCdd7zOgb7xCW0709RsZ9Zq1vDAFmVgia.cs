@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 #nullable disable
-internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x : 
+public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x : 
   \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
 {
   
@@ -759,7 +759,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     public byte[] \u0023\u003DzVIwEApk\u003D;
     public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeClass398 \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
-    internal \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzs3XZaL28BMmdJ3BwPQ\u003D\u003D(
+    public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzs3XZaL28BMmdJ3BwPQ\u003D\u003D(
       int _param1,
       int _param2)
     {
@@ -775,7 +775,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     public Rect \u0023\u003Dzr7d9o3c_cuwg;
     public byte[] \u0023\u003DzVIwEApk\u003D;
 
-    internal \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzAGjD8bO2vEL6bBEhwQ\u003D\u003D(
+    public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzAGjD8bO2vEL6bBEhwQ\u003D\u003D(
       int _param1,
       int _param2)
     {
@@ -784,7 +784,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     }
   }
 
-  internal sealed class \u0023\u003DziSg2yR0Zst8P : 
+  public sealed class \u0023\u003DziSg2yR0Zst8P : 
     IDisposable,
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
   {
@@ -923,7 +923,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
     }
   }
 
-  internal sealed class \u0023\u003DzmJRlt6lBeKjN : 
+  public sealed class \u0023\u003DzmJRlt6lBeKjN : 
     IDisposable,
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024
   {
@@ -1003,7 +1003,7 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQ
       public \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzmJRlt6lBeKjN _variableSome3535;
       public byte[] \u0023\u003DzVIwEApk\u003D;
 
-      internal \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz8NxWWFEIxVja(
+      public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz8NxWWFEIxVja(
         int _param1,
         int _param2)
       {

@@ -10,9 +10,9 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class TimeSpanAxis : 
+public sealed class TimeSpanAxis : 
   \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u00248riNI9I7z_
 {
   

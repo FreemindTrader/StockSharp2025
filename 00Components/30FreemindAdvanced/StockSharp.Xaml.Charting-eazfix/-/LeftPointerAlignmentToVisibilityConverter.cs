@@ -11,9 +11,9 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class LeftPointerAlignmentToVisibilityConverter : IValueConverter
+public sealed class LeftPointerAlignmentToVisibilityConverter : IValueConverter
 {
   
   private bool \u0023\u003Dz7GPhXtbDen9tX_jAMvwBl2E\u003D;

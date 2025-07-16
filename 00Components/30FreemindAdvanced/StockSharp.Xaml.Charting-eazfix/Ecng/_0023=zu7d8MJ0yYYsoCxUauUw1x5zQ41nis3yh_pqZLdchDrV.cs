@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-internal struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D
+public struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D
 {
   
   private bool \u0023\u003DzHOLwNuwoYSmR;

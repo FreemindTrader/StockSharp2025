@@ -7,7 +7,7 @@
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw91G0EqmivDdTzhfcFukIpdO9swrPR6EKxphzJjr : 
+public sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw91G0EqmivDdTzhfcFukIpdO9swrPR6EKxphzJjr : 
   \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX
 {
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX \u0023\u003DzEcmsYfw\u003D;

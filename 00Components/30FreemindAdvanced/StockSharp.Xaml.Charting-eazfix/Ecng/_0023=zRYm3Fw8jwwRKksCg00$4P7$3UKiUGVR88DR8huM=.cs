@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace StockSharp.Charting.Themes;
 
-internal interface IAxisPanel : INotifyPropertyChanged
+public interface IAxisPanel : INotifyPropertyChanged
 {
     void ClearLabels();
 

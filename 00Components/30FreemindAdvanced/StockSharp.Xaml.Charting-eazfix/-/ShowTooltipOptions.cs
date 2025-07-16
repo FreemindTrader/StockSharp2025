@@ -1,8 +1,8 @@
 ﻿
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal enum ShowTooltipOptions
+public enum ShowTooltipOptions
 {
     MouseOver,
     MouseHover,

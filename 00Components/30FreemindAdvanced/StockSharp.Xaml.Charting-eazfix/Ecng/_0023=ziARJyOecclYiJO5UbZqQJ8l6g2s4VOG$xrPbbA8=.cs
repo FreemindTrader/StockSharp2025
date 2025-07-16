@@ -9,9 +9,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-internal static class \u0023\u003DziARJyOecclYiJO5UbZqQJ8l6g2s4VOG\u0024xrPbbA8\u003D
+public static class \u0023\u003DziARJyOecclYiJO5UbZqQJ8l6g2s4VOG\u0024xrPbbA8\u003D
 {
-  internal static void \u0023\u003DzmFyFyI4\u003D(
+  public static void \u0023\u003DzmFyFyI4\u003D(
     this UIElementCollection _param0,
     Func<UIElement, bool> _param1)
   {
@@ -22,7 +22,7 @@ internal static class \u0023\u003DziARJyOecclYiJO5UbZqQJ8l6g2s4VOG\u0024xrPbbA8\
     }
   }
 
-  internal static UIElement \u0023\u003DzANkihmf319MM(
+  public static UIElement \u0023\u003DzANkihmf319MM(
     this UIElementCollection _param0,
     Func<UIElement, bool> _param1)
   {

@@ -12,12 +12,12 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
 [TemplatePart(Name = "PART_ContentHost", Type = typeof (ContentPresenter))]
 [TemplatePart(Name = "PART_Header", Type = typeof (Grid))]
 [TemplatePart(Name = "PART_TopSplitter", Type = typeof (Thumb))]
-internal sealed class UltrachartGroupPane : ContentControl
+public sealed class UltrachartGroupPane : ContentControl
 {
   
   public static readonly DependencyProperty \u0023\u003DzZXWtkeeJbx_j = DependencyProperty.Register(nameof (HeaderTemplate), typeof (DataTemplate), typeof (UltrachartGroupPane), new PropertyMetadata((object) null, new PropertyChangedCallback(UltrachartGroupPane.\u0023\u003Dz\u0024YszLknqkUvS)));
@@ -119,7 +119,7 @@ internal sealed class UltrachartGroupPane : ContentControl
     this.\u0023\u003Dz2YTeZYpcmqcM();
   }
 
-  internal double \u0023\u003DzZcUjmkQY5ewz()
+  public double \u0023\u003DzZcUjmkQY5ewz()
   {
     Size availableSize = new Size(double.PositiveInfinity, double.PositiveInfinity);
     this.\u0023\u003DzIcIt5i8Z\u0024_b2.Measure(availableSize);

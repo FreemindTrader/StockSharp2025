@@ -11,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-internal abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D : 
+public abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D : 
   FrameworkElement,
   \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x,
   IReceiveMouseEvents 

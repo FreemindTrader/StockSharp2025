@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhivTIORxM4pFaWkWD6T7Je4n45z8o20NaGXPXIGD_ : 
+public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhivTIORxM4pFaWkWD6T7Je4n45z8o20NaGXPXIGD_ : 
   \u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5UciZH9y99D\u0024o1ZNN\u0024yRVxOxiUGZk\u0024GoAaE\u003D
 {
   private PathFigure \u0023\u003DzvdQ6jybVAi6X;

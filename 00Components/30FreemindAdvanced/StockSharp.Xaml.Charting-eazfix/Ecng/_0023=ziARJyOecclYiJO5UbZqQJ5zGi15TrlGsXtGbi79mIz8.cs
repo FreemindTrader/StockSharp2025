@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 #nullable disable
-internal sealed class \u0023\u003DziARJyOecclYiJO5UbZqQJ5zGi15TrlGsXtGbi79mIz8ypjHCWp1KngOnCtdn : 
+public sealed class \u0023\u003DziARJyOecclYiJO5UbZqQJ5zGi15TrlGsXtGbi79mIz8ypjHCWp1KngOnCtdn : 
   IDisposable,
   IBrush2D,
   IPathColor

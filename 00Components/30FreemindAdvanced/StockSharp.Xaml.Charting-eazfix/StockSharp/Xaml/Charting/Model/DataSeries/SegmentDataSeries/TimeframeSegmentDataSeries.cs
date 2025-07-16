@@ -16,7 +16,7 @@ using System.Linq;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Model.DataSeries.SegmentDataSeries;
 
-internal class TimeframeSegmentDataSeries : 
+public class TimeframeSegmentDataSeries : 
   BindableObject ,
   \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>,
   ISuspendable,
@@ -112,7 +112,7 @@ internal class TimeframeSegmentDataSeries :
 
   public bool IsSorted => true;
 
-  internal \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> Segments
+  public \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> Segments
   {
     get
     {
@@ -349,7 +349,7 @@ internal class TimeframeSegmentDataSeries :
     return Tuple.Create<DateTime, DateTime, long>(dateTime1, dateTime2, num);
   }
 
-  internal static double[] GeneratePrices(double min, double max, double step)
+  public static double[] GeneratePrices(double min, double max, double step)
   {
     min = min.NormalizePrice(step);
     max = max.NormalizePrice(step);
@@ -728,13 +728,13 @@ label_8:
       public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> SomeIntenalMethod003D;
       public static Func<\u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj, double> \u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D;
 
-      internal double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(
+      public double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(
         \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj _param1)
       {
         return _param1.\u0023\u003Dzu7q98_E\u003D();
       }
 
-      internal double \u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D(
+      public double \u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D(
         \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj _param1)
       {
         return _param1.\u0023\u003Dzu7q98_E\u003D();

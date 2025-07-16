@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Windows.Threading;
 
 #nullable enable
-internal sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D : IDisposable
+public sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6E8I_CiUqBSaCicrMV4\u003D : IDisposable
 {
   
   private readonly 

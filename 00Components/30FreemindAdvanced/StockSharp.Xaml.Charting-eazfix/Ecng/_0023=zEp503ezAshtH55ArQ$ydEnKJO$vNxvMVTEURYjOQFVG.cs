@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D : 
+public sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D : 
   \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u003D\u003D
 {
   public override TickCoordinates \u0023\u003DzU4j4bt2YhYuc(
@@ -41,12 +41,12 @@ internal sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEU
     public \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D _variableSome3535;
     public \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D \u0023\u003DzK1JYTZ7MRwYt;
 
-    internal double \u0023\u003DzB\u0024jkKCKwnbgrDLw6QA\u003D\u003D(float _param1)
+    public double \u0023\u003DzB\u0024jkKCKwnbgrDLw6QA\u003D\u003D(float _param1)
     {
       return this._variableSome3535.\u0023\u003Dz9CDDdsz4i1hw((double) _param1, this.\u0023\u003DzK1JYTZ7MRwYt);
     }
 
-    internal double \u0023\u003DzlriQv7fIybq6O\u0024QXyQ\u003D\u003D(float _param1)
+    public double \u0023\u003DzlriQv7fIybq6O\u0024QXyQ\u003D\u003D(float _param1)
     {
       return this._variableSome3535.\u0023\u003Dz9CDDdsz4i1hw((double) _param1, this.\u0023\u003DzK1JYTZ7MRwYt);
     }

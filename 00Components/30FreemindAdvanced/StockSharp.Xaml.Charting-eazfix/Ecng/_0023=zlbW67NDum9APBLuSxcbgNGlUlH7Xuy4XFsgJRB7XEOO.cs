@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal class \u0023\u003DzlbW67NDum9APBLuSxcbgNGlUlH7Xuy4XFsgJRB7XEOO1IBdNFpeHJw\u0024uuZZ\u0024M_etH1o0wicGxNOA
+public class \u0023\u003DzlbW67NDum9APBLuSxcbgNGlUlH7Xuy4XFsgJRB7XEOO1IBdNFpeHJw\u0024uuZZ\u0024M_etH1o0wicGxNOA
 {
   [SpecialName]
   public int \u0023\u003DzVAoYC\u0024MJfjKU3EUhiA\u003D\u003D() => 128 /*0x80*/;

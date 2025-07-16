@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal interface \u0023\u003Dzd6r5LVm59JJMRzqbH7tZtFJnrMecH5UKDA\u003D\u003D<\u0023\u003DziNfFVIA\u003D> : 
+public interface \u0023\u003Dzd6r5LVm59JJMRzqbH7tZtFJnrMecH5UKDA\u003D\u003D<\u0023\u003DziNfFVIA\u003D> : 
   \u0023\u003Dz4W7JYRMsBPlBwymwCeSutVEBWj4hc9Bzog\u003D\u003D,
   \u0023\u003DzQelkJ6HU3NgqFzaRt55Ggn0fEP5GkvPuQA\u003D\u003D
 {

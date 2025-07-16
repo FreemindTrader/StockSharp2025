@@ -157,7 +157,7 @@ public sealed class ChartIndicatorElement :
     this.IndicatorPainter?.Reset();
   }
 
-  internal void \u0023\u003Dz2Afk71t1OoFdU8tQ4Q\u003D\u003D(
+  public void \u0023\u003Dz2Afk71t1OoFdU8tQ4Q\u003D\u003D(
     IList<IndicatorType> _param1,
     IIndicator _param2)
   {
@@ -222,7 +222,7 @@ public sealed class ChartIndicatorElement :
   {
     public IIndicator \u0023\u003DzbpCudS_inBmWSVepSA\u003D\u003D;
 
-    internal bool \u0023\u003DzcEPYpK4IBKRf\u0024fIcZDMjj5fzLW8H(IndicatorType _param1)
+    public bool \u0023\u003DzcEPYpK4IBKRf\u0024fIcZDMjj5fzLW8H(IndicatorType _param1)
     {
       return _param1.Indicator == this.\u0023\u003DzbpCudS_inBmWSVepSA\u003D\u003D.GetType();
     }

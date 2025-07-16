@@ -232,7 +232,7 @@ public abstract class ChartComponent<T> :
     /// <param name="dontDraw">Do not create corresponding chart element. Used for nested elements.</param>
     /// <exception cref="T:System.InvalidOperationException">
     /// </exception>
-    protected internal void AddChildElement( IChartElement element, bool dontDraw = false )
+    protected public void AddChildElement( IChartElement element, bool dontDraw = false )
     {
         if ( element == null )
             throw new ArgumentNullException( nameof( element ) );
@@ -243,7 +243,7 @@ public abstract class ChartComponent<T> :
     }
 
     /// <summary>Remove child chart element.</summary>
-    protected internal void RemoveChildElement( IChartElement element )
+    protected public void RemoveChildElement( IChartElement element )
     {
         if ( element == null )
             throw new ArgumentNullException( nameof( element ) );
@@ -322,7 +322,7 @@ public abstract class ChartComponent<T> :
         return CollectionHelper.TryGetValue<Guid, string>( ( IDictionary<Guid, string> ) this._idToName, _param1.Id );
     }
 
-    internal void SetName( IChartElement _param1, string _param2 )
+    public void SetName( IChartElement _param1, string _param2 )
     {
         this._idToName[ _param1.Id ] = _param2;
     }
@@ -333,7 +333,7 @@ public abstract class ChartComponent<T> :
         return ( ( BaseCollection<string, ISet<string>> ) this._extraName ).Contains( _param1 );
     }
 
-    internal void AddExtraName( string _param1 )
+    public void AddExtraName( string _param1 )
     {
         ( ( BaseCollection<string, ISet<string>> ) this._extraName ).Add( _param1 );
     }
@@ -373,7 +373,7 @@ public abstract class ChartComponent<T> :
         storage.SetValue<string>( "YAxisId", this.YAxisId );
     }
 
-    internal override T Clone( T _param1 )
+    public override T Clone( T _param1 )
     {
         base.Clone( _param1 );
         _param1.IsVisible = this.IsVisible;
@@ -436,7 +436,7 @@ public abstract class ChartComponent<T> :
 #nullable disable
         Func<IComparable, System.Drawing.Color?> _IComparable;
 
-    internal System.Windows.Media.Color? SomeMethod034(
+    public System.Windows.Media.Color? SomeMethod034(
       IComparable _param1)
     {
       System.Drawing.Color? nullable = this._IComparable(_param1);
@@ -449,7 +449,7 @@ private sealed class SomePrivateSealedClass034
 {
     public T _SomeMethod034098;
 
-    internal void SomeShitNow(KeyValuePair<Guid, string> _param1)
+    public void SomeShitNow(KeyValuePair<Guid, string> _param1)
     {
       this._SomeMethod034098._idToName[ _param1.Key ] = _param1.Value;
 }

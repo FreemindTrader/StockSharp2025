@@ -2,7 +2,7 @@
 
 
 #nullable disable
-internal sealed class UShortMath :
+public sealed class UShortMath :
   IMath<ushort>
 {    
     public ushort MinValue => 0;

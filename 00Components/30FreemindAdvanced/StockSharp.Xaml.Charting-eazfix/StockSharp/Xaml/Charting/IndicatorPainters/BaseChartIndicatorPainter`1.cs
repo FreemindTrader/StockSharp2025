@@ -39,17 +39,17 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
         public BaseChartIndicatorPainter<T> _variableSome3535;
         public IList<ChartDrawData.IndicatorData> _variable3432Some3535;
 
-        internal DateTime SomeDateTimeMEthod03843( int _param1 )
+        public DateTime SomeDateTimeMEthod03843( int _param1 )
         {
             return this._variable0384[ _param1 ].Time;
         }
 
-        internal double SomeDateTimeMEthod00984( int _param1 )
+        public double SomeDateTimeMEthod00984( int _param1 )
         {
             return this._variableSome3535.SomeMehtod03485( this._variable0384, _param1 );
         }
 
-        internal double SomeMehtod96863485( int _param1 )
+        public double SomeMehtod96863485( int _param1 )
         {
             return this._variableSome3535.SomeMehtod03485( this._variable3432Some3535, _param1 );
         }
@@ -62,7 +62,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
     public Func<int, double> _variable984573;
     public Func<int, int> _variable987333;
 
-    internal ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime> SomeMehtod31513(
+    public ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<DateTime> SomeMehtod31513(
       int _param1)
     {
       DateTime dateTime = this._variable3432Some34343214(_param1);
@@ -81,17 +81,17 @@ private sealed class SomeClass5555
     public IList<ChartDrawData.IndicatorData> _IList03843;
     public BaseChartIndicatorPainter<T> _variableSome3535;
 
-    internal DateTime SomeDateTimeMEthod03843( int _param1 )
+    public DateTime SomeDateTimeMEthod03843( int _param1 )
     {
         return this._IList03843[ _param1 ].Time;
     }
 
-    internal double SomeDateTimeMEthod00984( int _param1 )
+    public double SomeDateTimeMEthod00984( int _param1 )
     {
         return this._variableSome3535.SomeMehtod03485( this._IList03843, _param1 );
     }
 
-    internal int SomeMehtod96863485( int _param1 )
+    public int SomeMehtod96863485( int _param1 )
     {
         return BaseChartIndicatorPainter<T>.SomeTemplateMehtod8888( this._IList03843, _param1 );
     }
@@ -102,12 +102,12 @@ private sealed class SomeClass7654
     public IList<ChartDrawData.IndicatorData> _IList03843;
     public Func<ChartDrawData.IndicatorData, double> _Func_ChartDrawData_IndicatorData_0303;
 
-    internal DateTime SomeDateTimeMEthod03843( int _param1 )
+    public DateTime SomeDateTimeMEthod03843( int _param1 )
     {
         return this._IList03843[ _param1 ].Time;
     }
 
-    internal double SomeDateTimeMEthod00984( int _param1 )
+    public double SomeDateTimeMEthod00984( int _param1 )
     {
         return this._Func_ChartDrawData_IndicatorData_0303( this._IList03843[ _param1 ] );
     }
@@ -121,12 +121,12 @@ private new sealed class SomeClass34343383
     public static Action<IDrawableChartElement> SomeIntenalMethod003D;
     public static Func<IIndicator, IList<ChartDrawData.IndicatorData>> _func_indicator_IList_data_00038;
 
-    internal void SomeI0398389ntenalMethod003D( IDrawableChartElement _param1 )
+    public void SomeI0398389ntenalMethod003D( IDrawableChartElement _param1 )
     {
         _param1.StartDrawing();
     }
 
-    internal IList<ChartDrawData.IndicatorData> GetChartDrawData_IndicatorData_0099(
+    public IList<ChartDrawData.IndicatorData> GetChartDrawData_IndicatorData_0099(
       IIndicator _param1 )
     {
         return ( IList<ChartDrawData.IndicatorData> ) new List<ChartDrawData.IndicatorData>();
@@ -139,7 +139,7 @@ private new sealed class SomeClass34343383
 
     private IChartIndicatorElement _indicatorElement;
 
-    internal static IIndicatorColorProvider GetColorProvider()
+    public static IIndicatorColorProvider GetColorProvider()
     {
         return ChartHelper.EnsureColorProvider();
     }
@@ -322,7 +322,7 @@ private new sealed class SomeClass34343383
 
 
 
-    internal static void SomeIntenalStaticVoidMethod333(
+    public static void SomeIntenalStaticVoidMethod333(
       IIndicator _param0,
       DateTime _param1,
       IIndicatorValue _param2,
@@ -352,7 +352,7 @@ private new sealed class SomeClass34343383
     public BaseChartIndicatorPainter<T> _variableSome3535;
     public IChartElement \u0023\u003Dz_i6sZDg\u003D;
 
-    internal void \u0023\u003Dzcq6kjuER1auFcNKkPQ\u003D\u003D()
+    public void \u0023\u003Dzcq6kjuER1auFcNKkPQ\u003D\u003D()
     {
       this._variableSome3535.GetIndicatorElement().AddChildElement( this.\u0023\u003Dz_i6sZDg\u003D);
     // ISSUE: explicit non-virtual call
@@ -371,12 +371,12 @@ private new sealed class SomeClass34343383
     public BaseChartIndicatorPainter<T> _variableSome3535;
     public IList<ChartDrawData.IndicatorData> _variable3432Some3535;
 
-    internal DateTime SomeDateTimeMEthod03843( int _param1 )
+    public DateTime SomeDateTimeMEthod03843( int _param1 )
     {
         return this._variable0384[ _param1 ].Time;
     }
 
-    internal double SomeDateTimeMEthod00984( int _param1 )
+    public double SomeDateTimeMEthod00984( int _param1 )
     {
         return this.\u0023\u003Dz6BEwh7k\u003D(this._variableSome3535.SomeMehtod03485( this._variable0384, _param1 ), this._variableSome3535.SomeMehtod03485( this._variable3432Some3535, _param1 ));
     }

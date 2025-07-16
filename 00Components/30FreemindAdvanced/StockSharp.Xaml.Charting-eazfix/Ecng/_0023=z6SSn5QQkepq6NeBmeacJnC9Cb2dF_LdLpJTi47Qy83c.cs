@@ -8,7 +8,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNYZdGkxOhAI6zOPwR
+public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnC9Cb2dF_LdLpJTi47Qy83cNYZdGkxOhAI6zOPwR
 {
   private double[] \u0023\u003DzNnNx0_c\u003D = new double[16 /*0x10*/];
 

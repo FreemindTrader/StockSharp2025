@@ -1,7 +1,7 @@
 ﻿using DevExpress.Xpf.PropertyGrid;
 using Ecng.Common;
 using Ecng.Xaml;
-using SciChart.Charting;
+using StockSharp.Charting;
 using SciChart.Charting.Model.DataSeries;
 using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Charting.Visuals;

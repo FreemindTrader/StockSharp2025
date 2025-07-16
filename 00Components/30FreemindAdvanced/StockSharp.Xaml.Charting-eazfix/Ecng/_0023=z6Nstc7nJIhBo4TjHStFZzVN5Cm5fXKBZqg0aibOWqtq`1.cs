@@ -7,7 +7,7 @@
 using System;
 
 #nullable disable
-internal sealed class \u0023\u003Dz6Nstc7nJIhBo4TjHStFZzVN5Cm5fXKBZqg0aibOWqtqjvKK8et6cWATFdfyGHXuHvNEa\u0024wU\u003D<T>
+public sealed class \u0023\u003Dz6Nstc7nJIhBo4TjHStFZzVN5Cm5fXKBZqg0aibOWqtqjvKK8et6cWATFdfyGHXuHvNEa\u0024wU\u003D<T>
 {
   private T[] \u0023\u003DzeYBkClQ\u003D;
   private int \u0023\u003DzG2qqjnQ\u003D;

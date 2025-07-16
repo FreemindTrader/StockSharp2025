@@ -14,7 +14,7 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 [System.Windows.Markup.ContentProperty("AnnotationLabels")]
 [TemplatePart(Name = "PART_LineAnnotationRoot", Type = typeof (Grid))]
-internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
+public class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
 {
   public new static readonly DependencyProperty HorizontalAlignmentProperty = DependencyProperty.Register(nameof (HorizontalAlignment), typeof (HorizontalAlignment), typeof (HorizontalLineAnnotation), new PropertyMetadata((object) HorizontalAlignment.Left, new PropertyChangedCallback(HorizontalLineAnnotation.OnHorizontalAlignmentChanged)));
   public static readonly DependencyProperty YDragStepProperty = DependencyProperty.Register(nameof (YDragStep), typeof (double), typeof (HorizontalLineAnnotation), new PropertyMetadata((object) 0.0));
@@ -49,7 +49,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     return usedAxis;
   }
 
-  internal override LabelPlacement ResolveAutoPlacement()
+  public override LabelPlacement ResolveAutoPlacement()
   {
     LabelPlacement labelPlacement = LabelPlacement.Top;
     if (this.HorizontalAlignment == HorizontalAlignment.Right)
@@ -69,7 +69,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     double vertOffset)
   {
     IAxis usedAxis = this.GetUsedAxis();
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     double coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
     if (!this.IsCoordinateValid(coord, canvas.ActualHeight))
     {
@@ -124,7 +124,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     IAxis xAxis,
     IAxis yAxis)
   {
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
+    IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     IComparable[] comparableArray = this.FromCoordinates(newPoint);
     IComparable comparable1 = comparableArray[0];
     IComparable comparable2 = comparableArray[1];
@@ -154,14 +154,14 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     return this.XAxis != null && this.XAxis.get_IsPolarAxis() ? (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new HorizontalLineAnnotation.\u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(this) : (\u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq) new HorizontalLineAnnotation.\u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(this);
   }
 
-  internal new sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(
+  public new sealed class \u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D(
     HorizontalLineAnnotation _param1) : 
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<HorizontalLineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
       AnnotationCoordinates _param1)
     {
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
+      IAnnotationCanvas canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
       double num1 = 0.0;
       double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
       if (!z2J4l3QuGwZhe.\u0023\u003Dz_Bj0HmLWq3hY() || canvas == null)
@@ -233,7 +233,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
       AnnotationCoordinates _param1,
-      \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
+      IAnnotationCanvas _param2)
     {
       bool flag = false;
       if (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight)
@@ -259,7 +259,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     }
   }
 
-  internal new sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D : 
+  public new sealed class \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D : 
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<HorizontalLineAnnotation>
   {
     public \u0023\u003Dzzgx9mA6OUPz1eU6E9w\u003D\u003D(HorizontalLineAnnotation _param1)

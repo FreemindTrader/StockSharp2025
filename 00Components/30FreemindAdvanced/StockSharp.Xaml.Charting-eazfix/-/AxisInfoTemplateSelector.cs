@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class AxisInfoTemplateSelector : 
+public sealed class AxisInfoTemplateSelector : 
   DataTemplateSelector
 {
   

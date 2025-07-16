@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<T> : 
+public sealed class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqSxgZhPFILnvQBugXV_GEszyTZ24Jw\u003D\u003D<T> : 
   \u0023\u003Dzboj3ckhISv7k6koCkTeIfzSujzHmXzYCLKUgdFUczis\u0024<T>
 {
   

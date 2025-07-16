@@ -15,16 +15,16 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
 #nullable enable
-internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0
+public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0
 {
-  internal static 
+  public static 
   #nullable disable
   IEnumerable<DependencyObject> \u0023\u003DzoZNX5EMTl75C(this DependencyObject _param0)
   {
     return _param0 != null ? \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz_gkcVLu8AeIjSTlfSA\u003D\u003D(_param0).Skip<DependencyObject>(1) : throw new ArgumentNullException("element");
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003DzD3XCqjrg3CMYbsxLrQ\u003D\u003D(
+  public static IEnumerable<DependencyObject> \u0023\u003DzD3XCqjrg3CMYbsxLrQ\u003D\u003D(
     this DependencyObject _param0)
   {
     return _param0 != null ? \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz_gkcVLu8AeIjSTlfSA\u003D\u003D(_param0) : throw new ArgumentNullException("element");
@@ -39,13 +39,13 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     };
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003DzhQrUVPJauEUN(
+  public static IEnumerable<DependencyObject> \u0023\u003DzhQrUVPJauEUN(
     this DependencyObject _param0)
   {
     return _param0 != null ? _param0.\u0023\u003Dzp2fbtELefDgwd9IFDA\u003D\u003D().Skip<DependencyObject>(1) : throw new ArgumentNullException("element");
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003DzQZmp3ZM8WrhlAANOBQ\u003D\u003D(
+  public static IEnumerable<DependencyObject> \u0023\u003DzQZmp3ZM8WrhlAANOBQ\u003D\u003D(
     this DependencyObject _param0)
   {
     return _param0 != null ? _param0.\u0023\u003Dzp2fbtELefDgwd9IFDA\u003D\u003D() : throw new ArgumentNullException("element");
@@ -60,13 +60,13 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     };
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003Dz1Z5lgD\u0024uw_tH(
+  public static IEnumerable<DependencyObject> \u0023\u003Dz1Z5lgD\u0024uw_tH(
     this DependencyObject _param0)
   {
     return _param0 != null ? \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz4LXEJZpLaW_RWZhCrQ\u003D\u003D(_param0).Skip<DependencyObject>(1) : throw new ArgumentNullException("element");
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003DzVzs33tXxWHWgmHs9gA\u003D\u003D(
+  public static IEnumerable<DependencyObject> \u0023\u003DzVzs33tXxWHWgmHs9gA\u003D\u003D(
     this DependencyObject _param0)
   {
     return _param0 != null ? \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz4LXEJZpLaW_RWZhCrQ\u003D\u003D(_param0) : throw new ArgumentNullException("element");
@@ -81,7 +81,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     };
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003Dzy8j99dqTJ3Nk(
+  public static IEnumerable<DependencyObject> \u0023\u003Dzy8j99dqTJ3Nk(
     this DependencyObject _param0)
   {
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
@@ -89,14 +89,14 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     return zeaY3Uu1m4CyxerxRw.\u0023\u003Dz_i6sZDg\u003D.\u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D().Where<DependencyObject>(new Func<DependencyObject, bool>(zeaY3Uu1m4CyxerxRw.\u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D));
   }
 
-  internal static IEnumerable<DependencyObject> \u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D(
+  public static IEnumerable<DependencyObject> \u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D(
     this DependencyObject _param0)
   {
     DependencyObject dependencyObject = _param0 != null ? VisualTreeHelper.GetParent(_param0) : throw new ArgumentNullException("element");
     return dependencyObject != null ? dependencyObject.\u0023\u003DzhQrUVPJauEUN() : (IEnumerable<DependencyObject>) Array.Empty<DependencyObject>();
   }
 
-  internal static void \u0023\u003DznHdRJtnS158H(this FrameworkElement _param0, Action _param1)
+  public static void \u0023\u003DznHdRJtnS158H(this FrameworkElement _param0, Action _param1)
   {
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
     dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D = _param0;
@@ -110,7 +110,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D.LayoutUpdated += dop2SzA2WchXh2wc.\u0023\u003DzZla_cGQ\u003D;
   }
 
-  internal static IEnumerable<FrameworkElement> \u0023\u003DzJcuveXBsPuYu(
+  public static IEnumerable<FrameworkElement> \u0023\u003DzJcuveXBsPuYu(
     this FrameworkElement _param0)
   {
     return (IEnumerable<FrameworkElement>) new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003DzH_fdPNo4tCvL5f_6R0LNbM0\u003D(-2)
@@ -119,7 +119,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     };
   }
 
-  internal static Color \u0023\u003Dzh4ZRqos\u003D(this Color _param0, byte _param1)
+  public static Color \u0023\u003Dzh4ZRqos\u003D(this Color _param0, byte _param1)
   {
     return Color.FromArgb(_param1, _param0.R, _param0.G, _param0.B);
   }
@@ -129,7 +129,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     public ItemsControl \u0023\u003Dzki8twMk\u003D;
     public Func<int, DependencyObject> \u0023\u003Dzon\u0024_RZacJIPJ;
 
-    internal DependencyObject \u0023\u003DzGIoUCXflrj8FI3FtdA\u003D\u003D(int _param1)
+    public DependencyObject \u0023\u003DzGIoUCXflrj8FI3FtdA\u003D\u003D(int _param1)
     {
       return this.\u0023\u003Dzki8twMk\u003D.ItemContainerGenerator.ContainerFromIndex(_param1);
     }
@@ -247,7 +247,7 @@ internal static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mk
     public EventHandler \u0023\u003DzZla_cGQ\u003D;
     public Action \u0023\u003Dz07PQx44\u003D;
 
-    internal void \u0023\u003Dz2lTnWh\u0024GuTatQNZ7qQjhg38\u003D(
+    public void \u0023\u003Dz2lTnWh\u0024GuTatQNZ7qQjhg38\u003D(
     #nullable enable
     object? _param1, EventArgs _param2)
     {
@@ -646,7 +646,7 @@ label_22:
     #nullable disable
     DependencyObject \u0023\u003Dz_i6sZDg\u003D;
 
-    internal bool \u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D(DependencyObject _param1)
+    public bool \u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D(DependencyObject _param1)
     {
       return _param1 != this.\u0023\u003Dz_i6sZDg\u003D;
     }

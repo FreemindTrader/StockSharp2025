@@ -11,9 +11,9 @@ using System.Linq;
 using System.Windows;
 
 #nullable enable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class fxZoomPanModifier : 
+public sealed class fxZoomPanModifier : 
   ZoomPanModifierBase
 {
   
@@ -101,13 +101,13 @@ internal sealed class fxZoomPanModifier :
     #nullable disable
     Func<IAxis, IRange> \u0023\u003DzrvebN45bGKztwoYTiA\u003D\u003D;
 
-    internal bool \u0023\u003DztdZxHXQvl0jLk18eWYDLqRE\u003D(
+    public bool \u0023\u003DztdZxHXQvl0jLk18eWYDLqRE\u003D(
       IAxis _param1)
     {
       return _param1.get_IsCategoryAxis();
     }
 
-    internal 
+    public 
     #nullable enable
     string \u0023\u003DzDdBD4\u0024viao9m95yVI0EJ1GE\u003D(
       #nullable disable
@@ -116,7 +116,7 @@ internal sealed class fxZoomPanModifier :
       return _param1.Id;
     }
 
-    internal IRange \u0023\u003DzzdOSOlF3qFksNQn1piaenHc\u003D(
+    public IRange \u0023\u003DzzdOSOlF3qFksNQn1piaenHc\u003D(
       IAxis _param1)
     {
       return _param1.VisibleRange;

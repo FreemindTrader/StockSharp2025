@@ -15,7 +15,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-internal sealed class AxisCollection : 
+public sealed class AxisCollection : 
   ObservableCollection<IAxis>,
   IXmlSerializable
 {
@@ -115,19 +115,19 @@ internal sealed class AxisCollection :
     public static Func<IAxis, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
     public static Func<IAxis, bool> SomeIntenalMethod003D;
 
-    internal bool \u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D(
+    public bool \u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
     }
 
-    internal bool \u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D(
+    public bool \u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
     }
 
-    internal bool \u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D(
+    public bool \u0023\u003DzUCmYQ2rcBAqL_JrgtKK7bho\u003D(
       IAxis _param1)
     {
       return _param1.get_IsPrimaryAxis();
@@ -138,7 +138,7 @@ internal sealed class AxisCollection :
   {
     public string \u0023\u003DzQ9LPsT8\u003D;
 
-    internal bool \u0023\u003DzCrpW8JldYBwMSqUGBQ\u003D\u003D(
+    public bool \u0023\u003DzCrpW8JldYBwMSqUGBQ\u003D\u003D(
       IAxis _param1)
     {
       return _param1.Id == this.\u0023\u003DzQ9LPsT8\u003D;

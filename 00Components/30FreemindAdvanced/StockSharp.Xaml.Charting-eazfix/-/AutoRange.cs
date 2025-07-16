@@ -1,7 +1,7 @@
 ﻿#nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal enum AutoRange
+public enum AutoRange
 {
     Once,
     Always,

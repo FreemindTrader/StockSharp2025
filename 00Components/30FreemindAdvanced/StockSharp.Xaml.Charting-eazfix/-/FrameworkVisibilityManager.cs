@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class FrameworkVisibilityManager : FrameworkElement
+public sealed class FrameworkVisibilityManager : FrameworkElement
 {
   
   public static readonly DependencyProperty \u0023\u003Dzb9NlFA1HMDOO = DependencyProperty.RegisterAttached("VisibleIn", typeof (FrameworkVisibility), typeof (FrameworkVisibilityManager), new PropertyMetadata((object) FrameworkVisibility.All, new PropertyChangedCallback(FrameworkVisibilityManager.\u0023\u003DzWE_UfM17p3U9)));

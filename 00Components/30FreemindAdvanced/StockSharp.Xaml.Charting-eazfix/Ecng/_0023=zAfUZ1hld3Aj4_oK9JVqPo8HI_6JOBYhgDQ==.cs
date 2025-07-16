@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 
 #nullable disable
-internal interface \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D
+public interface \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D
 {
   DataTemplate \u0023\u003Dzmy_tWbS7jzNB(object _param1, DependencyObject _param2);
 

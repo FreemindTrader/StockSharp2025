@@ -13,7 +13,7 @@ using System.Threading;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L : 
+public sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur7L : 
   dje_zW9CS5E2KYALJRMCDFUV9GBWAD6FTS94JN3AD7LFC8K7BTMRPRXTEX_ejd
 {
   

@@ -9,9 +9,9 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 #nullable disable
-internal static class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFf1QlL8mnDNxhPAkqrwW5wckD
+public static class \u0023\u003DzSseiGdgwJmJ1pkmz7CEFf1QlL8mnDNxhPAkqrwW5wckD
 {
-  internal static \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzQCf7bpfi0DqGMauSow\u003D\u003D(
+  public static \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzQCf7bpfi0DqGMauSow\u003D\u003D(
     this IRenderContext2D _param0,
     Line _param1,
     bool _param2)

@@ -51,7 +51,7 @@ public static class NumberUtil
         return Math.Floor( _param0 / _param1 ) * _param1;
     }
 
-    internal static bool IsDivisibleBy( double _param0, double _param1 )
+    public static bool IsDivisibleBy( double _param0, double _param1 )
     {
         _param0 = Math.Round( _param0, 15 );
         if ( Math.Abs( _param1 ) < 1E-15 )
@@ -61,7 +61,7 @@ public static class NumberUtil
         return Math.Abs( a - Math.Round( a ) ) <= num;
     }
 
-    internal static bool IsDivisibleBy( Decimal _param0, Decimal _param1 )
+    public static bool IsDivisibleBy( Decimal _param0, Decimal _param1 )
     {
         if ( Math.Abs( _param1 - 0M ) < NumberUtil.DecimalEpsilon )
             return false;
@@ -70,7 +70,7 @@ public static class NumberUtil
         return Math.Abs( d - Math.Round( d ) ) <= num;
     }
 
-    internal static Decimal RoundUp( Decimal _param0, Decimal _param1 )
+    public static Decimal RoundUp( Decimal _param0, Decimal _param1 )
     {
         return Decimal.Ceiling( _param0 / _param1 ) * _param1;
     }
@@ -103,7 +103,7 @@ public static class NumberUtil
         _param0 = num;
     }
 
-    internal static void SortedSwap(
+    public static void SortedSwap(
       ref double _param0,
       ref double _param1,
       ref double _param2,
@@ -145,7 +145,7 @@ public static class NumberUtil
         return Math.Abs( NumberUtil.RoundUpPower( _param0, _param1, _param2 ) - _param0 ) <= double.Epsilon;
     }
 
-    internal static double RoundUpPower( double _param0, double _param1, double _param2 )
+    public static double RoundUpPower( double _param0, double _param1, double _param2 )
     {
         bool flag = Math.Sign(_param0) == -1;
         double a = Math.Round(Math.Log(Math.Abs(_param0), _param2) / Math.Log(Math.Abs(_param1), _param2), 5);
@@ -157,7 +157,7 @@ public static class NumberUtil
         return !flag ? num2 : -num2;
     }
 
-    internal static double RoundDownPower( double _param0, double _param1, double _param2 )
+    public static double RoundDownPower( double _param0, double _param1, double _param2 )
     {
         bool flag = Math.Sign(_param0) == -1;
         double d = Math.Round(Math.Log(Math.Abs(_param0), _param2) / Math.Log(Math.Abs(_param1), _param2), 5);
@@ -169,7 +169,7 @@ public static class NumberUtil
         return !flag ? num2 : -num2;
     }
 
-    internal static bool IsIntegerType( Type _param0 )
+    public static bool IsIntegerType( Type _param0 )
     {
         bool flag = false;
         switch ( Type.GetTypeCode( _param0 ) )

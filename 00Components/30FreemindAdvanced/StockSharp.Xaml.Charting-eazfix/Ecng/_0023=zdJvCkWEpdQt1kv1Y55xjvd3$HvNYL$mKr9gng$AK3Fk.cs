@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Linq;
 
 #nullable disable
-internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvd3\u0024HvNYL\u0024mKr9gng\u0024AK3Fkh : 
+public sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvd3\u0024HvNYL\u0024mKr9gng\u0024AK3Fkh : 
   TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext _param1, Type _param2)
@@ -48,7 +48,7 @@ internal sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvd3\u0024HvNYL\u0024mKr9g
   {
     public CultureInfo \u0023\u003DzdKlLQNI\u003D;
 
-    internal double \u0023\u003DzxSqDeJlOpC6fz\u0024xOVA\u003D\u003D(string _param1)
+    public double \u0023\u003DzxSqDeJlOpC6fz\u0024xOVA\u003D\u003D(string _param1)
     {
       return double.Parse(_param1, (IFormatProvider) this.\u0023\u003DzdKlLQNI\u003D);
     }

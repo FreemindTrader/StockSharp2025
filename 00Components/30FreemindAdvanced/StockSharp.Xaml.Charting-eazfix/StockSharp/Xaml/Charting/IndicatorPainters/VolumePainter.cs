@@ -69,7 +69,7 @@ public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
     storage.SetValue<SettingsStorage>("DownVolume", PersistableHelper.Save((IPersistable) this.DownVolume));
   }
 
-  internal static bool \u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(
+  public static bool \u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(
     IIndicatorValue _param0)
   {
     if (_param0 == null)
@@ -85,13 +85,13 @@ public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
     public static Func<ChartDrawData.IndicatorData, double> \u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D;
     public static Func<ChartDrawData.IndicatorData, double> \u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D;
 
-    internal double \u0023\u003DzCqJJ\u0024wgpxEVd_TJWqw\u003D\u003D(
+    public double \u0023\u003DzCqJJ\u0024wgpxEVd_TJWqw\u003D\u003D(
       ChartDrawData.IndicatorData _param1)
     {
       return !VolumePainter.\u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(_param1.Value) ? double.NaN : (double) _param1.Value.ToDecimal();
     }
 
-    internal double \u0023\u003Dz2dmg6iDJoRoCFC4spg\u003D\u003D(ChartDrawData.IndicatorData _param1)
+    public double \u0023\u003Dz2dmg6iDJoRoCFC4spg\u003D\u003D(ChartDrawData.IndicatorData _param1)
     {
       return !VolumePainter.\u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(_param1.Value) ? (double) _param1.Value.ToDecimal() : double.NaN;
     }

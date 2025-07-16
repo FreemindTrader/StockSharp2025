@@ -9,7 +9,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A : 
+public class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A : 
   \u0023\u003Dzoab8u_ljQms67cycUNvVixWA22bWp\u0024IRliT1Tbo\u003D
 {
   protected static uint \u0023\u003DzmbQYIoVdQhkN;
@@ -20,7 +20,7 @@ internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A :
   private double \u0023\u003DzaK\u0024949c\u003D = double.NaN;
   private double \u0023\u003DzCdBe1JGiII2y;
 
-  internal \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A(
+  public \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A(
     double _param1,
     double _param2,
     int _param3,
@@ -40,7 +40,7 @@ internal class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_3gFWH1eBtHUGwTeshC8eR8A :
     return new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(this.\u0023\u003Dz9SNCNR_cYKQr, this.\u0023\u003DzRanwdSJnFyTa);
   }
 
-  internal DoubleRange \u0023\u003DzPgZsWHrUSHPaSw8veQ\u003D\u003D()
+  public DoubleRange \u0023\u003DzPgZsWHrUSHPaSw8veQ\u003D\u003D()
   {
     return this.\u0023\u003Dzb9g4_DOjBJMx;
   }

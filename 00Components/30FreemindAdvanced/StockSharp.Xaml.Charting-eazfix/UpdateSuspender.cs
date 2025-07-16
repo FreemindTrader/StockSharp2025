@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-internal sealed class UpdateSuspender :
+public sealed class UpdateSuspender :
   IDisposable,
   IUpdateSuspender
 {
@@ -25,13 +25,13 @@ internal sealed class UpdateSuspender :
 
     private bool \u0023\u003Dz9lEOT9K2_723;
 
-  internal UpdateSuspender( ISuspendable _param1, object _param2 )
+  public UpdateSuspender( ISuspendable _param1, object _param2 )
     : this( _param1 )
     {
         this.\u0023\u003Dz3xPfSd0\u003D = _param2;
     }
 
-    internal UpdateSuspender( ISuspendable _param1 )
+    public UpdateSuspender( ISuspendable _param1 )
     {
         this.\u0023\u003DzCede7bY\u003D = _param1;
         lock ( UpdateSuspender.myLock )
@@ -81,7 +81,7 @@ internal sealed class UpdateSuspender :
 [SpecialName]
 public object Tag => this.\u0023\u003Dz3xPfSd0\u003D;
 
-internal static bool \u0023\u003DzY5RcByYV3P6y(
+public static bool \u0023\u003DzY5RcByYV3P6y(
   ISuspendable _param0 )
   {
     lock ( UpdateSuspender.myLock )

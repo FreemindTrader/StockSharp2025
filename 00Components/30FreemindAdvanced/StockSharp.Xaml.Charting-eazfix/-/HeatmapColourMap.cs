@@ -10,9 +10,9 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace SciChart.Charting;
+namespace StockSharp.Charting;
 
-internal sealed class HeatmapColourMap : 
+public sealed class HeatmapColourMap : 
   Control,
   INotifyPropertyChanged
 {

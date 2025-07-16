@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D : 
+public sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D : 
   IDisposable,
   IEnumerator<\u0023\u003Dz7tyVhFVuY8D5V\u0024lqfWwb5REq_FH1BSAP6ZMnJks\u003D>,
   IEnumerator
@@ -39,7 +39,7 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
   
   private double \u0023\u003Dz\u0024fZhibJjCIKj;
 
-  internal \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D(
+  public \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D(
     Point _param1,
     Point _param2,
     Size _param3,
@@ -48,7 +48,7 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
     this.Reset(_param1, _param2, _param3, _param4);
   }
 
-  internal \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D()
+  public \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\u003D()
   {
     this.\u0023\u003DzKx97DYo\u003D = -1;
   }
@@ -86,7 +86,7 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
 
   public void Reset() => throw new NotSupportedException();
 
-  internal void Reset(
+  public void Reset(
     Point _param1,
     Point _param2,
     Size _param3,
@@ -114,14 +114,14 @@ internal sealed class \u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPTilr\u0024AzSXiASpzkU3Q\
     this.\u0023\u003DzKx97DYo\u003D = -1;
   }
 
-  internal struct \u0023\u003DzCW27bQGKuCyh
+  public struct \u0023\u003DzCW27bQGKuCyh
   {
     
-    internal readonly double \u0023\u003DzCghbVqE\u003D;
+    public readonly double \u0023\u003DzCghbVqE\u003D;
     
-    internal readonly double \u0023\u003DzBNsE20w\u003D;
+    public readonly double \u0023\u003DzBNsE20w\u003D;
 
-    internal \u0023\u003DzCW27bQGKuCyh(double _param1, double _param2)
+    public \u0023\u003DzCW27bQGKuCyh(double _param1, double _param2)
     {
       this.\u0023\u003DzCghbVqE\u003D = _param1;
       this.\u0023\u003DzBNsE20w\u003D = _param2;

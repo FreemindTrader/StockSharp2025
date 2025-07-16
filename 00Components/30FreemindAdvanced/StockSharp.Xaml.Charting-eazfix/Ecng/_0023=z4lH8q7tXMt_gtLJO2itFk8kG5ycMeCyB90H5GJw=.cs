@@ -5,9 +5,9 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-internal static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk8kG5ycMeCyB90H5GJw\u003D
+public static class \u0023\u003Dz4lH8q7tXMt_gtLJO2itFk8kG5ycMeCyB90H5GJw\u003D
 {
-  internal static float \u0023\u003DzcYUW_6FX9t5L(this float _param0)
+  public static float \u0023\u003DzcYUW_6FX9t5L(this float _param0)
   {
     if ((double) _param0 > 2147483648.0)
       return (float) int.MaxValue;

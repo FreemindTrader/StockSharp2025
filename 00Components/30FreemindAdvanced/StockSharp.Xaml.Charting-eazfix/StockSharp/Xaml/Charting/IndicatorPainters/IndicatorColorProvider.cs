@@ -90,7 +90,7 @@ public class IndicatorColorProvider : IIndicatorColorProvider
     public IndicatorColorProvider _variableSome3535;
     public IndicatorColorProviderSeed _IndicatorColorProviderSeed;
 
-    internal int SomeSealedClassMethod03845(
+    public int SomeSealedClassMethod03845(
       SynchronizedDictionary<IndicatorColorProviderSeed, int> _param1)
     {
       int num;

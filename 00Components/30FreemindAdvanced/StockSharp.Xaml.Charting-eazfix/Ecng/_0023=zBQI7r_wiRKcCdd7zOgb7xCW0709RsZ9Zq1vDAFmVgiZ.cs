@@ -7,7 +7,7 @@
 using System.Diagnostics;
 
 #nullable disable
-internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20XZZLU_SBymsgRVXpM61Ax5QggCbu8
+public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20XZZLU_SBymsgRVXpM61Ax5QggCbu8
 {
   private int \u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D;
   private \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<\u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tFDwl0NMb> \u0023\u003DzHkfwL3cpFpGk;
@@ -380,9 +380,9 @@ internal sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot
   private struct \u0023\u003DzdnsGX6fk3n0H
   {
     
-    internal int \u0023\u003DzCVPVJaY\u003D;
+    public int \u0023\u003DzCVPVJaY\u003D;
     
-    internal int \u0023\u003Dzzm\u0024Pe00\u003D;
+    public int \u0023\u003Dzzm\u0024Pe00\u003D;
   }
 
   private enum \u0023\u003DzyzE2hdX\u0024mNZP

@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Xml;
 
 #nullable disable
-internal static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvWCpoOjEhEeJI6I2BPbX98a
+public static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvWCpoOjEhEeJI6I2BPbX98a
 {
   public static void \u0023\u003DzVjDFK7Q\u003D(
     this XmlWriter _param0,
@@ -61,7 +61,7 @@ internal static class \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvWCpoOjEhEeJI6I2BPbX98a
   {
     public string \u0023\u003Dza5poCxI\u003D;
 
-    internal bool \u0023\u003DzdgBO79K5qXBebtgGdA\u003D\u003D(PropertyInfo _param1)
+    public bool \u0023\u003DzdgBO79K5qXBebtgGdA\u003D\u003D(PropertyInfo _param1)
     {
       return _param1.Name == this.\u0023\u003Dza5poCxI\u003D;
     }
